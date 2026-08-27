@@ -1,5 +1,5 @@
 {
   "stateOrder": 2379,
   "stateKey": "nextAllowedMove",
-  "value": "PPRR-R1 is closed bounded at material commit 9cfdc6af838fcf3818c075f84df1be3faf5183e5. Select a fresh roadmap only for a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. Do not create PPRR-R2 automatically. PR merge and deployment remain explicit operator checkpoints. Latest finalized numbered LHW wave remains LHW24."
+  "value": "PPRR-R1 is closed bounded at material commit 9cfdc6af838fcf3818c075f84df1be3faf5183e5. Public PR 4 is merged on main at a7a797d7111be472ef2cbd928cbeffc70ccb6bc6 and external-agent readout is refreshed from that live main. Select a fresh roadmap only for a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. Do not create PPRR-R2 automatically. Deployment remains an explicit operator checkpoint. Latest finalized numbered LHW wave remains LHW24."
 }

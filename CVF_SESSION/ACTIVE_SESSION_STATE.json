@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "PPRR-R1 is closed bounded at material commit 9cfdc6af838fcf3818c075f84df1be3faf5183e5. Select a fresh roadmap only for a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. Do not create PPRR-R2 automatically. PR merge and deployment remain explicit operator checkpoints. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "PPRR-R1 is closed bounded at material commit 9cfdc6af838fcf3818c075f84df1be3faf5183e5. Public PR 4 is merged on main at a7a797d7111be472ef2cbd928cbeffc70ccb6bc6 and external-agent readout is refreshed from that live main. Select a fresh roadmap only for a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. Do not create PPRR-R2 automatically. Deployment remains an explicit operator checkpoint. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15387,11 +15387,12 @@
     "dispatchCommit": "bf7946c815a86e848af1532eb7586f31af33bef9",
     "privateExecutionBase": "91fff28bb72235489aafe95883385efe761962de",
     "publicReadOnlySource": "af957e279a8118b152d957a29f5731c6304a86bf",
+    "publicMergeCommit": "a7a797d7111be472ef2cbd928cbeffc70ccb6bc6",
     "materialCommit": "9cfdc6af838fcf3818c075f84df1be3faf5183e5",
     "workerReturn": "docs/reviews/CVF_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_WORKER_RETURN_2026-08-27.md",
     "completionReview": "docs/reviews/CVF_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_COMPLETION_2026-08-27.md",
-    "evidence": "Independent review accepted 62 user, 34 agent and 62 source registry truth; focused tests pass 10/10, generator check is drift-free, worker-return fast and reviewer-fast pass, material pre-commit passes 87/87. A deterministic private encoding-exception marker yields normalized generated-data parity 63/63; generator and test are ADAPTED_WITH_REASON. Public remains clean and unchanged.",
+    "evidence": "Independent review accepted 62 user, 34 agent and 62 source registry truth; focused tests pass 10/10, generator check is drift-free, worker-return fast and reviewer-fast pass, material pre-commit passes 87/87. A deterministic private encoding-exception marker yields normalized generated-data parity 63/63; generator and test are ADAPTED_WITH_REASON. The accepted public branch was later squash-merged by PR 4 to public main at a7a797d7111be472ef2cbd928cbeffc70ccb6bc6; the external-agent readout was refreshed from that live main.",
     "workerBoundary": "One no-commit worker may change only the private generator, focused test, generated USR family/index and named return. Public is read-only. Deletion is limited to exact manifest-stale private USR records.",
-    "successorBoundary": "PPRR-R1 is terminally closed. No automatic PPRR-R2; select only a fresh serious, source-backed, non-duplicate, value-positive roadmap. Public mutation, merge, deployment, secrets and providers remain forbidden."
+    "successorBoundary": "PPRR-R1 is terminally closed. No automatic PPRR-R2; select only a fresh serious, source-backed, non-duplicate, value-positive roadmap. PR 4 merge and bounded repository synchronization are complete; further public mutation, deployment, secrets and providers remain forbidden."
   }
 }

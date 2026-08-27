@@ -11,11 +11,12 @@
     "dispatchCommit": "bf7946c815a86e848af1532eb7586f31af33bef9",
     "privateExecutionBase": "91fff28bb72235489aafe95883385efe761962de",
     "publicReadOnlySource": "af957e279a8118b152d957a29f5731c6304a86bf",
+    "publicMergeCommit": "a7a797d7111be472ef2cbd928cbeffc70ccb6bc6",
     "materialCommit": "9cfdc6af838fcf3818c075f84df1be3faf5183e5",
     "workerReturn": "docs/reviews/CVF_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_WORKER_RETURN_2026-08-27.md",
     "completionReview": "docs/reviews/CVF_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_COMPLETION_2026-08-27.md",
-    "evidence": "Independent review accepted 62 user, 34 agent and 62 source registry truth; focused tests pass 10/10, generator check is drift-free, worker-return fast and reviewer-fast pass, material pre-commit passes 87/87. A deterministic private encoding-exception marker yields normalized generated-data parity 63/63; generator and test are ADAPTED_WITH_REASON. Public remains clean and unchanged.",
+    "evidence": "Independent review accepted 62 user, 34 agent and 62 source registry truth; focused tests pass 10/10, generator check is drift-free, worker-return fast and reviewer-fast pass, material pre-commit passes 87/87. A deterministic private encoding-exception marker yields normalized generated-data parity 63/63; generator and test are ADAPTED_WITH_REASON. The accepted public branch was later squash-merged by PR 4 to public main at a7a797d7111be472ef2cbd928cbeffc70ccb6bc6; the external-agent readout was refreshed from that live main.",
     "workerBoundary": "One no-commit worker may change only the private generator, focused test, generated USR family/index and named return. Public is read-only. Deletion is limited to exact manifest-stale private USR records.",
-    "successorBoundary": "PPRR-R1 is terminally closed. No automatic PPRR-R2; select only a fresh serious, source-backed, non-duplicate, value-positive roadmap. Public mutation, merge, deployment, secrets and providers remain forbidden."
+    "successorBoundary": "PPRR-R1 is terminally closed. No automatic PPRR-R2; select only a fresh serious, source-backed, non-duplicate, value-positive roadmap. PR 4 merge and bounded repository synchronization are complete; further public mutation, deployment, secrets and providers remain forbidden."
   }
 }

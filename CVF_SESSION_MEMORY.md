@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pprr_r1_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap selection only; parked checkpoint=automatic PPRR-R2, PR merge, deployment, secrets and providers.
+Startup acknowledged: current mode=`pprr_r1_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap selection only; parked checkpoint=automatic PPRR-R2, deployment, secrets and providers; public PR 4 merge is complete at `a7a797d7`.
 
 ## Current Mode
 
@@ -52,7 +52,7 @@ Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `pprr_r1_closed_pass_bounded`. PPRR-R1 is accepted at private material commit `9cfdc6af8`: registry validator passes 62 user / 34 agent / 62 source, focused tests pass 10/10, generator is drift-free, and public remains unchanged. Select a fresh roadmap only for a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. No automatic PPRR-R2. PR merge and deployment remain explicit operator checkpoints. Latest finalized numbered LHW wave remains LHW24.
+Mode: `pprr_r1_closed_pass_bounded`. PPRR-R1 is accepted at private material commit `9cfdc6af8`: registry validator passes 62 user / 34 agent / 62 source, focused tests pass 10/10, and generator is drift-free. Public PR 4 is merged on `main` at `a7a797d7`; the external-agent readout is refreshed from that live main. Select a fresh roadmap only for a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. No automatic PPRR-R2. Deployment remains an explicit operator checkpoint. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

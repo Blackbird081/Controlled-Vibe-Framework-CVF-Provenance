@@ -38,7 +38,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pprr_r1_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap selection only; parked checkpoint=automatic PPRR-R2, PR merge, deployment, secrets and providers.
+Startup acknowledged: current mode=`pprr_r1_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap selection only; parked checkpoint=automatic PPRR-R2, deployment, secrets and providers; public PR 4 merge is complete at `a7a797d7`.
 
 ## Current Mode
 `pprr_r1_closed_pass_bounded`
@@ -169,7 +169,7 @@ Handoff sync parent: `c81855f314fb8503b6a01bc2b79bb3390a3a2995`; continuity pare
 
 ## Next Allowed Move
 
-PPRR-R1 is independently accepted and closed bounded at material commit `9cfdc6af838fcf3818c075f84df1be3faf5183e5`. Registry validation passes 62 user / 34 agent / 62 source; focused tests pass 10/10; generator check is drift-free; public remains clean at `af957e279a8118b152d957a29f5731c6304a86bf`. Select a fresh roadmap only for a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. Do not create PPRR-R2 automatically. PR merge and deployment remain explicit operator checkpoints. Latest finalized numbered LHW wave remains LHW24.
+PPRR-R1 is independently accepted and closed bounded at material commit `9cfdc6af838fcf3818c075f84df1be3faf5183e5`. Registry validation passes 62 user / 34 agent / 62 source; focused tests pass 10/10; generator check is drift-free. Public PR 4 squash-merged the accepted branch to `main` at `a7a797d7111be472ef2cbd928cbeffc70ccb6bc6`; the external-agent readout is refreshed from that live main. Select a fresh roadmap only for a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. Do not create PPRR-R2 automatically. Deployment remains an explicit operator checkpoint. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -197,8 +197,8 @@ run `32678623700` promoted public `9c0183293`; force-push/delete are disabled.
 EXPORTED
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
 Public-sync branch: `pcit-r1-public-ci-truthfulness`.
-Public-sync commit: `af957e279a8118b152d957a29f5731c6304a86bf`.
-Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry records; branch export only, not merge, deploy or public-main readiness. Exact-SHA hosted runs `33058250461`, `33058254795`, `33058254845`, `33058254830`, `33058254860`, `33058254846`, `33058254884`, and `33058254898` all passed.
+Public-sync source commit: `af957e279a8118b152d957a29f5731c6304a86bf`; public `main` merge commit: `a7a797d7111be472ef2cbd928cbeffc70ccb6bc6`.
+Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry records, now merged by PR 4; this is not deploy or production readiness. Exact-SHA hosted runs `33058250461`, `33058254795`, `33058254845`, `33058254830`, `33058254860`, `33058254846`, `33058254884`, and `33058254898` all passed.
 
 ## Core Guard Self-Protection Authorization - PPRR-R1 Closure Continuity
 
@@ -211,10 +211,10 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: standing reviewer/closer authority covers closure continuity after the accepted single bounded private registry lane.
+Operator authorization: standing reviewer/closer authority covers closure continuity; the operator explicitly authorized provenance push, public synchronization and external-agent readout refresh on 2026-08-27.
 Rollback boundary: revert only this closure-continuity commit atomically; retain material commit, dispatch and prior PSRR/AGTR evidence.
-Not authorized: validator/cleaner/source-skill/AGT/workflow/product mutation, arbitrary deletion, public mutation, PPRR-R2, worker commit, push, PR merge, deployment, secret-value access, provider/live calls or unrelated work.
+Not authorized: validator/cleaner/source-skill/AGT/workflow/product mutation, arbitrary deletion, further public mutation, remote branch deletion, PPRR-R2, deployment, secret-value access, provider/live calls or unrelated work.
 
 ## Claim Boundary
 
-This handoff records PPRR-R1 terminal closure at material commit `9cfdc6af838fcf3818c075f84df1be3faf5183e5`. It authorizes no further PPRR implementation, arbitrary deletion, public mutation, validator/cleaner/source-skill/AGT/workflow/product change, secret/provider/live action, push, PR merge, deploy, production claim, automatic PPRR-R2 or unrelated lane.
+This handoff records PPRR-R1 terminal closure at `9cfdc6af838fcf3818c075f84df1be3faf5183e5` and the later operator-authorized PR 4 merge/repository synchronization checkpoint at public `a7a797d7111be472ef2cbd928cbeffc70ccb6bc6`. It authorizes no further PPRR implementation, arbitrary deletion, public mutation, validator/cleaner/source-skill/AGT/workflow/product change, secret/provider/live action, deploy, production claim, automatic PPRR-R2 or unrelated lane.
