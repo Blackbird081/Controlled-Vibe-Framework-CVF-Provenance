@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; PCIT-R1-SA1 reviewer evidence: `06643ac4b`; final public candidate: `bbea31745`; PR 4 remains unmerged; next move is an operator park-or-bounded-disposition decision.
+- Repository: private provenance source of truth; continuity checkpoint: `1e671171bf538a6214286babf247b4c5f73dc6c4`; PCIT-R1-SA1 reviewer evidence: `06643ac4b`; final public candidate: `bbea31745`; PR 4 remains unmerged; next move is an operator-authorized bounded-disposition packet.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
