@@ -1,0 +1,34 @@
+{
+  "registryOrder": 179,
+  "id": "mpa-ai-t0-local-memory-poisoning-absorption-intake",
+  "corpusType": "LEGACY_FOLDER",
+  "displayName": "MPA-AI-T0 operator and external-agent local memory-poisoning absorption intake",
+  "scopePaths": [
+    ".private_reference/legacy/CVF 13.08/CVF_MEMORY_POISONING_ABSORPTION/"
+  ],
+  "fileCount": 50,
+  "status": "NOT_STARTED",
+  "scanWave": "MPA-AI-T0",
+  "scanDate": "2026-08-27",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": null,
+  "completionReviewPath": null,
+  "gcBaselineRef": null,
+  "verdicts": {
+    "gc047": "NOT_RUN",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "memory-epistemic-admission",
+    "retrieval-truth-traceability",
+    "adversarial-trust-provenance-evaluation",
+    "utility-under-memory-attack",
+    "mixed-origin-derived-synthesis"
+  ],
+  "priorAbsorption": "No exact registry entry or governed absorption packet for CVF_MEMORY_POISONING_ABSORPTION was found at scan-open time. The source is an operator-supplied local folder written through operator and external-agent exchange, not a GitHub repository or pinned upstream mirror.",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "Create the governed MPA-AI-T0 dispatch packet, record immutable local manifest evidence, fully classify all 50 files, reconcile overlap against current CVF owners, and apply the serious/source-backed/non-duplicate/value-exceeds-cost gate before any absorption or implementation."
+}

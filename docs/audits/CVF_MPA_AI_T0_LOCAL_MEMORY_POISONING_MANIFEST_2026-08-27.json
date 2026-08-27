@@ -1,0 +1,419 @@
+{
+  "schemaVersion": "1.0.0",
+  "batchId": "MPA-AI-T0",
+  "corpusRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS",
+  "corpusRoot": ".private_reference/legacy/CVF 13.08/CVF_MEMORY_POISONING_ABSORPTION/",
+  "upstreamAuthority": "OPERATOR_SUPPLIED_LOCAL_CO_DESIGN_NO_GIT_UPSTREAM",
+  "enumerationCommand": "Get-ChildItem -LiteralPath <corpusRoot> -Recurse -Force -File",
+  "snapshotTime": "2026-08-27T00:00:00+07:00",
+  "fileCount": 50,
+  "manifestHashAlgorithm": "sha256",
+  "manifestHashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "manifestHash": "7bcdc612aaf99e7323de9b1236474c1e9ebf8a6b326d3e19ada649a1b57f9e10",
+  "sourcePacketManifestSha256": "5dc77efcc650ce56c1bee57f3fbf91b17ddd3e37cb0365062c913c65706e517b",
+  "sourcePacketDeclaredFiles": 49,
+  "sourcePacketIntegrity": "MATCH_49_OF_49_SELF_EXCLUDED",
+  "unreadableFiles": [],
+  "files": [
+    {
+      "path": "00_SHARED/CVF_ABSORPTION_PRINCIPLES.md",
+      "bytes": 1191,
+      "sha256": "b6ff4e59bdc9ed63d75f9bf05f0f1ade526b50e542b58a1853673852a1fc194d",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "00_SHARED/CVF_MEMORY_EPISTEMIC_STATE_MODEL.md",
+      "bytes": 1977,
+      "sha256": "d2edcb4619bf5aa6ad6924e95f3f4615096a999db04d99a06dc169319f2f6f75",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "00_SHARED/CVF_NON_DUPLICATION_GUARD.md",
+      "bytes": 1079,
+      "sha256": "3d133a7e6af706b649ffa49e759d1088082e47d17d30a34c083ebd609a2c5fd1",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "00_SHARED/CVF_RETRIEVAL_AUTHORITY_MATRIX.md",
+      "bytes": 1438,
+      "sha256": "ace782952efacc8735918659d1c38a8351da4de29340cfaea49e56a3691f29ab",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_ACCEPTANCE.md",
+      "bytes": 866,
+      "sha256": "dd22b751d9abbfad0024fc7e30b5a65de5fcd7e877f90f5624376564a2ec8cd2",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_CONTRACT.md",
+      "bytes": 1617,
+      "sha256": "09499b36c4762ff2af114dde354a13dc9cde28b7dc3537d3684839e515bcf0c2",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_SPEC.md",
+      "bytes": 2180,
+      "sha256": "c95f502af042e04675f6766516cca29d8628bde78ced1f2ac168cba2c9826a25",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "01_MEMORY_EPISTEMIC_ADMISSION/CVF_MEMORY_EPISTEMIC_ADMISSION_WORK_ORDER.md",
+      "bytes": 1376,
+      "sha256": "67ff9439c6a376169d2edbf69eed0a5f6dca88e83cbecd2479483a0cefc66717",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "01_MEMORY_EPISTEMIC_ADMISSION/README.md",
+      "bytes": 430,
+      "sha256": "09ffc3e5963aafee797c3a2479a43ea7cadae2ac39f47600786ff5a94d435646",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "01_MEMORY_EPISTEMIC_ADMISSION/tests/CVF_EPISTEMIC_ADMISSION_TEST_MATRIX.md",
+      "bytes": 829,
+      "sha256": "fce6d7051bfb5eb9d9b56c54897979f2f154ca296399592439c7f7b358752dd3",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "01_MEMORY_EPISTEMIC_ADMISSION/tests/epistemic_admission_cases.jsonl",
+      "bytes": 1658,
+      "sha256": "090e0e010446de97da6c4054eb2d4f106edee2614a8505847447bb0e73a1eb05",
+      "extension": ".jsonl",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_ACCEPTANCE.md",
+      "bytes": 660,
+      "sha256": "404b23d39070689253431de06f9396ab2e201cd8e4d63aa94d3a626ee8fa3519",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_CONTRACT.md",
+      "bytes": 1018,
+      "sha256": "bc69a79aaa6046f61f6f0af1096686a9bd6eaf2de5e99e1a72329209f922648b",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_SPEC.md",
+      "bytes": 1249,
+      "sha256": "7506c38bfa0cf118fc5014261c7804bf2557d16c077c5664f730592825ca1d76",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_RETRIEVAL_TRACEABILITY_WORK_ORDER.md",
+      "bytes": 1041,
+      "sha256": "bcd8e588ae75a3c5044e8be528b07923f1daf425a83cecdeac2c1da6c55a4684",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_SOURCE_LINEAGE_RULES.md",
+      "bytes": 941,
+      "sha256": "b0e1b4551ff0417013f812373b130314f5fd9c41bac96144fda70a62c10fe5d1",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/CVF_TRUTH_REFERENCE_BINDING.md",
+      "bytes": 1013,
+      "sha256": "7b7216069d20ca01bad40fc49770da5d38ef5d2dd88ffb18efe95527f6d972b0",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/README.md",
+      "bytes": 437,
+      "sha256": "059ba316b464ae63669bf640d99f98c64b295e7d2ea2a0e67db7bd59017c121e",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/tests/CVF_TRACEABILITY_TEST_MATRIX.md",
+      "bytes": 552,
+      "sha256": "c8a6a8526c1d9525ff70b0691e8bf77db2d2f095673e9b410646c7751a1f0d4b",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "02_RETRIEVAL_TRUTH_TRACEABILITY/tests/retrieval_traceability_cases.jsonl",
+      "bytes": 1310,
+      "sha256": "7cf0cfcedf8bf802925646c5b6ad8db006129ccefc0e999b1a255922f1f22d6e",
+      "extension": ".jsonl",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_ADVERSARIAL_TRUST_ACCEPTANCE.md",
+      "bytes": 652,
+      "sha256": "891e076bce08ab3e4644dc6b976a9981762eb5ef245a74f9875092e9a4fcd5bc",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_ADVERSARIAL_TRUST_WORK_ORDER.md",
+      "bytes": 716,
+      "sha256": "3f78e83dc0f48755260333630ab3492011e6be67e496ed1a4c46638c2d775b54",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_AUDITTRUST_PROVENANCE_EVAL_PLAN.md",
+      "bytes": 1177,
+      "sha256": "6b90a626af6775419937cbab40216233564a7bf214a0b35dac57e87dfbcdfb6a",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_SCALAR_TRUST_FAILURE_MODES.md",
+      "bytes": 1213,
+      "sha256": "33763e00be2f97daad2d7d780baaf222e2a1087e15b7115a9db2a6ae668076af",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/CVF_SCALAR_TRUST_PROVENANCE_EVAL_SPEC.md",
+      "bytes": 1628,
+      "sha256": "61a9a49ca5a0946be210ec930f983ac17f3a34012ccbebfee3c0b48a87e73b1b",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/README.md",
+      "bytes": 369,
+      "sha256": "265d7059f53cbca3c00dfe2d5a94e2208b52f81732f825d938cea0f2ced921c9",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/tests/CVF_TRUST_PROVENANCE_TEST_MATRIX.md",
+      "bytes": 636,
+      "sha256": "e58aab6f8bd8e5d4fae846ed662690e6ba47b1ddd1b62426d494b1ab21485719",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "03_ADVERSARIAL_TRUST_PROVENANCE_EVAL/tests/trust_provenance_scenarios.jsonl",
+      "bytes": 1027,
+      "sha256": "d0e3fe0f949a8a239010315ebb86d0b394c0a41f40527307be93a97056c8426b",
+      "extension": ".jsonl",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "04_UTILITY_UNDER_ATTACK/CVF_BENIGN_UNTRUSTED_EVIDENCE_TEST_PLAN.md",
+      "bytes": 907,
+      "sha256": "4e8c8961f13666472544e607f70f090a0f578f415a09ca86b7ffc2263909ece6",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "04_UTILITY_UNDER_ATTACK/CVF_MEMORY_POISONING_BENCHMARK_MATRIX.md",
+      "bytes": 1277,
+      "sha256": "28314cd2769500362cfa9c5f2c40ea9bd7e347d39702a35e3f500b2baf506de5",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "04_UTILITY_UNDER_ATTACK/CVF_UTILITY_UNDER_ATTACK_ACCEPTANCE.md",
+      "bytes": 659,
+      "sha256": "7e71f580e6eece0d79348925e4e91c09c791746b2029ff17c8579454d123011f",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "04_UTILITY_UNDER_ATTACK/CVF_UTILITY_UNDER_ATTACK_EVAL_SPEC.md",
+      "bytes": 1473,
+      "sha256": "1b66ee5d6bb07d11346745aa76df09f65ce45125fa578085e79cf92fea9d264e",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "04_UTILITY_UNDER_ATTACK/CVF_UTILITY_UNDER_ATTACK_WORK_ORDER.md",
+      "bytes": 787,
+      "sha256": "4aced93836bc95fae5d54c20381274f447be35b86a0b0bd00b5c3ec64f315aea",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "04_UTILITY_UNDER_ATTACK/fixtures/utility_under_attack_scenarios.jsonl",
+      "bytes": 1250,
+      "sha256": "7896541e82e3a0c081694ac4db4b80364a700cfc19d6e3b0f6d30615f2561088",
+      "extension": ".jsonl",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "04_UTILITY_UNDER_ATTACK/metrics/CVF_UTILITY_UNDER_ATTACK_METRICS_SCHEMA.json",
+      "bytes": 2331,
+      "sha256": "3ca07b7fc1d9e9dd291d6ca4cb2e71b7ae3dc9c12e59bdc839df62403692adeb",
+      "extension": ".json",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "04_UTILITY_UNDER_ATTACK/README.md",
+      "bytes": 376,
+      "sha256": "7ff8b6de11c5882bc3ef6da1eccf73fc53655b6c6d09e3eb039de5c1a65dd2e7",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "05_INTEGRATION/CVF_AGENT_RETURN_CONTRACT.md",
+      "bytes": 1800,
+      "sha256": "bc1329bf227f5c51e7dd682b2f6b63c046f6c30af03a84fff3e6844860921e2b",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "05_INTEGRATION/CVF_CHANGESET_CHECKLIST.md",
+      "bytes": 781,
+      "sha256": "28ab0bfdbc2b36a241e5478e11b5edb5bf832d96abfe583e316e37248b5297f0",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "05_INTEGRATION/CVF_NO_OVERCLAIM_CHECKLIST.md",
+      "bytes": 792,
+      "sha256": "6658397f620d6983a99bfd1cc9babcf6af55f9ca21b2e21144427bc91f3dd82b",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "05_INTEGRATION/CVF_OWNER_PATCH_MAP.md",
+      "bytes": 1741,
+      "sha256": "bef76533807f7f22f3dea7a5a280dbd4a5e0537eb4ec6c168ef81ce70ce0f09f",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "05_INTEGRATION/CVF_PHASED_IMPLEMENTATION_PLAN.md",
+      "bytes": 1759,
+      "sha256": "c6e3d9ab888d72f289a4a5d9203ff4011d2efa8d1ca46dcf92c395acab0bd0c9",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "05_INTEGRATION/CVF_TEST_GATE_PLAN.md",
+      "bytes": 1350,
+      "sha256": "e9651fc327524ef4d6b85b8925d207f9f1a53f2f5598546ccf8c600f17fa7584",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "AGENT_HANDOFF_PROMPT.md",
+      "bytes": 1362,
+      "sha256": "203ec8054c8fca24a51090315974789815e0fe7611adbe1a3c98a20ead470a83",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "AGENT_INGEST_INSTRUCTIONS.md",
+      "bytes": 1392,
+      "sha256": "842caf30b93b4e276c6a942c06a343f018ae7bc9c3fcf0b47c44a93d19d2bfed",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "CLAIM_BOUNDARY.md",
+      "bytes": 1418,
+      "sha256": "f794429f4f0a5a3d262080b46d9454a9ebe6c8474c656ff34aaa19b4f79c6adf",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "OWNER_MAPPING.md",
+      "bytes": 2286,
+      "sha256": "62842a27eca8770a2a099f792cc46093a19143d7b29422e89ee63b941c5753d2",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "PACKET_MANIFEST.json",
+      "bytes": 9994,
+      "sha256": "5dc77efcc650ce56c1bee57f3fbf91b17ddd3e37cb0365062c913c65706e517b",
+      "extension": ".json",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3013,
+      "sha256": "7b41ac3e7a6ca454714e9ef8ff10b46f79f4dd40cc46d7a046e06d339ecd3163",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "SOURCE_BASIS.md",
+      "bytes": 3130,
+      "sha256": "2072bf42ecb62227503309e6a1505b21ffc4c6efb6b579592faec87e526d5ecf",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    },
+    {
+      "path": "TREEVIEW.md",
+      "bytes": 3061,
+      "sha256": "2925eb39ac8fc414fc3e19f22e1729f70eaa0a1ee156c5b9be0c7d247dd1b27e",
+      "extension": ".md",
+      "mediaClass": "TEXT_OR_STRUCTURED",
+      "sourceAuthorityRole": "SECONDARY_MIXED_ORIGIN_DERIVED_SYNTHESIS"
+    }
+  ]
+}
