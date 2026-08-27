@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eacq_fv_mv2_dispatched_awaiting_worker_return",
-  "previousMode": "eacq_fv_mv1_closed_pass_bounded_pending_operator_value_gate",
+  "currentMode": "eacq_fv_mv2_closed_pass_bounded_pending_effectiveness_evidence_gate",
+  "previousMode": "eacq_fv_mv2_dispatched_awaiting_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "EACQ-FV-MV2 dispatch is committed at 437d59a48 after the serious, source-backed, non-duplicate, value-exceeds-time/latency/quota gate; pre-dispatch passed 79/79 and pre-commit passed 87/87. The selected lane enriches the existing strict task capsule with four context groups and an explicit offline pinned-not-live-verified creation path. Next allowed move is delegated worker execution of the exact six-path WORKER_MUST_NOT_COMMIT order followed by independent semantic review. MV-3 remains parked until capsule-enhanced comparison evidence exists. UAA-G1/G2/G3, provider/live calls, external packet-folder mutation, public sync, deploy, push, secrets, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-MV2 is independently accepted CLOSED_PASS_BOUNDED at material commit 5826b33ae and closure commit 162902211 after reviewer repair of unsafe repo-relative path validation and legacy-route dependency widening. Final evidence is 47/47 focused tests, PowerShell syntax PASS, worker-return/reviewer-fast PASS, and material/closure pre-commit 87/87. Next allowed move is operator selection of stop or authorization of one bounded capsule-enhanced comparable external coding task to collect first-return repair, owner-overlap, boundary, negative-test, latency, and context-size evidence. MV-3 remains parked until that evidence changes its value decision. UAA-G1/G2/G3, provider/live calls, external packet-folder mutation, public sync, deploy, push, secrets, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",

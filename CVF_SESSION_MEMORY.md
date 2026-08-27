@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_mv2_dispatched_awaiting_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=delegated worker executes the committed MV-2 six-path no-commit order and returns for independent review; parked checkpoint=MV-3, UAA-G1/G2/G3, automatic successors, provider/live, public sync, deployment, push and secrets.
+Startup acknowledged: current mode=`eacq_fv_mv2_closed_pass_bounded_pending_effectiveness_evidence_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator may stop or authorize one bounded capsule-enhanced comparable external coding task to collect effectiveness evidence; parked checkpoint=MV-3 until evidence exists, UAA-G1/G2/G3, provider/live, public sync, deployment, push and secrets.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_mv2_dispatched_awaiting_worker_return`
-Current mode: `eacq_fv_mv2_dispatched_awaiting_worker_return`; previous mode marker: `eacq_fv_mv1_closed_pass_bounded_pending_operator_value_gate`
-Previous mode: `eacq_fv_mv1_closed_pass_bounded_pending_operator_value_gate`
+Current mode marker: `eacq_fv_mv2_closed_pass_bounded_pending_effectiveness_evidence_gate`
+Current mode: `eacq_fv_mv2_closed_pass_bounded_pending_effectiveness_evidence_gate`; previous mode marker: `eacq_fv_mv2_dispatched_awaiting_worker_return`
+Previous mode: `eacq_fv_mv2_dispatched_awaiting_worker_return`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_mv2_dispatched_awaiting_worker_return`. EACQ-FV-MV2 dispatch is committed at `437d59a48` after the serious, source-backed, non-duplicate, value-exceeds-cost gate; pre-dispatch passed 79/79 and pre-commit passed 87/87. Next: delegated worker executes exactly the six-path `WORKER_MUST_NOT_COMMIT` order and returns for independent review. MV-3 remains parked until capsule-enhanced comparison evidence exists. Keep UAA, provider/live, external packet-folder mutation, public sync, deploy, push, secrets, and unrelated work parked.
+Mode: `eacq_fv_mv2_closed_pass_bounded_pending_effectiveness_evidence_gate`. EACQ-FV-MV2 is independently accepted at material commit `5826b33ae` and closure commit `162902211` after two bounded reviewer repairs. Final evidence is 47/47 focused tests, PowerShell syntax PASS, worker-return/reviewer-fast PASS, and material/closure pre-commit 87/87. Next: operator may stop or authorize one bounded capsule-enhanced comparable external coding task to collect effectiveness evidence. MV-3 remains parked until that evidence changes the value decision. Keep UAA, provider/live, external packet-folder mutation, public sync, deploy, push, secrets, and unrelated work parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
