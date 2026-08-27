@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eacq_fv_l1_dispatched_pending_no_commit_worker_return",
-  "previousMode": "eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate",
+  "currentMode": "eacq_fv_l1_material_accepted_pending_completion_review",
+  "previousMode": "eacq_fv_l1_dispatched_pending_no_commit_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "EACQ-FV-L1 passed the fresh value gate because the same stale pre-closure dispatch-base command failed in MV-1, MV-2, and EV-1 while the rule and runtime owner already existed but pre-dispatch prevention did not. The exact three-artifact dispatch packet is committed at 9e7a0b035 after pre-implementation and pre-dispatch PASS. Next allowed move is operator manual copy/paste of the committed L1 work order to one WORKER_MUST_NOT_COMMIT implementation worker. The worker modifies only the dispatch-quality range module, creates the focused test and worker return, captures executionBaseHead from the final session-sync HEAD, leaves staging empty, and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Reviewer alone commits accepted material and runs pre-closure on the exact material range. MV-3, UAA, provider/live, public sync, deploy, push, secrets, runtime-owner changes, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-L1 material is independently accepted at 573fe1707 after two reviewer-found MEDIUM correctness repairs: inline-code HEAD normalization and top-level dispatch-base precedence over unrelated historical inline bindings. Evidence: 16/16 focused tests, 158/158 dispatch-quality regressions, worker-return/reviewer-fast PASS, pre-commit 87/87, and exact three-path manifest. The range module has a disclosed soft-size advisory but no policy violation. Next allowed move is reviewer completion review, work-order closure conversion, exact material-range pre-closure rerun after this continuity sync, closure commit, and final session sync only. MV-3, UAA, provider/live, public sync, deploy, push, secrets, autorun/runtime-owner changes, automatic compaction work, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",

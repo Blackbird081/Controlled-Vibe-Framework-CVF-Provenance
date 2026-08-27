@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_l1_dispatched_pending_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator sends the committed L1 work order to one no-commit worker; parked checkpoint=review/commit, MV-3, UAA, provider/live, public sync, deployment, push and secrets.
+Startup acknowledged: current mode=`eacq_fv_l1_material_accepted_pending_completion_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=reviewer closure conversion and exact material-range proof only; parked checkpoint=MV-3, UAA, provider/live, public sync, deployment, push and secrets.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_l1_dispatched_pending_no_commit_worker_return`
-Current mode: `eacq_fv_l1_dispatched_pending_no_commit_worker_return`; previous mode marker: `eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`
-Previous mode: `eacq_fv_ev1_closed_pass_bounded_promising_noncausal_pending_next_value_gate`
+Current mode marker: `eacq_fv_l1_material_accepted_pending_completion_review`
+Current mode: `eacq_fv_l1_material_accepted_pending_completion_review`; previous mode marker: `eacq_fv_l1_dispatched_pending_no_commit_worker_return`
+Previous mode: `eacq_fv_l1_dispatched_pending_no_commit_worker_return`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_l1_dispatched_pending_no_commit_worker_return`. The repeated MV-1/MV-2/EV-1 stale-base finding passed the fresh value gate and the exact L1 baseline/work-order/capsule packet is committed at `9e7a0b035`; pre-implementation and pre-dispatch gates pass. Next: operator manually sends the committed L1 work order to one no-commit worker. Worker scope is exactly the dispatch-quality range module, one focused test, and one return; execution starts from the final session-sync HEAD, staging stays empty, and reviewer alone commits accepted material and runs exact material-range pre-closure. Keep MV-3, UAA, provider/live, public sync, deploy, push, secrets, runtime-owner changes, and unrelated work parked.
+Mode: `eacq_fv_l1_material_accepted_pending_completion_review`. L1 material is accepted at `573fe1707` after two reviewer-found MEDIUM repairs. Evidence: 16/16 focused, 158/158 family regression, worker-return/reviewer-fast PASS, pre-commit 87/87, exact three paths. Next: completion review, work-order closure conversion, exact material-range pre-closure rerun, closure commit, and final continuity sync only. The range-module soft-size advisory is disclosed and does not open compaction. Keep MV-3, UAA, provider/live, public sync, deploy, push, secrets, runtime-owner changes, and unrelated work parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
