@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`mpa_ai_t0_closed_stop_no_new_value`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap selection only; parked checkpoint=memory-poisoning utility benchmark, automatic successor roadmap, deployment, secrets and providers.
+Startup acknowledged: current mode=`eacq_fv_roadmap_proposed_pending_external_adversarial_review`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=design-only external adversarial critique of EACQ-FV; parked checkpoint=implementation, UAA-G1/G2/G3 execution, public sync, deployment, secrets and providers.
 
 ## Current Mode
 
-Current mode marker: `mpa_ai_t0_closed_stop_no_new_value`
-Current mode: `mpa_ai_t0_closed_stop_no_new_value`; previous mode marker: `mpa_ai_t0_dispatched_pending_worker_return`
-Previous mode: `pprr_r1_closed_pass_bounded`
+Current mode marker: `eacq_fv_roadmap_proposed_pending_external_adversarial_review`
+Current mode: `eacq_fv_roadmap_proposed_pending_external_adversarial_review`; previous mode marker: `mpa_ai_t0_closed_stop_no_new_value`
+Previous mode: `mpa_ai_t0_closed_stop_no_new_value`
 
 ## Next Allowed Move
 
-Mode: `mpa_ai_t0_closed_stop_no_new_value`. MPA-AI-T0 classified all 50 files and closed `STOP_NO_NEW_VALUE`: the serious memory-to-prompt risk is source-confirmed but duplicates EAFR/Memory/Truth ownership; the eight-file utility benchmark remains demand-gated and unrun. Next: operator may select another fresh value-gated roadmap or source intake. Reopen this lane only for a distinct current consumer/deployment finding outside prior coverage, or a named benchmark owner with workload, rubric, budget, and value exceeding time, latency and quota cost. Do not implement, call providers, sync public surfaces, deploy, or access secrets automatically.
+Mode: `eacq_fv_roadmap_proposed_pending_external_adversarial_review`. EACQ-FV is proposed at `0da3b4c4d252652db1862a1f276be36ffc15c04c`; the MPA utility cluster is now preserved in the conditional reopen index as `DEFERRED_HIGH_POTENTIAL_FORWARD_SIGNAL`. Next: the operator-selected external reviewer (currently Claude; normative role `external reviewer`) performs design-only adversarial critique and returns source-backed finding dispositions for operator decision. Do not implement R1+, mutate task-capsule/schema/generator/checkers, execute UAA-G1/G2/G3, call providers, sync public surfaces, deploy, or access secrets.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
