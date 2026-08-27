@@ -1,5 +1,5 @@
 {
   "stateOrder": 2379,
   "stateKey": "nextAllowedMove",
-  "value": "AGTR-R1 is terminally CLOSED_PASS_BOUNDED. Private material commit 25bd8647069c8be3a944f330af1d77a1ca5ecdeb, private closure commit e536e1059 and public SHA af957e279a8118b152d957a29f5731c6304a86bf are accepted; all eight exact-SHA hosted runs across seven relevant workflows passed. Select the next roadmap only through fresh source verification and tranche-value admission from already parked evidence. Do not create AGTR-R2 automatically. PR merge and deployment remain explicit operator checkpoints. No secret or provider use is authorized. Latest finalized numbered LHW wave remains LHW24."
+  "value": "AGTR-R1 is terminally CLOSED_PASS_BOUNDED. Private material commit 25bd8647069c8be3a944f330af1d77a1ca5ecdeb, private closure e536e1059, corrective evidence 43374a138 and public SHA af957e279a8118b152d957a29f5731c6304a86bf are accepted; all eight exact-SHA hosted runs across seven relevant workflows passed. Select the next roadmap only through fresh source verification and tranche-value admission from already parked evidence. Do not create AGTR-R2 automatically. PR merge and deployment remain explicit operator checkpoints. No secret or provider use is authorized. Latest finalized numbered LHW wave remains LHW24."
 }

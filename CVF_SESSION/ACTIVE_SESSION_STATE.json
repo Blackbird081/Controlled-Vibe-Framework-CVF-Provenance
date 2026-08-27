@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "AGTR-R1 is terminally CLOSED_PASS_BOUNDED. Private material commit 25bd8647069c8be3a944f330af1d77a1ca5ecdeb, private closure commit e536e1059 and public SHA af957e279a8118b152d957a29f5731c6304a86bf are accepted; all eight exact-SHA hosted runs across seven relevant workflows passed. Select the next roadmap only through fresh source verification and tranche-value admission from already parked evidence. Do not create AGTR-R2 automatically. PR merge and deployment remain explicit operator checkpoints. No secret or provider use is authorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "AGTR-R1 is terminally CLOSED_PASS_BOUNDED. Private material commit 25bd8647069c8be3a944f330af1d77a1ca5ecdeb, private closure e536e1059, corrective evidence 43374a138 and public SHA af957e279a8118b152d957a29f5731c6304a86bf are accepted; all eight exact-SHA hosted runs across seven relevant workflows passed. Select the next roadmap only through fresh source verification and tranche-value admission from already parked evidence. Do not create AGTR-R2 automatically. PR merge and deployment remain explicit operator checkpoints. No secret or provider use is authorized. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15369,6 +15369,7 @@
     "publicExecutionBase": "d27d3db261404e8f594f130702ca7ef2c86a0ee7",
     "materialCommit": "25bd8647069c8be3a944f330af1d77a1ca5ecdeb",
     "closureCommit": "e536e1059",
+    "correctiveEvidenceCommit": "43374a138",
     "publicCommit": "af957e279a8118b152d957a29f5731c6304a86bf",
     "workerReturn": "docs/reviews/CVF_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_WORKER_RETURN_2026-08-27.md",
     "completionReview": "docs/reviews/CVF_AGTR_R1_AGENT_SKILL_REGISTRY_STRUCTURAL_RECONCILIATION_COMPLETION_2026-08-27.md",

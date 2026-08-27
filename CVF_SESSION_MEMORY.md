@@ -52,7 +52,7 @@ Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `agtr_r1_closed_pass_bounded`. AGTR-R1 closed at private material `25bd86470`, private closure `e536e1059`, and public `af957e27`; all eight exact-SHA hosted runs passed. Select the next roadmap only through fresh source verification and tranche-value admission from parked evidence. Do not create AGTR-R2 automatically. PR merge, deployment, secrets and providers remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `agtr_r1_closed_pass_bounded`. AGTR-R1 closed at private material `25bd86470`, private closure `e536e1059`, corrective evidence `43374a138`, and public `af957e27`; all eight exact-SHA hosted runs passed. Select the next roadmap only through fresh source verification and tranche-value admission from parked evidence. Do not create AGTR-R2 automatically. PR merge, deployment, secrets and providers remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

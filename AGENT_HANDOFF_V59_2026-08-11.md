@@ -169,7 +169,7 @@ Continuity parent anchor: `92c96a04d`.
 
 ## Next Allowed Move
 
-AGTR-R1 is terminally `CLOSED_PASS_BOUNDED`: private material commit `25bd8647069c8be3a944f330af1d77a1ca5ecdeb`, private closure commit `e536e1059`, public commit `af957e279a8118b152d957a29f5731c6304a86bf`, and all eight exact-SHA hosted runs passed. Select the next roadmap only through fresh source verification and tranche-value admission from parked evidence. No automatic AGTR-R2. PR merge, deploy, secrets and providers remain forbidden. Latest finalized numbered LHW wave remains LHW24.
+AGTR-R1 is terminally `CLOSED_PASS_BOUNDED`: private material commit `25bd8647069c8be3a944f330af1d77a1ca5ecdeb`, private closure `e536e1059`, corrective evidence commit `43374a138`, public commit `af957e279a8118b152d957a29f5731c6304a86bf`, and all eight exact-SHA hosted runs passed. Select the next roadmap only through fresh source verification and tranche-value admission from parked evidence. No automatic AGTR-R2. PR merge, deploy, secrets and providers remain forbidden. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -217,4 +217,4 @@ Not authorized: validator/index/workflow/source-skill/product mutation, arbitrar
 
 ## Claim Boundary
 
-This handoff records terminal AGTR-R1 bounded closure at private closure commit `e536e1059`. It authorizes no arbitrary registry action, validator/index/workflow/source-skill/product change, secret/provider/live action, PR merge, deploy, production claim, automatic AGTR-R2 or unrelated parked lane.
+This handoff records terminal AGTR-R1 bounded closure through corrective evidence commit `43374a138`. It authorizes no arbitrary registry action, validator/index/workflow/source-skill/product change, secret/provider/live action, PR merge, deploy, production claim, automatic AGTR-R2 or unrelated parked lane.
