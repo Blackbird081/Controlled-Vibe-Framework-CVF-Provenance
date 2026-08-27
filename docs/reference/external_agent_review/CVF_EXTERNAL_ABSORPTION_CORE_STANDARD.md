@@ -296,6 +296,62 @@ closes the CGE-R1 lesson where a worker repaired gate-shape failures but still
 left 16 value-bearing template, example, and schema files parked until reviewer
 repair.
 
+### Forward-Value Delta
+
+Maturity, authorization, and terminal ledger status answer whether a source
+was accepted now. They do not answer whether the underlying idea would have
+been valuable to have earlier, or whether losing it later would cost more
+than preserving it now. The reviewer must apply the following two questions,
+one deterministic selection rule, and two secondary dispositions in addition
+to the bullets above, not instead of them.
+
+Required forward-value questions:
+
+- counterfactual acceleration: if the idea had been available earlier, would
+  source-backed evidence show it avoided later CVF design, test, or review
+  work?
+- option value: is the evidence-backed cost of losing the idea materially
+  larger than the bounded cost of parking it?
+
+Deterministic selection (no discretionary sampling): review every `DEFERRED`
+semantic group; also review every `NO_NEW_VALUE` or `REJECTED` semantic group
+that either lacks a cited owner path or contains at least five ledger rows.
+Process stable semantic-group IDs in ascending order.
+
+Secondary dispositions, applied only to groups selected above:
+
+- `FORWARD_VALUE_PRESERVED` only when a current conditional-reopen index row
+  names an owner and a conjunctive evidence trigger for that group;
+- `NO_FORWARD_VALUE` only when an exact existing owner or a source-backed
+  reason proves no reusable CVF-native value remains.
+
+A secondary disposition does not replace the terminal ledger status recorded
+above, and it does not by itself grant maturity, authority, runtime, or
+implementation readiness. `FORWARD_VALUE_PRESERVED` keeps a candidate visible
+in the conditional reopen index only; it opens no gate, checker, package, or
+runtime work on its own.
+
+Examples:
+
+- positive - the MPA-AI-T0 eight-file utility-under-attack cluster is
+  `DEFERRED` and carries the conditional reopen index row
+  `MPA-AI-utility-under-attack-evaluation-precursor`
+  (`docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`),
+  which names the EACQ-FV roadmap as the current owner route and makes
+  acceptance by a future named evaluation owner one part of a three-part
+  conjunctive reopen trigger for UAA-G1. Both forward-value questions have
+  source-backed answers, so the group receives `FORWARD_VALUE_PRESERVED`;
+  the group's terminal ledger status stays `DEFERRED`, and no UAA gate opens
+  from this disposition alone.
+- negative - the MPA-AI-T0 file ledger's nine-row
+  `TRACEABILITY_REFERENCE_NOT_COPY_OVERLAP` semantic group has terminal
+  status `NO_NEW_VALUE`; every row cites the exact owner
+  `docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md`
+  and records no uncovered consumer or reusable delta. The group is selected
+  because it contains at least five ledger rows, receives `NO_FORWARD_VALUE`,
+  and remains outside the conditional reopen index. Evidence:
+  `docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_FILE_LEDGER_2026-08-27.json`.
+
 ## Machine Guard
 
 Machine guards:
