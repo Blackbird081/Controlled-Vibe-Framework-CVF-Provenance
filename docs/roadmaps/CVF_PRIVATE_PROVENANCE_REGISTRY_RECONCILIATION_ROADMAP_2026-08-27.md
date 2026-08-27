@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: ACTIVE_R1_ONLY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-08-27
 
@@ -153,6 +153,42 @@ bounded acceptance and private materialization. No PPRR-R2 is implied.
 This roadmap authorizes one private generated-owner reconciliation candidate.
 It does not authorize public mutation, semantic authority changes, runtime,
 provider, merge, deployment or successor work.
+
+## Closure Evidence
+
+- Independent review accepted the reconciliation at private material commit
+  `9cfdc6af838fcf3818c075f84df1be3faf5183e5`.
+- Final registry truth is 62 user, 34 agent, and 62 source skills; the
+  unchanged validator passes.
+- Focused generator tests pass 10/10; generator check reports 62 unchanged,
+  zero add/update/delete, and unchanged index.
+- Reviewer repair added one deterministic local encoding-exception marker.
+  After removing that marker, all 62 records plus index match public source
+  (63/63); generator and test are the only two `ADAPTED_WITH_REASON` files.
+- Worker-return fast gate passed, reviewer-fast passed 66/66, and material
+  pre-commit passed 87/87.
+- Public clone remained clean and unchanged; no provider, secret, push,
+  deployment, merge, or Netlify action occurred.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_2026-08-27.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_WORKER_RETURN_2026-08-27.md` | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`; material `9cfdc6af838fcf3818c075f84df1be3faf5183e5` | PASS |
+| Roadmap state | this roadmap | `CLOSED_PASS_BOUNDED`; no PPRR-R2 | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | PPRR-R1 closed evidence and fresh value-gated next move | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md` | `pprr_r1_closed_pass_bounded` | PASS |
+| External evidence digest | N/A with reason: private-only local reconciliation | public clone unchanged at `af957e279a8118b152d957a29f5731c6304a86bf` | N/A WITH REASON |
+| System loop interlock | one-tranche cap | terminal close; automatic PPRR-R2 forbidden | PASS |
+| Session continuity | bootstrap, state sources, aggregate, front door, handoff | `pprr_r1_closed_pass_bounded` | PASS |
+
+## Final Next Allowed Move
+
+PPRR-R1 is terminally closed. Select a fresh roadmap only from a serious,
+source-backed, non-duplicate finding whose expected value exceeds its
+time/latency/quota cost. Do not create PPRR-R2 automatically. PR merge and
+deployment remain explicit operator checkpoints.
 
 ## Checker Source Read-Ahead Block
 

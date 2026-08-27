@@ -2,17 +2,20 @@
   "stateOrder": 2382,
   "stateKey": "pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827",
   "value": {
-    "status": "PPRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
+    "status": "REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED",
     "roadmap": "docs/roadmaps/CVF_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_ROADMAP_2026-08-27.md",
     "baseline": "docs/baselines/CVF_GC018_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_2026-08-27.md",
-    "baselineSha256": "ad1e9ca2684f5d99ef4945cd9035da447c20cde6b7b220cbfd6446fbc35e1313",
+    "baselineSha256": "c87c3c95f568439b922544c5dbc1f245ee734ab35e76c38dfb7abc5bbf0455dc",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_2026-08-27.md",
-    "workOrderSha256": "a94b2f5a0834c98b9c22e64561220954c69dde3d57b317801fce8f1a00afb716",
+    "workOrderSha256": "4a691bc2dc336ca7ddba33d93c041293c0eea87e2f0721a9ae4dfbc3239f3a6d",
     "dispatchCommit": "bf7946c815a86e848af1532eb7586f31af33bef9",
     "privateExecutionBase": "91fff28bb72235489aafe95883385efe761962de",
     "publicReadOnlySource": "af957e279a8118b152d957a29f5731c6304a86bf",
-    "evidence": "Both repositories expose the identical 62-path source-skill manifest. Private has 335 generated USR records, the old generator, no focused test and a failing unchanged validator; accepted public has 62 records, the repaired generator/test and a passing unchanged validator.",
+    "materialCommit": "9cfdc6af838fcf3818c075f84df1be3faf5183e5",
+    "workerReturn": "docs/reviews/CVF_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_WORKER_RETURN_2026-08-27.md",
+    "completionReview": "docs/reviews/CVF_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_COMPLETION_2026-08-27.md",
+    "evidence": "Independent review accepted 62 user, 34 agent and 62 source registry truth; focused tests pass 10/10, generator check is drift-free, worker-return fast and reviewer-fast pass, material pre-commit passes 87/87. A deterministic private encoding-exception marker yields normalized generated-data parity 63/63; generator and test are ADAPTED_WITH_REASON. Public remains clean and unchanged.",
     "workerBoundary": "One no-commit worker may change only the private generator, focused test, generated USR family/index and named return. Public is read-only. Deletion is limited to exact manifest-stale private USR records.",
-    "successorBoundary": "No automatic PPRR-R2. Independent reviewer owns acceptance and private materialization; public mutation, merge, deployment, secrets and providers remain forbidden."
+    "successorBoundary": "PPRR-R1 is terminally closed. No automatic PPRR-R2; select only a fresh serious, source-backed, non-duplicate, value-positive roadmap. Public mutation, merge, deployment, secrets and providers remain forbidden."
   }
 }

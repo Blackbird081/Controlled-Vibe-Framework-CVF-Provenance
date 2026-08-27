@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pprr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute one no-commit private registry provenance reconciliation; parked checkpoint=public mutation, commit, push, merge, deploy, PPRR-R2, secrets and providers.
+Startup acknowledged: current mode=`pprr_r1_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap selection only; parked checkpoint=automatic PPRR-R2, PR merge, deployment, secrets and providers.
 
 ## Current Mode
 
-Current mode marker: `pprr_r1_dispatched_pending_worker_return`
-Current mode: `pprr_r1_dispatched_pending_worker_return`; previous mode marker: `agtr_r1_closed_pass_bounded`
+Current mode marker: `pprr_r1_closed_pass_bounded`
+Current mode: `pprr_r1_closed_pass_bounded`; previous mode marker: `pprr_r1_dispatched_pending_worker_return`
 Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `pprr_r1_dispatched_pending_worker_return`. Execute PPRR-R1 at dispatch `bf7946c81` as one no-commit private generated-registry pass using read-only public SHA `af957e27`. Require identical 62-path sources, 65 exact owner hashes, full validator PASS and idempotence. Public mutation, commit/push, merge, deployment, PPRR-R2, secrets and providers remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `pprr_r1_closed_pass_bounded`. PPRR-R1 is accepted at private material commit `9cfdc6af8`: registry validator passes 62 user / 34 agent / 62 source, focused tests pass 10/10, generator is drift-free, and public remains unchanged. Select a fresh roadmap only for a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. No automatic PPRR-R2. PR merge and deployment remain explicit operator checkpoints. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

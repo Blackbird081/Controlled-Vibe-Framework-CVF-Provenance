@@ -1,4 +1,4 @@
-# CVF Agent Handoff V59 - AGTR-R1 Structural Reconciliation Dispatched
+# CVF Agent Handoff V59 - PPRR-R1 Closed Bounded
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
@@ -38,14 +38,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pprr_r1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute one no-commit private registry provenance reconciliation; parked checkpoint=public mutation, commit, push, merge, deploy, PPRR-R2, secrets and providers.
+Startup acknowledged: current mode=`pprr_r1_closed_pass_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh value-gated roadmap selection only; parked checkpoint=automatic PPRR-R2, PR merge, deployment, secrets and providers.
 
 ## Current Mode
-`pprr_r1_dispatched_pending_worker_return`
+`pprr_r1_closed_pass_bounded`
 
 ## Purpose
 
-Carry AGTR-R1 dispatch authority for one bounded no-commit repair of the fourteen mirrored AGT records while preserving their documented semantics.
+Carry terminal PPRR-R1 closure evidence and route the next action through a fresh value gate without reopening the registry family automatically.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -169,7 +169,7 @@ Continuity parent anchor: `92c96a04d`.
 
 ## Next Allowed Move
 
-Execute PPRR-R1 under dispatch commit `bf7946c815a86e848af1532eb7586f31af33bef9` as one no-commit private generated-registry reconciliation pass. Import exact accepted owner bytes from read-only public SHA `af957e279a8118b152d957a29f5731c6304a86bf`; delete only manifest-stale private USR records; require identical 62-path sources, 65-file hash parity, focused tests, generator check, idempotence and full unchanged validator PASS. No public mutation, commit, push, merge, deploy, PPRR-R2, secrets, providers or unrelated lane. Independent reviewer owns acceptance and materialization. Latest finalized numbered LHW wave remains LHW24.
+PPRR-R1 is independently accepted and closed bounded at material commit `9cfdc6af838fcf3818c075f84df1be3faf5183e5`. Registry validation passes 62 user / 34 agent / 62 source; focused tests pass 10/10; generator check is drift-free; public remains clean at `af957e279a8118b152d957a29f5731c6304a86bf`. Select a fresh roadmap only for a serious, source-backed, non-duplicate finding whose value exceeds time, latency and quota cost. Do not create PPRR-R2 automatically. PR merge and deployment remain explicit operator checkpoints. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -200,9 +200,9 @@ Public-sync branch: `pcit-r1-public-ci-truthfulness`.
 Public-sync commit: `af957e279a8118b152d957a29f5731c6304a86bf`.
 Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry records; branch export only, not merge, deploy or public-main readiness. Exact-SHA hosted runs `33058250461`, `33058254795`, `33058254845`, `33058254830`, `33058254860`, `33058254846`, `33058254884`, and `33058254898` all passed.
 
-## Core Guard Self-Protection Authorization - PPRR-R1 Dispatch Continuity
+## Core Guard Self-Protection Authorization - PPRR-R1 Closure Continuity
 
-Authorized guard-maintenance scope: bind committed PPRR-R1 authority hashes, dispatched mode, exact no-commit next move and no-automatic-successor boundary.
+Authorized guard-maintenance scope: bind closed PPRR-R1 authority hashes, material evidence, closed mode, value-gated next move and no-automatic-successor boundary.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -211,10 +211,10 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator instructed continuation and standing high-value-finding authority admits this single bounded private registry lane; continuity sync is mandatory after dispatch.
-Rollback boundary: revert the exact PPRR-R1 continuity manifest atomically; retain committed dispatch and prior PSRR/AGTR evidence.
+Operator authorization: standing reviewer/closer authority covers closure continuity after the accepted single bounded private registry lane.
+Rollback boundary: revert only this closure-continuity commit atomically; retain material commit, dispatch and prior PSRR/AGTR evidence.
 Not authorized: validator/cleaner/source-skill/AGT/workflow/product mutation, arbitrary deletion, public mutation, PPRR-R2, worker commit, push, PR merge, deployment, secret-value access, provider/live calls or unrelated work.
 
 ## Claim Boundary
 
-This handoff records PPRR-R1 dispatch only at `bf7946c815a86e848af1532eb7586f31af33bef9`. It authorizes one no-commit private generated-owner candidate and named return, with no arbitrary deletion, public mutation, validator/cleaner/source-skill/AGT/workflow/product change, secret/provider/live action, commit, push, PR merge, deploy, production claim, PPRR-R2 or unrelated lane.
+This handoff records PPRR-R1 terminal closure at material commit `9cfdc6af838fcf3818c075f84df1be3faf5183e5`. It authorizes no further PPRR implementation, arbitrary deletion, public mutation, validator/cleaner/source-skill/AGT/workflow/product change, secret/provider/live action, push, PR merge, deploy, production claim, automatic PPRR-R2 or unrelated lane.

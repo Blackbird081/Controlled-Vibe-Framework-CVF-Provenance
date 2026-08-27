@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-return
 
-Status: REVIEWER_REPAIR_IN_PROGRESS
+Status: REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED
 
 Text Encoding Exception: preserves source-faithful Unicode evidence and paths.
 
@@ -246,7 +246,7 @@ final state:
 (empty)
 ```
 
-## Changed Files
+## Worker Execution Manifest (Historical)
 
 Overwritten (already tracked, byte content replaced — 8 files):
 - `governance/skill-library/registry/generate_user_skills.py`
@@ -459,7 +459,21 @@ fully green registry validator (62 user, 34 agent, 62 source). Public status is
 empty; both staging areas remain empty. No provider, secret, push, deploy, or
 public mutation occurred.
 
-Reviewer disposition: `ACCEPT_PENDING_MATERIAL_COMMIT`.
+Reviewer disposition: `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at material
+commit `9cfdc6af838fcf3818c075f84df1be3faf5183e5`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_2026-08-27.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | this worker return and reviewer addendum | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`; material `9cfdc6af838fcf3818c075f84df1be3faf5183e5` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_ROADMAP_2026-08-27.md` | terminal one-tranche close | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | PPRR-R1 closed entry | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md` | closed mode and value-gated next move | PASS |
+| External evidence digest | N/A with reason: private-only local reconciliation | public clone clean at `af957e279a8118b152d957a29f5731c6304a86bf` | N/A WITH REASON |
+| System loop interlock | PPRR one-tranche cap | terminal close; no automatic PPRR-R2 | PASS |
+| Session continuity | bootstrap, state sources, aggregate, front door, handoff | `pprr_r1_closed_pass_bounded` | PASS |
 
 ## Worker Experience Retrospective
 

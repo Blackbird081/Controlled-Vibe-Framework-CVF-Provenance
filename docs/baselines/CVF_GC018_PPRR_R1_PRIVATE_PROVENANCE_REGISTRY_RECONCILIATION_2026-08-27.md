@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 
-Status: ACTIVE_GC018
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: PPRR-R1
 
@@ -174,3 +174,26 @@ clean-state evidence, no-commit mode, reviewer independence and no successor.
 This baseline authorizes one private, Git-reversible generated-owner candidate.
 It grants no public write, source-skill change, semantic rewrite, provider,
 runtime, merge, deployment or successor authority.
+
+## Closure Evidence
+
+Independent reviewer accepted private material commit
+`9cfdc6af838fcf3818c075f84df1be3faf5183e5`. The unchanged registry validator
+passes at 62 user, 34 agent, and 62 source skills. Focused tests pass 10/10,
+generator check is drift-free, and the public clone remains unchanged. The
+private encoding exception is a bounded `ADAPTED_WITH_REASON` delta: normalized
+generated data parity is 63/63, while generator and test retain explicit local
+markers. All material pre-commit checks passed 87/87.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_2026-08-27.md` | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_PPRR_R1_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_WORKER_RETURN_2026-08-27.md` | accepted material `9cfdc6af838fcf3818c075f84df1be3faf5183e5` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_PRIVATE_PROVENANCE_REGISTRY_RECONCILIATION_ROADMAP_2026-08-27.md` | terminal one-tranche close | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | closed PPRR-R1 evidence | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md` | closed mode | PASS |
+| External evidence digest | N/A with reason: private-only local reconciliation | public source SHA unchanged | N/A WITH REASON |
+| System loop interlock | PPRR cap one | no automatic PPRR-R2 | PASS |
+| Session continuity | bootstrap, state sources, aggregate, front door, handoff | `pprr_r1_closed_pass_bounded` | PASS |

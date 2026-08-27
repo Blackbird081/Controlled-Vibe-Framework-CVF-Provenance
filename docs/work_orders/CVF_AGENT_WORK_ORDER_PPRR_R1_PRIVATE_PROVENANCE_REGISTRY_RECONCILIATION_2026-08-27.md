@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: APPROVED_FOR_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: PPRR-R1
 
@@ -189,14 +189,14 @@ checks and verify empty staging before committing private material.
 
 ## Closure Checklist
 
-- [ ] dual repository preflight and exact anchors recorded
-- [ ] 62-path source-name manifest MATCH
-- [ ] exact 65-file accepted-owner hash manifest MATCH
-- [ ] private full unchanged validator PASS
-- [ ] focused tests, check and idempotence PASS
-- [ ] exact changed/deleted manifest inside ownership
-- [ ] worker return fast gate PASS
-- [ ] no commit, staging, public mutation, provider, secret, merge or deploy
+- [x] dual repository preflight and exact anchors recorded
+- [x] 62-path source-name manifest MATCH
+- [x] exact 65-file accepted-owner hash manifest MATCH at worker copy boundary; final private encoding adaptation disclosed
+- [x] private full unchanged validator PASS
+- [x] focused tests, check and idempotence PASS
+- [x] exact changed/deleted manifest inside ownership
+- [x] worker return fast gate PASS
+- [x] no worker commit, staging, public mutation, provider, secret, merge or deploy
 
 ## Return-To-Orchestrator Conditions
 
@@ -495,3 +495,38 @@ Reviewer alone owns material commit and later session-sync commit.
 
 This work order authorizes one no-commit PPRR-R1 candidate only. It grants no
 semantic, public, runtime, provider, merge, deployment or successor authority.
+
+## Reviewer Closure Conversion
+
+Reviewer verdict: `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`.
+
+Material commit: `9cfdc6af838fcf3818c075f84df1be3faf5183e5`.
+
+The worker's no-commit boundary was honored. Independent review reproduced
+registry, test, drift, idempotence, public-cleanliness, and staging evidence;
+repaired the governed packet shape; and added the minimal local encoding
+exception required by the private changed-file guard. No second tranche was
+opened.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | named worker return | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | governed PPRR roadmap | terminal close; no PPRR-R2 | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | closed PPRR-R1 entry | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; active handoff | closed mode and next move | PASS |
+| External evidence digest | N/A with reason: private-only local reconciliation | public clone clean at `af957e279a8118b152d957a29f5731c6304a86bf` | N/A WITH REASON |
+| System loop interlock | one-tranche cap | automatic successor forbidden | PASS |
+| Session continuity | bootstrap, source entries, aggregate, front door, handoff | `pprr_r1_closed_pass_bounded` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| private registry validator | PASS | 62 user / 34 agent / 62 source | PASS |
+| deterministic generator | zero drift | 62 unchanged; index unchanged | PASS |
+| focused regression | PASS | 10/10 | PASS |
+| material receipt | reviewer-owned commit | `9cfdc6af838fcf3818c075f84df1be3faf5183e5` | PASS |
+| public boundary | unchanged | clean at accepted source SHA | PASS |
