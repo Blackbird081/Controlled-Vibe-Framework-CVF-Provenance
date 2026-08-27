@@ -2,7 +2,7 @@
   "stateOrder": 2378,
   "stateKey": "pcitR1PublicCiTruthfulnessDispatched20260827",
   "value": {
-    "status": "SCOPE_AMENDMENT_APPROVED_PENDING_DISPATCH",
+    "status": "SA1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_ROADMAP_2026-08-27.md",
     "baseline": "docs/baselines/CVF_GC018_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
     "baselineSha256": "d2567db99d9d1695f1909fb2f46a72ed69814a51083fc8349bd855a3b8cd2ee2",
@@ -14,6 +14,9 @@
     "workerBoundary": "One no-commit worker may edit only the four named public workflows, the static CI runner and its focused test, plus the named private worker return.",
     "reviewerBoundary": "Reviewer accepted the five-path candidate at public commit 910665e62, but PR 4 remains unmerged after hosted proof exposed documentation-testing.yml outside the original allowlist.",
     "proof": "Reviewer evidence commit 92ae3460a records local 8/8 proof, public preflight success, exact-SHA PR run 33036642522 and the out-of-scope public/private corpus mismatch. No production merge, secret read or provider call occurred.",
-    "successorBoundary": "Operator approved one same-roadmap PCIT-R1-SA1 amendment for documentation-testing.yml only. No automatic R2 or additional owner surface is authorized."
+    "scopeAmendmentDispatch": "8da22aafd",
+    "scopeAmendmentBaseline": "docs/baselines/CVF_GC018_PCIT_R1_SA1_DOCUMENTATION_TESTING_PUBLIC_BOUNDARY_2026-08-27.md",
+    "scopeAmendmentWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_SA1_DOCUMENTATION_TESTING_PUBLIC_BOUNDARY_2026-08-27.md",
+    "successorBoundary": "Exactly one PCIT-R1-SA1 no-commit return is admitted for documentation-testing.yml. No automatic R2 or additional owner surface is authorized."
   }
 }

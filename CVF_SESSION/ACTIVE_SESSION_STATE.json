@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
-    "baselineSha256": "d2567db99d9d1695f1909fb2f46a72ed69814a51083fc8349bd855a3b8cd2ee2",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
-    "workOrderSha256": "c32d030b945aa84045a0ef9454a6d8e06b732811dc0d85bd95211c5bdfb2fb44"
+    "baselinePath": "docs/baselines/CVF_GC018_PCIT_R1_SA1_DOCUMENTATION_TESTING_PUBLIC_BOUNDARY_2026-08-27.md",
+    "baselineSha256": "c92d9514df81c5c33423a39193336f49c00ac5381d0b649ea9651eac5682c356",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_SA1_DOCUMENTATION_TESTING_PUBLIC_BOUNDARY_2026-08-27.md",
+    "workOrderSha256": "494fd55f024fad454eb976a618b3f7becb2b71f751cb67238e6573ae97e7e265"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "pcit_r1_scope_amendment_approved_pending_dispatch",
-  "previousMode": "pcit_r1_dispatched_pending_worker_return",
+  "currentMode": "pcit_r1_sa1_dispatched_pending_worker_return",
+  "previousMode": "pcit_r1_scope_amendment_approved_pending_dispatch",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15319,7 +15319,7 @@
     "reviewerAmendment": "Amendment 1 recovered the 24-path provenance candidate. Amendment 2 rejects candidate 819d8acf after ten Web CI audit findings and authorizes one exact 36-path zero-audit dependency, provenance-bound HMAC-test, CI-contract, and bounded coverage-behavior correction inside the same terminal R3."
   },
   "pcitR1PublicCiTruthfulnessDispatched20260827": {
-    "status": "SCOPE_AMENDMENT_APPROVED_PENDING_DISPATCH",
+    "status": "SA1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_ROADMAP_2026-08-27.md",
     "baseline": "docs/baselines/CVF_GC018_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
     "baselineSha256": "d2567db99d9d1695f1909fb2f46a72ed69814a51083fc8349bd855a3b8cd2ee2",
@@ -15331,7 +15331,10 @@
     "workerBoundary": "One no-commit worker may edit only the four named public workflows, the static CI runner and its focused test, plus the named private worker return.",
     "reviewerBoundary": "Reviewer accepted the five-path candidate at public commit 910665e62, but PR 4 remains unmerged after hosted proof exposed documentation-testing.yml outside the original allowlist.",
     "proof": "Reviewer evidence commit 92ae3460a records local 8/8 proof, public preflight success, exact-SHA PR run 33036642522 and the out-of-scope public/private corpus mismatch. No production merge, secret read or provider call occurred.",
-    "successorBoundary": "Operator approved one same-roadmap PCIT-R1-SA1 amendment for documentation-testing.yml only. No automatic R2 or additional owner surface is authorized."
+    "scopeAmendmentDispatch": "8da22aafd",
+    "scopeAmendmentBaseline": "docs/baselines/CVF_GC018_PCIT_R1_SA1_DOCUMENTATION_TESTING_PUBLIC_BOUNDARY_2026-08-27.md",
+    "scopeAmendmentWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_SA1_DOCUMENTATION_TESTING_PUBLIC_BOUNDARY_2026-08-27.md",
+    "successorBoundary": "Exactly one PCIT-R1-SA1 no-commit return is admitted for documentation-testing.yml. No automatic R2 or additional owner surface is authorized."
   },
-  "nextAllowedMove": "Author and commit one PCIT-R1-SA1 scope-amendment dispatch for documentation-testing.yml only, then execute one no-commit worker return. PR 4 remains unmerged; public main remains unchanged. Product source, dependencies, secrets, providers, Netlify configuration, branch-policy bypass, R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24."
+  "nextAllowedMove": "Execute exactly one PCIT-R1-SA1 no-commit worker return under dispatch 8da22aafd. Public write ownership is documentation-testing.yml only; private write ownership is the named amendment return. PR 4 remains unmerged and public main unchanged. Additional owners, product/dependency changes, secrets, providers, branch-policy bypass, merge, R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24."
 }

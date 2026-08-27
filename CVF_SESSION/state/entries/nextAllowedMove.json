@@ -1,5 +1,5 @@
 {
   "stateOrder": 2379,
   "stateKey": "nextAllowedMove",
-  "value": "Author and commit one PCIT-R1-SA1 scope-amendment dispatch for documentation-testing.yml only, then execute one no-commit worker return. PR 4 remains unmerged; public main remains unchanged. Product source, dependencies, secrets, providers, Netlify configuration, branch-policy bypass, R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute exactly one PCIT-R1-SA1 no-commit worker return under dispatch 8da22aafd. Public write ownership is documentation-testing.yml only; private write ownership is the named amendment return. PR 4 remains unmerged and public main unchanged. Additional owners, product/dependency changes, secrets, providers, branch-policy bypass, merge, R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24."
 }
