@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eacq_fv_mv3_material_accepted_pending_closure",
+  "currentMode": "eacq_fv_mv3_closed_pass_bounded_pending_next_value_gate",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EACQ-FV-MV3 material is independently accepted at 6a9887196 after three bounded reviewer repairs. Focused tests 7/7, core guard, worker-return fast gate, reviewer-return commit-steward preflight, and material pre-commit 87/87 passed. Because material reviewer findings required repairs, author the named MV3 completion review, convert the work order and roadmap to bounded closure, and run committed-range pre-closure before a separate final session sync. The repeated dispatch-range/packet-shape finding remains a value-gated learning candidate only. UAA, provider/live, public sync, deploy, push, secrets, runtime-owner changes, compaction and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-MV3 is independently closed bounded at closure commit 7feda7966 with material 6a9887196 after three disclosed reviewer repairs. MV1, MV2 and MV3 are closed; no roadmap successor opens automatically. Apply the serious/source-backed/non-duplicate/value-exceeds-time-latency-quota gate before selecting any next candidate. UAA, the repeated dispatch-range/packet-shape learning candidate, the 751-line soft-size advisory, provider/live, public sync, deploy, push, secrets, runtime-owner changes, compaction and unrelated work remain parked pending fresh evidence and authority. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_MV3_FORWARD_VALUE_SEMANTIC_AUDIT_DELTA_2026-08-28.md",
     "baselineSha256": "427896369d85a6607ec88343a0ac453d5ee51d66160980f683539600086fb318",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV3_FORWARD_VALUE_SEMANTIC_AUDIT_DELTA_2026-08-28.md",
-    "workOrderSha256": "3fab19f1ac44d3329422ecee140540ad3c6727c25cea22b88e7d68f5a474d7c2"
+    "workOrderSha256": "87a9e3a28ab0f4fc7bced39f481eddf3a2200f5baf3217c169b0f65f3ae5d522"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_MV3_FORWARD_VALUE_SEMANTIC_AUDIT_DELTA_2026-08-28.md",
     "baselineSha256": "427896369d85a6607ec88343a0ac453d5ee51d66160980f683539600086fb318",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV3_FORWARD_VALUE_SEMANTIC_AUDIT_DELTA_2026-08-28.md",
-    "workOrderSha256": "3fab19f1ac44d3329422ecee140540ad3c6727c25cea22b88e7d68f5a474d7c2"
+    "workOrderSha256": "87a9e3a28ab0f4fc7bced39f481eddf3a2200f5baf3217c169b0f65f3ae5d522"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eacq_fv_mv3_material_accepted_pending_closure",
-  "previousMode": "eacq_fv_mv3_dispatched_pending_no_commit_worker_return",
+  "currentMode": "eacq_fv_mv3_closed_pass_bounded_pending_next_value_gate",
+  "previousMode": "eacq_fv_mv3_material_accepted_pending_closure",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
