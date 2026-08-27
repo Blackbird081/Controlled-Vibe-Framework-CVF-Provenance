@@ -269,12 +269,17 @@ write ownership (this named return file only).
 
 ## Public Export Disposition
 
-BLOCKED_MISSING_PUBLIC_ARTIFACTS
-
-Reason: the two amended test candidates are local and uncommitted in the
-public-sync clone; PR `#4` remains unmerged; no accepted exact-SHA hosted run
-of this candidate exists yet. Reviewer/closer owns commit, push, and hosted
-exact-SHA evaluation.
+Disposition: `EXPORTED`
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+Public-sync branch: `pcit-r1-public-ci-truthfulness`
+Public-sync commits: `94732b6f`, `8b9c4a67`, `86b1e728`
+Public artifact paths: the two named SDK/Web test files plus the SDK contract
+model and registry validator compatibility repairs recorded in the final
+reviewer addendum.
+Public catalog paths: N/A with reason: this is a bounded CI-truthfulness repair,
+not a public catalog change. PR `#4` remains unmerged because its required
+Documentation & Testing status correctly remains red on genuine parked
+registry debt; export of the branch is not a merge or release claim.
 
 ## External Knowledge Intake Routing
 
@@ -469,3 +474,52 @@ whitespace check PASS. The accepted two-file public candidate is committed at
 `94732b6f`; this addendum does not yet claim hosted success, merge, deployment
 or registry reconciliation. Registry disposition remains
 `PARK_CANONICAL_OWNER_NOT_PROVEN`, with no successor tranche opened.
+
+## Final Reviewer Hosted Proof And Disposition
+
+Final reviewer disposition: `CLOSED_PASS_BOUNDED_WITH_PARKED_REGISTRY_DEBT`
+
+The accepted public candidate was pushed to the public-sync branch and tested
+at exact SHA `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e`. During the first exact-SHA
+hosted evaluation, Python 3.9 exposed a serious product compatibility defect:
+evaluated `str | Path` annotations prevented import of the SDK contract model.
+The reviewer used one same-family micro scope amendment, not a new tranche, to
+add postponed annotation evaluation first to the contract model (`8b9c4a67`)
+and then to the registry validator (`86b1e728`) after the next exact-SHA run
+exposed the second occurrence. A bounded SDK search confirmed there were no
+other remaining built-in/Path PEP 604 annotation sites in that package. Local
+SDK unit evidence remained 65/65 after both repairs.
+
+Obsolete in-progress runs for superseded SHAs `94732b6f` and `8b9c4a67` were
+cancelled once the later SHA superseded them, preventing duplicate quota use.
+No dependency upgrade, secret access, provider call, deployment, merge,
+registry mutation, validator-policy change, generator/cleaner edit, or new
+roadmap tranche occurred.
+
+Exact hosted evidence for `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e`:
+
+| Workflow / job | Run or job ID | Result |
+| --- | --- | --- |
+| Public Sync Preflight | `33047365812`, `33047367959` | PASS |
+| CVF Public Surface | `33047367913` | PASS |
+| CVF Static CI Gate | `33047367905` | PASS |
+| CVF CI | `33047367981` | PASS |
+| CVF CI Pipeline / Guard Contract Tests | `33047367910` / `98434419131` | PASS |
+| CVF CI Pipeline / Web UI Tests | `33047367910` / `98434419401` | PASS, including the repaired runtime-page test and coverage |
+| CVF CI Pipeline / Build Check | `33047367910` / `98436049354` | PASS |
+| CVF v1.6 Web CI | `33047367880` / `98434418732` | PASS, including lint, build, unit tests and coverage |
+| Documentation & Testing / Python 3.11 | `33047367938` / `98434419522` | PASS |
+| Documentation & Testing / Python 3.10 | `33047367938` / `98434419537` | PASS |
+| Documentation & Testing / Python 3.9 | `33047367938` / `98434419625` | PASS; compatibility defect repaired |
+| Documentation & Testing / Governance Registry Validation | `33047367938` / `98434419555` | FAIL on the already disclosed 335-record/62-source registry debt |
+| Documentation & Testing / Status Check | `33047367938` / `98434540640` | FAIL-CLOSED because registry validation failed |
+
+The two named test-drift families and the serious compatibility finding are
+therefore closed with local and exact-SHA hosted proof. The aggregate
+Documentation & Testing workflow is not represented as green: its only red
+family is the genuine registry lifecycle/ownership gap already classified by
+the worker. Bulk cleanup remains unsafe because no canonical selective owner
+or reconciliation path is proven. Its disposition remains
+`PARK_CANONICAL_OWNER_NOT_PROVEN`; PR `#4` remains open and unmerged, and no R2
+or successor tranche is proposed. Any future registry action requires one
+explicit operator decision and a separately bounded authority packet.

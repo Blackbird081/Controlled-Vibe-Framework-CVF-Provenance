@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pcit_r1_bd1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit BD1 worker return, then independent review; parked checkpoint=registry/product/workflow edits, commit, push, merge, deploy, hosted rerun, R2, secrets, providers and branch-policy bypass.
+Startup acknowledged: current mode=`pcit_r1_bd1_closed_bounded_registry_debt_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator may select a new high-value roadmap or explicitly authorize one bounded registry-owner packet; parked checkpoint=bulk registry cleanup/regeneration, PR 4 merge, deploy, R2, secrets, providers and branch-policy bypass.
 
 ## Current Mode
 
-Current mode marker: `pcit_r1_bd1_dispatched_pending_worker_return`
-Current mode: `pcit_r1_bd1_dispatched_pending_worker_return`; previous mode marker: `pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision`
+Current mode marker: `pcit_r1_bd1_closed_bounded_registry_debt_parked`
+Current mode: `pcit_r1_bd1_closed_bounded_registry_debt_parked`; previous mode marker: `pcit_r1_bd1_dispatched_pending_worker_return`
 Previous mode: `lpci1_web_r3_closed_pass_bounded`
 
 ## Next Allowed Move
 
-Mode: `pcit_r1_bd1_dispatched_pending_worker_return`. BD1 authority is committed at `bac5a6284`; one no-commit worker may change at most three named public test files and the named private return. Registry, validator, generator, cleaner, product and workflow surfaces remain read-only. Independent review follows the return; commit, push, merge, deploy, hosted rerun, R2, secrets, providers and branch-policy bypass remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `pcit_r1_bd1_closed_bounded_registry_debt_parked`. BD1 closed the SDK and runtime test-drift families plus the serious Python 3.9 compatibility defect at public SHA `86b1e728`; exact hosted Web/build/coverage and Python matrix proof is green. PR 4 remains open and unmerged because Documentation & Testing correctly fails closed on the genuine 335-record/62-source registry debt. Registry disposition is `PARK_CANONICAL_OWNER_NOT_PROVEN`: no bulk clean/regenerate and no automatic R2 or successor tranche. The operator may select a different high-value roadmap, or explicitly authorize one separately bounded registry-owner/reconciliation packet. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

@@ -1,5 +1,5 @@
 {
   "stateOrder": 2379,
   "stateKey": "nextAllowedMove",
-  "value": "Execute PCIT-R1-BD1 as one no-commit worker pass: at most three named public test files plus the named private return; keep product, workflow and registry owners read-only. Independent review follows the worker return. Commit, push, merge, deploy, hosted rerun, secrets, providers, R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24."
+  "value": "PCIT-R1-BD1 is closed bounded with exact-SHA hosted proof at public commit 86b1e728; the two test-drift families and Python 3.9 compatibility defect are closed. PR 4 remains open and unmerged because the required Documentation & Testing gate correctly fails closed on parked registry debt. Do not bulk-clean or regenerate the registry: PARK_CANONICAL_OWNER_NOT_PROVEN remains until one explicit operator decision authorizes a separately bounded owner/reconciliation packet. No automatic R2 or successor tranche. Latest finalized numbered LHW wave remains LHW24."
 }

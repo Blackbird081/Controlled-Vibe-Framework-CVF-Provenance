@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "pcit_r1_bd1_dispatched_pending_worker_return",
-  "previousMode": "pcit_r1_sa1_reviewed_truthful_blockers_pending_operator_decision",
+  "currentMode": "pcit_r1_bd1_closed_bounded_registry_debt_parked",
+  "previousMode": "pcit_r1_bd1_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15319,7 +15319,7 @@
     "reviewerAmendment": "Amendment 1 recovered the 24-path provenance candidate. Amendment 2 rejects candidate 819d8acf after ten Web CI audit findings and authorizes one exact 36-path zero-audit dependency, provenance-bound HMAC-test, CI-contract, and bounded coverage-behavior correction inside the same terminal R3."
   },
   "pcitR1PublicCiTruthfulnessDispatched20260827": {
-    "status": "BD1_DISPATCHED_PENDING_WORKER_RETURN",
+    "status": "BD1_CLOSED_PASS_BOUNDED_REGISTRY_DEBT_PARKED",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_ROADMAP_2026-08-27.md",
     "baseline": "docs/baselines/CVF_GC018_PCIT_R1_PUBLIC_CI_TRUTHFULNESS_AND_CORPUS_BOUNDARY_RECONCILIATION_2026-08-27.md",
     "baselineSha256": "d2567db99d9d1695f1909fb2f46a72ed69814a51083fc8349bd855a3b8cd2ee2",
@@ -15329,15 +15329,19 @@
     "amendmentCommit": "145e980249ee6e779e8fa88021c1960e74a79a5e",
     "finalContractCommit": "0a27c596c6dbbfdb5909fd152226d47eb4e0abfd",
     "workerBoundary": "One no-commit BD1 worker may edit at most three named public test files plus the named private return. Product, workflow, registry, validator, generator and cleaner surfaces are read-only.",
-    "reviewerBoundary": "Reviewer accepted SA1 workflow truthfulness at private evidence commit 06643ac4b and public candidate bbea31745. PR 4 remains unmerged because genuine registry and SDK assertion failures remain; a separate runtime-page hosted nondeterminism candidate is also parked.",
-    "proof": "Exact-SHA Documentation & Testing run 33042997497 proves 20 successful executions, registry failure, 61/65 SDK unit assertions passing and fail-closed Status Check. CVF CI is green; CVF CI Pipeline run 33042997505 has one runtime-page UI failure after 3454 passes and 43 skips, while focused local rerun passes 3/3. No secret read or provider call occurred.",
+    "reviewerBoundary": "Independent review accepted and exported the two test repairs at 94732b6f, then used one same-family serious-defect scope amendment for Python 3.9 postponed-annotation repairs at 8b9c4a67 and 86b1e728. PR 4 remains unmerged because registry lifecycle authority is not proven; no R2 or successor tranche was opened.",
+    "proof": "Exact public SHA 86b1e728d8363e66c700ffdde9c2f6c02c93ed1e: Public Sync Preflight, Public Surface, Static CI, CVF CI, CVF CI Pipeline, Web UI/build/coverage and all Python 3.9/3.10/3.11 jobs pass. Documentation & Testing run 33047367938 is red only on Governance Registry Validation and the dependent fail-closed Status Check. Registry evidence remains 335 records versus 62 sources; no registry mutation, secret read, provider call, deploy or merge occurred.",
     "scopeAmendmentDispatch": "8da22aafd",
     "scopeAmendmentBaseline": "docs/baselines/CVF_GC018_PCIT_R1_SA1_DOCUMENTATION_TESTING_PUBLIC_BOUNDARY_2026-08-27.md",
     "scopeAmendmentWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_SA1_DOCUMENTATION_TESTING_PUBLIC_BOUNDARY_2026-08-27.md",
     "blockerDispositionDispatch": "bac5a6284",
     "blockerDispositionBaseline": "docs/baselines/CVF_GC018_PCIT_R1_BD1_CONSOLIDATED_PUBLIC_BLOCKER_DISPOSITION_2026-08-27.md",
     "blockerDispositionWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PCIT_R1_BD1_CONSOLIDATED_PUBLIC_BLOCKER_DISPOSITION_2026-08-27.md",
-    "successorBoundary": "Next move is the one no-commit BD1 worker return followed by independent review. Registry or product mutation, PR merge, automatic R2 and any additional owner remain forbidden."
+    "workerReturn": "docs/reviews/CVF_PCIT_R1_BD1_CONSOLIDATED_PUBLIC_BLOCKER_DISPOSITION_WORKER_RETURN_2026-08-27.md",
+    "privateReviewerEvidenceCommit": "c08f8a8918d527a061e472823c594d3304eee811",
+    "publicFinalCommit": "86b1e728d8363e66c700ffdde9c2f6c02c93ed1e",
+    "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
+    "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Execute PCIT-R1-BD1 as one no-commit worker pass: at most three named public test files plus the named private return; keep product, workflow and registry owners read-only. Independent review follows the worker return. Commit, push, merge, deploy, hosted rerun, secrets, providers, R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24."
+  "nextAllowedMove": "PCIT-R1-BD1 is closed bounded with exact-SHA hosted proof at public commit 86b1e728; the two test-drift families and Python 3.9 compatibility defect are closed. PR 4 remains open and unmerged because the required Documentation & Testing gate correctly fails closed on parked registry debt. Do not bulk-clean or regenerate the registry: PARK_CANONICAL_OWNER_NOT_PROVEN remains until one explicit operator decision authorizes a separately bounded owner/reconciliation packet. No automatic R2 or successor tranche. Latest finalized numbered LHW wave remains LHW24."
 }

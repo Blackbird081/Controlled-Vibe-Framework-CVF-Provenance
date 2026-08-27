@@ -1,9 +1,9 @@
-# CVF Agent Handoff V59 - LPCI1 Web R2 Closed Blocked R3 Dispatch Authoring
+# CVF Agent Handoff V59 - PCIT-R1 BD1 Closed Bounded Registry Debt Parked
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
-- Repository: private provenance source of truth; BD1 dispatch: `bac5a6284`; PCIT-R1-SA1 reviewer evidence: `06643ac4b`; public candidate base: `bbea31745`; PR 4 remains unmerged; next move is the no-commit BD1 worker return.
+- Repository: private provenance source of truth; current private reviewer evidence HEAD: `c08f8a8918d527a061e472823c594d3304eee811`; BD1 dispatch: `bac5a6284`; final public candidate: `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e`; PR 4 remains unmerged on parked registry debt.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -38,10 +38,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`pcit_r1_bd1_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one no-commit BD1 worker return, then independent review; parked checkpoint=registry/product/workflow edits, commit, push, merge, deploy, hosted rerun, R2, secrets, providers and branch-policy bypass.
+Startup acknowledged: current mode=`pcit_r1_bd1_closed_bounded_registry_debt_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator may select a new high-value roadmap or explicitly authorize one bounded registry-owner packet; parked checkpoint=bulk registry cleanup/regeneration, PR 4 merge, deploy, R2, secrets, providers and branch-policy bypass.
 
 ## Current Mode
-`pcit_r1_bd1_dispatched_pending_worker_return`
+`pcit_r1_bd1_closed_bounded_registry_debt_parked`
 
 ## Purpose
 
@@ -169,7 +169,7 @@ Continuity parent anchor: `92c96a04d`.
 
 ## Next Allowed Move
 
-Execute PCIT-R1-BD1 under dispatch commit `bac5a6284`: one no-commit worker may change at most the three named public test files plus the named private return. Registry lifecycle owners, product source and workflows remain read-only; independent review owns any later commit and hosted proof. PR 4 remains unmerged and public `main` unchanged. Push, merge, deploy, hosted rerun, secrets, providers, branch-policy bypass, R2 and unrelated lanes remain forbidden. Latest finalized numbered LHW wave remains LHW24.
+PCIT-R1-BD1 is closed bounded. Public SHA `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e` passes both test-drift families, Web/build/coverage, and Python 3.9/3.10/3.11; Documentation & Testing remains red only because registry validation and its dependent status check fail closed. PR 4 remains open and unmerged. Registry disposition is `PARK_CANONICAL_OWNER_NOT_PROVEN`: no bulk cleanup/regeneration and no automatic R2 or successor tranche. The operator may select a different high-value roadmap, or explicitly authorize one separately bounded registry-owner/reconciliation packet. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -196,13 +196,13 @@ run `32678623700` promoted public `9c0183293`; force-push/delete are disabled.
 
 EXPORTED
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
-Public-sync commit: `9c01832930226f2f770eafa346e01279160f22cb`.
-Public artifact paths: `.githooks/pre-push`; `.github/workflows/public-sync-preflight.yml`; `scripts/check_cvf_public_sync_candidate.py`; previously exported public surfaces remain present.
-Operator-local refresh receipt: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json`; SHA-256 `caaa9c9a85f411c9a04cd169e438645d932f42793a7c4f338f501b719e015474`.
+Public-sync branch: `pcit-r1-public-ci-truthfulness`.
+Public-sync commit: `86b1e728d8363e66c700ffdde9c2f6c02c93ed1e`.
+Public artifact paths: two BD1 test repairs and two bounded Python 3.9 annotation-compatibility repairs; branch export only, not merge, deploy or public-main readiness.
 
 ## Core Guard Self-Protection Authorization - PCIT-R1 Dispatch Continuity
 
-Authorized guard-maintenance scope: bind committed PCIT-R1 authority hashes, dispatched mode and exact no-commit next move after terminal LPCI1 Web R3 closure.
+Authorized guard-maintenance scope: bind PCIT-R1-BD1 bounded closure, exact public hosted proof, parked registry disposition and the no-automatic-successor boundary.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -211,10 +211,10 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/pcitR1PublicCiTruthfulnessDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: operator selected and authorized the next high-value roadmap; continuity sync is mandatory after committed dispatch.
-Rollback boundary: revert the exact PCIT-R1 continuity manifest atomically; retain committed dispatch and terminal R3 evidence.
-Not authorized: product-source repair, dependency upgrade, automatic R2, public write, secret-value access, provider/live calls or unrelated work.
+Operator authorization: operator selected PCIT-R1 and approved its bounded amendments; continuity sync is mandatory after reviewer closure.
+Rollback boundary: revert the exact PCIT-R1 closure continuity manifest atomically; retain committed dispatch, reviewer evidence and public hosted proof.
+Not authorized: bulk registry mutation, dependency upgrade, automatic R2, PR merge, deployment, secret-value access, provider/live calls or unrelated work.
 
 ## Claim Boundary
 
-This handoff records PCIT-R1-SA1 reviewer acceptance with truthful blockers. It authorizes no product source, dependency, secret, provider/live, merge, deploy, production claim, automatic R2 or unrelated parked lane.
+This handoff records PCIT-R1-BD1 bounded closure and truthful parked registry debt. It authorizes no bulk registry action, dependency change, secret/provider/live action, PR merge, deploy, production claim, automatic R2 or unrelated parked lane.
