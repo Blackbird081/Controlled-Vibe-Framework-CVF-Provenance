@@ -1,0 +1,149 @@
+{
+  "schema": "cvf.externalAgentTaskCapsule.v1",
+  "protocolVersion": "1.1.0",
+  "projectionOf": "cvf.external-agent-round-trip",
+  "generatedAt": "2026-08-28T00:10:42+07:00",
+  "task": {
+    "id": "eacq-fv-ev1-owner-map-evidence",
+    "title": "EACQ-FV EV-1 Capsule-Enhanced Owner Map Evidence",
+    "objective": "Require substantive competing-owner evidence for every owner-map entry and add focused negative tests while preserving the existing capsule protocol.",
+    "workingMode": "EXTEND_SUPPLIED_REPOSITORY",
+    "outputRoot": "docs/reviews/CVF_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_WORKER_RETURN_2026-08-28.md",
+    "nonGoals": [
+      "Do not change the capsule generator, wrapper, README, roadmap, session state, or public packet.",
+      "Do not open MV-3 or UAA.",
+      "Do not commit, push, publish, deploy, call providers, or use credentials."
+    ]
+  },
+  "cvfPublicSource": {
+    "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "commit": "d1042ab0b2f044ca99fa3c812e38e33631b20869",
+    "sourcePosture": "OPERATOR_PINNED_NOT_LIVE_VERIFIED"
+  },
+  "sourceRepositories": [
+    {
+      "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+      "commit": "d1042ab0b2f044ca99fa3c812e38e33631b20869",
+      "usage": "REFERENCE_AND_ANALYSIS"
+    }
+  ],
+  "gateA": {
+    "name": "SOURCE_OWNER_OVERLAP",
+    "requiredBefore": "DESIGN_OR_CODE",
+    "requiredEvidence": [
+      "Read the governed schema, README, focused tests, baseline, work order, and this capsule.",
+      "Confirm dispatch base is an ancestor of execution HEAD.",
+      "Confirm pinned hashes and exact three-path write ownership.",
+      "Search for another current owner before changing the existing schema owner."
+    ],
+    "terminalStates": ["PASS", "RETURN_FOR_REPAIR", "BLOCKED"]
+  },
+  "gateB": {
+    "name": "DESIGN_CODE_TEST",
+    "opensOnlyWhen": "gateA=PASS",
+    "requiredEvidence": [
+      "Require competingOwnersChecked in every owner entry.",
+      "Reject empty, duplicate, and whitespace-only competing-owner evidence.",
+      "Reject exact duplicate owner records.",
+      "Run all focused packet tests.",
+      "Return exact changed-set and empty-staging evidence."
+    ]
+  },
+  "authorityEnvelope": {
+    "commit": false,
+    "push": false,
+    "publication": false,
+    "deployment": false,
+    "providerCalls": false,
+    "credentials": false,
+    "destructiveActions": false
+  },
+  "protectedPaths": {
+    "consumers": ["worker", "reviewer"],
+    "freshness": {
+      "anchor": "dispatch base b2882384cec10a313d7f9b49c1106688bf8267f2 and paired work order",
+      "regenerateWhen": "dispatch base, write ownership, owner hashes, or authority envelope changes"
+    },
+    "paths": [
+      "AGENTS.md",
+      "CVF_SESSION/",
+      "docs/reference/external_agent_review/README.md",
+      "scripts/external_agent_packet.py",
+      "scripts/Update-CVF-External-Agent-Packet.ps1",
+      "docs/roadmaps/"
+    ]
+  },
+  "ownerMap": {
+    "consumers": ["worker", "reviewer", "return validator"],
+    "freshness": {
+      "anchor": "pinned SHA-256 hashes in the EV-1 work order",
+      "regenerateWhen": "schema, README, focused test owner, or dispatch base changes"
+    },
+    "owners": [
+      {
+        "path": "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_TASK_CAPSULE.schema.json",
+        "symbol": "properties.ownerMap.properties.owners.items",
+        "version": "cvf.externalAgentTaskCapsule.v1",
+        "competingOwnersChecked": ["No alternate capsule schema owner found in docs/reference/external_agent_review, scripts, or governance/compat."]
+      },
+      {
+        "path": "scripts/test_external_agent_packet.py",
+        "symbol": "_valid_context_groups and strict capsule tests",
+        "competingOwnersChecked": ["No separate owner-map schema validation test module found in the governed packet surfaces."]
+      },
+      {
+        "path": "docs/reference/external_agent_review/README.md",
+        "symbol": "Task-Proportional Context Groups ownerMap row",
+        "competingOwnersChecked": ["Roadmap wording corroborates intent but README remains the current capsule reference owner."]
+      }
+    ]
+  },
+  "invariants": {
+    "consumers": ["worker", "reviewer"],
+    "freshness": {
+      "anchor": "MV-2 material commit 5826b33ae and EV-1 dispatch base",
+      "regenerateWhen": "capsule protocol, source posture, authority envelope, or owner schema changes"
+    },
+    "mustPreserve": [
+      "Keep cvf.externalAgentTaskCapsule.v1 and all current root context groups.",
+      "Keep additionalProperties false at existing strict object boundaries.",
+      "Keep existing valid fixtures and production routes compatible.",
+      "Keep authorityEnvelope booleans false for this task."
+    ],
+    "forbiddenTransitions": [
+      "Do not modify generator, wrapper, README, roadmap, session, hook, catalog, or public packet paths.",
+      "Do not introduce a second schema or parallel owner-map protocol.",
+      "Do not widen the task into general nonblank-string cleanup.",
+      "Do not stage or commit worker changes."
+    ]
+  },
+  "verification": {
+    "consumers": ["worker", "reviewer", "return validator"],
+    "freshness": {
+      "anchor": "final unstaged worker diff against execution base",
+      "regenerateWhen": "any implementation or test line changes after a verification run"
+    },
+    "focusedTests": [
+      "python -m pytest scripts/test_external_agent_packet.py -q",
+      "python governance/compat/run_worker_return_fast_gate.py --pytest-target scripts/test_external_agent_packet.py"
+    ],
+    "negativeCases": [
+      "missing competingOwnersChecked fails validation",
+      "empty competingOwnersChecked fails validation",
+      "whitespace-only competingOwnersChecked item fails validation",
+      "duplicate competingOwnersChecked item fails validation",
+      "exact duplicate owner record fails validation"
+    ],
+    "deterministicChecks": [
+      "git diff --check",
+      "git diff --name-only",
+      "git diff --cached --name-only",
+      "git status --short"
+    ],
+    "requiredOutputs": [
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_TASK_CAPSULE.schema.json",
+      "scripts/test_external_agent_packet.py",
+      "docs/reviews/CVF_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_WORKER_RETURN_2026-08-28.md"
+    ]
+  }
+}
