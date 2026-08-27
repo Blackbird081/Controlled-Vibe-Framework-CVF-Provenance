@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md",
     "baselineSha256": "6080e4fa8cdff6e9e6af2223ef62c1c8c6791fe1ff574d5746c45564d55bad82",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_2026-08-28.md",
-    "workOrderSha256": "bc4db31fc4b10df44deec9d711f6d2dac23fe9efb8b8d02082cf3ab7286493d6"
+    "workOrderSha256": "fbeb358d5016465536e0d5229aeccbcfaf6aae177436dcd11490419396b7141c"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

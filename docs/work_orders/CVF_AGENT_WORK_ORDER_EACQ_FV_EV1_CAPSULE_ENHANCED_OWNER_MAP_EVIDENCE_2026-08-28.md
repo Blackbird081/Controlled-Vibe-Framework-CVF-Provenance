@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Work order ID: EACQ-FV-EV1
 
@@ -430,11 +430,11 @@ manifest/staging verification, and an honest effectiveness classification.
 
 ## Closure Checklist
 
-- [ ] exact three worker paths and empty staging independently confirmed;
-- [ ] required/non-empty/nonblank/unique owner evidence independently probed;
-- [ ] duplicate owner record rejected and valid capsule preserved;
-- [ ] focused and applicable governance gates pass after final edit;
-- [ ] evidence classification avoids causal uplift and leaves MV-3/UAA parked.
+- [x] exact three worker paths and empty staging independently confirmed;
+- [x] required/non-empty/nonblank/unique owner evidence independently probed;
+- [x] duplicate owner record rejected and valid capsule preserved;
+- [x] focused and applicable governance gates pass after final edit;
+- [x] evidence classification avoids causal uplift and leaves MV-3/UAA parked.
 
 ## Return-To-Orchestrator Conditions
 
@@ -449,8 +449,34 @@ EV-1 evidence task; the next human checkpoint is any successor/MV-3 admission.
 
 DEFERRED_PRIVATE_ONLY
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this artifact | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_COMPLETION_2026-08-28.md` | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | EACQ-FV roadmap | MV-3 and UAA remain parked | PASS |
+| Session continuity | active state sources and generated aggregate | material-bound state; final closure sync follows | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | generated aggregate discipline | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md` | active continuity carriers | PASS |
+| System loop interlock | roadmap and completion claim boundary | no automatic successor | PASS |
+| Worker return | `docs/reviews/CVF_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_WORKER_RETURN_2026-08-28.md` | accepted with two LOW evidence repairs | PASS |
+| Schema/tests | exact two implementation owners | material `dd1694dab`; 58/58 | PASS |
+| External evidence digest | N/A with reason: local deterministic task | no provider/runtime receipt | N/A WITH REASON |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Worker return | independently accepted | accepted at material `dd1694dab` | PASS |
+| Focused tests | all pass | 58/58 PASS | PASS |
+| Runtime receipt | N/A with reason: no runtime action authorized | none produced | N/A_WITH_REASON |
+| Public export | deferred private only | no public artifact or remote evidence | N/A_WITH_REASON |
+
 ## Claim Boundary
 
-This order authorizes exactly one three-path, local, no-commit EV-1 task. It
-does not prove capsule effectiveness, open MV-3/UAA, call a provider, mutate
-external/public surfaces, stage, commit, push, deploy, or claim production use.
+This order is terminally fulfilled at material commit `dd1694dab` and reviewer
+completion evidence dated 2026-08-28. It proves only the bounded local schema
+and test result; it does not prove causal capsule effectiveness, open MV-3/UAA,
+call a provider, mutate external/public surfaces, push, deploy, or claim
+production use.
