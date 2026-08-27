@@ -154,7 +154,7 @@ owned CVF surface, or when the only reopen condition is vague operator interest.
 | `MCP-KAR-T2-schema-conformance-repair` | MCP-KAR T0/T2 | `CHECKER_CANDIDATE` | Four external schema-repair candidates and five dependent positive fixtures retain bounded conformance value, but have no named non-test consumer or accepted schema owner. | `STOPPED_NO_NAMED_CONSUMER` | Reopen only when all five T2 gates pass together: an exact non-test consumer names the schema identity; a current owner accepts responsibility; an exact field-level gap remains after T1/T4/T5/T7/T8; a smallest manifest is operator-selected; and deterministic fail-closed negative proof is specified. | `docs/reviews/CVF_MCP_KAR_T2_SCHEMA_CONSUMER_OWNER_VALUE_DECISION_WORKER_RETURN_2026-08-23.md`; `docs/reference/mcp_gateway/CVF_MCP_KAR_FINAL_EXHAUSTION_RECONCILIATION.md` | schema adoption or repair, checker wiring, runtime/package/provider behavior |
 | `MCP-KAR-T6-bound-discovery-admission` | MCP-KAR T0/T6 | `RUNTIME_CANDIDATE` | A bound discovery-admission snapshot with digest, freshness, and drift quarantine may retain value only after a durable owner and consumer exist. | `STOPPED_NO_BOUND_ADMISSION_SNAPSHOT_OWNER` | Reopen only when a current non-test source names and consumes a repository-owned bound admission snapshot/digest/freshness identity at an exact path and symbol, an explicit owner accepts durable-state responsibility, and an operator-selected work order pins deterministic drift/quarantine proof. | `docs/reviews/CVF_MCP_KAR_T6_T8_RESIDUAL_PROTOCOL_OWNER_VALUE_DECISION_WORKER_RETURN_2026-08-24.md`; `docs/reference/mcp_gateway/CVF_MCP_KAR_FINAL_EXHAUSTION_RECONCILIATION.md` | durable state, discovery admission runtime, transport, filesystem, provider/live behavior |
 | `RSPB-capability-preflight-bootstrap-runtime-and-checker-candidates` | RSPB-AI-T0 through T4 reverse-skill/Capability Preflight & Bootstrap mixed-origin intake | `IMPLEMENTED_BOUNDED_AND_CONDITIONAL_RUNTIME` | The read-only Environment Snapshot is implemented in the existing doctor/pre-dispatch seam. Guard Contract now owns both the Controlled Acquisition Contract Kernel and a Route/Readiness Evidence Kernel covering two-stage escalation, material-authority ambiguity, rationale/fallback visibility, and fail-closed readiness precedence. | `PROCEED_SELECTIVELY_RUNTIME_STAGED_T4_ROUTE_READINESS_ACCEPTED` | Knowledge and three selected runtime-value clusters are materialized. Route/READY outputs and acquisition authorization remain non-executing evidence; no candidate router, installer, or transport was imported. Reopen executor work only for named demand with approved authority and evidence destination. | `docs/reviews/CVF_RSPB_AI_T4_CAPABILITY_ROUTE_AND_READINESS_EVIDENCE_KERNEL_COMPLETION_2026-08-16.md` | no direct import; no acquisition execution; no MCP/CLI activation; no provider/live/network, credential access, public sync, deployment, or production |
-| `MPA-AI-utility-under-attack-evaluation-precursor` | MPA-AI-T0 local mixed-origin memory-poisoning intake | `RUNTIME_CANDIDATE` | Utility-preserving adversarial evaluation covering benign correct untrusted evidence, retrieval-versus-reader separation, conflict, staleness, duplicate lineage, cross-scope isolation, and action-time revalidation. | `DEFERRED_HIGH_POTENTIAL_FORWARD_SIGNAL` | Reopen Gate UAA-G1 only after the EACQ-FV roadmap receives external adversarial review and operator acceptance; G1 must source-verify owners, ground truth, formulas, budgets, and provider-free stop rules. UAA-G2 and UAA-G3 require separate gate evidence and authority. | `docs/roadmaps/CVF_EXTERNAL_AGENT_CODING_QUALITY_AND_FORWARD_VALUE_ABSORPTION_ROADMAP_2026-08-27.md`; future named evaluation owner | No direct import, runtime mutation, threshold claim, model/provider run, public sync, deployment, production, or security-effectiveness claim |
+| `MPA-AI-utility-under-attack-evaluation-precursor` | MPA-AI-T0 local mixed-origin memory-poisoning intake | `RUNTIME_CANDIDATE` | Utility-preserving adversarial evaluation covering benign correct untrusted evidence, retrieval-versus-reader separation, conflict, staleness, duplicate lineage, cross-scope isolation, and action-time revalidation. | `DEFERRED_FORWARD_VALUE_PRESERVED` | Reopen UAA-G1 only when all three conditions hold: (a) a named evaluation owner accepts the result destination; (b) an exact candidate retrieval/admission seam is verified at current path and symbol, starting with `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/retriever.ts` and separately checking Truth seams; and (c) the operator authorizes a fresh provider-free GC-018/work order with ground-truth, formula, cost and stop-rule requirements. UAA-G2 still requires a separate G1 PASS decision; UAA-G3 requires a separate G2 PASS, owner, budget and live/provider authority. | `docs/roadmaps/CVF_EXTERNAL_AGENT_CODING_QUALITY_AND_FORWARD_VALUE_ABSORPTION_ROADMAP_2026-08-27.md`; future named evaluation owner | No direct import, runtime mutation, threshold claim, model/provider run, public sync, deployment, production, or security-effectiveness claim |
 
 ## CADP External Runtime Objective Reopen Contract
 
@@ -199,7 +199,7 @@ six conditions.
 | CodeGraph guards plus PINT, MSEA, TKG, EverOS checker ideas | Several checker candidates may become useful after repeated misses or source-owned behavior exists. | `CHECKER_CANDIDATE` | Pending future `governance/compat` checker work orders | Reopen only when row-specific evidence thresholds are met | No checker wiring from this index |
 | Direct external implementations | Direct package, adapter, runtime, MCP, daemon, and public-interface import remains rejected without fresh CVF authorization. | `REJECT_DIRECT_IMPORT` | CVF-native rewrite lanes only | Use this index to preserve value without copying foreign implementation authority. | Direct import remains blocked |
 | Already-owned duplicate material | Rows with no remaining package, runtime, checker, or doctrine delta stay outside this index. | `NO_PACKAGE_OR_RUNTIME_VALUE` | Existing CVF owner surfaces | State no-index reason in the closeout. | No runtime or package behavior |
-| MPA utility-under-attack cluster | Benign-untrusted utility and retrieval/reader separation retain forward evaluation value even though the related Memory/Truth risk is already owned. | `RUNTIME_CANDIDATE` | EACQ-FV roadmap and future named evaluation owner | Apply UAA-G1, then G2, and open G3 only with separate authority. | G1/G2 provider-free; no runtime activation from this index |
+| MPA utility-under-attack cluster | Benign-untrusted utility and retrieval/reader separation retain `FORWARD_VALUE_PRESERVED` even though the related Memory/Truth risk is already owned. | `RUNTIME_CANDIDATE` | EACQ-FV roadmap, current RAG/Truth candidate seams, and future named evaluation owner | Keep indexed until the conjunctive G1 evidence trigger is met; then apply G1, G2, and separately authorized G3. | G1/G2 provider-free; no runtime activation from this index |
 
 ## Overlap And Novelty Classification
 
@@ -278,20 +278,20 @@ mutation, provider calls, MCP activation, public sync, or production readiness.
 |---|---|
 | Actor | Codex reviewer/closer role |
 | Provider or surface | local workspace |
-| Session or invocation | EACQ-FV roadmap design and MPA conditional-reopen repair, 2026-08-27 |
+| Session or invocation | EACQ-FV-R0 external review absorption and minimum viable revision, 2026-08-27 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | `rg`; `Get-Content`; `apply_patch`; governance gates |
-| Target paths | EACQ-FV roadmap and this conditional reopen index |
-| Allowed scope source | operator approval to design external-agent quality and deferred-value upgrades, with external critique before implementation |
-| Before status evidence | clean worktree at MPA-AI-T0 closure `19c223ce06d579cfe16fb7feb4ff8996363797ab` |
-| After status evidence | MPA utility evaluation precursor is indexed with three gated reopen stages; implementation remains closed pending critique and operator acceptance |
-| Diff evidence | `git diff --name-status` before material commit |
-| Approval boundary | roadmap and conditional-reopen preservation only; no implementation |
+| Target paths | governed external review input, finding disposition, EACQ-FV roadmap, this conditional reopen index, RAG source-verification registry entry, and generated corpus registry |
+| Allowed scope source | operator accepted the 14-finding disposition and minimum viable roadmap revision |
+| Before status evidence | clean HEAD `e5504f4d4916b8befe4126b2585f4d1f7d3d52ae` plus one root-level untracked external review handback |
+| After status evidence | review governed, findings dispositioned, roadmap revised, and MPA row has a conjunctive evidence trigger; implementation remains closed |
+| Diff evidence | exact six-path material diff before commit |
+| Approval boundary | review absorption and roadmap/index revision only; no implementation |
 | Claim boundary | no runtime, package activation, checker wiring, provider, public, deployment, production, or effectiveness claim |
-| Agent type | dispatcher/source reviewer |
-| Invocation ID | `eacq-fv-roadmap-design-2026-08-27` |
-| Expected manifest | EACQ-FV roadmap and this conditional reopen index |
-| Actual changed set | EACQ-FV roadmap and this conditional reopen index |
+| Agent type | reviewer/closer |
+| Invocation ID | `eacq-fv-r0-review-absorption-revision-2026-08-27` |
+| Expected manifest | external review input, finding disposition, EACQ-FV roadmap, conditional reopen index, RAG registry source entry, and generated corpus registry |
+| Actual changed set | external review input, finding disposition, EACQ-FV roadmap, conditional reopen index, RAG registry source entry, and generated corpus registry |
 | Manifest delta | MATCH |
 
 ## Public Export Disposition

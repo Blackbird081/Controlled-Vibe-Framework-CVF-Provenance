@@ -7330,6 +7330,53 @@
         "automatic successor roadmap authority (not granted)"
       ],
       "nextScanRecommendation": "Do not rescan this unchanged packet. Reuse the immutable manifest and ledger; reopen only on named source drift, a distinct current consumer/deployment finding outside prior EAFR coverage, or an operator-approved evaluation proposal that passes the value/cost gate."
+    },
+    {
+      "id": "eacq-fv-r0-rag-retriever-source-verification",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "EACQ-FV-R0 RAG retriever owner source verification",
+      "scopePaths": [
+        "EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/retriever.ts",
+        "EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/tests/retriever.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "EACQ-FV-R0-EXTERNAL-ADVERSARIAL-REVIEW-2026-08-27",
+      "scanDate": "2026-08-27",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_EACQ_FV_R0_EXTERNAL_ADVERSARIAL_REVIEW_DISPOSITION_2026-08-27.md",
+      "completionReviewPath": "docs/reviews/CVF_EACQ_FV_R0_EXTERNAL_ADVERSARIAL_REVIEW_DISPOSITION_2026-08-27.md",
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "COMPLETE_WITH_DECLARED_EXCLUSIONS",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "RAG_RETRIEVAL_OWNER",
+        "DETERMINISTIC_RANKING_SEAM",
+        "UTILITY_UNDER_ATTACK_CANDIDATE_SEAM"
+      ],
+      "priorAbsorption": "The retriever and its focused tests are existing CVF runtime owner surfaces. EACQ-FV-R0 used them only to verify ownership and candidate seam shape; it did not modify or execute them.",
+      "findings": [
+        {
+          "id": "EACQ-FV-R0-F01-current-rag-owner-omitted",
+          "summary": "The original roadmap omitted the existing RAG retriever owner while proposing a future retrieval-evaluation seam.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "The revised roadmap now cites the current owner and keeps UAA implementation closed behind its conjunctive reopen gates.",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_EACQ_FV_R0_EXTERNAL_ADVERSARIAL_REVIEW_DISPOSITION_2026-08-27.md#finding-to-governance-learning-disposition",
+          "roadmapRef": "docs/roadmaps/CVF_EXTERNAL_AGENT_CODING_QUALITY_AND_FORWARD_VALUE_ABSORPTION_ROADMAP_2026-08-27.md"
+        }
+      ],
+      "negativeSearchTerms": [
+        "conditional reopen index enforcement checker for the EACQ-FV rule - repository checker search returned no current EACQ-FV-specific enforcement"
+      ],
+      "nextScanRecommendation": "Re-scan only after operator approval opens a bounded UAA seam-verification work order or the retriever owner path/symbol changes."
     }
   ]
 }

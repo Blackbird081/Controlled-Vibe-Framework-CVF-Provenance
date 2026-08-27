@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED_PENDING_EXTERNAL_ADVERSARIAL_REVIEW
+Status: REVISED_PENDING_OPERATOR_APPROVAL
 
 docType: roadmap
 
@@ -17,6 +17,8 @@ Mixed-origin derived synthesis: REQUIRED
 artifactClass: PROVENANCE_BACKED_DERIVED_SYNTHESIS_CANDIDATE
 
 authorityStatus: NON_AUTHORITATIVE_UNTIL_REVIEWED
+
+operatorApprovalStatus: PENDING
 
 External knowledge intake routing: REQUIRED
 
@@ -50,18 +52,26 @@ Primary source surfaces:
 - `docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_AUDIT_2026-08-27.md`
 - `docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_FILE_LEDGER_2026-08-27.json`
 - `.private_reference/legacy/CVF 13.08/CVF_MEMORY_POISONING_ABSORPTION/04_UTILITY_UNDER_ATTACK/`
+- `docs/reviews/CVF_EACQ_FV_R0_ADVERSARIAL_REVIEW_2026-08-27.md`
+- `docs/reviews/CVF_EACQ_FV_R0_EXTERNAL_ADVERSARIAL_REVIEW_DISPOSITION_2026-08-27.md`
+- `docs/reference/CVF_DSCP_T1_OWNER_SURFACE_MAP_2026-06-07.md`
+- `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/retriever.ts`
+- `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/tests/retriever.test.ts`
+- `EXTENSIONS/CVF_TRUTH_KERNEL/src/stores/immutable-store.ts`
+- `governance/compat/check_fpc_parked_reopen_inventory.py`
+- `governance/compat/check_kiod_runtime_candidate_reopen_inventory.py`
 
 ## Authorization / Decision
 
-The operator authorizes this roadmap and asks that an operator-selected
-external reviewer, currently Claude, challenge it before any implementation.
-The normative role is `external reviewer`; the provider identity is not CVF
-authority.
+EACQ-FV-R0 external adversarial review is complete with verdict
+`ACCEPT_WITH_REQUIRED_REVISIONS`. The operator accepted the proposed finding
+disposition. All 14 findings are routed in the paired disposition packet and
+the four blocking design defects are repaired in this revision.
 
-This roadmap is planning authority only. No schema change, generator change,
-checker, benchmark, provider call, public sync, or runtime mutation may begin
-until the external critique is returned, its findings are dispositioned, and
-the operator explicitly accepts a revised roadmap or a bounded work order.
+This roadmap remains planning authority only. No schema, generator, checker,
+benchmark, provider, public, or runtime change may begin until the operator
+explicitly approves this revised roadmap and later authorizes a fresh bounded
+baseline/work order. Provider identity is not normative authority.
 
 ## Scope
 
@@ -69,25 +79,34 @@ In scope:
 
 - reuse and enrich the existing task-capsule mechanism rather than create a
   competing external-agent context protocol;
-- make prepared task capsules mandatory for coding modes if the design review
-  accepts that rule;
-- define a reusable reviewer-correction digest that is public-safe and does
-  not leak private provenance;
-- add a mandatory forward-value review after ordinary overlap classification;
+- require a validated task capsule for future coding modes without mandating
+  the current network-coupled `PrepareTask` entrypoint;
+- add only four source-backed capsule fields with named consumers:
+  `protectedPaths`, `ownerMap`, `invariants`, and `verification`;
+- machine-enforce the existing Conditional Reopen Index Rule before adding
+  new forward-value doctrine;
+- add only counterfactual acceleration and option value to the existing
+  semantic audit;
 - separate maturity and present authorization from potential value;
 - preserve high-option-value deferred concepts in the conditional reopen
   index with concrete evidence triggers;
 - normalize, then deterministically test, the eight-file utility-under-attack
   capability cluster before considering any model/provider evaluation;
-- measure whether the upgraded external-agent packet reduces review repair,
-  owner overlap, boundary violations, and missing negative-test coverage.
+- keep raw correction history out of the capsule; reuse only rule-shaped
+  learning already promoted through current governance owners;
+- measure whether the bounded capsule upgrade reduces review repair, owner
+  overlap, boundary violations, and missing negative-test coverage.
 
 ## Non-Goals
 
 - no new capsule system parallel to `CVF_EXTERNAL_AGENT_TASK_CAPSULE`;
+- no mandatory dependency on live network/public-sync refresh for ordinary
+  coding dispatch;
 - no claim that more context always improves an external agent;
 - no automatic acceptance of external code or prose as CVF authority;
 - no use of provider identity as a normative worker or reviewer role;
+- no raw reviewer-correction digest, provider-preference memory, or private
+  critique history in an external task capsule;
 - no benchmark threshold selected before a baseline exists;
 - no provider/model run during the first two utility gates;
 - no public export, deployment, production-readiness, or security-effectiveness
@@ -97,55 +116,53 @@ In scope:
 
 ## Design Control Gate
 
-`EACQ-FV-R0` is mandatory and blocking. The external reviewer must challenge:
+`EACQ-FV-R0` is complete. The external reviewer returned 14 findings with
+verdict `ACCEPT_WITH_REQUIRED_REVISIONS`; CVF independently verified the four
+blockers and the operator accepted their disposition.
 
-- whether each proposed context field has a current owner and measurable use;
-- whether task-capsule expansion creates context bloat or stale-authority risk;
-- whether forward-value scoring can reward speculation or novelty theater;
-- whether the three utility gates have observable stop conditions;
-- whether any proposed checker would enforce shape without improving semantic
-  review;
-- whether private correction evidence can be summarized safely for a public
-  external agent.
+R0 established these controlling corrections:
 
-The reviewer return must classify every finding as `ACCEPT`, `REVISE`,
-`REJECT`, or `SOURCE_GAP_WITH_SEARCH_EVIDENCE`, cite exact current CVF sources, and
-state the smallest repair. Implementation remains closed until the operator
-accepts the disposition packet.
+- the MPA miss is `MACHINE_GATE_GAP`, not `RULE_GAP`;
+- the current RAG retriever and Truth seams must be named before UAA work;
+- a validated capsule may be mandatory, but the present network-coupled
+  `PrepareTask` entrypoint may not be mandatory;
+- the roadmap must be checker-first and minimum viable;
+- raw reviewer-correction history is not a task-capsule input;
+- UAA source maturity is vocabulary/specification only, not a runnable corpus.
+
+The active design gate is now operator approval of this revision. Approval may
+allow authoring a fresh MV-1 baseline/work order; it does not authorize MV-1
+implementation, MV-2/MV-3, UAA execution, provider use, or public sync.
 
 ## Forward-Value Review Control
 
-Every future absorption closeout must retain the existing terminal ledger
-status and add a second, orthogonal review for every `DEFERRED` item/group and
-for representative plus high-risk `NO_NEW_VALUE` or `REJECTED` items.
-
-Required questions:
+The existing Reviewer Semantic Value Audit already owns owner overlap,
+maturity/value separation, direct-import/runtime/authority separation, and
+composed-system review. MV-3 may add only the two missing questions:
 
 | Dimension | Required question | Evidence expected |
 |---|---|---|
-| current-owner overlap | Is this already owned, and at what exact path/symbol? | source citation and overlap class |
-| counterfactual acceleration | If available earlier, would this have avoided design, test, or review work CVF later performed? | later CVF artifact or correction showing the avoided work |
-| directional novelty | Does it point to the next capability layer even when the present finding overlaps? | named uncovered evaluation, package, checker, or runtime seam |
-| option value | Is the cost of losing the idea materially larger than the cost of parking it? | bounded preservation cost and loss scenario |
-| cheap proof | What is the smallest provider-free test that could falsify its value? | command, fixture, output, and stop rule |
-| maturity/value separation | Is the negative decision based only on build, review, or permission state? | independent maturity and value decisions |
-| reopen accountability | Who owns the next decision and what observable evidence reopens it? | owner surface and conjunctive reopen condition |
+| counterfactual acceleration | If available earlier, would this have avoided later CVF design, test, or review work? | later governed artifact or correction showing the avoidable work |
+| option value | Is the evidence-backed cost of losing the idea materially larger than the bounded cost of parking it? | preservation cost, loss scenario, owner, and conjunctive reopen condition |
 
-Proposed secondary dispositions, subject to R0 critique:
+Deterministic review set:
 
-- `DUPLICATE_CURRENT_OWNER`
-- `FORWARD_DESIGN_SIGNAL`
-- `EVALUATION_PRECURSOR`
-- `OPTION_VALUE_PRESERVED`
-- `NO_FORWARD_VALUE`
+- every `DEFERRED` semantic group;
+- every `NO_NEW_VALUE` or `REJECTED` semantic group with no cited owner path;
+- every `NO_NEW_VALUE` or `REJECTED` semantic group containing at least five
+  ledger rows;
+- groups processed in stable semantic-group ID order, with no discretionary
+  sampling.
 
-These labels do not replace `READ`, `ADAPTED`, `DEFERRED`, `REJECTED`,
-`NO_NEW_VALUE`, or `BLOCKED_UNREADABLE`. They prevent phase and permission facts
-from being mistaken for value findings.
+Only two secondary dispositions are allowed:
 
-The MPA utility cluster is provisionally
-`DEFERRED_HIGH_POTENTIAL_FORWARD_SIGNAL`: its eight files form one evaluation
-precursor, not eight independent implementation candidates.
+- `FORWARD_VALUE_PRESERVED`: requires a current conditional-reopen index row
+  with owner and conjunctive evidence trigger;
+- `NO_FORWARD_VALUE`: requires the exact existing owner or a source-backed
+  reason that no reusable CVF-native value remains.
+
+These do not replace terminal ledger statuses. The MPA utility cluster maps to
+`FORWARD_VALUE_PRESERVED`; its eight files remain one evaluation precursor.
 
 ## External-Agent Coding Context Contract
 
@@ -154,23 +171,29 @@ non-goals, pinned public commit, source repositories, source/owner-overlap Gate
 A, design/code/test Gate B, and the authority envelope. The roadmap therefore
 extends that owner rather than duplicating it.
 
-Subject to R0 acceptance, build/extend coding tasks must use `PrepareTask` and
-carry these additional bounded fields:
+Subject to a future MV-2 work order, build/extend coding tasks must receive a
+validated task capsule. The production method is not mandated: the current
+`PrepareTask` path refreshes live public state before capsule creation and may
+not become an availability dependency for ordinary coding dispatch.
+
+Only four additions are planned:
 
 | Context group | Required content | Failure prevented |
 |---|---|---|
-| exact change envelope | allowed paths, protected paths, expected changed set | scope drift and authority-owner edits |
+| protected paths | exact paths the worker must not mutate | authority-owner edits |
 | owner map | current paths, symbols, versions, and competing owners checked | duplicate implementation |
 | invariants | must-preserve behavior and explicit forbidden transitions | locally correct but CVF-invalid code |
 | verification | exact focused tests, negative cases, deterministic checks, and required outputs | happy-path-only delivery |
-| known-defect hints | source-backed prior misses relevant to this task | repeated reviewer corrections |
-| return manifest | required code, tests, evidence, unresolved gaps, and manifest delta | ambiguous handback |
-| claim/export boundary | public/private drift, credential, provider, commit, push, and publication limits | overclaim or data leakage |
-| correction digest | public-safe recurring reviewer corrections with current owner citations | loss of learning between rounds |
 
-Context must remain task-proportional. The generator should emit only fields
-applicable to the selected mode, reject stale owner citations, and record a
-reason when a context group is not applicable.
+Existing return-contract and authority-envelope owners continue to own changed
+sets, return evidence, commit/push/provider/public limits, and claim boundary.
+Raw reviewer history is forbidden. Only rule-shaped learning already promoted
+through the finding-absorption workflow and error-to-governance philosophy may
+be cited as current governed context.
+
+Context remains task-proportional. Each new field requires a consumer and
+freshness rule. MV-2 must design a validated offline/staleness-aware capsule
+path or equivalent without treating a stale public receipt as current truth.
 
 ## Negative Search And Collision Discipline
 
@@ -189,10 +212,19 @@ Known collision controls:
 
 - `task capsule` already binds to the existing schema/generator and cannot
   justify a parallel protocol;
+- `PrepareTask` is an entrypoint collision, not a generic capsule contract: it
+  currently calls live `refresh_snapshot` before `create_capsule`;
 - `DEFERRED` and `NO_NEW_VALUE` remain terminal-ledger vocabulary; proposed
   forward-value labels are orthogonal annotations;
-- `utility under attack` must be checked against current Memory, Truth,
-  retrieval, test, and evaluation owners before a new owner is created;
+- current deterministic retrieval is owned at
+  `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/retriever.ts` with tests under the
+  same extension; Truth storage/admission candidates must be checked
+  separately because they do not necessarily rank or compose context;
+- the external finding-absorption workflow and error-to-governance philosophy
+  own promotion of reviewer learning; no raw correction-digest owner is added;
+- no current `governance/compat/*.py` checker references the Conditional Reopen
+  Index Rule literals; MV-1 is therefore an enforcement candidate, not new
+  doctrine;
 - any unavailable claimed owner/source receives
   `SOURCE_GAP_WITH_SEARCH_EVIDENCE` with the exact queries and roots searched;
 - an absent exact phrase is not evidence that the underlying capability is
@@ -200,13 +232,29 @@ Known collision controls:
 
 ## Utility-Under-Attack Three-Gate Route
 
+The eight-file source contributes specification prose and metric vocabulary
+only. Its nine schematic fixture rows provide no documents, queries,
+ground-truth answers, scorer, or CVF run. The UAA lane remains indexed option
+value and is not one of the three planned MV implementation tranches.
+
+If later reopened, UAA-G1 and UAA-G2 may share one provider-free work order to
+reduce governance cost, but they remain separate gate decisions: G2 cannot pass
+merely because G1 artifacts exist.
+
 ### Gate UAA-G1 - Contract And Fixture Normalization
 
 Provider use: forbidden.
 
-Normalize the eight files into one CVF-native evaluation specification. Define
-ground truth, scoring semantics, denominators, zero-baseline behavior, attack
-budget/rate, deterministic seeds, repetitions, corpus/config/code hashes,
+Name the exact candidate seam at path and symbol before authoring evaluation
+content. Current candidates include
+`EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/retriever.ts` `Retriever.retrieve`
+and its `DocumentStore`, plus separately evaluated Truth storage/admission
+surfaces such as `EXTENSIONS/CVF_TRUTH_KERNEL/src/stores/immutable-store.ts`.
+If no seam fits, record `OWNER_SURFACE_NOT_FOUND` with search evidence and stop.
+
+Then author new CVF-native documents, queries, ground truth, scorer, scoring
+semantics, denominators, zero-baseline behavior, attack budget/rate,
+deterministic seeds, repetitions, corpus/config/code hashes,
 latency/token/quota fields, owner, and explicit stop conditions. Validate JSON
 and JSONL shape and preserve the source packet as non-authoritative evidence.
 
@@ -218,11 +266,15 @@ the expected information value does not exceed implementation/review cost.
 
 Provider use: forbidden.
 
-Bind the normalized scenarios to the actual current store/retrieval seams and
+Bind the normalized scenarios to the named current store/retrieval seam and
 measure retrieval success separately from reader/model correctness. Cover
 benign correct untrusted evidence, conflict, staleness, duplicate lineage,
 cross-scope isolation, and action-time revalidation. Bounded occupancy remains
 an experimental hypothesis, not an accepted defense.
+
+`poisonTop1Rate` is emitted only for a ranking seam. Context occupancy is
+emitted only when a composition step exists. Other seams must record
+`NOT_APPLICABLE_WITH_REASON`; they may not synthesize meaningless zeroes.
 
 Exit: deterministic evidence shows a material gap or a useful regression
 signal not already covered by current owners. Stop on duplicate coverage,
@@ -232,7 +284,7 @@ non-reproducibility, or non-positive value after time/latency review.
 
 Provider use: conditional and separately authorized.
 
-Open only when UAA-G2 passes, a named owner accepts the result destination, a
+G3 is not a planned tranche. Open only when UAA-G2 passes, a named owner accepts the result destination, a
 fresh GC-018 and work order define budget/quota/latency limits, and the
 operator authorizes the run. Retrieval metrics and reader/model accuracy must
 remain separate. Any release-quality governance claim requires the real
@@ -246,40 +298,41 @@ single run.
 
 | Tranche | Objective | Allowed output | Blocking exit |
 |---|---|---|---|
-| EACQ-FV-R0 | external adversarial critique | critique and finding-disposition packet only | operator accepts revised roadmap or stops it |
-| EACQ-FV-R1 | formalize forward-value assessment | standard/template/index proposal and negative examples | no status conflation; deferred candidates retain owners and reopen conditions |
-| EACQ-FV-R2 | enrich the existing task capsule | schema/generator/docs/tests under a fresh work order | coding modes receive proportional owner/invariant/test context |
-| EACQ-FV-R3 | close the reviewer learning loop | correction-digest contract, validator, and return integration | repeated corrections are current, source-backed, and public-safe |
-| EACQ-FV-R4 / UAA-G1 | normalize the utility evaluation contract | provider-free schema, fixtures, formulas, and validation | reproducible scoring and explicit stop decision |
-| EACQ-FV-R5 / UAA-G2 | build deterministic retrieval evaluation | provider-free harness, tests, receipts, and value decision | distinct useful signal proven or lane stops |
-| EACQ-FV-R6 | value/cost checkpoint | independent review and stop/proceed decision | serious, source-backed, non-duplicate value exceeds cost |
-| EACQ-FV-R7 / UAA-G3 | optional model/provider evaluation | separately authorized results packet | fresh GC-018, budget, owner, real-provider evidence |
-| EACQ-FV-R8 | reconcile and close | index, knowledge-map, session, and export disposition | no parked value or claim boundary is lost |
+| EACQ-FV-R0 | external adversarial critique and CVF disposition | governed review input, 14-row disposition, revised roadmap/index | COMPLETE; this revision awaits operator approval |
+| EACQ-FV-MV1 | enforce existing Conditional Reopen Index Rule | one checker adapting FPC/KIOD patterns, negative MPA fixture, focused tests; no hook wiring unless separately authorized | changed closeout cannot lose a parked candidate; negative MPA case fails |
+| EACQ-FV-MV2 | enrich existing task capsule | four fields, validation, docs/tests, offline/staleness-aware production path | backward-compatible validated capsule with named consumers and no mandatory live refresh |
+| EACQ-FV-MV3 | add forward-value delta to existing semantic audit | two questions, deterministic group selection, two secondary dispositions | no duplicate doctrine and no discretionary sampling |
+| UAA-G1/G2 option | future provider-free contract plus retrieval evaluation | one separately authorized work order with two exit decisions | named seam, reproducible scoring, then distinct useful retrieval signal or stop |
+| UAA-G3 option | future model/provider evaluation | index row only until separately authorized | G2 PASS plus fresh GC-018, owner, budget and operator authorization |
 
 Each implementation tranche requires its own source verification, baseline,
-work order, worker return, independent review, and closure evidence. R0 does
-not authorize R1; acceptance of R1 does not authorize R2 or either utility
-execution gate.
+work order, worker return, independent review, and closure evidence. Operator
+approval of this roadmap may open MV-1 dispatch authoring only. MV-1 does not
+authorize MV-2/MV-3 or either utility execution gate.
 
 ## Acceptance Criteria
 
 The roadmap may advance beyond design only when:
 
-1. the external critique is fully dispositioned and operator-accepted;
+1. the external critique is fully dispositioned and this revision receives
+   explicit operator approval;
 2. the task-capsule plan reuses the existing schema/generator owner;
 3. every new context field has a consumer, freshness rule, and measurable
    failure mode;
-4. a forward-value second pass is mandatory for all deferred groups and
-   sampled/high-risk reject/no-new-value groups;
-5. counterfactual acceleration and directional novelty are evaluated without
+4. MV-1 machine-enforces the three existing conditional-index outcomes and a
+   negative fixture proves the prior MPA omission would fail;
+5. forward review covers all deferred groups plus the deterministic
+   ownerless-or-five-row reject/no-new-value groups;
+6. counterfactual acceleration and option value are evaluated without
    promoting speculative ideas to authority;
-6. all parked value is indexed or explicitly excluded with reason;
-7. UAA-G1 and UAA-G2 remain deterministic and provider-free;
-8. UAA-G3 cannot open without a separate value/cost decision and authority;
-9. external-agent quality is evaluated against comparable tasks using repair
+7. all parked value is indexed or explicitly excluded with reason;
+8. UAA-G1 and UAA-G2 remain distinct deterministic provider-free gates even
+   if they share a future work order;
+9. UAA-G3 cannot open without a separate value/cost decision and authority;
+10. external-agent quality is evaluated against comparable tasks using repair
    count, owner-overlap defects, boundary violations, missing negative cases,
    reviewer time, and context size/latency;
-10. no public, runtime, security-effectiveness, or production claim exceeds
+11. no public, runtime, security-effectiveness, or production claim exceeds
     the evidence actually produced.
 
 ## Verification / Evidence Plan
@@ -302,23 +355,20 @@ superiority claim is in scope.
 
 | Roadmap tranche | Future work-order requirement | Reviewer evidence |
 |---|---|---|
-| R0 | design-only external critique packet | exact finding disposition and operator decision |
-| R1 | governance-design work order | forward-value examples, counterexamples, reopen-index reconciliation |
-| R2 | schema/generator implementation work order | fixture validation and backward compatibility |
-| R3 | correction-loop implementation work order | leakage review, stale-citation tests, return validation |
-| R4 | provider-free evaluation-contract work order | formula and fixture reproducibility |
-| R5 | provider-free retrieval-harness work order | deterministic focused tests and cost decision |
-| R6 | independent decision review | accepted stop/proceed evidence |
-| R7 | fresh live/provider work order | GC-018, budget, secret-safe diagnostic, real-provider receipt |
-| R8 | closure work order if needed | registry/session/public-disposition reconciliation |
+| R0 | no work order; review/disposition only | 14/14 findings routed and revision checkpoint recorded |
+| MV-1 | checker-only fresh GC-018/work order; exact rule literals, precedent checkers, negative MPA fixture, hook-wiring boundary | focused positive/negative tests and independent semantic review |
+| MV-2 | capsule schema/generator fresh GC-018/work order; four fields only; offline/staleness design | backward compatibility, named consumers, no mandatory live refresh |
+| MV-3 | governance-delta fresh GC-018/work order; no repeated existing rule | deterministic selection and two-label examples/counterexamples |
+| UAA-G1/G2 | one optional provider-free work order with two explicit gates | named seam, formula reproduction, deterministic retrieval value decision |
+| UAA-G3 | separate optional live/provider work order only after G2 | GC-018, owner, budget, secret-safe diagnostic and real-provider receipt |
 
 ## Dual Agent Surface Matrix
 
 | Artifact | Worker source view | Reviewer evidence view | Cross-reference |
 |---|---|---|---|
 | external critique | roadmap plus named current owners | source-backed challenges and classifications | EACQ-FV-R0 |
-| task capsule | task-proportional instructions and boundaries | generated capsule, freshness inputs, validation result | EACQ-FV-R2 |
-| correction digest | relevant public-safe failure hints | original correction provenance and redaction decision | EACQ-FV-R3 |
+| task capsule | task-proportional protected paths, owners, invariants and verification | generated capsule, freshness inputs, validation result | EACQ-FV-MV2 |
+| promoted governance learning | current rule-shaped instructions only | promotion owner, currentness and no raw review-history leakage | existing finding-absorption/learning owners; MV-3 |
 | utility contract | normalized formulas and fixtures | source mapping, deterministic recomputation | UAA-G1 |
 | retrieval harness | exact store/retrieval seams and scenarios | tests, receipts, distinct-value decision | UAA-G2 |
 | provider evaluation | bounded prompt/run contract | live receipt, cost, uncertainty, claim boundary | UAA-G3 |
@@ -351,12 +401,17 @@ superiority claim is in scope.
 
 | Claim | Source verified | Result |
 |---|---|---|
-| task capsule already exists | schema, generator `create_capsule`, PowerShell `PrepareTask`, and review README | confirmed; enrichment must reuse current owner |
-| current capsule lacks task-specific code context | `CVF_EXTERNAL_AGENT_TASK_CAPSULE.schema.json` fields | confirmed for protected paths, owner symbols, invariants, test commands, defect digest, and expected changed set |
-| deferred candidates require index handling | `CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` Conditional Reopen Index Rule | confirmed |
-| semantic review already requires inspection of deferred and high-risk rejected/no-new-value groups | same standard, Reviewer Semantic Value Audit | confirmed; execution did not preserve the MPA candidate in the central index |
-| MPA packet contains one eight-file utility cluster | MPA audit and per-file ledger | confirmed: 8 `DEFERRED` files |
-| utility cluster has no current CVF result | MPA audit and source packet | confirmed; evaluation value remains unproved |
+| task capsule already exists | `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_TASK_CAPSULE.schema.json`; `scripts/external_agent_packet.py` `create_capsule`; wrapper and review README | ACCEPT: MV-2 enriches this owner only |
+| current capsule lacks four selected code-context fields | task-capsule schema properties | ACCEPT: `protectedPaths`, path/symbol `ownerMap`, `invariants`, and exact `verification` are absent |
+| current PrepareTask is live-refresh coupled | `scripts/external_agent_packet.py` `main` invokes `refresh_snapshot` before `create_capsule`; refresh checks clean/canonical/live-equal public main | ACCEPT: validated capsule required, current entrypoint not mandated |
+| conditional reopen rule already exists | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` Conditional Reopen Index Rule and Reviewer Semantic Value Audit | ACCEPT: MV-1 is enforcement, not new doctrine |
+| no current checker binds the index literals | targeted search of `governance/compat/*.py` for conditional-index path and no-entry literal returned zero | ACCEPT: `MACHINE_GATE_GAP` |
+| reusable checker patterns exist | `governance/compat/check_fpc_parked_reopen_inventory.py`; `governance/compat/check_kiod_runtime_candidate_reopen_inventory.py` | ACCEPT as MV-1 design precedents only |
+| RAG retrieval owner exists | `docs/reference/CVF_DSCP_T1_OWNER_SURFACE_MAP_2026-06-07.md`; `docs/reference/CVF_MASTER_ARCHITECTURE_WHITEPAPER.md`; `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/retriever.ts` `Retriever.retrieve`; retriever tests | ACCEPT: candidate UAA seam named; evaluation owner still requires later decision |
+| Truth seam is not automatically a ranking seam | `EXTENSIONS/CVF_TRUTH_KERNEL/src/stores/immutable-store.ts` and current admission interfaces | ACCEPT: top-1/occupancy metrics are conditional |
+| reviewer-learning promotion already has owners | `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md`; `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md` | ACCEPT: raw correction digest removed |
+| MPA packet contains one thin eight-file utility cluster | MPA audit, per-file ledger and all nine schematic JSONL rows | ACCEPT: vocabulary/spec only; no corpus, queries, answers, scorer, or CVF result |
+| R0 findings are fully dispositioned | governed external review input and paired 14-row disposition packet | ACCEPT_WITH_REQUIRED_REVISIONS_APPLIED_PENDING_OPERATOR_APPROVAL |
 
 ## External Repository Absorption Entry Control
 
@@ -373,12 +428,12 @@ superiority claim is in scope.
 ## Mandatory Blind-Spot Control Block
 
 Filename, current authorization, implementation maturity, and terminal status
-must not decide forward value. The reviewer must inspect use-case content,
-counterfactual acceleration, directional novelty, option value, and the
-smallest falsifying proof. A second reviewer must challenge every high-option-
-value `DEFERRED` group and a risk-based sample of `NO_NEW_VALUE`/`REJECTED`
-groups. Any candidate retained without immediate action must enter the central
-conditional reopen index or receive the exact governed no-entry reason.
+must not decide forward value. The reviewer must apply the existing semantic
+audit plus counterfactual acceleration and option value. The review set is all
+`DEFERRED` groups plus every ownerless or five-row-or-larger
+`NO_NEW_VALUE`/`REJECTED` group in stable group-ID order. Any retained
+candidate must enter the central conditional reopen index or receive the exact
+governed no-entry reason.
 
 ## External Absorption Core
 
@@ -390,9 +445,9 @@ conditional reopen index or receive the exact governed no-entry reason.
 | Manifest artifact or inline manifest | `docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_MANIFEST_2026-08-27.json` |
 | Processing ledger artifact or inline ledger | `docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_FILE_LEDGER_2026-08-27.json` |
 | Ledger terminal statuses | allowed: READ, ADAPTED, DEFERRED, REJECTED, NO_NEW_VALUE, BLOCKED_UNREADABLE; source corpus actual: READ=8, DEFERRED=8, NO_NEW_VALUE=34; roadmap focus: 8 DEFERRED files as one capability cluster |
-| Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE; preserve source terminal status and add provisional `DEFERRED_HIGH_POTENTIAL_FORWARD_SIGNAL` cluster annotation |
-| Owner-surface map | task capsule/generator; absorption core; conditional reopen index; future named evaluation owner |
-| Unresolved items | no unreadable files; external critique and owner acceptance remain intentionally pending |
+| Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE; preserve source terminal status and add `FORWARD_VALUE_PRESERVED` as the secondary cluster disposition |
+| Owner-surface map | task capsule/generator; absorption core/index; RAG retriever and Truth candidate seams; finding-learning owners; future named utility-evaluation owner |
+| Unresolved items | no unreadable files and 0 undispositioned R0 findings; operator approval of this revision remains a checkpoint |
 | Completion claim boundary | complete roadmap design and candidate preservation, not implementation or evaluation-effectiveness proof |
 
 ## Corpus Completeness And Report Integrity
@@ -446,10 +501,10 @@ Reconciliation: 42 mapped + 8 deferred + 0 unmapped = 50 manifest files.
 
 | Source item | Value extracted | Conversion lane | CVF target surface | Next governed action | Runtime/package boundary |
 |---|---|---|---|---|---|
-| missed forward-value review lesson | terminal disposition can hide counterfactual and directional value | `DOCTRINE_ADAPTED` | future absorption semantic-review control | R0 critique, then R1 design | no runtime |
-| task-capsule enrichment | exact owner/invariant/test/correction context may reduce repair | `PACKAGE_CANDIDATE` | existing task-capsule schema/generator | R2 only after design acceptance | no competing package |
+| existing semantic-audit doctrine plus narrow delta | terminal disposition can hide counterfactual acceleration and option value | `DOCTRINE_ADAPTED` | existing absorption semantic-review control | MV-3 only after separate authority | no duplicate standard |
+| task-capsule enrichment | protected paths, exact owner symbols, invariants and verification may reduce repair | `PACKAGE_CANDIDATE` | existing task-capsule schema/generator | MV-2 only after separate authority | no competing package or mandatory live refresh |
 | utility-under-attack evaluation | provider-free normalization and retrieval evaluation | `RUNTIME_CANDIDATE` | future named evaluation owner | UAA-G1 then UAA-G2 | no provider in G1/G2 |
-| forward-value enforcement | missing index/second-pass evidence can be checked deterministically | `CHECKER_CANDIDATE` | future `governance/compat` work order | R1 must first prove enforceable literals and negative cases | no checker wiring now |
+| conditional-index enforcement | existing three-outcome closeout rule can be checked deterministically | `CHECKER_CANDIDATE` | future `governance/compat` MV-1 work order | checker-first after operator approval and fresh dispatch | no checker or hook wiring now |
 | mixed-origin packet implementation/prose | useful evidence does not transfer authority | `REJECT_DIRECT_IMPORT` | CVF-native owners only | source-verify and rewrite only if authorized | no direct import |
 | 34 already-owned files | independent convergence validates context quality but adds no current owner delta | `NO_PACKAGE_OR_RUNTIME_VALUE` | Memory/Truth/EAFR owners | use only as quality evidence; no duplicate work | no runtime/package |
 
@@ -457,39 +512,39 @@ Reconciliation: 42 mapped + 8 deferred + 0 unmapped = 50 manifest files.
 
 | Source item or group | Existing CVF owner surface checked | Overlap disposition | Novelty / delta | Action |
 |---|---|---|---|---|
-| external task capsule | `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_TASK_CAPSULE.schema.json`; `scripts/external_agent_packet.py`; `scripts/Update-CVF-External-Agent-Packet.ps1` | ENRICH_EXISTING | task-specific code-owner, invariant, verification, and correction context is absent | extend current owner after R0 |
-| ordinary semantic value audit | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` | ENRICH_EXISTING | required review exists, but forward/counterfactual value and index evidence were missed in MPA closeout | formalize second pass and negative proof |
+| external task capsule | `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_TASK_CAPSULE.schema.json`; `scripts/external_agent_packet.py`; `scripts/Update-CVF-External-Agent-Packet.ps1` | ENRICH_EXISTING | four bounded task-specific fields are absent; current `PrepareTask` is live-refresh coupled | MV-2 enriches current owner only after separate authority |
+| ordinary semantic value audit | `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` | ENRICH_EXISTING | rule already exists; only counterfactual acceleration, option value and deterministic selection are new | MV-1 enforces first; MV-3 adds narrow delta later |
 | MPA Memory/Truth concepts | `docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_ABSORPTION_AUDIT_2026-08-27.md`; Memory/Truth/EAFR owners cited there | CONFIRMED_EXISTING | independent rediscovery evidences external-agent alignment, not a new implementation need | retain as quality signal |
-| utility-under-attack cluster | OWNER_SURFACE_NOT_FOUND; `docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md` previously had no MPA row | NEW_FINDING | coherent evaluation precursor separates utility preservation from blocking | preserve and apply UAA gates |
+| utility-under-attack evaluation owner | `EXTENSIONS/CVF_ECO_v1.4_RAG_PIPELINE/src/retriever.ts`; Truth candidate seams; no current combined utility-evaluation owner found | NEW_FINDING | current retrieval owner exists, but composed utility-preserving adversarial evaluation remains unowned | preserve in index; apply UAA gates only if conjunctive reopen evidence appears |
 | direct packet code/prose | existing governed `AGENTS.md`; current authority hierarchy | REJECT_DIRECT_IMPORT | mixed-origin source cannot self-authorize | CVF-native design only |
 
 ## Mixed-Origin Derived Synthesis Provenance
 
 | Input or concept | Origin class | Evidence basis | Claim type | Validation method | Current CVF owner | Disposition |
 |---|---|---|---|---|---|---|
-| external coding-quality proposal | NOVEL_SYNTHESIS | current packet tooling and observed intake/review experience | roadmap design | R0 external critique and later controlled comparison | existing capsule/generator | REVIEW_REQUIRED |
-| forward-value correction | OPERATOR_AGENT_CO_DESIGNED | operator identified the overlooked value; current standard/index prove the gap | governance correction | source verification and index repair | absorption core/index | ADAPT_PENDING_REVIEW |
-| utility evaluation precursor | OPERATOR_AGENT_CO_DESIGNED | eight-file local packet cluster | evaluation design | G1 normalization and G2 deterministic proof | future named evaluation owner | DEFERRED_HIGH_POTENTIAL_FORWARD_SIGNAL |
+| external coding-quality proposal | NOVEL_SYNTHESIS | current packet tooling, R0 review and disposition | roadmap design | external critique plus CVF source verification | existing capsule/generator | REVISED_PENDING_OPERATOR_APPROVAL |
+| forward-value correction | OPERATOR_AGENT_CO_DESIGNED | operator identified the overlooked value; current standard/index and R0 review prove the enforcement gap | governance correction | source verification and index repair | absorption core/index | ADAPT_PENDING_OPERATOR_APPROVAL |
+| utility evaluation precursor | OPERATOR_AGENT_CO_DESIGNED | eight-file local packet cluster plus current RAG/Truth owner search | evaluation design | future G1 and G2 deterministic proof | future named evaluation owner | FORWARD_VALUE_PRESERVED |
 | current CVF facts | MIXED_ORIGIN | exact current paths and source | current-state claim | direct repository inspection | named current owners | ACCEPT_WITH_BOUNDARY |
 
 ## Absorption Decision Vector
 
 | Decision axis | Decision | Evidence | Cost boundary |
 |---|---|---|---|
-| Knowledge absorption | ADAPT_PENDING_REVIEW | forward-value miss and task-context gaps are source-backed | R0 first; no implementation |
+| Knowledge absorption | ADAPT_PENDING_OPERATOR_APPROVAL | R0 critique is fully dispositioned and repairs are applied | no implementation before approval |
 | Direct import | REJECT | mixed-origin packet is non-authoritative | CVF-native rewrite only |
 | Runtime activation | DEFER | utility value lacks CVF execution evidence | G1/G2 provider-free before G3 |
-| Authority promotion | DEFER | roadmap awaits external critique and operator decision | no automatic promotion |
+| Authority promotion | DEFER | revised roadmap awaits operator approval; each MV tranche still needs fresh authority | no automatic promotion |
 
 ## System-Chain Value Review
 
 | Chain component | Evidence path | Existing CVF owner/gap | Value disposition | Readiness disposition | Next action |
 |---|---|---|---|---|---|
-| external-agent task preparation | task-capsule schema/generator/wrapper | owner exists; code-specific context gap | ENRICH_EXISTING | design unreviewed | R0 then R2 |
-| external return/reviewer loop | external-agent return contract and reviews | correction learning is not task-capsule input | FORWARD_DESIGN_SIGNAL | owner decision needed | R0 then R3 |
-| absorption semantic review | absorption core standard | rule exists; forward-value/index execution gap | DOCTRINE_ADAPTED | design proposal only | R1 |
-| utility evaluation | eight deferred files | no named current evaluation result owner | EVALUATION_PRECURSOR | provider-free proof absent | G1 then G2 |
-| live reader/model evaluation | future provider work order | deliberately unopened | OPTION_VALUE_PRESERVED | blocked by G2/value/budget | conditional G3 |
+| external-agent task preparation | task-capsule schema/generator/wrapper | owner exists; four-field context gap and live-refresh coupling | FORWARD_VALUE_PRESERVED | revised design pending operator approval | MV-2 only after MV-1 and separate authority |
+| external return/reviewer loop | finding-absorption workflow and error-to-governance philosophy | promoted-rule learning already owned; raw digest rejected | NO_FORWARD_VALUE for new digest owner | current owner retained | no standalone tranche |
+| absorption semantic review | absorption core standard plus absent index enforcement | rule exists; machine gate missing | FORWARD_VALUE_PRESERVED | revised design pending operator approval | MV-1 checker first; MV-3 narrow delta later |
+| utility evaluation | eight deferred files plus current RAG/Truth seams | combined evaluation owner absent; source is specification-only | FORWARD_VALUE_PRESERVED | provider-free proof absent | future G1 then G2 if index condition is met |
+| live reader/model evaluation | future provider work order | deliberately unopened | FORWARD_VALUE_PRESERVED | blocked by G2/value/budget | indexed conditional G3 only |
 
 ## Absorption Efficiency And Provenance Reuse
 
@@ -531,9 +586,9 @@ upstreamConsultation: TARGETED_FOR_PROVENANCE_OR_GAP
 
 | Finding | Defect class | Learning lane | Proposed disposition |
 |---|---|---|---|
-| MPA deferred cluster was not entered in the required central reopen index | RULE_GAP in execution evidence, despite an existing prose rule | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED for a deterministic closeout check after R0/R1 |
-| maturity/authorization was allowed to dominate forward-value interpretation | REVIEW_REASONING_GAP | GOVERNANCE_CONTROL_PLANE | add explicit counterfactual, directional, and option-value questions |
-| external coding context is generic where task-specific owner/test context is needed | CONTEXT_CONTRACT_GAP | AGENT_EXECUTION_PLANE | enrich the existing capsule and measure repair reduction |
+| MPA deferred cluster was not entered in the required central reopen index | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MV-1 deterministic closeout enforcement using existing rule and FPC/KIOD precedents |
+| current semantic audit does not ask counterfactual acceleration or option value | RULE_GAP, narrow delta only | GOVERNANCE_CONTROL_PLANE | MV-3 adds only these two questions plus deterministic selection |
+| external coding context lacks four task-specific fields and current production is live-refresh coupled | ORCHESTRATOR_PACKET_GAP | AGENT_EXECUTION_PLANE | MV-2 enriches existing capsule and designs offline/staleness-aware validation |
 
 ## Epistemic Process Block
 
@@ -542,24 +597,28 @@ first-return repair and owner/boundary defects; an explicit forward-value
 second pass will preserve high-option-value ideas without inflating them into
 implementation authority.
 
-Evidence Comparison: not yet run. The MPA audit proves a concrete index and
-review-execution miss, while the current capsule schema proves the proposed
-task-specific fields are absent. Causal quality improvement remains unproved.
+Evidence Comparison: R0 adversarial review confirmed the MPA index omission,
+found the missed current RAG owner, proved the rule already existed without a
+binding checker, exposed current `PrepareTask` live-refresh coupling, and
+bounded the UAA source as specification-only. Causal quality improvement
+remains unproved.
 
-Contradiction Or Gap Disposition: R0 must identify context-bloat, stale-owner,
-speculation, and non-enforceable-checker failure modes. Later comparison stops
-or revises the design if repair cost, latency, or defect rate does not improve.
+Contradiction Or Gap Disposition: all 14 R0 findings are dispositioned; four
+blocking design defects are repaired. The roadmap was reduced from nine
+planned tranches to MV-1/MV-2/MV-3, while UAA remains a gated option. Later
+comparison stops or revises the design if repair cost, latency, or defect rate
+does not improve.
 
-Claim Update: roadmap proposed; no external-agent quality uplift or utility-
-under-attack effectiveness is claimed.
+Claim Update: roadmap revised pending operator approval; no external-agent
+quality uplift or utility-under-attack effectiveness is claimed.
 
 ## Fail Conditions
 
 Stop or return for redesign if:
 
-- the external reviewer identifies an unresolved authority or owner conflict;
+- operator approval of the revised roadmap is absent;
 - capsule additions have no named consumer or freshness rule;
-- forward-value labels collapse into novelty scoring without source evidence;
+- either of the two forward-value labels lacks its required owner/index proof;
 - a deferred candidate lacks an objective reopen condition;
 - UAA-G1 cannot define reproducible formulas and ground truth;
 - UAA-G2 cannot bind to current retrieval seams or adds only duplicate tests;
@@ -571,35 +630,35 @@ Stop or return for redesign if:
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex roadmap-author role |
+| Actor | CVF reviewer/closer and roadmap-author role |
 | Provider or surface | local private-provenance workspace |
-| Session or invocation | EACQ-FV roadmap design, 2026-08-27 |
+| Session or invocation | EACQ-FV-R0 external review absorption and roadmap revision, 2026-08-27 |
 | Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
 | Command or tool surface | direct governed-file reads, `rg`, `git`, and `apply_patch` |
-| Target paths | this roadmap and the conditional reopen index |
-| Allowed scope source | operator instruction to design both upgrades and request external critique before execution |
-| Before status evidence | clean worktree at `19c223ce06d579cfe16fb7feb4ff8996363797ab` |
-| After status evidence | roadmap proposed; MPA utility cluster preserved in the central index; implementation remains closed |
-| Diff evidence | exact two-path material diff before commit |
-| Approval boundary | roadmap and preservation repair only |
+| Target paths | governed external review input, finding disposition, this roadmap, conditional reopen index, RAG source-verification registry entry, and generated corpus registry |
+| Allowed scope source | operator accepted the proposed 14-finding disposition and minimum viable revision sequence |
+| Before status evidence | clean HEAD `e5504f4d4916b8befe4126b2585f4d1f7d3d52ae` plus one root-level untracked external review handback |
+| After status evidence | review governed, 14/14 findings dispositioned, roadmap revised pending approval, implementation closed |
+| Diff evidence | exact six-path material diff before commit |
+| Approval boundary | review absorption and roadmap/index revision only |
 | Claim boundary | no code implementation, benchmark execution, provider call, public sync, deployment, or production claim |
 | Agent type | dispatcher/source reviewer |
-| Invocation ID | `eacq-fv-roadmap-design-2026-08-27` |
-| Expected manifest | roadmap plus conditional reopen index |
-| Actual changed set | roadmap plus conditional reopen index |
+| Invocation ID | `eacq-fv-r0-review-absorption-revision-2026-08-27` |
+| Expected manifest | external review input, finding disposition, roadmap, conditional reopen index, RAG registry source entry, generated corpus registry |
+| Actual changed set | external review input, finding disposition, roadmap, conditional reopen index, RAG registry source entry, generated corpus registry |
 | Manifest delta | MATCH |
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
-The roadmap has not completed external critique or operator acceptance and is
-not yet eligible for public export.
+The roadmap has completed external critique and finding disposition but awaits
+operator approval of this revision. It is not eligible for public export.
 
 ## Claim Boundary
 
-This artifact proposes a review-first roadmap and preserves one deferred
-candidate cluster. It does not prove improved external-agent coding quality,
-authorize any implementation, execute the utility benchmark, establish a
-security threshold, call a provider, modify public artifacts, deploy, or make
-a production-readiness claim.
+This artifact records a source-verified minimum viable revision and preserves
+one deferred candidate cluster. It does not prove improved external-agent
+coding quality, authorize MV-1/MV-2/MV-3, execute UAA-G1/G2/G3, establish a
+security threshold, call a provider, modify public artifacts, deploy, or make a
+production-readiness claim.
