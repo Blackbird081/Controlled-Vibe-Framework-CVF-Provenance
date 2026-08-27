@@ -284,7 +284,7 @@ duplication) — it is the file's own documented design (a meta-skill whose
 individual workflows carry individually assessed risk under one umbrella
 classification). Resolution: preserved both facts with disposition MATCH, added one
 clarifying sentence in the rewritten `## Governance` section stating this
-explicitly, and used the skill's own stated baseline (`R2`) as the file's
+explicitly, and selected the record's own stated baseline (`R2`) as the file's
 `| Risk Level |` table value, exactly as the pre-edit file's own primary
 blockquote header already stated it.
 
