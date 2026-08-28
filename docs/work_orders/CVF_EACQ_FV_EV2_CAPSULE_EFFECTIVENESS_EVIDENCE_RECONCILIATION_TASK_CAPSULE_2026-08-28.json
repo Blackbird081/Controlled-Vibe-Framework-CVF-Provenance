@@ -1,0 +1,163 @@
+{
+  "schema": "cvf.externalAgentTaskCapsule.v1",
+  "protocolVersion": "1.1.0",
+  "projectionOf": "cvf.external-agent-round-trip",
+  "generatedAt": "2026-08-28T22:30:00+07:00",
+  "task": {
+    "id": "eacq-fv-ev2-capsule-effectiveness-evidence-reconciliation",
+    "title": "EACQ-FV EV-2 Capsule Effectiveness Evidence Reconciliation",
+    "objective": "Reconcile three governed capsule-effectiveness observations into the strongest bounded non-causal verdict supported by cited evidence.",
+    "workingMode": "EXTEND_SUPPLIED_REPOSITORY",
+    "outputRoot": "docs/reviews/CVF_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_WORKER_RETURN_2026-08-28.md",
+    "nonGoals": [
+      "Do not modify code, schema, checker, test, roadmap, baseline, work-order, session, registry, or external-folder owners.",
+      "Do not invent latency, tokens, difficulty scores, matched controls, or causal estimates.",
+      "Do not reopen UAA or make provider/model superiority claims.",
+      "Do not stage, commit, push, publish, deploy, call providers, or use credentials."
+    ]
+  },
+  "cvfPublicSource": {
+    "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "commit": "d1042ab0b2f044ca99fa3c812e38e33631b20869",
+    "sourcePosture": "OPERATOR_PINNED_NOT_LIVE_VERIFIED"
+  },
+  "sourceRepositories": [
+    {
+      "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+      "commit": "d1042ab0b2f044ca99fa3c812e38e33631b20869",
+      "usage": "REFERENCE_AND_ANALYSIS"
+    }
+  ],
+  "gateA": {
+    "name": "SOURCE_OWNER_OVERLAP",
+    "requiredBefore": "DESIGN_OR_CODE",
+    "requiredEvidence": [
+      "Verify all five pinned SHA-256 values before writing.",
+      "Confirm the roadmap owns comparison criteria and the three completion reviews own their observations.",
+      "Confirm no existing EV-2 aggregate owns this reconciliation.",
+      "Separate task-difficulty and authority-envelope differences from outcome observations."
+    ],
+    "terminalStates": ["PASS", "RETURN_FOR_REPAIR", "BLOCKED"]
+  },
+  "gateB": {
+    "name": "DESIGN_CODE_TEST",
+    "opensOnlyWhen": "gateA=PASS",
+    "requiredEvidence": [
+      "Create only the named assessment and worker return.",
+      "Cite every comparison cell or mark it NOT_AVAILABLE_WITH_REASON.",
+      "Choose exactly one allowed non-causal verdict by the work-order decision contract.",
+      "Run pre-implementation, worker-return fast, structural, diff, staging, and status checks."
+    ]
+  },
+  "authorityEnvelope": {
+    "commit": false,
+    "push": false,
+    "publication": false,
+    "deployment": false,
+    "providerCalls": false,
+    "credentials": false,
+    "destructiveActions": false
+  },
+  "protectedPaths": {
+    "consumers": ["worker", "reviewer"],
+    "freshness": {
+      "anchor": "dispatch base 51fe7eddd and paired EV-2 work order",
+      "regenerateWhen": "dispatch base, evidence pins, write ownership, or authority envelope changes"
+    },
+    "paths": [
+      "AGENTS.md",
+      "CVF_SESSION/",
+      "docs/reference/",
+      "docs/roadmaps/",
+      "docs/baselines/",
+      "docs/work_orders/",
+      "docs/audits/",
+      "governance/",
+      "scripts/",
+      "EXTENSIONS/"
+    ]
+  },
+  "ownerMap": {
+    "consumers": ["worker", "reviewer", "return validator"],
+    "freshness": {
+      "anchor": "five SHA-256 pins in the EV-2 work order",
+      "regenerateWhen": "any pinned roadmap, completion review, or capsule schema changes"
+    },
+    "owners": [
+      {
+        "path": "docs/roadmaps/CVF_EXTERNAL_AGENT_CODING_QUALITY_AND_FORWARD_VALUE_ABSORPTION_ROADMAP_2026-08-27.md",
+        "symbol": "Verification / Evidence Plan",
+        "version": "SHA-256 9f160071e36229981c8df4890b6d71a4c8c014b57cc8ec78869fa192823075b3",
+        "competingOwnersChecked": ["The roadmap owns comparison criteria; it does not contain the three-tranche reconciliation result."]
+      },
+      {
+        "path": "docs/reviews/CVF_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_COMPLETION_2026-08-28.md",
+        "symbol": "F-03 - capsule evidence is promising but not causal",
+        "version": "SHA-256 c95f4b3bd6d09c132f289b7cc075169f7e6ae037d1fd73539e580ea5c75ad88c",
+        "competingOwnersChecked": ["EV-1 owns only its task observation, not an aggregate verdict."]
+      },
+      {
+        "path": "docs/reviews/CVF_EACQ_FV_L2_EXECUTION_BASE_PACKET_SHAPE_SCAFFOLD_HARDENING_COMPLETION_2026-08-28.md",
+        "symbol": "F-06 - effectiveness evidence is neutral",
+        "version": "SHA-256 4bccc2da6a4c7a3964ab2cf579fa4a79e1a7a285926c444810f39e8f79431995",
+        "competingOwnersChecked": ["L2 owns only its task observation, not an aggregate verdict."]
+      },
+      {
+        "path": "docs/reviews/CVF_EACQ_FV_L3_AUTOMATION_ASSIST_OWNER_DRIFT_RECONCILIATION_COMPLETION_2026-08-28.md",
+        "symbol": "Capsule effectiveness",
+        "version": "SHA-256 24e6842b99d42eef2c2a8f813ff84a5ad97a1577b612ccbc77e9e7d91ca65459",
+        "competingOwnersChecked": ["L3 owns only its task observation, not an aggregate verdict."]
+      }
+    ]
+  },
+  "invariants": {
+    "consumers": ["worker", "reviewer"],
+    "freshness": {
+      "anchor": "EV-2 dispatch and pinned source set",
+      "regenerateWhen": "verdict vocabulary, comparison criteria, or input set changes"
+    },
+    "mustPreserve": [
+      "Preserve each source artifact's bounded verdict and disclosed repairs.",
+      "Keep observed facts separate from adjusted interpretation and inference.",
+      "Keep missing latency, token, quota, and matched-control evidence explicit.",
+      "Keep UAA, runtime, provider, public, checker, and implementation lanes parked."
+    ],
+    "forbiddenTransitions": [
+      "Do not turn promising association into a causal uplift claim.",
+      "Do not assign numeric values to unavailable measurements.",
+      "Do not compare provider or model identity.",
+      "Do not stage or commit worker changes."
+    ]
+  },
+  "verification": {
+    "consumers": ["worker", "reviewer", "return validator"],
+    "freshness": {
+      "anchor": "final unstaged two-path worker diff against execution base",
+      "regenerateWhen": "either output changes after verification"
+    },
+    "focusedTests": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base $executionBaseHead --head HEAD",
+      "python governance/compat/run_worker_return_fast_gate.py",
+      "python governance/compat/check_markdown_structural_completeness.py"
+    ],
+    "negativeCases": [
+      "Any uncited metric or invented unavailable value fails.",
+      "Any causal, provider-superiority, UAA, runtime, or public claim fails.",
+      "Any changed path outside the exact assessment/return manifest fails.",
+      "Any verdict outside the four allowed tokens fails."
+    ],
+    "deterministicChecks": [
+      "All five SHA-256 pins match before writing.",
+      "Every comparison cell has a citation or NOT_AVAILABLE_WITH_REASON.",
+      "Exactly one allowed verdict is selected.",
+      "git diff --check",
+      "git diff --name-status",
+      "git diff --cached --name-only",
+      "git status --short --untracked-files=all"
+    ],
+    "requiredOutputs": [
+      "docs/assessments/CVF_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_2026-08-28.md",
+      "docs/reviews/CVF_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_WORKER_RETURN_2026-08-28.md"
+    ]
+  }
+}

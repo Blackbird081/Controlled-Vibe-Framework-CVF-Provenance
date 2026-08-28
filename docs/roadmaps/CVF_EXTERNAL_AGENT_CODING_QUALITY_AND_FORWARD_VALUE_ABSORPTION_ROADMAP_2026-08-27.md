@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: L3_CLOSED_PASS_BOUNDED_PENDING_NEXT_VALUE_GATE
+Status: EV2_DISPATCH_READY_PENDING_NO_COMMIT_WORKER_RETURN
 
 docType: roadmap
 
@@ -314,6 +314,7 @@ single run.
 | EACQ-FV-MV3 | add forward-value delta to existing semantic audit | two questions, deterministic group selection, two secondary dispositions | CLOSED_PASS_BOUNDED at material `6a9887196`; completion review dated 2026-08-28 |
 | EACQ-FV-L2 | harden generated execution-base and worker-return packet shape | existing dispatch scaffold helper, focused tests, worker return; no checker/autorun/template mutation | CLOSED_PASS_BOUNDED at material `4f054c005` after Amendment 1 and one disclosed MEDIUM reviewer repair; no automatic successor |
 | EACQ-FV-L3 | reconcile automation-assist PathPlan and packet-shape owner drift | existing automation-assist helper/test owner plus worker return; no checker/commit-steward/scaffold/registry mutation | CLOSED_PASS_BOUNDED at material `ff78fbab6`; 82/82 focused; no implementation repair; no automatic successor |
+| EACQ-FV-EV2 | reconcile capsule-effectiveness evidence across EV-1/L2/L3 | one assessment plus worker return; no code/checker/schema/roadmap/session mutation by worker | DISPATCH_READY; non-causal verdict only; no automatic successor |
 | UAA-G1/G2 option | future provider-free contract plus retrieval evaluation | one separately authorized work order with two exit decisions | named seam, reproducible scoring, then distinct useful retrieval signal or stop |
 | UAA-G3 option | future model/provider evaluation | index row only until separately authorized | G2 PASS plus fresh GC-018, owner, budget and operator authorization |
 
