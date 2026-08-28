@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eacq_fv_l3_dispatched_pending_no_commit_worker_return",
+  "currentMode": "eacq_fv_l3_material_accepted_pending_closure",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EACQ-FV-L3 dispatch is committed at 2eb6d9e31. Next allowed move: delegated no-commit worker executes exactly run_agent_automation_assist.py, test_run_agent_automation_assist.py, and the named L3 worker return; capture the clean post-session-sync executionBaseHead, verify all pins, reproduce the 51+2 failure taxonomy, keep both exception-owned Python files net-zero-or-negative lines, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. UAA, the 751-line and 869-line soft-size advisories, checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deploy, push, secrets, compaction and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-L3 material is independently accepted at ff78fbab6 with no implementation repair. Next allowed move: reviewer/closer updates the governed L3 work order and roadmap to CLOSED_PASS_BOUNDED, records machine closure evidence, reruns exact committed-range pre-closure proof for 058196ddf..ff78fbab6, and then performs final session sync. No successor opens automatically. UAA, the 751-line and 869-line soft-size advisories, checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deploy, push, secrets, compaction and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
