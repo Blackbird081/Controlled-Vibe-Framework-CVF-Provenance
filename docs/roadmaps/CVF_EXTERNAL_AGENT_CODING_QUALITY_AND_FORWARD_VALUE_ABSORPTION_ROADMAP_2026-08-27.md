@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: L2_CLOSED_PASS_BOUNDED_PENDING_NEXT_VALUE_GATE
+Status: L3_DISPATCH_READY
 
 docType: roadmap
 
@@ -75,8 +75,11 @@ the repeated pre-closure-range learning tranche are also closed bounded. On
 2026-08-28 the operator requested the next value-gated move; MV-3 alone passed
 the fresh serious/source-backed/non-duplicate/value-exceeds-cost gate and is
 now independently accepted `CLOSED_PASS_BOUNDED` at material `6a9887196` after
-three disclosed reviewer repairs. UAA, provider, public, runtime, the repeated
-dispatch-range learning candidate, and the soft-size advisory remain parked.
+three disclosed reviewer repairs. L2 is independently closed bounded at
+material `4f054c005`. On the operator's next continuation, the pre-existing
+automation-assist owner-drift debt alone passed a fresh value gate and L3 is
+now `DISPATCH_READY`. UAA, provider, public, runtime, compaction, checker/
+autorun/template expansion, and soft-size advisories remain parked.
 Provider identity is not normative authority.
 
 ## Scope
@@ -309,16 +312,17 @@ single run.
 | EACQ-FV-MV2 | enrich existing task capsule | four fields, validation, docs/tests, offline/staleness-aware production path | CLOSED_PASS_BOUNDED |
 | EACQ-FV-MV3 | add forward-value delta to existing semantic audit | two questions, deterministic group selection, two secondary dispositions | CLOSED_PASS_BOUNDED at material `6a9887196`; completion review dated 2026-08-28 |
 | EACQ-FV-L2 | harden generated execution-base and worker-return packet shape | existing dispatch scaffold helper, focused tests, worker return; no checker/autorun/template mutation | CLOSED_PASS_BOUNDED at material `4f054c005` after Amendment 1 and one disclosed MEDIUM reviewer repair; no automatic successor |
+| EACQ-FV-L3 | reconcile automation-assist PathPlan and packet-shape owner drift | existing automation-assist helper/test owner plus worker return; no checker/commit-steward/scaffold/registry mutation | DISPATCH_READY; opens only the 51+2 source-backed focused-suite repair |
 | UAA-G1/G2 option | future provider-free contract plus retrieval evaluation | one separately authorized work order with two exit decisions | named seam, reproducible scoring, then distinct useful retrieval signal or stop |
 | UAA-G3 option | future model/provider evaluation | index row only until separately authorized | G2 PASS plus fresh GC-018, owner, budget and operator authorization |
 
 Each implementation tranche requires its own source verification, baseline,
 work order, worker return, independent review, and closure evidence. Current
-authority opens MV-3 only through
-`docs/baselines/CVF_GC018_EACQ_FV_MV3_FORWARD_VALUE_SEMANTIC_AUDIT_DELTA_2026-08-28.md`
+authority opens L3 only through
+`docs/baselines/CVF_GC018_EACQ_FV_L3_AUTOMATION_ASSIST_OWNER_DRIFT_RECONCILIATION_2026-08-28.md`
 and
-`docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_MV3_FORWARD_VALUE_SEMANTIC_AUDIT_DELTA_2026-08-28.md`.
-MV-3 does not authorize either utility execution gate or any automatic
+`docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_L3_AUTOMATION_ASSIST_OWNER_DRIFT_RECONCILIATION_2026-08-28.md`.
+L3 does not authorize either utility execution gate or any automatic
 successor.
 
 ## Acceptance Criteria
