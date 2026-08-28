@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_L2_EXECUTION_BASE_PACKET_SHAPE_SCAFFOLD_HARDENING_2026-08-28.md",
     "baselineSha256": "aab4f51bb9a398403ceddbca54ba11ddd8ec9254158fa2edd0c20ea036ff91a0",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_L2_EXECUTION_BASE_PACKET_SHAPE_SCAFFOLD_HARDENING_2026-08-28.md",
-    "workOrderSha256": "f01f6aea587c28d8ad3211a4618602fb4433facc0397374ec931d578d84c42a0"
+    "workOrderSha256": "d650ce2e7ac4786817d6a9998d51e828325c801008275ef8ad5d9088241f4fc5"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

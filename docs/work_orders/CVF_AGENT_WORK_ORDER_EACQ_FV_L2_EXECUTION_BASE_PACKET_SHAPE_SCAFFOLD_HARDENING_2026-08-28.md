@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Work order ID: EACQ-FV-L2
 
@@ -489,13 +489,41 @@ checker/autorun/template/session or manifest expansion.
 
 ## Closure Checklist
 
-- [ ] capsule and every source pin match;
-- [ ] exact three worker paths and empty staging independently confirmed;
-- [ ] generated pre-implementation command uses execution base, not dispatch base;
-- [ ] scoped contract contains all current diagnostic terms and N/A instruction;
-- [ ] canonical manifest heading count is one and old heading count is zero;
-- [ ] focused, automation-assist, size, fast and applicable governance gates pass;
-- [ ] effectiveness evidence is classified independently and non-causally.
+- [x] capsule and every source pin match;
+- [x] exact four Amendment-1 worker paths and empty staging independently confirmed;
+- [x] generated pre-implementation command uses executionBaseHead rather than dispatchBaseHead;
+- [x] scoped contract contains all current diagnostic terms and N/A instruction;
+- [x] canonical manifest heading count is one and old heading count is zero;
+- [x] focused, automation-assist, size, fast and applicable governance gates pass;
+- [x] effectiveness evidence is classified independently and non-causally.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this artifact | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EACQ_FV_L2_EXECUTION_BASE_PACKET_SHAPE_SCAFFOLD_HARDENING_COMPLETION_2026-08-28.md` | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | EACQ-FV roadmap | L2 closed; no automatic successor | PASS |
+| Dispatch authority | paired baseline, work order, and capsule | `fd5f4ad9d` | PASS |
+| Worker return | named L2 worker return | Amendment 1 plus reviewer addendum | PASS |
+| Material | exact four amended paths | `4f054c005` | PASS |
+| Deterministic verification | focused/fast/autorun/pre-commit/pre-closure | 67/67; 66/66; 81/81; 87/87; 79/79 | PASS |
+| Session continuity | active sources and generated aggregate | material sync `92f6c7054`; final closed sync follows | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | generated aggregate discipline | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; active handoff | material-bound state; final closed sync follows | PASS |
+| System loop interlock | completion claim boundary | UAA and all successors remain parked | PASS |
+| External evidence digest | N/A with reason: deterministic local task | no provider/runtime receipt | N/A WITH REASON |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Worker return | independently reviewed | accepted after Amendment 1 and one MEDIUM repair | PASS |
+| Material identity | exact accepted commit | `4f054c005` | PASS |
+| Focused verification | all cases pass | 67/67 PASS | PASS |
+| Exact committed range | closure-safe | 79/79 PASS | PASS |
+| Runtime receipt | N/A with reason: no runtime/provider execution | none | N/A_WITH_REASON |
+| Public export | deferred private only | no public artifact evidence | N/A_WITH_REASON |
 
 ## Return-To-Orchestrator Conditions
 

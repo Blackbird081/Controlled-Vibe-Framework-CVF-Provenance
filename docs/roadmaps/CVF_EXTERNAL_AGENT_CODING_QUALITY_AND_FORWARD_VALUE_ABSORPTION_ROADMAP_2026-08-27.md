@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: L2_DISPATCHED_PENDING_NO_COMMIT_WORKER_RETURN
+Status: L2_CLOSED_PASS_BOUNDED_PENDING_NEXT_VALUE_GATE
 
 docType: roadmap
 
@@ -308,7 +308,7 @@ single run.
 | EACQ-FV-MV1 | enforce existing Conditional Reopen Index Rule | one checker adapting FPC/KIOD patterns, negative MPA fixture, focused tests; no hook wiring unless separately authorized | CLOSED_PASS_BOUNDED |
 | EACQ-FV-MV2 | enrich existing task capsule | four fields, validation, docs/tests, offline/staleness-aware production path | CLOSED_PASS_BOUNDED |
 | EACQ-FV-MV3 | add forward-value delta to existing semantic audit | two questions, deterministic group selection, two secondary dispositions | CLOSED_PASS_BOUNDED at material `6a9887196`; completion review dated 2026-08-28 |
-| EACQ-FV-L2 | harden generated execution-base and worker-return packet shape | existing dispatch scaffold helper, focused tests, worker return; no checker/autorun/template mutation | DISPATCHED_PENDING_NO_COMMIT_WORKER_RETURN under fresh GC-018/work order dated 2026-08-28 |
+| EACQ-FV-L2 | harden generated execution-base and worker-return packet shape | existing dispatch scaffold helper, focused tests, worker return; no checker/autorun/template mutation | CLOSED_PASS_BOUNDED at material `4f054c005` after Amendment 1 and one disclosed MEDIUM reviewer repair; no automatic successor |
 | UAA-G1/G2 option | future provider-free contract plus retrieval evaluation | one separately authorized work order with two exit decisions | named seam, reproducible scoring, then distinct useful retrieval signal or stop |
 | UAA-G3 option | future model/provider evaluation | index row only until separately authorized | G2 PASS plus fresh GC-018, owner, budget and operator authorization |
 
