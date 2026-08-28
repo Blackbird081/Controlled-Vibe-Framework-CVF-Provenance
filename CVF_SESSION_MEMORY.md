@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_l2_closed_pass_bounded_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=apply a fresh serious/source-backed/non-duplicate/value-exceeds-cost gate; parked checkpoint=UAA, the 751-line soft-size advisory, automation-assist pre-existing test debt, checker/autorun/template/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
+Startup acknowledged: current mode=`eacq_fv_l3_dispatched_pending_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact three-path L3 no-commit work order and return for independent review; parked checkpoint=UAA, 751-line and 869-line soft-size advisories, checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_l2_closed_pass_bounded_pending_next_value_gate`
-Current mode: `eacq_fv_l2_closed_pass_bounded_pending_next_value_gate`; previous mode marker: `eacq_fv_l2_material_accepted_pending_closure`
-Previous mode: `eacq_fv_l2_material_accepted_pending_closure`
+Current mode marker: `eacq_fv_l3_dispatched_pending_no_commit_worker_return`
+Current mode: `eacq_fv_l3_dispatched_pending_no_commit_worker_return`; previous mode marker: `eacq_fv_l2_closed_pass_bounded_pending_next_value_gate`
+Previous mode: `eacq_fv_l2_closed_pass_bounded_pending_next_value_gate`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_l2_closed_pass_bounded_pending_next_value_gate`. L2 is independently closed at `2a1dd0502` with material `4f054c005` after Amendment 1 and one disclosed MEDIUM reviewer repair. Exact material proof is 67/67 focused, 66/66 reviewer-fast, 81/81 pre-implementation, 87/87 pre-commit, and 79/79 committed-range pre-closure. Apply a fresh value gate before any successor; all parked boundaries remain unchanged.
+Mode: `eacq_fv_l3_dispatched_pending_no_commit_worker_return`. L3 dispatch is committed at `2eb6d9e31` after a fresh value-gate PASS. The worker may modify only `governance/compat/run_agent_automation_assist.py`, `governance/compat/test_run_agent_automation_assist.py`, and the named L3 worker return; it must reproduce the 51+2 failure taxonomy, preserve L2 semantic diagnostics, keep both exception-owned Python files net-zero-or-negative lines, leave staging empty, and return for independent review. All other parked boundaries remain unchanged.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

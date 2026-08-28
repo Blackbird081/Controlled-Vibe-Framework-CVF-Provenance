@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eacq_fv_l2_closed_pass_bounded_pending_next_value_gate",
+  "currentMode": "eacq_fv_l3_dispatched_pending_no_commit_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EACQ-FV-L2 is independently closed bounded at closure commit 2a1dd0502 with material 4f054c005 after Amendment 1 and one disclosed MEDIUM reviewer repair. No successor opens automatically. Apply the serious/source-backed/non-duplicate/value-exceeds-time-latency-quota gate before selecting another candidate. UAA, the 751-line soft-size advisory, automation-assist pre-existing test debt, checker/autorun/template/runtime mutation, provider/live, public sync, deploy, push, secrets, compaction and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-L3 dispatch is committed at 2eb6d9e31. Next allowed move: delegated no-commit worker executes exactly run_agent_automation_assist.py, test_run_agent_automation_assist.py, and the named L3 worker return; capture the clean post-session-sync executionBaseHead, verify all pins, reproduce the 51+2 failure taxonomy, keep both exception-owned Python files net-zero-or-negative lines, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. UAA, the 751-line and 869-line soft-size advisories, checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deploy, push, secrets, compaction and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_L2_EXECUTION_BASE_PACKET_SHAPE_SCAFFOLD_HARDENING_2026-08-28.md",
-    "baselineSha256": "aab4f51bb9a398403ceddbca54ba11ddd8ec9254158fa2edd0c20ea036ff91a0",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_L2_EXECUTION_BASE_PACKET_SHAPE_SCAFFOLD_HARDENING_2026-08-28.md",
-    "workOrderSha256": "d650ce2e7ac4786817d6a9998d51e828325c801008275ef8ad5d9088241f4fc5"
+    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_L3_AUTOMATION_ASSIST_OWNER_DRIFT_RECONCILIATION_2026-08-28.md",
+    "baselineSha256": "8d9ca6cab36cd4f95088efc8ab81733aff08ea3b3142c00b4583a73c9fec9022",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_L3_AUTOMATION_ASSIST_OWNER_DRIFT_RECONCILIATION_2026-08-28.md",
+    "workOrderSha256": "4196f267fd380a72ac5a8824e204ba101f74b1823bb47e316259b8814e3e4bff"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
