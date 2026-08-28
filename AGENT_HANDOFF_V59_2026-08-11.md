@@ -4,7 +4,7 @@ Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
-- Current EACQ-FV-EV2 dispatch HEAD: `9ac836be0`; exact two-output evidence-only worker scope; five pinned inputs; allowed verdicts `PROMISING_NON_CAUSAL`, `NEUTRAL`, `NEGATIVE`, or `INSUFFICIENT_COMPARABILITY`; pre-dispatch 79/79 and commit hook 87/87 PASS. L3 remains closed at material `ff78fbab6` and closure `e1b237ea8`.
+- Current EACQ-FV-EV2 Amendment 1 HEAD: `7af9c63eb`; first worker stop correctly preserved; roadmap re-pinned to `ed5514590f`, capsule to `5902be07d`; exact two-output evidence-only retry remains open with four allowed bounded verdicts. Amendment pre-dispatch 79/79 and commit hook 87/87 PASS.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -111,11 +111,11 @@ Carry the bounded EACQ-FV-EV2 evidence reconciliation through exact no-commit wo
 
 ## Current Authority
 
-EACQ-FV-L3 is closed at material `ff78fbab6` and closure `e1b237ea8`. EACQ-FV-EV2 dispatch: `9ac836be0`.
+EACQ-FV-L3 is closed at material `ff78fbab6` and closure `e1b237ea8`. EACQ-FV-EV2 Amendment 1: `7af9c63eb`.
 
 | Field | Value |
 |---|---|
-| authorityState | EACQ-FV-EV2 dispatched at `9ac836be0`; pending exact no-commit two-output worker return |
+| authorityState | EACQ-FV-EV2 amended at `7af9c63eb`; pending exact no-commit two-output worker retry |
 | baselinePath | `docs/baselines/CVF_GC018_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_2026-08-28.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_2026-08-28.md` |
 | nextAuthorityRequirement | verify pins, create assessment plus worker return, leave staging empty, then independent review; no automatic successor |
@@ -170,7 +170,7 @@ EACQ-FV-L3 is closed at material `ff78fbab6` and closure `e1b237ea8`. EACQ-FV-EV
 
 ## Next Allowed Move
 
-EACQ-FV-EV2 is dispatched at `9ac836be0`. The only allowed move is delegated no-commit execution producing exactly the named assessment and worker return, with five source pins, cited comparison cells, explicit missing data, one allowed bounded verdict, and empty staging. UAA, all code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction, soft-size advisories, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.
+EACQ-FV-EV2 Amendment 1 is committed at `7af9c63eb`. The only allowed move is delegated no-commit retry producing the named assessment and updating the preserved worker return, with roadmap pin `ed5514590f`, capsule pin `5902be07d`, cited comparison cells, explicit missing data, one allowed bounded verdict, and empty staging. UAA, all code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction, soft-size advisories, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -203,7 +203,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-EV2 dispatch `9ac836be0` plus its exact no-commit evidence boundary.
+Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-EV2 Amendment 1 `7af9c63eb` plus its exact no-commit retry boundary.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -213,7 +213,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: operator continued the orchestrator/reviewer/closer lane; the L3 work order authorizes independent review, material commit, closure, and continuity sync.
-Rollback boundary: revert this EV-2 dispatch continuity atomically while retaining dispatch `9ac836be0`, L3 closure `e1b237ea8`, all prior closures, and history for separate disposition.
+Rollback boundary: revert this EV-2 Amendment 1 continuity atomically while retaining amendment `7af9c63eb`, original dispatch `9ac836be0`, L3 closure `e1b237ea8`, all prior closures, and history for separate disposition.
 Not authorized: UAA execution, checker/commit-steward/scaffold/autorun/template/registry/session worker mutation, successor implementation, runtime-owner mutation, external packet-folder mutation, public mutation, deployment, push, secret-value access, provider/live calls, compaction, or unrelated work.
 ## Claim Boundary
 

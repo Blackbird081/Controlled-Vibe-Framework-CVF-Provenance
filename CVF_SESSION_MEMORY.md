@@ -52,7 +52,7 @@ Previous mode: `eacq_fv_l3_closed_pass_bounded_pending_next_value_gate`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_ev2_dispatched_pending_no_commit_worker_return`. EV-2 passed the fresh value gate and is dispatched at `9ac836be0` to reconcile EV-1/L2/L3 capsule-effectiveness evidence. The worker may create exactly the named assessment and worker return, must preserve missing data and comparability limits, choose one of four bounded verdicts, and leave staging empty. UAA and every code/runtime/provider/public lane remain parked.
+Mode: `eacq_fv_ev2_dispatched_pending_no_commit_worker_return`. EV-2 Amendment 1 is committed at `7af9c63eb`: the worker's first fail-closed stop is preserved, roadmap pin is corrected to `ed5514590f`, and capsule pin to `5902be07d`. Retry from the amended clean HEAD; create the named assessment and update the worker return, preserve missing data and comparability limits, choose one of four bounded verdicts, and leave staging empty. UAA and every code/runtime/provider/public lane remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

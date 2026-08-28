@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "eacq_fv_ev2_dispatched_pending_no_commit_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EACQ-FV-EV2 evidence reconciliation is dispatched at 9ac836be0. Next allowed move: delegated no-commit worker verifies all pins and creates exactly the named assessment plus worker return, selecting only PROMISING_NON_CAUSAL, NEUTRAL, NEGATIVE, or INSUFFICIENT_COMPARABILITY. No code, roadmap, session, UAA, provider/live, public, deploy, push, secrets, compaction, or unrelated mutation is authorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-EV2 Amendment 1 is committed at 7af9c63eb after the worker correctly stopped on the stale pre-edit roadmap pin. Next allowed move: retry from the amended clean HEAD, verify roadmap ed5514590f and capsule 5902be07d, then create the assessment and update the named worker return to COMPLETE_PENDING_REVIEW or return a new genuine blocker. No code, roadmap, session, UAA, provider/live, public, deploy, push, secrets, compaction, or unrelated mutation is authorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
