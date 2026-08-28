@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "EACQ-FV-L3 is CLOSED_PASS_BOUNDED at material ff78fbab6 and closure e1b237ea8 with no implementation repair. Next allowed move: evaluate a fresh roadmap candidate only through the serious, source-backed, non-duplicate, value-greater-than-time/latency/quota gate; no successor opens automatically. UAA, the 751-line and 869-line soft-size advisories, checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deploy, push, secrets, compaction and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EACQ-FV-EV2 evidence reconciliation is dispatched at 9ac836be0. Next allowed move: delegated no-commit worker verifies all pins and creates exactly the named assessment plus worker return, selecting only PROMISING_NON_CAUSAL, NEUTRAL, NEGATIVE, or INSUFFICIENT_COMPARABILITY. No code, roadmap, session, UAA, provider/live, public, deploy, push, secrets, compaction, or unrelated mutation is authorized. Latest finalized numbered LHW wave remains LHW24."
 }

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_l3_closed_pass_bounded_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh candidate evaluation through the operator value gate only; parked checkpoint=UAA, 751-line and 869-line soft-size advisories, checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
+Startup acknowledged: current mode=`eacq_fv_ev2_dispatched_pending_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact two-output EV-2 evidence work order and return for independent review; parked checkpoint=UAA, 751-line and 869-line soft-size advisories, code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_l3_closed_pass_bounded_pending_next_value_gate`
-Current mode: `eacq_fv_l3_closed_pass_bounded_pending_next_value_gate`; previous mode marker: `eacq_fv_l3_material_accepted_pending_closure`
-Previous mode: `eacq_fv_l3_material_accepted_pending_closure`
+Current mode marker: `eacq_fv_ev2_dispatched_pending_no_commit_worker_return`
+Current mode: `eacq_fv_ev2_dispatched_pending_no_commit_worker_return`; previous mode marker: `eacq_fv_l3_closed_pass_bounded_pending_next_value_gate`
+Previous mode: `eacq_fv_l3_closed_pass_bounded_pending_next_value_gate`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_l3_closed_pass_bounded_pending_next_value_gate`. L3 is closed bounded at material `ff78fbab6` and closure `e1b237ea8` with no implementation repair. Evidence is 82/82 focused, Python size COMPLIANT, 81/81 pre-implementation, 66/66 reviewer-fast, material-range pre-closure 79/79, and closure hook 87/87. Evaluate a new roadmap candidate only if it is serious, source-backed, non-duplicate, and its value exceeds time/latency/quota cost. No successor opens automatically; all parked boundaries remain unchanged.
+Mode: `eacq_fv_ev2_dispatched_pending_no_commit_worker_return`. EV-2 passed the fresh value gate and is dispatched at `9ac836be0` to reconcile EV-1/L2/L3 capsule-effectiveness evidence. The worker may create exactly the named assessment and worker return, must preserve missing data and comparability limits, choose one of four bounded verdicts, and leave staging empty. UAA and every code/runtime/provider/public lane remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
