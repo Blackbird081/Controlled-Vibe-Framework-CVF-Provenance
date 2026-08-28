@@ -138,7 +138,7 @@ Before writing each worker-owned output artifact, read checker source for that f
 
 Literal-shape reminders: do not list required headings as backticked `## ...` strings before the real section; write source-not-found disposition spelling instead of the exact blocked enum in literalTokensReviewed; avoid `after ... closure` wording unless a dependency-release row cites the accepted artifact path and commit.
 
-## Work-Order Fulfillment Manifest
+## Required Artifact Manifest
 
 | Artifact | Required worker action |
 | --- | --- |
@@ -153,13 +153,19 @@ requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
 individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
+Required terms: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Claim Boundary; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; executionBaseHead; git status --short.
+
+Conditional terms: External Knowledge Intake Routing; Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; Epistemic Process Block; Machine Closure Package.
+
+Use `N/A with reason` for every non-applicable conditional block.
+
 Shape-list rule: when listing required worker-output sections, write section names without the `##` prefix. Reserve actual heading syntax for real sections so structural checkers do not treat this checklist as the artifact section body.
 
 
 ## Verification Commands
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base GOLDENFIXTUREBASEHEAD --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
 python governance/compat/run_worker_return_fast_gate.py
 git status --short
 ```
