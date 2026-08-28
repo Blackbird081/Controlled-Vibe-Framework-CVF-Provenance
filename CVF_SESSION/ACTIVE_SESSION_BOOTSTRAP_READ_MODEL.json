@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eacq_fv_ev2_material_accepted_pending_closure",
+  "currentMode": "eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EACQ-FV-EV2 evidence is independently accepted at material commit 4ffa0df23 with verdict PROMISING_NON_CAUSAL after bounded evidence-only repair. Next allowed move: reviewer/closer updates the paired work order and roadmap to CLOSED_PASS_BOUNDED, records exact committed-range proof for cb920ecca..4ffa0df23, and then performs final session sync. No successor opens automatically. UAA, code, checker, runtime, provider/live, public, deploy, push, secrets, compaction, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-EV2 is closed bounded at material 4ffa0df23 and closure 79eb1426c with verdict PROMISING_NON_CAUSAL; exact material-range pre-closure proof passed 79/79. Next allowed move: select a new roadmap only through a fresh serious, source-backed, non-duplicate, value-exceeds-cost gate. No successor opens automatically. UAA, code, checker, runtime, provider/live, public, deploy, push, secrets, compaction, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

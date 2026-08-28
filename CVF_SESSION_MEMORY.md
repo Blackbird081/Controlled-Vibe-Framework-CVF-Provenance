@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_ev2_material_accepted_pending_closure`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=close the accepted EV-2 evidence material using exact committed-range proof; parked checkpoint=UAA, 751-line and 869-line soft-size advisories, code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
+Startup acknowledged: current mode=`eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select a new roadmap only through a fresh four-part value gate; parked checkpoint=UAA, 751-line and 869-line soft-size advisories, code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_ev2_material_accepted_pending_closure`
-Current mode: `eacq_fv_ev2_material_accepted_pending_closure`; previous mode marker: `eacq_fv_ev2_dispatched_pending_no_commit_worker_return`
-Previous mode: `eacq_fv_ev2_dispatched_pending_no_commit_worker_return`
+Current mode marker: `eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate`
+Current mode: `eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate`; previous mode marker: `eacq_fv_ev2_material_accepted_pending_closure`
+Previous mode: `eacq_fv_ev2_material_accepted_pending_closure`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_ev2_material_accepted_pending_closure`. EV-2 evidence is independently accepted at material commit `4ffa0df23` with verdict `PROMISING_NON_CAUSAL` after bounded evidence-only repair. Close the paired work order and roadmap using exact committed-range proof for `cb920ecca..4ffa0df23`, then perform final session sync. No successor opens automatically; UAA and every code/runtime/provider/public lane remain parked.
+Mode: `eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate`. EV-2 is closed at material `4ffa0df23` and closure `79eb1426c` with verdict `PROMISING_NON_CAUSAL`; exact material-range pre-closure proof passed 79/79. Select a new roadmap only through a fresh serious, source-backed, non-duplicate, value-exceeds-cost gate. No successor opens automatically; UAA and every code/runtime/provider/public lane remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

@@ -1,10 +1,10 @@
-# CVF Agent Handoff V59 - EACQ-FV EV-2 Material Accepted Pending Closure
+# CVF Agent Handoff V59 - EACQ-FV EV-2 Closed Pending Next Value Gate
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
-- Current EACQ-FV-EV2 material: `4ffa0df23`; independent review accepts `PROMISING_NON_CAUSAL` after bounded evidence-only repair; material commit hook 87/87 PASS and no successor opens automatically.
+- Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
 - Branch: `main`
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -39,14 +39,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_ev2_material_accepted_pending_closure`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=close the accepted EV-2 evidence material using exact committed-range proof; parked checkpoint=UAA, 751-line and 869-line soft-size advisories, code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
+Startup acknowledged: current mode=`eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select a new roadmap only through a fresh four-part value gate; parked checkpoint=UAA, 751-line and 869-line soft-size advisories, code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
 
 ## Current Mode
-`eacq_fv_ev2_material_accepted_pending_closure`
+`eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate`
 
 ## Purpose
 
-Close the independently accepted EACQ-FV-EV2 evidence material through exact committed-range proof and governed closure without opening any successor automatically.
+Preserve the bounded EACQ-FV-EV2 closure and admit any next roadmap only through a fresh four-part value gate.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -111,14 +111,14 @@ Close the independently accepted EACQ-FV-EV2 evidence material through exact com
 
 ## Current Authority
 
-EACQ-FV-L3 is closed at material `ff78fbab6` and closure `e1b237ea8`. EACQ-FV-EV2 accepted material: `4ffa0df23`.
+EACQ-FV-L3 is closed at material `ff78fbab6` and closure `e1b237ea8`. EACQ-FV-EV2 is closed at material `4ffa0df23` and closure `79eb1426c`.
 
 | Field | Value |
 |---|---|
-| authorityState | EACQ-FV-EV2 material accepted at `4ffa0df23`; pending reviewer closure |
+| authorityState | EACQ-FV-EV2 closed bounded at material `4ffa0df23` and closure `79eb1426c`; pending next value gate |
 | baselinePath | `docs/baselines/CVF_GC018_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_2026-08-28.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_2026-08-28.md` |
-| nextAuthorityRequirement | exact committed-range pre-closure proof, governed work-order/roadmap closure, then final session sync; no automatic successor |
+| nextAuthorityRequirement | fresh serious, source-backed, non-duplicate, value-exceeds-cost gate before any new roadmap; no automatic successor |
 
 ## Closure Evidence
 
@@ -170,7 +170,7 @@ EACQ-FV-L3 is closed at material `ff78fbab6` and closure `e1b237ea8`. EACQ-FV-EV
 
 ## Next Allowed Move
 
-EACQ-FV-EV2 material is independently accepted at `4ffa0df23` with verdict `PROMISING_NON_CAUSAL` after bounded evidence-only repair. The only allowed move is reviewer-owned closure of the EV-2 work order/roadmap, exact committed-range proof for `cb920ecca..4ffa0df23`, and final session sync. UAA, all code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction, soft-size advisories, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.
+EACQ-FV-EV2 is closed bounded at material `4ffa0df23` and closure `79eb1426c` with verdict `PROMISING_NON_CAUSAL`; exact material-range pre-closure proof passed 79/79. The only allowed move is selection of a new roadmap through a fresh serious, source-backed, non-duplicate, value-exceeds-cost gate. UAA, all code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction, soft-size advisories, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -203,7 +203,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain prior closures and bind independently accepted EACQ-FV-EV2 material `4ffa0df23` pending governed closure.
+Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-EV2 closure `79eb1426c` plus material `4ffa0df23`.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -213,8 +213,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: operator continued the orchestrator/reviewer/closer lane; the L3 work order authorizes independent review, material commit, closure, and continuity sync.
-Rollback boundary: revert this EV-2 material-acceptance continuity atomically while retaining material `4ffa0df23`, amendment `7af9c63eb`, original dispatch `9ac836be0`, L3 closure `e1b237ea8`, all prior closures, and history for separate disposition.
+Rollback boundary: revert this EV-2 final closure continuity atomically while retaining closure `79eb1426c`, material `4ffa0df23`, amendment `7af9c63eb`, original dispatch `9ac836be0`, L3 closure `e1b237ea8`, all prior closures, and history for separate disposition.
 Not authorized: UAA execution, checker/commit-steward/scaffold/autorun/template/registry/session worker mutation, successor implementation, runtime-owner mutation, external packet-folder mutation, public mutation, deployment, push, secret-value access, provider/live calls, compaction, or unrelated work.
 ## Claim Boundary
 
-This handoff records independently accepted EACQ-FV-EV2 evidence material pending governed closure. It authorizes no automatic successor, causal quality claim, code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, corpus reclassification, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, compaction, soft-advisory work, or unrelated lane.
+This handoff records EACQ-FV-EV2 closed bounded pending a fresh next-value gate. It authorizes no automatic successor, causal quality claim, code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, corpus reclassification, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, compaction, soft-advisory work, or unrelated lane.
