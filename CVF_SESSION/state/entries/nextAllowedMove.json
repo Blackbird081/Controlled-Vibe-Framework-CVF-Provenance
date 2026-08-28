@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "EACQ-FV-L3 material is independently accepted at ff78fbab6 with no implementation repair. Next allowed move: reviewer/closer updates the governed L3 work order and roadmap to CLOSED_PASS_BOUNDED, records machine closure evidence, reruns exact committed-range pre-closure proof for 058196ddf..ff78fbab6, and then performs final session sync. No successor opens automatically. UAA, the 751-line and 869-line soft-size advisories, checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deploy, push, secrets, compaction and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "EACQ-FV-L3 is CLOSED_PASS_BOUNDED at material ff78fbab6 and closure e1b237ea8 with no implementation repair. Next allowed move: evaluate a fresh roadmap candidate only through the serious, source-backed, non-duplicate, value-greater-than-time/latency/quota gate; no successor opens automatically. UAA, the 751-line and 869-line soft-size advisories, checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deploy, push, secrets, compaction and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
