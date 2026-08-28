@@ -4,6 +4,8 @@ Memory class: governed-dispatch-baseline
 
 Status: DISPATCH_READY
 
+Amendment: 1 - post-dispatch roadmap pin correction
+
 Batch ID: EACQ-FV-EV2
 
 Date: 2026-08-28
@@ -37,6 +39,11 @@ decision on what the evidence supports now and what remains unproved.
 | Non-duplicate | Targeted search found no existing EV-2 aggregate or cross-tranche decision artifact. |
 | Value versus cost | Two docs-only outputs, local reads, no implementation or provider quota; closes an explicit roadmap evidence question. |
 | Required uncertainty | Task difficulty and authority envelopes differ; `INSUFFICIENT_COMPARABILITY` must remain an allowed result. |
+
+Amendment 1 disposition: the first worker preflight correctly failed because
+the roadmap was modified by the dispatch commit after its pre-edit hash was
+recorded. Re-pin to the committed post-dispatch roadmap bytes; retain every
+other scope, stop, authority, and verification condition unchanged.
 
 ## Scope / Methodology
 
@@ -127,8 +134,8 @@ Resolver command: `python governance/compat/run_adif_defect_resolver.py --task-c
 | Claim boundary | no implementation, causal uplift, provider, public, push, or deployment claim |
 | Agent type | orchestrator/dispatcher/reviewer |
 | Invocation ID | `eacq-fv-ev2-dispatch-2026-08-28` |
-| Expected manifest | this baseline; paired work order; paired capsule; roadmap |
-| Actual changed set | this baseline; paired work order; paired capsule; roadmap |
+| Expected manifest | this baseline; paired work order; paired capsule; blocked-attempt worker return; bootstrap read model; current state core; generated state aggregate |
+| Actual changed set | exact seven paths listed in Expected manifest |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | NONE |
 

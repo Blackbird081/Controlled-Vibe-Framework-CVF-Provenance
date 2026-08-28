@@ -4,6 +4,8 @@ Memory class: governed-worker-dispatch
 
 Status: DISPATCH_READY
 
+Amendment: 1 - post-dispatch roadmap pin correction
+
 Batch ID: EACQ-FV-EV2
 
 Date: 2026-08-28
@@ -142,7 +144,7 @@ was not truncated.
     "delegation": "MULTI_ROLE_NO_COMMIT",
     "novelty": "KNOWN_PATTERN"
   },
-  "pathFamilies": ["docs/assessments", "docs/reviews", "docs/baselines", "docs/roadmaps", "docs/work_orders"],
+  "pathFamilies": ["docs/assessments", "docs/reviews", "docs/baselines", "docs/roadmaps", "docs/work_orders", "CVF_SESSION"],
   "claims": ["bounded non-causal capsule-effectiveness evidence reconciliation"],
   "requiredProof": ["five source-pin matches", "three-tranche comparison", "comparability adjustment", "missing-data ledger", "exact two-path worker manifest", "independent review"],
   "operatorCheckpoints": ["independent review before commit", "fresh value gate before any successor"],
@@ -174,7 +176,7 @@ Pinned inputs:
 
 | Path | SHA-256 | Required action |
 | --- | --- | --- |
-| `docs/roadmaps/CVF_EXTERNAL_AGENT_CODING_QUALITY_AND_FORWARD_VALUE_ABSORPTION_ROADMAP_2026-08-27.md` | `9f160071e36229981c8df4890b6d71a4c8c014b57cc8ec78869fa192823075b3` | FULL_READ |
+| `docs/roadmaps/CVF_EXTERNAL_AGENT_CODING_QUALITY_AND_FORWARD_VALUE_ABSORPTION_ROADMAP_2026-08-27.md` | `ed5514590fda9728f43a40a671041bfc1f5d3f00d6c13eddb48e7920f98e584d` | FULL_READ |
 | `docs/reviews/CVF_EACQ_FV_EV1_CAPSULE_ENHANCED_OWNER_MAP_EVIDENCE_COMPLETION_2026-08-28.md` | `c95f4b3bd6d09c132f289b7cc075169f7e6ae037d1fd73539e580ea5c75ad88c` | FULL_READ |
 | `docs/reviews/CVF_EACQ_FV_L2_EXECUTION_BASE_PACKET_SHAPE_SCAFFOLD_HARDENING_COMPLETION_2026-08-28.md` | `4bccc2da6a4c7a3964ab2cf579fa4a79e1a7a285926c444810f39e8f79431995` | FULL_READ |
 | `docs/reviews/CVF_EACQ_FV_L3_AUTOMATION_ASSIST_OWNER_DRIFT_RECONCILIATION_COMPLETION_2026-08-28.md` | `24e6842b99d42eef2c2a8f813ff84a5ad97a1577b612ccbc77e9e7d91ca65459` | FULL_READ |
@@ -183,7 +185,17 @@ Pinned inputs:
 Stop before editing if any pin mismatches.
 
 Task capsule expected SHA-256:
-`f59478fe31c88efc4fbf12f82756a506ba01731dafc81f8b93918a0cbc91fe6a`.
+`5902be07d78deaa50ec7161ea5a98c5c37cc2fdda0a27c346ad696c73752d12c`.
+
+## Amendment 1 - Post-Dispatch Roadmap Pin Correction
+
+The original roadmap pin was captured before the dispatcher changed that
+roadmap in the same material dispatch. The worker correctly stopped when the
+committed roadmap recomputed to
+`ed5514590fda9728f43a40a671041bfc1f5d3f00d6c13eddb48e7920f98e584d`.
+Amendment 1 replaces only that stale pin and the derived capsule pin. It does
+not waive source verification, change the two-output manifest, broaden the
+verdict vocabulary, or authorize any new path or action.
 
 ## Scope / Methodology
 
@@ -438,8 +450,8 @@ confirmed, revised, narrowed, or remains unproved.
 | Claim boundary | no implementation, causal uplift, provider, public, push, or deployment claim |
 | Agent type | orchestrator/dispatcher/reviewer |
 | Invocation ID | `eacq-fv-ev2-dispatch-2026-08-28` |
-| Expected manifest | paired baseline; this work order; paired capsule; roadmap |
-| Actual changed set | paired baseline; this work order; paired capsule; roadmap |
+| Expected manifest | paired baseline; this work order; paired capsule; blocked-attempt worker return; bootstrap read model; current state core; generated state aggregate |
+| Actual changed set | exact seven paths listed in Expected manifest |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | NONE |
 
@@ -492,6 +504,39 @@ durable runtime owner is created.
 NOT_APPLICABLE_WITH_REASON: EV-2 compares three current governed completion
 reviews and does not absorb, reclassify, or reopen a legacy source family or
 change a legacy coverage index.
+
+## Core Guard Self-Protection Authorization - Amendment 1
+
+Authorized guard-maintenance scope: reconcile only the current-authority
+hash carriers required because Amendment 1 changes the active baseline and
+work-order bytes.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+
+Operator authorization: operator returned the worker's valid fail-closed
+blocker to the orchestrator/reviewer for continuation.
+
+Rollback boundary: revert the exact seven-path Amendment 1 batch atomically;
+retain original dispatch `9ac836be0`, session sync `69c42a55d`, and all prior
+closures.
+
+Not authorized: mode or next-move change, code/checker/runtime/provider/public
+mutation, UAA, deployment, push, secrets, or unrelated work.
+
+## Mixed Protected-Path Atomicity Authorization - Amendment 1
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+
+Reason: baseline/work-order bytes and their current-authority hashes must land
+atomically; the blocked worker return is preserved as the reason receipt.
+
+Exact changed manifest: paired baseline; this work order; paired capsule;
+blocked-attempt worker return; bootstrap read model; current state core;
+generated state aggregate.
 
 ## Claim Boundary
 
