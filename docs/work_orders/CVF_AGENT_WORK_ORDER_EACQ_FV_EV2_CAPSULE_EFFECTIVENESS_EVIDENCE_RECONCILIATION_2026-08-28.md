@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Amendment: 1 - post-dispatch roadmap pin correction
 
@@ -382,13 +382,13 @@ git status --short --untracked-files=all
 
 ## Acceptance Criteria
 
-- [ ] all five source pins match before writing;
-- [ ] exactly two worker-owned outputs exist and no other path changes;
-- [ ] every metric cell is cited or explicitly `NOT_AVAILABLE_WITH_REASON`;
-- [ ] task comparability and missing-data matrices are complete;
-- [ ] exactly one allowed verdict is selected by the decision contract;
-- [ ] no causal, provider-superiority, runtime, public, or UAA claim appears;
-- [ ] final gates pass and staging is empty.
+- [x] all five source pins match before writing;
+- [x] exactly two worker-owned outputs exist and no other path changes;
+- [x] every metric cell is cited or explicitly `NOT_AVAILABLE_WITH_REASON`;
+- [x] task comparability and missing-data matrices are complete;
+- [x] exactly one allowed verdict is selected by the decision contract;
+- [x] no causal, provider-superiority, runtime, public, or UAA claim appears;
+- [x] final gates pass and staging is empty.
 
 Fail if any pin differs, evidence is invented, scope expands, a causal claim is
 made, or the worker cannot choose a verdict without exceeding the evidence.
@@ -540,17 +540,19 @@ generated state aggregate.
 
 ## Claim Boundary
 
-This work order authorizes exactly two uncommitted documents. It does not
-authorize code or governance-owner mutation, causal uplift, UAA, provider,
-public, push, deployment, production, or an automatic successor.
+This work order is terminally fulfilled at material commit `4ffa0df23` with
+reviewer verdict `PROMISING_NON_CAUSAL`. It proves only a bounded association
+across three non-comparable governance tranches. It does not authorize code or
+governance-owner mutation, causal uplift, UAA, provider, public, push,
+deployment, production, or an automatic successor.
 
 ## Closure Checklist
 
-- [ ] worker returned `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`
-- [ ] reviewer independently verified citations, verdict, and exact manifest
-- [ ] accepted material committed by reviewer/closer only
-- [ ] exact material-range pre-closure gate passed
-- [ ] session continuity updated separately if mode or next move changes
+- [x] worker returned `COMPLETE_PENDING_REVIEW` after the preserved fail-closed attempt
+- [x] reviewer independently verified citations, verdict, and exact manifest
+- [x] accepted material committed by reviewer/closer only at `4ffa0df23`
+- [x] exact material-range pre-closure gate passed 79/79 for `cb920ecca..4ffa0df23`
+- [x] accepted-material continuity updated separately at `ef525b0cb`; final closure sync follows
 
 ## Review Gate
 
@@ -558,6 +560,51 @@ Worker handoff is not closure. The reviewer must independently verify source
 pins, citations, comparability adjustments, contrary evidence, verdict,
 changed-set accuracy, and worker-return fast evidence. Only the reviewer may
 accept, repair, commit, close, or update the roadmap/session surfaces.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this artifact | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_COMPLETION_2026-08-28.md` | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` | PASS |
+| Assessment verdict | named EV-2 assessment | `PROMISING_NON_CAUSAL` | PASS |
+| Material identity | exact accepted commit | `4ffa0df23` | PASS |
+| Exact-range proof | pre-closure autorun | `cb920ecca..4ffa0df23`; 79/79 PASS | PASS |
+| Roadmap state | EACQ-FV roadmap | EV-2 closed; UAA and all successors parked | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | generated active-state aggregate | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; active handoff | accepted-material sync; final closure sync follows | PASS |
+| Session continuity | active continuity carriers | accepted-material sync `ef525b0cb`; final closure sync follows | PASS |
+| System loop interlock | this claim boundary | no automatic successor | PASS |
+| External evidence digest | N/A with reason: local governed-document reconciliation | no provider/runtime receipt | N/A WITH REASON |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Source identity | six Amendment 1 pins match | 6/6 independently recomputed | PASS |
+| Contrary evidence | preserved without averaging away | L2 remains `NEUTRAL_NON_CAUSAL` with both defects attributed | PASS |
+| Missing metrics | explicit, not invented | latency/token/difficulty/matched controls remain `NOT_AVAILABLE_WITH_REASON` | PASS |
+| Runtime receipt | N/A with reason: no runtime/provider execution | none produced | N/A_WITH_REASON |
+| Public export | deferred private only | no public artifact or remote evidence | N/A_WITH_REASON |
+
+## Core Guard Self-Protection Authorization - Closure
+
+Authorized guard-maintenance scope: update this closing work order and its
+exact current-authority hash carriers atomically.
+
+Protected paths: `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`.
+
+Operator authorization: the operator continued the designated
+orchestrator/reviewer/closer lane through EV-2 review and closure.
+
+Rollback boundary: revert the exact closure batch while retaining material
+`4ffa0df23`, accepted-material sync `ef525b0cb`, Amendment 1 `7af9c63eb`, and
+all prior history.
+
+Not authorized: implementation, UAA, provider/live, runtime, public mutation,
+deployment, push, secrets, automatic successor, or unrelated work.
 
 ## Operator Checkpoint
 

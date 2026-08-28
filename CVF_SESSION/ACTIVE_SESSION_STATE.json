@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_2026-08-28.md",
     "baselineSha256": "b35628906e6a6039f295ea1d5a644b9120592b7e26ce8126b3d66207e3e57fa4",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_2026-08-28.md",
-    "workOrderSha256": "d633206cb7f933f15c429346e3097893e434fa7aca44b17689af2c08a837aeba"
+    "workOrderSha256": "da0034dbcbf0dff58b8a973c4a7f4a48489e8f14821bd37c1d39880efb1311ea"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
