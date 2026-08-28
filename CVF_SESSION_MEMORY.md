@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_ev2_dispatched_pending_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact two-output EV-2 evidence work order and return for independent review; parked checkpoint=UAA, 751-line and 869-line soft-size advisories, code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
+Startup acknowledged: current mode=`eacq_fv_ev2_material_accepted_pending_closure`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=close the accepted EV-2 evidence material using exact committed-range proof; parked checkpoint=UAA, 751-line and 869-line soft-size advisories, code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_ev2_dispatched_pending_no_commit_worker_return`
-Current mode: `eacq_fv_ev2_dispatched_pending_no_commit_worker_return`; previous mode marker: `eacq_fv_l3_closed_pass_bounded_pending_next_value_gate`
-Previous mode: `eacq_fv_l3_closed_pass_bounded_pending_next_value_gate`
+Current mode marker: `eacq_fv_ev2_material_accepted_pending_closure`
+Current mode: `eacq_fv_ev2_material_accepted_pending_closure`; previous mode marker: `eacq_fv_ev2_dispatched_pending_no_commit_worker_return`
+Previous mode: `eacq_fv_ev2_dispatched_pending_no_commit_worker_return`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_ev2_dispatched_pending_no_commit_worker_return`. EV-2 Amendment 1 is committed at `7af9c63eb`: the worker's first fail-closed stop is preserved, roadmap pin is corrected to `ed5514590f`, and capsule pin to `5902be07d`. Retry from the amended clean HEAD; create the named assessment and update the worker return, preserve missing data and comparability limits, choose one of four bounded verdicts, and leave staging empty. UAA and every code/runtime/provider/public lane remain parked.
+Mode: `eacq_fv_ev2_material_accepted_pending_closure`. EV-2 evidence is independently accepted at material commit `4ffa0df23` with verdict `PROMISING_NON_CAUSAL` after bounded evidence-only repair. Close the paired work order and roadmap using exact committed-range proof for `cb920ecca..4ffa0df23`, then perform final session sync. No successor opens automatically; UAA and every code/runtime/provider/public lane remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

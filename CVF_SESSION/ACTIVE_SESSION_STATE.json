@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eacq_fv_ev2_dispatched_pending_no_commit_worker_return",
-  "previousMode": "eacq_fv_l3_closed_pass_bounded_pending_next_value_gate",
+  "currentMode": "eacq_fv_ev2_material_accepted_pending_closure",
+  "previousMode": "eacq_fv_ev2_dispatched_pending_no_commit_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "EACQ-FV-EV2 Amendment 1 is committed at 7af9c63eb after the worker correctly stopped on the stale pre-edit roadmap pin. Next allowed move: retry from the amended clean HEAD, verify roadmap ed5514590f and capsule 5902be07d, then create the assessment and update the named worker return to COMPLETE_PENDING_REVIEW or return a new genuine blocker. No code, roadmap, session, UAA, provider/live, public, deploy, push, secrets, compaction, or unrelated mutation is authorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "EACQ-FV-EV2 evidence is independently accepted at material commit 4ffa0df23 with verdict PROMISING_NON_CAUSAL after bounded evidence-only repair. Next allowed move: reviewer/closer updates the paired work order and roadmap to CLOSED_PASS_BOUNDED, records exact committed-range proof for cb920ecca..4ffa0df23, and then performs final session sync. No successor opens automatically. UAA, code, checker, runtime, provider/live, public, deploy, push, secrets, compaction, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
