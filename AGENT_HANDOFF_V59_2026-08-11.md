@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_l2_dispatched_pending_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact three-path L2 no-commit work order dispatched at `fd5f4ad9d`; parked checkpoint=UAA, the 751-line soft-size advisory, checker/autorun/template/session mutation, provider/live, public sync, deployment, push, secrets, runtime-owner changes, compaction and unrelated work.
+Startup acknowledged: current mode=`eacq_fv_l2_material_accepted_pending_closure`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=close accepted L2 material `4f054c005`; parked checkpoint=UAA, the 751-line soft-size advisory, automation-assist pre-existing test debt, checker/autorun/template/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
 
 ## Current Mode
-`eacq_fv_l2_dispatched_pending_no_commit_worker_return`
+`eacq_fv_l2_material_accepted_pending_closure`
 
 ## Purpose
 
@@ -115,10 +115,10 @@ EACQ-FV-MV3 is closed at material `6a9887196` and closure `7feda7966`. EACQ-FV-L
 
 | Field | Value |
 |---|---|
-| authorityState | EACQ-FV-L2 dispatched pending exact no-commit worker return at `fd5f4ad9d` |
+| authorityState | EACQ-FV-L2 material accepted at `4f054c005` pending bounded closure |
 | baselinePath | `docs/baselines/CVF_GC018_EACQ_FV_L2_EXECUTION_BASE_PACKET_SHAPE_SCAFFOLD_HARDENING_2026-08-28.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_L2_EXECUTION_BASE_PACKET_SHAPE_SCAFFOLD_HARDENING_2026-08-28.md` |
-| nextAuthorityRequirement | exact three-path worker return with worker-captured executionBaseHead, then independent review; no automatic successor |
+| nextAuthorityRequirement | completion review, closed work order/roadmap, exact material-range pre-closure, then final continuity; no automatic successor |
 
 ## Closure Evidence
 
@@ -170,7 +170,7 @@ EACQ-FV-MV3 is closed at material `6a9887196` and closure `7feda7966`. EACQ-FV-L
 
 ## Next Allowed Move
 
-EACQ-FV-L2 is dispatched at `fd5f4ad9d` after the recurrent execution-base/packet-shape scaffold defect passed the fresh value gate. Execute only the exact three-path no-commit worker packet; capture `executionBaseHead` from the clean committed HEAD after session sync and return for independent review. UAA, the 751-line soft-size advisory, checker/autorun/template/session mutation, provider/live, public sync, deployment, push, secrets, runtime-owner changes, compaction, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.
+EACQ-FV-L2 material is independently accepted at `4f054c005` after Amendment 1 and one disclosed MEDIUM reviewer repair. Create the completion review, close the work order/roadmap, run exact material-range pre-closure, and synchronize final continuity separately. No successor opens automatically. UAA, the 751-line soft-size advisory, automation-assist pre-existing test debt, checker/autorun/template/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 ## Active Boundary
 
@@ -203,7 +203,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-L2 dispatch `fd5f4ad9d`, exact current authority paths/hashes, clean post-session execution-base capture, and pending no-commit worker-return posture.
+Authorized guard-maintenance scope: retain prior closures and bind accepted EACQ-FV-L2 material `4f054c005`, one disclosed MEDIUM reviewer repair, and pending bounded-closure posture.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -217,4 +217,4 @@ Rollback boundary: revert this L2 dispatch continuity atomically while retaining
 Not authorized: UAA execution, checker/autorun/template/session worker mutation, successor implementation, runtime-owner mutation, external packet-folder mutation, public mutation, deployment, push, secret-value access, provider/live calls, or unrelated work.
 ## Claim Boundary
 
-This handoff records EACQ-FV-L2 dispatch pending the exact no-commit worker return and independent review. It authorizes no worker commit, automatic successor, causal quality claim, checker/autorun/template/session mutation, corpus reclassification, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, compaction, soft-advisory work, or unrelated lane.
+This handoff records accepted EACQ-FV-L2 material pending bounded closure. It authorizes no automatic successor, causal quality claim, checker/autorun/template/runtime mutation, corpus reclassification, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, compaction, soft-advisory work, or unrelated lane.

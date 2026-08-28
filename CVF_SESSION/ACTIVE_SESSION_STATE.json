@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "eacq_fv_l2_dispatched_pending_no_commit_worker_return",
-  "previousMode": "eacq_fv_mv3_closed_pass_bounded_pending_next_value_gate",
+  "currentMode": "eacq_fv_l2_material_accepted_pending_closure",
+  "previousMode": "eacq_fv_l2_dispatched_pending_no_commit_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Execute only the EACQ-FV-L2 no-commit worker packet dispatched at fd5f4ad9d. The worker must capture executionBaseHead from the clean committed HEAD after this session sync and return exactly governance/compat/build_dispatch_packet_scaffold.py, governance/compat/test_build_dispatch_packet_scaffold.py, and docs/reviews/CVF_EACQ_FV_L2_EXECUTION_BASE_PACKET_SHAPE_SCAFFOLD_HARDENING_WORKER_RETURN_2026-08-28.md. Independent review is required before any material commit. UAA, the 751-line soft-size advisory, checker/autorun/template/session mutation, provider/live, public sync, deploy, push, secrets, runtime-owner changes, compaction and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Close EACQ-FV-L2 from accepted material commit 4f054c005 after one disclosed MEDIUM reviewer repair. Create the governed completion review, close the paired work order and roadmap row, run exact material-range pre-closure, and then synchronize final continuity separately. No successor opens automatically. UAA, the 751-line soft-size advisory, automation-assist pre-existing test debt, checker/autorun/template/runtime mutation, provider/live, public sync, deploy, push, secrets, compaction and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",

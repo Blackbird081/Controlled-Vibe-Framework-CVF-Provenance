@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_l2_dispatched_pending_no_commit_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact three-path L2 no-commit worker packet dispatched at `fd5f4ad9d`; parked checkpoint=UAA, the 751-line soft-size advisory, checker/autorun/template/session mutation, provider/live, public sync, deployment, push, secrets, runtime-owner changes, compaction and unrelated work.
+Startup acknowledged: current mode=`eacq_fv_l2_material_accepted_pending_closure`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=close accepted L2 material `4f054c005` with one disclosed MEDIUM reviewer repair; parked checkpoint=UAA, the 751-line soft-size advisory, automation-assist pre-existing test debt, checker/autorun/template/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_l2_dispatched_pending_no_commit_worker_return`
-Current mode: `eacq_fv_l2_dispatched_pending_no_commit_worker_return`; previous mode marker: `eacq_fv_mv3_closed_pass_bounded_pending_next_value_gate`
-Previous mode: `eacq_fv_mv3_closed_pass_bounded_pending_next_value_gate`
+Current mode marker: `eacq_fv_l2_material_accepted_pending_closure`
+Current mode: `eacq_fv_l2_material_accepted_pending_closure`; previous mode marker: `eacq_fv_l2_dispatched_pending_no_commit_worker_return`
+Previous mode: `eacq_fv_l2_dispatched_pending_no_commit_worker_return`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_l2_dispatched_pending_no_commit_worker_return`. The fresh value gate admitted the recurrent execution-base/packet-shape scaffold defect and parked UAA plus the 751-line soft-size advisory. L2 dispatch is committed at `fd5f4ad9d`; execute only the exact three-path no-commit work order, capture `executionBaseHead` from clean committed HEAD after session sync, and return for independent review. Checker/autorun/template/session mutation, provider/live, public sync, deploy, push, secrets, runtime-owner changes, compaction, and unrelated work remain parked.
+Mode: `eacq_fv_l2_material_accepted_pending_closure`. L2 material is independently accepted at `4f054c005` after Amendment 1 and one disclosed MEDIUM reviewer repair. Next: create the completion review, close the paired work order/roadmap row, run exact material-range pre-closure, and synchronize final continuity separately. No successor opens automatically; all parked boundaries remain unchanged.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
