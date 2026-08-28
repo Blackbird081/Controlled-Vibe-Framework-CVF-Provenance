@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Work order ID: EACQ-FV-L3
 
@@ -473,11 +473,11 @@ must return any checker, commit-steward, registry or manifest expansion.
 
 ## Closure Checklist
 
-- [ ] exact three worker paths and empty staging independently confirmed;
-- [ ] all 82 focused tests and applicable governance gates pass;
-- [ ] semantic vocabulary and N/A behavior are unchanged;
-- [ ] both exception-owned files have net line delta at or below zero;
-- [ ] reviewer classifies capsule evidence without causal overclaim.
+- [x] exact three worker paths and empty staging independently confirmed;
+- [x] all 82 focused tests and applicable governance gates pass;
+- [x] semantic vocabulary and N/A behavior are unchanged;
+- [x] both exception-owned files have net line delta at or below zero;
+- [x] reviewer classifies capsule evidence `PROMISING` without causal overclaim.
 
 ## Return-To-Orchestrator Conditions
 
@@ -492,15 +492,15 @@ successor admission is the next operator-visible checkpoint.
 
 ## Acceptance Checklist
 
-- [ ] all source and capsule pins match;
-- [ ] original failures classify exactly 51+2;
-- [ ] `_plan` explicitly sets `mixed_atomicity_authorized=False`;
-- [ ] false dispatch-quality tuple mirror claim is gone;
-- [ ] every semantic diagnostic term and N/A behavior is preserved;
-- [ ] focused suite reports 82 passed;
-- [ ] file counts do not exceed 1318 and 1289;
-- [ ] exact three-path manifest and empty staging are proven;
-- [ ] no provider, public, push, deploy, runtime or UAA action occurred.
+- [x] all source and capsule pins match;
+- [x] original failures classify exactly 51+2;
+- [x] `_plan` explicitly sets `mixed_atomicity_authorized=False`;
+- [x] false dispatch-quality tuple mirror claim is gone;
+- [x] every semantic diagnostic term and N/A behavior is preserved;
+- [x] focused suite reports 82 passed;
+- [x] file counts do not exceed 1318 and 1289;
+- [x] exact three-path manifest and empty staging are proven;
+- [x] no provider, public, push, deploy, runtime or UAA action occurred.
 
 ## External Knowledge Intake Routing
 
@@ -611,8 +611,31 @@ quality improvement remain pending independent review.
 
 ## Machine Closure Package
 
-N/A with reason: worker does not close the tranche. Reviewer/closer authors any
-completion packet and commits accepted material after independent proof.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this artifact | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | named L3 completion review | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | EACQ-FV roadmap | `L3_CLOSED_PASS_BOUNDED_PENDING_NEXT_VALUE_GATE` | PASS |
+| Worker return | named L3 worker return | reviewer addendum; no implementation repair | PASS |
+| Material identity | exact three accepted paths | `ff78fbab6` | PASS |
+| Focused verification | automation-assist suite | 82/82 PASS | PASS |
+| Governance verification | pre-implementation; reviewer-fast; exact material-range pre-closure | 81/81; 66/66; 79/79 PASS | PASS |
+| Session continuity | active continuity surfaces | material sync `ba9a9112d`; final closed sync follows | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | generated current-authority aggregate; final closed sync follows | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; active handoff | accepted-material sync `ba9a9112d`; final closed sync follows | PASS |
+| System loop interlock | this claim boundary | no automatic successor | PASS |
+| External evidence digest | N/A with reason: deterministic local task | no provider/runtime receipt | N/A WITH REASON |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Worker return | independently reviewed | accepted with no implementation repair | PASS |
+| Material identity | exact accepted commit | `ff78fbab6` | PASS |
+| Focused verification | all cases pass | 82/82 PASS | PASS |
+| Exact committed range | closure-safe | 79/79 PASS | PASS |
+| Runtime receipt | N/A with reason: no runtime/provider execution | none | N/A_WITH_REASON |
+| Public export | deferred private only | no public artifact evidence | N/A_WITH_REASON |
 
 ## Public Export Disposition
 

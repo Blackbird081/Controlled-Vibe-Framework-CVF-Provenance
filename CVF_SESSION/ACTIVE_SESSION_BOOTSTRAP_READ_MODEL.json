@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_L3_AUTOMATION_ASSIST_OWNER_DRIFT_RECONCILIATION_2026-08-28.md",
     "baselineSha256": "8d9ca6cab36cd4f95088efc8ab81733aff08ea3b3142c00b4583a73c9fec9022",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_L3_AUTOMATION_ASSIST_OWNER_DRIFT_RECONCILIATION_2026-08-28.md",
-    "workOrderSha256": "4196f267fd380a72ac5a8824e204ba101f74b1823bb47e316259b8814e3e4bff"
+    "workOrderSha256": "a7cf6aeaa4aa6ecfcb51238a9a6b1c2b47cbfb15dd1c3c762bd22e933cb59aea"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
