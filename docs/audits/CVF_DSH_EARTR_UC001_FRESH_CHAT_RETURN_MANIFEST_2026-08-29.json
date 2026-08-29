@@ -1,0 +1,51 @@
+{
+  "schema": "cvf.localExternalReturnCorpusManifest.v1",
+  "corpusId": "dsh-eartr-uc001-fresh-chat-return",
+  "root": ".private_reference/legacy/CVF 13.08/DEEPSEEK_HARNESS_EARTR_1_2_USE_CASE_001_FRESH_CHAT/",
+  "snapshotDate": "2026-08-29",
+  "fileCount": 7,
+  "totalBytes": 42652,
+  "pathManifestHash": "c089bec162149f403aebb3329943d6a2e56aff934810740a90deaa0493b629c5",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "files": [
+    {
+      "path": "CLAIM_BOUNDARY.md",
+      "bytes": 2517,
+      "sha256": "9811afa152272b8275feb5add37bf6f3a7cff082098986cf8f3bf6c95381a03b"
+    },
+    {
+      "path": "DECISION_LOG.md",
+      "bytes": 5834,
+      "sha256": "e03d708c3c12eb12e4d0f32f7771c58f297d0f6456479b4f95c568c4d3de4ac9"
+    },
+    {
+      "path": "EXTERNAL_AGENT_RETURN_MANIFEST.json",
+      "bytes": 21581,
+      "sha256": "dd0cee09d8917539d4aa0d45bb49fae7e14a25b54cda3ba99f9d0ae3fe595668"
+    },
+    {
+      "path": "FILE_INVENTORY.sha256",
+      "bytes": 512,
+      "sha256": "4199ae7568810838857d0c3c982b80ca6c16afdf3480a8723d1589b2111d12b3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5093,
+      "sha256": "cabb4d295790593c45d061ae34cd39bfa9b697d7b95952fbb10ca5c4bbe778d2"
+    },
+    {
+      "path": "SOURCE_MANIFEST.md",
+      "bytes": 4169,
+      "sha256": "738facf0c81e7ba516a7238334fd7721c2f1ae025147e6aeedaac8b5905f75f5"
+    },
+    {
+      "path": "TEST_EVIDENCE.md",
+      "bytes": 2946,
+      "sha256": "3cb47e8d864b8c14d5afc86c2b572feac712a127e451b13da22928b7855f06aa"
+    }
+  ],
+  "declaredExclusions": [],
+  "unreadableFiles": [],
+  "claimBoundary": "Immutable local return-corpus inventory only; no semantic acceptance, runtime, provider, public, production, or implementation claim."
+}

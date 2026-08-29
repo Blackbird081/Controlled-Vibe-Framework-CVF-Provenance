@@ -1,0 +1,65 @@
+{
+  "registryOrder": 181,
+  "id": "dsh-eartr-uc001-fresh-chat-return-absorption",
+  "corpusType": "LEGACY_FOLDER",
+  "displayName": "DeepSeek Harness EARTR 1.2 fresh-chat external return absorption",
+  "scopePaths": [
+    ".private_reference/legacy/CVF 13.08/DEEPSEEK_HARNESS_EARTR_1_2_USE_CASE_001_FRESH_CHAT/",
+    ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/"
+  ],
+  "fileCount": 7,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "DSH-EARTR-UC001",
+  "scanDate": "2026-08-29",
+  "manifestHash": "c089bec162149f403aebb3329943d6a2e56aff934810740a90deaa0493b629c5",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "manifestPath": "docs/audits/CVF_DSH_EARTR_UC001_FRESH_CHAT_RETURN_MANIFEST_2026-08-29.json",
+  "packetPath": "docs/reviews/CVF_DSH_EARTR_UC001_FRESH_CHAT_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md",
+  "completionReviewPath": "docs/reviews/CVF_DSH_EARTR_UC001_FRESH_CHAT_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md",
+  "gcBaselineRef": null,
+  "verdicts": {
+    "gc047": "COMPLETE_VERIFIED",
+    "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+    "gc050": "PASS"
+  },
+  "semanticRegions": [
+    "event-sourced-model-context-lineage",
+    "durable-event-vocabulary",
+    "monotonic-tool-guard",
+    "provider-neutral-capability-seam",
+    "scope-owned-registration-lifecycle",
+    "sandbox-enforcement-truthfulness",
+    "generated-catalog-freshness",
+    "external-agent-round-trip"
+  ],
+  "priorAbsorption": "No prior exact fresh-chat return intake existed. Current Local CVF owner comparison found five candidates fully covered, one bounded Model Gateway enrichment candidate, and one forward-value lifecycle candidate parked behind conjunctive evidence.",
+  "findings": [
+    {
+      "id": "DSH-EARTR-UC001-F1-model-context-event-lineage",
+      "summary": "CVF has a material invocation-context manifest and a durable append-only MAO ledger, but no exact current owner composes durable source-event lineage into reconstructable model-visible context and compaction replacement history.",
+      "disposition": "DEFER_DEMAND_GATED",
+      "nextAction": "Keep bound to the existing Model Gateway material-context owner and reopen only when an exact model-context reconstruction consumer, source-lineage gap, and favorable bounded value/cost case are all demonstrated.",
+      "defectClass": "UNVERIFIED_CLAIM",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_DSH_EARTR_UC001_FRESH_CHAT_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md#finding-to-governance-learning-disposition"
+    },
+    {
+      "id": "DSH-EARTR-UC001-F2-scope-owned-reversible-registration",
+      "summary": "Exact scope-owned visibility, disposer identity, and quiescent teardown remain useful forward value, but no current CVF consumer requires dynamic in-process registration or hot replacement.",
+      "disposition": "DEFER_DEMAND_GATED",
+      "nextAction": "Reopen only when a named MAO or capability consumer requires dynamic registration, source evidence shows cleanup or visibility risk, and the existing lifecycle owner accepts a bounded enrichment route.",
+      "defectClass": "UNVERIFIED_CLAIM",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_DSH_EARTR_UC001_FRESH_CHAT_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md#finding-to-governance-learning-disposition"
+    }
+  ],
+  "negativeSearchTerms": [
+    "second live/durable MAO event vocabulary (not found; current durable store persists MaoEventLedgerEntry directly)",
+    "later guard ALLOW reversing an earlier BLOCK (not found; GuardEngine retains BLOCK monotonically)",
+    "missing requested-versus-observed sandbox isolation semantics (not found; current isolation admission contract owns requirement and guarantee evidence)",
+    "missing generated-aggregate freshness guard pattern (not found; multiple current generators and drift checkers exist)",
+    "new generic capability owner need (not established)"
+  ],
+  "nextScanRecommendation": "Do not rescan the unchanged return or pinned upstream commit. Reuse the manifest, mirror, and closure; reopen only on upstream drift or when one of the two conjunctive candidate conditions becomes true."
+}
