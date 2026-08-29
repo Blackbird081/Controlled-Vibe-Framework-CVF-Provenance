@@ -21,17 +21,34 @@ from typing import Any
 from zoneinfo import ZoneInfo
 
 
-PROTOCOL_VERSION = "1.1.0"
+PROTOCOL_VERSION = "1.2.0"
 PROTOCOL_ID = "cvf.external-agent-round-trip"
+CANDIDATE_CONTRACT_VERSION = 1
+
+LANE_EXTERNAL_SOURCE_VALUE = "EXTERNAL_SOURCE_VALUE_CANDIDATE"
+LANE_CVF_INTERNAL_DEFECT = "CVF_INTERNAL_DEFECT_CANDIDATE"
+CANDIDATE_LANES = (LANE_EXTERNAL_SOURCE_VALUE, LANE_CVF_INTERNAL_DEFECT)
+PUBLIC_OWNER_SEARCH_STATUSES = ("OWNER_CANDIDATES_FOUND", "PUBLIC_OWNER_SURFACE_NOT_FOUND", "PUBLIC_INSUFFICIENT_EVIDENCE", "NOT_APPLICABLE")
+PUBLIC_OVERLAP_STATUSES = ("PUBLIC_CONFIRMED_EXISTING", "PUBLIC_SUGGESTS_ENRICHMENT", "PUBLIC_OWNER_SURFACE_NOT_FOUND", "PUBLIC_INSUFFICIENT_EVIDENCE", "NOT_APPLICABLE")
+PRELIMINARY_VALUE_DISPOSITIONS = ("ABSORB", "ADAPT", "DEFER", "REJECT", "BLOCK", "NO_NEW_VALUE")
+# Strict v1 allows no undeclared field and no per-row authorityStatus.
+_SOURCE_VALUE_ALLOWED_FIELDS = frozenset({
+    "candidateId", "preliminaryLane", "sourceRefs", "sourceLocations", "candidateSummary", "claimedValue",
+    "publicOwnerSearch", "publicOverlap", "preliminaryValueDisposition", "questionsForLocalAgent", "sourceEvidence",
+})
+_INTERNAL_DEFECT_ALLOWED_FIELDS = frozenset({
+    "candidateId", "preliminaryLane", "cvfPublicLocations", "triggerContextSourceRefs", "candidateSummary",
+    "publicOwnerSearch", "questionsForLocalAgent", "sourceEvidence",
+})
+_INTERNAL_DEFECT_FORBIDDEN_FIELDS = ("sourceLocations", "claimedValue", "publicOverlap", "preliminaryValueDisposition")
+_SOURCE_VALUE_FORBIDDEN_FIELDS = ("cvfPublicLocations", "triggerContextSourceRefs")
 PUBLIC_REPOSITORY = "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git"
 CAPSULE_SCHEMA_PATH = Path(__file__).resolve().parent.parent / "docs" / "reference" / "external_agent_review" / "CVF_EXTERNAL_AGENT_TASK_CAPSULE.schema.json"
-
 # Source-posture literals for cvfPublicSource.sourcePosture. These are the
 # atomic serialized values every consumer must match exactly; do not assemble
 # them from fragments.
 SOURCE_POSTURE_LIVE = "VERIFIED_LIVE_PUBLIC_MAIN_AT_CREATION"
 SOURCE_POSTURE_OFFLINE = "OPERATOR_PINNED_NOT_LIVE_VERIFIED"
-
 # Working modes that require the four context groups (protectedPaths,
 # ownerMap, invariants, verification) because they involve writing code
 # against a real repository. REVIEW_ONLY, DESIGN_ONLY, and
@@ -372,6 +389,196 @@ def _validate_source_rows(manifest: dict[str, Any], errors: list[str]) -> None:
                 errors.append(f"{prefix}.{field} must be non-empty")
 
 
+def _nonblank_str(value: Any) -> bool:
+    return isinstance(value, str) and bool(value.strip())
+def _validate_nonblank_string_list(value: Any, prefix: str, field: str, errors: list[str]) -> None:
+    if not isinstance(value, list) or not value or not all(_nonblank_str(item) for item in value):
+        errors.append(f"{prefix}.{field} must be a non-empty list of non-blank strings")
+def _validate_no_undeclared_fields(candidate: dict[str, Any], prefix: str, allowed: frozenset[str], errors: list[str]) -> None:
+    if "authorityStatus" in candidate:
+        errors.append(f"{prefix}.authorityStatus is forbidden on a candidate row; authority status is manifest-level only")
+    undeclared = sorted(set(candidate) - allowed - {"authorityStatus"})
+    if undeclared:
+        errors.append(f"{prefix} contains undeclared field(s) under strict v1: {', '.join(undeclared)}")
+def _validate_optional_source_evidence(candidate: dict[str, Any], prefix: str, errors: list[str]) -> None:
+    if "sourceEvidence" in candidate and not _nonblank_str(candidate.get("sourceEvidence")):
+        errors.append(f"{prefix}.sourceEvidence must be a non-blank string when present")
+def _validate_source_value_candidate(candidate: dict[str, Any], prefix: str, source_ids: set[str], errors: list[str]) -> None:
+    _validate_no_undeclared_fields(candidate, prefix, _SOURCE_VALUE_ALLOWED_FIELDS, errors)
+    for field in _SOURCE_VALUE_FORBIDDEN_FIELDS:
+        if field in candidate:
+            errors.append(f"{prefix}.{field} is forbidden for {LANE_EXTERNAL_SOURCE_VALUE}")
+
+    source_refs = candidate.get("sourceRefs")
+    if not isinstance(source_refs, list) or not source_refs or not all(_nonblank_str(item) for item in source_refs):
+        errors.append(f"{prefix}.sourceRefs must be a non-empty list of non-blank strings")
+        source_refs = []
+    unresolved = [ref for ref in source_refs if ref not in source_ids]
+    if unresolved:
+        errors.append(f"{prefix}.sourceRefs contains unresolved source id(s): {', '.join(unresolved)}")
+    locations = candidate.get("sourceLocations")
+    location_refs: list[str] = []
+    if not isinstance(locations, list) or not locations:
+        errors.append(f"{prefix}.sourceLocations must be a non-empty list")
+    else:
+        for loc_index, location in enumerate(locations):
+            loc_prefix = f"{prefix}.sourceLocations[{loc_index}]"
+            if not isinstance(location, dict):
+                errors.append(f"{loc_prefix} must be an object")
+                continue
+            ref = location.get("sourceRef")
+            if not _nonblank_str(ref):
+                errors.append(f"{loc_prefix}.sourceRef must be a non-blank string")
+            else:
+                location_refs.append(ref)
+                if ref not in source_ids:
+                    errors.append(f"{loc_prefix}.sourceRef does not resolve to an existing source id: {ref}")
+            if not _safe_rel_path(str(location.get("path", ""))):
+                errors.append(f"{loc_prefix}.path is invalid or unsafe")
+            symbols = location.get("symbols")
+            if not isinstance(symbols, list) or not symbols or not all(_nonblank_str(item) for item in symbols):
+                errors.append(f"{loc_prefix}.symbols must be a non-empty list of non-blank strings")
+    if isinstance(source_refs, list) and isinstance(locations, list) and locations:
+        if set(source_refs) != set(location_refs):
+            errors.append(f"{prefix}: set(sourceRefs) must equal set(sourceLocations[].sourceRef)")
+    if not _nonblank_str(candidate.get("candidateSummary")):
+        errors.append(f"{prefix}.candidateSummary must be a non-blank string")
+    if not _nonblank_str(candidate.get("claimedValue")):
+        errors.append(f"{prefix}.claimedValue must be a non-blank string")
+    _validate_public_owner_search(candidate.get("publicOwnerSearch"), prefix, errors)
+    _validate_public_overlap(candidate.get("publicOverlap"), prefix, errors)
+    disposition = candidate.get("preliminaryValueDisposition")
+    if disposition is None:
+        errors.append(f"{prefix}.preliminaryValueDisposition is required")
+    elif disposition not in PRELIMINARY_VALUE_DISPOSITIONS:
+        errors.append(f"{prefix}.preliminaryValueDisposition must be one of {PRELIMINARY_VALUE_DISPOSITIONS}")
+    _validate_nonblank_string_list(candidate.get("questionsForLocalAgent"), prefix, "questionsForLocalAgent", errors)
+    _validate_optional_source_evidence(candidate, prefix, errors)
+
+
+def _validate_public_owner_search(search: Any, prefix: str, errors: list[str]) -> None:
+    if not isinstance(search, dict) or search.get("status") not in PUBLIC_OWNER_SEARCH_STATUSES:
+        errors.append(f"{prefix}.publicOwnerSearch.status must be one of {PUBLIC_OWNER_SEARCH_STATUSES}")
+        return
+    candidates = search.get("candidates")
+    if search.get("status") == "OWNER_CANDIDATES_FOUND":
+        if not isinstance(candidates, list) or not candidates:
+            errors.append(f"{prefix}.publicOwnerSearch.candidates must be a non-empty list when status is OWNER_CANDIDATES_FOUND")
+        else:
+            for cand_index, owner_candidate in enumerate(candidates):
+                cand_prefix = f"{prefix}.publicOwnerSearch.candidates[{cand_index}]"
+                if not isinstance(owner_candidate, dict):
+                    errors.append(f"{cand_prefix} must be an object")
+                    continue
+                if not _safe_rel_path(str(owner_candidate.get("path", ""))):
+                    errors.append(f"{cand_prefix}.path is invalid or unsafe")
+                if not _nonblank_str(owner_candidate.get("symbol")):
+                    errors.append(f"{cand_prefix}.symbol must be a non-blank string")
+                if not _nonblank_str(owner_candidate.get("basis")):
+                    errors.append(f"{cand_prefix}.basis must be a non-blank string")
+    elif candidates is not None and (not isinstance(candidates, list) or candidates):
+        errors.append(f"{prefix}.publicOwnerSearch.candidates must be absent or empty when status is not OWNER_CANDIDATES_FOUND")
+
+
+def _validate_public_overlap(overlap: Any, prefix: str, errors: list[str]) -> None:
+    if not isinstance(overlap, dict) or overlap.get("status") not in PUBLIC_OVERLAP_STATUSES:
+        errors.append(f"{prefix}.publicOverlap.status must be one of {PUBLIC_OVERLAP_STATUSES}")
+        return
+    if not _nonblank_str(overlap.get("basis")):
+        errors.append(f"{prefix}.publicOverlap.basis must be a non-blank string")
+
+
+def _validate_internal_defect_candidate(candidate: dict[str, Any], prefix: str, source_ids: set[str], errors: list[str]) -> None:
+    _validate_no_undeclared_fields(candidate, prefix, _INTERNAL_DEFECT_ALLOWED_FIELDS, errors)
+    for field in _INTERNAL_DEFECT_FORBIDDEN_FIELDS:
+        if field in candidate:
+            errors.append(f"{prefix}.{field} is forbidden for {LANE_CVF_INTERNAL_DEFECT}")
+    locations = candidate.get("cvfPublicLocations")
+    if not isinstance(locations, list) or not locations:
+        errors.append(f"{prefix}.cvfPublicLocations must be a non-empty list")
+    else:
+        for loc_index, location in enumerate(locations):
+            loc_prefix = f"{prefix}.cvfPublicLocations[{loc_index}]"
+            if not isinstance(location, dict):
+                errors.append(f"{loc_prefix} must be an object")
+                continue
+            if not _safe_rel_path(str(location.get("path", ""))):
+                errors.append(f"{loc_prefix}.path is invalid or unsafe")
+            symbols = location.get("symbols")
+            if not isinstance(symbols, list) or not symbols or not all(_nonblank_str(item) for item in symbols):
+                errors.append(f"{loc_prefix}.symbols must be a non-empty list of non-blank strings")
+    trigger_refs = candidate.get("triggerContextSourceRefs")
+    if trigger_refs is not None:
+        if not isinstance(trigger_refs, list) or not all(_nonblank_str(item) for item in trigger_refs):
+            errors.append(f"{prefix}.triggerContextSourceRefs must be a list of non-blank strings")
+        else:
+            unresolved = [ref for ref in trigger_refs if ref not in source_ids]
+            if unresolved:
+                errors.append(f"{prefix}.triggerContextSourceRefs contains unresolved source id(s): {', '.join(unresolved)}")
+    if not _nonblank_str(candidate.get("candidateSummary")):
+        errors.append(f"{prefix}.candidateSummary must be a non-blank string")
+    _validate_public_owner_search(candidate.get("publicOwnerSearch"), prefix, errors)
+    _validate_nonblank_string_list(candidate.get("questionsForLocalAgent"), prefix, "questionsForLocalAgent", errors)
+    _validate_optional_source_evidence(candidate, prefix, errors)
+
+
+def _validate_candidates(manifest: dict[str, Any], errors: list[str]) -> str:
+    """Validate suggestedAbsorptionCandidates under the dual-reader contract.
+    Returns the effective candidate-contract status label."""
+    discriminator = manifest.get("candidateContractVersion")
+    candidates = manifest.get("suggestedAbsorptionCandidates")
+    candidates_list = candidates if isinstance(candidates, list) else []
+
+    if discriminator is None:
+        if not candidates_list:
+            return "LEGACY_EMPTY"
+        return "LEGACY_UNTYPED_NOT_PROMOTABLE"
+
+    # bool is a subclass of int in Python; reject it explicitly so
+    # `candidateContractVersion: true` is never accepted as the integer 1.
+    if type(discriminator) is not int or discriminator != CANDIDATE_CONTRACT_VERSION:
+        errors.append(f"manifest.candidateContractVersion is unsupported or malformed: {discriminator!r}")
+        return "UNSUPPORTED_OR_MALFORMED"
+
+    if not isinstance(candidates, list):
+        errors.append("manifest.suggestedAbsorptionCandidates must be a list when candidateContractVersion is set")
+        return "STRICT_V1"
+
+    source_ids: set[str] = set()
+    for source_index, source in enumerate(manifest.get("sources") or []):
+        if not isinstance(source, dict):
+            continue
+        source_id = source.get("id")
+        if not _nonblank_str(source_id):
+            errors.append(f"sources[{source_index}].id must be a non-blank string under strict candidate contract v1")
+        elif source_id in source_ids:
+            errors.append(f"sources[{source_index}].id is a duplicate under strict candidate contract v1: {source_id}")
+        else:
+            source_ids.add(source_id)
+
+    seen_ids: set[str] = set()
+    for index, candidate in enumerate(candidates_list):
+        prefix = f"suggestedAbsorptionCandidates[{index}]"
+        if not isinstance(candidate, dict):
+            errors.append(f"{prefix} must be an object")
+            continue
+        candidate_id = candidate.get("candidateId")
+        if not _nonblank_str(candidate_id):
+            errors.append(f"{prefix}.candidateId must be a non-blank string")
+        elif candidate_id in seen_ids:
+            errors.append(f"{prefix}.candidateId is a duplicate within this return: {candidate_id}")
+        else:
+            seen_ids.add(candidate_id)
+        lane = candidate.get("preliminaryLane")
+        if lane == LANE_EXTERNAL_SOURCE_VALUE:
+            _validate_source_value_candidate(candidate, prefix, source_ids, errors)
+        elif lane == LANE_CVF_INTERNAL_DEFECT:
+            _validate_internal_defect_candidate(candidate, prefix, source_ids, errors)
+        else:
+            errors.append(f"{prefix}.preliminaryLane must be one of {CANDIDATE_LANES}")
+    return "STRICT_V1"
+
+
 def validate_return(root: Path, receipt_path: Path) -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
@@ -404,6 +611,7 @@ def validate_return(root: Path, receipt_path: Path) -> dict[str, Any]:
     elif cvf_source.get("repository") != PUBLIC_REPOSITORY:
         errors.append("manifest.cvfPublicSource.repository is not the canonical public repository")
     _validate_source_rows(manifest, errors)
+    candidate_contract_status = _validate_candidates(manifest, errors)
 
     files = manifest.get("files")
     manifest_files: dict[str, str] = {}
@@ -455,6 +663,7 @@ def validate_return(root: Path, receipt_path: Path) -> dict[str, Any]:
             errors.append(f"README.md lacks authority marker: {marker}")
 
     status = "PASS" if not errors else "RETURN_FOR_REPAIR"
+    manifest_sha256 = hashlib.sha256(manifest_path.read_bytes()).hexdigest() if manifest_path.is_file() else None
     receipt = {
         "schema": "cvf.externalAgentReturnValidationReceipt.v1",
         "protocolVersion": PROTOCOL_VERSION,
@@ -466,6 +675,10 @@ def validate_return(root: Path, receipt_path: Path) -> dict[str, Any]:
         "filesObserved": len(actual),
         "errors": errors,
         "warnings": warnings,
+        "validatedReturnManifestSha256": manifest_sha256,
+        "validatedProtocolVersion": PROTOCOL_VERSION,
+        "candidateContractStatus": candidate_contract_status,
+        "validatedCandidateContractVersion": CANDIDATE_CONTRACT_VERSION if candidate_contract_status == "STRICT_V1" else None,
         "claimBoundary": "Structural, integrity, and bounded semantic intake validation only; not CVF acceptance or absorption approval.",
     }
     _write_json(receipt_path, receipt)

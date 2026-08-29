@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Work order ID: EARTR-ESC-R1
 
@@ -48,7 +48,7 @@ dispatchBaseHead: `590cf8ab71805abb947a2c49b8dcc33335aadc1e`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `ab964a2764956d65000f17057033bd604f407332`
 
 Worker: delegated implementation worker
 
@@ -616,13 +616,13 @@ bounded to pending local implementation.
 
 ## Closure Checklist
 
-- [ ] Worker captured execution base and verified every pin before edits.
-- [ ] Exactly four material owner paths changed and one worker return exists.
-- [ ] Focused tests and worker-return full gate pass after the last edit.
-- [ ] Staging is empty and HEAD equals execution base.
-- [ ] Reviewer independently verifies semantics and exact changed set.
-- [ ] Reviewer-owned completion record is created only after acceptance.
-- [ ] Public/portable release remains explicitly parked or is opened later by
+- [x] Worker captured execution base and verified every pin before edits.
+- [x] Exactly four original material owner paths and one worker return were produced; Amendment 1 added six authorized checker/test paths.
+- [x] Focused tests and worker-return full gate pass after the last edit.
+- [x] Staging was empty and HEAD equaled execution base at worker return.
+- [x] Reviewer independently verified semantics and the exact amended changed set.
+- [x] Reviewer-owned completion record was created after acceptance.
+- [x] Public/portable release remains explicitly parked until opened later by
       separate authority and same-release synchronization evidence.
 
 ## Return-To-Orchestrator Conditions
@@ -632,6 +632,28 @@ pass and the exact five paths are unstaged. Return `BLOCKED_WITH_REASON` for a
 pin mismatch, owner/design contradiction, or required forbidden-path change.
 Do not return a preference question for an allowed-scope formatting, test, or
 machine-gate repair.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this Work Order | `Status: CLOSED_PASS_BOUNDED`; closure base and checklist finalized | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_EARTR_ESC_R1_ROUND_TRIP_1_2_CANDIDATE_CONTRACT_IMPLEMENTATION_COMPLETION_2026-08-29.md` | `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`; final tests and reviewer repair recorded | PASS |
+| Roadmap state | N/A with reason: this bounded implementation was not assigned a new roadmap owner | no downstream roadmap dependency created | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check PASS; no source-entry mutation | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | unchanged projection remains aligned | PASS |
+| External evidence digest | N/A with reason: no new external evidence was ingested during implementation | dispatch already pins preserved design/review hashes | N/A with reason |
+| System loop interlock | N/A with reason: existing round-trip chain is enriched without a new loop edge | no interlock mutation required | N/A with reason |
+| Session continuity | active handoff | reviewer-owned handoff-only sync follows material closure | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| exact return binding | manifest binding equals receipt validated-manifest SHA-256 | exact manifest-byte digest is emitted and equality-tested | PASS |
+| validator protocol | `1.2.0` | `validatedProtocolVersion: 1.2.0` | PASS |
+| strict candidate contract | `1` | strict-v1 receipt records `validatedCandidateContractVersion: 1`; legacy records null | PASS |
+| validation result | `PASS` | typed reconciliation opens only for `status: PASS` | PASS |
 
 ## Claim Boundary
 
