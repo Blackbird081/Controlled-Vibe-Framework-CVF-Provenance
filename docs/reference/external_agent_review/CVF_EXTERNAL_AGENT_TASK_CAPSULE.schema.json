@@ -55,6 +55,7 @@
         "title": {"type": "string", "minLength": 1},
         "objective": {"type": "string", "minLength": 1},
         "workingMode": {"enum": ["REVIEW_ONLY", "DESIGN_ONLY", "BUILD_NEW_REPOSITORY", "EXTEND_SUPPLIED_REPOSITORY", "SOURCE_PACK_PREPARATION"]},
+        "expectedReturnStatus": {"const": "COMPLETE_PENDING_LOCAL_RECONCILIATION"},
         "outputRoot": {"type": "string", "minLength": 1},
         "nonGoals": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
       }
@@ -79,7 +80,15 @@
         "properties": {
           "repository": {"type": "string", "format": "uri"},
           "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
-          "usage": {"const": "REFERENCE_AND_ANALYSIS"}
+          "usage": {"const": "REFERENCE_AND_ANALYSIS"},
+          "licenseExpression": {"type": "string", "pattern": "\\S"},
+          "licenseSource": {"type": "string", "format": "uri"},
+          "immutableReferences": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "format": "uri"},
+            "uniqueItems": true
+          }
         }
       }
     },

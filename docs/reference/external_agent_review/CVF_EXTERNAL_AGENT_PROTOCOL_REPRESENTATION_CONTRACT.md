@@ -137,6 +137,36 @@ obligations:
   are preserved as historical evidence and are never silently promoted to
   typed candidate status by later revalidation.
 
+## Portable Source-Pack Operational Profile
+
+When a task capsule selects `SOURCE_PACK_PREPARATION`, the portable Bootstrap
+must make the following existing protocol route executable without prior-chat
+knowledge:
+
+```text
+verify packet and task capsule
+-> pin source commit, license, and immutable evidence
+-> audit the external source before comparing it with CVF
+-> extract atomic patterns
+-> use public CVF only for preliminary owner/overlap navigation
+-> emit strict candidateContractVersion 1 rows with separate provenance lanes
+-> validate the complete return
+-> stop at COMPLETE_PENDING_LOCAL_RECONCILIATION
+```
+
+The per-repository task capsule binds the short operator objective, public CVF
+commit, audited-source commit, license expression and immutable evidence,
+expected return status, and non-effect authority envelope. It does not repeat
+the typed producer contract owned by the Return Contract and Finding
+Absorption Workflow.
+
+The External Agent stops after the validated return. Local CVF resolves actual
+current ownership, attempts to disprove novelty, and produces reconciliation;
+the Operator decides disposition and whether later governed work should be
+considered. `NO_NEW_VALUE` is a successful reconciliation result. Candidate
+production, Local reconciliation, Operator selection, owner binding, and Work
+Order existence do not independently authorize implementation.
+
 ## Public/Portable Projection Release Boundary
 
 Protocol `1.2.0` is released to the public compact projection and the
