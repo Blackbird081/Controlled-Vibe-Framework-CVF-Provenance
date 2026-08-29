@@ -132,7 +132,7 @@
       "sourceFingerprints": [
         {
           "path": ".github/workflows/documentation-testing.yml",
-          "sha256": "a294a23861b4cb6de2294d9f06bd35cfbdb571e7b32fbb69e7f92a89ed009749",
+          "sha256": "26d0ab30e1b7a31c41ec57734a0dde2944d25ede62e2c867d6e66e033025efe7",
           "evidenceRole": "CI job invoking the conformance runner"
         },
         {
