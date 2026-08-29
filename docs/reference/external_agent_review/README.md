@@ -112,17 +112,21 @@ semantics.
 
 The public `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md` is the compact
 projection of protocol `cvf.external-agent-round-trip`. The operator-local
-four-file packet is its expanded portable representation. Their version,
+core packet, together with any generated task-specific supplements, is its
+expanded portable representation. Their version,
 compatibility, precedence, and freshness rules are owned by
 `CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md`.
 
-The operator may give an external agent a portable four-file packet outside
-this repository:
+The operator may give an external agent a portable core packet outside this
+repository:
 
 - `CVF_EXTERNAL_AGENT_BOOTSTRAP_INSTRUCTIONS.md`;
 - `CVF_CONTEXT_BRIEF.md`;
 - `CVF_CURRENT_PUBLIC_SNAPSHOT.md`;
 - `CVF_EXTERNAL_AGENT_RETURN_CONTRACT.md`.
+
+Generated task-specific supplements, including a task capsule and refresh
+receipt, may accompany that stable core packet.
 
 These files are non-authoritative orientation and return-shape aids. Their
 presence does not prove that the external agent followed them and does not

@@ -12,7 +12,7 @@ import argparse
 import hashlib
 import json
 import sys
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
 
 if __package__ in {None, ""}:
@@ -33,6 +33,51 @@ from scripts.external_agent_packet import (
 
 
 EXPECTED_RETURN_STATUS = "COMPLETE_PENDING_LOCAL_RECONCILIATION"
+
+
+def resolve_output_root(requested: str, candidate: str, authorized_root: str, requested_usable: bool) -> dict[str, str]:
+    """Return evidence for a safe output-root choice without touching disk."""
+    if requested_usable:
+        return {"requestedOutputRoot": requested, "actualOutputRoot": requested,
+                "outputRootDisposition": "REQUESTED_OUTPUT_ROOT_USED", "reason": "requested root is usable"}
+    candidate_path = PurePosixPath(candidate.replace("\\", "/"))
+    authorized_path = PurePosixPath(authorized_root.replace("\\", "/"))
+    try:
+        candidate_path.relative_to(authorized_path)
+    except ValueError as exc:
+        raise PacketError("fallback output root is outside the authorized task/artifact root") from exc
+    if ".." in candidate_path.parts:
+        raise PacketError("fallback output root is outside the authorized task/artifact root")
+    return {"requestedOutputRoot": requested, "actualOutputRoot": candidate,
+            "outputRootDisposition": "OUTPUT_ROOT_REBOUND", "reason": "requested root is unavailable on this host"}
+
+
+def resolve_public_cvf_pin(capsule_pin: str, live_head: str) -> dict[str, str]:
+    status = "PASS" if capsule_pin == live_head else "PUBLIC_CVF_PIN_DRIFT_RECORDED"
+    return {"comparisonCommit": capsule_pin, "observedLiveHead": live_head, "status": status}
+
+
+def validate_return_cvf_pin(capsule_pin: str, return_mapping_commit: str) -> None:
+    if capsule_pin != return_mapping_commit:
+        raise PacketError("return public-CVF mapping commit does not match the normative task-capsule pin")
+
+
+def classify_task_capsule_drift(
+    capsule: dict[str, Any], *, requested_repository: str | None = None,
+    requested_commit: str | None = None, requested_mode: str | None = None,
+    forbidden_effect_requested: bool = False, short_objective: str = "",
+) -> str:
+    """Classify material conflicts; short-objective wording is intentionally non-authoritative."""
+    del short_objective
+    source = capsule["sourceRepositories"][0]
+    normalized = lambda value: value.removesuffix(".git").rstrip("/")
+    conflicts = [
+        requested_repository is not None and normalized(requested_repository) != normalized(source["repository"]),
+        requested_commit is not None and requested_commit != source["commit"],
+        requested_mode is not None and requested_mode != capsule["task"]["workingMode"],
+        forbidden_effect_requested,
+    ]
+    return "TASK_CAPSULE_DRIFT" if any(conflicts) else "NO_TASK_CAPSULE_DRIFT"
 
 
 def create_source_capsule(args: argparse.Namespace, public_sha: str, source_posture: str) -> dict[str, Any]:
@@ -64,12 +109,22 @@ def create_source_capsule(args: argparse.Namespace, public_sha: str, source_post
             "workingMode": "SOURCE_PACK_PREPARATION",
             "expectedReturnStatus": EXPECTED_RETURN_STATUS,
             "outputRoot": args.output_root,
+            "outputRootPolicy": {
+                "requestedRootSemantics": "OPERATOR_PREFERRED_DESTINATION",
+                "whenAvailable": "USE_REQUESTED_OUTPUT_ROOT",
+                "whenUnavailable": "OUTPUT_ROOT_REBOUND",
+                "allowedFallback": "AUTHORIZED_WRITABLE_TASK_OR_ARTIFACT_ROOT_ONLY",
+                "evidenceFields": ["requestedOutputRoot", "actualOutputRoot", "outputRootDisposition", "reason"],
+            },
+            "shortObjectivePolicy": "FOCUS_WITHIN_CAPSULE_ENVELOPE_NO_STRING_EQUALITY",
             "nonGoals": args.non_goal,
         },
         "cvfPublicSource": {
             "repository": PUBLIC_REPOSITORY,
             "commit": public_sha,
             "sourcePosture": source_posture,
+            "comparisonBaseline": "TASK_CAPSULE_PIN_NORMATIVE",
+            "liveHeadDisposition": "RECORD_DRIFT_DO_NOT_SILENTLY_REPIN",
         },
         "sourceRepositories": [{
             "repository": args.source_repository,
