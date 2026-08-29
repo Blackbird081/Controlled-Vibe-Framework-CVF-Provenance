@@ -5,7 +5,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
-- Branch: `main`
+- Branch: `main`. Current HEAD recorded for this handoff: `98544a36a` (`chore(public-sync): remove trailing whitespace blockers`). Updated 2026-08-29 after public-sync preflight hygiene repair and system-chain fingerprint reconciliation.
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
