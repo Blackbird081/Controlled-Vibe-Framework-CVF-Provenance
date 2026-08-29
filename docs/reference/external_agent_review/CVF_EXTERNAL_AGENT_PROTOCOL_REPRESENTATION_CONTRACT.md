@@ -137,15 +137,14 @@ obligations:
   are preserved as historical evidence and are never silently promoted to
   typed candidate status by later revalidation.
 
-## Unreleased Public/Portable Projection Boundary
+## Public/Portable Projection Release Boundary
 
-Protocol `1.2.0` is defined as a private-owner contract only. The public
-compact projection and the operator-portable packet remain at their last
-synchronized `1.1.0` release until a separately authorized, reviewer-owned
-same-release projection refresh updates both representations'
-`protocolVersion`, `compatibleWith`, and `updatedAt` fields together. Until
-that refresh, do not describe `1.2.0` as released, distributed, or available
-to an external agent through either representation.
+Protocol `1.2.0` is released to the public compact projection and the
+operator-portable packet only as documentation and return-validation contract
+semantics. The synchronized release updates both representations'
+`protocolVersion`, `compatibleWith`, and `updatedAt` fields together. Release
+does not imply that an External Agent read the new packet, that any candidate
+was accepted, or that runtime/provider/implementation authority was granted.
 
 ## Update Rule
 
@@ -177,7 +176,7 @@ the accepted design treats the discriminator as additive.
 
 ### Evidence Comparison
 
-The implemented dual-reader table (`LEGACY_EMPTY`,
+The implemented and synchronized dual-reader table (`LEGACY_EMPTY`,
 `LEGACY_UNTYPED_NOT_PROMOTABLE`, `STRICT_V1`, `UNSUPPORTED_OR_MALFORMED`) and
 the focused test matrix confirm that pre-existing `1.1.0` returns with empty
 or non-empty untyped candidate arrays continue to validate under the
@@ -194,9 +193,9 @@ version-compatibility content.
 
 ### Claim Update
 
-This contract now documents `1.2.0` as the private-owner-only current
-version, with public/portable representations explicitly held at `1.1.0`
-until a separately authorized same-release projection refresh.
+This contract now documents `1.2.0` as the synchronized private, public
+compact, and operator-portable protocol version. External receipt of or
+conformance to that release still requires separate evidence.
 
 ## Claim Boundary
 

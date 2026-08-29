@@ -59,3 +59,42 @@ This record proves the named remote branch tips and bounded documentation
 export only. It does not prove public/private tree identity, runtime behavior,
 provider execution, deployment, hosted freshness, production readiness, or
 complete absorption of any future external repository.
+
+## Protocol 1.2 Release Addendum - 2026-08-29
+
+The operator authorized the previously parked same-release projection. Public
+PR `#5` passed required `public-sync-preflight` checks and was squash-merged to
+live public `main`. The operator-portable packet was then refreshed from that
+exact live commit.
+
+### Verification
+
+| Surface | Evidence | Result |
+|---|---|---|
+| Public CVF | `main` commit `771cb3949678907d02c045e40772e008bd138245` | VERIFIED_LIVE |
+| Protocol | `cvf.external-agent-round-trip@1.2.0` | SYNCHRONIZED |
+| Portable packet | `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` | REFRESHED_LIVE_PUBLIC_MAIN |
+| Packet receipt | SHA-256 `c52433c4ce383e22df6777dc4de54f0c1e4eada4ee83dfbe6597dd34a132a540` | PASS |
+| Focused validation | external-agent packet and checker tests | 122/122 PASS |
+
+### Public Export Disposition
+
+EXPORTED
+
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+
+Public-sync commit: `771cb3949678907d02c045e40772e008bd138245`
+
+Public artifact paths:
+
+- `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md`
+- `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md`
+- `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md`
+- `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_OWNER_SURFACE_INDEX.json`
+
+### Addendum Claim Boundary
+
+This addendum proves synchronized documentation and return-validation contract
+semantics only. It does not prove that an External Agent read or conformed to
+the packet, accept any returned candidate, authorize implementation, call a
+provider, deploy, or prove production readiness.
