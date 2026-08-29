@@ -1,0 +1,526 @@
+# CVF EARTR-ESC-R0 Final External Adversarial Review
+
+Mode: `REVIEW_ONLY / DESIGN_ONLY`
+
+Reviewed revised design:
+`CVF_EARTR_ESC_R0_SOURCE_COLLABORATION_ENRICHMENT_DESIGN_DECISION_2026-08-29.md`
+
+Recomputed SHA-256:
+`8b8954840d32e5a9f7da8fb2c8cda56a461c463897a00ba0b475a7a4721cbbe5`
+
+Expected SHA-256:
+`8b8954840d32e5a9f7da8fb2c8cda56a461c463897a00ba0b475a7a4721cbbe5`
+
+Preserved initial external review:
+`CVF_EARTR_ESC_R0_EXTERNAL_ADVERSARIAL_REVIEW_2026-08-29.md`
+
+Recomputed SHA-256:
+`b7dba25ed90931a3f6d9e52411334a8e2ac53b6c386dc7438e87f7e2b4be8d92`
+
+Expected SHA-256:
+`b7dba25ed90931a3f6d9e52411334a8e2ac53b6c386dc7438e87f7e2b4be8d92`
+
+Hash pre-flight:
+`PASS`
+
+Public review-input commit:
+`2aa17841892fac3cde74214ad0471814084294e0`
+
+Public-source boundary:
+independent live GitHub resolution was unavailable from this review runtime.
+The review therefore does not make a fresh-current-public-HEAD claim and does
+not use the public source to infer current private/local CVF state. The supplied
+Local revision and pinned public/context representations remain review inputs,
+not External Agent authority.
+
+## Verdict
+
+`ACCEPT_WITH_REQUIRED_REVISIONS`
+
+The revised Local design preserves the correct architecture and closes the
+substantive architecture concerns from the initial review:
+
+- `cvf.external-agent-round-trip` remains the existing protocol owner;
+- no parallel protocol, profile, registry, runtime, truth owner, receipt owner,
+  authority owner, schema file, or global state machine is introduced;
+- External Agent and Local Agent authority remain separated;
+- Operator selection remains separate from implementation authorization;
+- source value and incidental CVF defects are represented as distinct candidate
+  lanes;
+- candidate identity is bound to a parent return rather than made global;
+- `WORK_ORDER_AUTHORIZED` remains correctly rejected;
+- protocol evolution is treated as a 1.x-compatible minor enrichment rather
+  than a new protocol generation;
+- Local evidence now explicitly supports the proposed four-path changed set.
+
+One cross-cutting blocking ambiguity remains before design-review closure:
+
+> a SHA-256 of a `PASS` validation receipt does not by itself prove that the
+> receipt was produced by a validator that understood
+> `candidateContractVersion: 1` and validated the exact return manifest under
+> the strict 1.2 candidate semantics.
+
+This matters because a historical 1.1 validator may legitimately ignore the
+previously untyped candidate-item semantics and still produce a bounded
+validation `PASS`. Such a receipt must not satisfy the new typed Local
+reconciliation gate.
+
+The required revision is narrow and does not justify a new owner, schema file,
+registry, protocol, or changed-path expansion.
+
+## Blocking-Finding Closure Matrix
+
+| Initial finding | Final status | Revised-design evidence | Review conclusion |
+|---|---|---|---|
+| BF-01 — generic candidate row mixes external source value with incidental CVF-defect semantics | `CLOSED` | Revised design lines 214-340 define collection-level `candidateContractVersion`, two discriminated variants, separate `sourceLocations` versus `cvfPublicLocations`, non-evidentiary `triggerContextSourceRefs`, and explicit forbidden fields for the internal-defect variant. Lines 423-436 retain mutually exclusive verified provenance classes. | The Local repair prevents the original source-value/internal-defect contamination at the candidate-shape level. |
+| BF-02 — `candidateId` alone is not a deterministic cross-artifact join | `PARTIALLY_CLOSED` | Lines 343-361 bind one reconciliation artifact to `returnManifestSha256`, `validationReceiptSha256`, and `candidateContractVersion`, and define the effective key `(returnManifestSha256, candidateId)`. Lines 418-421 require preservation of parent binding and original candidate ID. | Candidate identity is now deterministic without a global ID or registry. The remaining issue is validation-evidence binding: the receipt hash identifies a receipt but the design does not yet require machine-visible proof that this receipt validated this exact manifest using the strict candidate-contract version. |
+| BF-03 — strict typed items can retroactively invalidate or silently promote historical 1.1 rows | `PARTIALLY_CLOSED` | Lines 514-535 select protocol `1.2.0`, retain `cvf.externalAgentReturn.v1`, define `LEGACY_EMPTY`, `LEGACY_UNTYPED_NOT_PROMOTABLE`, `STRICT_V1`, and `UNSUPPORTED_OR_MALFORMED`, and require unsupported/malformed discriminators to fail closed. | The dual-reader design itself is correct. The remaining backward-compatibility hole is that an old candidate-unaware validator could still emit `PASS` for a 1.2 manifest unless the validation receipt proves which candidate-contract semantics were actually enforced. |
+
+## Remaining Blocking Findings
+
+### RB-01 — Validation receipt must bind both the exact manifest and the candidate-contract semantics actually enforced
+
+The revised Local contract currently requires:
+
+```yaml
+externalReturnBinding:
+  returnManifestSha256: <sha256-of-EXTERNAL_AGENT_RETURN_MANIFEST.json>
+  validationReceiptSha256: <sha256-of-PASS-validation-receipt>
+  candidateContractVersion: 1
+```
+
+and states that the receipt must report `PASS` and must have validated that
+exact manifest.
+
+That is directionally correct but not yet machine-complete.
+
+Two independent hashes prove the identities of two artifacts. They do not,
+without a receipt-level binding, prove this relation:
+
+```text
+PASS receipt R
+    validated
+manifest M
+    under
+candidateContractVersion = 1
+```
+
+The 1.2 design specifically introduces stricter candidate semantics that did
+not exist in 1.1. Therefore the Local reconciliation gate must reject a `PASS`
+receipt produced by a validator that did not enforce candidate contract v1.
+
+#### Required bounded revision
+
+The existing validation receipt or its current equivalent must expose
+machine-verifiable evidence equivalent to:
+
+```yaml
+validatedReturnManifestSha256: <exact manifest sha256>
+validatedProtocolVersion: 1.2.0
+validatedCandidateContractVersion: 1
+```
+
+or another existing-owner representation that proves the same three facts.
+
+A validator implementation/version or capability marker may additionally be
+recorded if the current receipt owner needs it, but a new receipt owner is not
+required.
+
+The Local reconciliation rule then becomes:
+
+```text
+returnManifestSha256
+  ==
+receipt.validatedReturnManifestSha256
+
+candidateContractVersion
+  ==
+receipt.validatedCandidateContractVersion
+
+receipt.result
+  ==
+PASS
+```
+
+and, for strict typed candidates:
+
+```text
+validatedCandidateContractVersion == 1
+```
+
+A receipt from a legacy validator that cannot prove candidate-contract-v1
+validation remains useful historical evidence but is not sufficient to open a
+typed Local reconciliation.
+
+This revision closes both the residual BF-02 evidence-binding issue and the
+residual BF-03 old-validator compatibility issue.
+
+No additional changed path is implied if the existing receipt is emitted and
+tested by `scripts/external_agent_packet.py` and
+`scripts/test_external_agent_packet.py` under the existing representation
+contract owner.
+
+## Non-Blocking Findings
+
+### NBF-01 — Local `cvfPublicLocations` normalization is stronger than the initial review example
+
+`CVF_INTERNAL_DEFECT_CANDIDATE` now uses:
+
+```yaml
+cvfPublicLocations:
+```
+
+bound to the existing top-level `cvfPublicSource`, while:
+
+```yaml
+triggerContextSourceRefs:
+```
+
+is explicitly optional and non-evidentiary.
+
+This is preferable to inventing a synthetic `SRC-CVF-PUBLIC` row in the
+external-source collection.
+
+It keeps:
+
+```text
+evidence for the CVF defect
+```
+
+separate from:
+
+```text
+external source that happened to trigger the observation
+```
+
+No revision required.
+
+### NBF-02 — CamelCase normalization preserves semantics
+
+The change from review examples such as:
+
+```text
+candidate_id
+preliminary_lane
+return_manifest_sha256
+```
+
+to:
+
+```text
+candidateId
+preliminaryLane
+returnManifestSha256
+```
+
+is notation-only.
+
+No semantic drift was found.
+
+No revision required.
+
+### NBF-03 — Top-level `sourceRefs` remains redundant with `sourceLocations[].sourceRef`
+
+For `EXTERNAL_SOURCE_VALUE_CANDIDATE`, the revised shape currently contains
+both:
+
+```yaml
+sourceRefs:
+  - SRC-001
+```
+
+and:
+
+```yaml
+sourceLocations:
+  - sourceRef: SRC-001
+    path: ...
+```
+
+For the smallest sufficient strict contract, `sourceRefs` can be derived from
+the unique set of `sourceLocations[].sourceRef`.
+
+Keeping both is safe only if the validator enforces exact set consistency.
+Otherwise the two fields can drift or permit source credit with no exact
+location.
+
+This is an optional refinement, not a blocker.
+
+Preferred minimum:
+
+```yaml
+sourceLocations:
+  - sourceRef: SRC-001
+    path: path/to/file
+    symbols:
+      - SymbolName
+```
+
+and derive candidate source-row membership from those locations.
+
+If the current local KIOD or return owner requires candidate-level source sets
+for an existing reason, retain `sourceRefs` but validate:
+
+```text
+set(sourceRefs)
+==
+set(sourceLocations[].sourceRef)
+```
+
+### NBF-04 — New 1.2 producers should normally emit the discriminator even for an empty candidate collection
+
+The dual-reader table correctly permits an absent discriminator plus empty
+array as `LEGACY_EMPTY`.
+
+For a return actually produced under protocol 1.2, however, emitting:
+
+```yaml
+candidateContractVersion: 1
+suggestedAbsorptionCandidates: []
+```
+
+is preferable because it proves the producer is operating under the typed
+candidate contract even though no candidate was found.
+
+This is not required for backward compatibility and is not blocking.
+
+### NBF-05 — `sourceEvidence` should remain non-authoritative summary only
+
+The revised contract already states that `sourceEvidence` is optional and
+never substitutes for normalized source identity and exact locations.
+
+Retain that limitation if the field survives implementation.
+
+No additional evidence semantics should be attached to free-text
+`sourceEvidence`.
+
+### NBF-06 — Public owner and overlap statuses are correctly bounded
+
+The revised enums avoid turning public absence into a current-local owner-gap
+claim.
+
+In particular:
+
+```text
+PUBLIC_OWNER_SURFACE_NOT_FOUND
+PUBLIC_INSUFFICIENT_EVIDENCE
+```
+
+are appropriately public-evidence statements rather than new-owner authority.
+
+No revision required.
+
+### NBF-07 — `WORK_ORDER_AUTHORIZED` remains correctly rejected
+
+The revised design preserves the invariant that Work Order existence is not
+implementation authority and remains subordinate to the complete authority
+chain.
+
+No revision required.
+
+## Contract And Compatibility Verdict
+
+### Candidate contract
+
+`ACCEPT_WITH_ONE_REQUIRED_BINDING_REVISION`
+
+BF-01 is closed.
+
+The two candidate variants are now structurally capable of preserving:
+
+```text
+EXTERNAL_SOURCE_VALUE
+!=
+CVF_INTERNAL_DEFECT
+```
+
+without crediting the external repository for an incidental CVF defect.
+
+The internal-defect normalization using `cvfPublicLocations` plus optional
+non-evidentiary `triggerContextSourceRefs` is sound.
+
+The contract does not require a new schema file.
+
+### Candidate-to-Local reconciliation
+
+`ACCEPT_WITH_ONE_REQUIRED_BINDING_REVISION`
+
+The effective identity:
+
+```text
+(returnManifestSha256, candidateId)
+```
+
+is deterministic and does not require a registry or global candidate-ID
+allocator.
+
+The missing piece is not candidate identity; it is proof that the referenced
+PASS receipt validated that exact manifest under the required candidate
+contract semantics.
+
+Once RB-01 is added, BF-02 is closed.
+
+### Protocol compatibility
+
+`1.2.0 MINOR ENRICHMENT IS APPROPRIATE`
+
+The revised dual-reader table is structurally correct:
+
+```text
+discriminator absent + empty
+  -> legacy empty
+
+discriminator absent + non-empty
+  -> historical/untyped/not promotable
+
+candidateContractVersion: 1
+  -> strict discriminated validation
+
+unsupported or malformed discriminator
+  -> fail closed / return for repair
+```
+
+This preserves historical 1.1 evidence without silently turning legacy rows
+into typed 1.2 candidates.
+
+However, compatibility is not complete until the validation evidence also
+distinguishes a candidate-aware 1.2 validation from a legacy candidate-unaware
+PASS.
+
+With RB-01 included, no protocol-major or return-schema-major change is
+justified by this review.
+
+Retaining:
+
+```text
+cvf.externalAgentReturn.v1
+```
+
+remains reasonable because the new discriminator is additive and the reader
+explicitly preserves old data.
+
+### Authority and taxonomy
+
+`ACCEPT`
+
+The design continues to keep separate:
+
+- source-value disposition;
+- overlap disposition;
+- direct-import decision;
+- runtime activation;
+- authority promotion;
+- implementation authorization.
+
+`ENRICH_EXISTING_OWNER` is correctly kept out of the canonical source-value
+disposition vocabulary.
+
+External discovery, Local verification, Operator disposition, owner binding,
+Work Order creation, and implementation authority remain distinct.
+
+## Minimum-Delta Verdict
+
+`FOUR_PATH_DELTA_SUPPORTED`
+
+The revised Local design adds specific current-owner evidence that
+`CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md` normatively owns:
+
+- version compatibility;
+- same-release synchronization of public compact and portable expanded
+  representations.
+
+Given that supplied Local owner evidence, the four-path future delta is
+coherent and minimal at the design level:
+
+```text
+docs/reference/external_agent_review/
+|-- CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md
+`-- CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md
+
+scripts/
+|-- external_agent_packet.py
+`-- test_external_agent_packet.py
+```
+
+Responsibilities remain non-overlapping:
+
+```text
+Finding workflow
+  -> provenance-lane and Local reconciliation semantics
+
+Representation contract
+  -> protocol/version/projection compatibility semantics
+
+external_agent_packet.py
+  -> candidate validation and receipt binding
+
+test_external_agent_packet.py
+  -> positive, negative, contamination, reference-integrity,
+     dual-reader, and authority-widening tests
+```
+
+RB-01 fits inside those same owners:
+
+- representation contract defines the validation-binding invariant;
+- packet code emits/checks the existing validation receipt binding;
+- focused tests prove strict-v1 versus legacy behavior.
+
+Therefore RB-01 does **not** justify:
+
+- a fifth changed path;
+- a new receipt owner;
+- a new schema file;
+- a new registry;
+- a new runtime.
+
+A new schema file remains unjustified unless implementation later proves that
+multiple independent consumers would otherwise duplicate validation logic.
+
+## Final Recommendation
+
+Return the revised design to the Local Agent for one final bounded repair only:
+
+1. extend the existing validation-receipt contract/evidence so a typed
+   reconciliation can machine-verify that the PASS receipt:
+   - validated the exact `returnManifestSha256`;
+   - enforced the exact `candidateContractVersion`;
+   - was operating under the applicable protocol validation semantics;
+2. require Local reconciliation to reject legacy/candidate-unaware PASS
+   receipts for strict typed candidates;
+3. add negative tests for:
+   - strict-v1 manifest + legacy validator receipt;
+   - receipt bound to a different manifest;
+   - receipt with mismatched candidate-contract version;
+   - unsupported/malformed discriminator;
+   - legacy non-empty rows being silently promoted;
+4. optionally remove redundant top-level `sourceRefs`, or enforce set equality
+   with `sourceLocations[].sourceRef`.
+
+Do not reopen the settled architecture decisions.
+
+The following remain accepted:
+
+```text
+existing cvf.external-agent-round-trip owner
+two candidate provenance lanes
+Local verification authority
+Operator disposition authority
+no parallel protocol/profile/registry/runtime
+no new truth/receipt/authority owner
+no global state machine
+no schema file
+four-path future delta
+protocol target 1.2.0
+retained cvf.externalAgentReturn.v1
+dual-reader legacy preservation
+WORK_ORDER_AUTHORIZED rejected
+implementation remains separately governed
+```
+
+After RB-01 is incorporated and locally evidenced, the design should be
+eligible for final `ACCEPT` without another architecture redesign.
+
+No implementation, packet refresh, public export, commit, push, publication,
+provider call, deployment, or production claim is authorized by this review.
+
+Status: COMPLETE_PENDING_LOCAL_REVIEW

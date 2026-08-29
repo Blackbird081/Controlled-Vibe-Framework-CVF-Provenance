@@ -1,0 +1,1004 @@
+# CVF EARTR-ESC-R0 External Adversarial Review
+
+Mode: `REVIEW_ONLY / DESIGN_ONLY`
+
+Status on return: `COMPLETE_PENDING_LOCAL_REVIEW`
+
+Review artifact:
+`CVF_EARTR_ESC_R0_EXTERNAL_ADVERSARIAL_REVIEW_2026-08-29.md`
+
+Reviewed design packet:
+`CVF_EARTR_ESC_R0_SOURCE_COLLABORATION_ENRICHMENT_DESIGN_DECISION_2026-08-29.md`
+
+Design packet SHA-256:
+`53777b228417602a35bfd58bb3916ae4d2241ebf4269eca88b39f80f80a4642b`
+
+Expected SHA-256:
+`53777b228417602a35bfd58bb3916ae4d2241ebf4269eca88b39f80f80a4642b`
+
+Source-integrity result:
+`PASS`
+
+Public CVF audit anchor:
+`06c3d040a3dc8fa22fa27f2f9c3e40739def075e`
+
+Protocol under review:
+`cvf.external-agent-round-trip@1.1.0`
+
+Public-source verification boundary:
+
+- the supplied portable public snapshot identifies `main` at
+  `06c3d040a3dc8fa22fa27f2f9c3e40739def075e`, dated
+  `2026-08-29T09:23:58+07:00`;
+- the supplied refresh receipt identifies the same commit and reports
+  `REFRESHED_LIVE_PUBLIC_MAIN` at `2026-08-29T09:24:46+07:00`;
+- independent live GitHub resolution was not available from the review runtime,
+  so this review does not claim that the audit anchor is still current public
+  `HEAD`;
+- `EXTERNAL_AGENT_READ` and public CVF are treated as bounded public/context
+  representations, not current private/local CVF authority.
+
+The complete supplied design packet was reviewed before this verdict.
+
+---
+
+## 1. Verdict
+
+`ACCEPT_WITH_REQUIRED_REVISIONS`
+
+The core architectural decision is sound:
+
+- reuse `cvf.external-agent-round-trip`;
+- do not create a new collaboration protocol or profile;
+- keep External Agent discovery separate from Local Agent current-owner
+  verification;
+- keep Operator decision separate from implementation authority;
+- keep source value separate from incidental CVF internal defects;
+- keep value, overlap, direct import, runtime activation, authority promotion,
+  and implementation authorization as separate axes;
+- reject a new verified-map registry and global collaboration state machine;
+- reject `WORK_ORDER_AUTHORIZED` as a lifecycle state.
+
+Public evidence suggests the existing round-trip representation already owns
+the relevant external-agent handoff boundary. The supplied portable Return
+Contract already carries normalized `sources` rows, a top-level
+`authorityStatus`, and a `suggestedAbsorptionCandidates` collection, while the
+design packet reports local owner checks for the finding workflow, absorption
+core, KIOD owner/overlap route, Operator gate, and later Work Order chain.
+
+The proposal should therefore remain an enrichment of existing owners.
+
+Three revisions are required before Operator acceptance of a future
+implementation design:
+
+1. make candidate records a discriminated two-lane contract rather than one
+   shape that applies source-value fields to internal-defect rows;
+2. bind Local Reconciliation to the exact validated external return, not only
+   to a `candidate_id` that is unique within that return;
+3. version-gate strict candidate validation so historical 1.1 returns are not
+   retroactively invalidated.
+
+The proposed four-path future delta is plausible, but the review cannot yet
+prove that all four paths are mandatory. A three-path implementation is
+conceptually sufficient unless the current local representation-contract owner
+must itself change for version/projection semantics. That final owner question
+belongs to Local Agent reconciliation.
+
+---
+
+## 2. Blocking Findings
+
+### BF-01 — The proposed candidate row is not yet a clean discriminated contract
+
+**Design packet basis**
+
+The proposed row allows one atomic record to represent either a reusable source
+pattern or an incidental CVF finding, while using fields such as:
+
+- `pattern`;
+- `claimed_value`;
+- `public_overlap`;
+- `preliminary_value_disposition`.
+
+The packet separately states that after Local reconciliation a row must be
+exactly one of:
+
+- `EXTERNAL_SOURCE_VALUE`;
+- `CVF_INTERNAL_DEFECT`.
+
+**Problem**
+
+Those two provenance lanes do not have identical semantics.
+
+For an `EXTERNAL_SOURCE_VALUE` candidate:
+
+- a reusable source pattern is expected;
+- a claimed external value is meaningful;
+- public overlap and a preliminary value disposition are meaningful.
+
+For a `CVF_INTERNAL_DEFECT` candidate:
+
+- `claimed_value` is semantically wrong;
+- `ABSORB` / `ADAPT` / `NO_NEW_VALUE` are not the defect's primary disposition
+  axis;
+- the audited external source may be only trigger context, not provenance of
+  the defect;
+- public evidence can only raise a defect hypothesis for Local verification,
+  not prove a current private/local CVF defect.
+
+A single non-conditional row therefore risks provenance contamination even
+though the prose rule says the lanes are mutually exclusive.
+
+**Required revision**
+
+Use a discriminated candidate lane at External return time, for example:
+
+```yaml
+preliminary_lane:
+  EXTERNAL_SOURCE_VALUE_CANDIDATE
+  # or
+  CVF_INTERNAL_DEFECT_CANDIDATE
+```
+
+Then apply conditional fields.
+
+For `EXTERNAL_SOURCE_VALUE_CANDIDATE`, require:
+
+```yaml
+candidate_id:
+source_refs:
+source_locations:
+candidate_summary:
+claimed_value:
+public_owner_search:
+public_overlap:
+preliminary_value_disposition:
+questions_for_local_agent:
+```
+
+For `CVF_INTERNAL_DEFECT_CANDIDATE`, require:
+
+```yaml
+candidate_id:
+source_refs:
+source_locations:
+candidate_summary:
+public_owner_search:
+questions_for_local_agent:
+```
+
+and prohibit source-value fields that would attribute the defect as external
+value.
+
+Local reconciliation may replace the preliminary lane with the verified class
+while preserving the original candidate identity and correction reason.
+
+---
+
+### BF-02 — `candidate_id` alone is not a deterministic cross-artifact join
+
+**Design packet basis**
+
+The proposed rule states:
+
+> `candidate_id` must be unique within one return.
+
+The Local Reconciliation contract then preserves that ID.
+
+**Problem**
+
+Uniqueness within one return is sufficient only when the Local Reconciliation
+artifact is cryptographically or structurally bound to that exact return.
+
+`ESC-001` can legally occur in:
+
+- Return A;
+- Return B;
+- a regenerated return after source corrections;
+- a second agent's return for the same source.
+
+A local row containing only:
+
+```yaml
+candidate_id: ESC-001
+```
+
+does not independently identify which validated return supplied it.
+
+This creates an avoidable ambiguity at the precise boundary the enrichment is
+trying to make deterministic.
+
+**Required revision**
+
+Bind one Local Reconciliation artifact to exactly one validated return at the
+artifact/header level, for example:
+
+```yaml
+external_return_binding:
+  manifest_sha256: <sha256-of-EXTERNAL_AGENT_RETURN_MANIFEST.json>
+  validation_receipt_sha256: <sha256-or-NOT_AVAILABLE_WITH_REASON>
+  candidate_contract_version: 1
+```
+
+Then the stable join key is:
+
+```text
+(return_manifest_sha256, candidate_id)
+```
+
+The per-row contract still needs only `candidate_id`; no registry or globally
+allocated ID is required.
+
+If the current local finding workflow already binds its review artifact to an
+equivalent immutable return identity, reuse that owner field instead of adding
+another one.
+
+---
+
+### BF-03 — The compatibility hypothesis is incomplete without a legacy discriminator
+
+**Design packet basis**
+
+The packet proposes:
+
+`PROTOCOL_1_X_COMPATIBLE_ENRICHMENT_PENDING_REVIEW`
+
+while also proposing that:
+
+- historical returns remain historical evidence;
+- new non-empty candidate rows must satisfy the enriched contract;
+- unknown/incomplete candidate rows should fail intake or remain unresolved.
+
+The current portable Return Contract exposes:
+
+```json
+"suggestedAbsorptionCandidates": []
+```
+
+under:
+
+```json
+"schema": "cvf.externalAgentReturn.v1"
+```
+
+but does not define a strict item object contract in the supplied
+representation.
+
+**Problem**
+
+Strengthening an already-existing, previously untyped collection into a
+strictly validated object collection can retroactively make old non-empty
+returns fail re-validation.
+
+Without a discriminator, a new validator cannot reliably distinguish:
+
+- a legitimate historical 1.1 non-empty candidate representation;
+- a malformed new enriched candidate representation.
+
+The design therefore cannot yet claim same-major compatibility solely by
+saying historical returns are preserved.
+
+**Required revision**
+
+Prefer a protocol minor update, provisionally:
+
+```text
+cvf.external-agent-round-trip@1.2.0
+```
+
+with an explicit candidate-contract discriminator and dual-reader behavior.
+
+A minimal compatible approach is:
+
+```yaml
+candidate_contract_version: 1
+```
+
+at the return-manifest or candidate-collection level.
+
+Required behavior:
+
+```text
+1.1 / discriminator absent
+  -> treat historical candidate items as legacy/untyped evidence;
+  -> do not retroactively promote them into the new typed contract;
+  -> do not silently interpret them as locally verified candidates.
+
+1.2 + candidate_contract_version=1
+  -> every non-empty candidate row must pass the strict enriched contract.
+```
+
+If the current return representation cannot express such a discriminator while
+remaining `cvf.externalAgentReturn.v1`, Local review must decide whether the
+return schema itself needs a version change.
+
+A major protocol version is not justified by this review if dual-reading
+preserves 1.x compatibility.
+
+---
+
+## 3. Non-Blocking Findings
+
+### NBF-01 — `immutable_references` duplicates normalized source identity
+
+The design correctly says repository, commit, and license identity belong in
+top-level manifest `sources` rows. The candidate contract nevertheless adds:
+
+```yaml
+immutable_references:
+```
+
+in addition to:
+
+```yaml
+source_refs:
+source_locations:
+```
+
+This creates a second place where the exact commit/path identity can drift.
+
+**Recommendation**
+
+Remove `immutable_references` as an independent candidate field.
+
+Make each source location unambiguous by attaching it to a normalized source
+row:
+
+```yaml
+source_locations:
+  - source_ref: SRC-001
+    path: path/to/file
+    symbols:
+      - SymbolName
+```
+
+The immutable repository/commit identity then comes from `SRC-001`; the
+candidate owns only the source-specific location.
+
+If an immutable line/anchor URL is operationally necessary, derive or validate
+it against the referenced source row rather than treating it as independent
+identity.
+
+---
+
+### NBF-02 — Per-candidate `authority_status` duplicates artifact authority
+
+The supplied return manifest already has:
+
+```text
+authorityStatus: NON_AUTHORITATIVE_UNTIL_REVIEWED
+```
+
+The candidate row repeats:
+
+```yaml
+authority_status: NON_AUTHORITATIVE_UNTIL_REVIEWED
+```
+
+This constant can only agree with the parent artifact or create contradictory
+state.
+
+**Recommendation**
+
+Remove the per-candidate field. Candidate rows inherit the return artifact's
+authority boundary.
+
+The Local Reconciliation artifact should likewise state its non-authoritative
+implementation boundary once at artifact level rather than repeat
+`implementation_authorized: false` on every row unless current local owner
+semantics require row-level subset decisions.
+
+---
+
+### NBF-03 — `pattern` is too source-value-specific for a two-lane row
+
+An incidental CVF defect is not naturally a source `pattern`.
+
+**Recommendation**
+
+Use a neutral atomic field such as:
+
+```yaml
+candidate_summary:
+```
+
+or another existing local canonical term.
+
+For a source-value lane, the summary describes the reusable pattern.
+
+For an internal-defect lane, the summary describes the defect hypothesis.
+
+This avoids overloading provenance through vocabulary.
+
+---
+
+### NBF-04 — `source_evidence` is ambiguous beside exact source locations
+
+The design has both:
+
+```yaml
+source_locations:
+source_evidence:
+```
+
+If `source_evidence` is free-text restatement, it is not an independent
+machine-verifiable evidence source.
+
+**Recommendation**
+
+Either:
+
+1. remove it and treat `candidate_summary` + exact source locations as the
+   minimum contract; or
+2. retain it explicitly as a non-authoritative evidence summary, never as a
+   substitute for source location/reverification.
+
+Do not duplicate repository, commit, license, or path identity into this field.
+
+---
+
+### NBF-05 — `public_cvf_owner_candidates` should not encode missing owner as a fake path
+
+The proposed example permits:
+
+```yaml
+path: public/path/or/OWNER_SURFACE_NOT_FOUND
+```
+
+A missing-owner token is not a path.
+
+**Recommendation**
+
+Separate owner-search status from path records:
+
+```yaml
+public_owner_search:
+  status: OWNER_CANDIDATES_FOUND
+  # or OWNER_SURFACE_NOT_FOUND
+  candidates:
+    - path: ...
+      symbol: ...
+      basis: ...
+```
+
+When public evidence finds no owner, the External Agent must create a Local
+verification question. It must not infer a current private/local owner gap.
+
+---
+
+### NBF-06 — `public_overlap.status` is not yet an executable enum
+
+The example value:
+
+```text
+PRELIMINARY_CONFIRMED_EXISTING_OR_ENRICH_OR_GAP
+```
+
+collapses mutually different outcomes.
+
+**Recommendation**
+
+Use separate bounded public-only outcomes, for example:
+
+```text
+PUBLIC_CONFIRMED_EXISTING
+PUBLIC_SUGGESTS_ENRICHMENT
+PUBLIC_OWNER_SURFACE_NOT_FOUND
+PUBLIC_INSUFFICIENT_EVIDENCE
+NOT_APPLICABLE
+```
+
+Avoid `GAP` as an External Agent conclusion because absence from public evidence
+does not establish absence from current local CVF.
+
+---
+
+### NBF-07 — Local reconciliation should not force source-value axes onto internal defects
+
+The proposed Local Reconciliation row always carries:
+
+```yaml
+value_disposition:
+overlap_disposition:
+recommended_owner_binding:
+```
+
+For `CVF_INTERNAL_DEFECT`, the source-absorption value axis may be
+`NOT_APPLICABLE`; the defect should instead follow the current finding /
+governance-learning route after local verification.
+
+**Recommendation**
+
+Apply conditional local fields by `verified_provenance_class`.
+
+Do not make an incidental CVF defect appear to have been `ABSORB`ed from the
+source repository.
+
+---
+
+### NBF-08 — The design correctly rejects `ENRICH_EXISTING_OWNER` as a value disposition
+
+This separation should be retained.
+
+`ENRICH_EXISTING_OWNER` is an owner/overlap route, not a substitute for
+`ABSORB`, `ADAPT`, `DEFER`, `REJECT`, `BLOCK`, or `NO_NEW_VALUE`.
+
+No revision required.
+
+---
+
+### NBF-09 — The design correctly rejects `WORK_ORDER_AUTHORIZED`
+
+The proposed rejection is correct and should remain normative.
+
+Work Order existence is an artifact/state fact, not a complete authority
+decision.
+
+No revision required.
+
+---
+
+## 4. Field-Level Candidate Contract Review
+
+| Field | Review | Required treatment | Reason |
+|---|---|---|---|
+| `candidate_id` | KEEP WITH REVISION | unique within one return; join only under immutable parent-return binding | local uniqueness alone is not globally deterministic |
+| `preliminary_provenance_class` | REVISE | use a clearly preliminary two-lane discriminator, preferably candidate-suffixed values | prevents External Agent preliminary classification from looking locally verified |
+| `source_refs` | KEEP | required non-empty references to existing manifest `sources.id` rows | correctly avoids repo/commit/license duplication |
+| `immutable_references` | REMOVE AS INDEPENDENT IDENTITY | derive/validate from source row + location if needed | duplicates normalized commit/path identity and can drift |
+| `source_locations` | KEEP WITH REVISION | each location should include its `source_ref`; `path` required, symbols optional | removes ambiguity when one candidate uses more than one source |
+| `pattern` | RENAME/GENERALIZE | use neutral `candidate_summary` or current canonical equivalent | an internal defect is not a source pattern |
+| `claimed_value` | CONDITIONAL | required only for `EXTERNAL_SOURCE_VALUE_CANDIDATE`; forbidden/not-applicable for internal-defect lane | prevents defect-as-external-value contamination |
+| `source_evidence` | OPTIONAL OR REMOVE | if retained, evidence-summary only; never identity/proof substitute | exact source locations are the machine-verifiable basis |
+| `public_cvf_owner_candidates` | REVISE | split owner-search status from candidate path/symbol records | missing-owner token is not a path |
+| `public_overlap.status` | REVISE | bounded public-only enum; no generic `GAP` conclusion | public absence is not current-local absence |
+| `public_overlap.basis` | KEEP | public-evidence-only rationale | useful Local review handoff |
+| `preliminary_value_disposition` | CONDITIONAL | source-value lane only; advisory; locally re-decided | absorption value axis does not classify an internal CVF defect |
+| `questions_for_local_agent` | KEEP | optional list, but required when public owner/overlap is unresolved | preserves Local verification authority |
+| `authority_status` | REMOVE | inherit parent return `authorityStatus` | duplicate constant authority field |
+| `candidate_contract_version` | ADD AT COLLECTION/ARTIFACT LEVEL | explicit version discriminator for strict item validation | required for backward-compatible dual reading |
+
+### Recommended minimum External candidate shape
+
+For a source-value candidate:
+
+```yaml
+candidate_id: ESC-001
+preliminary_lane: EXTERNAL_SOURCE_VALUE_CANDIDATE
+
+source_refs:
+  - SRC-001
+
+source_locations:
+  - source_ref: SRC-001
+    path: path/to/file
+    symbols:
+      - SymbolName
+
+candidate_summary: atomic reusable source pattern
+claimed_value: source-bounded reason the pattern may matter
+
+public_owner_search:
+  status: OWNER_CANDIDATES_FOUND
+  candidates:
+    - path: public/path
+      symbol: SymbolName
+      basis: Public evidence suggests this owner may overlap.
+
+public_overlap:
+  status: PUBLIC_SUGGESTS_ENRICHMENT
+  basis: public-evidence-only comparison
+
+preliminary_value_disposition: ADAPT
+
+questions_for_local_agent:
+  - exact current-owner or implementation question
+```
+
+For an incidental CVF defect candidate:
+
+```yaml
+candidate_id: ESC-002
+preliminary_lane: CVF_INTERNAL_DEFECT_CANDIDATE
+
+source_refs:
+  - SRC-CVF-PUBLIC
+
+source_locations:
+  - source_ref: SRC-CVF-PUBLIC
+    path: public/cvf/path
+    symbols:
+      - SymbolName
+
+candidate_summary: bounded public-CVF defect hypothesis
+
+public_owner_search:
+  status: OWNER_CANDIDATES_FOUND
+  candidates:
+    - path: public/cvf/owner/path
+      symbol: SymbolName
+      basis: Public evidence suggests this is the related owner surface.
+
+questions_for_local_agent:
+  - Verify whether this issue exists in current local CVF and route it through
+    the current finding/governance-learning owner if confirmed.
+```
+
+No `claimed_value` or source-absorption value disposition should be required in
+the internal-defect variant.
+
+---
+
+## 5. Provenance-Contamination Test Matrix
+
+| Test ID | Input / Attempt | Expected result | Required reason |
+|---|---|---|---|
+| PC-01 | source-backed reusable pattern, exact external source ref/location, no CVF defect claim | PASS as preliminary external-source-value candidate | source value is attributable to audited source |
+| PC-02 | CVF issue noticed during comparison, evidence points to public CVF, source repo is only trigger context | PASS only as preliminary internal-defect candidate pending Local verification | prevents attributing CVF defect as source innovation |
+| PC-03 | one row contains both reusable external pattern and CVF defect | FAIL / split required | atomic rows and provenance classes must remain mutually exclusive |
+| PC-04 | External Agent states “current local CVF lacks owner X” based only on public source | FAIL semantic claim; convert to Local verification question | External Agent lacks current-private/local authority |
+| PC-05 | internal-defect lane includes `claimed_value: source innovation` | FAIL | provenance contamination |
+| PC-06 | internal-defect lane receives `preliminary_value_disposition: ADAPT` | FAIL or NOT_APPLICABLE | absorption value disposition is the wrong axis |
+| PC-07 | source-value candidate receives `NO_NEW_VALUE` without verified/read source evidence | FAIL | unread/unverified source cannot receive `NO_NEW_VALUE` |
+| PC-08 | candidate `source_ref` does not resolve to manifest `sources.id` | FAIL CLOSED | broken source identity |
+| PC-09 | candidate repeats a commit that disagrees with its source row | FAIL; preferably impossible because duplicate commit field is removed | prevents split source identity |
+| PC-10 | one `source_location` cannot be mapped to a specific `source_ref` in a multi-source row | FAIL | ambiguous provenance |
+| PC-11 | Local Agent corrects preliminary provenance but preserves parent-return binding + candidate ID + reason | PASS | Local verification authority is preserved |
+| PC-12 | Local reconciliation changes `candidate_id` without explicit invalidation/remap | FAIL | deterministic join is broken |
+| PC-13 | Local reconciliation row has candidate ID found in a different return but lacks parent-return binding | FAIL | candidate IDs are only return-local |
+| PC-14 | External candidate collapses value, overlap, direct import, runtime activation, authority promotion, and implementation into one `classification` | FAIL | taxonomy axes must remain independent |
+| PC-15 | candidate or Local row treats return-validation PASS as semantic acceptance | FAIL | validation proves bounded intake integrity only |
+| PC-16 | Operator accepts candidate and row becomes `implementation_authorized=true` without later authority chain | FAIL | Operator selection alone does not authorize implementation |
+| PC-17 | Work Order exists and collaboration state becomes `WORK_ORDER_AUTHORIZED` | FAIL | Work Order existence is not complete authority |
+| PC-18 | verified source candidate overlaps existing CVF semantics fully | PASS with Local `NO_NEW_VALUE` when evidence supports it | `NO_NEW_VALUE` is a successful intake outcome |
+| PC-19 | public owner search returns none and External Agent invents a new owner name | FAIL | use missing-owner route and Local question |
+| PC-20 | local verified internal defect is reported as value contributed by audited repo | FAIL | explicit provenance contamination |
+
+---
+
+## 6. Candidate-To-Local Reconciliation Mapping
+
+The proposed mapping is directionally correct but requires an immutable
+parent-return binding.
+
+### Required artifact-level binding
+
+The Local Reconciliation artifact should identify exactly one validated
+external return:
+
+```yaml
+external_return_binding:
+  manifest_sha256: <sha256>
+  validation_receipt_sha256: <sha256-or-NOT_AVAILABLE_WITH_REASON>
+  candidate_contract_version: 1
+```
+
+If the current local review artifact already has an equivalent immutable
+return identity, reuse it.
+
+### Required row-level join
+
+```yaml
+candidate_id: ESC-001
+```
+
+is then sufficient because the effective key is:
+
+```text
+<manifest_sha256>#ESC-001
+```
+
+No global candidate registry is required.
+
+### Required Local correction semantics
+
+The Local Agent may correct:
+
+- preliminary provenance lane;
+- public owner candidate;
+- public overlap hypothesis;
+- preliminary value disposition.
+
+It must preserve:
+
+- the parent-return binding;
+- the original `candidate_id`.
+
+It must record:
+
+```yaml
+correction_reason:
+```
+
+or the existing local equivalent whenever it changes an External preliminary
+classification.
+
+### Recommended Local Reconciliation row
+
+For an external-source-value candidate:
+
+```yaml
+candidate_id: ESC-001
+verified_provenance_class: EXTERNAL_SOURCE_VALUE
+
+source_reverification:
+  status: PASS
+  evidence:
+    - exact immutable source or local mirror evidence
+
+resolved_cvf_owner:
+  status: FOUND
+  paths:
+    - current/local/owner/path
+  symbols:
+    - CurrentOwnerSymbol
+
+local_paths_checked:
+  - current/local/path
+
+existing_semantics:
+  - current semantics
+
+semantic_overlap: bounded comparison
+real_delta: residual delta or NONE
+authority_overlap: bounded authority comparison
+implementation_overlap: bounded code/test comparison
+
+tests_or_evidence:
+  - exact local path, symbol, test, command, or bounded blocker
+
+value_disposition: NO_NEW_VALUE
+overlap_disposition: CONFIRMED_EXISTING
+rationale: local evidence-backed decision
+recommended_owner_binding: current/local/owner/path
+correction_reason: NOT_APPLICABLE
+```
+
+For a verified internal defect, do not force the source-absorption value axis.
+Route the confirmed finding through the current defect/governance-learning
+owner and keep the audited repo only as trigger context.
+
+### Operator / implementation boundary
+
+`operator_decision_status` may be kept at the artifact or row level if the
+Operator can select only a subset of candidates.
+
+`implementation_authorized: false` is better expressed once as a reconciliation
+artifact invariant unless current local workflow requires row-level status.
+
+In all cases:
+
+```text
+Local reconciliation
+!= Operator decision
+!= Owner binding
+!= Work Order existence
+!= implementation authority
+```
+
+---
+
+## 7. Compatibility And Version Assessment
+
+### Assessment
+
+The current compatibility hypothesis is **plausible but incomplete**.
+
+Recommended provisional treatment:
+
+```text
+protocol: cvf.external-agent-round-trip@1.2.0
+major compatibility: preserved, conditional on dual-reader behavior
+candidate contract: versioned explicitly
+```
+
+### Why a minor update is warranted
+
+The enrichment is not merely editorial.
+
+It changes machine expectations for a currently non-strict field:
+
+```text
+suggestedAbsorptionCandidates
+```
+
+by introducing:
+
+- typed non-empty candidate rows;
+- source-reference integrity;
+- provenance-lane validation;
+- candidate-to-local deterministic linkage expectations;
+- negative contamination tests.
+
+That is protocol behavior and should not silently remain indistinguishable from
+1.1.0.
+
+### Backward-compatibility requirement
+
+A 1.2 validator must not retroactively reinterpret or invalidate historical
+1.1 candidate content.
+
+One safe design is:
+
+```text
+candidate_contract_version absent
+  -> legacy/untyped candidate evidence;
+  -> preserved historically;
+  -> cannot be silently promoted into typed Local reconciliation.
+
+candidate_contract_version = 1
+  -> strict typed candidate validation required.
+```
+
+### Return-schema consequence
+
+If the existing `cvf.externalAgentReturn.v1` contract can add the optional
+candidate-contract discriminator and dual-read old data, the return schema can
+remain v1.
+
+If current schema semantics require every non-empty row to become the new
+object shape with no legacy discriminator, then keeping the same schema label
+would be misleading and a schema-version change is required.
+
+This review does **not** find justification for a new protocol major version.
+
+### Representation synchronization
+
+The design is correct that public compact and portable expanded representations
+must not drift across the logical release.
+
+Public evidence suggests the packet already treats same-major representation
+mismatch as `PROTOCOL_REPRESENTATION_DRIFT`.
+
+Local Agent must confirm which current private owner path normatively carries
+the version and same-release projection rule before finalizing the changed-path
+manifest.
+
+---
+
+## 8. Minimum Viable Delta
+
+The review actively attempted to reduce the proposed four-path future delta.
+
+Proposed four paths:
+
+```text
+docs/reference/external_agent_review/
+|-- CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md
+`-- CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md
+
+scripts/
+|-- external_agent_packet.py
+`-- test_external_agent_packet.py
+```
+
+### Two-path alternative — rejected
+
+```text
+external_agent_packet.py
+test_external_agent_packet.py
+```
+
+is insufficient.
+
+Reason:
+
+- machine validation alone does not normatively own Local provenance-lane
+  separation or candidate-to-local review semantics;
+- it would move governance semantics into checker code without the current
+  finding/review owner.
+
+### Three-path alternative — potentially sufficient
+
+```text
+CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md
+external_agent_packet.py
+test_external_agent_packet.py
+```
+
+could be sufficient **if and only if** the existing representation-contract
+owner already generically covers:
+
+- minor-version compatible enrichment;
+- candidate-contract discrimination;
+- same-release refresh of public compact and portable expanded projections.
+
+Public evidence is insufficient to prove that current private/local contract
+already covers those exact semantics.
+
+Therefore the four-path set is **not yet proven minimal**, but neither is it
+disproved.
+
+### External-review minimum
+
+Classify the future delta as:
+
+```text
+MANDATORY
+- CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md
+- scripts/external_agent_packet.py
+- scripts/test_external_agent_packet.py
+
+LOCAL-OWNER-CONFIRMATION-REQUIRED
+- CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md
+```
+
+If Local Agent confirms that compatibility/version and projection-refresh
+semantics are normative responsibilities of the representation contract, the
+original four-path delta is minimal and should be retained.
+
+No new schema file is justified by this review.
+
+A schema file should be added only if Local review shows that:
+
+- the candidate contract must be consumed independently by multiple validators;
+- keeping the shape only in the existing validator/representation contract
+  would create duplicated validation logic or ambiguous authority.
+
+---
+
+## 9. Explicit Rejected Parallel-Owner Proposals
+
+This review explicitly rejects the following as unnecessary based on the design
+packet and bounded public evidence:
+
+| Proposal | Review disposition | Reason |
+|---|---|---|
+| new source-collaboration protocol | REJECT | existing `cvf.external-agent-round-trip` is the correct owner |
+| new bounded collaboration profile | REJECT | supplied design reports `SOURCE_PACK_PREPARATION` already owns the source-first mode; no contrary public evidence was found |
+| generic absorption runtime | REJECT | this is a governed artifact/review flow, not an execution daemon |
+| absorption registry | REJECT | candidate and Local reconciliation records do not require a new truth store |
+| verified-absorption-map registry | REJECT | verified state belongs to current review/reconciliation artifacts |
+| global collaboration state machine | REJECT | existing lifecycle/authority semantics should be reused |
+| new truth owner | REJECT | provenance classification does not create truth authority |
+| new receipt owner | REJECT | source/return validation and existing evidence owners remain controlling |
+| new authority owner | REJECT | External return, Local reconciliation, Operator decision, owner binding, Work Order, and complete authority chain remain distinct |
+| global candidate-ID allocator | REJECT | immutable parent-return binding + return-local candidate ID is sufficient |
+| new standalone owner-binding artifact | REJECT | use current owner/overlap route and Work Order authority chain |
+| `WORK_ORDER_AUTHORIZED` lifecycle state | REJECT | Work Order existence is not complete implementation authority |
+| `ENRICH_EXISTING_OWNER` as a second canonical value disposition | REJECT | enrichment belongs to owner/overlap routing, not source-value disposition |
+
+No public-owner lookup result is used here to claim that current private/local
+CVF lacks an owner. Any unresolved owner question remains for Local Agent
+verification.
+
+---
+
+## 10. Final Recommendation
+
+Proceed with the design as an enrichment of the existing
+`cvf.external-agent-round-trip`, but return it to Local Agent for one bounded
+revision pass before Operator acceptance.
+
+The Local revision should do only the following:
+
+1. replace the single generic candidate shape with a discriminated
+   source-value-candidate / internal-defect-candidate contract;
+2. remove duplicated candidate identity/provenance fields:
+   - remove independent `immutable_references` unless an existing owner proves
+     them necessary;
+   - remove per-candidate `authority_status`;
+   - bind each `source_location` to a normalized `source_ref`;
+3. add an immutable parent-return binding to Local Reconciliation so
+   `(return_manifest_sha256, candidate_id)` is deterministic;
+4. add explicit candidate-contract version discrimination and choose a minor
+   protocol version treatment that preserves historical 1.1 returns;
+5. replace ambiguous public owner/overlap tokens with bounded public-only
+   statuses that cannot be mistaken for current-local owner conclusions;
+6. confirm whether
+   `CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md` must change. If its
+   current local ownership includes version/projection semantics, keep the
+   original four-path delta; otherwise reduce to the three mandatory paths.
+
+No implementation, schema file, checker change, packet refresh, public export,
+commit, push, provider call, deployment, new protocol, new profile, new
+registry, new runtime, new truth owner, new receipt owner, new authority owner,
+or global state machine is authorized by this review.
+
+Final verdict:
+
+`ACCEPT_WITH_REQUIRED_REVISIONS`
+
+Authority status:
+
+`NON_AUTHORITATIVE_UNTIL_LOCAL_RECONCILIATION_AND_OPERATOR_DISPOSITION`

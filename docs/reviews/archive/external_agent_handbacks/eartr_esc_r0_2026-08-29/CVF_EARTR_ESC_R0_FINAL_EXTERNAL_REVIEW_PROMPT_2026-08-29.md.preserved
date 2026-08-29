@@ -1,0 +1,109 @@
+# Final External Review Prompt — CVF EARTR-ESC-R0
+
+You are the External Agent performing the final adversarial design review for
+the proposed long-term External Source -> CVF Local Reconciliation -> Governed
+Absorption collaboration rule.
+
+Mode: `REVIEW_ONLY` / `DESIGN_ONLY`.
+
+Do not implement, edit CVF-owned files, commit, push, publish, deploy, call
+providers, or claim access to current private/local CVF truth beyond the exact
+review inputs supplied below.
+
+## Exact Review Inputs
+
+1. Revised Local design decision:
+   `docs/reviews/CVF_EARTR_ESC_R0_SOURCE_COLLABORATION_ENRICHMENT_DESIGN_DECISION_2026-08-29.md`
+   SHA-256:
+   `8b8954840d32e5a9f7da8fb2c8cda56a461c463897a00ba0b475a7a4721cbbe5`
+2. Your preserved initial adversarial review:
+   `docs/reviews/CVF_EARTR_ESC_R0_EXTERNAL_ADVERSARIAL_REVIEW_2026-08-29.md`
+   SHA-256:
+   `b7dba25ed90931a3f6d9e52411334a8e2ac53b6c386dc7438e87f7e2b4be8d92`
+3. Public CVF repository:
+   `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+   review-input publication commit:
+   `2aa17841892fac3cde74214ad0471814084294e0`
+4. Current supplied `EXTERNAL_AGENT_READ` packet, protocol baseline
+   `cvf.external-agent-round-trip@1.1.0`.
+
+Recompute both supplied file hashes before review. If either differs, stop with
+`BLOCKED_SOURCE_MISMATCH`.
+
+## Review Objective
+
+Determine whether the revised design fully closes the three initial blocking
+findings without creating a parallel protocol, owner, registry, runtime,
+receipt, truth surface, authority surface, schema file, or state machine.
+
+Do not restart the original architecture audit. Reopen a settled conclusion
+only when the revised text creates a concrete contradiction or leaves a
+blocking ambiguity.
+
+## Required Checks
+
+1. BF-01 closure:
+   - verify the discriminated variants
+     `EXTERNAL_SOURCE_VALUE_CANDIDATE` and
+     `CVF_INTERNAL_DEFECT_CANDIDATE`;
+   - verify their required and forbidden fields prevent source-value/internal-
+     defect provenance contamination.
+2. BF-02 closure:
+   - verify artifact-level binding to exact manifest and PASS validation
+     receipt hashes;
+   - verify `(returnManifestSha256, candidateId)` is deterministic without a
+     global ID or registry.
+3. BF-03 closure:
+   - verify protocol target `1.2.0`, retained
+     `cvf.externalAgentReturn.v1`, and the dual-reader table preserve legacy
+     1.1 evidence without promoting untyped rows;
+   - verify unsupported/malformed discriminators fail closed.
+4. Review the Local normalization that internal-defect candidates use
+   `cvfPublicLocations` bound to top-level `cvfPublicSource`, with optional
+   non-evidentiary `triggerContextSourceRefs`, instead of inventing a duplicate
+   `SRC-CVF-PUBLIC` source row.
+5. Review the Local strengthening that a typed Local reconciliation requires
+   the SHA-256 of a PASS validation receipt rather than allowing
+   `NOT_AVAILABLE_WITH_REASON`.
+6. Verify camelCase normalization changes notation only, not semantics.
+7. Decide whether Local evidence supports the four-path future delta:
+   - `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md`;
+   - `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md`;
+   - `scripts/external_agent_packet.py`;
+   - `scripts/test_external_agent_packet.py`.
+8. Verify that no schema file or new owner is justified and that design
+   acceptance still does not authorize implementation.
+
+## Required Handback
+
+Return exactly one new file at repository root:
+
+`CVF_EARTR_ESC_R0_FINAL_EXTERNAL_ADVERSARIAL_REVIEW_2026-08-29.md`
+
+Keep it bounded and include exactly these sections:
+
+1. `## Verdict`
+2. `## Blocking-Finding Closure Matrix`
+3. `## Remaining Blocking Findings`
+4. `## Non-Blocking Findings`
+5. `## Contract And Compatibility Verdict`
+6. `## Minimum-Delta Verdict`
+7. `## Final Recommendation`
+
+Choose exactly one verdict:
+
+- `ACCEPT`;
+- `ACCEPT_WITH_REQUIRED_REVISIONS`;
+- `REJECT`;
+- `BLOCKED_SOURCE_MISMATCH`.
+
+For each initial blocking finding, state `CLOSED`, `PARTIALLY_CLOSED`, or
+`OPEN`, with exact revised-design evidence. Distinguish blocking issues from
+optional refinements. Do not turn stylistic preference into a blocker.
+
+End with:
+
+`Status: COMPLETE_PENDING_LOCAL_REVIEW`
+
+An `ACCEPT` verdict means design-review closure only. It does not authorize
+implementation, packet refresh, public export, commit, push, or deployment.

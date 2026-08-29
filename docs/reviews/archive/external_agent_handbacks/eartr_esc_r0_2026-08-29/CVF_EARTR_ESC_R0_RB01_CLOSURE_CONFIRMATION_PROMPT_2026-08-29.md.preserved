@@ -1,0 +1,68 @@
+# EARTR-ESC-R0 RB-01 Closure Confirmation Prompt
+
+Mode: `REVIEW_ONLY` / `DESIGN_ONLY`.
+
+This is a narrow closure check, not another architecture review. Do not reopen
+settled findings unless the RB-01 repair creates a concrete contradiction. Do
+not edit CVF files, implement, commit, push, publish, deploy, or call providers.
+
+## Pinned Inputs
+
+1. RB-01-revised design:
+   `docs/reviews/CVF_EARTR_ESC_R0_SOURCE_COLLABORATION_ENRICHMENT_DESIGN_DECISION_2026-08-29.md`
+   SHA-256:
+   `ff3ca9815a52bcd2383f7da3f063fade6f53c02fc0d2da94972925c6c13c06c1`
+2. Final external review that raised RB-01:
+   `docs/reviews/CVF_EARTR_ESC_R0_FINAL_EXTERNAL_ADVERSARIAL_REVIEW_2026-08-29.md`
+   SHA-256:
+   `e466de1b97239fefb3c492d959bf49ce4e7c6c08a0d5d03f656c8d1cc732eee2`
+
+Recompute both hashes first. On mismatch, return
+`BLOCKED_SOURCE_MISMATCH` and stop.
+
+## Check Only These Questions
+
+1. Does the validation receipt now machine-bind:
+   - the exact return-manifest SHA-256;
+   - `validatedProtocolVersion: 1.2.0`;
+   - `validatedCandidateContractVersion: 1`;
+   - `status: PASS`?
+2. Does Local reconciliation explicitly verify equality between its binding
+   and the receipt fields?
+3. Is a legacy or candidate-unaware PASS receipt insufficient for typed Local
+   reconciliation?
+4. Are the requested negative tests represented in the future four-path delta?
+5. Did the repair avoid a new receipt owner, schema, registry, protocol, or
+   fifth implementation path?
+6. Did the optional refinements remain safe:
+   - exact set equality between `sourceRefs` and location source refs;
+   - every new 1.2 producer emits the discriminator even for an empty array?
+
+## Output
+
+Return exactly one file at repository root:
+
+`CVF_EARTR_ESC_R0_RB01_CLOSURE_CONFIRMATION_2026-08-29.md`
+
+Include exactly:
+
+- `## Verdict`
+- `## RB-01 Closure Check`
+- `## Remaining Blocking Findings`
+- `## Final Recommendation`
+
+Choose one verdict:
+
+- `ACCEPT`;
+- `ACCEPT_WITH_REQUIRED_REVISIONS`;
+- `REJECT`;
+- `BLOCKED_SOURCE_MISMATCH`.
+
+If the five required RB-01 relations are complete and no new blocker was
+introduced, return `ACCEPT`. Distinguish optional refinements from blockers.
+
+End with:
+
+`Status: COMPLETE_PENDING_LOCAL_REVIEW`
+
+Acceptance closes design review only. It grants no implementation authority.
