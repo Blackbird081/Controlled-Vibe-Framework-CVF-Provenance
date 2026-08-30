@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_2026-08-30.md",
-    "baselineSha256": "0b2b3ea842e341874f2015fb32dfdcefff15c4899986a1aa3d9ed8b241202711",
+    "baselineSha256": "0d9819bb490fb239a3d526cfd0413b8d7ea48375223a6f108c2fde6feca27d13",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_2026-08-30.md",
-    "workOrderSha256": "b9acf2d6610bdb51df3ecee3ac3a1b3deb33cc50fdcf43aec374c2bcb7f39190"
+    "workOrderSha256": "f9cfe4f91421811ea748dcae15916ba2dc705af91fd1185f81236b0f29e555ab"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t0a_dispatched_pending_worker_return",
-  "previousMode": "gc010_scr_r1_t0_closed_pass_bounded_retain_parked",
+  "currentMode": "gc010_scr_r2_t0a_closed_pass_bounded_partial_ready",
+  "previousMode": "gc010_scr_r2_t0a_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Execute GC010-SCR-R2-T0A from committed dispatch 5f81ed7f5. The no-commit worker creates exactly the cross-owner contract assessment and worker return, then stops for independent review. This is the same system-chain objective: it decides an isolated Agent Execution API trigger and the AER/Web approval/provider-attempt/audit contract. Runtime implementation, GC010-SCR-R1 T1-T5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Continue the same GC010 system-chain objective by authoring a fresh decision-only GC010-SCR-R2-T0B packet that freezes the versioned pending-agent-execution schema, fail-closed persistence, atomic claim semantics, and safe internal resume-authority contract. T0A is closed bounded at material commit 8119e3e51 with PARTIAL_READY_REQUIRES_APPROVAL_ADAPTER. T0B is not yet dispatched; T1 implementation, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15408,15 +15408,18 @@
     "claimBoundary": "T0 current-source decision closed bounded only; GC-010 and the paired gap remain open and parked, with no runtime, provider/live, public-sync, deployment or production authority."
   },
   "gc010ScrR2T0AAgentExecutionApiCrossOwnerContractDecisionDispatch20260830": {
-    "status": "DISPATCHED_DECISION_ONLY_PENDING_WORKER_RETURN",
-    "materialCommit": "5f81ed7f5",
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchMaterialCommit": "5f81ed7f5",
+    "materialCommit": "8119e3e51",
     "priorRoadmap": "docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md",
     "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_2026-08-30.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_2026-08-30.md",
-    "workerBoundary": "One no-commit decision worker may create exactly the cross-owner contract assessment and worker return. All runtime, route, package, test, checker, workflow and continuity paths are read-only.",
+    "workerBoundary": "Worker returned exactly the two authorized artifacts with no commit. Reviewer applied a bounded semantic repair and added the reviewer-owned completion artifact.",
     "objective": "Decide the isolated Agent Execution API trigger and the cross-owner contract joining AgentExecutionRuntime, Web approval persistence/API, provider-attempt admission, durable audit and truthful HTTP response semantics without modifying the accepted /api/execute chain.",
-    "proof": "Dispatch pre-dispatch gate passed 80/80 and material pre-commit/commit hook passed 87/87 with zero provider/live/network/browser/credential calls.",
-    "nextAllowedMove": "Worker executes the exact decision-only work order and returns the two uncommitted evidence artifacts for independent review.",
-    "claimBoundary": "No implementation successor, runtime behavior, provider/live call, public sync, deployment or production claim is authorized. GC010-SCR-R1-T0 remains historically closed parked."
+    "terminalToken": "PARTIAL_READY_REQUIRES_APPROVAL_ADAPTER",
+    "reviewerDisposition": "REVIEWER_ACCEPTED_WITH_BOUNDED_SEMANTIC_REPAIR",
+    "proof": "Worker-return fast gate passed, reviewer-fast passed 66/66, and material pre-commit/commit hook passed 87/87 with zero provider/live/network/browser/credential calls.",
+    "nextAllowedMove": "Author a fresh decision-only T0B packet for the pending-execution schema, fail-closed persistence, atomic claim and safe resume-authority contract; do not open T1.",
+    "claimBoundary": "T0A establishes architecture direction only. It opens no implementation successor, runtime behavior, provider/live call, public sync, deployment or production claim."
   }
 }

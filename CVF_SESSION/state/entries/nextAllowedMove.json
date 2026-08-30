@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "Execute GC010-SCR-R2-T0A from committed dispatch 5f81ed7f5. The no-commit worker creates exactly the cross-owner contract assessment and worker return, then stops for independent review. This is the same system-chain objective: it decides an isolated Agent Execution API trigger and the AER/Web approval/provider-attempt/audit contract. Runtime implementation, GC010-SCR-R1 T1-T5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Continue the same GC010 system-chain objective by authoring a fresh decision-only GC010-SCR-R2-T0B packet that freezes the versioned pending-agent-execution schema, fail-closed persistence, atomic claim semantics, and safe internal resume-authority contract. T0A is closed bounded at material commit 8119e3e51 with PARTIAL_READY_REQUIRES_APPROVAL_ADAPTER. T0B is not yet dispatched; T1 implementation, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
