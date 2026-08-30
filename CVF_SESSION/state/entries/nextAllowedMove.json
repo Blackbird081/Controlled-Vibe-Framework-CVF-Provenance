@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "Continue the same GC010 system chain by authoring a separate bounded non-production T1 implementation packet for the corrected pending-execution contract closed at material 7b9fc8b7f. The packet must carry complete JCS digest coverage, versioned policy snapshot, linearizable CAS, runtime-held single-use capability, durable EXECUTING and non-retryable UNKNOWN_TERMINAL. Do not implement before that packet is committed. Provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute committed GC010-SCR-R2-T1A packet 8b7616d05. The no-commit worker creates exactly the new pending-agent-execution core module, its focused test, and the named worker return, then stops for independent review. This is a single-process non-production prerequisite only; existing source, route, provider/admission/audit, dependency, workflow and continuity paths are read-only. Production consumer, cross-process persistence, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

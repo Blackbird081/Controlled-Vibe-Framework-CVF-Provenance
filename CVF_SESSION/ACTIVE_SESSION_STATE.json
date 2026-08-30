@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_2026-08-30.md",
-    "baselineSha256": "682f3500246af4b6031d3c1eaad4d51ab807a50368cdd1e147ed1c07fccca86f",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_2026-08-30.md",
-    "workOrderSha256": "e6937d9205d745c9c19545a639d1404dad6a0b44b73ec3f45140bd7933649dfc"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1A_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CORE_IMPLEMENTATION_2026-08-30.md",
+    "baselineSha256": "cbb2dc8ce9e49c032d50558d6a66f012118cf511d59f0306a70d7749e0d562ef",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1A_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CORE_IMPLEMENTATION_2026-08-30.md",
+    "workOrderSha256": "92de4fb89e1f0aac7a9f8f6ce0fe047aab303fbbde21223891d94101854ae170"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t0b_closed_pass_bounded_t1_consideration",
-  "previousMode": "gc010_scr_r2_t0b_dispatched_pending_worker_return",
+  "currentMode": "gc010_scr_r2_t1a_dispatched_pending_worker_return",
+  "previousMode": "gc010_scr_r2_t0b_closed_pass_bounded_t1_consideration",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Continue the same GC010 system chain by authoring a separate bounded non-production T1 implementation packet for the corrected pending-execution contract closed at material 7b9fc8b7f. The packet must carry complete JCS digest coverage, versioned policy snapshot, linearizable CAS, runtime-held single-use capability, durable EXECUTING and non-retryable UNKNOWN_TERMINAL. Do not implement before that packet is committed. Provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute committed GC010-SCR-R2-T1A packet 8b7616d05. The no-commit worker creates exactly the new pending-agent-execution core module, its focused test, and the named worker return, then stops for independent review. This is a single-process non-production prerequisite only; existing source, route, provider/admission/audit, dependency, workflow and continuity paths are read-only. Production consumer, cross-process persistence, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15436,5 +15436,17 @@
     "proof": "Worker-return fast gate, reviewer-fast 66/66 and material pre-commit/commit hook 87/87 passed with zero provider/live/network/browser/credential calls.",
     "nextAllowedMove": "Author a separate bounded non-production T1 implementation packet for the corrected pending-execution contract; do not implement until that packet is committed.",
     "claimBoundary": "T0B opens only T1 packet consideration. Runtime implementation, provider/live call, public sync, deployment and production remain unauthorized."
+  },
+  "gc010ScrR2T1aPendingAgentExecutionNonProductionCoreImplementationDispatch20260830": {
+    "status": "DISPATCHED_IMPLEMENTATION_BOUNDED_PENDING_WORKER_RETURN",
+    "materialCommit": "8b7616d05",
+    "predecessorMaterialCommit": "7b9fc8b7f",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1A_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CORE_IMPLEMENTATION_2026-08-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1A_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CORE_IMPLEMENTATION_2026-08-30.md",
+    "objective": "Implement the corrected pending-execution core as a single-process non-production prerequisite with deterministic digest, versioned CAS, runtime-held grant and truthful terminal states.",
+    "workerBoundary": "One no-commit worker creates exactly one new core module, one focused test and one worker return. Existing source, routes, provider/admission/audit owners, dependencies and continuity are read-only.",
+    "proof": "Pre-dispatch passed 80/80 and material pre-commit/commit hook passed 87/87 with zero provider/live/network/browser/credential calls.",
+    "nextAllowedMove": "Worker executes committed T1A packet 8b7616d05 and returns exactly three uncommitted artifacts for independent review.",
+    "claimBoundary": "No production consumer, cross-process persistence, route, provider/live call, public sync, deployment or production claim is authorized."
   }
 }

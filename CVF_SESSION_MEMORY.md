@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t0b_closed_pass_bounded_t1_consideration`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a bounded non-production T1 packet for the corrected pending-execution contract; parked checkpoint=implementation before committed T1 authority, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1a_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T1A and return exactly three uncommitted artifacts; parked checkpoint=production consumer, cross-process persistence, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t0b_closed_pass_bounded_t1_consideration`
-Current mode: `gc010_scr_r2_t0b_closed_pass_bounded_t1_consideration`; previous mode marker: `gc010_scr_r2_t0b_dispatched_pending_worker_return`
+Current mode marker: `gc010_scr_r2_t1a_dispatched_pending_worker_return`
+Current mode: `gc010_scr_r2_t1a_dispatched_pending_worker_return`; previous mode marker: `gc010_scr_r2_t0b_closed_pass_bounded_t1_consideration`
 Previous mode: `gc010_scr_r2_t0a_closed_pass_bounded_partial_ready`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t0b_closed_pass_bounded_t1_consideration`. T0B is independently closed at material `7b9fc8b7f` with `SAFE_RESUME_CONTRACT_READY_FOR_T1_CONSIDERATION` after bounded semantic repair. Continue only by authoring a separate bounded non-production T1 packet carrying the corrected digest, CAS, runtime capability and crash-state contract; do not implement before that packet is committed. GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1a_dispatched_pending_worker_return`. Execute T1A from material dispatch `8b7616d05`. The worker creates exactly the new core module, focused test, and named worker return, leaves all three uncommitted, and stops for independent review. The slice is single-process and non-production; production consumer, cross-process persistence, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
