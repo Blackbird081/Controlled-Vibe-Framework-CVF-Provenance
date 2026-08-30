@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "Execute GC010-SCR-R2-T0B from committed dispatch 6017beaf2. The no-commit worker creates exactly the pending-execution safe-resume contract assessment and worker return, then stops for independent review. It must freeze or reject the schema, digest, state machine, fail-closed persistence, atomic claim and internal resume-grant contract. T1 implementation, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Continue the same GC010 system chain by authoring a separate bounded non-production T1 implementation packet for the corrected pending-execution contract closed at material 7b9fc8b7f. The packet must carry complete JCS digest coverage, versioned policy snapshot, linearizable CAS, runtime-held single-use capability, durable EXECUTING and non-retryable UNKNOWN_TERMINAL. Do not implement before that packet is committed. Provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

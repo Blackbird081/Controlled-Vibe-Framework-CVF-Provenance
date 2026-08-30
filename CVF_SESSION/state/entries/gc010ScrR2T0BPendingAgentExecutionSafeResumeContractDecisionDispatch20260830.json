@@ -2,15 +2,18 @@
   "stateOrder": 2386,
   "stateKey": "gc010ScrR2T0BPendingAgentExecutionSafeResumeContractDecisionDispatch20260830",
   "value": {
-    "status": "DISPATCHED_DECISION_ONLY_PENDING_WORKER_RETURN",
-    "materialCommit": "6017beaf2",
+    "status": "CLOSED_PASS_BOUNDED",
+    "dispatchMaterialCommit": "6017beaf2",
+    "materialCommit": "7b9fc8b7f",
     "predecessorMaterialCommit": "8119e3e51",
     "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_2026-08-30.md",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_2026-08-30.md",
     "objective": "Freeze or reject the exact pending-agent-execution schema, digest, lifecycle, fail-closed persistence, atomic claim and internal safe-resume authority contract.",
     "workerBoundary": "One no-commit worker creates exactly the assessment and worker return. Runtime, route, package, store, test, checker, workflow and continuity paths are read-only.",
-    "proof": "Pre-dispatch passed 80/80 and material pre-commit/commit hook passed 87/87 with zero provider/live/network/browser/credential calls.",
-    "nextAllowedMove": "Worker executes the committed T0B decision packet and returns exactly two uncommitted artifacts for independent review.",
-    "claimBoundary": "No T1, runtime behavior, provider/live call, public sync, deployment or production claim is authorized."
+    "terminalToken": "SAFE_RESUME_CONTRACT_READY_FOR_T1_CONSIDERATION",
+    "reviewerDisposition": "REVIEWER_ACCEPTED_WITH_BOUNDED_SEMANTIC_REPAIR",
+    "proof": "Worker-return fast gate, reviewer-fast 66/66 and material pre-commit/commit hook 87/87 passed with zero provider/live/network/browser/credential calls.",
+    "nextAllowedMove": "Author a separate bounded non-production T1 implementation packet for the corrected pending-execution contract; do not implement until that packet is committed.",
+    "claimBoundary": "T0B opens only T1 packet consideration. Runtime implementation, provider/live call, public sync, deployment and production remain unauthorized."
   }
 }

@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r2_t0b_dispatched_pending_worker_return",
+  "currentMode": "gc010_scr_r2_t0b_closed_pass_bounded_t1_consideration",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute GC010-SCR-R2-T0B from committed dispatch 6017beaf2. The no-commit worker creates exactly the pending-execution safe-resume contract assessment and worker return, then stops for independent review. It must freeze or reject the schema, digest, state machine, fail-closed persistence, atomic claim and internal resume-grant contract. T1 implementation, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Continue the same GC010 system chain by authoring a separate bounded non-production T1 implementation packet for the corrected pending-execution contract closed at material 7b9fc8b7f. The packet must carry complete JCS digest coverage, versioned policy snapshot, linearizable CAS, runtime-held single-use capability, durable EXECUTING and non-retryable UNKNOWN_TERMINAL. Do not implement before that packet is committed. Provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_2026-08-30.md",
-    "baselineSha256": "cbf3e84f16320e2c4224a057a9edbea23c1bdd956a4a87da170b77ce4c2c16eb",
+    "baselineSha256": "682f3500246af4b6031d3c1eaad4d51ab807a50368cdd1e147ed1c07fccca86f",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_2026-08-30.md",
-    "workOrderSha256": "5e8fdb72ae92c28792918a089681f202462864527337c586cab7517d0161df7a"
+    "workOrderSha256": "e6937d9205d745c9c19545a639d1404dad6a0b44b73ec3f45140bd7933649dfc"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
