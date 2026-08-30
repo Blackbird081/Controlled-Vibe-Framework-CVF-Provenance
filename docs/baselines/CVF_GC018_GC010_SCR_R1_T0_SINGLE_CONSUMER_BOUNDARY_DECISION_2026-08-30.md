@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: AUTHORIZED_FOR_T0_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: GC010-SCR-R1-T0
 
@@ -137,6 +137,28 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: T0 is a private provenance architecture decision with no public
 runtime artifact.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R1_T0_SINGLE_CONSUMER_BOUNDARY_DECISION_2026-08-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC010_SCR_R1_T0_SINGLE_CONSUMER_BOUNDARY_DECISION_WORKER_RETURN_2026-08-30.md` | Independent Reviewer Addendum accepts the parked terminal decision | PASS |
+| Roadmap state | `docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md` | T0 closed bounded; T1-T5 remain parked or dependency-held | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | exact baseline/work-order hashes regenerated from canonical state sources | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md` | separate continuity commit owns closed-mode narrative | BLOCKED with reason: material closure precedes continuity synchronization |
+| External evidence digest | N/A with reason: no external evidence was consumed | provider/live/network/browser/credential calls zero | N/A with reason: local private-source decision only |
+| System loop interlock | terminal token and reopen condition | `NO_VIABLE_CONSUMER_RETAIN_PARKED`; four-fact condition unsatisfied | PASS |
+| Session continuity | bootstrap/state/front door/handoff | exact authority hashes aligned; closed-mode synchronization follows | N/A with reason: separate continuity commit required by commit choreography |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Runtime receipt evidence | N/A with reason: documentation-only T0 creates no runtime receipt | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: T0 performs no runtime query admission | N/A_WITH_REASON |
+| Worker-return acceptance | Independent Reviewer Addendum accepts the parked decision after bounded repair | PASS |
+| Closure claim | `CLOSED_PASS_BOUNDED` for the current-source architecture decision only | PASS |
 
 ## Claim Boundary
 

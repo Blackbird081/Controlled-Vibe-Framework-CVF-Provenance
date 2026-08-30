@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: ACTIVE_T0_DISPATCH_READY_T1_THROUGH_T5_HELD
+Status: CLOSED_PASS_BOUNDED
 
 Roadmap ID: GC010-SCR-R1
 
@@ -128,11 +128,11 @@ provider use, deployment, public release, or production-readiness work.
 
 | Tranche | Scope | State | Release condition |
 | --- | --- | --- | --- |
-| T0 | Current-source single-consumer and invocation-boundary decision | DISPATCH_READY | operator instruction plus paired GC-018/work order |
-| T1 | Minimal export/composition and one non-test consumer | HOLD | independent T0 acceptance and fresh work order |
-| T2 | Deterministic positive, fail-closed, concurrency, throw/reject, timeout, cancellation, and retry proof | HOLD | accepted T1 material commit |
-| T3 | Durable receipt/audit projection through an existing operator surface | HOLD | accepted T2 evidence |
-| T4 | Value, latency, failure, rollback, and system-chain map reconciliation | HOLD | accepted T3 evidence |
+| T0 | Current-source single-consumer and invocation-boundary decision | CLOSED_PASS_BOUNDED | independently accepted `NO_VIABLE_CONSUMER_RETAIN_PARKED` |
+| T1 | Minimal export/composition and one non-test consumer | PARKED_NO_VIABLE_CONSUMER | fresh source must satisfy the historical four-fact reopen condition before a new packet is considered |
+| T2 | Deterministic positive, fail-closed, concurrency, throw/reject, timeout, cancellation, and retry proof | HOLD_DEPENDENCY | accepted T1 material commit |
+| T3 | Durable receipt/audit projection through an existing operator surface | HOLD_DEPENDENCY | accepted T2 evidence |
+| T4 | Value, latency, failure, rollback, and system-chain map reconciliation | HOLD_DEPENDENCY | accepted T3 evidence |
 | T5 | Optional bounded real-provider proof | PARKED_OPERATOR_CHECKPOINT | explicit fresh operator grant after T4; live standard applies |
 
 No tranche self-authorizes its successor.
@@ -211,11 +211,35 @@ composition removal that restores the accepted pre-T1 route behavior.
 DEFERRED_PRIVATE_ONLY
 
 Reason: this roadmap is private provenance planning. Public export would add
-no runtime proof and is not required to execute T0.
+no runtime proof and is not required to execute T0. No public-sync boundary,
+public repository mutation, push, or deployment is authorized by this closure.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R1_T0_SINGLE_CONSUMER_BOUNDARY_DECISION_2026-08-30.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC010_SCR_R1_T0_SINGLE_CONSUMER_BOUNDARY_DECISION_WORKER_RETURN_2026-08-30.md` | Independent Reviewer Addendum accepts `NO_VIABLE_CONSUMER_RETAIN_PARKED` | PASS |
+| Roadmap state | this roadmap | `Status: CLOSED_PASS_BOUNDED`; T0 closed; T1 parked | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | exact baseline/work-order hashes regenerated from canonical state sources | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md` | separate continuity commit owns closed-mode narrative | BLOCKED with reason: material closure precedes continuity synchronization |
+| External evidence digest | N/A with reason: no external evidence was consumed | zero provider/live/network/browser/credential calls | N/A with reason: local private-source decision only |
+| System loop interlock | tranche table and terminal token | T1-T5 do not self-open; historical four-fact reopen condition remains binding | PASS |
+| Session continuity | bootstrap/state/front door/handoff | exact authority hashes aligned; closed-mode synchronization follows material commit | N/A with reason: separate continuity commit required by commit choreography |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Runtime receipt evidence | N/A with reason: documentation-only T0 creates no runtime receipt | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: T0 performs no runtime query admission | N/A_WITH_REASON |
+| Worker-return acceptance | Independent Reviewer Addendum accepts the parked decision after bounded repair | PASS |
+| Closure claim | `CLOSED_PASS_BOUNDED` for the current-source architecture decision only | PASS |
 
 ## Claim Boundary
 
-This roadmap authorizes T0 architecture analysis only. It does not claim that
-GC-010 is invoked by a production consumer, close the paired gap, modify
-runtime source, permit provider use, or establish live, deployment, public, or
+This roadmap records T0 as `CLOSED_PASS_BOUNDED` with terminal token
+`NO_VIABLE_CONSUMER_RETAIN_PARKED`. It does not claim that GC-010 is invoked
+by a production consumer, close the paired gap, authorize T1, modify runtime
+source, permit provider use, or establish live, deployment, public, or
 production readiness.
