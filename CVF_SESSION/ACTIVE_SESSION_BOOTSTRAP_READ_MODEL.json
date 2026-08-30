@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r2_t1b_dispatched_pending_worker_return",
+  "currentMode": "gc010_scr_r2_t1b_closed_pass_bounded_specialized_sqlite_selected",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute the committed GC010-SCR-R2-T1B decision-only work order at material commit 5eb3c882f. One no-commit worker may create exactly the named assessment and worker return, then stop for orchestrator review. Adapter, composition, route or test implementation is not authorized; production consumer, cross-process/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author a fresh GC010-SCR-R2-T1C non-production implementation baseline and work order for the corrected five-path manifest accepted at material commit da55f54d5. Authoring only is allowed; do not implement automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

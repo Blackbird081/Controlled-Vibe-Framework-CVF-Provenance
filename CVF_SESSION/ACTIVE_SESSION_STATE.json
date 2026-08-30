@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1b_dispatched_pending_worker_return",
-  "previousMode": "gc010_scr_r2_t1a_closed_pass_bounded_non_production_core_accepted",
+  "currentMode": "gc010_scr_r2_t1b_closed_pass_bounded_specialized_sqlite_selected",
+  "previousMode": "gc010_scr_r2_t1b_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Execute the committed GC010-SCR-R2-T1B decision-only work order at material commit 5eb3c882f. One no-commit worker may create exactly the named assessment and worker return, then stop for orchestrator review. Adapter, composition, route or test implementation is not authorized; production consumer, cross-process/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author a fresh GC010-SCR-R2-T1C non-production implementation baseline and work order for the corrected five-path manifest accepted at material commit da55f54d5. Authoring only is allowed; do not implement automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15472,5 +15472,16 @@
     ],
     "nextAllowedMove": "One no-commit worker executes the committed decision-only packet, creates exactly the two named documents, and stops for orchestrator review.",
     "claimBoundary": "No adapter, composition owner, route, tests, production consumer, cross-process/distributed safety, provider/live, public sync, deployment or production implementation is authorized."
+  },
+  "gc010ScrR2T1bPendingAgentExecutionDurableSingleNodeAdapterCompositionOwnerDecisionClosure20260831": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "terminalToken": "SPECIALIZED_SQLITE_SINGLE_NODE_ADAPTER_AND_COMPOSITION_OWNER_SELECTED",
+    "materialCommit": "da55f54d5",
+    "dispatchCommit": "5eb3c882f",
+    "assessment": "docs/assessments/CVF_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_WORKER_RETURN_2026-08-31.md",
+    "reviewRepair": "Retained Candidate 5 while correcting durable acknowledgement to SQLite FULL, store schema identity to PRAGMA user_version 1, typed failure semantics to the synchronous T1A interface, and transition reuse to one shared exported T1A helper; future manifest is five paths.",
+    "nextAllowedMove": "Author a fresh T1C non-production implementation baseline and work order for the corrected five-path manifest; do not implement automatically.",
+    "claimBoundary": "No adapter, composition module, test, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment or production behavior is implemented or authorized by this closure."
   }
 }

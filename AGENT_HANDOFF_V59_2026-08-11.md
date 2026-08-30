@@ -39,14 +39,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1b_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T1B decision-only packet and return exactly two documents; parked checkpoint=implementation, production consumer, cross-process/distributed safety, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1b_closed_pass_bounded_specialized_sqlite_selected`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh T1C non-production implementation packet for the corrected five-path manifest; parked checkpoint=implementation until dispatch, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
 
 ## Current Mode
-`gc010_scr_r2_t1b_dispatched_pending_worker_return`
+`gc010_scr_r2_t1b_closed_pass_bounded_specialized_sqlite_selected`
 
 ## Purpose
 
-Preserve accepted T1A and route one no-commit worker through committed T1B durable single-node adapter/composition-owner decision, without implementation or external effects.
+Preserve accepted T1A and the independently closed T1B durable single-node adapter/composition-owner decision, without opening implementation or external effects.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -111,14 +111,14 @@ Preserve accepted T1A and route one no-commit worker through committed T1B durab
 
 ## Current Authority
 
-GC010-SCR-R2-T1B decision-only authority is dispatched at `5eb3c882f` over accepted T1A material `f55b80826`. One worker may decide the durable single-node adapter and composition owner and return exactly two documents; implementation, production consumer and cross-process/distributed safety remain parked. Prior T0A/T0B, R1 T0, DSH-WRA-R1 and AFFD-R1 remain closed bounded; DEAR P4/P5 remain parked.
+GC010-SCR-R2-T1B is independently closed at material `da55f54d5` with `SPECIALIZED_SQLITE_SINGLE_NODE_ADAPTER_AND_COMPOSITION_OWNER_SELECTED` after bounded semantic repair. The corrected future manifest has five paths and requires SQLite `FULL`, `user_version = 1`, typed fail-closed errors, and one shared T1A transition helper. Implementation, route/provider/audit integration, production consumer and cross-node/distributed safety remain parked. Prior T0A/T0B, R1 T0, DSH-WRA-R1 and AFFD-R1 remain closed bounded; DEAR P4/P5 remain parked.
 
 | Field | Value |
 |---|---|
-| authorityState | GC010-SCR-R2-T1B `DISPATCHED_DECISION_ONLY` / pending worker return |
+| authorityState | GC010-SCR-R2-T1B `CLOSED_PASS_BOUNDED` / `SPECIALIZED_SQLITE_SINGLE_NODE_ADAPTER_AND_COMPOSITION_OWNER_SELECTED` |
 | roadmapPath | `docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md`; historical production T1 remains parked |
-| closureDependency | accepted T1A material `f55b80826`; T1B decision dispatch `5eb3c882f` |
-| nextAuthorityRequirement | exact T1B assessment and worker return; no implementation, commit or external effect |
+| closureDependency | accepted T1A material `f55b80826`; T1B dispatch `5eb3c882f`; accepted T1B material `da55f54d5` |
+| nextAuthorityRequirement | fresh T1C authoring for the corrected five-path non-production manifest; no automatic implementation or external effect |
 
 ## Closure Evidence
 
@@ -169,7 +169,7 @@ GC010-SCR-R2-T1B decision-only authority is dispatched at `5eb3c882f` over accep
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Execute committed GC010-SCR-R2-T1B decision-only work order `5eb3c882f`. One no-commit worker may create exactly the named assessment and worker return, then stop for orchestrator review. Adapter, composition, route or test implementation is not authorized. Production consumer, cross-process/distributed safety, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
+Author a fresh GC010-SCR-R2-T1C non-production implementation baseline and work order for the corrected five-path manifest accepted at `da55f54d5`. Authoring only is allowed; do not implement automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -204,17 +204,17 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize committed GC010-SCR-R2-T1B decision dispatch `5eb3c882f`, exact current-authority hashes, mode, next move, and generated projections. This creates no implementation scope.
+Authorized guard-maintenance scope: synchronize accepted GC010-SCR-R2-T1B material `da55f54d5`, closed mode, next move, and generated projections. This creates no implementation scope.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1bPendingAgentExecutionDurableSingleNodeAdapterCompositionOwnerDecisionDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1bPendingAgentExecutionDurableSingleNodeAdapterCompositionOwnerDecisionClosure20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: the operator directed the orchestrator to continue the GC010 system-chain roadmap and granted full orchestrator/reviewer authority; T1B dispatch material is `5eb3c882f`.
-Rollback boundary: revert only this T1B dispatch continuity sync without rewriting dispatch material, accepted T1A or prior closures.
-Not authorized: adapter/composition/route/test implementation, worker commit, production consumer, cross-process/distributed safety, provider/API/network use, credentials, public mutation, deployment, production claim, compaction, or automatic successor.
+Operator authorization: the operator directed the orchestrator to continue the GC010 system-chain roadmap and granted full orchestrator/reviewer authority; accepted T1B material is `da55f54d5`.
+Rollback boundary: revert only this T1B closure continuity sync without rewriting accepted material or prior closures.
+Not authorized: T1C implementation before dispatch, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/API/network use, credentials, public mutation, deployment, production claim, compaction, or automatic successor.
 
 ## Claim Boundary
 
-This handoff records T1B as decision-only dispatch `5eb3c882f` over accepted T1A `f55b80826`. It does not implement an adapter or composition owner, create a production API/store/consumer, export AER, connect approval/provider/audit systems, or permit cross-process/distributed safety, provider/API/network, public mutation, deployment, production, compaction, or automatic successor work.
+This handoff records T1B as closed bounded at `da55f54d5` over accepted T1A `f55b80826`. It selects but does not implement the corrected five-path specialized SQLite/composition boundary, create a production API/store/consumer, export AER, connect route/provider/audit systems, or permit cross-node/distributed safety, provider/API/network, public mutation, deployment, production, compaction, or automatic successor work.

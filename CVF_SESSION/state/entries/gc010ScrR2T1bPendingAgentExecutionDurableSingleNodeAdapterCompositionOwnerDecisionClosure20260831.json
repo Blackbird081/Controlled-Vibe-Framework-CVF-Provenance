@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2390,
+  "stateKey": "gc010ScrR2T1bPendingAgentExecutionDurableSingleNodeAdapterCompositionOwnerDecisionClosure20260831",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "terminalToken": "SPECIALIZED_SQLITE_SINGLE_NODE_ADAPTER_AND_COMPOSITION_OWNER_SELECTED",
+    "materialCommit": "da55f54d5",
+    "dispatchCommit": "5eb3c882f",
+    "assessment": "docs/assessments/CVF_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_WORKER_RETURN_2026-08-31.md",
+    "reviewRepair": "Retained Candidate 5 while correcting durable acknowledgement to SQLite FULL, store schema identity to PRAGMA user_version 1, typed failure semantics to the synchronous T1A interface, and transition reuse to one shared exported T1A helper; future manifest is five paths.",
+    "nextAllowedMove": "Author a fresh T1C non-production implementation baseline and work order for the corrected five-path manifest; do not implement automatically.",
+    "claimBoundary": "No adapter, composition module, test, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment or production behavior is implemented or authorized by this closure."
+  }
+}
