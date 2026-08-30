@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2385,
+  "stateKey": "gc010ScrR2T0AAgentExecutionApiCrossOwnerContractDecisionDispatch20260830",
+  "value": {
+    "status": "DISPATCHED_DECISION_ONLY_PENDING_WORKER_RETURN",
+    "materialCommit": "5f81ed7f5",
+    "priorRoadmap": "docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_2026-08-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_2026-08-30.md",
+    "workerBoundary": "One no-commit decision worker may create exactly the cross-owner contract assessment and worker return. All runtime, route, package, test, checker, workflow and continuity paths are read-only.",
+    "objective": "Decide the isolated Agent Execution API trigger and the cross-owner contract joining AgentExecutionRuntime, Web approval persistence/API, provider-attempt admission, durable audit and truthful HTTP response semantics without modifying the accepted /api/execute chain.",
+    "proof": "Dispatch pre-dispatch gate passed 80/80 and material pre-commit/commit hook passed 87/87 with zero provider/live/network/browser/credential calls.",
+    "nextAllowedMove": "Worker executes the exact decision-only work order and returns the two uncommitted evidence artifacts for independent review.",
+    "claimBoundary": "No implementation successor, runtime behavior, provider/live call, public sync, deployment or production claim is authorized. GC010-SCR-R1-T0 remains historically closed parked."
+  }
+}

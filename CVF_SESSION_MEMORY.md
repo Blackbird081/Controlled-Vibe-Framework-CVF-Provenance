@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r1_t0_closed_pass_bounded_retain_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh source-verified non-duplicate value selection outside the parked GC010-SCR-R1 lane; parked checkpoint=T1-T5, DEAR P4/P5, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t0a_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the committed decision-only Agent Execution API cross-owner contract work order and return exactly two uncommitted artifacts; parked checkpoint=runtime implementation, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r1_t0_closed_pass_bounded_retain_parked`
-Current mode: `gc010_scr_r1_t0_closed_pass_bounded_retain_parked`; previous mode marker: `gc010_scr_r1_t0_dispatched_pending_worker_return`
-Previous mode: `gc010_scr_r1_t0_dispatched_pending_worker_return`
+Current mode marker: `gc010_scr_r2_t0a_dispatched_pending_worker_return`
+Current mode: `gc010_scr_r2_t0a_dispatched_pending_worker_return`; previous mode marker: `gc010_scr_r1_t0_closed_pass_bounded_retain_parked`
+Previous mode: `gc010_scr_r1_t0_closed_pass_bounded_retain_parked`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r1_t0_closed_pass_bounded_retain_parked`. GC010-SCR-R1-T0 is independently closed bounded at material commit `beffeafc6` with terminal token `NO_VIABLE_CONSUMER_RETAIN_PARKED`. The historical four-fact GC-010 reopen condition remains unsatisfied; T1-T5 do not open. The next move is a fresh source-verified, non-duplicate value selection outside this parked lane. DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t0a_dispatched_pending_worker_return`. Execute the committed GC010-SCR-R2-T0A work order at material commit `5f81ed7f5`. The no-commit worker creates exactly the cross-owner contract assessment and worker return, then stops for independent review. This remains the same system-chain objective and decides an isolated Agent Execution API trigger plus AER/Web approval/provider-attempt/audit ownership. Runtime implementation, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

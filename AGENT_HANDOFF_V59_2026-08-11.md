@@ -39,14 +39,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r1_t0_closed_pass_bounded_retain_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh source-verified non-duplicate value selection outside the parked GC010-SCR-R1 lane; parked checkpoint=T1-T5, DEAR P4/P5, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t0a_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute GC010-SCR-R2-T0A and return exactly two uncommitted decision artifacts; parked checkpoint=runtime implementation, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment.
 
 ## Current Mode
-`gc010_scr_r1_t0_closed_pass_bounded_retain_parked`
+`gc010_scr_r2_t0a_dispatched_pending_worker_return`
 
 ## Purpose
 
-Preserve prior bounded closures and route one GC010-SCR-R1-T0 documentation worker toward a source-verified single-consumer system-chain decision without runtime or external effects.
+Preserve prior bounded closures and route one GC010-SCR-R2-T0A no-commit decision worker toward an isolated Agent Execution API cross-owner contract without runtime or external effects.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -111,14 +111,14 @@ Preserve prior bounded closures and route one GC010-SCR-R1-T0 documentation work
 
 ## Current Authority
 
-GC010-SCR-R1-T0 is `CLOSED_PASS_BOUNDED` at material commit `beffeafc6` with terminal token `NO_VIABLE_CONSUMER_RETAIN_PARKED`. Fresh source confirms no viable production caller/export and the historical four-fact reopen condition remains unsatisfied. T1-T5 do not open. DSH-WRA-R1 and AFFD-R1 remain closed bounded; DEAR P4/P5 remain parked.
+GC010-SCR-R1-T0 remains `CLOSED_PASS_BOUNDED` at `beffeafc6` with `NO_VIABLE_CONSUMER_RETAIN_PARKED`. Operator-authorized GC010-SCR-R2-T0A is dispatched at `5f81ed7f5` to decide the missing product trigger and AER/Web approval/provider-attempt/audit contract. It is documentation-only and opens no implementation successor. DSH-WRA-R1 and AFFD-R1 remain closed bounded; DEAR P4/P5 remain parked.
 
 | Field | Value |
 |---|---|
-| authorityState | GC010-SCR-R1-T0 `CLOSED_PASS_BOUNDED`; T1-T5 parked |
-| roadmapPath | `docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md` |
-| closureDependency | satisfied at material commit `beffeafc6`; completion review records bounded acceptance |
-| nextAuthorityRequirement | fresh source-verified value selection outside the parked lane; no automatic T1 or external effect |
+| authorityState | GC010-SCR-R2-T0A `DISPATCHED_DECISION_ONLY_PENDING_WORKER_RETURN`; prior R1 T0 remains closed parked |
+| roadmapPath | `docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md`; fresh T0A authority is the committed baseline/work order |
+| closureDependency | prior R1 T0 truth retained; operator supplied the missing decision-only product-owner authority |
+| nextAuthorityRequirement | exact two-artifact worker return and independent review; no automatic implementation or external effect |
 
 ## Closure Evidence
 
@@ -169,7 +169,7 @@ GC010-SCR-R1-T0 is `CLOSED_PASS_BOUNDED` at material commit `beffeafc6` with ter
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-GC010-SCR-R1-T0 is `CLOSED_PASS_BOUNDED` at material commit `beffeafc6` with terminal token `NO_VIABLE_CONSUMER_RETAIN_PARKED`. The historical four-fact reopen condition remains unsatisfied, so T1-T5 do not open. Select a fresh source-verified, non-duplicate value lane outside GC010-SCR-R1. DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
+Execute GC010-SCR-R2-T0A from material dispatch `5f81ed7f5`. The no-commit worker creates exactly `docs/assessments/CVF_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_2026-08-30.md` and `docs/reviews/CVF_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_WORKER_RETURN_2026-08-30.md`, then stops for independent review. Runtime implementation, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -207,14 +207,14 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 Authorized guard-maintenance scope: retain the prior Brigade review-convergence guard batch and synchronize operator-selected DEAR-LP into continuity; this cumulative inventory creates no new implementation scope.
 Protected paths:
 Protected continuity paths:
-- `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR1T0SingleConsumerBoundaryDecisionDispatch20260830.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+- `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T0AAgentExecutionApiCrossOwnerContractDecisionDispatch20260830.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: the operator directed the orchestrator to proceed with the system-chain roadmap; material dispatch `e0cd2ece2` authorizes continuity to point at GC010-SCR-R1-T0.
+Operator authorization: the operator directed the orchestrator to continue the system-chain roadmap, granted full orchestrator/reviewer authority, and corrected scope drift; material dispatch `5f81ed7f5` authorizes continuity to point at GC010-SCR-R2-T0A.
 Rollback boundary: revert this continuity child without rewriting the committed roadmap, baseline, or work order; prior closures remain unchanged.
 Not authorized: runtime/test/package mutation, provider/API/network use, credentials, T1-T5, DEAR P4/P5, public mutation, deployment, production claim, compaction, or automatic successor.
 
 ## Claim Boundary
 
-This handoff records GC010-SCR-R1-T0 as a committed documentation-only dispatch. It authorizes one no-commit worker to produce exactly two evidence artifacts. It does not create a runtime consumer, satisfy the historical reopen condition, authorize T1, or permit provider/API/network, public mutation, deployment, production, DEAR P4/P5, compaction, or automatic successor work.
+This handoff records GC010-SCR-R2-T0A as a committed documentation-only cross-owner contract dispatch. It authorizes one no-commit worker to produce exactly two evidence artifacts. It does not create the proposed API, export AER, connect approval systems, authorize implementation, or permit provider/API/network, public mutation, deployment, production, DEAR P4/P5, compaction, or automatic successor work.

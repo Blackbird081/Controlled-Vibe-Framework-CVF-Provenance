@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r1_t0_closed_pass_bounded_retain_parked",
+  "currentMode": "gc010_scr_r2_t0a_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "GC010-SCR-R1-T0 is CLOSED_PASS_BOUNDED at material commit beffeafc6 with terminal token NO_VIABLE_CONSUMER_RETAIN_PARKED. The historical four-fact reopen condition remains unsatisfied, so T1-T5 do not open. The next allowed move is a fresh source-verified, non-duplicate value selection outside this parked lane. DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute GC010-SCR-R2-T0A from committed dispatch 5f81ed7f5. The no-commit worker creates exactly the cross-owner contract assessment and worker return, then stops for independent review. This is the same system-chain objective: it decides an isolated Agent Execution API trigger and the AER/Web approval/provider-attempt/audit contract. Runtime implementation, GC010-SCR-R1 T1-T5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R1_T0_SINGLE_CONSUMER_BOUNDARY_DECISION_2026-08-30.md",
-    "baselineSha256": "03dd648a75c843899d3b07c500bd2875e0e18344e990616bc0e9d782c249f7c9",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R1_T0_SINGLE_CONSUMER_BOUNDARY_DECISION_2026-08-30.md",
-    "workOrderSha256": "f7121c69df3d8a5930708781b4381cc0c9b6fbd7f5afd4926e8d3a6da0fc5b2c"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_2026-08-30.md",
+    "baselineSha256": "0b2b3ea842e341874f2015fb32dfdcefff15c4899986a1aa3d9ed8b241202711",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_2026-08-30.md",
+    "workOrderSha256": "b9acf2d6610bdb51df3ecee3ac3a1b3deb33cc50fdcf43aec374c2bcb7f39190"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "GC010-SCR-R1-T0 is CLOSED_PASS_BOUNDED at material commit beffeafc6 with terminal token NO_VIABLE_CONSUMER_RETAIN_PARKED. The historical four-fact reopen condition remains unsatisfied, so T1-T5 do not open. The next allowed move is a fresh source-verified, non-duplicate value selection outside this parked lane. DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute GC010-SCR-R2-T0A from committed dispatch 5f81ed7f5. The no-commit worker creates exactly the cross-owner contract assessment and worker return, then stops for independent review. This is the same system-chain objective: it decides an isolated Agent Execution API trigger and the AER/Web approval/provider-attempt/audit contract. Runtime implementation, GC010-SCR-R1 T1-T5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
