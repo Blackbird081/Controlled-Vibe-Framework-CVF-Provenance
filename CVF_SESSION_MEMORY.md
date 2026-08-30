@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1a_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T1A and return exactly three uncommitted artifacts; parked checkpoint=production consumer, cross-process persistence, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1a_closed_pass_bounded_non_production_core_accepted`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh T1B durable-adapter/composition-owner decision packet only; parked checkpoint=production consumer, cross-process/distributed safety, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t1a_dispatched_pending_worker_return`
-Current mode: `gc010_scr_r2_t1a_dispatched_pending_worker_return`; previous mode marker: `gc010_scr_r2_t0b_closed_pass_bounded_t1_consideration`
+Current mode marker: `gc010_scr_r2_t1a_closed_pass_bounded_non_production_core_accepted`
+Current mode: `gc010_scr_r2_t1a_closed_pass_bounded_non_production_core_accepted`; previous mode marker: `gc010_scr_r2_t1a_dispatched_pending_worker_return`
 Previous mode: `gc010_scr_r2_t0a_closed_pass_bounded_partial_ready`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t1a_dispatched_pending_worker_return`. Execute T1A from material dispatch `8b7616d05`. The worker creates exactly the new core module, focused test, and named worker return, leaves all three uncommitted, and stops for independent review. The slice is single-process and non-production; production consumer, cross-process persistence, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1a_closed_pass_bounded_non_production_core_accepted`. T1A closed at material `f55b80826` after bounded reviewer repair, focused 64/64 tests, TypeScript, forbidden-symbol search, file-size guard, worker-fast and pre-commit 87/87 passed. The next allowed move is authoring a fresh T1B decision/dispatch packet selecting the durable single-node adapter boundary and exact composition owner. No implementation is automatically opened; production consumer, cross-process/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

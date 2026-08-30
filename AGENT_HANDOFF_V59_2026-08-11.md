@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1a_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T1A and return exactly three uncommitted artifacts; parked checkpoint=production consumer, cross-process persistence, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1a_closed_pass_bounded_non_production_core_accepted`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh T1B durable-adapter/composition-owner decision packet only; parked checkpoint=production consumer, cross-process/distributed safety, provider/live, public sync and deployment.
 
 ## Current Mode
-`gc010_scr_r2_t1a_dispatched_pending_worker_return`
+`gc010_scr_r2_t1a_closed_pass_bounded_non_production_core_accepted`
 
 ## Purpose
 
@@ -111,14 +111,14 @@ Preserve the independently closed T0B contract and route one no-commit worker th
 
 ## Current Authority
 
-GC010-SCR-R2-T0B is independently closed at `7b9fc8b7f`; T1A is dispatched at `8b7616d05` for exactly one new single-process non-production core module, one focused test and one worker return. Production consumer and cross-process persistence remain parked. Prior R1 T0, DSH-WRA-R1 and AFFD-R1 remain closed bounded; DEAR P4/P5 remain parked.
+GC010-SCR-R2-T1A is independently closed at material `f55b80826` after bounded reviewer repair. The accepted surface is exactly one single-process non-production core module and focused test; production consumer and cross-process/distributed safety remain parked. Prior T0A/T0B, R1 T0, DSH-WRA-R1 and AFFD-R1 remain closed bounded; DEAR P4/P5 remain parked.
 
 | Field | Value |
 |---|---|
-| authorityState | GC010-SCR-R2-T1A `DISPATCHED_IMPLEMENTATION_BOUNDED_PENDING_WORKER_RETURN` |
+| authorityState | GC010-SCR-R2-T1A `CLOSED_PASS_BOUNDED` / `NON_PRODUCTION_CORE_ACCEPTED` |
 | roadmapPath | `docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md`; historical production T1 remains parked |
-| closureDependency | accepted T0B material `7b9fc8b7f`; T1A dispatch `8b7616d05` |
-| nextAuthorityRequirement | exact three-artifact T1A worker return and independent review; no automatic successor or external effect |
+| closureDependency | accepted T0B material `7b9fc8b7f`; T1A dispatch `8b7616d05`; T1A material `f55b80826` |
+| nextAuthorityRequirement | fresh T1B authoring for durable single-node adapter and composition ownership; no automatic implementation or external effect |
 
 ## Closure Evidence
 
@@ -169,7 +169,7 @@ GC010-SCR-R2-T0B is independently closed at `7b9fc8b7f`; T1A is dispatched at `8
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Execute GC010-SCR-R2-T1A from material dispatch `8b7616d05`. The no-commit worker creates exactly the new pending-agent-execution core module, focused test, and named worker return, then stops for independent review. This is a single-process non-production prerequisite only; production consumer, cross-process persistence, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
+Author a fresh GC010-SCR-R2-T1B decision/dispatch packet selecting the exact durable single-node adapter boundary and composition owner that may later consume T1A material `f55b80826`. Authoring only is allowed; do not implement or wire a route/provider automatically. Production consumer, cross-process/distributed safety, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -204,17 +204,17 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain the prior Brigade review-convergence guard batch and synchronize operator-selected DEAR-LP into continuity; this cumulative inventory creates no new implementation scope.
+Authorized guard-maintenance scope: synchronize the accepted GC010-SCR-R2-T1A material closure, exact current-authority hashes, mode, next move, and generated projections. This creates no successor implementation scope.
 Protected paths:
 Protected continuity paths:
-- `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1aPendingAgentExecutionNonProductionCoreImplementationDispatch20260830.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1aPendingAgentExecutionNonProductionCoreClosure20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: the operator directed the orchestrator to continue the system-chain roadmap, granted full orchestrator/reviewer authority, and corrected scope drift; committed dispatch `8b7616d05` authorizes T1A worker execution only.
-Rollback boundary: revert this continuity child without rewriting the committed roadmap, baseline, or work order; prior closures remain unchanged.
-Not authorized: runtime/test/package mutation, provider/API/network use, credentials, T1-T5, DEAR P4/P5, public mutation, deployment, production claim, compaction, or automatic successor.
+Operator authorization: the operator directed the orchestrator to continue the GC010 system-chain roadmap and granted full orchestrator/reviewer authority; accepted material is `f55b80826`.
+Rollback boundary: revert only this T1A continuity sync without rewriting accepted material or prior closures.
+Not authorized: T1B implementation, production consumer, cross-process/distributed safety, provider/API/network use, credentials, public mutation, deployment, production claim, compaction, or automatic successor.
 
 ## Claim Boundary
 
-This handoff records T1A as a committed bounded worker dispatch for exactly three uncommitted artifacts. It does not create a production API/store/consumer, export AER, connect approval/provider/audit systems, or permit cross-process persistence, provider/API/network, public mutation, deployment, production, DEAR P4/P5, compaction, or automatic successor work.
+This handoff records T1A as an accepted single-process non-production core at `f55b80826`. It does not create a production API/store/consumer, export AER, connect approval/provider/audit systems, or permit cross-process/distributed safety, provider/API/network, public mutation, deployment, production, compaction, or automatic successor work.

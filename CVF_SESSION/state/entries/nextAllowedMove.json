@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "Execute committed GC010-SCR-R2-T1A packet 8b7616d05. The no-commit worker creates exactly the new pending-agent-execution core module, its focused test, and the named worker return, then stops for independent review. This is a single-process non-production prerequisite only; existing source, route, provider/admission/audit, dependency, workflow and continuity paths are read-only. Production consumer, cross-process persistence, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Author a fresh GC010-SCR-R2-T1B decision/dispatch packet that selects the exact durable single-node adapter boundary and composition owner consuming the accepted T1A core at material commit f55b80826. Authoring only is allowed; do not implement or wire a route/provider automatically. The historical production consumer, cross-process/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
