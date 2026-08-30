@@ -4,7 +4,7 @@ Memory class: governed-baseline
 
 docType: baseline
 
-Status: DISPATCHED_IMPLEMENTATION_BOUNDED
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: GC010-SCR-R2-T1A
 
@@ -170,14 +170,14 @@ release claim is authorized.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | paired work order | dispatch status | PENDING_WORKER_RETURN |
-| Completion or reviewer artifact | worker return then reviewer disposition | reviewer-owned | PENDING_REVIEW |
+| Work order status | paired work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | worker return and completion review | reviewer addendum plus terminal disposition | PASS |
 | Roadmap state | GC010 roadmap | historical T1 remains parked | PASS |
-| Registry JSON | active session state | session-sync steward only | N/A with reason: dispatch precedes continuity sync |
-| Registry Markdown | front door/handoff | steward-owned | N/A with reason: separate continuity commit |
+| Registry JSON | active session state | current-authority hashes regenerated | PASS |
+| Registry Markdown | front door/handoff | steward-owned | BLOCKED with reason: material closure precedes separate continuity commit |
 | External evidence digest | N/A with reason: zero external evidence | none | N/A with reason |
 | System loop interlock | successor flag NO | no automatic successor | PASS |
-| Session continuity | post-material dispatch sync | steward-owned | PENDING |
+| Session continuity | post-material closure sync | steward-owned | N/A with reason: separate continuity commit required |
 
 ## Claim Boundary
 

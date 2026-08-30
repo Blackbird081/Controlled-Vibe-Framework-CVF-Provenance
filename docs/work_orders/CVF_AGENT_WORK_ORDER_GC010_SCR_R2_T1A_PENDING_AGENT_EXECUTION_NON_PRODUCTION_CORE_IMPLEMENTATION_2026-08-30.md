@@ -4,7 +4,7 @@ Memory class: governed-work-order
 
 docType: work_order
 
-Status: DISPATCHED_IMPLEMENTATION_BOUNDED
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: GC010-SCR-R2-T1A
 
@@ -14,7 +14,7 @@ dispatchBaseHead: `be7ce7d2b`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `04ce6a257`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -181,6 +181,17 @@ Allowed scope:
 - read existing approval types/helpers and test/runtime conventions;
 - run non-live focused tests, TypeScript no-emit, diff checks, pre-implementation gate and worker-return fast gate.
 
+Reviewer closure scope additionally permits:
+
+- update this work order and
+  `docs/baselines/CVF_GC018_GC010_SCR_R2_T1A_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CORE_IMPLEMENTATION_2026-08-30.md`;
+- create `docs/reviews/CVF_GC010_SCR_R2_T1A_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CORE_IMPLEMENTATION_COMPLETION_2026-08-30.md`;
+- update the worker return with the independent reviewer addendum;
+- update `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`, regenerate
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json` and
+  `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`, then separately sync
+  `CVF_SESSION_MEMORY.md` and `AGENT_HANDOFF_V59_2026-08-11.md`.
+
 Forbidden scope:
 
 - edit any existing TypeScript source or test;
@@ -322,18 +333,18 @@ or unsafe worktree overlap.
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pending-agent-execution.test.ts` | create focused contract/adversarial tests |
 | `docs/reviews/CVF_GC010_SCR_R2_T1A_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CORE_IMPLEMENTATION_WORKER_RETURN_2026-08-30.md` | create full no-commit evidence packet |
 
-No optional path exists. Any need to touch another path returns
-`BLOCKED_WITH_REASON` before mutation.
+No optional worker path exists. Reviewer-owned repair and closure paths are
+limited to the additional closure scope stated above.
 
 ## Work-Order Fulfillment Manifest
 
 | Requirement | Evidence owner | Completion state at dispatch |
 | --- | --- | --- |
-| Core implementation | worker module diff | PENDING_WORKER_RETURN |
-| Adversarial proof | focused test file and command receipt | PENDING_WORKER_RETURN |
-| Type correctness | cvf-web no-emit receipt | PENDING_WORKER_RETURN |
-| Scope/call boundary | exact diff and negative search | PENDING_WORKER_RETURN |
-| No-commit return | worker-return packet | PENDING_WORKER_RETURN |
+| Core implementation | worker module diff plus reviewer audit | PASS_AFTER_BOUNDED_REPAIR |
+| Adversarial proof | focused test file and command receipt | PASS: 64/64 |
+| Type correctness | cvf-web no-emit receipt | PASS |
+| Scope/call boundary | exact diff and negative search | PASS: zero forbidden hits |
+| No-commit return | worker-return packet | PASS |
 
 ## Verification Commands
 
@@ -532,14 +543,14 @@ projection if invalid; do not rewrite accepted T0B material.
 
 ## Acceptance Criteria
 
-- [ ] worker captures fresh execution base and exact initial status
-- [ ] creates exactly three allowed paths
-- [ ] implements the complete bounded contract without extra dependency
-- [ ] focused adversarial matrix passes
-- [ ] TypeScript no-emit passes
-- [ ] negative forbidden-import/call search returns zero hits
-- [ ] pre-implementation and worker-return fast gates pass
-- [ ] worker stages/commits nothing and reports zero provider/external calls
+- [x] worker captures fresh execution base and exact initial status
+- [x] creates exactly three allowed paths
+- [x] implements the complete bounded contract without extra dependency
+- [x] focused adversarial matrix passes after reviewer repair: 64/64
+- [x] TypeScript no-emit passes
+- [x] negative forbidden-import/call search returns zero hits
+- [x] pre-implementation and worker-return fast gates pass
+- [x] worker stages/commits nothing and reports zero provider/external calls
 
 ## Review Gate
 
@@ -550,12 +561,12 @@ forbidden imports, and owns all repairs and commits.
 
 ## Closure Checklist
 
-- [ ] exact three-path worker return received uncommitted
-- [ ] full source/test semantic review completed before repair
-- [ ] focused tests and TypeScript independently reproduced
-- [ ] forged/replayed capability and terminal replay independently probed
-- [ ] zero forbidden imports/calls and zero provider/live calls confirmed
-- [ ] reviewer disposition and material/continuity commit plan recorded
+- [x] exact three-path worker return received uncommitted
+- [x] full source/test semantic review completed before repair
+- [x] focused tests and TypeScript independently reproduced
+- [x] forged/replayed capability and terminal replay independently probed
+- [x] zero forbidden imports/calls and zero provider/live calls confirmed
+- [x] reviewer disposition and material/continuity commit plan recorded
 
 ## Operator Checkpoint
 
@@ -565,11 +576,11 @@ deployment, production, or broader consumer tranche requires fresh authority.
 
 ## Commit Prompt Readiness
 
-Diff scope: PENDING_WORKER_RETURN
+Diff scope: exact source, test, worker return, paired closure surfaces, and completion review
 
-Tests: PENDING_WORKER_RETURN
+Tests: PASS: focused Vitest 64/64; `npx tsc --noEmit` exit 0
 
-Gates: PENDING_WORKER_RETURN
+Gates: reviewer rerun required immediately before material commit
 
 Untracked unrelated: NONE_AT_DISPATCH
 
@@ -585,20 +596,29 @@ Reason: private bounded non-production implementation dispatch.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | dispatch status | PENDING_WORKER_RETURN |
-| Completion or reviewer artifact | worker return plus reviewer disposition | reviewer-owned | PENDING_REVIEW |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | worker return plus completion review | accepted bounded-repair disposition | PASS |
 | Roadmap state | GC010 roadmap | historical production T1 stays parked | PASS |
-| Registry JSON | active state | generated by steward only | N/A with reason: separate continuity phase |
-| Registry Markdown | front door/handoff | steward-owned | N/A with reason: separate continuity phase |
+| Registry JSON | active state | current-authority hashes regenerated | PASS |
+| Registry Markdown | front door/handoff | steward-owned | BLOCKED with reason: material closure precedes separate continuity commit |
 | External evidence digest | N/A with reason: zero external evidence | none | N/A with reason |
 | System loop interlock | successor flag NO | packet literals | PASS |
-| Session continuity | separate post-material dispatch commit | steward-owned | PENDING |
+| Session continuity | separate post-material closure commit | steward-owned | N/A with reason: separate continuity commit required |
 
 ## Return-To-Orchestrator Conditions
 
 Return `BLOCKED_WITH_REASON` only for source contradiction, forbidden-scope
 dependency, unsafe dirty overlap, inability to meet deterministic contract, or
 need for external/provider action. Otherwise return `COMPLETE_PENDING_REVIEW`.
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Runtime receipt evidence | N/A with reason: local non-production core; provider authority forbidden | N/A_WITH_REASON |
+| Worker-return acceptance | reviewer addendum accepts after bounded repair | PASS |
+| Focused verification | Vitest 64/64; TypeScript clean; forbidden search zero hits | PASS |
+| External call count | zero | PASS |
 
 ## Stop Conditions
 
