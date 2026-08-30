@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2384,
+  "stateKey": "gc010ScrR1T0SingleConsumerBoundaryDecisionDispatch20260830",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "e0cd2ece2",
+    "roadmap": "docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R1_T0_SINGLE_CONSUMER_BOUNDARY_DECISION_2026-08-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R1_T0_SINGLE_CONSUMER_BOUNDARY_DECISION_2026-08-30.md",
+    "workerBoundary": "One no-commit documentation worker creates exactly the architecture audit and worker return, makes zero provider calls, and does not stage or commit.",
+    "proof": "Pre-dispatch autorun passed 80/80; material pre-commit and commit hook passed 87/87. No runtime, provider, live, public-sync or deployment action occurred.",
+    "nextAllowedMove": "Transfer the committed T0 packet to the worker, then independently review the pending return. No T1 work is automatically released.",
+    "claimBoundary": "Architecture decision dispatch only; the historical four-fact GC-010 reopen condition is not yet declared satisfied."
+  }
+}

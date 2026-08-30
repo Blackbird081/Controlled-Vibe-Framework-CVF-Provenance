@@ -39,14 +39,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`affd_r1_closed_pass_bounded_fresh_value_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select one fresh source-backed non-duplicate roadmap; parked checkpoint=P4 retry, P5, provider/live, commit, public sync, deployment and automatic successor.
+Startup acknowledged: current mode=`gc010_scr_r1_t0_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer the committed GC010-SCR-R1-T0 packet to one no-commit worker and independently review its return; parked checkpoint=T1-T5, DEAR P4/P5, provider/live, public sync and deployment.
 
 ## Current Mode
-`affd_r1_closed_pass_bounded_fresh_value_selection`
+`gc010_scr_r1_t0_dispatched_pending_worker_return`
 
 ## Purpose
 
-Preserve the bounded DSH-WRA-R1 and DEAR-LP P0-P3 closures, then execute exactly one operator-mediated P4 detached return pilot without promotion or commit.
+Preserve prior bounded closures and route one GC010-SCR-R1-T0 documentation worker toward a source-verified single-consumer system-chain decision without runtime or external effects.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -111,14 +111,14 @@ Preserve the bounded DSH-WRA-R1 and DEAR-LP P0-P3 closures, then execute exactly
 
 ## Current Authority
 
-DSH-WRA-R1 is `CLOSED_PASS_BOUNDED`; its technical and corpus findings are closed, while the unrecoverable original pre-edit observation is waived only as low-value historical evidence. DEAR-LP-R1 deterministic P0-P3 is reviewer-accepted after seven bounded repairs; P4 is `BLOCKED_ENVIRONMENT_NOT_DETACHED` with no retry, and P5 remains parked.
+GC010-SCR-R1-T0 is `DISPATCH_READY` at material commit `e0cd2ece2`. It is a documentation-only product-development decision for one non-test `AgentExecutionRuntime` consumer boundary. The historical four-fact reopen condition is not declared satisfied. DSH-WRA-R1 and AFFD-R1 remain closed bounded; DEAR P4/P5 remain parked.
 
 | Field | Value |
 |---|---|
-| authorityState | DEAR-LP-R1 P0-P3 `CLOSED_PASS_BOUNDED`; P4-R1 `BLOCKED_ENVIRONMENT_NOT_DETACHED`; AFFD-R1 `CLOSED_PASS_BOUNDED` |
-| roadmapPath | `docs/roadmaps/CVF_DETACHED_AGENT_IMPLEMENTATION_RETURN_AND_LOCAL_PROMOTION_ROADMAP_2026-08-30.md` |
-| closureDependency | DSH-WRA-R1 `CLOSED_PASS_BOUNDED`; historical-only R2-F03 waiver explicit |
-| nextAuthorityRequirement | operator copies the canonical prompt and exact capsule once; local reviewer validates returned bytes; no automatic repair, P5 or successor |
+| authorityState | GC010-SCR-R1-T0 `DISPATCH_READY`; T1-T4 held; T5 parked |
+| roadmapPath | `docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md` |
+| closureDependency | exact committed T0 baseline/work order plus independent review of two worker outputs |
+| nextAuthorityRequirement | transfer the complete committed T0 packet to one no-commit worker; no automatic T1 or external effect |
 
 ## Closure Evidence
 
@@ -169,7 +169,7 @@ DSH-WRA-R1 is `CLOSED_PASS_BOUNDED`; its technical and corpus findings are close
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-DEAR-LP P4 is `BLOCKED_ENVIRONMENT_NOT_DETACHED` after its single attempted invocation; no retry or P5 is authorized. AFFD-R1 is `CLOSED_PASS_BOUNDED` with focused/adversarial 41/41 and related 33/33 PASS after one consolidated worker repair and one disclosed reviewer repair. Next allowed move is selection of one fresh source-backed non-duplicate roadmap whose expected value exceeds cost. Provider/live, commit, public sync, deployment and automatic successor remain parked. Latest finalized numbered LHW wave remains LHW24.
+GC010-SCR-R1-T0 is `DISPATCH_READY` at material commit `e0cd2ece2`. Transfer the exact committed baseline and work order to one no-commit worker. The worker creates exactly the architecture audit and full worker return, makes zero provider calls, leaves HEAD unchanged, and returns pending review or blocked with reason. The orchestrator independently reviews before any T1 packet. T1-T4 remain held; T5, DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -207,14 +207,14 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 Authorized guard-maintenance scope: retain the prior Brigade review-convergence guard batch and synchronize operator-selected DEAR-LP into continuity; this cumulative inventory creates no new implementation scope.
 Protected paths:
 Protected continuity paths:
-- `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`; `CVF_SESSION_MEMORY.md`.
+- `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR1T0SingleConsumerBoundaryDecisionDispatch20260830.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: prior Brigade closure authorized the guard batch; DEAR-LP-R1 P0-P3 is reviewer-accepted; operator `ok, next` releases one P4 detached transport invocation under the new GC-018/work order.
-Rollback boundary: withdraw the P4 dispatch packet and continuity sync atomically if canceled; retain the accepted P0-P3 implementation and prior closures.
-Not authorized: second external invocation, private-repository access, CVF provider/API/network use, credentials, subagents, promotion, P5, further guard/runtime mutation, commit, public mutation, deploy, push, secrets, compaction, successor, or unrelated work.
+Operator authorization: the operator directed the orchestrator to proceed with the system-chain roadmap; material dispatch `e0cd2ece2` authorizes continuity to point at GC010-SCR-R1-T0.
+Rollback boundary: revert this continuity child without rewriting the committed roadmap, baseline, or work order; prior closures remain unchanged.
+Not authorized: runtime/test/package mutation, provider/API/network use, credentials, T1-T5, DEAR P4/P5, public mutation, deployment, production claim, compaction, or automatic successor.
 
 ## Claim Boundary
 
-This handoff records DSH-WRA-R1 and DEAR-LP P0-P3 closed bounded, P4 blocked after its single attempted invocation, and AFFD-R1 closed bounded. It authorizes no P4 retry, private-repository access under a detached claim, provider/API/network action, credential, subagent, promotion, P5, commit, public mutation, deploy, production claim, compaction, or automatic successor.
+This handoff records GC010-SCR-R1-T0 as a committed documentation-only dispatch. It authorizes one no-commit worker to produce exactly two evidence artifacts. It does not create a runtime consumer, satisfy the historical reopen condition, authorize T1, or permit provider/API/network, public mutation, deployment, production, DEAR P4/P5, compaction, or automatic successor work.

@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "DEAR-LP P4 is BLOCKED_ENVIRONMENT_NOT_DETACHED after its single attempted invocation; no retry or P5 is authorized. AFFD-R1 is CLOSED_PASS_BOUNDED after one consolidated worker repair and one disclosed reviewer repair, with focused/adversarial 41/41 and related 33/33 PASS. Next allowed move: select one fresh source-backed non-duplicate roadmap whose expected value exceeds time, latency, token and quota cost. Provider/live, commit, public sync, deployment and automatic successor remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "GC010-SCR-R1-T0 is DISPATCH_READY at material commit e0cd2ece2. Transfer the exact committed baseline and work order to one no-commit worker. The worker creates exactly the architecture audit and full worker return, makes zero provider calls, leaves HEAD unchanged and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. The orchestrator independently reviews before any T1 packet. T1-T4 remain held; T5, DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
