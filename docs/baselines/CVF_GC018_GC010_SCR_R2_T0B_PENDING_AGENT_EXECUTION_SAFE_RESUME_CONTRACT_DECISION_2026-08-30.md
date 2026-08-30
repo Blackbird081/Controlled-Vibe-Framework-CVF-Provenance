@@ -4,7 +4,7 @@ Memory class: governed-baseline
 
 docType: baseline
 
-Status: DISPATCHED_DECISION_ONLY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: GC010-SCR-R2-T0B
 
@@ -180,18 +180,27 @@ DEFERRED_PRIVATE_ONLY
 Reason: private decision-only system-chain authority; no public artifact or
 release claim is authorized.
 
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Runtime receipt evidence | N/A with reason: documentation-only decision | N/A_WITH_REASON |
+| Worker-return acceptance | independent reviewer addendum plus completion | PASS |
+| External call count | zero | PASS |
+| Closure claim | bounded safe-resume contract only | PASS |
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | paired work order | `Status: DISPATCHED_DECISION_ONLY` | PENDING_WORKER_RETURN |
-| Completion or reviewer artifact | worker return addendum or completion | reviewer-owned | PENDING_REVIEW |
+| Work order status | paired work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | worker return addendum and completion | reviewer-owned bounded semantic repair | PASS |
 | Roadmap state | prior roadmap and T0A closure | no historical rewrite | PASS |
-| Registry JSON | active session state | session-sync steward only | N/A with reason: dispatch precedes continuity sync |
-| Registry Markdown | front door/handoff | steward-owned | N/A with reason: separate continuity commit |
+| Registry JSON | active session state | current-authority hashes regenerated before closure gates | PASS |
+| Registry Markdown | front door/handoff | closed-mode narrative follows separately | BLOCKED with reason: material closure precedes continuity synchronization |
 | External evidence digest | N/A with reason: zero external calls | none | N/A with reason |
 | System loop interlock | successor flag NO | packet literals | PASS |
-| Session continuity | separate post-material commit | steward-owned | PENDING |
+| Session continuity | separate post-material commit | steward-owned | N/A with reason: separate continuity commit required |
 
 ## Claim Boundary
 

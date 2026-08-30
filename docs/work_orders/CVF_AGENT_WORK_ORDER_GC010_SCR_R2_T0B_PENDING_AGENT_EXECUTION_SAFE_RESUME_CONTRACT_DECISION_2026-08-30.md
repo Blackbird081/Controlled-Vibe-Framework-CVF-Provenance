@@ -4,7 +4,7 @@ Memory class: governed-work-order
 
 docType: work_order
 
-Status: DISPATCHED_DECISION_ONLY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: GC010-SCR-R2-T0B
 
@@ -14,7 +14,7 @@ dispatchBaseHead: `276fc4344`
 
 executionBaseHead: worker captures fresh at start
 
-closureBaseHead: reviewer sets after worker return
+closureBaseHead: `3fcb0d418`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -159,6 +159,13 @@ Allowed scope:
   `docs/assessments/CVF_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_2026-08-30.md`
   and
   `docs/reviews/CVF_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_WORKER_RETURN_2026-08-30.md`.
+- reviewer closure conversion may additionally update or create:
+  `docs/baselines/CVF_GC018_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_2026-08-30.md`,
+  `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_2026-08-30.md`,
+  `docs/reviews/CVF_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_COMPLETION_2026-08-30.md`,
+  `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`,
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json`, and
+  `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 
 Forbidden scope:
 
@@ -461,15 +468,15 @@ only the two worker outputs untracked; staged diff empty; zero external calls.
 
 ## Acceptance Criteria
 
-- [ ] execution base and clean status captured
-- [ ] 3/3 candidate designs compared
-- [ ] 18/18 contract questions answered
-- [ ] exact schema/digest/state-machine/atomic-claim/grant/failure matrix named
-- [ ] future negative-test manifest covers concurrency, corruption, restart,
+- [x] execution base and clean status captured
+- [x] 3/3 candidate designs compared
+- [x] 18/18 contract questions answered
+- [x] exact schema/digest/state-machine/atomic-claim/grant/failure matrix named
+- [x] future negative-test manifest covers concurrency, corruption, restart,
       stale fingerprint, forged grant, changed binding and ambiguous start
-- [ ] exactly one terminal token selected
-- [ ] required gates pass
-- [ ] zero external calls; no staging or worker commit
+- [x] exactly one terminal token selected
+- [x] required gates pass
+- [x] zero external calls; no staging or worker commit
 
 Fail conditions: a field/state/transition remains ambiguous while selecting
 ready; a design relies on approval PATCH execution; a caller can construct
@@ -480,8 +487,8 @@ or any forbidden source/external mutation is needed.
 
 | Field | Value |
 | --- | --- |
-| completionReviewPath | optional if worker-return addendum cannot carry closure |
-| reviewerOwnedClosurePaths | worker-return addendum; baseline/work-order status; optional completion; separate continuity |
+| completionReviewPath | `docs/reviews/CVF_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_COMPLETION_2026-08-30.md` |
+| reviewerOwnedClosurePaths | assessment correction; worker-return addendum; paired baseline/work-order status; completion; separate continuity |
 | closureOwner | orchestrator/reviewer |
 | workerCommitPermission | FORBIDDEN |
 
@@ -537,25 +544,25 @@ Reason: private decision-only system-chain dispatch.
 
 ## Closure Checklist
 
-- [ ] worker returned exactly two uncommitted outputs
-- [ ] source freshness and candidate/answer completeness verified
-- [ ] terminal and successor boundary verified
-- [ ] gates and zero-call evidence verified
-- [ ] reviewer decision recorded
-- [ ] material and continuity commits remain reviewer-owned
+- [x] worker returned exactly two uncommitted outputs
+- [x] source freshness and candidate/answer completeness verified
+- [x] terminal and successor boundary verified
+- [x] gates and zero-call evidence verified
+- [x] reviewer decision recorded
+- [x] material and continuity commits remain reviewer-owned
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | `Status: DISPATCHED_DECISION_ONLY` | PENDING_WORKER_RETURN |
-| Completion or reviewer artifact | worker return addendum or completion | reviewer decision | PENDING_REVIEW |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | worker return addendum and completion | reviewer accepted with bounded semantic repair | PASS |
 | Roadmap state | T0A closure remains bounded | no rewrite | PASS |
-| Registry JSON | active state | generated only by steward | N/A with reason: separate continuity phase |
-| Registry Markdown | front door/handoff | steward-owned | N/A with reason: separate continuity phase |
+| Registry JSON | active state | exact current-authority hashes regenerated before closure gates | PASS |
+| Registry Markdown | front door/handoff | closed-mode narrative follows separately | BLOCKED with reason: material closure precedes continuity synchronization |
 | External evidence digest | N/A with reason: zero external calls | none | N/A with reason |
 | System loop interlock | successor flag NO | packet literals | PASS |
-| Session continuity | separate post-material commit | steward-owned | PENDING |
+| Session continuity | separate post-material commit | steward-owned | N/A with reason: separate continuity commit required |
 
 ## Return-To-Orchestrator Conditions
 
