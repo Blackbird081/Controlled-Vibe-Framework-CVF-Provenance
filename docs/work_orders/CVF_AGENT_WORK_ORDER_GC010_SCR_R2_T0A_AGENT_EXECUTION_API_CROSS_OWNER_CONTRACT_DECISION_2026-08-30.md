@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCHED_DECISION_ONLY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: GC010-SCR-R2-T0A
 
@@ -131,6 +131,17 @@ external effect.
 
 Allowed scope:
 
+- `docs/assessments/CVF_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_2026-08-30.md`;
+- `docs/reviews/CVF_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_WORKER_RETURN_2026-08-30.md`;
+- reviewer closure only: this work order, paired baseline, and
+  `docs/reviews/CVF_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_COMPLETION_2026-08-30.md`;
+- reviewer closure path:
+  `docs/baselines/CVF_GC018_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_2026-08-30.md`;
+- reviewer/steward hash-alignment paths:
+  `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`,
+  `CVF_SESSION/ACTIVE_SESSION_STATE.json`, and
+  `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+
 - recompute all source facts from the execution base;
 - compare three designs: synchronous request/wait, asynchronous submit/resume,
   and retain parked;
@@ -138,6 +149,9 @@ Allowed scope:
 - specify a smallest future T1 implementation/test manifest only if the full
   cross-owner chain is coherent;
 - author the two required documentation artifacts.
+- reviewer-only closure conversion may additionally update this work order,
+  the paired baseline, and create the optional completion review named below;
+  this exception does not expand worker write authority.
 
 Forbidden scope:
 
@@ -155,6 +169,10 @@ Worker may write only:
 - `docs/reviews/CVF_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_WORKER_RETURN_2026-08-30.md`
 
 All other paths are read-only.
+
+Reviewer/closer additionally owns this work order, the paired baseline, and
+`docs/reviews/CVF_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_COMPLETION_2026-08-30.md`
+for closure conversion.
 
 ## Required First Reads
 
@@ -390,7 +408,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | rolePattern | dispatcher -> delegated worker -> independent reviewer/closer -> session-sync steward |
 | phase | decision-only worker execution |
 | baseHeadFor(phase) | dispatchBaseHead=d98a6b2c6; executionBaseHead=worker captures; closureBaseHead=reviewer sets |
-| changedSetScope(phase) | exactly assessment plus worker return |
+| changedSetScope(phase) | worker: exactly assessment plus worker return; reviewer: those two plus paired baseline, work order, and completion review |
 | traceScope(phase, actor) | worker records reads, commands, outputs, status, and call counts; reviewer records independent matrix |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT; reviewer owns commits |
 | crossBatchIsolation | no unrelated dirty paths; stop if present |
@@ -503,14 +521,14 @@ reviewer-fast gate and exact source compatibility, not worker confidence.
 
 ## Closure Checklist
 
-- [ ] execution base and status captured
-- [ ] assessment and return are the only changed paths
-- [ ] 3/3 designs and 18/18 questions complete
-- [ ] exactly one terminal token selected
-- [ ] pre-implementation and worker-return fast gates recorded
-- [ ] zero external calls and no commit confirmed
-- [ ] reviewer decision recorded
-- [ ] material and continuity commits remain reviewer-owned
+- [x] execution base and status captured
+- [x] assessment and return were the only worker-changed paths
+- [x] 3/3 designs and 18/18 questions complete
+- [x] exactly one terminal token selected
+- [x] pre-implementation and worker-return fast gates recorded
+- [x] zero external calls and no worker commit confirmed
+- [x] reviewer decision and bounded semantic repair recorded
+- [x] material and continuity commits remain reviewer-owned
 
 ## Return-To-Orchestrator Conditions
 
@@ -550,23 +568,23 @@ release claim is authorized.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | `Status: DISPATCHED_DECISION_ONLY` | PENDING_WORKER_RETURN |
-| Completion or reviewer artifact | worker return addendum or completion | reviewer decision | PENDING_REVIEW |
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | worker return reviewer addendum | `REVIEWER_ACCEPTED_WITH_BOUNDED_SEMANTIC_REPAIR` | PASS |
 | Roadmap state | prior roadmap remains closed/parked | no rewrite | PASS |
-| Registry JSON | active state | generated only by steward | N/A with reason: separate continuity phase |
-| Registry Markdown | front door/handoff | steward-owned | N/A with reason: separate continuity phase |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | exact authority hashes regenerated before closure gates | PASS |
+| Registry Markdown | front door/handoff | closed-mode narrative follows separately | BLOCKED with reason: material closure precedes continuity synchronization |
 | External evidence digest | N/A with reason: zero external calls | none | N/A with reason |
 | System loop interlock | successor flag NO | packet literals | PASS |
-| Session continuity | separate post-material commit | steward-owned | PENDING |
+| Session continuity | bootstrap/state/front door/handoff | closed-mode synchronization follows material commit | N/A with reason: separate continuity commit required |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Required value | Observed value | Status |
 | --- | --- | --- |
-| source-backed architecture decision | worker assessment plus reviewer check | PENDING |
+| source-backed architecture decision | worker assessment plus reviewer bounded semantic repair | PASS |
 | runtime receipt | N/A with reason: no runtime execution | N/A_WITH_REASON |
-| external call count | zero | PENDING |
-| no-commit boundary | worker HEAD unchanged and staged diff empty | PENDING |
+| external call count | zero | PASS |
+| no-commit boundary | worker HEAD unchanged and staged diff empty | PASS |
 
 ## Claim Boundary
 

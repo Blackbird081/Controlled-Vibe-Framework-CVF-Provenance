@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCHED_DECISION_ONLY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: GC010-SCR-R2-T0A
 
@@ -138,23 +138,23 @@ artifact, runtime behavior, or release claim.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | paired work order | `Status: DISPATCHED_DECISION_ONLY` | PENDING_WORKER_RETURN |
-| Completion or reviewer artifact | worker return reviewer addendum or separate completion | reviewer-owned | PENDING_REVIEW |
+| Work order status | paired work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | worker return reviewer addendum | `REVIEWER_ACCEPTED_WITH_BOUNDED_SEMANTIC_REPAIR` | PASS |
 | Roadmap state | prior GC010 roadmap remains closed/parked | no historical rewrite | PASS |
-| Registry JSON | active session state | session-sync steward only | N/A with reason: dispatch material precedes continuity sync |
-| Registry Markdown | active handoff/front door | session-sync steward only | N/A with reason: separate continuity commit |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | exact authority hashes regenerated before closure gates | PASS |
+| Registry Markdown | active handoff/front door | closed-mode narrative follows separately | BLOCKED with reason: material closure precedes continuity synchronization |
 | External evidence digest | N/A with reason: no external evidence consumed | zero external calls required | N/A with reason |
 | System loop interlock | no successor opens automatically | explicit in work order | PASS |
-| Session continuity | separate post-commit sync | reviewer/closer owned | PENDING |
+| Session continuity | bootstrap/state/front door/handoff | closed-mode synchronization follows material commit | N/A with reason: separate continuity commit required |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Required value | Observed value | Status |
 | --- | --- | --- |
 | Runtime receipt | N/A with reason: documentation-only decision | N/A_WITH_REASON |
-| Worker return | exact assessment plus return | PENDING |
-| Provider calls | zero | PENDING |
-| Closure claim | bounded architecture decision only | PENDING |
+| Worker return | exact assessment plus return | reviewer inspected | PASS |
+| Provider calls | zero | worker evidence and reviewer inspection | PASS |
+| Closure claim | bounded architecture decision only | terminal retained after semantic repair | PASS |
 
 ## Claim Boundary
 
