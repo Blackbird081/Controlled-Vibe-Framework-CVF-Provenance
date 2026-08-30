@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t0a_closed_pass_bounded_partial_ready`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh decision-only T0B safe-resume contract packet in the same GC010 system chain; parked checkpoint=T1 implementation, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t0b_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T0B and return exactly two uncommitted contract artifacts; parked checkpoint=T1 implementation, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t0a_closed_pass_bounded_partial_ready`
-Current mode: `gc010_scr_r2_t0a_closed_pass_bounded_partial_ready`; previous mode marker: `gc010_scr_r2_t0a_dispatched_pending_worker_return`
-Previous mode: `gc010_scr_r2_t0a_dispatched_pending_worker_return`
+Current mode marker: `gc010_scr_r2_t0b_dispatched_pending_worker_return`
+Current mode: `gc010_scr_r2_t0b_dispatched_pending_worker_return`; previous mode marker: `gc010_scr_r2_t0a_closed_pass_bounded_partial_ready`
+Previous mode: `gc010_scr_r2_t0a_closed_pass_bounded_partial_ready`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t0a_closed_pass_bounded_partial_ready`. T0A is independently closed at material commit `8119e3e51` with terminal `PARTIAL_READY_REQUIRES_APPROVAL_ADAPTER`. Continue only the same system-chain objective: author a fresh decision-only T0B packet to freeze the versioned pending-execution schema, fail-closed persistence, atomic claim and safe internal resume-authority contract. T0B is not yet dispatched. T1 implementation, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t0b_dispatched_pending_worker_return`. Execute T0B from material dispatch `6017beaf2`. The worker creates exactly the pending-execution safe-resume contract assessment and worker return, leaves both uncommitted, and stops for independent review. T1 implementation, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

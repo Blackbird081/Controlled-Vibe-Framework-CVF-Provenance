@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_2026-08-30.md",
-    "baselineSha256": "0d9819bb490fb239a3d526cfd0413b8d7ea48375223a6f108c2fde6feca27d13",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T0A_AGENT_EXECUTION_API_CROSS_OWNER_CONTRACT_DECISION_2026-08-30.md",
-    "workOrderSha256": "f9cfe4f91421811ea748dcae15916ba2dc705af91fd1185f81236b0f29e555ab"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_2026-08-30.md",
+    "baselineSha256": "cbf3e84f16320e2c4224a057a9edbea23c1bdd956a4a87da170b77ce4c2c16eb",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_2026-08-30.md",
+    "workOrderSha256": "5e8fdb72ae92c28792918a089681f202462864527337c586cab7517d0161df7a"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t0a_closed_pass_bounded_partial_ready",
-  "previousMode": "gc010_scr_r2_t0a_dispatched_pending_worker_return",
+  "currentMode": "gc010_scr_r2_t0b_dispatched_pending_worker_return",
+  "previousMode": "gc010_scr_r2_t0a_closed_pass_bounded_partial_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Continue the same GC010 system-chain objective by authoring a fresh decision-only GC010-SCR-R2-T0B packet that freezes the versioned pending-agent-execution schema, fail-closed persistence, atomic claim semantics, and safe internal resume-authority contract. T0A is closed bounded at material commit 8119e3e51 with PARTIAL_READY_REQUIRES_APPROVAL_ADAPTER. T0B is not yet dispatched; T1 implementation, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute GC010-SCR-R2-T0B from committed dispatch 6017beaf2. The no-commit worker creates exactly the pending-execution safe-resume contract assessment and worker return, then stops for independent review. It must freeze or reject the schema, digest, state machine, fail-closed persistence, atomic claim and internal resume-grant contract. T1 implementation, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15421,5 +15421,17 @@
     "proof": "Worker-return fast gate passed, reviewer-fast passed 66/66, and material pre-commit/commit hook passed 87/87 with zero provider/live/network/browser/credential calls.",
     "nextAllowedMove": "Author a fresh decision-only T0B packet for the pending-execution schema, fail-closed persistence, atomic claim and safe resume-authority contract; do not open T1.",
     "claimBoundary": "T0A establishes architecture direction only. It opens no implementation successor, runtime behavior, provider/live call, public sync, deployment or production claim."
+  },
+  "gc010ScrR2T0BPendingAgentExecutionSafeResumeContractDecisionDispatch20260830": {
+    "status": "DISPATCHED_DECISION_ONLY_PENDING_WORKER_RETURN",
+    "materialCommit": "6017beaf2",
+    "predecessorMaterialCommit": "8119e3e51",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_2026-08-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T0B_PENDING_AGENT_EXECUTION_SAFE_RESUME_CONTRACT_DECISION_2026-08-30.md",
+    "objective": "Freeze or reject the exact pending-agent-execution schema, digest, lifecycle, fail-closed persistence, atomic claim and internal safe-resume authority contract.",
+    "workerBoundary": "One no-commit worker creates exactly the assessment and worker return. Runtime, route, package, store, test, checker, workflow and continuity paths are read-only.",
+    "proof": "Pre-dispatch passed 80/80 and material pre-commit/commit hook passed 87/87 with zero provider/live/network/browser/credential calls.",
+    "nextAllowedMove": "Worker executes the committed T0B decision packet and returns exactly two uncommitted artifacts for independent review.",
+    "claimBoundary": "No T1, runtime behavior, provider/live call, public sync, deployment or production claim is authorized."
   }
 }
