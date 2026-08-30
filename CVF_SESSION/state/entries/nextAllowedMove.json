@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "GC010-SCR-R1-T0 is DISPATCH_READY at material commit e0cd2ece2. Transfer the exact committed baseline and work order to one no-commit worker. The worker creates exactly the architecture audit and full worker return, makes zero provider calls, leaves HEAD unchanged and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. The orchestrator independently reviews before any T1 packet. T1-T4 remain held; T5, DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "GC010-SCR-R1-T0 is CLOSED_PASS_BOUNDED at material commit beffeafc6 with terminal token NO_VIABLE_CONSUMER_RETAIN_PARKED. The historical four-fact reopen condition remains unsatisfied, so T1-T5 do not open. The next allowed move is a fresh source-verified, non-duplicate value selection outside this parked lane. DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

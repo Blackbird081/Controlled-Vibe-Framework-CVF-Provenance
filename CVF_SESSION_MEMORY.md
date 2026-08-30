@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r1_t0_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer the committed GC010-SCR-R1-T0 packet to one no-commit worker and independently review its return; parked checkpoint=T1-T5, DEAR P4/P5, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r1_t0_closed_pass_bounded_retain_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=fresh source-verified non-duplicate value selection outside the parked GC010-SCR-R1 lane; parked checkpoint=T1-T5, DEAR P4/P5, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r1_t0_dispatched_pending_worker_return`
-Current mode: `gc010_scr_r1_t0_dispatched_pending_worker_return`; previous mode marker: `affd_r1_closed_pass_bounded_fresh_value_selection`
-Previous mode: `affd_r1_closed_pass_bounded_fresh_value_selection`
+Current mode marker: `gc010_scr_r1_t0_closed_pass_bounded_retain_parked`
+Current mode: `gc010_scr_r1_t0_closed_pass_bounded_retain_parked`; previous mode marker: `gc010_scr_r1_t0_dispatched_pending_worker_return`
+Previous mode: `gc010_scr_r1_t0_dispatched_pending_worker_return`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r1_t0_dispatched_pending_worker_return`. GC010-SCR-R1-T0 is committed at `e0cd2ece2`. The next move is to transfer the exact baseline and work order to one no-commit worker, then independently review its two pending outputs. The historical four-fact GC-010 reopen condition is not yet declared satisfied. T1-T4 remain held; T5, DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r1_t0_closed_pass_bounded_retain_parked`. GC010-SCR-R1-T0 is independently closed bounded at material commit `beffeafc6` with terminal token `NO_VIABLE_CONSUMER_RETAIN_PARKED`. The historical four-fact GC-010 reopen condition remains unsatisfied; T1-T5 do not open. The next move is a fresh source-verified, non-duplicate value selection outside this parked lane. DEAR P4/P5, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
