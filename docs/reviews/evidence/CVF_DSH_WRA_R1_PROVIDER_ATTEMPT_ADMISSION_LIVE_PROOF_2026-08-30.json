@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "cvf.dshWraR1LiveProofEvidence.v1",
+  "batchId": "DSH-WRA-R1",
+  "purpose": "Bounded operator-authorized secret-safe live proof that the new provider-attempt admission gate (EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts) is composed into the live /api/execute route and correctly admits and reconciles a real Alibaba qwen-flash-lane provider call before the network boundary.",
+  "runnerCommand": "node scripts/run_cvf_v3_execution_diagnostic_live_probe.mjs",
+  "runnerJustification": "Existing secret-safe governed live runner. Starts a real Next.js dev server, sends exactly one signed service-token POST to the live /api/execute route with an intentionally-unavailable model to force a classified provider failure without retry, and asserts secret-safety (no raw key/token/signature substrings) before printing. No new key-bearing command was invented; this is the narrowest existing runner that exercises the actual route path (as opposed to run_cvf_alibaba_live_canary.py / run_cvf_provider_live_canary.py, which each fire 6 scenario calls and would exceed the 2-call ceiling for this batch).",
+  "providerCallCeiling": 2,
+  "totalProviderCallsMadeThisBatch": 2,
+  "callLedger": [
+    {
+      "callIndex": 1,
+      "receiptId": "rcpt-env-mtf9ov8w-0xms1x",
+      "traceId": "env-mtf9ov8w-0xms1x",
+      "provider": "alibaba",
+      "model": "qwen-v3-diagnostic-intentionally-unavailable",
+      "httpStatus": 200,
+      "success": false,
+      "errorClass": "model_unavailable",
+      "retryable": false,
+      "latencyMs": 7553,
+      "status": "PASS",
+      "note": "Intended first bounded checkpoint invocation."
+    },
+    {
+      "callIndex": 2,
+      "receiptId": "rcpt-env-mtf9pb81-p91ubw",
+      "traceId": "env-mtf9pb81-p91ubw",
+      "provider": "alibaba",
+      "model": "qwen-v3-diagnostic-intentionally-unavailable",
+      "httpStatus": 200,
+      "success": false,
+      "errorClass": "model_unavailable",
+      "retryable": false,
+      "latencyMs": 6076,
+      "status": "PASS",
+      "note": "Worker error: this second invocation was run only to redirect stdout to a persisted evidence file, not to retry a failure. It consumed the batch's final allowed call. Disclosed here rather than omitted. Distinct receiptId/traceId confirm two genuinely independent live calls, not a cached duplicate. Both calls PASS with identical assertions; no ambiguous or failed run was repeated blindly."
+    }
+  ],
+  "reconciledAssertionsBothCalls": {
+    "liveRouteReached": true,
+    "intentionalFailure": true,
+    "diagnosticPresent": true,
+    "diagnosticClassified": true,
+    "diagnosticActionable": true,
+    "diagnosticSecretSafe": true,
+    "receiptPresent": true,
+    "receiptLive": true,
+    "rawSecretPrintedFalse": true,
+    "failedAssertions": []
+  },
+  "providerAttemptAdmissionEvidence": "Because the model is deliberately invalid, executeAI() returns a non-retryable 'model_unavailable' ExecutionResponse before output validation runs, so the retry loop's admitProviderAttempt('retry') path was not exercised by this specific live call (that path is proven by the deterministic/adversarial unit and integration tests in provider-attempt-admission.test.ts and route.provider-attempt-admission.test.ts). This live call instead proves: (1) the initial admitProviderAttempt('initial') gate fired and admitted before the real network call, since the route reached the live provider and returned a live evidenceMode receipt; (2) the response carries a live, secret-safe governanceEvidenceReceipt with no raw key/token exposure; (3) the route's existing provider-failure diagnostic classification composes correctly with the new admission gate with no regression.",
+  "secretSafetyDisposition": "No API key, service token, HMAC signature, or raw provider request/response body was printed by the runner or persisted in this evidence file. Only receiptId, traceId, HTTP status, classified diagnostic fields, and boolean assertions are recorded.",
+  "operatorCheckpoint": "OPERATOR_CHECKPOINT_SATISFIED per work order Operator Checkpoint block: deterministic gates passed first (19/19 new tests, full route.test.ts suite except one pre-existing unrelated failure, clean TypeScript), Alibaba qwen-lane only, existing secret-safe key loading only, exactly 2 calls for the entire DSH-WRA-R1 batch, no third call.",
+  "claimBoundary": "This evidence proves the new admission gate composes correctly with a real live provider call under a controlled failure path. It does not prove provider stability, does not constitute a broader live-canary pass, and makes no production-readiness or deployment claim."
+}

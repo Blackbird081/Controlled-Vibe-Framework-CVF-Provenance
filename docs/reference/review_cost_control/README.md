@@ -6,16 +6,16 @@ Status: ACTIVE_REFERENCE
 
 docType: reference
 
-Date: 2026-07-12
+Date: 2026-08-29
 
 Batch ID: SOT3-RCS-T1
 
 ## Purpose
 
 Stable front door for the CVF review-cost and diminishing-return evidence-
-shape family. This directory answers "what must a completion review record
-about its own repair-round cost, and when." It does not decide whether a
-review's findings are correct or whether continuing repair is worth it.
+shape family. This directory answers what a completion review must record and
+what a work order must prove before an initial or rework dispatch. It does not
+decide whether a review's findings are correct.
 
 The paired standard is:
 
@@ -28,6 +28,10 @@ Applies to every changed `docs/reviews/*.md` artifact declaring
 standalone declaration `Review-Cost Telemetry: REQUIRED`. Files outside that
 artifact shape, archived reviews, and unchanged historical reviews are out of
 scope.
+
+Every changed non-archived work order declaring `docType: work_order` is also
+in scope for the separate pre-dispatch convergence and cumulative external-
+invocation control owned by the paired standard.
 
 ## Family Contents
 
@@ -99,8 +103,9 @@ and the accepted SOT3-RAP-T0 completion review.
 ## Enforcement Surface
 
 `governance/compat/check_review_cost_control.py` is a forward-only checker
-wired into the reviewer-fast, pre-commit, and pre-push local governance hook
-catalogs. It enforces field presence, value shape, allowed
+wired into the common autorun bundle plus reviewer-fast, pre-commit, and
+pre-push local governance hooks. It enforces field presence, value shape,
+work-order convergence/invocation admission, allowed
 `stopDisposition` tokens, and the round-three escalation rule. It does not
 score semantic value, judge root-cause independence, or force a review to
 stop.
@@ -117,8 +122,8 @@ stop.
 
 This README is the family front door only. It does not itself define the
 field contract (see the paired standard), does not certify checker
-correctness, and does not authorize SOT3 runtime, provider/live quota
-integration, or public-sync.
+correctness, and does not authorize SOT3 runtime, provider/live token metering,
+out-of-band launcher interception, or public-sync.
 
 ## Public Export Disposition
 

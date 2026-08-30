@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "cvf.live-run.diagnostic.v1",
+  "recordedAt": "2026-08-29T23:55:00+07:00",
+  "subject": "Brigade residual absorption representative runtime pilot",
+  "attempts": [
+    {
+      "attempt": 1,
+      "verdict": "FAIL_POST_PROVIDER_ASSERTION",
+      "providerCallCompleted": true,
+      "failure": "Context fixture used 7000-character results, below the real packager hard per-result cap of 20000 characters; NOT_REQUIRED was correct and the fixture's COMPACTED assertion was wrong.",
+      "secretSafe": true,
+      "rawKeyRecorded": false,
+      "rawHeadersRecorded": false,
+      "rawProviderBodyRecorded": false
+    },
+    {
+      "attempt": 2,
+      "verdict": "PASS",
+      "providerCallCompleted": true,
+      "fixtureCorrection": "Each tool result was increased to 25000 characters, above the real 20000-character hard cap.",
+      "evidence": "docs/reviews/evidence/brigade-residual-absorption-runtime-pilot-2026-08-29.json",
+      "secretSafe": true
+    },
+    {
+      "attempt": "full-regression-1",
+      "verdict": "FAIL_DESIGN_REGRESSION",
+      "providerCallCompleted": false,
+      "failure": "The first durable-origin implementation conflated execution actorId with memory ownership principal and blocked a legitimate reviewer read path.",
+      "correction": "Added explicit persisted originPrincipalId, kept actorId as audit actor, enforced exact origin only for origin-bound durable records, and retained compatibility for legacy records.",
+      "secretSafe": true
+    },
+    {
+      "attempt": 3,
+      "verdict": "PASS_AFTER_ORIGIN_MODEL_CORRECTION",
+      "providerCallCompleted": true,
+      "evidence": "docs/reviews/evidence/brigade-residual-absorption-runtime-pilot-2026-08-29.json",
+      "secretSafe": true
+    }
+  ],
+  "diagnosis": "Test-fixture threshold mismatch; no runtime implementation defect identified.",
+  "boundedNextMove": "COMPLETE"
+}

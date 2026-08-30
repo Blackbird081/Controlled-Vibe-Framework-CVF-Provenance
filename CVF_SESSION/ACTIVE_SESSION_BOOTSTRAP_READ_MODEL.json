@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate",
+  "currentMode": "affd_r1_closed_pass_bounded_fresh_value_selection",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "EACQ-FV-EV2 is closed bounded at material 4ffa0df23 and closure 79eb1426c with verdict PROMISING_NON_CAUSAL; exact material-range pre-closure proof passed 79/79. Next allowed move: select a new roadmap only through a fresh serious, source-backed, non-duplicate, value-exceeds-cost gate. No successor opens automatically. UAA, code, checker, runtime, provider/live, public, deploy, push, secrets, compaction, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "DEAR-LP P4 is BLOCKED_ENVIRONMENT_NOT_DETACHED after its single attempted invocation; no retry or P5 is authorized. AFFD-R1 is CLOSED_PASS_BOUNDED after one consolidated worker repair and one disclosed reviewer repair, with focused/adversarial 41/41 and related 33/33 PASS. Next allowed move: select one fresh source-backed non-duplicate roadmap whose expected value exceeds time, latency, token and quota cost. Provider/live, commit, public sync, deployment and automatic successor remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_2026-08-28.md",
-    "baselineSha256": "b35628906e6a6039f295ea1d5a644b9120592b7e26ce8126b3d66207e3e57fa4",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_2026-08-28.md",
-    "workOrderSha256": "da0034dbcbf0dff58b8a973c4a7f4a48489e8f14821bd37c1d39880efb1311ea"
+    "baselinePath": "docs/baselines/CVF_GC018_DEAR_LP_P4_R1_DETACHED_EXTERNAL_AGENT_REPRESENTATIVE_TRANSPORT_PILOT_2026-08-30.md",
+    "baselineSha256": "65ace853be940b95fe02deb69757cbefa6432003888bc577e2e248983f76db13",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DEAR_LP_P4_R1_DETACHED_EXTERNAL_AGENT_REPRESENTATIVE_TRANSPORT_PILOT_2026-08-30.md",
+    "workOrderSha256": "0611e6f869d9c707305af949ae29120bbeeaa65d4f1079bf44f4e98d0d39c8ea"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

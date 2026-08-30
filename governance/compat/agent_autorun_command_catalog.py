@@ -96,6 +96,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "review cost and rework dispatch convergence",
+            "governance/compat/check_review_cost_control.py",
+            base,
+            head,
+        ),
+        _range_command(
             "worker-return quality gate",
             "governance/compat/check_worker_return_quality_gate.py",
             base,

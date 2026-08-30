@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "cvf.brigade.residual.absorption.runtime-pilot.v1",
+  "generatedAt": "2026-08-29T16:57:07.326Z",
+  "verdict": "PASS",
+  "provider": {
+    "name": "alibaba-dashscope",
+    "model": "qwen-flash",
+    "calls": 1,
+    "latencyMs": 367
+  },
+  "memoryTrust": {
+    "protectedPoisoningDenied": true,
+    "exactPrincipalRecallIsolation": true,
+    "typedCorrectionApplied": true,
+    "durableRestartOriginIsolation": true
+  },
+  "approvalExecution": {
+    "pendingCountBeforeSettlement": 1,
+    "exactBindingHash": "2c1fe2bab3ad66e088199251fe34dc2f0dde22eb84ee700635cbe5bc74f68ead",
+    "settlementDecision": "approved",
+    "pendingCountAfterSettlement": 0,
+    "providerExecutedExactlyOnce": true,
+    "outputHash": "a87fef86c4e01e0d11a129f11b7a7335e070b060c0877d31f3e745a6769a62ef"
+  },
+  "contextPacking": {
+    "disposition": "COMPACTED",
+    "singleResultCompactions": 2,
+    "aggregateCompactions": 0,
+    "importantTailPreserved": true,
+    "lateCompactionDisposition": "REFUSE_LATE_COMPACTION"
+  },
+  "secretsRecorded": false
+}

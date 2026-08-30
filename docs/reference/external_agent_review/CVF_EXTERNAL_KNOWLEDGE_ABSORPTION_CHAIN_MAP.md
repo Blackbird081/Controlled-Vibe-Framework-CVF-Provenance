@@ -60,14 +60,21 @@ standard grants a narrower exception:
    `CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md`.
 5. Map accepted or deferred value to an existing CVF owner surface.
 6. Record accept, adapt, defer, reject, or block disposition.
-7. If implementation, source mutation, runtime claim, or roadmap execution is
-   needed, open fresh GC-018 and a source-verified work order.
-8. Execute the matching autorun gates before dispatch, implementation,
-   closure, commit, or push.
+7. Immediately perform useful, reversible, provider-free work inside an
+   existing owner when scope and authority already permit it; docs-only output
+   is `KNOWLEDGE_NORMALIZED_RUNTIME_PENDING`, not completed absorption.
+8. Name the non-test consumer, integration evidence, use proof, rollback and
+   absorption maturity. Foundation uplift reaches completion only at
+   `ABSORPTION_COMPLETE_USE_PROVEN`.
+9. Pause with a concrete proposal before runtime execution, provider/live
+   proof, deployment, public mutation, credentials, destructive effects, or a
+   material owner choice requiring operator authority.
+10. Execute the matching autorun gates before dispatch, implementation,
+    closure, commit, or push.
 
 Short form:
 
-`External/corpus/repo input -> input router -> old authority/blind-spot/corpus guards -> external-agent packet/checklist when applicable -> returned-output absorption table when applicable -> promote/adapt/defer/reject/block -> GC-018/work order/source verification/autorun when implementation or governed action is needed`
+`External/corpus/repo input -> source/owner verification -> immediate safe CVF-native implementation -> named consumer -> operator checkpoint before runtime execution/external effect -> use proof -> ABSORPTION_COMPLETE_USE_PROVEN`
 
 ## Input Type Router
 

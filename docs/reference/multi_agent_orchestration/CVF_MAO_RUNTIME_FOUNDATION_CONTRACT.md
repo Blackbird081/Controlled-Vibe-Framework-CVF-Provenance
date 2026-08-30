@@ -182,6 +182,13 @@ Multi-agent admission requires all of: decomposable scopes, non-overlapping
 or explicitly serialized writes, measurable evidence value, a bounded
 budget, one closer, and a source packet for every role.
 
+The cross-control failure semantics for reservation, global/parent accounting,
+descendant abort, exactly-once release and serialized parent completion are
+normatively composed in
+`docs/reference/multi_agent_orchestration/CVF_MAO_ATOMIC_DELEGATION_LIFECYCLE_COMPOSITION_STANDARD.md`.
+Any future runtime implementation must interpret the controls below through
+that composition.
+
 ## Cost / Token / Latency Controls
 
 - Default fan-out is 1; initial pilot maximum is 3 concurrent execution

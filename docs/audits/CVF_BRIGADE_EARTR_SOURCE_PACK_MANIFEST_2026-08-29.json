@@ -1,0 +1,27 @@
+{
+  "schema": "cvf.localExternalReturnCorpusManifest.v1",
+  "corpusId": "brigade-eartr-source-pack-2026-08-29",
+  "root": ".private_reference/legacy/CVF 13.08/BRIGADE_EARTR_SOURCE_PACK_2026-08-29/",
+  "snapshotDate": "2026-08-29",
+  "fileCount": 11,
+  "totalBytes": 93583,
+  "pathManifestHash": "e52530da25bb780e4eb8d48ce782dca733a523b9cf6e6f7e2e5ccb43856ddd05",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "files": [
+    { "path": "CANDIDATE_LEDGER.md", "bytes": 24565, "sha256": "96181d6e0419c89b17818c43054581d2c9e6175a64bf5aad81aa3dc0854fb59c" },
+    { "path": "CLAIM_BOUNDARY.md", "bytes": 3038, "sha256": "b3f76de98133367bf2b434d7975c2924697c482d01f45bfdf9dabc2427ffd9d5" },
+    { "path": "DECISION_LOG.md", "bytes": 3470, "sha256": "cf7539e1b23f064f932b12bc0b6dfb7c07f2358a47db58b3316244b5e7588695" },
+    { "path": "EXTERNAL_AGENT_RETURN_MANIFEST.json", "bytes": 37229, "sha256": "cf5d923e7e0268909da68191e0bedbd068f79336be91a66c6d788a27ed2ff690" },
+    { "path": "FILE_INVENTORY.sha256", "bytes": 891, "sha256": "0fb9d09be1334b40b4c847c066dba0c5997942ce18ee5bf9c1668f04c7adca5e" },
+    { "path": "GATE_A_SOURCE_OWNER_OVERLAP.md", "bytes": 1384, "sha256": "290fb0f5d6ec3a5253a3b38226cd91e1eb7a84b7ed113e119567be3d973de87a" },
+    { "path": "LOCAL_RECONCILIATION_HANDOFF.md", "bytes": 3031, "sha256": "fd370f8897562c14c1969a98eb873e5386b6fd9b4c140398e394d4718585d98b" },
+    { "path": "README.md", "bytes": 4894, "sha256": "5a628155989e7dd8d677fe7c5e4edfbf73147d57126642c4fafd5dd870fbdbb5" },
+    { "path": "SOURCE_MANIFEST.md", "bytes": 4305, "sha256": "31070747026dab41143b86bdee2183f093d4366577d163f414cd3055ae932766" },
+    { "path": "TEST_EVIDENCE.md", "bytes": 1497, "sha256": "e12f5285d76ad33f84aeb8828ff7df0f3818e4069a35614b1f93200dd34dc899" },
+    { "path": "scripts/validate_source_pack.py", "bytes": 9279, "sha256": "d3df4cd9bc125485f60bf26f3df9e6da33be4386054f7016dcf73f5ac277dda3" }
+  ],
+  "declaredExclusions": [],
+  "unreadableFiles": [],
+  "claimBoundary": "Immutable local return-corpus inventory only; no semantic acceptance, runtime, provider, public, production, or implementation claim."
+}

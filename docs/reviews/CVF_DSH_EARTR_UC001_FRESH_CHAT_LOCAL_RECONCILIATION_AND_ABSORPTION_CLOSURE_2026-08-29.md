@@ -8,6 +8,33 @@ docType: review
 
 Date: 2026-08-29
 
+## Bounded-Claim Scope Correction (DSH-WRA-R1, 2026-08-30)
+
+This closure proves only bounded reconciliation of the **seven-file external-agent
+return packet** (`.private_reference/legacy/CVF 13.08/DEEPSEEK_HARNESS_EARTR_1_2_USE_CASE_001_FRESH_CHAT/`)
+against the pinned upstream mirror identity. It does **not** prove whole-repository
+absorption of the pinned 8,953-file DeepSeek Harness mirror, and it made no
+runtime-integration or use-proof claim (its own External Absorption Core block
+below already records `Absorption completion status: NO_RUNTIME_VALUE_WITH_REASON`
+and `Named runtime consumer: none`). Any reference below to the mirror's
+"8,953-file" identity is scope-verification evidence for the pinned commit only,
+not a claim that this closure processed or reconciled that whole corpus.
+
+The whole-repository manifest, per-file ledger, semantic-region ledger, and the
+first runtime-integrated delta (provider-attempt/quota admission composition in
+the existing Web execute route) are covered by the separate, later batch
+DSH-WRA-R1: `docs/reviews/CVF_DSH_WRA_R1_WHOLE_REPOSITORY_ABSORPTION_AND_RUNTIME_REALIZATION_WORKER_RETURN_2026-08-30.md`.
+The corpus registry now carries these as two distinct scoped entries:
+`docs/corpus-intelligence/registry/entries/dsh-eartr-uc001-fresh-chat-return-absorption.json`
+(seven-file return packet, fileCount=7) and
+`docs/corpus-intelligence/registry/entries/dsh-wra-r1-whole-repository-absorption.json`
+(whole pinned mirror, fileCount=8953).
+
+This correction narrows how this closure may be cited going forward. It does not
+alter any historical evidence, source verification row, or disposition recorded
+below, all of which remain accurate to the seven-file scope they were always
+evaluated against.
+
 Batch ID: DSH-EARTR-UC001
 
 Mixed-origin derived synthesis: REQUIRED
@@ -65,6 +92,11 @@ value, and rejecting duplicate owner or implementation work.
 ## Findings / Position
 
 `ABSORPTION_COMPLETE_NO_IMPLEMENTATION_AUTHORITY`
+
+This status describes only the bounded seven-file return-packet reconciliation
+in this closure's own scope (see the Bounded-Claim Scope Correction above); it
+is not a whole-repository or runtime-complete absorption claim for the pinned
+8,953-file DeepSeek Harness mirror.
 
 Five candidates are already implemented or governed by exact current CVF
 owners and close as `NO_NEW_VALUE`. DSH-001 retains a bounded existing-owner
@@ -151,7 +183,24 @@ discarded. No public-owner miss was converted into a new Local CVF owner.
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE; semantic result ENRICH_EXISTING_OWNER=1, DEFER=1, NO_NEW_VALUE=5 |
 | Owner-surface map | inline Existing Owner Map with exact current implementation paths |
 | Unresolved items | 0 corpus files; two resolved conditionally parked value candidates |
+| Absorption maturity | NO_RUNTIME_VALUE_WITH_REASON |
+| Named runtime consumer | none: no candidate was integrated |
+| Integration evidence | none: no candidate was integrated |
+| Use proof | none: no candidate was activated |
+| Operator checkpoint | not required for this knowledge-only closure |
+| Absorption completion status | NO_RUNTIME_VALUE_WITH_REASON |
 | Completion claim boundary | complete bounded reconciliation and absorption closure; no implementation/runtime/provider/public/production expansion |
+
+Absorption maturity and completion status rationale: five candidates close
+`NO_NEW_VALUE` against exact current owners and two remain conditionally
+parked pending a future conjunctive value gate; no candidate reached runtime
+integration or use, so `NO_RUNTIME_VALUE_WITH_REASON` applies to both fields
+per the standard's maturity/completion-status match rule. No runtime
+consumer, integration evidence, use proof, or operator checkpoint exists
+because no candidate was activated; the Required Absorption Table and
+Existing Owner Map record source-verified overlap against current owners
+instead, and the focused current-owner tests cited in Scope / Methodology
+verify existing behavior only, not new DSH-derived use.
 
 ### Seven-File Processing Ledger
 

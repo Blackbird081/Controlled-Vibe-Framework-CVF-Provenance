@@ -171,6 +171,19 @@ export type {
   ControlledMemoryScope, ControlledMemorySensitivity,
 } from "./controlled.memory.gateway.contract";
 export {
+  buildControlledMemoryOriginKey,
+  deriveMemorySourceTrust,
+  isTrustedMemorySource,
+  validateMemoryTrustAdmission,
+} from "./controlled.memory.trust.contract";
+export type {
+  ControlledMemoryLink,
+  ControlledMemoryLinkType,
+  ControlledMemoryOrigin,
+  ControlledMemorySegmentClass,
+  ControlledMemorySourceTrust,
+} from "./controlled.memory.trust.contract";
+export {
   applyMemoryPrivacyFilter,
   APPROVED_MEMORY_CAPTURE_SOURCES,
   isApprovedMemoryCaptureSource,

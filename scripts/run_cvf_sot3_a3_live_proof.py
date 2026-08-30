@@ -42,6 +42,7 @@ LIVE_TEST_RELATIVE_PATH = "src/app/api/execute/route.sot3-activation.alibaba.liv
 
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 from _local_env import bootstrap_repo_env  # noqa: E402
+from cvf_provider_execution_grant import build_provider_execution_grant_env  # noqa: E402
 
 ALIBABA_KEY_ALIASES = (
     "ALIBABA_API_KEY",
@@ -210,6 +211,7 @@ def run_live_test(
     import os
 
     permit_token = secrets.token_urlsafe(32)
+    expires_at_epoch_ms = int(datetime.now(timezone.utc).timestamp() * 1000) + 120_000
     permit = {
         "schemaVersion": "cvf.sot3ActA3RunnerPermit.v1",
         "batchId": "SOT3-ACT-A3R",
@@ -217,7 +219,7 @@ def run_live_test(
         "observationPathHash": hashlib.sha256(
             str(observation_output_path).encode("utf-8")
         ).hexdigest(),
-        "expiresAtEpochMs": int(datetime.now(timezone.utc).timestamp() * 1000) + 120_000,
+        "expiresAtEpochMs": expires_at_epoch_ms,
     }
     permit_path.write_text(json.dumps(permit, sort_keys=True) + "\n", encoding="utf-8")
     env_overrides = {
@@ -225,14 +227,33 @@ def run_live_test(
         "CVF_SOT3_A3_RUN_PERMIT_PATH": str(permit_path),
         "CVF_SOT3_A3_RUN_PERMIT_TOKEN": permit_token,
         "CVF_SOT3_A3_CALL_LEDGER_PATH": str(call_ledger_path),
+        **build_provider_execution_grant_env(
+            grant_id=f"sot3-a3-{permit['tokenHash'][:24]}",
+            subject_agent_id="cvf-sot3-a3-live-runner",
+            delegation_id="SOT3-ACT-A3",
+            provider="alibaba",
+            max_calls=1,
+            expires_at_epoch_ms=expires_at_epoch_ms,
+        ),
     }
 
     merged_env = {**os.environ, **env_overrides}
+    # Keep the governed child on the same key authority as the release gate
+    # and live E2E lane when aliases conflict. Do not mutate the operator's
+    # process environment.
+    if merged_env.get("DASHSCOPE_API_KEY", "").strip():
+        merged_env.pop("ALIBABA_API_KEY", None)
     npx_executable = shutil.which("npx.cmd") or shutil.which("npx")
     if not npx_executable:
         return 127, "Local launch failed: npx executable was not found on PATH.\n", 0
+    # `--mode live` is required for vitest.config.ts's EAFR-R1D collection
+    # barrier to even include this live test file in the run (the config
+    # excludes `src/**/*.live.test.{ts,tsx}` unless Vite mode is exactly
+    # "live"). It authorizes test COLLECTION only. Provider execution needs
+    # the composed pair above: the one-use receipt-bound runner permit and
+    # the independently evaluated one-call orchestrator grant.
     result = subprocess.run(
-        [npx_executable, "vitest", "run", LIVE_TEST_RELATIVE_PATH],
+        [npx_executable, "vitest", "run", "--mode", "live", LIVE_TEST_RELATIVE_PATH],
         cwd=CVF_WEB_DIR,
         env=merged_env,
         capture_output=True,

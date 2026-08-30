@@ -1,0 +1,98 @@
+{
+  "date": "2026-08-30",
+  "gate_result": "FAIL",
+  "checks": [
+    {
+      "name": "Capability environment preflight",
+      "status": "PASS",
+      "message": "Capability environment preflight PASS",
+      "detail": [
+        "git:AVAILABLE",
+        "python:AVAILABLE",
+        "node:AVAILABLE",
+        "npm:AVAILABLE",
+        "npx:AVAILABLE"
+      ]
+    },
+    {
+      "name": "Web build (npm run build)",
+      "status": "PASS",
+      "message": "Build succeeded",
+      "detail": []
+    },
+    {
+      "name": "TypeScript check (guard contract)",
+      "status": "PASS",
+      "message": "TypeScript check clean",
+      "detail": []
+    },
+    {
+      "name": "Provider readiness",
+      "status": "PASS",
+      "message": "CERTIFIED lanes: 3 \u2014 status: CERTIFIED",
+      "detail": []
+    },
+    {
+      "name": "Secrets scan",
+      "status": "PASS",
+      "message": "No secret patterns detected",
+      "detail": []
+    },
+    {
+      "name": "Docs governance (RC docs present)",
+      "status": "PASS",
+      "message": "All 3 required RC docs present",
+      "detail": []
+    },
+    {
+      "name": "E2E Playwright UI (mock)",
+      "status": "PASS",
+      "message": "Playwright UI mock suite passed",
+      "detail": [
+        "\u001b[2m[WebServer] \u001b[22m(Use `node --trace-warnings ...` to show where the warning was created)"
+      ]
+    },
+    {
+      "name": "E2E Playwright Governance (live)",
+      "status": "FAIL",
+      "message": "Playwright live governance suite failed",
+      "detail": [
+        "    Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed",
+        "    Error: element(s) not found",
+        "    test-results\\noncoder-governance-live-i-64068-tails-\u2014-no-AI-call-required\\test-failed-1.png",
+        "    Error Context: test-results\\noncoder-governance-live-i-64068-tails-\u2014-no-AI-call-required\\error-context.md",
+        "    Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed",
+        "    Error: element(s) not found",
+        "    test-results\\governance-gate-live-bypas-fd025--high-risk-output-correctly\\test-failed-1.png",
+        "    Error Context: test-results\\governance-gate-live-bypas-fd025--high-risk-output-correctly\\error-context.md"
+      ]
+    },
+    {
+      "name": "SOT3 canonical release proof (A5)",
+      "status": "FAIL",
+      "message": "SOT3 proof did not PASS",
+      "detail": [
+        "a4_diagnostic_missing_or_unreadable",
+        "a4_live_receipt_missing_or_unreadable"
+      ]
+    }
+  ],
+  "sot3": {
+    "admissionFailures": [
+      "a4_diagnostic_missing_or_unreadable",
+      "a4_live_receipt_missing_or_unreadable"
+    ],
+    "approvedContextIncluded": null,
+    "claim": null,
+    "durableOwnerCorrelationComplete": false,
+    "httpStatus": null,
+    "localNegativeGatePassed": false,
+    "negativeCaseCount": null,
+    "overall": "FAIL",
+    "providerSuccess": null,
+    "recoveryProviderCallCount": null,
+    "rollbackProviderCallCount": null,
+    "traceCount": null,
+    "zeroProviderCallCaseCount": null
+  }
+}

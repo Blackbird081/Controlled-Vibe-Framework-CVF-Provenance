@@ -2,6 +2,8 @@
 
 Memory class: governed-worker-dispatch
 
+docType: work_order
+
 Status: HOLD_PENDING_OPERATOR_DECISION
 
 Batch ID: WOAS-R2-GOLDEN
@@ -49,6 +51,31 @@ FILL_ME: state the mission prompt for this work order.
 | checkerReadAheadConfirmation | FILL_ME (list `governance/compat/check_*.py` paths read before authoring) |
 | docOnlyNewFields | FILL_ME (list new doc-only field names introduced by this dispatch) |
 | claimBoundary | Dispatch authoring provenance only; no runtime/provider/live/public/Web/MCP/model-router behavior claim. |
+
+
+## Review Dispatch Convergence And Invocation Budget Control
+
+Review-Dispatch Convergence Control: REQUIRED
+
+dispatchKind: INITIAL
+dispatchSurface: INTERNAL_AGENT
+parentAssignmentId: WOAS-R2-GOLDEN
+reviewRoundCount: 0
+priorFindingSetDigest: NOT_APPLICABLE_INITIAL_DISPATCH
+dependencyAuditDisposition: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+reworkFindingDisposition: NOT_APPLICABLE_INITIAL_DISPATCH
+newIndependentCriticalEvidence: NONE
+regressionGuardDisposition: BASELINE_NEGATIVE_TESTS_PLANNED
+cumulativeExternalInvocationCount: 0
+externalInvocationCeiling: 0
+usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
+quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
+nextDispatchDisposition: INITIAL_DISPATCH
+rootCauseClusterId: NOT_APPLICABLE_INITIAL_DISPATCH
+reworkGeneration: 0
+consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+successorTrancheOpened: NO
+implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
 
 
 ## Worker Autonomy / No-Question Rule

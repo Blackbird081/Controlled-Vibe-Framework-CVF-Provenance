@@ -37,6 +37,8 @@ LIVE_TEST_RELATIVE_PATH = "src/app/api/execute/route.sot3-activation.alibaba.liv
 
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 from _local_env import bootstrap_repo_env  # noqa: E402
+from cvf_provider_execution_grant import build_provider_execution_grant_env  # noqa: E402
+from cvf_sot3_a4_evidence import _CALL_COUNT_EVIDENCE_MISMATCH_DIAGNOSTIC, _CallCountEvidenceMismatch, _conservative_call_count_upper_bound, _extract_valid_blocked_observation_diagnostic, _is_valid_bool, _is_valid_optional_http_status, _is_valid_optional_latency_ms, _reconcile_call_count_evidence, build_diagnostic_receipt  # noqa: E402
 
 ALIBABA_KEY_ALIASES = (
     "ALIBABA_API_KEY",
@@ -45,10 +47,6 @@ ALIBABA_KEY_ALIASES = (
     "CVF_ALIBABA_API_KEY",
 )
 
-# Each matrix row maps to one or more real-owner assertionResults fullName
-# substrings across the four focused test files. A row is GREEN only when
-# every mapped test name is present and passed in this run's fresh JSON
-# reporter output.
 MATRIX_ROWS: list[dict[str, Any]] = [
     {"case": "empty source input", "owner": "Refinery plus product adapter", "requiredResult": "not approved", "providerCallAssertion": "zero", "testNameSubstrings": ["returns NO_CONTEXT with no chunks"]},
     {"case": "structurally invalid source", "owner": "Refinery plus product adapter", "requiredResult": "REFINERY_NOT_READY", "providerCallAssertion": "zero", "testNameSubstrings": ["rejects with REFINERY_NOT_READY on incorrect expected content hash"]},
@@ -74,7 +72,6 @@ MATRIX_ROWS: list[dict[str, Any]] = [
 
 LOCAL_MATRIX_CASES = [row["case"] for row in MATRIX_ROWS if row["case"] != "bounded live recovery"]
 
-# (cwd, args, package label) for each local test invocation this runner needs.
 LOCAL_TEST_INVOCATIONS: list[dict[str, Any]] = [
     {
         "label": "cvf-truth-kernel-negative-matrix",
@@ -351,16 +348,17 @@ def resolve_execution_base_head(explicit: str) -> str:
     return result.stdout.strip() if result.returncode == 0 else "UNKNOWN"
 
 
-def run_live_test(observation_output_path: Path, permit_path: Path, call_ledger_path: Path) -> tuple[int, str, int]:
+def run_live_test(observation_output_path: Path, permit_path: Path, call_ledger_path: Path) -> tuple[int, str, int | None]:
     import os
 
     permit_token = secrets.token_urlsafe(32)
+    expires_at_epoch_ms = int(datetime.now(timezone.utc).timestamp() * 1000) + 120_000
     permit = {
         "schemaVersion": "cvf.sot3ActA3RunnerPermit.v1",
         "batchId": "SOT3-ACT-A3R",
         "tokenHash": hashlib.sha256(permit_token.encode("utf-8")).hexdigest(),
         "observationPathHash": hashlib.sha256(str(observation_output_path).encode("utf-8")).hexdigest(),
-        "expiresAtEpochMs": int(datetime.now(timezone.utc).timestamp() * 1000) + 120_000,
+        "expiresAtEpochMs": expires_at_epoch_ms,
     }
     permit_path.write_text(json.dumps(permit, sort_keys=True) + "\n", encoding="utf-8")
     env_overrides = {
@@ -368,13 +366,35 @@ def run_live_test(observation_output_path: Path, permit_path: Path, call_ledger_
         "CVF_SOT3_A3_RUN_PERMIT_PATH": str(permit_path),
         "CVF_SOT3_A3_RUN_PERMIT_TOKEN": permit_token,
         "CVF_SOT3_A3_CALL_LEDGER_PATH": str(call_ledger_path),
+        **build_provider_execution_grant_env(
+            grant_id=f"sot3-a4-{permit['tokenHash'][:24]}",
+            subject_agent_id="cvf-sot3-a4-live-runner",
+            delegation_id="SOT3-ACT-A4",
+            provider="alibaba",
+            max_calls=1,
+            expires_at_epoch_ms=expires_at_epoch_ms,
+        ),
     }
     merged_env = {**os.environ, **env_overrides}
+    # The release gate and live Playwright lane authorize DASHSCOPE_API_KEY.
+    # If a stale ALIBABA_API_KEY also exists, the web resolver would otherwise
+    # choose that different credential first and split one governed run across
+    # two key authorities. Normalize only the child environment: preserve the
+    # operator environment, keep DASHSCOPE as the proven authority, and let
+    # the test report the truthful DASHSCOPE alias.
+    if merged_env.get("DASHSCOPE_API_KEY", "").strip():
+        merged_env.pop("ALIBABA_API_KEY", None)
     npx = npx_executable()
     if not npx:
-        return 127, "Local launch failed: npx executable was not found on PATH.\n", 0
+        return 127, "Local launch failed: npx executable was not found on PATH.\n", None
+    # `--mode live` is required for vitest.config.ts's EAFR-R1D collection
+    # barrier to even include this live test file in the run (the config
+    # excludes `src/**/*.live.test.{ts,tsx}` unless Vite mode is exactly
+    # "live"). It authorizes test COLLECTION only. Provider execution needs
+    # the composed pair above: the one-use receipt-bound runner permit and
+    # the independently evaluated one-call orchestrator grant.
     result = subprocess.run(
-        [npx, "vitest", "run", LIVE_TEST_RELATIVE_PATH],
+        [npx, "vitest", "run", "--mode", "live", LIVE_TEST_RELATIVE_PATH],
         cwd=CVF_WEB_DIR,
         env=merged_env,
         capture_output=True,
@@ -384,14 +404,19 @@ def run_live_test(observation_output_path: Path, permit_path: Path, call_ledger_
         check=False,
     )
     output = (result.stdout or "") + (result.stderr or "")
-    observed_call_count = 0
+    # `None` means the ledger is genuinely unavailable/unreadable -- distinct
+    # from a real, ledger-reported count of 0 (the fetch observer ran and
+    # confirmed zero DashScope calls). Callers must never conflate the two.
+    ledger_call_count: int | None = None
     if call_ledger_path.exists():
         try:
             ledger = json.loads(call_ledger_path.read_text(encoding="utf-8"))
-            observed_call_count = int(ledger.get("observedCallCount", 0))
+            raw_count = ledger.get("observedCallCount")
+            if isinstance(raw_count, int) and not isinstance(raw_count, bool):
+                ledger_call_count = raw_count
         except (OSError, ValueError, TypeError, json.JSONDecodeError):
-            observed_call_count = 0
-    return result.returncode, output, observed_call_count
+            ledger_call_count = None
+    return result.returncode, output, ledger_call_count
 
 
 def cmd_live(args: argparse.Namespace) -> int:
@@ -448,21 +473,59 @@ def cmd_live(args: argparse.Namespace) -> int:
         observation_path = Path(tmp) / "observation.json"
         permit_path = Path(tmp) / "runner-permit.json"
         call_ledger_path = Path(tmp) / "call-ledger.json"
-        returncode, output, observed_call_count = run_live_test(observation_path, permit_path, call_ledger_path)
-        print(output[-4000:])
-        if returncode != 0 or not observation_path.exists():
-            diagnostic = {
-                "stage": "provider",
-                "class": "unknown_error",
-                "retryable": False,
-                "userAction": "inspect_receipt",
-                "safeMessage": "The live test process failed or did not produce an observation file. See captured stdout/stderr for a secret-safe summary.",
-            }
+        returncode, output, ledger_call_count = run_live_test(observation_path, permit_path, call_ledger_path)
+        if returncode != 0:
+            # A nonzero Vitest exit no longer automatically means "no usable
+            # evidence": the TS live test now persists a structured BLOCKED
+            # observation from a try/catch boundary that runs even when an
+            # assertion fails after the provider call, so Vitest can still
+            # exit nonzero while a valid observation file exists on disk.
+            # Attempt to read and strictly validate it first; only fall back
+            # to the generic diagnostic when the file is missing, unreadable,
+            # malformed JSON, or fails the strict BLOCKED-shape validator
+            # (fail-closed, never a best-effort partial trust).
+            valid_blocked = None
+            if observation_path.exists():
+                try:
+                    parsed_observation = json.loads(observation_path.read_text(encoding="utf-8"))
+                except (OSError, ValueError, json.JSONDecodeError):
+                    parsed_observation = None
+                valid_blocked = _extract_valid_blocked_observation_diagnostic(parsed_observation)
+
+            # Required order on the failure path regardless of which branch
+            # below runs: (a) the call ledger was already read by
+            # run_live_test into ledger_call_count above; (b) build and
+            # atomically persist the secret-safe diagnostic next, before any
+            # console output; (c) only then emit a fixed, secret-safe
+            # summary line. Raw captured Vitest stdout/stderr is never
+            # printed here -- it may contain Unicode or malformed terminal
+            # control sequences from a crashed/hung child process, and
+            # printing it risked surfacing uncontrolled content on a failure
+            # path that must remain secret-safe by construction.
+            observation_call_count = valid_blocked["observedCallCount"] if valid_blocked is not None else None
+            try:
+                effective_call_count = _reconcile_call_count_evidence(ledger_call_count, observation_call_count)
+            except _CallCountEvidenceMismatch:
+                diagnostic = dict(_CALL_COUNT_EVIDENCE_MISMATCH_DIAGNOSTIC)
+                effective_call_count = _conservative_call_count_upper_bound(
+                    ledger_call_count, observation_call_count
+                )
+            else:
+                if valid_blocked is not None:
+                    diagnostic = valid_blocked["diagnostic"]
+                else:
+                    diagnostic = {
+                        "stage": "provider",
+                        "class": "unknown_error",
+                        "retryable": False,
+                        "userAction": "inspect_receipt",
+                        "safeMessage": "The live test process failed or did not produce an observation file.",
+                    }
             blocked_diag = build_diagnostic_receipt(
                 execution_base_head=execution_base_head,
                 started_at=started_at,
                 diagnostic=diagnostic,
-                observed_call_count=observed_call_count,
+                observed_call_count=effective_call_count,
                 key_alias_used=key_alias,
                 local_negative_gate_passed=True,
             )
@@ -470,13 +533,64 @@ def cmd_live(args: argparse.Namespace) -> int:
             print("BLOCKED: live test process failed. See diagnostic.")
             return 1
 
+        if not observation_path.exists():
+            diagnostic = {
+                "stage": "provider",
+                "class": "unknown_error",
+                "retryable": False,
+                "userAction": "inspect_receipt",
+                "safeMessage": "The live test process exited zero but did not produce an observation file.",
+            }
+            blocked_diag = build_diagnostic_receipt(
+                execution_base_head=execution_base_head,
+                started_at=started_at,
+                diagnostic=diagnostic,
+                observed_call_count=ledger_call_count,
+                key_alias_used=key_alias,
+                local_negative_gate_passed=True,
+            )
+            write_receipt(args, blocked_diag, is_diagnostic=True)
+            print("BLOCKED: live test process failed. See diagnostic.")
+            return 1
+
+        print(output[-4000:])
         observation = json.loads(observation_path.read_text(encoding="utf-8"))
+
+        # Reconcile the ledger against the PASS observation's own reported
+        # count too -- both sources exist on the success path, and a
+        # disagreement here is exactly as much of a genuine anomaly as on
+        # the failure path. Never silently prefers either source, never
+        # under-reports the larger of the two, and never triggers a second
+        # provider call to resolve it.
+        raw_observation_call_count = observation.get("observedCallCount")
+        observation_call_count = (
+            raw_observation_call_count
+            if isinstance(raw_observation_call_count, int) and not isinstance(raw_observation_call_count, bool)
+            else None
+        )
+        try:
+            pass_effective_call_count = _reconcile_call_count_evidence(ledger_call_count, observation_call_count)
+        except _CallCountEvidenceMismatch:
+            mismatch_call_count_upper_bound = _conservative_call_count_upper_bound(
+                ledger_call_count, observation_call_count
+            )
+            mismatch_diag = build_diagnostic_receipt(
+                execution_base_head=execution_base_head,
+                started_at=started_at,
+                diagnostic=dict(_CALL_COUNT_EVIDENCE_MISMATCH_DIAGNOSTIC),
+                observed_call_count=mismatch_call_count_upper_bound,
+                key_alias_used=key_alias,
+                local_negative_gate_passed=True,
+            )
+            write_receipt(args, mismatch_diag, is_diagnostic=True)
+            print("BLOCKED: call-count evidence mismatch between ledger and observation. See diagnostic.")
+            return 1
 
     pass_diag = build_diagnostic_receipt(
         execution_base_head=execution_base_head,
         started_at=started_at,
         diagnostic=None,
-        observed_call_count=observed_call_count,
+        observed_call_count=pass_effective_call_count,
         key_alias_used=key_alias,
         local_negative_gate_passed=True,
     )
@@ -521,34 +635,6 @@ def cmd_live(args: argparse.Namespace) -> int:
         print(f"Wrote live receipt (overall={live_receipt['overall']}): {receipt_path}")
 
     return 0 if live_receipt["overall"] == "PASS" else 1
-
-
-def build_diagnostic_receipt(
-    *,
-    execution_base_head: str,
-    started_at: str,
-    diagnostic: dict[str, Any] | None,
-    observed_call_count: int,
-    key_alias_used: str | None,
-    local_negative_gate_passed: bool,
-) -> dict[str, Any]:
-    return {
-        "schemaVersion": "cvf.sot3ActA4LiveDiagnostic.v1",
-        "batchId": "SOT3-ACT-A4",
-        "executionBaseHead": execution_base_head,
-        "startedAtUtc": started_at,
-        "finishedAtUtc": utc_now_iso(),
-        "localNegativeGatePassed": local_negative_gate_passed,
-        "recoveryProviderCallCount": observed_call_count,
-        "keyAliasUsed": key_alias_used,
-        "diagnostic": diagnostic,
-        "secretSafety": {
-            "rawKeyPersisted": False,
-            "rawProviderBodyPersisted": False,
-            "rawOutputPersisted": False,
-            "fullPromptPersisted": False,
-        },
-    }
 
 
 def build_live_receipt(
@@ -620,13 +706,40 @@ def build_live_receipt(
     }
 
 
+def write_json_atomic(path: Path, payload: dict[str, Any]) -> None:
+    """Writes `payload` as indented, sorted-key JSON to `path` atomically: the
+    full content is written to a sibling temp file first, then moved into
+    place with `os.replace` (atomic on POSIX and Windows alike). A reader can
+    never observe a partially-written or truncated file at `path`, even if
+    this process is interrupted mid-write or the captured content driving
+    `payload` contains unusual byte sequences.
+    """
+    import os
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp_name = tempfile.mkstemp(
+        dir=str(path.parent), prefix=f".{path.name}.", suffix=".tmp"
+    )
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as handle:
+            handle.write(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(tmp_name, path)
+    except BaseException:
+        try:
+            os.unlink(tmp_name)
+        except OSError:
+            pass
+        raise
+
+
 def write_receipt(args: argparse.Namespace, receipt: dict[str, Any], *, is_diagnostic: bool) -> None:
     target = args.diagnostic if is_diagnostic else args.receipt
     receipt_path = Path(target) if target else (
         REPO_ROOT / "docs" / "reviews" / "evidence" / "sot3-act-a4-failure-recovery-live-diagnostic-2026-07-13.json"
     )
-    receipt_path.parent.mkdir(parents=True, exist_ok=True)
-    receipt_path.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    write_json_atomic(receipt_path, receipt)
 
 
 def parse_args(argv: list[str]) -> argparse.Namespace:

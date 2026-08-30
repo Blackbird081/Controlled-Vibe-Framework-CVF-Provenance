@@ -19,23 +19,16 @@ the read-first requirement before copying any other section order.
 
 ## Purpose
 
-A CVF Agent Work Order is the tactical execution packet that an orchestrator,
-reviewer, or operator gives to an implementing agent.
-
-It sits below roadmap and governance authorization, and above raw task prompts.
-It exists to prevent scope drift by making the worker's mission, authority
-chain, write ownership, forbidden actions, evidence requirements, and return
-conditions explicit.
+A CVF Agent Work Order is the tactical execution packet given to an
+implementing agent. It sits below roadmap and governance authorization and
+prevents scope drift by fixing mission, authority, write ownership, forbidden
+actions, evidence, and return conditions.
 
 Work orders are mandatory after a final roadmap when an orchestrator, reviewer,
 operator, or lead agent delegates implementation to another agent or a later
 session.
 
-Work orders are governed by the operating workflow in
-`docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`.
-
-**Template family front door:**
-`docs/reference/work_order_template/README.md`
+Governing workflow: `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`; template family front door: `docs/reference/work_order_template/README.md`.
 
 ## Owner / Source
 
@@ -86,6 +79,12 @@ Contract:
 - the implementer follows the allowed scope and forbidden scope;
 - the reviewer evaluates evidence against acceptance criteria;
 - the orchestrator receives a closure packet or a stop condition.
+
+## Review Dispatch Convergence And Invocation Budget Control
+Review-Dispatch Convergence Control: REQUIRED; copy the exact scalar fields and controlled values from
+`docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md`;
+the pre-dispatch gate rejects review-by-drip, round-three auto-dispatch,
+unknown external usage, and a reached parent-assignment invocation ceiling.
 
 ## Enforcement / Verification
 
@@ -975,6 +974,7 @@ release still requires a fresh source-verified work order and accepted closure.
 For any no-commit worker return, especially source/test or high-evidence
 tranches, the work order should require the worker to complete and record this
 self-audit before `COMPLETE_PENDING_REVIEW`:
+
 
 - rerun every exact required command after the last material edit, including
   focused tests and worker-return gates named by the work order;

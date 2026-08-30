@@ -1,0 +1,35 @@
+{
+  "a4LocalNegativeGatePassed": true,
+  "a4RecoveryProviderCallCount": 1,
+  "a4ReturnCode": 1,
+  "admissionFailures": [
+    "a4_live_receipt_missing_or_unreadable"
+  ],
+  "batchId": "SOT3-ACT-A5",
+  "diagnostic": {
+    "class": "unknown_error",
+    "retryable": false,
+    "safeMessage": "The A4 live runner subprocess exited non-zero. Its own secret-safe diagnostic is preserved in this A5 diagnostic's underlyingA4Diagnostic field.",
+    "stage": "provider",
+    "userAction": "inspect_receipt"
+  },
+  "finishedAtUtc": "2026-08-30T02:10:40.560860+00:00",
+  "schemaVersion": "cvf.sot3ActA5Diagnostic.v1",
+  "secretSafety": {
+    "fullPromptPersisted": false,
+    "rawKeyPersisted": false,
+    "rawOutputPersisted": false,
+    "rawProviderBodyPersisted": false
+  },
+  "startedAtUtc": "2026-08-30T02:09:12.447037+00:00",
+  "underlyingA4Diagnostic": {
+    "class": "provider_http_error",
+    "latencyMs": 2,
+    "model": "qwen-flash",
+    "provider": "alibaba",
+    "retryable": true,
+    "safeMessage": "The provider returned an HTTP error.",
+    "stage": "provider",
+    "userAction": "wait_and_retry"
+  }
+}

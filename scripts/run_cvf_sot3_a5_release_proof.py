@@ -159,7 +159,16 @@ def build_a5_result(
         "negativeCaseCount": live_receipt.get("negativeCaseCount") if live_receipt else None,
         "zeroProviderCallCaseCount": live_receipt.get("zeroProviderCallCaseCount") if live_receipt else None,
         "rollbackProviderCallCount": live_receipt.get("rollbackProviderCallCount") if live_receipt else None,
-        "recoveryProviderCallCount": live_receipt.get("recoveryProviderCallCount") if live_receipt else None,
+        "recoveryProviderCallCount": (
+            live_receipt.get("recoveryProviderCallCount") if live_receipt
+            # Falls back to A4's own diagnostic count only when no live
+            # receipt exists at all (e.g. the observation file was never
+            # written), so a real observed call count is not silently lost
+            # even though this FAIL-path projection never affects the PASS
+            # admission contract in run_cvf_release_gate_bundle.py, which
+            # requires a live_receipt-backed PASS regardless.
+            else (diagnostic.get("recoveryProviderCallCount") if diagnostic else None)
+        ),
         "approvedContextIncluded": (
             (live_receipt.get("contextObservation") or {}).get("approvedContextIncluded")
             if live_receipt else None
@@ -190,6 +199,52 @@ def build_a5_result(
     }
 
 
+# Exact allowlist of keys `_extract_underlying_a4_diagnostic` may forward
+# from A4's raw diagnostic payload into A5's `underlyingA4Diagnostic`. The
+# first five are always required (present as `None` when A4 did not set
+# them); the remaining four are optional secret-safe context that A4's
+# `diagnostic` sub-object may carry when a failure occurred after a provider
+# call attempt (e.g. HTTP error, timeout) rather than before one (e.g. an
+# auth/governance block) -- forwarded only when present, never fabricated.
+# Every other key on A4's raw payload (keyAliasUsed, secretSafety, or any
+# future addition) is never forwarded: headers, environment values, prompts,
+# request/response bodies, and raw provider output are never present on this
+# sub-object in the first place, and this allowlist is the second, structural
+# barrier against ever forwarding them even if one were added by mistake.
+UNDERLYING_A4_DIAGNOSTIC_REQUIRED_FIELDS = ("stage", "class", "retryable", "userAction", "safeMessage")
+UNDERLYING_A4_DIAGNOSTIC_OPTIONAL_FIELDS = ("provider", "model", "httpStatus", "latencyMs")
+
+
+def _extract_underlying_a4_diagnostic(diagnostic: dict[str, Any] | None) -> dict[str, Any] | None:
+    """Returns A4's own secret-safe `diagnostic` sub-object when the caller's
+    already-loaded A4 diagnostic payload carries one. `diagnostic` here is
+    the in-memory dict `cmd_run` already read from `a4_diagnostic_path`
+    before that path's temporary directory was deleted -- this function
+    never touches the filesystem, so it works whether or not the temp file
+    still exists.
+
+    Always includes the five required fields (`None` when A4 did not set a
+    given one). Includes `provider`/`model`/`httpStatus`/`latencyMs` only
+    when A4's raw sub-object actually carries that key, so a diagnostic
+    built before a provider call was attempted (no optional fields) looks
+    different from one built after a provider call failed (optional fields
+    present) -- an absent optional key is omitted rather than set to `None`,
+    distinguishing "not applicable" from "present but unknown".
+    """
+    if not diagnostic:
+        return None
+    underlying = diagnostic.get("diagnostic")
+    if not isinstance(underlying, dict):
+        return None
+    extracted: dict[str, Any] = {
+        field: underlying.get(field) for field in UNDERLYING_A4_DIAGNOSTIC_REQUIRED_FIELDS
+    }
+    for field in UNDERLYING_A4_DIAGNOSTIC_OPTIONAL_FIELDS:
+        if field in underlying:
+            extracted[field] = underlying[field]
+    return extracted
+
+
 def build_diagnostic(
     *,
     started_at: str,
@@ -197,15 +252,29 @@ def build_diagnostic(
     admission_failures: list[str],
     diagnostic: dict[str, Any] | None,
 ) -> dict[str, Any]:
+    underlying_a4_diagnostic = _extract_underlying_a4_diagnostic(diagnostic)
+
     if a4_returncode != 0:
         stage = "provider"
         cls = "unknown_error"
         retryable = False
         user_action = "inspect_receipt"
-        safe_message = (
-            "The A4 live runner subprocess exited non-zero. See its own secret-safe "
-            "diagnostic for the underlying stage/class."
-        )
+        if underlying_a4_diagnostic is not None:
+            # A4's own diagnostic survived its temp-directory cleanup (it was
+            # read into memory by cmd_run before that directory was removed)
+            # and is projected verbatim below in `underlyingA4Diagnostic`, so
+            # A5 must not tell the operator to inspect a file A5 itself
+            # already deleted.
+            safe_message = (
+                "The A4 live runner subprocess exited non-zero. Its own secret-safe "
+                "diagnostic is preserved in this A5 diagnostic's underlyingA4Diagnostic field."
+            )
+        else:
+            safe_message = (
+                "The A4 live runner subprocess exited non-zero and its own diagnostic "
+                "could not be read (missing or unreadable). No further stage/class detail "
+                "is available."
+            )
     elif admission_failures:
         stage = "output_validation"
         cls = "output_validation_failed"
@@ -231,6 +300,7 @@ def build_diagnostic(
         "a4LocalNegativeGatePassed": (
             bool(diagnostic.get("localNegativeGatePassed")) if diagnostic else None
         ),
+        "a4RecoveryProviderCallCount": diagnostic.get("recoveryProviderCallCount") if diagnostic else None,
         "admissionFailures": admission_failures,
         "diagnostic": None if (a4_returncode == 0 and not admission_failures) else {
             "stage": stage,
@@ -239,6 +309,12 @@ def build_diagnostic(
             "userAction": user_action,
             "safeMessage": safe_message,
         },
+        # A4's own preserved secret-safe diagnostic (stage/class/retryable/
+        # userAction/safeMessage), read into memory before its temporary
+        # directory was deleted. Present whenever A4 wrote one, independent
+        # of A4's return code, so the operator is never pointed at evidence
+        # this adapter has already removed from disk.
+        "underlyingA4Diagnostic": underlying_a4_diagnostic,
         "secretSafety": {
             "rawKeyPersisted": False,
             "rawProviderBodyPersisted": False,

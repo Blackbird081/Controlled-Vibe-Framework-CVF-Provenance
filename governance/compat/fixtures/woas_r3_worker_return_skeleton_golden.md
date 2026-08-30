@@ -10,6 +10,19 @@ dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS-R3-GOLDEN_2026-07
 executionBaseHead: TO_FILL_capture with `git rev-parse --short HEAD` before edits
 rawMemoryReleased=false
 contractProfile: WORKER_RETURN_FULL_GATE_V1
+## Rework Convergence Self-Proof
+rootCauseClusterId: INITIAL_SCOPE_WOAS-R3-GOLDEN
+reworkGeneration: 0
+consolidatedDefectClassSweep: PENDING_BEFORE_READY
+productionBindingEvidence: PENDING_BEFORE_READY
+adversarialRegressionDisposition: PENDING_BEFORE_READY
+successorTrancheOpened: NO
+implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
+internalAgentInvocationCount: 0
+externalAgentInvocationCount: 0
+providerCallCount: 0
+tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: provider-neutral scaffold has no usage meter
+terminalReadinessVerdict: BLOCKED_WITH_REASON: generated scaffold pending worker evidence
 ## Purpose
 TO_FILL: state the mission prompt for this worker return.
 ## Scope / Methodology

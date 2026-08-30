@@ -12,36 +12,64 @@ import argparse
 import hashlib
 import json
 import re
-import shutil
-import subprocess
+import subprocess  # Retained as the offline-route network/Git test sentinel.
 import sys
 from datetime import datetime
 from pathlib import Path, PurePosixPath
 from typing import Any
 from zoneinfo import ZoneInfo
 
+try:
+    from scripts.external_agent_snapshot_projection import (
+        SnapshotProjectionError,
+        refresh_public_snapshot,
+        update_snapshot_metadata,
+    )
+    from scripts.external_agent_return_contract import (
+        CANDIDATE_LANE_CONTRACT_VERSION,
+        CANDIDATE_LANE_CVF_INTERNAL_DEFECT,
+        CANDIDATE_LANE_EXTERNAL_SOURCE_VALUE,
+        CANDIDATE_LANE_NAMES,
+        CANDIDATE_LANE_PRELIMINARY_VALUE_DISPOSITIONS,
+        EMITTER_DETACHED_EXTERNAL_AGENT,
+        EMITTER_SHARED_WORKSPACE_WORKER,
+        LEGACY_COMPLETE_STATUS,
+        STATUS_EXTERNAL_RETURN_READY,
+        candidate_lane_validate_candidates,
+        validate_detached_return,
+    )
+except ModuleNotFoundError:  # Direct `python scripts/external_agent_packet.py` execution.
+    from external_agent_snapshot_projection import (  # type: ignore[no-redef]
+        SnapshotProjectionError,
+        refresh_public_snapshot,
+        update_snapshot_metadata,
+    )
+    from external_agent_return_contract import (  # type: ignore[no-redef]
+        CANDIDATE_LANE_CONTRACT_VERSION,
+        CANDIDATE_LANE_CVF_INTERNAL_DEFECT,
+        CANDIDATE_LANE_EXTERNAL_SOURCE_VALUE,
+        CANDIDATE_LANE_NAMES,
+        CANDIDATE_LANE_PRELIMINARY_VALUE_DISPOSITIONS,
+        EMITTER_DETACHED_EXTERNAL_AGENT,
+        EMITTER_SHARED_WORKSPACE_WORKER,
+        LEGACY_COMPLETE_STATUS,
+        STATUS_EXTERNAL_RETURN_READY,
+        candidate_lane_validate_candidates,
+        validate_detached_return,
+    )
 
-PROTOCOL_VERSION = "1.2.0"
+
+PROTOCOL_VERSION = "1.3.0"
 PROTOCOL_ID = "cvf.external-agent-round-trip"
-CANDIDATE_CONTRACT_VERSION = 1
 
-LANE_EXTERNAL_SOURCE_VALUE = "EXTERNAL_SOURCE_VALUE_CANDIDATE"
-LANE_CVF_INTERNAL_DEFECT = "CVF_INTERNAL_DEFECT_CANDIDATE"
-CANDIDATE_LANES = (LANE_EXTERNAL_SOURCE_VALUE, LANE_CVF_INTERNAL_DEFECT)
-PUBLIC_OWNER_SEARCH_STATUSES = ("OWNER_CANDIDATES_FOUND", "PUBLIC_OWNER_SURFACE_NOT_FOUND", "PUBLIC_INSUFFICIENT_EVIDENCE", "NOT_APPLICABLE")
-PUBLIC_OVERLAP_STATUSES = ("PUBLIC_CONFIRMED_EXISTING", "PUBLIC_SUGGESTS_ENRICHMENT", "PUBLIC_OWNER_SURFACE_NOT_FOUND", "PUBLIC_INSUFFICIENT_EVIDENCE", "NOT_APPLICABLE")
-PRELIMINARY_VALUE_DISPOSITIONS = ("ABSORB", "ADAPT", "DEFER", "REJECT", "BLOCK", "NO_NEW_VALUE")
-# Strict v1 allows no undeclared field and no per-row authorityStatus.
-_SOURCE_VALUE_ALLOWED_FIELDS = frozenset({
-    "candidateId", "preliminaryLane", "sourceRefs", "sourceLocations", "candidateSummary", "claimedValue",
-    "publicOwnerSearch", "publicOverlap", "preliminaryValueDisposition", "questionsForLocalAgent", "sourceEvidence",
-})
-_INTERNAL_DEFECT_ALLOWED_FIELDS = frozenset({
-    "candidateId", "preliminaryLane", "cvfPublicLocations", "triggerContextSourceRefs", "candidateSummary",
-    "publicOwnerSearch", "questionsForLocalAgent", "sourceEvidence",
-})
-_INTERNAL_DEFECT_FORBIDDEN_FIELDS = ("sourceLocations", "claimedValue", "publicOverlap", "preliminaryValueDisposition")
-_SOURCE_VALUE_FORBIDDEN_FIELDS = ("cvfPublicLocations", "triggerContextSourceRefs")
+# Candidate-lane (EARTR-ESC-R1) constants are owned by
+# external_agent_return_contract; these names are the public API this module
+# has always exposed, kept stable for callers and the legacy test suite.
+CANDIDATE_CONTRACT_VERSION = CANDIDATE_LANE_CONTRACT_VERSION
+LANE_EXTERNAL_SOURCE_VALUE = CANDIDATE_LANE_EXTERNAL_SOURCE_VALUE
+LANE_CVF_INTERNAL_DEFECT = CANDIDATE_LANE_CVF_INTERNAL_DEFECT
+CANDIDATE_LANES = CANDIDATE_LANE_NAMES
+PRELIMINARY_VALUE_DISPOSITIONS = CANDIDATE_LANE_PRELIMINARY_VALUE_DISPOSITIONS
 PUBLIC_REPOSITORY = "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git"
 CAPSULE_SCHEMA_PATH = Path(__file__).resolve().parent.parent / "docs" / "reference" / "external_agent_review" / "CVF_EXTERNAL_AGENT_TASK_CAPSULE.schema.json"
 # Source-posture literals for cvfPublicSource.sourcePosture. These are the
@@ -55,7 +83,9 @@ SOURCE_POSTURE_OFFLINE = "OPERATOR_PINNED_NOT_LIVE_VERIFIED"
 # SOURCE_PACK_PREPARATION are proportionally exempt: they do not mutate a
 # repository, so an owner map / protected-path / invariant contract has no
 # referent yet. This mirrors the schema's own `if/then` requirement.
-CONTEXT_REQUIRED_MODES = ("BUILD_NEW_REPOSITORY", "EXTEND_SUPPLIED_REPOSITORY")
+DETACHED_IMPLEMENTATION_PROPOSAL_MODE = "DETACHED_IMPLEMENTATION_PROPOSAL"
+CONTEXT_REQUIRED_MODES = ("BUILD_NEW_REPOSITORY", "EXTEND_SUPPLIED_REPOSITORY", DETACHED_IMPLEMENTATION_PROPOSAL_MODE)
+WORKING_MODES = ("REVIEW_ONLY", "DESIGN_ONLY", "BUILD_NEW_REPOSITORY", "EXTEND_SUPPLIED_REPOSITORY", "SOURCE_PACK_PREPARATION", DETACHED_IMPLEMENTATION_PROPOSAL_MODE)
 
 CONTEXT_GROUP_NAMES = ("protectedPaths", "ownerMap", "invariants", "verification")
 CONSUMER_ROLES = ("worker", "reviewer", "return validator")
@@ -94,24 +124,6 @@ class PacketError(RuntimeError):
     """A fail-closed packet preparation or validation error."""
 
 
-def _run_git(repo: Path, *args: str) -> str:
-    proc = subprocess.run(
-        ["git", "-C", str(repo), *args],
-        text=True,
-        encoding="utf-8",
-        errors="replace",
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-    )
-    if proc.returncode:
-        raise PacketError(proc.stderr.strip() or proc.stdout.strip() or f"git {' '.join(args)} failed")
-    return proc.stdout.strip()
-
-
-def _canonical_remote(value: str) -> str:
-    return value.strip().removesuffix(".git").rstrip("/")
-
-
 def _now() -> datetime:
     return datetime.now(ZoneInfo("Asia/Ho_Chi_Minh"))
 
@@ -121,87 +133,25 @@ def _write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
 
 
-def _replace_once(text: str, pattern: str, replacement: str, label: str) -> str:
-    updated, count = re.subn(pattern, replacement, text, count=1, flags=re.MULTILINE)
-    if count != 1:
-        raise PacketError(f"cannot update {label}: expected one match, found {count}")
-    return updated
-
-
 def _update_snapshot_text(text: str, sha: str, commit_date: str, subject: str, tree_count: int, stamp: datetime) -> str:
-    text = _replace_once(text, r"^protocolVersion: .+$", f"protocolVersion: {PROTOCOL_VERSION}", "protocolVersion")
-    text = _replace_once(text, r"^updatedAt: .+$", f"updatedAt: {stamp.date().isoformat()}", "updatedAt")
-    text = _replace_once(text, r"^Verified: .+$", f"Verified: {stamp.date().isoformat()} (Asia/Ho_Chi_Minh)", "Verified")
-    text = _replace_once(text, r"(?m)(^Audit-anchor commit:\s*\n)`[0-9a-f]{40}`", rf"\g<1>`{sha}`", "audit-anchor commit")
-    text = _replace_once(text, r"^Commit date: `[^`]+`$", f"Commit date: `{commit_date}`", "commit date")
-    safe_subject = subject.replace("`", "'")
-    text = _replace_once(text, r"^Commit subject: `[^`]*`$", f"Commit subject: `{safe_subject}`", "commit subject")
-    text = _replace_once(text, r"contained [0-9,]+ entries;", f"contained {tree_count:,} entries;", "tree entry count")
-    return text
-
-
-def _packet_hashes(packet_root: Path, names: list[str]) -> dict[str, str]:
-    return {name: hashlib.sha256((packet_root / name).read_bytes()).hexdigest() for name in sorted(names)}
+    try:
+        return update_snapshot_metadata(
+            text, protocol_version=PROTOCOL_VERSION, sha=sha, commit_date=commit_date,
+            subject=subject, tree_count=tree_count, snapshot_date=stamp.date().isoformat(),
+        )
+    except SnapshotProjectionError as exc:
+        raise PacketError(str(exc)) from exc
 
 
 def refresh_snapshot(public_repo: Path, packet_root: Path, owner_index_source: Path) -> dict[str, Any]:
-    if not public_repo.is_dir() or not (public_repo / ".git").exists():
-        raise PacketError(f"public repo is not a Git worktree: {public_repo}")
-    if _run_git(public_repo, "status", "--porcelain"):
-        raise PacketError("public-sync worktree must be clean before snapshot refresh")
-    remote = _run_git(public_repo, "remote", "get-url", "origin")
-    if _canonical_remote(remote) != _canonical_remote(PUBLIC_REPOSITORY):
-        raise PacketError(f"origin is not the canonical public repository: {remote}")
-    live_tokens = _run_git(public_repo, "ls-remote", "origin", "refs/heads/main").split()
-    if len(live_tokens) < 2 or not SHA40.fullmatch(live_tokens[0]):
-        raise PacketError("could not resolve live origin/main")
-    live_sha = live_tokens[0]
-    local_sha = _run_git(public_repo, "rev-parse", "HEAD")
-    if local_sha != live_sha:
-        raise PacketError(f"public-sync HEAD {local_sha} does not equal live origin/main {live_sha}")
-    branch = _run_git(public_repo, "branch", "--show-current")
-    if branch != "main":
-        raise PacketError(f"public-sync checkout must be main, found {branch or 'detached HEAD'}")
-
-    public_files = set(_run_git(public_repo, "ls-tree", "-r", "--name-only", live_sha).splitlines())
-    missing = sorted(set(REQUIRED_PUBLIC_PATHS) - public_files)
-    if missing:
-        raise PacketError("required public paths missing: " + ", ".join(missing))
-    for name in PACKET_FILES:
-        if not (packet_root / name).is_file():
-            raise PacketError(f"packet file missing: {name}")
-    if not owner_index_source.is_file():
-        raise PacketError(f"owner index source missing: {owner_index_source}")
-
-    commit_date = _run_git(public_repo, "show", "-s", "--format=%cI", live_sha)
-    subject = _run_git(public_repo, "show", "-s", "--format=%s", live_sha)
-    stamp = _now()
-    snapshot = packet_root / "CVF_CURRENT_PUBLIC_SNAPSHOT.md"
-    snapshot.write_text(
-        _update_snapshot_text(snapshot.read_text(encoding="utf-8"), live_sha, commit_date, subject, len(public_files), stamp),
-        encoding="utf-8",
-        newline="\n",
-    )
-    local_owner_index = packet_root / "CVF_PUBLIC_OWNER_SURFACE_INDEX.json"
-    shutil.copyfile(owner_index_source, local_owner_index)
-    names = [*PACKET_FILES, local_owner_index.name]
-    receipt = {
-        "schema": "cvf.externalAgentPacketRefreshReceipt.v1",
-        "protocolVersion": PROTOCOL_VERSION,
-        "status": "REFRESHED_LIVE_PUBLIC_MAIN",
-        "verifiedAt": stamp.isoformat(timespec="seconds"),
-        "publicRepository": PUBLIC_REPOSITORY,
-        "publicBranch": "main",
-        "publicCommit": live_sha,
-        "publicCommitDate": commit_date,
-        "publicCommitSubject": subject,
-        "publicTreeEntries": len(public_files),
-        "packetRoot": str(packet_root.resolve()),
-        "packetFileHashes": _packet_hashes(packet_root, names),
-        "claimBoundary": "Proves packet refresh against live public main only; no push, CI, provider, runtime, or production claim.",
-    }
-    _write_json(packet_root / "CVF_EXTERNAL_AGENT_PACKET_REFRESH_RECEIPT.json", receipt)
-    return receipt
+    try:
+        return refresh_public_snapshot(
+            public_repo, packet_root, owner_index_source,
+            protocol_version=PROTOCOL_VERSION, public_repository=PUBLIC_REPOSITORY,
+            packet_files=PACKET_FILES, required_public_paths=REQUIRED_PUBLIC_PATHS,
+        )
+    except (OSError, SnapshotProjectionError) as exc:
+        raise PacketError(f"cannot refresh public snapshot: {exc}") from exc
 
 
 def _load_capsule_schema() -> dict[str, Any]:
@@ -294,6 +244,16 @@ def create_capsule(
             "destructiveActions": False,
         },
     }
+    if args.working_mode == DETACHED_IMPLEMENTATION_PROPOSAL_MODE:
+        capsule["task"]["expectedReturnStatus"] = STATUS_EXTERNAL_RETURN_READY
+        execution_class = getattr(args, "execution_class", None)
+        if execution_class is None:
+            raise PacketError("--execution-class is required for DETACHED_IMPLEMENTATION_PROPOSAL")
+        if execution_class not in (EMITTER_SHARED_WORKSPACE_WORKER, EMITTER_DETACHED_EXTERNAL_AGENT):
+            raise PacketError(f"unknown --execution-class: {execution_class}")
+        capsule["task"]["executionClass"] = execution_class
+    else:
+        capsule["task"]["expectedReturnStatus"] = LEGACY_COMPLETE_STATUS
     if context_groups:
         for group_name in CONTEXT_GROUP_NAMES:
             if group_name in context_groups:
@@ -389,194 +349,7 @@ def _validate_source_rows(manifest: dict[str, Any], errors: list[str]) -> None:
                 errors.append(f"{prefix}.{field} must be non-empty")
 
 
-def _nonblank_str(value: Any) -> bool:
-    return isinstance(value, str) and bool(value.strip())
-def _validate_nonblank_string_list(value: Any, prefix: str, field: str, errors: list[str]) -> None:
-    if not isinstance(value, list) or not value or not all(_nonblank_str(item) for item in value):
-        errors.append(f"{prefix}.{field} must be a non-empty list of non-blank strings")
-def _validate_no_undeclared_fields(candidate: dict[str, Any], prefix: str, allowed: frozenset[str], errors: list[str]) -> None:
-    if "authorityStatus" in candidate:
-        errors.append(f"{prefix}.authorityStatus is forbidden on a candidate row; authority status is manifest-level only")
-    undeclared = sorted(set(candidate) - allowed - {"authorityStatus"})
-    if undeclared:
-        errors.append(f"{prefix} contains undeclared field(s) under strict v1: {', '.join(undeclared)}")
-def _validate_optional_source_evidence(candidate: dict[str, Any], prefix: str, errors: list[str]) -> None:
-    if "sourceEvidence" in candidate and not _nonblank_str(candidate.get("sourceEvidence")):
-        errors.append(f"{prefix}.sourceEvidence must be a non-blank string when present")
-def _validate_source_value_candidate(candidate: dict[str, Any], prefix: str, source_ids: set[str], errors: list[str]) -> None:
-    _validate_no_undeclared_fields(candidate, prefix, _SOURCE_VALUE_ALLOWED_FIELDS, errors)
-    for field in _SOURCE_VALUE_FORBIDDEN_FIELDS:
-        if field in candidate:
-            errors.append(f"{prefix}.{field} is forbidden for {LANE_EXTERNAL_SOURCE_VALUE}")
-
-    source_refs = candidate.get("sourceRefs")
-    if not isinstance(source_refs, list) or not source_refs or not all(_nonblank_str(item) for item in source_refs):
-        errors.append(f"{prefix}.sourceRefs must be a non-empty list of non-blank strings")
-        source_refs = []
-    unresolved = [ref for ref in source_refs if ref not in source_ids]
-    if unresolved:
-        errors.append(f"{prefix}.sourceRefs contains unresolved source id(s): {', '.join(unresolved)}")
-    locations = candidate.get("sourceLocations")
-    location_refs: list[str] = []
-    if not isinstance(locations, list) or not locations:
-        errors.append(f"{prefix}.sourceLocations must be a non-empty list")
-    else:
-        for loc_index, location in enumerate(locations):
-            loc_prefix = f"{prefix}.sourceLocations[{loc_index}]"
-            if not isinstance(location, dict):
-                errors.append(f"{loc_prefix} must be an object")
-                continue
-            ref = location.get("sourceRef")
-            if not _nonblank_str(ref):
-                errors.append(f"{loc_prefix}.sourceRef must be a non-blank string")
-            else:
-                location_refs.append(ref)
-                if ref not in source_ids:
-                    errors.append(f"{loc_prefix}.sourceRef does not resolve to an existing source id: {ref}")
-            if not _safe_rel_path(str(location.get("path", ""))):
-                errors.append(f"{loc_prefix}.path is invalid or unsafe")
-            symbols = location.get("symbols")
-            if not isinstance(symbols, list) or not symbols or not all(_nonblank_str(item) for item in symbols):
-                errors.append(f"{loc_prefix}.symbols must be a non-empty list of non-blank strings")
-    if isinstance(source_refs, list) and isinstance(locations, list) and locations:
-        if set(source_refs) != set(location_refs):
-            errors.append(f"{prefix}: set(sourceRefs) must equal set(sourceLocations[].sourceRef)")
-    if not _nonblank_str(candidate.get("candidateSummary")):
-        errors.append(f"{prefix}.candidateSummary must be a non-blank string")
-    if not _nonblank_str(candidate.get("claimedValue")):
-        errors.append(f"{prefix}.claimedValue must be a non-blank string")
-    _validate_public_owner_search(candidate.get("publicOwnerSearch"), prefix, errors)
-    _validate_public_overlap(candidate.get("publicOverlap"), prefix, errors)
-    disposition = candidate.get("preliminaryValueDisposition")
-    if disposition is None:
-        errors.append(f"{prefix}.preliminaryValueDisposition is required")
-    elif disposition not in PRELIMINARY_VALUE_DISPOSITIONS:
-        errors.append(f"{prefix}.preliminaryValueDisposition must be one of {PRELIMINARY_VALUE_DISPOSITIONS}")
-    _validate_nonblank_string_list(candidate.get("questionsForLocalAgent"), prefix, "questionsForLocalAgent", errors)
-    _validate_optional_source_evidence(candidate, prefix, errors)
-
-
-def _validate_public_owner_search(search: Any, prefix: str, errors: list[str]) -> None:
-    if not isinstance(search, dict) or search.get("status") not in PUBLIC_OWNER_SEARCH_STATUSES:
-        errors.append(f"{prefix}.publicOwnerSearch.status must be one of {PUBLIC_OWNER_SEARCH_STATUSES}")
-        return
-    candidates = search.get("candidates")
-    if search.get("status") == "OWNER_CANDIDATES_FOUND":
-        if not isinstance(candidates, list) or not candidates:
-            errors.append(f"{prefix}.publicOwnerSearch.candidates must be a non-empty list when status is OWNER_CANDIDATES_FOUND")
-        else:
-            for cand_index, owner_candidate in enumerate(candidates):
-                cand_prefix = f"{prefix}.publicOwnerSearch.candidates[{cand_index}]"
-                if not isinstance(owner_candidate, dict):
-                    errors.append(f"{cand_prefix} must be an object")
-                    continue
-                if not _safe_rel_path(str(owner_candidate.get("path", ""))):
-                    errors.append(f"{cand_prefix}.path is invalid or unsafe")
-                if not _nonblank_str(owner_candidate.get("symbol")):
-                    errors.append(f"{cand_prefix}.symbol must be a non-blank string")
-                if not _nonblank_str(owner_candidate.get("basis")):
-                    errors.append(f"{cand_prefix}.basis must be a non-blank string")
-    elif candidates is not None and (not isinstance(candidates, list) or candidates):
-        errors.append(f"{prefix}.publicOwnerSearch.candidates must be absent or empty when status is not OWNER_CANDIDATES_FOUND")
-
-
-def _validate_public_overlap(overlap: Any, prefix: str, errors: list[str]) -> None:
-    if not isinstance(overlap, dict) or overlap.get("status") not in PUBLIC_OVERLAP_STATUSES:
-        errors.append(f"{prefix}.publicOverlap.status must be one of {PUBLIC_OVERLAP_STATUSES}")
-        return
-    if not _nonblank_str(overlap.get("basis")):
-        errors.append(f"{prefix}.publicOverlap.basis must be a non-blank string")
-
-
-def _validate_internal_defect_candidate(candidate: dict[str, Any], prefix: str, source_ids: set[str], errors: list[str]) -> None:
-    _validate_no_undeclared_fields(candidate, prefix, _INTERNAL_DEFECT_ALLOWED_FIELDS, errors)
-    for field in _INTERNAL_DEFECT_FORBIDDEN_FIELDS:
-        if field in candidate:
-            errors.append(f"{prefix}.{field} is forbidden for {LANE_CVF_INTERNAL_DEFECT}")
-    locations = candidate.get("cvfPublicLocations")
-    if not isinstance(locations, list) or not locations:
-        errors.append(f"{prefix}.cvfPublicLocations must be a non-empty list")
-    else:
-        for loc_index, location in enumerate(locations):
-            loc_prefix = f"{prefix}.cvfPublicLocations[{loc_index}]"
-            if not isinstance(location, dict):
-                errors.append(f"{loc_prefix} must be an object")
-                continue
-            if not _safe_rel_path(str(location.get("path", ""))):
-                errors.append(f"{loc_prefix}.path is invalid or unsafe")
-            symbols = location.get("symbols")
-            if not isinstance(symbols, list) or not symbols or not all(_nonblank_str(item) for item in symbols):
-                errors.append(f"{loc_prefix}.symbols must be a non-empty list of non-blank strings")
-    trigger_refs = candidate.get("triggerContextSourceRefs")
-    if trigger_refs is not None:
-        if not isinstance(trigger_refs, list) or not all(_nonblank_str(item) for item in trigger_refs):
-            errors.append(f"{prefix}.triggerContextSourceRefs must be a list of non-blank strings")
-        else:
-            unresolved = [ref for ref in trigger_refs if ref not in source_ids]
-            if unresolved:
-                errors.append(f"{prefix}.triggerContextSourceRefs contains unresolved source id(s): {', '.join(unresolved)}")
-    if not _nonblank_str(candidate.get("candidateSummary")):
-        errors.append(f"{prefix}.candidateSummary must be a non-blank string")
-    _validate_public_owner_search(candidate.get("publicOwnerSearch"), prefix, errors)
-    _validate_nonblank_string_list(candidate.get("questionsForLocalAgent"), prefix, "questionsForLocalAgent", errors)
-    _validate_optional_source_evidence(candidate, prefix, errors)
-
-
-def _validate_candidates(manifest: dict[str, Any], errors: list[str]) -> str:
-    """Validate suggestedAbsorptionCandidates under the dual-reader contract.
-    Returns the effective candidate-contract status label."""
-    discriminator = manifest.get("candidateContractVersion")
-    candidates = manifest.get("suggestedAbsorptionCandidates")
-    candidates_list = candidates if isinstance(candidates, list) else []
-
-    if discriminator is None:
-        if not candidates_list:
-            return "LEGACY_EMPTY"
-        return "LEGACY_UNTYPED_NOT_PROMOTABLE"
-
-    # bool is a subclass of int in Python; reject it explicitly so
-    # `candidateContractVersion: true` is never accepted as the integer 1.
-    if type(discriminator) is not int or discriminator != CANDIDATE_CONTRACT_VERSION:
-        errors.append(f"manifest.candidateContractVersion is unsupported or malformed: {discriminator!r}")
-        return "UNSUPPORTED_OR_MALFORMED"
-
-    if not isinstance(candidates, list):
-        errors.append("manifest.suggestedAbsorptionCandidates must be a list when candidateContractVersion is set")
-        return "STRICT_V1"
-
-    source_ids: set[str] = set()
-    for source_index, source in enumerate(manifest.get("sources") or []):
-        if not isinstance(source, dict):
-            continue
-        source_id = source.get("id")
-        if not _nonblank_str(source_id):
-            errors.append(f"sources[{source_index}].id must be a non-blank string under strict candidate contract v1")
-        elif source_id in source_ids:
-            errors.append(f"sources[{source_index}].id is a duplicate under strict candidate contract v1: {source_id}")
-        else:
-            source_ids.add(source_id)
-
-    seen_ids: set[str] = set()
-    for index, candidate in enumerate(candidates_list):
-        prefix = f"suggestedAbsorptionCandidates[{index}]"
-        if not isinstance(candidate, dict):
-            errors.append(f"{prefix} must be an object")
-            continue
-        candidate_id = candidate.get("candidateId")
-        if not _nonblank_str(candidate_id):
-            errors.append(f"{prefix}.candidateId must be a non-blank string")
-        elif candidate_id in seen_ids:
-            errors.append(f"{prefix}.candidateId is a duplicate within this return: {candidate_id}")
-        else:
-            seen_ids.add(candidate_id)
-        lane = candidate.get("preliminaryLane")
-        if lane == LANE_EXTERNAL_SOURCE_VALUE:
-            _validate_source_value_candidate(candidate, prefix, source_ids, errors)
-        elif lane == LANE_CVF_INTERNAL_DEFECT:
-            _validate_internal_defect_candidate(candidate, prefix, source_ids, errors)
-        else:
-            errors.append(f"{prefix}.preliminaryLane must be one of {CANDIDATE_LANES}")
-    return "STRICT_V1"
+_validate_candidates = candidate_lane_validate_candidates
 
 
 def validate_return(root: Path, receipt_path: Path) -> dict[str, Any]:
@@ -700,7 +473,7 @@ def _build_parser() -> argparse.ArgumentParser:
     prepare.add_argument("--task-id", required=True)
     prepare.add_argument("--title", required=True)
     prepare.add_argument("--objective", required=True)
-    prepare.add_argument("--working-mode", required=True, choices=("REVIEW_ONLY", "DESIGN_ONLY", "BUILD_NEW_REPOSITORY", "EXTEND_SUPPLIED_REPOSITORY", "SOURCE_PACK_PREPARATION"))
+    prepare.add_argument("--working-mode", required=True, choices=WORKING_MODES)
     prepare.add_argument("--source-repository", required=True)
     prepare.add_argument("--source-commit", required=True)
     prepare.add_argument("--output-root", required=True)
@@ -709,6 +482,11 @@ def _build_parser() -> argparse.ArgumentParser:
         "--context-file",
         help="local JSON file with protectedPaths/ownerMap/invariants/verification groups; "
         "required for BUILD_NEW_REPOSITORY and EXTEND_SUPPLIED_REPOSITORY working modes",
+    )
+    prepare.add_argument(
+        "--execution-class",
+        choices=(EMITTER_SHARED_WORKSPACE_WORKER, EMITTER_DETACHED_EXTERNAL_AGENT),
+        help=f"required for --working-mode {DETACHED_IMPLEMENTATION_PROPOSAL_MODE}",
     )
 
     offline = sub.add_parser(
@@ -721,15 +499,29 @@ def _build_parser() -> argparse.ArgumentParser:
     offline.add_argument("--task-id", required=True)
     offline.add_argument("--title", required=True)
     offline.add_argument("--objective", required=True)
-    offline.add_argument("--working-mode", required=True, choices=("REVIEW_ONLY", "DESIGN_ONLY", "BUILD_NEW_REPOSITORY", "EXTEND_SUPPLIED_REPOSITORY", "SOURCE_PACK_PREPARATION"))
+    offline.add_argument("--working-mode", required=True, choices=WORKING_MODES)
     offline.add_argument("--source-repository", required=True)
     offline.add_argument("--source-commit", required=True)
     offline.add_argument("--output-root", required=True)
     offline.add_argument("--non-goal", action="append", default=[])
+    offline.add_argument(
+        "--execution-class",
+        choices=(EMITTER_SHARED_WORKSPACE_WORKER, EMITTER_DETACHED_EXTERNAL_AGENT),
+        help=f"required for --working-mode {DETACHED_IMPLEMENTATION_PROPOSAL_MODE}",
+    )
 
     validate = sub.add_parser("validate-return", help="validate a returned external-agent folder")
     validate.add_argument("--return-root", required=True)
     validate.add_argument("--receipt")
+
+    validate_detached = sub.add_parser(
+        "validate-detached-return",
+        help="validate a DETACHED_EXTERNAL_AGENT implementation-proposal return root; "
+        "see scripts/external_agent_return_contract.py for the owned contract",
+    )
+    validate_detached.add_argument("--return-root", required=True)
+    validate_detached.add_argument("--task-capsule", required=True)
+    validate_detached.add_argument("--receipt")
     return parser
 
 
@@ -761,6 +553,14 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps(result, indent=2, sort_keys=True))
             return 0
         root = Path(args.return_root)
+        if args.command == "validate-detached-return":
+            receipt_path = Path(args.receipt) if args.receipt else root.parent / f"{root.name}.DETACHED_RETURN_VALIDATION_RECEIPT.json"
+            if root.resolve() == receipt_path.resolve() or root.resolve() in receipt_path.resolve().parents:
+                raise PacketError("detached validation receipt must be written outside the detached return root")
+            receipt = validate_detached_return(root, Path(args.task_capsule))
+            _write_json(receipt_path, receipt)
+            print(json.dumps(receipt, indent=2, sort_keys=True))
+            return 0 if receipt["status"] == "EXTERNAL_RETURN_READY_FOR_LOCAL_VERIFICATION" else 1
         receipt_path = Path(args.receipt) if args.receipt else root.parent / f"{root.name}.RETURN_VALIDATION_RECEIPT.json"
         receipt = validate_return(root, receipt_path)
         print(json.dumps(receipt, indent=2, sort_keys=True))

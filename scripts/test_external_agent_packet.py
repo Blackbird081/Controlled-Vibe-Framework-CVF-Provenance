@@ -82,6 +82,7 @@ def _base_task_args(tmp_path: Path, working_mode: str = "EXTEND_SUPPLIED_REPOSIT
         source_commit="b" * 40,
         output_root="D:/out",
         non_goal=[],
+        execution_class=None,
     )
 
 
@@ -158,7 +159,7 @@ contained 1 entries;
     from datetime import datetime
     from zoneinfo import ZoneInfo
     updated = _update_snapshot_text(original, "a" * 40, "2026-08-23T00:00:00+07:00", "new", 8231, datetime(2026, 8, 23, tzinfo=ZoneInfo("Asia/Ho_Chi_Minh")))
-    assert "protocolVersion: 1.2.0" in updated
+    assert f"protocolVersion: {PROTOCOL_VERSION}" in updated
     assert "`" + "a" * 40 + "`" in updated
     assert "contained 8,231 entries;" in updated
 
@@ -260,11 +261,6 @@ def test_generated_task_capsule_matches_strict_schema(tmp_path: Path) -> None:
     widened["authorityEnvelope"]["dispatchAllowed"] = True
     with pytest.raises(jsonschema.ValidationError):
         jsonschema.Draft202012Validator(schema).validate(widened)
-
-
-# --- EACQ-FV-MV2: four context groups plus offline creation route ---------
-
-
 def test_strict_valid_capsule_with_all_four_groups(tmp_path: Path) -> None:
     args = _base_task_args(tmp_path)
     capsule = create_capsule(args, "a" * 40, source_posture=SOURCE_POSTURE_LIVE, context_groups=_valid_context_groups())
@@ -291,6 +287,17 @@ def test_review_only_mode_does_not_require_context_groups(tmp_path: Path) -> Non
     jsonschema.Draft202012Validator(schema, format_checker=jsonschema.FormatChecker()).validate(capsule)
     for group in ("protectedPaths", "ownerMap", "invariants", "verification"):
         assert group not in capsule
+
+
+def test_detached_implementation_capsule_requires_execution_class_and_context(tmp_path: Path) -> None:
+    args = _base_task_args(tmp_path, working_mode="DETACHED_IMPLEMENTATION_PROPOSAL")
+    with pytest.raises(PacketError, match="execution-class is required"):
+        create_capsule(args, "a" * 40, context_groups=_valid_context_groups())
+    args.execution_class = "DETACHED_EXTERNAL_AGENT"
+    with pytest.raises(PacketError, match="requires all four context groups"):
+        create_capsule(args, "a" * 40, context_groups=None)
+    capsule = create_capsule(args, "a" * 40, context_groups=_valid_context_groups())
+    assert capsule["task"]["executionClass"] == "DETACHED_EXTERNAL_AGENT" and capsule["task"]["expectedReturnStatus"] == "EXTERNAL_RETURN_READY_FOR_LOCAL_VERIFICATION"
 
 
 @pytest.mark.parametrize(
@@ -359,11 +366,6 @@ def test_owner_path_symbol_and_competing_owners_preserved_exactly(tmp_path: Path
     assert owner["path"] == "scripts/external_agent_packet.py"
     assert owner["symbol"] == "create_capsule"
     assert owner["competingOwnersChecked"] == ["none found"]
-
-
-# --- EACQ-FV-EV1: owner-map competing-owner evidence hardening ------------
-
-
 def test_owner_missing_competing_owners_checked_fails(tmp_path: Path) -> None:
     groups = _valid_context_groups()
     del groups["ownerMap"]["owners"][0]["competingOwnersChecked"]
@@ -591,11 +593,6 @@ def test_existing_return_validation_tests_remain_passing(tmp_path: Path) -> None
     _make_return(root)
     receipt = validate_return(root, tmp_path / "receipt.json")
     assert receipt["status"] == "PASS", receipt["errors"]
-
-
-# --- EARTR-ESC-R1: typed candidate contract, dual reading, receipt binding -
-
-
 def _rewrite_manifest(root: Path, mutator) -> dict:
     manifest_path = root / "EXTERNAL_AGENT_RETURN_MANIFEST.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -882,7 +879,7 @@ def test_receipt_binds_exact_manifest_protocol_and_candidate_version(tmp_path: P
     receipt = validate_return(root, tmp_path / "receipt.json")
     assert receipt["status"] == "PASS", receipt["errors"]
     assert receipt["validatedReturnManifestSha256"] == expected_sha
-    assert receipt["validatedProtocolVersion"] == "1.2.0" == PROTOCOL_VERSION
+    assert receipt["validatedProtocolVersion"] == "1.3.0" == PROTOCOL_VERSION
     assert receipt["validatedCandidateContractVersion"] == CANDIDATE_CONTRACT_VERSION
 
 
@@ -958,11 +955,6 @@ def test_strict_v1_source_evidence_must_be_nonblank_free_text(tmp_path: Path, ca
     receipt = validate_return(root, tmp_path / "receipt.json")
     assert receipt["status"] == "RETURN_FOR_REPAIR"
     assert any("sourceEvidence must be a non-blank string" in error for error in receipt["errors"])
-
-
-# --- EARTR-ESC-R1 Amendment 1: candidate-contract semantic repairs --------
-
-
 def test_boolean_discriminator_true_is_rejected_not_treated_as_strict_v1(tmp_path: Path) -> None:
     """Reviewer probe 1: candidateContractVersion: true must not be accepted
     as the integer 1 (bool is a subclass of int in Python)."""

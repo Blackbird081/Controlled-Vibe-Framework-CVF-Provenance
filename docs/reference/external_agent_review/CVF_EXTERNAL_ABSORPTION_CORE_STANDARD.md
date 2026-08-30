@@ -33,8 +33,8 @@ absorption.
 
 ## Central Core
 
-External absorption is not complete because an agent says it inspected the
-source. It is complete only within a bounded corpus after the artifact records:
+Source reconciliation is not absorption completion. It establishes a bounded
+corpus and value decision only after the artifact records:
 
 - a filesystem-backed or source-backed manifest;
 - a file-level processing ledger;
@@ -43,8 +43,17 @@ source. It is complete only within a bounded corpus after the artifact records:
 - unresolved, deferred, rejected, and blocked items;
 - a value-conversion matrix that explicitly evaluates package, runtime, and
   checker opportunities instead of stopping at pattern adaptation;
+- an absorption maturity, named consumer, integration evidence, use proof and
+  operator checkpoint;
 - a claim boundary that prevents runtime, provider, public, or production
   expansion without fresh governed work.
+
+For value presented as a CVF foundation uplift, documentation, schemas,
+standards, roadmaps and candidate indexes are intermediate normalization
+artifacts. `ABSORPTION_COMPLETE_USE_PROVEN` is allowed only after the value is
+integrated into a named non-test runtime consumer and an operator-authorized
+use proof passes. Until then the correct status is
+`ABSORPTION_NOT_COMPLETE`.
 
 This standard extends the external knowledge chain map. It does not make
 external material canonical, authorize implementation, execute providers,
@@ -125,8 +134,35 @@ closes value from an external repo or copied folder must include this block:
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
 | Owner-surface map | <CVF owner reference, roadmap, work order, source path, or BLOCKED_SOURCE_NOT_FOUND> |
 | Unresolved items | <0 or explicit list> |
-| Completion claim boundary | <bounded claim; no runtime/provider/public/production expansion> |
+| Absorption maturity | SOURCE_RECONCILED, KNOWLEDGE_NORMALIZED_RUNTIME_PENDING, RUNTIME_INTEGRATED_USE_PENDING, USE_PROVEN, or NO_RUNTIME_VALUE_WITH_REASON |
+| Named runtime consumer | <non-test consumer path/symbol, PENDING_NOT_NAMED, or N/A_NO_RUNTIME_VALUE_WITH_REASON> |
+| Integration evidence | <reviewable path/receipt, PENDING_RUNTIME_INTEGRATION, or N/A_NO_RUNTIME_VALUE_WITH_REASON> |
+| Use proof | <reviewable receipt/path, PENDING_OPERATOR_AUTHORIZED_RUNTIME_PROOF, or N/A_NO_RUNTIME_VALUE_WITH_REASON> |
+| Operator checkpoint | REQUIRED_BEFORE_RUNTIME_EXECUTION, OPERATOR_CHECKPOINT_SATISFIED:<evidence>, or N/A_NO_RUNTIME_VALUE_WITH_REASON |
+| Absorption completion status | ABSORPTION_NOT_COMPLETE, ABSORPTION_COMPLETE_USE_PROVEN, or NO_RUNTIME_VALUE_WITH_REASON |
+| Completion claim boundary | <bounded maturity claim; no expansion beyond evidence> |
 ```
+
+## Runtime Realization And Proactive Execution Rule
+
+The agent must immediately perform useful, reversible work inside an existing
+owner when scope and authority are already established. This includes source
+verification, CVF-native normalization, local contract/schema/source changes,
+provider-free deterministic tests, negative cases, registry updates and
+rollback preparation. Do not park such work merely because the source is
+external or because a later runtime proof needs a checkpoint.
+
+The agent pauses and proposes a concrete next tranche only when:
+
+- a material product/architecture choice lacks an existing owner decision;
+- new authority, credentials, budget, destructive action or external
+  coordination is required;
+- runtime execution, provider/live proof, deployment, public mutation, or
+  another external effect is about to occur.
+
+The proposal must name the consumer, implementation paths, acceptance tests,
+runtime command/effect, rollback and expected value. A docs-only output may be
+useful evidence, but it cannot close a foundation-uplift absorption.
 
 When a high-value upstream repo has a local source mirror, the `Input root or
 repository` row must include the upstream URL, pinned commit, and local mirror

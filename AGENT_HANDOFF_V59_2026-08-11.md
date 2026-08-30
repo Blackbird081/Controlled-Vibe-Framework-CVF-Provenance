@@ -39,14 +39,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select a new roadmap only through a fresh four-part value gate; parked checkpoint=UAA, 751-line and 869-line soft-size advisories, code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
+Startup acknowledged: current mode=`affd_r1_closed_pass_bounded_fresh_value_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select one fresh source-backed non-duplicate roadmap; parked checkpoint=P4 retry, P5, provider/live, commit, public sync, deployment and automatic successor.
 
 ## Current Mode
-`eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate`
+`affd_r1_closed_pass_bounded_fresh_value_selection`
 
 ## Purpose
 
-Preserve the bounded EACQ-FV-EV2 closure and admit any next roadmap only through a fresh four-part value gate.
+Preserve the bounded DSH-WRA-R1 and DEAR-LP P0-P3 closures, then execute exactly one operator-mediated P4 detached return pilot without promotion or commit.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -111,14 +111,14 @@ Preserve the bounded EACQ-FV-EV2 closure and admit any next roadmap only through
 
 ## Current Authority
 
-EACQ-FV-L3 is closed at material `ff78fbab6` and closure `e1b237ea8`. EACQ-FV-EV2 is closed at material `4ffa0df23` and closure `79eb1426c`.
+DSH-WRA-R1 is `CLOSED_PASS_BOUNDED`; its technical and corpus findings are closed, while the unrecoverable original pre-edit observation is waived only as low-value historical evidence. DEAR-LP-R1 deterministic P0-P3 is reviewer-accepted after seven bounded repairs; P4 is `BLOCKED_ENVIRONMENT_NOT_DETACHED` with no retry, and P5 remains parked.
 
 | Field | Value |
 |---|---|
-| authorityState | EACQ-FV-EV2 closed bounded at material `4ffa0df23` and closure `79eb1426c`; pending next value gate |
-| baselinePath | `docs/baselines/CVF_GC018_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_2026-08-28.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_EACQ_FV_EV2_CAPSULE_EFFECTIVENESS_EVIDENCE_RECONCILIATION_2026-08-28.md` |
-| nextAuthorityRequirement | fresh serious, source-backed, non-duplicate, value-exceeds-cost gate before any new roadmap; no automatic successor |
+| authorityState | DEAR-LP-R1 P0-P3 `CLOSED_PASS_BOUNDED`; P4-R1 `BLOCKED_ENVIRONMENT_NOT_DETACHED`; AFFD-R1 `CLOSED_PASS_BOUNDED` |
+| roadmapPath | `docs/roadmaps/CVF_DETACHED_AGENT_IMPLEMENTATION_RETURN_AND_LOCAL_PROMOTION_ROADMAP_2026-08-30.md` |
+| closureDependency | DSH-WRA-R1 `CLOSED_PASS_BOUNDED`; historical-only R2-F03 waiver explicit |
+| nextAuthorityRequirement | operator copies the canonical prompt and exact capsule once; local reviewer validates returned bytes; no automatic repair, P5 or successor |
 
 ## Closure Evidence
 
@@ -169,8 +169,9 @@ EACQ-FV-L3 is closed at material `ff78fbab6` and closure `e1b237ea8`. EACQ-FV-EV
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
+DEAR-LP P4 is `BLOCKED_ENVIRONMENT_NOT_DETACHED` after its single attempted invocation; no retry or P5 is authorized. AFFD-R1 is `CLOSED_PASS_BOUNDED` with focused/adversarial 41/41 and related 33/33 PASS after one consolidated worker repair and one disclosed reviewer repair. Next allowed move is selection of one fresh source-backed non-duplicate roadmap whose expected value exceeds cost. Provider/live, commit, public sync, deployment and automatic successor remain parked. Latest finalized numbered LHW wave remains LHW24.
 
-DeepSeek Harness EARTR use case 001 is absorbed and closed at material `7b8514526`. The next allowed architectural move is another source-pinned external audit through EARTR 1.2, or reopening DSH-001/DSH-005 only after every indexed conjunctive condition is proven and the operator authorizes a separate governed work order. UAA, unconditional DSH implementation, all unrelated code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction, soft-size advisories, and unrelated work remain parked. Latest finalized numbered LHW wave remains LHW24.
+Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
 ## Active Boundary
 
@@ -203,18 +204,17 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: retain prior closures and bind EACQ-FV-EV2 closure `79eb1426c` plus material `4ffa0df23`.
+Authorized guard-maintenance scope: retain the prior Brigade review-convergence guard batch and synchronize operator-selected DEAR-LP into continuity; this cumulative inventory creates no new implementation scope.
 Protected paths:
-- `AGENT_HANDOFF_V59_2026-08-11.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`
-- `CVF_SESSION_MEMORY.md`
-Operator authorization: operator continued the orchestrator/reviewer/closer lane; the L3 work order authorizes independent review, material commit, closure, and continuity sync.
-Rollback boundary: revert this EV-2 final closure continuity atomically while retaining closure `79eb1426c`, material `4ffa0df23`, amendment `7af9c63eb`, original dispatch `9ac836be0`, L3 closure `e1b237ea8`, all prior closures, and history for separate disposition.
-Not authorized: UAA execution, checker/commit-steward/scaffold/autorun/template/registry/session worker mutation, successor implementation, runtime-owner mutation, external packet-folder mutation, public mutation, deployment, push, secret-value access, provider/live calls, compaction, or unrelated work.
+Protected continuity paths:
+- `AGENT_HANDOFF_V59_2026-08-11.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/pprrR1PrivateProvenanceRegistryReconciliationDispatched20260827.json`; `CVF_SESSION_MEMORY.md`.
+Protected guard paths:
+- `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
+- `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
+Operator authorization: prior Brigade closure authorized the guard batch; DEAR-LP-R1 P0-P3 is reviewer-accepted; operator `ok, next` releases one P4 detached transport invocation under the new GC-018/work order.
+Rollback boundary: withdraw the P4 dispatch packet and continuity sync atomically if canceled; retain the accepted P0-P3 implementation and prior closures.
+Not authorized: second external invocation, private-repository access, CVF provider/API/network use, credentials, subagents, promotion, P5, further guard/runtime mutation, commit, public mutation, deploy, push, secrets, compaction, successor, or unrelated work.
+
 ## Claim Boundary
 
-This handoff records EACQ-FV-EV2 closed bounded pending a fresh next-value gate. It authorizes no automatic successor, causal quality claim, code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, corpus reclassification, UAA gate, provider/live action, external packet mutation, public mutation, deploy, production claim, compaction, soft-advisory work, or unrelated lane.
+This handoff records DSH-WRA-R1 and DEAR-LP P0-P3 closed bounded, P4 blocked after its single attempted invocation, and AFFD-R1 closed bounded. It authorizes no P4 retry, private-repository access under a detached claim, provider/API/network action, credential, subagent, promotion, P5, commit, public mutation, deploy, production claim, compaction, or automatic successor.

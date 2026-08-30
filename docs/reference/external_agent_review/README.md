@@ -41,6 +41,7 @@ semantics.
 | `CVF_EXTERNAL_AGENT_OWNER_SURFACE_INDEX.json` | Public-safe bounded owner-discovery projection consumed by the packet refresh workflow. |
 | `CVF_EXTERNAL_AGENT_TASK_CAPSULE.schema.json` | Strict top-level shape for the generated per-task capsule. |
 | `scripts/external_agent_packet.py` | Fail-closed snapshot refresh, task-capsule generation, and semantic return validation. |
+| `scripts/external_agent_return_contract.py` | `DETACHED_EXTERNAL_AGENT` versus `SHARED_WORKSPACE_DELEGATED_WORKER` execution classes, the strict manifest authority object, `PROPOSED_TARGET_MAP.json` and proposed-changeset path/inventory safety, the independent state vector, and the derived completion projection for detached implementation-proposal returns. Maximum positive result is `EXTERNAL_RETURN_READY_FOR_LOCAL_VERIFICATION`; never local promotion, integration, or SOT proof. |
 | `CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md` | Standard for giving external agents enough context to review CVF without exposing private provenance source. |
 | `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` | Central chain map connecting external/corpus/repo input, old blind-spot/corpus/legacy rules, external-agent review packets, returned-output absorption, GC-018, work orders, source verification, and autorun. |
 | `CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md` | Central index for external-absorption package, runtime, checker, and value-parked candidates that retain CVF value but require concrete reopen evidence before future work. |
@@ -185,9 +186,17 @@ compatible.
 After a public update is pushed, run
 `.\scripts\Update-CVF-External-Agent-Packet.ps1 -Mode RefreshSnapshot`. The command
 must prove the public-sync checkout equals live `origin/main` before changing
-the operator-local snapshot. Before sending a packet for a repo-specific task,
+the operator-local snapshot. Refresh also fails closed unless it can reproject
+the current release/version posture from public `CHANGELOG.md` and the three
+provider lanes from `docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md`;
+the receipt binds SHA-256 hashes for those sources. Before sending a packet for a repo-specific task,
 use `-Mode PrepareTask` with an immutable upstream commit. On return, use
 `-Mode ValidateReturn` to create an independent semantic validation receipt.
+For `DETACHED_IMPLEMENTATION_PROPOSAL`, supply the exact generated capsule to
+`-Mode ValidateDetachedReturn -TaskCapsule <path>`; readiness fails closed when
+the capsule digest, task/protocol identity, source pin, public-CVF pin, full
+hidden-file inventory, path normalization, symlink boundary, or secret scan
+does not reconcile.
 
 When a returned repo or folder contains
 `EXTERNAL_AGENT_RETURN_MANIFEST.json` with schema
@@ -256,7 +265,13 @@ MCP runtime-adapter claim, and no measured-uplift claim.
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
 | Owner-surface map | inline `## Current References` table in this file |
 | Unresolved items | 0 |
-| Completion claim boundary | reference front door only; no runtime, provider, public, package, checker, or production expansion |
+| Absorption maturity | NO_RUNTIME_VALUE_WITH_REASON |
+| Named runtime consumer | N/A_NO_RUNTIME_VALUE_WITH_REASON: reference front door only |
+| Integration evidence | N/A_NO_RUNTIME_VALUE_WITH_REASON: no runtime behavior owned here |
+| Use proof | N/A_NO_RUNTIME_VALUE_WITH_REASON: front-door navigation only |
+| Operator checkpoint | N/A_NO_RUNTIME_VALUE_WITH_REASON |
+| Absorption completion status | NO_RUNTIME_VALUE_WITH_REASON |
+| Completion claim boundary | reference front door only; no foundation-uplift absorption or runtime/provider/public expansion |
 
 ## Corpus Completeness And Report Integrity
 

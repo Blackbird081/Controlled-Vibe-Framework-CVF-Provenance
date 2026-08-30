@@ -36,18 +36,25 @@ operator-pinned commit, not live-verified against public origin/main.
 .EXAMPLE
 .\scripts\Update-CVF-External-Agent-Packet.ps1 -Mode ValidateReturn `
   -ReturnRoot 'D:\UNG DUNG AI\EXTERNAL_RETURNS\MCP_REVIEW_002'
+
+.EXAMPLE
+.\scripts\Update-CVF-External-Agent-Packet.ps1 -Mode ValidateDetachedReturn `
+  -ReturnRoot 'D:\UNG DUNG AI\EXTERNAL_RETURNS\CODING_TASK_003' `
+  -TaskCapsule 'D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_EXTERNAL_AGENT_TASK_CAPSULE.json'
 #>
 [CmdletBinding()]
 param(
-    [ValidateSet('RefreshSnapshot', 'PrepareTask', 'PrepareTaskOffline', 'ValidateReturn')]
+    [ValidateSet('RefreshSnapshot', 'PrepareTask', 'PrepareTaskOffline', 'ValidateReturn', 'ValidateDetachedReturn')]
     [string]$Mode = 'RefreshSnapshot',
     [string]$PublicRepoPath = 'D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync',
     [string]$PacketRoot = 'D:\UNG DUNG AI\EXTERNAL_AGENT_READ',
     [string]$TaskId,
     [string]$Title,
     [string]$Objective,
-    [ValidateSet('REVIEW_ONLY', 'DESIGN_ONLY', 'BUILD_NEW_REPOSITORY', 'EXTEND_SUPPLIED_REPOSITORY', 'SOURCE_PACK_PREPARATION')]
+    [ValidateSet('REVIEW_ONLY', 'DESIGN_ONLY', 'BUILD_NEW_REPOSITORY', 'EXTEND_SUPPLIED_REPOSITORY', 'SOURCE_PACK_PREPARATION', 'DETACHED_IMPLEMENTATION_PROPOSAL')]
     [string]$WorkingMode = 'REVIEW_ONLY',
+    [ValidateSet('SHARED_WORKSPACE_DELEGATED_WORKER', 'DETACHED_EXTERNAL_AGENT')]
+    [string]$ExecutionClass,
     [string]$SourceRepository,
     [string]$SourceCommit,
     [string]$SourceLicenseExpression,
@@ -58,6 +65,7 @@ param(
     [string]$ContextFile,
     [string]$CvfPublicCommit,
     [string]$ReturnRoot,
+    [string]$TaskCapsule,
     [string]$Receipt
 )
 
@@ -86,6 +94,10 @@ if ($Mode -eq 'RefreshSnapshot') {
         $arguments += @('--source-license-expression', $SourceLicenseExpression, '--source-license-source', $SourceLicenseSource)
         foreach ($item in $SourceImmutableReference) { $arguments += @('--source-immutable-reference', $item) }
     }
+    if ($WorkingMode -eq 'DETACHED_IMPLEMENTATION_PROPOSAL') {
+        if (-not $ExecutionClass) { throw 'ExecutionClass is required for DETACHED_IMPLEMENTATION_PROPOSAL' }
+        $arguments += @('--execution-class', $ExecutionClass)
+    }
     foreach ($item in $NonGoal) { $arguments += @('--non-goal', $item) }
     if ($ContextFile) { $arguments += @('--context-file', $ContextFile) }
     & python @arguments
@@ -107,7 +119,17 @@ if ($Mode -eq 'RefreshSnapshot') {
         $arguments += @('--source-license-expression', $SourceLicenseExpression, '--source-license-source', $SourceLicenseSource)
         foreach ($item in $SourceImmutableReference) { $arguments += @('--source-immutable-reference', $item) }
     }
+    if ($WorkingMode -eq 'DETACHED_IMPLEMENTATION_PROPOSAL') {
+        if (-not $ExecutionClass) { throw 'ExecutionClass is required for DETACHED_IMPLEMENTATION_PROPOSAL' }
+        $arguments += @('--execution-class', $ExecutionClass)
+    }
     foreach ($item in $NonGoal) { $arguments += @('--non-goal', $item) }
+    & python @arguments
+} elseif ($Mode -eq 'ValidateDetachedReturn') {
+    if (-not $ReturnRoot) { throw 'ReturnRoot is required for ValidateDetachedReturn' }
+    if (-not $TaskCapsule) { throw 'TaskCapsule is required for ValidateDetachedReturn' }
+    $arguments = @($tool, 'validate-detached-return', '--return-root', $ReturnRoot, '--task-capsule', $TaskCapsule)
+    if ($Receipt) { $arguments += @('--receipt', $Receipt) }
     & python @arguments
 } else {
     if (-not $ReturnRoot) { throw 'ReturnRoot is required for ValidateReturn' }

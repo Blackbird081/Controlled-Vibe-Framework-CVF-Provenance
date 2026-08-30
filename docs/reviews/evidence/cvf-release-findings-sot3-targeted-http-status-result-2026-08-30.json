@@ -1,0 +1,30 @@
+{
+  "a4ReturnCode": 1,
+  "batchId": "SOT3-ACT-A5",
+  "finishedAtUtc": "2026-08-30T02:07:09.986233+00:00",
+  "schemaVersion": "cvf.sot3ActA5ReleaseProof.v1",
+  "secretSafety": {
+    "fullPromptPersisted": false,
+    "rawKeyPersisted": false,
+    "rawOutputPersisted": false,
+    "rawProviderBodyPersisted": false
+  },
+  "sot3": {
+    "admissionFailures": [
+      "a4_live_receipt_missing_or_unreadable"
+    ],
+    "approvedContextIncluded": null,
+    "claim": null,
+    "durableOwnerCorrelationComplete": false,
+    "httpStatus": null,
+    "localNegativeGatePassed": false,
+    "negativeCaseCount": null,
+    "overall": "FAIL",
+    "providerSuccess": null,
+    "recoveryProviderCallCount": 1,
+    "rollbackProviderCallCount": null,
+    "traceCount": null,
+    "zeroProviderCallCaseCount": null
+  },
+  "startedAtUtc": "2026-08-30T02:05:47.657117+00:00"
+}

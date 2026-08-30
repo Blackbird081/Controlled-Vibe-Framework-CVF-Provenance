@@ -58,6 +58,7 @@ runtime-expansion boundary):
 |---|---|
 | `docs/reference/multi_agent_orchestration/CVF_MAO_T0_SOURCE_INVENTORY_AND_OVERLAP_DECISIONS.md` | Definitive source inventory, REUSE/ADAPT/REJECT decisions, and the three-caveat compatibility analysis |
 | `docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_CONTRACT.md` | Architecture decisions, lifecycle/state transition tables, risk/cost/retry model, storage/retention decision, and threat/failure model |
+| `docs/reference/multi_agent_orchestration/CVF_MAO_ATOMIC_DELEGATION_LIFECYCLE_COMPOSITION_STANDARD.md` | Atomic reservation, dual-scope concurrency, descendant abort, exactly-once budget release and per-parent completion serialization |
 | `docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_SCHEMA.json` | JSON Schema for task graph, event ledger, receipts, capability/authority envelope, and generated read model |
 | `docs/roadmaps/CVF_MULTI_AGENT_ORCHESTRATION_RUNTIME_FOUNDATION_ROADMAP_2026-07-11.md` | Governing roadmap: tranche sequence MAO-T0 through MAO-T9 |
 | `docs/reviews/CVF_MAO_ROADMAP_EXTERNAL_CRITIQUE_INTERNAL_RECONCILIATION_2026-07-11.md` | Accepted external critique classification with three T0 caveats |

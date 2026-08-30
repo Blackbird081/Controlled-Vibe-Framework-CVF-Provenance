@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select a new roadmap only through a fresh four-part value gate; parked checkpoint=UAA, 751-line and 869-line soft-size advisories, code/checker/commit-steward/scaffold/autorun/template/registry/runtime mutation, provider/live, public sync, deployment, push, secrets, compaction and unrelated work.
+Startup acknowledged: current mode=`affd_r1_closed_pass_bounded_fresh_value_selection`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select one fresh source-backed non-duplicate roadmap after AFFD-R1 closure; parked checkpoint=P4 retry, P5, provider/live, commit, public sync, deployment and automatic successor.
 
 ## Current Mode
 
-Current mode marker: `eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate`
-Current mode: `eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate`; previous mode marker: `eacq_fv_ev2_material_accepted_pending_closure`
-Previous mode: `eacq_fv_ev2_material_accepted_pending_closure`
+Current mode marker: `affd_r1_closed_pass_bounded_fresh_value_selection`
+Current mode: `affd_r1_closed_pass_bounded_fresh_value_selection`; previous mode marker: `dear_lp_p4_r1_dispatch_ready_one_detached_pilot`
+Previous mode: `dear_lp_r1_p0_p3_closed_bounded_p4_checkpoint_pending`
 
 ## Next Allowed Move
 
-Mode: `eacq_fv_ev2_closed_pass_bounded_pending_next_value_gate`. EV-2 is closed at material `4ffa0df23` and closure `79eb1426c` with verdict `PROMISING_NON_CAUSAL`; exact material-range pre-closure proof passed 79/79. Select a new roadmap only through a fresh serious, source-backed, non-duplicate, value-exceeds-cost gate. No successor opens automatically; UAA and every code/runtime/provider/public lane remain parked.
+Mode: `affd_r1_closed_pass_bounded_fresh_value_selection`. DEAR-LP P0-P3 remains reviewer-accepted; P4 stopped `BLOCKED_ENVIRONMENT_NOT_DETACHED` after its single attempted invocation and P5 remains parked. AFFD-R1 is `CLOSED_PASS_BOUNDED` after one consolidated worker repair and one disclosed reviewer repair; focused/adversarial 41/41 and related 33/33 pass. Next move is fresh source-backed non-duplicate roadmap selection only; no automatic successor, provider/live, commit, public sync or deployment is authorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

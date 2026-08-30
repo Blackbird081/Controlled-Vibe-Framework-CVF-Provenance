@@ -1,0 +1,31 @@
+{
+  "pilot": "brigade-atomic-delegation-runtime-pilot",
+  "startedAt": "2026-08-29T16:30:33.532Z",
+  "finishedAt": "2026-08-29T16:30:33.992Z",
+  "verdict": "PASS",
+  "providerCalls": 0,
+  "runtimeOwners": [
+    "MaoOperationalWorkerLauncher",
+    "MaoFileRunStore",
+    "MaoFileDelegationLedgerStore",
+    "MaoAtomicDelegationLifecycleCoordinator"
+  ],
+  "completionSerialization": {
+    "launcherRestartedBetweenCompletions": true,
+    "settleEntryCount": 2,
+    "wakeEntryCount": 1,
+    "wakeSequence": 4,
+    "finalGlobalActive": 0
+  },
+  "abortCascade": {
+    "invokedThroughLauncher": true,
+    "admissionClosed": true,
+    "releasedLeafFirst": [
+      "grandchild",
+      "child"
+    ],
+    "completionCount": 2,
+    "replayFinalGlobalActive": 0
+  },
+  "claimBoundary": "Representative local runtime use only; no provider, distributed process, public release, deployment, or production-readiness claim."
+}
