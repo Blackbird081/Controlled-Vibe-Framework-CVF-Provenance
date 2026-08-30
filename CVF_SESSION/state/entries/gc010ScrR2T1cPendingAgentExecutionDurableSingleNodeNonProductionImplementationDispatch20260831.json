@@ -1,0 +1,14 @@
+{
+  "stateOrder": 2391,
+  "stateKey": "gc010ScrR2T1cPendingAgentExecutionDurableSingleNodeNonProductionImplementationDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "dispatchCommit": "d0579eaab",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_WORKER_RETURN_2026-08-31.md",
+    "workerChangedSet": "Exactly five implementation paths plus the worker return; WORKER_MUST_NOT_COMMIT.",
+    "nextAllowedMove": "Execute the committed T1C work order, return the exact six uncommitted paths, then stop for independent orchestrator/reviewer closure.",
+    "claimBoundary": "Dispatch only. No T1C implementation is accepted yet, and no route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment or production authority is opened."
+  }
+}

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1b_closed_pass_bounded_specialized_sqlite_selected`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh T1C non-production implementation packet for the corrected five-path manifest; parked checkpoint=implementation until dispatch, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1c_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T1C work order with exact six-path no-commit return, then stop for independent review; parked checkpoint=route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t1b_closed_pass_bounded_specialized_sqlite_selected`
-Current mode: `gc010_scr_r2_t1b_closed_pass_bounded_specialized_sqlite_selected`; previous mode marker: `gc010_scr_r2_t1b_dispatched_pending_worker_return`
+Current mode marker: `gc010_scr_r2_t1c_dispatched_pending_worker_return`
+Current mode: `gc010_scr_r2_t1c_dispatched_pending_worker_return`; previous mode marker: `gc010_scr_r2_t1b_closed_pass_bounded_specialized_sqlite_selected`
 Previous mode: `gc010_scr_r2_t0a_closed_pass_bounded_partial_ready`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t1b_closed_pass_bounded_specialized_sqlite_selected`. T1B closed at material `da55f54d5` with `SPECIALIZED_SQLITE_SINGLE_NODE_ADAPTER_AND_COMPOSITION_OWNER_SELECTED` after bounded reviewer repair of durability, schema, interface-error, and shared-transition semantics. The next allowed move is authoring a fresh T1C non-production implementation packet for the corrected five-path manifest; implementation is not automatic. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1c_dispatched_pending_worker_return`. T1B remains closed at material `da55f54d5`; T1C durable single-node non-production implementation is dispatched at `d0579eaab`. The next allowed move is execution of the committed work order with exactly five implementation paths plus the worker return, `WORKER_MUST_NOT_COMMIT`, followed by independent orchestrator/reviewer closure. Route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

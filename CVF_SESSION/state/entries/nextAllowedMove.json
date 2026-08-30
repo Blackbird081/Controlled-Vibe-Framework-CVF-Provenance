@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "Author a fresh GC010-SCR-R2-T1C non-production implementation baseline and work order for the corrected five-path manifest accepted at material commit da55f54d5. Authoring only is allowed; do not implement automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute the committed GC010-SCR-R2-T1C work order at dispatch commit d0579eaab. The worker may modify/create exactly five implementation paths plus the named worker return, must not commit, and must stop for independent orchestrator/reviewer closure. Route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r2_t1b_closed_pass_bounded_specialized_sqlite_selected",
+  "currentMode": "gc010_scr_r2_t1c_dispatched_pending_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Author a fresh GC010-SCR-R2-T1C non-production implementation baseline and work order for the corrected five-path manifest accepted at material commit da55f54d5. Authoring only is allowed; do not implement automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute the committed GC010-SCR-R2-T1C work order at dispatch commit d0579eaab. The worker may modify/create exactly five implementation paths plus the named worker return, must not commit, and must stop for independent orchestrator/reviewer closure. Route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
-    "baselineSha256": "2ee83a0a38e31a0c692e3ff73eb9832a8f39fc4cb07ed416d14efa0ec0184b7c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
-    "workOrderSha256": "39a4e0914a91b7cef717bf85cfc6a1deef4ffb0a4de5f0550b1db722f7422eeb"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "baselineSha256": "e2ebd49d87c9cd615c97b0d3122e9cc3485e8791dbf833ab93b7f18869ce0d6a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workOrderSha256": "3ca5746d10fb70200b8d89fcd446583e4f377e618a02b3648e6a8ac1cf101115"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
-    "baselineSha256": "2ee83a0a38e31a0c692e3ff73eb9832a8f39fc4cb07ed416d14efa0ec0184b7c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
-    "workOrderSha256": "39a4e0914a91b7cef717bf85cfc6a1deef4ffb0a4de5f0550b1db722f7422eeb"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "baselineSha256": "e2ebd49d87c9cd615c97b0d3122e9cc3485e8791dbf833ab93b7f18869ce0d6a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workOrderSha256": "3ca5746d10fb70200b8d89fcd446583e4f377e618a02b3648e6a8ac1cf101115"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,7 +105,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1b_closed_pass_bounded_specialized_sqlite_selected",
+  "currentMode": "gc010_scr_r2_t1c_dispatched_pending_worker_return",
   "previousMode": "gc010_scr_r2_t1b_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Author a fresh GC010-SCR-R2-T1C non-production implementation baseline and work order for the corrected five-path manifest accepted at material commit da55f54d5. Authoring only is allowed; do not implement automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute the committed GC010-SCR-R2-T1C work order at dispatch commit d0579eaab. The worker may modify/create exactly five implementation paths plus the named worker return, must not commit, and must stop for independent orchestrator/reviewer closure. Route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15483,5 +15483,15 @@
     "reviewRepair": "Retained Candidate 5 while correcting durable acknowledgement to SQLite FULL, store schema identity to PRAGMA user_version 1, typed failure semantics to the synchronous T1A interface, and transition reuse to one shared exported T1A helper; future manifest is five paths.",
     "nextAllowedMove": "Author a fresh T1C non-production implementation baseline and work order for the corrected five-path manifest; do not implement automatically.",
     "claimBoundary": "No adapter, composition module, test, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment or production behavior is implemented or authorized by this closure."
+  },
+  "gc010ScrR2T1cPendingAgentExecutionDurableSingleNodeNonProductionImplementationDispatch20260831": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "dispatchCommit": "d0579eaab",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_WORKER_RETURN_2026-08-31.md",
+    "workerChangedSet": "Exactly five implementation paths plus the worker return; WORKER_MUST_NOT_COMMIT.",
+    "nextAllowedMove": "Execute the committed T1C work order, return the exact six uncommitted paths, then stop for independent orchestrator/reviewer closure.",
+    "claimBoundary": "Dispatch only. No T1C implementation is accepted yet, and no route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment or production authority is opened."
   }
 }
