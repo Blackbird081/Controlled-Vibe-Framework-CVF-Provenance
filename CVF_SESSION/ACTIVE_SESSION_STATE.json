@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1A_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CORE_IMPLEMENTATION_2026-08-30.md",
-    "baselineSha256": "59d15829ee731da1a900730e9c5a96f0f3a0cb1b404300f39e281c3d7da73dce",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1A_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CORE_IMPLEMENTATION_2026-08-30.md",
-    "workOrderSha256": "84053d04a74ae79c2c099af39ededdf036581cc5305204652861a5c252a7b486"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
+    "baselineSha256": "2ee83a0a38e31a0c692e3ff73eb9832a8f39fc4cb07ed416d14efa0ec0184b7c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
+    "workOrderSha256": "39a4e0914a91b7cef717bf85cfc6a1deef4ffb0a4de5f0550b1db722f7422eeb"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1a_closed_pass_bounded_non_production_core_accepted",
-  "previousMode": "gc010_scr_r2_t1a_dispatched_pending_worker_return",
+  "currentMode": "gc010_scr_r2_t1b_dispatched_pending_worker_return",
+  "previousMode": "gc010_scr_r2_t1a_closed_pass_bounded_non_production_core_accepted",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Author a fresh GC010-SCR-R2-T1B decision/dispatch packet that selects the exact durable single-node adapter boundary and composition owner consuming the accepted T1A core at material commit f55b80826. Authoring only is allowed; do not implement or wire a route/provider automatically. The historical production consumer, cross-process/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute the committed GC010-SCR-R2-T1B decision-only work order at material commit 5eb3c882f. One no-commit worker may create exactly the named assessment and worker return, then stop for orchestrator review. Adapter, composition, route or test implementation is not authorized; production consumer, cross-process/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15459,5 +15459,18 @@
     "proof": "Reviewer repaired the authority boundary; focused Vitest 64/64, TypeScript no-emit, forbidden-symbol search, worker-return fast gate, governed file-size guard and material pre-commit 87/87 all pass with zero provider/live calls.",
     "nextAllowedMove": "Author a fresh T1B decision/dispatch packet for the exact durable single-node adapter boundary and composition owner; no implementation or production consumer is automatically opened.",
     "claimBoundary": "Accepted single-process non-production core only; no production consumer, cross-process/distributed safety, route, package export, provider invocation, durable audit, public sync, deployment or production readiness."
+  },
+  "gc010ScrR2T1bPendingAgentExecutionDurableSingleNodeAdapterCompositionOwnerDecisionDispatch20260831": {
+    "status": "DISPATCHED_DECISION_ONLY",
+    "materialCommit": "5eb3c882f",
+    "dispatchBase": "25e3b22ed",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
+    "workerOutputs": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "nextAllowedMove": "One no-commit worker executes the committed decision-only packet, creates exactly the two named documents, and stops for orchestrator review.",
+    "claimBoundary": "No adapter, composition owner, route, tests, production consumer, cross-process/distributed safety, provider/live, public sync, deployment or production implementation is authorized."
   }
 }
