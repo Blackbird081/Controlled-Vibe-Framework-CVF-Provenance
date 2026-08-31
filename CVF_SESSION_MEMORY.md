@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scec_t1_r1_closed_scec_e1_effectiveness_reconciliation_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and dispatch exactly one decision-only SCEC-E1 reconciliation over accepted GC010 T1J R1-through-R3 history; parked checkpoint=T1J-R4 product work, T1K, T2, product/runtime implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`scec_e1_gc010_effectiveness_reconciliation_dispatched_pending_external_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed SCEC-E1 packet to one external governance assessment worker and await exactly two uncommitted outputs; parked checkpoint=T1J-R4 product work, T1K, T2, product/runtime implementation, SCEC source/checker/fixture edits, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `scec_t1_r1_closed_scec_e1_effectiveness_reconciliation_authoring`
-Current mode: `scec_t1_r1_closed_scec_e1_effectiveness_reconciliation_authoring`; previous mode marker: `scec_t1_r1_mixed_fence_parser_hardening_dispatched_pending_external_return`
-Previous mode: `scec_t1_r1_mixed_fence_parser_hardening_dispatched_pending_external_return`
+Current mode marker: `scec_e1_gc010_effectiveness_reconciliation_dispatched_pending_external_return`
+Current mode: `scec_e1_gc010_effectiveness_reconciliation_dispatched_pending_external_return`; previous mode marker: `scec_t1_r1_closed_scec_e1_effectiveness_reconciliation_authoring`
+Previous mode: `scec_t1_r1_closed_scec_e1_effectiveness_reconciliation_authoring`
 
 ## Next Allowed Move
 
-Mode: `scec_t1_r1_closed_scec_e1_effectiveness_reconciliation_authoring`. SCEC-T1-R1 is independently accepted with a reviewer material correction at `8611c1e3e2c88d583047d255c5f646fad987dec1`; focused tests passed 95/95, worker-return fast passed 67/67 and pre-commit passed 88/88. Author and dispatch exactly one decision-only SCEC-E1 reconciliation over accepted GC010 T1J R1-through-R3 history, keep `successorTrancheOpened: NO`, and use any contradiction only to harden SCEC. T1J-R4 product work, T1K, T2 and all product/runtime implementation, provider/live, public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `scec_e1_gc010_effectiveness_reconciliation_dispatched_pending_external_return`. SCEC-T1-R1 remains independently accepted at `8611c1e3e2c88d583047d255c5f646fad987dec1`. Transfer SCEC-E1 dispatch `a56041da3a4a886fe4d135f12db04aeffd242cce` to one external governance assessment worker for exactly two uncommitted outputs. Independently review whether accepted R1-through-R3 history yields `STOP_REASSESS_ARCHITECTURE` / `NO_SUCCESSOR` or exposes a named foundation defect. Keep `successorTrancheOpened: NO`; T1J-R4 product work, T1K, T2, product/runtime implementation, SCEC source/checker/fixture edits, provider/live and public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

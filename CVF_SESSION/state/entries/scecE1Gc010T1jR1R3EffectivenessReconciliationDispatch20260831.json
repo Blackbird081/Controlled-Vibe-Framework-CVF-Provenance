@@ -1,0 +1,26 @@
+{
+  "stateOrder": 2580,
+  "stateKey": "scecE1Gc010T1jR1R3EffectivenessReconciliationDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_GOVERNANCE_ASSESSMENT_RETURN",
+    "problemKey": "gc010-scr-r2-t1j-pending-execution-route-integration",
+    "dispatchCommit": "a56041da3a4a886fe4d135f12db04aeffd242cce",
+    "dispatchBaseHead": "b08bf2d87f2a432671c430bf887807f0a9ea967c",
+    "baseline": "docs/baselines/CVF_GC018_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md",
+    "baselineSha256": "5aadd51dfe68009cc1b79cf1db719ae67b0d4268a772b657bb3d61a6954883ad",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md",
+    "workOrderSha256": "2f05c3c3fcbdfaf4f4f92ef139d11a20d91b3494da5d8ea3bd3f6b3e5424dcd0",
+    "workerReturn": "docs/reviews/CVF_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_WORKER_RETURN_2026-08-31.md",
+    "assessment": "docs/assessments/CVF_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md",
+    "requiredArtifactCount": 2,
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "expectedFoundationOutcome": "Independent source reconciliation should confirm STOP_REASSESS_ARCHITECTURE and NO_SUCCESSOR if the accepted R1-to-R2 and R2-to-R3 blocker transitions are both non-decreasing.",
+    "allowedEffectivenessVerdicts": [
+      "EFFECTIVE",
+      "EFFECTIVE_WITH_HARDENING_REQUIRED",
+      "INEFFECTIVE_REOPEN_FOUNDATION"
+    ],
+    "nextAllowedMove": "Transfer dispatch commit a56041da3a4a886fe4d135f12db04aeffd242cce to one external governance assessment worker and await exactly two uncommitted output paths for independent review.",
+    "claimBoundary": "Decision-only SCEC effectiveness test. No T1J-R4, GC010 product/runtime edit, SCEC source/checker/fixture edit, T1K, T2, provider/live, public sync, deployment or production authority."
+  }
+}

@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_2026-08-31.md",
-    "baselineSha256": "4ecbe18c132b23be6aa8e22aee408374feca9dd8d9c1461c6e6ac9509583daa9",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_2026-08-31.md",
-    "workOrderSha256": "45e677d62dbf8b1c0454abbb69ca1988f411ace0ec3f68c14b6ab3735ffb4d85"
+    "baselinePath": "docs/baselines/CVF_GC018_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md",
+    "baselineSha256": "5aadd51dfe68009cc1b79cf1db719ae67b0d4268a772b657bb3d61a6954883ad",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md",
+    "workOrderSha256": "2f05c3c3fcbdfaf4f4f92ef139d11a20d91b3494da5d8ea3bd3f6b3e5424dcd0"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "scec_t1_r1_closed_scec_e1_effectiveness_reconciliation_authoring",
-  "previousMode": "scec_t1_r1_mixed_fence_parser_hardening_dispatched_pending_external_return",
+  "currentMode": "scec_e1_gc010_effectiveness_reconciliation_dispatched_pending_external_return",
+  "previousMode": "scec_t1_r1_closed_scec_e1_effectiveness_reconciliation_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15854,5 +15854,27 @@
     "nextAllowedMove": "Author and dispatch exactly one decision-only SCEC-E1 effectiveness reconciliation over accepted GC010 T1J R1-through-R3 history. Keep successorTrancheOpened NO and do not open product work.",
     "claimBoundary": "Parser hardening is closed at material commit 8611c1e3e2c88d583047d255c5f646fad987dec1. This closure changes fence discovery only and does not alter SCEC semantic thresholds or authorize GC010 product/runtime work, T1J-R4, T1K, T2, provider/live, public sync, deployment or production."
   },
-  "nextAllowedMove": "Author and dispatch exactly one decision-only SCEC-E1 effectiveness reconciliation over accepted GC010 T1J R1-through-R3 history. Require a two-path uncommitted external-worker return, derive the SCEC outcome from historical transitions, and keep successorTrancheOpened NO. Do not open T1J-R4 product work; T1K, T2, product/runtime implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "scecE1Gc010T1jR1R3EffectivenessReconciliationDispatch20260831": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_GOVERNANCE_ASSESSMENT_RETURN",
+    "problemKey": "gc010-scr-r2-t1j-pending-execution-route-integration",
+    "dispatchCommit": "a56041da3a4a886fe4d135f12db04aeffd242cce",
+    "dispatchBaseHead": "b08bf2d87f2a432671c430bf887807f0a9ea967c",
+    "baseline": "docs/baselines/CVF_GC018_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md",
+    "baselineSha256": "5aadd51dfe68009cc1b79cf1db719ae67b0d4268a772b657bb3d61a6954883ad",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md",
+    "workOrderSha256": "2f05c3c3fcbdfaf4f4f92ef139d11a20d91b3494da5d8ea3bd3f6b3e5424dcd0",
+    "workerReturn": "docs/reviews/CVF_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_WORKER_RETURN_2026-08-31.md",
+    "assessment": "docs/assessments/CVF_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md",
+    "requiredArtifactCount": 2,
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "expectedFoundationOutcome": "Independent source reconciliation should confirm STOP_REASSESS_ARCHITECTURE and NO_SUCCESSOR if the accepted R1-to-R2 and R2-to-R3 blocker transitions are both non-decreasing.",
+    "allowedEffectivenessVerdicts": [
+      "EFFECTIVE",
+      "EFFECTIVE_WITH_HARDENING_REQUIRED",
+      "INEFFECTIVE_REOPEN_FOUNDATION"
+    ],
+    "nextAllowedMove": "Transfer dispatch commit a56041da3a4a886fe4d135f12db04aeffd242cce to one external governance assessment worker and await exactly two uncommitted output paths for independent review.",
+    "claimBoundary": "Decision-only SCEC effectiveness test. No T1J-R4, GC010 product/runtime edit, SCEC source/checker/fixture edit, T1K, T2, provider/live, public sync, deployment or production authority."
+  },
+  "nextAllowedMove": "Transfer committed SCEC-E1 GC010 T1J R1-through-R3 effectiveness reconciliation packet a56041da3a4a886fe4d135f12db04aeffd242cce to one external governance assessment worker. Require exactly two uncommitted paths and the named worker return, then independently review whether the foundation correctly selects STOP_REASSESS_ARCHITECTURE / NO_SUCCESSOR or exposes a named hardening defect. Keep successorTrancheOpened NO. Do not open T1J-R4 product work; T1K, T2, product/runtime implementation, SCEC source/checker/fixture edits, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

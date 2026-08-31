@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "scec_t1_r1_closed_scec_e1_effectiveness_reconciliation_authoring",
+  "currentMode": "scec_e1_gc010_effectiveness_reconciliation_dispatched_pending_external_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Author and dispatch exactly one decision-only SCEC-E1 effectiveness reconciliation over accepted GC010 T1J R1-through-R3 history. Require a two-path uncommitted external-worker return, derive the SCEC outcome from historical transitions, and keep successorTrancheOpened NO. Do not open T1J-R4 product work; T1K, T2, product/runtime implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Transfer committed SCEC-E1 GC010 T1J R1-through-R3 effectiveness reconciliation packet a56041da3a4a886fe4d135f12db04aeffd242cce to one external governance assessment worker. Require exactly two uncommitted paths and the named worker return, then independently review whether the foundation correctly selects STOP_REASSESS_ARCHITECTURE / NO_SUCCESSOR or exposes a named hardening defect. Keep successorTrancheOpened NO. Do not open T1J-R4 product work; T1K, T2, product/runtime implementation, SCEC source/checker/fixture edits, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_2026-08-31.md",
-    "baselineSha256": "4ecbe18c132b23be6aa8e22aee408374feca9dd8d9c1461c6e6ac9509583daa9",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_2026-08-31.md",
-    "workOrderSha256": "45e677d62dbf8b1c0454abbb69ca1988f411ace0ec3f68c14b6ab3735ffb4d85"
+    "baselinePath": "docs/baselines/CVF_GC018_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md",
+    "baselineSha256": "5aadd51dfe68009cc1b79cf1db719ae67b0d4268a772b657bb3d61a6954883ad",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md",
+    "workOrderSha256": "2f05c3c3fcbdfaf4f4f92ef139d11a20d91b3494da5d8ea3bd3f6b3e5424dcd0"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
