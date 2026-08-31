@@ -4,7 +4,7 @@ Memory class: governed-work-order
 
 docType: work_order
 
-Status: DISPATCHED_IMPLEMENTATION_BOUNDED
+Status: CLOSED_BLOCKED_BOUNDED
 
 Batch ID: GC010-SCR-R2-T1E
 
@@ -14,9 +14,9 @@ Dispatch base head: `ab6a4ef9f`
 
 dispatchBaseHead: `ab6a4ef9f`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `ea57866ec`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `ea57866ec`
 
 providerExecutionAuthority: FORBIDDEN
 
@@ -339,11 +339,20 @@ command that reads credentials/network.
 
 | Requirement | Evidence owner | Completion state at dispatch |
 | --- | --- | --- |
-| Harness API and lifecycle | new source | PENDING_WORKER_RETURN |
-| Nine focused proof classes | new focused test | PENDING_WORKER_RETURN |
-| T1A/T1C regression and TypeScript | command receipts | PENDING_WORKER_RETURN |
-| Exact three-path worker changed set | Git evidence | PENDING_WORKER_RETURN |
-| Zero external calls and no commit | worker return | PENDING_WORKER_RETURN |
+| Harness API and lifecycle | new source | BLOCKED_SOURCE_CONTRADICTION |
+| Nine focused proof classes | new focused test | PASS_WITH_BLOCKER_REPRODUCTION |
+| T1A/T1C regression and TypeScript | command receipts | PASS |
+| Exact three-path worker changed set | Git evidence | PASS |
+| Zero external calls and no commit | worker return | PASS |
+
+## Required Artifact Manifest
+
+| Required artifact | Owner | Closure disposition |
+| --- | --- | --- |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/pending-agent-execution-local-harness.ts` | worker/reviewer | PRESENT_AS_BLOCKED_DRAFT_EVIDENCE |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/pending-agent-execution-local-harness.test.ts` | worker/reviewer | PASS_WITH_BLOCKER_REGRESSION |
+| `docs/reviews/CVF_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_WORKER_RETURN_2026-08-31.md` | worker | BLOCKED_WITH_REASON_ACCEPTED_AS_PROCESS_EVIDENCE |
+| `docs/reviews/CVF_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_COMPLETION_2026-08-31.md` | reviewer | CLOSED_BLOCKED_BOUNDED |
 
 ## Evidence Requirements
 
@@ -581,13 +590,13 @@ then accept, repair inside bounded scope, or reject.
 
 ## Closure Checklist
 
-- [ ] Exactly two implementation paths plus worker return; no existing-file mutation.
-- [ ] Fresh execution base, collisions and pre-implementation receipt present.
-- [ ] Harness API/import/lifecycle contract satisfied.
-- [ ] Nine focused proof classes plus T1A/T1C regressions and TypeScript pass.
-- [ ] Fast gate and actual quality checker pass.
-- [ ] Zero external/provider calls; worker did not stage or commit.
-- [ ] Reviewer sets closure base, records cost and owns commits.
+- [x] Exactly two implementation paths plus worker return; no existing-file mutation.
+- [x] Fresh execution base, collisions and pre-implementation receipt present.
+- [x] Harness API/import/lifecycle contract evaluated; current-owner compatibility blocker recorded.
+- [x] Nine focused proof classes plus T1A/T1C regressions and TypeScript pass.
+- [x] Fast gate and actual quality checker pass.
+- [x] Zero external/provider calls; worker did not stage or commit.
+- [x] Reviewer set closure base, recorded cost and owns commits.
 
 ## Operator Checkpoint
 
@@ -596,24 +605,58 @@ provider, audit, production-consumer, distributed, public-sync or deployment
 successor requires a fresh operator instruction and separately committed
 authority.
 
+## Independent Reviewer Closure Addendum
+
+Reviewer disposition: `CLOSED_BLOCKED_BOUNDED`.
+
+Terminal token: `APPROVAL_SNAPSHOT_HASH_PERSISTENCE_COMPATIBILITY_BLOCKED`.
+
+The worker honored the exact three-path/no-commit boundary and returned
+`BLOCKED_WITH_REASON`. Independent review read all outputs, reproduced the
+focused 117/117 suite, TypeScript no-emit, worker-return quality and
+reviewer-fast gates, and confirmed the blocker against the current
+`buildApprovalRequestSnapshot` implementation. Its order-sensitive
+`computeApprovalRequestHash(JSON.stringify(snapshot))` value changes after
+T1C's canonical SQLite serialization reorders snapshot keys. The resulting
+claim is correctly fail-closed as `APPROVAL_SNAPSHOT_HASH_MISMATCH`, but the
+selected current-owner consumer cannot truthfully be accepted.
+
+The harness and test are retained only as bounded draft and regression
+evidence. Repair requires separately committed authority over the approval
+hash/persistence ownership boundary; this closure edits no predecessor source
+and opens no successor.
+
+successorTrancheOpened: NO
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
 Reason: private bounded non-production implementation dispatch.
 
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Exact worker manifest | two implementation drafts plus blocked worker return | PASS |
+| Current-owner lifecycle | production snapshot builder stops at claim after durable serialization | BLOCKED |
+| Blocker receipt | `APPROVAL_SNAPSHOT_HASH_MISMATCH`, version 1 `STALE` | PASS |
+| Focused regressions and TypeScript | 117/117 and no-emit exit 0 | PASS |
+| External/provider calls | zero | PASS |
+| Closure claim | bounded blocked evidence only | PASS |
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | this file | dispatch status | PENDING_WORKER_RETURN |
-| Completion or reviewer artifact | worker return plus reviewer completion | reviewer-owned | PENDING_REVIEW |
+| Work order status | this file | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | worker return plus reviewer completion | blocked terminal and reviewer disposition | PASS |
 | Roadmap state | historical GC010 roadmap | production consumer remains parked | PASS |
-| Registry JSON | active state | generated by steward only | N/A with reason: separate continuity phase |
-| Registry Markdown | front door/handoff | steward-owned | N/A with reason: separate continuity phase |
+| Registry JSON | active state | exact current-authority hash projection accompanies material closure | PASS |
+| Registry Markdown | front door/handoff | blocked-mode synchronization follows material commit | BLOCKED with reason: continuity is a separate commit |
 | External evidence digest | N/A with reason: zero external evidence | none | N/A with reason |
 | System loop interlock | successor flag NO | packet literals | PASS |
-| Session continuity | separate post-material dispatch commit | steward-owned | PENDING |
+| Session continuity | separate post-material closure commit | steward-owned | N/A with reason: material closure precedes continuity |
 
 ## Return-To-Orchestrator Conditions
 

@@ -4,7 +4,7 @@ Memory class: governed-baseline
 
 docType: baseline
 
-Status: DISPATCHED_IMPLEMENTATION_BOUNDED
+Status: CLOSED_BLOCKED_BOUNDED
 
 Batch ID: GC010-SCR-R2-T1E
 
@@ -188,6 +188,54 @@ Returned defects: NONE_RETURNED
 DEFERRED_PRIVATE_ONLY
 
 Reason: private non-production implementation dispatch; public export is forbidden.
+
+## Independent Reviewer Closure Addendum
+
+Reviewer disposition: `CLOSED_BLOCKED_BOUNDED`.
+
+Terminal token: `APPROVAL_SNAPSHOT_HASH_PERSISTENCE_COMPATIBILITY_BLOCKED`.
+
+The exact harness and focused test drafts were produced, but the first real
+current-owner lifecycle exposed a predecessor contradiction. The current
+`buildApprovalRequestSnapshot` output is hashed by order-sensitive
+`JSON.stringify`, while the accepted SQLite store persists the containing
+payload as JCS-sorted JSON. Create therefore succeeds, but claim recomputes a
+different snapshot hash after readback and fails closed as
+`APPROVAL_SNAPSHOT_HASH_MISMATCH` with a version-1 `STALE` record.
+
+Independent review reproduced 117/117 passing tests, including the exact
+production-builder negative regression, and TypeScript no-emit passed. The
+positive lifecycle works only for a specially canonical-key-ordered snapshot,
+so it is not accepted as current production-owner compatibility. The two
+implementation files remain bounded draft evidence; no T1A, T1C, approval,
+package, route, provider, audit, public or production owner was changed.
+
+successorTrancheOpened: NO
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Exact worker manifest | two implementation drafts plus blocked worker return | PASS |
+| Current-owner lifecycle | production snapshot builder stops at claim after durable serialization | BLOCKED |
+| Blocker receipt | `APPROVAL_SNAPSHOT_HASH_MISMATCH`, version 1 `STALE` | PASS |
+| Focused regressions and TypeScript | 117/117 and no-emit exit 0 | PASS |
+| External/provider calls | zero | PASS |
+| Closure claim | bounded blocked evidence only | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Baseline status | this file | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Work order status | paired T1E work order | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | T1E completion and blocked worker return | terminal token and reviewer disposition | PASS |
+| Roadmap state | historical GC010 roadmap | production consumer remains parked | PASS |
+| Registry JSON | active state | exact current-authority hash projection accompanies material closure | PASS |
+| Registry Markdown | front door/handoff | blocked-mode synchronization follows material commit | BLOCKED with reason: continuity is a separate commit |
+| External evidence digest | N/A with reason: no external evidence consumed | zero external/provider calls | N/A with reason: local private closure only |
+| System loop interlock | closure addenda | `successorTrancheOpened: NO` | PASS |
+| Session continuity | bootstrap/state/front door/handoff | separate continuity commit required | N/A with reason: material closure precedes continuity |
 
 ## Claim Boundary
 
