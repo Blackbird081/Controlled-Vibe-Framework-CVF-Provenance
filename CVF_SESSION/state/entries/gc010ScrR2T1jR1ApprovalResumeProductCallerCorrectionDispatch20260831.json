@@ -1,0 +1,13 @@
+{
+  "stateOrder": 2500,
+  "stateKey": "gc010ScrR2T1jR1ApprovalResumeProductCallerCorrectionDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_CORRECTION_RETURN",
+    "materialCommit": "873d99946177169e6045c3849f5a9f53906a668d",
+    "dispatchBaseHead": "072dffc3338fd2ed9a6fb98673953a5b807cd7b1",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_R1_APPROVAL_RESUME_PRODUCT_CALLER_CORRECTION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_R1_APPROVAL_RESUME_PRODUCT_CALLER_CORRECTION_2026-08-31.md",
+    "workerManifest": ["docs/assessments/CVF_GC010_SCR_R2_T1J_R1_APPROVAL_RESUME_PRODUCT_CALLER_CORRECTION_2026-08-31.md", "docs/reviews/CVF_GC010_SCR_R2_T1J_R1_APPROVAL_RESUME_PRODUCT_CALLER_CORRECTION_WORKER_RETURN_2026-08-31.md"],
+    "boundary": "Decision-only correction; no implementation, stage, commit, provider/live, public, deploy or production authority."
+  }
+}

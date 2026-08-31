@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await a separately authorized source-backed product caller before any formal T1 reopen; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer T1J-R1 correction packet to the external worker; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked`
-Current mode: `gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked`; previous mode marker: `gc010_scr_r2_t1j_dispatched_pending_external_decision_return`
-Previous mode: `gc010_scr_r2_t1j_dispatched_pending_external_decision_return`
+Current mode marker: `gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`
+Current mode: `gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`; previous mode marker: `gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked`
+Previous mode: `gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked`. T1J is independently accepted at material `9245f4218` with terminal `NO_VIABLE_PRODUCTION_OWNER_RETAIN_FORMAL_T1_PARKED`. Existing registered triggers are incompatible with direct composition, and no inspected authority provides a concrete product caller for an isolated route. Await a separately authorized source-backed caller before reopening formal T1. T1K, T2, source/test/roadmap edits, route/package/provider/audit implementation, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`. T1J-R1 correction material `873d99946` reopens only the missed approval UI and approval-bound execute evidence. Worker compares existing-route resume against isolated pending composition and writes exactly two uncommitted documents. T1K, T2 and all implementation/provider/live/public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

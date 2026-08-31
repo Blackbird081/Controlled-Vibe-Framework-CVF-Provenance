@@ -2,7 +2,7 @@
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
-- Current GC010 closure material: `9245f4218`; T1J is `CLOSED_PASS_BOUNDED` with terminal `NO_VIABLE_PRODUCTION_OWNER_RETAIN_FORMAL_T1_PARKED`.
+- Current GC010 dispatch material: `873d99946`; T1J-R1 approval-resume correction is pending external worker return.
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
@@ -40,10 +40,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await a separately authorized source-backed product caller before any formal T1 reopen; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer T1J-R1 correction packet to the external worker; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
 
 ## Current Mode
-`gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked`
+`gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`
 
 ## Purpose
 
@@ -170,7 +170,7 @@ GC010-SCR-R2-T1J is `CLOSED_PASS_BOUNDED` at material `9245f4218` over execution
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Await a separately authorized, source-backed concrete product caller or operator surface before reopening GC010 formal T1. T1J is closed bounded at `9245f4218`; no T1K or T2 opens automatically. No source/test/roadmap edit, package export, route/provider/audit implementation, distributed safety, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24.
+Transfer T1J-R1 correction material `873d99946` to the external worker for exactly two uncommitted decision documents. T1K and T2 remain parked; no implementation, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -205,15 +205,15 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize T1J bounded closure material `9245f4218`, exact parked checkpoint and generated projections. This authorizes no T1K, formal T1/T2 release, source edit, package export or production trigger.
+Authorized guard-maintenance scope: synchronize T1J-R1 correction dispatch material `873d99946`, exact worker checkpoint and generated projections. This authorizes no T1K implementation, formal T1/T2 release, source edit, package export or production trigger.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1jRegisteredProductionInvocationOwnerAndInvokedPathCompositionDecisionClosure20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1jR1ApprovalResumeProductCallerCorrectionDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: T1J worker-return review and bounded orchestrator/reviewer closure; corrected material is `9245f4218` over execution base `65b5512b5`.
-Rollback boundary: revert only this T1J closure continuity sync without rewriting material evidence or prior closures.
+Operator authorization: continue GC010 system-chain through the source-verified T1J-R1 correction; dispatch material is `873d99946` over base `072dffc33`.
+Rollback boundary: revert only this T1J-R1 dispatch continuity sync without rewriting material evidence or prior closures.
 Not authorized: T1K, formal T1/T2 release, source/test/roadmap edit, package export, route/provider/audit implementation, provider/API/network use, public mutation, deployment, production claim or compaction.
 ## Claim Boundary
 

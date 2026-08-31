@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
-    "baselineSha256": "fafbaad48a1efd55f6b0b6b06a09cdcbb2ebc70eb4705bb7df28f7ec68d2a832",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
-    "workOrderSha256": "4d65e934ac98ae6e2cfc2ab0682359d6a39c15b844d1eab12000a4feaffaa141"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_R1_APPROVAL_RESUME_PRODUCT_CALLER_CORRECTION_2026-08-31.md",
+    "baselineSha256": "908e4a92fc461c42a6d63a089efe8b2a24cf9ce56ba90cdaa75bc70a8a9962ae",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_R1_APPROVAL_RESUME_PRODUCT_CALLER_CORRECTION_2026-08-31.md",
+    "workOrderSha256": "6afbc2d7f4cb36c34fd4004553cd855026772d974e11c9cad74f3833af00aa7f"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked",
-  "previousMode": "gc010_scr_r2_t1j_dispatched_pending_external_decision_return",
+  "currentMode": "gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return",
+  "previousMode": "gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15719,5 +15719,17 @@
     "nextAllowedMove": "Await a separately authorized, source-backed concrete product caller before any formal T1 reopen; no T1K or T2 opens automatically.",
     "claimBoundary": "T1J closes only the owner/topology decision. Formal T1 and T2 remain parked; no source/test/roadmap edit, route/package/provider/audit implementation, provider/live, public sync, deployment or production authority is opened."
   },
-  "nextAllowedMove": "Await a separately authorized, source-backed concrete product caller or operator surface before reopening GC010 formal T1. T1J is CLOSED_PASS_BOUNDED at material 9245f4218def623b503f7ef157cf173abff3fa25 with terminal NO_VIABLE_PRODUCTION_OWNER_RETAIN_FORMAL_T1_PARKED. No T1K or T2 opens automatically; source/test/roadmap, route/package/provider/audit implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gc010ScrR2T1jR1ApprovalResumeProductCallerCorrectionDispatch20260831": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_CORRECTION_RETURN",
+    "materialCommit": "873d99946177169e6045c3849f5a9f53906a668d",
+    "dispatchBaseHead": "072dffc3338fd2ed9a6fb98673953a5b807cd7b1",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_R1_APPROVAL_RESUME_PRODUCT_CALLER_CORRECTION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_R1_APPROVAL_RESUME_PRODUCT_CALLER_CORRECTION_2026-08-31.md",
+    "workerManifest": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1J_R1_APPROVAL_RESUME_PRODUCT_CALLER_CORRECTION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1J_R1_APPROVAL_RESUME_PRODUCT_CALLER_CORRECTION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "boundary": "Decision-only correction; no implementation, stage, commit, provider/live, public, deploy or production authority."
+  },
+  "nextAllowedMove": "Transfer committed GC010-SCR-R2-T1J-R1 correction packet 873d99946177169e6045c3849f5a9f53906a668d to the external worker for exactly the named assessment and worker return. Worker must not stage or commit. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
