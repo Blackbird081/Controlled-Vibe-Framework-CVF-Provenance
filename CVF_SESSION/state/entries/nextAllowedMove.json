@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "Execute the committed GC010-SCR-R2-T1D decision-only work order at dispatch commit 7af7914ee. One no-commit worker creates exactly the named assessment and worker return, runs the required gates, and stops for independent orchestrator review. No T1E implementation opens automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Author a fresh GC010-SCR-R2-T1E non-production implementation baseline and work order for the exact two-path local harness plus focused-test manifest accepted at T1D material 0e4aacdc6. Authoring only; do not implement automatically. No package/barrel export is needed. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

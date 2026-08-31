@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1d_dispatched_pending_worker_return",
-  "previousMode": "gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted",
+  "currentMode": "gc010_scr_r2_t1d_closed_pass_bounded_consumer_boundary_selected",
+  "previousMode": "gc010_scr_r2_t1d_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Execute the committed GC010-SCR-R2-T1D decision-only work order at dispatch commit 7af7914ee. One no-commit worker creates exactly the named assessment and worker return, runs the required gates, and stops for independent orchestrator review. No T1E implementation opens automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author a fresh GC010-SCR-R2-T1E non-production implementation baseline and work order for the exact two-path local harness plus focused-test manifest accepted at T1D material 0e4aacdc6. Authoring only; do not implement automatically. No package/barrel export is needed. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15519,5 +15519,19 @@
     "workerBoundary": "One no-commit worker creates exactly the assessment and worker return. All existing source, tests, scripts, routes, packages, workflows and continuity are read-only; provider and external effects are forbidden.",
     "nextAllowedMove": "Execute the committed T1D work order and return exactly two uncommitted documentation artifacts for independent orchestrator review.",
     "claimBoundary": "Dispatch only. No consumer, export, runtime construction, route/provider/audit integration, production consumer, distributed safety, public sync, deployment or production authority is opened."
+  },
+  "gc010ScrR2T1dPendingAgentExecutionNonProductionConsumerPackageExportBoundaryDecisionClosure20260831": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "terminalToken": "NON_PRODUCTION_CONSUMER_EXPORT_BOUNDARY_READY_FOR_T1E_CONSIDERATION",
+    "materialCommit": "0e4aacdc6",
+    "dispatchCommit": "7af7914ee",
+    "predecessorMaterialCommit": "82c64a6f5",
+    "assessment": "docs/assessments/CVF_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_WORKER_RETURN_2026-08-31.md",
+    "completionReview": "docs/reviews/CVF_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_COMPLETION_2026-08-31.md",
+    "selectedBoundary": "A new cvf-web local server harness using direct internal T1C imports and one sibling focused test; no package or barrel export.",
+    "reviewRepair": "Corrected assessment artifact class and source dispositions, and replaced directory-only server-boundary reasoning with a mandatory static forbidden-import/client-boundary assertion in the same future focused test. Disclosed the dispatcher-owned nonexistent quality-wrapper command; both the fast wrapper and actual enforced checker passed.",
+    "nextAllowedMove": "Author a fresh T1E implementation baseline and work order for the exact two-path harness/test manifest; do not implement automatically.",
+    "claimBoundary": "Decision closure only. The harness does not exist yet; no consumer, export, route/provider/audit integration, production consumer, distributed safety, public sync, deployment or production authority is opened."
   }
 }
