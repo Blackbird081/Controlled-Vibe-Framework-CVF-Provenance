@@ -2,20 +2,25 @@
   "stateOrder": 2560,
   "stateKey": "scecT1SemanticConvergenceEscalationControlFoundationDispatch20260831",
   "value": {
-    "status": "DISPATCHED_PENDING_EXTERNAL_GOVERNANCE_IMPLEMENTATION_RETURN",
+    "status": "CLOSED_PASS_WITH_MATERIAL_REVIEWER_CORRECTION",
     "problemKey": "cvf-semantic-convergence-and-escalation-control",
     "dispatchCommit": "10345d3addef3415fc4f093a68f8e019f1f3e969",
     "dispatchBaseHead": "9bdc372a43f91be54a1302f6d1a1493ab1ad8793",
     "baseline": "docs/baselines/CVF_GC018_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md",
-    "baselineSha256": "7f03ab47ebe347e8e47980a94454c4834f82304bf1df25a34ad6e03cb081a6fc",
+    "baselineSha256": "03b82b1eae361590341e5a4a52da61ce453eb2cba931561e6dde72f8d6580474",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md",
     "workOrderSha256": "a8f5fdf572ee5cfbef2ed27aa956bfdb32a55e7d45e751c185b2c06d65efa14d",
     "workerReturn": "docs/reviews/CVF_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_WORKER_RETURN_2026-08-31.md",
+    "workerReturnSha256": "8f966b46e2578ba94452208e359e148e762677fb2a82ec65988be29ac259de99",
+    "materialCommit": "bd4ac2882482a9c38c4e8b97d1cae265028c4368",
+    "reviewDisposition": "ACCEPT_WITH_MATERIAL_CORRECTION",
+    "standardSha256": "9cf79274518ec5cd4b82c2944a53dabf2a076ba916cb4cda98eb27a937d8559c",
+    "checkerSha256": "ded73506328f5801fc1d29b44fb659e78319a6db062293850753507efa5b22a4",
     "requiredArtifactCount": 21,
     "commitMode": "WORKER_MUST_NOT_COMMIT",
     "acceptanceModel": "Canonical standard, fail-closed checker, GC010 T1J-R1-through-R3 negative replay, focused tests, earliest gate bindings, and default scaffold projections must close together.",
-    "effectivenessTest": "After SCEC-T1 closes, GC010-SCR-R2-T1J-R4 is the first real successor packet required to use the control. Any unjustified narrow continuation or machine-observable miss reopens SCEC hardening before product work continues.",
-    "nextAllowedMove": "Transfer the committed SCEC-T1 packet to one external worker and await the exact uncommitted return for independent review.",
-    "claimBoundary": "Governance-foundation dispatch only. No implemented SCEC, semantic-truth scoring, GC010 product/runtime change, provider/live action, public sync, deployment or production authority."
+    "effectivenessTest": "A separately governed GC010 T1J R1-through-R3 effectiveness reconciliation must apply the active SCEC contract to accepted historical evidence. The regression predicts STOP_REASSESS_ARCHITECTURE and NO_SUCCESSOR; any different result must expose exact new evidence or a control defect before product work resumes.",
+    "nextAllowedMove": "Author and dispatch one decision-only SCEC effectiveness reconciliation packet for the accepted GC010 T1J R1-through-R3 chain. Do not open T1J-R4 as product work.",
+    "claimBoundary": "SCEC governance foundation is implemented and locally enforced. Historical replay remains regression evidence, not a final adjudication of GC010; product/runtime change, T1J-R4 implementation, T1K, T2, provider/live action, public sync, deployment and production remain parked."
   }
 }

@@ -37,7 +37,7 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md",
-    "baselineSha256": "7f03ab47ebe347e8e47980a94454c4834f82304bf1df25a34ad6e03cb081a6fc",
+    "baselineSha256": "03b82b1eae361590341e5a4a52da61ce453eb2cba931561e6dde72f8d6580474",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md",
     "workOrderSha256": "a8f5fdf572ee5cfbef2ed27aa956bfdb32a55e7d45e751c185b2c06d65efa14d"
   },
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "scec_t1_dispatched_pending_external_governance_implementation_return",
-  "previousMode": "gc010_scr_r2_t1j_r3_closed_partial_ready_production_composition_owner_contract_required",
+  "currentMode": "scec_t1_closed_effectiveness_reconciliation_required",
+  "previousMode": "scec_t1_dispatched_pending_external_governance_implementation_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

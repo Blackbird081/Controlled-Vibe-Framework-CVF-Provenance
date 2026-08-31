@@ -1,5 +1,5 @@
 {
   "stateOrder": 2565,
   "stateKey": "nextAllowedMove",
-  "value": "Transfer committed SCEC-T1 packet 10345d3addef3415fc4f093a68f8e019f1f3e969 to one external governance implementation worker. The worker must implement exactly the 21-path manifest, run the required gates, leave all changes uncommitted, and return the exact named worker return for independent review. GC010-SCR-R2-T1J-R4 is the first post-foundation effectiveness case but remains parked until SCEC-T1 closes. T1K, T2, product/runtime implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Author and dispatch one decision-only SCEC effectiveness reconciliation packet for the accepted GC010 T1J R1-through-R3 chain. It must use the active predecessor/state/counter rules and test the regression prediction STOP_REASSESS_ARCHITECTURE with NO_SUCCESSOR. A different disposition requires exact new evidence or identification of a control defect followed by SCEC hardening. Do not open T1J-R4 product work; T1K, T2, product/runtime implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

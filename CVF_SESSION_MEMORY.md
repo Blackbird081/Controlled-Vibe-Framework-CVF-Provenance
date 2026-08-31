@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scec_t1_dispatched_pending_external_governance_implementation_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed SCEC-T1 packet to one external governance worker and await the exact uncommitted return; parked checkpoint=GC010 T1J-R4 until foundation closure, plus T1K, T2, product/runtime implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`scec_t1_closed_effectiveness_reconciliation_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and dispatch one decision-only SCEC effectiveness reconciliation for accepted GC010 T1J R1-through-R3 evidence; parked checkpoint=T1J-R4 product work, T1K, T2, product/runtime implementation, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `scec_t1_dispatched_pending_external_governance_implementation_return`
-Current mode: `scec_t1_dispatched_pending_external_governance_implementation_return`; previous mode marker: `gc010_scr_r2_t1j_r3_closed_partial_ready_production_composition_owner_contract_required`
-Previous mode: `gc010_scr_r2_t1j_r3_closed_partial_ready_production_composition_owner_contract_required`
+Current mode marker: `scec_t1_closed_effectiveness_reconciliation_required`
+Current mode: `scec_t1_closed_effectiveness_reconciliation_required`; previous mode marker: `scec_t1_dispatched_pending_external_governance_implementation_return`
+Previous mode: `scec_t1_dispatched_pending_external_governance_implementation_return`
 
 ## Next Allowed Move
 
-Mode: `scec_t1_dispatched_pending_external_governance_implementation_return`. The integrated SCEC-T1 foundation packet is committed at `10345d3addef3415fc4f093a68f8e019f1f3e969`. Transfer it to one external governance implementation worker for exactly the 21-path manifest and exact named uncommitted worker return. Independent reviewer closure is mandatory. GC010 T1J-R4 is the first real effectiveness case after foundation closure but remains parked now; T1K, T2 and all product/runtime implementation, provider/live, public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `scec_t1_closed_effectiveness_reconciliation_required`. SCEC-T1 is independently accepted with material reviewer correction at `bd4ac2882482a9c38c4e8b97d1cae265028c4368`. Next, author and dispatch one decision-only effectiveness reconciliation over accepted GC010 T1J R1-through-R3 evidence. It must test the active control's `STOP_REASSESS_ARCHITECTURE` / `NO_SUCCESSOR` prediction; disagreement requires exact new evidence or a named SCEC defect and foundation hardening. T1J-R4 product work, T1K, T2 and all product/runtime implementation, provider/live, public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
