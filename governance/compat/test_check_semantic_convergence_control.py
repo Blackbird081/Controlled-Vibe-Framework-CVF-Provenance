@@ -20,6 +20,8 @@ Covers the 16 required test families from the SCEC-T1 work order:
 14. dispatch and worker-return scaffolds emitting required blocks
 15. checker present exactly once in common autorun and all three hook catalogs
 16. no existing gate selectively removed or suppressed
+17. SCEC-T1-R1: mixed-fence active-block discovery (direct reproducer, order
+    variants, immunity and malformed-candidate preservation)
 
 All file-state tests use `tempfile.TemporaryDirectory()` and never mutate the
 real workspace as test setup, per the work order's evidence requirements.
@@ -817,6 +819,116 @@ class QuotedMarkerImmunityTests(unittest.TestCase):
         self.assertFalse(scec.is_active_block(scec.SCEC_SCHEMA_VERSION))
         self.assertFalse(scec.is_active_block(["schemaVersion", scec.SCEC_SCHEMA_VERSION]))
         self.assertFalse(scec.is_active_block(None))
+
+
+class MixedFenceActiveBlockDiscoveryTests(unittest.TestCase):
+    """SCEC-T1-R1: a non-JSON fenced block must never cause the structural
+    fence scanner to skip or mis-pair a later or earlier valid active SCEC
+    JSON block. Direct reproducer plus ordering variants."""
+
+    def test_direct_reproducer_powershell_fence_before_active_block(self) -> None:
+        """This is the exact reported defect: a `powershell` fence before one
+        valid active SCEC JSON block previously made `find_active_blocks`
+        return zero, which produced a false `MISSING_REQUIRED_SCEC_BLOCK`
+        violation on a governed work order that actually carried a valid
+        block."""
+        block = _base_block()
+        text = (
+            "# Work Order\n\n"
+            "```powershell\nGet-Process\n```\n\n"
+            "```json\n" + json.dumps(block) + "\n```\n"
+        )
+        found = scec.find_active_blocks(text)
+        self.assertEqual(len(found), 1)
+        self.assertEqual(found[0]["problemKey"], "sample-problem")
+
+    def test_non_json_fence_after_active_block(self) -> None:
+        block = _base_block()
+        text = (
+            "# Work Order\n\n"
+            "```json\n" + json.dumps(block) + "\n```\n\n"
+            "```powershell\nGet-Process\n```\n"
+        )
+        found = scec.find_active_blocks(text)
+        self.assertEqual(len(found), 1)
+        self.assertEqual(found[0]["problemKey"], "sample-problem")
+
+    def test_non_json_fence_on_both_sides_of_active_block(self) -> None:
+        block = _base_block()
+        text = (
+            "# Work Order\n\n"
+            "```bash\necho before\n```\n\n"
+            "```json\n" + json.dumps(block) + "\n```\n\n"
+            "```text\nafter\n```\n"
+        )
+        found = scec.find_active_blocks(text)
+        self.assertEqual(len(found), 1)
+        self.assertEqual(found[0]["problemKey"], "sample-problem")
+
+    def test_multiple_ordinary_fenced_blocks_around_active_block(self) -> None:
+        block = _base_block()
+        text = (
+            "# Work Order\n\n"
+            "```powershell\nGet-Process\n```\n\n"
+            "```bash\necho hi\n```\n\n"
+            "```json\n" + json.dumps(block) + "\n```\n\n"
+            "```text\ntrailer one\n```\n\n"
+            "```yaml\nkey: value\n```\n"
+        )
+        found = scec.find_active_blocks(text)
+        self.assertEqual(len(found), 1)
+        self.assertEqual(found[0]["problemKey"], "sample-problem")
+
+    def test_untagged_active_json_block_with_prior_non_json_fence(self) -> None:
+        block = _base_block()
+        text = (
+            "# Work Order\n\n"
+            "```powershell\nGet-Process\n```\n\n"
+            "```\n" + json.dumps(block) + "\n```\n"
+        )
+        found = scec.find_active_blocks(text)
+        self.assertEqual(len(found), 1)
+        self.assertEqual(found[0]["problemKey"], "sample-problem")
+
+    def test_quoted_marker_immunity_preserved_with_prior_non_json_fence(self) -> None:
+        text = (
+            "```powershell\nGet-Process\n```\n\n"
+            "The checker looks for `\"schemaVersion\": "
+            "\"cvf.semanticConvergenceControl.v1\"` as a literal token in "
+            "prose, not real JSON.\n"
+        )
+        self.assertEqual(scec.find_active_blocks(text), [])
+
+    def test_malformed_active_candidate_after_non_json_fence_is_not_active(self) -> None:
+        text = (
+            "```powershell\nGet-Process\n```\n\n"
+            '```json\n{"schemaVersion": "cvf.semanticConvergenceControl.v1", '
+            'INVALID\n```\n'
+        )
+        self.assertEqual(scec.find_active_blocks(text), [])
+
+    def test_fence_scanner_yields_correct_language_and_body_pairs(self) -> None:
+        text = "```powershell\nGet-Process\n```\n```json\n{}\n```\n"
+        pairs = scec._iter_fenced_blocks(text)
+        self.assertEqual(pairs, [("powershell", "Get-Process"), ("json", "{}")])
+
+    def test_diagnose_file_finds_required_block_past_leading_non_json_fence(self) -> None:
+        block = _base_block()
+        text = (
+            "# Work Order\n\n"
+            "```powershell\nGet-Process\n```\n\n"
+            "```json\n" + json.dumps(block) + "\n```\n"
+        )
+        diag = scec.diagnose_file("docs/work_orders/sample.md", text, require_block=True)
+        self.assertEqual(diag.block_count, 1)
+        self.assertTrue(diag.is_clean)
+
+    def test_indented_and_longer_fences_preserve_supported_discovery(self) -> None:
+        block = _base_block()
+        for indent, fence in ((" ", "```"), ("   ", "```"), ("", "````")):
+            with self.subTest(indent=len(indent), width=len(fence)):
+                text = f"{indent}{fence}json\n{json.dumps(block)}\n{indent}{fence}\n"
+                self.assertEqual(len(scec.find_active_blocks(text)), 1)
 
 
 class ForwardOnlyActivationTests(unittest.TestCase):

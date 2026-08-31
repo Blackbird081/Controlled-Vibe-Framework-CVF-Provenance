@@ -82,6 +82,40 @@ declared evidence shape; it does not judge engineering truth.
 - `docs/baselines/CVF_GC018_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md`
 - `docs/reviews/CVF_GC010_SCR_R2_T1J_R2_APPROVAL_RESUME_ATOMIC_CLAIM_DURABLE_OWNER_DECISION_WORKER_RETURN_2026-08-31.md`
 - `docs/reviews/CVF_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_WORKER_RETURN_2026-08-31.md`
+- `docs/baselines/CVF_GC018_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_2026-08-31.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_2026-08-31.md`
+- `docs/reviews/CVF_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_WORKER_RETURN_2026-08-31.md`
+
+## Second Observed Instance - Mixed-Fence Active-Block Detection Miss
+
+The SCEC-T1 foundation checker's own fenced-JSON discovery was itself a
+second instance of this defect's broader class: a document/structural gate
+(here, active-block extraction) can look correct in isolation while missing
+the real semantic content underneath. `governance/compat/check_semantic_convergence_control.py`
+originally extracted fenced JSON with one regex,
+`` ```(?:json)?\s*\n(.*?)``` ``, applied over the whole document. A closing
+fence also matches that same opening pattern, so when an earlier non-JSON
+fenced block (for example a `powershell` block) appeared before one valid
+active SCEC JSON block in a governed work order, the regex paired the
+`powershell` block's own closing fence with the JSON block's opening fence as
+if that combination were one match, consumed the wrong span, and never
+reached the real JSON block. `find_active_blocks(...)` returned zero, and the
+required-work-order gate then reported a false `MISSING_REQUIRED_SCEC_BLOCK`
+violation on a work order that actually carried a valid block.
+
+Prevention: replace regex fence-pairing with an explicit structural scanner
+(`_iter_fenced_blocks`) that tracks a single outside/inside-fence state per
+line. The first fence line encountered while outside a fence always opens a
+block; the next fence line encountered while inside a fence always closes
+that same block regardless of its own trailing language tag, and is never
+reinterpreted as a new opener. This makes an ordinary closing fence
+structurally impossible to pair as a later block's opening boundary, which a
+single whole-document regex cannot guarantee. Regression coverage added: the
+direct reproducer, a non-JSON fence after the active block, non-JSON fences
+on both sides, multiple ordinary fenced blocks around the active block, an
+untagged active JSON block preceded by a non-JSON fence, and confirmation
+that quoted-marker immunity and malformed-active-candidate fail-closed
+behavior are unchanged.
 
 ## Remediation
 
@@ -119,6 +153,29 @@ are internally consistent.
 | Expected manifest | this entry and the entries README index row |
 | Actual changed set | this entry and the entries README index row |
 | Manifest delta | MATCH |
+
+## Agent Operation Trace Block - SCEC-T1-R1 Mixed-Fence Hardening
+
+| Field | Evidence |
+|---|---|
+| Actor | delegated governance implementation worker |
+| Provider or surface | local private provenance workspace |
+| Session or invocation | SCEC-T1-R1 mixed-fence active-block parser hardening, 2026-08-31 |
+| Working directory | repository root |
+| Command or tool surface | governed reads, direct reproducer probe, checker/test authoring, `python -m unittest`, governance gates |
+| Target paths | this entry; `governance/compat/check_semantic_convergence_control.py`; `governance/compat/test_check_semantic_convergence_control.py`; `docs/reviews/CVF_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_WORKER_RETURN_2026-08-31.md` |
+| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_2026-08-31.md` |
+| Before status evidence | `find_active_blocks(...)` returned `[]` for a governed work order carrying one non-JSON fenced block before one valid active SCEC JSON block, per the direct local reproducer |
+| After status evidence | structural `_iter_fenced_blocks` scanner finds exactly one active block across the direct reproducer plus before/after/both-side and multiple-fence order variants; full focused suite passes |
+| Diff evidence | exact four-path SCEC-T1-R1 worker changed-set, per this worker return's changed-set section |
+| Approval boundary | local parser correctness repair and regression proof only; no semantic threshold, product/runtime, provider/live, or public claim |
+| Claim boundary | declared-evidence-shape defect record only; no semantic-truth-scoring or reasoning-trace-inspection claim |
+| Agent type | worker |
+| Invocation ID | `scec-t1-r1-adif-0055-2026-08-31` |
+| Expected manifest | this entry only, within the four-path SCEC-T1-R1 worker manifest |
+| Actual changed set | this entry only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this tranche |
 
 ## Public Export Disposition
 

@@ -76,7 +76,8 @@ STOP_REASSESS_NON_DECREASING_THRESHOLD = 2
 
 UNRESOLVED_PREDECESSOR_SENTINEL = "SCEC_PREDECESSOR_HASH_UNRESOLVED"
 
-CODE_FENCE_JSON_RE = re.compile(r"```(?:json)?\s*\n(.*?)```", re.DOTALL)
+OPEN_FENCE_LINE_RE = re.compile(r"^ {0,3}(`{3,})([^`]*)$")
+CLOSE_FENCE_LINE_RE = re.compile(r"^ {0,3}(`{3,})[ \t]*$")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 WINDOWS_DRIVE_RE = re.compile(r"^[A-Za-z]:")
 
@@ -102,10 +103,8 @@ class ValidationResult:
 
 
 def is_active_block(candidate: Any) -> bool:
-    """Return True only for a real dict with the exact SCEC schema field.
-
-    A quoted/example marker string appearing in prose, inside backticks, or
-    as a non-dict JSON scalar must never activate validation (invariant 11).
+    """True only for a real dict with the exact SCEC schema field; a quoted/
+    example marker or non-dict JSON scalar must never activate (invariant 11).
     """
     return isinstance(candidate, dict) and candidate.get("schemaVersion") == SCEC_SCHEMA_VERSION
 
@@ -126,9 +125,7 @@ def _validate_top_shape(block: dict) -> list[BlockViolation]:
     violations: list[BlockViolation] = []
     for field_name in REQUIRED_TOP_FIELDS:
         if field_name not in block:
-            violations.append(
-                BlockViolation("MISSING_FIELD", f"missing required field `{field_name}`")
-            )
+            violations.append(BlockViolation('MISSING_FIELD', f'missing required field `{field_name}`'))
     if violations:
         # Structural prerequisites absent; deeper checks would raise.
         return violations
@@ -137,54 +134,31 @@ def _validate_top_shape(block: dict) -> list[BlockViolation]:
         violations.append(BlockViolation("INVALID_PROBLEM_KEY", "`problemKey` must be a non-empty string"))
 
     if block["chainMode"] not in ALLOWED_CHAIN_MODES:
-        violations.append(
-            BlockViolation(
-                "INVALID_CHAIN_MODE",
-                f"`chainMode` must be one of {ALLOWED_CHAIN_MODES}, got {block['chainMode']!r}",
-            )
-        )
+        violations.append(BlockViolation('INVALID_CHAIN_MODE',
+            f"`chainMode` must be one of {ALLOWED_CHAIN_MODES}, got {block['chainMode']!r}"))
 
     ordinal = block["chainOrdinal"]
     if not isinstance(ordinal, int) or isinstance(ordinal, bool) or ordinal < 0:
-        violations.append(
-            BlockViolation("INVALID_ORDINAL", "`chainOrdinal` must be a non-negative integer")
-        )
+        violations.append(BlockViolation('INVALID_ORDINAL', '`chainOrdinal` must be a non-negative integer'))
 
     predecessor = block["predecessor"]
     if block.get("chainMode") == "INITIAL":
         if predecessor is not None:
-            violations.append(
-                BlockViolation(
-                    "INITIAL_HAS_PREDECESSOR",
-                    "`INITIAL` chainMode requires `predecessor: null`",
-                )
-            )
+            violations.append(BlockViolation('INITIAL_HAS_PREDECESSOR', '`INITIAL` chainMode requires `predecessor: null`'))
         if isinstance(ordinal, int) and not isinstance(ordinal, bool) and ordinal != 0:
-            violations.append(
-                BlockViolation("INITIAL_NONZERO_ORDINAL", "`INITIAL` chainMode requires `chainOrdinal: 0`")
-            )
+            violations.append(BlockViolation('INITIAL_NONZERO_ORDINAL', '`INITIAL` chainMode requires `chainOrdinal: 0`'))
     elif block.get("chainMode") == "SUCCESSOR":
         if not isinstance(predecessor, dict):
-            violations.append(
-                BlockViolation(
-                    "SUCCESSOR_MISSING_PREDECESSOR",
-                    "`SUCCESSOR` chainMode requires a `predecessor` object with `path` and `sha256`",
-                )
-            )
+            violations.append(BlockViolation('SUCCESSOR_MISSING_PREDECESSOR',
+                '`SUCCESSOR` chainMode requires a `predecessor` object with `path` and `sha256`'))
         else:
             path = predecessor.get("path")
             sha = predecessor.get("sha256")
             if not isinstance(path, str) or not path.strip():
-                violations.append(
-                    BlockViolation("PREDECESSOR_MISSING_PATH", "`predecessor.path` must be a non-empty string")
-                )
+                violations.append(BlockViolation('PREDECESSOR_MISSING_PATH', '`predecessor.path` must be a non-empty string'))
             elif not _is_safe_repo_relative_path(path):
-                violations.append(
-                    BlockViolation(
-                        "PREDECESSOR_PATH_OUTSIDE_REPOSITORY",
-                        "`predecessor.path` must be a normalized repository-relative path without traversal",
-                    )
-                )
+                violations.append(BlockViolation('PREDECESSOR_PATH_OUTSIDE_REPOSITORY',
+                    '`predecessor.path` must be a normalized repository-relative path without traversal'))
             if path == UNRESOLVED_PREDECESSOR_SENTINEL or sha == UNRESOLVED_PREDECESSOR_SENTINEL:
                 violations.append(
                     BlockViolation(
@@ -194,12 +168,8 @@ def _validate_top_shape(block: dict) -> list[BlockViolation]:
                     )
                 )
             elif not isinstance(sha, str) or not SHA256_RE.match(sha):
-                violations.append(
-                    BlockViolation(
-                        "PREDECESSOR_INVALID_HASH_SHAPE",
-                        "`predecessor.sha256` must be a 64-character lowercase hex SHA-256 string",
-                    )
-                )
+                violations.append(BlockViolation('PREDECESSOR_INVALID_HASH_SHAPE',
+                    '`predecessor.sha256` must be a 64-character lowercase hex SHA-256 string'))
 
     blocker_delta = block["blockerDelta"]
     if not isinstance(blocker_delta, dict):
@@ -207,26 +177,14 @@ def _validate_top_shape(block: dict) -> list[BlockViolation]:
     else:
         for field_name in REQUIRED_BLOCKER_DELTA_FIELDS:
             if field_name not in blocker_delta:
-                violations.append(
-                    BlockViolation(
-                        "MISSING_BLOCKER_DELTA_FIELD",
-                        f"`blockerDelta` missing required field `{field_name}`",
-                    )
-                )
+                violations.append(BlockViolation('MISSING_BLOCKER_DELTA_FIELD',
+                    f'`blockerDelta` missing required field `{field_name}`'))
             elif not _is_str_list(blocker_delta[field_name]):
-                violations.append(
-                    BlockViolation(
-                        "INVALID_BLOCKER_DELTA_FIELD_TYPE",
-                        f"`blockerDelta.{field_name}` must be an array of strings",
-                    )
-                )
+                violations.append(BlockViolation('INVALID_BLOCKER_DELTA_FIELD_TYPE',
+                    f'`blockerDelta.{field_name}` must be an array of strings'))
             elif len(blocker_delta[field_name]) != len(set(blocker_delta[field_name])):
-                violations.append(
-                    BlockViolation(
-                        "DUPLICATE_BLOCKER_ID",
-                        f"`blockerDelta.{field_name}` must not contain duplicate blocker IDs",
-                    )
-                )
+                violations.append(BlockViolation('DUPLICATE_BLOCKER_ID',
+                    f'`blockerDelta.{field_name}` must not contain duplicate blocker IDs'))
 
     counters = block["counters"]
     if not isinstance(counters, dict):
@@ -235,16 +193,10 @@ def _validate_top_shape(block: dict) -> list[BlockViolation]:
         for field_name in REQUIRED_COUNTER_FIELDS:
             value = counters.get(field_name)
             if field_name not in counters:
-                violations.append(
-                    BlockViolation("MISSING_COUNTER_FIELD", f"`counters` missing required field `{field_name}`")
-                )
+                violations.append(BlockViolation('MISSING_COUNTER_FIELD', f'`counters` missing required field `{field_name}`'))
             elif not isinstance(value, int) or isinstance(value, bool) or value < 0:
-                violations.append(
-                    BlockViolation(
-                        "INVALID_COUNTER_VALUE",
-                        f"`counters.{field_name}` must be a non-negative integer",
-                    )
-                )
+                violations.append(BlockViolation('INVALID_COUNTER_VALUE',
+                    f'`counters.{field_name}` must be a non-negative integer'))
 
     claims = block["claims"]
     if not isinstance(claims, list):
@@ -252,37 +204,21 @@ def _validate_top_shape(block: dict) -> list[BlockViolation]:
     else:
         for index, claim in enumerate(claims):
             if not isinstance(claim, dict):
-                violations.append(
-                    BlockViolation("INVALID_CLAIM_SHAPE", f"claims[{index}] must be an object")
-                )
+                violations.append(BlockViolation('INVALID_CLAIM_SHAPE', f'claims[{index}] must be an object'))
                 continue
             for field_name in REQUIRED_CLAIM_FIELDS:
                 value = claim.get(field_name)
                 if field_name not in claim or not isinstance(value, str) or not value.strip():
-                    violations.append(
-                        BlockViolation(
-                            "MISSING_CLAIM_FIELD",
-                            f"claims[{index}] missing non-empty string field `{field_name}`",
-                        )
-                    )
+                    violations.append(BlockViolation('MISSING_CLAIM_FIELD',
+                        f'claims[{index}] missing non-empty string field `{field_name}`'))
 
     if block["requiredDisposition"] not in ALLOWED_DISPOSITIONS:
-        violations.append(
-            BlockViolation(
-                "INVALID_DISPOSITION",
-                f"`requiredDisposition` must be one of {ALLOWED_DISPOSITIONS}, "
-                f"got {block['requiredDisposition']!r}",
-            )
-        )
+        violations.append(BlockViolation('INVALID_DISPOSITION',
+            f"`requiredDisposition` must be one of {ALLOWED_DISPOSITIONS}, got {block['requiredDisposition']!r}"))
 
     if block["successorScope"] not in ALLOWED_SUCCESSOR_SCOPES:
-        violations.append(
-            BlockViolation(
-                "INVALID_SUCCESSOR_SCOPE",
-                f"`successorScope` must be one of {ALLOWED_SUCCESSOR_SCOPES}, "
-                f"got {block['successorScope']!r}",
-            )
-        )
+        violations.append(BlockViolation('INVALID_SUCCESSOR_SCOPE',
+            f"`successorScope` must be one of {ALLOWED_SUCCESSOR_SCOPES}, got {block['successorScope']!r}"))
 
     return violations
 
@@ -304,58 +240,28 @@ def _validate_set_reconciliation(block: dict) -> list[BlockViolation]:
         return violations
 
     if prior != resolved | retained:
-        violations.append(
-            BlockViolation(
-                "SET_RECONCILIATION_PRIOR",
-                "`prior` must equal exactly `resolved` union `retained`",
-            )
-        )
+        violations.append(BlockViolation('SET_RECONCILIATION_PRIOR', '`prior` must equal exactly `resolved` union `retained`'))
     if current != retained | new | reopened:
-        violations.append(
-            BlockViolation(
-                "SET_RECONCILIATION_CURRENT",
-                "`current` must equal exactly `retained` union `new` union `reopened`",
-            )
-        )
+        violations.append(BlockViolation('SET_RECONCILIATION_CURRENT',
+            '`current` must equal exactly `retained` union `new` union `reopened`'))
 
     if resolved & retained:
-        violations.append(
-            BlockViolation(
-                "BLOCKER_SET_NOT_DISJOINT",
-                f"`resolved` and `retained` must be disjoint; overlap: {sorted(resolved & retained)}",
-            )
-        )
+        violations.append(BlockViolation('BLOCKER_SET_NOT_DISJOINT',
+            f'`resolved` and `retained` must be disjoint; overlap: {sorted(resolved & retained)}'))
     if retained & new:
-        violations.append(
-            BlockViolation(
-                "BLOCKER_SET_NOT_DISJOINT",
-                f"`retained` and `new` must be disjoint; overlap: {sorted(retained & new)}",
-            )
-        )
+        violations.append(BlockViolation('BLOCKER_SET_NOT_DISJOINT',
+            f'`retained` and `new` must be disjoint; overlap: {sorted(retained & new)}'))
     if retained & reopened:
-        violations.append(
-            BlockViolation(
-                "BLOCKER_SET_NOT_DISJOINT",
-                f"`retained` and `reopened` must be disjoint; overlap: {sorted(retained & reopened)}",
-            )
-        )
+        violations.append(BlockViolation('BLOCKER_SET_NOT_DISJOINT',
+            f'`retained` and `reopened` must be disjoint; overlap: {sorted(retained & reopened)}'))
     if new & reopened:
-        violations.append(
-            BlockViolation(
-                "BLOCKER_SET_NOT_DISJOINT",
-                f"`new` and `reopened` must be disjoint; overlap: {sorted(new & reopened)}",
-            )
-        )
+        violations.append(BlockViolation('BLOCKER_SET_NOT_DISJOINT',
+            f'`new` and `reopened` must be disjoint; overlap: {sorted(new & reopened)}'))
 
     silently_disappeared = prior - resolved - retained
     if silently_disappeared:
-        violations.append(
-            BlockViolation(
-                "SILENT_BLOCKER_DISAPPEARANCE",
-                "blocker(s) present in `prior` but absent from both `resolved` and `retained`: "
-                f"{sorted(silently_disappeared)}",
-            )
-        )
+        violations.append(BlockViolation('SILENT_BLOCKER_DISAPPEARANCE',
+            f'blocker(s) present in `prior` but absent from both `resolved` and `retained`: {sorted(silently_disappeared)}'))
 
     return violations
 
@@ -450,33 +356,18 @@ def _validate_claim_to_proof_mapping(block: dict) -> list[BlockViolation]:
         claim_class = claim.get("claimClass")
         proof_class = claim.get("proofClass")
         if claim_class not in ALLOWED_CLAIM_CLASSES:
-            violations.append(
-                BlockViolation(
-                    "INVALID_CLAIM_CLASS",
-                    f"claims[{index}].claimClass must be one of {ALLOWED_CLAIM_CLASSES}, "
-                    f"got {claim_class!r}",
-                )
-            )
+            violations.append(BlockViolation('INVALID_CLAIM_CLASS',
+                f'claims[{index}].claimClass must be one of {ALLOWED_CLAIM_CLASSES}, got {claim_class!r}'))
             continue
         if claim_class == "OTHER":
             if proof_class != "NAMED_OBSERVABLE_PROOF":
-                violations.append(
-                    BlockViolation(
-                        "CLAIM_TO_PROOF_MAPPING_VIOLATION",
-                        f"claims[{index}] with claimClass `OTHER` requires "
-                        f"proofClass `NAMED_OBSERVABLE_PROOF`, got {proof_class!r}",
-                    )
-                )
+                violations.append(BlockViolation('CLAIM_TO_PROOF_MAPPING_VIOLATION',
+                    f'claims[{index}] with claimClass `OTHER` requires proofClass `NAMED_OBSERVABLE_PROOF`, got {proof_class!r}'))
             continue
         minimum = CLAIM_TO_PROOF_MINIMUM[claim_class]
         if proof_class != minimum:
-            violations.append(
-                BlockViolation(
-                    "CLAIM_TO_PROOF_MAPPING_VIOLATION",
-                    f"claims[{index}] with claimClass `{claim_class}` requires "
-                    f"proofClass `{minimum}`, got {proof_class!r}",
-                )
-            )
+            violations.append(BlockViolation('CLAIM_TO_PROOF_MAPPING_VIOLATION',
+                f'claims[{index}] with claimClass `{claim_class}` requires proofClass `{minimum}`, got {proof_class!r}'))
     return violations
 
 
@@ -488,26 +379,14 @@ def _validate_ready_scope_pairing(block: dict) -> list[BlockViolation]:
     claims = block.get("claims")
     if disposition == "READY_WITH_EXECUTABLE_PROOF":
         if scope != "EXECUTABLE_IMPLEMENTATION":
-            violations.append(
-                BlockViolation(
-                    "READY_SCOPE_MISMATCH",
-                    "`READY_WITH_EXECUTABLE_PROOF` requires `successorScope: EXECUTABLE_IMPLEMENTATION`",
-                )
-            )
+            violations.append(BlockViolation('READY_SCOPE_MISMATCH',
+                '`READY_WITH_EXECUTABLE_PROOF` requires `successorScope: EXECUTABLE_IMPLEMENTATION`'))
         if not isinstance(claims, list) or not claims:
-            violations.append(
-                BlockViolation(
-                    "READY_WITHOUT_CLAIMS",
-                    "`READY_WITH_EXECUTABLE_PROOF` requires at least one claim with executable proof",
-                )
-            )
+            violations.append(BlockViolation('READY_WITHOUT_CLAIMS',
+                '`READY_WITH_EXECUTABLE_PROOF` requires at least one claim with executable proof'))
     elif scope == "EXECUTABLE_IMPLEMENTATION":
-        violations.append(
-            BlockViolation(
-                "EXECUTABLE_SCOPE_WITHOUT_READY_DISPOSITION",
-                "`successorScope: EXECUTABLE_IMPLEMENTATION` requires `READY_WITH_EXECUTABLE_PROOF`",
-            )
-        )
+        violations.append(BlockViolation('EXECUTABLE_SCOPE_WITHOUT_READY_DISPOSITION',
+            '`successorScope: EXECUTABLE_IMPLEMENTATION` requires `READY_WITH_EXECUTABLE_PROOF`'))
     return violations
 
 
@@ -515,28 +394,16 @@ def _validate_predecessor_state(block: dict, predecessor_block: dict) -> list[Bl
     """Validate state continuity against the actual predecessor SCEC block."""
     violations: list[BlockViolation] = []
     if predecessor_block.get("problemKey") != block.get("problemKey"):
-        violations.append(
-            BlockViolation(
-                "PREDECESSOR_PROBLEM_KEY_MISMATCH",
-                "successor `problemKey` must equal the predecessor block's `problemKey`",
-            )
-        )
+        violations.append(BlockViolation('PREDECESSOR_PROBLEM_KEY_MISMATCH',
+            "successor `problemKey` must equal the predecessor block's `problemKey`"))
     predecessor_ordinal = predecessor_block.get("chainOrdinal")
     ordinal = block.get("chainOrdinal")
     if not isinstance(predecessor_ordinal, int) or isinstance(predecessor_ordinal, bool):
-        violations.append(
-            BlockViolation(
-                "PREDECESSOR_INVALID_ORDINAL",
-                "predecessor block must carry a valid integer `chainOrdinal`",
-            )
-        )
+        violations.append(BlockViolation('PREDECESSOR_INVALID_ORDINAL',
+            'predecessor block must carry a valid integer `chainOrdinal`'))
     elif ordinal != predecessor_ordinal + 1:
-        violations.append(
-            BlockViolation(
-                "PREDECESSOR_ORDINAL_DISCONTINUITY",
-                f"successor ordinal must equal predecessor ordinal + 1 ({predecessor_ordinal + 1})",
-            )
-        )
+        violations.append(BlockViolation('PREDECESSOR_ORDINAL_DISCONTINUITY',
+            f'successor ordinal must equal predecessor ordinal + 1 ({predecessor_ordinal + 1})'))
 
     predecessor_delta = predecessor_block.get("blockerDelta")
     current_delta = block.get("blockerDelta")
@@ -545,12 +412,8 @@ def _validate_predecessor_state(block: dict, predecessor_block: dict) -> list[Bl
         successor_prior = current_delta.get("prior")
         if _is_str_list(predecessor_current) and _is_str_list(successor_prior):
             if set(predecessor_current) != set(successor_prior):
-                violations.append(
-                    BlockViolation(
-                        "PREDECESSOR_BLOCKER_STATE_MISMATCH",
-                        "successor `blockerDelta.prior` must equal predecessor `blockerDelta.current`",
-                    )
-                )
+                violations.append(BlockViolation('PREDECESSOR_BLOCKER_STATE_MISMATCH',
+                    'successor `blockerDelta.prior` must equal predecessor `blockerDelta.current`'))
 
     predecessor_counters = predecessor_block.get("counters")
     counters = block.get("counters")
@@ -563,12 +426,8 @@ def _validate_predecessor_state(block: dict, predecessor_block: dict) -> list[Bl
             previous = predecessor_counters.get(field_name)
             current = counters.get(field_name)
             if isinstance(previous, int) and isinstance(current, int) and current < previous:
-                violations.append(
-                    BlockViolation(
-                        "PREDECESSOR_COUNTER_RESET",
-                        f"`counters.{field_name}` must not decrease from predecessor value {previous}",
-                    )
-                )
+                violations.append(BlockViolation('PREDECESSOR_COUNTER_RESET',
+                    f'`counters.{field_name}` must not decrease from predecessor value {previous}'))
 
         previous_streak = predecessor_counters.get("nonDecreasingBlockerTransitions")
         current_streak = counters.get("nonDecreasingBlockerTransitions")
@@ -594,27 +453,15 @@ def _validate_predecessor_state(block: dict, predecessor_block: dict) -> list[Bl
 
     predecessor_disposition = predecessor_block.get("requiredDisposition")
     if predecessor_disposition == "STOP_REASSESS_ARCHITECTURE":
-        violations.append(
-            BlockViolation(
-                "SUCCESSOR_AFTER_STOP_REASSESS",
-                "a `STOP_REASSESS_ARCHITECTURE` predecessor cannot have a successor in the same problem chain",
-            )
-        )
+        violations.append(BlockViolation('SUCCESSOR_AFTER_STOP_REASSESS',
+            'a `STOP_REASSESS_ARCHITECTURE` predecessor cannot have a successor in the same problem chain'))
     elif predecessor_disposition == "ROOT_CONTRACT_REQUIRED":
         if block.get("requiredDisposition") not in ESCALATION_SATISFYING_DISPOSITIONS:
-            violations.append(
-                BlockViolation(
-                    "PREDECESSOR_ESCALATION_DROPPED",
-                    "successor must preserve or resolve the predecessor's root-contract escalation",
-                )
-            )
+            violations.append(BlockViolation('PREDECESSOR_ESCALATION_DROPPED',
+                "successor must preserve or resolve the predecessor's root-contract escalation"))
         if block.get("successorScope") == "INITIAL_BOUNDED":
-            violations.append(
-                BlockViolation(
-                    "PREDECESSOR_NARROW_SCOPE_REOPENED",
-                    "successor must not reopen a narrow scope after predecessor root-contract escalation",
-                )
-            )
+            violations.append(BlockViolation('PREDECESSOR_NARROW_SCOPE_REOPENED',
+                'successor must not reopen a narrow scope after predecessor root-contract escalation'))
     return violations
 
 
@@ -660,12 +507,8 @@ def validate_block(
             if isinstance(path, str) and isinstance(declared_hash, str) and SHA256_RE.match(declared_hash):
                 resolved_hash = predecessor_hash_resolver(path)
                 if resolved_hash is None:
-                    violations.append(
-                        BlockViolation(
-                            "PREDECESSOR_PATH_UNREADABLE",
-                            f"predecessor path `{path}` could not be read to verify its SHA-256 hash",
-                        )
-                    )
+                    violations.append(BlockViolation('PREDECESSOR_PATH_UNREADABLE',
+                        f'predecessor path `{path}` could not be read to verify its SHA-256 hash'))
                 elif resolved_hash != declared_hash:
                     violations.append(
                         BlockViolation(
@@ -678,20 +521,11 @@ def validate_block(
             if predecessor_block_resolver is not None and isinstance(path, str):
                 predecessor_blocks = predecessor_block_resolver(path)
                 if predecessor_blocks is None:
-                    violations.append(
-                        BlockViolation(
-                            "PREDECESSOR_BLOCK_UNREADABLE",
-                            f"predecessor path `{path}` could not be read for SCEC state continuity",
-                        )
-                    )
+                    violations.append(BlockViolation('PREDECESSOR_BLOCK_UNREADABLE',
+                        f'predecessor path `{path}` could not be read for SCEC state continuity'))
                 elif len(predecessor_blocks) != 1:
-                    violations.append(
-                        BlockViolation(
-                            "PREDECESSOR_BLOCK_COUNT_INVALID",
-                            f"predecessor path `{path}` must contain exactly one active SCEC block; "
-                            f"found {len(predecessor_blocks)}",
-                        )
-                    )
+                    violations.append(BlockViolation('PREDECESSOR_BLOCK_COUNT_INVALID',
+                        f'predecessor path `{path}` must contain exactly one active SCEC block; found {len(predecessor_blocks)}'))
                 else:
                     predecessor_result = validate_block(predecessor_blocks[0])
                     if predecessor_result.violations:
@@ -708,16 +542,50 @@ def validate_block(
     return ValidationResult(is_active=True, violations=tuple(violations))
 
 
+def _iter_fenced_blocks(text: str) -> list[tuple[str, str]]:
+    """Yield `(language_tag, body)` per fenced block via an explicit
+    open/close state machine, so a closing fence is never re-paired as a
+    later block's opener (ADIF-0055 mixed-fence hardening).
+    """
+    blocks: list[tuple[str, str]] = []
+    in_fence = False
+    language = ""
+    opening_width = 0
+    body_lines: list[str] = []
+    for line in text.splitlines():
+        normalized_line = line.rstrip("\r")
+        if not in_fence:
+            opening_match = OPEN_FENCE_LINE_RE.match(normalized_line)
+            if opening_match:
+                in_fence = True
+                opening_width = len(opening_match.group(1))
+                info = opening_match.group(2).strip()
+                language = info.split(maxsplit=1)[0].lower() if info else ""
+                body_lines = []
+            continue
+        closing_match = CLOSE_FENCE_LINE_RE.match(normalized_line)
+        if closing_match and len(closing_match.group(1)) >= opening_width:
+            blocks.append((language, "\n".join(body_lines)))
+            in_fence = False
+            language = ""
+            opening_width = 0
+            body_lines = []
+            continue
+        body_lines.append(line)
+    return blocks
+
+
 def find_active_blocks(text: str) -> list[dict]:
     """Extract every fenced-code-block JSON object that is a real active SCEC
     block (invariant 11: quoted/example markers outside real JSON are never
     treated as active).
     """
     active: list[dict] = []
-    for match in CODE_FENCE_JSON_RE.finditer(text):
-        candidate_text = match.group(1)
+    for language, body in _iter_fenced_blocks(text):
+        if language not in ("", "json"):
+            continue
         try:
-            candidate = json.loads(candidate_text)
+            candidate = json.loads(body)
         except (json.JSONDecodeError, ValueError):
             continue
         if is_active_block(candidate):
