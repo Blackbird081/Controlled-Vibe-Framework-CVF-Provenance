@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2460,
+  "stateKey": "gc010ScrR2T1iFormalProductRoadmapT1ReconciliationAndSmallestSuccessorDecisionDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN",
+    "materialCommit": "b3689b843",
+    "dispatchBaseHead": "ba098729614cc4ebee77ae41bee33a8a7fe59a12",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
+    "workerManifest": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "objective": "Reconcile accepted GC010 SCR R2 T1A-T1H enabling evidence against every formal product-roadmap T1 and historical four-fact criterion, then select one bounded terminal and at most one smallest successor manifest.",
+    "workerBoundary": "One operator-mediated external decision worker creates exactly two documentation artifacts, performs read-only local evidence reconciliation, does not stage or commit, and stops for independent orchestrator review.",
+    "nextAllowedMove": "Operator transfers the committed T1I packet to the external decision worker; worker returns exactly the two named uncommitted documentation artifacts for independent orchestrator/reviewer closure.",
+    "claimBoundary": "Dispatch only. Formal T1 is not closed; no source/test/roadmap edit, package export, route/provider/audit integration, production trigger, T2 implementation, distributed safety, provider/live, public sync, deployment or production authority is opened."
+  }
+}

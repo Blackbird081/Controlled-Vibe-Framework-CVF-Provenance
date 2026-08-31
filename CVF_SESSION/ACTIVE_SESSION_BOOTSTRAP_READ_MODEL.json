@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r2_t1h_closed_pass_t1e_harness_accepted_post_hash_repair",
+  "currentMode": "gc010_scr_r2_t1i_dispatched_pending_external_decision_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Await fresh operator instruction before a separately governed reconciliation of the accepted GC010-SCR-R2 enabling chain against the formal GC010 product-roadmap T1 boundary or another explicitly selected GC010 system-chain tranche. T1H is CLOSED_PASS_BOUNDED at material 735fb8b21 with terminal T1E_HARNESS_ACCEPTED_POST_CANONICAL_HASH_REPAIR. Formal production T1, package export, route/provider/audit integration, distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Transfer the committed GC010-SCR-R2-T1I formal-T1 reconciliation packet at material b3689b843 to one operator-mediated external decision worker. The worker creates exactly the two named uncommitted documentation artifacts, performs read-only local evidence reconciliation, and stops for independent orchestrator/reviewer closure. Formal T1 closure, source/test/roadmap edits, package export, route/provider/audit integration, production trigger, T2 implementation, distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md",
-    "baselineSha256": "8d5cb0175ef2c20c8f2b628863e202d3ff6534f5cc26c6730cc45374bc67164e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md",
-    "workOrderSha256": "d07380b06d88bc70a5a2c73eec6c388f50f87d053b7a469711d29a3bbfe3055a"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
+    "baselineSha256": "a1aeae81d854174019297089bcd2a06845daba6743234d683a060c3c18beb228",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
+    "workOrderSha256": "beef352783ab10d7cfa4ec97793553ed3bf628642b59b7ee471ab5d00107c9ef"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

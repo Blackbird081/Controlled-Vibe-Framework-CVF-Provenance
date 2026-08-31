@@ -2,7 +2,7 @@
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
-- Current GC010 closure material: `735fb8b21bfb3c0b6142e455286604f0596692a5`; T1H is `CLOSED_PASS_BOUNDED`. This closure update supersedes the earlier T1H dispatch-only current-HEAD wording retained below as chronology.
+- Current GC010 dispatch material: `b3689b843`; T1I is `DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN`. T1H remains `CLOSED_PASS_BOUNDED` at `735fb8b21`.
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
@@ -40,10 +40,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1h_closed_pass_t1e_harness_accepted_post_hash_repair`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await fresh operator instruction before separately reconciling the accepted R2 chain against formal GC010 roadmap T1 or selecting another GC010 tranche; parked checkpoint=formal production T1, package export, route/provider/audit integration, distributed safety, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1i_dispatched_pending_external_decision_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer the committed T1I packet to one external decision worker for an exact two-document no-commit return; parked checkpoint=formal T1 closure, source/test/roadmap edits, package export, route/provider/audit integration, production trigger, T2 implementation, provider/live, public sync and deployment.
 
 ## Current Mode
-`gc010_scr_r2_t1h_closed_pass_t1e_harness_accepted_post_hash_repair`
+`gc010_scr_r2_t1i_dispatched_pending_external_decision_return`
 
 ## Purpose
 
@@ -112,14 +112,14 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Current Authority
 
-GC010-SCR-R2-T1H is `CLOSED_PASS_BOUNDED` at net material `735fb8b21` over execution base `348e975c9`. Terminal `T1E_HARNESS_ACCEPTED_POST_CANONICAL_HASH_REPAIR` accepts the existing local harness only as a bounded non-production consumer. Formal production T1, package export, route/provider/audit integration and distributed safety remain parked.
+GC010-SCR-R2-T1I is `DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN` at material `b3689b843` over T1H continuity `ba0987296`. It reconciles the accepted enabling chain against formal roadmap T1 without closing T1 or authorizing implementation. T1H remains bounded non-production evidence only.
 
 | Field | Value |
 |---|---|
-| authorityState | GC010-SCR-R2-T1H `CLOSED_PASS_BOUNDED` at `735fb8b21`; terminal `T1E_HARNESS_ACCEPTED_POST_CANONICAL_HASH_REPAIR` |
+| authorityState | GC010-SCR-R2-T1I `DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN` at `b3689b843`; T1H remains `CLOSED_PASS_BOUNDED` at `735fb8b21` |
 | roadmapPath | `docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md`; historical production T1 remains parked |
 | closureDependency | accepted T1A `f55b80826`; accepted T1B `da55f54d5`; accepted T1C `82c64a6f5`; accepted T1D `0e4aacdc6`; T1E dispatch `13dbbaa73`; blocked closure `d367ea1c7` |
-| nextAuthorityRequirement | fresh operator instruction before formal-roadmap T1 reconciliation or another selected GC010 system-chain tranche |
+| nextAuthorityRequirement | transfer the exact T1I packet to one external decision worker; independent orchestrator review before any formal T1 closure or successor |
 
 ## Closure Evidence
 
@@ -170,7 +170,7 @@ GC010-SCR-R2-T1H is `CLOSED_PASS_BOUNDED` at net material `735fb8b21` over execu
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Await fresh operator instruction before a separately governed reconciliation of the accepted GC010-SCR-R2 enabling chain against formal product-roadmap T1 or another explicitly selected GC010 tranche. T1H is closed pass at `735fb8b21`; formal production T1, package export, route/provider/audit integration, distributed safety, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
+Transfer the committed GC010-SCR-R2-T1I packet at `b3689b843` to one external decision worker. The worker creates exactly the named assessment and worker return, performs read-only reconciliation, leaves both uncommitted and stops for independent orchestrator/reviewer closure. Formal T1 closure, source/test/roadmap edits, package export, route/provider/audit integration, production trigger, T2 implementation, distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -205,16 +205,16 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize T1H closed-pass net material `735fb8b21`, exact next checkpoint and generated projections. This authorizes no automatic successor, package export or production consumer.
+Authorized guard-maintenance scope: synchronize T1I dispatch material `b3689b843`, exact external-worker checkpoint and generated projections. This authorizes no worker commit, formal T1 closure, successor implementation, package export or production trigger.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1hPendingAgentExecutionLocalHarnessPostHashRepairAcceptanceReevaluationClosure20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1iFormalProductRoadmapT1ReconciliationAndSmallestSuccessorDecisionDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: continuation with Claude as worker and this agent as orchestrator/reviewer; accepted net T1H material is `735fb8b21` over execution base `348e975c9`.
-Rollback boundary: revert only this T1H closure continuity sync without rewriting material evidence or prior closures.
-Not authorized: automatic successor, formal production T1, source/test edit, package export, route/provider/audit integration, distributed safety, provider/API/network use, public mutation, deployment, production claim or compaction.
+Operator authorization: continuation with the external worker and this agent as orchestrator/reviewer; T1I material is `b3689b843` over continuity base `ba0987296`.
+Rollback boundary: revert only this T1I dispatch continuity sync without rewriting material evidence or prior closures.
+Not authorized: worker commit, formal T1 closure, source/test/roadmap edit, package export, route/provider/audit integration, production trigger, T2 implementation, provider/API/network use, public mutation, deployment, production claim or compaction.
 ## Claim Boundary
 
-This handoff records T1H `CLOSED_PASS_BOUNDED` net material `735fb8b21`: the T1E local harness is accepted only as a bounded non-production consumer after canonical-hash repair. It does not authorize source/test edits, create a package export or formal production consumer, change route/provider/audit source, or permit distributed safety, provider/API/network, public mutation, deployment, production, compaction or automatic successor work.
+This handoff records T1I decision dispatch material `b3689b843`: one external worker may create exactly two documentation artifacts and perform read-only local reconciliation. It does not close formal T1, authorize source/test/roadmap edits, create a package export or production trigger, open T2, change route/provider/audit source, or permit provider/API/network, public mutation, deployment, production, compaction or automatic successor work.

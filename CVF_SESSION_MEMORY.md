@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1h_closed_pass_t1e_harness_accepted_post_hash_repair`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await fresh operator instruction before separately reconciling the accepted R2 enabling chain against formal GC010 roadmap T1 or selecting another GC010 tranche; parked checkpoint=formal production T1, package export, route/provider/audit integration, distributed safety, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1i_dispatched_pending_external_decision_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer the committed T1I formal-T1 reconciliation packet to one external decision worker for an exact two-document uncommitted return; parked checkpoint=formal T1 closure, source/test/roadmap edits, package export, route/provider/audit integration, production trigger, T2 implementation, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t1h_closed_pass_t1e_harness_accepted_post_hash_repair`
-Current mode: `gc010_scr_r2_t1h_closed_pass_t1e_harness_accepted_post_hash_repair`; previous mode marker: `gc010_scr_r2_t1h_dispatched_pending_external_decision_return`
-Previous mode: `gc010_scr_r2_t1h_dispatched_pending_external_decision_return`
+Current mode marker: `gc010_scr_r2_t1i_dispatched_pending_external_decision_return`
+Current mode: `gc010_scr_r2_t1i_dispatched_pending_external_decision_return`; previous mode marker: `gc010_scr_r2_t1h_closed_pass_t1e_harness_accepted_post_hash_repair`
+Previous mode: `gc010_scr_r2_t1h_closed_pass_t1e_harness_accepted_post_hash_repair`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t1h_closed_pass_t1e_harness_accepted_post_hash_repair`. T1H is independently accepted `CLOSED_PASS_BOUNDED` at material `735fb8b21` with terminal `T1E_HARNESS_ACCEPTED_POST_CANONICAL_HASH_REPAIR`. Reviewer reproduction passed 7/7 files, 173/173 tests and TypeScript; the net material range is exactly assessment plus corrected worker return. Await fresh operator instruction before a separate formal-roadmap T1 reconciliation or another selected GC010 tranche. Formal production T1, package/barrel export, route-source/provider/audit, distributed safety, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1i_dispatched_pending_external_decision_return`. T1I decision packet is committed at material `b3689b843` after pre-dispatch 80/80 and pre-commit 87/87 PASS. Transfer the exact work order to one external decision worker; the worker creates exactly the named assessment and worker return, reconciles formal T1 against accepted T1A-T1H and current source, does not stage or commit, and stops for independent orchestrator review. Formal T1 closure, source/test/roadmap edits, package/barrel export, route-source/provider/audit, production trigger, T2 implementation, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

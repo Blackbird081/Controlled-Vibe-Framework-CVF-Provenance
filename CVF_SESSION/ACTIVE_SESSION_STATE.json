@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md",
-    "baselineSha256": "8d5cb0175ef2c20c8f2b628863e202d3ff6534f5cc26c6730cc45374bc67164e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md",
-    "workOrderSha256": "d07380b06d88bc70a5a2c73eec6c388f50f87d053b7a469711d29a3bbfe3055a"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
+    "baselineSha256": "a1aeae81d854174019297089bcd2a06845daba6743234d683a060c3c18beb228",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
+    "workOrderSha256": "beef352783ab10d7cfa4ec97793553ed3bf628642b59b7ee471ab5d00107c9ef"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1h_closed_pass_t1e_harness_accepted_post_hash_repair",
-  "previousMode": "gc010_scr_r2_t1h_dispatched_pending_external_decision_return",
+  "currentMode": "gc010_scr_r2_t1i_dispatched_pending_external_decision_return",
+  "previousMode": "gc010_scr_r2_t1h_closed_pass_t1e_harness_accepted_post_hash_repair",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15663,5 +15663,20 @@
     "nextAllowedMove": "Await fresh operator instruction before a separately governed reconciliation of the accepted R2 enabling chain against the formal GC010 product-roadmap T1 boundary or another explicitly selected GC010 system-chain tranche.",
     "claimBoundary": "The T1E local harness is accepted only as a bounded non-production consumer. Formal roadmap production T1, package export, route/provider/audit integration, distributed safety, provider/live, public sync, deployment and production remain parked."
   },
-  "nextAllowedMove": "Await fresh operator instruction before a separately governed reconciliation of the accepted GC010-SCR-R2 enabling chain against the formal GC010 product-roadmap T1 boundary or another explicitly selected GC010 system-chain tranche. T1H is CLOSED_PASS_BOUNDED at material 735fb8b21 with terminal T1E_HARNESS_ACCEPTED_POST_CANONICAL_HASH_REPAIR. Formal production T1, package export, route/provider/audit integration, distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gc010ScrR2T1iFormalProductRoadmapT1ReconciliationAndSmallestSuccessorDecisionDispatch20260831": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN",
+    "materialCommit": "b3689b843",
+    "dispatchBaseHead": "ba098729614cc4ebee77ae41bee33a8a7fe59a12",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
+    "workerManifest": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "objective": "Reconcile accepted GC010 SCR R2 T1A-T1H enabling evidence against every formal product-roadmap T1 and historical four-fact criterion, then select one bounded terminal and at most one smallest successor manifest.",
+    "workerBoundary": "One operator-mediated external decision worker creates exactly two documentation artifacts, performs read-only local evidence reconciliation, does not stage or commit, and stops for independent orchestrator review.",
+    "nextAllowedMove": "Operator transfers the committed T1I packet to the external decision worker; worker returns exactly the two named uncommitted documentation artifacts for independent orchestrator/reviewer closure.",
+    "claimBoundary": "Dispatch only. Formal T1 is not closed; no source/test/roadmap edit, package export, route/provider/audit integration, production trigger, T2 implementation, distributed safety, provider/live, public sync, deployment or production authority is opened."
+  },
+  "nextAllowedMove": "Transfer the committed GC010-SCR-R2-T1I formal-T1 reconciliation packet at material b3689b843 to one operator-mediated external decision worker. The worker creates exactly the two named uncommitted documentation artifacts, performs read-only local evidence reconciliation, and stops for independent orchestrator/reviewer closure. Formal T1 closure, source/test/roadmap edits, package export, route/provider/audit integration, production trigger, T2 implementation, distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
