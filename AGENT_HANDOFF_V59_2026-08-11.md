@@ -211,7 +211,7 @@ Protected continuity paths:
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: the operator directed continuation and internal sub-agent execution under orchestrator/reviewer authority; T1F dispatch material is `648063886`.
+Operator authorization: the operator directed continuation and internal sub-agent execution under orchestrator/reviewer authority; T1F dispatch material is `648063886`, continuity is `686823628`, and handoff-mode repair is `0aa66b002`.
 Rollback boundary: revert only this T1F dispatch continuity sync without rewriting material evidence or prior closures.
 Not authorized: source/test repair, harness acceptance, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/API/network use, credentials, public mutation, deployment, production claim, compaction, or automatic successor.
 
