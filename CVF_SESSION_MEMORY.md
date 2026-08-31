@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1e_closed_blocked_snapshot_hash_persistence_compatibility`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=stop at the T1E operator checkpoint and await fresh instruction before any separately committed cross-owner correction decision; parked checkpoint=approval-hash/persistence repair, harness acceptance, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1f_dispatched_pending_internal_decision_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute one T1F internal no-commit decision worker and stop for independent review; parked checkpoint=source repair, harness acceptance, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t1e_closed_blocked_snapshot_hash_persistence_compatibility`
-Current mode: `gc010_scr_r2_t1e_closed_blocked_snapshot_hash_persistence_compatibility`; previous mode marker: `gc010_scr_r2_t1e_dispatched_pending_internal_worker_return`
-Previous mode: `gc010_scr_r2_t1e_dispatched_pending_internal_worker_return`
+Current mode marker: `gc010_scr_r2_t1f_dispatched_pending_internal_decision_return`
+Current mode: `gc010_scr_r2_t1f_dispatched_pending_internal_decision_return`; previous mode marker: `gc010_scr_r2_t1e_closed_blocked_snapshot_hash_persistence_compatibility`
+Previous mode: `gc010_scr_r2_t1e_closed_blocked_snapshot_hash_persistence_compatibility`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t1e_closed_blocked_snapshot_hash_persistence_compatibility`. T1E is closed blocked at material `d367ea1c7`: the current production snapshot builder uses an order-sensitive approval hash, while T1C canonical SQLite persistence reorders keys, so claim fails after readback as `APPROVAL_SNAPSHOT_HASH_MISMATCH`. The harness is retained only as non-exported blocked draft/regression evidence. Stop at the operator checkpoint; a fresh instruction is required before a separately committed cross-owner correction decision or repair dispatch. Package/barrel export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1f_dispatched_pending_internal_decision_return`. T1F decision dispatch is committed at `648063886`. Execute exactly one internal no-commit worker that writes only the named assessment and worker return, compares all four correction families, selects one allowed terminal token, and stops for independent review. No approval/pending/SQLite/test repair is authorized. The T1E harness remains blocked draft evidence; package/barrel export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

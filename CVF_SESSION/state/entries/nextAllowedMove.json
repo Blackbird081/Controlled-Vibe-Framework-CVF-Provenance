@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "Stop at the GC010-SCR-R2-T1E operator checkpoint. T1E is CLOSED_BLOCKED_BOUNDED at material d367ea1c7 because the current order-sensitive approval snapshot hash is incompatible with T1C canonical SQLite persistence after readback. A fresh operator instruction is required before authoring a separately committed cross-owner correction decision or repair dispatch. The harness remains non-exported blocked draft evidence; route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute exactly one GC010-SCR-R2-T1F internal no-commit decision worker from dispatch material 648063886. The worker may create only the named assessment and worker return, must compare all four correction families, and must return one allowed terminal token for independent review. No source/test repair, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24."
 }

@@ -169,7 +169,7 @@ GC010-SCR-R2-T1E is closed blocked at material `d367ea1c7` over dispatch `13dbba
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Stop at the GC010-SCR-R2-T1E operator checkpoint. T1E is closed blocked at `d367ea1c7` because the current order-sensitive approval snapshot hash conflicts with T1C canonical SQLite persistence after readback. Await fresh operator instruction before authoring any separately committed cross-owner correction decision or repair dispatch. Package export, route/provider/audit integration, production consumer, cross-node/distributed safety, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
+Execute exactly one GC010-SCR-R2-T1F internal no-commit decision worker from dispatch material `648063886`; permit only the named assessment and worker return, then stop for independent review. No source/test repair or automatic implementation is open. Package export, route/provider/audit integration, production consumer, cross-node/distributed safety, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -204,17 +204,17 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize committed GC010-SCR-R2-T1E blocked closure `d367ea1c7`, blocked mode, operator-checkpoint next move, current-authority hashes and generated projections. This accepts no viable consumer.
+Authorized guard-maintenance scope: synchronize committed GC010-SCR-R2-T1F decision dispatch `648063886`, pending-worker mode, exact next move, current-authority hashes and generated projections. This authorizes no source repair or viable consumer.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1ePendingAgentExecutionLocalHarnessNonProductionImplementationBlockedClosure20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1fPendingAgentExecutionApprovalSnapshotDurableCompatibilityCorrectionDecisionDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: the operator directed continuation, allowed a sub-agent worker and retained orchestrator/reviewer closure authority; T1E blocked material is `d367ea1c7`.
-Rollback boundary: revert only this T1E blocked-closure continuity sync without rewriting material evidence or prior closures.
-Not authorized: predecessor repair without separately committed authority, harness acceptance, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/API/network use, credentials, public mutation, deployment, production claim, compaction, or automatic successor.
+Operator authorization: the operator directed continuation and internal sub-agent execution under orchestrator/reviewer authority; T1F dispatch material is `648063886`.
+Rollback boundary: revert only this T1F dispatch continuity sync without rewriting material evidence or prior closures.
+Not authorized: source/test repair, harness acceptance, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/API/network use, credentials, public mutation, deployment, production claim, compaction, or automatic successor.
 
 ## Claim Boundary
 
-This handoff records T1E as closed blocked at `d367ea1c7` because approval snapshot hash bytes are incompatible with canonical durable persistence after readback. It does not accept the harness implementation, repair predecessor source, create a package export, production API/store/consumer, export AER, connect route/provider/audit systems, or permit cross-node/distributed safety, provider/API/network, public mutation, deployment, production, compaction, or automatic successor work.
+This handoff records T1F decision dispatch at `648063886` and permits only one internal no-commit assessment/return before independent review. It does not select or implement a correction, accept the harness, repair source, create a package export, production API/store/consumer, export AER, connect route/provider/audit systems, or permit cross-node/distributed safety, provider/API/network, public mutation, deployment, production, compaction, or automatic successor work.

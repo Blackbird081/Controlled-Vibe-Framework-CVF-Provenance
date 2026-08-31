@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
-    "baselineSha256": "3e322c936be5d679757cc614c5cc7117678fb18e37a059c4ef67545896fbc4de",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
-    "workOrderSha256": "bb2cbd7c3576b77e4449d5f23d4edf4564a3e03b9b94fc12b68e09a70a1cb835"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_2026-08-31.md",
+    "baselineSha256": "c75b9c9295b49f6d4b612291660429a880e2a8902178443a4cec81ce0ac2f2ab",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_2026-08-31.md",
+    "workOrderSha256": "f5fe2d17d5905b659f9813394ab2b9eb12bfc880e8ab9132d66453d812fd1773"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1e_closed_blocked_snapshot_hash_persistence_compatibility",
-  "previousMode": "gc010_scr_r2_t1e_dispatched_pending_internal_worker_return",
+  "currentMode": "gc010_scr_r2_t1f_dispatched_pending_internal_decision_return",
+  "previousMode": "gc010_scr_r2_t1e_closed_blocked_snapshot_hash_persistence_compatibility",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Stop at the GC010-SCR-R2-T1E operator checkpoint. T1E is CLOSED_BLOCKED_BOUNDED at material d367ea1c7 because the current order-sensitive approval snapshot hash is incompatible with T1C canonical SQLite persistence after readback. A fresh operator instruction is required before authoring a separately committed cross-owner correction decision or repair dispatch. The harness remains non-exported blocked draft evidence; route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute exactly one GC010-SCR-R2-T1F internal no-commit decision worker from dispatch material 648063886. The worker may create only the named assessment and worker return, must compare all four correction families, and must return one allowed terminal token for independent review. No source/test repair, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15564,5 +15564,19 @@
     "acceptedBoundary": "The two implementation files are retained only as non-exported blocked draft and regression evidence. No predecessor source, package, route, provider, audit, public, deployment or production owner changed.",
     "nextAllowedMove": "Await fresh operator instruction before any separately committed cross-owner approval-hash/persistence correction decision or repair dispatch.",
     "claimBoundary": "No viable current-owner consumer is accepted, no successor tranche is open, and GC010 production integration remains parked."
+  },
+  "gc010ScrR2T1fPendingAgentExecutionApprovalSnapshotDurableCompatibilityCorrectionDecisionDispatch20260831": {
+    "status": "DISPATCHED_DECISION_BOUNDED",
+    "materialCommit": "648063886",
+    "dispatchBaseHead": "061f92cf9",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_2026-08-31.md",
+    "workerAssessment": "docs/assessments/CVF_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_WORKER_RETURN_2026-08-31.md",
+    "executionRoute": "one internal no-commit decision worker followed by independent orchestrator review",
+    "decisionBoundary": "Compare canonical approval hashing, SQLite insertion-order preservation, pending-core semantic equivalence and versioned hash/preimage migration without editing source.",
+    "workerWriteScope": "Exactly the named assessment and worker return.",
+    "nextAllowedMove": "Execute the T1F worker and stop for independent review; implementation remains separately governed.",
+    "claimBoundary": "Dispatch only; no approval hash, persistence, pending execution, route, provider, public, deployment or production behavior changed."
   }
 }
