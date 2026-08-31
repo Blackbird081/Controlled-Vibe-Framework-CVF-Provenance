@@ -2,7 +2,7 @@
   "stateOrder": 2610,
   "stateKey": "scecT1R3LocatorContentBindingHardeningDispatch20260831",
   "value": {
-    "status": "DISPATCHED_PENDING_EXTERNAL_WORKER_RETURN",
+    "status": "REVIEWER_ACCEPTED_WITH_MATERIAL_CORRECTION_CLOSED_READY_FOR_EFFECTIVENESS_VALIDATION",
     "problemKey": "scec-locator-content-binding",
     "dispatchCommit": "2a88ea545",
     "dispatchBaseHead": "4a8719deda9f31a2c389760f2de0bddf43cdeb30",
@@ -10,11 +10,17 @@
     "baselineSha256": "8a8f95804874b9f848ae79918a1b923e1bf5cd669d71f8fee32f00c90d40104b",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R3_LOCATOR_TO_CONTENT_EVIDENCE_BINDING_HARDENING_2026-08-31.md",
     "workOrderSha256": "ae3f21023c4745dfbe67b689deccd7075b3958a3039ee516938c9023724c765f",
+    "workerReturn": "docs/reviews/CVF_SCEC_T1_R3_LOCATOR_TO_CONTENT_EVIDENCE_BINDING_HARDENING_WORKER_RETURN_2026-08-31.md",
+    "workerReturnSha256": "f4575b71c794efd1e682a4f0450a97ecab32fbd379bf7dbafbe222baa9e2f2ed",
+    "materialCommit": "008ff0685fabe169b326a6683fc5ca9bbbb07afb",
+    "reviewDisposition": "ACCEPT_WITH_MATERIAL_CORRECTION",
+    "reviewerCorrection": "Worker used synthetic bytes instead of the exact E2 artifact and read a shared evidence path once per binding. Reviewer added exact E2 path/hash replay and one cache shared across the validation tree.",
+    "focusedTests": "119/119 PASS",
     "commitMode": "WORKER_MUST_NOT_COMMIT",
     "requiredArtifactCount": 5,
     "requiredSemantics": "One evidence byte snapshot owns SHA-256 and strict-UTF-8 exact-unique locator resolution; absent, ambiguous, non-canonical and undecodable locators fail closed with stable codes.",
     "exactReplay": "The SCEC-E2 correct-path/correct-hash locator THIS_LOCATOR_DOES_NOT_EXIST_ANYWHERE_IN_THE_FILE must fail with RESOLUTION_EVIDENCE_LOCATOR_NOT_FOUND.",
-    "nextAllowedMove": "Await one exact five-path uncommitted worker return, then independently review and replay the mandatory matrix. Do not open a product successor.",
-    "claimBoundary": "SCEC foundation implementation only. GC010, T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked."
+    "nextAllowedMove": "Author one bounded SCEC-E3 independent effectiveness-validation packet. Do not open a product successor until that verdict closes the SCEC learning loop.",
+    "claimBoundary": "SCEC-T1-R3 closes as accepted with material correction and executable local proof, but not yet independent effectiveness closure. GC010, T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked."
   }
 }

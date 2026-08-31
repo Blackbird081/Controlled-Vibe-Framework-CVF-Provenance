@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "scec_t1_r3_locator_content_binding_dispatched_pending_external_return",
+  "currentMode": "scec_t1_r3_locator_content_binding_closed_e3_authoring",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Operator transfers committed SCEC-T1-R3 work order at dispatch commit 2a88ea545 to one external implementation worker and returns the exact five-path uncommitted packet. Orchestrator/reviewer waits for that return and must independently replay absent, ambiguous, invalid-UTF-8 and same-snapshot locator cases before acceptance. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author and dispatch one bounded SCEC-E3 independent effectiveness-validation packet against accepted SCEC-T1-R3 material 008ff0685. It must test exact E2 replay, shared-path one-read behavior with a changing resolver, predecessor revalidation, locator negatives and valid controls. If effective, close the SCEC foundation loop before any product decision; if ineffective, reopen only the named foundation defect. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
