@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "Author a fresh GC010-SCR-R2-T1E non-production implementation baseline and work order for the exact two-path local harness plus focused-test manifest accepted at T1D material 0e4aacdc6. Authoring only; do not implement automatically. No package/barrel export is needed. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute the committed GC010-SCR-R2-T1E work order at dispatch commit 13dbbaa73 with one internal no-commit worker. The worker creates exactly the two local implementation files plus the named worker return, runs focused regressions, TypeScript and required gates, then stops for independent orchestrator review. Route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

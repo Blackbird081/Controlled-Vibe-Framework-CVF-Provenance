@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r2_t1d_closed_pass_bounded_consumer_boundary_selected",
+  "currentMode": "gc010_scr_r2_t1e_dispatched_pending_internal_worker_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Author a fresh GC010-SCR-R2-T1E non-production implementation baseline and work order for the exact two-path local harness plus focused-test manifest accepted at T1D material 0e4aacdc6. Authoring only; do not implement automatically. No package/barrel export is needed. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute the committed GC010-SCR-R2-T1E work order at dispatch commit 13dbbaa73 with one internal no-commit worker. The worker creates exactly the two local implementation files plus the named worker return, runs focused regressions, TypeScript and required gates, then stops for independent orchestrator review. Route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_2026-08-31.md",
-    "baselineSha256": "1638249fb508f6d0dce2b89b6c0d3cfea04416330a255feed4c90084fa0331eb",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_2026-08-31.md",
-    "workOrderSha256": "927da5d303b58700af11b32859d2b839147a698211b50cdf3e30cced7bdb8baf"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "baselineSha256": "d0953c9d99a66e691a6e9aff71ef6200eb8e689b8a253be654473cbce8ee3c2e",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workOrderSha256": "8b8f265daa3593787d6afd219cab5e75a1d3c04367fa30010e4e1f2183f15591"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

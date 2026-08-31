@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1d_closed_pass_bounded_consumer_boundary_selected`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh T1E implementation packet for the accepted exact two-path harness/test manifest; parked checkpoint=T1E execution until dispatch, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1e_dispatched_pending_internal_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T1E with one internal no-commit worker and return exactly three paths; parked checkpoint=independent acceptance, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t1d_closed_pass_bounded_consumer_boundary_selected`
-Current mode: `gc010_scr_r2_t1d_closed_pass_bounded_consumer_boundary_selected`; previous mode marker: `gc010_scr_r2_t1d_dispatched_pending_worker_return`
+Current mode marker: `gc010_scr_r2_t1e_dispatched_pending_internal_worker_return`
+Current mode: `gc010_scr_r2_t1e_dispatched_pending_internal_worker_return`; previous mode marker: `gc010_scr_r2_t1d_closed_pass_bounded_consumer_boundary_selected`
 Previous mode: `gc010_scr_r2_t0a_closed_pass_bounded_partial_ready`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t1d_closed_pass_bounded_consumer_boundary_selected`. T1D is independently accepted at material `0e4aacdc6` with terminal `NON_PRODUCTION_CONSUMER_EXPORT_BOUNDARY_READY_FOR_T1E_CONSIDERATION`. It selects an exact two-path cvf-web local harness plus focused test using direct internal imports and no package/barrel export. The next allowed move is authoring a fresh T1E implementation packet only; implementation is not automatic. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1e_dispatched_pending_internal_worker_return`. T1E is dispatched at material `13dbbaa73` over accepted T1D `0e4aacdc6`. One internal no-commit worker may create exactly the local harness, sibling focused test and worker return, run the mandated hermetic proof, and stop for independent review. Package/barrel export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
