@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "scec_t1_r2_blocker_evidence_binding_dispatched_pending_external_return",
+  "currentMode": "scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Transfer committed SCEC-T1-R2 packet 24aaa8ff1 to one implementation worker. Require the exact eleven-path uncommitted manifest and docs/reviews/CVF_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_WORKER_RETURN_2026-08-31.md, then independently review semantic correctness and bypass coverage. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author and dispatch exactly one bounded SCEC-E2 effectiveness-validation packet against the strengthened evidence-binding contract closed at cb6d4bc3879a753eb9abc7283b55148c141c46d1. Require adversarial cases for unsupported resolution, evidence mutation or stale hash, predecessor evidence drift, plus one valid resolution control. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

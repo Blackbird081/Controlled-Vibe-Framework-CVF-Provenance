@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "scec_t1_r2_blocker_evidence_binding_dispatched_pending_external_return",
-  "previousMode": "scec_e1_closed_scec_t1_r2_blocker_evidence_binding_hardening_authoring",
+  "currentMode": "scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring",
+  "previousMode": "scec_t1_r2_blocker_evidence_binding_dispatched_pending_external_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15883,9 +15883,9 @@
     "nextAllowedMove": "Author and dispatch one bounded SCEC-T1-R2 foundation-hardening packet to correct the historical replay and bind every resolved blocker to accepted evidence or an explicit governed reviewer resolution rule. Add a negative regression for unsupported resolution laundering. Keep GC010 product/runtime work parked.",
     "claimBoundary": "SCEC foundation hardening only. No T1J-R4, GC010 product/runtime edit, T1K, T2, provider/live, public sync, deployment or production authority."
   },
-  "nextAllowedMove": "Transfer committed SCEC-T1-R2 packet 24aaa8ff1 to one implementation worker. Require the exact eleven-path uncommitted manifest and docs/reviews/CVF_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_WORKER_RETURN_2026-08-31.md, then independently review semantic correctness and bypass coverage. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author and dispatch exactly one bounded SCEC-E2 effectiveness-validation packet against the strengthened evidence-binding contract closed at cb6d4bc3879a753eb9abc7283b55148c141c46d1. Require adversarial cases for unsupported resolution, evidence mutation or stale hash, predecessor evidence drift, plus one valid resolution control. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "scecT1R2BlockerResolutionEvidenceBindingDispatch20260831": {
-    "status": "DISPATCHED_PENDING_EXTERNAL_WORKER_RETURN",
+    "status": "REVIEWER_ACCEPTED_WITH_MATERIAL_CORRECTION_CLOSED",
     "dispatchCommit": "24aaa8ff1",
     "dispatchBaseHead": "9e27af8db7b34b3f2f7212f48365e0c5c4940a34",
     "baseline": "docs/baselines/CVF_GC018_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_2026-08-31.md",
@@ -15893,9 +15893,14 @@
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_2026-08-31.md",
     "workOrderSha256": "2b057ee5b4e91857b1ab2ecfecff92cbd6b4687ecd87db80fb468b61e9ae38fa",
     "workerReturn": "docs/reviews/CVF_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_WORKER_RETURN_2026-08-31.md",
+    "workerReturnSha256": "91c2995b6988a91e2b88a08fff853190937adfc7b08026f129a707363d2606e7",
+    "materialCommit": "cb6d4bc3879a753eb9abc7283b55148c141c46d1",
+    "reviewDisposition": "ACCEPT_WITH_MATERIAL_CORRECTION",
+    "reviewerCorrection": "Independent review closed a predecessor evidence-inheritance bypass by revalidating resolution-evidence hashes at successor consumption, added the focused regression, corrected the standard and ADIF learning, compacted the checker and test below hard size caps, and repaired the structured retrospective packet.",
+    "verification": "Focused SCEC 115/115 PASS; combined focused worker-return suites 205/205 PASS; reviewer-fast 67/67 PASS; commit-steward reviewer-return preflight PASS; pre-commit 88/88 PASS; direct SCEC checker, Python size guard and diff hygiene PASS.",
     "commitMode": "WORKER_MUST_NOT_COMMIT",
     "requiredManifestCount": 11,
-    "nextAllowedMove": "Transfer committed SCEC-T1-R2 packet 24aaa8ff1 to one implementation worker and await the exact uncommitted manifest plus named worker return for independent review.",
-    "claimBoundary": "SCEC foundation hardening only. GC010 product/runtime, T1J-R4, T1K, T2, provider/live, public sync, deployment and production remain parked."
+    "nextAllowedMove": "Author and dispatch exactly one bounded SCEC-E2 effectiveness-validation packet against the strengthened evidence-binding contract. It must test unsupported resolution, evidence mutation or stale hash, predecessor evidence drift, and a valid resolution control. Keep GC010 product/runtime work parked.",
+    "claimBoundary": "SCEC evidence-binding foundation is closed at cb6d4bc3879a753eb9abc7283b55148c141c46d1. No GC010 product/runtime, T1J-R4, T1K, T2, provider/live, public sync, deployment or production authority follows."
   }
 }
