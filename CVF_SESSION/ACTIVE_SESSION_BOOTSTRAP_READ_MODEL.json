@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return",
+  "currentMode": "scec_foundation_effectiveness_loop_closed_gc010_architecture_reassessment_pending",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Transfer the SCEC-E3 work order at dispatch commit 81f9b7a70 to exactly one external worker and await the exact two-path uncommitted return. Reviewer must independently replay the exact E2 locator, changing shared-path resolver and cross-predecessor snapshot cases before accepting any effectiveness verdict. If effective, close the SCEC foundation loop; if ineffective, reopen only the named foundation defect. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author and dispatch exactly one GC010 root-architecture reassessment decision packet that consumes the accepted SCEC stop history and SCEC-E3 effectiveness closure. It must decide ownership, lifecycle and integration boundaries at architecture level before any product successor is considered; it must not reopen narrow T1J-R4 automatically. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked pending that decision. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer the committed SCEC-E3 packet to one external worker and await exactly two uncommitted outputs; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`scec_foundation_effectiveness_loop_closed_gc010_architecture_reassessment_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author one GC010 root-architecture reassessment decision packet; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return`
-Current mode: `scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return`; previous mode marker: `scec_t1_r3_locator_content_binding_closed_e3_authoring`
-Previous mode: `scec_t1_r3_locator_content_binding_closed_e3_authoring`
+Current mode marker: `scec_foundation_effectiveness_loop_closed_gc010_architecture_reassessment_pending`
+Current mode: `scec_foundation_effectiveness_loop_closed_gc010_architecture_reassessment_pending`; previous mode marker: `scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return`
+Previous mode: `scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return`
 
 ## Next Allowed Move
 
-Mode: `scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return`. SCEC-E3 is committed at `81f9b7a70`; transfer its work order to exactly one external worker and await only the authorized assessment and worker return, both uncommitted. Reviewer must independently replay the exact E2, changing-resolver and cross-predecessor snapshot cases before closure. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live and public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `scec_foundation_effectiveness_loop_closed_gc010_architecture_reassessment_pending`. SCEC-E3 is reviewer-accepted with material correction at `e919e2092`: exact E2 replay fails closed, a genuine two-hash changing resolver cannot split the validation tree, and predecessor revalidation shares one snapshot. Author exactly one GC010 root-architecture reassessment decision packet; do not reopen narrow T1J-R4 automatically. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live and public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

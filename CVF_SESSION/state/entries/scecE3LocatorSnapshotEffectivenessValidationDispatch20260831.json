@@ -2,7 +2,7 @@
   "stateOrder": 2620,
   "stateKey": "scecE3LocatorSnapshotEffectivenessValidationDispatch20260831",
   "value": {
-    "status": "DISPATCHED_PENDING_EXTERNAL_WORKER_RETURN",
+    "status": "REVIEWER_ACCEPTED_WITH_MATERIAL_CORRECTION_CLOSED_EFFECTIVE",
     "problemKey": "scec-locator-snapshot-effectiveness-validation",
     "dispatchCommit": "81f9b7a70",
     "dispatchBaseHead": "8db4e9f87",
@@ -10,6 +10,11 @@
     "baselineSha256": "5b54e00b104bbeb8a4553f9f54af6eaa832d1211613c3e8b8baa6f872646cc56",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
     "workOrderSha256": "41f206c7b9e0d9b493a1fc1661d5db55c419122e73a66103ccba93d5e4e31a86",
+    "assessment": "docs/assessments/CVF_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "assessmentSha256": "7c273336edce422aa735b792878e9e320ad96c173e7df25374b46d7f7f63da0c",
+    "workerReturn": "docs/reviews/CVF_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_WORKER_RETURN_2026-08-31.md",
+    "workerReturnSha256": "6a959cde74c6dc2673e9b991472b4a2ebf88adf23e180f097770fecbdc85678a",
+    "materialCommit": "e919e2092",
     "requiredOutputs": [
       "docs/assessments/CVF_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
       "docs/reviews/CVF_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_WORKER_RETURN_2026-08-31.md"
@@ -23,7 +28,11 @@
     ],
     "successorTrancheOpened": "NO",
     "mandatoryIndependentProof": "Fresh ephemeral harness must cover exact E2 replay, shared-path one-read behavior, changing-resolver split-view prevention, cross-predecessor snapshot reuse, locator negatives and valid controls.",
-    "nextAllowedMove": "One external worker returns exactly the two authorized uncommitted artifacts; reviewer independently reruns the high-risk snapshot cases and either closes the foundation loop or reopens only a named foundation defect.",
-    "claimBoundary": "SCEC-E3 is validation-only. No checker, test, source, fixture, session, T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment or production edit is authorized."
+    "reviewDisposition": "ACCEPT_WITH_MATERIAL_CORRECTION",
+    "effectivenessVerdict": "EFFECTIVE_CLOSE_FOUNDATION_LOOP",
+    "reviewerCorrection": "Worker one-hash changing-resolver case proved read-once behavior but not the strongest split-view condition. Reviewer used two independently hash-valid versions for one path; the resolver was called once, the later binding failed with RESOLUTION_EVIDENCE_HASH_MISMATCH, and the second snapshot never influenced validation.",
+    "verification": "Exact E2 replay PASS; genuine changing-resolver adversary one call with HASH_MISMATCH; cross-predecessor shared path one call with zero violations; focused tests 119/119 PASS; worker-return fast and reviewer-fast 67/67 PASS; pre-commit 88/88 PASS.",
+    "nextAllowedMove": "Author one GC010 root-architecture reassessment decision packet under the accepted SCEC stop. Do not reopen narrow T1J-R4 or product implementation automatically.",
+    "claimBoundary": "SCEC foundation effectiveness loop is closed for locator/content and single-snapshot enforcement only. Semantic truth remains reviewer-owned. No T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment or production authority follows automatically."
   }
 }
