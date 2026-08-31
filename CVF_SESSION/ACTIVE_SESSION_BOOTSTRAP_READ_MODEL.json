@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "scec_e2_ineffective_locator_content_binding_hardening_authoring",
+  "currentMode": "scec_t1_r3_locator_content_binding_dispatched_pending_external_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Author and dispatch one bounded SCEC-T1-R3 root-contract hardening packet for deterministic locator-to-content resolution, fail-closed enforcement, focused positive and negative regressions, and exact replay of the SCEC-E2 unresolved-locator probe accepted by the current checker. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Operator transfers committed SCEC-T1-R3 work order at dispatch commit 2a88ea545 to one external implementation worker and returns the exact five-path uncommitted packet. Orchestrator/reviewer waits for that return and must independently replay absent, ambiguous, invalid-UTF-8 and same-snapshot locator cases before acceptance. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
-    "baselineSha256": "a013f27bc4aad5744a5842c77785c2e645a88221dea345eeb9a67c9ab0f851c1",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
-    "workOrderSha256": "93dc80a448472aa006c4bd9585d9e974224363dd34bf2202f22588708195f587"
+    "baselinePath": "docs/baselines/CVF_GC018_SCEC_T1_R3_LOCATOR_TO_CONTENT_EVIDENCE_BINDING_HARDENING_2026-08-31.md",
+    "baselineSha256": "8a8f95804874b9f848ae79918a1b923e1bf5cd669d71f8fee32f00c90d40104b",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R3_LOCATOR_TO_CONTENT_EVIDENCE_BINDING_HARDENING_2026-08-31.md",
+    "workOrderSha256": "ae3f21023c4745dfbe67b689deccd7075b3958a3039ee516938c9023724c765f"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
