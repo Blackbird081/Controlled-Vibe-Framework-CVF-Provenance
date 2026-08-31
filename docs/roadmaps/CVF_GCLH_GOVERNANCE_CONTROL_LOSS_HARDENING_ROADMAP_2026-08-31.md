@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: GCLH_T1_AMENDMENT_1_ACCEPTED_T2_WORK_ORDER_REQUIRED
+Status: GCLH_T1_AMENDMENT_2_ACCEPTED_T2_WORK_ORDER_REQUIRED
 
 docType: roadmap
 
@@ -106,6 +106,7 @@ gap, not evidence of semantic mutation.
 | execution topology | single/multi-agent and single/multi-role are attribution choices only; none grants or removes trust authority |
 | phase control root | every INTAKE through FREEZE result returns one governed envelope bound to its predecessor, canonical SOT authority, claims, provenance labels, obligations, evidence, verification results, actual manifest, limitations, and actor attribution |
 | SOT boundary | Truth Foundation owns authority/provenance/claim movement; SOT3 supplies bounded Refinery/Kernel/Flow authority semantics; GCLH does not claim universal SOT3 runtime activation |
+| reviewer work boundary | reviewer reconstructs the evidence graph and evaluates the returned result; it does not repeat the producing role's work; broad reruns require named evidence insufficiency, a bounded claim under test, expected information gain, and cost/latency justification |
 | economics | new finding labels do not erase aggregate chain counters or repair cost |
 | implementation | no checker/template/schema mutation before accepted T1 design and a fresh protected-path work order |
 | downstream | workspace/project refresh is held until accepted Core closure and exact projection proof |
@@ -140,6 +141,8 @@ local projection path.
   topology as evidence of truth or review validity.
 - every phase return must bind its predecessor and resolvable SOT authority;
   chat/subagent summaries cannot replace the governed return.
+- reviewer reruns are selective and risk-proportional; missing evidence is
+  returned or blocked rather than silently recreated by the reviewer.
 - T2 cannot mutate a protected checker without Core Guard Self-Protection
   authorization, focused tests, and rollback evidence.
 - L5/L6 remain separate from process hardening unless T3 proves compatibility,

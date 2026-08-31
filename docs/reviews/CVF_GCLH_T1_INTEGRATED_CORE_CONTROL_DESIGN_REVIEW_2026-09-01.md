@@ -2,7 +2,7 @@
 
 Memory class: governed-review
 
-Status: SINGLE_AGENT_MULTI_ROLE_REVIEW_PASS_BOUNDED_AMENDMENT_1
+Status: SINGLE_AGENT_MULTI_ROLE_REVIEW_PASS_BOUNDED_AMENDMENT_2
 
 docType: review
 
@@ -82,6 +82,29 @@ SOT3 reference front door, SOT3 contract-chain authority rules, and ADR-053.
 
 Amendment disposition: `SOT_BOUND_PHASE_RETURN_CONTROL_ACCEPTED_BOUNDED`.
 
+## Amendment 2 Review: No Duplicate Role Execution
+
+The operator correction is accepted. The phrase `evidence reconstruction`
+must not authorize the reviewer to repeat the work that created the return.
+The reviewer reconstructs the evidence graph and evaluates the result; it does
+not reproduce the full task.
+
+| Boundary challenge | Accepted rule |
+|---|---|
+| Must reviewer repeat INTAKE source discovery? | NO; verify declared source identity, authority, completeness boundary and unresolved gaps |
+| Must reviewer redesign the solution? | NO; test design claims/constraints against sources and selected adversarial cases |
+| Must reviewer rewrite SPEC or WORK ORDER? | NO; check traceability, completeness, authority and executability; return defects to owner |
+| Must reviewer rerun BUILD? | NO; inspect actual diff/receipts/tests and use focused reproduction only when it can change disposition |
+| Must reviewer rerun every test? | NO; follow governing release contract; otherwise use risk-proportional focused verification |
+| May reviewer silently fill missing evidence? | NO; return/block it, or disclose one bounded corrective probe with reason and cost |
+
+The reviewer always performs cheap identity and chain verification. Expensive
+re-execution requires a named insufficiency or contradiction, a bounded claim
+under test, and expected information gain. This preserves reviewer authority
+while preventing latency/quota duplication.
+
+Amendment disposition: `MINIMAL_SUFFICIENT_REVIEW_VERIFICATION_ACCEPTED`.
+
 ## Acceptance Matrix
 
 | Criterion | Evidence | Verdict |
@@ -95,6 +118,7 @@ Amendment disposition: `SOT_BOUND_PHASE_RETURN_CONTROL_ACCEPTED_BOUNDED`.
 | role-switch premise corrected | Governing Premise and Review Route | PASS |
 | single/multi-agent and single/multi-role neutrality | Amendment 1 | PASS |
 | SOT-bound return at all seven phases | Canonical Phase Return Envelope and Phase-To-SOT Control Chain | PASS_BOUNDED |
+| reviewer does not repeat prior-role work | Amendment 2 and Reviewer Cost Principle | PASS |
 | bounded implementation ownership | Implementation Ownership | PASS |
 
 ## Findings / Waivers
@@ -117,7 +141,7 @@ work order; reject any new stop owner or actor-count validity rule.
 
 `DESIGN_ACCEPTED_BOUNDED`
 
-T1 plus Amendment 1 is accepted as the implementation design basis. T2 still requires a fresh
+T1 through Amendment 2 is accepted as the implementation design basis. T2 still requires a fresh
 protected-path work order with exact owners, checker read-ahead, hostile tests,
 rollback boundary, and Core Guard Self-Protection authorization. Downstream
 application remains parked for T4.
@@ -129,8 +153,8 @@ application remains parked for T4.
 | author role | DESIGN_AUTHOR |
 | reviewer role | REVIEWER |
 | role transition disclosed | YES |
-| frozen contract | GCLH-T0 acceptance criteria at `0a4655cf` plus operator Amendment 1 correction |
-| evidence reconstructed | owner composition, SOT authority, all phase returns, transition mapping, hash domains, projection gate, diff |
+| frozen contract | GCLH-T0 acceptance criteria plus operator Amendments 1 and 2 |
+| evidence reconstructed | claim/evidence graph, SOT authority, phase-return chain and bounded acceptance mapping; no prior phase was repeated |
 | author memory used as proof | NO |
 | independent multi-agent review claimed | NO |
 | decision authority | bounded design acceptance only |
@@ -156,7 +180,7 @@ independence is a claim label that requires its own facts.
 
 ### Claim Update
 
-T1 Amendment 1 is accepted bounded. This does not open implementation or
+T1 Amendment 2 is accepted bounded. This does not open implementation or
 downstream work.
 
 ## Public Export Disposition
@@ -176,6 +200,6 @@ Reason: private Core review; no public-sync authority.
 
 ## Claim Boundary
 
-This review accepts a bounded topology-neutral SOT phase-return design only.
+This review accepts a bounded topology-neutral, cost-proportional SOT phase-return design only.
 It does not implement controls, change downstream artifacts, claim independent
 multi-agent review, globally activate SOT3, or authorize external effects.

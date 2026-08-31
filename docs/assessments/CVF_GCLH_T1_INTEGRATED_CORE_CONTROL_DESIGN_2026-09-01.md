@@ -2,7 +2,7 @@
 
 Memory class: governed-assessment
 
-Status: REVIEWER_ACCEPTED_DESIGN_BOUNDED_AMENDMENT_1
+Status: REVIEWER_ACCEPTED_DESIGN_BOUNDED_AMENDMENT_2
 
 docType: assessment
 
@@ -108,6 +108,58 @@ its resolvable authority chain, not the execution participant.
   that SOT3 runtime is globally activated for every project or phase.
 - Provider/model/agent output remains content or evidence input. It never
   becomes truth authority from the identity of its producer.
+
+## Amendment 2: Reviewer Minimal Sufficient Verification Boundary
+
+`Evidence reconstruction` means reconstructing the claim-to-source-to-
+obligation-to-verification graph from the returned envelope. It does not mean
+repeating the producing role's work. Reviewer ownership is evaluation and
+disposition of the returned result, not duplicate INTAKE, DESIGN, SPEC,
+WORK ORDER, or BUILD execution.
+
+The default review sequence is:
+
+1. verify return identity, predecessor binding, manifest, authority
+   resolution, freshness, and receipt integrity;
+2. map material claims to obligations, evidence and verification results;
+3. inspect contradictions, limitations, waivers and changed constraints;
+4. perform only the smallest discriminating spot-check or negative probe
+   needed to test a material claim;
+5. accept, bound, return, or block without reproducing the whole phase.
+
+Full or broad re-execution is exceptional and requires at least one named
+trigger:
+
+- required evidence is missing, stale, conflicted, corrupt, or cannot resolve;
+- a high-risk hard claim lacks non-self-referential verification;
+- the actual manifest or predecessor digest does not match the return;
+- a focused probe contradicts the claimed result;
+- the governing acceptance contract explicitly requires reproducibility or a
+  release-quality rerun;
+- suspected fabrication, nondeterminism, or external-effect ambiguity cannot
+  be resolved by cheaper evidence inspection.
+
+When triggered, the reviewer records the exact claim under test, why existing
+evidence is insufficient, the smallest rerun scope, expected information gain,
+and cost/latency boundary. Reviewer reruns must not silently become a second
+BUILD or reset SCEC/Review Cost counters.
+
+### Reviewer Cost Principle
+
+| Review action | Default | Reason |
+|---|---|---|
+| resolve paths, hashes, receipts, predecessor and authority bindings | REQUIRED | cheap integrity and chain verification |
+| evaluate claim/obligation/evidence coverage | REQUIRED | core reviewer responsibility |
+| inspect diff and named negative evidence | REQUIRED_WHEN_APPLICABLE | tests the returned result, not the entire task |
+| focused reproduction or adversarial probe | SELECTIVE | use when it can change disposition |
+| rerun complete prior-phase workflow | PROHIBITED_BY_DEFAULT | duplicates latency/quota and blurs role ownership |
+| redo author reasoning or regenerate the same artifact | PROHIBITED | creates no independent evidence |
+
+The Phase Return Envelope is therefore not only a trust boundary; it is the
+mechanism that prevents reviewer duplication. A complete, source-bound return
+allows cheap verification. An incomplete return does not authorize silent
+reviewer completion of the missing work; it is returned or blocked unless a
+bounded corrective probe is explicitly justified.
 
 ## Decision / Baseline / Proposed Tranche
 
@@ -240,6 +292,10 @@ universal agent-progress observation remain outside T1.
   governs multi-agent/multi-role execution;
 - every phase return binds its predecessor and resolvable SOT authority;
 - actor/role/provider attribution cannot satisfy a hard claim;
+- reviewer verification is proportional and does not repeat prior-phase work
+  by default;
+- every reviewer rerun has a named evidence insufficiency, bounded claim under
+  test, and expected information gain;
 - hash domains are reproducible and non-interchangeable;
 - downstream adoption is impossible from a stale or unproven projection;
 - incident replay demonstrates earlier detection without claiming guaranteed
@@ -287,7 +343,7 @@ public-sync is not authorized.
 
 ## Claim Boundary
 
-This is a Core process-control design plus accepted Amendment 1. It defines
-SOT-bound phase-return semantics but does not claim global SOT3 runtime
+This is a Core process-control design through accepted Amendment 2. It defines
+SOT-bound phase-return and minimal-review semantics but does not claim global SOT3 runtime
 activation, mutate standards/templates/checkers/schemas/runtime/downstream, or
 perform provider/live, public-sync, deployment, or production action.
