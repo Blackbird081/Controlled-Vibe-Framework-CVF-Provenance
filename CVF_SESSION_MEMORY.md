@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await separately governed durable-owner decision; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1j_r2_dispatched_pending_external_durable_owner_decision_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed T1J-R2 packet to one external worker; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required`
-Current mode: `gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required`; previous mode marker: `gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`
-Previous mode: `gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`
+Current mode marker: `gc010_scr_r2_t1j_r2_dispatched_pending_external_durable_owner_decision_return`
+Current mode: `gc010_scr_r2_t1j_r2_dispatched_pending_external_durable_owner_decision_return`; previous mode marker: `gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required`
+Previous mode: `gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required`. T1J-R1 material `35226ccf7` accepts the source-backed approval-resume caller but reviewer-corrects the worker's exactly-once claim: current status read and later delete are non-atomic. One durable-owner decision remains between existing-store atomic claim/recovery and narrow pending-lifecycle composition inside `/api/execute`. T1K, T2 and all implementation/provider/live/public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1j_r2_dispatched_pending_external_durable_owner_decision_return`. T1J-R2 dispatch material `47b130b32` asks one external worker to select the atomic claim/recovery owner from current source and return exactly two uncommitted documents. T1K, T2 and all implementation/provider/live/public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

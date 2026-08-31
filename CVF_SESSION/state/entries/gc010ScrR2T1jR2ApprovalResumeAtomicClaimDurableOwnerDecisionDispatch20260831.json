@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2520,
+  "stateKey": "gc010ScrR2T1jR2ApprovalResumeAtomicClaimDurableOwnerDecisionDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN",
+    "materialCommit": "47b130b32a3a7e7faf16676c39d1fdb05425939b",
+    "dispatchBaseHead": "ab3d1075c00446dafbd7af4d6737e012a88d41e4",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_R2_APPROVAL_RESUME_ATOMIC_CLAIM_DURABLE_OWNER_DECISION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_R2_APPROVAL_RESUME_ATOMIC_CLAIM_DURABLE_OWNER_DECISION_2026-08-31.md",
+    "workerManifest": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1J_R2_APPROVAL_RESUME_ATOMIC_CLAIM_DURABLE_OWNER_DECISION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1J_R2_APPROVAL_RESUME_ATOMIC_CLAIM_DURABLE_OWNER_DECISION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "objective": "Select the durable atomic claim and recovery owner between an extended approval store, narrow pending-runtime composition inside /api/execute, minimal consume-before-work, or retain parked.",
+    "workerBoundary": "One operator-mediated external decision worker creates exactly two documentation artifacts, makes zero source/test/runtime/provider/live changes, does not stage or commit, and stops for independent review.",
+    "nextAllowedMove": "Transfer the committed packet to the external worker and await exactly the two named uncommitted artifacts.",
+    "claimBoundary": "Dispatch only. No durable owner is selected yet; T1K, T2, implementation, provider/live, public sync, deployment and production remain parked."
+  }
+}
