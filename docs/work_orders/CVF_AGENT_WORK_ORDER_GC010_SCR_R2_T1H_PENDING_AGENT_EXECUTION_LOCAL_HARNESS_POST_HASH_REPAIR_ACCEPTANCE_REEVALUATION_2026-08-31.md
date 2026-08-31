@@ -2,11 +2,11 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Batch ID: GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION
 Dispatch base head: 6b3b42b898bada669767269cd5e9ad3659cde408
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START
-closureBaseHead: REVIEWER_TO_SET
+executionBaseHead: 348e975c9e612bf6f3370991e4fa4276a091296c
+closureBaseHead: 348e975c9e612bf6f3370991e4fa4276a091296c
 providerExecutionAuthority: FORBIDDEN
 Commit mode: WORKER_MUST_NOT_COMMIT
 Worker: one operator-mediated external decision worker
@@ -21,7 +21,7 @@ Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1H_PENDIN
 
 Commit mode: WORKER_MUST_NOT_COMMIT.
 
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START.
+executionBaseHead: 348e975c9e612bf6f3370991e4fa4276a091296c.
 
 Current-time notes: Dispatch authored 2026-08-31 from clean base `6b3b42b898bada669767269cd5e9ad3659cde408`; worker must capture the full committed transfer base after orchestrator continuity sync.
 
@@ -327,7 +327,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_SINGLE_ROLE |
 | rolePattern | orchestrator/dispatcher -> one operator-mediated external decision worker -> independent orchestrator/reviewer -> session-sync steward |
 | phase | decision assessment pending worker return |
-| baseHeadFor(phase) | dispatchBaseHead=6b3b42b898bada669767269cd5e9ad3659cde408; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=6b3b42b898bada669767269cd5e9ad3659cde408; executionBaseHead=348e975c9e612bf6f3370991e4fa4276a091296c; closureBaseHead=348e975c9e612bf6f3370991e4fa4276a091296c |
 | changedSetScope(phase) | worker exactly two new documentation outputs; reviewer may repair only those material paths |
 | traceScope(phase, actor) | worker records execution base, commands, exact diff/status, one external-worker invocation and zero provider/live calls |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT |
@@ -366,8 +366,8 @@ non-applicable conditional block.
 
 | Required artifact | Owner | Dispatch state |
 | --- | --- | --- |
-| `docs/assessments/CVF_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md` | worker/reviewer | NEW_PLANNED |
-| `docs/reviews/CVF_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_WORKER_RETURN_2026-08-31.md` | worker | NEW_PLANNED |
+| `docs/assessments/CVF_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md` | worker/reviewer | REVIEWER_ACCEPTED |
+| `docs/reviews/CVF_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_WORKER_RETURN_2026-08-31.md` | worker | REVIEWER_ACCEPTED |
 
 ## Task Governance Routing Manifest
 
@@ -484,11 +484,11 @@ installation or commands that read credentials.
 
 | Requirement | Evidence owner | State at dispatch |
 | --- | --- | --- |
-| Former T1E blocker current-source disposition | assessment source matrix and fresh tests | PLANNED |
-| Raw lifecycle 0/1/2/3 and durable reopen | focused command receipts | PLANNED |
-| Legacy/denial zero-execution boundary | focused command receipts and source inspection | PLANNED |
-| Ten answers and one terminal | assessment | PLANNED |
-| Exact two-path diff, one external worker, zero provider/live, no commit | worker return | PLANNED |
+| Former T1E blocker current-source disposition | assessment source matrix and fresh tests | PASS |
+| Raw lifecycle 0/1/2/3 and durable reopen | focused command receipts | PASS |
+| Legacy/denial zero-execution boundary | focused command receipts and source inspection | PASS |
+| Ten answers and one terminal | assessment | PASS |
+| Exact two-path diff, one external worker, zero provider/live, no commit | worker return | PASS |
 
 ## Evidence Requirements
 
@@ -522,14 +522,49 @@ consolidated blocker set.
 
 ## Closure Checklist
 
-- [ ] Exactly assessment plus worker return; no source/test/staged changes.
-- [ ] All ten re-evaluation questions answered from current source.
-- [ ] Raw lifecycle 0/1/2/3 and durable reopen pass.
-- [ ] Legacy/missing/mismatch and denial remain fail closed with zero execution.
-- [ ] Boundary/static checks, focused regressions and TypeScript pass.
-- [ ] Exactly one allowed terminal and successor remains closed.
-- [ ] Worker-return gates, exact status and no-commit evidence pass.
-- [ ] Independent reviewer closes material before separate session sync.
+- [x] Exactly assessment plus worker return; no source/test/staged changes.
+- [x] All ten re-evaluation questions answered from current source.
+- [x] Raw lifecycle 0/1/2/3 and durable reopen pass.
+- [x] Legacy/missing/mismatch and denial remain fail closed with zero execution.
+- [x] Boundary/static checks, focused regressions and TypeScript pass.
+- [x] Exactly one allowed terminal and successor remains closed.
+- [x] Worker-return gates, exact status and no-commit evidence pass.
+- [x] Independent reviewer closes material before separate session sync.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this file | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T1H completion and worker-return addendum | accepted terminal | PASS |
+| Roadmap state | historical GC010 product roadmap | formal production T1 remains parked | PASS |
+| Registry JSON | active session state | closed-mode synchronization follows material commit | BLOCKED with reason: continuity is a separate commit |
+| Registry Markdown | front door and active handoff | closed-mode synchronization follows material commit | BLOCKED with reason: continuity is a separate commit |
+| External evidence digest | N/A with reason: zero external/provider evidence consumed | current local source and tests | N/A with reason |
+| System loop interlock | completion and addendum | `successorTrancheOpened: NO` | PASS |
+| Session continuity | bootstrap/state/front door/handoff | separate continuity commit required | N/A with reason: material closure precedes continuity |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Raw current lifecycle | versions 0/1/2/3 from production builder snapshot | PASS |
+| Durable reopen | reopened terminal record equals harness result | PASS |
+| Fail-closed legacy and denial | no new grant or execution authority | PASS |
+| Focused regressions | 7/7 files and 173/173 tests | PASS |
+| TypeScript | `npx tsc --noEmit`, exit 0 | PASS |
+| External effect boundary | zero provider/network/browser/credential/live calls | PASS |
+| Closure claim | bounded non-production harness only | PASS |
+
+## Foundation Storage Layout Block
+
+| Field | Value |
+| --- | --- |
+| applicability | N/A with reason: T1H creates, splits, relocates and refactors no durable governance foundation file. |
+| canonicalStorageOwner | Existing pending-execution SQLite source is read-only evidence in this tranche. |
+| indexOrRegistryImpact | N/A with reason: no foundation index or storage registry changes. |
+| migrationOrRollback | N/A with reason: no storage migration or product-source mutation. |
+| claimBoundary | Acceptance of an existing local harness does not create a new governance foundation storage owner. |
 
 ## Return-To-Orchestrator Conditions
 
