@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r2_t1i_closed_bounded_formal_t1_not_satisfied_requires_new_consumer_owner",
+  "currentMode": "gc010_scr_r2_t1j_dispatched_pending_external_decision_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Await fresh operator instruction before authoring a separately governed GC010-SCR-R2-T1J registered production invocation owner and invoked-path composition decision packet. T1I is CLOSED_PASS_BOUNDED at material 2a553b029 with corrected terminal FORMAL_T1_NOT_SATISFIED_REQUIRES_NEW_CONSUMER_OWNER. Formal T1 and T2 remain parked; no source/test/roadmap edit, package export, route/provider/audit integration, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Transfer the committed GC010-SCR-R2-T1J decision-only packet at material 3a6f143fab457bfd476a0d30d9ca5f2a3f6232fb to the external worker. The worker must write exactly the named assessment and worker-return documents, remain read-only outside those two files, and must not stage or commit. Formal T1, T2 and all source/test/roadmap, package export, route/provider/audit implementation, provider/live, public sync, deployment and production work remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
-    "baselineSha256": "a1aeae81d854174019297089bcd2a06845daba6743234d683a060c3c18beb228",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
-    "workOrderSha256": "beef352783ab10d7cfa4ec97793553ed3bf628642b59b7ee471ab5d00107c9ef"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
+    "baselineSha256": "fafbaad48a1efd55f6b0b6b06a09cdcbb2ebc70eb4705bb7df28f7ec68d2a832",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
+    "workOrderSha256": "4d65e934ac98ae6e2cfc2ab0682359d6a39c15b844d1eab12000a4feaffaa141"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

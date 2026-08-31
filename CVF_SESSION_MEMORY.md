@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1i_closed_bounded_formal_t1_not_satisfied_requires_new_consumer_owner`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await fresh operator instruction before a separately governed T1J registered production invocation owner and invoked-path composition decision; parked checkpoint=formal T1, T2, source/test/roadmap edits, package export, route/provider/audit integration, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1j_dispatched_pending_external_decision_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer the committed T1J decision-only packet to the external worker for exactly two return documents; parked checkpoint=formal T1, T2, implementation, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t1i_closed_bounded_formal_t1_not_satisfied_requires_new_consumer_owner`
-Current mode: `gc010_scr_r2_t1i_closed_bounded_formal_t1_not_satisfied_requires_new_consumer_owner`; previous mode marker: `gc010_scr_r2_t1i_dispatched_pending_external_decision_return`
-Previous mode: `gc010_scr_r2_t1i_dispatched_pending_external_decision_return`
+Current mode marker: `gc010_scr_r2_t1j_dispatched_pending_external_decision_return`
+Current mode: `gc010_scr_r2_t1j_dispatched_pending_external_decision_return`; previous mode marker: `gc010_scr_r2_t1i_closed_bounded_formal_t1_not_satisfied_requires_new_consumer_owner`
+Previous mode: `gc010_scr_r2_t1i_closed_bounded_formal_t1_not_satisfied_requires_new_consumer_owner`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t1i_closed_bounded_formal_t1_not_satisfied_requires_new_consumer_owner`. T1I is independently accepted at material `2a553b029` with corrected terminal `FORMAL_T1_NOT_SATISFIED_REQUIRES_NEW_CONSUMER_OWNER`. The local direct-internal harness satisfies bounded composition and non-test-consumer evidence, but the roadmap's binding registered production trigger and real invoked-path guard/provider facts remain absent. Await fresh operator instruction before a separately governed T1J owner decision. Formal T1, T2, source/test/roadmap edits, package/barrel export, route-source/provider/audit, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1j_dispatched_pending_external_decision_return`. T1J decision-only authority is committed at `3a6f143fa` and may be transferred to the external worker for exactly the named assessment and worker-return documents. The worker must decide whether one concrete registered production invocation owner and invoked-path composition is viable; it may not implement that topology. Formal T1, T2, source/test/roadmap edits, package/barrel export, route-source/provider/audit implementation, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

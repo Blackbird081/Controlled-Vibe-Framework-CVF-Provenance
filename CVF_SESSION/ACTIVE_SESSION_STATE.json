@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
-    "baselineSha256": "a1aeae81d854174019297089bcd2a06845daba6743234d683a060c3c18beb228",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
-    "workOrderSha256": "beef352783ab10d7cfa4ec97793553ed3bf628642b59b7ee471ab5d00107c9ef"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
+    "baselineSha256": "fafbaad48a1efd55f6b0b6b06a09cdcbb2ebc70eb4705bb7df28f7ec68d2a832",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
+    "workOrderSha256": "4d65e934ac98ae6e2cfc2ab0682359d6a39c15b844d1eab12000a4feaffaa141"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1i_closed_bounded_formal_t1_not_satisfied_requires_new_consumer_owner",
-  "previousMode": "gc010_scr_r2_t1i_dispatched_pending_external_decision_return",
+  "currentMode": "gc010_scr_r2_t1j_dispatched_pending_external_decision_return",
+  "previousMode": "gc010_scr_r2_t1i_closed_bounded_formal_t1_not_satisfied_requires_new_consumer_owner",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15691,5 +15691,18 @@
     "nextAllowedMove": "Await fresh operator instruction before a separately governed T1J registered production invocation owner and invoked-path composition decision packet; T1J is not auto-opened.",
     "claimBoundary": "T1I decision is closed and the bounded non-production enabling chain remains accepted. Formal T1 and T2 remain parked; no production trigger, source/test/roadmap edit, provider/live, public sync, deployment or production authority is opened."
   },
-  "nextAllowedMove": "Await fresh operator instruction before authoring a separately governed GC010-SCR-R2-T1J registered production invocation owner and invoked-path composition decision packet. T1I is CLOSED_PASS_BOUNDED at material 2a553b029 with corrected terminal FORMAL_T1_NOT_SATISFIED_REQUIRES_NEW_CONSUMER_OWNER. Formal T1 and T2 remain parked; no source/test/roadmap edit, package export, route/provider/audit integration, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24."
+  "gc010ScrR2T1jRegisteredProductionInvocationOwnerAndInvokedPathCompositionDecisionDispatch20260831": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN",
+    "materialCommit": "3a6f143fab457bfd476a0d30d9ca5f2a3f6232fb",
+    "dispatchBaseHead": "81918976d257a4ce07d42a91749bc1b8764a9836",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
+    "workerManifest": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "objective": "Select or reject one concrete registered production invocation owner and topology that can compose AgentExecutionRuntime onto a real invoked guard/provider path without duplicate governance or an ownerless product caller.",
+    "boundary": "Decision-only and read-only outside the exact two-document worker manifest. No source, test, route, package, provider, audit, roadmap or continuity edits; no provider/live, public sync, deployment, production, staging or commit authority."
+  },
+  "nextAllowedMove": "Transfer the committed GC010-SCR-R2-T1J decision-only packet at material 3a6f143fab457bfd476a0d30d9ca5f2a3f6232fb to the external worker. The worker must write exactly the named assessment and worker-return documents, remain read-only outside those two files, and must not stage or commit. Formal T1, T2 and all source/test/roadmap, package export, route/provider/audit implementation, provider/live, public sync, deployment and production work remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

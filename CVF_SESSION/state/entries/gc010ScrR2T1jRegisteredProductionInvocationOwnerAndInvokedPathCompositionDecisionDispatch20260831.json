@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2480,
+  "stateKey": "gc010ScrR2T1jRegisteredProductionInvocationOwnerAndInvokedPathCompositionDecisionDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN",
+    "materialCommit": "3a6f143fab457bfd476a0d30d9ca5f2a3f6232fb",
+    "dispatchBaseHead": "81918976d257a4ce07d42a91749bc1b8764a9836",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
+    "workerManifest": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "objective": "Select or reject one concrete registered production invocation owner and topology that can compose AgentExecutionRuntime onto a real invoked guard/provider path without duplicate governance or an ownerless product caller.",
+    "boundary": "Decision-only and read-only outside the exact two-document worker manifest. No source, test, route, package, provider, audit, roadmap or continuity edits; no provider/live, public sync, deployment, production, staging or commit authority."
+  }
+}
