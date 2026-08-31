@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh T1D decision-only packet for the smallest non-production consumer/export boundary; parked checkpoint=implementation until dispatch, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1d_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T1D decision-only packet and return exactly two uncommitted documentation artifacts; parked checkpoint=T1E implementation, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted`
-Current mode: `gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted`; previous mode marker: `gc010_scr_r2_t1c_dispatched_pending_worker_return`
+Current mode marker: `gc010_scr_r2_t1d_dispatched_pending_worker_return`
+Current mode: `gc010_scr_r2_t1d_dispatched_pending_worker_return`; previous mode marker: `gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted`
 Previous mode: `gc010_scr_r2_t0a_closed_pass_bounded_partial_ready`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted`. T1C is independently accepted at material `82c64a6f5` with terminal `DURABLE_SINGLE_NODE_NON_PRODUCTION_CORE_ACCEPTED` after one bounded persistence-boundary repair cluster; focused proof is 108/108 with real lock contention and zero external calls. The next allowed move is authoring a fresh T1D decision-only packet for the smallest non-production consumer plus package-export/composition boundary; implementation is not automatic. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1d_dispatched_pending_worker_return`. T1D decision-only baseline and work order are committed at `7af7914ee` over accepted T1C material `82c64a6f5`. The next allowed move is one no-commit worker execution that creates exactly the named assessment and worker return, runs the required gates, and stops for independent review. T1E implementation is not automatic. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

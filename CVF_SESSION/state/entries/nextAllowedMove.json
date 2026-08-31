@@ -1,5 +1,5 @@
 {
   "stateOrder": 2380,
   "stateKey": "nextAllowedMove",
-  "value": "Author a fresh GC010-SCR-R2-T1D decision-only baseline and work order for the smallest non-production consumer plus package-export/composition boundary over accepted T1C material 82c64a6f5. Authoring only is allowed; do not implement automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute the committed GC010-SCR-R2-T1D decision-only work order at dispatch commit 7af7914ee. One no-commit worker creates exactly the named assessment and worker return, runs the required gates, and stops for independent orchestrator review. No T1E implementation opens automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

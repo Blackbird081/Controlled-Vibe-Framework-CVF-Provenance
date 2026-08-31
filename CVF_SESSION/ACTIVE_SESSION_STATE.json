@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
-    "baselineSha256": "5d86c5f88a66e23275b2454813ccfc7ba29447b8bed0932d4f14bf343f653c19",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
-    "workOrderSha256": "95bae4f40ebe73c9baa16177345a4727894cd1f243f61c134eb94fc74ac246b6"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_2026-08-31.md",
+    "baselineSha256": "1638249fb508f6d0dce2b89b6c0d3cfea04416330a255feed4c90084fa0331eb",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_2026-08-31.md",
+    "workOrderSha256": "927da5d303b58700af11b32859d2b839147a698211b50cdf3e30cced7bdb8baf"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted",
-  "previousMode": "gc010_scr_r2_t1b_dispatched_pending_worker_return",
+  "currentMode": "gc010_scr_r2_t1d_dispatched_pending_worker_return",
+  "previousMode": "gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Author a fresh GC010-SCR-R2-T1D decision-only baseline and work order for the smallest non-production consumer plus package-export/composition boundary over accepted T1C material 82c64a6f5. Authoring only is allowed; do not implement automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute the committed GC010-SCR-R2-T1D decision-only work order at dispatch commit 7af7914ee. One no-commit worker creates exactly the named assessment and worker return, runs the required gates, and stops for independent orchestrator review. No T1E implementation opens automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15504,5 +15504,20 @@
     "reviewRepair": "One persistence-boundary root cluster was repaired: real worker-thread busy proof and BUSY_TIMEOUT mapping, IMMEDIATE CAS conflict normalization, exact existing-schema/index validation, absolute-path enforcement, actor-shape validation, and status-specific nullable-state invariants.",
     "nextAllowedMove": "Author a fresh T1D decision-only packet for the smallest non-production consumer and package-export/composition boundary; do not wire a route, provider, audit, production consumer or external effect automatically.",
     "claimBoundary": "Accepted only as a local durable single-node non-production prerequisite. No package export, caller, route, provider admission/invocation, audit integration, cross-node safety, live proof, public sync, deployment or production authority is opened."
+  },
+  "gc010ScrR2T1dPendingAgentExecutionNonProductionConsumerPackageExportBoundaryDecisionDispatch20260831": {
+    "status": "DISPATCHED_DECISION_ONLY_PENDING_WORKER_RETURN",
+    "dispatchCommit": "7af7914ee",
+    "predecessorMaterialCommit": "82c64a6f5",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_2026-08-31.md",
+    "workerOutputs": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "objective": "Select or park the smallest genuine non-production consumer and exact package-export/composition boundary over accepted T1C without implementing it.",
+    "workerBoundary": "One no-commit worker creates exactly the assessment and worker return. All existing source, tests, scripts, routes, packages, workflows and continuity are read-only; provider and external effects are forbidden.",
+    "nextAllowedMove": "Execute the committed T1D work order and return exactly two uncommitted documentation artifacts for independent orchestrator review.",
+    "claimBoundary": "Dispatch only. No consumer, export, runtime construction, route/provider/audit integration, production consumer, distributed safety, public sync, deployment or production authority is opened."
   }
 }

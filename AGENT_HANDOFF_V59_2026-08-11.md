@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh T1D decision-only packet for the smallest non-production consumer/export boundary; parked checkpoint=implementation until dispatch, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1d_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T1D decision-only packet and return exactly two uncommitted documentation artifacts; parked checkpoint=T1E implementation, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
 
 ## Current Mode
-`gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted`
+`gc010_scr_r2_t1d_dispatched_pending_worker_return`
 
 ## Purpose
 
@@ -111,14 +111,14 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Current Authority
 
-GC010-SCR-R2-T1C is independently accepted at material `82c64a6f5` with `DURABLE_SINGLE_NODE_NON_PRODUCTION_CORE_ACCEPTED` after one bounded persistence-boundary repair cluster. Focused proof is 108/108 with real worker-thread lock contention, exact schema/state validation and zero external calls. Package export/caller, route/provider/audit integration, production consumer and cross-node/distributed safety remain parked. Prior T0A/T0B, R1 T0, DSH-WRA-R1 and AFFD-R1 remain closed bounded; DEAR P4/P5 remain parked.
+GC010-SCR-R2-T1D decision-only dispatch is committed at `7af7914ee` over accepted T1C material `82c64a6f5`. It compares the smallest genuine non-production consumer and package-export/composition boundary and authorizes exactly two no-commit documentation outputs. T1E implementation, route/provider/audit integration, production consumer and cross-node/distributed safety remain parked. Prior T0A/T0B, R1 T0, DSH-WRA-R1 and AFFD-R1 remain closed bounded; DEAR P4/P5 remain parked.
 
 | Field | Value |
 |---|---|
-| authorityState | GC010-SCR-R2-T1C `CLOSED_PASS_BOUNDED` / `DURABLE_SINGLE_NODE_NON_PRODUCTION_CORE_ACCEPTED` at `82c64a6f5` |
+| authorityState | GC010-SCR-R2-T1D `DISPATCHED_DECISION_ONLY_PENDING_WORKER_RETURN` at `7af7914ee` over accepted T1C `82c64a6f5` |
 | roadmapPath | `docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md`; historical production T1 remains parked |
-| closureDependency | accepted T1A material `f55b80826`; accepted T1B material `da55f54d5`; T1C dispatch `d0579eaab`; accepted T1C material `82c64a6f5` |
-| nextAuthorityRequirement | fresh T1D decision-only authoring for the smallest non-production consumer/export boundary; no automatic implementation or external effect |
+| closureDependency | accepted T1A `f55b80826`; accepted T1B `da55f54d5`; accepted T1C `82c64a6f5`; T1D dispatch `7af7914ee` |
+| nextAuthorityRequirement | one no-commit T1D worker creates exactly the named assessment and worker return, then stops for independent review |
 
 ## Closure Evidence
 
@@ -169,7 +169,7 @@ GC010-SCR-R2-T1C is independently accepted at material `82c64a6f5` with `DURABLE
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Author a fresh GC010-SCR-R2-T1D decision-only baseline and work order for the smallest non-production consumer plus package-export/composition boundary over accepted T1C material `82c64a6f5`. Authoring only is allowed; do not implement automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
+Execute the committed GC010-SCR-R2-T1D decision-only work order at `7af7914ee`. One no-commit worker creates exactly the named assessment and worker return, runs the required gates, and stops for independent orchestrator review. No T1E implementation opens automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -204,17 +204,17 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize accepted GC010-SCR-R2-T1C material `82c64a6f5`, closed mode, next move, and generated projections. This creates no successor implementation scope.
+Authorized guard-maintenance scope: synchronize committed GC010-SCR-R2-T1D decision dispatch `7af7914ee`, pending-worker mode, next move, and generated projections. This creates no successor implementation scope.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1cPendingAgentExecutionDurableSingleNodeNonProductionImplementationClosure20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1dPendingAgentExecutionNonProductionConsumerPackageExportBoundaryDecisionDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: the operator directed the orchestrator to continue the GC010 system-chain roadmap and granted full orchestrator/reviewer authority; accepted T1C material is `82c64a6f5`.
-Rollback boundary: revert only this T1C closure continuity sync without rewriting accepted material or prior closures.
-Not authorized: T1D implementation before dispatch, route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/API/network use, credentials, public mutation, deployment, production claim, compaction, or automatic successor.
+Operator authorization: the operator directed the orchestrator to continue the GC010 system-chain roadmap and granted full orchestrator/reviewer authority; T1D dispatch material is `7af7914ee`.
+Rollback boundary: revert only this T1D dispatch continuity sync without rewriting dispatch material or prior closures.
+Not authorized: T1E implementation, route/provider/audit integration, package export implementation, production consumer, cross-node/distributed safety, provider/API/network use, credentials, public mutation, deployment, production claim, compaction, or automatic successor.
 
 ## Claim Boundary
 
-This handoff records T1C as accepted bounded at `82c64a6f5` over accepted T1B `da55f54d5`. It does not create a package export, caller, production API/store/consumer, export AER, connect route/provider/audit systems, or permit cross-node/distributed safety, provider/API/network, public mutation, deployment, production, compaction, or automatic successor work.
+This handoff records T1D as dispatched decision-only at `7af7914ee` over accepted T1C `82c64a6f5`. It does not create a package export, caller, production API/store/consumer, export AER, connect route/provider/audit systems, or permit cross-node/distributed safety, provider/API/network, public mutation, deployment, production, compaction, or automatic successor work.
