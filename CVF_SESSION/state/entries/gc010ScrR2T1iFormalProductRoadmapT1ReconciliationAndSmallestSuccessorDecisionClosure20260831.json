@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2470,
+  "stateKey": "gc010ScrR2T1iFormalProductRoadmapT1ReconciliationAndSmallestSuccessorDecisionClosure20260831",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "terminalToken": "FORMAL_T1_NOT_SATISFIED_REQUIRES_NEW_CONSUMER_OWNER",
+    "materialCommit": "2a553b029bb656e271eb3bd26fa1cbe59be5951e",
+    "dispatchCommit": "b3689b843",
+    "executionBaseHead": "537c2380460866237f23381b769e03c72770a2f6",
+    "assessment": "docs/assessments/CVF_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_WORKER_RETURN_2026-08-31.md",
+    "verification": "Independent reviewer confirmed exact two-path manifest, relevant-path no drift, zero registered production harness caller, no real guard/provider wiring on the harness path, worker-return fast gate PASS, pre-commit 87/87 PASS, and material pre-closure 79/80 with only expected pre-continuity handoff HEAD mismatch.",
+    "reviewerCorrection": "Worker terminal was corrected because the ledger marked Facts 2 and 3 UNSATISFIED while treating the binding four-fact T1 release condition as satisfied by equivalence. Direct internal import satisfies only the composition/export axis.",
+    "nextAllowedMove": "Await fresh operator instruction before a separately governed T1J registered production invocation owner and invoked-path composition decision packet; T1J is not auto-opened.",
+    "claimBoundary": "T1I decision is closed and the bounded non-production enabling chain remains accepted. Formal T1 and T2 remain parked; no production trigger, source/test/roadmap edit, provider/live, public sync, deployment or production authority is opened."
+  }
+}

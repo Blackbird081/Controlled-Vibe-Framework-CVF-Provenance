@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1i_dispatched_pending_external_decision_return",
-  "previousMode": "gc010_scr_r2_t1h_closed_pass_t1e_harness_accepted_post_hash_repair",
+  "currentMode": "gc010_scr_r2_t1i_closed_bounded_formal_t1_not_satisfied_requires_new_consumer_owner",
+  "previousMode": "gc010_scr_r2_t1i_dispatched_pending_external_decision_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15678,5 +15678,18 @@
     "nextAllowedMove": "Operator transfers the committed T1I packet to the external decision worker; worker returns exactly the two named uncommitted documentation artifacts for independent orchestrator/reviewer closure.",
     "claimBoundary": "Dispatch only. Formal T1 is not closed; no source/test/roadmap edit, package export, route/provider/audit integration, production trigger, T2 implementation, distributed safety, provider/live, public sync, deployment or production authority is opened."
   },
-  "nextAllowedMove": "Transfer the committed GC010-SCR-R2-T1I formal-T1 reconciliation packet at material b3689b843 to one operator-mediated external decision worker. The worker creates exactly the two named uncommitted documentation artifacts, performs read-only local evidence reconciliation, and stops for independent orchestrator/reviewer closure. Formal T1 closure, source/test/roadmap edits, package export, route/provider/audit integration, production trigger, T2 implementation, distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gc010ScrR2T1iFormalProductRoadmapT1ReconciliationAndSmallestSuccessorDecisionClosure20260831": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "terminalToken": "FORMAL_T1_NOT_SATISFIED_REQUIRES_NEW_CONSUMER_OWNER",
+    "materialCommit": "2a553b029bb656e271eb3bd26fa1cbe59be5951e",
+    "dispatchCommit": "b3689b843",
+    "executionBaseHead": "537c2380460866237f23381b769e03c72770a2f6",
+    "assessment": "docs/assessments/CVF_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1I_FORMAL_PRODUCT_ROADMAP_T1_RECONCILIATION_AND_SMALLEST_SUCCESSOR_DECISION_WORKER_RETURN_2026-08-31.md",
+    "verification": "Independent reviewer confirmed exact two-path manifest, relevant-path no drift, zero registered production harness caller, no real guard/provider wiring on the harness path, worker-return fast gate PASS, pre-commit 87/87 PASS, and material pre-closure 79/80 with only expected pre-continuity handoff HEAD mismatch.",
+    "reviewerCorrection": "Worker terminal was corrected because the ledger marked Facts 2 and 3 UNSATISFIED while treating the binding four-fact T1 release condition as satisfied by equivalence. Direct internal import satisfies only the composition/export axis.",
+    "nextAllowedMove": "Await fresh operator instruction before a separately governed T1J registered production invocation owner and invoked-path composition decision packet; T1J is not auto-opened.",
+    "claimBoundary": "T1I decision is closed and the bounded non-production enabling chain remains accepted. Formal T1 and T2 remain parked; no production trigger, source/test/roadmap edit, provider/live, public sync, deployment or production authority is opened."
+  },
+  "nextAllowedMove": "Await fresh operator instruction before authoring a separately governed GC010-SCR-R2-T1J registered production invocation owner and invoked-path composition decision packet. T1I is CLOSED_PASS_BOUNDED at material 2a553b029 with corrected terminal FORMAL_T1_NOT_SATISFIED_REQUIRES_NEW_CONSUMER_OWNER. Formal T1 and T2 remain parked; no source/test/roadmap edit, package export, route/provider/audit integration, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24."
 }
