@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending",
+  "currentMode": "gclh_t0_learning_intake_accepted_t1_core_design_authorized",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Select the next open system-chain roadmap item outside GC010 from current roadmap and state authority. GC010 is closed parked at root-architecture decision e867d5432 and may reopen only when one packet supplies all five conjunctive facts: explicit deployment topology, a route-native immutable-payload adapter, exact execution ordering, an authenticated recovery owner and policy, and adversarial failure/concurrency tests. Missing any fact terminates NO_VIABLE_PRODUCT_OWNER_RETAIN_PARKED; do not create another narrow GC010 tranche. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute GCLH-T1 as a Core-only integrated design composing existing SCEC and review-cost owners with canonical source-hash byte-domain and downstream control-projection freshness. Preserve single-agent/multi-role validity through evidence reconstruction, frozen criteria, source-identity recomputation and role-transition disclosure; actor count is not review validity, and no independent multi-agent review is claimed. Keep shift-operations-workspace parked until Core closure and later GCLH-T4 authorization. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -1,0 +1,23 @@
+{
+  "stateOrder": 2650,
+  "stateKey": "gclhT0GovernanceControlLossLearningIntakeAccepted20260901",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_PASS_BOUNDED",
+    "mode": "SINGLE_AGENT_MULTI_ROLE",
+    "independentMultiAgentReviewClaimed": "NO",
+    "roadmap": "docs/roadmaps/CVF_GCLH_GOVERNANCE_CONTROL_LOSS_HARDENING_ROADMAP_2026-08-31.md",
+    "roadmapSha256": "db320a85844db3a9eefdbb502ae3ce3ea0e6ea0b889faea1682087f2cf9b293f",
+    "intakeAudit": "docs/audits/CVF_GCLH_T0_GOVERNANCE_CONTROL_LOSS_LEARNING_INTAKE_AUDIT_2026-08-31.md",
+    "intakeAuditSha256": "04faa68a7da80453ae32f7202068c2565d947191b1caef666b3a2b54768e5555",
+    "review": "docs/reviews/CVF_GCLH_T0_GOVERNANCE_CONTROL_LOSS_LEARNING_INTAKE_REVIEW_2026-09-01.md",
+    "reviewSha256": "5b4921a5d2dc410f576148b7d228be6ab2d5fcfd935e3aba79602cf17234f658",
+    "materialCommit": "0a4655cf45844eef0e125166116bec8195998635",
+    "acceptedPremise": "Control-loss is caused by insufficient evidence control and reconciliation, not by one agent changing roles. A same-agent reviewer is valid when it reconstructs evidence from governed sources, recomputes source identity, tests frozen acceptance criteria, discloses the role transition, and does not treat author memory or conclusions as proof.",
+    "acceptedResiduals": [
+      "canonical source-hash byte-domain",
+      "downstream control-projection freshness"
+    ],
+    "nextAllowedMove": "GCLH-T1 Core-only integrated design; downstream workspace application remains parked until Core closure and later T4 authorization.",
+    "claimBoundary": "Learning intake and owner reconciliation only. No downstream workspace edit, runtime/product change, provider/live call, public sync, deployment, production claim, or independent multi-agent review claim."
+  }
+}

@@ -39,10 +39,9 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select the next open system-chain roadmap item outside GC010; parked checkpoint=GC010 T1J-R4, T1K, T2 and product/runtime until all five conjunctive reopen facts exist in one packet.
-
+Startup acknowledged: current mode=`gclh_t0_learning_intake_accepted_t1_core_design_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute GCLH-T1 Core-only integrated design; parked checkpoint=downstream shift-operations application until Core closure and later GCLH-T4 authorization; GC010 remains parked.
 ## Current Mode
-`gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending`
+`gclh_t0_learning_intake_accepted_t1_core_design_authorized`
 ## Purpose
 
 Preserve independently accepted T1C durable single-node non-production material without opening a caller, package export or external effect.
@@ -55,6 +54,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Latest Work / Changes
 
+- GCLH-T0 is accepted at `0a4655cf`. Role switching is allowed; evidence reconciliation controls review validity. Same-agent review discloses `SINGLE_AGENT_MULTI_ROLE` and makes no independent claim. T1 composes SCEC/review-cost with hash-domain and projection-freshness residuals; downstream remains parked until T4.
 - GC010 root architecture is closed parked at `e867d5432` with terminal `ROOT_ARCHITECTURE_REASSESSED_NO_TRUTHFUL_PRODUCT_OWNER_RETAIN_PARKED`. Direct route composition, ApprovalStore upgrade, singleton SQLite and distributed-store guesses were rejected; reopening requires all five named topology, adapter, ordering, recovery and adversarial-test facts in one packet. Reviewer-fast 67/67 and material pre-commit 88/88 pass; no source/runtime/provider effect or successor tranche opened.
 - SCEC-T1 foundation dispatch is `10345d3a`; T1-R2 is independently accepted with material correction at `cb6d4bc3879a753eb9abc7283b55148c141c46d1`. Resolution claims now require path/hash/locator evidence, successor consumption revalidates predecessor evidence hashes, the corrected GC010 replay retains unresolved blockers, and scaffolds emit the contract. Focused SCEC 115/115, combined focused 205/205, reviewer-fast 67/67 and pre-commit 88/88 passed. The two out-of-scope diagnostics remain disclosed and untouched; T1J-R4 remains parked.
 - EAFR-R12 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `1e31db99a`; terminal roadmap commit `fae74ca77`. Reviewer repaired candidate-level evaluator order, denied-candidate call-budget accounting, unauthorized-provider receipt endpoint resolution and the return packet. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed; zero provider/live/credential calls. EAFR successor count is zero; RFR may only be reconsidered separately.
@@ -171,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Select the next open system-chain roadmap item outside GC010 using current roadmap/state authority. GC010 is closed parked at `e867d5432`; reopen only when one packet supplies all five conjunctive topology, route-native adapter, exact-ordering, authenticated-recovery and adversarial-test facts. Missing any fact terminates `NO_VIABLE_PRODUCT_OWNER_RETAIN_PARKED`; do not create another narrow GC010 tranche. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest numbered wave remains LHW24.
+Execute GCLH-T1 Core-only design from `docs/roadmaps/CVF_GCLH_GOVERNANCE_CONTROL_LOSS_HARDENING_ROADMAP_2026-08-31.md`: compose SCEC/review-cost and design hash byte-domain plus projection freshness. Same-agent review must reconstruct evidence and disclose role transition; it makes no independent multi-agent claim. Keep downstream parked until T4. GC010 and effectful lanes remain parked. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -206,15 +206,15 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize accepted GC010 root-architecture closure material `e867d5432`, record its conjunctive reopen contract, advance next-move selection outside GC010 and generate continuity projections. No product successor is authorized by this edit.
+Authorized guard-maintenance scope: synchronize accepted GCLH-T0 material `0a4655cf`, advance the Core-only next move to GCLH-T1 design, and generate continuity projections. No downstream or effectful successor is authorized.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR3T0RootArchitectureReassessmentClosure20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gclhT0GovernanceControlLossLearningIntakeAccepted20260901.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md`.
 Protected guard paths:
 - N/A with reason: this continuity sync changes no guard or checker path.
-Operator authorization: the operator explicitly authorized raising the CVF foundation and validating it with successor tranches while retaining orchestrator/reviewer and external-worker role separation.
-Rollback boundary: revert only this GC010 closure continuity sync without rewriting accepted material `e867d5432`, SCEC foundation evidence or prior GC010 evidence.
-Not authorized: T1J-R4 product work, GC010 product/runtime edit, T1K/T2, provider/API/network use, public mutation, deployment, production claim or compaction.
+Operator authorization: the operator explicitly authorized learning and raising the CVF Core foundation before applying it to the downstream workspace.
+Rollback boundary: revert only this GCLH continuity sync without rewriting accepted material `0a4655cf` or prior GC010/SCEC evidence.
+Not authorized: downstream workspace edits, GCLH-T1 implementation, GC010 product/runtime, provider/API/network use, public mutation, deployment, production claim or compaction.
 ## Claim Boundary
 
-This handoff records GC010 root-architecture closure material `e867d5432`, retains GC010 parked behind a five-fact conjunctive reopen contract and returns next selection to the system-chain roadmap outside GC010. It does not authorize T1J-R4, GC010 product/runtime implementation, T1K/T2, provider/API/network, public mutation, deployment, production, compaction or automatic product successor work.
+This handoff records accepted GCLH-T0 material `0a4655cf`, authorizes only GCLH-T1 Core design, and keeps downstream application plus all effectful lanes parked. It makes no independent multi-agent review claim.

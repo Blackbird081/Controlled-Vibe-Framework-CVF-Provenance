@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending",
-  "previousMode": "scec_foundation_effectiveness_loop_closed_gc010_architecture_reassessment_pending",
+  "currentMode": "gclh_t0_learning_intake_accepted_t1_core_design_authorized",
+  "previousMode": "gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16009,5 +16009,24 @@
     "nextAllowedMove": "Select the next open system-chain roadmap item outside GC010. Do not create another narrow GC010 tranche unless all five reopen facts arrive in one packet.",
     "claimBoundary": "This is a root architecture and ownership decision, not product/runtime implementation or production readiness. T1J-R4, T1K and T2 remain cancelled or parked."
   },
-  "nextAllowedMove": "Select the next open system-chain roadmap item outside GC010 from current roadmap and state authority. GC010 is closed parked at root-architecture decision e867d5432 and may reopen only when one packet supplies all five conjunctive facts: explicit deployment topology, a route-native immutable-payload adapter, exact execution ordering, an authenticated recovery owner and policy, and adversarial failure/concurrency tests. Missing any fact terminates NO_VIABLE_PRODUCT_OWNER_RETAIN_PARKED; do not create another narrow GC010 tranche. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "nextAllowedMove": "Execute GCLH-T1 as a Core-only integrated design composing existing SCEC and review-cost owners with canonical source-hash byte-domain and downstream control-projection freshness. Preserve single-agent/multi-role validity through evidence reconstruction, frozen criteria, source-identity recomputation and role-transition disclosure; actor count is not review validity, and no independent multi-agent review is claimed. Keep shift-operations-workspace parked until Core closure and later GCLH-T4 authorization. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.",
+  "gclhT0GovernanceControlLossLearningIntakeAccepted20260901": {
+    "status": "REVIEWER_ACCEPTED_PASS_BOUNDED",
+    "mode": "SINGLE_AGENT_MULTI_ROLE",
+    "independentMultiAgentReviewClaimed": "NO",
+    "roadmap": "docs/roadmaps/CVF_GCLH_GOVERNANCE_CONTROL_LOSS_HARDENING_ROADMAP_2026-08-31.md",
+    "roadmapSha256": "db320a85844db3a9eefdbb502ae3ce3ea0e6ea0b889faea1682087f2cf9b293f",
+    "intakeAudit": "docs/audits/CVF_GCLH_T0_GOVERNANCE_CONTROL_LOSS_LEARNING_INTAKE_AUDIT_2026-08-31.md",
+    "intakeAuditSha256": "04faa68a7da80453ae32f7202068c2565d947191b1caef666b3a2b54768e5555",
+    "review": "docs/reviews/CVF_GCLH_T0_GOVERNANCE_CONTROL_LOSS_LEARNING_INTAKE_REVIEW_2026-09-01.md",
+    "reviewSha256": "5b4921a5d2dc410f576148b7d228be6ab2d5fcfd935e3aba79602cf17234f658",
+    "materialCommit": "0a4655cf45844eef0e125166116bec8195998635",
+    "acceptedPremise": "Control-loss is caused by insufficient evidence control and reconciliation, not by one agent changing roles. A same-agent reviewer is valid when it reconstructs evidence from governed sources, recomputes source identity, tests frozen acceptance criteria, discloses the role transition, and does not treat author memory or conclusions as proof.",
+    "acceptedResiduals": [
+      "canonical source-hash byte-domain",
+      "downstream control-projection freshness"
+    ],
+    "nextAllowedMove": "GCLH-T1 Core-only integrated design; downstream workspace application remains parked until Core closure and later T4 authorization.",
+    "claimBoundary": "Learning intake and owner reconciliation only. No downstream workspace edit, runtime/product change, provider/live call, public sync, deployment, production claim, or independent multi-agent review claim."
+  }
 }

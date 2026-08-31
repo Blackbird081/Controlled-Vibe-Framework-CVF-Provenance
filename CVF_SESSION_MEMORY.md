@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=select the next open system-chain roadmap item outside GC010; parked checkpoint=GC010 T1J-R4, T1K, T2 and product/runtime until all five conjunctive reopen facts exist in one packet.
+Startup acknowledged: current mode=`gclh_t0_learning_intake_accepted_t1_core_design_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute GCLH-T1 Core-only integrated design; parked checkpoint=downstream shift-operations application until Core closure and later GCLH-T4 authorization; GC010 remains parked.
 
 ## Current Mode
 
-Current mode marker: `gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending`
-Current mode: `gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending`; previous mode marker: `scec_foundation_effectiveness_loop_closed_gc010_architecture_reassessment_pending`
-Previous mode: `scec_foundation_effectiveness_loop_closed_gc010_architecture_reassessment_pending`
+Current mode marker: `gclh_t0_learning_intake_accepted_t1_core_design_authorized`
+Current mode: `gclh_t0_learning_intake_accepted_t1_core_design_authorized`; previous mode marker: `gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending`
+Previous mode: `gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending`
 
 ## Next Allowed Move
 
-Mode: `gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending`. GC010 root architecture is closed parked at `e867d5432`: no truthful current product owner exists, `successorTrancheOpened: NO`, and narrow T1J-R4/T1K/T2 continuation is cancelled. Select the next open system-chain roadmap item outside GC010. Reopen GC010 only when one packet supplies explicit topology, the route-native immutable-payload adapter, exact execution ordering, authenticated recovery ownership and adversarial failure/concurrency tests; otherwise retain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_t0_learning_intake_accepted_t1_core_design_authorized`. Execute GCLH-T1 as a Core-only integrated design composing existing SCEC and review-cost owners with canonical source-hash byte-domain and downstream control-projection freshness. Review validity is controlled by evidence reconstruction and reconciliation, not actor count; same-agent role transition remains allowed and must not be represented as independent multi-agent review. Do not update or apply the learning to `shift-operations-workspace` until Core closure and later GCLH-T4 authorization. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
