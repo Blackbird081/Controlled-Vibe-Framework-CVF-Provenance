@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: GCLH_T1_DESIGN_ACCEPTED_T2_WORK_ORDER_REQUIRED
+Status: GCLH_T1_AMENDMENT_1_ACCEPTED_T2_WORK_ORDER_REQUIRED
 
 docType: roadmap
 
@@ -103,6 +103,9 @@ gap, not evidence of semantic mutation.
 | reuse | enrich SCEC, review-cost, GC-023, finding-to-governance, ADIF, and GLP owners before proposing a new owner |
 | phase model | keep `INTAKE -> DESIGN -> SPEC -> WORK_ORDER -> BUILD -> REVIEW -> FREEZE`; readiness controls live inside the earliest applicable transition |
 | review validity | validity depends on evidence reconstruction and authority separation, not actor count: the reviewer role may be held by the same or a different agent, but must recompute source identity, test claims against the frozen acceptance contract, disclose role transition, and must not use the author's conclusion as proof; a same-agent pass does not claim independent multi-agent review |
+| execution topology | single/multi-agent and single/multi-role are attribution choices only; none grants or removes trust authority |
+| phase control root | every INTAKE through FREEZE result returns one governed envelope bound to its predecessor, canonical SOT authority, claims, provenance labels, obligations, evidence, verification results, actual manifest, limitations, and actor attribution |
+| SOT boundary | Truth Foundation owns authority/provenance/claim movement; SOT3 supplies bounded Refinery/Kernel/Flow authority semantics; GCLH does not claim universal SOT3 runtime activation |
 | economics | new finding labels do not erase aggregate chain counters or repair cost |
 | implementation | no checker/template/schema mutation before accepted T1 design and a fresh protected-path work order |
 | downstream | workspace/project refresh is held until accepted Core closure and exact projection proof |
@@ -133,6 +136,10 @@ local projection path.
   kept distinct; neither is silently rewritten by Core intake.
 - T1 cannot claim readiness without executable feasibility/negative evidence
   for the controls it proposes.
+- T1/T2 cannot use agent count, role name, provider identity, or orchestration
+  topology as evidence of truth or review validity.
+- every phase return must bind its predecessor and resolvable SOT authority;
+  chat/subagent summaries cannot replace the governed return.
 - T2 cannot mutate a protected checker without Core Guard Self-Protection
   authorization, focused tests, and rollback evidence.
 - L5/L6 remain separate from process hardening unless T3 proves compatibility,

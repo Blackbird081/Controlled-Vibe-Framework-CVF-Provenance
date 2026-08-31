@@ -2,7 +2,7 @@
 
 Memory class: governed-review
 
-Status: SINGLE_AGENT_MULTI_ROLE_REVIEW_PASS_BOUNDED
+Status: SINGLE_AGENT_MULTI_ROLE_REVIEW_PASS_BOUNDED_AMENDMENT_1
 
 docType: review
 
@@ -57,6 +57,31 @@ The reviewer rechecked these questions independently of the author conclusion:
 | Can stale downstream carriers claim adoption? | NO; `STALE` and `UNPROVEN` block adoption |
 | Are L5/L6 or runtime observability smuggled into T2? | NO; both remain outside T1 |
 
+## Amendment 1 Review: Topology-Neutral SOT Control
+
+The operator correction is accepted. The original same-agent correction was
+necessary but narrower than the governing rule. The rule must be invariant
+across all execution topologies:
+
+`trust = resolvable SOT authority + evidence + obligation verification + chain integrity`
+
+`trust != agent count + role labels + orchestration shape`
+
+The reviewer reconstructed the amended design against Truth Foundation, the
+SOT3 reference front door, SOT3 contract-chain authority rules, and ADR-053.
+
+| Challenge | Result |
+|---|---|
+| Does a second agent make a return trustworthy? | NO; it adds attribution/separation facts only |
+| Does one agent invalidate a return? | NO; validity depends on the same source/evidence reconstruction |
+| Is the phase return itself automatically truth? | NO; its authority references and evidence must resolve |
+| Is upstream phase evidence reviewable from chat summary alone? | NO; the governed phase return is required |
+| Does each phase bind the prior phase? | YES; predecessor reference and digest are mandatory |
+| Does GCLH claim global SOT3 runtime activation? | NO; it adapts canonical authority semantics only |
+| Can agent/provider identity satisfy a hard obligation? | NO; attribution never substitutes for verification |
+
+Amendment disposition: `SOT_BOUND_PHASE_RETURN_CONTROL_ACCEPTED_BOUNDED`.
+
 ## Acceptance Matrix
 
 | Criterion | Evidence | Verdict |
@@ -68,6 +93,8 @@ The reviewer rechecked these questions independently of the author conclusion:
 | canonical byte-domain | Contract C | PASS |
 | projection freshness | Contract D | PASS |
 | role-switch premise corrected | Governing Premise and Review Route | PASS |
+| single/multi-agent and single/multi-role neutrality | Amendment 1 | PASS |
+| SOT-bound return at all seven phases | Canonical Phase Return Envelope and Phase-To-SOT Control Chain | PASS_BOUNDED |
 | bounded implementation ownership | Implementation Ownership | PASS |
 
 ## Findings / Waivers
@@ -90,7 +117,7 @@ work order; reject any new stop owner or actor-count validity rule.
 
 `DESIGN_ACCEPTED_BOUNDED`
 
-T1 is accepted as the implementation design basis. T2 still requires a fresh
+T1 plus Amendment 1 is accepted as the implementation design basis. T2 still requires a fresh
 protected-path work order with exact owners, checker read-ahead, hostile tests,
 rollback boundary, and Core Guard Self-Protection authorization. Downstream
 application remains parked for T4.
@@ -102,8 +129,8 @@ application remains parked for T4.
 | author role | DESIGN_AUTHOR |
 | reviewer role | REVIEWER |
 | role transition disclosed | YES |
-| frozen contract | GCLH-T0 acceptance criteria at `0a4655cf` |
-| evidence reconstructed | owner composition, transition mapping, hash domains, projection gate, diff |
+| frozen contract | GCLH-T0 acceptance criteria at `0a4655cf` plus operator Amendment 1 correction |
+| evidence reconstructed | owner composition, SOT authority, all phase returns, transition mapping, hash domains, projection gate, diff |
 | author memory used as proof | NO |
 | independent multi-agent review claimed | NO |
 | decision authority | bounded design acceptance only |
@@ -117,9 +144,9 @@ role identity separate from evidence validity.
 
 ### Evidence Comparison
 
-The acceptance matrix passed without needing a different physical agent. The
-only bounded residual concerns semantic content judgment, which the design does
-not claim to automate.
+The acceptance matrix passed under a topology-neutral rule. A different agent
+would not change the evidence standard. The bounded residual concerns semantic
+content judgment, which the design does not claim to automate.
 
 ### Contradiction Or Gap Disposition
 
@@ -129,7 +156,8 @@ independence is a claim label that requires its own facts.
 
 ### Claim Update
 
-T1 is accepted bounded. This does not open implementation or downstream work.
+T1 Amendment 1 is accepted bounded. This does not open implementation or
+downstream work.
 
 ## Public Export Disposition
 
@@ -148,6 +176,6 @@ Reason: private Core review; no public-sync authority.
 
 ## Claim Boundary
 
-This review accepts a bounded design only. It does not implement controls,
-change downstream artifacts, claim independent multi-agent review, or authorize
-runtime/provider/live/public/deployment/production effects.
+This review accepts a bounded topology-neutral SOT phase-return design only.
+It does not implement controls, change downstream artifacts, claim independent
+multi-agent review, globally activate SOT3, or authorize external effects.

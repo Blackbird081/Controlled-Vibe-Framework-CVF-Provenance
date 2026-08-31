@@ -2,7 +2,7 @@
 
 Memory class: governed-assessment
 
-Status: REVIEWER_ACCEPTED_DESIGN_BOUNDED
+Status: REVIEWER_ACCEPTED_DESIGN_BOUNDED_AMENDMENT_1
 
 docType: assessment
 
@@ -37,6 +37,78 @@ governed sources, recomputes identity, tests frozen criteria, and does not use
 the author conclusion or memory as proof. Such a review must not be labeled
 independent multi-agent review.
 
+This premise is execution-topology neutral. It applies equally to one agent
+with one role, one agent with many roles, many agents with fixed roles, and
+many agents changing roles. Agent and role labels are attribution metadata;
+they are not source authority, truth authority, or review evidence by
+themselves.
+
+## Amendment 1: SOT-Bound Phase Return As Control Root
+
+For every phase in `INTAKE -> DESIGN -> SPEC -> WORK ORDER -> BUILD -> REVIEW
+-> FREEZE`, the returned governed artifact is the reviewer-facing control
+root. Chat messages, subagent summaries, role names, confidence statements,
+and orchestration topology are never substitutes for that return.
+
+The return is not automatically true merely because it exists. It is a
+candidate control root only when it binds resolvable SOT authority and lets a
+reviewer reconstruct the claim chain. This follows Truth Foundation doctrine:
+source identity, provenance, obligations, verification results, freshness,
+conflicts, and claim boundaries determine strict movement.
+
+### Canonical Phase Return Envelope
+
+Every phase return must carry at least:
+
+| Field | Control meaning |
+|---|---|
+| `phaseId` and `returnId` | stable phase/return identity |
+| `predecessorReturnRef` and `predecessorDigest` | unbroken chain to the accepted prior phase |
+| `authorityRefs` | canonical CVF owner paths, versions/commits, locators, and byte-domain digests |
+| `sourceEnvelopeRefs` | source identities; intake capture establishes identity, not truth |
+| `claimSet` and `provenanceLabels` | claims separated as source-backed, computed, receipt-backed, inferred, external, stale, missing, or conflicted |
+| `obligationRefs` | frozen hard/soft obligations and required evidence |
+| `evidenceRefs` and `verificationResultRefs` | reproducible support and bounded verification results |
+| `decisionAndLimitations` | disposition, unresolved contradictions, waivers, and claim boundary |
+| `actualArtifactManifest` | exact returned files/objects and identity digests |
+| `actorAttribution` | agents, roles, providers, and invocation surfaces as provenance only |
+
+Strict phase movement fails closed when the predecessor binding breaks, an
+authority reference cannot resolve, a hard obligation lacks verification, a
+source is stale/conflicted without disposition, or the actual manifest differs
+from the declared return.
+
+### Phase-To-SOT Control Chain
+
+| Phase return | Authoritative control question returned to reviewer |
+|---|---|
+| INTAKE | What source was captured, by which governed adapter, with what identity, authority class, provenance and unresolved conflict? |
+| DESIGN | Which source-bound requirements and capability facts justify the design, and which alternatives/unknowns remain? |
+| SPEC | Which claims, invariants, obligations, acceptance criteria and parent constraints are frozen and traceable to authority? |
+| WORK ORDER | Which exact scope, owner, manifest, evidence plan, negative tests, rollback and stop rules are authorized? |
+| BUILD | What actually changed, which predecessor constraints remain identical, and what execution/test receipts support the return? |
+| REVIEW | What evidence was independently reconstructed at the role boundary, what contradictions/findings remain, and which claims may move? |
+| FREEZE | Which accepted references, receipts, waivers, hashes and closure boundaries form the immutable release snapshot? |
+
+The reviewer trusts neither the producing agent nor the phase label. The
+reviewer resolves the return's references to canonical sources and verifies
+the stated obligations. Thus the control root is the source-bound return plus
+its resolvable authority chain, not the execution participant.
+
+### Relationship To Truth Foundation And SOT3
+
+- Truth Foundation remains upstream doctrine owner for source authority,
+  provenance labels, evidence/obligation/verification minimums, and claim
+  movement.
+- SOT3 supplies the bounded authority topology: intake captures a
+  `SourceEnvelope`; Refinery prepares deterministically without declaring
+  truth; Truth Kernel alone evaluates and issues decision/receipt/reference;
+  Truth Flow distributes post-Kernel without recreating authority.
+- GCLH adapts those semantics to phase-return governance. It does not claim
+  that SOT3 runtime is globally activated for every project or phase.
+- Provider/model/agent output remains content or evidence input. It never
+  becomes truth authority from the identity of its producer.
+
 ## Decision / Baseline / Proposed Tranche
 
 Decision: adopt this integrated evidence-envelope design as the bounded T2
@@ -61,6 +133,9 @@ occur.
 | Core closure -> downstream adoption | projection-freshness receipt | `BLOCKED_PROJECTION_DRIFT` |
 
 These results are readiness outcomes, not new lifecycle phases.
+
+At every row, the evidence is carried by the canonical phase return envelope;
+execution topology changes only `actorAttribution`, never the movement rule.
 
 ## Contract A: Capability Evidence
 
@@ -161,7 +236,10 @@ universal agent-progress observation remain outside T1.
 - all seven transitions remain intact and no eighth phase is introduced;
 - every control has a fail-closed outcome and an existing owner;
 - same-agent multi-role review is explicitly valid under evidence
-  reconstruction and makes no independence claim;
+  reconstruction and makes no independence claim; the same evidence rule also
+  governs multi-agent/multi-role execution;
+- every phase return binds its predecessor and resolvable SOT authority;
+- actor/role/provider attribution cannot satisfy a hard claim;
 - hash domains are reproducible and non-interchangeable;
 - downstream adoption is impossible from a stale or unproven projection;
 - incident replay demonstrates earlier detection without claiming guaranteed
@@ -185,9 +263,10 @@ contracts materially new.
 
 ### Evidence Comparison
 
-The replay maps every process defect to an earlier transition and preserves the
-two existing stop/economics owners. Actor count does not explain any mapping;
-missing or unreconciled evidence does.
+The replay maps every process defect to an earlier source-bound return and
+preserves the two existing stop/economics owners. Actor count and role topology
+do not explain any mapping; missing, unresolvable, or unreconciled evidence
+does.
 
 ### Contradiction Or Gap Disposition
 
@@ -208,6 +287,7 @@ public-sync is not authorized.
 
 ## Claim Boundary
 
-This is a Core process-control design only. It does not mutate standards,
-templates, checkers, schemas, runtime, or downstream workspace; it performs no
-provider/live, public-sync, deployment, or production action.
+This is a Core process-control design plus accepted Amendment 1. It defines
+SOT-bound phase-return semantics but does not claim global SOT3 runtime
+activation, mutate standards/templates/checkers/schemas/runtime/downstream, or
+perform provider/live, public-sync, deployment, or production action.
