@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2690,
+  "stateKey": "gclhMfrpP0RoadmapClaudeCritiquePending20260901",
+  "value": {
+    "status": "ROADMAP_COMMITTED_CLAUDE_CRITIQUE_PENDING",
+    "materialCommit": "2f6c94141f0e5fe2e2c7710434d87f1ad923adba",
+    "roadmapPath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
+    "roadmapSha256": "b89119ae5791154a463032a5c7c3acbe3e511e9939edae20cc47af083da98c20",
+    "critiquePacketPath": "docs/reviews/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_CLAUDE_CRITIQUE_PACKET_2026-09-01.md",
+    "critiquePacketSha256": "c5be1d7850cbdb89e050b18e167ebe357ac87412ff94fa553ac855aee8270eb6",
+    "expectedCritiqueFilename": "CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_CLAUDE_CRITIQUE_2026-09-01.md",
+    "nextAllowedMove": "One Claude review-only critique, followed by CVF-owned absorption and reconciliation.",
+    "implementationHold": "No T2 work order, owner mutation, schema, helper, checker, hook, runtime or downstream implementation before critique reconciliation.",
+    "claimBoundary": "Critique-ready roadmap only; architecture is proposed, not accepted or implemented."
+  }
+}

@@ -1,5 +1,5 @@
 {
   "stateOrder": 2645,
   "stateKey": "nextAllowedMove",
-  "value": "Author and review the GCLH-T2 protected-path work order from accepted Amendment 2 commit 56e0c0e22e7df2a2411c6ba5e279cdc62b6ddd6d. Require predecessor-bound SOT Phase Return Envelopes and minimal sufficient reviewer verification: identity/chain/authority/coverage checks by default, focused probes only when disposition-relevant, and no broad rerun without named evidence insufficiency, bounded claim, information gain and cost justification. Agent/role/topology remains attribution only. T2 implementation remains unopened. Keep shift-operations-workspace parked until Core closure and GCLH-T4. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Send the committed GCLH-MFRP P0 Claude critique packet at commit 2f6c94141f0e5fe2e2c7710434d87f1ad923adba for one review-only external critique. Accept only the named critique return, then perform CVF-owned finding absorption and reconciliation before deciding whether P1 may open. Do not author a T2 implementation work order or modify standards, schemas, helpers, checkers, hooks, runtime or downstream workspace before that reconciliation. Keep shift-operations-workspace, GC010, provider/live, public-sync, deployment and production parked. Latest finalized numbered LHW wave remains LHW24."
 }

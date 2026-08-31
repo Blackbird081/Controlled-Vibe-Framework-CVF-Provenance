@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_t1_minimal_review_verification_amendment_accepted_t2_work_order_required",
-  "previousMode": "gclh_t1_sot_phase_return_amendment_accepted_t2_work_order_required",
+  "currentMode": "gclh_mfrp_p0_roadmap_committed_claude_critique_pending",
+  "previousMode": "gclh_t1_minimal_review_verification_amendment_accepted_t2_work_order_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16009,7 +16009,7 @@
     "nextAllowedMove": "Select the next open system-chain roadmap item outside GC010. Do not create another narrow GC010 tranche unless all five reopen facts arrive in one packet.",
     "claimBoundary": "This is a root architecture and ownership decision, not product/runtime implementation or production readiness. T1J-R4, T1K and T2 remain cancelled or parked."
   },
-  "nextAllowedMove": "Author and review the GCLH-T2 protected-path work order from accepted Amendment 2 commit 56e0c0e22e7df2a2411c6ba5e279cdc62b6ddd6d. Require predecessor-bound SOT Phase Return Envelopes and minimal sufficient reviewer verification: identity/chain/authority/coverage checks by default, focused probes only when disposition-relevant, and no broad rerun without named evidence insufficiency, bounded claim, information gain and cost justification. Agent/role/topology remains attribution only. T2 implementation remains unopened. Keep shift-operations-workspace parked until Core closure and GCLH-T4. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Send the committed GCLH-MFRP P0 Claude critique packet at commit 2f6c94141f0e5fe2e2c7710434d87f1ad923adba for one review-only external critique. Accept only the named critique return, then perform CVF-owned finding absorption and reconciliation before deciding whether P1 may open. Do not author a T2 implementation work order or modify standards, schemas, helpers, checkers, hooks, runtime or downstream workspace before that reconciliation. Keep shift-operations-workspace, GC010, provider/live, public-sync, deployment and production parked. Latest finalized numbered LHW wave remains LHW24.",
   "gclhT0GovernanceControlLossLearningIntakeAccepted20260901": {
     "status": "REVIEWER_ACCEPTED_PASS_BOUNDED",
     "mode": "SINGLE_AGENT_MULTI_ROLE",
@@ -16077,5 +16077,17 @@
     "missingEvidenceRule": "Return or block missing work; reviewer must not silently complete it.",
     "nextAllowedMove": "Author and review the GCLH-T2 protected-path work order; implementation remains unopened.",
     "claimBoundary": "Review-cost design amendment only; no implementation or downstream/external effect."
+  },
+  "gclhMfrpP0RoadmapClaudeCritiquePending20260901": {
+    "status": "ROADMAP_COMMITTED_CLAUDE_CRITIQUE_PENDING",
+    "materialCommit": "2f6c94141f0e5fe2e2c7710434d87f1ad923adba",
+    "roadmapPath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
+    "roadmapSha256": "b89119ae5791154a463032a5c7c3acbe3e511e9939edae20cc47af083da98c20",
+    "critiquePacketPath": "docs/reviews/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_CLAUDE_CRITIQUE_PACKET_2026-09-01.md",
+    "critiquePacketSha256": "c5be1d7850cbdb89e050b18e167ebe357ac87412ff94fa553ac855aee8270eb6",
+    "expectedCritiqueFilename": "CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_CLAUDE_CRITIQUE_2026-09-01.md",
+    "nextAllowedMove": "One Claude review-only critique, followed by CVF-owned absorption and reconciliation.",
+    "implementationHold": "No T2 work order, owner mutation, schema, helper, checker, hook, runtime or downstream implementation before critique reconciliation.",
+    "claimBoundary": "Critique-ready roadmap only; architecture is proposed, not accepted or implemented."
   }
 }
