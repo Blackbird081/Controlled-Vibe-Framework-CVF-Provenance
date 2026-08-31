@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return",
+  "currentMode": "gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Transfer committed GC010-SCR-R2-T1J-R1 correction packet 873d99946177169e6045c3849f5a9f53906a668d to the external worker for exactly the named assessment and worker return. Worker must not stage or commit. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Await operator authorization for one separately governed GC010 durable-owner decision choosing atomic claim/CAS in the existing approval store or narrow pending-lifecycle composition inside /api/execute. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

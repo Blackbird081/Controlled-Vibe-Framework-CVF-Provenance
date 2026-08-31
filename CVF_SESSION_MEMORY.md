@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer T1J-R1 correction packet to the external worker; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await separately governed durable-owner decision; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`
-Current mode: `gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`; previous mode marker: `gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked`
-Previous mode: `gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked`
+Current mode marker: `gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required`
+Current mode: `gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required`; previous mode marker: `gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`
+Previous mode: `gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`. T1J-R1 correction material `873d99946` reopens only the missed approval UI and approval-bound execute evidence. Worker compares existing-route resume against isolated pending composition and writes exactly two uncommitted documents. T1K, T2 and all implementation/provider/live/public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required`. T1J-R1 material `35226ccf7` accepts the source-backed approval-resume caller but reviewer-corrects the worker's exactly-once claim: current status read and later delete are non-atomic. One durable-owner decision remains between existing-store atomic claim/recovery and narrow pending-lifecycle composition inside `/api/execute`. T1K, T2 and all implementation/provider/live/public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

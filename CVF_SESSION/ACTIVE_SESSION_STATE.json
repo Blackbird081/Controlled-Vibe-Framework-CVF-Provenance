@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return",
-  "previousMode": "gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked",
+  "currentMode": "gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required",
+  "previousMode": "gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15731,5 +15731,21 @@
     ],
     "boundary": "Decision-only correction; no implementation, stage, commit, provider/live, public, deploy or production authority."
   },
-  "nextAllowedMove": "Transfer committed GC010-SCR-R2-T1J-R1 correction packet 873d99946177169e6045c3849f5a9f53906a668d to the external worker for exactly the named assessment and worker return. Worker must not stage or commit. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gc010ScrR2T1jR1ApprovalResumeProductCallerCorrectionClosure20260831": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "terminal": "PARTIAL_READY_REQUIRES_RESUME_INTERFACE_OR_DURABLE_OWNER_DECISION",
+    "successorTrancheOpened": "NO",
+    "materialCommit": "35226ccf785a1092e6d3009c98e5865e5174a4f9",
+    "dispatchCommit": "873d99946177169e6045c3849f5a9f53906a668d",
+    "executionBaseHead": "1d04a8fadd834bb67d0d70673354b6e09fd4337b",
+    "assessment": "docs/assessments/CVF_GC010_SCR_R2_T1J_R1_APPROVAL_RESUME_PRODUCT_CALLER_CORRECTION_2026-08-31.md",
+    "assessmentSha256": "49d7ac8d534109672bf70a2ce6b5bdfaab63435d1daa47205ae9cc0a21db21e9",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1J_R1_APPROVAL_RESUME_PRODUCT_CALLER_CORRECTION_WORKER_RETURN_2026-08-31.md",
+    "workerReturnSha256": "c279101ea90acb4e51350932c062e99d017b973359ff6ea125fa082ccb255f70",
+    "reviewerCorrection": "Rejected the worker's exactly-once and no-other-caller overclaims. Current approval validation and later delete are not atomic; useExecute.ts is a second unconsumed call site; narrow pending lifecycle composition inside the existing route is not proven duplicative.",
+    "verification": "Worker-return fast gate COMPLIANT and pre-commit 87/87 PASS; exact two-document material manifest committed separately.",
+    "nextAllowedMove": "Await a separately authorized durable-owner decision between extending the existing approval store with atomic claim/recovery semantics and narrow pending-runtime lifecycle composition inside /api/execute.",
+    "claimBoundary": "Decision correction only. Formal T1 and T2 remain parked; no source/test/roadmap edit, implementation, provider/live, public sync, deployment or production authority is opened."
+  },
+  "nextAllowedMove": "Await operator authorization for one separately governed GC010 durable-owner decision choosing atomic claim/CAS in the existing approval store or narrow pending-lifecycle composition inside /api/execute. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

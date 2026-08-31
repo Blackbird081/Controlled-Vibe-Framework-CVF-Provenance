@@ -2,7 +2,7 @@
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
-- Current GC010 dispatch material: `873d99946`; T1J-R1 approval-resume correction is pending external worker return.
+- Current GC010 material: `35226ccf7`; T1J-R1 is closed partial-ready with one durable-owner decision remaining.
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
@@ -40,10 +40,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer T1J-R1 correction packet to the external worker; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await separately governed durable-owner decision; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
 
 ## Current Mode
-`gc010_scr_r2_t1j_r1_dispatched_pending_external_correction_return`
+`gc010_scr_r2_t1j_r1_closed_partial_ready_durable_owner_decision_required`
 
 ## Purpose
 
@@ -112,14 +112,14 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Current Authority
 
-GC010-SCR-R2-T1J is `CLOSED_PASS_BOUNDED` at material `9245f4218` over execution base `65b5512b5`, with terminal `NO_VIABLE_PRODUCTION_OWNER_RETAIN_FORMAL_T1_PARKED`. Independent review corrected the durable-reconciliation overclaim without changing the terminal. Formal T1 and T2 remain parked.
+GC010-SCR-R2-T1J-R1 is `CLOSED_PASS_BOUNDED` at material `35226ccf7` over execution base `1d04a8f`, with terminal `PARTIAL_READY_REQUIRES_RESUME_INTERFACE_OR_DURABLE_OWNER_DECISION`. Independent review rejected the worker's exactly-once and absolute caller claims. The mounted approval UI proves a real resume caller, but atomic claim/recovery ownership remains undecided. Formal T1 and T2 remain parked.
 
 | Field | Value |
 |---|---|
-| authorityState | GC010-SCR-R2-T1J `CLOSED_PASS_BOUNDED` at `9245f4218`; terminal `NO_VIABLE_PRODUCTION_OWNER_RETAIN_FORMAL_T1_PARKED` |
+| authorityState | GC010-SCR-R2-T1J-R1 `CLOSED_PASS_BOUNDED` at `35226ccf7`; terminal `PARTIAL_READY_REQUIRES_RESUME_INTERFACE_OR_DURABLE_OWNER_DECISION` |
 | roadmapPath | `docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md`; historical production T1 remains parked |
 | closureDependency | accepted T1A `f55b80826`; accepted T1B `da55f54d5`; accepted T1C `82c64a6f5`; accepted T1D `0e4aacdc6`; T1E dispatch `13dbbaa73`; blocked closure `d367ea1c7` |
-| nextAuthorityRequirement | separately authorized source-backed concrete product caller before any formal T1 reopen; no automatic T1K/T2 |
+| nextAuthorityRequirement | separately authorized durable-owner decision: existing approval-store atomic claim/recovery or narrow pending-lifecycle composition inside `/api/execute`; no automatic T1K/T2 |
 
 ## Closure Evidence
 
@@ -170,7 +170,7 @@ GC010-SCR-R2-T1J is `CLOSED_PASS_BOUNDED` at material `9245f4218` over execution
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Transfer T1J-R1 correction material `873d99946` to the external worker for exactly two uncommitted decision documents. T1K and T2 remain parked; no implementation, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24.
+Await operator authorization for one separately governed GC010 durable-owner decision choosing existing approval-store atomic claim/recovery or narrow pending-lifecycle composition inside `/api/execute`. T1K and T2 remain parked; no implementation, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -205,16 +205,16 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize T1J-R1 correction dispatch material `873d99946`, exact worker checkpoint and generated projections. This authorizes no T1K implementation, formal T1/T2 release, source edit, package export or production trigger.
+Authorized guard-maintenance scope: synchronize T1J-R1 bounded closure material `35226ccf7`, terminal, exact next checkpoint and generated projections. This authorizes no durable-owner successor, T1K implementation, formal T1/T2 release, source edit, package export or production trigger.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1jR1ApprovalResumeProductCallerCorrectionDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1jR1ApprovalResumeProductCallerCorrectionClosure20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: continue GC010 system-chain through the source-verified T1J-R1 correction; dispatch material is `873d99946` over base `072dffc33`.
-Rollback boundary: revert only this T1J-R1 dispatch continuity sync without rewriting material evidence or prior closures.
-Not authorized: T1K, formal T1/T2 release, source/test/roadmap edit, package export, route/provider/audit implementation, provider/API/network use, public mutation, deployment, production claim or compaction.
+Operator authorization: continue GC010 system-chain through independent review and continuity closure of T1J-R1 material `35226ccf7`.
+Rollback boundary: revert only this T1J-R1 closure continuity sync without rewriting material evidence or prior closures.
+Not authorized: durable-owner successor dispatch, T1K, formal T1/T2 release, source/test/roadmap edit, package export, route/provider/audit implementation, provider/API/network use, public mutation, deployment, production claim or compaction.
 ## Claim Boundary
 
-This handoff records T1J bounded closure material `9245f4218`: no safe, value-justified registered production owner exists in the inspected authority scope, so formal T1 remains parked. It does not authorize T1K, source/test/roadmap edits, a package export or production trigger, T2, route/provider/audit source changes, provider/API/network, public mutation, deployment, production, compaction or automatic successor work.
+This handoff records T1J-R1 bounded closure material `35226ccf7`: a source-backed approval-resume caller exists, while atomic claim/recovery ownership remains undecided, so formal T1 remains parked. It does not authorize a durable-owner successor, T1K, source/test/roadmap edits, a package export or production trigger, T2, route/provider/audit source changes, provider/API/network, public mutation, deployment, production, compaction or automatic successor work.

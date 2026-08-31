@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2505,
+  "stateOrder": 2515,
   "stateKey": "nextAllowedMove",
-  "value": "Transfer committed GC010-SCR-R2-T1J-R1 correction packet 873d99946177169e6045c3849f5a9f53906a668d to the external worker for exactly the named assessment and worker return. Worker must not stage or commit. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Await operator authorization for one separately governed GC010 durable-owner decision choosing atomic claim/CAS in the existing approval store or narrow pending-lifecycle composition inside /api/execute. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
