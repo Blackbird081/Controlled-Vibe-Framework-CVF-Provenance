@@ -278,6 +278,19 @@ def test_pre_implementation_passes_when_aaf_helper_passes(monkeypatch) -> None:
     assert autorun._run_phase("pre-implementation", "base", "head") == 0
 
 
+# --- SCEC-T1: semantic convergence checker earliest-applicable gate binding ---
+
+
+def test_common_commands_include_semantic_convergence_control_checker() -> None:
+    commands = autorun._common_commands("base", "head")
+    matches = [
+        c
+        for c in commands
+        if any("check_semantic_convergence_control.py" in part for part in c.command)
+    ]
+    assert len(matches) == 1, "SCEC checker must be bound exactly once in _common_commands"
+
+
 def test_pre_implementation_fails_when_aaf_helper_fails(monkeypatch) -> None:
     # AC3: a nonzero AAF helper exit propagates to gate failure through the
     # existing command-result aggregation.

@@ -63,6 +63,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             "core guard self-protection",
             ("python", "governance/compat/check_core_guard_self_protection.py", "--base", base, "--head", head, "--enforce"),
         ),
+        _range_command(
+            "semantic convergence and escalation control",
+            "governance/compat/check_semantic_convergence_control.py",
+            base,
+            head,
+        ),
         GateCommand(
             "subagent provider execution authority",
             ("python", "governance/compat/check_subagent_provider_execution_authority.py", "--base", base, "--head", head, "--enforce"),

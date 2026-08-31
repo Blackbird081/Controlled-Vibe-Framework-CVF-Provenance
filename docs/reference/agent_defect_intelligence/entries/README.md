@@ -82,6 +82,7 @@ registry edit is required when adding a new entry beyond this table.
 | `CVF_ADIF-0052.md` | ADIF-0052 | SOURCE_FIDELITY | GUIDANCE_ONLY |
 | `CVF_ADIF-0053.md` | ADIF-0053 | SOURCE_FIDELITY | PARTIAL_CHECK |
 | `CVF_ADIF-0054.md` | ADIF-0054 | GATE_TRIGGER_FRICTION | PARTIAL_CHECK |
+| `CVF_ADIF-0055.md` | ADIF-0055 | GATE_TRIGGER_FRICTION | MACHINE_CHECKED |
 
 ## Claim Boundary
 

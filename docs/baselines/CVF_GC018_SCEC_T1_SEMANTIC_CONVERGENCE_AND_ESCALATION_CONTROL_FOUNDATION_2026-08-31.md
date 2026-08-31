@@ -103,6 +103,14 @@ bounded change set. GC-010 product work stays parked until this tranche closes.
     "sameClaimCorrections": 0,
     "nonDecreasingBlockerTransitions": 0
   },
+  "claims": [
+    {
+      "claimId": "SCEC-T1-SEED-FOUNDATION-GAP",
+      "claimClass": "DOCUMENTATION_ONLY",
+      "proofClass": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+      "evidenceRef": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md"
+    }
+  ],
   "requiredDisposition": "CONTINUE_BOUNDED",
   "successorScope": "INITIAL_BOUNDED"
 }

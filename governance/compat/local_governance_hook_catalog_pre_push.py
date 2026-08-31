@@ -21,6 +21,10 @@ PRE_PUSH_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_core_guard_self_protection.py", "--enforce"],
         ),
         (
+            "semantic convergence and escalation control",
+            ["python", "governance/compat/check_semantic_convergence_control.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "task-proportional governance shadow route",
             ["python", "governance/compat/check_task_governance_route.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),

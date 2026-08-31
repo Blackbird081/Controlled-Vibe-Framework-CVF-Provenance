@@ -349,7 +349,17 @@ class TestTriggerDrivenOptionalBlocks(unittest.TestCase):
 
 class TestSourceIntakeGoldenFixture(unittest.TestCase):
     """WOAS-R2: source-intake scaffold output regression fixture and
-    marker-overmatch avoidance (AC1, AC4)."""
+    marker-overmatch avoidance (AC1, AC4).
+
+    SCEC-T1 note: `include_scec_block=False` here is deliberate and scoped
+    only to this pre-existing, out-of-manifest golden fixture
+    (`governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md`,
+    which SCEC-T1's Required Artifact Manifest does not authorize touching).
+    Every other `ScaffoldArgs` construction site in this module and in
+    `check_semantic_convergence_control.py`'s own tests keeps the class
+    default `include_scec_block=True`, so new work orders still emit a valid
+    SCEC block by default per the SCEC-T1 scaffold requirement.
+    """
 
     GOLDEN_ARGS = dict(
         packet_kind="source-intake",
@@ -359,6 +369,7 @@ class TestSourceIntakeGoldenFixture(unittest.TestCase):
         base="GOLDENFIXTUREBASEHEAD",
         commit_mode="WORKER_MUST_NOT_COMMIT",
         dependencies=[],
+        include_scec_block=False,
     )
 
     def _golden_work_order(self) -> str:
@@ -859,6 +870,74 @@ class TestEacqFvL2ExecutionBasePacketShapeHardening(unittest.TestCase):
         self.assertIn("<executionBaseHead>", pre_impl_line)
         self.assertNotIn("deadbeef", pre_impl_line)
 
+
+class TestScecBlockEmission(unittest.TestCase):
+    """SCEC-T1: dispatch scaffold must support emitting a valid initial or
+    successor SCEC block from explicit CLI arguments, and must never
+    fabricate predecessor hashes, proof evidence, or readiness."""
+
+    def test_default_work_order_emits_valid_initial_scec_block(self) -> None:
+        import check_semantic_convergence_control as scec_checker
+
+        args = _base_args()
+        self.assertTrue(args.include_scec_block)
+        work_order = build_work_order(args, detect_triggers(args))
+        blocks = scec_checker.find_active_blocks(work_order)
+        self.assertEqual(len(blocks), 1)
+        result = scec_checker.validate_block(blocks[0])
+        self.assertEqual(result.violations, ())
+        self.assertEqual(blocks[0]["chainMode"], "INITIAL")
+        self.assertIsNone(blocks[0]["predecessor"])
+
+    def test_internal_legacy_golden_override_omits_the_section(self) -> None:
+        args = _base_args(include_scec_block=False)
+        work_order = build_work_order(args, detect_triggers(args))
+        self.assertNotIn("## Semantic Convergence Outcome", work_order)
+
+    def test_successor_without_explicit_hash_emits_unresolved_sentinel(self) -> None:
+        """Missing successor facts must produce the explicit unresolved
+        sentinel, which the checker rejects pre-dispatch -- not a fabricated
+        hash."""
+        import check_semantic_convergence_control as scec_checker
+
+        args = _base_args(scec_chain_mode="SUCCESSOR", scec_chain_ordinal=1)
+        work_order = build_work_order(args, detect_triggers(args))
+        blocks = scec_checker.find_active_blocks(work_order)
+        self.assertEqual(len(blocks), 1)
+        predecessor = blocks[0]["predecessor"]
+        self.assertEqual(predecessor["path"], "SCEC_PREDECESSOR_HASH_UNRESOLVED")
+        self.assertEqual(predecessor["sha256"], "SCEC_PREDECESSOR_HASH_UNRESOLVED")
+        result = scec_checker.validate_block(blocks[0])
+        codes = {v.code for v in result.violations}
+        self.assertIn("PREDECESSOR_UNRESOLVED_SENTINEL", codes)
+
+    def test_successor_with_explicit_hash_and_real_predecessor_file_passes(self) -> None:
+        import check_semantic_convergence_control as scec_checker
+
+        predecessor_content = "example predecessor content"
+        real_hash = scec_checker.sha256_of_text(predecessor_content)
+        args = _base_args(
+            scec_chain_mode="SUCCESSOR",
+            scec_chain_ordinal=1,
+            scec_predecessor_path="docs/reviews/example.md",
+            scec_predecessor_sha256=real_hash,
+        )
+        work_order = build_work_order(args, detect_triggers(args))
+        blocks = scec_checker.find_active_blocks(work_order)
+        self.assertEqual(len(blocks), 1)
+        result = scec_checker.validate_block(
+            blocks[0], predecessor_hash_resolver=lambda path: real_hash
+        )
+        self.assertEqual(result.violations, ())
+
+    def test_scec_disposition_and_scope_flow_through_from_cli_shaped_args(self) -> None:
+        args = _base_args(
+            scec_required_disposition="ROOT_CONTRACT_REQUIRED",
+            scec_successor_scope="INTEGRATED_ROOT_CONTRACT",
+        )
+        work_order = build_work_order(args, detect_triggers(args))
+        self.assertIn('"requiredDisposition": "ROOT_CONTRACT_REQUIRED"', work_order)
+        self.assertIn('"successorScope": "INTEGRATED_ROOT_CONTRACT"', work_order)
 
 if __name__ == "__main__":
     unittest.main()

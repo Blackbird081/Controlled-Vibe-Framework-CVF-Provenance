@@ -31,6 +31,41 @@ TO_FILL: state the scope and methodology of this worker execution.
 TO_FILL: state findings and position with evidence.
 ## Risk / Corrective Action
 TO_FILL: state risks and corrective actions if any.
+## Semantic Convergence Outcome
+
+Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md`
+
+```json
+{
+  "schemaVersion": "cvf.semanticConvergenceControl.v1",
+  "problemKey": "woas-r3-golden-problem",
+  "chainMode": "SUCCESSOR",
+  "chainOrdinal": 1,
+  "predecessor": {
+    "path": "SCEC_PREDECESSOR_HASH_UNRESOLVED",
+    "sha256": "SCEC_PREDECESSOR_HASH_UNRESOLVED"
+  },
+  "blockerDelta": {
+    "prior": [],
+    "resolved": [],
+    "retained": [],
+    "new": [],
+    "reopened": [],
+    "current": []
+  },
+  "counters": {
+    "partialReadyClosures": 0,
+    "reviewerScopeExpansions": 0,
+    "sameClaimCorrections": 0,
+    "nonDecreasingBlockerTransitions": 0
+  },
+  "claims": [],
+  "requiredDisposition": "CONTINUE_BOUNDED",
+  "successorScope": "INITIAL_BOUNDED"
+}
+```
+
+Author reminder: fill `blockerDelta`, `counters`, and `claims` with real declared outcome evidence before returning for review; never replace an unresolved `SCEC_PREDECESSOR_HASH_UNRESOLVED` with a fabricated path or hash.
 ## Checker Source Read-Ahead Block
 | Field | Value |
 | --- | --- |

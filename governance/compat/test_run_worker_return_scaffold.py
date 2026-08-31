@@ -39,6 +39,7 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
         self.assertIn("python governance/compat/run_worker_return_fast_gate.py", text)
         self.assertIn("Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason", text)
         self.assertIn("## Rework Convergence Self-Proof", text)
+        self.assertIn("## Semantic Convergence Outcome", text)
         self.assertIn("consolidatedDefectClassSweep: PENDING_BEFORE_READY", text)
         self.assertIn("successorTrancheOpened: NO", text)
         self.assertIn("terminalReadinessVerdict: BLOCKED_WITH_REASON:", text)
@@ -210,6 +211,20 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     scaffold.write_scaffold(str(outside))
             self.assertFalse(outside.exists())
+
+    def test_semantic_convergence_outcome_block_is_fail_closed_successor(self):
+        """SCEC-T1: the emitted block is a real but unresolved successor,
+        preventing a worker from resetting the chain with scaffold defaults."""
+        import check_semantic_convergence_control as scec_checker
+
+        text = scaffold.build_scaffold("Example Worker Return")
+        blocks = scec_checker.find_active_blocks(text)
+        self.assertEqual(len(blocks), 1)
+        result = scec_checker.validate_block(blocks[0])
+        self.assertEqual(blocks[0]["chainMode"], "SUCCESSOR")
+        self.assertIn(
+            "PREDECESSOR_UNRESOLVED_SENTINEL", {v.code for v in result.violations}
+        )
 
     def test_cli_requires_exactly_one_action(self):
         self.assertEqual(scaffold.main([]), 2)

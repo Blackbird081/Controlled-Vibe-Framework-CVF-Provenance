@@ -175,8 +175,23 @@ still control.
 | Actual changed set | `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0026.md`; `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0027.md`; `docs/reference/agent_defect_intelligence/entries/README.md`; `docs/reference/guard_orientation/README.md` |
 | Manifest delta | MATCH |
 
+## Semantic Convergence And Escalation Control
+
+Every new or changed governed work order and worker return must declare
+exactly one Semantic Convergence Outcome block per
+`docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md`.
+The block constrains whether the declared problem chain has enough evidence
+to continue, must consolidate into one integrated root contract, or must stop
+for architectural reassessment; it never inspects private reasoning or scores
+semantic truth. `governance/compat/check_semantic_convergence_control.py`
+validates missing blocks and chain continuity fail-closed at the earliest
+applicable autorun phase and in all three local hook catalogs. Unchanged
+pre-activation history remains outside adoption. This routing note does not
+restate the standard's schema, invariants, or claim-to-proof mapping.
+
 ## Related Surfaces
 
+- `docs/reference/semantic_convergence_control/README.md` - Semantic Convergence And Escalation Control folder index
 - `CVF_SESSION/REQUIRED_STARTUP_GUARDS.md` - startup guard router
 - `docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md` - task-trigger lookup table
 - `AGENTS.md` - root agent instructions and mandatory acknowledgment
