@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r2_t1g_dispatched_pending_internal_implementation_return",
+  "currentMode": "gc010_scr_r2_t1g_closed_pass_canonical_hash_fail_closed_reissue_implementation",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute exactly one GC010-SCR-R2-T1G internal no-commit implementation worker from dispatch material dd3caef6c. The worker may change only the exact four approved implementation/test paths plus the named worker return, must run the focused offline proof and stop for independent review. T1E acceptance, package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Await fresh operator instruction before a separately governed GC010-SCR-R2-T1E harness acceptance re-evaluation or another explicitly selected GC010 system-chain tranche. T1G is CLOSED_PASS_BOUNDED at material 068d79391 with canonical ordinal approval hashing and fail-closed legacy reissue implemented and proven offline. Package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

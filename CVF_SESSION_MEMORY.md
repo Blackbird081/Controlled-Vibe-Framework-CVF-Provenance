@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1g_dispatched_pending_internal_implementation_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute one T1G internal no-commit implementation worker and stop for independent review; parked checkpoint=T1E acceptance, package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1g_closed_pass_canonical_hash_fail_closed_reissue_implementation`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await fresh operator instruction before a separately governed T1E harness acceptance re-evaluation or another selected GC010 tranche; parked checkpoint=package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t1g_dispatched_pending_internal_implementation_return`
-Current mode: `gc010_scr_r2_t1g_dispatched_pending_internal_implementation_return`; previous mode marker: `gc010_scr_r2_t1f_closed_pass_canonical_hash_reissue_decision`
-Previous mode: `gc010_scr_r2_t1f_closed_pass_canonical_hash_reissue_decision`
+Current mode marker: `gc010_scr_r2_t1g_closed_pass_canonical_hash_fail_closed_reissue_implementation`
+Current mode: `gc010_scr_r2_t1g_closed_pass_canonical_hash_fail_closed_reissue_implementation`; previous mode marker: `gc010_scr_r2_t1g_dispatched_pending_internal_implementation_return`
+Previous mode: `gc010_scr_r2_t1g_dispatched_pending_internal_implementation_return`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t1g_dispatched_pending_internal_implementation_return`. T1G implementation dispatch is committed at `dd3caef6c` from T1F accepted material `52a84fecf`. Execute exactly one internal no-commit worker that changes only `approval-binding.ts`, new `approval-binding.test.ts`, existing execute-route test, existing local-harness test, and the named worker return. It must prove canonical ordinal projection, strict shape rejection, legacy 409/stale with zero provider calls, raw lifecycle versions 0/1/2/3 and durable reopen, then stop for independent review. T1E acceptance and all package/barrel, route-source/provider/audit, production, distributed, live, public and deployment work remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1g_closed_pass_canonical_hash_fail_closed_reissue_implementation`. T1G is independently accepted `CLOSED_PASS_BOUNDED` at material `068d79391` over dispatch `dd3caef6c`: canonical ordinal approval hashing, strict own-shape rejection, legacy/missing fail-closed reissue, raw lifecycle versions 0/1/2/3 and durable reopen are proven offline. Await fresh operator instruction before separately governing T1E harness acceptance re-evaluation or another selected GC010 tranche. Package/barrel export, route-source/provider/audit, production consumer, distributed safety, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
