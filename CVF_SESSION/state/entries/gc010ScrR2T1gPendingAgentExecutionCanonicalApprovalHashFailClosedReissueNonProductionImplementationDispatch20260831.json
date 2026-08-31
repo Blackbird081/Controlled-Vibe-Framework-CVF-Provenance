@@ -1,0 +1,22 @@
+{
+  "stateOrder": 2420,
+  "stateKey": "gc010ScrR2T1gPendingAgentExecutionCanonicalApprovalHashFailClosedReissueNonProductionImplementationDispatch20260831",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "dd3caef6cb0915ca62946b4e86bba25975b66dcc",
+    "dispatchBaseHead": "6801859bd234178e184c0b038bb92930eae817ac",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1G_PENDING_AGENT_EXECUTION_CANONICAL_APPROVAL_HASH_FAIL_CLOSED_REISSUE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1G_PENDING_AGENT_EXECUTION_CANONICAL_APPROVAL_HASH_FAIL_CLOSED_REISSUE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1G_PENDING_AGENT_EXECUTION_CANONICAL_APPROVAL_HASH_FAIL_CLOSED_REISSUE_NON_PRODUCTION_IMPLEMENTATION_WORKER_RETURN_2026-08-31.md",
+    "implementationManifest": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/approvals/approval-binding.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/approvals/approval-binding.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/pending-agent-execution-local-harness.test.ts"
+    ],
+    "executionRoute": "one internal no-commit implementation worker followed by independent orchestrator review",
+    "providerExecutionAuthority": "FORBIDDEN",
+    "nextAllowedMove": "Execute the exact-manifest T1G worker and stop for independent review.",
+    "claimBoundary": "Dispatch only. T1E acceptance, package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public, deployment and production remain parked."
+  }
+}

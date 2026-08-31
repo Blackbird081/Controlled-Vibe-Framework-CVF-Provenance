@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r2_t1f_closed_pass_canonical_hash_reissue_decision",
+  "currentMode": "gc010_scr_r2_t1g_dispatched_pending_internal_implementation_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Await fresh operator instruction before authoring a separately committed GC010-SCR-R2-T1G implementation dispatch for the exact four-file manifest accepted by T1F. T1F is CLOSED_PASS_BOUNDED at material 52a84fecf with canonical approval-request hashing plus fail-closed legacy reissue selected. T1E harness acceptance remains blocked until implementation and regressions pass. No source/test repair, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute exactly one GC010-SCR-R2-T1G internal no-commit implementation worker from dispatch material dd3caef6c. The worker may change only the exact four approved implementation/test paths plus the named worker return, must run the focused offline proof and stop for independent review. T1E acceptance, package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_2026-08-31.md",
-    "baselineSha256": "c75b9c9295b49f6d4b612291660429a880e2a8902178443a4cec81ce0ac2f2ab",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_2026-08-31.md",
-    "workOrderSha256": "f5fe2d17d5905b659f9813394ab2b9eb12bfc880e8ab9132d66453d812fd1773"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1G_PENDING_AGENT_EXECUTION_CANONICAL_APPROVAL_HASH_FAIL_CLOSED_REISSUE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "baselineSha256": "b5da16bd198dc5e0906eb40d4cbb37ce9ae249d5a763012d6f43445ab590c8fa",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1G_PENDING_AGENT_EXECUTION_CANONICAL_APPROVAL_HASH_FAIL_CLOSED_REISSUE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workOrderSha256": "d987b374ac42bc3d750f11df540e0010207e1d7d42c62f5e3715313efecdae46"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

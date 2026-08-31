@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1f_closed_pass_canonical_hash_reissue_decision`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await fresh operator instruction before separately authoring T1G implementation dispatch; parked checkpoint=T1E harness acceptance, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1g_dispatched_pending_internal_implementation_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute one T1G internal no-commit implementation worker and stop for independent review; parked checkpoint=T1E acceptance, package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync and deployment.
 
 ## Current Mode
-`gc010_scr_r2_t1f_closed_pass_canonical_hash_reissue_decision`
+`gc010_scr_r2_t1g_dispatched_pending_internal_implementation_return`
 
 ## Purpose
 
@@ -111,14 +111,14 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Current Authority
 
-GC010-SCR-R2-T1F is `CLOSED_PASS_BOUNDED` at `52a84fecf` over dispatch `648063886`. It selects canonical approval-request hashing in `approval-binding.ts` and fail-closed reissue for legacy or missing hashes; it changes no source. T1E harness acceptance remains blocked until a separate implementation and regressions pass. Package export, route/provider/audit integration, production consumer and distributed safety remain parked.
+GC010-SCR-R2-T1G is dispatched at `dd3caef6c` from accepted T1F material `52a84fecf`. One internal no-commit worker may change exactly four implementation/test paths plus its return to implement canonical approval hashing and fail-closed legacy reissue. T1E acceptance, package export, route/provider/audit integration, production consumer and distributed safety remain parked.
 
 | Field | Value |
 |---|---|
-| authorityState | GC010-SCR-R2-T1F `CLOSED_PASS_BOUNDED` at `52a84fecf`; terminal `CANONICAL_APPROVAL_REQUEST_HASH_FAIL_CLOSED_REISSUE_READY_FOR_BOUNDED_IMPLEMENTATION` |
+| authorityState | GC010-SCR-R2-T1G `DISPATCH_READY` at `dd3caef6c`; no-commit implementation pending independent review |
 | roadmapPath | `docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md`; historical production T1 remains parked |
 | closureDependency | accepted T1A `f55b80826`; accepted T1B `da55f54d5`; accepted T1C `82c64a6f5`; accepted T1D `0e4aacdc6`; T1E dispatch `13dbbaa73`; blocked closure `d367ea1c7` |
-| nextAuthorityRequirement | fresh operator instruction before separately committed T1G dispatch for the accepted exact four-file implementation manifest |
+| nextAuthorityRequirement | one internal no-commit T1G worker return, followed by independent reviewer/closer disposition |
 
 ## Closure Evidence
 
@@ -169,7 +169,7 @@ GC010-SCR-R2-T1F is `CLOSED_PASS_BOUNDED` at `52a84fecf` over dispatch `64806388
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Await fresh operator instruction before separately authoring GC010-SCR-R2-T1G for the exact four-file implementation manifest accepted by T1F at `52a84fecf`. Do not implement automatically. T1E harness acceptance, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
+Execute exactly one GC010-SCR-R2-T1G internal no-commit worker from dispatch `dd3caef6c`; allow only the exact four implementation/test paths plus named worker return, then stop for independent review. T1E acceptance, package export, route/provider/audit integration, production consumer, distributed safety, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -204,17 +204,17 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize T1F closed-pass material `52a84fecf`, exact next checkpoint and generated projections. This authorizes no T1G dispatch, source repair or viable consumer.
+Authorized guard-maintenance scope: synchronize committed T1G dispatch `dd3caef6c`, pending-worker mode, exact next move, current-authority hashes and generated projections. This authorizes no implementation by the session steward or viable consumer claim.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1fPendingAgentExecutionApprovalSnapshotDurableCompatibilityCorrectionDecisionClosure20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1gPendingAgentExecutionCanonicalApprovalHashFailClosedReissueNonProductionImplementationDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: continuation and internal sub-agent execution under orchestrator/reviewer authority; T1F material `52a84fecf`, dispatch `648063886`, continuity `686823628`, repairs `0aa66b002`/`3949644a4`.
-Rollback boundary: revert only this T1F closure continuity sync without rewriting material evidence or prior closures.
-Not authorized: T1G without fresh instruction, source/test repair, harness acceptance, package export, route/provider/audit integration, production consumer, distributed safety, provider/API/network use, public mutation, deployment, production claim, compaction, or automatic successor.
+Operator authorization: continuation and internal sub-agent execution under orchestrator/reviewer authority; T1G dispatch is `dd3caef6c`, based on T1F `52a84fecf`.
+Rollback boundary: revert only this T1G dispatch continuity sync without rewriting dispatch material or prior closures.
+Not authorized: session-steward source edits, worker commit, T1E acceptance, package export, route/provider/audit integration, production consumer, distributed safety, provider/API/network use, public mutation, deployment, production claim, compaction, or automatic successor.
 
 ## Claim Boundary
 
-This handoff records T1F closed-pass decision material `52a84fecf`: canonical approval-request hashing with fail-closed legacy reissue is selected but not implemented. It does not accept the T1E harness, repair source, create a package export or production consumer, connect route/provider/audit systems, or permit distributed safety, provider/API/network, public mutation, deployment, production, compaction, or automatic T1G work.
+This handoff records T1G dispatch `dd3caef6c` and permits one exact-manifest internal no-commit implementation return. It does not accept T1E before review, create a package export or production consumer, change route/provider/audit systems, or permit distributed safety, provider/API/network, public mutation, deployment, production, compaction, or automatic successor work.
