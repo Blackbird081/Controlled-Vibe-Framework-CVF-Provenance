@@ -106,10 +106,11 @@ Field notes:
 - `resolutionEvidence` is an object keyed by blocker ID whose keys must equal
   `blockerDelta.resolved` exactly. Each value binds an `evidenceClass`
   (`ACCEPTED_REVIEW` or `EXECUTABLE_PROOF`), a normalized repository-relative
-  `evidencePath`, an immutable `sha256`, a non-empty `locator`, and an
-  optional `claimId` that links an `EXECUTABLE_PROOF` resolution to a claim in
-  this same block. An empty `resolved` requires an empty evidence map; the
-  scaffold generators emit that safe default. See Resolution Evidence below.
+  `evidencePath`, an immutable `sha256`, a canonical non-empty `locator` that
+  occurs exactly once in the hash-bound content, and an optional `claimId`
+  that links an `EXECUTABLE_PROOF` resolution to a claim in this same block.
+  An empty `resolved` requires an empty evidence map; the scaffold generators
+  emit that safe default. See Resolution Evidence below.
 - `counters` holds three cumulative non-negative integers
   (`partialReadyClosures`, `reviewerScopeExpansions`,
   `sameClaimCorrections`) plus the current consecutive streak of
@@ -210,17 +211,22 @@ The checker enforces exactly these thirteen invariants for every active block:
     `evidenceClass` (`ACCEPTED_REVIEW` or `EXECUTABLE_PROOF`), a normalized
     repository-relative `evidencePath` (no absolute, drive, backslash, or
     traversal path), an immutable 64-character lowercase hex `sha256`, and a
-    non-empty `locator`. The checker recomputes the referenced file hash and
+    canonical non-empty `locator` equal to its own trimmed form. The checker
+    reads each referenced path once per validation tree as bytes and uses that
+    cached snapshot for both the SHA-256 comparison and strict-UTF-8 locator resolution. It
     rejects a missing or unreadable path, an unsafe path, a hash mismatch, an
-    empty locator, or an invalid claim link. An `EXECUTABLE_PROOF` binding
-    must link a `claimId` to a claim in the same block whose `proofClass`
-    satisfies the claim-to-proof mapping (that is, not
-    `PROPOSAL_ONLY_NO_RUNTIME_READINESS`). An `ACCEPTED_REVIEW` binding
-    exposes the declared reviewer authority for inspection; the checker never
-    scores whether the cited prose is true. An empty `resolved` requires an
-    empty evidence map. When a successor consumes its predecessor, the checker
-    revalidates the predecessor's resolution-evidence hashes against the
-    current referenced files; evidence drift cannot inherit trust silently.
+    empty or non-canonical locator, non-UTF-8 content, a locator that does not
+    occur, a locator that occurs more than once, and an invalid claim link.
+    A locator's unique textual occurrence is an addressability check within the
+    cited file only; it does not establish relevance, correctness, or semantic
+    truth. An `EXECUTABLE_PROOF` binding must link a `claimId` to a claim in
+    the same block whose `proofClass` satisfies the claim-to-proof mapping
+    (that is, not `PROPOSAL_ONLY_NO_RUNTIME_READINESS`). An `ACCEPTED_REVIEW`
+    binding exposes the declared reviewer authority for inspection. An empty
+    `resolved` requires an empty evidence map. When a successor consumes its
+    predecessor, the checker revalidates the predecessor's resolution-evidence
+    hashes and locators against the current referenced files; evidence or
+    locator drift cannot inherit trust silently.
 
 ## Claim-To-Proof Mapping
 
@@ -285,13 +291,18 @@ mapping:
 }
 ```
 
-The checker recomputes the `evidencePath` file hash and requires exact equality
-with `sha256`; a missing or unreadable file, unsafe path, wrong hash, empty
-locator, or invalid claim link fails closed. Accepted-review bindings remain
-reviewer-semantic authority; the checker does not score whether the cited prose
-is true. Successor validation also recomputes each predecessor binding so a
-later evidence-target change fails the predecessor validity check. No broad
-retroactive scan of unchanged artifacts is introduced.
+The checker reads each `evidencePath` once per validation tree as bytes; the
+same cached snapshot is used to recompute the SHA-256 and resolve every locator
+bound to that path. The locator must be a
+canonical non-empty string that occurs exactly once in the strict-UTF-8-decoded
+content. A missing or unreadable file, unsafe path, wrong hash, empty or
+non-canonical locator, non-UTF-8 content, absent locator, or ambiguous locator
+fails closed with a stable violation code. Unique textual occurrence proves
+addressability only, never that the located statement is relevant, correct, or
+true; reviewer authority still decides semantic truth. Successor validation
+revalidates each predecessor binding against the same bytes, so a later
+evidence-target change or locator drift fails the predecessor validity check.
+No broad retroactive scan of unchanged artifacts is introduced.
 
 ## Historical Regression Replay
 

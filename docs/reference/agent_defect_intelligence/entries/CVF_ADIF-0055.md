@@ -146,6 +146,24 @@ resolver, so later evidence-target drift inherited trust silently. The
 accepted implementation revalidates predecessor resolution-evidence hashes at
 successor consumption time and carries a focused regression for that path.
 
+## Fourth Observed Instance - Locator Not Bound To Evidence Content
+
+SCEC-E2's accepted verdict was corrected to `INEFFECTIVE_REOPEN_FOUNDATION`
+after an adversarial probe demonstrated that a non-empty locator absent from
+its hash-bound evidence file still passed. The checker validated `locator`
+only as a non-empty string, so a binding proved which file was cited without
+proving that the declared location existed in that file.
+
+Prevention: the checker now reads each evidence path once per validation tree
+as bytes and uses that cached snapshot for both the SHA-256 comparison and all
+strict-UTF-8 locator resolution for that path. A locator is canonical only when it is a non-empty string equal to
+its own trimmed form, and its exact code-point sequence must occur exactly once
+in the decoded content. Zero occurrences yield
+`RESOLUTION_EVIDENCE_LOCATOR_NOT_FOUND`; multiple occurrences yield
+`RESOLUTION_EVIDENCE_LOCATOR_AMBIGUOUS`; surrounding whitespace and non-UTF-8
+content receive separate stable codes. Unique textual occurrence proves
+addressability only, never relevance, correctness, or semantic truth.
+
 ## Remediation
 
 Bind a Semantic Convergence Outcome block to every new or changed governed
@@ -225,6 +243,29 @@ are internally consistent.
 | Agent type | worker |
 | Invocation ID | `scec-t1-r2-adif-0055-2026-08-31` |
 | Expected manifest | this entry only, within the eleven-path SCEC-T1-R2 worker manifest |
+| Actual changed set | this entry only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this tranche |
+
+## Agent Operation Trace Block - SCEC-T1-R3 Locator-To-Content Hardening
+
+| Field | Evidence |
+|---|---|
+| Actor | delegated governance implementation worker |
+| Provider or surface | local private provenance workspace |
+| Session or invocation | SCEC-T1-R3 locator-to-content evidence binding hardening, 2026-08-31 |
+| Working directory | repository root |
+| Command or tool surface | governed reads, checker/test authoring, `python -m unittest`, governance gates |
+| Target paths | this entry; the SCEC standard; `governance/compat/check_semantic_convergence_control.py`; its focused tests; the worker return |
+| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R3_LOCATOR_TO_CONTENT_EVIDENCE_BINDING_HARDENING_2026-08-31.md` |
+| Before status evidence | `locator` was validated only as a non-empty string, so an absent non-empty locator passed |
+| After status evidence | same-snapshot byte resolution, strict-UTF-8, and canonical exact-unique locator enforcement with stable violation codes are machine-enforced |
+| Diff evidence | exact five-path SCEC-T1-R3 worker changed-set, per this worker return's changed-set section |
+| Approval boundary | local governance checker/test/standard hardening only; no product/runtime, provider/live, or public-sync claim |
+| Claim boundary | declared-evidence-shape defect record only; no semantic-truth-scoring or reasoning-trace-inspection claim |
+| Agent type | worker |
+| Invocation ID | `scec-t1-r3-adif-0055-2026-08-31` |
+| Expected manifest | this entry only, within the five-path SCEC-T1-R3 worker manifest |
 | Actual changed set | this entry only |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this tranche |

@@ -353,11 +353,17 @@ def _claim_proof_class(block: dict, claim_id: str) -> str | None:
         if isinstance(claim, dict) and claim.get("claimId") == claim_id:
             return claim.get("proofClass")
     return None
+def _decode_strict_utf8(content: bytes) -> str | None:
+    try:
+        return content.decode("utf-8")
+    except UnicodeDecodeError:
+        return None
 def _validate_resolution_evidence(
-    block: dict, evidence_hash_resolver: Any = None
+    block: dict,
+    evidence_bytes_resolver: Any = None,
+    evidence_snapshot_cache: dict[str, bytes | None] | None = None,
 ) -> list[BlockViolation]:
-    """Invariant 13: every `resolved` blocker binds exactly one immutable
-    evidence record; no missing, extra, or malformed binding passes."""
+    """Invariant 13: bind every resolved blocker to one immutable evidence record."""
     violations: list[BlockViolation] = []
     delta = block.get("blockerDelta")
     if not isinstance(delta, dict):
@@ -454,6 +460,14 @@ def _validate_resolution_evidence(
                     f"resolution-evidence binding for `{blocker_id}` must carry a non-empty `locator`",
                 )
             )
+        elif locator != locator.strip():
+            violations.append(
+                BlockViolation(
+                    "RESOLUTION_EVIDENCE_LOCATOR_NON_CANONICAL",
+                    f"resolution-evidence locator `{locator!r}` for `{blocker_id}` must equal "
+                    "its own trimmed form (no leading or trailing whitespace)",
+                )
+            )
         claim_id = binding.get("claimId")
         if claim_id is not None:
             if not isinstance(claim_id, str) or not claim_id.strip() or claim_id not in claim_ids:
@@ -483,28 +497,63 @@ def _validate_resolution_evidence(
                     )
                 )
         if (
-            evidence_hash_resolver is not None
+            evidence_bytes_resolver is not None
             and isinstance(path, str)
             and _is_safe_repo_relative_path(path)
             and isinstance(sha, str)
             and SHA256_RE.match(sha)
         ):
-            resolved_hash = evidence_hash_resolver(path)
-            if resolved_hash is None:
+            if evidence_snapshot_cache is not None and path in evidence_snapshot_cache:
+                content = evidence_snapshot_cache[path]
+            else:
+                content = evidence_bytes_resolver(path)
+                if evidence_snapshot_cache is not None:
+                    evidence_snapshot_cache[path] = content
+            if content is None:
                 violations.append(
                     BlockViolation(
                         "RESOLUTION_EVIDENCE_PATH_UNREADABLE",
                         f"resolution-evidence path `{path}` for `{blocker_id}` could not be read",
                     )
                 )
-            elif resolved_hash != sha:
-                violations.append(
-                    BlockViolation(
-                        "RESOLUTION_EVIDENCE_HASH_MISMATCH",
-                        f"declared sha256 `{sha}` for `{blocker_id}` does not match "
-                        f"recomputed hash `{resolved_hash}`",
+            else:
+                computed_hash = hashlib.sha256(content).hexdigest()
+                if computed_hash != sha:
+                    violations.append(
+                        BlockViolation(
+                            "RESOLUTION_EVIDENCE_HASH_MISMATCH",
+                            f"declared sha256 `{sha}` for `{blocker_id}` does not match "
+                            f"recomputed hash `{computed_hash}`",
+                        )
                     )
-                )
+                else:
+                    decoded = _decode_strict_utf8(content)
+                    if decoded is None:
+                        violations.append(
+                            BlockViolation(
+                                "RESOLUTION_EVIDENCE_CONTENT_DECODE_FAILED",
+                                f"resolution-evidence path `{path}` for `{blocker_id}` is not "
+                                "valid strict UTF-8; locator content cannot be resolved",
+                            )
+                        )
+                    elif isinstance(locator, str) and locator == locator.strip() and locator:
+                        count = decoded.count(locator)
+                        if count == 0:
+                            violations.append(
+                                BlockViolation(
+                                    "RESOLUTION_EVIDENCE_LOCATOR_NOT_FOUND",
+                                    f"resolution-evidence locator `{locator!r}` for `{blocker_id}` "
+                                    "does not occur in the hash-bound evidence content",
+                                )
+                            )
+                        elif count > 1:
+                            violations.append(
+                                BlockViolation(
+                                    "RESOLUTION_EVIDENCE_LOCATOR_AMBIGUOUS",
+                                    f"resolution-evidence locator `{locator!r}` for `{blocker_id}` "
+                                    f"occurs {count} times; it must occur exactly once",
+                                )
+                            )
     return violations
 def _validate_predecessor_state(block: dict, predecessor_block: dict) -> list[BlockViolation]:
     """Validate state continuity against the actual predecessor SCEC block."""
@@ -580,7 +629,8 @@ def validate_block(
     *,
     predecessor_hash_resolver: Any = None,
     predecessor_block_resolver: Any = None,
-    evidence_hash_resolver: Any = None,
+    evidence_bytes_resolver: Any = None,
+    _evidence_snapshot_cache: dict[str, bytes | None] | None = None,
 ) -> ValidationResult:
     """Validate one already-parsed candidate SCEC block.
     `predecessor_hash_resolver`, if given, is a callable
@@ -590,13 +640,17 @@ def validate_block(
     skipped, which is appropriate for pure-shape unit tests that supply their
     own already-consistent fixtures; the git-integration layer below always
     supplies a real resolver.
-    `evidence_hash_resolver`, if given, is the same-shaped callable for each
-    resolution-evidence `evidencePath`; when omitted, evidence file hash
-    cross-verification (invariant 13) is skipped while shape validation still
-    runs.
+    `evidence_bytes_resolver`, if given, is a callable
+    `(path: str) -> bytes | None` returning the raw evidence file bytes, or
+    `None` if the path cannot be read. The same byte snapshot drives both the
+    SHA-256 comparison and strict-UTF-8 locator resolution (invariant 13).
+    When omitted, evidence content and locator cross-verification is skipped
+    while shape validation still runs.
     """
     if not is_active_block(block):
         return ValidationResult(is_active=False)
+    if evidence_bytes_resolver is not None and _evidence_snapshot_cache is None:
+        _evidence_snapshot_cache = {}
     violations: list[BlockViolation] = []
     violations.extend(_validate_top_shape(block))
     # If top-shape is broken, downstream checks that assume shape would raise
@@ -609,7 +663,9 @@ def validate_block(
     violations.extend(_validate_runtime_readiness(block))
     violations.extend(_validate_claim_to_proof_mapping(block))
     violations.extend(_validate_ready_scope_pairing(block))
-    violations.extend(_validate_resolution_evidence(block, evidence_hash_resolver))
+    violations.extend(_validate_resolution_evidence(
+        block, evidence_bytes_resolver, _evidence_snapshot_cache,
+    ))
     if block.get("chainMode") == "SUCCESSOR" and predecessor_hash_resolver is not None:
         predecessor = block.get("predecessor")
         if isinstance(predecessor, dict):
@@ -642,7 +698,8 @@ def validate_block(
                     # could inherit trust silently through the chain.
                     predecessor_result = validate_block(
                         predecessor_blocks[0],
-                        evidence_hash_resolver=evidence_hash_resolver,
+                        evidence_bytes_resolver=evidence_bytes_resolver,
+                        _evidence_snapshot_cache=_evidence_snapshot_cache,
                     )
                     if predecessor_result.violations:
                         violations.append(
@@ -790,7 +847,7 @@ def _range_change_is_at_or_after_activation(path: str, base: str, head: str) -> 
     changed_commit = out.splitlines()[0].strip()
     code, _, _ = _run_git(["merge-base", "--is-ancestor", activation, changed_commit])
     return code == 0
-def _repo_predecessor_hash_resolver(path: str) -> str | None:
+def _repo_evidence_bytes_resolver(path: str) -> bytes | None:
     if not _is_safe_repo_relative_path(path):
         return None
     full = (REPO_ROOT / PurePosixPath(path)).resolve()
@@ -801,8 +858,12 @@ def _repo_predecessor_hash_resolver(path: str) -> str | None:
     if not full.is_file():
         return None
     try:
-        content = full.read_bytes()
+        return full.read_bytes()
     except OSError:
+        return None
+def _repo_predecessor_hash_resolver(path: str) -> str | None:
+    content = _repo_evidence_bytes_resolver(path)
+    if content is None:
         return None
     return hashlib.sha256(content).hexdigest()
 def _repo_predecessor_block_resolver(path: str) -> tuple[dict, ...] | None:
@@ -856,7 +917,7 @@ def diagnose_file(path: str, text: str, *, require_block: bool = False) -> FileD
             block,
             predecessor_hash_resolver=_repo_predecessor_hash_resolver,
             predecessor_block_resolver=_repo_predecessor_block_resolver,
-            evidence_hash_resolver=_repo_predecessor_hash_resolver,
+            evidence_bytes_resolver=_repo_evidence_bytes_resolver,
         )
         for violation in result.violations:
             violations.append((index, violation))

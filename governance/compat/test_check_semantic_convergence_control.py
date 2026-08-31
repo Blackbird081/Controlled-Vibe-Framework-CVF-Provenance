@@ -1,29 +1,9 @@
 #!/usr/bin/env python3
-"""Focused unit tests for the SCEC-T1 checker (SEMANTIC CONVERGENCE AND
-ESCALATION CONTROL).
-Covers the 16 required test families from the SCEC-T1 work order:
-1. valid initial-chain block
-2. missing block on a newly changed governed work order
-3. stable problem-key mismatch
-4. predecessor hash mismatch
-5. blocker set-algebra mismatch and silent disappearance
-6. one reviewer scope expansion requiring an integrated root contract
-7. two partial-ready closures requiring an integrated root contract
-8. two non-decreasing transitions requiring stop/reassessment
-9. historical T1J R2-to-R3 narrow replay rejection
-10. documentation-only proof prohibited from runtime readiness
-11. every claim-to-proof mapping
-12. quoted/example markers ignored
-13. unchanged historical files excluded from forward-only activation
-14. dispatch and worker-return scaffolds emitting required blocks
-15. checker present exactly once in common autorun and all three hook catalogs
-16. no existing gate selectively removed or suppressed
-17. SCEC-T1-R1: mixed-fence active-block discovery (direct reproducer, order
-    variants, immunity and malformed-candidate preservation)
-All file-state tests use `tempfile.TemporaryDirectory()` and never mutate the
-real workspace as test setup, per the work order's evidence requirements.
-"""
+"""Focused SCEC checker tests: chain state, escalation, evidence binding,
+parser immunity, scaffolds, and gate wiring. File-state tests use temporary
+directories and never mutate the real workspace."""
 from __future__ import annotations
+import hashlib
 import json
 import sys
 import tempfile
@@ -256,7 +236,7 @@ class PredecessorHashMismatchTests(unittest.TestCase):
         result = scec.validate_block(
             successor, predecessor_hash_resolver=lambda path: "a" * 64,
             predecessor_block_resolver=lambda path: (predecessor,),
-            evidence_hash_resolver=lambda path: "b" * 64)
+            evidence_bytes_resolver=lambda path: b"content")
         invalid = [v for v in result.violations if v.code == "PREDECESSOR_BLOCK_INVALID"]
         self.assertEqual(len(invalid), 1)
         self.assertIn("RESOLUTION_EVIDENCE_HASH_MISMATCH", invalid[0].message)
@@ -396,6 +376,11 @@ class ResolutionEvidenceBindingTests(unittest.TestCase):
             "locator": "Independent Reviewer Correction"}
         binding.update(overrides)
         return binding
+    def _locator_codes(self, content: bytes, locator: str) -> set[str]:
+        return {v.code for v in scec.validate_block(self._with_binding(
+            {"evidenceClass": "ACCEPTED_REVIEW", "evidencePath": "e.md",
+             "sha256": hashlib.sha256(content).hexdigest(), "locator": locator}),
+            evidence_bytes_resolver=lambda path: content).violations}
     def _with_binding(self, binding: object) -> dict:
         block = self._resolved_block(); block["resolutionEvidence"] = {"B1": binding}
         return block
@@ -423,10 +408,10 @@ class ResolutionEvidenceBindingTests(unittest.TestCase):
             self._codes(self._with_binding(self._accepted(evidencePath="../outside.md"))))
     def test_unreadable_path_fails(self) -> None:
         self.assertIn("RESOLUTION_EVIDENCE_PATH_UNREADABLE", self._codes(
-            self._with_binding(self._accepted()), evidence_hash_resolver=lambda path: None))
+            self._with_binding(self._accepted()), evidence_bytes_resolver=lambda path: None))
     def test_hash_mismatch_fails(self) -> None:
         self.assertIn("RESOLUTION_EVIDENCE_HASH_MISMATCH", self._codes(
-            self._with_binding(self._accepted()), evidence_hash_resolver=lambda path: "b" * 64))
+            self._with_binding(self._accepted()), evidence_bytes_resolver=lambda path: b"content"))
     def test_invalid_hash_shape_fails(self) -> None:
         self.assertIn("RESOLUTION_EVIDENCE_INVALID_HASH_SHAPE",
             self._codes(self._with_binding(self._accepted(sha256="not-a-hash"))))
@@ -465,10 +450,44 @@ class ResolutionEvidenceBindingTests(unittest.TestCase):
             },
         )
         self.assertEqual(scec.validate_block(block).violations, ())
-    def test_evidence_hash_match_passes(self) -> None:
-        result = scec.validate_block(self._with_binding(self._accepted()),
-            evidence_hash_resolver=lambda path: "a" * 64)
-        self.assertEqual(result.violations, ())
+    def test_locator_content(self) -> None:
+        self.assertEqual(self._locator_codes(b"Independent Reviewer Correction\n", "Independent Reviewer Correction"), set())
+        self.assertEqual(self._locator_codes(b"x\n", "THIS_LOCATOR_DOES_NOT_EXIST_ANYWHERE_IN_THE_FILE"), {"RESOLUTION_EVIDENCE_LOCATOR_NOT_FOUND"})
+        self.assertEqual(self._locator_codes(b"token token\n", "token"), {"RESOLUTION_EVIDENCE_LOCATOR_AMBIGUOUS"})
+        self.assertEqual(self._locator_codes(b"y\n", "  padded  "), {"RESOLUTION_EVIDENCE_LOCATOR_NON_CANONICAL"})
+        self.assertEqual(self._locator_codes(b"\xff\xfe\n", "anything"), {"RESOLUTION_EVIDENCE_CONTENT_DECODE_FAILED"})
+    def test_exact_e2_absent_locator_replay(self) -> None:
+        path = "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md"
+        content = (scec.REPO_ROOT / path).read_bytes(); digest = hashlib.sha256(content).hexdigest()
+        self.assertEqual(digest, "93dc80a448472aa006c4bd9585d9e974224363dd34bf2202f22588708195f587")
+        block = self._with_binding({"evidenceClass": "ACCEPTED_REVIEW", "evidencePath": path, "sha256": digest,
+            "locator": "THIS_LOCATOR_DOES_NOT_EXIST_ANYWHERE_IN_THE_FILE"})
+        codes = self._codes(block, evidence_bytes_resolver=scec._repo_evidence_bytes_resolver)
+        self.assertEqual(codes, {"RESOLUTION_EVIDENCE_LOCATOR_NOT_FOUND"})
+    def test_same_evidence_path_is_read_once_per_validation_tree(self) -> None:
+        content = b"UNIQUE_A\nUNIQUE_B\n"; calls: list[str] = []
+        binding = {"evidenceClass": "ACCEPTED_REVIEW", "evidencePath": "same.md", "sha256": hashlib.sha256(content).hexdigest()}
+        block = _base_block(blockerDelta={"prior": ["B1", "B2"], "resolved": ["B1", "B2"],
+            "retained": [], "new": [], "reopened": [], "current": []},
+            resolutionEvidence={"B1": {**binding, "locator": "UNIQUE_A"}, "B2": {**binding, "locator": "UNIQUE_B"}})
+        def resolver(path: str) -> bytes: calls.append(path); return content
+        self.assertEqual(scec.validate_block(block, evidence_bytes_resolver=resolver).violations, ())
+        self.assertEqual(calls, ["same.md"])
+    def test_r2_symbol_locators_resolve_exactly_once(self) -> None:
+        content = Path(__file__).resolve().read_bytes()
+        for sym in ("ResolutionEvidenceBinding", "HistoricalT1JReplayRejection"):
+            self.assertEqual(self._locator_codes(content, sym + "Tests"), set())
+    def test_successor_consumes_invalid_predecessor_locator(self) -> None:
+        content = b"no marker\n"
+        pred = _base_block(chainMode="SUCCESSOR", chainOrdinal=1, predecessor={"path": "p.md", "sha256": "0" * 64},
+            blockerDelta={"prior": ["O"], "resolved": ["O"], "retained": [], "new": [], "reopened": [], "current": []},
+            resolutionEvidence={"O": {"evidenceClass": "ACCEPTED_REVIEW", "evidencePath": "e.md", "sha256": hashlib.sha256(content).hexdigest(), "locator": "MISSING"}})
+        succ = _base_block(chainMode="SUCCESSOR", chainOrdinal=2, predecessor={"path": "p.md", "sha256": "1" * 64})
+        result = scec.validate_block(succ, predecessor_hash_resolver=lambda path: "1" * 64,
+            predecessor_block_resolver=lambda path: (pred,), evidence_bytes_resolver=lambda path: content)
+        invalid = [v for v in result.violations if v.code == "PREDECESSOR_BLOCK_INVALID"]
+        self.assertEqual(len(invalid), 1)
+        self.assertIn("RESOLUTION_EVIDENCE_LOCATOR_NOT_FOUND", invalid[0].message)
     def test_empty_resolved_without_evidence_is_ok(self) -> None:
         block = _base_block()
         block.pop("resolutionEvidence", None)
