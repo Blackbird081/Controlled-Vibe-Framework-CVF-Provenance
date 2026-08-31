@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: GCLH_T0_REVIEWER_ACCEPTED_T1_DESIGN_AUTHORIZED
+Status: GCLH_T1_DESIGN_ACCEPTED_T2_WORK_ORDER_REQUIRED
 
 docType: roadmap
 
@@ -21,10 +21,11 @@ governance control-loss record and its independent downstream review. Core
 learning must complete before any refresh or application to the named
 workspace/project.
 
-Current decision: authorize GCLH-T0 intake and owner reconciliation only.
-Later design, checker implementation, schema capability changes, downstream
-refresh, public-sync, runtime, provider/live, deployment, and production work
-require the entry evidence and review stated in this roadmap.
+Current decision: GCLH-T1 design is accepted bounded. GCLH-T2 remains held
+until a fresh protected-path work order names exact owner changes, hostile
+tests, rollback evidence, and Core Guard Self-Protection authorization. Schema
+capability, downstream refresh, public-sync, runtime, provider/live,
+deployment, and production remain parked.
 
 ## Purpose
 
@@ -249,7 +250,7 @@ evidence analysis. Public-sync is a separate held boundary.
 
 ## Claim Boundary
 
-This roadmap authorizes bounded intake and owner reconciliation. It does not
-accept its own findings, implement a Core control, refresh the downstream
-workspace/project, or make runtime, provider/live, public, deployment, release,
-or production claims.
+This roadmap records accepted T0 intake and accepted bounded T1 design. It does
+not implement a Core control, open T2 without a protected-path work order,
+refresh the downstream workspace/project, or make runtime, provider/live,
+public, deployment, release, or production claims.
