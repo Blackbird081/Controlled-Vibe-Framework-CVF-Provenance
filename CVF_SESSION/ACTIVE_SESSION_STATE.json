@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "scec_foundation_effectiveness_loop_closed_gc010_architecture_reassessment_pending",
-  "previousMode": "scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return",
+  "currentMode": "gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending",
+  "previousMode": "scec_foundation_effectiveness_loop_closed_gc010_architecture_reassessment_pending",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15987,5 +15987,27 @@
     "nextAllowedMove": "Author one GC010 root-architecture reassessment decision packet under the accepted SCEC stop. Do not reopen narrow T1J-R4 or product implementation automatically.",
     "claimBoundary": "SCEC foundation effectiveness loop is closed for locator/content and single-snapshot enforcement only. Semantic truth remains reviewer-owned. No T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment or production authority follows automatically."
   },
-  "nextAllowedMove": "Author and dispatch exactly one GC010 root-architecture reassessment decision packet that consumes the accepted SCEC stop history and SCEC-E3 effectiveness closure. It must decide ownership, lifecycle and integration boundaries at architecture level before any product successor is considered; it must not reopen narrow T1J-R4 automatically. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked pending that decision. Latest finalized numbered LHW wave remains LHW24."
+  "gc010ScrR3T0RootArchitectureReassessmentClosure20260831": {
+    "status": "CLOSED_PARKED",
+    "problemKey": "gc010-single-consumer-boundary-root-architecture",
+    "assessment": "docs/assessments/CVF_GC010_SCR_R3_T0_ROOT_ARCHITECTURE_REASSESSMENT_DECISION_2026-08-31.md",
+    "assessmentSha256": "94cba92d8ec0570a2f659be693c9b18bd86838528d5f0e1bb66874d862702182",
+    "completionReview": "docs/reviews/CVF_GC010_SCR_R3_T0_ROOT_ARCHITECTURE_REASSESSMENT_COMPLETION_2026-08-31.md",
+    "completionReviewSha256": "f6d0ec46f85278a8db9506ad3928f27ca6fc9e343b9457397dcb8a5e4e70e204",
+    "materialCommit": "e867d5432",
+    "terminal": "ROOT_ARCHITECTURE_REASSESSED_NO_TRUTHFUL_PRODUCT_OWNER_RETAIN_PARKED",
+    "successorTrancheOpened": "NO",
+    "reopenContract": [
+      "explicit deployment topology: single long-lived Node process with persistent disk or a named external transactional store",
+      "route-native immutable-payload adapter owning normalized intent, actor/session binding, guard-policy version and configuration digests, and truthful environment",
+      "exact approval, gateway, create, claim, audit, begin, provider and terminal ordering",
+      "authenticated recovery owner and policy for CLAIMED and EXECUTING states",
+      "adversarial concurrency, conflict, pre-call crash, post-call ambiguity, retry and early-return tests"
+    ],
+    "missingFactTerminal": "NO_VIABLE_PRODUCT_OWNER_RETAIN_PARKED",
+    "verification": "Reviewer-fast 67/67 PASS; material pre-commit 88/88 PASS; committed-range closure content checks PASS; no source, runtime, provider, network, public-sync or deployment mutation.",
+    "nextAllowedMove": "Select the next open system-chain roadmap item outside GC010. Do not create another narrow GC010 tranche unless all five reopen facts arrive in one packet.",
+    "claimBoundary": "This is a root architecture and ownership decision, not product/runtime implementation or production readiness. T1J-R4, T1K and T2 remain cancelled or parked."
+  },
+  "nextAllowedMove": "Select the next open system-chain roadmap item outside GC010 from current roadmap and state authority. GC010 is closed parked at root-architecture decision e867d5432 and may reopen only when one packet supplies all five conjunctive facts: explicit deployment topology, a route-native immutable-payload adapter, exact execution ordering, an authenticated recovery owner and policy, and adversarial failure/concurrency tests. Missing any fact terminates NO_VIABLE_PRODUCT_OWNER_RETAIN_PARKED; do not create another narrow GC010 tranche. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
