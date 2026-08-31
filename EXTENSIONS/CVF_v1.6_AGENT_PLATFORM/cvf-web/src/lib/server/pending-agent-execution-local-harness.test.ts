@@ -1,4 +1,5 @@
 import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -52,16 +53,11 @@ function makeTempDb(label: string): { dir: string; dbPath: string } {
 }
 
 function buildSnapshot(): ApprovalRequestSnapshot {
-    return {
-        actorAuthMode: ACTOR.actorAuthMode,
-        actorId: ACTOR.actorId,
-        actorOrgId: ACTOR.actorOrgId,
-        actorTeamId: ACTOR.actorTeamId,
-        intent: 'run the bounded local lifecycle',
-        provider: 'test-provider',
+    return buildApprovalRequestSnapshot({
         templateId: 'tpl-1',
         templateName: 'Template One',
-    };
+        intent: 'run the bounded local lifecycle',
+    }, 'test-provider', ACTOR);
 }
 
 function buildPolicySnapshot(overrides: Partial<GuardPolicySnapshot> = {}): GuardPolicySnapshot {
@@ -261,17 +257,39 @@ describe('pending-agent-execution local harness', () => {
         });
     });
 
-    it('reproduces the current production snapshot-builder ordering contradiction after serialization', () => {
-        const { dbPath } = makeTempDb('production-snapshot-order');
-        const productionSnapshot = JSON.parse(JSON.stringify(buildApprovalRequestSnapshot({
+    it('marks a legacy-hash CREATED row stale without a grant while using the raw canonical builder snapshot', () => {
+        const { dbPath } = makeTempDb('legacy-snapshot-hash');
+        const productionSnapshot = buildApprovalRequestSnapshot({
             templateId: 'tpl-1',
             templateName: 'Template One',
             intent: 'run the bounded local lifecycle',
-        }, 'test-provider', ACTOR))) as ApprovalRequestSnapshot;
-        const approval = buildApprovalRecord(productionSnapshot);
+        }, 'test-provider', ACTOR);
+        const legacySnapshot = {
+            templateId: productionSnapshot.templateId,
+            templateName: productionSnapshot.templateName,
+            intent: productionSnapshot.intent,
+            provider: productionSnapshot.provider,
+            knowledgeCollectionId: productionSnapshot.knowledgeCollectionId,
+            actorId: productionSnapshot.actorId,
+            actorOrgId: productionSnapshot.actorOrgId,
+            actorTeamId: productionSnapshot.actorTeamId,
+            actorAuthMode: productionSnapshot.actorAuthMode,
+        };
+        const legacyHash = createHash('sha256')
+            .update(JSON.stringify(legacySnapshot), 'utf8')
+            .digest('hex');
+        expect(legacyHash).not.toBe(computeApprovalRequestHash(productionSnapshot));
+        const approval = {
+            ...buildApprovalRecord(productionSnapshot),
+            requestHash: legacyHash,
+        };
+        const payload = {
+            ...buildPayload(productionSnapshot),
+            approvalRequestHash: legacyHash,
+        };
 
         const outcome = runPendingAgentExecutionLocalHarness(buildInput(dbPath, {
-            payload: buildPayload(productionSnapshot),
+            payload,
             lookupApproval: () => approval,
         }));
 
@@ -284,6 +302,52 @@ describe('pending-agent-execution local harness', () => {
             attemptIndex: null,
             terminalReason: 'STALE_APPROVAL_SNAPSHOT_HASH_MISMATCH',
         });
+    });
+
+    it('gives a non-CREATED legacy-hash row no new grant or execution authority', () => {
+        const { dbPath } = makeTempDb('legacy-non-created');
+        const snapshot = buildSnapshot();
+        const legacyHash = createHash('sha256').update(JSON.stringify({
+            templateId: snapshot.templateId,
+            templateName: snapshot.templateName,
+            intent: snapshot.intent,
+            provider: snapshot.provider,
+            knowledgeCollectionId: snapshot.knowledgeCollectionId,
+            actorId: snapshot.actorId,
+            actorOrgId: snapshot.actorOrgId,
+            actorTeamId: snapshot.actorTeamId,
+            actorAuthMode: snapshot.actorAuthMode,
+        }), 'utf8').digest('hex');
+        const legacyPayload = { ...buildPayload(snapshot), approvalRequestHash: legacyHash };
+        const seedStore = new PendingAgentExecutionSqliteStore(dbPath);
+        seedStore.create('pending-1', CREATED_AT, legacyPayload);
+        const seededClaim = seedStore.compareAndSwap('pending-1', 0, 'CREATED', {
+            kind: 'CLAIM', claimId: 'legacy-claim', claimedAt: CLAIMED_AT,
+            claimedBy: ACTOR, requestId: 'legacy-request',
+        });
+        expect(seededClaim.ok).toBe(true);
+        const recordBeforeRejectedClaim = seedStore.get('pending-1');
+        seedStore.close();
+
+        const runtime = composition.buildPendingAgentExecutionRuntime(dbPath);
+        const result = runtime.claim({
+            pendingExecutionId: 'pending-1',
+            actor: ACTOR,
+            requestId: 'new-request',
+            now: CLAIMED_AT,
+            lookupApproval: () => ({ ...buildApprovalRecord(snapshot), requestHash: legacyHash }),
+            currentPolicySnapshot: buildPolicySnapshot(),
+            generateClaimId: () => 'new-claim',
+        });
+        expect(result.ok).toBe(false);
+        expect(result.reason).toBe('ALREADY_CLAIMED_OR_TERMINAL');
+        expect(result.grant).toBeNull();
+        expect(result.record?.state.status).toBe('CLAIMED');
+        runtime.close();
+
+        const reopenedStore = new PendingAgentExecutionSqliteStore(dbPath);
+        expect(reopenedStore.get('pending-1')).toEqual(recordBeforeRejectedClaim);
+        reopenedStore.close();
     });
 
     it('overrides an earlier successful terminal outcome when close fails and exposes no capability or raw error', () => {
