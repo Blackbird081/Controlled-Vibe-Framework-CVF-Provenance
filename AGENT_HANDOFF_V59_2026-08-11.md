@@ -2,8 +2,7 @@
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
-- Current GC010 decision closure: T1J-R3 material `b3589ce78`; terminal `PARTIAL_READY_REQUIRES_ONE_NAMED_IMPLEMENTATION_PRECONDITION`; successor not opened.
-
+- Current SCEC-T1 foundation dispatch: `10345d3addef3415fc4f093a68f8e019f1f3e969`; exact 21-path external-worker manifest; GC010 T1J-R4 remains parked as the first post-closure effectiveness test.
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
 - Branch: `main`. Current material HEAD recorded for this handoff: `b3589ce7847196d707a96e26b706cfd50c1c433f` (GC010-SCR-R2-T1J-R3 corrected decision closure). DeepSeek Harness absorption material remains `7b8514526`. Public protocol 1.2 source-pack profile is live at public `main` commit `d7860138350130d6d105826ce186f1beeaba3c2d`; GitHub public-sync preflight run `33245798802` passed; `EXTERNAL_AGENT_READ` refresh receipt SHA-256 is `ccfd4ac603163043327c0d33bcce757b68e5e53c4bcd7bede33d13dd07628e39`. The prior DeepSeek task capsule was removed from the reusable packet root and must be regenerated for the next pinned repository.
@@ -40,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1j_r3_closed_partial_ready_production_composition_owner_contract_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await authorization for one consolidated T1J-R4 production composition owner-contract decision; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`scec_t1_dispatched_pending_external_governance_implementation_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed SCEC-T1 packet to one external governance worker and await the exact uncommitted return; parked checkpoint=GC010 T1J-R4 until foundation closure, plus T1K, T2, product/runtime implementation, provider/live, public sync and deployment.
 
 ## Current Mode
-`gc010_scr_r2_t1j_r3_closed_partial_ready_production_composition_owner_contract_required`
+`scec_t1_dispatched_pending_external_governance_implementation_return`
 
 ## Purpose
 
@@ -57,6 +56,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Latest Work / Changes
 
+- SCEC-T1 foundation dispatch is committed at `10345d3addef3415fc4f093a68f8e019f1f3e969` after pre-dispatch 80/80 and pre-commit 87/87. Its one integrated worker manifest creates the semantic-convergence standard, fail-closed checker, GC010 T1J-R1-through-R3 negative replay, focused tests, earliest autorun/local-hook bindings, default dispatch/return scaffold projections, and ADIF-0055. Worker commit is forbidden. GC010 T1J-R4 is the first post-foundation effectiveness case but remains parked until independent SCEC-T1 closure.
 - EAFR-R12 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `1e31db99a`; terminal roadmap commit `fae74ca77`. Reviewer repaired candidate-level evaluator order, denied-candidate call-budget accounting, unauthorized-provider receipt endpoint resolution and the return packet. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed; zero provider/live/credential calls. EAFR successor count is zero; RFR may only be reconsidered separately.
 - MPA-AI-T0 is reviewer-accepted `STOP_NO_NEW_VALUE`: all 50 local mixed-origin files are classified, arXiv:2608.21230 claims are bounded at the primary source, the serious memory-to-prompt path duplicates EAFR/Memory/Truth ownership, and the eight-file utility benchmark is parked demand-gated with zero provider/live calls.
 - EAFR-R7 is reviewer-accepted `CLOSED_BLOCKED` at material commit `74cf99354`: the fail-closed guard is retained after protocol-relative reviewer repair; focused 26/26 and TypeScript pass; full non-live is 3465 pass/88 named fail because ambient Upstash egress is blocked. The adapter injection residual remains. R8 source verification/dispatch authoring is next; RFR stays parked.
@@ -112,14 +112,15 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Current Authority
 
-GC010-SCR-R2-T1J-R3 is dispatched at material `d7b0e274f` over base `f6364b9f5`. It is decision-only and requires one complete interface selection across route ordering, payload/policy-snapshot ownership, SQLite lifecycle, and restart recovery authority. Formal T1, T1K and T2 remain parked.
+SCEC-T1 is dispatched at material `10345d3addef3415fc4f093a68f8e019f1f3e969` over base `9bdc372a43f91be54a1302f6d1a1493ab1ad8793`. It is one integrated governance-foundation implementation covering the canonical rule, machine checker, historical negative replay, gate placement, scaffolds, tests and learning entry. GC010 product work remains parked.
 
 | Field | Value |
 |---|---|
-| authorityState | GC010-SCR-R2-T1J-R3 `DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN` at `d7b0e274f` |
-| roadmapPath | `docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md`; historical production T1 remains parked |
-| closureDependency | accepted T1A `f55b80826`; accepted T1B `da55f54d5`; accepted T1C `82c64a6f5`; accepted T1D `0e4aacdc6`; T1E dispatch `13dbbaa73`; blocked closure `d367ea1c7` |
-| nextAuthorityRequirement | exact two-file T1J-R3 worker return followed by independent reviewer closure; no automatic T1K/T2 |
+| authorityState | SCEC-T1 `DISPATCHED_PENDING_EXTERNAL_GOVERNANCE_IMPLEMENTATION_RETURN` at `10345d3ad` |
+| baselinePath | `docs/baselines/CVF_GC018_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md` |
+| closureDependency | exact 21-path worker manifest plus exact uncommitted worker return, then independent reviewer closure |
+| nextAuthorityRequirement | transfer committed SCEC-T1 packet to one external worker; no automatic T1J-R4, T1K or T2 |
 
 ## Closure Evidence
 
@@ -170,7 +171,7 @@ GC010-SCR-R2-T1J-R3 is dispatched at material `d7b0e274f` over base `f6364b9f5`.
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Transfer committed T1J-R3 packet `d7b0e274f` to one external worker for exactly the named assessment and worker return. Worker must not stage or commit. T1K and T2 remain parked; no implementation, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24.
+Transfer committed SCEC-T1 packet `10345d3addef3415fc4f093a68f8e019f1f3e969` to one external governance implementation worker for exactly the 21-path manifest and the named worker return. Worker must not stage or commit. After independent closure, GC010 T1J-R4 will be the first real effectiveness test; it is not open now. T1K, T2, product/runtime implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -205,16 +206,15 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize corrected T1J-R3 decision material `b3589ce78`, terminal, named consolidated precondition and generated projections. This authorizes no T1J-R4 dispatch, T1K implementation, formal T1/T2 release, source edit, package export or production trigger.
+Authorized guard-maintenance scope: synchronize committed SCEC-T1 dispatch material `10345d3addef3415fc4f093a68f8e019f1f3e969`, exact authority hashes, external-worker next move and generated projections. This continuity edit implements no checker and authorizes no T1J-R4 dispatch, product/runtime edit, T1K/T2, provider/live, public sync, deployment or production trigger.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1jR3PendingRuntimeRouteIntegrationInterfaceDecisionClosure20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/scecT1SemanticConvergenceEscalationControlFoundationDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md`.
 Protected guard paths:
-- `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
-- `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: the operator supplied the completed T1J-R3 worker return and granted the orchestrator/reviewer authority to review, correct and close it.
-Rollback boundary: revert only this T1J-R3 closure continuity sync without rewriting material evidence or prior closures.
-Not authorized: T1J-R4 dispatch, T1K, formal T1/T2 release, source/test/roadmap edit, package export, route/provider/audit implementation, provider/API/network use, public mutation, deployment, production claim or compaction.
+- N/A with reason: this continuity sync changes no guard or checker path.
+Operator authorization: the operator explicitly authorized raising the CVF foundation and validating it with successor tranches while retaining orchestrator/reviewer and external-worker role separation.
+Rollback boundary: revert only this SCEC-T1 dispatch continuity sync without rewriting committed dispatch material or prior GC010 closure evidence.
+Not authorized: SCEC worker commit, T1J-R4 dispatch before foundation closure, product/runtime edit, T1K/T2, provider/API/network use, public mutation, deployment, production claim or compaction.
 ## Claim Boundary
 
-This handoff records T1J-R3 dispatch material `d7b0e274f`: the worker may select one complete integration interface and write exactly two uncommitted documents. It does not authorize T1K, source/test/roadmap edits, a package export or production trigger, T2, route/provider/audit source changes, provider/API/network, public mutation, deployment, production, compaction or automatic successor work.
+This handoff records SCEC-T1 dispatch material `10345d3addef3415fc4f093a68f8e019f1f3e969`: the worker may change exactly the 21 authorized governance paths and must return them uncommitted. It does not claim SCEC is implemented, authorize semantic-truth scoring, open GC010 T1J-R4, or authorize product/runtime, T1K/T2, provider/API/network, public mutation, deployment, production, compaction or automatic successor work.

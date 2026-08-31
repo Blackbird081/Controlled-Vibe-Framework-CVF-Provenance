@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
-    "baselineSha256": "1235a7113ddb5c083831eb069816631d9873f37216deee7006ade318d0b8dad6",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
-    "workOrderSha256": "31cba1bd715d1b22b077c2ffce48ca1418d7144cbbbd70148d670ae476cfb3f2"
+    "baselinePath": "docs/baselines/CVF_GC018_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md",
+    "baselineSha256": "7f03ab47ebe347e8e47980a94454c4834f82304bf1df25a34ad6e03cb081a6fc",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md",
+    "workOrderSha256": "a8f5fdf572ee5cfbef2ed27aa956bfdb32a55e7d45e751c185b2c06d65efa14d"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1j_r3_closed_partial_ready_production_composition_owner_contract_required",
-  "previousMode": "gc010_scr_r2_t1j_r3_dispatched_pending_external_integration_interface_decision_return",
+  "currentMode": "scec_t1_dispatched_pending_external_governance_implementation_return",
+  "previousMode": "gc010_scr_r2_t1j_r3_closed_partial_ready_production_composition_owner_contract_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15810,5 +15810,22 @@
     "nextAllowedMove": "Await operator authorization for one consolidated T1J-R4 route-native production pending-execution composition owner-contract decision; no single-gap follow-up may claim closure.",
     "claimBoundary": "Decision closure only. Candidate B is preferred but not source-compatible or implementation-ready. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked."
   },
-  "nextAllowedMove": "Await operator authorization for one consolidated GC010-SCR-R2-T1J-R4 route-native production pending-execution composition owner-contract decision covering deterministic create/conflict semantics, complete payload and policy provenance, truthful production environment identity, exact consume/create/claim/begin/provider/terminal ordering, process-lifetime SQLite ownership, and authenticated restart recovery. No single-gap follow-up may claim closure. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "scecT1SemanticConvergenceEscalationControlFoundationDispatch20260831": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_GOVERNANCE_IMPLEMENTATION_RETURN",
+    "problemKey": "cvf-semantic-convergence-and-escalation-control",
+    "dispatchCommit": "10345d3addef3415fc4f093a68f8e019f1f3e969",
+    "dispatchBaseHead": "9bdc372a43f91be54a1302f6d1a1493ab1ad8793",
+    "baseline": "docs/baselines/CVF_GC018_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md",
+    "baselineSha256": "7f03ab47ebe347e8e47980a94454c4834f82304bf1df25a34ad6e03cb081a6fc",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md",
+    "workOrderSha256": "a8f5fdf572ee5cfbef2ed27aa956bfdb32a55e7d45e751c185b2c06d65efa14d",
+    "workerReturn": "docs/reviews/CVF_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_WORKER_RETURN_2026-08-31.md",
+    "requiredArtifactCount": 21,
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "acceptanceModel": "Canonical standard, fail-closed checker, GC010 T1J-R1-through-R3 negative replay, focused tests, earliest gate bindings, and default scaffold projections must close together.",
+    "effectivenessTest": "After SCEC-T1 closes, GC010-SCR-R2-T1J-R4 is the first real successor packet required to use the control. Any unjustified narrow continuation or machine-observable miss reopens SCEC hardening before product work continues.",
+    "nextAllowedMove": "Transfer the committed SCEC-T1 packet to one external worker and await the exact uncommitted return for independent review.",
+    "claimBoundary": "Governance-foundation dispatch only. No implemented SCEC, semantic-truth scoring, GC010 product/runtime change, provider/live action, public sync, deployment or production authority."
+  },
+  "nextAllowedMove": "Transfer committed SCEC-T1 packet 10345d3addef3415fc4f093a68f8e019f1f3e969 to one external governance implementation worker. The worker must implement exactly the 21-path manifest, run the required gates, leave all changes uncommitted, and return the exact named worker return for independent review. GC010-SCR-R2-T1J-R4 is the first post-foundation effectiveness case but remains parked until SCEC-T1 closes. T1K, T2, product/runtime implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

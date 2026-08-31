@@ -1,0 +1,21 @@
+{
+  "stateOrder": 2560,
+  "stateKey": "scecT1SemanticConvergenceEscalationControlFoundationDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_GOVERNANCE_IMPLEMENTATION_RETURN",
+    "problemKey": "cvf-semantic-convergence-and-escalation-control",
+    "dispatchCommit": "10345d3addef3415fc4f093a68f8e019f1f3e969",
+    "dispatchBaseHead": "9bdc372a43f91be54a1302f6d1a1493ab1ad8793",
+    "baseline": "docs/baselines/CVF_GC018_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md",
+    "baselineSha256": "7f03ab47ebe347e8e47980a94454c4834f82304bf1df25a34ad6e03cb081a6fc",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md",
+    "workOrderSha256": "a8f5fdf572ee5cfbef2ed27aa956bfdb32a55e7d45e751c185b2c06d65efa14d",
+    "workerReturn": "docs/reviews/CVF_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_WORKER_RETURN_2026-08-31.md",
+    "requiredArtifactCount": 21,
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "acceptanceModel": "Canonical standard, fail-closed checker, GC010 T1J-R1-through-R3 negative replay, focused tests, earliest gate bindings, and default scaffold projections must close together.",
+    "effectivenessTest": "After SCEC-T1 closes, GC010-SCR-R2-T1J-R4 is the first real successor packet required to use the control. Any unjustified narrow continuation or machine-observable miss reopens SCEC hardening before product work continues.",
+    "nextAllowedMove": "Transfer the committed SCEC-T1 packet to one external worker and await the exact uncommitted return for independent review.",
+    "claimBoundary": "Governance-foundation dispatch only. No implemented SCEC, semantic-truth scoring, GC010 product/runtime change, provider/live action, public sync, deployment or production authority."
+  }
+}
