@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r2_t1f_dispatched_pending_internal_decision_return",
+  "currentMode": "gc010_scr_r2_t1f_closed_pass_canonical_hash_reissue_decision",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute exactly one GC010-SCR-R2-T1F internal no-commit decision worker from dispatch material 648063886. The worker may create only the named assessment and worker return, must compare all four correction families, and must return one allowed terminal token for independent review. No source/test repair, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Await fresh operator instruction before authoring a separately committed GC010-SCR-R2-T1G implementation dispatch for the exact four-file manifest accepted by T1F. T1F is CLOSED_PASS_BOUNDED at material 52a84fecf with canonical approval-request hashing plus fail-closed legacy reissue selected. T1E harness acceptance remains blocked until implementation and regressions pass. No source/test repair, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
