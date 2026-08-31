@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1j_dispatched_pending_external_decision_return",
-  "previousMode": "gc010_scr_r2_t1i_closed_bounded_formal_t1_not_satisfied_requires_new_consumer_owner",
+  "currentMode": "gc010_scr_r2_t1j_closed_no_viable_production_owner_formal_t1_parked",
+  "previousMode": "gc010_scr_r2_t1j_dispatched_pending_external_decision_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15704,5 +15704,20 @@
     "objective": "Select or reject one concrete registered production invocation owner and topology that can compose AgentExecutionRuntime onto a real invoked guard/provider path without duplicate governance or an ownerless product caller.",
     "boundary": "Decision-only and read-only outside the exact two-document worker manifest. No source, test, route, package, provider, audit, roadmap or continuity edits; no provider/live, public sync, deployment, production, staging or commit authority."
   },
-  "nextAllowedMove": "Transfer the committed GC010-SCR-R2-T1J decision-only packet at material 3a6f143fab457bfd476a0d30d9ca5f2a3f6232fb to the external worker. The worker must write exactly the named assessment and worker-return documents, remain read-only outside those two files, and must not stage or commit. Formal T1, T2 and all source/test/roadmap, package export, route/provider/audit implementation, provider/live, public sync, deployment and production work remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gc010ScrR2T1jRegisteredProductionInvocationOwnerAndInvokedPathCompositionDecisionClosure20260831": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "terminalToken": "NO_VIABLE_PRODUCTION_OWNER_RETAIN_FORMAL_T1_PARKED",
+    "materialCommit": "9245f4218def623b503f7ef157cf173abff3fa25",
+    "dispatchCommit": "3a6f143fab457bfd476a0d30d9ca5f2a3f6232fb",
+    "executionBaseHead": "65b5512b5f75cbf4ce5139aa3df673c113759447",
+    "assessment": "docs/assessments/CVF_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
+    "assessmentSha256": "88173edc1fa61883cd1961cce2fdac6a69293944061398af0cf16ba09e89589b",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_WORKER_RETURN_2026-08-31.md",
+    "workerReturnSha256": "366f48ebac18f16f1754f05178ed0bffd9bb04139e7cec72bb2f352da9190a4b",
+    "verification": "Independent reviewer reproduced the registered-trigger and construction-site searches, confirmed the exact two-document manifest, accepted the five-family and fifteen-question analysis, and ran worker-return fast, reviewer-fast and pre-commit gates successfully.",
+    "reviewerCorrection": "The reviewer corrected an overclaim that GC-009 response reconciliation was a durable persistence owner and bounded broad search language. Current source proves response-carried reconciliation, while the invoked-path durable owner remains absent; the terminal is unchanged and strengthened.",
+    "nextAllowedMove": "Await a separately authorized, source-backed concrete product caller before any formal T1 reopen; no T1K or T2 opens automatically.",
+    "claimBoundary": "T1J closes only the owner/topology decision. Formal T1 and T2 remain parked; no source/test/roadmap edit, route/package/provider/audit implementation, provider/live, public sync, deployment or production authority is opened."
+  },
+  "nextAllowedMove": "Await a separately authorized, source-backed concrete product caller or operator surface before reopening GC010 formal T1. T1J is CLOSED_PASS_BOUNDED at material 9245f4218def623b503f7ef157cf173abff3fa25 with terminal NO_VIABLE_PRODUCTION_OWNER_RETAIN_FORMAL_T1_PARKED. No T1K or T2 opens automatically; source/test/roadmap, route/package/provider/audit implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
