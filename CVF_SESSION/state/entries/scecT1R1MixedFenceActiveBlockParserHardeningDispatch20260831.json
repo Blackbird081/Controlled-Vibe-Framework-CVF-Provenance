@@ -2,7 +2,7 @@
   "stateOrder": 2570,
   "stateKey": "scecT1R1MixedFenceActiveBlockParserHardeningDispatch20260831",
   "value": {
-    "status": "DISPATCHED_PENDING_EXTERNAL_GOVERNANCE_IMPLEMENTATION_RETURN",
+    "status": "REVIEWER_ACCEPTED_WITH_MATERIAL_CORRECTION_CLOSED",
     "problemKey": "scec-mixed-fence-active-block-detection",
     "dispatchCommit": "bd706c48cb6d6d5bf47f247358a70b3c442b1999",
     "dispatchBaseHead": "8b5ae0d144c498cbaf492ec21352c947568a2a56",
@@ -11,12 +11,16 @@
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_2026-08-31.md",
     "workOrderSha256": "45e677d62dbf8b1c0454abbb69ca1988f411ace0ec3f68c14b6ab3735ffb4d85",
     "workerReturn": "docs/reviews/CVF_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_WORKER_RETURN_2026-08-31.md",
+    "workerReturnSha256": "ee6e8bb30d354d0e1d3771d385b878b38967179ddc124c9b9bf27b559bfff47b",
+    "materialCommit": "8611c1e3e2c88d583047d255c5f646fad987dec1",
+    "reviewDisposition": "ACCEPT_WITH_MATERIAL_CORRECTION",
     "requiredArtifactCount": 4,
     "commitMode": "WORKER_MUST_NOT_COMMIT",
-    "observedDefect": "The current regex can treat an ordinary closing markdown fence as a new opener, pair fences incorrectly, and miss a later valid active SCEC JSON block when a non-JSON fenced block precedes it.",
-    "acceptanceModel": "Structural fence discovery repair, direct mixed-fence reproducer, ordering and immunity regressions, all prior SCEC tests, ADIF-0055 update, hard-size and worker-return gates, then independent review.",
-    "effectivenessTestDisposition": "SCEC-E1 GC010 reconciliation authoring is paused, not abandoned. Resume the same effectiveness packet only after this repair closes.",
-    "nextAllowedMove": "Transfer dispatch commit bd706c48cb6d5bf47f247358a70b3c442b1999 to one external governance worker and await the exact four-path uncommitted return.",
-    "claimBoundary": "Parser hardening dispatch only. No SCEC semantic threshold change, GC010 product/runtime work, T1J-R4, T1K, T2, provider/live, public sync, deployment or production authority."
+    "observedDefect": "The prior regex could treat an ordinary closing markdown fence as a new opener, pair fences incorrectly, and miss a later valid active SCEC JSON block when a non-JSON fenced block preceded it.",
+    "reviewerCorrection": "The worker scanner missed CommonMark-style fences indented by up to three spaces and wider backtick openers. The reviewer repaired indentation and opener-width handling and added parameterized regression coverage before acceptance.",
+    "verification": "Focused SCEC tests 95/95 PASS; worker-return fast gate 67/67 PASS; pre-commit 88/88 PASS; Python compile, direct checker, file-size guard and independent parser probes PASS.",
+    "effectivenessTestDisposition": "SCEC-E1 GC010 reconciliation authoring resumes now that the parser repair is independently closed.",
+    "nextAllowedMove": "Author and dispatch exactly one decision-only SCEC-E1 effectiveness reconciliation over accepted GC010 T1J R1-through-R3 history. Keep successorTrancheOpened NO and do not open product work.",
+    "claimBoundary": "Parser hardening is closed at material commit 8611c1e3e2c88d583047d255c5f646fad987dec1. This closure changes fence discovery only and does not alter SCEC semantic thresholds or authorize GC010 product/runtime work, T1J-R4, T1K, T2, provider/live, public sync, deployment or production."
   }
 }
