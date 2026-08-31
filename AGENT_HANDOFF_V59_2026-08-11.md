@@ -2,7 +2,7 @@
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
-- Current GC010 dispatch material: `47b130b32`; T1J-R2 durable-owner decision is pending external worker return.
+- Current GC010 material: `df5571b91`; T1J-R2 is closed partial-ready with a reviewer-corrected consolidated integration-interface decision remaining.
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
@@ -40,10 +40,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1j_r2_dispatched_pending_external_durable_owner_decision_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed T1J-R2 packet to one external worker; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1j_r2_closed_partial_ready_integration_interface_decision_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await one consolidated T1J-R3 integration-interface decision; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
 
 ## Current Mode
-`gc010_scr_r2_t1j_r2_dispatched_pending_external_durable_owner_decision_return`
+`gc010_scr_r2_t1j_r2_closed_partial_ready_integration_interface_decision_required`
 
 ## Purpose
 
@@ -112,14 +112,14 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Current Authority
 
-GC010-SCR-R2-T1J-R2 is dispatched at material `47b130b32` over base `ab3d1075c`. It is decision-only and must select the atomic claim/recovery owner while preserving `/api/execute` as the single guard/provider pipeline. Formal T1, T1K and T2 remain parked.
+GC010-SCR-R2-T1J-R2 is `CLOSED_PASS_BOUNDED_WITH_REVIEWER_CORRECTION` at material `df5571b91` over execution base `1f2022542`, terminal `PARTIAL_READY_REQUIRES_FAILURE_RECOVERY_INTERFACE_DECISION`. Candidate 2 remains preferred, but route ordering, payload/policy-snapshot adapter ownership, SQLite lifecycle, and authorized restart recovery remain one unresolved integration-interface cluster. Formal T1, T1K and T2 remain parked.
 
 | Field | Value |
 |---|---|
-| authorityState | GC010-SCR-R2-T1J-R2 `DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN` at `47b130b32` |
+| authorityState | GC010-SCR-R2-T1J-R2 `CLOSED_PASS_BOUNDED_WITH_REVIEWER_CORRECTION` at `df5571b91`; terminal `PARTIAL_READY_REQUIRES_FAILURE_RECOVERY_INTERFACE_DECISION` |
 | roadmapPath | `docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md`; historical production T1 remains parked |
 | closureDependency | accepted T1A `f55b80826`; accepted T1B `da55f54d5`; accepted T1C `82c64a6f5`; accepted T1D `0e4aacdc6`; T1E dispatch `13dbbaa73`; blocked closure `d367ea1c7` |
-| nextAuthorityRequirement | exact two-file worker return followed by independent reviewer closure; no automatic T1K/T2 |
+| nextAuthorityRequirement | separately authorized consolidated T1J-R3 integration-interface decision; no automatic T1K/T2 |
 
 ## Closure Evidence
 
@@ -170,7 +170,7 @@ GC010-SCR-R2-T1J-R2 is dispatched at material `47b130b32` over base `ab3d1075c`.
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Transfer committed T1J-R2 packet `47b130b32` to one external worker for exactly the named assessment and worker return. Worker must not stage or commit. T1K and T2 remain parked; no implementation, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24.
+Await operator authorization for one consolidated T1J-R3 integration-interface decision covering route ordering, immutable payload/policy-snapshot adapter ownership, SQLite runtime lifecycle, and authorized crash-recovery invocation. Do not split these dependencies into piecemeal rounds. T1K and T2 remain parked; no implementation, provider/live, public sync, deployment or production work is authorized. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -205,16 +205,16 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize T1J-R2 dispatch material `47b130b32`, exact worker checkpoint and generated projections. This authorizes no T1K implementation, formal T1/T2 release, source edit, package export or production trigger.
+Authorized guard-maintenance scope: synchronize T1J-R2 corrected bounded closure material `df5571b91`, terminal, exact next checkpoint and generated projections. This authorizes no T1J-R3 dispatch, T1K implementation, formal T1/T2 release, source edit, package export or production trigger.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1jR2ApprovalResumeAtomicClaimDurableOwnerDecisionDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1jR2ApprovalResumeAtomicClaimDurableOwnerDecisionClosure20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: `next` authorizes the bounded T1J-R2 durable-owner decision dispatch at material `47b130b32`.
-Rollback boundary: revert only this T1J-R2 dispatch continuity sync without rewriting material evidence or prior closures.
-Not authorized: T1K, formal T1/T2 release, source/test/roadmap edit, package export, route/provider/audit implementation, provider/API/network use, public mutation, deployment, production claim or compaction.
+Operator authorization: the supplied T1J-R2 worker return authorizes independent review, material closure, and this continuity sync only.
+Rollback boundary: revert only this T1J-R2 closure continuity sync without rewriting material evidence or prior closures.
+Not authorized: T1J-R3 dispatch, T1K, formal T1/T2 release, source/test/roadmap edit, package export, route/provider/audit implementation, provider/API/network use, public mutation, deployment, production claim or compaction.
 ## Claim Boundary
 
-This handoff records T1J-R2 dispatch material `47b130b32`: the worker may decide the durable claim/recovery owner and write exactly two uncommitted documents. It does not authorize T1K, source/test/roadmap edits, a package export or production trigger, T2, route/provider/audit source changes, provider/API/network, public mutation, deployment, production, compaction or automatic successor work.
+This handoff records T1J-R2 corrected bounded closure material `df5571b91`: Candidate 2's primitives are preferred but its current route composition is not ready until the consolidated interface cluster is decided. It does not authorize T1J-R3 dispatch, T1K, source/test/roadmap edits, a package export or production trigger, T2, route/provider/audit source changes, provider/API/network, public mutation, deployment, production, compaction or automatic successor work.
