@@ -1,0 +1,18 @@
+{
+  "stateOrder": 2590,
+  "stateKey": "scecT1R2BlockerResolutionEvidenceBindingDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_WORKER_RETURN",
+    "dispatchCommit": "24aaa8ff1",
+    "dispatchBaseHead": "9e27af8db7b34b3f2f7212f48365e0c5c4940a34",
+    "baseline": "docs/baselines/CVF_GC018_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_2026-08-31.md",
+    "baselineSha256": "a1cb1fc1750d9ad397695544fb8a207b02cf20c6d171c7c1b31d5d96c7c171f8",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_2026-08-31.md",
+    "workOrderSha256": "2b057ee5b4e91857b1ab2ecfecff92cbd6b4687ecd87db80fb468b61e9ae38fa",
+    "workerReturn": "docs/reviews/CVF_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_WORKER_RETURN_2026-08-31.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "requiredManifestCount": 11,
+    "nextAllowedMove": "Transfer committed SCEC-T1-R2 packet 24aaa8ff1 to one implementation worker and await the exact uncommitted manifest plus named worker return for independent review.",
+    "claimBoundary": "SCEC foundation hardening only. GC010 product/runtime, T1J-R4, T1K, T2, provider/live, public sync, deployment and production remain parked."
+  }
+}

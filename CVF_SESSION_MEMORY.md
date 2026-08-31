@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scec_e1_closed_scec_t1_r2_blocker_evidence_binding_hardening_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and dispatch one bounded SCEC-T1-R2 blocker-resolution evidence-binding and replay-correction packet; parked checkpoint=T1J-R4 product work, T1K, T2, product/runtime implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`scec_t1_r2_blocker_evidence_binding_dispatched_pending_external_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed SCEC-T1-R2 packet `24aaa8ff1` to one worker and await the exact uncommitted return; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `scec_e1_closed_scec_t1_r2_blocker_evidence_binding_hardening_authoring`
-Current mode: `scec_e1_closed_scec_t1_r2_blocker_evidence_binding_hardening_authoring`; previous mode marker: `scec_e1_gc010_effectiveness_reconciliation_dispatched_pending_external_return`
-Previous mode: `scec_e1_gc010_effectiveness_reconciliation_dispatched_pending_external_return`
+Current mode marker: `scec_t1_r2_blocker_evidence_binding_dispatched_pending_external_return`
+Current mode: `scec_t1_r2_blocker_evidence_binding_dispatched_pending_external_return`; previous mode marker: `scec_e1_closed_scec_t1_r2_blocker_evidence_binding_hardening_authoring`
+Previous mode: `scec_e1_closed_scec_t1_r2_blocker_evidence_binding_hardening_authoring`
 
 ## Next Allowed Move
 
-Mode: `scec_e1_closed_scec_t1_r2_blocker_evidence_binding_hardening_authoring`. SCEC-E1 is reviewer-accepted with material correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5`. The stop mechanism correctly requires `STOP_REASSESS_ARCHITECTURE` / `NO_SUCCESSOR`, but accepted R3 evidence proves the R2-to-R3 blocker transition is 3 to 4, not the worker/fixture's 3 to 3. Verdict: `EFFECTIVE_WITH_HARDENING_REQUIRED`. Author and dispatch one bounded SCEC-T1-R2 packet to correct the historical replay, bind every resolved blocker to accepted evidence or an explicit governed reviewer rule, and add a negative unsupported-resolution-laundering regression. Keep `successorTrancheOpened: NO`; T1J-R4 product work, T1K, T2, product/runtime implementation, provider/live and public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `scec_t1_r2_blocker_evidence_binding_dispatched_pending_external_return`. SCEC-T1-R2 is committed at `24aaa8ff1` after pre-dispatch 81/81 and pre-commit 88/88. Transfer the integrated evidence-binding/replay-correction packet to one worker for the exact eleven-path uncommitted return, then independently review semantic correctness and bypass coverage. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live and public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

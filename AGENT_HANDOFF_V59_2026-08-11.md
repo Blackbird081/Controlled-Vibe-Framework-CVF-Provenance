@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scec_e1_closed_scec_t1_r2_blocker_evidence_binding_hardening_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and dispatch one bounded SCEC-T1-R2 blocker-resolution evidence-binding and replay-correction packet; parked checkpoint=T1J-R4 product work, T1K, T2, product/runtime implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`scec_t1_r2_blocker_evidence_binding_dispatched_pending_external_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer SCEC-T1-R2 `24aaa8ff1` to one worker and await the exact uncommitted return; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
 
 ## Current Mode
-`scec_e1_closed_scec_t1_r2_blocker_evidence_binding_hardening_authoring`
+`scec_t1_r2_blocker_evidence_binding_dispatched_pending_external_return`
 
 ## Purpose
 
@@ -171,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Author and dispatch one bounded SCEC-T1-R2 evidence-binding and replay-correction packet. Retain the route-order/payload blocker, bind each resolution to accepted evidence or a governed reviewer rule, and add an unsupported-resolution negative test. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest numbered wave remains LHW24.
+Transfer committed SCEC-T1-R2 packet `24aaa8ff1` to one worker. Require the exact eleven-path uncommitted manifest and named worker return, then independently review semantic correctness and bypass coverage. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -206,15 +206,15 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize reviewer-accepted SCEC-E1 material `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5`, corrected 3-to-4 blocker evidence, hardening-required verdict, exact artifact hashes, next bounded foundation move and generated projections. This continuity edit implements no checker and authorizes no T1J-R4 product dispatch, product/runtime edit, T1K/T2, provider/live, public sync, deployment or production trigger.
+Authorized guard-maintenance scope: synchronize committed SCEC-T1-R2 dispatch `24aaa8ff1`, exact authority hashes, worker-return next move and generated projections. No checker implementation or product successor is authorized by this continuity edit.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/scecE1Gc010T1jR1R3EffectivenessReconciliationDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/scecT1R2BlockerResolutionEvidenceBindingDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md`.
 Protected guard paths:
 - N/A with reason: this continuity sync changes no guard or checker path.
 Operator authorization: the operator explicitly authorized raising the CVF foundation and validating it with successor tranches while retaining orchestrator/reviewer and external-worker role separation.
-Rollback boundary: revert only this SCEC-E1 review continuity sync without rewriting the committed review, SCEC foundation material, or prior GC010 evidence.
+Rollback boundary: revert only this dispatch continuity sync without rewriting committed SCEC-T1-R2 material or prior evidence.
 Not authorized: T1J-R4 product work, GC010 product/runtime edit, T1K/T2, provider/API/network use, public mutation, deployment, production claim or compaction.
 ## Claim Boundary
 
-This handoff records reviewer-accepted SCEC-E1 material `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5`, verdict `EFFECTIVE_WITH_HARDENING_REQUIRED`, and the corrected R2-to-R3 transition of 3 to 4 blockers. It authorizes only one bounded SCEC-T1-R2 foundation-hardening packet. It does not authorize T1J-R4 product work, GC010 product/runtime, T1K/T2, provider/API/network, public mutation, deployment, production, compaction or automatic product successor work.
+This handoff records SCEC-T1-R2 dispatch `24aaa8ff1` and authorizes one bounded external worker return. It does not authorize T1J-R4, GC010 product/runtime, T1K/T2, provider/API/network, public mutation, deployment, production, compaction or automatic product successor work.
