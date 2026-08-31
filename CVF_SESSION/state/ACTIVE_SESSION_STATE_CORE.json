@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
     "baselineSha256": "1235a7113ddb5c083831eb069816631d9873f37216deee7006ade318d0b8dad6",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
-    "workOrderSha256": "6e55a433f91bb9903355af88e0ac0d6583e2971b3b5d4875212951854cf203d5"
+    "workOrderSha256": "31cba1bd715d1b22b077c2ffce48ca1418d7144cbbbd70148d670ae476cfb3f2"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
