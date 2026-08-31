@@ -5,7 +5,7 @@ Status: ACTIVE
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
-- Branch: `main`. Current HEAD recorded for this handoff: `d0579eaab` (GC010-SCR-R2-T1C dispatch material). DeepSeek Harness absorption material remains `7b8514526`. Public protocol 1.2 source-pack profile is live at public `main` commit `d7860138350130d6d105826ce186f1beeaba3c2d`; GitHub public-sync preflight run `33245798802` passed; `EXTERNAL_AGENT_READ` refresh receipt SHA-256 is `ccfd4ac603163043327c0d33bcce757b68e5e53c4bcd7bede33d13dd07628e39`. The prior DeepSeek task capsule was removed from the reusable packet root and must be regenerated for the next pinned repository.
+- Branch: `main`. Current HEAD recorded for this handoff: `82c64a6f5` (GC010-SCR-R2-T1C accepted material). DeepSeek Harness absorption material remains `7b8514526`. Public protocol 1.2 source-pack profile is live at public `main` commit `d7860138350130d6d105826ce186f1beeaba3c2d`; GitHub public-sync preflight run `33245798802` passed; `EXTERNAL_AGENT_READ` refresh receipt SHA-256 is `ccfd4ac603163043327c0d33bcce757b68e5e53c4bcd7bede33d13dd07628e39`. The prior DeepSeek task capsule was removed from the reusable packet root and must be regenerated for the next pinned repository.
 - EARTR-ESC-R1 is independently accepted `CLOSED_PASS_BOUNDED` and released as `cvf.external-agent-round-trip@1.2.0`. External follow-up A/I confirmed one `MEDIUM` representation-completeness gap; existing canonical/public/portable owners now expose exact strict-v1 fields, enums, forbidden fields, source joins, and valid examples with validator behavior unchanged (117/117 PASS). RB-01 receipt binding is implemented/tested, while Local reconciliation equality remains documentation/reviewer-enforced rather than a runtime gate. DeepSeek Harness use case 001 is locally closed at `7b8514526`: strict-v1 return validation PASS, pinned upstream `cd5ef8148158c3a752a658978873241fdf8e2bbc`, five candidates `NO_NEW_VALUE`, DSH-001 existing-owner enrichment parked, and DSH-005 forward-value lifecycle idea parked. Both reopen only under their conjunctive source/consumer/owner/value-cost gates; no implementation, provider/live, public export, or new owner was authorized.
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -39,14 +39,14 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1c_dispatched_pending_worker_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed T1C with exact six-path no-commit return, then stop for independent review; parked checkpoint=route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a fresh T1D decision-only packet for the smallest non-production consumer/export boundary; parked checkpoint=implementation until dispatch, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
 
 ## Current Mode
-`gc010_scr_r2_t1c_dispatched_pending_worker_return`
+`gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted`
 
 ## Purpose
 
-Preserve accepted T1A/T1B authority and dispatch the bounded T1C durable single-node non-production implementation without opening external effects.
+Preserve independently accepted T1C durable single-node non-production material without opening a caller, package export or external effect.
 ## Scope / Target / Owner Boundary
 
 - CADP-R1, CADP-AI-T1, CADP-AI-T2, and CADP-AI-T2A are accepted with bounded scope.
@@ -111,14 +111,14 @@ Preserve accepted T1A/T1B authority and dispatch the bounded T1C durable single-
 
 ## Current Authority
 
-GC010-SCR-R2-T1C is dispatched at `d0579eaab` from accepted T1B material `da55f54d5`. Its exact no-commit manifest contains five implementation paths plus one worker return and requires SQLite `FULL`, `user_version = 1`, typed fail-closed errors, and one shared T1A transition helper. Acceptance, route/provider/audit integration, package export, production consumer and cross-node/distributed safety remain parked. Prior T0A/T0B, R1 T0, DSH-WRA-R1 and AFFD-R1 remain closed bounded; DEAR P4/P5 remain parked.
+GC010-SCR-R2-T1C is independently accepted at material `82c64a6f5` with `DURABLE_SINGLE_NODE_NON_PRODUCTION_CORE_ACCEPTED` after one bounded persistence-boundary repair cluster. Focused proof is 108/108 with real worker-thread lock contention, exact schema/state validation and zero external calls. Package export/caller, route/provider/audit integration, production consumer and cross-node/distributed safety remain parked. Prior T0A/T0B, R1 T0, DSH-WRA-R1 and AFFD-R1 remain closed bounded; DEAR P4/P5 remain parked.
 
 | Field | Value |
 |---|---|
-| authorityState | GC010-SCR-R2-T1C `DISPATCHED_PENDING_WORKER_RETURN` at `d0579eaab` |
+| authorityState | GC010-SCR-R2-T1C `CLOSED_PASS_BOUNDED` / `DURABLE_SINGLE_NODE_NON_PRODUCTION_CORE_ACCEPTED` at `82c64a6f5` |
 | roadmapPath | `docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md`; historical production T1 remains parked |
-| closureDependency | accepted T1A material `f55b80826`; accepted T1B material `da55f54d5`; T1C dispatch `d0579eaab` |
-| nextAuthorityRequirement | exact six-path uncommitted worker return, then independent reviewer/closer acceptance; no external effect |
+| closureDependency | accepted T1A material `f55b80826`; accepted T1B material `da55f54d5`; T1C dispatch `d0579eaab`; accepted T1C material `82c64a6f5` |
+| nextAuthorityRequirement | fresh T1D decision-only authoring for the smallest non-production consumer/export boundary; no automatic implementation or external effect |
 
 ## Closure Evidence
 
@@ -169,7 +169,7 @@ GC010-SCR-R2-T1C is dispatched at `d0579eaab` from accepted T1B material `da55f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Execute the committed GC010-SCR-R2-T1C work order at `d0579eaab`. The worker may modify/create exactly five implementation paths plus the named worker return, must not commit, and must stop for independent orchestrator/reviewer closure. Route/provider/audit integration, package export, production consumer, cross-node/distributed safety, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
+Author a fresh GC010-SCR-R2-T1D decision-only baseline and work order for the smallest non-production consumer plus package-export/composition boundary over accepted T1C material `82c64a6f5`. Authoring only is allowed; do not implement automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, GC010-SCR-R1 T1-T5, DEAR P4/P5, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -204,17 +204,17 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize committed GC010-SCR-R2-T1C dispatch `d0579eaab`, pending-worker-return mode, next move, and generated projections. This records dispatch only.
+Authorized guard-maintenance scope: synchronize accepted GC010-SCR-R2-T1C material `82c64a6f5`, closed mode, next move, and generated projections. This creates no successor implementation scope.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1cPendingAgentExecutionDurableSingleNodeNonProductionImplementationDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1cPendingAgentExecutionDurableSingleNodeNonProductionImplementationClosure20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: the operator directed the orchestrator to continue the GC010 system-chain roadmap and granted full orchestrator/reviewer authority; committed T1C dispatch is `d0579eaab`.
-Rollback boundary: revert only this T1C dispatch continuity sync without rewriting dispatch material or prior closures.
-Not authorized: worker commit, route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/API/network use, credentials, public mutation, deployment, production claim, compaction, or automatic successor.
+Operator authorization: the operator directed the orchestrator to continue the GC010 system-chain roadmap and granted full orchestrator/reviewer authority; accepted T1C material is `82c64a6f5`.
+Rollback boundary: revert only this T1C closure continuity sync without rewriting accepted material or prior closures.
+Not authorized: T1D implementation before dispatch, route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/API/network use, credentials, public mutation, deployment, production claim, compaction, or automatic successor.
 
 ## Claim Boundary
 
-This handoff records T1C as dispatched at `d0579eaab` over accepted T1B `da55f54d5`. It does not accept implementation, create a production API/store/consumer, export AER, connect route/provider/audit systems, or permit cross-node/distributed safety, provider/API/network, public mutation, deployment, production, compaction, or automatic successor work.
+This handoff records T1C as accepted bounded at `82c64a6f5` over accepted T1B `da55f54d5`. It does not create a package export, caller, production API/store/consumer, export AER, connect route/provider/audit systems, or permit cross-node/distributed safety, provider/API/network, public mutation, deployment, production, compaction, or automatic successor work.

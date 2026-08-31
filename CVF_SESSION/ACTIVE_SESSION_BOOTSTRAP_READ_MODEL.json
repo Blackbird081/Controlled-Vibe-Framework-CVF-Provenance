@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r2_t1c_dispatched_pending_worker_return",
+  "currentMode": "gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute the committed GC010-SCR-R2-T1C work order at dispatch commit d0579eaab. The worker may modify/create exactly five implementation paths plus the named worker return, must not commit, and must stop for independent orchestrator/reviewer closure. Route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author a fresh GC010-SCR-R2-T1D decision-only baseline and work order for the smallest non-production consumer plus package-export/composition boundary over accepted T1C material 82c64a6f5. Authoring only is allowed; do not implement automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -105,7 +105,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1c_dispatched_pending_worker_return",
+  "currentMode": "gc010_scr_r2_t1c_closed_pass_bounded_durable_single_node_core_accepted",
   "previousMode": "gc010_scr_r2_t1b_dispatched_pending_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Execute the committed GC010-SCR-R2-T1C work order at dispatch commit d0579eaab. The worker may modify/create exactly five implementation paths plus the named worker return, must not commit, and must stop for independent orchestrator/reviewer closure. Route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author a fresh GC010-SCR-R2-T1D decision-only baseline and work order for the smallest non-production consumer plus package-export/composition boundary over accepted T1C material 82c64a6f5. Authoring only is allowed; do not implement automatically. Route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15493,5 +15493,16 @@
     "workerChangedSet": "Exactly five implementation paths plus the worker return; WORKER_MUST_NOT_COMMIT.",
     "nextAllowedMove": "Execute the committed T1C work order, return the exact six uncommitted paths, then stop for independent orchestrator/reviewer closure.",
     "claimBoundary": "Dispatch only. No T1C implementation is accepted yet, and no route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment or production authority is opened."
+  },
+  "gc010ScrR2T1cPendingAgentExecutionDurableSingleNodeNonProductionImplementationClosure20260831": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "terminalToken": "DURABLE_SINGLE_NODE_NON_PRODUCTION_CORE_ACCEPTED",
+    "materialCommit": "82c64a6f5",
+    "dispatchCommit": "d0579eaab",
+    "completionReview": "docs/reviews/CVF_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_COMPLETION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1C_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_NON_PRODUCTION_IMPLEMENTATION_WORKER_RETURN_2026-08-31.md",
+    "reviewRepair": "One persistence-boundary root cluster was repaired: real worker-thread busy proof and BUSY_TIMEOUT mapping, IMMEDIATE CAS conflict normalization, exact existing-schema/index validation, absolute-path enforcement, actor-shape validation, and status-specific nullable-state invariants.",
+    "nextAllowedMove": "Author a fresh T1D decision-only packet for the smallest non-production consumer and package-export/composition boundary; do not wire a route, provider, audit, production consumer or external effect automatically.",
+    "claimBoundary": "Accepted only as a local durable single-node non-production prerequisite. No package export, caller, route, provider admission/invocation, audit integration, cross-node safety, live proof, public sync, deployment or production authority is opened."
   }
 }
