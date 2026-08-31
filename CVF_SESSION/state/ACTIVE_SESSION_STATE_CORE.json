@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return",
-  "previousMode": "scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring",
+  "currentMode": "scec_e2_ineffective_locator_content_binding_hardening_authoring",
+  "previousMode": "scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

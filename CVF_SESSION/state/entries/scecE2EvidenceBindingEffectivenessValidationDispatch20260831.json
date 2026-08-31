@@ -2,7 +2,7 @@
   "stateOrder": 2600,
   "stateKey": "scecE2EvidenceBindingEffectivenessValidationDispatch20260831",
   "value": {
-    "status": "DISPATCHED_PENDING_EXTERNAL_WORKER_RETURN",
+    "status": "REVIEWER_ACCEPTED_WITH_MATERIAL_CORRECTION_CLOSED_INEFFECTIVE_REOPEN_FOUNDATION",
     "problemKey": "scec-evidence-binding-effectiveness-validation",
     "dispatchCommit": "130e53d62c13601c0dfbc26eb97e98d422ac44a9",
     "dispatchBaseHead": "a5a4fbbc78fc8ad3f2e9541ee5572a8730d3fe7e",
@@ -11,7 +11,14 @@
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
     "workOrderSha256": "93dc80a448472aa006c4bd9585d9e974224363dd34bf2202f22588708195f587",
     "workerReturn": "docs/reviews/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_WORKER_RETURN_2026-08-31.md",
+    "workerReturnSha256": "3676357abda17775bf5789382398488fb3c2cdba1d26f2f77d83c536cca78bf7",
     "assessment": "docs/assessments/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "assessmentSha256": "41317465110d033fc52830d95306ac0fa25273d3806b8f63d5aaac74bee91bd5",
+    "materialCommit": "ff95b77d63fe332cb04dbabe61ecd85b88ea7232",
+    "reviewDisposition": "ACCEPT_WITH_MATERIAL_CORRECTION",
+    "effectivenessVerdict": "INEFFECTIVE_REOPEN_FOUNDATION",
+    "reviewerCorrection": "The worker omitted the mandatory non-file path variant and treated empty-locator rejection as proof of locator resolution. Independent probes confirmed directories fail unreadable but a non-empty locator absent from the hash-bound evidence file passes with zero violations.",
+    "confirmedFoundationBlocker": "SCEC_E2_BLOCKER_LOCATOR_CONTENT_BINDING_NOT_ENFORCED",
     "commitMode": "WORKER_MUST_NOT_COMMIT",
     "requiredArtifactCount": 2,
     "requiredCaseFamilies": 9,
@@ -20,7 +27,7 @@
       "EFFECTIVE_WITH_HARDENING_REQUIRED",
       "INEFFECTIVE_REOPEN_FOUNDATION"
     ],
-    "nextAllowedMove": "Transfer committed SCEC-E2 packet 130e53d62 to one external validation worker and await exactly the assessment plus named worker return for independent review.",
-    "claimBoundary": "Validation-only SCEC evidence-binding evaluation. SCEC source/checker/test edits, GC010 product/runtime, T1J-R4, T1K, T2, provider/live, public sync, deployment and production remain parked."
+    "nextAllowedMove": "Author and dispatch one bounded SCEC-T1-R3 root-contract hardening packet that defines deterministic locator-to-content resolution, implements fail-closed enforcement, adds focused positive and negative regressions, and replays the exact SCEC-E2 unresolved-locator probe. Keep GC010 product/runtime parked.",
+    "claimBoundary": "SCEC-E2 closes as INEFFECTIVE_REOPEN_FOUNDATION for locator-to-content binding only. GC010 product/runtime, T1J-R4, T1K, T2, provider/live, public sync, deployment and production remain parked."
   }
 }

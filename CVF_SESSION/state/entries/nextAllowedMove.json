@@ -1,5 +1,5 @@
 {
   "stateOrder": 2585,
   "stateKey": "nextAllowedMove",
-  "value": "Transfer committed SCEC-E2 packet 130e53d62 to one external validation worker. Require exactly docs/assessments/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md and docs/reviews/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_WORKER_RETURN_2026-08-31.md uncommitted, then independently review all nine adversarial case families and both positive controls. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Author and dispatch one bounded SCEC-T1-R3 root-contract hardening packet for deterministic locator-to-content resolution, fail-closed enforcement, focused positive and negative regressions, and exact replay of the SCEC-E2 unresolved-locator probe accepted by the current checker. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

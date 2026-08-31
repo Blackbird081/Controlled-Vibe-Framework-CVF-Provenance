@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer SCEC-E2 `130e53d62` to one external worker and await the exact two-path return; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`scec_e2_ineffective_locator_content_binding_hardening_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author one bounded SCEC-T1-R3 locator-content binding hardening packet; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return`
-Current mode: `scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return`; previous mode marker: `scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring`
-Previous mode: `scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring`
+Current mode marker: `scec_e2_ineffective_locator_content_binding_hardening_authoring`
+Current mode: `scec_e2_ineffective_locator_content_binding_hardening_authoring`; previous mode marker: `scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return`
+Previous mode: `scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return`
 
 ## Next Allowed Move
 
-Mode: `scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return`. SCEC-E2 is committed at `130e53d62` after pre-dispatch 81/81 and pre-commit 88/88. Transfer the packet to one external worker and require exactly the assessment plus named worker return, covering all nine adversarial families and both positive controls. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live and public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `scec_e2_ineffective_locator_content_binding_hardening_authoring`. SCEC-E2 is reviewer-corrected and committed at `ff95b77d6` with verdict `INEFFECTIVE_REOPEN_FOUNDATION`: directory evidence fails closed, but a non-empty locator absent from the hash-bound evidence file passes. Author one bounded SCEC-T1-R3 root-contract hardening packet for locator-to-content binding and exact replay. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live and public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
