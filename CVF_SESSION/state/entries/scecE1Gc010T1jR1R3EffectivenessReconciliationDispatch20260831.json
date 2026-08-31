@@ -2,25 +2,32 @@
   "stateOrder": 2580,
   "stateKey": "scecE1Gc010T1jR1R3EffectivenessReconciliationDispatch20260831",
   "value": {
-    "status": "DISPATCHED_PENDING_EXTERNAL_GOVERNANCE_ASSESSMENT_RETURN",
+    "status": "REVIEWER_ACCEPTED_WITH_MATERIAL_CORRECTION_CLOSED_HARDENING_REQUIRED",
     "problemKey": "gc010-scr-r2-t1j-pending-execution-route-integration",
     "dispatchCommit": "a56041da3a4a886fe4d135f12db04aeffd242cce",
     "dispatchBaseHead": "b08bf2d87f2a432671c430bf887807f0a9ea967c",
+    "materialCommit": "d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5",
     "baseline": "docs/baselines/CVF_GC018_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md",
     "baselineSha256": "5aadd51dfe68009cc1b79cf1db719ae67b0d4268a772b657bb3d61a6954883ad",
     "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md",
     "workOrderSha256": "2f05c3c3fcbdfaf4f4f92ef139d11a20d91b3494da5d8ea3bd3f6b3e5424dcd0",
     "workerReturn": "docs/reviews/CVF_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_WORKER_RETURN_2026-08-31.md",
+    "workerReturnSha256": "f8ca28c9f5b9fe6a8777a21eecf09d3591f3e7258f334d8a6ce2e4d6e9fa2278",
     "assessment": "docs/assessments/CVF_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md",
+    "assessmentSha256": "42b3d38270651ee91d4b9238f055c09bc57b5effd578214b07960ef21cd5ba9a",
     "requiredArtifactCount": 2,
     "commitMode": "WORKER_MUST_NOT_COMMIT",
-    "expectedFoundationOutcome": "Independent source reconciliation should confirm STOP_REASSESS_ARCHITECTURE and NO_SUCCESSOR if the accepted R1-to-R2 and R2-to-R3 blocker transitions are both non-decreasing.",
+    "expectedFoundationOutcome": "Independent source reconciliation confirms STOP_REASSESS_ARCHITECTURE and NO_SUCCESSOR because the accepted R1-to-R2 and corrected R2-to-R3 blocker transitions are both non-decreasing.",
     "allowedEffectivenessVerdicts": [
       "EFFECTIVE",
       "EFFECTIVE_WITH_HARDENING_REQUIRED",
       "INEFFECTIVE_REOPEN_FOUNDATION"
     ],
-    "nextAllowedMove": "Transfer dispatch commit a56041da3a4a886fe4d135f12db04aeffd242cce to one external governance assessment worker and await exactly two uncommitted output paths for independent review.",
-    "claimBoundary": "Decision-only SCEC effectiveness test. No T1J-R4, GC010 product/runtime edit, SCEC source/checker/fixture edit, T1K, T2, provider/live, public sync, deployment or production authority."
+    "reviewDisposition": "ACCEPT_WITH_MATERIAL_CORRECTION",
+    "effectivenessVerdict": "EFFECTIVE_WITH_HARDENING_REQUIRED",
+    "reviewerCorrection": "The accepted R3 evidence retains the route-order and payload-provenance blocker. The correct R2-to-R3 transition is 3 to 4, not 3 to 3; the stop terminal remains required, but the fixture and packet seed allowed unsupported resolution laundering.",
+    "correctedBlockerTransition": "R2_TO_R3_3_TO_4",
+    "nextAllowedMove": "Author and dispatch one bounded SCEC-T1-R2 foundation-hardening packet to correct the historical replay and bind every resolved blocker to accepted evidence or an explicit governed reviewer resolution rule. Add a negative regression for unsupported resolution laundering. Keep GC010 product/runtime work parked.",
+    "claimBoundary": "SCEC foundation hardening only. No T1J-R4, GC010 product/runtime edit, T1K, T2, provider/live, public sync, deployment or production authority."
   }
 }

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "scec_e1_gc010_effectiveness_reconciliation_dispatched_pending_external_return",
+  "currentMode": "scec_e1_closed_scec_t1_r2_blocker_evidence_binding_hardening_authoring",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Transfer committed SCEC-E1 GC010 T1J R1-through-R3 effectiveness reconciliation packet a56041da3a4a886fe4d135f12db04aeffd242cce to one external governance assessment worker. Require exactly two uncommitted paths and the named worker return, then independently review whether the foundation correctly selects STOP_REASSESS_ARCHITECTURE / NO_SUCCESSOR or exposes a named hardening defect. Keep successorTrancheOpened NO. Do not open T1J-R4 product work; T1K, T2, product/runtime implementation, SCEC source/checker/fixture edits, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author and dispatch one bounded SCEC-T1-R2 Blocker Resolution Evidence Binding And Historical Replay Correction foundation-hardening packet. Correct the GC010 T1J R1-through-R3 replay to retain the route-order and payload-provenance blocker, require accepted evidence or an explicit governed reviewer resolution rule for every resolved blocker, and add a negative regression for unsupported resolution laundering. Keep successorTrancheOpened NO. Do not open T1J-R4 product work; T1K, T2, product/runtime implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
