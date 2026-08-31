@@ -103,6 +103,7 @@ def _section_body(section: str) -> list[str]:
                 "reopened": [],
                 "current": [],
             },
+            "resolutionEvidence": {},
             "counters": {
                 "partialReadyClosures": 0,
                 "reviewerScopeExpansions": 0,

@@ -32,6 +32,7 @@ def render_scec_outcome_block(
         "chainOrdinal": chain_ordinal,
         "predecessor": predecessor,
         "blockerDelta": {name: [] for name in ("prior", "resolved", "retained", "new", "reopened", "current")},
+        "resolutionEvidence": {},
         "counters": {
             "partialReadyClosures": 0, "reviewerScopeExpansions": 0,
             "sameClaimCorrections": 0, "nonDecreasingBlockerTransitions": 0,

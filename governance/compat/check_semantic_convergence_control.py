@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Fail-closed SCEC chain-state and declared-evidence-shape checker."""
-
 from __future__ import annotations
 import argparse
 import hashlib
@@ -17,15 +16,12 @@ STANDARD_PATH = (
     "docs/reference/semantic_convergence_control/"
     "CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md"
 )
-
 SCEC_SCHEMA_VERSION = "cvf.semanticConvergenceControl.v1"
 ALLOWED_CHAIN_MODES = ("INITIAL", "SUCCESSOR")
-
 ALLOWED_CLAIM_CLASSES = (
     "CONCURRENCY_EXACTLY_ONCE", "CRASH_RECOVERY", "ORDERING",
     "SCHEMA_COMPATIBILITY", "DOCUMENTATION_ONLY", "OTHER",
 )
-
 CLAIM_TO_PROOF_MINIMUM = {
     "CONCURRENCY_EXACTLY_ONCE": "EXECUTABLE_ADVERSARIAL_CONCURRENCY_TEST",
     "CRASH_RECOVERY": "EXECUTABLE_STATE_TRANSITION_CRASH_TEST",
@@ -33,94 +29,73 @@ CLAIM_TO_PROOF_MINIMUM = {
     "SCHEMA_COMPATIBILITY": "EXECUTABLE_BUILDER_VALIDATOR_CONTRACT_TEST",
     "DOCUMENTATION_ONLY": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
 }
-
 DOCUMENTATION_ONLY_PROOF = "PROPOSAL_ONLY_NO_RUNTIME_READINESS"
 ALLOWED_DISPOSITIONS = (
     "CONTINUE_BOUNDED", "ROOT_CONTRACT_REQUIRED",
     "STOP_REASSESS_ARCHITECTURE", "READY_WITH_EXECUTABLE_PROOF",
 )
-
 ESCALATED_DISPOSITIONS = ("ROOT_CONTRACT_REQUIRED", "STOP_REASSESS_ARCHITECTURE")
 ESCALATION_SATISFYING_DISPOSITIONS = ESCALATED_DISPOSITIONS + ("READY_WITH_EXECUTABLE_PROOF",)
-
 ALLOWED_SUCCESSOR_SCOPES = (
     "INITIAL_BOUNDED", "INTEGRATED_ROOT_CONTRACT", "NO_SUCCESSOR",
     "EXECUTABLE_IMPLEMENTATION",
 )
-
 NON_NARROW_SUCCESSOR_SCOPES = (
     "INTEGRATED_ROOT_CONTRACT", "NO_SUCCESSOR", "EXECUTABLE_IMPLEMENTATION",
 )
-
 REQUIRED_TOP_FIELDS = (
     "schemaVersion", "problemKey", "chainMode", "chainOrdinal", "predecessor",
     "blockerDelta", "counters", "claims", "requiredDisposition", "successorScope",
 )
-
 REQUIRED_BLOCKER_DELTA_FIELDS = (
     "prior", "resolved", "retained", "new", "reopened", "current",
 )
-
 REQUIRED_COUNTER_FIELDS = (
     "partialReadyClosures", "reviewerScopeExpansions", "sameClaimCorrections",
     "nonDecreasingBlockerTransitions",
 )
-
 REQUIRED_CLAIM_FIELDS = ("claimId", "claimClass", "proofClass", "evidenceRef")
-
+# Resolution-evidence binding (invariant 13 of the standard).
+ALLOWED_RESOLUTION_EVIDENCE_CLASSES = ("ACCEPTED_REVIEW", "EXECUTABLE_PROOF")
+REQUIRED_RESOLUTION_EVIDENCE_FIELDS = (
+    "evidenceClass", "evidencePath", "sha256", "locator",
+)
 # Escalation trigger thresholds (invariants 5 and 6 of the standard).
 ROOT_CONTRACT_PARTIAL_READY_THRESHOLD = 2
 ROOT_CONTRACT_SCOPE_EXPANSION_THRESHOLD = 1
 ROOT_CONTRACT_SAME_CLAIM_CORRECTION_THRESHOLD = 2
 STOP_REASSESS_NON_DECREASING_THRESHOLD = 2
-
 UNRESOLVED_PREDECESSOR_SENTINEL = "SCEC_PREDECESSOR_HASH_UNRESOLVED"
-
 OPEN_FENCE_LINE_RE = re.compile(r"^ {0,3}(`{3,})([^`]*)$")
 CLOSE_FENCE_LINE_RE = re.compile(r"^ {0,3}(`{3,})[ \t]*$")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 WINDOWS_DRIVE_RE = re.compile(r"^[A-Za-z]:")
-
-
 @dataclass(frozen=True)
 class BlockViolation:
     """One structural or semantic violation of an active SCEC block."""
-
     code: str
     message: str
-
-
 @dataclass(frozen=True)
 class ValidationResult:
     """Outcome of validating a single parsed candidate JSON object."""
-
     is_active: bool
     violations: tuple[BlockViolation, ...] = field(default_factory=tuple)
-
     @property
     def is_valid(self) -> bool:
         return self.is_active and not self.violations
-
-
 def is_active_block(candidate: Any) -> bool:
     """True only for a real dict with the exact SCEC schema field; a quoted/
     example marker or non-dict JSON scalar must never activate (invariant 11).
     """
     return isinstance(candidate, dict) and candidate.get("schemaVersion") == SCEC_SCHEMA_VERSION
-
-
 def _is_str_list(value: Any) -> bool:
     return isinstance(value, list) and all(isinstance(item, str) for item in value)
-
-
 def _is_safe_repo_relative_path(value: str) -> bool:
     """Reject absolute, drive-qualified, backslash, and traversal paths."""
     if not value or "\\" in value or value.startswith("/") or WINDOWS_DRIVE_RE.match(value):
         return False
     parts = PurePosixPath(value).parts
     return bool(parts) and all(part not in ("", ".", "..") for part in parts)
-
-
 def _validate_top_shape(block: dict) -> list[BlockViolation]:
     violations: list[BlockViolation] = []
     for field_name in REQUIRED_TOP_FIELDS:
@@ -129,18 +104,14 @@ def _validate_top_shape(block: dict) -> list[BlockViolation]:
     if violations:
         # Structural prerequisites absent; deeper checks would raise.
         return violations
-
     if not isinstance(block["problemKey"], str) or not block["problemKey"].strip():
         violations.append(BlockViolation("INVALID_PROBLEM_KEY", "`problemKey` must be a non-empty string"))
-
     if block["chainMode"] not in ALLOWED_CHAIN_MODES:
         violations.append(BlockViolation('INVALID_CHAIN_MODE',
             f"`chainMode` must be one of {ALLOWED_CHAIN_MODES}, got {block['chainMode']!r}"))
-
     ordinal = block["chainOrdinal"]
     if not isinstance(ordinal, int) or isinstance(ordinal, bool) or ordinal < 0:
         violations.append(BlockViolation('INVALID_ORDINAL', '`chainOrdinal` must be a non-negative integer'))
-
     predecessor = block["predecessor"]
     if block.get("chainMode") == "INITIAL":
         if predecessor is not None:
@@ -170,7 +141,6 @@ def _validate_top_shape(block: dict) -> list[BlockViolation]:
             elif not isinstance(sha, str) or not SHA256_RE.match(sha):
                 violations.append(BlockViolation('PREDECESSOR_INVALID_HASH_SHAPE',
                     '`predecessor.sha256` must be a 64-character lowercase hex SHA-256 string'))
-
     blocker_delta = block["blockerDelta"]
     if not isinstance(blocker_delta, dict):
         violations.append(BlockViolation("INVALID_BLOCKER_DELTA", "`blockerDelta` must be an object"))
@@ -185,7 +155,6 @@ def _validate_top_shape(block: dict) -> list[BlockViolation]:
             elif len(blocker_delta[field_name]) != len(set(blocker_delta[field_name])):
                 violations.append(BlockViolation('DUPLICATE_BLOCKER_ID',
                     f'`blockerDelta.{field_name}` must not contain duplicate blocker IDs'))
-
     counters = block["counters"]
     if not isinstance(counters, dict):
         violations.append(BlockViolation("INVALID_COUNTERS", "`counters` must be an object"))
@@ -197,7 +166,6 @@ def _validate_top_shape(block: dict) -> list[BlockViolation]:
             elif not isinstance(value, int) or isinstance(value, bool) or value < 0:
                 violations.append(BlockViolation('INVALID_COUNTER_VALUE',
                     f'`counters.{field_name}` must be a non-negative integer'))
-
     claims = block["claims"]
     if not isinstance(claims, list):
         violations.append(BlockViolation("INVALID_CLAIMS", "`claims` must be an array"))
@@ -211,18 +179,13 @@ def _validate_top_shape(block: dict) -> list[BlockViolation]:
                 if field_name not in claim or not isinstance(value, str) or not value.strip():
                     violations.append(BlockViolation('MISSING_CLAIM_FIELD',
                         f'claims[{index}] missing non-empty string field `{field_name}`'))
-
     if block["requiredDisposition"] not in ALLOWED_DISPOSITIONS:
         violations.append(BlockViolation('INVALID_DISPOSITION',
             f"`requiredDisposition` must be one of {ALLOWED_DISPOSITIONS}, got {block['requiredDisposition']!r}"))
-
     if block["successorScope"] not in ALLOWED_SUCCESSOR_SCOPES:
         violations.append(BlockViolation('INVALID_SUCCESSOR_SCOPE',
             f"`successorScope` must be one of {ALLOWED_SUCCESSOR_SCOPES}, got {block['successorScope']!r}"))
-
     return violations
-
-
 def _validate_set_reconciliation(block: dict) -> list[BlockViolation]:
     """Invariants 3 and 4: set algebra, disjointness, no silent disappearance."""
     violations: list[BlockViolation] = []
@@ -238,13 +201,11 @@ def _validate_set_reconciliation(block: dict) -> list[BlockViolation]:
         current = set(delta["current"])
     except (KeyError, TypeError):
         return violations
-
     if prior != resolved | retained:
         violations.append(BlockViolation('SET_RECONCILIATION_PRIOR', '`prior` must equal exactly `resolved` union `retained`'))
     if current != retained | new | reopened:
         violations.append(BlockViolation('SET_RECONCILIATION_CURRENT',
             '`current` must equal exactly `retained` union `new` union `reopened`'))
-
     if resolved & retained:
         violations.append(BlockViolation('BLOCKER_SET_NOT_DISJOINT',
             f'`resolved` and `retained` must be disjoint; overlap: {sorted(resolved & retained)}'))
@@ -257,15 +218,11 @@ def _validate_set_reconciliation(block: dict) -> list[BlockViolation]:
     if new & reopened:
         violations.append(BlockViolation('BLOCKER_SET_NOT_DISJOINT',
             f'`new` and `reopened` must be disjoint; overlap: {sorted(new & reopened)}'))
-
     silently_disappeared = prior - resolved - retained
     if silently_disappeared:
         violations.append(BlockViolation('SILENT_BLOCKER_DISAPPEARANCE',
             f'blocker(s) present in `prior` but absent from both `resolved` and `retained`: {sorted(silently_disappeared)}'))
-
     return violations
-
-
 def _validate_escalation_triggers(block: dict) -> list[BlockViolation]:
     """Invariants 5, 6, and 7."""
     violations: list[BlockViolation] = []
@@ -274,12 +231,10 @@ def _validate_escalation_triggers(block: dict) -> list[BlockViolation]:
     successor_scope = block.get("successorScope")
     if not isinstance(counters, dict):
         return violations
-
     partial_ready = counters.get("partialReadyClosures", 0)
     scope_expansions = counters.get("reviewerScopeExpansions", 0)
     same_claim = counters.get("sameClaimCorrections", 0)
     non_decreasing = counters.get("nonDecreasingBlockerTransitions", 0)
-
     root_contract_required = (
         isinstance(partial_ready, int) and partial_ready >= ROOT_CONTRACT_PARTIAL_READY_THRESHOLD
     ) or (
@@ -290,7 +245,6 @@ def _validate_escalation_triggers(block: dict) -> list[BlockViolation]:
     stop_reassess_required = (
         isinstance(non_decreasing, int) and non_decreasing >= STOP_REASSESS_NON_DECREASING_THRESHOLD
     )
-
     if stop_reassess_required and disposition != "STOP_REASSESS_ARCHITECTURE":
         violations.append(
             BlockViolation(
@@ -308,7 +262,6 @@ def _validate_escalation_triggers(block: dict) -> list[BlockViolation]:
                 f"one of {ESCALATION_SATISFYING_DISPOSITIONS}",
             )
         )
-
     escalated = disposition in ESCALATED_DISPOSITIONS or root_contract_required or stop_reassess_required
     if escalated and successor_scope == "INITIAL_BOUNDED":
         violations.append(
@@ -318,10 +271,7 @@ def _validate_escalation_triggers(block: dict) -> list[BlockViolation]:
                 f"use one of {NON_NARROW_SUCCESSOR_SCOPES}",
             )
         )
-
     return violations
-
-
 def _validate_runtime_readiness(block: dict) -> list[BlockViolation]:
     """Invariant 8: no runtime readiness from documentation-only proof."""
     violations: list[BlockViolation] = []
@@ -342,8 +292,6 @@ def _validate_runtime_readiness(block: dict) -> list[BlockViolation]:
                 )
             )
     return violations
-
-
 def _validate_claim_to_proof_mapping(block: dict) -> list[BlockViolation]:
     """Invariant 9."""
     violations: list[BlockViolation] = []
@@ -369,8 +317,6 @@ def _validate_claim_to_proof_mapping(block: dict) -> list[BlockViolation]:
             violations.append(BlockViolation('CLAIM_TO_PROOF_MAPPING_VIOLATION',
                 f'claims[{index}] with claimClass `{claim_class}` requires proofClass `{minimum}`, got {proof_class!r}'))
     return violations
-
-
 def _validate_ready_scope_pairing(block: dict) -> list[BlockViolation]:
     """Prevent vacuous or mismatched executable-readiness declarations."""
     violations: list[BlockViolation] = []
@@ -388,8 +334,178 @@ def _validate_ready_scope_pairing(block: dict) -> list[BlockViolation]:
         violations.append(BlockViolation('EXECUTABLE_SCOPE_WITHOUT_READY_DISPOSITION',
             '`successorScope: EXECUTABLE_IMPLEMENTATION` requires `READY_WITH_EXECUTABLE_PROOF`'))
     return violations
-
-
+def _claim_ids(block: dict) -> set[str]:
+    claims = block.get("claims")
+    if not isinstance(claims, list):
+        return set()
+    return {
+        claim["claimId"]
+        for claim in claims
+        if isinstance(claim, dict)
+        and isinstance(claim.get("claimId"), str)
+        and claim.get("claimId")
+    }
+def _claim_proof_class(block: dict, claim_id: str) -> str | None:
+    claims = block.get("claims")
+    if not isinstance(claims, list):
+        return None
+    for claim in claims:
+        if isinstance(claim, dict) and claim.get("claimId") == claim_id:
+            return claim.get("proofClass")
+    return None
+def _validate_resolution_evidence(
+    block: dict, evidence_hash_resolver: Any = None
+) -> list[BlockViolation]:
+    """Invariant 13: every `resolved` blocker binds exactly one immutable
+    evidence record; no missing, extra, or malformed binding passes."""
+    violations: list[BlockViolation] = []
+    delta = block.get("blockerDelta")
+    if not isinstance(delta, dict):
+        return violations
+    resolved = delta.get("resolved")
+    if not _is_str_list(resolved):
+        return violations
+    resolved_set = set(resolved)
+    evidence = block.get("resolutionEvidence")
+    if evidence is None:
+        evidence = {}
+    if not isinstance(evidence, dict):
+        violations.append(
+            BlockViolation(
+                "RESOLUTION_EVIDENCE_INVALID_TYPE",
+                "`resolutionEvidence` must be an object keyed by blocker ID",
+            )
+        )
+        return violations
+    for blocker_id in sorted(resolved_set - set(evidence)):
+        violations.append(
+            BlockViolation(
+                "RESOLUTION_EVIDENCE_MISSING_BINDING",
+                f"resolved blocker `{blocker_id}` has no resolution-evidence binding",
+            )
+        )
+    for blocker_id in sorted(set(evidence) - resolved_set):
+        violations.append(
+            BlockViolation(
+                "RESOLUTION_EVIDENCE_EXTRA_BINDING",
+                f"resolution-evidence key `{blocker_id}` is not present in `blockerDelta.resolved`",
+            )
+        )
+    claim_ids = _claim_ids(block)
+    for blocker_id in sorted(resolved_set & set(evidence)):
+        binding = evidence[blocker_id]
+        if not isinstance(binding, dict):
+            violations.append(
+                BlockViolation(
+                    "RESOLUTION_EVIDENCE_INVALID_BINDING_SHAPE",
+                    f"resolution-evidence binding for `{blocker_id}` must be an object",
+                )
+            )
+            continue
+        missing_fields = [f for f in REQUIRED_RESOLUTION_EVIDENCE_FIELDS if f not in binding]
+        for field_name in missing_fields:
+            violations.append(
+                BlockViolation(
+                    "RESOLUTION_EVIDENCE_MISSING_BINDING_FIELD",
+                    f"resolution-evidence binding for `{blocker_id}` missing field `{field_name}`",
+                )
+            )
+        evidence_class = binding.get("evidenceClass")
+        if evidence_class not in ALLOWED_RESOLUTION_EVIDENCE_CLASSES:
+            violations.append(
+                BlockViolation(
+                    "RESOLUTION_EVIDENCE_INVALID_EVIDENCE_CLASS",
+                    f"resolution-evidence binding for `{blocker_id}` has invalid "
+                    f"`evidenceClass` {evidence_class!r}; expected one of "
+                    f"{ALLOWED_RESOLUTION_EVIDENCE_CLASSES}",
+                )
+            )
+            continue
+        path = binding.get("evidencePath")
+        if not isinstance(path, str) or not path.strip():
+            violations.append(
+                BlockViolation(
+                    "RESOLUTION_EVIDENCE_EMPTY_PATH",
+                    f"resolution-evidence binding for `{blocker_id}` must carry a non-empty `evidencePath`",
+                )
+            )
+        elif not _is_safe_repo_relative_path(path):
+            violations.append(
+                BlockViolation(
+                    "RESOLUTION_EVIDENCE_PATH_UNSAFE",
+                    f"resolution-evidence path `{path}` for `{blocker_id}` must be a "
+                    "normalized repository-relative path without traversal",
+                )
+            )
+        sha = binding.get("sha256")
+        if not isinstance(sha, str) or not SHA256_RE.match(sha):
+            violations.append(
+                BlockViolation(
+                    "RESOLUTION_EVIDENCE_INVALID_HASH_SHAPE",
+                    f"resolution-evidence binding for `{blocker_id}` must carry a "
+                    "64-character lowercase hex `sha256`",
+                )
+            )
+        locator = binding.get("locator")
+        if not isinstance(locator, str) or not locator.strip():
+            violations.append(
+                BlockViolation(
+                    "RESOLUTION_EVIDENCE_EMPTY_LOCATOR",
+                    f"resolution-evidence binding for `{blocker_id}` must carry a non-empty `locator`",
+                )
+            )
+        claim_id = binding.get("claimId")
+        if claim_id is not None:
+            if not isinstance(claim_id, str) or not claim_id.strip() or claim_id not in claim_ids:
+                violations.append(
+                    BlockViolation(
+                        "RESOLUTION_EVIDENCE_INVALID_CLAIM_LINK",
+                        f"resolution-evidence binding for `{blocker_id}` links `claimId` "
+                        f"{claim_id!r} which does not name a claim in this block",
+                    )
+                )
+        if evidence_class == "EXECUTABLE_PROOF":
+            if not (isinstance(claim_id, str) and claim_id.strip() and claim_id in claim_ids):
+                if claim_id is None:
+                    violations.append(
+                        BlockViolation(
+                            "RESOLUTION_EVIDENCE_EXECUTABLE_MISSING_CLAIM_LINK",
+                            f"EXECUTABLE_PROOF resolution for `{blocker_id}` must link a "
+                            "`claimId` to a claim in this block",
+                        )
+                    )
+            elif _claim_proof_class(block, claim_id) == DOCUMENTATION_ONLY_PROOF:
+                violations.append(
+                    BlockViolation(
+                        "RESOLUTION_EVIDENCE_NON_EXECUTABLE_CLAIM_LINK",
+                        f"EXECUTABLE_PROOF resolution for `{blocker_id}` links claim "
+                        f"`{claim_id}` whose proofClass is `{DOCUMENTATION_ONLY_PROOF}`",
+                    )
+                )
+        if (
+            evidence_hash_resolver is not None
+            and isinstance(path, str)
+            and _is_safe_repo_relative_path(path)
+            and isinstance(sha, str)
+            and SHA256_RE.match(sha)
+        ):
+            resolved_hash = evidence_hash_resolver(path)
+            if resolved_hash is None:
+                violations.append(
+                    BlockViolation(
+                        "RESOLUTION_EVIDENCE_PATH_UNREADABLE",
+                        f"resolution-evidence path `{path}` for `{blocker_id}` could not be read",
+                    )
+                )
+            elif resolved_hash != sha:
+                violations.append(
+                    BlockViolation(
+                        "RESOLUTION_EVIDENCE_HASH_MISMATCH",
+                        f"declared sha256 `{sha}` for `{blocker_id}` does not match "
+                        f"recomputed hash `{resolved_hash}`",
+                    )
+                )
+    return violations
 def _validate_predecessor_state(block: dict, predecessor_block: dict) -> list[BlockViolation]:
     """Validate state continuity against the actual predecessor SCEC block."""
     violations: list[BlockViolation] = []
@@ -404,7 +520,6 @@ def _validate_predecessor_state(block: dict, predecessor_block: dict) -> list[Bl
     elif ordinal != predecessor_ordinal + 1:
         violations.append(BlockViolation('PREDECESSOR_ORDINAL_DISCONTINUITY',
             f'successor ordinal must equal predecessor ordinal + 1 ({predecessor_ordinal + 1})'))
-
     predecessor_delta = predecessor_block.get("blockerDelta")
     current_delta = block.get("blockerDelta")
     if isinstance(predecessor_delta, dict) and isinstance(current_delta, dict):
@@ -414,7 +529,6 @@ def _validate_predecessor_state(block: dict, predecessor_block: dict) -> list[Bl
             if set(predecessor_current) != set(successor_prior):
                 violations.append(BlockViolation('PREDECESSOR_BLOCKER_STATE_MISMATCH',
                     'successor `blockerDelta.prior` must equal predecessor `blockerDelta.current`'))
-
     predecessor_counters = predecessor_block.get("counters")
     counters = block.get("counters")
     if isinstance(predecessor_counters, dict) and isinstance(counters, dict):
@@ -428,7 +542,6 @@ def _validate_predecessor_state(block: dict, predecessor_block: dict) -> list[Bl
             if isinstance(previous, int) and isinstance(current, int) and current < previous:
                 violations.append(BlockViolation('PREDECESSOR_COUNTER_RESET',
                     f'`counters.{field_name}` must not decrease from predecessor value {previous}'))
-
         previous_streak = predecessor_counters.get("nonDecreasingBlockerTransitions")
         current_streak = counters.get("nonDecreasingBlockerTransitions")
         if (
@@ -450,7 +563,6 @@ def _validate_predecessor_state(block: dict, predecessor_block: dict) -> list[Bl
                         f"streak implied by predecessor/current blocker counts ({expected_streak})",
                     )
                 )
-
     predecessor_disposition = predecessor_block.get("requiredDisposition")
     if predecessor_disposition == "STOP_REASSESS_ARCHITECTURE":
         violations.append(BlockViolation('SUCCESSOR_AFTER_STOP_REASSESS',
@@ -463,16 +575,14 @@ def _validate_predecessor_state(block: dict, predecessor_block: dict) -> list[Bl
             violations.append(BlockViolation('PREDECESSOR_NARROW_SCOPE_REOPENED',
                 'successor must not reopen a narrow scope after predecessor root-contract escalation'))
     return violations
-
-
 def validate_block(
     block: dict,
     *,
     predecessor_hash_resolver: Any = None,
     predecessor_block_resolver: Any = None,
+    evidence_hash_resolver: Any = None,
 ) -> ValidationResult:
     """Validate one already-parsed candidate SCEC block.
-
     `predecessor_hash_resolver`, if given, is a callable
     `(path: str) -> str | None` returning the recomputed SHA-256 hex digest of
     the predecessor artifact at `path`, or `None` if the path cannot be read.
@@ -480,25 +590,26 @@ def validate_block(
     skipped, which is appropriate for pure-shape unit tests that supply their
     own already-consistent fixtures; the git-integration layer below always
     supplies a real resolver.
+    `evidence_hash_resolver`, if given, is the same-shaped callable for each
+    resolution-evidence `evidencePath`; when omitted, evidence file hash
+    cross-verification (invariant 13) is skipped while shape validation still
+    runs.
     """
     if not is_active_block(block):
         return ValidationResult(is_active=False)
-
     violations: list[BlockViolation] = []
     violations.extend(_validate_top_shape(block))
-
     # If top-shape is broken, downstream checks that assume shape would raise
     # or produce noise; report top-shape violations and stop there, which is
     # itself fail-closed (invariant 12).
     if violations:
         return ValidationResult(is_active=True, violations=tuple(violations))
-
     violations.extend(_validate_set_reconciliation(block))
     violations.extend(_validate_escalation_triggers(block))
     violations.extend(_validate_runtime_readiness(block))
     violations.extend(_validate_claim_to_proof_mapping(block))
     violations.extend(_validate_ready_scope_pairing(block))
-
+    violations.extend(_validate_resolution_evidence(block, evidence_hash_resolver))
     if block.get("chainMode") == "SUCCESSOR" and predecessor_hash_resolver is not None:
         predecessor = block.get("predecessor")
         if isinstance(predecessor, dict):
@@ -517,7 +628,6 @@ def validate_block(
                             f"recomputed hash `{resolved_hash}` of `{path}`",
                         )
                     )
-
             if predecessor_block_resolver is not None and isinstance(path, str):
                 predecessor_blocks = predecessor_block_resolver(path)
                 if predecessor_blocks is None:
@@ -527,7 +637,13 @@ def validate_block(
                     violations.append(BlockViolation('PREDECESSOR_BLOCK_COUNT_INVALID',
                         f'predecessor path `{path}` must contain exactly one active SCEC block; found {len(predecessor_blocks)}'))
                 else:
-                    predecessor_result = validate_block(predecessor_blocks[0])
+                    # Revalidate immutable resolution evidence when consuming a
+                    # predecessor. Otherwise a later evidence-target change
+                    # could inherit trust silently through the chain.
+                    predecessor_result = validate_block(
+                        predecessor_blocks[0],
+                        evidence_hash_resolver=evidence_hash_resolver,
+                    )
                     if predecessor_result.violations:
                         violations.append(
                             BlockViolation(
@@ -538,10 +654,7 @@ def validate_block(
                         )
                     else:
                         violations.extend(_validate_predecessor_state(block, predecessor_blocks[0]))
-
     return ValidationResult(is_active=True, violations=tuple(violations))
-
-
 def _iter_fenced_blocks(text: str) -> list[tuple[str, str]]:
     """Yield `(language_tag, body)` per fenced block via an explicit
     open/close state machine, so a closing fence is never re-paired as a
@@ -573,8 +686,6 @@ def _iter_fenced_blocks(text: str) -> list[tuple[str, str]]:
             continue
         body_lines.append(line)
     return blocks
-
-
 def find_active_blocks(text: str) -> list[dict]:
     """Extract every fenced-code-block JSON object that is a real active SCEC
     block (invariant 11: quoted/example markers outside real JSON are never
@@ -591,23 +702,15 @@ def find_active_blocks(text: str) -> list[dict]:
         if is_active_block(candidate):
             active.append(candidate)
     return active
-
-
 def sha256_of_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
-
-
 def _configure_stdout() -> None:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     if hasattr(sys.stderr, "reconfigure"):
         sys.stderr.reconfigure(encoding="utf-8", errors="replace")
-
-
 def _normalize(path: str) -> str:
     return path.replace("\\", "/").strip()
-
-
 def _run_git(args: list[str]) -> tuple[int, str, str]:
     proc = subprocess.run(
         ["git", *args],
@@ -619,8 +722,6 @@ def _run_git(args: list[str]) -> tuple[int, str, str]:
         stderr=subprocess.PIPE,
     )
     return proc.returncode, proc.stdout.strip(), proc.stderr.strip()
-
-
 def _changed_md_paths(base: str, head: str) -> tuple[str, ...]:
     paths: set[str] = set()
     if base and head:
@@ -637,8 +738,6 @@ def _changed_md_paths(base: str, head: str) -> tuple[str, ...]:
     if code == 0 and out:
         paths.update(_normalize(p) for p in out.splitlines() if p.strip())
     return tuple(sorted(p for p in paths if p.endswith(".md")))
-
-
 def _working_tree_md_paths() -> tuple[str, ...]:
     paths: set[str] = set()
     for args in (
@@ -650,15 +749,11 @@ def _working_tree_md_paths() -> tuple[str, ...]:
         if code == 0 and out:
             paths.update(_normalize(p) for p in out.splitlines() if p.strip())
     return tuple(sorted(p for p in paths if p.endswith(".md")))
-
-
 def _read(path: str) -> str:
     full = REPO_ROOT / path
     if not full.exists() or full.is_dir():
         return ""
     return full.read_text(encoding="utf-8", errors="replace")
-
-
 def _is_governed_work_order_or_return(path: str) -> bool:
     normalized = _normalize(path)
     if normalized == THIS_CHECKER_PATH:
@@ -670,8 +765,6 @@ def _is_governed_work_order_or_return(path: str) -> bool:
         or normalized.startswith("docs/baselines/")
         or normalized.startswith("docs/reviews/")
     ) and normalized.endswith(".md")
-
-
 def _requires_scec_block(path: str) -> bool:
     """Forward adoption applies to work orders and worker returns."""
     normalized = _normalize(path)
@@ -682,15 +775,11 @@ def _requires_scec_block(path: str) -> bool:
         and "_WORKER_RETURN_" in PurePosixPath(normalized).name
         and normalized.endswith(".md")
     )
-
-
 def _activation_commit() -> str | None:
     code, out, _ = _run_git(["log", "--format=%H", "--diff-filter=A", "--", STANDARD_PATH])
     if code != 0 or not out:
         return None
     return out.splitlines()[0].strip() or None
-
-
 def _range_change_is_at_or_after_activation(path: str, base: str, head: str) -> bool:
     activation = _activation_commit()
     if activation is None or not base or not head:
@@ -701,8 +790,6 @@ def _range_change_is_at_or_after_activation(path: str, base: str, head: str) -> 
     changed_commit = out.splitlines()[0].strip()
     code, _, _ = _run_git(["merge-base", "--is-ancestor", activation, changed_commit])
     return code == 0
-
-
 def _repo_predecessor_hash_resolver(path: str) -> str | None:
     if not _is_safe_repo_relative_path(path):
         return None
@@ -718,8 +805,6 @@ def _repo_predecessor_hash_resolver(path: str) -> str | None:
     except OSError:
         return None
     return hashlib.sha256(content).hexdigest()
-
-
 def _repo_predecessor_block_resolver(path: str) -> tuple[dict, ...] | None:
     if not _is_safe_repo_relative_path(path):
         return None
@@ -735,19 +820,14 @@ def _repo_predecessor_block_resolver(path: str) -> tuple[dict, ...] | None:
     except (OSError, UnicodeError):
         return None
     return tuple(find_active_blocks(text))
-
-
 @dataclass(frozen=True)
 class FileDiagnostic:
     path: str
     block_count: int
     violations: tuple[tuple[int, BlockViolation], ...]
-
     @property
     def is_clean(self) -> bool:
         return not self.violations
-
-
 def diagnose_file(path: str, text: str, *, require_block: bool = False) -> FileDiagnostic:
     blocks = find_active_blocks(text)
     violations: list[tuple[int, BlockViolation]] = []
@@ -776,12 +856,11 @@ def diagnose_file(path: str, text: str, *, require_block: bool = False) -> FileD
             block,
             predecessor_hash_resolver=_repo_predecessor_hash_resolver,
             predecessor_block_resolver=_repo_predecessor_block_resolver,
+            evidence_hash_resolver=_repo_predecessor_hash_resolver,
         )
         for violation in result.violations:
             violations.append((index, violation))
     return FileDiagnostic(path=path, block_count=len(blocks), violations=tuple(violations))
-
-
 def run(base: str, head: str) -> list[FileDiagnostic]:
     results: list[FileDiagnostic] = []
     working_paths = set(_working_tree_md_paths())
@@ -798,8 +877,6 @@ def run(base: str, head: str) -> list[FileDiagnostic]:
         if diagnostic.block_count or diagnostic.violations:
             results.append(diagnostic)
     return results
-
-
 def main(argv: list[str] | None = None) -> int:
     _configure_stdout()
     parser = argparse.ArgumentParser(
@@ -809,24 +886,20 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--head", default="HEAD")
     parser.add_argument("--enforce", action="store_true")
     args = parser.parse_args(argv)
-
     print("=== CVF Semantic Convergence And Escalation Control Gate ===")
     print(f"Standard: {STANDARD_PATH}")
     diagnostics = run(args.base, args.head)
     files_with_blocks = len(diagnostics)
     total_blocks = sum(d.block_count for d in diagnostics)
     violating = [d for d in diagnostics if not d.is_clean]
-
     print(f"Changed governed artifacts with active SCEC blocks: {files_with_blocks}")
     print(f"Active SCEC blocks checked: {total_blocks}")
-
     if not violating:
         print(
             "PASS: every changed governed artifact's active SCEC block satisfies the "
             "declared-evidence-shape contract."
         )
         return 0
-
     print(f"Violations: {sum(len(d.violations) for d in violating)}")
     for diagnostic in violating:
         for block_index, violation in diagnostic.violations:
@@ -836,7 +909,5 @@ def main(argv: list[str] | None = None) -> int:
         f"{STANDARD_PATH} before this artifact can progress."
     )
     return 1 if args.enforce else 0
-
-
 if __name__ == "__main__":
     raise SystemExit(main())

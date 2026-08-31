@@ -29,6 +29,7 @@
             "T1J_BLOCKER_DURABLE_OWNER_UNDECIDED"
           ]
         },
+        "resolutionEvidence": {},
         "counters": {
           "partialReadyClosures": 0,
           "reviewerScopeExpansions": 0,
@@ -75,6 +76,14 @@
             "T1J_BLOCKER_SQLITE_CONNECTION_LIFETIME_STORAGE_PATH_OWNER_UNDECIDED"
           ]
         },
+        "resolutionEvidence": {
+          "T1J_BLOCKER_DURABLE_OWNER_UNDECIDED": {
+            "evidenceClass": "ACCEPTED_REVIEW",
+            "evidencePath": "docs/reviews/CVF_GC010_SCR_R2_T1J_R2_APPROVAL_RESUME_ATOMIC_CLAIM_DURABLE_OWNER_DECISION_WORKER_RETURN_2026-08-31.md",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000004",
+            "locator": "Independent Reviewer Correction"
+          }
+        },
         "counters": {
           "partialReadyClosures": 1,
           "reviewerScopeExpansions": 0,
@@ -98,7 +107,7 @@
         "requiredDisposition": "CONTINUE_BOUNDED",
         "successorScope": "INITIAL_BOUNDED"
       },
-      "narrative": "T1J-R2 worker return selected terminal PARTIAL_READY_REQUIRES_FAILURE_RECOVERY_INTERFACE_DECISION, stating the CAS/crash-recovery design was sound and only SQLite connection-lifetime/storage-path ownership remained open (worker's stated single remaining gap)."
+      "narrative": "T1J-R2 worker return selected terminal PARTIAL_READY_REQUIRES_FAILURE_RECOVERY_INTERFACE_DECISION, stating the CAS/crash-recovery design was sound and only SQLite connection-lifetime/storage-path ownership remained open (worker's stated single remaining gap). The durable-owner blocker is resolved and bound to the accepted R2 decision."
     },
     {
       "nodeLabel": "T1J-R2 reviewer correction: scope expansion",
@@ -130,6 +139,14 @@
             "T1J_BLOCKER_ROUTE_ORDER_AND_PAYLOAD_PROVENANCE_UNDECIDED",
             "T1J_BLOCKER_PRODUCTION_ENVIRONMENT_COMPATIBILITY_UNDECIDED"
           ]
+        },
+        "resolutionEvidence": {
+          "T1J_BLOCKER_DURABLE_OWNER_UNDECIDED": {
+            "evidenceClass": "ACCEPTED_REVIEW",
+            "evidencePath": "docs/reviews/CVF_GC010_SCR_R2_T1J_R2_APPROVAL_RESUME_ATOMIC_CLAIM_DURABLE_OWNER_DECISION_WORKER_RETURN_2026-08-31.md",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000004",
+            "locator": "Independent Reviewer Correction"
+          }
         },
         "counters": {
           "partialReadyClosures": 1,
@@ -205,7 +222,7 @@
         "successorScope": "INITIAL_BOUNDED",
         "invalidBecauseEscalationAlreadyRequired": true
       },
-      "narrative": "T1J-R3 worker return claimed route ordering and creation-identity uniqueness were now fully resolved with a two-mechanism exactly-once-creation proof, and selected terminal PARTIAL_READY_REQUIRES_ONE_NAMED_IMPLEMENTATION_PRECONDITION as if only SQLite lifecycle and recovery invocation authority remained. This node's own requiredDisposition/successorScope (CONTINUE_BOUNDED / INITIAL_BOUNDED) is INVALID under invariant 7: because reviewerScopeExpansions is already 1 from R2 and partialReadyClosures reaches 2 at this node, escalation was already required before this node was authored, so no successorScope may be INITIAL_BOUNDED here. This is the exact rejected pattern this fixture proves the checker catches."
+      "narrative": "T1J-R3 worker return claimed route ordering and creation-identity uniqueness were now fully resolved with a two-mechanism exactly-once-creation proof, and selected terminal PARTIAL_READY_REQUIRES_ONE_NAMED_IMPLEMENTATION_PRECONDITION as if only SQLite lifecycle and recovery invocation authority remained. The route-order/payload blocker is moved to resolved WITHOUT any resolution-evidence binding, which invariant 13 now rejects as unsupported resolution laundering. This node's own requiredDisposition/successorScope (CONTINUE_BOUNDED / INITIAL_BOUNDED) is also INVALID under invariant 7: because reviewerScopeExpansions is already 1 from R2 and partialReadyClosures reaches 2 at this node, escalation was already required before this node was authored, so no successorScope may be INITIAL_BOUNDED here. This is the exact rejected pattern this fixture proves the checker catches."
     },
     {
       "nodeLabel": "T1J-R3 reviewer correction: same-claim correction plus continued escalation",
@@ -224,11 +241,10 @@
             "T1J_BLOCKER_ROUTE_ORDER_AND_PAYLOAD_PROVENANCE_UNDECIDED",
             "T1J_BLOCKER_PRODUCTION_ENVIRONMENT_COMPATIBILITY_UNDECIDED"
           ],
-          "resolved": [
-            "T1J_BLOCKER_ROUTE_ORDER_AND_PAYLOAD_PROVENANCE_UNDECIDED"
-          ],
+          "resolved": [],
           "retained": [
             "T1J_BLOCKER_SQLITE_CONNECTION_LIFETIME_STORAGE_PATH_OWNER_UNDECIDED",
+            "T1J_BLOCKER_ROUTE_ORDER_AND_PAYLOAD_PROVENANCE_UNDECIDED",
             "T1J_BLOCKER_PRODUCTION_ENVIRONMENT_COMPATIBILITY_UNDECIDED"
           ],
           "new": [
@@ -237,10 +253,12 @@
           "reopened": [],
           "current": [
             "T1J_BLOCKER_SQLITE_CONNECTION_LIFETIME_STORAGE_PATH_OWNER_UNDECIDED",
+            "T1J_BLOCKER_ROUTE_ORDER_AND_PAYLOAD_PROVENANCE_UNDECIDED",
             "T1J_BLOCKER_PRODUCTION_ENVIRONMENT_COMPATIBILITY_UNDECIDED",
             "T1J_BLOCKER_EXACTLY_ONCE_CREATION_BARRIER_REJECTED"
           ]
         },
+        "resolutionEvidence": {},
         "counters": {
           "partialReadyClosures": 2,
           "reviewerScopeExpansions": 1,
@@ -258,7 +276,7 @@
         "requiredDisposition": "STOP_REASSESS_ARCHITECTURE",
         "successorScope": "NO_SUCCESSOR"
       },
-      "narrative": "The reviewer's Independent Reviewer Correction rejected ApprovalStore.delete() as a valid single-winner barrier and named the consolidated owner-contract precondition. The accepted R1-to-R2 correction grew the blocker set from one to three, and the accepted R2-to-R3 correction retained three blockers. Those are two consecutive non-decreasing transitions, so the stronger STOP_REASSESS_ARCHITECTURE / NO_SUCCESSOR terminal applies instead of another same-problem tranche."
+      "narrative": "The reviewer's Independent Reviewer Correction rejected ApprovalStore.delete() as a valid single-winner barrier and named the consolidated owner-contract precondition. The reviewer also corrected the route-order/payload blocker back to retained: audit/consume ordering remains undecided and payload work remains blocking, so that blocker was never actually resolved. The accepted R2-to-R3 transition therefore grows the blocker set from three to four (three retained plus the rejected exactly-once barrier as new), and current contains four blockers. Because the accepted R1-to-R2 correction grew the blocker set from one to three and the accepted R2-to-R3 correction grew it from three to four, those are two consecutive non-decreasing transitions, so the stronger STOP_REASSESS_ARCHITECTURE / NO_SUCCESSOR terminal applies instead of another same-problem tranche."
     },
     {
       "nodeLabel": "Proposed T1J-R4 same-problem successor after stop (rejected effectiveness case)",
@@ -286,6 +304,29 @@
           "new": [],
           "reopened": [],
           "current": []
+        },
+        "resolutionEvidence": {
+          "T1J_BLOCKER_SQLITE_CONNECTION_LIFETIME_STORAGE_PATH_OWNER_UNDECIDED": {
+            "evidenceClass": "EXECUTABLE_PROOF",
+            "evidencePath": "governance/compat/test_check_semantic_convergence_control.py",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000005",
+            "locator": "authenticated restart-recovery invocation state-transition test",
+            "claimId": "T1J-R4-CLAIM-CRASH-RECOVERY"
+          },
+          "T1J_BLOCKER_PRODUCTION_ENVIRONMENT_COMPATIBILITY_UNDECIDED": {
+            "evidenceClass": "EXECUTABLE_PROOF",
+            "evidencePath": "governance/compat/test_check_semantic_convergence_control.py",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000005",
+            "locator": "integrated route composition contract test",
+            "claimId": "T1J-R4-CLAIM-INTEGRATED-ROUTE-COMPOSITION-CONTRACT"
+          },
+          "T1J_BLOCKER_EXACTLY_ONCE_CREATION_BARRIER_REJECTED": {
+            "evidenceClass": "EXECUTABLE_PROOF",
+            "evidencePath": "governance/compat/test_check_semantic_convergence_control.py",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000005",
+            "locator": "SQLite PRIMARY KEY conflict-before-provider-attempt adversarial concurrency test",
+            "claimId": "T1J-R4-CLAIM-CONCURRENCY-EXACTLY-ONCE"
+          }
         },
         "counters": {
           "partialReadyClosures": 2,
@@ -321,10 +362,10 @@
   ],
   "expectedCheckerOutcomes": {
     "r1_initial_node": "PASS: valid INITIAL block, ordinal 0, no predecessor.",
-    "r2_worker_node": "PASS as a standalone block (ordinal 1, valid predecessor hash, valid set reconciliation); demonstrates the worker's own narrow framing before reviewer correction.",
+    "r2_worker_node": "PASS as a standalone block (ordinal 1, valid predecessor hash, valid set reconciliation, durable-owner resolution bound to accepted review evidence); demonstrates the worker's own narrow framing before reviewer correction.",
     "r2_reviewer_node": "PASS: same ordinal 1 but corrected disposition; reviewerScopeExpansions=1 correctly triggers requiredDisposition=ROOT_CONTRACT_REQUIRED and successorScope=INTEGRATED_ROOT_CONTRACT per invariant 5.",
-    "r3_worker_node": "FAIL under invariant 7: successorScope=INITIAL_BOUNDED is invalid once escalation (reviewerScopeExpansions>=1) is already standing from the predecessor chain state.",
-    "r3_reviewer_node": "PASS: the second consecutive non-decreasing blocker transition requires STOP_REASSESS_ARCHITECTURE and NO_SUCCESSOR.",
-    "r4_required_shape_node": "FAIL: a STOP_REASSESS_ARCHITECTURE predecessor cannot have another successor in the same problem chain, even when the proposed successor declares executable proof."
+    "r3_worker_node": "FAIL under invariant 7 (successorScope=INITIAL_BOUNDED is invalid once escalation stands from the predecessor chain state) and under invariant 13 (the route-order/payload blocker is resolved with no resolution-evidence binding).",
+    "r3_reviewer_node": "PASS: the corrected node retains all three R2 blockers (route-order/payload no longer resolved) and adds the rejected exactly-once barrier, giving current count 4; the second consecutive non-decreasing blocker transition requires STOP_REASSESS_ARCHITECTURE and NO_SUCCESSOR.",
+    "r4_required_shape_node": "FAIL: a STOP_REASSESS_ARCHITECTURE predecessor cannot have another successor in the same problem chain, even when the proposed successor declares executable proof with bound resolution evidence."
   }
 }

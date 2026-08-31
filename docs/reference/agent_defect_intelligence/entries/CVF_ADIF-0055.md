@@ -117,6 +117,35 @@ untagged active JSON block preceded by a non-JSON fence, and confirmation
 that quoted-marker immunity and malformed-active-candidate fail-closed
 behavior are unchanged.
 
+## Third Observed Instance - Unsupported Resolution Laundering
+
+The SCEC-E1 effectiveness reconciliation (accepted with material correction
+at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5`) independently found that the
+replay fixture and dispatch seed marked
+`T1J_BLOCKER_ROUTE_ORDER_AND_PAYLOAD_PROVENANCE_UNDECIDED` resolved even
+though accepted R3 evidence keeps audit/consume ordering undecided and
+payload work blocking. Set algebra still validated because `resolved` and
+`retained` remained disjoint and reconciled, so an unresolved blocker could
+be laundered as `resolved` without binding that transition to any accepted
+evidence. The correct accepted R2-to-R3 transition is 3 to 4 (three retained
+plus the rejected exactly-once barrier as new), not 3 to 3.
+
+Prevention: add a machine-checked per-resolved-blocker evidence binding
+(`resolutionEvidence`) keyed exactly to `blockerDelta.resolved`. Each binding
+carries an `evidenceClass` (`ACCEPTED_REVIEW` or `EXECUTABLE_PROOF`), a
+normalized repository-relative `evidencePath`, an immutable `sha256`, a
+non-empty `locator`, and an optional `claimId` linking an executable
+resolution to a claim in the same block. The checker recomputes the
+referenced file hash and fails closed on missing/extra/wrong bindings,
+unsafe or unreadable paths, hash mismatch, empty locator, and invalid claim
+links. Regression coverage includes positive accepted-review and
+executable-proof bindings plus negative bypasses for every named failure
+mode. Independent reviewer probing found one inheritance bypass: successor
+validation initially checked the predecessor block without the evidence hash
+resolver, so later evidence-target drift inherited trust silently. The
+accepted implementation revalidates predecessor resolution-evidence hashes at
+successor consumption time and carries a focused regression for that path.
+
 ## Remediation
 
 Bind a Semantic Convergence Outcome block to every new or changed governed
@@ -173,6 +202,29 @@ are internally consistent.
 | Agent type | worker |
 | Invocation ID | `scec-t1-r1-adif-0055-2026-08-31` |
 | Expected manifest | this entry only, within the four-path SCEC-T1-R1 worker manifest |
+| Actual changed set | this entry only |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this tranche |
+
+## Agent Operation Trace Block - SCEC-T1-R2 Resolution Evidence Binding
+
+| Field | Evidence |
+|---|---|
+| Actor | delegated governance implementation worker |
+| Provider or surface | local private provenance workspace |
+| Session or invocation | SCEC-T1-R2 blocker resolution evidence binding and historical replay correction, 2026-08-31 |
+| Working directory | repository root |
+| Command or tool surface | governed reads, checker/test/scaffold authoring, `python -m unittest`, governance gates |
+| Target paths | this entry; `docs/reference/semantic_convergence_control/` standard; `governance/compat/check_semantic_convergence_control.py`; its focused tests; the replay fixture; both worker-return scaffold producers and the golden fixture |
+| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_2026-08-31.md` |
+| Before status evidence | `resolved` arrays could pass set algebra with no per-blocker evidence; the replay fixture resolved the still-open route-order/payload blocker |
+| After status evidence | invariant 13 and the `resolutionEvidence` binding are machine-enforced; the corrected R3 reviewer node retains all three R2 blockers plus the rejected exactly-once barrier (current count 4) |
+| Diff evidence | exact eleven-path SCEC-T1-R2 worker changed-set, per this worker return's changed-set section |
+| Approval boundary | local governance checker/scaffold/test hardening only; no product/runtime, provider/live, or public-sync claim |
+| Claim boundary | declared-evidence-shape defect record only; no semantic-truth-scoring or reasoning-trace-inspection claim |
+| Agent type | worker |
+| Invocation ID | `scec-t1-r2-adif-0055-2026-08-31` |
+| Expected manifest | this entry only, within the eleven-path SCEC-T1-R2 worker manifest |
 | Actual changed set | this entry only |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this tranche |

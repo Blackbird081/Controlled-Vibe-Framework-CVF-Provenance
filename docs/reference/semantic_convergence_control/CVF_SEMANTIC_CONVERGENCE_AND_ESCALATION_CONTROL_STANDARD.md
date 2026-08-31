@@ -66,6 +66,7 @@ An SCEC block is a fenced JSON object using schema
     "reopened": [],
     "current": []
   },
+  "resolutionEvidence": {},
   "counters": {
     "partialReadyClosures": 0,
     "reviewerScopeExpansions": 0,
@@ -102,6 +103,13 @@ Field notes:
   trusted from the declaration.
 - `blockerDelta` holds six blocker-ID arrays: `prior`, `resolved`, `retained`,
   `new`, `reopened`, `current`. See Set Reconciliation below.
+- `resolutionEvidence` is an object keyed by blocker ID whose keys must equal
+  `blockerDelta.resolved` exactly. Each value binds an `evidenceClass`
+  (`ACCEPTED_REVIEW` or `EXECUTABLE_PROOF`), a normalized repository-relative
+  `evidencePath`, an immutable `sha256`, a non-empty `locator`, and an
+  optional `claimId` that links an `EXECUTABLE_PROOF` resolution to a claim in
+  this same block. An empty `resolved` requires an empty evidence map; the
+  scaffold generators emit that safe default. See Resolution Evidence below.
 - `counters` holds three cumulative non-negative integers
   (`partialReadyClosures`, `reviewerScopeExpansions`,
   `sameClaimCorrections`) plus the current consecutive streak of
@@ -130,7 +138,7 @@ invariant 11 below.
 
 ## Enforcement Invariants
 
-The checker enforces exactly these twelve invariants for every active block:
+The checker enforces exactly these thirteen invariants for every active block:
 
 1. **Stable identity and monotonic ordinal.** The checker reads the actual
    predecessor artifact's single active SCEC block. `problemKey` must match
@@ -193,9 +201,26 @@ The checker enforces exactly these twelve invariants for every active block:
 12. **Fail-closed on malformed or incomplete active blocks.** Once a fenced
     block parses as JSON and contains the `schemaVersion` field with the
     exact SCEC value, any missing required field, wrong JSON type, invalid
-    enum value, or structural violation of invariants 1-9 is a hard failure.
-    A block that is present but cannot be fully validated is never treated as
-    passing by default.
+    enum value, or structural violation of invariants 1-9 or 13 is a hard
+    failure. A block that is present but cannot be fully validated is never
+    treated as passing by default.
+13. **Per-resolved-blocker evidence binding.** Every blocker ID in
+    `blockerDelta.resolved` must have exactly one `resolutionEvidence` record;
+    no missing, extra, or duplicate binding passes. Each record must bind an
+    `evidenceClass` (`ACCEPTED_REVIEW` or `EXECUTABLE_PROOF`), a normalized
+    repository-relative `evidencePath` (no absolute, drive, backslash, or
+    traversal path), an immutable 64-character lowercase hex `sha256`, and a
+    non-empty `locator`. The checker recomputes the referenced file hash and
+    rejects a missing or unreadable path, an unsafe path, a hash mismatch, an
+    empty locator, or an invalid claim link. An `EXECUTABLE_PROOF` binding
+    must link a `claimId` to a claim in the same block whose `proofClass`
+    satisfies the claim-to-proof mapping (that is, not
+    `PROPOSAL_ONLY_NO_RUNTIME_READINESS`). An `ACCEPTED_REVIEW` binding
+    exposes the declared reviewer authority for inspection; the checker never
+    scores whether the cited prose is true. An empty `resolved` requires an
+    empty evidence map. When a successor consumes its predecessor, the checker
+    revalidates the predecessor's resolution-evidence hashes against the
+    current referenced files; evidence drift cannot inherit trust silently.
 
 ## Claim-To-Proof Mapping
 
@@ -227,6 +252,46 @@ this standard.
 - `EXECUTABLE_IMPLEMENTATION`
 
 There is deliberately no post-escalation narrow-gap successor token.
+
+## Resolution Evidence
+
+Each resolved blocker binds exactly one record under `resolutionEvidence`,
+keyed by blocker ID. Example accepted-review binding:
+
+```json
+{
+  "BLOCKER_ID": {
+    "evidenceClass": "ACCEPTED_REVIEW",
+    "evidencePath": "docs/reviews/CVF_EXAMPLE_WORKER_RETURN_2026-08-31.md",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "locator": "Independent Reviewer Correction"
+  }
+}
+```
+
+For an executable resolution, use `EXECUTABLE_PROOF` and add a `claimId` that
+names a claim in the same block whose `proofClass` satisfies the claim-to-proof
+mapping:
+
+```json
+{
+  "BLOCKER_ID": {
+    "evidenceClass": "EXECUTABLE_PROOF",
+    "evidencePath": "governance/compat/test_check_semantic_convergence_control.py",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "locator": "ResolutionEvidenceBindingTests",
+    "claimId": "SCEC-T1-R2-CHECKER-AND-REPLAY-HARDENING"
+  }
+}
+```
+
+The checker recomputes the `evidencePath` file hash and requires exact equality
+with `sha256`; a missing or unreadable file, unsafe path, wrong hash, empty
+locator, or invalid claim link fails closed. Accepted-review bindings remain
+reviewer-semantic authority; the checker does not score whether the cited prose
+is true. Successor validation also recomputes each predecessor binding so a
+later evidence-target change fails the predecessor validity check. No broad
+retroactive scan of unchanged artifacts is introduced.
 
 ## Historical Regression Replay
 
@@ -297,6 +362,28 @@ python governance/compat/check_semantic_convergence_control.py
 Remove the checker from `_common_commands` and the three local hook catalogs;
 retain the standard as historical reference. Rolling back does not reopen or
 invalidate any already-accepted governed artifact's other, non-SCEC content.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | delegated governance implementation worker |
+| Provider or surface | local private provenance workspace |
+| Session or invocation | SCEC-T1-R2 blocker resolution evidence binding and historical replay correction, 2026-08-31 |
+| Working directory | repository root |
+| Command or tool surface | governed reads, local shell verification, and local file edits; no provider or network call |
+| Target paths | this standard; `governance/compat/check_semantic_convergence_control.py`; its focused tests; the replay fixture; both worker-return scaffold producers; ADIF-0055; the worker return |
+| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_2026-08-31.md` |
+| Before status evidence | the standard had no per-resolved-blocker evidence binding; set algebra alone validated `resolved` transitions |
+| After status evidence | `resolutionEvidence` field, field notes, invariant 13, and a Resolution Evidence section are added |
+| Diff evidence | `git diff --name-status` shows this standard among the eleven SCEC-T1-R2 paths |
+| Approval boundary | SCEC foundation hardening only; no product/runtime, provider/live, public-sync, deployment, or production claim |
+| Claim boundary | declared-evidence-shape control only; no semantic-truth-scoring or reasoning-trace-inspection claim |
+| Agent type | worker |
+| Invocation ID | `scec-t1-r2-resolution-evidence-binding-2026-08-31` |
+| Expected manifest | the eleven-path SCEC-T1-R2 fulfillment manifest |
+| Actual changed set | the eleven-path SCEC-T1-R2 fulfillment manifest |
+| Manifest delta | MATCH |
 
 ## Claim Boundary
 

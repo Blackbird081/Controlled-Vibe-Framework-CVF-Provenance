@@ -222,6 +222,7 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
         self.assertEqual(len(blocks), 1)
         result = scec_checker.validate_block(blocks[0])
         self.assertEqual(blocks[0]["chainMode"], "SUCCESSOR")
+        self.assertEqual(blocks[0].get("resolutionEvidence"), {})
         self.assertIn(
             "PREDECESSOR_UNRESOLVED_SENTINEL", {v.code for v in result.violations}
         )

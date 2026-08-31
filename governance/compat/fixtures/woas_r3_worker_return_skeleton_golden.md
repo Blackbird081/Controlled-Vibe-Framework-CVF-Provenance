@@ -53,6 +53,7 @@ Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_
     "reopened": [],
     "current": []
   },
+  "resolutionEvidence": {},
   "counters": {
     "partialReadyClosures": 0,
     "reviewerScopeExpansions": 0,

@@ -509,6 +509,14 @@ class TestWorkerReturnSkeleton(unittest.TestCase):
         self.assertIn("rawMemoryReleased=false", skeleton)
         self.assertIn("git rev-parse --short HEAD", skeleton)
 
+    def test_skeleton_emits_empty_resolution_evidence_default(self) -> None:
+        import check_semantic_convergence_control as scec_checker
+
+        skeleton = self._golden_skeleton()
+        blocks = scec_checker.find_active_blocks(skeleton)
+        self.assertEqual(len(blocks), 1)
+        self.assertEqual(blocks[0].get("resolutionEvidence"), {})
+
     def test_skeleton_has_no_banned_worker_return_quality_gate_placeholder(self) -> None:
         """WOAS-R7: generated skeleton must be checker-safe by construction -
         it must never contain a token from
