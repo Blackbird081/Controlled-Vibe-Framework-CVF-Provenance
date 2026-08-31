@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_t1_sot_phase_return_amendment_accepted_t2_work_order_required",
-  "previousMode": "gclh_t1_design_accepted_t2_protected_work_order_required",
+  "currentMode": "gclh_t1_minimal_review_verification_amendment_accepted_t2_work_order_required",
+  "previousMode": "gclh_t1_sot_phase_return_amendment_accepted_t2_work_order_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16009,7 +16009,7 @@
     "nextAllowedMove": "Select the next open system-chain roadmap item outside GC010. Do not create another narrow GC010 tranche unless all five reopen facts arrive in one packet.",
     "claimBoundary": "This is a root architecture and ownership decision, not product/runtime implementation or production readiness. T1J-R4, T1K and T2 remain cancelled or parked."
   },
-  "nextAllowedMove": "Author and review the GCLH-T2 protected-path work order from accepted SOT phase-return Amendment 1 commit c0ee6b8817e2c51fadd6d96427b538d86d522ffc. Require one predecessor-bound, SOT-resolvable Phase Return Envelope at every INTAKE through FREEZE transition; treat agent, role, provider and orchestration topology as attribution only. Name exact owner changes, hostile tests, rollback and self-protection authorization. Do not claim global SOT3 activation or automate semantic truth. T2 implementation remains unopened. Keep shift-operations-workspace parked until Core closure and GCLH-T4. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author and review the GCLH-T2 protected-path work order from accepted Amendment 2 commit 56e0c0e22e7df2a2411c6ba5e279cdc62b6ddd6d. Require predecessor-bound SOT Phase Return Envelopes and minimal sufficient reviewer verification: identity/chain/authority/coverage checks by default, focused probes only when disposition-relevant, and no broad rerun without named evidence insufficiency, bounded claim, information gain and cost justification. Agent/role/topology remains attribution only. T2 implementation remains unopened. Keep shift-operations-workspace parked until Core closure and GCLH-T4. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.",
   "gclhT0GovernanceControlLossLearningIntakeAccepted20260901": {
     "status": "REVIEWER_ACCEPTED_PASS_BOUNDED",
     "mode": "SINGLE_AGENT_MULTI_ROLE",
@@ -16064,5 +16064,18 @@
     "sotBoundary": "Truth Foundation owns authority and claim movement; SOT3 supplies bounded authority topology semantics but is not claimed globally active.",
     "nextAllowedMove": "Author and review the GCLH-T2 protected-path work order; implementation remains unopened.",
     "claimBoundary": "Design amendment only; no checker/template/runtime/downstream/provider/public/deploy mutation."
+  },
+  "gclhT1MinimalReviewerVerificationAmendmentAccepted20260901": {
+    "status": "MINIMAL_SUFFICIENT_REVIEW_VERIFICATION_ACCEPTED",
+    "materialCommit": "56e0c0e22e7df2a2411c6ba5e279cdc62b6ddd6d",
+    "designSha256": "3998d23f7726fa0d7d71fc2232caa45d3404df012645b88c53b88d82b348d367",
+    "reviewSha256": "0bd403fd4c719811584c367ca640868539855ffae5b4924d9d8ac116e19da163",
+    "roadmapSha256": "32508d7e64ada3df4729c75ea0fa07b8350dcb7ecd73e146d303945d29917d52",
+    "reviewerBoundary": "Evaluate the returned result and reconstruct its evidence graph; do not repeat the producing role's work.",
+    "defaultVerification": "Identity, predecessor chain, authority resolution, claim-obligation-evidence coverage, contradictions and manifest checks.",
+    "rerunRule": "Focused only when disposition-relevant; broad rerun requires named insufficiency or contradiction, bounded claim, expected information gain and cost/latency justification.",
+    "missingEvidenceRule": "Return or block missing work; reviewer must not silently complete it.",
+    "nextAllowedMove": "Author and review the GCLH-T2 protected-path work order; implementation remains unopened.",
+    "claimBoundary": "Review-cost design amendment only; no implementation or downstream/external effect."
   }
 }
