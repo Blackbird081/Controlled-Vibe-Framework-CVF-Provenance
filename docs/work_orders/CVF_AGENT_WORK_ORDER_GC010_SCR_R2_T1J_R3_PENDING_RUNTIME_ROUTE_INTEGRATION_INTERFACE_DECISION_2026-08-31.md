@@ -10,7 +10,7 @@ Batch ID: GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISI
 
 Dispatch base head: `f6364b9f50c316b6a226e2be082a37524a05ccf7`
 
-Commit mode: `WORKER_MUST_NOT_COMMIT`
+Commit mode: WORKER_MUST_NOT_COMMIT
 
 Worker: one delegated decision worker
 
@@ -200,7 +200,7 @@ and boundaries. Do not ask the operator to choose among source-resolvable candid
     "delegation": "MULTI_ROLE_NO_COMMIT",
     "novelty": "OWNER_COMPOSITION"
   },
-  "pathFamilies": ["docs/baselines", "docs/work_orders", "docs/assessments", "docs/reviews"],
+  "pathFamilies": ["docs/baselines", "docs/work_orders", "docs/assessments", "docs/reviews", "CVF_SESSION"],
   "claims": ["one complete integration-interface decision may be selected without implementation"],
   "requiredProof": ["four-candidate matrix", "fourteen decision answers", "payload provenance", "call-order and crash matrices", "exact terminal", "independent review"],
   "operatorCheckpoints": ["source contradiction", "implementation successor", "provider/live", "public sync", "deployment"],
@@ -417,6 +417,24 @@ Disclosed defectIds: `NONE`. Common dispatch and checker-read-ahead controls rem
 | interceptionBoundary | no IDE/shell/provider interception or runtime enforcement claim |
 | claimLanguage | packet authorizes evidence-only interface selection, not implementation |
 | forbiddenExpansion | source/test/runtime/checker/roadmap/session edits by worker; provider/live; public sync; deployment; production; T1K/T2; commit |
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: reviewer-owned correction of the missing unquoted no-commit literal plus exact
+current-authority hash projection only. No worker scope, terminal, runtime, implementation, or successor authority is
+changed.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+
+Operator authorization: the operator supplied the completed worker return for independent review, and the committed
+work order assigns allowed-scope dispatcher defects to the orchestrator/reviewer.
+
+Rollback boundary: revert only the literal correction and its exact hash projections if rejected; do not rewrite the
+worker evidence, prior dispatch, or accepted T1J-R2 closure.
 
 ## Claim Boundary
 
