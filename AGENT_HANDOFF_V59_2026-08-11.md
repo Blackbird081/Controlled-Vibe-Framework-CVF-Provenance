@@ -2,11 +2,11 @@
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
-- Current GC010 dispatch material: `d7b0e274f`; T1J-R3 complete integration-interface decision is pending external worker return.
+- Current GC010 decision closure: T1J-R3 material `b3589ce78`; terminal `PARTIAL_READY_REQUIRES_ONE_NAMED_IMPLEMENTATION_PRECONDITION`; successor not opened.
 
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
-- Branch: `main`. Current material HEAD recorded for this handoff: `d710b2140c59e8b92dc9ad57fd7bdd6201b78353` (GC010-SCR-R2-T1J-R3 dispatch-literal repair). DeepSeek Harness absorption material remains `7b8514526`. Public protocol 1.2 source-pack profile is live at public `main` commit `d7860138350130d6d105826ce186f1beeaba3c2d`; GitHub public-sync preflight run `33245798802` passed; `EXTERNAL_AGENT_READ` refresh receipt SHA-256 is `ccfd4ac603163043327c0d33bcce757b68e5e53c4bcd7bede33d13dd07628e39`. The prior DeepSeek task capsule was removed from the reusable packet root and must be regenerated for the next pinned repository.
+- Branch: `main`. Current material HEAD recorded for this handoff: `b3589ce7847196d707a96e26b706cfd50c1c433f` (GC010-SCR-R2-T1J-R3 corrected decision closure). DeepSeek Harness absorption material remains `7b8514526`. Public protocol 1.2 source-pack profile is live at public `main` commit `d7860138350130d6d105826ce186f1beeaba3c2d`; GitHub public-sync preflight run `33245798802` passed; `EXTERNAL_AGENT_READ` refresh receipt SHA-256 is `ccfd4ac603163043327c0d33bcce757b68e5e53c4bcd7bede33d13dd07628e39`. The prior DeepSeek task capsule was removed from the reusable packet root and must be regenerated for the next pinned repository.
 - EARTR-ESC-R1 is independently accepted `CLOSED_PASS_BOUNDED` and released as `cvf.external-agent-round-trip@1.2.0`. External follow-up A/I confirmed one `MEDIUM` representation-completeness gap; existing canonical/public/portable owners now expose exact strict-v1 fields, enums, forbidden fields, source joins, and valid examples with validator behavior unchanged (117/117 PASS). RB-01 receipt binding is implemented/tested, while Local reconciliation equality remains documentation/reviewer-enforced rather than a runtime gate. DeepSeek Harness use case 001 is locally closed at `7b8514526`: strict-v1 return validation PASS, pinned upstream `cd5ef8148158c3a752a658978873241fdf8e2bbc`, five candidates `NO_NEW_VALUE`, DSH-001 existing-owner enrichment parked, and DSH-005 forward-value lifecycle idea parked. Both reopen only under their conjunctive source/consumer/owner/value-cost gates; no implementation, provider/live, public export, or new owner was authorized.
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -40,10 +40,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1j_r3_dispatched_pending_external_integration_interface_decision_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed T1J-R3 packet to one external worker; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1j_r3_closed_partial_ready_production_composition_owner_contract_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await authorization for one consolidated T1J-R4 production composition owner-contract decision; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
 
 ## Current Mode
-`gc010_scr_r2_t1j_r3_dispatched_pending_external_integration_interface_decision_return`
+`gc010_scr_r2_t1j_r3_closed_partial_ready_production_composition_owner_contract_required`
 
 ## Purpose
 
@@ -205,16 +205,16 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize T1J-R3 dispatch material `d7b0e274f`, exact worker checkpoint and generated projections. This authorizes no T1K implementation, formal T1/T2 release, source edit, package export or production trigger.
+Authorized guard-maintenance scope: synchronize corrected T1J-R3 decision material `b3589ce78`, terminal, named consolidated precondition and generated projections. This authorizes no T1J-R4 dispatch, T1K implementation, formal T1/T2 release, source edit, package export or production trigger.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1jR3PendingRuntimeRouteIntegrationInterfaceDecisionDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gc010ScrR2T1jR3PendingRuntimeRouteIntegrationInterfaceDecisionClosure20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
 Protected guard paths:
 - `governance/compat/agent_autorun_command_catalog.py`; `governance/compat/build_dispatch_packet_scaffold.py`; `governance/compat/build_worker_return_skeleton_scaffold.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/review_convergence_scaffold.py`; `governance/compat/run_worker_return_scaffold.py`.
 - `governance/compat/test_build_dispatch_packet_scaffold.py`; `governance/compat/test_check_external_absorption_core.py`; `governance/compat/test_check_review_cost_control.py`; `governance/compat/test_run_agent_autorun_workflow_gate.py`; `governance/compat/test_run_worker_return_scaffold.py`.
-Operator authorization: `next` authorizes the bounded T1J-R3 decision dispatch at material `d7b0e274f`.
-Rollback boundary: revert only this T1J-R3 dispatch continuity sync without rewriting material evidence or prior closures.
-Not authorized: T1K, formal T1/T2 release, source/test/roadmap edit, package export, route/provider/audit implementation, provider/API/network use, public mutation, deployment, production claim or compaction.
+Operator authorization: the operator supplied the completed T1J-R3 worker return and granted the orchestrator/reviewer authority to review, correct and close it.
+Rollback boundary: revert only this T1J-R3 closure continuity sync without rewriting material evidence or prior closures.
+Not authorized: T1J-R4 dispatch, T1K, formal T1/T2 release, source/test/roadmap edit, package export, route/provider/audit implementation, provider/API/network use, public mutation, deployment, production claim or compaction.
 ## Claim Boundary
 
 This handoff records T1J-R3 dispatch material `d7b0e274f`: the worker may select one complete integration interface and write exactly two uncommitted documents. It does not authorize T1K, source/test/roadmap edits, a package export or production trigger, T2, route/provider/audit source changes, provider/API/network, public mutation, deployment, production, compaction or automatic successor work.

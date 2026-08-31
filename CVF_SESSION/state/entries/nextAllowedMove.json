@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2545,
+  "stateOrder": 2555,
   "stateKey": "nextAllowedMove",
-  "value": "Transfer committed GC010-SCR-R2-T1J-R3 packet d7b0e274fc461edf8dd7e29d6fd21b46ffb5a5e8 to one external decision worker. Worker creates exactly the named assessment and worker return, does not stage or commit, and stops for independent review. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Await operator authorization for one consolidated GC010-SCR-R2-T1J-R4 route-native production pending-execution composition owner-contract decision covering deterministic create/conflict semantics, complete payload and policy provenance, truthful production environment identity, exact consume/create/claim/begin/provider/terminal ordering, process-lifetime SQLite ownership, and authenticated restart recovery. No single-gap follow-up may claim closure. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

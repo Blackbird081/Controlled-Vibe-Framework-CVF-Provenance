@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1j_r3_dispatched_pending_external_integration_interface_decision_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed T1J-R3 packet to one external worker; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1j_r3_closed_partial_ready_production_composition_owner_contract_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await authorization for one consolidated T1J-R4 production composition owner-contract decision; parked checkpoint=T1K, T2, implementation, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t1j_r3_dispatched_pending_external_integration_interface_decision_return`
-Current mode: `gc010_scr_r2_t1j_r3_dispatched_pending_external_integration_interface_decision_return`; previous mode marker: `gc010_scr_r2_t1j_r2_closed_partial_ready_integration_interface_decision_required`
-Previous mode: `gc010_scr_r2_t1j_r2_closed_partial_ready_integration_interface_decision_required`
+Current mode marker: `gc010_scr_r2_t1j_r3_closed_partial_ready_production_composition_owner_contract_required`
+Current mode: `gc010_scr_r2_t1j_r3_closed_partial_ready_production_composition_owner_contract_required`; previous mode marker: `gc010_scr_r2_t1j_r3_dispatched_pending_external_integration_interface_decision_return`
+Previous mode: `gc010_scr_r2_t1j_r3_dispatched_pending_external_integration_interface_decision_return`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t1j_r3_dispatched_pending_external_integration_interface_decision_return`. T1J-R3 dispatch material `d7b0e274f` requires one complete interface decision covering route order, immutable payload/policy-snapshot provenance, SQLite lifetime, and authorized restart recovery in one return. Worker creates exactly two uncommitted documents. T1K, T2 and all implementation/provider/live/public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1j_r3_closed_partial_ready_production_composition_owner_contract_required`. T1J-R3 closes bounded at material `b3589ce78` with terminal `PARTIAL_READY_REQUIRES_ONE_NAMED_IMPLEMENTATION_PRECONDITION`. Candidate B remains preferred but is not source-compatible or implementation-ready. Await authorization for one consolidated T1J-R4 owner-contract decision resolving deterministic creation, full payload/policy provenance, truthful production identity, exact route ordering, SQLite lifecycle, and authenticated recovery together. No single-gap follow-up may claim closure. T1K, T2 and all implementation/provider/live/public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
