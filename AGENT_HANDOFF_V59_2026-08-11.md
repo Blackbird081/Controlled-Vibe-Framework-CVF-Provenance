@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1e_closed_blocked_snapshot_hash_persistence_compatibility`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=stop at the T1E operator checkpoint and await fresh instruction before any separately committed cross-owner correction decision; parked checkpoint=approval-hash/persistence repair, harness acceptance, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1f_dispatched_pending_internal_decision_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute one T1F internal no-commit decision worker and stop for independent review; parked checkpoint=source repair, harness acceptance, package export, route/provider/audit integration, production consumer, cross-node/distributed safety, provider/live, public sync and deployment.
 
 ## Current Mode
-`gc010_scr_r2_t1e_closed_blocked_snapshot_hash_persistence_compatibility`
+`gc010_scr_r2_t1f_dispatched_pending_internal_decision_return`
 
 ## Purpose
 
