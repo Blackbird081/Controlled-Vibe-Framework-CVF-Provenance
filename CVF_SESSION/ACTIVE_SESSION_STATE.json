@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_R2_APPROVAL_RESUME_ATOMIC_CLAIM_DURABLE_OWNER_DECISION_2026-08-31.md",
-    "baselineSha256": "4b8431ab2a1b53b3f8dd452f59d3321af69c7d3d88bc64f2b95891c9572c4bd1",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_R2_APPROVAL_RESUME_ATOMIC_CLAIM_DURABLE_OWNER_DECISION_2026-08-31.md",
-    "workOrderSha256": "b1cbbc972acda429b5dd41989c477ab1b22ce4a77f6c2d419f6194773f5c5eb7"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
+    "baselineSha256": "1235a7113ddb5c083831eb069816631d9873f37216deee7006ade318d0b8dad6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
+    "workOrderSha256": "6e55a433f91bb9903355af88e0ac0d6583e2971b3b5d4875212951854cf203d5"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1j_r2_closed_partial_ready_integration_interface_decision_required",
-  "previousMode": "gc010_scr_r2_t1j_r2_dispatched_pending_external_durable_owner_decision_return",
+  "currentMode": "gc010_scr_r2_t1j_r3_dispatched_pending_external_integration_interface_decision_return",
+  "previousMode": "gc010_scr_r2_t1j_r2_closed_partial_ready_integration_interface_decision_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15778,5 +15778,20 @@
     "nextAllowedMove": "Await operator authorization for one consolidated T1J-R3 integration-interface decision covering route ordering, payload/policy-snapshot adapter ownership, SQLite lifecycle, and recovery invocation ownership.",
     "claimBoundary": "Decision closure only. Candidate 2 is preferred but not ready for T1K. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked."
   },
-  "nextAllowedMove": "Await operator authorization for one consolidated GC010-SCR-R2-T1J-R3 integration-interface decision covering route ordering, immutable payload/policy-snapshot adapter ownership, SQLite runtime lifecycle, and authorized crash-recovery invocation. Do not split these dependencies into piecemeal rounds. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gc010ScrR2T1jR3PendingRuntimeRouteIntegrationInterfaceDecisionDispatch20260831": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN",
+    "materialCommit": "d7b0e274fc461edf8dd7e29d6fd21b46ffb5a5e8",
+    "dispatchBaseHead": "f6364b9f50c316b6a226e2be082a37524a05ccf7",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
+    "workerManifest": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "objective": "Select one complete pending-runtime product-route integration interface resolving route ordering, immutable payload and policy-snapshot ownership, SQLite lifecycle, and authorized restart recovery together.",
+    "workerBoundary": "One operator-mediated external decision worker creates exactly two documentation artifacts, makes zero source/test/runtime/provider/live changes, does not stage or commit, and stops for independent review.",
+    "nextAllowedMove": "Transfer the committed packet to the external worker and await exactly the two named uncommitted artifacts.",
+    "claimBoundary": "Dispatch only. No integration interface or implementation is accepted yet; T1K, T2, provider/live, public sync, deployment and production remain parked."
+  },
+  "nextAllowedMove": "Transfer committed GC010-SCR-R2-T1J-R3 packet d7b0e274fc461edf8dd7e29d6fd21b46ffb5a5e8 to one external decision worker. Worker creates exactly the named assessment and worker return, does not stage or commit, and stops for independent review. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2540,
+  "stateKey": "gc010ScrR2T1jR3PendingRuntimeRouteIntegrationInterfaceDecisionDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN",
+    "materialCommit": "d7b0e274fc461edf8dd7e29d6fd21b46ffb5a5e8",
+    "dispatchBaseHead": "f6364b9f50c316b6a226e2be082a37524a05ccf7",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
+    "workerManifest": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "objective": "Select one complete pending-runtime product-route integration interface resolving route ordering, immutable payload and policy-snapshot ownership, SQLite lifecycle, and authorized restart recovery together.",
+    "workerBoundary": "One operator-mediated external decision worker creates exactly two documentation artifacts, makes zero source/test/runtime/provider/live changes, does not stage or commit, and stops for independent review.",
+    "nextAllowedMove": "Transfer the committed packet to the external worker and await exactly the two named uncommitted artifacts.",
+    "claimBoundary": "Dispatch only. No integration interface or implementation is accepted yet; T1K, T2, provider/live, public sync, deployment and production remain parked."
+  }
+}

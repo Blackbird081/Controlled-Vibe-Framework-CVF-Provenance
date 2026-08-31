@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r2_t1j_r2_closed_partial_ready_integration_interface_decision_required",
+  "currentMode": "gc010_scr_r2_t1j_r3_dispatched_pending_external_integration_interface_decision_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Await operator authorization for one consolidated GC010-SCR-R2-T1J-R3 integration-interface decision covering route ordering, immutable payload/policy-snapshot adapter ownership, SQLite runtime lifecycle, and authorized crash-recovery invocation. Do not split these dependencies into piecemeal rounds. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Transfer committed GC010-SCR-R2-T1J-R3 packet d7b0e274fc461edf8dd7e29d6fd21b46ffb5a5e8 to one external decision worker. Worker creates exactly the named assessment and worker return, does not stage or commit, and stops for independent review. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_R2_APPROVAL_RESUME_ATOMIC_CLAIM_DURABLE_OWNER_DECISION_2026-08-31.md",
-    "baselineSha256": "4b8431ab2a1b53b3f8dd452f59d3321af69c7d3d88bc64f2b95891c9572c4bd1",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_R2_APPROVAL_RESUME_ATOMIC_CLAIM_DURABLE_OWNER_DECISION_2026-08-31.md",
-    "workOrderSha256": "b1cbbc972acda429b5dd41989c477ab1b22ce4a77f6c2d419f6194773f5c5eb7"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
+    "baselineSha256": "1235a7113ddb5c083831eb069816631d9873f37216deee7006ade318d0b8dad6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1J_R3_PENDING_RUNTIME_ROUTE_INTEGRATION_INTERFACE_DECISION_2026-08-31.md",
+    "workOrderSha256": "6e55a433f91bb9903355af88e0ac0d6583e2971b3b5d4875212951854cf203d5"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
