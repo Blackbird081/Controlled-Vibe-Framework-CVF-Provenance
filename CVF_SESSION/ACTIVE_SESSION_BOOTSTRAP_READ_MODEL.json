@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gc010_scr_r2_t1e_dispatched_pending_internal_worker_return",
+  "currentMode": "gc010_scr_r2_t1e_closed_blocked_snapshot_hash_persistence_compatibility",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute the committed GC010-SCR-R2-T1E work order at dispatch commit 13dbbaa73 with one internal no-commit worker. The worker creates exactly the two local implementation files plus the named worker return, runs focused regressions, TypeScript and required gates, then stops for independent orchestrator review. Route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Stop at the GC010-SCR-R2-T1E operator checkpoint. T1E is CLOSED_BLOCKED_BOUNDED at material d367ea1c7 because the current order-sensitive approval snapshot hash is incompatible with T1C canonical SQLite persistence after readback. A fresh operator instruction is required before authoring a separately committed cross-owner correction decision or repair dispatch. The harness remains non-exported blocked draft evidence; route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

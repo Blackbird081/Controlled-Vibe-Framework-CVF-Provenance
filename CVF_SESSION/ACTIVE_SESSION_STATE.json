@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1e_dispatched_pending_internal_worker_return",
-  "previousMode": "gc010_scr_r2_t1d_closed_pass_bounded_consumer_boundary_selected",
+  "currentMode": "gc010_scr_r2_t1e_closed_blocked_snapshot_hash_persistence_compatibility",
+  "previousMode": "gc010_scr_r2_t1e_dispatched_pending_internal_worker_return",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15343,7 +15343,7 @@
     "registryDisposition": "PARK_CANONICAL_OWNER_NOT_PROVEN",
     "successorBoundary": "BD1 is closed bounded. Do not bulk-clean or regenerate the registry and do not merge PR 4 while the required gate is red. One explicit operator decision plus a separately bounded canonical-owner/reconciliation packet is required for registry work; automatic R2 and additional tranches remain forbidden."
   },
-  "nextAllowedMove": "Execute the committed GC010-SCR-R2-T1E work order at dispatch commit 13dbbaa73 with one internal no-commit worker. The worker creates exactly the two local implementation files plus the named worker return, runs focused regressions, TypeScript and required gates, then stops for independent orchestrator review. Route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Stop at the GC010-SCR-R2-T1E operator checkpoint. T1E is CLOSED_BLOCKED_BOUNDED at material d367ea1c7 because the current order-sensitive approval snapshot hash is incompatible with T1C canonical SQLite persistence after readback. A fresh operator instruction is required before authoring a separately committed cross-owner correction decision or repair dispatch. The harness remains non-exported blocked draft evidence; route/provider/audit integration, package export, production consumer, cross-node/distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827": {
     "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
     "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
@@ -15549,5 +15549,20 @@
     "workerBoundary": "One internal no-commit worker creates exactly two implementation files and one worker return. Existing files and all external-effect owners remain read-only.",
     "nextAllowedMove": "Execute the committed T1E packet and return exactly three uncommitted paths for independent review.",
     "claimBoundary": "Dispatch only. No harness implementation is accepted yet, and no package export, route/provider/audit integration, production consumer, distributed safety, public sync, deployment or production authority is opened."
+  },
+  "gc010ScrR2T1ePendingAgentExecutionLocalHarnessNonProductionImplementationBlockedClosure20260831": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "terminalToken": "APPROVAL_SNAPSHOT_HASH_PERSISTENCE_COMPATIBILITY_BLOCKED",
+    "materialCommit": "d367ea1c7",
+    "dispatchCommit": "13dbbaa73",
+    "executionBaseHead": "ea57866ec",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_WORKER_RETURN_2026-08-31.md",
+    "completionReview": "docs/reviews/CVF_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_COMPLETION_2026-08-31.md",
+    "evidence": "Independent review reproduced 117/117 focused tests, TypeScript no-emit, reviewer-fast 66/66 and pre-commit 87/87. The current production snapshot builder reaches create but fails claim after canonical SQLite serialization with APPROVAL_SNAPSHOT_HASH_MISMATCH and a version-1 STALE record.",
+    "acceptedBoundary": "The two implementation files are retained only as non-exported blocked draft and regression evidence. No predecessor source, package, route, provider, audit, public, deployment or production owner changed.",
+    "nextAllowedMove": "Await fresh operator instruction before any separately committed cross-owner approval-hash/persistence correction decision or repair dispatch.",
+    "claimBoundary": "No viable current-owner consumer is accepted, no successor tranche is open, and GC010 production integration remains parked."
   }
 }
