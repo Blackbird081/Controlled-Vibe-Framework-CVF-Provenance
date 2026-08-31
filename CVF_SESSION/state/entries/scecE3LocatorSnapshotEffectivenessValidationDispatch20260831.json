@@ -1,0 +1,29 @@
+{
+  "stateOrder": 2620,
+  "stateKey": "scecE3LocatorSnapshotEffectivenessValidationDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_WORKER_RETURN",
+    "problemKey": "scec-locator-snapshot-effectiveness-validation",
+    "dispatchCommit": "81f9b7a70",
+    "dispatchBaseHead": "8db4e9f87",
+    "baseline": "docs/baselines/CVF_GC018_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "baselineSha256": "5b54e00b104bbeb8a4553f9f54af6eaa832d1211613c3e8b8baa6f872646cc56",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "workOrderSha256": "41f206c7b9e0d9b493a1fc1661d5db55c419122e73a66103ccba93d5e4e31a86",
+    "requiredOutputs": [
+      "docs/assessments/CVF_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+      "docs/reviews/CVF_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "requiredArtifactCount": 2,
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedEffectivenessVerdicts": [
+      "EFFECTIVE_CLOSE_FOUNDATION_LOOP",
+      "EFFECTIVE_WITH_ONE_NAMED_RESIDUAL",
+      "INEFFECTIVE_REOPEN_FOUNDATION"
+    ],
+    "successorTrancheOpened": "NO",
+    "mandatoryIndependentProof": "Fresh ephemeral harness must cover exact E2 replay, shared-path one-read behavior, changing-resolver split-view prevention, cross-predecessor snapshot reuse, locator negatives and valid controls.",
+    "nextAllowedMove": "One external worker returns exactly the two authorized uncommitted artifacts; reviewer independently reruns the high-risk snapshot cases and either closes the foundation loop or reopens only a named foundation defect.",
+    "claimBoundary": "SCEC-E3 is validation-only. No checker, test, source, fixture, session, T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment or production edit is authorized."
+  }
+}

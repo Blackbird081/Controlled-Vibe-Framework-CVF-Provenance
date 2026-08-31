@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_SCEC_T1_R3_LOCATOR_TO_CONTENT_EVIDENCE_BINDING_HARDENING_2026-08-31.md",
-    "baselineSha256": "8a8f95804874b9f848ae79918a1b923e1bf5cd669d71f8fee32f00c90d40104b",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R3_LOCATOR_TO_CONTENT_EVIDENCE_BINDING_HARDENING_2026-08-31.md",
-    "workOrderSha256": "ae3f21023c4745dfbe67b689deccd7075b3958a3039ee516938c9023724c765f"
+    "baselinePath": "docs/baselines/CVF_GC018_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "baselineSha256": "5b54e00b104bbeb8a4553f9f54af6eaa832d1211613c3e8b8baa6f872646cc56",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "workOrderSha256": "41f206c7b9e0d9b493a1fc1661d5db55c419122e73a66103ccba93d5e4e31a86"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "scec_t1_r3_locator_content_binding_closed_e3_authoring",
-  "previousMode": "scec_t1_r3_locator_content_binding_dispatched_pending_external_return",
+  "currentMode": "scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return",
+  "previousMode": "scec_t1_r3_locator_content_binding_closed_e3_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15883,7 +15883,6 @@
     "nextAllowedMove": "Author and dispatch one bounded SCEC-T1-R2 foundation-hardening packet to correct the historical replay and bind every resolved blocker to accepted evidence or an explicit governed reviewer resolution rule. Add a negative regression for unsupported resolution laundering. Keep GC010 product/runtime work parked.",
     "claimBoundary": "SCEC foundation hardening only. No T1J-R4, GC010 product/runtime edit, T1K, T2, provider/live, public sync, deployment or production authority."
   },
-  "nextAllowedMove": "Author and dispatch one bounded SCEC-E3 independent effectiveness-validation packet against accepted SCEC-T1-R3 material 008ff0685. It must test exact E2 replay, shared-path one-read behavior with a changing resolver, predecessor revalidation, locator negatives and valid controls. If effective, close the SCEC foundation loop before any product decision; if ineffective, reopen only the named foundation defect. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "scecT1R2BlockerResolutionEvidenceBindingDispatch20260831": {
     "status": "REVIEWER_ACCEPTED_WITH_MATERIAL_CORRECTION_CLOSED",
     "dispatchCommit": "24aaa8ff1",
@@ -15953,5 +15952,31 @@
     "exactReplay": "The SCEC-E2 correct-path/correct-hash locator THIS_LOCATOR_DOES_NOT_EXIST_ANYWHERE_IN_THE_FILE must fail with RESOLUTION_EVIDENCE_LOCATOR_NOT_FOUND.",
     "nextAllowedMove": "Author one bounded SCEC-E3 independent effectiveness-validation packet. Do not open a product successor until that verdict closes the SCEC learning loop.",
     "claimBoundary": "SCEC-T1-R3 closes as accepted with material correction and executable local proof, but not yet independent effectiveness closure. GC010, T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked."
-  }
+  },
+  "scecE3LocatorSnapshotEffectivenessValidationDispatch20260831": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_WORKER_RETURN",
+    "problemKey": "scec-locator-snapshot-effectiveness-validation",
+    "dispatchCommit": "81f9b7a70",
+    "dispatchBaseHead": "8db4e9f87",
+    "baseline": "docs/baselines/CVF_GC018_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "baselineSha256": "5b54e00b104bbeb8a4553f9f54af6eaa832d1211613c3e8b8baa6f872646cc56",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "workOrderSha256": "41f206c7b9e0d9b493a1fc1661d5db55c419122e73a66103ccba93d5e4e31a86",
+    "requiredOutputs": [
+      "docs/assessments/CVF_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+      "docs/reviews/CVF_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "requiredArtifactCount": 2,
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedEffectivenessVerdicts": [
+      "EFFECTIVE_CLOSE_FOUNDATION_LOOP",
+      "EFFECTIVE_WITH_ONE_NAMED_RESIDUAL",
+      "INEFFECTIVE_REOPEN_FOUNDATION"
+    ],
+    "successorTrancheOpened": "NO",
+    "mandatoryIndependentProof": "Fresh ephemeral harness must cover exact E2 replay, shared-path one-read behavior, changing-resolver split-view prevention, cross-predecessor snapshot reuse, locator negatives and valid controls.",
+    "nextAllowedMove": "One external worker returns exactly the two authorized uncommitted artifacts; reviewer independently reruns the high-risk snapshot cases and either closes the foundation loop or reopens only a named foundation defect.",
+    "claimBoundary": "SCEC-E3 is validation-only. No checker, test, source, fixture, session, T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment or production edit is authorized."
+  },
+  "nextAllowedMove": "Transfer the SCEC-E3 work order at dispatch commit 81f9b7a70 to exactly one external worker and await the exact two-path uncommitted return. Reviewer must independently replay the exact E2 locator, changing shared-path resolver and cross-predecessor snapshot cases before accepting any effectiveness verdict. If effective, close the SCEC foundation loop; if ineffective, reopen only the named foundation defect. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

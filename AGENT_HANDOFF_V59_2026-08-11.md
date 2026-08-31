@@ -2,7 +2,7 @@
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
-- SCEC-T1-R3 is reviewer-accepted with material correction at `008ff0685`: exact E2 replay fails closed and one cached byte snapshot owns each evidence path across a validation tree. SCEC-E3 effectiveness validation is next; T1J-R4 remains parked.
+- SCEC-E3 independent effectiveness validation is dispatched at `81f9b7a70` with exactly two worker-owned outputs. External return and reviewer replay are next; T1J-R4 remains parked.
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
 - Branch: `main`. Current material HEAD recorded for this handoff: `b3589ce7847196d707a96e26b706cfd50c1c433f` (GC010-SCR-R2-T1J-R3 corrected decision closure). DeepSeek Harness absorption material remains `7b8514526`. Public protocol 1.2 source-pack profile is live at public `main` commit `d7860138350130d6d105826ce186f1beeaba3c2d`; GitHub public-sync preflight run `33245798802` passed; `EXTERNAL_AGENT_READ` refresh receipt SHA-256 is `ccfd4ac603163043327c0d33bcce757b68e5e53c4bcd7bede33d13dd07628e39`. The prior DeepSeek task capsule was removed from the reusable packet root and must be regenerated for the next pinned repository.
@@ -39,7 +39,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scec_t1_r3_locator_content_binding_closed_e3_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author one bounded SCEC-E3 independent effectiveness-validation packet; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer SCEC-E3 at `81f9b7a70` to one external worker and await exactly two uncommitted outputs; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
 
 ## Current Mode
 `scec_t1_r3_locator_content_binding_closed_e3_authoring`
@@ -55,7 +55,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Latest Work / Changes
 
-- SCEC-T1-R3 is accepted with reviewer repair at `008ff0685`. Exact E2 replay, shared-path read-once caching, strict UTF-8 and locator cases pass 119/119; worker-return, reviewer-fast, size and pre-commit gates pass. SCEC-E3 effectiveness validation is next; no product successor opens.
+- SCEC-E3 validation-only packet is committed at `81f9b7a70` after pre-dispatch 81/81 and pre-commit 88/88. Its fresh harness must test exact E2 replay, changing-resolver split-view prevention and cross-predecessor snapshot reuse; no product successor opens.
 - SCEC-T1 foundation dispatch is `10345d3a`; T1-R2 is independently accepted with material correction at `cb6d4bc3879a753eb9abc7283b55148c141c46d1`. Resolution claims now require path/hash/locator evidence, successor consumption revalidates predecessor evidence hashes, the corrected GC010 replay retains unresolved blockers, and scaffolds emit the contract. Focused SCEC 115/115, combined focused 205/205, reviewer-fast 67/67 and pre-commit 88/88 passed. The two out-of-scope diagnostics remain disclosed and untouched; T1J-R4 remains parked.
 - EAFR-R12 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `1e31db99a`; terminal roadmap commit `fae74ca77`. Reviewer repaired candidate-level evaluator order, denied-candidate call-budget accounting, unauthorized-provider receipt endpoint resolution and the return packet. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed; zero provider/live/credential calls. EAFR successor count is zero; RFR may only be reconsidered separately.
 - MPA-AI-T0 is reviewer-accepted `STOP_NO_NEW_VALUE`: all 50 local mixed-origin files are classified, arXiv:2608.21230 claims are bounded at the primary source, the serious memory-to-prompt path duplicates EAFR/Memory/Truth ownership, and the eight-file utility benchmark is parked demand-gated with zero provider/live calls.
@@ -171,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Author and dispatch one bounded SCEC-E3 independent effectiveness-validation packet against `008ff0685`, covering exact E2 replay, a changing shared-path resolver, predecessor revalidation, locator negatives and valid controls. Close the SCEC foundation loop before any product decision. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest numbered wave remains LHW24.
+Transfer the committed SCEC-E3 work order at `81f9b7a70` to exactly one external worker and await exactly the two authorized uncommitted artifacts. Reviewer independently reruns exact E2, changing-resolver and cross-predecessor snapshot cases, then closes the foundation loop or reopens only the named defect. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -206,15 +206,15 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize accepted SCEC-T1-R3 material `008ff0685`, the bounded SCEC-E3 authoring next move and generated projections. No additional checker implementation or product successor is authorized by this continuity edit.
+Authorized guard-maintenance scope: synchronize committed SCEC-E3 dispatch `81f9b7a70`, its exact two-output external-return next move and generated projections. No checker implementation or product successor is authorized by this continuity edit.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/scecT1R3LocatorContentBindingHardeningDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/scecE3LocatorSnapshotEffectivenessValidationDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md`.
 Protected guard paths:
 - N/A with reason: this continuity sync changes no guard or checker path.
 Operator authorization: the operator explicitly authorized raising the CVF foundation and validating it with successor tranches while retaining orchestrator/reviewer and external-worker role separation.
-Rollback boundary: revert only this closure continuity sync without rewriting accepted SCEC-T1-R3 material, its dispatch, SCEC-E2 evidence, SCEC-T1-R2 material or prior evidence.
+Rollback boundary: revert only this E3 dispatch continuity sync without rewriting the committed E3 packet, accepted SCEC-T1-R3 material, SCEC-E2 evidence, SCEC-T1-R2 material or prior evidence.
 Not authorized: T1J-R4 product work, GC010 product/runtime edit, T1K/T2, provider/API/network use, public mutation, deployment, production claim or compaction.
 ## Claim Boundary
 
-This handoff records accepted SCEC-T1-R3 material `008ff0685` and authorizes only SCEC-E3 effectiveness-packet authoring. It does not authorize further checker implementation, T1J-R4, GC010 product/runtime, T1K/T2, provider/API/network, public mutation, deployment, production, compaction or automatic product successor work.
+This handoff records committed SCEC-E3 dispatch `81f9b7a70` and authorizes only its exact two-artifact external return plus independent reviewer validation. It does not authorize checker implementation, T1J-R4, GC010 product/runtime, T1K/T2, provider/API/network, public mutation, deployment, production, compaction or automatic product successor work.

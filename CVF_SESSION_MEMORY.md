@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scec_t1_r3_locator_content_binding_closed_e3_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author one bounded SCEC-E3 independent effectiveness-validation packet; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer the committed SCEC-E3 packet to one external worker and await exactly two uncommitted outputs; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `scec_t1_r3_locator_content_binding_closed_e3_authoring`
-Current mode: `scec_t1_r3_locator_content_binding_closed_e3_authoring`; previous mode marker: `scec_t1_r3_locator_content_binding_dispatched_pending_external_return`
-Previous mode: `scec_t1_r3_locator_content_binding_dispatched_pending_external_return`
+Current mode marker: `scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return`
+Current mode: `scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return`; previous mode marker: `scec_t1_r3_locator_content_binding_closed_e3_authoring`
+Previous mode: `scec_t1_r3_locator_content_binding_closed_e3_authoring`
 
 ## Next Allowed Move
 
-Mode: `scec_t1_r3_locator_content_binding_closed_e3_authoring`. SCEC-T1-R3 is reviewer-accepted with material correction at `008ff0685`: exact E2 replay fails closed, each evidence path uses one cached byte snapshot across a validation tree, and focused tests pass 119/119. Author one bounded SCEC-E3 independent effectiveness-validation packet before any product decision. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live and public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `scec_e3_locator_snapshot_effectiveness_dispatched_pending_external_return`. SCEC-E3 is committed at `81f9b7a70`; transfer its work order to exactly one external worker and await only the authorized assessment and worker return, both uncommitted. Reviewer must independently replay the exact E2, changing-resolver and cross-predecessor snapshot cases before closure. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live and public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
