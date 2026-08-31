@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_t0_learning_intake_accepted_t1_core_design_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute GCLH-T1 Core-only integrated design; parked checkpoint=downstream shift-operations application until Core closure and later GCLH-T4 authorization; GC010 remains parked.
+Startup acknowledged: current mode=`gclh_t1_design_accepted_t2_protected_work_order_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and review the GCLH-T2 protected-path work order; parked checkpoint=downstream shift-operations application until Core closure and later GCLH-T4 authorization; GC010 remains parked.
 
 ## Current Mode
 
-Current mode marker: `gclh_t0_learning_intake_accepted_t1_core_design_authorized`
-Current mode: `gclh_t0_learning_intake_accepted_t1_core_design_authorized`; previous mode marker: `gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending`
-Previous mode: `gc010_root_architecture_reassessed_closed_parked_system_chain_selection_pending`
+Current mode marker: `gclh_t1_design_accepted_t2_protected_work_order_required`
+Current mode: `gclh_t1_design_accepted_t2_protected_work_order_required`; previous mode marker: `gclh_t0_learning_intake_accepted_t1_core_design_authorized`
+Previous mode: `gclh_t0_learning_intake_accepted_t1_core_design_authorized`
 
 ## Next Allowed Move
 
-Mode: `gclh_t0_learning_intake_accepted_t1_core_design_authorized`. Execute GCLH-T1 as a Core-only integrated design composing existing SCEC and review-cost owners with canonical source-hash byte-domain and downstream control-projection freshness. Review validity is controlled by evidence reconstruction and reconciliation, not actor count; same-agent role transition remains allowed and must not be represented as independent multi-agent review. Do not update or apply the learning to `shift-operations-workspace` until Core closure and later GCLH-T4 authorization. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_t1_design_accepted_t2_protected_work_order_required`. T1 design is accepted at `2dfc771ed`; author and review a protected-path GCLH-T2 work order naming exact owner changes, hostile tests, rollback evidence, and self-protection authorization. Implementation remains unopened. Review validity depends on evidence reconstruction, not actor count. Keep `shift-operations-workspace` parked until Core closure and later GCLH-T4 authorization. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
