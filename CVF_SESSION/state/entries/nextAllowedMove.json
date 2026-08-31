@@ -1,5 +1,5 @@
 {
   "stateOrder": 2585,
   "stateKey": "nextAllowedMove",
-  "value": "Author and dispatch exactly one bounded SCEC-E2 effectiveness-validation packet against the strengthened evidence-binding contract closed at cb6d4bc3879a753eb9abc7283b55148c141c46d1. Require adversarial cases for unsupported resolution, evidence mutation or stale hash, predecessor evidence drift, plus one valid resolution control. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Transfer committed SCEC-E2 packet 130e53d62 to one external validation worker. Require exactly docs/assessments/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md and docs/reviews/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_WORKER_RETURN_2026-08-31.md uncommitted, then independently review all nine adversarial case families and both positive controls. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

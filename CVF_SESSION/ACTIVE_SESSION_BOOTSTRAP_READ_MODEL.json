@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring",
+  "currentMode": "scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Author and dispatch exactly one bounded SCEC-E2 effectiveness-validation packet against the strengthened evidence-binding contract closed at cb6d4bc3879a753eb9abc7283b55148c141c46d1. Require adversarial cases for unsupported resolution, evidence mutation or stale hash, predecessor evidence drift, plus one valid resolution control. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Transfer committed SCEC-E2 packet 130e53d62 to one external validation worker. Require exactly docs/assessments/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md and docs/reviews/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_WORKER_RETURN_2026-08-31.md uncommitted, then independently review all nine adversarial case families and both positive controls. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_2026-08-31.md",
-    "baselineSha256": "a1cb1fc1750d9ad397695544fb8a207b02cf20c6d171c7c1b31d5d96c7c171f8",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_2026-08-31.md",
-    "workOrderSha256": "2b057ee5b4e91857b1ab2ecfecff92cbd6b4687ecd87db80fb468b61e9ae38fa"
+    "baselinePath": "docs/baselines/CVF_GC018_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "baselineSha256": "a013f27bc4aad5744a5842c77785c2e645a88221dea345eeb9a67c9ab0f851c1",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "workOrderSha256": "93dc80a448472aa006c4bd9585d9e974224363dd34bf2202f22588708195f587"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

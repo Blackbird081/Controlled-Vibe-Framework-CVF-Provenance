@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author one bounded SCEC-E2 evidence-binding effectiveness-validation packet; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer SCEC-E2 `130e53d62` to one external worker and await the exact two-path return; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring`
-Current mode: `scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring`; previous mode marker: `scec_t1_r2_blocker_evidence_binding_dispatched_pending_external_return`
-Previous mode: `scec_t1_r2_blocker_evidence_binding_dispatched_pending_external_return`
+Current mode marker: `scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return`
+Current mode: `scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return`; previous mode marker: `scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring`
+Previous mode: `scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring`
 
 ## Next Allowed Move
 
-Mode: `scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring`. SCEC-T1-R2 is independently accepted with material correction at `cb6d4bc38`; focused SCEC 115/115, combined focused 205/205, reviewer-fast 67/67 and pre-commit 88/88 passed. Author exactly one bounded SCEC-E2 effectiveness packet covering unsupported resolution, evidence mutation or stale hash, predecessor evidence drift, and a valid control. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live and public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return`. SCEC-E2 is committed at `130e53d62` after pre-dispatch 81/81 and pre-commit 88/88. Transfer the packet to one external worker and require exactly the assessment plus named worker return, covering all nine adversarial families and both positive controls. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live and public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

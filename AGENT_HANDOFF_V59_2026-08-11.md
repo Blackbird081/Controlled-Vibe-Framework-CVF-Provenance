@@ -2,7 +2,7 @@
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
-- SCEC-T1 and parser hardening are accepted at `bd4ac2882482a9c38c4e8b97d1cae265028c4368` and `8611c1e3e2c88d583047d255c5f646fad987dec1`. SCEC-E1 exposed evidence-binding debt; T1-R2 closes that debt with reviewer correction at `cb6d4bc3879a753eb9abc7283b55148c141c46d1`. The next move is one bounded SCEC-E2 effectiveness validation; T1J-R4 remains parked.
+- SCEC-T1-R2 closes evidence-binding debt with reviewer correction at `cb6d4bc3879a753eb9abc7283b55148c141c46d1`. The validation-only SCEC-E2 packet is dispatched at `130e53d62c13601c0dfbc26eb97e98d422ac44a9`; it requires nine fresh adversarial families and two positive controls. T1J-R4 remains parked.
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
 - Branch: `main`. Current material HEAD recorded for this handoff: `b3589ce7847196d707a96e26b706cfd50c1c433f` (GC010-SCR-R2-T1J-R3 corrected decision closure). DeepSeek Harness absorption material remains `7b8514526`. Public protocol 1.2 source-pack profile is live at public `main` commit `d7860138350130d6d105826ce186f1beeaba3c2d`; GitHub public-sync preflight run `33245798802` passed; `EXTERNAL_AGENT_READ` refresh receipt SHA-256 is `ccfd4ac603163043327c0d33bcce757b68e5e53c4bcd7bede33d13dd07628e39`. The prior DeepSeek task capsule was removed from the reusable packet root and must be regenerated for the next pinned repository.
@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author one bounded SCEC-E2 evidence-binding effectiveness-validation packet; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer SCEC-E2 `130e53d62` to one external worker and await the exact two-path return; parked checkpoint=T1J-R4, T1K, T2, product/runtime, provider/live, public sync and deployment.
 
 ## Current Mode
-`scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring`
+`scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return`
 
 ## Purpose
 
@@ -171,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Author and dispatch exactly one bounded SCEC-E2 effectiveness-validation packet against the strengthened evidence-binding contract at `cb6d4bc38`. Require adversarial cases for unsupported resolution, evidence mutation or stale hash, predecessor evidence drift, plus one valid resolution control. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest numbered wave remains LHW24.
+Transfer committed SCEC-E2 packet `130e53d62` to one external worker. Require exactly the named assessment and worker return, all nine adversarial case families, both positive controls, and no commit. Then independently review semantics and case independence. Keep `successorTrancheOpened: NO`; T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -206,15 +206,15 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize independently accepted SCEC-T1-R2 material `cb6d4bc38`, exact worker-return evidence, the SCEC-E2 validation-only next move and generated projections. No checker implementation or product successor is authorized by this continuity edit.
+Authorized guard-maintenance scope: synchronize committed SCEC-E2 dispatch `130e53d62`, exact authority hashes, worker-return next move and generated projections. No checker implementation or product successor is authorized by this continuity edit.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/scecT1R2BlockerResolutionEvidenceBindingDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/scecE2EvidenceBindingEffectivenessValidationDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md`.
 Protected guard paths:
 - N/A with reason: this continuity sync changes no guard or checker path.
 Operator authorization: the operator explicitly authorized raising the CVF foundation and validating it with successor tranches while retaining orchestrator/reviewer and external-worker role separation.
-Rollback boundary: revert only this closure continuity sync without rewriting committed SCEC-T1-R2 material or prior evidence.
+Rollback boundary: revert only this dispatch continuity sync without rewriting committed SCEC-E2 packet, SCEC-T1-R2 material or prior evidence.
 Not authorized: T1J-R4 product work, GC010 product/runtime edit, T1K/T2, provider/API/network use, public mutation, deployment, production claim or compaction.
 ## Claim Boundary
 
-This handoff records SCEC-T1-R2 reviewer acceptance at `cb6d4bc38` and authorizes only SCEC-E2 validation-packet authoring. It does not authorize T1J-R4, GC010 product/runtime, T1K/T2, provider/API/network, public mutation, deployment, production, compaction or automatic product successor work.
+This handoff records SCEC-E2 dispatch `130e53d62` and authorizes one bounded external validation return. It does not authorize SCEC source/checker edits, T1J-R4, GC010 product/runtime, T1K/T2, provider/API/network, public mutation, deployment, production, compaction or automatic product successor work.

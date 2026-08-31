@@ -1,0 +1,26 @@
+{
+  "stateOrder": 2600,
+  "stateKey": "scecE2EvidenceBindingEffectivenessValidationDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_WORKER_RETURN",
+    "problemKey": "scec-evidence-binding-effectiveness-validation",
+    "dispatchCommit": "130e53d62c13601c0dfbc26eb97e98d422ac44a9",
+    "dispatchBaseHead": "a5a4fbbc78fc8ad3f2e9541ee5572a8730d3fe7e",
+    "baseline": "docs/baselines/CVF_GC018_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "baselineSha256": "a013f27bc4aad5744a5842c77785c2e645a88221dea345eeb9a67c9ab0f851c1",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "workOrderSha256": "93dc80a448472aa006c4bd9585d9e974224363dd34bf2202f22588708195f587",
+    "workerReturn": "docs/reviews/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_WORKER_RETURN_2026-08-31.md",
+    "assessment": "docs/assessments/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "requiredArtifactCount": 2,
+    "requiredCaseFamilies": 9,
+    "allowedEffectivenessVerdicts": [
+      "EFFECTIVE",
+      "EFFECTIVE_WITH_HARDENING_REQUIRED",
+      "INEFFECTIVE_REOPEN_FOUNDATION"
+    ],
+    "nextAllowedMove": "Transfer committed SCEC-E2 packet 130e53d62 to one external validation worker and await exactly the assessment plus named worker return for independent review.",
+    "claimBoundary": "Validation-only SCEC evidence-binding evaluation. SCEC source/checker/test edits, GC010 product/runtime, T1J-R4, T1K, T2, provider/live, public sync, deployment and production remain parked."
+  }
+}

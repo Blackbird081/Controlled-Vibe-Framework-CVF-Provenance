@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_2026-08-31.md",
-    "baselineSha256": "a1cb1fc1750d9ad397695544fb8a207b02cf20c6d171c7c1b31d5d96c7c171f8",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R2_BLOCKER_RESOLUTION_EVIDENCE_BINDING_AND_HISTORICAL_REPLAY_CORRECTION_2026-08-31.md",
-    "workOrderSha256": "2b057ee5b4e91857b1ab2ecfecff92cbd6b4687ecd87db80fb468b61e9ae38fa"
+    "baselinePath": "docs/baselines/CVF_GC018_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "baselineSha256": "a013f27bc4aad5744a5842c77785c2e645a88221dea345eeb9a67c9ab0f851c1",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "workOrderSha256": "93dc80a448472aa006c4bd9585d9e974224363dd34bf2202f22588708195f587"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring",
-  "previousMode": "scec_t1_r2_blocker_evidence_binding_dispatched_pending_external_return",
+  "currentMode": "scec_e2_evidence_binding_effectiveness_dispatched_pending_external_return",
+  "previousMode": "scec_t1_r2_closed_scec_e2_evidence_binding_effectiveness_validation_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15883,7 +15883,7 @@
     "nextAllowedMove": "Author and dispatch one bounded SCEC-T1-R2 foundation-hardening packet to correct the historical replay and bind every resolved blocker to accepted evidence or an explicit governed reviewer resolution rule. Add a negative regression for unsupported resolution laundering. Keep GC010 product/runtime work parked.",
     "claimBoundary": "SCEC foundation hardening only. No T1J-R4, GC010 product/runtime edit, T1K, T2, provider/live, public sync, deployment or production authority."
   },
-  "nextAllowedMove": "Author and dispatch exactly one bounded SCEC-E2 effectiveness-validation packet against the strengthened evidence-binding contract closed at cb6d4bc3879a753eb9abc7283b55148c141c46d1. Require adversarial cases for unsupported resolution, evidence mutation or stale hash, predecessor evidence drift, plus one valid resolution control. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Transfer committed SCEC-E2 packet 130e53d62 to one external validation worker. Require exactly docs/assessments/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md and docs/reviews/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_WORKER_RETURN_2026-08-31.md uncommitted, then independently review all nine adversarial case families and both positive controls. Keep successorTrancheOpened NO. T1J-R4, T1K, T2, product/runtime, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "scecT1R2BlockerResolutionEvidenceBindingDispatch20260831": {
     "status": "REVIEWER_ACCEPTED_WITH_MATERIAL_CORRECTION_CLOSED",
     "dispatchCommit": "24aaa8ff1",
@@ -15902,5 +15902,27 @@
     "requiredManifestCount": 11,
     "nextAllowedMove": "Author and dispatch exactly one bounded SCEC-E2 effectiveness-validation packet against the strengthened evidence-binding contract. It must test unsupported resolution, evidence mutation or stale hash, predecessor evidence drift, and a valid resolution control. Keep GC010 product/runtime work parked.",
     "claimBoundary": "SCEC evidence-binding foundation is closed at cb6d4bc3879a753eb9abc7283b55148c141c46d1. No GC010 product/runtime, T1J-R4, T1K, T2, provider/live, public sync, deployment or production authority follows."
+  },
+  "scecE2EvidenceBindingEffectivenessValidationDispatch20260831": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_WORKER_RETURN",
+    "problemKey": "scec-evidence-binding-effectiveness-validation",
+    "dispatchCommit": "130e53d62c13601c0dfbc26eb97e98d422ac44a9",
+    "dispatchBaseHead": "a5a4fbbc78fc8ad3f2e9541ee5572a8730d3fe7e",
+    "baseline": "docs/baselines/CVF_GC018_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "baselineSha256": "a013f27bc4aad5744a5842c77785c2e645a88221dea345eeb9a67c9ab0f851c1",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "workOrderSha256": "93dc80a448472aa006c4bd9585d9e974224363dd34bf2202f22588708195f587",
+    "workerReturn": "docs/reviews/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_WORKER_RETURN_2026-08-31.md",
+    "assessment": "docs/assessments/CVF_SCEC_E2_EVIDENCE_BINDING_EFFECTIVENESS_VALIDATION_2026-08-31.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "requiredArtifactCount": 2,
+    "requiredCaseFamilies": 9,
+    "allowedEffectivenessVerdicts": [
+      "EFFECTIVE",
+      "EFFECTIVE_WITH_HARDENING_REQUIRED",
+      "INEFFECTIVE_REOPEN_FOUNDATION"
+    ],
+    "nextAllowedMove": "Transfer committed SCEC-E2 packet 130e53d62 to one external validation worker and await exactly the assessment plus named worker return for independent review.",
+    "claimBoundary": "Validation-only SCEC evidence-binding evaluation. SCEC source/checker/test edits, GC010 product/runtime, T1J-R4, T1K, T2, provider/live, public sync, deployment and production remain parked."
   }
 }
