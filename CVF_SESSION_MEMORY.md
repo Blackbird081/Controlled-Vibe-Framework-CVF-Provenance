@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_t1_design_accepted_t2_protected_work_order_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and review the GCLH-T2 protected-path work order; parked checkpoint=downstream shift-operations application until Core closure and later GCLH-T4 authorization; GC010 remains parked.
+Startup acknowledged: current mode=`gclh_t1_sot_phase_return_amendment_accepted_t2_work_order_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author/review GCLH-T2 work order binding every phase return to SOT authority; parked checkpoint=downstream application until Core closure and GCLH-T4; GC010 remains parked.
 
 ## Current Mode
 
-Current mode marker: `gclh_t1_design_accepted_t2_protected_work_order_required`
-Current mode: `gclh_t1_design_accepted_t2_protected_work_order_required`; previous mode marker: `gclh_t0_learning_intake_accepted_t1_core_design_authorized`
-Previous mode: `gclh_t0_learning_intake_accepted_t1_core_design_authorized`
+Current mode marker: `gclh_t1_sot_phase_return_amendment_accepted_t2_work_order_required`
+Current mode: `gclh_t1_sot_phase_return_amendment_accepted_t2_work_order_required`; previous mode marker: `gclh_t1_design_accepted_t2_protected_work_order_required`
+Previous mode: `gclh_t1_design_accepted_t2_protected_work_order_required`
 
 ## Next Allowed Move
 
-Mode: `gclh_t1_design_accepted_t2_protected_work_order_required`. T1 design is accepted at `2dfc771ed`; author and review a protected-path GCLH-T2 work order naming exact owner changes, hostile tests, rollback evidence, and self-protection authorization. Implementation remains unopened. Review validity depends on evidence reconstruction, not actor count. Keep `shift-operations-workspace` parked until Core closure and later GCLH-T4 authorization. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_t1_sot_phase_return_amendment_accepted_t2_work_order_required`. Amendment 1 is accepted at `c0ee6b881`: every INTAKE through FREEZE return must bind its predecessor and resolvable SOT authority; agent/role/provider/topology is attribution only. Author/review the T2 protected-path work order; implementation remains unopened. Keep `shift-operations-workspace` parked until Core closure and GCLH-T4. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
