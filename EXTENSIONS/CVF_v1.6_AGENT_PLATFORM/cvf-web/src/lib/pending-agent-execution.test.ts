@@ -8,6 +8,7 @@ import {
     InMemoryPendingAgentExecutionStore,
     ResumeAuthorityGrant,
     abandonBeforeStart,
+    applyPendingAgentExecutionTransition,
     applyTerminalTransition,
     beginPendingExecution,
     canonicalDigest,
@@ -1038,5 +1039,151 @@ describe('11. static proof of call-boundary isolation', () => {
                 expect(line).toContain('import type');
             }
         }
+    });
+});
+
+// ---------------------------------------------------------------------------
+// 12. Shared transition helper parity (GC010-SCR-R2-T1C)
+// ---------------------------------------------------------------------------
+
+describe('12. shared pure transition helper parity with in-memory CAS', () => {
+    it('produces the exact same success reason/record shape as compareAndSwap', () => {
+        const now = new Date().toISOString();
+        const claimTransition = {
+            kind: 'CLAIM' as const, claimId: 'claim-parity-1', claimedAt: now, claimedBy: ACTOR, requestId: 'req-parity-1',
+        };
+        const { store, record } = createStoreWithRecord();
+        const direct = store.compareAndSwap(record.pendingExecutionId, 0, 'CREATED', claimTransition);
+        expect(direct.ok).toBe(true);
+        expect(direct.reason).toBe('OK');
+
+        // Given the same pre-transition record and inputs, the shared helper
+        // must reach the identical decision (module 1's contract: the
+        // in-memory store must not apply any rule the helper does not own).
+        const helperResult = applyPendingAgentExecutionTransition(createStoreWithRecord().record, 0, 'CREATED', claimTransition);
+        expect(helperResult.ok).toBe(direct.ok);
+        expect(helperResult.reason).toBe(direct.reason);
+        expect(helperResult.record?.state.status).toBe(direct.record?.state.status);
+        expect(helperResult.record?.state.claimId).toBe(direct.record?.state.claimId);
+        expect(helperResult.record?.state.recordVersion).toBe(direct.record?.state.recordVersion);
+    });
+
+    it('reproduces every existing failure reason string byte-for-byte for VERSION_MISMATCH, STATUS_MISMATCH, TERMINAL_STATE_IMMUTABLE, ILLEGAL_TRANSITION, CLAIM_ID_MISMATCH, and ATTEMPT_INDEX_MISMATCH', () => {
+        const { record } = createStoreWithRecord();
+        const now = new Date().toISOString();
+
+        const versionMismatch = applyPendingAgentExecutionTransition(record, 99, 'CREATED', {
+            kind: 'CLAIM', claimId: 'c1', claimedAt: now, claimedBy: ACTOR, requestId: 'r1',
+        });
+        expect(versionMismatch.reason).toBe('VERSION_MISMATCH');
+
+        const statusMismatch = applyPendingAgentExecutionTransition(record, 0, 'CLAIMED', {
+            kind: 'BEGIN_EXECUTING', claimId: 'c1', attemptIndex: 0,
+        });
+        expect(statusMismatch.reason).toBe('STATUS_MISMATCH');
+
+        const claimed = applyPendingAgentExecutionTransition(record, 0, 'CREATED', {
+            kind: 'CLAIM', claimId: 'c1', claimedAt: now, claimedBy: ACTOR, requestId: 'r1',
+        });
+        expect(claimed.ok).toBe(true);
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const claimedRecord = claimed.record!;
+
+        const illegalTransition = applyPendingAgentExecutionTransition(
+            claimedRecord,
+            claimedRecord.state.recordVersion,
+            'CLAIMED',
+            { kind: 'CLAIM', claimId: 'c2', claimedAt: now, claimedBy: ACTOR, requestId: 'r2' },
+        );
+        expect(illegalTransition.reason).toBe('ILLEGAL_TRANSITION');
+
+        const wrongClaimId = applyPendingAgentExecutionTransition(
+            claimedRecord,
+            claimedRecord.state.recordVersion,
+            'CLAIMED',
+            { kind: 'BEGIN_EXECUTING', claimId: 'wrong-claim', attemptIndex: 0 },
+        );
+        expect(wrongClaimId.reason).toBe('CLAIM_ID_MISMATCH');
+
+        const beganExecuting = applyPendingAgentExecutionTransition(
+            claimedRecord,
+            claimedRecord.state.recordVersion,
+            'CLAIMED',
+            { kind: 'BEGIN_EXECUTING', claimId: 'c1', attemptIndex: 0 },
+        );
+        expect(beganExecuting.ok).toBe(true);
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const executingRecord = beganExecuting.record!;
+
+        const wrongAttempt = applyPendingAgentExecutionTransition(
+            executingRecord,
+            executingRecord.state.recordVersion,
+            'EXECUTING',
+            { kind: 'TERMINAL', claimId: 'c1', attemptIndex: 99, status: 'SUCCEEDED', reason: 'x', terminalAt: now },
+        );
+        expect(wrongAttempt.reason).toBe('ATTEMPT_INDEX_MISMATCH');
+
+        const terminal = applyPendingAgentExecutionTransition(
+            executingRecord,
+            executingRecord.state.recordVersion,
+            'EXECUTING',
+            { kind: 'TERMINAL', claimId: 'c1', attemptIndex: 0, status: 'SUCCEEDED', reason: 'done', terminalAt: now },
+        );
+        expect(terminal.ok).toBe(true);
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const terminalRecord = terminal.record!;
+
+        const afterTerminal = applyPendingAgentExecutionTransition(
+            terminalRecord,
+            terminalRecord.state.recordVersion,
+            'SUCCEEDED',
+            { kind: 'TERMINAL', claimId: 'c1', attemptIndex: 0, status: 'FAILED', reason: 'replay', terminalAt: now },
+        );
+        expect(afterTerminal.reason).toBe('TERMINAL_STATE_IMMUTABLE');
+    });
+
+    it('returns a cloned record on both success and failure so callers cannot mutate helper output back into the caller-supplied input', () => {
+        const { record } = createStoreWithRecord();
+        const result = applyPendingAgentExecutionTransition(record, 0, 'CREATED', {
+            kind: 'CLAIM',
+            claimId: 'claim-clone-check',
+            claimedAt: new Date().toISOString(),
+            claimedBy: ACTOR,
+            requestId: 'req-clone-check',
+        });
+        expect(result.ok).toBe(true);
+        expect(result.record).not.toBe(record);
+        if (result.record) {
+            (result.record.state as { status: string }).status = 'TAMPERED';
+        }
+        expect(record.state.status).toBe('CREATED');
+
+        const failure = applyPendingAgentExecutionTransition(record, 99, 'CREATED', {
+            kind: 'CLAIM',
+            claimId: 'claim-clone-check-2',
+            claimedAt: new Date().toISOString(),
+            claimedBy: ACTOR,
+            requestId: 'req-clone-check-2',
+        });
+        expect(failure.ok).toBe(false);
+        expect(failure.record).not.toBe(record);
+    });
+
+    it('the helper performs no I/O and does not itself mutate any store: calling it twice with the same untouched input is idempotent', () => {
+        const { record } = createStoreWithRecord();
+        const now = new Date().toISOString();
+        const first = applyPendingAgentExecutionTransition(record, 0, 'CREATED', {
+            kind: 'CLAIM', claimId: 'claim-idempotent', claimedAt: now, claimedBy: ACTOR, requestId: 'req-idempotent',
+        });
+        const second = applyPendingAgentExecutionTransition(record, 0, 'CREATED', {
+            kind: 'CLAIM', claimId: 'claim-idempotent', claimedAt: now, claimedBy: ACTOR, requestId: 'req-idempotent',
+        });
+        expect(first.ok).toBe(true);
+        expect(second.ok).toBe(true);
+        expect(first.record?.state.recordVersion).toBe(second.record?.state.recordVersion);
+        expect(first.record?.state.claimId).toBe(second.record?.state.claimId);
+        // The original input record itself is never mutated by the helper.
+        expect(record.state.status).toBe('CREATED');
+        expect(record.state.recordVersion).toBe(0);
     });
 });

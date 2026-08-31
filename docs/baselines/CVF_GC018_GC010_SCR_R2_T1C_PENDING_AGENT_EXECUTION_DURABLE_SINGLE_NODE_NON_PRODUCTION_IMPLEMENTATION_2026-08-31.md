@@ -4,7 +4,7 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: DISPATCHED_IMPLEMENTATION_BOUNDED
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: GC010-SCR-R2-T1C
 
@@ -155,6 +155,19 @@ worker-return fast gate, and zero provider/live/network/browser/credential calls
 DEFERRED_PRIVATE_ONLY
 
 Reason: private non-production implementation dispatch; the public-sync boundary remains closed.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | paired T1C work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | T1C completion review and worker-return addendum | accepted terminal token | PASS |
+| Roadmap state | historical GC010 product roadmap | production consumer remains parked | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | exact current-authority hashes | PASS |
+| Registry Markdown | `CVF_SESSION_MEMORY.md`; active handoff | separate continuity commit | BLOCKED with reason: material commit precedes continuity |
+| External evidence digest | N/A with reason: no external evidence consumed | zero provider/live calls | N/A with reason |
+| System loop interlock | T1C completion | `successorTrancheOpened: NO` | PASS |
+| Session continuity | bootstrap/state/front door/handoff | closed mode follows material | N/A with reason: separate continuity commit required |
 
 ## Claim Boundary
 

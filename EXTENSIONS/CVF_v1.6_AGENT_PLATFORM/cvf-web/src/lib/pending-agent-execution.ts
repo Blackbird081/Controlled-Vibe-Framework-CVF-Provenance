@@ -28,7 +28,8 @@ function isPlainObject(value: unknown): value is Record<string, unknown> {
 }
 
 function escapeJsonString(input: string): string {
-    for (let index = 0; index < input.length; index += 1) {
+    let index = 0;
+    while (index < input.length) {
         const unit = input.charCodeAt(index);
         if (unit >= 0xd800 && unit <= 0xdbff) {
             const next = input.charCodeAt(index + 1);
@@ -39,6 +40,7 @@ function escapeJsonString(input: string): string {
         } else if (unit >= 0xdc00 && unit <= 0xdfff) {
             throw new CanonicalizationError('lone low surrogate is not valid JCS input');
         }
+        index += 1;
     }
     let out = '"';
     for (const ch of input) {
@@ -587,6 +589,37 @@ function validateTransitionIdentity(
     return null;
 }
 
+/** T1C shared pure transition owner: version/status/terminal/legal-from/
+ * identity checks plus application, given an already-looked-up record.
+ * NOT_FOUND is store-specific. No I/O; persist the result only when ok. */
+export function applyPendingAgentExecutionTransition(
+    record: PendingAgentExecutionRecord,
+    expectedVersion: number,
+    expectedStatus: PendingAgentExecutionStatus,
+    transition: PendingAgentExecutionTransition,
+): CompareAndSwapResult {
+    if (record.state.recordVersion !== expectedVersion) {
+        return { ok: false, reason: 'VERSION_MISMATCH', record: cloneRecord(record) };
+    }
+    if (record.state.status !== expectedStatus) {
+        return { ok: false, reason: 'STATUS_MISMATCH', record: cloneRecord(record) };
+    }
+    if (TERMINAL_STATUSES.has(record.state.status)) {
+        return { ok: false, reason: 'TERMINAL_STATE_IMMUTABLE', record: cloneRecord(record) };
+    }
+    const legalFrom = LEGAL_TRANSITION_FROM[transition.kind];
+    if (!legalFrom.includes(record.state.status)) {
+        return { ok: false, reason: 'ILLEGAL_TRANSITION', record: cloneRecord(record) };
+    }
+    const identityIssue = validateTransitionIdentity(record, transition);
+    if (identityIssue) {
+        return { ok: false, reason: identityIssue, record: cloneRecord(record) };
+    }
+
+    const updated = applyTransition(record, transition);
+    return { ok: true, reason: 'OK', record: cloneRecord(updated) };
+}
+
 export class InMemoryPendingAgentExecutionStore implements PendingAgentExecutionStore {
     public readonly deploymentBoundary = 'single_process_non_production' as const;
 
@@ -686,26 +719,16 @@ export class InMemoryPendingAgentExecutionStore implements PendingAgentExecution
         if (!current) {
             return { ok: false, reason: 'NOT_FOUND', record: null };
         }
-        if (current.state.recordVersion !== expectedVersion) {
-            return { ok: false, reason: 'VERSION_MISMATCH', record: cloneRecord(current) };
-        }
-        if (current.state.status !== expectedStatus) {
-            return { ok: false, reason: 'STATUS_MISMATCH', record: cloneRecord(current) };
-        }
-        if (TERMINAL_STATUSES.has(current.state.status)) {
-            return { ok: false, reason: 'TERMINAL_STATE_IMMUTABLE', record: cloneRecord(current) };
-        }
-        const legalFrom = LEGAL_TRANSITION_FROM[transition.kind];
-        if (!legalFrom.includes(current.state.status)) {
-            return { ok: false, reason: 'ILLEGAL_TRANSITION', record: cloneRecord(current) };
-        }
-        const identityIssue = validateTransitionIdentity(current, transition);
-        if (identityIssue) {
-            return { ok: false, reason: identityIssue, record: cloneRecord(current) };
+
+        const result = applyPendingAgentExecutionTransition(current, expectedVersion, expectedStatus, transition);
+        if (!result.ok) {
+            return result;
         }
 
-        const updated = applyTransition(current, transition);
-        const storedClone = cloneRecord(updated);
+        // The helper already clones on success, so storing it directly here
+        // preserves the original clone-on-write-then-clone-on-return isolation.
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const storedClone = result.record!;
         this.records.set(pendingExecutionId, storedClone);
         return { ok: true, reason: 'OK', record: cloneRecord(storedClone) };
     }
@@ -773,9 +796,14 @@ export class ResumeAuthorityGrant {
     }
 }
 
+interface GrantIdentity {
+    pendingExecutionId: string;
+    claimId: string;
+}
+
 const VALID_GRANTS = new WeakSet<ResumeAuthorityGrant>();
-const GRANT_METADATA = new WeakMap<ResumeAuthorityGrant, { pendingExecutionId: string; claimId: string }>();
-const GRANT_IDENTIFIERS = new WeakMap<ResumeAuthorityGrant, { pendingExecutionId: string; claimId: string }>();
+const GRANT_METADATA = new WeakMap<ResumeAuthorityGrant, GrantIdentity>();
+const GRANT_IDENTIFIERS = new WeakMap<ResumeAuthorityGrant, GrantIdentity>();
 
 function createResumeAuthorityGrant(pendingExecutionId: string, claimId: string): ResumeAuthorityGrant {
     const grant = new ResumeAuthorityGrant(GRANT_CONSTRUCTOR_TOKEN);
