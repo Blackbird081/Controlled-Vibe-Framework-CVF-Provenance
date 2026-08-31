@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md",
-    "baselineSha256": "03b82b1eae361590341e5a4a52da61ce453eb2cba931561e6dde72f8d6580474",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_FOUNDATION_2026-08-31.md",
-    "workOrderSha256": "a8f5fdf572ee5cfbef2ed27aa956bfdb32a55e7d45e751c185b2c06d65efa14d"
+    "baselinePath": "docs/baselines/CVF_GC018_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_2026-08-31.md",
+    "baselineSha256": "4ecbe18c132b23be6aa8e22aee408374feca9dd8d9c1461c6e6ac9509583daa9",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_2026-08-31.md",
+    "workOrderSha256": "45e677d62dbf8b1c0454abbb69ca1988f411ace0ec3f68c14b6ab3735ffb4d85"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "scec_t1_closed_effectiveness_reconciliation_required",
-  "previousMode": "scec_t1_dispatched_pending_external_governance_implementation_return",
+  "currentMode": "scec_t1_r1_mixed_fence_parser_hardening_dispatched_pending_external_return",
+  "previousMode": "scec_t1_closed_effectiveness_reconciliation_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15832,5 +15832,23 @@
     "nextAllowedMove": "Author and dispatch one decision-only SCEC effectiveness reconciliation packet for the accepted GC010 T1J R1-through-R3 chain. Do not open T1J-R4 as product work.",
     "claimBoundary": "SCEC governance foundation is implemented and locally enforced. Historical replay remains regression evidence, not a final adjudication of GC010; product/runtime change, T1J-R4 implementation, T1K, T2, provider/live action, public sync, deployment and production remain parked."
   },
-  "nextAllowedMove": "Author and dispatch one decision-only SCEC effectiveness reconciliation packet for the accepted GC010 T1J R1-through-R3 chain. It must use the active predecessor/state/counter rules and test the regression prediction STOP_REASSESS_ARCHITECTURE with NO_SUCCESSOR. A different disposition requires exact new evidence or identification of a control defect followed by SCEC hardening. Do not open T1J-R4 product work; T1K, T2, product/runtime implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "scecT1R1MixedFenceActiveBlockParserHardeningDispatch20260831": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_GOVERNANCE_IMPLEMENTATION_RETURN",
+    "problemKey": "scec-mixed-fence-active-block-detection",
+    "dispatchCommit": "bd706c48cb6d6d5bf47f247358a70b3c442b1999",
+    "dispatchBaseHead": "8b5ae0d144c498cbaf492ec21352c947568a2a56",
+    "baseline": "docs/baselines/CVF_GC018_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_2026-08-31.md",
+    "baselineSha256": "4ecbe18c132b23be6aa8e22aee408374feca9dd8d9c1461c6e6ac9509583daa9",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_2026-08-31.md",
+    "workOrderSha256": "45e677d62dbf8b1c0454abbb69ca1988f411ace0ec3f68c14b6ab3735ffb4d85",
+    "workerReturn": "docs/reviews/CVF_SCEC_T1_R1_MIXED_FENCE_ACTIVE_BLOCK_PARSER_HARDENING_WORKER_RETURN_2026-08-31.md",
+    "requiredArtifactCount": 4,
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "observedDefect": "The current regex can treat an ordinary closing markdown fence as a new opener, pair fences incorrectly, and miss a later valid active SCEC JSON block when a non-JSON fenced block precedes it.",
+    "acceptanceModel": "Structural fence discovery repair, direct mixed-fence reproducer, ordering and immunity regressions, all prior SCEC tests, ADIF-0055 update, hard-size and worker-return gates, then independent review.",
+    "effectivenessTestDisposition": "SCEC-E1 GC010 reconciliation authoring is paused, not abandoned. Resume the same effectiveness packet only after this repair closes.",
+    "nextAllowedMove": "Transfer dispatch commit bd706c48cb6d5bf47f247358a70b3c442b1999 to one external governance worker and await the exact four-path uncommitted return.",
+    "claimBoundary": "Parser hardening dispatch only. No SCEC semantic threshold change, GC010 product/runtime work, T1J-R4, T1K, T2, provider/live, public sync, deployment or production authority."
+  },
+  "nextAllowedMove": "Transfer committed SCEC-T1-R1 mixed-fence active-block parser hardening packet bd706c48cb6d6d5bf47f247358a70b3c442b1999 to one external governance worker. Require exactly four uncommitted paths and the named worker return. Independently review and close the parser repair before resuming the paused SCEC-E1 GC010 T1J R1-through-R3 effectiveness reconciliation. Do not open T1J-R4 product work; T1K, T2, product/runtime implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

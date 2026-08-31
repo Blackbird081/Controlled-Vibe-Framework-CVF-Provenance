@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scec_t1_closed_effectiveness_reconciliation_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and dispatch one decision-only SCEC effectiveness reconciliation for accepted GC010 T1J R1-through-R3 evidence; parked checkpoint=T1J-R4 product work, T1K, T2, product/runtime implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`scec_t1_r1_mixed_fence_parser_hardening_dispatched_pending_external_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed SCEC-T1-R1 parser-hardening packet to one external worker and await the exact four-path uncommitted return; parked checkpoint=SCEC-E1 GC010 reconciliation until repair closure, plus T1J-R4 product work, T1K, T2, product/runtime implementation, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `scec_t1_closed_effectiveness_reconciliation_required`
-Current mode: `scec_t1_closed_effectiveness_reconciliation_required`; previous mode marker: `scec_t1_dispatched_pending_external_governance_implementation_return`
-Previous mode: `scec_t1_dispatched_pending_external_governance_implementation_return`
+Current mode marker: `scec_t1_r1_mixed_fence_parser_hardening_dispatched_pending_external_return`
+Current mode: `scec_t1_r1_mixed_fence_parser_hardening_dispatched_pending_external_return`; previous mode marker: `scec_t1_closed_effectiveness_reconciliation_required`
+Previous mode: `scec_t1_closed_effectiveness_reconciliation_required`
 
 ## Next Allowed Move
 
-Mode: `scec_t1_closed_effectiveness_reconciliation_required`. SCEC-T1 is independently accepted with material reviewer correction at `bd4ac2882482a9c38c4e8b97d1cae265028c4368`. Next, author and dispatch one decision-only effectiveness reconciliation over accepted GC010 T1J R1-through-R3 evidence. It must test the active control's `STOP_REASSESS_ARCHITECTURE` / `NO_SUCCESSOR` prediction; disagreement requires exact new evidence or a named SCEC defect and foundation hardening. T1J-R4 product work, T1K, T2 and all product/runtime implementation, provider/live, public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `scec_t1_r1_mixed_fence_parser_hardening_dispatched_pending_external_return`. The first SCEC-E1 packet-authoring attempt exposed a real mixed-fence parser defect, so the effectiveness reconciliation is paused. Transfer repair packet `bd706c48cb6d6d5bf47f247358a70b3c442b1999` to one external worker for exactly four uncommitted paths and the named return. Resume the same GC010 effectiveness reconciliation only after independent repair closure. T1J-R4 product work, T1K, T2 and all product/runtime implementation, provider/live, public/deploy authority remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

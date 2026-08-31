@@ -2,7 +2,7 @@
 Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
-- SCEC-T1 foundation is accepted with material reviewer correction at `bd4ac2882482a9c38c4e8b97d1cae265028c4368`; the next move is one decision-only effectiveness reconciliation over accepted GC010 T1J R1-through-R3 evidence, while T1J-R4 product work remains parked.
+- SCEC-T1 is accepted at `bd4ac2882482a9c38c4e8b97d1cae265028c4368`; the first SCEC-E1 packet attempt exposed a mixed-fence parser defect, and bounded repair dispatch `bd706c48cb6d6d5bf47f247358a70b3c442b1999` is now the only open move. GC010 effectiveness reconciliation and T1J-R4 product work remain parked until repair closure.
 - Repository: private provenance source of truth; current AGTR-R1 dispatch HEAD: `d46443ee322652609c6336950fbbce2c5636f563`; public execution base: `d27d3db261404e8f594f130702ca7ef2c86a0ee7`; PR 4 remains unmerged.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
 - Branch: `main`. Current material HEAD recorded for this handoff: `b3589ce7847196d707a96e26b706cfd50c1c433f` (GC010-SCR-R2-T1J-R3 corrected decision closure). DeepSeek Harness absorption material remains `7b8514526`. Public protocol 1.2 source-pack profile is live at public `main` commit `d7860138350130d6d105826ce186f1beeaba3c2d`; GitHub public-sync preflight run `33245798802` passed; `EXTERNAL_AGENT_READ` refresh receipt SHA-256 is `ccfd4ac603163043327c0d33bcce757b68e5e53c4bcd7bede33d13dd07628e39`. The prior DeepSeek task capsule was removed from the reusable packet root and must be regenerated for the next pinned repository.
@@ -39,10 +39,10 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`scec_t1_closed_effectiveness_reconciliation_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and dispatch one decision-only SCEC effectiveness reconciliation for accepted GC010 T1J R1-through-R3 evidence; parked checkpoint=T1J-R4 product work, T1K, T2, product/runtime implementation, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`scec_t1_r1_mixed_fence_parser_hardening_dispatched_pending_external_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer committed SCEC-T1-R1 repair packet to one external worker and await the exact four-path uncommitted return; parked checkpoint=SCEC-E1 GC010 reconciliation until repair closure, plus T1J-R4 product work, T1K, T2, product/runtime implementation, provider/live, public sync and deployment.
 
 ## Current Mode
-`scec_t1_closed_effectiveness_reconciliation_required`
+`scec_t1_r1_mixed_fence_parser_hardening_dispatched_pending_external_return`
 
 ## Purpose
 
@@ -171,7 +171,7 @@ SCEC-T1 is dispatched at material `10345d3addef3415fc4f093a68f8e019f1f3e969` ove
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Author and dispatch one decision-only SCEC effectiveness reconciliation over the accepted GC010 T1J R1-through-R3 chain. Apply the active predecessor/state/counter rules and test the regression prediction `STOP_REASSESS_ARCHITECTURE` with `NO_SUCCESSOR`. Any different result must cite exact new evidence or identify a control defect and reopen SCEC hardening. Do not open T1J-R4 product work. T1K, T2, product/runtime implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
+Transfer SCEC-T1-R1 parser-hardening dispatch `bd706c48cb6d6d5bf47f247358a70b3c442b1999` to one external worker for exactly four uncommitted paths and the named worker return. Independently close the repair before recreating the paused SCEC-E1 GC010 T1J R1-through-R3 effectiveness packet. Do not open T1J-R4 product work. T1K, T2, product/runtime implementation, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -206,15 +206,15 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize accepted SCEC-T1 material `bd4ac2882482a9c38c4e8b97d1cae265028c4368`, exact evidence hashes, the decision-only effectiveness-reconciliation next move and generated projections. This continuity edit implements no checker and authorizes no T1J-R4 product dispatch, product/runtime edit, T1K/T2, provider/live, public sync, deployment or production trigger.
+Authorized guard-maintenance scope: synchronize SCEC-T1-R1 parser-hardening dispatch `bd706c48cb6d6d5bf47f247358a70b3c442b1999`, exact authority hashes, external-worker next move and generated projections. This continuity edit implements no checker and authorizes no GC010 effectiveness result, T1J-R4 product dispatch, product/runtime edit, T1K/T2, provider/live, public sync, deployment or production trigger.
 Protected paths:
 Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/scecT1SemanticConvergenceEscalationControlFoundationDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md`.
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/scecT1R1MixedFenceActiveBlockParserHardeningDispatch20260831.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md`.
 Protected guard paths:
 - N/A with reason: this continuity sync changes no guard or checker path.
 Operator authorization: the operator explicitly authorized raising the CVF foundation and validating it with successor tranches while retaining orchestrator/reviewer and external-worker role separation.
-Rollback boundary: revert only this SCEC-T1 closure continuity sync without rewriting committed SCEC material or prior GC010 closure evidence.
-Not authorized: T1J-R4 product work, product/runtime edit, T1K/T2, provider/API/network use, public mutation, deployment, production claim or compaction.
+Rollback boundary: revert only this SCEC-T1-R1 dispatch continuity sync without rewriting committed repair packet, SCEC-T1 material, or prior GC010 evidence.
+Not authorized: checker implementation by continuity sync, GC010 effectiveness closure, T1J-R4 product work, product/runtime edit, T1K/T2, provider/API/network use, public mutation, deployment, production claim or compaction.
 ## Claim Boundary
 
-This handoff records SCEC-T1 accepted material `bd4ac2882482a9c38c4e8b97d1cae265028c4368`. Historical replay is regression evidence and still requires the named effectiveness reconciliation before it becomes the operative GC010 disposition. This does not authorize semantic-truth scoring, GC010 T1J-R4 product work, product/runtime, T1K/T2, provider/API/network, public mutation, deployment, production, compaction or automatic successor work.
+This handoff records SCEC-T1-R1 repair dispatch `bd706c48cb6d6d5bf47f247358a70b3c442b1999`. It authorizes one external worker to return exactly four uncommitted parser/test/ADIF/review paths. It does not claim the repair is implemented, adjudicate GC010 effectiveness, or authorize semantic-truth scoring, T1J-R4 product work, product/runtime, T1K/T2, provider/API/network, public mutation, deployment, production, compaction or automatic successor work.
