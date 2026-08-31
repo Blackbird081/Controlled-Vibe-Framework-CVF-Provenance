@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1G_PENDING_AGENT_EXECUTION_CANONICAL_APPROVAL_HASH_FAIL_CLOSED_REISSUE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
-    "baselineSha256": "b5da16bd198dc5e0906eb40d4cbb37ce9ae249d5a763012d6f43445ab590c8fa",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1G_PENDING_AGENT_EXECUTION_CANONICAL_APPROVAL_HASH_FAIL_CLOSED_REISSUE_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
-    "workOrderSha256": "d987b374ac42bc3d750f11df540e0010207e1d7d42c62f5e3715313efecdae46"
+    "baselinePath": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md",
+    "baselineSha256": "8d5cb0175ef2c20c8f2b628863e202d3ff6534f5cc26c6730cc45374bc67164e",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md",
+    "workOrderSha256": "d07380b06d88bc70a5a2c73eec6c388f50f87d053b7a469711d29a3bbfe3055a"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gc010_scr_r2_t1g_closed_pass_canonical_hash_fail_closed_reissue_implementation",
-  "previousMode": "gc010_scr_r2_t1g_dispatched_pending_internal_implementation_return",
+  "currentMode": "gc010_scr_r2_t1h_dispatched_pending_external_decision_return",
+  "previousMode": "gc010_scr_r2_t1g_closed_pass_canonical_hash_fail_closed_reissue_implementation",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -15634,5 +15634,20 @@
     "nextAllowedMove": "Await fresh operator instruction before a separately governed T1E harness acceptance re-evaluation or another explicitly selected GC010 system-chain tranche.",
     "claimBoundary": "Bounded non-production canonical approval hashing only. T1E acceptance, package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync, deployment and production remain parked."
   },
-  "nextAllowedMove": "Await fresh operator instruction before a separately governed GC010-SCR-R2-T1E harness acceptance re-evaluation or another explicitly selected GC010 system-chain tranche. T1G is CLOSED_PASS_BOUNDED at material 068d79391 with canonical ordinal approval hashing and fail-closed legacy reissue implemented and proven offline. Package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gc010ScrR2T1hPendingAgentExecutionLocalHarnessPostHashRepairAcceptanceReevaluationDispatch20260831": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN",
+    "materialCommit": "f18348daccb7c55cd5cd536f4865554235c6a06e",
+    "dispatchBaseHead": "6b3b42b898bada669767269cd5e9ad3659cde408",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md",
+    "workerManifest": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "objective": "Re-evaluate whether the committed T1E local harness now satisfies its bounded non-production acceptance contract after T1G repaired canonical approval hashing.",
+    "workerBoundary": "One operator-mediated external Claude worker creates exactly two documentation artifacts, performs read-only offline proof, does not stage or commit, and stops for independent orchestrator review.",
+    "nextAllowedMove": "Operator transfers the exact committed T1H packet to one Claude worker; worker returns exactly the two named uncommitted documentation artifacts for independent orchestrator/reviewer closure.",
+    "claimBoundary": "Dispatch only. T1E is not yet accepted; no source/test edit, package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync, deployment or production authority is opened."
+  },
+  "nextAllowedMove": "Transfer the exact committed GC010-SCR-R2-T1H packet at material f18348dac to one operator-mediated Claude worker. The worker creates exactly the two named uncommitted documentation artifacts, performs read-only offline acceptance proof, and stops for independent orchestrator/reviewer closure. T1E acceptance, source/test edits, package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

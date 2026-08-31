@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gc010_scr_r2_t1g_closed_pass_canonical_hash_fail_closed_reissue_implementation`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await fresh operator instruction before a separately governed T1E harness acceptance re-evaluation or another selected GC010 tranche; parked checkpoint=package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync and deployment.
+Startup acknowledged: current mode=`gc010_scr_r2_t1h_dispatched_pending_external_decision_return`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer the committed T1H packet to one Claude worker for an exact two-document uncommitted return; parked checkpoint=T1E acceptance, source/test edits, package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `gc010_scr_r2_t1g_closed_pass_canonical_hash_fail_closed_reissue_implementation`
-Current mode: `gc010_scr_r2_t1g_closed_pass_canonical_hash_fail_closed_reissue_implementation`; previous mode marker: `gc010_scr_r2_t1g_dispatched_pending_internal_implementation_return`
-Previous mode: `gc010_scr_r2_t1g_dispatched_pending_internal_implementation_return`
+Current mode marker: `gc010_scr_r2_t1h_dispatched_pending_external_decision_return`
+Current mode: `gc010_scr_r2_t1h_dispatched_pending_external_decision_return`; previous mode marker: `gc010_scr_r2_t1g_closed_pass_canonical_hash_fail_closed_reissue_implementation`
+Previous mode: `gc010_scr_r2_t1g_closed_pass_canonical_hash_fail_closed_reissue_implementation`
 
 ## Next Allowed Move
 
-Mode: `gc010_scr_r2_t1g_closed_pass_canonical_hash_fail_closed_reissue_implementation`. T1G is independently accepted `CLOSED_PASS_BOUNDED` at material `068d79391` over dispatch `dd3caef6c`: canonical ordinal approval hashing, strict own-shape rejection, legacy/missing fail-closed reissue, raw lifecycle versions 0/1/2/3 and durable reopen are proven offline. Await fresh operator instruction before separately governing T1E harness acceptance re-evaluation or another selected GC010 tranche. Package/barrel export, route-source/provider/audit, production consumer, distributed safety, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gc010_scr_r2_t1h_dispatched_pending_external_decision_return`. T1H decision packet is committed at material `f18348dac` after pre-dispatch 80/80 and pre-commit 87/87 PASS. Transfer the exact work order to one Claude worker; the worker creates exactly the named assessment and worker return, performs read-only offline proof, does not stage or commit, and stops for independent orchestrator review. T1E acceptance, source/test edits, package/barrel export, route-source/provider/audit, production consumer, distributed safety, provider/live, public sync and deployment remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
