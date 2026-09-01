@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gclh_mfrp_p4_d0_design_accepted_bounded_r1b_authoring_operator_checkpoint_required",
+  "currentMode": "gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MFRP-P4-D0 Revision 1 is independently accepted ACCEPT_CANARY_DESIGN_BOUNDED at 25aaade8b8bbf68d22f6648e9a2250fca4e37647 with zero findings; F-01 through F-08 are discharged in committed text. The P4 work order must later name the independent invariant/evidence locator and should pin the shared field-overlap set. Next allowed move is an explicit operator decision on authoring a separate R1B work order. Acceptance alone does not open R1B authoring, R1B execution or P4 canary execution. P4-P6 authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "MFRP-P3-R1B baseline/work-order authoring is committed at 64b2e25046ed4504c942e047ab92f7daae788ef2 after pre-dispatch 81/81, reviewer-fast 67/67 and pre-commit 88/88 PASS. Next allowed move is independent review of those two committed authoring artifacts. R1B worker execution remains closed until independent acceptance plus a separate Operator opening. P4 canary execution, P2/oracle mutation, authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_2026-09-02.md",
-    "baselineSha256": "7cc94d946754e830764c9c071786c84efca2e37cafe9c4814fe0402de8be2928",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_2026-09-02.md",
-    "workOrderSha256": "2d64add361b7e6fe8826236b815a179ecac1526db03bb3a1b823fbf6d6b3bfaf"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
+    "baselineSha256": "822694a4acab98f97d8d0685672f3e591d808b35594140745968df955b4e8881",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
+    "workOrderSha256": "6f4244f51b29a472e6add02356614639c708bad0740136131330ddb16b463722"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

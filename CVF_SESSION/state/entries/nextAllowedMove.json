@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2730,
+  "stateOrder": 2732,
   "stateKey": "nextAllowedMove",
-  "value": "MFRP-P4-D0 Revision 1 is independently accepted ACCEPT_CANARY_DESIGN_BOUNDED at 25aaade8b8bbf68d22f6648e9a2250fca4e37647 with zero findings; F-01 through F-08 are discharged in committed text. The P4 work order must later name the independent invariant/evidence locator and should pin the shared field-overlap set. Next allowed move is an explicit operator decision on authoring a separate R1B work order. Acceptance alone does not open R1B authoring, R1B execution or P4 canary execution. P4-P6 authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MFRP-P3-R1B baseline/work-order authoring is committed at 64b2e25046ed4504c942e047ab92f7daae788ef2 after pre-dispatch 81/81, reviewer-fast 67/67 and pre-commit 88/88 PASS. Next allowed move is independent review of those two committed authoring artifacts. R1B worker execution remains closed until independent acceptance plus a separate Operator opening. P4 canary execution, P2/oracle mutation, authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_2026-09-02.md",
-    "baselineSha256": "7cc94d946754e830764c9c071786c84efca2e37cafe9c4814fe0402de8be2928",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_2026-09-02.md",
-    "workOrderSha256": "2d64add361b7e6fe8826236b815a179ecac1526db03bb3a1b823fbf6d6b3bfaf"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
+    "baselineSha256": "822694a4acab98f97d8d0685672f3e591d808b35594140745968df955b4e8881",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
+    "workOrderSha256": "6f4244f51b29a472e6add02356614639c708bad0740136131330ddb16b463722"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p4_d0_design_accepted_bounded_r1b_authoring_operator_checkpoint_required",
-  "previousMode": "gclh_mfrp_p4_d0_revision1_ready_independent_rereview_checkpoint_required",
+  "currentMode": "gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required",
+  "previousMode": "gclh_mfrp_p4_d0_design_accepted_bounded_r1b_authoring_operator_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16317,5 +16317,20 @@
     "nextAllowedMove": "Await explicit operator authorization to author a separate R1B work order governed by accepted Revision 1. Acceptance alone does not open R1B authoring, R1B execution or P4 canary execution.",
     "claimBoundary": "Bounded documentary design acceptance only. No R1B authoring/execution, P4 canary run, P2 change, route-authority change, provider/live/network, public-sync, deployment or production action is authorized."
   },
-  "nextAllowedMove": "MFRP-P4-D0 Revision 1 is independently accepted ACCEPT_CANARY_DESIGN_BOUNDED at 25aaade8b8bbf68d22f6648e9a2250fca4e37647 with zero findings; F-01 through F-08 are discharged in committed text. The P4 work order must later name the independent invariant/evidence locator and should pin the shared field-overlap set. Next allowed move is an explicit operator decision on authoring a separate R1B work order. Acceptance alone does not open R1B authoring, R1B execution or P4 canary execution. P4-P6 authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP3R1BAuthoringCommittedIndependentReviewCheckpointRequired20260902": {
+    "status": "R1B_AUTHORING_COMMITTED_INDEPENDENT_REVIEW_CHECKPOINT_REQUIRED",
+    "materialCommit": "64b2e25046ed4504c942e047ab92f7daae788ef2",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
+    "baselineSha256": "822694a4acab98f97d8d0685672f3e591d808b35594140745968df955b4e8881",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
+    "workOrderSha256": "6f4244f51b29a472e6add02356614639c708bad0740136131330ddb16b463722",
+    "verification": [
+      "pre-dispatch 81/81 PASS",
+      "reviewer-fast 67/67 PASS",
+      "pre-commit 88/88 PASS"
+    ],
+    "nextAllowedMove": "Independent review of the committed R1B baseline/work order only.",
+    "claimBoundary": "Authoring is committed but not accepted for execution. R1B worker execution, P4 canary execution, P2/oracle mutation, route-authority change, provider/live/network, public-sync, deployment and production remain closed."
+  },
+  "nextAllowedMove": "MFRP-P3-R1B baseline/work-order authoring is committed at 64b2e25046ed4504c942e047ab92f7daae788ef2 after pre-dispatch 81/81, reviewer-fast 67/67 and pre-commit 88/88 PASS. Next allowed move is independent review of those two committed authoring artifacts. R1B worker execution remains closed until independent acceptance plus a separate Operator opening. P4 canary execution, P2/oracle mutation, authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
