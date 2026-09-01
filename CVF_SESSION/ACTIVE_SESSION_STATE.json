@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
-    "baselineSha256": "822694a4acab98f97d8d0685672f3e591d808b35594140745968df955b4e8881",
+    "baselineSha256": "0a4ebb9ee49a75ca31c71dc6eb4c085dac7aadb4b8685181d09a2688889da51c",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
-    "workOrderSha256": "6f4244f51b29a472e6add02356614639c708bad0740136131330ddb16b463722"
+    "workOrderSha256": "5838a17c3ca568257bc76d6fe2a31359fea6b12e0d9708ea98128d62c702f2c3"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required",
-  "previousMode": "gclh_mfrp_p4_d0_design_accepted_bounded_r1b_authoring_operator_checkpoint_required",
+  "currentMode": "gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission",
+  "previousMode": "gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16332,5 +16332,25 @@
     "nextAllowedMove": "Independent review of the committed R1B baseline/work order only.",
     "claimBoundary": "Authoring is committed but not accepted for execution. R1B worker execution, P4 canary execution, P2/oracle mutation, route-authority change, provider/live/network, public-sync, deployment and production remain closed."
   },
-  "nextAllowedMove": "MFRP-P3-R1B baseline/work-order authoring is committed at 64b2e25046ed4504c942e047ab92f7daae788ef2 after pre-dispatch 81/81, reviewer-fast 67/67 and pre-commit 88/88 PASS. Next allowed move is independent review of those two committed authoring artifacts. R1B worker execution remains closed until independent acceptance plus a separate Operator opening. P4 canary execution, P2/oracle mutation, authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP3R1BDispatchReadyTriggerBasedReviewAdmission20260902": {
+    "status": "R1B_DISPATCH_READY_TRIGGER_BASED_REVIEW_ADMISSION",
+    "reviewEvidenceCommit": "4ba2edbca7fb4c468a589e76e84bbe5d781e7f4b",
+    "reviewDispositionConsumed": "REVISE_BEFORE_DISPATCH",
+    "blockingFindingsResolved": [
+      "F-01",
+      "F-02",
+      "F-03"
+    ],
+    "nonBlockingFindingsResolved": [
+      "F-04",
+      "F-05",
+      "F-06"
+    ],
+    "baselineSha256": "0a4ebb9ee49a75ca31c71dc6eb4c085dac7aadb4b8685181d09a2688889da51c",
+    "workOrderSha256": "5838a17c3ca568257bc76d6fe2a31359fea6b12e0d9708ea98128d62c702f2c3",
+    "reviewAdmissionRule": "Review is trigger-based, not step-based. No second packet review or separate Operator micro-checkpoint is required; the next routine review boundary is the R1B worker return.",
+    "nextAllowedMove": "Operator may dispatch the corrected committed R1B work order to a no-commit worker.",
+    "claimBoundary": "No R1B execution result, P4 opening, P2/oracle mutation, provider/live/network, public-sync, deployment or production effect is claimed."
+  },
+  "nextAllowedMove": "MFRP-P3-R1B independent packet review is preserved at 4ba2edbca7fb4c468a589e76e84bbe5d781e7f4b. Its F-01 through F-06 corrections are absorbed into the paired packet, including the reproducible digest recipe and honest C15 predicate miss. Review admission is now trigger-based under the existing Review Cost standard: no second packet review or separate Operator micro-checkpoint. Next allowed move is Operator dispatch of the corrected committed R1B work order to a no-commit worker; routine independent review resumes at worker return. P4 canary execution, P2/oracle mutation, authority change, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

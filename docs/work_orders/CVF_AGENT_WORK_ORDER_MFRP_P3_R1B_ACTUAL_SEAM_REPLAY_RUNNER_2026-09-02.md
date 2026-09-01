@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY_PENDING_INDEPENDENT_REVIEW
+Status: DISPATCH_READY
 
 Date: 2026-09-02
 
@@ -34,8 +34,8 @@ executionBaseHead: worker must capture full `git rev-parse HEAD` before edits.
 
 Current-time notes: artifact and authority checkpoint are dated 2026-09-02.
 
-Do-not-misread notes: authoring remains pending independent review; even after
-acceptance this packet authorizes only R1B's four paths, not P2/oracle changes,
+Do-not-misread notes: this corrected packet is dispatch-ready after machine
+gates; it authorizes only R1B's four paths, not P2/oracle changes,
 reviewer disposition, P4 authoring/execution, provider/live/public work, or an
 assertion that phase returns and receipts are the same object.
 
@@ -53,6 +53,36 @@ R1B worker terminal candidate, or `BLOCKED_WITH_REASON`.
 Implement a deterministic, local-only R1B runner that executes the committed
 R1A oracle through the actual P2 receipt validator/readout seam and emits a
 secret-safe result ledger for bounded independent review.
+
+## Task Governance Routing Manifest
+
+```json
+{
+  "schemaVersion": "cvf.taskGovernanceManifest.v1",
+  "taskId": "MFRP-P3-R1B",
+  "requestedProfile": "P3_ELEVATED",
+  "classification": {
+    "taskKind": "PURE_LOCAL_IMPLEMENTATION",
+    "authorityImpact": "USES_EXISTING_OWNER",
+    "externalEffect": "LOCAL_REVERSIBLE",
+    "dataSensitivity": "PRIVATE_REPO",
+    "reversibility": "GIT_REVERSIBLE",
+    "sourceScale": "BOUNDED_CLUSTER",
+    "delegation": "MULTI_ROLE_NO_COMMIT",
+    "novelty": "KNOWN_PATTERN"
+  },
+  "pathFamilies": ["governance/compat", "governance/compat/fixtures", "docs/reviews", "docs/baselines", "docs/work_orders", "docs/reference/review_cost_control", "CVF_SESSION", "CVF_SESSION_MEMORY.md", "AGENT_HANDOFF_V59_2026-08-11.md"],
+  "claims": ["actual P2 seam replay can produce bounded deterministic evidence without changing P2 or the oracle"],
+  "requiredProof": ["frozen input hashes", "actual owner imports and causal observations", "19/18/7 coverage reconciliation", "hostile focused tests", "deterministic secret-safe ledger", "no-commit worker return"],
+  "operatorCheckpoints": ["worker return", "new authority boundary", "P2 or oracle change need", "P4 opening"],
+  "forbiddenEffects": ["worker commit", "P2 mutation", "oracle mutation", "provider call", "network call", "secret read", "public sync", "deploy", "production", "automatic successor"],
+  "sourceEvidence": {
+    "selectedFilesFullyRead": true,
+    "corpusReceiptRef": null,
+    "completenessClaimChanged": false
+  }
+}
+```
 
 ## Intake Role Routing Decision
 
@@ -131,8 +161,8 @@ Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_
 ## Authority Chain
 
 1. `docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md`.
-2. `docs/baselines/CVF_GC018_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md`, SHA-256 `822694a4acab98f97d8d0685672f3e591d808b35594140745968df955b4e8881`.
-3. This work order after independent acceptance and Operator execution authorization.
+2. `docs/baselines/CVF_GC018_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md`, SHA-256 `0a4ebb9ee49a75ca31c71dc6eb4c085dac7aadb4b8685181d09a2688889da51c`.
+3. This corrected work order after machine-gate confirmation and material commit.
 4. The committed R1A oracle and actual P2 owner bytes.
 
 If these sources conflict, stop. Do not infer an expanded permission.
@@ -172,8 +202,8 @@ its independent acceptance, and every checker named in the read-ahead block.
 2. Confirm the dispatch base is an ancestor of the execution base.
 3. Recompute every identity in the frozen table below.
 4. Confirm all four output paths are absent and no unrelated changes exist.
-5. If authoring status is not independently accepted and Operator has not
-   separately opened execution, stop without writing.
+5. Confirm this work order status is `DISPATCH_READY`; no separate packet
+   review or operator micro-checkpoint is required.
 
 ## Task Governance Routing Manifest
 
@@ -193,7 +223,7 @@ The SOT plane, frozen identities, observations, and independent disposition do.
 | R1A oracle containing commit | `7f607d353bdec11e456731793f181e72abddc297` |
 | R1A oracle file SHA-256 | `6aa32c3157092c974441c269d17e85aed20d5ba535479523eda5b64d23b3fbf2` |
 | R1A oracle all-field JCS SHA-256 | `8d64ed3414959ca281cc47daf7067047d79776819b44df16c81dff7a6cbfa80c` |
-| required-set JCS digest | `04be6dc1fa061e13af195c5490769bf88fba3309e2ddb4aa0ed24a8fd6440fca` |
+| required-set JCS digest | `04be6dc1fa061e13af195c5490769bf88fba3309e2ddb4aa0ed24a8fd6440fca`; SHA-256 of UTF-8 RFC 8785 JCS bytes for exactly `{requiredCaseIds, requiredFamilies, requiredZeroToleranceClasses}`, with all three arrays copied unchanged from the oracle |
 | P2 receipt owner SHA-256 | `8280a95e0985bd1273aa359afff455be1d18346e8b49cb92e9746922d835d022` |
 | P2 readout owner SHA-256 | `ff6088bf8144deec4582ce9faf62384b314346c9cbbb87f6b3349a2d23f7e7c3` |
 | R1 redesign SHA-256 | `22a086d7742dbdaec5b887fd377890962ad34396953f48287ce865f743766011` |
@@ -279,8 +309,11 @@ The deterministic JSON ledger uses schema
 - an explicit reviewer-owned disposition placeholder that cannot contain
   `REPLAY_PASS` or `RETURN_TO_DESIGN`.
 
-Duration, wall-clock time, machine-specific paths, random values, secrets,
-credentials, environment dumps, and provider data are forbidden ledger fields.
+Execution-base identity may be recorded and is part of deterministic output.
+Byte-identical replay comparison is therefore scoped to repeated runs at the
+same execution base and identical frozen inputs. Duration, wall-clock time,
+machine-specific paths, random values, real secrets, credentials, environment
+dumps, and provider data are forbidden ledger fields.
 
 ## Required Hostile Test Manifest
 
@@ -295,13 +328,17 @@ Tests must prove all of the following independently:
 7. normative labels cannot manufacture an observed result;
 8. digest tamper reaches the actual validator;
 9. fully rebound attacker case remains the disclosed structural gap;
-10. a secret sentinel is absent from ledger/readout output;
+10. no real credential or environment secret appears in ledger/readout output;
+    C15's fixed non-secret test sentinel remains observable, is recorded as a
+    failed `SECRET_SENTINEL_NOT_EMITTED` predicate and disclosed P2 limitation,
+    and is neither suppressed nor treated as a real credential;
 11. the real readout preserves required normalized observation fields;
 12. zero totals fail;
 13. the runner cannot emit reviewer `REPLAY_PASS` or `RETURN_TO_DESIGN`;
 14. both P2 owner files are byte-identical before and after;
-15. repeated runs produce byte-identical ledger output and no receipt/cache/
-    provider/network write; and
+15. repeated runs at the same execution base and identical frozen inputs
+    produce byte-identical ledger output and no receipt/cache/provider/network
+    write; and
 16. weakening a local predicate/evaluator causes a test failure.
 
 ## Worker Autonomy / No-Question Rule
@@ -358,7 +395,8 @@ Stop with `BLOCKED_WITH_REASON` and worker candidate
 `BLOCKED_EVIDENCE_INCOMPLETE` if any pinned input mismatches; output path
 exists unexpectedly; changed set expands; P2/oracle modification is needed;
 the actual seam cannot be invoked honestly; coverage cannot reconcile; output
-may leak a secret; tests require provider/network/live access; or a checker
+may leak a real credential or environment secret; tests require
+provider/network/live access; or a checker
 demands a forbidden fifth path.
 
 ## Return-To-Orchestrator Conditions
@@ -369,11 +407,31 @@ Return immediately on a stop condition. Otherwise return
 `REPLAY_EVIDENCE_COMPLETE_RETURN_TO_DESIGN_CANDIDATE`. Do not self-select
 `REPLAY_PASS`, `RETURN_TO_DESIGN`, P4 readiness, or closure.
 
+Current source evidence predicts
+`REPLAY_EVIDENCE_COMPLETE_RETURN_TO_DESIGN_CANDIDATE`: C07, C08 and C18 are
+not representable by current P2, while C15 is expected to record an honest
+predicate miss. Producing that complete, source-faithful candidate is a
+successful R1B execution outcome, not a worker failure and not a reason to
+alter the oracle or suppress observations.
+
 ## Operator Checkpoint
 
-Independent acceptance of this authoring packet is required before worker
-execution. After worker return, independent review and Operator direction are
-required before closure or any P4 move.
+No further pre-execution packet review or separate Operator micro-checkpoint is
+required. The Operator may dispatch this committed work order. After worker
+return, independent review and Operator direction are required before closure
+or any P4 move.
+
+## Review Admission Boundary
+
+Reviewer admission is trigger-based, not step-based. The completed Claude
+packet review supplied the correction set used here but does not establish a
+mandatory review stage for future work orders. Routine review next occurs on
+the R1B worker return. Pre-return review is allowed only for a frozen-identity
+mismatch, source contradiction, manifest expansion, secret or irreversible
+effect risk, or a new independent critical authority boundary. Authoring,
+role handoff, machine-gate success, commit, and continuity sync do not by
+themselves trigger review. The reviewer evaluates evidence and does not repeat
+implementation.
 
 ## Forbidden Actions
 
@@ -491,7 +549,7 @@ Returned defects: NONE_RETURNED
 | allowedImplementationPaths | `governance/compat/mfrp_actual_seam_replay.py`; `governance/compat/test_mfrp_actual_seam_replay.py`; `governance/compat/fixtures/mfrp_p3_r1b_actual_seam_replay_result.json` |
 | allowedReviewPath | `docs/reviews/CVF_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_WORKER_RETURN_2026-09-02.md` |
 | forbiddenProtectedPaths | all existing checkers, hooks, catalogs, standards, P2 owners, oracle, roadmap, designs, registries, session and handoff surfaces |
-| operatorApprovalBoundary | independent packet acceptance and separate Operator execution authorization required |
+| operatorApprovalBoundary | corrected committed work order is dispatch-ready; no additional packet review or operator micro-checkpoint |
 | stopAndReturn | any protected-path need outside allowed new paths |
 
 ## Agent Handoff Contract Control Block
@@ -502,7 +560,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | --- | --- |
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | dispatcher authors; delegated worker implements; independent reviewer evaluates/closes |
-| phase | R1B implementation pending independent dispatch acceptance and Operator opening |
+| phase | R1B implementation ready for Operator dispatch |
 | baseHeadFor(phase) | dispatchBaseHead=bfea86038a888e3b7715dff9df33bb4c0c5c971a; executionBaseHead=worker captures full HEAD at start; closureBaseHead=reviewer sets |
 | changedSetScope(phase) | worker exact four-path manifest; reviewer closure paths separately declared |
 | traceScope(phase, actor) | worker records commands, outputs, identities, changed set and no-commit evidence; reviewer records bounded recomputation |
@@ -563,7 +621,8 @@ disposition. Agreement is consistency evidence, not correctness evidence.
 
 ## Closure Checklist
 
-- Independent packet acceptance preceded worker execution.
+- Corrected dispatch-ready packet and machine gates preceded worker execution;
+  no redundant packet re-review was inserted.
 - Exact four-path worker manifest and unchanged P2/oracle bytes.
 - All identities and totals independently recomputed.
 - Worker candidate is allowed and reviewer disposition is separate.
@@ -585,7 +644,7 @@ disposition. Agreement is consistency evidence, not correctness evidence.
 | Before status evidence | clean worktree; `git status --short` was empty at clean HEAD `bfea86038a888e3b7715dff9df33bb4c0c5c971a`; both authoring paths absent |
 | After status evidence | to be confirmed by authoring gates and exact two-path status |
 | Diff evidence | `git diff --name-status` |
-| Approval boundary | authoring only; independent acceptance and separate execution opening remain required |
+| Approval boundary | corrected authoring may be dispatched; R1B result acceptance and P4 remain reviewer/Operator checkpoints |
 | Claim boundary | packet design, not R1B execution or replay result |
 | Agent type | dispatcher/author |
 | Invocation ID | `mfrp-p3-r1b-authoring-2026-09-02` |
@@ -603,7 +662,7 @@ disposition. Agreement is consistency evidence, not correctness evidence.
 | actionEvidence | CLAIM_REJECTED_NO_ACTION: no replay runner action has executed under this packet |
 | invocationBoundary | local authoring and static verification only |
 | interceptionBoundary | no direct interception, wrapper/proxy enforcement, runtime gate, or agent coding control is authorized |
-| claimLanguage | design/dispatch candidate pending independent acceptance |
+| claimLanguage | corrected dispatch-ready work order; no execution result claimed |
 | forbiddenExpansion | no provider/live/public/package/Web/MCP/model-router/P4 behavior without fresh authorization |
 
 ## Current Runtime Freshness Verification
@@ -629,9 +688,9 @@ disposition. Agreement is consistency evidence, not correctness evidence.
 
 ## Claim Boundary
 
-This artifact is an R1B authoring candidate. After independent acceptance and
-separate Operator execution authorization it permits only the exact four-path,
-local deterministic, no-commit worker tranche. It does not execute or accept
+This corrected artifact is an R1B dispatch-ready work order permitting only
+the exact four-path, local deterministic, no-commit worker tranche. It does not
+itself execute or accept
 R1B, alter P2/oracle, establish correctness/safety/latency/quota improvement,
 authorize reviewer outcomes, open P4, or make runtime/provider/live/public/
 deployment/production claims.

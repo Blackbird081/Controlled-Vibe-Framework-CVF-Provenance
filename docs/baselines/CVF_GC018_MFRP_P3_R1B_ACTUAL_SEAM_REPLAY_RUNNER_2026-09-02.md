@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY_PENDING_INDEPENDENT_REVIEW
+Status: DISPATCH_READY
 
 Date: 2026-09-02
 
@@ -40,10 +40,10 @@ general coding workflow.
 | --- | --- |
 | R1 actual-seam redesign | `docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md`; SHA-256 `22a086d7742dbdaec5b887fd377890962ad34396953f48287ce865f743766011` |
 | Ratified R1A oracle | `governance/compat/fixtures/mfrp_p3_r1a_r1_static_only_oracle.json`; containing commit `7f607d353bdec11e456731793f181e72abddc297`; file SHA-256 `6aa32c3157092c974441c269d17e85aed20d5ba535479523eda5b64d23b3fbf2` |
-| Oracle canonical identities | all-field JCS SHA-256 `8d64ed3414959ca281cc47daf7067047d79776819b44df16c81dff7a6cbfa80c`; required-set digest `04be6dc1fa061e13af195c5490769bf88fba3309e2ddb4aa0ed24a8fd6440fca` |
+| Oracle canonical identities | all-field JCS SHA-256 `8d64ed3414959ca281cc47daf7067047d79776819b44df16c81dff7a6cbfa80c`; required-set digest `04be6dc1fa061e13af195c5490769bf88fba3309e2ddb4aa0ed24a8fd6440fca`, computed as SHA-256 of UTF-8 RFC 8785 JCS bytes for exactly one three-key object containing `requiredCaseIds`, `requiredFamilies`, and `requiredZeroToleranceClasses`, with each value copied unchanged from the oracle |
 | P2 receipt owner | `governance/compat/agent_autorun_machine_verification.py`; SHA-256 `8280a95e0985bd1273aa359afff455be1d18346e8b49cb92e9746922d835d022` |
 | P2 readout owner | `governance/compat/agent_automation_machine_verification_readout.py`; SHA-256 `ff6088bf8144deec4582ce9faf62384b314346c9cbbb87f6b3349a2d23f7e7c3` |
-| Accepted P4 canary design | `docs/assessments/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_REVISION_1_2026-09-02.md`; SHA-256 `65698a95dc7bb7f437fe061a81559701b91a3e611c445f5122ad8145c5f13df5`; R1B same-payload proof is receipt-local only |
+| Accepted P4 canary design | `docs/assessments/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_2026-09-02.md`; SHA-256 `65698a95dc7bb7f437fe061a81559701b91a3e611c445f5122ad8145c5f13df5`; R1B same-payload proof is receipt-local only |
 | Independent canary design acceptance | `docs/reviews/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_REVISION_1_INDEPENDENT_REREVIEW_2026-09-02.md`; SHA-256 `ae7c68c09ad4e7cfc688275dc896ec455f5c25a8771fa552fadac793717e4d7d` |
 
 ## Decision / Baseline
@@ -120,8 +120,10 @@ Focused tests must cover at least: one-case execution cannot pass; missing
 family; missing zero-tolerance class; source/locator/excerpt drift; oracle hash
 drift; unknown mutation; normative labels cannot manufacture observations;
 digest tamper reaches the actual validator; attacker-rebound structural gap;
-secret sentinel is absent from output; readout preserves required observed
-fields; zero totals hard fail; runner cannot emit reviewer `REPLAY_PASS`; both
+no real credential or environment secret reaches output; C15's fixed
+non-secret test sentinel is honestly recorded as a predicate miss and current
+P2 limitation without suppressing the observed copy-through; readout preserves
+required observed fields; zero totals hard fail; runner cannot emit reviewer `REPLAY_PASS`; both
 P2 owners remain byte-identical; repeated runs are deterministic and write no
 receipt/cache/provider artifacts; and a weakened local evaluator is caught.
 
@@ -129,8 +131,10 @@ receipt/cache/provider artifacts; and a weakened local evaluator is caught.
 
 Stop and return `BLOCKED_EVIDENCE_INCOMPLETE` if any frozen identity differs,
 the committed oracle or P2 owner would need modification, an oracle mutation
-cannot be represented honestly, the exact manifest would expand, a secret may
-be emitted, or evidence cannot reconcile. A newly exposed P2 limitation is
+cannot be represented honestly, the exact manifest would expand, a real
+credential or environment secret may be emitted, or evidence cannot reconcile.
+C15's fixed non-secret test sentinel is observation evidence, not a real-secret
+stop trigger. A newly exposed P2 limitation is
 recorded for a later separately authorized hardening tranche; it is not repaired
 inside R1B.
 
@@ -141,6 +145,17 @@ representative hostile-test evidence, the actual imports/call chain, the
 receipt-local identical-object proof, deterministic ledger recomputation, and
 the absence of forbidden writes. The reviewer does not rebuild the runner or
 repeat every worker action; bounded independent recomputation is the control.
+
+## Review Admission Boundary
+
+The completed packet review is corrective evidence, not a reusable mandatory
+stage. No second packet review or separate operator micro-checkpoint is required
+before dispatch after the listed findings are repaired and machine gates pass.
+The next routine reviewer admission point is the R1B worker return. Earlier
+review is admitted only for a frozen-identity mismatch, source contradiction,
+manifest expansion, secret/irreversible-effect risk, or another new independent
+critical authority boundary. Role handoff, artifact authoring, deterministic
+gate success, and session sync alone do not admit another review.
 
 ## Evidence / Verification
 
@@ -214,8 +229,9 @@ P2 owner, oracle, roadmap, or session surface is authorized for modification.
 
 ## Claim Boundary
 
-This baseline authorizes only the paired R1B work-order design for independent
-review. It does not itself dispatch execution, accept replay evidence, emit
+This baseline supports dispatch of the paired R1B work order after its
+corrections and machine gates pass. It does not itself execute the worker,
+accept replay evidence, emit
 `REPLAY_PASS`, open P4, change P2, or claim runtime/provider/live/public/
 deployment/production readiness.
 

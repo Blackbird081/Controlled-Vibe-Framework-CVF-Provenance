@@ -217,6 +217,48 @@ ignore an explicit numerical cap, perform a forbidden action, or self-authorize
 live/provider/public/destructive work. The current checker does not infer these
 semantic facts; reviewers and closers must apply them from evidence.
 
+## Trigger-Based Review Admission Boundary
+
+Review is admitted by a control event, not by the number of artifacts, roles,
+steps, commits, or handoffs in a workflow. A routine independent review belongs
+at the returned-result boundary where the reviewer owns a disposition such as
+accept, return to design, freeze, or closure. Pre-execution review is admitted
+only when at least one of these triggers is present:
+
+- a frozen identity mismatch or unresolved source/authority contradiction;
+- a new independent critical integrity, fail-open, secret, irreversible, live,
+  provider, public, destructive, or production-risk boundary;
+- a requested scope or authority expansion beyond the accepted design;
+- machine evidence is incomplete or materially `UNCLASSIFIED` for the decision
+  being requested; or
+- the operator explicitly requests that specific review.
+
+The following events do not independently admit another review:
+
+- authoring a work order from an already accepted design;
+- changing agent, provider, role label, or single/multi-agent topology;
+- a worker handoff, material commit, continuity sync, or session resume;
+- passing deterministic machine gates; or
+- correcting dependent findings inside the same accepted objective, path
+  classes, risk ceiling, external-effect class, role route, and commit owner.
+
+When no admission trigger exists, successful mechanical preflight moves the
+packet directly to dispatch readiness. Do not add a just-in-case reviewer and
+do not split one authority transition into packet review plus a second operator
+micro-checkpoint. If an unplanned review has already occurred, consume its
+valid evidence without converting that historical event into a mandatory stage
+for the current or future workflow.
+
+Reviewers inspect and challenge returned evidence; they do not recreate the
+worker's implementation or repeat every upstream role's work. A later terminal
+review may verify that earlier mechanical corrections were applied as part of
+its bounded evidence sample, without opening a separate review cycle.
+
+Review-admission trigger classification remains reviewer/orchestrator judgment.
+Machine checks may enforce declared evidence shape and objective trigger facts,
+but must not manufacture semantic criticality or require review merely because
+a new artifact or role boundary exists.
+
 ## Audit, Commit, Latency, And Delay Vocabularies
 
 `preRepairAuditDisposition` must be exactly one of:
@@ -306,6 +348,7 @@ automatic repair dispatch.
 | whether `valueDelta` is substantively high or low | REVIEWER_JUDGMENT |
 | whether a critical contradiction justifies continuation past round three | REVIEWER_JUDGMENT |
 | whether the chosen `stopDisposition` token is the semantically correct one | REVIEWER_JUDGMENT |
+| whether a review-admission trigger is semantically present | REVIEWER_ORCHESTRATOR_JUDGMENT |
 
 ## Epistemic Process Block
 
@@ -385,6 +428,7 @@ completion reviews.
 
 Protected paths:
 
+- `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md`
 - `governance/compat/check_review_cost_control.py`
 - `governance/compat/test_check_review_cost_control.py`
 - `governance/compat/agent_autorun_command_catalog.py`
@@ -397,14 +441,14 @@ Protected paths:
 - `governance/compat/review_convergence_scaffold.py`
 
 Operator authorization: the operator explicitly requested that this become the
-common CVF foundation and SOP for all future agents using CVF, and later
-required the same control to prevent review-by-drip and unbounded external
-MCP/CLI re-dispatch cost.
+common CVF foundation and SOP for all future agents using CVF, later required
+the same control to prevent review-by-drip and unbounded external MCP/CLI
+re-dispatch cost, and on 2026-09-02 rejected step-by-step review admission after
+an R1B authoring checkpoint recreated the governance tax being removed.
 
-Rollback boundary: revert this SOP addendum, checker/test changes, ADIF update,
-orientation update, commit-steward cross-reference, and completion review as one
-material governance batch. Do not alter Continuous Projection T1 material or
-closure commits.
+Rollback boundary: revert only the trigger-based review-admission addendum if
+it conflicts with higher authority; preserve earlier SOP, checker/test, ADIF,
+orientation, commit-steward, completion-review, R1B review, and packet evidence.
 
 ## Single-Pass SOP Epistemic Process Block - 2026-07-20
 

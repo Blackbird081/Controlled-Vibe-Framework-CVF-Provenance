@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2732,
+  "stateOrder": 2734,
   "stateKey": "nextAllowedMove",
-  "value": "MFRP-P3-R1B baseline/work-order authoring is committed at 64b2e25046ed4504c942e047ab92f7daae788ef2 after pre-dispatch 81/81, reviewer-fast 67/67 and pre-commit 88/88 PASS. Next allowed move is independent review of those two committed authoring artifacts. R1B worker execution remains closed until independent acceptance plus a separate Operator opening. P4 canary execution, P2/oracle mutation, authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MFRP-P3-R1B independent packet review is preserved at 4ba2edbca7fb4c468a589e76e84bbe5d781e7f4b. Its F-01 through F-06 corrections are absorbed into the paired packet, including the reproducible digest recipe and honest C15 predicate miss. Review admission is now trigger-based under the existing Review Cost standard: no second packet review or separate Operator micro-checkpoint. Next allowed move is Operator dispatch of the corrected committed R1B work order to a no-commit worker; routine independent review resumes at worker return. P4 canary execution, P2/oracle mutation, authority change, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

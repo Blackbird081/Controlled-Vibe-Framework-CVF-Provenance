@@ -39,9 +39,9 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=independent review of committed R1B authoring packet; parked=R1B execution, P4 canary execution, authority change, external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=Operator dispatch of corrected R1B work order to no-commit worker; parked=R1B result acceptance, P4 canary execution, authority change, external effects.
 ## Current Mode
-`gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required`
+`gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission`
 ## Purpose
 
 Preserve independently accepted T1C durable single-node non-production material without opening a caller, package export or external effect.
@@ -54,7 +54,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Latest Work / Changes
 
-- MFRP-P3 original replay remains rejected; R1A-R1 is ratified at `7f607d353`. P4-D0 Revision 1 is independently accepted bounded at `25aaade8b`, zero findings. R1B authoring is committed at `64b2e2504` and awaits independent review; R1B execution and P4 remain parked.
+- MFRP-P3 original replay remains rejected; R1A-R1 is ratified at `7f607d353`. P4-D0 Revision 1 is independently accepted bounded at `25aaade8b`, zero findings. R1B packet review is committed at `4ba2edbca`; its findings are absorbed and the corrected packet is dispatch-ready without another review loop. P4 remains parked.
 - GC010 root architecture is closed parked at `e867d5432` with terminal `ROOT_ARCHITECTURE_REASSESSED_NO_TRUTHFUL_PRODUCT_OWNER_RETAIN_PARKED`. Direct route composition, ApprovalStore upgrade, singleton SQLite and distributed-store guesses were rejected; reopening requires all five named topology, adapter, ordering, recovery and adversarial-test facts in one packet. Reviewer-fast 67/67 and material pre-commit 88/88 pass; no source/runtime/provider effect or successor tranche opened.
 - SCEC-T1 foundation dispatch is `10345d3a`; T1-R2 is independently accepted with material correction at `cb6d4bc3879a753eb9abc7283b55148c141c46d1`. Resolution claims now require path/hash/locator evidence, successor consumption revalidates predecessor evidence hashes, the corrected GC010 replay retains unresolved blockers, and scaffolds emit the contract. Focused SCEC 115/115, combined focused 205/205, reviewer-fast 67/67 and pre-commit 88/88 passed. The two out-of-scope diagnostics remain disclosed and untouched; T1J-R4 remains parked.
 - EAFR-R12 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `1e31db99a`; terminal roadmap commit `fae74ca77`. Reviewer repaired candidate-level evaluator order, denied-candidate call-budget accounting, unauthorized-provider receipt endpoint resolution and the return packet. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed; zero provider/live/credential calls. EAFR successor count is zero; RFR may only be reconsidered separately.
@@ -170,7 +170,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-MFRP-P3-R1B baseline/work-order authoring is committed at `64b2e25046ed4504c942e047ab92f7daae788ef2`. Next allowed move is independent review of the two committed authoring artifacts. R1B execution and P4 canary execution remain closed; all other parked boundaries remain. Latest numbered wave remains LHW24.
+MFRP-P3-R1B review evidence is committed at `4ba2edbca7fb4c468a589e76e84bbe5d781e7f4b`; all six findings are absorbed. Next allowed move is Operator dispatch of the corrected work order. Review admission is trigger-based and routine review resumes at worker return; P4 canary execution remains closed. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -200,7 +200,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: sync committed R1B authoring at `64b2e2504`, regenerate projections, and record the independent-review checkpoint without opening execution.
+Authorized guard-maintenance scope: absorb committed R1B review `4ba2edbca`, correct the paired packet, adopt trigger-based review admission in the existing Review Cost standard, regenerate projections, and record dispatch readiness without executing R1B.
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
@@ -208,12 +208,13 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/gclhMfrpP3R1BAuthoringCommittedIndependentReviewCheckpointRequired20260902.json`
+- `CVF_SESSION/state/entries/gclhMfrpP3R1BDispatchReadyTriggerBasedReviewAdmission20260902.json`
 - `CVF_SESSION/state/entries/gclhMfrpP4D0DesignAcceptedBoundedR1BAuthoringOperatorCheckpointRequired20260902.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: the operator explicitly authorized learning and raising the CVF Core foundation before applying it to the downstream workspace.
-Rollback boundary: revert only this R1B authoring continuity sync without rewriting material `64b2e2504`, acceptance `25aaade8b`, revision `7890f8274` or critique evidence.
-Not authorized: any change beyond continuity sync, R1B execution, actual canary execution, P2/oracle mutation, new owner/standard/checker/hook changes, downstream edits, provider/API/network, public mutation, deployment, production or compaction.
+Rollback boundary: revert the packet correction/review-admission addendum and its continuity projection without rewriting review `4ba2edbca`, authoring `64b2e2504`, acceptance `25aaade8b`, revision `7890f8274` or critique evidence.
+Not authorized: R1B execution by this correction turn, actual canary execution, P2/oracle mutation, new owner/checker/hook changes, downstream edits, provider/API/network, public mutation, deployment, production or compaction.
 ## Claim Boundary
 
-This handoff records committed R1B authoring at `64b2e2504`. No R1B execution, actual canary run, route-authority change, or provider/live/public/deploy/production effect is authorized.
+This handoff records corrected R1B dispatch readiness after review `4ba2edbca`. It does not claim an R1B execution result, actual canary run, route-authority change, or provider/live/public/deploy/production effect.

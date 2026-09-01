@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=independent review of committed R1B authoring packet; parked checkpoint=R1B execution, P4 canary execution, authority change and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=Operator dispatch of corrected R1B work order to no-commit worker; parked checkpoint=R1B result acceptance, P4 canary execution, authority change and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required`
-Current mode: `gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required`; previous mode marker: `gclh_mfrp_p4_d0_design_accepted_bounded_r1b_authoring_operator_checkpoint_required`
-Previous mode: `gclh_mfrp_p4_d0_design_accepted_bounded_r1b_authoring_operator_checkpoint_required`
+Current mode marker: `gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission`
+Current mode: `gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission`; previous mode marker: `gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required`
+Previous mode: `gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required`. R1B baseline/work-order authoring is committed at `64b2e25046ed4504c942e047ab92f7daae788ef2`; pre-dispatch 81/81, reviewer-fast 67/67 and pre-commit 88/88 passed. Next allowed move is independent review of those two committed artifacts. R1B execution and P4 canary execution remain closed; P4-P6 authority change, lifecycle activation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission`. Claude review evidence is committed at `4ba2edbca`; F-01 through F-06 are absorbed without a second review loop. The existing Review Cost standard now states trigger-based review admission. Next allowed move is Operator dispatch of the corrected R1B work order to a no-commit worker; routine review resumes at worker return. P4 canary execution, authority change, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
