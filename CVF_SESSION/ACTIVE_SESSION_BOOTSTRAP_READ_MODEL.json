@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission",
+  "currentMode": "gclh_mfrp_review_admission_machine_enforced_r1b_execution_ready",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MFRP-P3-R1B independent packet review is preserved at 4ba2edbca7fb4c468a589e76e84bbe5d781e7f4b; correction material is committed at 37c3945df. F-01 through F-06 are absorbed, including the reproducible digest recipe and honest C15 predicate miss. Review admission is trigger-based under the existing Review Cost standard: no second packet review or separate Operator micro-checkpoint. Next allowed move is Operator dispatch of the corrected R1B work order to a no-commit worker; routine independent review resumes at worker return. P4 canary execution, P2/oracle mutation, authority change, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Review admission is machine-enforced on future changed work orders through explicit trigger, admission, next-boundary and reviewer-work-boundary fields. The corrected MFRP-P3-R1B work order is execution-ready with no further pre-execution review. Next allowed move is bounded no-commit R1B implementation on its exact four-path manifest; routine independent review resumes at worker return. P4 canary execution, P2/oracle mutation, authority change, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
     "baselineSha256": "0a4ebb9ee49a75ca31c71dc6eb4c085dac7aadb4b8685181d09a2688889da51c",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
-    "workOrderSha256": "5838a17c3ca568257bc76d6fe2a31359fea6b12e0d9708ea98128d62c702f2c3"
+    "workOrderSha256": "a77609a7ac34b2d6f9e58aa71aa1977c7ca3af2f4b1b84a6508adf4085002a86"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

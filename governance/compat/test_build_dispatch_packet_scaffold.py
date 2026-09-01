@@ -105,6 +105,13 @@ class TestGenericWorkerDispatch(unittest.TestCase):
             "implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY",
             work_order,
         )
+        self.assertIn("preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION", work_order)
+        self.assertIn("preExecutionReviewTrigger: NONE", work_order)
+        self.assertIn("nextRoutineReviewBoundary: WORKER_RETURN", work_order)
+        self.assertIn(
+            "reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION",
+            work_order,
+        )
 
     def test_rework_scaffold_emits_one_consolidated_packet(self) -> None:
         args = _base_args(

@@ -76,6 +76,10 @@ reworkGeneration: 0
 consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
 successorTrancheOpened: NO
 implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
+preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
+preExecutionReviewTrigger: NONE
+nextRoutineReviewBoundary: WORKER_RETURN
+reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 
 
 ## Worker Autonomy / No-Question Rule

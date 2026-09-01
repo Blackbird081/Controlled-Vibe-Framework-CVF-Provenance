@@ -127,6 +127,10 @@ reworkGeneration: 0
 consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
 successorTrancheOpened: NO
 implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
+preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
+preExecutionReviewTrigger: NONE
+nextRoutineReviewBoundary: WORKER_RETURN
+reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 
 ## Semantic Convergence Outcome
 
@@ -548,9 +552,16 @@ Returned defects: NONE_RETURNED
 | --- | --- |
 | allowedImplementationPaths | `governance/compat/mfrp_actual_seam_replay.py`; `governance/compat/test_mfrp_actual_seam_replay.py`; `governance/compat/fixtures/mfrp_p3_r1b_actual_seam_replay_result.json` |
 | allowedReviewPath | `docs/reviews/CVF_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_WORKER_RETURN_2026-09-02.md` |
-| forbiddenProtectedPaths | all existing checkers, hooks, catalogs, standards, P2 owners, oracle, roadmap, designs, registries, session and handoff surfaces |
-| operatorApprovalBoundary | corrected committed work order is dispatch-ready; no additional packet review or operator micro-checkpoint |
+| forbiddenProtectedPaths | For the R1B worker: all existing checkers, hooks, catalogs, standards, P2 owners, oracle, roadmap, designs, registries, session and handoff surfaces. The dispatcher-only review-admission enforcement amendment below precedes R1B execution and is not part of the worker manifest. |
+| operatorApprovalBoundary | Operator explicitly authorized completing machine enforcement first and then returning directly to R1B; no additional packet review or operator micro-checkpoint. |
 | stopAndReturn | any protected-path need outside allowed new paths |
+
+Dispatcher-only machine-enforcement protected paths:
+
+- `governance/compat/check_review_cost_control.py`
+- `governance/compat/test_check_review_cost_control.py`
+- `governance/compat/review_convergence_scaffold.py`
+- `governance/compat/test_build_dispatch_packet_scaffold.py`
 
 ## Agent Handoff Contract Control Block
 
@@ -597,16 +608,9 @@ requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
 individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
-Required terms: Purpose; Scope / Methodology; Findings / Position; Risk /
-Corrective Action; Claim Boundary; Checker Source Read-Ahead Block; Agent
-Operation Trace Block; Delta Execution Claim Boundary Control Block; Public
-Export Disposition; executionBaseHead; git status --short; Changed Files;
-Command Evidence; No-Commit Statement.
+Required terms: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Claim Boundary; Checker Source Read-Ahead Block; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; executionBaseHead; git status --short; Changed Files; Command Evidence; No-Commit Statement.
 
-Conditional terms: External Knowledge Intake Routing; Rescan Intelligence
-Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance
-Learning Disposition; Epistemic Process Block; Machine Closure Package. Use
-`N/A with reason` for every non-applicable block.
+Conditional terms: External Knowledge Intake Routing; Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; Epistemic Process Block; Machine Closure Package. Use `N/A with reason` for every non-applicable block.
 
 ## Review Gate
 

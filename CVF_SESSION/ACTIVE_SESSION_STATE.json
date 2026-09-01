@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
     "baselineSha256": "0a4ebb9ee49a75ca31c71dc6eb4c085dac7aadb4b8685181d09a2688889da51c",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
-    "workOrderSha256": "5838a17c3ca568257bc76d6fe2a31359fea6b12e0d9708ea98128d62c702f2c3"
+    "workOrderSha256": "a77609a7ac34b2d6f9e58aa71aa1977c7ca3af2f4b1b84a6508adf4085002a86"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission",
-  "previousMode": "gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required",
+  "currentMode": "gclh_mfrp_review_admission_machine_enforced_r1b_execution_ready",
+  "previousMode": "gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16353,5 +16353,20 @@
     "nextAllowedMove": "Operator may dispatch the corrected committed R1B work order to a no-commit worker.",
     "claimBoundary": "No R1B execution result, P4 opening, P2/oracle mutation, provider/live/network, public-sync, deployment or production effect is claimed."
   },
-  "nextAllowedMove": "MFRP-P3-R1B independent packet review is preserved at 4ba2edbca7fb4c468a589e76e84bbe5d781e7f4b; correction material is committed at 37c3945df. F-01 through F-06 are absorbed, including the reproducible digest recipe and honest C15 predicate miss. Review admission is trigger-based under the existing Review Cost standard: no second packet review or separate Operator micro-checkpoint. Next allowed move is Operator dispatch of the corrected R1B work order to a no-commit worker; routine independent review resumes at worker return. P4 canary execution, P2/oracle mutation, authority change, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpReviewAdmissionMachineEnforcedR1BExecutionReady20260902": {
+    "status": "REVIEW_ADMISSION_MACHINE_ENFORCED_R1B_EXECUTION_READY",
+    "reviewAdmissionFields": [
+      "preExecutionReviewAdmission",
+      "preExecutionReviewTrigger",
+      "nextRoutineReviewBoundary",
+      "reviewerWorkBoundary"
+    ],
+    "machineOwner": "governance/compat/check_review_cost_control.py",
+    "defaultRoute": "NOT_REQUIRED_BEFORE_EXECUTION -> WORKER_RETURN",
+    "triggeredRoute": "REQUIRED_TRIGGERED -> PRE_EXECUTION_REVIEW",
+    "workOrderSha256": "a77609a7ac34b2d6f9e58aa71aa1977c7ca3af2f4b1b84a6508adf4085002a86",
+    "nextAllowedMove": "Execute the exact no-commit MFRP-P3-R1B work order and return its four-path result for routine independent review.",
+    "claimBoundary": "This state records deterministic admission-shape enforcement, not semantic criticality inference, reviewer correctness, R1B result acceptance, P4 opening, provider/live/network or external effect."
+  },
+  "nextAllowedMove": "Review admission is machine-enforced on future changed work orders through explicit trigger, admission, next-boundary and reviewer-work-boundary fields. The corrected MFRP-P3-R1B work order is execution-ready with no further pre-execution review. Next allowed move is bounded no-commit R1B implementation on its exact four-path manifest; routine independent review resumes at worker return. P4 canary execution, P2/oracle mutation, authority change, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

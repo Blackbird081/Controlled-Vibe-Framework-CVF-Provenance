@@ -47,6 +47,8 @@ Every changed work order must carry the exact standalone declaration
 - `rootCauseClusterId`, `reworkGeneration`, and
   `consolidatedDefectClassSweep`;
 - `successorTrancheOpened` and `implementationAutonomyDisposition`.
+- `preExecutionReviewAdmission`, `preExecutionReviewTrigger`,
+  `nextRoutineReviewBoundary`, and `reviewerWorkBoundary`.
 
 An `INITIAL` dispatch uses round zero, a complete initial acceptance matrix,
 baseline negative-test planning, and no prior finding digest. A `REWORK`
@@ -259,6 +261,26 @@ Machine checks may enforce declared evidence shape and objective trigger facts,
 but must not manufacture semantic criticality or require review merely because
 a new artifact or role boundary exists.
 
+The forward-only machine contract uses these exact values:
+
+- `preExecutionReviewAdmission` is either
+  `NOT_REQUIRED_BEFORE_EXECUTION` or `REQUIRED_TRIGGERED`;
+- `preExecutionReviewTrigger` is `NONE`,
+  `FROZEN_IDENTITY_MISMATCH`, `SOURCE_AUTHORITY_CONTRADICTION`,
+  `NEW_INDEPENDENT_CRITICAL_RISK`, `AUTHORITY_SCOPE_EXPANSION`,
+  `MATERIAL_UNCLASSIFIED`, or `OPERATOR_EXPLICIT_REQUEST`;
+- `nextRoutineReviewBoundary` is `WORKER_RETURN`, `TERMINAL_RESULT`, or
+  `PRE_EXECUTION_REVIEW`; and
+- `reviewerWorkBoundary` is
+  `EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION`.
+
+`NOT_REQUIRED_BEFORE_EXECUTION` requires trigger `NONE` and cannot route to
+`PRE_EXECUTION_REVIEW`. `REQUIRED_TRIGGERED` requires a non-`NONE` trigger and
+routes to `PRE_EXECUTION_REVIEW`. The checker also rejects the obvious
+contradiction where a packet declares review unnecessary but its status or
+prose still requires independent review before worker execution. This is a
+closed contradiction check, not semantic inference over arbitrary prose.
+
 ## Audit, Commit, Latency, And Delay Vocabularies
 
 `preRepairAuditDisposition` must be exactly one of:
@@ -343,6 +365,7 @@ automatic repair dispatch.
 | round-two new-critical-evidence requirement and round-three dispatch stop | ENFORCE |
 | worker-return consolidated sweep, production binding, adversarial regression, cost ledger, and terminal verdict | ENFORCE |
 | implementation-autonomy boundary and closed successor-tranche flag | ENFORCE |
+| review-admission field shape, cross-field consistency, and obvious pre-execution-review contradiction | ENFORCE |
 | eligibility for the 10-minute fast path | REVIEWER_JUDGMENT |
 | whether a root cause is truly independent | REVIEWER_JUDGMENT |
 | whether `valueDelta` is substantively high or low | REVIEWER_JUDGMENT |
@@ -435,6 +458,7 @@ Protected paths:
 - `governance/compat/test_run_agent_autorun_workflow_gate.py`
 - `governance/compat/build_dispatch_packet_scaffold.py`
 - `governance/compat/test_build_dispatch_packet_scaffold.py`
+- `governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md`
 - `governance/compat/build_worker_return_skeleton_scaffold.py`
 - `governance/compat/run_worker_return_scaffold.py`
 - `governance/compat/test_run_worker_return_scaffold.py`
