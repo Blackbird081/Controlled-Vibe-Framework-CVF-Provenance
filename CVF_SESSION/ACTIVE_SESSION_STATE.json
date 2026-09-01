@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md",
-    "baselineSha256": "ed0811e913cbd6229aba4fa5662fe0ebf043d79dd02e0002872a932d85066b32",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md",
-    "workOrderSha256": "4f86dbb6c2a46d2f3a8797ebcb7bdc8185f70139dcfe64447f3a1000bc9feb3a"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_2026-09-02.md",
+    "baselineSha256": "7cc94d946754e830764c9c071786c84efca2e37cafe9c4814fe0402de8be2928",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_2026-09-02.md",
+    "workOrderSha256": "2d64add361b7e6fe8826236b815a179ecac1526db03bb3a1b823fbf6d6b3bfaf"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p3_r1a_dispatch_ready_worker_execution_checkpoint_required",
-  "previousMode": "gclh_mfrp_p3_r1_two_tranche_accepted_r1a_operator_checkpoint_required",
+  "currentMode": "gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required",
+  "previousMode": "gclh_mfrp_p3_r1a_dispatch_ready_worker_execution_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16227,5 +16227,22 @@
     "nextAllowedMove": "Dispatch one no-commit worker on the exact two-path R1A static-oracle scope and return the uncommitted result for independent review.",
     "claimBoundary": "Dispatch authority only. No oracle acceptance, replay execution, P2 mutation, R1B opening, P4-P6 opening, lifecycle activation, downstream application, provider/live/network, public-sync, deployment or production action is claimed."
   },
-  "nextAllowedMove": "Dispatch the exact two-path no-commit R1A worker from execution base 6de1ce31f94d5c3c41c6dca2e6e6442fa0ebf114 under the committed R1A baseline and work order. The worker may create only the oracle JSON and worker return named by that work order, must perform static feasibility authoring only, and must return for independent review without staging or committing. R1B requires accepted R1A oracle evidence plus a separate work order; P4-P6, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP3R1AR1DispatchReadyWorkerExecutionCheckpointRequired20260902": {
+    "status": "P3_R1A_R1_DISPATCH_READY_WORKER_EXECUTION_CHECKPOINT_REQUIRED",
+    "materialCommit": "64a0182fffe7d1022cc417fbd097c600e6f55789",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_2026-09-02.md",
+    "baselineSha256": "7cc94d946754e830764c9c071786c84efca2e37cafe9c4814fe0402de8be2928",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_2026-09-02.md",
+    "workOrderSha256": "2d64add361b7e6fe8826236b815a179ecac1526db03bb3a1b823fbf6d6b3bfaf",
+    "rejectionReviewPath": "docs/reviews/CVF_MFRP_P3_R1A_INDEPENDENT_REVIEW_RETURN_TO_DESIGN_2026-09-02.md",
+    "rejectionReviewSha256": "1f1d7126ac37dc5fd115f7663c05d0a19dfb504f55c02ae45c16710846919eea",
+    "workerChangedSet": [
+      "governance/compat/fixtures/mfrp_p3_r1a_r1_static_only_oracle.json",
+      "docs/reviews/CVF_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_WORKER_RETURN_2026-09-02.md"
+    ],
+    "dispatchEvidence": "Original R1A return rejected on six findings and preserved byte-identically. Corrective pre-dispatch passed 81/81, reviewer-fast passed 67/67, and material pre-commit passed 88/88. No provider/live/network call occurred.",
+    "nextAllowedMove": "Dispatch one no-commit worker on the exact two-path R1A-R1 static-only oracle correction scope and return the uncommitted result for independent review.",
+    "claimBoundary": "Dispatch authority only. No oracle acceptance, replay execution, P2 import/invocation/mutation, R1B opening, P4-P6 opening, lifecycle activation, downstream application, provider/live/network, public-sync, deployment or production action is claimed."
+  },
+  "nextAllowedMove": "Dispatch the exact two-path no-commit R1A-R1 worker from execution base 64a0182fffe7d1022cc417fbd097c600e6f55789 under the committed static-only correction baseline and work order. The worker may create only governance/compat/fixtures/mfrp_p3_r1a_r1_static_only_oracle.json and docs/reviews/CVF_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_WORKER_RETURN_2026-09-02.md, must not import or invoke P2 or construct receipt/payload objects, and must return for independent review without staging or committing. R1B requires a separately ratified and committed R1A-R1 oracle plus a separate work order; P4-P6, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

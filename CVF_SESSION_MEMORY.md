@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p3_r1a_dispatch_ready_worker_execution_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=dispatch exact two-path no-commit R1A static-oracle worker; parked checkpoint=R1B, P4-P6, lifecycle activation, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=dispatch exact two-path no-commit R1A-R1 static-only correction worker; parked checkpoint=R1B, P4-P6, lifecycle activation, downstream, GC010 and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p3_r1a_dispatch_ready_worker_execution_checkpoint_required`
-Current mode: `gclh_mfrp_p3_r1a_dispatch_ready_worker_execution_checkpoint_required`; previous mode marker: `gclh_mfrp_p3_r1_two_tranche_accepted_r1a_operator_checkpoint_required`
-Previous mode: `gclh_mfrp_p3_r1_two_tranche_accepted_r1a_operator_checkpoint_required`
+Current mode marker: `gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`
+Current mode: `gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`; previous mode marker: `gclh_mfrp_p3_r1a_dispatch_ready_worker_execution_checkpoint_required`
+Previous mode: `gclh_mfrp_p3_r1a_dispatch_ready_worker_execution_checkpoint_required`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p3_r1a_dispatch_ready_worker_execution_checkpoint_required`. R1A baseline/work order are committed at `6de1ce31f94d5c3c41c6dca2e6e6442fa0ebf114` after pre-dispatch 81/81, reviewer-fast 67/67 and pre-commit 88/88 PASS. Next allowed move is dispatch of the exact two-path no-commit R1A worker for static oracle authoring and return for independent review. R1B requires accepted R1A oracle evidence plus a separate work order. P4-P6, lifecycle activation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`. The original R1A return is independently rejected and archived; the corrective R1A-R1 baseline/work order are committed at `64a0182fffe7d1022cc417fbd097c600e6f55789` after pre-dispatch 81/81, reviewer-fast 67/67 and pre-commit 88/88 PASS. Next allowed move is dispatch of the exact two-path no-commit static-only correction worker and return for independent review. R1B requires a separately ratified and committed R1A-R1 oracle plus a separate work order. P4-P6, lifecycle activation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

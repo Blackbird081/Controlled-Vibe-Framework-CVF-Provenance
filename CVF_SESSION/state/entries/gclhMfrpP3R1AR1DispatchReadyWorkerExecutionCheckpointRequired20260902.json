@@ -1,0 +1,21 @@
+{
+  "stateOrder": 2719,
+  "stateKey": "gclhMfrpP3R1AR1DispatchReadyWorkerExecutionCheckpointRequired20260902",
+  "value": {
+    "status": "P3_R1A_R1_DISPATCH_READY_WORKER_EXECUTION_CHECKPOINT_REQUIRED",
+    "materialCommit": "64a0182fffe7d1022cc417fbd097c600e6f55789",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_2026-09-02.md",
+    "baselineSha256": "7cc94d946754e830764c9c071786c84efca2e37cafe9c4814fe0402de8be2928",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_2026-09-02.md",
+    "workOrderSha256": "2d64add361b7e6fe8826236b815a179ecac1526db03bb3a1b823fbf6d6b3bfaf",
+    "rejectionReviewPath": "docs/reviews/CVF_MFRP_P3_R1A_INDEPENDENT_REVIEW_RETURN_TO_DESIGN_2026-09-02.md",
+    "rejectionReviewSha256": "1f1d7126ac37dc5fd115f7663c05d0a19dfb504f55c02ae45c16710846919eea",
+    "workerChangedSet": [
+      "governance/compat/fixtures/mfrp_p3_r1a_r1_static_only_oracle.json",
+      "docs/reviews/CVF_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_WORKER_RETURN_2026-09-02.md"
+    ],
+    "dispatchEvidence": "Original R1A return rejected on six findings and preserved byte-identically. Corrective pre-dispatch passed 81/81, reviewer-fast passed 67/67, and material pre-commit passed 88/88. No provider/live/network call occurred.",
+    "nextAllowedMove": "Dispatch one no-commit worker on the exact two-path R1A-R1 static-only oracle correction scope and return the uncommitted result for independent review.",
+    "claimBoundary": "Dispatch authority only. No oracle acceptance, replay execution, P2 import/invocation/mutation, R1B opening, P4-P6 opening, lifecycle activation, downstream application, provider/live/network, public-sync, deployment or production action is claimed."
+  }
+}

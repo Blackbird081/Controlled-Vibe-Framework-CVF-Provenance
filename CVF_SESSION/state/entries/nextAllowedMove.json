@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2718,
+  "stateOrder": 2720,
   "stateKey": "nextAllowedMove",
-  "value": "Dispatch the exact two-path no-commit R1A worker from execution base 6de1ce31f94d5c3c41c6dca2e6e6442fa0ebf114 under the committed R1A baseline and work order. The worker may create only the oracle JSON and worker return named by that work order, must perform static feasibility authoring only, and must return for independent review without staging or committing. R1B requires accepted R1A oracle evidence plus a separate work order; P4-P6, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Dispatch the exact two-path no-commit R1A-R1 worker from execution base 64a0182fffe7d1022cc417fbd097c600e6f55789 under the committed static-only correction baseline and work order. The worker may create only governance/compat/fixtures/mfrp_p3_r1a_r1_static_only_oracle.json and docs/reviews/CVF_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_WORKER_RETURN_2026-09-02.md, must not import or invoke P2 or construct receipt/payload objects, and must return for independent review without staging or committing. R1B requires a separately ratified and committed R1A-R1 oracle plus a separate work order; P4-P6, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
