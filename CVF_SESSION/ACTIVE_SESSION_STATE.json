@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_2026-09-01.md",
-    "baselineSha256": "6ba6fcbc4fe322dd5b302a42e6d9c108e38002a121355e87d8ec9d8d5cbd92ab",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_2026-09-01.md",
-    "workOrderSha256": "40ef73f811197991aa102c6d93fef397870de24249406edf50c39d0ac30e4bf1"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_2026-09-01.md",
+    "baselineSha256": "b41e057b58b2fb98cf893466467beae774ccadd30c269b997118059f38d28f5d",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_2026-09-01.md",
+    "workOrderSha256": "ff8ec1959d115e78436d78fe9e79b1644b893982abc65810b5b494cd549abf7e"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p1_closed_p2_operator_checkpoint_required",
-  "previousMode": "gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required",
+  "currentMode": "gclh_mfrp_p2_work_order_accepted_implementation_operator_checkpoint_required",
+  "previousMode": "gclh_mfrp_p1_closed_p2_operator_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16153,5 +16153,18 @@
     "nextAllowedMove": "Stop for explicit operator authorization before authoring or dispatching P2 owner-local implementation work; no successor is opened automatically.",
     "claimBoundary": "P1 ratifies existing-owner placement and a non-active seven-phase return-contract design only. P2, owner-local changes, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
   },
-  "nextAllowedMove": "MFRP-P1 owner-and-phase-return contract ratification is independently accepted CONTRACT_ACCEPTED_BOUNDED at material commit dc370ba33a3a39cee677453b2bedc14b94bfc798 after one bounded command-ledger evidence repair. Stop for explicit operator authorization before authoring or dispatching P2 owner-local implementation work. P2, owner-local changes, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP2WorkOrderAcceptedImplementationOperatorCheckpointRequired20260901": {
+    "status": "P2_WORK_ORDER_ACCEPTED_IMPLEMENTATION_OPERATOR_CHECKPOINT_REQUIRED",
+    "materialCommit": "c6f68d7d2d2a5b90f076d04aa79e104dad904dcb",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_2026-09-01.md",
+    "baselineSha256": "b41e057b58b2fb98cf893466467beae774ccadd30c269b997118059f38d28f5d",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_2026-09-01.md",
+    "workOrderSha256": "ff8ec1959d115e78436d78fe9e79b1644b893982abc65810b5b494cd549abf7e",
+    "plannedWorkerReturnPath": "docs/reviews/CVF_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_WORKER_RETURN_2026-09-01.md",
+    "acceptedOutcome": "P2 dispatch composes the existing autorun receipt and AAF readout owners through an exact five-path no-commit implementation contract; machine evidence remains distinct from reviewer semantic judgment.",
+    "reviewEvidence": "Author-fast passed, pre-dispatch 81/81 and pre-commit 88/88 passed after canonical TPGR vocabulary, INITIAL_BOUNDED SCEC scope, roadmap trace and packet-shape repairs. Material pre-closure reached 80/81 with only the expected post-commit continuity mismatch pending this sync.",
+    "nextAllowedMove": "Stop for explicit operator authorization before executing the accepted P2 no-commit work order. If authorized, modify exactly four Python owner/test paths and create the named worker return; do not open P3 automatically.",
+    "claimBoundary": "P2 dispatch acceptance only. P2 implementation and acceptance, P3-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
+  },
+  "nextAllowedMove": "MFRP-P2 receipt/readout composition dispatch is accepted and committed at c6f68d7d2d2a5b90f076d04aa79e104dad904dcb after author-fast, pre-dispatch 81/81 and pre-commit 88/88 PASS. Stop for explicit operator authorization before executing the exact five-path no-commit work order. P3-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
