@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gclh_mfrp_p3_r1_two_tranche_accepted_r1a_operator_checkpoint_required",
+  "currentMode": "gclh_mfrp_p3_r1a_dispatch_ready_worker_execution_checkpoint_required",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "P3-R1 external critique is absorbed at material commit 51d1e4ebeedc5f9995433b68043e3985cd2aa616 with ACCEPT_TWO_TRANCHE_DIRECTION and four binding corrections. Next allowed move is operator decision whether to authorize authoring a fresh source-verified R1A baseline and work order. R1A is not automatically opened; R1B requires accepted R1A oracle evidence plus a separate work order. P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Dispatch the exact two-path no-commit R1A worker from execution base 6de1ce31f94d5c3c41c6dca2e6e6442fa0ebf114 under the committed R1A baseline and work order. The worker may create only the oracle JSON and worker return named by that work order, must perform static feasibility authoring only, and must return for independent review without staging or committing. R1B requires accepted R1A oracle evidence plus a separate work order; P4-P6, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
-    "baselineSha256": "4438fcce757dcbe9bb6041a025b36adf2a3d3350199000bd18fc2ed9f6c11a07",
-    "workOrderPath": "docs/reviews/CVF_MFRP_P3_R1_EXTERNAL_FINDING_ABSORPTION_AND_DESIGN_RECONCILIATION_2026-09-01.md",
-    "workOrderSha256": "8d4d782ac212de13f404021ab4256664696d97321377b1978749a1b08d9ab797"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md",
+    "baselineSha256": "ed0811e913cbd6229aba4fa5662fe0ebf043d79dd02e0002872a932d85066b32",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md",
+    "workOrderSha256": "4f86dbb6c2a46d2f3a8797ebcb7bdc8185f70139dcfe64447f3a1000bc9feb3a"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

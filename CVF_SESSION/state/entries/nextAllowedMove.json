@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2716,
+  "stateOrder": 2718,
   "stateKey": "nextAllowedMove",
-  "value": "P3-R1 external critique is absorbed at material commit 51d1e4ebeedc5f9995433b68043e3985cd2aa616 with ACCEPT_TWO_TRANCHE_DIRECTION and four binding corrections. Next allowed move is operator decision whether to authorize authoring a fresh source-verified R1A baseline and work order. R1A is not automatically opened; R1B requires accepted R1A oracle evidence plus a separate work order. P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Dispatch the exact two-path no-commit R1A worker from execution base 6de1ce31f94d5c3c41c6dca2e6e6442fa0ebf114 under the committed R1A baseline and work order. The worker may create only the oracle JSON and worker return named by that work order, must perform static feasibility authoring only, and must return for independent review without staging or committing. R1B requires accepted R1A oracle evidence plus a separate work order; P4-P6, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

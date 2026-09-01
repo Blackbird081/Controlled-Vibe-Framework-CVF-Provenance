@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2717,
+  "stateKey": "gclhMfrpP3R1ADispatchReadyWorkerExecutionCheckpointRequired20260901",
+  "value": {
+    "status": "P3_R1A_DISPATCH_READY_WORKER_EXECUTION_CHECKPOINT_REQUIRED",
+    "materialCommit": "6de1ce31f94d5c3c41c6dca2e6e6442fa0ebf114",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md",
+    "baselineSha256": "ed0811e913cbd6229aba4fa5662fe0ebf043d79dd02e0002872a932d85066b32",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md",
+    "workOrderSha256": "4f86dbb6c2a46d2f3a8797ebcb7bdc8185f70139dcfe64447f3a1000bc9feb3a",
+    "workerChangedSet": [
+      "governance/compat/fixtures/mfrp_p3_r1a_actual_seam_replay_oracle.json",
+      "docs/reviews/CVF_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_WORKER_RETURN_2026-09-01.md"
+    ],
+    "dispatchEvidence": "Pre-dispatch autorun passed 81/81, reviewer-fast passed 67/67, and material pre-commit passed 88/88. The operator explicitly authorized R1A authoring. No provider/live/network call occurred.",
+    "nextAllowedMove": "Dispatch one no-commit worker on the exact two-path R1A static-oracle scope and return the uncommitted result for independent review.",
+    "claimBoundary": "Dispatch authority only. No oracle acceptance, replay execution, P2 mutation, R1B opening, P4-P6 opening, lifecycle activation, downstream application, provider/live/network, public-sync, deployment or production action is claimed."
+  }
+}
