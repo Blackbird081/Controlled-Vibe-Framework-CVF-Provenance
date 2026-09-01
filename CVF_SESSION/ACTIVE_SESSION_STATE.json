@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p4_d0_revision1_ready_independent_rereview_checkpoint_required",
-  "previousMode": "gclh_mfrp_p4_d0_external_critique_revise_before_r1b_correction_checkpoint_required",
+  "currentMode": "gclh_mfrp_p4_d0_design_accepted_bounded_r1b_authoring_operator_checkpoint_required",
+  "previousMode": "gclh_mfrp_p4_d0_revision1_ready_independent_rereview_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16302,5 +16302,20 @@
     "nextAllowedMove": "Independently re-review Revision 1 against F-01 through F-08. R1B authoring may be considered only after bounded acceptance; R1B execution and P4 canary execution remain separate closed checkpoints.",
     "claimBoundary": "Documentary design correction only. No R1B authoring/execution, P4 canary run, route-authority change, provider/live/network, public-sync, deployment or production action is claimed."
   },
-  "nextAllowedMove": "MFRP-P4-D0 Revision 1 is committed at 7890f8274e4471a2994e2e078ab307fd7df3e73d after addressing F-01 through F-08. It distinguishes semantic returns from mechanical receipts, treats consistency as non-correctness evidence, requires immutable pre-shadow trusted records, uses one closed sample formula, makes duplicate work observable through a closed input/command manifest, names a one-off ledger owner and removes unsupported p95 telemetry. Next allowed move is independent re-review of Revision 1. R1B authoring may be considered only after bounded acceptance; R1B execution and P4 canary execution remain closed. P4-P6 authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP4D0DesignAcceptedBoundedR1BAuthoringOperatorCheckpointRequired20260902": {
+    "status": "P4_D0_DESIGN_ACCEPTED_BOUNDED_R1B_AUTHORING_OPERATOR_CHECKPOINT_REQUIRED",
+    "revisionMaterialCommit": "7890f8274e4471a2994e2e078ab307fd7df3e73d",
+    "acceptanceMaterialCommit": "25aaade8b8bbf68d22f6648e9a2250fca4e37647",
+    "acceptancePath": "docs/reviews/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_REVISION_1_INDEPENDENT_REREVIEW_2026-09-02.md",
+    "acceptanceSha256": "ae7c68c09ad4e7cfc688275dc896ec455f5c25a8771fa552fadac793717e4d7d",
+    "reviewerDisposition": "ACCEPT_CANARY_DESIGN_BOUNDED",
+    "blockingFindings": 0,
+    "residuals": [
+      "P4 work order must name the independent invariant and evidence locator",
+      "P4 work order should pin the shared field-overlap set for ENVELOPE_CONSISTENT_WITH_TRUSTED"
+    ],
+    "nextAllowedMove": "Await explicit operator authorization to author a separate R1B work order governed by accepted Revision 1. Acceptance alone does not open R1B authoring, R1B execution or P4 canary execution.",
+    "claimBoundary": "Bounded documentary design acceptance only. No R1B authoring/execution, P4 canary run, P2 change, route-authority change, provider/live/network, public-sync, deployment or production action is authorized."
+  },
+  "nextAllowedMove": "MFRP-P4-D0 Revision 1 is independently accepted ACCEPT_CANARY_DESIGN_BOUNDED at 25aaade8b8bbf68d22f6648e9a2250fca4e37647 with zero findings; F-01 through F-08 are discharged in committed text. The P4 work order must later name the independent invariant/evidence locator and should pin the shared field-overlap set. Next allowed move is an explicit operator decision on authoring a separate R1B work order. Acceptance alone does not open R1B authoring, R1B execution or P4 canary execution. P4-P6 authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

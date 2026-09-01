@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2729,
+  "stateKey": "gclhMfrpP4D0DesignAcceptedBoundedR1BAuthoringOperatorCheckpointRequired20260902",
+  "value": {
+    "status": "P4_D0_DESIGN_ACCEPTED_BOUNDED_R1B_AUTHORING_OPERATOR_CHECKPOINT_REQUIRED",
+    "revisionMaterialCommit": "7890f8274e4471a2994e2e078ab307fd7df3e73d",
+    "acceptanceMaterialCommit": "25aaade8b8bbf68d22f6648e9a2250fca4e37647",
+    "acceptancePath": "docs/reviews/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_REVISION_1_INDEPENDENT_REREVIEW_2026-09-02.md",
+    "acceptanceSha256": "ae7c68c09ad4e7cfc688275dc896ec455f5c25a8771fa552fadac793717e4d7d",
+    "reviewerDisposition": "ACCEPT_CANARY_DESIGN_BOUNDED",
+    "blockingFindings": 0,
+    "residuals": ["P4 work order must name the independent invariant and evidence locator", "P4 work order should pin the shared field-overlap set for ENVELOPE_CONSISTENT_WITH_TRUSTED"],
+    "nextAllowedMove": "Await explicit operator authorization to author a separate R1B work order governed by accepted Revision 1. Acceptance alone does not open R1B authoring, R1B execution or P4 canary execution.",
+    "claimBoundary": "Bounded documentary design acceptance only. No R1B authoring/execution, P4 canary run, P2 change, route-authority change, provider/live/network, public-sync, deployment or production action is authorized."
+  }
+}

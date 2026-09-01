@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_d0_revision1_ready_independent_rereview_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=independently re-review P4-D0 Revision 1 against F-01 through F-08; parked checkpoint=R1B authoring/execution, P4 canary execution, P4-P6 authority change, lifecycle activation, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_d0_design_accepted_bounded_r1b_authoring_operator_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=await explicit operator decision on authoring a separate R1B work order; parked checkpoint=R1B authoring/execution, P4 canary execution, authority change and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p4_d0_revision1_ready_independent_rereview_checkpoint_required`
-Current mode: `gclh_mfrp_p4_d0_revision1_ready_independent_rereview_checkpoint_required`; previous mode marker: `gclh_mfrp_p4_d0_external_critique_revise_before_r1b_correction_checkpoint_required`
-Previous mode: `gclh_mfrp_p4_d0_external_critique_revise_before_r1b_correction_checkpoint_required`
+Current mode marker: `gclh_mfrp_p4_d0_design_accepted_bounded_r1b_authoring_operator_checkpoint_required`
+Current mode: `gclh_mfrp_p4_d0_design_accepted_bounded_r1b_authoring_operator_checkpoint_required`; previous mode marker: `gclh_mfrp_p4_d0_revision1_ready_independent_rereview_checkpoint_required`
+Previous mode: `gclh_mfrp_p4_d0_revision1_ready_independent_rereview_checkpoint_required`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_d0_revision1_ready_independent_rereview_checkpoint_required`. P4-D0 Revision 1 is committed at `7890f8274e4471a2994e2e078ab307fd7df3e73d`, addressing F-01 through F-08 without adding a standard, checker, registry or reference family. Next allowed move is independent re-review. R1B authoring may be considered only after bounded acceptance; R1B execution and P4 canary execution remain closed. P4-P6 authority change, lifecycle activation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p4_d0_design_accepted_bounded_r1b_authoring_operator_checkpoint_required`. Revision 1 is independently accepted `ACCEPT_CANARY_DESIGN_BOUNDED` at `25aaade8b8bbf68d22f6648e9a2250fca4e37647`, zero findings. Next allowed move is an explicit operator decision on authoring a separate R1B work order. Acceptance alone opens no authoring or execution. P4-P6 authority change, lifecycle activation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

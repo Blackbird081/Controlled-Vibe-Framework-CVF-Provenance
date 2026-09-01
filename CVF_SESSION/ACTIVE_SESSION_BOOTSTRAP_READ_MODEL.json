@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gclh_mfrp_p4_d0_revision1_ready_independent_rereview_checkpoint_required",
+  "currentMode": "gclh_mfrp_p4_d0_design_accepted_bounded_r1b_authoring_operator_checkpoint_required",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MFRP-P4-D0 Revision 1 is committed at 7890f8274e4471a2994e2e078ab307fd7df3e73d after addressing F-01 through F-08. It distinguishes semantic returns from mechanical receipts, treats consistency as non-correctness evidence, requires immutable pre-shadow trusted records, uses one closed sample formula, makes duplicate work observable through a closed input/command manifest, names a one-off ledger owner and removes unsupported p95 telemetry. Next allowed move is independent re-review of Revision 1. R1B authoring may be considered only after bounded acceptance; R1B execution and P4 canary execution remain closed. P4-P6 authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "MFRP-P4-D0 Revision 1 is independently accepted ACCEPT_CANARY_DESIGN_BOUNDED at 25aaade8b8bbf68d22f6648e9a2250fca4e37647 with zero findings; F-01 through F-08 are discharged in committed text. The P4 work order must later name the independent invariant/evidence locator and should pin the shared field-overlap set. Next allowed move is an explicit operator decision on authoring a separate R1B work order. Acceptance alone does not open R1B authoring, R1B execution or P4 canary execution. P4-P6 authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
