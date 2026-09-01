@@ -39,9 +39,9 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=dispatch exact two-path no-commit R1A-R1 static-only correction worker; parked checkpoint=R1B, P4-P6 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author separate R1B work order under fresh operator authorization; parked=R1B execution, P4-P6, external effects.
 ## Current Mode
-`gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`
+`gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`
 ## Purpose
 
 Preserve independently accepted T1C durable single-node non-production material without opening a caller, package export or external effect.
@@ -54,7 +54,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Latest Work / Changes
 
-- MFRP-P3 remains rejected at `0cb164a1d`. The original R1A worker return is independently rejected on six findings and preserved under rejected evidence. Corrective R1A-R1 static-only dispatch is committed at `64a0182ff`; pre-dispatch 81/81, reviewer-fast 67/67 and pre-commit 88/88 passed. Exact two-path no-commit R1A-R1 worker execution is next; R1B and successors remain parked.
+- MFRP-P3 remains rejected at `0cb164a1d`; original R1A return rejected on six findings, preserved as rejected evidence. Corrective R1A-R1 static-only dispatch committed at `64a0182ff`; pre-dispatch 81/81, reviewer-fast 67/67, pre-commit 88/88 passed. R1A-R1 worker returned candidate; independent review recomputed all hashes/coverage/gates and ratified `ORACLE_RATIFIED_BOUNDED` at `7f607d353`. R1B and successors remain parked.
 - GC010 root architecture is closed parked at `e867d5432` with terminal `ROOT_ARCHITECTURE_REASSESSED_NO_TRUTHFUL_PRODUCT_OWNER_RETAIN_PARKED`. Direct route composition, ApprovalStore upgrade, singleton SQLite and distributed-store guesses were rejected; reopening requires all five named topology, adapter, ordering, recovery and adversarial-test facts in one packet. Reviewer-fast 67/67 and material pre-commit 88/88 pass; no source/runtime/provider effect or successor tranche opened.
 - SCEC-T1 foundation dispatch is `10345d3a`; T1-R2 is independently accepted with material correction at `cb6d4bc3879a753eb9abc7283b55148c141c46d1`. Resolution claims now require path/hash/locator evidence, successor consumption revalidates predecessor evidence hashes, the corrected GC010 replay retains unresolved blockers, and scaffolds emit the contract. Focused SCEC 115/115, combined focused 205/205, reviewer-fast 67/67 and pre-commit 88/88 passed. The two out-of-scope diagnostics remain disclosed and untouched; T1J-R4 remains parked.
 - EAFR-R12 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `1e31db99a`; terminal roadmap commit `fae74ca77`. Reviewer repaired candidate-level evaluator order, denied-candidate call-budget accounting, unauthorized-provider receipt endpoint resolution and the return packet. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed; zero provider/live/credential calls. EAFR successor count is zero; RFR may only be reconsidered separately.
@@ -116,11 +116,10 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
 
 | Field | Value |
 |---|---|
-| authorityState | MFRP-P3 R1A `DISPATCH_READY_WORKER_EXECUTION_CHECKPOINT_REQUIRED` at `6de1ce31f94d5c3c41c6dca2e6e6442fa0ebf114` |
-| baselinePath | `docs/baselines/CVF_GC018_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md` |
+| authorityState | MFRP-P3 R1A-R1 `ORACLE_RATIFIED_BOUNDED` at `7f607d353` |
+| ratifiedArtifacts | oracle JSON plus worker return; SHA-256 pins in the current ratified-checkpoint session-state entry |
 | rejectedEvidence | five byte-preserved `.rejected` files plus content-addressed archive manifest; all `NOT_ACTIVE_AUTHORITY` |
-| nextAuthorityRequirement | exact two-path no-commit R1A worker return, then independent review; accepted R1A oracle before a separate R1B work order; no automatic P4 |
+| nextAuthorityRequirement | author a separate R1B work order (byte-change and same-payload runtime proof) under fresh operator authorization; no automatic P4 |
 
 ## Closure Evidence
 
@@ -171,7 +170,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-R1A dispatch authority is committed at `6de1ce31f94d5c3c41c6dca2e6e6442fa0ebf114`. Dispatch one no-commit worker to create only the named oracle JSON and worker return, using static feasibility evidence and returning for independent review. R1B requires accepted R1A evidence and a separate work order. P4-P6, lifecycle activation, downstream, GC010 and external effects remain parked. Latest numbered wave remains LHW24.
+MFRP-P3-R1A-R1 static oracle is independently reviewed and ratified `ORACLE_RATIFIED_BOUNDED` at material commit `7f607d353bdec11e456731793f181e72abddc297` after all 9 pinned hashes matched, exact coverage, a clean forbidden-key scan, all three `NOT_REPRESENTABLE_BY_CURRENT_P2` dispositions verified against P2 source, and both required gates passing. Next allowed move is authoring a separate R1B work order under fresh operator authorization; this ratification does not open R1B. P4-P6, lifecycle activation, downstream, GC010 and external effects remain parked. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -201,19 +200,19 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: sync committed R1A-R1 correction dispatch material `64a0182fffe7d1022cc417fbd097c600e6f55789`, regenerate projections and record the worker-execution checkpoint.
+Authorized guard-maintenance scope: sync ratified R1A-R1 oracle material commit `7f607d353`, regenerate projections and record the oracle-ratified checkpoint.
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/gclhMfrpP3R1AR1DispatchReadyWorkerExecutionCheckpointRequired20260902.json`
+- `CVF_SESSION/state/entries/gclhMfrpP3R1AR1OracleRatifiedBoundedR1BAuthoringCheckpointRequired20260902.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: the operator explicitly authorized learning and raising the CVF Core foundation before applying it to the downstream workspace.
-Rollback boundary: revert only this R1A-R1 dispatch continuity sync without rewriting material commit `64a0182fffe7d1022cc417fbd097c600e6f55789` or preserved rejected evidence.
-Not authorized: worker changes beyond the exact two-path static-only oracle manifest, staging/commit by worker, P2 import/invocation or receipt construction, R1B, replay execution, P2-owner mutation, P4-P6, new owner/standard/ADIF/hook changes, downstream edits, GC010 product/runtime, provider/API/network, public mutation, deployment, production or compaction.
+Rollback boundary: revert only this R1A-R1 continuity sync without rewriting material commit `7f607d353` or preserved rejected evidence.
+Not authorized: any change beyond continuity sync, P2 import/invocation/mutation, receipt construction, R1B, replay, new owner/standard/ADIF/hook changes, downstream edits, GC010 product/runtime, provider/API/network, public mutation, deployment, production or compaction.
 ## Claim Boundary
 
-This handoff records committed corrective R1A-R1 dispatch at `64a0182ff`; only the exact two-path no-commit static-only worker execution is next. R1B and successors stay parked.
+This handoff records the ratified MFRP-P3-R1A-R1 static oracle at `7f607d353`, accepted `ORACLE_RATIFIED_BOUNDED`. No R1B execution, P2 mutation, receipt construction, replay, or provider/live/public/deploy/production effect is authorized. R1B needs a separate operator-governed work order.

@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required",
-  "previousMode": "gclh_mfrp_p3_r1a_dispatch_ready_worker_execution_checkpoint_required",
+  "currentMode": "gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required",
+  "previousMode": "gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16244,5 +16244,20 @@
     "nextAllowedMove": "Dispatch one no-commit worker on the exact two-path R1A-R1 static-only oracle correction scope and return the uncommitted result for independent review.",
     "claimBoundary": "Dispatch authority only. No oracle acceptance, replay execution, P2 import/invocation/mutation, R1B opening, P4-P6 opening, lifecycle activation, downstream application, provider/live/network, public-sync, deployment or production action is claimed."
   },
-  "nextAllowedMove": "Dispatch the exact two-path no-commit R1A-R1 worker from execution base 64a0182fffe7d1022cc417fbd097c600e6f55789 under the committed static-only correction baseline and work order. The worker may create only governance/compat/fixtures/mfrp_p3_r1a_r1_static_only_oracle.json and docs/reviews/CVF_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_WORKER_RETURN_2026-09-02.md, must not import or invoke P2 or construct receipt/payload objects, and must return for independent review without staging or committing. R1B requires a separately ratified and committed R1A-R1 oracle plus a separate work order; P4-P6, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP3R1AR1OracleRatifiedBoundedR1BAuthoringCheckpointRequired20260902": {
+    "status": "P3_R1A_R1_ORACLE_RATIFIED_BOUNDED_R1B_AUTHORING_CHECKPOINT_REQUIRED",
+    "dispatchMaterialCommit": "64a0182fffe7d1022cc417fbd097c600e6f55789",
+    "ratificationMaterialCommit": "7f607d353bdec11e456731793f181e72abddc297",
+    "ratifiedOraclePath": "governance/compat/fixtures/mfrp_p3_r1a_r1_static_only_oracle.json",
+    "ratifiedOracleSha256": "6aa32c3157092c974441c269d17e85aed20d5ba535479523eda5b64d23b3fbf2",
+    "workerReturnPath": "docs/reviews/CVF_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_WORKER_RETURN_2026-09-02.md",
+    "workerReturnSha256": "32dabae39e0a4465b5e3a7ad4ba10e4cdf1aa7be7c20c1f6f8ba21f0ad87dee6",
+    "workerTerminalReturn": "COMPLETE_PENDING_REVIEW",
+    "workerTerminalCandidate": "ORACLE_RATIFICATION_CANDIDATE",
+    "reviewerDisposition": "ORACLE_RATIFIED_BOUNDED",
+    "reviewerEvidence": "Independently recomputed all 9 pinned source/P2-seam SHA-256 hashes (all MATCH); confirmed exact 19-case set covering all 18 required families and 7 required zero-tolerance classes with zero missing/extra; ran a forbidden observed*/actual*-key scan (zero matches); confirmed 19/19 unique source-excerpt digests; verified the three NOT_REPRESENTABLE_BY_CURRENT_P2 dispositions (C07 attacker-rebound, C08 cross-batch verifier/dependency drift, C18 high-risk/live/public/destructive authority) directly against governance/compat/agent_autorun_machine_verification.py's _validate_receipt_integrity source; independently reran worker-return fast gate (COMPLIANT) and reviewer-fast (67/67 PASS); confirmed final git status shows only the two authorized paths staged and no other tracked file changed.",
+    "nextAllowedMove": "Author a separate R1B work order (byte-change and same-payload runtime proof) under fresh operator authorization. This ratification does not open R1B.",
+    "claimBoundary": "Static oracle ratification only. No R1B execution, replay, P2 import/invocation/mutation, receipt construction, lifecycle activation, downstream application, provider/live/network, public-sync, deployment or production action is claimed."
+  },
+  "nextAllowedMove": "MFRP-P3-R1A-R1 static oracle is independently reviewed and ratified ORACLE_RATIFIED_BOUNDED at material commit 7f607d353bdec11e456731793f181e72abddc297: all 9 pinned source/P2-seam hashes recomputed and matched, exact 19-case/18-family/7-class coverage confirmed, forbidden-key scan clean, worker-return fast gate COMPLIANT, reviewer-fast 67/67 PASS, and the three NOT_REPRESENTABLE_BY_CURRENT_P2 dispositions (C07, C08, C18) independently verified against actual P2 source. Next allowed move is authoring a separate R1B work order (byte-change and same-payload runtime proof) under fresh operator authorization; R1B was not opened by this ratification. P4-P6, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

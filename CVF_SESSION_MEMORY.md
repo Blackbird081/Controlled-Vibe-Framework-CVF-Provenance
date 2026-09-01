@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=dispatch exact two-path no-commit R1A-R1 static-only correction worker; parked checkpoint=R1B, P4-P6, lifecycle activation, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a separate R1B work order under fresh operator authorization; parked checkpoint=R1B execution, P4-P6, lifecycle activation, downstream, GC010 and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`
-Current mode: `gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`; previous mode marker: `gclh_mfrp_p3_r1a_dispatch_ready_worker_execution_checkpoint_required`
-Previous mode: `gclh_mfrp_p3_r1a_dispatch_ready_worker_execution_checkpoint_required`
+Current mode marker: `gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`
+Current mode: `gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`; previous mode marker: `gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`
+Previous mode: `gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`. The original R1A return is independently rejected and archived; the corrective R1A-R1 baseline/work order are committed at `64a0182fffe7d1022cc417fbd097c600e6f55789` after pre-dispatch 81/81, reviewer-fast 67/67 and pre-commit 88/88 PASS. Next allowed move is dispatch of the exact two-path no-commit static-only correction worker and return for independent review. R1B requires a separately ratified and committed R1A-R1 oracle plus a separate work order. P4-P6, lifecycle activation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`. The R1A-R1 worker returned `COMPLETE_PENDING_REVIEW`/`ORACLE_RATIFICATION_CANDIDATE`; independent review recomputed all 9 pinned source/P2-seam hashes (all MATCH), confirmed exact 19-case/18-family/7-class coverage, ran a clean forbidden-key scan, verified the three `NOT_REPRESENTABLE_BY_CURRENT_P2` dispositions (C07, C08, C18) directly against `_validate_receipt_integrity` source, and independently reran both required gates (worker-return fast gate COMPLIANT; reviewer-fast 67/67 PASS). Disposition `ORACLE_RATIFIED_BOUNDED` is committed at material commit `7f607d353bdec11e456731793f181e72abddc297`. Next allowed move is authoring a separate R1B work order (byte-change and same-payload runtime proof) under fresh operator authorization; this ratification does not open R1B. P4-P6, lifecycle activation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
