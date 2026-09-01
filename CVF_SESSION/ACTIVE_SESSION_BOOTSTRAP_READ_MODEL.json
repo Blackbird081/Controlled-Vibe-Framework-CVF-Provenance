@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gclh_mfrp_p3_dispatch_ready_worker_execution_checkpoint_required",
+  "currentMode": "gclh_mfrp_p3_r1_design_review_checkpoint_required",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MFRP-P3 historical replay is dispatch-ready at material commit 57e51e8a86d44ee8602ade8af7dfff39eab87499 after pre-dispatch 81/81 and pre-commit 88/88 PASS. Transfer the exact committed packet to one no-commit worker, create only the five named replay artifacts, freeze fixture and ledger before first replay, and return for independent review without staging or committing. P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "MFRP-P3 is rejected RETURN_TO_DESIGN and its five returned artifacts are preserved only under rejected_evidence with .rejected suffixes at material commit 0cb164a1d6b27fef21cf829d32465923d1331c49. Next allowed move is independent critique of the committed P3-R1 actual-seam/committed-oracle redesign. R1A oracle ratification and R1B implementation require a later explicit operator checkpoint plus fresh baseline/work order; P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md",
-    "baselineSha256": "f54d6d9652acb7e4cb653f49b9f5dc752b8b782c44b439b89e4e1fa2b44120b7",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md",
-    "workOrderSha256": "1df610b4fffecfc33cb4717308758d4cc1ed4548808a3310030869c152b5e928"
+    "baselinePath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
+    "baselineSha256": "4438fcce757dcbe9bb6041a025b36adf2a3d3350199000bd18fc2ed9f6c11a07",
+    "workOrderPath": "docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md",
+    "workOrderSha256": "22a086d7742dbdaec5b887fd377890962ad34396953f48287ce865f743766011"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

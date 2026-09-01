@@ -39,9 +39,9 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p3_dispatch_ready_worker_execution_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer the committed P3 packet to one exact-five-path no-commit worker; parked checkpoint=P4-P6, lifecycle activation, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p3_r1_design_review_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=independent critique of the committed P3-R1 redesign; parked checkpoint=R1A/R1B implementation, P4-P6, lifecycle activation, downstream, GC010 and external effects.
 ## Current Mode
-`gclh_mfrp_p3_dispatch_ready_worker_execution_checkpoint_required`
+`gclh_mfrp_p3_r1_design_review_checkpoint_required`
 ## Purpose
 
 Preserve independently accepted T1C durable single-node non-production material without opening a caller, package export or external effect.
@@ -54,7 +54,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Latest Work / Changes
 
-- MFRP-P3 historical replay is dispatch-ready at material commit `57e51e8a86d44ee8602ade8af7dfff39eab87499`. The exact three-path packet freezes seven historical source identities, requires at least eighteen cases and 100% recall in every zero-tolerance class, and authorizes only five new uncommitted artifacts. Pre-dispatch 81/81 and pre-commit 88/88 passed; no provider/live/network call occurred. P4-P6 remain parked.
+- MFRP-P3 is rejected `RETURN_TO_DESIGN`; five returned artifacts are byte-preserved as `.rejected` evidence at material `0cb164a1d6b27fef21cf829d32465923d1331c49`. P3-R1 splits oracle ratification from actual-P2-seam replay; independent design critique is next. Reviewer-fast 67/67 and pre-commit 88/88 passed; no provider/live/network call. R1A/R1B and P4-P6 remain parked.
 - GC010 root architecture is closed parked at `e867d5432` with terminal `ROOT_ARCHITECTURE_REASSESSED_NO_TRUTHFUL_PRODUCT_OWNER_RETAIN_PARKED`. Direct route composition, ApprovalStore upgrade, singleton SQLite and distributed-store guesses were rejected; reopening requires all five named topology, adapter, ordering, recovery and adversarial-test facts in one packet. Reviewer-fast 67/67 and material pre-commit 88/88 pass; no source/runtime/provider effect or successor tranche opened.
 - SCEC-T1 foundation dispatch is `10345d3a`; T1-R2 is independently accepted with material correction at `cb6d4bc3879a753eb9abc7283b55148c141c46d1`. Resolution claims now require path/hash/locator evidence, successor consumption revalidates predecessor evidence hashes, the corrected GC010 replay retains unresolved blockers, and scaffolds emit the contract. Focused SCEC 115/115, combined focused 205/205, reviewer-fast 67/67 and pre-commit 88/88 passed. The two out-of-scope diagnostics remain disclosed and untouched; T1J-R4 remains parked.
 - EAFR-R12 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `1e31db99a`; terminal roadmap commit `fae74ca77`. Reviewer repaired candidate-level evaluator order, denied-candidate call-budget accounting, unauthorized-provider receipt endpoint resolution and the return packet. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed; zero provider/live/credential calls. EAFR successor count is zero; RFR may only be reconsidered separately.
@@ -116,11 +116,11 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
 
 | Field | Value |
 |---|---|
-| authorityState | MFRP-P3 `DISPATCH_READY_WORKER_EXECUTION_CHECKPOINT_REQUIRED` at `57e51e8a86d44ee8602ade8af7dfff39eab87499` |
-| baselinePath | `docs/baselines/CVF_GC018_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md` |
-| workerManifest | exact five new paths: fixture, replay helper/test, frozen ledger and worker return |
-| nextAuthorityRequirement | execute only the committed no-commit P3 packet and stop for independent review; no automatic P4 |
+| authorityState | MFRP-P3 `RETURN_TO_DESIGN`; P3-R1 `DESIGN_REVIEW_CHECKPOINT_REQUIRED` at `0cb164a1d6b27fef21cf829d32465923d1331c49` |
+| baselinePath | `docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md` |
+| workOrderPath | `docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md` (design specification only; not an implementation dispatch) |
+| rejectedEvidence | five byte-preserved `.rejected` files plus content-addressed archive manifest; all `NOT_ACTIVE_AUTHORITY` |
+| nextAuthorityRequirement | independent critique and operator reconciliation; fresh baseline/work order before R1A or R1B; no automatic P4 |
 
 ## Closure Evidence
 
@@ -171,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-MFRP-P3 dispatch is committed at `57e51e8a86d44ee8602ade8af7dfff39eab87499`. Transfer the exact packet to one no-commit worker, create only five named replay artifacts, freeze fixture and ledger before first replay, and stop for independent review. P4-P6, lifecycle activation, downstream, GC010 and external effects remain parked. Latest numbered wave remains LHW24.
+MFRP-P3 is rejected `RETURN_TO_DESIGN`; the rejected return is no longer active/importable and is preserved at material commit `0cb164a1d6b27fef21cf829d32465923d1331c49`. Submit the committed P3-R1 redesign for independent critique. Do not implement R1A/R1B until critique reconciliation, explicit operator approval and a fresh source-verified baseline/work order. P4-P6, lifecycle activation, downstream, GC010 and external effects remain parked. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -201,19 +201,19 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize committed MFRP-P3 dispatch material `57e51e8a86d44ee8602ade8af7dfff39eab87499`, record the worker-execution checkpoint, regenerate continuity projections, and bind worker startup to the current clean HEAD plus verified material-commit ancestry rather than a stale fixed execution HEAD. Continuity parent anchor: `0ca9c44fce45b1cc8f80fc47fe86860e9286a24a`.
+Authorized guard-maintenance scope: synchronize committed MFRP-P3 rejection/archive and P3-R1 redesign material `0cb164a1d6b27fef21cf829d32465923d1331c49`, remove the rejected worker execution from active continuity, regenerate projections, and record the independent design-review checkpoint. Continuity parent anchor: `0cb164a1d6b27fef21cf829d32465923d1331c49`.
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/gclhMfrpP3DispatchReadyWorkerExecutionCheckpointRequired20260901.json`
+- `CVF_SESSION/state/entries/gclhMfrpP3R1DesignReviewCheckpointRequired20260901.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: the operator explicitly authorized learning and raising the CVF Core foundation before applying it to the downstream workspace.
-Rollback boundary: revert only this P3-dispatch continuity sync without rewriting material commit `57e51e8a86d44ee8602ade8af7dfff39eab87499` or prior evidence.
-Not authorized: any P3 sixth path, worker commit, P4-P6, new owner/standard/ADIF/hook changes, downstream edits, GC010 product/runtime, provider/API/network, public mutation, deployment, production or compaction.
+Rollback boundary: revert only this P3 rejection/P3-R1 design-review continuity sync without rewriting material commit `0cb164a1d6b27fef21cf829d32465923d1331c49` or archived evidence.
+Not authorized: R1A/R1B implementation, P2-owner mutation, P4-P6, new owner/standard/ADIF/hook changes, downstream edits, GC010 product/runtime, provider/API/network, public mutation, deployment, production or compaction.
 ## Claim Boundary
 
-This handoff records committed MFRP-P3 dispatch at `57e51e8a86d44ee8602ade8af7dfff39eab87499`, authorizes only the exact no-commit worker packet, and keeps P4-P6/lifecycle/downstream/GC010/effects parked.
+This handoff records committed MFRP-P3 rejection/archive and P3-R1 design readiness at `0cb164a1d6b27fef21cf829d32465923d1331c49`, authorizes only independent design critique, and keeps R1A/R1B plus P4-P6/lifecycle/downstream/GC010/effects parked.

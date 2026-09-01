@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md",
-    "baselineSha256": "f54d6d9652acb7e4cb653f49b9f5dc752b8b782c44b439b89e4e1fa2b44120b7",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md",
-    "workOrderSha256": "1df610b4fffecfc33cb4717308758d4cc1ed4548808a3310030869c152b5e928"
+    "baselinePath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
+    "baselineSha256": "4438fcce757dcbe9bb6041a025b36adf2a3d3350199000bd18fc2ed9f6c11a07",
+    "workOrderPath": "docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md",
+    "workOrderSha256": "22a086d7742dbdaec5b887fd377890962ad34396953f48287ce865f743766011"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p3_dispatch_ready_worker_execution_checkpoint_required",
-  "previousMode": "gclh_mfrp_p2_composed_local_pass_bounded_p3_operator_checkpoint_required",
+  "currentMode": "gclh_mfrp_p3_r1_design_review_checkpoint_required",
+  "previousMode": "gclh_mfrp_p3_dispatch_ready_worker_execution_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16188,5 +16188,17 @@
     "nextAllowedMove": "Transfer the exact committed P3 packet to one no-commit worker. The worker must capture the current clean HEAD at start and verify that it contains material dispatch commit 57e51e8a86d44ee8602ade8af7dfff39eab87499 in its ancestry. The worker may create only the five named replay artifacts, must freeze fixture and ledger before first replay, and must return for independent review without staging or committing.",
     "claimBoundary": "P3 dispatch only. No replay result, semantic acceptance, lifecycle activation or P4 opening is claimed. P4-P6, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
   },
-  "nextAllowedMove": "MFRP-P3 historical replay is dispatch-ready at material commit 57e51e8a86d44ee8602ade8af7dfff39eab87499 after pre-dispatch 81/81 and pre-commit 88/88 PASS. Transfer the exact committed packet to one no-commit worker, create only the five named replay artifacts, freeze fixture and ledger before first replay, and return for independent review without staging or committing. P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP3R1DesignReviewCheckpointRequired20260901": {
+    "status": "P3_RETURN_TO_DESIGN_P3_R1_DESIGN_REVIEW_CHECKPOINT_REQUIRED",
+    "materialCommit": "0cb164a1d6b27fef21cf829d32465923d1331c49",
+    "roadmapPath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
+    "redesignPath": "docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md",
+    "rejectionReviewPath": "docs/reviews/CVF_MFRP_P3_INDEPENDENT_REVIEW_RETURN_TO_DESIGN_2026-09-01.md",
+    "rejectedEvidenceManifest": "docs/reviews/rejected_evidence/MFRP_P3_2026-09-01/ARCHIVE_MANIFEST.txt",
+    "acceptedOutcome": "Original P3 is rejected. Its five worker artifacts are byte-preserved as NOT_ACTIVE_AUTHORITY with non-executable .rejected suffixes. P3-R1 now separates dispatcher/reviewer-owned committed-oracle ratification from an actual-P2-seam runner and post-run observation ledger.",
+    "reviewEvidence": "Bounded hostile probes reproduced false-pass behavior; focused governance gates passed; reviewer-fast 67/67 and material pre-commit 88/88 passed. No provider/live/network call occurred.",
+    "nextAllowedMove": "Obtain an independent critique of the committed P3-R1 redesign. Do not implement R1A or R1B until that critique is reconciled, the operator explicitly approves the next tranche, and a fresh source-verified baseline/work order is committed.",
+    "claimBoundary": "Archive preservation and design readiness only. No P3 replay acceptance, oracle ratification, runner implementation, P2 mutation, P4 opening, lifecycle activation, downstream application or external effect is claimed."
+  },
+  "nextAllowedMove": "MFRP-P3 is rejected RETURN_TO_DESIGN and its five returned artifacts are preserved only under rejected_evidence with .rejected suffixes at material commit 0cb164a1d6b27fef21cf829d32465923d1331c49. Next allowed move is independent critique of the committed P3-R1 actual-seam/committed-oracle redesign. R1A oracle ratification and R1B implementation require a later explicit operator checkpoint plus fresh baseline/work order; P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
