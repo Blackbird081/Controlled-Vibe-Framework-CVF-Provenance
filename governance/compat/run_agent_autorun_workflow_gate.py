@@ -24,11 +24,21 @@ try:
 except ModuleNotFoundError:  # imported as governance.compat.run_agent_autorun_workflow_gate
     from governance.compat import run_agent_commit_steward_preflight as steward
 
+try:
+    import agent_autorun_machine_verification as machine_verification
+except ModuleNotFoundError:
+    from governance.compat import agent_autorun_machine_verification as machine_verification
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_RECEIPT_DIR = REPO_ROOT / ".cvf" / "runtime" / "autorun-receipts"
-RECEIPT_SCHEMA = "cvf.autorun.pass-receipt.v2"
-VERIFIER_IDENTITY_PROFILE = "cvf.autorun.verifierIdentity.v1"
+RECEIPT_SCHEMA = machine_verification.RECEIPT_SCHEMA
+VERIFIER_IDENTITY_PROFILE = machine_verification.VERIFIER_IDENTITY_PROFILE
+MACHINE_VERIFICATION_PROFILE = machine_verification.MACHINE_VERIFICATION_PROFILE
+VerifierIdentityUnavailable = machine_verification.VerifierIdentityUnavailable
+_jcs_bytes = machine_verification._jcs_bytes
+_machine_verification_object = machine_verification._machine_verification_object
+_machine_verification_digest = machine_verification._machine_verification_digest
 
 try:
     from agent_autorun_command_catalog import (
@@ -152,45 +162,6 @@ def _receipt_path(phase: str, receipt_dir: Path) -> Path:
 # non-ignored regular file, plus an explicit interpreter identity record. Any
 # unsafe, unreadable, non-regular, or unstable-during-read input makes reuse
 # unavailable rather than silently narrowing the snapshot.
-
-
-class VerifierIdentityUnavailable(Exception):
-    """Raised when a complete verifier-identity snapshot cannot be built."""
-
-
-def _jcs_bytes(obj: object) -> bytes:
-    """Restricted RFC 8785 JCS encoding for an I-JSON domain of only
-    strings, arrays and objects (no numbers, booleans or null). Sorted
-    object keys, compact separators, no ASCII escaping."""
-
-    def validate(value: object) -> None:
-        if isinstance(value, str):
-            if any(0xD800 <= ord(character) <= 0xDFFF for character in value):
-                raise VerifierIdentityUnavailable(
-                    "verifier identity contains a non-I-JSON surrogate"
-                )
-            return
-        if isinstance(value, list):
-            for item in value:
-                validate(item)
-            return
-        if isinstance(value, dict):
-            for key, item in value.items():
-                if not isinstance(key, str):
-                    raise VerifierIdentityUnavailable(
-                        "verifier identity object key is not a string"
-                    )
-                validate(key)
-                validate(item)
-            return
-        raise VerifierIdentityUnavailable(
-            f"unsupported verifier identity value type: {type(value).__name__}"
-        )
-
-    validate(obj)
-    return json.dumps(
-        obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False
-    ).encode("utf-8")
 
 
 def _normalize_repo_relative_path(raw: str) -> str | None:
@@ -367,6 +338,10 @@ def _verifier_identity_digest(commands: tuple[GateCommand, ...]) -> str:
     return hashlib.sha256(_jcs_bytes(preimage)).hexdigest()
 
 
+def _validate_receipt_integrity(payload: dict) -> tuple[bool, str]:
+    return machine_verification._validate_receipt_integrity(payload)
+
+
 def _receipt_context(
     phase: str,
     base: str,
@@ -394,17 +369,12 @@ def _load_valid_receipt(path: Path, expected: dict[str, str]) -> tuple[bool, str
         payload = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
         return False, f"receipt unreadable: {exc}"
-    if payload.get("schema") != RECEIPT_SCHEMA:
-        return False, "receipt schema mismatch"
-    if payload.get("status") != "PASS":
-        return False, "receipt schema or status mismatch"
+    valid, reason = _validate_receipt_integrity(payload)
+    if not valid:
+        return False, reason
     for key, value in expected.items():
         if payload.get(key) != value:
             return False, f"receipt {key} mismatch"
-    if not isinstance(payload.get("verifierIdentityDigest"), str) or not payload.get(
-        "verifierIdentityDigest"
-    ):
-        return False, "receipt verifierIdentityDigest missing or malformed"
     return True, "exact receipt context match"
 
 
@@ -416,11 +386,17 @@ def _write_receipt(
     verifier_identity_digest: str,
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+    machine_verification = _machine_verification_object(
+        context, verifier_identity_digest, results
+    )
+    receipt_digest = _machine_verification_digest(machine_verification)
     payload = {
         "schema": RECEIPT_SCHEMA,
         "status": "PASS",
         **context,
         "verifierIdentityDigest": verifier_identity_digest,
+        "machineVerification": machine_verification,
+        "receiptDigest": receipt_digest,
         "totalDurationSeconds": round(total_duration_s, 3),
         "checks": [
             {

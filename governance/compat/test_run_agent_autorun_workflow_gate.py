@@ -61,17 +61,20 @@ def test_command_manifest_hash_changes_with_command() -> None:
 
 def test_valid_receipt_requires_exact_context(tmp_path: Path) -> None:
     path = tmp_path / "receipt.json"
-    expected = {
+    context = {
         "phase": "pre-implementation",
+        "base": "base",
+        "head": "head",
         "baseSha": "abc1234",
         "headSha": "def5678",
         "commandManifestHash": "manifest",
         "worktreeFingerprint": "worktree",
         "verifierIdentityProfile": autorun.VERIFIER_IDENTITY_PROFILE,
-        "verifierIdentityDigest": "a" * 64,
     }
+    verifier_identity_digest = "a" * 64
+    expected = {**context, "verifierIdentityDigest": verifier_identity_digest}
     path.write_text(
-        json.dumps({"schema": autorun.RECEIPT_SCHEMA, "status": "PASS", **expected}),
+        json.dumps(_build_v3_receipt_payload(context, verifier_identity_digest)),
         encoding="utf-8",
     )
 
@@ -352,7 +355,41 @@ def _set_snapshot_env(
     monkeypatch.setattr(autorun, "_interpreter_identity", _fake_interpreter_identity)
 
 
-def test_v2_exact_state_reuse_hit_no_execution(monkeypatch, tmp_path: Path) -> None:
+def _build_v3_receipt_payload(context, verifier_identity_digest, results=None):
+    if results is None:
+        results = (
+            autorun.GateResult(
+                index=1,
+                name="sample",
+                command=("python", "governance/compat/check_sample.py"),
+                returncode=0,
+                duration_s=0.1,
+                output="",
+            ),
+        )
+    machine_verification = autorun._machine_verification_object(
+        context, verifier_identity_digest, results
+    )
+    return {
+        "schema": autorun.RECEIPT_SCHEMA,
+        "status": "PASS",
+        **context,
+        "verifierIdentityDigest": verifier_identity_digest,
+        "machineVerification": machine_verification,
+        "receiptDigest": autorun._machine_verification_digest(machine_verification),
+        "checks": [
+            {
+                "name": result.name,
+                "command": list(result.command),
+                "durationSeconds": round(result.duration_s, 3),
+                "status": "PASS",
+            }
+            for result in results
+        ],
+    }
+
+
+def test_v3_exact_state_reuse_hit_no_execution(monkeypatch, tmp_path: Path) -> None:
     _write_repo_file(tmp_path, "governance/compat/check_sample.py", "print('ok')\n")
     _set_snapshot_env(
         monkeypatch, tmp_path, tracked=("governance/compat/check_sample.py",)
@@ -374,12 +411,7 @@ def test_v2_exact_state_reuse_hit_no_execution(monkeypatch, tmp_path: Path) -> N
         "pre-implementation", "base", "head", "base", "head", commands
     )
     digest = autorun._verifier_identity_digest(commands)
-    payload = {
-        "schema": autorun.RECEIPT_SCHEMA,
-        "status": "PASS",
-        **context,
-        "verifierIdentityDigest": digest,
-    }
+    payload = _build_v3_receipt_payload(context, digest)
     receipt_dir.mkdir(parents=True, exist_ok=True)
     (receipt_dir / "pre-implementation.json").write_text(
         json.dumps(payload), encoding="utf-8"
@@ -918,7 +950,7 @@ def test_reuse_disabled_full_bundle_pass_control(monkeypatch, tmp_path: Path) ->
     assert (receipt_dir / "pre-implementation.json").exists()
 
 
-def test_malformed_or_partial_v2_fails_closed(tmp_path: Path) -> None:
+def test_malformed_or_partial_v3_fails_closed(tmp_path: Path) -> None:
     path = tmp_path / "receipt.json"
     expected = {
         "phase": "pre-implementation",
@@ -929,7 +961,7 @@ def test_malformed_or_partial_v2_fails_closed(tmp_path: Path) -> None:
         "verifierIdentityProfile": autorun.VERIFIER_IDENTITY_PROFILE,
         "verifierIdentityDigest": "a" * 64,
     }
-    # Partial v2: schema and status present, verifierIdentityDigest omitted.
+    # Partial v3: schema and status present, machineVerification omitted.
     path.write_text(
         json.dumps(
             {
@@ -944,6 +976,7 @@ def test_malformed_or_partial_v2_fails_closed(tmp_path: Path) -> None:
     valid, reason = autorun._load_valid_receipt(path, expected)
 
     assert not valid
+    assert "machineVerification" in reason
 
 
 def test_secret_safe_miss_reason_no_file_content_or_env_value(
