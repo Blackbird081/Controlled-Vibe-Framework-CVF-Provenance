@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=report accepted P1 dispatch and stop for explicit operator authorization before P1 no-commit execution; parked checkpoint=P1 outputs, P2, owner-local changes, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p1_closed_p2_operator_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=report accepted bounded P1 closure and stop for explicit operator authorization before P2 authoring or dispatch; parked checkpoint=P2, owner-local changes, downstream, GC010 and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required`
-Current mode: `gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required`; previous mode marker: `gclh_mfrp_h0_closed_p1_operator_checkpoint_required`
-Previous mode: `gclh_mfrp_h0_closed_p1_operator_checkpoint_required`
+Current mode marker: `gclh_mfrp_p1_closed_p2_operator_checkpoint_required`
+Current mode: `gclh_mfrp_p1_closed_p2_operator_checkpoint_required`; previous mode marker: `gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required`
+Previous mode: `gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required`. The source-verified P1 baseline/work order and roadmap update are independently accepted at material commit `dace1285146c16b00ab60b2dcca6a5b7ed890465`; AAF reports zero defects, pre-dispatch 81/81 and pre-commit 88/88 PASS. Stop for explicit operator authorization before executing the exact no-commit packet: one decision packet plus one worker return, followed by independent review. P2, owner-local changes, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p1_closed_p2_operator_checkpoint_required`. P1 owner-and-phase-return contract ratification is independently accepted `CONTRACT_ACCEPTED_BOUNDED` at material commit `dc370ba33a3a39cee677453b2bedc14b94bfc798` after one bounded repair adding the required explicit command-ledger baseline. The decision retains existing owners, separates machine evidence from reviewer judgment, maps all seven phases, and leaves P2 unopened. Worker-fast 67/67 and pre-commit 88/88 PASS; material pre-closure reached 80/81 with only the expected continuity mismatch now being synchronized. Stop for explicit operator authorization before P2 authoring or dispatch. Owner-local changes, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

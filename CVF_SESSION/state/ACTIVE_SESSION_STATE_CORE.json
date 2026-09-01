@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
-    "baselineSha256": "29cb00bf693b7a0428501ea7a422e2b0ee19d33e35a5741e51becec26efee640",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
-    "workOrderSha256": "271426c989d40004fb0daf2b915074168d00223b65405c0f22c15222bdfd7eeb"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_2026-09-01.md",
+    "baselineSha256": "6ba6fcbc4fe322dd5b302a42e6d9c108e38002a121355e87d8ec9d8d5cbd92ab",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_2026-09-01.md",
+    "workOrderSha256": "40ef73f811197991aa102c6d93fef397870de24249406edf50c39d0ac30e4bf1"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required",
-  "previousMode": "gclh_mfrp_h0_closed_p1_operator_checkpoint_required",
+  "currentMode": "gclh_mfrp_p1_closed_p2_operator_checkpoint_required",
+  "previousMode": "gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
-    "baselineSha256": "29cb00bf693b7a0428501ea7a422e2b0ee19d33e35a5741e51becec26efee640",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
-    "workOrderSha256": "271426c989d40004fb0daf2b915074168d00223b65405c0f22c15222bdfd7eeb"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_2026-09-01.md",
+    "baselineSha256": "6ba6fcbc4fe322dd5b302a42e6d9c108e38002a121355e87d8ec9d8d5cbd92ab",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_2026-09-01.md",
+    "workOrderSha256": "40ef73f811197991aa102c6d93fef397870de24249406edf50c39d0ac30e4bf1"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required",
-  "previousMode": "gclh_mfrp_h0_closed_p1_operator_checkpoint_required",
+  "currentMode": "gclh_mfrp_p1_closed_p2_operator_checkpoint_required",
+  "previousMode": "gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16141,5 +16141,17 @@
     "nextAllowedMove": "Stop for explicit operator authorization before executing the accepted P1 no-commit work order. If authorized, create exactly the named decision packet and worker return, then return for independent review; do not open P2 automatically.",
     "claimBoundary": "P1 dispatch acceptance only. P1 outputs, P2, owner-local changes, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
   },
-  "nextAllowedMove": "MFRP-P1 owner-and-phase-return contract-ratification dispatch is independently accepted at material commit dace1285146c16b00ab60b2dcca6a5b7ed890465. Stop for explicit operator authorization before executing the no-commit work order. If authorized, create exactly the named decision packet and worker return, then return for independent review. P2, owner-local changes, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP1ClosedP2OperatorCheckpointRequired20260901": {
+    "status": "P1_CLOSED_P2_OPERATOR_CHECKPOINT_REQUIRED",
+    "materialCommit": "dc370ba33a3a39cee677453b2bedc14b94bfc798",
+    "decisionPacketPath": "docs/reviews/CVF_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_PACKET_2026-09-01.md",
+    "decisionPacketSha256": "388f9f63a6eb810efee9cd5f0ce193bfcc19719ac8f5bf42d6c394ce6bdfad09",
+    "workerReturnPath": "docs/reviews/CVF_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_WORKER_RETURN_2026-09-01.md",
+    "workerReturnSha256": "9a9ae6eb9bad0387548a3eb77d657e99e4529562e47a2e0619d07c47f3324e06",
+    "acceptedDisposition": "CONTRACT_ACCEPTED_BOUNDED",
+    "reviewEvidence": "Independent review found and repaired one missing explicit command-ledger baseline; owner samples, sixteen required threats, machine/reviewer boundary, SCEC binding, P2 interlock, worker-fast 67/67 and pre-commit 88/88 passed. Material pre-closure reached 80/81 with only the expected post-commit continuity mismatch pending this sync.",
+    "nextAllowedMove": "Stop for explicit operator authorization before authoring or dispatching P2 owner-local implementation work; no successor is opened automatically.",
+    "claimBoundary": "P1 ratifies existing-owner placement and a non-active seven-phase return-contract design only. P2, owner-local changes, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
+  },
+  "nextAllowedMove": "MFRP-P1 owner-and-phase-return contract ratification is independently accepted CONTRACT_ACCEPTED_BOUNDED at material commit dc370ba33a3a39cee677453b2bedc14b94bfc798 after one bounded command-ledger evidence repair. Stop for explicit operator authorization before authoring or dispatching P2 owner-local implementation work. P2, owner-local changes, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

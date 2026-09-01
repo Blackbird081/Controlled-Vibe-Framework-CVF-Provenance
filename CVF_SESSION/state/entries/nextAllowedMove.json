@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2706,
+  "stateOrder": 2708,
   "stateKey": "nextAllowedMove",
-  "value": "MFRP-P1 owner-and-phase-return contract-ratification dispatch is independently accepted at material commit dace1285146c16b00ab60b2dcca6a5b7ed890465. Stop for explicit operator authorization before executing the no-commit work order. If authorized, create exactly the named decision packet and worker return, then return for independent review. P2, owner-local changes, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MFRP-P1 owner-and-phase-return contract ratification is independently accepted CONTRACT_ACCEPTED_BOUNDED at material commit dc370ba33a3a39cee677453b2bedc14b94bfc798 after one bounded command-ledger evidence repair. Stop for explicit operator authorization before authoring or dispatching P2 owner-local implementation work. P2, owner-local changes, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
