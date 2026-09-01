@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required",
-  "previousMode": "gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required",
+  "currentMode": "gclh_mfrp_p4_d0_external_critique_revise_before_r1b_correction_checkpoint_required",
+  "previousMode": "gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16270,5 +16270,26 @@
     "nextAllowedMove": "Independently review the P4-D0 canary design. Acceptance may authorize separate R1B work-order authoring, but R1B implementation and P4 canary execution remain closed until their own checkpoints.",
     "claimBoundary": "Design-only checkpoint. No R1B authoring or execution, actual canary run, phase-route authority change, lifecycle activation, downstream application, provider/live/network, public-sync, deployment or production action is claimed."
   },
-  "nextAllowedMove": "MFRP-P4-D0 shadow-canary and governance-tax-budget design is committed at 3ac41e8c7d9acd10d606b6e6304f66d8427ed9d9 with disposition DESIGN_ONLY_READY_FOR_INDEPENDENT_REVIEW. It reuses the same real phase return and evidence, leaves the trusted route controlling, excludes agent-internal behavior from observation, caps clean-case audit at 20 percent and 4 cases, permits at most one marginal machine command per eligible return, and forbids duplicated semantic work and provider calls. Next allowed move is independent review of this design. R1B authoring may follow only after design acceptance; R1B implementation and P4 canary execution remain separate closed checkpoints. P4-P6 authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP4D0ExternalCritiqueReviseBeforeR1BCorrectionCheckpointRequired20260902": {
+    "status": "P4_D0_EXTERNAL_CRITIQUE_REVISE_BEFORE_R1B_CORRECTION_CHECKPOINT_REQUIRED",
+    "critiqueMaterialCommit": "e79308d2cd5c0ff81e012c963428af3045ff990c",
+    "critiquePath": "docs/reviews/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_EXTERNAL_CRITIQUE_2026-09-02.md",
+    "critiqueSha256": "a379503d642f40bb76ecbd868c4c86f816ac94a29b1616f8dfe0671df97b533d",
+    "reviewerDisposition": "REVISE_BEFORE_R1B",
+    "blockingFindings": [
+      "F-01",
+      "F-02",
+      "F-03",
+      "F-04",
+      "F-05"
+    ],
+    "nonBlockingFindings": [
+      "F-06",
+      "F-07",
+      "F-08"
+    ],
+    "nextAllowedMove": "Revise the P4-D0 design to discharge F-01 through F-05 and address F-06 through F-08, then return the revision to independent review. Do not author or execute R1B and do not run P4.",
+    "claimBoundary": "Independent documentary critique only. No design acceptance, R1B authoring/execution, P4 canary execution, route-authority change, provider/live/network, public-sync, deployment or production action is claimed."
+  },
+  "nextAllowedMove": "MFRP-P4-D0 external critique is committed unchanged at e79308d2cd5c0ff81e012c963428af3045ff990c with disposition REVISE_BEFORE_R1B. Blocking findings F-01 through F-05 require comparison-object disclosure, common-mode limitation, immutable order-of-record evidence, one closed sampling formula and an observable duplicate-work test; F-06 through F-08 are non-blocking simplifications. Next allowed move is revision of the design followed by independent re-review. R1B authoring/execution and P4 canary execution remain closed. P4-P6 authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=independently review the P4-D0 shadow-canary design; parked checkpoint=R1B authoring/execution, P4 canary execution, P4-P6 authority change, lifecycle activation, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_d0_external_critique_revise_before_r1b_correction_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=revise P4-D0 design against F-01 through F-08 and return it to independent review; parked checkpoint=R1B authoring/execution, P4 canary execution, P4-P6 authority change, lifecycle activation, downstream, GC010 and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required`
-Current mode: `gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required`; previous mode marker: `gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`
-Previous mode: `gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`
+Current mode marker: `gclh_mfrp_p4_d0_external_critique_revise_before_r1b_correction_checkpoint_required`
+Current mode: `gclh_mfrp_p4_d0_external_critique_revise_before_r1b_correction_checkpoint_required`; previous mode marker: `gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required`
+Previous mode: `gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required`. P4-D0 shadow-canary and governance-tax-budget design is committed at `3ac41e8c7d9acd10d606b6e6304f66d8427ed9d9` with disposition `DESIGN_ONLY_READY_FOR_INDEPENDENT_REVIEW`. It reuses the same real phase return and evidence, leaves the trusted route controlling, excludes agent-internal behavior, caps clean-agreement audit at 20 percent and 4 cases, permits at most one marginal machine command per eligible return, and forbids duplicated semantic work and provider calls. Next allowed move is independent review of this design. R1B authoring may follow only after design acceptance; R1B implementation and P4 canary execution remain separate closed checkpoints. P4-P6 authority change, lifecycle activation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p4_d0_external_critique_revise_before_r1b_correction_checkpoint_required`. External critique is committed unchanged at `e79308d2cd5c0ff81e012c963428af3045ff990c` with disposition `REVISE_BEFORE_R1B`: five blocking findings F-01 through F-05 and three non-blocking findings F-06 through F-08. Next allowed move is revision of the design followed by independent re-review. R1B authoring/execution and P4 canary execution remain closed. P4-P6 authority change, lifecycle activation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
