@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: P2_CLOSED_P3_WORK_ORDER_DISPATCH_READY
+Status: P3_RETURN_TO_DESIGN_P3_R1_DESIGN_REVIEW_READY
 
 docType: roadmap
 
@@ -15,11 +15,11 @@ Planning base head: `90c2952b642e962c274e07f1f1f5b7cda03d4451`
 ## Authorization / Decision
 
 The operator authorized the roadmap and critique, H0, P1 and P2 through their
-separate checkpoints. P2 composition and its five-path extraction amendment
-were independently reviewed and committed. On 2026-09-01 the operator issued
-the continuation instruction at the explicit post-P2 P3 checkpoint.
+separate checkpoints, then authorized P3. Independent P3 review reproduced a
+self-referential oracle, missing runtime coverage/freeze binding and a
+disclosed post-freeze ledger mutation. The operator instructed redesign.
 
-Current decision: `P2_CLOSED_P3_WORK_ORDER_DISPATCH_READY`.
+Current decision: `P3_RETURN_TO_DESIGN_P3_R1_DESIGN_REVIEW_READY`.
 
 H0 is closed at material commit
 `5705a8d1c0a2512f0ce20fa705552316ebc85721`. P1 is accepted with disposition
@@ -27,10 +27,11 @@ H0 is closed at material commit
 `dc370ba33a3a39cee677453b2bedc14b94bfc798`. P2 is accepted
 `REVIEWER_ACCEPTED_COMPOSED_LOCAL_PASS_BOUNDED` at material commit
 `fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72`; continuity is committed at
-`2628a2fb2eb9e4a551c03411be90fe5eececad19`. A fresh MFRP-P3 provider-free
-historical replay work order may now be dispatched and independently reviewed.
-P3 execution, P4-P6, broader standards/templates, lifecycle activation,
-downstream workspace and external effects remain separately checkpointed.
+`2628a2fb2eb9e4a551c03411be90fe5eececad19`. P3 worker output is rejected
+`RETURN_TO_DESIGN`; ordinary PASS/tests were defeated by bounded hostile
+probes. The P3-R1 actual-seam/committed-oracle redesign is ready for design
+review only. R1A/R1B implementation, P4-P6, lifecycle activation, downstream
+workspace and external effects remain closed.
 
 ## Purpose
 
@@ -70,12 +71,11 @@ runtime behavior remain unproven.
 
 ## Design Control Gate
 
-P0 critique/reconciliation, H0, P1 and P2 are satisfied. P3 may open only
-through the paired GC-018/work order at dispatch base
-`2628a2fb2eb9e4a551c03411be90fe5eececad19`. P3 is provider-free historical
-replay with frozen expected outcomes; it may not modify P2 owners, activate a
-lifecycle hook, change semantic review authority or open P4. No tranche opens
-automatically from P3's future disposition.
+P0 critique/reconciliation, H0, P1 and P2 are satisfied. Original P3 is
+rejected and cannot be repaired in-place or used to open P4. P3-R1 must split
+dispatcher/reviewer-owned committed-oracle ratification (R1A) from actual P2
+seam runner implementation (R1B). R1B cannot edit its oracle or P2 owners. No
+tranche opens automatically from design review or future replay completion.
 
 ## Governing Principles
 
@@ -316,16 +316,18 @@ reuse.
 | MFRP-H0 | existing autorun receipt verifier-identity hardening | conservative dependency-closure/interpreter binding, versioned receipt migration and hostile cache tests | `H0_CLOSED_PASS_BOUNDED` or disable reuse and stop |
 | MFRP-P1 | owner and contract ratification | existing-owner map, phase-return delta, threat model and Review Cost baseline | `CONTRACT_ACCEPTED_BOUNDED` or `STOP_EXISTING_CONTROLS_SUFFICIENT` |
 | MFRP-P2 | receipt/readout composition | receipt extension, AAF readout, canonical fixed preimage and hostile tests | `COMPOSED_LOCAL_PASS_BOUNDED` |
-| MFRP-P3 | historical replay | real-return fixtures, frozen known-defect and false-negative ledger | `REPLAY_PASS` or `RETURN_TO_DESIGN` |
+| MFRP-P3 | historical replay - rejected | self-referential fixture/helper result retained only as rejected evidence | `RETURN_TO_DESIGN` |
+| MFRP-P3-R1A | committed-oracle ratification | dispatcher/reviewer-owned source-bound cases, typed mutations and normative observable predicates committed before runner work | `ORACLE_RATIFIED_BOUNDED` or `RETURN_TO_DESIGN` |
+| MFRP-P3-R1B | actual-seam replay | runner invokes current P2 validator/readout; post-run result ledger separates execution completeness from safety candidate | `REPLAY_PASS` or `RETURN_TO_DESIGN` after independent review |
 | MFRP-P4 | shadow canary | sampled dual-run or independent audit without authority change | `CANARY_PASS` or `ROLLBACK_SHADOW` |
 | MFRP-P5 | selective Core activation | earliest applicable gates, trusted receipt admission and fail-closed escalation | `CORE_MACHINE_FIRST_ACTIVE_BOUNDED` |
 | MFRP-P6 | seven-phase and downstream adoption | phase templates, workspace projection freshness and adoption proof | `ADOPTION_PROVEN_BOUNDED` |
 
-No tranche opens automatically. H0 required an exact protected-path work order
-and independent acceptance before implementation. P1 opened only after H0
-closure; P2 now opens only through its exact protected-path work order and an
-explicit worker-execution checkpoint. P3 requires independently accepted P2
-closure. P6 cannot start before Core closure and explicit downstream release.
+No tranche opens automatically. R1A requires accepted redesign review plus a
+fresh exact baseline/work order. R1B requires a committed and independently
+ratified R1A oracle whose path, commit, file SHA-256, content digest and
+coverage-set digest are pinned in a separate work order. P4 requires accepted
+R1B replay; P6 cannot start before Core closure and downstream release.
 
 ## Historical Replay And Hostile Test Matrix
 
@@ -357,6 +359,27 @@ historical CVF return with known outcome; its expected result is frozen before
 canary. Zero tolerance categories: authority bypass, unauthorized paths, secret
 exposure, destructive/irreversible action, verifier self-attestation,
 predecessor-chain forgery and closure without hard-obligation evidence.
+
+### P3-R1 Actual-Seam Correction
+
+The normative expectation is no longer a worker-authored claimed receipt or
+readout result. R1A commits a source/locator/excerpt-bound case manifest with
+typed input mutations and observable safety predicates. R1B constructs a
+valid P2 receipt, applies each committed mutation in memory, invokes actual P2
+`_validate_receipt_integrity`, `build_machine_verification_readout` and
+`machine_readout_to_dict`, then compares the observed output to the committed
+predicate.
+
+The runner must fail closed at runtime, not only in tests, when the oracle
+identity drifts; case count is below eighteen; any required family or
+zero-tolerance class is absent; source/locator/excerpt binding fails; a
+mutation is unknown/unconsumed; or any case lacks one validator and one
+readout observation. Zero totals never count as successful recall.
+
+Only the R1A oracle is frozen before execution. The result ledger is produced
+after replay and records observations/divergences; it is not misrepresented as
+a pre-run frozen artifact. Complete execution with actual misses is
+`REPLAY_EVIDENCE_COMPLETE_RETURN_TO_DESIGN_CANDIDATE`, not a machine PASS.
 
 ## Metrics And Value Test
 
@@ -429,6 +452,10 @@ alone is insufficient.
   `UNCLASSIFIED` items, and never turns deterministic completion into advice.
 - Broad reruns require explicit evidence and cost justification.
 - Historical replay achieves zero misses in zero-tolerance categories.
+- Replay recall is based on actual P2 seam observations against a separately
+  committed oracle; expected-output strings cannot serve as observations.
+- Runtime rejects missing coverage, source/locator drift, oracle mutation and
+  zero-total classes before any safety candidate is emitted.
 - Shadow canary has an independent detector and shows no unexplained divergence
   from the trusted route.
 - Rollback is tested before activation.
@@ -489,10 +516,10 @@ its TruthReceipt-specific profile label to a different schema.
 
 ### Claim Update
 
-This roadmap is revised, CVF-reconciled and accepted through P2 local
-composition. It now authorizes the paired P3 historical replay work order for
-later no-commit execution and independent review. It does not claim a P3
-replay result, activate a lifecycle hook or open P4.
+This roadmap is accepted through P2 local composition and records original P3
+as `RETURN_TO_DESIGN`. It exposes the P3-R1 committed-oracle/actual-seam
+design for independent critique only. It does not authorize R1A oracle
+authoring, R1B implementation, P2 repair, lifecycle activation or P4.
 
 ## Checker Source Read-Ahead Block
 
@@ -500,8 +527,8 @@ replay result, activate a lifecycle hook or open P4.
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_truth_foundation_claim_guard.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_governed_file_size.py` |
 | literalTokensReviewed | roadmap structural groups; dispatch-ready work-order relationship; external-intake seven-row table; Truth Foundation claim boundaries; trace manifest labels; active-roadmap public disposition; size thresholds |
-| gateRunPurpose | confirm accepted P2 closure and P3 replay dispatch state after direct receipt/readout and historical-source inspection |
-| claimBoundary | checker PASS cannot execute or accept P3, open P4 or replace semantic review |
+| gateRunPurpose | confirm P3 rejection and P3-R1 design-only state after direct hostile probes and P2 seam inspection |
+| claimBoundary | checker PASS cannot ratify R1A, implement R1B, repair P2, open P4 or replace semantic review |
 
 ## Agent Operation Trace Block
 
@@ -509,21 +536,21 @@ replay result, activate a lifecycle hook or open P4.
 |---|---|
 | Actor | CVF dispatcher/orchestrator |
 | Provider or surface | local private provenance repository |
-| Session or invocation | GCLH-MFRP P3 dispatch authoring, 2026-09-01 |
+| Session or invocation | GCLH-MFRP P3 return-to-design and R1 redesign, 2026-09-01 |
 | Working directory | repository root |
 | Command or tool surface | current owner/source reads, `rg`, scaffold stdout, ADIF resolver, `apply_patch`, focused machine checks and git |
-| Target paths | this roadmap; P3 GC-018 baseline; P3 work order |
-| Allowed scope source | operator continuation instruction at the explicit post-P2 P3 checkpoint |
-| Before status evidence | HEAD `2628a2fb2eb9e4a551c03411be90fe5eececad19`; clean worktree; P3 dispatch packet paths absent |
-| After status evidence | P2 closure reflected and paired P3 dispatch packet authored; P3 replay output absent |
-| Diff evidence | exact three-path dispatch changed set |
-| Approval boundary | P3 planning/dispatch and independent packet review only |
-| Claim boundary | no P3 replay result, P4, lifecycle activation, downstream or external-effect authority |
+| Target paths | this roadmap; P3 independent rejection review; P3-R1 redesign assessment |
+| Allowed scope source | operator instruction to redesign after independent P3 rejection |
+| Before status evidence | HEAD `c87390b118de46c86eaa5e6b5e5f9b0a1e681415`; five rejected worker artifacts untracked and untouched |
+| After status evidence | rejection/design documents authored; rejected artifacts preserved; implementation closed |
+| Diff evidence | design-document changed set remains separate from five rejected worker paths |
+| Approval boundary | P3 reviewer disposition and P3-R1 design only |
+| Claim boundary | no oracle ratification, runner implementation, P2 repair, P4 or external-effect authority |
 | Agent type | dispatcher/orchestrator |
-| Invocation ID | `gclh-mfrp-p3-dispatch-2026-09-01` |
-| Expected manifest | this roadmap; P3 GC-018 baseline; P3 work order |
-| Actual changed set | same three paths |
-| Manifest delta | MATCH |
+| Invocation ID | `gclh-mfrp-p3-r1-redesign-2026-09-01` |
+| Expected manifest | N/A with reason: exact archive changed-set is content-addressed in `docs/reviews/rejected_evidence/MFRP_P3_2026-09-01/ARCHIVE_MANIFEST.txt`; this roadmap update dispatches no implementation manifest. |
+| Actual changed set | N/A with reason: repository status and the content-addressed archive manifest are the authoritative changed-set evidence for this design checkpoint. |
+| Manifest delta | N/A with reason: no implementation manifest is dispatched by this roadmap update. |
 
 ## Public Export Disposition
 
@@ -534,8 +561,8 @@ public-sync is not authorized.
 
 ## Claim Boundary
 
-This roadmap records the CVF-reconciled machine-first direction and accepted
-H0/P1/P2 results plus P3 dispatch authority. It does not claim P3 replay or
-acceptance, activate a lifecycle hook, open P4, activate SOT3 globally, modify
-downstream workspaces, or authorize provider/live, public-sync, deployment,
-release or production behavior.
+This roadmap records accepted H0/P1/P2, rejected original P3 and a design-only
+P3-R1 correction. It does not ratify an oracle, implement an actual-seam
+runner, claim recall or cost improvement, repair P2, activate a lifecycle
+hook, open P4, modify downstream workspaces, or authorize provider/live,
+public-sync, deployment, release or production behavior.

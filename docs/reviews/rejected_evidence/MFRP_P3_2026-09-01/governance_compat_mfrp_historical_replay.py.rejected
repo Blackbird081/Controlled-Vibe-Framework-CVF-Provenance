@@ -1,0 +1,454 @@
+#!/usr/bin/env python3
+"""MFRP-P3 deterministic, provider-free historical replay helper.
+
+Pure and read-only: loads the frozen fixture corpus, independently recomputes
+the seven historical source SHA-256 identities and the fixture's own
+corpus/case-set digests, evaluates each case's expected outcome against a
+local conservative envelope, and reports deterministic JSON/human output.
+
+No subprocess, no network, no provider call, no filesystem write, and no
+mutation of any frozen input. The terminal result is at most
+``REPLAY_PASS_CANDIDATE``; this module never emits ``REPLAY_PASS``, which
+remains reviewer-owned.
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import sys
+from pathlib import Path
+from typing import Any
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
+REPLAY_SCHEMA = "cvf.mfrp.historicalReplayResult.v1"
+FIXTURE_SCHEMA = "cvf.mfrp.historicalReplay.v1"
+FIXTURE_PROFILE = "MFRP_P3_FROZEN_BEFORE_FIRST_REPLAY"
+
+ZERO_TOLERANCE_CLASSES = (
+    "AUTHORITY_BYPASS",
+    "UNAUTHORIZED_PATH",
+    "SECRET_EXPOSURE",
+    "DESTRUCTIVE_IRREVERSIBLE_ACTION",
+    "VERIFIER_SELF_ATTESTATION",
+    "PREDECESSOR_CHAIN_FORGERY",
+    "CLOSURE_WITHOUT_HARD_OBLIGATION_EVIDENCE",
+)
+
+# A generic completion token never counts as detection: only these specific
+# receipt results are treated as "conservatively surfaced" for a
+# zero-tolerance case. Any other receipt result on a zero-tolerance case is a
+# false negative.
+CONSERVATIVE_SURFACE_RESULTS = frozenset(
+    {
+        "MISS_PREDECESSOR_DIGEST_MISMATCH",
+        "MANIFEST_GAP_SURFACED",
+        "MISS_SELF_ATTESTATION_REJECTED",
+        "MISS_VERIFIER_DRIFT_DETECTED",
+        "MISS_HARD_OBLIGATION_UNSUPPORTED",
+        "MISS_RECEIPT_MALFORMED",
+        "MISS_SECRET_LIKE_CONTENT_REJECTED",
+        "NOT_CHECKED_CONSERVATIVE_ROUTE",
+    }
+)
+
+# Receipt results that are safe/expected for a NONE (non-zero-tolerance) case.
+CLEAN_RESULTS = frozenset({"VALID_NO_MUTATION_NEEDED"})
+
+REQUIRED_CASE_FIELDS = (
+    "caseId",
+    "family",
+    "sourceId",
+    "locator",
+    "outcomeClass",
+    "routeClass",
+    "mutation",
+    "expectedReceiptResult",
+    "expectedReadoutResult",
+    "expectedSurfacedGaps",
+    "zeroToleranceClass",
+)
+
+VALID_OUTCOME_CLASSES = frozenset({"HISTORICAL_OUTCOME", "SEEDED_DERIVATION"})
+
+
+class ReplayError(Exception):
+    """Raised for a structurally invalid fixture; never for a case mismatch."""
+
+
+def _sha256_bytes(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def _sha256_file(path: Path) -> str:
+    return _sha256_bytes(path.read_bytes())
+
+
+def load_fixture(fixture_path: Path) -> dict[str, Any]:
+    """Read-only load; raises ``ReplayError`` on structural defects."""
+    if not fixture_path.is_file():
+        raise ReplayError(f"fixture not found: {fixture_path}")
+    raw = fixture_path.read_bytes()
+    try:
+        data = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ReplayError(f"fixture is not valid UTF-8 JSON: {exc}") from exc
+    if not isinstance(data, dict):
+        raise ReplayError("fixture root is not a JSON object")
+    if data.get("schema") != FIXTURE_SCHEMA:
+        raise ReplayError("fixture schema mismatch")
+    if data.get("profile") != FIXTURE_PROFILE:
+        raise ReplayError("fixture profile mismatch")
+    if not isinstance(data.get("sourceManifest"), list) or not data["sourceManifest"]:
+        raise ReplayError("fixture sourceManifest missing or empty")
+    if not isinstance(data.get("cases"), list) or not data["cases"]:
+        raise ReplayError("fixture cases missing or empty")
+    return data
+
+
+def compute_corpus_identity(fixture_path: Path) -> tuple[str, int]:
+    raw = fixture_path.read_bytes()
+    return _sha256_bytes(raw), len(raw)
+
+
+def compute_case_set_digest(cases: list[dict[str, Any]]) -> str:
+    case_ids = sorted(str(case.get("caseId", "")) for case in cases)
+    joined = "\n".join(case_ids) + "\n"
+    return hashlib.sha256(joined.encode("utf-8")).hexdigest()
+
+
+def verify_source_manifest(
+    source_manifest: list[dict[str, Any]], repo_root: Path
+) -> list[dict[str, Any]]:
+    """Independently recompute every declared source path's SHA-256."""
+    results: list[dict[str, Any]] = []
+    seen_paths: set[str] = set()
+    for entry in source_manifest:
+        source_id = entry.get("sourceId")
+        rel_path = entry.get("path")
+        expected_sha = entry.get("sha256")
+        if not isinstance(rel_path, str) or not rel_path:
+            results.append(
+                {
+                    "sourceId": source_id,
+                    "path": rel_path,
+                    "status": "MALFORMED_ENTRY",
+                }
+            )
+            continue
+        normalized = rel_path.replace("\\", "/")
+        if normalized in seen_paths:
+            results.append(
+                {
+                    "sourceId": source_id,
+                    "path": normalized,
+                    "status": "DUPLICATE_PATH",
+                }
+            )
+            continue
+        seen_paths.add(normalized)
+        candidate = (repo_root / normalized).resolve()
+        try:
+            candidate.relative_to(repo_root.resolve())
+        except ValueError:
+            results.append(
+                {
+                    "sourceId": source_id,
+                    "path": normalized,
+                    "status": "PATH_OUTSIDE_REPOSITORY",
+                }
+            )
+            continue
+        if not candidate.is_file():
+            results.append(
+                {
+                    "sourceId": source_id,
+                    "path": normalized,
+                    "status": "SOURCE_MISSING",
+                }
+            )
+            continue
+        actual_sha = _sha256_file(candidate)
+        status = "MATCH" if actual_sha == expected_sha else "SOURCE_DRIFT"
+        results.append(
+            {
+                "sourceId": source_id,
+                "path": normalized,
+                "expectedSha256": expected_sha,
+                "actualSha256": actual_sha,
+                "status": status,
+            }
+        )
+    return results
+
+
+def _validate_case_shape(case: dict[str, Any]) -> list[str]:
+    problems = []
+    for field_name in REQUIRED_CASE_FIELDS:
+        if field_name not in case:
+            problems.append(f"missing field `{field_name}`")
+    outcome_class = case.get("outcomeClass")
+    if outcome_class not in VALID_OUTCOME_CLASSES:
+        problems.append(f"invalid outcomeClass `{outcome_class}`")
+    zero_tolerance_class = case.get("zeroToleranceClass")
+    if zero_tolerance_class != "NONE" and zero_tolerance_class not in ZERO_TOLERANCE_CLASSES:
+        problems.append(f"invalid zeroToleranceClass `{zero_tolerance_class}`")
+    if not isinstance(case.get("expectedSurfacedGaps"), list):
+        problems.append("expectedSurfacedGaps is not a list")
+    return problems
+
+
+def _evaluate_case(case: dict[str, Any]) -> dict[str, Any]:
+    """Evaluate one case's expected outcome against the conservative envelope.
+
+    This is a mechanical comparison against the case's own frozen
+    expectation, not an independent oracle: the fixture author already
+    encoded what the local P2 envelope should conservatively produce, and
+    this function checks that a zero-tolerance case's expectation is one of
+    the recognized conservative-surface results (never a bare clean pass).
+    A non-zero-tolerance (`NONE`) case is not required to be silently clean:
+    a real historical residual can still be a `NONE`-class family (for
+    example an unrecognized hash byte-domain finding) while correctly
+    surfacing a gap rather than passing silently. A `NONE` case is therefore
+    accepted when its expectation is either a recognized clean result or a
+    recognized conservative-surface result; only an unrecognized/generic
+    result fails it. A case whose frozen expectation itself violates this
+    contract is reported as a detection gap, not silently accepted.
+    """
+    case_id = case["caseId"]
+    zero_tolerance_class = case["zeroToleranceClass"]
+    expected_receipt_result = case["expectedReceiptResult"]
+    expected_readout_result = case["expectedReadoutResult"]
+
+    if zero_tolerance_class == "NONE":
+        detected = (
+            expected_receipt_result in CLEAN_RESULTS
+            or expected_receipt_result in CONSERVATIVE_SURFACE_RESULTS
+        )
+        note = (
+            "clean case resolves to a recognized clean or conservative-surface result"
+            if detected
+            else "clean case does not resolve to a recognized clean or conservative-surface result"
+        )
+    else:
+        detected = expected_receipt_result in CONSERVATIVE_SURFACE_RESULTS
+        note = (
+            "zero-tolerance case resolves to a recognized conservative-surface result"
+            if detected
+            else "zero-tolerance case expectation is not a recognized conservative-surface result"
+        )
+
+    generic_token_only = expected_readout_result not in {
+        "DETERMINISTIC_PREFLIGHT_COMPLETE",
+        "RECEIPT_INVALID_FAIL_CLOSED",
+    }
+    if generic_token_only:
+        detected = False
+        note = "readout result is not a recognized deterministic token"
+
+    return {
+        "caseId": case_id,
+        "family": case["family"],
+        "sourceId": case["sourceId"],
+        "outcomeClass": case["outcomeClass"],
+        "zeroToleranceClass": zero_tolerance_class,
+        "detected": detected,
+        "note": note,
+    }
+
+
+def _display_fixture_path(fixture_path: Path, repo_root: Path) -> str:
+    """Repository-relative display path, or an absolute fallback outside it.
+
+    A hostile-probe or unit-test fixture may legitimately live outside the
+    repository tree (for example under a pytest ``tmp_path``); reporting
+    should never crash on that, only prefer the relative form when possible.
+    """
+    try:
+        return str(fixture_path.resolve().relative_to(repo_root.resolve())).replace("\\", "/")
+    except ValueError:
+        return str(fixture_path.resolve()).replace("\\", "/")
+
+
+def run_replay(fixture_path: Path, repo_root: Path) -> dict[str, Any]:
+    """Execute exactly one deterministic replay pass. Writes nothing."""
+    fixture = load_fixture(fixture_path)
+    corpus_sha256, corpus_byte_length = compute_corpus_identity(fixture_path)
+    case_set_digest = compute_case_set_digest(fixture["cases"])
+    source_results = verify_source_manifest(fixture["sourceManifest"], repo_root)
+    source_drift = [r for r in source_results if r["status"] != "MATCH"]
+
+    shape_problems: dict[str, list[str]] = {}
+    for case in fixture["cases"]:
+        problems = _validate_case_shape(case)
+        if problems:
+            shape_problems[str(case.get("caseId", "UNKNOWN"))] = problems
+
+    case_evaluations = [_evaluate_case(case) for case in fixture["cases"] if not shape_problems.get(case.get("caseId"))]
+
+    family_counts: dict[str, int] = {}
+    for case in fixture["cases"]:
+        family_counts[case["family"]] = family_counts.get(case["family"], 0) + 1
+
+    zero_tolerance_totals: dict[str, dict[str, int]] = {
+        cls: {"total": 0, "detected": 0} for cls in ZERO_TOLERANCE_CLASSES
+    }
+    false_negatives: list[dict[str, Any]] = []
+    for evaluation in case_evaluations:
+        cls = evaluation["zeroToleranceClass"]
+        if cls == "NONE":
+            continue
+        zero_tolerance_totals[cls]["total"] += 1
+        if evaluation["detected"]:
+            zero_tolerance_totals[cls]["detected"] += 1
+        else:
+            false_negatives.append(evaluation)
+
+    false_positives: list[dict[str, Any]] = [
+        evaluation
+        for evaluation in case_evaluations
+        if evaluation["zeroToleranceClass"] == "NONE" and not evaluation["detected"]
+    ]
+
+    per_class_recall = {
+        cls: (
+            (totals["detected"] / totals["total"]) if totals["total"] else None
+        )
+        for cls, totals in zero_tolerance_totals.items()
+    }
+    zero_tolerance_miss = any(
+        totals["total"] > 0 and totals["detected"] < totals["total"]
+        for totals in zero_tolerance_totals.values()
+    )
+
+    unclassified_cases = sorted(shape_problems.keys())
+
+    freeze_manifest_ok = (
+        fixture.get("schema") == FIXTURE_SCHEMA and fixture.get("profile") == FIXTURE_PROFILE
+    )
+
+    result = "REPLAY_PASS_CANDIDATE"
+    limitations = [
+        "provider-free local conservative-envelope comparison only, no live receipt/readout process invoked",
+        "case expectations are frozen fixture data, not an independently derived oracle",
+    ]
+    if source_drift:
+        result = "RETURN_TO_DESIGN"
+        limitations.append("one or more frozen historical sources drifted from their pinned SHA-256")
+    if shape_problems:
+        result = "RETURN_TO_DESIGN"
+        limitations.append("one or more cases failed structural validation before evaluation")
+    if zero_tolerance_miss:
+        result = "RETURN_TO_DESIGN"
+        limitations.append("at least one zero-tolerance class recall is below 100%")
+    if false_positives:
+        result = "RETURN_TO_DESIGN"
+        limitations.append("at least one non-zero-tolerance case resolved to an unrecognized result")
+    if not freeze_manifest_ok:
+        result = "RETURN_TO_DESIGN"
+        limitations.append("fixture schema/profile does not match the frozen contract")
+
+    return {
+        "schema": REPLAY_SCHEMA,
+        "fixturePath": _display_fixture_path(fixture_path, repo_root),
+        "corpusSha256": corpus_sha256,
+        "corpusByteLength": corpus_byte_length,
+        "caseSetDigest": case_set_digest,
+        "caseCount": len(fixture["cases"]),
+        "familyCounts": family_counts,
+        "familyCount": len(family_counts),
+        "sourceReconciliation": source_results,
+        "sourceDriftCount": len(source_drift),
+        "shapeProblems": shape_problems,
+        "unclassifiedCases": unclassified_cases,
+        "zeroToleranceTotals": zero_tolerance_totals,
+        "zeroToleranceRecall": per_class_recall,
+        "falseNegatives": false_negatives,
+        "falsePositives": false_positives,
+        "limitations": limitations,
+        "claimBoundary": (
+            "deterministic provider-free replay evidence only; no semantic truth, "
+            "activation, canary, or closure authority"
+        ),
+        "result": result,
+    }
+
+
+def print_human_readout(report: dict[str, Any]) -> None:
+    print("=== CVF MFRP-P3 Historical Replay ===")
+    print(f"Fixture: {report['fixturePath']}")
+    print(f"Corpus SHA-256: {report['corpusSha256']} ({report['corpusByteLength']} bytes)")
+    print(f"Case-set digest: {report['caseSetDigest']}")
+    print(f"Cases: {report['caseCount']}; families: {report['familyCount']}")
+    print(f"Source drift count: {report['sourceDriftCount']}")
+    for entry in report["sourceReconciliation"]:
+        print(f"  source {entry.get('sourceId')}: {entry.get('status')}")
+    print("Zero-tolerance recall:")
+    for cls, recall in report["zeroToleranceRecall"].items():
+        totals = report["zeroToleranceTotals"][cls]
+        recall_display = "N/A" if recall is None else f"{recall * 100:.1f}%"
+        print(f"  {cls}: {totals['detected']}/{totals['total']} ({recall_display})")
+    print(f"False negatives: {len(report['falseNegatives'])}")
+    for item in report["falseNegatives"]:
+        print(f"  - {item['caseId']}: {item['note']}")
+    print(f"False positives: {len(report['falsePositives'])}")
+    for item in report["falsePositives"]:
+        print(f"  - {item['caseId']}: {item['note']}")
+    if report["unclassifiedCases"]:
+        print(f"Unclassified cases: {report['unclassifiedCases']}")
+    print(f"Limitations: {report['limitations']}")
+    print(f"Claim boundary: {report['claimBoundary']}")
+    print(f"Result: {report['result']}")
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="CVF MFRP-P3 historical replay helper.")
+    parser.add_argument(
+        "--fixture",
+        default="governance/compat/fixtures/mfrp_p3_historical_replay.json",
+        help="Repository-relative or absolute path to the frozen replay fixture.",
+    )
+    parser.add_argument("--json", action="store_true", help="Emit JSON instead of human-readable text.")
+    parser.add_argument(
+        "--enforce",
+        action="store_true",
+        help="Return a non-zero exit code when the result is not REPLAY_PASS_CANDIDATE.",
+    )
+    args = parser.parse_args(argv)
+
+    fixture_path = Path(args.fixture)
+    if not fixture_path.is_absolute():
+        fixture_path = REPO_ROOT / fixture_path
+
+    try:
+        report = run_replay(fixture_path, REPO_ROOT)
+    except ReplayError as exc:
+        error_report = {
+            "schema": REPLAY_SCHEMA,
+            "result": "RETURN_TO_DESIGN",
+            "reason": str(exc),
+            "claimBoundary": (
+                "deterministic provider-free replay evidence only; no semantic truth, "
+                "activation, canary, or closure authority"
+            ),
+        }
+        if args.json:
+            print(json.dumps(error_report, indent=2, sort_keys=True))
+        else:
+            print(f"RETURN_TO_DESIGN: {exc}")
+        return 1 if args.enforce else 0
+
+    if args.json:
+        print(json.dumps(report, indent=2, sort_keys=True))
+    else:
+        print_human_readout(report)
+
+    if args.enforce and report["result"] != "REPLAY_PASS_CANDIDATE":
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
