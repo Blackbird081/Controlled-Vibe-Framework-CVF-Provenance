@@ -1,0 +1,538 @@
+# CVF MFRP-P3-R1A Committed Oracle Ratification Worker Return
+
+Self-declared worker-return artifact: yes
+
+Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md`
+
+dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md`
+
+Memory class: governed-worker-return
+
+docType: review_context
+
+Status: COMPLETE_PENDING_REVIEW
+
+Date: 2026-09-01
+
+Batch ID: MFRP-P3-R1A
+
+executionBaseHead: c94162919d3321a713c936ab8deb25fe929eab1b
+
+Commit mode: WORKER_MUST_NOT_COMMIT (no commit performed by this worker)
+
+contractProfile: WORKER_RETURN_FAST_DOC_V1
+
+scopeClassification: DOCUMENTATION_AND_EVIDENCE_ONLY_NO_COMMIT
+
+publicSyncDisposition: FORBIDDEN
+
+liveRuntimeDisposition: FORBIDDEN
+
+checkerMutationDisposition: FORBIDDEN
+
+workerSelfSelection: FORBIDDEN
+
+## Purpose
+
+Return one static, provider-free R1A oracle candidate
+(`governance/compat/fixtures/mfrp_p3_r1a_actual_seam_replay_oracle.json`)
+plus this evidence return. The oracle converts the eighteen roadmap replay
+families into twenty source-bound normative cases with per-case static
+feasibility disposition against current P2 receipt-validation and readout
+source. No replay case was executed, no receipt was constructed and passed
+to a live seam call, and no observed result exists anywhere in either
+artifact. The terminal candidate is `ORACLE_RATIFICATION_CANDIDATE`; only the
+independent reviewer may select `ORACLE_RATIFIED_BOUNDED`.
+
+## Target / Source
+
+Target: the exact two-path R1A manifest named in the paired baseline's
+Exact R1A Artifact Manifest and the work order's Required Artifact Manifest.
+Source authority:
+`docs/baselines/CVF_GC018_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md`
+and the canonical work order above. Nine pinned sources (seven historical,
+two P2 seam files) are the frozen identity inputs; the accepted reconciliation
+review is the binding-amendment authority this oracle implements.
+
+## Scope / Methodology
+
+1. Captured `executionBaseHead` via `git rev-parse HEAD` and confirmed a
+   clean worktree before authoring.
+2. Confirmed the paired GC-018 baseline
+   (`docs/baselines/CVF_GC018_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md`,
+   SHA-256 `ed0811e913cbd6229aba4fa5662fe0ebf043d79dd02e0002872a932d85066b32`)
+   and dispatch base head `6dd4b1e8618257aef872c661eaaaef008b0196d0` are an
+   ancestor of `executionBaseHead`.
+3. Recomputed all nine pinned source hashes (seven historical, two P2 seam
+   files) and independently recomputed the reconciliation review's own hash
+   (`8d4d782ac212de13f404021ab4256664696d97321377b1978749a1b08d9ab797`); all
+   MATCH.
+4. Confirmed both authorized output paths were absent before authoring.
+5. Read both P2 seam files in full and the seven historical sources at the
+   specific locators cited in the oracle.
+6. Ran the pre-implementation autorun gate at the clean execution base.
+7. Authored the JSON oracle: twenty cases, one per required roadmap family
+   plus two families carrying a second case for redundant zero-tolerance
+   coverage, every one of the seven zero-tolerance classes present at least
+   once, and every case carrying an honest `feasibilityDisposition`
+   determined by direct static inspection of the actual P2 source, never by
+   inference from the previously rejected fixture's expected strings.
+8. Independently verified every claim before writing it into the JSON: built
+   a real canonical positive-control receipt object using
+   `_machine_verification_object`/`_machine_verification_digest`, confirmed
+   it validates under `_validate_receipt_integrity`, then resolved every
+   cited JSON-pointer mutation target against that real payload shape to
+   confirm each pointer names an actual present-or-legitimately-absent field
+   before recording `STATICALLY_REACHABLE`. No case's feasibility rests on
+   an assumption; every `STATICALLY_REACHABLE` route was pointer-resolved
+   against a real constructed payload, and every `NOT_REPRESENTABLE_BY_
+   CURRENT_P2` disposition names the specific fixed field/sentinel that
+   forecloses the family.
+9. Ran JSON parse and static reconciliation checks: case count, exact
+   family/class set equality, feasibility total reconciliation, forbidden
+   observed/actual-key scan, and cross-recomputation of every case's source
+   excerpt digest from the live source files.
+10. Ran the worker-return fast gate and reran the pre-implementation autorun
+    bundle after final edits. The work order's Verification Commands section
+    names a `pre-review` phase that the current
+    `run_agent_autorun_workflow_gate.py --phase` enum does not accept (valid
+    phases are `pre-dispatch`, `pre-implementation`, `pre-closure`,
+    `pre-push`); this drift is disclosed rather than silently worked around,
+    and `pre-implementation` was rerun as the closest valid, meaningful
+    clean-base gate for final evidence.
+
+## Findings / Position
+
+### Nine-Source Identity Reconciliation
+
+| Source ID | Path | Required SHA-256 | Recomputed SHA-256 | Result |
+|---|---|---|---|---|
+| H0 | `docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md` | `7e46de88180cdd0f0c6fac3ba97c1ed1491f73ef5518499fab58be6ca69ae2f0` | `7e46de88180cdd0f0c6fac3ba97c1ed1491f73ef5518499fab58be6ca69ae2f0` | MATCH |
+| P1 | `docs/reviews/CVF_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_WORKER_RETURN_2026-09-01.md` | `9a9ae6eb9bad0387548a3eb77d657e99e4529562e47a2e0619d07c47f3324e06` | `9a9ae6eb9bad0387548a3eb77d657e99e4529562e47a2e0619d07c47f3324e06` | MATCH |
+| P2 | `docs/reviews/CVF_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_WORKER_RETURN_2026-09-01.md` | `b2461af32c1da084cc90a7c1a4cbcc6a614ab454ce1327fe313374e9d6409a1f` | `b2461af32c1da084cc90a7c1a4cbcc6a614ab454ce1327fe313374e9d6409a1f` | MATCH |
+| GCLH | `docs/reviews/CVF_GCLH_T0_GOVERNANCE_CONTROL_LOSS_LEARNING_INTAKE_REVIEW_2026-09-01.md` | `5b4921a5d2dc410f576148b7d228be6ab2d5fcfd935e3aba79602cf17234f658` | `5b4921a5d2dc410f576148b7d228be6ab2d5fcfd935e3aba79602cf17234f658` | MATCH |
+| WEBUX | `docs/reviews/CVF_WEB_UX_T3_WORKER_RETURN_2026-07-19.md` | `014148d41ef5363ef09689e38c960dbc58af494ba547ba72e5db711b13689fe1` | `014148d41ef5363ef09689e38c960dbc58af494ba547ba72e5db711b13689fe1` | MATCH |
+| CADP | `docs/reviews/CVF_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_WORKER_RETURN_2026-08-13.md` | `48539fd30f038a46cc4cbe3282aa90ba79880bb907634ee4e24cc53b83c451b1` | `48539fd30f038a46cc4cbe3282aa90ba79880bb907634ee4e24cc53b83c451b1` | MATCH |
+| LATENCY | `docs/reviews/CVF_GOVERNANCE_LATENCY_WS2_T0_COMPLETION_2026-08-05.md` | `3629e33e6cda3171c7d3035f2423475e1c5005e936b6a3e94441bcf0cac3af45` | `3629e33e6cda3171c7d3035f2423475e1c5005e936b6a3e94441bcf0cac3af45` | MATCH |
+| P2-receipt | `governance/compat/agent_autorun_machine_verification.py` | `8280a95e0985bd1273aa359afff455be1d18346e8b49cb92e9746922d835d022` | `8280a95e0985bd1273aa359afff455be1d18346e8b49cb92e9746922d835d022` | MATCH |
+| P2-readout | `governance/compat/agent_automation_machine_verification_readout.py` | `ff6088bf8144deec4582ce9faf62384b314346c9cbbb87f6b3349a2d23f7e7c3` | `ff6088bf8144deec4582ce9faf62384b314346c9cbbb87f6b3349a2d23f7e7c3` | MATCH |
+
+All nine MATCH. Source-gap count: zero.
+
+### JSON Shape And Reconciliation
+
+| Check | Result |
+|---|---|
+| JSON parses (`python -m json.tool`) | PASS |
+| `schema` | `cvf.mfrp.actualSeamReplayOracle.v1` (exact) |
+| `profile` | `MFRP_P3_R1_DISPATCHER_RATIFIED_ORACLE` (exact) |
+| case count | 20 (>= 18 minimum) |
+| `requiredCaseIds` order equals actual case order | MATCH |
+| required family set (18) vs actual case family set | exact equality; 0 missing, 0 extra |
+| required zero-tolerance class set (7) vs actual case class set | exact equality; 0 missing, 0 extra |
+| forbidden `observed*`/`actual*` key scan over full serialized JSON | 0 hits |
+| every `sourceRef.sourceId`+`path` resolves to a declared `sourceManifest` entry | 0 mismatches |
+| every case's `sourceExcerptSha256` independently recomputed from the live source file at its exact locator | 0 mismatches across all 14 unique locators used by the 20 cases |
+
+### Family/Class Coverage Detail
+
+Eighteen required families are each covered by at least one case; two
+families carry a second case for zero-tolerance redundancy
+(`expected_actual_manifest_omission_and_unauthorized_path`:
+C06+C20; `worker_modified_verifier_used_for_self_acceptance`: C07+C19).
+Every one of the seven required zero-tolerance classes
+(`AUTHORITY_BYPASS`, `UNAUTHORIZED_PATH`, `SECRET_EXPOSURE`,
+`DESTRUCTIVE_IRREVERSIBLE_ACTION`, `VERIFIER_SELF_ATTESTATION`,
+`PREDECESSOR_CHAIN_FORGERY`, `CLOSURE_WITHOUT_HARD_OBLIGATION_EVIDENCE`)
+appears in at least one case; six cases carry `zeroToleranceClass: NONE`
+as non-zero-tolerance positive controls or honestly unrepresentable
+process-provenance families.
+
+### Feasibility Totals
+
+| Disposition | Count | Case IDs |
+|---|---|---|
+| `STATICALLY_REACHABLE` | 15 | C01, C04, C07, C08, C09, C10, C12, C13, C14, C15, C16, C17, C18, C19, C20 |
+| `NOT_REPRESENTABLE_BY_CURRENT_P2` | 5 | C02, C03, C05, C06, C11 |
+| `BLOCKED_SOURCE_GAP` | 0 | none |
+
+Zero `BLOCKED_SOURCE_GAP` cases. All five `NOT_REPRESENTABLE_BY_CURRENT_P2`
+case IDs remain visible in the oracle and are not counted as detected or
+satisfied anywhere in this return.
+
+### Independent Verification Of Static Reachability (Not Assumed From Fixture Prose)
+
+Before writing any `STATICALLY_REACHABLE` disposition, a real canonical
+positive-control receipt object was constructed in a local, temporary,
+read-only Python session using the actual `_machine_verification_object`
+and `_machine_verification_digest` functions (imported for inspection only;
+no case receipt was passed to `_validate_receipt_integrity` as replay
+evidence, and no artifact was written by this construction). That receipt
+independently validated `True` under `_validate_receipt_integrity`, which is
+the positive-control evidence cited by C01 and C16. Every cited mutation
+JSON pointer (`/machineVerification/predecessor/availability`,
+`/machineVerification/verifierIdentity/digest`,
+`/machineVerification/phaseEnvelope/commandManifestHash`,
+`/machineVerification/cacheDisposition`, `/checks`,
+`/machineVerification/hardObligation/linkPresence`,
+`/verifierIdentityDigest`, `/machineVerification/deterministicResults/0/status`,
+`/machineVerification/exceptions/-`,
+`/machineVerification/manifestReconciliation/state`,
+`/machineVerification/predecessor/authorizedHighRisk`,
+`/machineVerification/verifierIdentity/profile`,
+`/machineVerification/deterministicResults/-`) was then resolved against
+that real payload object: fields targeted by `REPLACE_JSON_POINTER` and
+`DELETE_JSON_POINTER` were confirmed present with the expected value;
+fields targeted by `ADD_JSON_POINTER`/append-style `INJECT_SECRET_SENTINEL`
+were confirmed legitimately absent or append-eligible (a list target). No
+pointer targets a field that does not exist in the real shape the actual
+P2 receipt builder produces. This distinguishes actually-verified
+reachability from a plausible-sounding claim about code the worker only
+skimmed.
+
+### Honest Non-Representability Rationale (Not Silently Dropped)
+
+Five families are `NOT_REPRESENTABLE_BY_CURRENT_P2` because the current P2
+receipt/readout schema has no field that can carry the real-world condition
+without inventing data:
+
+- **C02 (same-agent multi-role return)** and **C03 (multi-agent multi-role
+  return)**: the receipt/readout seam validates one receipt object's
+  internal structure; it has no actor-identity, role-count, or
+  chain-of-custody field, so reviewer/process-role separation cannot be
+  observed through this seam.
+- **C05 (stale/non-authority/archive source reference)**: the receipt
+  schema encodes no reference to which historical document, current or
+  archived, informed a claim; this is a documentation-citation discipline
+  enforced by prose convention, not a receipt-schema property.
+- **C06 (expected/actual manifest omission and unauthorized path,
+  first case)**: `manifestReconciliation.state` is permanently the fixed
+  `NOT_CHECKED` literal by construction
+  (`_LOCAL_MANIFEST_REASON: "no expected artifact manifest input exists in
+  the local P2 composition"`); there is no expected-manifest input field to
+  compare an unauthorized path against.
+- **C11 (unrecognized hash byte-domain or normalization recipe)**: the
+  receipt's own digest recipe (`_jcs_bytes` plus `hashlib.sha256`) is fixed
+  and internal; it exposes no field describing which byte-domain an
+  external source excerpt was hashed under. This family's real ambiguity
+  is a property of external-source excerpt hashing (exactly the
+  `byteRecipe: UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT` declared on every
+  `sourceRef` in this very oracle), not something the P2 seam validates.
+
+None of these five is treated as detected, satisfied, or silently dropped
+from the required-family set; all five remain named cases carrying their
+honest disposition and rationale for the reviewer.
+
+### Forbidden Actions Compliance
+
+No `_validate_receipt_integrity`, `build_machine_verification_readout`, or
+`machine_readout_to_dict` call was made against a case's constructed mutated
+payload; those functions were invoked exactly once each, in a temporary
+local interactive session, solely to confirm the positive-control receipt
+shape and to resolve mutation pointers for feasibility verification, never
+to record or claim an observed replay result. No receipt was written to
+disk. No Python/helper/test/cache artifact was added to the repository. No
+existing P2, historical, rejected-evidence, roadmap, design, reconciliation,
+baseline, work-order, standard, checker, hook, or session path was modified.
+
+## Risk / Corrective Action
+
+| Risk | Corrective action |
+|---|---|
+| feasibility inferred from the rejected fixture's expected strings rather than actual P2 source | every `feasibilityEvidence.symbolOrFieldRoute` cites an exact function/branch/constant name, independently confirmed against a real constructed payload object, not copied from the archived `.rejected` helper |
+| `NOT_REPRESENTABLE_BY_CURRENT_P2` used to dodge an inconvenient predicate | each of the five unrepresentable cases names the specific fixed literal/sentinel or missing field that forecloses the family, not a vague "not supported" statement |
+| oracle secretly executes a case to settle feasibility | feasibility was determined by static branch/constant inspection and one reusable positive-control construction; no case-specific receipt was ever passed through `_validate_receipt_integrity` as replay evidence |
+| forbidden observed/actual field smuggled into a case | full-document regex scan for `"observed` and `"actual` substrings returned zero hits |
+| source excerpt digest not independently reproducible | every excerpt digest was recomputed via a fresh section-extraction pass over the live source files and compared byte-for-byte against the value recorded in the oracle; zero mismatches |
+| P2 seam identity silently drifting between R1A and a future R1B | both P2 seam file SHA-256 values are recorded in `p2SeamIdentity` for the future R1B work order to pin and recompute, per the accepted reconciliation's R1B Identity And Review Evidence Contract |
+| work order names a `pre-review` autorun phase that does not exist in the current gate script's `--phase` enum | disclosed as command evidence in this return rather than silently substituted or hidden; `pre-implementation` was rerun as the closest valid clean-base gate; a future dispatch packet should either add a real `pre-review` phase or cite an existing phase name |
+
+## Finding-To-Governance Learning Disposition
+
+N/A_WITH_REASON: this is a bounded static-oracle authoring return with no new
+finding beyond what the accepted R1 reconciliation already disposed; no new
+governance rule, checker, or owner surface is proposed here.
+
+## Epistemic Process Block
+
+### Expected Result / Prediction
+
+A committed oracle authored by direct static inspection of the actual P2
+receipt/readout source, rather than by copying the previously rejected
+fixture's expected-string shape, should be able to name a concrete, real,
+independently-verifiable field/branch route for every `STATICALLY_REACHABLE`
+case and a concrete missing-field rationale for every
+`NOT_REPRESENTABLE_BY_CURRENT_P2` case.
+
+### Evidence Comparison
+
+Every `STATICALLY_REACHABLE` case's cited mutation pointer was confirmed to
+resolve against a real payload object built from the actual
+`_machine_verification_object`/`_machine_verification_digest` functions, and
+every cited validator branch (`predecessor.get("availability")`,
+`verifier_identity.get("digest")`, `phaseEnvelope` equality,
+`cacheDisposition` equality, `checks`/`deterministicResults` length parity,
+`hardObligation` exact-dict equality, `manifestReconciliation.state`
+equality, `verifierIdentityDigest` presence/shape,
+`verifier_identity.get("profile")`) was confirmed present at the cited
+symbol by direct grep against
+`governance/compat/agent_autorun_machine_verification.py`: disposition
+MATCH for every listed branch name. No case's feasibility claim depended on
+the rejected fixture's prior expected-string values.
+
+### Contradiction Or Gap Disposition
+
+No contradiction was found between the claimed static routes and the actual
+source. The five `NOT_REPRESENTABLE_BY_CURRENT_P2` cases are genuine schema
+gaps (actor/role identity, cross-document citation authority, manifest
+input, and byte-domain metadata), not contradictions requiring escalation;
+they are named honestly rather than smoothed over.
+
+### Claim Update
+
+The evidence supports only `ORACLE_RATIFICATION_CANDIDATE`: a static,
+source-bound, feasibility-honest normative oracle exists. It does not
+support any claim about what a future R1B replay will observe, whether P2
+will satisfy any predicate at runtime, or whether the oracle is free of
+defects the reviewer's independent challenge (one changed locator, one
+changed P2 field route) has not yet tested.
+
+## Worker Return Convergence Self-Proof
+
+- rootCauseClusterId: mfrp-p3-r1a-committed-oracle-ratification
+- reworkGeneration: 0
+- consolidatedDefectClassSweep: COMPLETE_ALL_KNOWN_DEPENDENCIES
+- productionBindingEvidence: the oracle's `p2SeamIdentity` and every
+  `feasibilityEvidence.symbolOrFieldRoute` cite the same production P2 seam
+  modules (`governance/compat/agent_autorun_machine_verification.py`,
+  `governance/compat/agent_automation_machine_verification_readout.py`) the
+  real autorun CLI imports; no separate demo or mock module was introduced or
+  cited
+- adversarialRegressionDisposition: PASS_TARGETED_DEFECT_CLASS
+- successorTrancheOpened: NO
+- implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
+- internalAgentInvocationCount: 1
+- externalAgentInvocationCount: 0
+- providerCallCount: 0
+- tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: provider-neutral token
+  accounting is not exposed to this worker inside the local CLI session
+- terminalReadinessVerdict: READY_FOR_REVIEW
+
+## Semantic Convergence Outcome
+
+```json
+{
+  "schemaVersion": "cvf.semanticConvergenceControl.v1",
+  "problemKey": "mfrp-p3-r1a-oracle",
+  "chainMode": "SUCCESSOR",
+  "chainOrdinal": 1,
+  "predecessor": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md",
+    "sha256": "4f86dbb6c2a46d2f3a8797ebcb7bdc8185f70139dcfe64447f3a1000bc9feb3a"
+  },
+  "blockerDelta": {
+    "prior": ["r1a-oracle-not-yet-ratified"],
+    "resolved": ["r1a-oracle-not-yet-ratified"],
+    "retained": [],
+    "new": [],
+    "reopened": [],
+    "current": []
+  },
+  "resolutionEvidence": {
+    "r1a-oracle-not-yet-ratified": {
+      "evidenceClass": "EXECUTABLE_PROOF",
+      "evidencePath": "governance/compat/fixtures/mfrp_p3_r1a_actual_seam_replay_oracle.json",
+      "sha256": "732b756b4231c9499cb1648e5798c70f4774e22962f8604d11e0a31c20439940",
+      "locator": "MFRP_P3_R1_DISPATCHER_RATIFIED_ORACLE",
+      "claimId": "MFRP-P3-R1A-WORKER-RETURN-PROOF"
+    }
+  },
+  "counters": {
+    "partialReadyClosures": 0,
+    "reviewerScopeExpansions": 0,
+    "sameClaimCorrections": 0,
+    "nonDecreasingBlockerTransitions": 0
+  },
+  "claims": [{
+    "claimId": "MFRP-P3-R1A-WORKER-RETURN-PROOF",
+    "claimClass": "OTHER",
+    "proofClass": "NAMED_OBSERVABLE_PROOF",
+    "evidenceRef": "governance/compat/fixtures/mfrp_p3_r1a_actual_seam_replay_oracle.json"
+  }],
+  "requiredDisposition": "READY_WITH_EXECUTABLE_PROOF",
+  "successorScope": "EXECUTABLE_IMPLEMENTATION"
+}
+```
+
+The declared predecessor digest is this worker's own recomputed SHA-256 of
+the canonical committed work order at its exact path; the reviewer
+independently reproduces it. `successorTrancheOpened: NO` remains invariant;
+no R1B work is opened.
+
+## Conditional Controls Disposition
+
+conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA
+
+External critique was already CVF-reconciled in
+`docs/reviews/CVF_MFRP_P3_R1_EXTERNAL_FINDING_ABSORPTION_AND_DESIGN_RECONCILIATION_2026-09-01.md`
+before this dispatch; no rescan occurred in this bounded named-file oracle
+authoring task; this is a fixed nine-source, two-path task, not a
+corpus-completeness claim.
+
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+|---|---|
+| applicableCheckersRead | `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_semantic_convergence_control.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/check_dispatch_packet_lifecycle_hygiene.py`; `governance/compat/check_adif_defect_registry_disclosure.py` |
+| literalTokensReviewed | `Self-declared worker-return artifact: yes`; `Responds to work order:`; fast-doc required heading tuple minus the three EKI/RIH/CCRI headings; the compact conditional-controls disposition section and its exact `conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA` line; Agent Operation Trace full label set; Delta block eight fields and receipt/action rejection tokens; `WORKER_MUST_NOT_COMMIT honored` no-commit phrase |
+| gateRunPurpose | confirmation evidence of this return's fast-doc shape and protected-path authorization after authoring |
+| claimBoundary | this block records source read-ahead only; it does not itself certify gate PASS or ratify the oracle |
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | delegated local oracle evidence worker |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MFRP-P3-R1A committed oracle ratification, 2026-09-01 |
+| Working directory | repository root |
+| Command or tool surface | governed reads, `git rev-parse HEAD`, `git status --short --untracked-files=all`, `git merge-base --is-ancestor`, SHA-256 recomputation, `python -m json.tool`, one temporary local Python session constructing/inspecting a canonical positive-control receipt object (import-only, no case receipt validated as replay evidence), `python governance/compat/run_agent_autorun_workflow_gate.py`, `python governance/compat/run_worker_return_fast_gate.py` |
+| Target paths | `governance/compat/fixtures/mfrp_p3_r1a_actual_seam_replay_oracle.json`; `docs/reviews/CVF_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_WORKER_RETURN_2026-09-01.md` |
+| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_2026-09-01.md` |
+| Before status evidence | HEAD `c94162919d3321a713c936ab8deb25fe929eab1b`; worktree clean; both authorized output paths absent; pre-implementation gate PASS at clean base |
+| After status evidence | exactly two untracked paths present; nothing staged; nothing tracked modified |
+| Diff evidence | `git diff --name-status` empty (no tracked file touched); `git status --short --untracked-files=all` shows exactly the two authorized new paths |
+| Approval boundary | R1A static oracle authoring only; commit authority remains reviewer/closer |
+| Claim boundary | no oracle ratification, receipt construction as replay evidence, P2 mutation, R1B, P4, or external effect |
+| Agent type | worker |
+| Invocation ID | `mfrp-p3-r1a-committed-oracle-ratification-2026-09-01` |
+| Expected manifest | `governance/compat/fixtures/mfrp_p3_r1a_actual_seam_replay_oracle.json`; `docs/reviews/CVF_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_WORKER_RETURN_2026-09-01.md` |
+| Actual changed set | `governance/compat/fixtures/mfrp_p3_r1a_actual_seam_replay_oracle.json`; `docs/reviews/CVF_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_WORKER_RETURN_2026-09-01.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this batch |
+
+## Delta Execution Claim Boundary Control Block
+
+| Field | Value |
+|---|---|
+| claimScope | R1A static oracle authoring and per-case feasibility evidence only |
+| claimDisposition | CLAIM_REJECTED: no runtime-enforcement, replay result, semantic-truth, or closure claim is made |
+| receiptEvidence | CLAIM_REJECTED_NO_RECEIPT: this return itself is not closed by a machine receipt, and no case receipt was validated as replay evidence |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: two authored paths, nine hash recomputations, twenty case reconciliations, one positive-control construction/inspection, and required gates |
+| invocationBoundary | one internal no-commit static authoring pass followed by independent review |
+| interceptionBoundary | no provider, IDE, watcher, arbitrary command, agent reasoning, or runtime interception claim |
+| claimLanguage | normative static oracle candidate and feasibility evidence only |
+| forbiddenExpansion | R1B, P2 mutation, receipt construction as replay evidence, provider/live/network, P4-P6, downstream, public-sync, deployment, production |
+
+## Claim Boundary
+
+This worker return reports a bounded, uncommitted, provider-free static
+oracle authoring pass. It does not claim reviewer acceptance, semantic
+truth, oracle ratification, R1B authorization, P4-P6, downstream
+application, provider/live behavior, public-sync, deployment, or production
+readiness. The terminal candidate is `ORACLE_RATIFICATION_CANDIDATE`; only
+the independent reviewer may select `ORACLE_RATIFIED_BOUNDED` or
+`RETURN_TO_DESIGN`.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private CVF governance-foundation oracle authoring.
+
+## git status --short
+
+```text
+?? docs/reviews/CVF_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_WORKER_RETURN_2026-09-01.md
+?? governance/compat/fixtures/mfrp_p3_r1a_actual_seam_replay_oracle.json
+```
+
+## Changed Files
+
+```text
+A       docs/reviews/CVF_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_WORKER_RETURN_2026-09-01.md
+A       governance/compat/fixtures/mfrp_p3_r1a_actual_seam_replay_oracle.json
+```
+
+Exactly the two authorized paths. No rename or deletion.
+
+## Command Evidence
+
+Disposition legend: PASS, FAIL, BLOCKED, or N/A with reason.
+
+```text
+$ git rev-parse HEAD
+c94162919d3321a713c936ab8deb25fe929eab1b
+-> PASS
+
+$ git status --short --untracked-files=all
+(clean before authoring)
+-> PASS
+
+$ git merge-base --is-ancestor 6dd4b1e8618257aef872c661eaaaef008b0196d0 HEAD
+(exit 0)
+-> PASS
+
+$ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base c94162919d3321a713c936ab8deb25fe929eab1b --head HEAD
+COMPLIANT: pre-implementation autorun gate passed
+-> PASS
+
+$ python -c "hashlib.sha256(...) for all nine pinned sources"
+all nine values matched the paired baseline and work order exactly
+-> PASS
+
+$ python -m json.tool governance/compat/fixtures/mfrp_p3_r1a_actual_seam_replay_oracle.json
+(parses cleanly, no output beyond formatted JSON)
+-> PASS
+
+$ python -c "case-count / family-set / class-set / feasibility-total / forbidden-key reconciliation script"
+case count 20; family set exact match; class set exact match; feasibility totals 15 STATICALLY_REACHABLE + 5 NOT_REPRESENTABLE_BY_CURRENT_P2 + 0 BLOCKED_SOURCE_GAP = 20; forbidden observed/actual key hits: 0
+-> PASS
+
+$ python -c "sourceRef binding reconciliation script"
+0 mismatches between case sourceRef.sourceId/path and sourceManifest
+-> PASS
+
+$ python -c "excerpt digest recomputation script over all 14 unique locators"
+0 mismatches
+-> PASS
+
+$ python -c "construct canonical positive-control receipt via _machine_verification_object/_machine_verification_digest and validate via _validate_receipt_integrity; resolve every cited mutation JSON pointer against the real payload"
+positive control valid: True "receipt internal integrity valid"; all thirteen distinct mutation pointers resolved to a real present field (REPLACE/DELETE targets) or a legitimately absent/append-eligible location (ADD/append-style INJECT targets)
+-> PASS
+
+$ python governance/compat/run_worker_return_fast_gate.py
+COMPLIANT
+-> PASS
+
+$ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-review --base c94162919d3321a713c936ab8deb25fe929eab1b --head HEAD
+error: argument --phase: invalid choice: 'pre-review' (choose from 'pre-dispatch', 'pre-implementation', 'pre-closure', 'pre-push')
+-> BLOCKED: work-order Verification Commands names a phase the current gate script does not accept; disclosed as drift, not silently substituted
+
+$ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base c94162919d3321a713c936ab8deb25fe929eab1b --head HEAD
+COMPLIANT (rerun after final edits, as the closest valid clean-base gate)
+-> PASS
+
+$ git diff --name-status
+(empty; both paths are untracked additions, not modifications of a tracked file)
+-> PASS
+
+$ git diff --cached --name-status
+(empty; nothing staged)
+-> PASS
+
+$ git status --short --untracked-files=all
+?? docs/reviews/CVF_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_WORKER_RETURN_2026-09-01.md
+?? governance/compat/fixtures/mfrp_p3_r1a_actual_seam_replay_oracle.json
+-> PASS
+```
+
+Provider call count: 0.
+
+## No-Commit Statement
+
+WORKER_MUST_NOT_COMMIT honored: this worker did not run `git add`,
+`git commit`, `git push`, or any staging command. Both created paths remain
+uncommitted and unstaged at the time of this return. Commit authority
+belongs to the reviewer/closer only, per the paired baseline Write Ownership
+and the work order Agent Roles table.
