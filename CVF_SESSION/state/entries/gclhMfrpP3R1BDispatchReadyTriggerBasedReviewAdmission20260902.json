@@ -3,6 +3,7 @@
   "stateKey": "gclhMfrpP3R1BDispatchReadyTriggerBasedReviewAdmission20260902",
   "value": {
     "status": "R1B_DISPATCH_READY_TRIGGER_BASED_REVIEW_ADMISSION",
+    "correctionMaterialCommit": "37c3945df",
     "reviewEvidenceCommit": "4ba2edbca7fb4c468a589e76e84bbe5d781e7f4b",
     "reviewDispositionConsumed": "REVISE_BEFORE_DISPATCH",
     "blockingFindingsResolved": ["F-01", "F-02", "F-03"],

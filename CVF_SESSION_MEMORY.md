@@ -52,7 +52,7 @@ Previous mode: `gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoi
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission`. Claude review evidence is committed at `4ba2edbca`; F-01 through F-06 are absorbed without a second review loop. The existing Review Cost standard now states trigger-based review admission. Next allowed move is Operator dispatch of the corrected R1B work order to a no-commit worker; routine review resumes at worker return. P4 canary execution, authority change, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission`. Claude review evidence is committed at `4ba2edbca`; correction material is committed at `37c3945df`. F-01 through F-06 are absorbed without a second review loop. The existing Review Cost standard now states trigger-based review admission. Next allowed move is Operator dispatch of the corrected R1B work order to a no-commit worker; routine review resumes at worker return. P4 canary execution, authority change, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
