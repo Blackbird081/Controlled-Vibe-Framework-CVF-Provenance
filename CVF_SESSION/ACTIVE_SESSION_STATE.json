@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p2_work_order_accepted_implementation_operator_checkpoint_required",
-  "previousMode": "gclh_mfrp_p1_closed_p2_operator_checkpoint_required",
+  "currentMode": "gclh_mfrp_p2_composed_local_pass_bounded_p3_operator_checkpoint_required",
+  "previousMode": "gclh_mfrp_p2_work_order_accepted_implementation_operator_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16166,5 +16166,16 @@
     "nextAllowedMove": "Stop for explicit operator authorization before executing the accepted P2 no-commit work order. If authorized, modify exactly four Python owner/test paths and create the named worker return; do not open P3 automatically.",
     "claimBoundary": "P2 dispatch acceptance only. P2 implementation and acceptance, P3-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
   },
-  "nextAllowedMove": "MFRP-P2 receipt/readout composition dispatch is accepted and committed at c6f68d7d2d2a5b90f076d04aa79e104dad904dcb after author-fast, pre-dispatch 81/81 and pre-commit 88/88 PASS. Stop for explicit operator authorization before executing the exact five-path no-commit work order. P3-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP2ComposedLocalPassBoundedP3OperatorCheckpointRequired20260901": {
+    "status": "P2_COMPOSED_LOCAL_PASS_BOUNDED_P3_OPERATOR_CHECKPOINT_REQUIRED",
+    "materialCommit": "fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_2026-09-01.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_2026-09-01.md",
+    "workerReturnPath": "docs/reviews/CVF_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_WORKER_RETURN_2026-09-01.md",
+    "acceptedOutcome": "P2 locally composes a tamper-evident v3 autorun machine-verification receipt and optional exception-first AAF readout. Independent review repaired partial self-hash acceptance, and the operator-authorized extraction and system-chain refresh resolved size and freshness blockers without an exception bump.",
+    "reviewEvidence": "146/146 focused tests, worker-return fast PASS, pre-implementation 83/83, pre-commit 88/88, system-chain freshness CURRENT, Python size violations 0, and real local receipt consumption emitted DETERMINISTIC_PREFLIGHT_COMPLETE while preserving three NOT_CHECKED and UNCLASSIFIED scopes. Zero provider/live calls.",
+    "nextAllowedMove": "Stop at the P3 operator checkpoint. P2 is locally composed and committed; P3 must not open automatically. If the operator requests continuation, author and review the P3 dispatch as a separate governed tranche.",
+    "claimBoundary": "P2 local deterministic composition only. The receipt/readout is not semantic truth, reviewer replacement, closure authorization, lifecycle activation or downstream adoption. P3-P6, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
+  },
+  "nextAllowedMove": "MFRP-P2 receipt/readout composition is independently accepted and materially committed at fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72 after operator-authorized extraction and system-chain refresh. Evidence: 146/146 focused tests, worker-return fast PASS, pre-implementation 83/83, pre-commit 88/88, freshness CURRENT and Python size violations 0. Stop at the P3 operator checkpoint; P3-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

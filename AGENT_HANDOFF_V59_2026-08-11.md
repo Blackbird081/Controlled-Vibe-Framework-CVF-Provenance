@@ -39,9 +39,9 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p2_work_order_accepted_implementation_operator_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=report accepted P2 dispatch and stop for explicit operator authorization before worker execution; parked checkpoint=P2 implementation, P3-P6, lifecycle activation, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p2_composed_local_pass_bounded_p3_operator_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=report accepted P2 local composition and stop at the P3 operator checkpoint; parked checkpoint=P3-P6, lifecycle activation, downstream, GC010 and external effects.
 ## Current Mode
-`gclh_mfrp_p2_work_order_accepted_implementation_operator_checkpoint_required`
+`gclh_mfrp_p2_composed_local_pass_bounded_p3_operator_checkpoint_required`
 ## Purpose
 
 Preserve independently accepted T1C durable single-node non-production material without opening a caller, package export or external effect.
@@ -54,7 +54,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Latest Work / Changes
 
-- MFRP-P2 receipt/readout composition dispatch is accepted at material commit `c6f68d7d2d2a5b90f076d04aa79e104dad904dcb`. Its exact five-path no-commit work order extends the existing autorun receipt and AAF readout owners, fixes a canonical machine-verification preimage/readout contract, surfaces not-checked and `UNCLASSIFIED` evidence, and preserves reviewer semantic authority. Author-fast, pre-dispatch 81/81 and pre-commit 88/88 PASS; material pre-closure reached 80/81 with only the expected post-commit continuity mismatch. P2 execution and P3-P6 remain parked pending explicit operator authorization.
+- MFRP-P2 receipt/readout composition is independently accepted at material commit `fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72`. The operator-authorized ten-path batch splits bounded mechanics/tests, refreshes system-chain fingerprints, rejects partial self-hashed receipts, surfaces `NOT_CHECKED` and `UNCLASSIFIED` evidence, and preserves reviewer semantic authority. Evidence: focused 146/146, worker-return fast PASS, pre-implementation 83/83, pre-commit 88/88, freshness CURRENT and Python size violations 0. P3-P6 remain parked pending explicit operator authorization.
 - GC010 root architecture is closed parked at `e867d5432` with terminal `ROOT_ARCHITECTURE_REASSESSED_NO_TRUTHFUL_PRODUCT_OWNER_RETAIN_PARKED`. Direct route composition, ApprovalStore upgrade, singleton SQLite and distributed-store guesses were rejected; reopening requires all five named topology, adapter, ordering, recovery and adversarial-test facts in one packet. Reviewer-fast 67/67 and material pre-commit 88/88 pass; no source/runtime/provider effect or successor tranche opened.
 - SCEC-T1 foundation dispatch is `10345d3a`; T1-R2 is independently accepted with material correction at `cb6d4bc3879a753eb9abc7283b55148c141c46d1`. Resolution claims now require path/hash/locator evidence, successor consumption revalidates predecessor evidence hashes, the corrected GC010 replay retains unresolved blockers, and scaffolds emit the contract. Focused SCEC 115/115, combined focused 205/205, reviewer-fast 67/67 and pre-commit 88/88 passed. The two out-of-scope diagnostics remain disclosed and untouched; T1J-R4 remains parked.
 - EAFR-R12 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `1e31db99a`; terminal roadmap commit `fae74ca77`. Reviewer repaired candidate-level evaluator order, denied-candidate call-budget accounting, unauthorized-provider receipt endpoint resolution and the return packet. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed; zero provider/live/credential calls. EAFR successor count is zero; RFR may only be reconsidered separately.
@@ -116,11 +116,11 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
 
 | Field | Value |
 |---|---|
-| authorityState | MFRP-P2 `WORK_ORDER_ACCEPTED_IMPLEMENTATION_OPERATOR_CHECKPOINT_REQUIRED` at `c6f68d7d2d2a5b90f076d04aa79e104dad904dcb` |
+| authorityState | MFRP-P2 `COMPOSED_LOCAL_PASS_BOUNDED_P3_OPERATOR_CHECKPOINT_REQUIRED` at `fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72` |
 | baselinePath | `docs/baselines/CVF_GC018_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_2026-09-01.md` |
 | workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_2026-09-01.md` |
-| workerManifest | exactly four modified Python owner/test paths plus one created worker return; worker must not stage or commit |
-| nextAuthorityRequirement | explicit operator authorization before P2 worker execution; no automatic P3 or downstream successor |
+| workerManifest | operator-amended exact ten-path material batch: original five plus four extracted module/test paths and the system-chain map |
+| nextAuthorityRequirement | explicit operator authorization before any P3 dispatch; no automatic P3 or downstream successor |
 
 ## Closure Evidence
 
@@ -171,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-MFRP-P2 dispatch is accepted at `c6f68d7d2d2a5b90f076d04aa79e104dad904dcb`. Stop for explicit operator authorization before executing the exact five-path no-commit work order. P3-P6, lifecycle activation, downstream, GC010 and external effects remain parked. Latest numbered wave remains LHW24.
+MFRP-P2 local composition is accepted at `fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72`. Stop at the P3 operator checkpoint. P3-P6, lifecycle activation, downstream, GC010 and external effects remain parked. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -201,20 +201,19 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize accepted MFRP-P2 dispatch material commit `c6f68d7d2d2a5b90f076d04aa79e104dad904dcb`, record the P2 implementation operator checkpoint, and regenerate continuity projections.
+Authorized guard-maintenance scope: synchronize accepted MFRP-P2 local-composition material commit `fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72`, record the P3 operator checkpoint, and regenerate continuity projections.
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/gclhMfrpP2WorkOrderAcceptedImplementationOperatorCheckpointRequired20260901.json`
-- `CVF_SESSION/state/entries/lastUpdated.json`
+- `CVF_SESSION/state/entries/gclhMfrpP2ComposedLocalPassBoundedP3OperatorCheckpointRequired20260901.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: the operator explicitly authorized learning and raising the CVF Core foundation before applying it to the downstream workspace.
-Rollback boundary: revert only this P2-dispatch continuity sync without rewriting material commit `c6f68d7d2d2a5b90f076d04aa79e104dad904dcb` or prior evidence.
-Not authorized: P2 execution without a new operator checkpoint; P3-P6, new owner/standard/ADIF/hook changes; downstream edits; GC010 product/runtime; provider/API/network; public mutation; deployment; production or compaction.
+Rollback boundary: revert only this P2-composition continuity sync without rewriting material commit `fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72` or prior evidence.
+Not authorized: P3-P6 execution without a new operator checkpoint; new owner/standard/ADIF/hook changes; downstream edits; GC010 product/runtime; provider/API/network; public mutation; deployment; production or compaction.
 ## Claim Boundary
 
-This handoff records accepted MFRP-P2 dispatch at `c6f68d7d2d2a5b90f076d04aa79e104dad904dcb`, stops at the P2 worker-execution operator checkpoint, and keeps P3-P6/lifecycle/downstream/GC010/effects parked.
+This handoff records accepted MFRP-P2 local composition at `fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72`, stops at the P3 operator checkpoint, and keeps P3-P6/lifecycle/downstream/GC010/effects parked.

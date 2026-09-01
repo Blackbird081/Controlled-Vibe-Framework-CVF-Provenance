@@ -1,5 +1,5 @@
 {
   "stateOrder": 2710,
   "stateKey": "nextAllowedMove",
-  "value": "MFRP-P2 receipt/readout composition dispatch is accepted and committed at c6f68d7d2d2a5b90f076d04aa79e104dad904dcb after author-fast, pre-dispatch 81/81 and pre-commit 88/88 PASS. Stop for explicit operator authorization before executing the exact five-path no-commit work order. P3-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MFRP-P2 receipt/readout composition is independently accepted and materially committed at fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72 after operator-authorized extraction and system-chain refresh. Evidence: 146/146 focused tests, worker-return fast PASS, pre-implementation 83/83, pre-commit 88/88, freshness CURRENT and Python size violations 0. Stop at the P3 operator checkpoint; P3-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
