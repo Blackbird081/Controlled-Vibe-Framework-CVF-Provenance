@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gclh_mfrp_h0_closed_p1_operator_checkpoint_required",
+  "currentMode": "gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MFRP-H0 is independently closed H0_CLOSED_PASS_BOUNDED at material commit 5705a8d1c0a2512f0ce20fa705552316ebc85721. Stop at the operator checkpoint before opening MFRP-P1; if authorized, author and independently review a fresh P1 owner-and-contract-ratification work order before any implementation. P2, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "MFRP-P1 owner-and-phase-return contract-ratification dispatch is independently accepted at material commit dace1285146c16b00ab60b2dcca6a5b7ed890465. Stop for explicit operator authorization before executing the no-commit work order. If authorized, create exactly the named decision packet and worker return, then return for independent review. P2, owner-local changes, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

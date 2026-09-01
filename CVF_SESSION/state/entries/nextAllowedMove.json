@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2704,
+  "stateOrder": 2706,
   "stateKey": "nextAllowedMove",
-  "value": "MFRP-H0 is independently closed H0_CLOSED_PASS_BOUNDED at material commit 5705a8d1c0a2512f0ce20fa705552316ebc85721. Stop at the operator checkpoint before opening MFRP-P1; if authorized, author and independently review a fresh P1 owner-and-contract-ratification work order before any implementation. P2, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MFRP-P1 owner-and-phase-return contract-ratification dispatch is independently accepted at material commit dace1285146c16b00ab60b2dcca6a5b7ed890465. Stop for explicit operator authorization before executing the no-commit work order. If authorized, create exactly the named decision packet and worker return, then return for independent review. P2, owner-local changes, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

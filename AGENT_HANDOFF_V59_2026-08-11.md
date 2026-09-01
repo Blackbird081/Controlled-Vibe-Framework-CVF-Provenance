@@ -39,9 +39,9 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_h0_closed_p1_operator_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=report accepted H0 closure and stop for explicit operator authorization before P1 work-order authoring; parked checkpoint=P1 implementation, P2, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=report accepted P1 dispatch and stop for explicit operator authorization before P1 no-commit execution; parked checkpoint=P1 outputs, P2, owner-local changes, downstream, GC010 and external effects.
 ## Current Mode
-`gclh_mfrp_h0_closed_p1_operator_checkpoint_required`
+`gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required`
 ## Purpose
 
 Preserve independently accepted T1C durable single-node non-production material without opening a caller, package export or external effect.
@@ -54,7 +54,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Latest Work / Changes
 
-- MFRP-H0 is independently accepted `H0_CLOSED_PASS_BOUNDED` at material commit `5705a8d1c0a2512f0ce20fa705552316ebc85721`. Reviewer corrections closed restricted-I-JSON type acceptance and missing/ignored argv-input omission; focused 46/46, pre-implementation 83/83, reviewer-fast 67/67 and pre-commit 88/88 PASS, with system-chain freshness `CURRENT`. P1 requires a new explicit operator checkpoint and fresh work order; no successor opened automatically.
+- MFRP-P1 source-verified baseline/work order and roadmap authorization update are independently accepted at material commit `dace1285146c16b00ab60b2dcca6a5b7ed890465`. The packet creates no new owner family, limits the worker to one decision packet plus one return, and keeps owner-local edits/P2 parked. Independent audit repaired source/routing, TPGR, provider-authority, foundation and AAF contract-term gaps; AAF reports zero defects, pre-dispatch 81/81 and pre-commit 88/88 PASS.
 - GC010 root architecture is closed parked at `e867d5432` with terminal `ROOT_ARCHITECTURE_REASSESSED_NO_TRUTHFUL_PRODUCT_OWNER_RETAIN_PARKED`. Direct route composition, ApprovalStore upgrade, singleton SQLite and distributed-store guesses were rejected; reopening requires all five named topology, adapter, ordering, recovery and adversarial-test facts in one packet. Reviewer-fast 67/67 and material pre-commit 88/88 pass; no source/runtime/provider effect or successor tranche opened.
 - SCEC-T1 foundation dispatch is `10345d3a`; T1-R2 is independently accepted with material correction at `cb6d4bc3879a753eb9abc7283b55148c141c46d1`. Resolution claims now require path/hash/locator evidence, successor consumption revalidates predecessor evidence hashes, the corrected GC010 replay retains unresolved blockers, and scaffolds emit the contract. Focused SCEC 115/115, combined focused 205/205, reviewer-fast 67/67 and pre-commit 88/88 passed. The two out-of-scope diagnostics remain disclosed and untouched; T1J-R4 remains parked.
 - EAFR-R12 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `1e31db99a`; terminal roadmap commit `fae74ca77`. Reviewer repaired candidate-level evaluator order, denied-candidate call-budget accounting, unauthorized-provider receipt endpoint resolution and the return packet. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed; zero provider/live/credential calls. EAFR successor count is zero; RFR may only be reconsidered separately.
@@ -116,11 +116,11 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
 
 | Field | Value |
 |---|---|
-| authorityState | MFRP-H0 `H0_CLOSED_PASS_BOUNDED` at `5705a8d1c0a2512f0ce20fa705552316ebc85721`; P1 operator checkpoint required |
-| baselinePath | `docs/baselines/CVF_GC018_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md` |
-| workerManifest | accepted two protected Python modifications plus named worker return; reviewer-authorized system-chain fingerprint refresh recorded in the same material commit |
-| nextAuthorityRequirement | explicit operator authorization plus fresh P1 owner-and-contract-ratification work order; no automatic P1 implementation, P2 or downstream successor |
+| authorityState | MFRP-P1 `WORK_ORDER_ACCEPTED_IMPLEMENTATION_OPERATOR_CHECKPOINT_REQUIRED` at `dace1285146c16b00ab60b2dcca6a5b7ed890465` |
+| baselinePath | `docs/baselines/CVF_GC018_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_2026-09-01.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_2026-09-01.md` |
+| workerManifest | exactly one P1 decision packet plus one P1 worker return under `docs/reviews/`; no owner mutation and no worker commit |
+| nextAuthorityRequirement | explicit operator authorization before exact P1 no-commit execution; no automatic P2 or downstream successor |
 
 ## Closure Evidence
 
@@ -171,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-MFRP-H0 is closed bounded at `5705a8d1c0a2512f0ce20fa705552316ebc85721`. Stop for explicit operator authorization before opening MFRP-P1. If authorized, author and independently review a fresh P1 owner-and-contract-ratification work order before implementation. P1 implementation, P2, downstream, GC010 and external effects remain parked. Latest numbered wave remains LHW24.
+MFRP-P1 dispatch is independently accepted at `dace1285146c16b00ab60b2dcca6a5b7ed890465`. Stop for explicit operator authorization before executing the exact no-commit work order. If authorized, create only the named decision packet and worker return, then return for independent review. P2, owner-local changes, downstream, GC010 and external effects remain parked. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -201,20 +201,20 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize independently accepted MFRP-H0 closure material commit `5705a8d1c0a2512f0ce20fa705552316ebc85721`, record its closed mode and P1 operator checkpoint, and regenerate continuity projections.
+Authorized guard-maintenance scope: synchronize independently accepted MFRP-P1 dispatch material commit `dace1285146c16b00ab60b2dcca6a5b7ed890465`, record the P1 execution operator checkpoint, and regenerate continuity projections.
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/gclhMfrpH0ClosedP1OperatorCheckpointRequired20260901.json`
+- `CVF_SESSION/state/entries/gclhMfrpP1WorkOrderAcceptedImplementationOperatorCheckpointRequired20260901.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: the operator explicitly authorized learning and raising the CVF Core foundation before applying it to the downstream workspace.
-Rollback boundary: revert only this H0-closure continuity sync without rewriting material commit `5705a8d1c0a2512f0ce20fa705552316ebc85721` or prior evidence.
-Not authorized: P1 work-order authoring or implementation without a new operator checkpoint; P2; new owner/standard/ADIF/hook; downstream edits; GC010 product/runtime; provider/API/network; public mutation; deployment; production or compaction.
+Rollback boundary: revert only this P1-dispatch continuity sync without rewriting material commit `dace1285146c16b00ab60b2dcca6a5b7ed890465` or prior evidence.
+Not authorized: P1 execution without a new operator checkpoint; P2; owner-local or new owner/standard/ADIF/hook changes; downstream edits; GC010 product/runtime; provider/API/network; public mutation; deployment; production or compaction.
 ## Claim Boundary
 
-This handoff records accepted MFRP-H0 closure at `5705a8d1c0a2512f0ce20fa705552316ebc85721`, stops at the P1 operator checkpoint, and keeps P1 implementation/P2/downstream/GC010/effects parked.
+This handoff records accepted MFRP-P1 dispatch at `dace1285146c16b00ab60b2dcca6a5b7ed890465`, stops at the P1 execution operator checkpoint, and keeps P1 outputs/P2/owner-local/downstream/GC010/effects parked.

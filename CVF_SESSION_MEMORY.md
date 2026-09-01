@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_h0_closed_p1_operator_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=report accepted H0 closure and stop for explicit operator authorization before P1 work-order authoring; parked checkpoint=P1 implementation, P2, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=report accepted P1 dispatch and stop for explicit operator authorization before P1 no-commit execution; parked checkpoint=P1 outputs, P2, owner-local changes, downstream, GC010 and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_h0_closed_p1_operator_checkpoint_required`
-Current mode: `gclh_mfrp_h0_closed_p1_operator_checkpoint_required`; previous mode marker: `gclh_mfrp_h0_work_order_accepted_implementation_allowed`
-Previous mode: `gclh_mfrp_h0_work_order_accepted_implementation_allowed`
+Current mode marker: `gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required`
+Current mode: `gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required`; previous mode marker: `gclh_mfrp_h0_closed_p1_operator_checkpoint_required`
+Previous mode: `gclh_mfrp_h0_closed_p1_operator_checkpoint_required`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_h0_closed_p1_operator_checkpoint_required`. MFRP-H0 is independently accepted `H0_CLOSED_PASS_BOUNDED` at material commit `5705a8d1c0a2512f0ce20fa705552316ebc85721`. Reviewer corrections closed restricted-I-JSON type acceptance and missing/ignored argv-input omission; focused 46/46, pre-implementation 83/83, reviewer-fast 67/67 and pre-commit 88/88 PASS, with system-chain freshness `CURRENT`. Stop for explicit operator authorization before authoring a fresh P1 owner-and-contract-ratification work order; P1 implementation, P2, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required`. The source-verified P1 baseline/work order and roadmap update are independently accepted at material commit `dace1285146c16b00ab60b2dcca6a5b7ed890465`; AAF reports zero defects, pre-dispatch 81/81 and pre-commit 88/88 PASS. Stop for explicit operator authorization before executing the exact no-commit packet: one decision packet plus one worker return, followed by independent review. P2, owner-local changes, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_h0_closed_p1_operator_checkpoint_required",
-  "previousMode": "gclh_mfrp_h0_work_order_accepted_implementation_allowed",
+  "currentMode": "gclh_mfrp_p1_work_order_accepted_implementation_operator_checkpoint_required",
+  "previousMode": "gclh_mfrp_h0_closed_p1_operator_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16129,5 +16129,17 @@
     "nextAllowedMove": "Stop for explicit operator authorization before MFRP-P1. If authorized, author and independently review a fresh P1 owner-and-contract-ratification work order; no P1 implementation is yet authorized.",
     "claimBoundary": "H0 local optional-receipt identity hardening only. P1 does not open automatically; P2, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
   },
-  "nextAllowedMove": "MFRP-H0 is independently closed H0_CLOSED_PASS_BOUNDED at material commit 5705a8d1c0a2512f0ce20fa705552316ebc85721. Stop at the operator checkpoint before opening MFRP-P1; if authorized, author and independently review a fresh P1 owner-and-contract-ratification work order before any implementation. P2, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP1WorkOrderAcceptedImplementationOperatorCheckpointRequired20260901": {
+    "status": "P1_WORK_ORDER_ACCEPTED_IMPLEMENTATION_OPERATOR_CHECKPOINT_REQUIRED",
+    "materialCommit": "dace1285146c16b00ab60b2dcca6a5b7ed890465",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_2026-09-01.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_2026-09-01.md",
+    "plannedDecisionPacketPath": "docs/reviews/CVF_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_PACKET_2026-09-01.md",
+    "plannedWorkerReturnPath": "docs/reviews/CVF_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_WORKER_RETURN_2026-09-01.md",
+    "acceptedOutcome": "P1 dispatch is constrained to non-authoritative review evidence, current-owner mapping, phase-return delta, threat model and fixed-sample Review Cost baseline; no owner, standard, helper, checker, receipt, schema or runtime mutation is authorized.",
+    "reviewEvidence": "Independent pre-dispatch review repaired source and routing shape, TPGR manifest, provider authority, foundation N/A and AAF packet-term defects; AAF reports zero defects, pre-dispatch 81/81 and pre-commit 88/88 PASS.",
+    "nextAllowedMove": "Stop for explicit operator authorization before executing the accepted P1 no-commit work order. If authorized, create exactly the named decision packet and worker return, then return for independent review; do not open P2 automatically.",
+    "claimBoundary": "P1 dispatch acceptance only. P1 outputs, P2, owner-local changes, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
+  },
+  "nextAllowedMove": "MFRP-P1 owner-and-phase-return contract-ratification dispatch is independently accepted at material commit dace1285146c16b00ab60b2dcca6a5b7ed890465. Stop for explicit operator authorization before executing the no-commit work order. If authorized, create exactly the named decision packet and worker return, then return for independent review. P2, owner-local changes, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
