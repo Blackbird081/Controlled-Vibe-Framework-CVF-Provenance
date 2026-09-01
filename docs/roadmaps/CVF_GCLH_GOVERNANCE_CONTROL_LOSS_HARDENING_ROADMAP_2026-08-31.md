@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: GCLH_MFRP_P0_ROADMAP_DRAFT_CLAUDE_CRITIQUE_PENDING
+Status: GCLH_MFRP_P0R_RECONCILED_H0_WORK_ORDER_REQUIRED
 
 docType: roadmap
 
@@ -21,11 +21,12 @@ governance control-loss record and its independent downstream review. Core
 learning must complete before any refresh or application to the named
 workspace/project.
 
-Current decision: GCLH-T1 Amendment 2 is accepted bounded. Before any T2 work
-order, the dedicated GCLH-MFRP machine-first review roadmap must receive one
-Claude adversarial critique and a CVF-owned reconciliation. Implementation,
-schema capability, downstream refresh, public-sync, runtime, provider/live,
-deployment, and production remain parked.
+Current decision: GCLH-T1 Amendment 2 is accepted bounded. GCLH-MFRP P0R has
+absorbed the Claude critique and revised the roadmap around existing owners.
+One protected-path H0 work order for the live autorun receipt verifier-identity
+gap must be authored and reviewed before H0 implementation or P1. Schema
+capability, downstream refresh, public-sync, runtime, provider/live, deployment,
+and production remain parked.
 
 ## Purpose
 
@@ -126,9 +127,10 @@ No tranche opens automatically. GCLH-T4 must not begin while a required Core
 owner remains proposed, unreviewed, or private-only without an authorized
 local projection path.
 
-GCLH-T2 is now fronted by the GCLH-MFRP P0 critique and P1 owner/contract
-decision. No protected-path implementation work order may be authored until
-the Claude critique is absorbed and reconciled.
+GCLH-T2 is now fronted by GCLH-MFRP H0 and the later P1 owner/contract decision.
+The critique is absorbed and reconciled; only H0 work-order authoring/review is
+open. No implementation is authorized until that protected-path packet is
+accepted.
 
 ## Acceptance Criteria
 
