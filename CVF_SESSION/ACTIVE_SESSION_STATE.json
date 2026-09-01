@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required",
-  "previousMode": "gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required",
+  "currentMode": "gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required",
+  "previousMode": "gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16259,5 +16259,16 @@
     "nextAllowedMove": "Author a separate R1B work order (byte-change and same-payload runtime proof) under fresh operator authorization. This ratification does not open R1B.",
     "claimBoundary": "Static oracle ratification only. No R1B execution, replay, P2 import/invocation/mutation, receipt construction, lifecycle activation, downstream application, provider/live/network, public-sync, deployment or production action is claimed."
   },
-  "nextAllowedMove": "MFRP-P3-R1A-R1 static oracle is independently reviewed and ratified ORACLE_RATIFIED_BOUNDED at material commit 7f607d353bdec11e456731793f181e72abddc297: all 9 pinned source/P2-seam hashes recomputed and matched, exact 19-case/18-family/7-class coverage confirmed, forbidden-key scan clean, worker-return fast gate COMPLIANT, reviewer-fast 67/67 PASS, and the three NOT_REPRESENTABLE_BY_CURRENT_P2 dispositions (C07, C08, C18) independently verified against actual P2 source. Next allowed move is authoring a separate R1B work order (byte-change and same-payload runtime proof) under fresh operator authorization; R1B was not opened by this ratification. P4-P6, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP4D0ShadowCanaryDesignReadyIndependentReviewCheckpointRequired20260902": {
+    "status": "P4_D0_SHADOW_CANARY_DESIGN_READY_INDEPENDENT_REVIEW_CHECKPOINT_REQUIRED",
+    "designMaterialCommit": "3ac41e8c7d9acd10d606b6e6304f66d8427ed9d9",
+    "designPath": "docs/assessments/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_2026-09-02.md",
+    "designSha256": "cf5615388f58b6d49fa603a0679d70b22ba28ff175062f5a1973e4f17573d8df",
+    "designDisposition": "DESIGN_ONLY_READY_FOR_INDEPENDENT_REVIEW",
+    "canaryBoundary": "Shadow-only comparison over the same real phase return and evidence; trusted route remains controlling; no second authoring pass, no semantic work duplication, no agent-role stratification, and no inspection of prompts, reasoning, tool order, decomposition or intermediate drafts.",
+    "governanceTaxBudget": "At most one marginal machine command per eligible return; clean-agreement audit sample at most 20 percent and at most 4 cases; zero duplicated semantic work; no provider calls; unavailable timing evidence blocks a cost-saving claim rather than the safety observation.",
+    "nextAllowedMove": "Independently review the P4-D0 canary design. Acceptance may authorize separate R1B work-order authoring, but R1B implementation and P4 canary execution remain closed until their own checkpoints.",
+    "claimBoundary": "Design-only checkpoint. No R1B authoring or execution, actual canary run, phase-route authority change, lifecycle activation, downstream application, provider/live/network, public-sync, deployment or production action is claimed."
+  },
+  "nextAllowedMove": "MFRP-P4-D0 shadow-canary and governance-tax-budget design is committed at 3ac41e8c7d9acd10d606b6e6304f66d8427ed9d9 with disposition DESIGN_ONLY_READY_FOR_INDEPENDENT_REVIEW. It reuses the same real phase return and evidence, leaves the trusted route controlling, excludes agent-internal behavior from observation, caps clean-case audit at 20 percent and 4 cases, permits at most one marginal machine command per eligible return, and forbids duplicated semantic work and provider calls. Next allowed move is independent review of this design. R1B authoring may follow only after design acceptance; R1B implementation and P4 canary execution remain separate closed checkpoints. P4-P6 authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

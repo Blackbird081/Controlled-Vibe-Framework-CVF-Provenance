@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author a separate R1B work order under fresh operator authorization; parked checkpoint=R1B execution, P4-P6, lifecycle activation, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=independently review the P4-D0 shadow-canary design; parked checkpoint=R1B authoring/execution, P4 canary execution, P4-P6 authority change, lifecycle activation, downstream, GC010 and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`
-Current mode: `gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`; previous mode marker: `gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`
-Previous mode: `gclh_mfrp_p3_r1a_r1_dispatch_ready_worker_execution_checkpoint_required`
+Current mode marker: `gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required`
+Current mode: `gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required`; previous mode marker: `gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`
+Previous mode: `gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p3_r1a_r1_oracle_ratified_bounded_r1b_authoring_checkpoint_required`. The R1A-R1 worker returned `COMPLETE_PENDING_REVIEW`/`ORACLE_RATIFICATION_CANDIDATE`; independent review recomputed all 9 pinned source/P2-seam hashes (all MATCH), confirmed exact 19-case/18-family/7-class coverage, ran a clean forbidden-key scan, verified the three `NOT_REPRESENTABLE_BY_CURRENT_P2` dispositions (C07, C08, C18) directly against `_validate_receipt_integrity` source, and independently reran both required gates (worker-return fast gate COMPLIANT; reviewer-fast 67/67 PASS). Disposition `ORACLE_RATIFIED_BOUNDED` is committed at material commit `7f607d353bdec11e456731793f181e72abddc297`. Next allowed move is authoring a separate R1B work order (byte-change and same-payload runtime proof) under fresh operator authorization; this ratification does not open R1B. P4-P6, lifecycle activation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required`. P4-D0 shadow-canary and governance-tax-budget design is committed at `3ac41e8c7d9acd10d606b6e6304f66d8427ed9d9` with disposition `DESIGN_ONLY_READY_FOR_INDEPENDENT_REVIEW`. It reuses the same real phase return and evidence, leaves the trusted route controlling, excludes agent-internal behavior, caps clean-agreement audit at 20 percent and 4 cases, permits at most one marginal machine command per eligible return, and forbids duplicated semantic work and provider calls. Next allowed move is independent review of this design. R1B authoring may follow only after design acceptance; R1B implementation and P4 canary execution remain separate closed checkpoints. P4-P6 authority change, lifecycle activation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
