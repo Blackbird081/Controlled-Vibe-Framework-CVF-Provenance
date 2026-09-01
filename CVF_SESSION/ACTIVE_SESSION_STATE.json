@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p4_d0_external_critique_revise_before_r1b_correction_checkpoint_required",
-  "previousMode": "gclh_mfrp_p4_d0_shadow_canary_design_ready_independent_review_checkpoint_required",
+  "currentMode": "gclh_mfrp_p4_d0_revision1_ready_independent_rereview_checkpoint_required",
+  "previousMode": "gclh_mfrp_p4_d0_external_critique_revise_before_r1b_correction_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16291,5 +16291,16 @@
     "nextAllowedMove": "Revise the P4-D0 design to discharge F-01 through F-05 and address F-06 through F-08, then return the revision to independent review. Do not author or execute R1B and do not run P4.",
     "claimBoundary": "Independent documentary critique only. No design acceptance, R1B authoring/execution, P4 canary execution, route-authority change, provider/live/network, public-sync, deployment or production action is claimed."
   },
-  "nextAllowedMove": "MFRP-P4-D0 external critique is committed unchanged at e79308d2cd5c0ff81e012c963428af3045ff990c with disposition REVISE_BEFORE_R1B. Blocking findings F-01 through F-05 require comparison-object disclosure, common-mode limitation, immutable order-of-record evidence, one closed sampling formula and an observable duplicate-work test; F-06 through F-08 are non-blocking simplifications. Next allowed move is revision of the design followed by independent re-review. R1B authoring/execution and P4 canary execution remain closed. P4-P6 authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP4D0Revision1ReadyIndependentRereviewCheckpointRequired20260902": {
+    "status": "P4_D0_REVISION_1_READY_INDEPENDENT_REREVIEW_CHECKPOINT_REQUIRED",
+    "critiqueMaterialCommit": "e79308d2cd5c0ff81e012c963428af3045ff990c",
+    "revisionMaterialCommit": "7890f8274e4471a2994e2e078ab307fd7df3e73d",
+    "revisionPath": "docs/assessments/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_2026-09-02.md",
+    "revisionSha256": "65698a95dc7bb7f437fe061a81559701b91a3e611c445f5122ad8145c5f13df5",
+    "revisionDisposition": "CANARY_DESIGN_REVISION_1_READY_FOR_INDEPENDENT_REVIEW_R1B_RETAINED",
+    "correctionSummary": "F-01 through F-08 addressed: distinct semantic-return/mechanical-receipt objects; consistency-not-correctness and common-mode disclosure; pre-shadow immutable trusted record; one closed sample formula; observable closed audit-input manifest; one-off P4 worker-return owner; p95 deleted and median diagnostic narrowed; docType aligned to assessment.",
+    "nextAllowedMove": "Independently re-review Revision 1 against F-01 through F-08. R1B authoring may be considered only after bounded acceptance; R1B execution and P4 canary execution remain separate closed checkpoints.",
+    "claimBoundary": "Documentary design correction only. No R1B authoring/execution, P4 canary run, route-authority change, provider/live/network, public-sync, deployment or production action is claimed."
+  },
+  "nextAllowedMove": "MFRP-P4-D0 Revision 1 is committed at 7890f8274e4471a2994e2e078ab307fd7df3e73d after addressing F-01 through F-08. It distinguishes semantic returns from mechanical receipts, treats consistency as non-correctness evidence, requires immutable pre-shadow trusted records, uses one closed sample formula, makes duplicate work observable through a closed input/command manifest, names a one-off ledger owner and removes unsupported p95 telemetry. Next allowed move is independent re-review of Revision 1. R1B authoring may be considered only after bounded acceptance; R1B execution and P4 canary execution remain closed. P4-P6 authority change, lifecycle activation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
