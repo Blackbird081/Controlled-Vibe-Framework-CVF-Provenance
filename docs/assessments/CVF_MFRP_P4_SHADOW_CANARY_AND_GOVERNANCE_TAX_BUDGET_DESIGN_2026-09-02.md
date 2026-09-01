@@ -2,15 +2,21 @@
 
 Memory class: governed-planning-assessment
 
-docType: baseline
+docType: assessment
 
-Status: DESIGN_ONLY_READY_FOR_INDEPENDENT_REVIEW
+Status: REVISION_1_READY_FOR_INDEPENDENT_REVIEW
 
 Date: 2026-09-02
 
 Batch ID: MFRP-P4-D0
 
 executionBaseHead: `f2dec40fd39ed04f4249b98b3fb32dac67e21fbb`
+
+revisionOneBaseHead: `c1d1cbeef7b3c6bb979cabc982452dd14e48181c`
+
+critiqueEvidenceCommit: `e79308d2cd5c0ff81e012c963428af3045ff990c`
+
+revisionOneExecutionBaseHead: `7a3172acf8329d751bf30fea6b68b07aa64c5f85`
 
 successorTrancheOpened: NO
 
@@ -37,6 +43,20 @@ implemented, independently reviewed and accepted.
 | `docs/reviews/CVF_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_WORKER_RETURN_2026-09-02.md` | `32dabae39e0a4465b5e3a7ad4ba10e4cdf1aa7be7c20c1f6f8ba21f0ad87dee6` | independent `ORACLE_RATIFIED_BOUNDED` evidence and three honest P2 blind spots |
 | `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md` | `7ead5cbde33d2012eaa58a9c161026454fe6133f7fe6e93facd975a2a0a4c8b1` | existing cost fields and single-pass review boundary; consume rather than duplicate |
 | `docs/assessments/CVF_TPGR_R7_DUAL_RUN_CANARY_AND_ROLLBACK_REHEARSAL_DESIGN_2026-08-18.md` | `ca58d33e218e9c3160a49edb450eaf3f71454e0f5641e928a17b1d07615538ca` | advisory comparator and rollback precedent; no TPGR authority transfers to MFRP |
+| `docs/reviews/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_EXTERNAL_CRITIQUE_2026-09-02.md` | `a379503d642f40bb76ecbd868c4c86f816ac94a29b1616f8dfe0671df97b533d` | independent `REVISE_BEFORE_R1B` disposition and F-01 through F-08 corrections |
+
+## Revision 1 Disposition
+
+Revision 1 accepts F-01 through F-08 from the independent critique. The five
+blocking findings are discharged here rather than deferred into a future work
+order. The revisions disclose the two comparison objects, limit agreement to
+consistency, establish order-of-record evidence, use one closed sampling
+formula, and replace reviewer self-classification with a closed audit-input
+manifest. They also name the one-off comparator owner, remove the unsupported
+p95 gate, narrow the median diagnostic, and align `docType` with this path.
+
+This correction changes no execution authority. R1B authoring, R1B execution
+and P4 execution remain closed pending independent acceptance of Revision 1.
 
 ## Scope / Methodology
 
@@ -45,11 +65,19 @@ independent-audit rule, cost ledger, thresholds and rollback posture. It
 creates no runner, fixture, checker, hook, config switch, registry, receipt
 family or provider integration. No canary is run by this tranche.
 
-The canary unit is one real phase-return artifact already produced by ordinary
-project work. CVF must not manufacture a task, repeat a phase, or require a
-second authoring pass merely to fill a canary quota. The current trusted route
-remains controlling and runs only when it would have run without the canary.
-The shadow route consumes the same return and existing evidence read-only.
+The canary unit is one observation pair already produced by ordinary project
+work: (a) a committed phase-return artifact and its declared semantic evidence,
+and (b) the associated autorun pass-receipt consumed by P2/AAF. They are
+different artifacts with different semantics. The trusted outcome binds the
+phase return; the machine outcome binds only the deterministic gate receipt.
+The canary measures whether those identified records are compatible; it never
+claims that both routes evaluated the same proposition.
+
+CVF must not manufacture a task, repeat a phase, or require a second authoring
+pass merely to fill a canary quota. The current trusted route remains
+controlling and runs only when it would have run without the canary. The shadow
+route consumes the existing associated receipt read-only after the trusted
+record is immutable.
 
 ## Core Autonomy Boundary
 
@@ -63,9 +91,10 @@ boundaries. The canary must never collect or score:
 - intermediate drafts that were not offered as phase-return evidence;
 - speed or brevity as a proxy for semantic quality.
 
-The only comparison object is the returned result plus its declared evidence.
-Reviewer audit verifies the result; it does not recreate the work performed by
-the author or another role.
+The comparison boundary is the identified observation pair above, not a claim
+that one common semantic object exists. Reviewer audit verifies compatibility
+of the result, its declared evidence and the associated receipt; it does not
+recreate work performed by the author or another role.
 
 ## Dependency And Opening Rule
 
@@ -77,7 +106,9 @@ until all of the following exist:
 3. explicit retention of C07, C08 and C18 as uncovered P2 blind spots unless a
    separately authorized P2 hardening tranche changes that evidence;
 4. a fresh P4 work order pinning the accepted R1B and this reviewed design;
-5. a rollback rehearsal that does not assume a nonexistent production switch.
+5. a rollback rehearsal that does not assume a nonexistent production switch;
+6. independent acceptance of this Revision 1 design, including its
+   comparison-object and common-mode boundaries.
 
 Neither R1B acceptance nor this design opens P4 automatically.
 
@@ -92,14 +123,15 @@ reason to create artificial work or claim seven-phase adoption.
 |---|---|---|
 | known high-risk/live/public/destructive or zero-tolerance signal | once, advisory only | 100%; trusted route remains controlling |
 | any machine/trusted-route divergence, identity drift, incomplete evidence or `UNCLASSIFIED` item | once | 100% |
-| clean agreement without those signals | once | deterministic 20% sample, maximum four; if at least two clean agreements exist, audit the two lowest identity digests |
+| non-divergent consistency without those signals | once | audit the lowest `k` identity digests, where `k = min(4, max(1, ceil(0.20 * n)))` for `n >= 1` eligible records in the closed window; `k = 0` when `n = 0` |
 | return outside the ordinary trusted route | none | none; canary does not create a new governance obligation |
 
 The sampling identity is SHA-256 over repository-relative return path, Git blob
 identity and controlling evidence-receipt identity, serialized as UTF-8 with
-LF separators. Clean agreements are ordered by the resulting lowercase hex
-digest. Sampling is reproducible and cannot be selected by the author or
-reviewer after seeing the outcome.
+LF separators. Eligible non-divergent records are ordered by the resulting
+lowercase hex digest. The single formula above determines sample size; digest
+order only selects which `k` records. Sampling is reproducible and cannot be
+selected by the author or reviewer after seeing the outcome.
 
 There is no quota per phase and no quota by agent/role label. Phase is recorded
 only to disclose which of `INTAKE`, `DESIGN`, `SPEC`, `WORK_ORDER`, `BUILD`,
@@ -107,16 +139,21 @@ only to disclose which of `INTAKE`, `DESIGN`, `SPEC`, `WORK_ORDER`, `BUILD`,
 
 ## Shadow Comparator Contract
 
-Each observed return has one compact comparator row. A future P4 ledger may
-carry these fields without creating a new reference family:
+Each observed pair has one compact comparator row. Its owner is the one-off P4
+worker-return artifact governed by the future P4 work order under
+`docs/reviews/`; it is bounded tranche evidence, not a new reference family,
+standard, registry, receipt family or persistent governance owner.
 
 | Field | Rule |
 |---|---|
-| `returnIdentity` | path, blob identity and evidence-receipt identity |
+| `phaseReturnIdentity` | repository-relative path, pre-shadow Git commit and blob identity of the semantic return |
+| `receiptIdentity` | repository-relative receipt path, receipt digest and verifier/readout identity |
+| `pairLinkageEvidence` | explicit evidence reference associating receipt with phase return; absence or ambiguity is `COMPARISON_OBJECT_MISMATCH` |
 | `phase` | one canonical phase token or `UNCLASSIFIED` |
 | `trustedOutcome` | actual controlling legacy/reviewer disposition with evidence reference |
-| `machineOutcome` | advisory P2/AAF result from the same return/evidence object |
-| `samePayloadEvidence` | R1B-proven identity showing validator and readout observed the same payload |
+| `machineOutcome` | advisory P2/AAF result over the associated autorun pass-receipt only; never a semantic review disposition |
+| `samePayloadEvidence` | R1B evidence that validator and readout observed the identical in-memory receipt payload within one call chain; no phase-return/receipt identity claim |
+| `trustedRecordOrderEvidence` | pre-shadow Git commit and blob proving the controlling trusted disposition was immutable before shadow readout generation or disclosure |
 | `blindSpotDisposition` | C07/C08/C18 or another named unrepresented class remains visible |
 | `divergenceClass` | one exact class from the table below |
 | `auditReason` | high-risk, divergence, deterministic clean sample, or none |
@@ -126,31 +163,77 @@ carry these fields without creating a new reference family:
 
 Allowed divergence classes:
 
-- `EXACT_AGREEMENT`
+- `ENVELOPE_CONSISTENT_WITH_TRUSTED`
 - `MACHINE_STRICTER`
 - `TRUSTED_ROUTE_STRICTER`
 - `EVIDENCE_INCOMPLETE`
 - `IDENTITY_OR_SOURCE_DRIFT`
+- `COMPARISON_OBJECT_MISMATCH`
 - `BLIND_SPOT_NOT_REPRESENTABLE`
 - `UNEXPLAINED_DIVERGENCE`
 
-Missing or partial data cannot be mapped to `EXACT_AGREEMENT`.
+`ENVELOPE_CONSISTENT_WITH_TRUSTED` means only that the mechanical receipt does
+not contradict the trusted semantic disposition on fields both actually
+represent. It is consistency evidence, never correctness, semantic equivalence
+or route-replacement evidence. Missing, partial or weakly linked data cannot
+be mapped to that class.
+
+## Common-Mode And Independent-Detector Boundary
+
+Both routes may miss the same defect. Therefore no consistency rate, including
+100%, is a safety-success or correctness metric. Every canary decision must
+enumerate classes not detectable by either compared route; the minimum set is
+C07, C08 and C18. All such classes are excluded from safety denominators and
+promotion claims.
+
+For each sampled non-divergent record, the independent audit checks one
+predeclared hard obligation directly against the immutable return and its
+declared evidence. This invariant check is selected before machine disclosure
+and does not rely on either route's outcome label. It is a bounded escape
+detector, not a re-performance of the phase. Novel common-mode semantic defects
+outside that invariant remain `NOT_DETECTED_WITH_CURRENT_EVIDENCE` and must be
+disclosed. If the future P4 work order cannot name this independent invariant
+and its evidence locator before execution, the roadmap's independent-detector
+requirement remains undischarged and P4 cannot start.
 
 ## Independent Detector Boundary
 
 The independent audit checks only:
 
-1. comparator identities and the controlling evidence references;
+1. comparator identities, pair linkage and trusted-record ordering evidence;
 2. whether limitations, not-checked scope and `UNCLASSIFIED` items survived;
 3. one source/authority binding and one declared hard obligation;
 4. whether the trusted and machine outcomes were classified honestly;
-5. whether any machine output was converted into review advice or authority.
+5. whether immutable trusted disposition predates machine disclosure and
+   whether any machine output was converted into review advice or authority.
 
 The audit must not repeat the phase, regenerate the deliverable, rerun every
-semantic decision, or inspect agent reasoning. A clean-agreement audit that
-cannot be completed from returned evidence is itself a canary finding:
+semantic decision, or inspect agent reasoning. Its closed input manifest is:
+
+- the immutable phase-return blob;
+- only evidence paths and authority sources declared by that return, at their
+  pinned identities;
+- the associated receipt and its verifier/readout identities;
+- the predeclared hard-obligation locator; and
+- the comparator row.
+
+Any read, command or evidence source outside that manifest, or any regeneration
+or semantic re-execution command, records `AUDIT_INPUT_SCOPE_EXCEEDED` and one
+duplicated-semantic-work occurrence. This is observable from the audit command
+trace and actual input manifest; it is not a reviewer opinion about effort.
+
+A sampled non-divergent audit that cannot be completed from this closed input
+set is itself a canary finding:
 `EVIDENCE_ENVELOPE_INSUFFICIENT`; it is not permission to redo the author's
 work silently.
+
+The ordinary trusted disposition must already exist as a Git commit/blob before
+the shadow readout is generated or revealed. That pre-shadow identity is
+written to `trustedRecordOrderEvidence`. A missing or non-ancestor identity is
+`ORDER_OF_RECORD_UNPROVEN` and returns `ROLLBACK_SHADOW`; no reviewer assertion
+can substitute for it. This reuses the ordinary material commit; the canary
+must not demand an extra commit. A return without that existing record is
+ineligible rather than a reason to add governance work.
 
 ## Governance-Tax Ledger
 
@@ -162,11 +245,11 @@ ephemeral comparison measurements that change the P4 decision:
 |---|---|
 | existing trusted-route duration/commands | unavoidable baseline; never counted as canary cost or saving |
 | shadow machine duration and extra command count | recurring marginal governance tax |
-| clean-agreement audit minutes | recurring sampling tax |
+| sampled non-divergent audit minutes | recurring sampling tax |
 | divergence/high-risk diagnosis minutes | safety investigation cost, recorded separately from clean-path tax |
 | cache hit/miss and reused receipt count | evidence-reuse observation, never proof of safety by itself |
 | provider calls and token/quota | must remain zero for machine execution; unavailable reviewer token data stays explicitly unavailable |
-| duplicated semantic work | count only when reviewer had to reconstruct work rather than assess returned evidence |
+| duplicated semantic work | count `AUDIT_INPUT_SCOPE_EXCEEDED` events from actual input/command manifests; threshold does not inspect reasoning or rely on reviewer self-classification |
 
 No projected saving is an observed saving. During shadow mode the trusted route
 still controls, so P4 can establish safety and marginal cost but cannot claim
@@ -185,15 +268,21 @@ unless all safety rows pass.
 | hidden limitation, not-checked scope or `UNCLASSIFIED` item | 0 |
 | provider/live/network call caused by canary | 0 |
 | extra shadow command | at most one per eligible return; consume existing receipts where valid |
-| clean-agreement independent audit | at most 20% and at most four returns per observation window |
-| duplicated semantic work on clean agreements | 0; any occurrence requires evidence-envelope correction before promotion |
-| machine-path median duration | no more than 10% of the observed trusted-route median when both are available |
-| machine-path p95 duration | no more than 20% of the observed trusted-route p95 when both are available |
+| sampled non-divergent independent audit | exactly `k = min(4, max(1, ceil(0.20 * n)))` lowest-digest records for `n >= 1`; zero for `n = 0` |
+| duplicated semantic work on sampled non-divergent records | 0 observable `AUDIT_INPUT_SCOPE_EXCEEDED` events; any occurrence requires evidence-envelope correction before promotion |
+| common-mode disclosure | minimum C07/C08/C18 plus every newly observed undetectable class; consistency rate excluded from correctness and safety-success claims |
+| independent invariant detector | one predeclared hard obligation and evidence locator per sampled record; missing locator blocks P4 execution |
+| machine-path median duration diagnostic | no more than 10% of trusted-route median only when at least five same-unit paired durations already exist; expected usually inapplicable because Review Cost permits trusted duration to be unavailable |
 | cost evidence availability | missing duration/token evidence is disclosed and blocks a cost-saving claim, not the safety observation |
 
-Passing these thresholds does not activate a lighter route. It only permits a
-separate P5 decision to consider which deterministic checks, if any, may
-replace repeated deterministic reviewer work.
+The median row is a conditional cost diagnostic, not a safety or promotion
+gate. It cannot require new reviewer timing collection, and no cost-saving
+claim may rest on it when unavailable. No p95 statistic is used in this
+20-return window.
+
+Passing the remaining thresholds does not prove correctness or activate a
+lighter route. It only permits a separate P5 decision to consider which
+deterministic checks, if any, may replace repeated deterministic reviewer work.
 
 ## Blind-Spot Treatment
 
@@ -211,12 +300,14 @@ A canary that looks efficient only by excluding these blind spots cannot pass.
 ## Rollback And Stop Conditions
 
 Return `ROLLBACK_SHADOW` and preserve all evidence when any safety threshold
-fails, machine advice influences authority, sampling is selected after seeing
+fails, trusted record order is unproven, machine advice is disclosed before the
+trusted disposition becomes immutable, sampling is selected after seeing
 outcomes, or the route cannot be disabled without changing the trusted result.
 
-Return `SIMPLIFY_CANARY_TAX_EXCEEDED` when clean-path audit exceeds its cap,
-machine latency exceeds the relative budget, an extra packet is demanded per
-phase, or reviewer work becomes a second execution of the phase.
+Return `SIMPLIFY_CANARY_TAX_EXCEEDED` when sampled audit exceeds the single
+formula, more than one marginal machine command is added, an extra packet is
+demanded per phase, or `AUDIT_INPUT_SCOPE_EXCEEDED` is recorded. The conditional
+median diagnostic cannot fire this token when its paired evidence is absent.
 
 Rollback means stop producing/consuming shadow comparator rows and continue
 the existing trusted route unchanged. This design does not claim a runtime
@@ -232,6 +323,11 @@ The design is acceptable only if an independent reviewer confirms:
 - no synthetic phase work or per-phase packet is required;
 - audit selection is deterministic and bounded;
 - reviewer audit evaluates results without recreating author work;
+- the semantic phase return and mechanical pass-receipt are disclosed as
+  different objects and weak linkage is fail-closed;
+- the trusted disposition is immutable before shadow readout disclosure;
+- consistency is never represented as correctness or route equivalence;
+- the audit input/command manifest makes duplicated semantic work observable;
 - all three current P2 blind spots remain explicit;
 - safety thresholds precede cost thresholds;
 - governance-tax measures separate unavoidable baseline, clean-path tax and
@@ -256,6 +352,7 @@ not canary safety, cost value, R1B acceptance or P4 readiness.
 | oracle coverage and blind spots | ratified machine data and review | `docs/reviews/CVF_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_WORKER_RETURN_2026-09-02.md` | independent review; feasibility reconciliation | C07, C08, C18 | ratified R1A-R1 evidence | ACCEPT |
 | cost-field ownership | canonical standard | `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md` | Required Fields; Single-Pass Review Latency SOP | review-cost telemetry | Review Cost owner | ACCEPT |
 | advisory comparison precedent | accepted documentary design | `docs/assessments/CVF_TPGR_R7_DUAL_RUN_CANARY_AND_ROLLBACK_REHEARSAL_DESIGN_2026-08-18.md` | Comparator Record; Rollback Rehearsal; Cost And Value | shadow-only comparison pattern | TPGR-R7 evidence only | ACCEPT |
+| F-01 through F-08 critique | independent governed review | `docs/reviews/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_EXTERNAL_CRITIQUE_2026-09-02.md` | Findings; Mandatory Corrections Before R1B; Final Disposition | Revision 1 correction set | critique evidence only; no execution authority | ACCEPT |
 
 ## Epistemic Process Block
 
@@ -268,41 +365,48 @@ semantic review or constraining agent implementation behavior.
 
 The roadmap requires an independent detector and safety-first rollback, while
 R1A-R1 exposes three machine blind spots and Review Cost forbids reviewer
-work-by-drip. The bounded divergence/high-risk audit plus deterministic 20%
-clean sample satisfies those constraints without auditing every return twice.
+work-by-drip. The critique showed that phase returns and pass-receipts are
+different objects, consistency is not correctness, order must be evidenced,
+and audit scope must be observable. Revision 1 uses a closed input manifest,
+pre-shadow Git identity, one fixed sample formula and one predeclared invariant
+without auditing every return twice.
 
 ### Contradiction Or Gap Disposition
 
-P4 cannot yet produce observed safety or cost results because R1B is not
-accepted and no canary has run. All thresholds remain design requirements;
-none is reported as achieved.
+P4 cannot yet produce observed safety or cost results because Revision 1 is not
+independently accepted, R1B is not accepted and no canary has run. The current
+P2 route evaluates a pass-receipt, not the phase return. All thresholds remain
+design requirements; none is reported as achieved.
 
 ### Claim Update
 
-Canary design may proceed before R1B, but canary execution remains dependent
-on accepted R1B evidence and a separate P4 work order.
+Revision 1 may be independently reviewed before R1B. R1B authoring remains
+closed until that review accepts the corrections, and canary execution remains
+dependent on accepted R1B evidence and a separate P4 work order.
 
 ## Risk / Corrective Action
 
-The primary risk is turning safety sampling into a permanent second review.
-The correction is a hard clean-agreement audit cap, deterministic selection
-and zero duplicated semantic work. The second risk is optimizing measured
-latency by hiding findings; safety thresholds therefore precede every cost
-threshold and all divergences/high-risk signals receive full audit.
+The primary risk is false confidence from treating cross-object consistency as
+correctness. The correction is explicit object disclosure, a common-mode
+inventory and a bounded invariant detector. The second risk is turning safety
+sampling into a permanent second review. The correction is one closed sampling
+formula and an observable input/command boundary; all divergences and high-risk
+signals still receive full audit.
 
 ## Decision / Disposition
 
-`CANARY_DESIGN_READY_R1B_PREREQUISITE_RETAINED`
+`CANARY_DESIGN_REVISION_1_READY_FOR_INDEPENDENT_REVIEW_R1B_RETAINED`
 
-The next action is independent review of this design. R1B authoring and P4
-execution remain separate operator checkpoints; neither is opened here.
+The next action is independent review of Revision 1 against F-01 through F-08.
+R1B authoring, R1B execution and P4 execution remain separate operator
+checkpoints; none is opened here.
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_public_export_disposition.py` |
-| literalTokensReviewed | baseline source/decision/evidence heading groups; checker-read-ahead four fields; assessment path applicability; epistemic four-part markers; public disposition heading |
+| literalTokensReviewed | assessment source/decision/evidence heading groups; checker-read-ahead four fields; assessment path applicability; epistemic four-part markers; public disposition heading |
 | gateRunPurpose | confirmation evidence that the canary design is structurally compatible after source-led authoring, not first discovery of design semantics |
 | claimBoundary | source read-ahead and gate compatibility only; no canary execution, effectiveness, cost saving or activation is proven |
 
@@ -312,18 +416,18 @@ execution remain separate operator checkpoints; neither is opened here.
 |---|---|
 | Actor | CVF canary designer/orchestrator |
 | Provider or surface | local private provenance repository |
-| Session or invocation | MFRP-P4-D0 design, 2026-09-02 |
+| Session or invocation | MFRP-P4-D0 Revision 1 after independent critique, 2026-09-02 |
 | Working directory | repository root |
 | Command or tool surface | governed reads, hash recomputation, text search, apply_patch and local governance gates |
 | Target paths | `docs/assessments/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_2026-09-02.md` |
 | Allowed scope source | operator instructed canary handling before the next implementation tranche |
-| Before status evidence | HEAD `f2dec40fd39ed04f4249b98b3fb32dac67e21fbb`; clean worktree |
-| After status evidence | one design-only assessment; no implementation or runtime path |
-| Diff evidence | final `git diff --name-status` before commit |
+| Before status evidence | Revision authoring began at `c1d1cbeef`; critique was preserved at `e79308d2c`; correction checkpoint `7a3172acf` is the final execution base |
+| After status evidence | one modified design; committed critique unchanged; no implementation or runtime path |
+| Diff evidence | exactly one modified design after critique evidence commit |
 | Approval boundary | design the canary first; no R1B/P4 execution or activation |
 | Claim boundary | repository-local documentary design only |
 | Agent type | designer/orchestrator |
-| Invocation ID | `mfrp-p4-d0-shadow-canary-governance-tax-design-2026-09-02` |
+| Invocation ID | `mfrp-p4-d0-shadow-canary-design-revision-1-2026-09-02` |
 | Expected manifest | `docs/assessments/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_2026-09-02.md` |
 | Actual changed set | `docs/assessments/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_2026-09-02.md` |
 | Manifest delta | MATCH |
