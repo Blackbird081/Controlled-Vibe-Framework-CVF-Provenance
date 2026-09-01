@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_review_admission_machine_enforced_r1b_execution_ready`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=bounded no-commit R1B implementation; parked checkpoint=R1B result acceptance, P4 canary execution, authority change and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p3_r1a_r2_dispatch_ready_r1b_repair_authoring_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=bounded no-commit R1A-R2 correction; parked checkpoint=R1B-R2 dispatch/execution, P4 canary and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_review_admission_machine_enforced_r1b_execution_ready`
-Current mode: `gclh_mfrp_review_admission_machine_enforced_r1b_execution_ready`; previous mode marker: `gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission`
-Previous mode: `gclh_mfrp_p3_r1b_authoring_committed_independent_review_checkpoint_required`
+Current mode marker: `gclh_mfrp_p3_r1a_r2_dispatch_ready_r1b_repair_authoring_authorized`
+Current mode: `gclh_mfrp_p3_r1a_r2_dispatch_ready_r1b_repair_authoring_authorized`; previous mode marker: `gclh_mfrp_review_admission_machine_enforced_r1b_execution_ready`
+Previous mode: `gclh_mfrp_review_admission_machine_enforced_r1b_execution_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_review_admission_machine_enforced_r1b_execution_ready`. Trigger-based review admission is now enforced on future changed work orders by the Review Cost checker and emitted by the dispatch scaffold. The corrected R1B work order is execution-ready without another pre-execution review; routine review resumes at worker return. P4 canary execution, authority change, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p3_r1a_r2_dispatch_ready_r1b_repair_authoring_authorized`. Execute the exact two-path no-commit R1A-R2 correction; routine review resumes at worker return. After accepted committed correction, R1B-R2 authoring is already authorized but must pin its real oracle identity before dispatch. P4 canary execution, P2 mutation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

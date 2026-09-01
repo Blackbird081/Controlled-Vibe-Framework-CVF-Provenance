@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
-    "baselineSha256": "0a4ebb9ee49a75ca31c71dc6eb4c085dac7aadb4b8685181d09a2688889da51c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1B_ACTUAL_SEAM_REPLAY_RUNNER_2026-09-02.md",
-    "workOrderSha256": "a77609a7ac34b2d6f9e58aa71aa1977c7ca3af2f4b1b84a6508adf4085002a86"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1A_R2_ORACLE_SOURCE_BINDING_CORRECTION_2026-09-02.md",
+    "baselineSha256": "446d2ad94ed7bdc41d4c012f2d85005ed55ec10f919541c515d21a7ac47eae9a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_R2_ORACLE_SOURCE_BINDING_CORRECTION_2026-09-02.md",
+    "workOrderSha256": "42953b6ccc39b8914ab6dd511de265a847aed7f1176e3ba72edba499b090d1bd"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_review_admission_machine_enforced_r1b_execution_ready",
-  "previousMode": "gclh_mfrp_p3_r1b_dispatch_ready_trigger_based_review_admission",
+  "currentMode": "gclh_mfrp_p3_r1a_r2_dispatch_ready_r1b_repair_authoring_authorized",
+  "previousMode": "gclh_mfrp_review_admission_machine_enforced_r1b_execution_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16368,5 +16368,18 @@
     "nextAllowedMove": "Execute the exact no-commit MFRP-P3-R1B work order and return its four-path result for routine independent review.",
     "claimBoundary": "This state records deterministic admission-shape enforcement, not semantic criticality inference, reviewer correctness, R1B result acceptance, P4 opening, provider/live/network or external effect."
   },
-  "nextAllowedMove": "Review admission is machine-enforced on future changed work orders through explicit trigger, admission, next-boundary and reviewer-work-boundary fields. The corrected MFRP-P3-R1B work order is execution-ready with no further pre-execution review. Next allowed move is bounded no-commit R1B implementation on its exact four-path manifest; routine independent review resumes at worker return. P4 canary execution, P2/oracle mutation, authority change, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP3R1AR2DispatchReadyR1BRepairAuthoringAuthorized20260902": {
+    "status": "R1A_R2_DISPATCH_READY_R1B_REPAIR_AUTHORING_AUTHORIZED",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1A_R2_ORACLE_SOURCE_BINDING_CORRECTION_2026-09-02.md",
+    "baselineSha256": "446d2ad94ed7bdc41d4c012f2d85005ed55ec10f919541c515d21a7ac47eae9a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_R2_ORACLE_SOURCE_BINDING_CORRECTION_2026-09-02.md",
+    "workOrderSha256": "42953b6ccc39b8914ab6dd511de265a847aed7f1176e3ba72edba499b090d1bd",
+    "dispatchCommit": "b25bec18beba30a98bcf28fe26190d7c18dc32a9",
+    "reviewAdmission": "NOT_REQUIRED_BEFORE_EXECUTION",
+    "nextRoutineReviewBoundary": "WORKER_RETURN",
+    "r1bRepairAuthoring": "AUTHORIZED_AFTER_ACCEPTED_COMMITTED_R1A_R2_ORACLE_IDENTITY",
+    "nextAllowedMove": "Execute the exact two-path no-commit R1A-R2 oracle source-binding correction. Routine review occurs at its worker return. If accepted and committed, author R1B-R2 against the real corrected oracle commit and hashes without another operator micro-checkpoint.",
+    "claimBoundary": "Dispatch and conditional successor-authoring authority only. No corrected oracle result, R1B-R2 dispatch/execution, P4 canary, P2 change, provider/live/network, public-sync, deployment or production effect is claimed."
+  },
+  "nextAllowedMove": "MFRP-P3-R1A-R2 dispatch is committed. Next allowed move is its exact two-path no-commit oracle source-binding correction; routine review resumes at worker return, not at each step. After accepted committed correction, R1B-R2 authoring is already operator-authorized but must pin the real corrected oracle commit/hash before dispatch. P4 canary execution, P2 mutation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2737,
+  "stateKey": "gclhMfrpP3R1AR2DispatchReadyR1BRepairAuthoringAuthorized20260902",
+  "value": {
+    "status": "R1A_R2_DISPATCH_READY_R1B_REPAIR_AUTHORING_AUTHORIZED",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1A_R2_ORACLE_SOURCE_BINDING_CORRECTION_2026-09-02.md",
+    "baselineSha256": "446d2ad94ed7bdc41d4c012f2d85005ed55ec10f919541c515d21a7ac47eae9a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1A_R2_ORACLE_SOURCE_BINDING_CORRECTION_2026-09-02.md",
+    "workOrderSha256": "42953b6ccc39b8914ab6dd511de265a847aed7f1176e3ba72edba499b090d1bd",
+    "dispatchCommit": "b25bec18beba30a98bcf28fe26190d7c18dc32a9",
+    "reviewAdmission": "NOT_REQUIRED_BEFORE_EXECUTION",
+    "nextRoutineReviewBoundary": "WORKER_RETURN",
+    "r1bRepairAuthoring": "AUTHORIZED_AFTER_ACCEPTED_COMMITTED_R1A_R2_ORACLE_IDENTITY",
+    "nextAllowedMove": "Execute the exact two-path no-commit R1A-R2 oracle source-binding correction. Routine review occurs at its worker return. If accepted and committed, author R1B-R2 against the real corrected oracle commit and hashes without another operator micro-checkpoint.",
+    "claimBoundary": "Dispatch and conditional successor-authoring authority only. No corrected oracle result, R1B-R2 dispatch/execution, P4 canary, P2 change, provider/live/network, public-sync, deployment or production effect is claimed."
+  }
+}

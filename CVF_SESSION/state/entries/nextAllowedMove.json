@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2736,
+  "stateOrder": 2738,
   "stateKey": "nextAllowedMove",
-  "value": "Review admission is machine-enforced on future changed work orders through explicit trigger, admission, next-boundary and reviewer-work-boundary fields. The corrected MFRP-P3-R1B work order is execution-ready with no further pre-execution review. Next allowed move is bounded no-commit R1B implementation on its exact four-path manifest; routine independent review resumes at worker return. P4 canary execution, P2/oracle mutation, authority change, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MFRP-P3-R1A-R2 dispatch is committed. Next allowed move is its exact two-path no-commit oracle source-binding correction; routine review resumes at worker return, not at each step. After accepted committed correction, R1B-R2 authoring is already operator-authorized but must pin the real corrected oracle commit/hash before dispatch. P4 canary execution, P2 mutation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
