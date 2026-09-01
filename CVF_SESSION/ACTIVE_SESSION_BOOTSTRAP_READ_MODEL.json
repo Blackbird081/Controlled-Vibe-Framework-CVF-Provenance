@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gclh_mfrp_p2_composed_local_pass_bounded_p3_operator_checkpoint_required",
+  "currentMode": "gclh_mfrp_p3_dispatch_ready_worker_execution_checkpoint_required",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MFRP-P2 receipt/readout composition is independently accepted and materially committed at fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72 after operator-authorized extraction and system-chain refresh. Evidence: 146/146 focused tests, worker-return fast PASS, pre-implementation 83/83, pre-commit 88/88, freshness CURRENT and Python size violations 0. Stop at the P3 operator checkpoint; P3-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "MFRP-P3 historical replay is dispatch-ready at material commit 57e51e8a86d44ee8602ade8af7dfff39eab87499 after pre-dispatch 81/81 and pre-commit 88/88 PASS. Transfer the exact committed packet to one no-commit worker, create only the five named replay artifacts, freeze fixture and ledger before first replay, and return for independent review without staging or committing. P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_2026-09-01.md",
-    "baselineSha256": "b41e057b58b2fb98cf893466467beae774ccadd30c269b997118059f38d28f5d",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_2026-09-01.md",
-    "workOrderSha256": "ff8ec1959d115e78436d78fe9e79b1644b893982abc65810b5b494cd549abf7e"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md",
+    "baselineSha256": "f54d6d9652acb7e4cb653f49b9f5dc752b8b782c44b439b89e4e1fa2b44120b7",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md",
+    "workOrderSha256": "1df610b4fffecfc33cb4717308758d4cc1ed4548808a3310030869c152b5e928"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

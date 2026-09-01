@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p2_composed_local_pass_bounded_p3_operator_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=report accepted P2 local composition and stop at the P3 operator checkpoint; parked checkpoint=P3-P6, lifecycle activation, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p3_dispatch_ready_worker_execution_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=transfer the committed P3 packet to one exact-five-path no-commit worker; parked checkpoint=P4-P6, lifecycle activation, downstream, GC010 and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p2_composed_local_pass_bounded_p3_operator_checkpoint_required`
-Current mode: `gclh_mfrp_p2_composed_local_pass_bounded_p3_operator_checkpoint_required`; previous mode marker: `gclh_mfrp_p2_work_order_accepted_implementation_operator_checkpoint_required`
-Previous mode: `gclh_mfrp_p2_work_order_accepted_implementation_operator_checkpoint_required`
+Current mode marker: `gclh_mfrp_p3_dispatch_ready_worker_execution_checkpoint_required`
+Current mode: `gclh_mfrp_p3_dispatch_ready_worker_execution_checkpoint_required`; previous mode marker: `gclh_mfrp_p2_composed_local_pass_bounded_p3_operator_checkpoint_required`
+Previous mode: `gclh_mfrp_p2_composed_local_pass_bounded_p3_operator_checkpoint_required`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p2_composed_local_pass_bounded_p3_operator_checkpoint_required`. P2 receipt/readout composition is independently accepted at material commit `fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72`. The operator-authorized ten-path batch splits bounded receipt/readout mechanics and hostile tests, refreshes system-chain fingerprints, preserves explicit `NOT_CHECKED`/`UNCLASSIFIED` evidence and keeps reviewer semantic authority exclusive. Focused tests 146/146, worker-return fast PASS, pre-implementation 83/83, pre-commit 88/88, freshness CURRENT and Python size violations 0. Stop at the P3 operator checkpoint. P3-P6, lifecycle activation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p3_dispatch_ready_worker_execution_checkpoint_required`. P3 historical replay is dispatch-ready at material commit `57e51e8a86d44ee8602ade8af7dfff39eab87499`; pre-dispatch 81/81 and pre-commit 88/88 passed, the exact three-path packet and seven source hashes matched, and no provider/live/network call occurred. Transfer the committed packet to one no-commit worker at that execution base. The worker creates only five named artifacts, freezes fixture and ledger before first replay, and returns for independent review without staging or committing. P4-P6, lifecycle activation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

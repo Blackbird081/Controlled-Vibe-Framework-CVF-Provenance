@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2710,
+  "stateOrder": 2712,
   "stateKey": "nextAllowedMove",
-  "value": "MFRP-P2 receipt/readout composition is independently accepted and materially committed at fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72 after operator-authorized extraction and system-chain refresh. Evidence: 146/146 focused tests, worker-return fast PASS, pre-implementation 83/83, pre-commit 88/88, freshness CURRENT and Python size violations 0. Stop at the P3 operator checkpoint; P3-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MFRP-P3 historical replay is dispatch-ready at material commit 57e51e8a86d44ee8602ade8af7dfff39eab87499 after pre-dispatch 81/81 and pre-commit 88/88 PASS. Transfer the exact committed packet to one no-commit worker, create only the five named replay artifacts, freeze fixture and ledger before first replay, and return for independent review without staging or committing. P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

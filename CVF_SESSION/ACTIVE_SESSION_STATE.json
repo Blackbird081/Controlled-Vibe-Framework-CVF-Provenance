@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_2026-09-01.md",
-    "baselineSha256": "b41e057b58b2fb98cf893466467beae774ccadd30c269b997118059f38d28f5d",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_2026-09-01.md",
-    "workOrderSha256": "ff8ec1959d115e78436d78fe9e79b1644b893982abc65810b5b494cd549abf7e"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md",
+    "baselineSha256": "f54d6d9652acb7e4cb653f49b9f5dc752b8b782c44b439b89e4e1fa2b44120b7",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md",
+    "workOrderSha256": "1df610b4fffecfc33cb4717308758d4cc1ed4548808a3310030869c152b5e928"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p2_composed_local_pass_bounded_p3_operator_checkpoint_required",
-  "previousMode": "gclh_mfrp_p2_work_order_accepted_implementation_operator_checkpoint_required",
+  "currentMode": "gclh_mfrp_p3_dispatch_ready_worker_execution_checkpoint_required",
+  "previousMode": "gclh_mfrp_p2_composed_local_pass_bounded_p3_operator_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16177,5 +16177,16 @@
     "nextAllowedMove": "Stop at the P3 operator checkpoint. P2 is locally composed and committed; P3 must not open automatically. If the operator requests continuation, author and review the P3 dispatch as a separate governed tranche.",
     "claimBoundary": "P2 local deterministic composition only. The receipt/readout is not semantic truth, reviewer replacement, closure authorization, lifecycle activation or downstream adoption. P3-P6, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
   },
-  "nextAllowedMove": "MFRP-P2 receipt/readout composition is independently accepted and materially committed at fea7b3b2ee2b5f70777f7d28655b9d08f7cfbe72 after operator-authorized extraction and system-chain refresh. Evidence: 146/146 focused tests, worker-return fast PASS, pre-implementation 83/83, pre-commit 88/88, freshness CURRENT and Python size violations 0. Stop at the P3 operator checkpoint; P3-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP3DispatchReadyWorkerExecutionCheckpointRequired20260901": {
+    "status": "P3_DISPATCH_READY_WORKER_EXECUTION_CHECKPOINT_REQUIRED",
+    "materialCommit": "57e51e8a86d44ee8602ade8af7dfff39eab87499",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md",
+    "plannedWorkerReturnPath": "docs/reviews/CVF_MFRP_P3_HISTORICAL_REPLAY_WORKER_RETURN_2026-09-01.md",
+    "acceptedOutcome": "The source-verified P3 provider-free historical-replay baseline and exact five-path no-commit work order are committed and dispatch-ready. Seven historical source hashes, pre-execution fixture/ledger freeze, at least eighteen cases and per-class zero-tolerance recall are contract requirements.",
+    "reviewEvidence": "Pre-dispatch autorun 81/81 PASS, material pre-commit 88/88 PASS, exact three-path dispatch manifest and seven frozen source hashes independently matched. No provider/live/network call occurred.",
+    "nextAllowedMove": "Transfer the exact committed P3 packet to one no-commit worker at execution base 57e51e8a86d44ee8602ade8af7dfff39eab87499. The worker may create only the five named replay artifacts, must freeze fixture and ledger before first replay, and must return for independent review without staging or committing.",
+    "claimBoundary": "P3 dispatch only. No replay result, semantic acceptance, lifecycle activation or P4 opening is claimed. P4-P6, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
+  },
+  "nextAllowedMove": "MFRP-P3 historical replay is dispatch-ready at material commit 57e51e8a86d44ee8602ade8af7dfff39eab87499 after pre-dispatch 81/81 and pre-commit 88/88 PASS. Transfer the exact committed packet to one no-commit worker, create only the five named replay artifacts, freeze fixture and ledger before first replay, and return for independent review without staging or committing. P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
