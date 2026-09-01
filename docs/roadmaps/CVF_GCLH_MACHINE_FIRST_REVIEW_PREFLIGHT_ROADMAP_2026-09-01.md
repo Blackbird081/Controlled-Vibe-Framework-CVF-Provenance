@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: H0_CLOSED_P1_WORK_ORDER_DISPATCH_READY
+Status: P1_CLOSED_P2_WORK_ORDER_DISPATCH_READY
 
 docType: roadmap
 
@@ -15,18 +15,22 @@ Planning base head: `90c2952b642e962c274e07f1f1f5b7cda03d4451`
 ## Authorization / Decision
 
 The operator authorized the roadmap and Claude critique, then authorized H0
-dispatch/implementation and accepted its independent closure. On 2026-09-01
-the operator issued the continuation instruction at the explicit post-H0 checkpoint.
+dispatch/implementation and accepted its independent closure. The operator
+subsequently authorized P1, accepted its bounded independent closure, and on
+2026-09-01 issued the continuation instruction at the explicit post-P1 P2
+checkpoint.
 
-Current decision: `H0_CLOSED_P1_WORK_ORDER_DISPATCH_READY`.
+Current decision: `P1_CLOSED_P2_WORK_ORDER_DISPATCH_READY`.
 
 H0 is closed at material commit
-`5705a8d1c0a2512f0ce20fa705552316ebc85721`. A fresh documentation-only
-MFRP-P1 owner-and-contract-ratification work order may be dispatched and
-independently reviewed next. P1 implementation outputs, P2, standards,
-templates, checkers, schemas, hooks, runtime, downstream workspace, provider,
-public, deployment and production mutation remain unauthorized until their
-own governed checkpoints.
+`5705a8d1c0a2512f0ce20fa705552316ebc85721`. P1 is accepted with disposition
+`CONTRACT_ACCEPTED_BOUNDED` at material commit
+`dc370ba33a3a39cee677453b2bedc14b94bfc798`; its continuity state is committed
+at `0e76be4b54cb6100813292fba3664a95bf665198`. A fresh MFRP-P2 bounded
+receipt/readout-composition work order may now be dispatched and independently
+reviewed. P2 execution, P3-P6, broader standards/templates, lifecycle hook
+activation, downstream workspace, provider, public, deployment and production
+mutation remain unauthorized until their own governed checkpoints.
 
 ## Purpose
 
@@ -60,17 +64,19 @@ rollback, cost telemetry and one external critique/reconciliation cycle.
 Runtime freshness is `CURRENT_BOUNDED_H0_ONLY`: H0's current receipt v2 source,
 focused 46-test suite and full local governance bundles were independently
 accepted at material commit `5705a8d1c0a2512f0ce20fa705552316ebc85721`.
-That proves only the bounded autorun verifier-identity hardening. P1 changes
-governed documentation only, and no broader seven-phase, provider or product
-runtime claim is made.
+That proves only the bounded autorun verifier-identity hardening. P1 ratified
+the owner and return contract in governed documentation. P2 is not yet
+implemented, and no broader seven-phase, provider or product runtime claim is
+made.
 
 ## Design Control Gate
 
-P0 critique/reconciliation and H0 are satisfied. P1 may open only through the
-paired GC-018/work order at dispatch base
-`db47d7a86466de25a6f8a9df7567601178981831`. P1 is documentation-only owner
-ratification and contract-delta evidence; it may not edit current owners or
-open P2. No tranche opens automatically from P1's future disposition.
+P0 critique/reconciliation, H0 and P1 are satisfied. P2 may open only through
+the paired GC-018/work order at dispatch base
+`0e76be4b54cb6100813292fba3664a95bf665198`. P2 is bounded local composition
+inside the existing autorun receipt and AAF owners; it may not activate a
+lifecycle hook, change semantic review authority or open P3. No tranche opens
+automatically from P2's future disposition.
 
 ## Governing Principles
 
@@ -316,10 +322,11 @@ reuse.
 | MFRP-P5 | selective Core activation | earliest applicable gates, trusted receipt admission and fail-closed escalation | `CORE_MACHINE_FIRST_ACTIVE_BOUNDED` |
 | MFRP-P6 | seven-phase and downstream adoption | phase templates, workspace projection freshness and adoption proof | `ADOPTION_PROVEN_BOUNDED` |
 
-No tranche opens automatically. H0 requires an exact protected-path work order
-and independent acceptance before implementation. P1 opens only after H0
-closure or fail-closed disabling of receipt reuse. P6 cannot start before Core
-closure and explicit downstream release.
+No tranche opens automatically. H0 required an exact protected-path work order
+and independent acceptance before implementation. P1 opened only after H0
+closure; P2 now opens only through its exact protected-path work order and an
+explicit worker-execution checkpoint. P3 requires independently accepted P2
+closure. P6 cannot start before Core closure and explicit downstream release.
 
 ## Historical Replay And Hostile Test Matrix
 
@@ -483,10 +490,10 @@ its TruthReceipt-specific profile label to a different schema.
 
 ### Claim Update
 
-This roadmap is revised, CVF-reconciled and H0-hardened. It now authorizes the
-paired P1 documentation work order for later no-commit execution and
-independent review. It does not accept the P1 contract, edit any current owner
-or open P2.
+This roadmap is revised, CVF-reconciled, H0-hardened and P1-ratified. It now
+authorizes the paired P2 bounded composition work order for later no-commit
+execution and independent review. It does not claim a P2 implementation
+result, activate a lifecycle hook or open P3.
 
 ## Checker Source Read-Ahead Block
 
@@ -494,8 +501,8 @@ or open P2.
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_truth_foundation_claim_guard.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_governed_file_size.py` |
 | literalTokensReviewed | roadmap structural groups; dispatch-ready work-order relationship; external-intake seven-row table; Truth Foundation claim boundaries; trace manifest labels; active-roadmap public disposition; size thresholds |
-| gateRunPurpose | confirm H0 closure and P1 dispatch state after direct owner/helper inspection |
-| claimBoundary | checker PASS cannot accept the P1 contract, open P2 or replace semantic review |
+| gateRunPurpose | confirm P1 closure and P2 dispatch state after direct autorun-receipt and AAF owner inspection |
+| claimBoundary | checker PASS cannot execute or accept P2, open P3 or replace semantic review |
 
 ## Agent Operation Trace Block
 
@@ -503,19 +510,19 @@ or open P2.
 |---|---|
 | Actor | CVF dispatcher/orchestrator |
 | Provider or surface | local private provenance repository |
-| Session or invocation | GCLH-MFRP P1 dispatch authoring, 2026-09-01 |
+| Session or invocation | GCLH-MFRP P2 dispatch authoring, 2026-09-01 |
 | Working directory | repository root |
 | Command or tool surface | current owner/source reads, `rg`, scaffold stdout, ADIF resolver, `apply_patch`, focused machine checks and git |
-| Target paths | this roadmap; P1 GC-018 baseline; P1 work order |
-| Allowed scope source | operator continuation instruction at the explicit post-H0 P1 authoring checkpoint |
-| Before status evidence | HEAD `db47d7a86466de25a6f8a9df7567601178981831`; clean worktree; P1 packet paths absent |
-| After status evidence | H0 closure reflected and paired P1 dispatch packet authored; P1 execution outputs absent |
+| Target paths | this roadmap; P2 GC-018 baseline; P2 work order |
+| Allowed scope source | operator continuation instruction at the explicit post-P1 P2 checkpoint |
+| Before status evidence | HEAD `0e76be4b54cb6100813292fba3664a95bf665198`; clean worktree; P2 dispatch packet paths absent |
+| After status evidence | P1 closure reflected and paired P2 dispatch packet authored; P2 execution output absent |
 | Diff evidence | exact three-path dispatch changed set |
-| Approval boundary | P1 planning/dispatch and independent packet review only |
-| Claim boundary | no P1 result, owner mutation, P2, downstream or external-effect authority |
+| Approval boundary | P2 planning/dispatch and independent packet review only |
+| Claim boundary | no P2 implementation result, P3, lifecycle activation, downstream or external-effect authority |
 | Agent type | dispatcher/orchestrator |
-| Invocation ID | `gclh-mfrp-p1-dispatch-2026-09-01` |
-| Expected manifest | this roadmap; P1 GC-018 baseline; P1 work order |
+| Invocation ID | `gclh-mfrp-p2-dispatch-2026-09-01` |
+| Expected manifest | this roadmap; P2 GC-018 baseline; P2 work order |
 | Actual changed set | same three paths |
 | Manifest delta | MATCH |
 
@@ -529,7 +536,7 @@ public-sync is not authorized.
 ## Claim Boundary
 
 This roadmap records the CVF-reconciled machine-first direction, accepted H0
-hardening, and P1 dispatch authority. It does not accept the P1 contract,
-change an owner/helper/checker/schema/hook, open P2, activate SOT3 globally,
-modify downstream workspaces, or authorize provider/live, public-sync,
-deployment, release or production behavior.
+hardening, accepted P1 contract and P2 dispatch authority. It does not claim
+P2 implementation or acceptance, activate a lifecycle hook, open P3, activate
+SOT3 globally, modify downstream workspaces, or authorize provider/live,
+public-sync, deployment, release or production behavior.
