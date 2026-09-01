@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gclh_mfrp_p3_r1_design_review_checkpoint_required",
+  "currentMode": "gclh_mfrp_p3_r1_two_tranche_accepted_r1a_operator_checkpoint_required",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MFRP-P3 is rejected RETURN_TO_DESIGN and its five returned artifacts are preserved only under rejected_evidence with .rejected suffixes at material commit 0cb164a1d6b27fef21cf829d32465923d1331c49. Next allowed move is independent critique of the committed P3-R1 actual-seam/committed-oracle redesign. R1A oracle ratification and R1B implementation require a later explicit operator checkpoint plus fresh baseline/work order; P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "P3-R1 external critique is absorbed at material commit 51d1e4ebeedc5f9995433b68043e3985cd2aa616 with ACCEPT_TWO_TRANCHE_DIRECTION and four binding corrections. Next allowed move is operator decision whether to authorize authoring a fresh source-verified R1A baseline and work order. R1A is not automatically opened; R1B requires accepted R1A oracle evidence plus a separate work order. P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -10,8 +10,8 @@
   "currentAuthority": {
     "baselinePath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
     "baselineSha256": "4438fcce757dcbe9bb6041a025b36adf2a3d3350199000bd18fc2ed9f6c11a07",
-    "workOrderPath": "docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md",
-    "workOrderSha256": "22a086d7742dbdaec5b887fd377890962ad34396953f48287ce865f743766011"
+    "workOrderPath": "docs/reviews/CVF_MFRP_P3_R1_EXTERNAL_FINDING_ABSORPTION_AND_DESIGN_RECONCILIATION_2026-09-01.md",
+    "workOrderSha256": "8d4d782ac212de13f404021ab4256664696d97321377b1978749a1b08d9ab797"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

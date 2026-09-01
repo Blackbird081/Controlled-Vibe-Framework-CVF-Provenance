@@ -38,8 +38,8 @@
   "currentAuthority": {
     "baselinePath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
     "baselineSha256": "4438fcce757dcbe9bb6041a025b36adf2a3d3350199000bd18fc2ed9f6c11a07",
-    "workOrderPath": "docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md",
-    "workOrderSha256": "22a086d7742dbdaec5b887fd377890962ad34396953f48287ce865f743766011"
+    "workOrderPath": "docs/reviews/CVF_MFRP_P3_R1_EXTERNAL_FINDING_ABSORPTION_AND_DESIGN_RECONCILIATION_2026-09-01.md",
+    "workOrderSha256": "8d4d782ac212de13f404021ab4256664696d97321377b1978749a1b08d9ab797"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p3_r1_design_review_checkpoint_required",
-  "previousMode": "gclh_mfrp_p3_dispatch_ready_worker_execution_checkpoint_required",
+  "currentMode": "gclh_mfrp_p3_r1_two_tranche_accepted_r1a_operator_checkpoint_required",
+  "previousMode": "gclh_mfrp_p3_r1_design_review_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

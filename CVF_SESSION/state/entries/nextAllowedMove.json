@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2714,
+  "stateOrder": 2716,
   "stateKey": "nextAllowedMove",
-  "value": "MFRP-P3 is rejected RETURN_TO_DESIGN and its five returned artifacts are preserved only under rejected_evidence with .rejected suffixes at material commit 0cb164a1d6b27fef21cf829d32465923d1331c49. Next allowed move is independent critique of the committed P3-R1 actual-seam/committed-oracle redesign. R1A oracle ratification and R1B implementation require a later explicit operator checkpoint plus fresh baseline/work order; P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "P3-R1 external critique is absorbed at material commit 51d1e4ebeedc5f9995433b68043e3985cd2aa616 with ACCEPT_TWO_TRANCHE_DIRECTION and four binding corrections. Next allowed move is operator decision whether to authorize authoring a fresh source-verified R1A baseline and work order. R1A is not automatically opened; R1B requires accepted R1A oracle evidence plus a separate work order. P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

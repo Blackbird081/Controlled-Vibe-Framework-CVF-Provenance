@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2715,
+  "stateKey": "gclhMfrpP3R1TwoTrancheAcceptedR1AOperatorCheckpointRequired20260901",
+  "value": {
+    "status": "P3_R1_TWO_TRANCHE_ACCEPTED_R1A_OPERATOR_CHECKPOINT_REQUIRED",
+    "materialCommit": "51d1e4ebeedc5f9995433b68043e3985cd2aa616",
+    "roadmapPath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
+    "redesignPath": "docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md",
+    "reconciliationPath": "docs/reviews/CVF_MFRP_P3_R1_EXTERNAL_FINDING_ABSORPTION_AND_DESIGN_RECONCILIATION_2026-09-01.md",
+    "externalEvidenceManifest": "docs/reviews/external_advisory_evidence/MFRP_P3_R1_2026-09-01/ARCHIVE_MANIFEST.txt",
+    "acceptedOutcome": "The independent critique accepts the two-tranche direction with four binding corrections: serialized-byte mutation proof, one same payload observation across both P2 seams, both P2 seam source hashes pinned for R1B, and per-case static feasibility evidence in R1A. R1 remains a non-executable umbrella; only R1A and R1B are execution tranches.",
+    "reviewEvidence": "The external payload is byte-preserved with SHA-256 944ed0d2f84a455978ae906e3fe110c2fc84119550ceca7070f67f70f5233675. CVF independently verified the rejected helper and both current P2 seams. Reviewer-fast passed 67/67 and material pre-commit passed 88/88. No provider/live/network call occurred.",
+    "nextAllowedMove": "Operator decision whether to authorize authoring a fresh source-verified R1A baseline and work order under the binding reconciliation. R1A is not automatically opened; R1B requires accepted R1A oracle evidence and a separate work order.",
+    "claimBoundary": "Design reconciliation and operator checkpoint only. No R1A oracle ratification, R1B runner implementation, P2 mutation, P4 opening, lifecycle activation, downstream application or external effect is claimed."
+  }
+}

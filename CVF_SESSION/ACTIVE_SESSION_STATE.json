@@ -38,8 +38,8 @@
   "currentAuthority": {
     "baselinePath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
     "baselineSha256": "4438fcce757dcbe9bb6041a025b36adf2a3d3350199000bd18fc2ed9f6c11a07",
-    "workOrderPath": "docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md",
-    "workOrderSha256": "22a086d7742dbdaec5b887fd377890962ad34396953f48287ce865f743766011"
+    "workOrderPath": "docs/reviews/CVF_MFRP_P3_R1_EXTERNAL_FINDING_ABSORPTION_AND_DESIGN_RECONCILIATION_2026-09-01.md",
+    "workOrderSha256": "8d4d782ac212de13f404021ab4256664696d97321377b1978749a1b08d9ab797"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p3_r1_design_review_checkpoint_required",
-  "previousMode": "gclh_mfrp_p3_dispatch_ready_worker_execution_checkpoint_required",
+  "currentMode": "gclh_mfrp_p3_r1_two_tranche_accepted_r1a_operator_checkpoint_required",
+  "previousMode": "gclh_mfrp_p3_r1_design_review_checkpoint_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16200,5 +16200,17 @@
     "nextAllowedMove": "Obtain an independent critique of the committed P3-R1 redesign. Do not implement R1A or R1B until that critique is reconciled, the operator explicitly approves the next tranche, and a fresh source-verified baseline/work order is committed.",
     "claimBoundary": "Archive preservation and design readiness only. No P3 replay acceptance, oracle ratification, runner implementation, P2 mutation, P4 opening, lifecycle activation, downstream application or external effect is claimed."
   },
-  "nextAllowedMove": "MFRP-P3 is rejected RETURN_TO_DESIGN and its five returned artifacts are preserved only under rejected_evidence with .rejected suffixes at material commit 0cb164a1d6b27fef21cf829d32465923d1331c49. Next allowed move is independent critique of the committed P3-R1 actual-seam/committed-oracle redesign. R1A oracle ratification and R1B implementation require a later explicit operator checkpoint plus fresh baseline/work order; P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP3R1TwoTrancheAcceptedR1AOperatorCheckpointRequired20260901": {
+    "status": "P3_R1_TWO_TRANCHE_ACCEPTED_R1A_OPERATOR_CHECKPOINT_REQUIRED",
+    "materialCommit": "51d1e4ebeedc5f9995433b68043e3985cd2aa616",
+    "roadmapPath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
+    "redesignPath": "docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md",
+    "reconciliationPath": "docs/reviews/CVF_MFRP_P3_R1_EXTERNAL_FINDING_ABSORPTION_AND_DESIGN_RECONCILIATION_2026-09-01.md",
+    "externalEvidenceManifest": "docs/reviews/external_advisory_evidence/MFRP_P3_R1_2026-09-01/ARCHIVE_MANIFEST.txt",
+    "acceptedOutcome": "The independent critique accepts the two-tranche direction with four binding corrections: serialized-byte mutation proof, one same payload observation across both P2 seams, both P2 seam source hashes pinned for R1B, and per-case static feasibility evidence in R1A. R1 remains a non-executable umbrella; only R1A and R1B are execution tranches.",
+    "reviewEvidence": "The external payload is byte-preserved with SHA-256 944ed0d2f84a455978ae906e3fe110c2fc84119550ceca7070f67f70f5233675. CVF independently verified the rejected helper and both current P2 seams. Reviewer-fast passed 67/67 and material pre-commit passed 88/88. No provider/live/network call occurred.",
+    "nextAllowedMove": "Operator decision whether to authorize authoring a fresh source-verified R1A baseline and work order under the binding reconciliation. R1A is not automatically opened; R1B requires accepted R1A oracle evidence and a separate work order.",
+    "claimBoundary": "Design reconciliation and operator checkpoint only. No R1A oracle ratification, R1B runner implementation, P2 mutation, P4 opening, lifecycle activation, downstream application or external effect is claimed."
+  },
+  "nextAllowedMove": "P3-R1 external critique is absorbed at material commit 51d1e4ebeedc5f9995433b68043e3985cd2aa616 with ACCEPT_TWO_TRANCHE_DIRECTION and four binding corrections. Next allowed move is operator decision whether to authorize authoring a fresh source-verified R1A baseline and work order. R1A is not automatically opened; R1B requires accepted R1A oracle evidence plus a separate work order. P4-P6, lifecycle activation, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
