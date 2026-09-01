@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: REVISED_AFTER_CVF_RECONCILIATION_H0_WORK_ORDER_REQUIRED
+Status: H0_CLOSED_P1_WORK_ORDER_DISPATCH_READY
 
 docType: roadmap
 
@@ -14,16 +14,19 @@ Planning base head: `90c2952b642e962c274e07f1f1f5b7cda03d4451`
 
 ## Authorization / Decision
 
-The operator authorized a detailed roadmap and one Claude critique before any
-implementation. This packet therefore authorizes planning and external
-critique only.
+The operator authorized the roadmap and Claude critique, then authorized H0
+dispatch/implementation and accepted its independent closure. On 2026-09-01
+the operator issued the continuation instruction at the explicit post-H0 checkpoint.
 
-Current decision: `REVISE_APPLIED_H0_WORK_ORDER_REQUIRED`.
+Current decision: `H0_CLOSED_P1_WORK_ORDER_DISPATCH_READY`.
 
-The critique and CVF reconciliation are complete. Only a fresh protected-path
-MFRP-H0 work order may be authored and reviewed next. No standard, template,
-checker, schema, hook, runtime, downstream workspace, provider, public,
-deployment, or production mutation is authorized by this roadmap.
+H0 is closed at material commit
+`5705a8d1c0a2512f0ce20fa705552316ebc85721`. A fresh documentation-only
+MFRP-P1 owner-and-contract-ratification work order may be dispatched and
+independently reviewed next. P1 implementation outputs, P2, standards,
+templates, checkers, schemas, hooks, runtime, downstream workspace, provider,
+public, deployment and production mutation remain unauthorized until their
+own governed checkpoints.
 
 ## Purpose
 
@@ -54,18 +57,20 @@ rollback, cost telemetry and one external critique/reconciliation cycle.
 
 ## Current Runtime Freshness Verification
 
-Runtime freshness is `N/A with reason`: P0/P0R change governed planning and
-external-review context only. No runtime source, helper, checker, schema, hook,
-provider configuration or product behavior was inspected as proof of current
-execution, modified or executed. The current implementation state therefore
-remains unverified by this roadmap, and no runtime behavior claim is made.
+Runtime freshness is `CURRENT_BOUNDED_H0_ONLY`: H0's current receipt v2 source,
+focused 46-test suite and full local governance bundles were independently
+accepted at material commit `5705a8d1c0a2512f0ce20fa705552316ebc85721`.
+That proves only the bounded autorun verifier-identity hardening. P1 changes
+governed documentation only, and no broader seven-phase, provider or product
+runtime claim is made.
 
 ## Design Control Gate
 
-P0 critique and reconciliation require revision before P1. H0 now precedes P1
-and may open only through a fresh protected-path work order that closes the
-existing autorun receipt's verifier-identity gap. P1 remains closed until H0 is
-independently accepted or receipt reuse is disabled fail-closed.
+P0 critique/reconciliation and H0 are satisfied. P1 may open only through the
+paired GC-018/work order at dispatch base
+`db47d7a86466de25a6f8a9df7567601178981831`. P1 is documentation-only owner
+ratification and contract-delta evidence; it may not edit current owners or
+open P2. No tranche opens automatically from P1's future disposition.
 
 ## Governing Principles
 
@@ -95,7 +100,7 @@ independently accepted or receipt reuse is disabled fail-closed.
 | read-only helper/readout/scaffold | `governance/compat/run_agent_automation_assist.py` | extend or compose; do not create a competing orchestration helper |
 | commit/range classification | `governance/compat/run_agent_commit_steward_preflight.py` | reuse exact path plan and split-range logic |
 | lifecycle phase gates | `governance/compat/run_agent_autorun_workflow_gate.py` | integrate only after shadow/replay evidence |
-| existing PASS receipt and cache | `governance/compat/run_agent_autorun_workflow_gate.py` `cvf.autorun.pass-receipt.v1` | harden/extend; do not create a parallel receipt runner |
+| existing PASS receipt and cache | `governance/compat/run_agent_autorun_workflow_gate.py` `cvf.autorun.pass-receipt.v2` | H0 hardened verifier identity; future composition must extend this owner, not create a parallel runner |
 | downstream projection freshness | GCLH T1 plus GLP owner | remain parked until Core closure |
 
 Owner-placement decision after critique: do not open a new reference family by
@@ -156,10 +161,11 @@ minimums are:
 
 ## Existing Receipt Baseline And Planned Extension
 
-`cvf.autorun.pass-receipt.v1` already provides exact-context PASS receipt reuse
-through base/head SHAs, command-manifest hash and changed-path fingerprint. It
-is the implementation baseline, not a complete seven-phase receipt and not yet
-safe against cross-batch verifier dependency drift.
+`cvf.autorun.pass-receipt.v2` now provides exact-context PASS receipt reuse
+through base/head SHAs, command-manifest hash, changed-path fingerprint and the
+H0 conservative verifier/interpreter identity. It is the implementation
+baseline, not a complete seven-phase receipt. P1 must treat H0 as a closed
+input and must not reopen or duplicate the receipt owner.
 
 The extended receipt must remain canonical, content-addressed and bounded to
 one envelope and one conservatively resolved verifier closure:
@@ -477,37 +483,39 @@ its TruthReceipt-specific profile label to a different schema.
 
 ### Claim Update
 
-This roadmap is revised and CVF-reconciled. It authorizes H0 work-order
-authoring/review only, not implementation or P1.
+This roadmap is revised, CVF-reconciled and H0-hardened. It now authorizes the
+paired P1 documentation work order for later no-commit execution and
+independent review. It does not accept the P1 contract, edit any current owner
+or open P2.
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_truth_foundation_claim_guard.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
-| literalTokensReviewed | roadmap structural groups; external-intake seven-row table; Truth Foundation claim boundaries; active-roadmap public disposition; size thresholds |
-| gateRunPurpose | confirm roadmap shape after direct owner/helper inspection |
-| claimBoundary | checker PASS cannot accept the architecture or replace Claude/CVF review |
+| applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_truth_foundation_claim_guard.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_governed_file_size.py` |
+| literalTokensReviewed | roadmap structural groups; dispatch-ready work-order relationship; external-intake seven-row table; Truth Foundation claim boundaries; trace manifest labels; active-roadmap public disposition; size thresholds |
+| gateRunPurpose | confirm H0 closure and P1 dispatch state after direct owner/helper inspection |
+| claimBoundary | checker PASS cannot accept the P1 contract, open P2 or replace semantic review |
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | CVF orchestrator/reviewer |
+| Actor | CVF dispatcher/orchestrator |
 | Provider or surface | local private provenance repository |
-| Session or invocation | GCLH-MFRP P0R critique absorption, 2026-09-01 |
+| Session or invocation | GCLH-MFRP P1 dispatch authoring, 2026-09-01 |
 | Working directory | repository root |
-| Command or tool surface | exact critique/source reads, SHA-256, `rg`, `apply_patch`, focused machine checks |
-| Target paths | this roadmap; exact Claude critique; CVF reconciliation |
-| Allowed scope source | operator returned the exact critique requested before proceeding |
-| Before status evidence | one untracked critique at HEAD `d5a1ed352`; roadmap hash matched |
-| After status evidence | critique preserved, findings absorbed and roadmap revised; implementation held |
-| Diff evidence | exact three-path material changed set before commit |
-| Approval boundary | critique absorption and roadmap revision only |
-| Claim boundary | no implementation, downstream, provider/live, public, deploy or production authority |
-| Agent type | orchestrator/reviewer |
-| Invocation ID | `gclh-mfrp-p0r-absorption-2026-09-01` |
-| Expected manifest | this roadmap; exact Claude critique; CVF reconciliation |
+| Command or tool surface | current owner/source reads, `rg`, scaffold stdout, ADIF resolver, `apply_patch`, focused machine checks and git |
+| Target paths | this roadmap; P1 GC-018 baseline; P1 work order |
+| Allowed scope source | operator continuation instruction at the explicit post-H0 P1 authoring checkpoint |
+| Before status evidence | HEAD `db47d7a86466de25a6f8a9df7567601178981831`; clean worktree; P1 packet paths absent |
+| After status evidence | H0 closure reflected and paired P1 dispatch packet authored; P1 execution outputs absent |
+| Diff evidence | exact three-path dispatch changed set |
+| Approval boundary | P1 planning/dispatch and independent packet review only |
+| Claim boundary | no P1 result, owner mutation, P2, downstream or external-effect authority |
+| Agent type | dispatcher/orchestrator |
+| Invocation ID | `gclh-mfrp-p1-dispatch-2026-09-01` |
+| Expected manifest | this roadmap; P1 GC-018 baseline; P1 work order |
 | Actual changed set | same three paths |
 | Manifest delta | MATCH |
 
@@ -520,8 +528,8 @@ public-sync is not authorized.
 
 ## Claim Boundary
 
-This roadmap records the CVF-reconciled machine-first review direction and
-authorizes only H0 work-order authoring/review. It does not implement a helper,
-checker, schema or hook, activate SOT3 globally, modify downstream workspaces,
-or authorize provider/live, public-sync, deployment, release or production
-behavior.
+This roadmap records the CVF-reconciled machine-first direction, accepted H0
+hardening, and P1 dispatch authority. It does not accept the P1 contract,
+change an owner/helper/checker/schema/hook, open P2, activate SOT3 globally,
+modify downstream workspaces, or authorize provider/live, public-sync,
+deployment, release or production behavior.
