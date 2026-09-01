@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_h0_work_order_accepted_implementation_allowed`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact no-commit MFRP-H0 receipt-identity work order and return for independent review; parked checkpoint=P1/P2, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_h0_closed_p1_operator_checkpoint_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=report accepted H0 closure and stop for explicit operator authorization before P1 work-order authoring; parked checkpoint=P1 implementation, P2, downstream, GC010 and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_h0_work_order_accepted_implementation_allowed`
-Current mode: `gclh_mfrp_h0_work_order_accepted_implementation_allowed`; previous mode marker: `gclh_mfrp_p0r_reconciled_h0_work_order_required`
-Previous mode: `gclh_mfrp_p0r_reconciled_h0_work_order_required`
+Current mode marker: `gclh_mfrp_h0_closed_p1_operator_checkpoint_required`
+Current mode: `gclh_mfrp_h0_closed_p1_operator_checkpoint_required`; previous mode marker: `gclh_mfrp_h0_work_order_accepted_implementation_allowed`
+Previous mode: `gclh_mfrp_h0_work_order_accepted_implementation_allowed`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_h0_work_order_accepted_implementation_allowed`. The source-verified H0 baseline/work order are independently accepted at `a834cad4e` after 81/81 pre-dispatch, 88/88 pre-commit and an independent canonical-vector recomputation. Execute only that exact no-commit packet: two protected Python modifications plus the named worker return, followed by independent evidence review. P1/P2, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_h0_closed_p1_operator_checkpoint_required`. MFRP-H0 is independently accepted `H0_CLOSED_PASS_BOUNDED` at material commit `5705a8d1c0a2512f0ce20fa705552316ebc85721`. Reviewer corrections closed restricted-I-JSON type acceptance and missing/ignored argv-input omission; focused 46/46, pre-implementation 83/83, reviewer-fast 67/67 and pre-commit 88/88 PASS, with system-chain freshness `CURRENT`. Stop for explicit operator authorization before authoring a fresh P1 owner-and-contract-ratification work order; P1 implementation, P2, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

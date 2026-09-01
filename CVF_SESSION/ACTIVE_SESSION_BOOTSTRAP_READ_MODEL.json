@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gclh_mfrp_h0_work_order_accepted_implementation_allowed",
+  "currentMode": "gclh_mfrp_h0_closed_p1_operator_checkpoint_required",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Execute only the committed MFRP-H0 work order at a clean current HEAD. The no-commit worker may modify governance/compat/run_agent_autorun_workflow_gate.py and governance/compat/test_run_agent_autorun_workflow_gate.py and create docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md. It must implement v2 fail-closed verifier/interpreter identity, pre/post snapshot equality and the full hostile matrix, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Reviewer owns acceptance and commits. Do not open P1, P2, downstream workspace, GC010, provider/live, public-sync, deployment or production. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "MFRP-H0 is independently closed H0_CLOSED_PASS_BOUNDED at material commit 5705a8d1c0a2512f0ce20fa705552316ebc85721. Stop at the operator checkpoint before opening MFRP-P1; if authorized, author and independently review a fresh P1 owner-and-contract-ratification work order before any implementation. P2, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

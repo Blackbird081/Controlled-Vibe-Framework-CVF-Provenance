@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_h0_work_order_accepted_implementation_allowed",
-  "previousMode": "gclh_mfrp_p0r_reconciled_h0_work_order_required",
+  "currentMode": "gclh_mfrp_h0_closed_p1_operator_checkpoint_required",
+  "previousMode": "gclh_mfrp_h0_work_order_accepted_implementation_allowed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -5944,7 +5944,7 @@
     "nextAllowedMove": "Select another high-value CVF foundation roadmap through fresh GC-018/source-verified work order before implementation.",
     "claimBoundary": "MKG owner-verification decision only; no runtime, UI, checker, MCP, CLI, IDE bridge, provider-live, public-sync, generated-state, resolver, adapter, registry, package, certification, DICE, or push scope."
   },
-  "lastUpdated": "2026-07-12",
+  "lastUpdated": "2026-09-01",
   "mpiT3ExternalAgentMemoryReadContractClosure20260627": {
     "status": "CLOSED_PASS_BOUNDED",
     "materialCommit": "b825a69c",
@@ -16118,5 +16118,16 @@
     "nextAllowedMove": "Execute only the committed MFRP-H0 work order as a no-commit protected-path worker, then return the exact two Python changes plus one worker-return artifact for independent evidence review.",
     "claimBoundary": "H0 implementation only; P1/P2, command or checker semantics, hooks, new standards/ADIF, downstream workspace, provider/live, public-sync, deployment and production remain parked."
   },
-  "nextAllowedMove": "Execute only the committed MFRP-H0 work order at a clean current HEAD. The no-commit worker may modify governance/compat/run_agent_autorun_workflow_gate.py and governance/compat/test_run_agent_autorun_workflow_gate.py and create docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md. It must implement v2 fail-closed verifier/interpreter identity, pre/post snapshot equality and the full hostile matrix, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Reviewer owns acceptance and commits. Do not open P1, P2, downstream workspace, GC010, provider/live, public-sync, deployment or production. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpH0ClosedP1OperatorCheckpointRequired20260901": {
+    "status": "H0_CLOSED_PASS_BOUNDED_P1_OPERATOR_CHECKPOINT_REQUIRED",
+    "materialCommit": "5705a8d1c0a2512f0ce20fa705552316ebc85721",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
+    "reviewPath": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
+    "acceptedOutcome": "cvf.autorun.pass-receipt.v2 binds conservative tracked plus untracked-nonignored repository bytes, direct command inputs, resolved interpreter identity and equal pre/post snapshots; incomplete identity fails closed to full execution and writes no reusable receipt.",
+    "reviewEvidence": "Independent reviewer repaired restricted-I-JSON type acceptance and missing/ignored argv-input omission; focused 46/46, pre-implementation 83/83, reviewer-fast 67/67 and pre-commit 88/88 PASS; system-chain freshness CURRENT.",
+    "nextAllowedMove": "Stop for explicit operator authorization before MFRP-P1. If authorized, author and independently review a fresh P1 owner-and-contract-ratification work order; no P1 implementation is yet authorized.",
+    "claimBoundary": "H0 local optional-receipt identity hardening only. P1 does not open automatically; P2, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
+  },
+  "nextAllowedMove": "MFRP-H0 is independently closed H0_CLOSED_PASS_BOUNDED at material commit 5705a8d1c0a2512f0ce20fa705552316ebc85721. Stop at the operator checkpoint before opening MFRP-P1; if authorized, author and independently review a fresh P1 owner-and-contract-ratification work order before any implementation. P2, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
