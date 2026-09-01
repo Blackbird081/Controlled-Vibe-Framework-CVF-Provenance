@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p0_roadmap_committed_claude_critique_pending`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=one Claude critique of the committed machine-first review roadmap, then CVF absorption/reconciliation; parked checkpoint=implementation, downstream, GC010, provider/live, public-sync, deploy and production.
+Startup acknowledged: current mode=`gclh_mfrp_p0r_reconciled_h0_work_order_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author/review one protected-path H0 work order for autorun receipt verifier-identity hardening; parked checkpoint=H0 implementation, P1, downstream, GC010 and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p0_roadmap_committed_claude_critique_pending`
-Current mode: `gclh_mfrp_p0_roadmap_committed_claude_critique_pending`; previous mode marker: `gclh_t1_minimal_review_verification_amendment_accepted_t2_work_order_required`
-Previous mode: `gclh_t1_minimal_review_verification_amendment_accepted_t2_work_order_required`
+Current mode marker: `gclh_mfrp_p0r_reconciled_h0_work_order_required`
+Current mode: `gclh_mfrp_p0r_reconciled_h0_work_order_required`; previous mode marker: `gclh_mfrp_p0_roadmap_committed_claude_critique_pending`
+Previous mode: `gclh_mfrp_p0_roadmap_committed_claude_critique_pending`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p0_roadmap_committed_claude_critique_pending`. The machine-first review preflight roadmap and bounded Claude packet are committed at `2f6c94141`. Send the packet for one review-only critique, accept only its named return, then perform CVF-owned finding absorption and reconciliation. No T2 implementation work order or standards/schema/helper/checker/hook/runtime/downstream mutation may open first. Downstream and GC010 remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p0r_reconciled_h0_work_order_required`. Claude critique absorption and revised roadmap are committed at `2b501582d`; the master GCLH pointer correction is `7e422548d`. Author/review one H0 protected-path work order to bind the existing autorun receipt to a conservative verifier dependency closure and interpreter identity with fail-closed migration, hostile drift tests and disable-reuse rollback. H0 implementation and P1 remain unopened. Downstream and GC010 remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

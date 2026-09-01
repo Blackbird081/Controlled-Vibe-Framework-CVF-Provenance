@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gclh_mfrp_p0_roadmap_committed_claude_critique_pending",
+  "currentMode": "gclh_mfrp_p0r_reconciled_h0_work_order_required",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Send the committed GCLH-MFRP P0 Claude critique packet at commit 2f6c94141f0e5fe2e2c7710434d87f1ad923adba for one review-only external critique. Accept only the named critique return, then perform CVF-owned finding absorption and reconciliation before deciding whether P1 may open. Do not author a T2 implementation work order or modify standards, schemas, helpers, checkers, hooks, runtime or downstream workspace before that reconciliation. Keep shift-operations-workspace, GC010, provider/live, public-sync, deployment and production parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author and independently review one MFRP-H0 protected-path work order from reconciled material commits 2b501582d2bba64993b4266713cad641c24c3eed and 7e422548da0385b55868ba43f93d2beac163795e. H0 must harden the existing cvf.autorun.pass-receipt.v1 reuse boundary by binding a conservative verifier dependency closure and interpreter identity, using versioned fail-closed migration, hostile cross-batch/shared-import/config/fixture/interpreter drift tests, and rollback by disabling reuse. Do not implement H0 until the work order is accepted; do not open P1, T2, downstream workspace, provider/live, public-sync, deployment or production first. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p0_roadmap_committed_claude_critique_pending",
-  "previousMode": "gclh_t1_minimal_review_verification_amendment_accepted_t2_work_order_required",
+  "currentMode": "gclh_mfrp_p0r_reconciled_h0_work_order_required",
+  "previousMode": "gclh_mfrp_p0_roadmap_committed_claude_critique_pending",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16009,7 +16009,7 @@
     "nextAllowedMove": "Select the next open system-chain roadmap item outside GC010. Do not create another narrow GC010 tranche unless all five reopen facts arrive in one packet.",
     "claimBoundary": "This is a root architecture and ownership decision, not product/runtime implementation or production readiness. T1J-R4, T1K and T2 remain cancelled or parked."
   },
-  "nextAllowedMove": "Send the committed GCLH-MFRP P0 Claude critique packet at commit 2f6c94141f0e5fe2e2c7710434d87f1ad923adba for one review-only external critique. Accept only the named critique return, then perform CVF-owned finding absorption and reconciliation before deciding whether P1 may open. Do not author a T2 implementation work order or modify standards, schemas, helpers, checkers, hooks, runtime or downstream workspace before that reconciliation. Keep shift-operations-workspace, GC010, provider/live, public-sync, deployment and production parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Author and independently review one MFRP-H0 protected-path work order from reconciled material commits 2b501582d2bba64993b4266713cad641c24c3eed and 7e422548da0385b55868ba43f93d2beac163795e. H0 must harden the existing cvf.autorun.pass-receipt.v1 reuse boundary by binding a conservative verifier dependency closure and interpreter identity, using versioned fail-closed migration, hostile cross-batch/shared-import/config/fixture/interpreter drift tests, and rollback by disabling reuse. Do not implement H0 until the work order is accepted; do not open P1, T2, downstream workspace, provider/live, public-sync, deployment or production first. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.",
   "gclhT0GovernanceControlLossLearningIntakeAccepted20260901": {
     "status": "REVIEWER_ACCEPTED_PASS_BOUNDED",
     "mode": "SINGLE_AGENT_MULTI_ROLE",
@@ -16089,5 +16089,22 @@
     "nextAllowedMove": "One Claude review-only critique, followed by CVF-owned absorption and reconciliation.",
     "implementationHold": "No T2 work order, owner mutation, schema, helper, checker, hook, runtime or downstream implementation before critique reconciliation.",
     "claimBoundary": "Critique-ready roadmap only; architecture is proposed, not accepted or implemented."
+  },
+  "gclhMfrpP0rReconciledH0WorkOrderRequired20260901": {
+    "status": "REVISE_APPLIED_H0_WORK_ORDER_REQUIRED",
+    "absorptionCommit": "2b501582d2bba64993b4266713cad641c24c3eed",
+    "masterRoadmapCorrectionCommit": "7e422548da0385b55868ba43f93d2beac163795e",
+    "roadmapPath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
+    "roadmapSha256": "b93ae54a6fb9991cd1515c869d09de342468ff894bb4fbfad1a62da35f8a8a1d",
+    "critiquePath": "docs/reviews/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_CLAUDE_CRITIQUE_2026-09-01.md",
+    "critiqueOriginalHandbackSha256": "f84b3cd04d3c19db6e627df640419c464064daf32a97117f8baa189f5b30affb",
+    "critiqueGovernedSha256": "9ec239590abe873b4ee82b8284609f98ab69a2d37c2e005757c289d50c234586",
+    "reconciliationPath": "docs/reviews/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_EXTERNAL_FINDING_ABSORPTION_AND_CVF_RECONCILIATION_2026-09-01.md",
+    "reconciliationSha256": "2335d80c2e6e52077460b4186979dcc007bd1a097b50fdb52fb62e2e0b5ecde0",
+    "masterRoadmapSha256": "c1d0de845ecce86a36fe8bd35be8f371e9466f71f384ba07b8ec7d9333d54716",
+    "acceptedCoreFinding": "Existing autorun receipt command manifest binds argv but not the conservative verifier dependency closure, leaving cross-batch reuse unable to prove which verifier logic ran.",
+    "calibrations": "Bind shared dependencies/configuration/fixtures and interpreter, not only direct checker files; reuse SOT3 canonical mechanics without misusing its TruthReceipt-specific profile label.",
+    "nextAllowedMove": "Author and review MFRP-H0 protected-path work order only; implementation remains unopened.",
+    "claimBoundary": "P0 critique absorption and roadmap revision only; no verifier, schema, hook, runtime or downstream mutation."
   }
 }
