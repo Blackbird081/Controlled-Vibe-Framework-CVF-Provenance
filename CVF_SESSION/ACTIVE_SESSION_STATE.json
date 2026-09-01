@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
-    "baselineSha256": "5b54e00b104bbeb8a4553f9f54af6eaa832d1211613c3e8b8baa6f872646cc56",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
-    "workOrderSha256": "41f206c7b9e0d9b493a1fc1661d5db55c419122e73a66103ccba93d5e4e31a86"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
+    "baselineSha256": "29cb00bf693b7a0428501ea7a422e2b0ee19d33e35a5741e51becec26efee640",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
+    "workOrderSha256": "271426c989d40004fb0daf2b915074168d00223b65405c0f22c15222bdfd7eeb"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p0r_reconciled_h0_work_order_required",
-  "previousMode": "gclh_mfrp_p0_roadmap_committed_claude_critique_pending",
+  "currentMode": "gclh_mfrp_h0_work_order_accepted_implementation_allowed",
+  "previousMode": "gclh_mfrp_p0r_reconciled_h0_work_order_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16009,7 +16009,6 @@
     "nextAllowedMove": "Select the next open system-chain roadmap item outside GC010. Do not create another narrow GC010 tranche unless all five reopen facts arrive in one packet.",
     "claimBoundary": "This is a root architecture and ownership decision, not product/runtime implementation or production readiness. T1J-R4, T1K and T2 remain cancelled or parked."
   },
-  "nextAllowedMove": "Author and independently review one MFRP-H0 protected-path work order from reconciled material commits 2b501582d2bba64993b4266713cad641c24c3eed and 7e422548da0385b55868ba43f93d2beac163795e. H0 must harden the existing cvf.autorun.pass-receipt.v1 reuse boundary by binding a conservative verifier dependency closure and interpreter identity, using versioned fail-closed migration, hostile cross-batch/shared-import/config/fixture/interpreter drift tests, and rollback by disabling reuse. Do not implement H0 until the work order is accepted; do not open P1, T2, downstream workspace, provider/live, public-sync, deployment or production first. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.",
   "gclhT0GovernanceControlLossLearningIntakeAccepted20260901": {
     "status": "REVIEWER_ACCEPTED_PASS_BOUNDED",
     "mode": "SINGLE_AGENT_MULTI_ROLE",
@@ -16106,5 +16105,18 @@
     "calibrations": "Bind shared dependencies/configuration/fixtures and interpreter, not only direct checker files; reuse SOT3 canonical mechanics without misusing its TruthReceipt-specific profile label.",
     "nextAllowedMove": "Author and review MFRP-H0 protected-path work order only; implementation remains unopened.",
     "claimBoundary": "P0 critique absorption and roadmap revision only; no verifier, schema, hook, runtime or downstream mutation."
-  }
+  },
+  "gclhMfrpH0WorkOrderAcceptedImplementationAllowed20260901": {
+    "status": "H0_WORK_ORDER_ACCEPTED_IMPLEMENTATION_ALLOWED",
+    "dispatchCommit": "a834cad4e135619bea32247c422dc1bd13dbc9ba",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
+    "baselineSha256": "29cb00bf693b7a0428501ea7a422e2b0ee19d33e35a5741e51becec26efee640",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
+    "workOrderSha256": "271426c989d40004fb0daf2b915074168d00223b65405c0f22c15222bdfd7eeb",
+    "acceptedDesign": "Versioned v2 receipt binds a conservative Git-tracked plus untracked-nonignored repository snapshot, exact interpreter identity, restricted JCS profile and pre/post execution identity equality; incomplete identity is a cache miss and cannot write reusable evidence.",
+    "independentReviewEvidence": "Published Unicode vector independently recomputed to 37730e62eac9a4f900b100c4734aee20311d596fd6426cebea7f6ae8d1a63575; pre-dispatch 81/81 PASS; pre-commit 88/88 PASS.",
+    "nextAllowedMove": "Execute only the committed MFRP-H0 work order as a no-commit protected-path worker, then return the exact two Python changes plus one worker-return artifact for independent evidence review.",
+    "claimBoundary": "H0 implementation only; P1/P2, command or checker semantics, hooks, new standards/ADIF, downstream workspace, provider/live, public-sync, deployment and production remain parked."
+  },
+  "nextAllowedMove": "Execute only the committed MFRP-H0 work order at a clean current HEAD. The no-commit worker may modify governance/compat/run_agent_autorun_workflow_gate.py and governance/compat/test_run_agent_autorun_workflow_gate.py and create docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md. It must implement v2 fail-closed verifier/interpreter identity, pre/post snapshot equality and the full hostile matrix, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Reviewer owns acceptance and commits. Do not open P1, P2, downstream workspace, GC010, provider/live, public-sync, deployment or production. Latest finalized numbered LHW wave remains LHW24."
 }

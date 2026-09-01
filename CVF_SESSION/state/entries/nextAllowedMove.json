@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2645,
+  "stateOrder": 2702,
   "stateKey": "nextAllowedMove",
-  "value": "Author and independently review one MFRP-H0 protected-path work order from reconciled material commits 2b501582d2bba64993b4266713cad641c24c3eed and 7e422548da0385b55868ba43f93d2beac163795e. H0 must harden the existing cvf.autorun.pass-receipt.v1 reuse boundary by binding a conservative verifier dependency closure and interpreter identity, using versioned fail-closed migration, hostile cross-batch/shared-import/config/fixture/interpreter drift tests, and rollback by disabling reuse. Do not implement H0 until the work order is accepted; do not open P1, T2, downstream workspace, provider/live, public-sync, deployment or production first. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "Execute only the committed MFRP-H0 work order at a clean current HEAD. The no-commit worker may modify governance/compat/run_agent_autorun_workflow_gate.py and governance/compat/test_run_agent_autorun_workflow_gate.py and create docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md. It must implement v2 fail-closed verifier/interpreter identity, pre/post snapshot equality and the full hostile matrix, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Reviewer owns acceptance and commits. Do not open P1, P2, downstream workspace, GC010, provider/live, public-sync, deployment or production. Latest finalized numbered LHW wave remains LHW24."
 }

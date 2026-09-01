@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p0r_reconciled_h0_work_order_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author/review one protected-path H0 work order for autorun receipt verifier-identity hardening; parked checkpoint=H0 implementation, P1, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_h0_work_order_accepted_implementation_allowed`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact no-commit MFRP-H0 receipt-identity work order and return for independent review; parked checkpoint=P1/P2, downstream, GC010 and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p0r_reconciled_h0_work_order_required`
-Current mode: `gclh_mfrp_p0r_reconciled_h0_work_order_required`; previous mode marker: `gclh_mfrp_p0_roadmap_committed_claude_critique_pending`
-Previous mode: `gclh_mfrp_p0_roadmap_committed_claude_critique_pending`
+Current mode marker: `gclh_mfrp_h0_work_order_accepted_implementation_allowed`
+Current mode: `gclh_mfrp_h0_work_order_accepted_implementation_allowed`; previous mode marker: `gclh_mfrp_p0r_reconciled_h0_work_order_required`
+Previous mode: `gclh_mfrp_p0r_reconciled_h0_work_order_required`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p0r_reconciled_h0_work_order_required`. Claude critique absorption and revised roadmap are committed at `2b501582d`; the master GCLH pointer correction is `7e422548d`. Author/review one H0 protected-path work order to bind the existing autorun receipt to a conservative verifier dependency closure and interpreter identity with fail-closed migration, hostile drift tests and disable-reuse rollback. H0 implementation and P1 remain unopened. Downstream and GC010 remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_h0_work_order_accepted_implementation_allowed`. The source-verified H0 baseline/work order are independently accepted at `a834cad4e` after 81/81 pre-dispatch, 88/88 pre-commit and an independent canonical-vector recomputation. Execute only that exact no-commit packet: two protected Python modifications plus the named worker return, followed by independent evidence review. P1/P2, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

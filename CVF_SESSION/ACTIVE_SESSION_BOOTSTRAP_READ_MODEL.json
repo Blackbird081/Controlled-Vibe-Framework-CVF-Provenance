@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gclh_mfrp_p0r_reconciled_h0_work_order_required",
+  "currentMode": "gclh_mfrp_h0_work_order_accepted_implementation_allowed",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "Author and independently review one MFRP-H0 protected-path work order from reconciled material commits 2b501582d2bba64993b4266713cad641c24c3eed and 7e422548da0385b55868ba43f93d2beac163795e. H0 must harden the existing cvf.autorun.pass-receipt.v1 reuse boundary by binding a conservative verifier dependency closure and interpreter identity, using versioned fail-closed migration, hostile cross-batch/shared-import/config/fixture/interpreter drift tests, and rollback by disabling reuse. Do not implement H0 until the work order is accepted; do not open P1, T2, downstream workspace, provider/live, public-sync, deployment or production first. GC010 remains parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "Execute only the committed MFRP-H0 work order at a clean current HEAD. The no-commit worker may modify governance/compat/run_agent_autorun_workflow_gate.py and governance/compat/test_run_agent_autorun_workflow_gate.py and create docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md. It must implement v2 fail-closed verifier/interpreter identity, pre/post snapshot equality and the full hostile matrix, then return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Reviewer owns acceptance and commits. Do not open P1, P2, downstream workspace, GC010, provider/live, public-sync, deployment or production. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
-    "baselineSha256": "5b54e00b104bbeb8a4553f9f54af6eaa832d1211613c3e8b8baa6f872646cc56",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E3_LOCATOR_SNAPSHOT_EFFECTIVENESS_VALIDATION_2026-08-31.md",
-    "workOrderSha256": "41f206c7b9e0d9b493a1fc1661d5db55c419122e73a66103ccba93d5e4e31a86"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
+    "baselineSha256": "29cb00bf693b7a0428501ea7a422e2b0ee19d33e35a5741e51becec26efee640",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
+    "workOrderSha256": "271426c989d40004fb0daf2b915074168d00223b65405c0f22c15222bdfd7eeb"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

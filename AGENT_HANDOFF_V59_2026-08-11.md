@@ -39,9 +39,9 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p0r_reconciled_h0_work_order_required`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author/review one H0 protected-path work order for autorun receipt verifier-identity hardening; parked checkpoint=H0 implementation, P1, downstream, GC010 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_h0_work_order_accepted_implementation_allowed`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact no-commit MFRP-H0 and return for independent review; parked checkpoint=P1/P2, downstream, GC010 and external effects.
 ## Current Mode
-`gclh_mfrp_p0r_reconciled_h0_work_order_required`
+`gclh_mfrp_h0_work_order_accepted_implementation_allowed`
 ## Purpose
 
 Preserve independently accepted T1C durable single-node non-production material without opening a caller, package export or external effect.
@@ -54,7 +54,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Latest Work / Changes
 
-- GCLH-T1 Amendment 2 is accepted at `56e0c0e22`; GCLH-MFRP P0R critique absorption/revised roadmap are committed at `2b501582d`, with master pointer correction `7e422548d`. FM-1 is accepted as a live argv-only receipt-binding gap, calibrated to require conservative shared-dependency/config/fixture/interpreter binding. Only H0 work-order authoring/review is open.
+- GCLH-T1 Amendment 2 is accepted at `56e0c0e22`; MFRP-H0 source-verified baseline/work order are independently accepted at `a834cad4e`. The packet binds v2 reuse to all tracked and untracked-nonignored repository bytes, interpreter identity and equal pre/post execution snapshots, with optional-reuse rollback. Only exact H0 no-commit implementation is open.
 - GC010 root architecture is closed parked at `e867d5432` with terminal `ROOT_ARCHITECTURE_REASSESSED_NO_TRUTHFUL_PRODUCT_OWNER_RETAIN_PARKED`. Direct route composition, ApprovalStore upgrade, singleton SQLite and distributed-store guesses were rejected; reopening requires all five named topology, adapter, ordering, recovery and adversarial-test facts in one packet. Reviewer-fast 67/67 and material pre-commit 88/88 pass; no source/runtime/provider effect or successor tranche opened.
 - SCEC-T1 foundation dispatch is `10345d3a`; T1-R2 is independently accepted with material correction at `cb6d4bc3879a753eb9abc7283b55148c141c46d1`. Resolution claims now require path/hash/locator evidence, successor consumption revalidates predecessor evidence hashes, the corrected GC010 replay retains unresolved blockers, and scaffolds emit the contract. Focused SCEC 115/115, combined focused 205/205, reviewer-fast 67/67 and pre-commit 88/88 passed. The two out-of-scope diagnostics remain disclosed and untouched; T1J-R4 remains parked.
 - EAFR-R12 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `1e31db99a`; terminal roadmap commit `fae74ca77`. Reviewer repaired candidate-level evaluator order, denied-candidate call-budget accounting, unauthorized-provider receipt endpoint resolution and the return packet. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed; zero provider/live/credential calls. EAFR successor count is zero; RFR may only be reconsidered separately.
@@ -116,11 +116,11 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
 
 | Field | Value |
 |---|---|
-| authorityState | SCEC-E1 `REVIEWER_ACCEPTED_WITH_MATERIAL_CORRECTION_CLOSED_HARDENING_REQUIRED` at `d504ac6e0` |
-| baselinePath | `docs/baselines/CVF_GC018_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md` |
-| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_E1_GC010_T1J_R1_R3_EFFECTIVENESS_RECONCILIATION_2026-08-31.md` |
-| workerManifest | assessment plus worker return accepted after independent material correction |
-| nextAuthorityRequirement | one bounded SCEC-T1-R2 evidence-binding and replay-correction foundation packet; no automatic T1J-R4, T1K or T2 |
+| authorityState | MFRP-H0 `H0_WORK_ORDER_ACCEPTED_IMPLEMENTATION_ALLOWED` at `a834cad4e` |
+| baselinePath | `docs/baselines/CVF_GC018_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md` |
+| workOrderPath | `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md` |
+| workerManifest | exactly two protected Python modifications plus one named no-commit worker return |
+| nextAuthorityRequirement | exact H0 execution followed by independent evidence review; no automatic P1/P2 or downstream successor |
 
 ## Closure Evidence
 
@@ -171,23 +171,18 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-Author/review one MFRP-H0 protected-path work order from `2b501582d` and `7e422548d`. Require versioned fail-closed receipt migration, conservative verifier dependency-closure and interpreter binding, hostile cross-batch/shared-dependency drift tests, and disable-reuse rollback. Do not implement H0 or open P1/T2/downstream first. Latest numbered wave remains LHW24.
+Execute only the committed MFRP-H0 work order at `a834cad4e` from the clean continuity HEAD. Worker may change exactly the autorun runner and focused test and create the named return; it must not commit. Require v2 fail-closed repository/interpreter identity, equal pre/post snapshots and the full hostile matrix, then independent reviewer acceptance. Do not open P1/P2/downstream/GC010/effects first. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
 ## Active Boundary
 
-- T1 Amendment 2 is closed at `0247f7347`; LPCI1 Web re-entry R1 dispatch is
-  committed at `4b8d436c4`. Public `main` remains `9c0183293`; its exact
-  production build failure is reproduced locally while an older Netlify deploy
-  remains served. Public mutation, push, deploy and hosted smoke remain parked.
+- T1 Amendment 2 is closed at `0247f7347`; LPCI1 Web re-entry R1 dispatch is committed at `4b8d436c4`. Public `main` remains `9c0183293`; its exact production build failure is reproduced locally while an older Netlify deploy remains served. Public mutation, push, deploy and hosted smoke remain parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - MCP-KAR-T1 used only the pinned selected source cluster and closed its eight-output reviewer-repaired manifest at `c179e656a`. No dependency change, source execution/direct import, MCP runtime or package activation, provider/account use, public sync, deploy, or production was authorized or performed.
 - Worker commit remained forbidden; independent reviewer created target commit.
-- T3A, T3B, T4, T5D, T5-R5, and selected T7 scope are closed bounded;
-  route/registry adoption and repeat-live remain parked; T6 R2 is closed bounded.
-- MAO T1, DESIGN, BUILD, provider/live, public `main`, deploy, hosted smoke,
-  secrets, store, production, and archive deletion remain parked.
+- T3A, T3B, T4, T5D, T5-R5, and selected T7 scope are closed bounded; route/registry adoption and repeat-live remain parked; T6 R2 is closed bounded.
+- MAO T1, DESIGN, BUILD, provider/live, public `main`, deploy, hosted smoke, secrets, store, production, and archive deletion remain parked.
 
 ## Completion Review
 
@@ -206,15 +201,19 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize GCLH-MFRP P0R absorption `2b501582d` plus master pointer correction `7e422548d`, retain only H0 work-order authoring/review as the next move, and generate continuity projections.
+Authorized guard-maintenance scope: synchronize accepted MFRP-H0 dispatch commit `a834cad4e`, release only its exact no-commit implementation, and generate continuity projections.
 Protected paths:
-Protected continuity paths:
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/gclhMfrpP0rReconciledH0WorkOrderRequired20260901.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `AGENT_HANDOFF_V59_2026-08-11.md`.
-Protected guard paths:
-- N/A with reason: this continuity sync changes no guard or checker path.
+
+- `AGENT_HANDOFF_V59_2026-08-11.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/gclhMfrpH0WorkOrderAcceptedImplementationAllowed20260901.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
 Operator authorization: the operator explicitly authorized learning and raising the CVF Core foundation before applying it to the downstream workspace.
-Rollback boundary: revert only this P0R continuity sync without rewriting `2b501582d`, `7e422548d` or prior evidence.
-Not authorized: H0/P1/T2 implementation, governed owner/schema/helper/checker/hook mutation, downstream edits, GC010 product/runtime, provider/API/network, public mutation, deployment, production or compaction.
+Rollback boundary: revert only this H0-dispatch continuity sync without rewriting `a834cad4e` or prior evidence.
+Not authorized: any H0 fourth path; command/checker semantic changes; P1/P2; new owner/standard/ADIF/hook; downstream edits; GC010 product/runtime; provider/API/network; public mutation; deployment; production or compaction.
 ## Claim Boundary
 
-This handoff records reconciled GCLH-MFRP P0R at `2b501582d` plus `7e422548d`, authorizes only H0 work-order authoring/review, and keeps implementation/P1/downstream/effects parked.
+This handoff records accepted MFRP-H0 dispatch `a834cad4e`, authorizes only its exact no-commit implementation plus independent review, and keeps P1/P2/downstream/GC010/effects parked.
