@@ -1,0 +1,544 @@
+# CVF MFRP-P3-R1 Two-Tranche Control Design External Critique
+
+Memory class: governed-review-context
+
+docType: review_context
+
+Status: EXTERNAL_CRITIQUE_ADVISORY_ONLY
+
+Date: 2026-09-01
+
+Review mode: `DESIGN_ONLY`
+
+Provider execution authority: `FORBIDDEN`
+
+Successor tranche opened: `NO`
+
+Responds to work order: `docs/reviews/CVF_MFRP_P3_R1_TWO_TRANCHE_CONTROL_DESIGN_EXTERNAL_REVIEW_PACKET_2026-09-01.md`
+
+executionBaseHead: `4ef99fcf84386cb66f05a48c0c7c540e6985162f`
+
+Commit mode: EXTERNAL_REVIEWER_MUST_NOT_COMMIT (no commit performed by this reviewer)
+
+## Purpose
+
+Return one independent, source-bound critique of the corrected MFRP-P3-R1
+two-tranche control design (`docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md`)
+before any R1A oracle authoring or R1B implementation, per the review packet's
+exact scope, question set and adversarial probe list.
+
+## 1. Review Identity Gate Results
+
+| Check | Result |
+|---|---|
+| Repository HEAD | `4ef99fcf84386cb66f05a48c0c7c540e6985162f` |
+| Planning base head `b6c135b3077a44ae585118657fe0b2cf7e39229e` in HEAD ancestry | `git merge-base --is-ancestor b6c135b3077a44ae585118657fe0b2cf7e39229e HEAD` exit 0 -> **CONFIRMED** |
+| Worktree clean at start | `git status --short --untracked-files=all` empty -> **CONFIRMED** |
+
+Target hash recomputation:
+
+| Target | Required SHA-256 | Recomputed SHA-256 | Result |
+|---|---|---|---|
+| `docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md` | `4438fcce757dcbe9bb6041a025b36adf2a3d3350199000bd18fc2ed9f6c11a07` | `4438fcce757dcbe9bb6041a025b36adf2a3d3350199000bd18fc2ed9f6c11a07` | MATCH |
+| `docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md` | `22a086d7742dbdaec5b887fd377890962ad34396953f48287ce865f743766011` | `22a086d7742dbdaec5b887fd377890962ad34396953f48287ce865f743766011` | MATCH |
+| `docs/reviews/CVF_MFRP_P3_INDEPENDENT_REVIEW_RETURN_TO_DESIGN_2026-09-01.md` | `fe62e9996189afa8cd5bdf800acaa0ecaf8b4c6174a709ef647aee569390a91d` | `fe62e9996189afa8cd5bdf800acaa0ecaf8b4c6174a709ef647aee569390a91d` | MATCH |
+| `governance/compat/agent_autorun_machine_verification.py` | `8280a95e0985bd1273aa359afff455be1d18346e8b49cb92e9746922d835d022` | `8280a95e0985bd1273aa359afff455be1d18346e8b49cb92e9746922d835d022` | MATCH |
+| `governance/compat/agent_automation_machine_verification_readout.py` | `ff6088bf8144deec4582ce9faf62384b314346c9cbbb87f6b3349a2d23f7e7c3` | `ff6088bf8144deec4582ce9faf62384b314346c9cbbb87f6b3349a2d23f7e7c3` | MATCH |
+| `docs/reviews/rejected_evidence/MFRP_P3_2026-09-01/ARCHIVE_MANIFEST.txt` | `24ff312195b39bdd950860d43f93cdce9164ce44587312f92e6ad9aa33ef0ba5` | `24ff312195b39bdd950860d43f93cdce9164ce44587312f92e6ad9aa33ef0ba5` | MATCH |
+
+Original active-path absence check (all five original P3 paths, superset of
+the two named in the packet's step 3):
+
+| Path | Result |
+|---|---|
+| `governance/compat/fixtures/mfrp_p3_historical_replay.json` | ABSENT |
+| `governance/compat/mfrp_historical_replay.py` | ABSENT |
+| `governance/compat/test_mfrp_historical_replay.py` | ABSENT |
+| `docs/reviews/CVF_MFRP_P3_FROZEN_DEFECT_AND_FALSE_NEGATIVE_LEDGER_2026-09-01.md` | ABSENT |
+| `docs/reviews/CVF_MFRP_P3_HISTORICAL_REPLAY_WORKER_RETURN_2026-09-01.md` | ABSENT |
+
+Preserved `.rejected` evidence hash check (five files, against
+`ARCHIVE_MANIFEST.txt`):
+
+| Archived filename | Required SHA-256 | Recomputed SHA-256 | Result |
+|---|---|---|---|
+| `governance_compat_fixtures_mfrp_p3_historical_replay.json.rejected` | `5b27701520f843ffcdbf4a05f7c1f9b9a76530f78b04c2f1ac6f79768d17dd5e` | `5b27701520f843ffcdbf4a05f7c1f9b9a76530f78b04c2f1ac6f79768d17dd5e` | MATCH |
+| `governance_compat_mfrp_historical_replay.py.rejected` | `497840c0d5c71c42fe05bca9d9e411d71ed8b8f9e609882628c25d5c513c84d6` | `497840c0d5c71c42fe05bca9d9e411d71ed8b8f9e609882628c25d5c513c84d6` | MATCH |
+| `governance_compat_test_mfrp_historical_replay.py.rejected` | `973a1b9f46f46f27d1e8cade660a0098f49b86ef4bf3d42de7aa78c5fa7265e7` | `973a1b9f46f46f27d1e8cade660a0098f49b86ef4bf3d42de7aa78c5fa7265e7` | MATCH |
+| `CVF_MFRP_P3_FROZEN_DEFECT_AND_FALSE_NEGATIVE_LEDGER_2026-09-01.md.rejected` | `51e56e080392bb4b396127ff72cb9d9e67ad4dcfe2c157caddcdc6cc35b3d935` | `51e56e080392bb4b396127ff72cb9d9e67ad4dcfe2c157caddcdc6cc35b3d935` | MATCH |
+| `CVF_MFRP_P3_HISTORICAL_REPLAY_WORKER_RETURN_2026-09-01.md.rejected` | `a985f879d0239bf2d90844d38d87eb445673a3c95940efb3e20c79ef9aaf4347` | `a985f879d0239bf2d90844d38d87eb445673a3c95940efb3e20c79ef9aaf4347` | MATCH |
+
+**Identity Gate: PASS.** All six target hashes, ancestry, path absence, and
+preserved-evidence hashes match exactly. Substantive review proceeds against
+the confirmed, non-guessed target.
+
+## 2. Executive Verdict
+
+`ACCEPT_TWO_TRANCHE_DIRECTION` with mandatory pre-R1A corrections. The
+redesign correctly diagnoses and structurally repairs the rejected P3
+defect (an allowlist comparison masquerading as an oracle-bound replay,
+independently confirmed by direct inspection of the `.rejected` helper's
+`_evaluate_case` function, which contains no import of, or call into, either
+P2 seam module). Two execution tranches plus one non-executable umbrella is
+the minimum structure that separates "who defines expected truth" from "who
+observes actual behavior." However, three of the fourteen review-question
+areas (oracle-to-seam causal binding at the *predicate* level, the ledger's
+own freeze/mutation discipline, and reviewer verification cost) are specified
+at the principle level but leave enough implementation freedom that an R1A
+manifest or R1B runner could satisfy every named contract literally while
+reproducing a materially similar defect one layer down. These are named as
+concrete failure modes below and must be closed in the R1A deliverable and
+R1B work order, not deferred to reviewer discretion after the fact.
+
+## 3. Source Verification And Read Depth
+
+| Claimed item | Claim type | Source file | Verified section/symbol | Disposition |
+|---|---|---|---|---|
+| rejection basis (allowlist, no seam invocation) | executable defect finding | `docs/reviews/CVF_MFRP_P3_INDEPENDENT_REVIEW_RETURN_TO_DESIGN_2026-09-01.md` | Independent Hostile Probe Results; P3-RV-1 through P3-RV-5 | ACCEPT — independently reproduced by direct read of `.rejected` helper, see below |
+| rejected helper causal shape | executable artifact (`NOT_ACTIVE_AUTHORITY`) | `docs/reviews/rejected_evidence/MFRP_P3_2026-09-01/governance_compat_mfrp_historical_replay.py.rejected` | `_evaluate_case` (around line 203); full-file `import` list (lines 15-22) | ACCEPT — confirmed no `agent_autorun_machine_verification` or `agent_automation_machine_verification_readout` import anywhere in file; `_evaluate_case` branches only on `expectedReceiptResult` membership in `CONSERVATIVE_SURFACE_RESULTS`/`CLEAN_RESULTS` |
+| P2 receipt-validation seam identity | executable owner | `governance/compat/agent_autorun_machine_verification.py` | `_machine_verification_object`, `_machine_verification_digest`, `_validate_receipt_integrity` | ACCEPT — all three symbols present and exactly as the redesign cites them |
+| P2 reviewer-readout seam identity | executable owner | `governance/compat/agent_automation_machine_verification_readout.py` | `build_machine_verification_readout`, `machine_readout_to_dict`, `read_receipt_readonly`, `MachineVerificationReadout` | ACCEPT — all cited symbols present |
+| replay families/zero-tolerance classes | governed roadmap | `docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md` | `## Historical Replay And Hostile Test Matrix` | ACCEPT — 18 families, 7 zero-tolerance classes exactly as cited; roadmap's own Work Plan row already names `R1B replay` as the P3 successor, consistent with the two-tranche label used throughout the redesign |
+| accepted P2 result | committed CVF evidence | `docs/reviews/CVF_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_WORKER_RETURN_2026-09-01.md` | cited as design authority input | ACCEPT — path exists at execution HEAD |
+| checker/workflow paths cited in packet's read-ahead and absorption instruction | reference existence | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_external_agent_absorption_table.py`; `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md` | file existence | ACCEPT — all eight paths exist at execution HEAD |
+
+Read depth: both P2 seam sources were read in full (not excerpted). The
+primary redesign assessment and the rejection review were read in full. The
+rejected `.rejected` helper was inspected directly (import list and the exact
+`_evaluate_case` function) to independently verify the rejection's causal
+claim rather than trusting the rejection review's prose alone, per the
+packet's Evidence Comparison requirement that agreement with prose is not
+evidence. The roadmap's replay-matrix section was read in full; adjacent
+roadmap sections (Metrics And Value Test, Rollback And Kill Conditions) were
+read only far enough to confirm no contradiction with the redesign's stop
+conditions, consistent with the packet's "read adjacent owners only when a
+concrete question cannot be answered from the six pinned targets" instruction.
+
+## 4. Answers To All Fourteen Review Questions
+
+**Q1 — Is R1 unambiguously non-executable, leaving exactly two execution
+tranches?** Yes, with one clarity gap. The redesign's `## Tranche Split And
+Authority Boundary` states R1A "contains no replay helper and executes no
+case" and R1B is "a separate exact-manifest, no-commit implementation
+tranche." R1 itself (this critique's own umbrella) creates no oracle, runner,
+fixture, or ledger — confirmed by the packet's own `Return And Mutation
+Boundary`, which forbids exactly those artifacts for this review. The gap:
+the redesign never states in one place that R1 itself is prohibited from
+ever gaining an execution phase later (e.g., "R1.1", "R1 hardening"); this
+should be a one-line addition to the Acceptance And Stop Conditions rather
+than left implicit.
+
+**Q2 — Is the R1A/R1B commit boundary the minimum sufficient mechanism to
+prevent the same producer from defining both expected truth and observed
+success?** Yes in structure, not yet in enforcement detail. Committing the
+oracle before the runner exists is necessary but not sufficient: nothing in
+the current design prevents the *same* dispatcher/reviewer role instance from
+authoring R1A immediately followed by R1B in one session with the R1A
+manifest tuned in anticipation of what the runner will find easy to pass.
+The redesign's `Freeze And Immutability Contract` pins the R1A blob SHA-256
+into the R1B work order, which blocks *post-hoc* oracle editing, but does
+not block *foreknowledge-shaped authoring* at R1A time. This is a real
+residual, but it is the same class of residual every commit-before-test
+design accepts (the paired original P3 work order had an equivalent
+assumption); flag as `NON_BLOCKING` provided the reviewer of R1A is required
+to complete R1A review before R1B dispatch is authored (see Q13/Q14).
+
+**Q3 — Can R1A be dispatcher/reviewer-owned without causing the reviewer to
+redo phase-role work or creating AI-checks-AI circularity?** Yes. R1A's
+deliverable is documentary/machine-data (a JSON-shaped oracle manifest plus a
+ratification packet), not code that measures itself. The circularity that
+sank the original P3 design was specifically that the *same* artifact
+(`mfrp_historical_replay.py`) both declared expected results and evaluated
+them. Under R1A/R1B, the oracle (R1A) and the seam-invoking runner (R1B) are
+different artifacts, committed in different tranches, and the redesign
+requires R1B to import the actual P2 owners rather than reimplement
+comparison logic. This is real circularity-breaking, not cosmetic
+role-relabeling, provided R1A's reviewer is not the same actor who also
+authors R1B in the same sitting without a completed, recorded R1A acceptance
+in between (see Q2).
+
+**Q4 — Are source path, locator, excerpt digest, mutation and normative
+predicate sufficiently independent and causal?** Partially. Source path +
+locator + `sourceExcerptSha256` establish *provenance* (the case is bound to
+a real historical artifact) but the redesign itself states this "establishes
+provenance only; it does not turn historical prose into observed P2
+behavior" (`## Source And Locator Binding`). The causal chain that actually
+matters is: mutation operator -> constructed receipt bytes -> P2 validator
+call -> P2 readout call -> predicate evaluation. That chain is well-specified
+in `## Actual P2 Seam Contract` and `## Mutation Operator Contract`. The one
+missing independence guarantee: nothing requires the `requiredSafetyPredicate`
+itself to be checked, at R1A ratification time, against what the named P2
+seam can *actually* emit for that mutation class. A predicate like
+`SECRET_SENTINEL_NOT_EMITTED` for a mutation operator that cannot inject a
+secret-shaped field into the receipt schema would ratify cleanly at R1A and
+then either vacuously pass or force `NOT_REPRESENTABLE_BY_CURRENT_P2` at R1B
+— acceptable per the design, but the redesign does not require R1A to
+attempt this feasibility check before committing, which would catch the
+mismatch one tranche earlier and cheaper.
+
+**Q5 — Can any allowed mutation be accepted syntactically yet fail to reach
+the actual P2 validation or readout seam?** Yes, and the redesign's own
+`## Runtime Coverage Invariants` only partially closes this. "Every case
+produces one validator and one readout observation" and "every mutation
+operator is consumed exactly once" are the intended guards, but "consumed"
+is not defined as "changed the bytes passed to `_validate_receipt_integrity`."
+A `DELETE_JSON_POINTER` operator that targets a JSON pointer which does not
+exist in the base receipt (a typo'd pointer, or a pointer inside a nested
+object the mutation code does not actually descend into) could be
+"consumed" in the sense that the runner code executed the delete branch,
+while the byte-for-byte payload handed to the validator is unchanged from
+the positive control. The design's `## Mutation Operator Contract` says
+"delete one exact field **after validating pointer existence**" — this is
+the correct guard, but it must be phrased as a hard runtime invariant
+("mutation operator MUST change at least one byte of the serialized payload
+compared to the positive-control serialization, or the case fails
+`BLOCKED_EVIDENCE_INCOMPLETE`"), not only as a pointer-existence check, since
+pointer existence does not guarantee the delete or replace actually altered
+observable content (e.g., replacing a field with its own current value).
+
+**Q6 — Could an R1B runner special-case case IDs, precompute expected
+results, bypass a seam, or fabricate invocation/coverage evidence while still
+satisfying the proposed contract?** The design's `## Mandatory Hostile Tests`
+items 1, 2, 6, 7, 12 target exactly this class and are well-chosen. The
+residual gap: hostile test 7 ("actual receipt digest tamper reaches P2
+validator and is rejected") and hostile test 13 ("P2 owners remain
+byte-identical...") test that the *validator* is reached, but no listed
+hostile test proves the *readout* call (`build_machine_verification_readout`)
+receives the *same* payload object the validator evaluated, as opposed to a
+runner-reconstructed summary of it. A runner could call
+`_validate_receipt_integrity(mutated_payload)` for the validator-boolean
+predicates and separately call `build_machine_verification_readout(True,
+{}, "")` for the readout-shaped predicates, satisfying "both seams invoked"
+literally while never observing the readout's behavior on the *actual*
+mutated payload. Add one hostile test asserting object identity (or
+byte-identical serialization) between the payload passed to the validator
+and the payload passed to the readout builder for the same case.
+
+**Q7 — Are repository commit, blob/file SHA-256, JCS digest and coverage-set
+digest sufficient freeze identities, or are any redundant/missing?**
+Sufficient, with one redundancy worth collapsing and one gap. The commit SHA
+containing the oracle blob is redundant with the blob SHA-256 itself for
+*content* identity — a blob hash already uniquely identifies content
+regardless of which commit(s) reference it; the commit SHA only adds
+*temporal/provenance* evidence (that the blob was actually committed, not
+merely present on disk). Keep both, but document them as serving different
+purposes (content identity vs. commit-time provenance) rather than as two
+redundant content checks, or R1B authors may treat a commit-SHA mismatch
+alone as sufficient without also verifying the blob hash. The gap: nothing
+pins the exact Python/interpreter identity of the *runner* itself the way
+MFRP-H0 pins verifier identity for the autorun receipt; a runner-code change
+between R1A ratification and an R1B rerun is not caught by any of the four
+listed freeze identities, since all four describe the *oracle*, not the
+runner. This is `NON_BLOCKING` for a single bounded R1B tranche (no reuse or
+caching is proposed) but should be named as an explicit non-goal rather than
+silently absent.
+
+**Q8 — Does the design fail closed when P2 seams or their dependencies
+change after R1A but before/during R1B, without requiring a new dependency
+graph?** Yes for the *oracle*-to-R1B binding (five pinned identities, verified
+before importing runner code), but the design does not claim, and should not
+claim, protection against a P2 seam changing *during* a single R1B
+invocation's execution — that is out of scope for a bounded local run and
+matches the accepted MFRP-H0 precedent of binding at range-identity level, not
+via a full dependency graph. This answers cleanly: the design fails closed on
+oracle drift; P2-seam-changes-mid-run is correctly out of scope, not a gap,
+because R1B is a single bounded process invocation, not a caching/reuse
+system.
+
+**Q9 — Does the result model correctly separate execution completeness from
+safety disposition and prevent zero totals or incomplete coverage from
+becoming a PASS candidate?** Yes. `## Result Ledger Contract`'s
+`executionCompleteness` (COMPLETE/INCOMPLETE) and `safetyCandidate`
+(PASS_CANDIDATE/RETURN_TO_DESIGN_CANDIDATE) are cleanly orthogonal fields,
+and `## Runtime Coverage Invariants` explicitly states "Zero-case totals are
+a hard failure, never N/A recall" — this directly repairs P3-RV-3's
+zero-tolerance-averaging defect (recall the prior tranche's own helper
+reported `0/0` recall as satisfied for every empty class, the exact defect
+the rejection's Probe 1 exploited). This is the strongest part of the
+redesign and needs no correction.
+
+**Q10 — Is the reviewer boundary limited to evaluating evidence, exceptions
+and disposition rather than replaying all cases or redoing R1A/R1B?** Yes.
+`## Reviewer Minimal Sufficient Verification` lists five bounded checks
+(recompute identities, inspect call graph, rerun runner+tests, mutate one
+field in each of three dimensions, compare failed predicates only) — this is
+proportionate and matches the packet's own instruction that this critique
+"must not recreate the oracle, implement the runner, rerun all seven workflow
+phases, or duplicate the future R1A/R1B work." One addition needed: "rerun
+the runner and focused suites" (item 3) should be qualified as "rerun and
+diff against the first-run evidence recorded in the result ledger," not a
+bare rerun, since a bare rerun without stored first-run comparison cannot
+detect non-determinism — which item 14 of the hostile-test list already
+requires the runner to prove, but the reviewer verification list does not
+explicitly re-check it.
+
+**Q11 — Which machine checks can replace AI review work safely, and which
+semantic judgments must remain reviewer-owned?** Machine-safe: hash/digest
+recomputation, coverage-set membership checks (case IDs, families, classes),
+call-graph/import inspection (that both P2 symbols are referenced), and
+deterministic rerun-diff. Reviewer-owned: whether a `NOT_REPRESENTABLE_BY_
+CURRENT_P2` disposition is honestly applied versus used to dodge an
+inconvenient predicate; whether a "failed predicate" represents a real P2
+safety gap or a miscalibrated oracle expectation; and the ultimate
+`REPLAY_PASS` vs `RETURN_TO_DESIGN` selection, which the design correctly
+reserves to the reviewer alone ("Only the reviewer selects `REPLAY_PASS` or
+`RETURN_TO_DESIGN`"). This boundary is correctly drawn.
+
+**Q12 — What fields, checks, documents or checkpoints can be removed or
+combined to reduce latency/quota without weakening oracle independence?** The
+`attackBindingMode` field (`AFTER_BINDING`, `ATTACKER_REBOUND`, `NO_MUTATION`)
+is used by exactly one hostile test (item 8: "attacker-rebound receipt tests
+structural gaps rather than only digest mismatch") and is not otherwise
+referenced by any predicate, coverage invariant, or freeze identity in the
+document. Unless R1A intends more than one case per mutation operator using
+this field to differentiate attack timing, it can be folded into the
+`mutation` field's typed operator name (e.g., a distinct
+`ATTACKER_REBOUND_REPLACE_JSON_POINTER` operator variant) rather than kept
+as a separate cross-cutting field, saving one column of case authoring and
+one column of reviewer verification without losing the distinction. Separately,
+the redesign's `Result Ledger Contract` and `Committed Oracle Manifest
+Contract` both list "claim boundary" as a required field — this is
+appropriate per-artifact but could be a single shared boilerplate constant
+rather than requiring per-case authoring judgment, cutting authoring time
+with no independence cost.
+
+**Q13 — What is the smallest corrected R1A deliverable manifest that could
+be source-verified and ratified in one tranche?** See Section 11 below for
+the full recommendation; in summary: exactly one oracle JSON file conforming
+to `cvf.mfrp.actualSeamReplayOracle.v1` plus one ratification review/baseline
+document, with no runner, no fixture-loading code, and no result ledger,
+matching the redesign's own stated R1A scope.
+
+**Q14 — What must be proven before an R1B work order can be authored, and
+what must remain deferred to the post-R1B independent review?** Before R1B
+work-order authoring: R1A oracle is committed and independently ratified
+(`ORACLE_RATIFIED_BOUNDED`), all five R1B freeze identities are computable
+against that exact commit, and the R1A reviewer has confirmed at least one
+feasibility spot-check per zero-tolerance class (Q4 gap) so R1B is not
+dispatched against a predicate the seam cannot possibly satisfy or falsify.
+Deferred to post-R1B review: actual per-class recall numbers, whether any
+`NOT_REPRESENTABLE_BY_CURRENT_P2` disposition is accepted as honest or is a
+disguised miss, and the `REPLAY_PASS`/`RETURN_TO_DESIGN` selection itself —
+none of these can be known before R1B executes.
+
+## 5. Strongest Concrete Failure Modes
+
+Each probed against the actual redesign document and, where applicable, the
+actual rejected helper's confirmed shape.
+
+| # | Attacked assumption | Source path/symbol/section | Failure sequence | Caught by existing/proposed control? | Minimal correction | Blocking level |
+|---|---|---|---|---|---|---|
+| 1 | "consumed" mutation operator implies observable byte change | `## Mutation Operator Contract`; `## Runtime Coverage Invariants` ("every mutation operator is consumed exactly once") | Runner executes a `DELETE_JSON_POINTER`/`REPLACE_JSON_POINTER` branch whose target pointer exists but whose value happens to be unchanged (delete of an already-absent-in-effect field, or replace-with-same-value), producing a "consumed" mutation that never alters the payload the validator sees | Partially — pointer-existence check catches missing pointers, not no-op mutations | Require the runner to assert `serialize(mutated_payload) != serialize(positive_control_payload)` for every non-`NO_MUTATION` case, recorded in the result ledger as a boolean, failing `BLOCKED_EVIDENCE_INCOMPLETE` if false | R1B |
+| 2 | validator and readout observe the *same* mutated object | `## Actual P2 Seam Contract` steps 4-5; hostile tests 7, 13 | Runner calls `_validate_receipt_integrity(mutated_payload)` for validator-boolean predicates, then separately constructs a minimal/different object for `build_machine_verification_readout(...)` to satisfy readout-shaped predicates cheaply, technically invoking "both actual P2 seams" per the contract's literal wording | No — no hostile test in the current list asserts payload identity/equality between the two seam calls for the same case | Add hostile test: assert the exact object (or its canonical serialization) passed to `build_machine_verification_readout` equals the object passed to `_validate_receipt_integrity` for every case | R1B |
+| 3 | R1A predicate feasibility against actual P2 fields is checked before commit | `## Committed Oracle Manifest Contract`; `## Safety Predicate Vocabulary` | A zero-tolerance case is ratified in R1A with a `requiredSafetyPredicate` that no reachable P2 code path can ever satisfy or falsify for the declared mutation (e.g., `SECRET_SENTINEL_NOT_EMITTED` paired with a mutation operator that cannot reach any field the readout serializes), discovered only after R1B executes it as `NOT_REPRESENTABLE_BY_CURRENT_P2`, one full tranche late | Partially — the design allows `NOT_REPRESENTABLE_BY_CURRENT_P2` as an honest outcome, but does not require R1A to attempt this check before commit | Require R1A ratification to include one dry-run feasibility trace per case (source path + mutation + predicate, manually or mechanically checked against the seam's known field surface) before the oracle is committed | R1A |
+| 4 | "byte-identical while a P2 dependency changes" fails closed | `## Freeze And Immutability Contract` (pins oracle identity, not runner or P2-seam identity) | Between R1A ratification and R1B execution, `agent_autorun_machine_verification.py` or `agent_automation_machine_verification_readout.py` changes (e.g., a future MFRP successor edits `_validate_receipt_integrity`'s required-field set); the R1A oracle remains byte-identical and passes its five pinned identity checks, and R1B silently measures against a different P2 than the one the oracle's predicates were designed against | No — none of the five R1B freeze identities cover P2 seam source identity | Add the two P2 seam file SHA-256 values as a sixth/seventh pinned identity in the R1B work order (mirroring this very packet's own Target/Source table, which already pins both P2 files); mismatch is `BLOCKED_EVIDENCE_INCOMPLETE`, not silent | R1B |
+| 5 | zero-tolerance class with zero cases/denominators cannot pass | `## Runtime Coverage Invariants` ("every seven zero-tolerance class has at least one case"; "Zero-case totals are a hard failure, never N/A recall") | Directly repairs the confirmed P3-RV-3/Probe-1 defect (rejected helper returned `REPLAY_PASS_CANDIDATE` with `0/0` in all seven classes for a one-case corpus) | Yes — explicit hard-failure invariant, independently verified as present in the redesign text | None required | NON_BLOCKING |
+| 6 | replay can be mechanically complete with a real P2 miss without being mistaken for PASS | `## Result Ledger Contract` (`executionCompleteness` vs `safetyCandidate` orthogonality) | A real, honest P2 failure (e.g., current readout does not emit a distinguishable secret-redaction reason) produces `executionCompleteness: COMPLETE`, `safetyCandidate: RETURN_TO_DESIGN_CANDIDATE` — correctly distinguished, matching `## Contradiction Or Gap Disposition`'s explicit statement that this "is not a redesign defect and must not be predicted away" | Yes | None required | NON_BLOCKING |
+| 7 | reviewer is asked to rerun/reconstruct the oracle rather than evaluate evidence | `## Reviewer Minimal Sufficient Verification` | A future R1B worker return could omit first-run evidence, forcing the reviewer to execute the runner from scratch to have anything to evaluate, functionally becoming oracle/runner reconstruction | Partially — the five-item reviewer list assumes a result ledger already exists to inspect, but nothing in `## Result Ledger Contract` mandates a worker return carry first-run *and* independently-rerun evidence side by side (the pattern the prior P3 worker return itself used and disclosed) | Require the R1B work order to mandate the same first-run/final-run evidence-preservation discipline already proven in the prior (rejected-on-different-grounds) P3 worker-return packet shape | R1B |
+| 8 | two-tranche mechanism costs more than the review work it removes | `## Reviewer Minimal Sufficient Verification`; Q12 answer above | If R1A ratification requires the same depth of adversarial probing the original single-tranche reviewer already performed (two hostile probes, full read of both seam files), plus a *second* independent review at R1B, total reviewer cost could exceed re-reviewing one well-specified single-tranche worker return with mandatory seam-invocation proof baked into its own acceptance criteria | Not directly addressed — the design asserts machine-first savings but supplies no cost comparison, per Q12/answer 12 above and the packet's own note that "unverifiable cost assumption remains explicit and fail-closed" | Record, at R1A closure, the actual reviewer time/round count for R1A alone; compare against the single rejected-tranche reviewer's recorded cost before asserting net savings; if R1A cost alone approaches or exceeds the original tranche's reviewer cost, the two-tranche split's latency benefit accrues only if R1B reviews are cheaper by a wide margin — worth tracking, not blocking | NON_BLOCKING (cost claim is unverifiable now; defer measurement to R1A/R1B actuals, do not block design on a prediction) |
+
+## 6. R1/R1A/R1B Boundary Assessment
+
+The boundary is sound and matches the packet's Workflow-Chain Interpretation
+Map exactly: R1 (this review cycle) creates no worker manifest and executes
+nothing; R1A is documentary/machine-data only with "no replay helper" and
+"executes no case"; R1B is a separate no-commit implementation tranche that
+consumes the frozen R1A oracle. This is precisely the minimum split needed to
+prevent the single-artifact self-attestation defect that sank the prior
+tranche — collapsing R1A and R1B into one tranche would recreate exactly the
+condition (same commit, same author, same review pass) that let the rejected
+helper's fixture and evaluator co-evolve until they agreed with each other
+instead of with actual P2 behavior. No credible collapse-to-one-tranche
+argument survives the Root-Cause Model's own diagnosis. The umbrella (R1)
+itself introduces no additional execution surface and should remain
+non-executable permanently (Q1 gap: state this as an explicit stop condition).
+
+## 7. Oracle Independence And Freeze Assessment
+
+Independence: strong at the schema level — `## Committed Oracle Manifest
+Contract` explicitly forbids `observed*`, `actual*`, and pass/fail fields in
+the oracle, which is the correct positive control against the exact defect
+class that failed before (fixture-authored `expectedReceiptResult` used as
+both oracle and observation). Freeze: four of five pinned identities
+(repository blob, file SHA-256, JCS digest, coverage-set digest) are
+sufficient for *oracle* content integrity; the commit SHA adds temporal
+provenance, correctly kept as a fifth, distinct-purpose identity (Q7). The
+one freeze gap that should block R1B work-order authoring, not just be
+noted, is Failure Mode #4 above: nothing pins the two actual P2 seam files'
+identity between R1A ratification and R1B execution, so an oracle can remain
+perfectly frozen while measuring a P2 that has since changed underneath it.
+
+## 8. Actual-Seam And Coverage Assessment
+
+The `## Actual P2 Seam Contract`'s seven-step sequence is causally correct
+end-to-end and, if implemented literally, closes P3-RV-1 and P3-RV-2: it
+requires building a receipt via the *canonical* P2 object/digest owners (not
+a reimplementation), proving the positive control validates, applying a
+typed in-memory mutation, then calling both real seam functions and
+evaluating a precommitted predicate against their real output. The two
+residual coverage gaps are Failure Modes #1 (no-op mutation acceptance) and
+#2 (validator/readout payload divergence) above — both are "satisfies the
+contract's words while defeating its intent" patterns exactly analogous to
+the original defect, just moved one layer deeper into the mutation/dual-seam
+mechanics rather than the top-level comparison. `## Runtime Coverage
+Invariants`'s eight bullet points (exact case-ID match, minimum 18, full
+family/class coverage, resolved bindings, single mutation consumption, one
+observation pair per case, exact reconciliation, no unevaluated predicate)
+correctly target the confirmed Probe-1/Probe-2 exploitation pattern (reduced
+corpus, fabricated fields, zero-denominator classes) and would block both
+reproduced hostile probes if implemented as literal runtime checks rather
+than only as tests over one fixture — which is exactly what P3-RV-3 required.
+
+## 9. Reviewer Boundary And Machine-First Cost Assessment
+
+The reviewer boundary is correctly minimal (Q10): five bounded checks, not a
+full re-execution or re-authoring. The `## Result Ledger Contract`'s
+`executionCompleteness`/`safetyCandidate` separation gives the reviewer a
+clean, non-ambiguous artifact to evaluate rather than a single conflated
+verdict. Machine-first cost claims are explicitly and correctly left
+unverified by the design itself (`## Evidence / Verification`: "No
+provider/live proof applies to R1A/R1B"; `Claim Update`: "latency, quota
+reduction... remain unproven") — this honesty is appropriate for a
+design-stage document and should not be treated as a defect. Per Failure
+Mode #8, actual net cost should be measured at R1A/R1B closure, not assumed
+now.
+
+## 10. Required Corrections And Ceremony Cuts
+
+Required before R1A authoring (blocking):
+
+- Add a hard runtime invariant that every non-`NO_MUTATION` case's mutation
+  must produce a serialization difference from the positive control
+  (Failure Mode #1).
+- Add a hostile test and runtime check asserting the validator and readout
+  calls observe the identical (or byte-identical-serialized) payload object
+  per case (Failure Mode #2).
+- Add both P2 seam file SHA-256 values to the R1B freeze/pin set, with
+  mismatch routed to `BLOCKED_EVIDENCE_INCOMPLETE` (Failure Mode #4).
+
+Required before R1A closure/ratification (blocking):
+
+- Require one feasibility check per case at R1A time confirming the
+  declared predicate is reachable via the declared mutation against the
+  actual seam's known field/behavior surface, before the oracle commits
+  (Failure Mode #3).
+
+Recommended ceremony cuts (non-blocking, cost-neutral to independence):
+
+- Fold `attackBindingMode` into the mutation-operator naming scheme rather
+  than keeping it as a separate cross-cutting field (Q12).
+- Share one boilerplate `claimBoundary` constant across the oracle and
+  result-ledger schemas rather than requiring bespoke per-artifact wording
+  each time (Q12).
+- State explicitly, once, that R1 itself may never gain an execution phase,
+  closing the Q1 clarity gap with a single Acceptance-And-Stop-Conditions
+  line rather than leaving it implicit across multiple sections.
+
+## 11. Minimal R1A Deliverable Recommendation
+
+Exactly two artifacts, matching the redesign's own stated R1A scope with the
+blocking corrections folded in:
+
+1. One oracle manifest JSON conforming to `cvf.mfrp.actualSeamReplayOracle.v1`
+   containing `sourceManifest` (seven pinned source path/hash pairs, unchanged
+   from the accepted P3 set), `requiredCaseIds`/`requiredFamilies`/
+   `requiredZeroToleranceClasses`, and `cases` with the corrected fields:
+   `caseId`, `family`, `sourceRef` (source ID + locator + `sourceExcerptSha256`),
+   `derivation`, `baseReceiptProfile`, `mutation` (typed operator + JSON
+   pointer, operator name absorbing attack-binding-mode distinctions per the
+   Q12 cut), `requiredSafetyPredicate`, `zeroToleranceClass`,
+   `prohibitedOutcome`, and one `feasibilityCheck` field recording how the
+   predicate's reachability against the actual seam was confirmed at
+   ratification time (Failure Mode #3 correction). No `observed*`/`actual*`
+   field, matching the existing contract.
+2. One ratification review/baseline document recording: independent
+   recomputation of all seven source hashes, the per-case feasibility-check
+   evidence, the oracle's own blob/file SHA-256 and JCS digest, and the
+   explicit `ORACLE_RATIFIED_BOUNDED` or `RETURN_TO_DESIGN` disposition.
+
+No runner code, no fixture-loading helper, no result ledger, and no P2 seam
+file identity pin belongs in R1A — the seam-identity pin belongs in the R1B
+work order (Failure Mode #4), since it is a freeze condition for *R1B's*
+execution, not a property of the oracle itself.
+
+## 12. R1B Entry Gate Recommendation
+
+R1B work-order authoring may proceed only after: (a) R1A is independently
+ratified `ORACLE_RATIFIED_BOUNDED` per item 2 above; (b) the R1B work order
+pins all five oracle freeze identities plus the two P2 seam file SHA-256
+values (seven pinned identities total); (c) the mutation-consumption and
+validator/readout-payload-identity invariants from Section 10 are written
+into the R1B work order's `## Runtime Coverage Invariants` and `##
+Mandatory Hostile Tests` sections as literal requirements, not left to
+runner-author discretion; and (d) the R1B work order explicitly states, per
+the original packet's own boundary, that discovering a P2 gap during R1B
+becomes a separately authorized P2-hardening successor, not an in-tranche
+repair. Deferred to the post-R1B independent review, not resolvable now:
+actual per-class recall, the honesty of any `NOT_REPRESENTABLE_BY_CURRENT_P2`
+disposition, non-determinism proof across repeated runs, and the terminal
+`REPLAY_PASS`/`RETURN_TO_DESIGN` selection.
+
+## 13. Final Disposition
+
+`ACCEPT_TWO_TRANCHE_DIRECTION`
+
+The two-tranche R1A/R1B split, with R1 as a non-executable umbrella, is the
+minimum safe structure given the confirmed root cause of the prior rejection.
+No collapse-to-one-tranche or add-a-third-tranche argument is supported by
+the evidence. Four corrections (three pre-R1A-authoring, one pre-R1A-closure)
+are required before the design should be treated as `ORACLE_RATIFIED_BOUNDED`-
+ready; none of them require re-architecting the tranche boundary itself, and
+all are additive refinements to already-drafted contract sections rather than
+new sections. This disposition is advisory; CVF must independently classify
+and absorb each finding per the packet's Absorption Instruction before
+amending the design or authoring R1A.
+
+## 14. Claim Boundary, Checker Source Read-Ahead Block, Agent Operation Trace Block And Public Export Disposition
+
+### Claim Boundary
+
+This critique is advisory only. It does not ratify an oracle, implement a
+runner, mutate P2, accept or reject the redesign on CVF's behalf, activate
+machine-first review, open P4, change downstream workspaces, or claim
+runtime, provider/live, public-sync, deployment, or production readiness.
+Every finding above must be independently re-verified and absorbed by CVF
+through the packet's named absorption workflow before it changes SOT.
+
+### Checker Source Read-Ahead Block
+
+| Field | Value |
+|---|---|
+| applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py` |
+| literalTokensReviewed | review-context purpose/target/scope/findings/risk/claim structural groups; external-routing seven-row field/value table shape; checker read-ahead four-field table; agent-operation-trace full label set; public export disposition three-token enum |
+| gateRunPurpose | confirm, as evidence after source and checker read-ahead, that this critique packet is structurally complete and correctly routed, without treating any local machine-shape check as semantic acceptance of the redesign |
+| claimBoundary | this block records source read-ahead only; it does not itself certify gate PASS, ratify R1A, implement R1B, or open P4 |
+
+### Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | external independent reviewer |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MFRP-P3-R1 two-tranche control design external critique, 2026-09-01 |
+| Working directory | repository root |
+| Command or tool surface | `git rev-parse HEAD`, `git status --short --untracked-files=all`, `git merge-base --is-ancestor`, SHA-256 recomputation, governed source reads |
+| Target paths | `docs/reviews/CVF_MFRP_P3_R1_TWO_TRANCHE_CONTROL_DESIGN_EXTERNAL_REVIEW_PACKET_2026-09-01.md`; six pinned targets; this critique |
+| Allowed scope source | `docs/reviews/CVF_MFRP_P3_R1_TWO_TRANCHE_CONTROL_DESIGN_EXTERNAL_REVIEW_PACKET_2026-09-01.md` Return And Mutation Boundary |
+| Before status evidence | clean HEAD `4ef99fcf84386cb66f05a48c0c7c540e6985162f`; six target hashes unmatched-pending-verification; this critique's output path absent |
+| After status evidence | six target hashes independently confirmed MATCH; one new critique file created; no existing file modified |
+| Diff evidence | `git status --short --untracked-files=all` shows exactly one new untracked path after authoring; `git diff --name-status` is empty (no tracked file touched) |
+| Approval boundary | one bounded advisory critique file only |
+| Claim boundary | no oracle authoring/ratification, runner implementation, P2 edit, P4, staging, commit, or external effect |
+| Agent type | external independent reviewer |
+| Invocation ID | `mfrp-p3-r1-two-tranche-external-critique-2026-09-01` |
+| Expected manifest | `docs/reviews/CVF_MFRP_P3_R1_TWO_TRANCHE_CONTROL_DESIGN_EXTERNAL_CRITIQUE_2026-09-01.md` |
+| Actual changed set | `docs/reviews/CVF_MFRP_P3_R1_TWO_TRANCHE_CONTROL_DESIGN_EXTERNAL_CRITIQUE_2026-09-01.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this batch |
+
+### Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private provenance design-review critique; public-sync is not
+authorized by this packet.

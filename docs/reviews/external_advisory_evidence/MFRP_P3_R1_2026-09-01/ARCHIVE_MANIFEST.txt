@@ -1,0 +1,28 @@
+MFRP P3-R1 EXTERNAL ADVISORY EVIDENCE MANIFEST
+
+Status: EXTERNAL_ADVISORY_NOT_CVF_AUTHORITY
+Disposition: PRESERVED_BYTE_IDENTICAL_FOR_LOCAL_ABSORPTION
+
+Original returned path:
+docs/reviews/CVF_MFRP_P3_R1_TWO_TRANCHE_CONTROL_DESIGN_EXTERNAL_CRITIQUE_2026-09-01.md
+
+Preserved filename:
+CVF_MFRP_P3_R1_TWO_TRANCHE_CONTROL_DESIGN_EXTERNAL_CRITIQUE_2026-09-01.advisory
+
+SHA-256:
+944ed0d2f84a455978ae906e3fe110c2fc84119550ceca7070f67f70f5233675
+
+Execution base HEAD:
+4ef99fcf84386cb66f05a48c0c7c540e6985162f
+
+External disposition:
+ACCEPT_TWO_TRANCHE_DIRECTION
+
+Authority boundary:
+The preserved bytes are external advisory evidence only. They are not an
+active governed Markdown packet, CVF source authority, an R1A oracle, an R1B
+work order, implementation authorization, or P4 authority. CVF-owned
+classification and decisions live in the paired absorption/reconciliation
+review.
+
+Public Export Disposition: DEFERRED_PRIVATE_ONLY
