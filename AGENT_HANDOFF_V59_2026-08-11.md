@@ -201,7 +201,7 @@ Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry record
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: synchronize committed MFRP-P3 dispatch material `57e51e8a86d44ee8602ade8af7dfff39eab87499`, record the worker-execution checkpoint, and regenerate continuity projections.
+Authorized guard-maintenance scope: synchronize committed MFRP-P3 dispatch material `57e51e8a86d44ee8602ade8af7dfff39eab87499`, record the worker-execution checkpoint, regenerate continuity projections, and bind worker startup to the current clean HEAD plus verified material-commit ancestry rather than a stale fixed execution HEAD.
 Protected paths:
 
 - `AGENT_HANDOFF_V59_2026-08-11.md`

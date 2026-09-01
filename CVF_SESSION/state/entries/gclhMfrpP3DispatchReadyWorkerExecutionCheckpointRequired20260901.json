@@ -9,7 +9,7 @@
     "plannedWorkerReturnPath": "docs/reviews/CVF_MFRP_P3_HISTORICAL_REPLAY_WORKER_RETURN_2026-09-01.md",
     "acceptedOutcome": "The source-verified P3 provider-free historical-replay baseline and exact five-path no-commit work order are committed and dispatch-ready. Seven historical source hashes, pre-execution fixture/ledger freeze, at least eighteen cases and per-class zero-tolerance recall are contract requirements.",
     "reviewEvidence": "Pre-dispatch autorun 81/81 PASS, material pre-commit 88/88 PASS, exact three-path dispatch manifest and seven frozen source hashes independently matched. No provider/live/network call occurred.",
-    "nextAllowedMove": "Transfer the exact committed P3 packet to one no-commit worker at execution base 57e51e8a86d44ee8602ade8af7dfff39eab87499. The worker may create only the five named replay artifacts, must freeze fixture and ledger before first replay, and must return for independent review without staging or committing.",
+    "nextAllowedMove": "Transfer the exact committed P3 packet to one no-commit worker. The worker must capture the current clean HEAD at start and verify that it contains material dispatch commit 57e51e8a86d44ee8602ade8af7dfff39eab87499 in its ancestry. The worker may create only the five named replay artifacts, must freeze fixture and ledger before first replay, and must return for independent review without staging or committing.",
     "claimBoundary": "P3 dispatch only. No replay result, semantic acceptance, lifecycle activation or P4 opening is claimed. P4-P6, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
   }
 }
