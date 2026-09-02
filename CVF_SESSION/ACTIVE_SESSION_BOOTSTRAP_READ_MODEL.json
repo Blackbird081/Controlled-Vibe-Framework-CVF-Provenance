@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized",
+  "currentMode": "gclh_mfrp_p4_shadow_canary_window_open_bounded",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MFRP-P4 Amendment 2 authorizes exactly six output paths solely for the file-size-compliant helper/test split, with semantics and 90-test coverage unchanged. Complete the initialization return review and material commit; afterward collect natural observations without per-return review until M5, M10 and M20/day-30 unless a derived safety trigger fires. P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "MFRP-P4 initialization is reviewer-accepted bounded at material commit 8de63c077 with 90/90 focused tests twice and 88/88 pre-commit checks. Collect natural eligible return/receipt pairs through the accepted six-path ledger without per-return review. Review only at M5, M10, M20/day-30 or when a derived safety trigger fires. Eligible count is currently 0, so recall preservation and cost saving remain unproven. P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

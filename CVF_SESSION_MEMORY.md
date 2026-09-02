@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=complete the Amendment-2 six-path P4 initialization and returned-result review; parked checkpoint=P2 mutation, P5 and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_shadow_canary_window_open_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=collect natural eligible pairs without per-return review until M5/M10/final or safety trigger; parked checkpoint=P2 mutation, P5 and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`
-Current mode: `gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`; previous mode marker: `gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready`
-Previous mode: `gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready`
+Current mode marker: `gclh_mfrp_p4_shadow_canary_window_open_bounded`
+Current mode: `gclh_mfrp_p4_shadow_canary_window_open_bounded`; previous mode marker: `gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`
+Previous mode: `gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`. Amendment 2 authorizes exactly six output paths only for the file-size-compliant helper/test split; semantics and 90-test coverage stay unchanged. Complete initialization review and material commit. Thereafter, routine review occurs only at M5, M10 and final unless a derived safety trigger fires. P2 mutation, P5 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p4_shadow_canary_window_open_bounded`. Initialization is reviewer-accepted at material commit `8de63c077`; 90/90 focused tests passed twice and pre-commit passed 88/88. Eligible count remains 0. Collect natural eligible pairs without per-return review; review only at M5, M10, final or a derived safety trigger. Recall preservation, cost saving, P2 mutation, P5 and external effects remain unclaimed/parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

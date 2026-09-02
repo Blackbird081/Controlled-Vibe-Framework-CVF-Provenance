@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized",
-  "previousMode": "gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready",
+  "currentMode": "gclh_mfrp_p4_shadow_canary_window_open_bounded",
+  "previousMode": "gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
