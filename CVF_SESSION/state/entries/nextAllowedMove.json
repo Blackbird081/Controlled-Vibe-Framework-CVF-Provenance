@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2738,
+  "stateOrder": 2740,
   "stateKey": "nextAllowedMove",
-  "value": "MFRP-P3-R1A-R2 dispatch is committed. Next allowed move is its exact two-path no-commit oracle source-binding correction; routine review resumes at worker return, not at each step. After accepted committed correction, R1B-R2 authoring is already operator-authorized but must pin the real corrected oracle commit/hash before dispatch. P4 canary execution, P2 mutation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MFRP-P3-R1A-R2 oracle correction is reviewer-ratified and committed at e15cf55d8. Next allowed move is R1B-R2 baseline/work-order authoring pinned to the accepted oracle commit and raw/JCS/required-set identities; authoring does not execute replay. P4 canary, P2 mutation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

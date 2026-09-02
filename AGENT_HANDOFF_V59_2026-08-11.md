@@ -39,9 +39,9 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p3_r1a_r2_dispatch_ready_r1b_repair_authoring_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=bounded no-commit R1A-R2 correction; parked=R1B-R2 execution, P4 canary, external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p3_r1a_r2_oracle_ratified_r1b_r2_authoring_ready`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author R1B-R2 pinned dispatch; parked=R1B-R2 execution, P4 canary, external effects.
 ## Current Mode
-`gclh_mfrp_p3_r1a_r2_dispatch_ready_r1b_repair_authoring_authorized`
+`gclh_mfrp_p3_r1a_r2_oracle_ratified_r1b_r2_authoring_ready`
 ## Purpose
 
 Preserve independently accepted T1C durable single-node non-production material without opening a caller, package export or external effect.
@@ -54,7 +54,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Latest Work / Changes
 
-- MFRP R1B replay `2b06d928d` is `RETURN_TO_DESIGN`. R1A-R2 dispatch `b25bec18b` corrects source binding; execute two paths with review only at return. R1B-R2 authoring follows accepted oracle identity; P4 stays parked.
+- MFRP R1B replay `2b06d928d` is rejected. R1A-R2 oracle is ratified at `e15cf55d8` with raw `c6a80062...`; author R1B-R2 pinned repair next. P4 stays parked.
 - GC010 root architecture is closed parked at `e867d5432` with terminal `ROOT_ARCHITECTURE_REASSESSED_NO_TRUTHFUL_PRODUCT_OWNER_RETAIN_PARKED`. Direct route composition, ApprovalStore upgrade, singleton SQLite and distributed-store guesses were rejected; reopening requires all five named topology, adapter, ordering, recovery and adversarial-test facts in one packet. Reviewer-fast 67/67 and material pre-commit 88/88 pass; no source/runtime/provider effect or successor tranche opened.
 - SCEC-T1 foundation dispatch is `10345d3a`; T1-R2 is independently accepted with material correction at `cb6d4bc3879a753eb9abc7283b55148c141c46d1`. Resolution claims now require path/hash/locator evidence, successor consumption revalidates predecessor evidence hashes, the corrected GC010 replay retains unresolved blockers, and scaffolds emit the contract. Focused SCEC 115/115, combined focused 205/205, reviewer-fast 67/67 and pre-commit 88/88 passed. The two out-of-scope diagnostics remain disclosed and untouched; T1J-R4 remains parked.
 - EAFR-R12 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `1e31db99a`; terminal roadmap commit `fae74ca77`. Reviewer repaired candidate-level evaluator order, denied-candidate call-budget accounting, unauthorized-provider receipt endpoint resolution and the return packet. TypeScript, focused 24/24, package 339/339, corrected-base 81/81, reviewer-fast 66/66 and pre-commit 87/87 passed; zero provider/live/credential calls. EAFR successor count is zero; RFR may only be reconsidered separately.
@@ -199,18 +199,18 @@ Public-sync source commit: `af957e279a8118b152d957a29f5731c6304a86bf`; public `m
 Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry records, now merged by PR 4; this is not deploy or production readiness. Exact-SHA hosted runs `33058250461`, `33058254795`, `33058254845`, `33058254830`, `33058254860`, `33058254846`, `33058254884`, and `33058254898` all passed.
 
 ## Core Guard Self-Protection Authorization - Current Continuity
-Authorized guard-maintenance scope: project committed R1A-R2 dispatch authority into active continuity.
+Authorized guard-maintenance scope: project accepted R1A-R2 oracle identity and R1B-R2 authoring readiness into continuity.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/gclhMfrpP3R1AR2DispatchReadyR1BRepairAuthoringAuthorized20260902.json`
+- `CVF_SESSION/state/entries/gclhMfrpP3R1AR2OracleRatifiedR1BR2AuthoringReady20260902.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: explicit 2026-09-02 opening of R1A-R2 correction and R1B repair authoring toward P4 eligibility.
-Rollback boundary: revert only this continuity projection; preserve dispatch `b25bec18b`, rejected replay `2b06d928d` and prior evidence.
-Not authorized by the continuity sync: R1A-R2 result acceptance, R1B-R2 dispatch/execution, P4, P2 mutation or external effect.
+Operator authorization: explicit 2026-09-02 opening of R1A-R2 correction and subsequent R1B repair authoring.
+Rollback boundary: revert only this continuity projection; preserve accepted oracle `e15cf55d8` and prior evidence.
+Not authorized by the continuity sync: R1B-R2 execution, P4, P2 mutation or external effect.
 ## Claim Boundary
 
-This handoff records R1A-R2 dispatch and conditional R1B-R2 authoring authority only; it claims no correction result, R1B/P4 execution or external effect.
+This handoff records accepted R1A-R2 identity and R1B-R2 authoring readiness only; it claims no R1B/P4 execution or external effect.

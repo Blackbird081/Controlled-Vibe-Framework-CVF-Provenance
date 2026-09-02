@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p3_r1a_r2_dispatch_ready_r1b_repair_authoring_authorized",
-  "previousMode": "gclh_mfrp_review_admission_machine_enforced_r1b_execution_ready",
+  "currentMode": "gclh_mfrp_p3_r1a_r2_oracle_ratified_r1b_r2_authoring_ready",
+  "previousMode": "gclh_mfrp_p3_r1a_r2_dispatch_ready_r1b_repair_authoring_authorized",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16381,5 +16381,18 @@
     "nextAllowedMove": "Execute the exact two-path no-commit R1A-R2 oracle source-binding correction. Routine review occurs at its worker return. If accepted and committed, author R1B-R2 against the real corrected oracle commit and hashes without another operator micro-checkpoint.",
     "claimBoundary": "Dispatch and conditional successor-authoring authority only. No corrected oracle result, R1B-R2 dispatch/execution, P4 canary, P2 change, provider/live/network, public-sync, deployment or production effect is claimed."
   },
-  "nextAllowedMove": "MFRP-P3-R1A-R2 dispatch is committed. Next allowed move is its exact two-path no-commit oracle source-binding correction; routine review resumes at worker return, not at each step. After accepted committed correction, R1B-R2 authoring is already operator-authorized but must pin the real corrected oracle commit/hash before dispatch. P4 canary execution, P2 mutation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP3R1AR2OracleRatifiedR1BR2AuthoringReady20260902": {
+    "status": "R1A_R2_ORACLE_RATIFIED_BOUNDED_R1B_R2_AUTHORING_READY",
+    "oraclePath": "governance/compat/fixtures/mfrp_p3_r1a_r1_static_only_oracle.json",
+    "oracleRawSha256": "c6a8006265ff1968760101e380c779e2a031c870aa7ff3c6d0296df94dbebd43",
+    "oracleAllFieldJcsSha256": "5a6751a7b6cda0291792a476799594dde63bdfa7e13997b8a093f3cecfd8e97d",
+    "oracleRequiredSetJcsSha256": "04be6dc1fa061e13af195c5490769bf88fba3309e2ddb4aa0ed24a8fd6440fca",
+    "oracleContainingCommit": "e15cf55d8060a44056f44dd819b399ae3aec1fb0",
+    "workerReturnPath": "docs/reviews/CVF_MFRP_P3_R1A_R2_ORACLE_SOURCE_BINDING_CORRECTION_WORKER_RETURN_2026-09-02.md",
+    "workerReturnSha256": "516f35f754e47a24e163f6bced33a9c0cae4c1f78826fd028511de5de0d240c8",
+    "reviewerDisposition": "ORACLE_RATIFIED_BOUNDED",
+    "nextAllowedMove": "Author and validate the bounded R1B-R2 repair baseline/work order pinned to the accepted oracle commit and identities. Do not execute R1B-R2 or P4 during authoring.",
+    "claimBoundary": "Static oracle source-binding acceptance only. No R1B-R2 dispatch/execution result, P4 canary, P2 mutation, provider/live/network, public-sync, deployment or production effect is claimed."
+  },
+  "nextAllowedMove": "MFRP-P3-R1A-R2 oracle correction is reviewer-ratified and committed at e15cf55d8. Next allowed move is R1B-R2 baseline/work-order authoring pinned to the accepted oracle commit and raw/JCS/required-set identities; authoring does not execute replay. P4 canary, P2 mutation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
