@@ -281,6 +281,51 @@ contradiction where a packet declares review unnecessary but its status or
 prose still requires independent review before worker execution. This is a
 closed contradiction check, not semantic inference over arbitrary prose.
 
+## Reviewer-Local Repair Versus Worker Return Routing
+
+A reviewer does not return every defect to the worker merely because the
+worker authored the implementation. Agent or role purity is not a control
+objective. Once the result and its evidence are at the ordinary review
+boundary, the default is one consolidated reviewer-local correction when all
+of these conditions hold:
+
+- the objective, accepted design, allowed path set, authority ceiling,
+  external-effect class and commit owner remain unchanged;
+- the correction is localized and fully determined by evidence already read
+  during review;
+- the correction does not redesign the algorithm, recreate the deliverable,
+  acquire new source evidence or require hidden worker context;
+- focused tests or existing deterministic evidence can verify it; and
+- applying the correction is cheaper than making another agent reload the
+  controlling authority, sources, changed set and finding context.
+
+Return the finding set to a worker only when at least one of these boundaries
+is crossed:
+
+- algorithm, architecture, design, source-of-truth interpretation or semantic
+  implementation must materially change;
+- allowed paths, risk, authority or external effects must expand;
+- new evidence must be acquired or the reviewer cannot determine the repair
+  from the closed review input set;
+- the correction is broad enough that reviewer implementation would recreate
+  the worker's work rather than repair its returned evidence; or
+- a controlling work order expressly forbids reviewer repair.
+
+Context reload is governance tax. Its cost includes the additional agent
+invocation and the repeated reading needed to reconstruct authority, source
+identity, changed-set intent and prior findings. Do not incur that tax solely
+to preserve role labels. In multi-agent or multi-role work, changing the actor
+does not itself increase independence; independence comes from source-bound
+evidence, deterministic checks and reviewer-owned disposition.
+
+The reviewer must still consolidate connected findings before the first
+repair and must not silently widen scope. A reviewer-local correction remains
+disclosed in the existing return or completion evidence and is verified with
+the narrowest sufficient tests. This rule adds no mandatory packet, field,
+checker invocation or separate review round. Machine checks do not attempt to
+infer whether a semantic repair is small; the reviewer applies this routing
+boundary from the evidence and the operator may override it explicitly.
+
 ## Audit, Commit, Latency, And Delay Vocabularies
 
 `preRepairAuditDisposition` must be exactly one of:
@@ -467,8 +512,10 @@ Protected paths:
 Operator authorization: the operator explicitly requested that this become the
 common CVF foundation and SOP for all future agents using CVF, later required
 the same control to prevent review-by-drip and unbounded external MCP/CLI
-re-dispatch cost, and on 2026-09-02 rejected step-by-step review admission after
-an R1B authoring checkpoint recreated the governance tax being removed.
+re-dispatch cost, on 2026-09-02 rejected step-by-step review admission after an
+R1B authoring checkpoint recreated the governance tax being removed, and then
+directed reviewer-local repair for bounded findings because returning work to
+another agent forces a fresh authority/source/changed-set context reload.
 
 Rollback boundary: revert only the trigger-based review-admission addendum if
 it conflicts with higher authority; preserve earlier SOP, checker/test, ADIF,
