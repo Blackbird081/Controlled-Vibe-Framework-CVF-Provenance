@@ -24,6 +24,42 @@ providerExecutionAuthority: FORBIDDEN
 
 successorTrancheOpened: NO
 
+## Amendment 1 - Reviewer-Local Reachable Receipt Repair
+
+Status: OPERATOR_AUTHORIZED_REVIEWER_LOCAL_REPAIR
+
+Operator authorization: 2026-09-02 exact instruction to expand the returned
+review change set from nine to eleven paths, keep repair reviewer-local, and
+allow one post-commit local autorun receipt generation without redispatch.
+
+The post-commit collector may invoke the existing
+`run_agent_autorun_workflow_gate.py` exactly once when the current commit's
+sole parent contains one eligible trusted return. The current commit is the
+ordinary dedicated continuity sync: the autorun phase is `pre-closure`, base
+is the trusted return commit's sole parent, and head is the current continuity
+commit. This avoids the unavoidable active-session drift between material and
+continuity commits while preserving trusted-record-before-machine order. The
+resulting existing-family P2 receipt is validated and passed to the existing
+P4 append owner. This is one internal subprocess inside the already-budgeted
+collector command, not a second review, daemon, watcher, queue or provider
+call.
+
+The trusted outcome must come from an explicit committed
+`Reviewer disposition:` inside an `Independent Reviewer Adjudication`
+section. `Status: COMPLETE_PENDING_REVIEW` and other worker readiness tokens
+are never trusted dispositions.
+
+Receipt selection binds the exact generated pre-closure path, exact
+pre-material-parent through continuity-head range, receipt integrity,
+verifier identity and committed Git blob fingerprint. Other stale phase
+receipts in the runtime directory are irrelevant, not competing candidates.
+Generation failure, trust/order drift, fingerprint mismatch or a safety
+trigger writes the unresolved marker and does not increment the sample.
+
+Reviewer-local changed-set authority is exactly the original nine paths plus
+this baseline and its paired work order: eleven total. P2 sources and P4
+owners remain read-only.
+
 ## Purpose
 
 Open P4-C1 as a bounded automatic collector for naturally occurring MFRP
@@ -136,9 +172,11 @@ automatically opens P5 or P6.
 | `governance/compat/run_worker_return_scaffold.py` | MODIFY same optional observation block |
 | `governance/compat/test_run_worker_return_scaffold.py` | MODIFY parity tests |
 | `scripts/install-cvf-git-hooks.ps1` | MODIFY installed-hook disclosure |
-| `docs/reviews/CVF_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_WORKER_RETURN_2026-09-02.md` | CREATE worker return |
+| `docs/reviews/CVF_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_WORKER_RETURN_2026-09-02.md` | CREATE worker return; reviewer adjudication/repair evidence in place |
 
-Exact equality is required. No deletion or rename is authorized.
+Worker equality remains the original nine paths. Amendment 1 reviewer-local
+equality is exactly those nine plus this baseline and paired work order,
+eleven total. No deletion or rename is authorized.
 
 ## Acceptance Boundary
 

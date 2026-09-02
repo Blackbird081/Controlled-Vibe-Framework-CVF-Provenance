@@ -227,6 +227,40 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
             "PREDECESSOR_UNRESOLVED_SENTINEL", {v.code for v in result.violations}
         )
 
+    def test_p4_observation_block_present_with_default_no(self):
+        text = scaffold.build_scaffold("Example Worker Return")
+        self.assertIn("## P4 Automatic Evidence Observation Block", text)
+        section_start = text.index("## P4 Automatic Evidence Observation Block")
+        section_end = text.index("## Claim Boundary", section_start)
+        section = text[section_start:section_end]
+        self.assertIn("p4ObservationEligibility: NO", section)
+        for field in (
+            "p4ObservationPhase",
+            "p4HardObligationLocator",
+            "p4HardObligationPattern",
+            "p4SourceAuthorityLocator",
+        ):
+            self.assertIn(f"{field}: N/A with reason", section)
+
+    def test_p4_observation_block_appears_in_fast_doc_profile_too(self):
+        text = scaffold.build_scaffold("Fast Doc Worker Return", scaffold.FAST_DOC_PROFILE)
+        self.assertIn("## P4 Automatic Evidence Observation Block", text)
+        self.assertIn("p4ObservationEligibility: NO", text)
+
+    def test_p4_observation_block_is_byte_identical_across_generators(self):
+        """Both worker-return generators must emit byte-equivalent optional
+        P4 observation block field bodies, per the P4-C1 Scaffold Metadata
+        Contract."""
+        import build_worker_return_skeleton_scaffold as skeleton
+
+        text = scaffold.build_scaffold("Example Worker Return")
+        heading = "## P4 Automatic Evidence Observation Block\n"
+        start = text.index(heading) + len(heading)
+        end = text.index("## Claim Boundary", start)
+        run_scaffold_fields = text[start:end].strip("\n") + "\n"
+        skeleton_fields = skeleton.p4_observation_block_fields().strip("\n") + "\n"
+        self.assertEqual(run_scaffold_fields, skeleton_fields)
+
     def test_cli_requires_exactly_one_action(self):
         self.assertEqual(scaffold.main([]), 2)
         self.assertEqual(scaffold.main(["--emit", "--write", "docs/reviews/x.md"]), 2)

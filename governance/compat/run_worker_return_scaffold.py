@@ -25,6 +25,12 @@ FAST_DOC_PROFILE = "WORKER_RETURN_FAST_DOC_V1"
 SCEC_SCHEMA_VERSION = "cvf.semanticConvergenceControl.v1"
 SCEC_UNRESOLVED_PREDECESSOR_SENTINEL = "SCEC_PREDECESSOR_HASH_UNRESOLVED"
 
+FIELD_ELIGIBILITY = "p4ObservationEligibility"
+FIELD_PHASE = "p4ObservationPhase"
+FIELD_HARD_OBLIGATION_LOCATOR = "p4HardObligationLocator"
+FIELD_HARD_OBLIGATION_PATTERN = "p4HardObligationPattern"
+FIELD_SOURCE_AUTHORITY_LOCATOR = "p4SourceAuthorityLocator"
+
 WORKER_RETURN_SCAFFOLD_SECTIONS = (
     "Source Inventory",
     "Rework Convergence Self-Proof",
@@ -33,6 +39,7 @@ WORKER_RETURN_SCAFFOLD_SECTIONS = (
     "Scope / Methodology",
     "Findings / Position",
     "Risk / Corrective Action",
+    "P4 Automatic Evidence Observation Block",
     "Claim Boundary",
     "Checker Source Read-Ahead Block",
     "Gate Evidence",
@@ -130,6 +137,14 @@ def _section_body(section: str) -> list[str]:
             f"must never resolve `{SCEC_UNRESOLVED_PREDECESSOR_SENTINEL}` "
             "with a fabricated hash; leave the sentinel until the real "
             "predecessor path/hash is known.",
+        ]
+    if section == "P4 Automatic Evidence Observation Block":
+        return [
+            f"{FIELD_ELIGIBILITY}: NO",
+            f"{FIELD_PHASE}: N/A with reason: not a natural P4 observation candidate",
+            f"{FIELD_HARD_OBLIGATION_LOCATOR}: N/A with reason: not a natural P4 observation candidate",
+            f"{FIELD_HARD_OBLIGATION_PATTERN}: N/A with reason: not a natural P4 observation candidate",
+            f"{FIELD_SOURCE_AUTHORITY_LOCATOR}: N/A with reason: not a natural P4 observation candidate",
         ]
     if section == "Gate Evidence":
         return [

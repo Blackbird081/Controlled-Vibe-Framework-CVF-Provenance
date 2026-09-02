@@ -55,6 +55,46 @@ changing trusted routing or adding routine review.
 providerExecutionAuthority: FORBIDDEN
 successorTrancheOpened: NO
 
+## Amendment 1 - Eleven-Path Reviewer-Local Repair Authority
+
+Status: REVIEWER_LOCAL_REPAIR_AUTHORIZED
+
+Operator authority: explicit 2026-09-02 authorization for an eleven-path
+reviewer-local repair, one post-commit local autorun receipt generation, and
+no worker redispatch.
+
+This amendment resolves returned findings `P4-C1-RV-1` through
+`P4-C1-RV-5`. Reviewer may modify the original nine paths plus this work order
+and paired baseline, exactly eleven paths total. No redispatch or additional
+agent invocation is admitted.
+
+When the current post-commit HEAD is a dedicated continuity sync whose sole
+parent contains one eligible trusted return, collection may invoke the
+existing local autorun gate once with `--phase pre-closure --base
+<trustedCommit^> --head <continuityHead>`. It must consume the resulting
+existing P2 receipt family, not create a schema/family or copy a validator.
+Trusted and disclosure commits must each have exactly one parent;
+root/merge ambiguity fail-closes. Material-commit post-commit performs only a
+cheap parent-candidate skip; the continuity post-commit performs collection.
+
+The collector must require a committed `Reviewer disposition:` inside the
+committed `Independent Reviewer Adjudication` section. Worker-owned `Status:`
+tokens, including `COMPLETE_PENDING_REVIEW`, are forbidden trust substitutes.
+
+The repair must prove one successful eligible path end-to-end through the
+actual P2 validator and P4 append owner, one-and-only-one append, duplicate
+skip, irrelevant multiple stale receipts, exact parent/head/fingerprint
+binding, and immediate marker derivation through the existing P4 safety owner.
+
+All original provider/network, P2/P4-owner, no-daemon, no-per-row-review,
+P5/P6 and project/public prohibitions remain unchanged.
+
+The eleven-path equality applies to the material repair. Reviewer/closer may
+separately refresh the generated active-session source, aggregate, bootstrap
+read model and active handoff in the ordinary continuity commit. Those
+continuity-only paths carry no implementation and do not enlarge the
+eleven-path material manifest.
+
 ## Scaffold Provenance Block
 
 | Field | Value |
@@ -216,10 +256,10 @@ findings at return are reviewer-local under the Review Cost standard.
     "delegation": "MULTI_ROLE_NO_COMMIT",
     "novelty": "KNOWN_PATTERN"
   },
-  "pathFamilies": [".githooks", "governance/compat", "scripts", "docs/reviews", "docs/baselines", "docs/work_orders", "AGENT_HANDOFF_V59_2026-08-11.md"],
+  "pathFamilies": [".githooks", "governance/compat", "scripts", "docs/reviews", "docs/baselines", "docs/work_orders", "CVF_SESSION", "AGENT_HANDOFF_V59_2026-08-11.md"],
   "claims": ["bounded automatic P4 shadow-evidence collection only"],
-  "requiredProof": ["receipt-to-commit fingerprint linkage", "trusted-before-machine ordering", "fail-closed skip and safety behavior", "exact nine-path return"],
-  "operatorCheckpoints": ["tenth path", "P2 mutation", "P5 or P6 opening", "provider or public effect"],
+  "requiredProof": ["receipt-to-commit fingerprint linkage", "trusted-before-machine ordering", "fail-closed skip and safety behavior", "exact eleven-path reviewer-local material repair"],
+  "operatorCheckpoints": ["material path outside the amended eleven", "P2 mutation", "P5 or P6 opening", "provider or public effect"],
   "forbiddenEffects": ["trusted-route replacement", "worker commit", "provider network live public deploy production", "automatic P5 opening"],
   "sourceEvidence": {
     "selectedFilesFullyRead": true,
@@ -322,6 +362,9 @@ Protected paths:
 - `governance/compat/build_worker_return_skeleton_scaffold.py`
 - `governance/compat/run_worker_return_scaffold.py`
 - `governance/compat/test_run_worker_return_scaffold.py`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` (reviewer/closer continuity only)
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json` (generated reviewer/closer continuity only)
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` (reviewer/closer continuity only)
 
 Operator authorization: explicit instruction on 2026-09-02 to record the
 reopen conditions durably in session and open P4-C1 automatic evidence
@@ -350,7 +393,7 @@ repository-bounded ignored P4-C1 runtime directory.
 | `governance/compat/mfrp_shadow_canary_autocollect.py` | CREATE collector owner |
 | `governance/compat/test_mfrp_shadow_canary_autocollect.py` | CREATE hostile/unit/integration tests |
 | `governance/compat/build_worker_return_skeleton_scaffold.py` | MODIFY optional P4 observation block |
-| `governance/compat/run_worker_return_scaffold.py` | MODIFY identical optional P4 observation block |
+| `governance/compat/run_worker_return_scaffold.py` | MODIFY MATCH-verified optional P4 observation block; parity is covered by the scaffold test suite |
 | `governance/compat/test_run_worker_return_scaffold.py` | MODIFY cross-generator parity tests |
 | `scripts/install-cvf-git-hooks.ps1` | MODIFY disclose/install post-commit hook via existing hooksPath |
 | `docs/reviews/CVF_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_WORKER_RETURN_2026-09-02.md` | CREATE full evidence return |

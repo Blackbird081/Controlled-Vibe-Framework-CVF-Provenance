@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+# P4-C1 automatic evidence collector launcher.
+#
+# Runs once, synchronously, after every commit. It never rewrites, amends, or
+# reverts the commit that just landed, and it always exits 0 so it can never
+# block a commit that has already completed -- only the next pre-commit's
+# unresolved-safety-marker check may ever block, and only after the collector
+# has explicitly written that marker.
+
+repo_root="$(git rev-parse --show-toplevel)" || exit 0
+cd "$repo_root" || exit 0
+
+PYTHONUTF8=1 python governance/compat/mfrp_shadow_canary_autocollect.py || true
+
+exit 0
