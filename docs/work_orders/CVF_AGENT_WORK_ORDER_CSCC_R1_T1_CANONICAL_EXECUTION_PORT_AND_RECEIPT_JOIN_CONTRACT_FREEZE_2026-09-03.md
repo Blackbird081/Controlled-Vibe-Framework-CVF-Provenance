@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CSCC-R1-T1
 
@@ -564,12 +564,12 @@ git status --short --untracked-files=all
 
 ## Acceptance Criteria
 
-- [ ] Exact three worker artifacts and no other changed path.
-- [ ] One Gateway-owned port and one exact identity field across both contracts.
-- [ ] Atomic callback occurs after all pre-adapter stops and immediately before one adapter call.
-- [ ] Deny/throw/retry/legacy/rollback semantics are complete and non-duplicative.
-- [ ] Ten future T2 deterministic risk classes have exact test names and assertions.
-- [ ] Zero external/provider calls, unchanged HEAD, empty staged diff and full fast gate PASS.
+- [x] Exact three worker artifacts and no other worker-changed path.
+- [x] One Gateway-owned port and one exact identity field across both contracts.
+- [x] Atomic callback occurs after all pre-adapter stops and immediately before one adapter call.
+- [x] Deny/throw/retry/legacy/rollback semantics are complete and non-duplicative.
+- [x] Ten future T2 deterministic risk classes have exact test names and assertions.
+- [x] Zero external/provider calls, unchanged worker HEAD, empty worker staged diff and full fast gate PASS.
 
 Fail conditions: Web owns the neutral port; pre-port admission returns; Gateway
 imports Web; a current caller is broken by a required bridge option; direct and
@@ -586,6 +586,28 @@ file changes; or a ready token is asserted without all proof rows.
 - Reviewer/closer alone performs material commit, pre-closure and continuity synchronization.
 - Public Export Disposition remains `DEFERRED_PRIVATE_ONLY` unless separately authorized.
 - No T2, provider/live, public, P2/P4/canary, MAO or GC-010 successor is opened by worker return.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CSCC_R1_T1_CANONICAL_EXECUTION_PORT_AND_RECEIPT_JOIN_CONTRACT_FREEZE_COMPLETION_2026-09-03.md` | reviewer acceptance of terminal design token after bounded repair | PASS |
+| Roadmap state | `docs/roadmaps/CVF_CANONICAL_SYSTEM_CHAIN_COMPOSITION_ROADMAP_2026-09-02.md` | T1 closed; T2 dispatch authoring ready | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | unchanged in material batch; active-state compatibility and GC-051 aggregate checks pass | PASS |
+| Registry Markdown | active handoff | unchanged in material batch; dedicated continuity sync follows | PASS |
+| External evidence digest | N/A with reason: local source only | zero external/provider calls | N/A with reason: no external evidence |
+| System loop interlock | roadmap and completion | T2 authoring only; execution remains held | PASS |
+| Session continuity | active handoff | separate continuity commit follows material closure | N/A with reason: commit choreography |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Runtime receipt evidence | N/A with reason: documentation-only T1 | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: no runtime query | N/A_WITH_REASON |
+| Worker-return acceptance | reviewer-local R1 closed the bounded semantic defect cluster | PASS |
+| Closure claim | T1 contract freeze only; T2 dispatch authoring released | PASS |
 
 ## Review Gate
 
