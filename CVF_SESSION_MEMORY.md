@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=P4 automatic collection plus fresh CSCC-R1-T2 dispatch authoring from accepted T1 contracts; parked checkpoint=T2 execution, T3-T6, P2/P4 mutation, canary, P5/P6 and external/project effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=P4 automatic collection plus one no-commit CSCC-R1-T2 worker execution from dispatch `f3359fb73`; parked checkpoint=T2 acceptance, T3-T6, P2/P4 mutation, canary, P5/P6 and external/project effects.
 
 ## Current Mode
 
@@ -52,7 +52,7 @@ Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. Accepted P4 material is `b9bdba712`; eligible count remains 0 and the M5/M10/safety/M20 rules are unchanged. In the independent System Chain lane, CSCC-R1-T1 is closed bounded at `f93b00e42` with terminal `READY_FOR_T2_CANONICAL_WEB_GATEWAY_COMPOSITION`. The next proactive action is fresh T2 dispatch authoring from the accepted contracts. T2 implementation remains held until that packet passes dispatch gates; T3-T6, P2/P4 mutation, canary, P5/P6, provider/live/public, MAO launch, GC-010 and downstream effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. Accepted P4 material is `b9bdba712`; eligible count remains 0 and the M5/M10/safety/M20 rules are unchanged. In the independent System Chain lane, CSCC-R1-T2 dispatch is ready at `f3359fb73` after 81/81 pre-dispatch and 88/88 pre-commit checks. The next proactive action is one no-commit worker execution of the T2 work order with deterministic local tests only. T2 acceptance and T3-T6, P2/P4 mutation, canary, P5/P6, provider/live/public, MAO launch, GC-010 and downstream effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
