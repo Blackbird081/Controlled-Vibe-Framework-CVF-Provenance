@@ -5,7 +5,7 @@ Status: ACTIVE
 - GC010 root architecture is closed parked at material commit `e867d5432`; no truthful current product owner exists, no successor tranche opened, and system-chain selection must move outside GC010.
 - Repository: private provenance SOT; accepted P4-C1 automatic-collection material: `b9bdba71290a9d94a12438b413401ecb4c6a72a7`; branch `main`.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
-- Branch: `main`. Current material HEAD recorded for this handoff: `b3589ce7847196d707a96e26b706cfd50c1c433f` (GC010-SCR-R2-T1J-R3 corrected decision closure). DeepSeek Harness absorption material remains `7b8514526`. Public protocol 1.2 source-pack profile is live at public `main` commit `d7860138350130d6d105826ce186f1beeaba3c2d`; GitHub public-sync preflight run `33245798802` passed; `EXTERNAL_AGENT_READ` refresh receipt SHA-256 is `ccfd4ac603163043327c0d33bcce757b68e5e53c4bcd7bede33d13dd07628e39`. The prior DeepSeek task capsule was removed from the reusable packet root and must be regenerated for the next pinned repository.
+- Branch: `main`; current material HEAD: `ae9a8a6b32db379d65756927014157a02f4207e7` (lifecycle/runtime/tranche/bootstrap/external wording reconciliation). Public and portable packet receipts are pending the authorized public push; DeepSeek Harness material remains `7b8514526`.
 - EARTR-ESC-R1 is independently accepted `CLOSED_PASS_BOUNDED` and released as `cvf.external-agent-round-trip@1.2.0`. External follow-up A/I confirmed one `MEDIUM` representation-completeness gap; existing canonical/public/portable owners now expose exact strict-v1 fields, enums, forbidden fields, source joins, and valid examples with validator behavior unchanged (117/117 PASS). RB-01 receipt binding is implemented/tested, while Local reconciliation equality remains documentation/reviewer-enforced rather than a runtime gate. DeepSeek Harness use case 001 is locally closed at `7b8514526`: strict-v1 return validation PASS, pinned upstream `cd5ef8148158c3a752a658978873241fdf8e2bbc`, five candidates `NO_NEW_VALUE`, DSH-001 existing-owner enrichment parked, and DSH-005 forward-value lifecycle idea parked. Both reopen only under their conjunctive source/consumer/owner/value-cost gates; no implementation, provider/live, public export, or new owner was authorized.
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -39,7 +39,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=allow automatic natural-sample collection until M5/M10/M20 or a safety trigger, with no per-row review; parked=P2 mutation, P5, P6 and external/project effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=automatic collection until M5/M10/M20 or safety trigger plus authorized lifecycle sync; parked=P2 mutation, P5, P6 and unrelated external/project effects.
 ## Current Mode
 `gclh_mfrp_p4_c1_automatic_evidence_collection_active`
 ## Purpose
@@ -53,6 +53,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 - Route/registry adoption, repeat-live, public sync, deploy and production remain unopened.
 
 ## Latest Work / Changes
+- Lifecycle wording reconciliation is committed at `ae9a8a6b3`: the lifecycle remains seven governed decisions, current runtime surfaces may retain the five-value projection, tranches may inherit accepted evidence, transition gates do not imply one standalone review artifact per stage, and REVIEW remains the formal evaluation before FREEZE. Provenance push, public-sync, workspace refresh, and portable external-packet refresh are operator-authorized and still in progress; no P2/P4 canary mutation is included.
 - MFRP R1B-R2 evidence is accepted bounded with safety still return-to-design at `040ebfcff081062956c543f2b1d7e9cc04533b62`; reviewer-local repair avoided a worker context reload, and the Review Cost owner records the reusable routing rule at `40493e0b16b93b318bf78beee9a4141ca36723ed`. P4 work-order authoring is next; execution stays parked.
 
 - MFRP R1B replay `2b06d928d` remains rejected; R1A-R2 and R1B-R2 evidence are preserved. P4 initialization is accepted at `8de63c077`; the bounded natural-observation window is open with zero eligible pairs and no per-return routine review.
@@ -171,13 +172,13 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-P4-C1 automatic evidence collection is active at accepted material `b9bdba712`. The local post-commit hook collects natural eligible rows after their ordinary continuity commit without an operator reminder or per-row AI review. Reopen chain: M5 at 5 or safety trigger; M10 at 10 or safety trigger; M20 at 20; P5 may be separately decided immediately at M20 and must not wait for day 30. Day 30 below 20 is `INSUFFICIENT_EVIDENCE`; an unresolved safety marker blocks the next commit for one reviewer/closer adjudication. Eligible count is zero; P2 mutation, P5, P6 and external effects remain parked. P6 still requires accepted P5 Core closure plus explicit downstream release; project/workspace application requires accepted P6 adoption evidence. Latest numbered wave remains LHW24.
+P4-C1 automatic evidence collection is active at accepted material `b9bdba712`. The local post-commit hook collects natural eligible rows after their ordinary continuity commit without an operator reminder or per-row AI review. Reopen chain: M5 at 5 or safety trigger; M10 at 10 or safety trigger; M20 at 20; P5 may be separately decided immediately at M20 and must not wait for day 30. Day 30 below 20 is `INSUFFICIENT_EVIDENCE`; an unresolved safety marker blocks the next commit for one reviewer/closer adjudication. Eligible count is zero; P2 mutation, P5, P6 and external effects outside the authorized lifecycle synchronization tranche remain parked. P6 still requires accepted P5 Core closure plus explicit downstream release; project/workspace application beyond this documentation/bootstrap synchronization requires accepted P6 adoption evidence. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
 ## Active Boundary
 
-- T1 Amendment 2 is closed at `0247f7347`; LPCI1 Web re-entry R1 dispatch is committed at `4b8d436c4`. Public `main` remains `9c0183293`; its exact production build failure is reproduced locally while an older Netlify deploy remains served. Public mutation, push, deploy and hosted smoke remain parked.
+- T1 Amendment 2 is closed at `0247f7347`; LPCI1 Web re-entry R1 dispatch is committed at `4b8d436c4`. The operator explicitly authorized the bounded lifecycle-document public-sync in this tranche; unrelated public mutation, deploy, and hosted smoke remain parked.
 - Hidden Core is read-only; no reconciler, fetch, pull or network refresh.
 - MCP-KAR-T1 used only the pinned selected source cluster and closed its eight-output reviewer-repaired manifest at `c179e656a`. No dependency change, source execution/direct import, MCP runtime or package activation, provider/account use, public sync, deploy, or production was authorized or performed.
 - Worker commit remained forbidden; independent reviewer created target commit.
