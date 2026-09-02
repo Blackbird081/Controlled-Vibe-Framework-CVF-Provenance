@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "gclh_mfrp_p4_c1_automatic_evidence_collection_active",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "P4-C1 automatic evidence collection remains active at accepted material commit b9bdba712 with eligible count 0 and unchanged M5/M10/safety/M20 checkpoints. In the independent System Chain lane, the CSCC-R1-T1 documentation-only integrated root-contract dispatch is committed at a4d8398af after pre-dispatch 81/81 and pre-commit 88/88 PASS. The next proactive move is operator handoff of that packet to one no-commit worker, which may create exactly two reference contracts and one pending worker return. Source/test/runtime implementation and T2-T6 remain held. P2/P4 mutation, canary access, P5/P6, provider/live/public, MAO launch, GC-010 and project/workspace effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "P4-C1 automatic evidence collection remains active at b9bdba712 with eligible count 0 and unchanged M5/M10/safety/M20 checkpoints. In the independent System Chain lane, CSCC-R1-T1 is CLOSED_PASS_BOUNDED at f93b00e42 with terminal READY_FOR_T2_CANONICAL_WEB_GATEWAY_COMPOSITION. The next proactive move is authoring a fresh T2 governed dispatch packet from the accepted contracts; T2 source/test execution remains held until that packet passes dispatch gates. T3-T6, P2/P4 mutation, canary access, P5/P6, provider/live/public, MAO launch, GC-010 and project/workspace effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
