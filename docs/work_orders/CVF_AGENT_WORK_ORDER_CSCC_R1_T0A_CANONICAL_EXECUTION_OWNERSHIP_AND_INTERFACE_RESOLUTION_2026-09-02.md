@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: APPROVED_FOR_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CSCC-R1-T0A
 
@@ -447,3 +447,25 @@ Reason: private architecture decision.
 
 This packet authorizes two T0A documentation outputs only. It does not release
 T1 or prove canonical composition, runtime, live, public or production state.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CSCC_R1_T0A_CANONICAL_EXECUTION_OWNERSHIP_AND_INTERFACE_RESOLUTION_COMPLETION_2026-09-02.md` | accepted ready token | PASS |
+| Roadmap state | CSCC-R1 roadmap | T0A closed; T1 authoring ready | PASS |
+| Registry JSON | GC-051 corpus scan registry | no new corpus-scan entry is created by this bounded architecture decision | BLOCKED with reason: no applicable corpus artifact was created or reclassified |
+| Registry Markdown | active handoff | continuity follows material commit | BLOCKED with reason: commit choreography |
+| External evidence digest | none | zero provider/external calls | N/A with reason: documentation-only |
+| System loop interlock | terminal token | T1 authoring only | PASS |
+| Session continuity | active handoff | separate continuity commit | N/A with reason: commit choreography |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Runtime receipt evidence | N/A with reason: documentation-only ownership decision | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: no runtime query or provider call | N/A_WITH_REASON |
+| Worker-return acceptance | R2 terminal accepted by completion review | PASS |
+| Closure claim | T0A bounded closure; T1 authoring only | PASS |

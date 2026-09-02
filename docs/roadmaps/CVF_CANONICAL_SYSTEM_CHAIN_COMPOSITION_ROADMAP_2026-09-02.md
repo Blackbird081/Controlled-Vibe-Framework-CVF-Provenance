@@ -148,8 +148,8 @@ base before proposing a write manifest.
 | Tranche | Objective | Required output | State / release condition |
 |---|---|---|---|
 | T0 | current-source Master Architecture connectivity and canonical-owner decision | intra-plane/cross-plane edge matrix; exact ingress, execution-port, Gateway, lineage, MAO and rollback owners; smallest T1 manifest | `CLOSED_PASS_BOUNDED`; terminal `PARTIAL_READY_OWNER_OR_INTERFACE_CONFLICT` |
-| T0A | resolve identity, execution-port/provider-boundary, routing/quota/credential, attempt-admission and rollback ownership | exact owner/interface decision and corrected smallest T1 manifest | `READY_FOR_DISPATCH_AUTHORING`; documentation only |
-| T1 | freeze canonical execution envelope, execution port, correlation and compatibility contract | contract/reference decision, adapter boundary, identity/receipt invariants, legacy-path disposition, deterministic test plan | `HOLD_T0A_ACCEPTANCE` |
+| T0A | resolve identity, execution-port/provider-boundary, routing/quota/credential, attempt-admission and rollback ownership | exact owner/interface decision and corrected smallest T1 manifest | `CLOSED_PASS_BOUNDED`; terminal `READY_FOR_T1_CANONICAL_EXECUTION_PORT_DESIGN` |
+| T1 | freeze canonical execution envelope, execution port, correlation and compatibility contract | contract/reference decision, adapter boundary, identity/receipt invariants, legacy-path disposition, deterministic test plan | `READY_FOR_DISPATCH_AUTHORING`; documentation-only integrated root contract |
 | T2 | compose Web text execution through Model Gateway | bounded source adapter/cutover, no duplicate provider call, parity and fail-closed deterministic tests, reversible rollback boundary | `HOLD_T1_ACCEPTANCE` |
 | T3 | complete correlated receipt and durable lineage | one execution identity joins Guard, SOT3 reference, Gateway receipt/manifest, provider-attempt, validation, audit and readout across terminal paths | `HOLD_T2_ACCEPTANCE` |
 | T4 | add bounded MAO submission/launch ingress through the same port | authenticated/admitted task submission, durable run creation, launcher binding, cancellation/timeout/recovery evidence; no second provider boundary | `HOLD_T3_ACCEPTANCE_AND_FRESH_VALUE_GATE` |
@@ -181,7 +181,7 @@ T0 must select exactly one terminal token:
 - `BLOCKED_SOURCE_CONTRADICTION`
 
 None of these tokens authorizes implementation. The first token permits fresh
-T1 dispatch authoring after independent T0 acceptance.
+T1 dispatch authoring after independent T0/T0A acceptance.
 
 ## Acceptance Criteria
 

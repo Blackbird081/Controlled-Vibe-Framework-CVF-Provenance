@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: APPROVED_FOR_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CSCC-R1-T0A
 
@@ -113,3 +113,16 @@ Reason: private documentation-only architecture decision.
 
 This baseline releases only T0A documentation. It grants no T1, runtime,
 provider, public, protected-lane or production authority.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | paired T0A work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CSCC_R1_T0A_CANONICAL_EXECUTION_OWNERSHIP_AND_INTERFACE_RESOLUTION_COMPLETION_2026-09-02.md` | accepted ready token | PASS |
+| Roadmap state | CSCC-R1 roadmap | T0A closed; T1 authoring ready | PASS |
+| Registry JSON | active session state | continuity follows material commit | N/A with reason: separate continuity commit |
+| Registry Markdown | active handoff | continuity follows material commit | BLOCKED with reason: commit choreography |
+| External evidence digest | none | zero provider/external calls | N/A with reason: documentation-only |
+| System loop interlock | terminal token | T1 authoring only | PASS |
+| Session continuity | active handoff | separate continuity commit | N/A with reason: commit choreography |
