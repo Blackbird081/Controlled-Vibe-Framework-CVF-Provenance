@@ -1,0 +1,78 @@
+{
+  "stateOrder": 2749,
+  "stateKey": "gclhMfrpP4C1AutomaticEvidenceCollectionDispatchReady20260902",
+  "value": {
+    "status": "DISPATCH_READY_NO_PRE_EXECUTION_REVIEW",
+    "materialCommit": "7f47209bb",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_2026-09-02.md",
+    "baselineSha256": "740751670f5434e0813644a16e4eca149ee965a047c2713b6c3e9cd3a3dead6b",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_2026-09-02.md",
+    "workOrderSha256": "996178c1323c5570663cb7881386b4978a5ed4fc9847a14e3ddb24ee856774a1",
+    "workerReturnPath": "docs/reviews/CVF_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_WORKER_RETURN_2026-09-02.md",
+    "workerChangedPathCount": 9,
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "reviewAdmission": {
+      "preExecutionReview": "NOT_REQUIRED",
+      "routineWorkerReturnReview": "REQUIRED_ONCE",
+      "perCollectedRowReview": "FORBIDDEN",
+      "checkpointReviews": ["M5", "M10", "M20"],
+      "earlyReview": "DECLARED_SAFETY_TRIGGER_ONLY",
+      "reviewerBoundary": "EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION"
+    },
+    "automaticCollectionBoundary": {
+      "activationCondition": "P4_C1_IMPLEMENTATION_REVIEWER_ACCEPTED_AND_COMMITTED",
+      "trustedDispositionBeforeMachineDisclosure": true,
+      "eligibleInput": "one natural committed phase return plus one validated fingerprint-matched P2 receipt",
+      "pendingStorage": ".cvf/runtime/mfrp-p4-shadow-canary/",
+      "trackedLedgerPromotion": "REVIEWER_CLOSER_AT_CHECKPOINT_ONLY",
+      "missingAmbiguousOrMismatched": "SKIP_NO_SAMPLE_INCREMENT",
+      "providerNetworkCalls": "FORBIDDEN"
+    },
+    "reopenChain": [
+      {
+        "gate": "P4_C1_COLLECTION_ACTIVE",
+        "condition": "implementation reviewer-accepted and committed",
+        "effect": "automatic natural evidence collection may run"
+      },
+      {
+        "gate": "M5",
+        "condition": "eligibleCount >= 5 or safety trigger",
+        "effect": "bounded checkpoint review"
+      },
+      {
+        "gate": "M10",
+        "condition": "eligibleCount >= 10 or safety trigger",
+        "effect": "bounded checkpoint review"
+      },
+      {
+        "gate": "M20",
+        "condition": "eligibleCount >= 20",
+        "effect": "final sample checkpoint and separate P5 decision may proceed immediately"
+      },
+      {
+        "gate": "DAY30",
+        "condition": "calendar sunset and eligibleCount < 20",
+        "effect": "INSUFFICIENT_EVIDENCE; P5 remains closed"
+      },
+      {
+        "gate": "P5",
+        "condition": "M20 plus safety, audit, recall, evidence-quality and governance-tax gates pass in separate reviewer decision",
+        "effect": "selective Core machine-first activation may open"
+      },
+      {
+        "gate": "P6",
+        "condition": "P5 Core closure accepted and downstream release explicitly recorded",
+        "effect": "bounded seven-phase and downstream adoption may open"
+      },
+      {
+        "gate": "PROJECT_WORKSPACE_APPLICATION",
+        "condition": "P6 adoption evidence accepted",
+        "effect": "project-specific update may be separately authorized"
+      }
+    ],
+    "calendarWaitRequiredAfterM20": false,
+    "currentEligibleCount": 0,
+    "nextAllowedMove": "Execute the committed P4-C1 work order directly with no pre-execution review; return COMPLETE_PENDING_REVIEW uncommitted for one evidence-bound reviewer evaluation.",
+    "claimBoundary": "Dispatch authority only. Automatic collection is not active until implementation is reviewer-accepted and committed. P5, P6, route replacement, P2 mutation, provider/live/public and project/workspace effects remain closed."
+  }
+}

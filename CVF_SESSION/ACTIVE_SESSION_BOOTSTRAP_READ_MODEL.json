@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "gclh_mfrp_p4_shadow_canary_window_open_bounded",
+  "currentMode": "gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MFRP-P4 initialization is accepted at 8de63c077 and the sample-gated P5 amendment is machine-enforced at 3942cef57. Collect natural eligible return/receipt pairs without per-return review. Review only at M5, M10, M20 or a derived safety trigger. At 20 eligible samples a separate P5 decision may proceed immediately without waiting for day 30. Day 30 is sunset adjudication only; below 20 then means INSUFFICIENT_EVIDENCE and P5 remains closed. Eligible count is 0, so recall preservation and cost saving remain unproven. P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "P4-C1 automatic evidence collection is dispatch-ready at material commit 7f47209bb. Execute the committed nine-path no-commit work order directly with no pre-execution review, then evaluate its COMPLETE_PENDING_REVIEW return once using required evidence without recreating implementation. After acceptance, collection runs automatically for natural eligible pairs with no per-row review. Reopen chain is durable: M5 at 5 samples or safety trigger; M10 at 10 or safety trigger; M20 at 20; a separate P5 decision may proceed immediately at M20 without waiting for day 30; day 30 below 20 means INSUFFICIENT_EVIDENCE and P5 stays closed; P6 requires accepted P5 Core closure plus explicit downstream release; project/workspace application requires accepted P6 adoption evidence. Current eligible count is 0. P2 mutation, P5, P6, provider/live/public and project effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
-    "baselineSha256": "07df11427ce321b525b2e5e800ecf0ec5ac8c1306a38f29e2dbec0ae45649b5f",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
-    "workOrderSha256": "8d4c7d508a6c38feb3a0dc3676605f61b71f8ddb319f37d4de321d723feca846"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_2026-09-02.md",
+    "baselineSha256": "740751670f5434e0813644a16e4eca149ee965a047c2713b6c3e9cd3a3dead6b",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_2026-09-02.md",
+    "workOrderSha256": "996178c1323c5570663cb7881386b4978a5ed4fc9847a14e3ddb24ee856774a1"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
