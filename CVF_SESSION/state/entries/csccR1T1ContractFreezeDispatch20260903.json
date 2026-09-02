@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2752,
+  "stateKey": "csccR1T1ContractFreezeDispatch20260903",
+  "value": "DISPATCH_READY at material commit a4d8398af6b967146d8fc569d580e1d34fe4d020. The documentation-only integrated root-contract packet freezes the T0A owner decisions as worker obligations: CVF_MODEL_GATEWAY owns the caller-neutral port, Gateway invokes one atomic caller callback after all pre-adapter checks and immediately before adapter execution, Web owns admission plus call-start and exclusive direct-versus-port wiring, and one canonical execution identity joins Gateway, manifest, SOT3 and Web receipts without payload copying. Pre-dispatch passed 81/81; pre-commit passed 88/88; P4-C1 hook returned SKIPPED_NO_ELIGIBLE_CANDIDATE. One no-commit worker may create exactly two reference contracts and one pending return. No source, test, runtime, provider/live, public, T2, P2/P4/canary, MAO-launch or GC-010 authority is released."
+}

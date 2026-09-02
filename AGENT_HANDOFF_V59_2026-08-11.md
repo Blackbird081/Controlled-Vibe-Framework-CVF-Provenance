@@ -39,7 +39,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=P4 automatic collection plus CSCC-R1-T1 documentation-only integrated root-contract dispatch authoring; parked=P2/P4 mutation, canary access, P5/P6, CSCC T1 execution/T2-T6/live and unrelated effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=P4 automatic collection plus operator handoff of committed CSCC-R1-T1 documentation-only packet to one no-commit worker; parked=P2/P4 mutation, canary access, P5/P6, CSCC T2-T6/live and unrelated effects.
 ## Current Mode
 `gclh_mfrp_p4_c1_automatic_evidence_collection_active`
 ## Purpose
@@ -54,7 +54,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Latest Work / Changes
 - Lifecycle sync is complete: source `ae9a8a6b3`, bootstrap repair `44dcff6a9`, continuity `f336740de`, public PR 7/main `2d7e4fefc`. Workspace core matches public main; operator-local pack has 28 artifacts from `f336740de`; external packet receipt SHA-256 is `e453c6919e94fe313393c01c9ba9ed6944d3860e11b06d852bf29373bd67d775`. Project pins and P2/P4 canary data were not mutated.
-- CSCC-R1 T0 is closed partial at `5f017987b`; T0A is independently closed at material commit `57b63fb30` with terminal `READY_FOR_T1_CANONICAL_EXECUTION_PORT_DESIGN` after two bounded repair rounds. T1 documentation-only integrated root-contract dispatch authoring is released; T1 execution and T2-T6 remain held.
+- CSCC-R1 T0 is closed partial at `5f017987b`; T0A is independently closed at material commit `57b63fb30` with terminal `READY_FOR_T1_CANONICAL_EXECUTION_PORT_DESIGN` after two bounded repair rounds. T1 documentation-only integrated root-contract dispatch is committed at `a4d8398af`; pre-dispatch 81/81 and pre-commit 88/88 pass, P4-C1 hook skipped with no eligible candidate, and the packet is ready for one no-commit worker handoff. T2-T6 remain held.
 - MFRP R1B replay `2b06d928d` remains rejected; R1A-R2 and R1B-R2 evidence are preserved. P4 initialization is accepted at `8de63c077`; the bounded natural-observation window is open with zero eligible pairs and no per-return routine review.
 - GC010 root architecture is closed parked at `e867d5432` with terminal `ROOT_ARCHITECTURE_REASSESSED_NO_TRUTHFUL_PRODUCT_OWNER_RETAIN_PARKED`. Direct route composition, ApprovalStore upgrade, singleton SQLite and distributed-store guesses were rejected; reopening requires all five named topology, adapter, ordering, recovery and adversarial-test facts in one packet. Reviewer-fast 67/67 and material pre-commit 88/88 pass; no source/runtime/provider effect or successor tranche opened.
 - SCEC-T1 foundation dispatch is `10345d3a`; T1-R2 is independently accepted with material correction at `cb6d4bc3879a753eb9abc7283b55148c141c46d1`. Resolution claims now require path/hash/locator evidence, successor consumption revalidates predecessor evidence hashes, the corrected GC010 replay retains unresolved blockers, and scaffolds emit the contract. Focused SCEC 115/115, combined focused 205/205, reviewer-fast 67/67 and pre-commit 88/88 passed. The two out-of-scope diagnostics remain disclosed and untouched; T1J-R4 remains parked.
@@ -171,7 +171,8 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-P4-C1 automatic evidence collection remains active at `b9bdba712`; M5/M10/safety and M20 rules are unchanged, with eligible count zero. The independent System Chain lane may next author the CSCC-R1-T1 documentation-only integrated root-contract dispatch from accepted T0A material `57b63fb30`. T1 execution and T2-T6 remain held. P2/P4 mutation, canary, P5/P6, provider/live/public, MAO launch, GC-010 and downstream adoption remain parked. Latest numbered wave remains LHW24.
+P4-C1 automatic evidence collection remains active at `b9bdba712`; M5/M10/safety and M20 rules are unchanged, with eligible count zero. In the independent System Chain lane, the committed CSCC-R1-T1 documentation-only packet at `a4d8398af` may next be handed to one no-commit worker. The worker may create exactly two reference contracts and one pending return; it may not implement source/tests or open T2. T2-T6, P2/P4 mutation, canary, P5/P6, provider/live/public, MAO launch, GC-010 and downstream adoption remain parked. Latest numbered wave remains LHW24.
+
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -200,18 +201,19 @@ Public-sync source commit: `848f602f72dc4e3ef8b98ea0e3f7196a59944906`; public `m
 Public artifacts: lifecycle/control-loop docs and downstream bootstrap guidance from provenance `ae9a8a6b3`; public-sync-preflight and public-surface checks passed. This is not deploy or production readiness.
 
 ## Core Guard Self-Protection Authorization - Current Continuity
-Authorized guard-maintenance scope: project accepted CSCC-R1-T0A closure and the T1 documentation-only authoring release while preserving the active P4-C1 automatic collector.
+Authorized guard-maintenance scope: project accepted CSCC-R1-T1 dispatch readiness while preserving the active P4-C1 automatic collector.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/csccR1T0AOwnershipResolutionClosure20260902.json`
+- `CVF_SESSION/state/entries/csccR1T1ContractFreezeDispatch20260903.json`
 - `CVF_SESSION/state/entries/gclhMfrpP4C1AutomaticEvidenceCollectionDispatchReady20260902.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: explicit 2026-09-03 instruction to handle and close the bounded T0A repair; prior P4-C1 automatic-collection authority remains unchanged.
-Rollback boundary: revert only this continuity projection; preserve accepted CSCC material `57b63fb30` and P4-C1 material `b9bdba712`. T1 execution, T2-T6, P2/P4 mutation, P5/P6 and external/project effects are not authorized by this sync.
+Operator authorization: explicit 2026-09-03 instruction `next`; accepted T0A and committed T1 packet require current continuity while P4-C1 remains unchanged.
+Rollback boundary: revert only this continuity projection; preserve CSCC dispatch `a4d8398af`, T0A `57b63fb30` and P4-C1 `b9bdba712`. T2-T6, source/runtime, P2/P4 mutation, P5/P6 and external/project effects are not authorized by this sync.
 ## Claim Boundary
 
 This handoff records bounded P4-C1 automatic collection plus accepted T0A closure and T1 dispatch-authoring readiness only; it makes no T1 execution, T2-T6, runtime/provider/live/public, P2/P4 mutation, P5/P6, MAO launch, GC-010, project rollout or external-effect claim.
