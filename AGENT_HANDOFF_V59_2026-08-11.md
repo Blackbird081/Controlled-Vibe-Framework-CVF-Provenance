@@ -39,9 +39,9 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p3_r1b_r2_dispatch_ready_execution_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute bounded R1B-R2 without commit on exactly four authorized paths; parked=review at worker return, P4 canary, external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author the bounded P4 shadow-canary work order; parked=P4 execution, P2 mutation, external effects.
 ## Current Mode
-`gclh_mfrp_p3_r1b_r2_dispatch_ready_execution_authorized`
+`gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready`
 ## Purpose
 
 Preserve independently accepted T1C durable single-node non-production material without opening a caller, package export or external effect.
@@ -53,6 +53,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 - Route/registry adoption, repeat-live, public sync, deploy and production remain unopened.
 
 ## Latest Work / Changes
+- MFRP R1B-R2 evidence is accepted bounded with safety still return-to-design at `040ebfcff081062956c543f2b1d7e9cc04533b62`; reviewer-local repair avoided a worker context reload, and the Review Cost owner records the reusable routing rule at `40493e0b16b93b318bf78beee9a4141ca36723ed`. P4 work-order authoring is next; execution stays parked.
 
 - MFRP R1B replay `2b06d928d` is rejected. R1A-R2 oracle is ratified at `e15cf55d8`; R1B-R2 dispatch is committed at `34310bf07`. Exact four-path no-commit execution is next, with routine review only at worker return. P4 stays parked.
 - GC010 root architecture is closed parked at `e867d5432` with terminal `ROOT_ARCHITECTURE_REASSESSED_NO_TRUTHFUL_PRODUCT_OWNER_RETAIN_PARKED`. Direct route composition, ApprovalStore upgrade, singleton SQLite and distributed-store guesses were rejected; reopening requires all five named topology, adapter, ordering, recovery and adversarial-test facts in one packet. Reviewer-fast 67/67 and material pre-commit 88/88 pass; no source/runtime/provider effect or successor tranche opened.
@@ -170,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-MFRP-P3-R1A-R2 is accepted at `e15cf55d8060a44056f44dd819b399ae3aec1fb0`; R1B-R2 dispatch is committed at `34310bf0731e008ba2189ecd7656d0155b0d88d9`. The next move is bounded no-commit R1B-R2 execution on exactly four authorized paths without another pre-execution review. Routine review resumes at worker return; P4 canary execution remains closed. Latest numbered wave remains LHW24.
+MFRP-P3-R1B-R2 replay evidence is accepted bounded at `040ebfcff081062956c543f2b1d7e9cc04533b62`; C15 remains `FALSE_NEGATIVE` and C07/C08/C18 remain excluded. Reviewer-local repair routing is committed at `40493e0b16b93b318bf78beee9a4141ca36723ed`. Author the fresh P4 work order next without pre-execution review; P4 execution remains separately gated. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -199,18 +200,19 @@ Public-sync source commit: `af957e279a8118b152d957a29f5731c6304a86bf`; public `m
 Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry records, now merged by PR 4; this is not deploy or production readiness. Exact-SHA hosted runs `33058250461`, `33058254795`, `33058254845`, `33058254830`, `33058254860`, `33058254846`, `33058254884`, and `33058254898` all passed.
 
 ## Core Guard Self-Protection Authorization - Current Continuity
-Authorized guard-maintenance scope: project the accepted R1A-R2 oracle and committed R1B-R2 execution-ready dispatch into continuity.
+Authorized guard-maintenance scope: project accepted R1B-R2 evidence, M2 admission measurement and the reviewer-local repair routing rule into continuity.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/gclhMfrpP3R1BR2DispatchReadyExecutionAuthorized20260902.json`
+- `CVF_SESSION/state/entries/gclhMfrpP3R1BR2EvidenceAcceptedP4AuthoringReady20260902.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: explicit 2026-09-02 opening of R1A-R2 correction and R1B repair through bounded execution.
-Rollback boundary: revert only this continuity projection; preserve accepted oracle `e15cf55d8`, R1B-R2 dispatch `34310bf07` and prior evidence.
-Not authorized by the continuity sync: changes outside the exact R1B-R2 four-path worker scope, P4, P2 mutation or external effect.
+- `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md`
+Operator authorization: explicit 2026-09-02 opening of R1A-R2 correction and R1B repair through bounded execution, plus the operator-directed reviewer-local repair routing rule to avoid multi-agent context reload tax.
+Rollback boundary: revert only this continuity projection; preserve R1B-R2 evidence `040ebfcff`, Review Cost rule `40493e0b1` and prior evidence.
+Not authorized by the continuity sync: P4 execution, P2 mutation, route activation or external effect.
 ## Claim Boundary
 
-This handoff records accepted R1A-R2 identity and R1B-R2 dispatch/execution readiness only; it claims no R1B-R2 result, P4 execution or external effect.
+This handoff records accepted R1B-R2 evidence, reviewer-local repair routing and P4 authoring readiness only; it claims no P2 safety pass, P4 execution or external effect.

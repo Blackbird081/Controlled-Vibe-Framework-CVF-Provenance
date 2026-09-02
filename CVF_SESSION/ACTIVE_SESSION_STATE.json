@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p3_r1b_r2_dispatch_ready_execution_authorized",
-  "previousMode": "gclh_mfrp_p3_r1a_r2_oracle_ratified_r1b_r2_authoring_ready",
+  "currentMode": "gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready",
+  "previousMode": "gclh_mfrp_p3_r1b_r2_dispatch_ready_execution_authorized",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16407,5 +16407,25 @@
     "nextAllowedMove": "Execute the bounded R1B-R2 work order without commit on exactly the two replay implementation/test paths, the replay-result fixture, and the new R1B-R2 worker return. Review resumes only at worker return.",
     "claimBoundary": "Dispatch readiness and execution authorization only. No R1B-R2 replay result, P4 canary opening, P2 mutation, provider/live/network, public-sync, deployment or production effect is claimed."
   },
-  "nextAllowedMove": "MFRP-P3-R1B-R2 repair dispatch is committed at 34310bf07. Next allowed move is bounded no-commit execution on exactly the two replay implementation/test paths, the replay-result fixture, and the new R1B-R2 worker return. No pre-execution review is required; routine review resumes at worker return. P4 canary, P2 mutation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "gclhMfrpP3R1BR2EvidenceAcceptedP4AuthoringReady20260902": {
+    "status": "R1B_R2_EVIDENCE_ACCEPTED_RETURN_TO_DESIGN_BOUNDED_P4_AUTHORING_READY",
+    "materialCommit": "040ebfcff081062956c543f2b1d7e9cc04533b62",
+    "reviewerDisposition": "REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED",
+    "workerReturnPath": "docs/reviews/CVF_MFRP_P3_R1B_R2_ACTUAL_SEAM_REPLAY_REPAIR_WORKER_RETURN_2026-09-02.md",
+    "workerReturnSha256": "0842f9e275eaf2e44db79f265e8e9301bd7942eda2c2c9008ae3e8a0495f17c1",
+    "ledgerSha256": "6b36ed295a7ffb0e74d3c7a32577428870c1b7e74da9e2ce7234c56d6c7f20ff",
+    "reviewCostRuleCommit": "40493e0b16b93b318bf78beee9a4141ca36723ed",
+    "reviewCostStandardSha256": "a8815cfc123d1ea085badcfe4e3d89b8d2cf4fef30662ccbb1f73e1511051d2d",
+    "reviewAdmissionMeasurement": {
+      "milestone": "M2",
+      "preExecutionReviewCount": 0,
+      "routineReviewBoundary": "WORKER_RETURN",
+      "providerLiveNetworkCallCount": 0,
+      "admissionFalseNegativeObserved": 0,
+      "recallConclusion": "NOT_YET_ESTIMABLE"
+    },
+    "nextAllowedMove": "Author the fresh bounded P4 shadow-canary work order pinned to accepted R1B-R2 evidence and the accepted P4 design. Authoring is not P4 execution and does not add pre-execution review.",
+    "claimBoundary": "R1B-R2 replay evidence is accepted while its C15 false negative and C07/C08/C18 exclusions remain authoritative. No P2 safety pass, P4 execution, route change or external effect is claimed."
+  },
+  "nextAllowedMove": "MFRP-P3-R1B-R2 replay evidence is reviewer-accepted bounded at 040ebfcff with C15 still FALSE_NEGATIVE and C07/C08/C18 still excluded; reviewer-local repair routing is recorded at 40493e0b1. Next allowed move is authoring the fresh bounded P4 shadow-canary work order pinned to the accepted R1B-R2 evidence and accepted P4 design. Authoring is not execution and requires no pre-execution review. P2 mutation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
