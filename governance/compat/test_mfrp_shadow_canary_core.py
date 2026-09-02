@@ -167,6 +167,29 @@ class P4RV3ObservationSeamTests(unittest.TestCase):
         self.assertEqual(canary.checkpoint_for_population(20), "final")
         self.assertEqual(canary.checkpoint_for_population(25), "final")
 
+    def test_p5_reopen_is_sample_gated_not_calendar_gated(self):
+        before = canary.p5_reopen_sample_gate(19)
+        self.assertFalse(before["sampleSatisfied"])
+        self.assertEqual(before["status"], "P5_CLOSED_SAMPLE_INCOMPLETE")
+        self.assertFalse(before["day30AloneAuthorizesReopen"])
+        self.assertEqual(
+            before["day30InsufficientSampleDisposition"],
+            "INSUFFICIENT_EVIDENCE",
+        )
+
+        at_target = canary.p5_reopen_sample_gate(20)
+        self.assertTrue(at_target["sampleSatisfied"])
+        self.assertFalse(at_target["calendarWaitRequiredAfterSampleSatisfied"])
+        self.assertEqual(
+            at_target["status"],
+            "SAMPLE_GATE_SATISFIED_P5_DECISION_STILL_REQUIRED",
+        )
+        self.assertIn("Safety, audit, recall", at_target["claimBoundary"])
+
+    def test_p5_reopen_sample_gate_rejects_negative_count(self):
+        with self.assertRaises(ValueError):
+            canary.p5_reopen_sample_gate(-1)
+
     def test_checkpoint_is_not_hard_coded_to_initialization(self):
         """Structural guard against re-regressing: build_evidence's
         checkpoint field must vary with eligible population, not always

@@ -64,6 +64,16 @@
     "SPEC": 0,
     "WORK_ORDER": 0
   },
+  "p5ReopenSampleGate": {
+    "calendarWaitRequiredAfterSampleSatisfied": false,
+    "claimBoundary": "This is a necessary sample gate only. Safety, audit, recall and evidence-quality gates remain controlling in a separate P5 decision.",
+    "day30AloneAuthorizesReopen": false,
+    "day30InsufficientSampleDisposition": "INSUFFICIENT_EVIDENCE",
+    "observedEligibleCount": 0,
+    "requiredEligibleCount": 20,
+    "sampleSatisfied": false,
+    "status": "P5_CLOSED_SAMPLE_INCOMPLETE"
+  },
   "populationCount": 1,
   "profile": "cvf.mfrp.p4ShadowCanary.evidence.v1",
   "r1bR2Identity": {

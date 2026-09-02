@@ -2,6 +2,33 @@
 
 from mfrp_shadow_canary_core import *  # noqa: F401,F403
 
+
+P5_REOPEN_SAMPLE_TARGET = 20
+
+
+def p5_reopen_sample_gate(eligible_count: int) -> dict[str, Any]:
+    """Return the necessary sample gate; never self-authorize P5."""
+    if eligible_count < 0:
+        raise ValueError("eligible_count must be non-negative")
+    sample_satisfied = eligible_count >= P5_REOPEN_SAMPLE_TARGET
+    return {
+        "requiredEligibleCount": P5_REOPEN_SAMPLE_TARGET,
+        "observedEligibleCount": eligible_count,
+        "sampleSatisfied": sample_satisfied,
+        "calendarWaitRequiredAfterSampleSatisfied": False,
+        "day30AloneAuthorizesReopen": False,
+        "day30InsufficientSampleDisposition": "INSUFFICIENT_EVIDENCE",
+        "status": (
+            "SAMPLE_GATE_SATISFIED_P5_DECISION_STILL_REQUIRED"
+            if sample_satisfied
+            else "P5_CLOSED_SAMPLE_INCOMPLETE"
+        ),
+        "claimBoundary": (
+            "This is a necessary sample gate only. Safety, audit, recall and "
+            "evidence-quality gates remain controlling in a separate P5 decision."
+        ),
+    }
+
 # ---------------------------------------------------------------------------
 # P4-I1 Named Independent Invariant
 # ---------------------------------------------------------------------------
@@ -514,6 +541,7 @@ def build_evidence(
         "openingDate": "2026-09-02",
         "sunsetDate": "2026-10-02",
         "sunsetRule": "earlier of 20 eligible natural returns or 30 calendar days from opening",
+        "p5ReopenSampleGate": p5_reopen_sample_gate(n_eligible),
         "checkpoint": checkpoint,
         "populationCount": population_count,
         "eligibleCount": n_eligible,
@@ -750,6 +778,7 @@ def main() -> int:
         "schema": evidence["schema"],
         "checkpoint": evidence["checkpoint"],
         "populationCount": evidence["populationCount"],
+        "p5ReopenSampleGateStatus": evidence["p5ReopenSampleGate"]["status"],
         "rowIds": [row["rowId"] for row in evidence["rows"]],
         "ineligibleClasses": [
             row["ineligibleClass"] for row in evidence["rows"] if row["ineligibleClass"]
