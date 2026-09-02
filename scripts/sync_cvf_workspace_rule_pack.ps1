@@ -216,6 +216,15 @@ $copied = [System.Collections.ArrayList]::new()
 $materializedRootFiles = [System.Collections.ArrayList]::new()
 foreach ($artifact in $selected) {
     $relativeSource = [string]$artifact.path
+    if ([string]$artifact.artifactId -eq "active-versioned-handoff") {
+        $bootstrapPath = Join-Path $repoRoot "CVF_SESSION\ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+        $bootstrap = Read-JsonFile $bootstrapPath
+        $relativeSource = [string]$bootstrap.activeHandoff
+        if ([string]::IsNullOrWhiteSpace($relativeSource) -or
+            $relativeSource -notmatch '^AGENT_HANDOFF_[A-Za-z0-9_-]+\.md$') {
+            throw "Bootstrap read model has an invalid activeHandoff: $relativeSource"
+        }
+    }
     $sourcePath = [System.IO.Path]::GetFullPath((Join-Path $repoRoot $relativeSource))
     Assert-ChildPath -Child $sourcePath -Parent $repoRoot -Label "artifact source"
     if (-not (Test-Path -LiteralPath $sourcePath)) {

@@ -380,7 +380,7 @@
     },
     {
       "artifactId": "active-versioned-handoff",
-      "path": "AGENT_HANDOFF_V55_2026-08-05.md",
+      "path": "AGENT_HANDOFF_V59_2026-08-11.md",
       "artifactClass": "continuity-surface",
       "selectionTags": [
         "workspace-provenance-local",
@@ -388,7 +388,7 @@
       ],
       "stability": "volatile",
       "reviewPolicy": "local-only",
-      "reason": "Current active handoff required for private continuity on the operator machine."
+      "reason": "Current active handoff required for private continuity on the operator machine; the sync script resolves the live filename from the bootstrap read model."
     },
     {
       "artifactId": "session-memory-front-door",
