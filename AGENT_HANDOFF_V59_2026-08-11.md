@@ -5,7 +5,7 @@ Status: ACTIVE
 - GC010 root architecture is closed parked at material commit `e867d5432`; no truthful current product owner exists, no successor tranche opened, and system-chain selection must move outside GC010.
 - Repository: private provenance SOT; accepted P4-C1 automatic-collection material: `b9bdba71290a9d94a12438b413401ecb4c6a72a7`; branch `main`.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
-- Branch: `main`; current material HEAD: `44dcff6a951c47f3edd0d70a469397217f66bfa4` (lifecycle wording plus dynamic active-handoff bootstrap repair); lifecycle source commit `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
+- Branch: `main`; current material HEAD: `44dcff6a951c47f3edd0d70a469397217f66bfa4`; bootstrap continuity commit `f336740de`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
 - EARTR-ESC-R1 is independently accepted `CLOSED_PASS_BOUNDED` and released as `cvf.external-agent-round-trip@1.2.0`. External follow-up A/I confirmed one `MEDIUM` representation-completeness gap; existing canonical/public/portable owners now expose exact strict-v1 fields, enums, forbidden fields, source joins, and valid examples with validator behavior unchanged (117/117 PASS). RB-01 receipt binding is implemented/tested, while Local reconciliation equality remains documentation/reviewer-enforced rather than a runtime gate. DeepSeek Harness use case 001 is locally closed at `7b8514526`: strict-v1 return validation PASS, pinned upstream `cd5ef8148158c3a752a658978873241fdf8e2bbc`, five candidates `NO_NEW_VALUE`, DSH-001 existing-owner enrichment parked, and DSH-005 forward-value lifecycle idea parked. Both reopen only under their conjunctive source/consumer/owner/value-cost gates; no implementation, provider/live, public export, or new owner was authorized.
 - Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
@@ -53,7 +53,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 - Route/registry adoption, repeat-live, public sync, deploy and production remain unopened.
 
 ## Latest Work / Changes
-- Lifecycle wording is committed at `ae9a8a6b3`; dynamic active-handoff bootstrap repair is `44dcff6a9`. Public main is `2d7e4fefc`; workspace/external refresh remains authorized and in progress. No P2/P4 canary mutation is included.
+- Lifecycle sync is complete: source `ae9a8a6b3`, bootstrap repair `44dcff6a9`, continuity `f336740de`, public PR 7/main `2d7e4fefc`. Workspace core matches public main; operator-local pack has 28 artifacts from `f336740de`; external packet receipt SHA-256 is `e453c6919e94fe313393c01c9ba9ed6944d3860e11b06d852bf29373bd67d775`. Project pins and P2/P4 canary data were not mutated.
 - MFRP R1B-R2 evidence is accepted bounded with safety still return-to-design at `040ebfcff081062956c543f2b1d7e9cc04533b62`; reviewer-local repair avoided a worker context reload, and the Review Cost owner records the reusable routing rule at `40493e0b16b93b318bf78beee9a4141ca36723ed`. P4 work-order authoring is next; execution stays parked.
 
 - MFRP R1B replay `2b06d928d` remains rejected; R1A-R2 and R1B-R2 evidence are preserved. P4 initialization is accepted at `8de63c077`; the bounded natural-observation window is open with zero eligible pairs and no per-return routine review.
@@ -196,9 +196,9 @@ run `32678623700` promoted public `9c0183293`; force-push/delete are disabled.
 
 EXPORTED
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
-Public-sync branch: `pcit-r1-public-ci-truthfulness`.
-Public-sync source commit: `af957e279a8118b152d957a29f5731c6304a86bf`; public `main` merge commit: `a7a797d7111be472ef2cbd928cbeffc70ccb6bc6`.
-Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry records, now merged by PR 4; this is not deploy or production readiness. Exact-SHA hosted runs `33058250461`, `33058254795`, `33058254845`, `33058254830`, `33058254860`, `33058254846`, `33058254884`, and `33058254898` all passed.
+Public-sync branch/PR: `lifecycle-control-model-sync-20260902`, PR 7.
+Public-sync source commit: `848f602f72dc4e3ef8b98ea0e3f7196a59944906`; public `main` rebase commit: `2d7e4fefc2f58002a45bfbcdeb0f657eed987f1a`.
+Public artifacts: lifecycle/control-loop docs and downstream bootstrap guidance from provenance `ae9a8a6b3`; public-sync-preflight and public-surface checks passed. This is not deploy or production readiness.
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 Authorized guard-maintenance scope: project the accepted P4-C1 collector and durable sample-bound reopen chain into active continuity.
