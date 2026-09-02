@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p3_r1a_r2_oracle_ratified_r1b_r2_authoring_ready`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author R1B-R2 pinned dispatch; parked checkpoint=R1B-R2 execution, P4 canary and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p3_r1b_r2_dispatch_ready_execution_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute bounded R1B-R2 without commit on exactly four authorized paths; parked checkpoint=review at worker return, P4 canary and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p3_r1a_r2_oracle_ratified_r1b_r2_authoring_ready`
-Current mode: `gclh_mfrp_p3_r1a_r2_oracle_ratified_r1b_r2_authoring_ready`; previous mode marker: `gclh_mfrp_p3_r1a_r2_dispatch_ready_r1b_repair_authoring_authorized`
-Previous mode: `gclh_mfrp_p3_r1a_r2_dispatch_ready_r1b_repair_authoring_authorized`
+Current mode marker: `gclh_mfrp_p3_r1b_r2_dispatch_ready_execution_authorized`
+Current mode: `gclh_mfrp_p3_r1b_r2_dispatch_ready_execution_authorized`; previous mode marker: `gclh_mfrp_p3_r1a_r2_oracle_ratified_r1b_r2_authoring_ready`
+Previous mode: `gclh_mfrp_p3_r1a_r2_oracle_ratified_r1b_r2_authoring_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p3_r1a_r2_oracle_ratified_r1b_r2_authoring_ready`. R1A-R2 is accepted at `e15cf55d8`; author R1B-R2 pinned to its oracle identities. Do not execute replay during authoring. P4 canary, P2 mutation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p3_r1b_r2_dispatch_ready_execution_authorized`. R1A-R2 is accepted at `e15cf55d8`; R1B-R2 dispatch is committed at `34310bf07`. Execute the exact four-path no-commit worker scope next. No pre-execution review is required; routine review resumes at worker return. P4 canary, P2 mutation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2740,
+  "stateOrder": 2742,
   "stateKey": "nextAllowedMove",
-  "value": "MFRP-P3-R1A-R2 oracle correction is reviewer-ratified and committed at e15cf55d8. Next allowed move is R1B-R2 baseline/work-order authoring pinned to the accepted oracle commit and raw/JCS/required-set identities; authoring does not execute replay. P4 canary, P2 mutation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MFRP-P3-R1B-R2 repair dispatch is committed at 34310bf07. Next allowed move is bounded no-commit execution on exactly the two replay implementation/test paths, the replay-result fixture, and the new R1B-R2 worker return. No pre-execution review is required; routine review resumes at worker return. P4 canary, P2 mutation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }
