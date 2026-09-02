@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2744,
+  "stateOrder": 2746,
   "stateKey": "nextAllowedMove",
-  "value": "MFRP-P3-R1B-R2 replay evidence is reviewer-accepted bounded at 040ebfcff with C15 still FALSE_NEGATIVE and C07/C08/C18 still excluded; reviewer-local repair routing is recorded at 40493e0b1. Next allowed move is authoring the fresh bounded P4 shadow-canary work order pinned to the accepted R1B-R2 evidence and accepted P4 design. Authoring is not execution and requires no pre-execution review. P2 mutation, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MFRP-P4 shadow-canary dispatch is committed at 62f3fde14. Next allowed move is exact four-path no-commit execution under the committed baseline/work order, with no pre-execution review. Routine review occurs at the initialization worker return and later only at M5, M10 and M20/day-30 unless a safety trigger fires. Trusted review remains controlling; P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

@@ -39,9 +39,9 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author the bounded P4 shadow-canary work order; parked=P4 execution, P2 mutation, external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute exact four-path no-commit P4 shadow canary; parked=P2 mutation, P5, external effects.
 ## Current Mode
-`gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready`
+`gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`
 ## Purpose
 
 Preserve independently accepted T1C durable single-node non-production material without opening a caller, package export or external effect.
@@ -171,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-MFRP-P3-R1B-R2 replay evidence is accepted bounded at `040ebfcff081062956c543f2b1d7e9cc04533b62`; C15 remains `FALSE_NEGATIVE` and C07/C08/C18 remain excluded. Reviewer-local repair routing is committed at `40493e0b16b93b318bf78beee9a4141ca36723ed`. Author the fresh P4 work order next without pre-execution review; P4 execution remains separately gated. Latest numbered wave remains LHW24.
+MFRP-P4 shadow-canary dispatch is committed at `62f3fde14`. Execute exactly the four-path no-commit work order without pre-execution review. Review the initialization return once; afterward use M5, M10 and final checkpoints only unless a safety trigger fires. Trusted review remains controlling; P2 mutation, P5 and external effects stay parked. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -200,19 +200,18 @@ Public-sync source commit: `af957e279a8118b152d957a29f5731c6304a86bf`; public `m
 Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry records, now merged by PR 4; this is not deploy or production readiness. Exact-SHA hosted runs `33058250461`, `33058254795`, `33058254845`, `33058254830`, `33058254860`, `33058254846`, `33058254884`, and `33058254898` all passed.
 
 ## Core Guard Self-Protection Authorization - Current Continuity
-Authorized guard-maintenance scope: project accepted R1B-R2 evidence, M2 admission measurement and the reviewer-local repair routing rule into continuity.
+Authorized guard-maintenance scope: project the committed P4 shadow-canary dispatch authority and bounded review-checkpoint rule into continuity.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/gclhMfrpP3R1BR2EvidenceAcceptedP4AuthoringReady20260902.json`
+- `CVF_SESSION/state/entries/gclhMfrpP4ShadowCanaryDispatchReady20260902.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
-- `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md`
-Operator authorization: explicit 2026-09-02 opening of R1A-R2 correction and R1B repair through bounded execution, plus the operator-directed reviewer-local repair routing rule to avoid multi-agent context reload tax.
-Rollback boundary: revert only this continuity projection; preserve R1B-R2 evidence `040ebfcff`, Review Cost rule `40493e0b1` and prior evidence.
-Not authorized by the continuity sync: P4 execution, P2 mutation, route activation or external effect.
+Operator authorization: explicit 2026-09-02 instruction to proceed with the canary after accepted design and R1B-R2 evidence.
+Rollback boundary: revert only this continuity projection; preserve P4 dispatch `62f3fde14`, R1B-R2 evidence `040ebfcff` and prior evidence.
+Not authorized by the continuity sync: worker implementation itself, P2 mutation, P5, route replacement or external effect.
 ## Claim Boundary
 
-This handoff records accepted R1B-R2 evidence, reviewer-local repair routing and P4 authoring readiness only; it claims no P2 safety pass, P4 execution or external effect.
+This handoff records P4 dispatch readiness only; it claims no canary result, recall, saving, P2 safety pass, P5, route replacement or external effect.

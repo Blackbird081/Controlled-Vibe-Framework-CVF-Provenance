@@ -1,0 +1,20 @@
+{
+  "stateOrder": 2745,
+  "stateKey": "gclhMfrpP4ShadowCanaryDispatchReady20260902",
+  "value": {
+    "status": "P4_SHADOW_CANARY_DISPATCH_READY_EXECUTION_AUTHORIZED",
+    "dispatchCommit": "62f3fde14",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
+    "baselineSha256": "94e0d7b9018f621601427fe611ed7e72531875b4b94942ac09baf011bf50b718",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
+    "workOrderSha256": "ef40ac8d5b5c9d2fc619b8b7f89b144636d18c81cec1e002e040faae434dab74",
+    "reviewAdmission": {
+      "preExecutionReview": "NOT_REQUIRED",
+      "initialRoutineBoundary": "WORKER_RETURN",
+      "laterRoutineCheckpoints": ["M5", "M10", "M20_OR_DAY_30"],
+      "betweenCheckpointReview": "SAFETY_TRIGGER_ONLY"
+    },
+    "nextAllowedMove": "Execute exactly the committed four-path no-commit MFRP-P4 shadow-canary work order. Generate one honestly linked R1B-R2 observation, rehearse rollback, and return bounded evidence for routine review. Do not use unrelated runtime receipts, change P2 or open P5.",
+    "claimBoundary": "Dispatch authority only. Trusted review remains controlling; no canary outcome, recall, cost saving, route replacement, P5, provider/live or external effect is claimed."
+  }
+}

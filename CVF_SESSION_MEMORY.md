@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author the bounded P4 shadow-canary work order; parked checkpoint=P4 execution, P2 mutation and external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the exact four-path no-commit P4 shadow canary; parked checkpoint=P2 mutation, P5 and external effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready`
-Current mode: `gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready`; previous mode marker: `gclh_mfrp_p3_r1b_r2_dispatch_ready_execution_authorized`
-Previous mode: `gclh_mfrp_p3_r1b_r2_dispatch_ready_execution_authorized`
+Current mode marker: `gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`
+Current mode: `gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`; previous mode marker: `gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready`
+Previous mode: `gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready`. R1B-R2 evidence is accepted at `040ebfcff` with C15 still false-negative; reviewer-local repair routing is recorded at `40493e0b1`. Author the fresh bounded P4 shadow-canary work order next without pre-execution review. P4 execution, P2 mutation, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`. P4 dispatch is committed at `62f3fde14`. Execute exactly the four-path no-commit work order without pre-execution review. Routine review occurs at initialization return and later only at M5, M10 and final unless a safety trigger fires. Trusted review controls; P2 mutation, P5, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

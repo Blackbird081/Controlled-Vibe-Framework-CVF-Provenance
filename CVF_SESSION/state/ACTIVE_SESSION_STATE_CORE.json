@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1B_R2_ACTUAL_SEAM_REPLAY_REPAIR_2026-09-02.md",
-    "baselineSha256": "ef0f9a2de787b38d733675b50adfa517cc05c54cc9cda327b3688f614e1f7c16",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1B_R2_ACTUAL_SEAM_REPLAY_REPAIR_2026-09-02.md",
-    "workOrderSha256": "40c2c734af546b90993a89482408f16462ca70a77728cf70e26e4d9adc0710c8"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
+    "baselineSha256": "94e0d7b9018f621601427fe611ed7e72531875b4b94942ac09baf011bf50b718",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
+    "workOrderSha256": "ef40ac8d5b5c9d2fc619b8b7f89b144636d18c81cec1e002e040faae434dab74"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready",
-  "previousMode": "gclh_mfrp_p3_r1b_r2_dispatch_ready_execution_authorized",
+  "currentMode": "gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized",
+  "previousMode": "gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
