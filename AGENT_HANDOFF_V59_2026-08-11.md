@@ -171,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-MFRP-P4 Amendment 2 authorizes exactly six output paths solely for the file-size-compliant helper/test split while preserving semantics and 90-test coverage. Complete the initialization returned-result review and material commit; afterward use M5, M10 and final checkpoints only unless a derived safety trigger fires. P2 mutation, P5 and external effects stay parked. Current pre-amendment parent HEAD: `d276cf4cd9b5bedb26b86625f42bfcbcb98afdea`. Latest numbered wave remains LHW24.
+MFRP-P4 Amendment 2 authorizes exactly six output paths solely for the file-size-compliant helper/test split while preserving semantics and 90-test coverage. Complete the initialization returned-result review and material commit; afterward use M5, M10 and final checkpoints only unless a derived safety trigger fires. P2 mutation, P5 and external effects stay parked. Current amendment authority HEAD: `625f00b6536029cc8e988aae96aff535f33b0f2a`. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
