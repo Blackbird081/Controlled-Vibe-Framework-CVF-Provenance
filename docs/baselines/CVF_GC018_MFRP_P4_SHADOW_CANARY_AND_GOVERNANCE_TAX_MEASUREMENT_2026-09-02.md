@@ -20,6 +20,11 @@ successorTrancheOpened: NO
 
 providerExecutionAuthority: FORBIDDEN
 
+Amendment 2 (2026-09-02): operator-authorized six-path maintainability split.
+Only the helper/test partition changes; canary semantics, 90-test coverage,
+review admission, trusted-route control and all prohibited effects remain
+unchanged.
+
 ## Purpose
 
 Authorize one bounded shadow-canary harness and its first real observation.
@@ -33,7 +38,7 @@ artifact, and admits routine review only at M5, M10 and the closing checkpoint.
 
 ## Decision / Baseline
 
-Proceed with one four-path, no-commit P4 initialization under the accepted
+Proceed with one six-path, no-commit P4 initialization under the accepted
 design. The trusted route remains controlling; the canary may measure and
 classify but cannot authorize, replace review, or open P5.
 
@@ -89,7 +94,7 @@ are eligible. No task, phase, packet or review may be manufactured to fill the
 population. Missing phases are `NOT_OBSERVED`.
 
 The window closes at 20 eligible returns or 30 calendar days, whichever occurs
-first. The same four-path tranche is updated at these checkpoints only:
+first. The same six-path tranche is updated at these checkpoints only:
 
 - initialization: implementation plus first eligible R1B-R2 observation;
 - M5: when five eligible returns exist;
@@ -180,11 +185,13 @@ directory and may remove only that verified directory.
 | Artifact | Required action |
 |---|---|
 | `governance/compat/mfrp_shadow_canary.py` | CREATE bounded comparator/checkpoint helper |
+| `governance/compat/mfrp_shadow_canary_core.py` | CREATE reusable linkage/comparator core |
 | `governance/compat/test_mfrp_shadow_canary.py` | CREATE focused hostile and rollback tests |
+| `governance/compat/test_mfrp_shadow_canary_core.py` | CREATE split core hostile tests |
 | `governance/compat/fixtures/mfrp_p4_shadow_canary_evidence.json` | CREATE bounded, sunset-marked evidence ledger |
 | `docs/reviews/CVF_MFRP_P4_SHADOW_CANARY_WORKER_RETURN_2026-09-02.md` | CREATE implementation/observation return and checkpoint owner |
 
-No fifth path may change during worker execution. The ledger and return are
+No seventh path may change during worker execution. The ledger and return are
 bounded tranche evidence, not standards, registries or new receipt families.
 
 ## Acceptance Criteria
@@ -196,7 +203,7 @@ bounded tranche evidence, not standards, registries or new receipt families.
 - comparator classes, sampling formula and blind spots C07/C08/C18 remain exact;
 - P4-I1 executes only from the closed input manifest;
 - M0-M2 remain attributable and the new observation does not fabricate recall;
-- exactly four paths, deterministic tests, zero provider/live/network calls,
+- exactly six paths, deterministic tests, zero provider/live/network calls,
   nothing staged or committed by worker;
 - status is `CANARY_WINDOW_OPEN_EVIDENCE_CANDIDATE`, `ROLLBACK_SHADOW`,
   `SIMPLIFY_CANARY_TAX_EXCEEDED`, or `BLOCKED_WITH_REASON`;
@@ -213,7 +220,7 @@ status. Reviewer challenges those proofs without recreating the implementation.
 ## Stop Conditions
 
 Stop for identity mismatch, inability to prove return/receipt linkage,
-non-ancestor trusted record, copied/weakened P2 evaluator, fifth path, secret
+non-ancestor trusted record, copied/weakened P2 evaluator, seventh path, secret
 risk, external call need, semantic re-execution, sampling after outcome
 disclosure, or any attempt to map incomplete evidence to clean consistency.
 
@@ -259,14 +266,14 @@ Disclosed defectIds: NONE
 
 ## Core Guard Self-Protection Authorization
 
-Authorized scope is exactly the four-path manifest. No P2 owner, accepted R1B
+Authorized scope is exactly the six-path manifest. No P2 owner, accepted R1B
 artifact, checker, hook, standard, catalog, registry, session surface or route
 authority may change.
 
 Operator authorization: explicit instruction to proceed with the canary and
 empirically measure redundant-review reduction without recall loss.
 
-Rollback boundary: remove only the four uncommitted worker outputs and the
+Rollback boundary: remove only the six uncommitted worker outputs and the
 verified ignored P4 receipt directory; trusted-route artifacts remain intact.
 
 ## Claim Boundary

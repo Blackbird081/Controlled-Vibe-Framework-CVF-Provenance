@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
-    "baselineSha256": "94e0d7b9018f621601427fe611ed7e72531875b4b94942ac09baf011bf50b718",
+    "baselineSha256": "07df11427ce321b525b2e5e800ecf0ec5ac8c1306a38f29e2dbec0ae45649b5f",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
-    "workOrderSha256": "5e39a08f04999a008424274fbc9916fd901324588d62e32a3a6853aae9e9f578"
+    "workOrderSha256": "8d4c7d508a6c38feb3a0dc3676605f61b71f8ddb319f37d4de321d723feca846"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

@@ -5,17 +5,18 @@
     "status": "P4_SHADOW_CANARY_DISPATCH_READY_EXECUTION_AUTHORIZED",
     "dispatchCommit": "62f3fde14",
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
-    "baselineSha256": "94e0d7b9018f621601427fe611ed7e72531875b4b94942ac09baf011bf50b718",
+    "baselineSha256": "07df11427ce321b525b2e5e800ecf0ec5ac8c1306a38f29e2dbec0ae45649b5f",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
-    "workOrderSha256": "5e39a08f04999a008424274fbc9916fd901324588d62e32a3a6853aae9e9f578",
+    "workOrderSha256": "8d4c7d508a6c38feb3a0dc3676605f61b71f8ddb319f37d4de321d723feca846",
     "amendment1": "Trusted outcome citation corrected to exact pinned token REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED after a clean identity-gate stop with zero worker writes.",
+    "amendment2": "Operator-authorized expansion from four to exactly six output paths solely to split oversized helper/test surfaces under file-size guards; semantics and 90-test coverage remain unchanged.",
     "reviewAdmission": {
       "preExecutionReview": "NOT_REQUIRED",
       "initialRoutineBoundary": "WORKER_RETURN",
       "laterRoutineCheckpoints": ["M5", "M10", "M20_OR_DAY_30"],
       "betweenCheckpointReview": "SAFETY_TRIGGER_ONLY"
     },
-    "nextAllowedMove": "Execute exactly the amended four-path no-commit MFRP-P4 shadow-canary work order using the exact trusted token REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED. Generate one honestly linked R1B-R2 observation, rehearse rollback, and return bounded evidence for routine review. Do not use unrelated runtime receipts, change P2 or open P5.",
+    "nextAllowedMove": "Complete and review exactly the Amendment-2 six-path no-commit MFRP-P4 initialization, preserving 90-test semantics and file-size compliance. After initialization acceptance, collect natural observations without per-return review until M5, M10, final or a derived safety trigger. Do not change P2 or open P5.",
     "claimBoundary": "Dispatch authority only. Trusted review remains controlling; no canary outcome, recall, cost saving, route replacement, P5, provider/live or external effect is claimed."
   }
 }

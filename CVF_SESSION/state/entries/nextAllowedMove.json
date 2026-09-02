@@ -1,5 +1,5 @@
 {
   "stateOrder": 2746,
   "stateKey": "nextAllowedMove",
-  "value": "MFRP-P4 shadow-canary work order Amendment 1 corrects the trusted outcome citation to exact token REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED after a clean zero-write identity stop. Next allowed move is exact four-path no-commit execution from the clean post-amendment HEAD, with no pre-execution review. Routine review occurs at initialization return and later only at M5, M10 and M20/day-30 unless a safety trigger fires. P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MFRP-P4 Amendment 2 authorizes exactly six output paths solely for the file-size-compliant helper/test split, with semantics and 90-test coverage unchanged. Complete the initialization return review and material commit; afterward collect natural observations without per-return review until M5, M10 and M20/day-30 unless a derived safety trigger fires. P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

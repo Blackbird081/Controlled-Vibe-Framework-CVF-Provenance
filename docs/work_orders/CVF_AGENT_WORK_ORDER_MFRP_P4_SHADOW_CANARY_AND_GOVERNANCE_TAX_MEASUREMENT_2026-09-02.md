@@ -16,6 +16,12 @@ Commit mode: WORKER_MUST_NOT_COMMIT
 
 providerExecutionAuthority: FORBIDDEN
 
+Amendment 2 (2026-09-02): operator-authorized expansion from four to exactly
+six output paths solely to split the oversized helper and test by
+responsibility under the governed file-size guards. Semantics, 90-test
+coverage, no-commit posture, review checkpoints and all P2/P5/external
+boundaries remain unchanged.
+
 ## Dispatch Prompt Envelope
 
 Role: bounded local P4 shadow-canary implementation and measurement worker.
@@ -38,7 +44,7 @@ correctness; do not change P2 or reproduce phase semantics.
 
 Required first actions: complete startup acknowledgement; capture clean HEAD;
 read this packet/baseline and all pinned owners; recompute identities; run
-pre-implementation; then touch exactly four paths.
+pre-implementation; then touch exactly six paths.
 
 Return contract: leave changes uncommitted and return one of
 `CANARY_WINDOW_OPEN_EVIDENCE_CANDIDATE`, `ROLLBACK_SHADOW`,
@@ -185,7 +191,7 @@ real authority/source/scope contradiction.
 
 - Operator owns authorization and any material scope expansion.
 - Dispatcher owns this contract.
-- Worker implements four paths and records deterministic evidence.
+- Worker implements six paths and records deterministic evidence.
 - Reviewer evaluates returned evidence without recreating implementation.
 - Closer commits accepted material and syncs continuity.
 
@@ -240,9 +246,9 @@ standard, checker, hook, catalog, registry, session surface and roadmap.
     "explicit return receipt linkage and trusted ordering",
     "actual P2 comparator and closed-input invariant",
     "deterministic sampling and rollback rehearsal",
-    "M0-M2 plus initial observation metrics and exact four-path no-commit return"
+    "M0-M2 plus initial observation metrics and exact six-path no-commit return"
   ],
-  "operatorCheckpoints": ["fifth path", "P2 or SOT change", "P5 opening", "external effect"],
+  "operatorCheckpoints": ["seventh path", "P2 or SOT change", "P5 opening", "external effect"],
   "forbiddenEffects": ["trusted-route replacement", "worker commit", "provider network live public deploy production", "automatic P5 opening"],
   "sourceEvidence": {
     "selectedFilesFullyRead": true,
@@ -259,14 +265,16 @@ Expected route: `P3_ELEVATED`; shadow route only. Full legacy gates remain.
 | Path | Action |
 |---|---|
 | `governance/compat/mfrp_shadow_canary.py` | CREATE |
+| `governance/compat/mfrp_shadow_canary_core.py` | CREATE |
 | `governance/compat/test_mfrp_shadow_canary.py` | CREATE |
+| `governance/compat/test_mfrp_shadow_canary_core.py` | CREATE |
 | `governance/compat/fixtures/mfrp_p4_shadow_canary_evidence.json` | CREATE |
 | `docs/reviews/CVF_MFRP_P4_SHADOW_CANARY_WORKER_RETURN_2026-09-02.md` | CREATE |
 
 ## Work-Order Fulfillment Manifest
 
-Fulfillment is exact equality between the four required paths, the four actual
-changed paths and the four paths named in the worker return. Any addition,
+Fulfillment is exact equality between the six required paths, the six actual
+changed paths and the six paths named in the worker return. Any addition,
 deletion or rename is a blocking manifest delta.
 
 ## Forbidden Path Manifest
@@ -285,7 +293,7 @@ Temporary receipts must remain under one explicit ignored repository-bounded
 - P4-I1 closed-input audit proof;
 - rollback rehearsal proof;
 - M0-M2 plus initial observation tax/admission ledger;
-- exact four-path, no-stage/no-commit and zero-provider proof.
+- exact six-path, no-stage/no-commit and zero-provider proof.
 
 ## Foundation Storage Layout Block
 
@@ -299,7 +307,7 @@ Temporary receipts must remain under one explicit ignored repository-bounded
 
 ## Write Ownership
 
-The worker owns uncommitted writes only to the four Required Artifact Manifest
+The worker owns uncommitted writes only to the six Required Artifact Manifest
 paths. Reviewer/closer owns acceptance, material commit and continuity sync.
 Checkpoint row additions remain within the same bounded evidence paths and do
 not transfer authority to the worker.
@@ -355,7 +363,7 @@ limitations and claim boundary. It is bounded P4 evidence, not a registry.
 
 After initialization acceptance, the same ledger/return may be updated at M5,
 M10 and final without a new work order or pre-execution review, provided the
-four-path boundary and pinned owners remain unchanged. Any implementation
+six-path boundary and pinned owners remain unchanged. Any implementation
 change after initialization requires ordinary returned-result review; mere
 deterministic row addition waits for the scheduled checkpoint unless a safety
 trigger fires.
@@ -383,11 +391,11 @@ trigger fires.
 3. Implement hostile tests and rollback rehearsal.
 4. Execute the first real R1B-R2 shadow observation.
 5. Write bounded evidence JSON and full worker return.
-6. Run focused suite twice, reconcile exact four paths and stop uncommitted.
+6. Run focused suite twice, reconcile exact six paths and stop uncommitted.
 
 ## Acceptance Criteria
 
-- exact four-path changed set and clean starting base;
+- exact six-path changed set and clean starting base;
 - all pinned identities and ordering evidence match;
 - actual P2 seams run without copied evaluator;
 - first pair is explicitly linked or honestly classified ineligible;
@@ -406,7 +414,7 @@ tests, exact changed set, zero external calls and no-stage/no-commit evidence.
 
 ## Stop Conditions
 
-Stop for any baseline stop condition, need for a fifth path or P2/design/SOT
+Stop for any baseline stop condition, need for a seventh path or P2/design/SOT
 change, inability to keep trusted outcome controlling, secret risk, provider
 need, nondeterminism, or pressure to manufacture population/safety/cost claims.
 
@@ -421,7 +429,7 @@ apply. Never return reviewer acceptance or P5 opening.
 ## Operator Checkpoint
 
 No further operator input or pre-execution review is required for exact
-four-path initialization. Routine reviewer checkpoints are initialization
+six-path initialization. Routine reviewer checkpoints are initialization
 return, M5, M10 and final; safety triggers may advance a review. Scope/P2/SOT,
 external effect or P5 requires operator authority.
 
@@ -521,13 +529,15 @@ change.
 Protected paths:
 
 - `governance/compat/mfrp_shadow_canary.py`
+- `governance/compat/mfrp_shadow_canary_core.py`
 - `governance/compat/test_mfrp_shadow_canary.py`
+- `governance/compat/test_mfrp_shadow_canary_core.py`
 - `governance/compat/fixtures/mfrp_p4_shadow_canary_evidence.json`
 
 Operator authorization: explicit 2026-09-02 instruction to run the canary and
 collect empirical review-reduction/recall evidence.
 
-Rollback boundary: remove the exact four uncommitted outputs and verified
+Rollback boundary: remove the exact six uncommitted outputs and verified
 ignored P4 receipt directory only.
 
 ## Commit Mode And Base-Anchor Lifecycle
@@ -550,7 +560,7 @@ checks returned evidence without repeating implementation or phase work.
 |---|---|
 | role separation ledger | operator authorizes; dispatcher scopes; worker implements/measures; reviewer evaluates; closer commits |
 | self-review boundary | worker tests and self-report are evidence candidates, never independent acceptance |
-| escalation conditions | identity/order/linkage contradiction, fifth path, P2/SOT need, safety trigger, secret or external effect |
+| escalation conditions | identity/order/linkage contradiction, seventh path, P2/SOT need, safety trigger, secret or external effect |
 | evidence basis independent of memory | pinned repository bytes, Git commit/blob ancestry, actual P2 output and deterministic ledger |
 | gate sequence | pre-dispatch -> pre-implementation -> focused suite -> worker-return gate -> reviewer/closure |
 
@@ -558,7 +568,7 @@ checks returned evidence without repeating implementation or phase work.
 
 | Surface | Status | Authority boundary |
 |---|---|---|
-| INTERNAL_AGENT | AUTHORIZED | exact four-path local no-commit worker |
+| INTERNAL_AGENT | AUTHORIZED | exact six-path local no-commit worker |
 | EXTERNAL_AGENT_CLI_MCP | FORBIDDEN | zero invocation/quota |
 | adapter boundary | NOT_APPLICABLE_WITH_REASON | direct local P2 imports only |
 
@@ -572,7 +582,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | rolePattern | operator -> dispatcher -> bounded worker -> reviewer/closer |
 | phase | P4 initialization pending worker return |
 | baseHeadFor(phase) | dispatch base fixed; execution base worker capture; closure base reviewer capture |
-| changedSetScope(phase) | exactly four new paths |
+| changedSetScope(phase) | exactly six new paths |
 | traceScope(phase, actor) | identities, pair linkage, comparator, audit, rollback, metrics and gates |
 | commitOwner(phase) | reviewer/closer only |
 | crossBatchIsolation | no P2/design/R1B/standard/checker/session change |
@@ -582,7 +592,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 
 completionReviewPath: `docs/reviews/CVF_MFRP_P4_SHADOW_CANARY_COMPLETION_2026-09-02.md`
 
-reviewerOwnedClosurePaths: the exact four worker outputs, conventional
+reviewerOwnedClosurePaths: the exact six worker outputs, conventional
 completion review only if materially needed, and later continuity sync.
 
 Reviewer reruns focused tests, recomputes identities/linkage, challenges one
@@ -617,7 +627,7 @@ not repeat the phase, implementation or agent reasoning.
 
 ## Closure Checklist
 
-- [ ] clean base and exact four paths;
+- [ ] clean base and exact six paths;
 - [ ] opening identities and order-of-record pass;
 - [ ] actual P2/linkage/comparator/sampling/P4-I1 tests pass;
 - [ ] rollback preserves trusted result;
@@ -663,7 +673,7 @@ not repeat the phase, implementation or agent reasoning.
 
 ## Claim Boundary
 
-This work order authorizes exactly one four-path no-commit P4 initialization
+This work order authorizes exactly one six-path no-commit P4 initialization
 and a bounded M5/M10/final evidence window. It does not change controlling
 review, prove correctness/recall/savings, open P5, or authorize external
 effects.

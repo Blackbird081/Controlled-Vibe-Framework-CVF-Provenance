@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MFRP-P4 shadow-canary work order Amendment 1 corrects the trusted outcome citation to exact token REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED after a clean zero-write identity stop. Next allowed move is exact four-path no-commit execution from the clean post-amendment HEAD, with no pre-execution review. Routine review occurs at initialization return and later only at M5, M10 and M20/day-30 unless a safety trigger fires. P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "MFRP-P4 Amendment 2 authorizes exactly six output paths solely for the file-size-compliant helper/test split, with semantics and 90-test coverage unchanged. Complete the initialization return review and material commit; afterward collect natural observations without per-return review until M5, M10 and M20/day-30 unless a derived safety trigger fires. P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
-    "baselineSha256": "94e0d7b9018f621601427fe611ed7e72531875b4b94942ac09baf011bf50b718",
+    "baselineSha256": "07df11427ce321b525b2e5e800ecf0ec5ac8c1306a38f29e2dbec0ae45649b5f",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
-    "workOrderSha256": "5e39a08f04999a008424274fbc9916fd901324588d62e32a3a6853aae9e9f578"
+    "workOrderSha256": "8d4c7d508a6c38feb3a0dc3676605f61b71f8ddb319f37d4de321d723feca846"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
