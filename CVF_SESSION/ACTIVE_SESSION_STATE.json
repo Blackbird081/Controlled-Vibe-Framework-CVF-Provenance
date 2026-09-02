@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
     "baselineSha256": "94e0d7b9018f621601427fe611ed7e72531875b4b94942ac09baf011bf50b718",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
-    "workOrderSha256": "ef40ac8d5b5c9d2fc619b8b7f89b144636d18c81cec1e002e040faae434dab74"
+    "workOrderSha256": "5e39a08f04999a008424274fbc9916fd901324588d62e32a3a6853aae9e9f578"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -16433,7 +16433,8 @@
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
     "baselineSha256": "94e0d7b9018f621601427fe611ed7e72531875b4b94942ac09baf011bf50b718",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
-    "workOrderSha256": "ef40ac8d5b5c9d2fc619b8b7f89b144636d18c81cec1e002e040faae434dab74",
+    "workOrderSha256": "5e39a08f04999a008424274fbc9916fd901324588d62e32a3a6853aae9e9f578",
+    "amendment1": "Trusted outcome citation corrected to exact pinned token REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED after a clean identity-gate stop with zero worker writes.",
     "reviewAdmission": {
       "preExecutionReview": "NOT_REQUIRED",
       "initialRoutineBoundary": "WORKER_RETURN",
@@ -16444,8 +16445,8 @@
       ],
       "betweenCheckpointReview": "SAFETY_TRIGGER_ONLY"
     },
-    "nextAllowedMove": "Execute exactly the committed four-path no-commit MFRP-P4 shadow-canary work order. Generate one honestly linked R1B-R2 observation, rehearse rollback, and return bounded evidence for routine review. Do not use unrelated runtime receipts, change P2 or open P5.",
+    "nextAllowedMove": "Execute exactly the amended four-path no-commit MFRP-P4 shadow-canary work order using the exact trusted token REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED. Generate one honestly linked R1B-R2 observation, rehearse rollback, and return bounded evidence for routine review. Do not use unrelated runtime receipts, change P2 or open P5.",
     "claimBoundary": "Dispatch authority only. Trusted review remains controlling; no canary outcome, recall, cost saving, route replacement, P5, provider/live or external effect is claimed."
   },
-  "nextAllowedMove": "MFRP-P4 shadow-canary dispatch is committed at 62f3fde14. Next allowed move is exact four-path no-commit execution under the committed baseline/work order, with no pre-execution review. Routine review occurs at the initialization worker return and later only at M5, M10 and M20/day-30 unless a safety trigger fires. Trusted review remains controlling; P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "nextAllowedMove": "MFRP-P4 shadow-canary work order Amendment 1 corrects the trusted outcome citation to exact token REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED after a clean zero-write identity stop. Next allowed move is exact four-path no-commit execution from the clean post-amendment HEAD, with no pre-execution review. Routine review occurs at initialization return and later only at M5, M10 and M20/day-30 unless a safety trigger fires. P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

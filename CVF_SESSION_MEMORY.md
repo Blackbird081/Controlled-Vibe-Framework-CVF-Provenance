@@ -52,7 +52,7 @@ Previous mode: `gclh_mfrp_p3_r1b_r2_evidence_accepted_p4_authoring_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`. P4 dispatch is committed at `62f3fde14`. Execute exactly the four-path no-commit work order without pre-execution review. Routine review occurs at initialization return and later only at M5, M10 and final unless a safety trigger fires. Trusted review controls; P2 mutation, P5, downstream, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized`. Amendment 1 corrects the trusted outcome citation to exact token `REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED` after a clean zero-write identity stop. Execute the amended four-path no-commit work order without pre-execution review. Routine review occurs at initialization return and later only at M5, M10 and final unless a safety trigger fires. P2 mutation, P5 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

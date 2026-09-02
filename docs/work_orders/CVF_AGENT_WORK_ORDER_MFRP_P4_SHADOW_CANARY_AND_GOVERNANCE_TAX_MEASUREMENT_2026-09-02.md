@@ -54,6 +54,22 @@ Worker return path: `docs/reviews/CVF_MFRP_P4_SHADOW_CANARY_WORKER_RETURN_2026-0
 
 successorTrancheOpened: NO
 
+## Amendment 1 - Trusted Outcome Citation Correction
+
+Disposition: RATIFIED_LOCAL_AUTHORITY_CORRECTION
+
+The initial worker correctly stopped because the trusted-outcome token in the
+Actual-Seam And One-Command Contract did not match the pinned R1B-R2 return.
+The controlling token is corrected to the exact committed value
+`REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED`. No equivalence alias or
+higher-level shorthand is authorized. This amendment changes no comparator,
+scope, path, sampling, review-admission, safety, cost or execution contract.
+
+The stopped attempt created zero paths, staged/committed nothing and consumed
+zero provider/live/network calls. It is an identity-gate stop, not an execution
+or canary observation. Worker execution restarts from the clean post-amendment
+HEAD and recomputes all pins.
+
 ## Purpose
 
 Implement the accepted comparator exactly once, execute a real shadow
@@ -217,7 +233,7 @@ standard, checker, hook, catalog, registry, session surface and roadmap.
     "delegation": "MULTI_ROLE_NO_COMMIT",
     "novelty": "KNOWN_PATTERN"
   },
-  "pathFamilies": ["governance/compat", "governance/compat/fixtures", "docs/reviews", "docs/baselines", "docs/work_orders"],
+  "pathFamilies": ["governance/compat", "governance/compat/fixtures", "docs/reviews", "docs/baselines", "docs/work_orders", "AGENT_HANDOFF_V59_2026-08-11.md", "CVF_SESSION", "CVF_SESSION_MEMORY.md"],
   "claims": ["bounded shadow-canary evidence only"],
   "requiredProof": [
     "accepted design R1B and P2 identities",
@@ -300,7 +316,7 @@ For the initial real record, bind:
 - return path `docs/reviews/CVF_MFRP_P3_R1B_R2_ACTUAL_SEAM_REPLAY_REPAIR_WORKER_RETURN_2026-09-02.md`;
 - trusted commit `040ebfcff081062956c543f2b1d7e9cc04533b62` and blob
   `32154bdf225e600ca0622ebb5e25c6c97c9678eb`;
-- trusted outcome `ACCEPT_R1B_R2_EVIDENCE_BOUNDED` as located in Independent
+- trusted outcome `REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED` as located in Independent
   Reviewer Adjudication;
 - autorun range parent `cf899df3d0f49b14b7bd347282134d0133ade7be`
   through material commit `040ebfcff081062956c543f2b1d7e9cc04533b62`;

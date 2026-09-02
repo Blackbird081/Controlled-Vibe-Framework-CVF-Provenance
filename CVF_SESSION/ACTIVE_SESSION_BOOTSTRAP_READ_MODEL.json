@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "gclh_mfrp_p4_shadow_canary_dispatch_ready_execution_authorized",
   "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
-  "nextAllowedMove": "MFRP-P4 shadow-canary dispatch is committed at 62f3fde14. Next allowed move is exact four-path no-commit execution under the committed baseline/work order, with no pre-execution review. Routine review occurs at the initialization worker return and later only at M5, M10 and M20/day-30 unless a safety trigger fires. Trusted review remains controlling; P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
+  "nextAllowedMove": "MFRP-P4 shadow-canary work order Amendment 1 corrects the trusted outcome citation to exact token REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED after a clean zero-write identity stop. Next allowed move is exact four-path no-commit execution from the clean post-amendment HEAD, with no pre-execution review. Routine review occurs at initialization return and later only at M5, M10 and M20/day-30 unless a safety trigger fires. P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
     "baselineSha256": "94e0d7b9018f621601427fe611ed7e72531875b4b94942ac09baf011bf50b718",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_MEASUREMENT_2026-09-02.md",
-    "workOrderSha256": "ef40ac8d5b5c9d2fc619b8b7f89b144636d18c81cec1e002e040faae434dab74"
+    "workOrderSha256": "5e39a08f04999a008424274fbc9916fd901324588d62e32a3a6853aae9e9f578"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

@@ -171,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-MFRP-P4 shadow-canary dispatch is committed at `62f3fde14`. Execute exactly the four-path no-commit work order without pre-execution review. Review the initialization return once; afterward use M5, M10 and final checkpoints only unless a safety trigger fires. Trusted review remains controlling; P2 mutation, P5 and external effects stay parked. Latest numbered wave remains LHW24.
+MFRP-P4 Amendment 1 corrects the trusted outcome citation to exact token `REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED` after the worker's clean zero-write identity stop. Execute the amended four-path no-commit work order without pre-execution review. Review initialization return once; afterward use M5, M10 and final checkpoints only unless a safety trigger fires. P2 mutation, P5 and external effects stay parked. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -200,7 +200,7 @@ Public-sync source commit: `af957e279a8118b152d957a29f5731c6304a86bf`; public `m
 Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry records, now merged by PR 4; this is not deploy or production readiness. Exact-SHA hosted runs `33058250461`, `33058254795`, `33058254845`, `33058254830`, `33058254860`, `33058254846`, `33058254884`, and `33058254898` all passed.
 
 ## Core Guard Self-Protection Authorization - Current Continuity
-Authorized guard-maintenance scope: project the committed P4 shadow-canary dispatch authority and bounded review-checkpoint rule into continuity.
+Authorized guard-maintenance scope: project P4 Amendment 1 exact-token correction and the unchanged bounded review-checkpoint rule into continuity.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -210,7 +210,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: explicit 2026-09-02 instruction to proceed with the canary after accepted design and R1B-R2 evidence.
-Rollback boundary: revert only this continuity projection; preserve P4 dispatch `62f3fde14`, R1B-R2 evidence `040ebfcff` and prior evidence.
+Rollback boundary: revert only Amendment 1 and this continuity projection; preserve original P4 dispatch `62f3fde14`, R1B-R2 evidence `040ebfcff` and prior evidence.
 Not authorized by the continuity sync: worker implementation itself, P2 mutation, P5, route replacement or external effect.
 ## Claim Boundary
 
