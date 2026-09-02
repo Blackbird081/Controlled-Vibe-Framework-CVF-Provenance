@@ -120,8 +120,13 @@
         "sourceId": "H0",
         "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
         "locator": "### Before/After Receipt Field Matrix",
-        "sourceExcerptSha256": "2e2563e6b1a0a7dfd3e3fe427434f4f104b426923924fe30d5501c3954885bb4",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 143,
+          "endLine": 153,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "104ecd7324be1edf877a5b542826cacaa62474e236a96645f1d67ba43ff7c6bb",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -148,9 +153,14 @@
       "sourceRef": {
         "sourceId": "P2",
         "path": "docs/reviews/CVF_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_WORKER_RETURN_2026-09-01.md",
-        "locator": "### Risk / Corrective Action",
-        "sourceExcerptSha256": "128aa9c6279ce26ff34766219c9a0a4d2a82a927ae3a5f88680b40e33ac9ac47",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "locator": "## Risk / Corrective Action",
+        "sourceExcerptLineRange": {
+          "startLine": 101,
+          "endLine": 111,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "c0376a798bcacda213844c489320d130a171f4041174e220191b7c9ca9e23ef6",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -178,8 +188,13 @@
         "sourceId": "P1",
         "path": "docs/reviews/CVF_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_WORKER_RETURN_2026-09-01.md",
         "locator": "## Findings / Position",
-        "sourceExcerptSha256": "2b4d500f4510d0fdb092f17e2dd44faceaf63a339b52fd0370b0c12dedde1e6b",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 50,
+          "endLine": 57,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "e84d4ef40114dd34fdf0d1a02c0c1fcfc27d15c22b0bafff513d1fb505eea088",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -207,8 +222,13 @@
         "sourceId": "P2",
         "path": "docs/reviews/CVF_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_WORKER_RETURN_2026-09-01.md",
         "locator": "### Receipt / Readout Field-To-Source Mapping",
-        "sourceExcerptSha256": "749fee63b07b2e40404482a39849eb176ea7a2d99762b22bf81f2b174e4b2ed0",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 86,
+          "endLine": 99,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "08f2e82c8a37edd233cd4e7ca0d817a2fa02182791ea956f0bf0f44966eb2865",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -236,8 +256,13 @@
         "sourceId": "LATENCY",
         "path": "docs/reviews/CVF_GOVERNANCE_LATENCY_WS2_T0_COMPLETION_2026-08-05.md",
         "locator": "## Findings / Position",
-        "sourceExcerptSha256": "7981ea68eaf23ca35848297a28103b8d61496b09ab06e66fe3219e9f9bc454e3",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 57,
+          "endLine": 65,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "9003d17364e5344179acee445825017e72f266d96a2517625d727fcf47e92978",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -265,8 +290,13 @@
         "sourceId": "WEBUX",
         "path": "docs/reviews/CVF_WEB_UX_T3_WORKER_RETURN_2026-07-19.md",
         "locator": "## Risk / Corrective Action",
-        "sourceExcerptSha256": "47cb25d31b541f049011263ed32f5dd6b2a6eb14bf42329c849b88cbded2a3e8",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 50,
+          "endLine": 56,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "7b7122bb6ea447dfb479add8e7ef7160b23be38b9df7bfa1028a223298a84979",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -294,8 +324,13 @@
         "sourceId": "P2",
         "path": "docs/reviews/CVF_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_WORKER_RETURN_2026-09-01.md",
         "locator": "### Receipt / Readout Field-To-Source Mapping",
-        "sourceExcerptSha256": "a0ee01e58cfb70900a211cac656b0d17f7bb37fe36109c8675927c3a2086710c",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 86,
+          "endLine": 99,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "08f2e82c8a37edd233cd4e7ca0d817a2fa02182791ea956f0bf0f44966eb2865",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -323,8 +358,13 @@
         "sourceId": "H0",
         "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
         "locator": "### Snapshot Membership And Exclusion Rationale",
-        "sourceExcerptSha256": "9a39f26db785ce954c2e6b9974822ca0610320651deebbf3c981c5eaac0a500b",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 155,
+          "endLine": 165,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "4c6c2f9a5e9afc8b550f11fb45f5b46b9a3c6f30d338b460820b876d87e8f539",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -352,8 +392,13 @@
         "sourceId": "H0",
         "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
         "locator": "### Before/After Receipt Field Matrix",
-        "sourceExcerptSha256": "dd2ca6a29107681995cfc6f0e5cb99ca358f00ef4cbd882aa16d827d649279c8",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 143,
+          "endLine": 153,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "104ecd7324be1edf877a5b542826cacaa62474e236a96645f1d67ba43ff7c6bb",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -381,8 +426,13 @@
         "sourceId": "GCLH",
         "path": "docs/reviews/CVF_GCLH_T0_GOVERNANCE_CONTROL_LOSS_LEARNING_INTAKE_REVIEW_2026-09-01.md",
         "locator": "### GCLH-RV-3 - L11 is a material residual",
-        "sourceExcerptSha256": "48458ee93366b68be393b692a7a458feaec21e8a634a233414afb23aa87b7e6f",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 92,
+          "endLine": 100,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "eb275df627fc5af934951b552c77b1d6a814106c2f6e7c57c09e46ea7b653184",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -410,8 +460,13 @@
         "sourceId": "GCLH",
         "path": "docs/reviews/CVF_GCLH_T0_GOVERNANCE_CONTROL_LOSS_LEARNING_INTAKE_REVIEW_2026-09-01.md",
         "locator": "### GCLH-RV-3 - L11 is a material residual",
-        "sourceExcerptSha256": "4545ddf4f90c487bb407e5ebc1d79bd81e671b454e9f1a3f7d2ead17a750d73f",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 92,
+          "endLine": 100,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "eb275df627fc5af934951b552c77b1d6a814106c2f6e7c57c09e46ea7b653184",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -439,8 +494,13 @@
         "sourceId": "CADP",
         "path": "docs/reviews/CVF_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_WORKER_RETURN_2026-08-13.md",
         "locator": "## Findings / Position",
-        "sourceExcerptSha256": "76cd9d63a3d22279bf377936d167d33cad2569d4446ef293dccf20e0531fcfb8",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 47,
+          "endLine": 56,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "dd75dbc803612510551b8add3935f120265bcf6e51ae0ca18405643aad205da6",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -468,8 +528,13 @@
         "sourceId": "LATENCY",
         "path": "docs/reviews/CVF_GOVERNANCE_LATENCY_WS2_T0_COMPLETION_2026-08-05.md",
         "locator": "Accepted correction results",
-        "sourceExcerptSha256": "78b558e66e0347be23247b47a298e06a739fa6502f8e14e26892c4f65b41cf24",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 67,
+          "endLine": 75,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "8239dd8642af862908de62c09f6d4af0b9a3cf364819596de6cca3d4b30bbfa7",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -497,8 +562,13 @@
         "sourceId": "LATENCY",
         "path": "docs/reviews/CVF_GOVERNANCE_LATENCY_WS2_T0_COMPLETION_2026-08-05.md",
         "locator": "## Findings / Position",
-        "sourceExcerptSha256": "29a854f9e0ccd2df8a6a3e2efdca17552b4d48a66fc8c13e2d1adc25d73eea56",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 57,
+          "endLine": 65,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "9003d17364e5344179acee445825017e72f266d96a2517625d727fcf47e92978",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -526,8 +596,13 @@
         "sourceId": "LATENCY",
         "path": "docs/reviews/CVF_GOVERNANCE_LATENCY_WS2_T0_COMPLETION_2026-08-05.md",
         "locator": "## Findings / Position",
-        "sourceExcerptSha256": "322fece31045aee40e21e4624438968aded3f62bc264922f35a0943cf914a275",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 57,
+          "endLine": 65,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "9003d17364e5344179acee445825017e72f266d96a2517625d727fcf47e92978",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -555,8 +630,13 @@
         "sourceId": "H0",
         "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
         "locator": "### Zero-Execution And Full-Bundle Proof",
-        "sourceExcerptSha256": "cd82be42a2933bf09a95dce63b830bac165d7da7dab9c0cfc37bf2e135fb3e7b",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 200,
+          "endLine": 208,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "42e173e82f84d86894e4c03c36f1da84f40f84ac5b58a4782beae04d2d92ebe3",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -584,8 +664,13 @@
         "sourceId": "H0",
         "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
         "locator": "### Before/After Receipt Field Matrix",
-        "sourceExcerptSha256": "af2361633c091fc07bbd400c813c59a47bcec4c14070ed66a8f3fa0375a067fa",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 143,
+          "endLine": 153,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "104ecd7324be1edf877a5b542826cacaa62474e236a96645f1d67ba43ff7c6bb",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -613,8 +698,13 @@
         "sourceId": "GCLH",
         "path": "docs/reviews/CVF_GCLH_T0_GOVERNANCE_CONTROL_LOSS_LEARNING_INTAKE_REVIEW_2026-09-01.md",
         "locator": "### GCLH-RV-4 - L12 is a material residual",
-        "sourceExcerptSha256": "f75f1a4549dc6fd43ec8a7e658b733e9602978943e91eed8abf90a358795511c",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 102,
+          "endLine": 109,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "7a07bf2746a20d64eb6ded35f778a567a383024d21c0945bb893a1abd7b13880",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
@@ -642,8 +732,13 @@
         "sourceId": "LATENCY",
         "path": "docs/reviews/CVF_GOVERNANCE_LATENCY_WS2_T0_COMPLETION_2026-08-05.md",
         "locator": "## Findings / Position",
-        "sourceExcerptSha256": "7fdd4fefc887aa195ac588aedda6705ca524a50ab00d8b1cfa3a966ae1f1b653",
-        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+        "sourceExcerptLineRange": {
+          "startLine": 57,
+          "endLine": 65,
+          "includeTrailingLf": false
+        },
+        "sourceExcerptSha256": "9003d17364e5344179acee445825017e72f266d96a2517625d727fcf47e92978",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_LINE_RANGE_V1"
       },
       "derivation": "HISTORICAL_INPUT",
       "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
