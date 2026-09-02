@@ -5,7 +5,7 @@
 **Time:** 30 minutes  
 **Level:** Beginner  
 **What you'll build:** A CLI bookmark manager using Python  
-**What you'll learn:** The complete CVF controlled execution loop (`INTAKE → DESIGN → BUILD → REVIEW → FREEZE`)
+**What you'll learn:** The complete CVF controlled execution loop (`INTAKE -> DESIGN -> SPEC -> WORK ORDER -> BUILD -> REVIEW -> FREEZE`)
 
 ---
 
