@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_2026-09-02.md",
-    "baselineSha256": "740751670f5434e0813644a16e4eca149ee965a047c2713b6c3e9cd3a3dead6b",
+    "baselineSha256": "a66ae2739e8fc71d3024e1fbb7c4cbd0aa2e5cdaf843b27012bedf4ee2ab9359",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_2026-09-02.md",
-    "workOrderSha256": "996178c1323c5570663cb7881386b4978a5ed4fc9847a14e3ddb24ee856774a1"
+    "workOrderSha256": "b07f18326522511208ddcaf2955e134da221cd8da7268308d8ee05aa2da7686d"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -105,8 +105,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready",
-  "previousMode": "gclh_mfrp_p4_shadow_canary_window_open_bounded",
+  "currentMode": "gclh_mfrp_p4_c1_automatic_evidence_collection_active",
+  "previousMode": "gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16560,5 +16560,5 @@
     "nextAllowedMove": "Execute the committed P4-C1 work order directly with no pre-execution review; return COMPLETE_PENDING_REVIEW uncommitted for one evidence-bound reviewer evaluation.",
     "claimBoundary": "Dispatch authority only. Automatic collection is not active until implementation is reviewer-accepted and committed. P5, P6, route replacement, P2 mutation, provider/live/public and project/workspace effects remain closed."
   },
-  "nextAllowedMove": "P4-C1 automatic evidence collection is dispatch-ready at material commit 7f47209bb. Execute the committed nine-path no-commit work order directly with no pre-execution review, then evaluate its COMPLETE_PENDING_REVIEW return once using required evidence without recreating implementation. After acceptance, collection runs automatically for natural eligible pairs with no per-row review. Reopen chain is durable: M5 at 5 samples or safety trigger; M10 at 10 or safety trigger; M20 at 20; a separate P5 decision may proceed immediately at M20 without waiting for day 30; day 30 below 20 means INSUFFICIENT_EVIDENCE and P5 stays closed; P6 requires accepted P5 Core closure plus explicit downstream release; project/workspace application requires accepted P6 adoption evidence. Current eligible count is 0. P2 mutation, P5, P6, provider/live/public and project effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "nextAllowedMove": "P4-C1 automatic evidence collection is active at accepted material commit b9bdba712. The local post-commit hook evaluates natural eligible returns automatically after their ordinary continuity commit; no operator reminder and no per-row AI review is required. Current eligible count is 0. Reopen chain is sample-bound: M5 at 5 samples or a safety trigger; M10 at 10 or a safety trigger; M20 at 20. A separate P5 decision may proceed immediately when M20 is reached and must not wait for day 30. Day 30 matters only when fewer than 20 samples exist, yielding INSUFFICIENT_EVIDENCE while P5 stays closed. An unresolved safety marker blocks the next commit pending one reviewer/closer adjudication. P2 mutation, P5, P6, provider/live/public and project effects remain parked; P6 still requires accepted P5 Core closure plus explicit downstream release, and project/workspace application requires accepted P6 adoption evidence. Latest finalized numbered LHW wave remains LHW24."
 }

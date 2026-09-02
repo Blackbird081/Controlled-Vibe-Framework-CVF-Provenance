@@ -3,7 +3,7 @@ Memory class: active-handoff
 Status: ACTIVE
 ## Handoff Context
 - GC010 root architecture is closed parked at material commit `e867d5432`; no truthful current product owner exists, no successor tranche opened, and system-chain selection must move outside GC010.
-- Repository: private provenance SOT; current P4-C1 dispatch material: `7f47209bba0e162212739a213637775102abfdf6`; branch `main`.
+- Repository: private provenance SOT; accepted P4-C1 automatic-collection material: `b9bdba71290a9d94a12438b413401ecb4c6a72a7`; branch `main`.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
 - Branch: `main`. Current material HEAD recorded for this handoff: `b3589ce7847196d707a96e26b706cfd50c1c433f` (GC010-SCR-R2-T1J-R3 corrected decision closure). DeepSeek Harness absorption material remains `7b8514526`. Public protocol 1.2 source-pack profile is live at public `main` commit `d7860138350130d6d105826ce186f1beeaba3c2d`; GitHub public-sync preflight run `33245798802` passed; `EXTERNAL_AGENT_READ` refresh receipt SHA-256 is `ccfd4ac603163043327c0d33bcce757b68e5e53c4bcd7bede33d13dd07628e39`. The prior DeepSeek task capsule was removed from the reusable packet root and must be regenerated for the next pinned repository.
 - EARTR-ESC-R1 is independently accepted `CLOSED_PASS_BOUNDED` and released as `cvf.external-agent-round-trip@1.2.0`. External follow-up A/I confirmed one `MEDIUM` representation-completeness gap; existing canonical/public/portable owners now expose exact strict-v1 fields, enums, forbidden fields, source joins, and valid examples with validator behavior unchanged (117/117 PASS). RB-01 receipt binding is implemented/tested, while Local reconciliation equality remains documentation/reviewer-enforced rather than a runtime gate. DeepSeek Harness use case 001 is locally closed at `7b8514526`: strict-v1 return validation PASS, pinned upstream `cd5ef8148158c3a752a658978873241fdf8e2bbc`, five candidates `NO_NEW_VALUE`, DSH-001 existing-owner enrichment parked, and DSH-005 forward-value lifecycle idea parked. Both reopen only under their conjunctive source/consumer/owner/value-cost gates; no implementation, provider/live, public export, or new owner was authorized.
@@ -39,9 +39,9 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the P4-C1 no-commit work order without pre-execution review, then review its return once; parked=P2 mutation, P5, P6 and external/project effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=allow automatic natural-sample collection until M5/M10/M20 or a safety trigger, with no per-row review; parked=P2 mutation, P5, P6 and external/project effects.
 ## Current Mode
-`gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
+`gclh_mfrp_p4_c1_automatic_evidence_collection_active`
 ## Purpose
 
 Preserve independently accepted T1C durable single-node non-production material without opening a caller, package export or external effect.
@@ -171,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-P4-C1 automatic evidence collection is dispatch-ready at `7f47209bb`. Execute its exact nine-path no-commit work order directly with no pre-execution review; review the returned evidence once without recreating implementation. After acceptance, natural rows collect automatically with no per-row review. Reopen chain: M5 at 5 or safety trigger; M10 at 10 or safety trigger; M20 at 20; P5 may be separately decided immediately at M20; day 30 below 20 is `INSUFFICIENT_EVIDENCE`; P6 requires accepted P5 Core closure plus explicit downstream release; project/workspace application requires accepted P6 adoption evidence. Eligible count is zero; P2 mutation, P5, P6 and external effects remain parked. Latest numbered wave remains LHW24.
+P4-C1 automatic evidence collection is active at accepted material `b9bdba712`. The local post-commit hook collects natural eligible rows after their ordinary continuity commit without an operator reminder or per-row AI review. Reopen chain: M5 at 5 or safety trigger; M10 at 10 or safety trigger; M20 at 20; P5 may be separately decided immediately at M20 and must not wait for day 30. Day 30 below 20 is `INSUFFICIENT_EVIDENCE`; an unresolved safety marker blocks the next commit for one reviewer/closer adjudication. Eligible count is zero; P2 mutation, P5, P6 and external effects remain parked. P6 still requires accepted P5 Core closure plus explicit downstream release; project/workspace application requires accepted P6 adoption evidence. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
@@ -200,7 +200,7 @@ Public-sync source commit: `af957e279a8118b152d957a29f5731c6304a86bf`; public `m
 Public artifact paths: fourteen accepted AGT-021 through AGT-034 registry records, now merged by PR 4; this is not deploy or production readiness. Exact-SHA hosted runs `33058250461`, `33058254795`, `33058254845`, `33058254830`, `33058254860`, `33058254846`, `33058254884`, and `33058254898` all passed.
 
 ## Core Guard Self-Protection Authorization - Current Continuity
-Authorized guard-maintenance scope: project the committed P4-C1 dispatch and durable reopen chain into active continuity.
+Authorized guard-maintenance scope: project the accepted P4-C1 collector and durable sample-bound reopen chain into active continuity.
 Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
@@ -209,7 +209,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 Operator authorization: explicit 2026-09-02 instruction to persist reopen conditions in session and open P4-C1 automatic evidence collection.
-Rollback boundary: revert only this continuity projection; preserve dispatch `7f47209bb`, P4 evidence and sample-gate amendment. P4-C1 implementation, P2 mutation, P5/P6 and external/project effects are not authorized by this sync.
+Rollback boundary: revert only this continuity projection; preserve accepted material `b9bdba712`, P4 evidence and sample-gate amendment. P2 mutation, P5/P6 and external/project effects are not authorized by this sync.
 ## Claim Boundary
 
-This handoff records P4-C1 dispatch readiness and the durable reopen chain only; automatic collection is not active before accepted implementation, and no recall, saving, P2 safety pass, P5/P6, route replacement, project rollout or external effect is claimed.
+This handoff records bounded P4-C1 automatic collection and the durable reopen chain only; it makes no recall, saving, P2 safety pass, P5/P6, route replacement, project rollout or external-effect claim.

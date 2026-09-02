@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute the committed P4-C1 nine-path no-commit work order without pre-execution review, then review its returned evidence once; parked checkpoint=P2 mutation, P5, P6 and external/project effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=allow automatic natural-sample collection until M5/M10/M20 or a safety trigger, with no per-row review; parked checkpoint=P2 mutation, P5, P6 and external/project effects.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
-Current mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`; previous mode marker: `gclh_mfrp_p4_shadow_canary_window_open_bounded`
-Previous mode: `gclh_mfrp_p4_shadow_canary_window_open_bounded`
+Current mode marker: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`
+Current mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`; previous mode marker: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
+Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`. Dispatch material is `7f47209bb`. Execute the exact nine-path no-commit work order directly without pre-execution review; then review its returned evidence once without recreating implementation. After acceptance, natural eligible rows collect automatically with no per-row review. Reopen chain is durable across sessions: M5 at 5 or safety trigger; M10 at 10 or safety trigger; M20 at 20; a separate P5 decision may proceed immediately at M20; day 30 below 20 yields `INSUFFICIENT_EVIDENCE`; P6 requires accepted P5 Core closure plus explicit downstream release; project/workspace application requires accepted P6 adoption evidence. Eligible count remains 0; P2 mutation, P5, P6 and external/project effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. Accepted material is `b9bdba712`. Natural eligible rows collect through the local post-commit hook after their ordinary continuity commit, with no operator reminder and no per-row AI review. Reopen chain is durable across sessions and sample-bound: M5 at 5 or safety trigger; M10 at 10 or safety trigger; M20 at 20. A separate P5 decision may proceed immediately at M20 and must not wait for day 30. Day 30 below 20 yields `INSUFFICIENT_EVIDENCE`; an unresolved safety marker blocks the next commit pending one reviewer/closer adjudication. Eligible count remains 0; P2 mutation, P5, P6 and external/project effects remain parked. P6 requires accepted P5 Core closure plus explicit downstream release; project/workspace application requires accepted P6 adoption evidence. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
