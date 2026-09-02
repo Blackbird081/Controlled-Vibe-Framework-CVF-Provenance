@@ -16466,12 +16466,21 @@
       "routineCheckpoints": [
         "M5",
         "M10",
-        "M20_OR_DAY_30"
+        "M20_SAMPLE_COMPLETE",
+        "DAY30_SUNSET_ADJUDICATION"
       ],
       "earlyReview": "DERIVED_SAFETY_TRIGGER_ONLY"
     },
-    "nextAllowedMove": "Collect natural eligible return/receipt pairs through the accepted six-path P4 ledger without per-return review. Stop for M5, M10, M20/day-30 or a derived safety trigger. Do not claim recall preservation or cost saving while the eligible denominator is zero.",
+    "p5ReopenSampleGate": {
+      "requiredEligibleCount": 20,
+      "sampleSatisfied": false,
+      "calendarWaitRequiredAfterSampleSatisfied": false,
+      "day30AloneAuthorizesReopen": false,
+      "day30InsufficientSampleDisposition": "INSUFFICIENT_EVIDENCE",
+      "materialCommit": "3942cef57"
+    },
+    "nextAllowedMove": "Collect natural eligible return/receipt pairs without per-return review. Stop for M5, M10, M20 or a derived safety trigger. At M20 a separate P5 decision may proceed immediately. Day 30 is sunset adjudication only and cannot replace missing samples.",
     "claimBoundary": "P4 initialization implementation is accepted bounded and the observation window is open. Trusted review remains controlling. No recall, saving, P5, route replacement, P2 mutation or external effect is authorized or claimed."
   },
-  "nextAllowedMove": "MFRP-P4 initialization is reviewer-accepted bounded at material commit 8de63c077 with 90/90 focused tests twice and 88/88 pre-commit checks. Collect natural eligible return/receipt pairs through the accepted six-path ledger without per-return review. Review only at M5, M10, M20/day-30 or when a derived safety trigger fires. Eligible count is currently 0, so recall preservation and cost saving remain unproven. P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "nextAllowedMove": "MFRP-P4 initialization is accepted at 8de63c077 and the sample-gated P5 amendment is machine-enforced at 3942cef57. Collect natural eligible return/receipt pairs without per-return review. Review only at M5, M10, M20 or a derived safety trigger. At 20 eligible samples a separate P5 decision may proceed immediately without waiting for day 30. Day 30 is sunset adjudication only; below 20 then means INSUFFICIENT_EVIDENCE and P5 remains closed. Eligible count is 0, so recall preservation and cost saving remain unproven. P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

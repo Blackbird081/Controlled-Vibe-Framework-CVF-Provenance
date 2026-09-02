@@ -15,10 +15,18 @@
     "reviewAdmission": {
       "preExecutionReview": "NOT_REQUIRED",
       "perReturnRoutineReview": "FORBIDDEN",
-      "routineCheckpoints": ["M5", "M10", "M20_OR_DAY_30"],
+      "routineCheckpoints": ["M5", "M10", "M20_SAMPLE_COMPLETE", "DAY30_SUNSET_ADJUDICATION"],
       "earlyReview": "DERIVED_SAFETY_TRIGGER_ONLY"
     },
-    "nextAllowedMove": "Collect natural eligible return/receipt pairs through the accepted six-path P4 ledger without per-return review. Stop for M5, M10, M20/day-30 or a derived safety trigger. Do not claim recall preservation or cost saving while the eligible denominator is zero.",
+    "p5ReopenSampleGate": {
+      "requiredEligibleCount": 20,
+      "sampleSatisfied": false,
+      "calendarWaitRequiredAfterSampleSatisfied": false,
+      "day30AloneAuthorizesReopen": false,
+      "day30InsufficientSampleDisposition": "INSUFFICIENT_EVIDENCE",
+      "materialCommit": "3942cef57"
+    },
+    "nextAllowedMove": "Collect natural eligible return/receipt pairs without per-return review. Stop for M5, M10, M20 or a derived safety trigger. At M20 a separate P5 decision may proceed immediately. Day 30 is sunset adjudication only and cannot replace missing samples.",
     "claimBoundary": "P4 initialization implementation is accepted bounded and the observation window is open. Trusted review remains controlling. No recall, saving, P5, route replacement, P2 mutation or external effect is authorized or claimed."
   }
 }

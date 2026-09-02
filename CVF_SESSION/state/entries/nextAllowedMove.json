@@ -1,5 +1,5 @@
 {
   "stateOrder": 2748,
   "stateKey": "nextAllowedMove",
-  "value": "MFRP-P4 initialization is reviewer-accepted bounded at material commit 8de63c077 with 90/90 focused tests twice and 88/88 pre-commit checks. Collect natural eligible return/receipt pairs through the accepted six-path ledger without per-return review. Review only at M5, M10, M20/day-30 or when a derived safety trigger fires. Eligible count is currently 0, so recall preservation and cost saving remain unproven. P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
+  "value": "MFRP-P4 initialization is accepted at 8de63c077 and the sample-gated P5 amendment is machine-enforced at 3942cef57. Collect natural eligible return/receipt pairs without per-return review. Review only at M5, M10, M20 or a derived safety trigger. At 20 eligible samples a separate P5 decision may proceed immediately without waiting for day 30. Day 30 is sunset adjudication only; below 20 then means INSUFFICIENT_EVIDENCE and P5 remains closed. Eligible count is 0, so recall preservation and cost saving remain unproven. P2 mutation, P5, downstream workspace, GC010 and external effects remain parked. Latest finalized numbered LHW wave remains LHW24."
 }

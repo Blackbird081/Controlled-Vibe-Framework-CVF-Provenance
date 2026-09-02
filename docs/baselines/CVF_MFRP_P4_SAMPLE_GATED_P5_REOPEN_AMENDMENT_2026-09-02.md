@@ -48,13 +48,19 @@ Protected paths:
 
 - `governance/compat/mfrp_shadow_canary.py`
 - `governance/compat/test_mfrp_shadow_canary_core.py`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/gclhMfrpP4ShadowCanaryWindowOpen20260902.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
 Operator authorization: the operator explicitly required P5 reopening to be
 conditioned on enough samples rather than a mandatory 30-day wait.
 
 Rollback boundary: revert only this amendment, the sample-gate helper,
-evidence/readout field, focused tests and fixture projection. Preserve the
-accepted P4 implementation, ledger and trusted-route authority.
+evidence/readout field, focused tests, fixture projection and matching active
+continuity projection. Preserve the accepted P4 implementation, ledger and
+trusted-route authority.
 
 ## Checker Source Read-Ahead Block
 

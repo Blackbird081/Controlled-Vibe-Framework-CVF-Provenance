@@ -39,7 +39,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_shadow_canary_window_open_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=collect natural eligible pairs without per-return review until M5/M10/final or safety trigger; parked=P2 mutation, P5, external effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_shadow_canary_window_open_bounded`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=collect natural eligible pairs without per-return review until M5/M10/M20 or safety trigger; day 30 is sunset adjudication only; parked=P2 mutation, P5, external effects.
 ## Current Mode
 `gclh_mfrp_p4_shadow_canary_window_open_bounded`
 ## Purpose
@@ -171,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-MFRP-P4 initialization is reviewer-accepted bounded at material commit `8de63c077`: six-path size-compliant split, 90/90 focused tests twice, 88/88 pre-commit, zero eligible natural pairs. Collect pairs without per-return review; review only at M5, M10, final or a derived safety trigger. Recall preservation, cost saving, P2 mutation, P5 and external effects remain unclaimed/parked. Latest numbered wave remains LHW24.
+MFRP-P4 initialization is accepted at `8de63c077`; the sample-gated P5 amendment is machine-enforced at `3942cef57`; eligible count is zero. Collect pairs without per-return review; review only at M5, M10, M20 or a derived safety trigger. At 20 samples a separate P5 decision may proceed immediately. Day 30 is sunset adjudication only; below 20 then means `INSUFFICIENT_EVIDENCE` and P5 remains closed. Recall preservation, cost saving, P2 mutation, P5 and external effects remain unclaimed/parked. Latest numbered wave remains LHW24.
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
 
