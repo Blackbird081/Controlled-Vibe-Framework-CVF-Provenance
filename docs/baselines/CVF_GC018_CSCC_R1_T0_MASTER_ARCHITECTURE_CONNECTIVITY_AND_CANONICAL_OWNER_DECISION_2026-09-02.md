@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: APPROVED_FOR_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CSCC-R1-T0
 
@@ -131,3 +131,25 @@ This baseline authorizes only the paired two-output T0 documentation task. It
 does not authorize implementation, provider invocation, live proof, P2/P4 or
 canary work, GC-010 reopening, T1, public sync, deployment, or a readiness
 claim.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | paired work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | CSCC-R1-T0 completion and worker addendum | partial token accepted | PASS |
+| Roadmap state | CSCC-R1 roadmap | T0 closed; T0A authoring ready; T1-T6 held | PASS |
+| Registry JSON | `CVF_SESSION/ACTIVE_SESSION_STATE.json` | no lane-specific hash binding changes | BLOCKED with reason: continuity registry synchronization follows the material commit |
+| Registry Markdown | active handoff | separate continuity commit follows | BLOCKED with reason: material closure precedes continuity sync |
+| External evidence digest | N/A with reason: local source only | call counts zero | N/A with reason: no external evidence |
+| System loop interlock | terminal token and roadmap table | partial token does not release T1 | PASS |
+| Session continuity | active handoff | separate continuity commit follows | N/A with reason: commit choreography |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Runtime receipt evidence | N/A with reason: documentation-only T0 | N/A_WITH_REASON |
+| Query acceptance evidence | N/A with reason: no runtime query | N/A_WITH_REASON |
+| Worker-return acceptance | Independent Reviewer Addendum accepts partial token | PASS |
+| Closure claim | bounded current-source decision only | PASS |
