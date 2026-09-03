@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2754,
+  "stateKey": "csccR1T2ARouteSelectionDispatch20260903",
+  "value": "DISPATCH_READY at material commit c05a6139a0615dd2ca106f2aa30b97bed5f348b7. T2A is documentation/source reconciliation only: the delegated no-commit worker evaluates route-wide parity, an Alibaba-only canonical build with fail-closed non-Alibaba behavior plus a separate direct rollback build, and a mixed-provider transition requiring T1 amendment; it must select exactly one and freeze the exact successor source/test/live-proof manifest. Worker writes are limited to the named assessment and worker return, with providerCallCount 0. The operator-granted Alibaba live permission is reserved for a later accepted implementation tranche after deterministic zero-call gates and independent review; it is not consumable in T2A."
+}
