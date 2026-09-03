@@ -315,11 +315,27 @@ export type {
   ProviderExecutionAdapterResult,
   ProviderExecutionBridgeOptions,
   ProviderExecutionBridgeResult,
+  ProviderExecutionBridgeExecuteOptions,
+  CanonicalExecutionAttemptBoundary,
+  CanonicalExecutionAttemptBoundaryInput,
+  CanonicalExecutionAttemptBoundaryOutcome,
+  CanonicalExecutionAttemptOutcomeSummary,
 } from "./provider-execution-bridge";
 export {
   ProviderExecutionBridge,
   PROVIDER_EXECUTION_BRIDGE_VERSION,
 } from "./provider-execution-bridge";
+
+export type {
+  CanonicalExecutionPort,
+  CanonicalExecutionPortRequest,
+  CanonicalExecutionPortResult,
+  CanonicalExecutionPortRoutingRequest,
+} from "./canonical-execution-port";
+export {
+  CanonicalExecutionAdapter,
+  CANONICAL_EXECUTION_PORT_VERSION,
+} from "./canonical-execution-port";
 
 export type {
   MaterialContextClass,

@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 Batch ID: CSCC-R1-T2
 
@@ -144,6 +144,29 @@ and status reconciliation. No release-quality live bundle is authorized.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private bounded implementation dispatch; no public-sync authority.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | paired T2 work order | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | T2 completion review | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Roadmap state | CSCC-R1 roadmap | T2 blocked; T2A authoring ready; T3 held | PASS |
+| Registry JSON | corpus scan registry | generated aggregate covers the new canonical-port test | PASS |
+| Registry Markdown | active handoff | dedicated continuity sync follows | BLOCKED with reason: separate continuity commit |
+| External evidence digest | N/A with reason: local deterministic evidence only | zero external/provider calls | N/A with reason |
+| System loop interlock | completion review and roadmap | no route cutover or T3 release | PASS |
+| Session continuity | active front doors and handoff | separate continuity sync required | N/A with reason: material closure precedes continuity |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Canonical route invocation | `/api/execute` remains on direct `executeAI` | BLOCKED |
+| Dormant foundation behavior | focused deterministic suites pass | PASS |
+| Provider parity | not established for the six-provider route | BLOCKED |
+| External effects | zero provider/network/live calls | PASS |
+| Closure boundary | dormant partial implementation only | PASS |
 
 ## Claim Boundary
 
