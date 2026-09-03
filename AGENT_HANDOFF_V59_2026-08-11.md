@@ -169,7 +169,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-P4-C1 automatic evidence collection remains active at `b9bdba712`; M5/M10/safety and M20 rules are unchanged, with eligible count zero. System Chain T2A closed at `c1f95ae1d` with `STOP_NO_SAFE_CANONICAL_CUTOVER`; no automatic successor exists. Reopen requires a fresh source-verified route-build owner/mechanism packet. A separate protected documentation-drift repair may correct the stale live-run standard path without creating live authority. T2B/T3, Alibaba live proof, P2/P4 mutation, canary, P5/P6, provider/public action, MAO, GC-010 and downstream adoption remain parked. Latest numbered wave remains LHW24.
+P4-C1 remains active at `b9bdba712`, eligible count zero. System Chain stays at `STOP_NO_SAFE_CANONICAL_CUTOVER`; reopening requires a source-verified route-build owner/mechanism packet. Public CVF is live at `132371c3`; protocol-1.3 packet `D:\UNG DUNG AI\EXTERNAL\_AGENT\_READ` is refreshed. A selected new repo may start only with immutable source/license evidence and a new task capsule. No repo is selected yet; T2B/T3, live/provider, further public action, P2/P4 mutation, canary, P5/P6, MAO, GC-010 and downstream adoption remain parked. Latest closed LHW wave: `LHW24`.
 
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
@@ -193,13 +193,10 @@ run `32678623700` promoted public `9c0183293`; force-push/delete are disabled.
 ## Public Export Disposition
 
 EXPORTED
-Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
-Public-sync branch/PR: `lifecycle-control-model-sync-20260902`, PR 7.
-Public-sync source commit: `848f602f72dc4e3ef8b98ea0e3f7196a59944906`; public `main` rebase commit: `2d7e4fefc2f58002a45bfbcdeb0f657eed987f1a`.
-Public artifacts: lifecycle/control-loop docs and downstream bootstrap guidance from provenance `ae9a8a6b3`; public-sync-preflight and public-surface checks passed. This is not deploy or production readiness.
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`; public `main`: `132371c3eb8d8e7d65eedd42799a8b910da63b94`; server-side preflight run `33715255525` PASS. Provenance record: `docs/reference/CVF_EXTERNAL_AGENT_ABSORPTION_PREPARATION_PUBLIC_SYNC_RECORD_2026-09-03.md` at `b4fb661bb`. Operator packet: `D:\UNG DUNG AI\EXTERNAL\_AGENT\_READ`, protocol 1.3, receipt `7c8c06e44220aed58cceb2a1e32b0209c5bfb36b5a61b46657fd21004f199f3f`. This is source-intake preparation, not repo acceptance, deploy or production readiness.
 
 ## Core Guard Self-Protection Authorization - Current Continuity
-Authorized guard-maintenance scope: CSCC-R1-T2A stop closure continuity while preserving the active P4-C1 automatic collector.
+Authorized guard-maintenance scope: external absorption-preparation public-sync continuity while preserving the CSCC-R1-T2A stop and active P4-C1 automatic collector.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -212,9 +209,10 @@ Protected paths:
 - `CVF_SESSION/state/entries/csccR1T2BlockedCanonicalPortFoundation20260903.json`
 - `CVF_SESSION/state/entries/csccR1T2ARouteSelectionDispatch20260903.json`
 - `CVF_SESSION/state/entries/csccR1T2ASafeCanonicalCutoverStop20260903.json`
+- `CVF_SESSION/state/entries/externalAbsorptionPreparationPublicSync20260903.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: explicit 2026-09-03 continuation and Alibaba live-test permission; T2A stop material `c1f95ae1d` requires current continuity while P4-C1 remains unchanged. The live permission remains future-only and unconsumed.
-Rollback boundary: revert only this continuity projection; preserve T2A closure `c1f95ae1d`, T2 `2ffe5a803`, T1 `f93b00e42` and P4-C1 `b9bdba712`. Provider calls, route cutover, T2B/T3, P2/P4 mutation, P5/P6 and external/project effects are not authorized by this sync.
+Operator authorization: explicit 2026-09-03 GitHub and `_AGENT\_READ` refresh for future repo absorption preparation; public record `b4fb661bb` requires continuity while P4-C1 and T2A stop remain unchanged.
+Rollback boundary: revert only this continuity projection; preserve public `132371c3`, record `b4fb661bb`, T2A `c1f95ae1d` and P4-C1 `b9bdba712`. Repo absorption, provider calls, route cutover, T2B/T3, P2/P4 mutation and P5/P6 are not authorized by this sync.
 ## Claim Boundary
 
-This handoff records bounded P4-C1 automatic collection plus T2A stop closure; it makes no active route composition, T2B/T3-T6, provider/live/public, P2/P4 mutation, P5/P6, MAO launch, GC-010, project rollout or external-effect claim.
+This handoff records P4-C1 automatic collection, T2A stop closure, and a completed public/packet preparation refresh; it makes no repo-absorption, active route composition, T2B/T3-T6, provider/live/further-public, P2/P4 mutation, P5/P6, MAO, GC-010, deployment or production claim.
