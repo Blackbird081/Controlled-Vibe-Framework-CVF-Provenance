@@ -107,7 +107,7 @@ Prior unrelated checkpoints remain historical.
 
 The `broad external knowledge absorption` lane remains outside the current release and blocked unless the operator opens a fresh, source-verified governed tranche.
 
-External absorption preparation closed at `b4fb661bb`: public `main` is `132371c3`; protocol-1.3 packet `D:\UNG DUNG AI\EXTERNAL\_AGENT\_READ` is live-refreshed with 5/5 hashes matching. Each new repo still needs its own immutable pin, license evidence, and new task capsule.
+External absorption preparation closed at `b4fb661bb`, path correction `100d6bd8b`: public `main` is `132371c3`; protocol-1.3 packet `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` is live-refreshed with 5/5 hashes matching. Each new repo still needs its own immutable pin, license evidence, and new task capsule.
 
 ## Targeted Lookup Rules
 
