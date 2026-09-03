@@ -4,7 +4,9 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
+
+Terminal token: STOP_NO_SAFE_CANONICAL_CUTOVER
 
 Batch ID: CSCC-R1-T2A
 
@@ -525,6 +527,28 @@ p4SourceAuthorityLocator: N/A with reason: System Chain documentation lane only
 | interceptionBoundary | no runtime interception or provider wrapper claim |
 | claimLanguage | pending source decision subject to independent review |
 | forbiddenExpansion | no source implementation, key access, provider/live/public/T3/MAO/GC-010/P2/P4/canary effect |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CSCC_R1_T2A_ROUTE_SELECTION_AND_ALIBABA_PROVIDER_PARITY_COMPLETION_2026-09-03.md` | terminal `STOP_NO_SAFE_CANONICAL_CUTOVER` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_CANONICAL_SYSTEM_CHAIN_COMPOSITION_ROADMAP_2026-09-02.md` | T2A closed stop; T3 held | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no T2A corpus entry; aggregate unchanged | BLOCKED with reason: incidental source-search wording does not authorize registry mutation |
+| Registry Markdown | active handoff registry projection | no T2A corpus projection | BLOCKED with reason: no corpus-classification registry update is authorized |
+| External evidence digest | N/A with reason: local source evidence only | provider call count zero | N/A with reason: no external evidence |
+| System loop interlock | roadmap and completion review | no T2B/T3/live successor | PASS |
+| Session continuity | active session surfaces | separate continuity commit after material SHA exists | N/A with reason: material commit precedes continuity |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| worker manifest | exactly two documentation outputs | PASS |
+| terminal decision | `STOP_NO_SAFE_CANONICAL_CUTOVER` | PASS |
+| provider/live call count | zero | PASS |
+| safe canonical cutover | route-build mechanism unproved | BLOCKED |
 
 ## Public Export Disposition
 

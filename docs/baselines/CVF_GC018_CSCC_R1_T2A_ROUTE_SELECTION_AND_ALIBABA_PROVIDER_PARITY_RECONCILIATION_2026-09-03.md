@@ -2,7 +2,9 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
+
+Terminal token: STOP_NO_SAFE_CANONICAL_CUTOVER
 
 Batch ID: CSCC-R1-T2A
 
@@ -141,6 +143,28 @@ ADIF-0031, ADIF-0039, ADIF-0043, ADIF-0049, ADIF-0006.
 - three-option migration matrix and Alibaba field-parity matrix;
 - pre-dispatch and pre-commit governance gates;
 - exact two-path worker manifest, unchanged worker HEAD and zero calls.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_CSCC_R1_T2A_ROUTE_SELECTION_AND_ALIBABA_PROVIDER_PARITY_RECONCILIATION_2026-09-03.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CSCC_R1_T2A_ROUTE_SELECTION_AND_ALIBABA_PROVIDER_PARITY_COMPLETION_2026-09-03.md` | terminal `STOP_NO_SAFE_CANONICAL_CUTOVER` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_CANONICAL_SYSTEM_CHAIN_COMPOSITION_ROADMAP_2026-09-02.md` | T2A closed stop; T3 held | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | no T2A corpus entry; aggregate unchanged | BLOCKED with reason: incidental source-search wording does not authorize registry mutation |
+| Registry Markdown | active handoff registry projection | no T2A corpus projection | BLOCKED with reason: no corpus-classification registry update is authorized |
+| External evidence digest | N/A with reason: local source evidence only | provider call count zero | N/A with reason: no external evidence |
+| System loop interlock | roadmap and completion review | no T2B/T3/live successor | PASS |
+| Session continuity | active session surfaces | separate continuity commit after material SHA exists | N/A with reason: material commit precedes continuity |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| documentation-only decision | assessment and worker return only | PASS |
+| exact terminal posture | `STOP_NO_SAFE_CANONICAL_CUTOVER` | PASS |
+| provider/live call count | zero | PASS |
+| route-build mechanism | absent from current source | BLOCKED |
 
 ## Public Export Disposition
 
