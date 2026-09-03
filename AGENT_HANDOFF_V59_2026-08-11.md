@@ -6,7 +6,6 @@ Status: ACTIVE
 - Repository: private provenance SOT; accepted P4-C1 automatic-collection material: `b9bdba71290a9d94a12438b413401ecb4c6a72a7`; branch `main`.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
 - Branch: `main`; current material HEAD: `c05a6139a`; prior continuity commit `3b5ea3cca`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
-- Current R11 final-reconciliation dispatch material: `a94d14b18c495cbfff8355eb8c72c6af8aa34cfe`; R10 accepted material: `58995408545471d26f82fed1ffb3454124eef284`.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
 - EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
@@ -38,7 +37,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed CSCC-R1-T2A source reconciliation at `c05a6139a`; parked=Alibaba live proof until accepted implementation, plus route cutover, T3-T6, P2/P4 mutation, canary, P5/P6 and unrelated effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=P4 automatic collection while System Chain remains stopped at T2A `c1f95ae1d`; parked=fresh route-build owner proof, Alibaba live proof, T2B/T3, P2/P4 mutation, canary, P5/P6 and unrelated effects.
 ## Current Mode
 `gclh_mfrp_p4_c1_automatic_evidence_collection_active`
 ## Purpose
@@ -53,7 +52,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 
 ## Latest Work / Changes
 - Lifecycle sync is complete: source `ae9a8a6b3`, bootstrap repair `44dcff6a9`, continuity `f336740de`, public PR 7/main `2d7e4fefc`. Workspace core matches public main; operator-local pack has 28 artifacts from `f336740de`; external packet receipt SHA-256 is `e453c6919e94fe313393c01c9ba9ed6944d3860e11b06d852bf29373bd67d775`. Project pins and P2/P4 canary data were not mutated.
-- CSCC-R1 T0 is closed partial at `5f017987b`; T0A is closed at `57b63fb30`; T1 at `f93b00e42`; T2 is `CLOSED_BLOCKED_BOUNDED` at `2ffe5a803`. T2A source-reconciliation dispatch is committed at `c05a6139a`; zero provider calls are allowed, while the Alibaba grant, route cutover and T3 remain held for an accepted successor.
+- CSCC-R1 T2A is `CLOSED_PASS_BOUNDED` at `c1f95ae1d` with terminal `STOP_NO_SAFE_CANONICAL_CUTOVER`. Composition, credential, quota and rollback-test ownership are reconciled; route-build exclusion/packaging has no accepted owner/mechanism. T2B/T3 remain unopened and the Alibaba live grant is unconsumed.
 - MFRP R1B replay `2b06d928d` remains rejected; R1A-R2 and R1B-R2 evidence are preserved. P4 initialization is accepted at `8de63c077`; the bounded natural-observation window is open with zero eligible pairs and no per-return routine review.
 - GC010 root architecture is closed parked at `e867d5432` with terminal `ROOT_ARCHITECTURE_REASSESSED_NO_TRUTHFUL_PRODUCT_OWNER_RETAIN_PARKED`. Direct route composition, ApprovalStore upgrade, singleton SQLite and distributed-store guesses were rejected; reopening requires all five named topology, adapter, ordering, recovery and adversarial-test facts in one packet. Reviewer-fast 67/67 and material pre-commit 88/88 pass; no source/runtime/provider effect or successor tranche opened.
 - SCEC-T1 foundation dispatch is `10345d3a`; T1-R2 is independently accepted with material correction at `cb6d4bc3879a753eb9abc7283b55148c141c46d1`. Resolution claims now require path/hash/locator evidence, successor consumption revalidates predecessor evidence hashes, the corrected GC010 replay retains unresolved blockers, and scaffolds emit the contract. Focused SCEC 115/115, combined focused 205/205, reviewer-fast 67/67 and pre-commit 88/88 passed. The two out-of-scope diagnostics remain disclosed and untouched; T1J-R4 remains parked.
@@ -170,7 +169,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-P4-C1 automatic evidence collection remains active at `b9bdba712`; M5/M10/safety and M20 rules are unchanged, with eligible count zero. In the independent System Chain lane, CSCC-R1-T2A is dispatch-ready at `c05a6139a`. The next proactive move is delegated execution of the source-only route-selection and Alibaba provider-parity reconciliation work order. The worker must make zero provider calls and write only the named assessment and worker return. Alibaba live permission is reserved for a later accepted implementation tranche. Route cutover, T3-T6, P2/P4 mutation, canary, P5/P6, current provider/live/public action, MAO launch, GC-010 and downstream adoption remain parked. Latest numbered wave remains LHW24.
+P4-C1 automatic evidence collection remains active at `b9bdba712`; M5/M10/safety and M20 rules are unchanged, with eligible count zero. System Chain T2A closed at `c1f95ae1d` with `STOP_NO_SAFE_CANONICAL_CUTOVER`; no automatic successor exists. Reopen requires a fresh source-verified route-build owner/mechanism packet. A separate protected documentation-drift repair may correct the stale live-run standard path without creating live authority. T2B/T3, Alibaba live proof, P2/P4 mutation, canary, P5/P6, provider/public action, MAO, GC-010 and downstream adoption remain parked. Latest numbered wave remains LHW24.
 
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
@@ -200,7 +199,7 @@ Public-sync source commit: `848f602f72dc4e3ef8b98ea0e3f7196a59944906`; public `m
 Public artifacts: lifecycle/control-loop docs and downstream bootstrap guidance from provenance `ae9a8a6b3`; public-sync-preflight and public-surface checks passed. This is not deploy or production readiness.
 
 ## Core Guard Self-Protection Authorization - Current Continuity
-Authorized guard-maintenance scope: project CSCC-R1-T2 blocked closure and T2A documentation-authoring next move while preserving the active P4-C1 automatic collector.
+Authorized guard-maintenance scope: CSCC-R1-T2A stop closure continuity while preserving the active P4-C1 automatic collector.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -212,9 +211,10 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/csccR1T2BlockedCanonicalPortFoundation20260903.json`
 - `CVF_SESSION/state/entries/csccR1T2ARouteSelectionDispatch20260903.json`
+- `CVF_SESSION/state/entries/csccR1T2ASafeCanonicalCutoverStop20260903.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: explicit 2026-09-03 continuation and Alibaba live-test permission; T2A dispatch material `c05a6139a` requires current continuity while P4-C1 remains unchanged. The live permission is recorded as future-only and is not consumable by T2A.
-Rollback boundary: revert only this continuity projection; preserve T2A dispatch `c05a6139a`, T2 blocked material `2ffe5a803`, T1 closure `f93b00e42`, T0A `57b63fb30` and P4-C1 `b9bdba712`. Current provider calls, route cutover, T3-T6, P2/P4 mutation, P5/P6 and external/project effects are not authorized by this sync.
+Operator authorization: explicit 2026-09-03 continuation and Alibaba live-test permission; T2A stop material `c1f95ae1d` requires current continuity while P4-C1 remains unchanged. The live permission remains future-only and unconsumed.
+Rollback boundary: revert only this continuity projection; preserve T2A closure `c1f95ae1d`, T2 `2ffe5a803`, T1 `f93b00e42` and P4-C1 `b9bdba712`. Provider calls, route cutover, T2B/T3, P2/P4 mutation, P5/P6 and external/project effects are not authorized by this sync.
 ## Claim Boundary
 
-This handoff records bounded P4-C1 automatic collection plus T2A source-only dispatch readiness; it makes no active route composition, T3-T6, current provider/live/public, P2/P4 mutation, P5/P6, MAO launch, GC-010, project rollout or external-effect claim.
+This handoff records bounded P4-C1 automatic collection plus T2A stop closure; it makes no active route composition, T2B/T3-T6, provider/live/public, P2/P4 mutation, P5/P6, MAO launch, GC-010, project rollout or external-effect claim.

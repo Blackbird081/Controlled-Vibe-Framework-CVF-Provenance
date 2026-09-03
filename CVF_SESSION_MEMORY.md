@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=execute committed CSCC-R1-T2A source reconciliation at `c05a6139a`; parked checkpoint=Alibaba live proof until accepted implementation, plus route cutover, T3-T6, P2/P4 mutation, canary, P5/P6 and external/project effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=P4 automatic collection while System Chain remains stopped at CSCC-R1-T2A `c1f95ae1d`; parked checkpoint=fresh route-build owner proof, Alibaba live proof, T2B/T3, P2/P4 mutation, canary, P5/P6 and external/project effects.
 
 ## Current Mode
 
@@ -52,7 +52,7 @@ Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. Accepted P4 material is `b9bdba712`; eligible count remains 0 and the M5/M10/safety/M20 rules are unchanged. In the independent System Chain lane, CSCC-R1-T2A is `DISPATCH_READY` at `c05a6139a`; the next proactive action is execution of its source-only route-selection and Alibaba provider-parity reconciliation work order. The worker has a two-path write manifest, must make zero provider calls, and cannot consume the operator's reserved Alibaba live permission. Route cutover, T3-T6, P2/P4 mutation, canary, P5/P6, current provider/live/public action, MAO launch, GC-010 and downstream effects remain parked. Latest finalized numbered LHW wave remains LHW24.
+Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. Accepted P4 material is `b9bdba712`; eligible count remains 0 and the M5/M10/safety/M20 rules are unchanged. In the independent System Chain lane, CSCC-R1-T2A is `CLOSED_PASS_BOUNDED` at `c1f95ae1d` with terminal `STOP_NO_SAFE_CANONICAL_CUTOVER`. Four ownership classes are reconciled, but no accepted route-build exclusion/packaging mechanism exists; T2B/T3 and Alibaba live proof remain unopened. Reopen requires a fresh source-verified owner/mechanism packet. A separate protected documentation-drift repair may correct the missing non-archive live-run diagnostic path without creating runtime authority. P2/P4 mutation, canary, P5/P6, provider/live/public, MAO, GC-010 and downstream effects remain parked. Latest finalized numbered LHW wave remains LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
