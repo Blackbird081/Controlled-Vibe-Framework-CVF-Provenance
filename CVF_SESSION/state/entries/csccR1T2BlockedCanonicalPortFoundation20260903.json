@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2753,
+  "stateKey": "csccR1T2BlockedCanonicalPortFoundation20260903",
+  "value": "CLOSED_BLOCKED_BOUNDED at material commit 2ffe5a803d6a7bacbdbef79cacae4deb00451b91 with terminal PARTIAL_IMPLEMENTATION_CONTRACT_OR_MANIFEST_CONFLICT. Gateway-owned CanonicalExecutionPort, atomic attempt boundary, additive canonicalExecutionId propagation and deterministic tests are retained as dormant foundation; /api/execute still uses direct executeAI and has no active Gateway receipt/manifest. Independent evidence passed Gateway 108/108, Web 123/123, both TypeScript checks, reviewer-fast 67/67 and pre-commit 88/88 with zero provider/live calls. T2A documentation/source-reconciliation authoring is released; T3 and route cutover remain held."
+}
