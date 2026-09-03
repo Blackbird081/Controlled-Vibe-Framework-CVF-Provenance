@@ -29,8 +29,8 @@ the public-sync allowlist.
 | Server-side candidate gate | GitHub Actions run `33715255525` | PASS |
 | Public candidate preflight | 65 pending paths; 0 violations; 6 inherited non-blocking dependency-debt rows | PASS |
 | Protocol | `cvf.external-agent-round-trip@1.3.0` | SYNCHRONIZED |
-| Portable packet | `D:\UNG DUNG AI\EXTERNAL\_AGENT\_READ` | REFRESHED_LIVE_PUBLIC_MAIN |
-| Packet receipt | SHA-256 `7c8c06e44220aed58cceb2a1e32b0209c5bfb36b5a61b46657fd21004f199f3f` | PASS |
+| Portable packet | `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` | REFRESHED_LIVE_PUBLIC_MAIN |
+| Packet receipt | SHA-256 `23cf16ead08f50e950bf9c7b964d79576075da7d616881c39a1891a1a197d622` | PASS |
 | Packet file reconciliation | five receipt-bound packet files | 5/5 HASH_MATCH |
 
 ## Public Export Disposition
