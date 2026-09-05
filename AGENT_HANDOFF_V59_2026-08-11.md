@@ -5,7 +5,8 @@ Status: ACTIVE
 - GC010 root architecture is closed parked at material commit `e867d5432`; no truthful current product owner exists, no successor tranche opened, and system-chain selection must move outside GC010.
 - Repository: private provenance SOT; accepted P4-C1 automatic-collection material: `b9bdba71290a9d94a12438b413401ecb4c6a72a7`; branch `main`.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
-- Branch: `main`; current material HEAD: `c05a6139a`; prior continuity commit `3b5ea3cca`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
+- Branch: `main`; current material HEAD: `0b8398f6e67c1fe48eb95fdfee8fd22c9524b7d6`; prior continuity commit `3b5ea3cca`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
+- Phase-03R canonical planning materialization is independently accepted `CLOSED_PASS_BOUNDED` at material commit `0b8398f6e67c1fe48eb95fdfee8fd22c9524b7d6` after three external-worker rework rounds. Reviewer-fast passed 67/67, pre-commit passed 88/88, and committed-range pre-closure passed every material/content check with only this expected GC-020 continuity sync outstanding. Four ignored private successors remain local and hash-bound; no WP implementation, runtime, provider/live, public-sync, deployment, or production authority opens.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
 - EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
@@ -210,9 +211,10 @@ Protected paths:
 - `CVF_SESSION/state/entries/csccR1T2ARouteSelectionDispatch20260903.json`
 - `CVF_SESSION/state/entries/csccR1T2ASafeCanonicalCutoverStop20260903.json`
 - `CVF_SESSION/state/entries/externalAbsorptionPreparationPublicSync20260903.json`
+- `CVF_SESSION/state/entries/phase03rCanonicalPlanningMaterializationClosure20260905.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: explicit 2026-09-03 GitHub and `EXTERNAL_AGENT_READ` refresh for future repo absorption preparation; public record `b4fb661bb` and correction `100d6bd8b` require continuity while P4-C1 and T2A stop remain unchanged.
-Rollback boundary: revert only this continuity projection; preserve public `132371c3`, corrected record `100d6bd8b`, T2A `c1f95ae1d` and P4-C1 `b9bdba712`. Repo absorption, provider calls, route cutover, T2B/T3, P2/P4 mutation and P5/P6 are not authorized by this sync.
+Operator authorization: explicit 2026-09-03 GitHub and `EXTERNAL_AGENT_READ` refresh plus explicit 2026-09-05 instruction for Codex to act as reviewer and close the Phase-03R materialization; P4-C1 and the T2A stop remain unchanged.
+Rollback boundary: revert only this continuity projection; preserve Phase-03R material `0b8398f6e`, public `132371c3`, corrected record `100d6bd8b`, T2A `c1f95ae1d` and P4-C1 `b9bdba712`. Repo absorption, provider calls, route cutover, T2B/T3, P2/P4 mutation and P5/P6 are not authorized by this sync.
 ## Claim Boundary
 
 This handoff records P4-C1 automatic collection, T2A stop closure, and a completed public/packet preparation refresh; it makes no repo-absorption, active route composition, T2B/T3-T6, provider/live/further-public, P2/P4 mutation, P5/P6, MAO, GC-010, deployment or production claim.
