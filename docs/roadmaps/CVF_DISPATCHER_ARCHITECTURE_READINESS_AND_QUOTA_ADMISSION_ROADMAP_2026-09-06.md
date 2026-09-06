@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: DARA_T0_REVIEWED_PASS_BOUNDED_MFRP_OWNER_SYNCED_T1_DESIGN_ALLOWED
+Status: DARA_T1_DESIGN_ACCEPTED_BOUNDED_T2_WORK_ORDER_ALLOWED
 
 Date: 2026-09-06
 
@@ -192,18 +192,18 @@ Admission rules:
 | Tranche | Mission | Outputs | Entry | Exit decision |
 |---|---|---|---|---|
 | DARA-T0 | incident capture and owner reconciliation | this roadmap and immutable evidence IDs DARA-E01 through DARA-E12 | operator foundation-first direction | `T0_REVIEWED_PASS_BOUNDED_MFRP_OWNER_SYNCED`; independent review not claimed |
-| DARA-T1 | architecture-readiness contract design | matrix schema, role/fault taxonomy, MFRP input composition and pre-invocation quota-admission contract; no new reviewer workflow | accepted T0 owner sync | `DESIGN_ACCEPTED_BOUNDED` or `STOP_NO_SAFE_COMPOSITION` |
+| DARA-T1 | architecture-readiness contract design | `docs/assessments/CVF_DARA_T1_ARCHITECTURE_READINESS_CONTRACT_DESIGN_2026-09-06.md`; matrix schema, role/fault taxonomy, MFRP input composition and pre-invocation quota-admission contract; no new reviewer workflow | accepted T0 owner sync | `DESIGN_ACCEPTED_BOUNDED` through sequential review; independent review not claimed |
 | DARA-T2 | minimal foundation implementation | existing-owner template/standard/scaffold/checker changes with protected-path authorization | accepted T1 plus GC-018/work order | `CORE_CONTROL_IMPLEMENTED` or `BLOCK_IMPLEMENTATION_EVIDENCE` |
 | DARA-T3 | historical replay | Initial/R1/R2 replay fixture and deterministic receipt showing earliest stop | accepted T2 | `REPLAY_BLOCKS_AVOIDABLE_INVOCATIONS` or `RETURN_TO_DESIGN` |
 | DARA-T4 | handoff to existing MFRP shadow validation | admit DARA observations only through existing MFRP P4-C1 eligibility and checkpoint rules | accepted T3 and MFRP admission | `HANDOFF_ACCEPTED_NO_NEW_COLLECTOR` or `PARK_NO_ELIGIBLE_EVIDENCE` |
 | DARA-T5 | existing-owner projection decision | MFRP P5/P6 owns activation; DARA supplies bounded architecture evidence only | accepted MFRP checkpoint decision | `CONSUMED_BY_MFRP` or `PARK_FOUNDATION` |
 
-No tranche opens automatically. On 2026-09-06 the operator authorized Codex to
-act sequentially as orchestrator and reviewer for DARA. The phases and commits
-must remain separate, fresh evidence must be recomputed after the role switch,
-and independent review must not be claimed. DARA-T2 still requires a new
-protected-path work order. Runtime/provider/public actions are outside this
-roadmap.
+No implementation tranche opens automatically. On 2026-09-06 the operator
+authorized Codex to act sequentially as orchestrator and reviewer for DARA and
+then directed continuation. DARA-T1 design is accepted through that disclosed
+route; independent review is not claimed. DARA-T2 baseline/work-order authoring
+may begin, but implementation still requires the fresh protected-path packet
+to pass pre-dispatch. Runtime/provider/public actions remain outside scope.
 
 ## WP-ARCH-003 Interlock
 

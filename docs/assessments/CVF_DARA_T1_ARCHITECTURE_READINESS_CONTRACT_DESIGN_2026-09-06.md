@@ -2,7 +2,7 @@
 
 Memory class: governed-assessment
 
-Status: DARA_T1_DESIGN_PENDING_REVIEW
+Status: DARA_T1_DESIGN_ACCEPTED_BOUNDED
 
 docType: assessment
 
@@ -136,9 +136,13 @@ Matrix-level scalars:
 - `architectureSemanticReviewCommit`;
 - `architectureSemanticReviewFileSha256`.
 
-The digest recipe is UTF-8 without BOM, LF row serialization, literal field
-order as listed above, forward-slash repo-relative paths, ordinal/code-point
-row ordering by `criterionId`, and one trailing LF. Machine output cannot set
+The digest recipe is UTF-8 without BOM, LF row serialization, forward-slash
+repo-relative paths, ordinal/code-point row ordering by `criterionId`, and one
+trailing LF. Its immutable authoring preimage includes fields from
+`criterionId` through `evidenceOutputPath` only. It excludes derived
+`machineDisposition`, `semanticAcceptance`, `semanticReviewPath`, and
+`semanticReviewCommit` values, so the reviewer can bind the pre-review digest
+without a circular self-reference. Machine output cannot set
 `architectureSemanticDisposition: ACCEPTED_BOUNDED`.
 
 ## Closed-Chain Invariants
@@ -267,6 +271,9 @@ existing owner surfaces plus its required baseline/work order/return/review:
 | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` | add the applicability declaration, matrix/scalars, fault attribution, echo contract, and fail-closed quota ordering |
 | `governance/compat/build_dispatch_packet_scaffold.py` | emit checker-safe blocked defaults and matrix headings; never invent architecture rows |
 | `governance/compat/test_build_dispatch_packet_scaffold.py` | prove applicable scaffold defaults are blocked and no second reviewer workflow appears |
+| `governance/compat/build_worker_return_skeleton_scaffold.py` | emit the immutable architecture identity echo without copying or re-evaluating the matrix |
+| `governance/compat/run_worker_return_scaffold.py` | keep the standalone worker-return generator aligned with the same echo contract |
+| `governance/compat/test_run_worker_return_scaffold.py` | prove both worker-return generation routes remain aligned and blocked on identity drift |
 | `governance/compat/check_work_order_dispatch_quality.py` | define shared marker/enums and preserve the existing gate entrypoint |
 | `governance/compat/check_work_order_dispatch_quality_range.py` | invoke architecture validation only for applicable changed work orders |
 | `governance/compat/check_work_order_dispatch_quality_source.py` | reuse exact path/symbol/line validation for matrix identities |
@@ -282,7 +289,8 @@ Minimum T2 test families:
 1. applicable HIGH external dispatch with a complete accepted matrix passes;
 2. missing declaration or row fails before invocation;
 3. placeholder or path-class evidence output fails;
-4. duplicate `behaviorIdentity` or canonical owner fails;
+4. duplicate `behaviorIdentity`, or two owner assignments for the same
+   behavior, fails; one owner path may legitimately own different behaviors;
 5. nonexistent existing path, locator, or symbol fails;
 6. producer without carrier/export/registration/composition/consumer fails;
 7. planned component with no production composition test fails;
@@ -303,14 +311,17 @@ dispatch inside the existing Work Order Template and dispatch-quality gate,
 while Review Cost owns semantic admission/quota and MFRP retains reviewer
 readout/evidence collection. No new control-plane owner is required.
 
-Proposed T1 disposition: `READY_FOR_SEQUENTIAL_REVIEW`.
+Accepted T1 disposition: `DESIGN_ACCEPTED_BOUNDED` through the disclosed
+sequential review recorded in
+`docs/reviews/CVF_DARA_T1_ARCHITECTURE_READINESS_CONTRACT_DESIGN_REVIEW_2026-09-06.md`.
 
 ## Decision / Proposed Tranche
 
-Freeze this document as the sole DARA-T1 design candidate. If sequential review
-accepts it, update the roadmap to `DARA_T1_DESIGN_ACCEPTED_BOUNDED_T2_WORK_ORDER_ALLOWED`.
-That status permits only T2 baseline/work-order authoring; it does not permit
-implementation or external invocation.
+The frozen candidate at `86d5b7a69` was sequentially reviewed and repaired in
+one consolidated reviewer-local set. Update the roadmap to
+`DARA_T1_DESIGN_ACCEPTED_BOUNDED_T2_WORK_ORDER_ALLOWED`. That status permits
+only T2 baseline/work-order authoring; it does not permit implementation or
+external invocation.
 
 ## Risk / Corrective Action
 
