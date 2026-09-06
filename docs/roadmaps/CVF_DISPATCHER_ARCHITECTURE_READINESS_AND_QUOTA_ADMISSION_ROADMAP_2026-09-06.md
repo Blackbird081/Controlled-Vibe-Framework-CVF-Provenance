@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: DARA_T0_EVIDENCE_CAPTURED_T1_DESIGN_REQUIRED
+Status: DARA_T0_REVIEWED_PASS_BOUNDED_T1_DESIGN_ALLOWED
 
 Date: 2026-09-06
 
@@ -150,7 +150,7 @@ Admission rules:
 
 | Tranche | Mission | Outputs | Entry | Exit decision |
 |---|---|---|---|---|
-| DARA-T0 | incident capture and owner reconciliation | this roadmap and immutable evidence IDs DARA-E01 through DARA-E09 | operator foundation-first direction | `T0_EVIDENCE_CAPTURED` or `BLOCK_SOURCE_INTEGRITY` |
+| DARA-T0 | incident capture and owner reconciliation | this roadmap and immutable evidence IDs DARA-E01 through DARA-E09 | operator foundation-first direction | `T0_REVIEWED_PASS_BOUNDED` through the disclosed sequential single-agent review; independent review not claimed |
 | DARA-T1 | architecture-readiness contract design | matrix schema, role/fault taxonomy, semantic reviewer checkpoint and quota-admission contract | independent review of T0, or operator-authorized sequential single-agent review that explicitly makes no independence claim | `DESIGN_ACCEPTED_BOUNDED` or `STOP_NO_SAFE_COMPOSITION` |
 | DARA-T2 | minimal foundation implementation | existing-owner template/standard/scaffold/checker changes with protected-path authorization | accepted T1 plus GC-018/work order | `CORE_CONTROL_IMPLEMENTED` or `BLOCK_IMPLEMENTATION_EVIDENCE` |
 | DARA-T3 | historical replay | Initial/R1/R2 replay fixture and deterministic receipt showing earliest stop | accepted T2 | `REPLAY_BLOCKS_AVOIDABLE_INVOCATIONS` or `RETURN_TO_DESIGN` |
