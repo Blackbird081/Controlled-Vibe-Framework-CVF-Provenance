@@ -151,15 +151,18 @@ Admission rules:
 | Tranche | Mission | Outputs | Entry | Exit decision |
 |---|---|---|---|---|
 | DARA-T0 | incident capture and owner reconciliation | this roadmap and immutable evidence IDs DARA-E01 through DARA-E09 | operator foundation-first direction | `T0_EVIDENCE_CAPTURED` or `BLOCK_SOURCE_INTEGRITY` |
-| DARA-T1 | architecture-readiness contract design | matrix schema, role/fault taxonomy, semantic reviewer checkpoint and quota-admission contract | independent review of T0 | `DESIGN_ACCEPTED_BOUNDED` or `STOP_NO_SAFE_COMPOSITION` |
+| DARA-T1 | architecture-readiness contract design | matrix schema, role/fault taxonomy, semantic reviewer checkpoint and quota-admission contract | independent review of T0, or operator-authorized sequential single-agent review that explicitly makes no independence claim | `DESIGN_ACCEPTED_BOUNDED` or `STOP_NO_SAFE_COMPOSITION` |
 | DARA-T2 | minimal foundation implementation | existing-owner template/standard/scaffold/checker changes with protected-path authorization | accepted T1 plus GC-018/work order | `CORE_CONTROL_IMPLEMENTED` or `BLOCK_IMPLEMENTATION_EVIDENCE` |
 | DARA-T3 | historical replay | Initial/R1/R2 replay fixture and deterministic receipt showing earliest stop | accepted T2 | `REPLAY_BLOCKS_AVOIDABLE_INVOCATIONS` or `RETURN_TO_DESIGN` |
 | DARA-T4 | bounded shadow validation | selected future HIGH/CRITICAL dispatch dual-evaluated without relaxing legacy gates | accepted T3 and operator release | `SHADOW_VALUE_PROVEN` or `ROLLBACK_NO_VALUE` |
 | DARA-T5 | projection and activation decision | guard orientation, downstream profile and active-workflow projection | accepted T4 | `ACTIVATE_BOUNDED` or `PARK_FOUNDATION` |
 
-No tranche opens automatically. DARA-T1 requires independent review; DARA-T2
-requires a new protected-path work order. Runtime/provider/public actions are
-outside this roadmap.
+No tranche opens automatically. On 2026-09-06 the operator authorized Codex to
+act sequentially as orchestrator and reviewer for DARA. The phases and commits
+must remain separate, fresh evidence must be recomputed after the role switch,
+and independent review must not be claimed. DARA-T2 still requires a new
+protected-path work order. Runtime/provider/public actions are outside this
+roadmap.
 
 ## WP-ARCH-003 Interlock
 
