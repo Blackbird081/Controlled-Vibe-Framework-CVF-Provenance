@@ -2,7 +2,7 @@
 
 Memory class: governed-review
 
-Status: SINGLE_AGENT_MULTI_ROLE_REVIEW_PASS_BOUNDED
+Status: SINGLE_AGENT_MULTI_ROLE_REVIEW_PASS_BOUNDED_MFRP_OWNER_SYNC_CORRECTED
 
 docType: review
 
@@ -118,6 +118,23 @@ It is not a new DARA owner and caused no external invocation.
 
 Disposition: RULE_EXISTS; retain as T1 test-design evidence.
 
+### DARA-RV-05 - reviewer-efficiency ownership corrected to MFRP
+
+Operator review identified that CVF already owns reviewer non-duplication in
+the MFRP roadmap and its active P4-C1 collection tranche. Source verification
+confirmed `reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION`,
+forbidden per-row review, M5/M10/M20 aggregation and current eligible count
+zero. DARA must therefore provide an upstream architecture-binding input to
+MFRP rather than create another semantic checkpoint, readout, receipt,
+collector or shadow-validation owner.
+
+The full DARA-T0 source reconstruction was a one-time roadmap authority audit;
+it is not a template requiring future reviewers to repeat orchestrator or
+worker work. Future review consumes valid machine evidence and uses a focused
+probe only for a named contradiction with expected information gain.
+
+Disposition: OWNER_OVERLAP_CORRECTED_IN_ROADMAP.
+
 No blocking T0 source-integrity or owner-overlap finding remains. Waivers:
 NONE. Independent review: NOT CLAIMED.
 
@@ -139,7 +156,7 @@ Reviewer verdict:
 
 Accepted T0 disposition:
 
-`T0_REVIEWED_PASS_BOUNDED`
+`T0_REVIEWED_PASS_BOUNDED_MFRP_OWNER_SYNCED`
 
 DARA-T1 architecture-contract design may begin. This decision does not open
 DARA-T2 implementation and does not reopen `WP-ARCH-003`. T1 must return to
@@ -155,6 +172,10 @@ review before any protected-path work order or external quota admission.
 - define dispatcher, worker and reviewer fault attribution separately;
 - define quota admission before invocation 1 and preserve SCEC as the later
   convergence/stop owner;
+- compose the matrix into the existing MFRP phase-return/readout route and do
+  not add a reviewer checkpoint, receipt, collector or rerun policy;
+- require named contradiction, bounded claim, expected information gain and
+  cost reason before a reviewer reruns already-valid deterministic evidence;
 - use literal dated evidence paths with no placeholders;
 - keep `WP-ARCH-003`, runtime/provider/public work and external invocation
   parked.
@@ -167,6 +188,7 @@ review before any protected-path work order or external quota admission.
 | structural gates did not prove production composition | `MACHINE_GATE_GAP` | `GOVERNANCE_CONTROL_PLANE` | `MACHINE_CHECK_CANDIDATE` | DARA-T1 defines deterministic fields and T2 checker scope without claiming semantic judgment |
 | repeated repair consumed avoidable invocations | `PHASE_GATE_PLACEMENT_GAP` | `COST_ECONOMICS_LEARNING` | `DESIGN_REVIEW_REQUIRED` | place quota admission before invocation 1 and replay the incident in DARA-T3 |
 | ambient untracked evidence contaminated an intended commit check | `PHASE_GATE_PLACEMENT_GAP` | `GOVERNANCE_CONTROL_PLANE` | `RULE_EXISTS` | apply commit-choreography changed-set isolation; use the incident as a T1 negative case |
+| DARA risked duplicating reviewer-efficiency controls | `ORCHESTRATOR_PACKET_GAP` | `GOVERNANCE_CONTROL_PLANE` | `RULE_EXISTS` | bind DARA to MFRP P4-C1 and remove the parallel checkpoint/readout/collector direction |
 
 ## External Knowledge Intake Routing
 
@@ -224,7 +246,7 @@ claimed.
 | Session or invocation | DARA-T0 sequential reviewer phase, 2026-09-06 |
 | Working directory | repository root |
 | Command or tool surface | governed-source reads, SHA-256, literal and symbol searches, git, apply_patch, focused gates and full hook |
-| Target paths | DARA roadmap and this review |
+| Target paths | DARA roadmap and this review, including the MFRP owner synchronization correction |
 | Allowed scope source | operator authorization on 2026-09-06 for Codex to act as orchestrator and reviewer |
 | Before status evidence | frozen orchestrator commit `e5eccc3e1`; two pending incident files preserved untracked |
 | After status evidence | reviewer status reconciliation plus this review; pending incident bytes unchanged |
