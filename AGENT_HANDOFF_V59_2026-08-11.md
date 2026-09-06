@@ -5,9 +5,9 @@ Status: ACTIVE
 - GC010 root architecture is closed parked at material commit `e867d5432`; no truthful current product owner exists, no successor tranche opened, and system-chain selection must move outside GC010.
 - Repository: private provenance SOT; accepted P4-C1 automatic-collection material: `b9bdba71290a9d94a12438b413401ecb4c6a72a7`; branch `main`.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
-- Branch: `main`; current material HEAD: `9ac20a2d8b0e26a4a5cf1b86dc24f9b3e3d999af`; prior continuity commit `bb2f9a19e`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
+- Branch: `main`; current material HEAD: `9541b079b9ef691b8b17a40cfe025f22e2c5c526`; prior continuity commit `17c8fe30f`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
 - Phase-03R canonical planning materialization is independently accepted `CLOSED_PASS_BOUNDED` at material commit `0b8398f6e67c1fe48eb95fdfee8fd22c9524b7d6` after three external-worker rework rounds. Reviewer-fast passed 67/67, pre-commit passed 88/88, and committed-range pre-closure passed every material/content check with only this expected GC-020 continuity sync outstanding. Four ignored private successors remain local and hash-bound; no WP implementation, runtime, provider/live, public-sync, deployment, or production authority opens.
-- Phase-04 `WP-ARCH-003` Rework Round 2 authority is at `9ac20a2d8`; its same two untracked outputs remain rejected/pending after semantic rereview exposed dispatcher architecture incompleteness. Operator now prioritizes CVF foundation uplift; further finding repair and external invocation are parked.
+- Phase-04 `WP-ARCH-003` R2 at `9ac20a2d8` remains rejected/pending. DARA-T0 foundation evidence/roadmap is committed at `9541b079b`; further finding repair and external invocation stay parked until the roadmap interlock permits them.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
 - EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
@@ -171,7 +171,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-P4-C1 remains active at `b9bdba712`, eligible count zero. System Chain remains `STOP_NO_SAFE_CANONICAL_CUTOVER`. In Phase-04, `WP-ARCH-003` R2 is rejected/pending at `9ac20a2d8`; next is a CVF foundation roadmap uplift for dispatcher architecture readiness and quota admission. No further external repair, implementation, or automatic successor is authorized until that foundation interlock closes. Public CVF remains `132371c3`; T2B/T3, provider/live, further public action, P2/P4 mutation, canary, P5/P6, MAO, GC-010 and downstream adoption remain parked. Latest closed LHW wave: `LHW24`.
+P4-C1 remains active at `b9bdba712`, eligible count zero. System Chain remains `STOP_NO_SAFE_CANONICAL_CUTOVER`. DARA-T0 is committed at `9541b079b`; next is independent DARA-T0 review, then DARA-T1 architecture design only if accepted. `WP-ARCH-003` repair/external invocation remains blocked by the DARA interlock. Public CVF remains `132371c3`; T2B/T3, provider/live, further public action, P2/P4 mutation, canary, P5/P6, MAO, GC-010 and downstream adoption remain parked. Latest closed LHW wave: `LHW24`.
 
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
@@ -207,8 +207,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/phase04Wave0WpArch003OwnerGapAuditDispatch20260906.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: on 2026-09-06 the operator directed foundation uplift before any further `WP-ARCH-003` finding repair; P4-C1 and the T2A stop remain unchanged.
-Rollback boundary: revert only this continuity projection; preserve Phase-04 authorities through `9ac20a2d8`, Phase-03R material `0b8398f6e`, public `132371c3`, T2A `c1f95ae1d` and P4-C1 `b9bdba712`. Further external repair, WP implementation, provider calls, public sync and parked lanes are not authorized by this sync.
+Operator authorization: on 2026-09-06 the operator directed foundation uplift before further `WP-ARCH-003` repair; DARA-T0 is now materialized at `9541b079b`; P4-C1 and the T2A stop remain unchanged.
+Rollback boundary: revert only this continuity projection; preserve DARA-T0 `9541b079b`, Phase-04 authority `9ac20a2d8`, Phase-03R `0b8398f6e`, public `132371c3`, T2A `c1f95ae1d` and P4-C1 `b9bdba712`. Further external repair, WP implementation, provider calls, public sync and parked lanes are not authorized by this sync.
 ## Claim Boundary
 
-This handoff records P4-C1, T2A stop, and the `WP-ARCH-003` R2 rejection/park in favor of foundation uplift; it makes no acceptance, implementation, external-repair, provider/live, public, deployment or production claim.
+This handoff records DARA-T0 materialization, P4-C1, T2A stop and the `WP-ARCH-003` R2 park; it makes no DARA acceptance, implementation, external-repair, provider/live, public, deployment or production claim.
