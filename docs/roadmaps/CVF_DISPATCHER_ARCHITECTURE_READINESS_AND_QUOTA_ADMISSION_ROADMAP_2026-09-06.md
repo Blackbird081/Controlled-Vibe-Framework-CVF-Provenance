@@ -6,6 +6,8 @@ Status: DARA_T0_REVIEWED_PASS_BOUNDED_MFRP_OWNER_SYNCED_T1_DESIGN_ALLOWED
 
 Date: 2026-09-06
 
+providerExecutionAuthority: FORBIDDEN
+
 Parent roadmap: `docs/roadmaps/CVF_GCLH_GOVERNANCE_CONTROL_LOSS_HARDENING_ROADMAP_2026-08-31.md`
 
 ## Authorization And Decision
@@ -368,10 +370,49 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private foundation design evidence; no public-sync authority.
 
+## P4-C1 Universal Discovery Hardening Authorization
+
+This narrow maintenance action closes an authority-discoverability gap in the
+already-active MFRP owner. It does not implement the DARA Architecture Binding
+Matrix, open DARA-T1/T2, create a new reviewer workflow, or change P4-C1
+eligibility/checkpoints. The activation anchor remains `b9bdba712`; moving
+count and checkpoint state remain continuity-owned.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: expose the existing P4-C1 reviewer
+non-duplication and active-measurement invariant in the root carrier and guard
+orientation, route it to existing MFRP/Review Cost owners, and make the
+instruction-carrier checker fail if the binding is removed.
+
+Protected paths:
+
+- `AGENTS.md`
+- `governance/compat/check_active_archive_hygiene.py`
+- `governance/compat/test_check_active_archive_hygiene.py`
+- `governance/compat/check_agent_instruction_carriers.py`
+- `governance/compat/test_check_agent_instruction_carriers.py`
+
+Operator authorization: on 2026-09-06 the operator explicitly required a
+stronger universal constraint so all future agents know P4-C1 is implemented,
+reviewer duplication is already constrained, measurement is active, and no
+operator reminder is required.
+
+Rollback boundary: revert only this authorization and its matching root
+carrier, routing index, guard orientation, Review Cost standard,
+archive-hygiene exception, checkers and focused-test edits if rejected.
+Preserve P4-C1 material commit `b9bdba712`, its collector and all evidence.
+
+Not authorized: no DARA Architecture Binding Matrix implementation, new
+receipt/readout/collector/checkpoint, worker finding repair, external-agent
+invocation, runtime/provider/live/public action, or P4 eligibility change.
+
 ## Claim Boundary
 
 This roadmap records a bounded governance/control-plane incident and a
-foundation-first work sequence. It does not accept the pending worker outputs,
-prove an unimplemented control, authorize DARA-T1/T2 automatically, resume
-`WP-ARCH-003`, consume another external invocation, mutate runtime/source, or
-make provider/live/public/deployment/production claims.
+foundation-first work sequence. The P4-C1 universal-discovery hardening above
+only preserves an already-active MFRP invariant; it does not implement DARA's
+architecture gate. It does not accept the pending worker outputs, authorize
+DARA-T1/T2 automatically, resume `WP-ARCH-003`, consume another external
+invocation, mutate runtime/source, or make provider/live/public/deployment/
+production claims.

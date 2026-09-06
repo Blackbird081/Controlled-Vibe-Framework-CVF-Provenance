@@ -256,6 +256,24 @@ worker's implementation or repeat every upstream role's work. A later terminal
 review may verify that earlier mechanical corrections were applied as part of
 its bounded evidence sample, without opening a separate review cycle.
 
+### Universal Discovery And Active Measurement Binding
+
+This rule is a standing reviewer invariant, not an operator-reminder-driven
+exception. P4-C1 automatic evidence collection was materially activated at
+`b9bdba712`; the current eligible count and checkpoint state must be resolved
+from the bootstrap read model and active handoff at every dispatch, review,
+closure, and resumed session. The activation commit is an immutable historical
+anchor, while continuity owns the moving measurement state.
+
+Every reviewer applies
+`EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION`. Valid returned and
+machine evidence is consumed. Per-row review and broad duplicate reruns are
+not admitted. A focused rerun requires a named insufficiency or contradiction,
+a bounded claim, expected information gain, and a cost/latency reason. P4-C1
+routine aggregation remains at M5, M10, M20, or an existing safety trigger.
+Agents must apply this binding proactively; absence of an operator reminder
+does not suspend it.
+
 Review-admission trigger classification remains reviewer/orchestrator judgment.
 Machine checks may enforce declared evidence shape and objective trigger facts,
 but must not manufacture semantic criticality or require review merely because
@@ -496,7 +514,12 @@ completion reviews.
 
 Protected paths:
 
+- `AGENTS.md`
 - `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md`
+- `governance/compat/check_active_archive_hygiene.py`
+- `governance/compat/test_check_active_archive_hygiene.py`
+- `governance/compat/check_agent_instruction_carriers.py`
+- `governance/compat/test_check_agent_instruction_carriers.py`
 - `governance/compat/check_review_cost_control.py`
 - `governance/compat/test_check_review_cost_control.py`
 - `governance/compat/agent_autorun_command_catalog.py`
@@ -516,10 +539,39 @@ re-dispatch cost, on 2026-09-02 rejected step-by-step review admission after an
 R1B authoring checkpoint recreated the governance tax being removed, and then
 directed reviewer-local repair for bounded findings because returning work to
 another agent forces a fresh authority/source/changed-set context reload.
+On 2026-09-06 the operator further required the active P4-C1 boundary and
+measurement posture to become universally discoverable without reminders.
 
 Rollback boundary: revert only the trigger-based review-admission addendum if
 it conflicts with higher authority; preserve earlier SOP, checker/test, ADIF,
 orientation, commit-steward, completion-review, R1B review, and packet evidence.
+
+### P4-C1 Universal Discovery Hardening - 2026-09-06
+
+Authorized guard-maintenance scope: make the already-active MFRP P4-C1
+reviewer non-duplication and measurement boundary unavoidable at the root
+carrier, route it to existing owners, and make carrier validation fail if the
+binding is later removed.
+
+Protected paths:
+
+- `AGENTS.md`
+- `governance/compat/check_agent_instruction_carriers.py`
+- `governance/compat/test_check_agent_instruction_carriers.py`
+
+Operator authorization: on 2026-09-06 the operator explicitly required a
+stronger universal constraint so future agents know P4-C1 is active, reviewer
+duplication is already constrained, measurement is ongoing, and no operator
+reminder is needed.
+
+Rollback boundary: revert only this universal-discovery addendum and the
+matching carrier/routing/orientation/archive-hygiene/checker/test edits if
+rejected; preserve
+P4-C1 material commit `b9bdba712` and all collected evidence.
+
+Not authorized: no new reviewer workflow, receipt, collector, checkpoint,
+runtime/provider/live/public action, DARA-T1/T2 implementation, or change to
+P4-C1 eligibility semantics.
 
 ## Single-Pass SOP Epistemic Process Block - 2026-07-20
 

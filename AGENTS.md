@@ -1,8 +1,8 @@
 # CVF Agent Instructions
 
-Root instruction carrier and canonical CVF authority. This is a compact router
-carrying the startup contract, authority hierarchy, task-class routing, and
-direct machine bindings. The full per-rule owner map lives in the routing index
+Root instruction carrier and canonical CVF authority. This compact router carries
+the startup contract, authority hierarchy, task routing, and direct machine
+bindings. The full per-rule owner map lives in the routing index
 `docs/reference/CVF_AGENT_INSTRUCTION_CARRIER_ROUTING_INDEX_2026-08-11.md`.
 Compaction moved prose there and repealed no rule; if a rule is not restated
 here, resolve its canonical owner through that index.
@@ -13,17 +13,14 @@ The active session front door for new or resumed agents is:
 
 `CVF_SESSION_MEMORY.md`
 
-Read continuity surfaces progressively, not the full state/history aggregate
-by default: (1) read the bootstrap read model first for compact current facts
-(current mode, active handoff, next allowed move):
+Read continuity surfaces progressively, not the full state/history aggregate by
+default: (1) read the bootstrap model for mode, handoff, and next allowed move:
 
 `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-(2) read the compact front door above and the current active handoff named by
-the state registry; (3) read only the current-authority paths those two
-surfaces name for the current task; (4) resolve the full machine-readable
-state registry only as a targeted lookup, when a current fact is missing,
-contradictory, or the task explicitly requires historical evidence:
+(2) read the compact front door and named active handoff; (3) read only their
+current-authority paths; (4) use the full state registry only as a targeted
+lookup for a missing/contradictory fact or required historical evidence:
 
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 
@@ -35,10 +32,7 @@ exact-hash tracked migration debt in
 `governance/compat/CVF_ACTIVE_CONTINUITY_READ_BUDGET_MIGRATION.json`; that
 debt cannot grow and does not license reading full history by default.
 
-The current active handoff in that registry is:
-
-`AGENT_HANDOFF_V59_2026-08-11.md`
-
+The current active handoff is `AGENT_HANDOFF_V59_2026-08-11.md`.
 Historical handoffs are archived under:
 
 `CVF_SESSION/handoffs/archive/`
@@ -93,13 +87,9 @@ if no CVF-governed source exists, mark the claim `BLOCKED_SOURCE_NOT_FOUND`,
 ## Guard Orientation Index
 
 Before authoring any governed CVF artifact, read
-`docs/reference/guard_orientation/README.md` to identify which guard surfaces
-apply to the current task class and role, what blocks or outputs are required,
-and what failure patterns to avoid. This applies to dispatcher, worker,
-reviewer, closer, and session-sync steward alike; it is an orientation layer,
-and canonical standards, work orders and machine checkers still control. Also
-read `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
-to avoid known literal-format gate traps.
+`docs/reference/guard_orientation/README.md` for the applicable role/task
+guards and `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
+for known gate traps. Canonical standards, work orders and checkers still control.
 
 ## Task Class Routing
 
@@ -111,7 +101,7 @@ entry points:
 | Startup / resume | `CVF_SESSION_MEMORY.md`; bootstrap read model; active handoff |
 | Work-order authoring / dispatch | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` |
 | Worker execution | `docs/reference/guard_orientation/README.md`; governing work order |
-| Reviewer / closure | `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md` |
+| Reviewer / closure | Review Cost standard; MFRP roadmap; `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md` |
 | Session-sync | active handoff; `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
 | ADIF defect disclosure | `governance/compat/check_adif_defect_registry_disclosure.py` |
 | Corpus scan / local or external-repo absorption / proportional routing | `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`; `docs/reference/CVF_TASK_PROPORTIONAL_GOVERNANCE_ROUTING_STANDARD_2026-08-17.md`; `docs/reference/external_agent_review/README.md` (`cvf.external-agent-round-trip@1.2.0`) |
@@ -121,10 +111,19 @@ entry points:
 | Handoff boundary | `docs/reference/agent_handoff/README.md` |
 | UI / Web design | `DESIGN.md` |
 
-Repeated agent mistakes are governance training samples. Promote a repeated
-defect into a written rule, then into a machine check, then into the earliest
-applicable autorun phase gate, per
-`docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`.
+Repeated mistakes become a written rule, machine check, then the earliest
+autorun gate per `docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md`.
+
+## Mandatory Reviewer Non-Duplication And Active MFRP Measurement
+
+P4-C1 was activated at `b9bdba712`; owners:
+`docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md` and
+`docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_2026-09-02.md`.
+At dispatch/review/closure/resume, resolve live state from bootstrap and the
+active handoff without operator reminder. Apply
+`EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION`: consume valid evidence;
+no per-row review or broad duplicate rerun. Reruns require a named contradiction,
+expected information gain and cost reason; routine review is M5/M10/safety/M20.
 
 ## Mandatory Public Export Disposition Guard
 

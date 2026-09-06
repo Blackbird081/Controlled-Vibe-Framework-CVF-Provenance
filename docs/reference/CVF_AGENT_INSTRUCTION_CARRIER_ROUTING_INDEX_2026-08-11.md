@@ -78,6 +78,7 @@ owner and bindingClass.
 | Guard Orientation Index | `docs/reference/guard_orientation/README.md` | ROUTE |
 | Mandatory Provider-Specific Agent Memory Boundary | `governance/compat/check_agent_packet_authority_and_encoding.py` | ROUTE |
 | Mandatory F-1 Diminishing Returns Stop Rule | `docs/reviews/CVF_F1_DIMINISHING_RETURNS_STOP_RULE_2026-05-15.md` | ROUTE |
+| Mandatory Reviewer Non-Duplication And Active MFRP Measurement | `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md`; `docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md`; active P4-C1 continuity | ROUTE_AND_RETAIN_LITERAL |
 | Mandatory Public Export Disposition Guard | `docs/reference/CVF_PUBLIC_EXPORT_DISPOSITION_STANDARD_2026-05-30.md` | ROUTE_AND_RETAIN_LITERAL |
 | Critical Repository Boundary | `docs/reference/CVF_AGENTS_CRITICAL_REPOSITORY_BOUNDARY_2026-06-23.md` | ROUTE |
 | UI / Web Design Contract | `DESIGN.md` | ROUTE |
@@ -124,6 +125,7 @@ Removing one breaks that checker; they are not decorative prose.
 | `governance/compat/check_agent_workspace_state.py` | `AGENTS.md` | `Mandatory Agent Workspace State Generated Aggregate Guard`; `CVF_SESSION/agent_workspace/ACTIVE_AGENT_WORKSPACE_STATE.json`; `governance/compat/check_agent_workspace_state.py`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_LANE_TAXONOMY.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_STATE_ITEM_TEMPLATE.json` |
 | `governance/compat/check_agent_workspace_skeleton.py` | `AGENTS.md` | `Mandatory Agent Workspace Skeleton Guard`; `CVF_SESSION/agent_workspace/workspace/README.md`; `governance/compat/check_agent_workspace_skeleton.py` |
 | `governance/compat/check_agent_workspace_runtime_boundary.py` | `AGENTS.md` | `Mandatory Agent Workspace Runtime Boundary Guard`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_RUNTIME_EXPANSION_READINESS_CONTRACT.md`; `CVF_SESSION/agent_workspace/runtime_queue/README.md`; `docs/reference/agent_workspace/CVF_AGENT_WORKSPACE_OPERATOR_VIEW_PLAN.md`; `governance/compat/check_agent_workspace_runtime_boundary.py` |
+| `governance/compat/check_agent_instruction_carriers.py` | `AGENTS.md` | `Mandatory Reviewer Non-Duplication And Active MFRP Measurement`; MFRP roadmap/work-order paths; `b9bdba712`; `EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION`; `M5/M10/safety/M20` |
 | `governance/compat/check_public_export_disposition.py` | `AGENTS.md` | `governance/compat/check_public_export_disposition.py` |
 | `governance/compat/check_corpus_completeness_report_integrity.py` | `AGENTS.md`; `CLAUDE.md` (`NOT_CVF_SOURCE`) | `governance/compat/check_corpus_completeness_report_integrity.py` |
 | `governance/compat/check_corpus_to_knowledge_map_reconciliation.py` | `AGENTS.md`; `CLAUDE.md` (`NOT_CVF_SOURCE`) | `governance/compat/check_corpus_to_knowledge_map_reconciliation.py` |

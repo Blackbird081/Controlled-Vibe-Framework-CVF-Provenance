@@ -143,6 +143,15 @@ class CompliantFixtureTests(unittest.TestCase):
         kinds = {kind for _, kind, _ in violations}
         self.assertIn("direct_literal_missing", kinds)
 
+    def test_missing_mfrp_reviewer_boundary_in_agents_is_flagged(self) -> None:
+        stripped = _minimal_agents_text().replace(
+            "EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION", ""
+        )
+        _write(self._root, checker.AGENTS_PATH, stripped)
+        violations = checker.run()
+        messages = [message for _, kind, message in violations if kind == "direct_literal_missing"]
+        self.assertTrue(any("EVALUATE_RETURNED_EVIDENCE" in message for message in messages))
+
     def test_missing_claude_not_cvf_source_is_flagged(self) -> None:
         stripped = _minimal_claude_text().replace("NOT_CVF_SOURCE", "")
         _write(self._root, checker.CLAUDE_PATH, stripped)
