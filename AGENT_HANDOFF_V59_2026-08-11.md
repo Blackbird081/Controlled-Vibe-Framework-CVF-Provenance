@@ -53,7 +53,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 - Route/registry adoption, repeat-live, public sync, deploy and production remain unopened.
 
 ## Latest Work / Changes
-- DARA-T2 R2 root amendment `f0c5dc61d` follows rejection review `eee0b0e57`; it adds the schema owner, exact base-debt rule and evidence-only reviewer repair boundary. Invocation ceiling 2/2 remains closed. Next: sequential amendment review; WP-ARCH-003 stays parked.
+- DARA-T2 R2 amendment `f0c5dc61d` is accepted bounded at `9c485c2a4`; next is one evidence-only return reconciliation then final material review. Implementation stays read-only, invocation ceiling stays 2/2, and WP-ARCH-003 stays parked.
 - Lifecycle sync is complete: source `ae9a8a6b3`, bootstrap repair `44dcff6a9`, continuity `f336740de`, public PR 7/main `2d7e4fefc`. Workspace core matches public main; operator-local pack has 28 artifacts from `f336740de`; external packet receipt SHA-256 is `e453c6919e94fe313393c01c9ba9ed6944d3860e11b06d852bf29373bd67d775`. Project pins and P2/P4 canary data were not mutated.
 - CSCC-R1 T2A is `CLOSED_PASS_BOUNDED` at `c1f95ae1d` with terminal `STOP_NO_SAFE_CANONICAL_CUTOVER`. Composition, credential, quota and rollback-test ownership are reconciled; route-build exclusion/packaging has no accepted owner/mechanism. T2B/T3 remain unopened and the Alibaba live grant is unconsumed.
 - MFRP R1B replay `2b06d928d` remains rejected; R1A-R2 and R1B-R2 evidence are preserved. P4 initialization is accepted at `8de63c077`; the bounded natural-observation window is open with zero eligible pairs and no per-return routine review.
@@ -172,7 +172,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-P4-C1 stays active at `b9bdba712`, eligible zero, checkpoints M5/M10/safety/M20. DARA R2 amendment `f0c5dc61d` awaits sequential review; if accepted, only return evidence may be reconciled before final material review. Invocation ceiling 2/2 forbids redispatch. WP-ARCH-003 and other parked lanes remain unchanged. Latest closed LHW: `LHW24`.
+P4-C1 stays active at `b9bdba712`, eligible zero, checkpoints M5/M10/safety/M20. DARA R2 amendment review `9c485c2a4` permits one evidence-only return reconciliation then final material review. Implementation stays read-only; invocation ceiling is 2/2. WP-ARCH-003 and other parked lanes remain unchanged. Latest closed LHW: `LHW24`.
 
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
