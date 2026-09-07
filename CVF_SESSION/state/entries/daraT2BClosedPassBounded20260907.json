@@ -1,5 +1,5 @@
 {
   "stateOrder": 2769,
   "stateKey": "daraT2BClosedPassBounded20260907",
-  "value": "DARA-T2B is CLOSED_PASS_BOUNDED. Exact fifteen-path implementation and reviewer material commit 483176267488692eea84c2ba012717ed4a265330 passed reviewer-fast and pre-commit 88/88; terminal roadmap, work-order and completion-review metadata commit 11b6e579b54d68f6f7f32785fc3ac4a37232d2cb passed pre-commit 88/88. DARA-T3, substantive WP-ARCH-003 work, new external invocation, provider/live and public actions remain parked pending fresh operator direction."
+  "value": "DARA-T2B is CLOSED_PASS_BOUNDED. Exact fifteen-path implementation and reviewer material commit 483176267488692eea84c2ba012717ed4a265330 passed reviewer-fast and pre-commit 88/88; terminal roadmap, work-order and completion-review metadata commit 11b6e579b54d68f6f7f32785fc3ac4a37232d2cb passed pre-commit 88/88; reviewer SCEC closure-hash reconciliation and CLOSURE_HASH_LIFECYCLE_GAP evidence commit e601523cd passed focused SCEC, reviewer-fast and pre-commit 88/88. DARA-T3, substantive WP-ARCH-003 work, new external invocation, provider/live and public actions remain parked pending fresh operator direction."
 }
