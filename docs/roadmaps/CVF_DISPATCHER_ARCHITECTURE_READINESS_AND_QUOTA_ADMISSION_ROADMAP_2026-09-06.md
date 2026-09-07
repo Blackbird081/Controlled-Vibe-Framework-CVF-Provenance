@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: DARA_T2B_ACCEPTED_BOUNDED_DARA_T3_PARKED
+Status: DARA_T4_PARK_NO_ELIGIBLE_EVIDENCE
 
 Date: 2026-09-06
 
@@ -20,8 +20,11 @@ work-order and ADIF owners, and establishes a fail-closed interlock.
 Decision: `PROCEED_FOUNDATION_FIRST`. The two pending `WP-ARCH-003` worker
 outputs are preserved as committed incident evidence at `c2a1f7c7c` and
 receive no substantive acceptance or implementation authority from this
-roadmap. DARA-T2B is closed bounded at `483176267`; no further external repair
-invocation or DARA-T3 dispatch opens automatically.
+roadmap. DARA-T2B is closed bounded at `483176267`. DARA-T3 terminated
+`RETURN_TO_DESIGN` at `c9e3c88e0355491cd2e6bfffda3c04249352a553`; the
+operator accepted that bounded terminal disposition and opened DARA-T4 on
+2026-09-08. DARA-T4 finds no MFRP-eligible evidence and parks without creating
+a collector, receipt, checkpoint or DARA-T5 authority.
 
 ## Purpose
 
@@ -86,6 +89,9 @@ Frozen repository base for this roadmap: `17c8fe30fdc4468f6748d67926e3d95224723a
 | DARA-E13 | `docs/reviews/CVF_DARA_T2_R2_FINAL_IMPLEMENTATION_COMPLETION_REVIEW_2026-09-07.md`; commit `ceadf2c3ff8d5e42d37d974a5ba8c1413b617ccb`; SHA-256 `c879896888a1595b1b1850d21f0aa09a9eecd8b6924f1085e3df487bd792fa6e` | four focused probes proved two new critical fail-open root causes and three dependent evidence manifestations; DARA-T2 closure was rejected at review round 3 | ACCEPT_COMMITTED_REVIEW_EVIDENCE |
 | DARA-E14 | operator report on 2026-09-07 | total elapsed time for the observed run was 200 minutes; exact token or subscription-quota usage was not measured | ACCEPT_OPERATOR_SUPPLIED_COST_EVIDENCE_WITH_UNAVAILABLE_QUOTA |
 | DARA-E15 | operator instruction on 2026-09-07 | no Claude CLI invocation; Codex remains orchestrator/reviewer; operator authorizes route `OPERATOR_AUTHORIZED_INTERNAL_RECOVERY` and manually relays any worker packet | ACCEPT_OPERATOR_ROUTE_AUTHORIZATION |
+| DARA-E16 | `docs/reviews/CVF_DARA_T3_R1_WP_ARCH_003_HISTORICAL_REPLAY_COMPLETION_REVIEW_2026-09-07.md`; commit `c9e3c88e0355491cd2e6bfffda3c04249352a553` | final admitted T3 return is `RETURN_TO_DESIGN`; exact-five worker material remains uncommitted and the external ceiling is exhausted at 2/2 | ACCEPT_COMMITTED_TERMINAL_EVIDENCE |
+| DARA-E17 | operator instruction on 2026-09-08 | DARA-T3 is complete as a bounded terminal disposition and DARA-T4 may proceed | ACCEPT_OPERATOR_TRANCHE_AUTHORIZATION |
+| DARA-E18 | existing `governance/compat/mfrp_shadow_canary_autocollect.py` readout on 2026-09-08 | `P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE`; no eligible committed phase-return/receipt pair is available | ACCEPT_CURRENT_MACHINE_READOUT |
 
 Measured cost is bounded to three external invocations and two repair turns.
 Token or subscription-quota quantity is `UNKNOWN`: the local repository does
@@ -199,8 +205,8 @@ Admission rules:
 | DARA-T1 | architecture-readiness contract design | `docs/assessments/CVF_DARA_T1_ARCHITECTURE_READINESS_CONTRACT_DESIGN_2026-09-06.md`; matrix schema, role/fault taxonomy, MFRP input composition and pre-invocation quota-admission contract; no new reviewer workflow | accepted T0 owner sync | `DESIGN_ACCEPTED_BOUNDED` through sequential review; independent review not claimed |
 | DARA-T2 | minimal foundation implementation | existing-owner template/standard/scaffold/checker changes with protected-path authorization | accepted T1 plus GC-018/work order | `REJECTED_REVIEW_COST_ESCALATION_REQUIRED` at `ceadf2c3f`; superseded only by bounded T2B recovery |
 | DARA-T2B | operator-authorized internal recovery | one new parent assignment bound to DARA-E13; repair the complete R3 finding set inside the existing exact 14-path implementation manifest; operator-mediated prompt transport only | DARA-E13 plus DARA-E15 | `CORE_CONTROL_IMPLEMENTED` at `483176267`; independent completion review `CLOSED_PASS_BOUNDED` |
-| DARA-T3 | historical replay | Initial/R1/R2 replay fixture and deterministic receipt showing earliest stop | accepted T2 | `REPLAY_BLOCKS_AVOIDABLE_INVOCATIONS` or `RETURN_TO_DESIGN` |
-| DARA-T4 | handoff to existing MFRP shadow validation | admit DARA observations only through existing MFRP P4-C1 eligibility and checkpoint rules | accepted T3 and MFRP admission | `HANDOFF_ACCEPTED_NO_NEW_COLLECTOR` or `PARK_NO_ELIGIBLE_EVIDENCE` |
+| DARA-T3 | historical replay | Initial/R1/R2 replay fixture and deterministic receipt showing earliest stop | accepted T2 | `RETURN_TO_DESIGN` at `c9e3c88e0`; operator accepted bounded completion without accepting replay effectiveness |
+| DARA-T4 | handoff to existing MFRP shadow validation | admit DARA observations only through existing MFRP P4-C1 eligibility and checkpoint rules | operator-authorized terminal T3 disposition plus MFRP admission check | `PARK_NO_ELIGIBLE_EVIDENCE`; existing collector returned `SKIPPED_NO_ELIGIBLE_CANDIDATE`, no new collector or checkpoint |
 | DARA-T5 | existing-owner projection decision | MFRP P5/P6 owns activation; DARA supplies bounded architecture evidence only | accepted MFRP checkpoint decision | `CONSUMED_BY_MFRP` or `PARK_FOUNDATION` |
 
 No implementation tranche opens automatically. On 2026-09-06 the operator
@@ -242,6 +248,23 @@ The DARA-T2B route is fail closed under all of these rules:
    only contradiction-driven focused probes, and does not recreate the repair.
 8. DARA-T3 and `WP-ARCH-003` remain parked until DARA-T2B is independently
    accepted and committed.
+
+## DARA-T4 MFRP Handoff Disposition
+
+DARA-T4 consumes the committed T3 completion review as bounded incident
+evidence, not as an accepted replay-success claim. The five candidate replay
+files remain uncommitted, the worker return has no trusted committed P4
+observation block, and no matching validated P2 receipt exists. The existing
+P4-C1 collector therefore returned `SKIPPED_NO_ELIGIBLE_CANDIDATE` and did not
+increment `eligibleCount`, create a pending observation row, or raise a safety
+trigger.
+
+Terminal T4 disposition: `PARK_NO_ELIGIBLE_EVIDENCE`.
+
+This is a successful fail-closed handoff decision. It does not convert the T3
+rejection into `REPLAY_BLOCKS_AVOIDABLE_INVOCATIONS`, does not manufacture a
+natural sample, and does not open M5, M10, M20, P5, P6, DARA-T5 or
+`WP-ARCH-003` implementation.
 
 ## WP-ARCH-003 Interlock
 
