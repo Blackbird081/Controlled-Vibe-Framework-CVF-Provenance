@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACCEPTED_PENDING_MATERIAL_COMMIT
+Status: CLOSED_PASS_BOUNDED
 
 docType: review
 
@@ -14,7 +14,7 @@ reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 
 ## Purpose
 
-Issue the terminal reviewer decision for the operator-authorized DARA-T2B
+Record the terminal reviewer decision for the operator-authorized DARA-T2B
 internal recovery after the R4 fail-open repairs and the separately committed
 normalization of the two parked `WP-ARCH-003` evidence carriers.
 
@@ -65,8 +65,8 @@ findings remain parked and pending independent review.
 
 Decision: `ACCEPT_DARA_T2B_FOR_REVIEWER_MATERIAL_COMMIT`.
 
-- Commit the fourteen DARA implementation/return paths together with this
-  reviewer decision.
+- The fourteen DARA implementation/return paths and this reviewer decision
+  were committed atomically at `483176267488692eea84c2ba012717ed4a265330`.
 - Keep DARA-T3 closed.
 - Keep `WP-ARCH-003` substantive implementation parked.
 - Perform session continuity as a separate commit after material closure.
@@ -77,7 +77,7 @@ Decision: `ACCEPT_DARA_T2B_FOR_REVIEWER_MATERIAL_COMMIT`.
 |---|---|---|---|---|---|
 | The orchestrator supplied obsolete base `0ba931bb...`, creating a false mixed-range blocker | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | Always bind recovery verification to the worker return's `executionBaseHead`; this review used `4269c502...` | handled |
 | Pre-implementation passed while GC-051 first failed at pre-commit | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | CHECKER_CANDIDATE | Preserve this event as evidence for earlier corpus-registry coverage admission; no checker change is made in this closure | deferred |
-| An uncommitted parked artifact contaminated an unrelated tranche | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | Do not dispatch a new material tranche with unresolved prior-governance artifacts unless a governed preservation/commit route is already established | handled |
+| An uncommitted parked artifact contaminated an unrelated tranche | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | A new material tranche requires prior-governance artifacts to have a governed preservation/commit route | handled |
 
 Runtime/provider/cost learning lane: N/A_WITH_REASON: zero provider/live calls
 occurred and exact token usage is not exposed.
@@ -94,9 +94,9 @@ dependentFindingCountThisRound: 2
 
 providerCallCount: 0
 
-materialCommitCount: 1
+materialCommitCount: 3
 
-continuityCommitCount: 0
+continuityCommitCount: 1
 
 elapsedReviewMinutes: NOT_AVAILABLE_WITH_REASON: no trusted end-to-end timer is bound to this review
 
@@ -104,11 +104,11 @@ tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: no provider-neutral token meter is
 
 valueDelta: DARA fail-open repairs accepted; parked evidence converted from untracked cross-tranche blocker to committed, registered evidence
 
-stopDisposition: STOP_ACCEPTED_FOR_COMMIT
+stopDisposition: COMPLETE_REVIEW
 
 preRepairAuditDisposition: COMPLETE_BEFORE_FINAL_REPAIR
 
-commitPlanDisposition: ONE_MATERIAL_COMMIT_THEN_ONE_CONTINUITY_COMMIT
+commitPlanDisposition: EXCEPTION_WITH_REASON: one parked-evidence preservation commit, one DARA implementation commit and this closeout metadata commit were required because GC-051 and continuity ordering blocked a truthful atomic close
 
 latencyDisposition: EXCEEDED_FAST_PATH_WITH_REASON
 
@@ -139,14 +139,14 @@ the parked evidence carrier.
 
 ### Claim Update
 
-DARA-T2B is materially acceptable. WP-ARCH-003 remains substantively parked.
+DARA-T2B is accepted and materially committed at `483176267488692eea84c2ba012717ed4a265330`. WP-ARCH-003 remains substantively parked.
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_review_cost_control.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_corpus_scan_registry.py`; `governance/compat/run_agent_commit_steward_preflight.py` |
-| literalTokensReviewed | review headings, accepted-pending-commit boundary, telemetry enums, defect classes, trace labels, private export disposition |
+| literalTokensReviewed | review headings, closed-pass-bounded boundary, telemetry enums, defect classes, trace labels, private export disposition |
 | gateRunPurpose | confirm the already-complete DARA repair and the committed resolution of its external parked-evidence blocker; not first discovery |
 | claimBoundary | machine conformance does not accept WP-ARCH-003, open DARA-T3, or prove runtime/provider behavior |
 
@@ -174,8 +174,8 @@ DARA-T2B is materially acceptable. WP-ARCH-003 remains substantively parked.
 | Target paths | fourteen DARA candidate paths plus this reviewer decision; prior four-path WP evidence commit read-only |
 | Allowed scope source | operator authorized orchestrator/reviewer and `OPERATOR_AUTHORIZED_INTERNAL_RECOVERY`; governing DARA work order |
 | Before status evidence | HEAD `4269c5020`; fourteen DARA paths plus two untracked WP artifacts; staging empty |
-| After status evidence | HEAD `c2a1f7c7c`; WP evidence committed separately; fourteen DARA paths remain; this review added |
-| Diff evidence | `git status --short --untracked-files=all`; focused hashes; commit `c2a1f7c7c` |
+| After status evidence | WP evidence committed separately at `c2a1f7c7c`; exact 15-path DARA material committed at `483176267` after continuity `cf4d63d94` |
+| Diff evidence | `git status --short --untracked-files=all`; focused hashes; commits `c2a1f7c7c`, `cf4d63d94` and `483176267` |
 | Approval boundary | review, closure and evidence normalization only |
 | Claim boundary | no worker implementation recreation, DARA-T3, WP implementation, external/provider/live/public action |
 | Agent type | reviewer/orchestrator/closer |
@@ -191,9 +191,22 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance implementation review; no public-sync authority.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_DARA_T2B_OPERATOR_AUTHORIZED_INTERNAL_RECOVERY_2026-09-07.md` | terminal `CLOSED_PASS_BOUNDED`; no successor authority | PASS |
+| Completion or reviewer artifact | this review | terminal decision, exact 15-path material commit `483176267`, bounded claim | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DISPATCHER_ARCHITECTURE_READINESS_AND_QUOTA_ADMISSION_ROADMAP_2026-09-06.md` | DARA-T2B accepted bounded; DARA-T3 parked | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/registry/entries/phase04-wave0-wp-arch-003-bounded-owner-gap-source-audit.json` | GC-051 aggregate and source entry committed at `c2a1f7c7c` | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing operator lookup remains valid; this bounded recovery changed the JSON-governed entry/aggregate only | PASS |
+| External evidence digest | N/A with reason: no external path or external artifact was accepted as closure evidence | zero provider/live calls; repo-local committed evidence only | N/A with reason: no external evidence digest |
+| System loop interlock | N/A with reason: DARA-T3 and downstream loops remain parked | no downstream tranche opened | N/A with reason: no loop transition |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V59_2026-08-11.md` | continuity `cf4d63d94` recognizes pre-material evidence; current material HEAD is recognized before closeout and final sync follows | PASS |
+
 ## Claim Boundary
 
-This review accepts the bounded DARA-T2B control-plane implementation for a
-reviewer-owned material commit. It does not accept WP-ARCH-003, authorize
+This review closes the bounded DARA-T2B control-plane implementation at
+`483176267488692eea84c2ba012717ed4a265330`. It does not accept WP-ARCH-003, authorize
 DARA-T3, claim runtime or provider readiness, consume another external
 invocation, publish, deploy or push.

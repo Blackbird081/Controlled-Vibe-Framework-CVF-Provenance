@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: DARA_T2_REJECTED_OPERATOR_AUTHORIZED_INTERNAL_RECOVERY_OPEN
+Status: DARA_T2B_ACCEPTED_BOUNDED_DARA_T3_PARKED
 
 Date: 2026-09-06
 
@@ -18,9 +18,10 @@ incident as bounded evidence, routes it into existing GCLH, SCEC, Review Cost,
 work-order and ADIF owners, and establishes a fail-closed interlock.
 
 Decision: `PROCEED_FOUNDATION_FIRST`. The two pending `WP-ARCH-003` worker
-outputs remain untracked evidence and receive no acceptance or implementation
-authority from this roadmap. No further external repair invocation may be
-dispatched until the DARA foundation acceptance criteria below are closed.
+outputs are preserved as committed incident evidence at `c2a1f7c7c` and
+receive no substantive acceptance or implementation authority from this
+roadmap. DARA-T2B is closed bounded at `483176267`; no further external repair
+invocation or DARA-T3 dispatch opens automatically.
 
 ## Purpose
 
@@ -74,7 +75,7 @@ Frozen repository base for this roadmap: `17c8fe30fdc4468f6748d67926e3d95224723a
 | DARA-E02 | `docs/work_orders/CVF_AGENT_WORK_ORDER_PHASE04_WAVE0_WP_ARCH_003_OWNER_GAP_AUDIT_AMENDMENT_1_2026-09-06.md` | R1 declares invocation 1 before and 2 after execution | ACCEPT_COMMITTED_AUTHORITY |
 | DARA-E03 | `docs/work_orders/CVF_AGENT_WORK_ORDER_PHASE04_WAVE0_WP_ARCH_003_OWNER_GAP_AUDIT_AMENDMENT_2_2026-09-06.md` | R2 declares invocation 2 before and 3 after execution | ACCEPT_COMMITTED_AUTHORITY |
 | DARA-E04 | `docs/assessments/CVF_PHASE04_WAVE0_WP_ARCH_003_OWNER_GAP_AUDIT_2026-09-06.md`, raw SHA-256 `91b2a5c07fcf341c94f3adbcaab040ec7e343a4a7faf523becabad17ec321f27` | pending R2 manifest creates `evaluateAuthorityExpansionApproval` in both Execution Plane and Guard Contract and retains `<date>` evidence-path placeholders | PENDING_INCIDENT_EVIDENCE_NOT_AUTHORITY |
-| DARA-E05 | `docs/reviews/CVF_PHASE04_WAVE0_WP_ARCH_003_OWNER_GAP_AUDIT_WORKER_RETURN_2026-09-06.md`, raw SHA-256 `ce137665a13a852c05ed0b03aca60c58c6feb7829ff4fe3e7335f4c3209ba8ac` | exact-two/no-commit/test-ledger discipline is present; SCEC reaches `STOP_REASSESS_ARCHITECTURE` after two non-decreasing transitions | PENDING_INCIDENT_EVIDENCE_NOT_AUTHORITY |
+| DARA-E05 | `docs/reviews/CVF_PHASE04_WAVE0_WP_ARCH_003_OWNER_GAP_AUDIT_WORKER_RETURN_2026-09-06.md`, committed raw SHA-256 `014eebd65e8e5271e907a99a103687b8e7761b80d2399103cc402c7ab4ed8f98` | exact-two/no-commit/test-ledger discipline is preserved; operator-authorized normalization repaired corpus/knowledge-map evidence without accepting the proposal | COMMITTED_INCIDENT_EVIDENCE_NOT_AUTHORITY |
 | DARA-E06 | `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0026.md` | sequential reviewer findings consume quota and time; a full record/edge matrix is required before first repair | ACCEPT_EXISTING_RULE_OWNER |
 | DARA-E07 | `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0055.md` | local gates can pass while the semantic problem boundary moves; SCEC checks evidence shape, not engineering truth | ACCEPT_EXISTING_RULE_OWNER |
 | DARA-E08 | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` | orchestrator translates roadmap into work orders; implementer executes the order; invented symbols must return to orchestrator | ACCEPT_EXISTING_AUTHORITY |
@@ -196,8 +197,8 @@ Admission rules:
 |---|---|---|---|---|
 | DARA-T0 | incident capture and owner reconciliation | this roadmap and immutable evidence IDs DARA-E01 through DARA-E12 | operator foundation-first direction | `T0_REVIEWED_PASS_BOUNDED_MFRP_OWNER_SYNCED`; independent review not claimed |
 | DARA-T1 | architecture-readiness contract design | `docs/assessments/CVF_DARA_T1_ARCHITECTURE_READINESS_CONTRACT_DESIGN_2026-09-06.md`; matrix schema, role/fault taxonomy, MFRP input composition and pre-invocation quota-admission contract; no new reviewer workflow | accepted T0 owner sync | `DESIGN_ACCEPTED_BOUNDED` through sequential review; independent review not claimed |
-| DARA-T2 | minimal foundation implementation | existing-owner template/standard/scaffold/checker changes with protected-path authorization | accepted T1 plus GC-018/work order | `REJECTED_REVIEW_COST_ESCALATION_REQUIRED` at `ceadf2c3f`; candidate remains uncommitted |
-| DARA-T2B | operator-authorized internal recovery | one new parent assignment bound to DARA-E13; repair the complete R3 finding set inside the existing exact 14-path implementation manifest; operator-mediated prompt transport only | DARA-E13 plus DARA-E15 | `CORE_CONTROL_IMPLEMENTED` or `BLOCK_INTERNAL_RECOVERY_EVIDENCE` |
+| DARA-T2 | minimal foundation implementation | existing-owner template/standard/scaffold/checker changes with protected-path authorization | accepted T1 plus GC-018/work order | `REJECTED_REVIEW_COST_ESCALATION_REQUIRED` at `ceadf2c3f`; superseded only by bounded T2B recovery |
+| DARA-T2B | operator-authorized internal recovery | one new parent assignment bound to DARA-E13; repair the complete R3 finding set inside the existing exact 14-path implementation manifest; operator-mediated prompt transport only | DARA-E13 plus DARA-E15 | `CORE_CONTROL_IMPLEMENTED` at `483176267`; independent completion review `CLOSED_PASS_BOUNDED` |
 | DARA-T3 | historical replay | Initial/R1/R2 replay fixture and deterministic receipt showing earliest stop | accepted T2 | `REPLAY_BLOCKS_AVOIDABLE_INVOCATIONS` or `RETURN_TO_DESIGN` |
 | DARA-T4 | handoff to existing MFRP shadow validation | admit DARA observations only through existing MFRP P4-C1 eligibility and checkpoint rules | accepted T3 and MFRP admission | `HANDOFF_ACCEPTED_NO_NEW_COLLECTOR` or `PARK_NO_ELIGIBLE_EVIDENCE` |
 | DARA-T5 | existing-owner projection decision | MFRP P5/P6 owns activation; DARA supplies bounded architecture evidence only | accepted MFRP checkpoint decision | `CONSUMED_BY_MFRP` or `PARK_FOUNDATION` |
@@ -216,7 +217,9 @@ on new independent critical evidence, not an automatic third rework. It is
 valid only for `dispatchSurface: INTERNAL_AGENT`. Manual copy/paste is a
 transport method, not a consumer-class override: a recipient that crosses an
 independent provider, account, credential, process, or other external boundary
-must stop as `BLOCKED_SURFACE_MISMATCH` and cannot consume this route.
+must stop as `BLOCKED_SURFACE_MISMATCH` and cannot consume this route. The
+bounded internal recovery was independently accepted and committed at
+`483176267`; this does not open DARA-T3.
 
 ## Operator-Authorized Internal Recovery Interlock
 
@@ -254,8 +257,9 @@ after all of the following are true:
 - the new dispatch starts from that accepted architecture, not as a narrow
   successor to the stopped SCEC chain.
 
-The two current untracked files must remain preserved as incident evidence
-until a separately authorized disposition archives, replaces or rejects them.
+The two current files are committed incident evidence at `c2a1f7c7c` and must
+remain substantively parked until a separately authorized disposition
+archives, replaces or rejects them.
 
 ## Failure And Escalation Modes
 

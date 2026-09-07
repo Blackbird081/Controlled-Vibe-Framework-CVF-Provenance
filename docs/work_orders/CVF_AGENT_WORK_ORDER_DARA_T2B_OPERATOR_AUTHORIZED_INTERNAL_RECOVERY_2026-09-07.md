@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: DARA-T2B-OPERATOR-AUTHORIZED-INTERNAL-RECOVERY
 
@@ -454,14 +454,14 @@ governance-behavior release claim and forbids provider/live execution.
 
 ## Acceptance Criteria
 
-- [ ] IR-01 through IR-10 pass with command-backed evidence.
-- [ ] HT-IR-01 through HT-IR-14 exist and pass with the expected outcomes.
-- [ ] Final worker diff is exactly 14 paths and no new file exists.
-- [ ] Cleanup-only path is base-equal and absent from final diff.
-- [ ] Both parked WP hashes match the dispatch values.
-- [ ] Worker return cites only real tests and truthful final commands.
-- [ ] External count remains 2/2; this recovery uses zero external/provider calls.
-- [ ] Staging is empty and worker makes no commit.
+- [x] IR-01 through IR-10 pass with command-backed evidence.
+- [x] HT-IR-01 through HT-IR-14 exist and pass with the expected outcomes.
+- [x] Final worker diff was exactly 14 paths and no new implementation file existed.
+- [x] Cleanup-only path was base-equal and absent from final diff.
+- [x] Both parked WP hashes matched at worker return; the later operator-authorized evidence normalization is preserved separately at `c2a1f7c7c`.
+- [x] Worker return cites only real tests and truthful final commands.
+- [x] External count remains 2/2; this recovery used zero external/provider calls.
+- [x] Staging was empty and the worker made no commit.
 
 Fail conditions: surface mismatch; missing or fabricated evidence; any fail-open
 hostile case; any extra path; exception increase; parked hash drift; external,
@@ -537,7 +537,7 @@ ADIF-0031, ADIF-0039, ADIF-0043, ADIF-0049, ADIF-0006.
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_work_order_dispatch_quality_range.py`; `governance/compat/check_work_order_dispatch_quality_source.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/check_semantic_convergence_control.py`; `governance/compat/check_task_governance_route.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_python_automation_size.py` |
-| literalTokensReviewed | DISPATCH_READY, INITIAL internal convergence values, accepted design echo, source table columns, protected authorization, no-commit return, trace labels, private export disposition |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED, INITIAL internal convergence values, accepted design echo, source table columns, protected authorization, no-commit return, trace labels, private export disposition |
 | gateRunPurpose | confirm this complete internal-only recovery packet after source and checker read-ahead; not first discovery |
 | claimBoundary | gate conformance cannot accept implementation or reclassify an external worker as internal |
 
@@ -684,14 +684,14 @@ finding, a reviewer-owned commit, and committed-range pre-closure evidence.
 
 ## Closure Checklist
 
-- [ ] Surface classification is `INTERNAL_AGENT` and zero external/provider calls occurred.
-- [ ] Exact 14-path manifest and cleanup equality pass.
-- [ ] IR-01 through IR-10 and HT-IR-01 through HT-IR-14 pass.
-- [ ] Existing return contains real test identities and current final evidence.
-- [ ] Both parked WP hashes are unchanged.
-- [ ] Worker made no commit and staging is empty.
-- [ ] Reviewer disposition and committed-range closure are completed before any closed-equivalent claim.
-- [ ] DARA-T3 and WP-ARCH-003 remain parked unless separately released.
+- [x] Surface classification is `INTERNAL_AGENT` and zero external/provider calls occurred.
+- [x] Exact 14-path manifest and cleanup equality pass.
+- [x] IR-01 through IR-10 and HT-IR-01 through HT-IR-14 pass.
+- [x] Existing return contains real test identities and current final evidence.
+- [x] Parked WP evidence is preserved through the authorized transition at `c2a1f7c7c`.
+- [x] Worker made no commit and staging was empty.
+- [x] Reviewer disposition and material commit `483176267` are complete.
+- [x] DARA-T3 and WP-ARCH-003 remain parked unless separately released.
 
 ## Agent Operation Trace Block
 
@@ -735,9 +735,31 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private internal-recovery dispatch; no public-sync authority.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | terminal `CLOSED_PASS_BOUNDED`; acceptance and closure checklists complete | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DARA_T2B_INTERNAL_RECOVERY_COMPLETION_REVIEW_2026-09-07.md` | exact 15-path material commit `483176267`; bounded terminal decision | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DISPATCHER_ARCHITECTURE_READINESS_AND_QUOTA_ADMISSION_ROADMAP_2026-09-06.md` | DARA-T2B accepted bounded; DARA-T3 parked | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/registry/entries/phase04-wave0-wp-arch-003-bounded-owner-gap-source-audit.json` | GC-051 source/aggregate match committed at `c2a1f7c7c` | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing operator lookup remains valid; no Markdown registry mutation required | PASS |
+| External evidence digest | N/A with reason: no external path or external artifact was accepted | repo-local committed evidence and zero provider/live calls | N/A with reason: no external evidence digest |
+| System loop interlock | N/A with reason: no downstream tranche opens | DARA-T3 and WP-ARCH-003 remain parked | N/A with reason: no loop transition |
+| Session continuity | `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `AGENT_HANDOFF_V59_2026-08-11.md` | handoff recognizes material HEAD `483176267`; dedicated final sync follows closeout | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| accepted-design echo identity fails closed on missing or altered digest | valid echo yields zero issues; missing SHA, arbitrary digest and missing disposition each block | PASS |
+| exact worker manifest and no-commit boundary | fourteen worker-owned paths; cleanup-only path absent; worker staging empty | PASS |
+| external/provider quota boundary | cumulative external count remains 2/2; provider call count 0 | PASS |
+| reviewer terminal evidence | completion review and exact 15-path material commit `483176267` | PASS |
+
 ## Claim Boundary
 
-This work order opens one internal recovery assignment based on committed new
+This work order governed one completed internal recovery assignment based on committed new
 critical evidence and explicit operator authority. It does not classify manual
 contact with an external model as internal, raise the 2/2 external ceiling,
 repair or accept DARA-T2 by itself, authorize a worker commit, resume
