@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2768,
+  "stateOrder": 2770,
   "stateKey": "nextAllowedMove",
-  "value": "P4-C1 remains active at b9bdba712 with eligible count 0 and M5/M10/safety/M20 checkpoints unchanged. Evidence-only commit c2a1f7c7c preserves the normalized WP-ARCH-003 audit and GC-051 registry coverage without accepting its substantive proposal. DARA-T2B internal recovery is independently accepted pending one exact 15-path reviewer material commit containing the fourteen returned implementation paths and its completion review. No worker recreation or new external invocation is allowed. DARA-T3, substantive WP-ARCH-003 work, provider/live/public actions and other parked lanes remain closed. System Chain remains stopped at T2A c1f95ae1d. Latest finalized numbered LHW wave remains LHW24."
+  "value": "P4-C1 remains active at b9bdba712 with eligible count 0 and M5/M10/safety/M20 checkpoints unchanged. Evidence-only commit c2a1f7c7c preserves the normalized WP-ARCH-003 audit without substantive acceptance. DARA-T2B is CLOSED_PASS_BOUNDED: exact 15-path implementation/review material 483176267 and terminal roadmap/work-order/review metadata 11b6e579b. Await fresh operator direction; DARA-T3 does not open automatically. No implementation change, worker recreation or new external invocation is allowed. Substantive WP-ARCH-003 work, provider/live/public actions and other parked lanes remain closed. System Chain remains stopped at T2A c1f95ae1d. Latest finalized numbered LHW wave remains LHW24."
 }
