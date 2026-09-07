@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2767,
+  "stateKey": "daraT2BInternalRecoveryReviewAcceptedPendingCommit20260907",
+  "value": "Evidence-only commit c2a1f7c7c preserves the normalized WP-ARCH-003 audit, worker return and GC-051 registry coverage without accepting the substantive proposal. Independent review accepts the exact fourteen-path DARA-T2B internal-recovery candidate pending an atomic reviewer material commit with docs/reviews/CVF_DARA_T2B_INTERNAL_RECOVERY_COMPLETION_REVIEW_2026-09-07.md. DARA-T3, substantive WP work, provider/live/public actions and new external invocation remain parked."
+}

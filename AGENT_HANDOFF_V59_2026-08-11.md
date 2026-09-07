@@ -5,9 +5,9 @@ Status: ACTIVE
 - GC010 root architecture is closed parked at material commit `e867d5432`; no truthful current product owner exists, no successor tranche opened, and system-chain selection must move outside GC010.
 - Repository: private provenance SOT; accepted P4-C1 automatic-collection material: `b9bdba71290a9d94a12438b413401ecb4c6a72a7`; branch `main`.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
-- Branch: `main`; current material HEAD: `77c77065d`; prior continuity commit `491396f36`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
+- Branch: `main`; current material HEAD: `c2a1f7c7c`; prior continuity commit `4269c5020`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
 - Phase-03R canonical planning materialization is independently accepted `CLOSED_PASS_BOUNDED` at material commit `0b8398f6e67c1fe48eb95fdfee8fd22c9524b7d6` after three external-worker rework rounds. Reviewer-fast passed 67/67, pre-commit passed 88/88, and committed-range pre-closure passed every material/content check with only this expected GC-020 continuity sync outstanding. Four ignored private successors remain local and hash-bound; no WP implementation, runtime, provider/live, public-sync, deployment, or production authority opens.
-- Phase-04 `WP-ARCH-003` R2 at `9ac20a2d8` remains rejected/pending. DARA-T2 final material review `ceadf2c3f` rejected closure on two new critical fail-open root causes and three dependent findings. The operator opened `OPERATOR_AUTHORIZED_INTERNAL_RECOVERY`; DARA-T2B internal-only dispatch is committed at `385aa5f74`. External count remains 2/2, manual relay does not reclassify an external recipient, worker code remains uncommitted, and WP finding repair stays parked. P4-C1 remains the sole automatic reviewer-evidence collector.
+- Phase-04 `WP-ARCH-003` R2 remains rejected/pending; its four-path normalized evidence and GC-051 registry coverage are preserved at `c2a1f7c7c` without accepting the substantive proposal. DARA-T2B internal recovery is independently accepted pending its exact 15-path reviewer material commit. External count remains 2/2, worker code remains uncommitted, DARA-T3 and WP implementation stay parked, and P4-C1 remains the sole automatic reviewer-evidence collector.
 - DARA-T2B continuity parent: `d4af432c00bcf1bcb61fa78c333b8e4353dc978e`.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
@@ -145,7 +145,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   605-test suites and all required gates. No runtime bypass claim was made.
 
 ## Next Allowed Move
-P4-C1 stays active at `b9bdba712`, eligible zero, checkpoints M5/M10/safety/M20. DARA-T2B internal recovery dispatch is committed at `385aa5f74` under `OPERATOR_AUTHORIZED_INTERNAL_RECOVERY`. Only a qualifying `INTERNAL_AGENT` may execute the exact 14-path no-commit repair; the operator owns manual packet relay and the orchestrator/reviewer makes no external-worker CLI call. External count remains 2/2; manual relay across an independent provider/account boundary must stop `BLOCKED_SURFACE_MISMATCH`. DARA-T3, WP-ARCH-003 and other lanes remain parked. Latest closed LHW: `LHW24`.
+P4-C1 stays active at `b9bdba712`, eligible zero, checkpoints M5/M10/safety/M20. After this dedicated continuity sync recognizes evidence commit `c2a1f7c7c`, the reviewer may create the exact 15-path DARA-T2B material commit: fourteen returned implementation paths plus `docs/reviews/CVF_DARA_T2B_INTERNAL_RECOVERY_COMPLETION_REVIEW_2026-09-07.md`. No worker recreation or new external invocation is allowed. DARA-T3, substantive WP-ARCH-003 work, provider/live/public actions and other lanes remain parked. Latest closed LHW: `LHW24`.
 
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
@@ -180,6 +180,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/entries/daraT2BInternalRecoveryReviewAcceptedPendingCommit20260907.json`
 - `governance/compat/build_dispatch_packet_architecture_readiness.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
 - `governance/compat/build_dispatch_packet_scaffold.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
 - `governance/compat/build_worker_return_skeleton_scaffold.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
