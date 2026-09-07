@@ -7,7 +7,7 @@ Status: ACTIVE
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
 - Branch: `main`; current material HEAD: `77c77065d`; prior continuity commit `491396f36`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
 - Phase-03R canonical planning materialization is independently accepted `CLOSED_PASS_BOUNDED` at material commit `0b8398f6e67c1fe48eb95fdfee8fd22c9524b7d6` after three external-worker rework rounds. Reviewer-fast passed 67/67, pre-commit passed 88/88, and committed-range pre-closure passed every material/content check with only this expected GC-020 continuity sync outstanding. Four ignored private successors remain local and hash-bound; no WP implementation, runtime, provider/live, public-sync, deployment, or production authority opens.
-- Phase-04 `WP-ARCH-003` R2 at `9ac20a2d8` remains rejected/pending. DARA-T2 worker return is rejected `RETURN_TO_DESIGN` at review commit `6746abf74`; the corrected root contract at `203e9e6f7` is accepted bounded by sequential review `1316ea734`, and its one consolidated rework dispatch is committed at `77c77065d`. Worker code remains uncommitted and preserved for that rework. P4-C1 remains the sole automatic reviewer-evidence collector. Finding repair stays parked.
+- Phase-04 `WP-ARCH-003` R2 at `9ac20a2d8` remains rejected/pending. DARA-T2 final material review `ceadf2c3f` rejected closure on two new critical fail-open root causes and three dependent findings. The operator opened `OPERATOR_AUTHORIZED_INTERNAL_RECOVERY`; DARA-T2B internal-only dispatch is committed at `385aa5f74`. External count remains 2/2, manual relay does not reclassify an external recipient, worker code remains uncommitted, and WP finding repair stays parked. P4-C1 remains the sole automatic reviewer-evidence collector.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
 - EAFR-R2 is independently accepted `CLOSED_PASS_BOUNDED` at material commit `fdf53b8413cc6004ca66189decb2227ff1f7151f` after one reviewer repair round; focused 26/26, reviewer-fast 65/65, and pre-commit 86/86 passed with zero provider/live calls.
@@ -53,7 +53,7 @@ Preserve independently accepted T1C durable single-node non-production material 
 - Route/registry adoption, repeat-live, public sync, deploy and production remain unopened.
 
 ## Latest Work / Changes
-- DARA-T2 R2 amendment `f0c5dc61d` is accepted bounded at `9c485c2a4`; next is one evidence-only return reconciliation then final material review. Implementation stays read-only, invocation ceiling stays 2/2, and WP-ARCH-003 stays parked.
+
 - Lifecycle sync is complete: source `ae9a8a6b3`, bootstrap repair `44dcff6a9`, continuity `f336740de`, public PR 7/main `2d7e4fefc`. Workspace core matches public main; operator-local pack has 28 artifacts from `f336740de`; external packet receipt SHA-256 is `e453c6919e94fe313393c01c9ba9ed6944d3860e11b06d852bf29373bd67d775`. Project pins and P2/P4 canary data were not mutated.
 - CSCC-R1 T2A is `CLOSED_PASS_BOUNDED` at `c1f95ae1d` with terminal `STOP_NO_SAFE_CANONICAL_CUTOVER`. Composition, credential, quota and rollback-test ownership are reconciled; route-build exclusion/packaging has no accepted owner/mechanism. T2B/T3 remain unopened and the Alibaba live grant is unconsumed.
 - MFRP R1B replay `2b06d928d` remains rejected; R1A-R2 and R1B-R2 evidence are preserved. P4 initialization is accepted at `8de63c077`; the bounded natural-observation window is open with zero eligible pairs and no per-return routine review.
@@ -137,42 +137,14 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
 - EAFR-R4 completion review: `docs/reviews/CVF_EAFR_R4_PRIVATE_PROVIDER_CURRENT_CLAIM_MANIFEST_RECONCILIATION_COMPLETION_2026-08-25.md`; material commit `55d485166`; accepted after disclosed reviewer repair with 29 classified entries, zero unmapped, 17/17 focused tests, reviewer-fast 65/65, pre-commit 86/86 and zero provider/live calls. R1C debt remains mandatory before R6.
 - RFR-R1/R2/R3/R4 are `CLOSED_PASS_BOUNDED` through `8ec399aa5`. RFR-R5 is independently `CLOSED_PASS_BOUNDED` at `82a0073b2fca002fd7999ed70905166295946515`; reviewer repaired hostile profile/requirement handling, platform binding, immutable snapshots, canonical receipt rebinding and worker/child environment isolation. Proof: Safety Runtime 61/61, adapter 49/49, package 91/91, strict TypeScript, reviewer-fast and pre-commit 86/86; zero provider/live calls.
 - Downstream P4-A1 closure: `ffe1c5b500f2f27f4166ded97423c4fc76354c67`.
-- P4-A1 exact36 BUILD:
-  `298143d71478993e1c14ab4c20ca8490c1f8e21f`.
-- Independent accepted review:
-  `d56b835d9c72ec706fc3b8d293aaf85a147ecd6f62c20cfa1afc29baed52ef22`.
-- Findings/waivers: `NONE/NONE`.
-- Target final evidence: 17 focused tests and 605 full CVF tests passed;
-  workspace doctor reported 24 passed plus one bounded legacy warning.
-- Core material closure pre-commit: 84/84 PASS.
-- Reviewer findings: all three transitively affected Project Knowledge pins
-  were reconciled, and every active projection now carries the explicit
-  post-T3 closed/parked mode. ADIF-0052 records the dispatch lesson.
 - Independent SOPR-CP1 review disposition:
   original `REVIEW_REJECTED_REPAIR_REQUIRED`, then Amendment 1
   `REVIEWER_ACCEPTED / CLOSED_BOUNDED`. The deterministic decoded-byte repair
   passed authorization 10/10, disclosed ordering test 30/30, two consecutive
   605-test suites and all required gates. No runtime bypass claim was made.
-- Target completion review SHA-256:
-  `e95f2df56f6e4d3dcad1793d679ea729eac7e4831ed7e712d9cef71780455e44`.
-- Corrected worker return SHA-256:
-  `9014bde67884c4f475b1e0965daf1b08270a5cc02f2f625e31bbd3590e990227`.
-- LPCI1-REF-T1A Amendment 2 private material commit:
-  `492e11eab477559bb6ab9e68459b745124a44273`.
-- LPCI1-REF-T1A public candidate commit on `lpci1-ref-staging`:
-  `021f8b852afc245a6383177dd69bf56caf488b02`.
-- Repaired private/public source SHA-256 MATCH:
-  `4b3226b935cb8d57cfb8ec00aa8be5f519196a7945ddfee4975ede84ae3082fa`.
-- Amendment 2 worker return SHA-256:
-  `ebdb9c5d297ff71859868ce620ee92197ded737ac663be20b3e685d1b70d19d0`.
-- Amendment 2 completion review SHA-256:
-  `78a26cac3ad75019e4f9cfaa975d3bf3c9332e47825738ab8a85730b2358536d`.
-- Reviewer proof: route test 4/4, focused cvf-web 218/218, Model Gateway
-  231/231, both TypeScript checks, scoped lint, production build with 121
-  static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-P4-C1 stays active at `b9bdba712`, eligible zero, checkpoints M5/M10/safety/M20. DARA final review `ceadf2c3f` proves four R3 fail-open cases and rejects closure. Round 3 requires operator escalation; implementation stays uncommitted/read-only and external count remains 2/2. DARA-T3, WP-ARCH-003 and other lanes remain parked. Latest closed LHW: `LHW24`.
+P4-C1 stays active at `b9bdba712`, eligible zero, checkpoints M5/M10/safety/M20. DARA-T2B internal recovery dispatch is committed at `385aa5f74` under `OPERATOR_AUTHORIZED_INTERNAL_RECOVERY`. Only a qualifying `INTERNAL_AGENT` may execute the exact 14-path no-commit repair; the operator owns manual packet relay and the orchestrator/reviewer makes no external-worker CLI call. External count remains 2/2; manual relay across an independent provider/account boundary must stop `BLOCKED_SURFACE_MISMATCH`. DARA-T3, WP-ARCH-003 and other lanes remain parked. Latest closed LHW: `LHW24`.
 
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
@@ -199,17 +171,27 @@ EXPORTED
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`; public `main`: `132371c3eb8d8e7d65eedd42799a8b910da63b94`; server-side preflight run `33715255525` PASS. Provenance record: `docs/reference/CVF_EXTERNAL_AGENT_ABSORPTION_PREPARATION_PUBLIC_SYNC_RECORD_2026-09-03.md` at `b4fb661bb`, path correction `100d6bd8b`. Operator packet: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ`, protocol 1.3, receipt `23cf16ead08f50e950bf9c7b964d79576075da7d616881c39a1891a1a197d622`. This is source-intake preparation, not repo acceptance, deploy or production readiness.
 
 ## Core Guard Self-Protection Authorization - Current Continuity
-Authorized guard-maintenance scope: external absorption-preparation public-sync continuity while preserving the CSCC-R1-T2A stop and active P4-C1 automatic collector.
+Authorized guard-maintenance scope: project the committed DARA-T2B internal-recovery dispatch into active continuity while preserving the CSCC-R1-T2A stop and active P4-C1 automatic collector.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/phase04Wave0WpArch003OwnerGapAuditDispatch20260906.json`
 - `CVF_SESSION/state/entries/lastUpdated.json`
 - `CVF_SESSION_MEMORY.md`
-Operator authorization: on 2026-09-06 the operator directed foundation-first work, authorized sequential roles, and required synchronization with the unfinished reviewer-efficiency roadmap; DARA/MFRP owner sync is committed at `416ba7959`.
-Rollback boundary: revert only this continuity projection; preserve DARA/MFRP sync `416ba7959`, Phase-04 authority `9ac20a2d8`, Phase-03R `0b8398f6e`, public `132371c3`, T2A `c1f95ae1d` and P4-C1 `b9bdba712`. DARA-T2, external repair, WP implementation, provider calls, public sync and parked lanes are not authorized by this sync.
+- `governance/compat/build_dispatch_packet_architecture_readiness.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
+- `governance/compat/build_dispatch_packet_scaffold.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
+- `governance/compat/build_worker_return_skeleton_scaffold.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
+- `governance/compat/check_work_order_dispatch_quality.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
+- `governance/compat/check_work_order_dispatch_quality_architecture_schema.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
+- `governance/compat/check_work_order_dispatch_quality_range.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
+- `governance/compat/check_work_order_dispatch_quality_source.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
+- `governance/compat/run_worker_return_scaffold.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
+- `governance/compat/test_build_dispatch_packet_scaffold.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
+- `governance/compat/test_check_work_order_dispatch_quality_architecture_readiness.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
+- `governance/compat/test_run_worker_return_scaffold.py` (pre-existing unstaged DARA candidate; excluded from continuity commit)
+Operator authorization: on 2026-09-07 the operator opened `OPERATOR_AUTHORIZED_INTERNAL_RECOVERY`, prohibited orchestrator use of an external-worker CLI, retained the orchestrator/reviewer roles, and reserved manual worker-packet relay; dispatch material is `385aa5f74`.
+Rollback boundary: revert only this continuity projection; preserve DARA-T2B dispatch `385aa5f74`, final rejection `ceadf2c3f`, Phase-04 authority `9ac20a2d8`, Phase-03R `0b8398f6e`, T2A `c1f95ae1d` and P4-C1 `b9bdba712`. External invocation 3, WP implementation, provider calls, public sync and parked lanes are not authorized by this sync.
 ## Claim Boundary
 
-This handoff records bounded DARA-to-MFRP owner synchronization, P4-C1, T2A stop and the `WP-ARCH-003` R2 park; it makes no independent-review, DARA implementation, external-repair, provider/live, public, deployment or production claim.
+This handoff records the DARA-T2B internal-only dispatch, P4-C1, T2A stop and the `WP-ARCH-003` R2 park. It does not prove worker-surface eligibility, accept or implement DARA, authorize external invocation 3, or make provider/live, public, deployment or production claims.
