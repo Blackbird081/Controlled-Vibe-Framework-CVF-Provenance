@@ -172,7 +172,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   static pages, worker-return fast gate, and Core pre-commit 84/84 PASS.
 
 ## Next Allowed Move
-P4-C1 stays active at `b9bdba712`, eligible zero, checkpoints M5/M10/safety/M20. DARA R2 amendment review `9c485c2a4` permits one evidence-only return reconciliation then final material review. Implementation stays read-only; invocation ceiling is 2/2. WP-ARCH-003 and other parked lanes remain unchanged. Latest closed LHW: `LHW24`.
+P4-C1 stays active at `b9bdba712`, eligible zero, checkpoints M5/M10/safety/M20. DARA final review `ceadf2c3f` proves four R3 fail-open cases and rejects closure. Round 3 requires operator escalation; implementation stays uncommitted/read-only and external count remains 2/2. DARA-T3, WP-ARCH-003 and other lanes remain parked. Latest closed LHW: `LHW24`.
 
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
