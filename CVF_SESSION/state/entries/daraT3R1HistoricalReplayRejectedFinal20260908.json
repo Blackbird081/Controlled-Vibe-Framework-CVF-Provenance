@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2775,
+  "stateKey": "daraT3R1HistoricalReplayRejectedFinal20260908",
+  "value": "DARA-T3 R1 final admitted external return is independently rejected RETURN_TO_DESIGN at c9e3c88e0355491cd2e6bfffda3c04249352a553. Valid 7/7 source identity, input-sensitive architecture-matrix oracle, exact-five scope, 40/40 focused tests and reviewer-fast 67/67 are preserved, but R1-A08 usage/ceiling fail-closed semantics were not exercised, seeded matched ignored earliest-stop mismatches, and the required ledger pre/post replay freeze receipt was absent. Parent external usage is 2 of ceiling 2; no automatic third invocation or worker-material commit is authorized. DARA-T4, substantive WP-ARCH-003 repair and provider/live/public/deploy lanes remain parked."
+}
