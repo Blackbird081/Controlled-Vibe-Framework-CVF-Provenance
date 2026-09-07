@@ -93,7 +93,7 @@ Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_
   "chainOrdinal": 1,
   "predecessor": {
     "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_DARA_T2B_OPERATOR_AUTHORIZED_INTERNAL_RECOVERY_2026-09-07.md",
-    "sha256": "0e4884d1931f8789060b6650ef1422e2f298d6aaf9b0e2e1a9ad1f908988bee7"
+    "sha256": "5008584c9f6bc4d602fc14170691648135bff595074f4334447bd7a94c237e62"
   },
   "blockerDelta": {
     "prior": [
@@ -672,3 +672,15 @@ commits.
 | Changed set | `## Actual Changed Set` | exactly 14 DARA paths; cleanup-only path absent; parked WP files excluded |
 | Gate evidence | `## Gate Evidence` / `## Command Evidence` | 40/40 DARA tests pass; 102/102 scaffold suite passes; size, SCEC, equivalence-claim, finding-learning, and worker-return-quality gates COMPLIANT; automation-assist and pre-implementation remain BLOCKED_WITH_REASON on the parked WP-ARCH-003 file alone |
 | Closure state | `BLOCKED_WITH_REASON` | internal recovery's authorized repair is complete; the remaining blocker requires an operator decision on WP-ARCH-003 (out of this recovery's scope), not further worker action within the exact 14-path manifest |
+
+## Reviewer Closure Hash Reconciliation
+
+The worker originally and truthfully bound the predecessor at dispatch-time
+SHA-256 `0e4884d1931f8789060b6650ef1422e2f298d6aaf9b0e2e1a9ad1f908988bee7`.
+Reviewer closeout later changed only the governing work order's terminal status,
+completed checklists and Machine Closure Package at commit `11b6e579b`. The
+SCEC checker recomputes the whole current file rather than a dispatch-identity
+projection, so the active predecessor pin above is reconciled to terminal
+SHA-256 `5008584c9f6bc4d602fc14170691648135bff595074f4334447bd7a94c237e62`.
+This reviewer-owned metadata reconciliation does not alter worker findings,
+implementation, provider count or the historical dispatch hash.

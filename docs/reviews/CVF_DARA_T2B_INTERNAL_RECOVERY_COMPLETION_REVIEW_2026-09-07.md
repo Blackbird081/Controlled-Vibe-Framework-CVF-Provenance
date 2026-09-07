@@ -78,13 +78,14 @@ Decision: `ACCEPT_DARA_T2B_FOR_REVIEWER_MATERIAL_COMMIT`.
 | The orchestrator supplied obsolete base `0ba931bb...`, creating a false mixed-range blocker | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | Always bind recovery verification to the worker return's `executionBaseHead`; this review used `4269c502...` | handled |
 | Pre-implementation passed while GC-051 first failed at pre-commit | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | CHECKER_CANDIDATE | Preserve this event as evidence for earlier corpus-registry coverage admission; no checker change is made in this closure | deferred |
 | An uncommitted parked artifact contaminated an unrelated tranche | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | A new material tranche requires prior-governance artifacts to have a governed preservation/commit route | handled |
+| Closing the work order changed its whole-file SHA and invalidated the worker return's truthful dispatch-time SCEC predecessor pin | CLOSURE_HASH_LIFECYCLE_GAP | GOVERNANCE_CONTROL_PLANE | CHECKER_CANDIDATE | Separate immutable dispatch identity from mutable terminal metadata, or define a canonical closure-transition pin before a future SCEC checker change | deferred |
 
 Runtime/provider/cost learning lane: N/A_WITH_REASON: zero provider/live calls
 occurred and exact token usage is not exposed.
 
 ## Review Cost Telemetry And Stop Disposition
 
-reviewRoundCount: 5
+reviewRoundCount: 6
 
 workerRepairTurnCount: 3
 
@@ -94,9 +95,9 @@ dependentFindingCountThisRound: 2
 
 providerCallCount: 0
 
-materialCommitCount: 3
+materialCommitCount: 4
 
-continuityCommitCount: 1
+continuityCommitCount: 2
 
 elapsedReviewMinutes: NOT_AVAILABLE_WITH_REASON: no trusted end-to-end timer is bound to this review
 
@@ -108,7 +109,7 @@ stopDisposition: COMPLETE_REVIEW
 
 preRepairAuditDisposition: COMPLETE_BEFORE_FINAL_REPAIR
 
-commitPlanDisposition: EXCEPTION_WITH_REASON: one parked-evidence preservation commit, one DARA implementation commit and this closeout metadata commit were required because GC-051 and continuity ordering blocked a truthful atomic close
+commitPlanDisposition: EXCEPTION_WITH_REASON: parked-evidence preservation, implementation, terminal metadata and SCEC closure-hash reconciliation required separate material commits; GC-020 required continuity between committed material boundaries
 
 latencyDisposition: EXCEEDED_FAST_PATH_WITH_REASON
 
