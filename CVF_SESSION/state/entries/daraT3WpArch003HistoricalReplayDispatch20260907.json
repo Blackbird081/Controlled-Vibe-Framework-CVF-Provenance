@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2771,
+  "stateKey": "daraT3WpArch003HistoricalReplayDispatch20260907",
+  "value": "Operator continuation opened DARA-T3 only. The source-frozen exact-five WP-ARCH-003 historical replay baseline and work order are committed at 028b6af2de77650cbbd20e997eed1e843abc6d4a after pre-dispatch 81/81 and pre-commit 88/88 PASS. One new parent EXTERNAL_AGENT_CLI_MCP assignment is admitted only through operator manual relay, moving DARA-T3 external usage from 0 to ceiling 1; Codex must not invoke Claude CLI/MCP. Worker must not commit and may return COMPLETE_PENDING_REVIEW, RETURN_TO_DESIGN or BLOCKED_WITH_REASON. DARA-T4, substantive WP-ARCH-003 repair, provider/live/public/deploy and other parked lanes remain closed."
+}
