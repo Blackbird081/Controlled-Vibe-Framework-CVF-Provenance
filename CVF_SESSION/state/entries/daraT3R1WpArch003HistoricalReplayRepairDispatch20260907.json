@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2773,
+  "stateKey": "daraT3R1WpArch003HistoricalReplayRepairDispatch20260907",
+  "value": "DARA-T3 initial replay is reviewer-rejected RETURN_TO_DESIGN at 537dad6ce752f75d6dc2e36e272639758e7ca829 because seeded results copied expectations, error metrics were tautological and ledger freeze identity was incomplete. Operator-authorized same-parent R1 baseline and work order are committed through dispatch-boundary correction d2b75b0939ab0c14af7dc8056ab9a1ef81f39fe2 after pre-dispatch 81/81 and pre-commit 88/88 PASS. One final external repair may be manually relayed by the operator to Claude, moving parent usage 1 to ceiling 2 and modifying exactly the same five uncommitted paths. Codex must not invoke Claude CLI/MCP; worker must not stage or commit. DARA-T4, substantive WP-ARCH-003 repair and all provider/live/public/deploy lanes remain parked."
+}
