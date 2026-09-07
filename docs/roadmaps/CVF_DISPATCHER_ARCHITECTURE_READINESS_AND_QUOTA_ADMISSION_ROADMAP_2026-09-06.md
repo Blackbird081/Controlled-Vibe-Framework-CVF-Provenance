@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: DARA_T4_PARK_NO_ELIGIBLE_EVIDENCE
+Status: DARA_T4_R1_PARK_NO_ELIGIBLE_EVIDENCE
 
 Date: 2026-09-06
 
@@ -91,7 +91,9 @@ Frozen repository base for this roadmap: `17c8fe30fdc4468f6748d67926e3d95224723a
 | DARA-E15 | operator instruction on 2026-09-07 | no Claude CLI invocation; Codex remains orchestrator/reviewer; operator authorizes route `OPERATOR_AUTHORIZED_INTERNAL_RECOVERY` and manually relays any worker packet | ACCEPT_OPERATOR_ROUTE_AUTHORIZATION |
 | DARA-E16 | `docs/reviews/CVF_DARA_T3_R1_WP_ARCH_003_HISTORICAL_REPLAY_COMPLETION_REVIEW_2026-09-07.md`; commit `c9e3c88e0355491cd2e6bfffda3c04249352a553` | final admitted T3 return is `RETURN_TO_DESIGN`; exact-five worker material remains uncommitted and the external ceiling is exhausted at 2/2 | ACCEPT_COMMITTED_TERMINAL_EVIDENCE |
 | DARA-E17 | operator instruction on 2026-09-08 | DARA-T3 is complete as a bounded terminal disposition and DARA-T4 may proceed | ACCEPT_OPERATOR_TRANCHE_AUTHORIZATION |
-| DARA-E18 | existing `governance/compat/mfrp_shadow_canary_autocollect.py` readout on 2026-09-08 | `P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE`; no eligible committed phase-return/receipt pair is available | ACCEPT_CURRENT_MACHINE_READOUT |
+| DARA-E18 | existing `governance/compat/mfrp_shadow_canary_autocollect.py` readout on 2026-09-08 | `P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE`; no eligible committed phase-return/receipt pair is available | ACCEPT_HISTORICAL_MACHINE_READOUT |
+| DARA-E19 | `docs/reviews/CVF_DARA_T3_R2_WP_ARCH_003_HISTORICAL_REPLAY_COMPLETION_REVIEW_2026-09-08.md`; material `d4a6b422f` | late operator-authorized R2 replay is independently accepted `CLOSED_PASS_BOUNDED`; 41/41 focused tests, fast gate PASS and fresh freeze receipts | ACCEPT_COMMITTED_BOUNDED_REPLAY_EVIDENCE |
+| DARA-E20 | existing collector readout after `d4a6b422f` and continuity `d9807d3df` | `P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE`; committed T3 review/return contains no eligible P4 observation block, and no journal row, receipt or safety marker is created | ACCEPT_CURRENT_MACHINE_READOUT |
 
 Measured cost is bounded to three external invocations and two repair turns.
 Token or subscription-quota quantity is `UNKNOWN`: the local repository does
@@ -205,8 +207,8 @@ Admission rules:
 | DARA-T1 | architecture-readiness contract design | `docs/assessments/CVF_DARA_T1_ARCHITECTURE_READINESS_CONTRACT_DESIGN_2026-09-06.md`; matrix schema, role/fault taxonomy, MFRP input composition and pre-invocation quota-admission contract; no new reviewer workflow | accepted T0 owner sync | `DESIGN_ACCEPTED_BOUNDED` through sequential review; independent review not claimed |
 | DARA-T2 | minimal foundation implementation | existing-owner template/standard/scaffold/checker changes with protected-path authorization | accepted T1 plus GC-018/work order | `REJECTED_REVIEW_COST_ESCALATION_REQUIRED` at `ceadf2c3f`; superseded only by bounded T2B recovery |
 | DARA-T2B | operator-authorized internal recovery | one new parent assignment bound to DARA-E13; repair the complete R3 finding set inside the existing exact 14-path implementation manifest; operator-mediated prompt transport only | DARA-E13 plus DARA-E15 | `CORE_CONTROL_IMPLEMENTED` at `483176267`; independent completion review `CLOSED_PASS_BOUNDED` |
-| DARA-T3 | historical replay | Initial/R1/R2 replay fixture and deterministic receipt showing earliest stop | accepted T2 | `RETURN_TO_DESIGN` at `c9e3c88e0`; operator accepted bounded completion without accepting replay effectiveness |
-| DARA-T4 | handoff to existing MFRP shadow validation | admit DARA observations only through existing MFRP P4-C1 eligibility and checkpoint rules | operator-authorized terminal T3 disposition plus MFRP admission check | `PARK_NO_ELIGIBLE_EVIDENCE`; existing collector returned `SKIPPED_NO_ELIGIBLE_CANDIDATE`, no new collector or checkpoint |
+| DARA-T3 | historical replay | Initial/R1/R2 replay fixture and deterministic receipt showing earliest stop | accepted T2 | late operator-authorized R2 repair accepted `CLOSED_PASS_BOUNDED` at `d4a6b422f`; earlier rejection remains history |
+| DARA-T4 | handoff to existing MFRP shadow validation | admit DARA observations only through existing MFRP P4-C1 eligibility and checkpoint rules | accepted T3 R2 plus current MFRP admission check | R1 reassessment remains `PARK_NO_ELIGIBLE_EVIDENCE`; collector returned `SKIPPED_NO_ELIGIBLE_CANDIDATE`, no new collector, receipt, row or checkpoint |
 | DARA-T5 | existing-owner projection decision | MFRP P5/P6 owns activation; DARA supplies bounded architecture evidence only | accepted MFRP checkpoint decision | `CONSUMED_BY_MFRP` or `PARK_FOUNDATION` |
 
 No implementation tranche opens automatically. On 2026-09-06 the operator
@@ -265,6 +267,22 @@ This is a successful fail-closed handoff decision. It does not convert the T3
 rejection into `REPLAY_BLOCKS_AVOIDABLE_INVOCATIONS`, does not manufacture a
 natural sample, and does not open M5, M10, M20, P5, P6, DARA-T5 or
 `WP-ARCH-003` implementation.
+
+### R1 Reassessment After Late T3 Repair
+
+The operator later reopened DARA-T3. Its exact-five R2 replay is accepted at
+`d4a6b422f`, but bounded replay acceptance alone is not MFRP P4 eligibility.
+The committed completion/return bytes do not declare one eligible natural P4
+observation with the required phase and obligation/source locators. Running the
+existing collector after continuity `d9807d3df` therefore again returns
+`SKIPPED_NO_ELIGIBLE_CANDIDATE`. The runtime directory contains no pending
+journal or safety marker, and no P2 receipt was generated.
+
+Terminal T4 R1 reassessment disposition: `PARK_NO_ELIGIBLE_EVIDENCE`.
+
+The reviewer must not retrofit an eligibility block into closed T3 evidence or
+manufacture a natural sample. `WP-ARCH-003` remains parked because its interlock
+is conjunctive and the MFRP handoff condition is still absent.
 
 ## WP-ARCH-003 Interlock
 
