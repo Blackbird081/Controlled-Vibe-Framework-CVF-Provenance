@@ -7604,6 +7604,70 @@
       "nextScanRecommendation": "Re-scan only when the context tool-result compaction contract or its focused tests change."
     },
     {
+      "id": "phase04-wave0-wp-arch-003-bounded-owner-gap-source-audit",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "WP-ARCH-003 Phase-04 Wave 0 owner-gap audit bounded source surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/**/*.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/delegation.boundary.guard.contract.test.ts"
+      ],
+      "fileCount": null,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "WP-ARCH-003-PARKED-EVIDENCE-NORMALIZATION",
+      "scanDate": "2026-09-07",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_PHASE04_WAVE0_WP_ARCH_003_OWNER_GAP_AUDIT_WORKER_RETURN_2026-09-06.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "MCP_PRODUCTION_CANONICAL_ENGINE_ADOPTION",
+        "AUTHORITY_EXPANSION_APPROVAL_DELTA",
+        "CROSS_SCOPE_CROSS_TENANT_IDENTITY_PROPAGATION"
+      ],
+      "priorAbsorption": "No prior implementation absorbed content from this bounded scan; this entry covers exactly two corpus-path tokens already named in the existing pending WP-ARCH-003 owner-gap audit worker return (R1-02 correction and Exact Test-File Ledger row 6), not a new absorption.",
+      "findings": [
+        {
+          "id": "wp-arch-003-f1-retracted-package-local-live-wiring-inference",
+          "summary": "The initial WP-ARCH-003 audit incorrectly inferred that a package-local guard-factory file's existence proved live production wiring; the rework retracted this and instead cited the production entrypoint's canonical import and a reproduced regression test as the real evidence.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "None: already corrected in the existing pending worker return (R1-02). Future audits of EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/**/*.ts should read the actual production entrypoint/SDK barrel and search for an existing canonical-adoption regression test before concluding a package-local class is live-wired.",
+          "defectClass": "UNVERIFIED_CLAIM",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+        },
+        {
+          "id": "wp-arch-003-f2-criterion1-authority-expansion-approval-partial",
+          "summary": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/delegation.boundary.guard.contract.test.ts carries an existing deny-by-default positive test but no authority-expansion-approval negative case yet; the required criterion remains PARTIAL, not SATISFIED.",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Implement the authority-expansion-approval delta only under a later, separately authorized implementation work order per the Exact Future Manifest; not authorized in this bounded scan or in the pending WP-ARCH-003 owner-gap audit worker return itself.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_PHASE04_WAVE0_WP_ARCH_003_OWNER_GAP_AUDIT_WORKER_RETURN_2026-09-06.md#finding-to-governance-learning-disposition"
+        },
+        {
+          "id": "wp-arch-003-f3-criterion2-cross-scope-cross-tenant-identity-propagation-missing",
+          "summary": "The still-unproven cross-scope/cross-tenant identity-propagation criterion (criterion 2) remains MISSING across the whole owner-gap audit: no principal/scope identity comparison or cross-tenant negative test exists in the named owner packages, confirmed by a 19-case negative search that asserted zero cross-scope/cross-tenant rejection cases. This finding spans the audit's EXTENSIONS/CVF_GUARD_CONTRACT/ and EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/ owner surfaces, not the two corpus paths this entry registers; it is preserved here for discoverability because the pending worker return ties it to the same BOUNDED_DELTA_REQUIRED terminal decision as this entry's registered scope.",
+          "disposition": "DEFER_PHASED",
+          "nextAction": "Implement the cross-scope/cross-tenant identity-propagation delta only under a later, separately authorized implementation work order per the Exact Future Manifest; not authorized in this bounded scan or in the pending WP-ARCH-003 owner-gap audit worker return itself.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_PHASE04_WAVE0_WP_ARCH_003_OWNER_GAP_AUDIT_WORKER_RETURN_2026-09-06.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "createUnifiedRegistry as a live-wired production caller -- Grep pattern:\"createUnifiedRegistry\" scoped to EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/**/*.ts returned matches only in its own definition (src/registry/guard-registry.ts), a re-export-only reference in src/sdk.ts (never invoked there), and two test files (guard-registry.test.ts, e2e-pipeline.test.ts); no live-wired non-test production caller was found"
+      ],
+      "nextScanRecommendation": "Do not resume or broaden this scan. Coverage here is bounded to the exact two paths already read/grepped by the existing pending WP-ARCH-003 owner-gap audit worker return; WP-ARCH-003 itself remains parked and COMPLETE_PENDING_REVIEW, and this entry makes no extension-wide, implementation, or runtime completeness claim.",
+      "notes": "Registry-coverage recovery entry (WP-ARCH-003-CORPUS-REGISTRY-COVERAGE-RECOVERY, rework of WP-ARCH-003-PARKED-EVIDENCE-NORMALIZATION). Covers exactly the two corpus-path tokens the pre-commit Corpus Scan Registry gate reported as unregistered in the WP-ARCH-003 owner-gap audit worker return: the Grep-scoped `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/**/*.ts` symbol-search pattern (see that return's Scope / Methodology step 9 and Corpus Completeness And Report Integrity Enumeration command field) and the single named test path `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/delegation.boundary.guard.contract.test.ts` (see that return's Exact Test-File Ledger row 6). No new source read, grep, or test execution was performed to produce this entry; every fact here is reused verbatim from that existing pending worker return, which remains untracked pending reviewer decision. fileCount, manifestHash, hashAlgorithm, hashInput, manifestPath, completionReviewPath, and gcBaselineRef are null because no exact reproducible file count, manifest hash, formal completion review, or GC-018 baseline exists for this bounded entry; verdicts are NOT_RUN because no GC-047/048/050 evidence was produced by this bounded coverage recovery. This entry makes no claim that either extension is fully scanned, that WP-ARCH-003 is accepted or resumed, or that any implementation exists beyond what the existing pending worker return already states."
+    },
+    {
       "id": "dsh-wra-r1-whole-repository-absorption",
       "corpusType": "EXTERNAL_SOURCE",
       "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",
