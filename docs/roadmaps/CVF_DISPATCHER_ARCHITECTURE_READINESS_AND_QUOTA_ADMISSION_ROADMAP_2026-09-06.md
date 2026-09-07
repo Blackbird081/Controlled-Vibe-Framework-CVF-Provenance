@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: DARA_T1_DESIGN_ACCEPTED_BOUNDED_T2_WORK_ORDER_ALLOWED
+Status: DARA_T2_REJECTED_OPERATOR_AUTHORIZED_INTERNAL_RECOVERY_OPEN
 
 Date: 2026-09-06
 
@@ -82,6 +82,9 @@ Frozen repository base for this roadmap: `17c8fe30fdc4468f6748d67926e3d95224723a
 | DARA-E10 | `docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md` | reviewer must not rerun already-valid deterministic checks; focused probes require expected information gain | ACCEPT_CANONICAL_REVIEW_EFFICIENCY_OWNER |
 | DARA-E11 | `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_2026-09-02.md` | `reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION`; per-row review is forbidden and review is aggregated at M5/M10/M20 or a safety trigger | ACCEPT_ACTIVE_EXECUTION_OWNER |
 | DARA-E12 | `CVF_SESSION/state/entries/gclhMfrpP4C1AutomaticEvidenceCollectionDispatchReady20260902.json`; active handoff | P4-C1 material is active at `b9bdba712`; current eligible count is zero | ACCEPT_CURRENT_STATE_EVIDENCE |
+| DARA-E13 | `docs/reviews/CVF_DARA_T2_R2_FINAL_IMPLEMENTATION_COMPLETION_REVIEW_2026-09-07.md`; commit `ceadf2c3ff8d5e42d37d974a5ba8c1413b617ccb`; SHA-256 `c879896888a1595b1b1850d21f0aa09a9eecd8b6924f1085e3df487bd792fa6e` | four focused probes proved two new critical fail-open root causes and three dependent evidence manifestations; DARA-T2 closure was rejected at review round 3 | ACCEPT_COMMITTED_REVIEW_EVIDENCE |
+| DARA-E14 | operator report on 2026-09-07 | total elapsed time for the observed run was 200 minutes; exact token or subscription-quota usage was not measured | ACCEPT_OPERATOR_SUPPLIED_COST_EVIDENCE_WITH_UNAVAILABLE_QUOTA |
+| DARA-E15 | operator instruction on 2026-09-07 | no Claude CLI invocation; Codex remains orchestrator/reviewer; operator authorizes route `OPERATOR_AUTHORIZED_INTERNAL_RECOVERY` and manually relays any worker packet | ACCEPT_OPERATOR_ROUTE_AUTHORIZATION |
 
 Measured cost is bounded to three external invocations and two repair turns.
 Token or subscription-quota quantity is `UNKNOWN`: the local repository does
@@ -193,7 +196,8 @@ Admission rules:
 |---|---|---|---|---|
 | DARA-T0 | incident capture and owner reconciliation | this roadmap and immutable evidence IDs DARA-E01 through DARA-E12 | operator foundation-first direction | `T0_REVIEWED_PASS_BOUNDED_MFRP_OWNER_SYNCED`; independent review not claimed |
 | DARA-T1 | architecture-readiness contract design | `docs/assessments/CVF_DARA_T1_ARCHITECTURE_READINESS_CONTRACT_DESIGN_2026-09-06.md`; matrix schema, role/fault taxonomy, MFRP input composition and pre-invocation quota-admission contract; no new reviewer workflow | accepted T0 owner sync | `DESIGN_ACCEPTED_BOUNDED` through sequential review; independent review not claimed |
-| DARA-T2 | minimal foundation implementation | existing-owner template/standard/scaffold/checker changes with protected-path authorization | accepted T1 plus GC-018/work order | `CORE_CONTROL_IMPLEMENTED` or `BLOCK_IMPLEMENTATION_EVIDENCE` |
+| DARA-T2 | minimal foundation implementation | existing-owner template/standard/scaffold/checker changes with protected-path authorization | accepted T1 plus GC-018/work order | `REJECTED_REVIEW_COST_ESCALATION_REQUIRED` at `ceadf2c3f`; candidate remains uncommitted |
+| DARA-T2B | operator-authorized internal recovery | one new parent assignment bound to DARA-E13; repair the complete R3 finding set inside the existing exact 14-path implementation manifest; operator-mediated prompt transport only | DARA-E13 plus DARA-E15 | `CORE_CONTROL_IMPLEMENTED` or `BLOCK_INTERNAL_RECOVERY_EVIDENCE` |
 | DARA-T3 | historical replay | Initial/R1/R2 replay fixture and deterministic receipt showing earliest stop | accepted T2 | `REPLAY_BLOCKS_AVOIDABLE_INVOCATIONS` or `RETURN_TO_DESIGN` |
 | DARA-T4 | handoff to existing MFRP shadow validation | admit DARA observations only through existing MFRP P4-C1 eligibility and checkpoint rules | accepted T3 and MFRP admission | `HANDOFF_ACCEPTED_NO_NEW_COLLECTOR` or `PARK_NO_ELIGIBLE_EVIDENCE` |
 | DARA-T5 | existing-owner projection decision | MFRP P5/P6 owns activation; DARA supplies bounded architecture evidence only | accepted MFRP checkpoint decision | `CONSUMED_BY_MFRP` or `PARK_FOUNDATION` |
@@ -204,6 +208,37 @@ then directed continuation. DARA-T1 design is accepted through that disclosed
 route; independent review is not claimed. DARA-T2 baseline/work-order authoring
 may begin, but implementation still requires the fresh protected-path packet
 to pass pre-dispatch. Runtime/provider/public actions remain outside scope.
+
+On 2026-09-07, after DARA-T2 reached review round 3 and the external invocation
+ceiling reached 2/2, the operator explicitly opened
+`OPERATOR_AUTHORIZED_INTERNAL_RECOVERY`. This is a new parent assignment based
+on new independent critical evidence, not an automatic third rework. It is
+valid only for `dispatchSurface: INTERNAL_AGENT`. Manual copy/paste is a
+transport method, not a consumer-class override: a recipient that crosses an
+independent provider, account, credential, process, or other external boundary
+must stop as `BLOCKED_SURFACE_MISMATCH` and cannot consume this route.
+
+## Operator-Authorized Internal Recovery Interlock
+
+The DARA-T2B route is fail closed under all of these rules:
+
+1. Codex remains orchestrator/reviewer and does not execute the worker repair.
+2. The orchestrator does not invoke Claude through CLI, MCP, or another direct
+   provider-control surface. The operator owns any manual packet relay.
+3. The worker must truthfully qualify as `INTERNAL_AGENT` under the Dual Agent
+   Surface Accounting Standard. Manual relay to an independent external model
+   remains external and is not authorized by this route.
+4. The predecessor history remains visible: review round 3, external count
+   2/2, two new root causes, three dependent findings, and 200 operator-reported
+   elapsed minutes with quota usage unavailable.
+5. DARA-T2B is a new parent assignment because DARA-E13 changed the critical
+   authority boundary. It must not reset or erase predecessor telemetry.
+6. Worker write ownership is the existing 14-path DARA candidate only. The two
+   parked `WP-ARCH-003` files remain hash-preserved and excluded.
+7. Worker returns without commit. Reviewer consumes returned evidence, runs
+   only contradiction-driven focused probes, and does not recreate the repair.
+8. DARA-T3 and `WP-ARCH-003` remain parked until DARA-T2B is independently
+   accepted and committed.
 
 ## WP-ARCH-003 Interlock
 
@@ -247,6 +282,7 @@ until a separately authorized disposition archives, replaces or rejects them.
 | duplicate-owner candidate escapes | one duplicated evaluator plan in R2 | 0 |
 | unregistered/unwired component escapes | principal/scope guard path lacks complete production composition chain | 0 |
 | token or subscription quota | UNKNOWN | record exact value only when observable; never infer |
+| observed end-to-end elapsed time | 200 minutes, operator supplied | preserve as baseline and split worker/reviewer time only when command-backed or provider-reported |
 
 Required attribution fields for future design: `dispatcherDefectCount`,
 `workerExecutionDefectCount`, `reviewerLateDiscoveryCount`,
