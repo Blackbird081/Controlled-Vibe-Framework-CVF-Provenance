@@ -242,7 +242,7 @@ worker paths are pending before edits; pre-implementation exits zero.
     "delegation": "MULTI_ROLE_NO_COMMIT",
     "novelty": "OWNER_COMPOSITION"
   },
-  "pathFamilies": ["AGENT_HANDOFF_V59_2026-08-11.md", "docs/baselines/", "docs/work_orders/", "docs/reviews/", "governance/compat/"],
+  "pathFamilies": ["AGENT_HANDOFF_V59_2026-08-11.md", "CVF_SESSION/", "CVF_SESSION_MEMORY.md", "docs/baselines/", "docs/work_orders/", "docs/reviews/", "governance/compat/"],
   "claims": ["bounded repair of an offline historical replay"],
   "requiredProof": ["accepted-oracle observed results", "input-sensitive metrics", "fixture-ledger freeze", "exact-five no-commit return"],
   "operatorCheckpoints": [],
@@ -579,17 +579,25 @@ runtime owner or parallel replay surface is created.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized protected paths:
+Protected paths:
 
 - `governance/compat/fixtures/dara_t3_wp_arch_003_historical_replay.json`
 - `governance/compat/dara_t3_historical_replay.py`
 - `governance/compat/test_dara_t3_historical_replay.py`
+- `AGENT_HANDOFF_V59_2026-08-11.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/entries/daraT3R1WpArch003HistoricalReplayRepairDispatch20260907.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
 
 Operator authorization: 2026-09-07 instruction directing Codex to act as
 orchestrator/reviewer and prepare a packet for manual relay to Claude.
 
-Authorized scope: repair only the new offline replay candidate; no edit to
+Authorized guard-maintenance scope: repair only the new offline replay candidate; no edit to
 active `check_*.py` guards, hook catalogs, dispatch behavior or session state.
+The six continuity paths above are orchestrator-only dispatch synchronization
+paths and remain forbidden to the worker.
 
 Rollback boundary: revert/remove only the exact five worker files after
 reviewer disposition. Worker must not execute rollback.
