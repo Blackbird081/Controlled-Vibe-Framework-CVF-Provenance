@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-08
 
@@ -555,6 +555,36 @@ and focused test are inactive historical replay surfaces only.
 | Actual changed set | this work order only for dispatch commit |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DARA_T3_R2_WP_ARCH_003_HISTORICAL_REPLAY_COMPLETION_REVIEW_2026-09-08.md` | reviewer verdict `PASS` | PASS |
+| Roadmap state | `docs/roadmaps/CVF_DISPATCHER_ARCHITECTURE_READINESS_AND_QUOTA_ADMISSION_ROADMAP_2026-09-06.md` | DARA-T4 historical park preserved; no successor automatically opened | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check passes; no registry mutation | PASS |
+| Registry Markdown | `docs/corpus-intelligence/registry/` | changed-path coverage passes; no registry source mutation | PASS |
+| External evidence digest | exact-five paths in completion review Target / Source | fixture sha256=`7fc053f8c4f28061e78a96a09a77ca22979df1aba3915fab0fdd68923e509588`; ledger sha256=`149f9ab4482842fe3c4764ddea117eda130bbdf766999de0aee80293167a046a` | PASS |
+| System loop interlock | `docs/reference/CVF_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_2026-06-27.json` | system-loop and FPC acceptance-ledger checks pass | PASS |
+| Session continuity | `AGENT_HANDOFF_V59_2026-08-11.md` | dispatch HEAD `8b8778321c802a16d059dcbf82635ea661b54acd` recorded at `a02a059ee` | PASS |
+| worker output | exact five paths in Work-Order Fulfillment Manifest | completion review assertion matrix and exact changed-set receipt | PASS |
+| focused tests | `governance/compat/test_dara_t3_historical_replay.py` | `python -m pytest governance/compat/test_dara_t3_historical_replay.py -q` -> 41 passed | PASS |
+| worker-return gate | `governance/compat/run_worker_return_fast_gate.py` | required target invocation -> COMPLIANT | PASS |
+| reviewer acceptance | `docs/reviews/CVF_DARA_T3_R2_WP_ARCH_003_HISTORICAL_REPLAY_COMPLETION_REVIEW_2026-09-08.md` | `Status: CLOSED_PASS_BOUNDED` and Reviewer verdict `PASS` | PASS |
+| external budget | Review Dispatch Convergence block | cumulative use 3/3; no further invocation | PASS_BOUNDED |
+| public export | this work order | `DEFERRED_PRIVATE_ONLY` | PASS_BOUNDED |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| accepted finding set | DARA-T3-R2-01 through R2-03 resolved | completion review closes all three with sampled evidence | PASS |
+| focused tests | all focused tests pass | 41/41 passed | PASS |
+| worker-return gate | compliant after orchestrator unblock | reviewer-fast 67/67 and wrapper COMPLIANT | PASS |
+| frozen fixture | current hash equals pre/post receipt | `7fc053f8c4f28061e78a96a09a77ca22979df1aba3915fab0fdd68923e509588` | PASS |
+| frozen ledger | current hash equals pre/post receipt | `149f9ab4482842fe3c4764ddea117eda130bbdf766999de0aee80293167a046a` | PASS |
+| external ceiling | no use beyond admitted call | cumulative 3 equals ceiling 3 | PASS_BOUNDED |
 
 ## Public Export Disposition
 
