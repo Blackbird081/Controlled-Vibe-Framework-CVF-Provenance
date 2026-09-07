@@ -5,11 +5,11 @@ Status: ACTIVE
 - GC010 root architecture is closed parked at material commit `e867d5432`; no truthful current product owner exists, no successor tranche opened, and system-chain selection must move outside GC010.
 - Repository: private provenance SOT; accepted P4-C1 automatic-collection material: `b9bdba71290a9d94a12438b413401ecb4c6a72a7`; branch `main`.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
-- Branch: `main`; current material HEAD: `5191357734261b4990b64ab47526b475162a45c3`; prior continuity commit `d4c6fbea9`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
+- Branch: `main`; current material HEAD: `d4a6b422f`; prior continuity commit `a02a059ee`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
 - Phase-03R canonical planning materialization is independently accepted `CLOSED_PASS_BOUNDED` at material commit `0b8398f6e67c1fe48eb95fdfee8fd22c9524b7d6` after three external-worker rework rounds. Reviewer-fast passed 67/67, pre-commit passed 88/88, and committed-range pre-closure passed every material/content check with only this expected GC-020 continuity sync outstanding. Four ignored private successors remain local and hash-bound; no WP implementation, runtime, provider/live, public-sync, deployment, or production authority opens.
 - Phase-04 `WP-ARCH-003` R2 remains rejected/pending; its four-path normalized evidence and GC-051 registry coverage are preserved at `c2a1f7c7c` without accepting the substantive proposal. DARA-T2B is `CLOSED_PASS_BOUNDED`. Operator continuation opened DARA-T3 only; its source-frozen exact-five historical replay dispatch is committed at `028b6af2de77650cbbd20e997eed1e843abc6d4a`. One new parent external assignment is admitted through operator manual relay at T3 usage 0 to ceiling 1; Codex must not call Claude CLI/MCP. DARA-T4 and WP implementation stay parked, and P4-C1 remains the sole automatic reviewer-evidence collector.
 - DARA-T3 terminated `RETURN_TO_DESIGN` at `c9e3c88e0`. Operator-authorized DARA-T4 is closed bounded at `5191357734261b4990b64ab47526b475162a45c3` as `PARK_NO_ELIGIBLE_EVIDENCE`; P4-C1 returned `SKIPPED_NO_ELIGIBLE_CANDIDATE`, increment 0, no safety trigger. Five rejected T3 files remain uncommitted; DARA-T5 does not open.
-- Operator reopened DARA-T3 on 2026-09-08 and authorized one bounded external-agent CLI repair. The governed R2 dispatch is committed at `8b8778321c802a16d059dcbf82635ea661b54acd`; its exact-five worker return is pending independent review. DARA-T4's prior bounded closure remains historical evidence, while DARA-T5 and substantive `WP-ARCH-003` stay parked.
+- Operator reopened DARA-T3 on 2026-09-08 and authorized one bounded external-agent CLI repair. The governed R2 dispatch is `8b8778321c802a16d059dcbf82635ea661b54acd`; exact-five repair and independent review are accepted `CLOSED_PASS_BOUNDED` at `d4a6b422f`. Focused tests pass 41/41, worker-return fast gate passes, fresh fixture/ledger freeze receipts match, and external usage is closed at 3/3. DARA-T4's prior bounded closure remains historical evidence and is not automatically rerun; DARA-T5 and substantive `WP-ARCH-003` stay parked.
 - DARA-T2B continuity parent: `d4af432c00bcf1bcb61fa78c333b8e4353dc978e`.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
@@ -147,7 +147,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   605-test suites and all required gates. No runtime bypass claim was made.
 
 ## Next Allowed Move
-P4-C1 stays active at `b9bdba712`, eligible zero, checkpoints M5/M10/safety/M20. DARA-T2B is closed bounded; T3 ended `RETURN_TO_DESIGN`; T4 is closed bounded at `5191357734261b4990b64ab47526b475162a45c3` with `PARK_NO_ELIGIBLE_EVIDENCE`. Continue only with natural P4-C1 collection or a fresh operator-selected lane. DARA-T5, substantive WP-ARCH-003 repair, provider/live/public/deploy and other lanes remain parked. Latest closed LHW: `LHW24`.
+P4-C1 stays active at `b9bdba712`, eligible zero, checkpoints M5/M10/safety/M20. DARA-T2B is closed bounded; the late operator-authorized DARA-T3 R2 repair is accepted closed bounded at `d4a6b422f` with external usage 3/3. DARA-T4 remains historically closed bounded at `5191357734261b4990b64ab47526b475162a45c3` with `PARK_NO_ELIGIBLE_EVIDENCE` and is not automatically rerun. Continue only with natural P4-C1 collection or a fresh operator-selected lane. DARA-T5, substantive WP-ARCH-003 implementation, provider/live/public/deploy and other lanes remain parked. Latest closed LHW: `LHW24`.
 
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
@@ -174,7 +174,7 @@ EXPORTED
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`; public `main`: `132371c3eb8d8e7d65eedd42799a8b910da63b94`; server-side preflight run `33715255525` PASS. Provenance record: `docs/reference/CVF_EXTERNAL_AGENT_ABSORPTION_PREPARATION_PUBLIC_SYNC_RECORD_2026-09-03.md` at `b4fb661bb`, path correction `100d6bd8b`. Operator packet: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ`, protocol 1.3, receipt `23cf16ead08f50e950bf9c7b964d79576075da7d616881c39a1891a1a197d622`. This is source-intake preparation, not repo acceptance, deploy or production readiness.
 
 ## Core Guard Self-Protection Authorization - Current Continuity
-Authorized guard-maintenance scope: project the committed DARA-T4 terminal MFRP handoff disposition into active continuity while preserving the CSCC-R1-T2A stop and active P4-C1 automatic collector.
+Authorized guard-maintenance scope: project the accepted DARA-T3 R2 historical replay closure into active continuity while preserving DARA-T4 history, the CSCC-R1-T2A stop and active P4-C1 automatic collector.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -188,10 +188,11 @@ Protected paths:
 - `CVF_SESSION/state/entries/daraT3R1WpArch003HistoricalReplayRepairDispatch20260907.json`
 - `CVF_SESSION/state/entries/daraT3R1HistoricalReplayRejectedFinal20260908.json`
 - `CVF_SESSION/state/entries/daraT4MfrpHandoffParkNoEligibleEvidence20260908.json`
+- `CVF_SESSION/state/entries/daraT3R2HistoricalReplayClosedPassBounded20260908.json`
 - `governance/compat/dara_t3_historical_replay.py`
 - `governance/compat/test_dara_t3_historical_replay.py`
-Operator authorization: on 2026-09-08 the operator declared DARA-T3 complete as a bounded terminal disposition and authorized continuation through DARA-T4. T4 material is `5191357734261b4990b64ab47526b475162a45c3`.
-Rollback boundary: revert only this continuity projection; preserve DARA-T4 material `5191357734261b4990b64ab47526b475162a45c3`, T3 rejection `c9e3c88e0355491cd2e6bfffda3c04249352a553`, DARA-T2B closure, T2A `c1f95ae1d` and P4-C1 `b9bdba712`. DARA-T5, WP implementation, provider calls, public sync and parked lanes are not authorized by this sync.
+Operator authorization: on 2026-09-08 the operator reopened DARA-T3 and allowed one external-agent CLI correction. R2 material is accepted at `d4a6b422f`; use is exhausted at 3/3.
+Rollback boundary: revert only this continuity projection; preserve DARA-T3 R2 material `d4a6b422f`, DARA-T4 material `5191357734261b4990b64ab47526b475162a45c3`, earlier T3 rejection evidence, DARA-T2B closure, T2A `c1f95ae1d` and P4-C1 `b9bdba712`. DARA-T4 rerun, DARA-T5, WP implementation, provider calls, public sync and parked lanes are not authorized by this sync.
 ## Claim Boundary
 
-This handoff records the DARA-T3 terminal rejection, DARA-T4 MFRP handoff park, P4-C1 and T2A stop. It does not prove replay effectiveness, accept or implement `WP-ARCH-003`, open DARA-T5, authorize an external-agent call, or make provider/live, public, deployment or production claims.
+This handoff records the accepted bounded DARA-T3 R2 offline replay, historical DARA-T4 MFRP park, P4-C1 and T2A stop. It does not accept or implement `WP-ARCH-003`, rerun DARA-T4, open DARA-T5, authorize another external-agent call, or make provider/live, public, deployment or production claims.
