@@ -86,6 +86,11 @@ Review-Dispatch Convergence Control: REQUIRED; copy the exact scalar fields and 
 the pre-dispatch gate rejects review-by-drip, round-three auto-dispatch,
 unknown external usage, and a reached parent-assignment invocation ceiling.
 
+## Architecture Readiness Admission
+Full contract: `docs/reference/CVF_ARCHITECTURE_READINESS_ADMISSION_STANDARD_2026-09-07.md` (DARA-T2-R1).
+Schema, applicability, allowed declarations, closed chain, fault attribution, quota, echo, and evidence truth are
+defined there. Rotated from this surface at DARA-T2-R1 to satisfy the near-threshold rotation requirement.
+
 ## Enforcement / Verification
 
 Verification requirements:

@@ -87,6 +87,49 @@ FIELD_HARD_OBLIGATION_LOCATOR = "p4HardObligationLocator"
 FIELD_HARD_OBLIGATION_PATTERN = "p4HardObligationPattern"
 FIELD_SOURCE_AUTHORITY_LOCATOR = "p4SourceAuthorityLocator"
 
+ARCH_ECHO_SCHEMA = "architectureMatrixSchema"
+ARCH_ECHO_DIGEST = "architectureMatrixCanonicalDigest"
+ARCH_ECHO_REVIEW_PATH = "architectureSemanticReviewPath"
+ARCH_ECHO_REVIEW_COMMIT = "architectureSemanticReviewCommit"
+ARCH_ECHO_REVIEW_SHA = "architectureSemanticReviewFileSha256"
+ARCH_ECHO_DISPOSITION = "architectureBindingEchoDisposition"
+
+
+def render_architecture_echo_block() -> str:
+    """Render the optional DARA-T2 Architecture Readiness echo block.
+
+    Must stay byte-identical (as its own standalone rendered text) to
+    ``run_worker_return_scaffold``'s equivalent section. This is a
+    documentation-only identity echo, never a second reviewer workflow: the
+    default `NOT_APPLICABLE` disposition means the dispatching work order
+    did not declare `Architecture-Readiness Admission: REQUIRED`, so no
+    accepted matrix identity exists to echo. A worker whose dispatching
+    work order did declare `REQUIRED` must replace every field below with
+    the exact accepted values, never invent or approximate them.
+    """
+    return (
+        "## Architecture Readiness Echo\n\n"
+        f"{ARCH_ECHO_SCHEMA}: NOT_APPLICABLE_WITH_REASON: dispatching work order did not declare Architecture-Readiness Admission: REQUIRED\n"
+        f"{ARCH_ECHO_DIGEST}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_REVIEW_PATH}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_REVIEW_COMMIT}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_REVIEW_SHA}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_DISPOSITION}: N/A with reason: no accepted architecture matrix to echo\n"
+    )
+
+
+def architecture_echo_block_fields() -> str:
+    """The field-only body (no heading), for cross-generator byte-equality
+    comparison against ``run_worker_return_scaffold``'s section body."""
+    return (
+        f"{ARCH_ECHO_SCHEMA}: NOT_APPLICABLE_WITH_REASON: dispatching work order did not declare Architecture-Readiness Admission: REQUIRED\n"
+        f"{ARCH_ECHO_DIGEST}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_REVIEW_PATH}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_REVIEW_COMMIT}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_REVIEW_SHA}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_DISPOSITION}: N/A with reason: no accepted architecture matrix to echo\n"
+    )
+
 
 def build_scec_outcome_block(args: Any) -> str:
     """Emit an outcome-shaped SCEC block for a worker-return skeleton.
@@ -122,6 +165,16 @@ def build_worker_return_skeleton(args: Any) -> str:
     invocation_id = f"{args.batch_id.lower()}-{args.date}"
     profile = getattr(args, "worker_return_profile", "WORKER_RETURN_FULL_GATE_V1")
     fast_doc = profile == "WORKER_RETURN_FAST_DOC_V1"
+    p4_observation = (
+        f"{render_p4_observation_block()}\n"
+        if getattr(args, "include_p4_observation_block", True)
+        else ""
+    )
+    architecture_echo = (
+        render_architecture_echo_block()
+        if getattr(args, "include_architecture_readiness_echo", True)
+        else ""
+    )
     conditional_controls = """## Conditional Controls Disposition
 conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA
 """ if fast_doc else """## External Knowledge Intake Routing
@@ -173,8 +226,7 @@ TO_FILL: state the scope and methodology of this worker execution.
 TO_FILL: state findings and position with evidence.
 ## Risk / Corrective Action
 TO_FILL: state risks and corrective actions if any.
-{render_p4_observation_block()}
-{build_scec_outcome_block(args)}
+{p4_observation}{architecture_echo}{build_scec_outcome_block(args)}
 ## Checker Source Read-Ahead Block
 | Field | Value |
 | --- | --- |
