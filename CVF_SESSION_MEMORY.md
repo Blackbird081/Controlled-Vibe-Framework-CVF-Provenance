@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decision after RABA-F01-F02 terminal park at `0767a16e5`; parked checkpoint=RABA-T1 through RABA-T3, implementation, DARA-T5, provider/live/public/deploy and repository absorption.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=manual operator relay of ROLE-SOT-EVIDENCE-T0 at `442a7708b`; parked checkpoint=RABA-T1 through RABA-T3, implementation, DARA-T5, provider/live/public/deploy and repository absorption.
 
 ## Current Mode
 
@@ -52,7 +52,7 @@ Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0. `WP-ARCH-003-RABA-F01-F02` is reviewer-accepted at `0767a16e5` with terminal `PARK_NO_TRUTHFUL_AUTHORITY_ROOT`; F01/F02 are resolved and external usage is exhausted 1/1. Next is operator decision only: materially new authority/evidence for a bounded reopen, or another parked lane. RABA-T1 through RABA-T3 are not released; implementation/runtime/provider/live/public/deploy and repository absorption remain parked.
+Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0. `ROLE-SOT-EVIDENCE-T0` is dispatch-ready at `442a7708b`, external usage 0/1. Next is manual operator relay of `docs/work_orders/CVF_AGENT_WORK_ORDER_ROLE_SOT_EVIDENCE_TOPOLOGY_INVARIANCE_T0_2026-09-08.md`; relay consumes 1/1. RABA-T1 through RABA-T3 remain `NOT_OPENED_PRECONDITION_ABSENT`; implementation/runtime/provider/live/public/deploy and repository absorption remain parked pending T0 review.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

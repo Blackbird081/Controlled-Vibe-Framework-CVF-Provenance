@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2800,
+  "stateKey": "roleSotEvidenceTopologyInvarianceT0DispatchReady20260908",
+  "value": "Operator-approved ROLE-SOT-EVIDENCE-T0 is dispatch-ready at material commit 442a7708b with parent-scoped external usage 0/1. The single compact work order authorizes an operator-relayed external worker to modify exactly docs/reference/CVF_AGENT_ROLE_ASSIGNMENT_MATRIX_2026-05-19.md and docs/reference/CVF_SINGLE_AGENT_MULTI_ROLE_CONTROL_STANDARD_2026-06-11.md, create docs/reviews/CVF_ROLE_SOT_EVIDENCE_TOPOLOGY_INVARIANCE_T0_WORKER_RETURN_2026-09-08.md, and leave all three unstaged/uncommitted. It establishes topology-neutral role obligations, a seven-step responsibility matrix, shared-SOT evidence operations, and a validity-versus-actor-independence distinction without creating a third owner. RABA-T1 through RABA-T3 remain NOT_OPENED_PRECONDITION_ABSENT. Repository absorption, runtime, provider/live, public-sync and deployment remain parked."
+}
