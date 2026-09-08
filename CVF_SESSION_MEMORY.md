@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=internal no-commit ROLE-SOT-MH-T1 execution from dispatch `891d7c72a`; parked checkpoint=RABA-T1 through RABA-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=author separate bounded encoding rename-awareness and GC-020 post-commit synchronization packets after corrected dependency refresh; parked checkpoint=RABA-T1 through RABA-T3, implementation before dispatch, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
 
 ## Current Mode
 
@@ -52,7 +52,7 @@ Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0. `ROLE-SOT-MH-T1` is operator-authorized and `DISPATCH_READY` at `891d7c72a`; pre-dispatch passed 81/81 and pre-commit passed 88/88. Next is internal no-commit worker execution from a fresh captured execution base under explicit lane handoff; no external invocation is authorized. `ROLE-SOT-EVIDENCE-T0` remains reviewer-accepted `CLOSED_PASS_BOUNDED` at `6bcdeaca8`, usage exhausted 2/2. RABA-T1 through RABA-T3 remain `NOT_OPENED_PRECONDITION_ABSENT`; actual process interception, runtime/provider/live/public/deploy and repository absorption remain parked.
+Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0. `ROLE-SOT-MH-T1` is `CLOSED_PASS_BOUNDED` at `94c4922c2`; focused proof passed 55/55 plus 44/44, reviewer-fast 67/67 and pre-commit 88/88. Next is corrected dependency refresh and separate bounded packet authoring for encoding rename-awareness and GC-020 post-commit SHA synchronization; no future SHA prediction, hook bypass or implementation-before-dispatch is authorized. `ROLE-SOT-EVIDENCE-T0` remains reviewer-accepted `CLOSED_PASS_BOUNDED` at `6bcdeaca8`, usage exhausted 2/2. RABA-T1 through RABA-T3 remain `NOT_OPENED_PRECONDITION_ABSENT`; actual process interception, runtime/provider/live/public/deploy and repository absorption remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
