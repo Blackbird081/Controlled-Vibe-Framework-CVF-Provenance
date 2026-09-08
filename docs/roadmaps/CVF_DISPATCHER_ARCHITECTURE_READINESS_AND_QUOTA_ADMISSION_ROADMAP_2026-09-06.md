@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: DARA_T4_R1_PARK_NO_ELIGIBLE_EVIDENCE
+Status: WP_ARCH_003_AR1_DESIGN_DISPATCH_READY
 
 Date: 2026-09-06
 
@@ -25,6 +25,12 @@ roadmap. DARA-T2B is closed bounded at `483176267`. DARA-T3 terminated
 operator accepted that bounded terminal disposition and opened DARA-T4 on
 2026-09-08. DARA-T4 finds no MFRP-eligible evidence and parks without creating
 a collector, receipt, checkpoint or DARA-T5 authority.
+
+After that bounded park, the operator selected fresh route 2 on 2026-09-08:
+open a new `WP-ARCH-003` architecture-design parent assignment, not a third
+repair round and not implementation. The exact-two external-worker dispatch
+must produce a new canonical-owner and producer-to-runtime-consumer proposal;
+the independent reviewer owns acceptance and all commits.
 
 ## Purpose
 
@@ -60,7 +66,7 @@ In scope:
 
 ## Non-Goals
 
-- No repair or acceptance of the two pending `WP-ARCH-003` outputs.
+- No substantive repair or acceptance of the two historical `WP-ARCH-003` outputs.
 - No Round 3 external dispatch.
 - No implementation of `WP-ARCH-003` or its proposed guard contracts.
 - No semantic-scoring model or claim that a machine can decide architecture.
@@ -94,6 +100,8 @@ Frozen repository base for this roadmap: `17c8fe30fdc4468f6748d67926e3d95224723a
 | DARA-E18 | existing `governance/compat/mfrp_shadow_canary_autocollect.py` readout on 2026-09-08 | `P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE`; no eligible committed phase-return/receipt pair is available | ACCEPT_HISTORICAL_MACHINE_READOUT |
 | DARA-E19 | `docs/reviews/CVF_DARA_T3_R2_WP_ARCH_003_HISTORICAL_REPLAY_COMPLETION_REVIEW_2026-09-08.md`; material `d4a6b422f` | late operator-authorized R2 replay is independently accepted `CLOSED_PASS_BOUNDED`; 41/41 focused tests, fast gate PASS and fresh freeze receipts | ACCEPT_COMMITTED_BOUNDED_REPLAY_EVIDENCE |
 | DARA-E20 | existing collector readout after `d4a6b422f` and continuity `d9807d3df` | `P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE`; committed T3 review/return contains no eligible P4 observation block, and no journal row, receipt or safety marker is created | ACCEPT_CURRENT_MACHINE_READOUT |
+| DARA-E21 | operator instruction on 2026-09-08 | select fresh route 2: reopen `WP-ARCH-003` as a new design/proposal tranche with Codex as orchestrator/reviewer and operator relay to an external worker | ACCEPT_OPERATOR_TRANCHE_AUTHORIZATION |
+| DARA-E22 | `docs/baselines/CVF_GC018_WP_ARCH_003_AR1_CANONICAL_OWNER_RUNTIME_PATH_DESIGN_2026-09-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WP_ARCH_003_AR1_CANONICAL_OWNER_RUNTIME_PATH_DESIGN_2026-09-08.md` | exact-two no-commit architecture proposal; one external invocation; no implementation or successor authority | ACCEPT_DISPATCH_AUTHORITY |
 
 Measured cost is bounded to three external invocations and two repair turns.
 Token or subscription-quota quantity is `UNKNOWN`: the local repository does
@@ -210,6 +218,7 @@ Admission rules:
 | DARA-T3 | historical replay | Initial/R1/R2 replay fixture and deterministic receipt showing earliest stop | accepted T2 | late operator-authorized R2 repair accepted `CLOSED_PASS_BOUNDED` at `d4a6b422f`; earlier rejection remains history |
 | DARA-T4 | handoff to existing MFRP shadow validation | admit DARA observations only through existing MFRP P4-C1 eligibility and checkpoint rules | accepted T3 R2 plus current MFRP admission check | R1 reassessment remains `PARK_NO_ELIGIBLE_EVIDENCE`; collector returned `SKIPPED_NO_ELIGIBLE_CANDIDATE`, no new collector, receipt, row or checkpoint |
 | DARA-T5 | existing-owner projection decision | MFRP P5/P6 owns activation; DARA supplies bounded architecture evidence only | accepted MFRP checkpoint decision | `CONSUMED_BY_MFRP` or `PARK_FOUNDATION` |
+| WP-ARCH-003-AR1 | fresh canonical-owner/runtime-path design | one new assessment plus worker return; exact current owner, producer, trust, carrier, export, registration, composition, consumer, tests and rollback | DARA-T1/T2B/T3 interlock clauses plus DARA-E21 | `COMPLETE_PENDING_REVIEW`, `BLOCKED_WITH_REASON`, or reviewer-owned `CLOSED_PASS_BOUNDED` |
 
 No implementation tranche opens automatically. On 2026-09-06 the operator
 authorized Codex to act sequentially as orchestrator and reviewer for DARA and
@@ -286,8 +295,8 @@ is conjunctive and the MFRP handoff condition is still absent.
 
 ## WP-ARCH-003 Interlock
 
-The pending `WP-ARCH-003` finding chain remains parked. It may reopen only
-after all of the following are true:
+The historical `WP-ARCH-003` finding chain remains parked. A fresh design lane
+may reopen only after all of the following are true:
 
 - DARA-T1 architecture matrix and role/fault taxonomy are accepted;
 - DARA-T2 installs the applicable pre-dispatch controls;
@@ -301,6 +310,12 @@ after all of the following are true:
 The two current files are committed incident evidence at `c2a1f7c7c` and must
 remain substantively parked until a separately authorized disposition
 archives, replaces or rejects them.
+
+The operator's DARA-E21 decision opens only `WP-ARCH-003-AR1` design. The
+first three clauses are accepted by DARA-T1/T2B/T3. AR1 must satisfy the fourth
+and produce reviewer-owned accepted architecture before the fifth can release
+any implementation work order. Until then, substantive implementation remains
+parked.
 
 ## Failure And Escalation Modes
 
@@ -492,8 +507,8 @@ invocation, runtime/provider/live/public action, or P4 eligibility change.
 
 This roadmap records a bounded governance/control-plane incident and a
 foundation-first work sequence. The P4-C1 universal-discovery hardening above
-only preserves an already-active MFRP invariant; it does not implement DARA's
-architecture gate. It does not accept the pending worker outputs, authorize
-DARA-T1/T2 automatically, resume `WP-ARCH-003`, consume another external
-invocation, mutate runtime/source, or make provider/live/public/deployment/
+only preserves an already-active MFRP invariant. DARA-E21 opens one new
+`WP-ARCH-003-AR1` external design invocation and exact-two pending artifacts;
+it does not accept the historical outputs or new proposal, implement the WP,
+open DARA-T5, mutate runtime/source, or make provider/live/public/deployment/
 production claims.
