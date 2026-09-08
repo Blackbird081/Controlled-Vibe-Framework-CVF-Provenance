@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2783,
+  "stateKey": "wpArch003Ar1CanonicalOwnerRuntimePathDesignDispatch20260908",
+  "value": "Operator-selected fresh route 2 is dispatched as WP-ARCH-003-AR1-CANONICAL-OWNER-RUNTIME-PATH-DESIGN at material commit d64516126. This is a new parent assignment, not R3 of the rejected incident chain: one external-agent invocation is admitted from cumulative count 0 to ceiling 1, and the worker may create only the new AR1 assessment plus worker return without staging or commit. Historical WP-ARCH-003 files remain read-only incident evidence. The orchestrator/reviewer owns semantic acceptance and commits. Implementation, DARA-T5, MFRP mutation, provider/live/public/deploy and other parked authority remain closed."
+}
