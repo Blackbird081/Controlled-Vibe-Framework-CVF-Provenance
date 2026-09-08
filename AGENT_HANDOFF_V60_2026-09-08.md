@@ -36,6 +36,7 @@ Carry the bounded ROLE-SOT machine-hardening dispatch into worker execution whil
 ## Latest Work / Changes
 
 - Dispatch material committed at `891d7c72a` after pre-dispatch 81/81 and staged pre-commit 88/88 PASS.
+- Continuity activation committed at `9b86e6a091d4f2745e3812c085af1d1bd0439ced`; the following dedicated handoff-marker commit carries this parent anchor.
 - P4-C1 hook result was `SKIPPED_NO_ELIGIBLE_CANDIDATE`.
 - V59 reached the active-handoff byte limit; its historical body was preserved unchanged under an archive encoding annotation, and V60 is the compact active front door.
 - Latest finalized numbered learning handoff remains `LHW24`.
