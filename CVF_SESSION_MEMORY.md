@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute ENCODING_RENAME_AWARENESS_T1 only through one no-commit Claude lane from a fresh clean anchor; parked checkpoint=GC020 implementation until encoding review/closure, RABA-T1 through RABA-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1 only through one internal no-commit lane from a fresh clean anchor; parked checkpoint=RABA-T1 through RABA-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
 
 ## Current Mode
 
@@ -52,7 +52,7 @@ Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0. The separate encoding rename-awareness and GC-020 post-commit synchronization packets are `DISPATCH_READY` at material commit `7e4ed00868184f3778bedfefd479627d2cafcdb1`; authoring passed pre-commit 88/88 and committed-range pre-closure 80/81, with only this expected GC-020 continuity projection outstanding. Next is one no-commit Claude execution of `ENCODING_RENAME_AWARENESS_T1` from a fresh clean execution anchor under `EXPLICIT_LANE_HANDOFF`. GC-020 implementation stays dispatch-ready but parked until the encoding lane is reviewed and closed. No future-SHA prediction, hook bypass, mixed implementation ownership, worker session mutation, provider/live/public/deploy action or repository absorption is authorized.
+Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0. `ENCODING_RENAME_AWARENESS_T1` is `CLOSED_PASS_BOUNDED`: material `d46a55d2b`, marker sync `8911fbfd3`, closure `f2635a8f8`, focused tests 40/40, and material/closure pre-commit 88/88. Next is only `GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1` through one internal `WORKER_MUST_NOT_COMMIT` lane from a fresh clean execution anchor under `EXPLICIT_LANE_HANDOFF`. No future-SHA prediction, hook bypass, mixed implementation ownership, worker session mutation, provider/live/public/deploy action or repository absorption is authorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

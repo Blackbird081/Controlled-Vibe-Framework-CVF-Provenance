@@ -2,7 +2,7 @@
 Memory class: active-handoff
 Status: ACTIVE
 
-Current HEAD recorded for this handoff: `d46a55d2bf8fd4889ccac8d0dd807956e74128e7` (fix(governance): harden rename-aware encoding provenance). This is the truthfully known material parent for this dedicated handoff-sync-only commit.
+Current HEAD recorded for this handoff: `f2635a8f8` (docs(governance): close encoding rename awareness t1). This is the truthfully known closure parent for the following dedicated handoff-sync-only commit.
 
 ## Handoff Context
 
@@ -17,7 +17,7 @@ Current HEAD recorded for this handoff: `d46a55d2bf8fd4889ccac8d0dd807956e74128e
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute ENCODING_RENAME_AWARENESS_T1 only through one no-commit Claude lane from a fresh clean anchor; parked checkpoint=GC020 implementation until encoding review/closure, RABA-T1 through RABA-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1 only through one internal no-commit lane from a fresh clean anchor; parked checkpoint=RABA-T1 through RABA-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
 
 ## Current Mode
 
@@ -47,6 +47,10 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 - P4-C1 hook result was `SKIPPED_NO_ELIGIBLE_CANDIDATE`.
 - V59 reached the active-handoff byte limit; its historical body was preserved unchanged under an archive encoding annotation, and V60 is the compact active front door.
 - Latest finalized numbered learning handoff remains `LHW24`.
+- ENCODING-RENAME-T1 was reassigned by the operator from Claude to Codex,
+  repaired in one consolidated generation, and closed at material commit
+  `d46a55d2b` plus reviewer closure `f2635a8f8`. Focused proof passed 40/40;
+  both material and closure pre-commit chains passed 88/88.
 
 ## Current Authority
 
@@ -58,7 +62,7 @@ ROLE-SOT-MH-T1 is independently accepted. Claude Rework Generation 2 closed all 
 
 ## Next Allowed Move
 
-Execute only `docs/work_orders/CVF_AGENT_WORK_ORDER_ENCODING_RENAME_AWARENESS_T1_2026-09-08.md` through one no-commit Claude worker from a fresh clean `executionBaseHead` under `EXPLICIT_LANE_HANDOFF`. Return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` and release the exact five owned paths to the reviewer. Keep `CVF_AGENT_WORK_ORDER_GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1_2026-09-08.md` dispatch-ready but parked until the encoding lane is reviewed and closed. Do not predict a future SHA, bypass hooks, mix manifests, or let the worker mutate session surfaces.
+Execute only `docs/work_orders/CVF_AGENT_WORK_ORDER_GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1_2026-09-08.md` through one internal no-commit worker from a fresh clean `executionBaseHead` under `EXPLICIT_LANE_HANDOFF`. Return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` and release its exact owned paths to the reviewer. Encoding is closed and must not be mixed into this lane. Do not predict a future SHA, bypass hooks, or let the worker mutate session surfaces.
 
 ## Parked Checkpoints
 
@@ -70,13 +74,13 @@ Execute only `docs/work_orders/CVF_AGENT_WORK_ORDER_ENCODING_RENAME_AWARENESS_T1
 
 ## Active Boundary
 
-- This handoff authorizes only the encoding packet's bounded no-commit implementation. The separate GC-020 implementation remains parked until encoding closure.
+- This handoff authorizes only the GC-020 packet's bounded no-commit implementation. ENCODING-RENAME-T1 is closed.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - No external call, credential use, dependency installation, push, deploy or public export is authorized.
 
 ## Completion Review
 
-`docs/reviews/CVF_ROLE_SOT_MH_T1_DISPATCH_COORDINATION_AND_DEPENDENCY_DISCOVERY_MACHINE_HARDENING_COMPLETION_2026-09-08.md` records `CLOSED_PASS_BOUNDED` at material commit `94c4922c2`.
+`docs/reviews/CVF_ENCODING_RENAME_AWARENESS_T1_COMPLETION_2026-09-08.md` records `CLOSED_PASS_BOUNDED` at material commit `d46a55d2b`; ROLE-SOT-MH-T1 remains closed at `94c4922c2`.
 
 ## Public Export Disposition
 
@@ -84,7 +88,7 @@ DEFERRED_PRIVATE_ONLY
 
 ROLE-SOT-MH-T1 is private dispatch/continuity material. No public-sync artifact or public claim is authorized by this handoff.
 
-## Core Guard Self-Protection Authorization - Current Continuity
+## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: project accepted encoding/GC-020 dispatch material `7e4ed00868184f3778bedfefd479627d2cafcdb1` and its corrected next move into existing active continuity only.
 
@@ -101,14 +105,15 @@ Protected paths:
 - `CVF_SESSION/state/entries/roleSotMachineHardeningT1DispatchReady20260908.json`
 - `CVF_SESSION/state/entries/roleSotMachineHardeningT1HandoffRotation20260908.json`
 - `CVF_SESSION/state/entries/encodingGc020DispatchReady20260908.json`
+- `CVF_SESSION/state/entries/encodingRenameAwarenessT1Closure20260908.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ROLE_SOT_MH_T1_DISPATCH_COORDINATION_AND_DEPENDENCY_DISCOVERY_MACHINE_HARDENING_2026-09-08.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
-Operator authorization: the operator instructed the reviewer to continue ROLE-SOT-MH-T1, then requested a prompt for Claude to continue and directed thorough handling of the encoding/GC-020 defect class. Both separated packets are now checker-clean; this continuity releases only the encoding worker lane first.
+Operator authorization: the operator instructed the reviewer to continue ROLE-SOT-MH-T1, then reassigned the encoding worker role from Claude to Codex and directed completion. Encoding is now closed; this continuity releases only the separate GC-020 worker lane next.
 
 Rollback boundary: revert only this continuity projection; preserve ROLE-SOT-MH-T1 material `94c4922c2`, dispatch `891d7c72a`, T0 material `6bcdeaca8`, RABA park `0767a16e5` and P4-C1 `b9bdba712`.
 
 ## Claim Boundary
 
-This handoff records bounded ROLE-SOT-MH-T1 closure and the two dispatch-ready successors, authorizing only the encoding packet's no-commit implementation next. It does not claim actual process isolation, GC-020 implementation release, external invocation, RABA release, runtime/provider/live/public/deploy or production authority.
+This handoff records bounded ROLE-SOT-MH-T1 and ENCODING-RENAME-T1 closure and authorizes only the GC-020 packet's no-commit implementation next. It does not claim actual process isolation, GC-020 completion, external invocation, RABA release, runtime/provider/live/public/deploy or production authority.
