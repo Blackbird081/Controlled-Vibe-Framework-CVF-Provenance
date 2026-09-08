@@ -2,7 +2,7 @@
 Memory class: active-handoff
 Status: ACTIVE
 
-Current HEAD recorded for this handoff: `f2635a8f8` (docs(governance): close encoding rename awareness t1). This is the truthfully known closure parent for the following dedicated handoff-sync-only commit.
+Current HEAD recorded for this handoff: `595b90b4d` (docs(session): project encoding closure and release gc020). This is the truthfully known continuity parent for this dedicated handoff-sync-only commit.
 
 ## Handoff Context
 
