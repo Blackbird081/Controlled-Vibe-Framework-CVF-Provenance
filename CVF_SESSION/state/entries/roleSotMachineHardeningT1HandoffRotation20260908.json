@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2805,
+  "stateKey": "roleSotMachineHardeningT1HandoffRotation20260908",
+  "value": "Active handoff V59 reached the canonical byte budget during ROLE-SOT-MH-T1 continuity projection. Its historical body was preserved unchanged at CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V59_2026-08-11.md under an archive encoding annotation, and compact active handoff AGENT_HANDOFF_V60_2026-09-08.md was opened. Startup front doors, the T1 required-first-read pointer, root-file exposure registry and split-state core now point to V60; this rotation changes no implementation, external-effect or successor authority."
+}

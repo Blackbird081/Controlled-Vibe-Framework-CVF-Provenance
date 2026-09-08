@@ -11,7 +11,7 @@ history/state aggregate is a targeted lookup, not a default startup step:
 1. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` (compact current
    facts: current mode, active handoff, next allowed move)
 2. this front door
-3. `AGENT_HANDOFF_V59_2026-08-11.md`
+3. `AGENT_HANDOFF_V60_2026-09-08.md`
 4. only the current-authority paths those two surfaces name for the task
 5. `CVF_SESSION/ACTIVE_SESSION_STATE.json` only as a targeted lookup, when a
    current fact above is missing, contradictory, or the task explicitly
@@ -31,18 +31,18 @@ artifact.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V59_2026-08-11.md` |
+| Active handoff | `AGENT_HANDOFF_V60_2026-09-08.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
-| Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md` |
+| Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V59_2026-08-11.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decision on a bounded ROLE-SOT machine-hardening successor after T0 acceptance at `6bcdeaca8`; parked checkpoint=RABA-T1 through RABA-T3, implementation, DARA-T5, provider/live/public/deploy and repository absorption.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=internal no-commit ROLE-SOT-MH-T1 execution from dispatch `891d7c72a`; parked checkpoint=RABA-T1 through RABA-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
 
 ## Current Mode
 
@@ -52,7 +52,7 @@ Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0. `ROLE-SOT-EVIDENCE-T0` is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `6bcdeaca8`; external usage is exhausted 2/2. Reviewer-return passed 67/67, material pre-commit passed 88/88, and committed-range pre-closure passed every material/content check with only this continuity projection outstanding. Next is an operator decision on a bounded ROLE-SOT machine-hardening successor; no successor opens automatically. RABA-T1 through RABA-T3 remain `NOT_OPENED_PRECONDITION_ABSENT`; implementation/runtime/provider/live/public/deploy and repository absorption remain parked.
+Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0. `ROLE-SOT-MH-T1` is operator-authorized and `DISPATCH_READY` at `891d7c72a`; pre-dispatch passed 81/81 and pre-commit passed 88/88. Next is internal no-commit worker execution from a fresh captured execution base under explicit lane handoff; no external invocation is authorized. `ROLE-SOT-EVIDENCE-T0` remains reviewer-accepted `CLOSED_PASS_BOUNDED` at `6bcdeaca8`, usage exhausted 2/2. RABA-T1 through RABA-T3 remain `NOT_OPENED_PRECONDITION_ABSENT`; actual process interception, runtime/provider/live/public/deploy and repository absorption remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

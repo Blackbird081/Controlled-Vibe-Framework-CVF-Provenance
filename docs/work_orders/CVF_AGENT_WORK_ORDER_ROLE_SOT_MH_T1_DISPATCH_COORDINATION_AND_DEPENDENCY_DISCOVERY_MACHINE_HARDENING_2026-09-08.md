@@ -156,7 +156,7 @@ registry mutation, hook/autorun change, or actual process-interception need.
 
 ## Required First Reads
 
-1. `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`, and `AGENT_HANDOFF_V59_2026-08-11.md`.
+1. `CVF_SESSION_MEMORY.md`, `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`, and `AGENT_HANDOFF_V60_2026-09-08.md`.
 2. `docs/reference/guard_orientation/README.md` and `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`.
 3. Paired baseline, this work order, ADIF-0056, and accepted T0 worker return.
 4. <!--archive-name-exception-->`docs/reference/agent_handoff/CVF_AGENT_HANDOFF_BOUNDARY_MACHINE_CHECK_STANDARD.md` and its checker/tests.
@@ -399,7 +399,7 @@ and literal tokens in the return before running the bundled fast gate.
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"ROLE-SOT-MH-T1","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"BOUNDED_CLUSTER","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"KNOWN_PATTERN"},"pathFamilies":["governance/compat","docs/reference","docs/reviews","docs/baselines","docs/work_orders"],"claims":["forward-only dispatch packet machine hardening"],"requiredProof":["anchor negative cases","lane coordination negative cases","dated-owner registry negative cases","focused tests","independent review"],"operatorCheckpoints":["scope expansion","hook or autorun change","runtime or external effect"],"forbiddenEffects":["template or scaffold growth","hook or autorun wiring","runtime or provider execution","public sync","worker commit"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"N/A with reason: bounded named control cluster","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"ROLE-SOT-MH-T1","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"BOUNDED_CLUSTER","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"KNOWN_PATTERN"},"pathFamilies":["governance/compat","docs/reference","docs/reviews","docs/baselines","docs/work_orders","AGENTS.md","AGENT_HANDOFF_V60_2026-09-08.md","CVF_SESSION","CVF_SESSION_MEMORY.md"],"claims":["forward-only dispatch packet machine hardening"],"requiredProof":["anchor negative cases","lane coordination negative cases","dated-owner registry negative cases","focused tests","independent review"],"operatorCheckpoints":["scope expansion","hook or autorun change","runtime or external effect"],"forbiddenEffects":["template or scaffold growth","hook or autorun wiring","runtime or provider execution","public sync","worker commit"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"N/A with reason: bounded named control cluster","completenessClaimChanged":false}}
 ```
 
 ## Scaffold Provenance Block

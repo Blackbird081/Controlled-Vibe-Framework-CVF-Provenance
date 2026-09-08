@@ -32,7 +32,7 @@ exact-hash tracked migration debt in
 `governance/compat/CVF_ACTIVE_CONTINUITY_READ_BUDGET_MIGRATION.json`; that
 debt cannot grow and does not license reading full history by default.
 
-The current active handoff is `AGENT_HANDOFF_V59_2026-08-11.md`.
+The current active handoff is `AGENT_HANDOFF_V60_2026-09-08.md`.
 Historical handoffs are archived under:
 
 `CVF_SESSION/handoffs/archive/`

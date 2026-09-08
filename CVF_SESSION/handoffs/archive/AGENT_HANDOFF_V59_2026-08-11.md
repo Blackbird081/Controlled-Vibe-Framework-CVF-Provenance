@@ -1,16 +1,21 @@
 # CVF Agent Handoff V59 - EACQ-FV EV-2 Closed Pending Next Value Gate
 Memory class: active-handoff
 Status: ACTIVE
+
+Text Encoding Exception: this archived historical handoff preserves an existing
+Vietnamese operator instruction exactly as provenance evidence; rotation does
+not normalize or reinterpret that evidence.
+
 ## Handoff Context
 - GC010 root architecture is closed parked at material commit `e867d5432`; no truthful current product owner exists, no successor tranche opened, and system-chain selection must move outside GC010.
 - Repository: private provenance SOT; accepted P4-C1 automatic-collection material: `b9bdba71290a9d94a12438b413401ecb4c6a72a7`; branch `main`.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
-- Branch: `main`; current ROLE-SOT material HEAD `6bcdeaca8`; latest governance-learning material `b8268100a`; material closure base `0d10fa017`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
+- Branch: `main`; current ROLE-SOT dispatch HEAD `891d7c72a`; accepted ROLE-SOT material `6bcdeaca8`; latest governance-learning material `b8268100a`; material closure base `0d10fa017`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
 - Phase-03R canonical planning materialization is independently accepted `CLOSED_PASS_BOUNDED` at material commit `0b8398f6e67c1fe48eb95fdfee8fd22c9524b7d6` after three external-worker rework rounds. Reviewer-fast passed 67/67, pre-commit passed 88/88, and committed-range pre-closure passed every material/content check with only this expected GC-020 continuity sync outstanding. Four ignored private successors remain local and hash-bound; no WP implementation, runtime, provider/live, public-sync, deployment, or production authority opens.
 - `WP-ARCH-003` R2 remains rejected/pending at `c2a1f7c7c`; DARA-T2B is closed bounded. DARA-T3's initial `RETURN_TO_DESIGN` at `c9e3c88e0` remains historical; operator-authorized R2 dispatch `8b8778321c` is accepted `CLOSED_PASS_BOUNDED` at `d4a6b422f` with 41/41 focused tests, fast-gate PASS, matching freeze receipts, and external usage exhausted at 3/3.
 - DARA-T4 R1 reassessment is `CLOSED_PASS_BOUNDED_PARK_NO_ELIGIBLE_EVIDENCE` at `d6b87f98c`: collector skip, increment 0, no receipt/journal/checkpoint, no WP reopen. DARA-T5 and substantive `WP-ARCH-003` stay parked; P4-C1 remains the sole automatic collector.
 - Fresh route 2 opened `WP-ARCH-003-AR1` design at dispatch `d64516126`. Its exact-two return is reviewer-rejected `RETURN_TO_DESIGN` at `dd985013c`: source/hash/digest and 67/67 fast evidence pass, but three runtime-owner/path defects plus a dependent manifest/rollback defect remain. The two worker artifacts stay untracked/uncommitted; new-parent use is exhausted 1/1 and no automatic re-dispatch or implementation is authorized.
-- AR1 R1 remains rejected at `8ab5a361c`, usage 2/2. RABA-F01-F02 is accepted parked at `0767a16e5`, usage 1/1. ROLE-SOT-EVIDENCE-T0 is reviewer-accepted `CLOSED_PASS_BOUNDED` at `6bcdeaca8`, usage exhausted 2/2. ADIF-0056 records the dispatcher-owned execution-anchor defect at `b8268100a`; shared-worktree lane coordination and dated-owner dependency discovery remain future machine-check candidates.
+- AR1 R1 remains rejected at `8ab5a361c`, usage 2/2. RABA-F01-F02 is accepted parked at `0767a16e5`, usage 1/1. ROLE-SOT-EVIDENCE-T0 is reviewer-accepted `CLOSED_PASS_BOUNDED` at `6bcdeaca8`, usage exhausted 2/2. ROLE-SOT-MH-T1 is operator-authorized and `DISPATCH_READY` at `891d7c72a`: its internal no-commit worker owns exactly eight paths and machine-hardens ADIF-0056, shared-worktree lane coordination, and dated-owner dependency discovery without external invocation.
 - DARA-T2B continuity parent: `d4af432c00bcf1bcb61fa78c333b8e4353dc978e`.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
@@ -43,7 +48,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decision on a bounded ROLE-SOT machine-hardening successor after T0 acceptance at `6bcdeaca8`; parked=RABA-T1-T3, implementation, DARA-T5, provider/live/public/deploy and repository absorption.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=internal no-commit ROLE-SOT-MH-T1 execution from `891d7c72a`; parked=RABA-T1-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
 ## Current Mode
 `gclh_mfrp_p4_c1_automatic_evidence_collection_active`
 ## Purpose
@@ -148,7 +153,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   605-test suites and all required gates. No runtime bypass claim was made.
 
 ## Next Allowed Move
-P4-C1 remains active at `b9bdba712` (eligible 0). ROLE-SOT-EVIDENCE-T0 is reviewer-accepted `CLOSED_PASS_BOUNDED` at `6bcdeaca8`, usage exhausted 2/2. Next: operator decision on whether to authorize a bounded ROLE-SOT machine-hardening successor for ADIF-0056, shared-worktree lane coordination, and dated-owner dependency discovery. No successor opens automatically. RABA-T1-T3 and repository absorption stay parked. Latest LHW: `LHW24`.
+P4-C1 remains active at `b9bdba712` (eligible 0). ROLE-SOT-MH-T1 is operator-authorized and `DISPATCH_READY` at `891d7c72a`; pre-dispatch passed 81/81, pre-commit passed 88/88, and P4-C1 returned `SKIPPED_NO_ELIGIBLE_CANDIDATE`. Next: internal no-commit worker execution from a fresh `executionBaseHead` under `EXPLICIT_LANE_HANDOFF`; reviewer/closer evaluates the returned evidence without recreating implementation. ROLE-SOT-EVIDENCE-T0 remains accepted at `6bcdeaca8`, external usage exhausted 2/2. RABA-T1-T3, repository absorption, actual process interception and all external effects stay parked. Latest LHW: `LHW24`.
 T0 formalizes `ROLE_SOT_EVIDENCE_TOPOLOGY_INVARIANCE` in existing owners; no third standard, model-equivalence claim, or automatic role-routing claim.
 
 
@@ -191,3 +196,30 @@ Rollback boundary: revert only this continuity projection; preserve accepted mat
 ## Claim Boundary
 
 This handoff records ROLE-SOT-EVIDENCE-T0 acceptance at `6bcdeaca8`, usage exhausted 2/2, and ADIF-0056 learning material at `b8268100a`. It does not open RABA successors, repository absorption, machine-check implementation, runtime/provider/live/public/deploy work or other external effects.
+
+### ROLE-SOT-MH-T1 Dispatch Continuity - 2026-09-08
+
+Authorized guard-maintenance scope: project the operator-authorized
+ROLE-SOT-MH-T1 dispatch at `891d7c72a` into active continuity without changing
+its implementation authority or any parked lane.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V59_2026-08-11.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/entries/roleSotMachineHardeningT1DispatchReady20260908.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+
+Operator authorization: the operator explicitly instructed the agent to open
+the bounded ROLE-SOT machine-hardening successor and then to continue.
+
+Rollback boundary: revert only this continuity projection; preserve dispatch
+commit `891d7c72a`, accepted T0 material `6bcdeaca8`, ADIF-0056 material
+`b8268100a`, RABA park `0767a16e5`, and P4-C1 `b9bdba712`.
+
+Claim boundary: continuity makes internal no-commit worker execution the next
+move. It does not claim implementation completion, actual process isolation,
+external invocation, RABA release, runtime/provider/live/public/deploy or
+production authority.

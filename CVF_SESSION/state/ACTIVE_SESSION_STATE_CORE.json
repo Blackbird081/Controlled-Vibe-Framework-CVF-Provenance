@@ -32,7 +32,7 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V59_2026-08-11.md",
+  "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
@@ -98,7 +98,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V55_2026-08-05.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V57_2026-08-10.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V59_2026-08-11.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
