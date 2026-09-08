@@ -87,6 +87,32 @@ CLEAN_WORKTREE_MARKERS = (
     "git status --short (empty",
     "git status --short` (empty",
 )
+SHARED_WORKTREE_MODE_FIELD = "sharedWorktreeCoordinationMode"
+SHARED_WORKTREE_MODES = (
+    "SEPARATE_GIT_WORKTREE",
+    "EXPLICIT_LANE_HANDOFF",
+)
+EXPLICIT_LANE_REQUIRED_FIELDS = (
+    "activeLaneOwner",
+    "laneOwnedPaths",
+    "dispatcherMutationBoundary",
+    "laneReleaseEvidence",
+)
+NO_MUTATION_BOUNDARY_TOKEN = "NO_MUTATION_WHILE_LANE_ACTIVE"
+# Lane fields must carry operational values. A deferred token such as
+# `WORKER_TO_SET` or `REQUIRED` declares an intent to decide later, which is
+# exactly what the lane contract has to settle before dispatch.
+LANE_FIELD_PLACEHOLDER_RE = re.compile(
+    r"^(?:"
+    r"TBD|TODO|NONE|REQUIRED|NOT_EXECUTED_YET|"
+    r"(?:WORKER|REVIEWER|DISPATCHER|OWNER|OPERATOR)_TO_SET|"
+    r"N/?A(?:[\s_-]+WITH[\s_-]+REASON.*)?|"
+    r"NOT_APPLICABLE(?:[\s_-]+WITH[\s_-]+REASON.*)?|"
+    r"PENDING|PLACEHOLDER|FILL_ME|"
+    r"<[^>]*>|\.{3}|-+"
+    r")$",
+    re.IGNORECASE,
+)
 
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
@@ -227,6 +253,128 @@ def _selected_commit_mode(text: str) -> str:
     return ""
 
 
+def _lane_field_values(block: str, field: str) -> list[str]:
+    """Return every declared value for a lane field, in document order.
+
+    Supports both the markdown table row form (`| field | value |`) and the
+    inline form (`field: value`). Returning a list rather than one value lets
+    callers reject duplicate or contradictory declarations instead of
+    silently taking the first match.
+    """
+    values: list[str] = []
+    row_re = re.compile(
+        rf"^\s*\|\s*`?{re.escape(field)}`?\s*\|(.+?)\|\s*$",
+        re.IGNORECASE,
+    )
+    inline_re = re.compile(
+        rf"^\s*(?:[-*]\s*)?`?{re.escape(field)}`?\s*:\s*(.+?)\s*$",
+        re.IGNORECASE,
+    )
+    for line in block.splitlines():
+        match = row_re.match(line) or inline_re.match(line)
+        if match:
+            values.append(match.group(1).strip().strip("`").strip())
+    return values
+
+
+def _lane_field_value(block: str, field: str) -> str:
+    values = _lane_field_values(block, field)
+    return values[0] if values else ""
+
+
+def _is_placeholder_lane_value(value: str) -> bool:
+    return not value or bool(LANE_FIELD_PLACEHOLDER_RE.match(value.strip()))
+
+
+def _validate_shared_worktree_coordination(path: str, text: str, block: str) -> list[dict[str, str]]:
+    """Require a dispatch-ready no-commit handoff work order to declare exactly
+    one shared-worktree coordination mode, and to complete the lane fields when
+    it selects explicit lane handoff.
+
+    This validates the packet contract only. It does not intercept Git or
+    filesystem operations and makes no claim that concurrent mutation is
+    technically prevented; it records which role owns which paths while a lane
+    is active so a dispatcher and worker do not silently edit the same tree.
+    """
+    violations: list[dict[str, str]] = []
+    if not _is_ready_dispatch_work_order(text):
+        return violations
+    if _selected_commit_mode(text) != "WORKER_MUST_NOT_COMMIT":
+        return violations
+
+    # Parse the field itself. Searching the whole control block for mode
+    # tokens made an unrelated mention (for example naming the other mode in
+    # laneReleaseEvidence prose) look like a second declaration.
+    declarations = _lane_field_values(block, SHARED_WORKTREE_MODE_FIELD)
+    if not declarations:
+        _add(
+            violations,
+            path,
+            "shared_worktree_coordination_mode_missing",
+            "dispatch-ready WORKER_MUST_NOT_COMMIT work orders must declare "
+            f"`{SHARED_WORKTREE_MODE_FIELD}` as one of "
+            + " or ".join(f"`{mode}`" for mode in SHARED_WORKTREE_MODES),
+        )
+        return violations
+    if len(declarations) > 1:
+        _add(
+            violations,
+            path,
+            "shared_worktree_coordination_mode_not_singleton",
+            f"`{SHARED_WORKTREE_MODE_FIELD}` must be declared exactly once; found "
+            f"{len(declarations)} declarations: "
+            + ", ".join(f"`{value}`" for value in declarations),
+        )
+        return violations
+
+    selected = declarations[0]
+    if selected not in SHARED_WORKTREE_MODES:
+        _add(
+            violations,
+            path,
+            "shared_worktree_coordination_mode_invalid",
+            f"`{SHARED_WORKTREE_MODE_FIELD}` must be exactly "
+            + " or ".join(f"`{mode}`" for mode in SHARED_WORKTREE_MODES)
+            + f"; got `{selected}`",
+        )
+        return violations
+
+    if selected != "EXPLICIT_LANE_HANDOFF":
+        return violations
+
+    for field in EXPLICIT_LANE_REQUIRED_FIELDS:
+        values = _lane_field_values(block, field)
+        if len(values) > 1 and len(set(values)) > 1:
+            _add(
+                violations,
+                path,
+                "explicit_lane_handoff_field_not_singleton",
+                f"`EXPLICIT_LANE_HANDOFF` field `{field}` has contradictory declarations: "
+                + ", ".join(f"`{value}`" for value in values),
+            )
+            continue
+        value = values[0] if values else ""
+        if _is_placeholder_lane_value(value):
+            _add(
+                violations,
+                path,
+                "explicit_lane_handoff_field_missing",
+                f"`EXPLICIT_LANE_HANDOFF` requires a non-placeholder `{field}`",
+            )
+        elif field == "dispatcherMutationBoundary" and value != NO_MUTATION_BOUNDARY_TOKEN:
+            # Exact equality: a suffixed carve-out such as
+            # `NO_MUTATION_WHILE_LANE_ACTIVE_EXCEPT_DISPATCHER` inverts the
+            # boundary while still containing the token.
+            _add(
+                violations,
+                path,
+                "explicit_lane_handoff_mutation_boundary_invalid",
+                "`EXPLICIT_LANE_HANDOFF` requires `dispatcherMutationBoundary` to be "
+                f"exactly `{NO_MUTATION_BOUNDARY_TOKEN}`; got `{value}`",
+            )
+    return violations
+
+
 def _validate_standard(path: str, text: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
     required = (
@@ -338,6 +486,8 @@ def _validate_work_order(path: str, text: str) -> list[dict[str, str]]:
                 "cross_batch_isolation_clean_worktree_missing",
                 "dispatch-ready handoff work orders must record clean worktree Before status evidence",
             )
+
+    violations.extend(_validate_shared_worktree_coordination(path, text, block))
 
     return violations
 

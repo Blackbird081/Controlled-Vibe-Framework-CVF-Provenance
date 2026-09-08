@@ -6,6 +6,8 @@ Status: ACTIVE_STANDARD_AND_MACHINE_ENFORCED
 
 docType: reference
 
+EPISTEMIC_PROCESS_NA_WITH_REASON: canonical machine-check standard definition; it defines required work-order contract fields and their enforcement boundary, and makes no source-backed evidence-comparison or runtime prediction claim.
+
 ## Purpose
 
 Define the machine-enforced local view of the ratified Agent Handoff Contract so
@@ -56,6 +58,29 @@ Required fields:
 The work order must state `dispatchBaseHead`, `executionBaseHead`, and
 `closureBaseHead` when applicable.
 
+### Shared-Worktree Coordination Fields
+
+A dispatch-ready `WORKER_MUST_NOT_COMMIT` work order must declare exactly one
+`sharedWorktreeCoordinationMode`:
+
+| Mode | Meaning |
+|---|---|
+| `SEPARATE_GIT_WORKTREE` | Roles operate in separate checkouts, so concurrent edits cannot collide in one tree |
+| `EXPLICIT_LANE_HANDOFF` | Roles share one worktree and coordinate by declared lane ownership |
+
+`EXPLICIT_LANE_HANDOFF` additionally requires four non-placeholder fields:
+
+| Field | Meaning |
+|---|---|
+| `activeLaneOwner` | The role that owns the lane while it is active |
+| `laneOwnedPaths` | The exact paths the lane owner may modify |
+| `dispatcherMutationBoundary` | Must state `NO_MUTATION_WHILE_LANE_ACTIVE` |
+| `laneReleaseEvidence` | What the lane owner returns to release control |
+
+This rule exists because a dispatcher editing worker-owned paths mid-execution
+silently invalidated an active worker range. Declaring the lane makes that
+ownership reviewable before dispatch.
+
 ## Commit Mode Rules
 
 `WORKER_MUST_NOT_COMMIT` work orders must include:
@@ -81,6 +106,16 @@ Dispatch-ready handoff work orders must record clean worktree evidence in the
 Agent Operation Trace Block's `Before status evidence` row. This is the
 machine-checkable local view of CF-08 `crossBatchIsolation`.
 
+### Interception Boundary
+
+Shared-worktree coordination is a packet-contract declaration only. The checker
+verifies that the work order declares a coordination mode and completes the
+lane fields; it does not intercept Git or filesystem operations, does not lock
+paths, and does not prove that a concurrent actor was technically prevented
+from writing. A declared lane is reviewable intent, not runtime isolation. Only
+`SEPARATE_GIT_WORKTREE` provides actual filesystem separation, and even that
+separation is created by the operator, not by this guard.
+
 ## Machine Enforcement
 
 Mandatory command:
@@ -93,7 +128,9 @@ The guard runs in autorun and local hook chains. It checks changed handoff work
 orders and AHB-T3 completion artifacts for missing contract control fields,
 missing base-head anchors, missing reviewer closure conversion, missing C3
 closer designation, missing clean-worktree evidence for dispatch-ready packets,
-and missing AHB-T3 checker evidence.
+missing or non-singleton `sharedWorktreeCoordinationMode` and incomplete
+`EXPLICIT_LANE_HANDOFF` lane fields on dispatch-ready no-commit packets, and
+missing AHB-T3 checker evidence.
 
 ## Central Core And Local View
 

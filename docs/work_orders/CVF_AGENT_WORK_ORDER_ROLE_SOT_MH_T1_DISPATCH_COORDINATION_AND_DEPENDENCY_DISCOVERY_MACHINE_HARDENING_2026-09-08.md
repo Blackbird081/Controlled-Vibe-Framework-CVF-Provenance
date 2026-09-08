@@ -2,12 +2,12 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Batch ID: ROLE-SOT-MH-T1
 Dispatch base head: `6d98b1a27be0b25646ceb395a6faa64c83d47219`
 dispatchBaseHead: `6d98b1a27be0b25646ceb395a6faa64c83d47219`
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
-closureBaseHead: REVIEWER_TO_SET
+closureBaseHead: `b300121e0284cf52b403088abd4b8ed4516115a8`
 Commit mode: WORKER_MUST_NOT_COMMIT
 providerExecutionAuthority: FORBIDDEN
 Worker return path: `docs/reviews/CVF_ROLE_SOT_MH_T1_DISPATCH_COORDINATION_AND_DEPENDENCY_DISCOVERY_MACHINE_HARDENING_WORKER_RETURN_2026-09-08.md`
@@ -299,11 +299,13 @@ those eight paths may be pending at worker return; any ninth path is blocking.
 
 | Owned dated reference path | Classification | Registry evidence | Disposition |
 |---|---|---|---|
-| `docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md` | `NOT_BINDING_REFERENCE_WITH_REASON: active standard is current authority but is not presently classified as a permanent active-window member` | current registry read at dispatch base | ACCEPT |
+| `docs/reference/CVF_WORK_ORDER_DEPENDENCY_RELEASE_EVIDENCE_STANDARD_2026-06-03.md` | `BINDING_REFERENCE_ACTIVE_WINDOW` | closure-time additive registration in `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` under explicit operator authority | ACCEPT |
 | `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0056.md` | `NOT_BINDING_REFERENCE_WITH_REASON: ADIF entry is a dated evidence pointer outside the binding-reference active-window class` | ADIF resolver-owned path family | ACCEPT |
 
 The undated Agent Handoff Boundary standard is outside this dated-owner table.
-The worker must not mutate the registry to change either classification.
+The worker did not mutate the registry. After pre-commit exposed the stale-owner
+contradiction, the operator explicitly authorized the reviewer to register this
+canonical standard and reconcile the closure evidence.
 
 ## Evidence Requirements
 
@@ -346,7 +348,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | rolePattern | dispatcher -> internal no-commit worker -> reviewer/closer -> session-sync steward |
 | phase | DISPATCH_AUTHORING; EXECUTION; CLOSURE; SESSION_SYNC |
 | baseHeadFor(phase) | dispatchBaseHead=`6d98b1a27be0b25646ceb395a6faa64c83d47219`; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
-| changedSetScope(phase) | dispatch pair now; exact eight worker paths during execution; material then continuity at closure |
+| changedSetScope(phase) | dispatch pair initially; exact eight worker paths during execution; reviewer completion, two status owners, and one operator-authorized registry repair in material closure; continuity separately |
 | traceScope(phase, actor) | each actor records only its phase-local changes and inherited concurrent HEAD movement separately |
 | commitOwner(phase) | reviewer/closer for accepted material; session-sync steward for continuity; worker commit forbidden |
 | crossBatchIsolation | explicit lane handoff with dispatcher mutation forbidden on worker-owned paths while the lane is active |
@@ -362,7 +364,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | Field | Value |
 |---|---|
 | completionReviewPath | `docs/reviews/CVF_ROLE_SOT_MH_T1_DISPATCH_COORDINATION_AND_DEPENDENCY_DISCOVERY_MACHINE_HARDENING_COMPLETION_2026-09-08.md` (create only if machine closure or a material reviewer finding requires it) |
-| reviewerOwnedClosurePaths | exact eight worker paths plus bounded in-scope repairs; session surfaces only in a separate continuity commit |
+| reviewerOwnedClosurePaths | exact eight worker paths plus completion review, paired status owners, and the additive active-window registration explicitly authorized by the operator; session surfaces only in a separate continuity commit |
 | closureOwner | internal orchestrator/reviewer |
 | workerCommitPermission | FORBIDDEN |
 
@@ -494,6 +496,7 @@ Protected paths:
 - `governance/compat/test_check_work_order_dispatch_quality_machine_hardening.py`
 - `governance/compat/check_agent_handoff_boundary.py`
 - `governance/compat/test_check_agent_handoff_boundary.py`
+- `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`
 
 Operator authorization: the operator explicitly opened this ROLE-SOT machine-
 hardening successor on 2026-09-08 for ADIF-0056, shared-worktree coordination,
@@ -502,8 +505,10 @@ and dispatch dependency discovery.
 Rollback boundary: revert only accepted ROLE-SOT-MH-T1 checker/test/reference/
 ADIF/return material; preserve T0, RABA park, P4-C1, and all unrelated state.
 
-Not authorized: template, scaffold, registry, autorun, hook, session, runtime,
-provider/live, public-sync, push, deploy or production changes.
+Not authorized: template, scaffold, existing registry-entry mutation, autorun,
+hook, session, runtime, provider/live, public-sync, push, deploy or production
+changes. Closure exception: the operator explicitly authorized one additive
+binding-reference registry entry after the pre-commit stale-owner contradiction.
 
 ## Near-Threshold Owner Maintainability Plan
 
@@ -523,6 +528,12 @@ freshnessVerificationMode: CURRENT_CHECKER_OWNER_READS_ONLY
 Current owners checked: dispatch-quality entrypoint/core, AHB checker, and
 active-window registry at dispatch base. Claim limit: repository-local packet
 validation only.
+
+Provider-registry freshness: the current
+`EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and
+`PROVIDER_CAPABILITY_REGISTRY` surfaces exist but are unrelated to this local
+checker tranche. The zero provider-call statement is execution telemetry, not
+a provider-registry absence claim.
 
 ## External Knowledge Intake Routing
 
@@ -616,13 +627,18 @@ are forbidden without a named contradiction and expected information gain.
 
 ## Closure Checklist
 
-- [ ] source pins and execution anchor recorded;
-- [ ] exact eight-path manifest and empty staging confirmed;
-- [ ] all focused positive, negative, malformed and boundary cases pass;
-- [ ] Python size and applicable governance gates pass;
-- [ ] ADIF-0056 binding and enforcement status match executable proof;
-- [ ] reviewer disposition recorded before material commit;
-- [ ] material and continuity commits remain separate.
+- [x] source pins and execution anchor recorded;
+- [x] exact eight-path worker manifest and empty staging confirmed;
+- [x] all focused positive, negative, malformed and boundary cases pass;
+- [x] Python size and applicable governance gates pass;
+- [x] ADIF-0056 binding and enforcement status match executable proof;
+- [x] reviewer disposition recorded before material commit;
+- [x] material and continuity commits remain separate.
+
+Reviewer disposition: `CLOSED_PASS_BOUNDED` on 2026-09-08. The material
+closure range begins at the recorded `closureBaseHead`; the material commit SHA
+is intentionally not predicted before commit and is verified by the
+post-commit committed-range gate.
 
 ## Operator Checkpoint
 
@@ -642,6 +658,19 @@ routine in-scope permission.
 Worker commit: FORBIDDEN. Reviewer commit is permitted only after semantic diff
 review, focused proof, Python size PASS, worker-return fast PASS, exact manifest,
 empty staging at handoff, and all applicable local gates pass.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this ROLE-SOT-MH-T1 work order | `Status: CLOSED_PASS_BOUNDED`; reviewer disposition and completed checklist | PASS |
+| Completion or reviewer artifact | ROLE-SOT-MH-T1 completion review and Generation 2 worker return | reviewer acceptance after two repair rounds | PASS |
+| Roadmap state | paired GC-018 baseline | `Status: CLOSED_PASS_BOUNDED`; no successor opened | PASS |
+| Registry JSON | `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` | additive `BINDING_REFERENCE_ACTIVE_WINDOW` registration for the modified canonical standard | PASS |
+| Registry Markdown | `docs/reference/CVF_ACTIVE_WINDOW_CLASSIFICATION.md` | class map already delegates the complete member list to the machine-readable registry; no projection drift | PASS |
+| External evidence digest | N/A with reason: no external evidence used | external and provider calls zero | N/A with reason: local proof only |
+| System loop interlock | completion claim boundary | no runtime or interception authority released | PASS |
+| Session continuity | active bootstrap, state and handoff | separate continuity commit follows material closure | N/A with reason: material-first choreography |
 
 ## Claim Boundary
 

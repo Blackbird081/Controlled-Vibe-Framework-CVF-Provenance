@@ -11,6 +11,10 @@ Date: 2026-06-03
 Authority: operator directive to convert repeated work-order release findings
 into reusable CVF control-plane discipline
 
+EPISTEMIC_PROCESS_NA_WITH_REASON: canonical governance standard definition; it defines dependency-release and dated-owner discovery discipline, and makes no source-backed evidence-comparison or runtime prediction claim.
+
+providerExecutionAuthority: FORBIDDEN
+
 ---
 
 ## Purpose
@@ -115,6 +119,35 @@ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch
 
 ---
 
+## Dated Owner Dependency Discovery Before Manifest Freeze
+
+Dependency release covers prerequisite tranches. It does not by itself surface
+the dated canonical owners a packet will have to edit. A dated owner discovered
+only at material commit is a late dependency: the write manifest is already
+frozen, so the packet either expands scope or blocks.
+
+Before freezing the write manifest, resolve every dated `docs/reference/` path
+named by Write Ownership or the Required Artifact Manifest in a
+`## Dated Owner Dependency Discovery` table:
+
+| Column | Requirement |
+| --- | --- |
+| Owned dated reference path | The exact repo-root path, one row per owner. |
+| Classification | Either `BINDING_REFERENCE_ACTIVE_WINDOW` or `NOT_BINDING_REFERENCE_WITH_REASON: <reason>`. |
+| Registry evidence | How the classification was checked against `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`. |
+| Disposition | A checker-allowed final disposition. |
+
+A `BINDING_REFERENCE_ACTIVE_WINDOW` row must match an `activePath` in that
+registry. The gate fails closed when a dated owner has no row, carries two
+contradictory rows, claims a binding window it is not registered for, supplies
+an empty non-binding reason, or when the registry itself is missing or
+malformed. The dispatcher must not mutate the registry to satisfy a
+classification; register the owner through its own governed change instead.
+
+Undated reference owners are outside this table.
+
+---
+
 ## Machine Enforcement
 
 Primary checker:
@@ -122,7 +155,9 @@ Primary checker:
 `governance/compat/check_work_order_dispatch_quality.py`
 
 The checker must reject ready/dispatch-equivalent work orders that retain
-unresolved prerequisite dispositions or stale dependency placeholder prose.
+unresolved prerequisite dispositions or stale dependency placeholder prose, and
+must reject a packet whose owned dated `docs/reference/` paths are not
+reconciled in a `Dated Owner Dependency Discovery` table.
 
 The checker proves release-evidence discipline. It does not prove semantic
 correctness of the prerequisite work, runtime behavior, live-provider proof, or

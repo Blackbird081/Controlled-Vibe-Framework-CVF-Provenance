@@ -17,9 +17,9 @@ roles: dispatcher; worker; reviewer; closer
 lifecyclePhases: pre-dispatch; pre-implementation; pre-closure
 surfaceSelectors: docs/work_orders/*.md that declare executionBaseHead capture and a pre-implementation autorun command
 detectionSignals: pre-implementation command hard-codes dispatchBaseHead or an older commit instead of worker-captured executionBaseHead; range includes committed packet or continuity paths outside worker ownership; worker stops before edits
-enforcementLevel: GUIDANCE_ONLY
-checkerBindings: NOT_APPLICABLE_WITH_REASON: no current checker compares a worker-capture executionBaseHead contract with the literal --base value in the packet's pre-implementation command
-promotionState: MACHINE_CHECK_CANDIDATE
+enforcementLevel: MACHINE_CHECKED
+checkerBindings: governance/compat/check_work_order_dispatch_quality_core.py
+promotionState: MACHINE_CHECK_ADDED
 supersedes: NONE
 lastVerifiedCommit: 28ecdde32
 roadmapSeedId: NONE
@@ -89,9 +89,18 @@ contradiction. The dispatcher, not the worker, corrects a bad packet anchor.
 4. Classify a resulting pre-edit stop as `ORCHESTRATOR_PACKET_GAP`; retain the
    worker's no-edit evidence and account for the consumed invocation without
    inflating worker repair-failure counts.
-5. In a separately authorized hardening tranche, update the work-order
-   template/scaffold and add a pre-dispatch check that rejects a hard-coded
-   commit SHA in this command when the packet declares worker capture.
+5. ROLE-SOT-MH-T1 added that pre-dispatch check. When a packet declares
+   `executionBaseHead: WORKER_MUST_CAPTURE_AT_START`,
+   `_validate_execution_anchor_substitution` in
+   `governance/compat/check_work_order_dispatch_quality_core.py` scans only the
+   real `## Verification Commands` section and rejects a pre-implementation
+   autorun command whose `--base` is the packet's dispatch SHA,
+   `dispatchBaseHead`, or `<dispatchBaseHead>`; `<executionBaseHead>` and
+   `$executionBaseHead` are accepted. The work-order template and dispatch
+   scaffold were deliberately not modified, because both are
+   maintainability-sensitive owners and the prevention did not require growing
+   them. Enforcement is forward-only for changed packets; historical packets
+   are not rewritten.
 
 ## Epistemic Process Block
 

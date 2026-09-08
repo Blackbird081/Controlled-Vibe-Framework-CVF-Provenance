@@ -4,7 +4,7 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: ROLE-SOT-MH-T1
 
@@ -153,6 +153,7 @@ Protected paths:
 - `governance/compat/test_check_work_order_dispatch_quality_machine_hardening.py`
 - `governance/compat/check_agent_handoff_boundary.py`
 - `governance/compat/test_check_agent_handoff_boundary.py`
+- `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`
 
 Operator authorization: on 2026-09-08 the operator instructed the agent to
 open a ROLE-SOT machine-hardening successor for ADIF-0056, shared-worktree
@@ -162,8 +163,11 @@ Rollback boundary: revert only ROLE-SOT-MH-T1 material if rejected; preserve
 ROLE-SOT-EVIDENCE-T0 at `6bcdeaca8`, ADIF learning at `b8268100a`, RABA park at
 `0767a16e5`, and P4-C1 at `b9bdba712`.
 
-Not authorized: no template, scaffold, active-window registry, autorun, hook,
-session, runtime, provider/live, public-sync, deploy, push, or production edit.
+Not authorized: no template, scaffold, existing registry-entry mutation,
+autorun, hook, session, runtime, provider/live, public-sync, deploy, push, or
+production edit. Closure exception: the operator explicitly authorized one
+additive binding-reference registry entry after the pre-commit stale-owner
+contradiction.
 
 ## Risk / Corrective Action
 
@@ -171,6 +175,33 @@ The main risk is claiming prevention beyond what repository-local packet gates
 can observe. Acceptance therefore distinguishes machine-checked packet shape
 from actual filesystem/process isolation. Any need for a daemon, lock manager,
 Git wrapper, hook wiring, or registry mutation returns to the operator.
+
+## Current Runtime Freshness Verification
+
+runtimeClaimPresent: NO
+
+runtimeMutationAuthorized: NO
+
+freshnessVerificationMode: CURRENT_CHECKER_OWNER_READS_ONLY
+
+The current dispatch-quality, Agent Handoff Boundary, and active-window
+registry owners were checked for this local packet-validation claim. The
+current `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and
+`PROVIDER_CAPABILITY_REGISTRY` surfaces exist but are outside and unaffected by
+this tranche. Zero provider calls is execution telemetry, not an absence claim.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired ROLE-SOT-MH-T1 work order | `Status: CLOSED_PASS_BOUNDED`; reviewer checklist complete | PASS |
+| Completion or reviewer artifact | ROLE-SOT-MH-T1 completion review and Generation 2 worker return | reviewer acceptance after focused proof | PASS |
+| Roadmap state | this GC-018 baseline | `Status: CLOSED_PASS_BOUNDED`; no successor opened | PASS |
+| Registry JSON | `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json` | additive `BINDING_REFERENCE_ACTIVE_WINDOW` registration for the modified canonical standard | PASS |
+| Registry Markdown | `docs/reference/CVF_ACTIVE_WINDOW_CLASSIFICATION.md` | class map already delegates the complete member list to the machine-readable registry; no projection drift | PASS |
+| External evidence digest | N/A with reason: no external evidence used | external and provider calls zero | N/A with reason: local proof only |
+| System loop interlock | baseline and completion claim boundaries | no runtime or interception authority released | PASS |
+| Session continuity | active bootstrap, state and handoff | separate continuity commit follows material closure | N/A with reason: material-first choreography |
 
 ## Claim Boundary
 
