@@ -2,7 +2,7 @@
 Memory class: active-handoff
 Status: ACTIVE
 
-Current HEAD recorded for this handoff: `7e4ed00868184f3778bedfefd479627d2cafcdb1` (docs(governance): dispatch encoding and gc020 hardening). This is the truthfully known material parent for the dedicated session-sync-only commit.
+Current HEAD recorded for this handoff: `d46a55d2bf8fd4889ccac8d0dd807956e74128e7` (fix(governance): harden rename-aware encoding provenance). This is the truthfully known material parent for this dedicated handoff-sync-only commit.
 
 ## Handoff Context
 
