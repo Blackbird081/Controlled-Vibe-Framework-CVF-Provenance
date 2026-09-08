@@ -148,7 +148,8 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   605-test suites and all required gates. No runtime bypass claim was made.
 
 ## Next Allowed Move
-P4-C1 stays active at `b9bdba712`, eligible zero. RABA-F01-F02 is dispatch-ready at `64b8a2e90`, fresh external usage 0/1. Next is manual operator relay of the committed work order; relay consumes count 1/1. RABA-T1-T3, implementation, DARA-T5, MFRP mutation and external effects remain parked pending independent review. External-agent Web/repository absorption remains deferred. Latest closed LHW: `LHW24`.
+P4-C1 remains active at `b9bdba712` (eligible 0). Next: manual relay of RABA-F01-F02 at `64b8a2e90` (fresh usage 0/1; relay consumes 1/1). RABA-T1-T3, implementation, DARA-T5, MFRP mutation and external/repository-absorption work stay parked pending review. Latest LHW: `LHW24`.
+Parked after RABA-T3: `ROLE_SOT_EVIDENCE_TOPOLOGY_INVARIANCE`; T1-T3 apply it as a no-extra-artifact use case under operator-selected topology.
 
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
