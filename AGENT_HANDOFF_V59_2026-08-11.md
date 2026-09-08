@@ -10,7 +10,7 @@ Status: ACTIVE
 - `WP-ARCH-003` R2 remains rejected/pending at `c2a1f7c7c`; DARA-T2B is closed bounded. DARA-T3's initial `RETURN_TO_DESIGN` at `c9e3c88e0` remains historical; operator-authorized R2 dispatch `8b8778321c` is accepted `CLOSED_PASS_BOUNDED` at `d4a6b422f` with 41/41 focused tests, fast-gate PASS, matching freeze receipts, and external usage exhausted at 3/3.
 - DARA-T4 R1 reassessment is `CLOSED_PASS_BOUNDED_PARK_NO_ELIGIBLE_EVIDENCE` at `d6b87f98c`: collector skip, increment 0, no receipt/journal/checkpoint, no WP reopen. DARA-T5 and substantive `WP-ARCH-003` stay parked; P4-C1 remains the sole automatic collector.
 - Fresh route 2 opened `WP-ARCH-003-AR1` design at dispatch `d64516126`. Its exact-two return is reviewer-rejected `RETURN_TO_DESIGN` at `dd985013c`: source/hash/digest and 67/67 fast evidence pass, but three runtime-owner/path defects plus a dependent manifest/rollback defect remain. The two worker artifacts stay untracked/uncommitted; new-parent use is exhausted 1/1 and no automatic re-dispatch or implementation is authorized.
-- AR1 R1 is rejected final at `8ab5a361c`, usage 2/2. New-parent RABA roadmap `cd56ac953` releases T0 packet authoring only; execution and later tranches remain parked.
+- AR1 R1 is rejected final at `8ab5a361c`, usage 2/2. RABA-T0 packet `d1f2a34be` is ready at 0/1; one explicit operator relay is next, while later tranches remain parked.
 - DARA-T2B continuity parent: `d4af432c00bcf1bcb61fa78c333b8e4353dc978e`.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
@@ -148,7 +148,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   605-test suites and all required gates. No runtime bypass claim was made.
 
 ## Next Allowed Move
-P4-C1 stays active at `b9bdba712`, eligible zero. RABA roadmap `cd56ac953` is authorized. Author/validate only the fresh RABA-T0 GC-018 and work order; execution needs a later operator relay. RABA-T1, fresh WP design, implementation, DARA-T5, MFRP mutation and external effects remain parked. Latest closed LHW: `LHW24`.
+P4-C1 stays active at `b9bdba712`, eligible zero. RABA-T0 packet `d1f2a34be` is `DISPATCH_READY`, usage 0/1. Next: one explicit operator relay of its committed work order; worker writes exact-two pending artifacts with no commit. RABA-T1, fresh WP design, implementation, DARA-T5, MFRP mutation and external effects remain parked. Latest closed LHW: `LHW24`.
 
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
@@ -175,7 +175,7 @@ EXPORTED
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`; public `main`: `132371c3eb8d8e7d65eedd42799a8b910da63b94`; server-side preflight run `33715255525` PASS. Provenance record: `docs/reference/CVF_EXTERNAL_AGENT_ABSORPTION_PREPARATION_PUBLIC_SYNC_RECORD_2026-09-03.md` at `b4fb661bb`, path correction `100d6bd8b`. Operator packet: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ`, protocol 1.3, receipt `23cf16ead08f50e950bf9c7b964d79576075da7d616881c39a1891a1a197d622`. This is source-intake preparation, not repo acceptance, deploy or production readiness.
 
 ## Core Guard Self-Protection Authorization - Current Continuity
-Authorized guard-maintenance scope: project the RABA roadmap and T0 packet-authoring boundary while preserving prior stops and active P4-C1.
+Authorized guard-maintenance scope: project the committed RABA-T0 dispatch boundary while preserving prior stops and active P4-C1.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -196,10 +196,11 @@ Protected paths:
 - `CVF_SESSION/state/entries/wpArch003Ar1R1CanonicalOwnerRuntimePathDesignReworkDispatch20260908.json`
 - `CVF_SESSION/state/entries/wpArch003Ar1R1CanonicalOwnerRuntimePathDesignRejectedFinal20260908.json`
 - `CVF_SESSION/state/entries/wpArch003RabaRootAuthorityPrincipalScopeRoadmapAuthorized20260908.json`
+- `CVF_SESSION/state/entries/wpArch003RabaT0RootAuthoritySourceVerificationDispatch20260908.json`
 - `governance/compat/dara_t3_historical_replay.py`
 - `governance/compat/test_dara_t3_historical_replay.py`
-Operator authorization: open the new root-authority/principal-scope roadmap. AR1 usage remains exhausted 2/2.
-Rollback boundary: revert only this projection; preserve prior evidence, T2A `c1f95ae1d` and P4-C1 `b9bdba712`. No RABA execution, implementation, DARA-T5 or external effect is authorized.
+Operator authorization: commit the RABA-T0 packet; worker execution requires explicit relay. AR1 usage remains exhausted 2/2.
+Rollback boundary: revert only this projection; preserve prior evidence, T2A `c1f95ae1d` and P4-C1 `b9bdba712`. No RABA-T1, implementation, DARA-T5 or external effect is authorized.
 ## Claim Boundary
 
-This handoff records AR1 terminal rejection and the new RABA roadmap. It authorizes T0 packet authoring only, not execution, later tranches, WP implementation, DARA-T5, MFRP change or external effects.
+This handoff records RABA-T0 dispatch readiness. Only one explicit operator-relayed source-verification worker run is next; later tranches, WP implementation, DARA-T5, MFRP change and external effects remain unauthorized.
