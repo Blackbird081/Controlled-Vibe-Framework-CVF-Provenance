@@ -4,7 +4,7 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: ENCODING-RENAME-T1
 
@@ -16,7 +16,7 @@ dispatchBaseHead: `39be75a7cff4fc9acdbf3dd129254ddb164947d0`
 
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
-closureBaseHead: REVIEWER_TO_SET
+closureBaseHead: `d46a55d2b`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -241,11 +241,17 @@ contacted.
 
 ## Machine Closure Package
 
-Applicable at closure: this baseline, the paired work order, the changed checker
-and test, the encoding standard, ADIF-0011, and the packet worker return.
-Roadmap, registry JSON, external evidence digest and loop interlock are
-`N/A with reason`: this bounded checker tranche opens no roadmap row, mutates no
-registry, consumes no external evidence and adds no interlock edge.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ENCODING_RENAME_AWARENESS_T1_COMPLETION_2026-09-08.md` | reviewer acceptance | PASS |
+| Owned implementation | checker, tests, standard, ADIF-0011, worker return | material commit `d46a55d2b`; tests 40/40 | PASS |
+| Roadmap state | N/A with reason: no roadmap row opened | N/A with reason | N/A with reason |
+| Registry JSON | `governance/compat/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 aggregate drift check confirms source aggregate aligned; no tranche mutation required | PASS |
+| Registry Markdown | `docs/reference/CVF_CORPUS_SCAN_REGISTRY.md` | GC-051 aggregate drift check confirms projection aligned; no tranche mutation required | PASS |
+| External evidence digest | N/A with reason: no external evidence | N/A with reason | N/A with reason |
+| System loop interlock | encoding standard and ADIF-0011 | policy and learning bindings | PASS |
+| Session continuity | active continuity surfaces | separate continuity commit | N/A with reason: material-first choreography |
 
 ## Claim Boundary
 

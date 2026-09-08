@@ -34,7 +34,7 @@ gotchas, the paired baseline and this packet; capture HEAD and full status;
 require a clean worktree and empty staging; recompute every Source Pin Contract
 hash; then run pre-implementation.
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: ENCODING-RENAME-T1
 
@@ -46,7 +46,7 @@ dispatchBaseHead: `39be75a7cff4fc9acdbf3dd129254ddb164947d0`
 
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
-closureBaseHead: REVIEWER_TO_SET
+closureBaseHead: `d46a55d2b`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -408,13 +408,13 @@ no-external-effect evidence.
 
 ## Closure Checklist
 
-- [ ] all focused cases pass
-- [ ] prior suites for the owned surfaces pass
-- [ ] governed Python size guard passes with no touched near-hard growth
-- [ ] changed set matches the Required Artifact Manifest exactly
-- [ ] staging is empty and no commit was made by the worker
-- [ ] worker return carries complete packet-shape evidence
-- [ ] reviewer accepts before any commit
+- [x] all focused cases pass
+- [x] prior suites for the owned surfaces pass
+- [x] governed Python size guard passes with no touched near-hard growth
+- [x] changed set matches the Required Artifact Manifest exactly
+- [x] staging is empty and no commit was made by the worker
+- [x] worker return carries complete packet-shape evidence
+- [x] reviewer accepts before any commit
 
 ## Operator Checkpoint
 
@@ -447,14 +447,26 @@ deployment step requires a fresh operator checkpoint before it may proceed.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order | this packet | dispatch-quality gate result | PENDING_WORKER_RETURN |
-| Paired baseline | the paired GC-018 baseline | dispatch-quality gate result | PENDING_WORKER_RETURN |
-| Owned implementation | Required Artifact Manifest rows | focused suite counts | PENDING_WORKER_RETURN |
-| Worker return | the packet worker-return path | worker-return fast gate result | PENDING_WORKER_RETURN |
-| Roadmap row | N/A with reason: no roadmap row is opened | N/A with reason | NOT_APPLICABLE |
-| Registry JSON/MD | N/A with reason: no registry is mutated | N/A with reason | NOT_APPLICABLE |
-| External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | NOT_APPLICABLE |
-| Loop interlock | N/A with reason: no interlock edge added | N/A with reason | NOT_APPLICABLE |
+| Work order status | this packet | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ENCODING_RENAME_AWARENESS_T1_COMPLETION_2026-09-08.md` | reviewer acceptance | PASS |
+| Paired baseline | the paired GC-018 baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Owned implementation | Required Artifact Manifest rows | material commit `d46a55d2b`; focused suite 40/40 | PASS |
+| Worker return | the packet worker-return path | worker-return fast and pre-commit gates | PASS |
+| Roadmap state | N/A with reason: no roadmap row is opened | N/A with reason | N/A with reason |
+| Registry JSON | `governance/compat/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 aggregate drift check confirms source aggregate aligned; no tranche mutation required | PASS |
+| Registry Markdown | `docs/reference/CVF_CORPUS_SCAN_REGISTRY.md` | GC-051 aggregate drift check confirms projection aligned; no tranche mutation required | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
+| System loop interlock | encoding standard and ADIF-0011 | policy and learning bindings | PASS |
+| Session continuity | active continuity surfaces | separate continuity commit | N/A with reason: material-first choreography |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Rename-aware enforcement | material commit `d46a55d2b`; focused suite 40/40 | PASS |
+| Worker no-commit boundary | target staging empty and HEAD unchanged at handoff | PASS |
+| Reviewer acceptance | completion review records `CLOSED_PASS_BOUNDED` | PASS |
+| External or provider receipt | N/A with reason: repository-local checker only | N/A_WITH_REASON |
 
 ## Evidence Reuse And Encoding Plan
 
