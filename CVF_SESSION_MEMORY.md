@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator checkpoint to retain WP-ARCH-003 parked or authorize a fresh root-architecture and authority-boundary reassessment while P4 automatic collection remains active and System Chain remains stopped at CSCC-R1-T2A `c1f95ae1d`; parked checkpoint=AR1 same-shape repair/third invocation, implementation, Alibaba live proof, DARA-T5, P2/P4 mutation, canary, P5/P6 and external/project effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=author and validate only the fresh RABA-T0 GC-018 baseline and work order while P4 automatic collection remains active and System Chain remains stopped at CSCC-R1-T2A `c1f95ae1d`; parked checkpoint=RABA worker execution, RABA-T1, fresh WP design, implementation, Alibaba live proof, DARA-T5, P2/P4 mutation, canary, P5/P6 and external/project effects.
 
 ## Current Mode
 
@@ -52,7 +52,7 @@ Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0, checkpoints unchanged. DARA-T3 R2 is accepted at `d4a6b422f`; DARA-T4 R1 remains parked at `d6b87f98c`. `WP-ARCH-003-AR1-R1` is independently rejected `RETURN_TO_DESIGN` final at `8ab5a361c`: ARCH-ABS-021 is bounded, while ARCH-ABS-007 lacks trustworthy higher-authority approval and a runtime caller, ARCH-ABS-017 remains self-attested and omission-bypassable, and the manifest does not reconcile with the matrix. Same-parent external usage is exhausted at 2/2. Next is an operator checkpoint only: retain WP-ARCH-003 parked or authorize a fresh root-architecture and authority-boundary reassessment; no same-shape repair or automatic third invocation is allowed. The two exact worker artifacts remain untracked and uncommitted. Implementation, DARA-T5, MFRP mutation, provider/live/public/deploy remain closed. CSCC-R1-T2A remains stopped at `c1f95ae1d`; latest finalized numbered wave is LHW24.
+Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0, checkpoints unchanged. DARA-T3 R2 is accepted at `d4a6b422f`; DARA-T4 R1 remains parked at `d6b87f98c`. `WP-ARCH-003-AR1-R1` remains rejected final at `8ab5a361c` with usage exhausted 2/2. The new `WP-ARCH-003-RABA` root-authority and principal-scope reassessment roadmap is operator-authorized at `cd56ac953`. Next is author and validate only a fresh source-verified RABA-T0 GC-018 baseline and work order. Do not execute the packet until a later explicit operator relay instruction with a fresh bounded invocation contract. RABA-T1, fresh WP design, implementation, DARA-T5, MFRP mutation, provider/live/public/deploy remain parked. The two rejected AR1 worker artifacts remain untracked and uncommitted. CSCC-R1-T2A remains stopped at `c1f95ae1d`; latest finalized numbered wave is LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
