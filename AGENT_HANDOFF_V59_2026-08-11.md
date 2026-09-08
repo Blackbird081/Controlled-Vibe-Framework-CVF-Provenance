@@ -5,12 +5,12 @@ Status: ACTIVE
 - GC010 root architecture is closed parked at material commit `e867d5432`; no truthful current product owner exists, no successor tranche opened, and system-chain selection must move outside GC010.
 - Repository: private provenance SOT; accepted P4-C1 automatic-collection material: `b9bdba71290a9d94a12438b413401ecb4c6a72a7`; branch `main`.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
-- Branch: `main`; current ROLE-SOT material HEAD `28ecdde32`; continuity parent `60c969e02`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
+- Branch: `main`; current ROLE-SOT material HEAD `28ecdde32`; latest governance-learning material `b8268100a`; continuity parent `df4fe6ad4`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
 - Phase-03R canonical planning materialization is independently accepted `CLOSED_PASS_BOUNDED` at material commit `0b8398f6e67c1fe48eb95fdfee8fd22c9524b7d6` after three external-worker rework rounds. Reviewer-fast passed 67/67, pre-commit passed 88/88, and committed-range pre-closure passed every material/content check with only this expected GC-020 continuity sync outstanding. Four ignored private successors remain local and hash-bound; no WP implementation, runtime, provider/live, public-sync, deployment, or production authority opens.
 - `WP-ARCH-003` R2 remains rejected/pending at `c2a1f7c7c`; DARA-T2B is closed bounded. DARA-T3's initial `RETURN_TO_DESIGN` at `c9e3c88e0` remains historical; operator-authorized R2 dispatch `8b8778321c` is accepted `CLOSED_PASS_BOUNDED` at `d4a6b422f` with 41/41 focused tests, fast-gate PASS, matching freeze receipts, and external usage exhausted at 3/3.
 - DARA-T4 R1 reassessment is `CLOSED_PASS_BOUNDED_PARK_NO_ELIGIBLE_EVIDENCE` at `d6b87f98c`: collector skip, increment 0, no receipt/journal/checkpoint, no WP reopen. DARA-T5 and substantive `WP-ARCH-003` stay parked; P4-C1 remains the sole automatic collector.
 - Fresh route 2 opened `WP-ARCH-003-AR1` design at dispatch `d64516126`. Its exact-two return is reviewer-rejected `RETURN_TO_DESIGN` at `dd985013c`: source/hash/digest and 67/67 fast evidence pass, but three runtime-owner/path defects plus a dependent manifest/rollback defect remain. The two worker artifacts stay untracked/uncommitted; new-parent use is exhausted 1/1 and no automatic re-dispatch or implementation is authorized.
-- AR1 R1 remains rejected at `8ab5a361c`, usage 2/2. RABA-F01-F02 is accepted parked at `0767a16e5`, usage 1/1. ROLE-SOT-EVIDENCE-T0 R1 is anchor-corrected and dispatch-ready at `28ecdde32`, usage 1/2; its first invocation stopped before edits on an orchestrator packet-gap range error.
+- AR1 R1 remains rejected at `8ab5a361c`, usage 2/2. RABA-F01-F02 is accepted parked at `0767a16e5`, usage 1/1. ROLE-SOT-EVIDENCE-T0 R1 is anchor-corrected and dispatch-ready at `28ecdde32`, usage 1/2; its first invocation stopped before edits on an orchestrator packet-gap range error. ADIF-0056 records that reusable dispatcher-owned anchor defect at `b8268100a` as `GUIDANCE_ONLY` / `MACHINE_CHECK_CANDIDATE`.
 - DARA-T2B continuity parent: `d4af432c00bcf1bcb61fa78c333b8e4353dc978e`.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
@@ -185,8 +185,9 @@ Protected paths:
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/entries/roleSotEvidenceTopologyInvarianceT0DispatchReady20260908.json`
 - `CVF_SESSION/state/entries/roleSotEvidenceTopologyInvarianceT0R1AnchorCorrectionDispatchReady20260908.json`
+- `CVF_SESSION/state/entries/roleSotEvidenceTopologyInvarianceT0AnchorLearningRecorded20260908.json`
 Operator authorization: compact ROLE-SOT-EVIDENCE-T0 packet remains approved; the corrected R1 manual worker relay remains operator-owned.
 Rollback boundary: revert only this continuity projection; preserve corrected material `28ecdde32`, RABA park `0767a16e5` and P4-C1 `b9bdba712`. No RABA successor, implementation or external effect is authorized except the explicit worker relay.
 ## Claim Boundary
 
-This handoff records ROLE-SOT-EVIDENCE-T0 R1 anchor correction at `28ecdde32`, usage 1/2. It does not open RABA successors, implementation, repository absorption or other external effects.
+This handoff records ROLE-SOT-EVIDENCE-T0 R1 anchor correction at `28ecdde32`, usage 1/2, and ADIF-0056 learning material at `b8268100a`. It does not open RABA successors, implementation, repository absorption, machine-check implementation or other external effects.
