@@ -1,6 +1,8 @@
-# CVF Agent Handoff V60 - ROLE-SOT-MH-T1 Closed Bounded
+# CVF Agent Handoff V60 - Encoding And GC-020 Dispatch Ready
 Memory class: active-handoff
 Status: ACTIVE
+
+Current HEAD recorded for this handoff: `7e4ed00868184f3778bedfefd479627d2cafcdb1` (docs(governance): dispatch encoding and gc020 hardening). This is the truthfully known material parent for the dedicated session-sync-only commit.
 
 ## Handoff Context
 
@@ -15,7 +17,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=author separate bounded encoding rename-awareness and GC-020 post-commit synchronization packets after corrected dependency refresh; parked checkpoint=RABA-T1 through RABA-T3, implementation before dispatch, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute ENCODING_RENAME_AWARENESS_T1 only through one no-commit Claude lane from a fresh clean anchor; parked checkpoint=GC020 implementation until encoding review/closure, RABA-T1 through RABA-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
 
 ## Current Mode
 
@@ -23,7 +25,7 @@ Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collectio
 
 ## Purpose
 
-Carry accepted ROLE-SOT machine-hardening closure and route the operator-requested encoding/GC-020 follow-up without mixing their independent defect classes.
+Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor packets while releasing only the encoding implementation lane first.
 
 ## Scope / Target / Owner Boundary
 
@@ -37,6 +39,7 @@ Carry accepted ROLE-SOT machine-hardening closure and route the operator-request
 
 - Dispatch material committed at `891d7c72a` after pre-dispatch 81/81 and staged pre-commit 88/88 PASS.
 - ROLE-SOT-MH-T1 material and closure committed at `94c4922c2`; focused suites passed 55/55 and 44/44, reviewer-fast 67/67, and material pre-commit 88/88.
+- Encoding rename-awareness and GC-020 synchronization dispatch material committed at `7e4ed00868184f3778bedfefd479627d2cafcdb1` after six authoring review generations and staged pre-commit 88/88 PASS. Committed-range pre-closure passed 80/81; its only failure was the expected post-material GC-020 handoff synchronization edge resolved by this dedicated continuity projection.
 - The modified dependency-release standard is now additively registered as `BINDING_REFERENCE_ACTIVE_WINDOW`, closing the stale-active pre-commit contradiction.
 - Dispatch core size is 855 lines: GC-023 advisory above 700, 145 below hard 1000, and outside the 25-line near-hard zone. Split or avoid substantial growth at the next owner change.
 - The GC-020 future-SHA deadlock was reproduced during closure. The unpushed incomplete material commit was safely soft-reset to its known parent and recreated complete without `--no-verify`; systematic prevention remains the separate follow-up lane.
@@ -55,7 +58,7 @@ ROLE-SOT-MH-T1 is independently accepted. Claude Rework Generation 2 closed all 
 
 ## Next Allowed Move
 
-Resume the operator-requested encoding and GC-020 hardening as two separate bounded dispatch packets. First refresh dependency discovery with the correction that `scripts/cvf_commit_tranche.py` already re-reads the active handoff after the material commit. Then author a rename-aware encoding packet and a separate post-commit SHA synchronization packet. Do not predict a future SHA, bypass hooks, mix implementation ownership, or dispatch execution until each packet passes its own pre-dispatch gate.
+Execute only `docs/work_orders/CVF_AGENT_WORK_ORDER_ENCODING_RENAME_AWARENESS_T1_2026-09-08.md` through one no-commit Claude worker from a fresh clean `executionBaseHead` under `EXPLICIT_LANE_HANDOFF`. Return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` and release the exact five owned paths to the reviewer. Keep `CVF_AGENT_WORK_ORDER_GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1_2026-09-08.md` dispatch-ready but parked until the encoding lane is reviewed and closed. Do not predict a future SHA, bypass hooks, mix manifests, or let the worker mutate session surfaces.
 
 ## Parked Checkpoints
 
@@ -67,7 +70,7 @@ Resume the operator-requested encoding and GC-020 hardening as two separate boun
 
 ## Active Boundary
 
-- This handoff authorizes packet authoring for the operator-requested encoding/GC-020 follow-up, not implementation before dispatch.
+- This handoff authorizes only the encoding packet's bounded no-commit implementation. The separate GC-020 implementation remains parked until encoding closure.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - No external call, credential use, dependency installation, push, deploy or public export is authorized.
 
@@ -83,7 +86,7 @@ ROLE-SOT-MH-T1 is private dispatch/continuity material. No public-sync artifact 
 
 ## Core Guard Self-Protection Authorization - Current Continuity
 
-Authorized guard-maintenance scope: project accepted ROLE-SOT-MH-T1 material `94c4922c2` and the corrected next move into existing active continuity only.
+Authorized guard-maintenance scope: project accepted encoding/GC-020 dispatch material `7e4ed00868184f3778bedfefd479627d2cafcdb1` and its corrected next move into existing active continuity only.
 
 Protected paths:
 
@@ -97,14 +100,15 @@ Protected paths:
 - `CVF_SESSION/state/entries/roleSotMachineHardeningT1Closure20260908.json`
 - `CVF_SESSION/state/entries/roleSotMachineHardeningT1DispatchReady20260908.json`
 - `CVF_SESSION/state/entries/roleSotMachineHardeningT1HandoffRotation20260908.json`
+- `CVF_SESSION/state/entries/encodingGc020DispatchReady20260908.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ROLE_SOT_MH_T1_DISPATCH_COORDINATION_AND_DEPENDENCY_DISCOVERY_MACHINE_HARDENING_2026-09-08.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
-Operator authorization: the operator instructed the reviewer to continue ROLE-SOT-MH-T1, authorized its two status owners, and then directed thorough repair of the stale canonical-owner contradiction. The earlier request also authorizes preparation of the separated encoding/GC-020 follow-up prompt; implementation still requires checker-clean dispatch packets.
+Operator authorization: the operator instructed the reviewer to continue ROLE-SOT-MH-T1, then requested a prompt for Claude to continue and directed thorough handling of the encoding/GC-020 defect class. Both separated packets are now checker-clean; this continuity releases only the encoding worker lane first.
 
 Rollback boundary: revert only this continuity projection; preserve ROLE-SOT-MH-T1 material `94c4922c2`, dispatch `891d7c72a`, T0 material `6bcdeaca8`, RABA park `0767a16e5` and P4-C1 `b9bdba712`.
 
 ## Claim Boundary
 
-This handoff records bounded ROLE-SOT-MH-T1 closure and authorizes only separate follow-up packet authoring. It does not claim actual process isolation, external invocation, RABA release, runtime/provider/live/public/deploy or production authority.
+This handoff records bounded ROLE-SOT-MH-T1 closure and the two dispatch-ready successors, authorizing only the encoding packet's no-commit implementation next. It does not claim actual process isolation, GC-020 implementation release, external invocation, RABA release, runtime/provider/live/public/deploy or production authority.

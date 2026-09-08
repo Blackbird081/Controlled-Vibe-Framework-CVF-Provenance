@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2809,
+  "stateKey": "encodingGc020DispatchReady20260908",
+  "value": "The separate ENCODING_RENAME_AWARENESS_T1 and GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1 packets are reviewer-accepted DISPATCH_READY at material commit 7e4ed00868184f3778bedfefd479627d2cafcdb1. Six authoring review generations closed rename provenance, dated-owner registration, future-SHA transaction semantics, generated-output ownership, dry-run mutation, retry residue and reachable idempotency. The six-path authoring material passed reviewer-fast 67/67, pre-commit 88/88 and committed-range pre-closure 80/81; the only pre-closure failure was the expected GC-020 continuity edge resolved by the following session-sync-only commit naming this material parent. Next release is ENCODING_RENAME_AWARENESS_T1 only through one no-commit Claude execution under EXPLICIT_LANE_HANDOFF. GC020 implementation remains parked until encoding review and closure. No provider, live, network, public, deploy, dependency-install or production effect is authorized."
+}
