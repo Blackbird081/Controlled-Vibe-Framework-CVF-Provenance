@@ -29,6 +29,26 @@ lastVerifiedCommit: 489ff38a
 roadmapSeedId: NONE
 ```
 
+## Rename-Aware Provenance Update (ENCODING-RENAME-T1)
+
+The checker bound above previously derived newly-added-line provenance from a
+destination-only reading of a changed path, which meant a renamed governed
+file could report its pre-existing historical non-ASCII text as newly added.
+The checker now derives newly added lines from rename-aware Git provenance
+for `R`/`C` name-status records: it resolves the paired source and
+destination blobs and reports only lines that are new relative to the
+correct source, so a pure rename carrying historical non-ASCII text produces
+zero newly-added violations while genuinely new non-ASCII text in a renamed
+file still fails. This is a provenance-accuracy fix to detection scope, not a
+relaxation of the ASCII-default rule above, and it does not touch the
+below-threshold-move fail-closed behavior: when Git itself reports a delete
+plus an add instead of a rename, the destination is still treated as an
+ordinary added file. See
+`docs/reference/CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md`
+Rename Provenance Rule section and
+`docs/reviews/CVF_ENCODING_RENAME_AWARENESS_T1_WORKER_RETURN_2026-09-08.md`
+for the executable proof.
+
 ## Purpose
 
 Record that governed markdown files must use only ASCII characters unless
@@ -111,6 +131,29 @@ committing.
 | Actual changed set | this entry, plus README table row |
 | Manifest delta | MATCH |
 
+## Agent Operation Trace Block - ENCODING-RENAME-T1
+
+| Field | Evidence |
+|---|---|
+| Actor | internal governance implementation worker |
+| Provider or surface | local private provenance repository |
+| Session or invocation | ENCODING-RENAME-T1 rename-aware provenance hardening, 2026-09-08 |
+| Working directory | repository root |
+| Command or tool surface | governed reads, Git, focused pytest, governance gates |
+| Target paths | `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/test_check_agent_packet_authority_and_encoding.py`; `docs/reference/CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md`; this entry; `docs/reviews/CVF_ENCODING_RENAME_AWARENESS_T1_WORKER_RETURN_2026-09-08.md` |
+| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_ENCODING_RENAME_AWARENESS_T1_2026-09-08.md`; `docs/baselines/CVF_GC018_ENCODING_RENAME_AWARENESS_T1_2026-09-08.md` |
+| Before status evidence | destination-only pathspec diffing discarded rename source pairing, so a pure rename of historical non-ASCII text could false-fail |
+| After status evidence | range and staged rename/copy records resolve layer-specific blob provenance; 40 focused and regression cases pass, including real temporary-repository Git lifecycle cases and direct malformed-input boundaries |
+| Diff evidence | `git diff --name-status` recorded in the worker return |
+| Approval boundary | rename-provenance hardening of the existing checker and its focused tests only; this entry updated only after executable proof passed |
+| Claim boundary | records the rename-aware behavior update; no runtime, provider/live, public-sync, or production claim |
+| Agent type | internal governance implementation worker |
+| Invocation ID | encoding-rename-t1-adif-0011-update-2026-09-08 |
+| Expected manifest | this entry; the checker; its focused tests; the encoding standard; the worker return |
+| Actual changed set | this entry; the checker; its focused tests; the encoding standard; the worker return |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no path deletion or rename occurred in this tranche; the tranche implements detection of renames elsewhere in the repository |
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
@@ -120,5 +163,6 @@ Reason: private provenance ADIF entry. No public-sync claim.
 ## Claim Boundary
 
 This entry records one observed defect pattern and its confirmed checker
-binding. It does not modify `check_agent_packet_authority_and_encoding.py`
-or the encoding standard.
+binding, plus the ENCODING-RENAME-T1 rename-aware provenance update recorded
+above after executable proof passed. It does not claim runtime, provider/
+live, public-sync, or production readiness.
