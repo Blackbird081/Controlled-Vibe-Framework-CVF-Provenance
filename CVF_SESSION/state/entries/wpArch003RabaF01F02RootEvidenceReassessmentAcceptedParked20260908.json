@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2798,
+  "stateKey": "wpArch003RabaF01F02RootEvidenceReassessmentAcceptedParked20260908",
+  "value": "WP-ARCH-003-RABA-F01-F02 is reviewer-accepted at material commit 0767a16e5 with terminal result PARK_NO_TRUTHFUL_AUTHORITY_ROOT. RABA-T0 findings F01 and F02 are resolved: all four omitted candidate families were classified and Expected/Actual output evidence was supplied. Accepted hashes are assessment 018c8268f8385b435f92f1fb1f68656b89a50c70a90091bbeaf907f9907e036c, worker return 042f64b4937e7521e4b38fe6be7ffddf66ae237e7d805f937f630889005eba39, and completion review d1945cb6830a6e01b4a0b30de82f8245e77b37f95802cb4248b8533a6411eafe. Reviewer disclosed two local corrections: authenticated Web approval does not prove separation of duty or strictly higher authority, and two required no-absorption/N/A output-shape headings were restored after an orchestrator packet gap. External usage is exhausted 1/1. No truthful integrated authority-delta/principal/task/file-scope root was found; RABA-T1 through RABA-T3 and implementation remain unreleased. No provider, live, runtime, public, deploy, or repository-absorption authority was exercised or opened."
+}
