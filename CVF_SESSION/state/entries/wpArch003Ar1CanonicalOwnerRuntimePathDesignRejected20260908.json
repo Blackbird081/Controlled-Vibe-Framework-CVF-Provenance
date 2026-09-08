@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2785,
+  "stateKey": "wpArch003Ar1CanonicalOwnerRuntimePathDesignRejected20260908",
+  "value": "WP-ARCH-003 AR1 design return is independently rejected RETURN_TO_DESIGN at reviewer commit dd985013c. Exact-two scope, unchanged historical hashes, deterministic matrix digest and reviewer-fast 67/67 pass are preserved, but ARCH-ABS-017 has no verified identity transport to runtime, ARCH-ABS-007 has no source-proven approval owner/record/composition path, ARCH-ABS-021 omits its existing non-test CADP consumer, and the claimed complete proposal lacks an exact future implementation manifest with actionable rollback paths. Both worker artifacts remain untracked and uncommitted. Parent external usage is exhausted at 1/1; no automatic second invocation or WP implementation is authorized."
+}

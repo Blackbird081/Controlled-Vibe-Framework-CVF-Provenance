@@ -5,11 +5,11 @@ Status: ACTIVE
 - GC010 root architecture is closed parked at material commit `e867d5432`; no truthful current product owner exists, no successor tranche opened, and system-chain selection must move outside GC010.
 - Repository: private provenance SOT; accepted P4-C1 automatic-collection material: `b9bdba71290a9d94a12438b413401ecb4c6a72a7`; branch `main`.
 - Current EACQ-FV-EV2 closure: material `4ffa0df23`; closure `79eb1426c`; verdict `PROMISING_NON_CAUSAL`; exact material pre-closure 79/79 and closure commit hook 87/87 PASS; no successor opens automatically.
-- Branch: `main`; current material HEAD: `d64516126`; prior continuity commit `c444aed6c`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
+- Branch: `main`; current material HEAD: `dd985013c`; prior continuity commit `c0e89076a`; lifecycle source `ae9a8a6b3`; DeepSeek Harness material `7b8514526`.
 - Phase-03R canonical planning materialization is independently accepted `CLOSED_PASS_BOUNDED` at material commit `0b8398f6e67c1fe48eb95fdfee8fd22c9524b7d6` after three external-worker rework rounds. Reviewer-fast passed 67/67, pre-commit passed 88/88, and committed-range pre-closure passed every material/content check with only this expected GC-020 continuity sync outstanding. Four ignored private successors remain local and hash-bound; no WP implementation, runtime, provider/live, public-sync, deployment, or production authority opens.
 - `WP-ARCH-003` R2 remains rejected/pending at `c2a1f7c7c`; DARA-T2B is closed bounded. DARA-T3's initial `RETURN_TO_DESIGN` at `c9e3c88e0` remains historical; operator-authorized R2 dispatch `8b8778321c` is accepted `CLOSED_PASS_BOUNDED` at `d4a6b422f` with 41/41 focused tests, fast-gate PASS, matching freeze receipts, and external usage exhausted at 3/3.
 - DARA-T4 R1 reassessment is `CLOSED_PASS_BOUNDED_PARK_NO_ELIGIBLE_EVIDENCE` at `d6b87f98c`: collector skip, increment 0, no receipt/journal/checkpoint, no WP reopen. DARA-T5 and substantive `WP-ARCH-003` stay parked; P4-C1 remains the sole automatic collector.
-- Fresh route 2 opens `WP-ARCH-003-AR1` design at dispatch `d64516126`: new parent use 0/1, exact-two assessment/return, external worker no commit. Reviewer owns architecture acceptance; historical WP files and implementation remain parked.
+- Fresh route 2 opened `WP-ARCH-003-AR1` design at dispatch `d64516126`. Its exact-two return is reviewer-rejected `RETURN_TO_DESIGN` at `dd985013c`: source/hash/digest and 67/67 fast evidence pass, but three runtime-owner/path defects plus a dependent manifest/rollback defect remain. The two worker artifacts stay untracked/uncommitted; new-parent use is exhausted 1/1 and no automatic re-dispatch or implementation is authorized.
 - DARA-T2B continuity parent: `d4af432c00bcf1bcb61fa78c333b8e4353dc978e`.
 - Remote tracking branch: `origin/main`. Tracked remote branch: origin/main. External agent memory files: non-canonical convenience only. Exact remote SHA must be derived live from git when needed. Current RFR-R7C bounded material closure: `92b7d6ec6`.
 - EAFR-R1 is closed bounded by explicit operator waiver at `ee268fa5b`; R1A closes bounded at `ef142bfb2`; R1B fail-closed adjudication remains accepted at `fc10c8e65`; R1C debt is mandatory before R6.
@@ -147,7 +147,7 @@ SCEC-E1 is accepted with correction at `d504ac6e006f9d7f7cb5bd3d03cb5dbf9c5f41f5
   605-test suites and all required gates. No runtime bypass claim was made.
 
 ## Next Allowed Move
-P4-C1 stays active at `b9bdba712`, eligible zero. Execute the committed `WP-ARCH-003-AR1` design packet once from the clean continuity HEAD, then return exact-two uncommitted evidence for independent review. Historical WP files, substantive implementation, DARA-T5, MFRP mutation and provider/live/public/deploy remain parked. Latest closed LHW: `LHW24`.
+P4-C1 stays active at `b9bdba712`, eligible zero. Await an explicit operator decision whether to authorize one fresh consolidated `WP-ARCH-003-AR1` design-rework dispatch covering all four findings recorded at `dd985013c`. The rejected exact-two worker artifacts remain untracked/uncommitted; no automatic second invocation or implementation is allowed. Historical WP files, DARA-T5, MFRP mutation and provider/live/public/deploy remain parked. Latest closed LHW: `LHW24`.
 
 
 Operator-authorized aggregate cleanup on 2026-08-30 superseded the parked commit boundary only; an unfiltered Learning Plane suite unintentionally executed three credential-backed Alibaba tests, which were not rerun and are not closure evidence or provider/live successor authority.
@@ -174,7 +174,7 @@ EXPORTED
 Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`; public `main`: `132371c3eb8d8e7d65eedd42799a8b910da63b94`; server-side preflight run `33715255525` PASS. Provenance record: `docs/reference/CVF_EXTERNAL_AGENT_ABSORPTION_PREPARATION_PUBLIC_SYNC_RECORD_2026-09-03.md` at `b4fb661bb`, path correction `100d6bd8b`. Operator packet: `D:\UNG DUNG AI\EXTERNAL_AGENT_READ`, protocol 1.3, receipt `23cf16ead08f50e950bf9c7b964d79576075da7d616881c39a1891a1a197d622`. This is source-intake preparation, not repo acceptance, deploy or production readiness.
 
 ## Core Guard Self-Protection Authorization - Current Continuity
-Authorized guard-maintenance scope: project the accepted DARA-T3 R2 historical replay closure into active continuity while preserving DARA-T4 history, the CSCC-R1-T2A stop and active P4-C1 automatic collector.
+Authorized guard-maintenance scope: project the WP-ARCH-003 AR1 reviewer rejection into active continuity while preserving DARA-T3/T4 history, the CSCC-R1-T2A stop and active P4-C1 automatic collector.
 Protected paths:
 - `AGENT_HANDOFF_V59_2026-08-11.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
@@ -191,10 +191,11 @@ Protected paths:
 - `CVF_SESSION/state/entries/daraT3R2HistoricalReplayClosedPassBounded20260908.json`
 - `CVF_SESSION/state/entries/daraT4R1MfrpReassessmentParkNoEligibleEvidence20260908.json`
 - `CVF_SESSION/state/entries/wpArch003Ar1CanonicalOwnerRuntimePathDesignDispatch20260908.json`
+- `CVF_SESSION/state/entries/wpArch003Ar1CanonicalOwnerRuntimePathDesignRejected20260908.json`
 - `governance/compat/dara_t3_historical_replay.py`
 - `governance/compat/test_dara_t3_historical_replay.py`
-Operator authorization: DARA-T3 R2, DARA-T4 reassessment, then fresh `WP-ARCH-003-AR1` design with operator relay to an external worker. Prior use is closed 3/3; new parent use is 0/1.
-Rollback boundary: revert only this projection; preserve DARA and AR1 dispatch material, T2A `c1f95ae1d`, and P4-C1 `b9bdba712`. No WP implementation, T5, provider call, or public sync is authorized.
+Operator authorization: review the returned fresh `WP-ARCH-003-AR1` design and preserve its rejected evidence. Prior DARA use is closed 3/3; AR1 parent use is exhausted 1/1. A second external invocation requires a new explicit operator decision.
+Rollback boundary: revert only this projection; preserve DARA/AR1 dispatch and reviewer material, T2A `c1f95ae1d`, and P4-C1 `b9bdba712`. No WP implementation, DARA-T5, provider call, or public sync is authorized.
 ## Claim Boundary
 
-This handoff records DARA-T3/T4 closure and the one-call exact-two `WP-ARCH-003-AR1` design dispatch. It does not accept the proposal, implement the WP, open DARA-T5, change MFRP, or make provider/live/public/deployment/production claims.
+This handoff records DARA-T3/T4 closure and the reviewer-rejected one-call exact-two `WP-ARCH-003-AR1` design return. It does not accept the proposal, authorize a second invocation, implement the WP, open DARA-T5, change MFRP, or make provider/live/public/deployment/production claims.

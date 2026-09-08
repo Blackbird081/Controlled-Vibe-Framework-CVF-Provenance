@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=P4 automatic collection while System Chain remains stopped at CSCC-R1-T2A `c1f95ae1d`; parked checkpoint=fresh route-build owner proof, Alibaba live proof, T2B/T3, P2/P4 mutation, canary, P5/P6 and external/project effects.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V59_2026-08-11.md; next allowed move=operator decision on one consolidated WP-ARCH-003 AR1 design rework while P4 automatic collection remains active and System Chain remains stopped at CSCC-R1-T2A `c1f95ae1d`; parked checkpoint=AR1 implementation, Alibaba live proof, DARA-T5, P2/P4 mutation, canary, P5/P6 and external/project effects.
 
 ## Current Mode
 
@@ -52,7 +52,7 @@ Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0, checkpoints unchanged. DARA-T3 R2 is accepted at `d4a6b422f`; DARA-T4 R1 remains parked at `d6b87f98c`. Operator-selected fresh route 2 is dispatched as `WP-ARCH-003-AR1` design at `d64516126`: one external invocation is admitted at new-parent count 0/1 to create exactly the new assessment and worker return, with no staging or commit. Next is that worker execution from the clean committed continuity HEAD, followed by independent orchestrator/reviewer disposition. Historical WP files are read-only; substantive implementation, DARA-T5, MFRP mutation, provider/live/public/deploy and other parked lanes remain closed. CSCC-R1-T2A remains stopped at `c1f95ae1d`; latest finalized numbered wave is LHW24.
+Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0, checkpoints unchanged. DARA-T3 R2 is accepted at `d4a6b422f`; DARA-T4 R1 remains parked at `d6b87f98c`. `WP-ARCH-003-AR1` design is reviewer-rejected `RETURN_TO_DESIGN` at `dd985013c`: its exact-two worker artifacts remain untracked/uncommitted and the parent external budget is exhausted at 1/1. Next is an explicit operator decision whether to authorize one fresh consolidated design-rework dispatch covering the four reviewer findings. No automatic second invocation or implementation is allowed. Historical WP files are read-only; DARA-T5, MFRP mutation, provider/live/public/deploy and other parked lanes remain closed. CSCC-R1-T2A remains stopped at `c1f95ae1d`; latest finalized numbered wave is LHW24.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
