@@ -218,7 +218,7 @@ Admission rules:
 | DARA-T3 | historical replay | Initial/R1/R2 replay fixture and deterministic receipt showing earliest stop | accepted T2 | late operator-authorized R2 repair accepted `CLOSED_PASS_BOUNDED` at `d4a6b422f`; earlier rejection remains history |
 | DARA-T4 | handoff to existing MFRP shadow validation | admit DARA observations only through existing MFRP P4-C1 eligibility and checkpoint rules | accepted T3 R2 plus current MFRP admission check | R1 reassessment remains `PARK_NO_ELIGIBLE_EVIDENCE`; collector returned `SKIPPED_NO_ELIGIBLE_CANDIDATE`, no new collector, receipt, row or checkpoint |
 | DARA-T5 | existing-owner projection decision | MFRP P5/P6 owns activation; DARA supplies bounded architecture evidence only | accepted MFRP checkpoint decision | `CONSUMED_BY_MFRP` or `PARK_FOUNDATION` |
-| WP-ARCH-003-AR1 | fresh canonical-owner/runtime-path design | one new assessment plus worker return; exact current owner, producer, trust, carrier, export, registration, composition, consumer, tests and rollback | DARA-T1/T2B/T3 interlock clauses plus DARA-E21 | `COMPLETE_PENDING_REVIEW`, `BLOCKED_WITH_REASON`, or reviewer-owned `CLOSED_PASS_BOUNDED` |
+| WP-ARCH-003-AR1 | fresh canonical-owner/runtime-path design | initial exact-two return rejected at `dd985013c`; R1 repairs owner, trust/carrier, composition, current consumer, manifest and rollback as one dependency class | DARA-T1/T2B/T3 interlock clauses plus DARA-E21 and operator-authorized R1 rework | `R1_DESIGN_REWORK_DISPATCH_READY`; implementation remains parked |
 
 No implementation tranche opens automatically. On 2026-09-06 the operator
 authorized Codex to act sequentially as orchestrator and reviewer for DARA and
@@ -316,6 +316,22 @@ first three clauses are accepted by DARA-T1/T2B/T3. AR1 must satisfy the fourth
 and produce reviewer-owned accepted architecture before the fifth can release
 any implementation work order. Until then, substantive implementation remains
 parked.
+
+### AR1 R1 Consolidated Rework
+
+The initial exact-two AR1 return is reviewer-rejected `RETURN_TO_DESIGN` at
+`dd985013c`. Valid exact-scope, historical-hash, collision and deterministic
+matrix-digest evidence is preserved, but the proposal did not carry verified
+principal/scope identity to a runtime consumer, did not prove one authority-
+expansion owner/approval record/composition path, omitted the existing CADP
+grant-invalidation consumer, and lacked an exact future implementation
+manifest with actionable rollback paths.
+
+Operator authorization on 2026-09-08 opens one consolidated R1 design rework
+against the same two untracked artifacts. Same-parent external usage moves
+from 1 to ceiling 2 only when that worker runs. The rework is documentation-
+only and no implementation, DARA-T5, MFRP mutation, provider/live/public or
+deployment authority follows from dispatch or worker self-report.
 
 ## Failure And Escalation Modes
 
@@ -507,8 +523,8 @@ invocation, runtime/provider/live/public action, or P4 eligibility change.
 
 This roadmap records a bounded governance/control-plane incident and a
 foundation-first work sequence. The P4-C1 universal-discovery hardening above
-only preserves an already-active MFRP invariant. DARA-E21 opens one new
-`WP-ARCH-003-AR1` external design invocation and exact-two pending artifacts;
-it does not accept the historical outputs or new proposal, implement the WP,
-open DARA-T5, mutate runtime/source, or make provider/live/public/deployment/
-production claims.
+only preserves an already-active MFRP invariant. DARA-E21 and the explicit R1
+operator decision open one consolidated count-2 `WP-ARCH-003-AR1` design
+rework over the same exact-two pending artifacts. They do not accept the
+proposal, implement the WP, open DARA-T5, mutate runtime/source, or make
+provider/live/public/deployment/production claims.
