@@ -4,8 +4,8 @@ docType: work_order
 Status: DISPATCH_READY
 Date: 2026-09-08
 Batch ID: ROLE-SOT-EVIDENCE-T0
-Dispatch base head: `4ba46aa505836b49f0051dbe58c1446f4fac4434`
-dispatchBaseHead: 4ba46aa505836b49f0051dbe58c1446f4fac4434
+Dispatch base head: `60c969e02d1c9f49a8a0142f89b5a9eb3f0a7b48`
+dispatchBaseHead: 60c969e02d1c9f49a8a0142f89b5a9eb3f0a7b48
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 closureBaseHead: REVIEWER_TO_SET
 Commit mode: WORKER_MUST_NOT_COMMIT
@@ -22,7 +22,9 @@ Commit mode: WORKER_MUST_NOT_COMMIT.
 
 Base: capture `executionBaseHead` before editing.
 
-Current-time notes: documentation-only T0; external usage 0/1 before operator relay.
+Current-time notes: documentation-only T0 rework; external usage 1/2 before
+the next explicit operator relay. The first invocation stopped at preflight and
+made no edit.
 
 Do-not-misread notes: edit exactly two existing owners and create one return;
 no new roadmap, baseline, standard, assessment, source or continuity path.
@@ -68,6 +70,27 @@ no additional baseline is required for this bounded existing-owner correction.
 
 RABA-T1 through RABA-T3 are `NOT_OPENED_PRECONDITION_ABSENT`. This T0 neither
 relabels them as executed nor releases them.
+
+## R1 Anchor Correction Disposition
+
+Finding class: `ORCHESTRATOR_PACKET_GAP`, not worker implementation failure.
+
+Canonical prior finding string:
+`ROLE-SOT-EVIDENCE-T0|ORCHESTRATOR_PACKET_GAP|PREIMPLEMENTATION_BASE_MUST_EQUAL_EXECUTION_BASE_HEAD|NO_WORKER_EDITS|60c969e02d1c9f49a8a0142f89b5a9eb3f0a7b48`.
+
+The first worker invocation captured clean HEAD
+`60c969e02d1c9f49a8a0142f89b5a9eb3f0a7b48`, found empty staging, ran the
+packet's hard-coded pre-implementation range from the older dispatch-authoring
+base, and correctly stopped because that range included already-committed
+material and continuity paths outside worker ownership. The worker made no
+edit, stage or commit.
+
+Dispatcher disposition: the pre-implementation base is the worker-captured
+`executionBaseHead`, not the packet-authoring `dispatchBaseHead`. Validation of
+that corrected range formula at the reported clean execution base passed all
+83 checks. No worker path ownership, acceptance criterion or product claim is
+changed. One consolidated R1 invocation is admitted only after the next
+explicit operator relay.
 
 ## Intake Role Routing Decision
 
@@ -123,39 +146,39 @@ material pre-closure -> separate continuity verification when applicable.
 
 Review-Dispatch Convergence Control: REQUIRED
 
-dispatchKind: INITIAL
+dispatchKind: REWORK
 
 dispatchSurface: EXTERNAL_AGENT_CLI_MCP
 
 parentAssignmentId: ROLE-SOT-EVIDENCE-T0
 
-reviewRoundCount: 0
+reviewRoundCount: 1
 
-priorFindingSetDigest: NOT_APPLICABLE_INITIAL_DISPATCH
+priorFindingSetDigest: c381de77825eaa29d872aed53524f7a7add09393d5e1d83a99e0aa852d762f7d
 
-dependencyAuditDisposition: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
 
-reworkFindingDisposition: NOT_APPLICABLE_INITIAL_DISPATCH
+reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
 
-newIndependentCriticalEvidence: NONE
+newIndependentCriticalEvidence: ROLE_SOT_T0_EXECUTION_BASE_RANGE_MISMATCH
 
-regressionGuardDisposition: BASELINE_NEGATIVE_TESTS_PLANNED
+regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 
-cumulativeExternalInvocationCount: 0
+cumulativeExternalInvocationCount: 1
 
-externalInvocationCeiling: 1
+externalInvocationCeiling: 2
 
 usageAvailability: KNOWN_FOR_ADMISSION
 
 quotaAdmissionDisposition: ADMITTED_WITHIN_CUMULATIVE_CEILING
 
-nextDispatchDisposition: INITIAL_DISPATCH
+nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
 
-rootCauseClusterId: NOT_APPLICABLE_INITIAL_DISPATCH
+rootCauseClusterId: ROLE_SOT_T0_ORCHESTRATOR_PACKET_GAP
 
-reworkGeneration: 0
+reworkGeneration: 1
 
-consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
 
 successorTrancheOpened: NO
 
@@ -266,7 +289,7 @@ Run from repository root before edits:
 git rev-parse HEAD
 git status --short --untracked-files=all
 git diff --cached --name-status
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 4ba46aa505836b49f0051dbe58c1446f4fac4434 --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
 ```
 
 The committed packet should be the captured HEAD and the worktree/staging area
@@ -300,7 +323,7 @@ false, full legacy bundle required.
 | batch token | `rg -n --fixed-strings "ROLE-SOT-EVIDENCE-T0" docs CVF_SESSION` returned zero matches before authoring | PASS_NO_COLLISION |
 | owner collision | two existing standards above already own the subject | EXTEND_EXISTING_NO_THIRD_OWNER |
 
-## Planned Worker Fulfillment Manifest
+## Required Artifact Manifest
 
 | Path | Action | Required at handoff | Purpose |
 |---|---|---|---|
@@ -313,7 +336,7 @@ changed-set contract.
 
 ## Write Ownership
 
-Owned paths are exactly the three Planned Worker Fulfillment Manifest rows.
+Owned paths are exactly the three Required Artifact Manifest rows.
 
 Write mode: modify-listed for the two standards; create-only for the return.
 
@@ -442,7 +465,7 @@ requires `BLOCKED_WITH_REASON`.
 
 | Anchor | Owner | Required value |
 |---|---|---|
-| `dispatchBaseHead` | dispatcher | `4ba46aa505836b49f0051dbe58c1446f4fac4434` |
+| `dispatchBaseHead` | dispatcher | `60c969e02d1c9f49a8a0142f89b5a9eb3f0a7b48` |
 | `executionBaseHead` | worker | full committed HEAD captured before worker edits |
 | `closureBaseHead` | reviewer | captured before any reviewer material commit |
 
@@ -655,19 +678,19 @@ claim limit: procedural governance semantics only; no runtime behavior claim.
 | Field | Evidence |
 |---|---|
 | Actor | orchestrator/dispatcher |
-| Provider or surface | local private provenance workspace |
-| Session or invocation | ROLE-SOT-EVIDENCE-T0 dispatch authoring, 2026-09-08 |
-| Working directory | repository root at `4ba46aa505836b49f0051dbe58c1446f4fac4434` |
-| Command or tool surface | governed reads, Git, `rg`, hashes, ADIF resolver, scaffold stdout and `apply_patch` |
+| Provider or surface | local private provenance workspace plus operator-relayed external blocker return |
+| Session or invocation | ROLE-SOT-EVIDENCE-T0 R1 anchor correction, 2026-09-08 |
+| Working directory | repository root at `60c969e02d1c9f49a8a0142f89b5a9eb3f0a7b48` |
+| Command or tool surface | returned blocker evidence, governed reads, Git, `rg`, hashes, local gates and `apply_patch` |
 | Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_ROLE_SOT_EVIDENCE_TOPOLOGY_INVARIANCE_T0_2026-09-08.md` |
 | Allowed scope source | operator authorization for the recommended compact packet on 2026-09-08 |
-| Before status evidence | HEAD `4ba46aa505836b49f0051dbe58c1446f4fac4434`; clean worktree; empty staging |
-| After status evidence | one new work order only; no worker invocation or external effect |
+| Before status evidence | HEAD `60c969e02d1c9f49a8a0142f89b5a9eb3f0a7b48`; clean worktree; empty staging; first worker invocation returned blocked with no edits |
+| After status evidence | one modified work order only; corrected execution-base formula; worker output paths remain untouched |
 | Diff evidence | `git status --short`; `git diff --check`; pre-dispatch and local hook evidence |
 | Approval boundary | packet authoring and commit only; worker execution requires operator relay |
 | Claim boundary | no standard mutation, worker execution, RABA release, runtime/provider/live/public/deploy action |
 | Agent type | orchestrator/dispatcher |
-| Invocation ID | `role-sot-evidence-t0-dispatch-authoring-2026-09-08` |
+| Invocation ID | `role-sot-evidence-t0-r1-anchor-correction-2026-09-08` |
 | Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_ROLE_SOT_EVIDENCE_TOPOLOGY_INVARIANCE_T0_2026-09-08.md` |
 | Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_ROLE_SOT_EVIDENCE_TOPOLOGY_INVARIANCE_T0_2026-09-08.md` |
 | Manifest delta | MATCH |
@@ -681,7 +704,7 @@ claim limit: procedural governance semantics only; no runtime behavior claim.
 | claimDisposition | `CLAIM_REJECTED`: no execution-control or runtime-enforcement claim |
 | receiptEvidence | `CLAIM_REJECTED_NO_RECEIPT`: no runtime receipt is created or consumed |
 | actionEvidence | `CLAIM_REJECTED_NO_ACTION`: no protected action is executed or observed |
-| invocationBoundary | one later operator-relayed worker invocation plus local reads, edits and gates |
+| invocationBoundary | one consumed blocked worker invocation, one admitted later operator-relayed R1 invocation, plus local reads, edits and gates |
 | interceptionBoundary | no IDE, shell, Git, filesystem, provider or network interception claim |
 | claimLanguage | shared SOT and evidence-operation procedural rules only |
 | forbiddenExpansion | automatic role routing, model selection, runtime enforcement, provider/live/public/deploy and RABA successor claims |
