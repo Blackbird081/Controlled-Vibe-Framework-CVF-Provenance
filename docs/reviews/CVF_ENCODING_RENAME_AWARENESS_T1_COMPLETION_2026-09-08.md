@@ -12,7 +12,7 @@ Batch ID: ENCODING-RENAME-T1
 
 closureBaseHead: `d46a55d2b`
 
-materialCommit: `d46a55d2b381ac05152215d8a1ab0c576f575c60`
+materialCommit: `d46a55d2bf8fd4889ccac8d0dd807956e74128e7`
 
 providerExecutionAuthority: FORBIDDEN
 
@@ -34,7 +34,7 @@ non-ASCII text.
   `docs/baselines/CVF_GC018_ENCODING_RENAME_AWARENESS_T1_2026-09-08.md`.
 - Reworked worker return:
   `docs/reviews/CVF_ENCODING_RENAME_AWARENESS_T1_WORKER_RETURN_2026-09-08.md`.
-- Material commit: `d46a55d2b381ac05152215d8a1ab0c576f575c60`.
+- Material commit: `d46a55d2bf8fd4889ccac8d0dd807956e74128e7`.
 
 ## Scope / Methodology
 
