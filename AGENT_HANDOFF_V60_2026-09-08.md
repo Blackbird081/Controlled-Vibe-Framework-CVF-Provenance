@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `8347be04a0216479f754e3eee3ca71f15a149a8b`. Dispatch parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `bb7b0ce500d5aaade9be4d14c31af3d3963a509b`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
@@ -21,7 +21,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_enrollment_observability_repair_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=implement, review, and close the exact P4-C1 repair manifest dispatched at 8347be04a; parked checkpoint=WP-ARCH-003 synchronization until Step 1 closes, then public/external refresh, with RABA implementation, DARA-T5, provider/live work, actual process interception, P5 and P6 still parked.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_enrollment_observability_repair_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=reviewer closure of the P4-C1 work order, completion review, and audit record after material bb7b0ce50; parked checkpoint=WP-ARCH-003 synchronization until Step 1 closes, then public/external refresh, with RABA implementation, DARA-T5, provider/live work, actual process interception, P5 and P6 still parked.
 
 ## Current Mode
 
@@ -41,6 +41,11 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Latest Work / Changes
 
+- P4-C1 repair material committed at `bb7b0ce500d5aaade9be4d14c31af3d3963a509b`
+  with exact-ten scope and pre-commit 88/88 PASS. The first real journal-v2
+  write reports 151 attempts, 17 candidates, 17 eligible opportunities, zero
+  collected samples, checkpoint initialization, and nonblocking
+  `STARVED_ELIGIBLE_NOT_COLLECTED`.
 - P4-C1 enrollment/observability repair dispatch committed at
   `8347be04a0216479f754e3eee3ca71f15a149a8b`; pre-dispatch passed 81/81 and
   the normal pre-commit chain passed 88/88. Its exact ten-path implementation
@@ -72,7 +77,7 @@ ROLE-SOT-MH-T1 is independently accepted. Claude Rework Generation 2 closed all 
 
 ## Next Allowed Move
 
-MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR is `DISPATCH_READY` at `8347be04a0216479f754e3eee3ca71f15a149a8b`. Implement, review, and close only its exact ten-path manifest. WP-ARCH-003 status synchronization remains ordered Step 2; private/public seven-step shared-workspace projection and external packet refresh remain ordered Step 3. RABA implementation, DARA-T5, provider/live work, actual process interception, P5, P6, and automatic redispatch remain parked.
+MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR material is committed at `bb7b0ce500d5aaade9be4d14c31af3d3963a509b`. Close only its work order, completion review, and audit sequence record next. WP-ARCH-003 status synchronization remains ordered Step 2; private/public seven-step shared-workspace projection and external packet refresh remain ordered Step 3. RABA implementation, DARA-T5, provider/live work, actual process interception, P5, P6, and automatic redispatch remain parked.
 
 ## Parked Checkpoints
 
@@ -120,6 +125,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/encodingGc020DispatchReady20260908.json`
 - `CVF_SESSION/state/entries/encodingRenameAwarenessT1Closure20260908.json`
 - `CVF_SESSION/state/entries/mfrpP4C1EnrollmentObservabilityRepairDispatch20260909.json`
+- `CVF_SESSION/state/entries/mfrpP4C1EnrollmentObservabilityRepairMaterial20260909.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ROLE_SOT_MH_T1_DISPATCH_COORDINATION_AND_DEPENDENCY_DISCOVERY_MACHINE_HARDENING_2026-09-08.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`

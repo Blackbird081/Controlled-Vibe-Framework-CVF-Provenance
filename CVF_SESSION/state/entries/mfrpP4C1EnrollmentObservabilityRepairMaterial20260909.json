@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2813,
+  "stateKey": "mfrpP4C1EnrollmentObservabilityRepairMaterial20260909",
+  "value": "MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR material is committed at bb7b0ce500d5aaade9be4d14c31af3d3963a509b with exact ten paths and normal pre-commit 88/88 PASS. Focused proof is 68 passed; worker-return fast gate and reviewer-fast 67/67 pass. The first real v2 post-commit journal now records 151 attempts, 17 candidates, 17 eligible opportunities, 0 collected samples, checkpoint initialization, and nonblocking STARVED_ELIGIBLE_NOT_COLLECTED. Completion and work-order status closure remain reviewer-owned next."
+}
