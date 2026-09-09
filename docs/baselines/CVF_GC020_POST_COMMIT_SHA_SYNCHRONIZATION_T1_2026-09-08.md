@@ -4,7 +4,7 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: GC020-SYNC-T1
 
@@ -16,7 +16,7 @@ dispatchBaseHead: `39be75a7cff4fc9acdbf3dd129254ddb164947d0`
 
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
-closureBaseHead: REVIEWER_TO_SET
+closureBaseHead: `3087a24e`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -358,11 +358,26 @@ choreography standard. No runtime, provider or live surface was contacted.
 
 ## Machine Closure Package
 
-Applicable at closure: this baseline, the paired work order, the changed helper,
-the new focused test file, the choreography standard, and the packet worker
-return. Roadmap, registry JSON, external evidence digest and loop interlock are
-`N/A with reason`: this bounded helper tranche opens no roadmap row, mutates no
-registry, consumes no external evidence and adds no interlock edge.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1_COMPLETION_2026-09-08.md` | reviewer acceptance | PASS |
+| Owned implementation | helper, focused tests, standard and worker return | material `3087a24e`; 153/153 | PASS |
+| Roadmap state | N/A with reason: no roadmap row opened | N/A with reason | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 aggregate check confirms aligned; no tranche mutation required | PASS |
+| Registry Markdown | `docs/reference/CVF_CORPUS_SCAN_REGISTRY.md` | registry projection remains aligned; no tranche mutation required | PASS |
+| External evidence digest | N/A with reason: no external evidence | N/A with reason | N/A with reason |
+| System loop interlock | choreography standard and helper tests | contract-to-proof binding | PASS |
+| Session continuity | active continuity surfaces | `dee135c0`, parent `3087a24e` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Full material SHA | `3087a24ee91e57a6c5491fa2cf431ab195575a7c` | PASS |
+| Continuity parent | `dee135c0` has parent `3087a24e` | PASS |
+| Focused proof | 153/153 | PASS |
+| External/provider receipt | N/A with reason: local helper only | N/A_WITH_REASON |
 
 ## Claim Boundary
 

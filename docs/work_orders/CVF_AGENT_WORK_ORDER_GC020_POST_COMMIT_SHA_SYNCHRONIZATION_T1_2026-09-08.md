@@ -35,7 +35,7 @@ gotchas, the paired baseline and this packet; capture HEAD and full status;
 require a clean worktree and empty staging; recompute every Source Pin Contract
 hash; then run pre-implementation.
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: GC020-SYNC-T1
 
@@ -47,7 +47,7 @@ dispatchBaseHead: `39be75a7cff4fc9acdbf3dd129254ddb164947d0`
 
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
-closureBaseHead: REVIEWER_TO_SET
+closureBaseHead: `3087a24e`
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -824,13 +824,13 @@ no-external-effect evidence.
 
 ## Closure Checklist
 
-- [ ] all focused cases pass
-- [ ] prior suites for the owned surfaces pass
-- [ ] governed Python size guard passes with no touched near-hard growth
-- [ ] changed set matches the Required Artifact Manifest exactly
-- [ ] staging is empty and no commit was made by the worker
-- [ ] worker return carries complete packet-shape evidence
-- [ ] reviewer accepts before any commit
+- [x] all focused cases pass
+- [x] prior suites for the owned surfaces pass
+- [x] governed Python size guard passes with no touched near-hard growth
+- [x] changed set matches the Required Artifact Manifest exactly
+- [x] staging is empty and no commit was made by the worker
+- [x] worker return carries complete packet-shape evidence
+- [x] reviewer accepts before any commit
 
 ## Operator Checkpoint
 
@@ -863,14 +863,26 @@ deployment step requires a fresh operator checkpoint before it may proceed.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order | this packet | dispatch-quality gate result | PENDING_WORKER_RETURN |
-| Paired baseline | the paired GC-018 baseline | dispatch-quality gate result | PENDING_WORKER_RETURN |
-| Owned implementation | Required Artifact Manifest rows | focused suite counts | PENDING_WORKER_RETURN |
-| Worker return | the packet worker-return path | worker-return fast gate result | PENDING_WORKER_RETURN |
-| Roadmap row | N/A with reason: no roadmap row is opened | N/A with reason | NOT_APPLICABLE |
-| Registry JSON/MD | N/A with reason: no registry is mutated | N/A with reason | NOT_APPLICABLE |
-| External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | NOT_APPLICABLE |
-| Loop interlock | N/A with reason: no interlock edge added | N/A with reason | NOT_APPLICABLE |
+| Work order status | this packet | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Paired baseline | paired GC020 baseline | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Owned implementation | Required Artifact Manifest rows | material `3087a24e`; focused suite 153/153 | PASS |
+| Worker return | packet worker-return path | fast gate and actual two-phase transaction | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1_COMPLETION_2026-09-08.md` | reviewer acceptance | PASS |
+| Roadmap state | N/A with reason: no roadmap row is opened | N/A with reason | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | GC-051 aggregate check confirms aligned; no tranche mutation required | PASS |
+| Registry Markdown | `docs/reference/CVF_CORPUS_SCAN_REGISTRY.md` | registry projection remains aligned; no tranche mutation required | PASS |
+| External evidence digest | N/A with reason: no external evidence consumed | N/A with reason | N/A with reason |
+| System loop interlock | choreography standard and helper tests | contract-to-proof binding | PASS |
+| Session continuity | active session sources and generated outputs | continuity `dee135c0` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Full material SHA | `3087a24ee91e57a6c5491fa2cf431ab195575a7c` | PASS |
+| One material and one continuity commit | `3087a24e` then `dee135c0` | PASS |
+| Worker no-commit boundary | empty staging and unchanged HEAD at worker return | PASS |
+| Idempotent recheck | `ALREADY_SYNCHRONIZED`, no third commit | PASS |
 
 ## Evidence Reuse And Encoding Plan
 
