@@ -2,7 +2,7 @@
 
 Memory class: implementation-sequence-record
 
-Status: P4_C1_RECEIPT_RANGE_REWORK_PENDING_PROSPECTIVE_PROOF
+Status: WP_ARCH_003_PARK_SYNCHRONIZED_PUBLIC_EXTERNAL_REFRESH_READY_NEXT
 
 docType: reference
 
@@ -51,9 +51,9 @@ state alone.
 
 | Step | Work | Current state | Exit condition |
 | --- | --- | --- | --- |
-| 1 | Repair MFRP P4-C1 deterministic enrollment and observability | RECEIPT_RANGE_REWORK_PENDING_PROSPECTIVE_PROOF | first selected candidate exposed mixed closure-plus-continuity receipt range; seam corrected to `trusted^..trusted`; 68 focused tests pass |
-| 2 | Synchronize WP-ARCH-003 terminal park across active roadmap and continuity owners | PARKED_BEHIND_STEP_1 | all active projections agree and no implementation tranche opens |
-| 3 | Update private provenance, public GitHub projection, seven-step shared-workspace agent relationships, and external packet | PARKED_BEHIND_STEP_2 | public-sync commit is live, packet refresh receipt binds that HEAD, and the relay ZIP is regenerated and verified |
+| 1 | Repair MFRP P4-C1 deterministic enrollment and observability | CLOSED_PASS_BOUNDED | receipt-range rework `6b5318286`; disclosure `82538aff2`; runtime 156/19/19/1; health `COLLECTING`; focused tests 68 passed |
+| 2 | Synchronize WP-ARCH-003 terminal park across active roadmap and continuity owners | CLOSED_PARKED | parent, RABA-T0, and F01-F02 roadmaps agree on `PARK_NO_TRUTHFUL_AUTHORITY_ROOT`; no implementation tranche opens |
+| 3 | Update private provenance, public GitHub projection, seven-step shared-workspace agent relationships, and external packet | READY_NEXT | public-sync commit is live, packet refresh receipt binds that HEAD, and the relay ZIP is regenerated and verified |
 
 No later step may be reported complete from a plan, prompt, or external-agent
 return alone.

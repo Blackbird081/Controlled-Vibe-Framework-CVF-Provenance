@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: OPERATOR_AUTHORIZED_EXTERNAL_RELAY_READY
+Status: PARK_NO_TRUTHFUL_AUTHORITY_ROOT
 
 docType: roadmap
 
@@ -20,7 +20,12 @@ finding-reconciliation parent. It is not a RABA-T0 redispatch, does not reset
 the exhausted RABA-T0 budget, and authorizes only one fresh external evidence
 invocation after manual operator relay.
 
-Decision: `PROCEED_TO_RABA_F01_F02_EXTERNAL_RELAY`
+Decision: `PARK_NO_TRUTHFUL_AUTHORITY_ROOT`
+
+Current disposition: the relay completed and the reviewer accepted the
+terminal park at material `0767a16e5` and continuity `442a7708b`. The body
+below preserves the original bounded relay contract as historical evidence;
+it no longer authorizes external invocation and does not release RABA-T1.
 
 The paired GC-018 baseline and work order are released with this roadmap for
 manual operator relay. The worker may change only the two new evidence outputs.

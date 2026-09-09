@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: OPERATOR_AUTHORIZED_T0_PACKET_REQUIRED
+Status: PARK_NO_TRUTHFUL_AUTHORITY_ROOT
 
 docType: roadmap
 
@@ -19,7 +19,13 @@ The operator authorized a new roadmap after the terminal rejection of
 parent. It is not `AR1-R2`, does not reset the exhausted AR1 invocation budget,
 and does not authorize a worker execution by itself.
 
-Decision: `PROCEED_TO_RABA_T0_PACKET_AUTHORING`
+Decision: `PARK_NO_TRUTHFUL_AUTHORITY_ROOT`
+
+Current disposition: the historical T0 packet was authored and executed, then
+the F01-F02 successor closed at material `0767a16e5` and continuity
+`442a7708b` with reviewer-accepted `PARK_NO_TRUTHFUL_AUTHORITY_ROOT`. The body
+below preserves the dispatch design as history; it is not current execution
+authority and does not open RABA-T1.
 
 The next action is source-verified GC-018 and work-order authoring for RABA-T0
 only. Execution remains behind a separate operator relay checkpoint.

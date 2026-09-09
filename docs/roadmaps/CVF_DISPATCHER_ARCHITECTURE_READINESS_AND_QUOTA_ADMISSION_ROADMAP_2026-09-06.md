@@ -2,7 +2,7 @@
 
 Memory class: governed-roadmap
 
-Status: WP_ARCH_003_AR1_DESIGN_DISPATCH_READY
+Status: PARK_NO_TRUTHFUL_AUTHORITY_ROOT
 
 Date: 2026-09-06
 
@@ -31,6 +31,14 @@ open a new `WP-ARCH-003` architecture-design parent assignment, not a third
 repair round and not implementation. The exact-two external-worker dispatch
 must produce a new canonical-owner and producer-to-runtime-consumer proposal;
 the independent reviewer owns acceptance and all commits.
+
+Terminal synchronization on 2026-09-09 supersedes that dispatch-ready
+projection. AR1 and its R1 rework did not establish one truthful authority
+root. The fresh RABA-T0 and F01-F02 evidence chain ended with reviewer-accepted
+`PARK_NO_TRUTHFUL_AUTHORITY_ROOT` at material `0767a16e5` and continuity
+`442a7708b`. RABA-T1 through RABA-T3 were never opened. External-agent
+research may continue as advisory input, but no external repository or agent
+output becomes a CVF authority root without Internal Agent reconciliation.
 
 ## Purpose
 
@@ -102,6 +110,8 @@ Frozen repository base for this roadmap: `17c8fe30fdc4468f6748d67926e3d95224723a
 | DARA-E20 | existing collector readout after `d4a6b422f` and continuity `d9807d3df` | `P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE`; committed T3 review/return contains no eligible P4 observation block, and no journal row, receipt or safety marker is created | ACCEPT_CURRENT_MACHINE_READOUT |
 | DARA-E21 | operator instruction on 2026-09-08 | select fresh route 2: reopen `WP-ARCH-003` as a new design/proposal tranche with Codex as orchestrator/reviewer and operator relay to an external worker | ACCEPT_OPERATOR_TRANCHE_AUTHORIZATION |
 | DARA-E22 | `docs/baselines/CVF_GC018_WP_ARCH_003_AR1_CANONICAL_OWNER_RUNTIME_PATH_DESIGN_2026-09-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WP_ARCH_003_AR1_CANONICAL_OWNER_RUNTIME_PATH_DESIGN_2026-09-08.md` | exact-two no-commit architecture proposal; one external invocation; no implementation or successor authority | ACCEPT_DISPATCH_AUTHORITY |
+| DARA-E23 | `docs/reviews/CVF_WP_ARCH_003_AR1_R1_CANONICAL_OWNER_RUNTIME_PATH_DESIGN_REWORK_COMPLETION_2026-09-08.md` | consolidated AR1 rework remains terminally rejected; no implementation authority follows | ACCEPT_COMMITTED_TERMINAL_EVIDENCE |
+| DARA-E24 | `docs/reviews/CVF_WP_ARCH_003_RABA_F01_F02_ROOT_EVIDENCE_REASSESSMENT_COMPLETION_2026-09-08.md`; material `0767a16e5`; continuity `442a7708b` | current source has useful candidate fragments but no integrated, higher-authority, principal/scope-bound runtime root | ACCEPT_COMMITTED_TERMINAL_PARK |
 
 Measured cost is bounded to three external invocations and two repair turns.
 Token or subscription-quota quantity is `UNKNOWN`: the local repository does
@@ -218,7 +228,7 @@ Admission rules:
 | DARA-T3 | historical replay | Initial/R1/R2 replay fixture and deterministic receipt showing earliest stop | accepted T2 | late operator-authorized R2 repair accepted `CLOSED_PASS_BOUNDED` at `d4a6b422f`; earlier rejection remains history |
 | DARA-T4 | handoff to existing MFRP shadow validation | admit DARA observations only through existing MFRP P4-C1 eligibility and checkpoint rules | accepted T3 R2 plus current MFRP admission check | R1 reassessment remains `PARK_NO_ELIGIBLE_EVIDENCE`; collector returned `SKIPPED_NO_ELIGIBLE_CANDIDATE`, no new collector, receipt, row or checkpoint |
 | DARA-T5 | existing-owner projection decision | MFRP P5/P6 owns activation; DARA supplies bounded architecture evidence only | accepted MFRP checkpoint decision | `CONSUMED_BY_MFRP` or `PARK_FOUNDATION` |
-| WP-ARCH-003-AR1 | fresh canonical-owner/runtime-path design | initial exact-two return rejected at `dd985013c`; R1 repairs owner, trust/carrier, composition, current consumer, manifest and rollback as one dependency class | DARA-T1/T2B/T3 interlock clauses plus DARA-E21 and operator-authorized R1 rework | `R1_DESIGN_REWORK_DISPATCH_READY`; implementation remains parked |
+| WP-ARCH-003 | terminal authority-root disposition | AR1 and R1 rejection history plus accepted RABA-T0 and F01-F02 source verification | reviewer-accepted RABA-F01-F02 closure | `PARK_NO_TRUTHFUL_AUTHORITY_ROOT`; RABA-T1 through T3 unopened; implementation parked |
 
 No implementation tranche opens automatically. On 2026-09-06 the operator
 authorized Codex to act sequentially as orchestrator and reviewer for DARA and
@@ -311,11 +321,31 @@ The two current files are committed incident evidence at `c2a1f7c7c` and must
 remain substantively parked until a separately authorized disposition
 archives, replaces or rejects them.
 
-The operator's DARA-E21 decision opens only `WP-ARCH-003-AR1` design. The
-first three clauses are accepted by DARA-T1/T2B/T3. AR1 must satisfy the fourth
-and produce reviewer-owned accepted architecture before the fifth can release
-any implementation work order. Until then, substantive implementation remains
-parked.
+The operator's DARA-E21 decision historically opened only `WP-ARCH-003-AR1`
+design. Later AR1 rejection and RABA-F01-F02 source verification supersede that
+opening with `PARK_NO_TRUTHFUL_AUTHORITY_ROOT`. No implementation work order is
+released. A future reopening requires new source evidence or explicit operator
+authority and a fresh parent assignment; it cannot resume RABA-T1 automatically.
+
+## Terminal WP-ARCH-003 Park Synchronization
+
+The active roadmap verdict is `PARK_NO_TRUTHFUL_AUTHORITY_ROOT`. This is a
+successful fail-closed architecture decision, not an implementation failure:
+
+- authenticated Web approval is not proof of separation of duty or a strictly
+  higher authority;
+- caller-supplied provider grants are not an independent authority issuer;
+- delegation fields lack a current trusted producer-to-runtime-consumer chain;
+- delegated write-scope evaluation has duplicate candidates and no active
+  canonical consumer;
+- RABA-T1, RABA-T2, RABA-T3, DARA-T5, and WP implementation remain unopened;
+- external agents may research, compare, and audit public sources, but their
+  outputs remain advisory until an Internal Agent verifies and reconciles them
+  against CVF-governed authority.
+
+This terminal park preserves the value of the completed DARA controls and
+RABA evidence while preventing a stale `DESIGN_DISPATCH_READY` header from
+being mistaken for executable authority.
 
 ### AR1 R1 Consolidated Rework
 
@@ -521,10 +551,8 @@ invocation, runtime/provider/live/public action, or P4 eligibility change.
 
 ## Claim Boundary
 
-This roadmap records a bounded governance/control-plane incident and a
-foundation-first work sequence. The P4-C1 universal-discovery hardening above
-only preserves an already-active MFRP invariant. DARA-E21 and the explicit R1
-operator decision open one consolidated count-2 `WP-ARCH-003-AR1` design
-rework over the same exact-two pending artifacts. They do not accept the
-proposal, implement the WP, open DARA-T5, mutate runtime/source, or make
-provider/live/public/deployment/production claims.
+This roadmap records a bounded governance/control-plane incident and its
+terminal `PARK_NO_TRUTHFUL_AUTHORITY_ROOT` disposition. Historical DARA-E21
+and AR1 dispatch authority is superseded, not erased. No proposal is accepted,
+no WP or RABA successor is implemented or opened, and no provider/live/public/
+deployment/production claim follows.
