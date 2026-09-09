@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`public_seven_step_workspace_external_packet_refresh_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=private/public seven-step shared-workspace projection followed by external packet refresh; parked checkpoint=RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment.
+Startup acknowledged: current mode=`external_agent_absorption_relay_ready`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=manual delivery of the verified EARA-AGW-T0 ZIP to two independent external agents, then Internal Agent reconciliation; parked checkpoint=RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment.
 
 ## Current Mode
 
-Current mode marker: `public_seven_step_workspace_external_packet_refresh_active`
-Current mode: `public_seven_step_workspace_external_packet_refresh_active`; previous mode marker: `wp_arch_003_terminal_park_status_synchronization_active`
+Current mode marker: `external_agent_absorption_relay_ready`
+Current mode: `external_agent_absorption_relay_ready`; previous mode marker: `public_seven_step_workspace_external_packet_refresh_active`
 Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `public_seven_step_workspace_external_packet_refresh_active`. P4-C1 is prospectively proven at 156 attempts, 19 candidates, 19 eligible opportunities and one collected sample; WP-ARCH-003 is terminal parked at `65fafd4f5`. Update private provenance and public-safe seven-step shared-workspace documentation, then refresh the external-agent packet against the new public HEAD. RABA implementation and all provider/live/deploy effects remain parked.
+Mode: `external_agent_absorption_relay_ready`. The three-step audit sequence is closed: P4-C1 is prospectively proven at 156/19/19/1; WP-ARCH-003 is terminal parked; public main `483c5e33d` carries the seven-step shared-workspace projection; and the verified `EARA-AGW-T0` relay ZIP is ready. Next, the operator may deliver the same ZIP to two independent external agents; an Internal Agent must verify and reconcile both returns before any finding can influence CVF. RABA implementation and all provider/live/deploy effects remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

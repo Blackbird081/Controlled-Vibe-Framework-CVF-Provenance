@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2821,
+  "stateKey": "publicSevenStepExternalPacketClosure20260909",
+  "value": "Step 3 closed pass bounded. Private seven-step relationship source is c9fa2862c88eba6e3e3e8dd8e8d96dd018382ef1. Public pull request 8 merged to public main 483c5e33d188b6b2d35d6cd19ee38a3c8548abc4 after required public-sync preflight. EXTERNAL_AGENT_READ was refreshed from that live head; EARA-AGW-T0 is REVIEW_ONLY and expects COMPLETE_PENDING_LOCAL_RECONCILIATION. CVF_EARA_AGW_T0_EXTERNAL_RELAY_2026-09-09.zip has eight entries and SHA-256 a6d1d47dece0a7d94b731a01d5ade3587f9810231ef8f5e3ecfbad3224e11340. External output remains advisory until Internal Agent verification and reconciliation."
+}

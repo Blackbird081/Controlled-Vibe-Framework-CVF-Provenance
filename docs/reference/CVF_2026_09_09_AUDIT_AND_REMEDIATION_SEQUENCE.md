@@ -2,7 +2,7 @@
 
 Memory class: implementation-sequence-record
 
-Status: WP_ARCH_003_PARK_SYNCHRONIZED_PUBLIC_EXTERNAL_REFRESH_READY_NEXT
+Status: COMPLETE_ALL_THREE_STEPS
 
 docType: reference
 
@@ -53,7 +53,7 @@ state alone.
 | --- | --- | --- | --- |
 | 1 | Repair MFRP P4-C1 deterministic enrollment and observability | CLOSED_PASS_BOUNDED | receipt-range rework `6b5318286`; disclosure `82538aff2`; runtime 156/19/19/1; health `COLLECTING`; focused tests 68 passed |
 | 2 | Synchronize WP-ARCH-003 terminal park across active roadmap and continuity owners | CLOSED_PARKED | parent, RABA-T0, and F01-F02 roadmaps agree on `PARK_NO_TRUTHFUL_AUTHORITY_ROOT`; no implementation tranche opens |
-| 3 | Update private provenance, public GitHub projection, seven-step shared-workspace agent relationships, and external packet | READY_NEXT | public-sync commit is live, packet refresh receipt binds that HEAD, and the relay ZIP is regenerated and verified |
+| 3 | Update private provenance, public GitHub projection, seven-step shared-workspace agent relationships, and external packet | CLOSED_PASS_BOUNDED | private source `c9fa2862c`; public commit `483c5e33d`; packet task `EARA-AGW-T0`; relay ZIP SHA-256 `a6d1d47dece0a7d94b731a01d5ade3587f9810231ef8f5e3ecfbad3224e11340` |
 
 No later step may be reported complete from a plan, prompt, or external-agent
 return alone.
@@ -140,6 +140,27 @@ absorption lineage and Agentgateway only as a secondary comparison. It remains
 parked for use until Step 2 status synchronization and Step 3 public/packet
 refresh make its CVF context current.
 
+## Step 3 Closure Evidence
+
+The private seven-step relationship source was committed at
+`c9fa2862c88eba6e3e3e8dd8e8d96dd018382ef1`. Its public-safe projection was
+merged through public pull request 8 after the required public-sync preflight
+passed. Live public `main` is
+`483c5e33d188b6b2d35d6cd19ee38a3c8548abc4` and contains `README.md` plus
+`docs/concepts/seven-step-shared-workspace-agent-model.md`.
+
+`EXTERNAL_AGENT_READ` was then refreshed from that exact live public head. The
+new task capsule is `EARA-AGW-T0`, with Agentgateway source pin
+`3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826`, working mode `REVIEW_ONLY`, and
+expected return `COMPLETE_PENDING_LOCAL_RECONCILIATION`. The verified relay ZIP
+is `CVF_EARA_AGW_T0_EXTERNAL_RELAY_2026-09-09.zip`; it contains eight expected
+entries and has SHA-256
+`a6d1d47dece0a7d94b731a01d5ade3587f9810231ef8f5e3ecfbad3224e11340`.
+
+This closes packet preparation only. Manual delivery to independent external
+agents and Internal Agent reconciliation are the next workflow, not evidence
+that any external finding has been accepted.
+
 ## Verification And Update Rule
 
 After each step, update only this record's status and corresponding ledger row
@@ -164,15 +185,20 @@ verification.
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY
+EXPORTED
 
-Reason: this record is private provenance and sequencing authority. Step 3 will
-produce a separately reviewed public-safe projection and explicit public-sync
-evidence.
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+Public-sync commit: `483c5e33d188b6b2d35d6cd19ee38a3c8548abc4`
+Public artifact paths: `README.md` and
+`docs/concepts/seven-step-shared-workspace-agent-model.md`
+Public catalog paths: N/A; no catalog entry was part of this bounded concept
+export.
+Public pull request:
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
 
 ## Claim Boundary
 
-This record preserves audited facts and ordered work. It does not itself repair
-P4-C1, unpark WP-ARCH-003, publish GitHub content, prove shared-workspace
-runtime enforcement, invoke an external agent, or make production-readiness
-claims.
+This record preserves audited facts, ordered work, and exact closure receipts.
+It does not unpark WP-ARCH-003, prove shared-workspace runtime enforcement,
+invoke an external agent, accept external findings, or make
+production-readiness claims.

@@ -111,9 +111,12 @@ current roadmap, work order, installed checks, receipts, and accepted review.
 
 ## Public Export Disposition
 
-Disposition: `BLOCKED_MISSING_PUBLIC_ARTIFACTS`
-Blocker: the public-safe mirror and live public commit do not exist until the
-separate public-sync commit is pushed.
-Next action: publish the public-safe concept from the sibling public-sync clone,
-then replace this disposition with `EXPORTED` and exact remote, commit, and
-artifact evidence.
+Disposition: `EXPORTED`
+Public-sync remote: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git`
+Public-sync commit: `483c5e33d188b6b2d35d6cd19ee38a3c8548abc4`
+Public artifact paths: `README.md` and
+`docs/concepts/seven-step-shared-workspace-agent-model.md`
+Public catalog paths: N/A; this export is a concept surface linked from the
+public README and does not add a catalog entry.
+Public pull request:
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
