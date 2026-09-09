@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `aa31410a21345d1a71491a54f9da707cb9ff33ff`. Canonical safe provenance-push route parent anchor for dedicated continuity.
+Current HEAD recorded for this handoff: `3fcd426dc7c2c6d03fc915b884711df118a0563f`. P4-E return-time closeability and outcome-bounded agent-intelligence learning material parent anchor for dedicated continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
@@ -71,6 +71,12 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
   pull request 8 passed its required preflight and merged at public main
   `483c5e33d`. The refreshed `EARA-AGW-T0` eight-entry relay ZIP is ready with
   SHA-256 `a6d1d47dece0a7d94b731a01d5ade3587f9810231ef8f5e3ecfbad3224e11340`.
+- P4-E return-time closeability learning is independently reviewed and
+  committed at `3fcd426dc`. ADIF-0057 now records the uncloseable frozen-
+  authority-envelope pattern; the learning philosophy and Review Cost SOP
+  preserve agent implementation intelligence while requiring first-return
+  closeability classification. This does not change the current Core mode or
+  authorize project implementation by itself.
 
 ## Current Authority
 
