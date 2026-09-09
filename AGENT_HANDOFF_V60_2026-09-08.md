@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `bb7b0ce500d5aaade9be4d14c31af3d3963a509b`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `c2971bb8c`. P4-C1 closure parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
@@ -11,8 +11,8 @@ Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance SOT on `main`.
-- Current mode: `gclh_mfrp_p4_c1_enrollment_observability_repair_active`.
-- P4-C1 remains active at `b9bdba712`; eligible count is 0.
+- Current mode: `wp_arch_003_terminal_park_status_synchronization_active`.
+- P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
 - ADIF-0056 learning material is accepted at `b8268100a`.
@@ -21,11 +21,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_enrollment_observability_repair_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=reviewer closure of the P4-C1 work order, completion review, and audit record after material bb7b0ce50; parked checkpoint=WP-ARCH-003 synchronization until Step 1 closes, then public/external refresh, with RABA implementation, DARA-T5, provider/live work, actual process interception, P5 and P6 still parked.
+Startup acknowledged: current mode=`wp_arch_003_terminal_park_status_synchronization_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=documentation-only WP-ARCH-003 terminal-park synchronization; parked checkpoint=RABA implementation, then private/public seven-step shared-workspace projection and external packet refresh remain ordered, with DARA-T5, provider/live work, actual process interception, P5 and P6 still parked.
 
 ## Current Mode
 
-`gclh_mfrp_p4_c1_enrollment_observability_repair_active`
+`wp_arch_003_terminal_park_status_synchronization_active`
 
 ## Purpose
 
@@ -67,9 +67,10 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-The paired P4-C1 enrollment/observability repair baseline and work order are
-the current dispatch authority. The existing P4-C1 collector remains the sole
-runtime owner; the original P2 and P4 core owners stay read-only.
+The paired P4-C1 enrollment/observability repair baseline and closed work order
+remain the current exact-hash authority through this continuity transition.
+WP-ARCH-003 synchronization is documentation-only; it does not make an
+external repository or external-agent output an authority root.
 
 ## Closure Evidence
 
@@ -77,7 +78,7 @@ ROLE-SOT-MH-T1 is independently accepted. Claude Rework Generation 2 closed all 
 
 ## Next Allowed Move
 
-MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR material is committed at `bb7b0ce500d5aaade9be4d14c31af3d3963a509b`. Close only its work order, completion review, and audit sequence record next. WP-ARCH-003 status synchronization remains ordered Step 2; private/public seven-step shared-workspace projection and external packet refresh remain ordered Step 3. RABA implementation, DARA-T5, provider/live work, actual process interception, P5, P6, and automatic redispatch remain parked.
+MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR is closed at `c2971bb8c`. Synchronize WP-ARCH-003 to `PARK_NO_TRUTHFUL_AUTHORITY_ROOT` across active roadmap and continuity owners next, without opening any implementation tranche. Private/public seven-step shared-workspace projection and external packet refresh remain ordered Step 3. RABA implementation, DARA-T5, provider/live work, actual process interception, P5, P6, and automatic redispatch remain parked.
 
 ## Parked Checkpoints
 
@@ -126,6 +127,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/encodingRenameAwarenessT1Closure20260908.json`
 - `CVF_SESSION/state/entries/mfrpP4C1EnrollmentObservabilityRepairDispatch20260909.json`
 - `CVF_SESSION/state/entries/mfrpP4C1EnrollmentObservabilityRepairMaterial20260909.json`
+- `CVF_SESSION/state/entries/mfrpP4C1EnrollmentObservabilityRepairClosure20260909.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ROLE_SOT_MH_T1_DISPATCH_COORDINATION_AND_DEPENDENCY_DISCOVERY_MACHINE_HARDENING_2026-09-08.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
@@ -140,7 +142,8 @@ repair dispatch `8347be04a`, ROLE-SOT-MH-T1 material `94c4922c2`, T0 material
 
 ## Claim Boundary
 
-This handoff records the accepted P4-C1 repair dispatch and authorizes only its
-exact implementation next. It does not claim repair completion, actual process
-isolation, external invocation, RABA release, provider/live/public/deploy, P5,
+This handoff records bounded P4-C1 closure and authorizes only documentation
+synchronization of the already-established WP-ARCH-003 terminal park. It does
+not open implementation, claim actual process isolation, promote external
+output to authority, release RABA, or claim provider/live/public/deploy, P5,
 P6, or production authority.

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_enrollment_observability_repair_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=reviewer closure of the P4-C1 work order, completion review, and audit sequence after material bb7b0ce50; parked checkpoint=WP-ARCH-003 synchronization until Step 1 closes, then public/external refresh, with RABA implementation, DARA-T5, provider/live work, actual process interception, P5 and P6 still parked.
+Startup acknowledged: current mode=`wp_arch_003_terminal_park_status_synchronization_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=documentation-only WP-ARCH-003 terminal-park synchronization; parked checkpoint=RABA implementation, followed by the ordered private/public seven-step shared-workspace projection and external packet refresh, with DARA-T5, provider/live work, actual process interception, P5 and P6 still parked.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p4_c1_enrollment_observability_repair_active`
-Current mode: `gclh_mfrp_p4_c1_enrollment_observability_repair_active`; previous mode marker: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`
+Current mode marker: `wp_arch_003_terminal_park_status_synchronization_active`
+Current mode: `wp_arch_003_terminal_park_status_synchronization_active`; previous mode marker: `gclh_mfrp_p4_c1_enrollment_observability_repair_active`
 Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_c1_enrollment_observability_repair_active`. Material commit `bb7b0ce500d5aaade9be4d14c31af3d3963a509b` closed exact-ten implementation with pre-commit 88/88 PASS. Journal v2 reports 151 attempts, 17 candidates, 17 eligible opportunities, zero collected samples, and STARVED_ELIGIBLE_NOT_COLLECTED. Close only the work order, completion review, and audit sequence next. WP-ARCH-003 status synchronization remains Step 2; private/public seven-step shared-workspace projection and external packet refresh remain Step 3.
+Mode: `wp_arch_003_terminal_park_status_synchronization_active`. P4-C1 closed at `c2971bb8c` after exact-ten material `bb7b0ce500d5aaade9be4d14c31af3d3963a509b`, focused proof 68 passed, reviewer-fast 67/67, and both material and closure pre-commit 88/88. Synchronize WP-ARCH-003 to `PARK_NO_TRUTHFUL_AUTHORITY_ROOT` across active roadmap and continuity owners only; do not open RABA implementation. Private/public seven-step shared-workspace projection and external packet refresh remain Step 3.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
