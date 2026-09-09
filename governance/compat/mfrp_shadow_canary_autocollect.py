@@ -34,6 +34,7 @@ from typing import Any
 try:
     import mfrp_shadow_canary as canary
     import mfrp_shadow_canary_core as canary_core
+    import mfrp_p4_enrollment_observability as observability
     from agent_automation_machine_verification_readout import (
         build_machine_verification_readout,
         machine_readout_to_dict,
@@ -42,6 +43,7 @@ try:
 except ModuleNotFoundError:
     from governance.compat import mfrp_shadow_canary as canary
     from governance.compat import mfrp_shadow_canary_core as canary_core
+    from governance.compat import mfrp_p4_enrollment_observability as observability
     from governance.compat.agent_automation_machine_verification_readout import (
         build_machine_verification_readout,
         machine_readout_to_dict,
@@ -55,6 +57,7 @@ SAFETY_MARKER_PATH = RUNTIME_DIR / "UNRESOLVED_SAFETY_MARKER.json"
 RECEIPT_DIR = REPO_ROOT / canary_core.IGNORED_RECEIPT_DIR
 AUTORUN_GATE_PATH = "governance/compat/run_agent_autorun_workflow_gate.py"
 GENERATED_RECEIPT_NAME = "pre-closure.json"
+ACTIVATION_COMMIT = "b9bdba71290a9d94a12438b413401ecb4c6a72a7"
 
 REVIEWS_GLOB_PREFIX = "docs/reviews/"
 
@@ -71,10 +74,23 @@ _NA_PATTERN = re.compile(r"^N/A with reason\b", re.IGNORECASE)
 class CollectionSkipped(Exception):
     """Non-blocking skip: population/eligibility must not change."""
 
-    def __init__(self, code: str, detail: str = "") -> None:
+    def __init__(
+        self,
+        code: str,
+        detail: str = "",
+        *,
+        candidate_count: int = 0,
+        eligible: bool = False,
+        review_paths: tuple[str, ...] = (),
+        selected_path: str | None = None,
+    ) -> None:
         super().__init__(f"{code}: {detail}" if detail else code)
         self.code = code
         self.detail = detail
+        self.candidate_count = candidate_count
+        self.eligible = eligible
+        self.review_paths = review_paths
+        self.selected_path = selected_path
 
 
 class CollectionUnsafe(Exception):
@@ -230,16 +246,7 @@ def _trusted_disposition(text: str) -> str | None:
     ``Status: COMPLETE_PENDING_REVIEW`` from collapsing the order-of-record
     boundary into a worker self-attestation.
     """
-    heading = "## Independent Reviewer Adjudication"
-    start = text.find(heading)
-    if start < 0:
-        return None
-    body = text[start + len(heading):]
-    match = re.search(r"^Reviewer disposition:\s*`?([^`\r\n]+?)`?\.?\s*$", body, re.MULTILINE)
-    if not match:
-        return None
-    disposition = match.group(1).strip()
-    return disposition or None
+    return observability.trusted_outcome(text)
 
 
 def _single_parent(commit: str) -> str:
@@ -298,38 +305,56 @@ def _candidate_review_paths(commit: str) -> tuple[str, ...]:
     )
 
 
-def find_eligible_candidate(commit: str) -> tuple[str, ParsedObservation] | None:
-    """Return the single eligible (path, parsed-block) pair, or raise
-    ``CollectionSkipped`` for zero/multiple/ineligible/malformed candidates.
-    Never guesses among multiple candidates.
-    """
+def _discover_candidate(commit: str) -> observability.SelectionResult:
+    """Select one reviewer-owned candidate from immutable commit bytes."""
     review_paths = _candidate_review_paths(commit)
-    eligible: list[tuple[str, ParsedObservation]] = []
+    candidates: list[observability.EnrollmentCandidate] = []
     for path in review_paths:
         text = _read_committed_text(commit, path)
         if text is None:
             continue
         parsed = parse_observation_block(text)
-        if parsed is None or not parsed.is_eligible:
-            continue
-        eligible.append((path, parsed))
-    if not eligible:
-        raise CollectionSkipped(
-            "SKIPPED_NO_ELIGIBLE_CANDIDATE",
-            f"{len(review_paths)} docs/reviews path(s) changed; 0 eligible",
+        candidate = observability.classify_candidate(
+            path,
+            text,
+            eligibility=parsed.eligibility if parsed else None,
+            phase=parsed.phase if parsed else None,
+            hard_obligation_locator=(
+                parsed.hard_obligation_locator if parsed else None
+            ),
+            hard_obligation_pattern=(
+                parsed.hard_obligation_pattern if parsed else None
+            ),
+            source_authority_locator=(
+                parsed.source_authority_locator if parsed else None
+            ),
+            canonical_phases=canary_core.CANONICAL_PHASES,
         )
-    if len(eligible) > 1:
+        if candidate:
+            candidates.append(candidate)
+    return observability.select_candidate(candidates, review_paths)
+
+
+def find_eligible_candidate(commit: str) -> tuple[str, ParsedObservation]:
+    """Compatibility wrapper returning one deterministic candidate."""
+    selection = _discover_candidate(commit)
+    if selection.selected is None:
         raise CollectionSkipped(
-            "SKIPPED_MULTIPLE_CANDIDATES",
-            f"{len(eligible)} eligible candidates found; refusing to guess",
+            selection.reason,
+            f"{len(selection.review_paths)} review path(s); "
+            f"{selection.candidate_count} candidate(s)",
+            candidate_count=selection.candidate_count,
+            review_paths=selection.review_paths,
         )
-    path, parsed = eligible[0]
-    if not parsed.has_required_metadata:
-        raise CollectionSkipped(
-            "SKIPPED_INVALID_METADATA",
-            f"{path} missing/invalid phase or locator metadata",
-        )
-    return path, parsed
+    selected = selection.selected
+    parsed = ParsedObservation(
+        eligibility="AUTO",
+        phase=selected.phase,
+        hard_obligation_locator=selected.hard_obligation_locator,
+        hard_obligation_pattern=selected.hard_obligation_pattern,
+        source_authority_locator=selected.source_authority_locator,
+    )
+    return selected.path, parsed
 
 
 # ---------------------------------------------------------------------------
@@ -469,6 +494,100 @@ def safety_marker_present() -> bool:
     return SAFETY_MARKER_PATH.is_file()
 
 
+def _historical_attempt_rows(disclosure_commit: str) -> list[dict[str, Any]]:
+    """Reconstruct past hook attempts as diagnostics, never as samples."""
+    try:
+        upper = _single_parent(disclosure_commit)
+    except CollectionUnsafe:
+        return []
+    code, out, _ = _run_git(
+        ["rev-list", "--reverse", f"{ACTIVATION_COMMIT}^..{upper}"]
+    )
+    if code != 0:
+        return []
+    attempts: list[dict[str, Any]] = []
+    for historical_disclosure in out.splitlines():
+        try:
+            trusted = _single_parent(historical_disclosure)
+            selection = _discover_candidate(trusted)
+            outcome = (
+                "HISTORICAL_ELIGIBLE_NOT_COLLECTED"
+                if selection.eligible
+                else f"HISTORICAL_{selection.reason}"
+            )
+            attempts.append(
+                observability.make_attempt(
+                    historical_disclosure,
+                    trusted,
+                    outcome=outcome,
+                    candidate_count=selection.candidate_count,
+                    eligible=selection.eligible,
+                    review_paths=selection.review_paths,
+                    selected_path=(
+                        selection.selected.path if selection.selected else None
+                    ),
+                    historical=True,
+                )
+            )
+        except CollectionUnsafe as unsafe:
+            attempts.append(
+                observability.make_attempt(
+                    historical_disclosure,
+                    "",
+                    outcome=f"HISTORICAL_{unsafe.code}",
+                    candidate_count=0,
+                    eligible=False,
+                    detail=unsafe.detail,
+                    historical=True,
+                )
+            )
+    return attempts
+
+
+def _prepare_journal(disclosure_commit: str) -> dict[str, Any]:
+    prior = _load_pending_journal()
+    was_v2 = bool(prior and prior.get("schema") == observability.JOURNAL_SCHEMA)
+    journal = observability.normalize_journal(prior)
+    if not was_v2:
+        for attempt in _historical_attempt_rows(disclosure_commit):
+            journal = observability.record_attempt(journal, attempt)
+    journal["checkpoint"] = canary_core.checkpoint_for_population(
+        journal["collectedCount"]
+    )
+    return journal
+
+
+def _persist_attempt(
+    journal: dict[str, Any],
+    disclosure_commit: str,
+    trusted_commit: str,
+    outcome: str,
+    *,
+    selection: observability.SelectionResult | None = None,
+    detail: str = "",
+) -> dict[str, Any]:
+    attempt = observability.make_attempt(
+        disclosure_commit,
+        trusted_commit,
+        outcome=outcome,
+        candidate_count=selection.candidate_count if selection else 0,
+        eligible=selection.eligible if selection else False,
+        review_paths=selection.review_paths if selection else (),
+        selected_path=(
+            selection.selected.path
+            if selection and selection.selected
+            else None
+        ),
+        detail=detail,
+    )
+    updated = observability.record_attempt(journal, attempt)
+    updated["checkpoint"] = canary_core.checkpoint_for_population(
+        updated["collectedCount"]
+    )
+    _atomic_write_json(PENDING_JOURNAL_PATH, updated)
+    return updated
+
+
 # ---------------------------------------------------------------------------
 # Top-level collection entrypoint
 # ---------------------------------------------------------------------------
@@ -485,26 +604,66 @@ def run_collection(commit: str | None = None) -> str:
     value.
     """
     disclosure_commit = commit or canary_core.git_head()
+    journal = _prepare_journal(disclosure_commit)
 
     if safety_marker_present():
+        _persist_attempt(
+            journal,
+            disclosure_commit,
+            "",
+            "SKIPPED_SAFETY_MARKER_ALREADY_PRESENT",
+        )
         return "P4-C1: SKIPPED_SAFETY_MARKER_ALREADY_PRESENT"
 
     try:
         trusted_commit = _single_parent(disclosure_commit)
-        candidate = find_eligible_candidate(trusted_commit)
     except CollectionUnsafe as unsafe:
+        _persist_attempt(
+            journal, disclosure_commit, "", unsafe.code, detail=unsafe.detail
+        )
         write_safety_marker(unsafe.code, unsafe.detail)
         return f"P4-C1: {unsafe.code}"
-    except CollectionSkipped as skip:
-        return f"P4-C1: {skip.code}"
 
-    return_path, parsed = candidate
+    selection = _discover_candidate(trusted_commit)
+    if selection.selected is None:
+        _persist_attempt(
+            journal,
+            disclosure_commit,
+            trusted_commit,
+            selection.reason,
+            selection=selection,
+        )
+        return f"P4-C1: {selection.reason}"
+
+    selected = selection.selected
+    return_path = selected.path
+    parsed = ParsedObservation(
+        eligibility="AUTO",
+        phase=selected.phase,
+        hard_obligation_locator=selected.hard_obligation_locator,
+        hard_obligation_pattern=selected.hard_obligation_pattern,
+        source_authority_locator=selected.source_authority_locator,
+    )
     committed_text = _read_committed_text(trusted_commit, return_path)
     if committed_text is None:
+        _persist_attempt(
+            journal,
+            disclosure_commit,
+            trusted_commit,
+            "SKIPPED_UNREADABLE_COMMITTED_RETURN",
+            selection=selection,
+        )
         return "P4-C1: SKIPPED_UNREADABLE_COMMITTED_RETURN"
 
     trusted_disposition = _trusted_disposition(committed_text)
     if trusted_disposition is None:
+        _persist_attempt(
+            journal,
+            disclosure_commit,
+            trusted_commit,
+            "UNSAFE_MISSING_TRUSTED_DISPOSITION",
+            selection=selection,
+        )
         write_safety_marker(
             "UNSAFE_MISSING_TRUSTED_DISPOSITION",
             f"{return_path} has no reviewer/closer-owned trusted disposition "
@@ -516,6 +675,13 @@ def run_collection(commit: str | None = None) -> str:
         trusted_commit, disclosure_commit
     )
     if order_evidence["orderOfRecordStatus"] != "PROVEN":
+        _persist_attempt(
+            journal,
+            disclosure_commit,
+            trusted_commit,
+            "UNSAFE_ORDER_OF_RECORD_UNPROVEN",
+            selection=selection,
+        )
         write_safety_marker(
             "UNSAFE_ORDER_OF_RECORD_UNPROVEN",
             f"trusted commit {trusted_commit} is not an ancestor of {disclosure_commit}",
@@ -527,6 +693,14 @@ def run_collection(commit: str | None = None) -> str:
             trusted_commit, disclosure_commit
         )
     except CollectionUnsafe as unsafe:
+        _persist_attempt(
+            journal,
+            disclosure_commit,
+            trusted_commit,
+            unsafe.code,
+            selection=selection,
+            detail=unsafe.detail,
+        )
         write_safety_marker(unsafe.code, unsafe.detail)
         return f"P4-C1: {unsafe.code}"
 
@@ -535,13 +709,36 @@ def run_collection(commit: str | None = None) -> str:
             receipt_path, trusted_commit, disclosure_commit, expected_base
         )
     except CollectionSkipped as skip:
+        _persist_attempt(
+            journal,
+            disclosure_commit,
+            trusted_commit,
+            skip.code,
+            selection=selection,
+            detail=skip.detail,
+        )
         return f"P4-C1: {skip.code}"
     except CollectionUnsafe as unsafe:
+        _persist_attempt(
+            journal,
+            disclosure_commit,
+            trusted_commit,
+            unsafe.code,
+            selection=selection,
+            detail=unsafe.detail,
+        )
         write_safety_marker(unsafe.code, unsafe.detail)
         return f"P4-C1: {unsafe.code}"
 
     blob = canary_core.git_blob_at(trusted_commit, return_path)
     if blob is None:
+        _persist_attempt(
+            journal,
+            disclosure_commit,
+            trusted_commit,
+            "SKIPPED_UNREADABLE_COMMITTED_RETURN",
+            selection=selection,
+        )
         return "P4-C1: SKIPPED_UNREADABLE_COMMITTED_RETURN"
 
     receipt_rel_path = str(receipt_path.relative_to(REPO_ROOT)).replace("\\", "/")
@@ -563,14 +760,28 @@ def run_collection(commit: str | None = None) -> str:
         autorun_head=reconciled["headSha"],
     )
 
-    prior_evidence = _load_pending_journal()
     try:
         append_result = canary_core.append_observation(
-            prior_evidence, obs, disclosure_commit
+            journal, obs, disclosure_commit
         )
     except canary_core.DuplicateOrReboundObservation:
+        _persist_attempt(
+            journal,
+            disclosure_commit,
+            trusted_commit,
+            "SKIPPED_DUPLICATE_OR_REBOUND",
+            selection=selection,
+        )
         return "P4-C1: SKIPPED_DUPLICATE_OR_REBOUND"
     except ValueError as exc:
+        _persist_attempt(
+            journal,
+            disclosure_commit,
+            trusted_commit,
+            "UNSAFE_ORDER_OF_RECORD_UNPROVEN",
+            selection=selection,
+            detail=str(exc),
+        )
         write_safety_marker("UNSAFE_ORDER_OF_RECORD_UNPROVEN", str(exc))
         return "P4-C1: UNSAFE_ORDER_OF_RECORD_UNPROVEN"
 
@@ -582,29 +793,26 @@ def run_collection(commit: str | None = None) -> str:
         "unclassified": list(readout.get("unclassified", [])),
         "exceptions": list(readout.get("exceptions", [])),
     }
-    prior_envelopes = (
-        dict(prior_evidence.get("receiptReadoutEnvelopeByRow", {}))
-        if prior_evidence else {}
-    )
+    prior_envelopes = dict(journal.get("receiptReadoutEnvelopeByRow", {}))
     prior_envelopes[new_row["rowId"]] = receipt_envelope
-    journal = {
-        "schema": "cvf.mfrp.p4c1.pendingJournal.v1",
-        "rows": append_result["rows"],
-        "populationCount": append_result["populationCount"],
-        "eligibleCount": append_result["eligibleCount"],
-        "checkpoint": append_result["checkpoint"],
-        "receiptReadoutEnvelopeByRow": prior_envelopes,
-        "collectorCommandEvidence": {
-            "phase": "pre-closure",
-            "base": expected_base,
-            "head": disclosure_commit,
-            "receiptPath": receipt_rel_path,
-            "providerCalls": 0,
-        },
+    journal["rows"] = append_result["rows"]
+    journal["receiptReadoutEnvelopeByRow"] = prior_envelopes
+    journal["collectorCommandEvidence"] = {
+        "phase": "pre-closure",
+        "base": expected_base,
+        "head": disclosure_commit,
+        "receiptPath": receipt_rel_path,
+        "providerCalls": 0,
     }
-    _atomic_write_json(
-        PENDING_JOURNAL_PATH,
+    attempt_outcome = (
+        "SKIPPED_INELIGIBLE_ROW" if new_row.get("ineligibleClass") else "COLLECTED"
+    )
+    journal = _persist_attempt(
         journal,
+        disclosure_commit,
+        trusted_commit,
+        attempt_outcome,
+        selection=selection,
     )
 
     immediate_triggers = canary.derive_safety_triggers(

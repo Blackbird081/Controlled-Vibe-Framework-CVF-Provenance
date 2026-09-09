@@ -233,7 +233,7 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
         section_start = text.index("## P4 Automatic Evidence Observation Block")
         section_end = text.index("## Claim Boundary", section_start)
         section = text[section_start:section_end]
-        self.assertIn("p4ObservationEligibility: NO", section)
+        self.assertIn("p4ObservationEligibility: AUTO", section)
         for field in (
             "p4ObservationPhase",
             "p4HardObligationLocator",
@@ -245,7 +245,7 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
     def test_p4_observation_block_appears_in_fast_doc_profile_too(self):
         text = scaffold.build_scaffold("Fast Doc Worker Return", scaffold.FAST_DOC_PROFILE)
         self.assertIn("## P4 Automatic Evidence Observation Block", text)
-        self.assertIn("p4ObservationEligibility: NO", text)
+        self.assertIn("p4ObservationEligibility: AUTO", text)
 
     def test_p4_observation_block_is_byte_identical_across_generators(self):
         """Both worker-return generators must emit byte-equivalent optional

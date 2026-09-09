@@ -148,7 +148,7 @@ def _section_body(section: str) -> list[str]:
         ]
     if section == "P4 Automatic Evidence Observation Block":
         return [
-            f"{FIELD_ELIGIBILITY}: NO",
+            f"{FIELD_ELIGIBILITY}: AUTO",
             f"{FIELD_PHASE}: N/A with reason: not a natural P4 observation candidate",
             f"{FIELD_HARD_OBLIGATION_LOCATOR}: N/A with reason: not a natural P4 observation candidate",
             f"{FIELD_HARD_OBLIGATION_PATTERN}: N/A with reason: not a natural P4 observation candidate",

@@ -53,7 +53,7 @@ def render_p4_observation_block() -> str:
     """Render the optional P4-C1 automatic evidence observation block.
 
     Must stay byte-identical (as its own standalone rendered text) to
-    ``run_worker_return_scaffold``'s equivalent section. Default ``NO``
+    ``run_worker_return_scaffold``'s equivalent section. Default ``AUTO``
     eligibility prevents ordinary worker returns from accidentally
     enrolling; this block carries no trusted-disposition field of its own --
     the reviewer/closer-owned disposition elsewhere in the return remains
@@ -61,7 +61,7 @@ def render_p4_observation_block() -> str:
     """
     return (
         "## P4 Automatic Evidence Observation Block\n\n"
-        f"{FIELD_ELIGIBILITY}: NO\n"
+        f"{FIELD_ELIGIBILITY}: AUTO\n"
         f"{FIELD_PHASE}: N/A with reason: not a natural P4 observation candidate\n"
         f"{FIELD_HARD_OBLIGATION_LOCATOR}: N/A with reason: not a natural P4 observation candidate\n"
         f"{FIELD_HARD_OBLIGATION_PATTERN}: N/A with reason: not a natural P4 observation candidate\n"
@@ -73,7 +73,7 @@ def p4_observation_block_fields() -> str:
     """The field-only body (no heading), for cross-generator byte-equality
     comparison against ``run_worker_return_scaffold``'s section body."""
     return (
-        f"{FIELD_ELIGIBILITY}: NO\n"
+        f"{FIELD_ELIGIBILITY}: AUTO\n"
         f"{FIELD_PHASE}: N/A with reason: not a natural P4 observation candidate\n"
         f"{FIELD_HARD_OBLIGATION_LOCATOR}: N/A with reason: not a natural P4 observation candidate\n"
         f"{FIELD_HARD_OBLIGATION_PATTERN}: N/A with reason: not a natural P4 observation candidate\n"

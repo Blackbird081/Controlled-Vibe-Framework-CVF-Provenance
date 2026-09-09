@@ -2,7 +2,7 @@
 
 Memory class: implementation-sequence-record
 
-Status: P4_C1_REPAIR_DISPATCH_READY
+Status: P4_C1_REPAIR_IMPLEMENTED_PENDING_MATERIAL_AND_CLOSURE
 
 docType: reference
 
@@ -51,12 +51,53 @@ state alone.
 
 | Step | Work | Current state | Exit condition |
 | --- | --- | --- | --- |
-| 1 | Repair MFRP P4-C1 deterministic enrollment and observability | IN_PROGRESS | focused tests and committed-range gates pass; v2 historical diagnostic shows opportunities without fabricating samples |
+| 1 | Repair MFRP P4-C1 deterministic enrollment and observability | IMPLEMENTED_PENDING_MATERIAL_AND_CLOSURE | 68 focused tests and worker-return fast gate pass; exact-ten material commit and reviewer closure remain |
 | 2 | Synchronize WP-ARCH-003 terminal park across active roadmap and continuity owners | PARKED_BEHIND_STEP_1 | all active projections agree and no implementation tranche opens |
 | 3 | Update private provenance, public GitHub projection, seven-step shared-workspace agent relationships, and external packet | PARKED_BEHIND_STEP_2 | public-sync commit is live, packet refresh receipt binds that HEAD, and the relay ZIP is regenerated and verified |
 
 No later step may be reported complete from a plan, prompt, or external-agent
 return alone.
+
+## Step 1 Implementation Evidence
+
+The accepted repair keeps one collector and moves pure enrollment/journal
+projection into `governance/compat/mfrp_p4_enrollment_observability.py`.
+Future scaffolds emit `AUTO`; legacy valid `YES` remains compatible; worker
+readiness alone remains untrusted; same-priority ambiguity fails closed. The
+v2 journal records every attempt and preserves `COLLECTED` and original
+`UNSAFE_*` outcomes over later ordinary skips.
+
+The deterministic history result is `attemptCount=149`, `candidateCount=17`,
+`eligibleCount=17`, `collectedCount=0`, and
+`measurementHealth=STARVED_ELIGIBLE_NOT_COLLECTED`. Historical attempts are
+diagnostic only, so the M5/M10/M20 checkpoint remains based on collectedCount
+and stays at initialization until a prospective sample is actually validated.
+
+Pending completion authority:
+`docs/reviews/CVF_MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR_COMPLETION_2026-09-09.md`.
+
+## Epistemic Process Block
+
+### Expected Result / Prediction
+
+The post-activation range should contain real hook attempts and deterministic
+reviewer-owned opportunities despite the old zero enrollment result.
+
+### Evidence Comparison
+
+The v2 diagnostic reports 149 attempts, 17 candidates, 17 eligible
+opportunities, and zero collected samples. Focused tests confirm that these
+historical opportunities never become rows or advance checkpoints.
+
+### Contradiction Or Gap Disposition
+
+The old undifferentiated zero was a visibility gap. No contradiction remains
+after separating opportunity counters from actual collected samples.
+
+### Claim Update
+
+Step 1 is implemented and awaiting material plus reviewer closure; it is not
+yet a closed tranche, and Step 2 remains parked behind it.
 
 ## Shared-Workspace Documentation Requirement
 

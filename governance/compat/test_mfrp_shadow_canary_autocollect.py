@@ -357,12 +357,23 @@ class SafetyMarkerAndPreCommitBlockingTests(unittest.TestCase):
     def setUp(self) -> None:
         self._scratch = REPO_ROOT / ".cvf/runtime/mfrp-p4-c1-test-marker-scratch"
         self._marker = self._scratch / "UNRESOLVED_SAFETY_MARKER.json"
+        self._journal = self._scratch / "pending_observations.json"
         self._patch_runtime = mock.patch.object(autocollect, "RUNTIME_DIR", self._scratch)
         self._patch_marker = mock.patch.object(autocollect, "SAFETY_MARKER_PATH", self._marker)
+        self._patch_journal = mock.patch.object(
+            autocollect, "PENDING_JOURNAL_PATH", self._journal
+        )
+        self._patch_history = mock.patch.object(
+            autocollect, "_historical_attempt_rows", return_value=[]
+        )
         self._patch_runtime.start()
         self._patch_marker.start()
+        self._patch_journal.start()
+        self._patch_history.start()
 
     def tearDown(self) -> None:
+        self._patch_history.stop()
+        self._patch_journal.stop()
         self._patch_marker.stop()
         self._patch_runtime.stop()
         shutil.rmtree(self._scratch, ignore_errors=True)
@@ -434,6 +445,67 @@ class AtomicJournalWriteTests(unittest.TestCase):
     def test_load_pending_journal_returns_none_when_absent(self):
         self.assertIsNone(autocollect._load_pending_journal())
 
+    def test_history_seed_is_diagnostic_and_never_creates_rows(self):
+        selected = autocollect.observability.EnrollmentCandidate(
+            path="docs/reviews/accepted.md",
+            trusted_outcome="CLOSED_PASS_BOUNDED",
+            phase="REVIEW",
+            hard_obligation_locator="accepted#status",
+            hard_obligation_pattern="Status: CLOSED_PASS_BOUNDED",
+            source_authority_locator="docs/work_orders/example.md",
+            origin="COMPLETION_REVIEW",
+            priority=1,
+        )
+        eligible = autocollect.observability.SelectionResult(
+            selected, 1, "SELECTED", (selected.path,)
+        )
+        empty = autocollect.observability.SelectionResult(
+            None, 0, "SKIPPED_NO_ELIGIBLE_CANDIDATE", ()
+        )
+        with mock.patch.object(
+            autocollect,
+            "_single_parent",
+            side_effect=["upper", "trusted-1", "trusted-2"],
+        ), mock.patch.object(
+            autocollect,
+            "_run_git",
+            return_value=(0, "disclosure-1\ndisclosure-2", ""),
+        ), mock.patch.object(
+            autocollect,
+            "_discover_candidate",
+            side_effect=[eligible, empty],
+        ):
+            attempts = autocollect._historical_attempt_rows("current")
+        journal = autocollect.observability.normalize_journal(
+            {"attempts": attempts}
+        )
+        self.assertEqual(journal["attemptCount"], 2)
+        self.assertEqual(journal["eligibleCount"], 1)
+        self.assertEqual(journal["collectedCount"], 0)
+        self.assertEqual(journal["rows"], [])
+
+    def test_checkpoint_uses_collected_count_not_opportunities(self):
+        attempts = [
+            autocollect.observability.make_attempt(
+                f"{index:040x}",
+                "b" * 40,
+                outcome="HISTORICAL_ELIGIBLE_NOT_COLLECTED",
+                candidate_count=1,
+                eligible=True,
+                historical=True,
+            )
+            for index in range(10)
+        ]
+        with mock.patch.object(
+            autocollect, "_load_pending_journal", return_value=None
+        ), mock.patch.object(
+            autocollect, "_historical_attempt_rows", return_value=attempts
+        ):
+            journal = autocollect._prepare_journal("current")
+        self.assertEqual(journal["eligibleCount"], 10)
+        self.assertEqual(journal["collectedCount"], 0)
+        self.assertEqual(journal["checkpoint"], "initialization")
+
 
 class EndToEndCollectionTests(unittest.TestCase):
     """Exercise ``run_collection`` against this real repository's history,
@@ -450,6 +522,7 @@ class EndToEndCollectionTests(unittest.TestCase):
             mock.patch.object(autocollect, "RUNTIME_DIR", self._runtime_scratch),
             mock.patch.object(autocollect, "PENDING_JOURNAL_PATH", self._journal),
             mock.patch.object(autocollect, "SAFETY_MARKER_PATH", self._marker),
+            mock.patch.object(autocollect, "_historical_attempt_rows", return_value=[]),
         ]
         for patch in self._patches:
             patch.start()
@@ -466,7 +539,10 @@ class EndToEndCollectionTests(unittest.TestCase):
         status = autocollect.run_collection(canary_core.TRUSTED_COMMIT)
         self.assertEqual(status, "P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE")
         self.assertFalse(autocollect.safety_marker_present())
-        self.assertIsNone(autocollect._load_pending_journal())
+        journal = autocollect._load_pending_journal()
+        self.assertEqual(journal["schema"], autocollect.observability.JOURNAL_SCHEMA)
+        self.assertEqual(journal["attemptCount"], 1)
+        self.assertEqual(journal["collectedCount"], 0)
 
     def test_zero_receipt_candidate_with_eligible_return_skips(self):
         # This repository's HEAD does not carry a live eligible P4
@@ -522,10 +598,26 @@ class EndToEndCollectionTests(unittest.TestCase):
             "headSha": str(payload["headSha"]),
             "reconstructedFingerprint": str(payload["worktreeFingerprint"]),
         }
+        selected = autocollect.observability.EnrollmentCandidate(
+            path=return_path,
+            trusted_outcome=disposition,
+            phase="REVIEW",
+            hard_obligation_locator="probe locator",
+            hard_obligation_pattern="probe pattern",
+            source_authority_locator="probe#loc",
+            origin="LEGACY_EXPLICIT_YES",
+            priority=0,
+        )
+        selection = autocollect.observability.SelectionResult(
+            selected=selected,
+            candidate_count=1,
+            reason="SELECTED",
+            review_paths=(return_path,),
+        )
         with mock.patch.object(
             autocollect, "_single_parent", return_value=trusted_commit
         ), mock.patch.object(
-            autocollect, "find_eligible_candidate", return_value=(return_path, parsed)
+            autocollect, "_discover_candidate", return_value=selection
         ), mock.patch.object(
             autocollect, "_read_committed_text", return_value=committed_text
         ), mock.patch.object(
@@ -546,6 +638,7 @@ class EndToEndCollectionTests(unittest.TestCase):
         journal = autocollect._load_pending_journal()
         self.assertIsNotNone(journal)
         self.assertEqual(journal["eligibleCount"], 1)
+        self.assertEqual(journal["collectedCount"], 1)
         self.assertEqual(len(journal["receiptReadoutEnvelopeByRow"]), 1)
         self.assertFalse(autocollect.safety_marker_present())
 
@@ -556,6 +649,7 @@ class EndToEndCollectionTests(unittest.TestCase):
         journal = autocollect._load_pending_journal()
         self.assertIsNotNone(journal)
         self.assertEqual(journal["eligibleCount"], 1)
+        self.assertEqual(journal["collectedCount"], 1)
 
     def test_no_network_or_provider_import_reachable(self):
         """Static guard: the collector module must never import a
