@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_receipt_range_prospective_proof_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=disclose receipt-range rework `6b5318286` and verify the first collected sample; parked checkpoint=WP-ARCH-003 and RABA implementation, followed by the ordered private/public seven-step shared-workspace projection and external packet refresh, with DARA-T5, provider/live work, actual process interception, P5 and P6 still parked.
+Startup acknowledged: current mode=`public_seven_step_workspace_external_packet_refresh_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=private/public seven-step shared-workspace projection followed by external packet refresh; parked checkpoint=RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p4_c1_receipt_range_prospective_proof_active`
-Current mode: `gclh_mfrp_p4_c1_receipt_range_prospective_proof_active`; previous mode marker: `wp_arch_003_terminal_park_status_synchronization_active`
+Current mode marker: `public_seven_step_workspace_external_packet_refresh_active`
+Current mode: `public_seven_step_workspace_external_packet_refresh_active`; previous mode marker: `wp_arch_003_terminal_park_status_synchronization_active`
 Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_c1_receipt_range_prospective_proof_active`. The first selected candidate exposed an invalid mixed receipt range; rework `6b5318286` now binds receipt evidence to `trusted^..trusted` and uses disclosure only for order proof. Verify one real collected sample before releasing Step 2. WP-ARCH-003 synchronization, RABA implementation, and private/public/external work remain parked until that proof.
+Mode: `public_seven_step_workspace_external_packet_refresh_active`. P4-C1 is prospectively proven at 156 attempts, 19 candidates, 19 eligible opportunities and one collected sample; WP-ARCH-003 is terminal parked at `65fafd4f5`. Update private provenance and public-safe seven-step shared-workspace documentation, then refresh the external-agent packet against the new public HEAD. RABA implementation and all provider/live/deploy effects remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

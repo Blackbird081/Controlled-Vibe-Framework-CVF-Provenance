@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2818,
+  "stateOrder": 2820,
   "stateKey": "nextAllowedMove",
-  "value": "P4-C1 receipt-range rework is committed at 6b5318286 after the first selected prospective candidate exposed a mixed closure-plus-continuity range. The corrected collector generates and reconciles the receipt over trusted^..trusted and uses the disclosure commit only for immutable order proof. This dedicated continuity commit must disclose 6b5318286 and produce the first truthful collected sample before WP-ARCH-003 synchronization begins. RABA implementation, public sync, external packet refresh, DARA-T5, provider/live work, actual process interception, P5, P6, and automatic redispatch remain parked. Latest finalized numbered LHW remains LHW24."
+  "value": "P4-C1 is prospectively proven with collected sample OBS-fdf01714d0a69af5 and runtime 156/19/19/1; WP-ARCH-003 terminal park is synchronized at 65fafd4f5. Next allowed move is Step 3: update private provenance and public-safe GitHub projection with the seven-step shared-workspace agent relationship, then refresh and verify EXTERNAL_AGENT_READ bootstrap, relay prompt, receipt, capsule and ZIP against the new public HEAD. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment remain parked. Latest finalized numbered LHW remains LHW24."
 }

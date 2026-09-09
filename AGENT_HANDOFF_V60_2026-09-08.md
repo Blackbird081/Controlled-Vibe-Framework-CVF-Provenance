@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `6b5318286`. P4-C1 receipt-range rework parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `65fafd4f5`. WP-ARCH-003 terminal-park synchronization parent anchor for dedicated continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
@@ -11,7 +11,7 @@ Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance SOT on `main`.
-- Current mode: `gclh_mfrp_p4_c1_receipt_range_prospective_proof_active`.
+- Current mode: `public_seven_step_workspace_external_packet_refresh_active`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -21,11 +21,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_receipt_range_prospective_proof_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=disclose receipt-range rework `6b5318286` and verify first collected sample; parked checkpoint=WP-ARCH-003 and RABA implementation, then private/public seven-step shared-workspace projection and external packet refresh, with DARA-T5, provider/live work, actual process interception, P5 and P6 still parked.
+Startup acknowledged: current mode=`public_seven_step_workspace_external_packet_refresh_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=private/public seven-step shared-workspace projection followed by external packet refresh; parked checkpoint=RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment.
 
 ## Current Mode
 
-`gclh_mfrp_p4_c1_receipt_range_prospective_proof_active`
+`public_seven_step_workspace_external_packet_refresh_active`
 
 ## Purpose
 
@@ -78,7 +78,7 @@ ROLE-SOT-MH-T1 is independently accepted. Claude Rework Generation 2 closed all 
 
 ## Next Allowed Move
 
-Disclose the clean receipt-range rework commit `6b5318286` and inspect the ignored journal. Step 1 closes only if the attempt is `COLLECTED` and `collectedCount=1`. WP-ARCH-003 synchronization remains ordered Step 2; private/public seven-step shared-workspace projection and external packet refresh remain Step 3. RABA implementation, DARA-T5, provider/live work, actual process interception, P5, P6, and automatic redispatch remain parked.
+Update private provenance and the public-safe GitHub projection with the seven-step shared-workspace agent relationship, then refresh and verify the operator-local external packet against the new public HEAD. P4-C1 is proven at 156/19/19/1 with sample `OBS-fdf01714d0a69af5`; WP-ARCH-003 is terminal parked at `65fafd4f5`. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
 
@@ -129,6 +129,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/mfrpP4C1EnrollmentObservabilityRepairMaterial20260909.json`
 - `CVF_SESSION/state/entries/mfrpP4C1EnrollmentObservabilityRepairClosure20260909.json`
 - `CVF_SESSION/state/entries/mfrpP4C1ReceiptRangeRework20260909.json`
+- `CVF_SESSION/state/entries/wpArch003TerminalParkSync20260909.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ROLE_SOT_MH_T1_DISPATCH_COORDINATION_AND_DEPENDENCY_DISCOVERY_MACHINE_HARDENING_2026-09-08.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
