@@ -180,27 +180,105 @@ handoff-transition rules.
 Reviewer / committer may use the conservative helper:
 
 ```powershell
-python scripts/cvf_commit_tranche.py --base <closureBaseHead> --message "<artifact commit message>" --handoff-summary "<bounded summary>" --execute
+python scripts/cvf_commit_tranche.py --mode material --base <closureBaseHead> --message "<material commit message>"
+python scripts/cvf_commit_tranche.py --mode material --base <closureBaseHead> --message "<material commit message>" --execute
 ```
 
 Helper contract:
 
-- dry-run is the default; `--execute` is required before any commit is made;
-- the helper commits only files already staged before invocation;
-- it does not run `git add .`, does not push, and does not bypass hooks;
-- by default, unstaged or untracked files stop the helper before commit;
-- `--allow-unstaged` is permitted only when the reviewer intentionally leaves
-  inspection-only residual files outside the staged artifact batch;
-- after the artifact commit, the helper updates only the active handoff HEAD
-  marker and refuses the handoff-sync commit if any other file is staged;
-- the helper runs the `pre-closure` autorun gate against `--base
-  <closureBaseHead>` unless `--skip-preclosure` is explicitly supplied for a
-  separately documented gate run.
+- `--mode` is required and accepts exactly `material` or `resume`; `--execute`
+  is optional in both modes and its absence is a strictly non-mutating dry-run;
+- material mode requires `--base` and `--message`, validates the already-staged
+  batch, and invokes the non-finalizing `pre-implementation` autorun gate only
+  in execute mode; `pre-closure` is reserved for a non-empty committed range
+  after the commit and cannot be used as a pre-commit material preflight;
+- material execute creates exactly one material commit, reports its full
+  40-character SHA, re-resolves the active handoff after that commit, and
+  returns a JSON argv template for the resume phase;
+- the caller then authors continuity semantics in governed source paths and
+  writes the ignored control manifest at
+  `.cvf/runtime/tranche-continuity/<full-material-sha>.json`;
+- the manifest uses schema `cvf.gc020ContinuityManifest.v1`; it names the
+  active root handoff, `CVF_SESSION_MEMORY.md`, the core session source,
+  `nextAllowedMove.json`, and at least one additional state entry;
+- generated aggregate and bootstrap outputs are forbidden manifest entries;
+  resume execute regenerates them from sources and stages them alongside the
+  ordered manifest paths;
+- resume classifies topology before pending-path validation. `HEAD` equal to
+  the material SHA enters `PENDING_OR_RETRY`; `HEAD^` equal to the material
+  SHA enters non-mutating `POSTCOMMIT_RECHECK`;
+- `PENDING_OR_RETRY` requires every manifest path to be pending, tolerates
+  either generated output as partial-attempt residue, and rejects every other
+  pending path;
+- the handoff evidence block is inserted below the H1 and replaced
+  idempotently on retry. It records the real material SHA, never a predicted
+  future continuity SHA;
+- resume execute regenerates, verifies, stages the exact bounded set, runs the
+  generator check, active-session check, and next-move freshness check before
+  commit, creates one continuity commit, then reruns the checks;
+- `POSTCOMMIT_RECHECK` never generates, stages, rewrites, or commits, including
+  when `--execute` is present; a clean valid state returns
+  `ALREADY_SYNCHRONIZED`;
+- every invocation emits one `cvf.gc020TerminalOutput.v1` JSON object. Failures
+  carry either exact failed argv or a stable diagnostic code plus structured
+  details, as well as a branch-correct resume argv when the material commit
+  remains intact;
+- `--handoff-message`, `--handoff-summary`, `--allow-unstaged`, and
+  `--skip-preclosure` are rejected. No flag bypasses a gate or hook;
+- the helper never pushes, resets, restores, amends, force-pushes, deletes
+  pending work, or requires a future SHA.
+
+Typical resume invocation after the caller has authored the named continuity
+sources and control manifest:
+
+```powershell
+python scripts/cvf_commit_tranche.py --mode resume --resume-material-sha <fullMaterialSha> --base <closureBaseHead> --continuity-manifest .cvf/runtime/tranche-continuity/<fullMaterialSha>.json --continuity-message "<continuity commit message>" --execute
+```
 
 Use the helper to reduce operator friction, not to widen commit scope. If the
 artifact batch needs session-state updates, protected-path authorization, or
 large-scope authorization, those files must be staged intentionally before the
 helper runs and must still satisfy the same hook chain.
+
+#### GC020-SYNC-T1 Epistemic Process Block
+
+Expected Result / Prediction: a two-phase helper using the knowable material
+SHA should permit governed semantic authoring between commits, deterministic
+retry, and non-mutating post-commit recheck without future-SHA prediction.
+
+Evidence Comparison: focused isolated-repository tests in
+`scripts/test_cvf_commit_tranche.py` cover the frozen CLI, manifest, topology,
+retry, ordering, terminal-output and idempotency contract.
+
+Contradiction Or Gap Disposition: no contradiction remains in Step 4A. The
+helper still cannot invent caller-owned continuity semantics and intentionally
+requires those sources before resume.
+
+Claim Update: Step 4A now specifies the executable helper contract only. It
+makes no provider, live, public, deployment or production-readiness claim.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | GC020-SYNC-T1 internal implementation worker |
+| Provider or surface | local repository only |
+| Session or invocation | GC020-SYNC-T1, 2026-09-09 |
+| Working directory | repository root |
+| Command or tool surface | local edits, focused pytest, governed local gates |
+| Target paths | helper, focused test, this Step 4A owner, worker return |
+| Allowed scope source | GC020-SYNC-T1 work order Write Ownership |
+| Before status evidence | clean at `2da68f7575c4c816b3e7d24f22c8133990e84591` |
+| After status evidence | exact four owned paths pending, staging empty |
+| Diff evidence | this standard changes only Step 4A plus its required evidence blocks |
+| Approval boundary | worker no-commit; reviewer owns acceptance and commits |
+| Claim boundary | bounded repository-local helper contract only |
+| Agent type | internal worker |
+| Invocation ID | cvf-gc020-sync-t1-standard-2026-09-09 |
+| Expected manifest | exact four GC020-SYNC-T1 Write Ownership paths |
+| Actual changed set | exact four paths |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | no deletion, rename or path move |
 
 ### Step 5 - Gate Cascade Discipline
 
