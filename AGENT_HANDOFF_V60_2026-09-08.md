@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `c9fa2862c88eba6e3e3e8dd8e8d96dd018382ef1`. Seven-step shared-workspace private source parent anchor for closure continuity.
+Current HEAD recorded for this handoff: `8ae99081c7899d0098dee0212b9adff3965388ee`. Public-relay preparation closure parent anchor for dedicated continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
