@@ -182,10 +182,63 @@ Use this order:
 2. Read the controlling packet, applicable checker sources, and the full
    changed set once.
 3. Build the single-pass dependency-closure matrix and commit/range plan.
-4. Return or apply one consolidated repair set.
-5. Run focused tests and narrow checkers, then the phase gate once.
-6. Create one material commit; run committed-range closure on its exact range.
-7. Create one continuity commit only when mode or next-move state changed.
+4. Run the return-time closeability test below and classify every blocker by
+   its earliest prevention owner.
+5. Return or apply one consolidated repair set.
+6. Run focused tests and narrow checkers, then the phase gate once.
+7. Create one material commit; run committed-range closure on its exact range.
+8. Create one continuity commit only when mode or next-move state changed.
+
+## Return-Time Closeability And Agent-Intelligence Preservation
+
+Before a reviewer sends any repair prompt, the reviewer must determine whether
+the current work order can reach its required terminal state without any role
+violating its authority. A work order is closeable only when all of these are
+true:
+
+- every mandatory gate has a phase, an evidence owner, and, when a failure can
+  require mutation, a role that owns the complete legitimate repair surface;
+- a gate required before reviewer acceptance does not depend on a write owned
+  only by a later closer or session-sync phase;
+- exact paths, allowed path families, generated outputs, file-size splits,
+  migrations, and catalog regeneration can coexist without contradiction;
+- the worker can exercise implementation judgment inside the accepted outcome,
+  invariants, risk, authority, protected-path, and external-effect envelope;
+  and
+- a required terminal token does not demand evidence that the current role is
+  forbidden or technically unable to produce.
+
+This is a responsibility-topology test, not an implementation-design review.
+CVF constrains outcomes, authority, risks, external effects, protected paths,
+evidence, and terminal claims. It must not require a reviewer or dispatcher to
+pre-select ordinary internal decomposition merely to make the packet appear
+exact. When physical implementation topology cannot be predicted honestly,
+the packet should authorize a bounded path family or derived-output class. A
+protected or authority-bearing path still requires explicit ownership.
+
+If the test fails, set the worker route to fail-stop. Do not send another
+worker repair prompt against the contradictory packet. Apply exactly one of:
+
+1. reviewer-local repair, when the existing reviewer authority and the rules
+   below permit it;
+2. one consolidated orchestrator amendment, only when ordinary implementation
+   topology or gate-phase wording must be corrected inside unchanged allowed
+   path and artifact classes, authority ceiling, external-effect class, role
+   route, protected-path boundary, and commit ownership; or
+3. operator escalation, when business intent, risk, authority, external
+   effects, irreversible action, budget, or claim ceiling must change.
+
+The operator escalation must be understandable without reading code or a
+governance packet. It states the desired outcome affected, the conflict, its
+risk, what agents can resolve autonomously, and the smallest operator decision
+still required. A non-coder operator is not the fallback debugger for worker
+implementation, path manifests, role choreography, or gate ordering.
+
+When the worker had no lawful route to PASS, classify the causal defect at the
+earliest applicable owner, normally `ORCHESTRATOR_PACKET_GAP`,
+`PHASE_GATE_PLACEMENT_GAP`, or `MACHINE_GATE_GAP`. Preserve any independent
+`WORKER_EXECUTION_ERROR` findings separately; a packet defect neither erases
+nor proves a worker defect.
 
 ## Same-Scope Authority Continuity And Micro-Checkpoint Prevention
 
