@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR_2026-09-09.md",
     "baselineSha256": "1c62829331e7bc9f0414756fb7539f81ba417acc95b591f4c13d8f61ebf8c494",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR_2026-09-09.md",
-    "workOrderSha256": "453484d7877b1bfffc998338d0064a2e1696af4ea33bff6ba31bc25e4429d1c5"
+    "workOrderSha256": "11864317ab8cd03ca0ac3cadbdf1f23e71700274aa5440eb294148af015ad94a"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

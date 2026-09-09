@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-09
 
@@ -333,16 +333,16 @@ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implemen
 
 ## Acceptance Criteria
 
-- [ ] deterministic priority chooses exactly one trusted reviewer-owned candidate;
-- [ ] multiple same-priority candidates fail closed and remain journal-visible;
-- [ ] worker readiness status alone never enrolls;
-- [ ] v1 journal data migrates without row loss;
-- [ ] every unique disclosure attempt is journaled idempotently;
-- [ ] historical seed exposes prior opportunities but leaves collectedCount unchanged;
-- [ ] five attempts with zero collection report starvation without a safety marker;
-- [ ] checkpoints use collectedCount only;
-- [ ] scaffold default is AUTO and legacy valid YES remains readable;
-- [ ] focused tests, size guard, ASCII scan, fast gate and Git gates pass.
+- [x] deterministic priority chooses exactly one trusted reviewer-owned candidate;
+- [x] multiple same-priority candidates fail closed and remain journal-visible;
+- [x] worker readiness status alone never enrolls;
+- [x] v1 journal data migrates without row loss;
+- [x] every unique disclosure attempt is journaled idempotently;
+- [x] historical seed exposes prior opportunities but leaves collectedCount unchanged;
+- [x] five attempts with zero collection report starvation without a safety marker;
+- [x] checkpoints use collectedCount only;
+- [x] scaffold default is AUTO and legacy valid YES remains readable;
+- [x] focused tests, size guard, ASCII scan, fast gate and Git gates pass.
 
 Fail conditions: fabricated historical sample, tracked runtime file, safety
 marker from starvation alone, hook/P2/P4 owner mutation, provider/network call,
@@ -356,11 +356,11 @@ allowed-scope gate returns the batch for repair; any forbidden-scope need blocks
 
 ## Closure Checklist
 
-- [ ] all ten manifest paths reconcile with no extra material path;
-- [ ] required focused tests and governance gates pass after the final edit;
-- [ ] historical rows remain diagnostic and collectedCount remains truthful;
-- [ ] completion review records accepted evidence and an empty staging state;
-- [ ] material commit uses the normal pre-commit hook.
+- [x] all ten manifest paths reconcile with no extra material path;
+- [x] required focused tests and governance gates pass after the final edit;
+- [x] historical rows remain diagnostic and collectedCount remains truthful;
+- [x] completion review records accepted evidence and an empty staging state;
+- [x] material commit uses the normal pre-commit hook.
 
 ## Return-To-Orchestrator Conditions
 
@@ -489,6 +489,29 @@ Returned defects: NONE_RETURNED
 | literalTokensReviewed | prompt-first position; dispatch status; protected paths; dependency release; sharedWorktreeCoordinationMode; pathFamilies; execution boundary fields |
 | gateRunPurpose | confirm successor dispatch shape after abandoning mutation of the historical P4-C1 packet |
 | claimBoundary | checker conformance only; no implementation proof |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR_COMPLETION_2026-09-09.md` | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/reference/CVF_2026_09_09_AUDIT_AND_REMEDIATION_SEQUENCE.md` | Step 1 `CLOSED_PASS_BOUNDED`; Step 2 `READY_NEXT` | PASS |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check passed unchanged | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | registry projection checked unchanged | PASS |
+| External evidence digest | N/A with reason: no external evidence used | provider and network calls `0` | N/A with reason |
+| System loop interlock | material `bb7b0ce500d5aaade9be4d14c31af3d3963a509b` | repair closes before WP-ARCH-003 synchronization | PASS |
+| Session continuity | continuity `6a18dfd3333844501a4bea8ccc55453ccde41889` | material evidence synchronized before closure | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| focused tests | deterministic selection, migration, history, starvation, idempotency, and safety coverage | 68 passed | PASS |
+| worker-return fast gate | focused plus reviewer-fast and diff hygiene | COMPLIANT; reviewer-fast 67/67 | PASS |
+| runtime journal | every prospective attempt visible without fabricated history rows | 152 attempts, 17 candidates, 17 opportunities, 0 collected | PASS |
+| exact material manifest | ten paths and no extra implementation owner | material `bb7b0ce500d5aaade9be4d14c31af3d3963a509b` | PASS |
+| continuity choreography | separate post-material synchronization | `6a18dfd3333844501a4bea8ccc55453ccde41889` | PASS |
 
 ## Public Export Disposition
 

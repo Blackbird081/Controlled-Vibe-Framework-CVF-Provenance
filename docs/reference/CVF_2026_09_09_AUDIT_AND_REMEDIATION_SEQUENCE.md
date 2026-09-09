@@ -2,7 +2,7 @@
 
 Memory class: implementation-sequence-record
 
-Status: P4_C1_REPAIR_IMPLEMENTED_PENDING_MATERIAL_AND_CLOSURE
+Status: P4_C1_REPAIR_CLOSED_WP_ARCH_003_READY_NEXT
 
 docType: reference
 
@@ -51,14 +51,14 @@ state alone.
 
 | Step | Work | Current state | Exit condition |
 | --- | --- | --- | --- |
-| 1 | Repair MFRP P4-C1 deterministic enrollment and observability | IMPLEMENTED_PENDING_MATERIAL_AND_CLOSURE | 68 focused tests and worker-return fast gate pass; exact-ten material commit and reviewer closure remain |
-| 2 | Synchronize WP-ARCH-003 terminal park across active roadmap and continuity owners | PARKED_BEHIND_STEP_1 | all active projections agree and no implementation tranche opens |
+| 1 | Repair MFRP P4-C1 deterministic enrollment and observability | CLOSED_PASS_BOUNDED | material `bb7b0ce500d5aaade9be4d14c31af3d3963a509b`; continuity `6a18dfd3333844501a4bea8ccc55453ccde41889`; 68 focused tests; reviewer closure accepted |
+| 2 | Synchronize WP-ARCH-003 terminal park across active roadmap and continuity owners | READY_NEXT | all active projections agree and no implementation tranche opens |
 | 3 | Update private provenance, public GitHub projection, seven-step shared-workspace agent relationships, and external packet | PARKED_BEHIND_STEP_2 | public-sync commit is live, packet refresh receipt binds that HEAD, and the relay ZIP is regenerated and verified |
 
 No later step may be reported complete from a plan, prompt, or external-agent
 return alone.
 
-## Step 1 Implementation Evidence
+## Step 1 Closure Evidence
 
 The accepted repair keeps one collector and moves pure enrollment/journal
 projection into `governance/compat/mfrp_p4_enrollment_observability.py`.
@@ -67,13 +67,14 @@ readiness alone remains untrusted; same-priority ambiguity fails closed. The
 v2 journal records every attempt and preserves `COLLECTED` and original
 `UNSAFE_*` outcomes over later ordinary skips.
 
-The deterministic history result is `attemptCount=149`, `candidateCount=17`,
-`eligibleCount=17`, `collectedCount=0`, and
+The deterministic history result plus the first two prospective repaired hook
+attempts is `attemptCount=152`, `candidateCount=17`, `eligibleCount=17`,
+`collectedCount=0`, and
 `measurementHealth=STARVED_ELIGIBLE_NOT_COLLECTED`. Historical attempts are
 diagnostic only, so the M5/M10/M20 checkpoint remains based on collectedCount
 and stays at initialization until a prospective sample is actually validated.
 
-Pending completion authority:
+Closed completion authority:
 `docs/reviews/CVF_MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR_COMPLETION_2026-09-09.md`.
 
 ## Epistemic Process Block
@@ -96,8 +97,8 @@ after separating opportunity counters from actual collected samples.
 
 ### Claim Update
 
-Step 1 is implemented and awaiting material plus reviewer closure; it is not
-yet a closed tranche, and Step 2 remains parked behind it.
+Step 1 is closed with bounded reviewer acceptance. Step 2 is the next allowed
+move; this does not itself open a WP-ARCH-003 implementation tranche.
 
 ## Shared-Workspace Documentation Requirement
 

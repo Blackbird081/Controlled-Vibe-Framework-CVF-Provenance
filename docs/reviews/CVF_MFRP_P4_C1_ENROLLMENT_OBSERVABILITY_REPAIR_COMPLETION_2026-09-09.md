@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 docType: completion_review
 
-Status: COMPLETE_PENDING_REVIEW
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-09
 
@@ -72,7 +72,7 @@ new helper rather than expanding the runtime owner.
 
 ## Decision / Disposition
 
-Reviewer verdict: `READY_FOR_MATERIAL_COMMIT`
+Reviewer verdict: `REVIEWER_ACCEPTED_BOUNDED`
 
 Material commit disposition: `READY_FOR_NORMAL_PRE_COMMIT`
 
@@ -84,7 +84,7 @@ Successor tranche opened: `NO`
 
 ## Independent Reviewer Adjudication
 
-Reviewer disposition: `READY_FOR_MATERIAL_COMMIT`
+Reviewer disposition: `REVIEWER_ACCEPTED_BOUNDED`
 
 The same Internal Agent is the declared reviewer; no independent-agent claim
 is made.
@@ -94,7 +94,7 @@ is made.
 p4ObservationEligibility: AUTO
 p4ObservationPhase: REVIEW
 p4HardObligationLocator: this completion#Decision / Disposition
-p4HardObligationPattern: Reviewer disposition: READY_FOR_MATERIAL_COMMIT
+p4HardObligationPattern: Reviewer disposition: REVIEWER_ACCEPTED_BOUNDED
 p4SourceAuthorityLocator: docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR_2026-09-09.md
 
 ## Required Artifact Manifest
@@ -118,7 +118,7 @@ p4SourceAuthorityLocator: docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_ENROL
 | --- | --- | --- | --- |
 | focused tests | selection, migration, history, starvation, idempotency, safety | 68 passed | PASS |
 | worker-return fast gate | focused plus reviewer-fast and diff hygiene | COMPLIANT; reviewer-fast 67/67 | PASS |
-| historical diagnostic | attempts and opportunities visible, zero fabricated rows | 149/17/17/0 | PASS |
+| historical diagnostic plus two prospective hook attempts | attempts and opportunities visible, zero fabricated rows | 152/17/17/0 | PASS |
 | size policy | no hard violation | COMPLIANT; collector 857 below hard 900 | PASS |
 | manifest | exactly ten material paths | MATCH | PASS |
 
@@ -133,9 +133,12 @@ Protected paths:
 - `governance/compat/mfrp_shadow_canary_autocollect.py`
 - `governance/compat/build_worker_return_skeleton_scaffold.py`
 - `governance/compat/run_worker_return_scaffold.py`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
 Operator authorization: explicit 2026-09-09 sequential complete-remediation
-instruction.
+instruction, including the closure-required current-authority hash refresh.
 
 Rollback boundary: revert only the ten-path material commit; preserve the
 dispatch commit, P2/P4 owners, hooks, and unrelated closures.
@@ -190,8 +193,10 @@ but no historical sample should appear.
 
 ### Evidence Comparison
 
-The deterministic range reports 149 attempts and 17 eligible opportunities,
-while collectedCount remains zero and checkpoint remains initialization.
+The deterministic range plus the first two repaired prospective hook attempts
+report 152 attempts and 17 eligible opportunities, while collectedCount remains
+zero and checkpoint remains initialization. Both prospective skips are visible
+and identify their trusted and disclosure commits.
 
 ### Contradiction Or Gap Disposition
 
@@ -266,7 +271,7 @@ accepted reviewer evidence becomes a trusted parent.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 | --- | --- | --- | --- |
-| Work order status | committed repair work order | `Status: DISPATCH_READY`; execution completed under exact manifest | PASS |
+| Work order status | committed repair work order | `Status: CLOSED_PASS_BOUNDED`; execution completed under exact manifest | PASS |
 | Completion or reviewer artifact | this completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
 | Roadmap state | audit sequence record | Step 1 closure and Step 2 next order | PASS |
 | Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | aggregate drift check passed unchanged | PASS |
