@@ -1,8 +1,11 @@
-# CVF Agent Handoff V60 - Encoding And GC-020 Dispatch Ready
+# CVF Agent Handoff V60 - Encoding And GC-020 Closed
+
+<!-- CVF-GC020-MATERIAL-SHA:START -->
+Current HEAD recorded for this handoff: `3087a24ee91e57a6c5491fa2cf431ab195575a7c`. Material parent anchor for the dedicated continuity synchronization commit.
+<!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
 
-Current HEAD recorded for this handoff: `64db2277b` (docs(governance): correct encoding material identity). This is the truthfully known correction parent for this dedicated handoff-sync-only commit.
 
 ## Handoff Context
 
@@ -17,7 +20,7 @@ Current HEAD recorded for this handoff: `64db2277b` (docs(governance): correct e
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1 only through one internal no-commit lane from a fresh clean anchor; parked checkpoint=RABA-T1 through RABA-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=passive P4-C1 automatic evidence collection only, with an operator checkpoint before any new implementation lane; parked checkpoint=RABA-T1 through RABA-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
 
 ## Current Mode
 
@@ -62,7 +65,7 @@ ROLE-SOT-MH-T1 is independently accepted. Claude Rework Generation 2 closed all 
 
 ## Next Allowed Move
 
-Execute only `docs/work_orders/CVF_AGENT_WORK_ORDER_GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1_2026-09-08.md` through one internal no-commit worker from a fresh clean `executionBaseHead` under `EXPLICIT_LANE_HANDOFF`. Return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON` and release its exact owned paths to the reviewer. Encoding is closed and must not be mixed into this lane. Do not predict a future SHA, bypass hooks, or let the worker mutate session surfaces.
+P4-C1 remains active at `b9bdba712` with eligible count 0. GC020-SYNC-T1 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `3087a24ee91e57a6c5491fa2cf431ab195575a7c`; its dedicated continuity commit truthfully cites that material parent and never predicts its own SHA. No successor implementation tranche is released. Continue only passive automatic evidence collection. Require an operator checkpoint before opening RABA-T1 through T3, DARA-T5, repository absorption, provider/live/public/deploy work, actual process interception, or any other implementation lane.
 
 ## Parked Checkpoints
 

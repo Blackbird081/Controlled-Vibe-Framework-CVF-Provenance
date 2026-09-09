@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1 only through one internal no-commit lane from a fresh clean anchor; parked checkpoint=RABA-T1 through RABA-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=passive P4-C1 automatic evidence collection only, with an operator checkpoint before any new implementation lane; parked checkpoint=RABA-T1 through RABA-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
 
 ## Current Mode
 
@@ -52,7 +52,7 @@ Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0. `ENCODING_RENAME_AWARENESS_T1` is `CLOSED_PASS_BOUNDED`: material `d46a55d2b`, marker sync `8911fbfd3`, closure `f2635a8f8`, focused tests 40/40, and material/closure pre-commit 88/88. Next is only `GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1` through one internal `WORKER_MUST_NOT_COMMIT` lane from a fresh clean execution anchor under `EXPLICIT_LANE_HANDOFF`. No future-SHA prediction, hook bypass, mixed implementation ownership, worker session mutation, provider/live/public/deploy action or repository absorption is authorized.
+Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0. `GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1` is reviewer-accepted `CLOSED_PASS_BOUNDED` at material `3087a24ee91e57a6c5491fa2cf431ab195575a7c`: focused tests 153/153, worker-return fast gate reviewer-fast 67/67, fail-safe material recovery proven, and successful retry returned the full SHA. The dedicated continuity commit cites this material parent because its own future SHA is unknowable. No successor implementation tranche is released. Continue only passive P4-C1 automatic evidence collection; require an operator checkpoint before any new implementation lane. Encoding remains closed at material `d46a55d2b` and closure `f2635a8f8`. No hook bypass, provider/live/public/deploy action or repository absorption is authorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
