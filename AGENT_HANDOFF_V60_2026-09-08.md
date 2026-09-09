@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `c419e822a643ce7c581727a8566dfea6cc2324b2`. Provenance push-marker repair parent anchor for dedicated continuity.
+Current HEAD recorded for this handoff: `aa31410a21345d1a71491a54f9da707cb9ff33ff`. Canonical safe provenance-push route parent anchor for dedicated continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
