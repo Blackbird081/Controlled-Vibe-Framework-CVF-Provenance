@@ -263,14 +263,21 @@ def _single_parent(commit: str) -> str:
 def generate_current_receipt(
     trusted_commit: str, disclosure_commit: str
 ) -> tuple[Path, str]:
-    """Generate the one current existing-family P2 receipt after trust lands."""
+    """Generate a P2 receipt for the trusted evidence commit itself.
+
+    The disclosure commit proves that ``trusted_commit`` is no longer HEAD and
+    therefore has immutable bytes.  It is not part of the evidence range:
+    dedicated continuity commits contain protected session paths and would
+    make an otherwise valid closure range fail the committed-range shape
+    preflight.
+    """
     parent = _single_parent(trusted_commit)
     command = [
         sys.executable,
         AUTORUN_GATE_PATH,
         "--phase", "pre-closure",
         "--base", parent,
-        "--head", disclosure_commit,
+        "--head", trusted_commit,
     ]
     proc = subprocess.run(
         command,
@@ -408,14 +415,14 @@ def validate_and_reconcile_receipt(
 
     expected_parent = expected_base or _single_parent(trusted_commit)
     base_matches = len(base_sha) >= 7 and expected_parent.startswith(base_sha)
-    head_matches = len(head_sha) >= 7 and disclosure_commit.startswith(head_sha)
+    head_matches = len(head_sha) >= 7 and trusted_commit.startswith(head_sha)
     if not base_matches or not head_matches:
         raise CollectionUnsafe(
             "UNSAFE_RECEIPT_RANGE_MISMATCH",
-            f"expected {expected_parent}..{disclosure_commit}; receipt reports {base_sha}..{head_sha}",
+            f"expected {expected_parent}..{trusted_commit}; receipt reports {base_sha}..{head_sha}",
         )
 
-    changed_paths = _range_changed_paths(expected_parent, disclosure_commit)
+    changed_paths = _range_changed_paths(expected_parent, trusted_commit)
     if not changed_paths:
         # A synthesized/isolated fixture receipt may declare a head commit
         # with no diff-tree parent context resolvable here; fall back to the
@@ -425,7 +432,7 @@ def validate_and_reconcile_receipt(
             "SKIPPED_RECEIPT_RANGE_UNRESOLVED",
             "no changed paths resolvable for receipt head commit",
         )
-    reconstructed = _reconstruct_fingerprint_from_commit(disclosure_commit, changed_paths)
+    reconstructed = _reconstruct_fingerprint_from_commit(trusted_commit, changed_paths)
     declared = str(payload.get("worktreeFingerprint", ""))
     if reconstructed != declared:
         raise CollectionUnsafe(
@@ -800,7 +807,7 @@ def run_collection(commit: str | None = None) -> str:
     journal["collectorCommandEvidence"] = {
         "phase": "pre-closure",
         "base": expected_base,
-        "head": disclosure_commit,
+        "head": trusted_commit,
         "receiptPath": receipt_rel_path,
         "providerCalls": 0,
     }

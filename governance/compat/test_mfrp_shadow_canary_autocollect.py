@@ -219,7 +219,7 @@ class ReceiptCandidateDiscoveryTests(unittest.TestCase):
                 (current, "parent-sha"),
             )
 
-    def test_generation_invokes_exact_local_autorun_range(self):
+    def test_generation_receipts_trusted_commit_without_disclosure_sync_paths(self):
         target = self._scratch / autocollect.GENERATED_RECEIPT_NAME
 
         def _run(command, **_kwargs):
@@ -235,7 +235,7 @@ class ReceiptCandidateDiscoveryTests(unittest.TestCase):
         command = runner.call_args.args[0]
         self.assertEqual(
             command[-6:],
-            ["--phase", "pre-closure", "--base", "parent-sha", "--head", "disclosure-sha"],
+            ["--phase", "pre-closure", "--base", "parent-sha", "--head", "trusted-sha"],
         )
 
     def test_tampered_receipt_is_rejected(self):

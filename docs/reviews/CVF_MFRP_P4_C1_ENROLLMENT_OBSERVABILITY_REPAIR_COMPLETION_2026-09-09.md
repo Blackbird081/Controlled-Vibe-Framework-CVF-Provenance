@@ -62,9 +62,11 @@ enrollment starvation, not retrospective sampling.
 ## Risk / Corrective Action
 
 The collector remains post-commit and cannot make the just-landed review its
-own trusted parent. The next dedicated continuity commit naturally discloses
-this completion review for collection. That one-commit trust ordering is
-intentional, observable, and does not require predicting a future SHA.
+own trusted parent. The next commit discloses the immutable review, but its
+session paths are order-of-record evidence rather than part of the receipt
+range. Receipt generation therefore binds exactly `trusted^..trusted`; the
+later disclosure commit proves ordering only. This avoids both a future-SHA
+prediction and the invalid mixed closure-plus-continuity range.
 
 The collector file is 857 lines, below its 900-line hard limit but above the
 600-line advisory. Future substantial growth must move pure logic into the
@@ -118,7 +120,7 @@ p4SourceAuthorityLocator: docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_ENROL
 | --- | --- | --- | --- |
 | focused tests | selection, migration, history, starvation, idempotency, safety | 68 passed | PASS |
 | worker-return fast gate | focused plus reviewer-fast and diff hygiene | COMPLIANT; reviewer-fast 67/67 | PASS |
-| historical diagnostic plus two prospective hook attempts | attempts and opportunities visible, zero fabricated rows | 152/17/17/0 | PASS |
+| history plus receipt-range failure diagnostic | every opportunity and failure visible, zero fabricated rows | pre-rework 154/18/18/0; one exact unsafe cause preserved | PASS |
 | size policy | no hard violation | COMPLIANT; collector 857 below hard 900 | PASS |
 | manifest | exactly ten material paths | MATCH | PASS |
 
@@ -183,6 +185,7 @@ reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 | --- | --- | --- | --- | --- | --- |
 | manual enrollment and skip-before-journal concealed real measurement opportunities | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | TEMPLATE_UPDATED | retain AUTO scaffolds, deterministic selector, all-attempt journal, and focused tests | handled |
 | safety-marker retry could overwrite the original unsafe attempt cause | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RULE_ADDED | preserve outcome precedence as COLLECTED over UNSAFE over ordinary skip | handled |
+| receipt range combined trusted closure with disclosure continuity paths | COMMIT_CHOREOGRAPHY_RANGE_MIX | RUNTIME_BEHAVIOR_LEARNING | RULE_ADDED | generate and reconcile receipt over `trusted^..trusted`; use disclosure only for order proof | handled |
 
 ## Epistemic Process Block
 
@@ -193,10 +196,12 @@ but no historical sample should appear.
 
 ### Evidence Comparison
 
-The deterministic range plus the first two repaired prospective hook attempts
-report 152 attempts and 17 eligible opportunities, while collectedCount remains
-zero and checkpoint remains initialization. Both prospective skips are visible
-and identify their trusted and disclosure commits.
+The deterministic range plus repaired prospective hook attempts reported 154
+attempts and 18 eligible opportunities before receipt-range rework, while
+collectedCount remained zero and checkpoint remained initialization. The first
+selected candidate exposed `UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED` because
+the old command incorrectly included protected continuity paths in the closure
+range. The corrected seam receipts only the immutable trusted commit.
 
 ### Contradiction Or Gap Disposition
 

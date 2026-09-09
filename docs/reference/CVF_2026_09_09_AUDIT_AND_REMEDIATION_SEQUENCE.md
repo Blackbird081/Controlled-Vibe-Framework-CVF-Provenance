@@ -2,7 +2,7 @@
 
 Memory class: implementation-sequence-record
 
-Status: P4_C1_REPAIR_CLOSED_WP_ARCH_003_READY_NEXT
+Status: P4_C1_RECEIPT_RANGE_REWORK_PENDING_PROSPECTIVE_PROOF
 
 docType: reference
 
@@ -51,8 +51,8 @@ state alone.
 
 | Step | Work | Current state | Exit condition |
 | --- | --- | --- | --- |
-| 1 | Repair MFRP P4-C1 deterministic enrollment and observability | CLOSED_PASS_BOUNDED | material `bb7b0ce500d5aaade9be4d14c31af3d3963a509b`; continuity `6a18dfd3333844501a4bea8ccc55453ccde41889`; 68 focused tests; reviewer closure accepted |
-| 2 | Synchronize WP-ARCH-003 terminal park across active roadmap and continuity owners | READY_NEXT | all active projections agree and no implementation tranche opens |
+| 1 | Repair MFRP P4-C1 deterministic enrollment and observability | RECEIPT_RANGE_REWORK_PENDING_PROSPECTIVE_PROOF | first selected candidate exposed mixed closure-plus-continuity receipt range; seam corrected to `trusted^..trusted`; 68 focused tests pass |
+| 2 | Synchronize WP-ARCH-003 terminal park across active roadmap and continuity owners | PARKED_BEHIND_STEP_1 | all active projections agree and no implementation tranche opens |
 | 3 | Update private provenance, public GitHub projection, seven-step shared-workspace agent relationships, and external packet | PARKED_BEHIND_STEP_2 | public-sync commit is live, packet refresh receipt binds that HEAD, and the relay ZIP is regenerated and verified |
 
 No later step may be reported complete from a plan, prompt, or external-agent
@@ -97,8 +97,10 @@ after separating opportunity counters from actual collected samples.
 
 ### Claim Update
 
-Step 1 is closed with bounded reviewer acceptance. Step 2 is the next allowed
-move; this does not itself open a WP-ARCH-003 implementation tranche.
+The original repair is reviewer-accepted, but the first selected prospective
+candidate exposed a second receipt-range defect. Step 1 remains open only until
+one clean material-plus-disclosure cycle proves `collectedCount=1`; Step 2 does
+not begin before that proof.
 
 ## Shared-Workspace Documentation Requirement
 
