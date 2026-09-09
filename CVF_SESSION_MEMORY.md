@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`wp_arch_003_terminal_park_status_synchronization_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=documentation-only WP-ARCH-003 terminal-park synchronization; parked checkpoint=RABA implementation, followed by the ordered private/public seven-step shared-workspace projection and external packet refresh, with DARA-T5, provider/live work, actual process interception, P5 and P6 still parked.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_receipt_range_prospective_proof_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=disclose receipt-range rework `6b5318286` and verify the first collected sample; parked checkpoint=WP-ARCH-003 and RABA implementation, followed by the ordered private/public seven-step shared-workspace projection and external packet refresh, with DARA-T5, provider/live work, actual process interception, P5 and P6 still parked.
 
 ## Current Mode
 
-Current mode marker: `wp_arch_003_terminal_park_status_synchronization_active`
-Current mode: `wp_arch_003_terminal_park_status_synchronization_active`; previous mode marker: `gclh_mfrp_p4_c1_enrollment_observability_repair_active`
+Current mode marker: `gclh_mfrp_p4_c1_receipt_range_prospective_proof_active`
+Current mode: `gclh_mfrp_p4_c1_receipt_range_prospective_proof_active`; previous mode marker: `wp_arch_003_terminal_park_status_synchronization_active`
 Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `wp_arch_003_terminal_park_status_synchronization_active`. P4-C1 closed at `c2971bb8c` after exact-ten material `bb7b0ce500d5aaade9be4d14c31af3d3963a509b`, focused proof 68 passed, reviewer-fast 67/67, and both material and closure pre-commit 88/88. Synchronize WP-ARCH-003 to `PARK_NO_TRUTHFUL_AUTHORITY_ROOT` across active roadmap and continuity owners only; do not open RABA implementation. Private/public seven-step shared-workspace projection and external packet refresh remain Step 3.
+Mode: `gclh_mfrp_p4_c1_receipt_range_prospective_proof_active`. The first selected candidate exposed an invalid mixed receipt range; rework `6b5318286` now binds receipt evidence to `trusted^..trusted` and uses disclosure only for order proof. Verify one real collected sample before releasing Step 2. WP-ARCH-003 synchronization, RABA implementation, and private/public/external work remain parked until that proof.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

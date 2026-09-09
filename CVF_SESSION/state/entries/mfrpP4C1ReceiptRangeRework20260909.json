@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2817,
+  "stateKey": "mfrpP4C1ReceiptRangeRework20260909",
+  "value": "P4-C1 receipt-range rework is committed at 6b5318286 with four original-manifest paths. Root cause: receipt generation incorrectly ranged trusted-parent through disclosure, combining reviewer evidence with protected continuity paths. Repair: receipt and fingerprint bind trusted-parent through trusted; disclosure proves order only. Focused tests remain 68 passed, reviewer-fast 67/67 and pre-commit 88/88. The prior safety marker was explicitly adjudicated and moved to ignored ADJUDICATED_SAFETY_MARKER_2026-09-09.json for recoverable diagnostics."
+}
