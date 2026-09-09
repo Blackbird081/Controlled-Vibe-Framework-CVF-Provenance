@@ -3,6 +3,7 @@
 <!-- CVF-GC020-MATERIAL-SHA:START -->
 Current HEAD recorded for this handoff: `3087a24ee91e57a6c5491fa2cf431ab195575a7c`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
+Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
 Status: ACTIVE
 
