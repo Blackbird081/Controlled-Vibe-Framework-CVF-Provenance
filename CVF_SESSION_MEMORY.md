@@ -52,7 +52,7 @@ Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `external_agent_absorption_relay_ready`. The three-step audit sequence is closed: P4-C1 is prospectively proven at 156/19/19/1; WP-ARCH-003 is terminal parked; public main `483c5e33d` carries the seven-step shared-workspace projection; and the verified `EARA-AGW-T0` relay ZIP is ready. Next, the operator may deliver the same ZIP to two independent external agents; an Internal Agent must verify and reconcile both returns before any finding can influence CVF. RABA implementation and all provider/live/deploy effects remain parked.
+Mode: `external_agent_absorption_relay_ready`. The three-step audit sequence is closed: P4-C1 is prospectively proven at 156/19/19/1; WP-ARCH-003 is terminal parked; public main `483c5e33d` carries the seven-step shared-workspace projection; and the verified `EARA-AGW-T0` relay ZIP is ready. Next, the operator may deliver the same ZIP to two independent external agents; an Internal Agent must verify and reconcile both returns before any finding can influence CVF. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain the blocked work classes.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

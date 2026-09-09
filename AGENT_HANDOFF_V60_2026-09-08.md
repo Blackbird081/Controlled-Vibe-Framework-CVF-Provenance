@@ -11,6 +11,9 @@ Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance SOT on `main`.
+- Remote tracking branch: `origin/main`.
+- Exact remote SHA must be derived live from git when needed.
+- External agent memory files: non-canonical convenience only.
 - Current mode: `external_agent_absorption_relay_ready`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
