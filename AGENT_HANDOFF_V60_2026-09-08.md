@@ -120,7 +120,9 @@ Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-
 
 Authorized guard-maintenance scope: project the accepted P4-C1 repair dispatch
 `8347be04a0216479f754e3eee3ca71f15a149a8b`, its current authority hashes,
-mode, and corrected next move into existing active continuity only.
+mode, and corrected next move into existing active continuity; record the
+operator-approved safe provenance-push route in its canonical boundary owner
+and register that binding dated reference as a permanent active window.
 
 Protected paths:
 
@@ -148,10 +150,15 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ROLE_SOT_MH_T1_DISPATCH_COORDINATION_AND_DEPENDENCY_DISCOVERY_MACHINE_HARDENING_2026-09-08.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
+- `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`
+- `docs/reference/CVF_AGENTS_CRITICAL_REPOSITORY_BOUNDARY_2026-06-23.md`
 
 Operator authorization: the operator explicitly ordered sequential complete
 remediation beginning with P4-C1, followed by WP-ARCH-003 status synchronization
 and then private/public/external packet refresh.
+The operator additionally directed that future provenance-push requests invoke
+the agreed canonical safe route without repeated authorization prompts or
+manual-unlock instructions.
 
 Rollback boundary: revert only this continuity projection; preserve the P4-C1
 repair dispatch `8347be04a`, ROLE-SOT-MH-T1 material `94c4922c2`, T0 material
@@ -163,4 +170,5 @@ This handoff records bounded P4-C1 closure and authorizes only documentation
 synchronization of the already-established WP-ARCH-003 terminal park. It does
 not open implementation, claim actual process isolation, promote external
 output to authority, release RABA, or claim provider/live/public/deploy, P5,
-P6, or production authority.
+P6, or production authority. The provenance-push route does not authorize
+force-push, history rewriting, guard bypass, or a public-repository push.

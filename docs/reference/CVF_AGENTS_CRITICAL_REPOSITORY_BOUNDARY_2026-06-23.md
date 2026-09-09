@@ -48,11 +48,36 @@ If the current working directory is this provenance workspace or `origin`
 contains `Controlled-Vibe-Framework-CVF-Provenance`, stop and switch to the
 public-sync clone. Do not push the full provenance tree into the public repo.
 
+## Operator-Authorized Provenance Push Route - 2026-09-09
+
+When the operator says to push CVF, this workspace, or the current work to the
+provenance GitHub repository, that statement is the per-invocation push
+authorization. The agent must not ask the operator to repeat the authorization
+or instruct the operator to unlock the remote manually.
+
+The canonical route is
+`powershell -ExecutionPolicy Bypass -File scripts\cvf-provenance-push.ps1
+-Branch main`. The script must start with the provenance push URL locked, run
+the full pre-push governance chain before unlocking, set the push URL only to
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git`,
+push the requested branch, and restore
+`DISABLED_PROVENANCE_ARCHIVE_DO_NOT_PUSH_FROM_THIS_WORKSPACE` in its `finally`
+path. Direct `git remote set-url`, an explicit-URL `git push`, and bypassing a
+failed guard are not approved alternatives.
+
+Before execution, verify the worktree is clean, the current branch is the
+intended branch, and fetch/reconcile the tracked remote without destructive
+history rewriting. After execution, verify `HEAD` equals the remote branch,
+ahead/behind is `0/0`, the worktree is clean, and the push URL is locked again.
+If a guard fails, repair only an authorized in-scope defect, rerun the canonical
+route, and report a real blocker only when safe repair is not authorized.
+
 ## Claim Boundary
 
-This file records one rotated rule verbatim from `AGENTS.md`. It does not
-add, remove, or reinterpret any part of the rule, and it does not claim
-authority over public-sync execution beyond what the rule itself states.
+This file records the rotated repository-boundary rule and the operator-approved
+safe provenance-push route. It does not authorize public-sync execution,
+force-push, history rewriting, guard bypass, remote substitution, credential
+disclosure, or pushing private provenance content to the public repository.
 
 ## Public Export Disposition
 
