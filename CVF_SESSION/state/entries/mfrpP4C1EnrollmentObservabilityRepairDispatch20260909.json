@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2811,
+  "stateKey": "mfrpP4C1EnrollmentObservabilityRepairDispatch20260909",
+  "value": "MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR is DISPATCH_READY at commit 8347be04a0216479f754e3eee3ca71f15a149a8b. Pre-dispatch passed 81/81 and the normal pre-commit chain passed 88/88. This bounded repair retains the existing collector and P2/P4 owners while adding deterministic reviewer-owned enrollment, all-attempt journal v2 observability, separated opportunity and collection counters, historical diagnostics, starvation health, and AUTO scaffold defaults. No hook, provider, live, public, WP-ARCH-003 implementation, P5, or P6 work is authorized."
+}

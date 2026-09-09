@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `3087a24ee91e57a6c5491fa2cf431ab195575a7c`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `8347be04a0216479f754e3eee3ca71f15a149a8b`. Dispatch parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
@@ -11,7 +11,7 @@ Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance SOT on `main`.
-- Current mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`.
+- Current mode: `gclh_mfrp_p4_c1_enrollment_observability_repair_active`.
 - P4-C1 remains active at `b9bdba712`; eligible count is 0.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -21,11 +21,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=passive P4-C1 automatic evidence collection only, with an operator checkpoint before any new implementation lane; parked checkpoint=RABA-T1 through RABA-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_enrollment_observability_repair_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=implement, review, and close the exact P4-C1 repair manifest dispatched at 8347be04a; parked checkpoint=WP-ARCH-003 synchronization until Step 1 closes, then public/external refresh, with RABA implementation, DARA-T5, provider/live work, actual process interception, P5 and P6 still parked.
 
 ## Current Mode
 
-`gclh_mfrp_p4_c1_automatic_evidence_collection_active`
+`gclh_mfrp_p4_c1_enrollment_observability_repair_active`
 
 ## Purpose
 
@@ -41,6 +41,10 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Latest Work / Changes
 
+- P4-C1 enrollment/observability repair dispatch committed at
+  `8347be04a0216479f754e3eee3ca71f15a149a8b`; pre-dispatch passed 81/81 and
+  the normal pre-commit chain passed 88/88. Its exact ten-path implementation
+  lane is the only currently released material lane.
 - Dispatch material committed at `891d7c72a` after pre-dispatch 81/81 and staged pre-commit 88/88 PASS.
 - ROLE-SOT-MH-T1 material and closure committed at `94c4922c2`; focused suites passed 55/55 and 44/44, reviewer-fast 67/67, and material pre-commit 88/88.
 - Encoding rename-awareness and GC-020 synchronization dispatch material committed at `7e4ed00868184f3778bedfefd479627d2cafcdb1` after six authoring review generations and staged pre-commit 88/88 PASS. Committed-range pre-closure passed 80/81; its only failure was the expected post-material GC-020 handoff synchronization edge resolved by this dedicated continuity projection.
@@ -58,7 +62,9 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-P4-C1 remains the active automatic evidence collector. ROLE-SOT-MH-T1 is closed and does not alter MFRP authority or automatically open another successor.
+The paired P4-C1 enrollment/observability repair baseline and work order are
+the current dispatch authority. The existing P4-C1 collector remains the sole
+runtime owner; the original P2 and P4 core owners stay read-only.
 
 ## Closure Evidence
 
@@ -66,7 +72,7 @@ ROLE-SOT-MH-T1 is independently accepted. Claude Rework Generation 2 closed all 
 
 ## Next Allowed Move
 
-P4-C1 remains active at `b9bdba712` with eligible count 0. GC020-SYNC-T1 is reviewer-accepted `CLOSED_PASS_BOUNDED` at material commit `3087a24ee91e57a6c5491fa2cf431ab195575a7c`; its dedicated continuity commit truthfully cites that material parent and never predicts its own SHA. No successor implementation tranche is released. Continue only passive automatic evidence collection. Require an operator checkpoint before opening RABA-T1 through T3, DARA-T5, repository absorption, provider/live/public/deploy work, actual process interception, or any other implementation lane.
+MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR is `DISPATCH_READY` at `8347be04a0216479f754e3eee3ca71f15a149a8b`. Implement, review, and close only its exact ten-path manifest. WP-ARCH-003 status synchronization remains ordered Step 2; private/public seven-step shared-workspace projection and external packet refresh remain ordered Step 3. RABA implementation, DARA-T5, provider/live work, actual process interception, P5, P6, and automatic redispatch remain parked.
 
 ## Parked Checkpoints
 
@@ -78,7 +84,8 @@ P4-C1 remains active at `b9bdba712` with eligible count 0. GC020-SYNC-T1 is revi
 
 ## Active Boundary
 
-- This handoff authorizes only the GC-020 packet's bounded no-commit implementation. ENCODING-RENAME-T1 is closed.
+- This handoff authorizes only the exact P4-C1 repair manifest dispatched at
+  `8347be04a`; ENCODING-RENAME-T1 and GC020-SYNC-T1 are closed.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - No external call, credential use, dependency installation, push, deploy or public export is authorized.
 
@@ -94,7 +101,9 @@ ROLE-SOT-MH-T1 is private dispatch/continuity material. No public-sync artifact 
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project accepted encoding/GC-020 dispatch material `7e4ed00868184f3778bedfefd479627d2cafcdb1` and its corrected next move into existing active continuity only.
+Authorized guard-maintenance scope: project the accepted P4-C1 repair dispatch
+`8347be04a0216479f754e3eee3ca71f15a149a8b`, its current authority hashes,
+mode, and corrected next move into existing active continuity only.
 
 Protected paths:
 
@@ -110,14 +119,22 @@ Protected paths:
 - `CVF_SESSION/state/entries/roleSotMachineHardeningT1HandoffRotation20260908.json`
 - `CVF_SESSION/state/entries/encodingGc020DispatchReady20260908.json`
 - `CVF_SESSION/state/entries/encodingRenameAwarenessT1Closure20260908.json`
+- `CVF_SESSION/state/entries/mfrpP4C1EnrollmentObservabilityRepairDispatch20260909.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_ROLE_SOT_MH_T1_DISPATCH_COORDINATION_AND_DEPENDENCY_DISCOVERY_MACHINE_HARDENING_2026-09-08.md`
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 
-Operator authorization: the operator instructed the reviewer to continue ROLE-SOT-MH-T1, then reassigned the encoding worker role from Claude to Codex and directed completion. Encoding is now closed; this continuity releases only the separate GC-020 worker lane next.
+Operator authorization: the operator explicitly ordered sequential complete
+remediation beginning with P4-C1, followed by WP-ARCH-003 status synchronization
+and then private/public/external packet refresh.
 
-Rollback boundary: revert only this continuity projection; preserve ROLE-SOT-MH-T1 material `94c4922c2`, dispatch `891d7c72a`, T0 material `6bcdeaca8`, RABA park `0767a16e5` and P4-C1 `b9bdba712`.
+Rollback boundary: revert only this continuity projection; preserve the P4-C1
+repair dispatch `8347be04a`, ROLE-SOT-MH-T1 material `94c4922c2`, T0 material
+`6bcdeaca8`, RABA park `0767a16e5`, and original P4-C1 activation `b9bdba712`.
 
 ## Claim Boundary
 
-This handoff records bounded ROLE-SOT-MH-T1 and ENCODING-RENAME-T1 closure and authorizes only the GC-020 packet's no-commit implementation next. It does not claim actual process isolation, GC-020 completion, external invocation, RABA release, runtime/provider/live/public/deploy or production authority.
+This handoff records the accepted P4-C1 repair dispatch and authorizes only its
+exact implementation next. It does not claim repair completion, actual process
+isolation, external invocation, RABA release, provider/live/public/deploy, P5,
+P6, or production authority.

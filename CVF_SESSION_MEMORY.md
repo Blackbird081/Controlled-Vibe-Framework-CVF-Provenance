@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`gclh_mfrp_p4_c1_automatic_evidence_collection_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=passive P4-C1 automatic evidence collection only, with an operator checkpoint before any new implementation lane; parked checkpoint=RABA-T1 through RABA-T3, external invocation, actual process interception, DARA-T5, provider/live/public/deploy and repository absorption.
+Startup acknowledged: current mode=`gclh_mfrp_p4_c1_enrollment_observability_repair_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=implement, review, and close the exact P4-C1 repair manifest dispatched at 8347be04a; parked checkpoint=WP-ARCH-003 synchronization until Step 1 closes, then public/external refresh, with RABA implementation, DARA-T5, provider/live work, actual process interception, P5 and P6 still parked.
 
 ## Current Mode
 
-Current mode marker: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`
-Current mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`; previous mode marker: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
+Current mode marker: `gclh_mfrp_p4_c1_enrollment_observability_repair_active`
+Current mode: `gclh_mfrp_p4_c1_enrollment_observability_repair_active`; previous mode marker: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`
 Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_active`. P4-C1 remains at `b9bdba712`, eligible count 0. `GC020_POST_COMMIT_SHA_SYNCHRONIZATION_T1` is reviewer-accepted `CLOSED_PASS_BOUNDED` at material `3087a24ee91e57a6c5491fa2cf431ab195575a7c`: focused tests 153/153, worker-return fast gate reviewer-fast 67/67, fail-safe material recovery proven, and successful retry returned the full SHA. The dedicated continuity commit cites this material parent because its own future SHA is unknowable. No successor implementation tranche is released. Continue only passive P4-C1 automatic evidence collection; require an operator checkpoint before any new implementation lane. Encoding remains closed at material `d46a55d2b` and closure `f2635a8f8`. No hook bypass, provider/live/public/deploy action or repository absorption is authorized.
+Mode: `gclh_mfrp_p4_c1_enrollment_observability_repair_active`. The repair packet is `DISPATCH_READY` at `8347be04a0216479f754e3eee3ca71f15a149a8b`. Implement, review, and close only its exact ten-path manifest. WP-ARCH-003 status synchronization remains ordered Step 2; private/public seven-step shared-workspace projection and external packet refresh remain ordered Step 3. RABA implementation, DARA-T5, provider/live work, actual process interception, P5, P6, and automatic redispatch remain parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
