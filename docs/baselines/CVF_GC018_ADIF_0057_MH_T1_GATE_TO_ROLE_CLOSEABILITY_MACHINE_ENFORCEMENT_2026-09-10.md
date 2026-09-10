@@ -50,7 +50,7 @@ structure and reachability, not code architecture or semantic design quality.
 | C1 | Every changed executable work order carries the versioned closeability contract. | Missing or malformed contract fails. |
 | C2 | Every mutating gate has an authorized repair owner and commit owner. | `NONE` owner on a mutating row fails. |
 | C3 | Repair phase is not later than the phase by which the gate must pass. | closer-only catalog repair required before reviewer acceptance fails. |
-| C4 | Gate dependencies form a directed acyclic graph and name real rows. | unknown dependency and cycle fail. |
+| C4 | Gate dependencies form a directed acyclic graph, name real rows, and include post-dispatch GC-020 continuity before implementation. | unknown dependency, cycle, or missing dispatch continuity fails. |
 | C5 | Implementation topology policy either covers foreseeable splits or truthfully fixes a no-split size budget. | exact-only plus foreseeable split fails. |
 | C6 | Changed worker returns and completion reviews classify return-time closeability before repair. | packet contradiction plus worker redispatch `YES` fails. |
 | C7 | Common autorun, reviewer-fast, and pre-commit catalogs invoke the checker. | missing catalog binding fails focused wiring tests. |

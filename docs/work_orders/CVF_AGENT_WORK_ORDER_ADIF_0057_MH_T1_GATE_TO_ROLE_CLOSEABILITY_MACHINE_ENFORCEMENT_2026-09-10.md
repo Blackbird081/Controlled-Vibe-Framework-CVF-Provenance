@@ -168,7 +168,8 @@ returnTimeRecheck: REQUIRED_BEFORE_REPAIR
 |---|---|---|---|---|---|---|---|---|
 | authorization_review | PRE_DISPATCH | reviewer | PRE_DISPATCH | `docs/reviews/CVF_ADIF_0057_MH_T1_GATE_TO_ROLE_CLOSEABILITY_AUTHORIZATION_REVIEW_2026-09-10.md` | EXACT_PATHS | closer | DISPATCH_COMMIT | NONE |
 | pre_dispatch_gate | PRE_DISPATCH | dispatcher | PRE_DISPATCH | `docs/baselines/CVF_GC018_ADIF_0057_MH_T1_GATE_TO_ROLE_CLOSEABILITY_MACHINE_ENFORCEMENT_2026-09-10.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_ADIF_0057_MH_T1_GATE_TO_ROLE_CLOSEABILITY_MACHINE_ENFORCEMENT_2026-09-10.md`; authorization review | EXACT_PATHS | closer | DISPATCH_COMMIT | authorization_review |
-| focused_checker_tests | WORKER_RETURN | worker | IMPLEMENTATION | exact worker manifest | EXACT_PATHS | closer | MATERIAL_COMMIT | pre_dispatch_gate |
+| dispatch_continuity | IMPLEMENTATION | session-sync-steward | IMPLEMENTATION | `AGENT_HANDOFF_V60_2026-09-08.md` material-SHA marker | EXACT_PATHS | session-sync-steward | DISPATCH_CONTINUITY_COMMIT | pre_dispatch_gate |
+| focused_checker_tests | WORKER_RETURN | worker | IMPLEMENTATION | exact worker manifest | EXACT_PATHS | closer | MATERIAL_COMMIT | dispatch_continuity |
 | adif_integrity | WORKER_RETURN | worker | IMPLEMENTATION | ADIF-0057 and checker/tests | EXACT_PATHS | closer | MATERIAL_COMMIT | focused_checker_tests |
 | pre_implementation_autorun | WORKER_RETURN | worker | IMPLEMENTATION | exact worker manifest | EXACT_PATHS | closer | MATERIAL_COMMIT | adif_integrity |
 | worker_return_fast | REVIEW | worker | WORKER_RETURN | worker return and exact worker manifest | EXACT_PATHS | closer | MATERIAL_COMMIT | pre_implementation_autorun |
@@ -205,6 +206,7 @@ artifacts outside the worker changed-set count.
 | Commit class | Exact artifacts | Author | Commit owner | Required predecessor |
 |---|---|---|---|---|
 | DISPATCH_COMMIT | paired baseline; work order; authorization review | dispatcher and independent reviewer | closer | authorization review PASS and pre-dispatch PASS |
+| DISPATCH_CONTINUITY_COMMIT | active handoff material-SHA marker only | session-sync steward | session-sync steward | exact dispatch commit SHA |
 | MATERIAL_COMMIT | exact worker manifest plus completion review | worker and independent reviewer | closer | worker return, reviewer-fast and pre-commit PASS |
 | CORRECTIVE_MATERIAL_COMMIT | only failed committed-range repair paths, if required | reviewer/repair worker under unchanged authority | closer | named post-material failure; otherwise omitted |
 | CONTINUITY_COMMIT | active continuity source items and generated state only | session-sync steward | session-sync steward | committed-range closure PASS |
@@ -254,11 +256,11 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 |---|---|
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | worker -> independent reviewer -> closer -> session-sync steward |
-| phase | pre-dispatch -> dispatch commit -> implementation -> review -> material -> post-material closure -> continuity |
+| phase | pre-dispatch -> dispatch commit -> dispatch continuity -> implementation -> review -> material -> post-material closure -> continuity |
 | baseHeadFor(phase) | dispatchBaseHead=fe62894f861c34a25a16c6267f557bf771ea9e2c; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
 | changedSetScope(phase) | exact role-owned manifests only; no helper split or worker-time path expansion |
 | traceScope(phase, actor) | each role records only its own actions and evidence |
-| commitOwner(phase) | worker=FORBIDDEN; closer=dispatch/material/corrective material; session-sync steward=continuity |
+| commitOwner(phase) | worker=FORBIDDEN; closer=dispatch/material/corrective material; session-sync steward=dispatch continuity and terminal continuity |
 | crossBatchIsolation | preserve unrelated work and parked lanes |
 | nextMoveSurfaces | worker return then completion review |
 
@@ -294,7 +296,7 @@ No-Commit Statement; Return-Time Closeability Recheck.
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"ADIF-0057-MH-T1","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"BOUNDED_CLUSTER","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"KNOWN_PATTERN"},"pathFamilies":["AGENTS.md","docs/baselines","docs/work_orders","docs/reference","docs/reviews","governance/compat"],"claims":["declared gate-to-role closeability machine enforcement"],"requiredProof":["focused positive and negative tests","autorun and hook catalog bindings","ADIF integrity","independent review"],"operatorCheckpoints":["authority or risk expansion","runtime interception","external effect"],"forbiddenEffects":["provider or live execution","public sync","deployment","automatic authority expansion","worker commit"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"N/A with reason: bounded named control cluster","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"ADIF-0057-MH-T1","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"BOUNDED_CLUSTER","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"KNOWN_PATTERN"},"pathFamilies":["AGENTS.md","AGENT_HANDOFF_V60_2026-09-08.md","docs/baselines","docs/work_orders","docs/reference","docs/reviews","governance/compat"],"claims":["declared gate-to-role closeability machine enforcement"],"requiredProof":["focused positive and negative tests","autorun and hook catalog bindings","ADIF integrity","independent review"],"operatorCheckpoints":["authority or risk expansion","runtime interception","external effect"],"forbiddenEffects":["provider or live execution","public sync","deployment","automatic authority expansion","worker commit"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"N/A with reason: bounded named control cluster","completenessClaimChanged":false}}
 ```
 
 ## Scaffold Provenance Block

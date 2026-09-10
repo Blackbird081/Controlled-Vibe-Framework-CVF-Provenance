@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `3fcd426dc7c2c6d03fc915b884711df118a0563f`. P4-E return-time closeability and outcome-bounded agent-intelligence learning material parent anchor for dedicated continuity.
+Current HEAD recorded for this handoff: `3da3491e8220e04d2d54d62273c70272fc246587`. ADIF-0057-MH-T1 independently authorized dispatch-control parent anchor for required post-dispatch continuity before implementation.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
