@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `670a7979d`. ADIF-0057-MH-T1 material is independently accepted; this dedicated continuity commit records its truthful parent anchor.
+Current HEAD recorded for this handoff: `84bcbb222`. ADIF-0057-MH-T1 corrective material is independently accepted; this dedicated continuity commit records its truthful parent anchor.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
@@ -77,11 +77,11 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
   preserve agent implementation intelligence while requiring first-return
   closeability classification. This does not change the current Core mode or
   authorize project implementation by itself.
-- ADIF-0057-MH-T1 material committed at `670a7979d`; independent completion
-  review accepted bounded closure with no waiver after correcting one
-  fail-open dispatch-continuity semantic defect. Post-material proof then
-  exposed a second ordering contradiction; an exact seven-path correction is
-  authorized after this required real-SHA continuity commit.
+- ADIF-0057-MH-T1 material committed at `670a7979d`, continuity recovery at
+  `d8f99a8f2`, and independently authorized F7 correction at `84bcbb222`.
+  Both the dispatch-continuity fail-open and the operationally impossible
+  post-material ordering are machine-rejected; waivers are none and focused
+  proof passes 21/21.
 
 ## Current Authority
 
@@ -94,9 +94,10 @@ external repository or external-agent output an authority root.
 
 ROLE-SOT-MH-T1 is independently accepted. Claude Rework Generation 2 closed all seven reviewer findings; focused tests passed 55/55 and 44/44, reviewer-fast passed 67/67, and material pre-commit passed 88/88. ADIF-0056 is machine-bound and clean. ADIF-0052 remains a pre-existing out-of-scope dangling-source defect. Provider/live/network/public/deploy usage was zero.
 
-ADIF-0057-MH-T1 material is committed at `670a7979d`; terminal closure waits
-for the independently authorized F7 correction, its real-SHA continuity, and
-clean split-range pre-closure. Provider/live/network/public/deploy usage is zero.
+ADIF-0057-MH-T1 material `670a7979d` and corrective material `84bcbb222` are
+independently accepted. Terminal closure requires only this real-SHA continuity
+commit and clean split-range pre-closure. Provider/live/network/public/deploy
+usage is zero.
 
 ## Next Allowed Move
 
@@ -119,7 +120,7 @@ The operator may manually deliver `CVF_EARA_AGW_T0_EXTERNAL_RELAY_2026-09-09.zip
 
 ## Completion Review
 
-`docs/reviews/CVF_ADIF_0057_MH_T1_GATE_TO_ROLE_CLOSEABILITY_MACHINE_ENFORCEMENT_COMPLETION_2026-09-10.md` records the accepted material and authorized F7 correction at `670a7979d`; ROLE-SOT-MH-T1 remains closed at `94c4922c2`.
+`docs/reviews/CVF_ADIF_0057_MH_T1_GATE_TO_ROLE_CLOSEABILITY_MACHINE_ENFORCEMENT_COMPLETION_2026-09-10.md` records accepted material `670a7979d` and corrective material `84bcbb222`; ROLE-SOT-MH-T1 remains closed at `94c4922c2`.
 
 ## Public Export Disposition
 
