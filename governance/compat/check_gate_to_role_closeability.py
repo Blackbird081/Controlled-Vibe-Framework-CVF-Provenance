@@ -28,7 +28,7 @@ REQUIRED_GATE_IDS = {
 PHASE_ORDER = {
     "PRE_DISPATCH": 0, "IMPLEMENTATION": 1, "WORKER_RETURN": 2,
     "REVIEW": 3, "PRE_MATERIAL_COMMIT": 4, "POST_MATERIAL": 5,
-    "POST_MATERIAL_CLOSURE": 5, "CONTINUITY_COMMIT": 6,
+    "CONTINUITY_COMMIT": 6, "POST_MATERIAL_CLOSURE": 7,
 }
 TOPOLOGY_POLICIES = {
     "BOUNDED_PATH_FAMILIES": "COVERED_BY_BOUNDED_PATH_FAMILY",
@@ -228,6 +228,30 @@ def check_work_order(path: str, text: str) -> list[Violation]:
                 path,
                 "dispatch_continuity_bypassed",
                 "focused_checker_tests must depend on dispatch_continuity before implementation proof proceeds",
+            )
+        )
+
+    continuity = next((row for row in rows if row.get("gateId") == "continuity"), None)
+    if continuity is not None:
+        exact_fields = {
+            "mustPassBy": "CONTINUITY_COMMIT",
+            "repairOwner": "session-sync-steward",
+            "repairPhase": "CONTINUITY_COMMIT",
+            "commitOwner": "session-sync-steward",
+            "commitPhase": "CONTINUITY_COMMIT",
+        }
+        for field, expected in exact_fields.items():
+            if continuity.get(field) != expected:
+                violations.append(Violation(path, "terminal_continuity_invalid", f"continuity {field} must be {expected}"))
+        if dependencies.get("continuity") != ["terminal_completion_review"]:
+            violations.append(Violation(path, "terminal_continuity_invalid", "continuity must depend directly on terminal_completion_review"))
+
+    if "committed_range_closure" in dependencies and dependencies["committed_range_closure"] != ["continuity"]:
+        violations.append(
+            Violation(
+                path,
+                "post_material_continuity_bypassed",
+                "committed_range_closure must depend directly on continuity so GC-020 can record the material SHA before clean split-range closure",
             )
         )
     if _cycle(ids, dependencies):

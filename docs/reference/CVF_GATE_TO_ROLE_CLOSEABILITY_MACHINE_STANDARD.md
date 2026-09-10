@@ -38,6 +38,13 @@ Each row declares:
 - the commit owner and commit phase; and
 - predecessor gate identifiers.
 
+GC-020 ordering is mandatory after a material commit: terminal completion
+review authorizes continuity; the session-sync steward records the real
+material SHA in a dedicated continuity commit; only then may the reviewer run
+clean, split-range committed closure. A graph that places committed-range
+closure before continuity is uncloseable because pre-closure requires both a
+clean worktree and current active-handoff evidence.
+
 The graph must be acyclic. A repair phase cannot occur later than the pass
 deadline. Mutating rows cannot omit repair, mutation, or commit ownership.
 Dependencies must name graph rows. The implementation topology declaration
@@ -135,6 +142,9 @@ is present in the common autorun, reviewer-fast, and pre-commit catalogs.
 
 The dispatch packet's initially omitted continuity edge was treated as a
 blocking packet defect and added to both the graph and mandatory gate set.
+Post-material execution then exposed a second contradiction: pre-closure
+requires current GC-020 evidence and a clean worktree. The graph and checker
+therefore require the real-SHA continuity commit before split-range closure.
 
 ### Claim Update
 

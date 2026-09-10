@@ -47,8 +47,8 @@ def valid_rows() -> str:
         ("reviewer_fast", "PRE_MATERIAL_COMMIT", "worker_return_fast"),
         ("pre_commit", "PRE_MATERIAL_COMMIT", "reviewer_fast"),
         ("terminal_completion_review", "PRE_MATERIAL_COMMIT", "pre_commit"),
-        ("committed_range_closure", "POST_MATERIAL_CLOSURE", "terminal_completion_review"),
-        ("continuity", "CONTINUITY_COMMIT", "committed_range_closure"),
+        ("continuity", "CONTINUITY_COMMIT", "terminal_completion_review"),
+        ("committed_range_closure", "POST_MATERIAL_CLOSURE", "continuity"),
     ]
     rows = []
     for gate, deadline, dep in ids:
@@ -61,6 +61,9 @@ def valid_rows() -> str:
             mutation_surface = "AGENT_HANDOFF_V60_2026-09-08.md material-SHA marker"
             commit_owner = "session-sync-steward"
             commit_phase = "DISPATCH_CONTINUITY_COMMIT"
+        if gate == "continuity":
+            repair_owner = "session-sync-steward"
+            commit_owner = "session-sync-steward"
         rows.append(
             f"| {gate} | {deadline} | {repair_owner} | {deadline} | {mutation_surface} | "
             f"EXACT_PATHS | {commit_owner} | {commit_phase} | {dep} |"
@@ -106,6 +109,19 @@ def test_dispatch_continuity_requires_exact_commit_route() -> None:
     assert "dispatch_continuity_invalid" in codes(contract(rows))
 
 
+def test_post_material_closure_cannot_precede_continuity() -> None:
+    rows = valid_rows().replace(
+        "| committed_range_closure | POST_MATERIAL_CLOSURE | owner | POST_MATERIAL_CLOSURE | paths | EXACT_PATHS | closer | MATERIAL_COMMIT | continuity |",
+        "| committed_range_closure | POST_MATERIAL_CLOSURE | owner | POST_MATERIAL_CLOSURE | paths | EXACT_PATHS | closer | MATERIAL_COMMIT | terminal_completion_review |",
+    ).replace(
+        "| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | paths | EXACT_PATHS | session-sync-steward | CONTINUITY_COMMIT | terminal_completion_review |",
+        "| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | paths | EXACT_PATHS | session-sync-steward | CONTINUITY_COMMIT | committed_range_closure |",
+    )
+    result = codes(contract(rows))
+    assert "terminal_continuity_invalid" in result
+    assert "post_material_continuity_bypassed" in result
+
+
 def test_late_repair_phase_fails() -> None:
     rows = valid_rows().replace("| pre_dispatch_gate | PRE_DISPATCH | owner | PRE_DISPATCH |", "| pre_dispatch_gate | PRE_DISPATCH | owner | REVIEW |")
     assert "late_repair_owner" in codes(contract(rows))
@@ -117,7 +133,10 @@ def test_missing_mutation_owner_fails() -> None:
 
 
 def test_unknown_dependency_fails() -> None:
-    rows = valid_rows().replace("| continuity | CONTINUITY_COMMIT | owner | CONTINUITY_COMMIT | paths | EXACT_PATHS | closer | CONTINUITY_COMMIT | committed_range_closure |", "| continuity | CONTINUITY_COMMIT | owner | CONTINUITY_COMMIT | paths | EXACT_PATHS | closer | CONTINUITY_COMMIT | missing_gate |")
+    rows = valid_rows().replace(
+        "| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | paths | EXACT_PATHS | session-sync-steward | CONTINUITY_COMMIT | terminal_completion_review |",
+        "| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | paths | EXACT_PATHS | session-sync-steward | CONTINUITY_COMMIT | missing_gate |",
+    )
     assert "dependency_unknown" in codes(contract(rows))
 
 

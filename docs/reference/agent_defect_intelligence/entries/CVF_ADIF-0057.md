@@ -145,6 +145,9 @@ artifacts. It is wired into common autorun phases, reviewer-fast, and
 pre-commit. Focused cases cover missing mandatory gates, missing owners,
 late-only repair authority, unknown dependencies, cycles, inconsistent
 topology/split declarations, and redispatch against a packet contradiction.
+The post-material edge is also ordered against GC-020: a real-SHA continuity
+commit must precede clean split-range closure, because pre-closure rejects both
+stale handoff evidence and a dirty continuity worktree.
 
 The machine claim is bounded to declared repository artifacts and configured
 CVF gates/hooks. It does not prove comprehension, infer implementation design,
@@ -196,7 +199,9 @@ redispatch; configured autorun and hook catalogs invoke it.
 ### Contradiction Or Gap Disposition
 
 The missing dispatch-continuity edge found during authorization was corrected
-before implementation and promoted into the mandatory gate vocabulary.
+before implementation. A later live pre-closure attempt also disproved the
+initial terminal ordering; continuity now precedes split-range closure and the
+checker rejects the reversed, operationally impossible graph.
 
 ### Claim Update
 

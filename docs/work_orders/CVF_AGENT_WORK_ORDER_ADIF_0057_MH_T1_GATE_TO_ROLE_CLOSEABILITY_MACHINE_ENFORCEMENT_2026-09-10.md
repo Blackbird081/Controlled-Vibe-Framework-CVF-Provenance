@@ -176,8 +176,8 @@ returnTimeRecheck: REQUIRED_BEFORE_REPAIR
 | reviewer_fast | PRE_MATERIAL_COMMIT | reviewer | REVIEW | exact worker manifest; completion review | EXACT_PATHS | closer | MATERIAL_COMMIT | worker_return_fast |
 | pre_commit | PRE_MATERIAL_COMMIT | reviewer | REVIEW | exact worker manifest; completion review | EXACT_PATHS | closer | MATERIAL_COMMIT | reviewer_fast |
 | terminal_completion_review | PRE_MATERIAL_COMMIT | reviewer | REVIEW | `docs/reviews/CVF_ADIF_0057_MH_T1_GATE_TO_ROLE_CLOSEABILITY_MACHINE_ENFORCEMENT_COMPLETION_2026-09-10.md` | EXACT_PATHS | closer | MATERIAL_COMMIT | pre_commit |
-| committed_range_closure | POST_MATERIAL_CLOSURE | reviewer | POST_MATERIAL | exact material paths | EXACT_PATHS | closer | CORRECTIVE_MATERIAL_COMMIT | terminal_completion_review |
-| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | authorized active continuity paths | BOUNDED_PATH_FAMILY | session-sync-steward | CONTINUITY_COMMIT | committed_range_closure |
+| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | authorized active continuity paths | BOUNDED_PATH_FAMILY | session-sync-steward | CONTINUITY_COMMIT | terminal_completion_review |
+| committed_range_closure | POST_MATERIAL_CLOSURE | reviewer | POST_MATERIAL | exact material paths | EXACT_PATHS | closer | CORRECTIVE_MATERIAL_COMMIT | continuity |
 
 ## Required Artifact Manifest
 
@@ -209,12 +209,15 @@ artifacts outside the worker changed-set count.
 | DISPATCH_CONTINUITY_COMMIT | active handoff material-SHA marker only | session-sync steward | session-sync steward | exact dispatch commit SHA |
 | MATERIAL_COMMIT | exact worker manifest plus completion review | worker and independent reviewer | closer | worker return, reviewer-fast and pre-commit PASS |
 | CORRECTIVE_MATERIAL_COMMIT | only failed committed-range repair paths, if required | reviewer/repair worker under unchanged authority | closer | named post-material failure; otherwise omitted |
-| CONTINUITY_COMMIT | active continuity source items and generated state only | session-sync steward | session-sync steward | committed-range closure PASS |
+| CONTINUITY_COMMIT | active continuity source items and generated state only | session-sync steward | session-sync steward | exact latest material or corrective-material commit SHA plus terminal completion review |
 
 No separate evidence-only commit is planned. The completion review is finalized
-before and included in `MATERIAL_COMMIT`. If committed-range closure fails, the
-tranche reopens through the declared corrective-material route before
-continuity; a silent continuity fix is forbidden.
+before and included in `MATERIAL_COMMIT`. After the latest material or
+corrective-material commit, continuity must record its real SHA before clean
+split-range committed closure runs. If that closure still fails, the tranche
+reopens through the declared corrective-material route; the new corrective SHA
+must receive a fresh continuity commit before closure is rerun. A silent
+continuity fix is forbidden.
 
 ## Dated Owner Dependency Discovery
 

@@ -14,11 +14,15 @@ Reviewer verdict: REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED
 
 Terminal verdict: CLOSED_PASS_BOUNDED
 
-Findings: ADIF-0057-MH-T1-F1 REVIEWER_CORRECTED
+Findings: ADIF-0057-MH-T1-F1 AND ADIF-0057-MH-T1-F7 REVIEWER_CORRECTED
 
 Waivers: NONE
 
 Review base head: fd711820a3111d2c196171ae8f0513709b61fb9a
+
+Material commit reviewed: 670a7979daa2401a4fca6dc13f135eac69e9d578
+
+Corrective verdict: CORRECTIVE_COMMIT_AUTHORIZED
 
 Review-Cost Telemetry: REQUIRED
 
@@ -56,6 +60,13 @@ reviewer-local repair in the authorized checker and focused-test paths. No
 broad suite, provider/live action, installation, commit, push, or continuity
 mutation was performed.
 
+After material commit `670a7979d`, two direct command outcomes exposed a
+second ordering contradiction: clean `pre-closure fd711820a..670a7979d` failed
+because the active handoff lacked the material SHA, while the same range with a
+pending handoff update failed range-shape/finality because continuity made the
+worktree dirty and mixed. This continuation review consumes both failures as
+evidence and tests only the corrected ordering.
+
 ## Pre-Repair Dependency-Closure Matrix
 
 | Dimension | Evidence inspected | Reviewer disposition |
@@ -69,8 +80,9 @@ mutation was performed.
 | catalog bindings | common autorun, reviewer-fast, pre-commit sources and hook-chain assertions | PASS |
 | ADIF promotion | ADIF-0057 fields, existing checker paths, bounded Machine Enforcement and Claim Boundary sections | PASS_BOUNDED |
 | ADIF-0052 attribution | entry existed at review base `fd711820a`; not in manifest | PASS: PRE_EXISTING_OUT_OF_SCOPE |
-| maintainability | current line counts and governed thresholds | PASS: checker 302; focused tests 164; template 1115 |
+| maintainability | current line counts and governed thresholds | PASS: checker 326; focused tests 183; template 1115 |
 | external effect and commit | status, staging, command inventory | PASS: zero external effect; no reviewer commit |
+| post-material choreography | Step 4/4A and both failed pre-closure outcomes | REPAIR_REQUIRED: continuity must precede clean split-range closure |
 
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
 
@@ -84,11 +96,12 @@ preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
 | ADIF-0057-MH-T1-F4 | Common autorun, reviewer-fast, and pre-commit catalogs bind the checker, with focused hook assertions. | exact catalog diff and hook tests | PASS |
 | ADIF-0057-MH-T1-F5 | ADIF-0057 promotion is bounded to declared repository artifacts and configured gates/hooks. | entry fields, Machine Enforcement section, and Claim Boundary | PASS_BOUNDED |
 | ADIF-0057-MH-T1-F6 | ADIF-0052 is not caused or repaired by this tranche. | present at base `fd711820a`; absent from changed manifest | PASS_PRE_EXISTING_ATTRIBUTION |
+| ADIF-0057-MH-T1-F7 | The accepted graph ordered committed-range closure before continuity, but GC-020 needs the real latest material SHA in the active handoff while range-shape/finality requires a clean split range. | clean stale-handoff failure plus dirty mixed-range failure after material `670a7979d`; canonical choreography Step 4/4A | REVIEWER_CORRECTED |
 
-Final position: accept and close ADIF-0057-MH-T1 bounded after the disclosed
-reviewer repair. Findings are consolidated; no waiver or worker redispatch is
-required. The exact material set is the eleven worker paths plus this
-completion review.
+Final position: retain bounded acceptance after preserving F1 and correcting
+F7. Findings are consolidated; no waiver or worker redispatch is required. The
+exact seven-path corrective commit is authorized, followed by a separate
+real-SHA continuity commit and then clean split-range pre-closure.
 
 ## Reviewer Repair Record
 
@@ -97,18 +110,21 @@ completion review.
 | `governance/compat/check_gate_to_role_closeability.py` | Added exact fail-closed `dispatch_continuity` owner, phase, handoff-marker surface, commit-class and dependency checks; rejected implementation-proof bypass. | actual graph clean; malformed graph produces six diagnostics |
 | `governance/compat/test_check_gate_to_role_closeability.py` | Added missing-dispatch-continuity, bypass, and wrong-commit-route regressions; made the valid fixture truthful. | combined focused checker/hook proof 20/20 PASS |
 | worker return | Added a reviewer correction notice and reconciled final line/test evidence. | artifact guards and diff check PASS |
+| work order | Reversed terminal dependencies and reconciled the Control Artifact Commit Plan so continuity records the latest material/corrective SHA before clean closure. | actual graph clean and plan no longer circular |
+| standard and ADIF-0057 | Recorded the post-material live contradiction and bounded corrected rule. | claim remains repository-local and prospective |
+| checker and focused tests | Ordered continuity phase 6 before post-material closure phase 7; required terminal review -> continuity -> committed-range closure. | combined focused checker/hook proof 21/21; reversed-order probe rejected |
+| authorization and completion reviews | Authorized the exact corrective set and retained both reviewer findings transparently. | targeted artifact gates PASS |
 
 No algorithm redesign, authority expansion, helper path, or new worker path was
 introduced.
 
 ## Risk / Corrective Action
 
-The repaired checker now closes the identified fail-open lane without claiming
-semantic architecture validation or universal interception. A future packet
-must use a separate dispatch-continuity commit owned by the session-sync
-steward before implementation proof can proceed. Out-of-band tools, runtime,
-provider/live behavior, public sync, deployment, and production remain outside
-the claim.
+The repaired checker closes both fail-open lanes without claiming semantic
+architecture validation or universal interception. After any material or
+corrective-material commit, continuity must record its real SHA before clean
+split-range closure. If closure then finds another material defect, a new
+corrective commit requires a new continuity commit before rerun.
 
 ## Return-Time Closeability Recheck
 
@@ -124,16 +140,15 @@ workerRedispatchAllowed: NO
 
 | Set | Count | Result |
 |---|---:|---|
-| required worker manifest | 11 | PASS |
-| actual worker changed paths before completion artifact | 11 | PASS |
-| reviewer repairs inside worker manifest | 3 | PASS |
-| reviewer-owned control artifacts outside worker manifest | 1 | this completion review only |
-| material commit set | 12 | AUTHORIZED |
+| required worker manifest | 11 | committed in material history |
+| original material set including completion review | 12 | committed at `670a7979d` |
+| current corrective implementation/control paths | 5 | corrected standard, ADIF, work order, checker and test |
+| reviewer-owned corrective review paths | 2 | authorization and completion reviews |
+| exact corrective commit set | 7 | AUTHORIZED |
 | staged paths | 0 | PASS |
 
-The eleven worker paths are the exact paths listed in the work order and worker
-return. No deletion, rename, helper, session-continuity, baseline, work-order,
-authorization-review, provider, or public path is part of the material set.
+No deletion, rename, helper, handoff/session-continuity, provider, or public
+path is part of the corrective set.
 
 ## Independent Command Evidence
 
@@ -146,11 +161,14 @@ authorization-review, provider, or public path is part of the material set.
 | disconnected/wrong-commit continuity mutation probe | determine whether mandatory GC-020 semantics were presence-only | initially fail-open; reviewer repair applied |
 | final malformed continuity probe | prove owner/surface/commit/dependency failures are rejected | six expected diagnostics |
 | return contradiction probe | independently verify no-redispatch fail-stop | `contradictory_redispatch` returned |
-| focused checker plus hook tests after repair | verify only repaired semantic and binding cluster | 20/20 PASS |
+| focused checker plus hook tests after F1 repair | verify the first repaired semantic and binding cluster | 20/20 PASS |
 | actual work-order checker call | detect false positive against accepted graph | zero violations |
-| current line-count inspection | verify maintainability claims after repair | checker 302; tests 164; template 1115 |
+| current line-count inspection | verify maintainability claims after F7 repair | checker 326; tests 183; template 1115 |
 | targeted completion-artifact guards and `git diff --check` | confirm review-cost, closure package, read-ahead, trace, external routing, learning, delta and whitespace shape | PASS |
 | ADIF entry integrity | verify ADIF-0057 promotion and attribute unrelated debt | ADIF-0057 clean; sole repository violation is pre-existing ADIF-0052 dangling `governance/compat/check_project_knowledge.py` source |
+| clean material-range pre-closure | test GC-020 with no pending continuity | FAIL as evidence: active handoff lacks `670a7979d` |
+| material range with pending handoff update | test whether continuity can be mixed into the same closure attempt | FAIL as evidence: range-shape/finality rejects dirty mixed range |
+| corrected terminal-order probe | verify reversed ordering is rejected and accepted graph remains clean | 21/21 focused checker/hook PASS; actual checker zero violations |
 
 ## Checker Source Read-Ahead Block
 
@@ -174,7 +192,7 @@ authorization-review, provider, or public path is part of the material set.
 
 ## Review-Cost Telemetry
 
-reviewRoundCount: 1
+reviewRoundCount: 2
 
 workerRepairTurnCount: 0
 
@@ -188,15 +206,15 @@ providerCallCount: 0
 
 tokenOrQuotaUsage: 0
 
-valueDelta: one bounded adversarial probe converted dispatch continuity from a presence-only declaration into enforced pre-implementation GC-020 sequencing
+valueDelta: preserved F1 and converted the post-material GC-020 ordering contradiction into enforced corrective commit -> real-SHA continuity -> clean split-range closure
 
 stopDisposition: COMPLETE_REVIEW
 
-materialCommitCount: 1
+materialCommitCount: 2
 
 continuityCommitCount: 1
 
-commitPlanDisposition: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY
+commitPlanDisposition: EXCEPTION_WITH_REASON: named post-material GC-020 ordering contradiction requires one corrective material commit before continuity and clean committed-range closure
 
 latencyDisposition: NOT_MEASURED_WITH_REASON: exact governed elapsed-time telemetry is unavailable
 
@@ -207,6 +225,7 @@ avoidableDelayClass: NONE
 | Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |
 |---|---|---|---|---|---|
 | mandatory gate presence did not enforce its required sequencing semantics | MACHINE_GATE_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | retain focused regressions for exact dispatch-continuity owner, surface, commit and dependency route | handled by reviewer repair |
+| committed-range closure preceded the real-SHA continuity evidence it requires | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_ADDED | enforce terminal review -> continuity -> committed-range closure and reconcile the commit plan | handled by corrective review |
 | ADIF-0052 dangling source remains pre-existing | RULE_GAP | DOCUMENTATION_ONLY_LEARNING | N/A_WITH_REASON | preserve attribution; do not widen this tranche | deferred outside authority |
 
 Runtime/provider/cost lane: N/A_WITH_REASON - deterministic repository review;
@@ -216,16 +235,17 @@ zero provider/live/runtime/quota/cost behavior was exercised.
 
 ### Expected Result / Prediction
 
-A malformed graph that merely names `dispatch_continuity` while bypassing its
-GC-020 sequence should fail, and a contradictory return should forbid worker
+A malformed graph that bypasses either post-dispatch or post-material
+continuity should fail, and a contradictory return should forbid worker
 redispatch.
 
 ### Evidence Comparison
 
 The returned checker rejected contradictory redispatch but initially accepted
-the disconnected/wrong-commit continuity graph. After the bounded repair, the
-same graph yields six diagnostics and the accepted graph remains clean; the
-focused cluster passes 20/20.
+the disconnected/wrong-commit dispatch continuity graph, then the first
+accepted terminal graph failed live pre-closure because it reversed GC-020
+continuity and clean range closure. The focused cluster passed 20/20 after F1
+and now passes 21/21 after F7; the accepted graph remains clean.
 
 ### Contradiction Or Gap Disposition
 
@@ -254,14 +274,14 @@ implementation quality, and out-of-band execution remain unclaimed.
 
 - Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
 
-N/A with reason: exact eleven-path implementation review, not a corpus rescan
+N/A with reason: exact seven-path corrective review, not a corpus rescan
 or refreshed external intake.
 
 ## Corpus Completeness And Report Integrity
 
 - Corpus verdict: NOT_APPLICABLE_WITH_REASON - no complete scan, inventory, or
   all-files-read claim is made; review scope is the named authority cluster and
-  exact eleven-path manifest.
+  exact corrective manifest.
 
 ## Agent Operation Trace Block
 
@@ -269,20 +289,20 @@ or refreshed external intake.
 |---|---|
 | Actor | independent completion reviewer |
 | Provider or surface | local private provenance workspace |
-| Session or invocation | ADIF-0057-MH-T1 completion review 2026-09-10 |
+| Session or invocation | ADIF-0057-MH-T1 post-material corrective review 2026-09-10 |
 | Working directory | repository root |
 | Command or tool surface | governed reads, exact diff/status inspection, in-memory Python probes, `apply_patch`, focused pytest, targeted artifact guards |
-| Target paths | exact eleven worker paths plus this completion review |
+| Target paths | exact seven-path corrective set |
 | Allowed scope source | accepted work order Reviewer Closure Conversion and independent-review assignment |
-| Before status evidence | HEAD `fd711820a`; exact eleven worker paths pending; staging empty |
-| After status evidence | two implementation paths and worker return repaired in-manifest; this completion review added; staging remains empty |
+| Before status evidence | material HEAD `670a7979d`; five correction paths pending; handoff absent from worktree |
+| After status evidence | work-order plan reconciled; both reviewer artifacts updated; exact seven paths pending; staging empty |
 | Diff evidence | Git worktree union, exact manifest reconciliation, `git diff --check` |
-| Approval boundary | reviewer-local repair inside exact manifest plus completion control artifact only |
+| Approval boundary | exact seven-path corrective set only; no commit or continuity mutation |
 | Claim boundary | static repository machine enforcement only; no continuity, provider/live, public, push, deploy, or production action |
 | Agent type | independent reviewer |
 | Invocation ID | `adif-0057-mh-t1-independent-completion-review-2026-09-10` |
-| Expected manifest | exact eleven worker paths plus this completion review |
-| Actual changed set | exact eleven worker paths plus this completion review |
+| Expected manifest | exact seven-path corrective set |
+| Actual changed set | exact seven corrective paths |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename occurred. |
 
@@ -307,7 +327,7 @@ or refreshed external intake.
 | exact worker manifest | eleven expected paths and eleven actual paths | PASS |
 | mandatory dispatch continuity | exact session-sync owner, active-handoff marker, separate commit class and dependency chain | PASS_AFTER_REVIEWER_REPAIR |
 | return-time no-redispatch contradiction | malformed return yields `contradictory_redispatch` | PASS |
-| final focused evidence | checker and hook cluster 20/20 | PASS |
+| final focused evidence | checker and hook cluster 21/21 | PASS |
 | external action | none | PASS_BOUNDED |
 
 ## Machine Closure Package
@@ -321,18 +341,28 @@ or refreshed external intake.
 | Registry Markdown | no registry Markdown mutation authorized | corpus/search registry is outside this exact manifest | BLOCKED with reason: not applicable to bounded checker closure |
 | External evidence digest | no new external artifact consumed | repository-governed source evidence only | N/A with reason: no external digest |
 | System loop interlock | graph plus return-time fail-stop | dispatch continuity, no-redispatch contradiction, committed-range route | PASS |
-| Session continuity | separate post-material continuity commit | explicitly excluded from current material set | PASS bounded to declared choreography |
-| Worker implementation | exact eleven-path manifest | final focused 20/20 and bounded probes | PASS |
+| Session continuity | separate post-corrective continuity commit | must record the real corrective SHA before pre-closure | BLOCKED with reason: intentionally follows corrective commit |
+| Worker implementation | original material plus bounded corrective set | final focused 21/21 and bounded probes | PASS |
 | ADIF promotion | ADIF-0057 | bounded `MACHINE_CHECKED` claim | PASS_BOUNDED |
 
-## Material Commit Authorization
+## Corrective Commit Authorization
 
-Material commit: AUTHORIZED
+Corrective commit: AUTHORIZED
 
-The closer may commit exactly the eleven worker-manifest paths plus this
-completion review as one material commit. No other path is authorized. The
-non-empty committed-range closure must follow; any failure uses the declared
-corrective-material route before a separate continuity commit.
+The closer may commit exactly these seven paths:
+
+- `docs/reference/CVF_GATE_TO_ROLE_CLOSEABILITY_MACHINE_STANDARD.md`
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0057.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_ADIF_0057_MH_T1_GATE_TO_ROLE_CLOSEABILITY_MACHINE_ENFORCEMENT_2026-09-10.md`
+- `governance/compat/check_gate_to_role_closeability.py`
+- `governance/compat/test_check_gate_to_role_closeability.py`
+- `docs/reviews/CVF_ADIF_0057_MH_T1_GATE_TO_ROLE_CLOSEABILITY_AUTHORIZATION_REVIEW_2026-09-10.md`
+- this completion review
+
+No other path is authorized. After this commit, the session-sync steward must
+create a separate continuity commit recording the real corrective SHA. Only
+then may the reviewer rerun non-empty clean split-range pre-closure. A later
+material correction repeats corrective commit -> continuity -> pre-closure.
 
 ## No-Commit Statement
 
