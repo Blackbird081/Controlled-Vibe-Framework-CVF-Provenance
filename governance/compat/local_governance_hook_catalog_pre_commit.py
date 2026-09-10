@@ -92,6 +92,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_review_cost_control.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
+            "gate-to-role closeability",
+            ["python", "governance/compat/check_gate_to_role_closeability.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "worker-return quality gate",
             ["python", "governance/compat/check_worker_return_quality_gate.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),

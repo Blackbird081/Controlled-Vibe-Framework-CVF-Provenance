@@ -17,11 +17,11 @@ roles: dispatcher; worker; reviewer; closer
 lifecyclePhases: pre-dispatch; pre-implementation; pre-closure
 surfaceSelectors: docs/work_orders/*.md with exact manifests, role-owned generated outputs, file-size split requirements, and multi-round reviewer returns
 detectionSignals: required gate can be repaired only through later-role paths; file-size or generated-output rule forces paths outside the frozen manifest; worker returns an outside-authority blocker; reviewer sends another repair prompt without closeability classification; operator learns of the authority contradiction only after repeated rounds
-enforcementLevel: PARTIAL_CHECK
-checkerBindings: governance/compat/check_review_cost_control.py
-promotionState: STANDARD_UPDATED
+enforcementLevel: MACHINE_CHECKED
+checkerBindings: governance/compat/check_gate_to_role_closeability.py; governance/compat/check_review_cost_control.py
+promotionState: PROMOTED
 supersedes: NONE
-lastVerifiedCommit: bee38695e
+lastVerifiedCommit: fd711820a
 roadmapSeedId: NONE
 ```
 
@@ -107,15 +107,16 @@ the packet can be uncloseable while the worker also has real defects.
 5. Escalate only material business, risk, authority, external-effect,
    irreversible-action, budget, or claim-ceiling decisions to the operator,
    using plain language suitable for a non-coder.
-6. Design a future pre-dispatch machine check for declared gate-to-role
-   closeability. Do not infer code architecture or automatically widen scope.
+6. Enforce the declared gate-to-role graph at pre-dispatch, return review,
+   common autorun, reviewer-fast, and pre-commit boundaries. Do not infer code
+   architecture or automatically widen scope.
 
 ## Finding-To-Governance Learning Disposition
 
 | Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |
 |---|---|---|---|---|---|
 | Frozen path and role sequencing can make required closure unreachable | `ORCHESTRATOR_PACKET_GAP`; `PHASE_GATE_PLACEMENT_GAP` | `GOVERNANCE_CONTROL_PLANE` | `STANDARD_UPDATED` | Bind closeability and agent-intelligence preservation to the learning philosophy and Review Cost SOP | Handled in this learning batch |
-| Existing round-cost enforcement detects the loop only after repair churn | `MACHINE_GATE_GAP` | `GOVERNANCE_CONTROL_PLANE` | `MACHINE_CHECK_CANDIDATE` | Design a pre-dispatch declaration/check that maps gates, mutation surfaces, roles, and phases without prescribing implementation topology | Deferred to a separately reviewed checker tranche |
+| Existing round-cost enforcement detects the loop only after repair churn | `MACHINE_GATE_GAP` | `GOVERNANCE_CONTROL_PLANE` | `MACHINE_CHECK_ADDED` | `check_gate_to_role_closeability.py` validates declared gates, mutation surfaces, roles, phases, dependencies, topology and commit owners without prescribing code architecture | Handled by ADIF-0057-MH-T1 |
 | Reviewer did not stop and notify the operator at the first known packet contradiction | `PHASE_GATE_PLACEMENT_GAP` | `GOVERNANCE_CONTROL_PLANE` | `STANDARD_UPDATED` | Apply the return-time closeability and plain-language operator notice rule at the first returned evidence boundary | Handled in this learning batch |
 | P4-E also exposed independent replay/CAS/test defects | `WORKER_EXECUTION_ERROR` | `GOVERNANCE_CONTROL_PLANE` | `RULE_EXISTS` | Preserve those as project repair findings; do not use the packet defect to erase or excuse them | Deferred to the project repair use case |
 
@@ -136,6 +137,19 @@ review`, role `reviewer`, lifecycle phase `pre-closure`, and risk ceiling
   it confirms that a correct worker fail-stop can expose a dispatcher defect.
 - `ADIF-0057`: this entry; new exact pattern not previously represented.
 
+## Machine Enforcement
+
+`governance/compat/check_gate_to_role_closeability.py` prospectively checks
+changed executable work orders and changed worker-return/completion-review
+artifacts. It is wired into common autorun phases, reviewer-fast, and
+pre-commit. Focused cases cover missing mandatory gates, missing owners,
+late-only repair authority, unknown dependencies, cycles, inconsistent
+topology/split declarations, and redispatch against a packet contradiction.
+
+The machine claim is bounded to declared repository artifacts and configured
+CVF gates/hooks. It does not prove comprehension, infer implementation design,
+or intercept out-of-band tools.
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
@@ -148,10 +162,10 @@ review`, role `reviewer`, lifecycle phase `pre-closure`, and risk ceiling
 | Target paths | this entry; ADIF entries front door; binding learning philosophy; Review Cost standard |
 | Allowed scope source | operator instruction on 2026-09-10 to absorb the P4-E findings into CVF foundation before project repair |
 | Before status evidence | CVF had separate scope, review-cost, semantic-convergence, and fault-attribution rules but no explicit return-time closeability invariant combining gate phase, repair surface, and role authority |
-| After status evidence | active philosophy and reviewer SOP carry the invariant; this entry is resolver-discoverable; machine prevention remains explicitly deferred |
+| After status evidence | the invariant is machine-checked on changed governed packets through autorun and hook catalogs; semantic implementation judgment remains unconstrained |
 | Diff evidence | bounded four-path learning diff in the private provenance repository |
 | Approval boundary | governance learning and reviewer/orchestrator procedure only |
-| Claim boundary | written and resolver-discoverable prevention guidance; no new checker, runtime behavior, provider/live proof, project repair, public sync, commit, or deployment claim |
+| Claim boundary | static declared-topology checker and configured repository bindings only; no runtime interception, provider/live proof, project repair, public sync, push, or deployment claim |
 | Agent type | orchestrator/reviewer |
 | Invocation ID | `p4e-authority-closeability-learning-2026-09-10` |
 | Expected manifest | this entry; ADIF entries front door; binding learning philosophy; Review Cost standard |
@@ -165,10 +179,34 @@ DEFERRED_PRIVATE_ONLY
 Reason: private provenance governance learning. No public-sync action or public
 catalog claim is authorized.
 
+## Epistemic Process Block
+
+### Expected Result / Prediction
+
+Adding an explicit responsibility graph and early checker bindings should turn
+the recurring authority-envelope defect from late human discovery into an
+early, repair-routed machine failure.
+
+### Evidence Comparison
+
+The dedicated checker and focused negative cases cover absent owners, late
+repair authority, dependency errors, topology mismatch, and contradictory
+redispatch; configured autorun and hook catalogs invoke it.
+
+### Contradiction Or Gap Disposition
+
+The missing dispatch-continuity edge found during authorization was corrected
+before implementation and promoted into the mandatory gate vocabulary.
+
+### Claim Update
+
+The defect is promoted from `PARTIAL_CHECK` to bounded `MACHINE_CHECKED`; this
+does not claim universal interception or semantic understanding.
+
 ## Claim Boundary
 
-This entry records a reusable control-plane defect and updates written reviewer
-and orchestrator duties. It does not prove universal semantic detection, grant
-automatic scope expansion, constrain ordinary implementation intelligence,
-implement a new machine guard, repair the P4-E project, or authorize provider,
-live, public, deployment, push, or production action.
+This entry records a reusable control-plane defect and its bounded machine
+guard. It does not prove universal semantic detection, grant automatic scope
+expansion, constrain ordinary implementation intelligence, repair the P4-E
+project, or authorize provider, live, public, deployment, push, or production
+action.

@@ -86,6 +86,16 @@ Review-Dispatch Convergence Control: REQUIRED; copy the exact scalar fields and 
 the pre-dispatch gate rejects review-by-drip, round-three auto-dispatch,
 unknown external usage, and a reached parent-assignment invocation ceiling.
 
+## Gate-To-Role Closeability Contract
+
+Every ready work order must copy the versioned graph contract from
+`docs/reference/CVF_GATE_TO_ROLE_CLOSEABILITY_MACHINE_STANDARD.md`. Map every
+mandatory gate to its pass deadline, repair owner/phase, complete mutation
+surface, topology, commit owner/phase, and dependencies. Use a bounded path
+family when ordinary file topology is not honestly predictable; never widen a
+protected path implicitly. Worker returns and completion reviews must record a
+Return-Time Closeability Recheck before another repair dispatch.
+
 ## Architecture Readiness Admission
 Full contract: `docs/reference/CVF_ARCHITECTURE_READINESS_ADMISSION_STANDARD_2026-09-07.md` (DARA-T2-R1).
 Schema, applicability, allowed declarations, closed chain, fault attribution, quota, echo, and evidence truth are
@@ -745,33 +755,11 @@ path — a `governance/compat/*.py` checker, any `CVF_SESSION/**` state/handoff
 file, `CVF_SESSION_MEMORY.md`, or an `AGENT_HANDOFF*.md` file — the work order
 itself must carry a `Core Guard Self-Protection Authorization` block.
 
-Required fields:
-
-- `## Core Guard Self-Protection Authorization` heading;
-- `Authorized guard-maintenance scope`;
-- `Protected paths` — a list of every protected path authorized;
-- `Operator authorization` — the governance authority that permits the change;
-- `Rollback boundary` — what may and must not be reverted if rejected.
-
-Omitting this block when a protected path is in scope is a dispatch-quality
-violation (enforced by `governance/compat/check_work_order_dispatch_quality.py`).
-
-Example skeleton:
-
-```text
-## Core Guard Self-Protection Authorization
-
-Authorized guard-maintenance scope: <permitted guard/state change; out-of-scope note>.
-
-Protected paths:
-
-- governance/compat/check_<name>.py
-- CVF_SESSION/ACTIVE_SESSION_STATE.json
-
-Operator authorization: <instruction or governance authority>.
-
-Rollback boundary: revert only <this change> if rejected; do not revert <prior closures>.
-```
+The block must name: Authorized guard-maintenance scope, every Protected path,
+Operator authorization, and Rollback boundary. The authoritative shape and
+enforcement live in `governance/compat/check_core_guard_self_protection.py` and
+`governance/compat/check_work_order_dispatch_quality.py`; do not maintain a
+second example copy here.
 
 ## 8. Execution Plan
 
@@ -815,23 +803,11 @@ Canonical standard:
 
 `docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md`
 
-Required block:
-
-| Field | Evidence |
-| --- | --- |
-| Actor | <agent/operator/provider role> |
-| Provider or surface | <Codex, Claude, CLI, IDE tab, MCP, browser, etc.> |
-| Session or invocation | <session id, commit range, or N/A with reason> |
-| Working directory | <cwd or repo root> |
-| Command or tool surface | <commands/tools used; safe summaries allowed> |
-| Target paths | <changed or intended paths> |
-| Allowed scope source | <operator instruction, roadmap, GC-018, work order> |
-| Before status evidence | <git status --short, base HEAD, or N/A with reason> |
-| After status evidence | <git status --short or closure status evidence> |
-| Diff evidence | <git diff --name-status / committed range> |
-| Approval boundary | <what was authorized and by whom/source> |
-| Claim boundary | <repo-local trace only; no OS/user attribution unless separately proven> |
-| Deletion or rename disposition | <required only when protected paths are deleted/renamed; otherwise N/A with reason> |
+Use the canonical field list from the standard above. At minimum record actor,
+surface, invocation, working directory, tools, targets, scope source,
+before/after status, diff, approval and claim boundaries. Add deletion/rename
+disposition only when applicable; do not copy provider-specific authority into
+the trace.
 
 ## 8C. Epistemic Process Block (FPC-T3-C04)
 
@@ -1049,55 +1025,15 @@ waiver for this work order.
 
 ## 12. Closure Checklist
 
-- [ ] All acceptance criteria satisfied or explicitly marked N/A with reason
-- [ ] Required tests or evidence commands run
-- [ ] Autorun `pre-closure` gate passed:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD`
-- [ ] Commit mode recorded as `WORKER_MAY_COMMIT` or `WORKER_MUST_NOT_COMMIT`
-- [ ] `dispatchBaseHead`, `executionBaseHead`, and closure-stage base evidence
-  recorded without treating a stale dispatch anchor as current worker proof
-- [ ] For `WORKER_MUST_NOT_COMMIT`, pending handoff used a non-closed status,
-  recorded actual `git status --short`, and left committed-range
-  `pre-closure` to reviewer / committer
-- [ ] For `WORKER_MUST_NOT_COMMIT`, Worker Pending-Return Gate results are
-  recorded, required component-gate failures inside Allowed scope are repaired,
-  and remaining failures are explicitly `BLOCKED`, `N/A with reason`, or
-  `FAIL_EXPECTED_PENDING_FINALITY`
-- [ ] For `WORKER_MUST_NOT_COMMIT`, worker-return fast gate result is recorded
-  with focused pytest targets when applicable
-- [ ] Agent Operation Trace Block is present and complete for this work order,
-  worker return, or completion review
-- [ ] Closure gate used a non-empty committed diff range; no `--base HEAD --head HEAD`
-- [ ] Changed-file set from `git diff --name-status` is inside this work
-  order's Allowed scope, or every extra path has explicit operator/work-order
-  authorization
-- [ ] If this closes a multi-tranche connector wave roadmap, the pre-closure
-  range includes all tranche artifacts, not only the final tranche
-- [ ] Any line-count threshold or "actual line count" claim is current and
-  command-backed
-- [ ] Roadmap-to-work-order trace matrix final statuses are PASS or N/A with reason
-- [ ] Closure Diff Gate completed: roadmap, work order, final artifact, and
-  completion claims were compared
-- [ ] Claim Integrity Scan completed with `git diff --name-status`,
-  `git status --short`, committed diff output, receipt, command output, or N/A
-  evidence for file-change and boundary claims
-- [ ] Fail conditions checked and absent, or work returned BLOCKED
-- [ ] No open checkbox residue remains in roadmap, work order, completion
-  packet, or public-sync checklist
-- [ ] No closed work order contains unresolved `HOLD`, `PENDING`, or
-  `READY_FOR_DISPATCH` checklist rows or stale dispatch-blocking prose
-- [ ] Public catalog updated or explicitly N/A with reason
-- [ ] Public/provenance repository boundary checked if public files changed
-- [ ] GC-020 handoff updated with current HEAD after commit
-- [ ] Post-commit active-session gate passed:
-  `python governance/compat/check_active_session_state.py --enforce`
-- [ ] Active session front door and state registry updated if mode, next
-  allowed move, public-sync status, roadmap status, or handoff status changed
-- [ ] Completion packet filed if the roadmap requires one
-- [ ] Changed files listed for reviewer
-- [ ] No closed-equivalent claim remains if any autorun phase gate failed
-- [ ] Any allowed-scope autorun/guard failure was repaired and rerun, not left
-  as an operator preference checkpoint
+- [ ] Acceptance, exact changed set, source/claim integrity and required tests pass.
+- [ ] Closeability graph and return-time recheck have no unresolved blocker.
+- [ ] Worker-return fast, reviewer-fast, pre-commit and non-empty committed-range closure pass as applicable.
+- [ ] Commit mode, execution base, role ownership and material/continuity choreography are truthful.
+- [ ] No open checkbox, stale terminal token, failed required gate, or unowned path remains.
+- [ ] Public export, repository boundary, active continuity and GC-020 are synchronized when applicable.
+
+The detailed machine-owned closure requirements are the current checker and
+autorun catalogs; this compact checklist is not a duplicate source of truth.
 
 ## 13. Return-To-Orchestrator Conditions
 

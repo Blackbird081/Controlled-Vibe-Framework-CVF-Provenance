@@ -108,6 +108,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             head,
         ),
         _range_command(
+            "gate-to-role closeability",
+            "governance/compat/check_gate_to_role_closeability.py",
+            base,
+            head,
+        ),
+        _range_command(
             "worker-return quality gate",
             "governance/compat/check_worker_return_quality_gate.py",
             base,

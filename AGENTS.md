@@ -100,6 +100,7 @@ entry points:
 |---|---|
 | Startup / resume | `CVF_SESSION_MEMORY.md`; bootstrap read model; active handoff |
 | Work-order authoring / dispatch | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` |
+| Gate-to-role closeability | `docs/reference/CVF_GATE_TO_ROLE_CLOSEABILITY_MACHINE_STANDARD.md`; `governance/compat/check_gate_to_role_closeability.py` |
 | Worker execution | `docs/reference/guard_orientation/README.md`; governing work order |
 | Reviewer / closure | Review Cost standard; MFRP roadmap; `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md` |
 | Session-sync | active handoff; `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
