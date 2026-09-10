@@ -1,0 +1,48 @@
+{
+  "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+  "evidence": [
+    {
+      "path": "docs/reviews/evidence/post-adif0057-live-release-gate-result-2026-09-10.json",
+      "sha256": "a73cf9109280587de269f4fe79a53bb2355c8f9998b80600f79408dd82a8771f",
+      "sizeBytes": 3603
+    },
+    {
+      "path": "docs/reviews/evidence/post-adif0057-live-release-gate-sot3-diagnostic-2026-09-10.json",
+      "sha256": "56810dbe053701f037bc57dba6888edca202e147bb4f3ec7f04834bd2a671bf3",
+      "sizeBytes": 544
+    },
+    {
+      "path": "docs/reviews/evidence/post-adif0057-live-release-gate-e2e-diagnostic-2026-09-10.json",
+      "sha256": "94c95a363b496408726caef3318580f66568ef1edc1e752880fe6c28e014aadb",
+      "sizeBytes": 381
+    }
+  ],
+  "externalAnchor": {
+    "anchorId": "",
+    "anchorUrl": "",
+    "status": "NOT_PROVIDED"
+  },
+  "generatedAt": "2026-09-10T04:44:36.159321+00:00",
+  "repository": {
+    "branch": "main",
+    "commit": "157c8f6cb517c75bbb5f949282ae2955cb2ace74",
+    "dirtyStatus": "M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results/.last-run.json\n?? docs/reviews/evidence/post-adif0057-live-release-gate-e2e-diagnostic-2026-09-10.json\n?? docs/reviews/evidence/post-adif0057-live-release-gate-result-2026-09-10.json\n?? docs/reviews/evidence/post-adif0057-live-release-gate-sot3-diagnostic-2026-09-10.json",
+    "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+  },
+  "rerun": {
+    "acceptedSecretEnv": [
+      "DASHSCOPE_API_KEY",
+      "ALIBABA_API_KEY",
+      "CVF_ALIBABA_API_KEY",
+      "CVF_BENCHMARK_ALIBABA_KEY"
+    ],
+    "command": "python scripts/run_cvf_release_gate_bundle.py --sot3-diagnostic-output <path> --e2e-diagnostic-output <path> --json",
+    "requiresLiveProviderKey": true
+  },
+  "schema": "cvf.liveEvidenceManifest.v1",
+  "signature": {
+    "algorithm": "hmac-sha256",
+    "digest": "",
+    "status": "UNSIGNED"
+  }
+}

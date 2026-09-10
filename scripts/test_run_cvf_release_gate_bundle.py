@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Hermetic regression tests for scripts/run_cvf_release_gate_bundle.py.
 
-Covers the two lanes repaired for the consolidated CVF release-gate findings
-packet: the `.private_reference/` secrets-scan allowlist (exact-path plus
-exact-line fingerprint matching, never a directory-wide bypass) and the
-structural-build-only Auth.js environment placeholders injected into the
-`npm run build` subprocess environment.
+Covers the release-runner lanes repaired across the consolidated findings:
+the `.private_reference/` secrets-scan allowlist (exact-path plus exact-line
+fingerprint matching, never a directory-wide bypass), the structural-build-
+only Auth.js environment placeholders, and isolated/canonical Next.js state
+for the build, mock E2E, and live E2E subprocesses.
 
 Zero real network calls. Zero real npm/npx/subprocess execution -- every
 `check_web_build` case monkeypatches `bundle.run_cmd` so no real build ever
@@ -178,6 +178,7 @@ class WebBuildStructuralEnvTests(unittest.TestCase):
             self.assertIn(key, captured_env)
             if not os.environ.get(key):
                 self.assertEqual(captured_env[key], placeholder_value)
+        self.assertEqual(captured_env["NEXT_DIST_DIR"], bundle.WEB_BUILD_DIST_DIR)
 
     def test_operator_supplied_env_value_is_never_overwritten(self):
         operator_secret = "operator-real-nextauth-secret-do-not-overwrite"
@@ -231,6 +232,54 @@ class WebBuildStructuralEnvTests(unittest.TestCase):
         self.assertEqual(result.status, "PASS")
         run_cmd_mock.assert_called_once()
         subprocess_run_mock.assert_not_called()
+
+
+class E2eRuntimeIsolationTests(unittest.TestCase):
+    """The canonical runner gives build/mock/live independent Next.js state."""
+
+    def setUp(self) -> None:
+        self._cvf_web_patch = mock.patch.object(bundle, "CVF_WEB", REPO_ROOT)
+        self._cvf_web_patch.start()
+
+    def tearDown(self) -> None:
+        self._cvf_web_patch.stop()
+
+    def _captured_env_for(self, live: bool) -> dict[str, str]:
+        captured_env: dict[str, str] = {}
+
+        def fake_run_cmd(cmd, cwd=None, timeout=300, env=None):
+            captured_env.update(env or {})
+            return 0, "1 passed", ""
+
+        patches = [mock.patch.object(bundle, "run_cmd", side_effect=fake_run_cmd)]
+        if live:
+            patches.append(mock.patch.object(bundle, "bootstrap_live_provider_env"))
+            patches.append(mock.patch.dict(os.environ, {"DASHSCOPE_API_KEY": "test-only-key"}))
+
+        entered = []
+        try:
+            for patcher in patches:
+                entered.append(patcher)
+                patcher.start()
+            result = bundle.check_e2e(dry_run=False, live=live)
+        finally:
+            for patcher in reversed(entered):
+                patcher.stop()
+
+        self.assertEqual(result.status, "PASS")
+        return captured_env
+
+    def test_mock_and_live_use_distinct_dist_dirs_ports_and_canonical_hosts(self):
+        mock_env = self._captured_env_for(False)
+        live_env = self._captured_env_for(True)
+
+        self.assertEqual(mock_env["NEXT_DIST_DIR"], ".next-cvf-release-gate-e2e-mock")
+        self.assertEqual(live_env["NEXT_DIST_DIR"], ".next-cvf-release-gate-e2e-live")
+        self.assertNotEqual(mock_env["NEXT_DIST_DIR"], live_env["NEXT_DIST_DIR"])
+        self.assertEqual(mock_env["PLAYWRIGHT_BASE_URL"], "http://localhost:3011")
+        self.assertEqual(live_env["PLAYWRIGHT_BASE_URL"], "http://localhost:3012")
+        self.assertEqual(mock_env["CVF_PLAYWRIGHT_PORT"], "3011")
+        self.assertEqual(live_env["CVF_PLAYWRIGHT_PORT"], "3012")
 
 
 class E2eTimeoutClassificationTests(unittest.TestCase):

@@ -47,6 +47,17 @@ from cvf_release_e2e_diagnostic import (
     build_e2e_diagnostic,
 )
 from cvf_release_runtime_support import bootstrap_live_provider_env, platform_cmd
+from cvf_release_secret_scan_policy import (
+    PRIVATE_REFERENCE_SECRET_ALLOWLIST,
+    SCAN_EXTENSIONS,
+    SCAN_SKIP,
+    SECRET_PATTERNS,
+)
+from cvf_release_web_runtime_isolation import (
+    E2E_RUNTIME_ENV,
+    WEB_BUILD_DIST_DIR,
+    WEB_BUILD_STRUCTURAL_ENV,
+)
 
 REPO_ROOT = Path(__file__).parent.parent
 CVF_WEB = REPO_ROOT / "EXTENSIONS" / "CVF_v1.6_AGENT_PLATFORM" / "cvf-web"
@@ -77,59 +88,6 @@ REQUIRED_DOCS = [
     REPO_ROOT / "docs" / "reference" / "CVF_KNOWN_LIMITATIONS_REGISTER_2026-04-21.md",
     REPO_ROOT / "docs" / "guides" / "CVF_DEMO_SCRIPT_2026-04-21.md",
 ]
-
-# Patterns that indicate a committed secret
-SECRET_PATTERNS = [
-    r"sk-[A-Za-z0-9]{20,}",                 # OpenAI / Anthropic-style keys
-    r"DASHSCOPE_API_KEY\s*=\s*['\"][^'\"]+", # Alibaba DashScope inline value
-    r"DEEPSEEK_API_KEY\s*=\s*['\"][^'\"]+",  # DeepSeek inline value
-    r"api[_-]?key\s*=\s*['\"][A-Za-z0-9_\-]{16,}['\"]",  # generic api_key = "..."
-    r"-----BEGIN (RSA|EC|OPENSSH) PRIVATE KEY-----",      # private keys
-    r"ghp_[A-Za-z0-9]{36}",                 # GitHub personal access token
-    r"ANTHROPIC_API_KEY\s*=\s*['\"][^'\"]+", # Anthropic inline value
-]
-
-# Files/dirs to skip in secrets scan
-SCAN_SKIP = {
-    ".git", "node_modules", "__pycache__", ".next", "dist", "build",
-    "coverage", ".nyc_output", "docs/audits", ".claude",  # receipts/local tool state contain masked or local keys
-}
-
-SCAN_EXTENSIONS = {".py", ".ts", ".tsx", ".js", ".jsx", ".env", ".json", ".md", ".yaml", ".yml", ".sh"}
-
-# Exact (relative path, matched line content) fingerprints for known non-live
-# secret-pattern matches inside pinned, read-only `.private_reference/` inputs:
-# a deliberate negative-test fixture (its whole purpose is to contain a fake
-# secret pattern so a detector under test rejects it) and DeepSeek Harness
-# source-mirror smoke-test placeholders. Matching is exact-path plus
-# exact-line, so any edited line, moved file, or genuine key substituted into
-# one of these files still fails the scan. This allowlist never applies
-# outside `.private_reference/`. Fingerprint strings are built with `.join()`
-# rather than written as literals so this allowlist definition does not
-# itself match SECRET_PATTERNS during this file's own scan.
-_FAKE_OPENAI_STYLE_KEY = "sk-" + "A" * 32
-_FAKE_DEEPSEEK_ENV_ASSIGNMENT = "".join(["DEEPSEEK", "_API_KEY = '", "keyless-installed-web-no-call", "'"])
-_FAKE_SMOKE_API_KEY_ASSIGNMENT = "api" + "_key=\"sk-keyless-smoke\","
-
-PRIVATE_REFERENCE_SECRET_ALLOWLIST: set[tuple[str, str]] = {
-    (
-        ".private_reference/legacy/CVF 23.07.done/CVF_CAPABILITY_ADMISSION_DISTRIBUTION_PROFILE/fixtures/negative/admission-with-secret.yaml",
-        f"  api_key: {_FAKE_OPENAI_STYLE_KEY}",
-    ),
-    (
-        ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/scripts/publish-npm-baseline.ts",
-        f"  environment.{_FAKE_DEEPSEEK_ENV_ASSIGNMENT}",
-    ),
-    (
-        ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/scripts/smoke-python-runtime.py",
-        f"            {_FAKE_SMOKE_API_KEY_ASSIGNMENT}",
-    ),
-    (
-        ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/scripts/smoke-python-runtime.py",
-        f"                {_FAKE_SMOKE_API_KEY_ASSIGNMENT}",
-    ),
-}
-
 
 @dataclass
 class CheckResult:
@@ -237,30 +195,6 @@ def check_capability_preflight(dry_run: bool) -> CheckResult:
     return CheckResult(name, "FAIL", message, command_summary)
 
 
-# Structural-build-only Auth.js placeholders. `auth.ts`'s
-# `validateAuthEnvironmentInvariants` (CADP-AI-T5-R5) fails closed outside
-# `NODE_ENV` in {test, development} unless NEXTAUTH_SECRET, GITHUB_ID,
-# GITHUB_SECRET, GOOGLE_ID, and GOOGLE_SECRET are all set. Without them, `next
-# build`'s page-data collection re-throws that invariant error once per
-# affected dynamic route across its worker pool, which is what actually drove
-# the reported 900-second timeout -- not compile-phase or memory-leak
-# slowness (the full build, including compile, typecheck, and page-data
-# collection, completes in approximately 3-5 minutes once these are
-# supplied; independent measurements were 264.6s, 193.4s, 195.9s and 183.1s).
-# These values are never used for live authentication: nothing consumes this
-# build's output as a running deployment. They follow the same non-secret
-# convention already used by `.github/workflows/ci.yml` (`ci-test-secret`,
-# `placeholder`).
-WEB_BUILD_STRUCTURAL_ENV = {
-    "NEXTAUTH_SECRET": "release-gate-structural-build-secret",
-    "NEXTAUTH_URL": "http://localhost:3000",
-    "GITHUB_ID": "release-gate-structural-build-placeholder",
-    "GITHUB_SECRET": "release-gate-structural-build-placeholder",
-    "GOOGLE_ID": "release-gate-structural-build-placeholder",
-    "GOOGLE_SECRET": "release-gate-structural-build-placeholder",
-}
-
-
 def check_web_build(dry_run: bool) -> CheckResult:
     name = "Web build (npm run build)"
     if dry_run:
@@ -280,6 +214,7 @@ def check_web_build(dry_run: bool) -> CheckResult:
         }
         return CheckResult(name, "FAIL", "cvf-web directory not found", [str(CVF_WEB)])
     build_env = {**os.environ, **{k: v for k, v in WEB_BUILD_STRUCTURAL_ENV.items() if not os.environ.get(k)}}
+    build_env["NEXT_DIST_DIR"] = WEB_BUILD_DIST_DIR
     code, stdout, stderr = run_cmd(["npm", "run", "build"], cwd=CVF_WEB, timeout=900, env=build_env)
     if code == 0:
         return CheckResult(name, "PASS", "Build succeeded")
@@ -399,7 +334,8 @@ def check_e2e(dry_run: bool, live: bool) -> CheckResult:
         )
     cmd = ["npx", "playwright", "test", "--config", config, *specs, "--reporter=line"]
     started = time.monotonic()
-    code, stdout, stderr = run_cmd(cmd, cwd=CVF_WEB, timeout=600)
+    e2e_env = {**os.environ, **E2E_RUNTIME_ENV[live]}
+    code, stdout, stderr = run_cmd(cmd, cwd=CVF_WEB, timeout=600, env=e2e_env)
     latency_ms = round((time.monotonic() - started) * 1000)
     output = (stdout + stderr).strip()
     lines = output.splitlines()
