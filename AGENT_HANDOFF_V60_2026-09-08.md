@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `5997b0b853680259f0f6d8331d42425570d4485e`. ADIF-0057-MH-T1 corrected dispatch-control parent anchor; AR-F1 through AR-F5 are closed and implementation may resume after this dedicated continuity commit.
+Current HEAD recorded for this handoff: `670a7979d`. ADIF-0057-MH-T1 material is independently accepted; this dedicated continuity commit records its truthful parent anchor.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
@@ -77,6 +77,11 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
   preserve agent implementation intelligence while requiring first-return
   closeability classification. This does not change the current Core mode or
   authorize project implementation by itself.
+- ADIF-0057-MH-T1 material committed at `670a7979d`; independent completion
+  review accepted bounded closure with no waiver after correcting one
+  fail-open dispatch-continuity semantic defect. Post-material proof then
+  exposed a second ordering contradiction; an exact seven-path correction is
+  authorized after this required real-SHA continuity commit.
 
 ## Current Authority
 
@@ -88,6 +93,10 @@ external repository or external-agent output an authority root.
 ## Closure Evidence
 
 ROLE-SOT-MH-T1 is independently accepted. Claude Rework Generation 2 closed all seven reviewer findings; focused tests passed 55/55 and 44/44, reviewer-fast passed 67/67, and material pre-commit passed 88/88. ADIF-0056 is machine-bound and clean. ADIF-0052 remains a pre-existing out-of-scope dangling-source defect. Provider/live/network/public/deploy usage was zero.
+
+ADIF-0057-MH-T1 material is committed at `670a7979d`; terminal closure waits
+for the independently authorized F7 correction, its real-SHA continuity, and
+clean split-range pre-closure. Provider/live/network/public/deploy usage is zero.
 
 ## Next Allowed Move
 
@@ -110,7 +119,7 @@ The operator may manually deliver `CVF_EARA_AGW_T0_EXTERNAL_RELAY_2026-09-09.zip
 
 ## Completion Review
 
-`docs/reviews/CVF_ENCODING_RENAME_AWARENESS_T1_COMPLETION_2026-09-08.md` records `CLOSED_PASS_BOUNDED` at material commit `d46a55d2b`; ROLE-SOT-MH-T1 remains closed at `94c4922c2`.
+`docs/reviews/CVF_ADIF_0057_MH_T1_GATE_TO_ROLE_CLOSEABILITY_MACHINE_ENFORCEMENT_COMPLETION_2026-09-10.md` records the accepted material and authorized F7 correction at `670a7979d`; ROLE-SOT-MH-T1 remains closed at `94c4922c2`.
 
 ## Public Export Disposition
 
