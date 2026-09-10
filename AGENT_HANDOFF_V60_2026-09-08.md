@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `6f7e54bf8`. Alibaba free-quota ledger refresh is committed; this dedicated handoff-only commit records its truthful parent anchor before bounded live evidence collection.
+Current HEAD recorded for this handoff: `935bc7a1c`. The operator-authorized bounded live recovery is committed; this dedicated handoff-only commit records its truthful parent anchor and restores the pre-existing parked provider/live boundary.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
@@ -86,6 +86,11 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 - Alibaba free-quota JSON and Markdown ledgers were refreshed from the
   operator's 2026-09-10 screenshots at `6f7e54bf8`; this is quota-window
   evidence only, not a live-provider compatibility result.
+- The bounded Alibaba release recovery is committed at `935bc7a1c`. The
+  canonical runner now isolates build/mock/live Next.js state and canonicalizes
+  Playwright/Auth.js to `localhost`; unit proof passed 21/21, pre-commit passed
+  89/89, the final release bundle passed every check, and SOT3 completed one
+  recovery plus one rollback call at HTTP 200. Provider/live work is re-parked.
 
 ## Current Authority
 
@@ -103,6 +108,12 @@ ADIF-0057-MH-T1 is terminal `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`: material
 `48480eeb3`, focused 21/21, four split-range pre-closures COMPLIANT, findings
 F1/F7 reviewer-corrected, waivers none. Provider/live/network/public/deploy
 usage is zero.
+
+The operator-authorized live exception is closed at `935bc7a1c`. The retained
+first recovery evidence records the shared Next.js manifest/cache failure; the
+second canonical bundle is `PASS`, its E2E diagnostic is `null`, and all six
+evidence hashes reconcile. This bounded proof does not open continuing live
+authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
