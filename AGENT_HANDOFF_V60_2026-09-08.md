@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `3da3491e8220e04d2d54d62273c70272fc246587`. ADIF-0057-MH-T1 independently authorized dispatch-control parent anchor for required post-dispatch continuity before implementation.
+Current HEAD recorded for this handoff: `5997b0b853680259f0f6d8331d42425570d4485e`. ADIF-0057-MH-T1 corrected dispatch-control parent anchor; AR-F1 through AR-F5 are closed and implementation may resume after this dedicated continuity commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
@@ -158,6 +158,13 @@ Protected paths:
 - `governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json`
 - `governance/compat/CVF_ACTIVE_WINDOW_REGISTRY.json`
 - `docs/reference/CVF_AGENTS_CRITICAL_REPOSITORY_BOUNDARY_2026-06-23.md`
+- `AGENTS.md`
+- `governance/compat/check_gate_to_role_closeability.py`
+- `governance/compat/test_check_gate_to_role_closeability.py`
+- `governance/compat/agent_autorun_command_catalog.py`
+- `governance/compat/local_governance_hook_catalog_pre_commit.py`
+- `governance/compat/local_governance_hook_catalog_reviewer_fast.py`
+- `governance/compat/test_run_local_governance_hook_chain.py`
 
 Operator authorization: the operator explicitly ordered sequential complete
 remediation beginning with P4-C1, followed by WP-ARCH-003 status synchronization
@@ -165,6 +172,9 @@ and then private/public/external packet refresh.
 The operator additionally directed that future provenance-push requests invoke
 the agreed canonical safe route without repeated authorization prompts or
 manual-unlock instructions.
+The operator explicitly opened ADIF-0057-MH-T1 on 2026-09-10 to machine-enforce
+gate-to-role closeability across governed agent paths; the protected paths
+listed above are the independently accepted exact implementation surface.
 
 Rollback boundary: revert only this continuity projection; preserve the P4-C1
 repair dispatch `8347be04a`, ROLE-SOT-MH-T1 material `94c4922c2`, T0 material
