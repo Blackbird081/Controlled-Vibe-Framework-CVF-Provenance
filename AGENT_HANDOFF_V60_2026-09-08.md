@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `48480eeb3`. ADIF-0057-MH-T1 terminal continuity is complete; this dedicated handoff-only commit records its truthful parent anchor.
+Current HEAD recorded for this handoff: `6f7e54bf8`. Alibaba free-quota ledger refresh is committed; this dedicated handoff-only commit records its truthful parent anchor before bounded live evidence collection.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Memory class: active-handoff
@@ -83,6 +83,9 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
   post-material ordering are machine-rejected; waivers are none and focused
   proof passes 21/21. Final continuity is `48480eeb3`; all four homogeneous
   material/continuity split ranges passed pre-closure with a clean worktree.
+- Alibaba free-quota JSON and Markdown ledgers were refreshed from the
+  operator's 2026-09-10 screenshots at `6f7e54bf8`; this is quota-window
+  evidence only, not a live-provider compatibility result.
 
 ## Current Authority
 
