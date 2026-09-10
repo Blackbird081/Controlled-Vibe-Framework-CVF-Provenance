@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import subprocess
 import sys
 from pathlib import Path
 
@@ -181,3 +182,18 @@ def test_common_autorun_catalog_contains_closeability_guard() -> None:
     selected = [command for command in commands if command.name == "gate-to-role closeability"]
     assert len(selected) == 1
     assert "governance/compat/check_gate_to_role_closeability.py" in selected[0].command
+
+
+def test_changed_paths_can_target_a_downstream_repository(tmp_path: Path) -> None:
+    repo = tmp_path / "downstream"
+    repo.mkdir()
+    subprocess.run(["git", "init", "-q"], cwd=repo, check=True)
+    subprocess.run(["git", "config", "user.email", "cvf-test@example.invalid"], cwd=repo, check=True)
+    subprocess.run(["git", "config", "user.name", "CVF Test"], cwd=repo, check=True)
+    tracked = repo / "README.md"
+    tracked.write_text("baseline\n", encoding="utf-8")
+    subprocess.run(["git", "add", "README.md"], cwd=repo, check=True)
+    subprocess.run(["git", "commit", "-q", "-m", "baseline"], cwd=repo, check=True)
+    tracked.write_text("changed\n", encoding="utf-8")
+
+    assert checker.changed_paths("HEAD", "HEAD", repo) == ("README.md",)

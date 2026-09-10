@@ -47,23 +47,23 @@ class Violation:
     message: str
 
 
-def _git(*args: str) -> subprocess.CompletedProcess[str]:
+def _git(root: Path, *args: str) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
-        ["git", *args], cwd=REPO_ROOT, text=True, encoding="utf-8",
+        ["git", *args], cwd=root, text=True, encoding="utf-8",
         errors="replace", stdout=subprocess.PIPE, stderr=subprocess.PIPE,
     )
 
 
-def changed_paths(base: str, head: str) -> tuple[str, ...]:
+def changed_paths(base: str, head: str, root: Path = REPO_ROOT) -> tuple[str, ...]:
     paths: set[str] = set()
     if base and head:
-        result = _git("diff", "--name-only", f"{base}..{head}")
+        result = _git(root, "diff", "--name-only", f"{base}..{head}")
         if result.returncode:
             raise RuntimeError(result.stderr.strip() or "git diff failed")
         paths.update(result.stdout.splitlines())
     for args in (("diff", "--name-only"), ("diff", "--cached", "--name-only"),
                  ("ls-files", "--others", "--exclude-standard")):
-        result = _git(*args)
+        result = _git(root, *args)
         if result.returncode == 0:
             paths.update(result.stdout.splitlines())
     return tuple(sorted(p.replace("\\", "/") for p in paths if p.strip()))
@@ -292,7 +292,7 @@ def check_recheck(path: str, text: str) -> list[Violation]:
 
 def evaluate(base: str, head: str, root: Path = REPO_ROOT) -> list[Violation]:
     violations: list[Violation] = []
-    for path in changed_paths(base, head):
+    for path in changed_paths(base, head, root):
         full = root / path
         if not full.is_file() or not path.endswith(".md"):
             continue
@@ -308,9 +308,18 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--base", default="HEAD")
     parser.add_argument("--head", default="HEAD")
+    parser.add_argument(
+        "--repo-root",
+        type=Path,
+        default=REPO_ROOT,
+        help="Git worktree to evaluate (defaults to the checker repository).",
+    )
     parser.add_argument("--enforce", action="store_true")
     args = parser.parse_args()
-    violations = evaluate(args.base, args.head)
+    repo_root = args.repo_root.resolve()
+    if not (repo_root / ".git").exists():
+        parser.error(f"--repo-root is not a Git worktree: {repo_root}")
+    violations = evaluate(args.base, args.head, repo_root)
     print("=== CVF Gate-To-Role Closeability Guard ===")
     print(f"Violations: {len(violations)}")
     for item in violations:

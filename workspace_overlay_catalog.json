@@ -283,6 +283,42 @@
       "reason": "Machine checker for template and skill standard guard."
     },
     {
+      "artifactId": "gate-to-role-closeability-standard",
+      "path": "docs\\reference\\CVF_GATE_TO_ROLE_CLOSEABILITY_MACHINE_STANDARD.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "downstream-machine-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "local-only",
+      "reason": "Canonical ADIF-0057 responsibility-topology contract for operator-local downstream projects."
+    },
+    {
+      "artifactId": "gate-to-role-closeability-checker",
+      "path": "governance\\compat\\check_gate_to_role_closeability.py",
+      "artifactClass": "compat-checker",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "downstream-machine-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "local-only",
+      "reason": "Machine checker with an explicit downstream repository adapter for operator-local projects."
+    },
+    {
+      "artifactId": "adif-0057-entry",
+      "path": "docs\\reference\\agent_defect_intelligence\\entries\\CVF_ADIF-0057.md",
+      "artifactClass": "defect-intelligence-entry",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "downstream-machine-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "local-only",
+      "reason": "Operator-local provenance for the authority-closeability defect and its machine binding."
+    },
+    {
       "artifactId": "knowledge-absorption-priority-guard",
       "path": "governance\\toolkit\\05_OPERATION\\CVF_KNOWLEDGE_ABSORPTION_PRIORITY_GUARD.md",
       "artifactClass": "operation-guard",

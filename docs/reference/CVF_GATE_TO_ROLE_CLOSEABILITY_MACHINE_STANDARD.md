@@ -69,6 +69,12 @@ It is bound to common autorun phases, reviewer-fast, and pre-commit catalogs.
 Focused tests cover missing contracts/gates/owners, late repair authority,
 unknown dependencies, cycles, topology mismatch, and contradictory redispatch.
 
+For an operator-local downstream repository, invoke the materialized checker
+with `--repo-root <downstream-project-root>`. The checker resolves Git diffs
+and artifact reads inside that explicit worktree. A rule-pack refresh or source
+commit pin without this invocation is provenance synchronization only and must
+not be reported as downstream machine enforcement.
+
 Machine enforcement validates declared responsibility topology only. It does
 not certify that prose describes reality outside the repository, guarantee
 every tool invokes CVF, or restrict implementation choices within the
@@ -95,10 +101,13 @@ Protected paths:
 - `governance/compat/local_governance_hook_catalog_pre_commit.py`
 - `governance/compat/local_governance_hook_catalog_reviewer_fast.py`
 - `governance/compat/test_run_local_governance_hook_chain.py`
+- `workspace_overlay_catalog.json`
 - `AGENTS.md`
 
 Operator authorization: explicit 2026-09-10 instruction to raise ADIF-0057
-from `PARTIAL_CHECK` to machine enforcement for governed agent paths.
+from `PARTIAL_CHECK` to machine enforcement for governed agent paths, followed
+by explicit approval to refresh that enforcement into the operator-local
+`shift-operations-workspace` project.
 
 Rollback boundary: revert only ADIF-0057-MH-T1; preserve its dispatch-control
 commit, the original P4-E learning, and all unrelated Core history.
