@@ -1,13 +1,12 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `935bc7a1c`. The operator-authorized bounded live recovery is committed; this dedicated handoff-only commit records its truthful parent anchor and restores the pre-existing parked provider/live boundary.
+Current HEAD recorded for this handoff: `dd82fb9aa72435a8514d30ef2fdd2af720aee84e`. Method 1.2 is committed; pilot dispatch awaits initial-intake admission clarification. Prior runtime/provider/live/public checkpoints remain parked.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
 Memory class: active-handoff
 Status: ACTIVE
-
 
 ## Handoff Context
 
@@ -25,7 +24,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`external_repo_absorption_bounded_closure_complete`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=operator priority decision between a separately governed Local Agentgateway current-head/use-case-recovery tranche and continuation of the broader multi-repository domain funnel; parked checkpoint=RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment.
+Startup acknowledged: current mode=`external_repo_absorption_bounded_closure_complete`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=resolve initial-intake TPGR admission before three-repo internal pilot dispatch; parked checkpoint=RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment.
 
 ## Current Mode
 
@@ -119,6 +118,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
+2026-09-11 current priority: method 1.2 committed at `dd82fb9aa`; nomination received (SHA256 `506045621aff8d7b5d6d598339ff15b5dd2d8fd25bc4f5c7e5f964f83a31c0af`). Pilot: Agentgateway, QM, DeepSeek Harness; reuse EARA-AGW-T1 and DSH-WRA-R1 evidence. No forced novelty quota; unknowns remain unknown; file counts are effort estimates. Work order NOT_DISPATCHED: initial-intake TPGR routing rejects absent full-read evidence or prior corpus receipt; operator authority needed for narrow admission clarification. P4 observation rejected and marker recoverably archived; no sample promotion or fingerprint-fix claim. No additional external research needed now.
 `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. Next allowed move is an operator priority decision between a separately governed Local Agentgateway recovery tranche and continuation of the broader multi-repository domain funnel. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
