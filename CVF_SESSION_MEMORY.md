@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`external_repo_absorption_bounded_closure_complete`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=resolve initial-intake TPGR admission before three-repo internal pilot dispatch; parked checkpoint=RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment.
+Startup acknowledged: current mode=`internal_agent_governance_worker_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=internal worker executes TPGR-INITIAL-INTAKE-T1 then returns uncommitted for independent Local review; parked checkpoint=pilot acquisition, RABA, DARA-T5, runtime/provider/live/public/deployment, P5/P6.
 
 ## Current Mode
 
-Current mode marker: `external_repo_absorption_bounded_closure_complete`
-Current mode: `external_repo_absorption_bounded_closure_complete`; previous mode marker: `internal_agent_absorption_worker_active`
+Current mode marker: `internal_agent_governance_worker_active`
+Current mode: `internal_agent_governance_worker_active`; previous mode marker: `internal_agent_absorption_worker_active`
 
 ## Next Allowed Move
 
-2026-09-11 current priority: method 1.2 committed at `dd82fb9aa`; nomination received (SHA256 `506045621aff8d7b5d6d598339ff15b5dd2d8fd25bc4f5c7e5f964f83a31c0af`). Pilot: Agentgateway, QM, DeepSeek Harness; reuse EARA-AGW-T1 and DSH-WRA-R1 evidence. No forced novelty quota; unknowns remain unknown; file counts are effort estimates. Work order NOT_DISPATCHED: initial-intake TPGR routing rejects absent full-read evidence or prior corpus receipt; operator authority needed for narrow admission clarification. P4 observation rejected and marker recoverably archived; no sample promotion or fingerprint-fix claim. No additional external research needed now.
-Mode: `external_repo_absorption_bounded_closure_complete`. `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`: exact pinned Agentgateway candidate reconciliation is `SOURCE_RECONCILED` with one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT` outcomes. This is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin; current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. Next allowed move is an operator priority decision between a separate governed Local recovery tranche and continuing the broader multi-repository domain funnel. External Web agents remain research/advisory only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
+2026-09-11 current priority: `TPGR-INITIAL-INTAKE-T1` DISPATCH_READY at `48626e801` (pre-dispatch 82/82, pre-commit 89/89). Authority: `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_INITIAL_INTAKE_T1_2026-09-11.md` and paired GC-018. Internal worker implements six paths, no commit/network; Local independently reviews. Source-acquisition pilot is not dispatched. Preserve EARA/DSH reuse and unknown evidence. No further external relay required.
+Mode: `external_repo_absorption_bounded_closure_complete`. `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`: exact pinned Agentgateway candidate reconciliation is `SOURCE_RECONCILED` with one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT` outcomes. This is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin; current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The current next move is the TPGR admission amendment above; no source-recovery lane is yet released. External Web agents remain research/advisory only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
