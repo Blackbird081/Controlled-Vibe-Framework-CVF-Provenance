@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `3de0ba07c`. TPGR-INITIAL-INTAKE-T1 material closure is committed; this dedicated continuity projection closes the worker lane and opens no pilot.
+Current HEAD recorded for this handoff: `cda03fa14`. Fingerprint repair dispatch is materially committed; this dedicated continuity projection releases only its eleven-path internal worker lane.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -14,7 +14,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `internal_agent_governance_bounded_closure_complete`.
+- Current mode: `internal_agent_governance_worker_active`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +24,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`internal_agent_governance_bounded_closure_complete`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=TPGR T1 closed at 3de0ba07c; separate pilot work order only on continuation, no pilot execution now; parked checkpoint=pilot acquisition, RABA, DARA-T5, runtime/provider/live/public/deployment, P5/P6.
+Startup acknowledged: current mode=`internal_agent_governance_worker_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=internal worker executes MFRP-FINGERPRINT-T1 eleven-path manifest then returns uncommitted for Local review; no pilot execution; parked checkpoint=pilot acquisition, RABA, DARA-T5, runtime/provider/live/public/deployment, P5/P6.
 
 ## Current Mode
 
-`internal_agent_governance_bounded_closure_complete`
+`internal_agent_governance_worker_active`
 
 ## Purpose
 
@@ -118,7 +118,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-11 current priority: `TPGR-INITIAL-INTAKE-T1` is `CLOSED_PASS_BOUNDED` at `3de0ba07c`; returned tests 70/70, reviewer-fast 68/68, material pre-commit 89/89. Completion: `docs/reviews/CVF_TPGR_INITIAL_INTAKE_T1_COMPLETION_2026-09-11.md`. Worker lane complete. Next: separate reviewed pilot work order on operator continuation; no source acquisition or pilot execution opened. Reuse EARA/DSH evidence, preserve unknowns and distinct use cases.
+2026-09-11 current priority: `MFRP-FINGERPRINT-T1` DISPATCH_READY at `cda03fa14`, pre-dispatch 82/82 and pre-commit 89/89. Authority: `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_FINGERPRINT_T1_2026-09-11.md` and paired GC-018. Internal worker owns eleven paths, no commit; Local independently reviews. TPGR T1 remains accepted at `3de0ba07c`; its rejected P4 fingerprint observation and recoverable marker archive are recorded in the new baseline. No sample promotion or permanent repair claim. Pilot remains parked.
 `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; source-recovery execution still requires a separate reviewed work order. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
@@ -131,7 +131,7 @@ authority, production deployment, or any parked project lane.
 
 ## Active Boundary
 
-- TPGR-INITIAL-INTAKE-T1 is closed; this handoff releases no further worker execution.
+- Only MFRP-FINGERPRINT-T1 eleven-path internal worker execution is released; TPGR T1 remains closed.
   Prior repair lanes remain historical; the three-repo source pilot is not released.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
@@ -158,7 +158,7 @@ Authorized guard-maintenance scope: project the accepted P4-C1 repair dispatch
 `8347be04a0216479f754e3eee3ca71f15a149a8b`, its current authority hashes,
 mode, and corrected next move into existing active continuity; record the
 operator-approved safe provenance-push route in its canonical boundary owner
-and register that binding dated reference as a permanent active window. Operator additionally authorized TPGR T1 reviewer closure and its separate mode, hash and next-move projection; implementation 3de0ba07c and historical gate failures remain preserved.
+and register that binding dated reference as a permanent active window. Operator additionally authorized TPGR T1 reviewer closure and its separate mode, hash and next-move projection; implementation 3de0ba07c and historical gate failures remain preserved. Operator also authorized MFRP-FINGERPRINT-T1 dispatch and its separate baseline/work-order hash, mode and next-move projection.
 
 Protected paths:
 

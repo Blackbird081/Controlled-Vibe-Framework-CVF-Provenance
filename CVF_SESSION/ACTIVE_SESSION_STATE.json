@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_TPGR_INITIAL_INTAKE_T1_2026-09-11.md",
-    "baselineSha256": "c3dd2952aef93661649fb43a1c6907380db12950ca0110e1f7645c7e9f09051a",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_INITIAL_INTAKE_T1_2026-09-11.md",
-    "workOrderSha256": "c69abdad51a32807b4e597fdd33ac15086a93ce50768ba214820a67036071638"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_FINGERPRINT_T1_2026-09-11.md",
+    "baselineSha256": "0a0f16ed7c5fce10c6545ea9cf15f29a4c5c6b2722017689b03d861e28c96d71",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_FINGERPRINT_T1_2026-09-11.md",
+    "workOrderSha256": "8bb4e4a971485dc5e0e3868bdf97ff94a5fd646748a00fe6d12b5916bb8f9053"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -106,8 +106,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "internal_agent_governance_bounded_closure_complete",
-  "previousMode": "internal_agent_governance_worker_active",
+  "currentMode": "internal_agent_governance_worker_active",
+  "previousMode": "internal_agent_governance_bounded_closure_complete",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16600,5 +16600,5 @@
   "mfrpP4C1ReceiptRangeRework20260909": "P4-C1 receipt-range rework is committed at 6b5318286 with four original-manifest paths. Root cause: receipt generation incorrectly ranged trusted-parent through disclosure, combining reviewer evidence with protected continuity paths. Repair: receipt and fingerprint bind trusted-parent through trusted; disclosure proves order only. Focused tests remain 68 passed, reviewer-fast 67/67 and pre-commit 88/88. The prior safety marker was explicitly adjudicated and moved to ignored ADJUDICATED_SAFETY_MARKER_2026-09-09.json for recoverable diagnostics.",
   "wpArch003TerminalParkSync20260909": "WP-ARCH-003 terminal park is synchronized at 65fafd4f5 across the parent DARA roadmap, RABA-T0 roadmap, RABA-F01-F02 roadmap and 2026-09-09 audit sequence. Current disposition is PARK_NO_TRUTHFUL_AUTHORITY_ROOT; AR1 dispatch history is superseded but preserved; RABA-T1 through T3 and implementation remain unopened. External-agent research remains advisory and cannot become a CVF authority root without Internal Agent verification and reconciliation.",
   "publicSevenStepExternalPacketClosure20260909": "Step 3 closed pass bounded. Private seven-step relationship source is c9fa2862c88eba6e3e3e8dd8e8d96dd018382ef1. Public pull request 8 merged to public main 483c5e33d188b6b2d35d6cd19ee38a3c8548abc4 after required public-sync preflight. EXTERNAL_AGENT_READ was refreshed from that live head; EARA-AGW-T0 is REVIEW_ONLY and expects COMPLETE_PENDING_LOCAL_RECONCILIATION. CVF_EARA_AGW_T0_EXTERNAL_RELAY_2026-09-09.zip has eight entries and SHA-256 a6d1d47dece0a7d94b731a01d5ade3587f9810231ef8f5e3ecfbad3224e11340. External output remains advisory until Internal Agent verification and reconciliation.",
-  "nextAllowedMove": "TPGR-INITIAL-INTAKE-T1 CLOSED_PASS_BOUNDED at material commit 3de0ba07c; reviewer accepted all four repairs using returned 70/70 focused tests and targeted probes. Reviewer-fast 68/68 and material pre-commit 89/89 PASS. Dispatcher continuity correction c5cf9e480 retained. Authority: paired TPGR_INITIAL_INTAKE_T1 baseline/work order and docs/reviews/CVF_TPGR_INITIAL_INTAKE_T1_COMPLETION_2026-09-11.md. Internal worker lane is complete; no redispatch. Next allowed move: Local orchestrator prepares a separate reviewed pilot work order when operator continues; no pilot opened in this closure. Method 1.2 at dd82fb9aa remains governing. Future domain pilot nominees: Agentgateway, QM, DeepSeek Harness. Reuse EARA-AGW-T1 and DSH-WRA-R1; preserve unknown pins/read depth and unique use cases; no forced novelty or duplicate corpus work. No source acquisition, external research, runtime/provider/live/public/deployment authorized here. P4 hook SKIPPED_NO_ELIGIBLE_CANDIDATE; rejected-observation history retained, no fingerprint-fix or sample-promotion claim. RABA/DARA-T5/P5/P6 remain parked. Latest finalized numbered LHW remains LHW24."
+  "nextAllowedMove": "MFRP-FINGERPRINT-T1 DISPATCH_READY at cda03fa14; pre-dispatch 82/82 and material pre-commit 89/89 PASS. Operator explicitly authorized separate fingerprint guard-maintenance dispatch on 2026-09-11. Current authority: paired MFRP_FINGERPRINT_T1 baseline/work order. Next: operator assigns internal VS Code worker; exactly eleven manifest paths, no main-workspace staging/commit. Preserve raw worktree cache identity; add integrity-covered committed Git-blob binding; prove producer/validator/collector plus legacy/CRLF/binary/dirty-state compatibility. Worker returns COMPLETE_PENDING_REVIEW uncommitted for independent Local review. EXPLICIT_LANE_HANDOFF; NO_MUTATION_WHILE_LANE_ACTIVE. TPGR-INITIAL-INTAKE-T1 remains accepted at 3de0ba07c, continuity a6823f497. Its P4 attempt ATTEMPT-a4ec8bfaa9c112ca was rejected for raw CRLF/Git LF mismatch; marker archived with hash evidence in the new baseline; journal preserved, no sample promotion or permanent-fix claim. Pilot nominees Agentgateway/QM/DeepSeek Harness remain parked, reuse EARA/DSH evidence. No external research, acquisition, runtime/provider/live/public/deployment or hook/config/registry change. RABA/DARA-T5/P5/P6 parked; latest LHW24."
 }

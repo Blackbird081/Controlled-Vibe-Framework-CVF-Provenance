@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`internal_agent_governance_bounded_closure_complete`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=TPGR T1 closed at 3de0ba07c; separate pilot work order only on continuation, no pilot execution now; parked checkpoint=pilot acquisition, RABA, DARA-T5, runtime/provider/live/public/deployment, P5/P6.
+Startup acknowledged: current mode=`internal_agent_governance_worker_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=internal worker executes MFRP-FINGERPRINT-T1 eleven-path manifest then returns uncommitted for Local review; no pilot execution; parked checkpoint=pilot acquisition, RABA, DARA-T5, runtime/provider/live/public/deployment, P5/P6.
 
 ## Current Mode
 
-Current mode marker: `internal_agent_governance_bounded_closure_complete`
-Current mode: `internal_agent_governance_bounded_closure_complete`; previous mode marker: `internal_agent_governance_worker_active`
+Current mode marker: `internal_agent_governance_worker_active`
+Current mode: `internal_agent_governance_worker_active`; previous mode marker: `internal_agent_governance_bounded_closure_complete`
 
 ## Next Allowed Move
 
-2026-09-11 current priority: `TPGR-INITIAL-INTAKE-T1` is `CLOSED_PASS_BOUNDED` at `3de0ba07c`; returned tests 70/70, reviewer-fast 68/68, material pre-commit 89/89. Completion: `docs/reviews/CVF_TPGR_INITIAL_INTAKE_T1_COMPLETION_2026-09-11.md`. Worker lane complete. Next: separate reviewed pilot work order on operator continuation; no source acquisition or pilot execution opened. Reuse EARA/DSH evidence, preserve unknowns and distinct use cases.
-Mode: `internal_agent_governance_bounded_closure_complete`. Historical EARA closure: `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`: exact pinned Agentgateway candidate reconciliation is `SOURCE_RECONCILED` with one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT` outcomes. This is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin; current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; a separate pilot work order is required before source-recovery execution. External Web agents remain research/advisory only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
+2026-09-11 current priority: `MFRP-FINGERPRINT-T1` DISPATCH_READY at `cda03fa14`, pre-dispatch 82/82 and pre-commit 89/89. Authority: `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_FINGERPRINT_T1_2026-09-11.md` and paired GC-018. Internal worker owns eleven paths, no commit; Local independently reviews. TPGR T1 remains accepted at `3de0ba07c`; its rejected P4 fingerprint observation and recoverable marker archive are recorded in the new baseline. No sample promotion or permanent repair claim. Pilot remains parked.
+Mode: `internal_agent_governance_worker_active`. Historical EARA closure: `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`: exact pinned Agentgateway candidate reconciliation is `SOURCE_RECONCILED` with one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT` outcomes. This is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin; current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; a separate pilot work order is required before source-recovery execution. External Web agents remain research/advisory only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
