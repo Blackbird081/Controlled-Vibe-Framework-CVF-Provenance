@@ -581,7 +581,9 @@ class ActualP2SeamTests(unittest.TestCase):
         readout_hash = hashlib.sha256(readout_owner.read_bytes()).hexdigest()
         self.assertEqual(
             receipt_hash,
-            "8280a95e0985bd1273aa359afff455be1d18346e8b49cb92e9746922d835d022",
+            # Reviewed additive v3 owner, MFRP-FINGERPRINT-T1 Local
+            # completion and operator-approved consumer amendment.
+            "8f12da95ddbdaf8974c9d18b3bac3d2ee99ea480bc44c0af3095f80b7e95ab06",
         )
         self.assertEqual(
             readout_hash,

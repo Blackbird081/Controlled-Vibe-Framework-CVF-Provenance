@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-09-11
 Batch ID: MFRP-FINGERPRINT-T1
 dispatchBaseHead: a6823f497
@@ -113,6 +113,29 @@ Rollback boundary: only newly introduced fingerprint binding behavior and associ
 | INTERNAL_AGENT | P2 producer/validator, P4 collector | deterministic evidence only, no worker commit | source/test matrix | existing internal Python consumers | CONTRACT_ONLY |
 | EXTERNAL_AGENT_CLI_MCP | no new external consumer | no research or external invocation | operator authorization internal only | adapter absent and not authorized | N/A_WITH_REASON |
 
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_FINGERPRINT_T1_2026-09-11.md | Status: CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_MFRP_FINGERPRINT_T1_COMPLETION_2026-09-11.md | REVIEWER_ACCEPTED_BOUNDED | PASS |
+| Roadmap state | standalone work order; no dedicated roadmap transition | no roadmap advancement | N/A with reason: standalone repair |
+| Registry JSON | docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json | two reviewed source hashes; freshness CURRENT | PASS |
+| Registry Markdown | docs/reference/review_cost_control/CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md | implemented bounded profile, no corpus registry change | PASS |
+| External evidence digest | completion Internal Cross-Check Evidence Digest | f92dd77d8b9c0e7fbe871e005e64a64585f5f56c8c597dbf0ec16ce2863f15e8; reported evidence only | PASS |
+| System loop interlock | committedEvidence producer/validator/collector | legacy ineligible; unsafe declarations rejected; no sample promotion | PASS |
+| Session continuity | CVF_SESSION_MEMORY.md; AGENT_HANDOFF_V60_2026-09-08.md | dedicated post-material continuity owned by Local closer | PASS - separate commit required |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| historical-drift | docs/reviews/CVF_MFRP_FINGERPRINT_T1_WORKER_RETURN_2026-09-11.md | committedEvidence | absent on semantic drift | absent in focused chain regression | PASS |
+| malformed-binding | docs/reviews/CVF_MFRP_FINGERPRINT_T1_WORKER_RETURN_2026-09-11.md | committedEvidence | reject null/one-sided | focused validator/collector regressions pass | PASS |
+
+These are recorded test assertions, not durable production runtime receipts.
+No full release/provider proof or historical observation upgrade is claimed.
 
 ## Claim Boundary
 

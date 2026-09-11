@@ -1,23 +1,11 @@
 #!/usr/bin/env python3
-"""P4-C1 automatic natural-evidence collector.
-
-Invoked once, synchronously, from ``.githooks/post-commit`` after every
-commit lands. It never rewrites, amends, or reverts the commit that just
-landed; it only ever writes to the ignored runtime directory
-``.cvf/runtime/mfrp-p4-shadow-canary/``. It reuses the existing P2 receipt
-validator (``agent_autorun_machine_verification._validate_receipt_integrity``
-via ``agent_automation_machine_verification_readout.read_receipt_readonly``)
-and the existing P4 append seam
-(``mfrp_shadow_canary.append_observation`` / ``build_evidence``) -- it never
-forks their digest, linkage, or classification logic.
-
-Per the GC-018 P4-C1 baseline's Order Of Record And Trust Boundary: the
-trusted disposition must already be committed before this collector ever
-discloses a machine outcome. This module never authors a trusted disposition
--- it only reads one that a reviewer/closer already wrote into the committed
-return bytes, exactly as ``mfrp_shadow_canary_core.build_initial_observation_row``
-already does for the pinned R1B-R2 row.
-"""
+"""P4-C1 automatic natural-evidence collector. Invoked once, synchronously, from ``.githooks/post-commit`` after every commit lands. It never rewrites, amends, or
+reverts the commit that just landed; it only ever writes to the ignored runtime directory ``.cvf/runtime/mfrp-p4-shadow-canary/``. It reuses the existing P2 receipt
+validator (``agent_autorun_machine_verification._validate_receipt_integrity`` via ``agent_automation_machine_verification_readout.read_receipt_readonly``) and the
+existing P4 append seam (``mfrp_shadow_canary.append_observation`` / ``build_evidence``) -- it never forks their digest, linkage, or classification logic. Per the
+GC-018 P4-C1 baseline's Order Of Record And Trust Boundary: the trusted disposition must already be committed before this collector ever discloses a machine outcome.
+This module never authors a trusted disposition -- it only reads one that a reviewer/closer already wrote into the committed return bytes, exactly as
+``mfrp_shadow_canary_core.build_initial_observation_row`` already does for the pinned R1B-R2 row."""
 
 from __future__ import annotations
 
@@ -35,6 +23,7 @@ try:
     import mfrp_shadow_canary as canary
     import mfrp_shadow_canary_core as canary_core
     import mfrp_p4_enrollment_observability as observability
+    import committed_evidence_fingerprint as committed_evidence
     from agent_automation_machine_verification_readout import (
         build_machine_verification_readout,
         machine_readout_to_dict,
@@ -44,6 +33,7 @@ except ModuleNotFoundError:
     from governance.compat import mfrp_shadow_canary as canary
     from governance.compat import mfrp_shadow_canary_core as canary_core
     from governance.compat import mfrp_p4_enrollment_observability as observability
+    from governance.compat import committed_evidence_fingerprint as committed_evidence
     from governance.compat.agent_automation_machine_verification_readout import (
         build_machine_verification_readout,
         machine_readout_to_dict,
@@ -70,7 +60,6 @@ FIELD_SOURCE_AUTHORITY_LOCATOR = "p4SourceAuthorityLocator"
 
 _NA_PATTERN = re.compile(r"^N/A with reason\b", re.IGNORECASE)
 
-
 class CollectionSkipped(Exception):
     """Non-blocking skip: population/eligibility must not change."""
 
@@ -92,7 +81,6 @@ class CollectionSkipped(Exception):
         self.review_paths = review_paths
         self.selected_path = selected_path
 
-
 class CollectionUnsafe(Exception):
     """A safety-marker condition: must persist an unresolved marker."""
 
@@ -101,11 +89,9 @@ class CollectionUnsafe(Exception):
         self.code = code
         self.detail = detail
 
-
 # ---------------------------------------------------------------------------
 # Git helpers (committed-range only; never mutable worktree bytes)
 # ---------------------------------------------------------------------------
-
 
 def _run_git(args: list[str]) -> tuple[int, str, str]:
     proc = subprocess.run(
@@ -114,14 +100,9 @@ def _run_git(args: list[str]) -> tuple[int, str, str]:
     )
     return proc.returncode, proc.stdout.strip(), proc.stderr.strip()
 
-
 def _commit_changed_paths(commit: str) -> tuple[str, ...]:
-    """Paths changed by exactly this one commit relative to its first parent.
-
-    Uses ``git diff-tree`` (never ``git status``/mutable worktree) so the
-    result is fully determined by immutable commit objects. A root commit
-    (no parent) falls back to the full tree listing.
-    """
+    """Paths changed by exactly this one commit relative to its first parent. Uses ``git diff-tree`` (never ``git status``/mutable worktree) so the result is fully
+    determined by immutable commit objects. A root commit (no parent) falls back to the full tree listing."""
     code, out, _ = _run_git(
         ["diff-tree", "--no-commit-id", "--name-only", "-r", commit]
     )
@@ -129,23 +110,16 @@ def _commit_changed_paths(commit: str) -> tuple[str, ...]:
         return ()
     return tuple(sorted(line for line in out.splitlines() if line))
 
-
 def _range_changed_paths(base: str, head: str) -> tuple[str, ...]:
     code, out, _ = _run_git(["diff", "--name-only", f"{base}..{head}"])
     if code != 0:
         return ()
     return tuple(sorted(line for line in out.splitlines() if line))
 
-
 def _reconstruct_fingerprint_from_commit(commit: str, paths: tuple[str, ...]) -> str:
-    """Reconstruct the ``_worktree_fingerprint`` byte recipe from committed
-    Git blobs only. Mirrors ``run_agent_autorun_workflow_gate._worktree_fingerprint``'s
-    exact canonical path/byte recipe (path bytes, NUL, file-bytes-digest or
-    the missing sentinel, NUL) but reads every byte through
-    ``git cat-file blob`` at ``commit`` -- never ``Path.read_bytes()`` against
-    the mutable worktree. This is a read-only reconstruction of the existing
-    P2 recipe, not a new or forked digest routine.
-    """
+    """Reconstruct the ``_worktree_fingerprint`` byte recipe from committed Git blobs only. Mirrors ``run_agent_autorun_workflow_gate._worktree_fingerprint``'s exact
+    canonical path/byte recipe (path bytes, NUL, file-bytes-digest or the missing sentinel, NUL) but reads every byte through ``git cat-file blob`` at ``commit`` --
+    never ``Path.read_bytes()`` against the mutable worktree. This is a read-only reconstruction of the existing P2 recipe, not a new or forked digest routine."""
     digest = hashlib.sha256()
     for path in paths:
         digest.update(path.encode("utf-8", errors="replace"))
@@ -159,7 +133,6 @@ def _reconstruct_fingerprint_from_commit(commit: str, paths: tuple[str, ...]) ->
         digest.update(b"\0")
     return digest.hexdigest()
 
-
 def _read_committed_text(commit: str, path: str) -> str | None:
     blob_sha = canary_core.git_blob_at(commit, path)
     if not blob_sha:
@@ -169,11 +142,9 @@ def _read_committed_text(commit: str, path: str) -> str | None:
         return None
     return blob_bytes.decode("utf-8", errors="replace")
 
-
 # ---------------------------------------------------------------------------
 # Observation-block parsing (mechanical only; never a semantic re-execution)
 # ---------------------------------------------------------------------------
-
 
 def _extract_observation_block(text: str) -> str | None:
     start = text.find(OBSERVATION_BLOCK_HEADING)
@@ -183,17 +154,14 @@ def _extract_observation_block(text: str) -> str | None:
     next_heading = re.search(r"(?m)^## ", body)
     return body[: next_heading.start()] if next_heading else body
 
-
 def _extract_field(block: str, field: str) -> str | None:
     match = re.search(rf"^\s*{re.escape(field)}\s*:\s*(.+)$", block, re.MULTILINE)
     if not match:
         return None
     return match.group(1).strip().strip("`")
 
-
 def _is_present(value: str | None) -> bool:
     return bool(value) and not _NA_PATTERN.match(value)
-
 
 class ParsedObservation:
     __slots__ = (
@@ -225,7 +193,6 @@ class ParsedObservation:
             and _is_present(self.source_authority_locator)
         )
 
-
 def parse_observation_block(text: str) -> ParsedObservation | None:
     block = _extract_observation_block(text)
     if block is None:
@@ -238,16 +205,10 @@ def parse_observation_block(text: str) -> ParsedObservation | None:
         source_authority_locator=_extract_field(block, FIELD_SOURCE_AUTHORITY_LOCATOR),
     )
 
-
 def _trusted_disposition(text: str) -> str | None:
-    """Return the committed reviewer disposition, never a worker status.
-
-    The adjudication heading and exact field are both required.  This keeps
-    ``Status: COMPLETE_PENDING_REVIEW`` from collapsing the order-of-record
-    boundary into a worker self-attestation.
-    """
+    """Return the committed reviewer disposition, never a worker status. The adjudication heading and exact field are both required. This keeps ``Status:
+    COMPLETE_PENDING_REVIEW`` from collapsing the order-of-record boundary into a worker self-attestation."""
     return observability.trusted_outcome(text)
-
 
 def _single_parent(commit: str) -> str:
     code, out, error = _run_git(["rev-list", "--parents", "-n", "1", commit])
@@ -259,18 +220,12 @@ def _single_parent(commit: str) -> str:
         )
     return parts[1]
 
-
 def generate_current_receipt(
     trusted_commit: str, disclosure_commit: str
 ) -> tuple[Path, str]:
-    """Generate a P2 receipt for the trusted evidence commit itself.
-
-    The disclosure commit proves that ``trusted_commit`` is no longer HEAD and
-    therefore has immutable bytes.  It is not part of the evidence range:
-    dedicated continuity commits contain protected session paths and would
-    make an otherwise valid closure range fail the committed-range shape
-    preflight.
-    """
+    """Generate a P2 receipt for the trusted evidence commit itself. The disclosure commit proves that ``trusted_commit`` is no longer HEAD and therefore has immutable
+    bytes. It is not part of the evidence range: dedicated continuity commits contain protected session paths and would make an otherwise valid closure range fail
+    the committed-range shape preflight."""
     parent = _single_parent(trusted_commit)
     command = [
         sys.executable,
@@ -298,11 +253,9 @@ def generate_current_receipt(
         )
     return receipt_path, parent
 
-
 # ---------------------------------------------------------------------------
 # Candidate discovery
 # ---------------------------------------------------------------------------
-
 
 def _candidate_review_paths(commit: str) -> tuple[str, ...]:
     changed = _commit_changed_paths(commit)
@@ -310,7 +263,6 @@ def _candidate_review_paths(commit: str) -> tuple[str, ...]:
         path for path in changed
         if path.startswith(REVIEWS_GLOB_PREFIX) and path.endswith(".md")
     )
-
 
 def _discover_candidate(commit: str) -> observability.SelectionResult:
     """Select one reviewer-owned candidate from immutable commit bytes."""
@@ -341,7 +293,6 @@ def _discover_candidate(commit: str) -> observability.SelectionResult:
             candidates.append(candidate)
     return observability.select_candidate(candidates, review_paths)
 
-
 def find_eligible_candidate(commit: str) -> tuple[str, ParsedObservation]:
     """Compatibility wrapper returning one deterministic candidate."""
     selection = _discover_candidate(commit)
@@ -363,17 +314,14 @@ def find_eligible_candidate(commit: str) -> tuple[str, ParsedObservation]:
     )
     return selected.path, parsed
 
-
 # ---------------------------------------------------------------------------
 # Receipt candidate discovery and Git-blob fingerprint reconciliation
 # ---------------------------------------------------------------------------
-
 
 def _candidate_receipt_files() -> tuple[Path, ...]:
     if not RECEIPT_DIR.is_dir():
         return ()
     return tuple(sorted(RECEIPT_DIR.glob("*.json")))
-
 
 def find_receipt_candidate(
     trusted_commit: str, disclosure_commit: str
@@ -381,6 +329,35 @@ def find_receipt_candidate(
     """Create and return the exact current receipt; stale phase files do not compete."""
     return generate_current_receipt(trusted_commit, disclosure_commit)
 
+def _fail_closed_if_declared_binding_caused_rejection(
+    receipt_path: Path, canonical_reason: str
+) -> None:
+    """Raise ``CollectionUnsafe`` when the canonical P2 validator's rejection of this receipt is attributable to a *declared* ``committedEvidence`` binding, rather than
+    to an unrelated legacy-shape defect. ``_validate_receipt_integrity`` returns one collapsed ``(False, reason)`` result for the whole receipt, so a receipt that
+    both declares a malformed/one-sided/tampered binding AND is otherwise a well-formed v3 receipt would, without this check, be indistinguishable from a receipt
+    that is simply not a receipt at all (unreadable, wrong schema, wrong status, tampered ``receiptDigest``, etc.) -- and the caller's fallback classification
+    (``SKIPPED_INVALID_RECEIPT``) is a benign skip, never the correct outcome for a receipt that actively declared a broken binding. This performs an independent,
+    read-only raw-JSON inspection (never trusting the already-rejected structured ``payload``, which may not even be a dict) to answer only one narrow question: did
+    this receipt declare a ``committedEvidence`` key at the top level or nested under ``machineVerification``? If so, the rejection is fail-closed unsafe, not a
+    benign legacy omission, regardless of what other defect the canonical validator's collapsed reason string names."""
+    try:
+        raw_payload = json.loads(receipt_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        # Unreadable/undecodable receipt bytes: the canonical validator's
+        # rejection is not attributable to a declared binding at all.
+        return
+    if not isinstance(raw_payload, dict):
+        return
+    nested = raw_payload.get("machineVerification")
+    top_declares = "committedEvidence" in raw_payload
+    nested_declares = isinstance(nested, dict) and "committedEvidence" in nested
+    if top_declares or nested_declares:
+        raise CollectionUnsafe(
+            "UNSAFE_COMMITTED_EVIDENCE_MALFORMED",
+            f"receipt declares a committedEvidence binding but failed canonical "
+            f"P2 validation ({canonical_reason}); a declared binding is never "
+            "downgraded to a benign legacy-omission skip",
+        )
 
 def validate_and_reconcile_receipt(
     receipt_path: Path,
@@ -388,14 +365,15 @@ def validate_and_reconcile_receipt(
     disclosure_commit: str,
     expected_base: str | None = None,
 ) -> dict[str, Any]:
-    """Validate through the real P2 owner, then independently reconstruct the
-    committed-range fingerprint from Git blobs and compare it to the
-    receipt's declared ``worktreeFingerprint``. Returns the validated payload
-    plus reconciliation evidence, or raises ``CollectionSkipped``/
-    ``CollectionUnsafe``.
-    """
+    """Validate through the real P2 owner, then independently recompute the additive ``committedEvidence`` binding through the shared ``committed_evidence_fingerprint``
+    helper and compare it to the receipt's declared value. Returns the validated payload plus reconciliation evidence, or raises
+    ``CollectionSkipped``/``CollectionUnsafe``. This never compares committed Git-blob bytes with the receipt's raw ``worktreeFingerprint``: that field is a
+    mutable-worktree cache identity owned by the P2 producer/validator, not a P4 evidence source. A receipt that declares no ``committedEvidence`` is a legacy v3
+    receipt that remains valid under old P2 rules but is explicitly ineligible for new P4 committed-evidence collection; it is skipped here, never upgraded or
+    silently rehashed against its raw fingerprint."""
     valid, payload, reason = read_receipt_readonly(str(receipt_path), REPO_ROOT)
     if not valid or not isinstance(payload, dict):
+        _fail_closed_if_declared_binding_caused_rejection(receipt_path, reason)
         raise CollectionSkipped("SKIPPED_INVALID_RECEIPT", reason)
 
     base_sha = str(payload.get("baseSha", ""))
@@ -432,12 +410,46 @@ def validate_and_reconcile_receipt(
             "SKIPPED_RECEIPT_RANGE_UNRESOLVED",
             "no changed paths resolvable for receipt head commit",
         )
-    reconstructed = _reconstruct_fingerprint_from_commit(trusted_commit, changed_paths)
-    declared = str(payload.get("worktreeFingerprint", ""))
-    if reconstructed != declared:
+
+    declared_committed_evidence = payload.get("committedEvidence")
+    if declared_committed_evidence is None:
+        raise CollectionSkipped(
+            "SKIPPED_NO_COMMITTED_EVIDENCE",
+            "legacy v3 receipt declares no committedEvidence binding; "
+            "ineligible for P4 committed-evidence collection",
+        )
+    valid_shape, shape_reason = committed_evidence.validate_committed_evidence_shape(
+        declared_committed_evidence
+    )
+    if not valid_shape:
+        raise CollectionUnsafe("UNSAFE_COMMITTED_EVIDENCE_MALFORMED", shape_reason)
+
+    full_base_sha = declared_committed_evidence["baseSha"]
+    full_head_sha = declared_committed_evidence["headSha"]
+    if not full_base_sha.startswith(base_sha) or not full_head_sha.startswith(head_sha):
         raise CollectionUnsafe(
-            "UNSAFE_FINGERPRINT_MISMATCH",
-            f"reconstructed={reconstructed!r} declared={declared!r}",
+            "UNSAFE_COMMITTED_EVIDENCE_RANGE_MISMATCH",
+            f"committedEvidence {full_base_sha}..{full_head_sha} does not match "
+            f"receipt context {base_sha}..{head_sha}",
+        )
+    if not full_head_sha.startswith(trusted_commit[: len(full_head_sha)]) and not trusted_commit.startswith(full_head_sha[: len(trusted_commit)]):
+        raise CollectionUnsafe(
+            "UNSAFE_COMMITTED_EVIDENCE_RANGE_MISMATCH",
+            f"committedEvidence headSha {full_head_sha!r} does not match trusted commit {trusted_commit!r}",
+        )
+
+    try:
+        reconstructed = committed_evidence.compute_committed_evidence_fingerprint(
+            full_base_sha, full_head_sha
+        )
+    except committed_evidence.CommittedEvidenceUnavailable as exc:
+        raise CollectionSkipped("SKIPPED_COMMITTED_EVIDENCE_UNRESOLVABLE", str(exc)) from exc
+
+    declared_fingerprint = declared_committed_evidence["fingerprint"]
+    if reconstructed != declared_fingerprint:
+        raise CollectionUnsafe(
+            "UNSAFE_COMMITTED_EVIDENCE_FINGERPRINT_MISMATCH",
+            f"reconstructed={reconstructed!r} declared={declared_fingerprint!r}",
         )
 
     readout = machine_readout_to_dict(
@@ -451,11 +463,9 @@ def validate_and_reconcile_receipt(
         "reconstructedFingerprint": reconstructed,
     }
 
-
 # ---------------------------------------------------------------------------
 # Atomic pending-journal I/O
 # ---------------------------------------------------------------------------
-
 
 def _load_pending_journal() -> dict[str, Any] | None:
     if not PENDING_JOURNAL_PATH.is_file():
@@ -464,7 +474,6 @@ def _load_pending_journal() -> dict[str, Any] | None:
         return json.loads(PENDING_JOURNAL_PATH.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return None
-
 
 def _atomic_write_json(target: Path, payload: dict[str, Any]) -> None:
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -479,7 +488,6 @@ def _atomic_write_json(target: Path, payload: dict[str, Any]) -> None:
     finally:
         if os.path.exists(tmp_name):
             os.unlink(tmp_name)
-
 
 def write_safety_marker(code: str, detail: str) -> None:
     _atomic_write_json(
@@ -496,10 +504,8 @@ def write_safety_marker(code: str, detail: str) -> None:
         },
     )
 
-
 def safety_marker_present() -> bool:
     return SAFETY_MARKER_PATH.is_file()
-
 
 def _historical_attempt_rows(disclosure_commit: str) -> list[dict[str, Any]]:
     """Reconstruct past hook attempts as diagnostics, never as samples."""
@@ -550,7 +556,6 @@ def _historical_attempt_rows(disclosure_commit: str) -> list[dict[str, Any]]:
             )
     return attempts
 
-
 def _prepare_journal(disclosure_commit: str) -> dict[str, Any]:
     prior = _load_pending_journal()
     was_v2 = bool(prior and prior.get("schema") == observability.JOURNAL_SCHEMA)
@@ -562,7 +567,6 @@ def _prepare_journal(disclosure_commit: str) -> dict[str, Any]:
         journal["collectedCount"]
     )
     return journal
-
 
 def _persist_attempt(
     journal: dict[str, Any],
@@ -594,22 +598,14 @@ def _persist_attempt(
     _atomic_write_json(PENDING_JOURNAL_PATH, updated)
     return updated
 
-
 # ---------------------------------------------------------------------------
 # Top-level collection entrypoint
 # ---------------------------------------------------------------------------
 
-
 def run_collection(commit: str | None = None) -> str:
-    """Run one collection attempt at disclosure ``commit`` (defaults to HEAD).
-
-    Returns a concise status string. Never raises past this boundary in
-    normal operation -- callers (the post-commit hook) must still treat any
-    unexpected exception as a reason to exit 0 without blocking the commit,
-    per the contract's "never blocks git commit" requirement, but this
-    function itself converts every anticipated condition into a clean return
-    value.
-    """
+    """Run one collection attempt at disclosure ``commit`` (defaults to HEAD). Returns a concise status string. Never raises past this boundary in normal operation --
+    callers (the post-commit hook) must still treat any unexpected exception as a reason to exit 0 without blocking the commit, per the contract's "never blocks git
+    commit" requirement, but this function itself converts every anticipated condition into a clean return value."""
     disclosure_commit = commit or canary_core.git_head()
     journal = _prepare_journal(disclosure_commit)
 
@@ -838,13 +834,9 @@ def run_collection(commit: str | None = None) -> str:
         return "P4-C1: SKIPPED_INELIGIBLE_ROW"
     return f"P4-C1: COLLECTED {new_row['rowId']}"
 
-
 def main() -> int:
-    """Post-commit launcher entrypoint. Always exits 0: a hook that fails
-    would block the user's already-completed ``git commit``, which the
-    contract forbids -- only the next pre-commit's safety-marker check may
-    ever block, and only after this module has explicitly written a marker.
-    """
+    """Post-commit launcher entrypoint. Always exits 0: a hook that fails would block the user's already-completed ``git commit``, which the contract forbids -- only
+    the next pre-commit's safety-marker check may ever block, and only after this module has explicitly written a marker."""
     try:
         status = run_collection()
     except Exception as exc:  # noqa: BLE001 - never block the completed commit
@@ -858,7 +850,6 @@ def main() -> int:
         status = f"P4-C1: UNSAFE_UNEXPECTED_COLLECTOR_ERROR ({exc.__class__.__name__})"
     print(status)
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())

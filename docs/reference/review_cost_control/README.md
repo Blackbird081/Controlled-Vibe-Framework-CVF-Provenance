@@ -39,6 +39,12 @@ invocation control owned by the paired standard.
 |---|---|---|
 | `README.md` | this file: family front door | ACTIVE |
 | `CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md` | canonical declaration, field, vocabulary, round-three, and claim-boundary contract | ACTIVE |
+| `CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md` | additive `committedEvidence` binding contract for the MFRP-P2 pass-receipt / P4-C1 collector seam (MFRP-FINGERPRINT-T1) | ACTIVE_ADDITIVE_CONTRACT |
+
+This directory is undated: `CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md`
+is a separate additive machine contract, not a review-cost telemetry field.
+It shares this folder as a reviewer-cost-and-evidence-shape family owner
+rather than opening a new reference folder for one narrow binding.
 
 ## Epistemic Process Block
 

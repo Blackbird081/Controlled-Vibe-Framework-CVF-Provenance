@@ -1,12 +1,12 @@
 # CVF Agent Work Order - Committed Evidence Fingerprint Contract
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-09-11
 Batch ID: MFRP-FINGERPRINT-T1
 dispatchBaseHead: a6823f497
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START
-closureBaseHead: NOT_EXECUTED_YET
+executionBaseHead: 9abb0bdfe2123bccd5749cd0f90148d44cbe0424
+closureBaseHead: 9abb0bdfe2123bccd5749cd0f90148d44cbe0424
 Commit mode: WORKER_MUST_NOT_COMMIT
 dispatchSurface: INTERNAL_AGENT
 providerExecutionAuthority: FORBIDDEN
@@ -37,12 +37,12 @@ Exactly eleven Required Artifact Manifest paths. Worker may create the named hel
 
 ## Closure Checklist
 
-- [ ] raw/Git mismatch reproduced in isolated fixture
-- [ ] optional binding and canonical producer/validator/collector agree
-- [ ] legacy, hostile and consumer tests pass
-- [ ] full worker-return fast gate passes
-- [ ] exact eleven-path delta, empty staging, no commit
-- [ ] independent Local reviewer acceptance and completion companion
+- [x] raw/Git mismatch reproduced in isolated fixture
+- [x] optional binding and canonical producer/validator/collector agree
+- [x] legacy, hostile and consumer tests pass
+- [x] full worker-return fast gate passes
+- [x] exact eleven-path delta, empty staging, no commit
+- [x] independent Local reviewer acceptance and completion companion
 
 ## Return-To-Orchestrator Conditions
 
@@ -399,7 +399,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | Local dispatcher/reviewer/closer; operator-selected internal worker |
 | phase | worker implementation then independent Local review |
-| baseHeadFor(phase) | dispatchBaseHead=a6823f497; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=NOT_EXECUTED_YET |
+| baseHeadFor(phase) | dispatchBaseHead=a6823f497; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=9abb0bdfe2123bccd5749cd0f90148d44cbe0424 |
 | changedSetScope(phase) | worker exactly eleven manifest paths; reviewer may repair same paths |
 | traceScope(phase, actor) | full worker command/status/diff and manifest evidence |
 | commitOwner(phase) | worker forbidden; Local closer |
@@ -416,7 +416,7 @@ Clean worktree required at lane handoff. Dispatcher commits only dispatch materi
 
 ## Commit Mode And Base-Anchor Lifecycle
 
-dispatchBaseHead=a6823f497; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=NOT_EXECUTED_YET. Worker must record actual start HEAD and prove dispatch anchor ancestry. Reviewer captures closureBaseHead immediately before material commit, commits material before separate continuity, and verifies homogeneous committed ranges. No future SHA prediction.
+dispatchBaseHead=a6823f497; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=9abb0bdfe2123bccd5749cd0f90148d44cbe0424. Worker must record actual start HEAD and prove dispatch anchor ancestry. Reviewer captures closureBaseHead immediately before material commit, commits material before separate continuity, and verifies homogeneous committed ranges. No future SHA prediction.
 
 ## Commit Prompt Readiness
 
@@ -542,6 +542,29 @@ NOT_APPLICABLE_WITH_REASON: receipt metadata maintenance only.
 ## Corpus Completeness And Report Integrity
 
 - Corpus verdict: NOT_APPLICABLE_WITH_REASON - no corpus scan.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_FINGERPRINT_T1_2026-09-11.md | Status: CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_MFRP_FINGERPRINT_T1_COMPLETION_2026-09-11.md | REVIEWER_ACCEPTED_BOUNDED | PASS |
+| Roadmap state | standalone work order; no dedicated roadmap transition | no roadmap advancement | N/A with reason: standalone repair |
+| Registry JSON | docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json | two reviewed source hashes; freshness CURRENT | PASS |
+| Registry Markdown | docs/reference/review_cost_control/CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md | implemented bounded profile, no corpus registry change | PASS |
+| External evidence digest | completion Internal Cross-Check Evidence Digest | f92dd77d8b9c0e7fbe871e005e64a64585f5f56c8c597dbf0ec16ce2863f15e8; reported evidence only | PASS |
+| System loop interlock | committedEvidence producer/validator/collector | legacy ineligible; unsafe declarations rejected; no sample promotion | PASS |
+| Session continuity | CVF_SESSION_MEMORY.md; AGENT_HANDOFF_V60_2026-09-08.md | dedicated post-material continuity owned by Local closer | PASS - separate commit required |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| historical-drift | docs/reviews/CVF_MFRP_FINGERPRINT_T1_WORKER_RETURN_2026-09-11.md | committedEvidence | absent on semantic drift | absent in focused chain regression | PASS |
+| malformed-binding | docs/reviews/CVF_MFRP_FINGERPRINT_T1_WORKER_RETURN_2026-09-11.md | committedEvidence | reject null/one-sided | focused validator/collector regressions pass | PASS |
+
+These are recorded test assertions, not durable production runtime receipts.
+No full release/provider proof or historical observation upgrade is claimed.
 
 ## Claim Boundary
 
