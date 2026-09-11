@@ -4,6 +4,7 @@
 Current HEAD recorded for this handoff: `935bc7a1c`. The operator-authorized bounded live recovery is committed; this dedicated handoff-only commit records its truthful parent anchor and restores the pre-existing parked provider/live boundary.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
+Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
 Memory class: active-handoff
 Status: ACTIVE
 
@@ -14,7 +15,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `external_agent_absorption_relay_ready`.
+- Current mode: `external_repo_absorption_bounded_closure_complete`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +25,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`external_agent_absorption_relay_ready`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=manual delivery of the verified EARA-AGW-T0 ZIP to two independent external agents, then Internal Agent reconciliation; parked checkpoint=RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment.
+Startup acknowledged: current mode=`external_repo_absorption_bounded_closure_complete`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=operator priority decision between a separately governed Local Agentgateway current-head/use-case-recovery tranche and continuation of the broader multi-repository domain funnel; parked checkpoint=RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment.
 
 ## Current Mode
 
-`external_agent_absorption_relay_ready`
+`external_repo_absorption_bounded_closure_complete`
 
 ## Purpose
 
@@ -91,13 +92,14 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
   Playwright/Auth.js to `localhost`; unit proof passed 21/21, pre-commit passed
   89/89, the final release bundle passed every check, and SOT3 completed one
   recovery plus one rollback call at HTTP 200. Provider/live work is re-parked.
+- Operator clarification on 2026-09-10 activated `cvf.cross-workspace-evidence-relay@1.0.0`: content-neutral operator transport, `1..N` remote research agents, and Local Agent final private-CVF technical disposition. External participation ends at research/advisory convergence; issuance of a work order is the hard transition to `INTERNAL_AGENT` shared-workspace execution, regardless of model/provider/chat identity.
+  Stable owner: `docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md`; agent count, provider, model, and chat identity are not trust anchors.
+- Operator source-completeness correction on 2026-09-11 advances `cvf.cross-workspace-domain-funnel-absorption@1.1.0`: remote multi-repository filtering sets priority, not the Local corpus boundary; every remotely researched repository with a usable GitHub URL requires a pinned Local mirror, external-to-Local freshness delta, bounded use-case recovery, and runtime-sufficiency classification before umbrella completion. `EARA-AGW-T0` remains a conforming one-repository child because Local issued that scope.
+- Operator-supplied `CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip` (`sha256:66d47f56c92bdd747ed0294fdc00d7d8d2fcc69bc0a0b1e4e92b71b33b7bc795`) reports a 54-source seed (40 Git-backed, 14 non-Git/unresolved) and 68 historical obligations. These are intake evidence pending Local validation. Agentgateway is absent from that seed and remains supplemental pending Local corpus classification.
 
 ## Current Authority
 
-The paired P4-C1 enrollment/observability repair baseline and closed work order
-remain the current exact-hash authority through this continuity transition.
-WP-ARCH-003 synchronization is documentation-only; it does not make an
-external repository or external-agent output an authority root.
+The paired P4-C1 enrollment/observability repair baseline and closed work order remain the current exact-hash authority through this continuity transition. WP-ARCH-003 synchronization is documentation-only; it does not make an external repository or external-agent output an authority root.
 
 ## Closure Evidence
 
@@ -117,7 +119,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-The operator may manually deliver `CVF_EARA_AGW_T0_EXTERNAL_RELAY_2026-09-09.zip` to two independent external agents. Their returns must remain separate and be source-verified and reconciled by an Internal Agent before accept, adapt, defer, or reject disposition. P4-C1 remains proven at 156/19/19/1; WP-ARCH-003 remains terminal parked. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
+`EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. Next allowed move is an operator priority decision between a separately governed Local Agentgateway recovery tranche and continuation of the broader multi-repository domain funnel. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
 
@@ -133,6 +135,8 @@ The operator may manually deliver `CVF_EARA_AGW_T0_EXTERNAL_RELAY_2026-09-09.zip
   `8347be04a`; ENCODING-RENAME-T1 and GC020-SYNC-T1 are closed.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
+- Manual relay is content-neutral transport under `cvf.cross-workspace-evidence-relay@1.0.0`; remote findings remain advisory until Local Agent verification and final technical disposition. Once Local issues a work order, execution is internal shared-workspace work and the relay loop ends.
+- A single-repository return reflects Local dispatch scope, not program scope; funnel completion requires umbrella-ledger reconciliation, and the external agent is not responsible for sources omitted by a narrower Local capsule.
 
 ## Completion Review
 

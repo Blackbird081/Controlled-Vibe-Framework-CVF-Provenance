@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR_2026-09-09.md",
-    "baselineSha256": "1c62829331e7bc9f0414756fb7539f81ba417acc95b591f4c13d8f61ebf8c494",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR_2026-09-09.md",
-    "workOrderSha256": "11864317ab8cd03ca0ac3cadbdf1f23e71700274aa5440eb294148af015ad94a"
+    "baselinePath": "docs/baselines/CVF_GC018_EARA_AGW_T1_AGENTGATEWAY_LOCAL_RECONCILIATION_2026-09-10.md",
+    "baselineSha256": "0f13510a31569bf6bd4d5c949bc5781e0e11c0e3fd05b9ef299b73a4914351b8",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EARA_AGW_T1_AGENTGATEWAY_LOCAL_RECONCILIATION_2026-09-10.md",
+    "workOrderSha256": "57b34e13b9858ce763119a092c37f36b50bef526aa7e2e64b88a50495e447d0d"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -106,7 +106,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "external_agent_absorption_relay_ready",
+  "currentMode": "external_repo_absorption_bounded_closure_complete",
   "previousMode": "public_seven_step_workspace_external_packet_refresh_active",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -16600,5 +16600,5 @@
   "mfrpP4C1ReceiptRangeRework20260909": "P4-C1 receipt-range rework is committed at 6b5318286 with four original-manifest paths. Root cause: receipt generation incorrectly ranged trusted-parent through disclosure, combining reviewer evidence with protected continuity paths. Repair: receipt and fingerprint bind trusted-parent through trusted; disclosure proves order only. Focused tests remain 68 passed, reviewer-fast 67/67 and pre-commit 88/88. The prior safety marker was explicitly adjudicated and moved to ignored ADJUDICATED_SAFETY_MARKER_2026-09-09.json for recoverable diagnostics.",
   "wpArch003TerminalParkSync20260909": "WP-ARCH-003 terminal park is synchronized at 65fafd4f5 across the parent DARA roadmap, RABA-T0 roadmap, RABA-F01-F02 roadmap and 2026-09-09 audit sequence. Current disposition is PARK_NO_TRUTHFUL_AUTHORITY_ROOT; AR1 dispatch history is superseded but preserved; RABA-T1 through T3 and implementation remain unopened. External-agent research remains advisory and cannot become a CVF authority root without Internal Agent verification and reconciliation.",
   "publicSevenStepExternalPacketClosure20260909": "Step 3 closed pass bounded. Private seven-step relationship source is c9fa2862c88eba6e3e3e8dd8e8d96dd018382ef1. Public pull request 8 merged to public main 483c5e33d188b6b2d35d6cd19ee38a3c8548abc4 after required public-sync preflight. EXTERNAL_AGENT_READ was refreshed from that live head; EARA-AGW-T0 is REVIEW_ONLY and expects COMPLETE_PENDING_LOCAL_RECONCILIATION. CVF_EARA_AGW_T0_EXTERNAL_RELAY_2026-09-09.zip has eight entries and SHA-256 a6d1d47dece0a7d94b731a01d5ade3587f9810231ef8f5e3ecfbad3224e11340. External output remains advisory until Internal Agent verification and reconciliation.",
-  "nextAllowedMove": "The three-step 2026-09-09 audit sequence is complete: P4-C1 has one collected sample at runtime 156/19/19/1; WP-ARCH-003 is terminal parked; public main 483c5e33 contains the seven-step shared-workspace projection; and the verified EARA-AGW-T0 relay ZIP is ready. Next allowed move is operator manual delivery of the same ZIP to two independent external agents, followed by Internal Agent source verification and reconciliation of their returns. No external finding is accepted by delivery alone. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment remain parked. Latest finalized numbered LHW remains LHW24."
+  "nextAllowedMove": "EARA-AGW-T1 is CLOSED_PASS_BOUNDED at material commit d679c060871917c78bc83cf2f2c4eb51f8dcaf8e: the pinned Agentgateway eight-path/seven-candidate reconciliation closed as SOURCE_RECONCILED with one NO_NEW_VALUE, four DEFER, and two ADAPT outcomes. This is not umbrella repository absorption: observed origin/main is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The next allowed move is an operator priority decision between a separately governed Local current-head/use-case-recovery tranche for Agentgateway and continuation of the broader multi-repository domain funnel. External Web agents remain research/advisory inputs only; after work-order dispatch execution stays with internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment remain parked. Latest finalized numbered LHW remains LHW24."
 }

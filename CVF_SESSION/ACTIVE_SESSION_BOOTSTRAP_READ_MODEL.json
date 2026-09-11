@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "external_agent_absorption_relay_ready",
+  "currentMode": "external_repo_absorption_bounded_closure_complete",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "The three-step 2026-09-09 audit sequence is complete: P4-C1 has one collected sample at runtime 156/19/19/1; WP-ARCH-003 is terminal parked; public main 483c5e33 contains the seven-step shared-workspace projection; and the verified EARA-AGW-T0 relay ZIP is ready. Next allowed move is operator manual delivery of the same ZIP to two independent external agents, followed by Internal Agent source verification and reconciliation of their returns. No external finding is accepted by delivery alone. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment remain parked. Latest finalized numbered LHW remains LHW24.",
+  "nextAllowedMove": "EARA-AGW-T1 is CLOSED_PASS_BOUNDED at material commit d679c060871917c78bc83cf2f2c4eb51f8dcaf8e: the pinned Agentgateway eight-path/seven-candidate reconciliation closed as SOURCE_RECONCILED with one NO_NEW_VALUE, four DEFER, and two ADAPT outcomes. This is not umbrella repository absorption: observed origin/main is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The next allowed move is an operator priority decision between a separately governed Local current-head/use-case-recovery tranche for Agentgateway and continuation of the broader multi-repository domain funnel. External Web agents remain research/advisory inputs only; after work-order dispatch execution stays with internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment remain parked. Latest finalized numbered LHW remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR_2026-09-09.md",
-    "baselineSha256": "1c62829331e7bc9f0414756fb7539f81ba417acc95b591f4c13d8f61ebf8c494",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR_2026-09-09.md",
-    "workOrderSha256": "11864317ab8cd03ca0ac3cadbdf1f23e71700274aa5440eb294148af015ad94a"
+    "baselinePath": "docs/baselines/CVF_GC018_EARA_AGW_T1_AGENTGATEWAY_LOCAL_RECONCILIATION_2026-09-10.md",
+    "baselineSha256": "0f13510a31569bf6bd4d5c949bc5781e0e11c0e3fd05b9ef299b73a4914351b8",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EARA_AGW_T1_AGENTGATEWAY_LOCAL_RECONCILIATION_2026-09-10.md",
+    "workOrderSha256": "57b34e13b9858ce763119a092c37f36b50bef526aa7e2e64b88a50495e447d0d"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

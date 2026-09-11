@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`external_agent_absorption_relay_ready`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=manual delivery of the verified EARA-AGW-T0 ZIP to two independent external agents, then Internal Agent reconciliation; parked checkpoint=RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment.
+Startup acknowledged: current mode=`external_repo_absorption_bounded_closure_complete`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=operator priority decision between a separately governed Local Agentgateway current-head/use-case-recovery tranche and continuation of the broader multi-repository domain funnel; parked checkpoint=RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6 and production deployment.
 
 ## Current Mode
 
-Current mode marker: `external_agent_absorption_relay_ready`
-Current mode: `external_agent_absorption_relay_ready`; previous mode marker: `public_seven_step_workspace_external_packet_refresh_active`
+Current mode marker: `external_repo_absorption_bounded_closure_complete`
+Current mode: `external_repo_absorption_bounded_closure_complete`; previous mode marker: `internal_agent_absorption_worker_active`
 Previous mode: `gclh_mfrp_p4_c1_automatic_evidence_collection_dispatch_ready`
 
 ## Next Allowed Move
 
-Mode: `external_agent_absorption_relay_ready`. The three-step audit sequence is closed: P4-C1 is prospectively proven at 156/19/19/1; WP-ARCH-003 is terminal parked; public main `483c5e33d` carries the seven-step shared-workspace projection; and the verified `EARA-AGW-T0` relay ZIP is ready. Next, the operator may deliver the same ZIP to two independent external agents; an Internal Agent must verify and reconcile both returns before any finding can influence CVF. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain the blocked work classes.
+Mode: `external_repo_absorption_bounded_closure_complete`. `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`: exact pinned Agentgateway candidate reconciliation is `SOURCE_RECONCILED` with one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT` outcomes. This is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin; current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. Next allowed move is an operator priority decision between a separate governed Local recovery tranche and continuing the broader multi-repository domain funnel. External Web agents remain research/advisory only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
