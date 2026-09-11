@@ -1,12 +1,12 @@
 # CVF Agent Work Order - TPGR Initial Intake Admission
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-09-11
 Batch ID: TPGR-INITIAL-INTAKE-T1
 dispatchBaseHead: 00f8e1bd1
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: c5cf9e480
 Commit mode: WORKER_MUST_NOT_COMMIT
 dispatchSurface: INTERNAL_AGENT
 providerExecutionAuthority: FORBIDDEN
@@ -191,12 +191,12 @@ Independent Local reviewer evaluates the returned implementation and evidence un
 
 ## Closure Checklist
 
-- [ ] original rejection reproduced before edit
-- [ ] additive schema/router/standard contract aligned
-- [ ] positive, adversarial, legacy and checker tests pass
-- [ ] worker-return fast gate passes
-- [ ] six-path delta reconciled and staging empty
-- [ ] independent Local reviewer acceptance recorded
+- [x] original rejection reproduced before edit
+- [x] additive schema/router/standard contract aligned
+- [x] positive, adversarial, legacy and checker tests pass
+- [x] worker-return fast gate passes after reviewer-owned continuity repair
+- [x] six-path worker delta reconciled and staging empty at return
+- [x] independent Local reviewer acceptance recorded
 
 ## Operator Checkpoint
 
@@ -218,8 +218,8 @@ SATISFIED: operator agreed on 2026-09-11 to narrowly supplement initial-intake a
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_agent_handoff_boundary.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_task_governance_route.py; governance/compat/check_semantic_convergence_control.py; governance/compat/check_worker_return_quality_gate.py; governance/compat/check_markdown_structural_completeness.py |
-| literalTokensReviewed | Dispatch Prompt Envelope; Source Verification Block; Required Artifact Manifest; WORKER_MUST_NOT_COMMIT; sourceEvidence; closeabilityContractVersion; Self-declared worker-return artifact |
+| applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_gate_to_role_closeability.py; governance/compat/check_agent_handoff_boundary.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_task_governance_route.py; governance/compat/check_semantic_convergence_control.py; governance/compat/check_worker_return_quality_gate.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_machine_closure_package.py; governance/compat/check_session_mode_consistency.py |
+| literalTokensReviewed | Dispatch Prompt Envelope; Source Verification Block; Required Artifact Manifest; WORKER_MUST_NOT_COMMIT; sourceEvidence; closeabilityContractVersion; Self-declared worker-return artifact; Machine Closure Package; Closure item; Required artifact/path; Machine-readable evidence; Final status; Acceptance Receipt Assertion Matrix |
 | gateRunPurpose | confirmation of source-verified dispatch and output contracts, not first discovery |
 | claimBoundary | dispatch read-ahead does not certify worker implementation or source value |
 
@@ -427,7 +427,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | Local dispatcher/reviewer/closer; operator-selected internal worker |
 | phase | worker implementation then independent Local review |
-| baseHeadFor(phase) | dispatchBaseHead=00f8e1bd1; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=NOT_EXECUTED_YET |
+| baseHeadFor(phase) | dispatchBaseHead=00f8e1bd1; executionBaseHead=9066340e776b57072123b425038bf13470371849; closureBaseHead=c5cf9e480 |
 | changedSetScope(phase) | worker exactly six manifest paths; reviewer may repair same paths |
 | traceScope(phase, actor) | full worker command/status/diff and manifest evidence |
 | commitOwner(phase) | worker forbidden; Local closer |
@@ -446,14 +446,14 @@ Clean worktree required at lane handoff. Dispatcher commits only dispatch materi
 
 | Field | Value |
 |---|---|
-| completionReviewPath | `docs/reviews/CVF_TPGR_INITIAL_INTAKE_T1_COMPLETION_2026-09-11.md` (optional; prefer reviewer decision in the named worker return) |
+| completionReviewPath | docs/reviews/CVF_TPGR_INITIAL_INTAKE_T1_COMPLETION_2026-09-11.md - required by continuation-chain Rule B; detailed decision retained in worker return |
 | reviewerOwnedClosurePaths | six worker paths, this work order and paired baseline status; separate active continuity sync |
 | closureOwner | Local reviewer/closer |
 | workerCommitPermission | FORBIDDEN |
 
 ## Commit Mode And Base-Anchor Lifecycle
 
-dispatchBaseHead=00f8e1bd1; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=NOT_EXECUTED_YET. Worker must record actual start HEAD and prove dispatch anchor ancestry. Reviewer sets closureBaseHead from worker start evidence, commits material before separate continuity, and verifies homogeneous committed ranges. No future SHA prediction.
+dispatchBaseHead=00f8e1bd1; executionBaseHead=9066340e776b57072123b425038bf13470371849; closureBaseHead=c5cf9e480. The separate continuity correction intervenes after worker return; the material range starts at the actual closure parent, not the dispatch or worker anchor. Reviewer commits material before separate continuity and verifies homogeneous committed ranges. No future SHA prediction.
 
 ## Commit Prompt Readiness
 
@@ -591,10 +591,46 @@ NOT_APPLICABLE_WITH_REASON: no legacy source payload is inspected or promoted.
 
 ## Claim Boundary
 
-This is internal deterministic governance-metadata maintenance, not AI governance runtime proof. No source repository acquisition, research, source-value disposition, corpus completion, implementation of a repo candidate, provider/live call, credential access, package install, CLI/MCP adapter, public sync, push or deployment is authorized. The future three-repo pilot is not dispatched by this packet.
+This is internal deterministic governance-metadata maintenance, not AI governance runtime proof. No source repository acquisition, research, source-value disposition, corpus completion, implementation of a repo candidate, provider/live call, credential access, package install, CLI/MCP adapter, public sync, push or deployment is authorized. Pilot source acquisition remains outside this packet's authority.
 
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
 
 Reason: private internal admission implementation and review; no public export.
+
+## Reviewer Closure Decision
+
+Local reviewer accepts the bounded implementation on 2026-09-11. Reviewer verdict: REVIEWER_ACCEPTED_BOUNDED. The original worker return and its failed aggregate are historical evidence, not the current gate verdict. Four consolidated findings are resolved: planned output is within declared path families; whitespace-only prior references reject; old-router full-output comparisons and actual checker.evaluate integration replace self-comparison; ancestry and gate reporting are corrected.
+
+Reviewer reused the returned 70/70 focused tests and inspected the corrected contract, schema, authority boundary, tests and exact six-path delta. Independent targeted probes rejected out-of-family output and whitespace references and accepted a valid initial-only declaration without absorption authority. No broad duplicate test run or provider call was needed. The dispatch-owned mode defect was corrected separately at c5cf9e480. Worker-return fast and reviewer-fast then passed, including 68/68 reviewer checks. These are deterministic metadata checks, not runtime governance proof.
+
+closureBaseHead: c5cf9e480
+executionBaseHead retained: 9066340e776b57072123b425038bf13470371849
+reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
+successorTrancheOpened: NO
+
+Material commit plan: exactly six worker paths plus the paired work order, baseline closure conversion and continuation-required completion companion. Separate continuity projection follows; no mixed material/session commit. The completion companion is required by check_continuation_chain.py Rule B. No registry mutation, source acquisition, pilot dispatch, external relay, runtime, live call, public sync or push.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_INITIAL_INTAKE_T1_2026-09-11.md | Status: CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_TPGR_INITIAL_INTAKE_T1_WORKER_RETURN_2026-09-11.md | Reviewer Closure Decision: REVIEWER_ACCEPTED_BOUNDED | PASS |
+| Roadmap state | standalone work order; no dedicated roadmap closure | no roadmap transition | N/A with reason: standalone maintenance |
+| Registry JSON | existing TPGR registry and active-window entry | no new corpus processed or registry semantics changed; existing registration retained | PASS |
+| Registry Markdown | existing TPGR standard | additive initial-only contract aligned with schema/router; no corpus entry required | PASS |
+| External evidence digest | no external evidence consumed in implementation | local source and returned test evidence only | N/A with reason: no external source processing |
+| System loop interlock | initialIntakeAdmission contract | absorptionAcceptanceAuthorized=false; separate reviewed work order required for next stage | PASS |
+| Session continuity | CVF_SESSION_MEMORY.md; AGENT_HANDOFF_V60_2026-09-08.md | mode repair c5cf9e480; post-material projection separately owned by Local closer | PASS - prerequisite fixed; final projection follows material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Query ID | Receipt artifact | JSON path | Required value | Observed value | Status |
+|---|---|---|---|---|---|
+| initial-only | docs/reviews/CVF_TPGR_INITIAL_INTAKE_T1_WORKER_RETURN_2026-09-11.md | absorptionAcceptanceAuthorized | false | false in targeted valid probe and returned tests | PASS |
+| unsafe-output | docs/reviews/CVF_TPGR_INITIAL_INTAKE_T1_WORKER_RETURN_2026-09-11.md | receiptStatus | REJECTED_ESCALATED | REJECTED_ESCALATED in targeted probe | PASS |
+| blank-prior | docs/reviews/CVF_TPGR_INITIAL_INTAKE_T1_WORKER_RETURN_2026-09-11.md | receiptStatus | REJECTED_ESCALATED | REJECTED_ESCALATED in targeted probe | PASS |
+
+These assertion rows refer to deterministic test/probe outcomes described in the review, not durable runtime receipts.
