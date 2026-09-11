@@ -63,6 +63,14 @@ semantics.
 
 ## Authoring Flow
 
+Current coordination agreement: domain-funnel method `1.2.0` defines two
+steps: external domain research, then the existing Local absorption process.
+Read its Two-Step Operating Agreement, Shared Evidence/Stop Rules, and Pilot
+sections before any new batch. All repos receive a bounded initial survey;
+selected capability/use-case groups receive deeper investigation. External
+reports retain common mechanisms, per-repo value and unknowns separately.
+Validate the approach on a small domain pilot before broad rollout.
+
 1. Read this front door, the context standard, and
    `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`.
 2. Classify the input type through the chain map before deciding whether the

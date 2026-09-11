@@ -23,7 +23,7 @@ mechanism independently from several similar repositories.
 
 ## Scope / Owner Boundary
 
-Method identifier: `cvf.cross-workspace-domain-funnel-absorption@1.1.0`
+Method identifier: `cvf.cross-workspace-domain-funnel-absorption@1.2.0`
 
 This method owns:
 
@@ -45,6 +45,92 @@ It does not make the remote agent, a repository, a search result, or an
 external handoff pack CVF authority. It does not authorize implementation,
 provider use, publication, deployment, dependency installation, or destructive
 effects.
+
+## Two-Step Operating Agreement And Proportional Depth
+
+Operator-ratified on 2026-09-11: Step 1 is external multi-repository domain
+research; Step 2 is the existing Local repository absorption process governed
+by `CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`. This method coordinates the two
+steps and adds no competing Local absorption lifecycle. Any work order issued
+for Local source inspection, recovery, or implementation uses internal agents.
+
+Step 1 must return three separate views: shared mechanism families with all
+supporting sources, repository-specific operational value, and unverified or
+unread regions. A duplicate-pattern decision does not erase unique examples,
+skills, integrations, evaluations, failure behavior, or source provenance.
+Read supplied CVF orientation before research; perform detailed public-CVF
+mapping after domain filtering. Local private-CVF absence remains a hypothesis
+until Local source comparison.
+
+Step 2 applies the following depth levels within existing authority:
+
+| Level | Required work | Exit or escalation |
+|---|---|---|
+| Initial survey for every acquired repository | Pin source; record freshness and license; enumerate all paths; classify relevant source regions; read representative content from applicable use-case, example, test, skill and consumer regions | Record promising deltas, excluded regions and unknowns; never infer no value from filenames alone |
+| Selected capability investigation | Fully read selected files; trace inputs, outputs, consumer, invocation and failure paths; compare with current CVF owner evidence | Stop when the named value/overlap decision is supported; expand only for a decision-changing evidence gap |
+| Selected value conversion | Adapt accepted knowledge, recipe, fixture, evaluation, skill, contract or implementation into its CVF owner under the applicable work order | Prove the claimed maturity; integration and use proof remain distinct from source reconciliation |
+
+Every surveyed region records its actual read depth. File enumeration is not
+semantic reading. A bounded survey cannot justify repository-wide
+`NO_NEW_VALUE` or complete use-case coverage. Missing evidence and exhausted
+budget remain explicitly unresolved/deferred, never converted into no value.
+
+## Shared Evidence, Value Selection And Stop Rules
+
+Use one umbrella source ledger and linked capability/use-case records. Stable
+sourceId, mechanismId and useCaseId preserve many-to-many provenance. Each
+source keeps its own commit, freshness and license evidence. Compare a shared
+mechanism with CVF once, then examine per-source application differences.
+
+A capability record carries: user outcome; source pin and path/symbol evidence;
+shared mechanism; distinct use case; read depth; current CVF owner or evidenced
+owner gap; producer, verifier and consumer; failure behavior; missing CVF link;
+value/disposition; evidence confidence; next action or explicit reopen trigger.
+Tests, recipes, fixtures, adapters and usable skills count as material value
+even when their architectural pattern already exists in CVF. Skill inspection
+includes instructions, scripts, assets and tool composition where present.
+
+Prioritize a current workflow gap first, then reliability or delivery-cost
+improvement, then a new capability with a concrete use case. Preserve promising
+future value with source evidence and the existing conditional reopen index.
+Reserve a bounded exploration sample for plausible unique value outside the
+external shortlist; novelty without a current consumer is not automatically
+worthless. Each future dispatch states its exploration allowance and budget.
+
+Before another research round or deep read, name the unresolved decision,
+expected information gain and cost reason. Stop once evidence supports that
+decision. At the agreed budget ceiling, return existing evidence and a concrete
+gap; Local decides continuation. Do not automatically repeat the research loop.
+
+Reuse immutable inventories, hashes and accepted owner comparisons. Freeze a
+pin for the investigation and assess relevant upstream deltas at the next
+decision boundary. Refresh Local owner evidence when its source changes.
+Reviewer consumes valid evidence and investigates named contradictions rather
+than repeating the worker's scan. Reports reference the shared ledger instead
+of copying its rows into every packet. Required governance gates still apply;
+this agreement does not activate selective gate execution or extend the TPGR
+trancheValue machine schema to absorption.
+
+## Pilot And Scale-Out Admission
+
+Before broad rollout, nominate one domain and about three repositories: two
+with overlapping mechanisms and one with a materially different use case.
+Prefer the existing researched pool and reuse Agentgateway evidence when it
+fits the selected domain. Do not force unrelated sources into the pilot or
+invent missing historical research. External first returns method concerns and
+pilot nominations; Local selects the scope and issues the next bounded packet.
+
+Record external and Local discoveries separately, duplicate investigation
+avoided, unresolved regions, evidence-supported value converted or preserved,
+and research/reviewer/repair/integration effort. Separate measured values from
+estimates; unavailable time, token or monetary cost is UNKNOWN, not zero.
+File/repository/packet counts are coverage measures, not value measures.
+
+Local reviews the pilot's recovered value, decision quality and total effort
+before selecting the next batch size and depth budget. No numeric efficiency
+threshold or cost saving is claimed before pilot evidence exists. Survey
+completion, candidate reconciliation, implementation and proven use remain
+separate milestones; broad rollout requires this explicit Local assessment.
 
 ## Canonical Funnel
 
@@ -437,6 +523,36 @@ continuity before program-level completion is assessed.
   recovery, runtime-sufficiency classification, and terminal accounting.
 
 ## Machine Enforcement Disposition
+
+### Pilot Admission Safety Adjudication - 2026-09-11
+
+Reviewer disposition: reject P4 observation attempt `ATTEMPT-d25f3c7dabca71e7`
+as unusable measurement evidence. Trusted material was `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`;
+disclosure was `dca44af2dfe38f91aab06a123d4ffc0429bce95a`. The pending journal
+retains `UNSAFE_FINGERPRINT_MISMATCH`; no sample or checkpoint is promoted.
+
+Read-only Git-blob reconstruction exactly reproduced the marker's fingerprint
+`eaedcfd7875c759df0360fc17df693e74202a1e9f51330531ca434ac1ddc153c`.
+The old receipt's declared fingerprint
+`d8cce61338f2e66d92df297e7661127c877d3cee3d38b3240c1dbb93466064cd`
+was not reproduced. The phase receipt has since been replaced by a different
+range, so the original receipt bytes are unavailable for full reconstruction.
+
+Source inspection of `governance/compat/run_agent_autorun_workflow_gate.py`
+`_worktree_fingerprint` shows mutable disk bytes; source inspection of
+`governance/compat/mfrp_shadow_canary_autocollect.py`
+`_reconstruct_fingerprint_from_commit` shows committed Git blobs. Local
+`core.autocrlf=true` and read-only byte comparisons establish LF/CRLF differences
+on several material paths. This identifies a representation risk, not proof
+that line endings alone explain the old failure. The collector's rejection is
+retained as valid fail-closed behavior, not relabeled PASS or false positive.
+
+Under the P4-C1 work order's Write Ownership, the reviewer may archive the
+marker after this explicit rejection adjudication. Preserve its original bytes
+and journal; do not rerun the historical observation, modify receipts, relax
+identity comparison, or claim a repaired collector. Further fingerprint-domain
+hardening requires a separately governed maintenance packet. This permits
+ordinary governed documentation/dispatch work, not retrospective sample use.
 
 - Disposition: `CHECKER_CANDIDATE`.
 - Required future enforcement: multi-repository absorption packets must account
