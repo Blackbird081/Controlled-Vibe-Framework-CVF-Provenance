@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "internal_agent_governance_worker_active",
+  "currentMode": "internal_agent_governance_bounded_closure_complete",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "MFRP-FINGERPRINT-T1 DISPATCH_READY at cda03fa14; pre-dispatch 82/82 and material pre-commit 89/89 PASS. Operator explicitly authorized separate fingerprint guard-maintenance dispatch on 2026-09-11. Current authority: paired MFRP_FINGERPRINT_T1 baseline/work order. Next: operator assigns internal VS Code worker; exactly eleven manifest paths, no main-workspace staging/commit. Preserve raw worktree cache identity; add integrity-covered committed Git-blob binding; prove producer/validator/collector plus legacy/CRLF/binary/dirty-state compatibility. Worker returns COMPLETE_PENDING_REVIEW uncommitted for independent Local review. EXPLICIT_LANE_HANDOFF; NO_MUTATION_WHILE_LANE_ACTIVE. TPGR-INITIAL-INTAKE-T1 remains accepted at 3de0ba07c, continuity a6823f497. Its P4 attempt ATTEMPT-a4ec8bfaa9c112ca was rejected for raw CRLF/Git LF mismatch; marker archived with hash evidence in the new baseline; journal preserved, no sample promotion or permanent-fix claim. Pilot nominees Agentgateway/QM/DeepSeek Harness remain parked, reuse EARA/DSH evidence. No external research, acquisition, runtime/provider/live/public/deployment or hook/config/registry change. RABA/DARA-T5/P5/P6 parked; latest LHW24.",
+  "nextAllowedMove": "MFRP-FINGERPRINT-T1 materially CLOSED_PASS_BOUNDED at 465f1a831528345079b7f3adc7a2d4268817261c; 300/300 combined focused/consumer tests and material pre-commit 89/89 PASS. Operator authorized cleanup then next tranche. Next allowed move: complete dedicated continuity and committed-range verification, then Local authors a bounded three-repository domain-pilot initial-intake work order for Agentgateway/QM/DeepSeek Harness, reusing the external nomination plus EARA/DSH evidence. No new broad external research. Acquisition/execution is not dispatched until the new packet defines pins, freshness/license checks, per-repo operational value and exact paths. External remains advisory; internal worker executes and Local reviews. Raw cache identity is preserved; committedEvidence is separately integrity-covered; old rejected observation remains rejected. Material post-commit P4 result SKIPPED_NO_ELIGIBLE_CANDIDATE, no sample promotion. RABA/DARA-T5/P5/P6 and runtime/provider/live/public/deployment remain parked; latest LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_FINGERPRINT_T1_2026-09-11.md",
-    "baselineSha256": "0a0f16ed7c5fce10c6545ea9cf15f29a4c5c6b2722017689b03d861e28c96d71",
+    "baselineSha256": "99844e08b7385cae5960eee5cbcc8cd8840e0d1d5112d15c4e534bd1c8da5cda",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_FINGERPRINT_T1_2026-09-11.md",
-    "workOrderSha256": "8bb4e4a971485dc5e0e3868bdf97ff94a5fd646748a00fe6d12b5916bb8f9053"
+    "workOrderSha256": "4d119ab3472fdd37909637c3e6f34f0390dfd76d513f35e54e925e72752b5936"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

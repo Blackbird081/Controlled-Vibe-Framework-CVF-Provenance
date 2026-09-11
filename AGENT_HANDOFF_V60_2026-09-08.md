@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `cda03fa14`. Fingerprint repair dispatch is materially committed; this dedicated continuity projection releases only its eleven-path internal worker lane.
+Current HEAD recorded for this handoff: `465f1a831528345079b7f3adc7a2d4268817261c`. Material parent anchor for dedicated closure continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -14,7 +14,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `internal_agent_governance_worker_active`.
+- Current mode: `internal_agent_governance_bounded_closure_complete`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +24,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`internal_agent_governance_worker_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=internal worker executes MFRP-FINGERPRINT-T1 eleven-path manifest then returns uncommitted for Local review; no pilot execution; parked checkpoint=pilot acquisition, RABA, DARA-T5, runtime/provider/live/public/deployment, P5/P6.
+Startup acknowledged: current mode=`internal_agent_governance_bounded_closure_complete`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=finish fingerprint continuity/verification then author domain-pilot initial-intake packet; parked checkpoint=source execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
 
 ## Current Mode
 
-`internal_agent_governance_worker_active`
+`internal_agent_governance_bounded_closure_complete`
 
 ## Purpose
 
@@ -44,15 +44,8 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Latest Work / Changes
 
-- P4-C1 repair material committed at `bb7b0ce500d5aaade9be4d14c31af3d3963a509b`
-  with exact-ten scope and pre-commit 88/88 PASS. The first real journal-v2
-  write reports 151 attempts, 17 candidates, 17 eligible opportunities, zero
-  collected samples, checkpoint initialization, and nonblocking
-  `STARVED_ELIGIBLE_NOT_COLLECTED`.
-- P4-C1 enrollment/observability repair dispatch committed at
-  `8347be04a0216479f754e3eee3ca71f15a149a8b`; pre-dispatch passed 81/81 and
-  the normal pre-commit chain passed 88/88. Its exact ten-path implementation
-  lane is the only currently released material lane.
+- P4-C1 repair material committed at `bb7b0ce500d5aaade9be4d14c31af3d3963a509b` with exact-ten scope and pre-commit 88/88 PASS. The first real journal-v2 write reports 151 attempts, 17 candidates, 17 eligible opportunities, zero collected samples, checkpoint initialization, and nonblocking `STARVED_ELIGIBLE_NOT_COLLECTED`.
+- P4-C1 enrollment/observability repair dispatch committed at `8347be04a0216479f754e3eee3ca71f15a149a8b`; pre-dispatch passed 81/81 and the normal pre-commit chain passed 88/88. Its exact ten-path implementation lane was the released material lane at that dispatch.
 - Dispatch material committed at `891d7c72a` after pre-dispatch 81/81 and staged pre-commit 88/88 PASS.
 - ROLE-SOT-MH-T1 material and closure committed at `94c4922c2`; focused suites passed 55/55 and 44/44, reviewer-fast 67/67, and material pre-commit 88/88.
 - Encoding rename-awareness and GC-020 synchronization dispatch material committed at `7e4ed00868184f3778bedfefd479627d2cafcdb1` after six authoring review generations and staged pre-commit 88/88 PASS. Committed-range pre-closure passed 80/81; its only failure was the expected post-material GC-020 handoff synchronization edge resolved by this dedicated continuity projection.
@@ -118,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-11 current priority: `MFRP-FINGERPRINT-T1` DISPATCH_READY at `cda03fa14`, pre-dispatch 82/82 and pre-commit 89/89. Authority: `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_FINGERPRINT_T1_2026-09-11.md` and paired GC-018. Internal worker owns eleven paths, no commit; Local independently reviews. TPGR T1 remains accepted at `3de0ba07c`; its rejected P4 fingerprint observation and recoverable marker archive are recorded in the new baseline. No sample promotion or permanent repair claim. Pilot remains parked.
+2026-09-12 current priority: MFRP-FINGERPRINT-T1 material 465f1a831528345079b7f3adc7a2d4268817261c, 300/300 tests and pre-commit 89/89 PASS. Prepare the next three-repository domain-pilot initial-intake packet after continuity and committed-range verification; acquisition and implementation remain undispatched.
 `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; source-recovery execution still requires a separate reviewed work order. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
@@ -131,8 +124,8 @@ authority, production deployment, or any parked project lane.
 
 ## Active Boundary
 
-- Only MFRP-FINGERPRINT-T1 eleven-path internal worker execution is released; TPGR T1 remains closed.
-  Prior repair lanes remain historical; the three-repo source pilot is not released.
+- MFRP-FINGERPRINT-T1 is materially closed; worker lane released. TPGR T1 remains closed.
+  Next: domain-pilot initial-intake work-order authoring; source execution is not released.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
 - Manual relay is content-neutral transport under `cvf.cross-workspace-evidence-relay@1.0.0`; remote findings remain advisory until Local Agent verification and final technical disposition. Once Local issues a work order, execution is internal shared-workspace work and the relay loop ends.
@@ -153,6 +146,12 @@ Public catalog paths: N/A; no catalog entry was included in the bounded concept 
 Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
 
 ## Core Guard Self-Protection Authorization
+
+Current closure projection authorized by operator cleanup/next-tranche request
+on 2026-09-12: MFRP-FINGERPRINT-T1 material 465f1a831528345079b7f3adc7a2d4268817261c,
+300/300 tests, material pre-commit 89/89 PASS; P4 material result
+SKIPPED_NO_ELIGIBLE_CANDIDATE. Only dedicated continuity is committed here;
+next domain-pilot initial-intake packet is preparation, not execution release.
 
 Authorized guard-maintenance scope: project the accepted P4-C1 repair dispatch
 `8347be04a0216479f754e3eee3ca71f15a149a8b`, its current authority hashes,
@@ -179,6 +178,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/mfrpP4C1EnrollmentObservabilityRepairClosure20260909.json`
 - `CVF_SESSION/state/entries/publicSevenStepExternalPacketClosure20260909.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/mfrpFingerprintT1Closure20260912.json`
 - `docs/reference/CVF_2026_09_09_AUDIT_AND_REMEDIATION_SEQUENCE.md`
 - `docs/reference/CVF_SEVEN_STEP_SHARED_WORKSPACE_AGENT_RELATIONSHIP_MODEL_2026-09-09.md`
 - `CVF_SESSION/state/entries/mfrpP4C1ReceiptRangeRework20260909.json`
