@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `48626e801`. TPGR-INITIAL-INTAKE-T1 dispatch is materially committed; this dedicated continuity projection activates only the internal admission-amendment lane.
+Current HEAD recorded for this handoff: `3de0ba07c`. TPGR-INITIAL-INTAKE-T1 material closure is committed; this dedicated continuity projection closes the worker lane and opens no pilot.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -14,7 +14,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `internal_agent_governance_worker_active`.
+- Current mode: `internal_agent_governance_bounded_closure_complete`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +24,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`internal_agent_governance_worker_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=internal worker executes TPGR-INITIAL-INTAKE-T1 then returns uncommitted for independent Local review; parked checkpoint=pilot acquisition, RABA, DARA-T5, runtime/provider/live/public/deployment, P5/P6.
+Startup acknowledged: current mode=`internal_agent_governance_bounded_closure_complete`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=TPGR T1 closed at 3de0ba07c; separate pilot work order only on continuation, no pilot execution now; parked checkpoint=pilot acquisition, RABA, DARA-T5, runtime/provider/live/public/deployment, P5/P6.
 
 ## Current Mode
 
-`internal_agent_governance_worker_active`
+`internal_agent_governance_bounded_closure_complete`
 
 ## Purpose
 
@@ -118,8 +118,8 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-11 current priority: `TPGR-INITIAL-INTAKE-T1` DISPATCH_READY at `48626e801` (pre-dispatch 82/82, pre-commit 89/89). Authority: `docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_INITIAL_INTAKE_T1_2026-09-11.md` and paired GC-018. Internal worker implements six paths, no commit/network; Local independently reviews. Source-acquisition pilot is not dispatched. Preserve EARA/DSH reuse and unknown evidence. No further external relay required.
-`EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The current next move is the TPGR admission amendment above; source-recovery lanes remain unopened. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
+2026-09-11 current priority: `TPGR-INITIAL-INTAKE-T1` is `CLOSED_PASS_BOUNDED` at `3de0ba07c`; returned tests 70/70, reviewer-fast 68/68, material pre-commit 89/89. Completion: `docs/reviews/CVF_TPGR_INITIAL_INTAKE_T1_COMPLETION_2026-09-11.md`. Worker lane complete. Next: separate reviewed pilot work order on operator continuation; no source acquisition or pilot execution opened. Reuse EARA/DSH evidence, preserve unknowns and distinct use cases.
+`EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; source-recovery execution still requires a separate reviewed work order. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
 
@@ -131,7 +131,7 @@ authority, production deployment, or any parked project lane.
 
 ## Active Boundary
 
-- This handoff releases only the exact TPGR-INITIAL-INTAKE-T1 internal worker manifest.
+- TPGR-INITIAL-INTAKE-T1 is closed; this handoff releases no further worker execution.
   Prior repair lanes remain historical; the three-repo source pilot is not released.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
@@ -140,7 +140,7 @@ authority, production deployment, or any parked project lane.
 
 ## Completion Review
 
-`docs/reviews/CVF_ADIF_0057_MH_T1_GATE_TO_ROLE_CLOSEABILITY_MACHINE_ENFORCEMENT_COMPLETION_2026-09-10.md` records accepted material `670a7979d` and corrective material `84bcbb222`; ROLE-SOT-MH-T1 remains closed at `94c4922c2`.
+`docs/reviews/CVF_TPGR_INITIAL_INTAKE_T1_COMPLETION_2026-09-11.md` records current bounded acceptance at `3de0ba07c`. Historical ADIF-0057-MH-T1 remains accepted at `670a7979d`/`84bcbb222`; ROLE-SOT-MH-T1 at `94c4922c2`.
 
 ## Public Export Disposition
 
@@ -158,7 +158,7 @@ Authorized guard-maintenance scope: project the accepted P4-C1 repair dispatch
 `8347be04a0216479f754e3eee3ca71f15a149a8b`, its current authority hashes,
 mode, and corrected next move into existing active continuity; record the
 operator-approved safe provenance-push route in its canonical boundary owner
-and register that binding dated reference as a permanent active window.
+and register that binding dated reference as a permanent active window. Operator additionally authorized TPGR T1 reviewer closure and its separate mode, hash and next-move projection; implementation 3de0ba07c and historical gate failures remain preserved.
 
 Protected paths:
 

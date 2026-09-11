@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "internal_agent_governance_worker_active",
+  "currentMode": "internal_agent_governance_bounded_closure_complete",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "TPGR-INITIAL-INTAKE-T1 internal worker dispatch committed at 48626e801; pre-dispatch 82/82 and pre-commit 89/89 PASS. Operator authorized the narrow initial-intake admission amendment on 2026-09-11. Current authority is the paired TPGR_INITIAL_INTAKE_T1 baseline/work order. Next: operator assigns the internal VS Code worker to implement exactly six manifest paths and return COMPLETE_PENDING_REVIEW uncommitted; Local reviewer independently reviews before committing implementation or issuing a pilot. Dispatcher registered the existing TPGR standard in the active-window registry; worker must not modify that registry or continuity. Shared lane: EXPLICIT_LANE_HANDOFF, NO_MUTATION_WHILE_LANE_ACTIVE. Method 1.2 remains committed at dd82fb9aa. Future pilot nominees remain Agentgateway, QM and DeepSeek Harness; reuse EARA-AGW-T1 and DSH-WRA-R1, preserve unknown research pins/read depth, no forced novelty. No pilot source acquisition, external research, runtime/provider/live/public/deployment is authorized in this worker task. P4 rejected-observation journal retained; no fingerprint-fix or sample-promotion claim. RABA/DARA-T5/P5/P6 remain parked. Latest finalized numbered LHW remains LHW24.",
+  "nextAllowedMove": "TPGR-INITIAL-INTAKE-T1 CLOSED_PASS_BOUNDED at material commit 3de0ba07c; reviewer accepted all four repairs using returned 70/70 focused tests and targeted probes. Reviewer-fast 68/68 and material pre-commit 89/89 PASS. Dispatcher continuity correction c5cf9e480 retained. Authority: paired TPGR_INITIAL_INTAKE_T1 baseline/work order and docs/reviews/CVF_TPGR_INITIAL_INTAKE_T1_COMPLETION_2026-09-11.md. Internal worker lane is complete; no redispatch. Next allowed move: Local orchestrator prepares a separate reviewed pilot work order when operator continues; no pilot opened in this closure. Method 1.2 at dd82fb9aa remains governing. Future domain pilot nominees: Agentgateway, QM, DeepSeek Harness. Reuse EARA-AGW-T1 and DSH-WRA-R1; preserve unknown pins/read depth and unique use cases; no forced novelty or duplicate corpus work. No source acquisition, external research, runtime/provider/live/public/deployment authorized here. P4 hook SKIPPED_NO_ELIGIBLE_CANDIDATE; rejected-observation history retained, no fingerprint-fix or sample-promotion claim. RABA/DARA-T5/P5/P6 remain parked. Latest finalized numbered LHW remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_TPGR_INITIAL_INTAKE_T1_2026-09-11.md",
-    "baselineSha256": "321a023432298d288ff80c98c3c5ef1750db994c4d1a5a96cbdf9eeb74533e75",
+    "baselineSha256": "c3dd2952aef93661649fb43a1c6907380db12950ca0110e1f7645c7e9f09051a",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_TPGR_INITIAL_INTAKE_T1_2026-09-11.md",
-    "workOrderSha256": "8a102ee44a1eec8690f97aa25b3f890698199e91c99015474f1a7898640ca281"
+    "workOrderSha256": "c69abdad51a32807b4e597fdd33ac15086a93ce50768ba214820a67036071638"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
