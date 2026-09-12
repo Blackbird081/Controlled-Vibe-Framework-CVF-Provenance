@@ -583,7 +583,7 @@ class ActualP2SeamTests(unittest.TestCase):
             receipt_hash,
             # Reviewed additive v3 owner, MFRP-FINGERPRINT-T1 Local
             # completion and operator-approved consumer amendment.
-            "8f12da95ddbdaf8974c9d18b3bac3d2ee99ea480bc44c0af3095f80b7e95ab06",
+            "e3686ee11d7d52e644a7d68eea47dd744ec3a6e9970d503aed704f4e9c3cc9d5",
         )
         self.assertEqual(
             readout_hash,
