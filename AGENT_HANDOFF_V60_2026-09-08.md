@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `7b2b646a8bad4cfeb1945762bb525ed81a12ff22`. Material parent anchor for dedicated closure continuity. Byte-pin correction and intake DRAFT committed; 159 tests and 89/89 pre-commit PASS. Intake remains undispatched.
+Current HEAD recorded for this handoff: `9964e8628e7eea7c04800abcac9178eb3143f6ef`. Material parent anchor for dedicated closure continuity. Byte-pin correction and intake DRAFT committed; 159 tests and 89/89 pre-commit PASS. Intake remains undispatched.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
