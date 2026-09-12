@@ -2,11 +2,11 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: DRAFT
+Status: APPROVED_FOR_EXECUTION
 Date: 2026-09-12
 Batch ID: DOMAIN-PILOT-INITIAL-INTAKE
 Commit mode: WORKER_MUST_NOT_COMMIT
-dispatchBaseHead: NOT_DISPATCHED
+dispatchBaseHead: 73bed437dece8e73682c877a1507a47ef0849696
 
 ## Purpose
 
@@ -14,20 +14,17 @@ Define the bounded baseline for the Agentgateway, QM and DeepSeek Harness
 initial survey. Pair with
 `docs/work_orders/CVF_AGENT_WORK_ORDER_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md`.
 Operator authorized completing this preparation after identifying QM as
-`https://github.com/yc-software/qm.git`. This is not intake execution authority.
+`https://github.com/yc-software/qm.git`. The Decision / Baseline section now grants initial-intake authority after the required gate.
 
 ## Decision / Baseline
 
-DRAFT_FOR_LOCAL_RELEASE_REVIEW. No worker invocation, source acquisition,
-implementation or authority transition occurs. Local must record an explicit
-release decision and satisfy the paired packet's release gates before intake.
-Baseline authoring is complete; independent release acceptance is not claimed.
+Local review: APPROVED_FOR_INITIAL_INTAKE. Release only the paired initial-survey scope after pre-dispatch PASS. Worker remains no-commit; selected absorption and implementation remain unopened. This supersedes historical draft restrictions for intake acquisition only.
 
 ## Core Guard Self-Protection Authorization
 
 Operator authorization: subsequent explicit instruction "lam di" to resolve
 the diagnosed byte/hash inconsistency. This narrow corrective maintenance is
-separate from the undispatched source intake. Local performs the repair.
+historically separate from source intake; the current release is bounded below. Local performs the repair.
 Authorized guard-maintenance scope: restore the eight named tracked files to
 their exact HEAD Git-blob bytes after proving CRLF-only difference; refresh
 only the two affected raw-byte source fingerprints and the existing consumer
@@ -66,7 +63,7 @@ INDEX rows named in the work order. Ignored reference mirrors: exactly
 agentgateway__agentgateway, deepseek-ai__deepseek-harness, yc-software__qm under
 `.private_reference/source_mirrors/`. No further snapshot paths are released.
 Existing historical checkout bytes must be preserved; reading another Git blob
-does not require resetting a checkout. Fetch/clone remain future intake actions.
+does not require resetting a checkout. Fetch/clone are authorized within the released initial-intake scope.
 
 Local owns this baseline, work order and release decision. Worker owns only the
 later released material; reviewer owns acceptance; closer owns commits.
@@ -116,8 +113,8 @@ Subsequent operator-authorized repair restores exact LF blob bytes and updates
 the affected pins. Focused fingerprint, machine-verification and consumer
 suites pass 159/159 in 54.02 seconds; source freshness and core authorization
 pass. Historical-target admission on exact material blobs returns True. The
-paired work order records BYTE_REPAIR_VERIFIED_PENDING_COMMIT; original raw-only
-receipt is retained and does not certify the pending pin correction.
+paired work order records BYTE_REPAIR_COMMITTED; original raw-only
+receipt is retained and does not certify later changed sets; correction and final evidence are committed at 7b2b646a8 and 5d328d13a with continuity 73bed437d.
 
 ## Non-Goals And Stop Conditions
 
@@ -142,7 +139,7 @@ source, unowned mutation, failed gate or budget exhaustion. Preserve UNKNOWN.
 | Chain map route | bounded initial survey then Local review then separate selected absorption |
 | Matching local-view guard | governance/compat/check_task_governance_route.py |
 | Owner surface | docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md |
-| Disposition | DRAFT initial evidence plan; no source acceptance |
+| Disposition | Initial evidence collection only; no source acceptance |
 | Claim boundary | No source execution or value conversion in this preparation |
 
 ## Epistemic Process Block
@@ -159,8 +156,8 @@ Claim Update Requirement: preserve actual depth and unresolved value separately.
 | Field | Evidence |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/route_task_governance.py`; `governance/compat/CVF_TASK_GOVERNANCE_ROUTE_MANIFEST.schema.json` |
-| literalTokensReviewed | DRAFT; sourceEvidence; initialIntakeAdmission; NO_ABSORPTION_ACCEPTANCE; baseline heading families |
-| conditionalTriggersReviewed | Baseline structure; unreleased packet; initial acquisition survey |
+| literalTokensReviewed | APPROVED_FOR_EXECUTION; sourceEvidence; initialIntakeAdmission; NO_ABSORPTION_ACCEPTANCE; baseline heading families |
+| conditionalTriggersReviewed | Baseline structure; bounded initial release; initial acquisition survey |
 | gateRunPurpose | Confirmation and evidence of preparation; not first discovery or execution certification |
 | claimBoundary | Draft validation is not dispatch readiness |
 
@@ -176,7 +173,7 @@ Claim Update Requirement: preserve actual depth and unresolved value separately.
 | Target paths | This baseline and paired work order |
 | Allowed scope source | Operator yes to baseline, routing manifest and release-dependency preparation |
 | Before status evidence | Only paired work order untracked at 66257f80a |
-| After status evidence | Two pending documentation files plus two pin-correction paths; no source acquisition |
+| After status evidence | Exactly two dispatch documentation files; no source acquisition |
 | Diff evidence | git status --short --untracked-files=all; direct pending-file inspection |
 | Approval boundary | Preparation only; no dispatch |
 | Claim boundary | No source survey or release acceptance |
@@ -189,8 +186,8 @@ Private preparation; no public artifacts requested.
 
 ## Claim Boundary
 
-This baseline and routing contract prepare a reviewable intake. They do not
-release execution, select absorption, grant protected-path writes or prove use.
+This baseline authorizes bounded initial survey under the paired work order and
+Local-only continuity projection. It does not select absorption or prove runtime use.
 
 ## Overlap And Novelty Classification
 
@@ -215,7 +212,7 @@ release execution, select absorption, grant protected-path writes or prove use.
 | Named runtime consumer | N/A with reason: intake preparation only |
 | Integration evidence | N/A with reason: no integration |
 | Use proof | N/A with reason: no source execution |
-| Operator checkpoint | NOT_SATISFIED: intake undispatched |
+| Operator checkpoint | SATISFIED_FOR_INITIAL_SURVEY_ONLY |
 | Absorption completion status | NO_RUNTIME_VALUE_WITH_REASON |
 | Completion claim boundary | Preparation artifact only; no runtime value is a document-scope classification, not an upstream judgment. Source absorption remains unexecuted and incomplete. |
 
@@ -255,7 +252,7 @@ release execution, select absorption, grant protected-path writes or prove use.
 
 ## Mandatory Blind-Spot Control Block
 
-SKIPPED_WITH_REASON: source survey is undispatched. Future worker must inspect per-repository operational value and preserve unread regions; preparation cannot assign final source dispositions.
+SKIPPED_WITH_REASON: no survey executed by dispatch author. Worker must inspect per-repository operational value and preserve unread regions; preparation cannot assign final source dispositions.
 
 ## External Repository Absorption Entry Control
 
@@ -269,3 +266,19 @@ Returned defect count: 0. Returned defects: NONE_RETURNED.
 Disclosed defectIds: none. Truncated: false.
 Disposition: no matching registry item; existing guards remain mandatory.
 This is byte-pin maintenance closure evidence, not intake dispatch admission.
+
+## Core Guard Self-Protection Authorization - Intake Dispatch Continuity
+
+Operator authorization: explicit autonomous orchestrator/reviewer mandate and
+instruction to continue issuing the bounded intake to the internal worker.
+Authorized guard-maintenance scope: Local-only projection of this reviewed
+intake work order, baseline hashes, mode and next move; no checker changes.
+Protected paths:
+- CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json
+- CVF_SESSION/state/entries/nextAllowedMove.json
+- CVF_SESSION/ACTIVE_SESSION_STATE.json
+- CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json
+- CVF_SESSION_MEMORY.md
+- AGENT_HANDOFF_V60_2026-09-08.md
+Rollback boundary: revert only this dispatch-continuity projection if rejected;
+preserve byte-pin correction and original evidence. Worker cannot edit these paths.

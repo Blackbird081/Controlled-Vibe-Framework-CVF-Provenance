@@ -2,56 +2,60 @@
 
 Memory class: governed-work-order-draft
 docType: work_order
-Status: DRAFT
+Status: DISPATCH_READY
 Date: 2026-09-12
 Batch ID: DOMAIN-PILOT-INITIAL-INTAKE
 Commit mode: WORKER_MUST_NOT_COMMIT
-dispatchBaseHead: NOT_DISPATCHED
-executionBaseHead: NOT_STARTED
+dispatchBaseHead: 73bed437dece8e73682c877a1507a47ef0849696
+executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 closureBaseHead: N/A - no worker return
 providerExecutionAuthority: FORBIDDEN
 
 ## Dispatch Prompt Envelope
 
-Preparation only. This document is not an execution release or a message sent
-to a worker. Proposed recipient: Claude, as requested by the operator, acting
-as an internal same-workspace worker. Role-based requirements below apply
-regardless of provider identity. Local retains dispatcher/reviewer authority.
-Do not acquire sources, execute the intake, or implement a successor from this
-DRAFT. Resolve the pre-dispatch dependencies below before releasing intake.
+Role: internal same-workspace intake worker; operator relay recipient: internal worker.
+Canonical packet: docs/work_orders/CVF_AGENT_WORK_ORDER_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md.
+Paired authority: docs/baselines/CVF_GC018_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md.
+Commit mode: WORKER_MUST_NOT_COMMIT.
+executionBaseHead: WORKER_MUST_CAPTURE_AT_START.
+Required first actions: read startup/bootstrap/active handoff, packet/baseline and output
+checker owners; capture full HEAD/status, validate ancestry and pre-implementation.
+Release scope: INITIAL_ACQUISITION_SURVEY only for AGW, QM and DSH. No selected
+absorption, source import, upstream execution, installation, provider/live,
+public/deployment or successor implementation. Return exact owned evidence.
+Current-time notes: 2026-09-12; startup and dispatch anchors control.
+Do-not-misread notes: source survey only, no absorb acceptance or implementation.
+Return contract: exact owned evidence, COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.
+A source-local blocker does not authorize substituting a repository; record it
+and continue independent in-scope evidence. Local reviewer owns disposition.
 
 ## Purpose
 
-Prepare a bounded three-repository initial survey that establishes source
-identity, immutable version, freshness, license evidence and distinct practical
-value before Local selects any absorption. Reuse EARA and DSH evidence. The
-active next move mentions an external nomination, but its artifact and hash
-have not been located in the current-authority sources inspected for this
-draft. Do not imply that it is available. No new broad external research is commissioned.
+Run one bounded initial survey of Agentgateway, QM and DeepSeek Harness.
+Establish immutable versions, freshness and license evidence, per-repository
+practical value and unread regions before any selected absorption decision.
+Reuse EARA/DSH receipts. Original external nomination is unavailable; the
+operator supplied QM URL resolves identity without inventing historical research.
 
 ## Authority Chain
 
-Operator instruction on 2026-09-12 -> `AGENTS.md` ->
-`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` and
-`AGENT_HANDOFF_V60_2026-09-08.md` Next Allowed Move ->
-`docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md`
-Two-Step Operating Agreement / Pilot And Scale-Out Admission ->
-`docs/reference/CVF_TASK_PROPORTIONAL_GOVERNANCE_ROUTING_STANDARD_2026-08-17.md`
-Initial-Acquisition-Survey Admission -> this DRAFT.
+Operator instructed Local to orchestrate/review autonomously and issue the
+worker packet via operator relay -> AGENTS.md -> paired GC-018 -> this work
+order -> existing domain-funnel and TPGR initial-admission owners. Standalone
+bounded intake, not a roadmap implementation tranche.
 
-Authoring anchor: `66257f80a` (continuity commit), parent material `465f1a831`.
-Authoring began with a clean worktree. No active mode or authority is changed.
+| Authority | Evidence | Disposition |
+|---|---|---|
+| Operator scope and source identity | This session: autonomous orchestration and yc-software/qm URL | ACCEPT |
+| Initial admission | docs/reference/CVF_TASK_PROPORTIONAL_GOVERNANCE_ROUTING_STANDARD_2026-08-17.md - Initial-Acquisition-Survey Admission | ACCEPT |
+| Bounded intake baseline | docs/baselines/CVF_GC018_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md - Decision / Baseline | ACCEPT |
+| Representation repair | 7b2b646a8 material, 5d328d13a evidence, 73bed437d continuity; 159 tests, 89/89 pre-commit; final evidence/continuity receipts PASS with committedEvidence | ACCEPT |
 
 ## Agent Roles
 
-Dispatcher: Local. Proposed worker: operator-selected internal agent.
-Reviewer/closer: Local, separately evaluating the worker return.
-Session-sync steward: Local only when a lifecycle transition is authorized.
-External research agents: advisory evidence only; no new invocation planned.
-
-Paired baseline:
-`docs/baselines/CVF_GC018_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md`.
-Baseline is filed as DRAFT for Local release review, not accepted authority.
+Local: dispatcher/reviewer/closer and session-sync steward. Worker: operator-
+selected internal same-workspace agent, relayed by the operator. External researchers
+remain advisory with no execution role. Provider identity is not authority.
 
 ## Task Governance Routing Manifest
 
@@ -76,12 +80,35 @@ Baseline is filed as DRAFT for Local release review, not accepted authority.
     ".private_reference/source_mirrors/INDEX.md",
     ".private_reference/source_mirrors/agentgateway__agentgateway/",
     ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/",
-    ".private_reference/source_mirrors/yc-software__qm/"
+    ".private_reference/source_mirrors/yc-software__qm/",
+    "docs/baselines/CVF_GC018_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md",
+    "CVF_SESSION/",
+    "CVF_SESSION_MEMORY.md",
+    "AGENT_HANDOFF_V60_2026-09-08.md"
   ],
-  "claims": ["Initial survey evidence only; no absorption acceptance"],
-  "requiredProof": ["Immutable source pins", "Per-source freshness and license evidence", "Inventory and actual read-depth reconciliation", "Repository-specific value and unknowns"],
-  "operatorCheckpoints": ["Separate intake release", "Separate reviewed selected-absorption work order"],
-  "forbiddenEffects": ["Provider calls", "Upstream code execution", "Dependency installation", "Product implementation", "Public writes", "Source import", "Worker commit"],
+  "claims": [
+    "Initial survey evidence only; no absorption acceptance"
+  ],
+  "requiredProof": [
+    "Immutable source pins",
+    "Per-source freshness and license evidence",
+    "Inventory and actual read-depth reconciliation",
+    "Repository-specific value and unknowns"
+  ],
+  "operatorCheckpoints": [
+    "Separate intake release",
+    "Separate reviewed selected-absorption work order"
+  ],
+  "forbiddenEffects": [
+    "Provider calls",
+    "Upstream code execution",
+    "Dependency installation",
+    "Product implementation",
+    "Public writes",
+    "Source import",
+    "Worker commit"
+  ],
   "sourceEvidence": {
     "selectedFilesFullyRead": false,
     "corpusReceiptRef": null,
@@ -97,15 +124,15 @@ Baseline is filed as DRAFT for Local release review, not accepted authority.
 }
 ```
 
-This declares the future worker scope only. Metadata routing cannot release
-the DRAFT. The planned receipt is not existing corpus evidence; no trancheValue
+The routing manifest includes Local-only packet/continuity paths for gate coverage;
+Write Ownership alone grants worker writes. Metadata routing alone cannot release execution. The planned receipt is not existing corpus evidence; no trancheValue
 record or selective gate execution is requested.
 
 Routing validation: direct `route_task_governance.route_manifest` on the JSON
 above returned `ROUTED_SHADOW`, profile/minimum `P3_ELEVATED`, validationErrors
 empty, `INITIAL_EVIDENCE_COLLECTION_ONLY`, `absorptionAcceptanceAuthorized=false`,
 `selectiveExecutionAuthorized=false`, `RUN_FULL_LEGACY_BUNDLE`.
-Manifest SHA-256: `601c32cbf48b990bff20610bb08ee080f32d70b588da98daba0cdb4a00086a81`.
+Manifest SHA-256: `f91df853cac41b51004633f91b630d118227b7b0f06f0294db3973d4758d14a5`.
 Hash recipe: Python json.dumps with sort_keys=True, separators=(',', ':'),
 ensure_ascii=True, UTF-8, no trailing newline. This hashes the parsed manifest,
 not surrounding Markdown. The router selected RUNTIME_LIVE for NETWORK_READ;
@@ -113,7 +140,7 @@ that bundle label does not authorize provider calls or upstream execution.
 
 ## Scope / Target / Owner Boundary
 
-Allowed scope after a separate intake release: the three named repositories,
+Allowed scope: the three named repositories,
 read-only upstream identity/version queries, ignored pinned reference mirrors,
 bounded representative reading, and the planned evidence outputs below.
 
@@ -125,15 +152,15 @@ trancheValue extension, automatic successor, or broader repository search.
 
 ## Source Verification Block
 
-| Fact | Verified source | Section or location | Disposition |
-|---|---|---|---|
-| Preparation is the current next move | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | nextAllowedMove | ACCEPT |
-| Initial survey cannot accept absorption | `docs/reference/CVF_TASK_PROPORTIONAL_GOVERNANCE_ROUTING_STANDARD_2026-08-17.md` | Initial-Acquisition-Survey Admission | ACCEPT |
-| Each source retains independent freshness, license and practical value | `docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md` | Shared Evidence, Value Selection And Stop Rules | ACCEPT |
-| Historical Agentgateway identity and pin | `.private_reference/source_mirrors/INDEX.md` | agentgateway__agentgateway row | ACCEPT |
-| Historical DSH identity and pin | `.private_reference/source_mirrors/INDEX.md` | deepseek-ai__deepseek-harness row | ACCEPT |
-| Agentgateway reconciliation is bounded | `docs/reviews/CVF_EARA_AGW_T1_AGENTGATEWAY_LOCAL_RECONCILIATION_COMPLETION_2026-09-10.md` | Target / Source and Findings / Position | ACCEPT |
-| DSH has prior implemented value but incomplete semantic absorption | `docs/reviews/CVF_DSH_WRA_R1_WHOLE_REPOSITORY_ABSORPTION_AND_RUNTIME_REALIZATION_COMPLETION_2026-08-30.md` | Findings / Position | ACCEPT |
+| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+|---|---|---|---|---|---|
+| Preparation is the current next move | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | nextAllowedMove | named section | existing CVF owner | ACCEPT |
+| Initial survey cannot accept absorption | `docs/reference/CVF_TASK_PROPORTIONAL_GOVERNANCE_ROUTING_STANDARD_2026-08-17.md` | Initial-Acquisition-Survey Admission | named section | existing CVF owner | ACCEPT |
+| Each source retains independent freshness, license and practical value | `docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md` | Shared Evidence, Value Selection And Stop Rules | named section | existing CVF owner | ACCEPT |
+| Historical Agentgateway identity and pin | `.private_reference/source_mirrors/INDEX.md` | agentgateway__agentgateway row | named section | existing CVF owner | ACCEPT |
+| Historical DSH identity and pin | `.private_reference/source_mirrors/INDEX.md` | deepseek-ai__deepseek-harness row | named section | existing CVF owner | ACCEPT |
+| Agentgateway reconciliation is bounded | `docs/reviews/CVF_EARA_AGW_T1_AGENTGATEWAY_LOCAL_RECONCILIATION_COMPLETION_2026-09-10.md` | Target / Source and Findings / Position | named section | existing CVF owner | ACCEPT |
+| DSH has prior implemented value but incomplete semantic absorption | `docs/reviews/CVF_DSH_WRA_R1_WHOLE_REPOSITORY_ABSORPTION_AND_RUNTIME_REALIZATION_COMPLETION_2026-08-30.md` | Findings / Position | named section | existing CVF owner | ACCEPT |
 
 These ACCEPT rows concern historical or governance facts only, not current
 upstream releases or current license verification. Provider memory is NOT_CVF_SOURCE.
@@ -143,7 +170,7 @@ upstream releases or current license verification. Provider memory is NOT_CVF_SO
 | sourceId | Upstream | Historical pin / version | Source mirror | Intake focus hypothesis |
 |---|---|---|---|---|
 | AGW | https://github.com/agentgateway/agentgateway.git | 3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826; previously observed upstream fddff50309518e8ee7dc6b7f1fef175d85b01975 | `.private_reference/source_mirrors/agentgateway__agentgateway/` | Recover practical examples, tests, integrations and consumer/failure paths beyond the earlier seven candidates |
-| QM | https://github.com/yc-software/qm.git | Historical research pin UNKNOWN; observed HEAD 32b38cec6effa6ec8a7cd6803c39d480e0e3d5a2 on main; survey pin not yet released | `.private_reference/source_mirrors/yc-software__qm/` (planned, not acquired) | Inspect shared-workspace and per-scope collaboration use cases as hypotheses from the upstream README; source-level value remains unverified |
+| QM | https://github.com/yc-software/qm.git | Historical research pin UNKNOWN; observed HEAD 32b38cec6effa6ec8a7cd6803c39d480e0e3d5a2 on main; initial acquisition pin 32b38cec6effa6ec8a7cd6803c39d480e0e3d5a2; freeze any newer survey pin only with timestamped delta evidence | `.private_reference/source_mirrors/yc-software__qm/` (planned, not acquired) | Inspect shared-workspace and per-scope collaboration use cases as hypotheses from the upstream README; source-level value remains unverified |
 | DSH | https://github.com/deepseek-ai/deepseek-harness.git | cd5ef8148158c3a752a658978873241fdf8e2bbc; dsh-v0.1.2-alpha.1 | `.private_reference/source_mirrors/deepseek-ai__deepseek-harness/` | Recover distinct workflow/evaluation/fixture/skill value without duplicating provider-attempt admission or silently reopening DSH-001/005 |
 
 ### Identity Evidence Boundary
@@ -234,65 +261,33 @@ targeted ledger references only as needed. Do not read full session history.
 
 ## Pre-Flight Checks
 
-Dispatch is BLOCKED_WITH_REASON until every release dependency below is
-resolved with cited evidence and Local records the release decision. Restating
-UNKNOWN, recording a missing nomination, or passing DRAFT-only checkers does
-not satisfy a dependency. This packet cannot self-certify readiness.
-
-| Dependency | Current disposition | Required resolution / owner |
-|---|---|---|
-| QM identity and nomination provenance | IDENTITY_RESOLVED; historical nomination unavailable | Operator URL and Local ls-remote evidence above resolve the upstream mapping. Historical research pin/hash remain UNKNOWN and must not be invented. |
-| Three-repository pilot rationale | DOCUMENTED_SURVEY_HYPOTHESIS | Paired baseline proposes harness/collaboration overlap for QM/DSH and contrasting AGW gateway use case. Initial survey must verify or revise; no final novelty claim. |
-| Paired GC-018 | FILED_DRAFT_PENDING_RELEASE_REVIEW | Paired baseline exists with bounded scope; existence is not acceptance. |
-| Exact ownership and TPGR manifest | DECLARED_PENDING_RELEASE_REVIEW | Six exact worker paths/families in embedded manifest; INDEX row restriction below. No additional snapshot paths authorized. |
-| Fingerprint committed-range verification | BYTE_REPAIR_VERIFIED_PENDING_COMMIT | Original material gate passed 82/82 with raw-only receipt. Operator-authorized byte restoration now passes historical-target admission; pin correction is pending review/commit and new closure evidence. Historical receipt remains unchanged. |
-| Dispatch anchors and closeability | NOT_DISPATCHED | Local captures full HEAD/status/ancestry, finalizes the graph and exact protected-path authority, and satisfies pre-dispatch. |
-
-If identity evidence is unavailable at the next handoff, retain this DRAFT and
-the explicit blocker. Do not dispatch a two-repository subset or replace QM.
-An operator-directed identity clarification can resolve the naming gap; an
-operator-directed scope change requires Local to amend the packet and rationale.
-Neither action is inferred from the reviewer suggesting alternative repos.
-
-Unknown latest source content, current tags and license details are legitimate
-outputs of the later initial survey under TPGR. They need not be fabricated
-before that survey; the release blockers above concern identity and authority.
-
-Before execution, worker captures executionBaseHead, verifies ancestry and
-owned-path state, preserves unrelated dirty files, and passes pre-implementation.
-Initial admission permits unknown current source content, not guessed identity.
+dispatchBaseHead: 73bed437dece8e73682c877a1507a47ef0849696. Existing staging and worktree were clean at authoring.
+AGW and DSH mirrors are clean at their historical pins; QM mirror absent and
+ignored. Worker must recheck source filesystem state and pins before mutation.
+Local release review accepts exact identities, budget, output ownership and
+initial-admission scope. Required pre-dispatch gate must PASS before transmission.
+Worker captures full executionBaseHead, proves dispatch ancestry, and runs
+pre-implementation before acquisition or report writing. No planned receipt is
+prior corpus evidence. One blocked repo remains visible while independent
+survey work continues inside the same three-repo scope.
 
 ## Write Ownership
 
-Current authoring: this work order and its paired baseline only. No worker owns paths yet.
-Proposed tracked worker outputs, create-only after release:
-
-| Path | Required at handoff | Purpose |
-|---|---|---|
-| `docs/audits/CVF_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.json` | Yes | Shared source manifest, processing ledger, freshness/license and value records |
-| `docs/reviews/CVF_DOMAIN_PILOT_INITIAL_INTAKE_WORKER_RETURN_2026-09-12.md` | Yes | Bounded survey result, unknowns, evidence and recommendation |
-
-Proposed control-plane write: `.private_reference/source_mirrors/INDEX.md`,
-limited to updating the two identified AGW/DSH rows and inserting one verified
-QM owner/repo row. This is a proposed scope, not released write authority.
-QM row key: `yc-software__qm`; insert after the existing
-`agentgateway__agentgateway` row in the INDEX source table.
-Exact ignored mirror path: `.private_reference/source_mirrors/yc-software__qm/`.
-Local must verify filesystem state, ignore coverage and any additional snapshot
-paths before dispatch; the path declaration does not authorize acquisition now.
-Preparation inspection: AGW/DSH checkouts clean at their historical pins; QM
-path ABSENT; `git check-ignore` confirms its payload is ignored. Actual dispatch
-must recheck. Use Git object reads for a second revision without resetting a
-historical checkout; any additional worktree/snapshot requires a packet amendment.
-No wildcard acquisition root or inferred owner/repo slug is authorized.
-All paths outside the final manifest are frozen.
-Worker cannot edit this packet, baseline, active continuity, generated
-aggregates, accepted reviews, source owners, registries or conditional reopen
-index. Recommendations belong in the two outputs until reviewed.
+Worker owns exactly three tracked paths:
+- docs/audits/CVF_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.json (create-only).
+- docs/reviews/CVF_DOMAIN_PILOT_INITIAL_INTAKE_WORKER_RETURN_2026-09-12.md (create-only).
+- .private_reference/source_mirrors/INDEX.md (modify only AGW/DSH rows and add
+  yc-software__qm immediately after agentgateway__agentgateway).
+Ignored acquisition/fetch roots: the three exact mirror paths in the routing
+manifest. Preserve historical checkouts; read frozen Git blobs without reset,
+clean or forced checkout. No additional worktree/snapshot paths.
+All other paths are read-only to worker, including this packet, baseline,
+continuity, registries, guards, runtime and historical receipts. Local owns
+packet status conversion and separate active-continuity updates.
 
 ## Execution Plan
 
-All steps below are proposed for the future intake release, not this authoring.
+Execute these steps sequentially within this initial-intake release.
 
 1. From source identity and prior receipts, verify mirror status and pins;
    output per-source identity/version/license records. Stop a source on identity
@@ -323,7 +318,7 @@ decision, expected information gain and cost reason within this ceiling.
 Source type: external repo or copied folder; operator URL establishes QM identity;
 historical nomination is unavailable and any recovered nomination remains advisory.
 Upstream/source-mirror disposition: reuse the two indexed mirrors; QM identity
-and planned path are resolved, acquisition remains undispatched. No acquisition in this DRAFT.
+and planned path are resolved, acquisition is permitted only after pre-dispatch and pre-implementation PASS.
 Enumeration/manifest plan: step 2; immutable pin, relative forward-slash paths,
 ordinal sorting, UTF-8 without BOM, LF separators with trailing LF for digest.
 Per-file terminal-ledger plan: READ, SKIPPED_WITH_REASON, DEFERRED or
@@ -341,7 +336,7 @@ Claim boundary: INITIAL_EVIDENCE_COLLECTION_ONLY; ABSORPTION_NOT_COMPLETE.
 | Chain map route | bounded initial survey then Local review then separate selected absorption |
 | Matching local-view guard | governance/compat/check_task_governance_route.py |
 | Owner surface | docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md |
-| Disposition | DRAFT initial evidence plan; no source acceptance |
+| Disposition | Initial evidence collection only; no source acceptance |
 | Claim boundary | No source execution or value conversion in this preparation |
 
 ## Evidence Requirements
@@ -378,41 +373,41 @@ and knowledge reconciliation blocks. Use explicit N/A with reason where allowed.
 
 ## Review Gate
 
-DRAFT review only now. Full dispatch controls and paired baseline remain
-dependencies. Local evaluates returned evidence, not a duplicate scan:
-EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. Review capability
-clusters and source-specific value gaps. Extra reruns need a contradiction,
-expected information gain and cost reason. Preserve active MFRP measurement
-and M5/M10/safety/M20 boundaries; do not promote historical rejected samples.
+Local accepts the source-identification, ownership and initial-survey design.
+Pre-dispatch PASS is required before worker lane transfer. Worker returns
+COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON, never closure or a commit.
+Reviewer consumes evidence by capability cluster under MFRP M5/M10/safety/M20;
+EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. Reruns require a named
+contradiction, expected information gain and cost reason. Selected absorption
+requires a separate reviewed work order; no automatic successor.
 
 ## Gate-To-Role Closeability Contract
 
 closeabilityContractVersion: cvf.gate-role-closeability@1.0.0
-closeabilityDisposition: BLOCKED_DRAFT_DEPENDENCIES
+closeabilityDisposition: CLOSEABLE
 implementationTopologyPolicy: EXACT_PATHS_WITH_NO_FORESEEABLE_SPLIT
 foreseeableFileSplitDisposition: NOT_REQUIRED_UNDER_SIZE_BUDGET
 returnTimeRecheck: REQUIRED_BEFORE_REPAIR
 
-This is a proposed lifecycle graph, not a CLOSEABLE attestation. Mandatory
+This is the released lifecycle graph for the bounded survey. Mandatory
 gate IDs follow `docs/reference/CVF_GATE_TO_ROLE_CLOSEABILITY_MACHINE_STANDARD.md`.
-Local must freeze the missing exact surfaces and protected-path authorization
-before release; these rows authorize no continuity or baseline edit now.
+Protected continuity remains Local-only under the paired authorization; worker cannot amend it.
 
 | gateId | mustPassBy | repairOwner | repairPhase | mutationSurface | topology | commitOwner | commitPhase | dependsOn |
 |---|---|---|---|---|---|---|---|---|
-| authorization_review | PRE_DISPATCH | dispatcher | PRE_DISPATCH | this packet and paired baseline; exact baseline/registration scope pending | EXACT_PATHS | closer | DISPATCH_COMMIT | NONE |
+| authorization_review | PRE_DISPATCH | dispatcher | PRE_DISPATCH | this packet and paired baseline | EXACT_PATHS | closer | DISPATCH_COMMIT | NONE |
 | pre_dispatch_gate | PRE_DISPATCH | dispatcher | PRE_DISPATCH | same frozen authorization packet; release dependency table | EXACT_PATHS | closer | DISPATCH_COMMIT | authorization_review |
-| dispatch_continuity | IMPLEMENTATION | session-sync-steward | IMPLEMENTATION | exact active continuity paths and authorization pending | EXACT_PATHS | session-sync-steward | DISPATCH_CONTINUITY_COMMIT | pre_dispatch_gate |
+| dispatch_continuity | IMPLEMENTATION | session-sync-steward | IMPLEMENTATION | AGENT_HANDOFF_V60_2026-09-08.md material-SHA marker | EXACT_PATHS | session-sync-steward | DISPATCH_CONTINUITY_COMMIT | pre_dispatch_gate |
 | pre_implementation_autorun | IMPLEMENTATION | worker | IMPLEMENTATION | frozen Write Ownership only; outside-scope failure returns to Local | EXACT_PATHS | closer | MATERIAL_COMMIT | dispatch_continuity |
 | source_identity_license | WORKER_RETURN | worker | IMPLEMENTATION | two evidence outputs and released mirror/INDEX paths; step 1 | EXACT_PATHS | closer | MATERIAL_COMMIT | pre_implementation_autorun |
 | inventory_depth_value | WORKER_RETURN | worker | IMPLEMENTATION | two evidence outputs; steps 2-4 | EXACT_PATHS | closer | MATERIAL_COMMIT | source_identity_license |
-| focused_checker_tests | WORKER_RETURN | worker | IMPLEMENTATION | two evidence outputs; focused manifest/hash/reconciliation validation, no upstream tests | EXACT_PATHS | closer | MATERIAL_COMMIT | inventory_depth_value |
+| focused_checker_tests | WORKER_RETURN | worker | IMPLEMENTATION | two evidence outputs; focused manifest/hash/reconciliation validation, no upstream tests | EXACT_PATHS | closer | MATERIAL_COMMIT | dispatch_continuity, inventory_depth_value |
 | adif_integrity | WORKER_RETURN | worker | IMPLEMENTATION | worker-return disclosure only; no ADIF owner mutation | EXACT_PATHS | closer | MATERIAL_COMMIT | focused_checker_tests |
 | worker_return_fast | REVIEW | worker | WORKER_RETURN | two evidence outputs; step 5 | EXACT_PATHS | closer | MATERIAL_COMMIT | adif_integrity |
 | reviewer_fast | PRE_MATERIAL_COMMIT | reviewer | REVIEW | released material paths and reviewer disposition in return | EXACT_PATHS | closer | MATERIAL_COMMIT | worker_return_fast |
 | pre_commit | PRE_MATERIAL_COMMIT | reviewer | REVIEW | exact reviewed material set | EXACT_PATHS | closer | MATERIAL_COMMIT | reviewer_fast |
 | terminal_completion_review | PRE_MATERIAL_COMMIT | reviewer | REVIEW | reviewer-owned disposition in the named return; extra review path needs amendment | EXACT_PATHS | closer | MATERIAL_COMMIT | pre_commit |
-| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | exact terminal continuity paths and authorization pending | EXACT_PATHS | session-sync-steward | CONTINUITY_COMMIT | terminal_completion_review |
+| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | paired baseline exact Local continuity authorization | EXACT_PATHS | session-sync-steward | CONTINUITY_COMMIT | terminal_completion_review |
 | committed_range_closure | POST_MATERIAL_CLOSURE | reviewer | POST_MATERIAL | exact reviewed material set; corrective material only within released authority | EXACT_PATHS | closer | CORRECTIVE_MATERIAL_COMMIT | continuity |
 
 Pre-implementation must pass before any step 1-5 source/evidence mutation.
@@ -423,21 +418,11 @@ before repair; unknown ownership forbids worker redispatch.
 
 ## Consolidated Draft Review Disposition
 
-Operator-relayed review received 2026-09-12 is advisory review input; Local
-verified the affected packet sections and canonical closeability owner.
-Accept: make the unavailable nomination explicit, hard-block release, add the
-proposed gate graph, and retain baseline/path/range dependencies visibly.
-Do not accept a blanket claim that nomination evidence exists nowhere or that
-QM occurs only in two files: bootstrap nextAllowedMove and its source entry
-also name QM. Those mentions alone establish no upstream identity; the later
-operator URL and Local identity check above resolve that gap. This is a
-targeted-source finding, not a complete repository search or absence proof.
-Do not substitute a third source without operator direction.
-
-The closeability standard requires its executable contract for executable work
-orders; its checker excludes DRAFT from ACTIVE_STATUSES. Earlier draft-level
-checker PASS was therefore not dispatch readiness, and this graph is not an
-assertion that the missing baseline or authorization already exists.
+Local reviewed the consolidated Claude critique and repaired missing identity,
+exact paths, initial routing, gate graph and output shape. QM is yc-software/qm.
+Byte/hash predecessor correction is committed and final evidence/continuity
+receipts have committedEvidence. Earlier DRAFT/HOLD narratives are preserved
+in Git history; they are not current dispatch prerequisites.
 
 ## Review Dispatch Convergence And Invocation Budget Control
 
@@ -461,91 +446,26 @@ reworkGeneration: 0
 consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
 successorTrancheOpened: NO
 implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
-preExecutionReviewAdmission: REQUIRED_TRIGGERED
-preExecutionReviewTrigger: OPERATOR_EXPLICIT_REQUEST
-nextRoutineReviewBoundary: PRE_EXECUTION_REVIEW
+preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
+preExecutionReviewTrigger: NONE
+nextRoutineReviewBoundary: WORKER_RETURN
 reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 
-Pending values are explicit DRAFT facts, not ready-dispatch enum claims.
-Local must resolve them and validate the complete packet before release.
+Initial dispatch contract reviewed; worker operates autonomously inside its exact scope.
 
 ## Verification Commands
 
-Material-range verification on 2026-09-12: isolated checkout
-`D:/cvf-range-20260912` at 66257f80a; command
-`python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 9abb0bdfe --head 465f1a831 --receipt-dir .cvf/runtime/domain-pilot-material-receipt`.
-Final result: exit 0, 82/82 PASS, 9.40 seconds, clean worktree.
-Preserved receipt in the primary workspace:
-`.cvf/runtime/domain-pilot-material-verification/pre-closure.json`.
-
-Diagnostic history: long nested Windows checkout failed on path length; shorter
-checkout succeeded. First gate attempt failed six checks due to checkout raw-byte
-differences and generated aggregate drift. Three named authority/source probes
-were equal after CRLF normalization. Copying clean primary tracked bytes to the
-isolated checkout and refreshing its index left zero staged/unstaged changes;
-the second gate passed. Primary tracked files, pinned hashes and old receipts
-were not modified. The accepted 300 implementation tests were not repeated.
-
-Binding limitation: producer declined committedEvidence for
-`docs/reference/review_cost_control/CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md`
-against historical blob 2bb1e28cdf3b19cd978f5bb7c6f5237ebea46ec7. Preserve the
-raw-fingerprint-only receipt; do not assert committed-byte certification or
-promote a P4 sample. Gate PASS is established; the declined binding needs
-targeted diagnosis before representing the prerequisite as fully resolved.
-
-Targeted diagnosis: the contract file is `i/lf w/mixed` in the primary checkout.
-Eight material paths differ from their committed blobs only by CRLF/LF:
-the fingerprint contract, review_cost_control README, system-chain map JSON,
-agent_autorun_machine_verification.py, committed_evidence_fingerprint.py,
-run_agent_autorun_workflow_gate.py and the two corresponding machine-verification/
-fingerprint test files. Direct byte reads and `git show` confirmed normalized
-equality for each; no semantic source change was found in those comparisons.
-The verifier permits only exact bytes or metadata-authorized uniform checkout
-expansion, not arbitrary mixed line endings. Its rejection is preserved; this
-intake does not authorize changing that predicate or existing raw-hash owners.
-Material receipt file SHA-256:
-`8d8f7fdf77b1f740db305cee5833a8a5df97a5155220377d446a60ddc5239a2d`.
-Local release review disposition: HOLD_BINDING_DIAGNOSTIC. No redundant test
-rerun or automatic maintenance tranche. The isolated checkout remains available
-at the recorded path for a separately scoped repair decision.
-
-### Operator-Authorized Byte Repair - Current Disposition
-
-The operator subsequently authorized the diagnosed repair. Paired GC-018's
-Core Guard Self-Protection Authorization carries its exact maintenance scope;
-this does not release the intake. The earlier HOLD_BINDING_DIAGNOSTIC is
-superseded by BYTE_REPAIR_VERIFIED_PENDING_COMMIT.
-
-Restored the eight named files to exact HEAD blob bytes after checking that
-their old bytes differ only by CRLF. Updated only two source-fingerprint values
-in the system-chain map and one consumer-test literal. Effective Git source
-diff is three substitutions across those two files; verifier logic is unchanged.
-Receipt owner LF hash: e3686ee11d7d52e644a7d68eea47dd744ec3a6e9970d503aed704f4e9c3cc9d5.
-Autorun owner LF hash: e0384bd3e188a3020c736ceb80d0d1a7a53725b14fa2f5ecfaad2fab560a3403.
-Original byte backups and before/blob hash ledger:
-`.cvf/runtime/domain-pilot-byte-repair-backup/ledger.json`.
-
-Independent reproduction in the isolated checkout restored the original
-material-range files directly from Git blobs. Calling
-`committed_evidence_fingerprint.verify_worktree_matches_committed_target`
-with full 9abb0bdfe..465f1a831 anchors and that checkout as cwd returned
-True: worktree content matches the committed target for every changed path.
-This is targeted deterministic admission evidence, not a new full-gate receipt.
-Primary system-chain freshness and core-guard authorization checks passed.
-Focused command:
-`python -m pytest governance/compat/test_committed_evidence_fingerprint.py governance/compat/test_agent_autorun_machine_verification.py governance/compat/test_mfrp_shadow_canary.py -q`.
-Result: exit 0, 159 passed in 54.02 seconds. No provider/live proof was invoked.
-No receipt was edited, old observation promoted, or equivalence rule relaxed.
-The changed pins require review/commit and a new material-range closure; do not
-reuse the old raw-only receipt as proof for the new changed set.
-
-Authoring checks: markdown structural completeness and work-order lifecycle
-quality against HEAD; inspect the actual pending path and encoding.
-Future release: `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch`.
-Future execution: same runner with `--phase pre-implementation` and exact anchors.
-Future return: `python governance/compat/run_worker_return_fast_gate.py`.
-Future closure: reviewer-fast and committed-range pre-closure with material and
-continuity ranges separated. No release/live bundle belongs to this intake.
+Local pre-dispatch:
+`python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch`.
+Worker before mutation:
+`python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD`.
+Worker return:
+`python governance/compat/run_worker_return_fast_gate.py`.
+`git diff --check` and `git status --short --untracked-files=all`.
+Focused proof is deterministic inventory/hash/license-path/ledger reconciliation;
+no upstream tests or AI governance runtime claims. Full legacy bundles remain
+mandatory. Local commits accepted material then separate continuity, and runs
+clean committed-range pre-closure separately for each range.
 
 ## Closure Checklist
 
@@ -556,9 +476,10 @@ continuity ranges separated. No release/live bundle belongs to this intake.
 
 ## Operator Checkpoint
 
-The current instruction authorizes authoring only. Intake acquisition/execution
-remains undispatched. Implementation tranche release remains parked. No approval
-is requested by this draft and no worker invocation has been made.
+Operator authorized Local orchestration/review and manual relay to the internal
+worker. This packet releases only initial acquisition/survey after pre-dispatch
+PASS. Selected absorption, integration, runtime/provider/live/public/deployment
+remain outside authority. Routine allowed-scope repairs do not need a new query.
 
 ## Return-To-Orchestrator Conditions
 
@@ -571,7 +492,7 @@ partial evidence; do not broaden the domain or substitute another QM repository.
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
 |---|---|---|---|---|---|
-| INTERNAL_AGENT | This proposed intake contract | Same-workspace, no commit; unreleased | Operator request and active next move | N/A with reason: document-only intake contract | CONTRACT_ONLY |
+| INTERNAL_AGENT | This proposed intake contract | Same-workspace, no worker commit; initial survey only | Operator request and active next move | N/A with reason: document-only intake contract | CONTRACT_ONLY |
 | EXTERNAL_AGENT_CLI_MCP | Existing external nomination input | Advisory only; no new call | Domain-funnel method | No CLI/MCP adapter or execution release | DEFERRED_WITH_REASON |
 
 ## Epistemic Process Block
@@ -598,11 +519,11 @@ extractedTextAuthority: source Git blobs control; extracted prose is secondary
 | Field | Evidence |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_work_order_dispatch_quality_lifecycle.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/CVF_TASK_GOVERNANCE_ROUTE_MANIFEST.schema.json` |
-| conditionalTriggersReviewed | work_order structure, DRAFT lifecycle, initial acquisition versus selected acceptance |
-| literalTokensReviewed | DRAFT; WORKER_MUST_NOT_COMMIT; Initial-Acquisition-Survey Admission; required work_order heading families |
+| conditionalTriggersReviewed | work_order structure, active dispatch lifecycle, initial acquisition versus selected acceptance |
+| literalTokensReviewed | DISPATCH_READY; WORKER_MUST_NOT_COMMIT; Initial-Acquisition-Survey Admission; required work_order heading families |
 | gateRunPurpose | Confirmation and evidence of the prepared document; not first discovery or source certification |
 | claimBoundary | Document read-ahead only; no runtime or source-value claim |
-| disposition | Draft-level structural verification; full pre-dispatch verification deferred until release dependencies are resolved |
+| disposition | Source and contract review complete; pre-dispatch governs worker release |
 
 ## Agent Operation Trace Block
 
@@ -620,10 +541,10 @@ extractedTextAuthority: source Git blobs control; extracted prose is secondary
 | Command or tool surface | PowerShell reads, rg, git status/log/show, apply_patch, document checkers; operator-directed QM identity check via GitHub page and git ls-remote |
 | Target paths | This work order, paired GC-018 and exact operator-authorized byte/pin maintenance paths listed in its authorization block |
 | Allowed scope source | Operator request to prepare the three-repository intake for Claude |
-| Before status evidence | Initial authoring: git status --short empty at 66257f80a; review repair: only this untracked draft present |
-| After status evidence | Work order, paired baseline and two effective pin-correction files pending; no intake worker execution |
+| Before status evidence | Clean worktree at 73bed437d before release authoring; clean worktree required at lane handoff |
+| After status evidence | Exactly work order and paired baseline changed for dispatch; no intake worker execution |
 | Diff evidence | git status --short --untracked-files=all and direct pending-file inspection |
-| Approval boundary | Draft authoring only |
+| Approval boundary | Internal initial survey release only |
 | Claim boundary | QM upstream identity and observed HEAD verified read-only; no source acquisition, latest-release/license conclusion, absorption or implementation |
 
 ## Delta Execution Claim Boundary Control Block
@@ -647,11 +568,9 @@ Reason: private intake preparation only; no public artifact or sync requested.
 
 ## Claim Boundary
 
-This DRAFT records the prepared intake and operator-supplied QM identity.
-AGW/DSH identities are historical records; QM upstream identity and observed
-HEAD are verified read-only. Survey versions, license assessments and pilot
-value remain to be evidenced. No fresh repository
-survey, absorption decision, implementation tranche or worker dispatch is claimed.
+Initial evidence collection only. Source identity and historical receipts are
+not absorption acceptance. Raw memory, runtime/provider, source execution,
+public/deployment and successor implementation remain unopened.
 
 ## Overlap And Novelty Classification
 
@@ -673,13 +592,19 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 |---|---|
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | Local author/reviewer/closer; future internal worker |
-| phase | DRAFT preparation; worker execution unopened |
-| baseHeadFor(phase) | preparation anchor 66257f80a; dispatch and execution not begun |
-| changedSetScope(phase) | Two correction-document paths in current trace; future worker six manifest paths |
+| phase | initial survey then independent review |
+| baseHeadFor(phase) | preparation anchor 66257f80a; worker captures execution HEAD at start |
+| changedSetScope(phase) | Two correction-document paths in current trace; worker six manifest paths/families |
 | traceScope(phase, actor) | Exact command, hash and changed-set evidence |
 | commitOwner(phase) | Local closer; worker forbidden |
 | crossBatchIsolation | No active intake worker; no concurrent mutation |
 | nextMoveSurfaces | This packet and baseline; independent release review before intake |
+
+sharedWorktreeCoordinationMode: EXPLICIT_LANE_HANDOFF
+activeLaneOwner: internal intake worker after committed dispatch and continuity
+laneOwnedPaths: exactly the three tracked worker paths and three ignored mirror roots
+dispatcherMutationBoundary: NO_MUTATION_WHILE_LANE_ACTIVE
+laneReleaseEvidence: terminal worker return and exact changed-set reconciliation
 
 ## External Absorption Core
 
@@ -698,7 +623,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | Named runtime consumer | N/A with reason: intake preparation only |
 | Integration evidence | N/A with reason: no integration |
 | Use proof | N/A with reason: no source execution |
-| Operator checkpoint | NOT_SATISFIED: intake undispatched |
+| Operator checkpoint | SATISFIED_FOR_INITIAL_SURVEY_ONLY |
 | Absorption completion status | NO_RUNTIME_VALUE_WITH_REASON |
 | Completion claim boundary | Preparation artifact only; no runtime value is a document-scope classification, not an upstream judgment. Source absorption remains unexecuted and incomplete. |
 
@@ -747,11 +672,11 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
     "resolved": [],
     "retained": [],
     "new": [
-      "intake-release-review"
+      "bounded-initial-survey-evidence"
     ],
     "reopened": [],
     "current": [
-      "intake-release-review"
+      "bounded-initial-survey-evidence"
     ]
   },
   "resolutionEvidence": {},
@@ -767,7 +692,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 }
 ```
 
-Convergence fields classify the planned INITIAL intake; they do not override DRAFT status or unresolved release gates. The acceptance matrix distinguishes satisfied evidence from retained release blockers. Baseline negative plan: identity mismatch, missing license, drift and unknown source depth must block acceptance.
+Convergence fields classify INITIAL intake; pre-dispatch gate controls release. The acceptance matrix distinguishes satisfied evidence from retained release blockers. Baseline negative plan: identity mismatch, missing license, drift and unknown source depth must block acceptance.
 
 ## Reviewer Closure Conversion
 
@@ -780,7 +705,7 @@ Convergence fields classify the planned INITIAL intake; they do not override DRA
 
 ## Mandatory Blind-Spot Control Block
 
-SKIPPED_WITH_REASON: source survey is undispatched. Future worker must inspect per-repository operational value and preserve unread regions; preparation cannot assign final source dispositions.
+SKIPPED_WITH_REASON: no source survey executed by dispatch author. Worker must inspect per-repository operational value and preserve unread regions; preparation cannot assign final source dispositions.
 
 ## ADIF Defect Registry Disclosure
 
@@ -790,3 +715,75 @@ Returned defect count: 0. Returned defects: NONE_RETURNED.
 Disclosed defectIds: none. Truncated: false.
 Disposition: no matching registry item; existing guards remain mandatory.
 This is byte-pin maintenance closure evidence, not intake dispatch admission.
+
+## Required Artifact Manifest
+
+| Path | Required at handoff | Purpose |
+|---|---|---|
+| docs/audits/CVF_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.json | Yes | Shared source inventory, reading ledger, license/freshness and advisory value |
+| docs/reviews/CVF_DOMAIN_PILOT_INITIAL_INTAKE_WORKER_RETURN_2026-09-12.md | Yes | Command evidence, bounded disposition and unknowns |
+| .private_reference/source_mirrors/INDEX.md | Yes | Exact acquired-source provenance rows |
+
+## Intake Role Routing Decision
+
+Intake summary: bounded three-repository survey.
+Route mode: MULTI_AGENT_MULTI_ROLE.
+Risk sensitivity: P3_ELEVATED source provenance; internal worker, Local reviewer.
+Scope classification: initial evidence only.
+Escalation condition: forbidden effect or unowned repair.
+
+## Worker Autonomy / No-Question Rule
+
+Repair gate failures inside Allowed scope and rerun. Do not ask for preference on routine evidence formatting. Return precise outside-scope blockers to Local; do not expand authority.
+
+## Architecture Readiness Admission
+
+Architecture-Readiness Admission: NOT_APPLICABLE_INTERNAL_AGENT_WITH_REASON
+Reason: internal source survey only; no external invocation or runtime integration.
+
+## Worker Return Packet Shape Contract
+
+workerReturnPath: docs/reviews/CVF_DOMAIN_PILOT_INITIAL_INTAKE_WORKER_RETURN_2026-09-12.md
+contractProfile: WORKER_RETURN_FULL_GATE_V1
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
+individualCheckerSubstitution: FORBIDDEN
+workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
+
+## Commit Mode And Base-Anchor Lifecycle
+
+dispatchBaseHead: 73bed437dece8e73682c877a1507a47ef0849696
+executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+closureBaseHead: N/A - pending review
+Commit mode: WORKER_MUST_NOT_COMMIT
+Worker Pending-Return Gate: worker-return fast PASS on final owned evidence; committed-range pre-closure is Local-owned after material and continuity commits.
+
+## Commit Prompt Readiness
+
+Worker must not stage/commit. Local closer alone commits reviewed material and separate continuity; no push.
+
+## Legacy Absorption Coverage Index Disposition
+
+NOT_APPLICABLE_WITH_REASON: no legacy payload absorption or whole-foundation completion; reuse the named EARA/DSH evidence only.
+
+## Current Runtime Freshness Verification
+
+Source identities and historical pins are explicit in Repository Identity. Current source freshness/license are truthful initial-stage outputs, not pre-existing acceptance. No runtime capability claim.
+
+## Work-Order Fulfillment Manifest
+
+Required Artifact Manifest and Write Ownership define the complete worker changed set. Planned source acquisition paths are ignored evidence roots, never staged. No optional source implementation.
+
+rawMemoryReleased=false
+
+
+## Scaffold Provenance Block
+
+| Field | Value |
+|---|---|
+| scaffoldHelperCommand | python governance/compat/build_dispatch_packet_scaffold.py --packet-kind source-intake --batch-id DOMAIN-PILOT-INITIAL-INTAKE --title "Domain Pilot Initial Intake" --date 2026-09-12 --base 73bed437d --commit-mode WORKER_MUST_NOT_COMMIT --dispatch-surface INTERNAL_AGENT --stdout |
+| generatedProfile | source-intake |
+| generatedSkeletonStatus | GENERATED_BUT_REPLACED |
+| manualEditsAfterScaffold | Reused reviewed draft source/value contract and exact initial-admission manifest rather than replacing verified content |
+| checkerReadAheadConfirmation | Source shape, gate-to-role, lifecycle, intake, routing and handoff requirements reviewed |
+| docOnlyNewFields | None; existing initial-admission contract |
+| claimBoundary | Generation provenance only; no source-read or runtime claim |
