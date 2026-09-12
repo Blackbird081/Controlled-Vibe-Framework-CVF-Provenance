@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `5d328d13a9384f5157de0a18d6f3bf4ee35b5d56`. Material parent anchor for dedicated closure continuity. Byte-pin correction and intake DRAFT committed; 159 tests and 89/89 pre-commit PASS. Intake remains undispatched.
+Current HEAD recorded for this handoff: `8ef01c2239b570ae5fa6abca10b4217fa36d58d0`. Initial-intake dispatch material; separate continuity anchor.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -14,7 +14,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `internal_agent_governance_bounded_closure_complete`.
+- Current mode: `internal_agent_governance_worker_active`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +24,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`internal_agent_governance_bounded_closure_complete`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=finish fingerprint continuity/verification then author domain-pilot initial-intake packet; parked checkpoint=source execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
+Startup acknowledged: current mode=`internal_agent_governance_worker_active`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute bounded domain-pilot initial intake then Local review; parked checkpoint=upstream code execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
 
 ## Current Mode
 
-`internal_agent_governance_bounded_closure_complete`
+`internal_agent_governance_worker_active`
 
 ## Purpose
 
@@ -91,7 +91,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-The paired P4-C1 enrollment/observability repair baseline and closed work order remain the current exact-hash authority through this continuity transition. WP-ARCH-003 synchronization is documentation-only; it does not make an external repository or external-agent output an authority root.
+Current authority: `docs/baselines/CVF_GC018_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md`. Initial survey only; external findings remain advisory.
 
 ## Closure Evidence
 
@@ -111,8 +111,8 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-12 current priority: MFRP-FINGERPRINT-T1 material 465f1a831528345079b7f3adc7a2d4268817261c, 300/300 tests and pre-commit 89/89 PASS. Prepare the next three-repository domain-pilot initial-intake packet after continuity and committed-range verification; acquisition and implementation remain undispatched.
-`EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; source-recovery execution still requires a separate reviewed work order. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
+2026-09-12 current priority: DOMAIN-PILOT-INITIAL-INTAKE released at 8ef01c2239b570ae5fa6abca10b4217fa36d58d0 after pre-dispatch PASS and pre-commit 89/89 PASS. Internal worker surveys Agentgateway, yc-software/qm and DeepSeek Harness under the paired work order: exact pins, freshness/license, inventory/read-depth and per-repo practical value. Local reviews the uncommitted return; operator only relays. No broad research, selected absorption, source execution/build/install, provider/live, public/deploy or successor implementation. RABA/DARA-T5/P5/P6 remain parked; latest LHW24.
+`EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; current pilot permits bounded initial acquisition/survey only. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
 
@@ -125,7 +125,7 @@ authority, production deployment, or any parked project lane.
 ## Active Boundary
 
 - MFRP-FINGERPRINT-T1 is materially closed; worker lane released. TPGR T1 remains closed.
-  Next: domain-pilot initial-intake work-order authoring; source execution is not released.
+  Next: internal worker initial survey under DOMAIN-PILOT-INITIAL-INTAKE; no upstream code execution.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
 - Manual relay is content-neutral transport under `cvf.cross-workspace-evidence-relay@1.0.0`; remote findings remain advisory until Local Agent verification and final technical disposition. Once Local issues a work order, execution is internal shared-workspace work and the relay loop ends.

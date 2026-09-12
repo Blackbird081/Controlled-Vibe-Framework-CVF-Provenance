@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "internal_agent_governance_bounded_closure_complete",
+  "currentMode": "internal_agent_governance_worker_active",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "MFRP-FINGERPRINT-T1 materially CLOSED_PASS_BOUNDED at 465f1a831528345079b7f3adc7a2d4268817261c; 300/300 combined focused/consumer tests and material pre-commit 89/89 PASS. Operator authorized cleanup then next tranche. Next allowed move: complete dedicated continuity and committed-range verification, then Local authors a bounded three-repository domain-pilot initial-intake work order for Agentgateway/QM/DeepSeek Harness, reusing the external nomination plus EARA/DSH evidence. No new broad external research. Acquisition/execution is not dispatched until the new packet defines pins, freshness/license checks, per-repo operational value and exact paths. External remains advisory; internal worker executes and Local reviews. Raw cache identity is preserved; committedEvidence is separately integrity-covered; old rejected observation remains rejected. Material post-commit P4 result SKIPPED_NO_ELIGIBLE_CANDIDATE, no sample promotion. RABA/DARA-T5/P5/P6 and runtime/provider/live/public/deployment remain parked; latest LHW24.",
+  "nextAllowedMove": "DOMAIN-PILOT-INITIAL-INTAKE released at 8ef01c2239b570ae5fa6abca10b4217fa36d58d0 after pre-dispatch PASS and pre-commit 89/89 PASS. Internal worker surveys Agentgateway, yc-software/qm and DeepSeek Harness under the paired work order: exact pins, freshness/license, inventory/read-depth and per-repo practical value. Local reviews the uncommitted return; operator only relays. No broad research, selected absorption, source execution/build/install, provider/live, public/deploy or successor implementation. RABA/DARA-T5/P5/P6 remain parked; latest LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_FINGERPRINT_T1_2026-09-11.md",
-    "baselineSha256": "99844e08b7385cae5960eee5cbcc8cd8840e0d1d5112d15c4e534bd1c8da5cda",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_FINGERPRINT_T1_2026-09-11.md",
-    "workOrderSha256": "4d119ab3472fdd37909637c3e6f34f0390dfd76d513f35e54e925e72752b5936"
+    "baselinePath": "docs/baselines/CVF_GC018_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md",
+    "baselineSha256": "95c5cb448dcdeccf81fe1c052ae6f5f39ee60f5a588390a2a0345bf6e142aa05",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md",
+    "workOrderSha256": "9fdf9fcd37fa52eb7952f5a7e9372bcc4629ba0483775336120e1f401544245b"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
