@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "internal_agent_governance_worker_active",
+  "currentMode": "domain_pilot_initial_intake_closed",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "DOMAIN-PILOT-INITIAL-INTAKE released at 8ef01c2239b570ae5fa6abca10b4217fa36d58d0 after pre-dispatch PASS and pre-commit 89/89 PASS. Internal worker surveys Agentgateway, yc-software/qm and DeepSeek Harness under the paired work order: exact pins, freshness/license, inventory/read-depth and per-repo practical value. Local reviews the uncommitted return; operator only relays. No broad research, selected absorption, source execution/build/install, provider/live, public/deploy or successor implementation. RABA/DARA-T5/P5/P6 remain parked; latest LHW24.",
+  "nextAllowedMove": "DOMAIN-PILOT-INITIAL-INTAKE is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED at material commit b1b3794a28b0078b01c032e59f16a1fb018ebd1e. Six repository-specific candidates remain advisory; no absorption is accepted. Local may next author one fresh source-verified selected-review decision packet that ranks the candidates and chooses at most one bounded absorption target. Authoring does not dispatch, absorb or implement; no automatic successor is open. Source execution/build/install, provider/live, public/deploy, RABA/DARA-T5/P5/P6 remain parked; latest LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
