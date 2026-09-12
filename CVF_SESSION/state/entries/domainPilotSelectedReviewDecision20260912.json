@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2825,
+  "stateKey": "domainPilotSelectedReviewDecision20260912",
+  "value": "ACCEPT_DECISION at ab016926888547d00101161cb96fb59183aa617e. Decision: docs/reviews/CVF_DOMAIN_PILOT_SELECTED_REVIEW_DECISION_2026-09-12.md. Three relayed advisories reconciled; five candidates deferred with triggers. Addy root MIT versus registry Apache-2.0 remains an explicit metadata discrepancy. Production consumers constrain removal; missing search matches cannot authorize deletion. Pre-commit 89/89 PASS. Next packet authoring only; no absorption or implementation release."
+}

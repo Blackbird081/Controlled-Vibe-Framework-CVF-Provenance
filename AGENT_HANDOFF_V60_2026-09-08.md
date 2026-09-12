@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `b1b3794a28b0078b01c032e59f16a1fb018ebd1e`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `ab016926888547d00101161cb96fb59183aa617e`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -14,7 +14,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `domain_pilot_initial_intake_closed`.
+- Current mode: `domain_pilot_selected_review_accepted`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +24,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`domain_pilot_initial_intake_closed`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=author one bounded selected-review decision packet without dispatch; parked checkpoint=absorption/implementation, upstream code execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
+Startup acknowledged: current mode=`domain_pilot_selected_review_accepted`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=author the DSH-UC-01 successor baseline/work-order draft without implementation release; parked checkpoint=absorption/implementation, upstream code execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
 
 ## Current Mode
 
-`domain_pilot_initial_intake_closed`
+`domain_pilot_selected_review_accepted`
 
 ## Purpose
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-12 current priority: DOMAIN-PILOT-INITIAL-INTAKE is `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED` at `b1b3794a2`. Local may next author one fresh source-verified selected-review decision packet that ranks the six advisory candidates and chooses at most one bounded target. Authoring does not dispatch, absorb or implement. Source execution/build/install, provider/live, public/deploy, RABA/DARA-T5/P5/P6 remain parked; latest LHW24.
+2026-09-12 current priority: DSH-UC-01 selected-review decision ACCEPT_DECISION at ab016926888547d00101161cb96fb59183aa617e. Next: prepare a no-commit baseline/work-order draft for source-license metadata reconciliation and bounded consumer-classification novelty checks, with conditional existing-owner enrichment only after Local release. Verify Addy MIT versus registry Apache-2.0 and the full owner dependency set before freezing writes. Draft authoring is allowed; package edits, absorption, implementation, upstream execution, provider/live, public/deploy and RABA/DARA-T5/P5/P6 remain parked; latest LHW24.
 `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; current pilot permits bounded initial acquisition/survey only. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
@@ -125,7 +125,7 @@ authority, production deployment, or any parked project lane.
 ## Active Boundary
 
 - MFRP-FINGERPRINT-T1 is materially closed; worker lane released. TPGR T1 remains closed.
-  Next: Local selected-review packet authoring only; no dispatch, absorption, implementation or upstream code execution.
+  Next: author the DSH-UC-01 baseline/work-order draft; no package edits or implementation release.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
 - Manual relay is content-neutral transport under `cvf.cross-workspace-evidence-relay@1.0.0`; remote findings remain advisory until Local Agent verification and final technical disposition. Once Local issues a work order, execution is internal shared-workspace work and the relay loop ends.
@@ -147,7 +147,7 @@ Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-
 
 ## Core Guard Self-Protection Authorization
 
-Current closure projection is authorized by the operator's 2026-09-12 instruction that Local act autonomously as orchestrator/reviewer along the roadmap. It records DOMAIN-PILOT-INITIAL-INTAKE material `b1b3794a28b0078b01c032e59f16a1fb018ebd1e` and updates only dedicated continuity; selected-review authoring is allowed but no successor dispatch, absorption or implementation is released.
+Current closure projection is authorized by the operator next instruction and standing orchestrator/reviewer assignment. Record selected-review decision material ab016926888547d00101161cb96fb59183aa617e; successor packet authoring only, no implementation release.
 
 Authorized guard-maintenance scope: project the accepted P4-C1 repair dispatch
 `8347be04a0216479f754e3eee3ca71f15a149a8b`, its current authority hashes,
@@ -176,6 +176,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/mfrpFingerprintT1Closure20260912.json`
 - `CVF_SESSION/state/entries/domainPilotInitialIntakeClosure20260912.json`
+- `CVF_SESSION/state/entries/domainPilotSelectedReviewDecision20260912.json`
 - `docs/reference/CVF_2026_09_09_AUDIT_AND_REMEDIATION_SEQUENCE.md`
 - `docs/reference/CVF_SEVEN_STEP_SHARED_WORKSPACE_AGENT_RELATIONSHIP_MODEL_2026-09-09.md`
 - `CVF_SESSION/state/entries/mfrpP4C1ReceiptRangeRework20260909.json`
