@@ -784,8 +784,7 @@ SKIPPED_WITH_REASON: source survey is undispatched. Future worker must inspect p
 
 ## ADIF Defect Registry Disclosure
 
-Resolver query: taskClass=governance-machine-hardening, role=reviewer,
-lifecyclePhase=pre-closure, riskCeiling=MEDIUM.
+Resolver query: taskClass=`governance-machine-hardening`, role=`reviewer`, lifecyclePhase=`pre-closure`
 Resolver command: `python governance/compat/run_adif_defect_resolver.py --task-class governance-machine-hardening --role reviewer --lifecycle-phase pre-closure --risk-ceiling MEDIUM --json`.
 Returned defect count: 0. Returned defects: NONE_RETURNED.
 Disclosed defectIds: none. Truncated: false.
