@@ -1,0 +1,348 @@
+{
+  "schemaVersion": "cvf.domainPilotInitialIntakeAudit.v1",
+  "docType": "audit",
+  "batchId": "DOMAIN-PILOT-INITIAL-INTAKE",
+  "date": "2026-09-12",
+  "governingWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md",
+  "governingBaseline": "docs/baselines/CVF_GC018_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md",
+  "dispatchBaseHead": "73bed437dece8e73682c877a1507a47ef0849696",
+  "dispatchMaterialCommit": "8ef01c2239b570ae5fa6abca10b4217fa36d58d0",
+  "dispatchContinuityCommit": "8f618c34f524bdc35c72887a2506e9ae2d6fc83c",
+  "executionBaseHead": "8f618c34f524bdc35c72887a2506e9ae2d6fc83c",
+  "claimBoundary": "INITIAL_EVIDENCE_COLLECTION_ONLY; ABSORPTION_NOT_COMPLETE; NO_ABSORPTION_ACCEPTANCE",
+
+  "repositoryIdentity": [
+    {
+      "sourceId": "AGW",
+      "upstream": "https://github.com/agentgateway/agentgateway.git",
+      "defaultBranch": "main",
+      "externalResearchPin": "3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826",
+      "localExistingPin": "3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826",
+      "observedUpstreamFullSha": "fddff50309518e8ee7dc6b7f1fef175d85b01975 (observed at prior EARA-AGW-T1 fetch, 2026-09-11; not re-fetched in this pilot)",
+      "observationUtc": "REUSED_FROM_EARA_AGW_T1_2026-09-11; not refreshed in this bounded pilot",
+      "latestStableTag": "UNKNOWN_NOT_QUERIED_IN_THIS_PILOT",
+      "latestPrereleaseTag": "UNKNOWN_NOT_QUERIED_IN_THIS_PILOT",
+      "chosenSurveyPin": "3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826",
+      "selectionReason": "Reuse existing clean pinned mirror per work-order Evidence Reuse plan; EARA-AGW-T1 already disclosed a 206-path freshness delta at this pin; no new fetch was performed in this pilot to avoid duplicate freshness-check cost within the 45-minute budget.",
+      "mirrorStatus": "CLONED_PINNED",
+      "mirrorPath": ".private_reference/source_mirrors/agentgateway__agentgateway/",
+      "trackedFileCount": 2477,
+      "treeOidSha1": "83021cdb46ea1af1dfb5711f81d542240571b955",
+      "canonicalManifestProfile": "sorted git ls-tree -r --full-tree HEAD rows; ordinal path sort; UTF-8; LF; trailing LF",
+      "canonicalManifestSha256": "cc9f48628d33bd20fbda6648b0dd0e8d762c8dbdb527b29cd5d26e603a4a6467",
+      "gitStatusAtPin": "clean; HEAD detached at 3d5f59f8",
+      "license": {
+        "identifierStated": "Apache License 2.0 (per LICENSE header text)",
+        "licensePath": "LICENSE",
+        "licenseBlobOidSha1": "f7b5e615693b3618c2d10228851355921fc4656e",
+        "licenseContentSha256": "3b1ee5b1e14fda40515c18ec2f0796d632e65a20b2aca8f017c654bc26ca77bd",
+        "noticePath": "NOT_FOUND",
+        "separatelyLicensedSubtrees": "NOT_SURVEYED_IN_THIS_PILOT; ui/ and controller/ (Go) may carry distinct upstream licensing, unresolved",
+        "licenseChangeVsResearchPin": "N/A same pin used, no delta to compare",
+        "disposition": "LICENSE_REVIEW_REQUIRED_FOR_SUBTREES; root Apache-2.0 read, subtree-level headers not sampled in this pilot"
+      }
+    },
+    {
+      "sourceId": "QM",
+      "upstream": "https://github.com/yc-software/qm.git",
+      "defaultBranch": "main",
+      "externalResearchPin": "UNKNOWN; original external nomination artifact/hash unavailable",
+      "localExistingPin": "NONE_BEFORE_THIS_PILOT",
+      "observedUpstreamFullSha": "51bf455ea414a58f70274284ce212142518e556a",
+      "observationUtc": "2026-09-12T06:23:05Z",
+      "priorWorkOrderObservedSha": "32b38cec6effa6ec8a7cd6803c39d480e0e3d5a2 (recorded in work order at dispatch authoring; superseded by fresh observation below)",
+      "freshnessDeltaVsWorkOrderPin": "DRIFT_DETECTED: work-order-recorded observed HEAD 32b38cec6... differs from this pilot's fresh git ls-remote observation 51bf455ea4...; QM main advanced between dispatch authoring and worker execution. Exact changed-path delta between the two SHAs was not enumerated in this pilot (budget-bounded); the chosen survey pin is the freshly observed HEAD, not the stale work-order-recorded SHA.",
+      "latestStableTag": "v0.1.11",
+      "latestPrereleaseTag": "NONE_OBSERVED",
+      "tagToCommitResolution": "v0.1.11 resolves to 51bf455ea414a58f70274284ce212142518e556a via git rev-list -n1 v0.1.11; HEAD is exactly at this tag (0 commits ahead)",
+      "chosenSurveyPin": "51bf455ea414a58f70274284ce212142518e556a",
+      "selectionReason": "Operator-clarified identity (https://github.com/yc-software/qm.git); mirror was absent pre-pilot; acquisition authorized in released scope; cloned fresh at observed HEAD which equals latest stable tag v0.1.11.",
+      "mirrorStatus": "CLONED_PINNED",
+      "mirrorPath": ".private_reference/source_mirrors/yc-software__qm/",
+      "trackedFileCount": 1805,
+      "treeOidSha1": "a73d450af95a0c487bc9593e3040fdd4405375b6",
+      "canonicalManifestProfile": "sorted git ls-tree -r --full-tree HEAD rows; ordinal path sort; UTF-8; LF; trailing LF",
+      "canonicalManifestSha256": "3462cf90e6db47e8bc4f47b3790b23e2c1caddf6d95e9ad660f7b7d4c1dadd74",
+      "gitStatusAtPin": "clean; HEAD at 51bf455ea4, matches tag v0.1.11",
+      "license": {
+        "identifierStated": "MIT (package.json \"license\": \"MIT\"; LICENSE file header)",
+        "licensePath": "LICENSE",
+        "licenseBlobOidSha1": "1bb48c345739f58481c3770d4fafdf702d1523e0",
+        "licenseContentSha256": "586fe8965302b57c7a490a42911f847f0dba54e60d95df53f3ad53ed9eed6b83",
+        "noticePath": "NOT_FOUND",
+        "separatelyLicensedSubtrees": "NOT_SURVEYED_IN_THIS_PILOT; skills-seed/popular-web-designs/templates/ reproduce named third-party product design patterns as reference text only and were not checked for separate redistribution terms",
+        "licenseChangeVsResearchPin": "N/A no prior pin existed locally",
+        "disposition": "LICENSE_REVIEW_REQUIRED_FOR_SKILLS_SEED_TEMPLATES; root MIT read and accepted for source code; template-content redistribution terms unresolved"
+      }
+    },
+    {
+      "sourceId": "DSH",
+      "upstream": "https://github.com/deepseek-ai/deepseek-harness.git",
+      "defaultBranch": "UNKNOWN_NOT_QUERIED_IN_THIS_PILOT",
+      "externalResearchPin": "cd5ef8148158c3a752a658978873241fdf8e2bbc; dsh-v0.1.2-alpha.1",
+      "localExistingPin": "cd5ef8148158c3a752a658978873241fdf8e2bbc",
+      "observedUpstreamFullSha": "NOT_RE_FETCHED_IN_THIS_PILOT",
+      "observationUtc": "REUSED_FROM_PRIOR_DSH_WRA_R1_CLOSURE_2026-08-30; not refreshed in this bounded pilot",
+      "latestStableTag": "UNKNOWN_NOT_QUERIED_IN_THIS_PILOT",
+      "latestPrereleaseTag": "dsh-v0.1.2-alpha.1 (existing pinned prerelease tag; current upstream tags not queried)",
+      "chosenSurveyPin": "cd5ef8148158c3a752a658978873241fdf8e2bbc",
+      "selectionReason": "Reuse existing clean pinned mirror; DSH-WRA-R1 already closed CLOSED_PASS_BOUNDED with 8953-file whole-corpus inventory; this pilot targets distinct workflow/skill/fixture value only, not re-verification of provider-attempt admission.",
+      "mirrorStatus": "CLONED_PINNED",
+      "mirrorPath": ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/",
+      "trackedFileCount": 8953,
+      "treeOidSha1": "a712eec535b48badc4fefb4df5176a7002e4280b",
+      "canonicalManifestProfile": "sorted git ls-tree -r --full-tree HEAD rows; ordinal path sort; UTF-8; LF; trailing LF",
+      "canonicalManifestSha256": "40ca36d54a10dd0ed15f47e4803402c49f1d55bbf18a18ca1b114f45cd62be3f",
+      "gitStatusAtPin": "clean; not currently on any branch (detached at pin)",
+      "license": {
+        "identifierStated": "MIT (LICENSE file header: \"Copyright (c) 2026 DeepSeek\")",
+        "licensePath": "LICENSE",
+        "licenseBlobOidSha1": "c1f7a78e89e4e4dc7b86664c3b3c76eb5eee1785",
+        "licenseContentSha256": "ebb4f09972aee8608be255debaf78451a68e95c290f55c240dec2ecfa16ea6be",
+        "noticePath": "THIRD_PARTY_NOTICES.md",
+        "noticeBlobOidSha1": "616dcd19097a5137a50a3a00a1aa403c73a2f26a",
+        "noticeContentSha256": "b0245871962b81ef8c6f4ade35b15c3effd0e72341fdf4472ce4982eccc01da7",
+        "separatelyLicensedSubtrees": "NOT_FULLY_SURVEYED; vendor/ directory name suggests bundled third-party code with THIRD_PARTY_NOTICES.md as the likely attribution surface; contents not read in this pilot",
+        "licenseChangeVsResearchPin": "N/A same pin used, no delta to compare",
+        "disposition": "LICENSE_REVIEW_REQUIRED_FOR_VENDOR_SUBTREE; root MIT plus present THIRD_PARTY_NOTICES.md read at path/hash level only, not content-verified in this pilot"
+      }
+    }
+  ],
+
+  "inventoryReadDepthLedger": [
+    {
+      "sourceId": "AGW",
+      "path": "examples/ (33 example categories, 200 tracked files)",
+      "readDepth": "READ",
+      "detail": "Enumerated all 200 file paths via git ls-tree; read full content of examples/llm-cost-routing/config.yaml, examples/traffic-ratelimiting-global/README.md, examples/mcp-authorization/README.md, examples/llm-prompt-guard/README.md, examples/traffic-spiffe/README.md (5 of 33 categories read in full; remainder path-enumerated only)"
+    },
+    {
+      "sourceId": "AGW",
+      "path": "crates/, controller/, ui/ (source implementation)",
+      "readDepth": "SKIPPED_WITH_REASON",
+      "detail": "Already covered by EARA-AGW-T1 eight-path targeted candidate ledger (ESC-001..007); not re-read in this pilot to avoid duplicate cost per work-order Evidence Reuse plan"
+    },
+    {
+      "sourceId": "AGW",
+      "path": "controller/api/tests/, controller/test/ (Go conformance/deployer tests)",
+      "readDepth": "DEFERRED",
+      "detail": "Path-enumerated only (visible in grep sample); not read in this pilot; represents consumer/failure-path evidence for a future current-head use-case recovery tranche"
+    },
+    {
+      "sourceId": "QM",
+      "path": "README.md",
+      "readDepth": "READ",
+      "detail": "Full 120-line read; confirms per-scope isolated workspace architecture, multi-harness abstraction (Pi/OpenCode/Codex/Claude Code), Isolated/Open sharing posture, Strict/Auto/Dangerous security posture"
+    },
+    {
+      "sourceId": "QM",
+      "path": "skills-seed/admin/SKILL.md",
+      "readDepth": "READ",
+      "detail": "Full read; connector-skill pattern for admin API delegation with turn-provenance-gated elevation and live re-checked authorization"
+    },
+    {
+      "sourceId": "QM",
+      "path": "skills-seed/ (23 other skill directories), plugins/, adrs/, docs/ (14 files), test/ (roughly 480 test files by name)",
+      "readDepth": "DEFERRED",
+      "detail": "Path-enumerated only; test filenames sampled by name (not opened) to infer feature surface breadth (acl, admin, sandbox providers, deploy providers, memory providers, slack, loop/cron, skills); no file content read beyond README.md and skills-seed/admin/SKILL.md"
+    },
+    {
+      "sourceId": "QM",
+      "path": "src/ (58 top-level modules: acl, admin, api, audit, auth, connectors, credentials, egress, identity, mcp, memory, policy, sandbox, security, skills, slack, workspace, etc.)",
+      "readDepth": "SKIPPED_WITH_REASON",
+      "detail": "Enumerated directory names only; no source file opened; module names corroborate README architecture claims but implementation is unverified in this pilot"
+    },
+    {
+      "sourceId": "DSH",
+      "path": ".agents/skills/ (8 skill directories: dsh-code-review, dsh-doc, dsh-find-simplifications, dsh-merging-stacked-prs, dsh-pre-push-checks, dsh-prose-standard, dsh-translate-docs, dsh-trim-cot-leakage, dsh-archive-agent-notes)",
+      "readDepth": "READ",
+      "detail": "Full read of dsh-find-simplifications/SKILL.md and dsh-pre-push-checks/SKILL.md; remaining 6 skill SKILL.md files path-enumerated only, not opened"
+    },
+    {
+      "sourceId": "DSH",
+      "path": ".agents/notes/ (Agent Notes tree: archived/, implemented/, proposed/, rejected/)",
+      "readDepth": "SKIPPED_WITH_REASON",
+      "detail": "Enumerated path structure only via git ls-tree; not opened; represents a distinct durable-decision-record convention referenced by the two read skills but not independently verified"
+    },
+    {
+      "sourceId": "DSH",
+      "path": "packages/, apps/ (whole-corpus source)",
+      "readDepth": "SKIPPED_WITH_REASON",
+      "detail": "Already whole-corpus inventoried and terminally routed by DSH-WRA-R1 (CLOSED_PASS_BOUNDED, 8953 files); not re-enumerated in this pilot"
+    }
+  ],
+
+  "sharedMechanismsView": [
+    {
+      "mechanismId": "SM-01",
+      "label": "CEL-based conditional policy expression",
+      "supportingSourceIds": ["AGW"],
+      "description": "Agentgateway uses CEL (cel.dev) expressions for both LLM virtual-model routing conditions (llm-cost-routing) and MCP tool-level authorization rules (mcp-authorization). Single expression language, two distinct application surfaces.",
+      "existingCvfOwnerEvidence": "EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts (ESC-001, DEFER); EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cadp-authorization.ts (ESC-007, ADAPT pending)",
+      "confidence": "MEDIUM",
+      "planningDisposition": "DEFER_WITH_TRIGGER",
+      "reopenTrigger": "A future separate reviewed work order authorizes Model Gateway or CADP CEL-expression adoption"
+    },
+    {
+      "mechanismId": "SM-02",
+      "label": "Text-only agent skill packaging (SKILL.md front-matter + body)",
+      "supportingSourceIds": ["QM", "DSH"],
+      "description": "Both QM (skills-seed/*/SKILL.md) and DSH (.agents/skills/*/SKILL.md) use an identical shallow convention: YAML front-matter with name/description, Markdown body with usage guidance, optional references/ and scripts/ subfolders. This mirrors CVF's own ASSF skill-entry pattern.",
+      "existingCvfOwnerEvidence": "docs/reference/agent_system_skills/registry/entries/ (ASSF candidate registry)",
+      "confidence": "HIGH",
+      "planningDisposition": "CONFIRMED_EXISTING; no new packaging mechanism, but instance content (specific skill bodies) may carry independent per-repo value",
+      "reopenTrigger": "N/A; pattern already owned, only body-level content candidates are novel"
+    },
+    {
+      "mechanismId": "SM-03",
+      "label": "Turn/session-provenance-gated privilege elevation",
+      "supportingSourceIds": ["QM"],
+      "description": "QM's admin skill elevates a chat agent's API token only on turns the admin started themselves; autonomous runs (cron/webhook) are refused elevation even if owned by an admin. Distinct from simple identity-based authorization.",
+      "existingCvfOwnerEvidence": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cadp-authorization.ts (identity separation present per EARA-AGW-T1 ESC-003=NO_NEW_VALUE finding)",
+      "confidence": "MEDIUM",
+      "planningDisposition": "PROMISING_FOR_SELECTED_REVIEW",
+      "reopenTrigger": "A named CVF consumer needs turn-provenance (not just identity) as an authorization input"
+    }
+  ],
+
+  "repositorySpecificValueViews": [
+    {
+      "sourceId": "AGW",
+      "useCaseId": "AGW-UC-01",
+      "label": "SPIFFE Workload API mTLS identity sourcing",
+      "userOutcome": "Gateway and upstream both source rotating X.509-SVID identity from a local SPIFFE Workload API instead of static cert/key files; verified SPIFFE ID forwarded to backend via CEL source.spiffeId",
+      "pinAndPath": "3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826 :: examples/traffic-spiffe/README.md",
+      "actualReadDepth": "READ (full)",
+      "producerVerifierConsumer": "producer=gateway TLS layer; verifier=SPIFFE trust bundle check; consumer=upstream backend via forwarded header",
+      "invocationAndFailureBehavior": "Only SVIDs chaining to the gateway's own trust-domain bundle are accepted; cross-trust-domain federation unsupported; pin specific upstream identities via subjectAltNames or CEL policy on source.spiffeId",
+      "existingCvfOwnerEvidenceOrGap": "OWNER_SURFACE_NOT_FOUND at network/TCP layer per EARA-AGW-T1 ESC-007 finding; this example is the concrete mechanism instance of that named gap",
+      "missingCvfLink": "No CVF network-layer mTLS/workload-identity owner surface exists yet",
+      "expectedBenefit": "Would close the exact network-layer half of ESC-007 if a future tranche is authorized",
+      "confidence": "MEDIUM",
+      "nextAction": "Separate reviewed work order to evaluate SPIFFE/workload-identity adoption at the CVF network layer, if the operator prioritizes it",
+      "reopenTrigger": "Operator opens a network-layer identity tranche; do not implement from this pilot alone"
+    },
+    {
+      "sourceId": "AGW",
+      "useCaseId": "AGW-UC-02",
+      "label": "Regex and webhook-based LLM prompt/response guardrails",
+      "userOutcome": "Reject or mask requests/responses containing PII patterns (SSN, email) with configurable rejection status/headers/body, or delegate the decision to an external webhook with CEL-templated forwarded headers",
+      "pinAndPath": "3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826 :: examples/llm-prompt-guard/README.md",
+      "actualReadDepth": "READ (full)",
+      "producerVerifierConsumer": "producer=gateway AI policy layer; verifier=regex/webhook guard; consumer=LLM request/response path",
+      "invocationAndFailureBehavior": "Rejection returns configurable HTTP status/headers/body; webhook path forwards only explicitly matched headers by default",
+      "existingCvfOwnerEvidenceOrGap": "OWNER_SURFACE_NOT_FOUND; no existing CVF content-moderation/PII-guard owner identified in this pilot's bounded search",
+      "missingCvfLink": "No CVF prompt/response content-screening owner surface located",
+      "expectedBenefit": "Concrete reusable pattern for any future CVF LLM-facing guardrail requirement",
+      "confidence": "LOW",
+      "nextAction": "Confirm via a targeted owner search whether Model Gateway already screens content before treating this as a gap",
+      "reopenTrigger": "A named CVF consumer requests LLM request/response content screening"
+    },
+    {
+      "sourceId": "QM",
+      "useCaseId": "QM-UC-01",
+      "label": "Per-scope isolated workspace with explicit sharing posture",
+      "userOutcome": "Each person and each room (channel/project) gets its own scoped memory, files, keychain, permissions, crons, and durable sandbox; org sets Isolated (default) or Open sharing posture that narrower scopes can only tighten",
+      "pinAndPath": "51bf455ea414a58f70274284ce212142518e556a :: README.md (Architecture, Security and secrets sections)",
+      "actualReadDepth": "READ (full README)",
+      "producerVerifierConsumer": "producer=per-scope config; verifier=admin-set org posture; consumer=agent loop and sandbox",
+      "invocationAndFailureBehavior": "Open posture requires live authenticated human turn plus opt-in; DM context allows recent shared-context lookback (up to 25); no relevance ranking applied to loaded memories",
+      "existingCvfOwnerEvidenceOrGap": "OWNER_SURFACE_NOT_FOUND; no direct CVF equivalent identified for org-wide configurable scope-isolation posture in this pilot's bounded search",
+      "missingCvfLink": "No CVF multi-tenant/multi-scope workspace isolation owner surface located",
+      "expectedBenefit": "Directly matches the domain-pilot hypothesis of 'shared-workspace and per-scope collaboration use cases'; high relevance if CVF pursues multi-user/multi-scope operation",
+      "confidence": "MEDIUM",
+      "nextAction": "Operator decision on whether multi-scope workspace isolation is a CVF priority before any selected-review tranche",
+      "reopenTrigger": "Operator opens a workspace-isolation or multi-tenant requirement"
+    },
+    {
+      "sourceId": "QM",
+      "useCaseId": "QM-UC-02",
+      "label": "Multi-harness abstraction (Pi, OpenCode, Codex, Claude Code) behind one core",
+      "userOutcome": "Deployment is not tied to a single vendor; every substrate (harness, session store, sandbox, memory) sits behind an interface",
+      "pinAndPath": "51bf455ea414a58f70274284ce212142518e556a :: README.md (What is QM?, Architecture sections)",
+      "actualReadDepth": "READ (full README)",
+      "producerVerifierConsumer": "producer=core agent loop; verifier=N/A (config-time selection); consumer=admin/deployment config",
+      "invocationAndFailureBehavior": "UNKNOWN_NOT_VERIFIED_IN_THIS_PILOT; no source-level seam inspection performed",
+      "existingCvfOwnerEvidenceOrGap": "CVF's own provider/model routing is a partially analogous but not identical concern (single-model routing versus whole-harness swapping); no direct owner comparison performed",
+      "missingCvfLink": "Whole-harness (not just model) abstraction owner is unassessed",
+      "expectedBenefit": "LOW_UNTIL_VERIFIED; claim is README-level only, not source-verified in this pilot",
+      "confidence": "LOW",
+      "nextAction": "Source-level seam verification required before any value claim strengthens",
+      "reopenTrigger": "A named CVF requirement for harness-swapping independent of model-provider routing"
+    },
+    {
+      "sourceId": "DSH",
+      "useCaseId": "DSH-UC-01",
+      "label": "Evidence-based simplification-candidate methodology (dsh-find-simplifications)",
+      "userOutcome": "Turns a broad 'find things to simplify' request into proven candidates backed by consumer classification (production/non-production/ambiguous corpus), explicit rejection criteria, and a durable Agent Note record format",
+      "pinAndPath": "cd5ef8148158c3a752a658978873241fdf8e2bbc :: .agents/skills/dsh-find-simplifications/SKILL.md",
+      "actualReadDepth": "READ (full, 154 lines)",
+      "producerVerifierConsumer": "producer=agent survey; verifier=consumer-classification rule (production vs non-production callers); consumer=durable Agent Note under .agents/notes/",
+      "invocationAndFailureBehavior": "Explicitly rejects thin candidates (single typo, one knip run, complexity-only claims without call-site proof); requires evidence before demoting/removing any surface",
+      "existingCvfOwnerEvidenceOrGap": "OWNER_SURFACE_NOT_FOUND; CVF's own code-review/simplify skills exist but do not specify this repo's production/non-production/ambiguous consumer-classification taxonomy",
+      "missingCvfLink": "No CVF-owned equivalent named consumer-classification taxonomy for simplification review",
+      "expectedBenefit": "Methodology-level pattern; could enrich CVF's own /simplify or /code-review skill instructions if adopted",
+      "confidence": "MEDIUM",
+      "nextAction": "Compare against CVF's existing /simplify skill instructions in a separate reviewed tranche before any adoption",
+      "reopenTrigger": "Operator opens a skill-enrichment tranche for /simplify or /code-review"
+    },
+    {
+      "sourceId": "DSH",
+      "useCaseId": "DSH-UC-02",
+      "label": "Scoped incremental pre-push check selection with lease-protected force-push",
+      "userOutcome": "Selects the narrowest test/check set that covers the outgoing diff instead of always running full suite; protects history-rewriting pushes with --force-with-lease bound to a freshly observed remote OID",
+      "pinAndPath": "cd5ef8148158c3a752a658978873241fdf8e2bbc :: .agents/skills/dsh-pre-push-checks/SKILL.md",
+      "actualReadDepth": "READ (full, 126 lines)",
+      "producerVerifierConsumer": "producer=change-scope report tool (pnpm run change-scope); verifier=focused Vitest coverage.include selection; consumer=push/PR pipeline",
+      "invocationAndFailureBehavior": "Never uses raw --force; re-audits review threads/mergeability after any rewritten push; treats 'no checks reported' plus CONFLICTING/DIRTY mergeability as a merge-conflict signal, not infrastructure failure",
+      "existingCvfOwnerEvidenceOrGap": "OWNER_SURFACE_NOT_FOUND; this pilot did not locate a named CVF owner for scoped pre-push check selection or lease-protected force-push guidance",
+      "missingCvfLink": "No CVF push-hygiene skill covers diff-scoped check selection or force-with-lease discipline explicitly",
+      "expectedBenefit": "Could reduce CVF's own review-cost/latency burden (already a named concern per CVF_ADIF-0026) if adapted",
+      "confidence": "MEDIUM",
+      "nextAction": "Compare against existing CVF push-readiness-preview standard in a separate reviewed tranche",
+      "reopenTrigger": "Operator opens a push-hygiene or review-cost enrichment tranche"
+    }
+  ],
+
+  "unreadUnknownRegions": [
+    {"sourceId": "AGW", "region": "crates/ (Rust source, ~majority of 2477 files)", "status": "UNKNOWN_NOT_READ_BEYOND_EARA_AGW_T1_EIGHT_PATHS"},
+    {"sourceId": "AGW", "region": "28 of 33 examples/ categories not opened", "status": "UNKNOWN_PATH_ENUMERATED_ONLY"},
+    {"sourceId": "AGW", "region": "ui/ (frontend)", "status": "UNKNOWN_NOT_READ"},
+    {"sourceId": "QM", "region": "src/ (58 modules, no file content read)", "status": "UNKNOWN_DIRECTORY_NAMES_ONLY"},
+    {"sourceId": "QM", "region": "23 of 24 skills-seed/ skill directories not opened", "status": "UNKNOWN_PATH_ENUMERATED_ONLY"},
+    {"sourceId": "QM", "region": "test/ (~480 files by name, none opened)", "status": "UNKNOWN_FILENAME_INFERENCE_ONLY"},
+    {"sourceId": "QM", "region": "plugins/, adrs/, cli/, aws/, fly/, porter/, deploy/", "status": "UNKNOWN_NOT_READ"},
+    {"sourceId": "DSH", "region": "packages/ and apps/ source (whole corpus)", "status": "PRIOR_WHOLE_CORPUS_INVENTORY_EXISTS (DSH-WRA-R1); not re-read here"},
+    {"sourceId": "DSH", "region": "6 of 8 .agents/skills/ SKILL.md files not opened", "status": "UNKNOWN_PATH_ENUMERATED_ONLY"},
+    {"sourceId": "DSH", "region": ".agents/notes/ tree content (only path structure enumerated)", "status": "UNKNOWN_PATH_ENUMERATED_ONLY"},
+    {"sourceId": "DSH", "region": "vendor/ subtree license/attribution content", "status": "UNKNOWN_NOT_READ; THIRD_PARTY_NOTICES.md hash recorded but content unread"}
+  ],
+
+  "corpusCompletenessAndReportIntegrity": {
+    "corpusTaskClass": "bounded initial acquisition survey across three repositories",
+    "corpusRoot": ".private_reference/source_mirrors/{agentgateway__agentgateway,yc-software__qm,deepseek-ai__deepseek-harness}/",
+    "snapshotTime": "2026-09-12 (AGW/DSH reused prior clean pins; QM freshly cloned 2026-09-12T06:23:05Z)",
+    "enumerationCommand": "git ls-tree -r --name-only HEAD (per mirror, filesystem-backed direct reads)",
+    "manifestArtifactOrInlineManifest": "inline repositoryIdentity plus inventoryReadDepthLedger arrays in this file",
+    "manifestHash": "per-repository canonicalManifestSha256 values in repositoryIdentity; combined aggregate intentionally not used because each frozen repository is an independent authority root",
+    "processingLedgerArtifactOrInlineLedger": "inline inventoryReadDepthLedger array in this file",
+    "allowedTerminalStatuses": "READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE",
+    "reconciliation": "manifest_rows=10 (inventoryReadDepthLedger entries); ledger_terminal=10; exclusions=0; unresolved=0 for the rows actually produced in this bounded pilot",
+    "unresolvedFiles": "0 in the bounded ledger above; the vast majority of AGW(2477)/QM(1805)/DSH(8953) tracked files remain outside this pilot's read scope by design and are listed in unreadUnknownRegions, not silently claimed complete",
+    "declaredExclusions": "all repository paths not named in inventoryReadDepthLedger; AGW crates/controller/ui source implementation (reused via EARA-AGW-T1); DSH packages/apps source (reused via DSH-WRA-R1)",
+    "unreadableOrUnsupportedFiles": 0,
+    "aggregationCheck": "10 ledger rows equal 10 terminal dispositions; 6 use-case value rows and 3 shared-mechanism rows derive from the READ subset only",
+    "driftCheck": "QM: DRIFT_DETECTED (work-order-recorded 32b38cec6... vs fresh-observed 51bf455ea4...); AGW: prior 206-path delta from EARA-AGW-T1 stands, not re-verified in this pilot; DSH: no fresh fetch performed, pin assumed still current pending future refresh",
+    "outputTraceability": "this audit JSON plus the paired worker-return Markdown",
+    "adversarialVerification": "explicitly reject any all-files-read, complete-inventory, or umbrella-absorption-complete interpretation of this pilot",
+    "corpusVerdict": "PARTIAL - bounded representative survey only; three repositories total 13,235 tracked files, of which this pilot directly read fewer than 15 individual files in full"
+  },
+
+  "knowledgeSystemReconciliation": {
+    "mappedCount": 6,
+    "deferredCount": 3,
+    "unmappedCount": 0,
+    "totalCandidateRecords": 9,
+    "note": "6 repositorySpecificValueViews use-case rows are mapped (PROMISING_FOR_SELECTED_REVIEW or lower-confidence advisory); 3 sharedMechanismsView rows are deferred/confirmed-existing; mapped + deferred + unmapped = 9 = total candidate records; all three source rows preserved even where AGW/DSH reuse prior evidence"
+  }
+}
