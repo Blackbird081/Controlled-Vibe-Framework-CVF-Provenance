@@ -609,9 +609,9 @@ extractedTextAuthority: source Git blobs control; extracted prose is secondary
 | Field | Evidence |
 |---|---|
 | Agent type | Local reviewer/closer |
-| Invocation ID | domain-pilot-byte-pin-closure-20260912 |
-| Expected manifest | docs/baselines/CVF_GC018_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md; docs/work_orders/CVF_AGENT_WORK_ORDER_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md; docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json; governance/compat/test_mfrp_shadow_canary.py |
-| Actual changed set | docs/baselines/CVF_GC018_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md; docs/work_orders/CVF_AGENT_WORK_ORDER_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md; docs/reference/system_chain/CVF_SYSTEM_CHAIN_MAP.json; governance/compat/test_mfrp_shadow_canary.py |
+| Invocation ID | domain-pilot-adif-closure-20260912 |
+| Expected manifest | docs/baselines/CVF_GC018_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md; docs/work_orders/CVF_AGENT_WORK_ORDER_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md |
+| Actual changed set | docs/baselines/CVF_GC018_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md; docs/work_orders/CVF_AGENT_WORK_ORDER_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md |
 | Manifest delta | MATCH |
 | Actor | Local dispatch author |
 | Provider or surface | Codex local workspace |
@@ -675,7 +675,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | rolePattern | Local author/reviewer/closer; future internal worker |
 | phase | DRAFT preparation; worker execution unopened |
 | baseHeadFor(phase) | preparation anchor 66257f80a; dispatch and execution not begun |
-| changedSetScope(phase) | Four material paths in current trace; future worker six manifest paths |
+| changedSetScope(phase) | Two correction-document paths in current trace; future worker six manifest paths |
 | traceScope(phase, actor) | Exact command, hash and changed-set evidence |
 | commitOwner(phase) | Local closer; worker forbidden |
 | crossBatchIsolation | No active intake worker; no concurrent mutation |
@@ -781,3 +781,13 @@ Convergence fields classify the planned INITIAL intake; they do not override DRA
 ## Mandatory Blind-Spot Control Block
 
 SKIPPED_WITH_REASON: source survey is undispatched. Future worker must inspect per-repository operational value and preserve unread regions; preparation cannot assign final source dispositions.
+
+## ADIF Defect Registry Disclosure
+
+Resolver query: taskClass=governance-machine-hardening, role=reviewer,
+lifecyclePhase=pre-closure, riskCeiling=MEDIUM.
+Resolver command: `python governance/compat/run_adif_defect_resolver.py --task-class governance-machine-hardening --role reviewer --lifecycle-phase pre-closure --risk-ceiling MEDIUM --json`.
+Returned defect count: 0. Returned defects: NONE_RETURNED.
+Disclosed defectIds: none. Truncated: false.
+Disposition: no matching registry item; existing guards remain mandatory.
+This is byte-pin maintenance closure evidence, not intake dispatch admission.

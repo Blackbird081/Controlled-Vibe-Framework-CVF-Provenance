@@ -260,3 +260,13 @@ SKIPPED_WITH_REASON: source survey is undispatched. Future worker must inspect p
 ## External Repository Absorption Entry Control
 
 SKIPPED_WITH_REASON: baseline preparation only; paired work order defines the exact source identities, mirror plan, ledger, overlap and value routes before future source acquisition.
+
+## ADIF Defect Registry Disclosure
+
+Resolver query: taskClass=governance-machine-hardening, role=reviewer,
+lifecyclePhase=pre-closure, riskCeiling=MEDIUM.
+Resolver command: `python governance/compat/run_adif_defect_resolver.py --task-class governance-machine-hardening --role reviewer --lifecycle-phase pre-closure --risk-ceiling MEDIUM --json`.
+Returned defect count: 0. Returned defects: NONE_RETURNED.
+Disclosed defectIds: none. Truncated: false.
+Disposition: no matching registry item; existing guards remain mandatory.
+This is byte-pin maintenance closure evidence, not intake dispatch admission.
