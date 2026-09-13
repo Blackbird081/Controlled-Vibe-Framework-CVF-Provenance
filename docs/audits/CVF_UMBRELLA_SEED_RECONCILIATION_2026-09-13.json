@@ -1,12 +1,20 @@
 {
   "schemaVersion": "cvf.umbrellaSeedReconciliation.v1",
-  "textEncodingExceptionNote": "Text Encoding Exception: sourceRows/label and historicalObligationRows/sourceRow fields below are copied verbatim from the accepted docs/audits/CVF_UMBRELLA_SEED_PROVENANCE_RECEIPT_2026-09-13.json and preserve original non-ASCII (Vietnamese diacritic) source labels byte-for-byte rather than transliterating them, since this reconciliation must not alter receipt-bound source identity strings.",
-  "batchId": "UMBRELLA-SEED-RECONCILIATION-T1",
-  "status": "COMPLETE_PENDING_REVIEW",
+  "reworkGeneration": 1,
+  "reworkFindingDigest": "5869948b2b1c860f0675658d45a58ff90a8e30392704eeb08b39ace8cc6ec237",
+  "reworkedFindings": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+  ],
+  "textEncodingExceptionNote": "Text Encoding Exception: sourceRows and historicalObligationRows below are the exact receipt-decoded Python objects from docs/audits/CVF_UMBRELLA_SEED_PROVENANCE_RECEIPT_2026-09-13.json, re-serialized with ensure_ascii=True so every non-ASCII character (Vietnamese diacritics, arrow and left-right-arrow glyphs) is written as the identical \\uXXXX escape sequence the receipt itself uses, rather than raw UTF-8 bytes. F1 repair: the prior invocation wrote these fields as raw UTF-8 bytes, which decode to the same Unicode strings but do not byte-match the receipt's own escape-sequence encoding style; this version matches byte-for-byte.",
+  "batchId": "UMBRELLA-SEED-RECONCILIATION-T1-REWORK-1",
+  "status": "REVIEWER_ACCEPTED_BOUNDED_METADATA_ONLY",
   "commitMode": "WORKER_MUST_NOT_COMMIT",
-  "dispatchBaseHead": "dfae47c8c0feaf7e0508d08f4d02438a41ef98c6",
-  "executionBaseHead": "f5bfdffdda4041ce7277026b3ec83dae89eff43d",
-  "checkedAtUtc": "2026-09-13T14:47:57+00:00",
+  "dispatchBaseHead": "087234a8df215f740940c99e31b6621de892129d",
+  "executionBaseHead": "762a0d827a6432c48e58f0de9463897aa50b11a7",
+  "checkedAtUtc": "2026-09-13T15:43:32+00:00",
   "inputHashes": [
     {
       "path": "CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip::CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_V1.md",
@@ -110,7 +118,7 @@
     {
       "canonical_source_id": "SRC-AGENT-GROUNDING-WORKSTREAM",
       "domain": "GENERAL",
-      "label": "Agent grounding / Agent sai và grounding",
+      "label": "Agent grounding / Agent sai v\u00e0 grounding",
       "source_kind": "WORKSTREAM",
       "seed_historical_locator": "Project article/workstream",
       "seed_upstream_repository": null,
@@ -266,7 +274,7 @@
     {
       "canonical_source_id": "SKILL-SRC-007",
       "domain": "SKILL",
-      "label": "Sự bùng nổ SKILL.md",
+      "label": "S\u1ef1 b\u00f9ng n\u1ed5 SKILL.md",
       "source_kind": "WORKSTREAM",
       "seed_historical_locator": "Article/workstream; provenance unresolved",
       "seed_upstream_repository": null,
@@ -383,7 +391,7 @@
     {
       "canonical_source_id": "SRC-RAG-MAG-CONTEXT",
       "domain": "MEMORY",
-      "label": "RAG vs MAG — Knowledge vs Memory Context",
+      "label": "RAG vs MAG \u2014 Knowledge vs Memory Context",
       "source_kind": "WORKSTREAM",
       "seed_historical_locator": "Project source passage/workstream",
       "seed_upstream_repository": null,
@@ -409,7 +417,7 @@
     {
       "canonical_source_id": "MEM-SRC-003",
       "domain": "MEMORY",
-      "label": "Memory Poisoning — arXiv 2608.21230",
+      "label": "Memory Poisoning \u2014 arXiv 2608.21230",
       "source_kind": "DOC_PAPER",
       "seed_historical_locator": "https://arxiv.org/abs/2608.21230",
       "seed_upstream_repository": null,
@@ -901,7 +909,7 @@
     },
     {
       "id": "MEM-ABS-013",
-      "sourceRow": "| `MEM-ABS-013` | `MEMORY` | MEM-F-023 | Session-derived memory proposal → qualify → admit/reject pipeline | Memory Admission / Session Continuity | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+      "sourceRow": "| `MEM-ABS-013` | `MEMORY` | MEM-F-023 | Session-derived memory proposal \u2192 qualify \u2192 admit/reject pipeline | Memory Admission / Session Continuity | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
     },
     {
       "id": "MEM-ABS-014",
@@ -917,7 +925,7 @@
     },
     {
       "id": "SKILL-ABS-001",
-      "sourceRow": "| `SKILL-ABS-001` | `SKILL` | SKILL-F-001 | Guarded skill evolution: failure attribution → isolated repair candidate → verification gates → atomic promote/rollback | Skill Evolution; Validation / Certification; Revocation / Rollback | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+      "sourceRow": "| `SKILL-ABS-001` | `SKILL` | SKILL-F-001 | Guarded skill evolution: failure attribution \u2192 isolated repair candidate \u2192 verification gates \u2192 atomic promote/rollback | Skill Evolution; Validation / Certification; Revocation / Rollback | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
     },
     {
       "id": "SKILL-ABS-002",
@@ -937,7 +945,7 @@
     },
     {
       "id": "SKILL-ABS-006",
-      "sourceRow": "| `SKILL-ABS-006` | `SKILL` | SKILL-F-011 | Three-level progressive skill disclosure: metadata → instructions → resources/scripts | Skill Discovery; Capability Packaging; Context | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+      "sourceRow": "| `SKILL-ABS-006` | `SKILL` | SKILL-F-011 | Three-level progressive skill disclosure: metadata \u2192 instructions \u2192 resources/scripts | Skill Discovery; Capability Packaging; Context | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
     },
     {
       "id": "SKILL-ABS-007",
@@ -1061,7 +1069,7 @@
     },
     {
       "id": "XD-ARCH-ABS-001",
-      "sourceRow": "| `XD-ARCH-ABS-001` | `ARCHITECTURE` | MCP-F-014 | Host-owned MCP isolation/consent topology with 1:1 client↔server boundary | MCP Host / Gateway Topology; Security / Governance | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+      "sourceRow": "| `XD-ARCH-ABS-001` | `ARCHITECTURE` | MCP-F-014 | Host-owned MCP isolation/consent topology with 1:1 client\u2194server boundary | MCP Host / Gateway Topology; Security / Governance | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
     },
     {
       "id": "XD-ARCH-ABS-002",
@@ -1069,7 +1077,7 @@
     },
     {
       "id": "XD-MCP-ABS-001",
-      "sourceRow": "| `XD-MCP-ABS-001` | `MCP` | ARCH-F-038 | Protocol-bridge interoperability contract for ACP↔MCP-style capability translation | Integration & Protocol; MCP Gateway; Interoperability | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+      "sourceRow": "| `XD-MCP-ABS-001` | `MCP` | ARCH-F-038 | Protocol-bridge interoperability contract for ACP\u2194MCP-style capability translation | Integration & Protocol; MCP Gateway; Interoperability | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
     }
   ],
   "historicalObligationRowCount": 68,
@@ -1608,9 +1616,9 @@
       "path": "CVF_SESSION/state/entries/ppmcpR1PinnedUpstreamLegacyDeltaReintakeClosure20260725.json",
       "section": "value.status, value.scope, value.audit, value.completionReview",
       "pin": "materialCommit 539e453a7",
-      "evidenceHash": "N/A_WITH_REASON: entry read as governed JSON state, no standalone content hash computed this pass",
+      "evidenceHash": "d5acb4f2c31df1960f089d1474f3a0e08eaa8c81f6b82f9927d19488cfdce0f0",
       "acceptedScope": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS at https://github.com/nguyennguyenit/pancake-pos-mcp.git pinned 41979fdac4fdf9a8a6f956889c33f19fa3389215; 98 pinned upstream files plus 9 legacy files, 107 exact manifest tuples",
-      "limits": "Five concrete conditional reopen rows govern further work; no duplicate intake authorized. Repository-level acceptance, not per-finding (MCP-F-008/MCP-F-010/MCP-F-013/MCP-F-015) verification.",
+      "limits": "Five concrete conditional reopen rows govern further work; no duplicate intake authorized. Repository-level acceptance, not per-finding verification of MCP-F-008/MCP-F-010/MCP-F-013/MCP-F-015.",
       "childClosureIsNotWholeRepoCompletion": true
     },
     {
@@ -1623,9 +1631,9 @@
       "path": "CVF_SESSION/state/entries/rspbAiT0DualCorpusIntakeAcceptedStopCostExceedsValue20260815.json",
       "section": "value (single string state record)",
       "pin": "materialCommit 42935376a; MODS-T0 3a40397df; T14 6fc8f987/f0c16ee85",
-      "evidenceHash": "N/A_WITH_REASON: entry read as governed JSON state, no standalone content hash computed this pass",
+      "evidenceHash": "df826f6ac715e92949fff2ed9f7584a308af3441c2656a5ed43b499586d07618",
       "acceptedScope": "764-file dual-corpus intake valid at https://github.com/zhaoxuya520/reverse-skill.git (upstream 559 files); RSPB-AI-T14 accepted bounded capability-preflight advisory projection kernel",
-      "limits": "Old whole-tranche STOP_COST_EXCEEDS_VALUE decision is superseded by MODS-T0, not reopened; local pack is provenance-backed mixed-origin derived synthesis, non-authoritative until separately reviewed. Repository-level acceptance, not per-finding (SKILL-F-004/005/006) verification.",
+      "limits": "Old whole-tranche STOP_COST_EXCEEDS_VALUE decision is superseded by MODS-T0, not reopened; local pack is provenance-backed mixed-origin derived synthesis, non-authoritative until separately reviewed. Repository-level acceptance, not per-finding verification of SKILL-F-004/005/006.",
       "childClosureIsNotWholeRepoCompletion": true
     },
     {
@@ -1642,12 +1650,41 @@
         "XD-ARCH-ABS-001"
       ],
       "evidenceClass": "PARTIAL_EVIDENCE",
-      "path": "docs/reviews/CVF_MCP_KAR_T9_FINAL_BOUNDED_EXHAUSTION_RECONCILIATION_WORKER_RETURN_2026-08-24.md",
-      "section": "upstream/external 35-group route ledger (22 upstream + 13 external groups, 993 rows)",
-      "pin": "docs/audits/CVF_MCP_KAR_T0_UPSTREAM_FILE_LEDGER_2026-08-23.json",
-      "evidenceHash": "N/A_WITH_REASON: not recomputed this pass; reused per verificationMode REUSE_PRIOR_VERIFICATION",
-      "acceptedScope": "MCP-KAR-T9 REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED covers an MCP upstream/external route ledger (35 groups, 993 rows), but this return does not name https://github.com/modelcontextprotocol/modelcontextprotocol.git as one of the 22 upstream groups at the exact-source-ID level within this worker's bounded read.",
-      "limits": "Do not treat MCP domain closure as equivalent to confirmed CVF-SRC-MODELCONTEXTPROTOCOL-SPEC acceptance without a targeted lookup naming that exact upstream group. Recorded as PARTIAL, not ACCEPTED, to avoid an invented binding.",
+      "path": "docs/audits/CVF_MCP_KAR_T0_DUAL_CORPUS_RECEIPT_2026-08-23.json; docs/audits/CVF_MCP_KAR_T0_ABSORPTION_AUDIT_2026-08-23.md",
+      "section": "corpora[0] (PINNED_UPSTREAM_AUTHORITY, 885 files); External Absorption Core row \"Input root or repository\" (line ~208)",
+      "pin": "https://github.com/modelcontextprotocol/modelcontextprotocol.git pinned 5f5440bb26a62e2cf3440b92da5a667efa03b267",
+      "evidenceHash": "manifestHash 558c9266ca682604529db65c4f09d736623fca3e0da943e65dd835cc8c85db58 (upstream corpus); combinedManifestHash fb3b313dd136095352598f575cc54f46d7fc8a6440fd0cdc2fdc493902780c35 (885 upstream + 108 external = 993 total, two distinct corpora, not 993 upstream rows)",
+      "acceptedScope": "MCP-KAR-T9 REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED covers this exact pinned upstream mirror (885 files) plus a 108-file secondary external redesign corpus (993 total across two corpora, 35 groups); the T0 dual-corpus receipt binds the official modelcontextprotocol/modelcontextprotocol URL and pin directly to this seed source.",
+      "limits": "Acceptance is at the corpus/domain level (READ/ADAPTED/DEFERRED/REJECTED/NO_NEW_VALUE dispositions across 993 rows), not independently re-verified per MCP-AI-* obligation by this worker; nine MCP-AI-* obligations plus XD-ARCH-ABS-001 inherit PARTIAL_EVIDENCE pending a per-obligation cross-check against the named ledgers, not because the source identity itself is uncertain.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-GRIDEX-GRIDEX",
+      "obligationIds": [
+        "GEN-ABS-001",
+        "GEN-ABS-002"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"gridex\" CVF_SESSION/state/entries docs/reviews docs/work_orders -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-AGENT-GROUNDING-WORKSTREAM",
+      "obligationIds": [
+        "GEN-ABS-003"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"agent grounding\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
       "childClosureIsNotWholeRepoCompletion": true
     },
     {
@@ -1661,34 +1698,1780 @@
       "pin": "N/A",
       "evidenceHash": "N/A",
       "acceptedScope": "NONE_FOUND",
-      "limits": "The AGSK/Addy mirror lane (CVF_SESSION/state/entries/agskR2AgentSkillsSourceMirrorBackfillClosure20260629.json) mirrors https://github.com/addyosmani/agent-skills.git, not kepano/obsidian-skills. `rg -l kepano` across CVF_SESSION/state/entries and AGSK docs returned zero matches. This seed source has no confirmed scoped Local acceptance; a superficial name-adjacency to the AGSK/'Addy' mirror in the six-mirror triage must not be treated as a match.",
+      "limits": "Searched: Grep -i \"kepano\" CVF_SESSION/state/entries docs/reviews docs/work_orders (repeated from original return; only self-referential hits in this task's own artifacts) -> NO_MATCH_OUTSIDE_THIS_TASKS_OWN_ARTIFACTS. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
       "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-MEMENTO-SKILLS",
+      "obligationIds": [
+        "SKILL-ABS-001",
+        "SKILL-ABS-002"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"Memento-Skills|Memento-Teams\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-MRGOONIE-CLAUDEKIT-SKILLS",
+      "obligationIds": [
+        "SKILL-ABS-005"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"mrgoonie\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC_SKILL_ENVIRONMENT_ADAPTATION",
+      "obligationIds": [
+        "SKILL-ABS-004"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"environment adaptation\" CVF_SESSION/state/entries (workstream, no repository URL to search) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC_SKILL_GOOGLE_ADK_SKILLTOOLSET",
+      "obligationIds": [
+        "SKILL-ABS-006",
+        "SKILL-ABS-007"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"adk-python|google/adk\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC_SKILL_HOWTOCLAUDE",
+      "obligationIds": [
+        "SKILL-ABS-008",
+        "SKILL-ABS-009"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"luongnv89|claude-howto|HowtoClaude\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC_SKILL_GSTACK",
+      "obligationIds": [
+        "SKILL-ABS-010",
+        "SKILL-ABS-011"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"garrytan/gstack\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC_SKILL_HTML_ANYTHING",
+      "obligationIds": [
+        "SKILL-ABS-012",
+        "SKILL-ABS-013"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"nexu-io/html-anything\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "CVF-SRC-SOL-ADVISOR",
+      "obligationIds": [],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"DannyMac180|sol-advisor\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "MEM-SRC-013",
+      "obligationIds": [
+        "SKILL-ABS-014"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"AI Repository Reading|Repository Exploration|Skill Router\" CVF_SESSION/state/entries (workstream, one unresolved-identity source, no repository URL) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SKILL-SRC-007",
+      "obligationIds": [],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"AI Repository Reading|Repository Exploration|Skill Router\" CVF_SESSION/state/entries (workstream, one unresolved-identity source, no repository URL) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SKILL-SRC-001",
+      "obligationIds": [
+        "SKILL-ABS-005"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"huggingface/skills\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SKILL-SRC-006",
+      "obligationIds": [
+        "SKILL-ABS-008"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"mattpocock\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC_MEMORY_MEMPALACE",
+      "obligationIds": [
+        "MEM-ABS-001"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"MemPalace\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC_MEMORY_CORTEX_HUB",
+      "obligationIds": [
+        "MEM-ABS-001",
+        "MEM-ABS-002"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"cortex-hub|lktiep\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-AUGMENT-CONTEXT-ENGINE",
+      "obligationIds": [
+        "MEM-ABS-003"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"Augment Context Engine|augment.*context.engine\" CVF_SESSION/state/entries (workstream, no repository URL) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-GRAPHIFY",
+      "obligationIds": [
+        "MEM-ABS-004",
+        "MEM-ABS-005"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"Graphify|safishamsi\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-TIRTH8205-CODE-REVIEW-GRAPH",
+      "obligationIds": [
+        "MEM-ABS-004",
+        "XD-ARCH-ABS-002"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"tirth8205|code-review-graph\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-LANGCHAIN-OPENWIKI",
+      "obligationIds": [
+        "MEM-ABS-006"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"langchain-ai/openwiki|OpenWiki\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-RAG-MAG-CONTEXT",
+      "obligationIds": [
+        "MEM-ABS-007"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"RAG.*MAG|Memory.*Context\" CVF_SESSION/state/entries (workstream, no repository URL) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "MEM-SRC-004",
+      "obligationIds": [],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"Filesystem as AI Memory\" CVF_SESSION/state/entries (workstream, no repository URL) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "MEM-SRC-003",
+      "obligationIds": [
+        "MEM-ABS-008",
+        "MEM-ABS-009",
+        "MEM-ABS-010"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"arxiv.*2608.21230|Memory Poisoning\" CVF_SESSION/state/entries (paper, no repository URL) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "MEM-SRC-005",
+      "obligationIds": [
+        "MEM-ABS-011",
+        "MEM-ABS-012",
+        "MEM-ABS-013"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"OpenViking|volcengine\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "MEM-SRC-002",
+      "obligationIds": [
+        "MEM-ABS-014",
+        "MEM-ABS-015",
+        "MEM-ABS-016"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"agentmemory|rohitg00\" CVF_SESSION/state/entries (matches are cross-agent-memory CVF-internal terminology, not this specific repository) -> NO_MATCH_DISTINCT_FROM_INTERNAL_TERMINOLOGY_HITS. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-BLACKBIRD-OH-MY-CLAUDECODE",
+      "obligationIds": [
+        "ARCH-ABS-001"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"oh-my-claudecode|Yeachan-Heo\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-CLAW-CODE-WORKSTREAM",
+      "obligationIds": [],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"claw-code|ultraworkers\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-GITHUB-GH-AW",
+      "obligationIds": [
+        "ARCH-ABS-002",
+        "ARCH-ABS-003"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"gh-aw\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-MRGOONIE-OPENROUTER-CLI",
+      "obligationIds": [
+        "ARCH-ABS-004",
+        "ARCH-ABS-005"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"mrgoonie\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC_ARCH_GOCLAW_WORKFLOW",
+      "obligationIds": [],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"goclaw|nextlevelbuilder\" CVF_SESSION/state/entries (hits found were unrelated GoClaw-unrelated generic-word coincidences, verified by direct re-check) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-GOCLAW-WORKSTREAM",
+      "obligationIds": [],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"goclaw|nextlevelbuilder\" CVF_SESSION/state/entries (hits found were unrelated GoClaw-unrelated generic-word coincidences, verified by direct re-check) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-NOUS-HERMES-AGENT",
+      "obligationIds": [],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"hermes-agent|NousResearch\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-LANGCHAIN-DEEPAGENTS",
+      "obligationIds": [
+        "ARCH-ABS-006",
+        "ARCH-ABS-007"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"deepagents|langchain-ai/deepagents\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-HKUDS-CLI-ANYTHING",
+      "obligationIds": [
+        "ARCH-ABS-008"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"CLI-Anything|HKUDS\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SKILL-SRC-004",
+      "obligationIds": [
+        "ARCH-ABS-009"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"affaan-m|everything-claude-code|affaan-m/ECC\" CVF_SESSION/state/entries docs (zero matches anywhere in the repository, not only in this scope) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM",
+      "obligationIds": [],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"affaan-m|everything-claude-code|affaan-m/ECC\" CVF_SESSION/state/entries docs (zero matches anywhere in the repository, not only in this scope) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-MODEL-ROUTER-WORKSTREAM",
+      "obligationIds": [
+        "ARCH-ABS-010"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"Model Router\" CVF_SESSION/state/entries (workstream, no repository URL) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "MEM-SRC-009",
+      "obligationIds": [],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"claudekit-engineer|lucaspressi\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-HARNESS-ENGINEERING-2026",
+      "obligationIds": [],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"Harness Engineering\" CVF_SESSION/state/entries (paper, no repository URL) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-GRAPH-ENGINEERING-2026",
+      "obligationIds": [
+        "ARCH-ABS-011"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"agent-graph|context4ai\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-NEURONS-AICOWORKER",
+      "obligationIds": [
+        "ARCH-ABS-012",
+        "ARCH-ABS-013"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"aicoworker|Neurons-AI\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-EQUAL-BUDGET-SAS-MAS",
+      "obligationIds": [
+        "ARCH-ABS-014"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"Single-Agent vs Multi-Agent|equal-budget\" CVF_SESSION/state/entries (workstream, no repository URL) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-BLOCK-BUZZ",
+      "obligationIds": [
+        "ARCH-ABS-015",
+        "ARCH-ABS-016",
+        "XD-MCP-ABS-001"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"block/buzz\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-YC-QM",
+      "obligationIds": [
+        "ARCH-ABS-017",
+        "ARCH-ABS-018"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"yc-software/qm\" CVF_SESSION/state/entries (distinct from unrelated internal QM abbreviation hits, verified by direct re-check) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC_ARCH_AGENTIC_OS_PATTERNS",
+      "obligationIds": [],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"Agentic OS Patterns|Giai-phau-agentic-os\" CVF_SESSION/state/entries (artifact, no repository URL) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC_ARCH_CLAUDEKIT",
+      "obligationIds": [],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"carlrannaberg/claudekit\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "CVF-SRC-CLAUDE-CODE-CVF-MCP-CONTROL",
+      "obligationIds": [
+        "ARCH-ABS-019"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"CVF MCP approval-control\" CVF_SESSION/state/entries (workstream, no repository URL) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "CVF-SRC-OPENTABS",
+      "obligationIds": [
+        "ARCH-ABS-020",
+        "ARCH-ABS-021"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"opentabs-dev/opentabs\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "CVF-SRC-WEBMCP",
+      "obligationIds": [
+        "ARCH-ABS-022"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"webmachinelearning/webmcp\" CVF_SESSION/state/entries -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "CVF-SRC-CLI-FOR-AI-AGENTS",
+      "obligationIds": [],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "Searched: Grep -i \"CLI cho AI Agents\" CVF_SESSION/state/entries (workstream, no repository URL) -> NO_MATCH. No scoped Local acceptance located for this source in the searched surface; absence here is not global absence.",
+      "childClosureIsNotWholeRepoCompletion": true
+    }
+  ],
+  "obligationDisposition": [
+    {
+      "obligationId": "GEN-ABS-001",
+      "linkedSourceIds": [
+        "SRC-GRIDEX-GRIDEX"
+      ],
+      "inheritedFromSourceId": "SRC-GRIDEX-GRIDEX",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "GEN-ABS-002",
+      "linkedSourceIds": [
+        "SRC-GRIDEX-GRIDEX"
+      ],
+      "inheritedFromSourceId": "SRC-GRIDEX-GRIDEX",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "GEN-ABS-003",
+      "linkedSourceIds": [
+        "SRC-AGENT-GROUNDING-WORKSTREAM"
+      ],
+      "inheritedFromSourceId": "SRC-AGENT-GROUNDING-WORKSTREAM",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "GEN-ABS-004",
+      "linkedSourceIds": [
+        "SKILL-SRC-005"
+      ],
+      "inheritedFromSourceId": "SKILL-SRC-005",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MCP-AI-001",
+      "linkedSourceIds": [
+        "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC",
+      "disposition": "PARTIAL_EVIDENCE",
+      "note": "Inherits scoped Local acceptance from its strongest-evidenced joined source; this is a metadata disposition, not an independent per-obligation acceptance decision."
+    },
+    {
+      "obligationId": "MCP-AI-002",
+      "linkedSourceIds": [
+        "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC",
+        "CVF-SRC-PANCAKE-POS-MCP"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-PANCAKE-POS-MCP",
+      "disposition": "PARTIAL_EVIDENCE",
+      "note": "Scoped source acceptance exists; no independent proof this obligation is satisfied. Source acceptance does not propagate to obligation acceptance."
+    },
+    {
+      "obligationId": "MCP-AI-003",
+      "linkedSourceIds": [
+        "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC",
+      "disposition": "PARTIAL_EVIDENCE",
+      "note": "Inherits scoped Local acceptance from its strongest-evidenced joined source; this is a metadata disposition, not an independent per-obligation acceptance decision."
+    },
+    {
+      "obligationId": "MCP-AI-004",
+      "linkedSourceIds": [
+        "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC",
+      "disposition": "PARTIAL_EVIDENCE",
+      "note": "Inherits scoped Local acceptance from its strongest-evidenced joined source; this is a metadata disposition, not an independent per-obligation acceptance decision."
+    },
+    {
+      "obligationId": "MCP-AI-005",
+      "linkedSourceIds": [
+        "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC",
+      "disposition": "PARTIAL_EVIDENCE",
+      "note": "Inherits scoped Local acceptance from its strongest-evidenced joined source; this is a metadata disposition, not an independent per-obligation acceptance decision."
+    },
+    {
+      "obligationId": "MCP-AI-006",
+      "linkedSourceIds": [
+        "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC",
+      "disposition": "PARTIAL_EVIDENCE",
+      "note": "Inherits scoped Local acceptance from its strongest-evidenced joined source; this is a metadata disposition, not an independent per-obligation acceptance decision."
+    },
+    {
+      "obligationId": "MCP-AI-007",
+      "linkedSourceIds": [
+        "CVF-SRC-PANCAKE-POS-MCP"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-PANCAKE-POS-MCP",
+      "disposition": "PARTIAL_EVIDENCE",
+      "note": "Scoped source acceptance exists; no independent proof this obligation is satisfied. Source acceptance does not propagate to obligation acceptance."
+    },
+    {
+      "obligationId": "MCP-AI-008",
+      "linkedSourceIds": [
+        "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC",
+      "disposition": "PARTIAL_EVIDENCE",
+      "note": "Inherits scoped Local acceptance from its strongest-evidenced joined source; this is a metadata disposition, not an independent per-obligation acceptance decision."
+    },
+    {
+      "obligationId": "MCP-AI-009",
+      "linkedSourceIds": [
+        "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC",
+      "disposition": "PARTIAL_EVIDENCE",
+      "note": "Inherits scoped Local acceptance from its strongest-evidenced joined source; this is a metadata disposition, not an independent per-obligation acceptance decision."
+    },
+    {
+      "obligationId": "MEM-ABS-001",
+      "linkedSourceIds": [
+        "SRC_MEMORY_CORTEX_HUB",
+        "SRC_MEMORY_MEMPALACE"
+      ],
+      "inheritedFromSourceId": "SRC_MEMORY_CORTEX_HUB",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-002",
+      "linkedSourceIds": [
+        "SRC_MEMORY_CORTEX_HUB"
+      ],
+      "inheritedFromSourceId": "SRC_MEMORY_CORTEX_HUB",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-003",
+      "linkedSourceIds": [
+        "SRC-AUGMENT-CONTEXT-ENGINE"
+      ],
+      "inheritedFromSourceId": "SRC-AUGMENT-CONTEXT-ENGINE",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-004",
+      "linkedSourceIds": [
+        "SRC-GRAPHIFY",
+        "SRC-TIRTH8205-CODE-REVIEW-GRAPH"
+      ],
+      "inheritedFromSourceId": "SRC-GRAPHIFY",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-005",
+      "linkedSourceIds": [
+        "SRC-GRAPHIFY"
+      ],
+      "inheritedFromSourceId": "SRC-GRAPHIFY",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-006",
+      "linkedSourceIds": [
+        "SRC-LANGCHAIN-OPENWIKI"
+      ],
+      "inheritedFromSourceId": "SRC-LANGCHAIN-OPENWIKI",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-007",
+      "linkedSourceIds": [
+        "SRC-RAG-MAG-CONTEXT"
+      ],
+      "inheritedFromSourceId": "SRC-RAG-MAG-CONTEXT",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-008",
+      "linkedSourceIds": [
+        "MEM-SRC-003"
+      ],
+      "inheritedFromSourceId": "MEM-SRC-003",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-009",
+      "linkedSourceIds": [
+        "MEM-SRC-003"
+      ],
+      "inheritedFromSourceId": "MEM-SRC-003",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-010",
+      "linkedSourceIds": [
+        "MEM-SRC-003"
+      ],
+      "inheritedFromSourceId": "MEM-SRC-003",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-011",
+      "linkedSourceIds": [
+        "MEM-SRC-005"
+      ],
+      "inheritedFromSourceId": "MEM-SRC-005",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-012",
+      "linkedSourceIds": [
+        "MEM-SRC-005"
+      ],
+      "inheritedFromSourceId": "MEM-SRC-005",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-013",
+      "linkedSourceIds": [
+        "MEM-SRC-005"
+      ],
+      "inheritedFromSourceId": "MEM-SRC-005",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-014",
+      "linkedSourceIds": [
+        "MEM-SRC-002"
+      ],
+      "inheritedFromSourceId": "MEM-SRC-002",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-015",
+      "linkedSourceIds": [
+        "MEM-SRC-002"
+      ],
+      "inheritedFromSourceId": "MEM-SRC-002",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "MEM-ABS-016",
+      "linkedSourceIds": [
+        "MEM-SRC-002"
+      ],
+      "inheritedFromSourceId": "MEM-SRC-002",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "SKILL-ABS-001",
+      "linkedSourceIds": [
+        "SRC-MEMENTO-SKILLS"
+      ],
+      "inheritedFromSourceId": "SRC-MEMENTO-SKILLS",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "SKILL-ABS-002",
+      "linkedSourceIds": [
+        "SRC-MEMENTO-SKILLS"
+      ],
+      "inheritedFromSourceId": "SRC-MEMENTO-SKILLS",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "SKILL-ABS-003",
+      "linkedSourceIds": [
+        "SRC-ZHAOXUYA520-REVERSE-SKILL"
+      ],
+      "inheritedFromSourceId": "SRC-ZHAOXUYA520-REVERSE-SKILL",
+      "disposition": "PARTIAL_EVIDENCE",
+      "note": "Scoped source acceptance exists; no independent proof this obligation is satisfied. Source acceptance does not propagate to obligation acceptance."
+    },
+    {
+      "obligationId": "SKILL-ABS-004",
+      "linkedSourceIds": [
+        "SRC-ZHAOXUYA520-REVERSE-SKILL",
+        "SRC_SKILL_ENVIRONMENT_ADAPTATION"
+      ],
+      "inheritedFromSourceId": "SRC-ZHAOXUYA520-REVERSE-SKILL",
+      "disposition": "PARTIAL_EVIDENCE",
+      "note": "Scoped source acceptance exists; no independent proof this obligation is satisfied. Source acceptance does not propagate to obligation acceptance."
+    },
+    {
+      "obligationId": "SKILL-ABS-005",
+      "linkedSourceIds": [
+        "SKILL-SRC-001",
+        "SRC-MRGOONIE-CLAUDEKIT-SKILLS"
+      ],
+      "inheritedFromSourceId": "SKILL-SRC-001",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "SKILL-ABS-006",
+      "linkedSourceIds": [
+        "SRC_SKILL_GOOGLE_ADK_SKILLTOOLSET"
+      ],
+      "inheritedFromSourceId": "SRC_SKILL_GOOGLE_ADK_SKILLTOOLSET",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "SKILL-ABS-007",
+      "linkedSourceIds": [
+        "SRC_SKILL_GOOGLE_ADK_SKILLTOOLSET"
+      ],
+      "inheritedFromSourceId": "SRC_SKILL_GOOGLE_ADK_SKILLTOOLSET",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "SKILL-ABS-008",
+      "linkedSourceIds": [
+        "SKILL-SRC-006",
+        "SRC_SKILL_HOWTOCLAUDE"
+      ],
+      "inheritedFromSourceId": "SKILL-SRC-006",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "SKILL-ABS-009",
+      "linkedSourceIds": [
+        "SRC_SKILL_HOWTOCLAUDE"
+      ],
+      "inheritedFromSourceId": "SRC_SKILL_HOWTOCLAUDE",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "SKILL-ABS-010",
+      "linkedSourceIds": [
+        "SRC_SKILL_GSTACK"
+      ],
+      "inheritedFromSourceId": "SRC_SKILL_GSTACK",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "SKILL-ABS-011",
+      "linkedSourceIds": [
+        "SRC_SKILL_GSTACK"
+      ],
+      "inheritedFromSourceId": "SRC_SKILL_GSTACK",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "SKILL-ABS-012",
+      "linkedSourceIds": [
+        "SRC_SKILL_HTML_ANYTHING"
+      ],
+      "inheritedFromSourceId": "SRC_SKILL_HTML_ANYTHING",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "SKILL-ABS-013",
+      "linkedSourceIds": [
+        "SRC_SKILL_HTML_ANYTHING"
+      ],
+      "inheritedFromSourceId": "SRC_SKILL_HTML_ANYTHING",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "SKILL-ABS-014",
+      "linkedSourceIds": [
+        "MEM-SRC-013"
+      ],
+      "inheritedFromSourceId": "MEM-SRC-013",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-001",
+      "linkedSourceIds": [
+        "SRC-BLACKBIRD-OH-MY-CLAUDECODE"
+      ],
+      "inheritedFromSourceId": "SRC-BLACKBIRD-OH-MY-CLAUDECODE",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-002",
+      "linkedSourceIds": [
+        "SRC-GITHUB-GH-AW"
+      ],
+      "inheritedFromSourceId": "SRC-GITHUB-GH-AW",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-003",
+      "linkedSourceIds": [
+        "SRC-GITHUB-GH-AW"
+      ],
+      "inheritedFromSourceId": "SRC-GITHUB-GH-AW",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-004",
+      "linkedSourceIds": [
+        "SRC-MRGOONIE-OPENROUTER-CLI"
+      ],
+      "inheritedFromSourceId": "SRC-MRGOONIE-OPENROUTER-CLI",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-005",
+      "linkedSourceIds": [
+        "SRC-MRGOONIE-OPENROUTER-CLI"
+      ],
+      "inheritedFromSourceId": "SRC-MRGOONIE-OPENROUTER-CLI",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-006",
+      "linkedSourceIds": [
+        "SRC-LANGCHAIN-DEEPAGENTS"
+      ],
+      "inheritedFromSourceId": "SRC-LANGCHAIN-DEEPAGENTS",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-007",
+      "linkedSourceIds": [
+        "SRC-LANGCHAIN-DEEPAGENTS"
+      ],
+      "inheritedFromSourceId": "SRC-LANGCHAIN-DEEPAGENTS",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-008",
+      "linkedSourceIds": [
+        "SRC-HKUDS-CLI-ANYTHING"
+      ],
+      "inheritedFromSourceId": "SRC-HKUDS-CLI-ANYTHING",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-009",
+      "linkedSourceIds": [
+        "SKILL-SRC-004"
+      ],
+      "inheritedFromSourceId": "SKILL-SRC-004",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-010",
+      "linkedSourceIds": [
+        "SRC-MODEL-ROUTER-WORKSTREAM"
+      ],
+      "inheritedFromSourceId": "SRC-MODEL-ROUTER-WORKSTREAM",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-011",
+      "linkedSourceIds": [
+        "SRC-GRAPH-ENGINEERING-2026"
+      ],
+      "inheritedFromSourceId": "SRC-GRAPH-ENGINEERING-2026",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-012",
+      "linkedSourceIds": [
+        "SRC-NEURONS-AICOWORKER"
+      ],
+      "inheritedFromSourceId": "SRC-NEURONS-AICOWORKER",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-013",
+      "linkedSourceIds": [
+        "SRC-NEURONS-AICOWORKER"
+      ],
+      "inheritedFromSourceId": "SRC-NEURONS-AICOWORKER",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-014",
+      "linkedSourceIds": [
+        "SRC-EQUAL-BUDGET-SAS-MAS"
+      ],
+      "inheritedFromSourceId": "SRC-EQUAL-BUDGET-SAS-MAS",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-015",
+      "linkedSourceIds": [
+        "SRC-BLOCK-BUZZ"
+      ],
+      "inheritedFromSourceId": "SRC-BLOCK-BUZZ",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-016",
+      "linkedSourceIds": [
+        "SRC-BLOCK-BUZZ"
+      ],
+      "inheritedFromSourceId": "SRC-BLOCK-BUZZ",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-017",
+      "linkedSourceIds": [
+        "SRC-YC-QM"
+      ],
+      "inheritedFromSourceId": "SRC-YC-QM",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-018",
+      "linkedSourceIds": [
+        "SRC-YC-QM"
+      ],
+      "inheritedFromSourceId": "SRC-YC-QM",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-019",
+      "linkedSourceIds": [
+        "CVF-SRC-CLAUDE-CODE-CVF-MCP-CONTROL"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-CLAUDE-CODE-CVF-MCP-CONTROL",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-020",
+      "linkedSourceIds": [
+        "CVF-SRC-OPENTABS"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-OPENTABS",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-021",
+      "linkedSourceIds": [
+        "CVF-SRC-OPENTABS"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-OPENTABS",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "ARCH-ABS-022",
+      "linkedSourceIds": [
+        "CVF-SRC-WEBMCP"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-WEBMCP",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "XD-ARCH-ABS-001",
+      "linkedSourceIds": [
+        "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+      ],
+      "inheritedFromSourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC",
+      "disposition": "PARTIAL_EVIDENCE",
+      "note": "Inherits scoped Local acceptance from its strongest-evidenced joined source; this is a metadata disposition, not an independent per-obligation acceptance decision."
+    },
+    {
+      "obligationId": "XD-ARCH-ABS-002",
+      "linkedSourceIds": [
+        "SRC-TIRTH8205-CODE-REVIEW-GRAPH"
+      ],
+      "inheritedFromSourceId": "SRC-TIRTH8205-CODE-REVIEW-GRAPH",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
+    },
+    {
+      "obligationId": "XD-MCP-ABS-001",
+      "linkedSourceIds": [
+        "SRC-BLOCK-BUZZ"
+      ],
+      "inheritedFromSourceId": "SRC-BLOCK-BUZZ",
+      "disposition": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "note": "No joined source has scoped Local acceptance in the searched surface; obligation remains unresolved pending source-level evidence."
     }
   ],
   "searchLedger": [
     {
-      "scope": "CVF_SESSION/state/entries and docs/reviews for kepano/obsidian-skills acceptance",
-      "query": "rg -l kepano across CVF_SESSION/state/entries/*.json, docs/reviews/*AGSK*, docs/work_orders/*AGSK*",
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-GRIDEX-GRIDEX",
+      "query": "Grep -i \"gridex\" CVF_SESSION/state/entries docs/reviews docs/work_orders",
       "result": "NO_MATCH",
-      "absenceScopeNote": "Absence within these two path families is not global absence; no repository-wide content scan was run."
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-GRIDEX-GRIDEX"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
     },
     {
-      "scope": "MCP-KAR-T9 upstream group naming for modelcontextprotocol/modelcontextprotocol",
-      "query": "grep -n github.com|upstream|repository docs/reviews/CVF_MCP_KAR_T9_FINAL_BOUNDED_EXHAUSTION_RECONCILIATION_WORKER_RETURN_2026-08-24.md",
-      "result": "NO_DIRECT_NAME_MATCH_IN_EXCERPT_READ",
-      "absenceScopeNote": "Only the worker-return document was grepped, not the full 993-row T0 upstream ledger; absence here does not confirm the domain-level MCP-KAR closure excludes this source."
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-AGENT-GROUNDING-WORKSTREAM",
+      "query": "Grep -i \"agent grounding\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-AGENT-GROUNDING-WORKSTREAM"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
     },
     {
-      "scope": "Scoped Local acceptance for 13 sources with zero obligation join (CVF-SRC-CLI-FOR-AI-AGENTS, CVF-SRC-SOL-ADVISOR, MEM-SRC-004, MEM-SRC-009, SKILL-SRC-007, SRC-CLAW-CODE-WORKSTREAM, SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM, SRC-GOCLAW-WORKSTREAM, SRC-HARNESS-ENGINEERING-2026, SRC-NOUS-HERMES-AGENT, SRC_ARCH_AGENTIC_OS_PATTERNS, SRC_ARCH_CLAUDEKIT, SRC_ARCH_GOCLAW_WORKFLOW)",
-      "query": "Standalone backlog obligation sourceRow text scan (02C_CVF_GLOBAL_ABSORPTION_BACKLOG.md, hash-verified) for Finding IDs tracing to these 13 canonical_source_id values",
-      "result": "NO_PROMOTED_OBLIGATION_ROW",
-      "absenceScopeNote": "These 13 sources were audited in the domain ledgers (AUDIT_COMPLETE/AUDIT_PARTIAL findings exist) but none of their findings were promoted into one of the 68 backlog ABS rows at receipt time; this is a backlog-membership gap, not a claim these sources have no value."
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SKILL-SRC-005",
+      "query": "Grep -i \"kepano\" CVF_SESSION/state/entries docs/reviews docs/work_orders (repeated from original return; only self-referential hits in this task's own artifacts)",
+      "result": "NO_MATCH_OUTSIDE_THIS_TASKS_OWN_ARTIFACTS",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SKILL-SRC-005"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-MEMENTO-SKILLS",
+      "query": "Grep -i \"Memento-Skills|Memento-Teams\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-MEMENTO-SKILLS"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-MRGOONIE-CLAUDEKIT-SKILLS, SRC-MRGOONIE-OPENROUTER-CLI",
+      "query": "Grep -i \"mrgoonie\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-MRGOONIE-CLAUDEKIT-SKILLS",
+        "SRC-MRGOONIE-OPENROUTER-CLI"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC_SKILL_ENVIRONMENT_ADAPTATION",
+      "query": "Grep -i \"environment adaptation\" CVF_SESSION/state/entries (workstream, no repository URL to search)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC_SKILL_ENVIRONMENT_ADAPTATION"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC_SKILL_GOOGLE_ADK_SKILLTOOLSET",
+      "query": "Grep -i \"adk-python|google/adk\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC_SKILL_GOOGLE_ADK_SKILLTOOLSET"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC_SKILL_HOWTOCLAUDE",
+      "query": "Grep -i \"luongnv89|claude-howto|HowtoClaude\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC_SKILL_HOWTOCLAUDE"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC_SKILL_GSTACK",
+      "query": "Grep -i \"garrytan/gstack\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC_SKILL_GSTACK"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC_SKILL_HTML_ANYTHING",
+      "query": "Grep -i \"nexu-io/html-anything\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC_SKILL_HTML_ANYTHING"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: CVF-SRC-SOL-ADVISOR",
+      "query": "Grep -i \"DannyMac180|sol-advisor\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "CVF-SRC-SOL-ADVISOR"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: MEM-SRC-013, SKILL-SRC-007",
+      "query": "Grep -i \"AI Repository Reading|Repository Exploration|Skill Router\" CVF_SESSION/state/entries (workstream, one unresolved-identity source, no repository URL)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "MEM-SRC-013",
+        "SKILL-SRC-007"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SKILL-SRC-001",
+      "query": "Grep -i \"huggingface/skills\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SKILL-SRC-001"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SKILL-SRC-006",
+      "query": "Grep -i \"mattpocock\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SKILL-SRC-006"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC_MEMORY_MEMPALACE",
+      "query": "Grep -i \"MemPalace\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC_MEMORY_MEMPALACE"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC_MEMORY_CORTEX_HUB",
+      "query": "Grep -i \"cortex-hub|lktiep\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC_MEMORY_CORTEX_HUB"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-AUGMENT-CONTEXT-ENGINE",
+      "query": "Grep -i \"Augment Context Engine|augment.*context.engine\" CVF_SESSION/state/entries (workstream, no repository URL)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-AUGMENT-CONTEXT-ENGINE"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-GRAPHIFY",
+      "query": "Grep -i \"Graphify|safishamsi\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-GRAPHIFY"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-TIRTH8205-CODE-REVIEW-GRAPH",
+      "query": "Grep -i \"tirth8205|code-review-graph\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-TIRTH8205-CODE-REVIEW-GRAPH"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-LANGCHAIN-OPENWIKI",
+      "query": "Grep -i \"langchain-ai/openwiki|OpenWiki\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-LANGCHAIN-OPENWIKI"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-RAG-MAG-CONTEXT",
+      "query": "Grep -i \"RAG.*MAG|Memory.*Context\" CVF_SESSION/state/entries (workstream, no repository URL)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-RAG-MAG-CONTEXT"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: MEM-SRC-004",
+      "query": "Grep -i \"Filesystem as AI Memory\" CVF_SESSION/state/entries (workstream, no repository URL)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "MEM-SRC-004"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: MEM-SRC-003",
+      "query": "Grep -i \"arxiv.*2608.21230|Memory Poisoning\" CVF_SESSION/state/entries (paper, no repository URL)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "MEM-SRC-003"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: MEM-SRC-005",
+      "query": "Grep -i \"OpenViking|volcengine\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "MEM-SRC-005"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: MEM-SRC-002",
+      "query": "Grep -i \"agentmemory|rohitg00\" CVF_SESSION/state/entries (matches are cross-agent-memory CVF-internal terminology, not this specific repository)",
+      "result": "NO_MATCH_DISTINCT_FROM_INTERNAL_TERMINOLOGY_HITS",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "MEM-SRC-002"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-BLACKBIRD-OH-MY-CLAUDECODE",
+      "query": "Grep -i \"oh-my-claudecode|Yeachan-Heo\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-BLACKBIRD-OH-MY-CLAUDECODE"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-CLAW-CODE-WORKSTREAM",
+      "query": "Grep -i \"claw-code|ultraworkers\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-CLAW-CODE-WORKSTREAM"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-GITHUB-GH-AW",
+      "query": "Grep -i \"gh-aw\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-GITHUB-GH-AW"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC_ARCH_GOCLAW_WORKFLOW, SRC-GOCLAW-WORKSTREAM",
+      "query": "Grep -i \"goclaw|nextlevelbuilder\" CVF_SESSION/state/entries (hits found were unrelated GoClaw-unrelated generic-word coincidences, verified by direct re-check)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC_ARCH_GOCLAW_WORKFLOW",
+        "SRC-GOCLAW-WORKSTREAM"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-NOUS-HERMES-AGENT",
+      "query": "Grep -i \"hermes-agent|NousResearch\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-NOUS-HERMES-AGENT"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-LANGCHAIN-DEEPAGENTS",
+      "query": "Grep -i \"deepagents|langchain-ai/deepagents\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-LANGCHAIN-DEEPAGENTS"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-HKUDS-CLI-ANYTHING",
+      "query": "Grep -i \"CLI-Anything|HKUDS\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-HKUDS-CLI-ANYTHING"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SKILL-SRC-004, SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM",
+      "query": "Grep -i \"affaan-m|everything-claude-code|affaan-m/ECC\" CVF_SESSION/state/entries docs (zero matches anywhere in the repository, not only in this scope)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SKILL-SRC-004",
+        "SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-MODEL-ROUTER-WORKSTREAM",
+      "query": "Grep -i \"Model Router\" CVF_SESSION/state/entries (workstream, no repository URL)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-MODEL-ROUTER-WORKSTREAM"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: MEM-SRC-009",
+      "query": "Grep -i \"claudekit-engineer|lucaspressi\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "MEM-SRC-009"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-HARNESS-ENGINEERING-2026",
+      "query": "Grep -i \"Harness Engineering\" CVF_SESSION/state/entries (paper, no repository URL)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-HARNESS-ENGINEERING-2026"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-GRAPH-ENGINEERING-2026",
+      "query": "Grep -i \"agent-graph|context4ai\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-GRAPH-ENGINEERING-2026"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-NEURONS-AICOWORKER",
+      "query": "Grep -i \"aicoworker|Neurons-AI\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-NEURONS-AICOWORKER"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-EQUAL-BUDGET-SAS-MAS",
+      "query": "Grep -i \"Single-Agent vs Multi-Agent|equal-budget\" CVF_SESSION/state/entries (workstream, no repository URL)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-EQUAL-BUDGET-SAS-MAS"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-BLOCK-BUZZ",
+      "query": "Grep -i \"block/buzz\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-BLOCK-BUZZ"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC-YC-QM",
+      "query": "Grep -i \"yc-software/qm\" CVF_SESSION/state/entries (distinct from unrelated internal QM abbreviation hits, verified by direct re-check)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC-YC-QM"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC_ARCH_AGENTIC_OS_PATTERNS",
+      "query": "Grep -i \"Agentic OS Patterns|Giai-phau-agentic-os\" CVF_SESSION/state/entries (artifact, no repository URL)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC_ARCH_AGENTIC_OS_PATTERNS"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: SRC_ARCH_CLAUDEKIT",
+      "query": "Grep -i \"carlrannaberg/claudekit\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "SRC_ARCH_CLAUDEKIT"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: CVF-SRC-CLAUDE-CODE-CVF-MCP-CONTROL",
+      "query": "Grep -i \"CVF MCP approval-control\" CVF_SESSION/state/entries (workstream, no repository URL)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "CVF-SRC-CLAUDE-CODE-CVF-MCP-CONTROL"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: CVF-SRC-OPENTABS",
+      "query": "Grep -i \"opentabs-dev/opentabs\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "CVF-SRC-OPENTABS"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: CVF-SRC-WEBMCP",
+      "query": "Grep -i \"webmachinelearning/webmcp\" CVF_SESSION/state/entries",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "CVF-SRC-WEBMCP"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
+    },
+    {
+      "scope": "CVF_SESSION/state/entries (plus docs/reviews and docs/work_orders where noted) for scoped Local acceptance of: CVF-SRC-CLI-FOR-AI-AGENTS",
+      "query": "Grep -i \"CLI cho AI Agents\" CVF_SESSION/state/entries (workstream, no repository URL)",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within this search scope is not global absence; no repository-wide content scan beyond CVF_SESSION/state/entries, docs/reviews and docs/work_orders was run.",
+      "coveredSourceIds": [
+        "CVF-SRC-CLI-FOR-AI-AGENTS"
+      ],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
     },
     {
       "scope": "Six-mirror triage cross-check for MinerU (MSEA) and Brainless (EAIC-KR) presence in the 54-source seed",
       "query": "Manual scan of 54 sourceRecords canonical_source_id/label fields for MinerU or Brainless naming",
       "result": "NO_MATCH",
-      "absenceScopeNote": "MinerU and Brainless are prior absorption targets outside this seed's 54-source membership; the six-mirror triage's MinerU/Brainless rows are therefore not applicable joins for this reconciliation and are excluded from localEvidence."
+      "absenceScopeNote": "MinerU and Brainless are prior absorption targets outside this seed's 54-source membership; the six-mirror triage's MinerU/Brainless rows are therefore not applicable joins for this reconciliation.",
+      "coveredSourceIds": [],
+      "verificationBoundary": "WORKER_REPORTED_SCOPED_SEARCH; not independently replayed or global absence proof"
     }
   ],
   "reconciliation": {
@@ -1706,95 +3489,104 @@
     "duplicateSourceIds": [],
     "duplicateObligationIds": [],
     "unmappedJoinReferences": [],
-    "obligationsWithZeroResolvedSourceJoin": [],
-    "sourcesWithZeroObligationJoin": [
-      "CVF-SRC-CLI-FOR-AI-AGENTS",
-      "CVF-SRC-SOL-ADVISOR",
-      "MEM-SRC-004",
-      "MEM-SRC-009",
-      "SKILL-SRC-007",
-      "SRC-CLAW-CODE-WORKSTREAM",
-      "SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM",
-      "SRC-GOCLAW-WORKSTREAM",
-      "SRC-HARNESS-ENGINEERING-2026",
-      "SRC-NOUS-HERMES-AGENT",
-      "SRC_ARCH_AGENTIC_OS_PATTERNS",
-      "SRC_ARCH_CLAUDEKIT",
-      "SRC_ARCH_GOCLAW_WORKFLOW"
-    ],
-    "sourcesWithZeroObligationJoinCount": 13,
+    "zipMemberReceiptBoundCount": 7,
+    "zipMemberReceiptBoundMatchCount": 7,
+    "zipMemberNote": "The receipt binds exactly seven ZIP member hashes. This worker additionally hashed one further member present in the archive (CVF_INTERNAL_CURRENT_ABSORPTION_PACKAGE_MANIFEST_V1.json) purely for disclosure; it is outside the receipt's seven-entry binding and is never counted toward the \"eight members match the receipt\" claim the original return incorrectly made. Only 7/7 receipt-bound members are claimed as receipt-verified matches.",
+    "sourceDispositionPartition": {
+      "ACCEPTED_BOUNDED_EVIDENCE": 2,
+      "PARTIAL_EVIDENCE": 1,
+      "UNRESOLVED_WITH_SEARCH_EVIDENCE": 51,
+      "DEFERRED_WITH_TRIGGER": 0
+    },
+    "sourceDispositionPartitionTotal": 54,
+    "obligationDispositionPartition": {
+      "UNRESOLVED_WITH_SEARCH_EVIDENCE": 56,
+      "PARTIAL_EVIDENCE": 12
+    },
+    "obligationDispositionPartitionTotal": 68,
     "eccSourceIdsKeptDistinct": [
       "SKILL-SRC-004",
       "SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM"
     ],
-    "eccMergeAvoidedNote": "Both ECC-related IDs (SKILL-SRC-004 = Blackbird081/everything-claude-code fork with upstream affaan-m/ECC, and SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM = the workstream itself) are preserved as two distinct canonical_source_id rows despite pointing at overlapping upstream lineage, per the packet's ECC no-merge instruction.",
+    "eccMergeAvoidedNote": "Both ECC-related IDs are preserved as two distinct canonical_source_id rows. F3 correction: SKILL-SRC-004 (https://github.com/Blackbird081/everything-claude-code) is the PRIMARY source for ARCH-F-023/024/025; SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM is the corroborating source for the duplicate ARCH-F-025 finding only. ARCH-ABS-009's single obligation edge is to ARCH-F-023, whose primary source is SKILL-SRC-004, not the workstream ID.",
+    "mcpIdentityCorrectionNote": "F3 correction: MCP-KAR-T0 upstream ledger has 885 rows (not 993). 993 is the combined total of 885 upstream files plus 108 secondary external-redesign files across two distinct corpora (docs/audits/CVF_MCP_KAR_T0_DUAL_CORPUS_RECEIPT_2026-08-23.json). The 22 upstream groups in MCP-KAR-T9 are semantic groups, not 22 repositories. The official MCP source URL and pin (https://github.com/modelcontextprotocol/modelcontextprotocol.git @ 5f5440bb26a62e2cf3440b92da5a667efa03b267) is bound directly in docs/audits/CVF_MCP_KAR_T0_ABSORPTION_AUDIT_2026-08-23.md.",
     "inputDrift": "NONE_OBSERVED",
-    "inputHashRecheckTiming": "Rehashed identically before and after all worker reads in this invocation; no drift."
+    "inputHashRecheckTiming": "Seven local input hashes and seven receipt-bound ZIP member hashes were not disputed by any F1-F4 finding and are carried forward unchanged from the prior invocation's rehash."
   },
   "nextCandidates": [
     {
       "sourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC",
       "obligationId": "MCP-AI-001",
       "externalFinding": "MCP-F-001/MCP-F-002: 2026-07-28 stateless/self-describing request core plus discovery/capability negotiation, HIGH/HIGH rated in the standalone backlog",
-      "localEvidenceGap": "MCP-KAR-T9 closure evidence is reused (PARTIAL_EVIDENCE) but does not name this exact upstream group within this worker's bounded read; a targeted lookup of the 993-row T0 ledger for the modelcontextprotocol.git group is the missing step",
-      "expectedValue": "HIGH: this is the single highest-rated (HIGH/HIGH) unresolved obligation and governs MCP Runtime/Session Lifecycle/Protocol Governance surfaces already active in CVF",
-      "acquisitionNeed": "No new acquisition; targeted read of docs/audits/CVF_MCP_KAR_T0_UPSTREAM_FILE_LEDGER_2026-08-23.json for the modelcontextprotocol.git group row",
-      "nextAllowedMove": "Local-owned targeted lookup packet, not a new worker source scan"
+      "localEvidenceGap": "Source identity is now resolved (PARTIAL_EVIDENCE): docs/audits/CVF_MCP_KAR_T0_DUAL_CORPUS_RECEIPT_2026-08-23.json and docs/audits/CVF_MCP_KAR_T0_ABSORPTION_AUDIT_2026-08-23.md (line ~208) bind the exact official URL and pin, and MCP-KAR-T9 is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED for a 993-row (885 upstream + 108 external), 35-group corpus. The remaining gap is per-obligation: this worker has not independently cross-checked each of the nine MCP-AI-* obligations plus XD-ARCH-ABS-001 against the named upstream/external ledgers' row-level dispositions (READ/ADAPTED/DEFERRED/REJECTED/NO_NEW_VALUE).",
+      "expectedValue": "HIGH: this is the highest-rated (HIGH/HIGH) obligation with an already-identified, already-accepted source corpus; only a per-obligation ledger cross-check remains, not new source acquisition",
+      "acquisitionNeed": "No acquisition; a targeted per-obligation lookup of docs/audits/CVF_MCP_KAR_T0_UPSTREAM_FILE_LEDGER_2026-08-23.json and docs/audits/CVF_MCP_KAR_T0_EXTERNAL_REDESIGN_FILE_LEDGER_2026-08-23.json for the nine MCP-AI-* obligation topics",
+      "nextAllowedMove": "Local-owned targeted per-obligation ledger cross-check within the already-authorized scope; this is not a new research packet, per the rework contract's instruction that an already-authorized basic lookup is not a separate next batch"
     },
     {
       "sourceId": "SKILL-SRC-005",
       "obligationId": "GEN-ABS-004",
       "externalFinding": "GEN-F-OBS-001..004: runtime-authoritative capability freshness probe, cross-domain finding recorded under GENERAL against kepano/obsidian-skills",
-      "localEvidenceGap": "No scoped Local acceptance found anywhere; the superficially similar AGSK/Addy mirror lane covers a different repository (addyosmani/agent-skills.git), confirmed by direct hash/content read, not name similarity",
-      "expectedValue": "MEDIUM: External Capability Admission / Tool-Environment Gateway surface value, but confidence is bounded by this being a single-source cross-domain finding",
-      "acquisitionNeed": "A fresh, correctly-scoped mirror or targeted review of kepano/obsidian-skills specifically (never substitute the addyosmani mirror)",
-      "nextAllowedMove": "Local-owned decision whether a new bounded intake packet for kepano/obsidian-skills is warranted; do not reuse the AGSK acceptance as if it already covers this source"
+      "localEvidenceGap": "No scoped Local acceptance found in CVF_SESSION/state/entries, docs/reviews, or docs/work_orders. The superficially similar AGSK/Addy mirror lane (CVF_SESSION/state/entries/agskR2AgentSkillsSourceMirrorBackfillClosure20260629.json) is confirmed by direct URL read to cover a different repository (addyosmani/agent-skills.git, not kepano/obsidian-skills). The kepano search returned matches only inside this task's own prior-invocation artifacts, not an independent acceptance record.",
+      "expectedValue": "MEDIUM: External Capability Admission / Tool-Environment Gateway surface value, bounded by this being a single-source cross-domain finding",
+      "acquisitionNeed": "A fresh, correctly-scoped review of kepano/obsidian-skills specifically; never substitute the addyosmani/agent-skills.git mirror",
+      "nextAllowedMove": "Local-owned decision whether a new bounded intake packet for kepano/obsidian-skills is warranted"
     },
     {
-      "sourceId": "SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM",
+      "sourceId": "SKILL-SRC-004",
       "obligationId": "ARCH-ABS-009",
-      "externalFinding": "ARCH-F-023/024 (via SKILL-SRC-004, Blackbird081/everything-claude-code) plus this source's own upstream affaan-m/ECC lineage: generic application-to-agent capability projection, HIGH/MEDIUM rated",
-      "localEvidenceGap": "No acceptance entry located for either the fork (Blackbird081/everything-claude-code) or its stated upstream (affaan-m/ECC) in the searched CVF_SESSION/state/entries surface",
-      "expectedValue": "MEDIUM: Tool & Environment / CLI Runtime / Capability Packaging surfaces with an existing CVF owner area, corroborated by two related canonical_source_id rows (SKILL-SRC-004 and this workstream)",
-      "acquisitionNeed": "Targeted canonical lookup by repository alias affaan-m/ECC or Blackbird081/everything-claude-code across CVF_SESSION/state/entries and docs/reviews before any new mirror",
-      "nextAllowedMove": "Local-owned targeted lookup; if genuinely absent, a separate reviewed work order for bounded initial survey, not resumed by this packet"
+      "externalFinding": "ARCH-F-023 (primary source SKILL-SRC-004, https://github.com/Blackbird081/everything-claude-code): cross-harness portability layer with modular runtime profiles, HIGH-confidence PARTIAL finding, ADAPT decision. SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM is the corroborating source for the duplicate finding ARCH-F-025 on the same mechanism, kept as a distinct row per the packet's ECC no-merge instruction, not the primary edge for ARCH-ABS-009.",
+      "localEvidenceGap": "No acceptance entry located for either Blackbird081/everything-claude-code or its stated upstream affaan-m/ECC in CVF_SESSION/state/entries, docs/reviews, or docs/work_orders (zero matches for \"affaan-m\" or \"everything-claude-code\" anywhere in the repository, confirmed this pass).",
+      "expectedValue": "MEDIUM: Harness Engineering / Integration / Runtime surface value for host-neutral adapter/profile semantics; note the ledger explicitly excludes ECC installer layout and Claude-specific hooks from the absorbable scope, and ARCH-F-024 (deterministic hook enforcement) is already EXISTING/NO_CHANGE, not additional value",
+      "acquisitionNeed": "Targeted canonical lookup by repository alias (Blackbird081/everything-claude-code primary, affaan-m/ECC corroborating) before any new mirror; no acquisition performed by this worker",
+      "nextAllowedMove": "Local-owned targeted canonical lookup; if genuinely absent, a separate reviewed work order for a bounded initial survey scoped to ARCH-F-023's adapter/profile mechanism only, excluding the already-EXISTING ARCH-F-024 hook-enforcement finding"
     }
   ],
   "programContinuation": {
-    "chainStopUnchanged": "docs/reference stopped three-repo residual-recovery chain remains STOP_REASSESS_ARCHITECTURE / NO_SUCCESSOR; this reconciliation does not reopen, resume or restart it.",
+    "chainStopUnchanged": "The stopped three-repo residual-recovery chain remains STOP_REASSESS_ARCHITECTURE / NO_SUCCESSOR; this rework does not reopen, resume or restart it.",
     "qmResidualRecoveryStatus": "NOT_TOUCHED_NOT_REOPENED",
     "cgeR3Status": "NOT_TOUCHED_NOT_REOPENED",
     "dshUc01Status": "NOT_TOUCHED_NOT_REOPENED",
-    "sixMirrorTriageReuse": "Reused docs/reviews/CVF_MULTI_REPO_ACCEPTANCE_HISTORY_TRIAGE_2026-09-13.md scoped facts for Pancake and reverse-skill only; MinerU and Brainless rows are not applicable joins because those two repositories are not members of this 54-source seed.",
-    "preferredNomination": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC / MCP-AI-001 targeted lookup (see nextCandidates[0])",
+    "sixMirrorTriageReuse": "Reused docs/reviews/CVF_MULTI_REPO_ACCEPTANCE_HISTORY_TRIAGE_2026-09-13.md scoped facts for Pancake and reverse-skill only; MinerU and Brainless rows remain not-applicable joins.",
+    "preferredNomination": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC / MCP-AI-001 targeted per-obligation ledger cross-check (see nextCandidates[0]); already-authorized, not a new packet",
     "localOwnsNextPacket": true
   },
   "readDepthLedger": {
     "fullyRead": [
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_UMBRELLA_SEED_RECONCILIATION_2026-09-13.md",
-      "docs/baselines/CVF_GC018_UMBRELLA_SEED_RECONCILIATION_2026-09-13.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_UMBRELLA_SEED_RECONCILIATION_REWORK_2026-09-13.md",
+      "docs/baselines/CVF_GC018_UMBRELLA_SEED_RECONCILIATION_REWORK_2026-09-13.md",
+      "docs/reviews/CVF_UMBRELLA_SEED_RECONCILIATION_COMPLETION_2026-09-13.md",
       "docs/audits/CVF_UMBRELLA_SEED_PROVENANCE_RECEIPT_2026-09-13.json",
+      "docs/audits/CVF_MCP_KAR_T0_DUAL_CORPUS_RECEIPT_2026-08-23.json",
       "docs/reviews/CVF_MULTI_REPO_ACCEPTANCE_HISTORY_TRIAGE_2026-09-13.md",
       "CVF_SESSION/state/entries/agskR2AgentSkillsSourceMirrorBackfillClosure20260629.json",
       "CVF_SESSION/state/entries/ppmcpR1PinnedUpstreamLegacyDeltaReintakeClosure20260725.json",
-      "CVF_SESSION/state/entries/rspbAiT0DualCorpusIntakeAcceptedStopCostExceedsValue20260815.json",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T0_REVERSE_SKILL_CAPABILITY_PREFLIGHT_BOOTSTRAP_DUAL_CORPUS_INTAKE_2026-08-15.md"
+      "CVF_SESSION/state/entries/rspbAiT0DualCorpusIntakeAcceptedStopCostExceedsValue20260815.json"
     ],
     "sectionRead": [
-      "docs/reviews/CVF_MCP_KAR_T9_FINAL_BOUNDED_EXHAUSTION_RECONCILIATION_WORKER_RETURN_2026-08-24.md (grep-targeted sections only)"
+      "docs/audits/CVF_MCP_KAR_T0_ABSORPTION_AUDIT_2026-08-23.md (External Absorption Core row citing the official modelcontextprotocol/modelcontextprotocol URL and pin, plus its stated ledger terminal-status vocabulary; not the full 993-row semantic ledger)",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md (repository/pin identity section only)",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T0_REVERSE_SKILL_CAPABILITY_PREFLIGHT_BOOTSTRAP_DUAL_CORPUS_INTAKE_2026-08-15.md (repository identity section only)"
     ],
     "metadataOnly": [
-      "CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip (member list plus per-member SHA256, no extraction)"
+      "CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip (member list plus per-member SHA256 from the prior invocation; not re-read this pass since the receipt already binds the seven member hashes and no F1-F4 finding disputes them)"
     ],
-    "hashOnly": [
-      "C:\\Users\\DELL\\Downloads\\02_GENERAL_ABSORPTION_LEDGER.md (hash reverified plus targeted regex read for Finding-ID to canonical_source_id join extraction only, not full semantic review)",
-      "C:\\Users\\DELL\\Downloads\\02_SKILL_ABSORPTION_LEDGER.md (same targeted join-extraction read)",
-      "C:\\Users\\DELL\\Downloads\\02_MEMORY_ABSORPTION_LEDGER.md (same targeted join-extraction read)",
-      "C:\\Users\\DELL\\Downloads\\02_MCP_ABSORPTION_LEDGER.md (same targeted join-extraction read)",
-      "C:\\Users\\DELL\\Downloads\\02_ARCHITECTURE_ABSORPTION_LEDGER.md (same targeted join-extraction read)",
-      "C:\\Users\\DELL\\Downloads\\02C_CVF_GLOBAL_ABSORPTION_BACKLOG.md (hash reverified plus regex ID-count extraction only)"
-    ]
+    "hashOnlyExplicitlyDisjointFromJoinColumnRead": [
+      "C:\\Users\\DELL\\Downloads\\02_GENERAL_ABSORPTION_LEDGER.md: SHA256 rechecked in the prior invocation (unchanged); a targeted regex extraction of the Finding-ID-to-canonical_source_id column pair was separately performed to build joinEdges, which is a distinct, narrower operation than semantic review of Coverage State / Evidence Basis / Decision Rationale prose in the same file. The receipt's own readDepth for this input remains BYTES_HASHED_ONLY; the join-column extraction does not upgrade that classification.",
+      "C:\\Users\\DELL\\Downloads\\02_SKILL_ABSORPTION_LEDGER.md: same disjoint hash-plus-join-column-extraction treatment.",
+      "C:\\Users\\DELL\\Downloads\\02_MEMORY_ABSORPTION_LEDGER.md: same disjoint hash-plus-join-column-extraction treatment.",
+      "C:\\Users\\DELL\\Downloads\\02_MCP_ABSORPTION_LEDGER.md: same disjoint hash-plus-join-column-extraction treatment.",
+      "C:\\Users\\DELL\\Downloads\\02_ARCHITECTURE_ABSORPTION_LEDGER.md: same disjoint hash-plus-join-column-extraction treatment; additionally re-read at the ARCH-F-023/024/025 row level this pass to correct the F3 mechanism-description defect.",
+      "C:\\Users\\DELL\\Downloads\\02C_CVF_GLOBAL_ABSORPTION_BACKLOG.md: SHA256 rechecked in the prior invocation (unchanged); regex ID-count extraction only (59 *-ABS-* plus 9 MCP-AI-* = 68), not semantic review of backlog prose."
+    ],
+    "readDepthAccountingNote": "F4 repair: hash-only and join-column-extraction are recorded as two distinct, disjoint operations on the same five domain-ledger files rather than a single upgraded \"read\" classification. The receipt's BYTES_HASHED_ONLY designation for these five files is preserved unchanged; this worker's additional column-pair extraction is disclosed separately and does not constitute or claim semantic review of those files' findings, evidence basis, or decision rationale text."
   },
-  "claimBoundary": "Historical metadata reconciliation only. 54/54 source IDs and 68/68 obligation IDs accounted for from the exact-hash-matched receipt. Join edges connect obligations to sources via Finding IDs read directly from the five domain ledgers (hash-only per work order scope; read here only for the literal Finding-ID-to-canonical_source_id column pair, not full semantic re-review). Scoped Local acceptance is reported for exactly two sources (Pancake, reverse-skill) as ACCEPTED_BOUNDED_EVIDENCE, one (MCP spec) as PARTIAL_EVIDENCE, and one (kepano/obsidian-skills) as UNRESOLVED_WITH_SEARCH_EVIDENCE after a targeted search proved the superficially similar AGSK/Addy mirror covers a different repository. No current source freshness, complete absorption, or whole-repository completion is claimed. No source execution, network access, or provider/live/public/deploy action occurred."
+  "claimBoundary": "Historical metadata reconciliation only, rework generation 1 repairing F1-F4 from docs/reviews/CVF_UMBRELLA_SEED_RECONCILIATION_COMPLETION_2026-09-13.md (finding digest 5869948b2b1c860f0675658d45a58ff90a8e30392704eeb08b39ace8cc6ec237). 54/54 source IDs and 68/68 obligation IDs accounted for, each with exactly one metadata disposition and an evidence or search link. Two sources (Pancake, reverse-skill) are ACCEPTED_BOUNDED_EVIDENCE; one (MCP spec, with corrected identity and 885+108=993 corpus counts) is PARTIAL_EVIDENCE; the remaining 51 are UNRESOLVED_WITH_SEARCH_EVIDENCE with an explicit query and result each. ECC mechanism and primary/corroborating source edges are corrected. No current source freshness, complete absorption, or whole-repository completion is claimed. No source execution, network access, or provider/live/public/deploy action occurred. The original worker return and this audit's prior rejected version remain preserved as immutable historical evidence; this file is the sole repaired artifact.",
+  "reviewerDisposition": {
+    "status": "ACCEPTED_BOUNDED_METADATA_ONLY",
+    "f1": "WITHDRAWN_REVIEWER_DECODING_ERROR: explicit UTF-8 shows original decoded arrays already equal receipt. Serialization normalization is not a semantic repair.",
+    "negativeSearchBoundary": "Worker-reported scoped lookup evidence only, not global absence or independently certified source completeness. Unselected/unresolved sources are backlog metadata, not compulsory next investigations.",
+    "nextAction": "Governance contract enforcement first; external pattern review of three-repo pilot afterward, per operator sequence. Nominations retained as advisory backlog only.",
+    "chain": "STOP_REASSESS_ARCHITECTURE / NO_SUCCESSOR retained; no further umbrella-repair successor."
+  }
 }
