@@ -2,11 +2,11 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: HOLD_PENDING_LOCAL_REVIEW
+Status: APPROVED_TRACK_A_ONLY
 
 Batch ID: DSH-UC01-OWNER-RECONCILIATION
 
-Dispatch base head: 3d307a50bb401252f631debc7d1f471268b6df45
+Dispatch base head: 698fddc932850c04f92e0191d2e2bcca670dc9a9
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -14,19 +14,11 @@ Decision owner: Local
 
 Reviewer owner: Local
 
-Worker target: internal authoring worker (this packet), AUTHORING ONLY
+Worker target: internal implementation worker, Track A only
 
 ## Purpose
 
-Define a small, source-verified tranche that reconciles source-license
-metadata for DSH-UC-01 and verifies its consumer-classification taxonomy
-against the existing CVF simplification owner
-(`cvf-engineering-code-simplification`), before any enrichment proposal is
-released. This baseline authorizes authoring of a bounded comparison packet
-only. It does not authorize package edits, registry edits, upstream
-acquisition, upstream/skill/provider execution, absorption, implementation,
-staging, commit, or SOT mutation. Pairs with
-`docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_OWNER_RECONCILIATION_2026-09-12.md`.
+Execute Track A only: reconcile the existing Addy source license metadata and regenerate its registry aggregate. Track B remains HOLD and is outside this dispatch. No behavioral enrichment or upstream code is executed.
 
 ## Scaffold Provenance Block
 
@@ -51,75 +43,17 @@ staging, commit, or SOT mutation. Pairs with
 
 ## Decision / Baseline
 
-Local disposition: HOLD_PENDING_LOCAL_REVIEW. R1 correction: this baseline
-pairs with a unified successor work order, not a comparison-only packet.
-Part 1 (authoring: read pinned upstream source text, existing CVF owner
-metadata including generator source data flow, and the accepted
-selected-review decision; produce a license-metadata discrepancy record and
-a consumer-classification novelty comparison; recommend NO_NEW_VALUE,
-DEFER, or a bounded enrichment proposal) is complete and its authority is
-exercised now. Part 2 (the Track A / Track B successor specification in the
-paired work order's `## Successor Task Authoring Specification`) is fully
-specified now  -  exact write ownership, exact required evidence, exact
-mandatory regeneration steps confirmed by data-flow read of the actual
-generator source, exact acceptance criteria  -  but its execution authority
-(editing the registry `license` field, editing the package `SKILL.md`,
-editing generated indexes) is NOT granted by this baseline. Execution
-authority for a named track activates only when Local changes the paired
-work order's `Status` field to name that track as released; no separate
-GC-018 baseline is required for either track, because the paired work order
-already specifies both completely. The packet remains
-HOLD_PENDING_LOCAL_REVIEW until Local records that explicit release
-decision.
+Local disposition: APPROVED_TRACK_A_ONLY, 2026-09-13. Operator authorized release preparation for worker execution. Paired work order releases Track A only; Track B remains HOLD. Authoring prerequisite accepted at 1b5972fe3ac322948f02fe998ad5b6837f4e9e91; dispatch anchor 698fddc932850c04f92e0191d2e2bcca670dc9a9. No implementation has been performed by the dispatcher.
 
 ## Scope / Target / Owner Boundary
 
-Target: DSH-UC-01 (`dsh-find-simplifications` skill at
-`.private_reference/source_mirrors/deepseek-ai__deepseek-harness/.agents/skills/dsh-find-simplifications/SKILL.md`,
-mirror pinned at commit `cd5ef8148158c3a752a658978873241fdf8e2bbc`) compared
-against the existing CVF owner `cvf-engineering-code-simplification`
-(canonical root
-`docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/SKILL.md`,
-registry entry
-`docs/reference/agent_system_skills/registry/entries/cvf-engineering-code-simplification.json`,
-truth packet
-`docs/reference/agent_system_skills/truth/packets/cvf-engineering-code-simplification.json`,
-behavioral source
-`.private_reference/source_mirrors/addyosmani__agent-skills/skills/code-simplification/SKILL.md`,
-mirror pinned at commit `aba7c4e9695c363e65cb59effe926c7f1d1abe3d`).
+| Path | Required worker action |
+| --- | --- |
+| `docs/reference/agent_system_skills/registry/entries/cvf-engineering-code-simplification.json` | Change only license to `MIT upstream; CVF_PRIVATE_GOVERNED adaptation metadata` |
+| `docs/reference/agent_system_skills/generated/skill-index.json` | Regenerate using `python governance/compat/generate_assf_skill_index.py --generate`; only matching entry license may differ |
+| `docs/reviews/CVF_DSH_UC01_TRACK_A_WORKER_RETURN_2026-09-13.md` | Create pending no-commit worker return |
 
-Owner boundary:
-
-- Local owns this baseline, the paired work order, and the release decision
-  for any enrichment;
-- the authoring worker owns only the comparison packet and its worker return;
-- no new owner, checker, or registry entry is proposed by this baseline;
-  the existing `cvf-engineering-code-simplification` registry/truth-packet/
-  package trio remains the sole comparison target.
-
-Authoring versus implementation boundary (explicit, per operator
-instruction):
-
-R1 correction: the right-hand column below no longer says "Requires new
-GC-018." Every row's execution authority is already specified in the paired
-work order's Track A / Track B rows; what remains is Local's release
-decision (changing the paired work order's `Status` field), not a second
-authoring act.
-
-| Authority | Granted by this baseline, now | Granted only by Local's release of the paired work order's Track A/B |
-| --- | --- | --- |
-| Read pinned upstream source text (Git-blob reads only) | YES | N/A |
-| Read existing CVF registry/truth-packet/package metadata | YES | N/A |
-| Compare behavioral text and produce a novelty/overlap finding | YES | N/A |
-| Draft baseline/work-order/worker-return packets | YES | N/A |
-| Edit `license` field in the registry entry | NO | YES on Track A release; no new GC-018 required |
-| Edit the package `SKILL.md` body | NO | YES on Track B release; no new GC-018 required |
-| Edit `skill.source.json` (package-root source-provenance record) | NO | Not written by either track's own scope; not authorized by any release under this problem chain |
-| Edit `skill-selection-profiles.json` (control-plane source) | NO | YES on Track B release, only if a new `specSignals` trigger phrase is added; no new GC-018 required |
-| Regenerate `skill-index.json` | NO | YES, MANDATORY on either track's release (any registry field write except `registryOrder` requires it, confirmed by data-flow read of `aggregate_entry()`); no new GC-018 required |
-| Regenerate `skill-inventory.json` | NO | YES on Track B release only if a whitelisted `record["registry"]` field or `specSignals` changes; not required for a `license`-only Track A release; no new GC-018 required |
-| Fetch upstream, run upstream/skill/provider code, or absorb | NO | Out of this lane entirely |
-| Stage, commit, or modify SOT | NO | Reviewer/closer owns commit |
+All paths outside the three worker-owned paths are forbidden, including the baseline/work order, prior authoring return, package body, truth packet/index, control-plane source/inventory, mirrors, checkers and session/SOT files. No stage, commit, push, fetch, provider/live call, runtime, deployment, new owner or Track B work.
 
 ### Existing Owner Dependency Set (traced now, per R2)
 
@@ -147,6 +81,7 @@ to re-derive it from zero.
 
 Hash-consumer search performed: `rg -n "cvf-engineering-code-simplification" governance/compat/*.py` (excluding `test_*.py` and `__pycache__`) returns zero matches, meaning no `governance/compat/*.py` checker source hard-codes this specific skill ID as a literal string. A separate search,
 `rg -n "34a397fcf03f960fd412f3c170cb422abc2f7f8d3da723e2d6c64d726d5b9dd6"` (the truth packet's `receipt.hash` value) across `*.json` and `*.py`, finds exactly two occurrences: the truth packet itself and its own echo in the generated truth index. No third file, checker, or test pins this hash. This is a bounded search over `governance/compat/*.py` and JSON files under `docs/reference/agent_system_skills/`; it does not claim to have searched every file in the repository for an indirect or computed reference to this hash, and that residual limit is disclosed rather than resolved by `COMPLETE_ALL_KNOWN_DEPENDENCIES`-style closure language.
+
 
 ## Core Guard Self-Protection Authorization
 
@@ -190,68 +125,33 @@ the DSH-UC-01 candidate skill file itself.
 
 ## Acceptance Criteria
 
-- License-metadata discrepancy (Addy MIT vs. registry Apache-2.0) is recorded
-  with exact pinned-commit evidence for both sides, not paraphrase.
-- DeepSeek license/notice obligations are recorded separately from Addy's,
-  including the subtree BSD-3-Clause/MIT divergence and the absence of a
-  root NOTICE file; no claim that paraphrase clears attribution.
-- Behavioral comparison cites the actual DSH `SKILL.md` section text and the
-  actual Addy `SKILL.md` text, not registry/package metadata alone.
-- Novelty conclusion is not drawn merely from a missing shared taxonomy name;
-  it must identify the concrete missing decision rule or state that none
-  exists.
-- Production-caller-as-feature-decision distinction is preserved verbatim
-  from DSH's own "Prove Or Reject Each Candidate" rule; unresolved consumer
-  discovery is not treated as permission to remove or demote code.
-- Dependency map (source metadata, package, registry, truth packet,
-  generators, generated indexes, control-plane source/generated files, and a
-  bounded hash-consumer search) is traced before any enrichment write is
-  proposed, even though no write occurs in this tranche. A bounded search
-  finding zero additional hash consumers is recorded as a bounded result,
-  not as an exhaustive completeness claim.
-- Packet allows NO_NEW_VALUE or DEFER as valid outcomes; enrichment is not
-  mandatory.
-- No new owner/checker is proposed without a demonstrated need.
-- Gate-to-role closeability names Local as the sole party who can convert
-  HOLD_PENDING_LOCAL_REVIEW to a released decision; worker return does not
-  require or attempt commit.
+- Pinned Addy MIT evidence matches the existing upstream identity; no DeepSeek license is applied to Addy.
+- Registry license equals `MIT upstream; CVF_PRIVATE_GOVERNED adaptation metadata`; every other registry field equals executionBaseHead.
+- Generated skill-index matches generator output; only this skill entry license differs from executionBaseHead.
+- Truth packet, package, selection profiles, control-plane inventory and upstream mirrors remain unchanged.
+- Applicable checks pass, worker return is reviewable, exact changed set is the three owned paths, and HEAD is unchanged during worker execution.
+- Track B remains HOLD; no provider/live or public claim is made.
 
 ## Evidence / Verification
 
-At dispatch base head `3d307a50bb401252f631debc7d1f471268b6df45`, working
-tree is clean (`git status --short` empty). Both source mirrors
-(`addyosmani__agent-skills`, `deepseek-ai__deepseek-harness`) are present
-under `.private_reference/source_mirrors/` with their own independent `.git`
-object stores; both cited commit pins (`aba7c4e9695c363e65cb59effe926c7f1d1abe3d`,
-`cd5ef8148158c3a752a658978873241fdf8e2bbc`) resolve as each mirror's own
-HEAD commit at read time and are ancestors of that HEAD. Re-verify pin
-resolution if either mirror is refreshed before this packet is released.
+```powershell
+python governance/compat/generate_assf_skill_index.py --check
+python governance/compat/check_assf_skill_index_drift.py --enforce
+python governance/compat/check_skill_truth_packets.py --enforce
+python governance/compat/generate_skill_control_plane_inventory.py --check
+python governance/compat/check_package_skill_productionization_pipeline.py --enforce
+python governance/compat/run_worker_return_fast_gate.py
+git diff --check
+```
+Run `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD` before writes. The placeholder here means the SHA captured by the worker, not the dispatch base. Do not stage to run a gate; disclose unsupported working-tree coverage rather than claiming PASS.
 
 ## Claim Boundary
 
-R1 correction: this baseline authorizes read-only comparison authoring for
-Part 1 of one bounded tranche (DSH-UC-01 versus the existing
-`cvf-engineering-code-simplification` owner) and pairs with a work order
-that already specifies Part 2's complete successor scope (Track A / Track
-B). It does not itself authorize package edits, registry edits,
-generated-index regeneration, upstream acquisition or execution,
-skill/provider invocation, absorption, staging, commit, or SOT mutation. It
-grants no runtime, live, public, or production claim. Execution authority
-for Part 2 is explicitly deferred to Local's release decision (changing the
-paired work order's `Status` field to name the released track); no separate
-GC-018 baseline is required for either track, because the paired work order
-is already the complete specification.
+Execute Track A only: reconcile the existing Addy source license metadata and regenerate its registry aggregate. Track B remains HOLD and is outside this dispatch. No behavioral enrichment or upstream code is executed. All paths outside the three worker-owned paths are forbidden, including the baseline/work order, prior authoring return, package body, truth packet/index, control-plane source/inventory, mirrors, checkers and session/SOT files. No stage, commit, push, fetch, provider/live call, runtime, deployment, new owner or Track B work.
 
 ## External Repository Absorption Entry Control
 
-COMPARISON_ONLY_NO_ABSORPTION: this baseline authorizes reading pinned
-upstream source text (Addy Osmani `code-simplification` skill; DeepSeek
-Harness `dsh-find-simplifications` skill) under
-`.private_reference/source_mirrors/` for comparison against one existing
-CVF owner surface only. No acquisition, copied payload, accepted
-adaptation, package change, or source execution is authorized. Any later
-adoption needs its own source inventory, license disposition, owner map,
-and released implementation GC-018.
+COMPARISON_ONLY_NO_ABSORPTION: reuse pinned Addy LICENSE evidence for existing registry metadata correction. No upstream payload, package content or behavioral adaptation is absorbed.
 
 ## Mandatory Blind-Spot Control Block
 
