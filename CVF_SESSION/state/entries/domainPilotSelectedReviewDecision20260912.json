@@ -1,5 +1,5 @@
 {
   "stateOrder": 2825,
   "stateKey": "domainPilotSelectedReviewDecision20260912",
-  "value": "Metadata accepted bounded at 0f9e7c67e; machine contract hardening committed at 910c1294114a6853ce0701667990f2cd0ef6c7fd. Next is external advisory pattern comparison only after split closure checks. Local retains all final private-CVF and runtime coverage decisions."
+  "value": "Pattern relay READY_FOR_OPERATOR_RELAY at 63105cbad94b6b6bde1d7416952068d878dc0d97, after metadata closeout and machine binding. External response pending; no pilot-expansion decision. Prompt docs/reviews/CVF_THREE_REPO_PATTERN_COMPARISON_RELAY_2026-09-13.md. Local owns final runtime/private-CVF decisions."
 }
