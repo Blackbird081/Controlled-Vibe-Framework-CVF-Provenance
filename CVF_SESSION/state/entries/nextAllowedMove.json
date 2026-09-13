@@ -1,5 +1,5 @@
 {
   "stateOrder": 2822,
   "stateKey": "nextAllowedMove",
-  "value": "DSH-UC-01 authoring ACCEPT_AUTHORING_ONLY and materially committed at 1b5972fe3ac322948f02fe998ad5b6837f4e9e91. Next: prepare Local Track A release decision for the Addy license metadata correction plus mandatory skill-index regeneration, refreshing dependency/base/hash bindings and pre-dispatch checks before any worker dispatch. Track B remains HOLD pending bounded owner-collision disposition. Both tracks are currently HOLD_PENDING_LOCAL_REVIEW. No implementation, absorption, upstream execution, provider/live, public/deploy or RABA/DARA-T5/P5/P6 release; latest LHW24."
+  "value": "DSH-UC-01 Track A released at 5e2d3eb3b221218077a18edcd73c54dd024169d9. Next: internal worker captures executionBaseHead, verifies bootstrap authority hashes, corrects only the Addy registry license to MIT upstream; CVF_PRIVATE_GOVERNED adaptation metadata, regenerates skill-index.json and returns docs/reviews/CVF_DSH_UC01_TRACK_A_WORKER_RETURN_2026-09-13.md without stage/commit. Local reviews the return and owns closure. Track B, package enrichment, absorption, upstream execution, provider/live, public/deploy and RABA/DARA-T5/P5/P6 remain parked; latest LHW24."
 }

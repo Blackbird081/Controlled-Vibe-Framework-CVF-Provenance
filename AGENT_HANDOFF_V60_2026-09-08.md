@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `1b5972fe3ac322948f02fe998ad5b6837f4e9e91`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `5e2d3eb3b221218077a18edcd73c54dd024169d9`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -14,7 +14,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `dsh_uc01_authoring_closed`.
+- Current mode: `dsh_uc01_track_a_released`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +24,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dsh_uc01_authoring_closed`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=prepare the Track A release decision from accepted authoring; both tracks remain HOLD; parked checkpoint=absorption/implementation, upstream code execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
+Startup acknowledged: current mode=`dsh_uc01_track_a_released`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=worker executes released Track A and returns no-commit evidence; parked checkpoint=Track B, broader implementation/absorption, upstream execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
 
 ## Current Mode
 
-`dsh_uc01_authoring_closed`
+`dsh_uc01_track_a_released`
 
 ## Purpose
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-13 current priority: DSH-UC-01 authoring ACCEPT_AUTHORING_ONLY and materially committed at 1b5972fe3ac322948f02fe998ad5b6837f4e9e91. Next: prepare Local Track A release decision for the Addy license metadata correction plus mandatory skill-index regeneration, refreshing dependency/base/hash bindings and pre-dispatch checks before any worker dispatch. Track B remains HOLD pending bounded owner-collision disposition. Both tracks are currently HOLD_PENDING_LOCAL_REVIEW. No implementation, absorption, upstream execution, provider/live, public/deploy or RABA/DARA-T5/P5/P6 release; latest LHW24.
+2026-09-13 current priority: DSH-UC-01 Track A released at 5e2d3eb3b221218077a18edcd73c54dd024169d9. Next: internal worker captures executionBaseHead, verifies bootstrap authority hashes, corrects only the Addy registry license to MIT upstream; CVF_PRIVATE_GOVERNED adaptation metadata, regenerates skill-index.json and returns docs/reviews/CVF_DSH_UC01_TRACK_A_WORKER_RETURN_2026-09-13.md without stage/commit. Local reviews the return and owns closure. Track B, package enrichment, absorption, upstream execution, provider/live, public/deploy and RABA/DARA-T5/P5/P6 remain parked; latest LHW24.
 `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; current pilot permits bounded initial acquisition/survey only. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
@@ -125,7 +125,7 @@ authority, production deployment, or any parked project lane.
 ## Active Boundary
 
 - MFRP-FINGERPRINT-T1 is materially closed; worker lane released. TPGR T1 remains closed.
-  Next: prepare Track A release decision from committed authoring; no implementation dispatch.
+  Next: worker executes released Track A only; no stage/commit; Track B remains HOLD.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
 - Manual relay is content-neutral transport under `cvf.cross-workspace-evidence-relay@1.0.0`; remote findings remain advisory until Local Agent verification and final technical disposition. Once Local issues a work order, execution is internal shared-workspace work and the relay loop ends.

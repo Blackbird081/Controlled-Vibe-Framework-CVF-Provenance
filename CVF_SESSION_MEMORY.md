@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dsh_uc01_authoring_closed`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=prepare the Track A release decision from accepted authoring; both tracks remain HOLD; parked checkpoint=absorption/implementation, upstream code execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
+Startup acknowledged: current mode=`dsh_uc01_track_a_released`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=worker executes released Track A and returns no-commit evidence; parked checkpoint=Track B, broader implementation/absorption, upstream execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
 
 ## Current Mode
 
-Current mode marker: `dsh_uc01_authoring_closed`
-Current mode: `dsh_uc01_authoring_closed`; previous mode marker: `domain_pilot_initial_intake_closed`
+Current mode marker: `dsh_uc01_track_a_released`
+Current mode: `dsh_uc01_track_a_released`; previous mode marker: `domain_pilot_initial_intake_closed`
 
 ## Next Allowed Move
 
-2026-09-13 current priority: DSH-UC-01 authoring ACCEPT_AUTHORING_ONLY and materially committed at 1b5972fe3ac322948f02fe998ad5b6837f4e9e91. Next: prepare Local Track A release decision for the Addy license metadata correction plus mandatory skill-index regeneration, refreshing dependency/base/hash bindings and pre-dispatch checks before any worker dispatch. Track B remains HOLD pending bounded owner-collision disposition. Both tracks are currently HOLD_PENDING_LOCAL_REVIEW. No implementation, absorption, upstream execution, provider/live, public/deploy or RABA/DARA-T5/P5/P6 release; latest LHW24.
-Mode: `dsh_uc01_authoring_closed`. Historical EARA closure: `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`: exact pinned Agentgateway candidate reconciliation is `SOURCE_RECONCILED` with one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT` outcomes. This is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin; current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; the pilot intake is now accepted only as bounded evidence. External Web agents remain research/advisory only; any selected absorption requires a fresh reviewed packet. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
+2026-09-13 current priority: DSH-UC-01 Track A released at 5e2d3eb3b221218077a18edcd73c54dd024169d9. Next: internal worker captures executionBaseHead, verifies bootstrap authority hashes, corrects only the Addy registry license to MIT upstream; CVF_PRIVATE_GOVERNED adaptation metadata, regenerates skill-index.json and returns docs/reviews/CVF_DSH_UC01_TRACK_A_WORKER_RETURN_2026-09-13.md without stage/commit. Local reviews the return and owns closure. Track B, package enrichment, absorption, upstream execution, provider/live, public/deploy and RABA/DARA-T5/P5/P6 remain parked; latest LHW24.
+Mode: `dsh_uc01_track_a_released`. Historical EARA closure: `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`: exact pinned Agentgateway candidate reconciliation is `SOURCE_RECONCILED` with one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT` outcomes. This is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin; current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; the pilot intake is now accepted only as bounded evidence. External Web agents remain research/advisory only; any selected absorption requires a fresh reviewed packet. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
