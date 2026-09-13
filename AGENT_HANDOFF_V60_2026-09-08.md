@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `0f9e7c67efebca5702b70522518172c5326ed6c9`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `910c1294114a6853ce0701667990f2cd0ef6c7fd`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -14,7 +14,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `external_local_absorption_contract_hardening`.
+- Current mode: `external_local_absorption_pilot_pattern_relay`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +24,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`external_local_absorption_contract_hardening`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=Local hardens coordination contract, then prepares pilot external pattern comparison; parked checkpoint=stopped-chain successor, implementation/acquisition/provider/live/public/deployment.
+Startup acknowledged: current mode=`external_local_absorption_pilot_pattern_relay`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=Local prepares pilot external pattern comparison after machine contract closure; parked checkpoint=stopped-chain successor, implementation/acquisition/provider/live/public/deployment.
 
 ## Current Mode
 
-`external_local_absorption_contract_hardening`
+`external_local_absorption_pilot_pattern_relay`
 
 ## Purpose
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-13 current priority: Umbrella metadata use case accepted bounded at 0f9e7c67efebca5702b70522518172c5326ed6c9: docs/reviews/CVF_UMBRELLA_SEED_RECONCILIATION_REWORK_COMPLETION_2026-09-13.md. 54 source IDs, 68 obligations and 74 joins retained; no whole-source/runtime completion. F1 withdrawn as reviewer decoding error; zero obligations independently accepted, 12 partial and 56 unresolved. No active worker; historical currentAuthority is not a redispatch. Both stopped recovery chains retain STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR. Operator-approved order: (1) metadata closeout done; (2) Local now implements minimal machine binding of existing external/Local absorption contract in the existing checker with negative regression and latency measurement; (3) only afterward prepare external Web pattern comparison for Agentgateway/QM/DeepSeek pilot using refreshed EXTERNAL_AGENT_READ and public GitHub. External provides advisory research/pattern mapping; Local owns source-derived runtime coverage, private-CVF verification and final absorption decisions. External shortlist must not bound Local value recovery. No 54-source research restart, no new batch before pilot assessment, no provider/live/public/deploy. Local owns next action without operator reminder; latest LHW24.
+2026-09-13 current priority: Metadata use case accepted bounded at 0f9e7c67e; coordination machine binding implemented at 910c1294114a6853ce0701667990f2cd0ef6c7fd, 25 focused tests and pre-commit 89/89 PASS. CLI clean runs 0.2077/0.2041/0.2209 seconds versus baseline 0.2016/0.2346/0.1974; fixture median increment 1.1695 ms. Local now prepares the Agentgateway/QM/DeepSeek external Web pattern comparison using refreshed EXTERNAL_AGENT_READ and public GitHub. External remains advisory research/pattern mapping; Local owns detailed source/runtime value recovery, private-CVF verification and final absorption. External shortlist is not a Local coverage boundary. Metadata retains 54 sources/68 obligations/74 joins; zero obligations independently accepted, 12 partial, 56 unresolved. Both recovery chains retain STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR. No active worker; historical currentAuthority is not redispatch. No broad 54-source restart, new batch before pilot assessment, source implementation, provider/live/public/deploy. Local owns next action without operator reminder; latest LHW24.
 `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; current pilot permits bounded initial acquisition/survey only. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
@@ -146,6 +146,8 @@ Public catalog paths: N/A; no catalog entry was included in the bounded concept 
 Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
 
 ## Core Guard Self-Protection Authorization
+
+Operator authorization: project completed coordination binding under docs/reviews/CVF_EXTERNAL_LOCAL_COORDINATION_MACHINE_BINDING_2026-09-13.md and prepare the authorized pattern relay next. Protected paths additionally include `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json`.
 
 Current rework projection is authorized by the original exact Local continuity scope and standing autonomous reviewer mandate. Material 5bb2314d89de473c3d31c6764ede7ef62d5af2d6; record F1-F5 evidence rework, current authority and multi-repository continuation under docs/baselines/CVF_GC018_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md.
 

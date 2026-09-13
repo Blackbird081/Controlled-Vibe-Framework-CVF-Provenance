@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2826,
+  "stateKey": "externalLocalAbsorptionCoordination",
+  "value": {
+    "contractId": "cvf.external-local-absorption-coordination@1",
+    "invariants": {
+      "externalRole": "ADVISORY_RESEARCH_AND_PATTERN_MAPPING",
+      "externalContext": "PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ",
+      "localRole": "SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION",
+      "finalDecisionOwner": "LOCAL",
+      "localCoverageBasis": "SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST",
+      "externalEvidenceAuthority": "INPUT_NOT_PRIVATE_CVF_PROOF"
+    },
+    "contractSha256": "92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c",
+    "parentArtifact": "docs/reviews/CVF_EXTERNAL_LOCAL_COORDINATION_MACHINE_BINDING_2026-09-13.md"
+  }
+}
