@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `b177226d94a23d00112d4b7f4644a4c994e23031`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `af137b63144c5e1012edd8e5a52450f8dd0f4bbd`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -14,7 +14,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `multi_repo_absorption_candidate_admission`.
+- Current mode: `multi_repo_absorption_local_runtime_recovery`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +24,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_candidate_admission`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=external advisory review closed; Local evaluates independent backlog candidate admission; parked checkpoint=stopped-chain successor, implementation/acquisition/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=continue the active three-repository program with independent QM runtime/use-case recovery; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_candidate_admission`
+`multi_repo_absorption_local_runtime_recovery`
 
 ## Purpose
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-13 current priority: External pattern response accepted bounded at b177226d94a23d00112d4b7f4644a4c994e23031: docs/reviews/CVF_THREE_REPO_PATTERN_COMPARISON_LOCAL_REVIEW_2026-09-13.md. PILOT-MECH-001/003 narrowed, 002 corrected, 004 retained; Local verified QM SECURITY.md at assigned pin, not implementation coverage. Pilot decision CONDITIONAL_METHOD_REUSE_APPROVED: external advisory grouping may support suitable future batches; no mandatory second external pass, no quantified savings, no complete runtime or broad rollout claim. External relay is finished. Local owns detailed source/runtime recovery, private-CVF verification and final absorption; external shortlist never bounds Local coverage. MCP-AI-001 topic lookup found accepted protocol material and demand-gated durable admission, so no duplicate MCP intake. Next Local action is independent admission of existing SKILL-SRC-004 / ARCH-ABS-009 adapter/profile nomination: scoped alias lookup found no independent acceptance in the declared set; verify canonical source identity/pin and owner/value boundary before acquisition or worker dispatch. Exclude already-existing ARCH-F-024 hook enforcement; SKILL-SRC-005 remains alternative. Preserve historical 54-source/68-obligation metadata and both STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR chains. No active worker, no historical currentAuthority redispatch, no implementation/provider/live/public/deploy. Local owns continuation without operator reminders; latest LHW24.
+2026-09-13 current priority: PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. External pattern response accepted bounded at b177226d94a23d00112d4b7f4644a4c994e23031 and method reuse remains conditionally approved, but ending the external comparison did not end Local absorption. Machine continuity repair af137b631 now blocks leaving this incomplete batch without terminal per-source accounting or a governed operator scope decision. Local next action: independently admit a QM runtime/use-case recovery lane within the same program, beginning from auth, identity, credentials and sandbox residuals and existing owner/consumer evidence. Agentgateway current-head/use-case recovery and DeepSeek DSH-001/DSH-005 remain INCOMPLETE and must later receive terminal accepted, no-new-value, deferred-with-trigger, rejected or blocked-with-reason accounting. Do not rename or reopen either STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR repair chain; use independent per-source lanes. ARCH-ABS-009 and SKILL-SRC-005 return to backlog and are not next actions. External remains advisory; Local owns source-derived runtime coverage, private-CVF verification and final absorption. No active worker yet, no source implementation/provider/live/public/deploy. Local owns continuation without operator reminders; latest LHW24.
 `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; current pilot permits bounded initial acquisition/survey only. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
@@ -146,8 +146,7 @@ Public catalog paths: N/A; no catalog entry was included in the bounded concept 
 Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
 
 ## Core Guard Self-Protection Authorization
-
-Operator authorization: project the returned external pattern review, selective method-reuse decision and next Local admission step under docs/reviews/CVF_THREE_REPO_PATTERN_COMPARISON_LOCAL_REVIEW_2026-09-13.md; existing exact continuity paths only. Operator authorization: project the prepared three-repo pattern relay and pending external-response dependency, then project completed coordination binding under docs/reviews/CVF_EXTERNAL_LOCAL_COORDINATION_MACHINE_BINDING_2026-09-13.md and prepare the authorized pattern relay next. Protected paths additionally include `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json`.
+Operator authorization: project active program continuity repair af137b631, the exact three-source state and in-program QM next action; protected paths include `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json` and the existing continuity surfaces named by the hardening review. Project the returned external pattern review, selective method-reuse decision and prior relay state under docs/reviews/CVF_THREE_REPO_PATTERN_COMPARISON_LOCAL_REVIEW_2026-09-13.md and docs/reviews/CVF_EXTERNAL_LOCAL_COORDINATION_MACHINE_BINDING_2026-09-13.md; `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json` remains protected.
 
 Current rework projection is authorized by the original exact Local continuity scope and standing autonomous reviewer mandate. Material 5bb2314d89de473c3d31c6764ede7ef62d5af2d6; record F1-F5 evidence rework, current authority and multi-repository continuation under docs/baselines/CVF_GC018_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md.
 

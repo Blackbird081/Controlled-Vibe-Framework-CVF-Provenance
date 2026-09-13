@@ -1,5 +1,5 @@
 {
   "stateOrder": 2825,
   "stateKey": "domainPilotSelectedReviewDecision20260912",
-  "value": "External pattern review accepted bounded at b177226d94a23d00112d4b7f4644a4c994e23031; CONDITIONAL_METHOD_REUSE_APPROVED. External stage finished; whole-source/runtime absorption remains incomplete. Next is Local independent candidate admission from existing backlog, not another external pass or reopening a stopped recovery chain."
+  "value": "External pattern review accepted bounded at b177226d94a23d00112d4b7f4644a4c994e23031; CONDITIONAL_METHOD_REUSE_APPROVED. External stage finished, but the three-source Local absorption program remains active and all three source states are INCOMPLETE. Machine repair af137b631 rejects cross-batch transition before terminal accounting or an operator scope decision. Next is independent QM runtime/use-case recovery inside the active program; no stopped-chain reopen and no unrelated backlog admission."
 }
