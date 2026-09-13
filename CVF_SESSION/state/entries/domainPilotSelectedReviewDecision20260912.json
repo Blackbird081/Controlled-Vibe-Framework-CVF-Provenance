@@ -1,5 +1,5 @@
 {
   "stateOrder": 2825,
   "stateKey": "domainPilotSelectedReviewDecision20260912",
-  "value": "Pattern relay READY_FOR_OPERATOR_RELAY at 63105cbad94b6b6bde1d7416952068d878dc0d97, after metadata closeout and machine binding. External response pending; no pilot-expansion decision. Prompt docs/reviews/CVF_THREE_REPO_PATTERN_COMPARISON_RELAY_2026-09-13.md. Local owns final runtime/private-CVF decisions."
+  "value": "External pattern review accepted bounded at b177226d94a23d00112d4b7f4644a4c994e23031; CONDITIONAL_METHOD_REUSE_APPROVED. External stage finished; whole-source/runtime absorption remains incomplete. Next is Local independent candidate admission from existing backlog, not another external pass or reopening a stopped recovery chain."
 }
