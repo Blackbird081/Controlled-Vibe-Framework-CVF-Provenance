@@ -1,5 +1,5 @@
 {
   "stateOrder": 2825,
   "stateKey": "domainPilotSelectedReviewDecision20260912",
-  "value": "ACCEPT_DECISION at ab016926888547d00101161cb96fb59183aa617e. Decision: docs/reviews/CVF_DOMAIN_PILOT_SELECTED_REVIEW_DECISION_2026-09-12.md. Three relayed advisories reconciled; five candidates deferred with triggers. Addy root MIT versus registry Apache-2.0 remains an explicit metadata discrepancy. Production consumers constrain removal; missing search matches cannot authorize deletion. Pre-commit 89/89 PASS. Next packet authoring only; no absorption or implementation release."
+  "value": "ACCEPT_DECISION at ab016926888547d00101161cb96fb59183aa617e. Decision: docs/reviews/CVF_DOMAIN_PILOT_SELECTED_REVIEW_DECISION_2026-09-12.md. Three relayed advisories reconciled; five candidates deferred with triggers. Addy root MIT versus registry Apache-2.0 remains an explicit metadata discrepancy. Production consumers constrain removal; missing search matches cannot authorize deletion. Pre-commit 89/89 PASS. Next packet authoring only; no absorption or implementation release. Successor authoring accepted and committed at 1b5972fe3ac322948f02fe998ad5b6837f4e9e91; reviewer disposition: docs/reviews/CVF_DSH_UC01_AUTHORING_WORKER_RETURN_2026-09-12.md. Track A/B remain HOLD; no implementation dispatch."
 }
