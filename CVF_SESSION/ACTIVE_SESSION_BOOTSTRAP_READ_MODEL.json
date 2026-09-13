@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_recovery_dispatched",
+  "currentMode": "multi_repo_absorption_evidence_rework",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "Multi-repository absorption program CONTINUES; AGW/QM/DSH are only the current batch, not the full backlog. THREE-REPO-RECOVERY-R1 DISPATCH_READY at 4b2714f8605af3c7d58a26205abaf52ca2bdeaba; work order docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_RESIDUAL_RECOVERY_2026-09-13.md. Operator relays to Claude: recover frozen-mirror residual value, QM first; reuse accepted ledgers, reconcile external/Local evidence, and return two owned files plus mandatory programContinuation/backlog and next-batch nominations. No worker commit. On return Local reviews evidence and authors the next bounded conversion, residual or next-repository packet without waiting for operator reminders; otherwise persist a concrete blocker/owner/action. Empty review queue or child deferral never closes the umbrella program. Reported 54-source seed/68 obligations remain unverified; missing payload does not block independent recovery. All three remain ABSORPTION_NOT_COMPLETE; prior candidate deferrals and DSH-UC01 closure stand. No acquisition, source execution, implementation, external invocation, provider/live/public/deploy or RABA/DARA-T5/P5/P6 release; latest LHW24.",
+  "nextAllowedMove": "Multi-repository absorption program CONTINUES; AGW/QM/DSH are only the current batch. Recovery first return is REWORK_REQUIRED at 5bb2314d89de473c3d31c6764ede7ef62d5af2d6; reviewer decision docs/reviews/CVF_THREE_REPO_RESIDUAL_RECOVERY_COMPLETION_2026-09-13.md. Relay one consolidated REWORK generation 1 under docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md: F1 counts/read-depth, F2 source/CVF execution boundary, F3 canonical owners/inherited decisions, F4 license/hash/time evidence, F5 broader-backlog provenance. Worker modifies original audit and creates new return; original return is historical, worker cannot commit. After acceptance Local authors next bounded conversion, residual or next-repository packet without operator reminders, or records concrete blocker/owner/action. Reported 54-source/68-obligation seed remains unverified; current-three-only nominations never exhaust the program. Prior candidate deferrals and DSH-UC01 closure stand. No new acquisition, source execution, implementation, external invocation, provider/live/public/deploy or RABA/DARA-T5/P5/P6 release; latest LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_THREE_REPO_RESIDUAL_RECOVERY_2026-09-13.md",
-    "baselineSha256": "ffc3920d46bb840dac4801d29060db9d3e45e39e7c7e91a1d40f39211505be58",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_RESIDUAL_RECOVERY_2026-09-13.md",
-    "workOrderSha256": "17b8b2c540e74eb9cd07685c9980147c0cedede3a6bd656183ccaa3e905e3be8"
+    "baselinePath": "docs/baselines/CVF_GC018_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md",
+    "baselineSha256": "c6f8a030f1a603583999e874a68ead0a07933bf078f71f1ffd4cd37ec6ba9e0f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md",
+    "workOrderSha256": "19d377e2898a7639ecb97e07de563785ebf22434c4af093f513ef91a214b0359"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
