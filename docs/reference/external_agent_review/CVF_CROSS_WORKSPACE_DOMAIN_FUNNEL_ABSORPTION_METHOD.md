@@ -582,3 +582,43 @@ make an external return authoritative and does not authorize implementation.
 Those claims require the applicable manifests, ledgers, freshness-delta and
 use-case evidence, current Local owner evidence, machine checks, and separate
 governed authority.
+
+## Machine Coordination Contract
+
+The existing external-knowledge intake checker enforces this contract at changed
+roadmap, work-order, review and continuity boundaries. Structured declarations
+must match this canonical owner, independently of SOT. No promise of semantic
+understanding or source/runtime completeness is implied.
+
+```json
+{
+  "contractId": "cvf.external-local-absorption-coordination@1",
+  "invariants": {
+    "externalRole": "ADVISORY_RESEARCH_AND_PATTERN_MAPPING",
+    "externalContext": "PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ",
+    "localRole": "SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION",
+    "finalDecisionOwner": "LOCAL",
+    "localCoverageBasis": "SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST",
+    "externalEvidenceAuthority": "INPUT_NOT_PRIVATE_CVF_PROOF"
+  }
+}
+```
+
+Changed applicable governed artifacts carry one `External/Local Coordination Binding`
+JSON block with this contractId/invariants, the SHA256 of compact sorted-key UTF-8
+contract JSON, and parentArtifact (null for a directly authorized root, otherwise
+a normalized repo-relative governed Markdown path). Parents must carry the same
+valid contract, with cycle and depth bounds. Untouched historical artifacts are
+not rechecked unless explicitly bound as a parent. A missing or contradictory
+binding fails; agreement among artifacts cannot override this method.
+
+Continuity changes during absorption carry the same binding under value in
+CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json; parentArtifact
+identifies the governed active coordination artifact. Existing state regeneration
+projects that source item. The checker reads compact state sources, not the full
+aggregate. Missing/deleted state bindings, malformed bindings and unsafe linked paths fail closed.
+Deleted historical artifacts are not automatically reopened. The structured binding
+constrains declarations; it does not interpret arbitrary free-form planning prose.
+
+No model call, source corpus traversal or extra hook is added. The existing
+pre-dispatch/reviewer/pre-commit integration invokes the extended checker.

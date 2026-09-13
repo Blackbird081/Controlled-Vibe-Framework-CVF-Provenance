@@ -1,6 +1,11 @@
 from __future__ import annotations
 
 import importlib.util
+import copy
+import hashlib
+import json
+import tempfile
+from unittest.mock import patch
 import sys
 import unittest
 from pathlib import Path
@@ -120,6 +125,142 @@ class ExternalKnowledgeIntakeRoutingTests(unittest.TestCase):
         )
 
         self.assertEqual([], violations)
+
+
+class CoordinationBindingTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.patch = patch.object(MODULE, "REPO_ROOT", self.root)
+        self.patch.start()
+        self.addCleanup(self.patch.stop)
+        self.path = "docs/work_orders/CVF_EXTERNAL_AGENT_SAMPLE.md"
+        self.parent = "docs/roadmaps/CVF_EXTERNAL_AGENT_PARENT.md"
+        self.contract = copy.deepcopy(MODULE.EXPECTED_CONTRACT)
+        self.binding = {**self.contract, "contractSha256": hashlib.sha256(
+            json.dumps(self.contract, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        ).hexdigest(), "parentArtifact": None}
+        self.write(MODULE.METHOD_PATH, "## Machine Coordination Contract\n\n```json\n" + json.dumps(self.contract) + "\n```\n")
+        self.write(MODULE.CORE_PATH, json.dumps({"currentMode": "external_repo_absorption"}))
+        self.artifact(self.path)
+
+    def write(self, path, text):
+        full = self.root / path
+        full.parent.mkdir(parents=True, exist_ok=True)
+        full.write_text(text, encoding="utf-8")
+
+    def artifact(self, path, binding=None):
+        self.write(path, VALID_BLOCK + "\n## External/Local Coordination Binding\n\n```json\n" + json.dumps(self.binding if binding is None else binding, ensure_ascii=False) + "\n```\n")
+
+    def state(self, binding=None):
+        value = copy.deepcopy(self.binding if binding is None else binding)
+        value["parentArtifact"] = self.path
+        self.write(MODULE.STATE_BINDING, json.dumps({"stateKey": "externalLocalAbsorptionCoordination", "value": value}))
+
+    def test_valid_changed_workorder_and_state(self):
+        self.state()
+        self.assertEqual([], MODULE.check_paths([self.path, MODULE.STATE_BINDING]))
+
+    def test_each_wrong_invariant_rejected_even_when_sot_agrees(self):
+        for key in self.binding["invariants"]:
+            with self.subTest(key=key):
+                wrong = copy.deepcopy(self.binding)
+                wrong["invariants"][key] = "WRONG_BUT_CONSISTENT"
+                self.artifact(self.path, wrong)
+                self.state(wrong)
+                errors = MODULE.check_paths([self.path, MODULE.STATE_BINDING])
+                self.assertEqual(2, sum("invariants contradict" in e for e in errors))
+
+    def test_missing_binding_fails(self):
+        self.write(self.path, VALID_BLOCK)
+        self.assertTrue(MODULE.check_paths([self.path]))
+
+    def test_stale_digest_and_unknown_fields_fail(self):
+        for field, value in [("contractSha256", "stale"), ("extra", True)]:
+            wrong = copy.deepcopy(self.binding)
+            wrong[field] = value
+            self.artifact(self.path, wrong)
+            self.assertTrue(MODULE.check_paths([self.path]))
+
+    def test_missing_parent_and_unsafe_parent_fail(self):
+        for parent in [self.parent, "../escape.md", "D:/outside.md", "docs/reviews/../outside.md", 1]:
+            wrong = {**self.binding, "parentArtifact": parent}
+            self.artifact(self.path, wrong)
+            self.assertTrue(MODULE.check_paths([self.path]))
+
+    def test_parent_contradiction_is_read_without_history_scan(self):
+        self.artifact(self.path, {**self.binding, "parentArtifact": self.parent})
+        wrong = copy.deepcopy(self.binding)
+        wrong["invariants"]["finalDecisionOwner"] = "EXTERNAL"
+        self.artifact(self.parent, wrong)
+        self.assertTrue(MODULE.check_paths([self.path]))
+
+    def test_cycle_fails(self):
+        self.artifact(self.path, {**self.binding, "parentArtifact": self.parent})
+        self.artifact(self.parent, {**self.binding, "parentArtifact": self.path})
+        self.assertTrue(any("cycle" in e for e in MODULE.check_paths([self.path])))
+
+    def test_depth_limit_fails(self):
+        paths = [self.path] + [f"docs/reviews/parent{i}.md" for i in range(9)]
+        for i, path in enumerate(paths):
+            self.artifact(path, {**self.binding, "parentArtifact": paths[i + 1] if i + 1 < len(paths) else None})
+        self.assertTrue(any("depth" in e for e in MODULE.check_paths([self.path])))
+
+    def test_missing_state_on_absorption_continuity_fails(self):
+        self.assertTrue(any(MODULE.STATE_BINDING in e for e in MODULE.check_paths([MODULE.CORE_PATH])))
+
+    def test_deleted_state_cannot_be_hidden_by_mode_change(self):
+        self.write(MODULE.CORE_PATH, '{"currentMode":"unrelated"}')
+        self.assertTrue(MODULE.check_paths([MODULE.STATE_BINDING, MODULE.CORE_PATH]))
+
+    def test_null_state_parent_fails(self):
+        self.write(MODULE.STATE_BINDING, json.dumps({"stateKey": "externalLocalAbsorptionCoordination", "value": self.binding}))
+        self.assertTrue(MODULE.check_paths([MODULE.STATE_BINDING]))
+
+    def test_canonical_method_and_state_cannot_jointly_weaken_owner(self):
+        wrong = copy.deepcopy(self.contract)
+        wrong["invariants"]["finalDecisionOwner"] = "EXTERNAL"
+        self.write(MODULE.METHOD_PATH, "## Machine Coordination Contract\n```json\n" + json.dumps(wrong) + "\n```\n")
+        self.assertTrue(any("supported invariant schema" in e for e in MODULE.check_paths([self.path])))
+
+    def test_malformed_duplicate_json_and_duplicate_sections_fail(self):
+        text = (self.root / self.path).read_text(encoding="utf-8")
+        for changed in [text.replace('"contractId":', '"contractId":null,"contractId":', 1), text + text, text.replace('"contractId":', 'bad-json:', 1)]:
+            self.write(self.path, changed)
+            self.assertTrue(MODULE.check_paths([self.path]))
+
+    def test_utf8_error_fails_closed(self):
+        (self.root / self.path).write_bytes(b"\xff")
+        self.assertTrue(MODULE.check_paths([self.path]))
+
+    def test_untouched_history_and_unrelated_change_not_reopened(self):
+        self.write(self.parent, "invalid historical binding")
+        self.write("docs/reviews/unrelated.md", "Ordinary UI layout correction.")
+        self.assertEqual([], MODULE.check_paths(["docs/reviews/unrelated.md"]))
+        self.assertEqual([], MODULE.check_paths([self.path]))
+
+    def test_shared_parent_read_once_per_coordination_check(self):
+        second = "docs/reviews/CVF_EXTERNAL_AGENT_SECOND.md"
+        self.artifact(self.parent)
+        linked = {**self.binding, "parentArtifact": self.parent}
+        self.artifact(self.path, linked)
+        self.artifact(second, linked)
+        original = Path.read_text
+        reads = []
+        def tracked(path, *args, **kwargs):
+            reads.append(path)
+            return original(path, *args, **kwargs)
+        with patch.object(Path, "read_text", tracked):
+            self.assertEqual([], MODULE.check_coordination([self.path, second]))
+        self.assertEqual(1, reads.count((self.root / self.parent).resolve()))
+        self.assertEqual(4, len(reads))
+
+    def test_changed_collector_includes_state_and_handoff(self):
+        paths = []
+        MODULE._add_changed_path(paths, MODULE.STATE_BINDING)
+        MODULE._add_changed_path(paths, "AGENT_HANDOFF_V61_2026-09-13.md")
+        self.assertEqual(2, len(paths))
 
 
 if __name__ == "__main__":
