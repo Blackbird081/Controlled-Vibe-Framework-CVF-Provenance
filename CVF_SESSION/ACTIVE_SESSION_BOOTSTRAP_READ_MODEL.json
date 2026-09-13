@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "dsh_uc01_track_b_contract_draft_pending_review",
+  "currentMode": "dsh_uc01_track_b_released_pending_worker",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "Track B consumer-evidence contract drafted at 97750b90c26700ab2f45c18b4a0605b2dee45a38: HOLD_PENDING_LOCAL_REVIEW. Baseline: docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md. Work order: docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md. Next: Local consolidated contract review and release preparation; validate exact five-path worker manifest, seven semantic scenarios, bounded adaptation admission, source hashes and gate-to-role closeability before pre-dispatch. Track A remains closed. Track B implementation, installed absorption, upstream execution, provider/live, public/deploy and RABA/DARA-T5/P5/P6 remain HOLD; latest LHW24.",
+  "nextAllowedMove": "Track B consumer-evidence amendment released at 0a65d73e4f22598d3aa11231cbfcd0c46b034b7f: DISPATCH_READY. Work order: docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md. Next: internal worker verifies currentAuthority hashes and baseline source bindings, captures fresh executionBaseHead, passes pre-implementation, edits only the released five paths, and returns COMPLETE_PENDING_REVIEW without stage/commit/push. Scope: existing simplification guidance, separate source provenance, mandatory generated index and worker return; seven static semantic scenarios. Local reviews valid return evidence at M5/M10/safety/M20. Track A remains closed. Other candidates, upstream execution, provider/live, public/deploy, runtime proof and RABA/DARA-T5/P5/P6 remain HOLD; latest LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_DSH_UC01_OWNER_RECONCILIATION_2026-09-12.md",
-    "baselineSha256": "26f41eb058514326dd44b018bdba21f0c3c445374fe6b533faf6933eb11d85a1",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_OWNER_RECONCILIATION_2026-09-12.md",
-    "workOrderSha256": "e647d65cc9c18243aa04ff0db309d081827e35c61c6458a63ed15a29abd464ec"
+    "baselinePath": "docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md",
+    "baselineSha256": "8a8267b2304f1a40f46bd26036c24ebc95ace4a6768b5955b635ebb4d20ef330",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md",
+    "workOrderSha256": "e1c333718c7b34df98ce6f1a81f0f543b91466bb3653ef8837162364e5b4a53d"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

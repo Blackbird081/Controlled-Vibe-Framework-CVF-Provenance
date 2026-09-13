@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_DSH_UC01_OWNER_RECONCILIATION_2026-09-12.md",
-    "baselineSha256": "26f41eb058514326dd44b018bdba21f0c3c445374fe6b533faf6933eb11d85a1",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_OWNER_RECONCILIATION_2026-09-12.md",
-    "workOrderSha256": "e647d65cc9c18243aa04ff0db309d081827e35c61c6458a63ed15a29abd464ec"
+    "baselinePath": "docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md",
+    "baselineSha256": "8a8267b2304f1a40f46bd26036c24ebc95ace4a6768b5955b635ebb4d20ef330",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md",
+    "workOrderSha256": "e1c333718c7b34df98ce6f1a81f0f543b91466bb3653ef8837162364e5b4a53d"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -106,7 +106,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "dsh_uc01_track_b_contract_draft_pending_review",
+  "currentMode": "dsh_uc01_track_b_released_pending_worker",
   "previousMode": "domain_pilot_initial_intake_closed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

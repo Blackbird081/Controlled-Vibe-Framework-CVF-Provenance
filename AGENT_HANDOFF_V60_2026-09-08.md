@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `97750b90c26700ab2f45c18b4a0605b2dee45a38`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `0a65d73e4f22598d3aa11231cbfcd0c46b034b7f`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -14,7 +14,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `dsh_uc01_track_b_contract_draft_pending_review`.
+- Current mode: `dsh_uc01_track_b_released_pending_worker`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +24,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dsh_uc01_track_b_contract_draft_pending_review`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=review Track B contract draft and prepare bounded release; parked checkpoint=Track B implementation/enrichment, absorption, upstream execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
+Startup acknowledged: current mode=`dsh_uc01_track_b_released_pending_worker`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute released Track B five-path amendment and return pending review; parked checkpoint=other candidates, broad absorption, upstream execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
 
 ## Current Mode
 
-`dsh_uc01_track_b_contract_draft_pending_review`
+`dsh_uc01_track_b_released_pending_worker`
 
 ## Purpose
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-13 current priority: Track B consumer-evidence contract drafted at 97750b90c26700ab2f45c18b4a0605b2dee45a38: HOLD_PENDING_LOCAL_REVIEW. Baseline: docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md. Work order: docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md. Next: Local consolidated contract review and release preparation; validate exact five-path worker manifest, seven semantic scenarios, bounded adaptation admission, source hashes and gate-to-role closeability before pre-dispatch. Track A remains closed. Track B implementation, installed absorption, upstream execution, provider/live, public/deploy and RABA/DARA-T5/P5/P6 remain HOLD; latest LHW24.
+2026-09-13 current priority: Track B consumer-evidence amendment released at 0a65d73e4f22598d3aa11231cbfcd0c46b034b7f: DISPATCH_READY. Work order: docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md. Next: internal worker verifies currentAuthority hashes and baseline source bindings, captures fresh executionBaseHead, passes pre-implementation, edits only the released five paths, and returns COMPLETE_PENDING_REVIEW without stage/commit/push. Scope: existing simplification guidance, separate source provenance, mandatory generated index and worker return; seven static semantic scenarios. Local reviews valid return evidence at M5/M10/safety/M20. Track A remains closed. Other candidates, upstream execution, provider/live, public/deploy, runtime proof and RABA/DARA-T5/P5/P6 remain HOLD; latest LHW24.
 `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; current pilot permits bounded initial acquisition/survey only. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
@@ -125,7 +125,7 @@ authority, production deployment, or any parked project lane.
 ## Active Boundary
 
 - MFRP-FINGERPRINT-T1 is materially closed; worker lane released. TPGR T1 remains closed.
-  Next: review Track B contract draft and prepare bounded release; no enrichment release.
+  Next: execute released Track B five-path amendment and return pending review; other candidates remain parked.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
 - Manual relay is content-neutral transport under `cvf.cross-workspace-evidence-relay@1.0.0`; remote findings remain advisory until Local Agent verification and final technical disposition. Once Local issues a work order, execution is internal shared-workspace work and the relay loop ends.
