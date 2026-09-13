@@ -2,26 +2,30 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: HOLD_PENDING_LOCAL_REVIEW
+Status: DISPATCH_READY
 Date: 2026-09-13
 Batch ID: DSH-UC01-B
 Authoring base head: c1c3e2d1bd372d8c441edb1ad97fa8d5cb544723
+dispatchBaseHead: 56b171d576850e50f966dbaa7fc61a717107d375
+providerExecutionAuthority: FORBIDDEN
 Commit mode: WORKER_MUST_NOT_COMMIT
 Worker return path: `docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_WORKER_RETURN_2026-09-13.md`
 Reviewer/closer: Local orchestrator/reviewer
 
 ## Dispatch Prompt Envelope
 
-This is a draft, not an executable dispatch. Do not start package edits from it.
-Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md`.
-Baseline: `docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md`.
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START_AFTER_RELEASE.
-providerExecutionAuthority: FORBIDDEN.
-Release requires a reviewed ready-profile amendment and passing pre-dispatch gate. The authoring base is not the worker's execution base.
+Role: internal implementation worker for DSH-UC01-B.
+Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md`
+Commit mode: WORKER_MUST_NOT_COMMIT
+executionBaseHead: WORKER_MUST_CAPTURE_AT_START
+Current-time notes: release prepared 2026-09-13; immutable source pins remain historical.
+Do-not-misread notes: exact five-path advisory amendment only; no stage/commit/push, upstream execution, provider/live, SOT or other candidate work.
+Required first actions: read bootstrap, front door, active handoff, this work order and paired baseline; verify their currentAuthority hashes and baseline Source Admission And Hash Bindings; capture actual clean HEAD, verify dispatch ancestry, then run pre-implementation.
+Return contract: create `docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_WORKER_RETURN_2026-09-13.md`, run required gates, return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON with exact status and unchanged HEAD. A relay message is not evidence that implementation has run.
 
 ## Purpose
 
-Prepare a bounded implementation contract for the accepted consumer-evidence refinement. After release, the worker adds guidance and provenance under the existing simplification owner and returns evidence without committing.
+Implement the accepted consumer-evidence refinement and its separate provenance in the existing simplification owner. Return the five owned files with bounded evidence; do not commit.
 
 ## Authority Chain
 
@@ -37,11 +41,11 @@ Operator owns scope. Local orchestrator authors, reviews, releases and closes. D
 
 ## Intake Role Routing Decision
 
-Route mode: MULTI_AGENT_MULTI_ROLE. Worker and Local reviewer/closer have distinct phases; no concurrent writes to the worker lane. INTERNAL_AGENT is the proposed execution surface. EXTERNAL_AGENT_CLI_MCP: no invocation or adapter work released by this contract.
+Operator request: continue the reviewed Track B contract toward delegated execution. Route mode: MULTI_AGENT_MULTI_ROLE. Scope is the exact five-path advisory amendment; risk is R1 with no provider/live/public action. Worker and Local reviewer/closer operate sequentially. INTERNAL_AGENT executes; EXTERNAL_AGENT_CLI_MCP is not invoked. Stop/escalation: conflicting source, unowned dependency or missing execution authority returns to Local.
 
 ## Scope
 
-After release only: add the baseline's procedure and source attribution; append bounded provenance metadata; regenerate its mandatory index; document the seven acceptance scenarios. No other package, lifecycle, runtime code, checker, upstream source or broad corpus work.
+Released scope: add the baseline's procedure and source attribution; append bounded provenance metadata; regenerate its mandatory index; document the seven acceptance scenarios. No other package, lifecycle, runtime code, checker, upstream source or broad corpus work.
 
 ## Required First Reads
 
@@ -49,7 +53,7 @@ Read startup front doors progressively, the released baseline and work order, ac
 
 ## Write Ownership
 
-Proposed exact five-path worker manifest, inactive until release:
+Released exact five-path worker manifest:
 
 | Path | Write mode | Required at handoff |
 | --- | --- | --- |
@@ -59,7 +63,7 @@ Proposed exact five-path worker manifest, inactive until release:
 | docs/reference/agent_system_skills/generated/skill-index.json | generator output only | Yes |
 | docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_WORKER_RETURN_2026-09-13.md | create-only: worker-return evidence | Yes |
 
-All other paths are outside worker ownership. The baseline dependency table is binding after release; do not modify reviewArtifacts to add a return link because that would also alter the control-plane projection.
+All other paths are outside worker ownership. The baseline dependency table is binding; do not modify reviewArtifacts to add a return link because that would also alter the control-plane projection.
 
 ## Forbidden Path Manifest
 
@@ -80,7 +84,7 @@ All other paths are outside worker ownership. The baseline dependency table is b
 
 ## Execution Plan
 
-1. After release, capture actual HEAD/status and verify ancestry/source hashes from the release envelope. Run pre-implementation at the fresh execution base. Stop on drift, unrelated dirt or failed authority evidence.
+1. Capture actual HEAD/status and verify ancestry/source hashes from the release envelope. Run pre-implementation at the fresh execution base. Stop on drift, unrelated dirt or failed authority evidence.
 2. Use baseline Proposed Guidance and Acceptance Scenarios to edit only SKILL.md. Preserve behavior, consumer-role semantics, authority boundaries and separate source attribution.
 3. Append exactly the baseline's four provenance paths in both sourceArtifacts arrays; extend only package cvfAdaptationBoundary to name the supplemental source/pin and advisory limits. Retain primary Addy identity and existing metadata.
 4. Run the index generator once and required dependency checks. A needed extra path is a consolidated return-to-orchestrator finding, not silent scope expansion.
@@ -88,7 +92,7 @@ All other paths are outside worker ownership. The baseline dependency table is b
 
 ## Verification Commands
 
-These are proposed worker commands for the future released contract; do not execute provider calls. Substitute the actual captured executionBaseHead for the named base argument in range commands.
+These are required worker commands; do not execute provider calls. Substitute the actual captured executionBaseHead for the named base argument in range commands.
 
 ```text
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
@@ -124,14 +128,14 @@ Use run_worker_return_scaffold.py before long prose. Retain Purpose, Target / So
 
 ## Review Gate
 
-Current decision: HOLD_PENDING_LOCAL_REVIEW. The Local reviewer must complete a single consolidated release review: source/hash admission, exact dependency manifest, applicable bounded-adaptation evidence, role closeability graph, handoff/readiness envelope, return-time repair ownership and pre-dispatch gate. This draft carries no successful release-gate claim.
+Local semantic/source/dependency disposition: ACCEPT_BOUNDED_RELEASE, recorded in `docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md` Decision / Release Conditions. The released contract is usable only with passing pre-dispatch evidence, committed material and bootstrap currentAuthority pointing to this pair. Worker must run pre-implementation at the fresh execution base before writes.
 
-After a released worker return, apply EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. Routine review is M5/M10/safety/M20 using valid evidence. Rerun only for a named contradiction, expected information gain and cost reason.
+Apply EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION at worker return. Routine review is M5/M10/safety/M20. Reruns need a named contradiction, expected information gain and cost reason. Existing valid evidence is reused; no row-by-row historical review.
 
 ## Reviewer Closure Conversion
 
 completionReviewPath: `docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_COMPLETION_REVIEW_2026-09-13.md`
-reviewerOwnedClosurePaths: named completion review and this work order's status only; exact-hash continuity dependencies must be declared at release before worker execution.
+reviewerOwnedClosurePaths: named completion review and this work order's status only; exact-hash continuity dependencies are named in Core Guard Self-Protection Authorization and must remain Local-only.
 closureOwner: Local reviewer/closer
 workerCommitPermission: FORBIDDEN
 
@@ -151,7 +155,7 @@ Return BLOCKED_WITH_REASON for source mismatch, unsupported behavior claim, miss
 
 ## Claim Boundary
 
-This HOLD work order is reviewable planning only. It authorizes no worker execution yet. Implementation, absorption, upstream execution, provider/live, public/deploy and RABA/DARA-T5/P5/P6 remain parked until their applicable release.
+Bounded Track B advisory-guidance and provenance implementation is released through the exact five-path worker manifest. Track A remains closed. No other candidate, new owner/checker, runtime execution, provider/live, public/deploy, production-readiness or RABA/DARA-T5/P5/P6 authority is opened.
 
 ## Source Verification Block
 
@@ -175,46 +179,48 @@ Resolver query: taskClass=``, role=`dispatcher`, lifecyclePhase=`pre-dispatch`
 | Returned defect count | 33 |
 | Returned defects | ADIF-0001, ADIF-0002, ADIF-0014, ADIF-0015, ADIF-0020, ADIF-0021, ADIF-0027, ADIF-0028, ADIF-0029, ADIF-0030, ADIF-0033, ADIF-0035, ADIF-0037, ADIF-0040, ADIF-0042, ADIF-0044, ADIF-0045, ADIF-0051, ADIF-0052, ADIF-0053, ADIF-0055, ADIF-0056, ADIF-0057, ADIF-0007, ADIF-0016, ADIF-0017, ADIF-0024, ADIF-0031, ADIF-0036, ADIF-0039, ADIF-0043, ADIF-0049, ADIF-0006 |
 | Disclosed defectIds | All returned IDs above |
-| Dispatch impact | Source read-ahead, exact execution base, bounded evidence claims, dependency ownership and no-commit closeability are carried forward. No new guard or runtime implementation is authorized by this draft. |
+| Dispatch impact | Source read-ahead, exact execution base, bounded evidence claims, dependency ownership and no-commit closeability are carried forward. No new guard or runtime implementation is authorized by this release. |
 
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 | --- | --- |
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_core.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_epistemic_process_packet.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_skill_truth_packets.py |
-| literalTokensReviewed | HOLD_PENDING_LOCAL_REVIEW; Purpose; Source Verification Block; ACCEPT; Authority Chain; Agent Roles; Write Ownership; Execution Plan; Acceptance Criteria; Review Gate; Closure Checklist; Return-To-Orchestrator Conditions; Expected Result; Evidence Comparison; Contradiction; Claim Update |
-| gateRunPurpose | Confirm the authored HOLD contract; release-specific checks remain mandatory before any worker dispatch |
+| literalTokensReviewed | DISPATCH_READY; Purpose; Source Verification Block; ACCEPT; Authority Chain; Agent Roles; Write Ownership; Execution Plan; Acceptance Criteria; Review Gate; Closure Checklist; Return-To-Orchestrator Conditions; Expected Result; Evidence Comparison; Contradiction; Claim Update |
+| gateRunPurpose | Confirm the source-verified released contract with pre-dispatch checks before worker execution |
 | claimBoundary | Targeted checker and dependency reads only; no claim that all repository checkers were read |
 
 ## Epistemic Process Block
 
-Expected Result / Prediction: the selected procedure can be expressed as a short advisory addition under the existing owner without changing lifecycle or runtime authority.
-
-Evidence Comparison: the accepted decision establishes bounded procedural value; direct data-flow reads establish the proposed source/index dependency disposition.
-
-Contradiction Or Gap Disposition: release must stop if proposed fields affect additional generated output or package admission requires fresh execution proof; do not expand the worker manifest silently.
-
-Claim Update: this is a reviewable contract draft, with no installed adaptation or measured benefit.
+Expected Result / Prediction: one short consumer-evidence procedure with separate source attribution can fit the existing advisory owner without changing lifecycle or runtime authority.
+Evidence Comparison: accepted novelty evidence and direct dependency reads support the five-path implementation manifest. Full selected-source reads confirm the procedure is separable from upstream-specific policies.
+Contradiction Or Gap Disposition: if checks identify another required output or new runtime proof, return one consolidated finding before touching any forbidden path.
+Claim Update: reviewed bounded implementation contract; no installed guidance or measured improvement exists yet. Worker must compare actual results against the baseline's seven semantic scenarios.
 
 ## Package Skill Productionization Control Block
 
 SOP source: docs/reference/agent_system_skills/CVF_PACKAGE_SKILL_PRODUCTIONIZATION_SOP.md
 
-Current phase: contract authoring only, HOLD_PENDING_LOCAL_REVIEW.
-
-Target lifecycle state: retain existing ACTIVE/CERTIFIED/PASSED fields; no transition is proposed.
-
-Prior phase evidence: docs/reviews/CVF_DSH_UC01_TRACK_B_NOVELTY_DECISION_2026-09-13.md; accepted Track A closure.
-
-Next forbidden skip: implementation before reviewed contract release and explicit source/dependency admission.
-
-Runtime/provider proof: none for this draft or proposed guidance. Historical package receipts establish their historical scope only.
-
-Claim boundary: advisory document refinement, not fresh runtime certification or proof of efficacy.
+Current phase: source-verified advisory amendment to the existing package; bounded Track B implementation released.
+Target lifecycle state: retain existing ACTIVE/CERTIFIED/PASSED fields. No new lifecycle admission or execution claim.
+Prior phase evidence: docs/reviews/CVF_DSH_UC01_TRACK_B_NOVELTY_DECISION_2026-09-13.md; existing package source, registry and historical truth records. Source authority and value conversion are accepted for the selected procedure only.
+Next forbidden skip: treating this guidance amendment as new UAT, certification, use-proof, provider proof or production execution evidence.
+Runtime/provider proof: none released or claimed for the new guidance. Existing historical receipts remain historical; their status does not certify this amendment.
+Claim boundary: prose and provenance update under an existing owner. No package execution, automatic invocation or action authority. Any future live behavior claim still requires the SOP's applicable receipt and proof ladder.
 
 ## External Repository Absorption Entry Control
 
-COMPARISON_ONLY_NO_ABSORPTION: this draft reuses accepted pinned evidence and proposes an adaptation; it does not install or accept source payload. Release must replace this preparation disposition with the applicable bounded adaptation admission and provenance evidence before worker edits.
+BOUNDED_ADAPTATION_AUTHORIZED: source-verified consumer-evidence guidance only, in the existing simplification package. The four selected external files (two complete skills and two licenses) were fully read for release admission; pinned mirror identities and raw-byte hashes are recorded in the baseline. No repository-wide absorption acceptance, direct upstream execution or runtime realization is authorized.
+
+| Field | Value |
+| --- | --- |
+| Source type | Two named upstream skill files and their two MIT license files |
+| Upstream or source-mirror disposition | CLONED_PINNED; mirror index rows and exact pins verified clean; baseline records raw-byte hashes |
+| Enumeration or manifest plan | Filesystem-backed reads of the four external rows in baseline Source Admission And Hash Bindings; no global scan |
+| Per-file terminal-ledger plan | All four selected files FULL_READ for admission; worker return records ADAPTED only for the selected procedure and preserves exclusions for all other source content |
+| Owner or overlap route | Existing cvf-engineering-code-simplification package; accepted bounded novelty decision |
+| Value-disposition route | ADAPT the consumer-evidence procedure only; no new package/checker or upstream execution |
+| Claim boundary | Bounded advisory amendment; no completed runtime absorption, new certification or live proof |
 
 ## Mandatory Blind-Spot Control Block
 
@@ -230,7 +236,7 @@ NOT_APPLICABLE_WITH_REASON: no new full corpus scan or complete-coverage claim. 
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private draft contract; no public-sync or export authorization.
+Reason: private bounded implementation contract; no public-sync or export authorization.
 
 ## Corpus Completeness And Report Integrity
 
@@ -256,21 +262,19 @@ Reason: private draft contract; no public-sync or export authorization.
 
 External knowledge intake routing: REQUIRED
 
-Chain map: `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`
-
 | Field | Value |
 | --- | --- |
 | Chain map | docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md |
 | Input type | external repo or copied folder |
-| Chain map route | Reuse accepted pinned comparison evidence; prepare bounded existing-owner contract only |
+| Chain map route | Pinned selected-source admission and existing-owner adaptation |
 | Matching local-view guard | governance/compat/check_external_absorption_overlap_discipline.py; governance/compat/check_absorption_blindspot_control_presence.py |
 | Owner surface | docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/SKILL.md |
-| Disposition | COMPARISON_ONLY_NO_ABSORPTION |
-| Claim boundary | Draft only; installed adaptation and runtime realization not claimed |
+| Disposition | BOUNDED_ADAPTATION_AUTHORIZED |
+| Claim boundary | Only the selected procedure; no umbrella absorption or new runtime proof |
 
 ## Pre-Flight Checks
 
-Draft admission only: verify baseline/decision paths and authoring worktree. Worker pre-flight starts only after release, using the first Execution Plan step and Verification Commands.
+Read the committed release pair, verify currentAuthority hashes and source bindings, capture actual HEAD and full status. `git merge-base --is-ancestor 56b171d576850e50f966dbaa7fc61a717107d375 HEAD` must succeed; inherited dirt or changed source bindings returns to Local. Run the exact pre-implementation command from Verification Commands at executionBaseHead. No writes before PASS.
 
 ## Evidence Requirements
 
@@ -278,11 +282,11 @@ Record source fidelity, semantic scenario results, exact fields changed, index/d
 
 ## Operator Checkpoint
 
-Operator authorized this next contract-authoring step. Implementation remains HOLD for Local contract review and release; live/provider/public/deploy and unrelated parked lanes require their own scope authority.
+Operator continuation and standing orchestrator role authorize this bounded release. No repeat confirmation is needed for in-scope edits or repairs. Unrelated candidates, live/provider/public/deploy actions and protected worker writes remain outside scope.
 
 ## Foundation Storage Layout Block
 
-N/A with reason: no foundation layout change; two conventional contract leaves and proposed existing package/index paths only.
+N/A with reason: no foundation layout change; two conventional contract leaves and existing package/index paths only.
 
 ## Review Dispatch Convergence And Invocation Budget Control
 
@@ -307,12 +311,12 @@ reworkGeneration: 0
 consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
 successorTrancheOpened: NO
 implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
-preExecutionReviewAdmission: REQUIRED_TRIGGERED
-preExecutionReviewTrigger: AUTHORITY_SCOPE_EXPANSION
-nextRoutineReviewBoundary: PRE_EXECUTION_REVIEW
+preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
+preExecutionReviewTrigger: NONE
+nextRoutineReviewBoundary: WORKER_RETURN
 reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 
-The scope-expansion trigger is the proposed new package guidance; authoring is authorized, but implementation authority has not been released. Initial-dispatch fields describe the intended route, not a completed dispatch.
+Local contract review is complete within the operator-authorized release preparation. No additional pre-execution reviewer turn is required; the next routine review is worker return.
 
 For this prose-only refinement, the planned negative tests are the baseline's static semantic counterexamples; no executable test file or runtime measurement is proposed.
 
@@ -349,14 +353,14 @@ Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_
 ```
 
 
-SCEC boundary: initial contract authoring for the accepted procedural delta; no worker closure or executable readiness is asserted.
+SCEC boundary: initial bounded implementation contract for the accepted procedural delta; no worker closure or runtime execution proof is asserted.
 
 ## Agent Handoff Contract Control Block
 
 Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`
 sharedWorktreeCoordinationMode: EXPLICIT_LANE_HANDOFF
 activeLaneOwner: dispatcher until committed release handoff; then worker exclusively until pending return
-laneOwnedPaths: proposed five paths in Write Ownership; no worker lane active before release
+laneOwnedPaths: exact five paths in Write Ownership; worker acquires lane after committed release and continuity
 dispatcherMutationBoundary: NO_MUTATION_WHILE_LANE_ACTIVE
 laneReleaseEvidence: committed dispatch packet and continuity SHA supplied in operator handoff; worker must verify clean worktree before accepting the lane
 Local finishes release/continuity before worker begins; no concurrent writes. Worker returns the lane before Local review.
@@ -365,8 +369,8 @@ Local finishes release/continuity before worker begins; no concurrent writes. Wo
 | --- | --- |
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | Local dispatches and reviews; internal worker executes Track B only after release and returns pending evidence |
-| phase | held contract authoring; future release through worker-return |
-| baseHeadFor(phase) | authoringBaseHead=c1c3e2d1bd372d8c441edb1ad97fa8d5cb544723; dispatchBaseHead=SET_AT_RELEASE; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=SET_BY_REVIEWER |
+| phase | pre-dispatch through worker-return |
+| baseHeadFor(phase) | authoringBaseHead=c1c3e2d1bd372d8c441edb1ad97fa8d5cb544723; dispatchBaseHead=56b171d576850e50f966dbaa7fc61a717107d375; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=SET_BY_REVIEWER |
 | changedSetScope(phase) | worker: the exact five paths in Write Ownership; dispatcher: paired baseline and this work order |
 | traceScope(phase, actor) | metadata diff, generator command and bounded checks; no runtime/provider trace |
 | commitOwner(phase) | Local; WORKER_MUST_NOT_COMMIT |
@@ -379,18 +383,18 @@ Local finishes release/continuity before worker begins; no concurrent writes. Wo
 | --- | --- |
 | Actor | Local orchestrator |
 | Provider or surface | internal provenance workspace |
-| Session or invocation | DSH-UC01-B contract authoring 2026-09-13 |
+| Session or invocation | DSH-UC01-B contract release 2026-09-13 |
 | Working directory | repository root |
-| Command or tool surface | targeted source reads, scaffold helper, ADIF resolver, draft authoring and scoped gates |
+| Command or tool surface | selected full source reads, reused scaffold/ADIF evidence, release authoring and scoped gates |
 | Target paths | docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md; docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md |
 | Allowed scope source | operator continue instruction and accepted novelty decision |
-| Before status evidence | clean worktree at c1c3e2d1bd372d8c441edb1ad97fa8d5cb544723 |
-| After status evidence | two new contract drafts only |
+| Before status evidence | clean worktree at 56b171d576850e50f966dbaa7fc61a717107d375 |
+| After status evidence | two amended release contracts only |
 | Diff evidence | git status --short --untracked-files=all; staged exact manifest |
-| Approval boundary | authoring only; worker implementation HOLD |
-| Claim boundary | bounded planning; no execution proof |
+| Approval boundary | release preparation only; no worker payload edited |
+| Claim boundary | bounded release; no execution proof |
 | Agent type | dispatcher |
-| Invocation ID | dsh-uc01-b-contract-authoring-2026-09-13 |
+| Invocation ID | dsh-uc01-b-contract-release-2026-09-13 |
 | Expected manifest | docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md; docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md |
 | Actual changed set | docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md; docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md |
 | Manifest delta | MATCH |
@@ -400,11 +404,180 @@ Local finishes release/continuity before worker begins; no concurrent writes. Wo
 
 | Field | Disposition |
 | --- | --- |
-| claimScope | two held contract drafts only |
+| claimScope | two release contracts only |
 | claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
 | receiptEvidence | N/A with reason: no new execution receipt |
 | actionEvidence | N/A with reason: no runtime action |
 | invocationBoundary | Local governed document authoring only |
 | interceptionBoundary | no IDE/shell/git/filesystem/provider interception claim |
-| claimLanguage | defined draft guidance and future exact write manifest |
-| forbiddenExpansion | implementation, provider/live, public/deploy and runtime authority remain held |
+| claimLanguage | defined bounded guidance contract and exact write manifest |
+| forbiddenExpansion | implementation outside the five-path manifest, provider/live, public/deploy and runtime execution remain held |
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: Local-only current-authority and continuity synchronization for this release and its bounded closure; no checker or hook edits.
+Protected paths: AGENT_HANDOFF_V60_2026-09-08.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/state/entries/domainPilotSelectedReviewDecision20260912.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json.
+Operator authorization: operator instructed Local orchestrator/reviewer to progress the roadmap autonomously and continue this release; worker receives no protected write ownership.
+Rollback boundary: restore only this tranche's continuity fields and regenerate aggregates from source items. Never hand-edit generated aggregates or alter historical owner packets.
+At release, commit the two material contracts first, then synchronize the named source items and regenerated state/bootstrap. At closure, changing the pinned work-order status requires its new hash plus core/state/bootstrap in the same declared material commit; mode/next-move/handoff synchronization follows separately. The closer must declare that exact mixed manifest before staging; this is no blanket exception.
+
+
+## Worker Autonomy / No-Question Rule
+
+Fix failures inside released ownership directly. Return a consolidated BLOCKED_WITH_REASON only for source contradiction, missing authority or forbidden-path dependency. Do not reopen routine implementation decisions or ask the operator to choose mandatory gate repairs.
+
+
+## Architecture Readiness Admission
+
+Architecture-Readiness Admission: NOT_APPLICABLE_INTERNAL_AGENT_WITH_REASON
+
+Internal advisory-document worker only; no external CLI/MCP call, runtime or architecture seam is introduced.
+
+
+## Evidence Reuse And Encoding Plan
+
+verificationMode: REUSE_PRIOR_VERIFICATION
+priorVerificationArtifact: docs/reviews/CVF_DSH_UC01_TRACK_B_NOVELTY_DECISION_2026-09-13.md
+priorVerificationAnchor: 90ff64e858cf012bd259913e767029247335467e
+freshRecomputeRequired: NO
+recomputeReason: accepted overlap/value evidence remains valid; selected-source full reads and release hashes supplement admission without duplicating corpus analysis.
+unicodePathHandling: use literal paths and UTF-8 readers; preserve existing JSON rendering and line endings.
+extractedTextAuthority: AUXILIARY_ONLY
+
+
+## Dependency Release Evidence
+
+| Dependency | Evidence path | Accepted commit | Disposition |
+| --- | --- | --- | --- |
+| Track A terminal prerequisite | docs/reviews/CVF_DSH_UC01_TRACK_A_COMPLETION_REVIEW_2026-09-13.md | e6972bfea74beec49d9685d4f88a7d0cb883fd9a | ACCEPT |
+| Bounded novelty decision | docs/reviews/CVF_DSH_UC01_TRACK_B_NOVELTY_DECISION_2026-09-13.md | 90ff64e858cf012bd259913e767029247335467e | ACCEPT |
+| Contract draft | docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md | 97750b90c26700ab2f45c18b4a0605b2dee45a38 | ACCEPT |
+
+Local release disposition and exact source bindings are in the paired baseline. All evidence commits are ancestors of dispatchBaseHead; no future SHA is guessed.
+
+
+## Required Artifact Manifest
+
+| Path | Required at handoff | Purpose |
+| --- | --- | --- |
+| docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/SKILL.md | Yes | Bounded guidance/provenance or generated projection |
+| docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/skill.source.json | Yes | Bounded guidance/provenance or generated projection |
+| docs/reference/agent_system_skills/registry/entries/cvf-engineering-code-simplification.json | Yes | Bounded guidance/provenance or generated projection |
+| docs/reference/agent_system_skills/generated/skill-index.json | Yes | Bounded guidance/provenance or generated projection |
+| docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_WORKER_RETURN_2026-09-13.md | Yes | Worker return evidence |
+
+
+## Work-Order Fulfillment Manifest
+
+Required Artifact Manifest and Write Ownership are the same five-path worker set. Baseline/work-order, reviewer completion and protected continuity are Local-owned and excluded from worker output.
+
+
+## Forbidden Filesystem State At Dispatch
+
+| Forbidden path | Expected state | Actual state at dispatch | Action if PRESENT |
+| --- | --- | --- | --- |
+| docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Local-owned source; worker read-only |
+| docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md | PRESENT_EXEMPTED | PRESENT_EXEMPTED | Local-owned release; worker read-only |
+| docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_COMPLETION_REVIEW_2026-09-13.md | ABSENT | ABSENT | Return to Local on unexpected presence |
+
+All other existing forbidden paths are read-only policy boundaries, not files expected to be absent. Truth sources, generators and continuity already exist and must remain untouched by worker. Pre-existing dirty path exemptions: none; review started with clean worktree.
+
+
+## Gate-To-Role Closeability Contract
+
+closeabilityContractVersion: cvf.gate-role-closeability@1.0.0
+closeabilityDisposition: CLOSEABLE
+implementationTopologyPolicy: EXACT_PATHS_WITH_NO_FORESEEABLE_SPLIT
+foreseeableFileSplitDisposition: NOT_REQUIRED_UNDER_SIZE_BUDGET
+returnTimeRecheck: REQUIRED_BEFORE_REPAIR
+
+This is the released lifecycle graph for the Track B advisory amendment. Mandatory
+gate IDs follow `docs/reference/CVF_GATE_TO_ROLE_CLOSEABILITY_MACHINE_STANDARD.md`.
+Protected continuity remains Local-only under the paired authorization; worker cannot amend it.
+
+| gateId | mustPassBy | repairOwner | repairPhase | mutationSurface | topology | commitOwner | commitPhase | dependsOn |
+|---|---|---|---|---|---|---|---|---|
+| authorization_review | PRE_DISPATCH | dispatcher | PRE_DISPATCH | this packet and paired baseline | EXACT_PATHS | closer | DISPATCH_COMMIT | NONE |
+| pre_dispatch_gate | PRE_DISPATCH | dispatcher | PRE_DISPATCH | same frozen authorization packet; release dependency table | EXACT_PATHS | closer | DISPATCH_COMMIT | authorization_review |
+| dispatch_continuity | IMPLEMENTATION | session-sync-steward | IMPLEMENTATION | AGENT_HANDOFF_V60_2026-09-08.md material-SHA marker | EXACT_PATHS | session-sync-steward | DISPATCH_CONTINUITY_COMMIT | pre_dispatch_gate |
+| pre_implementation_autorun | IMPLEMENTATION | worker | IMPLEMENTATION | frozen Write Ownership only; outside-scope failure returns to Local | EXACT_PATHS | closer | MATERIAL_COMMIT | dispatch_continuity |
+| source_identity_license | WORKER_RETURN | worker | IMPLEMENTATION | five owned paths; separate source attribution | EXACT_PATHS | closer | MATERIAL_COMMIT | pre_implementation_autorun |
+| metadata_delta | WORKER_RETURN | worker | IMPLEMENTATION | consumer-guidance and provenance evidence in worker return | EXACT_PATHS | closer | MATERIAL_COMMIT | source_identity_license |
+| focused_checker_tests | WORKER_RETURN | worker | IMPLEMENTATION | five owned paths; exact JSON delta and generator checks, no upstream tests | EXACT_PATHS | closer | MATERIAL_COMMIT | dispatch_continuity, metadata_delta |
+| adif_integrity | WORKER_RETURN | worker | IMPLEMENTATION | worker-return disclosure only; no ADIF owner mutation | EXACT_PATHS | closer | MATERIAL_COMMIT | focused_checker_tests |
+| worker_return_fast | REVIEW | worker | WORKER_RETURN | five owned paths; step 5 | EXACT_PATHS | closer | MATERIAL_COMMIT | adif_integrity |
+| reviewer_fast | PRE_MATERIAL_COMMIT | reviewer | REVIEW | released material paths and reviewer disposition in return | EXACT_PATHS | closer | MATERIAL_COMMIT | worker_return_fast |
+| pre_commit | PRE_MATERIAL_COMMIT | reviewer | REVIEW | exact reviewed material set | EXACT_PATHS | closer | MATERIAL_COMMIT | reviewer_fast |
+| terminal_completion_review | PRE_MATERIAL_COMMIT | reviewer | REVIEW | reviewer-owned completion review named in Reviewer Closure Conversion | EXACT_PATHS | closer | MATERIAL_COMMIT | pre_commit |
+| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | paired baseline exact Local continuity authorization | EXACT_PATHS | session-sync-steward | CONTINUITY_COMMIT | terminal_completion_review |
+| committed_range_closure | POST_MATERIAL_CLOSURE | reviewer | POST_MATERIAL | exact reviewed material set; corrective material only within released authority | EXACT_PATHS | closer | CORRECTIVE_MATERIAL_COMMIT | continuity |
+
+Pre-implementation must pass before any step 1-5 source/evidence mutation.
+Guidance, source fields and generated echoes are checked separately. Terminal review and
+material commit precede dedicated continuity; clean split-range closure follows
+continuity. No future commit SHA is guessed. Every return rechecks blockers
+before repair; unknown ownership forbids worker redispatch.
+
+
+## Task Governance Routing Manifest
+
+```json
+{
+  "schemaVersion": "cvf.taskGovernanceManifest.v1",
+  "taskId": "DSH-UC01-B",
+  "requestedProfile": "P3_ELEVATED",
+  "classification": {
+    "taskKind": "EXTERNAL_ABSORPTION",
+    "authorityImpact": "ENRICHES_EXISTING_OWNER",
+    "externalEffect": "LOCAL_REVERSIBLE",
+    "dataSensitivity": "PRIVATE_REPO",
+    "reversibility": "GIT_REVERSIBLE",
+    "sourceScale": "NAMED_FILES",
+    "delegation": "MULTI_ROLE_NO_COMMIT",
+    "novelty": "OWNER_COMPOSITION"
+  },
+  "pathFamilies": [
+    "docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/SKILL.md",
+    "docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/skill.source.json",
+    "docs/reference/agent_system_skills/registry/entries/cvf-engineering-code-simplification.json",
+    "docs/reference/agent_system_skills/generated/skill-index.json",
+    "docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_WORKER_RETURN_2026-09-13.md",
+    "docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md"
+  ],
+  "claims": [
+    "Bounded advisory guidance and separate source provenance; no new runtime proof"
+  ],
+  "requiredProof": [
+    "Full semantic reads of two selected upstream skills and two licenses",
+    "B1-B7 semantic scenarios",
+    "Exact metadata field changes and generated index/dependency checks"
+  ],
+  "operatorCheckpoints": [],
+  "forbiddenEffects": [
+    "Provider calls",
+    "Public writes",
+    "Upstream execution",
+    "Worker commit",
+    "Runtime proof claims"
+  ],
+  "sourceEvidence": {
+    "selectedFilesFullyRead": true,
+    "corpusReceiptRef": null,
+    "completenessClaimChanged": false
+  }
+}
+```
+
+
+## Scaffold Provenance Block
+
+| Field | Value |
+| --- | --- |
+| scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --packet-kind package-skill --batch-id DSH-UC01-B --title "DSH UC01 Track B Consumer Evidence" --date 2026-09-13 --base c1c3e2d1bd372d8c441edb1ad97fa8d5cb544723 --commit-mode WORKER_MUST_NOT_COMMIT --stdout` |
+| generatedProfile | package-skill; no-commit internal worker |
+| generatedSkeletonStatus | USED_AS_STARTING_POINT |
+| manualEditsAfterScaffold | Draft committed at 97750b90c26700ab2f45c18b4a0605b2dee45a38; current amendment completes selected-file admission, ready envelope, closeability, exact source bindings and Local continuity ownership |
+| checkerReadAheadConfirmation | governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_dispatch_prompt_envelope.py; governance/compat/check_absorption_blindspot_control_presence.py; governance/compat/check_work_order_dispatch_quality_range.py; governance/compat/check_work_order_dispatch_quality_core.py; governance/compat/check_gate_to_role_closeability.py |
+| docOnlyNewFields | none; existing canonical field names reused |
+| claimBoundary | Release-contract authoring only; no worker payload or runtime execution |
