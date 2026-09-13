@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "dsh_uc01_track_a_released",
+  "currentMode": "dsh_uc01_track_a_closed",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "DSH-UC-01 Track A released at 5e2d3eb3b221218077a18edcd73c54dd024169d9. Next: internal worker captures executionBaseHead, verifies bootstrap authority hashes, corrects only the Addy registry license to MIT upstream; CVF_PRIVATE_GOVERNED adaptation metadata, regenerates skill-index.json and returns docs/reviews/CVF_DSH_UC01_TRACK_A_WORKER_RETURN_2026-09-13.md without stage/commit. Local reviews the return and owns closure. Track B, package enrichment, absorption, upstream execution, provider/live, public/deploy and RABA/DARA-T5/P5/P6 remain parked; latest LHW24.",
+  "nextAllowedMove": "DSH-UC-01 Track A CLOSED_PASS_BOUNDED at e6972bfea74beec49d9685d4f88a7d0cb883fd9a: Addy registry license corrected to MIT and matching skill-index regenerated. Completion: docs/reviews/CVF_DSH_UC01_TRACK_A_COMPLETION_REVIEW_2026-09-13.md. Next: Local performs a bounded existing-owner collision/novelty decision for Track B before any enrichment release; reuse accepted source evidence, no broad duplicate scan. Track B remains HOLD; package enrichment, absorption, upstream execution, provider/live, public/deploy and RABA/DARA-T5/P5/P6 remain parked; latest LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
