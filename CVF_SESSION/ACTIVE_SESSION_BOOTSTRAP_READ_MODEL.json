@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_DSH_UC01_OWNER_RECONCILIATION_2026-09-12.md",
     "baselineSha256": "26f41eb058514326dd44b018bdba21f0c3c445374fe6b533faf6933eb11d85a1",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_OWNER_RECONCILIATION_2026-09-12.md",
-    "workOrderSha256": "450354d421c5c777ad740cb991de4caaf0784036ee5b1444a5ccb8a98ad220f0"
+    "workOrderSha256": "e647d65cc9c18243aa04ff0db309d081827e35c61c6458a63ed15a29abd464ec"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: DSH-UC01-OWNER-RECONCILIATION
 
@@ -208,7 +208,7 @@ Execute Track A only: reconcile the existing Addy source license metadata and re
 - Spec / contract: existing registry and generator schema; no schema change.
 - dispatchBaseHead: 698fddc932850c04f92e0191d2e2bcca670dc9a9
 - executionBaseHead: WORKER_MUST_CAPTURE_AT_START
-- closureBaseHead: NOT_EXECUTED_YET
+- closureBaseHead: 06d00bd9b79216343f0365f79b56e254f8357414
 Authority boundary: Track A only. Stop on conflicting authority or new scope.
 
 ## Intake Role Routing Decision
@@ -315,7 +315,7 @@ Local finishes release/continuity before worker begins; no concurrent writes. Wo
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | Local dispatches and reviews; internal worker executes Track A and returns pending evidence |
 | phase | pre-dispatch through worker-return |
-| baseHeadFor(phase) | dispatchBaseHead=698fddc932850c04f92e0191d2e2bcca670dc9a9; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=NOT_EXECUTED_YET |
+| baseHeadFor(phase) | dispatchBaseHead=698fddc932850c04f92e0191d2e2bcca670dc9a9; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=06d00bd9b79216343f0365f79b56e254f8357414 |
 | changedSetScope(phase) | worker: the exact three paths in Write Ownership; dispatcher: paired baseline and this work order |
 | traceScope(phase, actor) | metadata diff, generator command and bounded checks; no runtime/provider trace |
 | commitOwner(phase) | Local; WORKER_MUST_NOT_COMMIT |
@@ -447,9 +447,18 @@ The worker-return packet must record actual gate results, including any
 `WORKER_MUST_NOT_COMMIT` pending-review handoff, and must not claim a
 closed-equivalent status.
 
-## 6E.1 Machine Closure Package
+## Machine Closure Package
 
-Worker supplies `docs/reviews/CVF_DSH_UC01_TRACK_A_WORKER_RETURN_2026-09-13.md`, exact registry/index delta and validation evidence. Local owns disposition and material commit; session-sync steward owns separate continuity. Worker does not edit authority or session files.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_OWNER_RECONCILIATION_2026-09-12.md | committed dispatch retained as historical authority; this completion closes Track A and forbids re-execution | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_DSH_UC01_TRACK_A_COMPLETION_REVIEW_2026-09-13.md | CLOSED_PASS_BOUNDED | PASS |
+| Roadmap state | N/A | decision-derived metadata correction | N/A with reason: no roadmap transition |
+| Registry JSON | docs/reference/agent_system_skills/registry/entries/cvf-engineering-code-simplification.json | MIT license; generated skill-index echo matches | PASS |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | existing corpus registry unchanged; no new scan or corpus admission in Track A | PASS |
+| External evidence digest | docs/reviews/CVF_DSH_UC01_TRACK_A_WORKER_RETURN_2026-09-13.md | pinned Addy LICENSE raw Git-blob sha256:6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7; no new acquisition | PASS |
+| System loop interlock | N/A | no loop state or runtime transition | N/A with reason: metadata-only correction |
+| Session continuity | CVF_SESSION/state/entries/nextAllowedMove.json | steward records closure material SHA and Track B HOLD in separate commit | N/A with reason: separate post-material continuity commit |
 
 ## 6F. Commit Choreography
 
@@ -512,7 +521,7 @@ any `governance/compat/*.py` checker, `CVF_SESSION/**` file,
 3. Run pre-implementation gate using the captured executionBaseHead. If the original registry license or dependency state differs, report the contradiction before writing; do not overwrite unrelated changes.
 4. Set only `docs/reference/agent_system_skills/registry/entries/cvf-engineering-code-simplification.json` license to `MIT upstream; CVF_PRIVATE_GOVERNED adaptation metadata`. Preserve upstream source attribution and notices; do not modify mirror LICENSE.
 5. Run `python governance/compat/generate_assf_skill_index.py --generate`. Do not hand-edit the aggregate or generate the control-plane inventory for this license-only change.
-6. Compare registry/index JSON against executionBaseHead: registry differs only in license; aggregate differs only in that skill entry's license; other keys and all other entries are identical. Run the verification commands below.
+6. Compare registry/index JSON against executionBaseHead: registry differs only in license; aggregate differs only in that skill entry's license; other keys and all other entries must match executionBaseHead. Run the verification commands below.
 7. Create `docs/reviews/CVF_DSH_UC01_TRACK_A_WORKER_RETURN_2026-09-13.md` with before/after evidence, exact changed set, base, commands, results and limitations. Return COMPLETE_PENDING_REVIEW without stage/commit or SOT changes.
 
 ## 8A. Design Control Carry-Forward
@@ -577,7 +586,7 @@ python governance/compat/generate_assf_skill_index.py --check
 python governance/compat/check_assf_skill_index_drift.py --enforce
 python governance/compat/check_skill_truth_packets.py --enforce
 python governance/compat/generate_skill_control_plane_inventory.py --check
-python governance/compat/check_package_skill_productionization_pipeline.py --enforce
+python governance/compat/check_package_skill_productionization_pipeline.py --base <executionBaseHead> --head HEAD --enforce
 python governance/compat/run_worker_return_fast_gate.py
 git diff --check
 ```
@@ -693,3 +702,42 @@ authorization requested or granted.
 ## Current Runtime Freshness Verification
 
 N/A with reason: metadata-only Track A; no runtime absence, implementation-status, provider support or production-readiness assertion. No runtime probe is required or authorized.
+
+## Package Skill Productionization Control Block
+
+SOP source: docs/reference/agent_system_skills/CVF_PACKAGE_SKILL_PRODUCTIONIZATION_SOP.md
+
+Current phase: metadata correction (license field) on an already-ACTIVE,
+already-CERTIFIED package registry entry; no lifecycle-state transition.
+
+Target lifecycle state: no lifecycle transition in this packet; entry
+remains `status: ACTIVE`, `certificationState: CERTIFIED`.
+
+Prior phase evidence: accepted Track A authoring return
+(`docs/reviews/CVF_DSH_UC01_AUTHORING_WORKER_RETURN_2026-09-12.md`, material
+closure `1b5972fe3ac322948f02fe998ad5b6837f4e9e91`) and the paired baseline's
+Existing Owner Dependency Set table.
+
+Next forbidden skip: editing or activating Track B (consumer-classification
+enrichment) without its own reviewed baseline and work order; hand-editing
+`skill-index.json` instead of regenerating it.
+
+Runtime/provider proof: none performed or claimed here; no provider/live
+call was made.
+
+Claim boundary: registry and generated-index license-metadata correction
+only; no behavioral enrichment, package execution, or runtime readiness
+claim.
+
+
+## Track A Closure
+
+Track A CLOSED_PASS_BOUNDED; Track B remains HOLD. Completion: `docs/reviews/CVF_DSH_UC01_TRACK_A_COMPLETION_REVIEW_2026-09-13.md`. Execution instructions above are historical; no repeat execution is authorized.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Metadata delta | license field and generated echo only | verified two-line git diff | PASS |
+| Runtime evidence | no runtime action | no runtime action performed or claimed | PASS |
+| Worker return | COMPLETE_PENDING_REVIEW | COMPLETE_PENDING_REVIEW with scoped checks PASS | PASS |
