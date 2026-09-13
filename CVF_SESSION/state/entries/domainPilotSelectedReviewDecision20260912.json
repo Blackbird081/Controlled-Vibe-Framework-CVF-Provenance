@@ -1,5 +1,5 @@
 {
   "stateOrder": 2825,
   "stateKey": "domainPilotSelectedReviewDecision20260912",
-  "value": "Umbrella metadata reconciliation dispatched at 54b8b9ab62873f4a0412ac49e0450b36714e8007; original ZIP recovered with expected hash, 54 source IDs/68 historical obligations verified as membership only. Worker must join external findings to scoped Local acceptance and return next nominations. Local owns review and next packet; old recovery chain remains STOP/NO_SUCCESSOR. No implementation or new source acquisition."
+  "value": "Umbrella return REWORK_REQUIRED at 82bd8cd882266c3b580974cd41ef46ce35d0799e; F1-F4 consolidated repair at 32727ae3931d6c388ead6c7f9789228a8a6f2628. Valid metadata reused but full reconciliation not accepted. Worker repairs audit and produces new return; Local owns independent review and next packet. Original three-repo STOP/NO_SUCCESSOR unchanged; no new intake or implementation."
 }

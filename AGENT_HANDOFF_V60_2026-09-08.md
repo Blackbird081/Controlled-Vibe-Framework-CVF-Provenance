@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `82bd8cd882266c3b580974cd41ef46ce35d0799e`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `32727ae3931d6c388ead6c7f9789228a8a6f2628`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -14,7 +14,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `multi_repo_absorption_umbrella_reconciliation_dispatched`.
+- Current mode: `multi_repo_absorption_umbrella_reconciliation_rework`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +24,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_umbrella_reconciliation_dispatched`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=worker reconciles recovered umbrella metadata, then Local reviews and dispatches next evidenced source; parked checkpoint=stopped-chain successor, implementation/acquisition/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_umbrella_reconciliation_rework`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=worker repairs consolidated F1-F4, then Local reviews and selects next material-value packet; parked checkpoint=stopped-chain successor, implementation/acquisition/provider/live/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_umbrella_reconciliation_dispatched`
+`multi_repo_absorption_umbrella_reconciliation_rework`
 
 ## Purpose
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-13 current priority: Multi-repo program CONTINUES. UMBRELLA-SEED-RECONCILIATION-T1 dispatched at 54b8b9ab62873f4a0412ac49e0450b36714e8007: docs/work_orders/CVF_AGENT_WORK_ORDER_UMBRELLA_SEED_RECONCILIATION_2026-09-13.md, paired baseline docs/baselines/CVF_GC018_UMBRELLA_SEED_RECONCILIATION_2026-09-13.md. Original ZIP recovered at C:/Users/DELL/Downloads/CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip; expected SHA256 matched and seven member hashes PASS. Receipt: docs/audits/CVF_UMBRELLA_SEED_PROVENANCE_RECEIPT_2026-09-13.json. Verified membership: 54 source IDs; 40 Git locator rows/39 distinct URLs; 14 non-Git/unresolved rows; standalone historical backlog 68 unique IDs including three XD rows, with separate observed provenance. Worker joins external historical findings to scoped Local acceptance and nominates up to three next packets; exactly two outputs, WORKER_MUST_NOT_COMMIT. Local owns independent review and next dispatch in the same return cycle; no operator reminder needed. Six-mirror accepted scopes, CGE-R3 and DSH-UC01 stay closed bounded; old three-repo recovery STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR unchanged. This independent metadata task performs no QM residual scan, acquisition, source execution, implementation, external invocation, provider/live/public/deploy. Latest LHW24.
+2026-09-13 current priority: Multi-repo program CONTINUES. UMBRELLA-SEED-RECONCILIATION-T1 return is REWORK_REQUIRED at 82bd8cd882266c3b580974cd41ef46ce35d0799e: docs/reviews/CVF_UMBRELLA_SEED_RECONCILIATION_COMPLETION_2026-09-13.md. One consolidated F1-F4 rework dispatched at 32727ae3931d6c388ead6c7f9789228a8a6f2628: docs/work_orders/CVF_AGENT_WORK_ORDER_UMBRELLA_SEED_RECONCILIATION_REWORK_2026-09-13.md. Repair receipt strings, per-source/per-obligation Local dispositions and hashes, MCP/ECC nomination integrity, read-depth and SCEC lineage. Reuse valid 54/68 membership and joins; original return retained with disclosed vocabulary-only reviewer packaging. Worker edits existing audit and creates new rework return only; WORKER_MUST_NOT_COMMIT. Local owns review and next material-value packet in the same return cycle; no operator reminder needed. Original ZIP and seven member hashes remain verified in provenance receipt; current absorption is not complete. MCP identity already evidenced by T0 receipt/audit; no separate trivial lookup packet. Six-mirror scoped acceptances, CGE-R3 and DSH-UC01 remain bounded; old three-repo recovery STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR unchanged. No new-source acquisition, QM residual scan, source execution, implementation, external invocation, provider/live/public/deploy. Latest LHW24.
 `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; current pilot permits bounded initial acquisition/survey only. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
