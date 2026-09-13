@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-09-13
 Batch ID: DSH-UC01-B
 Authoring base head: c1c3e2d1bd372d8c441edb1ad97fa8d5cb544723
@@ -75,12 +75,11 @@ All other paths are outside worker ownership. The baseline dependency table is b
 | docs/reference/agent_system_skills/truth/packets/cvf-engineering-code-simplification.json | Preserve historical truth and receipt |
 | docs/reference/agent_system_skills/truth/generated/skill-truth-index.json | Packet source unchanged |
 | docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md | Local author/reviewer owned |
-| docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md | Local release/status owner |
-| docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_COMPLETION_REVIEW_2026-09-13.md | Local reviewer/closer must author after return; worker must not create |
-| CVF_SESSION/** | No worker continuity mutation |
 | CVF_SESSION_MEMORY.md | No worker continuity mutation |
 | AGENT_HANDOFF_V60_2026-09-08.md | No worker handoff mutation |
 | .private_reference/source_mirrors/** | Read-only pinned source evidence |
+
+Terminal role reconciliation: the table above retains paths forbidden in the current Local closure phase. The work order, completion review and three authority-fingerprint paths are Local-owned under Reviewer Closure Conversion and the exact atomic manifest; they remain forbidden to the worker. All CVF_SESSION paths outside that exact Local authority remain outside closure scope. The original worker-phase table remains available at executionBaseHead; no worker write permission is added.
 
 ## Execution Plan
 
@@ -186,7 +185,7 @@ Resolver query: taskClass=``, role=`dispatcher`, lifecyclePhase=`pre-dispatch`
 | Field | Value |
 | --- | --- |
 | applicableCheckersRead | governance/compat/check_work_order_dispatch_quality.py; governance/compat/check_work_order_dispatch_quality_core.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_epistemic_process_packet.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_adif_defect_registry_disclosure.py; governance/compat/check_skill_truth_packets.py |
-| literalTokensReviewed | DISPATCH_READY; Purpose; Source Verification Block; ACCEPT; Authority Chain; Agent Roles; Write Ownership; Execution Plan; Acceptance Criteria; Review Gate; Closure Checklist; Return-To-Orchestrator Conditions; Expected Result; Evidence Comparison; Contradiction; Claim Update |
+| literalTokensReviewed | CLOSED_PASS_BOUNDED; Purpose; Source Verification Block; ACCEPT; Authority Chain; Agent Roles; Write Ownership; Execution Plan; Acceptance Criteria; Review Gate; Closure Checklist; Return-To-Orchestrator Conditions; Expected Result; Evidence Comparison; Contradiction; Claim Update |
 | gateRunPurpose | Confirm the source-verified released contract with pre-dispatch checks before worker execution |
 | claimBoundary | Targeted checker and dependency reads only; no claim that all repository checkers were read |
 
@@ -370,7 +369,7 @@ Local finishes release/continuity before worker begins; no concurrent writes. Wo
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | Local dispatches and reviews; internal worker executes Track B only after release and returns pending evidence |
 | phase | pre-dispatch through worker-return |
-| baseHeadFor(phase) | authoringBaseHead=c1c3e2d1bd372d8c441edb1ad97fa8d5cb544723; dispatchBaseHead=56b171d576850e50f966dbaa7fc61a717107d375; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=SET_BY_REVIEWER |
+| baseHeadFor(phase) | authoringBaseHead=c1c3e2d1bd372d8c441edb1ad97fa8d5cb544723; dispatchBaseHead=56b171d576850e50f966dbaa7fc61a717107d375; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=ff714d40a6517637e96536321e530599062a85e3 |
 | changedSetScope(phase) | worker: the exact five paths in Write Ownership; dispatcher: paired baseline and this work order |
 | traceScope(phase, actor) | metadata diff, generator command and bounded checks; no runtime/provider trace |
 | commitOwner(phase) | Local; WORKER_MUST_NOT_COMMIT |
@@ -381,22 +380,22 @@ Local finishes release/continuity before worker begins; no concurrent writes. Wo
 
 | Field | Value |
 | --- | --- |
-| Actor | Local orchestrator |
+| Actor | Local reviewer/closer |
 | Provider or surface | internal provenance workspace |
-| Session or invocation | DSH-UC01-B contract release 2026-09-13 |
+| Session or invocation | Track B closure 2026-09-13 |
 | Working directory | repository root |
-| Command or tool surface | selected full source reads, reused scaffold/ADIF evidence, release authoring and scoped gates |
-| Target paths | docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md; docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md |
-| Allowed scope source | operator continue instruction and accepted novelty decision |
-| Before status evidence | clean worktree at 56b171d576850e50f966dbaa7fc61a717107d375 |
-| After status evidence | two amended release contracts only |
-| Diff evidence | git status --short --untracked-files=all; staged exact manifest |
-| Approval boundary | release preparation only; no worker payload edited |
-| Claim boundary | bounded release; no execution proof |
-| Agent type | dispatcher |
-| Invocation ID | dsh-uc01-b-contract-release-2026-09-13 |
-| Expected manifest | docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md; docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md |
-| Actual changed set | docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md; docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md |
+| Command or tool surface | bounded git diff, reviewer-return preflight, report correction, atomic closure packaging |
+| Target paths | docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/SKILL.md; docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/skill.source.json; docs/reference/agent_system_skills/registry/entries/cvf-engineering-code-simplification.json; docs/reference/agent_system_skills/generated/skill-index.json; docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_WORKER_RETURN_2026-09-13.md; docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_COMPLETION_REVIEW_2026-09-13.md; docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
+| Allowed scope source | released work order Reviewer Closure Conversion and Core Guard Self-Protection Authorization |
+| Before status evidence | HEAD ff714d40a6517637e96536321e530599062a85e3; five worker paths pending, no staged content |
+| After status evidence | ten exact atomic closure paths pending Local commit |
+| Diff evidence | git diff --name-status; staged manifest and whitespace check |
+| Approval boundary | close Track B only; no new candidate release |
+| Claim boundary | advisory implementation and provenance correctness, no efficacy or runtime proof |
+| Agent type | reviewer/closer |
+| Invocation ID | dsh-uc01-b-closure-2026-09-13 |
+| Expected manifest | docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/SKILL.md; docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/skill.source.json; docs/reference/agent_system_skills/registry/entries/cvf-engineering-code-simplification.json; docs/reference/agent_system_skills/generated/skill-index.json; docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_WORKER_RETURN_2026-09-13.md; docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_COMPLETION_REVIEW_2026-09-13.md; docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
+| Actual changed set | docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/SKILL.md; docs/reference/agent_system_skills/packages/cvf-engineering-code-simplification/skill.source.json; docs/reference/agent_system_skills/registry/entries/cvf-engineering-code-simplification.json; docs/reference/agent_system_skills/generated/skill-index.json; docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_WORKER_RETURN_2026-09-13.md; docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_COMPLETION_REVIEW_2026-09-13.md; docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -581,3 +580,31 @@ before repair; unknown ownership forbids worker redispatch.
 | checkerReadAheadConfirmation | governance/compat/check_dispatch_scaffold_provenance.py; governance/compat/check_dispatch_prompt_envelope.py; governance/compat/check_absorption_blindspot_control_presence.py; governance/compat/check_work_order_dispatch_quality_range.py; governance/compat/check_work_order_dispatch_quality_core.py; governance/compat/check_gate_to_role_closeability.py |
 | docOnlyNewFields | none; existing canonical field names reused |
 | claimBoundary | Release-contract authoring only; no worker payload or runtime execution |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md | CLOSED_PASS_BOUNDED; dispatch history retained at executionBaseHead | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_COMPLETION_REVIEW_2026-09-13.md | Local bounded acceptance | PASS |
+| Roadmap state | N/A | decision-derived existing-owner amendment; no roadmap transition | N/A with reason: no dedicated roadmap |
+| Registry JSON | docs/reference/agent_system_skills/registry/entries/cvf-engineering-code-simplification.json | sourceArtifacts additions only; generated index echo matches | PASS |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | existing scan registry unchanged; no new corpus scan | PASS |
+| External evidence digest | docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md | selected DeepSeek skill SHA-256 1055627086086ab4c3b3d7206535b5e36080eba84196ea63bc8b21d1c70573a2; admitted source hashes retained | PASS |
+| System loop interlock | N/A | no runtime/loop state transition | N/A with reason: advisory amendment |
+| Session continuity | CVF_SESSION/state/entries/nextAllowedMove.json | Local synchronizes closure material SHA in separate continuity commit | N/A with reason: post-material continuity |
+
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Guidance | B1-B7 behavior-preserving semantics and separate source attribution | Exact new section and full DeepSeek MIT notice inspected | PASS |
+| JSON delta | Only authorized fields and index echo | sourceArtifacts in registry; sourceArtifacts/cvfAdaptationBoundary in package source | PASS |
+| Runtime evidence | no new execution or lifecycle proof | no runtime/provider action claimed; historical truth unchanged | PASS |
+| Worker return | pending evidence with exact five paths | received at unchanged executionBaseHead; reviewer preflight PASS | PASS |
+
+
+## Track B Closure
+
+Local accepts the exact five-path worker implementation at executionBaseHead ff714d40a6517637e96536321e530599062a85e3. Completion: `docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_COMPLETION_REVIEW_2026-09-13.md`. The frozen baseline remains source authority; this work order is terminal and must not be re-executed. All original worker instructions above are retained as dispatch history. Closure status and currentAuthority work-order hash are synchronized atomically; mode and next move follow the actual material commit.

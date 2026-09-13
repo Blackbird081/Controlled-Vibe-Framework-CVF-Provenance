@@ -45,6 +45,43 @@ Use when a governed CVF task matches the `code-simplification` package pattern a
 | Acceptance evidence | AGSK-R3 worker return; AGSK-R5 eligibility audit; SCPL-T2 selection profile coverage; ASCP-P4-P6 production scale-up completion; generated index checks; representative live proof |
 | Trigger patterns | simplify code, refactor for clarity, reduce complexity, remove duplication |
 
+## Consumer Evidence Before Simplification
+
+Before proposing removal or simplification, record the consumers found and classify their roles as runtime use, supporting verification/documentation, or unresolved use. Search identifiers and configuration/wire references, then inspect relevant call sites; record limits such as dynamic dispatch or external callers. If proposed removal changes supported behavior, route it as a feature decision under the current work order rather than treating it as cleanup. If usage or obligations remain unclear, defer the candidate. Supporting artifacts can be contract evidence. Missing matches alone do not prove safe deletion. Refactoring that preserves behavior remains eligible under existing scope and checks.
+
+The categories classify consumers and evidence, not the candidate itself. Mixed consumer roles are allowed. Record evidence paths/locators, search limits, behavior impact and proposed disposition; no new mandatory file format or checker is introduced.
+
+### Source Attribution
+
+- Primary source: upstream `code-simplification` skill, `https://github.com/addyosmani/agent-skills.git`, pinned commit `aba7c4e9695c363e65cb59effe926c7f1d1abe3d`, `skills/code-simplification/SKILL.md`. MIT License, Copyright (c) 2025 Addy Osmani.
+- Supplemental source for the consumer-evidence procedure above: `https://github.com/deepseek-ai/deepseek-harness.git`, pinned commit `cd5ef8148158c3a752a658978873241fdf8e2bbc`, `.agents/skills/dsh-find-simplifications/SKILL.md`, "Prove Or Reject Each Candidate" section. This package remains a CVF adaptation of the primary Addy source; the DeepSeek pin supplies this one additive procedure only, not the package identity.
+
+DeepSeek MIT License notice:
+
+```
+MIT License
+
+Copyright (c) 2026 DeepSeek
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
 ## Risk And Authority
 
 | Field | Value |

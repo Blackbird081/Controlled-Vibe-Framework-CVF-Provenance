@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md",
     "baselineSha256": "8a8267b2304f1a40f46bd26036c24ebc95ace4a6768b5955b635ebb4d20ef330",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md",
-    "workOrderSha256": "e1c333718c7b34df98ce6f1a81f0f543b91466bb3653ef8837162364e5b4a53d"
+    "workOrderSha256": "b4f14c21e9f049f15b0834b2f71af3593677116ef4a208097d04f9023dff26d7"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
