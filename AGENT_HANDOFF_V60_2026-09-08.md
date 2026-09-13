@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `c3b38dffda7f00778803d2c976926064d8f86b15`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `0c83c7c458d73863a854c66f4ced6990a1e625f1`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -24,7 +24,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=validate and commit QM-RUNTIME-VALUE-R2, then relay to internal worker; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=relay committed QM-RUNTIME-VALUE-R2 to internal worker; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
 
 ## Current Mode
 
@@ -92,7 +92,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-Current authority: docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R2_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R2_2026-09-14.md. R2 independently covers runs/sessions/processes at the unchanged QM pin. R1 is accepted at c3b38dffda7f00778803d2c976926064d8f86b15. Local validates and commits R2 before operator relay; no worker execution yet.
+Current authority: docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R2_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R2_2026-09-14.md. R2 independently covers runs/sessions/processes at the unchanged QM pin. R1 is accepted at c3b38dffda7f00778803d2c976926064d8f86b15. R2 dispatch committed at 0c83c7c458d73863a854c66f4ced6990a1e625f1; ready for operator relay, no worker execution yet.
 
 ## Closure Evidence
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. R1 evidence is accepted at c3b38dffda7f00778803d2c976926064d8f86b15. Current authority is QM-RUNTIME-VALUE-R2 baseline/work order for 27 exact-pin target blobs in src/runs, src/sessions and src/processes, disjoint from R1. Local validates and commits dispatch, then operator relays to internal worker. Worker writes only the two R2 evidence outputs without commit; static source and selected-test reads only, no upstream execution. Local reviews and continues remaining QM, Agentgateway and DeepSeek Harness accounting. All three sources remain INCOMPLETE. No stopped-chain successor, new repository, implementation, provider/live/public/deploy or program exit; M4/M5 remain proposals. Latest LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. R1 evidence is accepted at c3b38dffda7f00778803d2c976926064d8f86b15. Current authority is QM-RUNTIME-VALUE-R2 baseline/work order for 27 exact-pin target blobs in src/runs, src/sessions and src/processes, disjoint from R1. Dispatch committed at 0c83c7c458d73863a854c66f4ced6990a1e625f1; operator may relay to internal worker now. Worker writes only the two R2 evidence outputs without commit; static source and selected-test reads only, no upstream execution. Local reviews and continues remaining QM, Agentgateway and DeepSeek Harness accounting. All three sources remain INCOMPLETE. No stopped-chain successor, new repository, implementation, provider/live/public/deploy or program exit; M4/M5 remain proposals. Latest LHW24.
 
 ## Parked Checkpoints
 
