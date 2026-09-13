@@ -24,7 +24,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=continue the active three-repository program with independent QM runtime/use-case recovery; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute committed QM-RUNTIME-VALUE-R1 and review its return; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
 
 ## Current Mode
 
@@ -92,7 +92,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-Current authority: historical rework pair in bootstrap; no active worker lane. Reviewer STOP disposition: docs/reviews/CVF_THREE_REPO_RECOVERY_EVIDENCE_REWORK_COMPLETION_2026-09-13.md. Same-chain successor forbidden; broader program persists.
+Current authority: docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R1_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R1_2026-09-14.md, committed at 089c5c9ceb7489c50942f3ad0d3fa6f383207374. Worker lane is released for operator relay; worker writes two evidence outputs and does not commit. The stopped aggregate recovery chain remains closed to successors; this is an independent per-source lane.
 
 ## Closure Evidence
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-13 current priority: PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. External pattern response accepted bounded at b177226d94a23d00112d4b7f4644a4c994e23031 and method reuse remains conditionally approved, but ending the external comparison did not end Local absorption. Machine continuity repair af137b631 now blocks leaving this incomplete batch without terminal per-source accounting or a governed operator scope decision. Local next action: independently admit a QM runtime/use-case recovery lane within the same program, beginning from auth, identity, credentials and sandbox residuals and existing owner/consumer evidence. Agentgateway current-head/use-case recovery and DeepSeek DSH-001/DSH-005 remain INCOMPLETE and must later receive terminal accepted, no-new-value, deferred-with-trigger, rejected or blocked-with-reason accounting. Do not rename or reopen either STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR repair chain; use independent per-source lanes. ARCH-ABS-009 and SKILL-SRC-005 return to backlog and are not next actions. External remains advisory; Local owns source-derived runtime coverage, private-CVF verification and final absorption. No active worker yet, no source implementation/provider/live/public/deploy. Local owns continuation without operator reminders; latest LHW24.
+2026-09-14 current priority: PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. Execute committed QM-RUNTIME-VALUE-R1 through operator relay. Local reviews the two no-commit outputs, then continues remaining QM regions, Agentgateway and DeepSeek Harness until terminal per-source accounting. No other repo package, stopped-chain successor, source implementation, provider/live/public/deploy action, or external authority is open. Local owns continuation without operator reminders; latest LHW24.
 `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; current pilot permits bounded initial acquisition/survey only. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
@@ -125,7 +125,7 @@ authority, production deployment, or any parked project lane.
 ## Active Boundary
 
 - MFRP-FINGERPRINT-T1 is materially closed; worker lane released. TPGR T1 remains closed.
-  Next: resume three-repository residual recovery and external reconciliation; prepare bounded packet; no implementation lane; other candidates remain parked.
+  Next: execute and review QM-RUNTIME-VALUE-R1; continue the active three-repository program; no implementation lane; other candidates remain parked.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
 - Manual relay is content-neutral transport under `cvf.cross-workspace-evidence-relay@1.0.0`; remote findings remain advisory until Local Agent verification and final technical disposition. Once Local issues a work order, execution is internal shared-workspace work and the relay loop ends.
