@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "domain_pilot_candidates_deferred",
+  "currentMode": "domain_pilot_three_repo_recovery",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "AGW-UC02 bounded novelty decision committed at 8ae6e832c7d88817355a8e630d44cf881e41f113: docs/reviews/CVF_AGW_UC02_BOUNDED_NOVELTY_DECISION_2026-09-13.md. Final disposition DEFER_WITH_TRIGGER. Response-PII masking value retained, but no named delivery requirement; replacing UNSAFE_CONTENT retry/block with masking is rejected as proposed. Webhook deferred until a named external-policy consumer and disclosure/failure contract exist. Next: retain decision and re-triage only on concrete trigger evidence; no automatic worker dispatch or implementation. DSH-UC01 remains closed; DSH-UC02, QM-UC01, AGW-UC01 and QM-UC02 retain deferred triggers. Broad absorption, upstream execution, webhook/provider/live calls, public/deploy, runtime proof and RABA/DARA-T5/P5/P6 remain HOLD; latest LHW24.",
+  "nextAllowedMove": "Operator restored the continuing Agentgateway/QM/DeepSeek Harness program; scope correction 18325e1cf8b4f740bcc257cb7c7ee50026d4e60c: docs/reviews/CVF_THREE_REPO_ABSORPTION_SCOPE_RECOVERY_2026-09-13.md. All three remain ABSORPTION_NOT_COMPLETE. Next: prepare and review one bounded residual-recovery packet for the three admitted mirrors, QM first; reuse inventories and accepted comparisons, recover unread operational/skill/test value, classify maturity, and reconcile external versus Local evidence. Do not wait on deferred-candidate demand before remaining source recovery. Existing candidate deferrals and DSH-UC01 closure remain valid. Missing QM external nomination stays explicit; no fabricated external comparison. No automatic implementation, broad source-pool expansion, upstream execution, provider/live/public/deploy or RABA/DARA-T5/P5/P6 release; latest LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
