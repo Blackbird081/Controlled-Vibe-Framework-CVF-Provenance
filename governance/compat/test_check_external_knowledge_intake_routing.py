@@ -158,6 +158,34 @@ class CoordinationBindingTests(unittest.TestCase):
         value["parentArtifact"] = self.path
         self.write(MODULE.STATE_BINDING, json.dumps({"stateKey": "externalLocalAbsorptionCoordination", "value": value}))
 
+    def program(self, **updates):
+        value = {
+            "schemaVersion": MODULE.ACTIVE_PROGRAM_SCHEMA,
+            "programId": "PILOT-THREE-REPO",
+            "status": MODULE.ACTIVE_PROGRAM_STATUS,
+            "sourceIds": ["agw", "qm", "dsh"],
+            "sourceStates": {"agw": "INCOMPLETE", "qm": "INCOMPLETE", "dsh": "INCOMPLETE"},
+            "nextSourceId": "qm",
+            "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
+            "expansionAllowed": False,
+            "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
+            "exitEvidence": [],
+            "operatorScopeDecision": None,
+            "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY",
+        }
+        value.update(updates)
+        self.write(MODULE.ACTIVE_PROGRAM_PATH, json.dumps({
+            "stateKey": "activeExternalAbsorptionProgram", "value": value
+        }))
+        self.write(MODULE.NEXT_MOVE_PATH, json.dumps({
+            "stateKey": "nextAllowedMove",
+            "value": (
+                f"PROGRAM_ID={value['programId']}; NEXT_SOURCE_ID={value['nextSourceId']}; "
+                "NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false"
+            ),
+        }))
+        return value
+
     def test_valid_changed_workorder_and_state(self):
         self.state()
         self.assertEqual([], MODULE.check_paths([self.path, MODULE.STATE_BINDING]))
@@ -259,8 +287,67 @@ class CoordinationBindingTests(unittest.TestCase):
     def test_changed_collector_includes_state_and_handoff(self):
         paths = []
         MODULE._add_changed_path(paths, MODULE.STATE_BINDING)
+        MODULE._add_changed_path(paths, MODULE.ACTIVE_PROGRAM_PATH)
         MODULE._add_changed_path(paths, "AGENT_HANDOFF_V61_2026-09-13.md")
-        self.assertEqual(2, len(paths))
+        self.assertEqual(3, len(paths))
+
+    def test_active_program_with_in_batch_next_source_passes(self):
+        self.write(MODULE.CORE_PATH, '{"currentMode":"multi_repo_absorption_local_recovery"}')
+        self.state()
+        self.program()
+        self.assertEqual([], MODULE.check_coordination([MODULE.CORE_PATH, MODULE.ACTIVE_PROGRAM_PATH]))
+
+    def test_active_program_rejects_next_source_outside_batch(self):
+        self.write(MODULE.CORE_PATH, '{"currentMode":"multi_repo_absorption_local_recovery"}')
+        self.state()
+        self.program(nextSourceId="ARCH-ABS-009")
+        errors = MODULE.check_coordination([MODULE.CORE_PATH, MODULE.ACTIVE_PROGRAM_PATH])
+        self.assertTrue(any("must belong to the active program" in item for item in errors))
+
+    def test_active_program_rejects_next_move_projection_mismatch(self):
+        self.write(MODULE.CORE_PATH, '{"currentMode":"multi_repo_absorption_local_recovery"}')
+        self.state()
+        self.program()
+        self.write(MODULE.NEXT_MOVE_PATH, json.dumps({
+            "stateKey": "nextAllowedMove", "value": "Next is ARCH-ABS-009"
+        }))
+        errors = MODULE.check_coordination([MODULE.CORE_PATH, MODULE.NEXT_MOVE_PATH])
+        self.assertTrue(any("does not project" in item for item in errors))
+
+    def test_missing_active_program_fails_in_multi_repo_mode(self):
+        self.write(MODULE.CORE_PATH, '{"currentMode":"multi_repo_absorption_local_recovery"}')
+        self.state()
+        errors = MODULE.check_coordination([MODULE.CORE_PATH])
+        self.assertTrue(any(MODULE.ACTIVE_PROGRAM_PATH in item for item in errors))
+
+    def test_incomplete_program_cannot_exit_or_expand(self):
+        self.write(MODULE.CORE_PATH, '{"currentMode":"multi_repo_absorption_local_recovery"}')
+        self.state()
+        for updates, phrase in [
+            ({"expansionAllowed": True}, "expansionAllowed=false"),
+            ({"nextActionClass": "ADMIT_OTHER_PROGRAM"}, "continue the active program"),
+            ({"exitDisposition": "TERMINAL_ACCOUNTING_ACCEPTED"}, "retain its program boundary"),
+        ]:
+            with self.subTest(updates=updates):
+                self.program(**updates)
+                errors = MODULE.check_coordination([MODULE.CORE_PATH, MODULE.ACTIVE_PROGRAM_PATH])
+                self.assertTrue(any(phrase in item for item in errors))
+
+    def test_terminal_exit_requires_all_terminal_and_evidence(self):
+        self.write(MODULE.CORE_PATH, '{"currentMode":"multi_repo_absorption_local_recovery"}')
+        self.state()
+        states = {"agw": "TERMINAL_ACCEPTED", "qm": "INCOMPLETE", "dsh": "TERMINAL_DEFERRED_WITH_TRIGGER"}
+        self.program(status="TERMINAL_ACCOUNTED", sourceStates=states,
+                     exitDisposition="TERMINAL_ACCOUNTING_ACCEPTED")
+        errors = MODULE.check_coordination([MODULE.CORE_PATH, MODULE.ACTIVE_PROGRAM_PATH])
+        self.assertTrue(any("terminal source accounting" in item for item in errors))
+
+    def test_operator_scope_exit_requires_governed_decision(self):
+        self.write(MODULE.CORE_PATH, '{"currentMode":"multi_repo_absorption_local_recovery"}')
+        self.state()
+        self.program(status="SCOPE_EXIT_AUTHORIZED", exitDisposition="OPERATOR_SCOPE_DECISION")
+        errors = MODULE.check_coordination([MODULE.CORE_PATH, MODULE.ACTIVE_PROGRAM_PATH])
+        self.assertTrue(any("operatorScopeDecision" in item for item in errors))
 
 
 if __name__ == "__main__":

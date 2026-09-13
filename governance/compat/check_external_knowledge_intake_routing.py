@@ -88,9 +88,11 @@ NEXT_SECTION_PATTERN = re.compile(r"^##\s+.+$", re.MULTILINE)
 METHOD_PATH = "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md"
 BINDING_HEADING = "External/Local Coordination Binding"
 STATE_BINDING = "CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json"
+ACTIVE_PROGRAM_PATH = "CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json"
+NEXT_MOVE_PATH = "CVF_SESSION/state/entries/nextAllowedMove.json"
 CORE_PATH = "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json"
 CONTINUITY_PATHS = {
-    STATE_BINDING, CORE_PATH, "CVF_SESSION/state/entries/nextAllowedMove.json",
+    STATE_BINDING, ACTIVE_PROGRAM_PATH, CORE_PATH, NEXT_MOVE_PATH,
     "CVF_SESSION/state/entries/domainPilotSelectedReviewDecision20260912.json",
     "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json", "CVF_SESSION_MEMORY.md",
 }
@@ -106,6 +108,32 @@ EXPECTED_CONTRACT = {
     },
 }
 MAX_PARENT_DEPTH = 8
+ACTIVE_PROGRAM_SCHEMA = "cvf.externalAbsorptionProgramContinuity.v1"
+ACTIVE_PROGRAM_STATUS = "LOCAL_RUNTIME_VALUE_RECOVERY"
+TERMINAL_PROGRAM_STATUSES = {"TERMINAL_ACCOUNTED", "SCOPE_EXIT_AUTHORIZED"}
+SOURCE_STATUSES = {
+    "INCOMPLETE",
+    "TERMINAL_ACCEPTED",
+    "TERMINAL_NO_NEW_VALUE",
+    "TERMINAL_DEFERRED_WITH_TRIGGER",
+    "TERMINAL_REJECTED",
+    "BLOCKED_WITH_REASON",
+}
+TERMINAL_SOURCE_STATUSES = SOURCE_STATUSES - {"INCOMPLETE"}
+PROGRAM_FIELDS = {
+    "schemaVersion",
+    "programId",
+    "status",
+    "sourceIds",
+    "sourceStates",
+    "nextSourceId",
+    "nextActionClass",
+    "expansionAllowed",
+    "exitDisposition",
+    "exitEvidence",
+    "operatorScopeDecision",
+    "chainBoundary",
+}
 
 
 def _is_continuity_path(path: str) -> bool:
@@ -152,6 +180,107 @@ def _json_section(text: str, heading: str) -> dict:
     return value
 
 
+def _safe_governed_evidence_path(path: object) -> bool:
+    if not isinstance(path, str) or not path:
+        return False
+    return (
+        "\\" not in path
+        and ":" not in path
+        and ".." not in path.split("/")
+        and _is_governed_markdown_path(path)
+        and (REPO_ROOT / path).is_file()
+    )
+
+
+def _check_active_program(read, *, continuity: bool, mode: str, paths: list[str]) -> list[str]:
+    """Validate structured batch continuity and its projection into next move."""
+    required = (
+        ACTIVE_PROGRAM_PATH in paths
+        or (continuity and "multi_repo_absorption" in mode.casefold())
+        or (continuity and (REPO_ROOT / ACTIVE_PROGRAM_PATH).is_file())
+    )
+    if not required:
+        return []
+    try:
+        entry = json.loads(read(ACTIVE_PROGRAM_PATH), object_pairs_hook=_unique_json)
+        if entry.get("stateKey") != "activeExternalAbsorptionProgram":
+            raise ValueError("invalid active-program stateKey")
+        program = entry.get("value")
+        if not isinstance(program, dict) or set(program) != PROGRAM_FIELDS:
+            raise ValueError("active program has missing or unknown fields")
+        if program["schemaVersion"] != ACTIVE_PROGRAM_SCHEMA:
+            raise ValueError("unsupported active-program schemaVersion")
+        if not isinstance(program["programId"], str) or not program["programId"]:
+            raise ValueError("programId must be non-empty")
+        sources = program["sourceIds"]
+        states = program["sourceStates"]
+        if (
+            not isinstance(sources, list)
+            or not sources
+            or any(not isinstance(item, str) or not item for item in sources)
+            or len(set(sources)) != len(sources)
+        ):
+            raise ValueError("sourceIds must be a non-empty unique string list")
+        if not isinstance(states, dict) or set(states) != set(sources):
+            raise ValueError("sourceStates must exactly cover sourceIds")
+        if any(status not in SOURCE_STATUSES for status in states.values()):
+            raise ValueError("sourceStates contains an unsupported status")
+
+        all_terminal = all(status in TERMINAL_SOURCE_STATUSES for status in states.values())
+        decision = program["operatorScopeDecision"]
+        evidence = program["exitEvidence"]
+        if not isinstance(evidence, list) or any(not _safe_governed_evidence_path(item) for item in evidence):
+            raise ValueError("exitEvidence must contain safe existing governed Markdown paths")
+        if decision is not None and not _safe_governed_evidence_path(decision):
+            raise ValueError("operatorScopeDecision must be null or a safe existing governed Markdown path")
+        if program["chainBoundary"] != "INDEPENDENT_PER_SOURCE_LANES_ONLY":
+            raise ValueError("active program must preserve the stopped-chain boundary")
+
+        if program["status"] == ACTIVE_PROGRAM_STATUS:
+            if all_terminal:
+                raise ValueError("fully terminal source accounting must close or explicitly exit the program")
+            if program["expansionAllowed"] is not False:
+                raise ValueError("active incomplete program must set expansionAllowed=false")
+            if program["exitDisposition"] != "RETAIN_ACTIVE_PROGRAM":
+                raise ValueError("active incomplete program must retain its program boundary")
+            if program["nextActionClass"] != "CONTINUE_ACTIVE_PROGRAM":
+                raise ValueError("active incomplete program must continue the active program")
+            if program["nextSourceId"] not in sources:
+                raise ValueError("nextSourceId must belong to the active program")
+            if states[program["nextSourceId"]] != "INCOMPLETE":
+                raise ValueError("nextSourceId must identify an incomplete source")
+            if decision is not None:
+                raise ValueError("active retained program cannot carry an operator scope-exit decision")
+        elif program["status"] == "TERMINAL_ACCOUNTED":
+            if not all_terminal or not evidence:
+                raise ValueError("terminal exit requires terminal source accounting and exitEvidence")
+            if program["exitDisposition"] != "TERMINAL_ACCOUNTING_ACCEPTED":
+                raise ValueError("terminal program requires TERMINAL_ACCOUNTING_ACCEPTED")
+        elif program["status"] == "SCOPE_EXIT_AUTHORIZED":
+            if decision is None:
+                raise ValueError("scope exit requires a governed operatorScopeDecision")
+            if program["exitDisposition"] != "OPERATOR_SCOPE_DECISION":
+                raise ValueError("scope exit requires OPERATOR_SCOPE_DECISION")
+        else:
+            raise ValueError("unsupported active-program status")
+
+        if program["status"] in TERMINAL_PROGRAM_STATUSES:
+            return []
+        next_entry = json.loads(read(NEXT_MOVE_PATH), object_pairs_hook=_unique_json)
+        next_value = next_entry.get("value") if next_entry.get("stateKey") == "nextAllowedMove" else None
+        required_markers = (
+            f"PROGRAM_ID={program['programId']}",
+            f"NEXT_SOURCE_ID={program['nextSourceId']}",
+            "NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM",
+            "EXPANSION_ALLOWED=false",
+        )
+        if not isinstance(next_value, str) or any(marker not in next_value for marker in required_markers):
+            raise ValueError("nextAllowedMove does not project the active program and next-source markers")
+        return []
+    except (OSError, UnicodeError, ValueError, KeyError, TypeError, AttributeError) as exc:
+        return [f"{ACTIVE_PROGRAM_PATH}: {exc}"]
+
+
 def check_coordination(paths: list[str]) -> list[str]:
     """Bind changed declarations and explicit parents to the method; no history scan."""
     errors: list[str] = []
@@ -175,14 +304,17 @@ def check_coordination(paths: list[str]) -> list[str]:
                 errors.append(f"{path}: {exc}")
     continuity = any(_is_continuity_path(path) for path in paths)
     state_required = STATE_BINDING in paths
+    mode = ""
     if continuity:
         try:
             core = json.loads(read(CORE_PATH), object_pairs_hook=_unique_json)
+            mode = str(core.get("currentMode", ""))
             # The compact current mode is only a trigger, never contract authority.
-            state_required |= "absorp" in str(core.get("currentMode", "")).casefold()
+            state_required |= "absorp" in mode.casefold()
             state_required |= (REPO_ROOT / STATE_BINDING).is_file()
         except (OSError, UnicodeError, ValueError) as exc:
             errors.append(f"{CORE_PATH}: {exc}")
+    errors.extend(_check_active_program(read, continuity=continuity, mode=mode, paths=paths))
     if not candidates and not state_required and METHOD_PATH not in paths:
         return errors
     try:

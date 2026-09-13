@@ -622,3 +622,31 @@ constrains declarations; it does not interpret arbitrary free-form planning pros
 
 No model call, source corpus traversal or extra hook is added. The existing
 pre-dispatch/reviewer/pre-commit integration invokes the extended checker.
+
+## Active Program Continuity And Exit Gate
+
+Role and evidence ownership do not by themselves prevent a Local SOT from
+leaving an unfinished absorption batch. During a multi-repository Local
+absorption program, the source item
+`CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json` is the
+structured continuity authority. It records the program ID, exact source set,
+per-source state, next in-program source, action class, expansion posture and
+exit evidence.
+
+While any source is `INCOMPLETE`, the program must remain
+`LOCAL_RUNTIME_VALUE_RECOVERY`, set `expansionAllowed` to false, select an
+incomplete `nextSourceId` from the same source set, and project the exact
+program/next-source markers into `nextAllowedMove`. Work may use independent
+per-source lanes when a prior repair chain is stopped; it must not disguise a
+stopped-chain successor or leave the active repository set.
+
+The program may exit only through one of two machine states:
+
+- `TERMINAL_ACCOUNTED`: every source has an allowed terminal disposition and
+  at least one governed exit-evidence path exists;
+- `SCOPE_EXIT_AUTHORIZED`: a governed operator scope-decision artifact exists.
+
+An external comparison ending, a method pilot succeeding, or Local retaining
+final authority is not an absorption-program exit condition. This check reads
+only compact continuity sources and explicitly cited governed evidence paths;
+it adds no repository traversal or external/model call.
