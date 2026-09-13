@@ -1,5 +1,5 @@
 {
   "stateOrder": 2825,
   "stateKey": "domainPilotSelectedReviewDecision20260912",
-  "value": "Reviewer disposition at e1884fc900940f6388e4632511b4a47878309a55: docs/reviews/CVF_THREE_REPO_RECOVERY_EVIDENCE_REWORK_COMPLETION_2026-09-13.md. ACCEPT_BOUNDED_CORRECTIONS_AND_RETAIN_STOP; same recovery chain NO_SUCCESSOR. Verified directory counts QM src56/skills21, AGW examples34, DSH skills10; touched does not mean fully read. DSH-UC01 A/B and CGE-R3 accepted bounded, not open. Broader source backlog persists; Local owns independent acceptance-history triage before selecting a new repo. No worker lane or implementation release."
+  "value": "Six-mirror history triage at 4899ce2e947968b6615005e3827bace5d47182e1; docs/reviews/CVF_MULTI_REPO_ACCEPTANCE_HISTORY_TRIAGE_2026-09-13.md. Prior accepted scopes retained; original recovery chain STOP/NO_SUCCESSOR remains. Broader backlog not exhausted. Local owns original seed payload recovery and independent source selection; no new worker lane."
 }
