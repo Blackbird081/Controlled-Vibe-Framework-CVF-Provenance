@@ -24,7 +24,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute committed QM-RUNTIME-VALUE-R1 and review its return; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=relay consolidated QM-RUNTIME-VALUE-R1 generation-1 rework after Local packet validation; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
 
 ## Current Mode
 
@@ -92,7 +92,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-Current authority: docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R1_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R1_2026-09-14.md, committed at 089c5c9ceb7489c50942f3ad0d3fa6f383207374. Worker lane is released for operator relay; worker writes two evidence outputs and does not commit. The stopped aggregate recovery chain remains closed to successors; this is an independent per-source lane.
+Current authority: docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R1_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R1_2026-09-14.md. The first return is not accepted; generation-1 rework F1-F5 and supported gate command are the current Local amendment. Bootstrap carries the exact amended work-order hash. Operator relays to the internal worker after Local packet validation; worker owns only the two evidence outputs and cannot commit.
 
 ## Closure Evidence
 
@@ -111,8 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-14 current priority: PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. Execute committed QM-RUNTIME-VALUE-R1 through operator relay. Local reviews the two no-commit outputs, then continues remaining QM regions, Agentgateway and DeepSeek Harness until terminal per-source accounting. No other repo package, stopped-chain successor, source implementation, provider/live/public/deploy action, or external authority is open. Local owns continuation without operator reminders; latest LHW24.
-`EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; current pilot permits bounded initial acquisition/survey only. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM-RUNTIME-VALUE-R1 first return requires consolidated generation-1 rework F1-F5 under the amended active work order; original dispatch commit 089c5c9ceb7489c50942f3ad0d3fa6f383207374 is historical. Local owns packet correction and validation; operator relays to the internal worker, who repairs only the two existing evidence outputs without commit. Local reviews the returned evidence before acceptance and continues remaining QM, Agentgateway and DeepSeek Harness accounting. No stopped-chain successor, unrelated repository admission, implementation, provider/live/public/deploy or program exit. Latest LHW24.
 
 ## Parked Checkpoints
 

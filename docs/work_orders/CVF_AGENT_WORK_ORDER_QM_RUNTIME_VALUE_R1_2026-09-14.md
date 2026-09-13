@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-14
 
@@ -16,9 +16,17 @@ dispatchBaseHead: aa4282da46dc601e6b305899d2a0bac255bff553
 
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
-closureBaseHead: N/A - worker does not commit
+closureBaseHead: 5829b45a8f35d9d976c88fffc4cb4a6780faebee
 
 providerExecutionAuthority: FORBIDDEN
+
+## Closure Decision
+
+Local accepts the final evidence packet at audit SHA-256
+`b3912cfe1a6e861abf78a579d50192bb0711f0fdf8e230be371950a618604889`.
+F1-F5 are accepted; no additional worker repair or automatic redispatch.
+The original execution/rework contract below is retained as history of this
+closed lane, not continuing execution authority. Full decision: `docs/reviews/CVF_QM_RUNTIME_VALUE_R1_COMPLETION_2026-09-14.md`.
 
 ## Dispatch Prompt Envelope
 
@@ -38,10 +46,84 @@ Current-time notes: 2026-09-14; repository and mirror observations must be captu
 Do-not-misread notes: static source evidence only; no source execution, implementation, QM closure, program exit, successor, or repo substitution.
 Return contract: write exactly the two owned evidence outputs, do not commit, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
 
-This is an independent `INITIAL` QM lane inside active program
+This is rework generation 1 of the independent QM lane inside active program
 `DOMAIN-PILOT-THREE-REPO-2026-09`. It is not a successor to the stopped
 three-repo residual-recovery chain. Do not close QM or the pilot, nominate a
 different repo, or choose the next lane.
+
+## Consolidated Reviewer Rework - Generation 1
+
+Decision: REWORK_REQUIRED. Operator confirmed Local as orchestrator/reviewer,
+with the internal worker receiving this packet through operator relay.
+The operator authorized this same-scope amendment on 2026-09-14.
+No new lane, upstream execution, candidate acceptance, or program exit opens.
+The original INITIAL chain identity remains unchanged; REWORK is the dispatch
+round, not a successor chain. Worker must return generation 1 self-proof.
+
+Reviewer consumed the returned evidence and sampled M5/M10/safety/M20.
+The clean pinned mirror and all 50 path/blob/size rows matched; audit SHA-256
+at first return was cb8a10811555e44f69058d46667ed549b068a093668a897e768d474e9c321553.
+Preserve this first-return identity and original gate blockage as history.
+Do not repeat the full 50-file audit; acquire only missing/contradictory evidence.
+
+### Consolidated Finding Set
+
+Digest recipe: SHA-256 of only the five F1-F5 lines inside the following fence,
+in displayed order, UTF-8 without BOM, LF separators and one final LF.
+
+```text
+F1 | WORKER_EXECUTION_ERROR | M6/H3: replace blanket non-interoperability with a directional producer/verifier matrix. src/auth/signed-token.ts:18-37 accepts chassis legacy base64url.HMAC payloads; the reverse JOSE-to-chassis path differs. Trace the actual cross-layer consumers before calling coexistence a defect. Regression: both token directions, same/wrong secret, malformed and expiry cases distinguished by static source/test citations; no upstream execution.
+F2 | WORKER_EXECUTION_ERROR | M20/H6: reconcile the backend denominator and missing-token behavior for every enumerated backend. Sprites delegates to exec-sandbox-base.ts:155-156, which gates ensureEgress on proxy URL AND token. Separate env configuration, network enforcement, policy readback, and caller guarantees. Regression: per-backend configured/unconfigured proxy and present/absent token matrix, plus direct caller evidence or explicit unknown; do not simply replace five with six.
+F3 | WORKER_EXECUTION_ERROR | Reconcile all selected tests, not only the six disclosed sampled files. sandbox-migration-runner.test.ts is listed as fully read but records only 1-100 of 411 lines; eight selected backend tests and other selected tests lack terminal read accounting. Fully read selected tests as originally required; retain selection reasons, pin/blob SHA, actual depth, inclusion/exclusion status, and assertions versus execution distinction. Regression: selected unique paths equal terminal test-ledger paths with no missing or falsely FULL_READ row; claims based on names alone are corrected throughout M1-M20 and summary.
+F4 | WORKER_EXECUTION_ERROR | Supply the missing normalized manifest digest and exact filesystem-versus-pin reconciliation; verify all derived counts (consumerIntegrationSearches has 15 entries, not the reported 14). Bound negative CVF-owner conclusions to recorded exact roots/queries/results; an archived sandbox specification is historical evidence unless current authority is established. M5 replay behavior must be scoped to its verifier and actual consumer contract; remove unsupported whole-CVF absence, vulnerability, exactly-once, or in-memory-scale sufficiency claims. Regression: reproducible hashes/counts, owner authority and confidence agree across JSON/Markdown; preserve unknowns rather than claiming exhaustive negative proof.
+F5 | ORCHESTRATOR_PACKET_GAP | Original requiredGate supplied unsupported --work-order/--return options. Orchestrator corrects both command occurrences to the supported no-argument fast gate. Worker preserves the original blocked receipt, runs the corrected gate, records actual exit/result, and completes all applicable output-shape blocks (including convergence self-proof, Semantic Convergence Outcome, Knowledge System Reconciliation and return sections). Regression: CLI help agrees with requiredGate; READY only with a passing gate, otherwise BLOCKED_WITH_REASON; no checker edits or gate substitution.
+```
+
+### Single-Pass Dependency And Closeability Matrix
+
+| Area | Review result / owner |
+| --- | --- |
+| Contract/schema and derived projections | F3-F5; worker repairs both outputs together and reconciles every stored list/count |
+| Source authority and semantic claims | F1/F2/F4; worker reads only needed immutable source/test/consumer evidence |
+| Path/repository/negative-case boundary | Same two worker outputs, same clean mirror pin; no runtime or mirror mutation |
+| Test adequacy and failure assertions | F1-F3; static assertion reads required, execution remains forbidden |
+| Gate closeability | F5 dispatcher command repair completed here; worker may fix output defects only; unrelated/protected-path failures return to Local |
+| Review/range/commit choreography | Rework is not acceptance; Local alone owns dispatch material and continuity, later acceptance/commit; worker never stages or commits |
+
+closeabilityDisposition: CLOSEABLE
+outsideAuthorityBlockers: NONE
+nextRepairRoute: ONE_CONSOLIDATED_REWORK
+workerRedispatchAllowed: YES
+
+The supported fast gate accepts optional --pytest-target only. This static lane
+uses no such targets. Its ignored runtime gate receipts are permitted tool
+side effects, not additional authored worker outputs. Any unexpected tracked
+mutation or gate demand for unauthorized repair requires a blocked return.
+At worker startup record pre-existing Local dispatch/continuity changes and
+both existing worker outputs; compare the worker's own delta to its two-path
+manifest. Never remove or overwrite Local changes to manufacture a clean tree.
+No provider execution, source tests, fetch, commit, staging, or push is allowed.
+
+### Return And Reviewer Boundary
+
+Update exactly the existing JSON audit and Markdown return. Include one F1-F5
+response matrix, corrected dependent summaries/hypotheses/confidence/dispositions,
+and actual gate receipts. Use COMPLETE_PENDING_REVIEW only when all criteria
+pass; otherwise BLOCKED_WITH_REASON with retained evidence. Local will consume
+this response and decide acceptance; the worker must not issue another lane.
+QM remains INCOMPLETE; DOMAIN-PILOT-THREE-REPO-2026-09 remains open.
+
+### Reviewer Amendment Evidence
+
+Checker sources read: check_review_cost_control.py dispatch enums;
+check_gate_to_role_closeability.py role/phase contract;
+check_work_order_dispatch_quality.py changed-work-order applicability;
+check_semantic_convergence_control.py INITIAL versus SUCCESSOR distinction;
+run_worker_return_fast_gate.py argparse and command catalog.
+Finding learning disposition: F1-F4 WORKER_EXECUTION_ERROR; F5
+ORCHESTRATOR_PACKET_GAP. Existing Review Cost closeability SOP and literal
+output-shape gotchas own prevention; no new checker or governance rule proposed.
+Pre-dispatch validation is recorded by Local before relay readiness is claimed.
 
 ## Mission
 
@@ -87,6 +169,14 @@ agents have no role in source-level execution or final decisions.
     "novelty": "OWNER_COMPOSITION"
   },
   "pathFamilies": [
+    "docs/reviews/CVF_QM_RUNTIME_VALUE_R1_COMPLETION_2026-09-14.md",
+    "AGENT_HANDOFF_V60_2026-09-08.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+
     "docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R1_2026-09-14.md",
     "docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R1_2026-09-14.md",
     "docs/audits/CVF_QM_RUNTIME_VALUE_R1_2026-09-14.json",
@@ -372,7 +462,7 @@ passes. `COMPLETE_PENDING_REVIEW` means evidence complete for review, not accept
 
 contractProfile: WORKER_RETURN_FULL_GATE_V1
 
-requiredGate: `python governance/compat/run_worker_return_fast_gate.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R1_2026-09-14.md --return docs/reviews/CVF_QM_RUNTIME_VALUE_R1_WORKER_RETURN_2026-09-14.md`
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
 
 individualCheckerSubstitution: FORBIDDEN
 
@@ -427,7 +517,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | nextMoveSurfaces | active-program state and Local-owned completion/continuity only after review |
 
 sharedWorktreeCoordinationMode: EXPLICIT_LANE_HANDOFF
-activeLaneOwner: internal QM evidence worker after committed dispatch
+activeLaneOwner: Local reviewer/closer; worker execution complete
 laneOwnedPaths: exactly the two worker-owned output paths; mirror read-only
 dispatcherMutationBoundary: NO_MUTATION_WHILE_LANE_ACTIVE
 laneReleaseEvidence: terminal worker return and exact changed-set reconciliation
@@ -509,23 +599,23 @@ three-repository program. Local otherwise reviews and continues autonomously.
 
 Review-Dispatch Convergence Control: REQUIRED
 
-dispatchKind: INITIAL
+dispatchKind: REWORK
 dispatchSurface: INTERNAL_AGENT
 parentAssignmentId: QM-RUNTIME-VALUE-R1
-reviewRoundCount: 0
-priorFindingSetDigest: NOT_APPLICABLE_INITIAL_DISPATCH
-dependencyAuditDisposition: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
-reworkFindingDisposition: NOT_APPLICABLE_INITIAL_DISPATCH
+reviewRoundCount: 1
+priorFindingSetDigest: ec2e9e5d2b2bc84e8e16eb44c28b0eccdc25e8df0f119bfcfa551485ac565042
+dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
+reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
 newIndependentCriticalEvidence: NONE
-regressionGuardDisposition: BASELINE_NEGATIVE_TESTS_PLANNED
+regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 cumulativeExternalInvocationCount: 0
 externalInvocationCeiling: 0
 usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
 quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
-nextDispatchDisposition: INITIAL_DISPATCH
-rootCauseClusterId: NOT_APPLICABLE_INITIAL_DISPATCH
-reworkGeneration: 0
-consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
+rootCauseClusterId: QM-RUNTIME-VALUE-R1-EVIDENCE-INTEGRITY
+reworkGeneration: 1
+consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
 successorTrancheOpened: NO
 implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
 preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
@@ -586,7 +676,7 @@ applicable. Do not invoke it merely to populate evidence.
 ## Verification Commands
 
 - `python -m json.tool docs/audits/CVF_QM_RUNTIME_VALUE_R1_2026-09-14.json`
-- `python governance/compat/run_worker_return_fast_gate.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R1_2026-09-14.md --return docs/reviews/CVF_QM_RUNTIME_VALUE_R1_WORKER_RETURN_2026-09-14.md`
+- `python governance/compat/run_worker_return_fast_gate.py`
 - `git status --short --untracked-files=all`
 - `git rev-parse HEAD`
 - `git -C .private_reference/source_mirrors/yc-software__qm rev-parse HEAD`
@@ -603,7 +693,11 @@ operator to choose a different task.
 
 ## ADIF Defect Registry Disclosure
 
-Resolver command: `python governance/compat/run_adif_defect_resolver.py --task-class EXTERNAL_ABSORPTION --role WORKER --lifecycle-phase DISPATCH --json`.
+Resolver query: taskClass=`EXTERNAL_ABSORPTION`, role=`ORCHESTRATOR`, lifecyclePhase=`DISPATCH`
+
+Resolver command: `python governance/compat/run_adif_defect_resolver.py --task-class EXTERNAL_ABSORPTION --role ORCHESTRATOR --lifecycle-phase DISPATCH --json`.
+
+Returned defects: NONE_RETURNED
 Result on 2026-09-14: `items=[]`, `totalCandidates=0`, `truncated=false`.
 
 ## Negative Search And Collision Discipline
@@ -688,7 +782,7 @@ disposition. UNKNOWN is never converted to no value.
 
 | Field | Evidence |
 | --- | --- |
-| applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_external_knowledge_intake_routing.py` |
+| applicableCheckersRead | `governance/compat/check_review_cost_control.py`; `governance/compat/check_semantic_convergence_control.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_external_knowledge_intake_routing.py` |
 | literalTokensReviewed | dispatch status, commit mode, return status, program markers, SCEC initial sentinel |
 | gateRunPurpose | dispatch confirmation, not source discovery |
 | claimBoundary | validates packet structure only |
@@ -750,3 +844,76 @@ authority, provider/live behavior, public export, deployment, or production.
 DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance work order with no public artifact or sync scope.
+
+## Core Guard Self-Protection Authorization
+
+Operator authorization: on 2026-09-14 the operator confirmed Local as
+orchestrator/reviewer and approved preparing this consolidated worker rework
+and correcting the work-order gate. Same-scope continuity projection only.
+
+Protected paths:
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION_MEMORY.md`
+- `AGENT_HANDOFF_V60_2026-09-08.md`
+
+Authorized scope: current work-order hash and generation-1 next-move projection.
+Generate aggregates from sources; worker owns none of these paths.
+Rollback boundary: revert this rework amendment and its continuity projection
+only; preserve both original worker outputs and historical dispatch authority.
+No checker, hook, source runtime, public, provider, or deployment change.
+
+## Legacy Absorption Coverage Index Disposition
+
+NOT_APPLICABLE_WITH_REASON: generation-1 correction of the same pinned QM
+evidence lane; no legacy foundation owner or workflow-chain absorption.
+
+## Generation-1 Gate Failure Ownership
+
+Local pre-dispatch receipt: `.cvf/runtime/qm-r1-rework-predispatch.log`.
+The first run found dispatcher path-family/disclosure/legacy-disposition
+shape gaps; Local corrected those in this amendment. Existing worker-return
+failures are F3-F5 evidence to repair, not a passing return or accepted work.
+Worker must read the applicable checker sources and address together:
+
+- Target / Source review heading; one Semantic Convergence Outcome block;
+  full generation-1 convergence self-proof and Return-Time Closeability Recheck.
+- Negative Search And Collision Discipline; one External/Local Coordination
+  Binding; Overlap And Novelty Classification; Mandatory Blind-Spot Control
+  Block; External Repository Absorption Entry Control.
+- Literal corpus fields and valid verdict per corpus checker, and the complete
+  applicable Rescan Intelligence Hardening delta/routing/sampling contract.
+- Operation trace: separate pre-existing Local changes from worker-owned edits;
+  report the observed workspace set truthfully without claiming Local authorship.
+
+These are dependent output-shape repairs under F5, not an additional round.
+The pathFamilies additions above are Local-only continuity coverage; they do
+not expand worker write ownership. The original dispatch is already committed;
+the operator's same-scope approval authorizes this local rework amendment.
+A failing original worker return is the reason for this repair dispatch and
+is not required to pass before the worker may correct it. Final return and
+acceptance gates remain mandatory; no failure is waived.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R1_2026-09-14.md | CLOSED_PASS_BOUNDED; original dispatch preserved at 089c5c9ceb7489c50942f3ad0d3fa6f383207374 | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_QM_RUNTIME_VALUE_R1_COMPLETION_2026-09-14.md | F1-F5 accepted by Local | PASS |
+| Roadmap state | N/A | standalone work order; no dedicated roadmap transition | N/A with reason: parent program remains open |
+| Registry JSON | CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json | all three sourceStates INCOMPLETE, retained unchanged | PASS |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | existing registry retained unchanged; bounded evidence stored in paired audit; no new package or runtime admission | PASS |
+| External evidence digest | docs/audits/CVF_QM_RUNTIME_VALUE_R1_2026-09-14.json | sha256:b3912cfe1a6e861abf78a579d50192bb0711f0fdf8e230be371950a618604889 | PASS |
+| System loop interlock | N/A | no runtime or loop transition | N/A with reason: static evidence only |
+| Session continuity | CVF_SESSION/state/entries/nextAllowedMove.json | retain QM next; material SHA recorded after material commit | N/A with reason: dedicated post-material synchronization |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Audit identity | accepted final worker hash | b3912cfe1a6e861abf78a579d50192bb0711f0fdf8e230be371950a618604889 | PASS |
+| Target manifest | 50 exact-pin rows and reproducible digest | 50 matched rows; digest matched | PASS |
+| Test evidence | selected/current unique paths reconcile and pin hashes match | 30/30, zero partial, 30 SHA matches | PASS |
+| Scope boundary | only static evidence accepted | QM and three-repo program remain open; no implementation | PASS |
