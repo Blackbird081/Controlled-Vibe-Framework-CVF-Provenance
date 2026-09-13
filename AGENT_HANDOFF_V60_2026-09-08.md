@@ -24,7 +24,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=prepare the next bounded QM residual worker packet; QM-RUNTIME-VALUE-R1 accepted at c3b38dffd; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=validate and commit QM-RUNTIME-VALUE-R2, then relay to internal worker; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
 
 ## Current Mode
 
@@ -92,7 +92,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-Current authority: docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R1_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R1_2026-09-14.md. Lane CLOSED_PASS_BOUNDED at c3b38dffda7f00778803d2c976926064d8f86b15; completion decision: docs/reviews/CVF_QM_RUNTIME_VALUE_R1_COMPLETION_2026-09-14.md. F1-F5 accepted; no active worker. Local prepares the next independent QM residual packet inside the existing three-repo program.
+Current authority: docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R2_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R2_2026-09-14.md. R2 independently covers runs/sessions/processes at the unchanged QM pin. R1 is accepted at c3b38dffda7f00778803d2c976926064d8f86b15. Local validates and commits R2 before operator relay; no worker execution yet.
 
 ## Closure Evidence
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM-RUNTIME-VALUE-R1 is CLOSED_PASS_BOUNDED at c3b38dffda7f00778803d2c976926064d8f86b15; Local accepted F1-F5 and the final 50-target/30-test evidence packet in docs/reviews/CVF_QM_RUNTIME_VALUE_R1_COMPLETION_2026-09-14.md. No worker repair remains. Local next selects the next non-overlapping QM residual runtime/use-case cluster from existing source-derived ledgers and authors a bounded worker packet for operator relay. QM, Agentgateway and DeepSeek Harness remain INCOMPLETE; no new worker is dispatched yet. M4/M5 are demand-gated candidates, not implementation authority. No stopped-chain successor, unrelated repository admission, provider/live/public/deploy or program exit. Latest LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. R1 evidence is accepted at c3b38dffda7f00778803d2c976926064d8f86b15. Current authority is QM-RUNTIME-VALUE-R2 baseline/work order for 27 exact-pin target blobs in src/runs, src/sessions and src/processes, disjoint from R1. Local validates and commits dispatch, then operator relays to internal worker. Worker writes only the two R2 evidence outputs without commit; static source and selected-test reads only, no upstream execution. Local reviews and continues remaining QM, Agentgateway and DeepSeek Harness accounting. All three sources remain INCOMPLETE. No stopped-chain successor, new repository, implementation, provider/live/public/deploy or program exit; M4/M5 remain proposals. Latest LHW24.
 
 ## Parked Checkpoints
 
