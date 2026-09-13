@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`dsh_uc01_track_b_decision_accepted`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=author Track B contract draft from accepted bounded novelty decision; parked checkpoint=Track B implementation/enrichment, absorption, upstream execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
+Startup acknowledged: current mode=`dsh_uc01_track_b_contract_draft_pending_review`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=review Track B contract draft and prepare bounded release; parked checkpoint=Track B implementation/enrichment, absorption, upstream execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
 
 ## Current Mode
 
-Current mode marker: `dsh_uc01_track_b_decision_accepted`
-Current mode: `dsh_uc01_track_b_decision_accepted`; previous mode marker: `domain_pilot_initial_intake_closed`
+Current mode marker: `dsh_uc01_track_b_contract_draft_pending_review`
+Current mode: `dsh_uc01_track_b_contract_draft_pending_review`; previous mode marker: `domain_pilot_initial_intake_closed`
 
 ## Next Allowed Move
 
-2026-09-13 current priority: Track B bounded novelty decision accepted at 90ff64e858cf012bd259913e767029247335467e: ADAPT_CANDIDATE_WITHIN_EXISTING_OWNER. Decision: docs/reviews/CVF_DSH_UC01_TRACK_B_NOVELTY_DECISION_2026-09-13.md. Next: author a small Track B baseline/work-order draft for consumer-evidence guidance in the existing simplification owner; resolve exact package/registry/truth/generated dependency writes and bounded acceptance scenarios before release. Track A remains closed. Track B implementation, absorption, upstream execution, provider/live, public/deploy and RABA/DARA-T5/P5/P6 remain HOLD; latest LHW24.
-Mode: `dsh_uc01_track_b_decision_accepted`. Historical EARA closure: `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`: exact pinned Agentgateway candidate reconciliation is `SOURCE_RECONCILED` with one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT` outcomes. This is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin; current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; the pilot intake is now accepted only as bounded evidence. External Web agents remain research/advisory only; any selected absorption requires a fresh reviewed packet. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
+2026-09-13 current priority: Track B consumer-evidence contract drafted at 97750b90c26700ab2f45c18b4a0605b2dee45a38: HOLD_PENDING_LOCAL_REVIEW. Baseline: docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md. Work order: docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md. Next: Local consolidated contract review and release preparation; validate exact five-path worker manifest, seven semantic scenarios, bounded adaptation admission, source hashes and gate-to-role closeability before pre-dispatch. Track A remains closed. Track B implementation, installed absorption, upstream execution, provider/live, public/deploy and RABA/DARA-T5/P5/P6 remain HOLD; latest LHW24.
+Mode: `dsh_uc01_track_b_contract_draft_pending_review`. Historical EARA closure: `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`: exact pinned Agentgateway candidate reconciliation is `SOURCE_RECONCILED` with one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT` outcomes. This is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin; current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; the pilot intake is now accepted only as bounded evidence. External Web agents remain research/advisory only; any selected absorption requires a fresh reviewed packet. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
