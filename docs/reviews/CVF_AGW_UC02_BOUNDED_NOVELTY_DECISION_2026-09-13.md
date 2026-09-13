@@ -26,7 +26,7 @@ The following is the bounded reviewer evidence ledger, not a mirror inventory. A
 | E6 | CVF lib/output-validator.ts | READ / PARTIAL_READ | Types/patterns 17-93; validateOutput, shouldRetry, computeDecision 97-268 |
 | E7 | CVF lib/safety-workflow-chain.ts | READ / FULL_READ | LOG/STRIP/BLOCK definitions and helper behavior |
 
-E1 is preserved as supplied. SHA-256: `ea1d3faf323ab95f4816111187c0c79eab66fe7d475bd3a176050a695952a17f`. Its abbreviated source paths are expanded by the prefix map above; statements marked NOT_OPENED or PARTIAL_READ in E1 remain so. Worker read-depth claims are not independent reviewer full-read certification.
+E1 preserves the supplied text with Git line-ending normalization. Raw attachment/initial working-copy SHA-256 (13851 bytes): `ea1d3faf323ab95f4816111187c0c79eab66fe7d475bd3a176050a695952a17f`. Committed Git-blob SHA-256 (13798 bytes): `9f72d568723051fca61bc03028599b199ed7c32df4695d570d07c3eb5121c311`. Verification: Python compared raw attachment bytes with `git show 8ae6e832c:docs/reviews/evidence/CVF_AGW_UC02_NOVELTY_RESEARCH_RETURN_2026-09-13.txt`; replacing CRLF bytes with LF is the only normalization and yields MATCH. Hash the committed bytes directly, without text decoding or checkout newline conversion, for portable verification. Its abbreviated source paths are expanded by the prefix map above; statements marked NOT_OPENED or PARTIAL_READ in E1 remain so. Worker read-depth claims are not independent reviewer full-read certification.
 
 Source identity: Local `git -C .private_reference/source_mirrors/agentgateway__agentgateway rev-parse HEAD` returned `3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826`; local mirror status was clean. CVF HEAD matched the worker's base, and the initial worktree was clean. Prior intake license/freshness evidence is inherited from docs/audits/CVF_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.json; latest upstream and subtree redistribution rights were not refreshed. No external source is CVF authority.
 
@@ -46,7 +46,7 @@ No upstream or CVF application execution, live proof, network call, credential a
 | Safety/negative cases | Replacing unsafe/governance rejection with span masking is not established safe; retry budget, repeated issues, bypass block and vision branch constrain claims |
 | Test adequacy | No runtime tests required for a decision-only deferral; no historical live receipt transfers |
 | Closure range | Review base to material commit, then material commit to continuity commit; separate pre-closure checks |
-| Commit plan | One material commit, one continuity commit; no worker commit or push |
+| Commit plan | Initial material/continuity pair, followed by the disclosed hash-documentation correction and marker sync; no worker commit or push |
 
 Return-Time Closeability Recheck: documentation corrections are reviewer-owned and closeable in this bounded decision. No worker source repair or successor tranche is needed. Implementation remains HOLD.
 
@@ -185,11 +185,12 @@ valueDelta: retain response-masking value without inventing demand or weakening 
 reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 nextRoutineReviewBoundary: safety/M20 decision boundary reached; no implementation lane
 stopDisposition: DEFER_WITH_TRIGGER; no worker redispatch
-plannedCommitShape: one material decision/evidence commit and one continuity commit
+plannedCommitShape: initial material decision/evidence commit plus continuity commit; one corrective documentation commit and one handoff-marker sync
+commitPlanDisposition: EXCEPTION_WITH_REASON - post-commit raw-versus-Git hash verification exposed CRLF normalization; record both hashes without rewriting committed history. Total two material and two continuity/handoff commits. No semantic or source-code change.
 
 ## Verification
 
-Initial reviewer-fast reported two documentation-shape failures: learning next-action/N/A fields and overlap-table column labels. Both were repaired locally; no source behavior changed. Focused learning/overlap checks passed after repair; final reviewer-fast passed 68/68. The first pre-commit attempt additionally required numeric unresolved accounting and a fully shaped partial knowledge reconciliation block; these documentation fields were repaired before retry. Commit and split-range receipts record the subsequent material/continuity gates.
+Initial reviewer-fast reported two documentation-shape failures: learning next-action/N/A fields and overlap-table column labels. Both were repaired locally; no source behavior changed. Focused learning/overlap checks passed after repair; final reviewer-fast passed 68/68. The first pre-commit attempt additionally required numeric unresolved accounting and a fully shaped partial knowledge reconciliation block; these documentation fields were repaired before retry. Initial material and continuity pre-commit each passed 89/89. Post-commit inspection confirmed the raw attachment differs from its Git blob only by CRLF-to-LF normalization; the corrective documentation commit binds both representations. Split-range receipts record each homogeneous committed range.
 
 ## Checker Source Read-Ahead Block
 
