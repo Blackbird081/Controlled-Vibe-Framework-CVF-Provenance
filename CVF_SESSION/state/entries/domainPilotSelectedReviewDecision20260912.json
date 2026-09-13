@@ -1,5 +1,5 @@
 {
   "stateOrder": 2825,
   "stateKey": "domainPilotSelectedReviewDecision20260912",
-  "value": "Current: recovery first return REWORK_REQUIRED; consolidated F1-F5 decision docs/reviews/CVF_THREE_REPO_RESIDUAL_RECOVERY_COMPLETION_2026-09-13.md at 5bb2314d89de473c3d31c6764ede7ef62d5af2d6. One evidence-repair generation released under docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md; no source absorption accepted. Historical selected review ab016926888547d00101161cb96fb59183aa617e, DSH-UC01 Track A/B closure and AGW-UC02 deferrals remain valid. Multi-repo program and next-packet obligation persist beyond the current three sources; source seed counts remain unverified. Original worker report retained with Local rejection annotation; no implementation lane."
+  "value": "Reviewer disposition at e1884fc900940f6388e4632511b4a47878309a55: docs/reviews/CVF_THREE_REPO_RECOVERY_EVIDENCE_REWORK_COMPLETION_2026-09-13.md. ACCEPT_BOUNDED_CORRECTIONS_AND_RETAIN_STOP; same recovery chain NO_SUCCESSOR. Verified directory counts QM src56/skills21, AGW examples34, DSH skills10; touched does not mean fully read. DSH-UC01 A/B and CGE-R3 accepted bounded, not open. Broader source backlog persists; Local owns independent acceptance-history triage before selecting a new repo. No worker lane or implementation release."
 }

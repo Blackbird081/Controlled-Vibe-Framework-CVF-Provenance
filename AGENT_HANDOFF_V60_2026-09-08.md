@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `5bb2314d89de473c3d31c6764ede7ef62d5af2d6`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `e1884fc900940f6388e4632511b4a47878309a55`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -14,7 +14,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `multi_repo_absorption_evidence_rework`.
+- Current mode: `multi_repo_absorption_chain_stopped_reassessed`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +24,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_evidence_rework`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=relay consolidated F1-F5 rework, then review and issue next bounded program packet; parked checkpoint=implementation, acquisition, external invocation, upstream execution, provider/live/public/deployment, RABA/DARA-T5/P5/P6.
+Startup acknowledged: current mode=`multi_repo_absorption_chain_stopped_reassessed`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=Local independent backlog-status triage after retained recovery-chain stop; parked checkpoint=same-chain successor, implementation, acquisition, external/provider/live/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_evidence_rework`
+`multi_repo_absorption_chain_stopped_reassessed`
 
 ## Purpose
 
@@ -92,7 +92,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-Current authority: `docs/baselines/CVF_GC018_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md`. One consolidated F1-F5 evidence rework; original recovery return REWORK_REQUIRED; broader backlog persists.
+Current authority: historical rework pair in bootstrap; no active worker lane. Reviewer STOP disposition: docs/reviews/CVF_THREE_REPO_RECOVERY_EVIDENCE_REWORK_COMPLETION_2026-09-13.md. Same-chain successor forbidden; broader program persists.
 
 ## Closure Evidence
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-13 current priority: Multi-repository absorption program CONTINUES; AGW/QM/DSH are only the current batch. Recovery first return is REWORK_REQUIRED at 5bb2314d89de473c3d31c6764ede7ef62d5af2d6; reviewer decision docs/reviews/CVF_THREE_REPO_RESIDUAL_RECOVERY_COMPLETION_2026-09-13.md. Relay one consolidated REWORK generation 1 under docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md: F1 counts/read-depth, F2 source/CVF execution boundary, F3 canonical owners/inherited decisions, F4 license/hash/time evidence, F5 broader-backlog provenance. Worker modifies original audit and creates new return; original return is historical, worker cannot commit. After acceptance Local authors next bounded conversion, residual or next-repository packet without operator reminders, or records concrete blocker/owner/action. Reported 54-source/68-obligation seed remains unverified; current-three-only nominations never exhaust the program. Prior candidate deferrals and DSH-UC01 closure stand. No new acquisition, source execution, implementation, external invocation, provider/live/public/deploy or RABA/DARA-T5/P5/P6 release; latest LHW24.
+2026-09-13 current priority: Multi-repository program CONTINUES; recovery problem chain three-repo-residual-recovery is STOP_REASSESS_ARCHITECTURE / NO_SUCCESSOR. Material e1884fc900940f6388e4632511b4a47878309a55; reviewer disposition docs/reviews/CVF_THREE_REPO_RECOVERY_EVIDENCE_REWORK_COMPLETION_2026-09-13.md. Four exact directory sets and DSH-UC01 A/B plus CGE-R3 closure corrections accepted bounded; no full F1-F5 or source-absorption completion. No active worker lane; currentAuthority pair is historical and must not be rerun. Local next: read-only acceptance-history triage of the six other noncurrent mirrors (Addy, MinerU, Brainless, Pancake, reverse-skill, MCP), then independently admit a next-repository packet if supported. Do not rename or reset this stopped chain, open narrow QM successor, or reopen CGE-R3 from stale INDEX headers. Keep broad backlog separate from current three-source batch; 54-source/68-obligation seed unverified; missing filename search is scoped, not absolute absence. Owner Local; no operator reminder needed. No implementation/acquisition/source execution/external invocation/provider/live/public/deploy or RABA/DARA-T5/P5/P6 release; latest LHW24.
 `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; current pilot permits bounded initial acquisition/survey only. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
