@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `18325e1cf8b4f740bcc257cb7c7ee50026d4e60c`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `4b2714f8605af3c7d58a26205abaf52ca2bdeaba`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -14,7 +14,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `domain_pilot_three_repo_recovery`.
+- Current mode: `multi_repo_absorption_recovery_dispatched`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +24,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`domain_pilot_three_repo_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=resume three-repository residual recovery and external reconciliation; prepare bounded packet; no implementation lane; parked checkpoint=new implementation, other candidates, broad absorption, upstream execution, runtime/provider/live/public/deployment, RABA/DARA-T5/P5/P6.
+Startup acknowledged: current mode=`multi_repo_absorption_recovery_dispatched`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=relay released recovery packet to Claude, then Local reviews and issues next bounded program packet; parked checkpoint=implementation, acquisition, external invocation, upstream execution, provider/live/public/deployment, RABA/DARA-T5/P5/P6.
 
 ## Current Mode
 
-`domain_pilot_three_repo_recovery`
+`multi_repo_absorption_recovery_dispatched`
 
 ## Purpose
 
@@ -92,7 +92,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-Current authority: `docs/baselines/CVF_GC018_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.md`. Initial survey only; external findings remain advisory.
+Current authority: `docs/baselines/CVF_GC018_THREE_REPO_RESIDUAL_RECOVERY_2026-09-13.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_RESIDUAL_RECOVERY_2026-09-13.md`. DISPATCH_READY residual source recovery and mandatory wider-program continuation; two worker outputs, no worker commit.
 
 ## Closure Evidence
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-13 current priority: Operator restored the continuing Agentgateway/QM/DeepSeek Harness program; scope correction 18325e1cf8b4f740bcc257cb7c7ee50026d4e60c: docs/reviews/CVF_THREE_REPO_ABSORPTION_SCOPE_RECOVERY_2026-09-13.md. All three remain ABSORPTION_NOT_COMPLETE. Next: prepare and review one bounded residual-recovery packet for the three admitted mirrors, QM first; reuse inventories and accepted comparisons, recover unread operational/skill/test value, classify maturity, and reconcile external versus Local evidence. Do not wait on deferred-candidate demand before remaining source recovery. Existing candidate deferrals and DSH-UC01 closure remain valid. Missing QM external nomination stays explicit; no fabricated external comparison. No automatic implementation, broad source-pool expansion, upstream execution, provider/live/public/deploy or RABA/DARA-T5/P5/P6 release; latest LHW24.
+2026-09-13 current priority: Multi-repository absorption program CONTINUES; AGW/QM/DSH are only the current batch, not the full backlog. THREE-REPO-RECOVERY-R1 DISPATCH_READY at 4b2714f8605af3c7d58a26205abaf52ca2bdeaba; work order docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_RESIDUAL_RECOVERY_2026-09-13.md. Operator relays to Claude: recover frozen-mirror residual value, QM first; reuse accepted ledgers, reconcile external/Local evidence, and return two owned files plus mandatory programContinuation/backlog and next-batch nominations. No worker commit. On return Local reviews evidence and authors the next bounded conversion, residual or next-repository packet without waiting for operator reminders; otherwise persist a concrete blocker/owner/action. Empty review queue or child deferral never closes the umbrella program. Reported 54-source seed/68 obligations remain unverified; missing payload does not block independent recovery. All three remain ABSORPTION_NOT_COMPLETE; prior candidate deferrals and DSH-UC01 closure stand. No acquisition, source execution, implementation, external invocation, provider/live/public/deploy or RABA/DARA-T5/P5/P6 release; latest LHW24.
 `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; current pilot permits bounded initial acquisition/survey only. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints
@@ -147,7 +147,7 @@ Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-
 
 ## Core Guard Self-Protection Authorization
 
-Current closure projection is authorized by the operator correction restoring the three-repository absorption objective. Record scope recovery material 18325e1cf8b4f740bcc257cb7c7ee50026d4e60c; resume bounded recovery preparation, preserve child deferrals and implementation HOLD.
+Current dispatch projection is authorized by the operator instruction to record the larger multi-repository program and issue Claude work. Material 4b2714f8605af3c7d58a26205abaf52ca2bdeaba; release bounded recovery and preserve the umbrella backlog/next-packet obligation. Exact Local protected paths are authorized in docs/baselines/CVF_GC018_THREE_REPO_RESIDUAL_RECOVERY_2026-09-13.md.
 
 Authorized guard-maintenance scope: project the accepted P4-C1 repair dispatch
 `8347be04a0216479f754e3eee3ca71f15a149a8b`, its current authority hashes,

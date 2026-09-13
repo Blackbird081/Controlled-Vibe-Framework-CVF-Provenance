@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "domain_pilot_three_repo_recovery",
+  "currentMode": "multi_repo_absorption_recovery_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "Operator restored the continuing Agentgateway/QM/DeepSeek Harness program; scope correction 18325e1cf8b4f740bcc257cb7c7ee50026d4e60c: docs/reviews/CVF_THREE_REPO_ABSORPTION_SCOPE_RECOVERY_2026-09-13.md. All three remain ABSORPTION_NOT_COMPLETE. Next: prepare and review one bounded residual-recovery packet for the three admitted mirrors, QM first; reuse inventories and accepted comparisons, recover unread operational/skill/test value, classify maturity, and reconcile external versus Local evidence. Do not wait on deferred-candidate demand before remaining source recovery. Existing candidate deferrals and DSH-UC01 closure remain valid. Missing QM external nomination stays explicit; no fabricated external comparison. No automatic implementation, broad source-pool expansion, upstream execution, provider/live/public/deploy or RABA/DARA-T5/P5/P6 release; latest LHW24.",
+  "nextAllowedMove": "Multi-repository absorption program CONTINUES; AGW/QM/DSH are only the current batch, not the full backlog. THREE-REPO-RECOVERY-R1 DISPATCH_READY at 4b2714f8605af3c7d58a26205abaf52ca2bdeaba; work order docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_RESIDUAL_RECOVERY_2026-09-13.md. Operator relays to Claude: recover frozen-mirror residual value, QM first; reuse accepted ledgers, reconcile external/Local evidence, and return two owned files plus mandatory programContinuation/backlog and next-batch nominations. No worker commit. On return Local reviews evidence and authors the next bounded conversion, residual or next-repository packet without waiting for operator reminders; otherwise persist a concrete blocker/owner/action. Empty review queue or child deferral never closes the umbrella program. Reported 54-source seed/68 obligations remain unverified; missing payload does not block independent recovery. All three remain ABSORPTION_NOT_COMPLETE; prior candidate deferrals and DSH-UC01 closure stand. No acquisition, source execution, implementation, external invocation, provider/live/public/deploy or RABA/DARA-T5/P5/P6 release; latest LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md",
-    "baselineSha256": "8a8267b2304f1a40f46bd26036c24ebc95ace4a6768b5955b635ebb4d20ef330",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_2026-09-13.md",
-    "workOrderSha256": "b4f14c21e9f049f15b0834b2f71af3593677116ef4a208097d04f9023dff26d7"
+    "baselinePath": "docs/baselines/CVF_GC018_THREE_REPO_RESIDUAL_RECOVERY_2026-09-13.md",
+    "baselineSha256": "ffc3920d46bb840dac4801d29060db9d3e45e39e7c7e91a1d40f39211505be58",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_RESIDUAL_RECOVERY_2026-09-13.md",
+    "workOrderSha256": "17b8b2c540e74eb9cd07685c9980147c0cedede3a6bd656183ccaa3e905e3be8"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
