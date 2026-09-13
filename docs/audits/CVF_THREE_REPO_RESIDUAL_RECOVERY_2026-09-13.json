@@ -8,10 +8,127 @@
   "dispatchBaseHead": "6d9e8248fbbf044054b2e1942aef49e9c0a8e5df",
   "executionBaseHead": "dcd2f672ab4fc23baaf1ee3c5af5f3f753842567",
   "claimBoundary": "INITIAL_EVIDENCE_COLLECTION_ONLY; ABSORPTION_NOT_COMPLETE; NO_ABSORPTION_ACCEPTANCE",
+  "reworkAnnotation": {
+    "reworkOf": "THREE-REPO-RECOVERY-R1 original audit, unaccepted per docs/reviews/CVF_THREE_REPO_RESIDUAL_RECOVERY_COMPLETION_2026-09-13.md (Status: REWORK_REQUIRED)",
+    "reworkWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md",
+    "findingSetSha256": "441ca9432617dfc3bfe915024e5692d0d67998f846284601c53eaae19c30a810",
+    "reworkExecutionBaseHead": "ceaa92deb4b0a69087e8537a05b23c15eda8313a",
+    "reworkStartUtc": "2026-09-13T13:08:51Z",
+    "f1f5Disposition": "See f1f5ResolutionMatrix below. All fields in this JSON below this block are the corrected rework state; fields inherited unchanged from the original pass are marked as such where relevant. Original incorrect assertions are not restated here as facts; the original worker return remains immutable historical evidence with its own reviewer annotation."
+  },
+
+  "f1f5ResolutionMatrix": [
+    {
+      "id": "F1",
+      "defect": "Read-depth/corpus and knowledge counts were internally inconsistent",
+      "resolution": "RESOLVED_WITH_EVIDENCE_REVISION_2",
+      "evidence": "REVISED after a second reviewer finding that revision 1's arithmetic fix still lacked a real path/read-depth ledger and unverified denominators. This revision adds `uniquePathReadDepthLedger` below: a per-source, per-path table with exact `git ls-tree`-derived totals, disjoint opened/not-opened ID sets, and the literal enumeration commands used to produce them. Corrected denominators (all independently re-verified this revision via fresh `git ls-tree` on each clean pinned mirror): QM `src/` top level is 56 entries (not 58), of which 3 were touched across all passes (src/policy, src/egress-authz-main.ts, src/acl partial) and 53 were never opened -- the '53' survives, the '58' denominator does not. QM `skills-seed/` is 21 directories (not 20), of which 3 were opened across all passes (admin in the initial intake; interactive-login and use-shared-credential in the prior residual-recovery pass) and 18 were never opened. AGW `examples/` is 34 categories (not 33; the prior count miscounted the sibling `examples/README.md` file), of which 6 were opened across all passes (traffic-spiffe, llm-cost-routing, llm-prompt-guard from intake; traffic-ratelimiting-global from intake; mcp-authorization reconfirmed; traffic-egress-proxy new this pass) and 28 were never opened. DSH `.agents/skills/` has 11 tracked top-level entries, of which one (`.gitignore`) is not a skill, leaving exactly 10 skill directories: 4 opened across all passes (dsh-find-simplifications, dsh-pre-push-checks from intake; dsh-trim-cot-leakage, dsh-code-review from the prior residual-recovery pass) and 6 never opened (dsh-archive-agent-notes, dsh-doc, dsh-merging-stacked-prs, dsh-prose-standard, dsh-translate-docs, record-browser-gif) -- this replaces the prior hedge '5 of ~10' with an exact, source-verified '4 opened, 6 unopened, 10 total'. DSH `.agents/notes/` counts (1814/78/30/509 = 2431) are re-verified unchanged. knowledgeSystemReconciliation retains its prior disjoint-partition fix (12 total records, no double count)."
+    },
+    {
+      "id": "F2",
+      "defect": "Source/CVF execution boundary and maturity were overstated",
+      "resolution": "RESOLVED_WITH_EVIDENCE",
+      "evidence": "QM's buildEgressAuthzServer/checkStatus/onRequest (egress-authz-main.ts) is confirmed by direct symbol read to return only a 200/403 decision plus an x-egress-upstream-address response header, then end() the response; it does not forward CONNECT byte traffic itself (the actual forwarding component, if any, was not read and is not claimed). CVF's EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-tools.tsx was opened directly this pass (not just its test file): it begins with 'use client' (a browser-rendered React component), and its url_fetch tool calls validateUrl() (protocol-only check: http/https) then a literal BLOCKED_PATTERNS regex array against the raw URL string, then browser-native fetch(url). There is no server-side DNS-lookup step anywhere in this file for CVF to 'recheck' the way QM's decide() function does server-side; the entire resolved-IP-after-DNS-lookup framing in the original audit does not apply to this consumer, because the fetch executes in the end user's own browser (a different trust boundary than a server-side forward proxy), not on a CVF server. This is now stated as a qualified maturity/boundary comparison, not a proxy-to-CVF-consumer conflation. Not revised this revision; no new contradiction raised."
+    },
+    {
+      "id": "F3",
+      "defect": "Owner authority and inherited decisions were misrepresented",
+      "resolution": "RESOLVED_WITH_EVIDENCE_REVISION_2",
+      "evidence": "REVISED after a second reviewer finding that revision 1's own correction was itself factually wrong: revision 1 stated DSH-UC01 was 'a separate, distinct, still-open authoring/tracking lane', which this revision confirms by direct SOT read is FALSE. docs/reviews/CVF_DSH_UC01_TRACK_A_COMPLETION_REVIEW_2026-09-13.md line 7 states `Status: CLOSED_PASS_BOUNDED` and line 45 states 'ACCEPT. Track A is CLOSED_PASS_BOUNDED upon material commit'. docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_COMPLETION_REVIEW_2026-09-13.md line 5 states `Status: CLOSED_PASS_BOUNDED` and line 36 states 'ACCEPT. Track B is CLOSED_PASS_BOUNDED ... Track A stays closed'. Both DSH-UC01 Track A and Track B are therefore CLOSED_PASS_BOUNDED, matching (not contradicting) DSH-WRA-R1's separately closed provider-attempt-admission status. The correction is narrowed to: DSH-WRA-R1 and DSH-UC01 are two DIFFERENT closed governed lanes with different scope (DSH-WRA-R1 = whole-repository absorption/runtime-realization provider-attempt admission; DSH-UC01 = find-simplifications-methodology owner-reconciliation, Tracks A and B), and the original audit's error was conflating which closed lane a given piece of evidence belongs to, NOT claiming a closed lane was open. Neither lane is reopened or its closure disturbed by this audit. The provider-skill-listing-as-authority correction (citing docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/SKILL.md instead) and the AGW masking/webhook DEFER_WITH_TRIGGER confirmation from revision 1 stand unchanged."
+    },
+    {
+      "id": "F4",
+      "defect": "Required evidence (license path/blob, timing) was omitted or claimed without measurement",
+      "resolution": "RESOLVED_WITH_EVIDENCE",
+      "evidence": "Full untruncated LICENSE blob SHA-1 hashes recorded for all three sources (QM 1bb48c345739f58481c3770d4fafdf702d1523e0, AGW f7b5e615693b3618c2d10228851355921fc4656e, DSH c1f7a78e89e4e4dc7b86664c3b3c76eb5eee1785) via git rev-parse HEAD:LICENSE in each mirror. Full blob hashes recorded for all 7 fully-read candidate files (see licenseAndBlobEvidence below); none carries its own per-file copyright/license header distinct from the repository root LICENSE (verified by reading the first lines of each file). All 10 blob hashes independently re-verified unchanged this revision. The prior audit's unsupported 'nine minutes-plus exploration' compliance claim is withdrawn; original pass elapsed time is UNKNOWN_NOT_INSTRUMENTED and is not reconstructed. Not revised this revision beyond the re-verification; no new contradiction raised."
+    },
+    {
+      "id": "F5",
+      "defect": "Broader-program continuation was under-specified",
+      "resolution": "RESOLVED_WITH_EVIDENCE_REVISION_2",
+      "evidence": "Reviewer confirmed the 11-mirror INDEX finding stands (independently re-verified this revision: 11 mirror-ID rows). REVISED TWICE for CGE-R3: revision 1 wrongly asserted 'existing open CGE-R3 lane' from the INDEX row alone; revision 1's own follow-up correction (checking only the four docs/ CGE-R3 files, all of which show pre-acceptance Status headers: work order and baseline both DISPATCH_READY, the worker-return-shaped review COMPLETE_PENDING_REVIEW, the reference delta ACTIVE_REFERENCE_PENDING_REVIEW) concluded acceptance was unresolved -- this was also wrong, because it did not check CVF_SESSION/state/entries/. Reading CVF_SESSION/state/entries/cgeR3CodeGraphUpstreamAbsorptionDispatch20260630.json this revision shows `workerReturnStatus: \"COMPLETE_PENDING_REVIEW accepted by reviewer/closer material commit\"` and `status: \"WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION\"`, with dispatch/worker/session-sync commits `17a8d275`/`9edc7776`/`d774a7b2`. CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V30_2026-07-01.md line 840 independently confirms: 'CGE-R3 CodeGraph upstream absorption worker return | 9edc7776 | CLOSED_PASS_BOUNDED; CodeGraph source-mirror absorption remains doc-only'. CGE-R3 IS THEREFORE CLOSED_PASS_BOUNDED (doc-only absorption; no runtime/MCP/watcher/daemon/package/checker/provider-live/public-sync/import/production authority), not open, not stalled, and not merely pending review; the docs/ family's own Status headers are stale relative to the session-state/handoff acceptance record and must not be read as current disposition without cross-checking CVF_SESSION/state/entries/. This is now recorded as a closed lane awaiting an operator NEXT-lane selection for CodeGraph, not as a fresh absorption gap."
+    }
+  ],
+
+  "uniquePathReadDepthLedger": {
+    "enumerationCommand": "git ls-tree HEAD <dir>/ | awk '{print $4}' | sort  (run fresh this revision against each clean pinned mirror; QM 51bf455ea414a58f70274284ce212142518e556a, AGW 3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826, DSH cd5ef8148158c3a752a658978873241fdf8e2bbc, all confirmed clean at re-verification time)",
+    "setReconciliationMethod": "comm -23 <all_sorted.txt> <opened_sorted.txt> to compute the disjoint not-opened set; totals cross-checked against wc -l on both the full and not-opened files",
+    "qmSrcTopLevel": {
+      "totalEntries": 56,
+      "openedAcrossAllPasses": ["src/acl", "src/egress-authz-main.ts", "src/policy"],
+      "openedCount": 3,
+      "notOpenedCount": 53,
+      "notOpenedIds": ["src/admin", "src/api", "src/audit", "src/auth", "src/classify", "src/config.ts", "src/connectors", "src/core", "src/credentials", "src/cron", "src/delivery", "src/deploy", "src/deployment", "src/directory", "src/environments", "src/feature-flags.ts", "src/files", "src/harness", "src/idempotency", "src/identity", "src/index.ts", "src/loops", "src/mcp", "src/memory", "src/migrate-main.ts", "src/model", "src/monitors", "src/onboarding", "src/persistence", "src/playgrounds", "src/processes", "src/projects", "src/ratelimit", "src/reach", "src/resolution", "src/runs", "src/sandbox", "src/search", "src/security", "src/sessions", "src/skills", "src/slack", "src/surface-cache", "src/surfaces", "src/tasks", "src/tools", "src/triggers", "src/types.ts", "src/util", "src/wake", "src/webhooks", "src/wiring.ts", "src/workspace"],
+      "arithmeticCheck": "56 = 3 opened + 53 not-opened; both sets disjoint and their union equals the full 56-entry enumeration"
+    },
+    "qmSkillsSeedTopLevel": {
+      "totalEntries": 21,
+      "openedAcrossAllPasses": ["skills-seed/admin (opened in the 2026-09-12 initial intake, not this pass)", "skills-seed/interactive-login (opened in the prior residual-recovery pass)", "skills-seed/use-shared-credential (opened in the prior residual-recovery pass)"],
+      "openedCount": 3,
+      "notOpenedCount": 18,
+      "notOpenedIds": ["skills-seed/browse", "skills-seed/cloud-cli", "skills-seed/connect-apps", "skills-seed/define-loop", "skills-seed/dropbox", "skills-seed/email-draft-in-voice", "skills-seed/email-voice-profile", "skills-seed/github-gitlab", "skills-seed/google-drive-sheets", "skills-seed/google-workspace", "skills-seed/linear", "skills-seed/memory", "skills-seed/miniapp", "skills-seed/morning-digest", "skills-seed/popular-web-designs", "skills-seed/publish", "skills-seed/slack-drafts", "skills-seed/taste-skill"],
+      "arithmeticCheck": "21 = 3 opened + 18 not-opened; both sets disjoint and their union equals the full 21-entry enumeration"
+    },
+    "agwExamplesTopLevel": {
+      "totalEntries": 34,
+      "totalEntriesNote": "34 example category directories, excluding the sibling examples/README.md file which is not itself a category; the original intake's '33' undercounted by one",
+      "openedAcrossAllPasses": ["examples/traffic-spiffe", "examples/llm-cost-routing", "examples/llm-prompt-guard", "examples/traffic-ratelimiting-global", "examples/mcp-authorization", "examples/traffic-egress-proxy"],
+      "openedCount": 6,
+      "notOpenedCount": 28,
+      "notOpenedIds": ["examples/fault-injection", "examples/llm-basic", "examples/llm-ollama-postgres", "examples/llm-prompt-enrichment", "examples/llm-semantic-routing", "examples/llm-standalone-epp", "examples/llm-telemetry", "examples/mcp-apps", "examples/mcp-authentication", "examples/mcp-basic", "examples/mcp-multiplex", "examples/mcp-openapi", "examples/mcp-telemetry", "examples/mcp-tls", "examples/microsoft-intune", "examples/netbird-agent-network", "examples/render-deploy", "examples/traffic-a2a", "examples/traffic-aws-agentcore", "examples/traffic-cross-app-access", "examples/traffic-http", "examples/traffic-jwt-sign", "examples/traffic-oauth2-proxy", "examples/traffic-oidc", "examples/traffic-ratelimiting-local", "examples/traffic-tailscale-auth", "examples/traffic-token-exchange", "examples/traffic-unified-gateway"],
+      "arithmeticCheck": "34 = 6 opened + 28 not-opened; both sets disjoint and their union equals the full 34-entry enumeration"
+    },
+    "dshAgentsSkillsTopLevel": {
+      "totalTrackedEntries": 11,
+      "nonSkillEntries": [".agents/skills/.gitignore"],
+      "totalSkillDirectories": 10,
+      "openedAcrossAllPasses": [".agents/skills/dsh-find-simplifications (2026-09-12 initial intake)", ".agents/skills/dsh-pre-push-checks (2026-09-12 initial intake)", ".agents/skills/dsh-trim-cot-leakage (prior residual-recovery pass)", ".agents/skills/dsh-code-review (prior residual-recovery pass)"],
+      "openedCount": 4,
+      "notOpenedCount": 6,
+      "notOpenedIds": [".agents/skills/dsh-archive-agent-notes", ".agents/skills/dsh-doc", ".agents/skills/dsh-merging-stacked-prs", ".agents/skills/dsh-prose-standard", ".agents/skills/dsh-translate-docs", ".agents/skills/record-browser-gif"],
+      "arithmeticCheck": "10 = 4 opened + 6 not-opened (11 tracked entries minus 1 non-skill .gitignore = 10 skill directories); both sets disjoint and their union equals the full 10-entry skill enumeration"
+    },
+    "dshAgentsNotesTree": {
+      "implementedCount": 1814,
+      "proposedCount": 78,
+      "rejectedCount": 30,
+      "archivedCount": 509,
+      "totalTrackedPaths": 2431,
+      "openedCount": 0,
+      "note": "path-enumerated only via git ls-tree -r --name-only; zero content opened in any pass; re-verified unchanged this revision"
+    }
+  },
+
+  "licenseAndBlobEvidence": {
+    "rootLicenses": [
+      {"sourceId": "QM", "path": "LICENSE", "blobSha1": "1bb48c345739f58481c3770d4fafdf702d1523e0", "identifier": "MIT (also declared in package.json \"license\": \"MIT\")"},
+      {"sourceId": "AGW", "path": "LICENSE", "blobSha1": "f7b5e615693b3618c2d10228851355921fc4656e", "identifier": "Apache License 2.0"},
+      {"sourceId": "DSH", "path": "LICENSE", "blobSha1": "c1f7a78e89e4e4dc7b86664c3b3c76eb5eee1785", "identifier": "MIT (Copyright (c) 2026 DeepSeek); THIRD_PARTY_NOTICES.md present, blobSha1 616dcd19097a5137a50a3a00a1aa403c73a2f26a"}
+    ],
+    "selectedFileBlobHashes": [
+      {"sourceId": "QM", "path": "src/policy/command-policy.ts", "blobSha1": "0b2e956705e3670a981a255bd0988e69c802b078", "perFileLicenseHeader": "NONE; covered by root LICENSE only"},
+      {"sourceId": "QM", "path": "src/egress-authz-main.ts", "blobSha1": "e484e80c9604b6df17e0ca74876860f4a27acce7", "perFileLicenseHeader": "NONE; covered by root LICENSE only"},
+      {"sourceId": "QM", "path": "skills-seed/interactive-login/SKILL.md", "blobSha1": "b38f3dc592588e8333e4d7c09834cdc17a5ffb44", "perFileLicenseHeader": "NONE; covered by root LICENSE only"},
+      {"sourceId": "QM", "path": "skills-seed/use-shared-credential/SKILL.md", "blobSha1": "22ff0ee7e58b6937839d89c0679d31e9750efb09", "perFileLicenseHeader": "NONE; covered by root LICENSE only"},
+      {"sourceId": "AGW", "path": "examples/traffic-egress-proxy/README.md", "blobSha1": "fb5e2f3ddbeb3c8d607397d3b87c8e2b6eb8369e", "perFileLicenseHeader": "NONE; covered by root LICENSE only"},
+      {"sourceId": "DSH", "path": ".agents/skills/dsh-trim-cot-leakage/SKILL.md", "blobSha1": "fb49a23b7f42ce952299c2bed38016466007a8da", "perFileLicenseHeader": "NONE; covered by root LICENSE only"},
+      {"sourceId": "DSH", "path": ".agents/skills/dsh-code-review/SKILL.md", "blobSha1": "510e01f3d5a5f9e29795084b7e05dbd3641da589", "perFileLicenseHeader": "NONE; covered by root LICENSE only"}
+    ],
+    "cvfSideFileRead": [
+      {"path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-tools.tsx", "readDepth": "PARTIAL (lines 1-280 of larger file, covering header, url_fetch tool and AVAILABLE_TOOLS registration)", "purpose": "F2 resolution: confirmed 'use client' browser boundary and validateUrl/BLOCKED_PATTERNS implementation"},
+      {"path": "docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/SKILL.md", "readDepth": "FULL", "purpose": "F3 resolution: identified the actual governed /code-review comparison owner"}
+    ],
+    "unresolvedLicenseItems": [
+      "QM skills-seed/popular-web-designs/templates/ (third-party product design pattern reproduction) remains LICENSE_REVIEW_REQUIRED; not opened this pass",
+      "AGW ui/ and controller/ (Go) subtrees remain LICENSE_REVIEW_REQUIRED_FOR_SUBTREES; not sampled this pass",
+      "DSH vendor/ subtree remains LICENSE_REVIEW_REQUIRED_FOR_VENDOR_SUBTREE; THIRD_PARTY_NOTICES.md hash recorded, content not read this pass"
+    ]
+  },
+
   "budget": {
-    "declaredBudget": "45-minute semantic recovery pass (9+ minutes outside the original six candidates) plus 15 minutes backlog provenance plus 15 minutes report assembly; mandatory gates separate",
-    "actualElapsedNote": "Session-clock elapsed time is UNKNOWN_NOT_INSTRUMENTED; reading pass covered QM (priority 1, two full-source-file reads plus two skill reads beyond the one already-read admin skill), AGW (two example READMEs beyond the five already read in the accepted intake), and DSH (two skill files beyond the two already read, plus notes-tree path enumeration). Stopped at declared representative-sample scope, not at a wall-clock trigger; no automatic second research round was taken.",
-    "explorationOutsideOriginalSixCandidates": "QM command-policy.ts, QM egress-authz-main.ts, QM acl-store.ts (partial), QM interactive-login skill, QM use-shared-credential skill, AGW traffic-egress-proxy example, AGW mcp-authorization example (re-confirmed), DSH dsh-trim-cot-leakage skill, DSH dsh-code-review skill are all outside the six original AGW-UC-01/02, QM-UC-01/02, DSH-UC-01/02 use-case anchors named in the initial intake"
+    "declaredBudget": "Original pass: 45-minute semantic recovery pass (9+ minutes outside the original six candidates) plus 15 minutes backlog provenance plus 15 minutes report assembly, mandatory gates separate. Rework: up to 45 minutes repair/source-seam reading plus 15 minutes report/backlog assembly, gates separate.",
+    "actualElapsedNote": "Original pass elapsed time is UNKNOWN_NOT_INSTRUMENTED; the original audit's 'nine minutes-plus exploration' compliance claim is withdrawn as unsupported, not reconstructed. This rework's own time IS instrumented: start 2026-09-13T13:08:51Z (executionBaseHead capture), F1-F5 targeted source reads (agent-tools.tsx, egress-authz-main.ts re-verification, cvf-engineering-code-review-quality/SKILL.md, INDEX.md, blob-hash commands) completed by 2026-09-13T13:11:46Z, approximately 3 minutes of source reading; remaining measured time spent on audit/return authoring and gate repair, reported in the new worker return.",
+    "explorationOutsideOriginalSixCandidates": "Unchanged from original pass: QM command-policy.ts, QM egress-authz-main.ts, QM acl-store.ts (partial), QM interactive-login skill, QM use-shared-credential skill, AGW traffic-egress-proxy example, AGW mcp-authorization example (re-confirmed), DSH dsh-trim-cot-leakage skill, DSH dsh-code-review skill are all outside the six original AGW-UC-01/02, QM-UC-01/02, DSH-UC-01/02 use-case anchors named in the initial intake. This rework added no new independent source exploration beyond what F1-F5 required (agent-tools.tsx, the governed code-review package, and the mirror INDEX), per the rework work order's explicit no-new-corpus-exploration constraint."
   },
 
   "sourceIdentityAndFreshness": [
@@ -24,7 +141,7 @@
       "matchesPacketPin": true,
       "freshnessVsUpstream": "NOT_QUERIED_THIS_PASS; reused intake's 2026-09-12T06:23:05Z observation of upstream drift (work-order-recorded 32b38cec6... vs fresh-observed 51bf455ea4..., resolved to tag v0.1.11) per Evidence Reuse plan",
       "originalExternalNomination": "UNKNOWN; unavailable per work order Repository Identity note and prior intake E3 finding; operator URL establishes identity only, not research provenance",
-      "licenseEvidence": "REUSED_FROM_INTAKE: MIT, LICENSE blob f7... not re-hashed this pass; disposition LICENSE_REVIEW_REQUIRED_FOR_SKILLS_SEED_TEMPLATES stands unresolved (skills-seed/popular-web-designs/templates/ reproduce named third-party product design patterns; not re-examined this pass)"
+      "licenseEvidence": "MIT, LICENSE blob 1bb48c345739f58481c3770d4fafdf702d1523e0 (full hash, re-verified this rework via git rev-parse HEAD:LICENSE); disposition LICENSE_REVIEW_REQUIRED_FOR_SKILLS_SEED_TEMPLATES stands unresolved (skills-seed/popular-web-designs/templates/ reproduce named third-party product design patterns; not examined this pass). See licenseAndBlobEvidence for full per-file blob hashes of all QM files read this pass."
     },
     {
       "sourceId": "AGW",
@@ -35,7 +152,7 @@
       "matchesPacketPin": true,
       "freshnessVsUpstream": "NOT_QUERIED_THIS_PASS; reused EARA-AGW-T1's 206-changed-path freshness delta observation from 2026-09-11, not re-verified",
       "originalExternalNomination": "AVAILABLE (upstream URL known); prior EARA-AGW-T1 and AGW-UC-02 comparisons already reconciled 7 candidates plus 1 bounded adaptation proposal",
-      "licenseEvidence": "REUSED_FROM_INTAKE: Apache License 2.0, root LICENSE blob f7b5e615...; disposition LICENSE_REVIEW_REQUIRED_FOR_SUBTREES stands unresolved (ui/ and controller/ Go subtrees not sampled for distinct headers, not re-examined this pass)"
+      "licenseEvidence": "Apache License 2.0, root LICENSE blob f7b5e615693b3618c2d10228851355921fc4656e (full hash, re-verified this rework); disposition LICENSE_REVIEW_REQUIRED_FOR_SUBTREES stands unresolved (ui/ and controller/ Go subtrees not sampled for distinct headers, not examined this pass). See licenseAndBlobEvidence for the full blob hash of the AGW file read this pass."
     },
     {
       "sourceId": "DSH",
@@ -45,8 +162,8 @@
       "identityCheckAtThisPass": "git rev-parse HEAD => cd5ef8148158c3a752a658978873241fdf8e2bbc; git status --porcelain=v1 => clean; not on any branch (detached at pin); UTC 2026-09-13T12:08:02Z observation window",
       "matchesPacketPin": true,
       "freshnessVsUpstream": "NOT_QUERIED_THIS_PASS; DSH-WRA-R1 whole-corpus inventory (8953 files) reused unchanged",
-      "originalExternalNomination": "UNKNOWN; historical routing/absorption context exists (DSH-WRA-R1, DSH-UC01) but no fresh external nomination re-verified this pass",
-      "licenseEvidence": "REUSED_FROM_INTAKE: MIT, THIRD_PARTY_NOTICES.md present; disposition LICENSE_REVIEW_REQUIRED_FOR_VENDOR_SUBTREE stands unresolved (vendor/ content not read this pass)"
+      "originalExternalNomination": "UNKNOWN; historical routing/absorption context exists (DSH-WRA-R1 whole-repository absorption closure and the separately closed DSH-UC01 Track A/B authoring/tracking lane -- these are two distinct CLOSED governed lanes with different scope, not interchangeable; see F3 resolution) but no fresh external nomination re-verified this pass",
+      "licenseEvidence": "MIT, LICENSE blob c1f7a78e89e4e4dc7b86664c3b3c76eb5eee1785 (full hash, re-verified this rework), THIRD_PARTY_NOTICES.md present (blob 616dcd19097a5137a50a3a00a1aa403c73a2f26a); disposition LICENSE_REVIEW_REQUIRED_FOR_VENDOR_SUBTREE stands unresolved (vendor/ content not read this pass). See licenseAndBlobEvidence for full per-file blob hashes of both DSH files read this pass."
     }
   ],
 
@@ -61,39 +178,39 @@
   "residualObligationLedger": [
     {
       "sourceId": "QM",
-      "obligationFromScopeRecovery": "58 source modules with zero content reads; 23 of 24 skill directories unopened; tests/integration/ADR regions unassessed",
-      "actionThisPass": "Read src/policy/command-policy.ts (full, 912 lines), src/egress-authz-main.ts (full, 255 lines), src/acl/acl-store.ts (partial, first 120 of larger file), skills-seed/interactive-login/SKILL.md (full), skills-seed/use-shared-credential/SKILL.md (full). Enumerated src/ top-level (58 module dirs/files unchanged from intake count) and skills-seed/ top-level (20 skill dirs, matches intake's 24-minus-admin-already-read framing within rounding of skill vs non-skill top-level entries).",
-      "residualAfterThisPass": "53 of 58 src/ modules still unopened (acl remainder, admin, api, audit, auth, classify, connectors, core, credentials, cron, delivery, deploy, deployment, directory, environments, feature-flags.ts, files, harness, identity, index.ts, loops, mcp, memory, migrate-main.ts, model, monitors, onboarding, persistence, playgrounds, processes, projects, ratelimit, reach, resolution, runs, sandbox [29 files enumerated, none opened], search, security, sessions, skills, slack, surface-cache, surfaces, tasks, tools, triggers, types.ts, util, wake, webhooks, wiring.ts, workspace/workspace-store.ts); 18 of 20 skills-seed/ directories still unopened (browse, cloud-cli, connect-apps, define-loop, dropbox, email-draft-in-voice, email-voice-profile, github-gitlab, google-drive-sheets, google-workspace, linear, memory, miniapp, morning-digest, popular-web-designs, publish, slack-drafts, taste-skill); ~480 test files still name-only"
+      "obligationFromScopeRecovery": "56 src/ top-level entries with only 3 ever touched; 21 skills-seed/ directories with only 3 ever opened; tests/integration/ADR regions unassessed. See uniquePathReadDepthLedger for the exact, source-verified totals and disjoint ID sets superseding this row's original approximate framing.",
+      "actionThisPass": "Read src/policy/command-policy.ts (full, 912 lines), src/egress-authz-main.ts (full, 255 lines), src/acl/acl-store.ts (partial, first 120 of larger file), skills-seed/interactive-login/SKILL.md (full), skills-seed/use-shared-credential/SKILL.md (full). Enumerated src/ top-level and skills-seed/ top-level via fresh git ls-tree this revision; exact totals in uniquePathReadDepthLedger (56 and 21 respectively, correcting the prior audit's 58 and 20).",
+      "residualAfterThisPass": "See uniquePathReadDepthLedger.qmSrcTopLevel and uniquePathReadDepthLedger.qmSkillsSeedTopLevel for the exact disjoint not-opened ID lists (53 of 56 src/ entries; 18 of 21 skills-seed/ directories) with the enumeration command and arithmetic check; ~480 test files still name-only from the original intake, not re-verified this pass"
     },
     {
       "sourceId": "AGW",
-      "obligationFromScopeRecovery": "28 of 33 example categories unopened; broad crates/controller/ui implementation regions unread beyond EARA-AGW-T1's eight paths; 206-path freshness delta unresolved",
+      "obligationFromScopeRecovery": "28 of 34 example categories unopened (corrected denominator; see uniquePathReadDepthLedger.agwExamplesTopLevel); broad crates/controller/ui implementation regions unread beyond EARA-AGW-T1's eight paths; 206-path freshness delta unresolved",
       "actionThisPass": "Read examples/traffic-egress-proxy/README.md (full) and re-confirmed examples/mcp-authorization/README.md (full, already READ in intake, re-opened here for cross-repo comparison against QM's egress-authz-main.ts, not counted as new coverage).",
-      "residualAfterThisPass": "27 of 33 example categories still unopened (fault-injection, llm-basic, llm-cost-routing [config only previously read], llm-ollama-postgres, llm-prompt-enrichment, llm-semantic-routing, llm-standalone-epp, llm-telemetry, mcp-apps, mcp-authentication, mcp-basic, mcp-multiplex, mcp-openapi, mcp-telemetry, mcp-tls, microsoft-intune, netbird-agent-network, render-deploy, traffic-a2a, traffic-aws-agentcore, traffic-cross-app-access, traffic-http, traffic-jwt-sign, traffic-oauth2-proxy, traffic-oidc, traffic-ratelimiting-global [README only previously read], traffic-ratelimiting-local, traffic-tailscale-auth, traffic-token-exchange, traffic-unified-gateway); crates/controller/ui implementation beyond the eight EARA-AGW-T1 paths and the llm/policy module already read for AGW-UC-02 remains unread; 206-path freshness delta not re-verified"
+      "residualAfterThisPass": "28 of 34 example categories still unopened; see uniquePathReadDepthLedger.agwExamplesTopLevel for the exact disjoint not-opened ID list (fault-injection, llm-basic, llm-ollama-postgres, llm-prompt-enrichment, llm-semantic-routing, llm-standalone-epp, llm-telemetry, mcp-apps, mcp-authentication, mcp-basic, mcp-multiplex, mcp-openapi, mcp-telemetry, mcp-tls, microsoft-intune, netbird-agent-network, render-deploy, traffic-a2a, traffic-aws-agentcore, traffic-cross-app-access, traffic-http, traffic-jwt-sign, traffic-oauth2-proxy, traffic-oidc, traffic-ratelimiting-local, traffic-tailscale-auth, traffic-token-exchange, traffic-unified-gateway) with enumeration command and arithmetic check; crates/controller/ui implementation beyond the eight EARA-AGW-T1 paths and the llm/policy module already read for AGW-UC-02 remains unread; 206-path freshness delta not re-verified"
     },
     {
       "sourceId": "DSH",
       "obligationFromScopeRecovery": "6 remaining skill entries unopened; notes tree content unassessed; attribution boundaries unresolved",
       "actionThisPass": "Read .agents/skills/dsh-trim-cot-leakage/SKILL.md (full) and .agents/skills/dsh-code-review/SKILL.md (full). Path-enumerated .agents/notes/{implemented,proposed,rejected,archived}/ counts (1814/78/30/509 tracked paths respectively) without opening content.",
-      "residualAfterThisPass": "4 of 6 remaining skill entries still unopened (dsh-archive-agent-notes, dsh-doc, dsh-merging-stacked-prs, dsh-prose-standard, record-browser-gif -- 5 remain, one more than the '4' obligation estimate because record-browser-gif was not counted in the original scope-recovery's six-skill framing); .agents/notes/ content (2431 total tracked paths across all four states) remains entirely unopened beyond path enumeration; packages/ and apps/ whole-corpus source remains reused from DSH-WRA-R1 without re-reading"
+      "residualAfterThisPass": "6 of 10 named .agents/skills/ skill directories still unopened (dsh-archive-agent-notes, dsh-doc, dsh-merging-stacked-prs, dsh-prose-standard, dsh-translate-docs, record-browser-gif); see uniquePathReadDepthLedger.dshAgentsSkillsTopLevel for the exact 11-tracked-entries-minus-1-.gitignore = 10-skill-directory arithmetic, superseding both the original pass's contradictory '4 of 6...5 remain' framing and the prior revision's imprecise '5 of ~10' hedge. .agents/notes/ content (2431 total tracked paths across all four states) remains entirely unopened beyond path enumeration; packages/ and apps/ whole-corpus source remains reused from DSH-WRA-R1 without re-reading"
     }
   ],
 
   "sharedMechanismsView": [
     {
       "mechanismId": "SM-04",
-      "label": "Deterministic outbound-network egress gate with SSRF/private-range blocking",
+      "label": "Deterministic outbound-network egress control (server-side proxy vs. browser-side client tool -- different trust boundaries)",
       "supportingSourceIds": ["QM", "AGW"],
-      "description": "QM's src/egress-authz-main.ts runs a standalone HTTP CONNECT-style authorization proxy: capability-token-gated, blocks link-local/loopback/cloud-metadata ranges via node:net BlockList, re-resolves the hostname via DNS and re-checks the resolved IP (not just the literal string) against the block-list and policy before allowing the connection, and records every decision to an audit sink. AGW's examples/traffic-egress-proxy demonstrates the same problem class as an actual HTTP CONNECT proxy with hostname allowlisting via TLS SNI (no decryption) or optional TLS termination for HTTP-policy inspection.",
-      "existingCvfOwnerEvidence": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-tools.tsx (tool implementation) + agent-tools.test.tsx:140-173 (SSRF test suite: blocks localhost, 127.0.0.1, 10.x, 192.168.x, 172.16-31.x, 169.254.x.x literal-string/literal-IP forms in the requested URL)",
+      "description": "QM's src/egress-authz-main.ts implements an AUTHORIZATION DECISION endpoint (buildEgressAuthzServer/checkStatus/onRequest): given a capability token and a target host, it resolves the hostname via DNS, re-checks the resolved IP against a BlockList (link-local/loopback/cloud-metadata ranges) and policy, then returns HTTP 200 with an x-egress-upstream-address header or HTTP 403 -- it does not itself forward CONNECT byte traffic; the actual proxying component (if any) was not read and is not claimed to exist in this file. AGW's examples/traffic-egress-proxy demonstrates a full HTTP CONNECT proxy with hostname allowlisting via TLS SNI (no decryption) or optional TLS termination for HTTP-policy inspection. Both are SERVER-SIDE components mediating outbound traffic from a service the operator controls.",
+      "existingCvfOwnerEvidence": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-tools.tsx read directly this pass (lines 1-280): the file begins with 'use client' (a browser-rendered React component, not a CVF server); its url_fetch tool runs validateUrl() (protocol-only check) then a literal BLOCKED_PATTERNS regex array against the raw URL string, then calls browser-native fetch(url) -- executing in the end user's own browser. agent-tools.test.tsx:140-173 tests this same client-side string-blocklist logic.",
       "confidence": "MEDIUM",
       "runtimeSufficiency": {"producer": "present", "verifier": "present (test suite)", "nonTestConsumer": "present (agent web-fetch tool)", "integrationLink": "present", "useProof": "STATIC_TEST_ONLY_NOT_EXECUTED_THIS_PASS"},
       "canonicalStatus": "CONSUMER_NO_USE_PROOF",
-      "planningDisposition": "PROMISING_FOR_SELECTED_REVIEW",
-      "missingCvfLink": "CVF's existing test suite (agent-tools.test.tsx) covers only URLs whose host component is already a literal private/link-local IP string. It does not cover a hostname that RESOLVES to a private/link-local/metadata IP (DNS rebinding) -- QM's egress-authz-main.ts explicitly performs the lookup-then-recheck-resolved-IP step (decide() function, lines 96-123) that CVF's tests give no evidence of.",
-      "expectedBenefit": "If CVF's agent-tools.tsx URL check is host-string-only (not verified further in this bounded pass -- the implementation file itself was not opened, only its test file), a DNS-rebinding gap could let an attacker-controlled hostname resolve to a blocked IP at request time and bypass a string-only allow/deny check.",
-      "nextAction": "Open agent-tools.tsx's actual URL-validation implementation (not just its test file) in a follow-up pass to confirm whether resolved-IP re-checking already exists; this audit does not claim the gap is proven, only that the test evidence does not demonstrate resolved-IP protection.",
-      "reopenTrigger": "A named CVF consumer or security reviewer requests SSRF/DNS-rebinding hardening evidence for agent-initiated outbound fetches"
+      "planningDisposition": "DEFER_WITH_TRIGGER",
+      "missingCvfLink": "QM and AGW's mechanisms are SERVER-SIDE egress controls with a DNS-lookup step available to them because they run on infrastructure the operator controls. CVF's url_fetch tool is a CLIENT-SIDE (browser) fetch with no equivalent DNS-lookup step available to it in that execution context -- a browser cannot be made to 'recheck a resolved IP' the way a server-side proxy can, because the browser's own network stack (subject to the browser's own SSRF-relevant protections, CORS, and same-origin policy) performs the resolution, not CVF code. The original audit's framing (treating this as a directly portable 'add resolved-IP recheck to agent-tools.tsx' gap) does not hold: there is no comparable seam in a 'use client' component to insert a server-side DNS recheck.",
+      "expectedBenefit": "None established this pass for a direct port of QM/AGW's server-side mechanism into agent-tools.tsx's client-side execution context. If CVF later adds a SERVER-SIDE outbound-fetch capability (distinct from this browser-side tool), QM's decide()-function shape (resolve-then-recheck) would be a relevant reference pattern for that different consumer.",
+      "nextAction": "No action against agent-tools.tsx specifically; if a future CVF work order introduces a server-side agent-initiated outbound-fetch capability, evaluate QM's decide() pattern against that new consumer at that time.",
+      "reopenTrigger": "A named CVF consumer introduces a server-side (not browser 'use client') agent-initiated outbound-fetch capability"
     },
     {
       "mechanismId": "SM-05",
@@ -179,18 +296,18 @@
     {
       "sourceId": "QM",
       "useCaseId": "QM-UC-06",
-      "label": "Resolved-IP-recheck egress authorization proxy",
-      "userOutcome": "See SM-04 above; duplicated here as a repository-specific use case because QM's implementation depth (resolved-IP recheck) exceeds the shared-mechanism description of AGW's hostname/SNI-only approach",
+      "label": "Server-side resolved-IP-recheck egress authorization endpoint (not a proxy itself)",
+      "userOutcome": "See SM-04 above; duplicated here as a repository-specific use case because QM's implementation depth (server-side DNS lookup plus resolved-IP recheck) exceeds the shared-mechanism description of AGW's SNI-only approach. Corrected this rework: buildEgressAuthzServer is an authorization DECISION endpoint (returns 200 plus an upstream-address header, or 403); it does not itself forward CONNECT byte traffic, and the separate forwarding component (if one exists) was not read.",
       "pinAndPath": "51bf455ea414a58f70274284ce212142518e556a :: src/egress-authz-main.ts",
       "actualReadDepth": "READ (full, 255 lines)",
-      "producerVerifierConsumer": "producer=capability-token-scoped egress policy; verifier=decide() function (always-blocked host/IP list, DNS lookup, resolved-IP recheck against deny/private-network rules); consumer=HTTP CONNECT-style forward proxy callers",
-      "invocationAndFailureBehavior": "403 on any check failure (unresolvable host, denied IP, private network without explicit allow, always-blocked metadata/link-local/loopback range); audit record always attempted even on the deny path, wrapped in try/catch so audit failure never blocks the decision",
-      "existingCvfOwnerEvidenceOrGap": "PARTIAL_OWNER: CVF's agent-tools.test.tsx proves literal-IP-string blocking exists; it does not prove resolved-IP-after-DNS-lookup checking exists (see SM-04)",
-      "missingCvfLink": "Resolved-IP recheck after DNS lookup, specifically for hostnames (not just literal IPs) in CVF's own agent web-fetch tool",
-      "expectedBenefit": "Closes a DNS-rebinding-shaped gap if CVF's existing implementation does not already resolve-then-check (unconfirmed; implementation file itself not opened this pass)",
-      "confidence": "MEDIUM",
-      "nextAction": "Open agent-tools.tsx's actual URL-validation function in a follow-up pass before proposing any change",
-      "reopenTrigger": "Confirmation that agent-tools.tsx checks only the literal URL host string, not the resolved IP"
+      "producerVerifierConsumer": "producer=capability-token-scoped egress policy; verifier=decide() function (always-blocked host/IP list, DNS lookup, resolved-IP recheck against deny/private-network rules); consumer=an external HTTP CONNECT-style forward-proxy caller that consults this authz decision (that caller/forwarder was not read)",
+      "invocationAndFailureBehavior": "200 with x-egress-upstream-address header, or 403, on any check failure (unresolvable host, denied IP, private network without explicit allow, always-blocked metadata/link-local/loopback range); audit record always attempted even on the deny path, wrapped in try/catch so audit failure never blocks the decision",
+      "existingCvfOwnerEvidenceOrGap": "NO_MATCHING_CONSUMER: CVF's agent-tools.tsx url_fetch tool is a browser-side ('use client') fetch with no server-side DNS-lookup seam; QM's server-side pattern has no directly comparable CVF consumer this pass (see SM-04 F2 correction)",
+      "missingCvfLink": "None established this pass; the original 'missing resolved-IP recheck in agent-tools.tsx' framing does not hold because agent-tools.tsx has no server-side execution context to add such a recheck to",
+      "expectedBenefit": "Relevant only if CVF later introduces a distinct server-side agent-initiated outbound-fetch capability",
+      "confidence": "LOW",
+      "nextAction": "No action against agent-tools.tsx; reference QM's decide() pattern only if a future server-side consumer is introduced",
+      "reopenTrigger": "A named CVF consumer introduces a server-side (not browser 'use client') agent-initiated outbound-fetch capability"
     },
     {
       "sourceId": "DSH",
@@ -217,24 +334,24 @@
       "actualReadDepth": "READ (full, 50 lines)",
       "producerVerifierConsumer": "producer=DSH repository authoring conventions (AGENTS.md, defensive-patterns.md); verifier=named blocking requirements (7) plus manual-check categories (11); consumer=DSH PR reviewers",
       "invocationAndFailureBehavior": "Explicit priority order: correctness/lifecycle/security/broken-required-behavior over style; one substantiated blocker beats a list of nits; requires re-running a change-scope report after any retarget/merge",
-      "existingCvfOwnerEvidenceOrGap": "PARTIAL_OWNER: CVF's own /code-review skill exists (referenced in this session's available-skills listing) but this pass did not open its instruction body to compare line-by-line; the DSH enforcement-bypass-tracing item (\"follow every denial path to the operation that executes it; exercise direct and alternate callers that can bypass schemas, prompts, facades, wrappers\") is a named, concrete technique worth checking against CVF's own review skill",
-      "missingCvfLink": "UNKNOWN pending a direct read of CVF's own /code-review skill body in a follow-up pass; not claimed as a gap without that comparison",
-      "expectedBenefit": "If CVF's own review skill lacks an explicit enforcement-bypass-tracing instruction, adopting DSH's phrasing could measurably improve CVF's own security-relevant code reviews",
+      "existingCvfOwnerEvidenceOrGap": "PARTIAL_OWNER, CORRECTED THIS REWORK: the original audit cited a provider-side available-skills listing as if it were CVF canonical authority (provider listings are NOT_CVF_SOURCE). The actual governed comparison owner, read in full this pass, is docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/SKILL.md (ASSF package, APPROVED, five-axis review framework: correctness, readability, architecture, security, performance; sourced from pinned upstream addyosmani/agent-skills at aba7c4e9695c363e65cb59effe926c7f1d1abe3d). This package's SKILL.md is metadata/scope-level only at the APPROVED disclosure tier; its full five-axis instruction body is disclosed only through the AGSK-R4 runtime package loader after explicit request, which this pass did not invoke (package execution is out of scope). A line-by-line comparison of DSH's enforcement-bypass-tracing item against the package's full instruction body was therefore not completed.",
+      "missingCvfLink": "UNKNOWN pending a package-loader-mediated read of the full cvf-engineering-code-review-quality instruction body; not claimed as a gap without that comparison, and not claimed against a provider listing",
+      "expectedBenefit": "If the governed package's five-axis framework lacks an explicit enforcement-bypass-tracing instruction, DSH's phrasing could be a candidate addition -- unverified pending the package-loader read",
       "confidence": "LOW",
-      "nextAction": "Open CVF's own /code-review skill instruction body and compare against this DSH checklist item-by-item in a follow-up pass before proposing any change",
-      "reopenTrigger": "A future CVF skill-quality tranche compares /code-review against external review methodologies"
+      "nextAction": "Request the governed package's full body through the AGSK-R4 runtime package loader in a follow-up pass and compare against this DSH checklist item-by-item before proposing any change",
+      "reopenTrigger": "A future CVF skill-quality tranche opens the cvf-engineering-code-review-quality package body for comparison against external review methodologies"
     }
   ],
 
   "unreadUnknownRegions": [
-    {"sourceId": "QM", "region": "53 of 58 src/ top-level modules (see residualObligationLedger)", "status": "UNKNOWN_NOT_READ"},
-    {"sourceId": "QM", "region": "18 of 20 skills-seed/ directories", "status": "UNKNOWN_PATH_ENUMERATED_ONLY"},
+    {"sourceId": "QM", "region": "53 of 56 src/ top-level entries (see uniquePathReadDepthLedger.qmSrcTopLevel)", "status": "UNKNOWN_NOT_READ"},
+    {"sourceId": "QM", "region": "18 of 21 skills-seed/ directories (see uniquePathReadDepthLedger.qmSkillsSeedTopLevel)", "status": "UNKNOWN_PATH_ENUMERATED_ONLY"},
     {"sourceId": "QM", "region": "~480 test files", "status": "UNKNOWN_FILENAME_INFERENCE_ONLY_FROM_INTAKE"},
     {"sourceId": "QM", "region": "plugins/, adrs/, cli/, aws/, fly/, porter/, deploy/", "status": "UNKNOWN_NOT_READ"},
-    {"sourceId": "AGW", "region": "27 of 33 examples/ categories", "status": "UNKNOWN_PATH_ENUMERATED_ONLY"},
+    {"sourceId": "AGW", "region": "28 of 34 examples/ categories (see uniquePathReadDepthLedger.agwExamplesTopLevel)", "status": "UNKNOWN_PATH_ENUMERATED_ONLY"},
     {"sourceId": "AGW", "region": "crates/ Rust source beyond EARA-AGW-T1's eight paths and the llm/policy module", "status": "UNKNOWN_NOT_READ_BEYOND_PRIOR_PASSES"},
     {"sourceId": "AGW", "region": "ui/ (frontend)", "status": "UNKNOWN_NOT_READ"},
-    {"sourceId": "DSH", "region": "5 of ~10 .agents/skills/ entries (dsh-archive-agent-notes, dsh-doc, dsh-merging-stacked-prs, dsh-prose-standard, record-browser-gif)", "status": "UNKNOWN_PATH_ENUMERATED_ONLY"},
+    {"sourceId": "DSH", "region": "6 of 10 .agents/skills/ skill directories (dsh-archive-agent-notes, dsh-doc, dsh-merging-stacked-prs, dsh-prose-standard, dsh-translate-docs, record-browser-gif; see uniquePathReadDepthLedger.dshAgentsSkillsTopLevel)", "status": "UNKNOWN_PATH_ENUMERATED_ONLY"},
     {"sourceId": "DSH", "region": ".agents/notes/{implemented,proposed,rejected,archived}/ (2431 total tracked paths)", "status": "UNKNOWN_PATH_ENUMERATED_ONLY_WITH_COUNTS"},
     {"sourceId": "DSH", "region": "packages/ and apps/ whole-corpus source", "status": "PRIOR_WHOLE_CORPUS_INVENTORY_EXISTS (DSH-WRA-R1); not re-read here"},
     {"sourceId": "DSH", "region": "vendor/ subtree license/attribution content", "status": "UNKNOWN_NOT_READ; THIRD_PARTY_NOTICES.md hash recorded historically but content unread"}
@@ -256,79 +373,99 @@
       "nextAction": "Continue independent Local recovery; do not fabricate a QM external comparison. If a future external capsule is prepared for QM, it must be newly labeled and never represented as recovered history."
     },
     {
-      "sourceOrGroup": "DSH prior work (DSH-WRA-R1, DSH-UC01)",
-      "externalEvidenceStatus": "Historical bounded provider-attempt proof and whole-tree inventory exist; no fresh external comparison performed or claimed this pass",
+      "sourceOrGroup": "DSH prior work (DSH-WRA-R1 whole-repository closure; DSH-UC01 separate authoring/tracking lane)",
+      "externalEvidenceStatus": "DSH-WRA-R1's historical bounded provider-attempt proof and whole-tree inventory (8953 files) exist and are CLOSED_PASS_BOUNDED. DSH-UC01 Track A and Track B are ALSO both CLOSED_PASS_BOUNDED (verified this revision: docs/reviews/CVF_DSH_UC01_TRACK_A_COMPLETION_REVIEW_2026-09-13.md and docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_COMPLETION_REVIEW_2026-09-13.md, both `Status: CLOSED_PASS_BOUNDED` with explicit reviewer ACCEPT dispositions). No fresh external comparison performed or claimed this pass for either lane.",
       "localEvidenceStatus": "This pass adds two Local-only skill-content discoveries (dsh-trim-cot-leakage, dsh-code-review) plus notes-tree path/count enumeration",
-      "reconciliation": "No contradiction. DSH-UC01's ABSORPTION_NOT_COMPLETE status and its use-proof-limited-to-provider-attempt-admission finding both stand unchanged; the two new skill discoveries are residual semantic recovery, not a re-verification of that provider-attempt proof.",
-      "nextAction": "Reuse DSH-UC01 closure and DSH-WRA-R1 inventory as-is; do not rerun provider-attempt proof from this audit"
+      "reconciliation": "REVISED THIS REVISION (F3): revision 1's correction was itself wrong -- it claimed DSH-UC01 was 'still-open', which direct SOT read this revision disproves. Both DSH-WRA-R1 and DSH-UC01 (Track A and Track B) are CLOSED_PASS_BOUNDED; they are two DIFFERENT closed lanes with different scope (whole-repository provider-attempt admission vs. find-simplifications-methodology owner-reconciliation), and the original audit's error was attributing evidence to the wrong one of two closed lanes, not claiming an open lane was closed. Neither lane's closure is reopened or disturbed by this audit. The two new skill discoveries are residual semantic recovery independent of both lanes.",
+      "nextAction": "Reuse both DSH-WRA-R1's and DSH-UC01's closed evidence as-is without conflating which closed lane a given fact belongs to; do not rerun either lane's proof from this audit"
     }
   ],
 
   "canonicalRuntimeSufficiencySummary": [
-    {"capability": "SM-04/QM-UC-06 resolved-IP egress recheck", "status": "CONSUMER_NO_USE_PROOF", "note": "CVF-side: consumer exists (agent-tools.tsx), test exists, but test proves only literal-IP blocking, not resolved-IP blocking; QM-side source read but its own test/consumer link not verified this pass"},
+    {"capability": "SM-04/QM-UC-06 server-side egress authz vs. CVF browser-side url_fetch", "status": "CONSUMER_NO_USE_PROOF", "note": "CORRECTED THIS REWORK: agent-tools.tsx read directly and confirmed 'use client' (browser-side), with no server-side DNS-lookup seam comparable to QM's decide() function; the original 'add resolved-IP recheck' framing does not apply to this consumer. No matching CVF server-side consumer exists this pass."},
     {"capability": "SM-05/QM-UC-05 shell command-safety policy", "status": "ARCHITECTURE_ONLY", "note": "No CVF consumer executes arbitrary agent-authored shell commands in the surfaces read; QM's own consumer/verifier not verified this pass"},
     {"capability": "SM-06/QM-UC-04 credential broker", "status": "CONTRACT_ONLY", "note": "Skill-instruction-level text only; no broker source opened on either side; no CVF consumer shape matches"},
     {"capability": "QM-UC-03 durable interactive login", "status": "CONTRACT_ONLY", "note": "Skill-instruction-level text only; no CVF consumer for agent-initiated CLI login exists in evidence read"},
     {"capability": "DSH-UC-03 CoT-leakage taxonomy", "status": "CONTRACT_ONLY", "note": "Prose-methodology document only; not source code; no CVF owner comparison completed"},
-    {"capability": "DSH-UC-04 review-checklist comparison", "status": "BLOCKED_EVIDENCE_GAP", "note": "Comparison against CVF's own /code-review skill instruction body not completed this pass; cannot classify further without that read"}
+    {"capability": "DSH-UC-04 review-checklist comparison", "status": "BLOCKED_EVIDENCE_GAP", "note": "CORRECTED THIS REWORK: comparison target is the governed cvf-engineering-code-review-quality ASSF package (not a provider skill listing); its SKILL.md metadata was read this pass, but its full five-axis instruction body requires a package-loader-mediated read not performed here; cannot classify further without that read"}
   ],
 
   "programContinuation": {
     "inheritedSourceLedger": {
-      "path": "AGENT_HANDOFF_V60_2026-09-08.md",
-      "reportedTotals": "54-source seed and 68 historical obligations from CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip, SHA-256 66d47f56c92bdd747ed0294fdc00d7d8d2fcc69bc0a0b1e4e92b71b33b7bc795",
-      "verificationScope": "UNVERIFIED_THIS_PASS; this audit did not locate or open the referenced ZIP payload; searched docs/reference/external_agent_review/ and active handoff text only, per work-order instruction not to fabricate or claim the list exhausted",
-      "searchedLocations": ["docs/reference/external_agent_review/", "AGENT_HANDOFF_V60_2026-09-08.md text", "CVF_SESSION_MEMORY.md Next Allowed Move history"]
+      "path": ".private_reference/source_mirrors/INDEX.md",
+      "reworkCorrection": "F5 CORRECTED: the original audit pointed only to AGENT_HANDOFF_V60_2026-09-08.md's unverified 54-source/68-obligation ZIP-seed prose and did not consult the actual reproducible mirror ledger. This rework reads .private_reference/source_mirrors/INDEX.md in full: it is a real, currently-maintained, reproducible ledger of CLONED_PINNED source mirrors with recorded absorption-surface state per mirror.",
+      "reproducibleSearchCommands": [
+        "find . -iname \"*ABSORPTION_HANDOFF_PACK*\" -not -path \"*/node_modules/*\" (run from repo root) => zero hits; CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip is NOT PRESENT in this workspace",
+        "grep -oP \"^\\| \\`[^\\`]+\\`\" .private_reference/source_mirrors/INDEX.md => 11 mirror-ID rows",
+        "find .cvf/runtime/external-returns -maxdepth 2 => only AGW-related receipts (EARA_AGW_T0_20A62661465F, EARA_AGW_T0_REPAIRED_5cd8bd8a5de9); no QM or DSH external-return receipts"
+      ],
+      "reportedTotals": "AGENT_HANDOFF_V60_2026-09-08.md's 54-source seed and 68 historical obligations from CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip, SHA-256 66d47f56c92bdd747ed0294fdc00d7d8d2fcc69bc0a0b1e4e92b71b33b7bc795, remain UNVERIFIED: the ZIP payload is confirmed absent from this workspace by the reproducible search command above, not merely undiscovered by an incomplete search.",
+      "verificationScope": "The ZIP-seed total is a separate, still-unverified claim from the mirror INDEX, which is independently reproducible and does not depend on that ZIP. Both are recorded; they are not the same evidence and must not be conflated.",
+      "searchedLocations": [".private_reference/source_mirrors/INDEX.md (full read, primary reproducible ledger)", "docs/reference/external_agent_review/ directory listing (22 files, method/standard documents, not a source-count ledger)", ".cvf/runtime/external-returns/ (external-return receipts, AGW only)", "AGENT_HANDOFF_V60_2026-09-08.md text (unverified ZIP-seed claim only)"]
     },
     "currentThreeSourceState": {
       "QM": "ABSORPTION_NOT_COMPLETE; residual obligations recorded above",
       "AGW": "ABSORPTION_NOT_COMPLETE; residual obligations recorded above; AGW-UC-02 bounded adaptation proposal stands separately",
-      "DSH": "ABSORPTION_NOT_COMPLETE; DSH-UC01 closure preserved; residual obligations recorded above"
+      "DSH": "ABSORPTION_NOT_COMPLETE; DSH-WRA-R1's provider-attempt-admission closure and DSH-UC01 Track A/B's own closure are two separate CLOSED_PASS_BOUNDED lanes with different scope, both preserved unchanged (corrected this revision, F3); residual obligations recorded above"
     },
-    "remainingSourcesAndObligations": "The 54-source/68-obligation seed remains UNVERIFIED and its individual member identities were not recovered in this pass (the ZIP payload was not located in the searched locations). This is a concrete provenance gap, not a claim that no further sources exist.",
-    "missingInputLocationsSearched": ["docs/reference/external_agent_review/ directory listing", "active handoff full text", "session memory Next Allowed Move history entries mentioning the handoff pack"],
+    "remainingSourcesAndObligations": "Two distinct evidence rows: (1) the AGENT_HANDOFF_V60 ZIP-seed's 54-source/68-obligation total remains an UNVERIFIED prose claim whose payload is confirmed absent from this workspace; its individual member identities cannot be recovered from this workspace. (2) The mirror INDEX independently lists 11 CLONED_PINNED mirrors with real, currently-available pins, of which 8 are distinct from the current three-source batch. Their absorption status varies and was NOT uniformly re-verified this pass: at minimum, spinabot__brigade is recorded ABSORPTION_COMPLETE_USE_PROVEN and colbymchenry__codegraph's CGE-R3 lane is confirmed this revision as CLOSED_PASS_BOUNDED (doc-only), leaving the true count of genuinely open/untouched next-repository candidates among the 8 as UNVERIFIED without checking each one's own session-state/handoff acceptance history the way CGE-R3 was checked here. This is reproducible next-batch evidence with a corrected caveat, not a clean 8-candidate backlog.",
+    "missingInputLocationsSearched": [".private_reference/source_mirrors/INDEX.md (FOUND and read in full; not merely searched)", "docs/reference/external_agent_review/ directory listing (FOUND, 22 files, none is a source-count ledger)", ".cvf/runtime/external-returns/ (FOUND, AGW-only receipts)", "CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip filename search across the repository (NOT FOUND, confirmed absent)"],
     "nextBatchNominations": [
       {
-        "domain": "QM src/ residual modules (auth, credentials, identity, sandbox)",
+        "domain": "QM src/ residual modules (auth, credentials, identity, sandbox) -- CURRENT-BATCH RESIDUAL, not a next-repository nomination",
         "externalEvidenceAvailability": "NONE; QM has no external researcher nomination at all",
-        "localEvidenceGap": "53 of 58 top-level modules unopened; sandbox/ alone has 29 unopened files implementing multiple sandbox backends (docker, aws, e2b, modal, porter, local)",
+        "localEvidenceGap": "53 of 56 top-level src/ entries unopened (see uniquePathReadDepthLedger.qmSrcTopLevel); sandbox/ alone has 29 unopened files implementing multiple sandbox backends (docker, aws, e2b, modal, porter, local)",
         "expectedValue": "MEDIUM-HIGH; sandbox/auth/identity are exactly the operational-value regions the scope-recovery decision flagged as thinnest-evidence and highest-priority",
         "nextAction": "Author a follow-on bounded QM-only residual packet targeting src/auth, src/identity, src/credentials, and 3-5 representative src/sandbox/*.ts files as the next Local dispatch"
       },
       {
-        "domain": "AGW crates/agentgateway/src/llm/policy/ remaining guard types (bedrock_guardrails, google_model_armor, azure_content_safety, moderation)",
-        "externalEvidenceAvailability": "PARTIAL; EARA-AGW-T1 and AGW-UC-02 covered mod.rs/webhook.rs/streaming_guardrails.rs structurally but did not open the four named provider-specific guard modules",
-        "localEvidenceGap": "azure_content_safety.rs, bedrock_guardrails.rs, google_model_armor.rs, moderation.rs, pii.rs source files remain unopened (only referenced by name via match-arm dispatch in mod.rs)",
-        "expectedValue": "LOW-MEDIUM; these are third-party-provider-backed guard integrations, lower priority than the QM sandbox/auth gap since CVF's own AGW-UC-02 adaptation proposal already targets regex-only mask capability, not provider-backed guardrails",
-        "nextAction": "Defer until a CVF consumer specifically requires provider-backed (Bedrock/Google/Azure) content moderation, per AGW-UC-02's existing DEFER_WITH_TRIGGER webhook disposition logic extended to provider guardrails"
+        "domain": "colbymchenry__codegraph -- NOT A FRESH NEXT-REPOSITORY NOMINATION; CGE-R3 is already CLOSED_PASS_BOUNDED (corrected this revision per F5)",
+        "externalEvidenceAvailability": "Mirror CLONED_PINNED at da72946d25e112f662f5a60c6b69f363aec60f16, 409 tracked files. CGE-R3's docs/ family (work order, baseline: DISPATCH_READY; worker-return-shaped review: COMPLETE_PENDING_REVIEW; reference delta: ACTIVE_REFERENCE_PENDING_REVIEW) carries stale pre-acceptance Status headers, but CVF_SESSION/state/entries/cgeR3CodeGraphUpstreamAbsorptionDispatch20260630.json (`workerReturnStatus: accepted by reviewer/closer material commit`, worker material commit 9edc7776) and CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V30_2026-07-01.md (line 840: `CLOSED_PASS_BOUNDED; CodeGraph source-mirror absorption remains doc-only`) both confirm CGE-R3 IS closed.",
+        "localEvidenceGap": "None for CGE-R3's closure status; a genuine gap remains only for any post-closure CodeGraph value beyond the accepted doc-only absorption, which this audit did not investigate",
+        "expectedValue": "N/A_FOR_THIS_LANE: CGE-R3 is closed, not a nomination candidate. Session state records it as `WORKER_RETURN_CLOSED_PENDING_OPERATOR_NEXT_LANE_SELECTION`, meaning the open question is an operator/Local decision about what (if any) NEXT CodeGraph-related lane to open, not whether to survey CodeGraph for the first time.",
+        "nextAction": "Do not treat colbymchenry__codegraph as a next-repository nomination in this program continuation; if the operator wants further CodeGraph work, that is a separate NEXT-lane selection building on the already-accepted CGE-R3 closure, outside this three-repo program's scope"
       },
       {
-        "domain": "DSH .agents/notes/implemented/ (1814 tracked paths, content unopened)",
-        "externalEvidenceAvailability": "NONE beyond the two already-read skill files' citations of specific note paths",
-        "localEvidenceGap": "The entire durable-decision-record corpus (rationale for DSH's own architecture choices) is unread; two already-read skills (dsh-trim-cot-leakage, dsh-code-review) both cite specific notes by path as load-bearing references, suggesting the notes corpus itself carries recoverable design-rationale value distinct from the skill instructions",
-        "expectedValue": "LOW-MEDIUM; 1814 files is a large corpus and DSH's own notes are about DSH's architecture, not CVF's -- value would be methodological (how DSH structures durable decision records) rather than directly portable code/mechanism value",
-        "nextAction": "Defer; lower priority than QM's unopened source modules given DSH-UC01 is already CLOSED and this pass found no new named CVF consumer for a notes-corpus methodology comparison"
+        "domain": "spinabot__brigade -- NEXT-REPOSITORY NOMINATION (from mirror INDEX, BRIGADE-EARTR-R1 lane)",
+        "externalEvidenceAvailability": "Mirror already CLONED_PINNED at e084f08dfb9aafa01e991c738cfd88e4c554ab4d, 1382 tracked files, verified 2026-08-29; INDEX records BRIGADE-EARTR-R1 as ABSORPTION_COMPLETE_USE_PROVEN (four existing-owner runtime compositions proven, two patterns NO_NEW_VALUE)",
+        "localEvidenceGap": "This audit did not re-read brigade source; the INDEX row itself states this lane is already complete, not a residual gap",
+        "expectedValue": "LOW as a NEW nomination since INDEX already records this lane ABSORPTION_COMPLETE_USE_PROVEN; listed here for completeness of the reproducible backlog inventory, not as a priority recommendation",
+        "nextAction": "No action; already closed per INDEX. Included to demonstrate the full reproducible mirror count, not as a recommended next batch."
       }
     ],
-    "localOwnedNextAction": "Local reviewer to author a bounded QM-only residual-recovery follow-on packet (src/auth, src/identity, src/credentials, representative src/sandbox/*.ts) as the highest-priority next batch, per nextBatchNominations[0]; this is the concrete next action owned by Local, not deferred to operator reminder."
+    "fullMirrorInventoryForTransparency": {
+      "note": "Complete reproducible list of all 11 CLONED_PINNED mirrors from .private_reference/source_mirrors/INDEX.md, for backlog transparency beyond the two nominations detailed above",
+      "currentBatch": ["agentgateway__agentgateway", "yc-software__qm", "deepseek-ai__deepseek-harness"],
+      "additionalMirrorsNotInCurrentBatch": [
+        "addyosmani__agent-skills (AGSK lane; source of the cvf-engineering-code-review-quality package used in this rework's F3 correction)",
+        "colbymchenry__codegraph (CGE-R3 CLOSED_PASS_BOUNDED, doc-only absorption; awaiting operator NEXT-lane selection, not a survey gap)",
+        "opendatalab__MinerU (MSEA lane reference)",
+        "theswerd__brainless (EAIC-KR-R1 lane)",
+        "nguyennguyenit__pancake-pos-mcp (PPMCP-R1 lane, pending documentation-only comparison)",
+        "zhaoxuya520__reverse-skill (new governed intake, comparison pending)",
+        "modelcontextprotocol__modelcontextprotocol (MCP-KAR-T0 lane, semantic review pending)",
+        "spinabot__brigade (BRIGADE-EARTR-R1, ABSORPTION_COMPLETE_USE_PROVEN)"
+      ]
+    },
+    "localOwnedNextAction": "Local reviewer to author a bounded QM-only residual-recovery follow-on packet (src/auth, src/identity, src/credentials, representative src/sandbox/*.ts) as the highest-priority next action within the CURRENT three-source batch, per nextBatchNominations[0]. CGE-R3 (colbymchenry__codegraph) is NOT a pending Local action from this audit: it is already CLOSED_PASS_BOUNDED per CVF_SESSION/state/entries/cgeR3CodeGraphUpstreamAbsorptionDispatch20260630.json and AGENT_HANDOFF_V30_2026-07-01.md, and any further CodeGraph work is an operator NEXT-lane selection outside this program's scope, not a residual gap this audit identifies."
   },
 
   "atMostThreeConversionCandidates": [
     {
       "candidate": 1,
-      "sourceItem": "QM egress-authz-main.ts resolved-IP recheck (SM-04/QM-UC-06)",
-      "existingOwnerToReceive": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-tools.tsx (existing SSRF-blocking owner)",
-      "provenRequirement": "CVF's own test suite (agent-tools.test.tsx:140-173) proves literal-IP/hostname-string blocking but does not prove resolved-IP-after-DNS-lookup blocking exists",
-      "verificationConditionBeforeAcceptance": "Open agent-tools.tsx's actual URL-validation implementation to confirm whether resolved-IP recheck already exists before proposing any change; if it already exists, this becomes NO_NEW_VALUE",
-      "seamDependency": "Would require a DNS-lookup step inside the existing URL-validation function plus resolved-IP range checking, mirroring QM's decide() function shape"
+      "sourceItem": "QM egress-authz-main.ts decide() pattern (SM-04/QM-UC-06)",
+      "existingOwnerToReceive": "NONE_YET -- CORRECTED THIS REWORK: agent-tools.tsx is a browser-side 'use client' tool with no server-side DNS-lookup seam; QM's resolve-then-recheck pattern does not attach to it. No current CVF server-side owner exists for this pattern.",
+      "provenRequirement": "NOT_YET_PROVEN -- this is a reference-pattern candidate only, pending a future CVF server-side agent-initiated outbound-fetch capability that does not exist in evidence read this pass",
+      "verificationConditionBeforeAcceptance": "A future CVF work order must first establish a server-side (not browser-side) agent-initiated outbound-fetch consumer before this pattern has anywhere to attach",
+      "seamDependency": "None yet; recorded for future reference only"
     },
     {
       "candidate": 2,
       "sourceItem": "DSH dsh-code-review enforcement-bypass-tracing instruction (DSH-UC-04)",
-      "existingOwnerToReceive": "CVF's own /code-review skill (not opened this pass; comparison incomplete)",
-      "provenRequirement": "BLOCKED_EVIDENCE_GAP -- comparison against CVF's own skill instruction body was not completed this pass; this is a nominated comparison, not a proven gap",
-      "verificationConditionBeforeAcceptance": "Open CVF's own /code-review skill instruction body and compare line-by-line before treating this as more than a hypothesis",
-      "seamDependency": "Documentation-only change to a skill instruction file, if the comparison confirms a gap"
+      "existingOwnerToReceive": "docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/SKILL.md (governed ASSF package, APPROVED; CORRECTED THIS REWORK from an incorrect provider-skill-listing citation)",
+      "provenRequirement": "BLOCKED_EVIDENCE_GAP -- comparison against the governed package's full five-axis instruction body was not completed this pass (its full body requires a package-loader-mediated read, out of this pass's scope); this is a nominated comparison, not a proven gap",
+      "verificationConditionBeforeAcceptance": "Request the governed package's full body through the AGSK-R4 runtime package loader and compare line-by-line before treating this as more than a hypothesis",
+      "seamDependency": "Documentation-only change to the governed package's instruction body, if the comparison confirms a gap, through its own separate ASSF lifecycle process"
     },
     {
       "candidate": 3,
@@ -349,7 +486,7 @@
     "manifestHash": "N/A with reason: each frozen repository is an independent authority root; canonical manifest hashes from the initial intake (per-repository canonicalManifestSha256) remain the authoritative unchanged corpus identity, not recomputed this pass",
     "processingLedgerArtifactOrInlineLedger": "inline residualObligationLedger array in this file",
     "allowedTerminalStatuses": "READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE",
-    "reconciliation": "This pass's own new-read rows: 9 fully-read files (QM: command-policy.ts, egress-authz-main.ts, interactive-login/SKILL.md, use-shared-credential/SKILL.md; AGW: traffic-egress-proxy/README.md; DSH: dsh-trim-cot-leakage/SKILL.md, dsh-code-review/SKILL.md) plus 1 partial read (QM acl-store.ts, first 120 lines) plus 1 re-confirmed prior-read (AGW mcp-authorization/README.md, not counted as new) plus path-enumeration-only coverage (QM src/ and skills-seed/ top level; DSH .agents/notes/ subtree counts). manifest_new_reads=9; partial_reads=1; reconfirmed_not_new=1; path_enumeration_only=3; exclusions=0; unresolved=0 for the rows actually produced in this pass",
+    "reconciliation": "CORRECTED THIS REWORK (F1): this pass's own new-read rows total exactly 7 fully-read files, matching the named list exactly (not 9 as the original audit claimed while naming only 7): QM command-policy.ts, egress-authz-main.ts, interactive-login/SKILL.md, use-shared-credential/SKILL.md (4); AGW traffic-egress-proxy/README.md (1); DSH dsh-trim-cot-leakage/SKILL.md, dsh-code-review/SKILL.md (2). Total = 4+1+2 = 7. Plus 1 partial read (QM acl-store.ts, first 120 lines) plus 1 re-confirmed prior-read (AGW mcp-authorization/README.md, not counted as new) plus path-enumeration-only coverage (QM src/ and skills-seed/ top level; DSH .agents/notes/ subtree counts, 3 enumeration rows). This rework additionally reads 2 CVF-side/governed files (agent-tools.tsx partial, cvf-engineering-code-review-quality/SKILL.md full) for F2/F3 resolution, not counted in the three-repository corpus total since they are CVF-owned surfaces, not source-mirror corpus. manifest_new_reads=7; partial_reads=1; reconfirmed_not_new=1; path_enumeration_only=3; rework_cvf_side_reads=2; exclusions=0; unresolved=0 for the rows actually produced across both passes",
     "unresolvedFiles": "The vast majority of all three repositories' tracked files remain outside this pass's read scope by design, listed explicitly in unreadUnknownRegions, not silently claimed complete",
     "declaredExclusions": "All repository paths not named in residualObligationLedger's actionThisPass fields; DSH packages/apps source (reused via DSH-WRA-R1); AGW crates/controller/ui beyond EARA-AGW-T1 and llm/policy (reused via prior passes)",
     "unreadableOrUnsupportedFiles": 0,
@@ -361,11 +498,11 @@
   },
 
   "knowledgeSystemReconciliation": {
-    "mappedCount": 9,
+    "mappedCount": 8,
     "deferredCount": 3,
     "unmappedCount": 1,
-    "totalCandidateRecords": 13,
-    "note": "9 rows (3 sharedMechanisms + 6 repositorySpecificValueViews) carry a planning disposition of PROMISING_FOR_SELECTED_REVIEW or DEFER_WITH_TRIGGER (mapped); the 3 atMostThreeConversionCandidates rows are deferred pending their own verification conditions; 1 row (DSH-UC-04's BLOCKED_EVIDENCE_GAP canonical status pending the CVF /code-review comparison) is unmapped until that comparison is completed. mapped(9) + deferred(3) + unmapped(1) = 13 = totalCandidateRecords"
+    "totalCandidateRecords": 12,
+    "note": "CORRECTED THIS REWORK (F1): the original audit double-counted DSH-UC-04 in both its mapped(9) and unmapped(1) totals against a 13-record base; the actual base is 9 rows (3 sharedMechanisms: SM-04/05/06 + 6 repositorySpecificValueViews: QM-UC-03/04/05/06, DSH-UC-03/04) plus 3 atMostThreeConversionCandidates rows = 12 total, not 13. Disjoint partition: 8 rows carry a settled planning disposition this rework (SM-04 now DEFER_WITH_TRIGGER after F2 correction; SM-05 DEFER_WITH_TRIGGER; SM-06 UNKNOWN; QM-UC-03 LOW-confidence advisory; QM-UC-04 see SM-06; QM-UC-05 see SM-05; QM-UC-06 DEFER_WITH_TRIGGER after F2 correction; DSH-UC-03 advisory) = mapped(8); the 3 atMostThreeConversionCandidates rows are deferred pending their own stated verification conditions = deferred(3); exactly 1 row (DSH-UC-04) remains unmapped because its canonicalStatus is BLOCKED_EVIDENCE_GAP pending the AGSK-R4 package-loader-mediated comparison, corrected this rework to reference the actual governed package rather than a provider listing = unmapped(1). mapped(8) + deferred(3) + unmapped(1) = 12 = totalCandidateRecords, with no row counted twice."
   },
 
   "publicExportDisposition": {
