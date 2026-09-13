@@ -1,0 +1,1800 @@
+{
+  "schemaVersion": "cvf.umbrellaSeedReconciliation.v1",
+  "textEncodingExceptionNote": "Text Encoding Exception: sourceRows/label and historicalObligationRows/sourceRow fields below are copied verbatim from the accepted docs/audits/CVF_UMBRELLA_SEED_PROVENANCE_RECEIPT_2026-09-13.json and preserve original non-ASCII (Vietnamese diacritic) source labels byte-for-byte rather than transliterating them, since this reconciliation must not alter receipt-bound source identity strings.",
+  "batchId": "UMBRELLA-SEED-RECONCILIATION-T1",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "dispatchBaseHead": "dfae47c8c0feaf7e0508d08f4d02438a41ef98c6",
+  "executionBaseHead": "f5bfdffdda4041ce7277026b3ec83dae89eff43d",
+  "checkedAtUtc": "2026-09-13T14:47:57+00:00",
+  "inputHashes": [
+    {
+      "path": "CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip::CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_V1.md",
+      "sha256": "1cdc672ca38ccecc2504f5bfbe14045676f4aae046cf33a1f89541e5f22fd652",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "ZIP_MEMBER_HASHED_NOT_EXTRACTED"
+    },
+    {
+      "path": "CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip::CVF_CURRENT_ABSORPTION_SOURCE_SEED_V1.json",
+      "sha256": "d512e4b5aab45e5f70b3d9303c1f35d5afd02371c624ee310515ab7c69d2e274",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "ZIP_MEMBER_HASHED_NOT_EXTRACTED"
+    },
+    {
+      "path": "CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip::CVF_CURRENT_ABSORPTION_RUN_SUMMARY_SCHEMA_V1.json",
+      "sha256": "33e061a37095812d213076023a5d5bd4b290bdc30f29c9029d8e90aab3ffd516",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "ZIP_MEMBER_HASHED_NOT_EXTRACTED"
+    },
+    {
+      "path": "CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip::CVF_VALIDATE_CURRENT_ABSORPTION_RETURN_V1.py",
+      "sha256": "fb2c4231bfabff8da09e56df95eda2277e1cf60c03ba07f81e6748962465c6aa",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "ZIP_MEMBER_HASHED_NOT_EXTRACTED"
+    },
+    {
+      "path": "CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip::CVF_SOURCE_FRESHNESS_ARCHITECTURE_V2.md",
+      "sha256": "1a301507421de1746257ca0fa68412d93a44bb2dce3aa157c4b2e167ae11ffb0",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "ZIP_MEMBER_HASHED_NOT_EXTRACTED"
+    },
+    {
+      "path": "CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip::CVF_TARGET_FRESHNESS_REGISTRY_V1.json",
+      "sha256": "bec4263a451b9335a3a2eeb6d48798e61dc4492d08a596410aa4f2bffa0a4e0b",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "ZIP_MEMBER_HASHED_NOT_EXTRACTED"
+    },
+    {
+      "path": "CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip::CVF_FRESHNESS_REBASE_IMPACT_MATRIX_2026-09-09.md",
+      "sha256": "a9cd92efa7f775b071749894275228f1de8b6db04586ad9807032ddf0e3e024c",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "ZIP_MEMBER_HASHED_NOT_EXTRACTED"
+    },
+    {
+      "path": "C:\\Users\\DELL\\Downloads\\CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip",
+      "sha256": "66d47f56c92bdd747ed0294fdc00d7d8d2fcc69bc0a0b1e4e92b71b33b7bc795",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "BYTES_HASHED_AND_METADATA_PARSED"
+    },
+    {
+      "path": "C:\\Users\\DELL\\Downloads\\02C_CVF_GLOBAL_ABSORPTION_BACKLOG.md",
+      "sha256": "2ac5d5432c14fb58d697a3f28899a43ec6d90a82aa11ff1a4597573cc8dcbae0",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "BYTES_HASHED_AND_METADATA_PARSED"
+    },
+    {
+      "path": "C:\\Users\\DELL\\Downloads\\02_GENERAL_ABSORPTION_LEDGER.md",
+      "sha256": "0afa805e82a4cba4315dd5c3852330c62f37b17801010db567201d3ab71b3230",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "BYTES_HASHED_ONLY"
+    },
+    {
+      "path": "C:\\Users\\DELL\\Downloads\\02_SKILL_ABSORPTION_LEDGER.md",
+      "sha256": "fa06d55568fef94a42507adae6a56f323edb98e12ff4046c6e210d3fb538fe94",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "BYTES_HASHED_ONLY"
+    },
+    {
+      "path": "C:\\Users\\DELL\\Downloads\\02_MEMORY_ABSORPTION_LEDGER.md",
+      "sha256": "4f173132206dce88d2d002590510e8106224e28d49c9f73ad49fb782e39a946c",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "BYTES_HASHED_ONLY"
+    },
+    {
+      "path": "C:\\Users\\DELL\\Downloads\\02_MCP_ABSORPTION_LEDGER.md",
+      "sha256": "9fd427058b77a91f6940b8441bacc4fb1b176d0738938a4d8f8e931e38472164",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "BYTES_HASHED_ONLY"
+    },
+    {
+      "path": "C:\\Users\\DELL\\Downloads\\02_ARCHITECTURE_ABSORPTION_LEDGER.md",
+      "sha256": "d3fff11bfaab85ee485d015c3a779595b185720d7b613cef675b9b4844a25b89",
+      "matchStatus": "MATCH_RECEIPT",
+      "readDepth": "BYTES_HASHED_ONLY"
+    }
+  ],
+  "sourceRows": [
+    {
+      "canonical_source_id": "SRC-GRIDEX-GRIDEX",
+      "domain": "GENERAL",
+      "label": "Gridex / gridex",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/gridex/gridex",
+      "seed_upstream_repository": "https://github.com/gridex/gridex",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-AGENT-GROUNDING-WORKSTREAM",
+      "domain": "GENERAL",
+      "label": "Agent grounding / Agent sai và grounding",
+      "source_kind": "WORKSTREAM",
+      "seed_historical_locator": "Project article/workstream",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "NON_REPO_SOURCE",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SKILL-SRC-005",
+      "domain": "GENERAL",
+      "label": "kepano/obsidian-skills",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/kepano/obsidian-skills",
+      "seed_upstream_repository": "https://github.com/kepano/obsidian-skills",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-MEMENTO-SKILLS",
+      "domain": "SKILL",
+      "label": "Memento-Skills",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/Memento-Teams/Memento-Skills",
+      "seed_upstream_repository": "https://github.com/Memento-Teams/Memento-Skills",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-ZHAOXUYA520-REVERSE-SKILL",
+      "domain": "SKILL",
+      "label": "reverse-skill / Skill Router",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/zhaoxuya520/reverse-skill",
+      "seed_upstream_repository": "https://github.com/zhaoxuya520/reverse-skill",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-MRGOONIE-CLAUDEKIT-SKILLS",
+      "domain": "SKILL",
+      "label": "mrgoonie/claudekit-skills",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/mrgoonie/claudekit-skills",
+      "seed_upstream_repository": "https://github.com/mrgoonie/claudekit-skills",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC_SKILL_ENVIRONMENT_ADAPTATION",
+      "domain": "SKILL",
+      "label": "Environment Adaptation",
+      "source_kind": "WORKSTREAM",
+      "seed_historical_locator": "Project article/workstream: environment adaptation",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "NON_REPO_SOURCE",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC_SKILL_GOOGLE_ADK_SKILLTOOLSET",
+      "domain": "SKILL",
+      "label": "Google ADK SkillToolset / Progressive Disclosure",
+      "source_kind": "MIXED",
+      "seed_historical_locator": "Google ADK docs/blog + SkillToolset source",
+      "seed_upstream_repository": "https://github.com/google/adk-python",
+      "seed_relation": "CURRENT_CODE_UPSTREAM",
+      "seed_resolution_status": "CANDIDATE_CURRENT_UPSTREAM",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC_SKILL_HOWTOCLAUDE",
+      "domain": "SKILL",
+      "label": "HowtoClaude",
+      "source_kind": "WORKSTREAM",
+      "seed_historical_locator": "HowtoClaude Project workstream",
+      "seed_upstream_repository": "https://github.com/luongnv89/claude-howto",
+      "seed_relation": "CORROBORATING_REPO",
+      "seed_resolution_status": "WORKSTREAM_WITH_CORROBORATING_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC_SKILL_GSTACK",
+      "domain": "SKILL",
+      "label": "gstack",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/garrytan/gstack",
+      "seed_upstream_repository": "https://github.com/garrytan/gstack",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC_SKILL_HTML_ANYTHING",
+      "domain": "SKILL",
+      "label": "html-anything",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/nexu-io/html-anything",
+      "seed_upstream_repository": "https://github.com/nexu-io/html-anything",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "CVF-SRC-SOL-ADVISOR",
+      "domain": "SKILL",
+      "label": "Sol-Advisor",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/DannyMac180/sol-advisor",
+      "seed_upstream_repository": "https://github.com/DannyMac180/sol-advisor",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "MEM-SRC-013",
+      "domain": "SKILL",
+      "label": "AI Repository Reading / Exploration Method",
+      "source_kind": "WORKSTREAM",
+      "seed_historical_locator": "Project workstream",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "NON_REPO_SOURCE",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SKILL-SRC-007",
+      "domain": "SKILL",
+      "label": "Sự bùng nổ SKILL.md",
+      "source_kind": "WORKSTREAM",
+      "seed_historical_locator": "Article/workstream; provenance unresolved",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "UNRESOLVED_SOURCE_IDENTITY",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SKILL-SRC-001",
+      "domain": "SKILL",
+      "label": "huggingface/skills",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/huggingface/skills",
+      "seed_upstream_repository": "https://github.com/huggingface/skills",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SKILL-SRC-006",
+      "domain": "SKILL",
+      "label": "mattpocock/skills",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/mattpocock/skills",
+      "seed_upstream_repository": "https://github.com/mattpocock/skills",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC_MEMORY_MEMPALACE",
+      "domain": "MEMORY",
+      "label": "MemPalace",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/MemPalace/mempalace",
+      "seed_upstream_repository": "https://github.com/MemPalace/mempalace",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC_MEMORY_CORTEX_HUB",
+      "domain": "MEMORY",
+      "label": "Cortex Hub",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/lktiep/cortex-hub",
+      "seed_upstream_repository": "https://github.com/lktiep/cortex-hub",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-AUGMENT-CONTEXT-ENGINE",
+      "domain": "MEMORY",
+      "label": "Augment Context Engine workstream",
+      "source_kind": "WORKSTREAM",
+      "seed_historical_locator": "Augment Code/context-engine workstream",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "NON_REPO_SOURCE",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-GRAPHIFY",
+      "domain": "MEMORY",
+      "label": "Graphify",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/safishamsi/graphify",
+      "seed_upstream_repository": "https://github.com/Graphify-Labs/graphify",
+      "seed_relation": "MOVED_OR_REDIRECTED_UPSTREAM",
+      "seed_resolution_status": "CANDIDATE_CURRENT_UPSTREAM",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-TIRTH8205-CODE-REVIEW-GRAPH",
+      "domain": "MEMORY",
+      "label": "tirth8205/code-review-graph",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/tirth8205/code-review-graph",
+      "seed_upstream_repository": "https://github.com/tirth8205/code-review-graph",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-LANGCHAIN-OPENWIKI",
+      "domain": "MEMORY",
+      "label": "OpenWiki",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/langchain-ai/openwiki",
+      "seed_upstream_repository": "https://github.com/langchain-ai/openwiki",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-RAG-MAG-CONTEXT",
+      "domain": "MEMORY",
+      "label": "RAG vs MAG — Knowledge vs Memory Context",
+      "source_kind": "WORKSTREAM",
+      "seed_historical_locator": "Project source passage/workstream",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "NON_REPO_SOURCE",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "MEM-SRC-004",
+      "domain": "MEMORY",
+      "label": "Filesystem as AI Memory",
+      "source_kind": "WORKSTREAM",
+      "seed_historical_locator": "Project source passage/workstream",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "NON_REPO_SOURCE",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "MEM-SRC-003",
+      "domain": "MEMORY",
+      "label": "Memory Poisoning — arXiv 2608.21230",
+      "source_kind": "DOC_PAPER",
+      "seed_historical_locator": "https://arxiv.org/abs/2608.21230",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "NON_REPO_SOURCE",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "MEM-SRC-005",
+      "domain": "MEMORY",
+      "label": "OpenViking",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/volcengine/OpenViking",
+      "seed_upstream_repository": "https://github.com/volcengine/OpenViking",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "MEM-SRC-002",
+      "domain": "MEMORY",
+      "label": "agentmemory",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/rohitg00/agentmemory",
+      "seed_upstream_repository": "https://github.com/rohitg00/agentmemory",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC",
+      "domain": "MCP",
+      "label": "ModelContextProtocol / official MCP specification",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+      "seed_upstream_repository": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "CVF-SRC-PANCAKE-POS-MCP",
+      "domain": "MCP",
+      "label": "Pancake POS MCP",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/nguyennguyenit/pancake-pos-mcp",
+      "seed_upstream_repository": "https://github.com/nguyennguyenit/pancake-pos-mcp",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-BLACKBIRD-OH-MY-CLAUDECODE",
+      "domain": "ARCHITECTURE",
+      "label": "Blackbird081/oh-my-claudecode / OMC",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/Blackbird081/oh-my-claudecode",
+      "seed_upstream_repository": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+      "seed_relation": "UPSTREAM_PARENT_CANDIDATE",
+      "seed_resolution_status": "CANDIDATE_CURRENT_UPSTREAM",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-CLAW-CODE-WORKSTREAM",
+      "domain": "ARCHITECTURE",
+      "label": "Claw Code workstream",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/Blackbird081/claw-code",
+      "seed_upstream_repository": "https://github.com/ultraworkers/claw-code",
+      "seed_relation": "FORK_OR_MIRROR_UPSTREAM",
+      "seed_resolution_status": "CANDIDATE_CURRENT_UPSTREAM",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-GITHUB-GH-AW",
+      "domain": "ARCHITECTURE",
+      "label": "github/gh-aw",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/github/gh-aw",
+      "seed_upstream_repository": "https://github.com/github/gh-aw",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-MRGOONIE-OPENROUTER-CLI",
+      "domain": "ARCHITECTURE",
+      "label": "mrgoonie/openrouter-cli",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/mrgoonie/openrouter-cli",
+      "seed_upstream_repository": "https://github.com/mrgoonie/openrouter-cli",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC_ARCH_GOCLAW_WORKFLOW",
+      "domain": "ARCHITECTURE",
+      "label": "GoClaw Workflow",
+      "source_kind": "REPO",
+      "seed_historical_locator": "GoClaw workflow evidence in goclaw-docs",
+      "seed_upstream_repository": "https://github.com/nextlevelbuilder/goclaw-docs",
+      "seed_relation": "DOCUMENTATION_UPSTREAM",
+      "seed_resolution_status": "CANDIDATE_CURRENT_UPSTREAM",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-GOCLAW-WORKSTREAM",
+      "domain": "ARCHITECTURE",
+      "label": "GoClaw workstream",
+      "source_kind": "REPO",
+      "seed_historical_locator": "GoClaw runtime workstream",
+      "seed_upstream_repository": "https://github.com/nextlevelbuilder/goclaw",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_CURRENT_UPSTREAM",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-NOUS-HERMES-AGENT",
+      "domain": "ARCHITECTURE",
+      "label": "NousResearch/hermes-agent",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/NousResearch/Hermes-Agent",
+      "seed_upstream_repository": "https://github.com/NousResearch/hermes-agent",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-LANGCHAIN-DEEPAGENTS",
+      "domain": "ARCHITECTURE",
+      "label": "langchain-ai/deepagents",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/langchain-ai/deepagents",
+      "seed_upstream_repository": "https://github.com/langchain-ai/deepagents",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-HKUDS-CLI-ANYTHING",
+      "domain": "ARCHITECTURE",
+      "label": "HKUDS/CLI-Anything",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/HKUDS/CLI-Anything",
+      "seed_upstream_repository": "https://github.com/HKUDS/CLI-Anything",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SKILL-SRC-004",
+      "domain": "ARCHITECTURE",
+      "label": "Blackbird081/everything-claude-code",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/Blackbird081/everything-claude-code",
+      "seed_upstream_repository": "https://github.com/affaan-m/ECC",
+      "seed_relation": "UPSTREAM_PARENT_CANDIDATE",
+      "seed_resolution_status": "CANDIDATE_CURRENT_UPSTREAM",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM",
+      "domain": "ARCHITECTURE",
+      "label": "everything-claude-code workstream",
+      "source_kind": "REPO",
+      "seed_historical_locator": "everything-claude-code workstream",
+      "seed_upstream_repository": "https://github.com/affaan-m/ECC",
+      "seed_relation": "CURRENT_ECOSYSTEM_UPSTREAM",
+      "seed_resolution_status": "CANDIDATE_CURRENT_UPSTREAM",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-MODEL-ROUTER-WORKSTREAM",
+      "domain": "ARCHITECTURE",
+      "label": "Model Router article/workstream",
+      "source_kind": "WORKSTREAM",
+      "seed_historical_locator": "Model Router article/workstream",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "NON_REPO_SOURCE",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "MEM-SRC-009",
+      "domain": "ARCHITECTURE",
+      "label": "ClaudeKit Engineer / Harness Engineering / Guardrails",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/lucaspressi/claudekit-engineer",
+      "seed_upstream_repository": "https://github.com/lucaspressi/claudekit-engineer",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-HARNESS-ENGINEERING-2026",
+      "domain": "ARCHITECTURE",
+      "label": "Harness Engineering 2026 workstream",
+      "source_kind": "DOC_PAPER",
+      "seed_historical_locator": "https://openai.com/index/harness-engineering/",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "NON_REPO_SOURCE",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-GRAPH-ENGINEERING-2026",
+      "domain": "ARCHITECTURE",
+      "label": "Graph Engineering workstream",
+      "source_kind": "WORKSTREAM",
+      "seed_historical_locator": "Graph Engineering workstream",
+      "seed_upstream_repository": "https://github.com/context4ai/agent-graph",
+      "seed_relation": "CORROBORATING_REPO",
+      "seed_resolution_status": "WORKSTREAM_WITH_CORROBORATING_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-NEURONS-AICOWORKER",
+      "domain": "ARCHITECTURE",
+      "label": "Neurons-AI/aicoworker",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/Neurons-AI/aicoworker",
+      "seed_upstream_repository": "https://github.com/Neurons-AI/aicoworker",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-EQUAL-BUDGET-SAS-MAS",
+      "domain": "ARCHITECTURE",
+      "label": "Single-Agent vs Multi-Agent equal-budget workstream",
+      "source_kind": "WORKSTREAM",
+      "seed_historical_locator": "Research/workstream",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "NON_REPO_SOURCE",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-BLOCK-BUZZ",
+      "domain": "ARCHITECTURE",
+      "label": "block/buzz",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/block/buzz",
+      "seed_upstream_repository": "https://github.com/block/buzz",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC-YC-QM",
+      "domain": "ARCHITECTURE",
+      "label": "yc-software/qm",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/yc-software/qm",
+      "seed_upstream_repository": "https://github.com/yc-software/qm",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC_ARCH_AGENTIC_OS_PATTERNS",
+      "domain": "ARCHITECTURE",
+      "label": "Agentic OS Patterns / Giai-phau-agentic-os.pdf",
+      "source_kind": "DOC_PAPER",
+      "seed_historical_locator": "Giai-phau-agentic-os.pdf / Project artifact",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "NON_REPO_SOURCE",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "SRC_ARCH_CLAUDEKIT",
+      "domain": "ARCHITECTURE",
+      "label": "claudekit",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/carlrannaberg/claudekit",
+      "seed_upstream_repository": "https://github.com/carlrannaberg/claudekit",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "CVF-SRC-CLAUDE-CODE-CVF-MCP-CONTROL",
+      "domain": "ARCHITECTURE",
+      "label": "Claude Code discussion / CVF MCP approval-control workstream",
+      "source_kind": "WORKSTREAM",
+      "seed_historical_locator": "Project conversation/workstream",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "NON_REPO_SOURCE",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "CVF-SRC-OPENTABS",
+      "domain": "ARCHITECTURE",
+      "label": "OpenTabs",
+      "source_kind": "REPO",
+      "seed_historical_locator": "https://github.com/opentabs-dev/opentabs",
+      "seed_upstream_repository": "https://github.com/opentabs-dev/opentabs",
+      "seed_relation": "DIRECT",
+      "seed_resolution_status": "CANDIDATE_DIRECT_REPO",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "CVF-SRC-WEBMCP",
+      "domain": "ARCHITECTURE",
+      "label": "WebMCP",
+      "source_kind": "STANDARD_WORKSTREAM",
+      "seed_historical_locator": "OpenAI WebMCP challenge/help workstream",
+      "seed_upstream_repository": "https://github.com/webmachinelearning/webmcp",
+      "seed_relation": "CURRENT_STANDARD_UPSTREAM",
+      "seed_resolution_status": "CANDIDATE_CURRENT_UPSTREAM",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    },
+    {
+      "canonical_source_id": "CVF-SRC-CLI-FOR-AI-AGENTS",
+      "domain": "ARCHITECTURE",
+      "label": "CLI cho AI Agents article/workstream",
+      "source_kind": "WORKSTREAM",
+      "seed_historical_locator": "Project article/workstream",
+      "seed_upstream_repository": null,
+      "seed_relation": "NONE",
+      "seed_resolution_status": "NON_REPO_SOURCE",
+      "seed_governed_verification_status": "UNVERIFIED_PENDING_IMMUTABLE_PIN",
+      "refresh_required_at_execution": true,
+      "silent_upstream_substitution_forbidden": true
+    }
+  ],
+  "sourceRowCount": 54,
+  "historicalObligationRows": [
+    {
+      "id": "GEN-ABS-001",
+      "sourceRow": "| `GEN-ABS-001` | `GENERAL` | GEN-F-GRIDEX-001 | Risk/effect-aware action admission profile | Tool / Environment Gateway; Permissions; Approval / Guarding | `ADAPT` | NOT_STATED_IN_GENERAL_BACKLOG | NOT_STATED_IN_GENERAL_BACKLOG | `NOT_STARTED` |"
+    },
+    {
+      "id": "GEN-ABS-002",
+      "sourceRow": "| `GEN-ABS-002` | `GENERAL` | GEN-F-GRIDEX-002 | Capability-effect receipt extension | Receipts; Observability; Evidence | `ADAPT` | NOT_STATED_IN_GENERAL_BACKLOG | NOT_STATED_IN_GENERAL_BACKLOG | `NOT_STARTED` |"
+    },
+    {
+      "id": "GEN-ABS-003",
+      "sourceRow": "| `GEN-ABS-003` | `GENERAL` | GEN-F-GROUND-001/002/003 | Answer grounding verification contract: claim map + deficit object + sufficiency gate | Verification; Provenance; Guarding | `ADAPT + ADOPT` | NOT_STATED_IN_GENERAL_BACKLOG | NOT_STATED_IN_GENERAL_BACKLOG | `NOT_STARTED` |"
+    },
+    {
+      "id": "GEN-ABS-004",
+      "sourceRow": "| `GEN-ABS-004` | `GENERAL` | GEN-F-OBS-001 | Runtime-authoritative capability freshness probe | External Capability Admission; Tool / Environment Gateway | `ADAPT` | NOT_STATED_IN_GENERAL_BACKLOG | NOT_STATED_IN_GENERAL_BACKLOG | `NOT_STARTED` |"
+    },
+    {
+      "id": "MCP-AI-001",
+      "sourceRow": "| `MCP-AI-001` | `MCP` | MCP-F-001, MCP-F-002 | 2026-07-28 stateless/self-describing request core + discovery/capability negotiation | MCP Runtime; Session Lifecycle; Protocol Governance | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "MCP-AI-002",
+      "sourceRow": "| `MCP-AI-002` | `MCP` | MCP-F-003, MCP-F-010 | Stateless Streamable HTTP transport with header-addressable gateway routing | Transport; MCP Gateway; Remote MCP | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "MCP-AI-003",
+      "sourceRow": "| `MCP-AI-003` | `MCP` | MCP-F-004 | Cacheable deterministic discovery/read results | Tool / Resource / Prompt Exposure; Gateway | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "MCP-AI-004",
+      "sourceRow": "| `MCP-AI-004` | `MCP` | MCP-F-005 | Resource/issuer-bound remote authorization and no token passthrough | MCP Security; Remote MCP | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "MCP-AI-005",
+      "sourceRow": "| `MCP-AI-005` | `MCP` | MCP-F-006 | MCP-native input_required continuation mapped to CVF HITL/governance | Session Lifecycle; Human Approval; Tool Execution | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "MCP-AI-006",
+      "sourceRow": "| `MCP-AI-006` | `MCP` | MCP-F-007 | MCP extension + feature lifecycle/deprecation governance | Protocol Governance | `ADOPT` | HIGH | LOW | `NOT_STARTED` |"
+    },
+    {
+      "id": "MCP-AI-007",
+      "sourceRow": "| `MCP-AI-007` | `MCP` | MCP-F-008 | First-class MCP Resources for non-action reference/context data | Resource Exposure; MCP Runtime | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "MCP-AI-008",
+      "sourceRow": "| `MCP-AI-008` | `MCP` | MCP-F-009 | First-class MCP Prompts distinct from tools/resources | Prompt Exposure; Protocol Governance | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "MCP-AI-009",
+      "sourceRow": "| `MCP-AI-009` | `MCP` | MCP-F-012 | OpenTelemetry trace-context propagation in MCP metadata | Observability; Gateway; Interoperability | `ADOPT` | HIGH | LOW | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-001",
+      "sourceRow": "| `MEM-ABS-001` | `MEMORY` | MEM-F-001; MEM-F-005 | Controlled persistent memory service contract with explicit scope/isolation/dedup | Memory Plane / Memory Adapter | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-002",
+      "sourceRow": "| `MEM-ABS-002` | `MEMORY` | MEM-F-004 | Temporal validity + supersession lifecycle | Memory Lifecycle / Provenance | `ADAPT` | HIGH | LOW_MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-003",
+      "sourceRow": "| `MEM-ABS-003` | `MEMORY` | MEM-F-007 | Relationship-aware task-conditioned retrieval + curation | Knowledge Retrieval / Context Selection | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-004",
+      "sourceRow": "| `MEM-ABS-004` | `MEMORY` | MEM-F-009; MEM-F-011; MEM-F-012 | Retained project-intelligence graph with incremental freshness | Project / Code Intelligence; Memory Lifecycle | `ADAPT` | HIGH | MEDIUM_HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-005",
+      "sourceRow": "| `MEM-ABS-005` | `MEMORY` | MEM-F-010 | Evidence-qualified relationship records | Provenance / Verification | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-006",
+      "sourceRow": "| `MEM-ABS-006` | `MEMORY` | MEM-F-014; MEM-F-015 | Derived knowledge memory with source provenance, verification/staleness state and protected claim ownership | Persistent State / Provenance / Truth Support | `ADAPT` | MEDIUM_HIGH | MEDIUM_HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-007",
+      "sourceRow": "| `MEM-ABS-007` | `MEMORY` | MEM-F-016 | Knowledge-context vs continuity-memory source typing | Context / Memory Plane | `ADAPT` | HIGH | LOW | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-008",
+      "sourceRow": "| `MEM-ABS-008` | `MEMORY` | MEM-F-018 | Grounded Memory admission gate | Memory Admission / Provenance / Truth Support | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-009",
+      "sourceRow": "| `MEM-ABS-009` | `MEMORY` | MEM-F-019 | Untrusted-memory occupancy constraint at retrieval | Context Retrieval / Security | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-010",
+      "sourceRow": "| `MEM-ABS-010` | `MEMORY` | MEM-F-020 | Memory-poisoning regression harness | Verification / Evaluation | `ADOPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-011",
+      "sourceRow": "| `MEM-ABS-011` | `MEMORY` | MEM-F-021 | Progressive-disclosure retrieval contract | Context Retrieval / Context Selection | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-012",
+      "sourceRow": "| `MEM-ABS-012` | `MEMORY` | MEM-F-022 | Retrieval trajectory receipt / trace | Observability / Context Retrieval | `ADOPT` | HIGH | LOW_MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-013",
+      "sourceRow": "| `MEM-ABS-013` | `MEMORY` | MEM-F-023 | Session-derived memory proposal → qualify → admit/reject pipeline | Memory Admission / Session Continuity | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-014",
+      "sourceRow": "| `MEM-ABS-014` | `MEMORY` | MEM-F-024 | Governed memory consolidation, decay and forgetting lifecycle | Memory Lifecycle | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-015",
+      "sourceRow": "| `MEM-ABS-015` | `MEMORY` | MEM-F-025 | Provider-neutral multi-signal retrieval fusion contract | Semantic Index / Context Retrieval | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "MEM-ABS-016",
+      "sourceRow": "| `MEM-ABS-016` | `MEMORY` | MEM-F-026 | Memory mutation audit trail | Provenance / Observability | `ADAPT` | MEDIUM_HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-001",
+      "sourceRow": "| `SKILL-ABS-001` | `SKILL` | SKILL-F-001 | Guarded skill evolution: failure attribution → isolated repair candidate → verification gates → atomic promote/rollback | Skill Evolution; Validation / Certification; Revocation / Rollback | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-002",
+      "sourceRow": "| `SKILL-ABS-002` | `SKILL` | SKILL-F-002 | Multi-stage skill retrieval/ranking with fallback across local/remote catalogs | Skill Discovery; Skill Router | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-003",
+      "sourceRow": "| `SKILL-ABS-003` | `SKILL` | SKILL-F-004 | Declarative skill-routing source of truth with deterministic regression/coherence verification | Skill Router; Verification | `ADAPT` | HIGH | LOW | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-004",
+      "sourceRow": "| `SKILL-ABS-004` | `SKILL` | SKILL-F-005; SKILL-F-010 | Environment/tool compatibility preflight bound to skill dispatch | Tool / Environment; Skill Lifecycle; Validation | `ADAPT` | HIGH (corroborated) | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-005",
+      "sourceRow": "| `SKILL-ABS-005` | `SKILL` | SKILL-F-009; SKILL-F-025 | Governed portable skill import/export + client distribution projection | Distribution; Capability Packaging; Agent Adapter boundary | `ADAPT` | HIGH (corroborated) | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-006",
+      "sourceRow": "| `SKILL-ABS-006` | `SKILL` | SKILL-F-011 | Three-level progressive skill disclosure: metadata → instructions → resources/scripts | Skill Discovery; Capability Packaging; Context | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-007",
+      "sourceRow": "| `SKILL-ABS-007` | `SKILL` | SKILL-F-012 | Compact activation metadata contract for selection/triggering | Skill Schema; Skill Discovery; Skill Router | `ADAPT` | HIGH | LOW | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-008",
+      "sourceRow": "| `SKILL-ABS-008` | `SKILL` | SKILL-F-014; SKILL-F-027 | Explicit invocation class and composition constraints (user-invoked vs model-invoked) | Skill Schema; Skill Composition; Skill Router | `ADAPT` | HIGH (corroborated) | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-009",
+      "sourceRow": "| `SKILL-ABS-009` | `SKILL` | SKILL-F-015 | Skill scope, namespace and precedence contract for multi-location catalogs | Skill Registry; Packaging; Distribution | `ADAPT` | MEDIUM | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-010",
+      "sourceRow": "| `SKILL-ABS-010` | `SKILL` | SKILL-F-016 | Declarative permission/dependency/context metadata envelope | Skill Schema; Capability Contract | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-011",
+      "sourceRow": "| `SKILL-ABS-011` | `SKILL` | SKILL-F-017 | Blocking procedural verification gates with mandatory evidence reads and exit criteria | Capability Contract; Workflow; Verification | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-012",
+      "sourceRow": "| `SKILL-ABS-012` | `SKILL` | SKILL-F-018 | Filesystem skill discovery as intake-only staging, never implicit admission | Skill Discovery; External Intake | `ADAPT` | HIGH | LOW | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-013",
+      "sourceRow": "| `SKILL-ABS-013` | `SKILL` | SKILL-F-019 | Reference output artifact as acceptance oracle / quality anchor | Capability Packaging; Validation / Certification | `ADAPT` | HIGH | LOW | `NOT_STARTED` |"
+    },
+    {
+      "id": "SKILL-ABS-014",
+      "sourceRow": "| `SKILL-ABS-014` | `SKILL` | SKILL-F-022 | Evidence-preserving repository exploration with staged scouting and structured handoff | Capability Contract; Workflow; Verification | `ADOPT` | MEDIUM | LOW | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-001",
+      "sourceRow": "| `ARCH-ABS-001` | `ARCHITECTURE` | ARCH-F-001 | Staged orchestration contract with explicit verification/rework loop and bounded worker lifecycle | Agent & Orchestration; Workflow; Observability | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-002",
+      "sourceRow": "| `ARCH-ABS-002` | `ARCHITECTURE` | ARCH-F-005 | Compile-to-governed execution artifact | Workflow / Process; Security / Governance; Engineering / Delivery | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-003",
+      "sourceRow": "| `ARCH-ABS-003` | `ARCHITECTURE` | ARCH-F-006 | Separated effect-request / trusted-effect-application boundary | Security / Governance; Execution Contracts; Tool Boundary | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-004",
+      "sourceRow": "| `ARCH-ABS-004` | `ARCHITECTURE` | ARCH-F-009 | Versioned agent-facing command result envelope | CLI Runtime; Execution Contracts; Observability | `ADAPT` | HIGH | LOW | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-005",
+      "sourceRow": "| `ARCH-ABS-005` | `ARCHITECTURE` | ARCH-F-010 | Configuration-resolution precedence with provenance/introspection | Configuration Resolution; Auth / Credential Handling; Runtime | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-006",
+      "sourceRow": "| `ARCH-ABS-006` | `ARCHITECTURE` | ARCH-F-018 | Per-call model-boundary middleware chain | Context; Tool Boundary; Runtime; Governance | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-007",
+      "sourceRow": "| `ARCH-ABS-007` | `ARCHITECTURE` | ARCH-F-019 | Delegation permission inheritance/override contract | Agent & Orchestration; Security / Governance | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-008",
+      "sourceRow": "| `ARCH-ABS-008` | `ARCHITECTURE` | ARCH-F-021 | Generic application-to-agent capability projection | Tool & Environment; CLI Runtime; Capability Packaging | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-009",
+      "sourceRow": "| `ARCH-ABS-009` | `ARCHITECTURE` | ARCH-F-023 | Cross-harness portability layer with modular runtime profiles | Harness Engineering; Integration; Runtime | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-010",
+      "sourceRow": "| `ARCH-ABS-010` | `ARCHITECTURE` | ARCH-F-026 | Routing-unit affinity and evaluation contract | Model Gateway; Routing Policy; Observability | `ADAPT` | MEDIUM | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-011",
+      "sourceRow": "| `ARCH-ABS-011` | `ARCHITECTURE` | ARCH-F-029 | Fact-backed executable work graph with recoverable state semantics | Workflow; State; Recovery; Orchestration | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-012",
+      "sourceRow": "| `ARCH-ABS-012` | `ARCHITECTURE` | ARCH-F-030 | Durable scheduled/background execution | Execution Runtime; Workflow; Integration | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-013",
+      "sourceRow": "| `ARCH-ABS-013` | `ARCHITECTURE` | ARCH-F-031 | Context composition inspection/readout | Context Engineering; Observability; Interaction | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-014",
+      "sourceRow": "| `ARCH-ABS-014` | `ARCHITECTURE` | ARCH-F-034 | Budget-normalized agent-topology selection/evaluation rule | Agent & Orchestration; Evaluation; Model & Intelligence | `ADOPT` | HIGH | LOW | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-015",
+      "sourceRow": "| `ARCH-ABS-015` | `ARCHITECTURE` | ARCH-F-036 | Signed identity-bearing event envelope across actors and workflows | State / Artifact; Observability; Integration; Identity | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-016",
+      "sourceRow": "| `ARCH-ABS-016` | `ARCHITECTURE` | ARCH-F-037 | Event persistence-class / retention contract | Observability; State; Audit | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-017",
+      "sourceRow": "| `ARCH-ABS-017` | `ARCHITECTURE` | ARCH-F-039 | Principal-and-scope execution context propagated across runtime resources | Security / Governance; Runtime; State; Integration | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-018",
+      "sourceRow": "| `ARCH-ABS-018` | `ARCHITECTURE` | ARCH-F-040 | Trusted policy core outside untrusted agent execution | Governance; Runtime Isolation; Execution Contracts | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-019",
+      "sourceRow": "| `ARCH-ABS-019` | `ARCHITECTURE` | ARCH-F-044 | Interactive approval broker with suspend/resume execution semantics | Interaction; Governance; Execution Contracts; Runtime | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-020",
+      "sourceRow": "| `ARCH-ABS-020` | `ARCHITECTURE` | ARCH-F-045 | Session-bound authenticated capability bridge | Tool / Environment Gateway; Integration; Auth Boundary | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-021",
+      "sourceRow": "| `ARCH-ABS-021` | `ARCHITECTURE` | ARCH-F-046 | Version-bound capability permission lifecycle | Security / Governance; Capability Registry | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "ARCH-ABS-022",
+      "sourceRow": "| `ARCH-ABS-022` | `ARCHITECTURE` | ARCH-F-047 | Ephemeral site-provided capability discovery bound to page/session context | Tool & Environment; Integration; Capability Discovery | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "XD-ARCH-ABS-001",
+      "sourceRow": "| `XD-ARCH-ABS-001` | `ARCHITECTURE` | MCP-F-014 | Host-owned MCP isolation/consent topology with 1:1 client↔server boundary | MCP Host / Gateway Topology; Security / Governance | `ADAPT` | HIGH | HIGH | `NOT_STARTED` |"
+    },
+    {
+      "id": "XD-ARCH-ABS-002",
+      "sourceRow": "| `XD-ARCH-ABS-002` | `ARCHITECTURE` | MEM-F-013 | Structural change-impact / blast-radius analysis contract over callers, dependents, tests and flows | Change Impact; Planning; Verification; Dependency Analysis | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    },
+    {
+      "id": "XD-MCP-ABS-001",
+      "sourceRow": "| `XD-MCP-ABS-001` | `MCP` | ARCH-F-038 | Protocol-bridge interoperability contract for ACP↔MCP-style capability translation | Integration & Protocol; MCP Gateway; Interoperability | `ADAPT` | HIGH | MEDIUM | `NOT_STARTED` |"
+    }
+  ],
+  "historicalObligationRowCount": 68,
+  "joinEdges": [
+    {
+      "obligationId": "GEN-ABS-001",
+      "findingIds": [
+        "GEN-F-GRIDEX-001"
+      ],
+      "sourceId": "SRC-GRIDEX-GRIDEX"
+    },
+    {
+      "obligationId": "GEN-ABS-002",
+      "findingIds": [
+        "GEN-F-GRIDEX-002"
+      ],
+      "sourceId": "SRC-GRIDEX-GRIDEX"
+    },
+    {
+      "obligationId": "GEN-ABS-003",
+      "findingIds": [
+        "GEN-F-GROUND-001"
+      ],
+      "sourceId": "SRC-AGENT-GROUNDING-WORKSTREAM"
+    },
+    {
+      "obligationId": "GEN-ABS-004",
+      "findingIds": [
+        "GEN-F-OBS-001"
+      ],
+      "sourceId": "SKILL-SRC-005"
+    },
+    {
+      "obligationId": "MCP-AI-001",
+      "findingIds": [
+        "MCP-F-001",
+        "MCP-F-002"
+      ],
+      "sourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+    },
+    {
+      "obligationId": "MCP-AI-002",
+      "findingIds": [
+        "MCP-F-003"
+      ],
+      "sourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+    },
+    {
+      "obligationId": "MCP-AI-002",
+      "findingIds": [
+        "MCP-F-010"
+      ],
+      "sourceId": "CVF-SRC-PANCAKE-POS-MCP"
+    },
+    {
+      "obligationId": "MCP-AI-003",
+      "findingIds": [
+        "MCP-F-004"
+      ],
+      "sourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+    },
+    {
+      "obligationId": "MCP-AI-004",
+      "findingIds": [
+        "MCP-F-005"
+      ],
+      "sourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+    },
+    {
+      "obligationId": "MCP-AI-005",
+      "findingIds": [
+        "MCP-F-006"
+      ],
+      "sourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+    },
+    {
+      "obligationId": "MCP-AI-006",
+      "findingIds": [
+        "MCP-F-007"
+      ],
+      "sourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+    },
+    {
+      "obligationId": "MCP-AI-007",
+      "findingIds": [
+        "MCP-F-008"
+      ],
+      "sourceId": "CVF-SRC-PANCAKE-POS-MCP"
+    },
+    {
+      "obligationId": "MCP-AI-008",
+      "findingIds": [
+        "MCP-F-009"
+      ],
+      "sourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+    },
+    {
+      "obligationId": "MCP-AI-009",
+      "findingIds": [
+        "MCP-F-012"
+      ],
+      "sourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+    },
+    {
+      "obligationId": "MEM-ABS-001",
+      "findingIds": [
+        "MEM-F-005"
+      ],
+      "sourceId": "SRC_MEMORY_CORTEX_HUB"
+    },
+    {
+      "obligationId": "MEM-ABS-001",
+      "findingIds": [
+        "MEM-F-001"
+      ],
+      "sourceId": "SRC_MEMORY_MEMPALACE"
+    },
+    {
+      "obligationId": "MEM-ABS-002",
+      "findingIds": [
+        "MEM-F-004"
+      ],
+      "sourceId": "SRC_MEMORY_CORTEX_HUB"
+    },
+    {
+      "obligationId": "MEM-ABS-003",
+      "findingIds": [
+        "MEM-F-007"
+      ],
+      "sourceId": "SRC-AUGMENT-CONTEXT-ENGINE"
+    },
+    {
+      "obligationId": "MEM-ABS-004",
+      "findingIds": [
+        "MEM-F-009",
+        "MEM-F-011"
+      ],
+      "sourceId": "SRC-GRAPHIFY"
+    },
+    {
+      "obligationId": "MEM-ABS-004",
+      "findingIds": [
+        "MEM-F-012"
+      ],
+      "sourceId": "SRC-TIRTH8205-CODE-REVIEW-GRAPH"
+    },
+    {
+      "obligationId": "MEM-ABS-005",
+      "findingIds": [
+        "MEM-F-010"
+      ],
+      "sourceId": "SRC-GRAPHIFY"
+    },
+    {
+      "obligationId": "MEM-ABS-006",
+      "findingIds": [
+        "MEM-F-014",
+        "MEM-F-015"
+      ],
+      "sourceId": "SRC-LANGCHAIN-OPENWIKI"
+    },
+    {
+      "obligationId": "MEM-ABS-007",
+      "findingIds": [
+        "MEM-F-016"
+      ],
+      "sourceId": "SRC-RAG-MAG-CONTEXT"
+    },
+    {
+      "obligationId": "MEM-ABS-008",
+      "findingIds": [
+        "MEM-F-018"
+      ],
+      "sourceId": "MEM-SRC-003"
+    },
+    {
+      "obligationId": "MEM-ABS-009",
+      "findingIds": [
+        "MEM-F-019"
+      ],
+      "sourceId": "MEM-SRC-003"
+    },
+    {
+      "obligationId": "MEM-ABS-010",
+      "findingIds": [
+        "MEM-F-020"
+      ],
+      "sourceId": "MEM-SRC-003"
+    },
+    {
+      "obligationId": "MEM-ABS-011",
+      "findingIds": [
+        "MEM-F-021"
+      ],
+      "sourceId": "MEM-SRC-005"
+    },
+    {
+      "obligationId": "MEM-ABS-012",
+      "findingIds": [
+        "MEM-F-022"
+      ],
+      "sourceId": "MEM-SRC-005"
+    },
+    {
+      "obligationId": "MEM-ABS-013",
+      "findingIds": [
+        "MEM-F-023"
+      ],
+      "sourceId": "MEM-SRC-005"
+    },
+    {
+      "obligationId": "MEM-ABS-014",
+      "findingIds": [
+        "MEM-F-024"
+      ],
+      "sourceId": "MEM-SRC-002"
+    },
+    {
+      "obligationId": "MEM-ABS-015",
+      "findingIds": [
+        "MEM-F-025"
+      ],
+      "sourceId": "MEM-SRC-002"
+    },
+    {
+      "obligationId": "MEM-ABS-016",
+      "findingIds": [
+        "MEM-F-026"
+      ],
+      "sourceId": "MEM-SRC-002"
+    },
+    {
+      "obligationId": "SKILL-ABS-001",
+      "findingIds": [
+        "SKILL-F-001"
+      ],
+      "sourceId": "SRC-MEMENTO-SKILLS"
+    },
+    {
+      "obligationId": "SKILL-ABS-002",
+      "findingIds": [
+        "SKILL-F-002"
+      ],
+      "sourceId": "SRC-MEMENTO-SKILLS"
+    },
+    {
+      "obligationId": "SKILL-ABS-003",
+      "findingIds": [
+        "SKILL-F-004"
+      ],
+      "sourceId": "SRC-ZHAOXUYA520-REVERSE-SKILL"
+    },
+    {
+      "obligationId": "SKILL-ABS-004",
+      "findingIds": [
+        "SKILL-F-005"
+      ],
+      "sourceId": "SRC-ZHAOXUYA520-REVERSE-SKILL"
+    },
+    {
+      "obligationId": "SKILL-ABS-004",
+      "findingIds": [
+        "SKILL-F-010"
+      ],
+      "sourceId": "SRC_SKILL_ENVIRONMENT_ADAPTATION"
+    },
+    {
+      "obligationId": "SKILL-ABS-005",
+      "findingIds": [
+        "SKILL-F-025"
+      ],
+      "sourceId": "SKILL-SRC-001"
+    },
+    {
+      "obligationId": "SKILL-ABS-005",
+      "findingIds": [
+        "SKILL-F-009"
+      ],
+      "sourceId": "SRC-MRGOONIE-CLAUDEKIT-SKILLS"
+    },
+    {
+      "obligationId": "SKILL-ABS-006",
+      "findingIds": [
+        "SKILL-F-011"
+      ],
+      "sourceId": "SRC_SKILL_GOOGLE_ADK_SKILLTOOLSET"
+    },
+    {
+      "obligationId": "SKILL-ABS-007",
+      "findingIds": [
+        "SKILL-F-012"
+      ],
+      "sourceId": "SRC_SKILL_GOOGLE_ADK_SKILLTOOLSET"
+    },
+    {
+      "obligationId": "SKILL-ABS-008",
+      "findingIds": [
+        "SKILL-F-027"
+      ],
+      "sourceId": "SKILL-SRC-006"
+    },
+    {
+      "obligationId": "SKILL-ABS-008",
+      "findingIds": [
+        "SKILL-F-014"
+      ],
+      "sourceId": "SRC_SKILL_HOWTOCLAUDE"
+    },
+    {
+      "obligationId": "SKILL-ABS-009",
+      "findingIds": [
+        "SKILL-F-015"
+      ],
+      "sourceId": "SRC_SKILL_HOWTOCLAUDE"
+    },
+    {
+      "obligationId": "SKILL-ABS-010",
+      "findingIds": [
+        "SKILL-F-016"
+      ],
+      "sourceId": "SRC_SKILL_GSTACK"
+    },
+    {
+      "obligationId": "SKILL-ABS-011",
+      "findingIds": [
+        "SKILL-F-017"
+      ],
+      "sourceId": "SRC_SKILL_GSTACK"
+    },
+    {
+      "obligationId": "SKILL-ABS-012",
+      "findingIds": [
+        "SKILL-F-018"
+      ],
+      "sourceId": "SRC_SKILL_HTML_ANYTHING"
+    },
+    {
+      "obligationId": "SKILL-ABS-013",
+      "findingIds": [
+        "SKILL-F-019"
+      ],
+      "sourceId": "SRC_SKILL_HTML_ANYTHING"
+    },
+    {
+      "obligationId": "SKILL-ABS-014",
+      "findingIds": [
+        "SKILL-F-022"
+      ],
+      "sourceId": "MEM-SRC-013"
+    },
+    {
+      "obligationId": "ARCH-ABS-001",
+      "findingIds": [
+        "ARCH-F-001"
+      ],
+      "sourceId": "SRC-BLACKBIRD-OH-MY-CLAUDECODE"
+    },
+    {
+      "obligationId": "ARCH-ABS-002",
+      "findingIds": [
+        "ARCH-F-005"
+      ],
+      "sourceId": "SRC-GITHUB-GH-AW"
+    },
+    {
+      "obligationId": "ARCH-ABS-003",
+      "findingIds": [
+        "ARCH-F-006"
+      ],
+      "sourceId": "SRC-GITHUB-GH-AW"
+    },
+    {
+      "obligationId": "ARCH-ABS-004",
+      "findingIds": [
+        "ARCH-F-009"
+      ],
+      "sourceId": "SRC-MRGOONIE-OPENROUTER-CLI"
+    },
+    {
+      "obligationId": "ARCH-ABS-005",
+      "findingIds": [
+        "ARCH-F-010"
+      ],
+      "sourceId": "SRC-MRGOONIE-OPENROUTER-CLI"
+    },
+    {
+      "obligationId": "ARCH-ABS-006",
+      "findingIds": [
+        "ARCH-F-018"
+      ],
+      "sourceId": "SRC-LANGCHAIN-DEEPAGENTS"
+    },
+    {
+      "obligationId": "ARCH-ABS-007",
+      "findingIds": [
+        "ARCH-F-019"
+      ],
+      "sourceId": "SRC-LANGCHAIN-DEEPAGENTS"
+    },
+    {
+      "obligationId": "ARCH-ABS-008",
+      "findingIds": [
+        "ARCH-F-021"
+      ],
+      "sourceId": "SRC-HKUDS-CLI-ANYTHING"
+    },
+    {
+      "obligationId": "ARCH-ABS-009",
+      "findingIds": [
+        "ARCH-F-023"
+      ],
+      "sourceId": "SKILL-SRC-004"
+    },
+    {
+      "obligationId": "ARCH-ABS-010",
+      "findingIds": [
+        "ARCH-F-026"
+      ],
+      "sourceId": "SRC-MODEL-ROUTER-WORKSTREAM"
+    },
+    {
+      "obligationId": "ARCH-ABS-011",
+      "findingIds": [
+        "ARCH-F-029"
+      ],
+      "sourceId": "SRC-GRAPH-ENGINEERING-2026"
+    },
+    {
+      "obligationId": "ARCH-ABS-012",
+      "findingIds": [
+        "ARCH-F-030"
+      ],
+      "sourceId": "SRC-NEURONS-AICOWORKER"
+    },
+    {
+      "obligationId": "ARCH-ABS-013",
+      "findingIds": [
+        "ARCH-F-031"
+      ],
+      "sourceId": "SRC-NEURONS-AICOWORKER"
+    },
+    {
+      "obligationId": "ARCH-ABS-014",
+      "findingIds": [
+        "ARCH-F-034"
+      ],
+      "sourceId": "SRC-EQUAL-BUDGET-SAS-MAS"
+    },
+    {
+      "obligationId": "ARCH-ABS-015",
+      "findingIds": [
+        "ARCH-F-036"
+      ],
+      "sourceId": "SRC-BLOCK-BUZZ"
+    },
+    {
+      "obligationId": "ARCH-ABS-016",
+      "findingIds": [
+        "ARCH-F-037"
+      ],
+      "sourceId": "SRC-BLOCK-BUZZ"
+    },
+    {
+      "obligationId": "ARCH-ABS-017",
+      "findingIds": [
+        "ARCH-F-039"
+      ],
+      "sourceId": "SRC-YC-QM"
+    },
+    {
+      "obligationId": "ARCH-ABS-018",
+      "findingIds": [
+        "ARCH-F-040"
+      ],
+      "sourceId": "SRC-YC-QM"
+    },
+    {
+      "obligationId": "ARCH-ABS-019",
+      "findingIds": [
+        "ARCH-F-044"
+      ],
+      "sourceId": "CVF-SRC-CLAUDE-CODE-CVF-MCP-CONTROL"
+    },
+    {
+      "obligationId": "ARCH-ABS-020",
+      "findingIds": [
+        "ARCH-F-045"
+      ],
+      "sourceId": "CVF-SRC-OPENTABS"
+    },
+    {
+      "obligationId": "ARCH-ABS-021",
+      "findingIds": [
+        "ARCH-F-046"
+      ],
+      "sourceId": "CVF-SRC-OPENTABS"
+    },
+    {
+      "obligationId": "ARCH-ABS-022",
+      "findingIds": [
+        "ARCH-F-047"
+      ],
+      "sourceId": "CVF-SRC-WEBMCP"
+    },
+    {
+      "obligationId": "XD-ARCH-ABS-001",
+      "findingIds": [
+        "MCP-F-014"
+      ],
+      "sourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC"
+    },
+    {
+      "obligationId": "XD-ARCH-ABS-002",
+      "findingIds": [
+        "MEM-F-013"
+      ],
+      "sourceId": "SRC-TIRTH8205-CODE-REVIEW-GRAPH"
+    },
+    {
+      "obligationId": "XD-MCP-ABS-001",
+      "findingIds": [
+        "ARCH-F-038"
+      ],
+      "sourceId": "SRC-BLOCK-BUZZ"
+    }
+  ],
+  "joinEdgeCount": 74,
+  "localEvidence": [
+    {
+      "sourceId": "CVF-SRC-PANCAKE-POS-MCP",
+      "obligationIds": [
+        "MCP-AI-002",
+        "MCP-AI-007"
+      ],
+      "evidenceClass": "ACCEPTED_BOUNDED_EVIDENCE",
+      "path": "CVF_SESSION/state/entries/ppmcpR1PinnedUpstreamLegacyDeltaReintakeClosure20260725.json",
+      "section": "value.status, value.scope, value.audit, value.completionReview",
+      "pin": "materialCommit 539e453a7",
+      "evidenceHash": "N/A_WITH_REASON: entry read as governed JSON state, no standalone content hash computed this pass",
+      "acceptedScope": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS at https://github.com/nguyennguyenit/pancake-pos-mcp.git pinned 41979fdac4fdf9a8a6f956889c33f19fa3389215; 98 pinned upstream files plus 9 legacy files, 107 exact manifest tuples",
+      "limits": "Five concrete conditional reopen rows govern further work; no duplicate intake authorized. Repository-level acceptance, not per-finding (MCP-F-008/MCP-F-010/MCP-F-013/MCP-F-015) verification.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SRC-ZHAOXUYA520-REVERSE-SKILL",
+      "obligationIds": [
+        "SKILL-ABS-003",
+        "SKILL-ABS-004"
+      ],
+      "evidenceClass": "ACCEPTED_BOUNDED_EVIDENCE",
+      "path": "CVF_SESSION/state/entries/rspbAiT0DualCorpusIntakeAcceptedStopCostExceedsValue20260815.json",
+      "section": "value (single string state record)",
+      "pin": "materialCommit 42935376a; MODS-T0 3a40397df; T14 6fc8f987/f0c16ee85",
+      "evidenceHash": "N/A_WITH_REASON: entry read as governed JSON state, no standalone content hash computed this pass",
+      "acceptedScope": "764-file dual-corpus intake valid at https://github.com/zhaoxuya520/reverse-skill.git (upstream 559 files); RSPB-AI-T14 accepted bounded capability-preflight advisory projection kernel",
+      "limits": "Old whole-tranche STOP_COST_EXCEEDS_VALUE decision is superseded by MODS-T0, not reopened; local pack is provenance-backed mixed-origin derived synthesis, non-authoritative until separately reviewed. Repository-level acceptance, not per-finding (SKILL-F-004/005/006) verification.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC",
+      "obligationIds": [
+        "MCP-AI-001",
+        "MCP-AI-002",
+        "MCP-AI-003",
+        "MCP-AI-004",
+        "MCP-AI-005",
+        "MCP-AI-006",
+        "MCP-AI-008",
+        "MCP-AI-009",
+        "XD-ARCH-ABS-001"
+      ],
+      "evidenceClass": "PARTIAL_EVIDENCE",
+      "path": "docs/reviews/CVF_MCP_KAR_T9_FINAL_BOUNDED_EXHAUSTION_RECONCILIATION_WORKER_RETURN_2026-08-24.md",
+      "section": "upstream/external 35-group route ledger (22 upstream + 13 external groups, 993 rows)",
+      "pin": "docs/audits/CVF_MCP_KAR_T0_UPSTREAM_FILE_LEDGER_2026-08-23.json",
+      "evidenceHash": "N/A_WITH_REASON: not recomputed this pass; reused per verificationMode REUSE_PRIOR_VERIFICATION",
+      "acceptedScope": "MCP-KAR-T9 REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED covers an MCP upstream/external route ledger (35 groups, 993 rows), but this return does not name https://github.com/modelcontextprotocol/modelcontextprotocol.git as one of the 22 upstream groups at the exact-source-ID level within this worker's bounded read.",
+      "limits": "Do not treat MCP domain closure as equivalent to confirmed CVF-SRC-MODELCONTEXTPROTOCOL-SPEC acceptance without a targeted lookup naming that exact upstream group. Recorded as PARTIAL, not ACCEPTED, to avoid an invented binding.",
+      "childClosureIsNotWholeRepoCompletion": true
+    },
+    {
+      "sourceId": "SKILL-SRC-005",
+      "obligationIds": [
+        "GEN-ABS-004"
+      ],
+      "evidenceClass": "UNRESOLVED_WITH_SEARCH_EVIDENCE",
+      "path": "N/A",
+      "section": "N/A",
+      "pin": "N/A",
+      "evidenceHash": "N/A",
+      "acceptedScope": "NONE_FOUND",
+      "limits": "The AGSK/Addy mirror lane (CVF_SESSION/state/entries/agskR2AgentSkillsSourceMirrorBackfillClosure20260629.json) mirrors https://github.com/addyosmani/agent-skills.git, not kepano/obsidian-skills. `rg -l kepano` across CVF_SESSION/state/entries and AGSK docs returned zero matches. This seed source has no confirmed scoped Local acceptance; a superficial name-adjacency to the AGSK/'Addy' mirror in the six-mirror triage must not be treated as a match.",
+      "childClosureIsNotWholeRepoCompletion": true
+    }
+  ],
+  "searchLedger": [
+    {
+      "scope": "CVF_SESSION/state/entries and docs/reviews for kepano/obsidian-skills acceptance",
+      "query": "rg -l kepano across CVF_SESSION/state/entries/*.json, docs/reviews/*AGSK*, docs/work_orders/*AGSK*",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "Absence within these two path families is not global absence; no repository-wide content scan was run."
+    },
+    {
+      "scope": "MCP-KAR-T9 upstream group naming for modelcontextprotocol/modelcontextprotocol",
+      "query": "grep -n github.com|upstream|repository docs/reviews/CVF_MCP_KAR_T9_FINAL_BOUNDED_EXHAUSTION_RECONCILIATION_WORKER_RETURN_2026-08-24.md",
+      "result": "NO_DIRECT_NAME_MATCH_IN_EXCERPT_READ",
+      "absenceScopeNote": "Only the worker-return document was grepped, not the full 993-row T0 upstream ledger; absence here does not confirm the domain-level MCP-KAR closure excludes this source."
+    },
+    {
+      "scope": "Scoped Local acceptance for 13 sources with zero obligation join (CVF-SRC-CLI-FOR-AI-AGENTS, CVF-SRC-SOL-ADVISOR, MEM-SRC-004, MEM-SRC-009, SKILL-SRC-007, SRC-CLAW-CODE-WORKSTREAM, SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM, SRC-GOCLAW-WORKSTREAM, SRC-HARNESS-ENGINEERING-2026, SRC-NOUS-HERMES-AGENT, SRC_ARCH_AGENTIC_OS_PATTERNS, SRC_ARCH_CLAUDEKIT, SRC_ARCH_GOCLAW_WORKFLOW)",
+      "query": "Standalone backlog obligation sourceRow text scan (02C_CVF_GLOBAL_ABSORPTION_BACKLOG.md, hash-verified) for Finding IDs tracing to these 13 canonical_source_id values",
+      "result": "NO_PROMOTED_OBLIGATION_ROW",
+      "absenceScopeNote": "These 13 sources were audited in the domain ledgers (AUDIT_COMPLETE/AUDIT_PARTIAL findings exist) but none of their findings were promoted into one of the 68 backlog ABS rows at receipt time; this is a backlog-membership gap, not a claim these sources have no value."
+    },
+    {
+      "scope": "Six-mirror triage cross-check for MinerU (MSEA) and Brainless (EAIC-KR) presence in the 54-source seed",
+      "query": "Manual scan of 54 sourceRecords canonical_source_id/label fields for MinerU or Brainless naming",
+      "result": "NO_MATCH",
+      "absenceScopeNote": "MinerU and Brainless are prior absorption targets outside this seed's 54-source membership; the six-mirror triage's MinerU/Brainless rows are therefore not applicable joins for this reconciliation and are excluded from localEvidence."
+    }
+  ],
+  "reconciliation": {
+    "sourceIdsExpected": 54,
+    "sourceIdsObserved": 54,
+    "sourceIdsMatch": true,
+    "obligationIdsExpected": 68,
+    "obligationIdsObserved": 68,
+    "obligationIdsMatch": true,
+    "uniqueUrlsExpected": 39,
+    "gitLocatorRowsExpected": 40,
+    "nonGitOrUnresolvedRowsExpected": 14,
+    "xdPrefixedObligationIdsExpected": 3,
+    "xdPrefixedObligationIdsObserved": 3,
+    "duplicateSourceIds": [],
+    "duplicateObligationIds": [],
+    "unmappedJoinReferences": [],
+    "obligationsWithZeroResolvedSourceJoin": [],
+    "sourcesWithZeroObligationJoin": [
+      "CVF-SRC-CLI-FOR-AI-AGENTS",
+      "CVF-SRC-SOL-ADVISOR",
+      "MEM-SRC-004",
+      "MEM-SRC-009",
+      "SKILL-SRC-007",
+      "SRC-CLAW-CODE-WORKSTREAM",
+      "SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM",
+      "SRC-GOCLAW-WORKSTREAM",
+      "SRC-HARNESS-ENGINEERING-2026",
+      "SRC-NOUS-HERMES-AGENT",
+      "SRC_ARCH_AGENTIC_OS_PATTERNS",
+      "SRC_ARCH_CLAUDEKIT",
+      "SRC_ARCH_GOCLAW_WORKFLOW"
+    ],
+    "sourcesWithZeroObligationJoinCount": 13,
+    "eccSourceIdsKeptDistinct": [
+      "SKILL-SRC-004",
+      "SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM"
+    ],
+    "eccMergeAvoidedNote": "Both ECC-related IDs (SKILL-SRC-004 = Blackbird081/everything-claude-code fork with upstream affaan-m/ECC, and SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM = the workstream itself) are preserved as two distinct canonical_source_id rows despite pointing at overlapping upstream lineage, per the packet's ECC no-merge instruction.",
+    "inputDrift": "NONE_OBSERVED",
+    "inputHashRecheckTiming": "Rehashed identically before and after all worker reads in this invocation; no drift."
+  },
+  "nextCandidates": [
+    {
+      "sourceId": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC",
+      "obligationId": "MCP-AI-001",
+      "externalFinding": "MCP-F-001/MCP-F-002: 2026-07-28 stateless/self-describing request core plus discovery/capability negotiation, HIGH/HIGH rated in the standalone backlog",
+      "localEvidenceGap": "MCP-KAR-T9 closure evidence is reused (PARTIAL_EVIDENCE) but does not name this exact upstream group within this worker's bounded read; a targeted lookup of the 993-row T0 ledger for the modelcontextprotocol.git group is the missing step",
+      "expectedValue": "HIGH: this is the single highest-rated (HIGH/HIGH) unresolved obligation and governs MCP Runtime/Session Lifecycle/Protocol Governance surfaces already active in CVF",
+      "acquisitionNeed": "No new acquisition; targeted read of docs/audits/CVF_MCP_KAR_T0_UPSTREAM_FILE_LEDGER_2026-08-23.json for the modelcontextprotocol.git group row",
+      "nextAllowedMove": "Local-owned targeted lookup packet, not a new worker source scan"
+    },
+    {
+      "sourceId": "SKILL-SRC-005",
+      "obligationId": "GEN-ABS-004",
+      "externalFinding": "GEN-F-OBS-001..004: runtime-authoritative capability freshness probe, cross-domain finding recorded under GENERAL against kepano/obsidian-skills",
+      "localEvidenceGap": "No scoped Local acceptance found anywhere; the superficially similar AGSK/Addy mirror lane covers a different repository (addyosmani/agent-skills.git), confirmed by direct hash/content read, not name similarity",
+      "expectedValue": "MEDIUM: External Capability Admission / Tool-Environment Gateway surface value, but confidence is bounded by this being a single-source cross-domain finding",
+      "acquisitionNeed": "A fresh, correctly-scoped mirror or targeted review of kepano/obsidian-skills specifically (never substitute the addyosmani mirror)",
+      "nextAllowedMove": "Local-owned decision whether a new bounded intake packet for kepano/obsidian-skills is warranted; do not reuse the AGSK acceptance as if it already covers this source"
+    },
+    {
+      "sourceId": "SRC-EVERYTHING-CLAUDE-CODE-WORKSTREAM",
+      "obligationId": "ARCH-ABS-009",
+      "externalFinding": "ARCH-F-023/024 (via SKILL-SRC-004, Blackbird081/everything-claude-code) plus this source's own upstream affaan-m/ECC lineage: generic application-to-agent capability projection, HIGH/MEDIUM rated",
+      "localEvidenceGap": "No acceptance entry located for either the fork (Blackbird081/everything-claude-code) or its stated upstream (affaan-m/ECC) in the searched CVF_SESSION/state/entries surface",
+      "expectedValue": "MEDIUM: Tool & Environment / CLI Runtime / Capability Packaging surfaces with an existing CVF owner area, corroborated by two related canonical_source_id rows (SKILL-SRC-004 and this workstream)",
+      "acquisitionNeed": "Targeted canonical lookup by repository alias affaan-m/ECC or Blackbird081/everything-claude-code across CVF_SESSION/state/entries and docs/reviews before any new mirror",
+      "nextAllowedMove": "Local-owned targeted lookup; if genuinely absent, a separate reviewed work order for bounded initial survey, not resumed by this packet"
+    }
+  ],
+  "programContinuation": {
+    "chainStopUnchanged": "docs/reference stopped three-repo residual-recovery chain remains STOP_REASSESS_ARCHITECTURE / NO_SUCCESSOR; this reconciliation does not reopen, resume or restart it.",
+    "qmResidualRecoveryStatus": "NOT_TOUCHED_NOT_REOPENED",
+    "cgeR3Status": "NOT_TOUCHED_NOT_REOPENED",
+    "dshUc01Status": "NOT_TOUCHED_NOT_REOPENED",
+    "sixMirrorTriageReuse": "Reused docs/reviews/CVF_MULTI_REPO_ACCEPTANCE_HISTORY_TRIAGE_2026-09-13.md scoped facts for Pancake and reverse-skill only; MinerU and Brainless rows are not applicable joins because those two repositories are not members of this 54-source seed.",
+    "preferredNomination": "CVF-SRC-MODELCONTEXTPROTOCOL-SPEC / MCP-AI-001 targeted lookup (see nextCandidates[0])",
+    "localOwnsNextPacket": true
+  },
+  "readDepthLedger": {
+    "fullyRead": [
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_UMBRELLA_SEED_RECONCILIATION_2026-09-13.md",
+      "docs/baselines/CVF_GC018_UMBRELLA_SEED_RECONCILIATION_2026-09-13.md",
+      "docs/audits/CVF_UMBRELLA_SEED_PROVENANCE_RECEIPT_2026-09-13.json",
+      "docs/reviews/CVF_MULTI_REPO_ACCEPTANCE_HISTORY_TRIAGE_2026-09-13.md",
+      "CVF_SESSION/state/entries/agskR2AgentSkillsSourceMirrorBackfillClosure20260629.json",
+      "CVF_SESSION/state/entries/ppmcpR1PinnedUpstreamLegacyDeltaReintakeClosure20260725.json",
+      "CVF_SESSION/state/entries/rspbAiT0DualCorpusIntakeAcceptedStopCostExceedsValue20260815.json",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_RSPB_AI_T0_REVERSE_SKILL_CAPABILITY_PREFLIGHT_BOOTSTRAP_DUAL_CORPUS_INTAKE_2026-08-15.md"
+    ],
+    "sectionRead": [
+      "docs/reviews/CVF_MCP_KAR_T9_FINAL_BOUNDED_EXHAUSTION_RECONCILIATION_WORKER_RETURN_2026-08-24.md (grep-targeted sections only)"
+    ],
+    "metadataOnly": [
+      "CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip (member list plus per-member SHA256, no extraction)"
+    ],
+    "hashOnly": [
+      "C:\\Users\\DELL\\Downloads\\02_GENERAL_ABSORPTION_LEDGER.md (hash reverified plus targeted regex read for Finding-ID to canonical_source_id join extraction only, not full semantic review)",
+      "C:\\Users\\DELL\\Downloads\\02_SKILL_ABSORPTION_LEDGER.md (same targeted join-extraction read)",
+      "C:\\Users\\DELL\\Downloads\\02_MEMORY_ABSORPTION_LEDGER.md (same targeted join-extraction read)",
+      "C:\\Users\\DELL\\Downloads\\02_MCP_ABSORPTION_LEDGER.md (same targeted join-extraction read)",
+      "C:\\Users\\DELL\\Downloads\\02_ARCHITECTURE_ABSORPTION_LEDGER.md (same targeted join-extraction read)",
+      "C:\\Users\\DELL\\Downloads\\02C_CVF_GLOBAL_ABSORPTION_BACKLOG.md (hash reverified plus regex ID-count extraction only)"
+    ]
+  },
+  "claimBoundary": "Historical metadata reconciliation only. 54/54 source IDs and 68/68 obligation IDs accounted for from the exact-hash-matched receipt. Join edges connect obligations to sources via Finding IDs read directly from the five domain ledgers (hash-only per work order scope; read here only for the literal Finding-ID-to-canonical_source_id column pair, not full semantic re-review). Scoped Local acceptance is reported for exactly two sources (Pancake, reverse-skill) as ACCEPTED_BOUNDED_EVIDENCE, one (MCP spec) as PARTIAL_EVIDENCE, and one (kepano/obsidian-skills) as UNRESOLVED_WITH_SEARCH_EVIDENCE after a targeted search proved the superficially similar AGSK/Addy mirror covers a different repository. No current source freshness, complete absorption, or whole-repository completion is claimed. No source execution, network access, or provider/live/public/deploy action occurred."
+}
