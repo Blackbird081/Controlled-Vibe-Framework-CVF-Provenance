@@ -1,0 +1,375 @@
+{
+  "schemaVersion": "cvf.threeRepoResidualRecoveryAudit.v1",
+  "docType": "audit",
+  "batchId": "THREE-REPO-RECOVERY-R1",
+  "date": "2026-09-13",
+  "governingWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_RESIDUAL_RECOVERY_2026-09-13.md",
+  "governingBaseline": "docs/baselines/CVF_GC018_THREE_REPO_RESIDUAL_RECOVERY_2026-09-13.md",
+  "dispatchBaseHead": "6d9e8248fbbf044054b2e1942aef49e9c0a8e5df",
+  "executionBaseHead": "dcd2f672ab4fc23baaf1ee3c5af5f3f753842567",
+  "claimBoundary": "INITIAL_EVIDENCE_COLLECTION_ONLY; ABSORPTION_NOT_COMPLETE; NO_ABSORPTION_ACCEPTANCE",
+  "budget": {
+    "declaredBudget": "45-minute semantic recovery pass (9+ minutes outside the original six candidates) plus 15 minutes backlog provenance plus 15 minutes report assembly; mandatory gates separate",
+    "actualElapsedNote": "Session-clock elapsed time is UNKNOWN_NOT_INSTRUMENTED; reading pass covered QM (priority 1, two full-source-file reads plus two skill reads beyond the one already-read admin skill), AGW (two example READMEs beyond the five already read in the accepted intake), and DSH (two skill files beyond the two already read, plus notes-tree path enumeration). Stopped at declared representative-sample scope, not at a wall-clock trigger; no automatic second research round was taken.",
+    "explorationOutsideOriginalSixCandidates": "QM command-policy.ts, QM egress-authz-main.ts, QM acl-store.ts (partial), QM interactive-login skill, QM use-shared-credential skill, AGW traffic-egress-proxy example, AGW mcp-authorization example (re-confirmed), DSH dsh-trim-cot-leakage skill, DSH dsh-code-review skill are all outside the six original AGW-UC-01/02, QM-UC-01/02, DSH-UC-01/02 use-case anchors named in the initial intake"
+  },
+
+  "sourceIdentityAndFreshness": [
+    {
+      "sourceId": "QM",
+      "upstream": "https://github.com/yc-software/qm.git",
+      "frozenSurveyPin": "51bf455ea414a58f70274284ce212142518e556a",
+      "localMirrorPath": ".private_reference/source_mirrors/yc-software__qm/",
+      "identityCheckAtThisPass": "git rev-parse HEAD => 51bf455ea414a58f70274284ce212142518e556a; git status --porcelain=v1 => clean; UTC 2026-09-13T12:08:02Z observation window for this pass",
+      "matchesPacketPin": true,
+      "freshnessVsUpstream": "NOT_QUERIED_THIS_PASS; reused intake's 2026-09-12T06:23:05Z observation of upstream drift (work-order-recorded 32b38cec6... vs fresh-observed 51bf455ea4..., resolved to tag v0.1.11) per Evidence Reuse plan",
+      "originalExternalNomination": "UNKNOWN; unavailable per work order Repository Identity note and prior intake E3 finding; operator URL establishes identity only, not research provenance",
+      "licenseEvidence": "REUSED_FROM_INTAKE: MIT, LICENSE blob f7... not re-hashed this pass; disposition LICENSE_REVIEW_REQUIRED_FOR_SKILLS_SEED_TEMPLATES stands unresolved (skills-seed/popular-web-designs/templates/ reproduce named third-party product design patterns; not re-examined this pass)"
+    },
+    {
+      "sourceId": "AGW",
+      "upstream": "https://github.com/agentgateway/agentgateway.git",
+      "frozenSurveyPin": "3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826",
+      "localMirrorPath": ".private_reference/source_mirrors/agentgateway__agentgateway/",
+      "identityCheckAtThisPass": "git rev-parse HEAD => 3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826; git status --porcelain=v1 => clean; HEAD detached at pin; UTC 2026-09-13T12:08:02Z observation window",
+      "matchesPacketPin": true,
+      "freshnessVsUpstream": "NOT_QUERIED_THIS_PASS; reused EARA-AGW-T1's 206-changed-path freshness delta observation from 2026-09-11, not re-verified",
+      "originalExternalNomination": "AVAILABLE (upstream URL known); prior EARA-AGW-T1 and AGW-UC-02 comparisons already reconciled 7 candidates plus 1 bounded adaptation proposal",
+      "licenseEvidence": "REUSED_FROM_INTAKE: Apache License 2.0, root LICENSE blob f7b5e615...; disposition LICENSE_REVIEW_REQUIRED_FOR_SUBTREES stands unresolved (ui/ and controller/ Go subtrees not sampled for distinct headers, not re-examined this pass)"
+    },
+    {
+      "sourceId": "DSH",
+      "upstream": "https://github.com/deepseek-ai/deepseek-harness.git",
+      "frozenSurveyPin": "cd5ef8148158c3a752a658978873241fdf8e2bbc",
+      "localMirrorPath": ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/",
+      "identityCheckAtThisPass": "git rev-parse HEAD => cd5ef8148158c3a752a658978873241fdf8e2bbc; git status --porcelain=v1 => clean; not on any branch (detached at pin); UTC 2026-09-13T12:08:02Z observation window",
+      "matchesPacketPin": true,
+      "freshnessVsUpstream": "NOT_QUERIED_THIS_PASS; DSH-WRA-R1 whole-corpus inventory (8953 files) reused unchanged",
+      "originalExternalNomination": "UNKNOWN; historical routing/absorption context exists (DSH-WRA-R1, DSH-UC01) but no fresh external nomination re-verified this pass",
+      "licenseEvidence": "REUSED_FROM_INTAKE: MIT, THIRD_PARTY_NOTICES.md present; disposition LICENSE_REVIEW_REQUIRED_FOR_VENDOR_SUBTREE stands unresolved (vendor/ content not read this pass)"
+    }
+  ],
+
+  "reusedManifestReferences": [
+    {"artifact": "docs/audits/CVF_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.json", "reuse": "repositoryIdentity, inventoryReadDepthLedger, sharedMechanismsView, repositorySpecificValueViews, unreadUnknownRegions arrays reused as the residual baseline this audit extends"},
+    {"artifact": "docs/reviews/CVF_THREE_REPO_ABSORPTION_SCOPE_RECOVERY_2026-09-13.md", "reuse": "Three-Repository Obligation Matrix reused as the residual-obligation ledger seed"},
+    {"artifact": "docs/reviews/CVF_EARA_AGW_T1_AGENTGATEWAY_LOCAL_RECONCILIATION_COMPLETION_2026-09-10.md", "reuse": "seven-candidate AGW reconciliation (1 NO_NEW_VALUE, 4 DEFER, 2 ADAPT) reused unchanged, not re-litigated"},
+    {"artifact": "docs/reviews/CVF_AGW_UC02_BOUNDED_NOVELTY_DECISION_2026-09-13.md", "reuse": "AGW-UC-02 bounded adaptation proposal (response-side mask-in-place for output-validator.ts) and webhook DEFER_WITH_TRIGGER reused unchanged"},
+    {"artifact": "docs/reviews/CVF_DSH_WRA_R1_WHOLE_REPOSITORY_ABSORPTION_AND_RUNTIME_REALIZATION_WORKER_RETURN_2026-08-30.md", "reuse": "DSH whole-tree inventory (8953 files) and bounded provider-attempt proof reused; not re-run"}
+  ],
+
+  "residualObligationLedger": [
+    {
+      "sourceId": "QM",
+      "obligationFromScopeRecovery": "58 source modules with zero content reads; 23 of 24 skill directories unopened; tests/integration/ADR regions unassessed",
+      "actionThisPass": "Read src/policy/command-policy.ts (full, 912 lines), src/egress-authz-main.ts (full, 255 lines), src/acl/acl-store.ts (partial, first 120 of larger file), skills-seed/interactive-login/SKILL.md (full), skills-seed/use-shared-credential/SKILL.md (full). Enumerated src/ top-level (58 module dirs/files unchanged from intake count) and skills-seed/ top-level (20 skill dirs, matches intake's 24-minus-admin-already-read framing within rounding of skill vs non-skill top-level entries).",
+      "residualAfterThisPass": "53 of 58 src/ modules still unopened (acl remainder, admin, api, audit, auth, classify, connectors, core, credentials, cron, delivery, deploy, deployment, directory, environments, feature-flags.ts, files, harness, identity, index.ts, loops, mcp, memory, migrate-main.ts, model, monitors, onboarding, persistence, playgrounds, processes, projects, ratelimit, reach, resolution, runs, sandbox [29 files enumerated, none opened], search, security, sessions, skills, slack, surface-cache, surfaces, tasks, tools, triggers, types.ts, util, wake, webhooks, wiring.ts, workspace/workspace-store.ts); 18 of 20 skills-seed/ directories still unopened (browse, cloud-cli, connect-apps, define-loop, dropbox, email-draft-in-voice, email-voice-profile, github-gitlab, google-drive-sheets, google-workspace, linear, memory, miniapp, morning-digest, popular-web-designs, publish, slack-drafts, taste-skill); ~480 test files still name-only"
+    },
+    {
+      "sourceId": "AGW",
+      "obligationFromScopeRecovery": "28 of 33 example categories unopened; broad crates/controller/ui implementation regions unread beyond EARA-AGW-T1's eight paths; 206-path freshness delta unresolved",
+      "actionThisPass": "Read examples/traffic-egress-proxy/README.md (full) and re-confirmed examples/mcp-authorization/README.md (full, already READ in intake, re-opened here for cross-repo comparison against QM's egress-authz-main.ts, not counted as new coverage).",
+      "residualAfterThisPass": "27 of 33 example categories still unopened (fault-injection, llm-basic, llm-cost-routing [config only previously read], llm-ollama-postgres, llm-prompt-enrichment, llm-semantic-routing, llm-standalone-epp, llm-telemetry, mcp-apps, mcp-authentication, mcp-basic, mcp-multiplex, mcp-openapi, mcp-telemetry, mcp-tls, microsoft-intune, netbird-agent-network, render-deploy, traffic-a2a, traffic-aws-agentcore, traffic-cross-app-access, traffic-http, traffic-jwt-sign, traffic-oauth2-proxy, traffic-oidc, traffic-ratelimiting-global [README only previously read], traffic-ratelimiting-local, traffic-tailscale-auth, traffic-token-exchange, traffic-unified-gateway); crates/controller/ui implementation beyond the eight EARA-AGW-T1 paths and the llm/policy module already read for AGW-UC-02 remains unread; 206-path freshness delta not re-verified"
+    },
+    {
+      "sourceId": "DSH",
+      "obligationFromScopeRecovery": "6 remaining skill entries unopened; notes tree content unassessed; attribution boundaries unresolved",
+      "actionThisPass": "Read .agents/skills/dsh-trim-cot-leakage/SKILL.md (full) and .agents/skills/dsh-code-review/SKILL.md (full). Path-enumerated .agents/notes/{implemented,proposed,rejected,archived}/ counts (1814/78/30/509 tracked paths respectively) without opening content.",
+      "residualAfterThisPass": "4 of 6 remaining skill entries still unopened (dsh-archive-agent-notes, dsh-doc, dsh-merging-stacked-prs, dsh-prose-standard, record-browser-gif -- 5 remain, one more than the '4' obligation estimate because record-browser-gif was not counted in the original scope-recovery's six-skill framing); .agents/notes/ content (2431 total tracked paths across all four states) remains entirely unopened beyond path enumeration; packages/ and apps/ whole-corpus source remains reused from DSH-WRA-R1 without re-reading"
+    }
+  ],
+
+  "sharedMechanismsView": [
+    {
+      "mechanismId": "SM-04",
+      "label": "Deterministic outbound-network egress gate with SSRF/private-range blocking",
+      "supportingSourceIds": ["QM", "AGW"],
+      "description": "QM's src/egress-authz-main.ts runs a standalone HTTP CONNECT-style authorization proxy: capability-token-gated, blocks link-local/loopback/cloud-metadata ranges via node:net BlockList, re-resolves the hostname via DNS and re-checks the resolved IP (not just the literal string) against the block-list and policy before allowing the connection, and records every decision to an audit sink. AGW's examples/traffic-egress-proxy demonstrates the same problem class as an actual HTTP CONNECT proxy with hostname allowlisting via TLS SNI (no decryption) or optional TLS termination for HTTP-policy inspection.",
+      "existingCvfOwnerEvidence": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-tools.tsx (tool implementation) + agent-tools.test.tsx:140-173 (SSRF test suite: blocks localhost, 127.0.0.1, 10.x, 192.168.x, 172.16-31.x, 169.254.x.x literal-string/literal-IP forms in the requested URL)",
+      "confidence": "MEDIUM",
+      "runtimeSufficiency": {"producer": "present", "verifier": "present (test suite)", "nonTestConsumer": "present (agent web-fetch tool)", "integrationLink": "present", "useProof": "STATIC_TEST_ONLY_NOT_EXECUTED_THIS_PASS"},
+      "canonicalStatus": "CONSUMER_NO_USE_PROOF",
+      "planningDisposition": "PROMISING_FOR_SELECTED_REVIEW",
+      "missingCvfLink": "CVF's existing test suite (agent-tools.test.tsx) covers only URLs whose host component is already a literal private/link-local IP string. It does not cover a hostname that RESOLVES to a private/link-local/metadata IP (DNS rebinding) -- QM's egress-authz-main.ts explicitly performs the lookup-then-recheck-resolved-IP step (decide() function, lines 96-123) that CVF's tests give no evidence of.",
+      "expectedBenefit": "If CVF's agent-tools.tsx URL check is host-string-only (not verified further in this bounded pass -- the implementation file itself was not opened, only its test file), a DNS-rebinding gap could let an attacker-controlled hostname resolve to a blocked IP at request time and bypass a string-only allow/deny check.",
+      "nextAction": "Open agent-tools.tsx's actual URL-validation implementation (not just its test file) in a follow-up pass to confirm whether resolved-IP re-checking already exists; this audit does not claim the gap is proven, only that the test evidence does not demonstrate resolved-IP protection.",
+      "reopenTrigger": "A named CVF consumer or security reviewer requests SSRF/DNS-rebinding hardening evidence for agent-initiated outbound fetches"
+    },
+    {
+      "mechanismId": "SM-05",
+      "label": "Deterministic shell-command safety policy with de-obfuscation",
+      "supportingSourceIds": ["QM"],
+      "description": "QM's src/policy/command-policy.ts implements a full command-policy engine: org-floor denylist rules (recursive delete, force-push, destructive SQL, fork bombs, pipe-to-shell) plus scope-composable custom rules, and -- the substantial part -- a scannableCommand() normalizer that recursively unwraps nested shell constructs (command substitution $()/`` `` `, heredocs that run an interpreter, piped producer/consumer pairs, here-strings, simple variable expansion, SQL client -c/-e payload extraction for psql/mysql/sqlite3/etc.) before running regex rules against the fully de-obfuscated scannable text, specifically to prevent quoting/substitution tricks from hiding a destructive pattern from a naive regex scan.",
+      "existingCvfOwnerEvidence": "NOT_FOUND in this bounded pass. CVF's SAF1 (docs/reference/CVF_ERH_SAF1_SAFETY_WORKFLOW_CHAIN_2026-06-04.md) is a prompt-text pattern screen (governance-bypass phrase detection), not a shell-command safety/de-obfuscation engine; DLP (dlp-filter-core.ts) is a PII-redaction regex engine, not a command-safety scanner. Neither owner inspects or de-obfuscates a shell command string for destructive-operation patterns.",
+      "confidence": "MEDIUM",
+      "runtimeSufficiency": {"producer": "present (QM source-native)", "verifier": "UNKNOWN_NOT_VERIFIED_THIS_PASS (QM's own test coverage for this file was not opened)", "nonTestConsumer": "UNKNOWN_NOT_VERIFIED_THIS_PASS", "integrationLink": "UNKNOWN_NOT_VERIFIED_THIS_PASS", "useProof": "NONE_THIS_PASS"},
+      "canonicalStatus": "ARCHITECTURE_ONLY",
+      "planningDisposition": "DEFER_WITH_TRIGGER",
+      "missingCvfLink": "CVF has no owner surface that inspects agent-initiated shell/CLI command strings for destructive-operation patterns before execution, because CVF's current /api/execute path does not appear (from the surfaces read in this and the prior AGW-UC-02 pass) to execute arbitrary shell commands on the user's behalf at all -- this mechanism has no named CVF consumer yet.",
+      "expectedBenefit": "Would only become relevant if CVF adds a capability that executes agent-authored shell/CLI commands (e.g., a future sandboxed code-execution or DevOps-automation feature); premature to adopt without that consumer.",
+      "nextAction": "No action until a named CVF consumer requires shell-command execution with a safety gate.",
+      "reopenTrigger": "A future CVF work order introduces agent-initiated shell/CLI command execution as a first-class capability"
+    },
+    {
+      "mechanismId": "SM-06",
+      "label": "Non-extractable shared-credential proxy (broker pattern)",
+      "supportingSourceIds": ["QM"],
+      "description": "QM's skills-seed/use-shared-credential/SKILL.md documents (and names a corresponding core-side broker endpoint, not itself opened) a pattern where the agent never receives a raw shared secret: it names a credential slug, method, URL and headers, and a core-side broker stamps the real secret onto the outbound request, returning only the upstream status/body envelope. The broker enforces per-credential host/method/path-prefix allowlisting and records every use for attribution/billing/abuse review. A parallel path handles Git smart-HTTP remotes without ever placing a token in a clone URL.",
+      "existingCvfOwnerEvidence": "NOT_FOUND in this bounded pass. CVF's provider API-key handling (route.ts apiKeyMap, lines ~270-278 per the prior AGW-UC-02 pass) reads keys directly from server-side environment variables and uses them directly server-side for CVF's own first-party provider calls; this is a different shape of problem (CVF's server already holds the keys and never hands them to an agent) rather than QM's shape (an agent-facing broker so a semi-trusted agent process never sees an org's shared third-party secret it would otherwise need to hold locally).",
+      "confidence": "LOW",
+      "runtimeSufficiency": {"producer": "present (QM source-native, skill-instruction level only; broker server implementation not opened)", "verifier": "UNKNOWN_NOT_VERIFIED_THIS_PASS", "nonTestConsumer": "UNKNOWN_NOT_VERIFIED_THIS_PASS", "integrationLink": "UNKNOWN_NOT_VERIFIED_THIS_PASS", "useProof": "NONE_THIS_PASS -- text-only skill instruction read, no broker source opened"},
+      "canonicalStatus": "CONTRACT_ONLY",
+      "planningDisposition": "UNKNOWN",
+      "missingCvfLink": "No CVF consumer currently vends shared third-party credentials to a semi-autonomous agent process that runs code or makes independent outbound calls; CVF's execution model keeps provider keys server-side and never exposes them to agent-authored code. This pattern is a potential future fit only if CVF later runs agent-authored code with its own network egress needing a shared org credential.",
+      "expectedBenefit": "Not yet evidenced against a named consumer.",
+      "nextAction": "No action until CVF has a named consumer that runs agent-authored code needing access to a shared third-party credential it must not see raw.",
+      "reopenTrigger": "A future CVF work order introduces agent-authored code execution with a need for shared third-party service credentials"
+    }
+  ],
+
+  "repositorySpecificValueViews": [
+    {
+      "sourceId": "QM",
+      "useCaseId": "QM-UC-03",
+      "label": "Durable cross-turn interactive login session for browser-gated CLI auth",
+      "userOutcome": "A CLI login that requires human browser approval (aws sso login --use-device-code, gh auth login, glab auth login, gcloud auth login) survives across agent turns on a resident per-scope sandbox: the platform backgrounds the poller, returns the verification URL/code immediately, and the human can approve on a later turn without the agent holding the turn open or re-deriving the flow.",
+      "pinAndPath": "51bf455ea414a58f70274284ce212142518e556a :: skills-seed/interactive-login/SKILL.md",
+      "actualReadDepth": "READ (full, 85 lines)",
+      "producerVerifierConsumer": "producer=native CLI device-grant flow; verifier=platform's durable process-session recognition (only wired for the four named CLIs); consumer=agent computer's durable $HOME",
+      "invocationAndFailureBehavior": "Explicitly does NOT work on a per-turn local/docker sandbox (no process sessions, torn down at turn end); does NOT work for unrecognized interactive flows (plain TTY username/password, bespoke OAuth); pending logins self-expire ~10-15 minutes",
+      "existingCvfOwnerEvidenceOrGap": "OWNER_SURFACE_NOT_FOUND; CVF's execution model is not evidenced in this pass to run agent-initiated interactive CLI logins at all",
+      "missingCvfLink": "No CVF equivalent for a durable, cross-turn, human-approved authentication flow",
+      "expectedBenefit": "Only relevant if CVF ever runs agent-initiated CLI tools requiring interactive OAuth/device-grant login on a persistent sandbox; not evidenced as a current CVF need",
+      "confidence": "LOW",
+      "nextAction": "No action until a named CVF consumer needs cross-turn interactive CLI authentication",
+      "reopenTrigger": "A future CVF work order introduces a persistent per-agent sandbox with CLI tools requiring interactive browser login"
+    },
+    {
+      "sourceId": "QM",
+      "useCaseId": "QM-UC-04",
+      "label": "Non-extractable shared-credential broker for agent-initiated calls",
+      "userOutcome": "See SM-06 above; duplicated here as a repository-specific use case because it is QM-native with no AGW/DSH counterpart",
+      "pinAndPath": "51bf455ea414a58f70274284ce212142518e556a :: skills-seed/use-shared-credential/SKILL.md",
+      "actualReadDepth": "READ (full, 90 lines)",
+      "producerVerifierConsumer": "producer=org admin who vends the credential; verifier=broker's host/method/path-prefix allowlist enforcement; consumer=agent making the proxied call",
+      "invocationAndFailureBehavior": "403 host_not_allowed / path_not_allowed / method_not_allowed / not_entitled; 404 credential_unavailable; every use recorded and attributed for billing/abuse review",
+      "existingCvfOwnerEvidenceOrGap": "OWNER_SURFACE_NOT_FOUND per SM-06",
+      "missingCvfLink": "See SM-06",
+      "expectedBenefit": "See SM-06",
+      "confidence": "LOW",
+      "nextAction": "See SM-06",
+      "reopenTrigger": "See SM-06"
+    },
+    {
+      "sourceId": "QM",
+      "useCaseId": "QM-UC-05",
+      "label": "Composable org-floor plus scope command-safety policy with shell de-obfuscation",
+      "userOutcome": "See SM-05 above; duplicated here as a repository-specific use case because it is QM-native",
+      "pinAndPath": "51bf455ea414a58f70274284ce212142518e556a :: src/policy/command-policy.ts",
+      "actualReadDepth": "READ (full, 912 lines)",
+      "producerVerifierConsumer": "producer=org-floor + scope policy composition; verifier=evaluateCommand/evaluateCommandWithLayer against de-obfuscated scannable text; consumer=command-execution gate (call site not opened this pass)",
+      "invocationAndFailureBehavior": "allow / deny / require_approval per first matching rule; allowlist mode denies anything unmatched; malformed stored regex is skipped with a console error rather than crashing evaluation",
+      "existingCvfOwnerEvidenceOrGap": "OWNER_SURFACE_NOT_FOUND per SM-05",
+      "missingCvfLink": "See SM-05",
+      "expectedBenefit": "See SM-05",
+      "confidence": "MEDIUM",
+      "nextAction": "See SM-05",
+      "reopenTrigger": "See SM-05"
+    },
+    {
+      "sourceId": "QM",
+      "useCaseId": "QM-UC-06",
+      "label": "Resolved-IP-recheck egress authorization proxy",
+      "userOutcome": "See SM-04 above; duplicated here as a repository-specific use case because QM's implementation depth (resolved-IP recheck) exceeds the shared-mechanism description of AGW's hostname/SNI-only approach",
+      "pinAndPath": "51bf455ea414a58f70274284ce212142518e556a :: src/egress-authz-main.ts",
+      "actualReadDepth": "READ (full, 255 lines)",
+      "producerVerifierConsumer": "producer=capability-token-scoped egress policy; verifier=decide() function (always-blocked host/IP list, DNS lookup, resolved-IP recheck against deny/private-network rules); consumer=HTTP CONNECT-style forward proxy callers",
+      "invocationAndFailureBehavior": "403 on any check failure (unresolvable host, denied IP, private network without explicit allow, always-blocked metadata/link-local/loopback range); audit record always attempted even on the deny path, wrapped in try/catch so audit failure never blocks the decision",
+      "existingCvfOwnerEvidenceOrGap": "PARTIAL_OWNER: CVF's agent-tools.test.tsx proves literal-IP-string blocking exists; it does not prove resolved-IP-after-DNS-lookup checking exists (see SM-04)",
+      "missingCvfLink": "Resolved-IP recheck after DNS lookup, specifically for hostnames (not just literal IPs) in CVF's own agent web-fetch tool",
+      "expectedBenefit": "Closes a DNS-rebinding-shaped gap if CVF's existing implementation does not already resolve-then-check (unconfirmed; implementation file itself not opened this pass)",
+      "confidence": "MEDIUM",
+      "nextAction": "Open agent-tools.tsx's actual URL-validation function in a follow-up pass before proposing any change",
+      "reopenTrigger": "Confirmation that agent-tools.tsx checks only the literal URL host string, not the resolved IP"
+    },
+    {
+      "sourceId": "DSH",
+      "useCaseId": "DSH-UC-03",
+      "label": "Chain-of-thought/session-leakage prose taxonomy",
+      "userOutcome": "An 8-category taxonomy (dead design-session citations, stack/PR vantage, change narration, review choreography, reviewer-addressed justification, restatement transcripts, hedges/planning residue, authoring-language slips) plus an explicit resolvability test (\"could a reader at HEAD, with no session transcript, resolve every reference?\") for auditing and fixing prose that leaks the authoring session's vantage into committed comments/docs/notes.",
+      "pinAndPath": "cd5ef8148158c3a752a658978873241fdf8e2bbc :: .agents/skills/dsh-trim-cot-leakage/SKILL.md",
+      "actualReadDepth": "READ (full, 46 lines)",
+      "producerVerifierConsumer": "producer=agent authoring session; verifier=the resolvability test plus 'what is not leakage' keep-rules; consumer=repository prose (comments, JSDoc, docs, Agent Notes)",
+      "invocationAndFailureBehavior": "Explicitly distinguishes what to keep (issue references, merged-PR citations inside Agent Notes, suppression justifications, measured bounds, external standard references) from what to delete or restate; requires enumerating a passage's factual propositions before deleting, to avoid flipping an obligation into an endorsement or deleting a true fact",
+      "existingCvfOwnerEvidenceOrGap": "OWNER_SURFACE_NOT_FOUND; CVF has no named prose-discipline standard comparable to this taxonomy in the surfaces searched this pass (targeted grep for 'chain-of-thought leak' / 'CoT leakage' / 'prose standard' across docs/ returned no CVF-owned equivalent)",
+      "missingCvfLink": "CVF's own governed documents (work orders, baselines, reviews) are written under heavy session-specific evidence/citation conventions by design (e.g. exact commit SHAs, exact prior review paths) which is the OPPOSITE convention from DSH's HEAD-resolvability rule for ordinary source comments/docs -- this is a genuine methodology difference, not a directly portable rule, because CVF's governed-artifact citation style is itself load-bearing evidence machinery, not leakage",
+      "expectedBenefit": "Could inform a future CVF prose-quality skill for its own SOURCE CODE comments/docs specifically (cvf-web/src, EXTENSIONS/*), which are not held to the same session-citation requirements as governed docs/ artifacts -- CVF has no equivalent discipline there today",
+      "confidence": "LOW",
+      "nextAction": "If a future CVF code-quality tranche addresses comment/doc hygiene in cvf-web source (not governed docs/), compare against this taxonomy as a reference standard",
+      "reopenTrigger": "A named CVF consumer opens a source-code comment/documentation quality tranche"
+    },
+    {
+      "sourceId": "DSH",
+      "useCaseId": "DSH-UC-04",
+      "label": "Detailed PR-review checklist beyond CVF's own /code-review instructions",
+      "userOutcome": "A named, itemized review checklist covering lifecycle/concurrency defensive patterns, capability/consumer-fit tracing (flagging both consumer-specific leakage into an interface AND unnecessary API expansion for a single caller), invariant-companion semantic requirements, model-perspective prompt/schema inspection, and enforcement-bypass tracing (following every denial path to its executing operation and testing alternate callers that could bypass it)",
+      "pinAndPath": "cd5ef8148158c3a752a658978873241fdf8e2bbc :: .agents/skills/dsh-code-review/SKILL.md",
+      "actualReadDepth": "READ (full, 50 lines)",
+      "producerVerifierConsumer": "producer=DSH repository authoring conventions (AGENTS.md, defensive-patterns.md); verifier=named blocking requirements (7) plus manual-check categories (11); consumer=DSH PR reviewers",
+      "invocationAndFailureBehavior": "Explicit priority order: correctness/lifecycle/security/broken-required-behavior over style; one substantiated blocker beats a list of nits; requires re-running a change-scope report after any retarget/merge",
+      "existingCvfOwnerEvidenceOrGap": "PARTIAL_OWNER: CVF's own /code-review skill exists (referenced in this session's available-skills listing) but this pass did not open its instruction body to compare line-by-line; the DSH enforcement-bypass-tracing item (\"follow every denial path to the operation that executes it; exercise direct and alternate callers that can bypass schemas, prompts, facades, wrappers\") is a named, concrete technique worth checking against CVF's own review skill",
+      "missingCvfLink": "UNKNOWN pending a direct read of CVF's own /code-review skill body in a follow-up pass; not claimed as a gap without that comparison",
+      "expectedBenefit": "If CVF's own review skill lacks an explicit enforcement-bypass-tracing instruction, adopting DSH's phrasing could measurably improve CVF's own security-relevant code reviews",
+      "confidence": "LOW",
+      "nextAction": "Open CVF's own /code-review skill instruction body and compare against this DSH checklist item-by-item in a follow-up pass before proposing any change",
+      "reopenTrigger": "A future CVF skill-quality tranche compares /code-review against external review methodologies"
+    }
+  ],
+
+  "unreadUnknownRegions": [
+    {"sourceId": "QM", "region": "53 of 58 src/ top-level modules (see residualObligationLedger)", "status": "UNKNOWN_NOT_READ"},
+    {"sourceId": "QM", "region": "18 of 20 skills-seed/ directories", "status": "UNKNOWN_PATH_ENUMERATED_ONLY"},
+    {"sourceId": "QM", "region": "~480 test files", "status": "UNKNOWN_FILENAME_INFERENCE_ONLY_FROM_INTAKE"},
+    {"sourceId": "QM", "region": "plugins/, adrs/, cli/, aws/, fly/, porter/, deploy/", "status": "UNKNOWN_NOT_READ"},
+    {"sourceId": "AGW", "region": "27 of 33 examples/ categories", "status": "UNKNOWN_PATH_ENUMERATED_ONLY"},
+    {"sourceId": "AGW", "region": "crates/ Rust source beyond EARA-AGW-T1's eight paths and the llm/policy module", "status": "UNKNOWN_NOT_READ_BEYOND_PRIOR_PASSES"},
+    {"sourceId": "AGW", "region": "ui/ (frontend)", "status": "UNKNOWN_NOT_READ"},
+    {"sourceId": "DSH", "region": "5 of ~10 .agents/skills/ entries (dsh-archive-agent-notes, dsh-doc, dsh-merging-stacked-prs, dsh-prose-standard, record-browser-gif)", "status": "UNKNOWN_PATH_ENUMERATED_ONLY"},
+    {"sourceId": "DSH", "region": ".agents/notes/{implemented,proposed,rejected,archived}/ (2431 total tracked paths)", "status": "UNKNOWN_PATH_ENUMERATED_ONLY_WITH_COUNTS"},
+    {"sourceId": "DSH", "region": "packages/ and apps/ whole-corpus source", "status": "PRIOR_WHOLE_CORPUS_INVENTORY_EXISTS (DSH-WRA-R1); not re-read here"},
+    {"sourceId": "DSH", "region": "vendor/ subtree license/attribution content", "status": "UNKNOWN_NOT_READ; THIRD_PARTY_NOTICES.md hash recorded historically but content unread"}
+  ],
+
+  "externalLocalReconciliation": [
+    {
+      "sourceOrGroup": "AGW EARA-AGW-T0/T1 and AGW-UC-02",
+      "externalEvidenceStatus": "Validated child receipt (seven-candidate manifest, EARA_AGW_T0.RETURN_VALIDATION_RECEIPT.json) and bounded novelty comparison (AGW-UC-02) both exist and are reused unchanged",
+      "localEvidenceStatus": "This pass adds two Local-only discoveries (traffic-egress-proxy cross-repo comparison against QM; re-confirmed mcp-authorization CEL-based tool authorization) not present in any external return",
+      "reconciliation": "No contradiction found. The two new Local discoveries are additive to, not a revision of, the seven previously reconciled external candidates.",
+      "nextAction": "None required; reuse both without re-litigation"
+    },
+    {
+      "sourceOrGroup": "QM original external nomination",
+      "externalEvidenceStatus": "UNAVAILABLE, confirmed again this pass. No external researcher return, capsule, or nomination artifact for QM was found in the surfaces read.",
+      "localEvidenceStatus": "This pass is Local-only source-native evidence recovery (command-policy.ts, egress-authz-main.ts, acl-store.ts partial, two skill files)",
+      "reconciliation": "The provenance gap is source-local, not a blocker to continued Local recovery, per the work order's explicit instruction. All QM findings in this audit are Local-only discoveries with no external cross-check available.",
+      "nextAction": "Continue independent Local recovery; do not fabricate a QM external comparison. If a future external capsule is prepared for QM, it must be newly labeled and never represented as recovered history."
+    },
+    {
+      "sourceOrGroup": "DSH prior work (DSH-WRA-R1, DSH-UC01)",
+      "externalEvidenceStatus": "Historical bounded provider-attempt proof and whole-tree inventory exist; no fresh external comparison performed or claimed this pass",
+      "localEvidenceStatus": "This pass adds two Local-only skill-content discoveries (dsh-trim-cot-leakage, dsh-code-review) plus notes-tree path/count enumeration",
+      "reconciliation": "No contradiction. DSH-UC01's ABSORPTION_NOT_COMPLETE status and its use-proof-limited-to-provider-attempt-admission finding both stand unchanged; the two new skill discoveries are residual semantic recovery, not a re-verification of that provider-attempt proof.",
+      "nextAction": "Reuse DSH-UC01 closure and DSH-WRA-R1 inventory as-is; do not rerun provider-attempt proof from this audit"
+    }
+  ],
+
+  "canonicalRuntimeSufficiencySummary": [
+    {"capability": "SM-04/QM-UC-06 resolved-IP egress recheck", "status": "CONSUMER_NO_USE_PROOF", "note": "CVF-side: consumer exists (agent-tools.tsx), test exists, but test proves only literal-IP blocking, not resolved-IP blocking; QM-side source read but its own test/consumer link not verified this pass"},
+    {"capability": "SM-05/QM-UC-05 shell command-safety policy", "status": "ARCHITECTURE_ONLY", "note": "No CVF consumer executes arbitrary agent-authored shell commands in the surfaces read; QM's own consumer/verifier not verified this pass"},
+    {"capability": "SM-06/QM-UC-04 credential broker", "status": "CONTRACT_ONLY", "note": "Skill-instruction-level text only; no broker source opened on either side; no CVF consumer shape matches"},
+    {"capability": "QM-UC-03 durable interactive login", "status": "CONTRACT_ONLY", "note": "Skill-instruction-level text only; no CVF consumer for agent-initiated CLI login exists in evidence read"},
+    {"capability": "DSH-UC-03 CoT-leakage taxonomy", "status": "CONTRACT_ONLY", "note": "Prose-methodology document only; not source code; no CVF owner comparison completed"},
+    {"capability": "DSH-UC-04 review-checklist comparison", "status": "BLOCKED_EVIDENCE_GAP", "note": "Comparison against CVF's own /code-review skill instruction body not completed this pass; cannot classify further without that read"}
+  ],
+
+  "programContinuation": {
+    "inheritedSourceLedger": {
+      "path": "AGENT_HANDOFF_V60_2026-09-08.md",
+      "reportedTotals": "54-source seed and 68 historical obligations from CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip, SHA-256 66d47f56c92bdd747ed0294fdc00d7d8d2fcc69bc0a0b1e4e92b71b33b7bc795",
+      "verificationScope": "UNVERIFIED_THIS_PASS; this audit did not locate or open the referenced ZIP payload; searched docs/reference/external_agent_review/ and active handoff text only, per work-order instruction not to fabricate or claim the list exhausted",
+      "searchedLocations": ["docs/reference/external_agent_review/", "AGENT_HANDOFF_V60_2026-09-08.md text", "CVF_SESSION_MEMORY.md Next Allowed Move history"]
+    },
+    "currentThreeSourceState": {
+      "QM": "ABSORPTION_NOT_COMPLETE; residual obligations recorded above",
+      "AGW": "ABSORPTION_NOT_COMPLETE; residual obligations recorded above; AGW-UC-02 bounded adaptation proposal stands separately",
+      "DSH": "ABSORPTION_NOT_COMPLETE; DSH-UC01 closure preserved; residual obligations recorded above"
+    },
+    "remainingSourcesAndObligations": "The 54-source/68-obligation seed remains UNVERIFIED and its individual member identities were not recovered in this pass (the ZIP payload was not located in the searched locations). This is a concrete provenance gap, not a claim that no further sources exist.",
+    "missingInputLocationsSearched": ["docs/reference/external_agent_review/ directory listing", "active handoff full text", "session memory Next Allowed Move history entries mentioning the handoff pack"],
+    "nextBatchNominations": [
+      {
+        "domain": "QM src/ residual modules (auth, credentials, identity, sandbox)",
+        "externalEvidenceAvailability": "NONE; QM has no external researcher nomination at all",
+        "localEvidenceGap": "53 of 58 top-level modules unopened; sandbox/ alone has 29 unopened files implementing multiple sandbox backends (docker, aws, e2b, modal, porter, local)",
+        "expectedValue": "MEDIUM-HIGH; sandbox/auth/identity are exactly the operational-value regions the scope-recovery decision flagged as thinnest-evidence and highest-priority",
+        "nextAction": "Author a follow-on bounded QM-only residual packet targeting src/auth, src/identity, src/credentials, and 3-5 representative src/sandbox/*.ts files as the next Local dispatch"
+      },
+      {
+        "domain": "AGW crates/agentgateway/src/llm/policy/ remaining guard types (bedrock_guardrails, google_model_armor, azure_content_safety, moderation)",
+        "externalEvidenceAvailability": "PARTIAL; EARA-AGW-T1 and AGW-UC-02 covered mod.rs/webhook.rs/streaming_guardrails.rs structurally but did not open the four named provider-specific guard modules",
+        "localEvidenceGap": "azure_content_safety.rs, bedrock_guardrails.rs, google_model_armor.rs, moderation.rs, pii.rs source files remain unopened (only referenced by name via match-arm dispatch in mod.rs)",
+        "expectedValue": "LOW-MEDIUM; these are third-party-provider-backed guard integrations, lower priority than the QM sandbox/auth gap since CVF's own AGW-UC-02 adaptation proposal already targets regex-only mask capability, not provider-backed guardrails",
+        "nextAction": "Defer until a CVF consumer specifically requires provider-backed (Bedrock/Google/Azure) content moderation, per AGW-UC-02's existing DEFER_WITH_TRIGGER webhook disposition logic extended to provider guardrails"
+      },
+      {
+        "domain": "DSH .agents/notes/implemented/ (1814 tracked paths, content unopened)",
+        "externalEvidenceAvailability": "NONE beyond the two already-read skill files' citations of specific note paths",
+        "localEvidenceGap": "The entire durable-decision-record corpus (rationale for DSH's own architecture choices) is unread; two already-read skills (dsh-trim-cot-leakage, dsh-code-review) both cite specific notes by path as load-bearing references, suggesting the notes corpus itself carries recoverable design-rationale value distinct from the skill instructions",
+        "expectedValue": "LOW-MEDIUM; 1814 files is a large corpus and DSH's own notes are about DSH's architecture, not CVF's -- value would be methodological (how DSH structures durable decision records) rather than directly portable code/mechanism value",
+        "nextAction": "Defer; lower priority than QM's unopened source modules given DSH-UC01 is already CLOSED and this pass found no new named CVF consumer for a notes-corpus methodology comparison"
+      }
+    ],
+    "localOwnedNextAction": "Local reviewer to author a bounded QM-only residual-recovery follow-on packet (src/auth, src/identity, src/credentials, representative src/sandbox/*.ts) as the highest-priority next batch, per nextBatchNominations[0]; this is the concrete next action owned by Local, not deferred to operator reminder."
+  },
+
+  "atMostThreeConversionCandidates": [
+    {
+      "candidate": 1,
+      "sourceItem": "QM egress-authz-main.ts resolved-IP recheck (SM-04/QM-UC-06)",
+      "existingOwnerToReceive": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-tools.tsx (existing SSRF-blocking owner)",
+      "provenRequirement": "CVF's own test suite (agent-tools.test.tsx:140-173) proves literal-IP/hostname-string blocking but does not prove resolved-IP-after-DNS-lookup blocking exists",
+      "verificationConditionBeforeAcceptance": "Open agent-tools.tsx's actual URL-validation implementation to confirm whether resolved-IP recheck already exists before proposing any change; if it already exists, this becomes NO_NEW_VALUE",
+      "seamDependency": "Would require a DNS-lookup step inside the existing URL-validation function plus resolved-IP range checking, mirroring QM's decide() function shape"
+    },
+    {
+      "candidate": 2,
+      "sourceItem": "DSH dsh-code-review enforcement-bypass-tracing instruction (DSH-UC-04)",
+      "existingOwnerToReceive": "CVF's own /code-review skill (not opened this pass; comparison incomplete)",
+      "provenRequirement": "BLOCKED_EVIDENCE_GAP -- comparison against CVF's own skill instruction body was not completed this pass; this is a nominated comparison, not a proven gap",
+      "verificationConditionBeforeAcceptance": "Open CVF's own /code-review skill instruction body and compare line-by-line before treating this as more than a hypothesis",
+      "seamDependency": "Documentation-only change to a skill instruction file, if the comparison confirms a gap"
+    },
+    {
+      "candidate": 3,
+      "sourceItem": "QM command-policy.ts de-obfuscation technique (SM-05/QM-UC-05)",
+      "existingOwnerToReceive": "NONE_YET -- no CVF consumer executes agent-authored shell commands",
+      "provenRequirement": "NOT_YET_PROVEN -- this is a PACKAGE_CANDIDATE/architectural reference only, explicitly deferred pending a named CVF consumer",
+      "verificationConditionBeforeAcceptance": "A future CVF work order must first establish a shell/CLI command-execution consumer before this technique has anywhere to attach",
+      "seamDependency": "None yet; recorded for future reference only"
+    }
+  ],
+
+  "corpusCompletenessAndReportIntegrity": {
+    "corpusTaskClass": "bounded residual-recovery survey across three repositories, extending a prior initial-intake survey; no complete corpus scan",
+    "corpusRoot": ".private_reference/source_mirrors/{yc-software__qm,agentgateway__agentgateway,deepseek-ai__deepseek-harness}/",
+    "snapshotTime": "2026-09-13T12:08:02Z observation window; all three mirrors confirmed clean at their exact frozen pins",
+    "enumerationCommand": "git ls-tree -r --name-only HEAD and git ls-tree -d HEAD (per mirror, filesystem-backed direct reads); no --hidden --no-ignore whole-repository rescan performed this pass (reused intake's prior enumeration as baseline)",
+    "manifestArtifactOrInlineManifest": "inline sourceIdentityAndFreshness, residualObligationLedger, sharedMechanismsView, repositorySpecificValueViews, unreadUnknownRegions arrays in this file",
+    "manifestHash": "N/A with reason: each frozen repository is an independent authority root; canonical manifest hashes from the initial intake (per-repository canonicalManifestSha256) remain the authoritative unchanged corpus identity, not recomputed this pass",
+    "processingLedgerArtifactOrInlineLedger": "inline residualObligationLedger array in this file",
+    "allowedTerminalStatuses": "READ, SKIPPED_WITH_REASON, DEFERRED, BLOCKED_UNREADABLE",
+    "reconciliation": "This pass's own new-read rows: 9 fully-read files (QM: command-policy.ts, egress-authz-main.ts, interactive-login/SKILL.md, use-shared-credential/SKILL.md; AGW: traffic-egress-proxy/README.md; DSH: dsh-trim-cot-leakage/SKILL.md, dsh-code-review/SKILL.md) plus 1 partial read (QM acl-store.ts, first 120 lines) plus 1 re-confirmed prior-read (AGW mcp-authorization/README.md, not counted as new) plus path-enumeration-only coverage (QM src/ and skills-seed/ top level; DSH .agents/notes/ subtree counts). manifest_new_reads=9; partial_reads=1; reconfirmed_not_new=1; path_enumeration_only=3; exclusions=0; unresolved=0 for the rows actually produced in this pass",
+    "unresolvedFiles": "The vast majority of all three repositories' tracked files remain outside this pass's read scope by design, listed explicitly in unreadUnknownRegions, not silently claimed complete",
+    "declaredExclusions": "All repository paths not named in residualObligationLedger's actionThisPass fields; DSH packages/apps source (reused via DSH-WRA-R1); AGW crates/controller/ui beyond EARA-AGW-T1 and llm/policy (reused via prior passes)",
+    "unreadableOrUnsupportedFiles": 0,
+    "aggregationCheck": "3 shared-mechanism rows (SM-04/05/06) and 6 use-case value rows (QM-UC-03/04/05/06, DSH-UC-03/04) derive from the READ subset only; 3 conversion candidates derive from the same subset",
+    "driftCheck": "All three mirrors confirmed clean and pin-matching at this pass's observation window; no fresh upstream freshness re-query performed (reused intake/EARA freshness observations per Evidence Reuse plan)",
+    "outputTraceability": "this audit JSON plus the paired worker-return Markdown",
+    "adversarialVerification": "explicitly reject any all-files-read, complete-inventory, or umbrella-absorption-complete interpretation of this pass; residual obligations for all three sources remain large and are enumerated above, not minimized",
+    "corpusVerdict": "PARTIAL - bounded residual survey only; combined three repositories still total well over 13,000 tracked files, of which this pass added fewer than 10 newly fully-read files atop the prior intake's fewer-than-15"
+  },
+
+  "knowledgeSystemReconciliation": {
+    "mappedCount": 9,
+    "deferredCount": 3,
+    "unmappedCount": 1,
+    "totalCandidateRecords": 13,
+    "note": "9 rows (3 sharedMechanisms + 6 repositorySpecificValueViews) carry a planning disposition of PROMISING_FOR_SELECTED_REVIEW or DEFER_WITH_TRIGGER (mapped); the 3 atMostThreeConversionCandidates rows are deferred pending their own verification conditions; 1 row (DSH-UC-04's BLOCKED_EVIDENCE_GAP canonical status pending the CVF /code-review comparison) is unmapped until that comparison is completed. mapped(9) + deferred(3) + unmapped(1) = 13 = totalCandidateRecords"
+  },
+
+  "publicExportDisposition": {
+    "disposition": "DEFERRED_PRIVATE_ONLY",
+    "reason": "private residual-recovery evidence; no public-sync requested"
+  }
+}
