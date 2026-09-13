@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `4899ce2e947968b6615005e3827bace5d47182e1`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `54b8b9ab62873f4a0412ac49e0450b36714e8007`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -14,7 +14,7 @@ Status: ACTIVE
 - Remote tracking branch: `origin/main`.
 - Exact remote SHA must be derived live from git when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `multi_repo_absorption_seed_provenance_recovery`.
+- Current mode: `multi_repo_absorption_umbrella_reconciliation_dispatched`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -24,11 +24,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_seed_provenance_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=recover umbrella seed provenance after six-mirror history triage; parked checkpoint=stopped-chain successor, implementation/acquisition/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_umbrella_reconciliation_dispatched`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=worker reconciles recovered umbrella metadata, then Local reviews and dispatches next evidenced source; parked checkpoint=stopped-chain successor, implementation/acquisition/provider/live/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_seed_provenance_recovery`
+`multi_repo_absorption_umbrella_reconciliation_dispatched`
 
 ## Purpose
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-2026-09-13 current priority: Multi-repo program CONTINUES; six-mirror acceptance triage at 4899ce2e947968b6615005e3827bace5d47182e1: docs/reviews/CVF_MULTI_REPO_ACCEPTANCE_HISTORY_TRIAGE_2026-09-13.md. Addy backfill/package lanes, MinerU residual intake, Brainless/Interaction bounded evidence, Pancake re-intake, reverse-skill intake/T14 and MCP T9 all have accepted work; no fresh intake selected merely from INDEX. CGE-R3 and DSH-UC01 remain closed bounded. STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR still binds the old three-repo recovery chain. Next independent action owned by Local: recover actual CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip or retained extraction/ledger, verify expected SHA256 66d47f56c92bdd747ed0294fdc00d7d8d2fcc69bc0a0b1e4e92b71b33b7bc795, reconcile reported54sources/68obligations against accepted scope, then issue a supported next-repository packet. Blocker: actual umbrella payload location unavailable in inspected metadata; root/legacy filename searches are scoped NOT_FOUND, not absolute absence. No active worker; historical currentAuthority must not be rerun. No acquisition/implementation/source execution/external/provider/live/public/deploy; no operator reminder needed for routine work; latest LHW24.
+2026-09-13 current priority: Multi-repo program CONTINUES. UMBRELLA-SEED-RECONCILIATION-T1 dispatched at 54b8b9ab62873f4a0412ac49e0450b36714e8007: docs/work_orders/CVF_AGENT_WORK_ORDER_UMBRELLA_SEED_RECONCILIATION_2026-09-13.md, paired baseline docs/baselines/CVF_GC018_UMBRELLA_SEED_RECONCILIATION_2026-09-13.md. Original ZIP recovered at C:/Users/DELL/Downloads/CVF_INTERNAL_CURRENT_ABSORPTION_HANDOFF_PACK_V1.zip; expected SHA256 matched and seven member hashes PASS. Receipt: docs/audits/CVF_UMBRELLA_SEED_PROVENANCE_RECEIPT_2026-09-13.json. Verified membership: 54 source IDs; 40 Git locator rows/39 distinct URLs; 14 non-Git/unresolved rows; standalone historical backlog 68 unique IDs including three XD rows, with separate observed provenance. Worker joins external historical findings to scoped Local acceptance and nominates up to three next packets; exactly two outputs, WORKER_MUST_NOT_COMMIT. Local owns independent review and next dispatch in the same return cycle; no operator reminder needed. Six-mirror accepted scopes, CGE-R3 and DSH-UC01 stay closed bounded; old three-repo recovery STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR unchanged. This independent metadata task performs no QM residual scan, acquisition, source execution, implementation, external invocation, provider/live/public/deploy. Latest LHW24.
 `EARA-AGW-T1` is `CLOSED_PASS_BOUNDED` at material commit `d679c060871917c78bc83cf2f2c4eb51f8dcaf8e`. The exact pinned Agentgateway eight-path/seven-candidate reconciliation is `SOURCE_RECONCILED`: one `NO_NEW_VALUE`, four `DEFER`, and two `ADAPT`. It is not umbrella repository absorption. Observed `origin/main` is 206 changed paths beyond the assigned pin, so current-head examples, tests, integrations, skills/use-case recovery, and runtime-sufficiency classification remain open. The TPGR admission amendment is closed; current pilot permits bounded initial acquisition/survey only. External Web agents remain research/advisory inputs only; after work-order dispatch execution belongs to internal same-workspace agents and Local reviewer authority. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and deployment remain parked.
 
 ## Parked Checkpoints

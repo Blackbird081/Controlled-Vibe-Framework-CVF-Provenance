@@ -1,5 +1,5 @@
 {
   "stateOrder": 2825,
   "stateKey": "domainPilotSelectedReviewDecision20260912",
-  "value": "Six-mirror history triage at 4899ce2e947968b6615005e3827bace5d47182e1; docs/reviews/CVF_MULTI_REPO_ACCEPTANCE_HISTORY_TRIAGE_2026-09-13.md. Prior accepted scopes retained; original recovery chain STOP/NO_SUCCESSOR remains. Broader backlog not exhausted. Local owns original seed payload recovery and independent source selection; no new worker lane."
+  "value": "Umbrella metadata reconciliation dispatched at 54b8b9ab62873f4a0412ac49e0450b36714e8007; original ZIP recovered with expected hash, 54 source IDs/68 historical obligations verified as membership only. Worker must join external findings to scoped Local acceptance and return next nominations. Local owns review and next packet; old recovery chain remains STOP/NO_SUCCESSOR. No implementation or new source acquisition."
 }
