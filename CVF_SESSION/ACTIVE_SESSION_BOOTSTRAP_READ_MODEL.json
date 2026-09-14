@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "multi_repo_absorption_local_runtime_recovery",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM-RUNTIME-VALUE-R2 bounded evidence is accepted; completion review: docs/reviews/CVF_QM_RUNTIME_VALUE_R2_COMPLETION_2026-09-14.md. Local next selects the next non-overlapping QM residual cluster using accepted R1/R2 ledgers, then authors a bounded work order with upstream freshness preflight. No new worker is dispatched. All three sources remain INCOMPLETE. No stopped-chain successor, new repository, implementation, provider/live/public/deploy or program exit. R1 M4/M5 remain proposals. Latest LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM-RUNTIME-VALUE-R2 bounded evidence is accepted at e081c2eb6e2dfbb218e646609258d04fa3e1f8d4; completion review: docs/reviews/CVF_QM_RUNTIME_VALUE_R2_COMPLETION_2026-09-14.md. Local next selects the next non-overlapping QM residual cluster using accepted R1/R2 ledgers, then authors a bounded work order with upstream freshness preflight. No new worker is dispatched. All three sources remain INCOMPLETE. No stopped-chain successor, new repository, implementation, provider/live/public/deploy or program exit. R1 M4/M5 remain proposals. Latest LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
