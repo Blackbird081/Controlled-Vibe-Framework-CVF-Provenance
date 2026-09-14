@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=bounded R4 evidence repair after foundation acceptance; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=author bounded QM R1 M5 service-token replay-deduplication dispatch; parked checkpoint=stopped-chain successor, unrelated repository admission, ambient credentials, provider/live/public/deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `multi_repo_absorption_local_runtime_recovery`; previous mode mark
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. EVIDENCE-READINESS-T1 accepted at 2719dd2b1. R4 released for bounded evidence repair under docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R4_2026-09-14.md. Reviewer diagnostic docs/audits/CVF_QM_RUNTIME_VALUE_R4_READINESS_REVIEW_2026-09-14.json records REWORK_REQUIRED. Preserve original R4 hashes/history; reconcile missing rows, blob/span evidence and command receipts before semantic M3/M4/M6 review. No upstream execution, source absorption, provider/live/public/deploy or repo substitution. All three repos remain INCOMPLETE; program open. Latest LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. OUTPUT-REDACTION-T1 is accepted and materially committed at 45a2ace784ab6badf49b2d869915eebf69f4e369; continuity closure is this synchronization batch. Next Local action is author and pre-dispatch a bounded QM R1 M5 service-token replay-deduplication roadmap, baseline and work order for an INTERNAL_AGENT worker. The packet must retain M4 token rotation separately, prove a named current verifier consumer and one exact-request replay gap, and define single-process versus shared/durable claim boundaries before implementation. M7 and R4 memory candidates remain demand-gated. No ambient credentials, provider/live, upstream execution, public sync or deployment. All three repos remain INCOMPLETE; program open. Latest LHW24.
 Mode: `multi_repo_absorption_local_runtime_recovery`. QM-RUNTIME-VALUE-R1 is accepted bounded at `c3b38dffda7f00778803d2c976926064d8f86b15`; the original dispatch at `089c5c9ceb7489c50942f3ad0d3fa6f383207374` is historical. It retains static exact-pin recovery for auth, identity, credentials and sandbox. Historical `EARA-AGW-T1` remains bounded and does not close Agentgateway as a repository. External Web agents remain research/advisory only. Local must review and continue remaining QM, Agentgateway and DeepSeek Harness accounting before another repo package. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

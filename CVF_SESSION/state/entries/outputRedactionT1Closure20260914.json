@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2828,
+  "stateKey": "outputRedactionT1Closure20260914",
+  "value": "OUTPUT-REDACTION-T1 is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED at material commit 45a2ace784ab6badf49b2d869915eebf69f4e369. The opt-in trusted-caller known-value transformation is accepted with 66/66 focused synthetic tests, TypeScript PASS, finite benchmark ceilings met, reviewer-fast 68/68, pre-implementation 84/84 and material pre-commit 89/89. No default CLI activation, ambient credential collection, provider/live execution, deployment or repository/program closure follows. R4 evidence is accepted bounded; all three program sources remain INCOMPLETE."
+}
