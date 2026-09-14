@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=bounded QM residual terminal accounting; parked checkpoint=unselected M4, M7, memory candidates, shared/durable replay, ambient credentials, provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=bounded Agentgateway residual terminal accounting; parked checkpoint=QM M4/M7/memory candidates, shared/durable replay, ambient credentials, provider/live/public/deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `multi_repo_absorption_local_runtime_recovery`; previous mode mark
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 74b30b725ab4f95def0a2679943f4ce6bcbd385d. Next Local action is bounded QM residual terminal accounting from the accepted R1-R4 ledgers and current-consumer evidence: decide whether M4 has a concrete unsatisfied consumer or whether QM can move to terminal source accounting. Do not open implementation before that decision. M7 command-policy and R4 memory candidates remain demand-gated; shared/durable replay, ambient credentials, provider/live, public sync and deployment remain parked. Agentgateway and DeepSeek Harness remain INCOMPLETE; program open. Latest LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=agentgateway__agentgateway; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM is TERMINAL_ACCEPTED at material commit 3dda930e7913193164acdb30b26ceacd1f454bb1: 56 R1-R4 mechanism records reconcile to 2 adapted, 42 deferred and 12 rejected; M4 has NO_CONCRETE_UNSATISFIED_CURRENT_CONSUMER and remains DEFERRED_WITH_TRIGGER. Next Local action is bounded Agentgateway residual terminal accounting from the accepted EARA-AGW evidence, current mirror/freshness delta and current-consumer evidence. Do not dispatch implementation before that decision. DeepSeek Harness remains INCOMPLETE; program open. QM M4/M7/memory, shared/durable replay, ambient credentials, provider/live, public sync and deployment remain parked. Latest LHW24.
 Mode: `multi_repo_absorption_local_runtime_recovery`. QM-RUNTIME-VALUE-R1 is accepted bounded at `c3b38dffda7f00778803d2c976926064d8f86b15`; the original dispatch at `089c5c9ceb7489c50942f3ad0d3fa6f383207374` is historical. It retains static exact-pin recovery for auth, identity, credentials and sandbox. Historical `EARA-AGW-T1` remains bounded and does not close Agentgateway as a repository. External Web agents remain research/advisory only. Local must review and continue remaining QM, Agentgateway and DeepSeek Harness accounting before another repo package. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

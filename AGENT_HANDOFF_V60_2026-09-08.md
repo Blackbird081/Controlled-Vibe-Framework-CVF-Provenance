@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `74b30b725ab4f95def0a2679943f4ce6bcbd385d`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `3dda930e7913193164acdb30b26ceacd1f454bb1`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -23,7 +23,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=bounded QM residual terminal accounting; role=Local orchestrator/reviewer; phase=Local source terminal decision; decision owner=Local; parked checkpoint=unselected M4, M7, memory candidates, shared/durable replay, ambient credentials, provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=bounded Agentgateway residual terminal accounting; role=Local orchestrator/reviewer; phase=Local source terminal decision; decision owner=Local; parked checkpoint=QM M4/M7/memory candidates, shared/durable replay, ambient credentials, provider/live/public/deployment.
 
 ## Current Mode
 
@@ -90,7 +90,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-Current authority: docs/baselines/CVF_GC018_QM_SERVICE_TOKEN_REPLAY_DEDUPE_T1_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_SERVICE_TOKEN_REPLAY_DEDUPE_T1_2026-09-14.md. Implementation is reviewer-accepted `CLOSED_PASS_BOUNDED` at material `74b30b725ab4f95def0a2679943f4ce6bcbd385d`; Local remains decision owner. No shared/durable replay or whole-QM closure.
+Current authority: `docs/reviews/CVF_QM_SOURCE_TERMINAL_ACCOUNTING_2026-09-14.md` at material `3dda930e7913193164acdb30b26ceacd1f454bb1`; Local remains decision owner. QM is `TERMINAL_ACCEPTED`; no Agentgateway implementation lane, shared/durable replay or whole-program closure.
 
 ## Closure Evidence
 
@@ -109,7 +109,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 74b30b725ab4f95def0a2679943f4ce6bcbd385d. Next Local action is bounded QM residual terminal accounting from the accepted R1-R4 ledgers and current-consumer evidence: decide whether M4 has a concrete unsatisfied consumer or whether QM can move to terminal source accounting. Do not open implementation before that decision. M7 command-policy and R4 memory candidates remain demand-gated; shared/durable replay, ambient credentials, provider/live, public sync and deployment remain parked. Agentgateway and DeepSeek Harness remain INCOMPLETE; program open. Latest LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=agentgateway__agentgateway; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM is TERMINAL_ACCEPTED at material commit 3dda930e7913193164acdb30b26ceacd1f454bb1: 56 R1-R4 mechanism records reconcile to 2 adapted, 42 deferred and 12 rejected; M4 has NO_CONCRETE_UNSATISFIED_CURRENT_CONSUMER and remains DEFERRED_WITH_TRIGGER. Next Local action is bounded Agentgateway residual terminal accounting from accepted EARA-AGW evidence, current mirror/freshness delta and current-consumer evidence. Do not dispatch implementation before that decision. DeepSeek Harness remains INCOMPLETE; program open. QM M4/M7/memory, shared/durable replay, ambient credentials, provider/live, public sync and deployment remain parked. Latest LHW24.
 
 ## Parked Checkpoints
 
@@ -124,7 +124,7 @@ PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT
 ## Active Boundary
 
 - MFRP-FINGERPRINT-T1 is materially closed; worker lane released. TPGR T1 remains closed.
-  Next: prepare the next independent QM residual packet; QM-RUNTIME-VALUE-R1 is closed bounded; no implementation lane; other candidates remain parked.
+  Next: perform bounded Agentgateway residual terminal accounting; QM is terminal accepted; no implementation lane opens automatically.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
 - Manual relay is content-neutral transport under `cvf.cross-workspace-evidence-relay@1.0.0`; remote findings remain advisory until Local Agent verification and final technical disposition. Once Local issues a work order, execution is internal shared-workspace work and the relay loop ends.
@@ -144,7 +144,7 @@ Public catalog paths: N/A; no catalog entry was included in the bounded concept 
 Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
 ## Core Guard Self-Protection Authorization
 
-Operator authorization: close accepted QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 material `74b30b725ab4f95def0a2679943f4ce6bcbd385d`. Authorized guard-maintenance scope: continuity only. Protected paths: `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/qmServiceTokenReplayDedupeT1Closure20260914.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+Operator authorization: continue Local orchestration after QM terminal decision material `3dda930e7913193164acdb30b26ceacd1f454bb1`. Authorized guard-maintenance scope: continuity only. Protected paths: `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/qmSourceTerminalAccounting20260914.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 Rollback boundary: revert only this seven-path projection; preserve material `74b30b725ab4f95def0a2679943f4ce6bcbd385d` and earlier evidence. No checker, hook, provider/live, public, deployment or unrelated source change.
 Operator authorization: finish the foundation and return to R4 to evaluate improvement. Synchronize accepted material 2719dd2b1, current authority and next move through the six existing continuity paths listed below. This releases bounded evidence repair only; no upstream implementation or program closure. Operator additionally requires agents to recover existing external/local roles without reminders: authorized startup routing and existing carrier-checker regression scope is `AGENTS.md`, `CLAUDE.md`, `governance/compat/check_agent_instruction_carriers.py`, `governance/compat/test_check_agent_instruction_carriers.py`, and this handoff. No role-policy change or new hook.
 Operator authorization: project active program continuity repair af137b631, the exact three-source state and in-program QM next action; protected paths include `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json` and the existing continuity surfaces named by the hardening review. Project the returned external pattern review, selective method-reuse decision and prior relay state under docs/reviews/CVF_THREE_REPO_PATTERN_COMPARISON_LOCAL_REVIEW_2026-09-13.md and docs/reviews/CVF_EXTERNAL_LOCAL_COORDINATION_MACHINE_BINDING_2026-09-13.md; `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json` remains protected.

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2831,
+  "stateKey": "qmSourceTerminalAccounting20260914",
+  "value": "QM is TERMINAL_ACCEPTED for DOMAIN-PILOT-THREE-REPO-2026-09 at material commit 3dda930e7913193164acdb30b26ceacd1f454bb1. Local reconciled 56 accepted R1-R4 mechanism records to 2 ADAPTED_ACCEPTED_BOUNDED, 42 DEFERRED_WITH_TRIGGER and 12 REJECTED_NO_ACTIONABLE_VALUE. R1 M4 has NO_CONCRETE_UNSATISFIED_CURRENT_CONSUMER: current CVF-Web declares one CVF_SERVICE_TOKEN and no principal registry, audience requirement, kid selector or overlapping-key contract; break-glass rotation concerns a separate token. No M4 work order or worker dispatch opens. Agentgateway and DeepSeek Harness remain INCOMPLETE; next source is agentgateway__agentgateway. No provider/live, network, public-sync, deployment or production effect occurred."
+}

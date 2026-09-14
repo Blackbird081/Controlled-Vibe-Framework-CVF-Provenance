@@ -12,10 +12,10 @@
     ],
     "sourceStates": {
       "agentgateway__agentgateway": "INCOMPLETE",
-      "yc-software__qm": "INCOMPLETE",
+      "yc-software__qm": "TERMINAL_ACCEPTED",
       "deepseek-ai__deepseek-harness": "INCOMPLETE"
     },
-    "nextSourceId": "yc-software__qm",
+    "nextSourceId": "agentgateway__agentgateway",
     "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
     "expansionAllowed": false,
     "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
