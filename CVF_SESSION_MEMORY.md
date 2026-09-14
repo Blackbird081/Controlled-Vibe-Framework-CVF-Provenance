@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=relay committed QM-RUNTIME-VALUE-R3 to Claude; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=select the next bounded non-overlapping QM residual cluster; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `multi_repo_absorption_local_runtime_recovery`; previous mode mark
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. R1/R2 bounded evidence is accepted. Current authority is QM-RUNTIME-VALUE-R3 for 8 ACL/classify/policy/security blobs at freshly observed pin 59cf6554faadcd06494782190c3ecae1829dd381. Dispatch committed at 0d4c4d9ccd8c3a8bf1944b7937a5e9aac05838af; operator may relay the work order to Claude. Worker writes only two R3 evidence outputs, no commit or upstream execution. Local reviews and continues remaining QM, Agentgateway and DeepSeek Harness accounting. All three remain INCOMPLETE. No stopped-chain successor, new repository, implementation, provider/live/public/deploy or program exit. Latest LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM-RUNTIME-VALUE-R1/R2/R3 bounded source evidence is accepted; R3 closed at bc914729c149ddc1f5d3d22c62eaab9b1d2769aa. Select the next non-overlapping bounded QM residual cluster from existing ledgers at pin 59cf6554faadcd06494782190c3ecae1829dd381, then author a fresh dispatch. M7-M9 remain evidence-only candidates with no implementation authority. Local must continue remaining QM, Agentgateway and DeepSeek Harness accounting; all three remain INCOMPLETE. No stopped-chain successor, new repository, source implementation, provider/live/public/deploy or program exit. Latest LHW24.
 Mode: `multi_repo_absorption_local_runtime_recovery`. QM-RUNTIME-VALUE-R1 is accepted bounded at `c3b38dffda7f00778803d2c976926064d8f86b15`; the original dispatch at `089c5c9ceb7489c50942f3ad0d3fa6f383207374` is historical. It retains static exact-pin recovery for auth, identity, credentials and sandbox. Historical `EARA-AGW-T1` remains bounded and does not close Agentgateway as a repository. External Web agents remain research/advisory only. Local must review and continue remaining QM, Agentgateway and DeepSeek Harness accounting before another repo package. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

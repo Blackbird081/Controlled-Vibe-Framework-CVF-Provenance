@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `0d4c4d9ccd8c3a8bf1944b7937a5e9aac05838af`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `bc914729c149ddc1f5d3d22c62eaab9b1d2769aa`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -24,7 +24,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=relay committed QM-RUNTIME-VALUE-R3 to Claude; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=select the next bounded non-overlapping QM residual cluster; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
 
 ## Current Mode
 
@@ -92,7 +92,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-Current authority: docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R3_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R3_2026-09-14.md. R1/R2 remain accepted; R3 selects eight disjoint ACL/classify/policy/security paths at the refreshed pin. Dispatch committed and ready for operator relay; no worker return yet.
+Current authority: docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R3_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R3_2026-09-14.md, now terminal `CLOSED_PASS_BOUNDED`; accepted completion is docs/reviews/CVF_QM_RUNTIME_VALUE_R3_COMPLETION_2026-09-14.md. R1/R2/R3 bounded source evidence is accepted; R3 closed at material commit `bc914729c149ddc1f5d3d22c62eaab9b1d2769aa`. M7-M9 remain evidence-only candidates and no implementation lane is open.
 
 ## Closure Evidence
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. R1/R2 bounded evidence is accepted. Current authority is QM-RUNTIME-VALUE-R3 for 8 ACL/classify/policy/security blobs at freshly observed pin 59cf6554faadcd06494782190c3ecae1829dd381. Dispatch committed at 0d4c4d9ccd8c3a8bf1944b7937a5e9aac05838af; operator may relay the work order to Claude. Worker writes only two R3 evidence outputs, no commit or upstream execution. Local reviews and continues remaining QM, Agentgateway and DeepSeek Harness accounting. All three remain INCOMPLETE. No stopped-chain successor, new repository, implementation, provider/live/public/deploy or program exit. Latest LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM-RUNTIME-VALUE-R1/R2/R3 bounded source evidence is accepted; R3 closed at bc914729c149ddc1f5d3d22c62eaab9b1d2769aa. Select the next non-overlapping bounded QM residual cluster from existing ledgers at pin 59cf6554faadcd06494782190c3ecae1829dd381, then author a fresh dispatch. M7-M9 remain evidence-only candidates with no implementation authority. Local must continue remaining QM, Agentgateway and DeepSeek Harness accounting; all three remain INCOMPLETE. No stopped-chain successor, new repository, source implementation, provider/live/public/deploy or program exit. Latest LHW24.
 
 ## Parked Checkpoints
 
