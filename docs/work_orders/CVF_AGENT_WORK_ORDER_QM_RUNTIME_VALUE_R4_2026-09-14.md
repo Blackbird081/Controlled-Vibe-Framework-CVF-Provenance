@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: HOLD
 
 Date: 2026-09-14
 
@@ -21,6 +21,10 @@ closureBaseHead: N/A - worker does not commit
 providerExecutionAuthority: FORBIDDEN
 
 ## Dispatch Prompt Envelope
+
+Operator priority 2026-09-14: R4 finding repair PARKED_BY_OPERATOR_PRIORITY.
+Do not execute this packet until Local releases it after EVIDENCE-READINESS-T1.
+Two current worker outputs remain unaccepted and frozen; no findings are closed.
 
 Worker return path: `docs/reviews/CVF_QM_RUNTIME_VALUE_R4_WORKER_RETURN_2026-09-14.md`
 

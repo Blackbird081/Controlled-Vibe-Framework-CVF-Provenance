@@ -24,7 +24,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute the bounded QM-RUNTIME-VALUE-R4 memory audit; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute EVIDENCE-READINESS-T1 foundation; R4 finding repair parked; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
 
 ## Current Mode
 
@@ -92,7 +92,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-Current authority: docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R4_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R4_2026-09-14.md. R4 dispatch covers 19 memory blobs at pin 361a6c0095dcd3d156aca91353f3ffba0bb8b69b. R1/R2/R3 accepted bounded; worker returns pending Local review. No implementation lane is open.
+Current authority: docs/baselines/CVF_GC018_EVIDENCE_READINESS_T1_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_EVIDENCE_READINESS_T1_2026-09-14.md. Operator prioritizes automatic evidence readiness with measured low latency. QM R4 findings are parked, not accepted; preserve both worker outputs unchanged.
 
 ## Closure Evidence
 
@@ -111,9 +111,11 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. Execute QM-RUNTIME-VALUE-R4 static memory audit under docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R4_2026-09-14.md at pin 361a6c0095dcd3d156aca91353f3ffba0bb8b69b; worker owns only its audit JSON and Markdown return, with WORKER_MUST_NOT_COMMIT. R1/R2/R3 evidence remains accepted bounded. R3 M7-M9 remain evidence-only candidates. Local reviews the return and continues remaining QM, Agentgateway and DeepSeek Harness accounting; all three remain INCOMPLETE. No source implementation/provider/live/public/deploy, repo substitution or program exit. Latest LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. Operator priority: execute EVIDENCE-READINESS-T1 foundation under docs/work_orders/CVF_AGENT_WORK_ORDER_EVIDENCE_READINESS_T1_2026-09-14.md. QM-RUNTIME-VALUE-R4 finding repair is PARKED_BY_OPERATOR_PRIORITY; preserve its two untracked output hashes and unresolved findings. Implement automatic evidence-readiness validation through existing worker-return owner, with measured latency budgets and no whole-repo scan/network/new hook process. Worker must not commit. Local accepts foundation before releasing R4; all three repos remain INCOMPLETE, program open. No upstream execution/provider/live/public/deploy or repo substitution. Latest LHW24.
 
 ## Parked Checkpoints
+
+- QM-RUNTIME-VALUE-R4 finding repair: PARKED_BY_OPERATOR_PRIORITY until foundation acceptance and Local release.
 
 - RABA-T1 through RABA-T3 and automatic redispatch.
 - RABA implementation and DARA-T5; external research is advisory only.
