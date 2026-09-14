@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: HOLD
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-14
 
@@ -22,8 +22,8 @@ providerExecutionAuthority: FORBIDDEN
 
 ## Dispatch Prompt Envelope
 
-Operator priority 2026-09-14: R4 finding repair PARKED_BY_OPERATOR_PRIORITY.
-Do not execute this packet until Local releases it after EVIDENCE-READINESS-T1.
+Historical HOLD: R4 repair was parked for EVIDENCE-READINESS-T1. Local released it in continuity commit 7271f4f10 under operator instruction; this review reconciles the stale dispatch status.
+Local accepts bounded R4 evidence with one explicit supplementary-test exception: test/agent-tools.test.ts is PARTIAL_READ (213/3237 lines), outside fullyReadTests; its remainder remains unknown. All other selected test reads retain the full-read requirement. No runtime or whole-repository closure.
 Two current worker outputs remain unaccepted and frozen; no findings are closed.
 
 Worker return path: `docs/reviews/CVF_QM_RUNTIME_VALUE_R4_WORKER_RETURN_2026-09-14.md`
@@ -436,6 +436,10 @@ outcomes; remaining QM scope is explicit; JSON parses; and the fast return gate
 passes. `COMPLETE_PENDING_REVIEW` means evidence complete for review, not accepted.
 
 ## Worker Return Packet Shape Contract
+
+Required return sections and fields: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Claim Boundary; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; executionBaseHead; git status --short.
+Conditional sections remain explicit: External Knowledge Intake Routing; Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; Epistemic Process Block; Machine Closure Package. Use N/A with reason when a conditional obligation does not apply; do not remove eligibility markers.
+
 
 contractProfile: WORKER_RETURN_FULL_GATE_V1
 
@@ -958,3 +962,44 @@ These are dispatch routing decisions, not accepted source-value findings. The wo
 | R4 checker opportunity | No checker candidate admitted | CHECKER_CANDIDATE | No owner selected by closure | Separate testable gap required | No checker implementation |
 | Upstream code copying | Direct import is outside this audit authorization | REJECT_DIRECT_IMPORT | No import destination | Preserve source citations only | No upstream code copied into CVF runtime |
 | R4 no-value outcome | Not concluded; requires bounded comparative evidence | NO_PACKAGE_OR_RUNTIME_VALUE | No target selected | Worker substantiates any no-value outcome | No repository-wide rejection inferred |
+
+## Local Reviewer Closure Receipt
+
+Accepted bounded with the explicit partial supplementary-test exception recorded in docs/reviews/CVF_QM_RUNTIME_VALUE_R4_COMPLETION_2026-09-14.md. No runtime or three-repo closure.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R4_2026-09-14.md | CLOSED_PASS_BOUNDED; historical HOLD preserved in Git; released at 7271f4f10 | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_QM_RUNTIME_VALUE_R4_COMPLETION_2026-09-14.md | bounded evidence and explicit scope exception accepted by Local | PASS |
+| Roadmap state | N/A | standalone work order; no dedicated roadmap transition | N/A with reason: parent program remains open |
+| Registry JSON | CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json | all three sourceStates INCOMPLETE, retained unchanged | PASS |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | existing registry retained unchanged; bounded evidence stored in paired audit; no new package or runtime admission | PASS |
+| External evidence digest | docs/audits/CVF_QM_RUNTIME_VALUE_R4_2026-09-14.json | sha256:ad6d8c7e4c7f58428035104f55aead5bad169dd4e34b24fa0410e37e5b034d7b | PASS |
+| System loop interlock | N/A | no runtime or loop transition | N/A with reason: static evidence only |
+| Session continuity | CVF_SESSION/state/entries/nextAllowedMove.json | retain QM next; material SHA recorded after material commit | N/A with reason: dedicated post-material synchronization |
+
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Audit identity | accepted current bytes | ad6d8c7e4c7f58428035104f55aead5bad169dd4e34b24fa0410e37e5b034d7b | PASS |
+| Test ledger | exact identities and honest spans | 38 full, 1 partial, 2 exclusions = 41; all 39 identities match | PASS |
+| Scope decision | disclose exception | one supplementary partial test accepted with unknown remainder | PASS |
+| Program | remain open | all three source states INCOMPLETE | PASS |
+
+
+## Delta Execution Claim Boundary Control Block
+
+| Field | Value |
+| --- | --- |
+| claimScope | Packet authority and bounded evidence requirements only |
+| claimDisposition | CLAIM_REJECTED: no live execution-control claim from this packet |
+| receiptEvidence | CLAIM_REJECTED_NO_RECEIPT |
+| actionEvidence | CLAIM_REJECTED_NO_ACTION |
+| invocationBoundary | Explicit task scope and named role ownership |
+| interceptionBoundary | No interception proved by a work order |
+| claimLanguage | Source evidence or synthetic proof as expressly scoped |
+| forbiddenExpansion | Universal enforcement, provider/live, CLI activation and public deployment |

@@ -1,26 +1,19 @@
 # CVF Agent Instructions
 
-Root instruction carrier and canonical CVF authority. This compact router carries
-the startup contract, authority hierarchy, task routing, and direct machine
+Root instruction carrier and canonical CVF authority. This compact router carries the startup contract, authority hierarchy, task routing, and direct machine
 bindings. The full per-rule owner map lives in the routing index
 `docs/reference/CVF_AGENT_INSTRUCTION_CARRIER_ROUTING_INDEX_2026-08-11.md`.
-Compaction moved prose there and repealed no rule; if a rule is not restated
-here, resolve its canonical owner through that index.
+Compaction moved prose there and repealed no rule; if a rule is not restated here, resolve its canonical owner through that index.
 
 ## Session Memory Front Door
 
-The active session front door for new or resumed agents is:
+The active session front door for new or resumed agents is: `CVF_SESSION_MEMORY.md`
 
-`CVF_SESSION_MEMORY.md`
-
-Read continuity surfaces progressively, not the full state/history aggregate by
-default: (1) read the bootstrap model for mode, handoff, and next allowed move:
+Read continuity surfaces progressively, not the full state/history aggregate by default: (1) read the bootstrap model for mode, handoff, and next allowed move:
 
 `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-(2) read the compact front door and named active handoff; (3) read only their
-current-authority paths; (4) use the full state registry only as a targeted
-lookup for a missing/contradictory fact or required historical evidence:
+(2) read the compact front door and named active handoff; (3) read only their current-authority paths; (4) use the full state registry only as a targeted lookup for a missing/contradictory fact or required historical evidence:
 
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 
@@ -32,10 +25,7 @@ exact-hash tracked migration debt in
 `governance/compat/CVF_ACTIVE_CONTINUITY_READ_BUDGET_MIGRATION.json`; that
 debt cannot grow and does not license reading full history by default.
 
-The current active handoff is `AGENT_HANDOFF_V60_2026-09-08.md`.
-Historical handoffs are archived under:
-
-`CVF_SESSION/handoffs/archive/`
+The current active handoff is `AGENT_HANDOFF_V60_2026-09-08.md`. Historical handoffs are archived under: `CVF_SESSION/handoffs/archive/`
 
 Do not append new status to archived handoffs; update the active handoff named
 by `CVF_SESSION/ACTIVE_SESSION_STATE.json`, or open a later versioned handoff
@@ -65,6 +55,16 @@ When the operator asks to create or refresh a local CVF Workspace from a fresh
 provenance clone, use `Initialize-CVF-Operator-Workspace.ps1` as the autorun
 entrypoint and preserve interactive profile selection unless the operator has
 already selected an exact path and profile.
+
+## Mandatory External-Local Role Rehydration
+
+Before answering, planning, dispatching or resuming external research, repository absorption or agent coordination, read the existing owners without operator reminder:
+`docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md`;
+`docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md`.
+Resolve workspace and lifecycle first: Web/remote agents provide advisory research and pattern mapping using External Read plus pinned public GitHub; Local agents own private-CVF verification and final technical disposition.
+A shared-workspace worker is INTERNAL_AGENT regardless of provider/model; external research ends before internal implementation/review/closure.
+Include role, phase and decision owner in the existing acknowledgment or task artifact; reuse it until that boundary changes. Public absence is not private absence; an external shortlist is not the Local coverage boundary.
+Apply the existing agreement before proposing a new process. The existing coordination checker validates declared bindings; it does not prove an agent read or understood them.
 
 ## Authority Hierarchy
 

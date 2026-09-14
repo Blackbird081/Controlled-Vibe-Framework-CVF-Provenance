@@ -21,6 +21,8 @@ use as evidence.
 
 ## Session Startup
 
+Apply `AGENTS.md` Mandatory External-Local Role Rehydration before related answers, plans or work; identify workspace role, lifecycle phase and Local decision owner without operator reminder.
+
 Before material governed work in a new or resumed session, read the compact
 front door `CVF_SESSION_MEMORY.md`, then its bootstrap read model
 `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`, then the active handoff

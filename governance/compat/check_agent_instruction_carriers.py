@@ -101,8 +101,15 @@ AGENTS_DIRECT_LITERALS: tuple[str, ...] = (
     "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_2026-09-02.md",
     "b9bdba712", "EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION",
     "M5/M10/safety/M20",
+    "Mandatory External-Local Role Rehydration",
+    "Before answering, planning, dispatching or resuming external research, repository absorption or agent coordination, read the existing owners without operator reminder:",
+    "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md",
+    "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md",
+    "A shared-workspace worker is INTERNAL_AGENT regardless of provider/model; external research ends before internal implementation/review/closure.",
+    "Include role, phase and decision owner in the existing acknowledgment or task artifact; reuse it until that boundary changes.",
 )
 CLAUDE_DIRECT_LITERALS: tuple[str, ...] = (
+    "Apply `AGENTS.md` Mandatory External-Local Role Rehydration before related answers, plans or work;",
     "NOT_CVF_SOURCE", "CVF_SESSION_MEMORY.md", "CVF_SESSION/ACTIVE_SESSION_STATE.json",
     "governance/compat/check_corpus_completeness_report_integrity.py",
     "governance/compat/check_corpus_to_knowledge_map_reconciliation.py",
