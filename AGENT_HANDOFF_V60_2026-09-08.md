@@ -24,7 +24,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=select the next bounded non-overlapping QM residual cluster; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute the bounded QM-RUNTIME-VALUE-R4 memory audit; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
 
 ## Current Mode
 
@@ -92,7 +92,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-Current authority: docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R3_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R3_2026-09-14.md, now terminal `CLOSED_PASS_BOUNDED`; accepted completion is docs/reviews/CVF_QM_RUNTIME_VALUE_R3_COMPLETION_2026-09-14.md. R1/R2/R3 bounded source evidence is accepted; R3 closed at material commit `bc914729c149ddc1f5d3d22c62eaab9b1d2769aa`. M7-M9 remain evidence-only candidates and no implementation lane is open.
+Current authority: docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R4_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R4_2026-09-14.md. R4 dispatch covers 19 memory blobs at pin 361a6c0095dcd3d156aca91353f3ffba0bb8b69b. R1/R2/R3 accepted bounded; worker returns pending Local review. No implementation lane is open.
 
 ## Closure Evidence
 
@@ -111,7 +111,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM-RUNTIME-VALUE-R1/R2/R3 bounded source evidence is accepted; R3 closed at bc914729c149ddc1f5d3d22c62eaab9b1d2769aa. Select the next non-overlapping bounded QM residual cluster from existing ledgers at pin 59cf6554faadcd06494782190c3ecae1829dd381, then author a fresh dispatch. M7-M9 remain evidence-only candidates with no implementation authority. Local must continue remaining QM, Agentgateway and DeepSeek Harness accounting; all three remain INCOMPLETE. No stopped-chain successor, new repository, source implementation, provider/live/public/deploy or program exit. Latest LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. Execute QM-RUNTIME-VALUE-R4 static memory audit under docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R4_2026-09-14.md at pin 361a6c0095dcd3d156aca91353f3ffba0bb8b69b; worker owns only its audit JSON and Markdown return, with WORKER_MUST_NOT_COMMIT. R1/R2/R3 evidence remains accepted bounded. R3 M7-M9 remain evidence-only candidates. Local reviews the return and continues remaining QM, Agentgateway and DeepSeek Harness accounting; all three remain INCOMPLETE. No source implementation/provider/live/public/deploy, repo substitution or program exit. Latest LHW24.
 
 ## Parked Checkpoints
 
