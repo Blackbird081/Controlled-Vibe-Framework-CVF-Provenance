@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `45a2ace784ab6badf49b2d869915eebf69f4e369`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `2cc9d2000590a8d3718a5fc6d28b3b2eb1102735`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -23,7 +23,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=author bounded QM R1 M5 service-token replay-deduplication dispatch; role=Local orchestrator/reviewer; phase=Local capability conversion; decision owner=Local; parked checkpoint=stopped-chain successor, unrelated repository admission, ambient credentials, provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute dispatched QM service-token replay-deduplication T1 as INTERNAL_AGENT; role=Local orchestrator/reviewer; phase=internal implementation dispatch; decision owner=Local; parked checkpoint=M4, M7, memory candidates, shared/durable replay, ambient credentials, provider/live/public/deployment.
 
 ## Current Mode
 
@@ -90,7 +90,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-Current authority: docs/baselines/CVF_GC018_OUTPUT-REDACTION-T1_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_OUTPUT-REDACTION-T1_2026-09-14.md. Operator approved one opt-in trusted-caller transformation tranche; Local remains final reviewer. R4 evidence remains accepted bounded; no whole-repo closure.
+Current authority: docs/baselines/CVF_GC018_QM_SERVICE_TOKEN_REPLAY_DEDUPE_T1_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_SERVICE_TOKEN_REPLAY_DEDUPE_T1_2026-09-14.md. Dispatch material is `2cc9d2000590a8d3718a5fc6d28b3b2eb1102735`; one INTERNAL_AGENT no-commit implementation pass is open and Local remains final reviewer. No shared/durable replay or whole-QM closure.
 
 ## Closure Evidence
 
@@ -109,7 +109,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. OUTPUT-REDACTION-T1 is accepted and materially committed at 45a2ace784ab6badf49b2d869915eebf69f4e369; continuity closure is this synchronization batch. Next Local action is author and pre-dispatch a bounded QM R1 M5 service-token replay-deduplication roadmap, baseline and work order for an INTERNAL_AGENT worker. The packet must retain M4 token rotation separately, prove a named current verifier consumer and one exact-request replay gap, and define single-process versus shared/durable claim boundaries before implementation. M7 and R4 memory candidates remain demand-gated. No ambient credentials, provider/live, upstream execution, public sync or deployment. All three repos remain INCOMPLETE; program open. Latest LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. Current bounded sub-action: execute QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1, DISPATCH_READY at material commit 2cc9d2000590a8d3718a5fc6d28b3b2eb1102735. Next is one INTERNAL_AGENT implementation pass under docs/work_orders/CVF_AGENT_WORK_ORDER_QM_SERVICE_TOKEN_REPLAY_DEDUPE_T1_2026-09-14.md: capture the fresh executionBaseHead, change exactly five worker-owned paths, make zero commits, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Local remains reviewer/closer and decision owner. M4 token rotation, M7 command-policy, R4 memory candidates, shared/durable replay claims, ambient credentials, provider/live, public sync and deployment remain parked. All three repos remain INCOMPLETE; program open. Latest LHW24.
 
 ## Parked Checkpoints
 
@@ -144,8 +144,8 @@ Public catalog paths: N/A; no catalog entry was included in the bounded concept 
 Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
 ## Core Guard Self-Protection Authorization
 
-Operator authorization: close accepted OUTPUT-REDACTION-T1 material `45a2ace784ab6badf49b2d869915eebf69f4e369`. Authorized guard-maintenance scope: continuity only. Protected paths: `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/outputRedactionT1Closure20260914.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
-Rollback boundary: revert only this seven-path projection; preserve material `45a2ace784ab6badf49b2d869915eebf69f4e369` and earlier evidence. No checker, hook, provider/live, public, deployment or unrelated source change.
+Operator authorization: dispatch QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 material `2cc9d2000590a8d3718a5fc6d28b3b2eb1102735`. Authorized guard-maintenance scope: continuity only. Protected paths: `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/qmServiceTokenReplayDedupeT1Dispatch20260914.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+Rollback boundary: revert only this seven-path projection; preserve material `2cc9d2000590a8d3718a5fc6d28b3b2eb1102735` and earlier evidence. No checker, hook, provider/live, public, deployment or unrelated source change.
 Operator authorization: finish the foundation and return to R4 to evaluate improvement. Synchronize accepted material 2719dd2b1, current authority and next move through the six existing continuity paths listed below. This releases bounded evidence repair only; no upstream implementation or program closure. Operator additionally requires agents to recover existing external/local roles without reminders: authorized startup routing and existing carrier-checker regression scope is `AGENTS.md`, `CLAUDE.md`, `governance/compat/check_agent_instruction_carriers.py`, `governance/compat/test_check_agent_instruction_carriers.py`, and this handoff. No role-policy change or new hook.
 Operator authorization: project active program continuity repair af137b631, the exact three-source state and in-program QM next action; protected paths include `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json` and the existing continuity surfaces named by the hardening review. Project the returned external pattern review, selective method-reuse decision and prior relay state under docs/reviews/CVF_THREE_REPO_PATTERN_COMPARISON_LOCAL_REVIEW_2026-09-13.md and docs/reviews/CVF_EXTERNAL_LOCAL_COORDINATION_MACHINE_BINDING_2026-09-13.md; `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json` remains protected.
 
