@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `8a64a1da762b8f2ff482eadcf83abd0d29faa77d`. Evidence-readiness dispatch parent anchor for dedicated continuity synchronization.
+Current HEAD recorded for this handoff: `2719dd2b1e55c8620c9c26f0e3e31666bd6f2d81`. Accepted evidence-readiness foundation parent anchor for dedicated continuity synchronization.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -11,8 +11,7 @@ Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance SOT on `main`.
-- Remote tracking branch: `origin/main`.
-- Exact remote SHA must be derived live from git when needed.
+- Remote tracking branch: `origin/main`; derive its exact SHA live when needed.
 - External agent memory files: non-canonical convenience only.
 - Current mode: `multi_repo_absorption_local_runtime_recovery`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
@@ -24,7 +23,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute EVIDENCE-READINESS-T1 foundation; R4 finding repair parked; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=bounded R4 evidence repair after foundation acceptance; parked checkpoint=stopped-chain successor, unrelated repository admission, source implementation/provider/live/public/deployment.
 
 ## Current Mode
 
@@ -55,7 +54,6 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 - Continuity activation committed at `9b86e6a091d4f2745e3812c085af1d1bd0439ced`; the following dedicated handoff-marker commit carries this parent anchor.
 - P4-C1 hook result was `SKIPPED_NO_ELIGIBLE_CANDIDATE`.
 - V59 reached the active-handoff byte limit; its historical body was preserved unchanged under an archive encoding annotation, and V60 is the compact active front door.
-- Latest finalized numbered learning handoff remains `LHW24`.
 - ENCODING-RENAME-T1 was reassigned by the operator from Claude to Codex,
   repaired in one consolidated generation, and closed at material commit
   `d46a55d2b` plus reviewer closure `f2635a8f8`. Focused proof passed 40/40;
@@ -92,7 +90,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-Current authority: docs/baselines/CVF_GC018_EVIDENCE_READINESS_T1_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_EVIDENCE_READINESS_T1_2026-09-14.md. Operator prioritizes automatic evidence readiness with measured low latency. QM R4 findings are parked, not accepted; preserve both worker outputs unchanged.
+Current authority: docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R4_2026-09-14.md plus docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R4_2026-09-14.md. Foundation accepted CLOSED_PASS_BOUNDED at 2719dd2b1; completion: docs/reviews/CVF_EVIDENCE_READINESS_T1_COMPLETION_2026-09-14.md. R4 is released for bounded repair, remains REWORK_REQUIRED, and is not accepted.
 
 ## Closure Evidence
 
@@ -111,11 +109,11 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. Operator priority: execute EVIDENCE-READINESS-T1 foundation under docs/work_orders/CVF_AGENT_WORK_ORDER_EVIDENCE_READINESS_T1_2026-09-14.md. QM-RUNTIME-VALUE-R4 finding repair is PARKED_BY_OPERATOR_PRIORITY; preserve its two untracked output hashes and unresolved findings. Implement automatic evidence-readiness validation through existing worker-return owner, with measured latency budgets and no whole-repo scan/network/new hook process. Worker must not commit. Local accepts foundation before releasing R4; all three repos remain INCOMPLETE, program open. No upstream execution/provider/live/public/deploy or repo substitution. Latest LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. EVIDENCE-READINESS-T1 accepted at 2719dd2b1. R4 released for bounded evidence repair under docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R4_2026-09-14.md. Reviewer diagnostic docs/audits/CVF_QM_RUNTIME_VALUE_R4_READINESS_REVIEW_2026-09-14.json records REWORK_REQUIRED. Preserve original R4 hashes/history; reconcile missing rows, blob/span evidence and command receipts before semantic M3/M4/M6 review. No upstream execution, source absorption, provider/live/public/deploy or repo substitution. All three repos remain INCOMPLETE; program open. Latest LHW24.
 
 ## Parked Checkpoints
 
-- QM-RUNTIME-VALUE-R4 finding repair: PARKED_BY_OPERATOR_PRIORITY until foundation acceptance and Local release.
+- R4 acceptance remains pending; finding repair is released after foundation acceptance. Preserve the original worker outputs as comparison evidence until the bounded repair is recorded.
 
 - RABA-T1 through RABA-T3 and automatic redispatch.
 - RABA implementation and DARA-T5; external research is advisory only.
@@ -147,6 +145,7 @@ Public catalog paths: N/A; no catalog entry was included in the bounded concept 
 Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
 
 ## Core Guard Self-Protection Authorization
+Operator authorization: finish the foundation and return to R4 to evaluate improvement. Synchronize accepted material 2719dd2b1, current authority and next move through the six existing continuity paths listed below. This releases bounded evidence repair only; no upstream implementation or program closure.
 Operator authorization: project active program continuity repair af137b631, the exact three-source state and in-program QM next action; protected paths include `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json` and the existing continuity surfaces named by the hardening review. Project the returned external pattern review, selective method-reuse decision and prior relay state under docs/reviews/CVF_THREE_REPO_PATTERN_COMPARISON_LOCAL_REVIEW_2026-09-13.md and docs/reviews/CVF_EXTERNAL_LOCAL_COORDINATION_MACHINE_BINDING_2026-09-13.md; `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json` remains protected.
 
 Current rework projection is authorized by the original exact Local continuity scope and standing autonomous reviewer mandate. Material 5bb2314d89de473c3d31c6764ede7ef62d5af2d6; record F1-F5 evidence rework, current authority and multi-repository continuation under docs/baselines/CVF_GC018_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md.

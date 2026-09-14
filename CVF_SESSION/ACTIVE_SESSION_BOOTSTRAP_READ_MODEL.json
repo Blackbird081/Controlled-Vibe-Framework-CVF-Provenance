@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "multi_repo_absorption_local_runtime_recovery",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. Operator priority: execute EVIDENCE-READINESS-T1 foundation under docs/work_orders/CVF_AGENT_WORK_ORDER_EVIDENCE_READINESS_T1_2026-09-14.md. QM-RUNTIME-VALUE-R4 finding repair is PARKED_BY_OPERATOR_PRIORITY; preserve its two untracked output hashes and unresolved findings. Implement automatic evidence-readiness validation through existing worker-return owner, with measured latency budgets and no whole-repo scan/network/new hook process. Worker must not commit. Local accepts foundation before releasing R4; all three repos remain INCOMPLETE, program open. No upstream execution/provider/live/public/deploy or repo substitution. Latest LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. EVIDENCE-READINESS-T1 accepted at 2719dd2b1. R4 released for bounded evidence repair under docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R4_2026-09-14.md. Reviewer diagnostic docs/audits/CVF_QM_RUNTIME_VALUE_R4_READINESS_REVIEW_2026-09-14.json records REWORK_REQUIRED. Preserve original R4 hashes/history; reconcile missing rows, blob/span evidence and command receipts before semantic M3/M4/M6 review. No upstream execution, source absorption, provider/live/public/deploy or repo substitution. All three repos remain INCOMPLETE; program open. Latest LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_EVIDENCE_READINESS_T1_2026-09-14.md",
-    "baselineSha256": "58f38f2e1fefdcf7bd6fbf1b1709f5431556a08b1342a45d99b286a1adfd7688",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EVIDENCE_READINESS_T1_2026-09-14.md",
-    "workOrderSha256": "eeeb52e32dc1e5e32b846af4644d8192d2b5e2f371e6e5b9194f26aca0ea02f3"
+    "baselinePath": "docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R4_2026-09-14.md",
+    "baselineSha256": "e67dfbda3c9c120290acac6316ce6e99afb086b10a9718afb5cd5b15c736fa19",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R4_2026-09-14.md",
+    "workOrderSha256": "73fd851e820c1905eb78f64a931e61d054904f7ff880c2e5520dce080e491cdc"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
