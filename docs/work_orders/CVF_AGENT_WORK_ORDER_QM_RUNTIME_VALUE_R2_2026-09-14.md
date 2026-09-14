@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-14
 
@@ -858,3 +858,25 @@ Protected paths:
 Rollback boundary: revert R2 dispatch projection only. Do not change checkers,
 hooks, provider credentials, public state, runtime code or source mirrors.
 Worker edits only its two evidence outputs after committed dispatch.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R2_2026-09-14.md | CLOSED_PASS_BOUNDED; original dispatch preserved at 0c83c7c458d73863a854c66f4ced6990a1e625f1 | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_QM_RUNTIME_VALUE_R2_COMPLETION_2026-09-14.md | F1-F5 accepted by Local | PASS |
+| Roadmap state | N/A | standalone work order; no dedicated roadmap transition | N/A with reason: parent program remains open |
+| Registry JSON | CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json | all three sourceStates INCOMPLETE, retained unchanged | PASS |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | existing registry retained unchanged; bounded evidence stored in paired audit; no new package or runtime admission | PASS |
+| External evidence digest | docs/audits/CVF_QM_RUNTIME_VALUE_R2_2026-09-14.json | sha256:744ec9b7fc627b40aa0104708a73922af28fe58e8a3b19ee9a86955f31c58fd6 | PASS |
+| System loop interlock | N/A | no runtime or loop transition | N/A with reason: static evidence only |
+| Session continuity | CVF_SESSION/state/entries/nextAllowedMove.json | retain QM next; material SHA recorded after material commit | N/A with reason: dedicated post-material synchronization |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Audit identity | accepted round-2 SHA | 744ec9b7fc627b40aa0104708a73922af28fe58e8a3b19ee9a86955f31c58fd6 | PASS |
+| Target manifest | 27 exact-pin rows | 27 path/blob/size matches | PASS |
+| Selected test identity | unique rows with matching blobs | 71 unique paths; 71 blob matches | PASS |
+| Authority limit | bounded static source review | QM and program remain open; no runtime execution | PASS |

@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "multi_repo_absorption_local_runtime_recovery",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. R1 evidence is accepted at c3b38dffda7f00778803d2c976926064d8f86b15. Current authority is QM-RUNTIME-VALUE-R2 baseline/work order for 27 exact-pin target blobs in src/runs, src/sessions and src/processes, disjoint from R1. Dispatch committed at 0c83c7c458d73863a854c66f4ced6990a1e625f1; operator may relay to internal worker now. Worker writes only the two R2 evidence outputs without commit; static source and selected-test reads only, no upstream execution. Local reviews and continues remaining QM, Agentgateway and DeepSeek Harness accounting. All three sources remain INCOMPLETE. No stopped-chain successor, new repository, implementation, provider/live/public/deploy or program exit; M4/M5 remain proposals. Latest LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM-RUNTIME-VALUE-R2 bounded evidence is accepted; completion review: docs/reviews/CVF_QM_RUNTIME_VALUE_R2_COMPLETION_2026-09-14.md. Local next selects the next non-overlapping QM residual cluster using accepted R1/R2 ledgers, then authors a bounded work order with upstream freshness preflight. No new worker is dispatched. All three sources remain INCOMPLETE. No stopped-chain successor, new repository, implementation, provider/live/public/deploy or program exit. R1 M4/M5 remain proposals. Latest LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R2_2026-09-14.md",
     "baselineSha256": "b51cfbb750bb9c7802d6604aec4b8a001a19719f7152bb932c9a2b5f32a3a19a",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R2_2026-09-14.md",
-    "workOrderSha256": "338b069743b3d74efb99b2dc23ad1e6adab1273da289be648b402fcae2ad2575"
+    "workOrderSha256": "9d473ddb0c5e91bcc0409559cee667b9b8a7faabdf0cf59cf285183537660423"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
