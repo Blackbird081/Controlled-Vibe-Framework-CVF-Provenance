@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_QM_SERVICE_TOKEN_REPLAY_DEDUPE_T1_2026-09-14.md",
-    "baselineSha256": "2480d2f5a4670a3d30eee9771727b7e999a39feb2be2a12726d0e74bd10b8091",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_QM_SERVICE_TOKEN_REPLAY_DEDUPE_T1_2026-09-14.md",
-    "workOrderSha256": "caee218d3a039bb161ab5af9efbe249326fd0127f54acc1277ea9a0a36055f6f"
+    "baselinePath": "docs/baselines/CVF_GC018_DSH_CODE_REVIEW_QUALITY_T1_2026-09-14.md",
+    "baselineSha256": "c761aa723a871d6fe5bfcd997b6e2a6100f1bba180396dbfc6b7b669ae5943db",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_CODE_REVIEW_QUALITY_T1_2026-09-14.md",
+    "workOrderSha256": "0ed5eaf5548308afc55f29c675ee58274dc93ffbd4188204c298682c3f8a616f"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
