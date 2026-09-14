@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2830,
+  "stateKey": "qmServiceTokenReplayDedupeT1Closure20260914",
+  "value": "QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 74b30b725ab4f95def0a2679943f4ce6bcbd385d from execution base ac1dd70612228c45d19e4b4b7d2ab1785204172f. One worker rework fixed future-dated timestamp expiry and replaced absolute-only timing with paired added-latency measurement. Local then corrected the benchmark to exact same-input pairs with alternating order and added GC-051 coverage. Evidence: 22/22 focused tests, TypeScript PASS, two reviewer benchmark runs with added median 0.0031 ms and p95 at most 0.0074 ms, worker-return fast 68/68, and material pre-commit 89/89. The accepted claim is process-local only; M4, M7, memory candidates, shared/durable replay, provider/live, public sync and deployment remain unopened."
+}

@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute dispatched QM service-token replay-deduplication T1 as INTERNAL_AGENT; parked checkpoint=M4, M7, memory candidates, shared/durable replay, ambient credentials, provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=bounded QM residual terminal accounting; parked checkpoint=unselected M4, M7, memory candidates, shared/durable replay, ambient credentials, provider/live/public/deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `multi_repo_absorption_local_runtime_recovery`; previous mode mark
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. Current bounded sub-action: execute QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1, DISPATCH_READY at material commit 2cc9d2000590a8d3718a5fc6d28b3b2eb1102735. Next is one INTERNAL_AGENT implementation pass under docs/work_orders/CVF_AGENT_WORK_ORDER_QM_SERVICE_TOKEN_REPLAY_DEDUPE_T1_2026-09-14.md: capture the fresh executionBaseHead, change exactly five worker-owned paths, make zero commits, and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Local remains reviewer/closer and decision owner. M4 token rotation, M7 command-policy, R4 memory candidates, shared/durable replay claims, ambient credentials, provider/live, public sync and deployment remain parked. All three repos remain INCOMPLETE; program open. Latest LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 74b30b725ab4f95def0a2679943f4ce6bcbd385d. Next Local action is bounded QM residual terminal accounting from the accepted R1-R4 ledgers and current-consumer evidence: decide whether M4 has a concrete unsatisfied consumer or whether QM can move to terminal source accounting. Do not open implementation before that decision. M7 command-policy and R4 memory candidates remain demand-gated; shared/durable replay, ambient credentials, provider/live, public sync and deployment remain parked. Agentgateway and DeepSeek Harness remain INCOMPLETE; program open. Latest LHW24.
 Mode: `multi_repo_absorption_local_runtime_recovery`. QM-RUNTIME-VALUE-R1 is accepted bounded at `c3b38dffda7f00778803d2c976926064d8f86b15`; the original dispatch at `089c5c9ceb7489c50942f3ad0d3fa6f383207374` is historical. It retains static exact-pin recovery for auth, identity, credentials and sandbox. Historical `EARA-AGW-T1` remains bounded and does not close Agentgateway as a repository. External Web agents remain research/advisory only. Local must review and continue remaining QM, Agentgateway and DeepSeek Harness accounting before another repo package. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
