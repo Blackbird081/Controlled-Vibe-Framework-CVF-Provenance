@@ -19,8 +19,11 @@ import re
 import subprocess
 from pathlib import Path
 
+from check_upstream_freshness_receipt import applies_to_dispatch, validate_dispatch
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+FRESHNESS_ACTIVATION_BASE = "7dc3dc51238b4f5092d0482624750f1b555380fc"
 STANDARD_PATH = (
     "docs/reference/external_agent_review/"
     "CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md"
@@ -571,6 +574,12 @@ def check_paths(paths: list[str]) -> list[str]:
         if not text:
             continue
         violations.extend(check_text(path, text))
+        if applies_to_dispatch(path, text):
+            code, old, _ = _run_git(["show", f"{FRESHNESS_ACTIVATION_BASE}:{path}"])
+            head_code, _, _ = _run_git(["cat-file", "-e", f"HEAD:{path}"])
+            violations.extend(f"{path}: {error}" for error in validate_dispatch(
+                text, historical_text=old if code == 0 else None,
+                newly_dispatched=head_code != 0))
     violations.extend(check_coordination(paths))
     return violations
 

@@ -252,6 +252,13 @@ recovery rules below.
 
 ## Mandatory Local Source Acquisition And Freshness Pinning
 
+Before each new Local repository audit or absorption batch, apply
+`.private_reference/source_mirrors/README.md`, section
+`Mandatory Upstream Freshness Preflight`. This also applies to reused mirrors:
+observe live upstream before manifest freeze, acquire the selected current
+source, and reconcile changed paths before dispatch. Preserve active worker
+pins and record any explicit historical-target reason or acquisition blocker.
+
 For every repository researched remotely, when a canonical GitHub clone URL is
 available and reachable, the Local Agent must create or refresh a source mirror
 under:
