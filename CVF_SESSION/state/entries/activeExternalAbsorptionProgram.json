@@ -11,11 +11,11 @@
       "deepseek-ai__deepseek-harness"
     ],
     "sourceStates": {
-      "agentgateway__agentgateway": "INCOMPLETE",
+      "agentgateway__agentgateway": "TERMINAL_DEFERRED_WITH_TRIGGER",
       "yc-software__qm": "TERMINAL_ACCEPTED",
       "deepseek-ai__deepseek-harness": "INCOMPLETE"
     },
-    "nextSourceId": "agentgateway__agentgateway",
+    "nextSourceId": "deepseek-ai__deepseek-harness",
     "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
     "expansionAllowed": false,
     "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
