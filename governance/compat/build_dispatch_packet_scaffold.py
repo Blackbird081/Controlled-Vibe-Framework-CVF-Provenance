@@ -7,7 +7,12 @@ import re
 import sys
 from dataclasses import dataclass, field
 from build_worker_return_skeleton_scaffold import (
-    SCEC_UNRESOLVED_PREDECESSOR_SENTINEL, build_worker_return_skeleton, render_scec_outcome_block)
+    SCEC_UNRESOLVED_PREDECESSOR_SENTINEL, build_worker_return_skeleton, render_scec_outcome_block,
+    render_evidence_readiness_binding_block)
+from worker_evidence_readiness import (
+    EVIDENCE_READINESS_CONTRACT_TOKEN,
+    resolve_evidence_readiness_applicable as _resolve_evidence_readiness_applicable,
+)
 from review_convergence_scaffold import (
     add_arguments as add_convergence_arguments, build_block as build_convergence_block, build_provenance_block, kwargs as convergence_kwargs, validate as validate_convergence)
 from build_dispatch_packet_architecture_readiness import architecture_readiness_section
@@ -91,6 +96,26 @@ class ScaffoldArgs:
     include_architecture_readiness_block: bool = True
     include_architecture_readiness_echo: bool = True
     include_p4_observation_block: bool = True
+    # F4 rework fix: tri-state, not a bool defaulting off. `None` (the
+    # default) means "derive automatically from trusted scope/contract
+    # signals" (requirement 6); an explicit `True`/`False` is a deliberate
+    # author override. A worker can no longer silently ship uncovered by
+    # simply not knowing to pass a flag -- the *default* path now actively
+    # inspects the packet shape instead of doing nothing.
+    evidence_readiness_applicable: bool | None = None
+
+def resolve_evidence_readiness_applicable(args: "ScaffoldArgs") -> bool:
+    """Resolve the effective applicability: an explicit override (`True` or
+    `False`) always wins; otherwise auto-detect from trusted packet shape
+    via the single shared implementation in `worker_evidence_readiness.py`
+    (also used by `build_worker_return_skeleton_scaffold.py`, so both
+    scaffold owners cannot drift into two different applicability rules).
+    There is no code path left where "nobody thought to pass a flag"
+    quietly resolves to uncovered -- the unset (`None`) state actively
+    inspects the packet instead of defaulting to `False`."""
+
+    return _resolve_evidence_readiness_applicable(args)
+
 
 def detect_triggers(args: ScaffoldArgs) -> dict[str, bool]:
     combined = " ".join([args.title, args.packet_kind, *args.dependencies])
@@ -486,6 +511,30 @@ def _scec_block(args: ScaffoldArgs) -> str:
         "the checker fails closed on the sentinel.",
     )
 
+def _evidence_readiness_contract_block() -> str:
+    """Compact evidence-readiness acceptance/binding block for a dispatch
+    work order, included automatically when the task is applicable (worker
+    order requirement 6) so a future worker cannot omit it by forgetting.
+
+    Declaring `EVIDENCE_READINESS_CONTRACT_TOKEN` here is the sole trusted
+    applicability source the return-time checker reads; the worker return's
+    own `## Evidence Readiness Binding` section is validated against it
+    automatically through the existing `check_worker_return_quality_gate.py`
+    call, never through a second checker invocation.
+    """
+    return (
+        "## Evidence Readiness Acceptance Contract\n\n"
+        f"{EVIDENCE_READINESS_CONTRACT_TOKEN}\n\n"
+        "This task's worker return must include the compact evidence-binding "
+        "block below, filled with real evidence. The worker-return quality "
+        "gate reaches `governance/compat/worker_evidence_readiness.py` "
+        "automatically for any return whose dispatch work order carries the "
+        "token above; the worker cannot opt out by omitting or tampering "
+        "with its own return.\n\n"
+        f"{render_evidence_readiness_binding_block()}"
+    )
+
+
 def _foundation_storage_layout_block() -> str:
     return (
         "## Foundation Storage Layout Block\n\n"
@@ -660,6 +709,9 @@ def build_work_order(args: ScaffoldArgs, active: dict[str, bool]) -> str:
         lines.append(_worker_output_checker_read_ahead_mandate())
         lines.append("")
     lines += architecture_readiness_section(args)
+    if resolve_evidence_readiness_applicable(args):
+        lines.append(_evidence_readiness_contract_block())
+        lines.append("")
     lines.append(_required_artifact_manifest())
     lines.append("")
     lines.append(_worker_return_packet_shape_contract(worker_return_path))
@@ -716,6 +768,21 @@ def _parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument("--dependency", action="append", default=[], dest="dependencies")
     parser.add_argument("--stdout", action="store_true")
     parser.add_argument("--include-worker-return-skeleton", action="store_true")
+    # Tri-state (F4 fix): omitting both flags auto-derives applicability
+    # from trusted packet-kind/title/dependency signals
+    # (`resolve_evidence_readiness_applicable`) rather than defaulting to
+    # the uncovered state. `--evidence-readiness-applicable` forces it on;
+    # `--no-evidence-readiness-applicable` is a deliberate, explicit opt-out
+    # for a real false positive -- it does not change what the default does
+    # when neither flag is passed.
+    parser.add_argument(
+        "--evidence-readiness-applicable", dest="evidence_readiness_applicable",
+        action="store_true", default=None,
+    )
+    parser.add_argument(
+        "--no-evidence-readiness-applicable", dest="evidence_readiness_applicable",
+        action="store_false",
+    )
     add_convergence_arguments(parser)
     parser.add_argument("--scec-problem-key")
     parser.add_argument("--scec-chain-mode", choices=("INITIAL", "SUCCESSOR"), default="INITIAL")
@@ -773,6 +840,7 @@ def main(argv: list[str] | None = None) -> int:
         commit_mode=args.commit_mode,
         dependencies=list(args.dependencies),
         include_worker_return_skeleton=args.include_worker_return_skeleton,
+        evidence_readiness_applicable=args.evidence_readiness_applicable,
         include_scec_block=True,
         scec_problem_key=args.scec_problem_key,
         scec_chain_mode=args.scec_chain_mode,

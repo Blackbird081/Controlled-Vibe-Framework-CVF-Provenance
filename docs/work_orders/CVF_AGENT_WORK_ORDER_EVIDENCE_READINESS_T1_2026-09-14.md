@@ -1,7 +1,7 @@
 # CVF Work Order - Evidence Readiness Foundation
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-09-14
 Batch ID: EVIDENCE-READINESS-T1
 Commit mode: WORKER_MUST_NOT_COMMIT
@@ -22,6 +22,7 @@ literal gotchas, named source owners; capture HEAD/status and parked-output hash
 Return contract: COMPLETE_PENDING_REVIEW only after the acceptance table below passes.
 Operator explicitly parks QM R4 finding repair and prioritizes this foundation.
 The two existing R4 outputs remain untracked, read-only and byte-identical.
+MATCH: reviewer SHA-256 verification matches the frozen hashes in Parked R4 Evidence.
 Worker must not fix, stage, remove or reclassify them to make any gate pass.
 
 ## Purpose
@@ -591,3 +592,42 @@ validate structural Markdown fields; build_commands in the fast gate and the
 REVIEWER_FAST_CHECKS/PRE_COMMIT_CHECKS catalogs already invoke that checker.
 The new evidence validator is proposed implementation, not an existing runtime
 capability. No provider or production-runtime claim is made.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_EVIDENCE_READINESS_T1_2026-09-14.md | Original dispatch retained; closure decision in this review | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_EVIDENCE_READINESS_T1_COMPLETION_2026-09-14.md | bounded reviewer acceptance | PASS |
+| Roadmap state | N/A | standalone foundation work order | N/A with reason: no roadmap closure |
+| Registry JSON | CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json | source program remains open | PASS |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | existing registry retained; no new source scan or package admission | PASS |
+| External evidence digest | N/A | no new external evidence accepted | N/A with reason: deterministic local checker |
+| System loop interlock | N/A | no runtime transition | N/A with reason: local validation only |
+| Session continuity | CVF_SESSION/state/entries/nextAllowedMove.json | separate post-material synchronization | N/A with reason: separate continuity batch |
+
+
+Closure authority: docs/reviews/CVF_EVIDENCE_READINESS_T1_COMPLETION_2026-09-14.md.
+Historical dispatch instructions above are retained; Local accepts the foundation
+and releases bounded R4 review on explicit operator continuation.
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+| --- | --- | --- |
+| Focused regression | 206 passed, 2 capability skips | PASS |
+| Existing fast chain | 68/68 | PASS |
+| Source execution | zero upstream/provider calls | PASS |
+| R4 frozen evidence | original hashes unchanged during foundation work | PASS |
+| Latency | paired measurements within stated budgets and noise limits | PASS |
+
+
+## Reviewer-Owned Packaging Extension
+
+Operator continuation authorizes Local closure repair. The original worker
+manifest remains historical; reviewer modularization for the size guard adds:
+
+- `governance/compat/worker_evidence_contract.py`
+- `governance/compat/worker_evidence_sources.py`
+- `governance/compat/test_worker_evidence_readiness_git.py`
+- `governance/compat/test_build_dispatch_evidence_scaffold.py`

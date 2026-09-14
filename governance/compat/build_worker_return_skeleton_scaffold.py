@@ -4,7 +4,25 @@
 from __future__ import annotations
 
 import json
+import sys
+from pathlib import Path
 from typing import Any
+
+try:
+    from worker_evidence_readiness import (
+        BINDING_SCHEMA_VALUE,
+        EVIDENCE_BINDING_HEADING,
+        EVIDENCE_READINESS_CONTRACT_TOKEN,
+        resolve_evidence_readiness_applicable,
+    )
+except ImportError:  # pragma: no cover - import path fallback for direct script execution
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from worker_evidence_readiness import (
+        BINDING_SCHEMA_VALUE,
+        EVIDENCE_BINDING_HEADING,
+        EVIDENCE_READINESS_CONTRACT_TOKEN,
+        resolve_evidence_readiness_applicable,
+    )
 
 SCEC_SCHEMA_VERSION = "cvf.semanticConvergenceControl.v1"
 SCEC_UNRESOLVED_PREDECESSOR_SENTINEL = "SCEC_PREDECESSOR_HASH_UNRESOLVED"
@@ -131,6 +149,47 @@ def architecture_echo_block_fields() -> str:
     )
 
 
+def render_evidence_readiness_binding_block() -> str:
+    """Render the compact evidence-readiness acceptance/binding block.
+
+    Included automatically for applicable tasks (EVIDENCE-READINESS-T1
+    requirement 6): a future worker cannot omit it by forgetting, because
+    the scaffold -- not the worker's memory -- decides whether the block
+    ships. Emitted only when the dispatching work order declares
+    `worker_evidence_readiness.EVIDENCE_READINESS_CONTRACT_TOKEN`
+    (`{token}`); the checker independently re-derives applicability from
+    that same trusted work-order token at return time, so this scaffold
+    block is a convenience, never the applicability source of truth.
+    """
+    return (
+        f"{EVIDENCE_BINDING_HEADING}\n\n"
+        "Repeat this section per source root/pin; each section binds its own audit projection and candidate manifest.\n"
+        "Audit JSON uses schemaVersion cvf.evidenceAudit.v1 and workerReturnPath pointing to this return.\n\n"
+        f"evidenceBindingSchema: {BINDING_SCHEMA_VALUE}\n"
+        "auditPath: TO_FILL (repo-relative path to the bound audit/evidence artifact)\n"
+        "auditSha256: TO_FILL (sha256 of the audit artifact's current bytes; "
+        "capture after the audit is finalized, never before)\n"
+        "discoveryManifestPath: TO_FILL (repo-relative path to the declared, "
+        "independent discovery manifest -- one normalized candidate path per line)\n"
+        "sourceRoot: TO_FILL (source root the rows below are relative to)\n"
+        "sourcePin: TO_FILL (immutable Git ref/commit or exact snapshot identity)\n\n"
+        "| path | blobSha256 | lineCount | readSpans | status |\n"
+        "| --- | --- | --- | --- | --- |\n"
+        "| TO_FILL | TO_FILL | TO_FILL | TO_FILL | READ/REUSED/EXCLUDED |\n\n"
+        "Author reminder: every path in `discoveryManifestPath` needs exactly "
+        "one row below (selected or excluded); a `READ` row's `readSpans` "
+        "must union-cover `1-lineCount` -- a partial read cannot satisfy a "
+        "full-read claim; `REUSED` rows must cite an immutable prior "
+        "artifact digest/row, never the current audit's own digest.\n"
+    )
+
+
+def evidence_readiness_binding_block_fields() -> str:
+    """The field-only body (no heading), for cross-generator byte-equality
+    comparison against the dispatch-packet-scaffold's equivalent section."""
+    return render_evidence_readiness_binding_block().split("\n\n", 1)[1]
+
+
 def build_scec_outcome_block(args: Any) -> str:
     """Emit an outcome-shaped SCEC block for a worker-return skeleton.
 
@@ -173,6 +232,11 @@ def build_worker_return_skeleton(args: Any) -> str:
     architecture_echo = (
         render_architecture_echo_block()
         if getattr(args, "include_architecture_readiness_echo", True)
+        else ""
+    )
+    evidence_readiness_binding = (
+        f"{render_evidence_readiness_binding_block()}\n"
+        if resolve_evidence_readiness_applicable(args)
         else ""
     )
     conditional_controls = """## Conditional Controls Disposition
@@ -226,7 +290,7 @@ TO_FILL: state the scope and methodology of this worker execution.
 TO_FILL: state findings and position with evidence.
 ## Risk / Corrective Action
 TO_FILL: state risks and corrective actions if any.
-{p4_observation}{architecture_echo}{build_scec_outcome_block(args)}
+{p4_observation}{architecture_echo}{evidence_readiness_binding}{build_scec_outcome_block(args)}
 ## Checker Source Read-Ahead Block
 | Field | Value |
 | --- | --- |

@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_EVIDENCE_READINESS_T1_2026-09-14.md",
     "baselineSha256": "58f38f2e1fefdcf7bd6fbf1b1709f5431556a08b1342a45d99b286a1adfd7688",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_EVIDENCE_READINESS_T1_2026-09-14.md",
-    "workOrderSha256": "e81acf4e63e1431dc29bef59719f53e592f3200232cae872064b08a6ec3e12af"
+    "workOrderSha256": "eeeb52e32dc1e5e32b846af4644d8192d2b5e2f371e6e5b9194f26aca0ea02f3"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

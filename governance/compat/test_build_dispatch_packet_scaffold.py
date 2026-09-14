@@ -17,6 +17,7 @@ from build_dispatch_packet_scaffold import (
     build_worker_return_skeleton,
     detect_triggers,
     main,
+    resolve_evidence_readiness_applicable,
     TRIGGER_FAMILIES,
 )
 from run_agent_automation_assist import (
@@ -1042,6 +1043,7 @@ class TestArchitectureReadinessAdmissionScaffold(unittest.TestCase):
             [],
             "helper must return [] when include_architecture_readiness_block=False",
         )
+
 
 
 if __name__ == "__main__":
