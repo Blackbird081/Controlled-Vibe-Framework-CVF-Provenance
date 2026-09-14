@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "multi_repo_absorption_local_runtime_recovery",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. QM-RUNTIME-VALUE-R2 bounded evidence is accepted at e081c2eb6e2dfbb218e646609258d04fa3e1f8d4; completion review: docs/reviews/CVF_QM_RUNTIME_VALUE_R2_COMPLETION_2026-09-14.md. Local next selects the next non-overlapping QM residual cluster using accepted R1/R2 ledgers, then authors a bounded work order with upstream freshness preflight. No new worker is dispatched. All three sources remain INCOMPLETE. No stopped-chain successor, new repository, implementation, provider/live/public/deploy or program exit. R1 M4/M5 remain proposals. Latest LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. R1/R2 bounded evidence is accepted. Current authority is QM-RUNTIME-VALUE-R3 for 8 ACL/classify/policy/security blobs at freshly observed pin 59cf6554faadcd06494782190c3ecae1829dd381. Relay only after dispatch commit. Worker writes only two R3 evidence outputs, no commit or upstream execution. Local reviews and continues remaining QM, Agentgateway and DeepSeek Harness accounting. All three remain INCOMPLETE. No stopped-chain successor, new repository, implementation, provider/live/public/deploy or program exit. Latest LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R2_2026-09-14.md",
-    "baselineSha256": "b51cfbb750bb9c7802d6604aec4b8a001a19719f7152bb932c9a2b5f32a3a19a",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R2_2026-09-14.md",
-    "workOrderSha256": "9d473ddb0c5e91bcc0409559cee667b9b8a7faabdf0cf59cf285183537660423"
+    "baselinePath": "docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R3_2026-09-14.md",
+    "baselineSha256": "7e981614ab60d9d962d26979226186ef479be5a86220ef8579759ae9eb389ac1",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R3_2026-09-14.md",
+    "workOrderSha256": "dda7989a6b38a2dd8079f9d59dd1df2de64f323939bca2e629168920d604dce6"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

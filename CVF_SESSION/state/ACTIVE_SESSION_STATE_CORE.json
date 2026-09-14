@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R2_2026-09-14.md",
-    "baselineSha256": "b51cfbb750bb9c7802d6604aec4b8a001a19719f7152bb932c9a2b5f32a3a19a",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R2_2026-09-14.md",
-    "workOrderSha256": "9d473ddb0c5e91bcc0409559cee667b9b8a7faabdf0cf59cf285183537660423"
+    "baselinePath": "docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R3_2026-09-14.md",
+    "baselineSha256": "7e981614ab60d9d962d26979226186ef479be5a86220ef8579759ae9eb389ac1",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R3_2026-09-14.md",
+    "workOrderSha256": "dda7989a6b38a2dd8079f9d59dd1df2de64f323939bca2e629168920d604dce6"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
