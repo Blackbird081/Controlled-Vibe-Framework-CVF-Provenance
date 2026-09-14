@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-14
 
@@ -885,15 +885,15 @@ Differentiate practical benefit for positive, adverse and deferred findings. Do 
 | Input root or repository | .private_reference/source_mirrors/yc-software__qm at the selected pin above; eight targets only |
 | Enumeration command | git ls-tree -r HEAD -- src/acl src/classify src/policy src/security; reconcile with rg --files --hidden --no-ignore |
 | Manifest artifact or inline manifest | Inline exact target table and digest above |
-| Processing ledger artifact or inline ledger | Required output docs/audits/CVF_QM_RUNTIME_VALUE_R3_2026-09-14.json; not yet produced |
+| Processing ledger artifact or inline ledger | docs/audits/CVF_QM_RUNTIME_VALUE_R3_2026-09-14.json; reviewer accepted bounded |
 | Ledger terminal statuses | READ, ADAPTED, DEFERRED, REJECTED, NO_NEW_VALUE, BLOCKED_UNREADABLE |
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
-| Owner-surface map | Pending bounded owner searches in docs/audits/CVF_QM_RUNTIME_VALUE_R3_2026-09-14.json; no CVF implementation owner accepted at dispatch |
-| Unresolved items | All eight target rows await worker processing and reviewer disposition |
+| Owner-surface map | docs/audits/CVF_QM_RUNTIME_VALUE_R3_2026-09-14.json cvfOwnerSearches; no CVF implementation admitted |
+| Unresolved items | 0 inside the bounded R3 evidence lane |
 | Absorption maturity | SOURCE_RECONCILED |
-| Named runtime consumer | PENDING_NOT_NAMED |
-| Integration evidence | PENDING_RUNTIME_INTEGRATION |
-| Use proof | PENDING_OPERATOR_AUTHORIZED_RUNTIME_PROOF |
+| Named runtime consumer | N/A_NO_RUNTIME_VALUE_WITH_REASON: no CVF runtime candidate admitted |
+| Integration evidence | N/A_NO_RUNTIME_VALUE_WITH_REASON: static evidence closure only |
+| Use proof | N/A_NO_RUNTIME_VALUE_WITH_REASON: no runtime proof authorized |
 | Operator checkpoint | Source audit authorized; runtime implementation and proof require a separate work order |
 | Absorption completion status | ABSORPTION_NOT_COMPLETE |
 | Completion claim boundary | SOURCE_RECONCILED describes the frozen inventory only; no completed reading, value acceptance, or runtime integration is claimed |
@@ -905,8 +905,31 @@ These are dispatch routing decisions, not accepted source-value findings. The wo
 | Source item | Value extracted | Conversion lane | CVF target surface | Next governed action | Runtime/package boundary |
 |---|---|---|---|---|---|
 | R3 doctrine opportunity | Not assessed; no doctrine adaptation authorized | DOCTRINE_ADAPTED | No doctrine change selected | Report evidence and proposed disposition for reviewer | No doctrine or runtime edits |
-| R3 package opportunity | Not assessed; no package candidate admitted | PACKAGE_CANDIDATE | Pending owner search | Worker evaluates reusable value and existing ownership | No package creation |
-| R3 runtime opportunity | Not assessed; enforcement questions remain open | RUNTIME_CANDIDATE | Pending owner search | Trace consumers and failure paths before reviewer disposition | No runtime implementation or execution |
-| R3 checker opportunity | Not assessed; test and validation guarantees remain open | CHECKER_CANDIDATE | Pending owner search | Determine supported guarantees and practical benefit | No checker implementation |
+| R3 package opportunity | Evidence retained; no package candidate admitted | PACKAGE_CANDIDATE | No owner selected by closure | Separate work order required | No package creation |
+| R3 runtime opportunity | M7-M9 remain evidence candidates | RUNTIME_CANDIDATE | No owner selected by closure | Separate work order required | No runtime implementation or execution |
+| R3 checker opportunity | No checker candidate admitted | CHECKER_CANDIDATE | No owner selected by closure | Separate testable gap required | No checker implementation |
 | Upstream code copying | Direct import is outside this audit authorization | REJECT_DIRECT_IMPORT | No import destination | Preserve source citations only | No upstream code copied into CVF runtime |
 | R3 no-value outcome | Not concluded; requires bounded comparative evidence | NO_PACKAGE_OR_RUNTIME_VALUE | No target selected | Worker substantiates any no-value outcome | No repository-wide rejection inferred |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R3_2026-09-14.md | CLOSED_PASS_BOUNDED | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_QM_RUNTIME_VALUE_R3_COMPLETION_2026-09-14.md | Local F1-F5 disposition | PASS |
+| Roadmap state | N/A | standalone bounded lane | N/A with reason: program remains open |
+| Registry JSON | CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json | source states remain INCOMPLETE | PASS |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | no runtime/package admission | PASS |
+| External evidence digest | docs/audits/CVF_QM_RUNTIME_VALUE_R3_2026-09-14.json | sha256:da72f5c9879d24e9977e34b08da141c838de431c86e3b6d5b8057e376490765d | PASS |
+| System loop interlock | N/A | no runtime transition | N/A with reason: static evidence closure |
+| Session continuity | CVF_SESSION/state/entries/nextAllowedMove.json | dedicated post-material synchronization | N/A with reason: material SHA not known before commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| Worker return | COMPLETE_PENDING_REVIEW received and independently reviewed | PASS |
+| Target identity | 8 pinned blobs; manifest digest exact match | PASS |
+| Corrected test ledger | 34 unique selected test paths with full-read provenance | PASS |
+| Local completion | docs/reviews/CVF_QM_RUNTIME_VALUE_R3_COMPLETION_2026-09-14.md | PASS |
+| Runtime proof | N/A with reason: static evidence lane | N/A_WITH_REASON |

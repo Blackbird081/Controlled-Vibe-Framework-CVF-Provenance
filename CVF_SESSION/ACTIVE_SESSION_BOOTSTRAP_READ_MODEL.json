@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R3_2026-09-14.md",
     "baselineSha256": "7e981614ab60d9d962d26979226186ef479be5a86220ef8579759ae9eb389ac1",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R3_2026-09-14.md",
-    "workOrderSha256": "dda7989a6b38a2dd8079f9d59dd1df2de64f323939bca2e629168920d604dce6"
+    "workOrderSha256": "02a2dabca3c6dfd31ba1465c548ca8fe32a58212d2b800c90e525c81d9cf6262"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

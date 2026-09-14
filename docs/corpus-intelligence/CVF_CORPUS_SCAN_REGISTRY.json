@@ -7668,6 +7668,57 @@
       "notes": "Registry-coverage recovery entry (WP-ARCH-003-CORPUS-REGISTRY-COVERAGE-RECOVERY, rework of WP-ARCH-003-PARKED-EVIDENCE-NORMALIZATION). Covers exactly the two corpus-path tokens the pre-commit Corpus Scan Registry gate reported as unregistered in the WP-ARCH-003 owner-gap audit worker return: the Grep-scoped `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/**/*.ts` symbol-search pattern (see that return's Scope / Methodology step 9 and Corpus Completeness And Report Integrity Enumeration command field) and the single named test path `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/delegation.boundary.guard.contract.test.ts` (see that return's Exact Test-File Ledger row 6). No new source read, grep, or test execution was performed to produce this entry; every fact here is reused verbatim from that existing pending worker return, which remains untracked pending reviewer decision. fileCount, manifestHash, hashAlgorithm, hashInput, manifestPath, completionReviewPath, and gcBaselineRef are null because no exact reproducible file count, manifest hash, formal completion review, or GC-018 baseline exists for this bounded entry; verdicts are NOT_RUN because no GC-047/048/050 evidence was produced by this bounded coverage recovery. This entry makes no claim that either extension is fully scanned, that WP-ARCH-003 is accepted or resumed, or that any implementation exists beyond what the existing pending worker return already states."
     },
     {
+      "id": "qm-r3-cvf-owner-comparison-surfaces",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "QM R3 bounded CVF owner-comparison surfaces",
+      "scopePaths": [
+        "EXTENSIONS/CVF_ECO_v2.0_AGENT_GUARD_SDK/src/guard.module.ts",
+        "EXTENSIONS/CVF_ECO_v2.3_AGENT_IDENTITY/src/credential.store.ts",
+        "EXTENSIONS/CVF_v1.2.2_SKILL_GOVERNANCE_ENGINE/internal_ledger/revocation.registry.ts",
+        "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/governance-action-preflight.ts"
+      ],
+      "fileCount": 4,
+      "status": "SCANNED",
+      "scanWave": "QM-RUNTIME-VALUE-R3",
+      "scanDate": "2026-09-14",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/audits/CVF_QM_RUNTIME_VALUE_R3_2026-09-14.json",
+      "completionReviewPath": "docs/reviews/CVF_QM_RUNTIME_VALUE_R3_COMPLETION_2026-09-14.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R3_2026-09-14.md",
+      "verdicts": {
+        "gc047": "PASS",
+        "gc048": "PARTIAL",
+        "gc050": "PARTIAL"
+      },
+      "semanticRegions": [
+        "command-policy owner comparison",
+        "secret-masking owner comparison",
+        "adjacent credential and revocation false-positive exclusion"
+      ],
+      "priorAbsorption": "Existing CVF extension implementations were compared as owner surfaces only; no QM source was absorbed.",
+      "findings": [
+        {
+          "id": "QM-R3-OWNER-COMPARE-01",
+          "summary": "Command and secret-masking owners are narrower or complementary to the QM evidence candidates.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Retain M7-M9 as evidence-only candidates pending a separate governed implementation decision.",
+          "defectClass": "UNVERIFIED_CLAIM",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+          "f2gRef": null,
+          "roadmapRef": null,
+          "workOrderRef": null
+        }
+      ],
+      "negativeSearchTerms": [
+        "multi-scope ACL runtime owner in adjacent identity surface",
+        "multi-scope grant semantics in revocation registry"
+      ],
+      "nextScanRecommendation": "Reopen only under a separately authorized M7-M9 implementation decision."
+    },
+    {
       "id": "dsh-wra-r1-whole-repository-absorption",
       "corpusType": "EXTERNAL_SOURCE",
       "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",
