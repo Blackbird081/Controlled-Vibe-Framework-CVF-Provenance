@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `4042e3128d49f040f7fd14891088526f803f319f`. Accepted parent anchor while terminal continuity is projected before the separately committed closure material.
+Current HEAD recorded for this handoff: `bad1c5376cd8221b1d06e491536b5c48ad25253f`. Material parent anchor for the dedicated handoff synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Latest continuity correction parent recorded for this handoff: `2a08b1d1d805e340d3b27d00c63f60a3423366de`. Historical closure authority remains `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`).
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
