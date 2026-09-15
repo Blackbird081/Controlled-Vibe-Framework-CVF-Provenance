@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `ccf04d697e9838de12a82f24ed85f35a1a21d654`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `93ad711284f74955c65b1a164247fc6ff99913a3`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Latest continuity correction parent recorded for this handoff: `2a08b1d1d805e340d3b27d00c63f60a3423366de`. Historical closure authority remains `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`).
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -13,7 +13,7 @@ Status: ACTIVE
 - Repository: private provenance SOT on `main`.
 - Remote tracking branch: `origin/main`; derive its exact SHA live when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `multi_repo_absorption_terminal_accounted`.
+- Current mode: `multi_repo_absorption_local_runtime_recovery`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -23,15 +23,15 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_terminal_accounted`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=Local review of the verified source backlog for one non-duplicate bounded lane; role=Local orchestrator/reviewer; phase=terminal program accounting then successor selection; decision owner=Local; parked checkpoint=DSH-001, DSH-005, DSH-UC-03, Agentgateway triggers, provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=QM consumer-bound operational recovery; role=Local orchestrator/reviewer; phase=recovery inside the three-source program; decision owner=Local; parked checkpoint=ECC/new repos/provider/live/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_terminal_accounted`
+`multi_repo_absorption_local_runtime_recovery`
 
 ## Purpose
 
-Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor packets while releasing only the encoding implementation lane first.
+Carry the operator-reopened three-source operational recovery. Final pilot assessment and ECC review/park are recorded in `docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md`; no implementation worker is currently dispatched.
 
 ## Scope / Target / Owner Boundary
 
@@ -90,7 +90,7 @@ Carry accepted ROLE-SOT machine-hardening closure and the two reviewed successor
 
 ## Current Authority
 
-Current authority: `docs/baselines/CVF_GC018_DSH_CODE_REVIEW_QUALITY_T1_2026-09-14.md` and `docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_CODE_REVIEW_QUALITY_T1_2026-09-14.md`; Local accepted the exact five-path worker result as `CLOSED_PASS_BOUNDED` in `docs/reviews/CVF_DSH_CODE_REVIEW_QUALITY_T1_COMPLETION_REVIEW_2026-09-14.md` at material commit `4be990ffce7fda1e559e4dcc9b5d660a2560fc0b`. DeepSeek Harness remains `INCOMPLETE` until Local terminal accounting.
+Current operator decision: `docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md`. Bootstrap currentAuthority retains the last accepted DSH baseline/work order for historical identity, not executable dispatch authority. All three sources are reopened for operational conversion. No new worker packet is released; ECC intake remains NOT_ACCEPTED_EVIDENCE_GAPS and PARKED.
 
 ## Closure Evidence
 
@@ -109,7 +109,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=SELECT_NEXT_BOUNDED_LANE; NEXT_STEP=LOCAL_REVIEW_VERIFIED_SOURCE_BACKLOG; EXPANSION_ALLOWED=false. The three-repository program is TERMINAL_ACCOUNTED: QM is TERMINAL_ACCEPTED, Agentgateway is TERMINAL_DEFERRED_WITH_TRIGGER, and DeepSeek Harness is TERMINAL_ACCEPTED at material commit 84eefb02c38533369ecd83bbfe7c369cf5d81770. Local must next evaluate the already-verified source backlog and conditional-reopen index for one highest-value non-duplicate bounded lane before any baseline, work order, or Claude dispatch. No successor source or program is automatically authorized. DSH-001, DSH-005, DSH-UC-03, Agentgateway triggers, provider/live, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. Operator reopened all three sources for operational conversion on 2026-09-15. Follow docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md: resolve the QM trusted redaction consumer and authority seam, then prepare one bounded internal implementation packet; verify accepted runtime/package use and reconcile all retained deferred semantic groups across QM, DeepSeek Harness and Agentgateway. Historical terminal accounting is not absorption completion. ECC return reviewed NOT_ACCEPTED_EVIDENCE_GAPS and PARKED; no ECC repair or new repository. Previous DSH currentAuthority is historical, not a new dispatch. Provider/live, credentials, process interception, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -124,7 +124,7 @@ PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLA
 ## Active Boundary
 
 - MFRP-FINGERPRINT-T1 is materially closed; worker lane released. TPGR T1 remains closed.
-  The bounded three-repository program is `TERMINAL_ACCOUNTED`: QM and DeepSeek Harness are `TERMINAL_ACCEPTED`; Agentgateway is `TERMINAL_DEFERRED_WITH_TRIGGER`. No worker lane is open. Local next reviews the verified source backlog before issuing any successor packet.
+  The three-repository program is `LOCAL_RUNTIME_VALUE_RECOVERY`, with three `INCOMPLETE` operational states. Prior source accounting is retained as history, not usable-completion evidence. No worker lane is open. Local next resolves the QM consumer-bound implementation packet; ECC and new repositories remain parked.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
 - Manual relay is content-neutral transport under `cvf.cross-workspace-evidence-relay@1.0.0`; remote findings remain advisory until Local Agent verification and final technical disposition. Once Local issues a work order, execution is internal shared-workspace work and the relay loop ends.

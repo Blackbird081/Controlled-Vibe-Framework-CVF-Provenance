@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_terminal_accounted`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=Local review of the verified source backlog for one non-duplicate bounded lane; parked checkpoint=DSH-001, DSH-005, DSH-UC-03, Agentgateway triggers, provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=QM consumer-bound operational recovery inside the three-source program; role=Local orchestrator/reviewer; phase=recovery; decision owner=Local; parked checkpoint=ECC/new repos/provider/live/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_terminal_accounted`
-Current mode: `multi_repo_absorption_terminal_accounted`; previous mode marker: `multi_repo_absorption_local_runtime_recovery`
+Current mode marker: `multi_repo_absorption_local_runtime_recovery`
+Current mode: `multi_repo_absorption_local_runtime_recovery`; previous mode marker: `multi_repo_absorption_terminal_accounted`
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=SELECT_NEXT_BOUNDED_LANE; NEXT_STEP=LOCAL_REVIEW_VERIFIED_SOURCE_BACKLOG; EXPANSION_ALLOWED=false. The three-repository program is TERMINAL_ACCOUNTED: QM is TERMINAL_ACCEPTED, Agentgateway is TERMINAL_DEFERRED_WITH_TRIGGER, and DeepSeek Harness is TERMINAL_ACCEPTED at material commit 84eefb02c38533369ecd83bbfe7c369cf5d81770. Local must next evaluate the already-verified source backlog and conditional-reopen index for one highest-value non-duplicate bounded lane before any baseline, work order, or Claude dispatch. No successor source or program is automatically authorized. DSH-001, DSH-005, DSH-UC-03, Agentgateway triggers, provider/live, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_terminal_accounted`. `DOMAIN-PILOT-THREE-REPO-2026-09` is terminal: QM and DeepSeek Harness are `TERMINAL_ACCEPTED`; Agentgateway is `TERMINAL_DEFERRED_WITH_TRIGGER`. External Web agents remain research/advisory only. Local must review the already-verified source backlog and select one non-duplicate bounded lane before another baseline, work order, or Claude dispatch. No successor source or program is automatically authorized. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. Operator reopened all three sources for operational conversion on 2026-09-15. Follow docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md: resolve the QM trusted redaction consumer and authority seam, then prepare one bounded internal implementation packet; verify accepted runtime/package use and reconcile all retained deferred semantic groups across QM, DeepSeek Harness and Agentgateway. Historical terminal accounting is not absorption completion. ECC return reviewed NOT_ACCEPTED_EVIDENCE_GAPS and PARKED; no ECC repair or new repository. Previous DSH currentAuthority is historical, not a new dispatch. Provider/live, credentials, process interception, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_local_runtime_recovery`. The three-source program is reopened for usable conversion; previous accepted implementation remains valid within its bounded evidence. External Web agents own advisory research and cross-check before future domain batches; shared-workspace workers own internal implementation only under a new packet. ECC is reviewed and parked, not accepted. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
