@@ -15,7 +15,7 @@
       "yc-software__qm": "INCOMPLETE",
       "deepseek-ai__deepseek-harness": "INCOMPLETE"
     },
-    "nextSourceId": "yc-software__qm",
+    "nextSourceId": "deepseek-ai__deepseek-harness",
     "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
     "expansionAllowed": false,
     "exitDisposition": "RETAIN_ACTIVE_PROGRAM",

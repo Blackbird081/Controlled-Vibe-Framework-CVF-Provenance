@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_QM_OPERATIONAL_RECOVERY_T1_2026-09-15.md",
     "baselineSha256": "663f2259da2ce0c6878ba44d352ef1a61c5377fc4ba87a7206ef24c4479eb9c4",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_QM_OPERATIONAL_RECOVERY_T1_2026-09-15.md",
-    "workOrderSha256": "7ff7532dae5b9178b3e8042829653ee13ec130fc49316bb445bdcb2dc41931c4"
+    "workOrderSha256": "37733e4151c8c32ec54cd322de47fb5f62de2e3601dfaaff0c3434b0323e16fb"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
