@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_terminal_accounted`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=await operator selection for any new repository or backlog action; role=Local orchestrator/reviewer; phase=terminal program accounting; decision owner=Local; parked checkpoint=ECC, new repos, provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_gap_audit`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=internal worker executes ACEL-CVF-AUDIT-T0 G1-G6 verification; role=Local orchestrator/reviewer; phase=internal repository evidence audit; decision owner=Local; parked checkpoint=external source-corpus expansion, experiments, implementation, ECC, provider/live/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_terminal_accounted`
-Current mode: `multi_repo_absorption_terminal_accounted`; previous mode marker: `multi_repo_absorption_deferred_reconciliation`
+Current mode marker: `multi_repo_absorption_local_gap_audit`
+Current mode: `multi_repo_absorption_local_gap_audit`; previous mode marker: `multi_repo_absorption_terminal_accounted`
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=NONE; NEXT_ACTION_CLASS=PROGRAM_TERMINAL_ACCOUNTED; CURRENT_TRANCHE_ACTION=CLOSED_PASS_BOUNDED; NEXT_STEP=AWAIT_OPERATOR_SELECTION_FOR_ANY_NEW_REPOSITORY_OR_BACKLOG_ACTION; EXPANSION_ALLOWED=false. The exact 52-record reconciliation closes with 52 demand-gated deferred rows, zero unresolved blockers and zero current runtime candidates. QM and DeepSeek Harness are TERMINAL_ACCEPTED; Agentgateway is TERMINAL_DEFERRED_WITH_TRIGGER. All currently eligible bounded conversions remain on real CVF owners/consumers; deferred knowledge has explicit reopen proof/action and is not represented as runtime. ECC, new repos, provider/live, public and deployment remain parked. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_terminal_accounted`. External research and shared-workspace execution for this program are closed. Local remains final decision owner for any future operator-selected source.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-CVF-AUDIT-T0_DISPATCHED; NEXT_STEP=INTERNAL_AGENT_EXECUTES_LOCAL_G1_G6_GAP_VERIFICATION_AT_COMMITTED_EXECUTION_BASE; EXPANSION_ALLOWED=false. Treat the external handoff as advisory synthesis, not CVF authority. Worker owns exactly three new audit outputs and must not commit. External source-repository inventory/pins/licenses, experiments, implementation, provider/live, public and deployment remain parked. The prior three-repository pilot stays terminally accounted and is not reopened.
+Mode: `multi_repo_absorption_local_gap_audit`. External research for T0 is closed; shared-workspace execution is INTERNAL_AGENT and Local remains final decision owner.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

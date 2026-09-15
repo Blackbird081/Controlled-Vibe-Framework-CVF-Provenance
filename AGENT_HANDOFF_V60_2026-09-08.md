@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `bad1c5376cd8221b1d06e491536b5c48ad25253f`. Material parent anchor for the dedicated handoff synchronization commit.
+Current HEAD recorded for this handoff: `cdf72695a346bfee720b2e051e83ca339819fe91`. Material parent anchor for the ACEL-CVF-AUDIT-T0 continuity commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Latest continuity correction parent recorded for this handoff: `2a08b1d1d805e340d3b27d00c63f60a3423366de`. Historical closure authority remains `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`).
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -12,7 +12,7 @@ Status: ACTIVE
 - Repository: private provenance SOT on `main`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; do not hand-maintain it in handoff.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `multi_repo_absorption_terminal_accounted`.
+- Current mode: `multi_repo_absorption_local_gap_audit`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -22,15 +22,15 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_terminal_accounted`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=await operator selection for any new repository or backlog action; role=Local orchestrator/reviewer; phase=terminal program accounting; decision owner=Local; parked checkpoint=ECC, new repos, provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_gap_audit`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=internal worker executes ACEL-CVF-AUDIT-T0 G1-G6 verification; role=Local orchestrator/reviewer; phase=internal repository evidence audit; decision owner=Local; parked checkpoint=external source-corpus expansion, experiments, implementation, ECC, provider/live/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_terminal_accounted`
+`multi_repo_absorption_local_gap_audit`
 
 ## Purpose
 
-Carry the operator-reopened three-source operational recovery. DSH package-use recovery is closed bounded at material `d3b21c4e94bb484f00217f6320ad5d6c8353d46e`; the exact 52-record semantic reconciliation is dispatched at material `7573d804f8f185ecfc244eb56728a80727af4517`. Final pilot assessment and ECC review/park remain in `docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md`.
+Carry the operator-selected Agent Capability Engineering Lab Local audit dispatched at material `cdf72695a346bfee720b2e051e83ca339819fe91`. The internal worker may verify G1-G6 and create exactly three audit outputs without commit. The relayed handoff is advisory and byte-bound; its underlying multi-repository source ledger, experiments and implementation remain parked. The prior three-repository program remains terminally accounted.
 
 ## Scope / Target / Owner Boundary
 
@@ -145,7 +145,7 @@ Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-
 ## Core Guard Self-Protection Authorization
 Operator authorization: continue three-repository recovery after accepted DSH material `d3b21c4e94bb484f00217f6320ad5d6c8353d46e`. Authorized guard-maintenance scope: closure continuity and next deferred-reconciliation routing only. Protected paths: `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/dshCodeSimplificationApplicationT1Closure20260915.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback boundary: revert only this continuity projection and preserve material `d3b21c4e94bb484f00217f6320ad5d6c8353d46e`. No worker/checker/provider/live/public/deploy authority is added.
 Operator authorization: continue the three-repository roadmap and release the bounded reconciliation worker lane after dispatch material `7573d804f8f185ecfc244eb56728a80727af4517`. Authorized guard-maintenance scope is continuity only. Protected paths: `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/threeRepoDeferredSemanticReconciliationT1Dispatch20260915.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback only this continuity projection; preserve dispatch material. The worker owns exactly two outputs, must not commit, and has no implementation, source-mirror, provider/live/network, public or deployment authority.
-Operator authorization: finish the three-repository recovery program and project its terminal accounting before the separately committed closure material. Authorized guard-maintenance scope is exactly `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/threeRepoDeferredSemanticReconciliationT1Closure20260915.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; and `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback boundary: revert only this terminal continuity projection to accepted parent `4042e3128d49f040f7fd14891088526f803f319f`; preserve all previously accepted material. No successor source, implementation, provider/live, public, deployment, or production authority is opened.
+Operator authorization: continue the selected Agent Capability Engineering Lab Local audit after dispatch material `cdf72695a346bfee720b2e051e83ca339819fe91`. Authorized guard-maintenance scope is exactly `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/acelT0LocalGapVerificationDispatch20260915.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; and `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback boundary: revert only this audit continuity projection and preserve material `cdf72695a346bfee720b2e051e83ca339819fe91` plus the terminal three-repository closure. The worker owns exactly three new audit outputs, must not commit, and receives no source-repository expansion, experiment, implementation, provider/live, public or deployment authority.
 
 Operator authorization: continue Local orchestration and delegate implementation to Claude after DSH dispatch material `266f814e3f2b9b7df208384638003f0bf2cef025`. Authorized guard-maintenance scope: continuity only. Protected paths: `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/dshCodeReviewQualityT1Dispatch20260914.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 Rollback boundary: revert only this seven-path projection; preserve material `266f814e3f2b9b7df208384638003f0bf2cef025` and earlier evidence. No checker, hook, external invocation, public, deployment or unrelated source change.

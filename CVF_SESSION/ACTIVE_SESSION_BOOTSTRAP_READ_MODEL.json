@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_terminal_accounted",
+  "currentMode": "multi_repo_absorption_local_gap_audit",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=NONE; NEXT_ACTION_CLASS=PROGRAM_TERMINAL_ACCOUNTED; CURRENT_TRANCHE_ACTION=CLOSED_PASS_BOUNDED; NEXT_STEP=AWAIT_OPERATOR_SELECTION_FOR_ANY_NEW_REPOSITORY_OR_BACKLOG_ACTION; EXPANSION_ALLOWED=false. The exact 52-record reconciliation closes with 52 demand-gated deferred rows, zero unresolved blockers and zero current runtime candidates. QM and DeepSeek Harness are TERMINAL_ACCEPTED; Agentgateway is TERMINAL_DEFERRED_WITH_TRIGGER. All currently eligible bounded conversions remain on real CVF owners/consumers; deferred knowledge has explicit reopen proof/action and is not represented as runtime. ECC, new repos, provider/live, public and deployment remain parked. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-CVF-AUDIT-T0_DISPATCHED; NEXT_STEP=INTERNAL_AGENT_EXECUTES_LOCAL_G1_G6_GAP_VERIFICATION_AT_COMMITTED_EXECUTION_BASE; EXPANSION_ALLOWED=false. Treat the external handoff as advisory synthesis, not CVF authority. Worker owns exactly three new audit outputs and must not commit. External source-repository inventory/pins/licenses, experiments, implementation, provider/live, public and deployment remain parked. The prior three-repository pilot stays terminally accounted and is not reopened. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.md",
-    "baselineSha256": "9d8080db8cfa994a44ab038c3a12cd2396212667334f2584db290e23c6f3fed1",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.md",
-    "workOrderSha256": "f523863e3a7d0af3a7c2b59c35a4468deefa58e0ae2b7415ef1d148cd9de2445"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_T0_LOCAL_GAP_VERIFICATION_AUDIT_2026-09-15.md",
+    "baselineSha256": "e08996f3e9a4b2977bc0a67994b13cf6812cbdc73e9c1d0ffb3778715ccb9625",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_T0_LOCAL_GAP_VERIFICATION_AUDIT_2026-09-15.md",
+    "workOrderSha256": "90c821c814e57a4e12c2594cf3403f198ba7d15e18b55d7b5d2ed3e9de535896"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

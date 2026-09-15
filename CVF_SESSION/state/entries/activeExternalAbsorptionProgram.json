@@ -3,30 +3,19 @@
   "stateKey": "activeExternalAbsorptionProgram",
   "value": {
     "schemaVersion": "cvf.externalAbsorptionProgramContinuity.v1",
-    "programId": "DOMAIN-PILOT-THREE-REPO-2026-09",
-    "status": "TERMINAL_ACCOUNTED",
+    "programId": "AGENT-CAPABILITY-ENGINEERING-LAB-2026-09",
+    "status": "LOCAL_RUNTIME_VALUE_RECOVERY",
     "sourceIds": [
-      "agentgateway__agentgateway",
-      "yc-software__qm",
-      "deepseek-ai__deepseek-harness"
+      "agent-capability-engineering-lab__handoff-v2"
     ],
     "sourceStates": {
-      "agentgateway__agentgateway": "TERMINAL_DEFERRED_WITH_TRIGGER",
-      "yc-software__qm": "TERMINAL_ACCEPTED",
-      "deepseek-ai__deepseek-harness": "TERMINAL_ACCEPTED"
+      "agent-capability-engineering-lab__handoff-v2": "INCOMPLETE"
     },
-    "nextSourceId": null,
-    "nextActionClass": "PROGRAM_TERMINAL_ACCOUNTED",
+    "nextSourceId": "agent-capability-engineering-lab__handoff-v2",
+    "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
     "expansionAllowed": false,
-    "exitDisposition": "TERMINAL_ACCOUNTING_ACCEPTED",
-    "exitEvidence": [
-      "docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_2026-09-15.md",
-      "docs/reviews/CVF_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_COMPLETION_REVIEW_2026-09-15.md",
-      "docs/baselines/CVF_GC018_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.md",
-      "docs/reviews/CVF_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_COMPLETION_2026-09-15.md"
-    ],
+    "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
+    "exitEvidence": [],
     "operatorScopeDecision": null,
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
   }
