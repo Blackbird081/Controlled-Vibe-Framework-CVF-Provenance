@@ -89,8 +89,8 @@ not complete semantic corpus coverage or 71 implemented capabilities.
 | QM replay deduplication | Web service-token-auth is called by execute and QBS clarification routes; retained focused tests cover bounded replay rejection | Bind the exact process-local scope and system-chain evidence; do not claim distributed or restart-persistent protection |
 | QM known-value redaction | MCP governed-command-launcher masks stdout/stderr through known-value-redaction | Trusted production caller supplying knownSecretValues not established; default CLI does not supply it. IMPLEMENTATION_NO_CONSUMER for the opt-in known-value feature |
 | DSH provider-attempt admission | execute/retry invokes admitAndInvokeProvider; retained historical bounded provider proof | Reuse within its proven scope; no fresh all-system/live claim or duplicated engine |
-| DSH simplification package | Existing cvf-engineering-code-simplification body enriched | Show actual task selection, body consumption, behavior-preserving application and result; package text alone is not foundation-uplift completion |
-| DSH review-quality package | Existing cvf-engineering-code-review-quality body enriched; loader receipt records body loading | Prove application to an actual review with expected positive/negative findings; LOADED alone is not effectiveness proof |
+| DSH simplification package | Receipt-backed body use selected the repeated provider-key lookup; one traversal owner now serves all three adapters with 23/23 focused tests and clean TypeScript validation | Operational application accepted in `docs/reviews/CVF_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_COMPLETION_REVIEW_2026-09-15.md`; no package-text-only claim remains |
+| DSH review-quality package | Local applied the package to the QM completion review and the DSH simplification review, finding both positive evidence and generation-0 defects before bounded acceptance | Effectiveness proof satisfied by the two completion reviews; no autonomous invocation or universal review-quality claim |
 | DSH license metadata | Existing provenance correction | Compliance prerequisite, not a standalone runtime benefit; verify propagation where a real package consumer requires it |
 
 Current source probes confirmed execute route calls at lines 117, 805 and 864,
@@ -176,9 +176,11 @@ Execute one in-program recovery sequence; do not commission another broad scan:
    Do not bypass that boundary to manufacture activation. Identify a trusted
    non-test in-process consumer and its legitimate value source before freezing
    implementation scope. Reuse replay evidence and verify actual chain binding.
-2. DSH: integrate the two accepted packages into real governed task use; retain
-   before/after expected outcomes, failure cases and body identity. Reuse the
-   provider-admission owner and historical proof within its original limits.
+2. DSH: SATISFIED_BOUNDED on 2026-09-15. The simplification package selected
+   and guided a real behavior-preserving provider-key refactor with retained
+   body identity, before/after tests and failure boundaries. The review-quality
+   package produced positive and negative findings across the QM and DSH Local
+   reviews. This satisfies package-use recovery, not whole-program closure.
 3. Reconcile all 52 deferred decision records by semantic group, not just the
    six accepted adaptations. Challenge stale no-consumer claims against real
    CVF workflows. Separate doable native conversion, evidence/owner/authority

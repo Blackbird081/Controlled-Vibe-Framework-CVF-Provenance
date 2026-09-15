@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_2026-09-15.md",
     "baselineSha256": "8a0e1656c0b080aa51177b0341dfce5c970b2b4f53fd62d0e1d3b20dcf78692e",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_2026-09-15.md",
-    "workOrderSha256": "df9091c96ef0cc907fd999b39f888b61a8e070145ab004f1b745b9bbcdc6703c"
+    "workOrderSha256": "d72fcdc75700499dde70ec64722d06beb470426d3ed716d367c995c3e9d721f6"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

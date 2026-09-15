@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-15
 
@@ -186,7 +186,16 @@ and use a source-scoped compile/test proof; do not repair outside scope.
 
 ## Required Artifact Manifest
 
-The Required Artifact Manifest is exactly the seven paths in Write Ownership.
+| Artifact | Required worker action |
+|---|---|
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-api-key-env.ts` | create the single ordered lookup owner |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-api-key-env.test.ts` | create direct helper contract tests |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/alibaba-env.ts` | delegate without changing canonical order |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/deepseek-env.ts` | delegate without changing canonical order |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/openai-env.ts` | delegate without changing canonical order |
+| `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/openai-env.test.ts` | create adapter parity tests |
+| `docs/reviews/CVF_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_WORKER_RETURN_2026-09-15.md` | return complete evidence without committing |
+
 Every path must exist at return; no eighth worker change is allowed.
 
 ## Work-Order Fulfillment Manifest
@@ -637,7 +646,25 @@ claimed until Local accepts the returned evidence.
 
 ## Machine Closure Package
 
-NOT_APPLICABLE_WITH_REASON: dispatch-ready work order, not terminal closure.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_COMPLETION_REVIEW_2026-09-15.md` | `ACCEPT_BOUNDED_RELEASE`; `CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | `docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md` | DSH package-use recovery satisfied; wider recovery remains open | PASS |
+| Registry JSON | existing ACTIVE simplification package registry | existing lifecycle owner verified; no mutation required | PASS |
+| Registry Markdown | existing ACTIVE simplification package body | receipt-backed body use accepted; authoritative view remains current | PASS |
+| External evidence digest | retained three-repository Local assessment | no new external evidence or external filesystem citation used | N/A with reason: implementation and acceptance are Local-owned |
+| System loop interlock | three provider adapters, shared helper and provider route | one traversal owner preserves adapter contracts and real route consumption | PASS |
+| Session continuity | active continuity sources | dedicated post-material synchronization records material SHA and next recovery move | N/A with reason: follows this material closure |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Package lifecycle | ACTIVE package body loaded | body hash `sha256:481e0e4f5d52ecad945e8a7bb3d1246940686a088e080a30dd93cc0e4cf1f7b1`; receipt present | PASS |
+| Action evidence | real simplification and verification | one shared traversal; 23/23 focused tests; clean TypeScript check | PASS |
+| Consumer evidence | unchanged non-test runtime consumer | provider route retains adapter consumption | PASS |
+| Claim boundary | no live/provider or lifecycle expansion | zero live/provider calls; package owner unchanged | PASS |
 
 ## Core Guard Self-Protection Authorization
 
