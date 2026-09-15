@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "multi_repo_absorption_local_runtime_recovery",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. Operator reopened all three sources for operational conversion on 2026-09-15. Follow docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md: resolve the QM trusted redaction consumer and authority seam, then prepare one bounded internal implementation packet; verify accepted runtime/package use and reconcile all retained deferred semantic groups across QM, DeepSeek Harness and Agentgateway. Historical terminal accounting is not absorption completion. ECC return reviewed NOT_ACCEPTED_EVIDENCE_GAPS and PARKED; no ECC repair or new repository. Previous DSH currentAuthority is historical, not a new dispatch. Provider/live, credentials, process interception, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=EXECUTE_RELEASED_INTERNAL_PACKET; EXPANSION_ALLOWED=false. Execute QM-OPERATIONAL-RECOVERY-T1 from dispatch material af20dfe84b1cd398c7fd5f84742c74ea873e0d0b using docs/baselines/CVF_GC018_QM_OPERATIONAL_RECOVERY_T1_2026-09-15.md and docs/work_orders/CVF_AGENT_WORK_ORDER_QM_OPERATIONAL_RECOVERY_T1_2026-09-15.md. INTERNAL_AGENT captures the clean executionBaseHead after this continuity commit, runs pre-implementation, changes only nine worker-owned paths, leaves all changes uncommitted, and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Local applies the DSH code-review-quality package during review and owns acceptance/commit. Replay projection is process-local only; known-value redaction remains VALUE_PARKED_WITH_REOPEN_CONDITIONS. The other 52 deferred records, ECC repair, new repositories, provider/live, credentials, interception, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_DSH_CODE_REVIEW_QUALITY_T1_2026-09-14.md",
-    "baselineSha256": "c761aa723a871d6fe5bfcd997b6e2a6100f1bba180396dbfc6b7b669ae5943db",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_CODE_REVIEW_QUALITY_T1_2026-09-14.md",
-    "workOrderSha256": "6f2d8253db65b4de864491eed73ecbca9d53de7eef6e9da891966f03f26d922b"
+    "baselinePath": "docs/baselines/CVF_GC018_QM_OPERATIONAL_RECOVERY_T1_2026-09-15.md",
+    "baselineSha256": "663f2259da2ce0c6878ba44d352ef1a61c5377fc4ba87a7206ef24c4479eb9c4",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_QM_OPERATIONAL_RECOVERY_T1_2026-09-15.md",
+    "workOrderSha256": "7ff7532dae5b9178b3e8042829653ee13ec130fc49316bb445bdcb2dc41931c4"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

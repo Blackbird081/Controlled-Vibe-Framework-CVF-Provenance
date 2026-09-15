@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `5d75b97abe694ca4d4c6a50957c24ed85b3e37ba`. External relay-only brief removal parent anchor for this dedicated handoff synchronization commit.
+Current HEAD recorded for this handoff: `af20dfe84b1cd398c7fd5f84742c74ea873e0d0b`. QM-OPERATIONAL-RECOVERY-T1 dispatch material-SHA for this dedicated continuity commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Latest continuity correction parent recorded for this handoff: `2a08b1d1d805e340d3b27d00c63f60a3423366de`. Historical closure authority remains `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`).
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -23,7 +23,7 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=QM consumer-bound operational recovery; role=Local orchestrator/reviewer; phase=recovery inside the three-source program; decision owner=Local; parked checkpoint=ECC/new repos/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute released QM-OPERATIONAL-RECOVERY-T1 internal packet; role=INTERNAL_AGENT worker then Local reviewer/closer; phase=implementation; decision owner=Local; parked checkpoint=other 52 deferred records/ECC/new repos/provider/live/public/deployment.
 
 ## Current Mode
 
@@ -31,7 +31,7 @@ Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery
 
 ## Purpose
 
-Carry the operator-reopened three-source operational recovery. Final pilot assessment and ECC review/park are recorded in `docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md`; no implementation worker is currently dispatched.
+Carry the operator-reopened three-source operational recovery. QM-OPERATIONAL-RECOVERY-T1 is released for internal implementation at material `af20dfe84b1cd398c7fd5f84742c74ea873e0d0b`; final pilot assessment and ECC review/park remain in `docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md`.
 
 ## Scope / Target / Owner Boundary
 
@@ -90,7 +90,7 @@ Carry the operator-reopened three-source operational recovery. Final pilot asses
 
 ## Current Authority
 
-Current operator decision: `docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md`. Bootstrap currentAuthority retains the last accepted DSH baseline/work order for historical identity, not executable dispatch authority. All three sources are reopened for operational conversion. No new worker packet is released; ECC intake remains NOT_ACCEPTED_EVIDENCE_GAPS and PARKED.
+Current executable authority is `docs/baselines/CVF_GC018_QM_OPERATIONAL_RECOVERY_T1_2026-09-15.md` plus `docs/work_orders/CVF_AGENT_WORK_ORDER_QM_OPERATIONAL_RECOVERY_T1_2026-09-15.md`, committed at `af20dfe84b1cd398c7fd5f84742c74ea873e0d0b`. The worker lane is nine paths, `WORKER_MUST_NOT_COMMIT`; Local owns review, DSH review-quality application, acceptance and commits. ECC intake remains NOT_ACCEPTED_EVIDENCE_GAPS and PARKED.
 
 ## Closure Evidence
 
@@ -109,7 +109,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; EXPANSION_ALLOWED=false. Operator reopened all three sources for operational conversion on 2026-09-15. Follow docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md: resolve the QM trusted redaction consumer and authority seam, then prepare one bounded internal implementation packet; verify accepted runtime/package use and reconcile all retained deferred semantic groups across QM, DeepSeek Harness and Agentgateway. Historical terminal accounting is not absorption completion. ECC return reviewed NOT_ACCEPTED_EVIDENCE_GAPS and PARKED; no ECC repair or new repository. Previous DSH currentAuthority is historical, not a new dispatch. Provider/live, credentials, process interception, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=EXECUTE_RELEASED_INTERNAL_PACKET; EXPANSION_ALLOWED=false. Execute QM-OPERATIONAL-RECOVERY-T1 at dispatch material `af20dfe84b1cd398c7fd5f84742c74ea873e0d0b`. INTERNAL_AGENT must capture clean `executionBaseHead` after this continuity commit, run pre-implementation, change only the nine work-order paths, leave changes uncommitted, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Local applies DSH review-quality and owns disposition/commit. Replay remains process-local; redaction is parked until a lawful caller/source exists. Other 52 deferred records, ECC/new repos/provider/live/public/deployment remain parked. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -123,8 +123,7 @@ PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT
 
 ## Active Boundary
 
-- MFRP-FINGERPRINT-T1 is materially closed; worker lane released. TPGR T1 remains closed.
-  The three-repository program is `LOCAL_RUNTIME_VALUE_RECOVERY`, with three `INCOMPLETE` operational states. Prior source accounting is retained as history, not usable-completion evidence. No worker lane is open. Local next resolves the QM consumer-bound implementation packet; ECC and new repositories remain parked.
+- MFRP-FINGERPRINT-T1 is materially closed; TPGR T1 remains closed. The three-repository program is `LOCAL_RUNTIME_VALUE_RECOVERY`, with three `INCOMPLETE` operational states. QM-OPERATIONAL-RECOVERY-T1 is the sole open worker lane; prior source accounting is history, not usable-completion evidence. ECC and new repositories remain parked.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
 - Manual relay is content-neutral transport under `cvf.cross-workspace-evidence-relay@1.0.0`; remote findings remain advisory until Local Agent verification and final technical disposition. Once Local issues a work order, execution is internal shared-workspace work and the relay loop ends.
@@ -150,6 +149,7 @@ Operator authorization: continue Local orchestration and delegate implementation
 Rollback boundary: revert only this seven-path projection; preserve material `266f814e3f2b9b7df208384638003f0bf2cef025` and earlier evidence. No checker, hook, external invocation, public, deployment or unrelated source change.
 Operator authorization: finish the foundation and return to R4 to evaluate improvement. Synchronize accepted material 2719dd2b1, current authority and next move through the six existing continuity paths listed below. This releases bounded evidence repair only; no upstream implementation or program closure. Operator additionally requires agents to recover existing external/local roles without reminders: authorized startup routing and existing carrier-checker regression scope is `AGENTS.md`, `CLAUDE.md`, `governance/compat/check_agent_instruction_carriers.py`, `governance/compat/test_check_agent_instruction_carriers.py`, and this handoff. No role-policy change or new hook.
 Operator authorization: project active program continuity repair af137b631, the exact three-source state and in-program QM next action; protected paths include `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json` and the existing continuity surfaces named by the hardening review. Project the returned external pattern review, selective method-reuse decision and prior relay state under docs/reviews/CVF_THREE_REPO_PATTERN_COMPARISON_LOCAL_REVIEW_2026-09-13.md and docs/reviews/CVF_EXTERNAL_LOCAL_COORDINATION_MACHINE_BINDING_2026-09-13.md; `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json` remains protected.
+Operator authorization: continue the agreed three-repository roadmap and release QM-OPERATIONAL-RECOVERY-T1 after dispatch material `af20dfe84b1cd398c7fd5f84742c74ea873e0d0b`. Authorized guard-maintenance scope is continuity only: `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/qmOperationalRecoveryT1Dispatch20260915.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback only this projection; preserve dispatch material and all earlier evidence. No worker implementation, checker/runtime mutation, external invocation, public sync or deployment is part of continuity.
 
 Current rework projection is authorized by the original exact Local continuity scope and standing autonomous reviewer mandate. Material 5bb2314d89de473c3d31c6764ede7ef62d5af2d6; record F1-F5 evidence rework, current authority and multi-repository continuation under docs/baselines/CVF_GC018_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md.
 
