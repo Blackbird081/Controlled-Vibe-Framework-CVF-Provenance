@@ -11,7 +11,7 @@ Status: ACTIVE
 ## Handoff Context
 
 - Repository: private provenance SOT on `main`.
-- Remote tracking branch: `origin/main`; derive its exact SHA live when needed.
+- Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; do not hand-maintain it in handoff.
 - External agent memory files: non-canonical convenience only.
 - Current mode: `multi_repo_absorption_local_runtime_recovery`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
