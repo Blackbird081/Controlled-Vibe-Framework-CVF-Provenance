@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_DSH_CODE_REVIEW_QUALITY_T1_2026-09-14.md",
     "baselineSha256": "c761aa723a871d6fe5bfcd997b6e2a6100f1bba180396dbfc6b7b669ae5943db",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_CODE_REVIEW_QUALITY_T1_2026-09-14.md",
-    "workOrderSha256": "0ed5eaf5548308afc55f29c675ee58274dc93ffbd4188204c298682c3f8a616f"
+    "workOrderSha256": "6f2d8253db65b4de864491eed73ecbca9d53de7eef6e9da891966f03f26d922b"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
