@@ -65,6 +65,17 @@ standalone unwired checker. T5 external-agent implementation remains deferred,
 T6 live proof is not selected, and no provider/live, credential, public-export,
 deployment, production, or universal activation claim is admitted.**
 
+**QM-OPERATIONAL-RECOVERY-T1 (2026-09-15) adds one bounded CONTROL entry
+(`cvf.asc.control.qm_service_token_replay_dedupe.v1`) and one bounded EDGE
+entry (`cvf.asc.edge.qm_service_token_replay_consumers.v1`), bringing the
+catalog to 31 entities. The control records the process-local exact-replay
+rejection in `service-token-auth.ts`; the edge records its two non-test Web
+consumers (`/api/execute`, `/api/qbs/front-door-clarification`). Neither
+entry claims restart persistence, multi-process coordination, or distributed
+replay protection. The paired known-value redaction no-consumer condition is
+recorded separately as a parked GAP entry; see
+`docs/reference/system_chain/gaps/README.md`.**
+
 ## As-Built Architecture At A Glance
 
 The five R91 lane planes, in chain order, with their catalog-record IDs:
@@ -124,6 +135,7 @@ visibility beyond what that entity's own record declares.
 | `cvf.asc.gap.l4_product_implementation_unresolved.v1` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `docs/reference/system_chain/gaps/README.md` |
 | `cvf.asc.gap.l6_ecosystem_layer_partial.v1` | `PARTIAL_CHAIN_WITH_BOUNDARY` | `docs/reference/system_chain/gaps/README.md` |
 | `cvf.asc.gap.web_checker_inventory_not_unified.v1` | `EVIDENCED_NOT_OPERATOR_VISIBLE` | `docs/reference/system_chain/gaps/README.md` |
+| `cvf.asc.gap.qm_known_value_redaction_no_truthful_consumer.v1` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `docs/reference/system_chain/gaps/README.md` |
 
 ### How To Answer Common Questions
 
@@ -153,7 +165,7 @@ the governance control matrix.
 | `CVF_AS_BUILT_SYSTEM_CATALOG_SCHEMA.json` | JSON Schema contract: entity types, fields, enums, conditional constraints | ACTIVE |
 | `CVF_AS_BUILT_SYSTEM_CATALOG_RECONCILIATION_CONTRACT.md` | precedence, conflict, lineage, negative-search, migration table, admission routing | ACTIVE |
 | `CVF_AS_BUILT_SYSTEM_CATALOG_TOPOLOGY_DECISIONS.md` | generated-layout, freshness-ownership, and front-door topology decisions | ACTIVE |
-| `entries/` | compact per-entity JSON sources (editable authority) | ACTIVE, 29 entities |
+| `entries/` | compact per-entity JSON sources (editable authority) | ACTIVE, 31 entities |
 | `CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json` | generated aggregate (rebuild via generator, do not hand-edit) | GENERATED |
 
 ## Relationship To The R91 System-Chain Map Family
@@ -196,10 +208,12 @@ populated in this wave.
 This README is the family front door and the ASC-T4 human architecture front
 door for the entities populated in the MSEA-ASC-RW wave (22 catalog entities,
 3 gap entries) plus the SOT3-CVF-PROJ-T1 module additions (4 more entities,
-28 total). It does not claim exhaustive coverage of every CVF module,
-interface, or edge, does not modify the R91 system-chain map family, does not
-authorize ASC-T6 independent review/closure, and does not authorize runtime,
-public, provider, Web, or L4 promotion work.
+28 total), the CADP-AI-T7 interface addition (29 total), and the
+QM-OPERATIONAL-RECOVERY-T1 control/edge addition (31 total). It does not
+claim exhaustive coverage of every CVF module, interface, or edge, does not
+modify the R91 system-chain map family, does not authorize ASC-T6 independent
+review/closure, and does not authorize runtime, public, provider, Web, or L4
+promotion work.
 
 ## Public Export Disposition
 

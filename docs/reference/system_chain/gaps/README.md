@@ -49,7 +49,7 @@ adding, editing, or closing a gap entry.
 
 ## Current Gaps (Generated Summary)
 
-This table is a human summary of the 12 gap entries generated at review
+This table is a human summary of the 13 gap entries generated at review
 time. Always trust `CVF_SYSTEM_CHAIN_GAP_INDEX.json` and the `entries/`
 directory over this prose if they disagree; re-run the generator and refresh
 this table when entries change.
@@ -58,7 +58,7 @@ this table when entries change.
 
 | Status | Count |
 |---|---|
-| `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | 1 |
+| `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | 2 |
 | `PARTIAL_CHAIN_WITH_BOUNDARY` | 1 |
 | `EVIDENCED_NOT_OPERATOR_VISIBLE` | 1 |
 | `ACTIVE_OWNER_CREATED_WITH_BOUNDARY` | 4 |
@@ -73,6 +73,7 @@ this table when entries change.
 | `cvf.asc.gap.l4_product_implementation_unresolved.v1` | doctrine_to_contract | `NONE_WITH_REASON` -> `EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `DECLARED_EDGE` | `entries/l4_product_implementation_unresolved.json`; `docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md` | Reopen only when the L4 module exits Pre-Public Status and an operator-authorized promotion review accepts it |
 | `cvf.asc.gap.l6_ecosystem_layer_partial.v1` | doctrine_to_contract | `docs/` -> `EXTENSIONS/examples/`; `governance/toolkit/06_EXAMPLES/` | `PARTIAL_CHAIN_WITH_BOUNDARY` | `DECLARED_EDGE` | `entries/l6_ecosystem_layer_partial.json` | Reopen only after a governed L6 consolidation decision is authorized |
 | `cvf.asc.gap.web_checker_inventory_not_unified.v1` | evidence_to_operator_surface | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts` -> `NONE_WITH_REASON` | `EVIDENCED_NOT_OPERATOR_VISIBLE` | `EXECUTED_AND_EVIDENCED_EDGE` | `entries/web_checker_inventory_not_unified.json` | Reopen only when a fresh Deliverable B or maintenance packet implements a unified Web checker readout |
+| `cvf.asc.gap.qm_known_value_redaction_no_truthful_consumer.v1` | contract_to_runtime | `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-command-launcher.ts` -> `NONE_WITH_REASON` | `VALUE_PARKED_WITH_REOPEN_CONDITIONS` | `IMPLEMENTED_EDGE` | `entries/qm_known_value_redaction_no_truthful_consumer.json`; `docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md` | Reopen only when a named trusted in-process caller with a lawful, non-forbidden known-value source is demonstrated on a real invocation |
 
 ### Recently Closed Gaps
 
@@ -155,6 +156,19 @@ package export, durable audit linkage, and accepted local actual-POST
 invocation proof. The complete GC-010 caller/export branch remains held, so
 the paired gap stays open as `IMPLEMENTED_NOT_INVOCATION_PROVEN`.
 
+QM-OPERATIONAL-RECOVERY-T1 (2026-09-15) adds one new `contract_to_runtime`
+gap entry recording that the MCP governed-command-launcher's opt-in
+known-value redaction dependency (`knownSecretValues`) is implemented and
+unit-tested but has no truthful non-test production consumer: the sole
+identified non-test caller, `governed-exec.ts`, omits it. This entry does not
+manufacture a consumer from ambient environment, CLI flags, MCP input, or
+persistence, which the existing contract expressly forbids; it stays
+`VALUE_PARKED_WITH_REOPEN_CONDITIONS` until a lawful in-process caller and
+value source are demonstrated. The paired QM replay-dedupe mechanism is
+recorded separately in the as-built system architecture catalog as a
+process-local `CONTROL` entry with one Web consumer `EDGE`; see
+`docs/reference/system_architecture_catalog/README.md`.
+
 ## Search Examples
 
 - By `gapId`: `grep -r "cvf.asc.gap.l4_product_implementation_unresolved" docs/reference/system_chain/gaps/entries/`
@@ -206,15 +220,17 @@ Decision 2.
 
 ## Claim Boundary
 
-This README is the gap ledger's human front door for the 12 gap entries
+This README is the gap ledger's human front door for the 13 gap entries
 currently generated per `CVF_SYSTEM_CHAIN_GAP_INDEX.json` (originally 3
 populated in the MSEA-ASC-RW wave, 3 added by SOT3-RAP-T0, 1 added by SOT3-T7,
-4 added or reconciled by the SCLP-UC02/UC04B waves, and 1 paired entry added
-by SCLP-X-T2G1 recording the accepted GC-009/GC-010 no-production-caller
-finding). It does not claim exhaustive coverage of every possible CVF
-architecture gap, does not modify any R91-owned artifact, does not claim
-invocation or enforcement coverage for GC-009/GC-010, and does not authorize
-runtime, public, provider, Web, or L4 promotion work.
+4 added or reconciled by the SCLP-UC02/UC04B waves, 1 paired entry added by
+SCLP-X-T2G1 recording the accepted GC-009/GC-010 no-production-caller
+finding, and 1 added by QM-OPERATIONAL-RECOVERY-T1 recording the QM
+known-value redaction no-truthful-consumer park). It does not claim
+exhaustive coverage of every possible CVF architecture gap, does not modify
+any R91-owned artifact, does not claim invocation or enforcement coverage for
+GC-009/GC-010, and does not authorize runtime, public, provider, Web, or L4
+promotion work.
 
 ## Agent Operation Trace Block
 

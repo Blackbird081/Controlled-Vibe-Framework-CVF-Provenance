@@ -1,7 +1,7 @@
 # CVF Agent Work Order - QM Operational Recovery T1
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-09-15
 Batch ID: QM-OPERATIONAL-RECOVERY-T1
 Commit Mode And Base-Anchor Lifecycle: WORKER_MUST_NOT_COMMIT
@@ -291,6 +291,8 @@ workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
 Required terms: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Claim Boundary; Checker Source Read-Ahead Block; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; executionBaseHead; git status --short; Changed Files; No-Commit Statement; Return-Time Closeability Recheck.
 
+Conditional terms: External Knowledge Intake Routing; Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; Epistemic Process Block; Machine Closure Package.
+
 Conditional blocks must be present with `N/A with reason` when inapplicable. Record exact compact/generated counts, hashes, runtime-source no-change evidence, focused test result, first/final gate results, and zero external/provider/live/public invocations.
 
 ## Work-Order Fulfillment Manifest
@@ -302,6 +304,20 @@ Conditional blocks must be present with `N/A with reason` when inapplicable. Rec
 | generated views | catalog aggregate and GAP index | hand-edited generated JSON | generator receipt and drift PASS |
 | human summaries | count/table reconciliation only | new roadmap or generic prose | exact IDs and counts |
 | worker return | complete evidence packet | commit or self-acceptance | COMPLETE_PENDING_REVIEW |
+
+## Required Artifact Manifest
+
+| Artifact | Required worker action |
+| --- | --- |
+| `docs/reference/system_architecture_catalog/entries/control.qm_service_token_replay_dedupe.v1.json` | create the bounded replay control entry |
+| `docs/reference/system_architecture_catalog/entries/edge.qm_service_token_replay_consumers.v1.json` | create the two-consumer edge entry |
+| `docs/reference/system_architecture_catalog/entries/module.web_agent_platform.v1.json` | add only the inbound edge linkage |
+| `docs/reference/system_architecture_catalog/CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json` | regenerate from compact sources |
+| `docs/reference/system_architecture_catalog/README.md` | reconcile catalog count and row |
+| `docs/reference/system_chain/gaps/entries/qm_known_value_redaction_no_truthful_consumer.json` | create the parked no-consumer GAP |
+| `docs/reference/system_chain/gaps/CVF_SYSTEM_CHAIN_GAP_INDEX.json` | regenerate from compact GAP sources |
+| `docs/reference/system_chain/gaps/README.md` | reconcile GAP count and row |
+| `docs/reviews/CVF_QM_OPERATIONAL_RECOVERY_T1_WORKER_RETURN_2026-09-15.md` | return complete evidence without committing |
 
 ## Dual Agent Surface Matrix
 
@@ -491,16 +507,40 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private provenance runtime-recovery projection; no public artifact or sync authority.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `CLOSED_PASS_BOUNDED`; original dispatch is retained in Git history | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_QM_OPERATIONAL_RECOVERY_T1_COMPLETION_REVIEW_2026-09-15.md` | Local `ACCEPT_BOUNDED_RELEASE` | PASS |
+| Roadmap state | three-repository final recovery assessment | QM operational projection accepted; wider program remains open | PASS |
+| Registry JSON | catalog compact entries and GAP compact entry | stable IDs, bounded proof classes and reopen condition | PASS |
+| Registry Markdown | catalog and GAP family READMEs | 31 catalog entities and 13 GAP entries | PASS |
+| External evidence digest | `docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md` | SHA-256 `925c3a97cf412a41945115e2bd7893abdab19797b6dd47943ea15c3365b325e2` | PASS |
+| System loop interlock | control, consumer edge and parked GAP | bounded runtime topology plus lawful reopen boundary | PASS |
+| Session continuity | active continuity sources | dedicated post-material synchronization records the actual material SHA | N/A with reason: follows this material closure |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Replay projection | stable control plus two real consumers | control and edge entries with execute/QBS citations | PASS |
+| Redaction disposition | no invented consumer | parked GAP with lawful reopen rule | PASS |
+| Runtime invariance | unchanged tracked runtime contents | five of five Git-normalized blob identities match | PASS |
+| Focused tests | replay/QBS suite passes | retained worker receipt 22/22 | PASS |
+| Generated views | deterministic current aggregates | catalog/GAP drift `CURRENT`, zero violations | PASS |
+| Authority ceiling | no provider/live/public/runtime mutation | zero invocations and bounded material set | PASS |
+
 ## Closure Checklist
 
-- [ ] Worker changed only the nine allowed paths.
-- [ ] Q1-Q7 are supported by returned evidence and exact source citations.
-- [ ] Catalog and GAP generated views reconcile with compact sources.
-- [ ] Replay claims remain process-local and redaction remains parked without an invented consumer.
-- [ ] Focused replay tests, catalog drift check and worker-return fast gate pass.
-- [ ] Runtime source hashes are unchanged and no forbidden invocation occurred.
-- [ ] Local reviewer applies the DSH code-review-quality package and records final disposition.
-- [ ] Worker left all changes uncommitted for Local review.
+- [x] Worker changed only the nine allowed paths.
+- [x] Q1-Q7 are supported by returned evidence and exact source citations.
+- [x] Catalog and GAP generated views reconcile with compact sources.
+- [x] Replay claims remain process-local and redaction remains parked without an invented consumer.
+- [x] Focused replay tests, catalog drift check and worker-return fast gate pass.
+- [x] Runtime source hashes are unchanged under the recorded Git-normalized identity method and no forbidden invocation occurred.
+- [x] Local reviewer applies the DSH code-review-quality package and records final disposition.
+- [x] Worker left all changes uncommitted for Local review.
 
 ## Claim Boundary
 
