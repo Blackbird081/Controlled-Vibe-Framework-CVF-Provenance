@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "multi_repo_absorption_deferred_reconciliation",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=AUTHOR_BOUNDED_DECISION_PACKET; NEXT_STEP=RECONCILE_52_DEFERRED_RECORDS_BY_SEMANTIC_GROUP; EXPANSION_ALLOWED=false. DSH package-use recovery is CLOSED_PASS_BOUNDED at material d3b21c4e94bb484f00217f6320ad5d6c8353d46e; deepseek-ai__deepseek-harness is TERMINAL_ACCEPTED for the current recovery contract. Local must now author a bounded reconciliation baseline/work order that groups all 52 deferred records, challenges stale no-consumer claims against real CVF workflows, and separates native conversion, blockers, duplicates and no-value outcomes before any implementation dispatch. Agentgateway candidate tests follow this accounting step. ECC/new repos/provider/live/public/deployment remain parked. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=RECONCILE_52_DEFERRED_RECORDS_BY_SEMANTIC_GROUP; NEXT_STEP=INTERNAL_AGENT_CREATES_EXACT_TWO_UNCOMMITTED_OUTPUTS; EXPANSION_ALLOWED=false. Dispatch material 7573d804f8f185ecfc244eb56728a80727af4517 authorizes exactly the audit ledger and worker return named by the current work order. Worker captures executionBaseHead after this continuity commit, preserves 52=42+7+3, verifies current private-CVF owners and non-test consumers, and implements nothing. Local reviews and decides any successor. Agentgateway candidate tests, ECC, new repos, provider/live, public and deployment remain parked. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_2026-09-15.md",
-    "baselineSha256": "8a0e1656c0b080aa51177b0341dfce5c970b2b4f53fd62d0e1d3b20dcf78692e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_2026-09-15.md",
-    "workOrderSha256": "d72fcdc75700499dde70ec64722d06beb470426d3ed716d367c995c3e9d721f6"
+    "baselinePath": "docs/baselines/CVF_GC018_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.md",
+    "baselineSha256": "9d8080db8cfa994a44ab038c3a12cd2396212667334f2584db290e23c6f3fed1",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.md",
+    "workOrderSha256": "92faf607f878f2e2bf92f14f9519d344425147485420977f650f8ba9a8ab8bd7"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

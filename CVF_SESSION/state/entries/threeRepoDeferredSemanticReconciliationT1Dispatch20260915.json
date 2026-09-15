@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2837,
+  "stateKey": "threeRepoDeferredSemanticReconciliationT1Dispatch20260915",
+  "value": "THREE-REPO-DEFERRED-RECONCILIATION-T1 is DISPATCH_READY at material 7573d804f8f185ecfc244eb56728a80727af4517. It reconciles exactly 52 retained records (42 QM, 7 Agentgateway, 3 DSH) into one machine-readable ledger and one worker return, with at most five strict conversion candidates and zero implementation. Pre-dispatch passed 82/82. Shared-workspace worker is INTERNAL_AGENT, must not commit, and owns exactly the two output paths named by the work order. Local is the independent reviewer/closer and final private-CVF decision owner; external research is closed."
+}

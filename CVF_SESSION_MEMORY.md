@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_deferred_reconciliation`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=Local authors the bounded 52-deferred-record semantic reconciliation packet; role=Local orchestrator/reviewer; phase=recovery accounting and next-packet authoring; decision owner=Local; parked checkpoint=worker execution until a new packet is committed, Agentgateway/ECC/new repos/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_deferred_reconciliation`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=INTERNAL_AGENT executes the committed two-output 52-record reconciliation work order; role=Local orchestrator/reviewer; phase=worker execution then Local review; decision owner=Local; parked checkpoint=all implementation, Agentgateway candidate tests, ECC, new repos, provider/live/public/deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `multi_repo_absorption_deferred_reconciliation`; previous mode mar
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=AUTHOR_BOUNDED_DECISION_PACKET; NEXT_STEP=RECONCILE_52_DEFERRED_RECORDS_BY_SEMANTIC_GROUP; EXPANSION_ALLOWED=false. DSH package-use recovery is CLOSED_PASS_BOUNDED at material d3b21c4e94bb484f00217f6320ad5d6c8353d46e and its source is TERMINAL_ACCEPTED for the current recovery contract. Local next groups and reconciles all 52 deferred records before any implementation dispatch; Agentgateway candidate tests follow. ECC/new repos/provider/live/public/deployment remain parked. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=RECONCILE_52_DEFERRED_RECORDS_BY_SEMANTIC_GROUP; NEXT_STEP=INTERNAL_AGENT_CREATES_EXACT_TWO_UNCOMMITTED_OUTPUTS; EXPANSION_ALLOWED=false. Dispatch material 7573d804f8f185ecfc244eb56728a80727af4517 authorizes only the audit ledger and worker return named by the current work order. Worker captures executionBaseHead after continuity, preserves 52=42+7+3, and implements nothing. Local reviews and decides any successor. Agentgateway candidate tests, ECC, new repos, provider/live/public/deployment remain parked. Latest closed LHW wave remains LHW24.
 Mode: `multi_repo_absorption_deferred_reconciliation`. External research for this tranche is closed; shared-workspace execution is INTERNAL_AGENT. Local remains the private-CVF verification and final decision owner.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
