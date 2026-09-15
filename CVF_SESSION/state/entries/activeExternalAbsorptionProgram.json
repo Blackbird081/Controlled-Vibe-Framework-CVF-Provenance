@@ -13,15 +13,16 @@
     "sourceStates": {
       "agentgateway__agentgateway": "INCOMPLETE",
       "yc-software__qm": "INCOMPLETE",
-      "deepseek-ai__deepseek-harness": "INCOMPLETE"
+      "deepseek-ai__deepseek-harness": "TERMINAL_ACCEPTED"
     },
-    "nextSourceId": "deepseek-ai__deepseek-harness",
+    "nextSourceId": "yc-software__qm",
     "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
     "expansionAllowed": false,
     "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
     "exitEvidence": [
       "docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_2026-09-15.md"
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_2026-09-15.md",
+      "docs/reviews/CVF_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_COMPLETION_REVIEW_2026-09-15.md"
     ],
     "operatorScopeDecision": null,
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
