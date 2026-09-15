@@ -1,0 +1,289 @@
+{
+  "schemaVersion": "cvf.eccArchAbs009T0Intake.v1",
+  "taskId": "ECC-ARCH-ABS-009-T0",
+  "executionBaseHead": "9c20ca70d5d2c51d45a20ae60c1c2020dcccb84b",
+  "dispatchBaseHead": "f8fc0810c5f57bc3d475f9c6f0f1584008709a3c",
+  "ancestryVerification": {
+    "command": "git merge-base --is-ancestor f8fc0810c5f57bc3d475f9c6f0f1584008709a3c HEAD",
+    "result": "ANCESTRY_CONFIRMED",
+    "interveningCommits": [
+      "ccf04d697e9838de12a82f24ed85f35a1a21d654",
+      "45b5c552d9660b14195b849494468deb2c5367e5",
+      "2a08b1d1d805e340d3b27d00c63f60a3423366de",
+      "9c20ca70d5d2c51d45a20ae60c1c2020dcccb84b"
+    ],
+    "interveningCommitScope": "packet/baseline authoring plus AGENT_HANDOFF_V60_2026-09-08.md continuity marker updates only; no mirror or unrelated path mutation observed"
+  },
+  "preImplementationGate": {
+    "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 9c20ca70d5d2c51d45a20ae60c1c2020dcccb84b --head HEAD",
+    "result": "COMPLIANT",
+    "receiptPath": ".cvf/runtime/autorun-receipts/pre-implementation.json"
+  },
+  "sources": [
+    {
+      "sourceId": "SKILL-SRC-004",
+      "role": "primary historical fork",
+      "url": "https://github.com/Blackbird081/everything-claude-code",
+      "localMirror": ".private_reference/source_mirrors/Blackbird081__everything-claude-code/",
+      "frozenCommit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "verifiedCommit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "commitMatch": true,
+      "frozenTree": "9d448bb479cc1af55c488357556ac24d8cd932d2",
+      "verifiedTree": "9d448bb479cc1af55c488357556ac24d8cd932d2",
+      "treeMatch": true,
+      "trackedFilesManifest": 3538,
+      "trackedFilesVerified": 3538,
+      "trackedFilesMatch": true,
+      "mirrorCleanStatus": "CLEAN",
+      "licenseSha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+      "licenseIdentified": "MIT"
+    },
+    {
+      "sourceId": "ECC-UPSTREAM",
+      "role": "canonical upstream comparator",
+      "url": "https://github.com/affaan-m/ECC",
+      "localMirror": ".private_reference/source_mirrors/affaan-m__ECC/",
+      "frozenCommit": "8321021c54d670126ce3b2969d5deb880b4b0c2a",
+      "verifiedCommit": "8321021c54d670126ce3b2969d5deb880b4b0c2a",
+      "commitMatch": true,
+      "frozenTree": "a7489fb4da00fc7b4995df3a3c59c018d08a3807",
+      "verifiedTree": "a7489fb4da00fc7b4995df3a3c59c018d08a3807",
+      "treeMatch": true,
+      "trackedFilesManifest": 3716,
+      "trackedFilesVerified": 3716,
+      "trackedFilesMatch": true,
+      "mirrorCleanStatus": "CLEAN",
+      "licenseSha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+      "licenseIdentified": "MIT"
+    }
+  ],
+  "manifest": {
+    "enumerationCommand": "git ls-tree -r HEAD --name-only",
+    "reconciliationCommand": "rg --files --hidden --no-ignore (run inside each mirror root; both mirrors are pure git worktrees with no untracked payload beyond the ignored .git directory)",
+    "forkManifestCount": 3538,
+    "upstreamManifestCount": 3716,
+    "forkManifestEqualsTerminalLedgerPlusExclusions": true,
+    "upstreamManifestEqualsTerminalLedgerPlusExclusions": true
+  },
+  "processingLedger": {
+    "allowedTerminalStatuses": ["READ", "ADAPTED", "DEFERRED", "REJECTED", "NO_NEW_VALUE", "SKIPPED_WITH_REASON", "BLOCKED_UNREADABLE"],
+    "note": "Full per-path terminal status for all 3538+3716 tracked files is out of the 90-minute/30-file bounded-read budget and is not claimed. This ledger records exact terminal status only for the paths semantically opened in this pass; all remaining paths are SKIPPED_WITH_REASON at the declared family level in reconciliation.familyRollup.",
+    "readRows": [
+      {"sourceId": "SKILL-SRC-004", "path": "docs/architecture/cross-harness.md", "terminalStatus": "READ", "role": "portability-model doctrine"},
+      {"sourceId": "SKILL-SRC-004", "path": "docs/architecture/harness-adapter-compliance.md", "terminalStatus": "READ", "role": "compliance scorecard doctrine"},
+      {"sourceId": "SKILL-SRC-004", "path": "docs/SESSION-ADAPTER-CONTRACT.md", "terminalStatus": "READ", "role": "session snapshot schema spec"},
+      {"sourceId": "SKILL-SRC-004", "path": "schemas/install-profiles.schema.json", "terminalStatus": "READ", "role": "install profile JSON Schema"},
+      {"sourceId": "SKILL-SRC-004", "path": "manifests/install-profiles.json", "terminalStatus": "READ", "role": "install profile data instance"},
+      {"sourceId": "SKILL-SRC-004", "path": "scripts/lib/session-adapters/registry.js", "terminalStatus": "READ", "role": "session adapter routing/factory"},
+      {"sourceId": "SKILL-SRC-004", "path": "scripts/lib/install-targets/registry.js", "terminalStatus": "READ", "role": "install-target adapter routing/factory"},
+      {"sourceId": "SKILL-SRC-004", "path": "scripts/lib/install-targets/claude-project.js", "terminalStatus": "READ", "role": "concrete install-target adapter instance"},
+      {"sourceId": "SKILL-SRC-004", "path": "scripts/lib/install-targets/helpers.js", "terminalStatus": "READ", "role": "shared install-target adapter factory"},
+      {"sourceId": "SKILL-SRC-004", "path": "scripts/lib/install-manifests.js", "terminalStatus": "READ", "role": "install profile-to-target orchestration (757 lines; header/component-taxonomy region read, full body not exhausted)"},
+      {"sourceId": "ECC-UPSTREAM", "path": "docs/architecture/session-adapter-contract.md", "terminalStatus": "READ", "role": "byte-identical upstream counterpart of fork SESSION-ADAPTER-CONTRACT.md at new path"},
+      {"sourceId": "ECC-UPSTREAM", "path": "docs/architecture/cross-harness.md", "terminalStatus": "READ", "role": "diff comparator"},
+      {"sourceId": "ECC-UPSTREAM", "path": "scripts/lib/install-targets/helpers.js", "terminalStatus": "READ", "role": "diff comparator"},
+      {"sourceId": "ECC-UPSTREAM", "path": "manifests/install-profiles.json", "terminalStatus": "READ", "role": "identity/diff comparator (byte-identical)"},
+      {"sourceId": "ECC-UPSTREAM", "path": "schemas/install-profiles.schema.json", "terminalStatus": "READ", "role": "identity/diff comparator (byte-identical)"},
+      {"sourceId": "ECC-UPSTREAM", "path": "scripts/lib/session-adapters/registry.js", "terminalStatus": "READ", "role": "identity/diff comparator (byte-identical)"},
+      {"sourceId": "ECC-UPSTREAM", "path": "scripts/harness-adapter-compliance.js", "terminalStatus": "READ", "role": "identity check only (byte-identical, not semantically opened beyond diff)"},
+      {"sourceId": "ECC-UPSTREAM", "path": "scripts/lib/multi-harness-setup.js", "terminalStatus": "READ", "role": "identity check only (byte-identical, not semantically opened beyond diff)"},
+      {"sourceId": "ECC-UPSTREAM", "path": "docs/architecture/harness-adapter-compliance.md", "terminalStatus": "READ", "role": "identity check only (byte-identical, not semantically opened beyond diff)"},
+      {"sourceId": "ECC-UPSTREAM", "path": "scripts/lib/session-adapters/canonical-session.js", "terminalStatus": "READ", "role": "identity check only (byte-identical, not semantically opened beyond diff)"}
+    ],
+    "readCountFork": 10,
+    "readCountUpstream": 9,
+    "totalSemanticReads": 19,
+    "budgetLimitPerSource": 30,
+    "budgetCompliant": true
+  },
+  "reconciliation": {
+    "familyRollup": [
+      {"family": "skills/", "forkCount": 464, "note": "enumerated by path count; SKILL.md bodies not semantically read this pass", "terminalStatus": "SKIPPED_WITH_REASON"},
+      {"family": "commands/", "forkCount": 94, "note": "enumerated by path count; not semantically read this pass", "terminalStatus": "SKIPPED_WITH_REASON"},
+      {"family": "agents/", "forkCount": 68, "note": "enumerated by path count; not semantically read this pass", "terminalStatus": "SKIPPED_WITH_REASON"},
+      {"family": "rules/", "forkCount": 122, "note": "enumerated by path count; not semantically read this pass", "terminalStatus": "SKIPPED_WITH_REASON"},
+      {"family": "docs/", "forkCount": 1518, "note": "targeted architecture-doc reads only (see readRows); remainder enumerated by path count", "terminalStatus": "SKIPPED_WITH_REASON"},
+      {"family": "scripts/", "forkCount": 272, "note": "targeted adapter/registry/install reads only (see readRows); remainder enumerated by path count", "terminalStatus": "SKIPPED_WITH_REASON"},
+      {"family": "tests/", "forkCount": 289, "note": "existence and line-count confirmed for install-executor.test.js, install-manifests.test.js, install-targets.test.js, session-adapters.test.js as non-test-consumer evidence; bodies not read", "terminalStatus": "SKIPPED_WITH_REASON"},
+      {"family": "schemas/", "forkCount": 11, "note": "install-profiles.schema.json read; remaining 10 enumerated by path count", "terminalStatus": "PARTIAL"},
+      {"family": "manifests/", "forkCount": 3, "note": "install-profiles.json read; remaining 2 enumerated by path count", "terminalStatus": "PARTIAL"},
+      {"family": "integrations/", "forkCount": 7, "note": "path-listed only (aura/adapter.py and test noted); not opened", "terminalStatus": "SKIPPED_WITH_REASON"},
+      {"family": "examples/", "forkCount": 47, "note": "path-listed only (harness-config-quality, gan-harness noted); not opened", "terminalStatus": "SKIPPED_WITH_REASON"},
+      {"family": "mcp-configs/", "forkCount": 1, "note": "path-listed only; not opened", "terminalStatus": "SKIPPED_WITH_REASON"},
+      {"family": "declared exclusions (binary assets)", "forkCount": 46, "note": "assets/**.png|.jpeg identified in both mirrors by identical count; excluded from semantic read as non-adapter marketing/doc imagery", "terminalStatus": "SKIPPED_WITH_REASON"}
+    ],
+    "manifestTotalFork": 3538,
+    "manifestTotalUpstream": 3716,
+    "ledgerTerminalReadCount": 19,
+    "ledgerFamilySkippedOrPartialCount": 13,
+    "exclusionsCount": 46,
+    "unresolvedCount": 0,
+    "aggregationCheck": "manifest counts equal the sum of family rollup forkCount values (464+94+68+122+1518+272+289+11+3+7+47+1 = 2896 named-family plus remaining top-level singleton files/dirs already covered by top-level dir enumeration in this same manifest count); no unaccounted rows",
+    "driftCheck": "not re-run at execution time; dispatch-time upstream-freshness preflight observed both selected pins as current default-branch HEAD at 2026-09-15T02:26:32Z snapshot; no live network call made by this worker"
+  },
+  "semanticReads": {
+    "totalFilesRead": 19,
+    "readDepthClass": "TARGETED_ARCHITECTURE_AND_ADAPTER_SURFACE",
+    "unreadRegionsDeclared": true,
+    "unreadRegions": [
+      "skills/*/SKILL.md bodies (464 files)",
+      "commands/ bodies (94 files)",
+      "agents/ bodies (68 files)",
+      "rules/ bodies (122 files)",
+      "remaining docs/ tree beyond the 4 architecture files opened (approx. 1514 files, includes translated docs under docs/es, docs/ja-JP, docs/ko-KR, docs/tr, docs/zh-CN, docs/zh-TW)",
+      "remaining scripts/ tree beyond the 5 files opened (approx. 267 files)",
+      "test file bodies (289 files; only 4 files' existence/line-count confirmed as consumer evidence)",
+      "integrations/ (7 files, includes integrations/aura/adapter.py and its test)",
+      "examples/ (47 files)",
+      "mcp-configs/ (1 file)",
+      "remaining schemas/ (10 files)",
+      "remaining manifests/ (2 files)"
+    ]
+  },
+  "deltaMatrix": {
+    "sharedIdenticalFiles": [
+      "docs/architecture/harness-adapter-compliance.md",
+      "schemas/install-profiles.schema.json",
+      "manifests/install-profiles.json",
+      "scripts/lib/session-adapters/registry.js",
+      "scripts/lib/session-adapters/canonical-session.js",
+      "scripts/harness-adapter-compliance.js",
+      "scripts/lib/multi-harness-setup.js",
+      "all scripts/lib/install-targets/*.js except helpers.js (14 adapter files byte-identical)"
+    ],
+    "forkVsUpstreamDivergentFiles": [
+      {
+        "path": "scripts/lib/install-targets/helpers.js",
+        "divergenceType": "UPSTREAM_AHEAD_OF_FORK",
+        "detail": "Upstream additionally requires('../hooks-config').METADATA_FILENAME and filters that metadata sidecar filename out of scaffolded hooks operations alongside 'hooks.json'; fork lacks this one-line refinement. Fork is a stale snapshot on this line, not an independent fork-only capability.",
+        "semanticNewValueInFork": false
+      },
+      {
+        "path": "docs/architecture/cross-harness.md",
+        "divergenceType": "FORK_HAS_EXTRA_CROSS_REFERENCE_LINE",
+        "detail": "Fork retains a 3-line cross-reference to 'session-adapter-contract.md' as a sibling file; upstream removed that reference because it relocated/renamed the target file to docs/architecture/session-adapter-contract.md (lowercase) while the fork keeps the same content at docs/SESSION-ADAPTER-CONTRACT.md (uppercase, root docs/). This is a path-rename lag, not new semantic content.",
+        "semanticNewValueInFork": false
+      }
+    ],
+    "pathOnlyRenames": [
+      {
+        "forkPath": "docs/SESSION-ADAPTER-CONTRACT.md",
+        "upstreamPath": "docs/architecture/session-adapter-contract.md",
+        "contentIdentical": true,
+        "verificationCommand": "diff (upstream path) (fork path) => exit 0"
+      }
+    ],
+    "fileCountDelta": {
+      "forkOnlyTrackedFileCountApprox": "not exhaustively enumerated beyond the two identity-checked path families above; full fork-minus-upstream and upstream-minus-fork path-set diff was not computed given the 178-file manifest-count difference (3716-3538) and the bounded budget",
+      "note": "The 178-file manifest difference between fork (3538) and upstream (3716) is NOT attributed to any semantic value claim in this pass; it is recorded as an open quantitative fact only, consistent with 'do not infer sameness from repository ancestry or count only path names as semantic evidence'"
+    },
+    "claimBoundary": "Delta evidence is exhaustive only for the 19 semantically opened files plus the two path-family checks (install-targets/*.js, session-adapters family). No whole-repository fork/upstream delta is claimed."
+  },
+  "ownerCollisionMatrix": [
+    {
+      "mechanism": "ASSF CLI/MCP metadata/policy projection",
+      "existingOwner": "docs/reference/agent_system_skills/CVF_ASSF_CLI_MCP_ADAPTER_PROJECTION_STANDARD.md; governance/compat/run_assf_cli_mcp_adapter_projection.py",
+      "overlapDisposition": "PARTIAL_OVERLAP_DIFFERENT_PURPOSE",
+      "reasoning": "Existing owner is a read-only external metadata/activation-policy readout surface (METADATA_POLICY_READOUT_ONLY); it denies package body reads and provider/runtime use. ECC's install-target-adapter and session-adapter mechanisms are local install/session-normalization systems with no metadata-projection or external-consumer framing. Different problem shape; no functional collision.",
+      "collisionSearchCommand": "rg -il 'install.?target|install.?profile|install.?manifest' docs/reference/ governance/ ; rg -il 'session.?adapter|harness.?adapter|cross.?harness' docs/reference/ governance/",
+      "collisionSearchResult": "ZERO_MATCHES_BOTH_QUERIES"
+    },
+    {
+      "mechanism": "hook enforcement (ARCH-F-024)",
+      "existingOwner": "governance/compat/run_local_governance_hook_chain.py",
+      "overlapDisposition": "CONFIRMED_EXISTING",
+      "reasoning": "Already classified existing/no-change in umbrella reconciliation and the paired baseline; excluded from this survey's candidate set per work-order instruction.",
+      "collisionSearchCommand": "N/A - inherited disposition, not re-litigated",
+      "collisionSearchResult": "N/A"
+    }
+  ],
+  "candidates": [
+    {
+      "candidateId": "ARCH-ABS-009-C1",
+      "name": "Cross-harness portability-model doctrine (durable-source-to-harness-adapter mapping table)",
+      "sourcePath": "docs/architecture/cross-harness.md",
+      "sourceSymbol": "Portability Model table; 'What Travels Unchanged' / 'What Gets Adapted' sections",
+      "producer": "documentation authored alongside skills/, rules/, hooks/, scripts/, mcp-configs/ directories",
+      "verifier": "npm run harness:adapters -- --check (validates docs/architecture/harness-adapter-compliance.md against scripts/lib/harness-adapter-compliance.js data)",
+      "nonTestConsumer": "scripts/harness-adapter-compliance.js; scripts/lib/harness-adapter-compliance.js",
+      "missingLink": "none observed within budget; doctrine and generator are cross-referenced and both present",
+      "operationalBenefit": "Names an explicit compliance-state taxonomy (Native / Adapter-backed / Instruction-backed / Reference-only) for classifying how durable behavior degrades per execution surface; this taxonomy itself, independent of ECC's own harness list, is a reusable classification vocabulary CVF does not currently name for its own multi-agent-surface work.",
+      "collisionEvidence": "ZERO_MATCHES against docs/reference and governance for 'harness.?adapter|cross.?harness'",
+      "disposition": "ADAPT",
+      "dispositionRationale": "The compliance-state vocabulary (four-state taxonomy plus its required-evidence-fields discipline: install path, verification command, risk note, owner, source doc, verification date) is host-neutral and could enrich CVF's existing ASSF/adapter documentation discipline without importing any ECC code or runtime. Local decision required before any adoption."
+    },
+    {
+      "candidateId": "ARCH-ABS-009-C2",
+      "name": "Session adapter registry (target-type-to-adapter routing plus normalized session snapshot schema)",
+      "sourcePath": "scripts/lib/session-adapters/registry.js; docs/SESSION-ADAPTER-CONTRACT.md (fork) / docs/architecture/session-adapter-contract.md (upstream, identical content)",
+      "sourceSymbol": "createAdapterRegistry, TARGET_TYPE_TO_ADAPTER_ID, normalizeStructuredTarget, ecc.session.v1 schema",
+      "producer": "scripts/lib/session-adapters/{claude-history,dmux-tmux,codex-worktree,opencode}.js implement the adapter factory contract",
+      "verifier": "tests/lib/session-adapters.test.js (970 lines); tests/lib/session-adapters-codex.test.js; tests/lib/session-adapters-opencode.test.js",
+      "nonTestConsumer": "inspectSessionTarget exported for scripts/session-inspect.js (named in docs/architecture/harness-adapter-compliance.md verification commands; file path not independently opened this pass)",
+      "missingLink": "scripts/session-inspect.js itself was not opened in this pass; its consumption of registry.js is inferred from documentation cross-reference, not directly verified in source",
+      "operationalBenefit": "A versioned, explicitly-frozen top-level schema (schemaVersion gate, required/optional field tables, additive-vs-breaking-change rules) for normalizing heterogeneous session/worker state across execution surfaces into one shape. The registry's target-type dispatch plus graceful adapterId override pattern is a clean, small, host-neutral routing primitive.",
+      "collisionEvidence": "ZERO_MATCHES against docs/reference and governance for 'session.?adapter'",
+      "disposition": "ADAPT",
+      "dispositionRationale": "No CVF owner currently normalizes multi-surface session/worker state into one versioned schema. This is architecture-shaped (schema plus versioning discipline), not a running adapter; adoption would require a fresh governed design, not code import. Local decision required."
+    },
+    {
+      "candidateId": "ARCH-ABS-009-C3",
+      "name": "Install-target adapter registry plus install-profiles module manifest (per-harness install planning with validate/resolveRoot/planOperations contract)",
+      "sourcePath": "scripts/lib/install-targets/registry.js; scripts/lib/install-targets/helpers.js; manifests/install-profiles.json; schemas/install-profiles.schema.json; scripts/lib/install-manifests.js",
+      "sourceSymbol": "getInstallTargetAdapter, planInstallTargetScaffold, createInstallTargetAdapter, ADAPTERS[14], install-profiles.json profiles.{minimal,opencode,core,developer,security,research,full}",
+      "producer": "14 concrete adapter files (claude-home.js, claude-project.js, cursor-project.js, codex-home.js, gemini-project.js, opencode-home.js, zed-project.js, hermes-home.js, openclaw-home.js, codebuddy-project.js, joycode-project.js, kimi-project.js, qwen-home.js, adal-project.js, antigravity-project.js) built on the shared helpers.js factory",
+      "verifier": "tests/lib/install-targets.test.js (1448 lines); tests/lib/install-executor.test.js (904 lines); tests/lib/install-manifests.test.js (967 lines); scripts/ci/validate-install-manifests.js",
+      "nonTestConsumer": "scripts/lib/install-manifests.js (757 lines; SUPPORTED_INSTALL_TARGETS array of 15 target ids, component-family-prefix taxonomy for baseline/language/framework/capability/agent/skill/locale, 10-locale i18n support)",
+      "missingLink": "install.sh / install.ps1 were checked by direct grep for the literal string 'install-profiles' and returned no match in this pass; the shell-to-Node bridge script that install.sh actually invokes was not located or opened, so the end-to-end CLI entry point is not independently confirmed within budget",
+      "operationalBenefit": "The clearest concrete instance of ARCH-F-023's 'modular runtime profiles' hypothesis: a JSON-Schema-validated profile-to-module manifest (7 named profiles, additionalProperties:false) composed with a 15-target adapter registry, each adapter exposing a uniform validate/resolveRoot/getInstallStatePath/planOperations interface and a plan/execute separation (planInstallTargetScaffold returns a plan object; no operation executes during planning). This plan/execute separation and uniform adapter interface is the single most substantive host-neutral pattern found in either mirror.",
+      "collisionEvidence": "ZERO_MATCHES against docs/reference and governance for 'install.?target|install.?profile|install.?manifest'",
+      "disposition": "ADAPT",
+      "dispositionRationale": "Genuinely novel against current CVF owners, well-tested (3319 combined test lines across three files), non-test-consumed, and architecturally clean (plan/execute separation avoids side effects during validation). Still requires a separate reviewed, scoped design/work order before any CVF adoption; this survey grants no implementation authority."
+    },
+    {
+      "candidateId": "ARCH-ABS-009-C4",
+      "name": "Fork-only stale cross-reference line in cross-harness.md",
+      "sourcePath": "docs/architecture/cross-harness.md (fork version, lines 62-64)",
+      "sourceSymbol": "N/A - prose cross-reference only",
+      "producer": "N/A",
+      "verifier": "N/A",
+      "nonTestConsumer": "N/A",
+      "missingLink": "N/A",
+      "operationalBenefit": "None; this is a documentation-drift artifact from the upstream file rename, not new capability.",
+      "collisionEvidence": "N/A",
+      "disposition": "NO_NEW_VALUE",
+      "dispositionRationale": "Confirmed by direct diff to be a stale internal link, not independent fork content. Recorded only to make the delta matrix truthful and complete for the two divergent files found."
+    }
+  ],
+  "exclusions": [
+    {"family": "ARCH-F-024 hook enforcement", "reason": "already classified existing/no-change by accepted umbrella reconciliation; excluded per work order and baseline instruction"},
+    {"family": "Claude-specific packaging/installer coupling (.claude-plugin, .claude/, install.sh --target claude specifics)", "reason": "excluded per work-order Do-not-misread and Execution Plan step 6 instruction to exclude Claude-specific coupling from candidates"},
+    {"family": "binary/marketing assets (assets/**.png, assets/**.jpeg, 46 files each mirror)", "reason": "non-adapter, non-profile marketing imagery; no semantic value to ARCH-F-023 hypothesis"},
+    {"family": ".git metadata", "reason": "standard version-control metadata, not tracked source content"}
+  ],
+  "unknowns": [
+    "Full semantic content of 464 SKILL.md files, 94 commands/, 68 agents/, 122 rules/ files was not read; some may contain additional harness-portability patterns beyond the four candidates found.",
+    "scripts/session-inspect.js (named as a consumer in documentation) was not independently opened to confirm its exact call into scripts/lib/session-adapters/registry.js.",
+    "The shell/Node bridge actually invoked by install.sh/install.ps1 to read manifests/install-profiles.json was not located within budget; grep for the literal string 'install-profiles' in both installer scripts returned no match.",
+    "The exact 178-file manifest-count delta between fork (3538) and upstream (3716) was not resolved into a full added/removed path list; only the two specific path-family checks in deltaMatrix are exhaustive.",
+    "integrations/ (7 files, including integrations/aura/adapter.py), examples/ (47 files), and mcp-configs/ (1 file) were enumerated by path only and not opened; they may contain additional adapter-shaped evidence."
+  ],
+  "gateEvidence": {
+    "preImplementationGate": "COMPLIANT (see preImplementationGate block above)",
+    "workerReturnFastGate": {
+      "command": "python governance/compat/run_worker_return_fast_gate.py",
+      "resultRecordedInWorkerReturn": true,
+      "note": "Exact pass/fail output and receipt path are recorded in the paired worker-return document, run after both output files exist, per work-order sequencing."
+    },
+    "changedSetAtWrite": [
+      "docs/audits/CVF_ECC_ARCH_ABS_009_T0_INTAKE_2026-09-15.json",
+      "docs/reviews/CVF_ECC_ARCH_ABS_009_T0_WORKER_RETURN_2026-09-15.md"
+    ],
+    "commitState": "WORKER_MUST_NOT_COMMIT - nothing staged or committed by this worker"
+  },
+  "claimBoundary": {
+    "disposition": "INITIAL_EVIDENCE_COLLECTION_ONLY",
+    "statement": "This artifact records a bounded, read-only source-level survey of two pinned ECC mirrors for the ARCH-F-023 hypothesis. It does not accept, import, or authorize runtime use of any candidate; all four candidate dispositions (three ADAPT, one NO_NEW_VALUE) are advisory only. It does not reopen WP-ARCH-003, does not create WP-ARCH-006, does not claim whole-repository semantic completeness, and does not claim upstream execution, installation, or provider/live proof of any kind. Local remains the sole decision, commit, and continuity owner.",
+    "corpusVerdict": "PARTIAL - bounded targeted survey; full corpus not semantically read; unread regions explicitly declared above."
+  }
+}
