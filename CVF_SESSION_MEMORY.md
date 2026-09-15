@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_deferred_reconciliation`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=INTERNAL_AGENT executes the committed two-output 52-record reconciliation work order; role=Local orchestrator/reviewer; phase=worker execution then Local review; decision owner=Local; parked checkpoint=all implementation, Agentgateway candidate tests, ECC, new repos, provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_terminal_accounted`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=await operator selection for any new repository or backlog action; role=Local orchestrator/reviewer; phase=terminal program accounting; decision owner=Local; parked checkpoint=ECC, new repos, provider/live/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_deferred_reconciliation`
-Current mode: `multi_repo_absorption_deferred_reconciliation`; previous mode marker: `multi_repo_absorption_local_runtime_recovery`
+Current mode marker: `multi_repo_absorption_terminal_accounted`
+Current mode: `multi_repo_absorption_terminal_accounted`; previous mode marker: `multi_repo_absorption_deferred_reconciliation`
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=RECONCILE_52_DEFERRED_RECORDS_BY_SEMANTIC_GROUP; NEXT_STEP=INTERNAL_AGENT_CREATES_EXACT_TWO_UNCOMMITTED_OUTPUTS; EXPANSION_ALLOWED=false. Dispatch material 7573d804f8f185ecfc244eb56728a80727af4517 authorizes only the audit ledger and worker return named by the current work order. Worker captures executionBaseHead after continuity, preserves 52=42+7+3, and implements nothing. Local reviews and decides any successor. Agentgateway candidate tests, ECC, new repos, provider/live/public/deployment remain parked. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_deferred_reconciliation`. External research for this tranche is closed; shared-workspace execution is INTERNAL_AGENT. Local remains the private-CVF verification and final decision owner.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=NONE; NEXT_ACTION_CLASS=PROGRAM_TERMINAL_ACCOUNTED; CURRENT_TRANCHE_ACTION=CLOSED_PASS_BOUNDED; NEXT_STEP=AWAIT_OPERATOR_SELECTION_FOR_ANY_NEW_REPOSITORY_OR_BACKLOG_ACTION; EXPANSION_ALLOWED=false. The exact 52-record reconciliation closes with 52 demand-gated deferred rows, zero unresolved blockers and zero current runtime candidates. QM and DeepSeek Harness are TERMINAL_ACCEPTED; Agentgateway is TERMINAL_DEFERRED_WITH_TRIGGER. All currently eligible bounded conversions remain on real CVF owners/consumers; deferred knowledge has explicit reopen proof/action and is not represented as runtime. ECC, new repos, provider/live, public and deployment remain parked. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_terminal_accounted`. External research and shared-workspace execution for this program are closed. Local remains final decision owner for any future operator-selected source.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

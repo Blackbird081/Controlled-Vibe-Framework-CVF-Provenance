@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.md",
     "baselineSha256": "9d8080db8cfa994a44ab038c3a12cd2396212667334f2584db290e23c6f3fed1",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.md",
-    "workOrderSha256": "92faf607f878f2e2bf92f14f9519d344425147485420977f650f8ba9a8ab8bd7"
+    "workOrderSha256": "f523863e3a7d0af3a7c2b59c35a4468deefa58e0ae2b7415ef1d148cd9de2445"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -106,8 +106,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "multi_repo_absorption_deferred_reconciliation",
-  "previousMode": "multi_repo_absorption_local_runtime_recovery",
+  "currentMode": "multi_repo_absorption_terminal_accounted",
+  "previousMode": "multi_repo_absorption_deferred_reconciliation",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

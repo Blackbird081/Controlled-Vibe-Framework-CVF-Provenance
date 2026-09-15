@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.md",
     "baselineSha256": "9d8080db8cfa994a44ab038c3a12cd2396212667334f2584db290e23c6f3fed1",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.md",
-    "workOrderSha256": "92faf607f878f2e2bf92f14f9519d344425147485420977f650f8ba9a8ab8bd7"
+    "workOrderSha256": "f523863e3a7d0af3a7c2b59c35a4468deefa58e0ae2b7415ef1d148cd9de2445"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -106,8 +106,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "multi_repo_absorption_deferred_reconciliation",
-  "previousMode": "multi_repo_absorption_local_runtime_recovery",
+  "currentMode": "multi_repo_absorption_terminal_accounted",
+  "previousMode": "multi_repo_absorption_deferred_reconciliation",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16600,7 +16600,7 @@
   "mfrpP4C1ReceiptRangeRework20260909": "P4-C1 receipt-range rework is committed at 6b5318286 with four original-manifest paths. Root cause: receipt generation incorrectly ranged trusted-parent through disclosure, combining reviewer evidence with protected continuity paths. Repair: receipt and fingerprint bind trusted-parent through trusted; disclosure proves order only. Focused tests remain 68 passed, reviewer-fast 67/67 and pre-commit 88/88. The prior safety marker was explicitly adjudicated and moved to ignored ADJUDICATED_SAFETY_MARKER_2026-09-09.json for recoverable diagnostics.",
   "wpArch003TerminalParkSync20260909": "WP-ARCH-003 terminal park is synchronized at 65fafd4f5 across the parent DARA roadmap, RABA-T0 roadmap, RABA-F01-F02 roadmap and 2026-09-09 audit sequence. Current disposition is PARK_NO_TRUTHFUL_AUTHORITY_ROOT; AR1 dispatch history is superseded but preserved; RABA-T1 through T3 and implementation remain unopened. External-agent research remains advisory and cannot become a CVF authority root without Internal Agent verification and reconciliation.",
   "publicSevenStepExternalPacketClosure20260909": "Step 3 closed pass bounded. Private seven-step relationship source is c9fa2862c88eba6e3e3e8dd8e8d96dd018382ef1. Public pull request 8 merged to public main 483c5e33d188b6b2d35d6cd19ee38a3c8548abc4 after required public-sync preflight. EXTERNAL_AGENT_READ was refreshed from that live head; EARA-AGW-T0 is REVIEW_ONLY and expects COMPLETE_PENDING_LOCAL_RECONCILIATION. CVF_EARA_AGW_T0_EXTERNAL_RELAY_2026-09-09.zip has eight entries and SHA-256 a6d1d47dece0a7d94b731a01d5ade3587f9810231ef8f5e3ecfbad3224e11340. External output remains advisory until Internal Agent verification and reconciliation.",
-  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=yc-software__qm; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=RECONCILE_52_DEFERRED_RECORDS_BY_SEMANTIC_GROUP; NEXT_STEP=INTERNAL_AGENT_CREATES_EXACT_TWO_UNCOMMITTED_OUTPUTS; EXPANSION_ALLOWED=false. Dispatch material 7573d804f8f185ecfc244eb56728a80727af4517 authorizes exactly the audit ledger and worker return named by the current work order. Worker captures executionBaseHead after this continuity commit, preserves 52=42+7+3, verifies current private-CVF owners and non-test consumers, and implements nothing. Local reviews and decides any successor. Agentgateway candidate tests, ECC, new repos, provider/live, public and deployment remain parked. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=NONE; NEXT_ACTION_CLASS=PROGRAM_TERMINAL_ACCOUNTED; CURRENT_TRANCHE_ACTION=CLOSED_PASS_BOUNDED; NEXT_STEP=AWAIT_OPERATOR_SELECTION_FOR_ANY_NEW_REPOSITORY_OR_BACKLOG_ACTION; EXPANSION_ALLOWED=false. The exact 52-record reconciliation closes with 52 demand-gated deferred rows, zero unresolved blockers and zero current runtime candidates. QM and DeepSeek Harness are TERMINAL_ACCEPTED; Agentgateway is TERMINAL_DEFERRED_WITH_TRIGGER. All currently eligible bounded conversions remain on real CVF owners/consumers; deferred knowledge has explicit reopen proof/action and is not represented as runtime. ECC, new repos, provider/live, public and deployment remain parked. Latest closed LHW wave remains LHW24.",
   "mfrpFingerprintT1Closure20260912": "MFRP-FINGERPRINT-T1 CLOSED_PASS_BOUNDED material 465f1a831528345079b7f3adc7a2d4268817261c; closure base 9abb0bdfe2123bccd5749cd0f90148d44cbe0424. Seventeen material paths include worker implementation, authorized map/two consumer tests, completion and paired status conversion. 300/300 tests, pre-commit 89/89 PASS; all size limits pass without exemptions. Material post-commit P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Completion: docs/reviews/CVF_MFRP_FINGERPRINT_T1_COMPLETION_2026-09-11.md. Continuity remains separate. Next tranche is three-repository domain-pilot initial-intake packet preparation, not source execution or live proof.",
   "domainPilotInitialIntakeClosure20260912": "DOMAIN-PILOT-INITIAL-INTAKE is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED at material commit b1b3794a28b0078b01c032e59f16a1fb018ebd1e. Exact worker paths: .private_reference/source_mirrors/INDEX.md, docs/audits/CVF_DOMAIN_PILOT_INITIAL_INTAKE_2026-09-12.json, and docs/reviews/CVF_DOMAIN_PILOT_INITIAL_INTAKE_WORKER_RETURN_2026-09-12.md. Worker pre-implementation passed 57/57; reviewer-fast passed 68/68; material pre-commit passed 89/89. Reviewer corrected one evidence-integrity cluster: 10-row ledger reconciliation, three canonical manifest SHA-256 values, correct Git blob-OID versus content-SHA-256 labels, dispatch anchors, DSH prerelease classification, and tracked-diff evidence. Agentgateway, QM and DeepSeek Harness remain pinned advisory sources; six candidates are PROMISING_FOR_SELECTED_REVIEW or lower and no absorption, implementation, provider/live, public-sync or deployment was authorized.",
   "domainPilotSelectedReviewDecision20260912": "External pattern review accepted bounded at b177226d94a23d00112d4b7f4644a4c994e23031; CONDITIONAL_METHOD_REUSE_APPROVED. External stage finished, but the three-source Local absorption program remains active and all three source states are INCOMPLETE. Machine repair af137b631 rejects cross-batch transition before terminal accounting or an operator scope decision. Next is independent QM runtime/use-case recovery inside the active program; no stopped-chain reopen and no unrelated backlog admission.",
@@ -16620,27 +16620,28 @@
   "activeExternalAbsorptionProgram": {
     "schemaVersion": "cvf.externalAbsorptionProgramContinuity.v1",
     "programId": "DOMAIN-PILOT-THREE-REPO-2026-09",
-    "status": "LOCAL_RUNTIME_VALUE_RECOVERY",
+    "status": "TERMINAL_ACCOUNTED",
     "sourceIds": [
       "agentgateway__agentgateway",
       "yc-software__qm",
       "deepseek-ai__deepseek-harness"
     ],
     "sourceStates": {
-      "agentgateway__agentgateway": "INCOMPLETE",
-      "yc-software__qm": "INCOMPLETE",
+      "agentgateway__agentgateway": "TERMINAL_DEFERRED_WITH_TRIGGER",
+      "yc-software__qm": "TERMINAL_ACCEPTED",
       "deepseek-ai__deepseek-harness": "TERMINAL_ACCEPTED"
     },
-    "nextSourceId": "yc-software__qm",
-    "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
+    "nextSourceId": null,
+    "nextActionClass": "PROGRAM_TERMINAL_ACCOUNTED",
     "expansionAllowed": false,
-    "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
+    "exitDisposition": "TERMINAL_ACCOUNTING_ACCEPTED",
     "exitEvidence": [
       "docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md",
       "docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_2026-09-15.md",
       "docs/reviews/CVF_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_COMPLETION_REVIEW_2026-09-15.md",
       "docs/baselines/CVF_GC018_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.md"
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.md",
+      "docs/reviews/CVF_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_COMPLETION_2026-09-15.md"
     ],
     "operatorScopeDecision": null,
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
@@ -16655,5 +16656,6 @@
   "qmOperationalRecoveryT1Dispatch20260915": "QM-OPERATIONAL-RECOVERY-T1 is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED after rework generation 1. Local accepted the exact nine worker paths plus the Local work-order status/completion review: one process-local replay CONTROL, one execute/QBS consumer EDGE, minimal Web module linkage, current generated catalog/GAP views, and one VALUE_PARKED_WITH_REOPEN_CONDITIONS redaction GAP. Completion review: docs/reviews/CVF_QM_OPERATIONAL_RECOVERY_T1_COMPLETION_REVIEW_2026-09-15.md. Material commit: b4cec6e0fb749fc2ec0363ef3b3e2ba99f1b486e. Focused worker tests passed 22/22; reviewer-fast passed 68/68. Runtime, schemas and checkers remained unchanged; provider/live/public/deployment calls and invented redaction consumers remained forbidden.",
   "dshCodeSimplificationApplicationT1Dispatch20260915": "DSH-CODE-SIMPLIFICATION-APPLICATION-T1 is DISPATCH_READY at material bc26c666ba9c4b9dbbc8ef96b09d640fe0e9c4c1. The exact seven worker paths consolidate duplicated Alibaba, DeepSeek, and OpenAI API-key environment lookup behind one pure helper while preserving all current exports, aliases, precedence, trimming, source-name and configured-state behavior. Dispatcher package load returned packageBodyDisposition=LOADED with usage receipt sha256:e50a889ad8cadc238e5a6986c879641a333b0a3888c8e6f8493796b7a69a76ac and body hash sha256:481e0e4f5d52ecad945e8a7bb3d1246940686a088e080a30dd93cc0e4cf1f7b1. Shared-workspace execution is INTERNAL_AGENT; worker must not commit; Local owns final review.",
   "dshCodeSimplificationApplicationT1Closure20260915": "DSH-CODE-SIMPLIFICATION-APPLICATION-T1 is CLOSED_PASS_BOUNDED at material d3b21c4e94bb484f00217f6320ad5d6c8353d46e after REWORK GENERATION 1. One ordered provider-key traversal now serves Alibaba, DeepSeek, and OpenAI adapters; focused evidence is 8/8 before, 22/22 generation 0, 23/23 generation 1, with TypeScript PASS and reviewer-fast 68/68. The ACTIVE simplification package has real task/body/action/consumer evidence, and Local review-quality application found positive and negative findings. No new catalog projection is required because the refactor stays under the existing Web Agent Platform owner. Zero provider/live calls. Next is Local authoring for semantic-group reconciliation of the 52 deferred records; no worker lane is released yet.",
-  "threeRepoDeferredSemanticReconciliationT1Dispatch20260915": "THREE-REPO-DEFERRED-RECONCILIATION-T1 is DISPATCH_READY at material 7573d804f8f185ecfc244eb56728a80727af4517. It reconciles exactly 52 retained records (42 QM, 7 Agentgateway, 3 DSH) into one machine-readable ledger and one worker return, with at most five strict conversion candidates and zero implementation. Pre-dispatch passed 82/82. Shared-workspace worker is INTERNAL_AGENT, must not commit, and owns exactly the two output paths named by the work order. Local is the independent reviewer/closer and final private-CVF decision owner; external research is closed."
+  "threeRepoDeferredSemanticReconciliationT1Dispatch20260915": "THREE-REPO-DEFERRED-RECONCILIATION-T1 is DISPATCH_READY at material 7573d804f8f185ecfc244eb56728a80727af4517. It reconciles exactly 52 retained records (42 QM, 7 Agentgateway, 3 DSH) into one machine-readable ledger and one worker return, with at most five strict conversion candidates and zero implementation. Pre-dispatch passed 82/82. Shared-workspace worker is INTERNAL_AGENT, must not commit, and owns exactly the two output paths named by the work order. Local is the independent reviewer/closer and final private-CVF decision owner; external research is closed.",
+  "threeRepoDeferredSemanticReconciliationT1Closure20260915": "THREE-REPO-DEFERRED-RECONCILIATION-T1 is CLOSED_PASS_BOUNDED after Local review and bounded correction. The machine ledger reconciles exactly 52 records (42 QM, 7 Agentgateway, 3 DSH) into 19 semantic groups, all RETAIN_DEFERRED_WITH_TRIGGER, with zero unresolved blockers and zero current native-conversion candidates. Every row records current owner or bounded absence, exact-mechanism consumer or absence, outcome, failure behavior, overlap and reopen proof/action. The three-repository program is TERMINAL_ACCOUNTED; no runtime, provider/live, public, deployment or new-repository authority is opened."
 }
