@@ -1,18 +1,19 @@
 # Three-Repository Pilot Final Assessment And Recovery Decision
 
 Memory class: FULL_RECORD
-Status: FINAL_ASSESSMENT_IMPLEMENTATION_OPEN
+Status: FINAL_ASSESSMENT_COMPLETE
 docType: review
 Date: 2026-09-15
 Decision owner: Local orchestrator/reviewer
 
 ## Purpose
 
-Finalize the coordination pilot assessment, park the returned ECC intake,
-and restore the three-source program to operational value recovery. This is
-the final method assessment, not an absorption completion certificate or an
-implementation work order. The operator requires usable CVF capability before
-moving to another repository; terminal accounting alone does not satisfy it.
+Finalize the coordination pilot assessment, park the returned ECC intake, and
+record the subsequent bounded operational recovery and program exit. This is
+not an implementation work order. The final closure below distinguishes usable
+CVF-native conversions from demand-gated knowledge; terminal accounting alone
+did not satisfy the exit until current owner, consumer and failure evidence was
+reconciled.
 
 ## Target / Source
 
@@ -38,6 +39,8 @@ Retained evidence owners:
 - `docs/reviews/CVF_DSH_WRA_R1_WHOLE_REPOSITORY_ABSORPTION_AND_RUNTIME_REALIZATION_COMPLETION_2026-08-30.md`
 - `docs/reviews/CVF_DSH_UC01_TRACK_B_CONSUMER_EVIDENCE_COMPLETION_REVIEW_2026-09-13.md`
 - `docs/reviews/CVF_DSH_CODE_REVIEW_QUALITY_T1_COMPLETION_REVIEW_2026-09-14.md`
+- `docs/audits/CVF_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.json`
+- `docs/reviews/CVF_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_COMPLETION_2026-09-15.md`
 
 ECC review inputs are the paired work order and its two pending worker outputs:
 `docs/work_orders/CVF_AGENT_WORK_ORDER_ECC_ARCH_ABS_009_T0_2026-09-15.md`,
@@ -157,18 +160,57 @@ must name the decision it can change; stop when that question is answered.
 
 ## Decision
 
-Reopen the existing program as LOCAL_RUNTIME_VALUE_RECOVERY, with all three
-source states INCOMPLETE for this stronger operational exit. Historical
-accepted code, evidence and rejection decisions are preserved; reopening is
-not a rollback or an assertion that all old decisions were incorrect.
-Keep expansionAllowed=false. ECC and every new repository remain parked.
+Final disposition: `CLOSED_PASS_BOUNDED`. The temporary
+`LOCAL_RUNTIME_VALUE_RECOVERY` phase is complete. Historical accepted code,
+evidence and rejection decisions remain preserved; the recovery did not
+reinterpret every source pattern as implementation work.
 
-The final pilot assessment is complete as an assessment. The three-repository
-absorption is ABSORPTION_NOT_COMPLETE. Do not close it with this document.
+The 52 retained records now have one current-CVF semantic reconciliation:
+52 are `RETAIN_DEFERRED_WITH_TRIGGER`, zero are current native-conversion
+candidates, and zero remain unresolved blockers. Each deferred row names its
+current owner or bounded absence, exact-mechanism consumer result, outcome,
+failure behavior, overlap, and reopen proof/action. Therefore no currently
+eligible runtime value remains stranded only in prose.
+
+Program exit is `TERMINAL_ACCOUNTED_DEMAND_GATED`. QM and DeepSeek Harness are
+`TERMINAL_ACCEPTED`; Agentgateway is
+`TERMINAL_DEFERRED_WITH_TRIGGER`. `expansionAllowed=false` remains in force:
+ECC and every new repository stay parked until the operator selects a new
+bounded source/program action.
 
 ## Risk / Corrective Action
 
-Execute one in-program recovery sequence; do not commission another broad scan:
+The in-program recovery sequence completed without commissioning another broad
+scan:
+
+1. QM: SATISFIED_BOUNDED. The redaction consumer/authority seam is truthfully
+   parked as no-current-consumer instead of being activated artificially; the
+   replay mechanism has current owner/consumer/catalog evidence. The prior rule
+   remains: do not source known values from ambient environment, CLI flags,
+   MCP input or persistence merely to manufacture activation.
+2. DSH: SATISFIED_BOUNDED on 2026-09-15. The simplification package selected
+   and guided a real behavior-preserving provider-key refactor with retained
+   body identity, before/after tests and failure boundaries. The review-quality
+   package produced positive and negative findings across the QM and DSH Local
+   reviews.
+3. Deferred reconciliation: SATISFIED_BOUNDED. All 52 decisions are grouped
+   and checked against current private-CVF owner, exact-mechanism consumer and
+   failure evidence. No strict conversion candidate exists at the captured
+   execution base; every retained item has a concrete reopen condition.
+4. Agentgateway: SATISFIED_BY_CURRENT_EVIDENCE. Policy composition, identity,
+   MCP lifecycle, localhost protection and output-guardrail deltas were tested
+   against actual CVF owners/consumers at the decision-evidence level. None has
+   a named current exact-mechanism consumer; no network gateway or webhook was
+   invented.
+5. Projection: SATISFIED_BOUNDED. Accepted implementations remain projected
+   through their existing system-chain/catalog owners. Deferred mechanisms are
+   not projected as runtime capabilities because doing so would create false
+   operational value.
+6. Final exit: SATISFIED_BOUNDED. Accepted value has integration/use evidence;
+   deferred value has source-backed demand triggers; rejected/duplicate/value-
+   absent decisions retain reasons. No unresolved current-value blocker remains.
+
+The earlier open-phase instructions are retained below as historical rationale:
 
 1. QM: resolve the redaction consumer/authority seam first and correct the
    owner mapping. The existing contract expressly forbids sourcing known
@@ -304,6 +346,8 @@ Operator authorization: on 2026-09-15 the operator ordered ECC review and park,
 final pilot assessment using existing roles/processes, and completion of the
 three repositories before moving to another source. Authorized continuity
 scope is limited to that decision and preservation of prior authority ceilings.
+Authorized guard-maintenance scope: terminal three-repository closure
+continuity and generated active-session projection only.
 
 Protected paths:
 
@@ -312,6 +356,7 @@ Protected paths:
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/threeRepoDeferredSemanticReconciliationT1Closure20260915.json`
 - `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`

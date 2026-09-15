@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: THREE-REPO-DEFERRED-RECONCILIATION-T1
 
@@ -606,7 +606,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | MULTI_AGENT_SINGLE_ROLE |
 | rolePattern | one INTERNAL_AGENT worker followed by Local reviewer/closer |
 | phase | WORKER_EXECUTION_THEN_LOCAL_REVIEW |
-| baseHeadFor(phase) | dispatchBaseHead=26221c78cd8a4541ca3b8889e993b1ebebeb234c; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=REVIEWER_TO_SET |
+| baseHeadFor(phase) | dispatchBaseHead=26221c78cd8a4541ca3b8889e993b1ebebeb234c; executionBaseHead=4042e3128d49f040f7fd14891088526f803f319f; closureBaseHead=4042e3128d49f040f7fd14891088526f803f319f |
 | changedSetScope(phase) | worker exactly two output paths; Local closure paths separately |
 | traceScope(phase, actor) | worker records all reads/commands and exact two-path delta; Local records review/commit/continuity |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT |
@@ -727,6 +727,28 @@ git status --short
 This work order authorizes exactly two worker outputs and no implementation.
 It does not authorize edits to input ledgers, source mirrors, runtime/tests,
 catalog/GAP owners, continuity, providers, network, public sync or deployment.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_COMPLETION_2026-09-15.md` | `ACCEPT_BOUNDED_RELEASE` | PASS |
+| Roadmap state | `docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md` | recovery complete; terminal-accounted demand-gated exit | PASS |
+| Registry JSON | `docs/audits/CVF_THREE_REPO_DEFERRED_SEMANTIC_RECONCILIATION_T1_2026-09-15.json` | exact 52-row terminal ledger | PASS |
+| Registry Markdown | worker return and completion review | Local-reviewed final decision | PASS |
+| External evidence digest | repo-local terminal source accountings | no new external evidence | N/A with reason: no external invocation in this tranche |
+| System loop interlock | ledger trigger fields | future admission requires exact consumer/proof/rollback | PASS |
+| Session continuity | active continuity sources | terminal program exit projected after material commit | N/A with reason: dedicated continuity phase follows |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Corpus identity | exactly 52 unique source-qualified records | 42 QM + 7 Agentgateway + 3 DSH; 52 unique keys | PASS |
+| Current evidence | owner, exact consumer/absence, outcome, failure, overlap and action per row | all required fields present for 52/52 records | PASS |
+| Terminal routing | one allowed disposition and actionable trigger per retained row | 52 demand-gated deferred; zero unresolved; zero candidates | PASS |
+| Boundary | no worker commit, implementation or external effect | exact two worker outputs; Local-only closure package; zero provider/live/public/deploy action | PASS |
 
 ## Public Export Disposition
 
