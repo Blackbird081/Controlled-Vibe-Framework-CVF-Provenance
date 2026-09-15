@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute DSH-CODE-REVIEW-QUALITY-T1 under the committed no-commit worker packet; parked checkpoint=DSH-UC-03 source-code prose trigger, Agentgateway triggers, provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_terminal_accounted`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=Local review of the verified source backlog for one non-duplicate bounded lane; parked checkpoint=DSH-001, DSH-005, DSH-UC-03, Agentgateway triggers, provider/live/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_local_runtime_recovery`
-Current mode: `multi_repo_absorption_local_runtime_recovery`; previous mode marker: `external_local_absorption_pilot_pattern_relay`
+Current mode marker: `multi_repo_absorption_terminal_accounted`
+Current mode: `multi_repo_absorption_terminal_accounted`; previous mode marker: `multi_repo_absorption_local_runtime_recovery`
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=deepseek-ai__deepseek-harness; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; NEXT_STEP=COMPLETE_SOURCE_TERMINAL_ACCOUNTING; EXPANSION_ALLOWED=false. DSH-CODE-REVIEW-QUALITY-T1 is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED in docs/reviews/CVF_DSH_CODE_REVIEW_QUALITY_T1_COMPLETION_REVIEW_2026-09-14.md; material is committed at 4be990ffce7fda1e559e4dcc9b5d660a2560fc0b. Local accepted the five-axis procedure, DeepSeek enforcement-path/alternate-caller guidance, MIT attribution correction and loader receipt after rework generation 1. Local must next reconcile DeepSeek Harness terminal source accounting from existing ledgers and the accepted material result. DSH-UC-03 remains DEFERRED_WITH_TRIGGER until a named source-code prose/comment-quality consumer tranche exists. QM remains TERMINAL_ACCEPTED; Agentgateway remains TERMINAL_DEFERRED_WITH_TRIGGER; DeepSeek Harness remains INCOMPLETE until terminal accounting closes. Provider/live, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_local_runtime_recovery`. QM-RUNTIME-VALUE-R1 is accepted bounded at `c3b38dffda7f00778803d2c976926064d8f86b15`; the original dispatch at `089c5c9ceb7489c50942f3ad0d3fa6f383207374` is historical. It retains static exact-pin recovery for auth, identity, credentials and sandbox. Historical `EARA-AGW-T1` remains bounded and does not close Agentgateway as a repository. External Web agents remain research/advisory only. Local must review and continue remaining QM, Agentgateway and DeepSeek Harness accounting before another repo package. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=SELECT_NEXT_BOUNDED_LANE; NEXT_STEP=LOCAL_REVIEW_VERIFIED_SOURCE_BACKLOG; EXPANSION_ALLOWED=false. The three-repository program is TERMINAL_ACCOUNTED: QM is TERMINAL_ACCEPTED, Agentgateway is TERMINAL_DEFERRED_WITH_TRIGGER, and DeepSeek Harness is TERMINAL_ACCEPTED at material commit 84eefb02c38533369ecd83bbfe7c369cf5d81770. Local must next evaluate the already-verified source backlog and conditional-reopen index for one highest-value non-duplicate bounded lane before any baseline, work order, or Claude dispatch. No successor source or program is automatically authorized. DSH-001, DSH-005, DSH-UC-03, Agentgateway triggers, provider/live, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_terminal_accounted`. `DOMAIN-PILOT-THREE-REPO-2026-09` is terminal: QM and DeepSeek Harness are `TERMINAL_ACCEPTED`; Agentgateway is `TERMINAL_DEFERRED_WITH_TRIGGER`. External Web agents remain research/advisory only. Local must review the already-verified source backlog and select one non-duplicate bounded lane before another baseline, work order, or Claude dispatch. No successor source or program is automatically authorized. RABA implementation, DARA-T5, provider/live execution, actual process interception, P5, P6, and production deployment remain blocked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

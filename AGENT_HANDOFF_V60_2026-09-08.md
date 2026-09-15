@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `4be990ffce7fda1e559e4dcc9b5d660a2560fc0b`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `84eefb02c38533369ecd83bbfe7c369cf5d81770`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Closure authority HEAD recorded for this handoff: `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`). This truthfully known parent is used by the dedicated handoff-sync-only commit.
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -13,7 +13,7 @@ Status: ACTIVE
 - Repository: private provenance SOT on `main`.
 - Remote tracking branch: `origin/main`; derive its exact SHA live when needed.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `multi_repo_absorption_local_runtime_recovery`.
+- Current mode: `multi_repo_absorption_terminal_accounted`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -23,11 +23,11 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute DSH-CODE-REVIEW-QUALITY-T1 under the committed no-commit worker packet; role=Local orchestrator/reviewer; phase=worker implementation then Local review; decision owner=Local; parked checkpoint=DSH-UC-03 source-code prose trigger, Agentgateway triggers, provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_terminal_accounted`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=Local review of the verified source backlog for one non-duplicate bounded lane; role=Local orchestrator/reviewer; phase=terminal program accounting then successor selection; decision owner=Local; parked checkpoint=DSH-001, DSH-005, DSH-UC-03, Agentgateway triggers, provider/live/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_local_runtime_recovery`
+`multi_repo_absorption_terminal_accounted`
 
 ## Purpose
 
@@ -109,7 +109,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=deepseek-ai__deepseek-harness; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; NEXT_STEP=COMPLETE_SOURCE_TERMINAL_ACCOUNTING; EXPANSION_ALLOWED=false. DSH-CODE-REVIEW-QUALITY-T1 is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED in docs/reviews/CVF_DSH_CODE_REVIEW_QUALITY_T1_COMPLETION_REVIEW_2026-09-14.md; material is committed at 4be990ffce7fda1e559e4dcc9b5d660a2560fc0b. Local accepted the five-axis procedure, DeepSeek enforcement-path/alternate-caller guidance, MIT attribution correction and loader receipt after rework generation 1. Local must next reconcile DeepSeek Harness terminal source accounting from existing ledgers and the accepted material result. DSH-UC-03 remains DEFERRED_WITH_TRIGGER until a named source-code prose/comment-quality consumer tranche exists. QM remains TERMINAL_ACCEPTED; Agentgateway remains TERMINAL_DEFERRED_WITH_TRIGGER; DeepSeek Harness remains INCOMPLETE until terminal accounting closes. Provider/live, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=SELECT_NEXT_BOUNDED_LANE; NEXT_STEP=LOCAL_REVIEW_VERIFIED_SOURCE_BACKLOG; EXPANSION_ALLOWED=false. The three-repository program is TERMINAL_ACCOUNTED: QM is TERMINAL_ACCEPTED, Agentgateway is TERMINAL_DEFERRED_WITH_TRIGGER, and DeepSeek Harness is TERMINAL_ACCEPTED at material commit 84eefb02c38533369ecd83bbfe7c369cf5d81770. Local must next evaluate the already-verified source backlog and conditional-reopen index for one highest-value non-duplicate bounded lane before any baseline, work order, or Claude dispatch. No successor source or program is automatically authorized. DSH-001, DSH-005, DSH-UC-03, Agentgateway triggers, provider/live, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -124,7 +124,7 @@ PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=deepseek-ai__deepseek
 ## Active Boundary
 
 - MFRP-FINGERPRINT-T1 is materially closed; worker lane released. TPGR T1 remains closed.
-  Next: internal worker executes DSH-CODE-REVIEW-QUALITY-T1 from the committed packet, returns COMPLETE_PENDING_REVIEW without commit, then Local reviews and completes DeepSeek terminal accounting.
+  The bounded three-repository program is `TERMINAL_ACCOUNTED`: QM and DeepSeek Harness are `TERMINAL_ACCEPTED`; Agentgateway is `TERMINAL_DEFERRED_WITH_TRIGGER`. No worker lane is open. Local next reviews the verified source backlog before issuing any successor packet.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
 - Manual relay is content-neutral transport under `cvf.cross-workspace-evidence-relay@1.0.0`; remote findings remain advisory until Local Agent verification and final technical disposition. Once Local issues a work order, execution is internal shared-workspace work and the relay loop ends.
@@ -144,6 +144,8 @@ Public catalog paths: N/A; no catalog entry was included in the bounded concept 
 Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
 ## Core Guard Self-Protection Authorization
 
+Operator authorization: continue Local orchestration through DeepSeek source terminal accounting and the bounded three-repository program exit. Project material `84eefb02c38533369ecd83bbfe7c369cf5d81770`, the three terminal source states, terminal program disposition, mode, and next Local backlog-review move through existing continuity. No successor source, implementation, provider/live, public, deployment, or production authority is opened.
+
 Operator authorization: continue Local orchestration and delegate implementation to Claude after DSH dispatch material `266f814e3f2b9b7df208384638003f0bf2cef025`. Authorized guard-maintenance scope: continuity only. Protected paths: `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/dshCodeReviewQualityT1Dispatch20260914.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 Rollback boundary: revert only this seven-path projection; preserve material `266f814e3f2b9b7df208384638003f0bf2cef025` and earlier evidence. No checker, hook, external invocation, public, deployment or unrelated source change.
 Operator authorization: finish the foundation and return to R4 to evaluate improvement. Synchronize accepted material 2719dd2b1, current authority and next move through the six existing continuity paths listed below. This releases bounded evidence repair only; no upstream implementation or program closure. Operator additionally requires agents to recover existing external/local roles without reminders: authorized startup routing and existing carrier-checker regression scope is `AGENTS.md`, `CLAUDE.md`, `governance/compat/check_agent_instruction_carriers.py`, `governance/compat/test_check_agent_instruction_carriers.py`, and this handoff. No role-policy change or new hook.
@@ -151,11 +153,7 @@ Operator authorization: project active program continuity repair af137b631, the 
 
 Current rework projection is authorized by the original exact Local continuity scope and standing autonomous reviewer mandate. Material 5bb2314d89de473c3d31c6764ede7ef62d5af2d6; record F1-F5 evidence rework, current authority and multi-repository continuation under docs/baselines/CVF_GC018_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md.
 
-Authorized guard-maintenance scope: project the accepted P4-C1 repair dispatch
-`8347be04a0216479f754e3eee3ca71f15a149a8b`, its current authority hashes,
-mode, and corrected next move into existing active continuity; record the
-operator-approved safe provenance-push route in its canonical boundary owner
-and register that binding dated reference as a permanent active window. Operator additionally authorized TPGR T1 reviewer closure and its separate mode, hash and next-move projection; implementation 3de0ba07c and historical gate failures remain preserved. Operator also authorized MFRP-FINGERPRINT-T1 dispatch and its separate baseline/work-order hash, mode and next-move projection.
+Authorized guard-maintenance scope: project accepted P4-C1 repair dispatch `8347be04a0216479f754e3eee3ca71f15a149a8b`, authority hashes, mode, next move, safe provenance-push binding, TPGR T1 reviewer closure, and MFRP-FINGERPRINT-T1 dispatch; implementation 3de0ba07c and historical gate failures remain preserved.
 
 Protected paths:
 
@@ -179,6 +177,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/mfrpFingerprintT1Closure20260912.json`
 - `CVF_SESSION/state/entries/domainPilotInitialIntakeClosure20260912.json`
 - `CVF_SESSION/state/entries/domainPilotSelectedReviewDecision20260912.json`
+- `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`
+- `CVF_SESSION/state/entries/deepseekHarnessSourceTerminalAccounting20260915.json`
 - `docs/reference/CVF_2026_09_09_AUDIT_AND_REMEDIATION_SEQUENCE.md`
 - `docs/reference/CVF_SEVEN_STEP_SHARED_WORKSPACE_AGENT_RELATIONSHIP_MODEL_2026-09-09.md`
 - `CVF_SESSION/state/entries/mfrpP4C1ReceiptRangeRework20260909.json`

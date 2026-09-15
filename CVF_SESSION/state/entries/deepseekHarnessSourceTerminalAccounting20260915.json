@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2834,
+  "stateKey": "deepseekHarnessSourceTerminalAccounting20260915",
+  "value": "DeepSeek Harness is TERMINAL_ACCEPTED for DOMAIN-PILOT-THREE-REPO-2026-09 at material commit 84eefb02c38533369ecd83bbfe7c369cf5d81770. Local reconciled seven disjoint source-value decisions to four ADAPTED_ACCEPTED_BOUNDED and three DEFERRED_WITH_TRIGGER. DSH-001 model-context lineage, DSH-005 reversible registration lifecycle, and DSH-UC-03 source-code prose quality have no concrete unsatisfied current consumer and retain their conjunctive reopen triggers. No DeepSeek work order or worker dispatch opens. QM is TERMINAL_ACCEPTED and Agentgateway is TERMINAL_DEFERRED_WITH_TRIGGER, so the bounded three-repository program is TERMINAL_ACCOUNTED. No provider/live, network, public-sync, deployment or production effect occurred."
+}

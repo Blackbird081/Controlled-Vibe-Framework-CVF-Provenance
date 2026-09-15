@@ -4,7 +4,7 @@
   "value": {
     "schemaVersion": "cvf.externalAbsorptionProgramContinuity.v1",
     "programId": "DOMAIN-PILOT-THREE-REPO-2026-09",
-    "status": "LOCAL_RUNTIME_VALUE_RECOVERY",
+    "status": "TERMINAL_ACCOUNTED",
     "sourceIds": [
       "agentgateway__agentgateway",
       "yc-software__qm",
@@ -13,13 +13,17 @@
     "sourceStates": {
       "agentgateway__agentgateway": "TERMINAL_DEFERRED_WITH_TRIGGER",
       "yc-software__qm": "TERMINAL_ACCEPTED",
-      "deepseek-ai__deepseek-harness": "INCOMPLETE"
+      "deepseek-ai__deepseek-harness": "TERMINAL_ACCEPTED"
     },
-    "nextSourceId": "deepseek-ai__deepseek-harness",
-    "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
+    "nextSourceId": "none",
+    "nextActionClass": "TERMINAL_ACCOUNTING_COMPLETE",
     "expansionAllowed": false,
-    "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
-    "exitEvidence": [],
+    "exitDisposition": "TERMINAL_ACCOUNTING_ACCEPTED",
+    "exitEvidence": [
+      "docs/reviews/CVF_QM_SOURCE_TERMINAL_ACCOUNTING_2026-09-14.md",
+      "docs/reviews/CVF_AGENTGATEWAY_SOURCE_TERMINAL_ACCOUNTING_2026-09-14.md",
+      "docs/reviews/CVF_DEEPSEEK_HARNESS_SOURCE_TERMINAL_ACCOUNTING_2026-09-15.md"
+    ],
     "operatorScopeDecision": null,
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
   }
