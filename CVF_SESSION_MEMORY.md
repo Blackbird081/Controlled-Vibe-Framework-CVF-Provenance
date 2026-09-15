@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=Local selects a real bounded code-simplification task and authors the next internal packet; role=Local orchestrator/dispatcher; phase=roadmap recovery packet authoring; decision owner=Local; parked checkpoint=worker execution until dispatch continuity, other 52 deferred records/ECC/new repos/provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_local_runtime_recovery`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=execute committed DSH-CODE-SIMPLIFICATION-APPLICATION-T1 packet; role=INTERNAL_AGENT worker, then Local reviewer/closer; phase=bounded runtime-value recovery implementation; decision owner=Local; parked checkpoint=other 52 deferred records/Agentgateway/ECC/new repos/provider/live/public/deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `multi_repo_absorption_local_runtime_recovery`; previous mode mark
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=deepseek-ai__deepseek-harness; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=AUTHOR_NEXT_BOUNDED_INTERNAL_PACKET; NEXT_STEP=PROVE_CODE_SIMPLIFICATION_PACKAGE_APPLICATION; EXPANSION_ALLOWED=false. QM-OPERATIONAL-RECOVERY-T1 is CLOSED_PASS_BOUNDED at material `b4cec6e0fb749fc2ec0363ef3b3e2ba99f1b486e`: replay is projected as a process-local control/two-consumer edge and redaction is a parked GAP. DSH review-quality has real application evidence in the accepted completion review. Local must next select one real bounded code-simplification task and author its GC-018/work order requiring package body identity, selection rationale, behavior-preserving before/after evidence, failure cases and focused tests. Do not execute a worker until that packet and dispatch continuity are committed. Other 52 deferred records, Agentgateway candidate tests, ECC/new repos/provider/live/public/deployment remain parked. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=deepseek-ai__deepseek-harness; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=EXECUTE_COMMITTED_INTERNAL_PACKET; NEXT_STEP=RUN_DSH_CODE_SIMPLIFICATION_APPLICATION_T1; EXPANSION_ALLOWED=false. DSH-CODE-SIMPLIFICATION-APPLICATION-T1 authority packet is committed at material bc26c666ba9c4b9dbbc8ef96b09d640fe0e9c4c1 and the continuity commit releases one INTERNAL_AGENT worker lane. Worker must capture executionBaseHead, load cvf-engineering-code-simplification with packageBodyDisposition=LOADED, preserve all provider adapter exports/aliases/behavior, change exactly seven worker-owned paths, prove before/after focused tests and TypeScript check, and return COMPLETE_PENDING_REVIEW without commit. Local owns final review and closure. Other 52 deferred records, Agentgateway candidate tests, ECC/new repos/provider/live/public/deployment remain parked. Latest closed LHW wave remains LHW24.
 Mode: `multi_repo_absorption_local_runtime_recovery`. External research for this tranche is closed; shared-workspace execution is INTERNAL_AGENT. Local remains the private-CVF verification and final decision owner.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

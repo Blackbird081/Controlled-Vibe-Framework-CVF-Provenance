@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - Encoding And GC-020 Closed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `b4cec6e0fb749fc2ec0363ef3b3e2ba99f1b486e`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `bc26c666ba9c4b9dbbc8ef96b09d640fe0e9c4c1`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Latest continuity correction parent recorded for this handoff: `2a08b1d1d805e340d3b27d00c63f60a3423366de`. Historical closure authority remains `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`).
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -90,7 +90,7 @@ Carry the operator-reopened three-source operational recovery. QM-OPERATIONAL-RE
 
 ## Current Authority
 
-Current authority remains `docs/baselines/CVF_GC018_QM_OPERATIONAL_RECOVERY_T1_2026-09-15.md` plus `docs/work_orders/CVF_AGENT_WORK_ORDER_QM_OPERATIONAL_RECOVERY_T1_2026-09-15.md`; Local accepted the result as `CLOSED_PASS_BOUNDED` in `docs/reviews/CVF_QM_OPERATIONAL_RECOVERY_T1_COMPLETION_REVIEW_2026-09-15.md` at material commit `b4cec6e0fb749fc2ec0363ef3b3e2ba99f1b486e`. No worker lane is currently released. ECC intake remains NOT_ACCEPTED_EVIDENCE_GAPS and PARKED.
+Current authority is `docs/baselines/CVF_GC018_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_2026-09-15.md` plus `docs/work_orders/CVF_AGENT_WORK_ORDER_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_2026-09-15.md`, committed at material `bc26c666ba9c4b9dbbc8ef96b09d640fe0e9c4c1`. One exact seven-path INTERNAL_AGENT worker lane is released by the paired continuity commit; worker must not commit and Local remains final reviewer/closer. ECC intake remains NOT_ACCEPTED_EVIDENCE_GAPS and PARKED.
 
 ## Closure Evidence
 
@@ -109,7 +109,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=deepseek-ai__deepseek-harness; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=AUTHOR_NEXT_BOUNDED_INTERNAL_PACKET; NEXT_STEP=PROVE_CODE_SIMPLIFICATION_PACKAGE_APPLICATION; EXPANSION_ALLOWED=false. QM-OPERATIONAL-RECOVERY-T1 is CLOSED_PASS_BOUNDED at material `b4cec6e0fb749fc2ec0363ef3b3e2ba99f1b486e`: replay is projected as a process-local control/two-consumer edge and redaction is a parked GAP. DSH review-quality has real application evidence in the accepted completion review. Local must next select one real bounded code-simplification task and author its GC-018/work order requiring package body identity, selection rationale, behavior-preserving before/after evidence, failure cases and focused tests. Do not execute a worker until that packet and dispatch continuity are committed. Other 52 deferred records, Agentgateway candidate tests, ECC/new repos/provider/live/public/deployment remain parked. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=deepseek-ai__deepseek-harness; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=EXECUTE_COMMITTED_INTERNAL_PACKET; NEXT_STEP=RUN_DSH_CODE_SIMPLIFICATION_APPLICATION_T1; EXPANSION_ALLOWED=false. DSH-CODE-SIMPLIFICATION-APPLICATION-T1 authority packet is committed at material bc26c666ba9c4b9dbbc8ef96b09d640fe0e9c4c1 and the continuity commit releases one INTERNAL_AGENT worker lane. Worker must capture executionBaseHead, load cvf-engineering-code-simplification with packageBodyDisposition=LOADED, preserve all provider adapter exports/aliases/behavior, change exactly seven worker-owned paths, prove before/after focused tests and TypeScript check, and return COMPLETE_PENDING_REVIEW without commit. Local owns final review and closure. Other 52 deferred records, Agentgateway candidate tests, ECC/new repos/provider/live/public/deployment remain parked. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -123,7 +123,7 @@ PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=deepseek-ai__deepseek
 
 ## Active Boundary
 
-- MFRP-FINGERPRINT-T1 is materially closed; TPGR T1 remains closed. The three-repository program is `LOCAL_RUNTIME_VALUE_RECOVERY`. QM-OPERATIONAL-RECOVERY-T1 is closed bounded and no worker lane is open; Local packet authoring for one real DSH simplification-package application is next. Prior source accounting alone is not usable-completion evidence. ECC and new repositories remain parked.
+- MFRP-FINGERPRINT-T1 is materially closed; TPGR T1 remains closed. The three-repository program is `LOCAL_RUNTIME_VALUE_RECOVERY`. QM-OPERATIONAL-RECOVERY-T1 is closed bounded; DSH-CODE-SIMPLIFICATION-APPLICATION-T1 is the active exact seven-path INTERNAL_AGENT lane. Prior source accounting alone is not usable-completion evidence. ECC and new repositories remain parked.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
 - Manual relay is content-neutral transport under `cvf.cross-workspace-evidence-relay@1.0.0`; remote findings remain advisory until Local Agent verification and final technical disposition. Once Local issues a work order, execution is internal shared-workspace work and the relay loop ends.
@@ -142,6 +142,7 @@ Public artifact paths: `README.md` and `docs/concepts/seven-step-shared-workspac
 Public catalog paths: N/A; no catalog entry was included in the bounded concept export.
 Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
 ## Core Guard Self-Protection Authorization
+Operator authorization: continue three-repository recovery and release DSH-CODE-SIMPLIFICATION-APPLICATION-T1 from material `bc26c666ba9c4b9dbbc8ef96b09d640fe0e9c4c1`. Authorized guard-maintenance scope: continuity only. Protected paths: `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/dshCodeSimplificationApplicationT1Dispatch20260915.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback boundary: revert only this projection and preserve material. No worker/checker/provider/live/public/deploy/stage/commit/push authority is added.
 
 Operator authorization: continue Local orchestration through DeepSeek source terminal accounting and the bounded three-repository program exit. Project material `84eefb02c38533369ecd83bbfe7c369cf5d81770`, the three terminal source states, terminal program disposition, mode, and next Local backlog-review move through existing continuity. No successor source, implementation, provider/live, public, deployment, or production authority is opened.
 
@@ -151,9 +152,7 @@ Operator authorization: finish the foundation and return to R4 to evaluate impro
 Operator authorization: project active program continuity repair af137b631, the exact three-source state and in-program QM next action; protected paths include `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json` and the existing continuity surfaces named by the hardening review. Project the returned external pattern review, selective method-reuse decision and prior relay state under docs/reviews/CVF_THREE_REPO_PATTERN_COMPARISON_LOCAL_REVIEW_2026-09-13.md and docs/reviews/CVF_EXTERNAL_LOCAL_COORDINATION_MACHINE_BINDING_2026-09-13.md; `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json` remains protected.
 Operator authorization: continue the agreed three-repository roadmap and release QM-OPERATIONAL-RECOVERY-T1 after dispatch material `af20dfe84b1cd398c7fd5f84742c74ea873e0d0b`. Authorized guard-maintenance scope is continuity only: `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/qmOperationalRecoveryT1Dispatch20260915.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback only this projection; preserve dispatch material and all earlier evidence. No worker implementation, checker/runtime mutation, external invocation, public sync or deployment is part of continuity.
 
-Current rework projection is authorized by the original exact Local continuity scope and standing autonomous reviewer mandate. Material 5bb2314d89de473c3d31c6764ede7ef62d5af2d6; record F1-F5 evidence rework, current authority and multi-repository continuation under docs/baselines/CVF_GC018_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md.
-
-Authorized guard-maintenance scope: project accepted P4-C1 repair dispatch `8347be04a0216479f754e3eee3ca71f15a149a8b`, authority hashes, mode, next move, safe provenance-push binding, TPGR T1 reviewer closure, and MFRP-FINGERPRINT-T1 dispatch; implementation 3de0ba07c and historical gate failures remain preserved.
+Current rework projection is authorized by the original exact Local continuity scope and standing autonomous reviewer mandate. Material 5bb2314d89de473c3d31c6764ede7ef62d5af2d6; record F1-F5 evidence rework, current authority and multi-repository continuation under docs/baselines/CVF_GC018_THREE_REPO_RECOVERY_EVIDENCE_REWORK_2026-09-13.md. Authorized guard-maintenance scope: project accepted P4-C1 repair dispatch `8347be04a0216479f754e3eee3ca71f15a149a8b`, authority hashes, mode, next move, safe provenance-push binding, TPGR T1 reviewer closure, and MFRP-FINGERPRINT-T1 dispatch; implementation 3de0ba07c and historical gate failures remain preserved.
 
 Protected paths:
 
