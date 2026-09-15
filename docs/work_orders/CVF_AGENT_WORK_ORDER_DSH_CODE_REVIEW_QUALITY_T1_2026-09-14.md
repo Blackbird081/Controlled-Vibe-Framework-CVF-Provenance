@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-14
 
@@ -49,7 +49,7 @@ changes uncommitted, and return `COMPLETE_PENDING_REVIEW` or
 
 executionBaseHead: WORKER_MUST_CAPTURE_AT_START
 
-closureBaseHead: NOT_EXECUTED_YET
+closureBaseHead: `efe0a65800a722fa40ba978f3f490bc734c32f24`
 
 ## Purpose
 
@@ -129,7 +129,7 @@ risk, external effects, or the five-path manifest.
 
 All other paths are outside worker ownership.
 
-## Forbidden Path Manifest
+## Worker Forbidden Path Boundary
 
 | Path | Reason |
 |---|---|
@@ -400,7 +400,7 @@ beforeStatusEvidence: clean worktree at HEAD `177c00f336b700c06d740315265b3993c9
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | Local dispatches/reviews; internal worker implements and returns pending evidence |
 | phase | pre-dispatch through worker-return |
-| baseHeadFor(phase) | dispatchBaseHead=177c00f336b700c06d740315265b3993c95817c6; executionBaseHead=WORKER_MUST_CAPTURE_AT_START; closureBaseHead=NOT_EXECUTED_YET |
+| baseHeadFor(phase) | dispatchBaseHead=177c00f336b700c06d740315265b3993c95817c6; executionBaseHead=efe0a65800a722fa40ba978f3f490bc734c32f24; closureBaseHead=efe0a65800a722fa40ba978f3f490bc734c32f24 |
 | changedSetScope(phase) | worker exact five paths; dispatcher paired baseline/work order |
 | traceScope(phase, actor) | package/provenance diff, generator and bounded gates; no runtime/provider trace |
 | commitOwner(phase) | Local; WORKER_MUST_NOT_COMMIT |
@@ -762,14 +762,23 @@ Claim Update: dispatch-ready bounded implementation, not completed adaptation.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `DISPATCH_READY` before worker; Local closes after review | PENDING |
-| Completion/reviewer artifact | `docs/reviews/CVF_DSH_CODE_REVIEW_QUALITY_T1_COMPLETION_REVIEW_2026-09-14.md` | Local-owned final disposition | PENDING |
+| Work order status | this file | `CLOSED_PASS_BOUNDED`; original dispatch preserved at `266f814e3f2b9b7df208384638003f0bf2cef025` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_DSH_CODE_REVIEW_QUALITY_T1_COMPLETION_REVIEW_2026-09-14.md` | Local `ACCEPT_BOUNDED_RELEASE` | PASS |
 | Roadmap state | N/A | active three-source program is governing boundary | N/A with reason |
-| Registry JSON | package registry entry | exact sourceArtifacts delta | PENDING |
-| Registry Markdown | N/A | no separate Markdown registry changes | N/A with reason |
-| External evidence digest | paired baseline | four source hashes and pins | PASS |
+| Registry JSON | `docs/reference/agent_system_skills/registry/entries/cvf-engineering-code-review-quality.json` | MIT license plus exact sourceArtifacts delta | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing GC-051 view retained; no corpus-registry state changes in this package amendment | PASS |
+| External evidence digest | paired baseline | SHA-256 `c761aa723a871d6fe5bfcd997b6e2a6100f1bba180396dbfc6b7b669ae5943db`; four selected source hashes and pins | PASS |
 | System loop interlock | N/A | advisory package only | N/A with reason |
-| Session continuity | authorized current-state sources | actual material SHA after Local acceptance | PENDING |
+| Session continuity | authorized current-state sources | dedicated post-material synchronization records the actual commit SHA | N/A with reason: follows this material closure |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Package body | loader-mediated body read | `packageBodyDisposition=LOADED` | PASS |
+| Usage receipt | deterministic receipt for current body/index | `sha256:07b3b59a727909d61978ddad77a14e0bfe00328462db68772cb5a32b9d4fd317` | PASS |
+| Body identity | current amended instruction body | `sha256:d7823de2f469809d34a8b26558f5adfc9a375226802ada66fb90338a0923daa1` | PASS |
+| Authority limit | body read only | no lifecycle, provider, public or production authority | PASS |
 
 ## Core Guard Self-Protection Authorization
 

@@ -42,6 +42,64 @@ Guide multi-axis code review across correctness, readability, architecture, secu
 | Outputs | bounded code-review guidance; five-axis review framework notes; severity classification discipline; recommended CVF owner-surface routing |
 | Acceptance evidence | AGSK-R3 worker return with package-root proposal evidence; AGSK-R5 eligibility audit; AGSK-R6 source-state update; runtime package-loader body-read smoke; certified metadata admission checker PASS; anatomy checker PASS |
 
+## Review Procedure
+
+This bounded procedure fulfills the five-axis outputs declared above. It is
+advisory guidance for a human or agent reviewer already authorized by an
+active governed work order; loading this body never grants edit, merge,
+commit, provider, public, or production authority (see CR6).
+
+1. Establish intent: read the exact base/head range, the allowed scope, and
+   the project's existing conventions before opening the diff.
+2. Inspect tests first, then enough surrounding implementation to understand
+   actual behavior; tests reveal intent and coverage gaps that the diff alone
+   does not show.
+3. Review across the five axes -- correctness, readability/simplicity,
+   architecture, security, and performance -- leading with correctness,
+   security, lifecycle, and any broken required behavior before style or
+   preference feedback. For the architecture axis, explicitly determine
+   whether a refactor reduces complexity or merely relocates it: count the
+   concepts a reader must hold before and after the change. When the count is
+   unchanged or a structural risk is present (added coupling, a moved but not
+   removed branch, a new indirection layer), name that risk and propose at
+   least one concrete structural remedy rather than a general "cleaner"
+   verdict -- for example, separating orchestration from business logic,
+   moving feature-specific logic to its canonical owning module, reusing an
+   existing canonical helper instead of a near-duplicate, collapsing
+   redundant branches into one clearer flow, introducing an explicit type
+   boundary so downstream branching disappears, or deleting a pass-through
+   wrapper that adds indirection without clarifying the API (see CR5).
+4. For an authorization or enforcement change, trace every denial branch to
+   the operation it protects, and exercise direct and alternate callers that
+   might bypass a schema, prompt, facade, wrapper, or listener-ordering layer.
+   A passing facade-level test is not sufficient when another caller can still
+   reach the protected operation directly (see CR1/CR2).
+5. Classify every finding as Critical, Required, Optional/Consider, Nit, or
+   FYI, and support each blocking finding with an exact path/symbol and its
+   concrete failure consequence rather than a general impression.
+6. Verify the verification story itself (what was run, what passed, what a
+   screenshot or manual check covered) and return one bounded verdict.
+   Package loading and this review grant no edit, merge, commit, provider,
+   public, or production authority beyond the active governed work order.
+
+### Enforcement-Path Tracing (Supplemental)
+
+For changes that add or modify authorization, permission, or denial logic,
+apply this supplemental check in addition to Step 4 above: do not accept a
+single enforcement point as sufficient coverage without confirming every
+caller actually converges on it. Concretely:
+
+- Follow each denial path forward to the exact operation it is meant to
+  prevent, not just to the point where a check returns a boolean.
+- Enumerate alternate entry points (a direct service call, an internal
+  helper, a second route, a differently ordered listener) that could reach
+  the same protected operation, and confirm each one is covered by the same
+  enforcement or an equivalent one.
+- Treat a route- or facade-level test that only exercises the primary caller
+  as incomplete evidence when a bypass-capable alternate caller exists (CR1);
+  when every caller is confirmed to converge on one enforcement point, record
+  the traced path as evidence rather than inventing a blocker (CR2).
+
 ## Risk And Authority
 
 | Field | Value |
@@ -138,9 +196,79 @@ body reads only. This does not make the package ACTIVE, does not add automatic
 resolver invocation, and does not authorize merge, commit, provider, public, or
 production actions.
 
+## Source Attribution
+
+| Source | Role | Pin | License |
+|---|---|---|---|
+| `addyosmani/agent-skills` `code-review-and-quality` | Primary source: five-axis review framework and review process | `aba7c4e9695c363e65cb59effe926c7f1d1abe3d` | MIT (full notice below) |
+| `deepseek-ai/deepseek-harness` `dsh-code-review` | Supplemental source: enforcement-path/alternate-caller bypass tracing only (Enforcement-Path Tracing section above) | `cd5ef8148158c3a752a658978873241fdf8e2bbc` | MIT (full notice below) |
+
+This package remains an Addy-derived primary adaptation; DeepSeek supplies one
+bounded supplemental concept and is not a co-primary or replacement source.
+Repository-specific DeepSeek commands, tooling, and policies (for example its
+`pnpm --silent run change-scope` invocation and its own repository AGENTS.md
+conventions) are excluded; only the source-independent enforcement-path
+concept is imported (CR7).
+
+### Addy Agent-Skills MIT Notice
+
+Verbatim from `.private_reference/source_mirrors/addyosmani__agent-skills/LICENSE`:
+
+```
+MIT License
+
+Copyright (c) 2025 Addy Osmani
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+### DeepSeek Harness MIT Notice
+
+Verbatim from `.private_reference/source_mirrors/deepseek-ai__deepseek-harness/LICENSE`:
+
+```
+MIT License
+
+Copyright (c) 2026 DeepSeek
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
 ## Claim Boundary
 
-This package root is an APPROVED CVF adaptation sourced from the upstream `code-review-and-quality` skill at pinned commit `aba7c4e9695c363e65cb59effe926c7f1d1abe3d`. It may be opened by the AGSK-R4 runtime package loader after AGSK-R6 lifecycle gates pass. It does not execute code reviews autonomously, trigger merges, implement a CLI/MCP adapter, or claim automatic invocation.
+This package root is an APPROVED CVF adaptation sourced primarily from the upstream `code-review-and-quality` skill at pinned commit `aba7c4e9695c363e65cb59effe926c7f1d1abe3d`, with one bounded supplemental enforcement-path concept adapted from `deepseek-ai/deepseek-harness` `dsh-code-review` at pinned commit `cd5ef8148158c3a752a658978873241fdf8e2bbc` (see Source Attribution). It may be opened by the AGSK-R4 runtime package loader after AGSK-R6 lifecycle gates pass. It does not execute code reviews autonomously, trigger merges, implement a CLI/MCP adapter, or claim automatic invocation.
 
 ## Public Export Disposition
 
