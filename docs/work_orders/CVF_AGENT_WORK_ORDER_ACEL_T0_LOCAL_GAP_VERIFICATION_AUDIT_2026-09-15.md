@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 ## Dispatch Prompt Envelope
 
@@ -14,9 +14,9 @@ Dispatch base head: `2b763134a5d4154bb6a767bfd97e02f13220f0ed`
 
 dispatchBaseHead: `2b763134a5d4154bb6a767bfd97e02f13220f0ed`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `6b8da380c56154323060a94179901b407d394f2a`
 
-closureBaseHead: `REVIEWER_CAPTURES_AFTER_WORKER_RETURN`
+closureBaseHead: `6b8da380c56154323060a94179901b407d394f2a`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -190,7 +190,7 @@ Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
 |---|---|---|---|---|---|
-| `INTERNAL_AGENT` | committed baseline/work order and shared repository | read/search plus exact three new outputs; no commit | source locators, JSON ledger, commands | local filesystem only | AUTHORIZED_AUDIT_PENDING_REVIEW |
+| `INTERNAL_AGENT` | committed baseline/work order and shared repository | read/search plus exact three new outputs; no commit | source locators, JSON ledger, commands | local filesystem only | CLOSED_ACCEPTED_BY_LOCAL_REVIEW |
 | `EXTERNAL_AGENT_CLI_MCP` | preserved Lab handoff | advisory input only; no private authority or implementation | exact SHA-256 | operator relay ended before internal execution | CONTRACT_ONLY |
 
 ## Source Verification Block
@@ -524,8 +524,8 @@ Semantic sampling status: REQUIRED_ALL_HIGH_VALUE_AND_NEGATIVE_GROUPS
 
 | sampleId | source section | source claim | disposition checked | adversarial challenge | verdict |
 |---|---|---|---|---|---|
-| ACEL-S1 | handoff G1-G6 | expected ADAPT/WATCH frontier | all six | search current behavior and mandatory paths, not expected vocabulary | PENDING_WORKER |
-| ACEL-S2 | handoff cross-cutting audits | information authority and continuity mostly exist | G5 plus owner map | distinguish docs from machine/runtime enforcement | PENDING_WORKER |
+| ACEL-S1 | handoff G1-G6 | expected ADAPT/WATCH frontier | all six | search current behavior and mandatory paths, not expected vocabulary | COMPLETE_ACCEPTED |
+| ACEL-S2 | handoff cross-cutting audits | information authority and continuity mostly exist | G5 plus owner map | distinguish docs from machine/runtime enforcement | COMPLETE_ACCEPTED |
 
 ## Finding-To-Governance Learning Disposition
 
@@ -691,14 +691,37 @@ reported bypasses before acceptance. Reviewer-fast and pre-commit are required.
 
 ## Closure Checklist
 
-- [ ] exact external-input hash and executionBaseHead recorded;
-- [ ] G1-G6 and G2/G3/G6 sub-findings reconcile;
-- [ ] current/historical/proposal evidence separated;
-- [ ] missing multi-repo provenance remains explicit;
-- [ ] worker return fast gate and focused assertions pass;
-- [ ] worker leaves HEAD unchanged and staging empty;
-- [ ] Local completion review accepts, reworks or blocks;
-- [ ] material and continuity commits remain separate.
+- [x] exact external-input hash and executionBaseHead recorded;
+- [x] G1-G6 and G2/G3/G6 sub-findings reconcile;
+- [x] current/historical/proposal evidence separated;
+- [x] missing multi-repo provenance remains explicit;
+- [x] worker return fast gate and focused assertions pass;
+- [x] worker leaves HEAD unchanged and staging empty;
+- [x] Local completion review accepts, reworks or blocks;
+- [x] material and continuity commits remain separate.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_COMPLETION_2026-09-15.md` | `ACCEPT_BOUNDED_RELEASE` | PASS |
+| Roadmap state | active ACEL absorption program | T0 audit accepted; successor separately governed | PASS |
+| Registry JSON | `docs/audits/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_EVIDENCE_T0_2026-09-15.json` | 14 claims, six gaps, 39 detailed mappings | PASS |
+| Registry Markdown | `docs/audits/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_2026-09-15.md` | accepted G1-G6 report | PASS |
+| External evidence digest | pinned external handoff | SHA-256 `e2180deefab71f1b5ba12d436d482d994d12724a8506481e6376f176affa817a` | PASS |
+| System loop interlock | existing owner routes | documentation-only `ADAPT`/`WATCH` decisions | N/A with reason: no runtime mutation in T0 |
+| Session continuity | active continuity sources | dedicated post-material synchronization | N/A with reason: follows material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| External input identity | pinned SHA-256 | `e2180deefab71f1b5ba12d436d482d994d12724a8506481e6376f176affa817a` | PASS |
+| Gap inventory | G1-G6 exactly once | six unique summary rows | PASS |
+| Detailed reconciliation | every G2/G3/G6 row claim-bound | 39/39 rows mapped | PASS |
+| Changed set | exact worker and Local closure paths | manifest match | PASS |
+| Effect ceiling | no implementation/live/public effect | static audit and Local review only | PASS |
 
 ## Return-To-Orchestrator Conditions
 
