@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2840,
+  "stateKey": "acelT0LocalGapAuditClosure20260916",
+  "value": "ACEL-CVF-AUDIT-T0 is CLOSED_PASS_BOUNDED at material commit 712e68aba7cc2c000f6f9199786dd917ab689d19. Local accepted G1/G2/G3/G4/G6 as ADAPT and G5 as WATCH after direct repair of explicit sub-finding claim reconciliation and fingerprint/verifier-identity wording. The accepted ledger contains 14 claims, six unique gap summaries and 39 detailed G2/G3/G6 mappings. External repository inventory, immutable pins, licenses and four canonical Lab artifacts remain unsupplied; the external corpus is not certified. No experiment, implementation, provider/live, public or deployment successor is auto-authorized. Recommended next operator selection is the smallest G2 runtime-topology experiment; G6 and source-corpus recovery remain alternatives."
+}

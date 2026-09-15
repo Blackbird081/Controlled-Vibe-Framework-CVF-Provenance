@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_T0_LOCAL_GAP_VERIFICATION_AUDIT_2026-09-15.md",
     "baselineSha256": "e08996f3e9a4b2977bc0a67994b13cf6812cbdc73e9c1d0ffb3778715ccb9625",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_T0_LOCAL_GAP_VERIFICATION_AUDIT_2026-09-15.md",
-    "workOrderSha256": "90c821c814e57a4e12c2594cf3403f198ba7d15e18b55d7b5d2ed3e9de535896"
+    "workOrderSha256": "a8baaac6750e3f7b47c9a575d7bd5f138b83dc4d7aa2cc67a6854a249a6f05a5"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -106,8 +106,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "multi_repo_absorption_local_gap_audit",
-  "previousMode": "multi_repo_absorption_terminal_accounted",
+  "currentMode": "multi_repo_absorption_successor_checkpoint",
+  "previousMode": "multi_repo_absorption_local_gap_audit",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_local_gap_audit`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=internal worker executes ACEL-CVF-AUDIT-T0 G1-G6 verification; role=Local orchestrator/reviewer; phase=internal repository evidence audit; decision owner=Local; parked checkpoint=external source-corpus expansion, experiments, implementation, ECC, provider/live/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_successor_checkpoint`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=operator selects exactly one ACEL successor, with G2 smallest runtime-topology experiment recommended; role=Local orchestrator/reviewer; phase=post-audit successor selection; decision owner=operator for scope and Local for technical disposition; parked checkpoint=G6 experiment, external source-corpus recovery, implementation, provider/live/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_local_gap_audit`
-Current mode: `multi_repo_absorption_local_gap_audit`; previous mode marker: `multi_repo_absorption_terminal_accounted`
+Current mode marker: `multi_repo_absorption_successor_checkpoint`
+Current mode: `multi_repo_absorption_successor_checkpoint`; previous mode marker: `multi_repo_absorption_local_gap_audit`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-CVF-AUDIT-T0_DISPATCHED; NEXT_STEP=INTERNAL_AGENT_EXECUTES_LOCAL_G1_G6_GAP_VERIFICATION_AT_COMMITTED_EXECUTION_BASE; EXPANSION_ALLOWED=false. Treat the external handoff as advisory synthesis, not CVF authority. Worker owns exactly three new audit outputs and must not commit. External source-repository inventory/pins/licenses, experiments, implementation, provider/live, public and deployment remain parked. The prior three-repository pilot stays terminally accounted and is not reopened.
-Mode: `multi_repo_absorption_local_gap_audit`. External research for T0 is closed; shared-workspace execution is INTERNAL_AGENT and Local remains final decision owner.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-CVF-AUDIT-T0_CLOSED_PASS_BOUNDED_AT_712e68aba7cc2c000f6f9199786dd917ab689d19; NEXT_STEP=OPERATOR_CHECKPOINT_SELECT_ONE_SUCCESSOR; RECOMMENDED_SUCCESSOR=G2_SMALLEST_RUNTIME_TOPOLOGY_EXPERIMENT_DESIGN_AND_EXECUTION_WORK_ORDER; ALTERNATIVES=G6_CHANGE_AWARE_VERIFICATION_EXPERIMENT_OR_EXTERNAL_SOURCE_CORPUS_RECOVERY; EXPANSION_ALLOWED=false. G1/G2/G3/G4/G6 are accepted ADAPT; G5 remains WATCH. No successor is auto-authorized. External repository acquisition, experiments, implementation, provider/live, public and deployment remain parked until explicit operator selection. The prior three-repository pilot stays terminally accounted and is not reopened.
+Mode: `multi_repo_absorption_successor_checkpoint`. External research for T0 is closed; Local audit is accepted; operator owns successor scope selection and Local remains final technical decision owner.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
