@@ -1,7 +1,7 @@
-# CVF Agent Handoff V60 - ACEL G2 T2 Post-Calibration Checkpoint
+# CVF Agent Handoff V60 - ACEL G2 T2A Offline Task-Gate Dispatch
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `b9dd8028df5bc05b97aa68cd501d8d3c42b07e10`. Material review anchor for ACEL-G2-T2 calibration continuity.
+Current HEAD recorded for this handoff: `48794cadce3aee5775f7fa263b325159882d3ae7`. Material dispatch anchor for ACEL-G2-T2A offline task-gate continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Latest continuity correction parent recorded for this handoff: `2a08b1d1d805e340d3b27d00c63f60a3423366de`. Historical closure authority remains `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`).
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -12,7 +12,7 @@ Status: ACTIVE
 - Repository: private provenance SOT on `main`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; do not hand-maintain it in handoff.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `multi_repo_absorption_g2_t2_post_calibration_checkpoint`.
+- Current mode: `multi_repo_absorption_g2_t2_discriminating_task_gate`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -22,15 +22,15 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_g2_t2_post_calibration_checkpoint`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=design a discriminating G2-T2 task and quality gate before any comparative trial; role=Local orchestrator/reviewer; phase=post-calibration checkpoint; decision owner=Local for technical disposition and operator for a future live trial; parked checkpoint=additional calls, T6B, actual-agent trial, callable seam, public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_g2_t2_discriminating_task_gate`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=INTERNAL_AGENT executes the exact four-path offline T2A task/gate packet; role=INTERNAL_AGENT worker then Local reviewer/closer; phase=offline discriminating task gate; decision owner=Local; parked checkpoint=provider/live calls, T6B, actual-agent trial, callable seam, public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_g2_t2_post_calibration_checkpoint`
+`multi_repo_absorption_g2_t2_discriminating_task_gate`
 
 ## Purpose
 
-Carry the bounded Local disposition at `b9dd8028df5bc05b97aa68cd501d8d3c42b07e10`: original T1 worker stopped correctly at zero calls, then one later operator-directed Local call yielded independently rescored 100/100, zero defects, releaseCandidate=false. The cost-gate process deviation and unverified bill remain disclosed; no call authority carries forward.
+Dispatch the offline-only ACEL-G2-T2A discriminating-task contract and deterministic quality gate at `48794cadce3aee5775f7fa263b325159882d3ae7`. The task must test dependency order, constraints, branch failure, rollback/stop and immutable authority; no provider, agent, credential, network, callable seam or production authority carries forward.
 
 ## Scope / Target / Owner Boundary
 
@@ -41,7 +41,7 @@ Carry the bounded Local disposition at `b9dd8028df5bc05b97aa68cd501d8d3c42b07e10
 - The three accepted controls are execution-anchor substitution rejection, exact shared-worktree lane coordination, and fail-closed dated-owner dependency discovery before manifest freeze.
 
 ## Latest Work / Changes
-- ACEL-G2-T2 calibration Local disposition is retained at `b9dd8028d`: one direct call, no retry, independently matched rubric, distinct live receipt, original blocked receipt preserved, and receipt-exists rerun guard. T6B and G2-T2 comparative value remain unproved; further calls are parked.
+- ACEL-G2-T2A offline task/gate dispatch is committed at `48794cadc`: baseline plus work order passed the 82-check pre-dispatch bundle and 89/89 pre-commit checks. The INTERNAL_AGENT lane owns exactly four paths, must not commit, and cannot call a provider or agent; Local reviews and closes.
 - ACEL-G2-T2-FRESH-DIRECT-CALIBRATION-T1 baseline and work order are DISPATCH_READY at `6f70571ed`; 89/89 pre-commit gates passed. Only the exact worker paths and one-call/free-quota conditions in the work order are open; no call has yet been made by Local.
 - ACEL-G2-T2-CANDIDATE-QUALIFICATION-T0 is Local-accepted conditionally at `36784f6c6`: 12/12 sources reconciled, worker-return fast and pre-commit 89/89 passed. A future packet must reject non-reconstructable parse-failure receipts unless separately repaired; historical T6A results remain rejected and no call or callable seam is open.
 - ACEL-G2-TOPOLOGY-EXPERIMENT-T1 is Local-accepted `CLOSED_PASS_BOUNDED` at `0d31159f3`. The hermetic contract passed 43/43 focused reviewer tests, TypeScript, 32/32 admission, all five actions and receipt hash reconciliation; it proves no real-agent improvement and opens no T2 authority.
@@ -90,7 +90,7 @@ Carry the bounded Local disposition at `b9dd8028df5bc05b97aa68cd501d8d3c42b07e10
 
 ## Current Authority
 
-Current authority remains the candidate-qualification baseline `docs/baselines/CVF_GC018_ACEL_G2_T2_CANDIDATE_QUALIFICATION_T0_2026-09-16.md` and work order `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_CANDIDATE_QUALIFICATION_T0_2026-09-16.md`; returned evidence is accepted conditionally at `36784f6c6efa2fdca6b497a6d341ece7bcd3a2c8`. No worker lane is active. ECC intake remains NOT_ACCEPTED_EVIDENCE_GAPS and PARKED.
+Current authority is the T2A baseline `docs/baselines/CVF_GC018_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md` and work order `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md`, committed at `48794cadce3aee5775f7fa263b325159882d3ae7`. One INTERNAL_AGENT no-commit lane is authorized for its exact four worker-owned paths. ECC and new-repository intake remain parked.
 
 ## Closure Evidence
 
@@ -109,7 +109,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2_CALIBRATION_T1_LOCAL_BOUNDED_DISPOSITION_AT_b9dd8028df5bc05b97aa68cd501d8d3c42b07e10; NEXT_STEP=DESIGN_DISCRIMINATING_G2_T2_TASK_AND_QUALITY_GATE_WITHOUT_LIVE_CALL; EXPANSION_ALLOWED=false. The 100/100 no-defect candidate does not release T6B or prove topology value; additional live calls, actual-agent trial, callable seam, public sync and deployment remain parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2-DISCRIMINATING-TASK-GATE-T2A_AT_48794cadce3aee5775f7fa263b325159882d3ae7; NEXT_STEP=INTERNAL_AGENT_IMPLEMENT_EXACT_FOUR_OFFLINE_PATHS_AND_RETURN_NO_COMMIT; EXPANSION_ALLOWED=false. No provider/live/agent invocation, credential/network access, T6B, actual-agent trial, callable seam, production, public sync or deployment is authorized. Local retains final technical disposition.
 
 ## Parked Checkpoints
 
@@ -121,7 +121,7 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Active Boundary
 
-- The active ACEL program remains `LOCAL_RUNTIME_VALUE_RECOVERY` and source state `INCOMPLETE`. G2-T2 direct calibration is accepted only as bounded data at `b9dd8028d`; historical T6A results stay rejected, T6B did not trigger, and the callable-consumer gap stays parked. No further agent/provider/runtime execution is authorized. The three-repository pilot remains terminally accounted; ECC and new repositories remain parked.
+- The active ACEL program remains `LOCAL_RUNTIME_VALUE_RECOVERY` and source state `INCOMPLETE`. T2A now authorizes only deterministic offline contract/test implementation on four exact paths; successful offline tests cannot qualify a live trial. Historical T6A results stay rejected, T6B and callable-consumer work stay parked. The three-repository pilot remains terminally accounted; ECC and new repositories remain parked.
 - Latest closed LHW wave: `LHW24`.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
@@ -141,7 +141,7 @@ Public artifact paths: `README.md` and `docs/concepts/seven-step-shared-workspac
 Public catalog paths: N/A; no catalog entry was included in the bounded concept export.
 Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
 ## Core Guard Self-Protection Authorization
-Operator authorization: the operator directed the single Alibaba live call after the zero-call stop and then asked for the next step. Authorized continuity scope is exactly `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/acelG2T2CalibrationT1LocalDisposition20260916.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; and `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback only this continuity projection and preserve material `b9dd8028df5bc05b97aa68cd501d8d3c42b07e10`. No further live, T6B, actual-agent, callable-seam, public or deploy authority is added.
+Operator authorization: the operator approved continuation to the next offline G2-T2 design. Authorized continuity scope is exactly `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/acelG2T2DiscriminatingTaskGateT2ADispatch20260916.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; and `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback only this continuity projection and preserve material `48794cadce3aee5775f7fa263b325159882d3ae7`. No provider/live/agent, T6B, actual-agent, callable-seam, public or deploy authority is added.
 
 Operator authorization: continue and close the returned ACEL G2 T1 after material `0d31159f3e77d79253b8075daf00e8fdf9851d66`. Authorized guard-maintenance scope is exactly `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/acelG2TopologyExperimentT1Closure20260916.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; and `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback boundary: revert only this continuity projection and preserve T1 material plus accepted T0. No actual-agent, provider/live, production, T2, public or deployment authority is added.
 
