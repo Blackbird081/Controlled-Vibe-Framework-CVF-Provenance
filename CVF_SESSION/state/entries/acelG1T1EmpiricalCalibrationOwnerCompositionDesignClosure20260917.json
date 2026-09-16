@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2858,
+  "stateKey": "acelG1T1EmpiricalCalibrationOwnerCompositionDesignClosure20260917",
+  "value": "ACEL-G1-T1-EMPIRICAL-CALIBRATION-OWNER-COMPOSITION-DESIGN is CLOSED_PASS_BOUNDED and parked at material commit d87aadaec3ae2935a83e1e651f636d5b402f763c. Local repaired candidate/configuration evidence binding, held-out partition semantics, exclusive decision precedence, and the PROPOSAL_ONLY performance-preference boundary in one consolidated R1 pass. Ten current source hashes matched; corrected-base pre-implementation passed 84/84, worker-return fast and reviewer-fast passed 68/68, material pre-commit passed 89/89. No implementation, real calibration, provider/live, configuration mutation, G4, runtime, public sync or deployment was authorized."
+}
