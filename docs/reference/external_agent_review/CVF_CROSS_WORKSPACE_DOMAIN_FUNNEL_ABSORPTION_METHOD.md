@@ -423,6 +423,32 @@ The Local Agent, not the remote agent, created this narrow return scope. Any
 broader source program must remain separately visible and must be restored to
 continuity before program-level completion is assessed.
 
+## Research-Assisted Audit Application
+
+For repository-absorption audits assisted by a Web/remote research agent, apply
+the `cvf.research-assisted-repository-absorption@1.0.0` profile in
+`CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md` inside this funnel. This is an
+extension of the existing two-step agreement, not a parallel workflow.
+
+The Local dispatcher refreshes `EXTERNAL_AGENT_READ` before each dispatch and
+binds one independently reviewable audit question per lane. The remote return
+is advisory source evidence. Local performs integrity validation first, checks
+the upstream mechanisms, and then reconciles them against current private-CVF
+owners. Local repository authority wins every contradiction.
+
+Use the audit outcomes as a narrow decision view over the existing funnel
+taxonomy: `NO_CHANGE -> NO_NEW_VALUE`, `ADAPT -> ADAPT`, and `WATCH -> DEFER`
+or `BLOCK` with a named trigger/reason. `ADOPT -> ABSORB` is permitted only
+after the profile's `ADOPT_HIGH_BAR` proves that the architectural
+responsibility is absent and cannot map to an existing owner. A returned
+advisory contract is not the default design to absorb.
+
+Multiple questions remain independent through Local disposition even when one
+return package or operator relay carries them together. External research must
+close before any selected change enters a separate internal work order; the
+Local reviewer receives and adjudicates external returns and internal worker
+returns as separate evidence lanes.
+
 ## External Repository Absorption Entry Control
 
 | Field | Value |

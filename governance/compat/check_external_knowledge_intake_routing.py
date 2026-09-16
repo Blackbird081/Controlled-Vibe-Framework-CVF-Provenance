@@ -89,6 +89,7 @@ NEXT_SECTION_PATTERN = re.compile(r"^##\s+.+$", re.MULTILINE)
 
 
 METHOD_PATH = "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md"
+RELAY_PATH = "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md"
 BINDING_HEADING = "External/Local Coordination Binding"
 STATE_BINDING = "CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json"
 ACTIVE_PROGRAM_PATH = "CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json"
@@ -122,6 +123,18 @@ SOURCE_STATUSES = {
     "TERMINAL_REJECTED",
     "BLOCKED_WITH_REASON",
 }
+RESEARCH_ASSISTED_PROFILE_HEADING = "Research-Assisted Repository Absorption Profile"
+EXPECTED_RESEARCH_ASSISTED_PROFILE = {
+    "profileId": "cvf.research-assisted-repository-absorption@1.0.0",
+    "contextRefresh": "REFRESH_EXTERNAL_AGENT_READ_BEFORE_DISPATCH",
+    "questionIsolation": "INDEPENDENT_AUDIT_QUESTION_LANES",
+    "intakeOrder": "INTEGRITY_BEFORE_SEMANTICS",
+    "contradictionAuthority": "LOCAL_REPOSITORY_AUTHORITY_WINS",
+    "advisoryContract": "NOT_DEFAULT_DESIGN",
+    "auditDispositions": ["NO_CHANGE", "ADAPT", "WATCH", "ADOPT"],
+    "adoptThreshold": "ADOPT_HIGH_BAR",
+    "implementationBoundary": "EXTERNAL_RESEARCH_CLOSED_BEFORE_INTERNAL_IMPLEMENTATION",
+}
 TERMINAL_SOURCE_STATUSES = SOURCE_STATUSES - {"INCOMPLETE"}
 PROGRAM_FIELDS = {
     "schemaVersion",
@@ -144,7 +157,7 @@ def _is_continuity_path(path: str) -> bool:
 
 
 def _coordination_applies(path: str, text: str) -> bool:
-    if path == METHOD_PATH or not _is_governed_markdown_path(path):
+    if path in {METHOD_PATH, RELAY_PATH} or not _is_governed_markdown_path(path):
         return False
     if BINDING_HEADING in text:
         return True
@@ -318,15 +331,18 @@ def check_coordination(paths: list[str]) -> list[str]:
         except (OSError, UnicodeError, ValueError) as exc:
             errors.append(f"{CORE_PATH}: {exc}")
     errors.extend(_check_active_program(read, continuity=continuity, mode=mode, paths=paths))
-    if not candidates and not state_required and METHOD_PATH not in paths:
+    if not candidates and not state_required and not ({METHOD_PATH, RELAY_PATH} & set(paths)):
         return errors
     try:
         contract = _json_section(read(METHOD_PATH), "Machine Coordination Contract")
         if contract != EXPECTED_CONTRACT:
             raise ValueError("canonical coordination contract differs from supported invariant schema")
+        profile = _json_section(read(RELAY_PATH), RESEARCH_ASSISTED_PROFILE_HEADING)
+        if profile != EXPECTED_RESEARCH_ASSISTED_PROFILE:
+            raise ValueError("research-assisted absorption profile differs from supported invariant schema")
         digest = hashlib.sha256(json.dumps(contract, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
     except (OSError, UnicodeError, ValueError) as exc:
-        return errors + [f"{METHOD_PATH}: {exc}"]
+        return errors + [f"{METHOD_PATH} / {RELAY_PATH}: {exc}"]
     validated: set[str] = set()
 
     def validate(binding: dict, trail: tuple[str, ...]) -> None:

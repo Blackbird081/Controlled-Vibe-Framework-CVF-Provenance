@@ -142,6 +142,12 @@ class CoordinationBindingTests(unittest.TestCase):
             json.dumps(self.contract, sort_keys=True, separators=(",", ":")).encode("utf-8")
         ).hexdigest(), "parentArtifact": None}
         self.write(MODULE.METHOD_PATH, "## Machine Coordination Contract\n\n```json\n" + json.dumps(self.contract) + "\n```\n")
+        self.write(
+            MODULE.RELAY_PATH,
+            "## Research-Assisted Repository Absorption Profile\n\n```json\n"
+            + json.dumps(MODULE.EXPECTED_RESEARCH_ASSISTED_PROFILE)
+            + "\n```\n",
+        )
         self.write(MODULE.CORE_PATH, json.dumps({"currentMode": "external_repo_absorption"}))
         self.artifact(self.path)
 
@@ -252,6 +258,21 @@ class CoordinationBindingTests(unittest.TestCase):
         self.write(MODULE.METHOD_PATH, "## Machine Coordination Contract\n```json\n" + json.dumps(wrong) + "\n```\n")
         self.assertTrue(any("supported invariant schema" in e for e in MODULE.check_paths([self.path])))
 
+    def test_research_assisted_profile_cannot_be_weakened(self):
+        wrong = copy.deepcopy(MODULE.EXPECTED_RESEARCH_ASSISTED_PROFILE)
+        wrong["contradictionAuthority"] = "REMOTE_RECONCILIATION_ALLOWED"
+        self.write(
+            MODULE.RELAY_PATH,
+            "## Research-Assisted Repository Absorption Profile\n```json\n"
+            + json.dumps(wrong)
+            + "\n```\n",
+        )
+        errors = MODULE.check_paths([self.path])
+        self.assertTrue(any("research-assisted absorption profile" in e for e in errors))
+
+    def test_changed_relay_owner_is_checked_directly(self):
+        self.assertEqual([], MODULE.check_coordination([MODULE.RELAY_PATH]))
+
     def test_malformed_duplicate_json_and_duplicate_sections_fail(self):
         text = (self.root / self.path).read_text(encoding="utf-8")
         for changed in [text.replace('"contractId":', '"contractId":null,"contractId":', 1), text + text, text.replace('"contractId":', 'bad-json:', 1)]:
@@ -282,7 +303,9 @@ class CoordinationBindingTests(unittest.TestCase):
         with patch.object(Path, "read_text", tracked):
             self.assertEqual([], MODULE.check_coordination([self.path, second]))
         self.assertEqual(1, reads.count((self.root / self.parent).resolve()))
-        self.assertEqual(4, len(reads))
+        self.assertEqual(1, reads.count((self.root / MODULE.METHOD_PATH).resolve()))
+        self.assertEqual(1, reads.count((self.root / MODULE.RELAY_PATH).resolve()))
+        self.assertEqual(5, len(reads))
 
     def test_changed_collector_includes_state_and_handoff(self):
         paths = []

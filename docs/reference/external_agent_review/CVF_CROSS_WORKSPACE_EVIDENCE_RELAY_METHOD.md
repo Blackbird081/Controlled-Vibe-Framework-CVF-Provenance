@@ -214,6 +214,78 @@ A structurally valid return may still be rejected semantically. A damaged or
 wrong-task return may be returned for repair without discarding any separately
 verified useful evidence.
 
+## Research-Assisted Repository Absorption Profile
+
+Profile identifier: `cvf.research-assisted-repository-absorption@1.0.0`
+
+Use this profile when a Web/remote agent researches repositories while a Local
+orchestrator/reviewer also receives shared-workspace worker returns. It extends
+this relay method; it does not create a second absorption process or transfer
+decision authority to the remote agent or operator.
+
+The required sequence is:
+
+1. `REFRESH_EXTERNAL_AGENT_READ_BEFORE_DISPATCH`: Local refreshes the bounded
+   external brief with an as-of time, current program/tranche state, owner
+   pointers, public/private boundary, exact question, source pins, return
+   schema, and forbidden claims before the operator relays it.
+2. `INDEPENDENT_AUDIT_QUESTION_LANES`: each audit question keeps its own task
+   ID, package/return identity, digest or integrity receipt, evidence ledger,
+   and Local disposition. Returns may be deduplicated only after each question
+   has an independent disposition.
+3. Remote work remains `ADVISORY_RESEARCH_AND_PATTERN_MAPPING`: it supplies
+   source-backed mechanisms, paths, symbols, tests, licenses, limitations, and
+   uncertainty. A proposed contract is advisory evidence, not a design mandate.
+4. The operator transports packets and returns without adjudicating them.
+5. `INTEGRITY_BEFORE_SEMANTICS`: Local validates task identity, archive/hash,
+   manifest, per-file digests, source pins, exclusions, license, claim boundary,
+   and return completeness before evaluating technical claims.
+6. Local verifies upstream claims and then cross-checks current private CVF by
+   exact paths, symbols/tests, enforcement level, mandatory path, bypasses, and
+   fail behavior. `LOCAL_REPOSITORY_AUTHORITY_WINS`: contradictions are recorded
+   explicitly and are not reconciled by inference.
+7. Local assigns the audit-layer outcome below. An advisory contract is never
+   accepted merely because it is complete or well formed.
+8. Web research stops when Local has enough verified evidence to decide. It may
+   reopen only for a named contradiction, missing pin/license/path, inaccessible
+   source, or another decision-changing evidence gap.
+9. If implementation is selected, external research closes first. Local issues
+   a separate governed internal work order; shared-workspace worker evidence is
+   reviewed on its own lane and is not merged with the external-return record.
+
+Audit-layer dispositions map into the existing absorption taxonomy rather than
+replacing it:
+
+| Audit outcome | Required meaning | Existing absorption route |
+|---|---|---|
+| `NO_CHANGE` | CVF already owns and adequately enforces the responsibility. | `NO_NEW_VALUE` with exact owner evidence |
+| `ADAPT` | An owner exists, but linkage, semantics, enforcement, or proof is incomplete. | `ADAPT` against that owner |
+| `WATCH` | Only an evidence gap, demand-gated uncertainty, or observation trigger remains; no implementation is authorized. | `DEFER` or `BLOCK` with a named trigger/reason |
+| `ADOPT` | A required architectural responsibility is genuinely absent and cannot map to an existing owner. | `ABSORB`, only after the high bar below is proved |
+
+`ADOPT_HIGH_BAR` requires positive Local absence evidence across current owner
+surfaces, an explicit responsibility and consumer, proof that `ADAPT` cannot
+close the gap, and separate implementation authority. Public absence, an
+external shortlist, or an advisory contract alone never satisfies this bar.
+
+The machine-readable profile below protects these role, ordering, authority,
+and disposition invariants. It does not claim semantic execution of a future
+audit; its governed review must supply the question-specific evidence.
+
+```json
+{
+  "profileId": "cvf.research-assisted-repository-absorption@1.0.0",
+  "contextRefresh": "REFRESH_EXTERNAL_AGENT_READ_BEFORE_DISPATCH",
+  "questionIsolation": "INDEPENDENT_AUDIT_QUESTION_LANES",
+  "intakeOrder": "INTEGRITY_BEFORE_SEMANTICS",
+  "contradictionAuthority": "LOCAL_REPOSITORY_AUTHORITY_WINS",
+  "advisoryContract": "NOT_DEFAULT_DESIGN",
+  "auditDispositions": ["NO_CHANGE", "ADAPT", "WATCH", "ADOPT"],
+  "adoptThreshold": "ADOPT_HIGH_BAR",
+  "implementationBoundary": "EXTERNAL_RESEARCH_CLOSED_BEFORE_INTERNAL_IMPLEMENTATION"
+}
+```
+
 ## Cardinality And Independence
 
 This method works with `1..N` remote agents. Cardinality is not a maturity or

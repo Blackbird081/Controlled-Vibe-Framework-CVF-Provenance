@@ -40,6 +40,20 @@ Rollback boundary: revert only this rule-hardening batch, preserve metadata
 closeout and original returns. No public/provider/runtime or unrelated checker
 semantics, hook catalog or generated state hand-edit is authorized.
 
+2026-09-16 authorization extension: the operator explicitly requested that the
+completed G3 worker-review lane be parked and that the existing repository-
+absorption coordination process be updated for future agents. The authorized
+guard-maintenance scope remains the two listed external-knowledge intake
+checker paths and their coordination-method bindings. It adds only the
+research-assisted profile, its fail-closed schema check, and focused regression
+coverage; no new process, hook slot, runtime, provider call, or external decision
+authority is authorized.
+
+2026-09-16 rollback boundary: revert the research-assisted profile additions in
+the existing relay/funnel owners together with the matching checker and test
+changes. Preserve the earlier coordination contract and unrelated absorption
+history.
+
 ## Findings / Position
 
 ACCEPTED_BOUNDED: regression fixtures reject declared coordination drift.

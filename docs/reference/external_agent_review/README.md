@@ -71,6 +71,15 @@ selected capability/use-case groups receive deeper investigation. External
 reports retain common mechanisms, per-repo value and unknowns separately.
 Validate the approach on a small domain pilot before broad rollout.
 
+For Web-research-assisted repository audits, also apply
+`cvf.research-assisted-repository-absorption@1.0.0` from the relay method.
+Refresh the bounded External Agent Read context before dispatch, keep each audit
+question independently traceable, validate integrity before semantics, and let
+the Local repository and Local reviewer control contradictions and final
+disposition. Use `NO_CHANGE`, `ADAPT`, `WATCH`, and high-bar `ADOPT` only through
+their documented mapping to the existing absorption taxonomy. External and
+internal-worker returns remain separate evidence lanes.
+
 1. Read this front door, the context standard, and
    `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`.
 2. Classify the input type through the chain map before deciding whether the
@@ -390,3 +399,21 @@ Contradiction Or Gap Disposition: N/A with reason: if future reference routing
 changes, this front door must be updated in the same governed batch.
 
 Claim Update: front-door routing now includes the conditional reopen index.
+
+## External/Local Coordination Binding
+
+```json
+{
+  "contractId": "cvf.external-local-absorption-coordination@1",
+  "invariants": {
+    "externalRole": "ADVISORY_RESEARCH_AND_PATTERN_MAPPING",
+    "externalContext": "PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ",
+    "localRole": "SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION",
+    "finalDecisionOwner": "LOCAL",
+    "localCoverageBasis": "SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST",
+    "externalEvidenceAuthority": "INPUT_NOT_PRIVATE_CVF_PROOF"
+  },
+  "contractSha256": "92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c",
+  "parentArtifact": null
+}
+```
