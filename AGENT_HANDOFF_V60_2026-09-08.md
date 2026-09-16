@@ -1,7 +1,7 @@
 # CVF Agent Handoff V60 - ACEL G3 T1 Design Dispatch
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `68cedc20831761454685d058bf9bd48faca34e47`. ACEL-G3-T1 dispatch material.
+Current HEAD recorded for this handoff: `f255c9c7f4913d0c10b675b86a8f09afea1421c8`. ACEL-G3-T1 accepted design material.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Latest continuity correction parent recorded for this handoff: `2a08b1d1d805e340d3b27d00c63f60a3423366de`. Historical closure authority remains `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`).
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -22,15 +22,15 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_t1_design_dispatched`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=INTERNAL_AGENT executes G3 T1 design and returns COMPLETE_PENDING_REVIEW; role=Local dispatcher/reviewer; phase=G3 design worker dispatch; decision owner=Local; parked checkpoint=implementation, evaluator execution, certification/index mutation, provider/runtime/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_t1_design_closed`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=operator selects a separate G3 implementation work order or keeps it parked; role=Local reviewer/closer; phase=G3 design closure; decision owner=Local; parked checkpoint=implementation, evaluator execution, certification/index mutation, provider/runtime/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g3_t1_design_dispatched`
+`multi_repo_absorption_acel_g3_t1_design_closed`
 
 ## Purpose
 
-Dispatch ACEL-G3-T1 at `68cedc208`: reconcile current behavioral-evaluation owners and return an implementation-ready design or truthful blocker without source/runtime mutation.
+Close ACEL-G3-T1 at `f255c9c7f`: accept a current-source owner-composition design while keeping implementation and all external/runtime effects behind a separate checkpoint.
 
 ## Scope / Target / Owner Boundary
 
@@ -42,7 +42,7 @@ Dispatch ACEL-G3-T1 at `68cedc208`: reconcile current behavioral-evaluation owne
 
 ## Latest Work / Changes
 - ACEL-G2-T2B is `CLOSED_PASS_BOUNDED_NO_RELEASE_CANDIDATE` at material commit `6537618d5`. Exactly one `qwen3.7-flash` call, zero retries, exact contract/test hashes, score 100/100, no material defect, and `releaseCandidate=false`; independent Local rescore matched. No repeat-live, comparative T2, runtime, T6B, callable seam, production, public or deployment authority remains.
-- ACEL-G3-T1 design is `DISPATCH_READY` at `68cedc208`: one INTERNAL_AGENT owns exactly three uncommitted outputs, must reconcile eight current sources and index-state drift, and returns to Local review. No code/test/index/certification mutation or evaluator/provider/runtime effect is open.
+- ACEL-G3-T1 design is `CLOSED_PASS_BOUNDED` at `f255c9c7f`: Local accepted the eight-source owner composition after correcting one joint-state claim and two reversed machine edges. Four successor paths are planned only; no implementation or evaluator/provider/runtime effect is open.
 - ACEL-G2-T2-CANDIDATE-QUALIFICATION-T0 is Local-accepted conditionally at `36784f6c6`: 12/12 sources reconciled, worker-return fast and pre-commit 89/89 passed. A future packet must reject non-reconstructable parse-failure receipts unless separately repaired; historical T6A results remain rejected and no call or callable seam is open.
 - ACEL-G2-TOPOLOGY-EXPERIMENT-T1 is Local-accepted `CLOSED_PASS_BOUNDED` at `0d31159f3`. The hermetic contract passed 43/43 focused reviewer tests, TypeScript, 32/32 admission, all five actions and receipt hash reconciliation; it proves no real-agent improvement and opens no T2 authority.
 - Three-repository deferred semantic reconciliation T1 dispatch material committed at `7573d804f8f185ecfc244eb56728a80727af4517`; pre-dispatch passed 82/82. The INTERNAL_AGENT lane owns exactly one 52-row audit JSON and one worker return, must not commit, and has no implementation/provider/live/network/public/deploy authority.
@@ -72,7 +72,7 @@ Dispatch ACEL-G3-T1 at `68cedc208`: reconcile current behavioral-evaluation owne
 
 ## Current Authority
 
-Current authority is the G3 paired baseline and work order at `68cedc208`. The worker lane is open only for the exact three documentation/evidence paths; Local retains review, repair, commit, and successor authority.
+Current authority is the accepted G3 baseline, closed work order and completion review at `f255c9c7f`. The worker lane is closed; Local retains successor selection and implementation remains checkpointed.
 
 ## Closure Evidence
 
@@ -91,7 +91,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN_DISPATCHED_AT_68cedc208; NEXT_STEP=INTERNAL_AGENT_EXECUTE_G3_T1_DESIGN_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Worker owns exactly three uncommitted design/evidence paths, must capture executionBaseHead, reconcile eight current sources, and return one allowed terminal disposition. Code/test/index/certification mutation, evaluator execution, provider/live, runtime, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN_CLOSED_PASS_BOUNDED_AT_f255c9c7f; NEXT_STEP=OPERATOR_SELECT_G3_IMPLEMENTATION_WORK_ORDER_OR_KEEP_PARKED; EXPANSION_ALLOWED=false. The four successor paths remain planned only. Implementation, evaluator execution, certification/index mutation, provider/live, runtime, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -103,7 +103,7 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Active Boundary
 
-- The active ACEL program remains `LOCAL_RUNTIME_VALUE_RECOVERY` and source state `INCOMPLETE`. G3 T1 design worker lane is open for exactly three uncommitted artifacts. G6 integration, G2 T2, T6B, implementation, provider/live, ECC and new repositories remain parked.
+- The active ACEL program remains `LOCAL_RUNTIME_VALUE_RECOVERY` and source state `INCOMPLETE`. G3 T1 design is closed; implementation requires operator selection. G6 integration, G2 T2, T6B, provider/live, ECC and new repositories remain parked.
 - Latest closed LHW wave: `LHW24`.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
@@ -112,7 +112,7 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Completion Review
 
-`docs/reviews/CVF_ACEL_G6_T1_IMPACT_DERIVED_VERIFICATION_EXPERIMENT_COMPLETION_2026-09-16.md` closes the G6 hermetic signal at `3498f185b`; historical G2 T2, TPGR, ADIF-0057-MH-T1 and ROLE-SOT-MH-T1 closures remain unchanged.
+`docs/reviews/CVF_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_COMPLETION_2026-09-16.md` closes G3 T1 at `f255c9c7f`; historical G6, G2 T2, TPGR, ADIF-0057-MH-T1 and ROLE-SOT-MH-T1 closures remain unchanged.
 ## Public Export Disposition
 
 EXPORTED
@@ -123,7 +123,7 @@ Public artifact paths: `README.md` and `docs/concepts/seven-step-shared-workspac
 Public catalog paths: N/A; no catalog entry was included in the bounded concept export.
 Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: ACEL-G3-T1 dispatch continuity projection only.
+Authorized guard-maintenance scope: ACEL-G3-T1 closure continuity projection only.
 
 Protected paths:
 
@@ -131,14 +131,14 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/acelG3T1BehavioralEvaluationOwnerCompositionDesignDispatch20260916.json`
+- `CVF_SESSION/state/entries/acelG3T1BehavioralEvaluationOwnerCompositionDesignClosure20260916.json`
 - `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: Local selects and issues the G3 T1 work order for operator relay to Claude; project dispatch material `68cedc20831761454685d058bf9bd48faca34e47` and the exact INTERNAL_AGENT return route.
+Operator authorization: complete the operator-submitted G3 T1 pending review, project accepted material `f255c9c7f4913d0c10b675b86a8f09afea1421c8`, and stop at the separate implementation checkpoint.
 
-Rollback boundary: revert only this continuity projection; preserve dispatch material `68cedc20831761454685d058bf9bd48faca34e47`. No implementation, evaluator execution, certification/index mutation, provider, runtime, public or deployment authority is added.
+Rollback boundary: revert only this continuity projection; preserve accepted material `f255c9c7f4913d0c10b675b86a8f09afea1421c8`. No implementation, evaluator execution, certification/index mutation, provider, runtime, public or deployment authority is added.
 
 Operator authorization: the operator approved continuation to the next offline G2-T2 design. Authorized continuity scope is exactly `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/acelG2T2DiscriminatingTaskGateT2ADispatch20260916.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; and `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback only this continuity projection and preserve material `48794cadce3aee5775f7fa263b325159882d3ae7`. No provider/live/agent, T6B, actual-agent, callable-seam, public or deploy authority is added.
 

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_acel_g3_t1_design_dispatched",
+  "currentMode": "multi_repo_absorption_acel_g3_t1_design_closed",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN_DISPATCHED_AT_68cedc208; NEXT_STEP=INTERNAL_AGENT_EXECUTE_G3_T1_DESIGN_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Worker owns exactly three uncommitted design/evidence paths, must capture executionBaseHead, reconcile eight current sources, and return one allowed terminal disposition. Code/test/index/certification mutation, evaluator execution, provider/live, runtime, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN_CLOSED_PASS_BOUNDED_AT_f255c9c7f; NEXT_STEP=OPERATOR_SELECT_G3_IMPLEMENTATION_WORK_ORDER_OR_KEEP_PARKED; EXPANSION_ALLOWED=false. The accepted design names four planned successor paths, but none exists or is authorized by this closure. Implementation, evaluator execution, certification/index mutation, provider/live, runtime, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
     "baselineSha256": "9b654cade0fbb3ee2e63995650829630be8323bc12aaca4766efc5505a87b22b",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
-    "workOrderSha256": "066628d14f7a8c7c066f8349269901a2c9d02f8344df1bf8e45283692c28b992"
+    "workOrderSha256": "4beb14821d5f2a90866b2bad3765ae706b53e4e86b7cfe7cf4850cc601ee00a9"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

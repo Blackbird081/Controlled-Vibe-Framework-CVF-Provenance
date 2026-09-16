@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2853,
+  "stateKey": "acelG3T1BehavioralEvaluationOwnerCompositionDesignClosure20260916",
+  "value": "ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN is CLOSED_PASS_BOUNDED at material commit f255c9c7f. Local accepted DESIGN_READY_FOR_SEPARATE_IMPLEMENTATION_WORK_ORDER after one bounded evidence-consistency repair cluster: the current index joint distribution is 24 CERTIFIED/PASSED/ACTIVE/IMPLEMENTED, one CERTIFIED/PASSED/CANDIDATE/DEFERRED_WITH_REASON, and seven NOT_STARTED/NOT_STARTED/CANDIDATE/DEFERRED_WITH_REASON; two reversed JSON consumer edges were corrected. Eight source hashes match, worker-return fast passed with reviewer-fast 68/68, material pre-commit passed 89/89, and zero provider/live/runtime/public/deploy effects occurred. The four successor paths are planned only; implementation requires an operator-selected separate work order."
+}

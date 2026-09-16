@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
     "baselineSha256": "9b654cade0fbb3ee2e63995650829630be8323bc12aaca4766efc5505a87b22b",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
-    "workOrderSha256": "066628d14f7a8c7c066f8349269901a2c9d02f8344df1bf8e45283692c28b992"
+    "workOrderSha256": "4beb14821d5f2a90866b2bad3765ae706b53e4e86b7cfe7cf4850cc601ee00a9"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -106,8 +106,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "multi_repo_absorption_acel_g3_t1_design_dispatched",
-  "previousMode": "multi_repo_absorption_acel_g6_t1_experiment_closed",
+  "currentMode": "multi_repo_absorption_acel_g3_t1_design_closed",
+  "previousMode": "multi_repo_absorption_acel_g3_t1_design_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
