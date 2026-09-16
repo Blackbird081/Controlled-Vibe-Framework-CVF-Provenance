@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_g2_t2_fresh_direct_calibration`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=INTERNAL_AGENT executes the bounded one-call calibration packet; role=Local orchestrator/reviewer; phase=G2-T2 fresh direct calibration dispatch; decision owner=Local for final technical disposition; parked checkpoint=actual-agent trial, callable seam, broader runtime, public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_g2_t2_post_calibration_checkpoint`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=design a discriminating G2-T2 task and quality gate without live calls; role=Local orchestrator/reviewer; phase=post-calibration checkpoint; decision owner=Local for technical disposition and operator for a later live trial; parked checkpoint=additional calls, T6B, actual-agent trial, callable seam, public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_g2_t2_fresh_direct_calibration`
-Current mode: `multi_repo_absorption_g2_t2_fresh_direct_calibration`; previous mode marker: `multi_repo_absorption_g2_t2_calibration_checkpoint`
+Current mode marker: `multi_repo_absorption_g2_t2_post_calibration_checkpoint`
+Current mode: `multi_repo_absorption_g2_t2_post_calibration_checkpoint`; previous mode marker: `multi_repo_absorption_g2_t2_fresh_direct_calibration`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2-FRESH-DIRECT-CALIBRATION-T1_DISPATCH_READY_AT_6f70571ed99f83012a0bf211b5d4623fd6386f8f; NEXT_STEP=INTERNAL_AGENT_EXECUTES_GOVERNED_ONE_CALL_FREE_QUOTA_PACKET_THEN_LOCAL_REVIEWS_RETURN; EXPANSION_ALLOWED=false. Exact authority is the dispatch work order and its pre-call checks, one provider call maximum, no retry, and three worker-owned paths. Parse-failure receipts fail closed; historical T6A results remain NOT_ACCEPTED. Actual-agent experiment, callable seam, broader runtime, production, public sync and deployment remain parked. Local retains final technical disposition.
-Mode: `multi_repo_absorption_g2_t2_fresh_direct_calibration`. External research is closed; INTERNAL_AGENT execution is open only for the exact dispatch packet; Local retains private technical disposition.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2_CALIBRATION_T1_LOCAL_BOUNDED_DISPOSITION_AT_b9dd8028df5bc05b97aa68cd501d8d3c42b07e10; NEXT_STEP=DESIGN_DISCRIMINATING_G2_T2_TASK_AND_QUALITY_GATE_WITHOUT_LIVE_CALL; EXPANSION_ALLOWED=false. One later operator-directed direct call was independently rescored 100/100 with no defects and releaseCandidate=false; original zero-call block remains preserved. Cost-gate process deviation and actual billing uncertainty are disclosed. No further call, T6B, actual-agent experiment, callable seam, broader runtime, production, public sync or deployment is authorized. Local retains final technical disposition.
+Mode: `multi_repo_absorption_g2_t2_post_calibration_checkpoint`. External research is closed; no INTERNAL_AGENT live lane remains open; Local retains private technical disposition.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
