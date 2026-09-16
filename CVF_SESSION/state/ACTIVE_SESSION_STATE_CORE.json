@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G2_T2_REAL_AGENT_EXPERIMENT_DESIGN_2026-09-16.md",
-    "baselineSha256": "4abdcffa11c674a73ad45a3a7c18bc3d3f5622e2f629238c5a0cfc41039144b3",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_REAL_AGENT_EXPERIMENT_DESIGN_2026-09-16.md",
-    "workOrderSha256": "ef5c2b041f2b89c4be120dc0fa0ea0eda029caba9dd2da4b268725deb8f5823a"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G2_T2_CANDIDATE_QUALIFICATION_T0_2026-09-16.md",
+    "baselineSha256": "8e4f045a776cfe056905ee7d58010ae57158271f10364abee152fe45e91ac230",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_CANDIDATE_QUALIFICATION_T0_2026-09-16.md",
+    "workOrderSha256": "0bb2927360be96eac7ef541bc0751d1214b0d511cfc445107d97589906fc7750"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -106,8 +106,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "multi_repo_absorption_g2_t2_blocked_checkpoint",
-  "previousMode": "multi_repo_absorption_g2_t2_design",
+  "currentMode": "multi_repo_absorption_g2_t2_candidate_qualification",
+  "previousMode": "multi_repo_absorption_g2_t2_blocked_checkpoint",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
