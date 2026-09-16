@@ -7945,6 +7945,43 @@
       "notes": "Reviewer-added GC-051 coverage and bounded semantic repair for an isolated offline proposal. No provider, agent, network, credential, runtime consumer, public, deployment, or production authority is claimed."
     },
     {
+      "id": "acel-g2-t2b-fresh-hash-bound-calibration-t1",
+      "corpusType": "TEST_CORPUS",
+      "displayName": "ACEL G2 T2B fresh hash-bound one-call calibration",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/scripts/run-acel-g2-t2b-fresh-hash-bound-calibration-t1.ts",
+        "docs/reviews/evidence/acel-g2-t2b-fresh-hash-bound-calibration-t1-live-2026-09-16.json",
+        "docs/reviews/CVF_ACEL_G2_T2B_FRESH_HASH_BOUND_CALIBRATION_T1_COMPLETION_2026-09-16.md"
+      ],
+      "fileCount": 3,
+      "status": "SCANNED_WITH_FINDINGS",
+      "findings": [
+        {
+          "id": "acel-g2-t2b-no-release-candidate",
+          "summary": "The single fresh qwen3.7-flash response scored 100/100 with no material defect, so the frozen release predicate remained false.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Keep comparative T2, runtime, T6B, retry, public, and deployment lanes closed unless the operator later approves a new task design and grant.",
+          "defectClass": "N/A",
+          "learningLane": "PROVIDER_OUTPUT_LEARNING"
+        }
+      ],
+      "negativeSearchTerms": [
+        "second provider call",
+        "retry",
+        "T6B opening",
+        "runtime binding",
+        "comparative qualification"
+      ],
+      "nextScanRecommendation": "Re-scan only if a newly authorized task-design tranche supersedes this frozen calibration.",
+      "scanWave": "ACEL-G2-T2B",
+      "scanDate": "2026-09-16",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_ACEL_G2_T2B_FRESH_HASH_BOUND_CALIBRATION_T1_COMPLETION_2026-09-16.md",
+      "completionReviewPath": "docs/reviews/CVF_ACEL_G2_T2B_FRESH_HASH_BOUND_CALIBRATION_T1_COMPLETION_2026-09-16.md",
+      "notes": "One operator-approved direct live call, zero retries, exact frozen hashes, secret-safe receipt, and bounded Local closure with no release candidate."
+    },
+    {
       "id": "dsh-wra-r1-whole-repository-absorption",
       "corpusType": "EXTERNAL_SOURCE",
       "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",

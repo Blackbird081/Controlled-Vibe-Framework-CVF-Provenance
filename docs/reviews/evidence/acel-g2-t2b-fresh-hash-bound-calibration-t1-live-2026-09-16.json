@@ -1,0 +1,74 @@
+{
+  "run": "ACEL-G2-T2B-FRESH-HASH-BOUND-CALIBRATION-T1",
+  "taskId": "ACEL-G2-T2-DISCRIMINATING-TASK-GATE-T2A",
+  "startedAt": "2026-09-16T11:46:29.438Z",
+  "finishedAt": "2026-09-16T11:46:55.444Z",
+  "providerId": "alibaba",
+  "modelId": "qwen3.7-flash",
+  "endpointHost": "dashscope-intl.aliyuncs.com",
+  "keyAliasUsed": "DASHSCOPE_API_KEY",
+  "traceId": "acel-g2-t2b-1789559189440",
+  "grant": {
+    "grantId": "acel-g2-t2b-fresh-hash-bound-calibration-t1-2026-09-16",
+    "maxCalls": 1,
+    "authorizedBy": "ORCHESTRATOR"
+  },
+  "operatorApproval": "one qwen3.7-flash call; no retry; exact two hashes; fail-closed; no runtime/T6B",
+  "boundHashes": {
+    "contractSha256": "30a626eed0a411571ec854fe0f1f0bf3b20ee7cad343d76e32721e6a1a681bf4",
+    "testSha256": "4f6c9ccb6369cbb76cc2954cbbbd3601ea695fec0cb3ba60b1b6e0129df3f0d5"
+  },
+  "callAttempted": true,
+  "callCount": 1,
+  "retryCount": 0,
+  "latencyMs": 26002,
+  "usage": {
+    "inputTokens": 371,
+    "outputTokens": 2001
+  },
+  "rawResponseSha256": "20eaf33d87bebd42f6d4ed99b06ab40a99a2cafa866d4a9ff747e38e74d38bd9",
+  "rawResponseLength": 605,
+  "sanitizedCandidate": {
+    "objective": "Sequential internal datacenter migration for service account svc-migrate comprising isolated checkpointing, traffic isolation, state transition, and integrity validation.",
+    "steps": [
+      {
+        "name": "snapshot",
+        "dependsOn": null,
+        "maxConcurrent": 2
+      },
+      {
+        "name": "drain",
+        "dependsOn": "snapshot",
+        "maxConcurrent": 2
+      },
+      {
+        "name": "cutover",
+        "dependsOn": "drain",
+        "maxConcurrent": 2
+      },
+      {
+        "name": "verify",
+        "dependsOn": "cutover",
+        "maxConcurrent": 2
+      }
+    ],
+    "rollbackTrigger": "checksum_mismatch reported during cutover",
+    "rollbackTarget": "last completed snapshot state",
+    "authorityAccount": "svc-migrate",
+    "verificationSkippedOnRollback": true
+  },
+  "rubric": {
+    "schemaCompletenessScore": 30,
+    "orderingAndConcurrencyScore": 40,
+    "rollbackAndAuthorityScore": 30,
+    "score": 100,
+    "maxScore": 100
+  },
+  "defects": [],
+  "materialDefectFound": false,
+  "releaseCandidateAsCalibrationEvidence": false,
+  "decisionOwner": "local_reviewer",
+  "diagnostic": null,
+  "ok": true,
+  "claimBoundary": "One direct calibration point only; no runtime, T6B, comparison, production, public, or deployment authority."
+}
