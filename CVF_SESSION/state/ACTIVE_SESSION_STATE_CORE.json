@@ -32,14 +32,14 @@
   "agentErrorToGovernanceLearningPhilosophy": "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
   "agentIntelligenceFoundationsRoadmap": "docs/roadmaps/CVF_AGENT_INTELLIGENCE_FOUNDATIONS_ROADMAP_2026-05-23.md",
   "operationalReferenceIndex": "docs/reference/CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
-  "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
+  "activeHandoff": "AGENT_HANDOFF_V61_2026-09-16.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G3_T2_BEHAVIORAL_EVALUATION_CONTRACT_IMPLEMENTATION_2026-09-16.md",
     "baselineSha256": "6d6a58f21c4a3b97e4f1ec2d0910def5d34ca860bd4d92badb37615dc71ba9f6",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G3_T2_BEHAVIORAL_EVALUATION_CONTRACT_IMPLEMENTATION_2026-09-16.md",
-    "workOrderSha256": "75a98653b4706c10c26a1e52e79b17dbc864832c0b959f9ed410e5c623345a28"
+    "workOrderSha256": "ea6d2353c3e7a7a9e1c8a5c0c6c28eb9c35cb51584cb09a86e7628f87f550d50"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -99,15 +99,16 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V56_2026-08-09.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V57_2026-08-10.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V58_2026-08-11.md",
-    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V59_2026-08-11.md"
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V59_2026-08-11.md",
+    "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V60_2026-09-08.md"
   ],
   "relatedHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_INTEGRATIONS_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "multi_repo_absorption_acel_g3_t2_implementation_dispatched",
-  "previousMode": "multi_repo_absorption_acel_g3_t1_design_closed",
+  "currentMode": "multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update",
+  "previousMode": "multi_repo_absorption_acel_g3_t2_implementation_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

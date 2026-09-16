@@ -11,7 +11,7 @@ history/state aggregate is a targeted lookup, not a default startup step:
 1. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` (compact current
    facts: current mode, active handoff, next allowed move)
 2. this front door
-3. `AGENT_HANDOFF_V60_2026-09-08.md`
+3. `AGENT_HANDOFF_V61_2026-09-16.md`
 4. only the current-authority paths those two surfaces name for the task
 5. `CVF_SESSION/ACTIVE_SESSION_STATE.json` only as a targeted lookup, when a
    current fact above is missing, contradictory, or the task explicitly
@@ -31,28 +31,28 @@ artifact.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V60_2026-09-08.md` |
+| Active handoff | `AGENT_HANDOFF_V61_2026-09-16.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
-| Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V59_2026-08-11.md` |
+| Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V60_2026-09-08.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_t2_implementation_dispatched`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=INTERNAL_AGENT executes the G3 T2 work order and returns `COMPLETE_PENDING_REVIEW`; role=INTERNAL_AGENT worker then Local reviewer/closer; phase=offline implementation; decision owner=Local; parked checkpoint=real evaluator execution, certification/index mutation, provider/runtime/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=Local updates the existing external/local evidence-relay and domain-funnel absorption owners with the reusable research-assisted repository-absorption protocol; role=Local orchestrator/reviewer; phase=governance-method hardening after G3 closure; decision owner=Local; parked checkpoint=G3 successor, real evaluator execution, certification/index mutation, provider/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_acel_g3_t2_implementation_dispatched`
-Current mode: `multi_repo_absorption_acel_g3_t2_implementation_dispatched`; previous mode marker: `multi_repo_absorption_acel_g3_t1_design_closed`
+Current mode marker: `multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update`
+Current mode: `multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update`; previous mode marker: `multi_repo_absorption_acel_g3_t2_implementation_dispatched`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T2-BEHAVIORAL-EVALUATION-CONTRACT-IMPLEMENTATION_DISPATCHED_AT_edb90e5d4; NEXT_STEP=INTERNAL_AGENT_EXECUTE_GOVERNING_WORK_ORDER_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Worker owns exactly seven create-only outputs, must not commit, and may perform only offline contract, checker and focused-test work. Real evaluator runs, package/certification/index mutation, provider/live, runtime wiring, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_acel_g3_t2_implementation_dispatched`. G3 T1 remains closed at `f255c9c7f`; G3 T2 dispatch is committed at `edb90e5d4`, with pre-dispatch 82/82 PASS and a seven-path no-commit worker lane.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T2-CLOSED_PASS_BOUNDED_AND_PARKED_AT_9972a9b72; NEXT_STEP=UPDATE_EXISTING_EXTERNAL_LOCAL_EVIDENCE_RELAY_AND_DOMAIN_FUNNEL_ABSORPTION_OWNERS_WITH_REUSABLE_RESEARCH_ASSISTED_REPOSITORY_ABSORPTION_PROTOCOL; EXPANSION_ALLOWED=false. G3 has no automatic successor. G1 and G4 remain independent audit questions whose web-agent returns are advisory inputs only; Local repository truth and Local disposition remain controlling. No Core runtime, provider/live, package lifecycle, public sync or deployment authority is opened. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update`. G3 T2 is `CLOSED_PASS_BOUNDED_G3_PARKED` at `9972a9b72` after bounded Local repair; focused evidence is 79/79 TypeScript and 55/55 Python, typecheck clean, zero provider/live/runtime effects.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
