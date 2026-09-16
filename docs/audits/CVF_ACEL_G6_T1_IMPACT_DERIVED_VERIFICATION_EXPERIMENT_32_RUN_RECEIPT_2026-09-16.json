@@ -1,0 +1,757 @@
+{
+  "schemaVersion": "cvf.acelG6ImpactVerificationExperiment.v1",
+  "batchId": "ACEL-G6-T1-IMPACT-DERIVED-VERIFICATION-EXPERIMENT",
+  "evidenceClass": "PROPOSAL_ONLY_HERMETIC",
+  "generatedAt": "2026-09-16T00:00:00.000Z",
+  "totalRuns": 32,
+  "uniqueRunKeys": 32,
+  "records": [
+    {
+      "runKey": "docs-baseline:FIXED_BUNDLE:1",
+      "caseId": "docs-baseline",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "missing-required-section"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "docs-baseline:FIXED_BUNDLE:2",
+      "caseId": "docs-baseline",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "missing-required-section"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "docs-baseline:IMPACT_DERIVED:1",
+      "caseId": "docs-baseline",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance"
+      ],
+      "detectedRegressionIds": [
+        "missing-required-section"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 3,
+      "deterministicLatencyUnits": 8,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "docs-baseline:IMPACT_DERIVED:2",
+      "caseId": "docs-baseline",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance"
+      ],
+      "detectedRegressionIds": [
+        "missing-required-section"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 3,
+      "deterministicLatencyUnits": 8,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "ts-contract:FIXED_BUNDLE:1",
+      "caseId": "ts-contract",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "type-contract-break"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "ts-contract:FIXED_BUNDLE:2",
+      "caseId": "ts-contract",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "type-contract-break"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "ts-contract:IMPACT_DERIVED:1",
+      "caseId": "ts-contract",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "focused-tests",
+        "typescript-typecheck"
+      ],
+      "detectedRegressionIds": [
+        "type-contract-break"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 10,
+      "deterministicLatencyUnits": 23,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "ts-contract:IMPACT_DERIVED:2",
+      "caseId": "ts-contract",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "focused-tests",
+        "typescript-typecheck"
+      ],
+      "detectedRegressionIds": [
+        "type-contract-break"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 10,
+      "deterministicLatencyUnits": 23,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "ts-test:FIXED_BUNDLE:1",
+      "caseId": "ts-test",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "behavior-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "ts-test:FIXED_BUNDLE:2",
+      "caseId": "ts-test",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "behavior-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "ts-test:IMPACT_DERIVED:1",
+      "caseId": "ts-test",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "focused-tests"
+      ],
+      "detectedRegressionIds": [
+        "behavior-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 6,
+      "deterministicLatencyUnits": 14,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "ts-test:IMPACT_DERIVED:2",
+      "caseId": "ts-test",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "focused-tests"
+      ],
+      "detectedRegressionIds": [
+        "behavior-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 6,
+      "deterministicLatencyUnits": 14,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "checker-source:FIXED_BUNDLE:1",
+      "caseId": "checker-source",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "checker-rule-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "checker-source:FIXED_BUNDLE:2",
+      "caseId": "checker-source",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "checker-rule-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "checker-source:IMPACT_DERIVED:1",
+      "caseId": "checker-source",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "checker-tests",
+        "docs-governance"
+      ],
+      "detectedRegressionIds": [
+        "checker-rule-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 9,
+      "deterministicLatencyUnits": 21,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "checker-source:IMPACT_DERIVED:2",
+      "caseId": "checker-source",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "checker-tests",
+        "docs-governance"
+      ],
+      "detectedRegressionIds": [
+        "checker-rule-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 9,
+      "deterministicLatencyUnits": 21,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "checker-test:FIXED_BUNDLE:1",
+      "caseId": "checker-test",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "checker-fixture-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "checker-test:FIXED_BUNDLE:2",
+      "caseId": "checker-test",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "checker-fixture-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "checker-test:IMPACT_DERIVED:1",
+      "caseId": "checker-test",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "checker-tests",
+        "docs-governance"
+      ],
+      "detectedRegressionIds": [
+        "checker-fixture-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 9,
+      "deterministicLatencyUnits": 21,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "checker-test:IMPACT_DERIVED:2",
+      "caseId": "checker-test",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "checker-tests",
+        "docs-governance"
+      ],
+      "detectedRegressionIds": [
+        "checker-fixture-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 9,
+      "deterministicLatencyUnits": 21,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "session-state:FIXED_BUNDLE:1",
+      "caseId": "session-state",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "continuity-drift"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "session-state:FIXED_BUNDLE:2",
+      "caseId": "session-state",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "continuity-drift"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "session-state:IMPACT_DERIVED:1",
+      "caseId": "session-state",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "active-session",
+        "baseline-safety"
+      ],
+      "detectedRegressionIds": [
+        "continuity-drift"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 4,
+      "deterministicLatencyUnits": 10,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "session-state:IMPACT_DERIVED:2",
+      "caseId": "session-state",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "active-session",
+        "baseline-safety"
+      ],
+      "detectedRegressionIds": [
+        "continuity-drift"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 4,
+      "deterministicLatencyUnits": 10,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "provider-adapter:FIXED_BUNDLE:1",
+      "caseId": "provider-adapter",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "provider-contract-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "provider-adapter:FIXED_BUNDLE:2",
+      "caseId": "provider-adapter",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "provider-contract-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "provider-adapter:IMPACT_DERIVED:1",
+      "caseId": "provider-adapter",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "focused-tests",
+        "provider-contract",
+        "typescript-typecheck"
+      ],
+      "detectedRegressionIds": [
+        "provider-contract-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 15,
+      "deterministicLatencyUnits": 34,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "provider-adapter:IMPACT_DERIVED:2",
+      "caseId": "provider-adapter",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "focused-tests",
+        "provider-contract",
+        "typescript-typecheck"
+      ],
+      "detectedRegressionIds": [
+        "provider-contract-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 15,
+      "deterministicLatencyUnits": 34,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "unknown-owner:FIXED_BUNDLE:1",
+      "caseId": "unknown-owner",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "unknown-impact-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "unknown-owner:FIXED_BUNDLE:2",
+      "caseId": "unknown-owner",
+      "policy": "FIXED_BUNDLE",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "unknown-impact-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": null,
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "unknown-owner:IMPACT_DERIVED:1",
+      "caseId": "unknown-owner",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 1,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "unknown-impact-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": "UNKNOWN_IMPACT_FAIL_CLOSED",
+      "authorityPreserved": true,
+      "admitted": true
+    },
+    {
+      "runKey": "unknown-owner:IMPACT_DERIVED:2",
+      "caseId": "unknown-owner",
+      "policy": "IMPACT_DERIVED",
+      "repetition": 2,
+      "selectedVerifiers": [
+        "baseline-safety",
+        "docs-governance",
+        "typescript-typecheck",
+        "focused-tests",
+        "checker-tests",
+        "active-session",
+        "provider-contract",
+        "public-workflow"
+      ],
+      "detectedRegressionIds": [
+        "unknown-impact-regression"
+      ],
+      "missedRegressionIds": [],
+      "deterministicCostUnits": 30,
+      "deterministicLatencyUnits": 68,
+      "fallbackReason": "UNKNOWN_IMPACT_FAIL_CLOSED",
+      "authorityPreserved": true,
+      "admitted": true
+    }
+  ],
+  "aggregate": [
+    {
+      "policy": "FIXED_BUNDLE",
+      "runCount": 16,
+      "admittedRunCount": 16,
+      "detectedRegressionCount": 16,
+      "missedRegressionCount": 0,
+      "totalCostUnits": 480,
+      "totalLatencyUnits": 1088
+    },
+    {
+      "policy": "IMPACT_DERIVED",
+      "runCount": 16,
+      "admittedRunCount": 16,
+      "detectedRegressionCount": 16,
+      "missedRegressionCount": 0,
+      "totalCostUnits": 172,
+      "totalLatencyUnits": 398
+    }
+  ],
+  "claimBoundary": "Hermetic proposal-only comparison; no production verifier selection, gate reduction, provider, runtime, public, or deployment authority."
+}
