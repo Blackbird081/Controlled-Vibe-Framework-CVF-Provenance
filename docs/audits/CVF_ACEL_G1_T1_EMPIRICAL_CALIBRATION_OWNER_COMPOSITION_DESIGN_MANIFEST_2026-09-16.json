@@ -1,0 +1,247 @@
+{
+  "schemaVersion": "cvf.acelG1OwnerCompositionDesignManifest.v1",
+  "batchId": "ACEL-G1-T1-EMPIRICAL-CALIBRATION-OWNER-COMPOSITION-DESIGN",
+  "executionBaseHead": "ff7a0ed68e5b2cdcd6e40f4477903ee7a4bac5b6",
+  "dispatchBaseHead": "9058a72d55fff417ca1149fdee58f2b411f68b46",
+  "terminalDisposition": "DESIGN_READY_FOR_SEPARATE_IMPLEMENTATION_WORK_ORDER",
+  "humanReadableCompanion": "docs/audits/CVF_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
+  "ledger": [
+    {
+      "claimId": "G1T1-L01",
+      "path": "docs/reviews/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_COMPLETION_2026-09-15.md",
+      "sha256": "107808cde5991393786949a9b7a2bae4c40b53620342bd181791031c69729cae",
+      "status": "READ",
+      "extractedFact": "T0 accepted G1 as ADAPT: benchmark instrumentation and provider-lane calibration exist, but no closed task-class/configuration operating-point loop is proved."
+    },
+    {
+      "claimId": "G1T1-L02",
+      "path": "docs/audits/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_2026-09-15.md",
+      "sha256": "5073932e1bcb18754ff914003b1bbac80037dad2b7599b50c29fb497f2eea39a",
+      "status": "READ",
+      "extractedFact": "G1-C1..C3 identify three adjacent but non-closing mechanisms: PROPOSAL_ONLY benchmark harness with no consumer, PROPOSAL ONLY performance thresholds, and provider-lane canary calibrating lane availability only, not task-class configuration selection. Hash matches baseline-cited value exactly; zero drift since T0 acceptance."
+    },
+    {
+      "claimId": "G1T1-L03",
+      "path": "docs/audits/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_EVIDENCE_T0_2026-09-15.json",
+      "sha256": "a1ec2a5ce31e15dc5ca369c0b9587c7a61f54a517f1439355bd6f49b5caaefe3",
+      "status": "READ",
+      "extractedFact": "Machine ledger records G1-C1, G1-C2, G1-C3 each as FACT/ADAPT/HIGH confidence with exact repo path and symbol citations. Hash matches baseline-cited value exactly; zero drift."
+    },
+    {
+      "claimId": "G1T1-L04",
+      "path": "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/performance.benchmark.harness.contract.ts",
+      "sha256": "c95914c1cd541a6f6cd95af91b7c145830c12cfb78aa3ccc06a9742ce2a9ea51",
+      "status": "READ",
+      "extractedFact": "EvidenceClass type is locked to the single literal PROPOSAL_ONLY; generateReport() always returns evidenceClass PROPOSAL_ONLY; module header comment states 'no path to baseline truth within this contract; promotion requires an explicit GC-026 tracker sync'. No exported function consumes a BenchmarkReport to select a configuration."
+    },
+    {
+      "claimId": "G1T1-L05",
+      "path": "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/performance.benchmark.harness.contract.test.ts",
+      "sha256": "0a57107408356853da407b6fa20b5ae30d25bf4b5afa07fe88107647066a9840",
+      "status": "READ",
+      "extractedFact": "All test suites cover lifecycle transitions (init/start/record/complete/fail/report) and PROPOSAL_ONLY evidenceClass invariants only; no test exercises configuration selection or comparison across runs."
+    },
+    {
+      "claimId": "G1T1-L06",
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/harder.value.candidate.contract.ts",
+      "sha256": "2592fe83e73746c88b09b87fbddac3f511b5d9f05663687f9a1f08028742cb18",
+      "status": "READ",
+      "extractedFact": "evaluateHarderCandidate is a deterministic, pure, fail-closed rubric evaluator returning {rubric, defects, materialDefectFound, releaseCandidate}; releaseCandidate is true exactly when score<=80 or a material defect exists, i.e. eligibility (material defect) is checked independently of and prior to score-based judgement. Module comment: 'Only the reviewer may release T6B; this module never sets or claims a release decision itself.'"
+    },
+    {
+      "claimId": "G1T1-L07",
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/scripts/run-mao-oa-t6a-candidate-calibration.ts",
+      "sha256": "9d25bcf04bb035a6d756a124829bf70f9893482f8a0727b038f1d1af9204fcb4",
+      "status": "READ",
+      "extractedFact": "Task-specific, fixed-scope, single-call, zero-retry, receipt-gated live calibration runner for exactly one task id (MAO-OA-T6A-HARDER-CANDIDATE). No comparison verdict is computed; it establishes one baseline calibration point only and never generalizes across task classes or candidate sets."
+    },
+    {
+      "claimId": "G1T1-L08",
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/assf.behavioral.evaluation.contract.ts",
+      "sha256": "83201e79a1172e50bcaaecd444b3dc5c7709658f0a83256f1c7d23b5cfd659cd",
+      "status": "READ",
+      "extractedFact": "Accepted, closed (CLOSED_PASS_BOUNDED_G3_PARKED) pure offline grader: gradeBehavioralEvaluation, admitFixtureSet, admitBaselinePair. Enforces exact repeat counts (1 for DETERMINISTIC, 3 for STOCHASTIC), positive+negative fixture-set admission, and WITH/WITHOUT byte-identical-input pairing, all fail-closed on malformed/missing/unknown input. Hash matches G3 T2 completion review's cited final SHA-256 exactly, confirming the accepted closed version was read, not a stale draft."
+    },
+    {
+      "claimId": "G1T1-L09",
+      "path": "docs/reviews/CVF_ACEL_G3_T2_BEHAVIORAL_EVALUATION_CONTRACT_IMPLEMENTATION_COMPLETION_2026-09-16.md",
+      "sha256": "b5172077f17ac11b28677c00ccefc6864332ef42e5545e61e72bf1fd6e4c30af",
+      "status": "READ",
+      "extractedFact": "G3 T2 is CLOSED_PASS_BOUNDED_G3_PARKED after bounded reviewer repair (79/79 TypeScript, 55/55 Python focused tests). Terminal Decision explicitly parks G3 with no automatic successor, provider call, runtime integration, lifecycle mutation, or T6B opening authorized."
+    },
+    {
+      "claimId": "G1T1-L10",
+      "path": "docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md",
+      "sha256": "c7a2ece2ccabdf4d74423b8ddbec6c688558e6f04c2f2cba152a9eaf24169460",
+      "status": "READ",
+      "extractedFact": "Status taxonomy (UNCONFIGURED/BLOCKED/LIVE/CANARY_PASS/CERTIFIED/DEGRADED/EXPERIMENTAL) calibrates whether a provider/model lane is usable at all. Claim Boundary explicitly states: 'Multi-provider operability is proven. Provider parity is not claimed.' No task-class configuration-selection claim is made anywhere in this matrix."
+    }
+  ],
+  "g1ClaimReconciliation": {
+    "G1-C1": { "t0Disposition": "ADAPT", "confidence": "HIGH", "currentSourceMatch": true, "freshnessDelta": "NONE" },
+    "G1-C2": { "t0Disposition": "ADAPT", "confidence": "HIGH", "currentSourceMatch": true, "freshnessDelta": "NONE" },
+    "G1-C3": { "t0Disposition": "ADAPT", "confidence": "HIGH", "currentSourceMatch": true, "freshnessDelta": "NONE" }
+  },
+  "preferredHypothesisDisposition": "CONFIRMED_WITH_BOUNDED_BINDING_REFINEMENT",
+  "preferredHypothesisRefinement": "The owner must verify an immutable candidate/configuration-to-trace-to-G3-result envelope because BehavioralEvaluation carries no candidate or trace identity. Admitted held-out G3 evidence is mandatory; an evaluateHarderCandidate-shaped rubric adapter is optional secondary evidence, not a rubric-only bypass.",
+  "ownerMatrix": [
+    { "surface": "PerformanceBenchmarkHarnessContract", "path": "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/performance.benchmark.harness.contract.ts", "disposition": "REUSE", "role": "optional PROPOSAL_ONLY exploratory comparison input; cannot establish preferred or RegressionBinding without separate GC-026 promotion" },
+    { "surface": "GC-026 promotion path", "path": "docs/reference/CVF_PERFORMANCE_ACCEPTANCE_POLICY_BASELINE_2026-03-29.md", "disposition": "REUSE", "role": "unchanged sole path from PROPOSAL_ONLY benchmark evidence to baseline truth" },
+    { "surface": "assf.behavioral.evaluation.contract.ts", "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/assf.behavioral.evaluation.contract.ts", "disposition": "REUSE", "role": "mandatory held-out grading/admission input; new owner separately verifies candidate/configuration and trace/result binding" },
+    { "surface": "harder.value.candidate.contract.ts", "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/harder.value.candidate.contract.ts", "disposition": "ADAPTER_ONLY", "role": "fixed-task pattern for optional secondary rubric evidence alongside G3; releaseCandidate is not G1 eligibility/preference" },
+    { "surface": "run-mao-oa-t6a-candidate-calibration.ts", "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/scripts/run-mao-oa-t6a-candidate-calibration.ts", "disposition": "ADAPTER_ONLY", "role": "reference pattern only for a later, separately governed live-evidence-collection step; this script remains task-specific and is not generalized here" },
+    { "surface": "CVF_PROVIDER_LANE_READINESS_MATRIX", "path": "docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md", "disposition": "REUSE", "role": "eligibility precondition using explicit allowed-status set, never ordered-score comparison or preference evidence" },
+    { "surface": "ASSF certification/UAT lifecycle schema", "path": "docs/reference/agent_system_skills/CVF_ASSF_CERTIFICATION_LIFECYCLE_GUARD_CONTRACT.md", "disposition": "DEFER", "role": "separate skill-lifecycle owner; not read or written by this design" },
+    { "surface": "G2 runtime topology reallocation", "path": "N/A_INDEPENDENT_GAP", "disposition": "DEFER", "role": "independent T0 gap; not composed into this owner" },
+    { "surface": "G4 incremental/marginal value measurement", "path": "N/A_EXCLUDED_PER_WORK_ORDER", "disposition": "DEFER", "role": "explicitly excluded; may later consume this owner's comparable pairs as an input with no interface obligation created here" },
+    { "surface": "new independent calibration data model/grading engine", "path": "N/A_NOT_PROPOSED", "disposition": "REJECT_DUPLICATE", "role": "not proposed; would duplicate G3/G2/T6A primitives already present" }
+  ],
+  "ownerDependencyGraph": {
+    "nodes": [
+      "task_class_declaration",
+      "candidate_configuration_set",
+      "heldout_partition_admission",
+      "candidate_evidence_binding_verification",
+      "g3_fixture_set_admission",
+      "g3_behavioral_evaluation",
+      "rubric_evaluator_adapter_optional",
+      "benchmark_harness_evidence_optional",
+      "provider_readiness_gate",
+      "calibration_decision_function_NEW",
+      "operating_point_assessment_NEW",
+      "regression_binding_NEW",
+      "invalidation_trigger_evaluation"
+    ],
+    "edges": [
+      { "from": "task_class_declaration", "to": "candidate_configuration_set" },
+      { "from": "candidate_configuration_set", "to": "heldout_partition_admission" },
+      { "from": "heldout_partition_admission", "to": "candidate_evidence_binding_verification" },
+      { "from": "candidate_evidence_binding_verification", "to": "g3_fixture_set_admission" },
+      { "from": "g3_fixture_set_admission", "to": "g3_behavioral_evaluation" },
+      { "from": "candidate_configuration_set", "to": "rubric_evaluator_adapter_optional" },
+      { "from": "candidate_configuration_set", "to": "benchmark_harness_evidence_optional" },
+      { "from": "candidate_configuration_set", "to": "provider_readiness_gate" },
+      { "from": "g3_behavioral_evaluation", "to": "calibration_decision_function_NEW" },
+      { "from": "rubric_evaluator_adapter_optional", "to": "calibration_decision_function_NEW" },
+      { "from": "benchmark_harness_evidence_optional", "to": "calibration_decision_function_NEW" },
+      { "from": "provider_readiness_gate", "to": "calibration_decision_function_NEW" },
+      { "from": "calibration_decision_function_NEW", "to": "operating_point_assessment_NEW" },
+      { "from": "operating_point_assessment_NEW", "to": "regression_binding_NEW" },
+      { "from": "regression_binding_NEW", "to": "invalidation_trigger_evaluation" }
+    ],
+    "dependencyDirection": "ONE_WAY_DOWNSTREAM: new decision layer depends on the four existing owners (G3, rubric-evaluator pattern, benchmark harness, provider-readiness matrix); none of the four existing owners depends on or is modified by the new layer"
+  },
+  "candidateIdentity": {
+    "taskClassId": "stable dispatcher-declared string bound to exactly one G3-admitted fixture set (positiveCount>=1 and negativeCount>=1)",
+    "candidateId": "stable string unique within one calibration round for one taskClassId",
+    "candidateConfigHash": "SHA-256 of canonical versioned declaredDimensions; duplicate hash under another ID or one ID with multiple hashes blocks the round",
+    "identityBasis": "candidateId and immutable candidateConfigHash together; labels never substitute for configuration content"
+  },
+  "candidateEvidenceBinding": {
+    "requiredFields": ["taskClassId", "candidateId", "candidateConfigHash", "comparabilityFingerprint", "fixtureSetContentHash", "fixtureId", "fixtureContentHash", "traceIds", "traceContentHashes", "traceCaptureModes", "g3ResultHash", "producerReceiptRef"],
+    "verification": "decision layer verifies supplied fixture/trace/result hashes and a producer receipt tying each trace to the same candidate/configuration; G3 output alone does not attest candidate or live identity",
+    "failure": "missing, ambiguous, reused or contradictory binding is insufficient_evidence; mismatched round fingerprint is incomparable"
+  },
+  "candidateDimensions": {
+    "allowed": [
+      "effort_reasoning_level_profile",
+      "prompt_scaffolding_profile",
+      "tool_set_selection",
+      "context_window_policy",
+      "budget_ceiling",
+      "topology_when_g2_supplies_reallocation_primitive",
+      "provider_model_lane_subject_to_readiness_gating"
+    ],
+    "forbiddenFromSilentComparison": [
+      "task_case_set_fixture_set",
+      "environment_sandbox_tier",
+      "policy_risk_ceiling",
+      "acceptance_criteria",
+      "grading_rubric_or_fixture_version"
+    ]
+  },
+  "comparabilityFingerprint": {
+    "formula": "SHA-256(canonicalVersion | taskClassId | fixtureSetContentHash | environmentDescriptorHash | policyId | acceptanceCriteriaVersion | gradingRubricVersionHash | heldoutPartitionHash)",
+    "fields": ["canonicalVersion", "taskClassId", "fixtureSetContentHash", "environmentDescriptorHash", "policyId", "acceptanceCriteriaVersion", "gradingRubricVersionHash", "heldoutPartitionHash"],
+    "mismatchBehavior": "candidate evidence under a different fingerprint is never merged into the same comparison; decision state incomparable with a named mismatch reason"
+  },
+  "searchHeldoutPartition": {
+    "rule": "predeclare separate SEARCH and HELD_OUT membership ledgers before tuning; only a G3-admitted held-out set may supply acceptance evidence; baselineRole is a WITH/WITHOUT pairing field, not a partition label",
+    "contaminationRejection": "shared fixture ID, canonical input hash, source hash, content hash or known tuning exposure rejects held-out evidence as insufficient_evidence with decision-layer defect REUSED_HELDOUT_SEARCH_DATA"
+  },
+  "repeatUncertaintyMissingDataSemantics": {
+    "source": "reused directly from G3 gradeBehavioralEvaluation: repeatsRequired is exactly 1 for DETERMINISTIC and exactly 3 for STOCHASTIC",
+    "partialRunHandling": "missing trace or insufficient repeats yields insufficient_evidence; complete bound substantive G3 defect yields ineligible; neither earns partial credit"
+  },
+  "eligibilityBeforePreferencePolicy": {
+    "stage1EligibilityFilter": [
+      "after precedence checks, complete bound substantive G3 defect is ineligible; missing/incomplete evidence is insufficient_evidence and fingerprint mismatch is incomparable",
+      "any registered rubric-evaluator adapter reports materialDefectFound=true",
+      "declared provider/model lane status is outside the predeclared allowed-status set",
+      "candidate exceeds its declared budget ceiling",
+      "all required held-out G3 fixtures must have bound PASS_WITH_EVIDENCE results to proceed to preference"
+    ],
+    "classificationPrecedence": ["incomparable for fingerprint/forbidden-dimension mismatch", "insufficient_evidence for missing binding, admission, trace, repeat or contaminated holdout", "ineligible for complete bound substantive defect, risk, readiness or budget failure", "eligible candidates may enter preference"],
+    "stage2PreferenceRanking": "raw benchmark PROPOSAL_ONLY measurements may yield exploratory proposal ranking only; preferred and RegressionBinding require either separately GC-026-promoted performance evidence or a predeclared comparable version-bound deterministic rubric; without admissible preference basis emit NO_ADMISSIBLE_PREFERENCE_EVIDENCE and no preferred candidate",
+    "noScoreLaunderingInvariant": "eligibility failures cannot be overturned by any numeric score"
+  },
+  "decisionStates": [
+    { "state": "ineligible", "meaning": "complete bound evidence establishes substantive quality/risk/budget/readiness failure" },
+    { "state": "eligible_nonpreferred", "meaning": "passed eligibility; not selected as the round's preferred candidate" },
+    { "state": "preferred", "meaning": "sole best eligible candidate under a predeclared admissible preference basis; never raw PROPOSAL_ONLY performance evidence" },
+    { "state": "incomparable", "meaning": "evidence under a different comparabilityFingerprint, or a forbidden dimension varies; never compared" },
+    { "state": "insufficient_evidence", "meaning": "missing or ambiguous candidate/trace binding, held-out admission, G3 trace/repeats, or REUSED_HELDOUT_SEARCH_DATA contamination" }
+  ],
+  "decisionStatesExhaustiveAndExclusive": true,
+  "negativeCases": [
+    { "case": "empty_candidate_set", "behavior": "round is BLOCKED_EMPTY_CANDIDATE_SET; no OperatingPointAssessment emitted" },
+    { "case": "duplicate_candidate_ids", "behavior": "one ID with multiple config hashes or duplicate config hash under multiple IDs blocks the round; never silently overwritten or double-counted" },
+    { "case": "mixed_task_case_sets", "behavior": "candidates with a different fixtureSetContentHash are incomparable; round proceeds over comparable subset only, exclusions disclosed by ID and reason" },
+    { "case": "unequal_budgets_or_policies", "behavior": "budget: exceeding stated ceiling is ineligible; policy: different policyId is incomparable, never merged" },
+    { "case": "missing_heldout_evidence_or_candidate_binding", "behavior": "insufficient_evidence; G3 result or candidate label alone does not attest which candidate produced a trace" },
+    { "case": "reused_heldout_search_data", "behavior": "insufficient_evidence with REUSED_HELDOUT_SEARCH_DATA; never trusted even if otherwise passing" },
+    { "case": "stale_fingerprints", "behavior": "incomparable with the mismatch reason named; stale and current evidence never silently mixed" },
+    { "case": "incomplete_repeats", "behavior": "insufficient_evidence using G3's repeatsObserved/repeatsRequired; never rounded up or averaged into a pass" },
+    { "case": "unknown_metrics_or_units", "behavior": "excluded and logged UNKNOWN_METRIC_EXCLUDED; if no admissible preference basis remains, no preferred assignment" },
+    { "case": "ties", "behavior": "all tied candidates remain eligible_nonpreferred; assessment records TIE_NO_AUTOMATIC_PREFERENCE; requires explicit reviewer/operator tie-break before any preferred assignment" },
+    { "case": "no_eligible_candidate", "behavior": "round result NO_ELIGIBLE_CANDIDATE; no preferred assignment; no prior accepted operating point disturbed" },
+    { "case": "proposal_only_performance_advantage", "behavior": "exploratory PROPOSAL_ONLY ranking only; no preferred or RegressionBinding before separate GC-026 promotion" }
+  ],
+  "provenanceFingerprint": {
+    "formula": "SHA-256(canonicalVersion | comparabilityFingerprint | acceptedCandidateId | candidateConfigHash | orderedEvidenceEnvelopeHashes[] | preferencePolicyHash | promotionEvidenceRefOrRubricHash); acceptedAt is separate metadata"
+  },
+  "invalidationTriggers": [
+    "fixture_set_content_hash_changes_for_bound_task_class",
+    "candidate_config_or_bound_trace_result_or_producer_receipt_changes",
+    "partition_rubric_environment_policy_acceptance_or_preference_policy_changes",
+    "accepted_candidate_provider_lane_readiness_downgrades_below_required_minimum",
+    "gc026_promotion_changes_or_is_withdrawn_for_relied_on_performance_evidence",
+    "accepted_candidate_budget_ceiling_lowered_below_recorded_consumption"
+  ],
+  "invalidationAction": "mark RegressionBinding.invalidationStatus=STALE and require a fresh OperatingPointAssessment before reliance; never automatic rollback or configuration mutation",
+  "regressionBindingSchema": {
+    "fields": ["taskClassId", "acceptedCandidateId", "candidateConfigHash", "comparabilityFingerprint", "provenanceFingerprint", "orderedEvidenceEnvelopeHashes", "preferenceAuthorityRef", "boundAt", "invalidationStatus", "requiredRegradeTriggerSet"],
+    "creationRule": "created only for exactly one admissibly preferred candidate; never on tie, no eligible candidate, missing admissible preference basis or raw PROPOSAL_ONLY performance ranking"
+  },
+  "g3Boundary": "G3 gradeBehavioralEvaluation and held-out fixture admission are required, but G3 output does not attest candidate or trace identity; the new owner verifies that envelope. G3 alone does not select, certify or prove live execution. G3 remains CLOSED_PASS_BOUNDED_G3_PARKED.",
+  "g4Boundary": "G4 (marginal/incremental value measurement) is excluded and deferred throughout; no G4 output, score, ratio, hook, or interface obligation is created by this design.",
+  "providerReadinessBoundary": "Provider-lane readiness is used strictly as an eligibility precondition, never as ranking/preference evidence, and never promoted beyond the adjacent/certification role stated in its own Claim Boundary.",
+  "successorManifest": [
+    { "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/task.class.calibration.owner.contract.ts", "role": "pure decision-layer implementation" },
+    { "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/task.class.calibration.owner.contract.test.ts", "role": "adversarial test suite covering every declared negative case" },
+    { "path": "governance/compat/check_task_class_calibration_owner_evidence.py", "role": "read-only evidence/schema checker" },
+    { "path": "governance/compat/test_check_task_class_calibration_owner_evidence.py", "role": "checker test suite" },
+    { "path": "docs/reference/agent_system_skills/CVF_TASK_CLASS_CALIBRATION_OWNER_CONTRACT.md", "role": "normative reference contract" }
+  ],
+  "successorManifestBlockerCount": 0,
+  "atMostOneSeparatelyGovernedImplementationTranche": true,
+  "automaticSuccessorAuthorized": false,
+  "reconciliation": {
+    "ledgerCount": 10,
+    "hashedCount": 10,
+    "readCount": 10,
+    "unresolvedCount": 0,
+    "driftDetected": false
+  },
+  "claimBoundary": "This manifest records a bounded ten-source design audit for G1 owner composition. It does not authorize implementation, benchmark or provider execution, credentials, network access, configuration selection/mutation, threshold promotion, G4, runtime wiring, hook/CI changes, public sync, deployment, production, or an automatic successor."
+}

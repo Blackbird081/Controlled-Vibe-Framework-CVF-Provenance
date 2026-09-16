@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
     "baselineSha256": "e9af41d57fe272e1bd3c96b61fea563cb2ed15a416276194251fc3f04e884d8c",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
-    "workOrderSha256": "f6b0fd71b9ac8f52d33fa75acdc8f27d2cbf78339f3b2fb84f8fbb4605b6f9bf"
+    "workOrderSha256": "72a672175a43503d514187d0928667e676b7f4af159e45447a8afdde0ea0c1ea"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

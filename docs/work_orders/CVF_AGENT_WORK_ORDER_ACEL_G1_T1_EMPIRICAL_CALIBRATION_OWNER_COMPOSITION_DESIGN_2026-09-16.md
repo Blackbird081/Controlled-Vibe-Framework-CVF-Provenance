@@ -22,7 +22,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: ACEL-G1-T1-EMPIRICAL-CALIBRATION-OWNER-COMPOSITION-DESIGN
 
@@ -650,27 +650,35 @@ Claim boundary: no package/skill state is read as permission or modified.
 
 ## Closure Checklist
 
-- [ ] Worker captured exact execution base and clean start.
-- [ ] Exactly three worker-owned paths exist; every other path unchanged.
-- [ ] Ten sources reconcile 10/10 with hashes.
-- [ ] Owner/dependency/consumer graphs and closed-loop contract agree.
-- [ ] Non-circular, comparability, invalidation, and negative cases are complete.
-- [ ] G4 remains independent and excluded.
-- [ ] JSON parses; worker-return fast passes; staging empty; HEAD unchanged.
-- [ ] Local reviewer records terminal disposition.
+- [x] Worker captured exact execution base and clean start.
+- [x] Exactly three worker-owned paths existed; Local R1 repair stayed in them.
+- [x] Ten sources reconcile 10/10 with hashes.
+- [x] Owner/dependency/consumer graphs and closed-loop contract agree after Local R1 repair.
+- [x] Non-circular, comparability, invalidation, and negative cases are complete after Local R1 repair.
+- [x] G4 remains independent and excluded.
+- [x] JSON parses; worker-return fast passes; worker staging stayed empty and HEAD unchanged.
+- [x] Local reviewer records terminal disposition in the separate completion review.
 
 ## Machine Closure Package
 
-NOT_APPLICABLE_WITH_REASON: dispatch artifact only. Machine closure packaging
-belongs to Local after returned evidence is reviewed and materially committed.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_COMPLETION_2026-09-17.md` | Local accepted bounded design | PASS |
+| Roadmap state | active ACEL continuity | G1 T1 design closed; G4 and implementation parked | PASS |
+| Registry JSON | G1 design manifest | 10/10 terminal rows | PASS |
+| Registry Markdown | G1 design audit | one owner, complete decision semantics | PASS |
+| External evidence digest | N/A with reason: no new external input in internal design tranche | zero new inputs | N/A with reason |
+| System loop interlock | no runtime consumer | design only | N/A with reason: runtime forbidden |
+| Session continuity | active handoff/front door/state | post-material projection required | N/A with reason: follows material commit |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Assertion | Required at worker return | Dispatch state |
 |---|---|---|
-| source ledger | 10/10 exact hashes and terminal statuses | PENDING_WORKER |
-| owner composition | one owner plus explicit dependencies | PENDING_WORKER |
-| closed loop | task through regression/invalidation | PENDING_WORKER |
+| source ledger | 10/10 exact hashes and terminal statuses | PASS_AFTER_LOCAL_REVIEW |
+| owner composition | one owner plus explicit dependencies | PASS_AFTER_LOCAL_R1_REPAIR |
+| closed loop | task through regression/invalidation | PASS_AFTER_LOCAL_R1_REPAIR |
 | G4 isolation | no merged contract or output | BINDING |
 | provider authority | zero calls; forbidden | BINDING |
 | worker commit | forbidden; Local owns commit | BINDING |

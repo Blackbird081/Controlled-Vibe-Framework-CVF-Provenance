@@ -8068,6 +8068,50 @@
       "notes": "Design-only closure. The four successor paths are planned scope references, not proof that files exist or authority to create them. No evaluator, certification/index mutation, provider/live, runtime, public, deployment, or production effect is claimed."
     },
     {
+      "id": "acel-g1-t1-empirical-calibration-owner-composition-design",
+      "corpusType": "TEST_CORPUS",
+      "displayName": "ACEL G1 T1 empirical calibration owner-composition design",
+      "scopePaths": [
+        "docs/baselines/CVF_GC018_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
+        "docs/audits/CVF_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
+        "docs/audits/CVF_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_MANIFEST_2026-09-16.json",
+        "docs/reviews/CVF_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_WORKER_RETURN_2026-09-16.md",
+        "docs/reviews/CVF_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_COMPLETION_2026-09-17.md",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/task.class.calibration.owner.contract.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/task.class.calibration.owner.contract.test.ts",
+        "governance/compat/check_task_class_calibration_owner_evidence.py",
+        "governance/compat/test_check_task_class_calibration_owner_evidence.py",
+        "docs/reference/agent_system_skills/CVF_TASK_CLASS_CALIBRATION_OWNER_CONTRACT.md"
+      ],
+      "fileCount": 11,
+      "status": "SCANNED_WITH_FINDINGS",
+      "findings": [
+        {
+          "id": "acel-g1-t1-owner-composition-ready",
+          "summary": "Ten current sources support one G1 decision-layer design after Local repair of candidate binding, held-out partition, exclusive decision states and proposal-only preference authority.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Require a separate operator-authorized GC-018 implementation work order before creating any of the five planned successor paths.",
+          "defectClass": "WORKER_EXECUTION_ERROR",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "current general task-class calibration decision owner",
+        "G3 BehavioralEvaluation as candidate/configuration attestation",
+        "baselineRole as search/held-out partition",
+        "raw PROPOSAL_ONLY benchmark as accepted operating-point preference"
+      ],
+      "nextScanRecommendation": "Re-scan only after a separately authorized implementation tranche creates a planned successor path or a pinned owner source changes.",
+      "scanWave": "ACEL-G1-T1",
+      "scanDate": "2026-09-17",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
+      "completionReviewPath": "docs/reviews/CVF_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_COMPLETION_2026-09-17.md",
+      "notes": "Design-only closure. Five successor paths are planned scope references, not present files or authority to create them. G4, provider/live, runtime and deployment remain parked."
+    },
+    {
       "id": "dsh-wra-r1-whole-repository-absorption",
       "corpusType": "EXTERNAL_SOURCE",
       "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",
