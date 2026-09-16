@@ -1,7 +1,7 @@
-# CVF Agent Handoff V61 - G1 and G4 Designs Closed Parked
+# CVF Agent Handoff V61 - G1 T2 Offline Implementation Dispatched
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `5732d1deee2d2c5f520acd8c50b81e8acdf6317f`. G4 closure continuity commit; parent of this dedicated handoff sync.
+Current HEAD recorded for this handoff: `985029ee107345f68f3ebcc345a19f869d1e2c9f`. G1 T2 dispatch material commit; parent of this continuity sync.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -10,8 +10,8 @@ Status: ACTIVE
 
 ## Purpose
 
-Record bounded, independent G1 and G4 design closures. Keep both
-implementation successors parked pending separate Local selection and authority.
+Record G1 T2 pure offline implementation dispatch after independent G1/G4
+design closures. G4 remains parked; the worker has no commit authority.
 
 ## Scope / Target / Owner Boundary
 
@@ -21,14 +21,14 @@ separate governed work order. No runtime or provider authority is transferred.
 
 ## Active Boundary
 
-G3 implementation and the additive method profile are closed and parked. G1
-design is accepted and parked at `d87aadaec`; independent G4 design is
-accepted and parked at `dbb795979`. No implementation or provider/runtime work.
+G1 T1 design is accepted at `d87aadaec`; G1 T2 offline implementation is
+dispatched at `985029ee1`. G4 design is independently parked at `dbb795979`.
+No provider/live, real calibration or runtime work is opened.
 
 ## Handoff Context
 
 - Repository: private provenance SOT on `main`.
-- Current mode: `multi_repo_absorption_acel_g4_t1_design_closed_parked`.
+- Current mode: `multi_repo_absorption_acel_g1_t2_implementation_dispatched`.
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V60_2026-09-08.md`.
 - G3 T2 material closure: `9972a9b720a58fb11bb3500999e6430b1783bd92`.
 - G3 T2 completion: `docs/reviews/CVF_ACEL_G3_T2_BEHAVIORAL_EVALUATION_CONTRACT_IMPLEMENTATION_COMPLETION_2026-09-16.md`.
@@ -38,17 +38,18 @@ accepted and parked at `dbb795979`. No implementation or provider/runtime work.
 - G1 T1 material closure: `d87aadaec`; Local R1 repair accepted with ten matching source hashes, corrected-base pre-implementation 84/84, reviewer-fast 68/68, material hook 89/89.
 - G4 T1 design dispatch: `fb1576aef`; pre-dispatch 82/82 PASS, material hook 89/89 PASS; three create-only worker outputs, no worker commit.
 - G4 T1 design closure: `dbb795979`; eight source hashes, Claude R1 plus one bounded Local repair, reviewer-fast 68/68 and material hook 89/89 PASS. Implementation and experiment remain parked.
+- G1 T2 dispatch: `985029ee1`; pre-dispatch 82/82 and material hook 89/89 PASS; seven create-only offline worker paths; `WORKER_MUST_NOT_COMMIT`.
 - P4-C1 post-commit observation for `dbb795979` is rejected as unusable: its collector applied pre-closure to the mixed exact-manifest plus protected-current-authority range `9ceec78bc..dbb795979`, which the range-shape guard correctly blocks. Marker SHA-256 `38d679509a00a1a791ef1d747b51a7a4a8a73ef36535d12129f96e91ab71d5fd` is preserved under an ignored adjudicated-marker name. No P4 sample or release proof is promoted; the material 89/89 pre-commit result is a separate fact.
 - Local continuity correction: the front-door Next Allowed Move paragraph retained a G1 `Mode:` line after G4 dispatch. The worker-return gate correctly blocked on session-mode consistency. Local corrects only that stale line; no G4 worker artifact is changed.
 - Latest closed learning-history wave remains `LHW24`.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g4_t1_design_closed_parked`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=Local may select one separately governed bounded ACEL delta or keep parked; role=Local reviewer/orchestrator; phase=post-G4 design closure; decision owner=Local; parked checkpoint=G1/G4 implementation, G4 experiment, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2_implementation_dispatched`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=INTERNAL_AGENT executes exact G1 T2 offline seven-path order and returns uncommitted evidence; role=Local dispatcher/reviewer; phase=G1 T2 dispatch; decision owner=Local; parked checkpoint=G4 implementation/experiment, real calibration, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g4_t1_design_closed_parked`
+`multi_repo_absorption_acel_g1_t2_implementation_dispatched`
 
 ## Latest Work / Changes
 
@@ -63,6 +64,7 @@ Startup acknowledged: current mode=`multi_repo_absorption_acel_g4_t1_design_clos
 - Local repaired G1's candidate/evidence binding, SEARCH/HELD_OUT semantics, exclusive decision precedence, and proposal-only preference boundary in one R1 pass; the work order is `CLOSED_PASS_BOUNDED` at `d87aadaec`.
 - Local selected independent G4 `ADAPT` as the next bounded delta and committed a documentation-only GC-018/work-order pair at `fb1576aef`. The worker may create one audit, one JSON manifest and one full return; `WORKER_MUST_NOT_COMMIT`. No measured-value, provider, runtime or G1 implementation claim transfers.
 - Claude returned G4 R1 without commit; Local reconciled all eight hashes, repaired the remaining classification/coverage/value-binding cluster in three output files, accepted a documentation-only design at `dbb795979`, and parked both implementation successors.
+- Local selected and dispatched G1 T2 pure offline seven-path implementation at `985029ee1`; G4 remains parked and no real calibration is authorized.
 - P4-C1 post-commit observation for `d87aadaec` was rejected as unusable: its collector invoked pre-closure on the mixed exact-manifest plus protected-current-authority range `ff7a0ed68..d87aadaec`, which the range-shape guard correctly blocks. Marker SHA-256 `bbea4992b9df03a761f2c7a28c71cc228dc8ecdbd613ca530d173f6aa3908040` was preserved under the ignored adjudicated-marker name before the handoff-sync commit. No P4 sample or release proof was promoted; the material 89/89 pre-commit result remains a separate fact.
 - The existing relay and domain-funnel owners now carry
   `cvf.research-assisted-repository-absorption@1.0.0`; no parallel process was created.
@@ -80,16 +82,15 @@ Startup acknowledged: current mode=`multi_repo_absorption_acel_g4_t1_design_clos
 
 ## Next Allowed Move
 
-Within `AGENT-CAPABILITY-ENGINEERING-LAB-2026-09`, Local may select one
-separately governed bounded next delta or keep the program parked. G1 and G4
-are independent closed designs; neither five-path successor manifest opens
-implementation automatically.
+Within `AGENT-CAPABILITY-ENGINEERING-LAB-2026-09`, the INTERNAL_AGENT may
+execute only the G1 T2 order and return uncommitted evidence for Local review.
+G4 remains independent and parked; no other successor opens automatically.
 
 ## Parked Checkpoints
 
 - Any G3 successor, real behavioral evaluator execution, package/UAT/certification/index mutation, runtime wiring, T6B, provider/live, credential use, public sync, deployment, or production action.
 - Any implementation inferred directly from an external advisory contract.
-- Any G1 successor implementation or real calibration inferred from the design closure.
+- Any G1 work beyond the exact offline T2 order, including real calibration.
 - G4 metric implementation, value experiment, provider/live measurement or automatic successor inferred from the G4 design dispatch.
 - Any reconciliation that merges G1 and G4 or treats an external shortlist as the Local coverage boundary.
 - G4 work while the G1 design return is pending review.
@@ -173,6 +174,15 @@ material closure `dbb795979` in this handoff, bootstrap/front door, current
 mode/next move, active-program evidence, one closure state entry and generated
 aggregate. Roll back only this continuity projection; preserve material
 closure and the earlier front-door correction.
+
+2026-09-17 G1 T2 dispatch synchronization authorization: record material
+dispatch `985029ee1`, exact current-authority hashes, mode/next move and one
+dispatch state entry. Roll back only this continuity projection; preserve the
+material dispatch. Protected paths are this handoff, front door, bootstrap,
+Core, generated state and the named entry.
+
+Protected paths: `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/acelG1T2TaskClassCalibrationOwnerImplementationDispatch20260917.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
+Rollback boundary: revert only this G1 T2 dispatch continuity projection, preserving material commit `985029ee1`.
 
 Additional protected path:
 
