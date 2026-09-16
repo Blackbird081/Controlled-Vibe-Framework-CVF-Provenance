@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2842,
+  "stateKey": "acelG2TopologyExperimentT1Closure20260916",
+  "value": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1 is CLOSED_PASS_BOUNDED at material commit 0d31159f3e77d79253b8075daf00e8fdf9851d66. The isolated proposal-only topology contract passed 146/146 composed worker tests, 43/43 Local focused tests and TypeScript; its deterministic receipt contains 32/32 admitted unique runs, all five topology actions and SHA-256 0d734e5ce82e92f0214c7af70bf29473fcf1831f9adda22ea307bd11167bcb5d. Reviewer repaired GC-051 coverage and packet taxonomy without redispatch. This proves an executable hermetic decision seam, not actual-agent quality, cost or latency improvement. G2 T2 real-agent design or another ACEL gap requires operator selection; providers, production, public sync and deployment remain unauthorized."
+}

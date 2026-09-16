@@ -1,7 +1,7 @@
-# CVF Agent Handoff V60 - Encoding And GC-020 Closed
+# CVF Agent Handoff V60 - ACEL G2 T1 Closed Bounded
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `a9f19f07f4ed2b7e1f2e87257aa83116a8d13164`. Material dispatch anchor for the ACEL-G2-TOPOLOGY-EXPERIMENT-T1 continuity commit.
+Current HEAD recorded for this handoff: `0d31159f3e77d79253b8075daf00e8fdf9851d66`. Material closure anchor for the ACEL-G2-TOPOLOGY-EXPERIMENT-T1 continuity commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Latest continuity correction parent recorded for this handoff: `2a08b1d1d805e340d3b27d00c63f60a3423366de`. Historical closure authority remains `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`).
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -12,7 +12,7 @@ Status: ACTIVE
 - Repository: private provenance SOT on `main`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; do not hand-maintain it in handoff.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `multi_repo_absorption_g2_t1_experiment`.
+- Current mode: `multi_repo_absorption_g2_t2_checkpoint`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -22,15 +22,15 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_g2_t1_experiment`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=INTERNAL_AGENT executes exact-eight-path G2 T1 hermetic experiment; role=Local orchestrator/reviewer; phase=internal experimental implementation; decision owner=Local; parked checkpoint=T2 actual-agent trial, production routing, provider/live, public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_g2_t2_checkpoint`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=operator selects G2 T2 real-agent experiment design or another ACEL gap; role=Local orchestrator/reviewer; phase=post-T1 operator checkpoint; decision owner=Local; parked checkpoint=T2 actual-agent trial, production routing, provider/live, public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_g2_t1_experiment`
+`multi_repo_absorption_g2_t2_checkpoint`
 
 ## Purpose
 
-Carry the operator-selected ACEL G2 T1 dispatch at material `a9f19f07f4ed2b7e1f2e87257aa83116a8d13164`. The INTERNAL_AGENT worker may implement exactly eight isolated experiment paths and emit a deterministic 32-run hermetic receipt without commit. Evidence remains `PROPOSAL_ONLY`; actual agents/subagents, provider/live execution, production routing, T2, public sync and deployment remain unauthorized. Local owns independent review and final disposition.
+Carry the Local-accepted ACEL G2 T1 closure at material `0d31159f3e77d79253b8075daf00e8fdf9851d66`. The isolated experiment deterministically admitted 32/32 runs and exercised all five topology actions while remaining `PROPOSAL_ONLY`. No worker lane is active; actual agents/subagents, provider/live execution, production routing, T2, public sync and deployment remain unauthorized until operator selection. Local owns final disposition.
 
 ## Scope / Target / Owner Boundary
 
@@ -41,7 +41,7 @@ Carry the operator-selected ACEL G2 T1 dispatch at material `a9f19f07f4ed2b7e1f2
 - The three accepted controls are execution-anchor substitution rejection, exact shared-worktree lane coordination, and fail-closed dated-owner dependency discovery before manifest freeze.
 
 ## Latest Work / Changes
-- THREE-REPO-DEFERRED-RECONCILIATION-T1 is Local-accepted and closed bounded. The 52-row ledger resolves 42 QM, 7 Agentgateway and 3 DSH retained decisions into 19 groups, all demand-gated with exact current owner/consumer/failure/trigger evidence; zero unresolved blocker and zero current runtime candidate remain. The bounded three-repository program is `TERMINAL_ACCOUNTED`; expansion remains disabled.
+- ACEL-G2-TOPOLOGY-EXPERIMENT-T1 is Local-accepted `CLOSED_PASS_BOUNDED` at `0d31159f3`. The hermetic contract passed 43/43 focused reviewer tests, TypeScript, 32/32 admission, all five actions and receipt hash reconciliation; it proves no real-agent improvement and opens no T2 authority.
 - Three-repository deferred semantic reconciliation T1 dispatch material committed at `7573d804f8f185ecfc244eb56728a80727af4517`; pre-dispatch passed 82/82. The INTERNAL_AGENT lane owns exactly one 52-row audit JSON and one worker return, must not commit, and has no implementation/provider/live/network/public/deploy authority.
 - P4-C1 repair material committed at `bb7b0ce500d5aaade9be4d14c31af3d3963a509b` with exact-ten scope and pre-commit 88/88 PASS. The first real journal-v2 write reports 151 attempts, 17 candidates, 17 eligible opportunities, zero collected samples, checkpoint initialization, and nonblocking `STARVED_ELIGIBLE_NOT_COLLECTED`.
 - P4-C1 enrollment/observability repair dispatch committed at `8347be04a0216479f754e3eee3ca71f15a149a8b`; pre-dispatch passed 81/81 and the normal pre-commit chain passed 88/88. Its exact ten-path implementation lane was the released material lane at that dispatch.
@@ -90,11 +90,11 @@ Carry the operator-selected ACEL G2 T1 dispatch at material `a9f19f07f4ed2b7e1f2
 
 ## Current Authority
 
-Current authority remains the closed DSH baseline/work order plus `docs/reviews/CVF_DSH_CODE_SIMPLIFICATION_APPLICATION_T1_COMPLETION_REVIEW_2026-09-15.md`, accepted at material `d3b21c4e94bb484f00217f6320ad5d6c8353d46e`. No worker lane is active. Local owns authoring of the bounded deferred-record reconciliation packet. ECC intake remains NOT_ACCEPTED_EVIDENCE_GAPS and PARKED.
+Current authority is the closed ACEL G2 T1 baseline/work order plus `docs/reviews/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_COMPLETION_2026-09-16.md`, accepted at material `0d31159f3e77d79253b8075daf00e8fdf9851d66`. No worker lane is active. T2 is an operator checkpoint, not an automatic successor. ECC intake remains NOT_ACCEPTED_EVIDENCE_GAPS and PARKED.
 
 ## Closure Evidence
 
-ROLE-SOT-MH-T1 is independently accepted. Claude Rework Generation 2 closed all seven reviewer findings; focused tests passed 55/55 and 44/44, reviewer-fast passed 67/67, and material pre-commit passed 88/88. ADIF-0056 is machine-bound and clean. ADIF-0052 remains a pre-existing out-of-scope dangling-source defect. Provider/live/network/public/deploy usage was zero.
+ACEL G2 T1 is independently accepted bounded: worker composed tests 146/146, Local focused tests 43/43, TypeScript PASS, deterministic 32-run receipt hash `0d734e5ce82e92f0214c7af70bf29473fcf1831f9adda22ea307bd11167bcb5d`, and material pre-commit 89/89. Reviewer repaired GC-051 coverage and packet taxonomy only. Provider/live/network/public/deploy usage was zero.
 
 ADIF-0057-MH-T1 is terminal `REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED`: material `670a7979d`, corrective material `84bcbb222`, continuity `d8f99a8f2` and
 `48480eeb3`, focused 21/21, four split-range pre-closures COMPLIANT, findings
@@ -109,7 +109,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=NONE; NEXT_ACTION_CLASS=PROGRAM_TERMINAL_ACCOUNTED; CURRENT_TRANCHE_ACTION=CLOSED_PASS_BOUNDED; NEXT_STEP=AWAIT_OPERATOR_SELECTION_FOR_ANY_NEW_REPOSITORY_OR_BACKLOG_ACTION; EXPANSION_ALLOWED=false. The 52-row reconciliation is closed with zero unresolved blocker and zero current runtime candidate. Deferred knowledge retains exact reopen evidence and is not claimed runtime-active. ECC, new repos, provider/live, public and deployment remain parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-TOPOLOGY-EXPERIMENT-T1_CLOSED_PASS_BOUNDED_AT_0d31159f3e77d79253b8075daf00e8fdf9851d66; NEXT_STEP=OPERATOR_CHECKPOINT_SELECT_G2_T2_REAL_AGENT_EXPERIMENT_DESIGN_OR_OTHER_ACEL_GAP; EXPANSION_ALLOWED=false. T1 is executable proposal-only proof, not real-agent value proof. T2, providers, production, public and deployment remain parked.
 
 ## Parked Checkpoints
 
@@ -123,7 +123,7 @@ PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=NONE; NEXT_ACTION_CLA
 
 ## Active Boundary
 
-- MFRP-FINGERPRINT-T1 is materially closed; TPGR T1 remains closed. The three-repository program is `LOCAL_RUNTIME_VALUE_RECOVERY`. QM operational recovery and DSH package-use recovery are closed bounded; DSH is TERMINAL_ACCEPTED for the current recovery contract. The 52 deferred records are the next Local accounting step; no worker lane is active. ECC and new repositories remain parked.
+- The active ACEL program remains `LOCAL_RUNTIME_VALUE_RECOVERY` and source state `INCOMPLETE`. G2 T1 is closed bounded as executable proposal-only proof; no worker lane is active. Operator selection is required before G2 T2 real-agent design or any alternate ACEL gap. The three-repository pilot remains terminally accounted; ECC and new repositories remain parked.
 - Latest closed LHW wave: `LHW24`.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
@@ -132,7 +132,7 @@ PROGRAM_ID=DOMAIN-PILOT-THREE-REPO-2026-09; NEXT_SOURCE_ID=NONE; NEXT_ACTION_CLA
 
 ## Completion Review
 
-`docs/reviews/CVF_TPGR_INITIAL_INTAKE_T1_COMPLETION_2026-09-11.md` records current bounded acceptance at `3de0ba07c`. Historical ADIF-0057-MH-T1 remains accepted at `670a7979d`/`84bcbb222`; ROLE-SOT-MH-T1 at `94c4922c2`.
+`docs/reviews/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_COMPLETION_2026-09-16.md` records current bounded acceptance at `0d31159f3e77d79253b8075daf00e8fdf9851d66`. Historical TPGR, ADIF-0057-MH-T1 and ROLE-SOT-MH-T1 closures remain unchanged.
 ## Public Export Disposition
 
 EXPORTED
@@ -143,7 +143,7 @@ Public artifact paths: `README.md` and `docs/concepts/seven-step-shared-workspac
 Public catalog paths: N/A; no catalog entry was included in the bounded concept export.
 Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
 ## Core Guard Self-Protection Authorization
-Operator authorization: dispatch the selected ACEL G2 T1 after material `a9f19f07f4ed2b7e1f2e87257aa83116a8d13164`. Authorized continuity scope is exactly `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/acelG2TopologyExperimentT1Dispatch20260916.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; and `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback boundary: revert only this continuity projection and preserve dispatch material plus accepted T0. The worker owns exactly eight work-order paths, must not commit, and has no actual-agent, provider/live, production, T2, public or deployment authority.
+Operator authorization: continue and close the returned ACEL G2 T1 after material `0d31159f3e77d79253b8075daf00e8fdf9851d66`. Authorized guard-maintenance scope is exactly `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/acelG2TopologyExperimentT1Closure20260916.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; and `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback boundary: revert only this continuity projection and preserve T1 material plus accepted T0. No actual-agent, provider/live, production, T2, public or deployment authority is added.
 
 Operator authorization: continue three-repository recovery after accepted DSH material `d3b21c4e94bb484f00217f6320ad5d6c8353d46e`. Authorized guard-maintenance scope: closure continuity and next deferred-reconciliation routing only. Protected paths: `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/dshCodeSimplificationApplicationT1Closure20260915.json`; `CVF_SESSION/state/entries/lastUpdated.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback boundary: revert only this continuity projection and preserve material `d3b21c4e94bb484f00217f6320ad5d6c8353d46e`. No worker/checker/provider/live/public/deploy authority is added.
 Operator authorization: continue the three-repository roadmap and release the bounded reconciliation worker lane after dispatch material `7573d804f8f185ecfc244eb56728a80727af4517`. Authorized guard-maintenance scope is continuity only. Protected paths: `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/threeRepoDeferredSemanticReconciliationT1Dispatch20260915.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback only this continuity projection; preserve dispatch material. The worker owns exactly two outputs, must not commit, and has no implementation, source-mirror, provider/live/network, public or deployment authority.

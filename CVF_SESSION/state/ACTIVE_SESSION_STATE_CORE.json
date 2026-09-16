@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_2026-09-16.md",
     "baselineSha256": "6c65a00e8125af25e5de82e204e8af8861767cf16b0ac28df3dd7f5fe9a23f4c",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_2026-09-16.md",
-    "workOrderSha256": "7faf5e2a158ea50f0a461ac31ccbfac25b7b276c62df578d8946f65f34644f83"
+    "workOrderSha256": "74af214d48538afae25c58a503b175379ed4d447b026333559783fe44686073d"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -106,8 +106,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "multi_repo_absorption_g2_t1_experiment",
-  "previousMode": "multi_repo_absorption_successor_checkpoint",
+  "currentMode": "multi_repo_absorption_g2_t2_checkpoint",
+  "previousMode": "multi_repo_absorption_g2_t1_experiment",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

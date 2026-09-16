@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_g2_t1_experiment`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=INTERNAL_AGENT executes the exact-eight-path G2 T1 hermetic experiment; role=Local orchestrator/reviewer; phase=internal experimental implementation; decision owner=Local; parked checkpoint=T2 actual-agent trial, production routing, provider/live, public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_g2_t2_checkpoint`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=operator selects G2 T2 real-agent experiment design or another ACEL gap; role=Local orchestrator/reviewer; phase=post-T1 operator checkpoint; decision owner=Local; parked checkpoint=T2 actual-agent trial, production routing, provider/live, public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_g2_t1_experiment`
-Current mode: `multi_repo_absorption_g2_t1_experiment`; previous mode marker: `multi_repo_absorption_successor_checkpoint`
+Current mode marker: `multi_repo_absorption_g2_t2_checkpoint`
+Current mode: `multi_repo_absorption_g2_t2_checkpoint`; previous mode marker: `multi_repo_absorption_g2_t1_experiment`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-TOPOLOGY-EXPERIMENT-T1_DISPATCHED_AT_a9f19f07f4ed2b7e1f2e87257aa83116a8d13164; NEXT_STEP=INTERNAL_AGENT_EXECUTES_EXACT_EIGHT_PATH_HERMETIC_32_RUN_EXPERIMENT_AND_RETURNS_UNCOMMITTED_EVIDENCE; EXPANSION_ALLOWED=false. T1 proves only the experimental contract, quality admission, authority preservation and deterministic 32-run receipt. Actual agent/subagent A/B execution, providers, production routing, T2, external repository acquisition, public sync and deployment remain parked. Local retains final technical disposition. The prior three-repository pilot stays terminally accounted and is not reopened.
-Mode: `multi_repo_absorption_g2_t1_experiment`. External research is closed; the shared-workspace worker is INTERNAL_AGENT; Local owns private verification and final disposition.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-TOPOLOGY-EXPERIMENT-T1_CLOSED_PASS_BOUNDED_AT_0d31159f3e77d79253b8075daf00e8fdf9851d66; NEXT_STEP=OPERATOR_CHECKPOINT_SELECT_G2_T2_REAL_AGENT_EXPERIMENT_DESIGN_OR_OTHER_ACEL_GAP; EXPANSION_ALLOWED=false. T1 proves an isolated deterministic proposal-only topology decision seam with 32/32 admitted runs and all five actions, not real-agent improvement. T2, actual agents/subagents, providers, production routing, external repository acquisition, public sync and deployment remain parked pending explicit operator selection. Local retains final technical disposition. The prior three-repository pilot stays terminally accounted and is not reopened.
+Mode: `multi_repo_absorption_g2_t2_checkpoint`. External research is closed; no worker lane is active; Local owns private verification and final disposition.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
