@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2850,
+  "stateKey": "acelG2T2BFreshHashBoundCalibrationT1Closure20260916",
+  "value": "ACEL-G2-T2B-FRESH-HASH-BOUND-CALIBRATION-T1 is CLOSED_PASS_BOUNDED_NO_RELEASE_CANDIDATE at material commit 6537618d5. One qwen3.7-flash call was attempted through the governed Model Gateway, with zero retries, exact frozen contract hash 30a626eed0a411571ec854fe0f1f0bf3b20ee7cad343d76e32721e6a1a681bf4 and test hash 4f6c9ccb6369cbb76cc2954cbbbd3601ea695fec0cb3ba60b1b6e0129df3f0d5. The result scored 100/100, had no material defect, and releaseCandidate=false; independent Local rescore matched. Comparative T2, runtime, T6B, retry, callable seam, production, public sync and deployment remain closed."
+}

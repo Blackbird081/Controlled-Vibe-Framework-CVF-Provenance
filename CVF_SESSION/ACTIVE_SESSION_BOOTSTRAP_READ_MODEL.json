@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_g2_t2_offline_gate_closed_operator_checkpoint",
+  "currentMode": "multi_repo_absorption_g2_t2_calibration_closed_no_release_candidate",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2-DISCRIMINATING-TASK-GATE-T2A_CLOSED_AT_81a1c7517; NEXT_STEP=OPERATOR_CHECKPOINT_SELECT_FRESH_HASH_BOUND_CALIBRATION_OR_KEEP_G2_T2_PARKED; EXPANSION_ALLOWED=false. T2A is CLOSED_PASS_BOUNDED. No provider/live/agent invocation, credential/network access, T6B, actual-agent trial, callable seam, production, public sync or deployment is authorized without a fresh operator packet. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2B-FRESH-HASH-BOUND-CALIBRATION-T1_CLOSED_AT_6537618d5; NEXT_STEP=PARK_G2_T2_AND_SELECT_NEXT_NON_PROVIDER_LOCAL_VALUE_CLUSTER; EXPANSION_ALLOWED=false. T2B consumed exactly one qwen3.7-flash call with zero retries and exact frozen hashes; score 100/100, no material defect, releaseCandidate=false. Comparative T2, runtime, T6B, retry, callable seam, production, public sync and deployment remain closed pending separate operator authority. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

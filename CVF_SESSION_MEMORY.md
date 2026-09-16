@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_g2_t2_offline_gate_closed_operator_checkpoint`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=operator selects a fresh hash-bound calibration packet or keeps G2 T2 parked; role=Local reviewer/closer; phase=post-T2A operator checkpoint; decision owner=operator for any live trial, Local for technical disposition; parked checkpoint=provider/live calls, T6B, actual-agent trial, callable seam, public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_g2_t2_calibration_closed_no_release_candidate`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=park G2 T2 and select the next non-provider Local value cluster; role=Local reviewer/closer; phase=post-T2B negative calibration closure; decision owner=Local for technical disposition and operator for any new live authority; parked checkpoint=repeat-live, comparative T2, runtime/T6B, callable seam, public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_g2_t2_offline_gate_closed_operator_checkpoint`
-Current mode: `multi_repo_absorption_g2_t2_offline_gate_closed_operator_checkpoint`; previous mode marker: `multi_repo_absorption_g2_t2_discriminating_task_gate`
+Current mode marker: `multi_repo_absorption_g2_t2_calibration_closed_no_release_candidate`
+Current mode: `multi_repo_absorption_g2_t2_calibration_closed_no_release_candidate`; previous mode marker: `multi_repo_absorption_g2_t2_offline_gate_closed_operator_checkpoint`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2-DISCRIMINATING-TASK-GATE-T2A_CLOSED_AT_81a1c7517; NEXT_STEP=OPERATOR_CHECKPOINT_SELECT_FRESH_HASH_BOUND_CALIBRATION_OR_KEEP_G2_T2_PARKED; EXPANSION_ALLOWED=false. T2A is CLOSED_PASS_BOUNDED. No provider/live/agent invocation, credential/network access, T6B, actual-agent trial, callable seam, production, public sync or deployment is authorized without a fresh operator packet. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_g2_t2_offline_gate_closed_operator_checkpoint`. External research and T2A implementation are closed; Local retains technical disposition and the operator owns any fresh live grant. ACEL-G2-T2A is `CLOSED_PASS_BOUNDED` at `81a1c7517`: focused 32/32, TypeScript PASS, worker-return fast PASS, reviewer-fast 68/68, pre-commit 89/89, GC-051 reconciled, zero provider/agent/network calls.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2B-FRESH-HASH-BOUND-CALIBRATION-T1_CLOSED_AT_6537618d5; NEXT_STEP=PARK_G2_T2_AND_SELECT_NEXT_NON_PROVIDER_LOCAL_VALUE_CLUSTER; EXPANSION_ALLOWED=false. T2B consumed exactly one qwen3.7-flash call with zero retries and exact frozen hashes; score 100/100, no material defect, releaseCandidate=false. Comparative T2, runtime, T6B, retry, callable seam, production, public sync and deployment remain closed pending separate operator authority. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_g2_t2_calibration_closed_no_release_candidate`. ACEL-G2-T2B is `CLOSED_PASS_BOUNDED_NO_RELEASE_CANDIDATE` at `6537618d5`: exactly one `qwen3.7-flash` call, zero retries, exact frozen hashes, score 100/100, no material defect, and `releaseCandidate=false`. Local independent rescore matched. Park G2 T2; do not open comparative T2, runtime, T6B, retry, callable seam, production, public sync or deployment.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
