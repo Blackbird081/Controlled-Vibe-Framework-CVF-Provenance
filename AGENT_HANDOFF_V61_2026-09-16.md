@@ -1,7 +1,7 @@
-# CVF Agent Handoff V61 - G3 T2 Closed Parked And Absorption Coordination Method Update
+# CVF Agent Handoff V61 - G1 T1 Design Dispatched
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `ace1a4a9a2390ff70646539b65714b23fdcec80c`. Parent continuity commit for this dedicated handoff synchronization commit.
+Current HEAD recorded for this handoff: `9426421ebd2a0756b01cfd6d9890909d31d34578`. Material G1 T1 dispatch commit recorded by this continuity projection.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -10,40 +10,41 @@ Status: ACTIVE
 
 ## Purpose
 
-Record the accepted and parked G3 T2 closure plus the completed additive
-research-assisted repository-absorption profile, then route the next bounded
-Local action back to the active ACEL source without authorizing implementation.
+Record the bounded G1 empirical-calibration owner-composition design dispatch
+after the accepted G3 closure and research-assisted absorption profile. Route
+only the governed INTERNAL_AGENT documentation lane.
 
 ## Scope / Target / Owner Boundary
 
-Target: G3 T2 and coordination-method closure continuity. Owner: Local orchestrator/reviewer. External agents
+Target: G1 T1 offline design dispatch continuity. Owner: Local orchestrator/reviewer. External agents
 remain advisory researchers; INTERNAL_AGENT workers implement only under a
 separate governed work order. No runtime or provider authority is transferred.
 
 ## Active Boundary
 
 G3 implementation and the additive method profile are closed and parked. G1
-and G4 external evidence remains independent advisory input. Any implementation
-requires selection of one exact owner delta and a separate internal work order.
+design is dispatched at `9426421eb`; G4 remains an independent parked audit
+question. This dispatch authorizes no implementation or provider/runtime work.
 
 ## Handoff Context
 
 - Repository: private provenance SOT on `main`.
-- Current mode: `multi_repo_absorption_acel_g3_and_research_assisted_method_closed_parked`.
+- Current mode: `multi_repo_absorption_acel_g1_t1_design_dispatched`.
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V60_2026-09-08.md`.
 - G3 T2 material closure: `9972a9b720a58fb11bb3500999e6430b1783bd92`.
 - G3 T2 completion: `docs/reviews/CVF_ACEL_G3_T2_BEHAVIORAL_EVALUATION_CONTRACT_IMPLEMENTATION_COMPLETION_2026-09-16.md`.
 - G3 has no automatic successor; empirical evaluation and runtime integration remain parked.
 - Research-assisted profile closure: `bcf4a65a3`; focused tests 34/34 PASS and material hook 89/89 PASS.
+- G1 T1 design dispatch: `9426421eb`; pre-dispatch 82/82 PASS; three create-only outputs; worker must not commit.
 - Latest closed learning-history wave remains `LHW24`.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_and_research_assisted_method_closed_parked`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=Local selects and authors one bounded ACEL adaptation work order from the independent G1 or G4 reconciliation; role=Local orchestrator/reviewer; phase=post-G3 and post-method-update parking; decision owner=Local; parked checkpoint=all implementation until one exact owner delta receives a governed internal work order.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t1_design_dispatched`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=INTERNAL_AGENT executes the G1 T1 design work order and returns `COMPLETE_PENDING_REVIEW`; role=INTERNAL_AGENT worker then Local reviewer/closer; phase=offline owner-composition design; decision owner=Local; parked checkpoint=G4, implementation, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g3_and_research_assisted_method_closed_parked`
+`multi_repo_absorption_acel_g1_t1_design_dispatched`
 
 ## Latest Work / Changes
 
@@ -52,6 +53,9 @@ Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_and_research_a
 - Reviewer repair closed three bounded gaps: `OFFLINE_SYNTHETIC` live-overclaim rejection, direct-grader baseline-pair bypass, and valid offset parity between TypeScript and Python.
 - Closure evidence is 79/79 TypeScript, 55/55 Python, typecheck PASS, checker help PASS, NUL count zero, and no provider/live/runtime effect.
 - Work order status is `CLOSED_PASS_BOUNDED`; terminal decision is `CLOSED_PASS_BOUNDED_G3_PARKED`.
+- Local selected G1 before G4 because G4 marginal-value measurement depends on comparable baseline/candidate semantics that the G1 loop must define.
+- `ACEL-G1-T1-EMPIRICAL-CALIBRATION-OWNER-COMPOSITION-DESIGN` is `DISPATCH_READY` at `9426421eb` with pre-dispatch 82/82 PASS.
+- The worker may create exactly one design audit, one machine-readable manifest, and one full return; `WORKER_MUST_NOT_COMMIT`.
 - The existing relay and domain-funnel owners now carry
   `cvf.research-assisted-repository-absorption@1.0.0`; no parallel process was created.
 - The existing intake checker machine-locks its context-refresh, question-isolation,
@@ -68,16 +72,16 @@ Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_and_research_a
 
 ## Next Allowed Move
 
-Within `AGENT-CAPABILITY-ENGINEERING-LAB-2026-09`, Local may select and author
-one bounded adaptation work order from the independently reconciled G1 or G4
-question. Selection must name one current owner delta and preserve the new
-profile. No implementation begins merely from this continuity record.
+Within `AGENT-CAPABILITY-ENGINEERING-LAB-2026-09`, the INTERNAL_AGENT may
+execute only the governing G1 T1 design work order and return
+`COMPLETE_PENDING_REVIEW`. Local alone reviews, closes, and commits the result.
 
 ## Parked Checkpoints
 
 - Any G3 successor, real behavioral evaluator execution, package/UAT/certification/index mutation, runtime wiring, T6B, provider/live, credential use, public sync, deployment, or production action.
 - Any implementation inferred directly from an external advisory contract.
 - Any reconciliation that merges G1 and G4 or treats an external shortlist as the Local coverage boundary.
+- G4 work while the G1 design return is pending review.
 - Any further process expansion or new workflow owner; the profile is closed and parked at `bcf4a65a3`.
 
 ## Core Guard Self-Protection Authorization
@@ -116,6 +120,16 @@ Additional protected path:
 
 - `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`
 - `CVF_SESSION/state/entries/researchAssistedRepositoryAbsorptionProfileClosure20260916.json`
+
+2026-09-16 G1 dispatch synchronization authorization: update this handoff,
+bootstrap/front door, current authority, next move, active-program evidence,
+one dispatch state entry, and generated active-state aggregate to record
+material commit `9426421eb`. Roll back only this continuity projection and
+preserve the material dispatch commit.
+
+Additional protected path:
+
+- `CVF_SESSION/state/entries/acelG1T1EmpiricalCalibrationOwnerCompositionDesignDispatch20260916.json`
 
 ## Agent Operation Trace Block
 

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2857,
+  "stateKey": "acelG1T1EmpiricalCalibrationOwnerCompositionDesignDispatch20260916",
+  "value": "ACEL-G1-T1-EMPIRICAL-CALIBRATION-OWNER-COMPOSITION-DESIGN is DISPATCH_READY at material commit 9426421eb. Pre-dispatch passed 82/82. The INTERNAL_AGENT worker owns exactly three create-only documentation/evidence paths: one design audit, one machine-readable manifest, and one full worker return. WORKER_MUST_NOT_COMMIT. G4 remains independent and parked. Provider/live/network/credential access, configuration mutation, Core runtime or hook wiring, package lifecycle, public sync and deployment are forbidden. Local remains reviewer, closer and commit owner."
+}
