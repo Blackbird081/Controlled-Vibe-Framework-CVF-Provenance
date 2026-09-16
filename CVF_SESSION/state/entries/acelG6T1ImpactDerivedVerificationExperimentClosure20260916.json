@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2851,
+  "stateKey": "acelG6T1ImpactDerivedVerificationExperimentClosure20260916",
+  "value": "ACEL-G6-T1-IMPACT-DERIVED-VERIFICATION-EXPERIMENT is CLOSED_PASS_BOUNDED_EXPERIMENT_SIGNAL_ONLY at material commit 3498f185b. The hermetic 32-run comparison admitted every record, detected every seeded regression under both policies, missed zero, and reduced deterministic modeled cost from 480 to 172 units (64.2%). Unknown impact failed closed to the complete fixed bundle. Production verifier selection, mandatory-gate reduction, real-corpus generalization, provider, runtime, public sync and deployment remain closed. Next selected cluster is G3 T1 behavioral-evaluation owner-composition design only."
+}

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_g2_t2_calibration_closed_no_release_candidate`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=park G2 T2 and select the next non-provider Local value cluster; role=Local reviewer/closer; phase=post-T2B negative calibration closure; decision owner=Local for technical disposition and operator for any new live authority; parked checkpoint=repeat-live, comparative T2, runtime/T6B, callable seam, public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g6_t1_experiment_closed`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=select ACEL G3 T1 behavioral-evaluation owner-composition design; role=Local reviewer/orchestrator; phase=post-G6 hermetic experiment closure; decision owner=Local for technical disposition and operator for any new live authority; parked checkpoint=G6 production integration/real-corpus validation, G3 experiment/implementation, provider/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_g2_t2_calibration_closed_no_release_candidate`
-Current mode: `multi_repo_absorption_g2_t2_calibration_closed_no_release_candidate`; previous mode marker: `multi_repo_absorption_g2_t2_offline_gate_closed_operator_checkpoint`
+Current mode marker: `multi_repo_absorption_acel_g6_t1_experiment_closed`
+Current mode: `multi_repo_absorption_acel_g6_t1_experiment_closed`; previous mode marker: `multi_repo_absorption_g2_t2_calibration_closed_no_release_candidate`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2B-FRESH-HASH-BOUND-CALIBRATION-T1_CLOSED_AT_6537618d5; NEXT_STEP=PARK_G2_T2_AND_SELECT_NEXT_NON_PROVIDER_LOCAL_VALUE_CLUSTER; EXPANSION_ALLOWED=false. T2B consumed exactly one qwen3.7-flash call with zero retries and exact frozen hashes; score 100/100, no material defect, releaseCandidate=false. Comparative T2, runtime, T6B, retry, callable seam, production, public sync and deployment remain closed pending separate operator authority. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_g2_t2_calibration_closed_no_release_candidate`. ACEL-G2-T2B is `CLOSED_PASS_BOUNDED_NO_RELEASE_CANDIDATE` at `6537618d5`: exactly one `qwen3.7-flash` call, zero retries, exact frozen hashes, score 100/100, no material defect, and `releaseCandidate=false`. Local independent rescore matched. Park G2 T2; do not open comparative T2, runtime, T6B, retry, callable seam, production, public sync or deployment.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G6-T1-IMPACT-DERIVED-VERIFICATION-EXPERIMENT_CLOSED_AT_3498f185b; NEXT_STEP=SELECT_ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN; EXPANSION_ALLOWED=false. G6 T1 produced a positive hermetic signal: 32/32 admitted, zero missed seeded regressions, and 64.2% lower deterministic cost, but production integration and independently sourced real-corpus validation remain parked. G3 may open design and authority mapping only; experiment, implementation, provider, runtime, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_acel_g6_t1_experiment_closed`. ACEL-G6-T1 is `CLOSED_PASS_BOUNDED_EXPERIMENT_SIGNAL_ONLY` at `3498f185b`: 32/32 admitted records, zero missed seeded regressions, complete-bundle fallback on unknown impact, and deterministic modeled cost 480 to 172 (-64.2%). Select G3 T1 owner-composition design next; do not wire G6 into production or open a G3 experiment/implementation.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
