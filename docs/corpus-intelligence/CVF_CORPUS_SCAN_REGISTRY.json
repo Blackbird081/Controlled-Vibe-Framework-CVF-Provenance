@@ -7860,6 +7860,51 @@
       "notes": "Registry coverage for the bounded ACEL T0 Local owner audit. PARTIALLY_SCANNED is deliberate: no extension-wide or full-repository scan is claimed."
     },
     {
+      "id": "acel-g2-topology-experiment-t1",
+      "corpusType": "TEST_CORPUS",
+      "displayName": "ACEL G2 topology experiment T1 hermetic oracle",
+      "scopePaths": [
+        "docs/baselines/CVF_GC018_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_2026-09-16.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_2026-09-16.md",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/package.json",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/runtime.topology.experiment.contract.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/runtime.topology.experiment.contract.test.ts",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/fixtures/runtime.topology.experiment.tasks.v1.json",
+        "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/scripts/run-runtime-topology-experiment.ts",
+        "docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_32_RUN_RECEIPT_2026-09-16.json",
+        "docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_RESULT_2026-09-16.md",
+        "docs/reviews/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_WORKER_RETURN_2026-09-16.md",
+        "docs/reviews/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_COMPLETION_2026-09-16.md"
+      ],
+      "fileCount": 11,
+      "status": "SCANNED_WITH_FINDINGS",
+      "findings": [
+        {
+          "id": "acel-g2-t1-hermetic-proof",
+          "summary": "The isolated contract exercises five topology actions across a deterministic 32-run oracle while preserving the declared authority envelope.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Require independent Local acceptance before any separately governed real-agent T2 experiment.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "production topology adoption from hermetic receipt",
+        "provider or subagent execution in T1",
+        "automatic T2 authorization",
+        "unadmitted cost comparison"
+      ],
+      "nextScanRecommendation": "Use the accepted T1 receipt only as admission evidence for a separately authorized T2 design",
+      "scanWave": "ACEL-G2-T1",
+      "scanDate": "2026-09-16",
+      "manifestHash": "0d734e5ce82e92f0214c7af70bf29473fcf1831f9adda22ea307bd11167bcb5d",
+      "hashAlgorithm": "sha256",
+      "hashInput": "manifest-internal-hash-from-script-output",
+      "manifestPath": "docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_32_RUN_RECEIPT_2026-09-16.json",
+      "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_2026-09-16.md",
+      "notes": "Reviewer-added GC-051 coverage for an isolated proposal-only experiment. No production consumer, actual agent, provider, network, public or deployment claim."
+    },
+    {
       "id": "dsh-wra-r1-whole-repository-absorption",
       "corpusType": "EXTERNAL_SOURCE",
       "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",

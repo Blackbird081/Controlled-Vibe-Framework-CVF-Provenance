@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 ## Dispatch Prompt Envelope
 
@@ -14,9 +14,9 @@ Dispatch base head: `c71176f0af24b804de5cc8e6870c93a493a9f6df`
 
 dispatchBaseHead: `c71176f0af24b804de5cc8e6870c93a493a9f6df`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `db9bfd775c8fc4bea2b4d230a2665cd115a5c731`
 
-closureBaseHead: `REVIEWER_CAPTURES_AFTER_WORKER_RETURN`
+closureBaseHead: `db9bfd775c8fc4bea2b4d230a2665cd115a5c731`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -213,14 +213,16 @@ Work-Order Fulfillment Manifest: REQUIRED_EXACT_EIGHT_PATHS
 
 Worker may modify or create exactly these eight paths:
 
-1. `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/runtime.topology.experiment.contract.ts`
-2. `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/runtime.topology.experiment.contract.test.ts`
-3. `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/fixtures/runtime.topology.experiment.tasks.v1.json`
-4. `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/scripts/run-runtime-topology-experiment.ts`
-5. `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/package.json`
-6. `docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_32_RUN_RECEIPT_2026-09-16.json`
-7. `docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_RESULT_2026-09-16.md`
-8. `docs/reviews/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_WORKER_RETURN_2026-09-16.md`
+| Path | Required at handoff | Disposition |
+|---|---|---|
+| `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/runtime.topology.experiment.contract.ts` | YES | PRESENT |
+| `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/runtime.topology.experiment.contract.test.ts` | YES | PRESENT |
+| `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/fixtures/runtime.topology.experiment.tasks.v1.json` | YES | PRESENT |
+| `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/scripts/run-runtime-topology-experiment.ts` | YES | PRESENT |
+| `EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/package.json` | YES | PRESENT |
+| `docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_32_RUN_RECEIPT_2026-09-16.json` | YES | PRESENT |
+| `docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_RESULT_2026-09-16.md` | YES | PRESENT |
+| `docs/reviews/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_WORKER_RETURN_2026-09-16.md` | YES | PRESENT |
 
 Every other path is read-only. No deletion, rename, barrel export, dependency
 addition, lockfile mutation, production consumer or session-state mutation.
@@ -298,14 +300,14 @@ can be considered.
 
 ## Closure Checklist
 
-- [ ] exact executionBaseHead and clean starting state recorded;
-- [ ] exactly eight owned paths changed and staging remains empty;
-- [ ] focused tests and TypeScript check pass;
-- [ ] exactly 32 unique run records reconcile;
-- [ ] two receipt generations are byte-identical;
-- [ ] result remains `PROPOSAL_ONLY` and does not open T2 automatically;
-- [ ] worker-return fast passes and Local completion review decides closure;
-- [ ] material and continuity commits remain separate.
+- [x] exact executionBaseHead and clean starting state recorded;
+- [x] exactly eight owned paths changed and staging remains empty;
+- [x] focused tests and TypeScript check pass;
+- [x] exactly 32 unique run records reconcile;
+- [x] two receipt generations are byte-identical;
+- [x] result remains `PROPOSAL_ONLY` and does not open T2 automatically;
+- [x] worker-return fast passes and Local completion review decides closure;
+- [x] material and continuity commits remain separate.
 
 ## Return-To-Orchestrator Conditions
 
@@ -591,9 +593,27 @@ be proposed only after Local review; the experiment itself remains isolated.
 
 ## Machine Closure Package
 
-N/A with reason: this dispatch is pre-execution. The worker provides receipt,
-result and return; Local later creates the terminal completion review and owns
-material/continuity commits.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_COMPLETION_2026-09-16.md` | `ACCEPT_BOUNDED_RELEASE` | PASS |
+| Roadmap state | active ACEL program | T1 accepted; T2 operator checkpoint | PASS |
+| Registry JSON | T1 receipt and GC-051 registry | 32 runs; T1 scope covered | PASS |
+| Registry Markdown | T1 result report | proposal-only findings | PASS |
+| External evidence digest | accepted T0 input | N/A with reason: no new external evidence in T1 | N/A with reason: internal experiment |
+| System loop interlock | isolated experiment | no production consumer | N/A with reason: proposal-only T1 |
+| Session continuity | active continuity sources | dedicated post-material synchronization | N/A with reason: follows material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| matrix cardinality | 32 total and 32 unique | 32 total and 32 unique | PASS |
+| evidence class | `PROPOSAL_ONLY` | `PROPOSAL_ONLY` on records and aggregates | PASS |
+| quality admission | comparison excludes unadmitted runs | admitted filtering precedes comparison | PASS |
+| action coverage | all five Policy B actions | all five present | PASS |
+| deterministic regeneration | identical receipt bytes | SHA-256 `0d734e5ce82e92f0214c7af70bf29473fcf1831f9adda22ea307bd11167bcb5d` twice | PASS |
+| production isolation | no provider/subagent/production consumer | isolated local runner only | PASS |
 
 ## Agent Operation Trace Block
 

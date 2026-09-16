@@ -1,0 +1,1415 @@
+{
+  "batchId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+  "executionBaseHead": "db9bfd775c8fc4bea2b4d230a2665cd115a5c731",
+  "runnerCommand": "npm run experiment:g2-topology",
+  "fixtureManifestHash": "a2bfeb48fd7801a2b1ad9f32bbab5097d047914611e20220bcc59398278e84b8",
+  "runs": [
+    {
+      "taskId": "BR-01-BASELINE-LOOKUP",
+      "taskClass": "BOUNDED_RESEARCH",
+      "policy": "A_FIXED",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.1,
+        "crossModuleCouplingScore": 0.1,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 1
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/fixtures/runtime.topology.experiment.tasks.v1.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "ff8150d1beb6f212cd91e35048e224b1"
+    },
+    {
+      "taskId": "BR-01-BASELINE-LOOKUP",
+      "taskClass": "BOUNDED_RESEARCH",
+      "policy": "A_FIXED",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.1,
+        "crossModuleCouplingScore": 0.1,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 1
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/fixtures/runtime.topology.experiment.tasks.v1.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "523ca12f8f41c0413b0d01780cbf8cc5"
+    },
+    {
+      "taskId": "BR-01-BASELINE-LOOKUP",
+      "taskClass": "BOUNDED_RESEARCH",
+      "policy": "B_DYNAMIC",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.1,
+        "crossModuleCouplingScore": 0.1,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 2
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/fixtures/runtime.topology.experiment.tasks.v1.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "1c6fbc27f2dd72daa5da190a0f3c903b"
+    },
+    {
+      "taskId": "BR-01-BASELINE-LOOKUP",
+      "taskClass": "BOUNDED_RESEARCH",
+      "policy": "B_DYNAMIC",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.1,
+        "crossModuleCouplingScore": 0.1,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 2
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/fixtures/runtime.topology.experiment.tasks.v1.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "b564c53d6a2b4246dc4e245d8845b7fd"
+    },
+    {
+      "taskId": "BR-02-CORPUS-SCAN",
+      "taskClass": "BOUNDED_RESEARCH",
+      "policy": "A_FIXED",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.8,
+        "crossModuleCouplingScore": 0.2,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 1
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/fixtures/runtime.topology.experiment.tasks.v1.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "aac0be7a1b64d80d67f6b39a0156d72e"
+    },
+    {
+      "taskId": "BR-02-CORPUS-SCAN",
+      "taskClass": "BOUNDED_RESEARCH",
+      "policy": "A_FIXED",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.8,
+        "crossModuleCouplingScore": 0.2,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 1
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/fixtures/runtime.topology.experiment.tasks.v1.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "6a635de6ca210daabeb4aec24552751d"
+    },
+    {
+      "taskId": "BR-02-CORPUS-SCAN",
+      "taskClass": "BOUNDED_RESEARCH",
+      "policy": "B_DYNAMIC",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.8,
+        "crossModuleCouplingScore": 0.2,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 10,
+        "orchestrationSteps": 2,
+        "deterministicIntegrationEffort": 13
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/fixtures/runtime.topology.experiment.tasks.v1.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "6493b00416f430fb6ee32f1c652e8769"
+    },
+    {
+      "taskId": "BR-02-CORPUS-SCAN",
+      "taskClass": "BOUNDED_RESEARCH",
+      "policy": "B_DYNAMIC",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.8,
+        "crossModuleCouplingScore": 0.2,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 10,
+        "orchestrationSteps": 2,
+        "deterministicIntegrationEffort": 13
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/fixtures/runtime.topology.experiment.tasks.v1.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "17f69069bcf3a24e7cb983a94e8d142b"
+    },
+    {
+      "taskId": "LI-01-SMALL-FIX",
+      "taskClass": "LOCAL_IMPLEMENTATION",
+      "policy": "A_FIXED",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.2,
+        "crossModuleCouplingScore": 0.15,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 1
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/runtime.topology.experiment.contract.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "2b8507d06fa9430bd898ddf6875101c7"
+    },
+    {
+      "taskId": "LI-01-SMALL-FIX",
+      "taskClass": "LOCAL_IMPLEMENTATION",
+      "policy": "A_FIXED",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.2,
+        "crossModuleCouplingScore": 0.15,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 1
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/runtime.topology.experiment.contract.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "d41546089bb219b42bcd76c53d99ee38"
+    },
+    {
+      "taskId": "LI-01-SMALL-FIX",
+      "taskClass": "LOCAL_IMPLEMENTATION",
+      "policy": "B_DYNAMIC",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.2,
+        "crossModuleCouplingScore": 0.15,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 2
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/runtime.topology.experiment.contract.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "65a6d23010f1749101a07341f725feda"
+    },
+    {
+      "taskId": "LI-01-SMALL-FIX",
+      "taskClass": "LOCAL_IMPLEMENTATION",
+      "policy": "B_DYNAMIC",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.2,
+        "crossModuleCouplingScore": 0.15,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 2
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/runtime.topology.experiment.contract.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "bc4aa147169391d27f2fccad896c3311"
+    },
+    {
+      "taskId": "LI-02-MULTI-MODULE-EDIT",
+      "taskClass": "LOCAL_IMPLEMENTATION",
+      "policy": "A_FIXED",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.3,
+        "crossModuleCouplingScore": 0.2,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 3,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 1
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/runtime.topology.experiment.contract.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "88aeb6c0224c5e68f899e2fc35b47c8f"
+    },
+    {
+      "taskId": "LI-02-MULTI-MODULE-EDIT",
+      "taskClass": "LOCAL_IMPLEMENTATION",
+      "policy": "A_FIXED",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.3,
+        "crossModuleCouplingScore": 0.2,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 3,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 1
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/runtime.topology.experiment.contract.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "1310c25d1644f677a6b085a0b389ddd2"
+    },
+    {
+      "taskId": "LI-02-MULTI-MODULE-EDIT",
+      "taskClass": "LOCAL_IMPLEMENTATION",
+      "policy": "B_DYNAMIC",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.3,
+        "crossModuleCouplingScore": 0.2,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 3,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "PARALLELIZE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 5,
+        "orchestrationSteps": 2,
+        "deterministicIntegrationEffort": 8
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/runtime.topology.experiment.contract.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "4029397f1fef261fad52eee77a4e3743"
+    },
+    {
+      "taskId": "LI-02-MULTI-MODULE-EDIT",
+      "taskClass": "LOCAL_IMPLEMENTATION",
+      "policy": "B_DYNAMIC",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.3,
+        "crossModuleCouplingScore": 0.2,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 3,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "PARALLELIZE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 5,
+        "orchestrationSteps": 2,
+        "deterministicIntegrationEffort": 8
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/runtime.topology.experiment.contract.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R1",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "425bbbe9dbed8e60208d58929e85678a"
+    },
+    {
+      "taskId": "CR-01-CROSS-MODULE-TRACE",
+      "taskClass": "COUPLED_REASONING",
+      "policy": "A_FIXED",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.3,
+        "crossModuleCouplingScore": 0.75,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 11,
+        "orchestrationSteps": 2,
+        "deterministicIntegrationEffort": 13
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/scripts/run-runtime-topology-experiment.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "8c26c88df1f223dc195d0c3163eb1399"
+    },
+    {
+      "taskId": "CR-01-CROSS-MODULE-TRACE",
+      "taskClass": "COUPLED_REASONING",
+      "policy": "A_FIXED",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.3,
+        "crossModuleCouplingScore": 0.75,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 11,
+        "orchestrationSteps": 2,
+        "deterministicIntegrationEffort": 13
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/scripts/run-runtime-topology-experiment.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "b6e2e05d34be3854c3d19c4b68047439"
+    },
+    {
+      "taskId": "CR-01-CROSS-MODULE-TRACE",
+      "taskClass": "COUPLED_REASONING",
+      "policy": "B_DYNAMIC",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.3,
+        "crossModuleCouplingScore": 0.75,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 11,
+        "orchestrationSteps": 2,
+        "deterministicIntegrationEffort": 14
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/scripts/run-runtime-topology-experiment.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "b57f4b8d87a70f2be9ecfecbceedcc9d"
+    },
+    {
+      "taskId": "CR-01-CROSS-MODULE-TRACE",
+      "taskClass": "COUPLED_REASONING",
+      "policy": "B_DYNAMIC",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.3,
+        "crossModuleCouplingScore": 0.75,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 11,
+        "orchestrationSteps": 2,
+        "deterministicIntegrationEffort": 14
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/scripts/run-runtime-topology-experiment.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "e641675b708f2692e1486c7d41d4e350"
+    },
+    {
+      "taskId": "CR-02-DEPENDENCY-CHAIN-RETRY",
+      "taskClass": "COUPLED_REASONING",
+      "policy": "A_FIXED",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.4,
+        "crossModuleCouplingScore": 0.5,
+        "priorAttemptFailed": true,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 1
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/scripts/run-runtime-topology-experiment.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "ff1b9c1cf45e8c803bce993c350205d6"
+    },
+    {
+      "taskId": "CR-02-DEPENDENCY-CHAIN-RETRY",
+      "taskClass": "COUPLED_REASONING",
+      "policy": "A_FIXED",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.4,
+        "crossModuleCouplingScore": 0.5,
+        "priorAttemptFailed": true,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 1
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/scripts/run-runtime-topology-experiment.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "1e5dec87ff5323c931d546288cef68db"
+    },
+    {
+      "taskId": "CR-02-DEPENDENCY-CHAIN-RETRY",
+      "taskClass": "COUPLED_REASONING",
+      "policy": "B_DYNAMIC",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.4,
+        "crossModuleCouplingScore": 0.5,
+        "priorAttemptFailed": true,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "ESCALATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 9,
+        "orchestrationSteps": 4,
+        "deterministicIntegrationEffort": 14
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/scripts/run-runtime-topology-experiment.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "34985daeeed6ffc47a8beb2970811c19"
+    },
+    {
+      "taskId": "CR-02-DEPENDENCY-CHAIN-RETRY",
+      "taskClass": "COUPLED_REASONING",
+      "policy": "B_DYNAMIC",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.4,
+        "crossModuleCouplingScore": 0.5,
+        "priorAttemptFailed": true,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "ESCALATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 9,
+        "orchestrationSteps": 4,
+        "deterministicIntegrationEffort": 14
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/scripts/run-runtime-topology-experiment.ts"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 1,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "97fe707ecdf5aab96e267756ec105761"
+    },
+    {
+      "taskId": "FF-01-DEGRADED-EXECUTOR-HANDOFF",
+      "taskClass": "FAULT_FINDING",
+      "policy": "A_FIXED",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.5,
+        "crossModuleCouplingScore": 0.3,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": true
+      },
+      "routeAction": "DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 8,
+        "orchestrationSteps": 2,
+        "deterministicIntegrationEffort": 10
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_32_RUN_RECEIPT_2026-09-16.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 2,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "22a631ab242ebe400acaf0c79c890079"
+    },
+    {
+      "taskId": "FF-01-DEGRADED-EXECUTOR-HANDOFF",
+      "taskClass": "FAULT_FINDING",
+      "policy": "A_FIXED",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.5,
+        "crossModuleCouplingScore": 0.3,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": true
+      },
+      "routeAction": "DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 8,
+        "orchestrationSteps": 2,
+        "deterministicIntegrationEffort": 10
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_32_RUN_RECEIPT_2026-09-16.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 2,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "19253438cf036160eb94a7d17f97ebb3"
+    },
+    {
+      "taskId": "FF-01-DEGRADED-EXECUTOR-HANDOFF",
+      "taskClass": "FAULT_FINDING",
+      "policy": "B_DYNAMIC",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.5,
+        "crossModuleCouplingScore": 0.3,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": true
+      },
+      "routeAction": "RECLAIM",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 8,
+        "orchestrationSteps": 2,
+        "deterministicIntegrationEffort": 11
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_32_RUN_RECEIPT_2026-09-16.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 2,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "39a62ef9b9d2ef8ad9165f02ae891cfc"
+    },
+    {
+      "taskId": "FF-01-DEGRADED-EXECUTOR-HANDOFF",
+      "taskClass": "FAULT_FINDING",
+      "policy": "B_DYNAMIC",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.5,
+        "crossModuleCouplingScore": 0.3,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": true
+      },
+      "routeAction": "RECLAIM",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 8,
+        "orchestrationSteps": 2,
+        "deterministicIntegrationEffort": 11
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_32_RUN_RECEIPT_2026-09-16.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 2,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "2460339b9b6afaa6a9f4d177b8a85025"
+    },
+    {
+      "taskId": "FF-02-STABLE-EXECUTOR-VERIFICATION",
+      "taskClass": "FAULT_FINDING",
+      "policy": "A_FIXED",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.2,
+        "crossModuleCouplingScore": 0.1,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 1
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_32_RUN_RECEIPT_2026-09-16.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 2,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "8d8f960f2c5e0bac8f11f76679be06c9"
+    },
+    {
+      "taskId": "FF-02-STABLE-EXECUTOR-VERIFICATION",
+      "taskClass": "FAULT_FINDING",
+      "policy": "A_FIXED",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.2,
+        "crossModuleCouplingScore": 0.1,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 1
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_32_RUN_RECEIPT_2026-09-16.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 2,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "717f91161c4e376b15ff3d1c3b7af0fc"
+    },
+    {
+      "taskId": "FF-02-STABLE-EXECUTOR-VERIFICATION",
+      "taskClass": "FAULT_FINDING",
+      "policy": "B_DYNAMIC",
+      "repetition": 1,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.2,
+        "crossModuleCouplingScore": 0.1,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 2
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_32_RUN_RECEIPT_2026-09-16.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 2,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "f768df217a1ae98dd2fdd260c2100c53"
+    },
+    {
+      "taskId": "FF-02-STABLE-EXECUTOR-VERIFICATION",
+      "taskClass": "FAULT_FINDING",
+      "policy": "B_DYNAMIC",
+      "repetition": 2,
+      "runtimeEvidence": {
+        "observedLoadFactor": 0.2,
+        "crossModuleCouplingScore": 0.1,
+        "priorAttemptFailed": false,
+        "independentSubtaskCount": 1,
+        "executorHealthDegraded": false
+      },
+      "routeAction": "NO_DELEGATE",
+      "admitted": true,
+      "qualityOracle": {
+        "actionMatchesOracle": true,
+        "invariantsPassed": true,
+        "outcomeOraclePassed": true,
+        "criticalDefects": 0
+      },
+      "orchestrationMetrics": {
+        "decisionCorrect": true,
+        "firstPassAdmission": true,
+        "retryCount": 0,
+        "simulatedContextTransferUnits": 0,
+        "orchestrationSteps": 1,
+        "deterministicIntegrationEffort": 2
+      },
+      "authorityEnvelope": {
+        "workOrderId": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1",
+        "ownedPaths": [
+          "docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_32_RUN_RECEIPT_2026-09-16.json"
+        ],
+        "forbiddenPaths": [
+          "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/index.ts"
+        ],
+        "riskCeiling": "R2",
+        "sandboxTier": 2,
+        "providerExecutionAuthority": "FORBIDDEN"
+      },
+      "evidenceClass": "PROPOSAL_ONLY",
+      "recordHash": "b6d18ae688a1988119fbf160a9880a14"
+    }
+  ],
+  "totalRuns": 32,
+  "uniqueRunKeys": 32,
+  "actionsRepresented": [
+    "NO_DELEGATE",
+    "DELEGATE",
+    "PARALLELIZE",
+    "RECLAIM",
+    "ESCALATE"
+  ],
+  "aggregate": [
+    {
+      "policy": "A_FIXED",
+      "admittedRunCount": 16,
+      "totalRunCount": 16,
+      "meanOrchestrationSteps": 1.25,
+      "meanDeterministicIntegrationEffort": 3.625,
+      "meanSimulatedContextTransferUnits": 2.375,
+      "evidenceClass": "PROPOSAL_ONLY"
+    },
+    {
+      "policy": "B_DYNAMIC",
+      "admittedRunCount": 16,
+      "totalRunCount": 16,
+      "meanOrchestrationSteps": 1.875,
+      "meanDeterministicIntegrationEffort": 8.25,
+      "meanSimulatedContextTransferUnits": 5.375,
+      "evidenceClass": "PROPOSAL_ONLY"
+    }
+  ],
+  "evidenceClass": "PROPOSAL_ONLY",
+  "generatedAt": "2026-09-16T00:00:00.000Z"
+}
