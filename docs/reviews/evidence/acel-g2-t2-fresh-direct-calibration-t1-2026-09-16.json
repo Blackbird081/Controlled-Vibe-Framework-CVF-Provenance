@@ -1,0 +1,80 @@
+{
+  "run": "acel-g2-t2-fresh-direct-calibration-t1",
+  "taskId": "mao-oa-t6a-harder-candidate",
+  "batchId": "ACEL-G2-T2-FRESH-DIRECT-CALIBRATION-T1",
+  "startedAt": null,
+  "finishedAt": null,
+  "executionBaseHead": "eca0182c4811a371f6db49a7b8b71d136180f056",
+  "providerId": "alibaba",
+  "modelId": "qwen3.7-flash",
+  "endpointHost": "dashscope-intl.aliyuncs.com",
+  "keyAliasChecked": "ALIBABA_API_KEY",
+  "keyAliasPresent": true,
+  "callAttempted": false,
+  "callCount": 0,
+  "retryCount": 0,
+  "verdict": "BLOCKED_WITH_REASON",
+  "reason": "account_free_quota_only_state_not_provable",
+  "prerequisiteEvidence": {
+    "cleanExecutionHead": {
+      "status": "PROVEN",
+      "detail": "git status clean and HEAD matched dispatch executionBaseHead eca0182c4811a371f6db49a7b8b71d136180f056 at worker start"
+    },
+    "keyAliasPresence": {
+      "status": "PROVEN",
+      "detail": "ALIBABA_API_KEY present in EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.env.local; value not disclosed"
+    },
+    "newReceiptPathCollision": {
+      "status": "PROVEN",
+      "detail": "docs/reviews/evidence/acel-g2-t2-fresh-direct-calibration-t1-2026-09-16.json absent before this write"
+    },
+    "historicalReceiptHashBefore": {
+      "status": "PROVEN",
+      "value": "c5526054595a41ea990b5e125ea698d51fe3f0bb5768d80f4fdb7c1b005f6159",
+      "path": "docs/reviews/evidence/mao-oa-t6a-direct-candidate-calibration-2026-07-17.json"
+    },
+    "currentModelPricing": {
+      "status": "PROVEN_PUBLIC_DOC_ONLY",
+      "detail": "qwen3.7-flash International/Singapore tiered pricing confirmed via live fetch of https://www.alibabacloud.com/help/en/model-studio/model-pricing on 2026-09-16; free-quota program (1M tokens / 90 days) documented",
+      "scopeLimit": "public documentation only; not an account-specific balance"
+    },
+    "ledgerFreeQuotaStatus": {
+      "status": "PROVEN_STALE_SNAPSHOT_ONLY",
+      "detail": "getAlibabaFreeQuotaStatus('qwen3.7-flash') resolves usable against ledger expirationDate 2026-10-22 (docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json, captured 2026-09-10)",
+      "scopeLimit": "ledger explicitly self-declares captured balance is not a live balance; function performs no live account query"
+    },
+    "accountFreeQuotaOnlyToggle": {
+      "status": "NOT_PROVABLE",
+      "detail": "Free Quota Only is an authenticated per-account, per-model console toggle (Alibaba Model Studio Model Usage page or Model Gallery), disabled by default per live fetch of https://www.alibabacloud.com/help/en/model-studio/new-free-quota on 2026-09-16. No tool available to this worker session (no browser/authenticated console access, no repo code path) can read this account's actual current toggle state or live remaining balance. getAlibabaFreeQuotaStatus() in EXTENSIONS/CVF_MODEL_GATEWAY/src/alibaba-free-quota-model-ledger.ts only compares the static ledger's expirationDate to now; it has no toggle or live-balance check.",
+      "codeInspected": "EXTENSIONS/CVF_MODEL_GATEWAY/src/alibaba-free-quota-model-ledger.ts:146-156 (getAlibabaFreeQuotaStatus)",
+      "consequence": "paid-exposure risk cannot be excluded; work order and baseline both require stopping at zero calls when this cannot be proven"
+    }
+  },
+  "sourceDiff": {
+    "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/scripts/run-mao-oa-t6a-candidate-calibration.ts",
+    "changed": ["MODEL_ID: qwen3.7-plus -> qwen3.7-flash", "RESULT_PATH: mao-oa-t6a-direct-candidate-calibration-2026-07-17.json -> acel-g2-t2-fresh-direct-calibration-t1-2026-09-16.json", "header/usage comments updated to reference G2-T2 GC-018 baseline"],
+    "unchanged": ["prompt", "rubric/parser/evaluateHarderCandidate call site", "call/retry count logic", "key loader", "evidence shape/fields"]
+  },
+  "offlineChecks": {
+    "preImplementationGate": "PASS",
+    "focusedScorerTests": "PASS 22/22 (tests/mao.harder.value.candidate.contract.test.ts)"
+  },
+  "diagnostic": {
+    "stage": "pre_call_prerequisite_check",
+    "class": "FREE_QUOTA_ONLY_ACCOUNT_STATE_UNPROVABLE",
+    "retryable": false,
+    "userAction": "operator must independently verify and state the Free Quota Only toggle is enabled for qwen3.7-flash on the live account, or provide a tool/credentialed check this worker can run, before any future call is authorized",
+    "provider": "alibaba",
+    "model": "qwen3.7-flash",
+    "httpStatus": null,
+    "latencyMs": null,
+    "safeMessage": "account_free_quota_only_state_not_provable"
+  },
+  "sanitizedCandidate": null,
+  "rubric": null,
+  "defects": null,
+  "materialDefectFound": null,
+  "releaseCandidateAsWorkerEvidence": null,
+  "releaseDecisionOwner": "reviewer_only",
+  "ok": false
+}
