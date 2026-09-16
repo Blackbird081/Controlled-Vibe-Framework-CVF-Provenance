@@ -1,0 +1,198 @@
+{
+  "schemaVersion": "cvf.acelG2T2CandidateQualificationT0.v1",
+  "batchId": "ACEL-G2-T2-CANDIDATE-QUALIFICATION-T0",
+  "executionBaseHead": "af218333f1005e7aa51ba318a172cb9b1336df7b",
+  "dispatchBaseHead": "eb88000344966c08209c155be8f70f53b501b0d8",
+  "evidenceClass": "PROPOSAL_ONLY",
+  "terminalDecision": "QUALIFIED_FOR_FRESH_DIRECT_CALIBRATION_PACKET",
+  "sourceLedger": [
+    {
+      "path": "docs/reviews/CVF_ACEL_G2_T2_REAL_AGENT_EXPERIMENT_DESIGN_WORKER_RETURN_2026-09-16.md",
+      "sha256": "e37f855587866d2007e52679a8d2fe68468388effdbe41404c15bb78266e79ea",
+      "bytes": 31955,
+      "terminalStatus": "READ",
+      "extractedFact": "G2-T2 real-agent experiment design terminally blocked on NO_QUALIFIED_HARDER_CANDIDATE; this hash matches the predecessor hash cited by the paired GC-018 baseline exactly, confirming zero drift since dispatch"
+    },
+    {
+      "path": "docs/audits/CVF_ACEL_G2_T2_REAL_AGENT_EXPERIMENT_DESIGN_MANIFEST_2026-09-16.json",
+      "sha256": "fec90f3417e243cbafaa516bee2fe881a1ced0378d84d9b433b554eaa0256619",
+      "bytes": 13069,
+      "terminalStatus": "READ",
+      "extractedFact": "Machine ledger records candidateAdmission.admittedCandidate=null; only candidate reviewed is MAO-LIVE-T1's prime-number task, disposition EXCLUDED_DUPLICATE, reason explicitly forbidden for reuse"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_2026-07-17.md",
+      "sha256": "7cef6be5ab216127aa4f8f712833196e79e6642a31b1586fc5f72e295c55648e",
+      "bytes": 8189,
+      "terminalStatus": "READ",
+      "extractedFact": "T6A baseline status is CLOSED_PASS_BOUNDED_IMPLEMENTATION_LIVE_RESULT_NOT_ACCEPTED; authorizes exactly one bounded direct-provider calibration call against a fixed 48-hour/two-engineer/no-production-mutation planning task, distinct from the closed prime-number task"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_2026-07-17.md",
+      "sha256": "d82eb3ecd959d41ff225110543955ad55e9be7aff54f2b276b54f4017e6f2eb8",
+      "bytes": 23127,
+      "terminalStatus": "READ",
+      "extractedFact": "Fixed task/schema requires objective, exactly 3 dependencies, exactly 3 risks each with non-empty mitigation, exactly 3 verification steps, rollback, stopCondition; rubric totals 100 (40 schema/completeness + 30 fixed-constraint + 30 risk/verification specificity); releaseCandidate true iff score<=80 or material defect; only reviewer may release T6B"
+    },
+    {
+      "path": "docs/reviews/CVF_MAO_OA_T6A_HARDER_CANDIDATE_DIRECT_BASELINE_CALIBRATION_COMPLETION_REVIEW_2026-07-17.md",
+      "sha256": "2befeaa036363a0ab3f95328aa96f8903cf1fa2cbefc87795a12b56969b3aecc",
+      "bytes": 14239,
+      "terminalStatus": "READ",
+      "extractedFact": "R3: live score/defect verdict NOT accepted because evidence artifact persisted only rawResponseHash, not sanitizedCandidate, so independent rescoring was structurally impossible; R4: T6B_NOT_RELEASED fail-closed; R5: reviewer repair made the runner persist sanitizedCandidate in future authorized executions, but no second call was made"
+    },
+    {
+      "path": "docs/reviews/CVF_MAO_OA_T6A_WORKER_RETURN_2026-07-17.md",
+      "sha256": "0e90dd42da247634cedfc365b3ce1fab4904f74cf3eda6fedd42dad451ae0de1",
+      "bytes": 32733,
+      "terminalStatus": "READ",
+      "extractedFact": "Worker's original evidence.json write omitted sanitizedCandidate; reported score 100/100, zero defects, releaseCandidateAsWorkerEvidence=false, releaseDecisionOwner=reviewer_only; F1/F2 pre-live-call scorer defects found and fixed via focused tests before the one live call was spent"
+    },
+    {
+      "path": "docs/reviews/evidence/mao-oa-t6a-direct-candidate-calibration-2026-07-17.json",
+      "sha256": "c5526054595a41ea990b5e125ea698d51fe3f0bb5768d80f4fdb7c1b005f6159",
+      "bytes": 1114,
+      "terminalStatus": "READ",
+      "extractedFact": "Historical persisted receipt: sanitizedCandidate is null; reviewerEvidenceDisposition=NOT_RECOMPUTABLE_MISSING_SANITIZED_CANDIDATE; rawResponseHash present but original bytes are not, so byte-identity cannot reconstruct scorer input; rubric.score=100, defects=[], materialDefectFound=false recorded as unverifiable worker-derived claims only"
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/harder.value.candidate.contract.ts",
+      "sha256": "2592fe83e73746c88b09b87fbddac3f511b5d9f05663687f9a1f08028742cb18",
+      "bytes": 14655,
+      "terminalStatus": "READ",
+      "extractedFact": "Current source defines the fixed task prompt, a markdown-fence-tolerant JSON parser (parseHarderCandidateResponse), a deterministic 100-point rubric (scoreHarderCandidate), four material-defect classes, and evaluateHarderCandidate combining parse+score+defect+release-candidate rule as a pure function with zero network/credential/retry dependency; reconstructable independent of any prior receipt"
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.harder.value.candidate.contract.test.ts",
+      "sha256": "1413e0f7c5230517766d2aa3e2f8e762303795b513a44d67afa6a7837ebc9e9e",
+      "bytes": 11824,
+      "terminalStatus": "READ",
+      "extractedFact": "22 focused Vitest cases cover complete/invalid/wrong-cardinality/production-mutation/negated-mutation/empty-rollback/empty-stopCondition/exact-80-boundary/exact-81-boundary/empty-object/deterministic-repeat/source-import-discipline cases entirely on fake response text; no live call dependency"
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/scripts/run-mao-oa-t6a-candidate-calibration.ts",
+      "sha256": "fc86b31c2c3188b94a7a61457195601171e925d0c16dee5ab79bd03eafaae6c6",
+      "bytes": 11689,
+      "terminalStatus": "READ",
+      "extractedFact": "Current runner source line 292 writes sanitizedCandidate: parsedCandidate?.ok ? parsedCandidate.raw : null into the persisted artifact. This supports independent rescoring for a successfully parsed candidate. A parse-failure outcome remains non-reconstructable because sanitizedCandidate is null and only rawResponseHash is retained; a future packet must fail closed on that outcome unless a separately authorized evidence-shape repair preserves reconstructable sanitized failure input"
+    },
+    {
+      "path": "docs/reviews/CVF_MAO_OA_T7_FINAL_ROADMAP_CLOSURE_COMPLETION_REVIEW_2026-07-17.md",
+      "sha256": "844e5436c29ec54b2de5e3ab40fe683293da5f34d71b1af95c0c6407fc0bf54f",
+      "bytes": 15769,
+      "terminalStatus": "READ",
+      "extractedFact": "T7 closes the MAO-OA roadmap CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR; T6A live result explicitly remains not accepted; T6B_NOT_RELEASED preserved; concrete reopen condition: a fresh, separately authorized live call whose runner persists sanitizedCandidate, followed by independent score/defect recomputation"
+    },
+    {
+      "path": "docs/reviews/CVF_MAO_OA_T7_INDEPENDENT_CRITIQUE_AND_ROADMAP_CLOSURE_ASSESSMENT_2026-07-17.md",
+      "sha256": "39184d1ee76c759fe7a86a06cb07558f9c59f478861598ed2953c388afcfd284",
+      "bytes": 31554,
+      "terminalStatus": "READ",
+      "extractedFact": "Independently reconfirms F1 (negation-handling) and F2 (empty-input scoring) fixes are real and present in current source via fresh 22/22 test execution; explicitly rejects reading F1/F2 as curing the missing-sanitized-candidate gap; recommends CLOSE_BOUNDED without accepting the T6A live score"
+    }
+  ],
+  "sourceReconciliation": {
+    "manifestCount": 12,
+    "ledgerTerminalCount": 12,
+    "exclusions": 0,
+    "unresolved": 0,
+    "corpusVerdict": "COMPLETE_VERIFIED"
+  },
+  "taskResultSeparation": {
+    "proposition1_taskContractReconstructable": {
+      "value": true,
+      "evidence": "task prompt (source row 8), strict JSON schema, parser, 100-point rubric, and material-defect rules are all present in current source and independently verified by 22/22 passing focused tests (source row 9) operating entirely on fake response text"
+    },
+    "proposition2_runnerPersistsSanitizedCandidate": {
+      "value": true,
+      "evidence": "current runner source (row 10, line 292) writes sanitizedCandidate from a successfully parsed response into the persisted artifact; on parse failure it writes null, so qualification is conditional on the future packet treating that outcome as non-admissible unless reconstructable failure input is separately authorized"
+    },
+    "proposition3_historicalResultNonRecomputableAndNotAccepted": {
+      "value": "NOT_ACCEPTED_UNCHANGED",
+      "evidence": "historical evidence.json (row 7) has sanitizedCandidate=null and reviewerEvidenceDisposition=NOT_RECOMPUTABLE_MISSING_SANITIZED_CANDIDATE; T6A completion review R3-R5 (row 5) and T7 closure (rows 11-12) all preserve this rejection; this audit does not recompute, rescale, or accept the historical 100/100 score, zero-defect claim, or release-candidate boolean under any framing"
+    },
+    "proposition4_qualificationPermitsOnlyLaterLocalDispatchDecision": {
+      "value": true,
+      "evidence": "per this work order's Purpose, Operator Checkpoint, and Claim Boundary sections; qualification is documentation/evidence only and does not itself authorize a provider call, runtime mutation, or calibration execution"
+    }
+  },
+  "hardnessNoveltyComparison": {
+    "excludedTask": "MAO-LIVE-T1 prime-number task (100/100 both direct and MAO lanes; explicitly forbidden for reuse per roadmap Next Allowed Move and this work order's duplicate-task rejection rule)",
+    "dimensions": [
+      {
+        "dimension": "structuredOutputSchemaObligations",
+        "t6aCandidate": "strict object schema with 6 named fields, 2 fixed-cardinality arrays (exactly 3 items each), 1 nested-object array with 2 required sub-fields per item (risks[].risk, risks[].mitigation)",
+        "excludedTask": "primality True/False answer with no structured multi-field schema",
+        "conclusion": "T6A candidate carries materially more structured-output obligation"
+      },
+      {
+        "dimension": "multiDimensionalDeterministicRubric",
+        "t6aCandidate": "3-dimension 100-point rubric: 40 schema/completeness + 30 fixed-constraint correctness + 30 risk/verification specificity, each independently computed by a pure function",
+        "excludedTask": "single correct/incorrect binary judgment",
+        "conclusion": "T6A candidate exercises materially more rubric surface"
+      },
+      {
+        "dimension": "explicitRiskAndRollbackReasoning",
+        "t6aCandidate": "requires 3 risk/mitigation pairs, an explicit rollback field, and an explicit stopCondition field, each independently scored for presence and specificity",
+        "excludedTask": "no risk, rollback, or stop-condition reasoning is elicited or scored by the primality task",
+        "conclusion": "T6A candidate is the only one of the two that exercises risk/rollback reasoning at all"
+      },
+      {
+        "dimension": "materialDefectClasses",
+        "t6aCandidate": "4 named defect classes: INVALID_JSON, MISSING_OR_WRONG_CARDINALITY, PRODUCTION_MUTATION (with negation-aware detection per F1), EMPTY_ROLLBACK_OR_STOP_CONDITION",
+        "excludedTask": "no material-defect taxonomy defined for a single correct/incorrect answer",
+        "conclusion": "T6A candidate is the only one with a defined material-defect rule set"
+      },
+      {
+        "dimension": "independentRescoringFromSanitizedData",
+        "t6aCandidate": "current runner source persists sanitizedCandidate for a successfully parsed response (row 10), supporting byte-level independent rescoring against the pure evaluateHarderCandidate function; on parse failure it persists null and does not preserve reconstructable response bytes",
+        "excludedTask": "not applicable; the excluded task was closed VALUE_NOT_PROVEN on its own independently-graded evidence, not on a rescoring gap",
+        "conclusion": "T6A candidate supports rescoring for successfully parsed responses. Parse-failure evidence remains a conditional shape gap that the future calibration packet must treat as non-admissible unless separately repaired"
+      },
+      {
+        "dimension": "plausibleOneRevisionReviewHypothesis",
+        "t6aCandidate": "roadmap's predeclared release rule (score<=80 or one material defect) gives a concrete, checkable one-revision-worth hypothesis distinguishable from a perfect first-pass response",
+        "excludedTask": "MAO-LIVE-T1 both lanes scored 100/100 with MAO adding 20.7 percent latency for no quality gain, i.e. no revision value was observed or hypothesized",
+        "conclusion": "T6A candidate has a stated, falsifiable revision-value hypothesis that the excluded task never had"
+      },
+      {
+        "dimension": "semanticNonEquivalenceToEasyTask",
+        "t6aCandidate": "multi-constraint release-planning task under an explicit no-production-mutation guard, requiring free-text generation, structured decomposition, and constraint satisfaction",
+        "excludedTask": "single deterministic mathematical primality judgment with no planning, no constraint satisfaction beyond correctness, and no free-text generation",
+        "conclusion": "the two tasks are semantically non-equivalent by task type, output shape, and rubric structure; T6A candidate is not a reuse or paraphrase of the excluded task"
+      }
+    ],
+    "explicitDisclaimer": "complexity of the schema/rubric alone does not prove the candidate will produce a low score or reveal a material defect on any future call; this comparison establishes structural hardness/novelty distinctness from the excluded task only, not a predicted or observed low score"
+  },
+  "evidenceReadiness": {
+    "sanitizedParsedCandidate": {"emittedByCurrentSource": true, "evidence": "runner row 10 line 292, only when parsedCandidate.ok is true"},
+    "reconstructableParseFailureInput": {"emittedByCurrentSource": false, "evidence": "runner row 10 line 292 persists sanitizedCandidate=null on parse failure; rawResponseHash does not reconstruct the response bytes"},
+    "rawResponseHash": {"emittedByCurrentSource": true, "evidence": "runner row 10 line 271"},
+    "providerModelMetadata": {"emittedByCurrentSource": true, "evidence": "runner row 10 lines 280-284 (providerId, modelId, endpointHost, keyAliasUsed)"},
+    "usage": {"emittedByCurrentSource": true, "evidence": "runner row 10 line 289; historical receipt row 7 confirms usage.inputTokens/outputTokens were populated on the one prior call"},
+    "latency": {"emittedByCurrentSource": true, "evidence": "runner row 10 line 288 (latencyMs)"},
+    "callCount": {"emittedByCurrentSource": true, "evidence": "runner row 10 line 286 (callCount: 1, hardcoded ceiling)"},
+    "retryCount": {"emittedByCurrentSource": true, "evidence": "runner row 10 line 287 (retryCount: 0, no retry code path exists)"},
+    "scoreDimensions": {"emittedByCurrentSource": true, "evidence": "runner row 10 line 293 persists evaluation.rubric with all three named sub-scores"},
+    "materialDefects": {"emittedByCurrentSource": true, "evidence": "runner row 10 line 294 persists evaluation.defects array"},
+    "releaseBoolean": {"emittedByCurrentSource": true, "evidence": "runner row 10 line 296 persists releaseCandidateAsWorkerEvidence, explicitly labeled worker-evidence-only, never a release decision (line 297: releaseDecisionOwner reviewer_only)"},
+    "missingFieldsBlockingIndependentReview": ["sanitized parse-failure input or equivalent reconstructable parse diagnostic"],
+    "note": "all named fields needed for independent review of a successfully parsed candidate are present in current source. A parse-failure outcome is not independently reconstructable and must be fail-closed by a future calibration packet unless a separately authorized evidence-shape repair is made. This is static source inspection, not proof that a future live call will populate fields or succeed"
+  },
+  "downstreamBlockers": {
+    "candidateQualificationToFreshCalibration": "CONDITIONAL_PACKET_REQUIREMENT -- a separately authorized Local GC-018/work order is required before any call, and its acceptance contract must mark parse-failure evidence non-admissible unless a separately authorized evidence-shape repair preserves reconstructable sanitized failure input; qualification alone does not dispatch calibration",
+    "freshCalibrationToCallableSeam": "UNCHANGED -- per the frozen G2-T2 design corpus (rows 1-2), no callable seam exists between the T1 RouteAction decision contract and either MAO call surface (operational.worker.launcher.ts or live.provider.value.pilot.ts); this remains a separate, unresolved blocker outside this qualification's scope",
+    "callableSeamToG2T2Experiment": "UNCHANGED -- G2-T2 A/B experiment execution requires both a qualified candidate (addressed by this qualification) and the callable seam (not addressed here) plus a fresh operator-authorized experiment work order",
+    "note": "this qualification resolves only the NO_QUALIFIED_HARDER_CANDIDATE blocker named in the frozen G2-T2 design predecessor; NO_CALLABLE_T1_TO_MAO_CONSUMER remains open and is not in scope for this tranche"
+  },
+  "zeroExternalEffects": {
+    "agentOrSubagentInvocations": 0,
+    "providerCalls": 0,
+    "credentialAccess": 0,
+    "networkCalls": 0,
+    "sourceOrTestMutations": 0,
+    "runtimeMutations": 0,
+    "sessionStateMutations": 0,
+    "testOrRunnerExecutions": 0
+  }
+}
