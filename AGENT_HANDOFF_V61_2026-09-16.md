@@ -1,7 +1,7 @@
 # CVF Agent Handoff V61 - G1 and G4 Designs Closed Parked
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `dbb795979`. G4 design material closure; parent of the following continuity projection.
+Current HEAD recorded for this handoff: `5732d1deee2d2c5f520acd8c50b81e8acdf6317f`. G4 closure continuity commit; parent of this dedicated handoff sync.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -38,6 +38,7 @@ accepted and parked at `dbb795979`. No implementation or provider/runtime work.
 - G1 T1 material closure: `d87aadaec`; Local R1 repair accepted with ten matching source hashes, corrected-base pre-implementation 84/84, reviewer-fast 68/68, material hook 89/89.
 - G4 T1 design dispatch: `fb1576aef`; pre-dispatch 82/82 PASS, material hook 89/89 PASS; three create-only worker outputs, no worker commit.
 - G4 T1 design closure: `dbb795979`; eight source hashes, Claude R1 plus one bounded Local repair, reviewer-fast 68/68 and material hook 89/89 PASS. Implementation and experiment remain parked.
+- P4-C1 post-commit observation for `dbb795979` is rejected as unusable: its collector applied pre-closure to the mixed exact-manifest plus protected-current-authority range `9ceec78bc..dbb795979`, which the range-shape guard correctly blocks. Marker SHA-256 `38d679509a00a1a791ef1d747b51a7a4a8a73ef36535d12129f96e91ab71d5fd` is preserved under an ignored adjudicated-marker name. No P4 sample or release proof is promoted; the material 89/89 pre-commit result is a separate fact.
 - Local continuity correction: the front-door Next Allowed Move paragraph retained a G1 `Mode:` line after G4 dispatch. The worker-return gate correctly blocked on session-mode consistency. Local corrects only that stale line; no G4 worker artifact is changed.
 - Latest closed learning-history wave remains `LHW24`.
 
