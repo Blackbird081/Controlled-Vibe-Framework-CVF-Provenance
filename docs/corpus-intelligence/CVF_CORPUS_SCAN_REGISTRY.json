@@ -8025,6 +8025,49 @@
       "notes": "Reviewer-added GC-051 coverage for a proposal-only hermetic comparison. No production consumer, provider, subagent, network, runtime, public, or deployment claim."
     },
     {
+      "id": "acel-g3-t1-behavioral-evaluation-owner-composition-design",
+      "corpusType": "TEST_CORPUS",
+      "displayName": "ACEL G3 T1 behavioral evaluation owner-composition design",
+      "scopePaths": [
+        "docs/baselines/CVF_GC018_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
+        "docs/audits/CVF_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
+        "docs/audits/CVF_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_MANIFEST_2026-09-16.json",
+        "docs/reviews/CVF_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_WORKER_RETURN_2026-09-16.md",
+        "docs/reviews/CVF_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_COMPLETION_2026-09-16.md",
+        "docs/reference/agent_system_skills/CVF_ASSF_BEHAVIORAL_EVALUATION_CONTRACT.md",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/assf.behavioral.evaluation.contract.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/assf.behavioral.evaluation.contract.test.ts",
+        "governance/compat/check_assf_behavioral_evaluation_evidence.py"
+      ],
+      "fileCount": 10,
+      "status": "SCANNED_WITH_FINDINGS",
+      "findings": [
+        {
+          "id": "acel-g3-t1-owner-composition-ready",
+          "summary": "Eight current sources support one ASSF-composed generic behavioral-evaluation owner; Local repaired one lifecycle-state conjunction and two reversed machine dependency edges.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Require a separate operator-authorized implementation work order before creating or executing any of the four planned successor paths.",
+          "defectClass": "WORKER_EXECUTION_ERROR",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE"
+        }
+      ],
+      "negativeSearchTerms": [
+        "generic behavioral grader in current ASSF certification evidence",
+        "implemented lifecycle checker at check_assf_certification_lifecycle_guard.py",
+        "automatic certification by the behavioral grader",
+        "release gate or provider canary as generic evaluator owner"
+      ],
+      "nextScanRecommendation": "Re-scan only after a separately authorized implementation tranche creates one or more planned successor paths or changes the pinned owner sources.",
+      "scanWave": "ACEL-G3-T1",
+      "scanDate": "2026-09-16",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
+      "completionReviewPath": "docs/reviews/CVF_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_COMPLETION_2026-09-16.md",
+      "notes": "Design-only closure. The four successor paths are planned scope references, not proof that files exist or authority to create them. No evaluator, certification/index mutation, provider/live, runtime, public, deployment, or production effect is claimed."
+    },
+    {
       "id": "dsh-wra-r1-whole-repository-absorption",
       "corpusType": "EXTERNAL_SOURCE",
       "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",

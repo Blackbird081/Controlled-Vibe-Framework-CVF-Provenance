@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 ## Dispatch Prompt Envelope
 
@@ -14,9 +14,9 @@ Dispatch base head: `63bd1614a591a1362b1c118236b1e43a6cf38fe7`
 
 dispatchBaseHead: `63bd1614a591a1362b1c118236b1e43a6cf38fe7`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `f23ba84441d4ac2588d7e7cd8d6d77803e473a33`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `f23ba84441d4ac2588d7e7cd8d6d77803e473a33`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -623,15 +623,40 @@ Claim boundary: package/skill references are owner inputs only, not productioniz
 
 ## Closure Checklist
 
-- [ ] Worker records exact execution base and status.
-- [ ] Eight sources reconcile 8/8 with current hashes.
-- [ ] Freshness delta and absent-path correction are explicit.
-- [ ] Exactly three owned outputs exist and staging is empty.
-- [ ] One terminal disposition is evidence-backed.
-- [ ] Owner graph and every evaluation dimension are complete.
-- [ ] Pre-implementation and worker-return fast pass.
-- [ ] Zero external effects and no forbidden path changes.
-- [ ] Local reviewer records final disposition.
+- [x] Worker records exact execution base and status.
+- [x] Eight sources reconcile 8/8 with current hashes.
+- [x] Freshness delta and absent-path correction are explicit.
+- [x] Exactly three owned outputs exist and staging is empty at worker return.
+- [x] One terminal disposition is evidence-backed.
+- [x] Owner graph and every evaluation dimension are complete.
+- [x] Pre-implementation and worker-return fast pass.
+- [x] Zero external effects and no forbidden path changes.
+- [x] Local reviewer records final disposition.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_COMPLETION_2026-09-16.md` | `ACCEPT_DESIGN_READY_FOR_SEPARATE_IMPLEMENTATION_WORK_ORDER` | PASS |
+| Roadmap state | active ACEL continuity | G3 design closed; implementation checkpoint remains separate | PASS |
+| Registry JSON | machine design manifest | eight terminal source rows and exact successor manifest | PASS |
+| Registry Markdown | human design audit | accepted after bounded Local repair | PASS |
+| External evidence digest | N/A with reason: no external evidence entered this tranche | zero external inputs | N/A with reason |
+| System loop interlock | no runtime consumer | implementation and execution remain forbidden | N/A with reason |
+| Session continuity | active session surfaces | post-material continuity projection required | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| source reconciliation | exactly eight terminal rows | eight `READ` rows with matching SHA-256 values | PASS |
+| freshness state | current joint distribution | 24 active/implemented certified, one deferred certified, seven not-started | PASS |
+| canonical owner | one generic ASSF-composed contract | one owner; lifecycle schema reused | PASS |
+| dependency direction | generic evidence may be cited by release/provider consumers | Local-repaired machine edges match the human design | PASS |
+| independent grading | runner cannot self-certify | stateless separate grader; certification write forbidden | PASS |
+| successor boundary | exact paths and separate checkpoint | four paths; no successor execution | PASS |
+| forbidden effects | zero | observed zero | PASS |
 
 ## Public Export Disposition
 

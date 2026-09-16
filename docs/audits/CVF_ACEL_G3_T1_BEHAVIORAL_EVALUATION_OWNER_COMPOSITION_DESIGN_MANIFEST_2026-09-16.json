@@ -1,0 +1,209 @@
+{
+  "schemaVersion": "cvf.acelG3T1OwnerCompositionDesignManifest.v1",
+  "batchId": "ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN",
+  "executionBaseHead": "f23ba84441d4ac2588d7e7cd8d6d77803e473a33",
+  "dispatchBaseHead": "63bd1614a591a1362b1c118236b1e43a6cf38fe7",
+  "terminalDisposition": "DESIGN_READY_FOR_SEPARATE_IMPLEMENTATION_WORK_ORDER",
+  "providerExecutionAuthority": "FORBIDDEN",
+  "claimBoundary": "Machine-readable companion to the human-readable audit. Documents a design only; no source, test, package, or skill-state mutation occurred; no capability, provider, agent, or live execution occurred.",
+  "sourceLedger": [
+    {
+      "claimId": "SRC-1",
+      "path": "docs/audits/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_2026-09-15.md",
+      "sha256": "5073932e1bcb18754ff914003b1bbac80037dad2b7599b50c29fb497f2eea39a",
+      "terminalStatus": "READ",
+      "extractedFact": "G3 disposition ADAPT; no generic positive/negative, process/tool, or WITH/WITHOUT evaluation owner found across bounded search scope; certification/UAT schema mostly doc-only proposal at T0 execution base 6b8da380c56154323060a94179901b407d394f2a"
+    },
+    {
+      "claimId": "SRC-2",
+      "path": "docs/reviews/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_COMPLETION_2026-09-15.md",
+      "sha256": "107808cde5991393786949a9b7a2bae4c40b53620342bd181791031c69729cae",
+      "terminalStatus": "READ",
+      "extractedFact": "Local completion review CLOSED_PASS_BOUNDED; ACCEPT_BOUNDED_RELEASE for G1/G2/G3/G4/G6 ADAPT and G5 WATCH; no implementation or experiment authorized by that closure"
+    },
+    {
+      "claimId": "SRC-3",
+      "path": "docs/reference/agent_system_skills/CVF_ASSF_CERTIFICATION_LIFECYCLE_GUARD_CONTRACT.md",
+      "sha256": "87e3fda5ed0eb79701129765011bc4095f107914aacc13587f2aba3a2e8739ca",
+      "terminalStatus": "READ",
+      "extractedFact": "certificationState may not advance to CERTIFIED while uatState is not PASSED; lifecycle violation taxonomy and drift classes defined; candidate checker check_assf_certification_lifecycle_guard.py never implemented in this or any later tranche; no behavioral-evaluation mechanism defined"
+    },
+    {
+      "claimId": "SRC-4",
+      "path": "docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md",
+      "sha256": "99de2f21b8dc3e97a32d534a5c6df6527b89068c07790126ec6b3c444e9fb497",
+      "terminalStatus": "READ",
+      "extractedFact": "Package Compact Machine Source Schema already defines acceptanceEvidence, evidenceRequirements, uatState, certificationState fields under the Lifecycle and Capability field families; contract-definition-only, no resolver/loader behavioral check implemented"
+    },
+    {
+      "claimId": "SRC-5",
+      "path": "docs/reference/agent_system_skills/generated/skill-index.json",
+      "sha256": "0382dd04f7e8fb5bcaf5ec5c06b08b3e7a440b1c711d5c3534af7b7f5ab1a2f1",
+      "terminalStatus": "READ",
+      "extractedFact": "32 total skills; certificationState counts {CERTIFIED: 25, NOT_STARTED: 7}; uatState counts {PASSED: 25, NOT_STARTED: 7}; status counts {ACTIVE: 24, CANDIDATE: 8}; externalCliMcpDisposition counts {IMPLEMENTED: 24, DEFERRED_WITH_REASON: 8}; aggregation of the four unique acceptanceEvidence strings across all 25 CERTIFIED entries finds packaging/admission/drift/production-readiness evidence and no generic behavioral grader"
+    },
+    {
+      "claimId": "SRC-6",
+      "path": "docs/reviews/CVF_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_2026-06-26.md",
+      "sha256": "89e84ff18d83c03b7a321aad58dbd4be56897cf62c2ad775d319c2b870508efb",
+      "terminalStatus": "READ",
+      "extractedFact": "Real manual UAT execution evidence exists and is accepted for cvf-dispatch-quality-reviewer over one committed packet range; the evidence is dispatch-quality-checker and fast-gate pass/fail, not generic invocation-behavior grading"
+    },
+    {
+      "claimId": "SRC-7",
+      "path": "scripts/run_cvf_release_gate_bundle.py",
+      "sha256": "046b5aed34e7b004c8277dc70b4e9d0322088f58bec1f966365960022dcb79ba",
+      "terminalStatus": "READ",
+      "extractedFact": "Release-readiness bundle owns build, TypeScript check, provider readiness, secrets scan, docs governance, E2E, and mandatory SOT3 checks; scoped to release-candidate quality, not arbitrary-skill behavioral grading"
+    },
+    {
+      "claimId": "SRC-8",
+      "path": "docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md",
+      "sha256": "c7a2ece2ccabdf4d74423b8ddbec6c688558e6f04c2f2cba152a9eaf24169460",
+      "terminalStatus": "READ",
+      "extractedFact": "Provider lane CERTIFIED status requires 3 consecutive PASS 6/6 canary runs; scoped to provider/model-lane availability, not per-skill capability behavior"
+    }
+  ],
+  "corpusReconciliation": {
+    "manifestCount": 8,
+    "ledgerTerminalCount": 8,
+    "exclusions": 0,
+    "unreadableCount": 0,
+    "unresolvedCount": 0,
+    "corpusVerdict": "COMPLETE_WITH_DECLARED_EXCLUSIONS"
+  },
+  "freshnessDelta": {
+    "t0Claim": "generated skill-index entries observed at certificationState: NOT_STARTED / uatState: NOT_STARTED",
+    "t0ExecutionBase": "6b8da380c56154323060a94179901b407d394f2a",
+    "currentExecutionBase": "f23ba84441d4ac2588d7e7cd8d6d77803e473a33",
+    "currentObservation": "mixed index state: 24/32 skills are CERTIFIED/PASSED/ACTIVE/IMPLEMENTED; 1/32 is CERTIFIED/PASSED/CANDIDATE/DEFERRED_WITH_REASON; 7/32 are NOT_STARTED/NOT_STARTED/CANDIDATE/DEFERRED_WITH_REASON",
+    "impactOnG3Disposition": "NONE_CONFIRMED_UNCHANGED",
+    "reasonImpactIsNone": "direct inspection of a representative CERTIFIED entry's acceptanceEvidence, and of the two admission/anatomy checkers it cites, confirms the certification advance is packaging/production-readiness evidence, not generic behavioral evaluation evidence; the underlying gap G3 named is still unfilled"
+  },
+  "negativeSearchConfirmation": {
+    "check": "governance/compat/check_assf_certification_lifecycle_guard.py absence",
+    "commandEvidence": "ls governance/compat/check_assf_certification_lifecycle_guard.py -> No such file or directory; find governance/compat -iname *assf*lifecycle* -> no match",
+    "disposition": "CONFIRMED_STILL_ABSENT"
+  },
+  "ownerOverlapMatrix": [
+    {
+      "concern": "certification/UAT state ordering",
+      "existingOwner": "docs/reference/agent_system_skills/CVF_ASSF_CERTIFICATION_LIFECYCLE_GUARD_CONTRACT.md",
+      "disposition": "REUSE"
+    },
+    {
+      "concern": "package/lifecycle field schema (acceptanceEvidence, evidenceRequirements, uatState, certificationState)",
+      "existingOwner": "docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md",
+      "disposition": "REUSE"
+    },
+    {
+      "concern": "generic per-skill positive/negative invocation correctness",
+      "existingOwner": "NONE_FOUND",
+      "disposition": "EXTEND"
+    },
+    {
+      "concern": "process/tool-order verification for a skill's own instructed behavior",
+      "existingOwner": "NONE_FOUND",
+      "disposition": "EXTEND"
+    },
+    {
+      "concern": "packaging/registry-shape admission",
+      "existingOwner": "governance/compat/check_assf_certified_metadata_admission.py; governance/compat/check_assf_package_candidate_anatomy.py",
+      "disposition": "ADAPTER_ONLY"
+    },
+    {
+      "concern": "release-candidate readiness",
+      "existingOwner": "scripts/run_cvf_release_gate_bundle.py",
+      "disposition": "ADAPTER_ONLY"
+    },
+    {
+      "concern": "provider/model-lane availability",
+      "existingOwner": "docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md",
+      "disposition": "ADAPTER_ONLY"
+    },
+    {
+      "concern": "manual UAT execution recording pattern",
+      "existingOwner": "docs/reviews/CVF_ASSF_REAL_MANUAL_UAT_EXECUTION_EVIDENCE_2026-06-26.md (pattern, not a code owner)",
+      "disposition": "REUSE"
+    },
+    {
+      "concern": "a second, competing generic evaluator",
+      "existingOwner": "N/A",
+      "disposition": "REJECT_DUPLICATE"
+    }
+  ],
+  "compositionHypothesis": {
+    "stated": "ASSF lifecycle remains the certification/UAT authority; a behavioral-evaluation contract supplies evidence to it; release gate and provider canary are domain-specific consumers or adapters, not the generic owner",
+    "verdict": "CONFIRMED",
+    "canonicalOwner": "new generic ASSF-composed Behavioral Evaluation Contract (working name CVF_ASSF_BEHAVIORAL_EVALUATION_CONTRACT)",
+    "dependencyDirection": [
+      { "from": "new behavioral evaluation contract", "to": "ASSF certificationState/uatState/acceptanceEvidence", "relation": "SUPPLIES_EVIDENCE_INTO" },
+      { "from": "new behavioral evaluation contract evidence", "to": "release-gate bundle", "relation": "MAY_BE_CITED_BY_CONSUMER_AS_ONE_INPUT" },
+      { "from": "new behavioral evaluation contract evidence", "to": "provider-lane matrix", "relation": "MAY_BE_CITED_BY_CONSUMER_AS_ONE_INPUT" }
+    ],
+    "selfCertificationLoopForbidden": true
+  },
+  "behavioralContract": {
+    "positiveNegativeInvocation": "every fixture set requires at least one positive case (correct instructed behavior) and at least one negative case (tool-order violation, missing required output, or forbidden action attempt); positive-only fixture sets cannot reach PASSED evidence status",
+    "outcomeAndProcessAssertions": "two independent required assertion classes: outcome assertions check final output shape/value; process/tool assertions check the sequence and identity of tool/file/command invocations against an allowed-order list; correct outcome via a forbidden process is a defect, not a pass",
+    "toolOrderConstraints": "each skill declares an explicit allowed-transition table; an undeclared transition is a fail-closed defect regardless of outcome",
+    "repeatPolicy": {
+      "deterministicSkills": "exactly 1 passing repeat required",
+      "stochasticSkills": "3 consecutive passing repeats required before uatState: PASSED is recorded"
+    },
+    "withWithoutBaselineControls": "WITH and WITHOUT runs must share byte-identical input fixtures and must differ specifically on the checked outcome/process assertions; a WITH run with unproven marginal value over WITHOUT is rejected, not accepted",
+    "mockReplayProvenance": "any mocked/replayed trace must carry an explicit provenance field (source commit/date) and an expiry field; an expired or provenance-less mock trace is rejected; a mock/replay result may never be cited as LIVE or provider/live proof",
+    "regressionPromotionInvalidation": "evidence is invalidated whenever the skill's canonicalRoot source content hash changes; passing evidence never carries forward across a source change without a fresh repeat",
+    "workerGraderSeparation": "fixture-runner (produces a trace) and grader (scores the trace) are two independently invokable functions with no shared mutable state; the grader never trusts a runner self-declared pass field; defect classes are pre-declared before any real trace exists",
+    "evidenceProjection": "grader output populates the existing acceptanceEvidence and uatState package fields by citing a governed review artifact path; the grader never writes certificationState: CERTIFIED, which remains a reviewer/closer decision",
+    "unknownHandling": "fail-closed on every unknown/malformed input: INCOMPLETE_TRACE, UNDECLARED_TOOL_USE, STALE_REPLAY_PROVENANCE, NONEQUIVALENT_BASELINE_PAIR, INSUFFICIENT_REPEAT_EVIDENCE are all named defect classes, never silently passed"
+  },
+  "negativeCases": [
+    { "case": "self-grading", "requirement": "runner and grader are separately invokable; a runner-declared PASS field is never trusted by the grader" },
+    { "case": "missing trace", "requirement": "a trace missing a required tool-call or output field is INCOMPLETE_TRACE, never silently scored as a pass" },
+    { "case": "unknown token/tool use", "requirement": "an undeclared tool/action invocation is UNDECLARED_TOOL_USE regardless of outcome" },
+    { "case": "replay drift", "requirement": "a mock/replay trace whose declared source commit no longer matches the current canonicalRoot hash is STALE_REPLAY_PROVENANCE" },
+    { "case": "unequal WITH/WITHOUT inputs", "requirement": "a WITH/WITHOUT pair built from different inputs is NONEQUIVALENT_BASELINE_PAIR" },
+    { "case": "stochastic under-sampling", "requirement": "fewer than 3 consecutive passing repeats on a stochastic skill is INSUFFICIENT_REPEAT_EVIDENCE" }
+  ],
+  "evidenceFlow": [
+    "fixture: one input scenario plus expected outcome/process assertions plus declared allowed-transition table",
+    "invocation: skill behavior exercised live, live-with-repeat, or provenance-tagged mock/replay",
+    "trace: recorded tool/output event sequence, independent of any self-declared pass/fail",
+    "grader: pure function of (fixture, trace) -> {result, defects[]}; pre-declared defect classes; never mutates trace",
+    "result: PASS_WITH_EVIDENCE | FAIL_WITH_DEFECTS | INSUFFICIENT_REPEAT_EVIDENCE | STALE_REPLAY_PROVENANCE | INCOMPLETE_TRACE | UNDECLARED_TOOL_USE | NONEQUIVALENT_BASELINE_PAIR",
+    "projection: a governed review artifact cites the result and updates only the package uatState field; certificationState is never auto-set"
+  ],
+  "successorManifest": {
+    "blocker": null,
+    "paths": [
+      {
+        "path": "docs/reference/agent_system_skills/CVF_ASSF_BEHAVIORAL_EVALUATION_CONTRACT.md",
+        "role": "new documentation-only contract defining the ten-dimension matrix as normative rules"
+      },
+      {
+        "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/assf.behavioral.evaluation.contract.ts",
+        "role": "new pure TypeScript fixture/trace/grader contract implementing runner/grader separation and defect classes"
+      },
+      {
+        "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/assf.behavioral.evaluation.contract.test.ts",
+        "role": "deterministic positive/negative/adversarial fixture suite for the new contract"
+      },
+      {
+        "path": "governance/compat/check_assf_behavioral_evaluation_evidence.py",
+        "role": "future read-only checker candidate verifying acceptanceEvidence cites a real behavioral-evaluation result before uatState: PASSED is accepted; NOT authorized by this design"
+      }
+    ],
+    "requiresSeparateOperatorCheckpoint": true
+  },
+  "forbiddenEffectsObserved": {
+    "sourceOrTestMutation": 0,
+    "skillStateMutation": 0,
+    "providerCalls": 0,
+    "credentialAccess": 0,
+    "networkEffects": 0,
+    "runtimeActions": 0,
+    "workerCommits": 0,
+    "automaticSuccessorExecution": 0
+  }
+}
