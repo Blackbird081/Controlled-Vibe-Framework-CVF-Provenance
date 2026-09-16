@@ -16,7 +16,8 @@
     "expansionAllowed": false,
     "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
     "exitEvidence": [
-      "docs/reviews/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_COMPLETION_2026-09-15.md"
+      "docs/reviews/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_COMPLETION_2026-09-15.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_2026-09-16.md"
     ],
     "operatorScopeDecision": null,
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"

@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_successor_checkpoint",
+  "currentMode": "multi_repo_absorption_g2_t1_experiment",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-CVF-AUDIT-T0_CLOSED_PASS_BOUNDED_AT_712e68aba7cc2c000f6f9199786dd917ab689d19; NEXT_STEP=OPERATOR_CHECKPOINT_SELECT_ONE_SUCCESSOR; RECOMMENDED_SUCCESSOR=G2_SMALLEST_RUNTIME_TOPOLOGY_EXPERIMENT_DESIGN_AND_EXECUTION_WORK_ORDER; ALTERNATIVES=G6_CHANGE_AWARE_VERIFICATION_EXPERIMENT_OR_EXTERNAL_SOURCE_CORPUS_RECOVERY; EXPANSION_ALLOWED=false. G1/G2/G3/G4/G6 are accepted ADAPT; G5 remains WATCH. No successor is auto-authorized. External repository acquisition, experiments, implementation, provider/live, public and deployment remain parked until explicit operator selection. The prior three-repository pilot stays terminally accounted and is not reopened. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-TOPOLOGY-EXPERIMENT-T1_DISPATCHED_AT_a9f19f07f4ed2b7e1f2e87257aa83116a8d13164; NEXT_STEP=INTERNAL_AGENT_EXECUTES_EXACT_EIGHT_PATH_HERMETIC_32_RUN_EXPERIMENT_AND_RETURNS_UNCOMMITTED_EVIDENCE; EXPANSION_ALLOWED=false. T1 proves only the experimental contract, quality admission, authority preservation and deterministic 32-run receipt. Actual agent/subagent A/B execution, providers, production routing, T2, external repository acquisition, public sync and deployment remain parked. Local retains final technical disposition. The prior three-repository pilot stays terminally accounted and is not reopened. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_T0_LOCAL_GAP_VERIFICATION_AUDIT_2026-09-15.md",
-    "baselineSha256": "e08996f3e9a4b2977bc0a67994b13cf6812cbdc73e9c1d0ffb3778715ccb9625",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_T0_LOCAL_GAP_VERIFICATION_AUDIT_2026-09-15.md",
-    "workOrderSha256": "a8baaac6750e3f7b47c9a575d7bd5f138b83dc4d7aa2cc67a6854a249a6f05a5"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_2026-09-16.md",
+    "baselineSha256": "6c65a00e8125af25e5de82e204e8af8861767cf16b0ac28df3dd7f5fe9a23f4c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_2026-09-16.md",
+    "workOrderSha256": "7faf5e2a158ea50f0a461ac31ccbfac25b7b276c62df578d8946f65f34644f83"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
