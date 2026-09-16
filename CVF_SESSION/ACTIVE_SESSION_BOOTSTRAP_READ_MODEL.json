@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_g2_t2_checkpoint",
+  "currentMode": "multi_repo_absorption_g2_t2_design",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-TOPOLOGY-EXPERIMENT-T1_CLOSED_PASS_BOUNDED_AT_0d31159f3e77d79253b8075daf00e8fdf9851d66; NEXT_STEP=OPERATOR_CHECKPOINT_SELECT_G2_T2_REAL_AGENT_EXPERIMENT_DESIGN_OR_OTHER_ACEL_GAP; EXPANSION_ALLOWED=false. T1 proves an isolated deterministic proposal-only topology decision seam with 32/32 admitted runs and all five actions, not real-agent improvement. T2, actual agents/subagents, providers, production routing, external repository acquisition, public sync and deployment remain parked pending explicit operator selection. Local retains final technical disposition. The prior three-repository pilot stays terminally accounted and is not reopened. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2-REAL-AGENT-EXPERIMENT-DESIGN_DISPATCH_READY_AT_832276abbc60ce81fd9cb55bcbcbd28ec0bbed12; NEXT_STEP=ONE_INTERNAL_AGENT_CREATES_EXACT_THREE_UNCOMMITTED_DESIGN_OUTPUTS_AND_RETURNS_FOR_LOCAL_REVIEW; EXPANSION_ALLOWED=false. The design worker must qualify a non-duplicate harder task and callable composition seam or return one allowed parked blocker. Actual agent/subagent execution, provider/live calls, credentials, runtime/source mutation, production routing, public sync and deployment remain unauthorized. Local retains final technical disposition. The prior three-repository pilot stays terminally accounted and is not reopened. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_2026-09-16.md",
-    "baselineSha256": "6c65a00e8125af25e5de82e204e8af8861767cf16b0ac28df3dd7f5fe9a23f4c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_2026-09-16.md",
-    "workOrderSha256": "74af214d48538afae25c58a503b175379ed4d447b026333559783fe44686073d"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G2_T2_REAL_AGENT_EXPERIMENT_DESIGN_2026-09-16.md",
+    "baselineSha256": "4abdcffa11c674a73ad45a3a7c18bc3d3f5622e2f629238c5a0cfc41039144b3",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_REAL_AGENT_EXPERIMENT_DESIGN_2026-09-16.md",
+    "workOrderSha256": "ef5c2b041f2b89c4be120dc0fa0ea0eda029caba9dd2da4b268725deb8f5823a"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
