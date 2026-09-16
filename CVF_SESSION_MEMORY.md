@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_t1_design_closed`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=operator selects a separate G3 implementation work order or keeps it parked; role=Local reviewer/closer; phase=G3 design closure; decision owner=Local; parked checkpoint=implementation, evaluator execution, certification/index mutation, provider/runtime/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_t2_implementation_dispatched`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=INTERNAL_AGENT executes the G3 T2 work order and returns `COMPLETE_PENDING_REVIEW`; role=INTERNAL_AGENT worker then Local reviewer/closer; phase=offline implementation; decision owner=Local; parked checkpoint=real evaluator execution, certification/index mutation, provider/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_acel_g3_t1_design_closed`
-Current mode: `multi_repo_absorption_acel_g3_t1_design_closed`; previous mode marker: `multi_repo_absorption_acel_g3_t1_design_dispatched`
+Current mode marker: `multi_repo_absorption_acel_g3_t2_implementation_dispatched`
+Current mode: `multi_repo_absorption_acel_g3_t2_implementation_dispatched`; previous mode marker: `multi_repo_absorption_acel_g3_t1_design_closed`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN_CLOSED_PASS_BOUNDED_AT_f255c9c7f; NEXT_STEP=OPERATOR_SELECT_G3_IMPLEMENTATION_WORK_ORDER_OR_KEEP_PARKED; EXPANSION_ALLOWED=false. The accepted design names four planned successor paths, but none exists or is authorized by this closure. Implementation, evaluator execution, certification/index mutation, provider/live, runtime, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_acel_g3_t1_design_closed`. G3 T1 is Local-accepted `CLOSED_PASS_BOUNDED` at `f255c9c7f`; eight source hashes match, reviewer-fast passed 68/68 and material pre-commit passed 89/89. A separate operator-selected work order is required before implementation.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T2-BEHAVIORAL-EVALUATION-CONTRACT-IMPLEMENTATION_DISPATCHED_AT_edb90e5d4; NEXT_STEP=INTERNAL_AGENT_EXECUTE_GOVERNING_WORK_ORDER_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Worker owns exactly seven create-only outputs, must not commit, and may perform only offline contract, checker and focused-test work. Real evaluator runs, package/certification/index mutation, provider/live, runtime wiring, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_acel_g3_t2_implementation_dispatched`. G3 T1 remains closed at `f255c9c7f`; G3 T2 dispatch is committed at `edb90e5d4`, with pre-dispatch 82/82 PASS and a seven-path no-commit worker lane.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_acel_g3_t1_design_closed",
+  "currentMode": "multi_repo_absorption_acel_g3_t2_implementation_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN_CLOSED_PASS_BOUNDED_AT_f255c9c7f; NEXT_STEP=OPERATOR_SELECT_G3_IMPLEMENTATION_WORK_ORDER_OR_KEEP_PARKED; EXPANSION_ALLOWED=false. The accepted design names four planned successor paths, but none exists or is authorized by this closure. Implementation, evaluator execution, certification/index mutation, provider/live, runtime, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T2-BEHAVIORAL-EVALUATION-CONTRACT-IMPLEMENTATION_DISPATCHED_AT_edb90e5d4; NEXT_STEP=INTERNAL_AGENT_EXECUTE_GOVERNING_WORK_ORDER_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Worker owns exactly seven create-only outputs, must not commit, and may perform only offline contract, checker and focused-test work. Real evaluator runs, package/certification/index mutation, provider/live, runtime wiring, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
-    "baselineSha256": "9b654cade0fbb3ee2e63995650829630be8323bc12aaca4766efc5505a87b22b",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
-    "workOrderSha256": "4beb14821d5f2a90866b2bad3765ae706b53e4e86b7cfe7cf4850cc601ee00a9"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G3_T2_BEHAVIORAL_EVALUATION_CONTRACT_IMPLEMENTATION_2026-09-16.md",
+    "baselineSha256": "6d6a58f21c4a3b97e4f1ec2d0910def5d34ca860bd4d92badb37615dc71ba9f6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G3_T2_BEHAVIORAL_EVALUATION_CONTRACT_IMPLEMENTATION_2026-09-16.md",
+    "workOrderSha256": "75a98653b4706c10c26a1e52e79b17dbc864832c0b959f9ed410e5c623345a28"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

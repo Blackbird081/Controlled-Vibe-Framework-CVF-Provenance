@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2854,
+  "stateKey": "acelG3T2BehavioralEvaluationContractImplementationDispatch20260916",
+  "value": "ACEL-G3-T2-BEHAVIORAL-EVALUATION-CONTRACT-IMPLEMENTATION is DISPATCH_READY at material commit edb90e5d4. Pre-dispatch passed 82/82. The INTERNAL_AGENT worker owns exactly seven create-only paths: the accepted four-path successor manifest, one mandatory Python checker test companion, one implementation audit, and one full worker return. WORKER_MUST_NOT_COMMIT. Provider/live/network/credential access, real evaluator execution, package/certification/index mutation, runtime or hook wiring, public sync and deployment are forbidden. Local remains reviewer, closer and commit owner."
+}
