@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2859,
+  "stateKey": "acelG4T1IncrementalValueOwnerCompositionDesignDispatch20260917",
+  "value": "ACEL-G4-T1-INCREMENTAL-VALUE-OWNER-COMPOSITION-DESIGN is DISPATCH_READY at material commit fb1576aefc45c8feadd3fca087c54299803c414d. Pre-dispatch passed 82/82 and material pre-commit 89/89. The INTERNAL_AGENT worker owns exactly three create-only documentation/evidence paths: one design audit, one machine-readable manifest and one full worker return. WORKER_MUST_NOT_COMMIT. G1 implementation remains parked; G4 is independent. No value experiment, provider/live/network/credential access, configuration mutation, Core runtime, package lifecycle, public sync or deployment. Local owns review, closure and commit."
+}

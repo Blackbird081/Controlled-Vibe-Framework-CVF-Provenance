@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_acel_g1_t1_design_closed_parked",
+  "currentMode": "multi_repo_absorption_acel_g4_t1_design_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V61_2026-09-16.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T1-EMPIRICAL-CALIBRATION-OWNER-COMPOSITION-DESIGN_CLOSED_PASS_BOUNDED_AT_d87aadaec; NEXT_STEP=LOCAL_MAY_SELECT_ONE_BOUNDED_G4_OWNER_DELTA_OR_KEEP_PARKED; EXPANSION_ALLOWED=false. G1 design is accepted and parked; its five-path implementation manifest is planning input only. G4 remains an independent audit question and has no automatic dispatch. Provider/live execution, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G4-T1-INCREMENTAL-VALUE-OWNER-COMPOSITION-DESIGN_DISPATCH_READY_AT_fb1576aef; NEXT_STEP=INTERNAL_AGENT_RETURNS_THREE_UNCOMMITTED_G4_DESIGN_ARTIFACTS_FOR_LOCAL_REVIEW; EXPANSION_ALLOWED=false. G1 design is accepted and parked; its implementation manifest is planning only. G4 is an independent documentation-only design pass. Provider/live execution, value experiment, metric implementation, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
-    "baselineSha256": "e9af41d57fe272e1bd3c96b61fea563cb2ed15a416276194251fc3f04e884d8c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
-    "workOrderSha256": "72a672175a43503d514187d0928667e676b7f4af159e45447a8afdde0ea0c1ea"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_2026-09-17.md",
+    "baselineSha256": "5eddeecf7dd47e4a68c2bcfb3fdb745a6016f122db514c617742b35e80a10349",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_2026-09-17.md",
+    "workOrderSha256": "9705e829d99f7b9955911528c38864e5de13efc8dcff4f697f3b3080444b3709"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

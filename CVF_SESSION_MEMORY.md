@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t1_design_closed_parked`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=Local may select one bounded G4 owner delta or keep it parked; role=Local reviewer/orchestrator; phase=post-G1 design closure; decision owner=Local; parked checkpoint=G1 implementation, G4 dispatch, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g4_t1_design_dispatched`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=INTERNAL_AGENT returns three uncommitted G4 design artifacts for Local review; role=Local reviewer/orchestrator; phase=G4 documentation-only dispatch; decision owner=Local; parked checkpoint=G1 implementation, G4 implementation/experiment, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_acel_g1_t1_design_closed_parked`
-Current mode: `multi_repo_absorption_acel_g1_t1_design_closed_parked`; previous mode marker: `multi_repo_absorption_acel_g1_t1_design_dispatched`
+Current mode marker: `multi_repo_absorption_acel_g4_t1_design_dispatched`
+Current mode: `multi_repo_absorption_acel_g4_t1_design_dispatched`; previous mode marker: `multi_repo_absorption_acel_g1_t1_design_closed_parked`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T1-EMPIRICAL-CALIBRATION-OWNER-COMPOSITION-DESIGN_CLOSED_PASS_BOUNDED_AT_d87aadaec; NEXT_STEP=LOCAL_MAY_SELECT_ONE_BOUNDED_G4_OWNER_DELTA_OR_KEEP_PARKED; EXPANSION_ALLOWED=false. G1 design is accepted and parked; its five-path implementation manifest is planning input only. G4 remains an independent audit question and has no automatic dispatch. Provider/live execution, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G4-T1-INCREMENTAL-VALUE-OWNER-COMPOSITION-DESIGN_DISPATCH_READY_AT_fb1576aef; NEXT_STEP=INTERNAL_AGENT_RETURNS_THREE_UNCOMMITTED_G4_DESIGN_ARTIFACTS_FOR_LOCAL_REVIEW; EXPANSION_ALLOWED=false. G1 design is accepted and parked; its implementation manifest is planning only. G4 is an independent documentation-only design pass. Provider/live execution, value experiment, metric implementation, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.
 Mode: `multi_repo_absorption_acel_g1_t1_design_closed_parked`. G1 T1 is `CLOSED_PASS_BOUNDED` at `d87aadaec` after Local R1 repair; ten source hashes match, corrected-base pre-implementation 84/84 PASS, reviewer-fast 68/68 and material pre-commit 89/89. G3 T2 and the research-assisted absorption profile remain closed and parked; G4 remains independent.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
