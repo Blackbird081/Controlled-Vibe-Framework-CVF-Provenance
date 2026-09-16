@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2852,
+  "stateKey": "acelG3T1BehavioralEvaluationOwnerCompositionDesignDispatch20260916",
+  "value": "ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN is DISPATCH_READY at material commit 68cedc208. One INTERNAL_AGENT worker owns exactly three uncommitted design/evidence outputs and must reconcile eight current sources, including drift from the accepted T0 observation to the current mixed CERTIFIED/PASSED and NOT_STARTED index. The worker may design only; code, tests, generated index, certification state, evaluator execution, provider/live, runtime, public sync and deployment remain forbidden. Local remains reviewer/closer and final technical decision owner."
+}

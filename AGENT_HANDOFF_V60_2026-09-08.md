@@ -1,7 +1,7 @@
-# CVF Agent Handoff V60 - ACEL G6 T1 Experiment Closure
+# CVF Agent Handoff V60 - ACEL G3 T1 Design Dispatch
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `3498f185b3c2e1ca74659e543c7adc796699ecca`. ACEL-G6-T1 bounded material closure.
+Current HEAD recorded for this handoff: `68cedc20831761454685d058bf9bd48faca34e47`. ACEL-G3-T1 dispatch material.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Latest continuity correction parent recorded for this handoff: `2a08b1d1d805e340d3b27d00c63f60a3423366de`. Historical closure authority remains `9b7e5ce7f936649e010f41d6b596c0e60d3eda6e` (`docs(governance): close GC020 synchronization t1`).
 Cross-workspace evidence-relay method synchronization base HEAD: `e4c055484f813b6d7bda6ed9249664908ccca087`.
@@ -12,7 +12,7 @@ Status: ACTIVE
 - Repository: private provenance SOT on `main`.
 - Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; do not hand-maintain it in handoff.
 - External agent memory files: non-canonical convenience only.
-- Current mode: `multi_repo_absorption_acel_g6_t1_experiment_closed`.
+- Current mode: `multi_repo_absorption_acel_g3_t1_design_dispatched`.
 - P4-C1 is `CLOSED_PASS_BOUNDED` at `c2971bb8c`; journal v2 now exposes attempts, candidates, eligible opportunities, collected samples, and starvation health separately.
 - ROLE-SOT-MH-T1 is `CLOSED_PASS_BOUNDED` at material commit `94c4922c29390ac6f362a6a56a71b3e5054926ae`.
 - ROLE-SOT-EVIDENCE-T0 acceptance remains at `6bcdeaca8`; external usage is exhausted 2/2.
@@ -22,15 +22,15 @@ Status: ACTIVE
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g6_t1_experiment_closed`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=select ACEL G3 T1 behavioral-evaluation owner-composition design; role=Local reviewer/orchestrator; phase=post-G6 hermetic experiment closure; decision owner=Local for technical disposition and operator for any new live authority; parked checkpoint=G6 production integration/real-corpus validation, G3 experiment/implementation, provider/runtime/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_t1_design_dispatched`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=INTERNAL_AGENT executes G3 T1 design and returns COMPLETE_PENDING_REVIEW; role=Local dispatcher/reviewer; phase=G3 design worker dispatch; decision owner=Local; parked checkpoint=implementation, evaluator execution, certification/index mutation, provider/runtime/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g6_t1_experiment_closed`
+`multi_repo_absorption_acel_g3_t1_design_dispatched`
 
 ## Purpose
 
-Close ACEL-G6-T1 at `3498f185b`: the hermetic impact-derived policy preserved all seeded detections and reduced modeled cost, while production integration and real-corpus claims remain closed.
+Dispatch ACEL-G3-T1 at `68cedc208`: reconcile current behavioral-evaluation owners and return an implementation-ready design or truthful blocker without source/runtime mutation.
 
 ## Scope / Target / Owner Boundary
 
@@ -42,7 +42,7 @@ Close ACEL-G6-T1 at `3498f185b`: the hermetic impact-derived policy preserved al
 
 ## Latest Work / Changes
 - ACEL-G2-T2B is `CLOSED_PASS_BOUNDED_NO_RELEASE_CANDIDATE` at material commit `6537618d5`. Exactly one `qwen3.7-flash` call, zero retries, exact contract/test hashes, score 100/100, no material defect, and `releaseCandidate=false`; independent Local rescore matched. No repeat-live, comparative T2, runtime, T6B, callable seam, production, public or deployment authority remains.
-- ACEL-G6-T1 is `CLOSED_PASS_BOUNDED_EXPERIMENT_SIGNAL_ONLY` at `3498f185b`: 32/32 records admitted, zero missed seeded regressions, unknown impact failed closed to the fixed bundle, and modeled cost fell 480 to 172 (-64.2%). No production selector, gate reduction, provider, runtime, public or deploy authority opened.
+- ACEL-G3-T1 design is `DISPATCH_READY` at `68cedc208`: one INTERNAL_AGENT owns exactly three uncommitted outputs, must reconcile eight current sources and index-state drift, and returns to Local review. No code/test/index/certification mutation or evaluator/provider/runtime effect is open.
 - ACEL-G2-T2-CANDIDATE-QUALIFICATION-T0 is Local-accepted conditionally at `36784f6c6`: 12/12 sources reconciled, worker-return fast and pre-commit 89/89 passed. A future packet must reject non-reconstructable parse-failure receipts unless separately repaired; historical T6A results remain rejected and no call or callable seam is open.
 - ACEL-G2-TOPOLOGY-EXPERIMENT-T1 is Local-accepted `CLOSED_PASS_BOUNDED` at `0d31159f3`. The hermetic contract passed 43/43 focused reviewer tests, TypeScript, 32/32 admission, all five actions and receipt hash reconciliation; it proves no real-agent improvement and opens no T2 authority.
 - Three-repository deferred semantic reconciliation T1 dispatch material committed at `7573d804f8f185ecfc244eb56728a80727af4517`; pre-dispatch passed 82/82. The INTERNAL_AGENT lane owns exactly one 52-row audit JSON and one worker return, must not commit, and has no implementation/provider/live/network/public/deploy authority.
@@ -72,7 +72,7 @@ Close ACEL-G6-T1 at `3498f185b`: the hermetic impact-derived policy preserved al
 
 ## Current Authority
 
-Current authority is the closed G6 baseline plus completion review `docs/reviews/CVF_ACEL_G6_T1_IMPACT_DERIVED_VERIFICATION_EXPERIMENT_COMPLETION_2026-09-16.md`, material commit `3498f185b`. G3 may proceed only to owner-composition design; no worker, experiment, implementation, live, or runtime lane is open.
+Current authority is the G3 paired baseline and work order at `68cedc208`. The worker lane is open only for the exact three documentation/evidence paths; Local retains review, repair, commit, and successor authority.
 
 ## Closure Evidence
 
@@ -91,7 +91,7 @@ authority, production deployment, or any parked project lane.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G6-T1-IMPACT-DERIVED-VERIFICATION-EXPERIMENT_CLOSED_AT_3498f185b; NEXT_STEP=SELECT_ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN; EXPANSION_ALLOWED=false. G6 T1 produced a positive hermetic signal: 32/32 admitted, zero missed seeded regressions, and 64.2% lower deterministic cost, but production integration and independently sourced real-corpus validation remain parked. G3 may open design and authority mapping only; experiment, implementation, provider, runtime, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN_DISPATCHED_AT_68cedc208; NEXT_STEP=INTERNAL_AGENT_EXECUTE_G3_T1_DESIGN_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Worker owns exactly three uncommitted design/evidence paths, must capture executionBaseHead, reconcile eight current sources, and return one allowed terminal disposition. Code/test/index/certification mutation, evaluator execution, provider/live, runtime, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -103,7 +103,7 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Active Boundary
 
-- The active ACEL program remains `LOCAL_RUNTIME_VALUE_RECOVERY` and source state `INCOMPLETE`. G6 T1 is a positive hermetic signal only; production composition and real-corpus validation stay parked. Select G3 T1 owner-composition design next, without opening experiment or implementation. G2 T2, T6B, ECC and new repositories remain parked.
+- The active ACEL program remains `LOCAL_RUNTIME_VALUE_RECOVERY` and source state `INCOMPLETE`. G3 T1 design worker lane is open for exactly three uncommitted artifacts. G6 integration, G2 T2, T6B, implementation, provider/live, ECC and new repositories remain parked.
 - Latest closed LHW wave: `LHW24`.
 - Shared-worktree coordination is a packet-contract assertion, not proof of runtime interception.
 - Manual relay is operator-owned; no external finding acceptance, credential use, dependency installation, further push, deploy, or public export is authorized.
@@ -123,7 +123,7 @@ Public artifact paths: `README.md` and `docs/concepts/seven-step-shared-workspac
 Public catalog paths: N/A; no catalog entry was included in the bounded concept export.
 Public pull request: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/pull/8`
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: ACEL-G6-T1 material-closure continuity projection only.
+Authorized guard-maintenance scope: ACEL-G3-T1 dispatch continuity projection only.
 
 Protected paths:
 
@@ -131,14 +131,14 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/acelG6T1ImpactDerivedVerificationExperimentClosure20260916.json`
+- `CVF_SESSION/state/entries/acelG3T1BehavioralEvaluationOwnerCompositionDesignDispatch20260916.json`
 - `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: continue Local orchestration after G2 T2B; close the selected non-provider `ACEL-G6-T1-IMPACT-DERIVED-VERIFICATION-EXPERIMENT`, then project material `3498f185b3c2e1ca74659e543c7adc796699ecca` and the selected G3 T1 design-only next move.
+Operator authorization: Local selects and issues the G3 T1 work order for operator relay to Claude; project dispatch material `68cedc20831761454685d058bf9bd48faca34e47` and the exact INTERNAL_AGENT return route.
 
-Rollback boundary: revert only this continuity projection; preserve material commit `3498f185b3c2e1ca74659e543c7adc796699ecca` and its hermetic receipt. No G6 production integration, G3 experiment/implementation, provider, runtime, public or deployment authority is added.
+Rollback boundary: revert only this continuity projection; preserve dispatch material `68cedc20831761454685d058bf9bd48faca34e47`. No implementation, evaluator execution, certification/index mutation, provider, runtime, public or deployment authority is added.
 
 Operator authorization: the operator approved continuation to the next offline G2-T2 design. Authorized continuity scope is exactly `AGENT_HANDOFF_V60_2026-09-08.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/acelG2T2DiscriminatingTaskGateT2ADispatch20260916.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; and `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback only this continuity projection and preserve material `48794cadce3aee5775f7fa263b325159882d3ae7`. No provider/live/agent, T6B, actual-agent, callable-seam, public or deploy authority is added.
 

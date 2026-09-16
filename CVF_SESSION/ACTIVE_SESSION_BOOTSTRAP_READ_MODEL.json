@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_acel_g6_t1_experiment_closed",
+  "currentMode": "multi_repo_absorption_acel_g3_t1_design_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G6-T1-IMPACT-DERIVED-VERIFICATION-EXPERIMENT_CLOSED_AT_3498f185b; NEXT_STEP=SELECT_ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN; EXPANSION_ALLOWED=false. G6 T1 produced a positive hermetic signal: 32/32 admitted, zero missed seeded regressions, and 64.2% lower deterministic cost, but production integration and independently sourced real-corpus validation remain parked. G3 may open design and authority mapping only; experiment, implementation, provider, runtime, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T1-BEHAVIORAL-EVALUATION-OWNER-COMPOSITION-DESIGN_DISPATCHED_AT_68cedc208; NEXT_STEP=INTERNAL_AGENT_EXECUTE_G3_T1_DESIGN_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Worker owns exactly three uncommitted design/evidence paths, must capture executionBaseHead, reconcile eight current sources, and return one allowed terminal disposition. Code/test/index/certification mutation, evaluator execution, provider/live, runtime, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md",
-    "baselineSha256": "00e1f6ae52c789d3836ff3c5834a665bbe87db5a0b6bc009c6738e868fcabc3f",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md",
-    "workOrderSha256": "238e26f702f650ff7ceb834c4c1bc6ffc88a3673f34654f9d0a39aea5745cee9"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
+    "baselineSha256": "9b654cade0fbb3ee2e63995650829630be8323bc12aaca4766efc5505a87b22b",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
+    "workOrderSha256": "066628d14f7a8c7c066f8349269901a2c9d02f8344df1bf8e45283692c28b992"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
