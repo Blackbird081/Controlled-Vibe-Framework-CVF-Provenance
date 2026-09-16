@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_g2_t2_discriminating_task_gate",
+  "currentMode": "multi_repo_absorption_g2_t2_offline_gate_closed_operator_checkpoint",
   "activeHandoff": "AGENT_HANDOFF_V60_2026-09-08.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2-DISCRIMINATING-TASK-GATE-T2A_AT_48794cadce3aee5775f7fa263b325159882d3ae7; NEXT_STEP=INTERNAL_AGENT_IMPLEMENT_EXACT_FOUR_OFFLINE_PATHS_AND_RETURN_NO_COMMIT; EXPANSION_ALLOWED=false. No provider/live/agent invocation, credential/network access, T6B, actual-agent trial, callable seam, production, public sync or deployment is authorized. Local retains final technical disposition. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2-DISCRIMINATING-TASK-GATE-T2A_CLOSED_AT_81a1c7517; NEXT_STEP=OPERATOR_CHECKPOINT_SELECT_FRESH_HASH_BOUND_CALIBRATION_OR_KEEP_G2_T2_PARKED; EXPANSION_ALLOWED=false. T2A is CLOSED_PASS_BOUNDED. No provider/live/agent invocation, credential/network access, T6B, actual-agent trial, callable seam, production, public sync or deployment is authorized without a fresh operator packet. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md",
     "baselineSha256": "00e1f6ae52c789d3836ff3c5834a665bbe87db5a0b6bc009c6738e868fcabc3f",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md",
-    "workOrderSha256": "2f1db3d8c3faa7e7149e68924a4e049eb076a51058a41b8260a6aab04c42681a"
+    "workOrderSha256": "238e26f702f650ff7ceb834c4c1bc6ffc88a3673f34654f9d0a39aea5745cee9"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

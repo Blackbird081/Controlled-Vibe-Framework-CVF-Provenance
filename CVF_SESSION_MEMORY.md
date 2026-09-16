@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_g2_t2_discriminating_task_gate`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=INTERNAL_AGENT executes the exact four-path offline T2A task/gate packet; role=INTERNAL_AGENT worker then Local reviewer/closer; phase=offline discriminating task gate; decision owner=Local; parked checkpoint=provider/live calls, T6B, actual-agent trial, callable seam, public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_g2_t2_offline_gate_closed_operator_checkpoint`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=operator selects a fresh hash-bound calibration packet or keeps G2 T2 parked; role=Local reviewer/closer; phase=post-T2A operator checkpoint; decision owner=operator for any live trial, Local for technical disposition; parked checkpoint=provider/live calls, T6B, actual-agent trial, callable seam, public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_g2_t2_discriminating_task_gate`
-Current mode: `multi_repo_absorption_g2_t2_discriminating_task_gate`; previous mode marker: `multi_repo_absorption_g2_t2_post_calibration_checkpoint`
+Current mode marker: `multi_repo_absorption_g2_t2_offline_gate_closed_operator_checkpoint`
+Current mode: `multi_repo_absorption_g2_t2_offline_gate_closed_operator_checkpoint`; previous mode marker: `multi_repo_absorption_g2_t2_discriminating_task_gate`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2-DISCRIMINATING-TASK-GATE-T2A_AT_48794cadce3aee5775f7fa263b325159882d3ae7; NEXT_STEP=INTERNAL_AGENT_IMPLEMENT_EXACT_FOUR_OFFLINE_PATHS_AND_RETURN_NO_COMMIT; EXPANSION_ALLOWED=false. No provider/live/agent invocation, credential/network access, T6B, actual-agent trial, callable seam, production, public sync or deployment is authorized. Local retains final technical disposition.
-Mode: `multi_repo_absorption_g2_t2_discriminating_task_gate`. External research is closed; the active shared-workspace worker is INTERNAL_AGENT regardless of provider/model; Local retains private technical disposition.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2-DISCRIMINATING-TASK-GATE-T2A_CLOSED_AT_81a1c7517; NEXT_STEP=OPERATOR_CHECKPOINT_SELECT_FRESH_HASH_BOUND_CALIBRATION_OR_KEEP_G2_T2_PARKED; EXPANSION_ALLOWED=false. T2A is CLOSED_PASS_BOUNDED. No provider/live/agent invocation, credential/network access, T6B, actual-agent trial, callable seam, production, public sync or deployment is authorized without a fresh operator packet. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_g2_t2_offline_gate_closed_operator_checkpoint`. External research and T2A implementation are closed; Local retains technical disposition and the operator owns any fresh live grant. ACEL-G2-T2A is `CLOSED_PASS_BOUNDED` at `81a1c7517`: focused 32/32, TypeScript PASS, worker-return fast PASS, reviewer-fast 68/68, pre-commit 89/89, GC-051 reconciled, zero provider/agent/network calls.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md",
     "baselineSha256": "00e1f6ae52c789d3836ff3c5834a665bbe87db5a0b6bc009c6738e868fcabc3f",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md",
-    "workOrderSha256": "2f1db3d8c3faa7e7149e68924a4e049eb076a51058a41b8260a6aab04c42681a"
+    "workOrderSha256": "238e26f702f650ff7ceb834c4c1bc6ffc88a3673f34654f9d0a39aea5745cee9"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -106,8 +106,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "multi_repo_absorption_g2_t2_discriminating_task_gate",
-  "previousMode": "multi_repo_absorption_g2_t2_post_calibration_checkpoint",
+  "currentMode": "multi_repo_absorption_g2_t2_offline_gate_closed_operator_checkpoint",
+  "previousMode": "multi_repo_absorption_g2_t2_discriminating_task_gate",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
