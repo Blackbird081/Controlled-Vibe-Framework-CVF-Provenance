@@ -1,7 +1,7 @@
 # CVF Agent Handoff V61 - G1 T1 Design Closed Parked
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `fb1576aefc45c8feadd3fca087c54299803c414d`. Material G4 dispatch commit; parent of the following continuity projection.
+Current HEAD recorded for this handoff: `11087510a35404660e01a1513993de2794f3ed17`. G4 dispatch continuity commit; parent of this front-door correction.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -38,6 +38,7 @@ design is accepted and parked at `d87aadaec`; independent G4 design is
 - G1 T1 design dispatch: `9426421eb`; pre-dispatch 82/82 PASS; three create-only outputs; worker must not commit.
 - G1 T1 material closure: `d87aadaec`; Local R1 repair accepted with ten matching source hashes, corrected-base pre-implementation 84/84, reviewer-fast 68/68, material hook 89/89.
 - G4 T1 design dispatch: `fb1576aef`; pre-dispatch 82/82 PASS, material hook 89/89 PASS; three create-only worker outputs, no worker commit.
+- Local continuity correction: the front-door Next Allowed Move paragraph retained a G1 `Mode:` line after G4 dispatch. The worker-return gate correctly blocked on session-mode consistency. Local corrects only that stale line; no G4 worker artifact is changed.
 - Latest closed learning-history wave remains `LHW24`.
 
 ## Startup Acknowledgment
@@ -158,6 +159,12 @@ projection; preserve the material dispatch.
 Additional protected path:
 
 - `CVF_SESSION/state/entries/acelG4T1IncrementalValueOwnerCompositionDesignDispatch20260917.json`
+
+2026-09-17 Local correction authorization: the operator returned the G4
+worker's blocked gate result and requested resolution of the pre-existing
+front-door defect. Correct the stale `Mode:` line in `CVF_SESSION_MEMORY.md`
+and this handoff's material-SHA marker and incident note only. Preserve all
+three uncommitted worker artifacts; do not change G4 scope or source authority.
 
 ## Agent Operation Trace Block
 
