@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_g2_t2_design`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=one INTERNAL_AGENT executes the committed G2-T2 design packet and returns exactly three uncommitted outputs; role=Local orchestrator/reviewer; phase=G2-T2 design dispatch; decision owner=Local; parked checkpoint=actual-agent trial, source/runtime implementation, production routing, provider/live, public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_g2_t2_blocked_checkpoint`; active handoff=AGENT_HANDOFF_V60_2026-09-08.md; next allowed move=operator chooses fresh candidate qualification or another ACEL gap; role=Local orchestrator/reviewer; phase=G2-T2 blocked checkpoint; decision owner=Local; parked checkpoint=actual-agent trial, source/runtime implementation, production routing, provider/live, public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_g2_t2_design`
-Current mode: `multi_repo_absorption_g2_t2_design`; previous mode marker: `multi_repo_absorption_g2_t2_checkpoint`
+Current mode marker: `multi_repo_absorption_g2_t2_blocked_checkpoint`
+Current mode: `multi_repo_absorption_g2_t2_blocked_checkpoint`; previous mode marker: `multi_repo_absorption_g2_t2_design`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2-REAL-AGENT-EXPERIMENT-DESIGN_DISPATCH_READY_AT_832276abbc60ce81fd9cb55bcbcbd28ec0bbed12; NEXT_STEP=ONE_INTERNAL_AGENT_CREATES_EXACT_THREE_UNCOMMITTED_DESIGN_OUTPUTS_AND_RETURNS_FOR_LOCAL_REVIEW; EXPANSION_ALLOWED=false. The worker must qualify a non-duplicate harder candidate and callable composition seam or return one allowed parked blocker. Actual agent/subagent execution, provider/live calls, credentials, source/runtime implementation, production routing, public sync and deployment remain parked. Local retains final technical disposition. The prior three-repository pilot stays terminally accounted and is not reopened.
-Mode: `multi_repo_absorption_g2_t2_design`. External research is closed; one INTERNAL_AGENT design lane is released; Local owns private verification and final disposition.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G2-T2-DESIGN_ACCEPTED_BLOCKED_NO_QUALIFIED_CANDIDATE_AT_f92db17c477211e5a1bb9f37e9331acc4776fd6e; NEXT_STEP=OPERATOR_CHECKPOINT_TO_AUTHORIZE_A_FRESH_CANDIDATE_QUALIFICATION_PACKET_OR_SELECT_ANOTHER_ACEL_GAP; EXPANSION_ALLOWED=false. The bounded nine-source review found neither a qualified harder candidate nor a callable T1-to-MAO consumer. Actual agent/subagent execution, provider/live calls, credentials, source/runtime implementation, production routing, public sync and deployment remain parked. Local retains final technical disposition. The prior three-repository pilot stays terminally accounted and is not reopened.
+Mode: `multi_repo_absorption_g2_t2_blocked_checkpoint`. External research is closed; no INTERNAL_AGENT execution lane is open; Local owns private verification and final disposition.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
