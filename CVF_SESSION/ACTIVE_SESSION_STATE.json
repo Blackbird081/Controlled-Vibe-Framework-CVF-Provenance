@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_2026-09-17.md",
     "baselineSha256": "5eddeecf7dd47e4a68c2bcfb3fdb745a6016f122db514c617742b35e80a10349",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_2026-09-17.md",
-    "workOrderSha256": "9705e829d99f7b9955911528c38864e5de13efc8dcff4f697f3b3080444b3709"
+    "workOrderSha256": "ff523532e1b269c046ab8271eddc3cff9d0474cfa3fe8c34504253729a21f557"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

@@ -24,7 +24,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: ACEL-G4-T1-INCREMENTAL-VALUE-OWNER-COMPOSITION-DESIGN
 
@@ -417,12 +417,45 @@ Resolver query: taskClass=`Work-order authoring / dispatch`, role=`dispatcher`, 
 
 ## Closure Checklist
 
-- [ ] Worker captures exact execution base and no-commit status.
-- [ ] Eight source rows reconcile with current hashes.
-- [ ] G4 owner/consumer and comparison negative cases agree across outputs.
-- [ ] G1 remains independent; no runtime or external effect occurs.
-- [ ] JSON parses and return gates pass.
-- [ ] Local reviewer records terminal disposition separately.
+- [x] Worker captured exact execution base and no-commit status.
+- [x] Eight source rows reconciled with current hashes.
+- [x] G4 owner/consumer and comparison negative cases agree across outputs after one worker R1 and one bounded Local reviewer repair.
+- [x] G1 remains independent; no runtime or external effect occurred.
+- [x] JSON parses; corrected-base pre-implementation and worker-return fast gates pass.
+- [x] Local reviewer records terminal disposition in the separate completion review.
+
+## Local Reviewer Closure Disposition
+
+`CLOSED_PASS_BOUNDED`: accept the offline G4 comparison-owner design only.
+The five-path successor manifest is planning input, not authority to implement.
+The worker's first blocker was caused by Local continuity and was separately
+repaired at `9ceec78bc`; the worker then completed R1 without committing.
+Local repaired remaining classification/coverage/value-binding wording within
+the same three returned paths. G1 implementation, G4 experiment/runtime,
+provider/live, public sync and deployment remain parked.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | G4 T1 Local completion review | bounded design acceptance | PASS |
+| Roadmap state | active ACEL continuity | implementation remains separately parked | PASS |
+| Registry JSON | G4 design manifest | eight terminal `READ` rows | PASS |
+| Registry Markdown | G4 design audit | one owner and exclusive comparison states | PASS |
+| External evidence digest | N/A with reason: no new external input | zero new input | N/A with reason |
+| System loop interlock | no runtime consumer | design only | N/A with reason: runtime forbidden |
+| Session continuity | active handoff/front door/state | post-material projection required | N/A with reason: follows material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| source ledger | eight exact current SHA-256 and terminal rows | 8/8 `READ`, hashes match | PASS |
+| owner composition | one bounded G4 comparison owner, G1 independent | human and JSON design agree | PASS |
+| comparison state | exclusive fail-closed states and coverage admission | R1 plus Local repair, worker-return fast PASS | PASS |
+| provider authority | zero live calls and no runtime mutation | none performed | PASS |
+| worker commit | forbidden | HEAD/staging unchanged during worker R1 | PASS |
 
 ## Dual Agent Surface Matrix
 
