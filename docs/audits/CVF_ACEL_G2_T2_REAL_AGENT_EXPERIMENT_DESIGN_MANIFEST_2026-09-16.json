@@ -1,0 +1,174 @@
+{
+  "schemaVersion": "cvf.acelG2T2DesignManifest.v1",
+  "batchId": "ACEL-G2-T2-REAL-AGENT-EXPERIMENT-DESIGN",
+  "executionBaseHead": "6c81c575957d0a7eba416eaa5c8a442e0891e443",
+  "dispatchBaseHead": "9cf7fd62e988bd760a27a2e585b5c6a543cdbbc5",
+  "evidenceClass": "PROPOSAL_ONLY",
+  "terminalDisposition": "BLOCKED_NO_QUALIFIED_CANDIDATE",
+  "sourceLedger": [
+    {
+      "path": "docs/reviews/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_COMPLETION_2026-09-16.md",
+      "sha256": "5abefe1d068291e33f73ba0999d8a326bb36e5b5f3f1acfec9b7ea34d27d31fa",
+      "bytes": 19831,
+      "terminalStatus": "READ",
+      "extractedFact": "T1 accepted as CLOSED_PASS_BOUNDED executable proposal-only hermetic proof; real-agent value NOT_PROVED; T2 parked as operator checkpoint; matches predecessor hash cited in work order dispatch"
+    },
+    {
+      "path": "docs/audits/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_RESULT_2026-09-16.md",
+      "sha256": "4096c0f3c2e5600f8dfdb8c14186f4101d7cd3962a8eeed57c58aee70897e3d5",
+      "bytes": 6980,
+      "terminalStatus": "READ",
+      "extractedFact": "T1 result states T2 readiness disposition READY_FOR_REVIEW is bounded to hermetic oracle only; explicitly makes no real-agent value or production claim"
+    },
+    {
+      "path": "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/runtime.topology.experiment.contract.ts",
+      "sha256": "14eb4b1ba3ac058935cf94512d59be7057680684a4a337647ce384ad64f9acb5",
+      "bytes": 20576,
+      "terminalStatus": "READ",
+      "extractedFact": "Defines closed RouteAction vocabulary (NO_DELEGATE, DELEGATE, PARALLELIZE, RECLAIM, ESCALATE), immutable AuthorityEnvelope with providerExecutionAuthority always FORBIDDEN, and pure deterministic decidePolicyB with zero clock/RNG/network/provider dependency. Search across all TypeScript files below EXTENSIONS for RouteAction|decideRouteAction|runtime.topology.experiment.contract returns exactly three files: this contract, its own test, its own runner script. No production or MAO consumer exists. Not exported through a barrel file or src/index.ts."
+    },
+    {
+      "path": "docs/roadmaps/CVF_MAO_LIVE_PROVIDER_ADAPTER_VALUE_PILOT_ROADMAP_2026-07-12.md",
+      "sha256": "593869402899dc1035f5ed3aaf4a0eb322736917e44d55c5d039103d431213e8",
+      "bytes": 7461,
+      "terminalStatus": "READ",
+      "extractedFact": "Roadmap status REVIEWER_ACCEPTED_VALUE_NOT_PROVEN; Next Allowed Move states roadmap closed and names five concrete reopen conditions requiring an accepted candidate at or below 80/100 or one rubric-defined material defect, independent-review hypothesis, 10-point quality gain threshold, one provider lane/four-call/one-revision/50-percent-latency ceiling, and fresh operator-approved GC-018/work order"
+    },
+    {
+      "path": "docs/reviews/CVF_MAO_LIVE_T1_PROVIDER_ADAPTER_VALUE_PILOT_COMPLETION_2026-07-12.md",
+      "sha256": "439e1a74e9ca611808438c7f8a384b623b35103b66da3f2d2abef48d27ef154e",
+      "bytes": 3380,
+      "terminalStatus": "READ",
+      "extractedFact": "MAO-LIVE-T1 accepted as VALUE_NOT_PROVEN: both direct and MAO lanes scored 100/100 on the prime-number task; MAO added 20.7 percent latency for no quality gain; explicit instruction not to continue on the same easy task"
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/live.provider.value.pilot.ts",
+      "sha256": "aa5dfbfe53ecc9df34c6c43d1c8a69ac5d2f321ceed81029a0389d9f031e16b8",
+      "bytes": 28153,
+      "terminalStatus": "READ",
+      "extractedFact": "Existing runDirectLane/runMaoLane bridge with LIVE_PILOT_TASK_PROMPT fixed to the closed prime-number task, MaoLiveCallLedger enforcing a 4-call ceiling, and decideValueVerdict comparing rubric scores. Contains no reference to RouteAction, decideRouteAction, or the T1 contract; consumes only runLiveProof from the Model Gateway harness and MAO T1/T4/T5/T7/T8 review/revision/closer contracts."
+    },
+    {
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/operational.worker.launcher.ts",
+      "sha256": "e422430fb2541695868fcde075096cf3fbde5719abda3616632eb9a3e27c3e94",
+      "bytes": 41253,
+      "terminalStatus": "READ",
+      "extractedFact": "MaoOperationalWorkerLauncher.launch() calls this.adapter.invoke(request) against a MaoOperationalAdapterPort (durable-run-state/lifecycle composition). This call surface is structurally distinct from live.provider.value.pilot.ts's runDirectLane/runMaoLane, which call runLiveProof directly. No source line in this file references RouteAction, decideRouteAction, or the T1 contract; source existence of a durable launcher does not establish that it is wired to either T1's decision output or the MAO live bridge."
+    },
+    {
+      "path": "EXTENSIONS/CVF_MODEL_GATEWAY/src/p4b-b-live-proof-harness.ts",
+      "sha256": "e4e875500438a56bbe401671e57f9afd80d9fd713b7d60ca45a1187cd9a2df8f",
+      "bytes": 10625,
+      "terminalStatus": "READ",
+      "extractedFact": "runLiveProof is the single existing governed live-call surface: requires liveAuthorized=true, then independently re-evaluates evaluateProviderExecutionAuthority against an orchestrator ProviderExecutionGrant before any secret is resolved via CredentialBoundary.resolveSecretForRuntime; no secret or network call occurs on denial."
+    },
+    {
+      "path": "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/delegation.contract.ts",
+      "sha256": "c1f5133abd71fa96121ca3b563b53cdfd158f63c2313d773f57f409cedb4af18",
+      "bytes": 11902,
+      "terminalStatus": "READ",
+      "extractedFact": "evaluateProviderExecutionAuthority is the sole provider-call gate: denies unless grant.authority is ORCHESTRATOR_GRANT_REQUIRED, authorizedBy is ORCHESTRATOR, grantId/subjectAgentId/delegationId match exactly, provider is in allowedProviders, consumedCalls is below maxCalls, and the grant has not expired. No grant of this shape exists or is issued in this design tranche."
+    }
+  ],
+  "sourceReconciliation": {
+    "manifestCount": 9,
+    "ledgerTerminalCount": 9,
+    "exclusions": 0,
+    "unresolved": 0,
+    "corpusVerdict": "COMPLETE_WITH_DECLARED_EXCLUSIONS"
+  },
+  "compositionGraph": {
+    "nodes": [
+      "T1_POLICY_DECISION (decideRouteAction / RouteAction)",
+      "TOPOLOGY_ACTION_CONSUMER",
+      "MAO_LAUNCHER_OR_LIVE_BRIDGE",
+      "MODEL_GATEWAY (runLiveProof)",
+      "GRADER",
+      "RECEIPT",
+      "LOCAL_REVIEW"
+    ],
+    "edges": [
+      {"from": "T1_POLICY_DECISION", "to": "TOPOLOGY_ACTION_CONSUMER", "status": "GAP", "evidence": "search across all TypeScript files below EXTENSIONS for RouteAction|decideRouteAction|runtime.topology.experiment.contract returns only T1's own contract/test/runner; zero consumers"},
+      {"from": "TOPOLOGY_ACTION_CONSUMER", "to": "MAO_LAUNCHER_OR_LIVE_BRIDGE", "status": "GAP", "evidence": "no TOPOLOGY_ACTION_CONSUMER exists to name; operational.worker.launcher.ts and live.provider.value.pilot.ts are two structurally distinct call surfaces with no shared topology-action parameter"},
+      {"from": "MAO_LAUNCHER_OR_LIVE_BRIDGE", "to": "MODEL_GATEWAY (runLiveProof)", "status": "PRESENT_FOR_LIVE_BRIDGE_ONLY", "evidence": "live.provider.value.pilot.ts runDirectLane/runMaoLane call runLiveProof directly; operational.worker.launcher.ts calls a separate MaoOperationalAdapterPort.invoke, not runLiveProof"},
+      {"from": "MODEL_GATEWAY (runLiveProof)", "to": "GRADER", "status": "PRESENT", "evidence": "live.provider.value.pilot.ts scoreAgainstRubric is deterministic and independent of the worker under test; MAO lane review recomputes rubric from received text, never trusts worker self-report"},
+      {"from": "GRADER", "to": "RECEIPT", "status": "PRESENT", "evidence": "MAO-LIVE-T1 completion review documents a secret-safe machine receipt with usage/latency/call-count evidence"},
+      {"from": "RECEIPT", "to": "LOCAL_REVIEW", "status": "PRESENT", "evidence": "MAO-LIVE-T1 completion is the accepted Local review precedent inside the bounded nine-source corpus"}
+    ],
+    "adversarialRejections": [
+      "source-presence-as-composition: operational.worker.launcher.ts existing does not imply it consumes T1 RouteAction output",
+      "easy-task reuse: MAO-LIVE-T1's 100/100 prime-number task is excluded from candidate qualification",
+      "self-grading: any design must use a grader independent from the worker under test",
+      "unknown-as-zero: unknown token/cost/latency values must never be recorded as zero"
+    ]
+  },
+  "candidateAdmission": {
+    "rule": "accepted local direct-lane evidence at most 80/100 or one explicit rubric-defined material defect with a predeclared independent-review hypothesis",
+    "candidatesReviewed": [
+      {
+        "candidateId": "MAO-LIVE-T1-PRIME-NUMBER-TASK",
+        "source": "docs/reviews/CVF_MAO_LIVE_T1_PROVIDER_ADAPTER_VALUE_PILOT_COMPLETION_2026-07-12.md",
+        "score": "100/100 both lanes",
+        "disposition": "EXCLUDED_DUPLICATE",
+        "reason": "explicitly forbidden for reuse by both the roadmap Next Allowed Move and this work order's duplicate-task rejection rule"
+      }
+    ],
+    "admittedCandidate": null,
+    "disposition": "BLOCKED_NO_QUALIFIED_CANDIDATE"
+  },
+  "policyMapping": {
+    "A_FIXED": {
+      "design": "one fixed topology selected before execution from the same closed RouteAction vocabulary as T1; no route change after observed evidence",
+      "ownerStatus": "NO_CURRENT_EXECUTION_OWNER: T1 contract has zero non-test consumers"
+    },
+    "B_DYNAMIC": {
+      "design": "same task/authority/provider/rubric/budget as A_FIXED; one or more T1 actions may occur only through a named callable seam and recorded runtime evidence",
+      "ownerStatus": "NO_CURRENT_EXECUTION_OWNER: no named callable seam exists between T1 decision output and either MAO call surface"
+    },
+    "fiveActionDisposition": [
+      {"action": "NO_DELEGATE", "owner": "NONE", "disposition": "GAP", "reason": "would map to the direct lane in live.provider.value.pilot.ts if wired, but no wiring exists"},
+      {"action": "DELEGATE", "owner": "NONE", "disposition": "GAP", "reason": "would map to runMaoLane's single worker call if wired, but no wiring exists"},
+      {"action": "PARALLELIZE", "owner": "NONE", "disposition": "EXCLUDED_WITH_REASON", "reason": "neither MAO call surface exposes concurrent multi-executor dispatch; operational.worker.launcher.ts delegation reservation is sequential parent/child capacity accounting, not parallel execution fan-out"},
+      {"action": "RECLAIM", "owner": "NONE", "disposition": "EXCLUDED_WITH_REASON", "reason": "operational.worker.launcher.ts reconcileDelegation performs durable settlement recovery after a crash, which is a different semantic (recovery of an existing reservation) from T1's RECLAIM (dual-write-exclusive executor handoff mid-run); treating these as equivalent would be an unsupported inference"},
+      {"action": "ESCALATE", "owner": "NONE", "disposition": "GAP", "reason": "would map to runMaoLane's one-revision repair path if wired, but no wiring exists and no action may expand risk ceiling, sandbox, provider grant, or call ceiling regardless"}
+    ]
+  },
+  "graderIndependence": {
+    "design": "deterministic local rubric (pattern: scoreAgainstRubric in live.provider.value.pilot.ts) recomputed from received response text only; never a second live judge call; never worker self-report",
+    "status": "DESIGN_ONLY_NO_CANDIDATE_TO_GRADE"
+  },
+  "orderControl": {
+    "design": "predeclare lane order (A_FIXED first, then B_DYNAMIC) or a fixed deterministic seed before any future call; freeze task prompt, rubric, authority, model/provider lane, temperature/options and budgets; no adaptive prompt tuning after seeing either lane's result",
+    "status": "DESIGN_ONLY_NO_EXECUTION"
+  },
+  "costAndStopRules": {
+    "maxProviderCalls": 4,
+    "maxTreatmentRevisions": 1,
+    "tokenEvidence": "input/output tokens required per call; unknown is never recorded as zero",
+    "latencyEvidence": "wall-clock per lane plus orchestration-only overhead; 50 percent latency-overhead ceiling",
+    "qualityAdmissionBeforeCost": true,
+    "hardStops": [
+      "grant denial",
+      "secret exposure",
+      "authority drift",
+      "incomplete receipt",
+      "ambiguous grader output",
+      "retryable failure without diagnosis",
+      "any required fifth call"
+    ],
+    "noRepeatForPreferredResult": true
+  },
+  "nextManifest": {
+    "status": "NOT_APPLICABLE_BLOCKED",
+    "reason": "DESIGN_READY_FOR_SEPARATE_EXECUTION_WORK_ORDER is not reachable without an admitted candidate; no next implementation/execution path is proposed",
+    "reopenCondition": "a fresh, separately authorized candidate-qualification pass must produce one accepted local direct-lane score at or below 80/100, or one predeclared rubric-defined material defect, with evidence sufficient for independent rescoring; until then this design remains parked"
+  },
+  "zeroExternalEffects": {
+    "agentOrSubagentInvocations": 0,
+    "providerCalls": 0,
+    "credentialAccess": 0,
+    "networkCalls": 0,
+    "sourceOrTestMutations": 0,
+    "sessionStateMutations": 0
+  }
+}
