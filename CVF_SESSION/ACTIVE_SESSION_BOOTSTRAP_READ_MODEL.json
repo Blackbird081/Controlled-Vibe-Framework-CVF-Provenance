@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update",
+  "currentMode": "multi_repo_absorption_acel_g3_and_research_assisted_method_closed_parked",
   "activeHandoff": "AGENT_HANDOFF_V61_2026-09-16.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T2-CLOSED_PASS_BOUNDED_AND_PARKED_AT_9972a9b72; NEXT_STEP=UPDATE_EXISTING_EXTERNAL_LOCAL_EVIDENCE_RELAY_AND_DOMAIN_FUNNEL_ABSORPTION_OWNERS_WITH_REUSABLE_RESEARCH_ASSISTED_REPOSITORY_ABSORPTION_PROTOCOL; EXPANSION_ALLOWED=false. G3 has no automatic successor. G1 and G4 remain independent audit questions whose web-agent returns are advisory inputs only; Local repository truth and Local disposition remain controlling. No Core runtime, provider/live, package lifecycle, public sync or deployment authority is opened. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=RESEARCH_ASSISTED_REPOSITORY_ABSORPTION_PROFILE_CLOSED_AND_PARKED_AT_bcf4a65a3; NEXT_STEP=LOCAL_SELECT_AND_AUTHOR_ONE_BOUNDED_ACEL_ADAPTATION_WORK_ORDER_FROM_THE_INDEPENDENT_G1_OR_G4_RECONCILIATION; EXPANSION_ALLOWED=false. G3 and the coordination-method update are closed and parked. G1 and G4 remain independent audit questions; no implementation is authorized until Local selects one exact owner delta and issues its governed internal work order. No Core runtime, provider/live, package lifecycle, public sync or deployment authority is opened. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

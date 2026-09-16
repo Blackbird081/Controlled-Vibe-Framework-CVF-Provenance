@@ -1,7 +1,7 @@
 # CVF Agent Handoff V61 - G3 T2 Closed Parked And Absorption Coordination Method Update
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `bee88d8e3a69fefeab7338ae88d638216026a35b`. Parent continuity commit for the dedicated handoff synchronization commit.
+Current HEAD recorded for this handoff: `bcf4a65a3`. Material coordination-method closure commit; a dedicated continuity synchronization commit follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -10,40 +10,40 @@ Status: ACTIVE
 
 ## Purpose
 
-Record the accepted G3 T2 material closure, park its successor boundaries,
-and route the next bounded Local action to hardening the existing
-external/local repository-absorption coordination owners.
+Record the accepted and parked G3 T2 closure plus the completed additive
+research-assisted repository-absorption profile, then route the next bounded
+Local action back to the active ACEL source without authorizing implementation.
 
 ## Scope / Target / Owner Boundary
 
-Target: G3 T2 continuity projection and the next documentation/checker-only
-method-hardening action. Owner: Local orchestrator/reviewer. External agents
+Target: G3 T2 and coordination-method closure continuity. Owner: Local orchestrator/reviewer. External agents
 remain advisory researchers; INTERNAL_AGENT workers implement only under a
 separate governed work order. No runtime or provider authority is transferred.
 
 ## Active Boundary
 
-The active boundary is the two existing cross-workspace method owners and
-their existing front-door/checker/test surfaces. G3 implementation is closed
-and parked; G1/G4 external evidence remains independent advisory input.
+G3 implementation and the additive method profile are closed and parked. G1
+and G4 external evidence remains independent advisory input. Any implementation
+requires selection of one exact owner delta and a separate internal work order.
 
 ## Handoff Context
 
 - Repository: private provenance SOT on `main`.
-- Current mode: `multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update`.
+- Current mode: `multi_repo_absorption_acel_g3_and_research_assisted_method_closed_parked`.
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V60_2026-09-08.md`.
 - G3 T2 material closure: `9972a9b720a58fb11bb3500999e6430b1783bd92`.
 - G3 T2 completion: `docs/reviews/CVF_ACEL_G3_T2_BEHAVIORAL_EVALUATION_CONTRACT_IMPLEMENTATION_COMPLETION_2026-09-16.md`.
 - G3 has no automatic successor; empirical evaluation and runtime integration remain parked.
+- Research-assisted profile closure: `bcf4a65a3`; focused tests 34/34 PASS and material hook 89/89 PASS.
 - Latest closed learning-history wave remains `LHW24`.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=Local updates the existing external/local evidence-relay and domain-funnel absorption owners with the reusable research-assisted repository-absorption protocol; role=Local orchestrator/reviewer; phase=governance-method hardening after G3 closure; decision owner=Local; parked checkpoint=G3 successor, real evaluator execution, certification/index mutation, provider/runtime/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_and_research_assisted_method_closed_parked`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=Local selects and authors one bounded ACEL adaptation work order from the independent G1 or G4 reconciliation; role=Local orchestrator/reviewer; phase=post-G3 and post-method-update parking; decision owner=Local; parked checkpoint=all implementation until one exact owner delta receives a governed internal work order.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update`
+`multi_repo_absorption_acel_g3_and_research_assisted_method_closed_parked`
 
 ## Latest Work / Changes
 
@@ -52,6 +52,10 @@ Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_t2_closed_park
 - Reviewer repair closed three bounded gaps: `OFFLINE_SYNTHETIC` live-overclaim rejection, direct-grader baseline-pair bypass, and valid offset parity between TypeScript and Python.
 - Closure evidence is 79/79 TypeScript, 55/55 Python, typecheck PASS, checker help PASS, NUL count zero, and no provider/live/runtime effect.
 - Work order status is `CLOSED_PASS_BOUNDED`; terminal decision is `CLOSED_PASS_BOUNDED_G3_PARKED`.
+- The existing relay and domain-funnel owners now carry
+  `cvf.research-assisted-repository-absorption@1.0.0`; no parallel process was created.
+- The existing intake checker machine-locks its context-refresh, question-isolation,
+  integrity-first, Local-authority, disposition, high-bar `ADOPT`, and internal-handoff invariants.
 
 ## External / Local Coordination Boundary
 
@@ -64,23 +68,17 @@ Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_t2_closed_park
 
 ## Next Allowed Move
 
-Update and harden the existing owners only:
-
-1. `docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md`;
-2. `docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md`;
-3. their existing front-door/checker/test surfaces where required for future-agent compliance.
-
-The update must codify refreshed external briefs, integrity-first return intake,
-independent audit-question lanes, Local repository cross-check, the
-`NO_CHANGE`/`ADAPT`/`WATCH`/high-bar `ADOPT` disposition model, and a clean
-handoff from external advisory research to separately governed INTERNAL_AGENT
-implementation. Do not create a parallel process owner.
+Within `AGENT-CAPABILITY-ENGINEERING-LAB-2026-09`, Local may select and author
+one bounded adaptation work order from the independently reconciled G1 or G4
+question. Selection must name one current owner delta and preserve the new
+profile. No implementation begins merely from this continuity record.
 
 ## Parked Checkpoints
 
 - Any G3 successor, real behavioral evaluator execution, package/UAT/certification/index mutation, runtime wiring, T6B, provider/live, credential use, public sync, deployment, or production action.
 - Any implementation inferred directly from an external advisory contract.
 - Any reconciliation that merges G1 and G4 or treats an external shortlist as the Local coverage boundary.
+- Any further process expansion or new workflow owner; the profile is closed and parked at `bcf4a65a3`.
 
 ## Core Guard Self-Protection Authorization
 
@@ -107,6 +105,17 @@ Rollback boundary: revert only this continuity projection and handoff
 rotation; preserve G3 T2 material commit
 `9972a9b720a58fb11bb3500999e6430b1783bd92`. No provider/live, runtime,
 certification, public-sync, deployment, or production authority is added.
+
+2026-09-16 post-method synchronization authorization: update this handoff,
+compact current mode/next move, active-program evidence, one new closure state
+entry, bootstrap/front door, and generated active-state aggregate to record
+material commit `bcf4a65a3`. Roll back only this continuity projection and
+preserve both material commits `9972a9b72` and `bcf4a65a3`.
+
+Additional protected path:
+
+- `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`
+- `CVF_SESSION/state/entries/researchAssistedRepositoryAbsorptionProfileClosure20260916.json`
 
 ## Agent Operation Trace Block
 

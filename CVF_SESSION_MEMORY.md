@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=Local updates the existing external/local evidence-relay and domain-funnel absorption owners with the reusable research-assisted repository-absorption protocol; role=Local orchestrator/reviewer; phase=governance-method hardening after G3 closure; decision owner=Local; parked checkpoint=G3 successor, real evaluator execution, certification/index mutation, provider/runtime/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g3_and_research_assisted_method_closed_parked`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=Local selects and authors one bounded ACEL adaptation work order from the independent G1 or G4 reconciliation; role=Local orchestrator/reviewer; phase=post-G3 and post-method-update parking; decision owner=Local; parked checkpoint=all implementation until one exact owner delta receives a governed internal work order.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update`
-Current mode: `multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update`; previous mode marker: `multi_repo_absorption_acel_g3_t2_implementation_dispatched`
+Current mode marker: `multi_repo_absorption_acel_g3_and_research_assisted_method_closed_parked`
+Current mode: `multi_repo_absorption_acel_g3_and_research_assisted_method_closed_parked`; previous mode marker: `multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G3-T2-CLOSED_PASS_BOUNDED_AND_PARKED_AT_9972a9b72; NEXT_STEP=UPDATE_EXISTING_EXTERNAL_LOCAL_EVIDENCE_RELAY_AND_DOMAIN_FUNNEL_ABSORPTION_OWNERS_WITH_REUSABLE_RESEARCH_ASSISTED_REPOSITORY_ABSORPTION_PROTOCOL; EXPANSION_ALLOWED=false. G3 has no automatic successor. G1 and G4 remain independent audit questions whose web-agent returns are advisory inputs only; Local repository truth and Local disposition remain controlling. No Core runtime, provider/live, package lifecycle, public sync or deployment authority is opened. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_acel_g3_t2_closed_parked_coordination_method_update`. G3 T2 is `CLOSED_PASS_BOUNDED_G3_PARKED` at `9972a9b72` after bounded Local repair; focused evidence is 79/79 TypeScript and 55/55 Python, typecheck clean, zero provider/live/runtime effects.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=RESEARCH_ASSISTED_REPOSITORY_ABSORPTION_PROFILE_CLOSED_AND_PARKED_AT_bcf4a65a3; NEXT_STEP=LOCAL_SELECT_AND_AUTHOR_ONE_BOUNDED_ACEL_ADAPTATION_WORK_ORDER_FROM_THE_INDEPENDENT_G1_OR_G4_RECONCILIATION; EXPANSION_ALLOWED=false. G3 and the coordination-method update are closed and parked. G1 and G4 remain independent audit questions; no implementation is authorized until Local selects one exact owner delta and issues its governed internal work order. No Core runtime, provider/live, package lifecycle, public sync or deployment authority is opened. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_acel_g3_and_research_assisted_method_closed_parked`. G3 T2 remains `CLOSED_PASS_BOUNDED_G3_PARKED` at `9972a9b72`; the additive research-assisted absorption profile is `CLOSED_PASS_BOUNDED` at `bcf4a65a3` with 34/34 focused tests and 89/89 material pre-commit checks.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
