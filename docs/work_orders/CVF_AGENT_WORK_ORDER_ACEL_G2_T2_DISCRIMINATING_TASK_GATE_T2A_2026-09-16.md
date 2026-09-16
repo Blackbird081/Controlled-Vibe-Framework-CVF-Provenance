@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-16
 
@@ -217,10 +217,10 @@ earlier Alibaba-key permission.
 
 ## Closure Checklist
 
-- [ ] Local verifies exact four-path manifest and frozen task/rubric hashes.
-- [ ] Local independently checks adversarial fixtures and grader independence.
-- [ ] Material and continuity commits plus committed-range gates pass.
-- [ ] Candidate remains unqualified for live/actual-agent T2 without new proof.
+- [x] Local verifies exact four-path worker manifest and final task/rubric hashes.
+- [x] Local independently checks adversarial fixtures and grader independence.
+- [x] Material review package is accepted; continuity and committed-range proof are recorded by the closer.
+- [x] Candidate remains unqualified for live/actual-agent T2 without new proof.
 
 ## Return-To-Orchestrator Conditions
 
@@ -502,6 +502,28 @@ git status --short
 Apply `EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION`. Local should
 consume deterministic fixture proof and rerun only focused tests or named
 contradictions; no broad duplicate implementation or provider call.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_COMPLETION_2026-09-16.md` | `ACCEPT_BOUNDED_RELEASE` | PASS |
+| Roadmap state | active ACEL program | T2A accepted; live calibration operator checkpoint | PASS |
+| Registry JSON | GC-051 source and aggregate | 191 entries; T2A scope covered | PASS |
+| Registry Markdown | T2A audit/completion review | bounded offline disposition | PASS |
+| External evidence digest | prior accepted ACEL input | no new external evidence | N/A with reason: internal offline tranche |
+| System loop interlock | isolated scorer | no runtime consumer | N/A with reason: T2A excludes composition |
+| Session continuity | active continuity sources | dedicated post-material synchronization | N/A with reason: follows material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Exact schema | bare object and frozen keys | Local adversarial regressions | PASS |
+| Determinism | repeatable input-only scoring | 32/32 focused tests | PASS |
+| Causal grading | no keyword-only rollback credit | negated-keyword controls rejected | PASS |
+| Provider boundary | zero calls | 0 | PASS |
 
 ## Public Export Disposition
 
