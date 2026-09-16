@@ -1,7 +1,7 @@
 # CVF Agent Handoff V61 - G1 T1 Design Closed Parked
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `d87aadaec3ae2935a83e1e651f636d5b402f763c`. Material G1 T1 closure commit recorded by this continuity projection.
+Current HEAD recorded for this handoff: `c7ee501c41df12d9ac1d31948fc246921473fd6b`. Parent continuity commit for this dedicated handoff synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -58,6 +58,7 @@ Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t1_design_clos
 - `ACEL-G1-T1-EMPIRICAL-CALIBRATION-OWNER-COMPOSITION-DESIGN` is `DISPATCH_READY` at `9426421eb` with pre-dispatch 82/82 PASS.
 - The worker may create exactly one design audit, one machine-readable manifest, and one full return; `WORKER_MUST_NOT_COMMIT`.
 - Local repaired G1's candidate/evidence binding, SEARCH/HELD_OUT semantics, exclusive decision precedence, and proposal-only preference boundary in one R1 pass; the work order is `CLOSED_PASS_BOUNDED` at `d87aadaec`.
+- P4-C1 post-commit observation for `d87aadaec` was rejected as unusable: its collector invoked pre-closure on the mixed exact-manifest plus protected-current-authority range `ff7a0ed68..d87aadaec`, which the range-shape guard correctly blocks. Marker SHA-256 `bbea4992b9df03a761f2c7a28c71cc228dc8ecdbd613ca530d173f6aa3908040` was preserved under the ignored adjudicated-marker name before the handoff-sync commit. No P4 sample or release proof was promoted; the material 89/89 pre-commit result remains a separate fact.
 - The existing relay and domain-funnel owners now carry
   `cvf.research-assisted-repository-absorption@1.0.0`; no parallel process was created.
 - The existing intake checker machine-locks its context-refresh, question-isolation,
