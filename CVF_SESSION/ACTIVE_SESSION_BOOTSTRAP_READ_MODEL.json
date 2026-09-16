@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_acel_g4_t1_design_dispatched",
+  "currentMode": "multi_repo_absorption_acel_g4_t1_design_closed_parked",
   "activeHandoff": "AGENT_HANDOFF_V61_2026-09-16.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G4-T1-INCREMENTAL-VALUE-OWNER-COMPOSITION-DESIGN_DISPATCH_READY_AT_fb1576aef; NEXT_STEP=INTERNAL_AGENT_RETURNS_THREE_UNCOMMITTED_G4_DESIGN_ARTIFACTS_FOR_LOCAL_REVIEW; EXPANSION_ALLOWED=false. G1 design is accepted and parked; its implementation manifest is planning only. G4 is an independent documentation-only design pass. Provider/live execution, value experiment, metric implementation, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G4-T1-INCREMENTAL-VALUE-OWNER-COMPOSITION-DESIGN_CLOSED_PASS_BOUNDED_AT_dbb795979; NEXT_STEP=LOCAL_MAY_SELECT_ONE_SEPARATELY_GOVERNED_BOUNDED_ACEL_DELTA_OR_KEEP_PARKED; EXPANSION_ALLOWED=false. G1 and G4 designs are accepted and parked; both implementation manifests are planning only. No automatic successor. Provider/live execution, real value experiment, metric implementation, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain closed. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
