@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 ## Dispatch Prompt Envelope
 
@@ -358,6 +358,9 @@ their path family and conditional content. The worker return must derive exact
 review headings, trace fields, Delta boundary, public disposition, no-commit
 evidence, corpus/value/rescan N/A tokens, and gate evidence from current
 checkers rather than copying stale prose.
+Required returned-packet terms include `Risk / Corrective Action`,
+`Delta Execution Claim Boundary Control Block`, and
+`Corpus Completeness And Report Integrity`.
 
 ## Gate-To-Role Closeability Contract
 
@@ -432,14 +435,11 @@ individualCheckerSubstitution: FORBIDDEN
 
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
-Required terms: Purpose; Scope / Methodology; Findings / Position; Risk /
-Corrective Action; Claim Boundary; Agent Operation Trace Block; Delta Execution
-Claim Boundary Control Block; Public Export Disposition; executionBaseHead;
+Required terms: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Claim Boundary; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; executionBaseHead;
 git status --short; Changed Files; Command Evidence; No-Commit Statement.
 
 Conditional blocks must appear with accurate `N/A with reason` dispositions:
-External Knowledge Intake Routing; Rescan Intelligence Hardening; Corpus
-Completeness And Report Integrity; Finding-To-Governance Learning Disposition;
+External Knowledge Intake Routing; Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition;
 Epistemic Process Block; Machine Closure Package.
 
 The return must use terminal `COMPLETE_PENDING_REVIEW` only if all seven paths
@@ -641,29 +641,70 @@ Runtime/provider proof: N/A with reason: explicitly forbidden.
 Claim boundary: the checker can validate supplied evidence but cannot mutate or
 admit a real package in this work order.
 
+## Risk / Corrective Action
+
+The closure risk is claim expansion from an offline contract into live,
+runtime, certification, or behavioral-quality readiness. The required
+corrective action is bounded Local review, focused executable proof, explicit
+claim boundaries, and parking after closure; no automatic successor is
+authorized.
+
+## Delta Execution Claim Boundary Control Block
+
+| Field | Value |
+|---|---|
+| claimScope | pure offline behavioral-evaluation implementation and evidence admission |
+| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
+| receiptEvidence | CLAIM_REJECTED_NO_RECEIPT: no provider/runtime receipt is in scope |
+| actionEvidence | focused TypeScript/Python tests, typecheck, checker smoke, audit, and Local review |
+| invocationBoundary | local deterministic execution only |
+| interceptionBoundary | no provider, agent, runtime, or lifecycle interception |
+| claimLanguage | implementation-ready and tested offline; never live/runtime ready |
+| forbiddenExpansion | provider/live, runtime wiring, certification mutation, T6B, public sync, deployment |
+
+## Corpus Completeness And Report Integrity
+
+- Corpus task class: exact seven-path bounded implementation return.
+- Corpus root: seven worker-owned paths declared by this work order.
+- Snapshot time: execution base `8d29826aee9355ddb64bb2620f5460aba06318ee` plus returned R1 paths.
+- Enumeration command: `rg --files --hidden --no-ignore` filtered to the exact G3 T2 path names.
+- Manifest artifact or inline manifest: exact seven-path manifest in `## Output Manifest`.
+- Manifest hash: `0b561df67a190b8d50264893e7fb77e7c2128b0b02994b9ec1ed29752fe8f4fb` for normalized newline-delimited paths.
+- Processing ledger artifact or inline ledger: completion review Target / Source table; seven `READ` rows.
+- Allowed terminal statuses: `READ`, `SKIPPED_WITH_REASON`, `DEFERRED`, `BLOCKED_UNREADABLE`.
+- Reconciliation: manifest=7; ledger_terminal=7; exclusions=0; unresolved=0.
+- Unresolved files: 0.
+- Declared exclusions: unrelated repository paths, provider/live/runtime surfaces, and G1/G4 external returns.
+- Unreadable or unsupported files: 0.
+- Aggregation check: seven returned paths reconciled; focused evidence 79/79 TypeScript and 55/55 Python after review.
+- Drift check: PASS
+- Output traceability: work order -> R1 return -> implementation audit -> completion review.
+- Adversarial verification: live-overclaim, baseline mandatory-path, and offset-parity probes completed.
+- Corpus verdict: COMPLETE_WITH_DECLARED_EXCLUSIONS
+
 ## Closure Checklist
 
-- [ ] Worker captured exact execution base and clean dispatch status.
-- [ ] Exactly seven worker-owned paths exist; every other path is unchanged.
-- [ ] TypeScript focused tests and typecheck pass.
-- [ ] Python checker tests and help smoke pass.
-- [ ] Contract/test/defect ledger is complete and consistent.
-- [ ] Pre-implementation and worker-return fast gates pass.
-- [ ] Staging is empty, HEAD unchanged, and no commit occurred.
-- [ ] Local reviewer records the terminal disposition.
+- [x] Worker captured exact execution base and clean dispatch status.
+- [x] Exactly seven worker-owned paths existed at return; every other path was unchanged.
+- [x] TypeScript focused tests and typecheck pass.
+- [x] Python checker tests and help smoke pass.
+- [x] Contract/test/defect ledger is complete and consistent after bounded Local repair.
+- [x] Pre-implementation and worker-return fast gates pass after closure packaging.
+- [x] Staging was empty, HEAD unchanged, and no worker commit occurred.
+- [x] Local reviewer records the terminal disposition in the completion review.
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this file | `DISPATCH_READY` is the required pre-execution state | PASS |
-| Completion or reviewer artifact | Local-owned future completion | N/A with reason: implementation has not run | N/A with reason |
-| Roadmap state | active ACEL continuity | G3 T2 is operator-selected and intentionally open | PASS |
+| Work order status | this file | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_G3_T2_BEHAVIORAL_EVALUATION_CONTRACT_IMPLEMENTATION_COMPLETION_2026-09-16.md` | `ACCEPT_AFTER_BOUNDED_REVIEWER_REPAIR` | PASS |
+| Roadmap state | active ACEL continuity | G3 T2 closed and parked; no automatic successor | PASS |
 | Registry JSON | `docs/corpus-intelligence/registry/entries/acel-g3-t1-behavioral-evaluation-owner-composition-design.json` | GC-051 already covers the declared successor paths; mutation forbidden | PASS |
 | Registry Markdown | `docs/audits/CVF_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md` | accepted human design and successor manifest | PASS |
 | External evidence digest | N/A with reason: no external evidence | zero external inputs | N/A with reason |
 | System loop interlock | no runtime consumer | runtime forbidden | N/A with reason |
-| Session continuity | active handoff/front doors | N/A with reason: Local projects dispatch commit after these gates | N/A with reason |
+| Session continuity | active handoff/front doors | dedicated projection follows the material commit | N/A with reason |
 
 ## Acceptance Receipt Assertion Matrix
 
