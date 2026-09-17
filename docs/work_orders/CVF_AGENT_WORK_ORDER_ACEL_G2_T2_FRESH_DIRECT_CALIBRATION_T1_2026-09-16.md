@@ -141,6 +141,28 @@ exposure or any need to exceed the one-call budget. Do not rerun a live call.
 | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/harder.value.candidate.contract.ts` | frozen task and scoring contract |
 | `EXTENSIONS/CVF_MODEL_GATEWAY/src/p4b-b-live-proof-harness.ts` | no gateway change |
 
+## Forbidden Filesystem State At Dispatch
+
+Retrospective correction recorded 2026-09-17. The dispatch-time working-tree
+inspection was not recorded in this work order. The rows below do **not**
+claim that an inspection was performed before dispatch. These are pre-existing
+tracked files forbidden as *write targets*, not files required to be absent.
+
+| Forbidden path | Actual state at dispatch | Recoverable evidence and exemption |
+|---|---|---|
+| `docs/reviews/evidence/mao-oa-t6a-direct-candidate-calibration-2026-07-17.json` | NOT_RECORDED_AT_DISPATCH | Tracked blob `ca8bc3abb71e6a5a8aec68a168c557cdc41beb44` at worker-start HEAD `eca0182c4811a371f6db49a7b8b71d136180f056`; worker return records clean initial worktree and SHA-256 `c5526054595a41ea990b5e125ea698d51fe3f0bb5768d80f4fdb7c1b005f6159` before and after. Existing historical evidence was exempt from an absence requirement but remained forbidden to modify. |
+| `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/harder.value.candidate.contract.ts` | NOT_RECORDED_AT_DISPATCH | Tracked blob `5c0bc575136cf53975b6d3b63196607630a685a4` at worker-start HEAD; clean initial worktree reported by worker. Existing contract was exempt from an absence requirement but remained forbidden to modify. |
+| `EXTENSIONS/CVF_MODEL_GATEWAY/src/p4b-b-live-proof-harness.ts` | NOT_RECORDED_AT_DISPATCH | Tracked blob `a119079db3377c5eb2885bfa57d771c47d18b410` at worker-start HEAD; clean initial worktree reported by worker. Existing harness was exempt from an absence requirement but remained forbidden to modify. |
+
+Git shows no change to these three paths between dispatch commit
+`6f70571ed99f83012a0bf211b5d4623fd6386f8f` and worker-start commit
+`eca0182c4811a371f6db49a7b8b71d136180f056`. The worker return records
+`git status --short --untracked-files=all` as empty before edits. This supports
+the worker-start state and preservation claim, not the unobserved dispatch-time
+filesystem state. The missing prospective check remains a historical dispatch
+process defect; no live-call or calibration authority is reopened by this
+annotation.
+
 ## Execution Plan
 
 1. Capture clean execution HEAD and SHA-256 of historical receipt. Verify all
@@ -312,7 +334,7 @@ returnTimeRecheck: REQUIRED_BEFORE_REPAIR
 |---|---|---|---|---|---|---|---|---|
 | authorization_review | PRE_DISPATCH | dispatcher | PRE_DISPATCH | paired baseline and work order | EXACT_PATHS | closer | DISPATCH_COMMIT | NONE |
 | pre_dispatch_gate | PRE_DISPATCH | dispatcher | PRE_DISPATCH | paired baseline and work order | EXACT_PATHS | closer | DISPATCH_COMMIT | authorization_review |
-| dispatch_continuity | IMPLEMENTATION | session-sync-steward | IMPLEMENTATION | AGENT_HANDOFF_V60_2026-09-08.md material-SHA marker | EXACT_PATHS | session-sync-steward | DISPATCH_CONTINUITY_COMMIT | pre_dispatch_gate |
+| dispatch_continuity | IMPLEMENTATION | session-sync-steward | IMPLEMENTATION | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V60_2026-09-08.md` historical material-SHA marker | EXACT_PATHS | session-sync-steward | DISPATCH_CONTINUITY_COMMIT | pre_dispatch_gate |
 | focused_checker_tests | WORKER_RETURN | worker | IMPLEMENTATION | exact three worker paths | EXACT_PATHS | closer | MATERIAL_COMMIT | dispatch_continuity |
 | adif_integrity | WORKER_RETURN | worker | IMPLEMENTATION | worker return disclosure | EXACT_PATHS | closer | MATERIAL_COMMIT | focused_checker_tests |
 | pre_implementation_autorun | WORKER_RETURN | worker | IMPLEMENTATION | exact three worker paths | EXACT_PATHS | closer | MATERIAL_COMMIT | adif_integrity |
