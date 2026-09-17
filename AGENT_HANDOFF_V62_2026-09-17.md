@@ -1,7 +1,7 @@
 # CVF Agent Handoff V62 - G1 T2C Trust-Anchor Design Selected
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `bb843b4f86ba69dbfae670175202b9ad540de7d9`. T2C continuity and V62 rotation commit; parent of this dedicated handoff-only sync. Material decision remains `1c5c01675`.
+Current HEAD recorded for this handoff: `c860a2704d58a7244ad484f9333e1816683df014`. T2C held GC-018/work-order material commit; parent of this dedicated handoff-only sync. Material design decision remains `1c5c01675`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -18,7 +18,7 @@ Target: ACEL G1 post-T2B trust-anchor architecture and continuity. Role and deci
 
 ## Active Boundary
 
-T2B remains `PARKED_TRUST_ANCHOR_ARCHITECTURE_REQUIRED` at `4bb04c836`. Its three worker outputs and ten earlier evidence paths remain uncommitted and frozen. Local selected Ed25519-signed verifier receipts with an independent trusted public-key registry at `1c5c01675`. This is design only: no verifier key owner, live lookup, signer, implementation, or accepted G1 root contract is established.
+T2B remains `PARKED_TRUST_ANCHOR_ARCHITECTURE_REQUIRED` at `4bb04c836`. Its three worker outputs and ten earlier evidence paths remain uncommitted and frozen. Local selected Ed25519-signed verifier receipts with an independent trusted public-key registry at `1c5c01675`; the bounded T2C GC-018/work order is committed at `c860a2704` with `HOLD_SOURCE_NOT_FOUND`. No verifier key owner, live lookup, signer, implementation, worker dispatch, or accepted G1 root contract is established.
 
 ## Startup Acknowledgment
 
@@ -34,7 +34,7 @@ Latest closed learning-history wave remains `LHW24`.
 
 - `800bb5ba7`: G2 historical dispatch-state gap annotated honestly from worker-start and Git evidence; no claim of a prospective dispatch check.
 - `d3d5f0cab`: dedicated handoff-anchor sync after that correction.
-- `1c5c01675`: G1 T2C Local architecture decision, documentation only. Reviewer-fast 68/68 and pre-commit 89/89 passed for the bounded material packet. No worker return was accepted.
+- `1c5c01675`: G1 T2C Local architecture decision, documentation only; `c860a2704`: held GC-018/work order, reviewer-fast 68/68 and pre-commit 89/89 passed. No worker was dispatched or return accepted.
 
 ## External / Local Coordination Boundary
 
