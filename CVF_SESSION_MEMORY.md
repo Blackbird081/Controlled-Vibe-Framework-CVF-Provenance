@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2c_trust_anchor_design_selected`; active handoff=AGENT_HANDOFF_V62_2026-09-17.md; next allowed move=Local documentation-only T2C GC-018/work-order authoring, no automatic dispatch; role=Local orchestrator/reviewer; phase=G1 T2C design selected; decision owner=Local; parked checkpoint=G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, keys, runtime, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2c_trust_anchor_design_selected`; active handoff=AGENT_HANDOFF_V62_2026-09-17.md; next allowed move=one internal hypothetical-documentation worker dispatch then Local review; role=Local orchestrator/reviewer; phase=G1 T2C packet released at ea914efff; decision owner=Local; parked checkpoint=G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live, keys, runtime, public sync and deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `multi_repo_absorption_acel_g1_t2c_trust_anchor_design_selected`; 
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2C-TRUST-ANCHOR-DESIGN_SELECTED_AT_1c5c01675; NEXT_STEP=LOCAL_T2C_DOCUMENTATION_ONLY_GC018_AND_WORK_ORDER_AUTHORING_ONLY; EXPANSION_ALLOWED=false. Local design docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_LOCAL_ARCHITECTURE_DECISION_2026-09-17.md selects Ed25519-signed verifier receipts with an independent trusted public-key registry, without claiming any existing key owner, signer or genuine lookup. Source-verify those owners in a separate documentation-only packet or fail closed; no automatic dispatch. Preserve three T2B worker outputs and ten earlier paths as uncommitted evidence. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, keys, runtime, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2C-HYPOTHETICAL_DESIGN_PACKET_RELEASED_AT_ea914efff; NEXT_STEP=ONE_INTERNAL_AGENT_HYPOTHETICAL_DOCUMENTATION_DISPATCH_THEN_LOCAL_REVIEW; EXPANSION_ALLOWED=false. Operator authorized Local audit and Claude dispatch on 2026-09-18. The T2C GC-018/work order at ea914efff authorizes exactly three hypothetical documentation outputs with no worker commit. Existing G1 verifier-key registry owner and genuine issuer-lookup provenance remain unverified; all actual candidate admission stays UNVERIFIED. Preserve thirteen parked G1 evidence paths unchanged. No key creation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.
 Mode: `multi_repo_absorption_acel_g1_t2c_trust_anchor_design_selected`. T2B rejection at `4bb04c836` remains controlling; T2C design-only decision at `1c5c01675` does not make the root contract acceptable. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
