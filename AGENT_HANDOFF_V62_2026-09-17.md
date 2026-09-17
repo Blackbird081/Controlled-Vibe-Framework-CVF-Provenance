@@ -1,7 +1,7 @@
 # CVF Agent Handoff V62 - G1 T2C Trust-Anchor Design Selected
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `1c5c01675`. Local T2C verifier trust-anchor architecture decision material commit; parent of this continuity sync.
+Current HEAD recorded for this handoff: `bb843b4f86ba69dbfae670175202b9ad540de7d9`. T2C continuity and V62 rotation commit; parent of this dedicated handoff-only sync. Material decision remains `1c5c01675`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
