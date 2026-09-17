@@ -1,7 +1,7 @@
 # CVF Agent Handoff V61 - G1 T2 R2 Rejected And Parked
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `0862d3610941209558b0e1979db0e9701815a475`. G1 T2 R2 independent rejection material commit; parent of this continuity sync.
+Current HEAD recorded for this handoff: `593b1bef6e9d0aa1e7b9744bd455264325fc0105`. Claude subagent retrospective discussion material commit; parent of this continuity sync.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -89,7 +89,7 @@ automatically. G4 remains independent and parked.
 
 ## Parked Checkpoints
 
-- Operator discussion recorded on 2026-09-17: `docs/reference/external_agent_invocation_control/CVF_AGENT_ORCHESTRATION_PLATFORM_MCP_DISCUSSION.md`. It may now resume as discussion only; CVF Web/platform/host/MCP choice and automatic worker/model assignment remain undecided. This pointer does not release implementation, CLI/provider, or runtime execution.
+- Operator discussion recorded on 2026-09-17: `docs/reference/external_agent_invocation_control/CVF_AGENT_ORCHESTRATION_PLATFORM_MCP_DISCUSSION.md`, including Claude's advisory-only subagent retrospective and explicitly rejected claims. Discussion may resume; platform/model policy and implementation remain undecided and unauthorized.
 - G1 T2 schema redesign and any R3. Reopen only through a fresh reviewed design amendment covering candidate-scoped fixture results, GC-026 record equality and complete provenance binding.
 - Any G3 successor, real behavioral evaluator execution, package/UAT/certification/index mutation, runtime wiring, T6B, provider/live, credential use, public sync, deployment, or production action.
 - Any implementation inferred directly from an external advisory contract.
