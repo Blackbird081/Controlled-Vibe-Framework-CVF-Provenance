@@ -1,7 +1,7 @@
 # CVF Agent Handoff V61 - G1 T2A Architecture Reassessment Parked
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `3a027fa2e844f3eb94c9ab652b140b70a220c7ce`. G1 T2A terminal R2 review material commit; parent of this continuity sync.
+Current HEAD recorded for this handoff: `bfc09c41bcea63bbfa3125390599744c01827bd5`. G1 T2A architecture-reassessment parking commit; parent of this marker-repair continuity sync.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
