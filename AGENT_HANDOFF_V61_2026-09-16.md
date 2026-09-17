@@ -1,7 +1,7 @@
 # CVF Agent Handoff V61 - G1 T2A Consolidated R1 Rework Required
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `9942970764121fbb6bf37f50fc51758ae133c701`. G1 T2A independent R1 review material commit; parent of this continuity sync.
+Current HEAD recorded for this handoff: `183f26fea52f3c4c935a13db73c3466bf28a5c59`. Bounded orchestration use-case ledger commit; parent of this continuity sync.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -87,7 +87,7 @@ It must not commit, spawn subagents or mutate the seven frozen R2 paths. Local t
 
 ## Parked Checkpoints
 
-- Operator discussion updated at `3fbb23dfd`: `docs/reference/external_agent_invocation_control/CVF_AGENT_ORCHESTRATION_PLATFORM_MCP_DISCUSSION.md` now adjudicates Claude's advisory retrospective, escaped-finding measurement, self-validation/oracle disclosure and corrected gate/worktree/batch reconciliation. Platform/model policy and implementation remain undecided and unauthorized.
+- Operator discussion updated at `183f26fea`: `docs/reference/external_agent_invocation_control/CVF_AGENT_ORCHESTRATION_PLATFORM_MCP_DISCUSSION.md` now includes a bounded use-case ledger for semantic self-oracle learning. Platform/model policy and implementation remain undecided and unauthorized.
 - G1 implementation and any R3 remain parked; T2A authorizes only the fresh three-output schema amendment covering candidate-scoped fixture results, GC-026 record equality, complete provenance binding and checker recomputation.
 - Any G3 successor, real behavioral evaluator execution, package/UAT/certification/index mutation, runtime wiring, T6B, provider/live, credential use, public sync, deployment, or production action.
 - Any implementation inferred directly from an external advisory contract.
