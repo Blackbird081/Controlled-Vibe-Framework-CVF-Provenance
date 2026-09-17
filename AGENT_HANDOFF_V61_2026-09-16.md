@@ -1,7 +1,7 @@
 # CVF Agent Handoff V61 - G1 T2B Trust Anchor Parked
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `4bb04c8361f3bfdaa5ce49a161521e5b33a653dd`. G1 T2B independent rejection review material commit; parent of this continuity sync.
+Current HEAD recorded for this handoff: `800bb5ba7d181a8da7287c4124c59bc4a0648762`. G2 historical dispatch-state annotation committed after G1 T2B terminal parking; parent of this handoff-only sync.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
