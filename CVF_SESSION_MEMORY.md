@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2a_architecture_reassessment_parked`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=Local architecture-reassessment decision only, with no worker redispatch; role=Local orchestrator/reviewer; phase=G1 T2A terminal parking; decision owner=Local; parked checkpoint=G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2b_trust_anchor_parked`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=Local separate trust-anchor architecture decision only, with no same-tranche worker redispatch; role=Local orchestrator/reviewer; phase=G1 T2B terminal parking; decision owner=Local; parked checkpoint=G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_acel_g1_t2b_root_contract_architecture_dispatched`
-Current mode: `multi_repo_absorption_acel_g1_t2b_root_contract_architecture_dispatched`; previous mode marker: `multi_repo_absorption_acel_g1_t2a_architecture_reassessment_parked`
+Current mode marker: `multi_repo_absorption_acel_g1_t2b_trust_anchor_parked`
+Current mode: `multi_repo_absorption_acel_g1_t2b_trust_anchor_parked`; previous mode marker: `multi_repo_absorption_acel_g1_t2b_root_contract_architecture_dispatched`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2B-ROOT-CONTRACT-ARCHITECTURE-DISPATCHED_AT_2863326b8; NEXT_STEP=INTERNAL_AGENT_THREE_OUTPUT_RETURN_ONLY; EXPANSION_ALLOWED=false. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_2026-09-17.md: create exactly three fresh outputs, use no nested subagent/provider call, make no commit, and keep all ten parked paths byte-identical. Local owns independent review and every commit. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live execution, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_acel_g1_t2b_root_contract_architecture_dispatched`. Fresh T2B dispatch `2863326b8` fixes the four Local architecture choices and authorizes exactly three documentation outputs; T2A remains rejected evidence, not an editable predecessor. G4 design remains independently parked at `dbb795979`; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2B-TRUST-ANCHOR-PARKED_AT_4bb04c836; NEXT_STEP=LOCAL_SEPARATE_TRUST_ANCHOR_ARCHITECTURE_DECISION_ONLY; EXPANSION_ALLOWED=false. Independent review docs/reviews/CVF_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_INDEPENDENT_REVIEW_2026-09-17.md rejects T2B as an implementation root contract: a self-authored IssuerVerificationReceipt passes all five declared checks without a trusted lookup. Preserve three T2B worker outputs and ten earlier parked paths as uncommitted evidence; no same-tranche repair or automatic successor. A later separately governed tranche must select authenticated verifier issuance before any G1 implementation. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live execution, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_acel_g1_t2b_trust_anchor_parked`. T2B independent review `4bb04c836` rejects content-hash-only issuer authentication and parks trust-anchor design for a later tranche. T2A remains rejected evidence; G4 design remains independently parked at `dbb795979`; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2867,
+  "stateKey": "acelG1T2bCalibrationRootContractIndependentReview20260917",
+  "value": "ACEL-G1-T2B is PARKED_TRUST_ANCHOR_ARCHITECTURE_REQUIRED at independent Local review commit 4bb04c836. The three worker outputs and ten earlier parked paths remain uncommitted evidence. A read-only fabricated IssuerVerificationReceipt satisfied all five declared admission checks with a valid SHA-256 content hash but no trusted registry lookup. Receipt integrity is not verifier authentication; the proposed T2B design is not an accepted G1 implementation root contract. Operator selected a later separate tranche for trust-anchor architecture, with no same-tranche repair or automatic dispatch. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, runtime, public sync and deployment remain parked."
+}

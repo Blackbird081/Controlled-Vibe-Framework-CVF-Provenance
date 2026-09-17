@@ -1,7 +1,7 @@
-# CVF Agent Handoff V61 - G1 T2B Root Contract Architecture Dispatched
+# CVF Agent Handoff V61 - G1 T2B Trust Anchor Parked
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `2863326b87883531f785ac6fec5a6b6cb4823748`. G1 T2B root-contract architecture dispatch material commit; parent of this continuity sync.
+Current HEAD recorded for this handoff: `4bb04c8361f3bfdaa5ce49a161521e5b33a653dd`. G1 T2B independent rejection review material commit; parent of this continuity sync.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -10,21 +10,21 @@ Status: ACTIVE
 
 ## Purpose
 
-Record the fresh G1 T2B documentation-only root-contract dispatch; all ten rejected/evidence paths remain uncommitted and frozen.
+Record G1 T2B terminal trust-anchor parking; three worker outputs and ten earlier evidence paths remain uncommitted and frozen.
 
 ## Scope / Target / Owner Boundary
 
-Target: G1 T2B root-contract architecture worker return. Owner: Local orchestrator/reviewer; one bounded INTERNAL_AGENT lane is open.
+Target: G1 T2B independent review. Owner: Local orchestrator/reviewer; the INTERNAL_AGENT lane is closed without design acceptance.
 
 ## Active Boundary
 
-G1 T2B dispatch at `2863326b8` opens exactly three fresh documentation outputs
-from four Local architecture decisions. G4 and implementation remain parked; no live/runtime work is open.
+G1 T2B review at `4bb04c836` rejects an issuer receipt whose content hash
+cannot authenticate its verifier. A later separate trust-anchor tranche is parked; no live/runtime work is open.
 
 ## Handoff Context
 
 - Repository: private provenance SOT on `main`.
-- Current mode: `multi_repo_absorption_acel_g1_t2b_root_contract_architecture_dispatched`.
+- Current mode: `multi_repo_absorption_acel_g1_t2b_trust_anchor_parked`.
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V60_2026-09-08.md`.
 - G3 T2 material closure: `9972a9b720a58fb11bb3500999e6430b1783bd92`.
 - G3 T2 completion: `docs/reviews/CVF_ACEL_G3_T2_BEHAVIORAL_EVALUATION_CONTRACT_IMPLEMENTATION_COMPLETION_2026-09-16.md`.
@@ -35,18 +35,18 @@ from four Local architecture decisions. G4 and implementation remain parked; no 
 - G4 T1 design dispatch: `fb1576aef`; pre-dispatch 82/82 PASS, material hook 89/89 PASS; three create-only worker outputs, no worker commit.
 - G4 T1 design closure: `dbb795979`; eight source hashes, Claude R1 plus one bounded Local repair, reviewer-fast 68/68 and material hook 89/89 PASS. Implementation and experiment remain parked.
 - G1 T2 dispatch: `985029ee1`; pre-dispatch 82/82 and material hook 89/89 PASS; seven create-only offline worker paths; `WORKER_MUST_NOT_COMMIT`.
-- G1 T2B root-contract dispatch: `2863326b8`; four Local architecture choices fixed, exactly three fresh documentation outputs, no nested subagent/provider call/worker commit, ten parked paths hash-frozen.
+- G1 T2B independent review: `4bb04c836`; fabricated-receipt counterexample defeats the claimed issuer authentication; three worker outputs and ten prior paths remain uncommitted evidence.
 - P4-C1 post-commit observation for `dbb795979` is rejected as unusable: its collector applied pre-closure to the mixed exact-manifest plus protected-current-authority range `9ceec78bc..dbb795979`, which the range-shape guard correctly blocks. Marker SHA-256 `38d679509a00a1a791ef1d747b51a7a4a8a73ef36535d12129f96e91ab71d5fd` is preserved under an ignored adjudicated-marker name. No P4 sample or release proof is promoted; the material 89/89 pre-commit result is a separate fact.
 - Local continuity correction: the front-door Next Allowed Move paragraph retained a G1 `Mode:` line after G4 dispatch. The worker-return gate correctly blocked on session-mode consistency. Local corrects only that stale line; no G4 worker artifact is changed.
 - Latest closed learning-history wave remains `LHW24`.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2b_root_contract_architecture_dispatched`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=INTERNAL_AGENT creates exactly three T2B documentation outputs without subagent or commit; role=Local orchestrator/reviewer; phase=G1 T2B design dispatch; decision owner=Local; parked checkpoint=G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2b_trust_anchor_parked`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=Local separate trust-anchor architecture decision only, no worker redispatch; role=Local orchestrator/reviewer; phase=G1 T2B terminal parking; decision owner=Local; parked checkpoint=G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g1_t2b_root_contract_architecture_dispatched`
+`multi_repo_absorption_acel_g1_t2b_trust_anchor_parked`
 
 ## Latest Work / Changes
 
@@ -80,9 +80,8 @@ Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2b_root_contr
 
 ## Next Allowed Move
 
-Within `AGENT-CAPABILITY-ENGINEERING-LAB-2026-09`, one INTERNAL_AGENT may execute
-`docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_2026-09-17.md`.
-Create exactly three fresh outputs; no nested subagent/provider call/commit. G1 implementation/R3 and G4 remain independent and parked.
+Within `AGENT-CAPABILITY-ENGINEERING-LAB-2026-09`, Local may select a later,
+separately governed trust-anchor architecture tranche. No T2B worker repair or automatic dispatch. G1 implementation/R3 and G4 remain independent and parked.
 
 ## Parked Checkpoints
 
@@ -211,6 +210,9 @@ Rollback only this continuity projection; preserve prior reviews and T2B dispatc
 | Manifest delta | MATCH |
 | Deletion or rename disposition | `AGENT_HANDOFF_V60_2026-09-08.md` moved intact to `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V60_2026-09-08.md` because it reached the 220-line active limit; recoverable through Git and archive path |
 
+## Core Guard Self-Protection Authorization
+Authorized guard-maintenance scope: T2B rejection continuity projection only; no checker mutation. Operator authorization: verify the receipt claim and handle terminal parking in a later tranche, with no same-tranche repair. Rollback boundary: revert only this continuity projection; preserve independent review commit `4bb04c836` and all thirteen untracked evidence paths.
+Protected paths: `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/acelG1T2bCalibrationRootContractIndependentReview20260917.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; frozen unchanged `governance/compat/check_task_class_calibration_owner_evidence.py`; frozen unchanged `governance/compat/test_check_task_class_calibration_owner_evidence.py`.
 ## Claim Boundary
 
 This handoff records bounded G1 T1 offline design closure. It makes no
