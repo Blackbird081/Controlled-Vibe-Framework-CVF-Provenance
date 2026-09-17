@@ -51,6 +51,7 @@ duplicate, supersede, or extend their authority.
 | Reference | Use |
 | --- | --- |
 | `CVF_EXTERNAL_AGENT_INVOCATION_CONTROL_KNOWLEDGE_GAP_AND_SOURCE_ACQUISITION_MAP.md` | Nine-domain authority ledger, terminal gap classification, and bounded source-acquisition manifest for external-agent invocation control. |
+| `CVF_AGENT_ORCHESTRATION_PLATFORM_MCP_DISCUSSION.md` | Pending operator discussion: role/model assignment, CLI lifecycle oversight, CVF Web and platform versus host + MCP options. Recording only; no implementation or moratorium change. |
 
 ## Related Surfaces
 
