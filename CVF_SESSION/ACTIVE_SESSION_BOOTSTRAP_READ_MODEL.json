@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_acel_g1_t2a_architecture_reassessment_parked",
+  "currentMode": "multi_repo_absorption_acel_g1_t2b_root_contract_architecture_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V61_2026-09-16.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2A-ARCHITECTURE-REASSESSMENT-PARKED_AT_3a027fa2e; NEXT_STEP=LOCAL_ARCHITECTURE_REASSESSMENT_DECISION_ONLY; EXPANSION_ALLOWED=false. Use docs/reviews/CVF_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_R2_INDEPENDENT_REVIEW_2026-09-17.md to choose fixture authority, required/supplemental topology, typed canonical serialization and invalidation-event separation. No worker redispatch or successor is open. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live execution, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2B-ROOT-CONTRACT-ARCHITECTURE-DISPATCHED_AT_2863326b8; NEXT_STEP=INTERNAL_AGENT_THREE_OUTPUT_RETURN_ONLY; EXPANSION_ALLOWED=false. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_2026-09-17.md: create exactly three fresh outputs, use no nested subagent/provider call, make no commit, and keep all ten parked paths byte-identical. Local owns independent review and every commit. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live execution, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T2_TASK_CLASS_CALIBRATION_OWNER_IMPLEMENTATION_2026-09-17.md",
-    "baselineSha256": "e1dd9bd830e80327fd728a2f022d72925d1f56dc23e35ca6241dc7fa311ab60b",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2_TASK_CLASS_CALIBRATION_OWNER_IMPLEMENTATION_2026-09-17.md",
-    "workOrderSha256": "4563737b85eed9cd4b55b9a675fc2d896b1bfa19ca1b19fc35e07f1a678426e7"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_2026-09-17.md",
+    "baselineSha256": "9b3ccd8e19df0e69a16eba1536904b303326164022cd42112df3afbb1173f802",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_2026-09-17.md",
+    "workOrderSha256": "758c5a5a36526e606ea00180c3ecd099dde6c6836757b54ea5e509029b287959"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

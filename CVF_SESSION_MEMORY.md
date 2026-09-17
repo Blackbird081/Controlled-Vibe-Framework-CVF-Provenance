@@ -46,13 +46,13 @@ Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2a_architectu
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_acel_g1_t2a_architecture_reassessment_parked`
-Current mode: `multi_repo_absorption_acel_g1_t2a_architecture_reassessment_parked`; previous mode marker: `multi_repo_absorption_acel_g1_t2a_consolidated_r1_rework_required`
+Current mode marker: `multi_repo_absorption_acel_g1_t2b_root_contract_architecture_dispatched`
+Current mode: `multi_repo_absorption_acel_g1_t2b_root_contract_architecture_dispatched`; previous mode marker: `multi_repo_absorption_acel_g1_t2a_architecture_reassessment_parked`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2A-ARCHITECTURE-REASSESSMENT-PARKED_AT_3a027fa2e; NEXT_STEP=LOCAL_ARCHITECTURE_REASSESSMENT_DECISION_ONLY; EXPANSION_ALLOWED=false. Use docs/reviews/CVF_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_R2_INDEPENDENT_REVIEW_2026-09-17.md to choose fixture authority, required/supplemental topology, typed canonical serialization and invalidation-event separation. No worker redispatch or successor is open. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live execution, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_acel_g1_t2a_architecture_reassessment_parked`. Terminal review `3a027fa2e` accepts bounded return evidence but rejects the root contract and parks same-scope rework under `STOP_REASSESS_ARCHITECTURE`. G4 design remains independently parked at `dbb795979`; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2B-ROOT-CONTRACT-ARCHITECTURE-DISPATCHED_AT_2863326b8; NEXT_STEP=INTERNAL_AGENT_THREE_OUTPUT_RETURN_ONLY; EXPANSION_ALLOWED=false. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_2026-09-17.md: create exactly three fresh outputs, use no nested subagent/provider call, make no commit, and keep all ten parked paths byte-identical. Local owns independent review and every commit. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live execution, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_acel_g1_t2b_root_contract_architecture_dispatched`. Fresh T2B dispatch `2863326b8` fixes the four Local architecture choices and authorizes exactly three documentation outputs; T2A remains rejected evidence, not an editable predecessor. G4 design remains independently parked at `dbb795979`; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
