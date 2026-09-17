@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2a_schema_amendment_dispatched`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=INTERNAL_AGENT executes the exact three-path G1 T2A documentation work order; role=Local orchestrator/reviewer; phase=G1 T2A design dispatch; decision owner=Local; parked checkpoint=G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2a_consolidated_r1_rework_required`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=INTERNAL_AGENT repairs the same three G1 T2A outputs under the consolidated R1 review contract; role=Local orchestrator/reviewer; phase=G1 T2A design R1 repair; decision owner=Local; parked checkpoint=G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_acel_g1_t2a_schema_amendment_dispatched`
-Current mode: `multi_repo_absorption_acel_g1_t2a_schema_amendment_dispatched`; previous mode marker: `multi_repo_absorption_acel_g1_t2_r2_rejected_parked`
+Current mode marker: `multi_repo_absorption_acel_g1_t2a_consolidated_r1_rework_required`
+Current mode: `multi_repo_absorption_acel_g1_t2a_consolidated_r1_rework_required`; previous mode marker: `multi_repo_absorption_acel_g1_t2a_schema_amendment_dispatched`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2A-SCHEMA-AMENDMENT-DISPATCHED_AT_d920a6891; NEXT_STEP=INTERNAL_AGENT_EXECUTE_EXACT_THREE_PATH_DOCUMENTATION_ONLY_WORK_ORDER; EXPANSION_ALLOWED=false. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_2026-09-17.md with WORKER_MUST_NOT_COMMIT, zero nested delegation and seven rejected paths frozen byte-identical. Local owns review and closure. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live execution, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_acel_g1_t2a_schema_amendment_dispatched`. Material dispatch `d920a6891` authorizes only three create-only documentation outputs; Local review `0862d3610` remains the rejection authority for the seven frozen R2 paths. G4 design remains independently parked at `dbb795979`; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2A-CONSOLIDATED-R1-REWORK-REQUIRED_AT_994297076; NEXT_STEP=INTERNAL_AGENT_REPAIR_EXACT_SAME_THREE_DOCUMENTATION_OUTPUTS; EXPANSION_ALLOWED=false. Apply the consolidated repair contract in docs/reviews/CVF_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_R1_INDEPENDENT_REVIEW_2026-09-17.md with WORKER_MUST_NOT_COMMIT, zero nested delegation and seven rejected paths frozen byte-identical. Local owns re-review and closure. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live execution, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_acel_g1_t2a_consolidated_r1_rework_required`. Independent review `994297076` accepts tranche integrity and GC-026 topology but requires six repairs in the same three outputs; Local review `0862d3610` remains the rejection authority for the seven frozen R2 paths. G4 design remains independently parked at `dbb795979`; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

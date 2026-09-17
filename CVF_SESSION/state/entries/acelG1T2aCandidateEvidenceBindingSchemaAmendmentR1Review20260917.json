@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2864,
+  "stateKey": "acelG1T2aCandidateEvidenceBindingSchemaAmendmentR1Review20260917",
+  "value": "ACEL-G1-T2A-CANDIDATE-EVIDENCE-BINDING-SCHEMA-AMENDMENT is REVIEW_REWORK_REQUIRED at independent Local review commit 9942970764121fbb6bf37f50fc51758ae133c701. Tranche integrity, exact three-output scope, frozen-path hashes and GC-026 single-source topology are accepted. Consolidated R1 must repair authoritative required-set membership and extra-fixture semantics, executable non-pooling enforcement, complete canonical nested digests, provenance binding for readiness and budget invalidation, human/JSON and SCEC authority parity, and the durable fast-gate receipt. Repair exactly the same three outputs with WORKER_MUST_NOT_COMMIT, zero nested delegation and seven rejected G1 T2 paths frozen byte-identical. Local owns re-review and closure. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, runtime, public sync and deployment remain parked."
+}
