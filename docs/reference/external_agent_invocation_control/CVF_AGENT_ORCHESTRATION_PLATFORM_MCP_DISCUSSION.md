@@ -174,7 +174,7 @@ comparable conditions và acceptance evidence riêng.
 
 | Case ID | Task class and evidence | Controls that worked | Independently found escape | Bounded learning | Claims not established | Roadmap promotion condition |
 | --- | --- | --- | --- | --- | --- | --- |
-| `UC-SEMANTIC-SCHEMA-SELF-ORACLE-01` | G1 T2A documentation-only semantic schema amendment; dispatch `d920a6891`; independent review `994297076`; three worker outputs remain uncommitted pending R1 | Exact three-path manifest, zero delegation, no worker commit, frozen seven-path hash boundary and GC-026 single-source topology held | Six review findings remained after worker-reported green gates: required-set authority/extra-fixture contradiction; non-pooling overclaim; incomplete nested canonical digests; two invalidation inputs not provenance-bound; human/JSON plus review-authority mismatch; incomplete durable fast-gate receipt | A worker can satisfy scope and structural gates while semantic completeness, claim strength and self-review authority remain wrong. For deep schema work, independent review should probe authority source, contradiction pairs, recomputability and who authored the oracle | Không chứng minh Claude kém, model mặc định gây lỗi, model mạnh hơn sẽ tránh lỗi, delegation là nguyên nhân, hoặc six-finding count là escaped-finding rate | Hoàn tất R1 và Local re-review; normalize finding identity/severity/gate set; sau đó cần thêm comparable cases trước khi thay đổi capability tier, model routing hoặc mandatory probe policy |
+| `UC-SEMANTIC-SCHEMA-SELF-ORACLE-01` | G1 T2A documentation-only semantic schema amendment; dispatch `d920a6891`; R1 review `994297076`; terminal R2 review `3a027fa2e`; ten worker/frozen evidence paths remain uncommitted | Exact-path manifest, zero delegation, no worker commit, frozen hashes, GC-026 topology, SCEC correction and non-pooling claim correction held | R1 repair left four material findings: selected required/extras topology not implemented; canonical list/delimiter ambiguity including a concrete receipt collision; accept-time snapshot did not bind later invalidation events; failed required gate was disclosed but terminal label remained COMPLETE | Scope compliance and several corrected claims can coexist with a still-invalid root contract. When blocker count does not decrease, architecture reassessment can be more valuable than another local repair of the same artifacts | Không chứng minh Claude kém, model mặc định gây lỗi, model mạnh hơn sẽ tránh lỗi, delegation là nguyên nhân, hoặc finding count là a model-quality rate | Outcome is `STOP_REASSESS_ARCHITECTURE`; require comparable cases before changing capability tier/model routing, and require a fresh authority/serialization/invalidation architecture before any G1 successor |
 
 Case schema cho các lần bổ sung sau:
 
@@ -186,10 +186,11 @@ Case schema cho các lần bổ sung sau:
 - `promotionThreshold`: bằng chứng bổ sung cần trước khi đổi roadmap/policy;
 - `laterOutcome`: rework có đóng finding không và phát sinh finding mới nào.
 
-`laterOutcome` của case trên hiện là `PENDING_CONSOLIDATED_R1_REVIEW`. Không
-được backfill thành PASS chỉ từ worker return; Local review/closure mới là
-decision evidence. Khi thêm case, giữ cả control thành công lẫn defect để tránh
-chỉ thu thập failure story và làm lệch routing decision.
+`laterOutcome` của case trên là `REVIEW_REJECTED_STOP_REASSESS_ARCHITECTURE`
+tại Local review `3a027fa2e`. Đây không phải model-failure verdict: review giữ
+lại các control/correction đã hoạt động và chỉ bác root-contract authority.
+Khi thêm case, giữ cả control thành công lẫn defect để tránh chỉ thu thập
+failure story và làm lệch routing decision.
 
 ### Candidate Evidence Envelope For Further Discussion
 
@@ -369,7 +370,7 @@ Các nhiệm vụ đang có của CVF vẫn theo authority riêng của chúng.
 ## Epistemic Process Block
 
 - Expected Result / Prediction: một bản ghi có owner links và câu hỏi mở giúp tiếp tục thảo luận qua phiên chat mà không biến đề xuất thành quyền thực thi.
-- Evidence Comparison: operator yêu cầu lưu; các roadmap hiện hữu xác nhận phạm vi parked; MCP specification tách protocol khỏi host orchestration; G1 T2A review `994297076` cung cấp use case đầu tiên nhưng chưa cung cấp model-comparison evidence.
+- Evidence Comparison: operator yêu cầu lưu; các roadmap hiện hữu xác nhận phạm vi parked; MCP specification tách protocol khỏi host orchestration; G1 T2A reviews `994297076` và `3a027fa2e` cung cấp use case đầu tiên nhưng không cung cấp model-comparison evidence.
 - Contradiction or Gap Disposition: nhận định trước rằng cần bắt đầu một cơ chế hoàn toàn mới là quá rộng; đã có EAIC và provider/model assignment owners. Runtime suitability của AICoworker chưa được xác minh.
 - Claim Update: discussion được lưu để tra cứu; chưa có lựa chọn platform, thiết kế được phê duyệt hoặc implementation.
 
