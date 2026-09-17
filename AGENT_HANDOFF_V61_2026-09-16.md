@@ -1,7 +1,7 @@
 # CVF Agent Handoff V61 - G1 T2 Offline Implementation Dispatched
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `985029ee107345f68f3ebcc345a19f869d1e2c9f`. G1 T2 dispatch material commit; parent of this continuity sync.
+Current HEAD recorded for this handoff: `8d54351f35993f04d661bcacd458b31956081295`. Parked orchestration discussion material commit; parent of this continuity sync. G1 T2 remains pending Local review.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -88,6 +88,7 @@ G4 remains independent and parked; no other successor opens automatically.
 
 ## Parked Checkpoints
 
+- Operator discussion recorded on 2026-09-17: `docs/reference/external_agent_invocation_control/CVF_AGENT_ORCHESTRATION_PLATFORM_MCP_DISCUSSION.md`. Resume discussion before any implementation; CVF Web/platform/host/MCP choice and automatic worker/model assignment remain undecided. This pointer does not change the active G1 T2 next move or release CLI/provider/runtime execution.
 - Any G3 successor, real behavioral evaluator execution, package/UAT/certification/index mutation, runtime wiring, T6B, provider/live, credential use, public sync, deployment, or production action.
 - Any implementation inferred directly from an external advisory contract.
 - Any G1 work beyond the exact offline T2 order, including real calibration.
