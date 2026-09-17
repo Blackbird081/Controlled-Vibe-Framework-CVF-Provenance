@@ -1,7 +1,7 @@
 # CVF Agent Handoff V62 - G1 T2C Trust-Anchor Design Selected
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `ea914effffb60d4e096fcf393bd108e26f6c8874`. T2C hypothetical-design dispatch packet commit; parent of this continuity sync. Material design decision remains `1c5c01675`.
+Current HEAD recorded for this handoff: `dd1e5b819e127f8117dc46ac751cb227737d13ed`. T2C dispatch continuity commit; parent of this dedicated handoff-only sync. Material packet release remains `ea914efff`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
