@@ -29,10 +29,11 @@ Việc lưu này không mở implementation, work order thi công, CLI tự đ�
 provider experiment, runtime hoặc gỡ moratorium. Không tự mở successor khi
 G1 T2 hoàn tất. G1 và G4 vẫn là hai audit question độc lập.
 
-Startup anchor: mode `multi_repo_absorption_acel_g1_t2_implementation_dispatched`;
+Startup anchor: mode `multi_repo_absorption_acel_g1_t2_r2_rejected_parked`;
 active handoff `AGENT_HANDOFF_V61_2026-09-16.md`; observed HEAD
-`45e71b8906f146a737bfbc254fe6cb8e27daf047`.
-G1 T2 vẫn có bảy file worker untracked; bản ghi này không review hoặc sửa chúng.
+`ce3973041`.
+G1 T2 có bảy file worker untracked sau khi R2 bị Local từ chối và parked;
+bản ghi này không review, sửa hoặc mở lại chúng.
 
 ## Operator Positions
 
@@ -74,6 +75,76 @@ cho subagent. UI quota, token usage và API dollars là các đơn vị khác nh
 | Một host agent giữ nhiều vai và giao helper | Tách việc có lợi không; context đủ chưa; model/effort nào phù hợp | Assignment, evidence, review/rework effort; helper count không chứng minh hiệu quả hoặc review independence. |
 | Local khởi chạy worker qua CLI/MCP | Admission, phạm vi, giới hạn cộng dồn, stop/retry/fallback authority | Launch identity, tiến độ, usage được cung cấp, kết quả dừng và tác vụ còn chạy; return rejection không hoàn trả quota. |
 | Nhiều agent trên platform chung | Platform có thực thi được quyết định CVF ở đường hành động bắt buộc không | Điểm chặn trước hành động, quyền công cụ/credential, cancellation, evidence export và đường bypass. |
+
+## Claude Subagent Retrospective Intake
+
+Operator cung cấp phản hồi của Claude về cách nó đã tạo subagent trong phiên
+G1 T2. Phản hồi này được intake như `ADVISORY_RETROSPECTIVE`, không phải
+runtime receipt, provider truth, accepted design hoặc policy. Local chỉ giữ
+những quan sát có ích và ghi riêng các điểm chưa được chứng minh.
+
+### Useful Observations Retained
+
+1. Tách một phần việc có khối lượng đọc/kiểm tra độc lập lớn có thể bảo vệ
+   context của parent, nếu deliverable và điểm tích hợp được giới hạn rõ.
+2. Nhiệm vụ giao xuống nên có kết quả kiểm chứng được như test, gate hoặc
+   evidence packet; nhưng kết quả máy chỉ chứng minh điều nó thực sự kiểm tra.
+3. Việc nhỏ, cơ học nhưng chạm logic/rủi ro cao có thể phù hợp để parent tự
+   làm khi chi phí reload context và review worker lớn hơn lợi ích phân công.
+4. Claude tự báo đã để model mặc định cho bốn subagent. Đây là tín hiệu rằng
+   model-selection admission chưa xảy ra trước dispatch, không phải bằng chứng
+   model mặc định gây ra các lỗi semantic.
+5. Claude tự báo một R2 worker tiếp tục spawn child để cắt file và cả hai bị
+   rate-limit, làm parent mất dấu tiến độ. Đây là incident signal cho nhu cầu
+   giới hạn delegation depth, child count, quota và return/cancellation state;
+   chưa đủ để quy toàn bộ quota loss cho nested spawn.
+6. Phân biệt semantic/design work với mechanical trimming là một heuristic
+   hữu ích để hình thành candidate routing. Nó cần đo bằng comparable tasks,
+   review burden và failure outcomes trước khi trở thành policy.
+
+### Claims Not Accepted From The Retrospective
+
+- Không nâng bảng `Opus`/`Sonnet`/`Haiku` thành mapping bắt buộc. Tên model là
+  provider-specific; CVF cần mô tả capability/risk tier trước, adapter mới map
+  sang model hiện có và ghi model thực tế trong receipt.
+- Không coi lời kể "dùng mặc định cả bốn lần" là bằng chứng model identity,
+  effort, token usage hoặc chi phí. Cần tool/runtime receipt nếu claim đó ảnh
+  hưởng admission, cost accounting hoặc đánh giá chất lượng.
+- Không suy rằng model mạnh hơn chắc chắn tránh được lỗi R1/R2. Test xanh vẫn
+  có thể đồng tồn tại với implementation sai khi test fixture đã encode sai
+  semantic; reviewer independence và design-to-code parity vẫn bắt buộc.
+- Không chấp nhận cấm nested subagent vĩnh viễn chỉ từ một incident. Posture
+  an toàn hiện tại có thể là deny-by-default hoặc `maxDelegationDepth=1`, nhưng
+  quyết định cuối phải xét host observability, quota control và cancellation.
+- Không gắn cố định role với model. Một model có thể giữ nhiều role và cùng
+  một role có thể cần model khác nhau theo task class, risk và evidence burden.
+
+### Candidate Evidence Envelope For Further Discussion
+
+Nếu tiếp tục thiết kế, mỗi delegated assignment nên cân nhắc ghi các trường
+sau. Đây là discussion candidate, chưa là schema được chấp nhận:
+
+| Candidate field | Question it must answer |
+| --- | --- |
+| `delegationReason` | Vì sao giao xuống tốt hơn parent tự làm sau khi tính context/review cost? |
+| `roleAndDeliverable` | Child chịu trách nhiệm phần nào và trả artifact/evidence gì? |
+| `taskClassAndRisk` | Công việc semantic, mechanical, research hay execution; hậu quả sai là gì? |
+| `requiredCapabilityTier` | Năng lực/effort tối thiểu theo provider-neutral vocabulary là gì? |
+| `selectedProviderModel` | Model thực tế nào được chọn, bởi ai, dựa trên evidence nào? |
+| `delegationDepthAndChildLimit` | Child có được spawn tiếp không; tối đa bao nhiêu tầng/child? |
+| `timeTokenQuotaCeiling` | Trần nào quan sát và enforce được; unknown usage fail/route thế nào? |
+| `pathToolEffectBoundary` | File, tool, credential, network và external effect nào được phép? |
+| `terminalAndStopCondition` | PASS/BLOCKED/timeout/cancel được xác nhận bằng evidence nào? |
+| `childExecutionReceipt` | Model/effort/usage/timing/child tree/result thực tế nào đã quan sát được? |
+| `parentIntegrationDisposition` | Parent accept, adapt, reject hay require independent review? |
+
+Candidate control sequence để tiếp tục bàn luận:
+
+`task classification -> capability requirement -> candidate selection -> budget admission -> delegation envelope -> bounded execution -> child receipt -> parent integration -> independent review`.
+
+Sequence này không chứng minh mọi bước phải là một service riêng hoặc phải do
+CVF Web/MCP thực hiện. Điểm cần xác minh tiếp là host/provider nào có thể cung
+cấp và enforce từng receipt/control point, và đường bypass nào vẫn tồn tại.
 
 ## MCP And Platform Alternatives
 
