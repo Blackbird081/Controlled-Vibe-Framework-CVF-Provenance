@@ -72,7 +72,7 @@ cho subagent. UI quota, token usage và API dollars là các đơn vị khác nh
 
 | Scenario | What needs a decision | What must be observed before a control claim |
 | --- | --- | --- |
-| Một host agent giữ nhiều vai và giao helper | Tách việc có lợi không; context đủ chưa; model/effort nào phù hợp | Assignment, evidence, review/rework effort; helper count không chứng minh hiệu quả hoặc review independence. |
+| Một host agent giữ nhiều vai và giao helper | Tách việc có lợi không; context đủ chưa; model/effort nào phù hợp | Assignment, evidence, review/rework effort; gate scope phải đối chiếu với worktree scope và worker-owned batch; helper count không chứng minh hiệu quả hoặc review independence. |
 | Local khởi chạy worker qua CLI/MCP | Admission, phạm vi, giới hạn cộng dồn, stop/retry/fallback authority | Launch identity, tiến độ, usage được cung cấp, kết quả dừng và tác vụ còn chạy; return rejection không hoàn trả quota. |
 | Nhiều agent trên platform chung | Platform có thực thi được quyết định CVF ở đường hành động bắt buộc không | Điểm chặn trước hành động, quyền công cụ/credential, cancellation, evidence export và đường bypass. |
 
@@ -89,8 +89,9 @@ những quan sát có ích và ghi riêng các điểm chưa được chứng mi
    context của parent, nếu deliverable và điểm tích hợp được giới hạn rõ.
 2. Nhiệm vụ giao xuống nên có kết quả kiểm chứng được như test, gate hoặc
    evidence packet; nhưng kết quả máy chỉ chứng minh điều nó thực sự kiểm tra.
-3. Việc nhỏ, cơ học nhưng chạm logic/rủi ro cao có thể phù hợp để parent tự
-   làm khi chi phí reload context và review worker lớn hơn lợi ích phân công.
+3. Việc chạm ngưỡng hoặc gate phải đọc luật gate trước khi sửa, bất kể parent
+   hay child thực hiện. Parent tự làm không tự động an toàn hơn; quyết định
+   phân công chỉ xét context/review cost sau khi đã xác định đúng gate law.
 4. Claude tự báo đã để model mặc định cho bốn subagent. Đây là tín hiệu rằng
    model-selection admission chưa xảy ra trước dispatch, không phải bằng chứng
    model mặc định gây ra các lỗi semantic.
@@ -119,6 +120,27 @@ những quan sát có ích và ghi riêng các điểm chưa được chứng mi
 - Không gắn cố định role với model. Một model có thể giữ nhiều role và cùng
   một role có thể cần model khác nhau theo task class, risk và evidence burden.
 
+### Second Retrospective Adjudication
+
+Operator chuyển tiếp phản hồi thứ hai của Claude dưới dạng
+`TEXT_RELAY_NOT_BYTE_STABLE`. Đây vẫn là `ADVISORY_RETROSPECTIVE`; provider
+memory và tự thuật không phải CVF authority hoặc receipt. Local disposition:
+
+| Proposal | Disposition | Reason / adaptation |
+| --- | --- | --- |
+| `deliverableSelfValidationBoundary` | `ADAPT_FOR_DISCUSSION` | Có giá trị nếu khai rõ oracle, fixture helper, acceptance rule hoặc test expectation nào do chính worker tạo và mapping nào tới authority có trước. Không tạo owner mới ở bước này; map vào anti-collusion, Source Verification và independent-review evidence. Tự khai báo vẫn là self-report, không thay independent probe. |
+| finding sống sót qua gate xanh | `ADAPT_FOR_MEASUREMENT_DESIGN` | Dùng escaped-finding count/rate theo task class để phát hiện gate/oracle yếu. Không nhận chuỗi `4 -> 3 -> 4` làm calibration fact trước khi Local đối chiếu finding identity, severity, gate set, review independence và mẫu số. Round count đơn thuần không chứng minh root cause thuộc model, test generator hay schema. |
+| gate scope so với worktree/batch scope | `ACCEPT_FOR_DISCUSSION` | Repo-wide gate có thể báo lỗi ngoài worker-owned delta. Return phải phân loại mỗi failure là `IN_SCOPE`, `PRE_EXISTING_OUT_OF_SCOPE`, `CONCURRENT_OUT_OF_SCOPE` hoặc `UNKNOWN`; worker không được sửa ngoài scope chỉ để làm gate xanh. |
+| parent tự làm mechanical threshold work an toàn hơn | `REJECT_AS_GENERAL_RULE` | Incident file-size cho thấy điều kiện chính là đọc đúng checker và safety margin (`hard - 25` trong trường hợp đã nêu), không phải actor identity. |
+
+Candidate measurement nên tách ít nhất:
+
+`independently confirmed escaped material findings / independently reviewed material findings`
+
+và luôn mang task class, gate-set identity, round, severity, oracle provenance,
+reviewer independence và comparable-condition marker. Nếu mẫu số hoặc review
+độc lập không có, chỉ ghi count quan sát được, không gọi là rate.
+
 ### Candidate Evidence Envelope For Further Discussion
 
 Nếu tiếp tục thiết kế, mỗi delegated assignment nên cân nhắc ghi các trường
@@ -136,6 +158,8 @@ sau. Đây là discussion candidate, chưa là schema được chấp nhận:
 | `pathToolEffectBoundary` | File, tool, credential, network và external effect nào được phép? |
 | `terminalAndStopCondition` | PASS/BLOCKED/timeout/cancel được xác nhận bằng evidence nào? |
 | `childExecutionReceipt` | Model/effort/usage/timing/child tree/result thực tế nào đã quan sát được? |
+| `deliverableSelfValidationBoundary` | Oracle, fixture helper, acceptance rule hoặc test expectation nào do worker tự tạo; mapping nào tới authority có trước và phần nào cần independent probe? |
+| `gateScopeReconciliation` | Gate xét repo/worktree/range nào; failure nào thuộc worker-owned delta, pre-existing, concurrent hay chưa xác định? |
 | `parentIntegrationDisposition` | Parent accept, adapt, reject hay require independent review? |
 
 Candidate control sequence để tiếp tục bàn luận:
@@ -221,7 +245,8 @@ cần pin/version và source verification riêng nếu chuyển sang nghiên c�
 
 1. Operator duyệt envelope nào để orchestrator tự chọn worker/model bên trong?
 2. Khi nào giao việc tạo lợi ích so với một agent thực hiện trực tiếp?
-3. Cần evidence nào để chọn cấu hình theo task class và cập nhật lựa chọn?
+3. Escaped-finding count/rate nào, dưới gate set và comparable conditions nào,
+   đủ để đổi capability tier, review-probe requirement hoặc routing theo task class?
 4. Đơn vị ngân sách nào thực sự đo/giới hạn được cho từng API/subscription/host?
 5. Ai giữ quyền stop; stop tác động đến process tree, remote task và retry thế nào?
 6. Host/platform hiện có cung cấp điểm thực thi bắt buộc nào; bypass nào còn ngoài phạm vi?
