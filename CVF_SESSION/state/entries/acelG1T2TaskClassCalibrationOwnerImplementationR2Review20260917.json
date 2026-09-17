@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2862,
+  "stateKey": "acelG1T2TaskClassCalibrationOwnerImplementationR2Review20260917",
+  "value": "ACEL-G1-T2 R2 is REVIEW_REJECTED_PARKED_REDESIGN_REQUIRED at Local review commit 0862d3610941209558b0e1979db0e9701815a475. Local consumed the returned 88/88 TypeScript and 73/73 Python evidence, then reproduced three acceptance blockers: round-level positive/negative admission can be composed across different candidates instead of proving all required held-out fixtures for the preferred candidate; outer GC-026 promotion identity/time can contradict the hashed inner record; and provenance omits preference-policy plus actual trace/receipt identity. Reviewer-fast passed 68/68 and material pre-commit passed 89/89. The seven worker paths remain uncommitted. No automatic R3; reopening requires a fresh reviewed schema amendment. G4, real calibration, provider/live, configuration mutation, runtime, public sync and deployment remain parked."
+}

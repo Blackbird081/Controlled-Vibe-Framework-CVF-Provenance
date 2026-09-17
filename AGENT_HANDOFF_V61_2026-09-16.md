@@ -1,7 +1,7 @@
-# CVF Agent Handoff V61 - G1 T2 Offline Implementation Dispatched
+# CVF Agent Handoff V61 - G1 T2 R2 Rejected And Parked
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `8d54351f35993f04d661bcacd458b31956081295`. Parked orchestration discussion material commit; parent of this continuity sync. G1 T2 remains pending Local review.
+Current HEAD recorded for this handoff: `0862d3610941209558b0e1979db0e9701815a475`. G1 T2 R2 independent rejection material commit; parent of this continuity sync.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -10,25 +10,23 @@ Status: ACTIVE
 
 ## Purpose
 
-Record G1 T2 pure offline implementation dispatch after independent G1/G4
-design closures. G4 remains parked; the worker has no commit authority.
+Record G1 T2 R2's terminal Local rejection and parked schema-redesign boundary after
+independent G1/G4 design closures. The worker had no commit authority; seven paths remain uncommitted.
 
 ## Scope / Target / Owner Boundary
 
-Target: G1 T1 offline design closure continuity. Owner: Local orchestrator/reviewer. External agents
-remain advisory researchers; INTERNAL_AGENT workers implement only under a
-separate governed work order. No runtime or provider authority is transferred.
+Target: G1 T1 offline design closure continuity. Owner: Local orchestrator/reviewer.
+External agents remain advisory; INTERNAL_AGENT workers require a separate work order.
 
 ## Active Boundary
 
-G1 T1 design is accepted at `d87aadaec`; G1 T2 offline implementation is
-dispatched at `985029ee1`. G4 design is independently parked at `dbb795979`.
-No provider/live, real calibration or runtime work is opened.
+G1 T1 design is accepted at `d87aadaec`; G1 T2 was dispatched at `985029ee1` but R2
+is rejected and parked at `0862d3610`. G4 remains parked; no R3 or live/runtime work is open.
 
 ## Handoff Context
 
 - Repository: private provenance SOT on `main`.
-- Current mode: `multi_repo_absorption_acel_g1_t2_implementation_dispatched`.
+- Current mode: `multi_repo_absorption_acel_g1_t2_r2_rejected_parked`.
 - Prior handoff: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V60_2026-09-08.md`.
 - G3 T2 material closure: `9972a9b720a58fb11bb3500999e6430b1783bd92`.
 - G3 T2 completion: `docs/reviews/CVF_ACEL_G3_T2_BEHAVIORAL_EVALUATION_CONTRACT_IMPLEMENTATION_COMPLETION_2026-09-16.md`.
@@ -39,17 +37,18 @@ No provider/live, real calibration or runtime work is opened.
 - G4 T1 design dispatch: `fb1576aef`; pre-dispatch 82/82 PASS, material hook 89/89 PASS; three create-only worker outputs, no worker commit.
 - G4 T1 design closure: `dbb795979`; eight source hashes, Claude R1 plus one bounded Local repair, reviewer-fast 68/68 and material hook 89/89 PASS. Implementation and experiment remain parked.
 - G1 T2 dispatch: `985029ee1`; pre-dispatch 82/82 and material hook 89/89 PASS; seven create-only offline worker paths; `WORKER_MUST_NOT_COMMIT`.
+- G1 T2 R2 independent review: `0862d3610`; candidate-scoped fixture admission, GC-026 outer/inner equality and provenance binding remain acceptance blockers. Reviewer-fast 68/68 and material hook 89/89 PASS; seven worker paths remain uncommitted. No automatic R3.
 - P4-C1 post-commit observation for `dbb795979` is rejected as unusable: its collector applied pre-closure to the mixed exact-manifest plus protected-current-authority range `9ceec78bc..dbb795979`, which the range-shape guard correctly blocks. Marker SHA-256 `38d679509a00a1a791ef1d747b51a7a4a8a73ef36535d12129f96e91ab71d5fd` is preserved under an ignored adjudicated-marker name. No P4 sample or release proof is promoted; the material 89/89 pre-commit result is a separate fact.
 - Local continuity correction: the front-door Next Allowed Move paragraph retained a G1 `Mode:` line after G4 dispatch. The worker-return gate correctly blocked on session-mode consistency. Local corrects only that stale line; no G4 worker artifact is changed.
 - Latest closed learning-history wave remains `LHW24`.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2_implementation_dispatched`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=INTERNAL_AGENT executes exact G1 T2 offline seven-path order and returns uncommitted evidence; role=Local dispatcher/reviewer; phase=G1 T2 dispatch; decision owner=Local; parked checkpoint=G4 implementation/experiment, real calibration, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2_r2_rejected_parked`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=operator discussion or selection of the next bounded item; role=Local orchestrator/reviewer; phase=G1 T2 R2 terminal review; decision owner=Local; parked checkpoint=G1 schema redesign/R3, G4 implementation/experiment, real calibration, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g1_t2_implementation_dispatched`
+`multi_repo_absorption_acel_g1_t2_r2_rejected_parked`
 
 ## Latest Work / Changes
 
@@ -65,6 +64,7 @@ Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2_implementat
 - Local selected independent G4 `ADAPT` as the next bounded delta and committed a documentation-only GC-018/work-order pair at `fb1576aef`. The worker may create one audit, one JSON manifest and one full return; `WORKER_MUST_NOT_COMMIT`. No measured-value, provider, runtime or G1 implementation claim transfers.
 - Claude returned G4 R1 without commit; Local reconciled all eight hashes, repaired the remaining classification/coverage/value-binding cluster in three output files, accepted a documentation-only design at `dbb795979`, and parked both implementation successors.
 - Local selected and dispatched G1 T2 pure offline seven-path implementation at `985029ee1`; G4 remains parked and no real calibration is authorized.
+- Local rejected and parked the G1 T2 R2 return at `0862d3610` after reproducing candidate-scoped fixture-admission, GC-026 cross-record and provenance binding defects. The seven worker paths remain uncommitted; reopening requires a fresh reviewed schema amendment.
 - P4-C1 post-commit observation for `d87aadaec` was rejected as unusable: its collector invoked pre-closure on the mixed exact-manifest plus protected-current-authority range `ff7a0ed68..d87aadaec`, which the range-shape guard correctly blocks. Marker SHA-256 `bbea4992b9df03a761f2c7a28c71cc228dc8ecdbd613ca530d173f6aa3908040` was preserved under the ignored adjudicated-marker name before the handoff-sync commit. No P4 sample or release proof was promoted; the material 89/89 pre-commit result remains a separate fact.
 - The existing relay and domain-funnel owners now carry
   `cvf.research-assisted-repository-absorption@1.0.0`; no parallel process was created.
@@ -82,13 +82,15 @@ Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2_implementat
 
 ## Next Allowed Move
 
-Within `AGENT-CAPABILITY-ENGINEERING-LAB-2026-09`, the INTERNAL_AGENT may
-execute only the G1 T2 order and return uncommitted evidence for Local review.
-G4 remains independent and parked; no other successor opens automatically.
+Within `AGENT-CAPABILITY-ENGINEERING-LAB-2026-09`, the operator may continue
+the recorded orchestration discussion or select the next bounded item. G1 T2
+R2 is rejected and parked; no INTERNAL_AGENT R3 or other successor opens
+automatically. G4 remains independent and parked.
 
 ## Parked Checkpoints
 
-- Operator discussion recorded on 2026-09-17: `docs/reference/external_agent_invocation_control/CVF_AGENT_ORCHESTRATION_PLATFORM_MCP_DISCUSSION.md`. Resume discussion before any implementation; CVF Web/platform/host/MCP choice and automatic worker/model assignment remain undecided. This pointer does not change the active G1 T2 next move or release CLI/provider/runtime execution.
+- Operator discussion recorded on 2026-09-17: `docs/reference/external_agent_invocation_control/CVF_AGENT_ORCHESTRATION_PLATFORM_MCP_DISCUSSION.md`. It may now resume as discussion only; CVF Web/platform/host/MCP choice and automatic worker/model assignment remain undecided. This pointer does not release implementation, CLI/provider, or runtime execution.
+- G1 T2 schema redesign and any R3. Reopen only through a fresh reviewed design amendment covering candidate-scoped fixture results, GC-026 record equality and complete provenance binding.
 - Any G3 successor, real behavioral evaluator execution, package/UAT/certification/index mutation, runtime wiring, T6B, provider/live, credential use, public sync, deployment, or production action.
 - Any implementation inferred directly from an external advisory contract.
 - Any G1 work beyond the exact offline T2 order, including real calibration.
@@ -96,7 +98,6 @@ G4 remains independent and parked; no other successor opens automatically.
 - Any reconciliation that merges G1 and G4 or treats an external shortlist as the Local coverage boundary.
 - G4 work while the G1 design return is pending review.
 - Any further process expansion or new workflow owner; the profile is closed and parked at `bcf4a65a3`.
-
 ## Core Guard Self-Protection Authorization
 
 Operator authorization: the operator required Local to finish, park, and
@@ -176,14 +177,13 @@ mode/next move, active-program evidence, one closure state entry and generated
 aggregate. Roll back only this continuity projection; preserve material
 closure and the earlier front-door correction.
 
-2026-09-17 G1 T2 dispatch synchronization authorization: record material
-dispatch `985029ee1`, exact current-authority hashes, mode/next move and one
-dispatch state entry. Roll back only this continuity projection; preserve the
-material dispatch. Protected paths are this handoff, front door, bootstrap,
-Core, generated state and the named entry.
+2026-09-17 G1 T2 dispatch and R2 rejection synchronization authorization:
+record dispatch `985029ee1`, rejected review `0862d3610`, parked mode/next move
+and the named state entries. The operator explicitly requested durable commits
+and handling of Claude's return. Worker checker paths remain uncommitted.
 
-Protected paths: `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/acelG1T2TaskClassCalibrationOwnerImplementationDispatch20260917.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`.
-Rollback boundary: revert only this G1 T2 dispatch continuity projection, preserving material commit `985029ee1`.
+Protected paths: `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/acelG1T2TaskClassCalibrationOwnerImplementationDispatch20260917.json`; `CVF_SESSION/state/entries/acelG1T2TaskClassCalibrationOwnerImplementationR2Review20260917.json`; `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION_MEMORY.md`; `governance/compat/check_task_class_calibration_owner_evidence.py`; `governance/compat/test_check_task_class_calibration_owner_evidence.py`.
+Rollback boundary: revert only this continuity projection; preserve `985029ee1` and `0862d3610`.
 
 Additional protected path:
 

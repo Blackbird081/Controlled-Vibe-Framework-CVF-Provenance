@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_acel_g1_t2_implementation_dispatched",
+  "currentMode": "multi_repo_absorption_acel_g1_t2_r2_rejected_parked",
   "activeHandoff": "AGENT_HANDOFF_V61_2026-09-16.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2-TASK-CLASS-CALIBRATION-OWNER-IMPLEMENTATION_DISPATCHED_AT_985029ee1; NEXT_STEP=INTERNAL_AGENT_EXECUTES_EXACT_SEVEN_PATH_OFFLINE_ORDER_AND_RETURNS_UNCOMMITTED_EVIDENCE_FOR_LOCAL_REVIEW; EXPANSION_ALLOWED=false. G1 and G4 remain independent; G4 implementation and experiment are parked. No automatic successor, provider/live execution, real calibration, configuration mutation, Core runtime, package lifecycle, public sync or deployment. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2-R2-REJECTED_AND_PARKED_AT_0862d3610; NEXT_STEP=OPERATOR_DISCUSSION_OR_SELECTION_OF_NEXT_BOUNDED_PROGRAM_ITEM; EXPANSION_ALLOWED=false. Reopening G1 requires a fresh reviewed schema amendment; the seven rejected worker paths remain uncommitted. G4 implementation and experiment remain parked. No automatic R3 or successor, provider/live execution, real calibration, configuration mutation, Core runtime, package lifecycle, public sync or deployment. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
