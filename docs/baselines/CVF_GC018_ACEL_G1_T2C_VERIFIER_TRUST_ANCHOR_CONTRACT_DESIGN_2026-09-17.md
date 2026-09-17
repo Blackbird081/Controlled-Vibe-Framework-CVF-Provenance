@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: HOLD_SOURCE_NOT_FOUND
+Status: APPROVED_FOR_HYPOTHETICAL_DESIGN_ONLY
 
 Date: 2026-09-17
 
@@ -10,15 +10,15 @@ Batch ID: ACEL-G1-T2C-VERIFIER-TRUST-ANCHOR-CONTRACT-DESIGN
 
 Authoring base head: `3796ff4ce85b2343b857be7da5bc69cb9447266f`
 
-Commit mode if later released: `WORKER_MUST_NOT_COMMIT`
+Commit mode: `WORKER_MUST_NOT_COMMIT`
 
 Decision and reviewer owner: Local orchestrator/reviewer
 
-Prospective worker role: one shared-workspace `INTERNAL_AGENT`; no dispatch is authorized by this held baseline.
+Worker role: one shared-workspace `INTERNAL_AGENT`; release is limited to hypothetical documentation under the operator's 2026-09-18 audit-and-dispatch instruction.
 
 ## Purpose
 
-Prepare a separate documentation-only T2C contract-design tranche after the Local architecture decision at `1c5c01675`. T2B remains rejected as a G1 implementation root. The held packet must not convert algorithm selection into a claim that a CVF verifier-key registry, signer or live lookup already exists.
+Prepare a separate documentation-only T2C contract-design tranche after the Local architecture decision at `1c5c01675`. T2B remains rejected as a G1 implementation root. The release does not convert algorithm selection into a claim that a CVF verifier-key registry, signer or live lookup already exists.
 
 ## Architecture Decision
 
@@ -30,14 +30,21 @@ The selected direction is a verifier-controlled Ed25519 signing key, a public-ke
 |---|---|---|---|
 | T2B root-contract rejection | `docs/reviews/CVF_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_INDEPENDENT_REVIEW_2026-09-17.md`, T2B-RV-F1 | New tranche must not repair or accept T2B in place | SATISFIED_FOR_PLANNING_ONLY |
 | Local algorithm/topology choice | T2C Local decision at `1c5c01675` | Design direction selected, no implementation grant | SATISFIED_FOR_PLANNING_ONLY |
-| G1 verifier-key registry authority | Focused Local search below found no source-owned G1 registry, write authority or key lifecycle | A concrete CVF owner and independent trust-source contract must be source-verified before a worker can be told to use an existing registry | BLOCKED_SOURCE_NOT_FOUND |
-| Genuine issuer-registry lookup provenance | T2B documents only postulate an out-of-scope lookup; the Local review rejects self-authored receipts | A source-owned lookup result/provenance interface and decision owner must be verified, or the design must explicitly remain hypothetical and fail closed | BLOCKED_SOURCE_NOT_FOUND |
+| G1 verifier-key registry authority | Focused Local search below found no source-owned G1 registry, write authority or key lifecycle | Worker may define a proposed interface only; existing-owner, operational-key and admission claims remain forbidden | SATISFIED_FOR_HYPOTHETICAL_DESIGN_ONLY |
+| Genuine issuer-registry lookup provenance | T2B documents only postulate an out-of-scope lookup; the Local review rejects self-authored receipts | Worker may define a proposed provenance interface only; all candidate authority remains `UNVERIFIED` without source-owned observation | SATISFIED_FOR_HYPOTHETICAL_DESIGN_ONLY |
 
-The dependency rows block dispatch. A later Local amendment must record new source evidence and rerun pre-dispatch gates; `HOLD_SOURCE_NOT_FOUND` is not a worker instruction.
+The operator's 2026-09-18 audit-and-dispatch instruction releases only hypothetical documentation, not the two missing operational dependencies. Local must still pin the dispatch base and pass pre-dispatch gates before invocation. Any later implementation requires a separate source-backed authority decision.
 
 ## Proposed Tranche
 
-If the missing owners are source-verified or the operator authorizes an explicitly hypothetical contract-only design with no existing-owner claim, one `INTERNAL_AGENT` may author a human trust-anchor contract, matching machine-readable manifest and no-commit return. The worker may define proposed interfaces, not create keys, registry entries, signer wiring, lookup runtime, TypeScript/Python implementation, tests or checker changes. No automatic successor or T2B repair is permitted.
+The operator has authorized an explicitly hypothetical contract-only design with no existing-owner claim. One `INTERNAL_AGENT` may author a human trust-anchor contract, matching machine-readable manifest and no-commit return after pre-dispatch admission. The worker may define proposed interfaces, not create keys, registry entries, signer wiring, lookup runtime, TypeScript/Python implementation, tests or checker changes. No automatic successor or T2B repair is permitted.
+
+## Dual Agent Surface Matrix
+
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
+|---|---|---|---|---|---|
+| `INTERNAL_AGENT` | three hypothetical documentation outputs named in the work order | one worker without commit, key, lookup or implementation authority; Local reviews | operator 2026-09-18 instruction and Local T2C decision | N/A with reason: no external adapter for internal documentation | `CONTRACT_ONLY` |
+| `EXTERNAL_AGENT_CLI_MCP` | no selected G1 external adapter owner | no CLI/MCP execution or public claim | external/local coordination method and this exclusion | `DEFERRED_WITH_REASON`: external adapter design is out of scope | `DEFERRED_WITH_REASON` |
 
 ## Source Verification Block
 
@@ -48,7 +55,7 @@ If the missing owners are source-verified or the operator authorizes an explicit
 | CVF audit manifest HMAC is a separate scope | ADJACENT_PATTERN_ONLY | `docs/reference/CVF_LIVE_EVIDENCE_MANIFEST_AND_RERUN_STANDARD_2026-06-06.md` | Signature Boundary | REJECT |
 | Web service-token HMAC is a separate scope | ADJACENT_PATTERN_ONLY | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/service-token-auth.ts` | `computeServiceRequestSignature` | REJECT |
 | Agent identity token store is a separate scope | ADJACENT_PATTERN_ONLY | `EXTENSIONS/CVF_ECO_v2.3_AGENT_IDENTITY/src/identity.manager.ts` | `IdentityManager.verify` | REJECT |
-| G1 verifier-key registry and lookup provenance | OWNER_CLAIM | `docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_LOCAL_ARCHITECTURE_DECISION_2026-09-17.md` | Negative Search And Collision Discipline; unresolved owner statement | BLOCKED_SOURCE_NOT_FOUND |
+| Existing G1 verifier-key registry and lookup provenance | OWNER_CLAIM | `docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_LOCAL_ARCHITECTURE_DECISION_2026-09-17.md` | Negative Search And Collision Discipline; unresolved owner statement | REJECT |
 | Ed25519 and canonical JSON algorithm references | EXTERNAL_PATTERN_ONLY | `https://www.rfc-editor.org/rfc/rfc8032.html`; `https://www.rfc-editor.org/rfc/rfc8785.html` | RFC 8032 sections 5/7; RFC 8785 JCS | REJECT |
 
 ## Negative Search And Collision Discipline
@@ -84,6 +91,8 @@ Checker-token collision ledger (these occurrences are not G1 owner evidence):
 
 Resolver query: taskClass=`DOC_CHANGE`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`. `python governance/compat/run_adif_defect_resolver.py --task-class DOC_CHANGE --role dispatcher --lifecycle-phase pre-dispatch` returned zero candidates and `NONE_RETURNED` on 2026-09-17. This does not replace source verification.
 
+Returned defects: NONE_RETURNED
+
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
@@ -105,4 +114,4 @@ Reason: private held design packet; no public-sync authority.
 
 ## Claim Boundary
 
-This is authoring evidence only. It does not dispatch a worker, accept T2B, modify thirteen parked paths, create or use keys, run a registry lookup, implement code, invoke providers, publish or deploy.
+This releases only hypothetical contract documentation after a passing pre-dispatch gate. It does not accept T2B, modify thirteen parked paths, create or use keys, run a registry lookup, implement code, invoke providers, publish or deploy.

@@ -4,67 +4,81 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: HOLD_SOURCE_NOT_FOUND
+Status: APPROVED_FOR_EXECUTION
 
 Date: 2026-09-17
 
 Batch ID: ACEL-G1-T2C-VERIFIER-TRUST-ANCHOR-CONTRACT-DESIGN
 
-dispatchBaseHead: NOT_SET_WHILE_HELD
+dispatchBaseHead: 17b3cb0fbc11e8b97b42223b57f0f98f5f2e1273
 
 Authoring base head: `3796ff4ce85b2343b857be7da5bc69cb9447266f`
 
-Commit mode if later released: `WORKER_MUST_NOT_COMMIT`
+Commit mode: `WORKER_MUST_NOT_COMMIT`
 
-Worker role if later released: one shared-workspace `INTERNAL_AGENT`
+Worker role: one shared-workspace `INTERNAL_AGENT`
 
 Reviewer/closer: Local orchestrator/reviewer
 
 ## Dispatch Prompt Envelope
 
-N/A with reason: this packet is `HOLD_SOURCE_NOT_FOUND`, not dispatch-ready. No worker invocation, executionBaseHead or live action is authorized. A future Local amendment must set a real dispatchBaseHead, complete the envelope and rerun pre-dispatch gates before dispatch.
+Role: hypothetical trust-anchor contract designer and evidence producer, not reviewer.
+
+Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_2026-09-17.md`
+
+Commit mode: `WORKER_MUST_NOT_COMMIT`.
+
+executionBaseHead: capture `git rev-parse HEAD` and status before edits.
+
+Current-time notes: 2026-09-18; the operator authorized Local audit and dispatch of this hypothetical-only documentation task.
+
+Do-not-misread notes: no existing G1 key registry or genuine lookup owner was source-verified. Describe proposed interfaces only. No actual keys, registry lookup, runtime or candidate admission.
+
+Required first actions: read startup surfaces, guard orientation, literal gotchas, paired baseline, this work order, named sources and applicable checker sources; verify the thirteen frozen hashes and three output-path absences.
+
+Return contract: create exactly three outputs, run required gates, do not stage or commit, and return `COMPLETE_PENDING_REVIEW` only with passing evidence. Otherwise return `BLOCKED_WITH_REASON`.
 
 ## Purpose
 
-Hold a bounded documentation-only worker contract for verifier-authenticated issuer receipts. The Local architecture decision selects Ed25519 but has not verified a CVF owner for the trusted public-key registry or genuine issuer-registry lookup. This work order cannot be dispatched while those source claims remain blocked.
+Design a bounded hypothetical documentation-only contract for verifier-authenticated issuer receipts. The Local architecture decision selects Ed25519 but has not verified a CVF owner for the trusted public-key registry or genuine issuer-registry lookup. The worker must keep those operational facts absent and admission fail-closed.
 
 ## Authority Chain And Dependency Release Evidence
 
-Operator authorized handling the prior gate; Local selected a design direction at `1c5c01675`; active V62 continuity permits Local GC-018/work-order authoring only. The paired baseline is `docs/baselines/CVF_GC018_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_2026-09-17.md`. T2B review `4bb04c836` remains terminally parked. No operator, Local or worker statement in this chain grants keys, live lookup, implementation or automatic dispatch.
+The operator's 2026-09-18 instruction authorizes Local audit and dispatch after the explicit hypothetical-only design question. Local selected a design direction at `1c5c01675`; V62 previously allowed Local GC-018/work-order authoring only, so this new instruction is the release authority for this bounded worker task. The paired baseline is `docs/baselines/CVF_GC018_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_2026-09-17.md`. T2B review `4bb04c836` remains terminally parked. No statement in this chain grants keys, live lookup, implementation or automatic successor dispatch.
 
 | Dependency | Evidence | Release condition | Current disposition |
 |---|---|---|---|
 | Separate-tranche architecture selection | `docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_LOCAL_ARCHITECTURE_DECISION_2026-09-17.md` | Selected topology only | SATISFIED_FOR_AUTHORING |
-| Trusted G1 verifier public-key registry owner | Paired baseline Source Verification Block and targeted search | Source path, owner, independent trust-root provision, authorized writers, key lifecycle, revocation and historical verification semantics verified by Local | BLOCKED_SOURCE_NOT_FOUND |
-| Genuine lookup provenance owner | T2B-RV-F1 counterexample and paired baseline search | Source-owned registry/snapshot identity, lookup result and provenance interface verified by Local; signature alone cannot satisfy | BLOCKED_SOURCE_NOT_FOUND |
-| Dispatch authority | V62 next move says authoring only | Separate Local release decision, fresh base/status/forbidden-state evidence and pre-dispatch gates | NOT_GRANTED |
+| Trusted G1 verifier public-key registry owner | Paired baseline Source Verification Block and targeted search | Existing owner is rejected; proposed interface only, never an admission source | SATISFIED_FOR_HYPOTHETICAL_DESIGN_ONLY |
+| Genuine lookup provenance owner | T2B-RV-F1 counterexample and paired baseline search | Existing owner is rejected; proposed provenance only and all actual admission remains `UNVERIFIED` | SATISFIED_FOR_HYPOTHETICAL_DESIGN_ONLY |
+| Dispatch authority | Operator's 2026-09-18 audit-and-dispatch instruction | Local release decision, fresh base/status/forbidden-state evidence and passing pre-dispatch gate | ACCEPT_FOR_DOCUMENTATION_ONLY |
 
 ## Intake Role Routing Decision
 
 | Field | Decision |
 |---|---|
-| intake summary | prospective documentation-only G1 trust-anchor contract |
-| scope classification | held design packet with missing owner sources |
+| intake summary | documentation-only hypothetical G1 trust-anchor contract |
+| scope classification | hypothetical design only, no operational owner claim |
 | risk sensitivity | high: authentication and issuer admission; no key handling now |
-| selected route mode | `SINGLE_AGENT_MULTI_ROLE` only if later released: one worker designs and self-checks; Local independently reviews/closes |
+| selected route mode | `SINGLE_AGENT_MULTI_ROLE`: one worker designs and self-checks; Local independently reviews/closes |
 | role separation basis | worker cannot commit or accept own contract; Local owns source admission and final disposition |
 | escalation condition | source owner absent/contradictory, key or live action needed, or any T2B same-tranche repair |
 
 ## Roles, Write Ownership And Scope
 
-Local is dispatch author, source-verification owner and independent reviewer. A later worker may write only the three planned outputs below after this hold is formally released. The worker must not edit or claim acceptance of the 13 parked G1 evidence paths. No nested delegation, provider call, network lookup, key generation/import, credential access, TypeScript/Python runtime implementation, checker/test mutation, configuration change, public sync or deployment is in scope.
+Local is dispatch author, source-verification owner and independent reviewer. The worker may write only the three required outputs below. The worker must not edit or claim acceptance of the 13 parked G1 evidence paths. No nested delegation, network lookup, key generation/import, credential access, TypeScript/Python runtime implementation, checker/test mutation, configuration change, public sync or deployment is in scope. The worker's Claude invocation is the explicitly authorized internal execution surface, not a grant to call another provider from the task.
 
 ## Required First Reads
 
-While held, Local reads the active bootstrap/front door/handoff, paired baseline, Local T2C decision, T2B independent review, the work-order template, guard orientation and applicable checker sources. A future worker must repeat those reads against the then-current authority and source-verification rows before any writing.
+The worker reads the active bootstrap/front door/handoff, paired baseline, Local T2C decision, T2B independent review, the work-order template, guard orientation and applicable checker sources before writing. Provider memory is `NOT_CVF_SOURCE`.
 
 ## Pre-Flight Checks
 
-Current pre-flight result: `HOLD_SOURCE_NOT_FOUND`; zero worker invocations and zero live calls. Future dispatch requires a clean bounded source/owner finding, fresh HEAD/status, exact three-output path absence, 13-path hash reconciliation, actual forbidden filesystem state, ADIF resolver refresh and pre-dispatch gate. A gate pass cannot substitute for an absent owner.
+Pre-flight requires fresh HEAD/status, exact three-output path absence, 13-path hash reconciliation, actual forbidden filesystem state, ADIF resolver refresh and pre-dispatch gate. A gate pass does not establish an operational owner; the work is hypothetical documentation only.
 
 ## Write Ownership
 
-Current Local write ownership is this paired held baseline/work order only. The prospective worker write ownership is the exact three Planned Required Artifact Manifest paths, conditional on a later release. All existing G1 evidence, source, tests, checkers, continuity and secret stores are read-only.
+Worker write ownership is exactly the three Required Artifact Manifest paths. All existing G1 evidence, source, tests, checkers, continuity and secret stores are read-only. Local owns review, commits and handoff.
 
 ## Proposed Design Requirements If Released
 
@@ -72,22 +86,34 @@ Current Local write ownership is this paired held baseline/work order only. The 
 2. Separate three predicates: canonical/content integrity; verifier signature under a CVF-trusted key with role/validity/revocation checks; and genuine lookup provenance from a source-owned registry observation. A passing signature without the third predicate remains `UNVERIFIED` and inadmissible.
 3. Specify exact TypeScript decision-time and Python persisted-evidence verification ownership. Both must independently recompute the same preimage and fail closed on unknown/revoked/expired/ambiguous keys, malformed encodings, wrong domain/round/authority/snapshot, time ordering, stale/forked provenance and missing trust material.
 4. Include positive and adversarial vectors: self-authored receipt with a correct SHA-256 but no signature; signature under receipt-supplied key; valid signature under revoked/wrong-role key; modified `keyId`/alias; true signature with fabricated or mismatched lookup; stale/forked snapshot; cross-round replay; invalid canonicalization; and unavailable trust registry. State expected `UNVERIFIED`/admission denial for each negative case.
-5. Define key custody, rotation, revocation, historical validation and registry snapshot provenance only to the extent source-verified. If owner/source evidence cannot be established, mark the contract hypothetical and return `BLOCKED_SOURCE_NOT_FOUND`; do not manufacture a registry or sign test receipts with operational keys.
+5. Define proposed key custody, rotation, revocation, historical validation and registry snapshot provenance as explicitly hypothetical interfaces. Record existing-owner evidence as absent; do not manufacture a registry or sign test receipts with operational keys. Do not return a positive admission outcome for a hypothetical receipt.
 6. Reconcile the T2B human/JSON contract and all thirteen parked paths as rejected or deferred evidence, never as accepted implementation. No automatic G1 implementation successor is permitted.
 
 ## Execution Plan
 
-N/A with reason: no execution is authorized in the present HOLD state. If released by a separate Local amendment, the worker sequence is source/frozen-hash capture, design of human and JSON contracts, self-consistency and adversarial-vector checks, worker-return evidence, then stop without commit for Local review. It never includes live lookup or key creation.
+The worker sequence is source/frozen-hash capture, design of human and JSON hypothetical contracts, self-consistency and adversarial-vector checks, worker-return evidence, then stop without commit for Local review. It never includes live lookup or key creation.
 
-## Planned Required Artifact Manifest
+## Required Artifact Manifest
 
-| Path | Planned action only after release |
+| Path | Required action |
 |---|---|
 | `docs/audits/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_2026-09-17.md` | human trust-anchor contract, owner ledger and adversarial matrix |
 | `docs/audits/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_MANIFEST_2026-09-17.json` | matching machine-readable schema, predicates, source and vector ledger |
 | `docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_WORKER_RETURN_2026-09-17.md` | no-commit source/gate/frozen-hash evidence and terminal return |
 
-No planned output path is yet owned by a worker. All returned artifacts must remain uncommitted until independent Local review. A future release amendment must check these three paths are absent and record actual filesystem state of every forbidden path before dispatch.
+All returned artifacts must remain uncommitted until independent Local review. Local checks these three paths are absent and records actual filesystem state of every forbidden path before dispatch.
+
+## Forbidden Filesystem State At Dispatch
+
+| Path family | Expected state | Actual state at Local 2026-09-18 audit | Worker action |
+|---|---|---|---|
+| three Required Artifact Manifest paths | ABSENT | ABSENT, each checked with `Test-Path -LiteralPath` | create only these outputs |
+| thirteen frozen G1 evidence paths | PRESENT_READ_ONLY | PRESENT; 13/13 SHA-256 matched the Parked Evidence Freeze ledger | read and rehash; never edit, stage or commit |
+| all other repository paths | NO_WORKER_WRITE | existing tracked/untracked state is not worker-owned | do not alter |
+
+## Work-Order Fulfillment Manifest
+
+Required artifacts are exactly the three Required Artifact Manifest paths. Forbidden mutations are the thirteen frozen paths, all existing tracked files, staging, commits, credentials, runtime/configuration and any fourth worker output. Required proof literals: `executionBaseHead`, start/end `git status --short`, 13/13 hash reconciliation, human/JSON parity, negative matrix, worker-return fast gate, no-commit statement and `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
 
 ## Parked Evidence Freeze
 
@@ -99,12 +125,12 @@ The ten exact paths and expected SHA-256 values in `docs/work_orders/CVF_AGENT_W
 |---|---|---|---|---|
 | Local-selected Ed25519 direction | DESIGN_AUTHORITY | `docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_LOCAL_ARCHITECTURE_DECISION_2026-09-17.md` | Local Architecture Decision | ACCEPT |
 | T2B public-hash receipt forgery | REJECTION_AUTHORITY | `docs/reviews/CVF_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_INDEPENDENT_REVIEW_2026-09-17.md` | T2B-RV-F1 | ACCEPT |
-| Existing G1 verifier key and lookup owners | OWNER_CLAIM | `docs/baselines/CVF_GC018_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_2026-09-17.md` | Source Verification and Negative Search sections | BLOCKED_SOURCE_NOT_FOUND |
+| Existing G1 verifier key and lookup owners | OWNER_CLAIM | `docs/baselines/CVF_GC018_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_2026-09-17.md` | Source Verification and Negative Search sections | REJECT |
 | HMAC live manifest and Web service token as G1 owner | ADJACENT_PATTERN | `docs/reference/CVF_LIVE_EVIDENCE_MANIFEST_AND_RERUN_STANDARD_2026-06-06.md`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/service-token-auth.ts` | Signature Boundary; `computeServiceRequestSignature` | REJECT |
 
 ## Negative Search And Collision Discipline
 
-Search roots: `docs`, `governance`, `EXTENSIONS`, `ECOSYSTEM`, and targeted `CVF_SESSION` pointers. Exact search command and source/tests/docs/JSON coverage are in the paired baseline; the same query was executed before this held work order was authored. Same-token collision disposition: rejected T2B receipt/status declarations and adjacent HMAC/token mechanisms do not constitute a G1 trust registry or genuine lookup owner. The three planned worker-output paths were not created in this authoring step. This is a bounded negative owner search, not complete-corpus absence proof.
+Search roots: `docs`, `governance`, `EXTENSIONS`, `ECOSYSTEM`, and targeted `CVF_SESSION` pointers. Exact search command and source/tests/docs/JSON coverage are in the paired baseline; the same query was executed before the original held packet was authored and reconfirmed on 2026-09-18. Same-token collision disposition: rejected T2B receipt/status declarations and adjacent HMAC/token mechanisms do not constitute a G1 trust registry or genuine lookup owner. The three worker-output paths did not exist at Local release audit. This is a bounded negative owner search, not complete-corpus absence proof.
 
 Checker-token collision ledger (each occurrence is non-authoritative for G1):
 
@@ -144,7 +170,7 @@ preExecutionReviewTrigger: NONE
 nextRoutineReviewBoundary: WORKER_RETURN
 reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 
-These are initial-dispatch protocol fields only. `INITIAL_DISPATCH` does not override `HOLD_SOURCE_NOT_FOUND` or authorize invocation; dependency release and a later Local dispatch decision are still required.
+This initial dispatch is limited to hypothetical documentation. It does not release missing operational dependencies.
 
 ## Semantic Convergence Outcome
 
@@ -152,47 +178,126 @@ These are initial-dispatch protocol fields only. `INITIAL_DISPATCH` does not ove
 {"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"acel-g1-t2c-verifier-trust-anchor-contract-design","chainMode":"INITIAL","chainOrdinal":0,"predecessor":null,"blockerDelta":{"prior":[],"resolved":[],"retained":[],"new":["g1_verifier_key_owner_not_source_verified","g1_issuer_lookup_provenance_not_source_verified"],"reopened":[],"current":["g1_verifier_key_owner_not_source_verified","g1_issuer_lookup_provenance_not_source_verified"]},"resolutionEvidence":{},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":0,"nonDecreasingBlockerTransitions":0},"claims":[],"requiredDisposition":"ROOT_CONTRACT_REQUIRED","successorScope":"INTEGRATED_ROOT_CONTRACT"}
 ```
 
-This is a held initial problem, not a successor that resolves T2B's stopped chain. No blocker is resolved by this documentation packet.
+This is a separate initial design problem, not a successor that resolves T2B's stopped chain. No operational blocker is resolved by this hypothetical documentation packet.
 
 providerExecutionAuthority: FORBIDDEN
 
+## Task Governance Routing Manifest
+
+```json
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"ACEL-G1-T2C-VERIFIER-TRUST-ANCHOR-CONTRACT-DESIGN","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"DOC_CHANGE","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"BOUNDED_CLUSTER","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["docs/audits/","docs/reviews/","docs/baselines/","docs/work_orders/","docs/reference/agent_system_skills/","EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/","governance/compat/"],"claims":["hypothetical G1 T2C contract design only; no existing key or lookup owner"],"requiredProof":["thirteen-path frozen hash reconciliation","three-output path isolation","human/JSON parity","non-operational canonicalization vectors","adversarial negative matrix","worker-return fast gate","Local review"],"operatorCheckpoints":["operational key","genuine lookup","G1 implementation","real calibration","provider/live","runtime","public sync","deployment"],"forbiddenEffects":["edit parked evidence","downstream provider call","network lookup","credential access","configuration mutation","worker commit","nested subagent","automatic successor"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_LOCAL_ARCHITECTURE_DECISION_2026-09-17.md","completenessClaimChanged":false}}
+```
+
+## Dual Agent Surface Matrix
+
+| Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
+|---|---|---|---|---|---|
+| `INTERNAL_AGENT` | exact three documentation outputs in Required Artifact Manifest | one shared-workspace worker, no commit, keys, lookup or implementation; Local independently reviews | operator 2026-09-18 instruction, paired baseline, Local design decision | N/A with reason: internal document-only work has no external adapter | `CONTRACT_ONLY` |
+| `EXTERNAL_AGENT_CLI_MCP` | no selected external adapter owner | no remote execution, ingress, credentials, mutation or public claim | external/local coordination method and this explicit exclusion | `DEFERRED_WITH_REASON`: adapter is outside this G1 design packet | `DEFERRED_WITH_REASON` |
+
+## Gate-To-Role Closeability Contract
+
+closeabilityContractVersion: cvf.gate-role-closeability@1.0.0
+
+closeabilityDisposition: CLOSEABLE
+
+implementationTopologyPolicy: EXACT_PATHS_WITH_NO_FORESEEABLE_SPLIT
+
+foreseeableFileSplitDisposition: NOT_REQUIRED_UNDER_SIZE_BUDGET
+
+returnTimeRecheck: REQUIRED_BEFORE_REPAIR
+
+| gateId | mustPassBy | repairOwner | repairPhase | mutationSurface | topology | commitOwner | commitPhase | dependsOn |
+|---|---|---|---|---|---|---|---|---|
+| authorization_review | PRE_DISPATCH | dispatcher | PRE_DISPATCH | paired baseline and work order | EXACT_PATHS | closer | DISPATCH_COMMIT | NONE |
+| pre_dispatch_gate | PRE_DISPATCH | dispatcher | PRE_DISPATCH | paired baseline and work order | EXACT_PATHS | closer | DISPATCH_COMMIT | authorization_review |
+| dispatch_continuity | IMPLEMENTATION | session-sync-steward | IMPLEMENTATION | `AGENT_HANDOFF_V62_2026-09-17.md` material-SHA marker | EXACT_PATHS | session-sync-steward | DISPATCH_CONTINUITY_COMMIT | pre_dispatch_gate |
+| focused_checker_tests | WORKER_RETURN | worker | IMPLEMENTATION | exact three outputs | EXACT_PATHS | closer | MATERIAL_COMMIT | dispatch_continuity |
+| source_reconciliation | WORKER_RETURN | worker | IMPLEMENTATION | exact three outputs | EXACT_PATHS | closer | MATERIAL_COMMIT | focused_checker_tests |
+| frozen_input_integrity | WORKER_RETURN | worker | IMPLEMENTATION | read-only thirteen-path ledger | NO_MUTATION | closer | MATERIAL_COMMIT | source_reconciliation |
+| pre_implementation_autorun | WORKER_RETURN | worker | IMPLEMENTATION | exact three outputs | EXACT_PATHS | closer | MATERIAL_COMMIT | frozen_input_integrity |
+| worker_return_fast | REVIEW | worker | WORKER_RETURN | exact three outputs | EXACT_PATHS | closer | MATERIAL_COMMIT | pre_implementation_autorun |
+| adif_integrity | WORKER_RETURN | worker | IMPLEMENTATION | worker-return ADIF disclosure | EXACT_PATHS | closer | MATERIAL_COMMIT | focused_checker_tests |
+| reviewer_fast | PRE_MATERIAL_COMMIT | reviewer | REVIEW | worker outputs and optional completion review | BOUNDED_PATH_FAMILY | closer | MATERIAL_COMMIT | adif_integrity |
+| pre_commit | PRE_MATERIAL_COMMIT | reviewer | REVIEW | accepted material | BOUNDED_PATH_FAMILY | closer | MATERIAL_COMMIT | reviewer_fast |
+| terminal_completion_review | PRE_MATERIAL_COMMIT | reviewer | REVIEW | Local completion disposition | EXACT_PATHS | closer | MATERIAL_COMMIT | pre_commit |
+| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | authorized continuity paths | BOUNDED_PATH_FAMILY | session-sync-steward | CONTINUITY_COMMIT | terminal_completion_review |
+| committed_range_closure | POST_MATERIAL_CLOSURE | reviewer | POST_MATERIAL | split committed ranges | BOUNDED_PATH_FAMILY | closer | CORRECTIVE_MATERIAL_COMMIT | continuity |
+
 ## Worker Autonomy / No-Question Rule
 
-N/A with reason: there is no worker authority while held. If released, the worker may repair only the three planned documentation outputs, must return on missing source authority or any forbidden expansion, and must never ask Local to re-create its in-scope design work.
+The worker may repair only the three documentation outputs without routine operator questions. Return on contradictory source authority, frozen drift, failing gate outside write scope or any forbidden expansion. Do not ask Local to re-create in-scope design work.
 
 ## Agent Handoff Contract Control Block
 
 | Field | Held disposition |
 |---|---|
-| route | `SINGLE_AGENT_MULTI_ROLE` prospective, not activated |
+| route | `SINGLE_AGENT_MULTI_ROLE` |
 | rolePattern | one internal design worker; independent Local reviewer |
-| phase | authoring hold only; no execution phase opened |
-| baseHeadFor(phase) | authoring base `3796ff4ce85b2343b857be7da5bc69cb9447266f`; dispatchBaseHead and executionBaseHead unset while held |
+| phase | dispatch -> hypothetical design -> Local review -> optional continuity |
+| baseHeadFor(phase) | dispatchBaseHead=`17b3cb0fbc11e8b97b42223b57f0f98f5f2e1273`; executionBaseHead=worker captures |
 | closureBaseHead | unset; Local reviewer must set only after an authorized worker return |
-| changedSetScope(phase) | paired baseline/work order only now; exact three planned outputs after a separate release |
-| traceScope(phase, actor) | Local authoring evidence now; future worker must capture HEAD/status, source and frozen hashes |
+| changedSetScope(phase) | exact three worker outputs only |
+| traceScope(phase, actor) | worker captures start/end HEAD/status, source and frozen hashes; Local captures review evidence |
 | commitOwner(phase) | Local only |
 | crossBatchIsolation | 13 G1 paths frozen; unrelated worktree paths not acquired |
-| nextMoveSurfaces | V62 continuity remains authoring-only until Local release decision |
+| nextMoveSurfaces | Local updates active handoff/state after disposition; operator release is documentation-only |
 
 Handoff contract authority: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`.
 
+Before status evidence: tracked worktree clean at dispatch base `17b3cb0fb`; thirteen named frozen untracked paths were present, all thirteen hashes matched, staging empty, and the three future worker paths were absent.
+
+sharedWorktreeCoordinationMode: EXPLICIT_LANE_HANDOFF
+
+activeLaneOwner: INTERNAL_AGENT design worker after dispatch
+
+laneOwnedPaths: exact three Required Artifact Manifest paths
+
+dispatcherMutationBoundary: NO_MUTATION_WHILE_LANE_ACTIVE
+
+laneReleaseEvidence: worker return, empty staging, exact worker delta and byte-identical thirteen-path hash reconciliation
+
 ## Foundation Storage Layout Block
 
-N/A with reason: this held work order creates no foundation file and authorizes no split, move, or rename under `docs/reference/`. The three prospective worker outputs are limited to `docs/audits/` and `docs/reviews/`; the paired baseline and work order remain in their existing governed families.
+N/A with reason: this work order creates no foundation file and authorizes no split, move, or rename under `docs/reference/`. The three worker outputs are limited to `docs/audits/` and `docs/reviews/`; the paired baseline and work order remain in their existing governed families.
 
 ## Reviewer Closure Conversion
 
 | Field | Held disposition |
 |---|---|
-| completionReviewPath | `docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_COMPLETION_2026-09-17.md` only if later reviewer acceptance requires it |
-| reviewerOwnedClosurePaths | future worker outputs, completion disposition and separate continuity after review |
+| completionReviewPath | `docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_COMPLETION_2026-09-17.md` only if reviewer acceptance requires it |
+| reviewerOwnedClosurePaths | worker outputs, completion disposition and separate continuity after review |
 | closureOwner | Local orchestrator/reviewer |
 | workerCommitPermission | FORBIDDEN |
 
+## Worker Return Packet Shape Contract
+
+workerReturnPath: `docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_WORKER_RETURN_2026-09-17.md`
+
+contractProfile: `WORKER_RETURN_FULL_GATE_V1`
+
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
+
+individualCheckerSubstitution: FORBIDDEN
+
+Required sections: Purpose; Scope / Methodology; Findings / Position; source and thirteen-path frozen hash reconciliation; human/JSON parity; adversarial self-check; Risk / Corrective Action; Semantic Convergence Outcome; Return-Time Closeability Recheck; Checker Source Read-Ahead Block; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; Epistemic Process Block; Claim Boundary; command evidence; `git status --short`; no-commit/no-subagent statement. Conditional non-applicable sections must state N/A with reason.
+
+## Verification Commands
+
+```powershell
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
+python governance/compat/run_worker_return_fast_gate.py
+python -m json.tool docs/audits/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_MANIFEST_2026-09-17.json
+git diff --check
+git status --short
+git diff --cached --name-only
+```
+
 ## ADIF Defect Registry Disclosure
 
-Resolver query: taskClass=`DOC_CHANGE`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`. `python governance/compat/run_adif_defect_resolver.py --task-class DOC_CHANGE --role dispatcher --lifecycle-phase pre-dispatch` returned zero candidates and `NONE_RETURNED`. Rerun before any later dispatch.
+Resolver query: taskClass=`DOC_CHANGE`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`. `python governance/compat/run_adif_defect_resolver.py --task-class DOC_CHANGE --role dispatcher --lifecycle-phase pre-dispatch` returned zero candidates and `NONE_RETURNED` on initial authoring. Local reruns before dispatch.
+
+Returned defects: NONE_RETURNED
 
 ## Checker Source Read-Ahead Block
 
@@ -205,11 +310,11 @@ Resolver query: taskClass=`DOC_CHANGE`, role=`dispatcher`, lifecyclePhase=`pre-d
 
 ## Verification And Release Gate
 
-Current verification is Markdown/JSON/continuity and reviewer-fast only; no worker or live proof. Before release, Local must: (1) replace both `BLOCKED_SOURCE_NOT_FOUND` dependency rows with source-backed owners or explicitly authorize a hypothetical-only design without existing-owner claims; (2) pin a fresh dispatchBaseHead and actual forbidden filesystem state; (3) complete the dispatch prompt, SCEC, gate-to-role closeability, task-governance manifest and exact planned output proof; (4) run the pre-dispatch autorun gate. Until then terminal disposition is HOLD, not `DISPATCH_READY`.
+The operator has authorized a hypothetical-only design without existing-owner claims. Local must pin actual forbidden filesystem state, reconcile frozen hashes and run the pre-dispatch autorun gate. A passing gate releases only the three documentation outputs. Any implementation, operational key, genuine lookup or candidate admission remains parked.
 
 ## Evidence Requirements
 
-The held packet requires exact source paths/locators, negative-search collisions, 13-path unchanged hashes, intended output topology and guard results. A released worker return would additionally require `executionBaseHead`, actual `git status --short`, human/JSON parity, published canonical preimage/signature vectors using non-operational test material, full negative matrix and secret-safe command evidence. No actual verifier receipt or lookup claim may be fabricated.
+The worker return requires exact source paths/locators, negative-search collisions, 13-path unchanged hashes, output topology, `executionBaseHead`, actual `git status --short`, human/JSON parity, published canonical preimage/signature vectors using non-operational test material, full negative matrix and secret-safe command evidence. No actual verifier receipt or lookup claim may be fabricated.
 
 ## Acceptance Criteria
 
@@ -223,22 +328,23 @@ These are future design-review criteria, not a current completion checklist.
 
 ## Review Gate
 
-Current gate is authoring-only reviewer-fast/pre-commit for a held packet. A future released worker must run `python governance/compat/run_worker_return_fast_gate.py`; Local independently evaluates returned evidence without recreating the implementation, then applies reviewer-fast and pre-commit. Passing these gates checks declared structure only; genuine lookup remains unestablished and needs separate source-owned observation evidence.
+The worker must run `python governance/compat/run_worker_return_fast_gate.py`; Local independently evaluates returned evidence without recreating the design, then applies reviewer-fast and pre-commit. Passing these gates checks declared structure only; genuine lookup remains unestablished and needs separate source-owned observation evidence.
 
 ## Closure Checklist
 
 - [x] Local architecture direction and T2B rejection are source-linked.
-- [x] Missing key/lookup owner is recorded as a dispatch hold.
+- [x] Missing key/lookup owner remains an operational hold; hypothetical design alone is released.
 - [x] Thirteen parked paths are excluded from write ownership.
-- [ ] Dispatch dependency release, worker return, independent review and committed-range closure: not attempted while held.
+- [x] Operator released hypothetical documentation only; operational dependencies remain absent.
+- [ ] Worker return, independent review and committed-range closure.
 
 ## Return-To-Orchestrator Conditions
 
-No worker has been invoked. If later released, return `BLOCKED_WITH_REASON` for missing/contradictory source owner, unverifiable lookup provenance, frozen-path drift or any key/live/implementation request. Return `COMPLETE_PENDING_REVIEW` only for the exact documentation outputs with evidence and no worker commit.
+Return `BLOCKED_WITH_REASON` for contradictory source owner, frozen-path drift, required operational key/live/implementation work or an unrepairable gate. Missing existing owner or lookup provenance is an expected premise of the hypothetical design, not a worker failure; never turn it into a positive candidate-admission claim. Return `COMPLETE_PENDING_REVIEW` only for the exact documentation outputs with evidence and no worker commit.
 
 ## Operator Checkpoint
 
-No operator key/secret or live-use choice is requested by this held packet. Before any key creation, signer wiring, genuine registry lookup or implementation, a separate operator-governed authority is mandatory. A hypothetical design-only release also requires an explicit Local scope decision that it is not evidence of an existing CVF owner.
+The operator's 2026-09-18 audit-and-dispatch instruction releases hypothetical design only. Before any key creation, signer wiring, genuine registry lookup or implementation, a separate operator-governed authority is mandatory. Local confirms this packet is not evidence of an existing CVF owner.
 
 ## Agent Operation Trace Block
 
@@ -251,10 +357,10 @@ No operator key/secret or live-use choice is requested by this held packet. Befo
 | Command or tool surface | current continuity/source reads, targeted `rg`, scaffold stdout, apply_patch, gates |
 | Target paths | paired held baseline and work order only |
 | Allowed scope source | V62 next allowed move: Local documentation-only GC-018/work-order authoring |
-| Before status evidence | HEAD `3796ff4ce`; 13 frozen untracked evidence paths; staging empty |
-| After status evidence | two held authoring paths only, no worker output created |
+| Before status evidence | tracked clean worktree at dispatchBaseHead `17b3cb0fb`; 13 frozen untracked evidence paths; staging empty; three worker output paths absent |
+| After status evidence | paired dispatch amendment paths only, no worker output created |
 | Diff evidence | exact paired-document changed set |
-| Approval boundary | Local authoring, not worker invocation |
+| Approval boundary | operator-authorized hypothetical design dispatch, subject to pre-dispatch gate |
 | Claim boundary | no key, lookup, implementation, provider/live, runtime, public or deployment |
 | Agent type | Local dispatch author |
 | Invocation ID | `acel-g1-t2c-held-contract-packet-authoring-20260917` |
@@ -262,6 +368,19 @@ No operator key/secret or live-use choice is requested by this held packet. Befo
 | Actual changed set | paired held baseline and work order |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | none |
+
+## Delta Execution Claim Boundary Control Block
+
+| Field | Value |
+|---|---|
+| claimScope | hypothetical dispatch documentation only |
+| claimDisposition | CLAIM_REJECTED: no implemented execution-control or issuer-verification capability claimed |
+| receiptEvidence | CLAIM_REJECTED_NO_RECEIPT: no runtime/provider receipt created |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: Local source audit and bounded dispatch authoring only |
+| invocationBoundary | one internal documentation worker only after pre-dispatch admission |
+| interceptionBoundary | no OS/IDE/provider/CLI/MCP interception claim |
+| claimLanguage | proposed trust-anchor contract only, with no existing owner assertion |
+| forbiddenExpansion | keys, lookup, G1 implementation, live, runtime, public sync and deployment |
 
 ## Public Export Disposition
 
@@ -271,4 +390,4 @@ Reason: private held authoring packet; no public-sync authority.
 
 ## Claim Boundary
 
-This packet is not executable. It grants no worker dispatch, G1 implementation, issuer authority, key creation/use, live registry lookup, provider call, public export or deployment. T2B and the thirteen parked paths remain unaccepted evidence.
+This packet authorizes exactly one internal hypothetical-documentation worker dispatch after passing pre-dispatch admission. It grants no G1 implementation, issuer authority, key creation/use, live registry lookup, downstream provider call, public export or deployment. T2B and the thirteen parked paths remain unaccepted evidence.
