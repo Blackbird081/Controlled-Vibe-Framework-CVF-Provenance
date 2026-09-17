@@ -165,6 +165,32 @@ và luôn mang task class, gate-set identity, round, severity, oracle provenance
 reviewer independence và comparable-condition marker. Nếu mẫu số hoặc review
 độc lập không có, chỉ ghi count quan sát được, không gọi là rate.
 
+### Accumulating Use-Case Ledger
+
+Mục này tích lũy case evidence để roadmap sau có nhiều tình huống thực tế hơn.
+Mỗi row là một quan sát bounded, không tự trở thành model-ranking result,
+routing policy hoặc architectural requirement. Chỉ promotion khi có owner,
+comparable conditions và acceptance evidence riêng.
+
+| Case ID | Task class and evidence | Controls that worked | Independently found escape | Bounded learning | Claims not established | Roadmap promotion condition |
+| --- | --- | --- | --- | --- | --- | --- |
+| `UC-SEMANTIC-SCHEMA-SELF-ORACLE-01` | G1 T2A documentation-only semantic schema amendment; dispatch `d920a6891`; independent review `994297076`; three worker outputs remain uncommitted pending R1 | Exact three-path manifest, zero delegation, no worker commit, frozen seven-path hash boundary and GC-026 single-source topology held | Six review findings remained after worker-reported green gates: required-set authority/extra-fixture contradiction; non-pooling overclaim; incomplete nested canonical digests; two invalidation inputs not provenance-bound; human/JSON plus review-authority mismatch; incomplete durable fast-gate receipt | A worker can satisfy scope and structural gates while semantic completeness, claim strength and self-review authority remain wrong. For deep schema work, independent review should probe authority source, contradiction pairs, recomputability and who authored the oracle | Không chứng minh Claude kém, model mặc định gây lỗi, model mạnh hơn sẽ tránh lỗi, delegation là nguyên nhân, hoặc six-finding count là escaped-finding rate | Hoàn tất R1 và Local re-review; normalize finding identity/severity/gate set; sau đó cần thêm comparable cases trước khi thay đổi capability tier, model routing hoặc mandatory probe policy |
+
+Case schema cho các lần bổ sung sau:
+
+- `observedFacts`: path/commit/receipt và điều kiện thực sự quan sát được;
+- `controlSuccesses`: control nào đã ngăn scope, effect hoặc authority drift;
+- `escapedFindings`: finding độc lập nào gate/self-check trước đó không bắt;
+- `causalHypotheses`: giả thuyết cần thử, không ghi như root cause đã biết;
+- `rejectedAttributions`: model/provider/actor attribution chưa đủ evidence;
+- `promotionThreshold`: bằng chứng bổ sung cần trước khi đổi roadmap/policy;
+- `laterOutcome`: rework có đóng finding không và phát sinh finding mới nào.
+
+`laterOutcome` của case trên hiện là `PENDING_CONSOLIDATED_R1_REVIEW`. Không
+được backfill thành PASS chỉ từ worker return; Local review/closure mới là
+decision evidence. Khi thêm case, giữ cả control thành công lẫn defect để tránh
+chỉ thu thập failure story và làm lệch routing decision.
+
 ### Candidate Evidence Envelope For Further Discussion
 
 Nếu tiếp tục thiết kế, mỗi delegated assignment nên cân nhắc ghi các trường
@@ -317,6 +343,8 @@ cần pin/version và source verification riêng nếu chuyển sang nghiên c�
 10. Khi worker khai `CONCURRENT_OUT_OF_SCOPE` hoặc `UNKNOWN`, reviewer cần
     bằng chứng tối thiểu nào để xác nhận phân loại đó, và ai chịu trách nhiệm
     đưa các row ngoài phạm vi về trạng thái sạch trước material commit?
+11. Bao nhiêu case comparable và outcome sau rework là đủ để promotion một
+    bounded learning thành mandatory review probe hoặc model-routing signal?
 
 Local proposal, not ratified: ưu tiên ADAPT các owner hiện hữu; chỉ thêm trách
 nhiệm kiến trúc nếu chứng minh không map được. Model mạnh/rẻ và mức effort là
@@ -341,7 +369,7 @@ Các nhiệm vụ đang có của CVF vẫn theo authority riêng của chúng.
 ## Epistemic Process Block
 
 - Expected Result / Prediction: một bản ghi có owner links và câu hỏi mở giúp tiếp tục thảo luận qua phiên chat mà không biến đề xuất thành quyền thực thi.
-- Evidence Comparison: operator yêu cầu lưu; các roadmap hiện hữu xác nhận phạm vi parked; MCP specification tách protocol khỏi host orchestration.
+- Evidence Comparison: operator yêu cầu lưu; các roadmap hiện hữu xác nhận phạm vi parked; MCP specification tách protocol khỏi host orchestration; G1 T2A review `994297076` cung cấp use case đầu tiên nhưng chưa cung cấp model-comparison evidence.
 - Contradiction or Gap Disposition: nhận định trước rằng cần bắt đầu một cơ chế hoàn toàn mới là quá rộng; đã có EAIC và provider/model assignment owners. Runtime suitability của AICoworker chưa được xác minh.
 - Claim Update: discussion được lưu để tra cứu; chưa có lựa chọn platform, thiết kế được phê duyệt hoặc implementation.
 
@@ -368,4 +396,4 @@ Reason: private operator discussion record; no public export requested.
 
 Bản ghi phục vụ continuity của thảo luận, không là standard mới, accepted
 design, implementation order, gate result hoặc runtime readiness proof.
-Không có commit, provider experiment hay worker launch được yêu cầu bởi bản ghi.
+Bản ghi không tự mở provider experiment, worker launch hoặc implementation.
