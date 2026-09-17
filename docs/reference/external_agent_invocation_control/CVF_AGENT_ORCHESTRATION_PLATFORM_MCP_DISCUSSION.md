@@ -72,9 +72,28 @@ cho subagent. UI quota, token usage và API dollars là các đơn vị khác nh
 
 | Scenario | What needs a decision | What must be observed before a control claim |
 | --- | --- | --- |
-| Một host agent giữ nhiều vai và giao helper | Tách việc có lợi không; context đủ chưa; model/effort nào phù hợp | Assignment, evidence, review/rework effort; gate scope phải đối chiếu với worktree scope và worker-owned batch; helper count không chứng minh hiệu quả hoặc review independence. |
+| Một host agent giữ nhiều vai và giao helper | Tách việc có lợi không; context đủ chưa; model/effort nào phù hợp | Assignment, evidence, review/rework effort; gate scope phải đối chiếu với worktree scope và worker-owned batch theo `## Gate Scope Reconciliation`; helper count không chứng minh hiệu quả hoặc review independence. |
 | Local khởi chạy worker qua CLI/MCP | Admission, phạm vi, giới hạn cộng dồn, stop/retry/fallback authority | Launch identity, tiến độ, usage được cung cấp, kết quả dừng và tác vụ còn chạy; return rejection không hoàn trả quota. |
 | Nhiều agent trên platform chung | Platform có thực thi được quyết định CVF ở đường hành động bắt buộc không | Điểm chặn trước hành động, quyền công cụ/credential, cancellation, evidence export và đường bypass. |
+
+### Scenario 1 Expansion: Ba Phạm Vi Không Được Lẫn
+
+Khi một host agent giữ nhiều vai trong workspace dùng chung, ba phạm vi sau
+phải được phân biệt trước khi diễn giải kết quả gate. Lẫn ba phạm vi này
+dẫn tới hai lỗi ngược chiều: worker nhận nhầm lỗi không phải của mình, hoặc
+worker sửa file ngoài quyền ghi để "làm xanh" gate.
+
+| Scope | Định nghĩa | Ai chịu trách nhiệm | Rủi ro khi đọc sai |
+| --- | --- | --- | --- |
+| Gate scope | Path, changed range, worktree, current state hoặc aggregate mà checker thực sự đánh giá. | Checker owner định nghĩa; dispatcher/worker phải đọc trước khi dùng verdict | Coi verdict của một topology là verdict của topology khác |
+| Worktree scope | Toàn bộ thay đổi đang tồn tại trong working tree, gồm cả công việc đồng thời của agent/phiên khác. | Shared-worktree coordinator và từng lane owner | Worker nhận nhầm lỗi của phiên khác thành của mình |
+| Worker-owned batch | Đúng tập path mà work order trao quyền ghi cho worker. | Dispatcher định nghĩa; worker tuân thủ | Worker sửa ngoài batch để làm xanh gate, phá Write Ownership |
+
+Quan sát bắt buộc trước khi diễn giải gate cho một batch: mỗi violation row
+có đủ locator phải được quy về một phạm vi theo `## Gate Scope Reconciliation`.
+Verdict toàn gate vẫn báo cáo nguyên trạng. Có thể ghi riêng disposition của
+worker-owned delta, nhưng không được đổi nó thành batch `PASS`; dependency,
+authority hoặc current-state failure ngoài path vẫn có thể chặn return/commit.
 
 ## Claude Subagent Retrospective Intake
 
@@ -92,6 +111,11 @@ những quan sát có ích và ghi riêng các điểm chưa được chứng mi
 3. Việc chạm ngưỡng hoặc gate phải đọc luật gate trước khi sửa, bất kể parent
    hay child thực hiện. Parent tự làm không tự động an toàn hơn; quyết định
    phân công chỉ xét context/review cost sau khi đã xác định đúng gate law.
+   Kèm theo: sửa tới sát ngưỡng cứng không đủ, vì gate có thể áp thêm luật
+   khác trong vùng biên. Trong incident đã nêu, đưa file về đúng 999/1000 vẫn
+   kích hoạt `near_hard_statement_compression`; chỉ khi xuống dưới biên
+   `hard - 25` thì luật đó mới không còn áp dụng. Nguyên tắc rút ra là xác
+   định safety margin từ chính source của checker, không suy từ ngưỡng cứng.
 4. Claude tự báo đã để model mặc định cho bốn subagent. Đây là tín hiệu rằng
    model-selection admission chưa xảy ra trước dispatch, không phải bằng chứng
    model mặc định gây ra các lỗi semantic.
@@ -169,6 +193,41 @@ Candidate control sequence để tiếp tục bàn luận:
 Sequence này không chứng minh mọi bước phải là một service riêng hoặc phải do
 CVF Web/MCP thực hiện. Điểm cần xác minh tiếp là host/provider nào có thể cung
 cấp và enforce từng receipt/control point, và đường bypass nào vẫn tồn tại.
+
+## Gate Scope Reconciliation
+
+Một số aggregate/current-state gate quan sát ngoài worker-owned batch, nên một
+verdict `VIOLATION` không tự chứng minh worker-owned delta có lỗi. Mỗi failure
+row có đủ locator trong worker return phải được quy về đúng một trong bốn phân
+loại sau. Đây là discussion candidate, chưa phải schema được chấp nhận.
+
+| Classification | Nghĩa | Bằng chứng tối thiểu | Ai xử lý |
+| --- | --- | --- | --- |
+| `IN_SCOPE` | Violation trỏ vào path thuộc worker-owned batch | Path trong violation message nằm trong Required Artifact Manifest | Worker sửa trước khi return |
+| `PRE_EXISTING_OUT_OF_SCOPE` | Violation đã tồn tại trước execution base, không do delta này tạo ra | Cùng checker version và comparable environment chạy tại execution base cho cùng violation | Không sửa ngoài quyền; báo cáo và route cho owner |
+| `CONCURRENT_OUT_OF_SCOPE` | Violation do công việc đồng thời của phiên/agent khác trong cùng worktree | Path không thuộc batch; `git status` cho thấy thay đổi ngoài batch; operator hoặc owner khác xác nhận | Không sửa; ghi rõ trong return |
+| `UNKNOWN` | Chưa quy được về ba loại trên | Ghi nguyên văn violation và lý do chưa phân loại được | Escalate cho reviewer, không đoán |
+
+Quy tắc bắt buộc kèm theo:
+
+- Worker không được sửa path ngoài worker-owned batch chỉ để làm gate xanh,
+  kể cả khi biết cách sửa. Đó là vi phạm Write Ownership.
+- Worker không được viết lại full-gate verdict thành `PASS`/`COMPLIANT` khi
+  còn failure. Có thể ghi `worker-owned delta has no named violation` nếu có
+  evidence, nhưng governing work order quyết định failure ngoài scope có chặn
+  return hay material commit hay không.
+- `UNKNOWN` không được mặc định coi là ngoài phạm vi. Phân loại sai theo
+  hướng có lợi cho worker là một defect class riêng cần reviewer kiểm.
+- Phân loại của worker là self-report. Reviewer tiêu thụ evidence hợp lệ và
+  chỉ rerun tại boundary bắt buộc hoặc khi có named contradiction, expected
+  information gain và cost reason; không broad-rerun chỉ để tái tạo packet.
+
+Quan sát nguồn gốc: ngày 2026-09-17, `run_worker_return_fast_gate.py` báo
+`VIOLATION` với ba row (`Delta execution claim boundary`, `foundation storage
+layout`, `agent packet authority and encoding`) đều trỏ vào một artifact thảo
+luận đồng thời ngoài bảy path của batch G1 T2. Đây là ví dụ
+`CONCURRENT_OUT_OF_SCOPE`; nó minh hoạ nhu cầu phân loại nhưng không tự chứng
+minh bảng phân loại trên đã đủ hoặc đúng cho mọi gate.
 
 ## MCP And Platform Alternatives
 
@@ -252,6 +311,12 @@ cần pin/version và source verification riêng nếu chuyển sang nghiên c�
 6. Host/platform hiện có cung cấp điểm thực thi bắt buộc nào; bypass nào còn ngoài phạm vi?
 7. Chọn host + MCP hay platform tích hợp theo tổng chi phí và năng lực đã chứng minh?
 8. Evidence nào cần cho một thử nghiệm so sánh có baseline/candidate tương đương?
+9. `deliverableSelfValidationBoundary` map vào owner nào đã có (anti-collusion,
+   Source Verification, oracle provenance) và khai báo tới mức chi tiết nào thì
+   đủ để reviewer chọn điểm probe, mà không biến thành khai báo hình thức?
+10. Khi worker khai `CONCURRENT_OUT_OF_SCOPE` hoặc `UNKNOWN`, reviewer cần
+    bằng chứng tối thiểu nào để xác nhận phân loại đó, và ai chịu trách nhiệm
+    đưa các row ngoài phạm vi về trạng thái sạch trước material commit?
 
 Local proposal, not ratified: ưu tiên ADAPT các owner hiện hữu; chỉ thêm trách
 nhiệm kiến trúc nếu chứng minh không map được. Model mạnh/rẻ và mức effort là
