@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2_r2_rejected_parked`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=operator discussion or selection of the next bounded item; role=Local orchestrator/reviewer; phase=G1 T2 R2 terminal review; decision owner=Local; parked checkpoint=G1 schema redesign/R3, G4 implementation/experiment, real calibration, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2a_schema_amendment_dispatched`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=INTERNAL_AGENT executes the exact three-path G1 T2A documentation work order; role=Local orchestrator/reviewer; phase=G1 T2A design dispatch; decision owner=Local; parked checkpoint=G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_acel_g1_t2_r2_rejected_parked`
-Current mode: `multi_repo_absorption_acel_g1_t2_r2_rejected_parked`; previous mode marker: `multi_repo_absorption_acel_g1_t2_implementation_dispatched`
+Current mode marker: `multi_repo_absorption_acel_g1_t2a_schema_amendment_dispatched`
+Current mode: `multi_repo_absorption_acel_g1_t2a_schema_amendment_dispatched`; previous mode marker: `multi_repo_absorption_acel_g1_t2_r2_rejected_parked`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2-R2-REJECTED_AND_PARKED_AT_0862d3610; NEXT_STEP=OPERATOR_DISCUSSION_OR_SELECTION_OF_NEXT_BOUNDED_PROGRAM_ITEM; EXPANSION_ALLOWED=false. Reopening G1 requires a fresh reviewed schema amendment; the seven rejected worker paths remain uncommitted. G4 implementation and experiment remain parked. No automatic R3 or successor, provider/live execution, real calibration, configuration mutation, Core runtime, package lifecycle, public sync or deployment. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_acel_g1_t2_r2_rejected_parked`. Local review `0862d3610` rejected R2 after reproducing candidate-scoped fixture, GC-026 cross-record, and provenance binding defects. G1 T2's seven worker paths remain uncommitted; G4 design remains independently parked at `dbb795979`; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2A-SCHEMA-AMENDMENT-DISPATCHED_AT_d920a6891; NEXT_STEP=INTERNAL_AGENT_EXECUTE_EXACT_THREE_PATH_DOCUMENTATION_ONLY_WORK_ORDER; EXPANSION_ALLOWED=false. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_2026-09-17.md with WORKER_MUST_NOT_COMMIT, zero nested delegation and seven rejected paths frozen byte-identical. Local owns review and closure. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live execution, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_acel_g1_t2a_schema_amendment_dispatched`. Material dispatch `d920a6891` authorizes only three create-only documentation outputs; Local review `0862d3610` remains the rejection authority for the seven frozen R2 paths. G4 design remains independently parked at `dbb795979`; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

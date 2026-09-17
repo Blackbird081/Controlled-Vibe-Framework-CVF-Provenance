@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2863,
+  "stateKey": "acelG1T2aCandidateEvidenceBindingSchemaAmendmentDispatch20260917",
+  "value": "ACEL-G1-T2A-CANDIDATE-EVIDENCE-BINDING-SCHEMA-AMENDMENT is DISPATCH_READY at material commit d920a689173e265aa315f5af86d3769525ce3c2b. Full pre-dispatch autorun passed 82/82. The INTERNAL_AGENT worker owns exactly three create-only documentation outputs and must not commit or spawn nested subagents. The seven rejected G1 T2 implementation paths are frozen read-only and must remain byte-identical. The amendment must define candidate-scoped required-fixture coverage, GC-026 equality topology, the complete canonical provenance preimage, independent checker recomputation and explicit migration disposition. Local owns review, closure and commits. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, configuration mutation, runtime, public sync and deployment remain parked."
+}
