@@ -11,7 +11,7 @@ history/state aggregate is a targeted lookup, not a default startup step:
 1. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` (compact current
    facts: current mode, active handoff, next allowed move)
 2. this front door
-3. `AGENT_HANDOFF_V61_2026-09-16.md`
+3. `AGENT_HANDOFF_V62_2026-09-17.md`
 4. only the current-authority paths those two surfaces name for the task
 5. `CVF_SESSION/ACTIVE_SESSION_STATE.json` only as a targeted lookup, when a
    current fact above is missing, contradictory, or the task explicitly
@@ -31,28 +31,28 @@ artifact.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V61_2026-09-16.md` |
+| Active handoff | `AGENT_HANDOFF_V62_2026-09-17.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
-| Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V60_2026-09-08.md` |
+| Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V61_2026-09-16.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2b_trust_anchor_parked`; active handoff=AGENT_HANDOFF_V61_2026-09-16.md; next allowed move=Local separate trust-anchor architecture decision only, with no same-tranche worker redispatch; role=Local orchestrator/reviewer; phase=G1 T2B terminal parking; decision owner=Local; parked checkpoint=G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, configuration mutation, Core runtime, package lifecycle, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2c_trust_anchor_design_selected`; active handoff=AGENT_HANDOFF_V62_2026-09-17.md; next allowed move=Local documentation-only T2C GC-018/work-order authoring, no automatic dispatch; role=Local orchestrator/reviewer; phase=G1 T2C design selected; decision owner=Local; parked checkpoint=G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, keys, runtime, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_acel_g1_t2b_trust_anchor_parked`
-Current mode: `multi_repo_absorption_acel_g1_t2b_trust_anchor_parked`; previous mode marker: `multi_repo_absorption_acel_g1_t2b_root_contract_architecture_dispatched`
+Current mode marker: `multi_repo_absorption_acel_g1_t2c_trust_anchor_design_selected`
+Current mode: `multi_repo_absorption_acel_g1_t2c_trust_anchor_design_selected`; previous mode marker: `multi_repo_absorption_acel_g1_t2b_trust_anchor_parked`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2B-TRUST-ANCHOR-PARKED_AT_4bb04c836; NEXT_STEP=LOCAL_SEPARATE_TRUST_ANCHOR_ARCHITECTURE_DECISION_ONLY; EXPANSION_ALLOWED=false. Independent review docs/reviews/CVF_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_INDEPENDENT_REVIEW_2026-09-17.md rejects T2B as an implementation root contract: a self-authored IssuerVerificationReceipt passes all five declared checks without a trusted lookup. Preserve three T2B worker outputs and ten earlier parked paths as uncommitted evidence; no same-tranche repair or automatic successor. A later separately governed tranche must select authenticated verifier issuance before any G1 implementation. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live execution, configuration mutation, Core runtime, package lifecycle, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_acel_g1_t2b_trust_anchor_parked`. T2B independent review `4bb04c836` rejects content-hash-only issuer authentication and parks trust-anchor design for a later tranche. T2A remains rejected evidence; G4 design remains independently parked at `dbb795979`; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2C-TRUST-ANCHOR-DESIGN_SELECTED_AT_1c5c01675; NEXT_STEP=LOCAL_T2C_DOCUMENTATION_ONLY_GC018_AND_WORK_ORDER_AUTHORING_ONLY; EXPANSION_ALLOWED=false. Local design docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_LOCAL_ARCHITECTURE_DECISION_2026-09-17.md selects Ed25519-signed verifier receipts with an independent trusted public-key registry, without claiming any existing key owner, signer or genuine lookup. Source-verify those owners in a separate documentation-only packet or fail closed; no automatic dispatch. Preserve three T2B worker outputs and ten earlier paths as uncommitted evidence. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, keys, runtime, public sync and deployment remain parked. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_acel_g1_t2c_trust_anchor_design_selected`. T2B rejection at `4bb04c836` remains controlling; T2C design-only decision at `1c5c01675` does not make the root contract acceptable. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
