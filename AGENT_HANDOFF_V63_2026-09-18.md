@@ -1,7 +1,7 @@
-# CVF Agent Handoff V63 - G1 T2H Party B Reconciliation Accepted
+# CVF Agent Handoff V63 - G1 T3A Route Selected, Operator Checkpoint Pending
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `0101a469b`. T2H Party B immutable new-ID documentation reconciliation was accepted by Local review and materially committed; no operational source or runtime authority opened.
+Current material HEAD recorded for this handoff: `fb86050487c4da7e08a32138ae2a001bd9431c49`. Local selected the T3A new-key ceremony route at design level; principal/custody authorization and source implementation remain on HOLD.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -10,24 +10,23 @@ Status: ACTIVE
 
 ## Purpose
 
-Carry the accepted operator-confirmed ACEL G1 T2H Party B appointment-condition
-reconciliation and its documentation-only boundary. Local selects the next
-bounded action; no worker dispatch remains open under T2H.
+Carry the accepted T2H Party B appointment-condition reconciliation and the
+Local T3A route decision. No worker dispatch is open; the operator checkpoint
+for the concrete Party A principal and custody/ceremony boundary is pending.
 
 ## Scope / Target / Owner Boundary
 
-Target: accepted T2H documentation-only reconciliation of T2E Contract 3 and
-Party B's appointment with accepted T2G. The shared-workspace `INTERNAL_AGENT`
-worker honored `WORKER_MUST_NOT_COMMIT`; Local reviewed, repaired the return
-shape and committed the three worker outputs.
+Target: accepted T2H documentation-only reconciliation and subsequent T3A
+key-ceremony route selection. Local chose a fresh-key route, not key generation
+or source implementation. Operator retains principal and ceremony authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2h_party_b_immutable_observation_reconciliation_accepted_design_only_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local selects next bounded ACEL G1 action; parked checkpoint=source creation, principals, keys, implementation/live/runtime/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t3a_new_key_route_selected_operator_checkpoint_pending_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator confirms concrete Party A principal and custody/ceremony boundary; parked checkpoint=source creation, keys, implementation/live/runtime/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g1_t2h_party_b_immutable_observation_reconciliation_accepted_design_only_bounded`.
+`multi_repo_absorption_acel_g1_t3a_new_key_route_selected_operator_checkpoint_pending_bounded`.
 The active absorption program remains incomplete and restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
 wave remains `LHW24`.
@@ -87,12 +86,17 @@ release source creation, implementation, candidate admission or runtime use.
   return without staging or committing. Local repaired three return-shape
   defects, accepted T2H-01 through T2H-08, and committed the three paths at
   `0101a469b`; fast gate, reviewer preflight and material pre-commit passed.
+- Local T3A route-readiness audit committed at `fb8605048`: select fresh
+  Ed25519 key generation for a future separately governed ceremony, not
+  unverified import/reuse. Exact principal, custody target and ceremony
+  authorization remain operator-owned. Group 1 source and T3A implementation
+  stay on HOLD; no worker work order is open.
 - Thirteen pre-existing untracked G1 evidence paths remain byte-preserved,
   uncommitted and outside this lane; primary-worktree finality remains pending.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2H-PARTY-B-IMMUTABLE-OBSERVATION-RECONCILIATION-ACCEPTED_AT_0101a469b; NEXT_STEP=LOCAL_SELECT_NEXT_BOUNDED_ACEL_G1_ACTION; EXPANSION_ALLOWED=false. T2H Party B immutable new-ID documentation reconciliation was independently accepted and materially committed at 0101a469b; its fast gate and reviewer preflight passed after bounded Local return repair. Party B identity, two-registry scope and independence remain intact. T2C/T2G and thirteen parked G1 paths remain unchanged. Local may assess the next bounded documentation or source-owner decision, but no source, principal, key, credential, implementation, live lookup, admission, runtime, public sync or deployment is authorized without a fresh governing packet and required operator checkpoint. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T3A-NEW-KEY-ROUTE-SELECTED_AT_fb8605048; NEXT_STEP=OPERATOR_CONFIRM_T3A_CONCRETE_PARTY_A_PRINCIPAL_AND_CUSTODY_CEREMONY; EXPANSION_ALLOWED=false. Local audit selected a fresh Ed25519 key-generation route at fb8605048, not an import/reuse of an unverified key. T3A remains HOLD: Party A is an accountable role, not a provisioned principal; the exact write/sign principal, custody target and secret-safe generation ceremony require operator confirmation. No work order is dispatchable and no source, key, credential, implementation, live lookup, admission, runtime, public sync or deployment is authorized yet. T2C/T2G/T2H and thirteen parked G1 paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## External / Local Coordination Boundary
 
@@ -156,9 +160,14 @@ implementation, key, runtime or public mutation is authorized.
 
 Authorized guard-maintenance scope: project Local-accepted T2H material commit `0101a469b` into continuity; replace the stale dispatched next-move with a bounded Local next-action selection. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. The two parked untracked checker paths remain read-only and are not authorized for mutation. Operator authorization: standing Local reviewer/closer and session-transition authority after the operator-confirmed Party B condition amendment. Rollback boundary: revert this continuity projection only; preserve material T2H commit, T2C/T2G and thirteen parked paths. No checker, source, key, credential, implementation, live, runtime, public or deployment change is authorized.
 
+## Core Guard Self-Protection Authorization - T3A Route Continuity
+
+Authorized guard-maintenance scope: project Local T3A route-selection audit `fb8605048` into continuity and replace the stale Local-selection next move with the exact operator checkpoint. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. The two pre-existing untracked checker paths remain read-only and are not authorized for mutation. Operator authorization: requested Local audit and route choice; principal, custody and ceremony actions remain unapproved. Rollback boundary: revert this continuity projection only, preserving the material audit, T2H and thirteen parked paths. No source, key, credential, implementation, live, runtime, public or deployment action is authorized.
+
 ## Claim Boundary
 
-This handoff records T2H documentation-only acceptance and material closure.
+This handoff records T2H documentation-only acceptance and the T3A route
+selection on HOLD pending the operator checkpoint.
 It grants no source establishment, activation, key,
 implementation, live lookup, candidate admission, runtime, public-sync or
 deployment authority.
