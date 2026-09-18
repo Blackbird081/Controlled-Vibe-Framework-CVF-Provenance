@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_acel_g1_t2d_owner_options_reviewed_decision_pending_bounded",
+  "currentMode": "multi_repo_absorption_acel_g1_t2e_four_owner_contract_design_dispatch_ready_bounded",
   "activeHandoff": "AGENT_HANDOFF_V62_2026-09-17.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2D-OWNER_OPTIONS_REVIEWED_AT_b7666a470; NEXT_STEP=OPERATOR_ACCOUNTABLE_OWNER_DECISION_THEN_BOUNDED_WORK_ORDER; EXPANSION_ALLOWED=false. T2D documentation-only four-dependency owner-option analysis and Local bounded review were materially committed at b7666a470; committed-range closure remains pending because thirteen pre-existing untracked G1 evidence paths are parked outside this tranche. All four existing operational owners are BLOCKED_SOURCE_NOT_FOUND; proposed owner options are not appointments. The operator retains accountable owner assignment, after which Local may author a separately bounded work order. All actual candidate admission stays UNVERIFIED. Preserve thirteen parked G1 evidence paths unchanged. No key creation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2E-FOUR-OWNER-CONTRACT-DESIGN-DISPATCH_READY_AT_5785969ed; NEXT_STEP=INTERNAL_WORKER_T2E_DOC_ONLY_RETURN_THEN_LOCAL_REVIEW; EXPANSION_ALLOWED=false. The operator approved the four-responsibility topology for design only; the Local decision, GC-018 baseline and internal no-commit work order were materially committed at 5785969ed. The operator may copy the T2E work order to the shared-workspace worker. Worker ownership is exactly two documentation outputs and excludes appointment, implementation and commit. All four actual accountable parties remain unappointed and operational source claims remain BLOCKED_SOURCE_NOT_FOUND; candidate admission stays UNVERIFIED. T2D committed-range closure also remains pending because thirteen pre-existing untracked G1 evidence paths are parked outside the tranche. Preserve those paths unchanged. No key creation, registry/source implementation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T2D_SOURCE_OWNER_ESTABLISHMENT_2026-09-18.md",
-    "baselineSha256": "19c3be990a500ecfd77e28553cfab9677fe7835cd3740a026d6260b168cd1fe7",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2D_SOURCE_OWNER_ESTABLISHMENT_2026-09-18.md",
-    "workOrderSha256": "e447b2852551a484a783d6096f99729c2c4396472d210cba90340f85f42da480"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T2E_FOUR_OWNER_SOURCE_CONTRACT_DESIGN_2026-09-18.md",
+    "baselineSha256": "17e7f7eb26a4570671adf3ec3deaab20d0fb251071c3f8a8eaa94cd527fcdc0f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2E_FOUR_OWNER_SOURCE_CONTRACT_DESIGN_2026-09-18.md",
+    "workOrderSha256": "4fd8145814348fd435ef3a478f5ba4b24c23e348877a9c77d7b6a8e1d77ca202"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
