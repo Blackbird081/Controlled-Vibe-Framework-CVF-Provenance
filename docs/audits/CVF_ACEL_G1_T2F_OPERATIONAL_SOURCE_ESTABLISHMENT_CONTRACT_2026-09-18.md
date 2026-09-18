@@ -287,6 +287,39 @@ Both recomputations match exactly and equal the digest above; the digest is
 design-consistency illustration; it is not a claim that the key registry
 exists, that this key was issued, or that any signature verifies against it.
 
+### Cross-Document Test-Vector Join (T2C Receipt To Group 1 Row)
+
+The standalone Group 1 row above has `keyId` =
+`key-testvector-0001`; the T2C positive receipt uses `signatureKeyId` =
+`verifier-key-testvector-0001`. Those two standalone examples therefore do
+not join by exact key ID. For a separate, synthetic join example, retain the
+Group 1 row's other eight fields and replace only `keyId` with the T2C receipt's
+`verifier-key-testvector-0001`. The exact compact JCS row preimage is:
+
+```
+{"algorithm":"Ed25519","domain":"cvf.keyRegistryRow","expiresAt":"2027-09-18T00:00:00Z","issuedAt":"2026-09-18T00:00:00Z","keyId":"verifier-key-testvector-0001","profile":"cvf.source-record-canonicalization@1","publicKeyBytesBase64":"RMcYJcHIAYbM9S2L717B9wmMom1ZMEIs-PTJrQRXomw","revokedAt":null,"role":"verificationAuthority","rotatedFromKeyId":null,"status":"ACTIVE"}
+```
+
+Its UTF-8 length is 369 bytes. SHA-256 of those exact bytes is
+`b39c62215330d4648a8acddc4652aba3fb5699fae7f7c430caf6b38bf31ab23e`;
+Python `hashlib.sha256` and PowerShell/.NET `SHA256.HashData` independently
+returned that same digest. The T2C positive receipt's `signedBy.keyId` equals
+its signed `signatureKeyId`, which now equals this hypothetical row's exact
+`keyId`. The row's public-key bytes equal T2C's published fixture public key;
+T2C's published Ed25519 signature verifies against its published exact signed
+preimage under those bytes. This demonstrates a consistent static key-ID and
+public-key join, not a source-owned registry lookup.
+
+The unchanged standalone row above still has its own valid
+`0c798661...17d3061` hash; it must not be substituted for this joined row or
+silently treated as the T2C registry record. An exact lookup against only that
+unchanged row returns no match and fails closed. A duplicate exact ID or a
+second ID aliasing the same public key also fails closed under T2C Predicate 2.
+Neither row exists in an operational registry; no role authorization by a
+source owner, lifecycle receipt, registry freshness, Predicate 3 provenance,
+or candidate admission is established by this synthetic bridge. Group 1
+remains `SOURCE_NOT_CREATED` and candidate evaluation remains `UNVERIFIED`.
+
 ### Negative Mutation Probes
 
 Each probe below was independently constructed and, where a hash is at
