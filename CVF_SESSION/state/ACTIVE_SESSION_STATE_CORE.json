@@ -109,8 +109,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "multi_repo_absorption_acel_g1_t2e_party_a_appointed_party_b_decision_pending_bounded",
-  "previousMode": "multi_repo_absorption_acel_g1_t2e_contracts_1_2_combined_party_identities_pending_bounded",
+  "currentMode": "multi_repo_absorption_acel_g1_t2e_party_b_appointed_party_c_decision_pending_bounded",
+  "previousMode": "multi_repo_absorption_acel_g1_t2e_party_a_appointed_party_b_decision_pending_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
