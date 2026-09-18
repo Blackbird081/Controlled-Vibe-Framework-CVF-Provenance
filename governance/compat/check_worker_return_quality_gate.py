@@ -164,6 +164,9 @@ PUBLIC_EXPORT_TOKENS = (
 EXTERNAL_INPUT_CANONICAL = (
     "operator-provided external comparison, critique, or recommendation"
 )
+INTERNAL_ONLY_INPUT_CANONICAL = (
+    "| Input type | internal governed input (no external intake) |"
+)
 DELTA_RECEIPT_TOKENS = ("CLAIM_REJECTED_NO_RECEIPT", "CVF_RECEIPT_PRESENT")
 DELTA_ACTION_TOKENS = ("CLAIM_REJECTED_NO_ACTION", "ACTION_EVIDENCE_PRESENT")
 
@@ -371,7 +374,10 @@ def diagnose(
 
     if not fast_doc:
         external = _section(text, "## External Knowledge Intake Routing")
-        if external and EXTERNAL_INPUT_CANONICAL not in external:
+        if external and not any(
+            marker in external
+            for marker in (EXTERNAL_INPUT_CANONICAL, INTERNAL_ONLY_INPUT_CANONICAL)
+        ):
             issues.append("external knowledge input type is not canonical")
 
     public_export = _section(text, "## Public Export Disposition")

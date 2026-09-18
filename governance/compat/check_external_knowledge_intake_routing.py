@@ -41,6 +41,7 @@ REQUIRED_FIELDS = (
     "Claim boundary",
 )
 ALLOWED_INPUT_TYPES = {
+    "internal governed input (no external intake)",
     "legacy source family",
     "external repo or copied folder",
     "external-agent packet request",
@@ -123,6 +124,7 @@ SOURCE_STATUSES = {
     "TERMINAL_REJECTED",
     "BLOCKED_WITH_REASON",
 }
+INTERNAL_ONLY_INPUT_TYPE = "internal governed input (no external intake)"
 RESEARCH_ASSISTED_PROFILE_HEADING = "Research-Assisted Repository Absorption Profile"
 EXPECTED_RESEARCH_ASSISTED_PROFILE = {
     "profileId": "cvf.research-assisted-repository-absorption@1.0.0",
@@ -572,6 +574,21 @@ def check_text(path: str, text: str) -> list[str]:
         violations.append(
             f"{path}: `Input type` must be one of the canonical chain-map input types"
         )
+    if input_type == INTERNAL_ONLY_INPUT_TYPE:
+        source = _clean_value(fields.get(_normalize_cell("Internal source"), ""))
+        source_path = Path(source.replace("\\", "/"))
+        resolved_source = (REPO_ROOT / source_path).resolve()
+        if (
+            not source
+            or source_path.is_absolute()
+            or ".." in source_path.parts
+            or not source.startswith(("docs/", "ECOSYSTEM/", "CVF_SESSION/"))
+            or not resolved_source.is_relative_to(REPO_ROOT.resolve())
+            or not resolved_source.is_file()
+        ):
+            violations.append(
+                f"{path}: internal-only input requires one existing governed `Internal source` path"
+            )
 
     guard_value = fields.get(_normalize_cell("Matching local-view guard"), "")
     if guard_value and not _has_local_view_guard(guard_value):

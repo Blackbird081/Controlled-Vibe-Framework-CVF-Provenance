@@ -84,6 +84,31 @@ class ExternalKnowledgeIntakeRoutingTests(unittest.TestCase):
 
         self.assertTrue(any("Input type" in item for item in violations))
 
+    def test_internal_governed_input_requires_real_local_source(self) -> None:
+        text = VALID_BLOCK.replace(
+            "| Input type | External-agent returned output |",
+            "| Input type | Internal governed input (no external intake) |\n"
+            "| Internal source | docs/reference/external_agent_review/"
+            "CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md |",
+        )
+        self.assertEqual([], MODULE.check_text("docs/reviews/CVF_INTERNAL_RETURN.md", text))
+
+        missing = text.replace(
+            "| Internal source | docs/reference/external_agent_review/"
+            "CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md |\n",
+            "",
+        )
+        self.assertTrue(any("Internal source" in item for item in
+                            MODULE.check_text("docs/reviews/CVF_INTERNAL_RETURN.md", missing)))
+
+        outside = text.replace(
+            "| Internal source | docs/reference/external_agent_review/"
+            "CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md |",
+            "| Internal source | ../../outside.md |",
+        )
+        self.assertTrue(any("Internal source" in item for item in
+                            MODULE.check_text("docs/reviews/CVF_INTERNAL_RETURN.md", outside)))
+
     def test_matching_guard_without_guard_or_na_fails(self) -> None:
         text = VALID_BLOCK.replace(
             "| Matching local-view guard | governance/compat/check_external_agent_absorption_table.py |",

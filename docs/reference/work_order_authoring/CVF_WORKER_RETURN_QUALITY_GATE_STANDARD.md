@@ -167,6 +167,14 @@ external comparison, critique, or recommendation:
 
 `operator-provided external comparison, critique, or recommendation`
 
+For a worker return whose only input is a cited existing CVF-governed source,
+the non-external applicability value is:
+
+`| Input type | internal governed input (no external intake) |`
+
+The intake-routing guard additionally requires a real `Internal source` path.
+This exception must not be used for an actual remote research return.
+
 For Delta evidence, use one receipt token and one action token accepted by the
 checker:
 
