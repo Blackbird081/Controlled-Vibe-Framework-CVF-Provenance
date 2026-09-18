@@ -720,7 +720,7 @@ by the worker. Reviewer/closer owns material commit.
 
 | Artifact | Evidence | Disposition |
 |---|---|---|
-| Worker return status | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | Local accepted after two bounded source/evidence repairs |
+| Worker return status | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | Local accepted after three bounded source/evidence repairs |
 | Work order status | `dispatchWorkOrder: docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3A_C1_PRINCIPAL_BOUND_KEY_CEREMONY_TOOLING_2026-09-18.md` | N/A with reason: reviewer/closer owns closure conversion |
 | Changed set | `## Actual Changed Set` | exactly three real paths listed |
 | Gate evidence | `## Gate Evidence` | pre-implementation COMPLIANT; final self-test 32/32; reviewer/closure gates recorded after final edit |
