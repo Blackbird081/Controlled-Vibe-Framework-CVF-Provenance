@@ -1,7 +1,7 @@
 # CVF Agent Handoff V62 - G1 T2C Design Accepted Bounded
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `5785969ed157eb84a0c457dd686a7a3b39d7a4eb`. T2E four-owner source-contract design dispatch material commit; parent of the pending continuity commit. T2D bounded review material is `b7666a470c36880c72186f83e20a72101e0ac0a6`; T2C design-only material acceptance remains `654de5e611f242bfe144b7e3403b8ceb2f9913e6`.
+Current HEAD recorded for this handoff: `0f6bc405b55223d4912b265022acc29592c96b91`. T2E four-owner source-contract design bounded material acceptance; parent of the pending continuity commit. T2D bounded review material is `b7666a470c36880c72186f83e20a72101e0ac0a6`; T2C design-only material acceptance remains `654de5e611f242bfe144b7e3403b8ceb2f9913e6`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -22,11 +22,11 @@ T2B remains rejected at `4bb04c836`; its three worker outputs and ten earlier ev
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2e_four_owner_contract_design_dispatch_ready_bounded`; active handoff=`AGENT_HANDOFF_V62_2026-09-17.md`; next allowed move=internal T2E documentation-only worker return then Local review; role=Local reviewer, operator actual-owner appointment decision maker; parked checkpoint=owner appointment, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live, keys, runtime, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2e_contract_design_reviewed_owner_appointment_decision_pending_bounded`; active handoff=`AGENT_HANDOFF_V62_2026-09-17.md`; next allowed move=operator integrated four-owner actual-party appointment decision; role=Local reviewer, operator actual-owner appointment decision maker; parked checkpoint=source establishment, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live, keys, runtime, public sync and deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g1_t2e_four_owner_contract_design_dispatch_ready_bounded`. The active absorption program remains incomplete and restricted to its same source ID.
+`multi_repo_absorption_acel_g1_t2e_contract_design_reviewed_owner_appointment_decision_pending_bounded`. The active absorption program remains incomplete and restricted to its same source ID.
 
 Latest closed learning-history wave remains `LHW24`.
 
@@ -38,6 +38,7 @@ Latest closed learning-history wave remains `LHW24`.
 - `78371faca`: operator-approved T2D Local source-owner decision, GC-018 baseline and internal documentation-only work order committed after pre-dispatch 82/82 and pre-commit 89/89. Thirteen parked paths remain read-only; the worker has not returned.
 - `b7666a470`: T2D two-output worker return and Local bounded review materially accepted after worker-return fast gate PASS, reviewer tests 35/35 and 38/38, pre-commit 89/89. The four existing operational owner dependencies remain `BLOCKED_SOURCE_NOT_FOUND`. Committed-range pre-closure cannot pass in the primary worktree while thirteen unrelated G1 paths remain untracked and parked; no CLOSED claim or operational owner appointment follows.
 - `5785969ed`: operator approval of the four-responsibility topology, paired T2E GC-018 baseline and no-commit internal work order committed after pre-dispatch 82/82, 13/13 parked hash match and pre-commit 89/89. This opens contract design only; actual parties, source implementation and candidate admission remain blocked.
+- `0f6bc405b`: T2E INTERNAL_AGENT return independently reviewed and materially accepted after two Local role-separation repairs, worker-return fast PASS and pre-commit 89/89. Committed-range checks passed 80/82; handoff sync and the thirteen preserved untracked paths prevent a CLOSED claim. Semantic convergence requires `STOP_REASSESS_ARCHITECTURE`; no further paper-only successor is authorized.
 
 ## External / Local Coordination Boundary
 
@@ -45,7 +46,7 @@ External research is advisory and ended before this Local private-CVF decision. 
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2E-FOUR-OWNER-CONTRACT-DESIGN-DISPATCH_READY_AT_5785969ed; NEXT_STEP=INTERNAL_WORKER_T2E_DOC_ONLY_RETURN_THEN_LOCAL_REVIEW; EXPANSION_ALLOWED=false. The operator approved the four-responsibility topology for design only; the Local decision, GC-018 baseline and internal no-commit work order were materially committed at 5785969ed. The operator may copy the T2E work order to the shared-workspace worker. Worker ownership is exactly two documentation outputs and excludes appointment, implementation and commit. All four actual accountable parties remain unappointed and operational source claims remain BLOCKED_SOURCE_NOT_FOUND; candidate admission stays UNVERIFIED. T2D committed-range closure also remains pending because thirteen pre-existing untracked G1 evidence paths are parked outside the tranche. Preserve those paths unchanged. No key creation, registry/source implementation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2E-FOUR-OWNER-CONTRACT-DESIGN-REVIEWED_AT_0f6bc405b; NEXT_STEP=OPERATOR_INTEGRATED_FOUR_OWNER_ACTUAL_PARTY_APPOINTMENT_DECISION; EXPANSION_ALLOWED=false. The T2E INTERNAL_AGENT worker return was independently reviewed, two small role-separation contradictions were repaired by Local, and the bounded design package was materially committed at 0f6bc405b after worker-return fast PASS and pre-commit 89/89. The valid semantic-convergence disposition is STOP_REASSESS_ARCHITECTURE: do not open another paper-only T2 successor. All four actual accountable parties remain unappointed; every operational source remains BLOCKED_SOURCE_NOT_FOUND and candidate admission remains UNVERIFIED. The next substantive move requires the operator to assign or explicitly defer actual parties across the integrated four-owner topology. Only after that decision may Local author a separately governed source-establishment or implementation packet. Committed-range governance checks passed 80/82; closure remains pending solely because continuity needed this synchronization and thirteen pre-existing untracked G1 evidence paths remain parked outside the tranche. Preserve those paths unchanged. No key creation, registry/source implementation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -167,3 +168,26 @@ the standing Local orchestrator/reviewer direction to continue review and
 manage work-order transitions; owner appointment remains reserved to the
 operator. Rollback boundary: revert only this continuity projection if
 rejected, preserving the T2D material commit and all thirteen parked paths.
+
+## Core Guard Self-Protection Authorization - T2E Reviewed-Design Continuity
+
+Authorized guard-maintenance scope: project the materially accepted,
+documentation-only T2E four-owner contract design at `0f6bc405b` into the six
+active continuity paths and record the operator appointment checkpoint. No
+checker, runtime, key, registry/source implementation or actual owner
+appointment is changed.
+
+Protected paths: `AGENT_HANDOFF_V62_2026-09-17.md`;
+`CVF_SESSION_MEMORY.md`;
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+The thirteen pre-existing untracked G1 evidence paths remain read-only parked
+worktree context, not staged members or authorized edits. Operator
+authorization: the standing instruction for Local to audit, repair small
+defects, commit accepted work and manage work-order transitions. Actual-party
+appointment remains reserved to the operator. Rollback boundary: revert only
+this continuity projection if rejected, preserving the accepted T2E material
+commit and all thirteen parked paths.
