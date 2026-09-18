@@ -182,10 +182,23 @@ memory was used; provider memory is `NOT_CVF_SOURCE`.
 
 ### Contract 3: `RegistryObservationOwner`
 
+T2H amendment note: the operator, after the escalation recorded in
+`docs/audits/CVF_ACEL_G1_T2F_OPERATIONAL_SOURCE_ESTABLISHMENT_CONTRACT_2026-09-18.md`
+(Immutable Snapshot Identity, T2G-01 through T2G-05), replaced this
+contract's same-`snapshotId` correction-chaining condition with immutable,
+write-once new-ID observation. This amendment changes only the correction
+condition below; Party B's accountable identity, two-registry observation
+scope, and writer/observer separation are unchanged and are reconciled by
+`docs/reviews/CVF_ACEL_G1_T2H_PARTY_B_IMMUTABLE_OBSERVATION_RECONCILIATION_WORKER_RETURN_2026-09-18.md`.
+
 - Accountable responsibility: recording, for the key registry and/or issuer
   registry, an independent snapshot identity, acquisition time, and source
   provenance each time the registry is observed; maintaining an append-only
-  observation log with correction chaining rather than in-place edits.
+  observation log in which every observation, including one made after an
+  error or a genuine content change, is recorded as a brand-new original
+  record under a freshly generated, globally unique `snapshotId`, never as an
+  in-place edit and never as a same-ID correction or supersession of an
+  existing record.
 - Prohibited dual roles: must not be the same party as the writer of any
   registry it observes: `VerifierKeyAndRegistryControlOwner` for the key
   registry or `IssuerRegistryAuthorityOwner` for the issuer registry. A
@@ -199,29 +212,46 @@ memory was used; provider memory is `NOT_CVF_SOURCE`.
   (`BLOCKED_SOURCE_NOT_FOUND`).
 - Decision maker: the named accountable observation role; does not decide
   registry content, only records what it independently observed.
-- Write authority: append-only; this owner may append new observation
-  records but must never mutate or delete a prior record. Correction is a new
-  append-only entry that supersedes, not an in-place rewrite.
-- Read/verifier consumers: T2C's `sourceObservationLog.lookup(...)` and
-  `.countObservationsFor(...)` pseudocode calls, currently unimplemented.
-- Version/identity scheme: each observation record keyed by
-  (registry snapshot identity, acquisition timestamp, observer identity);
-  rollback resistance requires the log itself to be tamper-evident (e.g.
-  hash-chained), not yet specified as an implementation.
-- Lifecycle transitions: observation recorded -> optionally superseded by a
-  later correction entry; no deletion transition exists.
+- Write authority: append-only; this owner may append exactly one original
+  record per freshly generated `snapshotId` and must never mutate, delete,
+  alias, or reclassify a prior record. There is no correction, supersession,
+  or active-head mechanism for an existing `snapshotId` of any kind; a fresh
+  observation always receives a new `snapshotId` and a new record, per
+  T2G-01 through T2G-03.
+- Read/verifier consumers: T2C's `sourceObservationLog.lookup(snapshotId)`
+  and `.countObservationsFor(snapshotId)` pseudocode calls, currently
+  unimplemented; both remain literal per-ID record lookups/counts, per T2G-04,
+  with no active-head resolution.
+- Version/identity scheme: each observation record keyed solely by its own
+  immutable, globally unique `snapshotId`, generated fresh at observation
+  time (recommended: cryptographically random, not a hash of metadata alone);
+  the write path rejects, at write time, any attempt to append a second
+  record bearing an already-used `snapshotId`. Rollback resistance requires
+  the log itself to be tamper-evident (e.g. hash-chained), not yet specified
+  as an implementation.
+- Lifecycle transitions: observation recorded under a new `snapshotId` and
+  permanently terminal; no `corrected`, `superseded`, or any other transition
+  exists for an existing `snapshotId`.
 - Durable evidence: the append-only log itself; none found in current
   source.
-- Correction, rotation, or revocation route: a new dated correction entry
-  referencing the entry it supersedes; the original entry remains readable
-  for audit.
+- Correction, rotation, or revocation route: none, ever, for an existing
+  `snapshotId`. An erroneous or stale observation is never repaired,
+  corrected, or superseded in place; Party B instead appends a wholly new
+  record under a freshly generated `snapshotId`. The original record remains
+  durable, unchanged, and readable for audit; a receipt previously bound to
+  the old `snapshotId` is never implicitly rebound to the new one.
 - Required admission evidence: (a) an exact governed append-only store path,
   (b) proof the store is independent of the registry-writer role for the same
   registry, (c) at least one verifier consumer reading from it, (d) evidence
-  of tamper-evidence or rollback resistance, (e) Local verification that
-  (a)-(d) exist and match.
+  of tamper-evidence, rollback resistance, and write-time duplicate-ID
+  rejection, (e) Local verification that (a)-(d) exist and match.
 - Fail-closed behavior: a missing or stale observation record must cause
-  verifier rejection, not an assumption of freshness.
+  verifier rejection, not an assumption of freshness; a duplicate-`snapshotId`
+  record that reaches the durable log despite the write-time check causes
+  `countObservationsFor` to return more than one, which T2C's existing `> 1`
+  check fails closed on as `FORKED_OBSERVATION`/`UNVERIFIED`, treated as an
+  integrity fault requiring Local-reviewed investigation, never an
+  administrative merge.
 - Operator inputs still required: name the accountable party; authorize the
   append-only store's creation; decide whether one observation role spans
   both registries or two separate roles are used.

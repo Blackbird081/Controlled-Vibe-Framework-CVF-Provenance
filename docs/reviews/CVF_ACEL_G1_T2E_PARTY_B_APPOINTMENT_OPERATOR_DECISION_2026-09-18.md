@@ -49,9 +49,24 @@ Party B may cover both registries, as the design expressly permits, provided
 it remains separate from both registry writers and the operator records that
 scope explicitly. This decision records that two-registry scope.
 
-Party B may append observation and correction-chain records to a future
-observation-log store. It may not write, rotate, revoke or correct entries in
-either observed registry; mutate or delete earlier observation records; use
+T2H amendment note: the operator confirmed retaining this appointment while
+replacing the same-`snapshotId` correction-chaining condition below with
+immutable, write-once new-ID observation, per
+`docs/audits/CVF_ACEL_G1_T2F_OPERATIONAL_SOURCE_ESTABLISHMENT_CONTRACT_2026-09-18.md`
+(Immutable Snapshot Identity, T2G-01 through T2G-05) and
+`docs/reviews/CVF_ACEL_G1_T2H_PARTY_B_IMMUTABLE_OBSERVATION_RECONCILIATION_WORKER_RETURN_2026-09-18.md`.
+Party B's identity, two-registry scope and independence from Party A and
+Party C are unchanged by this amendment.
+
+Party B may append new original observation records, each under its own
+freshly generated, globally unique `snapshotId`, to a future
+observation-log store. If an earlier observation is later found erroneous or
+the observed registry content genuinely changes, Party B records the new
+observation under a brand-new `snapshotId` rather than correcting,
+superseding, or in any way rewriting the earlier record; the earlier record
+remains durable and unchanged. Party B may not write, rotate, revoke or
+correct entries in either observed registry; mutate, delete, alias or
+reclassify any existing observation record under any `snapshotId`; use
 Party A or Party C write credentials; or treat its appointment as proof that
 the observation store or any registry already exists.
 
@@ -71,7 +86,7 @@ prove that it cannot exercise either registry writer's permissions.
 | Allowed write surface | future append-only observation-log store only |
 | Required independence | separate identity and credentials from Party A and Party C; no registry mutation permission |
 | Forbidden combination | Party A; Party C; writer of either observed registry |
-| Correction behavior | append a new superseding record; never rewrite or delete prior records |
+| Correction behavior | none for an existing `snapshotId`; a new observation, including after an error or content change, is always recorded under a brand-new `snapshotId` as a new original record; never rewrite, delete, alias, or reclassify a prior record (amended by T2H; supersedes the prior same-ID correction-chaining condition) |
 | Required operational proof | concrete principal, governed log path, tamper evidence, consumer read, permission-separation evidence and Local verification |
 | Contract 2 activation authority | not granted by this appointment; independent approver remains pending |
 | Operational source state | `SOURCE_ESTABLISHMENT_PENDING` |
@@ -79,8 +94,14 @@ prove that it cannot exercise either registry writer's permissions.
 
 Appointment acceptance is bounded by every row. A later change that gives
 Party B mutation rights over an observed registry, merges it with either
-registry writer, or removes correction chaining invalidates this appointment
-for independent-observation evidence.
+registry writer, or removes append-only, write-once new-ID observation
+integrity (for example by permitting an in-place rewrite, deletion, alias, or
+same-`snapshotId` correction of an existing observation record) invalidates
+this appointment for independent-observation evidence. The T2H amendment
+removing the same-`snapshotId` correction-chaining condition, by contrast,
+does not invalidate this appointment: the operator affirmatively confirmed
+that specific replacement, and Party B's identity, independence and
+append-only integrity are unchanged by it.
 
 ## Decision / Disposition
 
@@ -109,7 +130,7 @@ the `IssuerRegistryAuthorityOwner`.
 | a role label is mistaken for a provisioned independent principal | require concrete principal and permission-separation evidence before operational use |
 | Party B gains registry mutation permissions | invalidate observation independence and reject candidate admission |
 | Party B and Party C become the same identity | prohibit the combination for issuer-registry observation |
-| observation history is edited in place | require append-only correction chaining and tamper evidence |
+| observation history is edited in place | require append-only, write-once new-ID observation (a fresh record under a brand-new `snapshotId`, never a same-ID correction) and tamper evidence |
 | Party B appointment is mistaken for an existing log or live observation | keep source establishment pending and admission unverified |
 | Party B is silently treated as Contract 2 activation approver | preserve that authority as separately pending |
 
