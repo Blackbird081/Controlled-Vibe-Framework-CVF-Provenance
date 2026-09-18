@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - G1 T2E Party A Appointed
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `242fd56f8051a44bfdfd7b9034779317421ead67`. T2E Party A appointment material commit; parent of the pending continuity commit. Contracts 1+2 combination decision is `93ae22c7ed01561f76bdd653cff8b81878d5f7ab`; T2E bounded design acceptance is `0f6bc405b55223d4912b265022acc29592c96b91`.
+Current HEAD recorded for this handoff: `c9881c146a25910ad84252f2ef740af729d43874`. Party A appointment continuity and V63 handoff-rotation commit. The T2E Party A material commit is `242fd56f8051a44bfdfd7b9034779317421ead67`; Contracts 1+2 combination decision is `93ae22c7ed01561f76bdd653cff8b81878d5f7ab`; T2E bounded design acceptance is `0f6bc405b55223d4912b265022acc29592c96b91`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
