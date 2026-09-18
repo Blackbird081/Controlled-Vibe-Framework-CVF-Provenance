@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2g_immutable_snapshot_contract_accepted_design_only_bounded`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local assesses the next bounded design/readiness question; role=Local orchestrator/reviewer; phase=T2G accepted documentation-only at 4b6a12a; decision owner=Local for design review, operator for source creation or implementation; parked checkpoint=source creation, implementation/live/runtime/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2h_party_b_immutable_observation_reconciliation_dispatched_pending_bounded`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=INTERNAL_AGENT executes committed T2H documentation reconciliation under WORKER_MUST_NOT_COMMIT; role=Local orchestrator/reviewer; phase=T2H dispatched at 148f3081c; decision owner=Local for review/closure, operator for later source/implementation; parked checkpoint=source creation, principals, keys, implementation/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_acel_g1_t2g_immutable_snapshot_contract_accepted_design_only_bounded`
-Current mode: `multi_repo_absorption_acel_g1_t2g_immutable_snapshot_contract_accepted_design_only_bounded`; previous mode marker: `multi_repo_absorption_acel_g1_t2g_immutable_snapshot_contract_dispatched_worker_return_pending_bounded`
+Current mode marker: `multi_repo_absorption_acel_g1_t2h_party_b_immutable_observation_reconciliation_dispatched_pending_bounded`
+Current mode: `multi_repo_absorption_acel_g1_t2h_party_b_immutable_observation_reconciliation_dispatched_pending_bounded`; previous mode marker: `multi_repo_absorption_acel_g1_t2g_immutable_snapshot_contract_accepted_design_only_bounded`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2G-IMMUTABLE-SNAPSHOT-IDENTITY-CONTRACT-ACCEPTED_AT_4b6a12a; NEXT_STEP=LOCAL_ASSESS_NEXT_BOUNDED_DESIGN_OR_REQUEST_OPERATOR_SOURCE_CREATION_CHECKPOINT; EXPANSION_ALLOWED=false. T2G documentation-only contract accepted after Local reviewer repairs; T2C unchanged; thirteen parked G1 paths remain uncommitted. No source, key, credential, implementation, live lookup, admission, runtime, public sync or deployment is authorized. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_acel_g1_t2g_immutable_snapshot_contract_accepted_design_only_bounded`. T2B rejection remains controlling; T2C through T2G remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2H-PARTY-B-IMMUTABLE-OBSERVATION-RECONCILIATION-DISPATCHED_AT_148f3081c; NEXT_STEP=INTERNAL_AGENT_EXECUTE_T2H_PARTY_B_DOCUMENT_RECONCILIATION; EXPANSION_ALLOWED=false. Operator confirmed Party B appointment-condition amendment. Committed T2H packet permits only two exact T2E/Party B document edits and one new worker return, no worker commit. T2C/T2G and thirteen parked G1 paths stay read-only. Local reviews and commits. Source/principal/key/credential/implementation/live/admission/runtime/public/deployment remain parked. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_acel_g1_t2h_party_b_immutable_observation_reconciliation_dispatched_pending_bounded`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
