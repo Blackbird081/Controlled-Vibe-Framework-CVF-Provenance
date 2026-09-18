@@ -11,7 +11,7 @@ history/state aggregate is a targeted lookup, not a default startup step:
 1. `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` (compact current
    facts: current mode, active handoff, next allowed move)
 2. this front door
-3. `AGENT_HANDOFF_V62_2026-09-17.md`
+3. `AGENT_HANDOFF_V63_2026-09-18.md`
 4. only the current-authority paths those two surfaces name for the task
 5. `CVF_SESSION/ACTIVE_SESSION_STATE.json` only as a targeted lookup, when a
    current fact above is missing, contradictory, or the task explicitly
@@ -31,28 +31,28 @@ artifact.
 |---|---|
 | Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
-| Active handoff | `AGENT_HANDOFF_V62_2026-09-17.md` |
+| Active handoff | `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
 | Pain-point closure direction | `docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md` |
 | Historical handoffs | `CVF_SESSION/handoffs/archive/` |
-| Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V61_2026-09-16.md` |
+| Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2e_contracts_1_2_combined_party_identities_pending_bounded`; active handoff=AGENT_HANDOFF_V62_2026-09-17.md; next allowed move=operator names or explicitly defers actual Party A, Party B and Party C; role=Local orchestrator/reviewer; phase=G1 T2E Contracts 1+2 topology approved at 93ae22c7e; decision owner=operator for actual appointments, Local for technical review and later governed packet authoring; parked checkpoint=party identities, source establishment, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live, keys, runtime, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2e_party_a_appointed_party_b_decision_pending_bounded`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=operator Party B RegistryObservationOwner decision; role=Local orchestrator/reviewer; phase=G1 T2E Party A appointed at 242fd56f8; decision owner=operator for remaining appointments, Local for technical review and later governed packet authoring; parked checkpoint=Party B, Party C, independent activation approver, source establishment, implementation/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_acel_g1_t2e_contracts_1_2_combined_party_identities_pending_bounded`
-Current mode: `multi_repo_absorption_acel_g1_t2e_contracts_1_2_combined_party_identities_pending_bounded`; previous mode marker: `multi_repo_absorption_acel_g1_t2e_contract_design_reviewed_owner_appointment_decision_pending_bounded`
+Current mode marker: `multi_repo_absorption_acel_g1_t2e_party_a_appointed_party_b_decision_pending_bounded`
+Current mode: `multi_repo_absorption_acel_g1_t2e_party_a_appointed_party_b_decision_pending_bounded`; previous mode marker: `multi_repo_absorption_acel_g1_t2e_contracts_1_2_combined_party_identities_pending_bounded`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2E-CONTRACTS-1-2-COMBINATION-APPROVED_AT_93ae22c7e; NEXT_STEP=OPERATOR_NAME_OR_DEFER_ACTUAL_PARTIES_A_B_C; EXPANSION_ALLOWED=false. The operator approved combining Contract 1 VerifierKeyAndRegistryControlOwner with Contract 2 VerificationAuthoritySpecificationOwner under future Party A. Contract 3 remains separate Party B and Contract 4 remains separate Party C. The decision is recorded at 93ae22c7e after reviewer-fast 68/68 and pre-commit 89/89. This is topology approval only: Party A, Party B and Party C identities remain IDENTITY_PENDING_OPERATOR_APPOINTMENT; operational sources remain BLOCKED_SOURCE_NOT_FOUND and candidate admission remains UNVERIFIED. Preserve STOP_REASSESS_ARCHITECTURE: do not open another paper-only T2 successor or worker order before the operator names or explicitly defers all three actual parties. After exact identities and acceptance boundaries are supplied, Local may author a separately governed source-establishment or implementation packet. Thirteen pre-existing untracked G1 evidence paths remain parked and unchanged. No key creation, registry/source implementation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_acel_g1_t2e_contracts_1_2_combined_party_identities_pending_bounded`. T2B rejection at `4bb04c836` remains controlling; T2C, T2D and T2E remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2E-PARTY-A-APPOINTED_AT_242fd56f8; NEXT_STEP=OPERATOR_PARTY_B_REGISTRY_OBSERVATION_OWNER_DECISION; EXPANSION_ALLOWED=false. The operator appointed CVF Operator / repository owner as Party A for combined Contracts 1+2 at 242fd56f8 after reviewer-fast 68/68 and pre-commit 89/89. Party A appointment is bounded: it cannot independently activate its own Contract 2 specification, observe its own key registry, or act as Party C. Party B and Party C identities remain IDENTITY_PENDING_OPERATOR_APPOINTMENT; an independent Contract 2 activation approver also remains pending. Operational sources remain BLOCKED_SOURCE_NOT_FOUND and candidate admission remains UNVERIFIED. Continue sequentially with Party B, the independent RegistryObservationOwner, then Party C. Preserve STOP_REASSESS_ARCHITECTURE: no paper-only worker order or implementation packet before the remaining identity decisions. Thirteen pre-existing untracked G1 evidence paths remain parked and unchanged. No key creation, registry/source implementation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_acel_g1_t2e_party_a_appointed_party_b_decision_pending_bounded`. T2B rejection at `4bb04c836` remains controlling; T2C, T2D and T2E remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

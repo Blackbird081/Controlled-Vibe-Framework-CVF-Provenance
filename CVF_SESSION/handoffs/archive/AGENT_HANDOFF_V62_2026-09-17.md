@@ -1,7 +1,7 @@
 # CVF Agent Handoff V62 - G1 T2C Design Accepted Bounded
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `93ae22c7ed01561f76bdd653cff8b81878d5f7ab`. T2E Contracts 1+2 combination operator decision; parent of the pending continuity commit. T2E design acceptance remains `0f6bc405b55223d4912b265022acc29592c96b91`; T2D bounded review material is `b7666a470c36880c72186f83e20a72101e0ac0a6`.
+Current HEAD recorded for this handoff: `242fd56f8051a44bfdfd7b9034779317421ead67`. T2E Party A appointment material commit; parent of the pending continuity commit. Contracts 1+2 combination decision remains `93ae22c7ed01561f76bdd653cff8b81878d5f7ab`; T2E design acceptance remains `0f6bc405b55223d4912b265022acc29592c96b91`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -22,11 +22,11 @@ T2B remains rejected at `4bb04c836`; its three worker outputs and ten earlier ev
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2e_contracts_1_2_combined_party_identities_pending_bounded`; active handoff=`AGENT_HANDOFF_V62_2026-09-17.md`; next allowed move=operator names or explicitly defers actual Party A, Party B and Party C; role=Local reviewer, operator actual-owner appointment decision maker; parked checkpoint=party identities, source establishment, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live, keys, runtime, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2e_party_a_appointed_party_b_decision_pending_bounded`; active handoff=`AGENT_HANDOFF_V62_2026-09-17.md`; next allowed move=operator Party B RegistryObservationOwner decision; role=Local reviewer, operator actual-owner appointment decision maker; parked checkpoint=Party B, Party C, independent activation approver, source establishment, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live, keys, runtime, public sync and deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g1_t2e_contracts_1_2_combined_party_identities_pending_bounded`. The active absorption program remains incomplete and restricted to its same source ID.
+`multi_repo_absorption_acel_g1_t2e_party_a_appointed_party_b_decision_pending_bounded`. The active absorption program remains incomplete and restricted to its same source ID.
 
 Latest closed learning-history wave remains `LHW24`.
 
@@ -40,6 +40,7 @@ Latest closed learning-history wave remains `LHW24`.
 - `5785969ed`: operator approval of the four-responsibility topology, paired T2E GC-018 baseline and no-commit internal work order committed after pre-dispatch 82/82, 13/13 parked hash match and pre-commit 89/89. This opens contract design only; actual parties, source implementation and candidate admission remain blocked.
 - `0f6bc405b`: T2E INTERNAL_AGENT return independently reviewed and materially accepted after two Local role-separation repairs, worker-return fast PASS and pre-commit 89/89. Committed-range checks passed 80/82; handoff sync and the thirteen preserved untracked paths prevent a CLOSED claim. Semantic convergence requires `STOP_REASSESS_ARCHITECTURE`; no further paper-only successor is authorized.
 - `93ae22c7e`: operator approved the sole permitted combination, Contracts 1+2 under future Party A. Contracts 3 and 4 remain separate Party B and Party C. Reviewer-fast 68/68 and pre-commit 89/89 passed; exact identities remain pending and no worker order is released.
+- `242fd56f8`: operator appointed CVF Operator / repository owner as Party A for Contracts 1+2. The appointment is fail-closed for self-activation and self-observation; Party B, Party C, independent activation approval and all operational sources remain pending.
 
 ## External / Local Coordination Boundary
 
@@ -47,7 +48,7 @@ External research is advisory and ended before this Local private-CVF decision. 
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2E-CONTRACTS-1-2-COMBINATION-APPROVED_AT_93ae22c7e; NEXT_STEP=OPERATOR_NAME_OR_DEFER_ACTUAL_PARTIES_A_B_C; EXPANSION_ALLOWED=false. The operator approved combining Contract 1 VerifierKeyAndRegistryControlOwner with Contract 2 VerificationAuthoritySpecificationOwner under future Party A. Contract 3 remains separate Party B and Contract 4 remains separate Party C. The decision is recorded at 93ae22c7e after reviewer-fast 68/68 and pre-commit 89/89. This is topology approval only: Party A, Party B and Party C identities remain IDENTITY_PENDING_OPERATOR_APPOINTMENT; operational sources remain BLOCKED_SOURCE_NOT_FOUND and candidate admission remains UNVERIFIED. Preserve STOP_REASSESS_ARCHITECTURE: do not open another paper-only T2 successor or worker order before the operator names or explicitly defers all three actual parties. After exact identities and acceptance boundaries are supplied, Local may author a separately governed source-establishment or implementation packet. Thirteen pre-existing untracked G1 evidence paths remain parked and unchanged. No key creation, registry/source implementation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2E-PARTY-A-APPOINTED_AT_242fd56f8; NEXT_STEP=OPERATOR_PARTY_B_REGISTRY_OBSERVATION_OWNER_DECISION; EXPANSION_ALLOWED=false. The operator appointed CVF Operator / repository owner as Party A for combined Contracts 1+2 at 242fd56f8 after reviewer-fast 68/68 and pre-commit 89/89. Party A appointment is bounded: it cannot independently activate its own Contract 2 specification, observe its own key registry, or act as Party C. Party B and Party C identities remain IDENTITY_PENDING_OPERATOR_APPOINTMENT; an independent Contract 2 activation approver also remains pending. Operational sources remain BLOCKED_SOURCE_NOT_FOUND and candidate admission remains UNVERIFIED. Continue sequentially with Party B, the independent RegistryObservationOwner, then Party C. Preserve STOP_REASSESS_ARCHITECTURE: no paper-only worker order or implementation packet before the remaining identity decisions. Thirteen pre-existing untracked G1 evidence paths remain parked and unchanged. No key creation, registry/source implementation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -212,3 +213,22 @@ standing instruction for Local to manage review and transitions. Rollback
 boundary: revert only this continuity projection if rejected, preserving the
 operator-decision material commit and all thirteen parked paths. Actual-party
 appointment remains reserved to the operator.
+
+## Core Guard Self-Protection Authorization - T2E Party A Appointment Continuity
+
+Authorized guard-maintenance scope: project Party A appointment material at
+`242fd56f8` into the six active continuity paths and advance only to the Party
+B operator decision. No source, key, checker, activation, implementation,
+runtime or public state is changed.
+
+Protected paths: `AGENT_HANDOFF_V62_2026-09-17.md`;
+`CVF_SESSION_MEMORY.md`;
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Operator authorization: affirmative appointment of CVF Operator / repository
+owner as Party A. Rollback boundary: revert only this continuity projection if
+rejected, preserving Party A material and all thirteen parked paths. Party B,
+Party C and independent activation approval remain operator checkpoints.
