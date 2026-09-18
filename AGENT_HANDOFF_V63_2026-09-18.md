@@ -1,7 +1,7 @@
-# CVF Agent Handoff V63 - G1 T3A Route Selected, Operator Checkpoint Pending
+# CVF Agent Handoff V63 - G1 T3A-C1 Ceremony Tooling Dispatched
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `279902d8edad08213d8eb40012ea8e12f1f19564`. Local recorded a DPAPI-protected test-only Ed25519 key; T3A operational principal separation and source implementation remain on HOLD.
+Current material HEAD recorded for this handoff: `a4463a2e6f5aa6fb42952c29f4fcd39a51e02b16`. Local committed the principal-bound key-ceremony tooling packet; the actual Party A ceremony and source implementation remain on HOLD.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -11,22 +11,23 @@ Status: ACTIVE
 ## Purpose
 
 Carry the accepted T2H Party B appointment-condition reconciliation and the
-Local T3A route decision. No worker dispatch is open; the operator checkpoint
-for the concrete Party A principal and custody/ceremony boundary is pending.
+Local T3A-C1 tooling dispatch. One bounded INTERNAL_AGENT worker lane is open
+for tooling and hermetic tests only; the real ceremony remains operator-owned.
 
 ## Scope / Target / Owner Boundary
 
-Target: accepted T2H documentation-only reconciliation and subsequent T3A
-key-ceremony route selection. Local chose a fresh-key route, not key generation
-or source implementation. Operator retains principal and ceremony authority.
+Target: accepted T2H documentation-only reconciliation and subsequent T3A-C1
+key-ceremony tooling. The verified non-admin local principal is
+`cvf-g1-party-a`; Claude receives no credentials and may not execute as that
+principal. Operator retains actual ceremony authority.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t3a_new_key_route_selected_operator_checkpoint_pending_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator confirms concrete Party A principal and custody/ceremony boundary; parked checkpoint=source creation, keys, implementation/live/runtime/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t3a_c1_principal_bound_key_ceremony_tooling_dispatched_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT executes the committed T3A-C1 tooling work order without credentials, alternate-user execution, staging or commit; parked checkpoint=actual Party A ceremony, source creation, key promotion, implementation/live/runtime/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g1_t3a_new_key_route_selected_operator_checkpoint_pending_bounded`.
+`multi_repo_absorption_acel_g1_t3a_c1_principal_bound_key_ceremony_tooling_dispatched_bounded`.
 The active absorption program remains incomplete and restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
 wave remains `LHW24`.
@@ -96,12 +97,20 @@ release source creation, implementation, candidate admission or runtime use.
   context outside the repository; fresh-process decrypt/sign/verify passed.
   This is not a separate OS principal or a Group 1 trust anchor. Operational
   separation, source creation and T3A implementation remain on HOLD.
+- Local verified the dedicated non-admin Windows principal `cvf-g1-party-a`
+  with SID `S-1-5-21-1644666849-912006174-747199667-1006`, password-required
+  enforcement and a bounded expiration. No password or secret was disclosed.
+- T3A-C1 baseline and work order were committed at `a4463a2e6`: the worker may
+  create only the PowerShell wrapper, Node helper and worker return named by
+  the packet. Pre-dispatch passed 82/82 and pre-commit passed 89/89. The worker
+  must not access credentials, execute as Party A, create a real key/source,
+  stage or commit.
 - Thirteen pre-existing untracked G1 evidence paths remain byte-preserved,
   uncommitted and outside this lane; primary-worktree finality remains pending.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T3A-NEW-KEY-ROUTE-SELECTED_AT_fb8605048; NEXT_STEP=OPERATOR_CONFIRM_T3A_CONCRETE_PARTY_A_PRINCIPAL_AND_CUSTODY_CEREMONY; EXPANSION_ALLOWED=false. Local audit selected a fresh Ed25519 key-generation route at fb8605048, not an import/reuse of an unverified key. T3A remains HOLD: Party A is an accountable role, not a provisioned principal; the exact write/sign principal, custody target and secret-safe generation ceremony require operator confirmation. No work order is dispatchable and no source, key, credential, implementation, live lookup, admission, runtime, public sync or deployment is authorized yet. T2C/T2G/T2H and thirteen parked G1 paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T3A-C1-TOOLING-DISPATCHED_AT_a4463a2e6; NEXT_STEP=INTERNAL_AGENT_EXECUTE_COMMITTED_T3A_C1_TOOLING_WORK_ORDER; EXPANSION_ALLOWED=false. Local verified `cvf-g1-party-a` as the bounded non-admin Party A test principal and committed the T3A-C1 tooling packet at a4463a2e6. The worker may create exactly the three declared outputs and run current-user disposable hermetic tests only. No credential access, alternate-user execution, real Party A key ceremony, operational source, key promotion, admission, live/runtime effect, public sync, deployment, staging or worker commit is authorized. After `COMPLETE_PENDING_REVIEW`, Local reviews and decides; the actual ceremony remains a separate operator checkpoint. T2C/T2G/T2H and thirteen parked G1 paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## External / Local Coordination Boundary
 
@@ -192,10 +201,16 @@ encrypted local test key and thirteen parked G1 paths. No operational source,
 separate principal, key promotion, checker, live, runtime, public or deployment
 effect is authorized.
 
+## Core Guard Self-Protection Authorization - T3A-C1 Tooling Dispatch Continuity
+
+Authorized guard-maintenance scope: project committed T3A-C1 tooling packet `a4463a2e6` into continuity and replace the completed principal checkpoint with the bounded INTERNAL_AGENT execution move.
+Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. The thirteen parked untracked paths remain read-only and outside this lane.
+Operator authorization: the operator created and confirmed the separate principal, authorized Local to continue, and retains the real ceremony checkpoint.
+Rollback boundary: revert this continuity projection only; preserve the committed packet, verified principal state and parked files. No credential access, alternate-user execution, real key, operational source, key promotion, live/runtime effect, public sync or deployment is authorized.
+
 ## Claim Boundary
 
-This handoff records T2H documentation-only acceptance and the T3A route
-selection on HOLD pending the operator checkpoint.
-It grants no source establishment, activation, key,
-implementation, live lookup, candidate admission, runtime, public-sync or
-deployment authority.
+This handoff records T2H documentation-only acceptance and the bounded T3A-C1
+tooling dispatch. It grants no credential access, alternate-user execution,
+real Party A ceremony, operational source establishment, activation, key
+promotion, candidate admission, live/runtime effect, public sync or deployment.
