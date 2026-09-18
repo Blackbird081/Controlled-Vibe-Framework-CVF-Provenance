@@ -14,19 +14,19 @@ Carry the bounded Local G1 T2C design acceptance without reopening T2B or any li
 
 ## Scope / Target / Owner Boundary
 
-Target: ACEL G1 post-T2B trust-anchor architecture and continuity. Role and decision owner: Local orchestrator/reviewer. A future shared-workspace worker is `INTERNAL_AGENT`; no worker is dispatched by this handoff.
+Target: ACEL G1 post-T2C source-owner analysis and continuity. Role and decision owner: Local orchestrator/reviewer. The T2D documentation-only shared-workspace worker is `INTERNAL_AGENT`; operational owner assignment remains with the operator.
 
 ## Active Boundary
 
-T2B remains rejected at `4bb04c836`; its three worker outputs and ten earlier evidence paths remain uncommitted and frozen. Local selected Ed25519-signed verifier receipts at `1c5c01675`; T2C hypothetical design and completion review were materially accepted bounded at `654de5e61`. No verifier key owner, live lookup, signer, implementation or operational G1 root contract is established; no additional worker dispatch is authorized.
+T2B remains rejected at `4bb04c836`; its three worker outputs and ten earlier evidence paths remain uncommitted and frozen. Local selected Ed25519-signed verifier receipts at `1c5c01675`; T2C hypothetical design and completion review were materially accepted bounded at `654de5e61`. The operator approved T2D governance/design source-owner analysis; its Local decision, baseline and internal work order were materially committed at `78371faca`. This opens only a two-output documentation worker return. No verifier key owner, live lookup, signer, implementation or operational G1 root contract is established.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2c_design_accepted_bounded`; active handoff=`AGENT_HANDOFF_V62_2026-09-17.md`; next allowed move=Local source-owner reconciliation decision only; role=Local decision owner; parked checkpoint=G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live, keys, runtime, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2d_owner_analysis_dispatch_ready_bounded`; active handoff=`AGENT_HANDOFF_V62_2026-09-17.md`; next allowed move=internal T2D documentation-only worker return then Local review; role=Local decision owner; parked checkpoint=operational owner assignment, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live, keys, runtime, public sync and deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g1_t2c_design_accepted_bounded`. The active absorption program remains incomplete and restricted to its same source ID.
+`multi_repo_absorption_acel_g1_t2d_owner_analysis_dispatch_ready_bounded`. The active absorption program remains incomplete and restricted to its same source ID.
 
 Latest closed learning-history wave remains `LHW24`.
 
@@ -35,6 +35,7 @@ Latest closed learning-history wave remains `LHW24`.
 - `800bb5ba7`: G2 historical dispatch-state gap annotated honestly from worker-start and Git evidence; no claim of a prospective dispatch check.
 - `d3d5f0cab`: dedicated handoff-anchor sync after that correction.
 - `1c5c01675`: G1 T2C design choice; `c860a2704`: held packet; `ea914efff`: hypothetical-only release; `654de5e61`: reviewer-repaired human/JSON design, worker return and completion review accepted design-only after pre-commit 89/89. No real key or lookup evidence is accepted.
+- `78371faca`: operator-approved T2D Local source-owner decision, GC-018 baseline and internal documentation-only work order committed after pre-dispatch 82/82 and pre-commit 89/89. Thirteen parked paths remain read-only; the worker has not returned.
 
 ## External / Local Coordination Boundary
 
@@ -42,7 +43,7 @@ External research is advisory and ended before this Local private-CVF decision. 
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2C-HYPOTHETICAL_DESIGN_ACCEPTED_BOUNDED_AT_654de5e61; NEXT_STEP=LOCAL_SOURCE_OWNER_RECONCILIATION_DECISION_ONLY; EXPANSION_ALLOWED=false. The T2C human contract, JSON manifest, worker return and Local completion review are materially committed at 654de5e61. No successor work order or worker dispatch is released. Existing G1 verifier-key registry owner, trusted authority specification source, observation-log owner and genuine issuer-lookup provenance remain unverified; all actual candidate admission stays UNVERIFIED. Preserve thirteen parked G1 evidence paths unchanged. No key creation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2D-SOURCE_OWNER_ANALYSIS_DISPATCH_READY_AT_78371faca; NEXT_STEP=INTERNAL_WORKER_T2D_DOC_ONLY_RETURN_THEN_LOCAL_REVIEW; EXPANSION_ALLOWED=false. Operator-approved governance/design T2D baseline, Local decision and internal work order are materially committed at 78371faca; the operator may copy the work order to the shared-workspace worker. The worker owns two documentation outputs and must not commit or appoint an operational owner. Existing G1 verifier-key registry owner, trusted authority specification source, observation-log owner and genuine issuer-lookup provenance remain unverified; all actual candidate admission stays UNVERIFIED. Preserve thirteen parked G1 evidence paths unchanged. No key creation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -91,4 +92,33 @@ P4-C1 safety-marker adjudication: the post-commit collector on continuity commit
 
 ## Claim Boundary
 
-This handoff records bounded acceptance of a hypothetical design and a Local-only source-owner decision as the next move. It grants no key management, live lookup, implementation, further worker dispatch, public export or production authority.
+This handoff records bounded acceptance of a hypothetical design and release
+of one internal documentation-only T2D source-owner analysis work order. It
+grants no operational owner assignment, key management, live lookup,
+implementation, further successor dispatch, public export or production
+authority.
+
+## Core Guard Self-Protection Authorization - T2D Dispatch Continuity
+
+Authorized guard-maintenance scope: continuity-only projection of the
+operator-approved T2D documentation work order after material commit
+`78371faca`; no checker or protected governance semantics are changed.
+
+Protected paths: `CVF_SESSION_MEMORY.md`;
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/nextAllowedMove.json`;
+`CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`;
+`CVF_SESSION/state/entries/acelG1T2cVerifierTrustAnchorLocalDecision20260917.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`AGENT_HANDOFF_V62_2026-09-17.md`.
+
+Operator authorization: 2026-09-18 approval of the recommended governance/design
+source-owner establishment tranche. The T2D work order is documentation-only
+and worker-must-not-commit; the Local decision and dispatch packet are
+materially committed at `78371faca`.
+
+Rollback boundary: revert only this T2D dispatch-continuity projection if
+rejected; preserve T2C accepted design, T2D material packet and all thirteen
+parked G1 evidence paths. No key, live lookup, implementation, G4, runtime,
+public sync or deployment authority is included.

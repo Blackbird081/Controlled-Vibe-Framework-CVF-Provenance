@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2c_design_accepted_bounded`; active handoff=AGENT_HANDOFF_V62_2026-09-17.md; next allowed move=Local source-owner reconciliation decision only; role=Local orchestrator/reviewer; phase=G1 T2C design-only completion at 654de5e61; decision owner=Local; parked checkpoint=G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live, keys, runtime, public sync and deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2d_owner_analysis_dispatch_ready_bounded`; active handoff=AGENT_HANDOFF_V62_2026-09-17.md; next allowed move=internal T2D documentation-only worker return then Local review; role=Local orchestrator/reviewer; phase=G1 T2D source-owner analysis dispatch at 78371faca; decision owner=Local; parked checkpoint=operational owner assignment, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live, keys, runtime, public sync and deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_acel_g1_t2c_design_accepted_bounded`
-Current mode: `multi_repo_absorption_acel_g1_t2c_design_accepted_bounded`; previous mode marker: `multi_repo_absorption_acel_g1_t2c_trust_anchor_design_selected`
+Current mode marker: `multi_repo_absorption_acel_g1_t2d_owner_analysis_dispatch_ready_bounded`
+Current mode: `multi_repo_absorption_acel_g1_t2d_owner_analysis_dispatch_ready_bounded`; previous mode marker: `multi_repo_absorption_acel_g1_t2c_design_accepted_bounded`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2C-HYPOTHETICAL_DESIGN_ACCEPTED_BOUNDED_AT_654de5e61; NEXT_STEP=LOCAL_SOURCE_OWNER_RECONCILIATION_DECISION_ONLY; EXPANSION_ALLOWED=false. The T2C human contract, JSON manifest, worker return and Local completion review are materially committed at 654de5e61. No successor work order or worker dispatch is released. Existing G1 verifier-key registry owner, trusted authority specification source, observation-log owner and genuine issuer-lookup provenance remain unverified; all actual candidate admission stays UNVERIFIED. Preserve thirteen parked G1 evidence paths unchanged. No key creation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2D-SOURCE_OWNER_ANALYSIS_DISPATCH_READY_AT_78371faca; NEXT_STEP=INTERNAL_WORKER_T2D_DOC_ONLY_RETURN_THEN_LOCAL_REVIEW; EXPANSION_ALLOWED=false. Operator-approved governance/design T2D baseline, Local decision and internal work order are materially committed at 78371faca; the operator may copy the work order to the shared-workspace worker. The worker owns two documentation outputs and must not commit or appoint an operational owner. Existing G1 verifier-key registry owner, trusted authority specification source, observation-log owner and genuine issuer-lookup provenance remain unverified; all actual candidate admission stays UNVERIFIED. Preserve thirteen parked G1 evidence paths unchanged. No key creation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.
 Mode: `multi_repo_absorption_acel_g1_t2c_design_accepted_bounded`. T2B rejection at `4bb04c836` remains controlling; T2C design-only completion at `654de5e61` does not make a root contract operational. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
