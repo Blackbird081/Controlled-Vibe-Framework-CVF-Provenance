@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - G1 T3A Route Selected, Operator Checkpoint Pending
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `fb86050487c4da7e08a32138ae2a001bd9431c49`. Local selected the T3A new-key ceremony route at design level; principal/custody authorization and source implementation remain on HOLD.
+Current material HEAD recorded for this handoff: `8d11420c0e9a9f2b931cd9acafd98cff650242f4`. Local added a static T2C-to-T2F test-vector join; T3A operational principal/custody and source implementation remain on HOLD.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -163,6 +163,17 @@ Authorized guard-maintenance scope: project Local-accepted T2H material commit `
 ## Core Guard Self-Protection Authorization - T3A Route Continuity
 
 Authorized guard-maintenance scope: project Local T3A route-selection audit `fb8605048` into continuity and replace the stale Local-selection next move with the exact operator checkpoint. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. The two pre-existing untracked checker paths remain read-only and are not authorized for mutation. Operator authorization: requested Local audit and route choice; principal, custody and ceremony actions remain unapproved. Rollback boundary: revert this continuity projection only, preserving the material audit, T2H and thirteen parked paths. No source, key, credential, implementation, live, runtime, public or deployment action is authorized.
+
+## Core Guard Self-Protection Authorization - T2C/T2F Vector Bridge Marker Sync
+
+Authorized guard-maintenance scope: update only this active handoff's material
+HEAD marker for the committed documentation-only vector bridge `8d11420c0`.
+Protected path: `AGENT_HANDOFF_V63_2026-09-18.md`.
+Operator authorization: standing Local reviewer/closer session-sync authority;
+no principal, custody, ceremony or operational-source effect is inferred.
+Rollback boundary: revert this marker sync only; preserve the committed vector
+bridge, T3A route audit and thirteen parked G1 paths. No checker, key,
+credential, source, live, runtime, public or deployment change is authorized.
 
 ## Claim Boundary
 
