@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - G1 T3A Route Selected, Operator Checkpoint Pending
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `8d11420c0e9a9f2b931cd9acafd98cff650242f4`. Local added a static T2C-to-T2F test-vector join; T3A operational principal/custody and source implementation remain on HOLD.
+Current material HEAD recorded for this handoff: `279902d8edad08213d8eb40012ea8e12f1f19564`. Local recorded a DPAPI-protected test-only Ed25519 key; T3A operational principal separation and source implementation remain on HOLD.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -91,6 +91,11 @@ release source creation, implementation, candidate admission or runtime use.
   unverified import/reuse. Exact principal, custody target and ceremony
   authorization remain operator-owned. Group 1 source and T3A implementation
   stay on HOLD; no worker work order is open.
+- Local test-only custody evidence was added to that audit at `279902d8e`:
+  one new Ed25519 key is encrypted under the current Windows user's DPAPI
+  context outside the repository; fresh-process decrypt/sign/verify passed.
+  This is not a separate OS principal or a Group 1 trust anchor. Operational
+  separation, source creation and T3A implementation remain on HOLD.
 - Thirteen pre-existing untracked G1 evidence paths remain byte-preserved,
   uncommitted and outside this lane; primary-worktree finality remains pending.
 
@@ -174,6 +179,18 @@ no principal, custody, ceremony or operational-source effect is inferred.
 Rollback boundary: revert this marker sync only; preserve the committed vector
 bridge, T3A route audit and thirteen parked G1 paths. No checker, key,
 credential, source, live, runtime, public or deployment change is authorized.
+
+## Core Guard Self-Protection Authorization - Local Test Custody Marker Sync
+
+Authorized guard-maintenance scope: update only this active handoff's material
+HEAD marker and bounded latest-work note for audit commit `279902d8e`.
+Protected path: `AGENT_HANDOFF_V63_2026-09-18.md`.
+Operator authorization: operator requested temporary private local test setup
+and then confirmed continuation; Local owns the session marker sync.
+Rollback boundary: revert this handoff sync only; preserve the audit commit,
+encrypted local test key and thirteen parked G1 paths. No operational source,
+separate principal, key promotion, checker, live, runtime, public or deployment
+effect is authorized.
 
 ## Claim Boundary
 
