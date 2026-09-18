@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: APPROVED_FOR_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-17
 
@@ -318,13 +318,13 @@ The worker return requires exact source paths/locators, negative-search collisio
 
 ## Acceptance Criteria
 
-- [ ] Missing owner and lookup provenance are resolved by independently verifiable source evidence or the packet stays explicitly hypothetical and fail-closed.
-- [ ] Human/JSON design outputs agree on every signed field, trust-source, key-lifecycle and admission predicate.
-- [ ] Forged content-hash receipt, receipt-supplied key and signed false-lookup vectors all fail candidate admission.
-- [ ] Both TypeScript and Python verification responsibilities are specified without claiming either is implemented.
-- [ ] All 13 frozen evidence hashes match and no forbidden path changes.
+- [x] Missing owner and lookup provenance remain explicitly hypothetical and fail-closed.
+- [x] Human/JSON design outputs agree on signed fields, trust-source, key lifecycle and admission predicates after disclosed Local repairs.
+- [x] Forged content-hash receipt, receipt-supplied key and signed false-lookup cases are denied by the specified admission rule; vectors do not prove a real lookup.
+- [x] Both TypeScript and Python verification responsibilities are specified without claiming either is implemented.
+- [x] All 13 frozen evidence hashes match and no forbidden path changes.
 
-These are future design-review criteria, not a current completion checklist.
+These are documentation-only acceptance results, not operational trust evidence. Local disposition: `docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_COMPLETION_2026-09-17.md`.
 
 ## Review Gate
 
@@ -336,7 +336,7 @@ The worker must run `python governance/compat/run_worker_return_fast_gate.py`; L
 - [x] Missing key/lookup owner remains an operational hold; hypothetical design alone is released.
 - [x] Thirteen parked paths are excluded from write ownership.
 - [x] Operator released hypothetical documentation only; operational dependencies remain absent.
-- [ ] Worker return, independent review and committed-range closure.
+- [x] Worker return and independent design-only review are committed at `654de5e611f242bfe144b7e3403b8ceb2f9913e6`; committed-range closure is completed after continuity synchronization.
 
 ## Return-To-Orchestrator Conditions
 
@@ -386,8 +386,29 @@ The operator's 2026-09-18 audit-and-dispatch instruction releases hypothetical d
 
 DEFERRED_PRIVATE_ONLY
 
-Reason: private held authoring packet; no public-sync authority.
+Reason: private design-only closure; no public-sync authority.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Worker return | exact three hypothetical outputs with no worker commit | three outputs reviewed and included in material commit `654de5e61` | PASS |
+| Cryptographic fixture | published JCS bytes, digest and Ed25519 signature independently agree | AV-0 and AV-11 both verified from published fields | PASS |
+| Real verifier receipt or genuine source lookup | absent in design-only tranche | absent; operational source owner remains unverified | PASS_BOUNDARY_ONLY |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED`, design only | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_COMPLETION_2026-09-17.md` | material commit `654de5e611f242bfe144b7e3403b8ceb2f9913e6` | PASS |
+| Roadmap state | active program continuity entry | N/A with reason: no dedicated T2C roadmap row changed by this documentation tranche | N/A with reason: no dedicated T2C roadmap row |
+| Registry JSON | existing GC-051 registry | generator drift check PASS; no corpus or classification claim changed | PASS |
+| Registry Markdown | existing GC-051 registry companion | unchanged; no scan result promoted | PASS |
+| External evidence digest | none | no external evidence used or exported | N/A with reason: internal documentation only |
+| System loop interlock | none | no runtime or cross-loop integration created | N/A with reason: design only |
+| Session continuity | active front door, state and handoff | dedicated continuity sync records design-only acceptance and parked next move | PASS |
 
 ## Claim Boundary
 
-This packet authorizes exactly one internal hypothetical-documentation worker dispatch after passing pre-dispatch admission. It grants no G1 implementation, issuer authority, key creation/use, live registry lookup, downstream provider call, public export or deployment. T2B and the thirteen parked paths remain unaccepted evidence.
+This closed packet historically authorized exactly one internal hypothetical-documentation worker dispatch. It grants no further dispatch, G1 implementation, issuer authority, key creation/use, live registry lookup, downstream provider call, public export or deployment. T2B and the thirteen parked paths remain unaccepted evidence.

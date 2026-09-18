@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_2026-09-17.md",
     "baselineSha256": "67ecd387f4280094d29dd1c3e46debc890f5f6c95b86e991ddaee1c22e58a656",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_2026-09-17.md",
-    "workOrderSha256": "55ceb935ff06ae0417183e11ff8add4361921018f8749eeff67cf0358dfdb78f"
+    "workOrderSha256": "8bd73900179eee8c9392df13ff769155e3cee0601c997b7a57b7d25d65415d4a"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -108,7 +108,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "multi_repo_absorption_acel_g1_t2c_trust_anchor_design_selected",
+  "currentMode": "multi_repo_absorption_acel_g1_t2c_design_accepted_bounded",
   "previousMode": "multi_repo_absorption_acel_g1_t2b_trust_anchor_parked",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

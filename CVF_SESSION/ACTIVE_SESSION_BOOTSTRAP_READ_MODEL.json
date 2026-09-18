@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_acel_g1_t2c_trust_anchor_design_selected",
+  "currentMode": "multi_repo_absorption_acel_g1_t2c_design_accepted_bounded",
   "activeHandoff": "AGENT_HANDOFF_V62_2026-09-17.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2C-HYPOTHETICAL_DESIGN_PACKET_RELEASED_AT_ea914efff; NEXT_STEP=ONE_INTERNAL_AGENT_HYPOTHETICAL_DOCUMENTATION_DISPATCH_THEN_LOCAL_REVIEW; EXPANSION_ALLOWED=false. Operator authorized Local audit and Claude dispatch on 2026-09-18. The T2C GC-018/work order at ea914efff authorizes exactly three hypothetical documentation outputs with no worker commit. Existing G1 verifier-key registry owner and genuine issuer-lookup provenance remain unverified; all actual candidate admission stays UNVERIFIED. Preserve thirteen parked G1 evidence paths unchanged. No key creation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2C-HYPOTHETICAL_DESIGN_ACCEPTED_BOUNDED_AT_654de5e61; NEXT_STEP=LOCAL_SOURCE_OWNER_RECONCILIATION_DECISION_ONLY; EXPANSION_ALLOWED=false. The T2C human contract, JSON manifest, worker return and Local completion review are materially committed at 654de5e61. No successor work order or worker dispatch is released. Existing G1 verifier-key registry owner, trusted authority specification source, observation-log owner and genuine issuer-lookup provenance remain unverified; all actual candidate admission stays UNVERIFIED. Preserve thirteen parked G1 evidence paths unchanged. No key creation, signer wiring, live lookup, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, runtime, public sync or deployment. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_2026-09-17.md",
     "baselineSha256": "67ecd387f4280094d29dd1c3e46debc890f5f6c95b86e991ddaee1c22e58a656",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_2026-09-17.md",
-    "workOrderSha256": "55ceb935ff06ae0417183e11ff8add4361921018f8749eeff67cf0358dfdb78f"
+    "workOrderSha256": "8bd73900179eee8c9392df13ff769155e3cee0601c997b7a57b7d25d65415d4a"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
