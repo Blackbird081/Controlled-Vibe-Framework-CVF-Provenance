@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "multi_repo_absorption_acel_g1_t2e_all_authorities_appointed_t2f_source_establishment_readiness_audit_bounded",
+  "currentMode": "multi_repo_absorption_acel_g1_t2f_source_establishment_contract_dispatched_worker_return_pending_bounded",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2E-ALL-AUTHORITIES-APPOINTED_AT_e059990b8; NEXT_STEP=LOCAL_T2F_SOURCE_ESTABLISHMENT_READINESS_AUDIT_AND_DISPATCH_DECISION; EXPANSION_ALLOWED=false. All T2E accountable identities are appointed, including the independent Contract 2 activation approver at e059990b8 after reviewer-fast 68/68 and pre-commit 89/89. Identity closure does not establish any operational source: the verifier key registry, authority specification and approval record, append-only observation log, and issuer registry/lookup remain BLOCKED_SOURCE_NOT_FOUND; candidate admission remains UNVERIFIED. Local may now audit closeability and, if supported, issue a documentation/evidence-only T2F source-establishment contract work order. Preserve STOP_REASSESS_ARCHITECTURE: no key generation/import, credential provisioning, registry or lookup implementation, observation-log runtime, signer wiring, live calls, candidate admission, G1 implementation/R3, G4 implementation/experiment, real calibration, downstream provider/live work, public sync or deployment. Thirteen pre-existing untracked G1 evidence paths remain parked and unchanged. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2F-SOURCE-ESTABLISHMENT-CONTRACT-DISPATCHED_AT_1909c5a72; NEXT_STEP=INTERNAL_AGENT_EXECUTE_T2F_SOURCE_ESTABLISHMENT_CONTRACT_WORK_ORDER; EXPANSION_ALLOWED=false. The Local readiness decision, integrated baseline and canonical T2F work order are committed at 1909c5a72 after pre-dispatch 82/82 and pre-commit 89/89. One shared-workspace INTERNAL_AGENT may execute only the documentation/evidence design scope under WORKER_MUST_NOT_COMMIT and return exactly docs/audits/CVF_ACEL_G1_T2F_OPERATIONAL_SOURCE_ESTABLISHMENT_CONTRACT_2026-09-18.md plus docs/reviews/CVF_ACEL_G1_T2F_OPERATIONAL_SOURCE_ESTABLISHMENT_CONTRACT_WORKER_RETURN_2026-09-18.md. Local owns independent review, correction of minor defects, final disposition and every commit. Preserve STOP_REASSESS_ARCHITECTURE: the worker may define the integrated operational-source establishment contract but may not create/import keys, provision credentials, create or mutate registries, implement lookup/log/runtime, wire signers, perform live calls, admit candidates, modify the thirteen parked G1 paths, open G1 implementation/R3, public sync or deploy. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T2E_FOUR_OWNER_SOURCE_CONTRACT_DESIGN_2026-09-18.md",
-    "baselineSha256": "17e7f7eb26a4570671adf3ec3deaab20d0fb251071c3f8a8eaa94cd527fcdc0f",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2E_FOUR_OWNER_SOURCE_CONTRACT_DESIGN_2026-09-18.md",
-    "workOrderSha256": "4fd8145814348fd435ef3a478f5ba4b24c23e348877a9c77d7b6a8e1d77ca202"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T2F_OPERATIONAL_SOURCE_ESTABLISHMENT_CONTRACT_2026-09-18.md",
+    "baselineSha256": "192f15b111d632873c324bb033dbc727884d97a81d1bb0dd00f91e218c536aac",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2F_OPERATIONAL_SOURCE_ESTABLISHMENT_CONTRACT_2026-09-18.md",
+    "workOrderSha256": "4377338528ff27946b84a6e9aae663e8765012c23e8d71fefe62ee93cd6a80d1"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
