@@ -1,7 +1,7 @@
 # CVF Agent Handoff V62 - G1 T2C Design Accepted Bounded
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `44316566d636775ae2fbaf5b855169b7fc83db59`. T2C design-only closure continuity commit; parent of this dedicated handoff-only sync. Material acceptance remains `654de5e611f242bfe144b7e3403b8ceb2f9913e6`.
+Current HEAD recorded for this handoff: `f5317a9803abae9b6563c5cb20e444385928acc5`. T2D source-owner analysis dispatch continuity commit; parent of this dedicated handoff-only sync. T2D material packet is `78371faca4a96c868d3e47f1e2b27e169ad511bb`; T2C design-only material acceptance remains `654de5e611f242bfe144b7e3403b8ceb2f9913e6`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
