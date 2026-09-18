@@ -1,7 +1,7 @@
 # CVF Agent Handoff V62 - G1 T2C Design Accepted Bounded
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `654de5e611f242bfe144b7e3403b8ceb2f9913e6`. T2C design-only material acceptance; continuity sync follows. Material packet release remains `ea914efff`.
+Current HEAD recorded for this handoff: `44316566d636775ae2fbaf5b855169b7fc83db59`. T2C design-only closure continuity commit; parent of this dedicated handoff-only sync. Material acceptance remains `654de5e611f242bfe144b7e3403b8ceb2f9913e6`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -86,6 +86,8 @@ Operator authorization: the operator directed the Local reviewer to repair small
 Rollback boundary: revert this T2C closure-continuity batch only if rejected; preserve the accepted material commit, prior design decision, G2 correction and thirteen frozen G1 evidence paths.
 
 Commit shape exception: the already-committed T2C material batch contains the four design/review artifacts. Closing the tracked T2C work order changes its raw SHA-256, which is pinned by `currentAuthority.workOrderSha256` in the protected active-state core. The work-order status and the exact hash/state/front-door/handoff projection therefore travel in one bounded closure-continuity commit, rather than leaving an intermediate commit with a known-broken current-authority hash. This exception contains one tracked work-order path and eight continuity paths; no frozen G1 evidence, implementation, checker or new work order is included. The separate handoff-only HEAD sync remains required after commit.
+
+P4-C1 safety-marker adjudication: the post-commit collector on continuity commit `44316566d636775ae2fbaf5b855169b7fc83db59` wrote `UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED` to the exact ignored marker `.cvf/runtime/mfrp-p4-shadow-canary/UNRESOLVED_SAFETY_MARKER.json` (SHA-256 `6e5f18bd2b8716d1f0ca0e79ed45fa968c345e8614308a6ddce5e878f2a74f5c`). Its diagnostic reports pre-closure failure from the intentionally untracked thirteen G1 evidence paths and the already-known intermediate handoff HEAD mismatch; it does not report a mutation or hash drift in those paths. Local rechecked all thirteen frozen hashes: 13/13 match, and the pending staged set is only this handoff file. As reviewer/closer, Local explicitly disposes this marker as a collector/finality-context mismatch for this parked-evidence lane, not a T2C proof receipt; the exact ignored marker was moved recoverably to `.cvf/runtime/mfrp-p4-shadow-canary/ADJUDICATED_SAFETY_MARKER_44316566d.json` to permit the required handoff-only sync. Do not count the failed collector receipt or a pre-closure run against the dirty parked worktree as closure proof.
 
 ## Claim Boundary
 
