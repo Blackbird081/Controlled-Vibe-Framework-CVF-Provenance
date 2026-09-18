@@ -59,7 +59,36 @@ No worker work order is dispatchable from this decision. The next permissible ac
 
 ## Evidence And Claim Boundary
 
-This is a bounded route-selection audit, not a complete repository inventory or a key-management standard. The source query and literal path checks are negative evidence only for the named roots and two exact paths. No private key was accessed, generated, imported, rotated or disclosed; no principal was provisioned; no registry, lifecycle log, verifier consumer or runtime was created or tested.
+This is a bounded route-selection audit, not a complete repository inventory or a key-management standard. The source query and literal path checks are negative evidence only for the named roots and two exact paths. At the decision base, no private key was accessed, generated, imported, rotated or disclosed; no principal was provisioned; no registry, lifecycle log, verifier consumer or runtime was created or tested.
+
+## Post-Decision Local Test Custody Evidence
+
+After the route decision, the operator stated that no dedicated account or
+custody system existed and authorized a temporary private local test setup.
+Local created one new Ed25519 test key under the current Windows user, with
+the raw private key stored only as a per-user Windows DPAPI-encrypted blob
+outside the repository under that user's LocalAppData. A separate public
+metadata file identifies it as `CVF_G1_PARTY_A_LOCAL_TEST`, with
+`keyId=localtest-f35b819837f7f207` and public-key SHA-256
+`f35b819837f7f207378d85bfd53e0dc2778c0e187e422441f687ba29ec8a36c9`.
+The exact local custody path is intentionally not a governed source path.
+
+The custody directory has protected ACL inheritance and grants the current
+Windows user full control; the encrypted file inherits only that grant. A
+fresh process read the ciphertext, decrypted it with the same user's DPAPI
+context, reconstructed the public key, matched both public metadata fields,
+signed a fixed challenge and verified the Ed25519 signature: PASS. No private
+bytes, signature seed, or decrypted key were printed or committed.
+
+This is a `TEST_ONLY_NON_OPERATIONAL` principal, not a new Windows account or
+a separated Party A operational identity. Another process running as the same
+Windows user could use that user's DPAPI context; filesystem ACLs do not
+separate agents sharing the user. The temporary key therefore cannot become
+the Group 1 trust anchor merely by copying its public metadata. No registry
+row, lifecycle receipt, Party B observation, verifier lookup, candidate
+admission, source creation or T3A implementation was authorized or produced.
+Group 1 remains `SOURCE_NOT_CREATED`; the operational T3A work-order checkpoint
+for a distinct principal, custody and secret-safe ceremony remains open.
 
 ## Public Export Disposition
 
