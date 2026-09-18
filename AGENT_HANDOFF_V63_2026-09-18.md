@@ -1,7 +1,7 @@
-# CVF Agent Handoff V63 - G1 T2G Immutable Snapshot Contract Dispatched
+# CVF Agent Handoff V63 - G1 T2G Immutable Snapshot Contract Accepted
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `5fd66d35f6a0e5468d9c001496e1c17ce218fbca`. The operator-selected T2G immutable-snapshot baseline and work order are committed for INTERNAL_AGENT execution without worker commit.
+Current material HEAD recorded for this handoff: `4b6a12af14d0ba4de1f9bcfe4d3e89b0258a23b4`. Local accepted the T2G documentation-only immutable-snapshot contract after bounded reviewer repairs; no operational source was created.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -10,24 +10,23 @@ Status: ACTIVE
 
 ## Purpose
 
-Carry the operator-selected ACEL G1 T2G immutable-snapshot design dispatch.
-One INTERNAL_AGENT corrects only the same two T2F contract documents in place
-and returns them uncommitted for independent Local review.
+Carry the Local-accepted ACEL G1 T2G immutable-snapshot documentation
+contract. The INTERNAL_AGENT return was independently reviewed; Local made
+bounded evidence/semantics repairs and committed only the two outputs.
 
 ## Scope / Target / Owner Boundary
 
-Target: T2G immutable snapshot identity contract. Role: one
-shared-workspace `INTERNAL_AGENT` worker under `WORKER_MUST_NOT_COMMIT`, then
-Local orchestrator/reviewer. Local owns independent review, minor corrections,
-final technical disposition and every commit.
+Target: accepted T2G immutable snapshot identity contract. The
+shared-workspace `INTERNAL_AGENT` worker honored `WORKER_MUST_NOT_COMMIT`;
+Local owned independent review, minor corrections, final disposition and commit.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2g_immutable_snapshot_contract_dispatched_worker_return_pending_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT executes the committed T2G work order and modifies exactly two uncommitted T2F artifacts in place; parked checkpoint=source creation, implementation/live/runtime/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t2g_immutable_snapshot_contract_accepted_design_only_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local assesses the next bounded design/readiness question; parked checkpoint=source creation, implementation/live/runtime/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g1_t2g_immutable_snapshot_contract_dispatched_worker_return_pending_bounded`.
+`multi_repo_absorption_acel_g1_t2g_immutable_snapshot_contract_accepted_design_only_bounded`.
 The active absorption program remains incomplete and restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
 wave remains `LHW24`.
@@ -73,12 +72,18 @@ release source creation, implementation, candidate admission or runtime use.
 - T2G paired baseline and canonical work order: `5fd66d35f`. Pre-dispatch
   82/82 and pre-commit 89/89 passed. The worker may edit only the existing
   T2F audit and return; no source or implementation authority is released.
+- T2G audit and worker return accepted at `4b6a12a` after Local repaired
+  an old-receipt revocation overclaim and added the Group 3 byte/hash vector
+  and malformed-encoding probe. Worker-return fast/reviewer-fast passed;
+  material pre-commit passed 89/89. Thirteen parked paths remained unchanged.
+  An old receipt stays bound to its old ID but is not automatically revoked
+  merely because a newer snapshot exists. No source or implementation opened.
 - Thirteen pre-existing untracked G1 evidence paths remain byte-preserved,
   uncommitted and outside this lane; primary-worktree finality remains pending.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2G-IMMUTABLE-SNAPSHOT-IDENTITY-CONTRACT-DISPATCHED_AT_5fd66d35f; NEXT_STEP=INTERNAL_AGENT_EXECUTE_T2G_IMMUTABLE_SNAPSHOT_IDENTITY_CONTRACT; EXPANSION_ALLOWED=false. The operator selected immutable snapshot identity after Local round-three escalation. T2G paired baseline and work order were committed at 5fd66d35f after pre-dispatch 82/82 and pre-commit 89/89. One shared-workspace INTERNAL_AGENT may modify in place only docs/audits/CVF_ACEL_G1_T2F_OPERATIONAL_SOURCE_ESTABLISHMENT_CONTRACT_2026-09-18.md and docs/reviews/CVF_ACEL_G1_T2F_OPERATIONAL_SOURCE_ESTABLISHMENT_CONTRACT_WORKER_RETURN_2026-09-18.md under WORKER_MUST_NOT_COMMIT. Each snapshot ID must bind exactly one immutable original observation; an error requires a new ID and new receipt, never same-ID correction or fork merge. Local owns independent review, minor evidence-determined correction, final disposition and every commit. Preserve thirteen parked G1 paths byte-identically. No operational source, key, credential, implementation, live lookup, admission, runtime, public sync, deployment, third output or automatic successor is authorized. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T2G-IMMUTABLE-SNAPSHOT-IDENTITY-CONTRACT-ACCEPTED_AT_4b6a12a; NEXT_STEP=LOCAL_ASSESS_NEXT_BOUNDED_DESIGN_OR_REQUEST_OPERATOR_SOURCE_CREATION_CHECKPOINT; EXPANSION_ALLOWED=false. T2G documentation-only contract is accepted after reviewer repairs to old-receipt semantics and the Group 3 byte/hash vector. T2C remains unchanged; thirteen parked paths remain uncommitted and byte-identical. Local may assess the next bounded design/readiness question. Actual source creation, keys, credentials, implementation, live lookup, admission, runtime, public sync and deployment remain parked pending a separate operator checkpoint. Latest closed LHW wave remains LHW24.
 
 ## External / Local Coordination Boundary
 
@@ -94,9 +99,9 @@ provider/live work, runtime, public sync and deployment remain parked.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project T2G dispatch material
-`5fd66d35f` into continuity and advance only to INTERNAL_AGENT immutable-ID
-contract design and return.
+Authorized guard-maintenance scope: project Local T2G documentation-only
+acceptance at `4b6a12a` into continuity and advance only to bounded Local
+next-design/readiness assessment; source/implementation effects remain parked.
 Protected paths: `CVF_SESSION_MEMORY.md`;
 `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
@@ -111,8 +116,8 @@ listed for read-only changed-set accounting; no checker mutation is authorized.
 
 Operator authorization: repeated instruction to continue plus standing Local
 orchestrator/reviewer and session-transition authority. Rollback boundary:
-revert this continuity projection only; preserve T2G dispatch material, all
-T2E appointment material and all thirteen parked paths. No checker,
+revert this continuity projection only; preserve T2G dispatch and accepted
+material, all T2E appointment material and all thirteen parked paths. No checker,
 implementation, key, runtime or public mutation is authorized.
 
 ## Agent Operation Trace Block
@@ -121,18 +126,18 @@ implementation, key, runtime or public mutation is authorized.
 |---|---|
 | Actor | Local session-sync steward |
 | Provider or surface | private CVF workspace |
-| Session or invocation | T2G post-dispatch continuity, 2026-09-18 |
+| Session or invocation | T2G post-acceptance continuity, 2026-09-18 |
 | Working directory | repository root |
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | V63, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | operator instruction to continue and standing Local orchestrator/session-transition authority |
-| Before status evidence | HEAD `5fd66d35f`; T2G packet committed; two worker outputs plus thirteen parked paths remain untracked |
-| After status evidence | V63 projects T2G dispatch; next move INTERNAL_AGENT no-commit immutable-ID design |
+| Before status evidence | HEAD `4b6a12a`; T2G outputs committed; thirteen parked paths remain untracked |
+| After status evidence | V63 projects T2G documentation-only acceptance; next move Local bounded assessment |
 | Diff evidence | exact six-path continuity manifest before commit |
 | Approval boundary | continuity projection only |
 | Claim boundary | no source establishment, key, implementation, live/runtime/public effect |
 | Agent type | Local session-sync steward |
-| Invocation ID | `acel-g1-t2g-dispatch-v63-continuity-20260918` |
+| Invocation ID | `acel-g1-t2g-acceptance-v63-continuity-20260918` |
 | Expected manifest | V63, front door, core, next-move, generated state and bootstrap |
 | Actual changed set | V63, front door, core, next-move, generated state and bootstrap |
 | Manifest delta | MATCH |
@@ -140,7 +145,7 @@ implementation, key, runtime or public mutation is authorized.
 
 ## Claim Boundary
 
-This handoff records the T2G immutable-ID documentation dispatch and
-worker-return boundary only. It grants no source establishment, activation, key,
+This handoff records the accepted T2G immutable-ID documentation design only.
+It grants no source establishment, activation, key,
 implementation, live lookup, candidate admission, runtime, public-sync or
 deployment authority.
