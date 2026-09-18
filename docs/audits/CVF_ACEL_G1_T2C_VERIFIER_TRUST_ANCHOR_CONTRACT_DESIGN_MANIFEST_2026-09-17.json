@@ -1,0 +1,584 @@
+{
+  "schemaVersion": "cvf.verifierTrustAnchor.v1",
+  "documentType": "trust-anchor-contract-manifest",
+  "profileId": "cvf.verifierReceipt.v1",
+  "date": "2026-09-17",
+  "author": "G1-T2C-worker",
+  "status": "HYPOTHETICAL_DESIGN_ONLY",
+  "claimBoundary": "no-keys-no-registry-no-lookup-no-implementation",
+  "receiptProfileSpecification": {
+    "name": "VerifierReceiptProfile",
+    "purpose": "immutable assertion by CVF verifier after source-owned registry lookup",
+    "signedFields": [
+      {
+        "name": "domain",
+        "type": "string",
+        "encoding": "utf-8",
+        "required": true,
+        "description": "fixed literal binding this preimage to this exact profile; never receipt-supplied at verification time, always the checker's own hard-coded literal",
+        "allowedValues": ["cvf.verifierReceipt"],
+        "exampleValue": "cvf.verifierReceipt"
+      },
+      {
+        "name": "profileVersion",
+        "type": "string",
+        "encoding": "utf-8",
+        "required": true,
+        "description": "fixed literal for this specification version; a future v2 profile must use a different literal so cross-version signatures never verify",
+        "allowedValues": ["v1"],
+        "exampleValue": "v1"
+      },
+      {
+        "name": "receiptId",
+        "type": "string",
+        "encoding": "utf-8",
+        "required": true,
+        "description": "unique, cryptographically random, immutable",
+        "exampleValue": "rcpt-20260917-abc123def456"
+      },
+      {
+        "name": "verificationRound",
+        "type": "string",
+        "encoding": "utf-8",
+        "required": true,
+        "description": "decision round identifier, immutable from lookup observation",
+        "exampleValue": "ACEL_G1_T2C_ROUND_001"
+      },
+      {
+        "name": "verificationAuthority",
+        "type": "string",
+        "encoding": "utf-8",
+        "required": true,
+        "description": "authority-body identifier",
+        "exampleValue": "ACEL_G1_DECISION_OWNER"
+      },
+      {
+        "name": "verificationAuthorityHash",
+        "type": "string",
+        "encoding": "hex",
+        "length": 64,
+        "required": true,
+        "description": "SHA-256 of authority specification at lookup time",
+        "hashAlgorithm": "SHA-256"
+      },
+      {
+        "name": "issuerIdentity",
+        "type": "string",
+        "encoding": "utf-8",
+        "required": true,
+        "description": "claimed issuer identifier from registry query",
+        "exampleValue": "issuer-id-12345"
+      },
+      {
+        "name": "issuerAttestedHash",
+        "type": "string",
+        "encoding": "hex",
+        "length": 64,
+        "required": true,
+        "description": "issuer self-supplied hash binding their authority/policy",
+        "hashAlgorithm": "SHA-256"
+      },
+      {
+        "name": "trustedRegistrySnapshotIdentity",
+        "type": "string",
+        "encoding": "utf-8",
+        "required": true,
+        "description": "registry snapshot identifier from source-owned observation log",
+        "exampleValue": "registry-snapshot-2026-09-17-t12345"
+      },
+      {
+        "name": "trustedRegistrySnapshotHash",
+        "type": "string",
+        "encoding": "hex",
+        "length": 64,
+        "required": true,
+        "description": "SHA-256 of source-owned registry state at lookup",
+        "hashAlgorithm": "SHA-256"
+      },
+      {
+        "name": "lookupResult",
+        "type": "string",
+        "encoding": "utf-8",
+        "required": true,
+        "description": "verified admission status from registry lookup",
+        "allowedValues": ["IDENTITY_CONFIRMED", "IDENTITY_REJECTED", "IDENTITY_UNRESOLVED"],
+        "exampleValue": "IDENTITY_CONFIRMED"
+      },
+      {
+        "name": "observationTimeUtc",
+        "type": "string",
+        "encoding": "rfc3339",
+        "required": true,
+        "description": "RFC 3339 timestamp when lookup was performed",
+        "exampleValue": "2026-09-17T10:30:00Z"
+      },
+      {
+        "name": "receiptIssuanceTimeUtc",
+        "type": "string",
+        "encoding": "rfc3339",
+        "required": true,
+        "description": "RFC 3339 timestamp when receipt was created",
+        "exampleValue": "2026-09-17T10:30:05Z"
+      },
+      {
+        "name": "signatureKeyId",
+        "type": "string",
+        "encoding": "utf-8",
+        "required": true,
+        "description": "identifier selecting public key from trusted verifier registry",
+        "exampleValue": "verifier-key-2026-09-001"
+      }
+    ],
+    "jcsCanonicaliation": {
+      "standard": "RFC 8785",
+      "encoding": "UTF-8",
+      "keyOrdering": "lexicographic",
+      "whitespace": "eliminated",
+      "numericRepresentation": "canonical-decimal-string",
+      "preimageUse": "Ed25519 signature input; never includes signedBy envelope"
+    },
+    "envelopeFields": [
+      {
+        "name": "signedBy",
+        "type": "object",
+        "required": true,
+        "description": "signature and key metadata; not part of preimage",
+        "fields": [
+          {
+            "name": "keyId",
+            "type": "string",
+            "required": true,
+            "description": "must match signatureKeyId from preimage"
+          },
+          {
+            "name": "signature",
+            "type": "string",
+            "encoding": "base64url",
+            "required": true,
+            "description": "Ed25519 signature over canonical preimage"
+          },
+          {
+            "name": "algorithm",
+            "type": "string",
+            "required": true,
+            "description": "signature algorithm identifier",
+            "allowedValues": ["Ed25519"]
+          }
+        ]
+      }
+    ]
+  },
+  "admissionPredicates": [
+    {
+      "predicateId": "content-integrity",
+      "name": "Content Integrity",
+      "purpose": "verify receipt encoding is valid UTF-8, well-formed, and structurally sound",
+      "checks": [
+        "all required fields present",
+        "no null or empty required fields",
+        "each field type matches specification",
+        "UTF-8 encoding valid",
+        "JCS canonicalization is deterministic",
+        "no unknown fields in preimage object",
+        "field ordering is lexicographic"
+      ],
+      "failureMode": "UNVERIFIED",
+      "typeScriptResponsibility": "decision-time validation before signature check",
+      "pythonResponsibility": "persisted-evidence recomputation of preimage",
+      "sufficientAlone": false,
+      "description": "necessary but not sufficient; content validity without signature does not authenticate"
+    },
+    {
+      "predicateId": "signature-validity",
+      "name": "Verifier Signature Validity",
+      "purpose": "verify signature was created by verifier holding Ed25519 private key for keyId",
+      "checks": [
+        "reconstruct JCS preimage from all fourteen signed fields using fixed domain and profileVersion literals",
+        "require signedBy.keyId equals signed signatureKeyId",
+        "resolve exactly one record by exact keyId in source-owned trusted verifier registry; reject duplicate IDs and public-key aliases",
+        "verify key status is ACTIVE",
+        "verify key issuedAt <= receiptIssuanceTimeUtc",
+        "verify key expiresAt (if set) > observationTimeUtc (equality is expired)",
+        "verify key revokedAt (if set) > receiptIssuanceTimeUtc",
+        "verify key role authorizes issuance for verificationAuthority",
+        "retrieve public key",
+        "verify Ed25519 signature over reconstructed preimage using public key",
+        "reject receipt-supplied keys",
+        "reject candidate-provided registry paths"
+      ],
+      "failureMode": "UNVERIFIED",
+      "failureCodes": {
+        "KEY_NOT_FOUND": "signatureKeyId not in registry",
+        "KEY_ID_MISMATCH": "signedBy.keyId does not equal signed signatureKeyId",
+        "KEY_AMBIGUOUS": "duplicate keyId or public-key alias in trusted registry",
+        "REGISTRY_UNAVAILABLE": "trusted registry lookup or ambiguity check unavailable",
+        "KEY_NOT_ACTIVE": "key status is not ACTIVE",
+        "KEY_NOT_YET_ISSUED": "key issuedAt > receiptIssuanceTimeUtc",
+        "KEY_EXPIRED": "key expiresAt <= observationTimeUtc",
+        "KEY_REVOKED": "key revokedAt <= receiptIssuanceTimeUtc",
+        "KEY_ROLE_UNAUTHORIZED": "key role does not permit issuance",
+        "INVALID_SIGNATURE": "Ed25519 verification failed",
+        "MALFORMED_KEY": "public key is not valid Ed25519"
+      },
+      "typeScriptResponsibility": "decision-time verification with async registry lookup",
+      "pythonResponsibility": "persisted-evidence verification using registry snapshot",
+      "sufficientAlone": false,
+      "description": "proves only that verifier authorized the preimage, not that lookup was genuine"
+    },
+    {
+      "predicateId": "lookup-provenance",
+      "name": "Genuine Lookup Provenance",
+      "purpose": "verify receipt binds source-owned registry observation and outcome matches registry state",
+      "callerSuppliedParameters": [
+        {"name": "expectedCurrentRound", "description": "decision owner's actual current round; never read from the receipt; receipt.verificationRound must equal this exactly or the check fails closed before any lookup runs"},
+        {"name": "expectedAuthorityHash", "description": "SHA-256 of the trusted decision-owner authority specification; sourced independently of the receipt and required to match verificationAuthorityHash"},
+        {"name": "evaluationTimeUtc", "description": "caller's current time at verification; never receipt-supplied"},
+        {"name": "freshnessThresholdSeconds", "description": "caller-configured maximum allowed age between evaluationTimeUtc and observation.observedAt"}
+      ],
+      "checks": [
+        "verify receipt.verificationRound == expectedCurrentRound (round binding, checked first)",
+        "verify receipt.verificationAuthorityHash == caller-supplied expectedAuthorityHash; unavailable trusted context fails closed",
+        "verify freshnessThresholdSeconds is nonnegative and timestamps are valid RFC 3339 values",
+        "look up trustedRegistrySnapshotIdentity in source-owned observation log",
+        "verify snapshot exists in log",
+        "recompute SHA-256 of snapshot content",
+        "verify recomputed hash matches trustedRegistrySnapshotHash",
+        "verify observation.observedAt <= receipt.observationTimeUtc",
+        "verify observation.observedAt <= receipt.receiptIssuanceTimeUtc",
+        "verify receipt.observationTimeUtc <= receipt.receiptIssuanceTimeUtc <= evaluationTimeUtc and observation.observedAt <= evaluationTimeUtc",
+        "verify (evaluationTimeUtc - observation.observedAt) <= freshnessThresholdSeconds",
+        "verify observation.authority == receipt.verificationAuthority",
+        "verify source-owned observation log has exactly one observation for trustedRegistrySnapshotIdentity",
+        "perform issuer lookup in source registry using issuerIdentity AND issuerAttestedHash against snapshot content; a mismatched hash cannot yield IDENTITY_CONFIRMED",
+        "recompute issuer lookup result",
+        "verify recomputed result matches receipt.lookupResult exactly",
+        "reject candidate-supplied registry paths",
+        "reject self-authored observation claims"
+      ],
+      "failureMode": "UNVERIFIED",
+      "failureCodes": {
+        "ROUND_MISMATCH": "receipt.verificationRound does not equal the caller's expectedCurrentRound",
+        "AUTHORITY_HASH_MISMATCH": "receipt.verificationAuthorityHash differs from the independently trusted expectedAuthorityHash or trusted context is unavailable",
+        "INVALID_VERIFICATION_CONTEXT": "negative freshness threshold or malformed timestamp",
+        "SNAPSHOT_NOT_IN_LOG": "trustedRegistrySnapshotIdentity not in source observation log",
+        "SNAPSHOT_HASH_MISMATCH": "observation snapshot hash does not match trustedRegistrySnapshotHash",
+        "OBSERVATION_AFTER_LOOKUP": "observation.observedAt > receipt.observationTimeUtc",
+        "OBSERVATION_AFTER_ISSUANCE": "observation.observedAt > receipt.receiptIssuanceTimeUtc",
+        "INVALID_TIME_ORDER": "lookup time after receipt issuance, receipt issuance after evaluation time, or observation in the future",
+        "STALE_SNAPSHOT": "(evaluationTimeUtc - observation.observedAt) exceeds freshnessThresholdSeconds",
+        "AUTHORITY_MISMATCH": "observation.authority != receipt.verificationAuthority",
+        "FORKED_OBSERVATION": "more than one source-owned observation exists for this snapshot identity",
+        "LOOKUP_RESULT_MISMATCH": "recomputed lookup result does not match receipt.lookupResult"
+      },
+      "typeScriptResponsibility": "decision-time lookup with source registry and observation log clients, using caller-supplied expectedCurrentRound/expectedAuthorityHash/evaluationTimeUtc/freshnessThresholdSeconds",
+      "pythonResponsibility": "persisted-evidence verification using static snapshots and the same four caller-supplied parameters",
+      "sufficientAlone": false,
+      "description": "independent verification that lookup was performed by source authority, bound to receipt, current round, and fresh; VERIFIED here proves lookupResult genuinely matches registry state, not that the identity was confirmed (see admissionOutcomeBinding)"
+    }
+  ],
+  "admissionOutcomeBinding": {
+    "name": "Admission Outcome Binding",
+    "purpose": "separates receipt authenticity (all three predicates pass) from actual admission (the confirmed outcome), so an authentic non-confirming receipt is never treated as admitted",
+    "logic": "admitted = verified AND (receipt.lookupResult == \"IDENTITY_CONFIRMED\")",
+    "outcomeFields": {
+      "verified": "true iff all three predicates independently passed; the receipt is authentic",
+      "admitted": "true iff verified AND lookupResult is exactly IDENTITY_CONFIRMED; this is the field callers must gate on, never verified alone"
+    },
+    "nonAdmissionReasonCode": "LOOKUP_RESULT_NOT_CONFIRMED: <receipt.lookupResult>",
+    "regressionThisClosed": "a prior revision returned verified=true as the sole admission signal, so an authentic, provenance-matched receipt whose lookupResult was IDENTITY_REJECTED (AV-11) was indistinguishable in outcome from a genuinely confirmed receipt (AV-0); this field split and explicit equality check close that gap"
+  },
+  "admissionRule": {
+    "name": "Three-Predicate Conjunctive Admission Plus Outcome Binding",
+    "logic": "Receipt is VERIFIED if and only if all three predicates independently return VERIFIED; receipt is ADMITTED if and only if VERIFIED and lookupResult == IDENTITY_CONFIRMED",
+    "pseudocode": "verified = (content_integrity_valid && signature_valid && lookup_provenance_verified); admitted = verified && (lookup_result == \"IDENTITY_CONFIRMED\")",
+    "failClosed": true,
+    "shortCircuit": "any predicate failure immediately returns UNVERIFIED; remaining predicates not evaluated"
+  },
+  "adversarialVectorMatrix": [
+    {
+      "vectorId": "AV-0",
+      "name": "Genuine Confirmed Identity (Positive Control)",
+      "setup": "published preimage/signature verifies; hypothetical trusted context supplies matching round and authority hash, and a fresh singly-observed source snapshot confirms issuer-test-001 with its attested hash. No real registry provenance is supplied by the cryptographic fixture",
+      "predicate1": "PASS",
+      "predicate2": "PASS (independently reconstructed and verified)",
+      "predicate3": "VERIFIED only under the stated hypothetical source-owned snapshot and trusted-context assumptions",
+      "verifiedResult": true,
+      "admittedResult": true,
+      "admissionResult": "VERIFIED_AND_ADMITTED",
+      "failureCode": null,
+      "keyInsight": "sole positive-path vector; every other vector must resolve to admitted=false"
+    },
+    {
+      "vectorId": "AV-1",
+      "name": "Forged Content Hash (Self-Authored)",
+      "setup": "attacker constructs valid receipt fields with no signature",
+      "predicate1": "PASS",
+      "predicate2": "FAIL (missing or invalid signature)",
+      "predicate3": "not-evaluated",
+      "verifiedResult": false,
+      "admittedResult": false,
+      "admissionResult": "UNVERIFIED",
+      "failureCode": "INVALID_SIGNATURE",
+      "keyInsight": "content hash alone never authenticates"
+    },
+    {
+      "vectorId": "AV-2",
+      "name": "Signature Under Receipt-Supplied Key",
+      "setup": "receipt includes supplemental public key; signature valid under that key",
+      "predicate1": "PASS",
+      "predicate2": "FAIL (key registry lookup fails; receipt-supplied key rejected before verification)",
+      "predicate3": "not-evaluated",
+      "verifiedResult": false,
+      "admittedResult": false,
+      "admissionResult": "UNVERIFIED",
+      "failureCode": "KEY_NOT_FOUND or KEY_NOT_AUTHORITATIVE",
+      "keyInsight": "receipt-supplied keys are never accepted"
+    },
+    {
+      "vectorId": "AV-3",
+      "name": "Valid Signature Under Revoked Key",
+      "setup": "receipt signed with key revoked before receipt issuance; signature is cryptographically valid",
+      "predicate1": "PASS",
+      "predicate2": "FAIL (key registry check detects revokedAt <= receiptIssuanceTimeUtc)",
+      "predicate3": "not-evaluated",
+      "verifiedResult": false,
+      "admittedResult": false,
+      "admissionResult": "UNVERIFIED",
+      "failureCode": "KEY_REVOKED",
+      "keyInsight": "key lifecycle check prevents use of revoked keys"
+    },
+    {
+      "vectorId": "AV-4",
+      "name": "Modified Signature keyId",
+      "setup": "attacker modifies signatureKeyId to point to different key; signature corresponds to original key",
+      "predicate1": "PASS",
+      "predicate2": "FAIL (envelope/preimage key-ID mismatch fails before lookup; if both IDs change, Ed25519 verification fails; aliases fail closed)",
+      "predicate3": "not-evaluated",
+      "verifiedResult": false,
+      "admittedResult": false,
+      "admissionResult": "UNVERIFIED",
+      "failureCode": "KEY_ID_MISMATCH or INVALID_SIGNATURE or KEY_AMBIGUOUS",
+      "keyInsight": "keyId equality and registry uniqueness precede cryptographic verification"
+    },
+    {
+      "vectorId": "AV-5",
+      "name": "Fabricated Lookup Result",
+      "setup": "valid signature and snapshot hash; but actual registry at snapshot lacks issuer or shows negative result",
+      "predicate1": "PASS",
+      "predicate2": "PASS",
+      "predicate3": "FAIL (recomputed lookup result does not match receipt.lookupResult)",
+      "verifiedResult": false,
+      "admittedResult": false,
+      "admissionResult": "UNVERIFIED",
+      "failureCode": "LOOKUP_RESULT_MISMATCH",
+      "keyInsight": "receipt and registry state must be independently verified to match"
+    },
+    {
+      "vectorId": "AV-6",
+      "name": "Stale Registry Snapshot",
+      "setup": "receipt references old registry snapshot; observedAt is older than freshnessThresholdSeconds relative to evaluationTimeUtc",
+      "predicate1": "PASS",
+      "predicate2": "PASS",
+      "predicate3": "FAIL ((evaluationTimeUtc - observation.observedAt) exceeds freshnessThresholdSeconds; explicit algorithm step, see LookupProvenanceCheck)",
+      "verifiedResult": false,
+      "admittedResult": false,
+      "admissionResult": "UNVERIFIED",
+      "failureCode": "STALE_SNAPSHOT",
+      "keyInsight": "explicit caller-supplied freshness threshold, computed against caller's evaluationTimeUtc, prevents use of outdated registry state"
+    },
+    {
+      "vectorId": "AV-7",
+      "name": "Forked Observation Chain",
+      "setup": "two receipts for same issuer in same round; each binds different snapshot identity; only one snapshot identity has a source-owned observation, and that observation log entry is singular (not itself forked); authoritative receipt's lookupResult is IDENTITY_CONFIRMED",
+      "predicate1": "PASS for both",
+      "predicate2": "PASS for both",
+      "predicate3": "VERIFIED for authoritative; FAIL for forked (snapshot not in source log)",
+      "verifiedResult": "true for authoritative; false for forked",
+      "admittedResult": "true for authoritative (lookupResult=IDENTITY_CONFIRMED); false for forked",
+      "admissionResult": "VERIFIED_AND_ADMITTED for authoritative; UNVERIFIED for forked",
+      "failureCode": "SNAPSHOT_NOT_IN_LOG",
+      "keyInsight": "forked receipts detected by checking against single authoritative observation source; a single observation-log entry that itself has more than one record for the same snapshot identity separately fails with FORKED_OBSERVATION"
+    },
+    {
+      "vectorId": "AV-8",
+      "name": "Cross-Round Receipt Replay",
+      "setup": "receipt from round N replayed when the caller's expectedCurrentRound is N+1; verificationRound field unchanged at N",
+      "predicate1": "PASS",
+      "predicate2": "PASS (signature still valid)",
+      "predicate3": "FAIL, deterministically (receipt.verificationRound != expectedCurrentRound is the first check in LookupProvenanceCheck, evaluated before any snapshot/authority/lookup step)",
+      "verifiedResult": false,
+      "admittedResult": false,
+      "admissionResult": "UNVERIFIED",
+      "failureCode": "ROUND_MISMATCH",
+      "keyInsight": "round binding against the caller's own current round is unconditional and checked first, not a conditional or registry-state-dependent outcome"
+    },
+    {
+      "vectorId": "AV-9",
+      "name": "Invalid JCS Canonicalization",
+      "setup": "receipt preimage uses non-RFC8785 canonicalization; signature was computed over different preimage",
+      "predicate1": "PASS (individual fields valid)",
+      "predicate2": "FAIL (recomputed preimage does not match signed bytes; Ed25519 verification fails)",
+      "predicate3": "not-evaluated",
+      "verifiedResult": false,
+      "admittedResult": false,
+      "admissionResult": "UNVERIFIED",
+      "failureCode": "INVALID_SIGNATURE",
+      "keyInsight": "strict RFC 8785 canonicalization prevents encoding-based signature bypass"
+    },
+    {
+      "vectorId": "AV-10",
+      "name": "Unavailable Verifier Registry",
+      "setup": "receipt otherwise valid; verifier registry inaccessible (network, deletion, etc.); signatureKeyId cannot be resolved",
+      "predicate1": "PASS",
+      "predicate2": "FAIL (registry unavailable; key cannot be retrieved; fail-closed)",
+      "predicate3": "not-evaluated",
+      "verifiedResult": false,
+      "admittedResult": false,
+      "admissionResult": "UNVERIFIED",
+      "failureCode": "KEY_NOT_FOUND or REGISTRY_UNAVAILABLE",
+      "keyInsight": "system fails closed until registry is available; no fallback acceptance"
+    },
+    {
+      "vectorId": "AV-11",
+      "name": "Authentic Receipt, Genuinely Rejected Identity",
+      "setup": "same preimage shape, signing key and hypothetical snapshot as AV-0 but a different issuer (issuer-test-rejected-002); the hypothetical source lookup rejects that issuer and attested hash; published bytes alone prove signature consistency, not source-owned provenance; see negativeTestVector",
+      "predicate1": "PASS",
+      "predicate2": "PASS (independently reconstructed and verified under the same key as AV-0)",
+      "predicate3": "VERIFIED only under the stated hypothetical source-owned snapshot and trusted-context assumptions; not proved by the cryptographic fixture alone",
+      "verifiedResult": true,
+      "admittedResult": false,
+      "admissionResult": "VERIFIED_BUT_NOT_ADMITTED",
+      "failureCode": "LOOKUP_RESULT_NOT_CONFIRMED: IDENTITY_REJECTED",
+      "keyInsight": "this is the vector a three-predicate-only design (without a separate admissionOutcomeBinding check) would incorrectly admit, since all three predicates pass identically to AV-0; only the explicit lookupResult==IDENTITY_CONFIRMED check at admission time distinguishes AV-0 from AV-11"
+    }
+  ],
+  "positiveTestVector": {
+    "usedByVector": "AV-0",
+    "note": "computed with a deterministic test-fixture Ed25519 keypair (seed SHA-256(\"CVF-T2C-POSITIVE-VECTOR-TEST-FIXTURE-SEED-0001\")); proves cryptographic consistency only. No source-owned snapshot, observation log, trusted authority specification or operational key is supplied; Predicate 3 and admission are hypothetical conditional illustrations",
+    "preimageObject": {
+      "domain": "cvf.verifierReceipt",
+      "profileVersion": "v1",
+      "receiptId": "rcpt-20260918-positive-vector-0001",
+      "verificationRound": "ACEL_G1_T2C_ROUND_TESTVECTOR_001",
+      "verificationAuthority": "ACEL_G1_DECISION_OWNER",
+      "verificationAuthorityHash": "e9f7330d18968fad1209557dae0519620e71d2be87552c14cba8a16d799d9661",
+      "issuerIdentity": "issuer-test-001",
+      "issuerAttestedHash": "b57d8b3795f1bbfd46e1748e7613f916a455c163cd4e5f6000d1373536a46bb9",
+      "trustedRegistrySnapshotIdentity": "registry-snapshot-testvector-0001",
+      "trustedRegistrySnapshotHash": "9997d053ab2e26cd4c7108f36daf4728c8a830381f91026a366f1c31dc7817ae",
+      "lookupResult": "IDENTITY_CONFIRMED",
+      "observationTimeUtc": "2026-09-18T00:00:00Z",
+      "receiptIssuanceTimeUtc": "2026-09-18T00:00:05Z",
+      "signatureKeyId": "verifier-key-testvector-0001"
+    },
+    "preimageBytesCompactJcs": "{\"domain\":\"cvf.verifierReceipt\",\"issuerAttestedHash\":\"b57d8b3795f1bbfd46e1748e7613f916a455c163cd4e5f6000d1373536a46bb9\",\"issuerIdentity\":\"issuer-test-001\",\"lookupResult\":\"IDENTITY_CONFIRMED\",\"observationTimeUtc\":\"2026-09-18T00:00:00Z\",\"profileVersion\":\"v1\",\"receiptId\":\"rcpt-20260918-positive-vector-0001\",\"receiptIssuanceTimeUtc\":\"2026-09-18T00:00:05Z\",\"signatureKeyId\":\"verifier-key-testvector-0001\",\"trustedRegistrySnapshotHash\":\"9997d053ab2e26cd4c7108f36daf4728c8a830381f91026a366f1c31dc7817ae\",\"trustedRegistrySnapshotIdentity\":\"registry-snapshot-testvector-0001\",\"verificationAuthority\":\"ACEL_G1_DECISION_OWNER\",\"verificationAuthorityHash\":\"e9f7330d18968fad1209557dae0519620e71d2be87552c14cba8a16d799d9661\",\"verificationRound\":\"ACEL_G1_T2C_ROUND_TESTVECTOR_001\"}",
+    "preimageSha256": "df941f3f0531b7b50aec1e811987a333103a0d2dcce783781b9dbb0b86dc3f98",
+    "publicKeyBase64Url": "RMcYJcHIAYbM9S2L717B9wmMom1ZMEIs-PTJrQRXomw",
+    "signatureBase64Url": "4ITyotTCCInWOjSkUvtv3M21kIyTsChz25eaQ_cXj4eyvOn-tZZlwfpWe4CvFtxZdj5QF8eQq3HWhVJxEjTtBw",
+    "algorithm": "Ed25519",
+    "independentReconstructionResult": "PASS: decoding publicKeyBase64Url and signatureBase64Url and calling Ed25519PublicKey.from_public_bytes(...).verify(signature_bytes, preimage_bytes) against preimageBytesCompactJcs succeeds using only these published strings"
+  },
+  "negativeTestVector": {
+    "usedByVector": "AV-11",
+    "note": "same test-fixture key and hypothetical snapshot as positiveTestVector, but a different issuer, receiptId and lookupResult; cryptographic validity alone does not imply admission and no real source-owned provenance is proved",
+    "preimageObject": {
+      "domain": "cvf.verifierReceipt",
+      "profileVersion": "v1",
+      "receiptId": "rcpt-20260918-rejected-vector-0002",
+      "verificationRound": "ACEL_G1_T2C_ROUND_TESTVECTOR_001",
+      "verificationAuthority": "ACEL_G1_DECISION_OWNER",
+      "verificationAuthorityHash": "e9f7330d18968fad1209557dae0519620e71d2be87552c14cba8a16d799d9661",
+      "issuerIdentity": "issuer-test-rejected-002",
+      "issuerAttestedHash": "b57d8b3795f1bbfd46e1748e7613f916a455c163cd4e5f6000d1373536a46bb9",
+      "trustedRegistrySnapshotIdentity": "registry-snapshot-testvector-0001",
+      "trustedRegistrySnapshotHash": "9997d053ab2e26cd4c7108f36daf4728c8a830381f91026a366f1c31dc7817ae",
+      "lookupResult": "IDENTITY_REJECTED",
+      "observationTimeUtc": "2026-09-18T00:00:00Z",
+      "receiptIssuanceTimeUtc": "2026-09-18T00:00:05Z",
+      "signatureKeyId": "verifier-key-testvector-0001"
+    },
+    "preimageBytesCompactJcs": "{\"domain\":\"cvf.verifierReceipt\",\"issuerAttestedHash\":\"b57d8b3795f1bbfd46e1748e7613f916a455c163cd4e5f6000d1373536a46bb9\",\"issuerIdentity\":\"issuer-test-rejected-002\",\"lookupResult\":\"IDENTITY_REJECTED\",\"observationTimeUtc\":\"2026-09-18T00:00:00Z\",\"profileVersion\":\"v1\",\"receiptId\":\"rcpt-20260918-rejected-vector-0002\",\"receiptIssuanceTimeUtc\":\"2026-09-18T00:00:05Z\",\"signatureKeyId\":\"verifier-key-testvector-0001\",\"trustedRegistrySnapshotHash\":\"9997d053ab2e26cd4c7108f36daf4728c8a830381f91026a366f1c31dc7817ae\",\"trustedRegistrySnapshotIdentity\":\"registry-snapshot-testvector-0001\",\"verificationAuthority\":\"ACEL_G1_DECISION_OWNER\",\"verificationAuthorityHash\":\"e9f7330d18968fad1209557dae0519620e71d2be87552c14cba8a16d799d9661\",\"verificationRound\":\"ACEL_G1_T2C_ROUND_TESTVECTOR_001\"}",
+    "preimageSha256": "6b5336fbdc9cc48c07ad773b1f305c6280499eb8de3df5fff721c1f9dfb645cc",
+    "preimageSha256NotEqualToPositiveVector": true,
+    "publicKeyBase64Url": "RMcYJcHIAYbM9S2L717B9wmMom1ZMEIs-PTJrQRXomw",
+    "signatureBase64Url": "BnjZSVj46xf8KVXL2xwOInQU6AxylYuSfxC59s6UJ6ggVXaiUPYIzEgQkL_3Riz1kmkxDRM8kJv7L7O_e-IsDw",
+    "algorithm": "Ed25519",
+    "independentReconstructionResult": "PASS: signature independently verifies exactly like positiveTestVector, proving Predicate 2 passes; admission is still correctly denied by admissionOutcomeBinding because lookupResult != IDENTITY_CONFIRMED"
+  },
+  "ownerLedger": [
+    {
+      "responsibility": "Verifier private key custody and rotation",
+      "owner": "CVF key-governance authority",
+      "status": "BLOCKED_SOURCE_NOT_FOUND",
+      "criticalForOperation": true,
+      "currentImplementationStatus": "unassigned"
+    },
+    {
+      "responsibility": "Verifier public-key registry creation and write authority",
+      "owner": "CVF key-governance authority",
+      "status": "BLOCKED_SOURCE_NOT_FOUND",
+      "criticalForOperation": true,
+      "currentImplementationStatus": "unassigned"
+    },
+    {
+      "responsibility": "Registry snapshot identity and observation logging",
+      "owner": "Source-owned authority (decision owner)",
+      "status": "BLOCKED_SOURCE_NOT_FOUND",
+      "criticalForOperation": true,
+      "currentImplementationStatus": "unassigned"
+    },
+    {
+      "responsibility": "Issuer registry content and lookup semantics",
+      "owner": "Issuer/authority decision owner",
+      "status": "BLOCKED_SOURCE_NOT_FOUND",
+      "criticalForOperation": true,
+      "currentImplementationStatus": "unassigned"
+    },
+    {
+      "responsibility": "Receipt issuance verification function (TypeScript)",
+      "owner": "G1 implementation owner (future)",
+      "status": "unassigned",
+      "criticalForOperation": true,
+      "currentImplementationStatus": "not-implemented"
+    },
+    {
+      "responsibility": "Receipt evidence verification function (Python)",
+      "owner": "G1 evidence checker owner (future)",
+      "status": "unassigned",
+      "criticalForOperation": true,
+      "currentImplementationStatus": "not-implemented"
+    },
+    {
+      "responsibility": "Receipt archival and historical access",
+      "owner": "Evidence custody owner (future)",
+      "status": "unassigned",
+      "criticalForOperation": false,
+      "currentImplementationStatus": "not-implemented"
+    },
+    {
+      "responsibility": "Key revocation and timeline validation",
+      "owner": "Key-governance authority",
+      "status": "BLOCKED_SOURCE_NOT_FOUND",
+      "criticalForOperation": true,
+      "currentImplementationStatus": "unassigned"
+    }
+  ],
+  "parkedEvidenceReconciliation": {
+    "t2bStatus": "REJECTED_INSUFFICIENT_AUTHENTICATION",
+    "t2bRejectionReason": "T2B-RV-F1: content hash alone cannot authenticate verifier claim; receipt can be self-authored",
+    "t2cDifference": "adds Ed25519 signature validity and source-owned lookup provenance as independent mandatory predicates",
+    "t2bPathsDisposition": "ten parked G1 evidence paths remain frozen and unaffected",
+    "t2aPathsDisposition": "T2A evidence paths remain frozen and unaffected",
+    "t2cAuthorization": "hypothetical documentation only; no T2B repair or acceptance authorized"
+  },
+  "claimBoundary": {
+    "inScope": "hypothetical documentation of three-predicate contract, interface specifications, adversarial vectors, owner ledger",
+    "outOfScope": "key generation, registry creation, signer wiring, live lookup, implementation code, tests, checkers, public sync, deployment",
+    "keys": "no keys created; all key operations proposed as interfaces only",
+    "registry": "no registry created or accessed; proposed structure and lookup semantics only",
+    "lookup": "no actual registry lookups performed; lookup provenance specified as interface",
+    "implementation": "no TypeScript or Python implementation; responsibilities specified",
+    "operationalDependencies": "all explicitly unverified and parked"
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}
