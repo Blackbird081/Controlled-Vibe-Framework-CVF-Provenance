@@ -698,9 +698,12 @@ function Set-CeremonyDirectoryAcl {
     param([Parameter(Mandatory = $true)][string] $OutputDirectory)
 
     try {
-        $acl = Get-Acl -LiteralPath $OutputDirectory
+        # Build a DACL-only descriptor instead of round-tripping the descriptor
+        # returned by Get-Acl. Set-Acl can attempt to persist its SACL as well,
+        # which requires SeSecurityPrivilege and therefore rejects the intended
+        # non-admin ceremony principal even when that principal owns the folder.
+        $acl = [System.Security.AccessControl.DirectorySecurity]::new()
         $acl.SetAccessRuleProtection($true, $false)
-        foreach ($rule in @($acl.Access)) { [void]$acl.RemoveAccessRule($rule) }
         $identity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
         $acl.AddAccessRule([System.Security.AccessControl.FileSystemAccessRule]::new(
                 $identity.User,
@@ -709,7 +712,8 @@ function Set-CeremonyDirectoryAcl {
                   [System.Security.AccessControl.InheritanceFlags]::ObjectInherit),
                 [System.Security.AccessControl.PropagationFlags]::None,
                 [System.Security.AccessControl.AccessControlType]::Allow))
-        Set-Acl -LiteralPath $OutputDirectory -AclObject $acl
+        [System.IO.FileSystemAclExtensions]::SetAccessControl(
+            [System.IO.DirectoryInfo]::new($OutputDirectory), $acl)
         return $true
     } catch {
         Write-Warning "could not harden ACL on '$OutputDirectory': $($_.Exception.Message)"

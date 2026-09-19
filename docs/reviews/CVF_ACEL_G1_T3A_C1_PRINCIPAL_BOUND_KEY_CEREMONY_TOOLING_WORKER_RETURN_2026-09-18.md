@@ -77,7 +77,7 @@ Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_
     "ceremony_tooling_not_implemented": {
       "evidenceClass": "EXECUTABLE_PROOF",
       "evidencePath": "scripts/acel_g1_party_a_key_ceremony.ps1",
-      "sha256": "5731949c29c676a47e34e64f55281999742100ceb3b36b77bfd842aeebf584dd",
+      "sha256": "8559f7f7129ea3c8453f8db62031097b677a4f0be3c2bc4aa8881a8e8c42d1cf",
       "locator": "function Invoke-SelfTest",
       "claimId": "ACEL-G1-T3A-C1-TOOLING-IMPLEMENTED"
     }
@@ -174,15 +174,16 @@ public metadata, cleaning up partial writes on failure.
 
 ### Local reviewer findings and repairs
 
-The Local reviewer found three connected safety-proof defects before acceptance:
+The Local reviewer found four connected safety-proof and operational defects before final ceremony acceptance:
 
 | ID | Finding | Severity | Reviewer repair |
 |---|---|---|---|
 | T3A-C1-RV-01 | `Invoke-KeyGeneratorHelper` used `Start-Process -RedirectStandardOutput` to a temporary file. That file contained the helper JSON and therefore plaintext private PKCS8 before DPAPI protection, directly contradicting C1-05 and the return's no-plaintext-file claim. Best-effort overwrite/delete did not make the original write compliant. | CRITICAL | Replaced filesystem redirection with `System.Diagnostics.ProcessStartInfo` anonymous stdout/stderr pipes and in-memory reads; added C1-04-D with isolated TEMP/TMP and zero-file evidence. |
 | T3A-C1-RV-02 | C1-08-C launched the non-interactive child with a deliberately wrong principal, so it stopped at `PRINCIPAL_NAME_MISMATCH` and could not prove the repaired confirmation guard was reached. The return overclaimed that this child validated the `Read-Host` boundary. | HIGH | The child now uses the exact current non-elevated account name and SID, passes the earlier guards, and must exit non-zero with `NONINTERACTIVE_EXECUTION_REJECTED` plus zero output files. |
 | T3A-C1-RV-03 | The ceremony ignored a false return from `Set-CeremonyDirectoryAcl`; an ACL-hardening failure emitted only a warning and key generation continued, contradicting the fail-closed custody posture. | HIGH | Actual ceremony now raises `ACL_HARDENING_FAILED` before helper invocation; C1-03-F verifies protected inheritance and no unexpected allow SID on the sandbox. |
+| T3A-C1-RV-04 | The accepted ACL implementation round-tripped a `Get-Acl` descriptor through `Set-Acl`. Under the intended non-admin Party A principal this attempted to persist SACL state and failed for lack of `SeSecurityPrivilege`, making the real ceremony inoperable even though the elevated/reviewer sandbox passed. | HIGH | Replaced descriptor round-tripping with a fresh DACL-only `DirectorySecurity` descriptor persisted through `FileSystemAclExtensions.SetAccessControl`; inheritance remains disabled and the sole allow rule remains the current SID. The non-elevated hermetic self-test remains 32/32. |
 
-Both repairs are localized to the existing reviewer-owned three-path set and
+All four repairs are localized to the existing reviewer-owned three-path set and
 preserve the objective, algorithm, authority ceiling, external-effect class
 and commit ownership. No re-dispatch or operator checkpoint was warranted.
 
@@ -241,8 +242,8 @@ and is deliberately left to the source-establishment tranche.
 
 `ACCEPTED_BY_REVIEWER_WITH_REPAIRS`.
 
-The three authorized outputs exist and are uncommitted. All ten acceptance
-rows pass with named observable evidence after the three disclosed Local repairs. The worker did not stage, commit,
+The three authorized outputs exist and were accepted into Local history. All ten acceptance
+rows pass with named observable evidence after the four disclosed Local repairs. The worker did not stage, commit,
 access any credential, run as any alternate user, create a real Party A key,
 create a Group 1 registry or lifecycle file, or claim source readiness.
 
@@ -626,7 +627,7 @@ passed the expected name and SID as *expected* values and was rejected with
 | Allowed scope source | work order Reviewer Closure Conversion: exact three returned paths plus necessary Local evidence repair |
 | Before status evidence | HEAD `e0c461e60`; three worker outputs untracked; thirteen parked paths untracked; staging empty |
 | After status evidence | exact same three owned paths plus thirteen parked paths; no alternate-user or ceremony output; staging reconciled only for Local material commit |
-| Diff evidence | T3A-C1-RV-01 through RV-03 and final 32/32 focused test; exact three-path material manifest |
+| Diff evidence | T3A-C1-RV-01 through RV-04 and final 32/32 focused test; exact three-path material manifest |
 | Approval boundary | reviewer-local correction within unchanged objective, paths, risk, authority and external-effect class |
 | Claim boundary | tooling acceptance only; no Party A ceremony, operational key/source, live/runtime/public/deployment effect |
 | Agent type | Local reviewer/closer |
@@ -680,7 +681,7 @@ All three outputs are new untracked files at the execution base.
 
 | Path | Status | SHA-256 | Lines |
 |---|---|---|---|
-| `scripts/acel_g1_party_a_key_ceremony.ps1` | added (untracked), reviewer-repaired | `5731949c29c676a47e34e64f55281999742100ceb3b36b77bfd842aeebf584dd` | 1331 |
+| `scripts/acel_g1_party_a_key_ceremony.ps1` | added, reviewer-repaired | `8559f7f7129ea3c8453f8db62031097b677a4f0be3c2bc4aa8881a8e8c42d1cf` | 1335 |
 | `scripts/acel_g1_party_a_key_ceremony.js` | added (untracked) | `3c921b715bcb81e805c62dcf8308ce772f4d76504ead855bf7fe62a66034eac1` | 139 |
 | `docs/reviews/CVF_ACEL_G1_T3A_C1_PRINCIPAL_BOUND_KEY_CEREMONY_TOOLING_WORKER_RETURN_2026-09-18.md` | added (untracked) | recorded by Local at review time | this file |
 
@@ -708,6 +709,9 @@ after the final source edit.
 | `sha256sum` over the thirteen parked paths, before and after | all thirteen byte-identical |
 | residue check of `%LOCALAPPDATA%\CVF_ACEL_G1_KEY_CEREMONY_SELFTEST_*` | none present; all self-test sandboxes removed |
 | residue check of `%LOCALAPPDATA%\CVF\ACEL_G1\party_a_key` | absent; no durable ceremony output was ever created |
+| first operator execution as the exact Party A SID | stopped before helper launch because `node` was absent from that secondary-logon process PATH; operator added the machine Node directory to the process PATH; no key output was produced |
+| second operator execution as the exact Party A SID | stopped before helper launch with `ACL_HARDENING_FAILED`; diagnostic identified `Set-Acl` SACL persistence requiring unavailable `SeSecurityPrivilege`; RV-04 converted the operation to DACL-only persistence |
+| post-RV-04 `pwsh -NoProfile -File scripts/acel_g1_party_a_key_ceremony.ps1` | PASS: 32/32 in non-elevated Local context; no Party A ceremony performed by Local |
 
 ## No-Commit Statement
 
@@ -720,7 +724,7 @@ by the worker. Reviewer/closer owns material commit.
 
 | Artifact | Evidence | Disposition |
 |---|---|---|
-| Worker return status | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | Local accepted after three bounded source/evidence repairs |
+| Worker return status | `Status: ACCEPTED_BY_REVIEWER_WITH_REPAIRS` | Local accepted after four bounded source/evidence repairs |
 | Work order status | `dispatchWorkOrder: docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3A_C1_PRINCIPAL_BOUND_KEY_CEREMONY_TOOLING_2026-09-18.md` | N/A with reason: reviewer/closer owns closure conversion |
 | Changed set | `## Actual Changed Set` | exactly three real paths listed |
 | Gate evidence | `## Gate Evidence` | pre-implementation COMPLIANT; final self-test 32/32; reviewer/closure gates recorded after final edit |
