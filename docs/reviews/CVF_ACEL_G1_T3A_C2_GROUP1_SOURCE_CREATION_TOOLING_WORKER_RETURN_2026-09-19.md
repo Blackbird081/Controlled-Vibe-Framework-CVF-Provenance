@@ -72,7 +72,7 @@ terminalReadinessVerdict: READY_FOR_REVIEW
 Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md`
 
 ```json
-{"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"acel-g1-t3a-c2-group1-source-creation-tooling","chainMode":"INITIAL","chainOrdinal":0,"predecessor":null,"blockerDelta":{"prior":["dispatch_packet_preimplementation_gate_failure","group1_source_creation_tooling_not_implemented","group1_source_not_created"],"resolved":["dispatch_packet_preimplementation_gate_failure","group1_source_creation_tooling_not_implemented"],"retained":["group1_source_not_created"],"new":[],"reopened":[],"current":["group1_source_not_created"]},"resolutionEvidence":{"dispatch_packet_preimplementation_gate_failure":{"evidenceClass":"EXECUTABLE_PROOF","evidencePath":"docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_2026-09-19.md","sha256":"638ff6207208e705be5cf0ac0ff8bfc29965fdb7e2119ed77aa5db8057fda6f9","locator":"R2 redispatch note","claimId":"ACEL-G1-T3A-C2-DISPATCH-PACKET-REPAIRED"},"group1_source_creation_tooling_not_implemented":{"evidenceClass":"EXECUTABLE_PROOF","evidencePath":"scripts/acel_g1_party_a_group1_source_writer.ps1","sha256":"5d9c1c81177fa429784d224f4f88d7245727c552426eab52ad91a090422d7d47","locator":"function Invoke-SelfTest","claimId":"ACEL-G1-T3A-C2-TOOLING-IMPLEMENTED"}},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":0,"nonDecreasingBlockerTransitions":0},"claims":[{"claimId":"ACEL-G1-T3A-C2-TOOLING-IMPLEMENTED","claimClass":"OTHER","proofClass":"NAMED_OBSERVABLE_PROOF","evidenceRef":"docs/reviews/CVF_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_WORKER_RETURN_2026-09-19.md"},{"claimId":"ACEL-G1-T3A-C2-DISPATCH-PACKET-REPAIRED","claimClass":"OTHER","proofClass":"NAMED_OBSERVABLE_PROOF","evidenceRef":"docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_2026-09-19.md"}],"requiredDisposition":"CONTINUE_BOUNDED","successorScope":"NO_SUCCESSOR"}
+{"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"acel-g1-t3a-c2-group1-source-creation-tooling","chainMode":"INITIAL","chainOrdinal":0,"predecessor":null,"blockerDelta":{"prior":["dispatch_packet_preimplementation_gate_failure","group1_source_creation_tooling_not_implemented","group1_source_not_created"],"resolved":["dispatch_packet_preimplementation_gate_failure","group1_source_creation_tooling_not_implemented"],"retained":["group1_source_not_created"],"new":[],"reopened":[],"current":["group1_source_not_created"]},"resolutionEvidence":{"dispatch_packet_preimplementation_gate_failure":{"evidenceClass":"EXECUTABLE_PROOF","evidencePath":"docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_2026-09-19.md","sha256":"2badc83b805ef2aa59c42261bbf5b0b3f50215f974eb13f7176278f86ad5d3ea","locator":"R3 redispatch note","claimId":"ACEL-G1-T3A-C2-DISPATCH-PACKET-REPAIRED"},"group1_source_creation_tooling_not_implemented":{"evidenceClass":"EXECUTABLE_PROOF","evidencePath":"scripts/acel_g1_party_a_group1_source_writer.ps1","sha256":"6646c40316fb8bff319fd9057f96689d0f3ae7bd756e09d51c206e857d5a250f","locator":"function Invoke-SelfTest","claimId":"ACEL-G1-T3A-C2-TOOLING-IMPLEMENTED"}},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":0,"nonDecreasingBlockerTransitions":0},"claims":[{"claimId":"ACEL-G1-T3A-C2-TOOLING-IMPLEMENTED","claimClass":"OTHER","proofClass":"NAMED_OBSERVABLE_PROOF","evidenceRef":"docs/reviews/CVF_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_WORKER_RETURN_2026-09-19.md"},{"claimId":"ACEL-G1-T3A-C2-DISPATCH-PACKET-REPAIRED","claimClass":"OTHER","proofClass":"NAMED_OBSERVABLE_PROOF","evidenceRef":"docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_2026-09-19.md"}],"requiredDisposition":"CONTINUE_BOUNDED","successorScope":"NO_SUCCESSOR"}
 ```
 
 The one retained blocker is intentional: this tranche was authorized to build
@@ -336,6 +336,38 @@ and `governance/compat/test_check_acel_g1_verifier_key_registry.py` restores
 the execution-base state exactly. The two pre-existing parked files listed
 above were not opened for write and their SHA-256 values are confirmed
 byte-identical before and after in Frozen-Path Reconciliation below.
+
+## Local Reviewer R3 Disposition
+
+Disposition: `REWORK_REQUIRED`.
+
+R2 implementation evidence was evaluated directly from the three pending
+implementation files at execution base `7be9ae7b5`; the required fourth output
+was not overwritten, so this file still contains the historical R1 return.
+Reviewer reruns confirmed genuine progress: PowerShell `39/39`, Python `62/62`,
+the original six R2 probes reject, the automated cross-tool test passes, and
+both real Group 1 source files remain absent.
+
+Completion is nevertheless rejected. The writer's only metadata validator
+still accepts the old nine required fields and contains no immutable verified
+product constants, exact fourteen-field check, duplicate-member parser or
+canonical base64url re-encoding check. The checker still lets CLI callers
+choose all three expected-product values and binds only those three values.
+Independent post-green probes produced:
+
+| Reviewer probe | Invalid observed acceptance |
+|---|---|
+| duplicate transition ID plus wrong actor on the later entry | `('duplicate_transition_and_later_wrong_actor', True, 'VALIDATED')` |
+| illegal `ACTIVE -> ACTIVE` edge plus cross-record time disagreement | `('invalid_transition_and_cross_record_time', True, 'VALIDATED')` |
+| internally consistent substitute key/product with matching caller expectations | `('caller_selected_substitute_product', True, 'VALIDATED')` |
+
+Atomicity implementation improved, but the required orchestration-level six
+boundary matrix is incomplete: the suite uses collisions for create failures,
+tests one injected post-create failure directly through `New-ExclusiveFile`,
+and does not inject first/second write and durable-flush failures through
+`Write-GroupOneOutput`. These findings are consolidated as R3-01 through
+R3-05 in the redispatched work order. No Party A execution or real source
+creation is authorized.
 
 ## Local Reviewer R2 Disposition
 

@@ -71,6 +71,28 @@ accepts an arbitrary real-mode repository root and cannot guarantee removal of
 the file whose own write/flush fails. Repair the complete R2 matrix below in one
 pass; do not narrow it to the six demonstrated probes.
 
+R3 redispatch note: R2 materially improved the tooling: PowerShell now passes
+39/39, Python passes 62/62, the original six reviewer probes reject, the real
+destination is script-derived and the demonstrated post-create rollback works.
+Local nevertheless rejects completion because R2 did not overwrite the fourth
+required output and did not close the whole correction matrix. Source inspection
+shows the writer still accepts the old nine-field self-consistent metadata shape
+instead of the exact verified fourteen-field product. Independent checker probes
+also returned `VALIDATED` for (a) a duplicate transition ID plus a wrong actor on
+a later entry, (b) an invalid ACTIVE->ACTIVE transition with cross-record time
+disagreement, and (c) an entirely caller-selected substitute product. Complete
+the consolidated R3 matrix below in one pass; preserve every already-passing R2
+regression and do not reduce R3 to the three demonstrated probes.
+
+Operator-escalation resolution: after the mandatory round-three stop was
+surfaced with the desired outcome, contradictions, risk and bounded repair
+scope, the operator explicitly directed Local to continue on 2026-09-19. The
+prior assignment therefore ends at escalation and this document now dispatches
+a fresh operator-authorized R3 completion assignment. Its dispatch counters
+start at zero; that reset does not erase or relabel the R1/R2 evidence retained
+above and below. Scope, authority ceiling, four output paths, no-commit rule and
+all parked effects remain unchanged.
+
 ## Purpose
 
 Implement deterministic tooling that a later operator can run under the exact
@@ -117,23 +139,23 @@ the operational sources during worker execution.
 
 Review-Dispatch Convergence Control: REQUIRED
 
-dispatchKind: REWORK
+dispatchKind: INITIAL
 
 dispatchSurface: INTERNAL_AGENT
 
-parentAssignmentId: ACEL-G1-T3A-C2-GROUP1-SOURCE-CREATION-TOOLING
+parentAssignmentId: ACEL-G1-T3A-C2-R3-OPERATOR-ESCALATED-COMPLETION
 
-reviewRoundCount: 2
+reviewRoundCount: 0
 
-priorFindingSetDigest: 73dcf3e3a76b31332f5cd95a23e5e35fd6e8e13da630c6a11fdf8f1e32c62eae
+priorFindingSetDigest: NOT_APPLICABLE_INITIAL_DISPATCH
 
-dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
+dependencyAuditDisposition: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
 
-reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
+reworkFindingDisposition: NOT_APPLICABLE_INITIAL_DISPATCH
 
-newIndependentCriticalEvidence: T3A-C2-R2-01_VERIFIED_PRODUCT_BINDING,T3A-C2-R2-02_DESTINATION_AND_ATOMICITY,T3A-C2-R2-03_CHECKER_SEMANTIC_CHAIN,T3A-C2-R2-04_ADVERSARIAL_REGRESSION
+newIndependentCriticalEvidence: NONE
 
-regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
+regressionGuardDisposition: BASELINE_NEGATIVE_TESTS_PLANNED
 
 cumulativeExternalInvocationCount: 0
 
@@ -143,13 +165,13 @@ usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
 
 quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
 
-nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
+nextDispatchDisposition: INITIAL_DISPATCH
 
-rootCauseClusterId: acel-g1-t3a-c2-source-tooling-contract-completeness
+rootCauseClusterId: NOT_APPLICABLE_INITIAL_DISPATCH
 
-reworkGeneration: 2
+reworkGeneration: 0
 
-consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
+consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
 
 successorTrancheOpened: NO
 
@@ -237,6 +259,80 @@ material, create either real Group 1 source, promote a key, wire T3E, admit a
 candidate, call a provider, public-sync or deploy. The exact four output paths
 remain unchanged; overwrite the existing worker-return path with the R2 return.
 
+## Consolidated R3 Correction Matrix
+
+### T3A-C2-R3-01 - Writer Exact Product Binding And Strict JSON Intake
+
+The writer must accept only the exact fourteen-member JSON object independently
+verified in the T3A-C2 audit: `metadataSchema`, `metadataProfile`, `keyId`,
+`algorithm`, `principalName`, `principalSid`, `publicKeyBytesBase64`,
+`publicKeySha256Hex`, `createdAtUtc`, `expiresAtUtc`, `ceremonyDisposition`,
+`testDisposition`, `registryDisposition` and `claimBoundary`. Reject every
+missing, extra or duplicate member before confirmation or output. Enforce JSON
+types, exact immutable values from the verified product, exact `Ed25519`, strict
+unpadded canonical base64url with byte-for-byte re-encoding, 32 decoded bytes
+and the exact verified digest. A self-consistent substitute key, altered time,
+altered disposition, standard-base64 character, padding or duplicate member
+must each have a focused negative test. Fixture metadata may differ only inside
+an explicitly test-only validator/input path; the real execution path must be
+cryptographically and literally bound to the verified product.
+
+### T3A-C2-R3-02 - Checker Product Authority Must Not Be Caller-Selectable
+
+The operational/default checker must carry or load the immutable verified T3A
+public product from a fixed CVF-governed authority and must not let CLI arguments
+redefine the expected key ID, public key or actor. Remove the three caller-
+selectable `--expected-*` authority arguments from the operational CLI. Bind the
+row to the exact key ID, decoded public-key bytes, `issuedAt` and `expiresAt`,
+and bind every lifecycle actor to the exact Party A principal. A private
+test-only entry point may inject fixture expectations, but its name, visibility
+and call graph must prevent it from being mistaken for operational validation.
+Add a regression proving that an internally consistent alternate key/product
+cannot be made valid by supplying matching caller expectations.
+
+### T3A-C2-R3-03 - Complete Lifecycle State Machine And Cross-Record Time Rules
+
+Enforce unique non-empty `transitionId` values across the complete log and the
+exact Party A actor on every entry, not only genesis. Enforce only the T2F
+transition graph: genesis `NOT_PRESENT -> ACTIVE`; then `ACTIVE -> ROTATING`;
+then `ROTATING -> REVOKED` or `ROTATING -> EXPIRED`; terminal states have no
+successor and no self-transition is valid. Parse timestamps to UTC instants
+before comparison. For this genesis source writer/checker, require row
+`issuedAt` and `expiresAt` to equal the verified product, `issuedAt <=` genesis
+timestamp, genesis timestamp equal to the envelope `writeTimestamp`, chain-tip
+timestamp equal to the envelope `writeTimestamp`, and the write/tip instant to
+precede the non-null expiry. Preserve contiguous versions, prior-hash linkage,
+prior-status linkage, same key ID, envelope-tip version/status agreement and all
+strict-shape/digest checks. Add focused negatives for duplicate transition ID,
+wrong later actor, every illegal state edge, terminal resurrection, non-UTC or
+chronologically decreasing time, and every stated cross-record disagreement.
+
+### T3A-C2-R3-04 - Complete Atomic Failure-Injection Matrix
+
+The two-file orchestration, not only the low-level single-file helper, must expose
+test-only deterministic failure points for first-file and second-file create,
+write and durable-flush boundaries. Exercise all six boundaries through
+`Write-GroupOneOutput`; after each failure assert that every file created by the
+invocation is absent, a newly-created empty directory is removed, and every
+pre-existing collision/directory/sentinel remains byte-identical. Test-only
+injection must be unreachable from the real CLI and must not weaken exclusive
+create or real durable flush.
+
+### T3A-C2-R3-05 - Complete Four-Path Return
+
+Overwrite the worker-return artifact for this actual R3 execution. It must name
+execution base `7be9ae7b5`, R3 generation 3, final case counts, automated
+producer-to-consumer proof, the reviewer-probe outcomes, exact hashes of all
+three implementation files, empty staging, unchanged thirteen parked paths and
+continued absence of both real source files. Historical R1/R2 claims must not
+be presented as the current result.
+
+### R3 Claim Boundary
+
+R3 remains tooling-only and no-commit. It must not execute as Party A, read
+Party A private material, create either real Group 1 source, promote a key,
+wire T3E, admit a candidate, call a provider, public-sync or deploy.
+
 ## Acceptance Matrix
 
 | ID | Required contract | Positive and negative proof |
@@ -256,10 +352,10 @@ remain unchanged; overwrite the existing worker-return path with the R2 return.
 
 | Artifact | Required worker action |
 |---|---|
-| `scripts/acel_g1_party_a_group1_source_writer.ps1` | UPDATE the pending uncommitted writer to close all R2 findings; real mode remains operator-only |
-| `governance/compat/check_acel_g1_verifier_key_registry.py` | UPDATE the pending uncommitted Local checker to close all R2 findings |
-| `governance/compat/test_check_acel_g1_verifier_key_registry.py` | UPDATE the pending uncommitted focused suite with every R2 regression and automated cross-tool proof |
-| `docs/reviews/CVF_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_WORKER_RETURN_2026-09-19.md` | OVERWRITE the pending R1 return with complete R2 evidence |
+| `scripts/acel_g1_party_a_group1_source_writer.ps1` | UPDATE the pending uncommitted writer to close all R3 findings while preserving every R2 pass; real mode remains operator-only |
+| `governance/compat/check_acel_g1_verifier_key_registry.py` | UPDATE the pending uncommitted Local checker to close all R3 findings while preserving every R2 pass |
+| `governance/compat/test_check_acel_g1_verifier_key_registry.py` | UPDATE the pending uncommitted focused suite with every R3 regression and automated cross-tool proof |
+| `docs/reviews/CVF_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_WORKER_RETURN_2026-09-19.md` | OVERWRITE the stale committed R1 return with complete R3 evidence |
 
 ## Work-Order Fulfillment Manifest
 
@@ -279,7 +375,7 @@ commit, T3E wiring, live/provider/public/deployment effects.
 ## Write Ownership
 
 Worker owns uncommitted edits to the exact four manifest paths, including the
-three pending implementation files and the existing return that R2 must
+three pending implementation files and the existing return that R3 must
 overwrite. Local owns review, bounded evidence repair, staging and commits.
 Every other existing path, both future source files and the thirteen parked
 paths are read-only.
@@ -303,7 +399,7 @@ paths are read-only.
 ## Pre-Flight Checks
 
 - Capture execution HEAD, full status, empty staging and hashes of all thirteen parked paths.
-- Confirm the R2 dispatch commit exists, the exact four pending worker outputs
+- Confirm the R3 dispatch commit exists, the exact four pending worker outputs
   are the only active-lane delta, and both real source paths are absent.
 - Confirm no Party A credential/private artifact is present or requested.
 - Run the pre-implementation autorun gate before editing.
@@ -487,9 +583,9 @@ reason` disposition.
 ## Execution Plan
 
 1. Freeze state, parked hashes, the exact four-path pending delta and real-source absence; run pre-implementation gate.
-2. Repair the PowerShell writer against every R2 input-binding, destination and atomicity requirement.
-3. Repair the independent Python checker and focused tests against every R2 semantic/chain requirement.
-4. Publish exact preimage bytes/digests and run all positive/negative cases, including the six reviewer probes.
+2. Repair the PowerShell writer against every R3 exact-product and complete atomic-failure requirement while preserving R2 behavior.
+3. Repair the independent Python checker and focused tests against every R3 product-authority, state-machine and cross-record-time requirement.
+4. Publish exact preimage bytes/digests and run all positive/negative cases, including every R2 and R3 reviewer probe.
 5. Automate the cross-tool proof, overwrite the evidence return, run fast gate, reconcile exact outputs and leave staging empty.
 
 ## Evidence Requirements
