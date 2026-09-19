@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: READY_FOR_DISPATCH
+Status: READY_FOR_REDISPATCH
 
 Date: 2026-09-19
 
@@ -69,7 +69,7 @@ Route mode: `MULTI_AGENT_MULTI_ROLE`.
 
 Scope classification: protected local governance checker maintenance.
 
-Escalation condition: seventh material path, external effect, new authority
+Escalation condition: eighth material path, external effect, new authority
 owner, or inability to preserve reviewer/worker evidence separation.
 
 ## Authority Chain
@@ -84,7 +84,7 @@ MFRP independence rules -> existing autorun and worker-return gates.
 | --- | --- |
 | Operator | approved foundation hardening and forwards this packet |
 | Local dispatcher | authored source-verified contract and owns final disposition |
-| INTERNAL_AGENT worker | implements and tests exact six-path scope without commit |
+| INTERNAL_AGENT worker | implements and tests exact seven-path scope without commit |
 | Local reviewer/closer | executes independent probe, repairs bounded defects if safe, commits accepted material |
 
 ## Required First Reads
@@ -99,12 +99,12 @@ MFRP independence rules -> existing autorun and worker-return gates.
 ## Pre-Flight Checks
 
 Capture `executionBaseHead`, confirm it descends from `ec31f42e6`, record the
-exact thirteen parked paths without modifying them, confirm the six-path
+exact thirteen parked paths without modifying them, confirm the seven-path
 manifest, and run pre-implementation before material edits.
 
 ## Write Ownership
 
-Worker owns uncommitted edits to exactly the six manifest paths. Local owns
+Worker owns uncommitted edits to exactly the seven manifest paths. Local owns
 reviewer probe execution, any bounded reviewer repair, all commits, and session
 sync. No worker write authority exists outside the exact manifest.
 
@@ -120,7 +120,7 @@ the exact manifest, external effect, destructive action, or authority expansion.
 | --- | --- |
 | sharedWorktreeCoordinationMode | EXPLICIT_LANE_HANDOFF |
 | activeLaneOwner | INTERNAL_AGENT worker after operator forwards this packet |
-| laneOwnedPaths | exact six-path Required Artifact Manifest |
+| laneOwnedPaths | exact seven-path Required Artifact Manifest |
 | dispatcherMutationBoundary | NO_MUTATION_WHILE_LANE_ACTIVE |
 | laneReleaseEvidence | terminal worker-return status plus exact changed-set evidence |
 
@@ -142,23 +142,23 @@ them in the worker manifest.
 
 Review-Dispatch Convergence Control: REQUIRED
 
-dispatchKind: INITIAL
+dispatchKind: REWORK
 dispatchSurface: INTERNAL_AGENT
 parentAssignmentId: REVIEW-INDEPENDENT-PROBE-ADMISSION-T1
-reviewRoundCount: 0
-priorFindingSetDigest: NOT_APPLICABLE_INITIAL_DISPATCH
-dependencyAuditDisposition: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
-reworkFindingDisposition: NOT_APPLICABLE_INITIAL_DISPATCH
-newIndependentCriticalEvidence: NONE
-regressionGuardDisposition: BASELINE_NEGATIVE_TESTS_PLANNED
+reviewRoundCount: 1
+priorFindingSetDigest: 725d23c7bfcf5018cf8f625a6f91b0b48225492e7e05549eecac9336e2aedac6
+dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
+reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
+newIndependentCriticalEvidence: RIPA-T1-R1-01,RIPA-T1-R1-02,RIPA-T1-R1-03,RIPA-T1-R1-04,RIPA-T1-R1-05
+regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 cumulativeExternalInvocationCount: 0
 externalInvocationCeiling: 0
 usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
 quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
-nextDispatchDisposition: INITIAL_DISPATCH
-rootCauseClusterId: NOT_APPLICABLE_INITIAL_DISPATCH
-reworkGeneration: 0
-consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
+rootCauseClusterId: INDEPENDENT_PROBE_DECLARATION_AND_IDENTITY_BINDING_BYPASS
+reworkGeneration: 1
+consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
 successorTrancheOpened: NO
 implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
 preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
@@ -178,6 +178,76 @@ negativeMutationClasses: worker-self-attestation; same-oracle corroboration; mis
 expectedInformationGain: distinguish structurally complete independent review evidence from worker-generated corroboration before closure
 rerunCostReason: focused fixtures and one bounded reviewer probe provide higher information gain than broad duplicate reruns
 reviewerDecisionOwner: LOCAL
+
+### R1 Consolidated Independent Review Findings
+
+Local reproduced all findings directly against the returned checker. The
+worker must repair the complete defect class, not only the literal fixtures.
+
+#### RIPA-T1-R1-01 - Omitted Declaration Bypass
+
+An active changed work order with `docType: work_order` becomes non-applicable
+when it omits `independentProbeRequired`. This makes the new control optional
+precisely when a risky dispatcher forgets or suppresses it.
+
+Repair: every active changed work order must declare exactly one
+`independentProbeRequired` field. The checker must deterministically derive
+whether high-risk markers require `YES`; a high-risk packet cannot choose
+`NOT_APPLICABLE_WITH_REASON`. Low-risk compatibility may use the N/A form with
+a non-empty reason. Add omission and false-N/A hostile fixtures.
+
+#### RIPA-T1-R1-02 - Status Shadowing Bypass
+
+A terminal packet containing `Status: CLOSED_PASS_BOUNDED` is accepted with
+`PENDING_REVIEWER_EXECUTION` when any historical/prose line also contains
+`Status: COMPLETE_PENDING_REVIEW`, because `_is_terminal_status` subtracts
+non-terminal presence globally.
+
+Repair: parse one authoritative top-level status declaration, reject duplicate
+or ambiguous declarations, and decide terminality solely from that value.
+Code fences, quoted examples, tables, and prose must not shadow it.
+
+#### RIPA-T1-R1-03 - Declarative Actor And Same-Oracle Bypass
+
+`probeExecutorActor: Claude` passes because only two worker substrings are
+checked. Commands that differ only by path spelling, whitespace, wrapper, or
+equivalent invocation also evade exact string comparison. A label is not role
+or oracle separation evidence.
+
+Repair: closure evidence must bind distinct implementation and reviewer roles
+and invocation IDs, plus distinct normalized oracle fingerprints/evidence
+references. The guard enforces required shape, canonical digest syntax,
+inequality, duplicate rejection, and normalized-command equality rejection;
+Local still judges whether the asserted separation is substantively true.
+Provider names must not be used as normative role classification.
+
+#### RIPA-T1-R1-04 - Duplicate And Empty-Reason Acceptance
+
+Duplicate `independentProbeRequired` declarations can hide a later `YES` behind
+an earlier N/A. An empty `BLOCKED_INDEPENDENT_PROBE_WITH_REASON:` currently
+passes. The same first-match weakness affects other contract fields.
+
+Repair: require exactly one occurrence of every applicable control field and a
+non-empty reason after each reason-bearing token. Add reordered duplicate,
+same-value duplicate, empty-reason, quoted-example, and fenced-example cases.
+
+#### RIPA-T1-R1-05 - Execution Base And Manifest Reconciliation
+
+The return records `executionBaseHead: ec31f42e6` although the worker states
+actual starting HEAD was `6a4341317`. The dispatched packet also named six
+logical outputs but the actual source seam requires
+`agent_autorun_command_catalog.py` rather than direct mutation of
+`run_agent_autorun_workflow_gate.py`, and the fast-gate registration requires
+its ordered-list regression test. This is primarily an
+`ORCHESTRATOR_PACKET_GAP`; Local has corrected the authorized manifest to the
+seven physical paths below.
+
+Repair: set the return's execution base to the actual committed start HEAD,
+replace all stale six-path claims with the exact seven physical paths, remove
+claims that the manifest matched before this correction, and rerun every gate
+from the corrected range. The dispatch document's literal word-wrap defect in
+the Worker Return Packet Shape Contract is Local-owned and will be repaired
+before redispatch commit.
 
 Machine semantics:
 
@@ -230,7 +300,7 @@ count or worker assertion without command output is insufficient.
 | RIPA-06 | accepted closure evidence names reviewer actor, probe/command, observed result, and separation basis | positive closure fixture |
 | RIPA-07 | checker never claims semantic truth or universal interception | source assertion and claim-boundary test |
 | RIPA-08 | no regression in dispatch-quality, worker-return, autorun, or pre-commit suites | post-edit command receipts |
-| RIPA-09 | exact six-path manifest; thirteen parked paths untouched | before/after status reconciliation |
+| RIPA-09 | exact seven-path manifest; thirteen parked paths untouched | before/after status reconciliation |
 
 ## Required Artifact Manifest
 
@@ -239,11 +309,12 @@ count or worker assertion without command output is insufficient.
 | `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md` | MODIFY canonical rule and machine boundary |
 | `governance/compat/check_independent_review_probe_admission.py` | CREATE focused phase-aware guard |
 | `governance/compat/test_check_independent_review_probe_admission.py` | CREATE hostile and compatibility tests |
-| `governance/compat/run_agent_autorun_workflow_gate.py` | MODIFY only to invoke at pre-dispatch/pre-closure |
+| `governance/compat/agent_autorun_command_catalog.py` | MODIFY the actual shared-command registration seam only |
 | `governance/compat/run_worker_return_fast_gate.py` | MODIFY only to invoke worker-return pending-state validation |
+| `governance/compat/test_run_worker_return_fast_gate.py` | MODIFY exact ordered command-list regression expectation |
 | `docs/reviews/CVF_REVIEW_INDEPENDENT_PROBE_ADMISSION_T1_WORKER_RETURN_2026-09-19.md` | CREATE full evidence return |
 
-Any seventh material path is forbidden and requires return to Local. Generated
+Any eighth material path is forbidden and requires return to Local. Generated
 cache files and ignored runtime receipts are not material artifacts and must not
 be staged.
 
@@ -253,7 +324,7 @@ be staged.
 | --- | --- | --- |
 | RIPA-01 through RIPA-07 | worker | source diff plus focused tests in worker return |
 | RIPA-08 | worker | post-edit regression command receipts |
-| RIPA-09 | worker then Local | exact changed-set and parked-path reconciliation |
+| RIPA-09 | worker then Local | exact seven-path changed-set and parked-path reconciliation |
 | independent semantic sufficiency | Local reviewer | separately executed hostile probe and disposition |
 
 ## Core Guard Self-Protection Authorization
@@ -262,13 +333,14 @@ be staged.
 | --- | --- | --- | --- |
 | `governance/compat/check_independent_review_probe_admission.py` | create focused guard | explicit operator approval to raise the recurrence into CVF governance | delete guard if rejected by reviewer |
 | `governance/compat/test_check_independent_review_probe_admission.py` | create focused tests | same | revert with guard |
-| `governance/compat/run_agent_autorun_workflow_gate.py` | add imports/invocations for pre-dispatch and pre-closure only | same | remove exact binding only |
+| `governance/compat/agent_autorun_command_catalog.py` | add one shared-command registration only | same | remove exact registration only |
 | `governance/compat/run_worker_return_fast_gate.py` | add pending-state validation invocation only | same | remove exact binding only |
+| `governance/compat/test_run_worker_return_fast_gate.py` | update exact ordered command-list expectation only | same | revert with fast-gate binding |
 
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"REVIEW-INDEPENDENT-PROBE-ADMISSION-T1","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"INTERNAL","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_EXTENSION"},"pathFamilies":["docs/reference/review_cost_control/","governance/compat/","docs/reviews/"],"claims":["cooperative independent-probe evidence-shape admission only"],"requiredProof":["RIPA-01 through RIPA-09","exact six-path delta","focused hostile fixtures","existing gate regression"],"operatorCheckpoints":["reviewer acceptance and commit"],"forbiddenEffects":["provider call","live proof","Party A execution","ACEL source creation","worker commit","public sync","deployment"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"N/A with reason: bounded named-source owner extension","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"REVIEW-INDEPENDENT-PROBE-ADMISSION-T1","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"INTERNAL","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_EXTENSION"},"pathFamilies":["docs/reference/review_cost_control/","governance/compat/","docs/reviews/"],"claims":["cooperative independent-probe evidence-shape admission only"],"requiredProof":["RIPA-01 through RIPA-09","exact seven-path delta","focused hostile fixtures","existing gate regression"],"operatorCheckpoints":["reviewer acceptance and commit"],"forbiddenEffects":["provider call","live proof","Party A execution","ACEL source creation","worker commit","public sync","deployment"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"N/A with reason: bounded named-source owner extension","completenessClaimChanged":false}}
 ```
 
 ## Source Verification Block
@@ -313,10 +385,7 @@ requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
 individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
-Required terms: Purpose; Scope / Methodology; Findings / Position; Risk /
-Corrective Action; Claim Boundary; Agent Operation Trace Block; Delta Execution
-Claim Boundary Control Block; Public Export Disposition; executionBaseHead;
-git status --short.
+Required terms: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Claim Boundary; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; executionBaseHead; git status --short.
 
 Conditional blocks must use `N/A with reason` when truly inapplicable. Record
 `independentProbeDisposition: PENDING_REVIEWER_EXECUTION`; the worker must not
@@ -341,14 +410,14 @@ equivalent and record that substitution. Never omit the focused checker suite.
 
 ## Review Gate
 
-Local consumes valid evidence, checks the exact six-path diff, executes at
+Local consumes valid evidence, checks the exact seven-path diff, executes at
 least one independent hostile fixture not implemented by the worker, and runs
 broader suites only for a named contradiction, expected information gain, and
 cost reason. Local may make a bounded reviewer repair when objectively safe.
 
 ## Closure Checklist
 
-- exact six-path material set only;
+- exact seven-path material set only;
 - all focused and affected regression commands pass after last edit;
 - worker return says `PENDING_REVIEWER_EXECUTION`, not forged PASS;
 - Local independent probe is recorded before closure;
@@ -357,7 +426,7 @@ cost reason. Local may make a bounded reviewer repair when objectively safe.
 
 ## Return-To-Orchestrator Conditions
 
-Return `BLOCKED_WITH_REASON` only for source contradiction, seventh material
+Return `BLOCKED_WITH_REASON` only for source contradiction, eighth material
 path, protected path not explicitly authorized, inability to keep worker and
 reviewer evidence distinct, external-effect need, or a failing gate whose fix
 would cross the exact boundary.
@@ -366,7 +435,7 @@ would cross the exact boundary.
 
 No additional operator checkpoint is required inside this already-approved
 bounded tranche. Any external effect, authority expansion, destructive action,
-or seventh path returns to the operator.
+or eighth path returns to the operator.
 
 ## Agent Handoff Contract Control Block
 
@@ -378,7 +447,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | rolePattern | Local dispatcher -> INTERNAL_AGENT worker -> Local reviewer/closer |
 | phase | WORK_ORDER -> BUILD -> REVIEW -> FREEZE |
 | baseHeadFor(phase) | dispatchBaseHead=`ec31f42e6`; executionBaseHead=worker captures; closureBaseHead=Local sets |
-| changedSetScope(phase) | exact six material paths |
+| changedSetScope(phase) | exact seven material paths |
 | traceScope(phase, actor) | commands, hashes, statuses, failures, repairs, reviewer probe |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT; Local owns commit |
 | crossBatchIsolation | preserve thirteen parked G1 paths and exclude them from all diffs/staging |
@@ -389,7 +458,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | Field | Value |
 | --- | --- |
 | completionReviewPath | `docs/reviews/CVF_REVIEW_INDEPENDENT_PROBE_ADMISSION_T1_COMPLETION_2026-09-19.md` (reviewer-owned optional closure artifact; prefer reviewer disposition in the worker return when sufficient) |
-| reviewerOwnedClosurePaths | accepted exact six-path material set; session sync remains separate |
+| reviewerOwnedClosurePaths | accepted exact seven-path material set; session sync remains separate |
 | closureOwner | Local reviewer/closer |
 | workerCommitPermission | FORBIDDEN |
 
@@ -515,7 +584,7 @@ Reason: private provenance governance hardening; public export is separately aut
 
 ## Claim Boundary
 
-This work order authorizes exactly six uncommitted local artifacts implementing
+This work order authorizes exactly seven uncommitted local artifacts implementing
 a cooperative evidence-shape guard. It does not authorize or prove semantic
 review correctness, runtime interception, provider/live activity, Party A
 execution, ACEL source creation, public sync, deployment, or production readiness.

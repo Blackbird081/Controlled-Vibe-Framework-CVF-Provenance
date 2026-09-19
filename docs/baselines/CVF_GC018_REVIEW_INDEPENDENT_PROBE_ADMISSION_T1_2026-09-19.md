@@ -37,8 +37,8 @@ reviewer-owned execution records a terminal pass or a reasoned fail/block.
 ## Scope / Target / Owner Boundary
 
 In scope: the Review Cost standard, a focused checker and tests, binding into
-the existing pre-dispatch/pre-closure autorun and worker-return fast gate, and
-one worker-return packet. Out of scope: provider calls, live proof, Party A
+the existing autorun command catalog and worker-return fast gate, its focused
+regression test, and one worker-return packet. Out of scope: provider calls, live proof, Party A
 execution, ACEL source creation, runtime interception, public sync, and changes
 to the thirteen parked G1 paths.
 
@@ -71,8 +71,9 @@ evidence and run only bounded contradiction probes with named information gain.
 | `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md` | MODIFY with the canonical independent-probe admission rule |
 | `governance/compat/check_independent_review_probe_admission.py` | CREATE focused phase-aware guard |
 | `governance/compat/test_check_independent_review_probe_admission.py` | CREATE positive and hostile regression suite |
-| `governance/compat/run_agent_autorun_workflow_gate.py` | MODIFY to invoke the guard at pre-dispatch and pre-closure |
+| `governance/compat/agent_autorun_command_catalog.py` | MODIFY the actual shared autorun command owner so the guard runs in the existing phase bundles |
 | `governance/compat/run_worker_return_fast_gate.py` | MODIFY to validate worker-return probe disposition without converting worker evidence into reviewer evidence |
+| `governance/compat/test_run_worker_return_fast_gate.py` | MODIFY exact ordered command-list regression expectation |
 | `docs/reviews/CVF_REVIEW_INDEPENDENT_PROBE_ADMISSION_T1_WORKER_RETURN_2026-09-19.md` | CREATE full worker return |
 
 ## Core Guard Self-Protection Authorization
@@ -81,8 +82,9 @@ evidence and run only bounded contradiction probes with named information gain.
 | --- | --- | --- | --- |
 | `governance/compat/check_independent_review_probe_admission.py` | create the bounded admission guard | operator approved foundation hardening after ACEL review | remove the new guard if focused regression proves false-positive or bypass behavior |
 | `governance/compat/test_check_independent_review_probe_admission.py` | create focused tests | same | revert with guard |
-| `governance/compat/run_agent_autorun_workflow_gate.py` | add phase-scoped invocation only | same | remove only the new invocation |
+| `governance/compat/agent_autorun_command_catalog.py` | add one shared-command registration only | same | remove only the new registration |
 | `governance/compat/run_worker_return_fast_gate.py` | add worker-return disposition check only | same | remove only the new invocation |
+| `governance/compat/test_run_worker_return_fast_gate.py` | update exact command-list expectation only | same | revert with fast-gate binding |
 
 No authorization is granted for hooks, registries, provider/live paths,
 session-state mutation, or any other `governance/compat/` file.
@@ -94,7 +96,7 @@ session-state mutation, or any other `governance/compat/` file.
 | scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --packet-kind protected-governance-path --batch-id REVIEW-INDEPENDENT-PROBE-ADMISSION-T1 --title "Independent Review Probe Admission Foundation" --date 2026-09-19 --base ec31f42e61af106d7a818ca19e0411918f3bfb63 --commit-mode WORKER_MUST_NOT_COMMIT --stdout` |
 | generatedProfile | protected-governance-path plus no-commit worker |
 | generatedSkeletonStatus | USED_AS_STARTING_POINT |
-| manualEditsAfterScaffold | replaced placeholders with the source-verified owner extension, exact six-path manifest, role separation, and closure semantics |
+| manualEditsAfterScaffold | replaced placeholders with the source-verified owner extension, corrected exact seven-path physical manifest, role separation, and closure semantics |
 | checkerReadAheadConfirmation | dispatch-quality, core-guard self-protection, autorun, worker-return and reference structural requirements reviewed |
 | docOnlyNewFields | independentProbeRequired; independentProbeDisposition; probeExecutorRole; implementationOracleSeparation; expectedInformationGain; rerunCostReason |
 | claimBoundary | dispatch provenance only; no runtime/provider/live/public behavior claim |
