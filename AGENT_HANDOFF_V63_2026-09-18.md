@@ -21,11 +21,11 @@ execute as that principal or create the operational sources.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_review_independent_probe_foundation_r1_worker_return_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT closes committed RIPA-T1-R1 and returns `COMPLETE_PENDING_REVIEW`; parked checkpoint=operator Party A source write and downstream effects.
+Startup acknowledged: current mode=`multi_repo_absorption_review_independent_probe_foundation_r2_worker_return_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT closes committed RIPA-T1-R2 and returns `COMPLETE_PENDING_REVIEW`; parked checkpoint=operator Party A source write and downstream effects.
 
 ## Current Mode
 
-`multi_repo_absorption_review_independent_probe_foundation_r1_worker_return_pending`.
+`multi_repo_absorption_review_independent_probe_foundation_r2_worker_return_pending`.
 The active absorption program remains incomplete and restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
 wave remains `LHW24`.
@@ -108,13 +108,13 @@ release source creation, implementation, candidate admission or runtime use.
   output was also stale. After the mandatory round-three stop, the operator
   explicitly continued. The fresh R3 assignment is committed at `8eb363f48`;
   pre-dispatch passed 82/82 and material pre-commit passed 89/89.
-- R3-R1 closed both adversarial defects; Local accepted tooling at `ef0091da6`. RIPA-T1 initial return failed Local hostile probes; the consolidated five-finding R1 and corrected seven-path manifest were committed at `096732b0e` after 83/83 pre-dispatch and 89/89 pre-commit passes.
+- R3-R1 closed both adversarial defects; Local accepted tooling at `ef0091da6`. RIPA-T1 R1 failed new Local hostile probes; the consolidated five-finding R2 was committed at `c2153d52d` after 83/83 pre-dispatch and 89/89 pre-commit passes.
 - Thirteen pre-existing untracked G1 evidence paths remain byte-preserved,
   uncommitted and outside this lane; primary-worktree finality remains pending.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=REVIEW-INDEPENDENT-PROBE-ADMISSION-T1-R1_REDISPATCHED_AT_096732b0e; NEXT_STEP=INTERNAL_AGENT_CLOSE_CONSOLIDATED_FIVE_FINDING_MATRIX_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Local independently reproduced omitted-declaration, status-shadowing, declarative-actor/same-oracle, duplicate/empty-reason, and execution-base/manifest defects. The corrected seven-path R1 work order passed pre-dispatch 83/83 and pre-commit 89/89. Worker must not commit; Local owns the independent hostile probe, bounded repair, disposition and commit. Operator Party A source write and all downstream effects remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=REVIEW-INDEPENDENT-PROBE-ADMISSION-T1-R2_REDISPATCHED_AT_c2153d52d; NEXT_STEP=INTERNAL_AGENT_CLOSE_CONSOLIDATED_R2_FIVE_FINDING_MATRIX_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Local independently reproduced closure-linkage omission, status/disposition asymmetry, missing oracle/evidence digest binding, field-parser grammar, and stale return-evidence defects. Round-two rework is committed at c2153d52d after pre-dispatch 83/83 and pre-commit 89/89. Worker must not commit; any further same-class failure triggers round-three escalation rather than automatic redispatch. Local owns final hostile probes, bounded repair, disposition and commit. Party A source write and downstream effects remain parked; thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## External / Local Coordination Boundary
 
