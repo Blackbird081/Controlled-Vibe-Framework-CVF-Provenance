@@ -1,7 +1,7 @@
-# CVF Agent Handoff V63 - G1 T3A-C2 Source-Creation Tooling R3 Operator-Escalated
+# CVF Agent Handoff V63 - G1 T3A-C2 Source-Creation Tooling R3-R1
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `8eb363f48`. Local rejected incomplete R2 closure, surfaced the mandatory round-three stop, received explicit operator continuation, and committed one fresh bounded R3 completion assignment; Group 1 remains `SOURCE_NOT_CREATED`.
+Current material HEAD recorded for this handoff: `9d3f9a5a3`. Local rejected the R3 completion claim after two independent authority/JSON probes and committed one bounded R3-R1 correction assignment; Group 1 remains `SOURCE_NOT_CREATED`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -11,7 +11,7 @@ Status: ACTIVE
 ## Purpose
 
 Carry the accepted T2H reconciliation, verified Party A ceremony product and
-committed T3A-C2 R3 operator-escalated completion dispatch. One no-commit INTERNAL_AGENT lane is open.
+committed T3A-C2 R3-R1 correction dispatch. One no-commit INTERNAL_AGENT lane is open.
 
 ## Scope / Target / Owner Boundary
 
@@ -21,11 +21,11 @@ execute as that principal or create the operational sources.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t3a_c2_group1_source_creation_tooling_r3_operator_escalated_worker_return_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT executes the committed operator-escalated T3A-C2 R3 assignment from current HEAD and returns `COMPLETE_PENDING_REVIEW`; parked checkpoint=operator Party A source write, key promotion, T3E wiring, admission, live/runtime/public/deployment, then the separately governed foundation-learning tranche after this tranche closes.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t3a_c2_group1_source_creation_tooling_r3_r1_redispatched_worker_return_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT executes committed T3A-C2 R3-R1 from current HEAD and returns `COMPLETE_PENDING_REVIEW`; parked checkpoint=operator Party A source write and downstream effects, then the separately governed foundation-learning tranche after this tranche closes.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g1_t3a_c2_group1_source_creation_tooling_r3_operator_escalated_worker_return_pending`.
+`multi_repo_absorption_acel_g1_t3a_c2_group1_source_creation_tooling_r3_r1_redispatched_worker_return_pending`.
 The active absorption program remains incomplete and restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
 wave remains `LHW24`.
@@ -108,12 +108,14 @@ release source creation, implementation, candidate admission or runtime use.
   output was also stale. After the mandatory round-three stop, the operator
   explicitly continued. The fresh R3 assignment is committed at `8eb363f48`;
   pre-dispatch passed 82/82 and material pre-commit passed 89/89.
+- R3 returned 50/50 and 81/81, but Local proved caller-controlled authority replacement and escaped-name duplicate JSON remained. R3-R1 is committed at
+  `9d3f9a5a3`; pre-dispatch passed 82/82 and pre-commit passed 89/89.
 - Thirteen pre-existing untracked G1 evidence paths remain byte-preserved,
   uncommitted and outside this lane; primary-worktree finality remains pending.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T3A-C2-SOURCE-TOOLING-R3-OPERATOR-ESCALATED_AT_8eb363f48; NEXT_STEP=INTERNAL_AGENT_EXECUTE_COMMITTED_T3A_C2_R3_ASSIGNMENT_FROM_CURRENT_HEAD_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Local rejected incomplete R2 closure after new independent critical evidence, complied with the mandatory round-three stop, received explicit operator continuation, and committed the fresh R3 completion assignment at 8eb363f48 after 82/82 pre-dispatch and 89/89 pre-commit passes. The shared-workspace INTERNAL_AGENT must capture current committed HEAD as executionBaseHead, repair exactly the four pending work-order outputs, preserve every R2 regression, close R3-01 through R3-05, overwrite the stale worker return, and must not commit, use Party A credentials, run as Party A, access private material, or create the real registry/lifecycle sources. Local independently reviews the return. The real source write and all downstream effects remain parked; the requested foundation-learning tranche follows only after this tranche closes. Thirteen parked G1 paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T3A-C2-SOURCE-TOOLING-R3-R1_AT_9d3f9a5a3; NEXT_STEP=INTERNAL_AGENT_EXECUTE_COMMITTED_T3A_C2_R3_R1_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Local reproduced 50/50 PowerShell and 81/81 Python, then rejected R3 after proving caller-controlled real-mode authority replacement and escaped-name duplicate JSON acceptance. The shared-workspace INTERNAL_AGENT must repair exactly T3A-C2-R3-R1-01/02 across the same four outputs, preserve all passing regressions, overwrite the worker return, and must not commit, use Party A credentials, run as Party A, access private material, or create real sources. Local independently reviews the return. Real source write and downstream effects remain parked; the foundation-learning tranche follows only after closure. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## External / Local Coordination Boundary
 
@@ -204,9 +206,9 @@ encrypted local test key and thirteen parked G1 paths. No operational source,
 separate principal, key promotion, checker, live, runtime, public or deployment
 effect is authorized.
 
-## Core Guard Self-Protection Authorization - T3A-C2 R3 Dispatch Continuity
+## Core Guard Self-Protection Authorization - T3A-C2 R3-R1 Dispatch Continuity
 
-Authorized guard-maintenance scope: project operator-escalated T3A-C2 R3 dispatch `8eb363f48` into continuity and open only the exact no-commit completion lane.
+Authorized guard-maintenance scope: project T3A-C2 R3-R1 dispatch `9d3f9a5a3` into continuity and open only the exact no-commit correction lane.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `governance/compat/check_acel_g1_verifier_key_registry.py`; `governance/compat/test_check_acel_g1_verifier_key_registry.py`; `governance/compat/check_task_class_calibration_owner_evidence.py`; `governance/compat/test_check_task_class_calibration_owner_evidence.py`. The first two checker paths are pending T3A-C2 worker outputs; the latter two and the other eleven parked paths remain read-only and outside continuity ownership.
 Operator authorization: standing authorization permits Local audit/dispatch; operator retains credentials and the later real source write.
 Rollback boundary: revert this continuity projection only; preserve committed material, the pending exact four-path T3A-C2 worker delta and all parked files. No credential, alternate-user, operational-source, key-promotion, live/runtime/public/deployment effect is authorized.
