@@ -145,19 +145,19 @@ Review-Dispatch Convergence Control: REQUIRED
 dispatchKind: REWORK
 dispatchSurface: INTERNAL_AGENT
 parentAssignmentId: REVIEW-INDEPENDENT-PROBE-ADMISSION-T1
-reviewRoundCount: 1
-priorFindingSetDigest: 725d23c7bfcf5018cf8f625a6f91b0b48225492e7e05549eecac9336e2aedac6
+reviewRoundCount: 2
+priorFindingSetDigest: 99fe0cf65489fd4cdb2f11ac011073434391c4898304400fde0b675d669fe007
 dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
 reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
-newIndependentCriticalEvidence: RIPA-T1-R1-01,RIPA-T1-R1-02,RIPA-T1-R1-03,RIPA-T1-R1-04,RIPA-T1-R1-05
+newIndependentCriticalEvidence: RIPA-T1-R2-01,RIPA-T1-R2-02,RIPA-T1-R2-03,RIPA-T1-R2-04,RIPA-T1-R2-05
 regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 cumulativeExternalInvocationCount: 0
 externalInvocationCeiling: 0
 usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
 quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
 nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
-rootCauseClusterId: INDEPENDENT_PROBE_DECLARATION_AND_IDENTITY_BINDING_BYPASS
-reworkGeneration: 1
+rootCauseClusterId: INDEPENDENT_PROBE_CLOSURE_AND_EVIDENCE_BINDING_BYPASS
+reworkGeneration: 2
 consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
 successorTrancheOpened: NO
 implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
@@ -248,6 +248,102 @@ claims that the manifest matched before this correction, and rerun every gate
 from the corrected range. The dispatch document's literal word-wrap defect in
 the Worker Return Packet Shape Contract is Local-owned and will be repaired
 before redispatch commit.
+
+### R2 Consolidated Independent Review Findings
+
+Local ran a second independent hostile sweep over the complete R1 dependency
+class. All five findings below are new critical evidence admitted under the
+round-two rule. They supersede no R1 obligation and must be closed together.
+
+#### RIPA-T1-R2-01 - Closure Linkage And Omitted-Disposition Bypass
+
+`is_review_applicable` still opts in only when the review already declares
+`independentProbeDisposition`. A terminal completion/review linked to a work
+order requiring independent review can omit the field and escape the guard.
+
+Repair: resolve applicability from an exact repo-relative `dispatchWorkOrder`
+or `Responds to work order` reference, load the referenced active work order,
+and require exactly one closure disposition whenever that work order declares
+`independentProbeRequired: YES`. Missing, ambiguous, non-existent, archived,
+or traversal-bearing references fail closed. Unrelated review artifacts remain
+out of scope. Add real temporary-repository integration fixtures, not only
+direct function strings.
+
+#### RIPA-T1-R2-02 - Status/Disposition Symmetry And Cardinality
+
+The checker accepts `PASS_INDEPENDENT_PROBE` on
+`COMPLETE_PENDING_REVIEW` or with no `Status:` at all. It also accepts two
+identical top-level status declarations. R1 required one authoritative status,
+not merely absence of conflicting values.
+
+Repair: parse exactly one metadata-preamble `Status:` field before the first
+level-two section. Terminal status requires PASS; non-terminal status forbids
+PASS; missing or duplicate preamble status always rejects for an applicable
+review. Body prose, tables, blockquotes, inline code, fenced examples using
+backticks or tildes, and historical sections never count as metadata. Add all
+positive/negative direction and cardinality fixtures.
+
+#### RIPA-T1-R2-03 - Oracle Fingerprint And Evidence Binding Missing
+
+R1 explicitly required distinct normalized oracle fingerprints/evidence
+references with canonical digest syntax. The returned implementation added
+only invocation IDs and a normalized command comparison, so arbitrary labels
+still satisfy the machine shape.
+
+Repair: a terminal PASS must carry exactly one each of
+`workerOracleSha256`, `probeOracleSha256`, `workerEvidenceRef`, and
+`probeEvidenceRef`. Digests are lowercase canonical 64-hex and unequal.
+Evidence references are normalized, non-empty, repo-relative, non-traversing,
+and unequal. Invocation IDs remain required and unequal. The guard still does
+not claim those declarations are semantically truthful; Local verifies that.
+
+#### RIPA-T1-R2-04 - Section Scope, Empty Duplicates, And Strict Token Grammar
+
+`_field_occurrences` drops empty values, so an empty duplicate is invisible.
+Prefix matching also admits suffix tokens such as
+`NOT_APPLICABLE_WITH_REASONX` and
+`BLOCKED_INDEPENDENT_PROBE_WITH_REASONX`. Dispatch contract fields can be
+harvested from unrelated historical/body prose rather than the exact contract
+section, and the worker-role exemption can be embedded in a malicious longer
+role string.
+
+Repair: count declarations before value validation, including empty values;
+require exact `PREFIX: non-empty reason` grammar for reason-bearing tokens;
+parse dispatch plan fields only from exactly one
+`Independent Review Probe Admission Contract` section; require exact controlled
+role/disposition/owner tokens rather than substring exceptions; ignore fenced,
+inline-code, quoted-example, and table-example content. Add reordered,
+same-value, empty, suffix-token, second-section, and malicious-role fixtures.
+
+#### RIPA-T1-R2-05 - Return And Regression Reconciliation
+
+The return currently claims all R1 rows closed although the independent R2
+probes above pass unexpectedly. It must not preserve a resolved convergence
+claim based only on its own green suite.
+
+Repair: update the same worker return with R2 findings, exact new test counts,
+actual commands/results, seven-path hashes and line counts, corrected
+convergence evidence, and `PENDING_REVIEWER_EXECUTION`. Run the focused suite,
+the affected fast-gate/catalog suites, worker-return fast, pre-implementation,
+file-size, diff, and status checks after the final edit. No PASS may be recorded
+for the independent reviewer probe.
+
+### R2 Mandatory Local Reproduction Floor
+
+The worker must encode at least these Local probes as regressions while also
+covering the complete defect classes:
+
+1. linked terminal review omits `independentProbeDisposition` -> reject;
+2. PASS on `COMPLETE_PENDING_REVIEW` -> reject;
+3. PASS with no preamble status -> reject;
+4. two identical preamble status declarations -> reject;
+5. empty duplicate control field -> reject;
+6. PASS without four oracle/evidence binding fields -> reject;
+7. equal oracle digests, equal normalized evidence refs, uppercase/short digest,
+   traversal evidence ref, suffix reason token, and malicious composite role ->
+   reject independently;
+8. one correctly linked pending worker return and one correctly linked terminal
+   Local PASS with distinct canonical bindings -> accept.
 
 Machine semantics:
 
