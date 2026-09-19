@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - G1 T3A-C1 Tooling Accepted, Ceremony Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `68d1c440c0a24a48d9449266a649a5a3ec2fb553`. Local accepted the repaired principal-bound key-ceremony tooling and reconciled its reviewer-repair count; the actual Party A ceremony is the next operator checkpoint and source implementation remains on HOLD.
+Current material HEAD recorded for this handoff: `afc3dab98`. Local accepted the principal-bound key-ceremony tooling and repaired its non-admin DACL persistence after a bounded operator diagnostic; the actual Party A ceremony remains the next operator checkpoint and source implementation remains on HOLD.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -100,7 +100,7 @@ release source creation, implementation, candidate admission or runtime use.
 - Local verified the dedicated non-admin Windows principal `cvf-g1-party-a`
   with SID `S-1-5-21-1644666849-912006174-747199667-1006`, password-required
   enforcement and a bounded expiration. No password or secret was disclosed.
-- T3A-C1 tooling was accepted and committed at `cb10081d6`, with its reviewer-repair count reconciled at `68d1c440c`, after Local repaired
+- T3A-C1 tooling was accepted and committed at `cb10081d6`, with its reviewer-repair count reconciled at `68d1c440c` and non-admin DACL persistence repaired at `afc3dab98`, after Local repaired
   plaintext temporary stdout capture, a non-interactive false-positive probe
   and fail-open ACL hardening. Final hermetic self-test passed 32/32;
   reviewer-fast passed 68/68 and material pre-commit passed 89/89. No Party A
@@ -203,7 +203,7 @@ effect is authorized.
 
 ## Core Guard Self-Protection Authorization - T3A-C1 Tooling Closure Continuity
 
-Authorized guard-maintenance scope: project accepted T3A-C1 tooling commit `cb10081d6` and reviewer evidence-count correction `68d1c440c` into continuity and replace the completed worker lane with the bounded operator ceremony checkpoint.
+Authorized guard-maintenance scope: project accepted T3A-C1 tooling commit `cb10081d6`, reviewer evidence-count correction `68d1c440c`, and non-admin DACL repair `afc3dab98` into continuity and retain the bounded operator ceremony checkpoint.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. The thirteen parked untracked paths remain read-only and outside this lane.
 Operator authorization: the operator created and confirmed the separate principal, authorized Local to continue, and retains sole password and typed-confirmation control for the real ceremony.
 Rollback boundary: revert this continuity projection only; preserve the committed packet, verified principal state and parked files. No credential access, alternate-user execution, real key, operational source, key promotion, live/runtime effect, public sync or deployment is authorized.
