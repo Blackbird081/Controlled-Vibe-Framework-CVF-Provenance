@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_review_independent_probe_foundation_worker_return_pending`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=INTERNAL_AGENT executes the committed RIPA-T1 work order and returns `COMPLETE_PENDING_REVIEW`; role=Local orchestrator/reviewer; phase=independent-review-probe foundation dispatched at c7bf0c081; decision owner=Local reviewer/closer; parked checkpoint=operator Party A source write, key promotion, T3E wiring, admission, live/runtime/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_review_independent_probe_foundation_r1_worker_return_pending`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=INTERNAL_AGENT closes the committed RIPA-T1-R1 five-finding matrix and returns `COMPLETE_PENDING_REVIEW`; role=Local orchestrator/reviewer; phase=independent-review-probe R1 redispatched at 096732b0e; decision owner=Local reviewer/closer; parked checkpoint=operator Party A source write, key promotion, T3E wiring, admission, live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `multi_repo_absorption_review_independent_probe_foundation_worker_return_pending`
-Current mode: `multi_repo_absorption_review_independent_probe_foundation_worker_return_pending`; previous mode marker: `multi_repo_absorption_review_independent_probe_foundation_design_pending`
+Current mode marker: `multi_repo_absorption_review_independent_probe_foundation_r1_worker_return_pending`
+Current mode: `multi_repo_absorption_review_independent_probe_foundation_r1_worker_return_pending`; previous mode marker: `multi_repo_absorption_review_independent_probe_foundation_worker_return_pending`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=REVIEW-INDEPENDENT-PROBE-ADMISSION-T1_DISPATCHED_AT_c7bf0c081; NEXT_STEP=INTERNAL_AGENT_EXECUTE_COMMITTED_WORK_ORDER_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Local committed the paired source-verified baseline and no-commit work order at c7bf0c081 after pre-dispatch 82/82 and pre-commit 89/89 passes. The worker may modify only the exact six-path manifest and must report independentProbeDisposition PENDING_REVIEWER_EXECUTION; Local alone executes the independent hostile probe, decides acceptance, repairs bounded defects, and commits. Operator Party A source write and all downstream effects remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
-Mode: `multi_repo_absorption_review_independent_probe_foundation_worker_return_pending`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=REVIEW-INDEPENDENT-PROBE-ADMISSION-T1-R1_REDISPATCHED_AT_096732b0e; NEXT_STEP=INTERNAL_AGENT_CLOSE_CONSOLIDATED_FIVE_FINDING_MATRIX_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Local independently reproduced omitted-declaration, status-shadowing, declarative-actor/same-oracle, duplicate/empty-reason, and execution-base/manifest defects. The corrected seven-path R1 work order passed pre-dispatch 83/83 and pre-commit 89/89. Worker must not commit; Local owns the independent hostile probe, bounded repair, disposition and commit. Operator Party A source write and all downstream effects remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+Mode: `multi_repo_absorption_review_independent_probe_foundation_r1_worker_return_pending`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
