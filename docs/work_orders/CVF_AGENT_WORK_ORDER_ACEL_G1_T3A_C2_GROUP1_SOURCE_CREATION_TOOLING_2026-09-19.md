@@ -93,6 +93,13 @@ start at zero; that reset does not erase or relabel the R1/R2 evidence retained
 above and below. Scope, authority ceiling, four output paths, no-commit rule and
 all parked effects remain unchanged.
 
+R3-R1 redispatch note: Local reproduced the worker's 50/50 PowerShell and
+81/81 Python results, then rejected completion using two new source-derived
+probes. The real writer still lets a caller-controlled environment variable
+replace the fixed verified product, and the raw duplicate-member scanner does
+not decode JSON escapes before comparing member names. Complete the consolidated
+R3-R1 matrix below in one pass; preserve every passing R2/R3 regression.
+
 ## Purpose
 
 Implement deterministic tooling that a later operator can run under the exact
@@ -139,23 +146,23 @@ the operational sources during worker execution.
 
 Review-Dispatch Convergence Control: REQUIRED
 
-dispatchKind: INITIAL
+dispatchKind: REWORK
 
 dispatchSurface: INTERNAL_AGENT
 
 parentAssignmentId: ACEL-G1-T3A-C2-R3-OPERATOR-ESCALATED-COMPLETION
 
-reviewRoundCount: 0
+reviewRoundCount: 1
 
-priorFindingSetDigest: NOT_APPLICABLE_INITIAL_DISPATCH
+priorFindingSetDigest: 2428e1c14c177f7734fdaf7464275595b47b246d5cd4cc4d78d304beebaa9ff7
 
-dependencyAuditDisposition: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
 
-reworkFindingDisposition: NOT_APPLICABLE_INITIAL_DISPATCH
+reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
 
-newIndependentCriticalEvidence: NONE
+newIndependentCriticalEvidence: T3A-C2-R3-R1-01,T3A-C2-R3-R1-02
 
-regressionGuardDisposition: BASELINE_NEGATIVE_TESTS_PLANNED
+regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 
 cumulativeExternalInvocationCount: 0
 
@@ -165,13 +172,13 @@ usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
 
 quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
 
-nextDispatchDisposition: INITIAL_DISPATCH
+nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
 
-rootCauseClusterId: NOT_APPLICABLE_INITIAL_DISPATCH
+rootCauseClusterId: acel-g1-t3a-c2-r3-authority-and-json-normalization
 
-reworkGeneration: 0
+reworkGeneration: 1
 
-consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
 
 successorTrancheOpened: NO
 
@@ -326,6 +333,65 @@ producer-to-consumer proof, the reviewer-probe outcomes, exact hashes of all
 three implementation files, empty staging, unchanged thirteen parked paths and
 continued absence of both real source files. Historical R1/R2 claims must not
 be presented as the current result.
+
+## Consolidated R3-R1 Correction Matrix
+
+### T3A-C2-R3-R1-01 - Remove Caller-Controlled Real-Mode Authority Override
+
+The real `-ExecuteWrite` call graph must always bind directly to
+`$script:VerifiedPartyAProduct`. Remove
+`CVF_G1_WRITER_TEST_EXPECTED_PRODUCT_JSON` and every equivalent environment,
+process, file or argument override from the real-mode path. A label such as
+"test-only" does not make a caller-controlled input unreachable. Fixture
+authority injection may exist only through an internal test function that the
+script entry point and `Invoke-GroupOneWrite` cannot call or observe.
+
+Repair the non-interactive test without weakening this boundary. It may test
+`Assert-InteractiveConfirmation` directly in a non-interactive child, or use a
+separate hermetic test harness, but must not make operational metadata authority
+replaceable. Add a regression which sets the former environment-variable name
+to a complete alternate product and proves that real-mode expected-product
+resolution remains the fixed `partya-44853ea9a690452c` product. Add a source/
+call-graph assertion that `Invoke-GroupOneWrite` has no authority-override
+input. Preserve the no-Party-A and no-real-source boundary.
+
+Reviewer proof to close:
+
+```text
+FIXED_KEY=partya-44853ea9a690452c
+RESOLVED_KEY=caller-selected
+AUTHORITY_REDEFINED=True
+```
+
+The corrected result must be `AUTHORITY_REDEFINED=False` or the override must
+be absent altogether.
+
+### T3A-C2-R3-R1-02 - Decode JSON Member Names Before Duplicate Comparison
+
+Replace the raw escape-preserving top-level member-name scan with a strict JSON
+reader or an equivalent tokenizer that compares decoded JSON member names.
+Reject duplicates after JSON escape normalization and before any last-value
+wins object materialization. This must cover ordinary duplicates and escaped
+aliases of all fourteen allowed names, not only the demonstrated `keyId` case.
+Do not use regex matching over raw JSON as the acceptance authority.
+
+Add at least these focused negatives:
+
+1. `"keyId":"wrong","key\u0049d":"<verified-key-id>"`;
+2. `"metadataSchema":"wrong","metadata\u0053chema":"<verified-schema>"`;
+3. the existing literal duplicate-member case.
+
+Reviewer proof currently accepted the escaped alias:
+
+```text
+ACCEPTED={"keyId":"right"}
+```
+
+All three corrected probes must reject with
+`METADATA_DUPLICATE_JSON_MEMBER`. Re-run the complete PowerShell and Python
+suites and overwrite the same worker return with the R3-R1 result, exact new
+case counts, three implementation hashes, empty staging, unchanged parked
+paths and both real sources absent.
 
 ### R3 Claim Boundary
 
