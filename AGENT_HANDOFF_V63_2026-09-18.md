@@ -1,7 +1,7 @@
-# CVF Agent Handoff V63 - G1 T3A-C2 Source-Creation Tooling Dispatched
+# CVF Agent Handoff V63 - G1 T3A-C2 Source-Creation Tooling R1 Redispatched
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `5de545ec3`. Local independently verified the Party A ceremony product and dispatched bounded Group 1 source-creation tooling; Group 1 remains `SOURCE_NOT_CREATED`.
+Current material HEAD recorded for this handoff: `7a8340888`. Local accepted the worker's fail-closed blocked return, repaired both dispatcher-owned packet defects and redispatched the same bounded Group 1 source-creation tooling scope; Group 1 remains `SOURCE_NOT_CREATED`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -11,7 +11,7 @@ Status: ACTIVE
 ## Purpose
 
 Carry the accepted T2H reconciliation, verified Party A ceremony product and
-committed T3A-C2 tooling dispatch. One no-commit INTERNAL_AGENT lane is open.
+committed T3A-C2 R1 tooling redispatch. One no-commit INTERNAL_AGENT lane is open.
 
 ## Scope / Target / Owner Boundary
 
@@ -21,11 +21,11 @@ execute as that principal or create the operational sources.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t3a_c2_group1_source_creation_tooling_dispatched_worker_return_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT executes the committed T3A-C2 work order and returns `COMPLETE_PENDING_REVIEW`; parked checkpoint=operator Party A source write, key promotion, T3E wiring, admission, live/runtime/public/deployment.
+Startup acknowledged: current mode=`multi_repo_absorption_acel_g1_t3a_c2_group1_source_creation_tooling_r1_redispatched_worker_return_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT executes the repaired committed T3A-C2 work order from current HEAD and returns `COMPLETE_PENDING_REVIEW`; parked checkpoint=operator Party A source write, key promotion, T3E wiring, admission, live/runtime/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_acel_g1_t3a_c2_group1_source_creation_tooling_dispatched_worker_return_pending`.
+`multi_repo_absorption_acel_g1_t3a_c2_group1_source_creation_tooling_r1_redispatched_worker_return_pending`.
 The active absorption program remains incomplete and restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
 wave remains `LHW24`.
@@ -103,13 +103,14 @@ release source creation, implementation, candidate admission or runtime use.
   and fail-open ACL hardening. Final hermetic self-test passed 32/32;
   reviewer-fast passed 68/68 and material pre-commit passed 89/89.
 - Operator completed the Party A ceremony; Local verified the 32-byte public
-  key and digest at `835dfc39d`; T3A-C2 tooling dispatch is `5de545ec3`.
+  key and digest at `835dfc39d`; initial T3A-C2 dispatch is `5de545ec3`;
+  accepted blocked-return evidence and the repaired R1 packet are `7a8340888`.
 - Thirteen pre-existing untracked G1 evidence paths remain byte-preserved,
   uncommitted and outside this lane; primary-worktree finality remains pending.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T3A-C2-SOURCE-TOOLING-DISPATCHED_AT_5de545ec3; NEXT_STEP=INTERNAL_AGENT_EXECUTE_COMMITTED_T3A_C2_WORK_ORDER_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Local independently verified the Party A ceremony public product at 835dfc39d and dispatched principal-bound Group 1 source-creation tooling at 5de545ec3. The shared-workspace INTERNAL_AGENT may implement only the exact four work-order outputs and must not commit, use Party A credentials, run as Party A, access private material, or create the real registry/lifecycle sources. Local reviews the returned evidence; the operator-only real source write, key promotion, T3E consumer wiring, candidate admission, live/runtime use, public sync and deployment remain parked. Thirteen parked G1 paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL-G1-T3A-C2-SOURCE-TOOLING-R1-REDISPATCHED_AT_7a8340888; NEXT_STEP=INTERNAL_AGENT_EXECUTE_REPAIRED_COMMITTED_T3A_C2_WORK_ORDER_FROM_CURRENT_HEAD_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Local accepted the correct fail-closed worker return, repaired its evidence shape and both dispatcher-owned defects, and committed the R1 packet at 7a8340888 after 82/82 pre-dispatch, 84/84 pre-implementation and 89/89 pre-commit passes. The shared-workspace INTERNAL_AGENT must capture current committed HEAD as executionBaseHead, use that exact SHA as the pre-implementation base, overwrite the same worker-return path with the completed evidence, implement only the exact four work-order outputs, and must not commit, use Party A credentials, run as Party A, access private material, or create the real registry/lifecycle sources. Local reviews the returned evidence; the operator-only real source write, key promotion, T3E consumer wiring, candidate admission, live/runtime use, public sync and deployment remain parked. Thirteen parked G1 paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## External / Local Coordination Boundary
 
@@ -202,7 +203,7 @@ effect is authorized.
 
 ## Core Guard Self-Protection Authorization - T3A-C2 Dispatch Continuity
 
-Authorized guard-maintenance scope: project ceremony verification `835dfc39d` and T3A-C2 dispatch `5de545ec3` into continuity and open only the exact no-commit worker lane.
+Authorized guard-maintenance scope: project ceremony verification `835dfc39d`, initial T3A-C2 dispatch `5de545ec3` and repaired R1 redispatch `7a8340888` into continuity and open only the exact no-commit worker lane.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. The thirteen parked untracked paths remain read-only and outside this lane.
 Operator authorization: standing authorization permits Local audit/dispatch; operator retains credentials and the later real source write.
 Rollback boundary: revert this continuity projection only; preserve committed material and parked files. No credential, alternate-user, operational-source, key-promotion, live/runtime/public/deployment effect is authorized.
