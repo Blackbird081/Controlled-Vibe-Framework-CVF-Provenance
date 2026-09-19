@@ -4,11 +4,15 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: APPROVED_FOR_EXECUTION
+Status: READY_FOR_REDISPATCH
 
 Batch ID: REVIEW-INDEPENDENT-PROBE-ADMISSION-ROOT-T1
 
 Dispatch base head: 672e41cda
+
+dispatchBaseHead: 8b4e13107
+
+closureBaseHead: N/A - pending reviewer material commit
 
 Commit mode: WORKER_MUST_NOT_COMMIT
 
@@ -94,29 +98,101 @@ baseline, disposition, final review, staging and commit.
 
 Review-Dispatch Convergence Control: REQUIRED
 
-dispatchKind: INITIAL
+dispatchKind: REWORK
 dispatchSurface: INTERNAL_AGENT
 parentAssignmentId: REVIEW-INDEPENDENT-PROBE-ADMISSION-ROOT-T1
-reviewRoundCount: 0
-priorFindingSetDigest: NOT_APPLICABLE_INITIAL_DISPATCH
-dependencyAuditDisposition: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
-reworkFindingDisposition: NOT_APPLICABLE_INITIAL_DISPATCH
+reviewRoundCount: 1
+priorFindingSetDigest: dbb5c5fdacda08dba348a635f8dc3e69bde7d78010ec0fdf30f95fc8ef36cc85
+dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
+reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
 newIndependentCriticalEvidence: NONE
-regressionGuardDisposition: BASELINE_NEGATIVE_TESTS_PLANNED
+regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 cumulativeExternalInvocationCount: 0
 externalInvocationCeiling: 0
 usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
 quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
-nextDispatchDisposition: INITIAL_DISPATCH
-rootCauseClusterId: NOT_APPLICABLE_INITIAL_DISPATCH
-reworkGeneration: 0
-consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
+rootCauseClusterId: ROOT_CONTRACT_SCOPE_IDENTITY_AND_MARKDOWN_LEXER_GAPS
+reworkGeneration: 1
+consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
 successorTrancheOpened: NO
 implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
 preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
 preExecutionReviewTrigger: NONE
 nextRoutineReviewBoundary: WORKER_RETURN
 reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
+
+## Root R1 Consolidated Independent Review Findings
+
+Local's first hostile review of the integrated-root return admits exactly four
+new critical findings. Close them together; they supersede no earlier duty.
+
+### RIPA-ROOT-R1-01 - Current Untracked Return Escapes Changed-Lane Failure
+
+`--changed-lane-only` excludes the blanket untracked set from the failing
+lane. The current worker return is itself untracked under
+`WORKER_MUST_NOT_COMMIT`, so the worker-return fast gate can classify a
+violation in the artifact it is supposed to validate as merely out-of-lane.
+
+Repair: define lane membership from the dispatch's exact manifest/current
+return identity, not Git trackedness alone. A current untracked worker return
+must fail; the three named parked artifacts remain visible and non-blocking
+through a general, source-backed lane contract rather than filename special
+cases. Add a real temp-git test where the active untracked return violates and
+must fail without staging.
+
+### RIPA-ROOT-R1-02 - Structural Role And Actor Contract Is Incomplete
+
+Root requirement 7 required a controlled non-worker role plus distinct
+normalized implementation/probe actor IDs and invocation IDs. The return only
+keeps invocation IDs and substring-checks one free-form actor. Its
+`PASS_IDENTITY_FIELDS` contains no role or implementation actor; `Claude
+internal agent worker` is accepted because it lacks the single
+`IMPLEMENTATION_WORKER` substring.
+
+Repair: terminal PASS requires exactly one controlled `probeExecutorRole`,
+`implementationWorkerActor`, and `probeExecutorActor`, plus both invocation
+IDs. Enforce the exact non-worker role token and unequal canonical actor IDs
+after one documented normalization. Do not infer role separation from a
+provider name or a keyword blacklist. Add alias/case/separator and equal-actor
+tests plus positive controls.
+
+### RIPA-ROOT-R1-03 - SCEC Chain And Cumulative Counter Reset
+
+The return repeats ordinal 1 and points to the pre-root RIPA work order while
+the dispatching root work order is already ordinal 1. It also resets cumulative
+`sameClaimCorrections` from 2 to 0 by renaming the claim. This bypasses the
+successor and cumulative-counter contract even though the generic checker sees
+an individually valid sibling.
+
+Repair: the rewritten return is ordinal 2, names this final R1 work-order file
+and its recomputed SHA-256 as predecessor, carries forward cumulative counters
+without decrease, resolves the retained blocker with exact current executable
+evidence, and uses the disposition/scope pair permitted by the SCEC standard.
+No new claim ID may erase correction history.
+
+### RIPA-ROOT-R1-04 - Multiline Inline-Code Declaration Leak
+
+The shared scanner masks only single-line backtick spans. A multiline inline
+code span containing a line shaped `Status: CLOSED_PASS_BOUNDED` is read as an
+authoritative declaration; direct Local scanner output was `ok=True`.
+
+Repair: the shared lexical pass must mask CommonMark code spans across line
+boundaries and delimiter-run variants without masking legitimate backtick-
+wrapped field values. Add the exact multiline status probe, multiline
+disposition/control-field probes, unmatched-delimiter negatives, delimiter-run
+variants and legitimate-value positive controls.
+
+Mandatory Local reproduction floor:
+
+1. active untracked return violation under changed-lane mode -> reject;
+2. parked untracked violation outside declared lane -> report, do not block;
+3. missing/invalid controlled closure role -> reject;
+4. equal normalized implementation/probe actors -> reject;
+5. `Claude internal agent worker` as probe actor -> reject structurally;
+6. multiline code-span-only terminal status -> reject;
+7. legitimate backtick-wrapped reference value -> accept;
+8. return SCEC predecessor/ordinal/counters bind to this final work order.
 
 ## Independent Review Probe Admission Contract
 
@@ -179,6 +255,8 @@ gate wiring; finally rewrite the worker return from actual final outputs.
 
 ## Required Artifact Manifest
 
+Work-Order Fulfillment Manifest: REQUIRED_EXACT_SEVEN_PATHS
+
 | Artifact | Required worker action |
 | --- | --- |
 | `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md` | MODIFY integrated contract text |
@@ -192,6 +270,16 @@ gate wiring; finally rewrite the worker return from actual final outputs.
 No eighth worker-owned material path is allowed. Do not edit the new Local
 disposition, baseline, this work order or any parked artifact.
 
+## Reviewer Closure Conversion
+
+completionReviewPath: `docs/reviews/CVF_REVIEW_INDEPENDENT_PROBE_ADMISSION_ROOT_T1_COMPLETION_2026-09-20.md`
+
+reviewerOwnedClosurePaths: completion review plus active continuity surfaces
+
+closureOwner: LOCAL
+
+workerCommitPermission: FORBIDDEN
+
 ## ADIF Defect Registry Disclosure
 
 Resolver query: taskClass=`protected-governance-path`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`
@@ -200,11 +288,25 @@ Returned defects: NONE_RETURNED
 
 ## Source Verification Block
 
-| Claimed item | Source | Locator | Disposition |
-| --- | --- | --- | --- |
-| five independent bypasses exist | Local R2 disposition | Findings / Position | ACCEPT |
-| escalation is mandatory | semantic convergence standard | Enforcement Invariants 5 and 7 | ACCEPT |
-| current checker owns all affected parsing | checker source | `_mask_non_declarative_content`, `_field_occurrences`, `_resolve_referenced_work_order`, `diagnose_closure` | ACCEPT |
+| Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+| --- | --- | --- | --- | --- | --- |
+| five independent bypasses exist | `docs/reviews/CVF_REVIEW_INDEPENDENT_PROBE_ADMISSION_T1_R2_LOCAL_DISPOSITION_2026-09-20.md` | Findings / Position | RIPA-ROOT-01..05 | Local review disposition | ACCEPT |
+| escalation is mandatory | `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md` | Enforcement Invariants 5 and 7 | `ROOT_CONTRACT_REQUIRED` | SCEC schema | ACCEPT |
+| current checker owns affected parsing | `governance/compat/check_independent_review_probe_admission.py` | declaration scanner and closure diagnosis | `DeclarationScanner`; `resolve_link`; `diagnose_closure` | independent-probe admission checker | ACCEPT |
+
+## Intake Role Routing Decision
+
+| Field | Disposition |
+| --- | --- |
+| Intake source | internal governed Local-review evidence from the root return |
+| Intake summary | four independently reproduced root-contract defects require one consolidated R1 |
+| Route | `MULTI_AGENT_MULTI_ROLE` |
+| canonical route mode | `MULTI_AGENT_MULTI_ROLE` |
+| scope classification | protected governance checker repair, exact seven worker paths |
+| role separation basis | shared-workspace INTERNAL_AGENT implements; Local independently probes, closes and commits |
+| selected role route | worker implementation return to Local reviewer/closer |
+| External evidence intake | not authorized |
+| escalation condition | eighth material path, architecture contradiction, credentials, provider/live/public/runtime action or destructive operation |
 
 ## Semantic Convergence Outcome
 
