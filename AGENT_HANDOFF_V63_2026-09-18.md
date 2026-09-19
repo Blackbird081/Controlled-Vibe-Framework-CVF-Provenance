@@ -21,11 +21,11 @@ execute as that principal or create the operational sources.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_review_independent_probe_foundation_design_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local authors the promised rule/machine-guard/work-order packet; parked checkpoint=operator Party A source write and downstream effects.
+Startup acknowledged: current mode=`multi_repo_absorption_review_independent_probe_foundation_worker_return_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT executes committed RIPA-T1 and returns `COMPLETE_PENDING_REVIEW`; parked checkpoint=operator Party A source write and downstream effects.
 
 ## Current Mode
 
-`multi_repo_absorption_review_independent_probe_foundation_design_pending`.
+`multi_repo_absorption_review_independent_probe_foundation_worker_return_pending`.
 The active absorption program remains incomplete and restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
 wave remains `LHW24`.
@@ -108,14 +108,13 @@ release source creation, implementation, candidate admission or runtime use.
   output was also stale. After the mandatory round-three stop, the operator
   explicitly continued. The fresh R3 assignment is committed at `8eb363f48`;
   pre-dispatch passed 82/82 and material pre-commit passed 89/89.
-- R3-R1 closed both adversarial defects; Local repaired strict-comment/test payload details and accepted tooling at `ef0091da6` after 56/56 PowerShell,
-  84/84 Python, reviewer-fast and 89/89 pre-commit passes. Foundation learning is now active.
+- R3-R1 closed both adversarial defects; Local accepted tooling at `ef0091da6`; RIPA-T1 baseline/work order then passed 82/82 pre-dispatch and 89/89 pre-commit and was committed at `c7bf0c081` for no-commit worker execution.
 - Thirteen pre-existing untracked G1 evidence paths remain byte-preserved,
   uncommitted and outside this lane; primary-worktree finality remains pending.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=REVIEW-INDEPENDENT-PROBE-FOUNDATION-LEARNING_AFTER_ef0091da6; NEXT_STEP=LOCAL_AUTHOR_SOURCE_VERIFIED_RULE_MACHINE_GUARD_AND_WORK_ORDER_FOR_INDEPENDENT_REVIEW_PROBE_ADMISSION; EXPANSION_ALLOWED=false. Local accepted T3A-C2 tooling with one bounded reviewer repair at ef0091da6 after 56/56 PowerShell, 84/84 Python, reviewer-fast and 89/89 pre-commit passes. The promised foundation-learning tranche now owns conversion of the repeated self-attestation failure pattern into a written rule, machine-checkable dispatch evidence and earliest applicable autorun enforcement without broad duplicate reruns or semantic automation. Operator Party A source write and all downstream effects remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=REVIEW-INDEPENDENT-PROBE-ADMISSION-T1_DISPATCHED_AT_c7bf0c081; NEXT_STEP=INTERNAL_AGENT_EXECUTE_COMMITTED_WORK_ORDER_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Local committed the paired source-verified baseline and no-commit work order at c7bf0c081 after pre-dispatch 82/82 and pre-commit 89/89 passes. The worker may modify only the exact six-path manifest and must report independentProbeDisposition PENDING_REVIEWER_EXECUTION; Local alone executes the independent hostile probe, decides acceptance, repairs bounded defects, and commits. Operator Party A source write and all downstream effects remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## External / Local Coordination Boundary
 
