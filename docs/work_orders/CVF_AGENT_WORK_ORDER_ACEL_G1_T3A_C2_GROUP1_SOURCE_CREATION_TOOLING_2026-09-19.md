@@ -53,6 +53,14 @@ and every checker named below. Freeze the thirteen parked paths before edits.
 Return contract: satisfy C2-01 through C2-10, run required gates, leave
 staging empty, and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
 
+R1 redispatch note: the initial worker correctly stopped before implementation
+because a broad-base pre-implementation gate exposed two dispatcher-owned
+packet defects. Local repaired both defects in place: the routing manifest now
+covers the dispatch continuity paths, and the worker-return contract now
+contains every checker-required literal. On redispatch, capture the current
+committed HEAD as `executionBaseHead` and use that exact SHA as the
+pre-implementation `--base`; do not reuse the original dispatch base.
+
 ## Purpose
 
 Implement deterministic tooling that a later operator can run under the exact
@@ -99,23 +107,23 @@ the operational sources during worker execution.
 
 Review-Dispatch Convergence Control: REQUIRED
 
-dispatchKind: INITIAL
+dispatchKind: REWORK
 
 dispatchSurface: INTERNAL_AGENT
 
 parentAssignmentId: ACEL-G1-T3A-C2-GROUP1-SOURCE-CREATION-TOOLING
 
-reviewRoundCount: 0
+reviewRoundCount: 1
 
-priorFindingSetDigest: NOT_APPLICABLE_INITIAL_DISPATCH
+priorFindingSetDigest: 2ed2abe07d12627409777d51d5f2afbdbe99542c37f8bccae95d0b71e47e8ef3
 
-dependencyAuditDisposition: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
 
-reworkFindingDisposition: NOT_APPLICABLE_INITIAL_DISPATCH
+reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
 
-newIndependentCriticalEvidence: NONE
+newIndependentCriticalEvidence: T3A-C2-R1-01_PACKET_SHAPE_LITERALS,T3A-C2-R1-02_ROUTING_PATH_COVERAGE
 
-regressionGuardDisposition: BASELINE_NEGATIVE_TESTS_PLANNED
+regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 
 cumulativeExternalInvocationCount: 0
 
@@ -125,13 +133,13 @@ usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
 
 quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
 
-nextDispatchDisposition: INITIAL_DISPATCH
+nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
 
-rootCauseClusterId: NOT_APPLICABLE_INITIAL_DISPATCH
+rootCauseClusterId: acel-g1-t3a-c2-dispatch-packet-first-authoring
 
-reworkGeneration: 0
+reworkGeneration: 1
 
-consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
 
 successorTrancheOpened: NO
 
@@ -148,7 +156,7 @@ reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"ACEL-G1-T3A-C2-GROUP1-SOURCE-CREATION-TOOLING","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"CREDENTIAL_REFERENCE","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["scripts/","governance/compat/","docs/reviews/","docs/baselines/CVF_GC018_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_2026-09-19.md","AGENT_HANDOFF_V63_2026-09-18.md","EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/task.class.calibration.owner.contract.ts","EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/task.class.calibration.owner.contract.test.ts","docs/audits/CVF_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_2026-09-17.md","docs/audits/CVF_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_MANIFEST_2026-09-17.json","docs/audits/CVF_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_2026-09-17.md","docs/audits/CVF_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_MANIFEST_2026-09-17.json","docs/audits/CVF_ACEL_G1_T2_TASK_CLASS_CALIBRATION_OWNER_IMPLEMENTATION_2026-09-17.md","docs/reference/agent_system_skills/CVF_TASK_CLASS_CALIBRATION_OWNER_CONTRACT.md","governance/compat/check_task_class_calibration_owner_evidence.py","governance/compat/test_check_task_class_calibration_owner_evidence.py"],"claims":["principal-bound Group 1 source-creation tooling and hermetic tests only"],"requiredProof":["C2-01 through C2-10","exact four-path delta","parked hashes","worker-return fast gate"],"operatorCheckpoints":["actual Party A source write","Local source verification","key promotion","consumer wiring"],"forbiddenEffects":["credential access","alternate-user execution","operational source creation","worker commit","candidate admission","public sync","deployment"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"N/A with reason: bounded named files","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"ACEL-G1-T3A-C2-GROUP1-SOURCE-CREATION-TOOLING","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"CREDENTIAL_REFERENCE","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["scripts/","governance/compat/","docs/reviews/","docs/baselines/CVF_GC018_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_2026-09-19.md","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json","CVF_SESSION/ACTIVE_SESSION_STATE.json","CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json","CVF_SESSION/state/entries/nextAllowedMove.json","CVF_SESSION_MEMORY.md","EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/task.class.calibration.owner.contract.ts","EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/task.class.calibration.owner.contract.test.ts","docs/audits/CVF_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_2026-09-17.md","docs/audits/CVF_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_MANIFEST_2026-09-17.json","docs/audits/CVF_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_2026-09-17.md","docs/audits/CVF_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_MANIFEST_2026-09-17.json","docs/audits/CVF_ACEL_G1_T2_TASK_CLASS_CALIBRATION_OWNER_IMPLEMENTATION_2026-09-17.md","docs/reference/agent_system_skills/CVF_TASK_CLASS_CALIBRATION_OWNER_CONTRACT.md","governance/compat/check_task_class_calibration_owner_evidence.py","governance/compat/test_check_task_class_calibration_owner_evidence.py"],"claims":["principal-bound Group 1 source-creation tooling and hermetic tests only"],"requiredProof":["C2-01 through C2-10","exact four-path delta","parked hashes","worker-return fast gate"],"operatorCheckpoints":["actual Party A source write","Local source verification","key promotion","consumer wiring"],"forbiddenEffects":["credential access","alternate-user execution","operational source creation","worker commit","candidate admission","public sync","deployment"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"N/A with reason: bounded named files","completenessClaimChanged":false}}
 ```
 
 Expected route: `P3_ELEVATED`; shadow routing only. Full legacy gates apply.
@@ -369,6 +377,28 @@ Boundary; Changed Files; Command Evidence; No-Commit Statement; Agent Operation
 Trace Block; Delta Execution Claim Boundary Control Block; Machine Closure
 Package; Public Export Disposition. Use `N/A with reason` for conditional
 blocks that do not apply.
+
+Checker-required literal checklist for the returned packet:
+
+- Purpose
+- Scope / Methodology
+- Findings / Position
+- Risk / Corrective Action
+- Claim Boundary
+- Agent Operation Trace Block
+- Delta Execution Claim Boundary Control Block
+- Public Export Disposition
+- executionBaseHead
+- git status --short
+- External Knowledge Intake Routing
+- Rescan Intelligence Hardening
+- Corpus Completeness And Report Integrity
+- Finding-To-Governance Learning Disposition
+- Epistemic Process Block
+- Machine Closure Package
+
+Every conditional item must appear as a real section or an explicit `N/A with
+reason` disposition.
 
 ## Execution Plan
 
