@@ -61,6 +61,16 @@ contains every checker-required literal. On redispatch, capture the current
 committed HEAD as `executionBaseHead` and use that exact SHA as the
 pre-implementation `--base`; do not reuse the original dispatch base.
 
+R2 redispatch note: Local accepted the R1 execution discipline and the valid
+36/36 PowerShell, 37/37 Python and cross-tool evidence, but independent
+adversarial review disproved the completion claim. The checker returned
+`VALIDATED` for wrong role, invalid timestamps, padded/non-canonical base64url,
+genesis versions 5->6, wrong actor, and a chained entry with a different key ID
+and false prior status. The writer also lacks an exact verified-product binding,
+accepts an arbitrary real-mode repository root and cannot guarantee removal of
+the file whose own write/flush fails. Repair the complete R2 matrix below in one
+pass; do not narrow it to the six demonstrated probes.
+
 ## Purpose
 
 Implement deterministic tooling that a later operator can run under the exact
@@ -113,15 +123,15 @@ dispatchSurface: INTERNAL_AGENT
 
 parentAssignmentId: ACEL-G1-T3A-C2-GROUP1-SOURCE-CREATION-TOOLING
 
-reviewRoundCount: 1
+reviewRoundCount: 2
 
-priorFindingSetDigest: 2ed2abe07d12627409777d51d5f2afbdbe99542c37f8bccae95d0b71e47e8ef3
+priorFindingSetDigest: 73dcf3e3a76b31332f5cd95a23e5e35fd6e8e13da630c6a11fdf8f1e32c62eae
 
 dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
 
 reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
 
-newIndependentCriticalEvidence: T3A-C2-R1-01_PACKET_SHAPE_LITERALS,T3A-C2-R1-02_ROUTING_PATH_COVERAGE
+newIndependentCriticalEvidence: T3A-C2-R2-01_VERIFIED_PRODUCT_BINDING,T3A-C2-R2-02_DESTINATION_AND_ATOMICITY,T3A-C2-R2-03_CHECKER_SEMANTIC_CHAIN,T3A-C2-R2-04_ADVERSARIAL_REGRESSION
 
 regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 
@@ -135,9 +145,9 @@ quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
 
 nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
 
-rootCauseClusterId: acel-g1-t3a-c2-dispatch-packet-first-authoring
+rootCauseClusterId: acel-g1-t3a-c2-source-tooling-contract-completeness
 
-reworkGeneration: 1
+reworkGeneration: 2
 
 consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
 
@@ -167,6 +177,66 @@ Expected route: `P3_ELEVATED`; shadow routing only. Full legacy gates apply.
 {"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"acel-g1-t3a-c2-group1-source-creation-tooling","chainMode":"INITIAL","chainOrdinal":0,"predecessor":null,"blockerDelta":{"prior":["real_party_a_ceremony_not_executed","group1_source_not_created"],"resolved":["real_party_a_ceremony_not_executed"],"retained":["group1_source_not_created"],"new":["group1_source_creation_tooling_not_implemented"],"reopened":[],"current":["group1_source_creation_tooling_not_implemented","group1_source_not_created"]},"resolutionEvidence":{"real_party_a_ceremony_not_executed":{"evidenceClass":"ACCEPTED_REVIEW","evidencePath":"docs/audits/CVF_ACEL_G1_T3A_C2_CEREMONY_PRODUCT_LOCAL_VERIFICATION_2026-09-19.md","sha256":"81b507d19e934c451a4d74ecca9c519f01dfceae42649a59ae4692624db99d3f","locator":"Decision / Disposition","claimId":"ACEL-G1-T3A-CEREMONY-PRODUCT-VERIFIED"}},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":0,"nonDecreasingBlockerTransitions":0},"claims":[{"claimId":"ACEL-G1-T3A-CEREMONY-PRODUCT-VERIFIED","claimClass":"OTHER","proofClass":"NAMED_OBSERVABLE_PROOF","evidenceRef":"docs/audits/CVF_ACEL_G1_T3A_C2_CEREMONY_PRODUCT_LOCAL_VERIFICATION_2026-09-19.md"},{"claimId":"ACEL-G1-T3A-C2-TOOLING-DISPATCH","claimClass":"OTHER","proofClass":"NAMED_OBSERVABLE_PROOF","evidenceRef":"docs/baselines/CVF_GC018_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_2026-09-19.md"}],"requiredDisposition":"CONTINUE_BOUNDED","successorScope":"NO_SUCCESSOR"}
 ```
 
+## Consolidated R2 Correction Matrix
+
+### T3A-C2-R2-01 - Exact Ceremony Product And Strict Metadata Binding
+
+The writer must reject before confirmation or output unless the metadata has
+exactly the closed public-metadata field set and every immutable value equals
+the independently verified T3A product: profile, key ID, algorithm, principal
+name/SID, public-key bytes/digest, creation/expiry timestamps, three
+dispositions and claim boundary. Reject missing, extra and duplicate JSON
+members. Base64url must use only the unpadded URL-safe alphabet, decode to 32
+bytes and reproduce byte-for-byte after canonical re-encoding. Add independent
+negative tests for each field class, substitution of a self-consistent but
+different key, standard-base64 characters, padding and duplicate keys.
+
+### T3A-C2-R2-02 - Exact Destination And Failure-Atomic Two-File Write
+
+Real mode must resolve the repository from the committed script location and
+must not accept an operator-selectable alternate repository root. Fixture-root
+injection may exist only in internal self-test functions. Preserve collision
+fail-closed behavior. A failure during create, write or durable flush of either
+file must remove every file created by that invocation, including the file
+whose own write failed; it must never remove a pre-existing file. Remove any
+newly-created empty source directory on rollback when it did not pre-exist.
+Add deterministic injected-failure tests for first-file and second-file
+create/write/flush boundaries plus pre-existing collision preservation.
+
+### T3A-C2-R2-03 - Complete Checker Semantics And Cross-Record Chain
+
+The checker must reject duplicate JSON members and non-canonical base64url,
+validate strict types/non-empty identifiers, exact `Ed25519`, exact
+`verificationAuthority` role, RFC3339 UTC timestamps and the T2F temporal
+rules. Operational/default validation must be hard-bound to the verified
+public product rather than making expected key/public-key arguments optional.
+For lifecycle validation enforce: genesis exactly 0->1, `NOT_PRESENT` to
+`ACTIVE`, null prior hash, exact Party A actor; every later entry has the same
+key ID, unique transition ID, prior hash equal to the prior entry digest,
+`priorStatus` equal to the prior entry's `newStatus`, contiguous versions and
+non-decreasing timestamps. The envelope snapshot version must equal the chain
+tip version; envelope/row/chain key, status and applicable timestamps must
+agree. Public-key alias comparison uses decoded bytes, never only the encoded
+string.
+
+### T3A-C2-R2-04 - Machine Regression And Automated Cross-Tool Proof
+
+Turn every R2 condition into a focused negative with an asserted stable
+taxonomy. At minimum, the six reviewer probes that currently return acceptance
+must return rejection: wrong role; invalid timestamps; padded base64url;
+genesis 5->6; wrong actor; and a valid-hash second lifecycle entry carrying a
+different key ID and false prior status while the envelope version disagrees.
+Make the PowerShell-writer-output -> Python-checker validation an automated
+test command, not a manually reported step. Both isolated suites and the
+cross-tool suite must fail when any R2 mutation is reintroduced.
+
+### R2 Claim Boundary
+
+R2 is still tooling-only. It must not execute as Party A, read Party A private
+material, create either real Group 1 source, promote a key, wire T3E, admit a
+candidate, call a provider, public-sync or deploy. The exact four output paths
+remain unchanged; overwrite the existing worker-return path with the R2 return.
+
 ## Acceptance Matrix
 
 | ID | Required contract | Positive and negative proof |
@@ -186,10 +256,10 @@ Expected route: `P3_ELEVATED`; shadow routing only. Full legacy gates apply.
 
 | Artifact | Required worker action |
 |---|---|
-| `scripts/acel_g1_party_a_group1_source_writer.ps1` | CREATE fail-closed writer with embedded hermetic self-test; real mode operator-only |
-| `governance/compat/check_acel_g1_verifier_key_registry.py` | CREATE strict Local checker/read-only consumer for registry and lifecycle files or explicit fixture paths |
-| `governance/compat/test_check_acel_g1_verifier_key_registry.py` | CREATE focused positive and mutation/chain/collision tests |
-| `docs/reviews/CVF_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_WORKER_RETURN_2026-09-19.md` | CREATE full evidence return |
+| `scripts/acel_g1_party_a_group1_source_writer.ps1` | UPDATE the pending uncommitted writer to close all R2 findings; real mode remains operator-only |
+| `governance/compat/check_acel_g1_verifier_key_registry.py` | UPDATE the pending uncommitted Local checker to close all R2 findings |
+| `governance/compat/test_check_acel_g1_verifier_key_registry.py` | UPDATE the pending uncommitted focused suite with every R2 regression and automated cross-tool proof |
+| `docs/reviews/CVF_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_WORKER_RETURN_2026-09-19.md` | OVERWRITE the pending R1 return with complete R2 evidence |
 
 ## Work-Order Fulfillment Manifest
 
@@ -200,17 +270,19 @@ operator-run Party A outputs after Local accepts this tooling.
 
 ## Allowed Scope / Forbidden Scope
 
-Allowed: create and test exactly the four manifest paths using disposable
-fixtures, update only the worker-return evidence, and repair failures confined
-to those paths. Forbidden: Party A credentials/profile/private blob, run-as,
+Allowed: update and test exactly the four pending manifest paths using
+disposable fixtures, overwrite the worker-return evidence, and repair failures
+confined to those paths. Forbidden: Party A credentials/profile/private blob, run-as,
 real source files, existing governed source mutation, parked paths, staging,
 commit, T3E wiring, live/provider/public/deployment effects.
 
 ## Write Ownership
 
-Worker owns uncommitted edits to the exact four manifest paths. Local owns
-review, bounded evidence repair, staging and commits. Every existing path,
-both future source files and the thirteen parked paths are read-only.
+Worker owns uncommitted edits to the exact four manifest paths, including the
+three pending implementation files and the existing return that R2 must
+overwrite. Local owns review, bounded evidence repair, staging and commits.
+Every other existing path, both future source files and the thirteen parked
+paths are read-only.
 
 ## Agent Roles
 
@@ -231,7 +303,8 @@ both future source files and the thirteen parked paths are read-only.
 ## Pre-Flight Checks
 
 - Capture execution HEAD, full status, empty staging and hashes of all thirteen parked paths.
-- Confirm the dispatch commit exists and all four worker outputs plus both real source paths are absent.
+- Confirm the R2 dispatch commit exists, the exact four pending worker outputs
+  are the only active-lane delta, and both real source paths are absent.
 - Confirm no Party A credential/private artifact is present or requested.
 - Run the pre-implementation autorun gate before editing.
 
@@ -257,6 +330,16 @@ both future source files and the thirteen parked paths are read-only.
 Repair all allowed-scope implementation and gate failures directly. Stop only
 for credentials, alternate-user/real-source execution, a fifth output, parked
 drift or a source-authority contradiction.
+
+## Foundation Storage Layout Block
+
+| Field | Disposition |
+|---|---|
+| Foundation path class | two pending standalone `governance/compat/` checker/test files plus one PowerShell operator tool and one worker return |
+| Storage decision | repair the existing four-path pending lane in place; create no additional folder, registry, queue, aggregate or runtime store |
+| Existing aggregate impact | none during worker execution |
+| Generated state impact | none during worker execution |
+| Durable governance boundary | checker remains read-only; operational Group 1 sources remain absent and operator-gated |
 
 ## ADIF Defect Registry Disclosure
 
@@ -288,10 +371,11 @@ Returned defects: NONE_RETURNED
 
 ## Negative Search And Collision Discipline
 
-All four worker paths and both future source paths were absent at dispatch.
-Exact batch/key searches found only the committed verification audit. Any
-collision appearing after dispatch is a stop condition unless it is one of
-the four lane-owned worker outputs created by this worker.
+All four worker paths were absent at initial dispatch and now comprise the
+returned R1 lane delta; both future source paths remain absent. Exact batch/key
+searches found only the committed verification audit and the active T3A-C2
+packet/return. Any other collision is a stop condition unless it is one of the
+four lane-owned outputs being repaired by this worker.
 
 ## Gate-To-Role Closeability Contract
 
@@ -402,11 +486,11 @@ reason` disposition.
 
 ## Execution Plan
 
-1. Freeze state, parked hashes and output absence; run pre-implementation gate.
-2. Implement the PowerShell writer with identity, input, path, confirmation, DACL and atomicity guards.
-3. Implement the independent Python checker and focused tests against disposable fixtures.
-4. Publish exact preimage bytes/digests and run all positive/negative cases.
-5. Create the evidence return, run fast gate, reconcile exact outputs and leave staging empty.
+1. Freeze state, parked hashes, the exact four-path pending delta and real-source absence; run pre-implementation gate.
+2. Repair the PowerShell writer against every R2 input-binding, destination and atomicity requirement.
+3. Repair the independent Python checker and focused tests against every R2 semantic/chain requirement.
+4. Publish exact preimage bytes/digests and run all positive/negative cases, including the six reviewer probes.
+5. Automate the cross-tool proof, overwrite the evidence return, run fast gate, reconcile exact outputs and leave staging empty.
 
 ## Evidence Requirements
 
