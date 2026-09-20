@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3a_c2_party_a_source_creation_operator_checkpoint`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=operator executes the reviewed T3A-C2 source-creation tooling as Party A or explicitly defers; role=Local orchestrator/reviewer; phase=independent-probe foundation closed at 4599e5f03 and control returned to the Party A checkpoint; decision owner=operator for Party A execution, Local for subsequent verification; parked checkpoint=key promotion, T3E wiring, admission, live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3b_readiness_route_selection`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local audits T3B readiness and selects a bounded route without opening implementation; role=Local orchestrator/reviewer; phase=Group 1 source independently verified at 58281c2c6; decision owner=Local for readiness/route selection and operator for the concrete approver principal, specification v1 content and any actual T3B creation; parked checkpoint=T3B execution, T3C/T3D/T3E, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_t3a_c2_party_a_source_creation_operator_checkpoint`
-Current mode: `acel_g1_t3a_c2_party_a_source_creation_operator_checkpoint`; previous mode marker: `multi_repo_absorption_review_independent_probe_foundation_r2_worker_return_pending`
+Current mode marker: `acel_g1_t3b_readiness_route_selection`
+Current mode: `acel_g1_t3b_readiness_route_selection`; previous mode marker: `acel_g1_t3a_c2_party_a_source_creation_operator_checkpoint`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=REVIEW-INDEPENDENT-PROBE-ADMISSION-ROOT-T1_CLOSED_AT_4599e5f03; NEXT_STEP=OPERATOR_EXECUTE_REVIEWED_T3A_C2_SOURCE_CREATION_TOOLING_AS_PARTY_A_OR_EXPLICITLY_DEFER; EXPANSION_ALLOWED=false. The independent-probe admission foundation is CLOSED_PASS_BOUNDED after Local hostile probes, two bounded reviewer repairs, 101 focused tests, worker-return fast PASS and material pre-commit 89/89. The next authorized action returns to the already-reviewed T3A-C2 operator checkpoint; only the operator may run the source-creation tooling under the Party A principal. No key promotion, T3E wiring, admission, provider/live, public-sync or deployment authority follows automatically. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
-Mode: `acel_g1_t3a_c2_party_a_source_creation_operator_checkpoint`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3A_C2_GROUP1_SOURCE_LOCAL_VERIFIED_AT_58281c2c6; NEXT_STEP=LOCAL_AUDIT_T3B_READINESS_AND_SELECT_ROUTE_WITHOUT_OPENING_IMPLEMENTATION; EXPANSION_ALLOWED=false. Group 1 is SOURCE_CREATED_LOCAL_VERIFIED. Actual T3B creation requires a concrete activation-approver principal, exact first specification version content, and fresh operator authorization. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+Mode: `acel_g1_t3b_readiness_route_selection`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

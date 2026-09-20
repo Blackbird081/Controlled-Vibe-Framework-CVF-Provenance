@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "acel_g1_t3a_c2_party_a_source_creation_operator_checkpoint",
+  "currentMode": "acel_g1_t3b_readiness_route_selection",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=REVIEW-INDEPENDENT-PROBE-ADMISSION-ROOT-T1_CLOSED_AT_4599e5f03; NEXT_STEP=OPERATOR_EXECUTE_REVIEWED_T3A_C2_SOURCE_CREATION_TOOLING_AS_PARTY_A_OR_EXPLICITLY_DEFER; EXPANSION_ALLOWED=false. The independent-probe admission foundation is CLOSED_PASS_BOUNDED after Local hostile probes, two bounded reviewer repairs, 101 focused tests, worker-return fast PASS and material pre-commit 89/89. The next authorized action returns to the already-reviewed T3A-C2 operator checkpoint; only the operator may run the source-creation tooling under the Party A principal. No key promotion, T3E wiring, admission, provider/live, public-sync or deployment authority follows automatically. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3A_C2_GROUP1_SOURCE_LOCAL_VERIFIED_AT_58281c2c6; NEXT_STEP=LOCAL_AUDIT_T3B_READINESS_AND_SELECT_ROUTE_WITHOUT_OPENING_IMPLEMENTATION; EXPANSION_ALLOWED=false. Group 1 is SOURCE_CREATED_LOCAL_VERIFIED. Actual T3B creation requires a concrete activation-approver principal, exact first specification version content, and fresh operator authorization. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
