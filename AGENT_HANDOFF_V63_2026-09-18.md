@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL T3B Approver Provisioning Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `ef29dbc1f`. Group 1 is
+Current material HEAD recorded for this handoff: `16a6273dc`. Group 1 is
 `SOURCE_CREATED_LOCAL_VERIFIED`; the T3B principal and exact v1 policy are
 operator-approved, and control is at the approver-account provisioning checkpoint.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
@@ -75,10 +75,12 @@ External agent memory files: non-canonical convenience only.
   unspecified, and proposed exact compact v1 JSON plus a dedicated principal.
 - Operator approved both proposed choices; the governed decision and two
   secret-free `runas` launchers committed at `ef29dbc1f` after 89/89 checks.
+- Local corrected the 26-character, non-representable Windows username to the
+  exact 15-character `cvf-g1-approver` at `16a6273dc`, before provisioning.
 
 ## T3B Readiness Inputs
 
-The approved principal is `cvf-g1-activation-approver`, a dedicated standard
+The approved principal is `cvf-g1-approver`, a dedicated standard
 local account distinct from Parties A/B/C. The exact compact JCS payload and
 `freshnessThresholdSeconds=86400` are recorded in
 `docs/reviews/CVF_ACEL_G1_T3B_PRINCIPAL_POLICY_OPERATOR_DECISION_2026-09-20.md`.
@@ -87,7 +89,7 @@ proof and does not make T3B dispatchable.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_PRINCIPAL_AND_POLICY_APPROVED_AT_ef29dbc1f; NEXT_STEP=OPERATOR_CREATE_CVF_G1_ACTIVATION_APPROVER_ACCOUNT_THEN_LOCAL_VERIFY; EXPANSION_ALLOWED=false. Operator approved the dedicated standard local principal cvf-g1-activation-approver and the exact compact v1 policy payload with freshnessThresholdSeconds 86400. Local launchers exist for Party A and the approver. No T3B work order or source creation opens until Local verifies the new account's exact name, SID, enabled/password-required posture and non-administrator membership. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_WINDOWS_PRINCIPAL_CORRECTED_AT_16a6273dc; NEXT_STEP=OPERATOR_CREATE_CVF_G1_APPROVER_ACCOUNT_WITH_PASSWORD_THEN_LOCAL_VERIFY; EXPANSION_ALLOWED=false. Exact standard local principal is cvf-g1-approver; the prior 26-character proposal was corrected before provisioning because it exceeded the Windows local SAM-name limit. Exact compact v1 policy with freshnessThresholdSeconds 86400 remains approved. No T3B work order or source creation opens until Local verifies the account's exact name, SID, enabled/password-required posture and non-administrator membership. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -99,7 +101,7 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project material commit `ef29dbc1f` into
+Authorized guard-maintenance scope: project material commit `16a6273dc` into
 the active front door and move only to the approver-account provisioning checkpoint.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
@@ -115,7 +117,7 @@ mutation, staging, or commitment.
 Operator authorization: explicit approval of both T3B choices plus standing
 Local reviewer/closer and session-transition authority. Rollback boundary:
 revert only this continuity projection; preserve the Group 1 source, T3B audit,
-decision/launcher commits and all parked files. No T3B source, credential, activation,
+decision/launcher and principal-correction commits and all parked files. No T3B source, credential, activation,
 promotion, admission, live/runtime/public or deployment effect is authorized.
 
 ## Agent Operation Trace Block
@@ -129,7 +131,7 @@ promotion, admission, live/runtime/public or deployment effect is authorized.
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer authority |
-| Before status evidence | material HEAD `ef29dbc1f`; principal/policy approved; launchers committed; thirteen parked paths untracked |
+| Before status evidence | material HEAD `16a6273dc`; compatible principal/policy approved; launchers committed; thirteen parked paths untracked |
 | After status evidence | approver account creation and Local verification are next; implementation remains closed |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and Local audit routing only |
