@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3B_R2_ATOMIC_ROTATION_CONTRACT_CORRECTION_2026-09-20.md",
     "baselineSha256": "2b02d0d20d5978a8018afe7c3bf7f339caef555c04ee26a9d515ed51b4978630",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3B_R2_ATOMIC_ROTATION_CONTRACT_CORRECTION_2026-09-20.md",
-    "workOrderSha256": "4172c9a2ceca5dcc26e6d9419a323b64e87776ffd8a29b730be699d5601ddc30"
+    "workOrderSha256": "d582a39cbb798097eecaeb5dda4701b4034f40ecd23d865a286ffa8b0578f0b9"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

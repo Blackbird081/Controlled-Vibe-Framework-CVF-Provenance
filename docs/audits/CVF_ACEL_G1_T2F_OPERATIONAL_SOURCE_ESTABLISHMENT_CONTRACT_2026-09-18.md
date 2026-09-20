@@ -186,7 +186,7 @@ Immutable Snapshot Identity, T2G-01 through T2G-05).
 | `cvf.keyRegistryRow` (Group 1 registry row) | `keyId`, `publicKeyBytesBase64`, `algorithm`, `role`, `issuedAt`, `expiresAt`, `revokedAt`, `status`, `rotatedFromKeyId` | `expiresAt`, `revokedAt`, `rotatedFromKeyId` | `rowHashHex` |
 | `cvf.keyLifecycleReceipt` (Group 1 lifecycle row) | `transitionId`, `keyId`, `registrySnapshotVersionBefore`, `registrySnapshotVersionAfter`, `priorStatus`, `newStatus`, `actor`, `timestamp`, `priorEntryHashHex` | none | `entryHashHex` |
 | `cvf.specFile` (Group 2 spec file) | `specVersion`, `canonicalBytesBase64`, `authorId`, `proposedAt`, `specHashHex` (see below; included as a normal field here, not excluded, because it is not this record kind's own stored digest) | none | `specFileRecordHashHex` |
-| `cvf.specDecisionEvent` (Group 2 decision event) | `decisionEventId`, `eventType`, `specVersion`, `recomputedHashHex`, `approverId`, `decidedAt`, `priorEntryHashHex` | none | `entryHashHex` |
+| `cvf.specDecisionEvent` (Group 2 decision event) | `decisionEventId`, `eventType`, `specVersion`, `recomputedHashHex`, `replacementSpecVersion`, `replacementRecomputedHashHex`, `approverId`, `decidedAt`, `priorEntryHashHex` | `replacementSpecVersion`, `replacementRecomputedHashHex` (both `null` for `APPROVED`\|`REJECTED`\|ordinary `ACTIVATED`; both required non-null for `SUPERSEDED`, per Atomic Rotation T2F-R4-01) | `entryHashHex` |
 | `cvf.observationLogEntry` (Group 3 log entry) | `snapshotId`, `registryName`, `registrySnapshotVersion`, `snapshotHashHex`, `observedAt`, `authority`, `observerIdentity`, `priorEntryHashHex` | none | `entryHashHex` |
 | `cvf.issuerRegistryRow` (Group 4 registry row) | `issuerIdentity`, `entryVersion`, `issuerAttestedHash`, `canonicalContentHashHex`, `status`, `registeredAt`, `correctedAt`, `revokedAt` | `correctedAt`, `revokedAt` | none stored on this row; the row is read live, not hash-chained |
 | `cvf.issuerLookupResponse` (Group 4 lookup response) | `lookupId`, `issuerIdentity`, `claimedIssuerHash`, `registrySnapshotId`, `registrySnapshotHashHex`, `registrySnapshotVersion`, `entryVersion`, `result`, `errorCode`, `queriedAt`, `consumerIdentity`, `observedSnapshotId`, `priorEntryHashHex` | `errorCode` | `entryHashHex` |
@@ -368,30 +368,44 @@ the claimed result, not asserted from prose alone.
 | Proposed exact future path (specification) | `governance/sources/verification_authority_spec/SPEC_v{n}.json`, one immutable file per version (`PROPOSED_LOCAL_REVIEW`) |
 | Proposed exact future path (decision events) | `governance/sources/verification_authority_spec/ACTIVATION_DECISIONS.jsonl`, append-only (`PROPOSED_LOCAL_REVIEW`) |
 | Format / schema (spec file) | `specVersion` (monotonic integer), `canonicalBytesBase64`, `authorId` (Party A identity), `proposedAt` (RFC 3339), `specHashHex` (SHA-256 of `canonicalBytesBase64` decoded bytes only; see Two Distinct Group 2 Hashes below), `specFileRecordHashHex` (stored digest, excluded from its own preimage) |
-| Format / schema (decision event row) | `decisionEventId` (string, stable identity), `eventType` (`APPROVED`\|`REJECTED`\|`ACTIVATED`\|`SUPERSEDED`), `specVersion`, `recomputedHashHex`, `approverId` (activation-approver identity), `decidedAt` (RFC 3339), `priorEntryHashHex` (`null` at genesis), `entryHashHex` (stored digest) |
+| Format / schema (decision event row) | `decisionEventId` (string, stable identity), `eventType` (`APPROVED`\|`REJECTED`\|`ACTIVATED`\|`SUPERSEDED`), `specVersion`, `recomputedHashHex`, `replacementSpecVersion` (T2F-R4-01: nullable positive integer, present and `null` on every non-`SUPERSEDED` event; on `SUPERSEDED` a required positive integer strictly greater than `specVersion`, naming the replacement version this event atomically rotates the active set to), `replacementRecomputedHashHex` (T2F-R4-01: nullable 64-lowercase-hex string, present and `null` on every non-`SUPERSEDED` event; on `SUPERSEDED` the required independently recomputed raw-content `specHashHex` of the replacement version's own spec file), `approverId` (activation-approver identity), `decidedAt` (RFC 3339), `priorEntryHashHex` (`null` at genesis), `entryHashHex` (stored digest) |
 | Stable source identity | `specVersion` (spec file); `decisionEventId` (decision event) |
 | Monotonic version/snapshot identity | `specVersion` doubles as the version identity; `verificationAuthorityHash` == `specHashHex` |
 | Accountable owner | Party A, per Contract 2, for authorship; the independent activation approver for every decision event |
 | Write principal | Party A exclusively for new `SPEC_v{n}.json` files; the activation approver exclusively for `ACTIVATION_DECISIONS.jsonl` rows |
 | Allowed readers | verifier consumers binding to an active `verificationAuthorityHash`; Local for review |
 | Forbidden roles | Party A cannot append a decision event for its own authored version (Cross-Source Identity And Access Matrix, Case 4); Party C is excluded from both files |
-| Canonicalization / hashing rule | Two distinct hashes, see Two Distinct Group 2 Hashes above: `specHashHex` is the direct SHA-256 of `canonicalBytesBase64` decoded bytes (not under the `cvf.source-record-canonicalization@1` profile); `specFileRecordHashHex` is the `cvf.specFile` domain's closed-preimage digest under `cvf.source-record-canonicalization@1`. Decision-event preimage domain `cvf.specDecisionEvent`; see Canonicalization Profile above. The approver must independently recompute `specHashHex` from `canonicalBytesBase64` rather than trust a caller-supplied value |
-| Lifecycle / state transitions | `draft` (spec file created) then exactly one `APPROVED` or `REJECTED` decision event, then (only from `APPROVED`) exactly one `ACTIVATED` decision event, then later exactly one `SUPERSEDED` decision event when a newer version activates |
-| Durable receipt | the decision event row itself, immutable once appended, hash-chained via `priorEntryHashHex`/`entryHashHex` |
-| Correction, rotation, supersession, revocation | a new `specVersion` requires its own `APPROVED` then `ACTIVATED` event; no in-place edit of `canonicalBytesBase64` for an existing version |
-| Named verifier consumer | T2C `LookupProvenanceCheck` pseudocode, which reads `expectedAuthorityHash` (bound to the current `ACTIVATED` specification's `specHashHex`) |
-| Validation order and failure taxonomy | (1) exactly one `ACTIVATED` decision event exists for the cited `specVersion` with no later `SUPERSEDED` event for that same version, (2) recomputed `specHashHex` matches `verificationAuthorityHash`, (3) `approverId` differs from `authorId`, (4) exactly zero or one specification is active across the whole `ACTIVATION_DECISIONS.jsonl` history at query time; any failed step, including two simultaneously active versions, is `REJECT`, never resolved by latest timestamp or largest version |
-| Establishment evidence required | (a) spec document path exists, (b) an `ACTIVATED` decision event exists with an `approverId` distinct from `authorId`, (c) at least one verifier consumer binds to the resulting hash, (d) Local independently recomputes the hash and confirms the match, (e) the unique-active invariant holds across the full decision-event history |
+| Canonicalization / hashing rule | Two distinct hashes, see Two Distinct Group 2 Hashes above: `specHashHex` is the direct SHA-256 of `canonicalBytesBase64` decoded bytes (not under the `cvf.source-record-canonicalization@1` profile); `specFileRecordHashHex` is the `cvf.specFile` domain's closed-preimage digest under `cvf.source-record-canonicalization@1`. Decision-event preimage domain `cvf.specDecisionEvent`, whose closed preimage now includes `replacementSpecVersion` and `replacementRecomputedHashHex` per T2F-R4-01 below; see Canonicalization Profile above. The approver must independently recompute `specHashHex` from `canonicalBytesBase64` rather than trust a caller-supplied value, and for `SUPERSEDED` must independently recompute the replacement version's own `specHashHex` the same way before it may be cited as `replacementRecomputedHashHex` |
+| Lifecycle / state transitions | `draft` (spec file created) then exactly one `APPROVED` or `REJECTED` decision event, then (only from `APPROVED`) exactly one ordinary `ACTIVATED` decision event requiring the current active set to be empty; a later newer version activates only via one atomic `SUPERSEDED` rotation event naming both the old version (`specVersion`) and the replacement (`replacementSpecVersion`), never via a second ordinary `ACTIVATED` event while the old version remains active. See Atomic Rotation: Explicit Approval, Activation And Supersession (T2F-R4-01) below |
+| Durable receipt | the decision event row itself, immutable once appended, hash-chained via `priorEntryHashHex`/`entryHashHex`; a `SUPERSEDED` row durably binds both the old and replacement version identities and hashes in its own hashed preimage, never only as a discarded caller parameter |
+| Correction, rotation, supersession, revocation | a new `specVersion` requires its own `APPROVED` event; it becomes active either via an ordinary `ACTIVATED` event (only when the active set is empty) or, to replace a currently active older version, via one atomic `SUPERSEDED` event on the old version naming it as `replacementSpecVersion`; no in-place edit of `canonicalBytesBase64` for an existing version |
+| Named verifier consumer | T2C `LookupProvenanceCheck` pseudocode, which reads `expectedAuthorityHash` (bound to the current `ACTIVATED`-or-rotated-active specification's `specHashHex`) |
+| Validation order and failure taxonomy | (1) exactly one version is active across the whole `ACTIVATION_DECISIONS.jsonl` history at query time under the atomic rotation replay defined in T2F-R4-01 (an ordinary `ACTIVATED` event with no later `SUPERSEDED` naming it as `specVersion`, or the `replacementSpecVersion` of the most recent `SUPERSEDED` event that itself has no later `SUPERSEDED` event naming it), (2) recomputed `specHashHex` matches `verificationAuthorityHash`, (3) `approverId` differs from `authorId`, (4) for a `SUPERSEDED` event, `replacementSpecVersion` and `replacementRecomputedHashHex` are both present, well-formed, and independently verified against the replacement's own spec file; any failed step, including a non-atomic or ambiguous rotation, is `REJECT`, never resolved by latest timestamp or largest version |
+| Establishment evidence required | (a) spec document path exists, (b) an `ACTIVATED` or rotation-activated decision event exists with an `approverId` distinct from `authorId`, (c) at least one verifier consumer binds to the resulting hash, (d) Local independently recomputes the hash and confirms the match, (e) the unique-active invariant holds across the full decision-event history under the atomic rotation replay |
 | Disposition | `SOURCE_NOT_CREATED`; admission `UNVERIFIED` |
 
-#### Explicit Approval, Activation And Supersession (T2F-R1-04)
+#### Atomic Rotation: Explicit Approval, Activation And Supersession (T2F-R4-01)
 
-Replaces the initial return's automatic "most recent approved becomes active"
-rule, which the R1 review found to contradict fail-closed conflict handling.
+R2 revision: an independent Local review of the R1 correction
+(`docs/reviews/CVF_ACEL_G1_T3B_R1_GROUP2_TOOLING_COHERENCE_CORRECTION_COMPLETION_2026-09-20.md`,
+T3B-R1-RV-1/T3B-R1-RV-2) found this subsection's own prior text
+self-contradictory: it required a replacement version to already be
+`ACTIVATED` before it could supersede an older still-active version, while the
+Validation order row and the decision-writer's own full-history replay both
+reject two simultaneously `ACTIVATED`-without-`SUPERSEDED` versions as a
+conflict. That prerequisite state was therefore unreachable by construction,
+and the closed decision-event preimage had no field naming which replacement
+version a `SUPERSEDED` event was for, so no durable record could later prove a
+supersession's binding. This subsection replaces the prior transient
+two-active-state model entirely with one atomic rotation event. No operational
+Group 2 source exists, so this correction requires no migration or
+backward-compatibility path; every closed-schema fixture and every real-mode
+code path uses only this corrected shape.
 
 - Approval never implies activation. A specification version that is
-  `APPROVED` remains inactive until a **separate** `ACTIVATED` decision event
-  is appended by the activation approver.
+  `APPROVED` remains inactive until it is activated by either an ordinary
+  `ACTIVATED` event or, later, by being named as the `replacementSpecVersion`
+  of a `SUPERSEDED` event rotating it in.
 - Only the independently appointed activation approver may append an
   `ACTIVATED` or `SUPERSEDED` event, and only over an exact `specVersion` plus
   its independently recomputed `specHashHex`. Party A may never append either
@@ -399,26 +413,84 @@ rule, which the R1 review found to contradict fail-closed conflict handling.
   Matrix Case 4 and the activation-approver appointment's forbidden
   combination).
 - Deterministic ordering: decision events for a given `specVersion` must occur
-  in the order `APPROVED` (or `REJECTED`, terminal) then optionally
-  `ACTIVATED` then optionally `SUPERSEDED`. An `ACTIVATED` event appended
+  in the order `APPROVED` (or `REJECTED`, terminal) then optionally one
+  activation (ordinary `ACTIVATED`, or being named as a `SUPERSEDED` event's
+  `replacementSpecVersion`) then optionally one `SUPERSEDED` event naming it
+  as the old `specVersion` being rotated out. An `ACTIVATED` event appended
   without a prior `APPROVED` event for that `specVersion` is invalid and
   rejected.
-- Immutable decision identity: each `decisionEventId` is unique and, once
-  appended, is never edited, reordered or deleted; a correction is a new
-  event, not an edit.
-- Unique-active invariant: at any query time, scanning the full
-  `ACTIVATION_DECISIONS.jsonl` history for `ACTIVATED` events not yet followed
-  by a `SUPERSEDED` event for the same `specVersion` must yield exactly zero
-  or exactly one result. Two simultaneous `ACTIVATED`-without-`SUPERSEDED`
-  results for different versions is a conflict state.
+- Closed decision-event schema: every `cvf.specDecisionEvent` preimage
+  includes `replacementSpecVersion` and `replacementRecomputedHashHex` as
+  required, always-present fields (never omitted, never merely a discarded
+  invocation parameter).
+  - For `APPROVED`, `REJECTED`, and ordinary `ACTIVATED` events, both fields
+    are JSON `null`.
+  - For `SUPERSEDED` events, both fields are non-null: `replacementSpecVersion`
+    is a positive integer strictly greater than the event's own `specVersion`
+    (which continues to name the OLD version being rotated out);
+    `replacementRecomputedHashHex` is the independently recomputed raw-content
+    `specHashHex` (SHA-256 of `canonicalBytesBase64` decoded bytes) of that
+    replacement version's own spec file, recomputed by the approver, never
+    trusted from a caller-supplied value.
+  - A preimage with one field null and the other non-null, an extra field, an
+    omitted field, or a digest computed without including both fields is
+    rejected.
+- Ordinary `ACTIVATED(v)` requires a prior `APPROVED(v)` event for that exact
+  version and requires the current active set (per the replay rule below) to
+  be **empty**. It is rejected whenever any version is already active,
+  including when that active version is the direct predecessor `v` is meant
+  to replace; replacing an active version is done only via `SUPERSEDED`,
+  never via a second ordinary `ACTIVATED`.
+- `SUPERSEDED(old, replacement)` is one atomic rotation event and requires,
+  all independently verified before it may be appended:
+  - the current active set (per the replay rule below) is exactly `{old}`;
+  - `old` has a prior `APPROVED` event, a prior activation (ordinary
+    `ACTIVATED` or prior rotation-in), and no prior `SUPERSEDED` event;
+  - `replacement` is a strictly greater integer than `old`, has its own prior
+    `APPROVED` event, is not currently active, was never `REJECTED`, and was
+    never previously activated (other than by this same rotation) or
+    superseded;
+  - both `old`'s and `replacement`'s spec files and independently recomputed
+    `specHashHex` values validate against the filesystem (or, for hermetic
+    tests, an equivalent disposable fixture).
+  - Applying a valid `SUPERSEDED` event is a single atomic state transition:
+    it removes `old` from the active set and adds `replacement` to it in the
+    same step. There is never an intermediate replay state in which both `old`
+    and `replacement` are simultaneously active, and never a state in which
+    neither is active mid-transition.
+  - After the rotation, `replacement` is considered activated-by-rotation: a
+    later duplicate ordinary `ACTIVATED(replacement)` event is still rejected
+    (already active), and `replacement` may later be named as the `old`
+    argument of a subsequent `SUPERSEDED` event, rotating again.
+- Unique-active invariant (replay rule): scanning the full
+  `ACTIVATION_DECISIONS.jsonl` history in order, the active set starts empty;
+  an ordinary `ACTIVATED(v)` adds `v` to it (rejected unless it was empty); a
+  `SUPERSEDED(old, replacement)` atomically replaces `old` with `replacement`
+  in it (rejected unless the set was exactly `{old}` and every other
+  replacement precondition above holds). A full-history replay from genesis
+  must always finish with exactly zero or one active version. Immutable
+  decision identity: each `decisionEventId` is unique and, once appended, is
+  never edited, reordered or deleted; a correction is a new event, not an
+  edit.
+- No latest/largest-version inference of any kind is permitted anywhere in
+  this rotation model. The caller (the decision writer's invocation, and any
+  future consumer) must always name both `old` and `replacement` explicitly;
+  every version citation is independently validated against the real (or
+  hermetic fixture) filesystem, never inferred from "the highest version
+  number seen so far."
+- Cross-language consistency: the PowerShell decision writer's own replay and
+  the Python checker's independent replay must both implement this identical
+  atomic rotation semantic and must derive the same final active-version state
+  from the same event history. This is a cross-implementation agreement
+  requirement, not merely a same-language internal-consistency requirement.
 - Conflict resolution is never automatic. Two active heads, duplicate or
   contradictory decision events for the same `specVersion`, an author
-  attempting self-activation, or a decision event whose `recomputedHashHex`
-  does not match the cited spec file's `specHashHex` must all be rejected by
-  the verifier consumer. Resolution requires a new, Local-reviewed
-  `SUPERSEDED` event explicitly naming which version remains active; the
-  verifier never resolves a conflict by latest timestamp or largest version
-  number.
+  attempting self-activation, a decision event whose `recomputedHashHex` does
+  not match the cited spec file's `specHashHex`, or a `SUPERSEDED` event whose
+  `replacementRecomputedHashHex` does not match the replacement's own
+  independently recomputed `specHashHex` must all be rejected by the verifier
+  consumer. The verifier never resolves a conflict by latest timestamp or
+  largest version number.
 
 ### Source Group 3: Tamper-Evident Append-Only Observation Log Covering Both Registries
 

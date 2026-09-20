@@ -2,7 +2,9 @@
 
 Memory class: governed-work-order
 
-Status: READY_FOR_DISPATCH
+docType: work_order
+
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: ACEL-G1-T3B-R2-ATOMIC-ROTATION-CONTRACT-CORRECTION
 
@@ -98,7 +100,13 @@ Scope classification: bounded root-contract and local tooling correction.
 
 ## Review Dispatch Convergence And Invocation Budget Control
 
+Review-Dispatch Convergence Control: REQUIRED
+
 dispatchKind: REWORK
+
+dispatchSurface: INTERNAL_AGENT
+
+parentAssignmentId: ACEL-G1-T3B-R2-ATOMIC-ROTATION-CONTRACT-CORRECTION
 
 reviewRoundCount: 2
 
@@ -119,6 +127,26 @@ cumulativeExternalInvocationCount: 0
 externalInvocationCeiling: 0
 
 externalInvocationDelta: 0
+
+usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
+
+quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
+
+nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
+
+reworkGeneration: 2
+
+consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
+
+implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
+
+preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
+
+preExecutionReviewTrigger: NONE
+
+nextRoutineReviewBoundary: WORKER_RETURN
+
+reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 
 escalationDisposition: ROOT_CONTRACT_CORRECTION_SELECTED
 
@@ -148,6 +176,18 @@ independentProbeRequired: YES
 independentProbeOwner: Local orchestrator/reviewer
 
 independentProbeDispositionAtDispatch: PENDING_REVIEWER_EXECUTION
+
+independentProbeRiskClass: NEW_INDEPENDENT_CRITICAL_RISK
+
+probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
+
+implementationOracleSeparation: Local selects named post-return state/digest probes and interprets their results independently of worker prose
+
+expectedInformationGain: prove one-event sole-active convergence, durable replacement binding and PowerShell/Python agreement
+
+rerunCostReason: three focused methods only because they answer the admitted critical state-machine question without broad duplicate execution
+
+reviewerDecisionOwner: LOCAL
 
 decisionQuestion: Does one durable `SUPERSEDED` event cryptographically bind
 both versions and move the active set from exactly `{old}` to exactly
@@ -383,11 +423,11 @@ failed owned-lane final gate.
 
 ## Closure Checklist
 
-- [ ] Exact five R2 paths and frozen spec writer reconcile; 13 parked paths unchanged.
-- [ ] Atomic rotation positive and every named mutation negative pass in PowerShell and Python.
-- [ ] Worker-return fast gate passes and staging is empty.
-- [ ] Both real Group 2 source paths remain absent.
-- [ ] Material and continuity commits remain separate.
+- [x] Exact five R2 paths and frozen spec writer reconcile; 13 parked paths unchanged.
+- [x] Atomic rotation positive and every named mutation negative pass in PowerShell and Python.
+- [x] Worker-return fast gate passes and staging is empty.
+- [x] Both real Group 2 source paths remain absent.
+- [x] Material closure and continuity synchronization remain separate commits.
 
 ## Return-To-Orchestrator Conditions
 
@@ -524,6 +564,29 @@ reviewer. External research ends outside this packet and has no authority here.
 | Owner surface | T2F Group 2 contract and R2 dispatch |
 | Disposition | local first-party correction only |
 | Claim boundary | no external source authority, corpus, remote implementation or provider claim |
+
+## Current Runtime Freshness Verification
+
+| Field | Value |
+|---|---|
+| runtimeClaimPresent | NO_NEW_RUNTIME_CLAIM |
+| runtimeMutationAuthorized | no runtime mutation; repository-local tooling correction only |
+| freshnessVerificationMode | current exact-path checks of `governance/sources/verification_authority_spec/SPEC_v1.json` and `governance/sources/verification_authority_spec/ACTIVATION_DECISIONS.jsonl`, plus direct reads of the five returned tooling paths |
+| reason | both real Group 2 source paths remain absent; accepted evidence is hermetic tooling behavior only |
+| requiredFutureAction | execute the separately controlled Party A and Approver steps, then perform Local source verification before promotion or admission |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_G1_T3B_R2_ATOMIC_ROTATION_CONTRACT_CORRECTION_COMPLETION_2026-09-20.md` | terminal status and independent-probe binding | PASS |
+| Roadmap state | active ACEL program continuity | T3B R2 accepted; operational Group 2 execution remains next | PASS |
+| Registry JSON | no registry mutation in tooling scope | exact five-path manifest | BLOCKED with reason: GC-051 registry mutation is outside this bounded tooling correction |
+| Registry Markdown | no registry mutation in tooling scope | exact five-path manifest | BLOCKED with reason: GC-051 registry mutation is outside this bounded tooling correction |
+| External evidence digest | no external evidence admitted | internal-input routing table | N/A with reason: local repository evidence only |
+| System loop interlock | T2F contract, writer and Python verifier | 74/74 PowerShell, 58/58 Python and 3/3 reviewer probes | PASS |
+| Session continuity | active handoff and generated session state | dedicated post-material synchronization | BLOCKED with reason: pending material commit SHA |
 
 ## Public Export Disposition
 
