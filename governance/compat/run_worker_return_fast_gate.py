@@ -21,13 +21,22 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
+def _configure_stdout() -> None:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
+
 @dataclass(frozen=True)
 class FastGateCommand:
     name: str
     command: tuple[str, ...]
 
 
-def build_commands(pytest_targets: tuple[str, ...] = ()) -> tuple[FastGateCommand, ...]:
+def build_commands(
+    pytest_targets: tuple[str, ...] = (), active_work_order: str | None = None
+) -> tuple[FastGateCommand, ...]:
     commands: list[FastGateCommand] = []
     if pytest_targets:
         commands.append(
@@ -36,6 +45,14 @@ def build_commands(pytest_targets: tuple[str, ...] = ()) -> tuple[FastGateComman
                 ("python", "-m", "pytest", *pytest_targets, "-q"),
             )
         )
+    probe_admission_command = [
+        "python",
+        "governance/compat/check_independent_review_probe_admission.py",
+        "--enforce",
+        "--changed-lane-only",
+    ]
+    if active_work_order:
+        probe_admission_command += ["--active-work-order", active_work_order]
     commands.extend(
         [
             FastGateCommand(
@@ -50,6 +67,7 @@ def build_commands(pytest_targets: tuple[str, ...] = ()) -> tuple[FastGateComman
                 "worker-return quality gate",
                 ("python", "governance/compat/check_worker_return_quality_gate.py", "--enforce"),
             ),
+            FastGateCommand("independent review probe admission", tuple(probe_admission_command)),
             FastGateCommand(
                 "reviewer-fast governance gate",
                 ("python", "governance/compat/run_local_governance_hook_chain.py", "--hook", "reviewer-fast"),
@@ -84,6 +102,7 @@ def _run(command: FastGateCommand) -> int:
 
 
 def main() -> int:
+    _configure_stdout()
     parser = argparse.ArgumentParser(description="Run the CVF worker-return fast gate")
     parser.add_argument(
         "--pytest-target",
@@ -91,13 +110,23 @@ def main() -> int:
         default=[],
         help="Focused pytest path/module to run before reviewer-fast. Repeat for multiple targets.",
     )
+    parser.add_argument(
+        "--active-work-order",
+        default=None,
+        help=(
+            "Repo-relative path of the work order currently being executed. "
+            "Forwarded to the independent-probe-admission checker's "
+            "--active-work-order so the return this dispatch is producing "
+            "is always in the changed lane, even while untracked."
+        ),
+    )
     args = parser.parse_args()
 
     print("=== CVF Worker Return Fast Gate ===")
     print("Purpose: fail early on worker-return defects before full closure gates.")
     failures = 0
     total_start = time.perf_counter()
-    for command in build_commands(tuple(args.pytest_target)):
+    for command in build_commands(tuple(args.pytest_target), args.active_work_order):
         if _run(command) != 0:
             failures += 1
     elapsed = time.perf_counter() - total_start

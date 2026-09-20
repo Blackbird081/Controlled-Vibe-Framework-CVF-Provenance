@@ -503,6 +503,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             "agent instruction carrier compaction",
             ("python", "governance/compat/check_agent_instruction_carriers.py", "--enforce"),
         ),
+        _range_command(
+            "independent review probe admission",
+            "governance/compat/check_independent_review_probe_admission.py",
+            base,
+            head,
+        ),
     )
 
 

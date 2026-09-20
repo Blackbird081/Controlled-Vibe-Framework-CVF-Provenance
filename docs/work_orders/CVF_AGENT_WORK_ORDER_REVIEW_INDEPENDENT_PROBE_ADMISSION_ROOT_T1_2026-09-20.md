@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: READY_FOR_REDISPATCH
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: REVIEW-INDEPENDENT-PROBE-ADMISSION-ROOT-T1
 
@@ -12,9 +12,11 @@ Dispatch base head: 672e41cda
 
 dispatchBaseHead: 8b4e13107
 
-closureBaseHead: N/A - pending reviewer material commit
+closureBaseHead: 92b14f056
 
 Commit mode: WORKER_MUST_NOT_COMMIT
+
+providerExecutionAuthority: FORBIDDEN
 
 Worker: shared-workspace INTERNAL_AGENT implementation worker
 
@@ -280,6 +282,23 @@ closureOwner: LOCAL
 
 workerCommitPermission: FORBIDDEN
 
+## Agent Handoff Contract Control Block
+
+Canonical contract:
+`docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`.
+
+| Field | Disposition |
+|---|---|
+| route | MULTI_AGENT_MULTI_ROLE |
+| rolePattern | Local dispatcher/reviewer/closer and shared-workspace implementation worker |
+| phase | CLOSED_AFTER_LOCAL_REVIEW |
+| baseHeadFor(phase) | `c389a09f696f0433b4110184a540b68377250496` |
+| changedSetScope(phase) | exact seven worker paths plus Local work-order/completion closure paths |
+| traceScope(phase, actor) | worker return records implementation; completion records Local probe and repair |
+| commitOwner(phase) | Local reviewer/closer |
+| crossBatchIsolation | thirteen parked paths remain unstaged and untouched |
+| nextMoveSurfaces | active handoff and generated session continuity after material commit |
+
 ## ADIF Defect Registry Disclosure
 
 Resolver query: taskClass=`protected-governance-path`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`
@@ -293,6 +312,37 @@ Returned defects: NONE_RETURNED
 | five independent bypasses exist | `docs/reviews/CVF_REVIEW_INDEPENDENT_PROBE_ADMISSION_T1_R2_LOCAL_DISPOSITION_2026-09-20.md` | Findings / Position | RIPA-ROOT-01..05 | Local review disposition | ACCEPT |
 | escalation is mandatory | `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md` | Enforcement Invariants 5 and 7 | `ROOT_CONTRACT_REQUIRED` | SCEC schema | ACCEPT |
 | current checker owns affected parsing | `governance/compat/check_independent_review_probe_admission.py` | declaration scanner and closure diagnosis | `DeclarationScanner`; `resolve_link`; `diagnose_closure` | independent-probe admission checker | ACCEPT |
+
+## Checker Source Read-Ahead Block
+
+| Field | Evidence |
+|---|---|
+| applicableCheckersRead | `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_semantic_convergence_control.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_machine_closure_package.py` |
+| literalTokensReviewed | `independentProbeRequired: YES`; `probeExecutorRole`; `reviewerDecisionOwner`; SCEC schema; `Status: CLOSED_PASS_BOUNDED`; machine-closure row labels |
+| gateRunPurpose | confirmation and evidence of the authored contract and terminal packaging, not first discovery of checker requirements |
+| claimBoundary | source read-ahead proves inspection of structural guard requirements only, not implementation correctness or runtime behavior |
+
+## External Knowledge Intake Routing
+
+Canonical chain map:
+`docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`.
+
+| Field | Disposition |
+|---|---|
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | internal governed input (no external intake) |
+| Internal source | `docs/reviews/CVF_REVIEW_INDEPENDENT_PROBE_ADMISSION_T1_R2_LOCAL_DISPOSITION_2026-09-20.md` |
+| Chain map route | local-only governance dispatch; external branch not entered |
+| Matching local-view guard | `governance/compat/check_independent_review_probe_admission.py` plus Local reviewer decision |
+| Owner surface | `docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md` |
+| Disposition | NOT_APPLICABLE_WITH_REASON: no external source was admitted |
+| Claim boundary | no external research, repository, provider, CLI/MCP, or web authority |
+
+## External/Local Coordination Binding
+
+```json
+{"contractId":"cvf.external-local-absorption-coordination@1","invariants":{"externalRole":"ADVISORY_RESEARCH_AND_PATTERN_MAPPING","externalContext":"PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ","localRole":"SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION","finalDecisionOwner":"LOCAL","localCoverageBasis":"SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST","externalEvidenceAuthority":"INPUT_NOT_PRIVATE_CVF_PROOF"},"contractSha256":"92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c","parentArtifact":null}
+```
 
 ## Intake Role Routing Decision
 
@@ -338,6 +388,28 @@ path. Never commit.
 | reviewer hostile probes | pre-closure | Local | Local | worker return |
 | pre-commit and committed-range pre-closure | closure | Local | Local | accepted seven-path set |
 
+## Current Runtime Freshness Verification
+
+| Field | Disposition |
+|---|---|
+| Runtime/source paths checked | `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/run_worker_return_fast_gate.py`; focused tests |
+| Runtime behavior claimed | N/A_WITH_REASON: repository-local governance checker behavior only |
+| Helper/checker implementation claimed | BOUNDED: structural declaration and changed-lane admission checks |
+| Provider/live proof claimed | N/A_WITH_REASON: no provider or live call |
+| Provider registry surfaces | N/A_WITH_REASON: outside scope and untouched |
+| Public-sync claimed | N/A_WITH_REASON |
+| Freshness disposition | PASS - current local checker/tests were inspected and executed; no product runtime claim |
+
+## Foundation Storage Layout Block
+
+| Field | Disposition |
+|---|---|
+| Foundation path class | existing review-cost standard and governance compatibility checker/test surfaces |
+| Storage decision | extend the existing canonical owner; do not create a parallel foundation directory |
+| Existing aggregate impact | none |
+| Generated state impact | none during material implementation; continuity regenerates separately |
+| Durable governance boundary | standard owns normative contract, checker owns enforcement, focused test owns regressions |
+
 ## Verification Commands
 
 ```powershell
@@ -372,10 +444,30 @@ run the non-empty committed-range pre-closure gate.
 
 ## Closure Checklist
 
-- [ ] Root counterexamples and equivalence classes closed.
-- [ ] Focused, fast, reviewer, pre-commit and committed-range gates pass.
-- [ ] Seven-path manifest, role separation and hashes reconciled.
-- [ ] Continuity updated separately after the material commit.
+- [x] Root counterexamples and equivalence classes closed.
+- [x] Focused, fast, and reviewer gates pass; pre-commit and committed-range gates are Local closure duties.
+- [x] Seven-path manifest, role separation and hashes reconciled.
+- [x] Continuity is explicitly assigned to the separate post-material session-sync commit.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_REVIEW_INDEPENDENT_PROBE_ADMISSION_ROOT_T1_COMPLETION_2026-09-20.md` | terminal Local review with independent-probe bindings | PASS |
+| Roadmap state | standalone governed work order | no dedicated roadmap owns this bounded foundation | N/A with reason: standalone work order |
+| Registry JSON | no registry path in manifest | scope exclusion verified against exact implementation manifest | PASS |
+| Registry Markdown | no registry path in manifest | scope exclusion verified against exact implementation manifest | PASS |
+| External evidence digest | no external evidence admitted | internal-input routing table | N/A with reason: local repository authority only |
+| System loop interlock | checker, tests, autorun catalog, and fast gate | focused and reviewer gate evidence in completion review | PASS |
+| Session continuity | active handoff and generated session state | separate post-material synchronization | BLOCKED with reason: pending material commit SHA |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| reviewer decision evidence | terminal Local completion artifact | completion path named by Reviewer Closure Conversion exists with terminal probe bindings | PASS |
+| implementation evidence | focused executable regression suite | 103 focused cases recorded by Local completion | PASS |
 
 ## Operator Checkpoint
 
@@ -406,9 +498,25 @@ author terminal probe evidence.
 
 ## Agent Operation Trace Block
 
-Worker return must record actor, surface, invocation, working directory,
-commands, exact seven paths, before/after status, diff, authority and claim
-boundaries, expected/actual manifest and deletion/rename disposition.
+| Field | Evidence |
+|---|---|
+| Actor | Local dispatcher/closer; shared-workspace implementation worker |
+| Provider or surface | local private provenance workspace |
+| Session or invocation | root T1 dispatch through Local terminal review, 2026-09-20 |
+| Working directory | repository root |
+| Command or tool surface | governed reads, local edits, focused tests, checker and gate commands |
+| Target paths | exact seven worker manifest plus Local work-order and completion closure paths |
+| Allowed scope source | this work order and standing operator direction for Local bounded reviewer repair |
+| Before status evidence | four R1 findings pending worker repair at committed HEAD `c389a09f6` |
+| After status evidence | worker repairs plus two bounded Local fixes pass 103 focused tests and direct probes |
+| Diff evidence | exact material staging reconciliation required before Local commit |
+| Approval boundary | repository-local structural governance only |
+| Claim boundary | no Party A, source creation, provider/live, runtime, public-sync, or deployment authority |
+| Agent type | dispatcher, worker, reviewer/closer |
+| Invocation ID | `review-independent-probe-admission-root-t1-2026-09-20` |
+| Expected manifest | seven worker paths plus two Local closure paths |
+| Actual changed set | reconciled by Local before material commit |
+| Manifest delta | MATCH after Local bounded repair and closure additions |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -417,7 +525,7 @@ boundaries, expected/actual manifest and deletion/rename disposition.
 | claimScope | repository-local parser, binding checker, tests and gate wiring |
 | claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
 | receiptEvidence | N/A with reason: no runtime receipt |
-| actionEvidence | focused tests and gate output required |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: focused tests, direct probes, and gate output |
 | invocationBoundary | shared-workspace INTERNAL_AGENT only |
 | interceptionBoundary | cooperative repository gates only |
 | claimLanguage | integrated structural admission contract submitted for Local review |
