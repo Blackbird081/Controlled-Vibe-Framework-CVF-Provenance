@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Independent Review Probe Foundation Learning
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `ef0091da6`. Local accepted T3A-C2 tooling with a bounded strict-JSON reviewer repair and opened the promised foundation-learning design; Group 1 remains `SOURCE_NOT_CREATED`.
+Current material HEAD recorded for this handoff: `c389a09f6`. Local committed the independent-probe root R1 dispatch; its worker return and Local terminal review remain pending material commit. Group 1 remains `SOURCE_NOT_CREATED`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
