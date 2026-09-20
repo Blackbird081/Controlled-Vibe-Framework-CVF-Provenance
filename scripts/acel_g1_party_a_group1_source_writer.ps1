@@ -81,6 +81,14 @@ param(
 Set-StrictMode -Version 3.0
 $ErrorActionPreference = 'Stop'
 
+$convertFromJsonCommand = Get-Command ConvertFrom-Json -ErrorAction SilentlyContinue
+if ($PSVersionTable.PSEdition -ne 'Core' -or
+        $null -eq $convertFromJsonCommand -or
+        -not $convertFromJsonCommand.Parameters.ContainsKey('DateKind')) {
+    Write-Error '[UNSUPPORTED_POWERSHELL] PowerShell 7.5 or later is required so JSON timestamp fields remain exact strings.'
+    exit 1
+}
+
 $script:ToolContract        = 'cvf.acel.g1.group1SourceWriterTool@1'
 $script:MetadataSchema      = 'cvf.acel.g1.partyAPublicKeyMetadata@1'
 $script:CanonProfile        = 'cvf.source-record-canonicalization@1'
@@ -401,7 +409,11 @@ function Get-StrictJsonObjectFromText {
 
     $parsed = $null
     try {
-        $parsed = $Text | ConvertFrom-Json -ErrorAction Stop
+        # PowerShell 7.5 defaults ISO-8601 JSON strings to System.DateTime.
+        # Preserve the source token as a string so exact verified-product
+        # comparison and downstream canonical bytes cannot become locale- or
+        # DateTime-format-dependent.
+        $parsed = $Text | ConvertFrom-Json -DateKind String -ErrorAction Stop
     } catch {
         Stop-Writer -GuardId 'METADATA_UNPARSEABLE' -Message "metadata file is not valid JSON: $($_.Exception.Message)"
     }
@@ -1291,8 +1303,10 @@ function Invoke-SelfTest {
         # mode never accepts a substitute authority, only
         # $script:VerifiedPartyAProduct (see ConvertTo-TestOnlyExpectedProductFixture).
         $fixtureExpectedProduct = ConvertTo-TestOnlyExpectedProductFixture -FixtureMetadata $fixtureMetadata
+        $parsedFixtureMetadata = Get-StrictJsonObjectFromText -Text (
+            Get-Content -LiteralPath $fixtureMetadataPath -Raw)
 
-        $validatedBytes = Assert-ValidPartyAPublicKeyMetadata -Metadata $fixtureMetadata -ExpectedProduct $fixtureExpectedProduct
+        $validatedBytes = Assert-ValidPartyAPublicKeyMetadata -Metadata $parsedFixtureMetadata -ExpectedProduct $fixtureExpectedProduct
         Add-TestResult -CaseId 'C2-02-A' -Contract 'C2-02' `
             -Passed ($validatedBytes.Length -eq $script:RawPublicKeyLength) `
             -Detail "valid fixture metadata accepted; decoded key $($validatedBytes.Length) bytes"

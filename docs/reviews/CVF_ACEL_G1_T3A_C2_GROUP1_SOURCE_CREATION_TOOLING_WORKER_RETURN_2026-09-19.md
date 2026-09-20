@@ -57,7 +57,7 @@ terminalReadinessVerdict: READY_FOR_REVIEW
 Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md`
 
 ```json
-{"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"acel-g1-t3a-c2-group1-source-creation-tooling","chainMode":"INITIAL","chainOrdinal":0,"predecessor":null,"blockerDelta":{"prior":["group1_source_creation_tooling_r3_r1_authority_and_json_defects","group1_source_not_created"],"resolved":["group1_source_creation_tooling_r3_r1_authority_and_json_defects"],"retained":["group1_source_not_created"],"new":[],"reopened":[],"current":["group1_source_not_created"]},"resolutionEvidence":{"group1_source_creation_tooling_r3_r1_authority_and_json_defects":{"evidenceClass":"EXECUTABLE_PROOF","evidencePath":"scripts/acel_g1_party_a_group1_source_writer.ps1","sha256":"17eeba79f0465a057659893b584cf1010b5a2d4ca5eac61b63579617631e825e","locator":"$expectedProduct = $script:VerifiedPartyAProduct","claimId":"ACEL-G1-T3A-C2-R3-R1-MATRIX-CLOSED"}},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":0,"nonDecreasingBlockerTransitions":0},"claims":[{"claimId":"ACEL-G1-T3A-C2-R3-R1-MATRIX-CLOSED","claimClass":"OTHER","proofClass":"NAMED_OBSERVABLE_PROOF","evidenceRef":"docs/reviews/CVF_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_WORKER_RETURN_2026-09-19.md"}],"requiredDisposition":"CONTINUE_BOUNDED","successorScope":"NO_SUCCESSOR"}
+{"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"acel-g1-t3a-c2-group1-source-creation-tooling","chainMode":"INITIAL","chainOrdinal":0,"predecessor":null,"blockerDelta":{"prior":["group1_source_creation_tooling_r3_r1_authority_and_json_defects","group1_source_not_created"],"resolved":["group1_source_creation_tooling_r3_r1_authority_and_json_defects"],"retained":["group1_source_not_created"],"new":[],"reopened":[],"current":["group1_source_not_created"]},"resolutionEvidence":{"group1_source_creation_tooling_r3_r1_authority_and_json_defects":{"evidenceClass":"EXECUTABLE_PROOF","evidencePath":"scripts/acel_g1_party_a_group1_source_writer.ps1","sha256":"6551896d4f6eac7e14491f27c708083d29e48346935f67f0e025180b8a12ec10","locator":"$expectedProduct = $script:VerifiedPartyAProduct","claimId":"ACEL-G1-T3A-C2-R3-R1-MATRIX-CLOSED"}},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":0,"nonDecreasingBlockerTransitions":0},"claims":[{"claimId":"ACEL-G1-T3A-C2-R3-R1-MATRIX-CLOSED","claimClass":"OTHER","proofClass":"NAMED_OBSERVABLE_PROOF","evidenceRef":"docs/reviews/CVF_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_WORKER_RETURN_2026-09-19.md"}],"requiredDisposition":"CONTINUE_BOUNDED","successorScope":"NO_SUCCESSOR"}
 ```
 
 The one retained blocker is intentional: this tranche was authorized to
@@ -104,13 +104,25 @@ the strict reader changed from comment-skipping to comment-disallowing with a
 new negative regression. Final result: PowerShell 56/56, Python 84/84; both real
 Group 1 source paths remain absent.
 
+### Post-Acceptance Local Runtime Compatibility Repair - 2026-09-20
+
+The first operator execution under the correct Party A principal and
+PowerShell 7.5 failed closed before either source write because
+`ConvertFrom-Json` converted the exact ISO `createdAtUtc` string into a
+`System.DateTime`; the later string cast was locale-formatted and therefore
+could not equal the verified product's original UTC token. Local repaired the
+parser with `-DateKind String`, added an explicit PowerShell capability guard,
+and changed the positive self-test to round-trip the fixture through the real
+JSON parser. The post-repair hermetic result is 56/56 PASS, and both real
+source paths remained absent throughout the failed attempt and repair.
+
 ## Source Inventory
 
 | File | Action |
 |---|---|
 | `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_2026-09-19.md` | READ (R3-R1 redispatch) |
 | `docs/audits/CVF_ACEL_G1_T3A_C2_CEREMONY_PRODUCT_LOCAL_VERIFICATION_2026-09-19.md` | READ (exact fourteen-field verified public product, re-confirmed unchanged) |
-| `scripts/acel_g1_party_a_group1_source_writer.ps1` | UPDATED (R3-R1-01/R3-R1-02 repairs on top of the pending R3 file) |
+| `scripts/acel_g1_party_a_group1_source_writer.ps1` | UPDATED (R3-R1 repairs plus Local PowerShell 7.5 exact-date parser repair) |
 | `governance/compat/check_acel_g1_verifier_key_registry.py` | READ ONLY (confirmed no equivalent defect exists; unchanged, hash identical to the prior R3 return) |
 | `governance/compat/test_check_acel_g1_verifier_key_registry.py` | UPDATED (added R3-R1 regression coverage; consolidated repetitive fixture-write/run_check call sites to satisfy the governed Python near-threshold shrink rule) |
 | `governance/compat/check_core_guard_self_protection.py` | READ (reused exact required authorization block fields) |
@@ -801,7 +813,7 @@ worker-return document itself, shown by `git status --short` as
 
 | Path | Status | Lines | SHA-256 |
 |---|---|---|---|
-| `scripts/acel_g1_party_a_group1_source_writer.ps1` | untracked, updated in place (R3-R1 plus bounded reviewer repair) | 1815 | `17eeba79f0465a057659893b584cf1010b5a2d4ca5eac61b63579617631e825e` |
+| `scripts/acel_g1_party_a_group1_source_writer.ps1` | tracked; R3-R1 plus bounded reviewer and runtime-compatibility repairs | 1829 | `6551896d4f6eac7e14491f27c708083d29e48346935f67f0e025180b8a12ec10` |
 | `governance/compat/check_acel_g1_verifier_key_registry.py` | untracked, unchanged from the prior R3 pass | 888 | `ffccdbe58d54273dd815ca726cb7c68c76860e5a3e7e612be6cd729ec96f831b` |
 | `governance/compat/test_check_acel_g1_verifier_key_registry.py` | untracked, updated in place (R3-R1) | 1085 | `b8722019eb1547d574ae7cc9d7f57d0576862de4ce08b06719ee1b293e9e59ed` |
 | `docs/reviews/CVF_ACEL_G1_T3A_C2_GROUP1_SOURCE_CREATION_TOOLING_WORKER_RETURN_2026-09-19.md` | tracked, modified in place (this file) | this file | recompute at review time (content still being finalized as this table is authored) |
@@ -816,6 +828,7 @@ worker-return document itself, shown by `git status --short` as
 | string-construction repair (`-f` operator replaced with concatenation for the two escaped-alias probe fixtures) | applied |
 | `pwsh -NoProfile -File scripts/acel_g1_party_a_group1_source_writer.ps1` (worker final) | `Self-test cases: 55 total, 55 passed, 0 failed.` |
 | Local reviewer strict-payload/comment repair and final rerun | `Self-test cases: 56 total, 56 passed, 0 failed.`; actual escaped aliases reject with `METADATA_DUPLICATE_JSON_MEMBER`; JSON comments reject with `METADATA_UNPARSEABLE` |
+| Local Party A runtime-compatibility repair and rerun (2026-09-20) | initial real attempt failed closed with `METADATA_FIELD_VALUE_MISMATCH` before source creation; parser now uses `ConvertFrom-Json -DateKind String`; positive test round-trips through the real parser; `Self-test cases: 56 total, 56 passed, 0 failed.` |
 | `python governance/compat/test_check_acel_g1_verifier_key_registry.py -v` (after adding R3-R1 Python regressions, before size trim) | `Ran 84 tests` / `OK` (1176 lines) |
 | `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 66179eecf --head HEAD` (at 1176 lines) | VIOLATION: `governed python automation size` (near-hard-threshold touched-without-shrink rule: must shrink by 50+ lines), `closure packaging preflight`, `core guard self-protection` |
 | test-file consolidation (22 `run_check(...)` call sites -> `self._check(...)`; 11 two-file write pairs -> `self._write_pair(...)`) | 1176 -> 1085 lines (91-line reduction by reviewer count) |
