@@ -76,7 +76,9 @@ bytes into `SPEC_v1.json` or authorize an activation event.
 
 Both scripts resolve the repository from their own location rather than
 hard-code the workspace path. `--check` verifies PowerShell 7 and account
-existence without opening `runas` or requesting a password.
+existence without opening `runas` or requesting a password. The approver
+launcher additionally fails closed unless the account is enabled, carries the
+Windows password-required flag, and is outside the local Administrators group.
 
 ## Findings / Position
 
@@ -108,6 +110,7 @@ membership. No source or activation authority opens automatically.
 | password is embedded for convenience | launchers use `runas` prompt only; no `/savecred` |
 | launcher silently targets a missing/wrong account | `net user` preflight and explicit account constant |
 | approver becomes Administrator | create as a standard local user and verify group membership before dispatch |
+| account has a password but Windows leaves `PasswordRequired=False` | require explicit `net user cvf-g1-approver /passwordreq:yes` and make the launcher fail closed |
 | account name is mistaken for operational proof | require Local SID and policy checks after provisioning |
 | proposed name exceeds the Windows local SAM-name limit | use exact 15-character `cvf-g1-approver`; validate platform representability before operator action |
 | approved policy is changed during implementation | bind exact bytes and independently recompute hashes |
@@ -143,6 +146,7 @@ tooling dispatch, Group 2 creation and activation remain unopened.
 |---|---|---|---|---|---|
 | repeated manual `runas` command recall is error-prone | OPERATOR_SCOPE_CLARITY_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | use password-free named launcher scripts while preserving OS password prompts | HANDLED_IN_THIS_BATCH |
 | orchestrator proposed a non-representable Windows account name | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | CORRECTED_BEFORE_PROVISIONING | validate platform identity constraints before asking the operator to create a principal | HANDLED_IN_REVIEWER_CORRECTION |
+| `New-LocalUser -Password` did not guarantee the separate Windows password-required account flag | OPERATIONAL_PREFLIGHT_GAP | GOVERNANCE_CONTROL_PLANE | CORRECTED_BEFORE_DISPATCH | enforce enabled/password-required/non-admin posture in the approver launcher before `runas` | HANDLED_IN_REVIEWER_CORRECTION |
 
 Runtime/provider/cost learning: `N/A_WITH_REASON` because no provider, runtime
 service, token, latency or cost behavior was exercised.

@@ -17,6 +17,9 @@ if errorlevel 1 (
   exit /b 3
 )
 
+pwsh.exe -NoProfile -Command "$u=Get-LocalUser -Name $env:CVF_ACCOUNT -ErrorAction Stop; if (-not $u.Enabled) { Write-Error '[ACCOUNT_DISABLED] Approved account is disabled.'; exit 4 }; if (-not $u.PasswordRequired) { Write-Error '[PASSWORD_NOT_REQUIRED] Run elevated: net user cvf-g1-approver /passwordreq:yes'; exit 5 }; $isAdmin=@(Get-LocalGroupMember -SID 'S-1-5-32-544' -ErrorAction Stop | Where-Object { $_.SID -eq $u.SID }).Count -gt 0; if ($isAdmin) { Write-Error '[ACCOUNT_IS_ADMIN] Remove the approver from the local Administrators group.'; exit 6 }"
+if errorlevel 1 exit /b %ERRORLEVEL%
+
 if /I "%~1"=="--check" (
   echo READY: %COMPUTERNAME%\%CVF_ACCOUNT%
   echo REPO: %CVF_REPO%
