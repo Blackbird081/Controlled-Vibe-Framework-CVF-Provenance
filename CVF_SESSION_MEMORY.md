@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3b_readiness_route_selection`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local audits T3B readiness and selects a bounded route without opening implementation; role=Local orchestrator/reviewer; phase=Group 1 source independently verified at 58281c2c6; decision owner=Local for readiness/route selection and operator for the concrete approver principal, specification v1 content and any actual T3B creation; parked checkpoint=T3B execution, T3C/T3D/T3E, promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3b_operator_principal_and_policy_checkpoint`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=operator approves or modifies the recommended dedicated approver principal and exact v1 policy bytes; role=Local orchestrator/reviewer; phase=T3B readiness route selected at a907469aa; decision owner=operator for principal/policy and Local for the later work-order/review lane; parked checkpoint=T3B dispatch/execution, T3C/T3D/T3E, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_t3b_readiness_route_selection`
-Current mode: `acel_g1_t3b_readiness_route_selection`; previous mode marker: `acel_g1_t3a_c2_party_a_source_creation_operator_checkpoint`
+Current mode marker: `acel_g1_t3b_operator_principal_and_policy_checkpoint`
+Current mode: `acel_g1_t3b_operator_principal_and_policy_checkpoint`; previous mode marker: `acel_g1_t3b_readiness_route_selection`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3A_C2_GROUP1_SOURCE_LOCAL_VERIFIED_AT_58281c2c6; NEXT_STEP=LOCAL_AUDIT_T3B_READINESS_AND_SELECT_ROUTE_WITHOUT_OPENING_IMPLEMENTATION; EXPANSION_ALLOWED=false. Group 1 is SOURCE_CREATED_LOCAL_VERIFIED. Actual T3B creation requires a concrete activation-approver principal, exact first specification version content, and fresh operator authorization. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
-Mode: `acel_g1_t3b_readiness_route_selection`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_READINESS_ROUTE_SELECTED_AT_a907469aa; NEXT_STEP=OPERATOR_DECIDE_DEDICATED_ACTIVATION_APPROVER_PRINCIPAL_AND_EXACT_V1_POLICY_BYTES; EXPANSION_ALLOWED=false. Recommended principal is cvf-g1-activation-approver and recommended freshnessThresholdSeconds is 86400 within the exact compact policy payload recorded by the T3B readiness audit. No work order or actual T3B source creation opens until the operator approves or modifies both choices. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+Mode: `acel_g1_t3b_operator_principal_and_policy_checkpoint`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

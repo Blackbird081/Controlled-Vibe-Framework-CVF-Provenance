@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "acel_g1_t3b_readiness_route_selection",
+  "currentMode": "acel_g1_t3b_operator_principal_and_policy_checkpoint",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3A_C2_GROUP1_SOURCE_LOCAL_VERIFIED_AT_58281c2c6; NEXT_STEP=LOCAL_AUDIT_T3B_READINESS_AND_SELECT_ROUTE_WITHOUT_OPENING_IMPLEMENTATION; EXPANSION_ALLOWED=false. Group 1 is SOURCE_CREATED_LOCAL_VERIFIED. Actual T3B creation requires a concrete activation-approver principal, exact first specification version content, and fresh operator authorization. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_READINESS_ROUTE_SELECTED_AT_a907469aa; NEXT_STEP=OPERATOR_DECIDE_DEDICATED_ACTIVATION_APPROVER_PRINCIPAL_AND_EXACT_V1_POLICY_BYTES; EXPANSION_ALLOWED=false. Recommended principal is cvf-g1-activation-approver and recommended freshnessThresholdSeconds is 86400 within the exact compact policy payload recorded by the T3B readiness audit. No work order or actual T3B source creation opens until the operator approves or modifies both choices. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

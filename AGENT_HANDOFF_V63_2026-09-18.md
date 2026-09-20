@@ -1,9 +1,9 @@
 # CVF Agent Handoff V63 - ACEL Group 1 Verified, T3B Readiness Next
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `58281c2c6`. Group 1 is
-`SOURCE_CREATED_LOCAL_VERIFIED`; the next bounded move is Local T3B readiness
-audit and route selection without opening implementation.
+Current material HEAD recorded for this handoff: `a907469aa`. Group 1 is
+`SOURCE_CREATED_LOCAL_VERIFIED`; T3B readiness is route-selected and control
+is at one consolidated operator principal/policy checkpoint.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -28,16 +28,15 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3b_readiness_route_selection`;
-active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local audits
-T3B readiness and selects a bounded route without opening implementation;
-parked checkpoint=actual T3B creation pending concrete approver principal,
-specification v1 content and fresh operator authorization, plus T3C/T3D/T3E,
-promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3b_operator_principal_and_policy_checkpoint`;
+active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator
+approves or modifies the recommended dedicated approver principal and exact v1
+policy bytes; parked checkpoint=work-order dispatch and actual T3B creation,
+plus T3C/T3D/T3E, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-`acel_g1_t3b_readiness_route_selection`.
+`acel_g1_t3b_operator_principal_and_policy_checkpoint`.
 
 The active program remains restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
@@ -72,6 +71,9 @@ External agent memory files: non-canonical convenience only.
   evidence and do not establish Groups 2-4 or consumer wiring.
 - Thirteen pre-existing untracked G1 evidence paths remain byte-preserved,
   uncommitted, and outside this lane.
+- T3B route-selection audit committed at `a907469aa`; it found the outer
+  Group 2 hash/chain contract ready but the decoded policy schema previously
+  unspecified, and proposed exact compact v1 JSON plus a dedicated principal.
 
 ## T3B Readiness Inputs
 
@@ -83,12 +85,12 @@ activation-decision-file implementation. Its operator checkpoint requires:
 
 The role appointment exists only as a bounded governance identity. It is not a
 concrete OS/service principal, credential, specification, activation decision,
-or source-establishment proof. Local must therefore audit the existing contract
-and select the route, but must not invent either missing operator input.
+or source-establishment proof. Local completed the route audit and proposed
+exact values, but cannot approve operator-owned identity and policy choices.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3A_C2_GROUP1_SOURCE_LOCAL_VERIFIED_AT_58281c2c6; NEXT_STEP=LOCAL_AUDIT_T3B_READINESS_AND_SELECT_ROUTE_WITHOUT_OPENING_IMPLEMENTATION; EXPANSION_ALLOWED=false. Group 1 is SOURCE_CREATED_LOCAL_VERIFIED. Actual T3B creation requires a concrete activation-approver principal, exact first specification version content, and fresh operator authorization. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_READINESS_ROUTE_SELECTED_AT_a907469aa; NEXT_STEP=OPERATOR_DECIDE_DEDICATED_ACTIVATION_APPROVER_PRINCIPAL_AND_EXACT_V1_POLICY_BYTES; EXPANSION_ALLOWED=false. Recommended principal is cvf-g1-activation-approver and recommended freshnessThresholdSeconds is 86400 within the exact compact policy payload recorded by the T3B readiness audit. No work order or actual T3B source creation opens until the operator approves or modifies both choices. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -100,8 +102,8 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project material commit `58281c2c6` into the
-active front door and move only to Local T3B readiness audit/route selection.
+Authorized guard-maintenance scope: project material commit `a907469aa` into
+the active front door and move only to the consolidated T3B operator checkpoint.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
@@ -114,10 +116,10 @@ guard changed-set accounting; they remain read-only and are not authorized for
 mutation, staging, or commitment.
 
 Operator authorization: standing Local reviewer/closer and session-transition
-authority after operator-executed Party A source creation. Rollback boundary:
-revert only this continuity projection; preserve the verified Group 1 source
-commit and all parked files. No T3B source, credential, activation, promotion,
-admission, live/runtime/public or deployment effect is authorized.
+authority after the Local T3B readiness decision. Rollback boundary: revert
+only this continuity projection; preserve the Group 1 source and T3B route
+audit commits and all parked files. No T3B source, credential, activation,
+promotion, admission, live/runtime/public or deployment effect is authorized.
 
 ## Agent Operation Trace Block
 
