@@ -6,9 +6,9 @@ docType: review
 
 Status: BLOCKED_WITH_REASON
 
-Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_REVIEW_INDEPENDENT_PROBE_ADMISSION_T1_2026-09-19.md`
+Reviews work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_REVIEW_INDEPENDENT_PROBE_ADMISSION_T1_2026-09-19.md`
 
-dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_REVIEW_INDEPENDENT_PROBE_ADMISSION_T1_2026-09-19.md`
+reviewedWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_REVIEW_INDEPENDENT_PROBE_ADMISSION_T1_2026-09-19.md`
 
 independentProbeDisposition: FAIL_INDEPENDENT_PROBE
 
@@ -98,6 +98,15 @@ reviewer, probe executor, disposition owner and committer.
 - Contradiction or gap disposition: invalidate the R2 closure claim and escalate the same problem chain.
 - Claim update: focused regression success is narrowed to the encoded fixtures only.
 
+## Checker Source Read-Ahead Block
+
+| Field | Evidence |
+|---|---|
+| applicableCheckersRead | `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_worker_return_quality_gate.py`; `governance/compat/check_worker_experience_retrospective.py` |
+| literalTokensReviewed | `## Checker Source Read-Ahead Block`; `internal governed input (no external intake)`; `Internal source`; `## External/Local Coordination Binding`; `Reviews work order:` |
+| gateRunPurpose | confirmation evidence following checker-source inspection and governed artifact-shape review |
+| claimBoundary | this read-ahead reconciles the Local review packet only; it does not reclassify it as a worker return |
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |
@@ -136,7 +145,22 @@ reviewer, probe executor, disposition owner and committer.
 
 ## External Knowledge Intake Routing
 
-NOT_APPLICABLE_WITH_REASON: internal Local review of private repository work.
+| Field | Value |
+|---|---|
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | internal governed input (no external intake) |
+| Internal source | `docs/work_orders/CVF_AGENT_WORK_ORDER_REVIEW_INDEPENDENT_PROBE_ADMISSION_T1_2026-09-19.md` |
+| Chain map route | N/A_NO_NEW_EXTERNAL_INPUT: no external evidence was consulted or introduced |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
+| Owner surface | Local orchestrator/reviewer under the RIPA-T1 R2 work order |
+| Disposition | NOT_APPLICABLE_NO_NEW_EXTERNAL_INPUT |
+| Claim boundary | private-CVF hostile-probe findings only; no external-source authority claim |
+
+## External/Local Coordination Binding
+
+```json
+{"contractId":"cvf.external-local-absorption-coordination@1","invariants":{"externalRole":"ADVISORY_RESEARCH_AND_PATTERN_MAPPING","externalContext":"PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ","localRole":"SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION","finalDecisionOwner":"LOCAL","localCoverageBasis":"SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST","externalEvidenceAuthority":"INPUT_NOT_PRIVATE_CVF_PROOF"},"contractSha256":"92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c","parentArtifact":"docs/work_orders/CVF_AGENT_WORK_ORDER_REVIEW_INDEPENDENT_PROBE_ADMISSION_T1_2026-09-19.md"}
+```
 
 ## Public Export Disposition
 
