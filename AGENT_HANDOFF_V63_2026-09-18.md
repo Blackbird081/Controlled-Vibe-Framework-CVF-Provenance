@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Independent Review Probe Foundation Learning
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `c389a09f6`. Local committed the independent-probe root R1 dispatch; its worker return and Local terminal review remain pending material commit. Group 1 remains `SOURCE_NOT_CREATED`.
+Current material HEAD recorded for this handoff: `c35efbfb9`. Local independently accepted the probe-admission root contract at `4599e5f03`, then reconciled the inherited R2 routing packet; Group 1 remains `SOURCE_NOT_CREATED` and control returns to the Party A operator checkpoint.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -21,11 +21,11 @@ execute as that principal or create the operational sources.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`multi_repo_absorption_review_independent_probe_foundation_r2_worker_return_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT closes committed RIPA-T1-R2 and returns `COMPLETE_PENDING_REVIEW`; parked checkpoint=operator Party A source write and downstream effects.
+Startup acknowledged: current mode=`acel_g1_t3a_c2_party_a_source_creation_operator_checkpoint`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator executes the reviewed T3A-C2 source-creation tooling as Party A or explicitly defers; parked checkpoint=key promotion, T3E wiring, admission, live/runtime/public/deployment.
 
 ## Current Mode
 
-`multi_repo_absorption_review_independent_probe_foundation_r2_worker_return_pending`.
+`acel_g1_t3a_c2_party_a_source_creation_operator_checkpoint`.
 The active absorption program remains incomplete and restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
 wave remains `LHW24`.
@@ -108,13 +108,13 @@ release source creation, implementation, candidate admission or runtime use.
   output was also stale. After the mandatory round-three stop, the operator
   explicitly continued. The fresh R3 assignment is committed at `8eb363f48`;
   pre-dispatch passed 82/82 and material pre-commit passed 89/89.
-- R3-R1 closed both adversarial defects; Local accepted tooling at `ef0091da6`. RIPA-T1 R1 failed new Local hostile probes; the consolidated five-finding R2 was committed at `c2153d52d` after 83/83 pre-dispatch and 89/89 pre-commit passes.
+- R3-R1 closed both adversarial defects; Local accepted tooling at `ef0091da6`. The independent-probe admission root contract is `CLOSED_PASS_BOUNDED` at `4599e5f03` after Local found and repaired unterminated-HTML-comment and invalid-active-binding fail-open cases. Evidence: 101 focused tests, worker-return fast PASS, reviewer-fast 68/68 and material pre-commit 89/89.
 - Thirteen pre-existing untracked G1 evidence paths remain byte-preserved,
   uncommitted and outside this lane; primary-worktree finality remains pending.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=REVIEW-INDEPENDENT-PROBE-ADMISSION-T1-R2_REDISPATCHED_AT_c2153d52d; NEXT_STEP=INTERNAL_AGENT_CLOSE_CONSOLIDATED_R2_FIVE_FINDING_MATRIX_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Local independently reproduced closure-linkage omission, status/disposition asymmetry, missing oracle/evidence digest binding, field-parser grammar, and stale return-evidence defects. Round-two rework is committed at c2153d52d after pre-dispatch 83/83 and pre-commit 89/89. Worker must not commit; any further same-class failure triggers round-three escalation rather than automatic redispatch. Local owns final hostile probes, bounded repair, disposition and commit. Party A source write and downstream effects remain parked; thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=REVIEW-INDEPENDENT-PROBE-ADMISSION-ROOT-T1_CLOSED_AT_4599e5f03; NEXT_STEP=OPERATOR_EXECUTE_REVIEWED_T3A_C2_SOURCE_CREATION_TOOLING_AS_PARTY_A_OR_EXPLICITLY_DEFER; EXPANSION_ALLOWED=false. The independent-probe admission foundation is CLOSED_PASS_BOUNDED after Local hostile probes, two bounded reviewer repairs, 101 focused tests, worker-return fast PASS and material pre-commit 89/89. The next authorized action returns to the already-reviewed T3A-C2 operator checkpoint; only the operator may run the source-creation tooling under the Party A principal. No key promotion, T3E wiring, admission, provider/live, public-sync or deployment authority follows automatically. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## External / Local Coordination Boundary
 
@@ -212,8 +212,9 @@ Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CV
 Operator authorization: standing authorization permits Local audit/dispatch; operator retains credentials and the later real source write.
 Rollback boundary: revert this continuity projection only; preserve committed material, the pending exact four-path T3A-C2 worker delta and all parked files. No credential, alternate-user, operational-source, key-promotion, live/runtime/public/deployment effect is authorized.
 
-## Claim Boundary
+## Core Guard Self-Protection Authorization - RIPA Root Closure Continuity
 
-This handoff authorizes only the exact four-path no-commit T3A-C2 tooling lane.
-It grants no credential/private access, Party A execution, operational source,
-key promotion, T3E wiring, admission, live/runtime/public/deployment effect.
+Authorized scope: project closure `4599e5f03` and routing follow-up `c35efbfb9` through six continuity paths
+and return to the reviewed T3A-C2 Party A operator checkpoint; actual execution
+remains operator-only. Roll back only this projection and preserve the material
+closure plus thirteen parked paths; no promotion, admission or runtime effect.
