@@ -1,9 +1,9 @@
-# CVF Agent Handoff V63 - ACEL T3B Group 2 Tooling Dispatch
+# CVF Agent Handoff V63 - ACEL T3B R1 Group 2 Tooling Correction Dispatch
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `97cae8068`. Group 1 is
+Current material HEAD recorded for this handoff: `0f9c5d040`. Group 1 is
 `SOURCE_CREATED_LOCAL_VERIFIED`; both T3B principals and exact v1 policy are
-verified/fixed, and the Group 2 tooling packet is dispatched.
+verified/fixed, and the consolidated Group 2 R1 tooling correction is dispatched.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -12,12 +12,12 @@ Status: ACTIVE
 
 ## Purpose
 
-Carry the independently verified Group 1 closure and route the bounded T3B
-Group 2 source-tooling worker dispatch and later Local review.
+Carry the independently verified Group 1 closure and route the bounded T3B R1
+Group 2 source-tooling correction dispatch and later Local review.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer. Phase: T3B tooling worker dispatch. Decision
+Role: Local orchestrator/reviewer. Phase: T3B R1 correction worker dispatch. Decision
 owner: INTERNAL_AGENT worker for exact five-path uncommitted implementation;
 Local for independent probe, review, bounded repair and closure.
 
@@ -27,15 +27,15 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3b_group2_tooling_worker_dispatch`;
+Startup acknowledged: current mode=`acel_g1_t3b_r1_group2_tooling_correction_worker_dispatch`;
 active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator
-relays the committed T3B work order to the INTERNAL_AGENT worker; parked
+relays the committed T3B R1 correction work order to the INTERNAL_AGENT worker; parked
 checkpoint=real T3B source execution plus T3C/T3D/T3E,
 promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-`acel_g1_t3b_group2_tooling_worker_dispatch`.
+`acel_g1_t3b_r1_group2_tooling_correction_worker_dispatch`.
 
 The active program remains restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
@@ -43,7 +43,7 @@ wave remains `LHW24`.
 
 ## Active Boundary
 
-Only exact five-path T3B tooling implementation is open. Real Party A/approver
+Only exact five-path T3B R1 tooling correction is open. Real Party A/approver
 execution and source creation remain closed.
 
 Remote tracking branch: `origin/main`
@@ -85,6 +85,11 @@ External agent memory files: non-canonical convenience only.
 - Operator set the password-required flag; Local verified the exact SID,
   enabled/expiring/non-admin posture and launcher exit 0.
 - Paired T3B baseline/work order committed at `97cae8068` after 89/89 checks.
+- Independent review found four consolidated defects: principal-readable
+  handoff ACLs, per-version event-hash binding, fail-closed supersession
+  citation, and packet/evidence-contract coherence.
+- The independent review, R1 baseline and R1 work order committed at
+  `0f9c5d040` after focused gates and 89/89 pre-commit checks.
 
 ## T3B Readiness Inputs
 
@@ -97,7 +102,7 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_GROUP2_TOOLING_DISPATCHED_AT_97cae8068; NEXT_STEP=OPERATOR_RELAY_COMMITTED_T3B_WORK_ORDER_TO_INTERNAL_AGENT_WORKER; EXPANSION_ALLOWED=false. The approver account is Local-verified: exact SID S-1-5-21-1644666849-912006174-747199667-1008, enabled, password-required, expiring and non-admin; launcher check exits 0. The worker may change exactly five manifest paths, must not use credentials/runas, create real Group 2 sources, stage or commit, and returns COMPLETE_PENDING_REVIEW. Local remains reviewer/closer and independent probe executor. T3C, T3D, T3E, real T3B principal execution, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_R1_GROUP2_TOOLING_CORRECTION_DISPATCHED_AT_0f9c5d040; NEXT_STEP=OPERATOR_RELAY_COMMITTED_T3B_R1_WORK_ORDER_TO_INTERNAL_AGENT_WORKER; EXPANSION_ALLOWED=false. The R1 worker must correct exactly the existing five-path manifest for principal-readable handoff ACLs, per-version event-hash binding, fail-closed supersession citation, and packet coherence; it must not use credentials/runas, execute either principal, create real Group 2 sources, stage or commit, and returns COMPLETE_PENDING_REVIEW. Local remains reviewer/closer and independent probe executor. T3C, T3D, T3E, real T3B principal execution, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -109,18 +114,20 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project material commit `97cae8068` into
-the active front door and move only to the T3B tooling worker-dispatch checkpoint.
+Authorized guard-maintenance scope: project material commit `0f9c5d040` into
+the active front door and move only to the T3B R1 correction worker-dispatch checkpoint.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
 `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+`governance/compat/check_acel_g1_verification_authority_spec.py`;
+`governance/compat/test_check_acel_g1_verification_authority_spec.py`;
 `governance/compat/check_task_class_calibration_owner_evidence.py`;
 `governance/compat/test_check_task_class_calibration_owner_evidence.py`.
-The final two paths are pre-existing untracked parked evidence, listed only for
-guard changed-set accounting; they remain read-only and are not authorized for
-mutation, staging, or commitment.
+The four checker paths are untracked worker or pre-existing parked evidence,
+listed only for guard changed-set accounting; they are not authorized for
+mutation, staging, or commitment by this session-sync change.
 
 Operator authorization: explicit approval of both T3B choices plus standing
 Local reviewer/closer and session-transition authority. Rollback boundary:
@@ -134,18 +141,18 @@ promotion, admission, live/runtime/public or deployment effect is authorized.
 |---|---|
 | Actor | Local session-sync steward |
 | Provider or surface | private CVF workspace |
-| Session or invocation | ACEL G1 T3B approver-provisioning continuity, 2026-09-20 |
+| Session or invocation | ACEL G1 T3B R1 correction-dispatch continuity, 2026-09-20 |
 | Working directory | repository root |
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer authority |
-| Before status evidence | material HEAD `97cae8068`; verified principals and committed dispatch; thirteen parked paths untracked |
-| After status evidence | exact five-path no-commit worker implementation is next; real execution remains closed |
+| Before status evidence | material HEAD `0f9c5d040`; independent review and R1 dispatch committed; thirteen parked paths untracked |
+| After status evidence | exact five-path no-commit R1 worker correction is next; real execution remains closed |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and Local audit routing only |
 | Claim boundary | no Group 2 source, activation, promotion, admission, live/runtime/public effect |
 | Agent type | Local session-sync steward |
-| Invocation ID | `acel-g1-t3b-approver-provisioning-v63-continuity-20260920` |
+| Invocation ID | `acel-g1-t3b-r1-correction-dispatch-v63-continuity-20260920` |
 | Expected manifest | handoff, front door, core, next-move, generated state and bootstrap |
 | Actual changed set | verified before commit |
 | Manifest delta | pending final diff reconciliation |

@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "acel_g1_t3b_group2_tooling_worker_dispatch",
+  "currentMode": "acel_g1_t3b_r1_group2_tooling_correction_worker_dispatch",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_GROUP2_TOOLING_DISPATCHED_AT_97cae8068; NEXT_STEP=OPERATOR_RELAY_COMMITTED_T3B_WORK_ORDER_TO_INTERNAL_AGENT_WORKER; EXPANSION_ALLOWED=false. The approver account is Local-verified: exact SID S-1-5-21-1644666849-912006174-747199667-1008, enabled, password-required, expiring and non-admin; launcher check exits 0. The worker may change exactly five manifest paths, must not use credentials/runas, create real Group 2 sources, stage or commit, and returns COMPLETE_PENDING_REVIEW. Local remains reviewer/closer and independent probe executor. T3C, T3D, T3E, real T3B principal execution, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_R1_GROUP2_TOOLING_CORRECTION_DISPATCHED_AT_0f9c5d040; NEXT_STEP=OPERATOR_RELAY_COMMITTED_T3B_R1_WORK_ORDER_TO_INTERNAL_AGENT_WORKER; EXPANSION_ALLOWED=false. The R1 worker must correct exactly the existing five-path manifest for principal-readable handoff ACLs, per-version event-hash binding, fail-closed supersession citation, and packet coherence; it must not use credentials/runas, execute either principal, create real Group 2 sources, stage or commit, and returns COMPLETE_PENDING_REVIEW. Local remains reviewer/closer and independent probe executor. T3C, T3D, T3E, real T3B principal execution, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3B_GROUP2_SOURCE_CREATION_TOOLING_2026-09-20.md",
-    "baselineSha256": "12dcbad7cadc08d7e706521937419c9c4005266ad5858c6e486f321909d8b9eb",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3B_GROUP2_SOURCE_CREATION_TOOLING_2026-09-20.md",
-    "workOrderSha256": "fc197fb73f0ddd3ae87f1c6b80f4f64be275481fdd8e2fb31bbef23f078f878b"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3B_R1_GROUP2_TOOLING_COHERENCE_CORRECTION_2026-09-20.md",
+    "baselineSha256": "db3b639fdce58b62533e5f08b4fc761d65487fe0fa6f56c84056710172ff1b51",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3B_R1_GROUP2_TOOLING_COHERENCE_CORRECTION_2026-09-20.md",
+    "workOrderSha256": "fb039baeb71106c9c4c86ffe626bdc3b50d7b6c0136ba8faf9cbcd28bb6b99e4"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
