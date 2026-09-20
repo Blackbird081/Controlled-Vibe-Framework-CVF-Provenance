@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL T3B Approver Provisioning Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `16a6273dc`. Group 1 is
+Current material HEAD recorded for this handoff: `57a948c0f`. Group 1 is
 `SOURCE_CREATED_LOCAL_VERIFIED`; the T3B principal and exact v1 policy are
 operator-approved, and control is at the approver-account provisioning checkpoint.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
@@ -77,6 +77,11 @@ External agent memory files: non-canonical convenience only.
   secret-free `runas` launchers committed at `ef29dbc1f` after 89/89 checks.
 - Local corrected the 26-character, non-representable Windows username to the
   exact 15-character `cvf-g1-approver` at `16a6273dc`, before provisioning.
+- Operator created the account with SID
+  `S-1-5-21-1644666849-912006174-747199667-1008`; it is enabled, expiring and
+  non-admin, but Windows still reports `PasswordRequired=false`.
+- The launcher now enforces enabled/password-required/non-admin posture and
+  fails closed at material commit `57a948c0f`.
 
 ## T3B Readiness Inputs
 
@@ -89,7 +94,7 @@ proof and does not make T3B dispatchable.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_WINDOWS_PRINCIPAL_CORRECTED_AT_16a6273dc; NEXT_STEP=OPERATOR_CREATE_CVF_G1_APPROVER_ACCOUNT_WITH_PASSWORD_THEN_LOCAL_VERIFY; EXPANSION_ALLOWED=false. Exact standard local principal is cvf-g1-approver; the prior 26-character proposal was corrected before provisioning because it exceeded the Windows local SAM-name limit. Exact compact v1 policy with freshnessThresholdSeconds 86400 remains approved. No T3B work order or source creation opens until Local verifies the account's exact name, SID, enabled/password-required posture and non-administrator membership. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_APPROVER_ACCOUNT_CREATED_POSTURE_PENDING_AT_57a948c0f; NEXT_STEP=OPERATOR_SET_PASSWORD_REQUIRED_FLAG_THEN_LOCAL_VERIFY_AND_DISPATCH; EXPANSION_ALLOWED=false. Account cvf-g1-approver exists as enabled SID S-1-5-21-1644666849-912006174-747199667-1008, is non-admin, has expiry and a set password, but Windows reports PasswordRequired=false. The hardened launcher now fails closed. Operator must run elevated `net user cvf-g1-approver /passwordreq:yes`; Local then verifies and may issue the T3B work order. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -101,7 +106,7 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project material commit `16a6273dc` into
+Authorized guard-maintenance scope: project material commit `57a948c0f` into
 the active front door and move only to the approver-account provisioning checkpoint.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
@@ -131,8 +136,8 @@ promotion, admission, live/runtime/public or deployment effect is authorized.
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer authority |
-| Before status evidence | material HEAD `16a6273dc`; compatible principal/policy approved; launchers committed; thirteen parked paths untracked |
-| After status evidence | approver account creation and Local verification are next; implementation remains closed |
+| Before status evidence | material HEAD `57a948c0f`; approver exists but password-required flag is false; thirteen parked paths untracked |
+| After status evidence | one elevated flag change and Local verification are next; implementation remains closed |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and Local audit routing only |
 | Claim boundary | no Group 2 source, activation, promotion, admission, live/runtime/public effect |
