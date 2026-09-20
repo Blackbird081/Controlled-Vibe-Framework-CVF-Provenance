@@ -1,9 +1,9 @@
-# CVF Agent Handoff V63 - ACEL T3B Approver Provisioning Checkpoint
+# CVF Agent Handoff V63 - ACEL T3B Group 2 Tooling Dispatch
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `57a948c0f`. Group 1 is
-`SOURCE_CREATED_LOCAL_VERIFIED`; the T3B principal and exact v1 policy are
-operator-approved, and control is at the approver-account provisioning checkpoint.
+Current material HEAD recorded for this handoff: `97cae8068`. Group 1 is
+`SOURCE_CREATED_LOCAL_VERIFIED`; both T3B principals and exact v1 policy are
+verified/fixed, and the Group 2 tooling packet is dispatched.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -12,14 +12,14 @@ Status: ACTIVE
 
 ## Purpose
 
-Carry the independently verified ACEL G1 T3A-C2 Group 1 source closure and
-route the one-time T3B approver-account provisioning and Local verification.
+Carry the independently verified Group 1 closure and route the bounded T3B
+Group 2 source-tooling worker dispatch and later Local review.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer. Phase: T3B approver-account provisioning.
-Decision owner: operator for one-time secret entry/account creation; Local for
-identity and least-privilege verification and later work-order/review routing.
+Role: Local orchestrator/reviewer. Phase: T3B tooling worker dispatch. Decision
+owner: INTERNAL_AGENT worker for exact five-path uncommitted implementation;
+Local for independent probe, review, bounded repair and closure.
 
 External research is closed for this lane. A shared-workspace worker, if later
 dispatched, is `INTERNAL_AGENT`; the operator relays its work order only and
@@ -27,15 +27,15 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3b_activation_approver_account_provisioning_checkpoint`;
+Startup acknowledged: current mode=`acel_g1_t3b_group2_tooling_worker_dispatch`;
 active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator
-creates the approved standard local approver account, then Local verifies it;
-parked checkpoint=T3B dispatch/source creation plus T3C/T3D/T3E,
+relays the committed T3B work order to the INTERNAL_AGENT worker; parked
+checkpoint=real T3B source execution plus T3C/T3D/T3E,
 promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-`acel_g1_t3b_activation_approver_account_provisioning_checkpoint`.
+`acel_g1_t3b_group2_tooling_worker_dispatch`.
 
 The active program remains restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
@@ -43,8 +43,8 @@ wave remains `LHW24`.
 
 ## Active Boundary
 
-Only approver-account provisioning and Local verification are open. T3B work
-order dispatch and actual source creation remain closed.
+Only exact five-path T3B tooling implementation is open. Real Party A/approver
+execution and source creation remain closed.
 
 Remote tracking branch: `origin/main`
 
@@ -82,6 +82,9 @@ External agent memory files: non-canonical convenience only.
   non-admin, but Windows still reports `PasswordRequired=false`.
 - The launcher now enforces enabled/password-required/non-admin posture and
   fails closed at material commit `57a948c0f`.
+- Operator set the password-required flag; Local verified the exact SID,
+  enabled/expiring/non-admin posture and launcher exit 0.
+- Paired T3B baseline/work order committed at `97cae8068` after 89/89 checks.
 
 ## T3B Readiness Inputs
 
@@ -89,12 +92,12 @@ The approved principal is `cvf-g1-approver`, a dedicated standard
 local account distinct from Parties A/B/C. The exact compact JCS payload and
 `freshnessThresholdSeconds=86400` are recorded in
 `docs/reviews/CVF_ACEL_G1_T3B_PRINCIPAL_POLICY_OPERATOR_DECISION_2026-09-20.md`.
-The account does not yet exist, so the decision is not source-establishment
-proof and does not make T3B dispatchable.
+This identity evidence makes tooling dispatchable only. It is not Group 2
+source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_APPROVER_ACCOUNT_CREATED_POSTURE_PENDING_AT_57a948c0f; NEXT_STEP=OPERATOR_SET_PASSWORD_REQUIRED_FLAG_THEN_LOCAL_VERIFY_AND_DISPATCH; EXPANSION_ALLOWED=false. Account cvf-g1-approver exists as enabled SID S-1-5-21-1644666849-912006174-747199667-1008, is non-admin, has expiry and a set password, but Windows reports PasswordRequired=false. The hardened launcher now fails closed. Operator must run elevated `net user cvf-g1-approver /passwordreq:yes`; Local then verifies and may issue the T3B work order. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_GROUP2_TOOLING_DISPATCHED_AT_97cae8068; NEXT_STEP=OPERATOR_RELAY_COMMITTED_T3B_WORK_ORDER_TO_INTERNAL_AGENT_WORKER; EXPANSION_ALLOWED=false. The approver account is Local-verified: exact SID S-1-5-21-1644666849-912006174-747199667-1008, enabled, password-required, expiring and non-admin; launcher check exits 0. The worker may change exactly five manifest paths, must not use credentials/runas, create real Group 2 sources, stage or commit, and returns COMPLETE_PENDING_REVIEW. Local remains reviewer/closer and independent probe executor. T3C, T3D, T3E, real T3B principal execution, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -106,8 +109,8 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project material commit `57a948c0f` into
-the active front door and move only to the approver-account provisioning checkpoint.
+Authorized guard-maintenance scope: project material commit `97cae8068` into
+the active front door and move only to the T3B tooling worker-dispatch checkpoint.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
@@ -136,8 +139,8 @@ promotion, admission, live/runtime/public or deployment effect is authorized.
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer authority |
-| Before status evidence | material HEAD `57a948c0f`; approver exists but password-required flag is false; thirteen parked paths untracked |
-| After status evidence | one elevated flag change and Local verification are next; implementation remains closed |
+| Before status evidence | material HEAD `97cae8068`; verified principals and committed dispatch; thirteen parked paths untracked |
+| After status evidence | exact five-path no-commit worker implementation is next; real execution remains closed |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and Local audit routing only |
 | Claim boundary | no Group 2 source, activation, promotion, admission, live/runtime/public effect |

@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3b_activation_approver_account_provisioning_checkpoint`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=operator sets the Windows password-required flag, then Local verifies and dispatches; role=Local orchestrator/reviewer; phase=account created and posture enforcement hardened at 57a948c0f; decision owner=operator for the one elevated flag change and Local for verification/work-order routing; parked checkpoint=T3B execution, T3C/T3D/T3E, promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3b_group2_tooling_worker_dispatch`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=operator relays the committed T3B work order to the shared-workspace INTERNAL_AGENT worker; role=Local orchestrator/reviewer; phase=T3B tooling dispatched at 97cae8068; decision owner=worker for exact five-path uncommitted implementation and Local for review/independent probe/closure; parked checkpoint=real T3B principal execution, T3C/T3D/T3E, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_t3b_activation_approver_account_provisioning_checkpoint`
-Current mode: `acel_g1_t3b_activation_approver_account_provisioning_checkpoint`; previous mode marker: `acel_g1_t3b_operator_principal_and_policy_checkpoint`
+Current mode marker: `acel_g1_t3b_group2_tooling_worker_dispatch`
+Current mode: `acel_g1_t3b_group2_tooling_worker_dispatch`; previous mode marker: `acel_g1_t3b_activation_approver_account_provisioning_checkpoint`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_APPROVER_ACCOUNT_CREATED_POSTURE_PENDING_AT_57a948c0f; NEXT_STEP=OPERATOR_SET_PASSWORD_REQUIRED_FLAG_THEN_LOCAL_VERIFY_AND_DISPATCH; EXPANSION_ALLOWED=false. Account cvf-g1-approver exists as enabled SID S-1-5-21-1644666849-912006174-747199667-1008, is non-admin, has expiry and a set password, but Windows reports PasswordRequired=false. The hardened launcher now fails closed. Operator must run elevated `net user cvf-g1-approver /passwordreq:yes`; Local then verifies and may issue the T3B work order. T3C, T3D, T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
-Mode: `acel_g1_t3b_activation_approver_account_provisioning_checkpoint`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_GROUP2_TOOLING_DISPATCHED_AT_97cae8068; NEXT_STEP=OPERATOR_RELAY_COMMITTED_T3B_WORK_ORDER_TO_INTERNAL_AGENT_WORKER; EXPANSION_ALLOWED=false. The approver account is Local-verified: exact SID S-1-5-21-1644666849-912006174-747199667-1008, enabled, password-required, expiring and non-admin; launcher check exits 0. The worker may change exactly five manifest paths, must not use credentials/runas, create real Group 2 sources, stage or commit, and returns COMPLETE_PENDING_REVIEW. Local remains reviewer/closer and independent probe executor. T3C, T3D, T3E, real T3B principal execution, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+Mode: `acel_g1_t3b_group2_tooling_worker_dispatch`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
