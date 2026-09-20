@@ -1,9 +1,9 @@
-# CVF Agent Handoff V63 - ACEL T3B R1 Group 2 Tooling Correction Dispatch
+# CVF Agent Handoff V63 - ACEL T3B R2 Atomic Rotation Contract Correction Dispatch
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `0f9c5d040`. Group 1 is
-`SOURCE_CREATED_LOCAL_VERIFIED`; both T3B principals and exact v1 policy are
-verified/fixed, and the consolidated Group 2 R1 tooling correction is dispatched.
+Current material HEAD recorded for this handoff: `8ba852366`. Group 1 is
+`SOURCE_CREATED_LOCAL_VERIFIED`; the T3B R1 return was independently rejected
+for two root-contract defects, and the atomic-rotation R2 correction is dispatched.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -12,12 +12,12 @@ Status: ACTIVE
 
 ## Purpose
 
-Carry the independently verified Group 1 closure and route the bounded T3B R1
-Group 2 source-tooling correction dispatch and later Local review.
+Carry the independently verified Group 1 closure and route the bounded T3B R2
+atomic-rotation contract correction dispatch and later Local review.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer. Phase: T3B R1 correction worker dispatch. Decision
+Role: Local orchestrator/reviewer. Phase: T3B R2 correction worker dispatch. Decision
 owner: INTERNAL_AGENT worker for exact five-path uncommitted implementation;
 Local for independent probe, review, bounded repair and closure.
 
@@ -27,15 +27,15 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3b_r1_group2_tooling_correction_worker_dispatch`;
+Startup acknowledged: current mode=`acel_g1_t3b_r2_atomic_rotation_contract_correction_worker_dispatch`;
 active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator
-relays the committed T3B R1 correction work order to the INTERNAL_AGENT worker; parked
+relays the committed T3B R2 correction work order to the INTERNAL_AGENT worker; parked
 checkpoint=real T3B source execution plus T3C/T3D/T3E,
 promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-`acel_g1_t3b_r1_group2_tooling_correction_worker_dispatch`.
+`acel_g1_t3b_r2_atomic_rotation_contract_correction_worker_dispatch`.
 
 The active program remains restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
@@ -43,7 +43,7 @@ wave remains `LHW24`.
 
 ## Active Boundary
 
-Only exact five-path T3B R1 tooling correction is open. Real Party A/approver
+Only exact five-path T3B R2 atomic-rotation correction is open. Real Party A/approver
 execution and source creation remain closed.
 
 Remote tracking branch: `origin/main`
@@ -90,6 +90,14 @@ External agent memory files: non-canonical convenience only.
   citation, and packet/evidence-contract coherence.
 - The independent review, R1 baseline and R1 work order committed at
   `0f9c5d040` after focused gates and 89/89 pre-commit checks.
+- The R1 worker return passed its declared self-tests, but Local independent
+  probes proved that its supersession prerequisite required an invalid
+  two-active-version state and that the durable event did not bind the
+  replacement version/hash. R1 is `REWORK_REQUIRED`; this is a root-contract
+  dispatch defect, not a worker-only implementation defect.
+- The R1 completion review plus R2 atomic-rotation baseline/work order committed
+  at `8ba852366` after focused gates and 89/89 pre-commit checks. R2 owns exactly
+  five paths, does not execute either principal, and must not create a real source.
 
 ## T3B Readiness Inputs
 
@@ -102,7 +110,7 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_R1_GROUP2_TOOLING_CORRECTION_DISPATCHED_AT_0f9c5d040; NEXT_STEP=OPERATOR_RELAY_COMMITTED_T3B_R1_WORK_ORDER_TO_INTERNAL_AGENT_WORKER; EXPANSION_ALLOWED=false. The R1 worker must correct exactly the existing five-path manifest for principal-readable handoff ACLs, per-version event-hash binding, fail-closed supersession citation, and packet coherence; it must not use credentials/runas, execute either principal, create real Group 2 sources, stage or commit, and returns COMPLETE_PENDING_REVIEW. Local remains reviewer/closer and independent probe executor. T3C, T3D, T3E, real T3B principal execution, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_R2_ATOMIC_ROTATION_CONTRACT_CORRECTION_DISPATCHED_AT_8ba852366; NEXT_STEP=OPERATOR_RELAY_COMMITTED_T3B_R2_WORK_ORDER_TO_INTERNAL_AGENT_WORKER; EXPANSION_ALLOWED=false. The R2 worker must correct exactly the five-path manifest by implementing an atomic SUPERSEDED transition that durably binds replacementSpecVersion and replacementRecomputedHashHex, revises the root contract, replay, tests and worker return coherently, and preserves the frozen spec writer; it must not use credentials/runas, execute either principal, create real Group 2 sources, stage or commit, and returns COMPLETE_PENDING_REVIEW. Local remains reviewer/closer and independent probe executor. T3C, T3D, T3E, real T3B principal execution, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -114,8 +122,8 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project material commit `0f9c5d040` into
-the active front door and move only to the T3B R1 correction worker-dispatch checkpoint.
+Authorized guard-maintenance scope: project material commit `8ba852366` into
+the active front door and move only to the T3B R2 correction worker-dispatch checkpoint.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
@@ -141,13 +149,13 @@ promotion, admission, live/runtime/public or deployment effect is authorized.
 |---|---|
 | Actor | Local session-sync steward |
 | Provider or surface | private CVF workspace |
-| Session or invocation | ACEL G1 T3B R1 correction-dispatch continuity, 2026-09-20 |
+| Session or invocation | ACEL G1 T3B R2 atomic-rotation correction-dispatch continuity, 2026-09-20 |
 | Working directory | repository root |
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer authority |
-| Before status evidence | material HEAD `0f9c5d040`; independent review and R1 dispatch committed; thirteen parked paths untracked |
-| After status evidence | exact five-path no-commit R1 worker correction is next; real execution remains closed |
+| Before status evidence | material HEAD `8ba852366`; R1 independently rejected and R2 dispatch committed; thirteen parked paths untracked |
+| After status evidence | exact five-path no-commit R2 atomic-rotation correction is next; real execution remains closed |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and Local audit routing only |
 | Claim boundary | no Group 2 source, activation, promotion, admission, live/runtime/public effect |
