@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableExtensions
 
-set "CVF_ACCOUNT=cvf-g1-activation-approver"
+set "CVF_ACCOUNT=cvf-g1-approver"
 for %%I in ("%~dp0..") do set "CVF_REPO=%%~fI"
 
 where pwsh.exe >nul 2>nul

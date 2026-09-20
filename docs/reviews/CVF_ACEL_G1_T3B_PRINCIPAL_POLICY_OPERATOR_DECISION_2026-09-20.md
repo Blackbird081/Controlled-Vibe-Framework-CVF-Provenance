@@ -46,7 +46,13 @@ event or activation occurred.
 Principal decision:
 `APPROVE_DEDICATED_LOCAL_STANDARD_ACCOUNT_CVF_G1_ACTIVATION_APPROVER`.
 
-Approved account name: `cvf-g1-activation-approver`.
+Approved account name after Local platform-compatibility correction:
+`cvf-g1-approver`.
+
+The earlier proposed literal `cvf-g1-activation-approver` was 26 characters
+and therefore not representable as a Windows local SAM account name. Local
+corrected this orchestrator-owned defect before provisioning; the approved
+dedicated-role semantics and separation boundary are unchanged.
 
 Policy decision: `APPROVE_RECOMMENDED_T3B_V1_POLICY_BYTES`.
 
@@ -66,7 +72,7 @@ bytes into `SPEC_v1.json` or authorize an activation event.
 | Path | Principal | Behavior | Check result |
 |---|---|---|---|
 | `scripts/run_as_cvf_g1_party_a.cmd` | `LAM-RUBY\cvf-g1-party-a` | password-free launcher configuration; Windows prompts for password | READY, exit 0 |
-| `scripts/run_as_cvf_g1_activation_approver.cmd` | `LAM-RUBY\cvf-g1-activation-approver` | same launcher behavior; stops if account is absent | ACCOUNT_NOT_FOUND, exit 3, expected until provisioning |
+| `scripts/run_as_cvf_g1_activation_approver.cmd` | `LAM-RUBY\cvf-g1-approver` | same launcher behavior; stops if account is absent | ACCOUNT_NOT_FOUND, exit 3, expected until provisioning |
 
 Both scripts resolve the repository from their own location rather than
 hard-code the workspace path. `--check` verifies PowerShell 7 and account
@@ -103,6 +109,7 @@ membership. No source or activation authority opens automatically.
 | launcher silently targets a missing/wrong account | `net user` preflight and explicit account constant |
 | approver becomes Administrator | create as a standard local user and verify group membership before dispatch |
 | account name is mistaken for operational proof | require Local SID and policy checks after provisioning |
+| proposed name exceeds the Windows local SAM-name limit | use exact 15-character `cvf-g1-approver`; validate platform representability before operator action |
 | approved policy is changed during implementation | bind exact bytes and independently recompute hashes |
 
 ## Checker Source Read-Ahead Block
@@ -124,7 +131,8 @@ approver launcher would fail closed until its approved account exists.
 Evidence Comparison: exact match; exit codes were 0 and 3 respectively.
 
 Contradiction Or Gap Disposition: account provisioning requires an elevated
-operator action; Local will verify it afterward rather than infer success.
+operator action; the first proposed name also exceeded Windows' local account
+name limit, so Local corrected it before provisioning and will verify afterward.
 
 Claim Update: policy bytes and principal name are approved; principal evidence,
 tooling dispatch, Group 2 creation and activation remain unopened.
@@ -134,6 +142,7 @@ tooling dispatch, Group 2 creation and activation remain unopened.
 | Finding | Defect class | Learning lane | Disposition | Next control action | Batch status |
 |---|---|---|---|---|---|
 | repeated manual `runas` command recall is error-prone | OPERATOR_SCOPE_CLARITY_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | use password-free named launcher scripts while preserving OS password prompts | HANDLED_IN_THIS_BATCH |
+| orchestrator proposed a non-representable Windows account name | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | CORRECTED_BEFORE_PROVISIONING | validate platform identity constraints before asking the operator to create a principal | HANDLED_IN_REVIEWER_CORRECTION |
 
 Runtime/provider/cost learning: `N/A_WITH_REASON` because no provider, runtime
 service, token, latency or cost behavior was exercised.

@@ -48,7 +48,7 @@ occurred.
 | specification path | `governance/sources/verification_authority_spec/SPEC_v1.json` | ABSENT_EXPECTED |
 | decision log path | `governance/sources/verification_authority_spec/ACTIVATION_DECISIONS.jsonl` | ABSENT_EXPECTED |
 | path collision | bounded exact search found only T2F and current continuity prose | NO_COLLISION |
-| concrete approver principal | no dedicated `cvf-g1-activation-approver` account or other operator-appointed exact principal exists | MISSING_OPERATOR_INPUT |
+| concrete approver principal | no dedicated `cvf-g1-approver` account or other operator-appointed exact principal exists | MISSING_OPERATOR_INPUT |
 | canonical content contract | T2F defines the outer `canonicalBytesBase64` carrier and hashes but does not define the decoded content schema | ORCHESTRATOR_PACKET_GAP |
 | freshness policy value | T2C requires `freshnessThresholdSeconds`; no exact governed value exists | MISSING_OPERATOR_POLICY |
 
@@ -80,7 +80,7 @@ The selected sequence is:
 
 1. Local proposes and operator approves one exact compact JSON policy payload.
 2. Operator provisions or appoints one exact non-admin dedicated principal,
-   recommended local name `cvf-g1-activation-approver`, distinct from Party A
+   recommended local name `cvf-g1-approver`, distinct from Party A
    and reserved from future Parties B/C.
 3. Local files a fresh GC-018 baseline and bounded no-commit tooling work order.
 4. The worker builds hermetic author/decision tooling only; it does not log on
@@ -110,7 +110,7 @@ canonical bytes and must be decided before the source/tooling work order.
 To open the next packet, the operator must decide both items together:
 
 1. approve creation/use of the dedicated standard local account
-   `cvf-g1-activation-approver` as the exact activation principal; and
+   `cvf-g1-approver` as the exact activation principal; and
 2. approve the recommended compact policy payload above, including
    `freshnessThresholdSeconds=86400`, or provide the exact replacement value.
 
@@ -123,6 +123,7 @@ printed, or supplied to the worker.
 |---|---|
 | Party A self-activates its own bytes | require exact different account name/SID before tooling dispatch and again at execution |
 | general operator account is treated as dedicated authority | require explicit appointment of one exact principal; no inference from account existence |
+| selected local username is not representable by Windows | require the exact account name to fit the 20-character local SAM-name limit before operator provisioning |
 | content hash binds an ambiguous policy | freeze exact compact JCS bytes before implementation; recompute independently |
 | approval is confused with activation | require separate `APPROVED` then `ACTIVATED` events |
 | T3B source is confused with candidate admission | keep T3C/T3D/T3E and candidate evaluation parked |
@@ -159,6 +160,7 @@ Claim Update: T3B is route-selected but not opened; Group 2 remains
 | Finding | Defect class | Learning lane | Disposition | Next control action | Batch status |
 |---|---|---|---|---|---|
 | T2F defined the hash carrier but not the decoded policy schema/value | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | DESIGN_REVIEW_REQUIRED | encode both envelope and hashed-payload schema in the next T3B packet before requesting operator content | HANDLED_IN_THIS_BATCH_BY_ROUTE_STOP |
+| initial approver name exceeded the Windows local-account name limit | ORCHESTRATOR_PACKET_GAP | GOVERNANCE_CONTROL_PLANE | CORRECTED_BEFORE_PROVISIONING | use the 15-character exact name `cvf-g1-approver` and check platform representability before future operator checkpoints | HANDLED_IN_REVIEWER_CORRECTION |
 
 This is a material tranche-local contract gap, not yet evidence of a repeated
 cross-program failure requiring a new global checker.
