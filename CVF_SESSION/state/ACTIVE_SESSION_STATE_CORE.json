@@ -109,8 +109,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "acel_g1_t3b_operator_principal_and_policy_checkpoint",
-  "previousMode": "acel_g1_t3b_readiness_route_selection",
+  "currentMode": "acel_g1_t3b_activation_approver_account_provisioning_checkpoint",
+  "previousMode": "acel_g1_t3b_operator_principal_and_policy_checkpoint",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
