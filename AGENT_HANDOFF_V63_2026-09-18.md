@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Independent Review Probe Foundation Learning
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `c35efbfb9`. Local independently accepted the probe-admission root contract at `4599e5f03`, then reconciled the inherited R2 routing packet; Group 1 remains `SOURCE_NOT_CREATED` and control returns to the Party A operator checkpoint.
+Current material HEAD recorded for this handoff: `9846ca092`. Local repaired PowerShell 7.5 exact-timestamp parsing after the first Party A attempt failed closed; Group 1 remains `SOURCE_NOT_CREATED` and control stays at the Party A operator checkpoint.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -108,7 +108,7 @@ release source creation, implementation, candidate admission or runtime use.
   output was also stale. After the mandatory round-three stop, the operator
   explicitly continued. The fresh R3 assignment is committed at `8eb363f48`;
   pre-dispatch passed 82/82 and material pre-commit passed 89/89.
-- R3-R1 closed both adversarial defects; Local accepted tooling at `ef0091da6`. The independent-probe admission root contract is `CLOSED_PASS_BOUNDED` at `4599e5f03` after Local found and repaired unterminated-HTML-comment and invalid-active-binding fail-open cases. Evidence: 101 focused tests, worker-return fast PASS, reviewer-fast 68/68 and material pre-commit 89/89.
+- R3-R1 tooling was accepted at `ef0091da6`; the first Party A write failed closed on PowerShell 7.5 date coercion, repaired at `9846ca092` with exact-string parsing and a real-parser regression (56/56 PowerShell, 84/84 Python, 89/89 pre-commit). The independent-probe root remains `CLOSED_PASS_BOUNDED` at `4599e5f03`.
 - Thirteen pre-existing untracked G1 evidence paths remain byte-preserved,
   uncommitted and outside this lane; primary-worktree finality remains pending.
 
@@ -214,7 +214,7 @@ Rollback boundary: revert this continuity projection only; preserve committed ma
 
 ## Core Guard Self-Protection Authorization - RIPA Root Closure Continuity
 
-Authorized scope: project closure `4599e5f03` and routing follow-up `c35efbfb9` through six continuity paths
+Authorized scope: project closure `4599e5f03`, routing follow-up `c35efbfb9` and runtime repair `9846ca092` through six continuity paths
 and return to the reviewed T3A-C2 Party A operator checkpoint; actual execution
 remains operator-only. Roll back only this projection and preserve the material
 closure plus thirteen parked paths; no promotion, admission or runtime effect.
