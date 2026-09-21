@@ -1,10 +1,10 @@
-# CVF Agent Handoff V63 - ACEL T3C Group 3 Readiness Audit
+# CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `f85cdf68c`. Group 1 is
+Current material HEAD recorded for this handoff: `b73990089`. Group 1 is
 `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is
 `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; the next open action is
-a Local T3C Group 3 readiness audit and route selection only.
+operator provisioning of exact standard account `cvf-g1-party-b` only.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -19,9 +19,9 @@ and only then Approver decision writes.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer. Phase: T3C Group 3 readiness audit.
-Decision owner: Local for evidence review and route selection; operator for
-any later identity/policy checkpoint or credential-bound execution.
+Role: Local orchestrator/reviewer. Phase: T3C Party B principal checkpoint.
+Decision owner: operator for password-bound account provisioning; Local for
+subsequent SID/posture verification and tooling dispatch.
 
 External research is closed for this lane. A shared-workspace worker, if later
 dispatched, is `INTERNAL_AGENT`; the operator relays its work order only and
@@ -29,15 +29,15 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3c_group3_readiness_audit`;
-active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local
-audits Group 3 readiness and selects a bounded route; parked checkpoint=T3C
-implementation/execution, T3D/T3E and
+Startup acknowledged: current mode=`acel_g1_t3c_party_b_principal_checkpoint`;
+active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator
+creates exact standard local account `cvf-g1-party-b`; parked checkpoint=T3C
+tooling/execution, T3D/T3E and
 promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-`acel_g1_t3c_group3_readiness_audit`.
+`acel_g1_t3c_party_b_principal_checkpoint`.
 
 The active program remains restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
@@ -45,9 +45,9 @@ wave remains `LHW24`.
 
 ## Active Boundary
 
-T3B is closed with one Local-verified active v1 specification. T3C readiness
-analysis and route selection are open; Group 3 tooling, Party B execution and
-all downstream actions remain closed pending that audit.
+T3B is closed with one Local-verified active v1 specification. T3C has a
+principal-first selected route. Only Party B account provisioning is open;
+tooling, source creation and all downstream actions remain closed.
 
 Remote tracking branch: `origin/main`
 
@@ -138,6 +138,9 @@ External agent memory files: non-canonical convenience only.
   `{1}` and rechecked owner/DACL. The event plus activation receipt committed
   at `f85cdf68c`; T3B is
   `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`.
+- Local selected the T3C principal-first route at `b73990089`: exact standard
+  account `cvf-g1-party-b` must be provisioned and verified before hermetic
+  tooling dispatch. Group 3 remains `SOURCE_NOT_CREATED`.
 
 ## T3B Readiness Inputs
 
@@ -150,11 +153,11 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_ACTIVATION_LOCAL_VERIFIED_AT_f85cdf68c; NEXT_STEP=LOCAL_AUDIT_AND_SELECT_T3C_GROUP3_READINESS_ROUTE; EXPANSION_ALLOWED=false. Local may inspect the accepted Group 3 contract, Party B appointment and current filesystem/account posture, then record one readiness route. Do not implement Group 3 tooling, create an observation source, request credentials, execute another principal, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_PARTY_B_ROUTE_SELECTED_AT_b73990089; NEXT_STEP=OPERATOR_PROVISION_EXACT_STANDARD_ACCOUNT_CVF_G1_PARTY_B; EXPANSION_ALLOWED=false. In an elevated Windows PowerShell, create exact local account `cvf-g1-party-b` with an operator-held strong password, 30-day expiry and description `CVF G1 Party B independent registry observer`; set password-required yes. Return only the non-secret account result. Do not create Party C, dispatch tooling, create an observation source, execute another principal, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
-- T3C tooling/source execution pending the Local readiness route;
+- T3C tooling/source execution pending Party B provisioning and Local verification;
 - T3D issuer source and T3E consumer wiring;
 - key promotion or candidate admission;
 - provider/live work, runtime activation, public sync, deployment or production;
@@ -162,8 +165,8 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project material commit `f85cdf68c` into
-the active front door and move only to the T3C readiness audit.
+Authorized guard-maintenance scope: project material commit `b73990089` into
+the active front door and move only to the Party B principal checkpoint.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
@@ -197,8 +200,8 @@ admission, live/runtime/public or deployment effect.
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer authority |
-| Before status evidence | material HEAD `f85cdf68c`; Group 2 v1 uniquely active and independently verified; thirteen parked paths untracked |
-| After status evidence | Local T3C readiness audit is next; implementation and execution remain closed |
+| Before status evidence | material HEAD `b73990089`; T3C principal-first route selected; Party B account absent; thirteen parked paths untracked |
+| After status evidence | Party B standard-account provisioning is next; tooling and execution remain closed |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and Local audit routing only |
 | Claim boundary | continuity only; no Group 2 source, activation, promotion, admission, live/runtime/public effect |

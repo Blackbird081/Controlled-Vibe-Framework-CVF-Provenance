@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "acel_g1_t3c_group3_readiness_audit",
+  "currentMode": "acel_g1_t3c_party_b_principal_checkpoint",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_ACTIVATION_LOCAL_VERIFIED_AT_f85cdf68c; NEXT_STEP=LOCAL_AUDIT_AND_SELECT_T3C_GROUP3_READINESS_ROUTE; EXPANSION_ALLOWED=false. Local may inspect the accepted Group 3 contract, Party B appointment and current filesystem/account posture, then record one readiness route. Do not implement Group 3 tooling, create an observation source, request credentials, execute another principal, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_PARTY_B_ROUTE_SELECTED_AT_b73990089; NEXT_STEP=OPERATOR_PROVISION_EXACT_STANDARD_ACCOUNT_CVF_G1_PARTY_B; EXPANSION_ALLOWED=false. In an elevated Windows PowerShell, create exact local account cvf-g1-party-b with an operator-held strong password, 30-day expiry and description CVF G1 Party B independent registry observer; set password-required yes. Return only the non-secret account result. Do not create Party C, dispatch tooling, create an observation source, execute another principal, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
