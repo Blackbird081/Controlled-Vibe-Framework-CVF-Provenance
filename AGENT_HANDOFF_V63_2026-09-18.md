@@ -1,10 +1,10 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `c322b7dc5`. Group 1 is
+Current material HEAD recorded for this handoff: `7ce1f02fd`. Group 1 is
 `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is
 `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B is verified and
-the next open action is forwarding the committed T3C-C1 tooling work order.
+the next open action is forwarding the committed T3C-C1 R1 correction order.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -137,9 +137,10 @@ External agent memory files: non-canonical convenience only.
   tooling dispatch. Group 3 remains `SOURCE_NOT_CREATED`.
 - Operator provisioned `LAM-RUBY\cvf-g1-party-b`, SID ending `-1009`; Local
   verified enabled/password-required/expiring/non-admin/distinct posture.
-- Four-path T3C-C1 tooling dispatch committed at `c322b7dc5` after reviewer-fast
-  68/68 and pre-commit 89/89; credentials, Party B execution, real log and
-  worker staging/commit are forbidden.
+- Initial T3C-C1 dispatch `c322b7dc5` was rejected for append duplication,
+  rollback/race/blank-line defects and manifest overrun. Consolidated R1
+  committed at `7ce1f02fd` after 89/89 pre-commit; it keeps four worker paths
+  and forbids credentials, Party B execution, real log, staging and commit.
 
 ## T3B Readiness Inputs
 
@@ -152,7 +153,7 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_TOOLING_DISPATCHED_AT_c322b7dc5; NEXT_STEP=OPERATOR_FORWARD_T3C_C1_WORK_ORDER_TO_INTERNAL_AGENT; EXPANSION_ALLOWED=false. Forward `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3C_C1_GROUP3_OBSERVATION_LOG_TOOLING_2026-09-21.md` in full to the shared-workspace INTERNAL_AGENT. Worker executes exactly four paths from current committed HEAD under `WORKER_MUST_NOT_COMMIT`, uses disposable fixtures only, and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Do not provide credentials, execute as Party B, read or create the real Group 3 source, create Party C, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_R1_DISPATCHED_AT_7ce1f02fd; NEXT_STEP=OPERATOR_FORWARD_T3C_C1_R1_WORK_ORDER_TO_INTERNAL_AGENT; EXPANSION_ALLOWED=false. Forward `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3C_C1_R1_GROUP3_OBSERVATION_TRANSACTION_CORRECTION_2026-09-21.md` in full to the shared-workspace INTERNAL_AGENT. Worker repairs exactly four paths from current committed HEAD under `WORKER_MUST_NOT_COMMIT`, uses disposable fixtures only, and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Do not provide credentials, execute as Party B, read or create the real Group 3 source, create Party C, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -164,29 +165,28 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project material commit `c322b7dc5` into
-the active front door and move only to the T3C-C1 worker execution checkpoint.
+Authorized guard-maintenance scope: project R1 dispatch commit `7ce1f02fd` into
+the active front door and retain the T3C-C1 worker execution checkpoint.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
 `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
-`governance/compat/check_acel_g1_verification_authority_spec.py`;
-`governance/compat/test_check_acel_g1_verification_authority_spec.py`;
+`governance/compat/check_acel_g1_registry_observation_log.py`;
+`governance/compat/test_check_acel_g1_registry_observation_log.py`;
 `governance/compat/check_task_class_calibration_owner_evidence.py`;
 `governance/compat/test_check_task_class_calibration_owner_evidence.py`.
-The ACEL checker paths are tracked closure evidence and remain unchanged. The
+The ACEL observation checker paths are uncommitted R1 worker inputs and remain
+unstaged by this continuity commit. The
 task-class checker paths are pre-existing parked evidence listed only for guard
 changed-set accounting; they are not authorized for mutation, staging, or
 commitment by this session-sync change.
 
-Operator authorization: explicit approval of both T3B choices plus standing
-Local reviewer/closer and session-transition authority. Rollback boundary:
-revert only this continuity projection; preserve the Group 1 source, T3B audit,
-decision/launcher, principal-correction and R2 closure commits and all parked
-files. This continuity change creates no Group 2 source and authorizes no
-Approver action before Local verification, credential handling, promotion,
-admission, live/runtime/public or deployment effect.
+Operator authorization: standing Local reviewer/closer, worker-dispatch and
+session-transition authority. Rollback boundary: revert only this continuity
+projection; preserve accepted sources, R1 dispatch, all worker inputs and all
+parked files. This change creates no Group 3 source and authorizes no Party B,
+credential, promotion, admission, live/runtime/public or deployment effect.
 
 ## Agent Operation Trace Block
 
