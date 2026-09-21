@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "acel_g1_t3c_party_b_principal_checkpoint",
+  "currentMode": "acel_g1_t3c_c1_worker_execution_checkpoint",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_PARTY_B_ROUTE_SELECTED_AT_b73990089; NEXT_STEP=OPERATOR_PROVISION_EXACT_STANDARD_ACCOUNT_CVF_G1_PARTY_B; EXPANSION_ALLOWED=false. In an elevated Windows PowerShell, create exact local account cvf-g1-party-b with an operator-held strong password, 30-day expiry and description CVF G1 Party B independent registry observer; set password-required yes. Return only the non-secret account result. Do not create Party C, dispatch tooling, create an observation source, execute another principal, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_TOOLING_DISPATCHED_AT_c322b7dc5; NEXT_STEP=OPERATOR_FORWARD_T3C_C1_WORK_ORDER_TO_INTERNAL_AGENT; EXPANSION_ALLOWED=false. Forward docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3C_C1_GROUP3_OBSERVATION_LOG_TOOLING_2026-09-21.md in full to the shared-workspace INTERNAL_AGENT. Worker executes exactly four paths from current committed HEAD under WORKER_MUST_NOT_COMMIT, uses disposable fixtures only, and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Do not provide credentials, execute as Party B, read or create the real Group 3 source, create Party C, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3B_R2_ATOMIC_ROTATION_CONTRACT_CORRECTION_2026-09-20.md",
-    "baselineSha256": "2b02d0d20d5978a8018afe7c3bf7f339caef555c04ee26a9d515ed51b4978630",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3B_R2_ATOMIC_ROTATION_CONTRACT_CORRECTION_2026-09-20.md",
-    "workOrderSha256": "d582a39cbb798097eecaeb5dda4701b4034f40ecd23d865a286ffa8b0578f0b9"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3C_C1_GROUP3_OBSERVATION_LOG_TOOLING_2026-09-21.md",
+    "baselineSha256": "d354ffa59f2bf93411db711472d885be51177ab14b9c9dca40ddda49fa4d1a7a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3C_C1_GROUP3_OBSERVATION_LOG_TOOLING_2026-09-21.md",
+    "workOrderSha256": "8d387360b55bed3b1367536ed037218cd4e79d048537bcb19bb73ba94e0fd607"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

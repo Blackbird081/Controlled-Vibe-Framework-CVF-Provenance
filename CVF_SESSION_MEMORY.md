@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3c_party_b_principal_checkpoint`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=operator provisions exact standard local account `cvf-g1-party-b`; role=Local orchestrator/reviewer; phase=T3C Party B principal checkpoint; decision owner=operator for password-bound provisioning and Local for SID/posture verification; parked checkpoint=T3C tooling/execution, T3D/T3E, promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3c_c1_worker_execution_checkpoint`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=operator forwards the committed T3C-C1 work order to the shared-workspace INTERNAL_AGENT; role=Local orchestrator/reviewer; phase=T3C-C1 hermetic tooling execution; decision owner=Local; parked checkpoint=Party B real execution/source creation, T3D/T3E, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_t3c_party_b_principal_checkpoint`
-Current mode: `acel_g1_t3c_party_b_principal_checkpoint`; previous mode marker: `acel_g1_t3c_group3_readiness_audit`
+Current mode marker: `acel_g1_t3c_c1_worker_execution_checkpoint`
+Current mode: `acel_g1_t3c_c1_worker_execution_checkpoint`; previous mode marker: `acel_g1_t3c_party_b_principal_checkpoint`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_PARTY_B_ROUTE_SELECTED_AT_b73990089; NEXT_STEP=OPERATOR_PROVISION_EXACT_STANDARD_ACCOUNT_CVF_G1_PARTY_B; EXPANSION_ALLOWED=false. In an elevated Windows PowerShell, create exact local account `cvf-g1-party-b` with an operator-held strong password, 30-day expiry and description `CVF G1 Party B independent registry observer`; set password-required yes. Return only the non-secret account result. Do not create Party C, dispatch tooling, create an observation source, execute another principal, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
-Mode: `acel_g1_t3c_party_b_principal_checkpoint`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_TOOLING_DISPATCHED_AT_c322b7dc5; NEXT_STEP=OPERATOR_FORWARD_T3C_C1_WORK_ORDER_TO_INTERNAL_AGENT; EXPANSION_ALLOWED=false. Forward `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3C_C1_GROUP3_OBSERVATION_LOG_TOOLING_2026-09-21.md` in full to the shared-workspace INTERNAL_AGENT. Worker executes exactly four paths from current committed HEAD under `WORKER_MUST_NOT_COMMIT`, uses disposable fixtures only, and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Do not provide credentials, execute as Party B, read or create the real Group 3 source, create Party C, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+Mode: `acel_g1_t3c_c1_worker_execution_checkpoint`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
