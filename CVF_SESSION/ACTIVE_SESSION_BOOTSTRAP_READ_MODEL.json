@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "acel_g1_t3b_group2_approval_execution_preparation",
+  "currentMode": "acel_g1_t3b_group2_approval_execution_checkpoint",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_SPEC_LOCAL_VERIFIED_AT_89498f172; NEXT_STEP=LOCAL_COMMIT_APPROVER_APPROVED_AUTORUN_THEN_ROUTE_OPERATOR_CHECKPOINT; EXPANSION_ALLOWED=false. Local may commit only the existing Approver launcher configured for one APPROVED event targeting spec version 1, then synchronize the operator checkpoint. ACTIVATED must remain closed until Local independently verifies the approval event and full source pair. T3C/T3D/T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_APPROVED_AUTORUN_READY_AT_3a163417e; NEXT_STEP=OPERATOR_RUN_APPROVER_APPROVED_AUTORUN_UNDER_VERIFIED_PRINCIPAL; EXPANSION_ALLOWED=false. Double-click scripts/run_as_cvf_g1_activation_approver.cmd, enter the Approver password, then type the exact phrase EXECUTE GROUP 2 DECISION APPEND; the launcher automatically appends only APPROVED for spec version 1. Stop after DECISION_APPENDED_PENDING_LOCAL_VERIFICATION and return the output to Local. Do not append ACTIVATED before Local verifies the approval event and full source pair. T3C/T3D/T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
