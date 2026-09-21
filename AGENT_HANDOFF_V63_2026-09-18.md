@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL T3B Group 2 Party A Spec Execution Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `47c8dd462`. Group 1 is
+Current material HEAD recorded for this handoff: `5121004d4`. Group 1 is
 `SOURCE_CREATED_LOCAL_VERIFIED`; T3B R2 tooling is `CLOSED_PASS_BOUNDED`; the
 next open action is the credential-bound Party A Group 2 spec write.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
@@ -112,6 +112,13 @@ External agent memory files: non-canonical convenience only.
 - Party A launcher was corrected at `47c8dd462` to invoke the verified Group 2
   spec writer automatically after `runas`; operator input is now limited to
   the account password and exact ceremony confirmation phrase.
+- The first real Party A attempt on 2026-09-21 failed closed during DACL
+  hardening because a redundant owner rewrite required unavailable privilege.
+  Local verified atomic rollback: neither real Group 2 path remained.
+- Local corrected both Group 2 writers at `5121004d4`: verify the existing
+  creator owner SID, mutate only the DACL, and reject any future `.SetOwner(`
+  regression. Evidence: spec writer 49/49, decision writer 75/75, Python
+  58/58, reviewer-fast 68/68 and pre-commit 89/89.
 
 ## T3B Readiness Inputs
 
@@ -124,7 +131,7 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_PARTY_A_AUTORUN_READY_AT_47c8dd462; NEXT_STEP=OPERATOR_RUN_PARTY_A_GROUP2_SPEC_AUTORUN_UNDER_VERIFIED_PRINCIPAL; EXPANSION_ALLOWED=false. Double-click `scripts/run_as_cvf_g1_party_a.cmd`, enter the Party A password, then type the exact confirmation phrase `EXECUTE GROUP 2 SPEC WRITE`; the launcher invokes the committed writer and exact principal binding automatically. Stop after `SPEC_CREATED_PENDING_LOCAL_VERIFICATION` and return the output to Local for independent source verification. Do not run the Approver decision writer before Local verification. T3C/T3D/T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_STANDARD_PRINCIPAL_DACL_CORRECTED_AT_5121004d4; NEXT_STEP=OPERATOR_RETRY_PARTY_A_GROUP2_SPEC_AUTORUN_UNDER_VERIFIED_PRINCIPAL; EXPANSION_ALLOWED=false. Double-click `scripts/run_as_cvf_g1_party_a.cmd`, enter the Party A password, then type the exact confirmation phrase `EXECUTE GROUP 2 SPEC WRITE`; the launcher invokes the corrected committed writer automatically. Stop after `SPEC_CREATED_PENDING_LOCAL_VERIFICATION` and return the output to Local for independent source and DACL verification. Do not run the Approver decision writer before Local verification. T3C/T3D/T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -136,7 +143,7 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project material commit `47c8dd462` into
+Authorized guard-maintenance scope: project material commit `5121004d4` into
 the active front door and move only to the Party A Group 2 spec-execution checkpoint.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
@@ -171,8 +178,8 @@ admission, live/runtime/public or deployment effect.
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer authority |
-| Before status evidence | material HEAD `47c8dd462`; R2 closed, spec writer tracked and Party A autorun launcher ready; thirteen parked paths untracked |
-| After status evidence | one Party A spec write is next; Approver remains closed pending Local verification |
+| Before status evidence | material HEAD `5121004d4`; failed Party A attempt rolled back; both writers corrected and gated; thirteen parked paths untracked |
+| After status evidence | one Party A spec retry is next; Approver remains closed pending Local verification |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and Local audit routing only |
 | Claim boundary | continuity only; no Group 2 source, activation, promotion, admission, live/runtime/public effect |
