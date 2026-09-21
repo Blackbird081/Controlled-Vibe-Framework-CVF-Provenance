@@ -1,10 +1,10 @@
-# CVF Agent Handoff V63 - ACEL T3B Group 2 Activation Checkpoint
+# CVF Agent Handoff V63 - ACEL T3C Group 3 Readiness Audit
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `961b7e17a`. Group 1 is
-`SOURCE_CREATED_LOCAL_VERIFIED`; the Group 2 v1 spec is
-`APPROVED_LOCAL_VERIFIED_PENDING_ACTIVATION`; the next open action is
-exactly one credential-bound Approver `ACTIVATED` append.
+Current material HEAD recorded for this handoff: `f85cdf68c`. Group 1 is
+`SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is
+`ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; the next open action is
+a Local T3C Group 3 readiness audit and route selection only.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -19,9 +19,9 @@ and only then Approver decision writes.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer. Phase: T3B Approver activation execution
-checkpoint. Decision owner: operator only for the credential-bound Approver
-action; Local for subsequent decision-chain and DACL verification.
+Role: Local orchestrator/reviewer. Phase: T3C Group 3 readiness audit.
+Decision owner: Local for evidence review and route selection; operator for
+any later identity/policy checkpoint or credential-bound execution.
 
 External research is closed for this lane. A shared-workspace worker, if later
 dispatched, is `INTERNAL_AGENT`; the operator relays its work order only and
@@ -29,15 +29,15 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3b_group2_activation_execution_checkpoint`;
-active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator
-runs the one-action `ACTIVATED` autorun launcher; parked checkpoint=Local
-activation verification, plus T3C/T3D/T3E and
+Startup acknowledged: current mode=`acel_g1_t3c_group3_readiness_audit`;
+active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local
+audits Group 3 readiness and selects a bounded route; parked checkpoint=T3C
+implementation/execution, T3D/T3E and
 promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-`acel_g1_t3b_group2_activation_execution_checkpoint`.
+`acel_g1_t3c_group3_readiness_audit`.
 
 The active program remains restricted to
 `agent-capability-engineering-lab__handoff-v2`. Latest closed learning-history
@@ -45,9 +45,9 @@ wave remains `LHW24`.
 
 ## Active Boundary
 
-The spec and its sole `APPROVED` event are Local-verified. Only one Approver
-`ACTIVATED` autorun is open. Every downstream action remains closed until
-Local independently verifies the resulting two-event chain.
+T3B is closed with one Local-verified active v1 specification. T3C readiness
+analysis and route selection are open; Group 3 tooling, Party B execution and
+all downstream actions remain closed pending that audit.
 
 Remote tracking branch: `origin/main`
 
@@ -133,6 +133,11 @@ External agent memory files: non-canonical convenience only.
 - The Approver launcher was changed from `APPROVED` to exactly one
   `ACTIVATED` append for spec version 1 and committed at `961b7e17a` after
   89/89 pre-commit checks.
+- The operator appended one `ACTIVATED` event. Local independently replayed
+  the two-event chain, recomputed both hashes, verified the unique active set
+  `{1}` and rechecked owner/DACL. The event plus activation receipt committed
+  at `f85cdf68c`; T3B is
+  `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`.
 
 ## T3B Readiness Inputs
 
@@ -145,20 +150,20 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_ACTIVATED_AUTORUN_READY_AT_961b7e17a; NEXT_STEP=OPERATOR_RUN_APPROVER_ACTIVATED_AUTORUN_UNDER_VERIFIED_PRINCIPAL; EXPANSION_ALLOWED=false. Double-click `scripts/run_as_cvf_g1_activation_approver.cmd`, enter the Approver password, then type the exact phrase `EXECUTE GROUP 2 DECISION APPEND`; the launcher automatically appends only `ACTIVATED` for spec version 1. Stop after `DECISION_APPENDED_PENDING_LOCAL_VERIFICATION` and return the output to Local. Do not perform T3C/T3D/T3E, key promotion, candidate admission, provider/live, runtime, public-sync or deployment action before Local verifies the activation event and full source pair. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_ACTIVATION_LOCAL_VERIFIED_AT_f85cdf68c; NEXT_STEP=LOCAL_AUDIT_AND_SELECT_T3C_GROUP3_READINESS_ROUTE; EXPANSION_ALLOWED=false. Local may inspect the accepted Group 3 contract, Party B appointment and current filesystem/account posture, then record one readiness route. Do not implement Group 3 tooling, create an observation source, request credentials, execute another principal, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
-- Local activation verification after the credential-bound Approver append;
-- T3C observation source, T3D issuer source, and T3E consumer wiring;
+- T3C tooling/source execution pending the Local readiness route;
+- T3D issuer source and T3E consumer wiring;
 - key promotion or candidate admission;
 - provider/live work, runtime activation, public sync, deployment or production;
 - mutation, staging or commitment of the thirteen parked untracked paths.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project material commit `961b7e17a` into
-the active front door and move only to the Approver activation checkpoint.
+Authorized guard-maintenance scope: project material commit `f85cdf68c` into
+the active front door and move only to the T3C readiness audit.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
@@ -192,8 +197,8 @@ admission, live/runtime/public or deployment effect.
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer authority |
-| Before status evidence | material HEAD `961b7e17a`; Group 2 v1 spec and APPROVED event independently verified and one-action ACTIVATED launcher ready; thirteen parked paths untracked |
-| After status evidence | credential-bound ACTIVATED append is next; all downstream actions remain closed |
+| Before status evidence | material HEAD `f85cdf68c`; Group 2 v1 uniquely active and independently verified; thirteen parked paths untracked |
+| After status evidence | Local T3C readiness audit is next; implementation and execution remain closed |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and Local audit routing only |
 | Claim boundary | continuity only; no Group 2 source, activation, promotion, admission, live/runtime/public effect |
