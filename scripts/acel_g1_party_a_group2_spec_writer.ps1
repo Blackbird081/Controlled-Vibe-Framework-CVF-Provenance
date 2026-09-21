@@ -616,13 +616,14 @@ function New-ExclusiveFile {
 }
 
 # --------------------------------------------------------------------------
-# DACL/ownership hardening (NTFS DACL only, never SeSecurityPrivilege)
+# DACL hardening with owner verification (NTFS DACL only, never SeSecurityPrivilege)
 # --------------------------------------------------------------------------
 
 function Protect-CreatedFileAgainstOtherPrincipal {
     <#
         .SYNOPSIS
-            Harden a just-created file's NTFS DACL (never SACL) so that only
+            Verify the just-created file is already owned by the expected
+            creating principal, then harden its NTFS DACL (never SACL) so only
             the creating principal (current identity) and the built-in
             Administrators/SYSTEM accounts (for Local review/backup) retain
             access, and the named other principal (the approver, for the
@@ -659,12 +660,20 @@ function Protect-CreatedFileAgainstOtherPrincipal {
 
     try {
         $ownerIdentity = [System.Security.Principal.SecurityIdentifier]::new($OwnerAccountSid)
+        $fileInfo = [System.IO.FileInfo]::new($FilePath)
+        $ownerSecurity = [System.IO.FileSystemAclExtensions]::GetAccessControl(
+            $fileInfo, [System.Security.AccessControl.AccessControlSections]::Owner)
+        $actualOwnerSid = $ownerSecurity.GetOwner(
+            [System.Security.Principal.SecurityIdentifier]).Value
+        if ($actualOwnerSid -ne $ownerIdentity.Value) {
+            throw [System.Security.SecurityException]::new(
+                "created file owner '$actualOwnerSid' does not match expected owner '$($ownerIdentity.Value)'")
+        }
+
         $fileSecurity = [System.Security.AccessControl.FileSecurity]::new()
         # Disable inheritance and remove any inherited rules: the ACL that
         # results is exactly and only what this function adds below.
         $fileSecurity.SetAccessRuleProtection($true, $false)
-
-        $fileSecurity.SetOwner($ownerIdentity)
 
         $fileSecurity.AddAccessRule([System.Security.AccessControl.FileSystemAccessRule]::new(
                 $ownerIdentity,
@@ -682,7 +691,7 @@ function Protect-CreatedFileAgainstOtherPrincipal {
         }
 
         [System.IO.FileSystemAclExtensions]::SetAccessControl(
-            [System.IO.FileInfo]::new($FilePath), $fileSecurity)
+            $fileInfo, $fileSecurity)
         return $true
     } catch {
         Stop-Writer -GuardId 'DACL_HARDENING_FAILED' -Message (
@@ -1231,12 +1240,10 @@ function Invoke-SelfTest {
         #      `S-1-5-32-544` / `BUILTIN\Administrators`, granting neither the
         #      Approver SID nor the Local SID any explicit rule).
         #
-        #      `SetOwner` cannot be pointed at an arbitrary unprivileged SID
-        #      without `SeRestorePrivilege` (proven during R1 hardening: it
-        #      throws "the security identifier is not allowed to be the
-        #      owner of this object"), so the owner here is necessarily the
-        #      current agent identity, exactly as every other write in this
-        #      suite uses. On some hosts the current identity's own SID may
+        #      The hardener verifies the existing owner and never rewrites
+        #      ownership, because even a redundant `SetOwner` can require
+        #      WRITE_OWNER/SeRestorePrivilege for a standard principal. On
+        #      some hosts the current identity's own SID may
         #      numerically equal one of the two real reviewer/approver SIDs
         #      (they are environment-specific well-known local accounts, not
         #      reserved values); when that happens the owner and reader ACEs
@@ -1324,6 +1331,10 @@ function Invoke-SelfTest {
         )
         Add-TestResult -CaseId 'T3B-RV-1-F' -Contract 'T3B-RV-1' -Passed $orchestrationDoesNotRelyOnAdminsAlone `
             -Detail 'real-mode orchestration no longer passes only BUILTIN\Administrators (S-1-5-32-544) as the sole reader SID'
+
+        $hardenerDoesNotRewriteOwner = ($writerSourceForAclCheck -notmatch '\.SetOwner\(')
+        Add-TestResult -CaseId 'T3B-RV-1-G' -Contract 'T3B-RV-1' -Passed $hardenerDoesNotRewriteOwner `
+            -Detail 'DACL hardener verifies the creator-owned file and never rewrites owner metadata requiring WRITE_OWNER/SeRestorePrivilege'
 
         # ---- T3B-09: no Party A contact -------------------------------------
         $partyAUntouched = ($current.Name -notlike '*cvf-g1-party-a*')

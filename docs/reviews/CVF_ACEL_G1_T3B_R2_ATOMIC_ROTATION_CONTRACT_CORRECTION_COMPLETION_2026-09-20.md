@@ -8,6 +8,8 @@ Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-20
 
+Post-closure correction date: 2026-09-21
+
 executionBaseHead: `d87a01115f1d37991bf90d2ac0cbcbf9c4e27362`
 
 closureBaseHead: `d87a01115f1d37991bf90d2ac0cbcbf9c4e27362`
@@ -53,6 +55,8 @@ Review-Cost Telemetry: REQUIRED
 Close the bounded R2 correction after evaluating the returned evidence,
 independently probing the atomic-rotation seam, and applying two localized
 reviewer repairs that do not change the accepted design or authority boundary.
+This review also records the later standard-principal DACL correction exposed
+by the first real Party A execution attempt.
 
 ## Scope / Methodology
 
@@ -75,11 +79,11 @@ action occurred.
 | Artifact | SHA-256 at review | Disposition |
 |---|---|---|
 | controlling T2F contract | `b7162d6dabd901e047db63b8dbca2a21504c2c5548f327587ef8cac0bcfc85e4` | ACCEPT |
-| decision writer | `cf7d3d6c5c897bd1c4e1ed7801a4b34fddcafe5b5ea3812884e82c6dde3cb366` | ACCEPT_WITH_REVIEWER_COMMENT_REPAIR |
+| decision writer | `9176407dcd879f6f1b1159ae85d8c0bce05700857a3cd660f44da712b811cc61` | ACCEPT_WITH_POST_CLOSURE_DACL_REPAIR |
 | Python checker | `f696de73068567b372633a2b7745495261a7fb61d21facb7eeb34e7e72b6f6a2` | ACCEPT |
 | Python focused tests | `73cbce6418a4ca27a9d2838c9f02ebe8dbfe0f8c7b29105ec5e0ec6d7191b670` | ACCEPT |
 | corrected worker return | `2f2ca393526983c13c5bfe91127e03ba24b6086919ca724c9860ee5d7e9f70df` | ACCEPT_WITH_REVIEWER_EVIDENCE_REPAIR |
-| frozen spec writer | `226b081d20f7e1aaf0c0b672c0dd004ebd53bd0b2350ca87ac38e829c7cb62e6` | MATCH_UNCHANGED |
+| spec writer | `039e7f3b0f870a17e9b82270c813919aee8f716697245455937ff17c62160dbc` | ACCEPT_WITH_POST_CLOSURE_DACL_REPAIR |
 
 ## Findings / Position
 
@@ -89,10 +93,41 @@ No implementation-blocking finding remains.
 |---|---|---|---|---|
 | T3B-R2-RV-01 | LOW | Worker return reported Python 65/65, while direct execution produced 58/58. | Corrected all five count claims, elapsed time, and delta from +18 to +11. | CLOSED_LOCAL_REPAIR |
 | T3B-R2-RV-02 | LOW | Two decision-writer comments retained the obsolete R1 statement that a replacement required prior activation. | Updated comments to the implemented rule: prior approval plus inactive/non-superseded state. | CLOSED_LOCAL_REPAIR |
+| T3B-R2-RV-03 | HIGH | The first real standard-principal Party A run failed at DACL hardening because both writers redundantly called `SetOwner`, which can require `WRITE_OWNER` or `SeRestorePrivilege`. | Verified failure-atomic rollback, removed owner mutation from both writers, added exact-owner verification and a machine regression in each self-test. | CLOSED_LOCAL_REPAIR_PENDING_REAL_RETRY |
 
-Both repairs are localized evidence/comment corrections. They do not change the
-algorithm, schema, allowed paths, authority ceiling, external effects or
-accepted atomic-rotation design.
+The first two repairs are localized evidence/comment corrections. The third is
+a shared Windows authorization correction: it preserves the required owner and
+DACL policy while removing an unnecessary privilege demand. It does not change
+the record algorithm, schema, allowed paths, authority ceiling or accepted
+atomic-rotation design.
+
+## Post-Closure Standard-Principal DACL Correction
+
+The first real Party A execution reached exclusive creation and then failed
+closed with `DACL_HARDENING_FAILED` / unauthorized `SetAccessControl`. Local
+confirmed that both `SPEC_v1.json` and its newly-created directory were removed;
+no partial Group 2 source remained.
+
+Root cause: the DACL helper created a fresh security descriptor and explicitly
+called `SetOwner` even though the newly-created file was already owned by the
+current standard principal. Windows may require `WRITE_OWNER` or
+`SeRestorePrivilege` for that redundant owner-section write. The corrected
+helper reads and verifies the existing owner SID, constructs only the DACL
+section, disables inheritance, adds the bounded ACE set and persists only that
+modified access section. It never weakens the non-elevated principal boundary.
+
+The same helper defect existed in the Approver writer, so Local corrected both
+surfaces before any Approver execution. Hermetic results after correction:
+
+- Party A spec writer: 49/49 PASS;
+- Approver decision writer: 75/75 PASS;
+- Python verification-authority suite: 58/58 PASS;
+- real Group 2 spec and decision paths: absent before retry.
+
+The new source-level regression fails if `.SetOwner(` reappears. A real
+standard-principal retry remains necessary to prove the host authorization
+boundary; until then Group 2 is not established and Approver execution remains
+closed.
 
 ## Independent Probe Evidence
 
@@ -105,6 +140,10 @@ accepted atomic-rotation design.
 - frozen spec-writer hash: MATCH;
 - staging: empty;
 - real `SPEC_v1.json` and `ACTIVATION_DECISIONS.jsonl`: both absent.
+
+Post-closure correction evidence supersedes only the writer self-test counts:
+spec writer 49/49 and decision writer 75/75. The original 48/48 and 74/74 rows
+remain historical evidence for the pre-correction closure commit.
 
 ### Reviewer probe
 
@@ -328,20 +367,20 @@ or mutation/staging of the thirteen parked paths.
 |---|---|
 | Actor | Local orchestrator/reviewer |
 | Provider or surface | private CVF workspace |
-| Session or invocation | ACEL-G1-T3B-R2 completion review, 2026-09-20 |
+| Session or invocation | ACEL-G1-T3B-R2 completion review, 2026-09-20; standard-principal DACL correction, 2026-09-21 |
 | Working directory | repository root |
-| Command or tool surface | governed reads, direct Python suite, PowerShell self-test, three focused independent probes, apply_patch, worker-return fast gate, Git and closure gates |
-| Target paths | exact five R2 worker paths, frozen spec writer, R2 work order and this completion review |
+| Command or tool surface | governed reads, direct Python suite, both PowerShell self-tests, three focused independent probes, real-failure rollback inspection, apply_patch, reviewer-fast, Git and closure gates |
+| Target paths | exact five R2 worker paths, spec writer, decision writer, R2 work order and this completion review |
 | Allowed scope source | R2 work order Review Gate and standing Local reviewer/closer authority |
-| Before status evidence | R2 return COMPLETE_PENDING_REVIEW; staging empty; real Group 2 paths absent |
-| After status evidence | R2 accepted bounded with count/comment repairs; operational execution remains separate |
-| Diff evidence | exact staged manifest and gates checked before material commit |
+| Before status evidence | R2 return accepted; first real Party A attempt failed closed at redundant owner rewrite; both real Group 2 paths absent after rollback |
+| After status evidence | R2 accepted bounded with count/comment repairs plus shared DACL owner-verification correction; operational retry remains separate |
+| Diff evidence | exact three-path post-closure correction, 49/49 and 75/75 PowerShell, 58/58 Python, reviewer-fast 68/68 and pre-commit gate before material commit |
 | Approval boundary | tooling closure and next principal-execution routing only |
-| Claim boundary | no real source, activation, key promotion, admission, provider/live/runtime/public/deployment effect |
+| Claim boundary | failed principal attempt rolled back completely; no durable Group 2 source, activation, key promotion, admission, provider/live/runtime/public/deployment effect |
 | Agent type | Local reviewer/closer |
-| Invocation ID | `acel-g1-t3b-r2-atomic-rotation-review-20260920` |
-| Expected manifest | five worker paths plus R2 work-order closure and this review |
-| Actual changed set | reconciled before material commit |
+| Invocation ID | `acel-g1-t3b-r2-atomic-rotation-review-20260920`; `acel-g1-t3b-standard-principal-dacl-correction-20260921` |
+| Expected manifest | original R2 closure manifest; post-closure correction limited to both Group 2 writers and this review |
+| Actual changed set | exact post-closure three-path material batch reconciled before commit |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | none |
 
@@ -355,7 +394,7 @@ or mutation/staging of the thirteen parked paths.
 | Registry JSON | no registry mutation in scope | exact worker manifest | BLOCKED with reason: GC-051 registry mutation is outside this bounded tooling correction |
 | Registry Markdown | no registry mutation in scope | exact worker manifest | BLOCKED with reason: GC-051 registry mutation is outside this bounded tooling correction |
 | External evidence digest | no external evidence admitted | internal/local coordination binding | N/A with reason: local repository evidence only |
-| System loop interlock | T2F contract, decision writer and independent checker | 74/74 PowerShell, 58/58 Python, 3/3 reviewer probes | PASS |
+| System loop interlock | T2F contract, both writers and independent checker | 49/49 spec writer, 75/75 decision writer, 58/58 Python, 3/3 reviewer probes | PASS |
 | Session continuity | active handoff and generated session state | separate post-material synchronization | BLOCKED with reason: pending material commit SHA |
 
 ## MFRP P4-C1 Observation Disposition

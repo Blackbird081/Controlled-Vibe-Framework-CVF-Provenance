@@ -1214,13 +1214,14 @@ function Add-ExclusiveAppendLine {
 }
 
 # --------------------------------------------------------------------------
-# DACL/ownership hardening (NTFS DACL only, never SeSecurityPrivilege)
+# DACL hardening with owner verification (NTFS DACL only, never SeSecurityPrivilege)
 # --------------------------------------------------------------------------
 
 function Protect-CreatedFileAgainstOtherPrincipal {
     <#
         .SYNOPSIS
-            Harden a file's NTFS DACL (never SACL) so that only the
+            Verify the file is already owned by the expected writing
+            principal, then harden its NTFS DACL (never SACL) so that only the
             currently-writing principal and named Local-reader SIDs retain
             explicit access; the other principal (Party A, for this
             approver-owned decisions file) has no explicit grant. See the
@@ -1235,9 +1236,18 @@ function Protect-CreatedFileAgainstOtherPrincipal {
 
     try {
         $ownerIdentity = [System.Security.Principal.SecurityIdentifier]::new($OwnerAccountSid)
+        $fileInfo = [System.IO.FileInfo]::new($FilePath)
+        $ownerSecurity = [System.IO.FileSystemAclExtensions]::GetAccessControl(
+            $fileInfo, [System.Security.AccessControl.AccessControlSections]::Owner)
+        $actualOwnerSid = $ownerSecurity.GetOwner(
+            [System.Security.Principal.SecurityIdentifier]).Value
+        if ($actualOwnerSid -ne $ownerIdentity.Value) {
+            throw [System.Security.SecurityException]::new(
+                "created file owner '$actualOwnerSid' does not match expected owner '$($ownerIdentity.Value)'")
+        }
+
         $fileSecurity = [System.Security.AccessControl.FileSecurity]::new()
         $fileSecurity.SetAccessRuleProtection($true, $false)
-        $fileSecurity.SetOwner($ownerIdentity)
 
         $fileSecurity.AddAccessRule([System.Security.AccessControl.FileSystemAccessRule]::new(
                 $ownerIdentity,
@@ -1255,7 +1265,7 @@ function Protect-CreatedFileAgainstOtherPrincipal {
         }
 
         [System.IO.FileSystemAclExtensions]::SetAccessControl(
-            [System.IO.FileInfo]::new($FilePath), $fileSecurity)
+            $fileInfo, $fileSecurity)
         return $true
     } catch {
         Stop-Writer -GuardId 'DACL_HARDENING_FAILED' -Message (
@@ -2246,10 +2256,10 @@ function Invoke-SelfTest {
         #      FAILED against the pre-R1 implementation (which passed only
         #      `S-1-5-32-544` / `BUILTIN\Administrators`).
         #
-        #      `SetOwner` cannot be pointed at an arbitrary unprivileged SID
-        #      without `SeRestorePrivilege` (same constraint proven in the
-        #      twin spec-writer test), so the owner here is necessarily the
-        #      current agent identity; on hosts where the current identity's
+        #      The hardener verifies the existing owner and never rewrites
+        #      ownership, because even a redundant `SetOwner` can require
+        #      WRITE_OWNER/SeRestorePrivilege for a standard principal. On
+        #      hosts where the current identity's
         #      own SID happens to equal the real Local reviewer SID, the
         #      owner and reader ACEs legitimately collapse into one merged
         #      FullControl rule, which is correct ACL semantics and not a
@@ -2310,6 +2320,10 @@ function Invoke-SelfTest {
         )
         Add-TestResult -CaseId 'T3B-RV-1-E' -Contract 'T3B-RV-1' -Passed $orchestrationDoesNotRelyOnAdminsAlone `
             -Detail 'real-mode orchestration no longer passes only BUILTIN\Administrators (S-1-5-32-544) as the sole reader SID'
+
+        $hardenerDoesNotRewriteOwner = ($writerSourceForAclCheck -notmatch '\.SetOwner\(')
+        Add-TestResult -CaseId 'T3B-RV-1-F' -Contract 'T3B-RV-1' -Passed $hardenerDoesNotRewriteOwner `
+            -Detail 'DACL hardener verifies the creator-owned file and never rewrites owner metadata requiring WRITE_OWNER/SeRestorePrivilege'
 
         # ---- T3B-09: no approver contact ------------------------------------
         $approverUntouched = ($current.Name -notlike '*cvf-g1-approver*')
