@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "acel_g1_t3b_group2_activation_execution_preparation",
+  "currentMode": "acel_g1_t3b_group2_activation_execution_checkpoint",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_APPROVAL_LOCAL_VERIFIED_AT_83eccf3e6; NEXT_STEP=LOCAL_COMMIT_APPROVER_ACTIVATED_AUTORUN_THEN_ROUTE_OPERATOR_CHECKPOINT; EXPANSION_ALLOWED=false. Local may commit only the existing Approver launcher configured for one ACTIVATED event targeting spec version 1, then synchronize the operator checkpoint. No additional decision, T3C/T3D/T3E, key promotion, candidate admission, provider/live, runtime, public-sync or deployment action is open. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_ACTIVATED_AUTORUN_READY_AT_961b7e17a; NEXT_STEP=OPERATOR_RUN_APPROVER_ACTIVATED_AUTORUN_UNDER_VERIFIED_PRINCIPAL; EXPANSION_ALLOWED=false. Double-click scripts/run_as_cvf_g1_activation_approver.cmd, enter the Approver password, then type the exact phrase EXECUTE GROUP 2 DECISION APPEND; the launcher automatically appends only ACTIVATED for spec version 1. Stop after DECISION_APPENDED_PENDING_LOCAL_VERIFICATION and return the output to Local. Do not perform T3C/T3D/T3E, key promotion, candidate admission, provider/live, runtime, public-sync or deployment action before Local verifies the activation event and full source pair. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
