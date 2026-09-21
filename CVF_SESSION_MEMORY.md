@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3b_group2_party_a_spec_execution_checkpoint`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=operator runs the committed Group 2 spec writer as verified Party A and returns `SPEC_CREATED_PENDING_LOCAL_VERIFICATION`; role=Local orchestrator/reviewer; phase=T3B credential-bound Party A spec creation; decision owner=operator for Party A execution and Local for independent verification plus later Approver authorization; parked checkpoint=Approver execution until Local verification, T3C/T3D/T3E, promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3b_group2_approval_execution_preparation`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local commits the one-action Approver `APPROVED` autorun and routes the operator checkpoint; role=Local orchestrator/reviewer; phase=T3B approval execution preparation; decision owner=Local for launcher configuration/verification and operator for credential-bound execution; parked checkpoint=`ACTIVATED` until Local verifies approval, T3C/T3D/T3E, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_t3b_group2_party_a_spec_execution_checkpoint`
-Current mode: `acel_g1_t3b_group2_party_a_spec_execution_checkpoint`; previous mode marker: `acel_g1_t3b_r2_atomic_rotation_contract_correction_worker_dispatch`
+Current mode marker: `acel_g1_t3b_group2_approval_execution_preparation`
+Current mode: `acel_g1_t3b_group2_approval_execution_preparation`; previous mode marker: `acel_g1_t3b_group2_party_a_spec_execution_checkpoint`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_STANDARD_PRINCIPAL_DACL_CORRECTED_AT_5121004d4; NEXT_STEP=OPERATOR_RETRY_PARTY_A_GROUP2_SPEC_AUTORUN_UNDER_VERIFIED_PRINCIPAL; EXPANSION_ALLOWED=false. Double-click `scripts/run_as_cvf_g1_party_a.cmd`, enter the Party A password, then type the exact confirmation phrase `EXECUTE GROUP 2 SPEC WRITE`; the launcher invokes the corrected committed writer automatically. Stop after `SPEC_CREATED_PENDING_LOCAL_VERIFICATION` and return the output to Local for independent source and DACL verification. Do not run the Approver decision writer before Local verification. T3C/T3D/T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
-Mode: `acel_g1_t3b_group2_party_a_spec_execution_checkpoint`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3B_SPEC_LOCAL_VERIFIED_AT_89498f172; NEXT_STEP=LOCAL_COMMIT_APPROVER_APPROVED_AUTORUN_THEN_ROUTE_OPERATOR_CHECKPOINT; EXPANSION_ALLOWED=false. Local may commit only the existing Approver launcher configured for one `APPROVED` event targeting spec version 1, then synchronize the operator checkpoint. `ACTIVATED` must remain closed until Local independently verifies the approval event and full source pair. T3C/T3D/T3E, key promotion, candidate admission, provider/live, runtime, public-sync and deployment remain parked. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+Mode: `acel_g1_t3b_group2_approval_execution_preparation`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
