@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2873,
+  "stateKey": "cvfHrltpT2Dispatch20260923",
+  "value": "CVF-HRLTP-T2 operational role-capability consistency is DISPATCHED at material commit 19466bfdc. The committed selection audit, GC-018 baseline and work order authorize a static forward-only actor-resource-operation-capability-evidence-owner relation inside the existing HRLTP owner, including distinct parent-directory child-deletion semantics, recovery/residue/cleanup ownership, proof-ceiling rules and pre-dispatch catalog wiring. The INTERNAL_AGENT worker owns exactly eight paths, must preserve thirteen parked untracked paths, and must not stage or commit. Actual-token proof, ACL solving, alternate-principal execution, ACEL/source operations, provider/live calls, runtime activation, public sync and deployment remain outside scope. Full pre-commit passed 90/90 and P4-C1 skipped with no eligible candidate."
+}
