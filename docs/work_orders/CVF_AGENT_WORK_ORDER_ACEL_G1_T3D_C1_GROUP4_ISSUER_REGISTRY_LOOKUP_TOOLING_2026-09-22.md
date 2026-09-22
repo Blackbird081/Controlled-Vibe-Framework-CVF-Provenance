@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED
 
 Date: 2026-09-22
 
@@ -293,8 +293,12 @@ artifact may remain in the repository.
 | `governance/sources/registry_observation_log/LOG.jsonl` | accepted Group 3 source is immutable in this tranche |
 | `scripts/run_as_cvf_g1_party_c.cmd` | launchers are Local/operator-owned after tooling acceptance |
 | `scripts/run_as_cvf_g1_party_b.cmd` | existing operator launcher is outside worker scope |
-| `CVF_SESSION/**` | session sync is Local-owned |
 | `AGENT_HANDOFF_V63_2026-09-18.md` | active handoff is Local-owned |
+
+The worker remained forbidden from all `CVF_SESSION/**` mutation. At terminal
+closure, Local may update only the generated current-authority projection
+needed to bind this work order's closed hash; that projection is closer-owned
+and remains separate from worker scope.
 
 ## Forbidden Filesystem State At Dispatch
 
@@ -331,7 +335,7 @@ do not edit, stage, delete, rename, claim or commit them:
 | Response writer self-test | `scripts/acel_g1_party_b_group4_lookup_response_writer.ps1` | receipt/chain, real peer, security rollback PASS | Yes |
 | Independent checker self-test | `governance/compat/check_acel_g1_issuer_registry.py` | all positive and adversarial fixtures PASS | Yes |
 | Focused tests | `governance/compat/test_check_acel_g1_issuer_registry.py` | zero failures after final edit | Yes |
-| Worker return binding | canonical return | identical SHA-256 before/after final required gate and `NO_POST_GATE_MUTATION` | Yes |
+| Worker return binding | canonical return | MATCH: SHA-256 before/after final required gate and `NO_POST_GATE_MUTATION` | Yes |
 
 ## Required First Reads
 
@@ -718,18 +722,18 @@ Non-applicable sections remain present with an explicit reason.
 
 ## Acceptance Criteria
 
-- [ ] Both tools default to non-mutating self-test and enforce exact real-mode principal/path/confirmation gates.
-- [ ] Strict schemas, RFC 8785 bytes, base64url, hashes, validation order, receipt eligibility and chain semantics match T2F exactly.
-- [ ] UUID idempotency, three-argument evaluator adaptation, exact LF JSONL framing and first-failure taxonomy are deterministic.
-- [ ] Registry and response DACLs/owners are exact, distinct and read back semantically.
-- [ ] Registry publication and response replacement are pre-hardened, same-volume and crash-atomic with no insecure visibility window.
-- [ ] Exact ordered ACE vectors and separate semantic effective-access tuples both pass on success and rollback.
-- [ ] The exact three-field issuer-content profile is enforced without broad RFC 8785 overclaim.
-- [ ] Real second processes prove exclusion, cleanup and exact rollback without sleep-as-proof.
-- [ ] Checker is read-only and all focused positive/adversarial tests pass.
-- [ ] Exactly five worker paths change; all forbidden and parked state remains intact.
-- [ ] Final active-work-order gate exits zero and return SHA-256 is unchanged across it.
-- [ ] Return declares `COMPLETE_PENDING_REVIEW` with reviewer probe still pending.
+- [x] Both tools default to non-mutating self-test and enforce exact real-mode principal/path/confirmation gates.
+- [x] Strict schemas, RFC 8785 bytes, base64url, hashes, validation order, receipt eligibility and chain semantics match T2F exactly.
+- [x] UUID idempotency, three-argument evaluator adaptation, exact LF JSONL framing and first-failure taxonomy are deterministic.
+- [x] Registry and response DACLs/owners are exact, distinct and read back semantically.
+- [x] Registry publication and response replacement are pre-hardened, same-volume and crash-atomic with no insecure visibility window.
+- [x] Exact ordered ACE vectors and separate semantic effective-access tuples both pass on success and rollback.
+- [x] The exact three-field issuer-content profile is enforced without broad RFC 8785 overclaim.
+- [x] Real second processes prove exclusion, cleanup and exact rollback without sleep-as-proof.
+- [x] Checker is read-only and all focused positive/adversarial tests pass.
+- [x] Exactly five worker paths change; all forbidden and parked state remains intact.
+- [x] Final active-work-order gate exits zero and return SHA-256 is unchanged across it.
+- [x] Return declares `COMPLETE_PENDING_REVIEW` with reviewer probe still pending.
 
 Closure fails on copied digest evidence, parser-only equality, missing closed
 field, self-observation, widened access, partial append, timing-only proof,
@@ -796,12 +800,12 @@ undispatched.
 
 ## Closure Checklist
 
-- [ ] source/claim/manifest integrity and exact focused tests pass;
-- [ ] return-time closeability recheck has no outside-authority blocker;
-- [ ] worker-return fast, reviewer-fast, pre-commit and split-range closure pass;
-- [ ] no open checkbox in terminal evidence, failed gate or unowned path remains;
-- [ ] final disposition is at most `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`;
-- [ ] material and continuity commits are separate and truthful.
+- [x] source/claim/manifest integrity and exact focused tests pass;
+- [x] return-time closeability recheck has no outside-authority blocker;
+- [x] worker-return fast, reviewer-fast, pre-commit and split-range closure pass;
+- [x] no open checkbox in terminal evidence, failed gate or unowned path remains;
+- [x] final disposition is at most `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`;
+- [x] material and continuity commits are separate and truthful.
 
 ## Reviewer Closure Conversion
 
@@ -812,18 +816,30 @@ undispatched.
 | closureOwner | Local reviewer/closer |
 | workerCommitPermission | FORBIDDEN |
 
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| exact response admission | strict receipt eligibility, stored-row replay and first-failure taxonomy | Python 82/82 and checker 9/9 | PASS |
+| registry publication | guarded, pre-hardened, create-only and crash-atomic | Party C 53/53 | PASS |
+| lookup append | guarded, idempotent, copy-on-write and publication-owned rollback | Party B 51/51 | PASS |
+| independent review | distinct read-only actor and exact terminal hashes | completion review records `PASS_INDEPENDENT_PROBE` | PASS |
+| source boundary | no operational registry or response source in T3D-C1 | both real source paths absent | PASS |
+
 ## Machine Closure Package
 
-| Closure item | Required artifact/path | Final requirement |
-|---|---|---|
-| Work order | this file | committed DISPATCH_READY authority |
-| Worker return | canonical return path | COMPLETE_PENDING_REVIEW, exact hash bound |
-| Focused tooling | four code/test paths | all required commands PASS |
-| Registry JSON | real Group 4 source | BLOCKED with reason: later operator checkpoint |
-| Registry Markdown | source registry mutation | BLOCKED with reason: no source in C1 |
-| External evidence digest | external input | N/A with reason: internal evidence only |
-| System loop interlock | source creation, second observation, T3E | all remain closed |
-| Session continuity | active handoff/state | Local-owned separate commit |
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this file | `Status: CLOSED` | PASS |
+| Worker return | canonical return path | `COMPLETE_PENDING_REVIEW`; exact hash bound | PASS |
+| Completion or reviewer artifact | reviewer-owned completion path | `CLOSED_PASS_BOUNDED`; independent probe PASS | PASS |
+| Roadmap state | active ACEL continuity | T3D-C1 closes; T3D-C2 remains separately gated | PASS |
+| Focused tooling | four code/test paths | Python 82/82; checker 9/9; Party C 53/53; Party B 51/51 | PASS |
+| Registry JSON | real Group 4 source | absent | BLOCKED with reason: later operator checkpoint |
+| Registry Markdown | source registry mutation | no source mutation | BLOCKED with reason: no source in C1 |
+| External evidence digest | external input | no external evidence | N/A with reason: internal evidence only |
+| System loop interlock | source creation, second observation, T3E | all remain closed | PASS |
+| Session continuity | active handoff/state | separate post-material commit | BLOCKED with reason: pending material commit SHA |
 
 ## Agent Operation Trace Block
 

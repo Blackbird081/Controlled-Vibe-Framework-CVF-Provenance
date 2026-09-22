@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C1_GROUP4_ISSUER_REGISTRY_LOOKUP_TOOLING_2026-09-22.md",
     "baselineSha256": "8ccdd35ee381cbae4c2a453207d9205225a161fa2553483ef7f6aec085452a65",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C1_GROUP4_ISSUER_REGISTRY_LOOKUP_TOOLING_2026-09-22.md",
-    "workOrderSha256": "984579ab2fd05759b2406571f88fb3b9a61547e08f51cd63ad746c1315ba592c"
+    "workOrderSha256": "0bc0487f472429f013e5547633c02c88740301ed84e56c251f7c557f0e9e11f0"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
