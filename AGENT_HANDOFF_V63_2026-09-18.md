@@ -1,14 +1,14 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `dd1d0f344`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
+Current material HEAD: `d1f231256`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
 Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B and
 accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim.
 MCP/MUO discussion remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED`
 at `820aae3ec`: one Party B observation, exact registry-byte binding, hash
 chain, owner and protected four-ACE DACL passed Local verification. No second
 observation is authorized. Party C is Local verified; the T3D-C0 contract
-amendment packet is committed at `dd1d0f344`, while Group 4 implementation and
-T3E remain closed.
+amendment packet was dispatched at `dd1d0f344` and its pre-edit return contract
+was corrected at `d1f231256`; Group 4 implementation and T3E remain closed.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -147,7 +147,7 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C0_CONTRACT_AMENDMENT_DISPATCHED_AT_DD1D0F344; NEXT_STEP=INTERNAL_AGENT_EXECUTES_THE_COMMITTED_T3D_C0_WORK_ORDER_AND_RETURNS_EXACTLY_TWO_UNCOMMITTED_DOCUMENT_OUTPUTS_FOR_LOCAL_REVIEW; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. T3D-C1 implementation, real Group 4 source, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C0_CONTRACT_AMENDMENT_PACKET_CORRECTED_AT_D1F231256; NEXT_STEP=INTERNAL_AGENT_EXECUTES_THE_COMMITTED_T3D_C0_WORK_ORDER_AND_RETURNS_EXACTLY_TWO_UNCOMMITTED_DOCUMENT_OUTPUTS_FOR_LOCAL_REVIEW; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. T3D-C1 implementation, real Group 4 source, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
