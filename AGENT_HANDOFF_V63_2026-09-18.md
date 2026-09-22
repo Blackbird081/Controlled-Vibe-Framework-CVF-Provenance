@@ -1,8 +1,8 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `9ed844c2a`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`.
+Current material HEAD: `dbce8d074`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`.
 Party B and accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim; MCP/MUO remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED` at `820aae3ec` with one Local-verified Party B observation; no second is authorized.
-Party C is Local verified. T3D-C0 is `CLOSED_PASS_BOUNDED` at `e14722e17`; T3D-C1 tooling is `TOOLING_ACCEPTED_SOURCE_NOT_CREATED` at `9ed844c2a`; real Group 4 source creation and T3E remain closed.
+Party C is Local verified. T3D-C0 is `CLOSED_PASS_BOUNDED` at `e14722e17`; T3D-C1 tooling is `TOOLING_ACCEPTED_SOURCE_NOT_CREATED` at `9ed844c2a` with terminal range evidence corrected at `dbce8d074`; real Group 4 source creation and T3E remain closed.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -141,7 +141,7 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C1_TOOLING_ACCEPTED_AT_9ED844C2A; NEXT_STEP=LOCAL_AUDITS_AND_SELECTS_T3D_C2_GROUP4_SOURCE_CREATION_CHECKPOINT; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Credentials, Party B or Party C real-mode execution, real Group 4 source creation, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden until separately authorized. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C1_TOOLING_CLOSED_AT_DBCE8D074; NEXT_STEP=LOCAL_AUDITS_AND_SELECTS_T3D_C2_GROUP4_SOURCE_CREATION_CHECKPOINT; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Credentials, Party B or Party C real-mode execution, real Group 4 source creation, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden until separately authorized. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -157,8 +157,9 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: project the committed T3D-C1 tooling
-closure at `9ed844c2a`, its independent adversarial review and exact test/gate
-receipts, then open only Local audit/selection of the T3D-C2 checkpoint.
+closure at `9ed844c2a`, terminal evidence correction at `dbce8d074`, its
+independent adversarial review and exact test/gate receipts, then open only
+Local audit/selection of the T3D-C2 checkpoint.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -192,7 +193,7 @@ admission, live/runtime/public or deployment effect.
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer authority |
-| Before status evidence | material HEAD `9ed844c2a`; T3D-C1 tooling accepted; thirteen parked paths untracked |
+| Before status evidence | material HEAD `dbce8d074`; T3D-C1 tooling accepted with truthful range-gate evidence; thirteen parked paths untracked |
 | After status evidence | T3D-C1 is closed and Local audit/selection of T3D-C2 is the only next move; real source execution remains closed |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and Local audit routing only |

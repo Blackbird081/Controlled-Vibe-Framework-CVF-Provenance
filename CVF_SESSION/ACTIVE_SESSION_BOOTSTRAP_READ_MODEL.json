@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "acel_g1_t3d_c1_tooling_closed",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C1_TOOLING_ACCEPTED_AT_9ED844C2A; NEXT_STEP=LOCAL_AUDITS_AND_SELECTS_T3D_C2_GROUP4_SOURCE_CREATION_CHECKPOINT; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Credentials, Party B or Party C real-mode execution, real Group 4 source creation, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden until separately authorized. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C1_TOOLING_CLOSED_AT_DBCE8D074; NEXT_STEP=LOCAL_AUDITS_AND_SELECTS_T3D_C2_GROUP4_SOURCE_CREATION_CHECKPOINT; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Credentials, Party B or Party C real-mode execution, real Group 4 source creation, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden until separately authorized. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
