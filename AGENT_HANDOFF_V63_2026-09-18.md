@@ -1,10 +1,11 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `dd76f9e00`. Group 1 is
+Current material HEAD recorded for this handoff: `db78c87df`. Group 1 is
 `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is
 `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B is verified and
-T3C-C1 AR1 is dispatched as a fresh architecture chain; no R3 is open.
+T3C-C1 AR1 is reviewer-fixed, verified and materially closed; the next
+authorized action is CVF foundation-learning packet authoring.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -18,8 +19,8 @@ and only then Approver decision writes.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer. Phase: T3C-C1 hermetic tooling execution.
-Decision owner: Local; operator only relays the exact committed work order.
+Role: Local orchestrator/reviewer. Phase: CVF foundation-learning packet
+authoring from accepted T3C-C1 evidence. Decision owner: Local.
 
 External research is closed for this lane. A shared-workspace worker, if later
 dispatched, is `INTERNAL_AGENT`; the operator relays its work order only and
@@ -27,15 +28,16 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3c_c1_ar1_worker_execution_checkpoint`;
-active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator
-forwards the committed T3C-C1 work order to the INTERNAL_AGENT; parked checkpoint=Party B
-real execution/source creation, T3D/T3E and
+Startup acknowledged: current mode=`acel_g1_t3c_c1_ar1_closed_foundation_learning_authoring_checkpoint`;
+active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local
+authors the paired GC-018 baseline/work order for reusable CVF foundation
+learning; parked checkpoint=foundation implementation until packet commit,
+Party B real execution/source creation, T3D/T3E and
 promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-`acel_g1_t3c_c1_ar1_worker_execution_checkpoint`.
+`acel_g1_t3c_c1_ar1_closed_foundation_learning_authoring_checkpoint`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -43,7 +45,8 @@ Latest closed learning-history wave remains `LHW24`.
 ## Active Boundary
 
 T3B is closed with one Local-verified active v1 specification. Party B is a
-verified exact local principal and T3C-C1 hermetic tooling is dispatched.
+verified exact local principal and T3C-C1 hermetic tooling is accepted at
+`db78c87df`.
 Real observation/source creation and all downstream actions remain closed.
 
 Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
@@ -67,53 +70,15 @@ External agent memory files: non-canonical convenience only.
   evidence and do not establish Groups 2-4 or consumer wiring.
 - Thirteen pre-existing untracked G1 evidence paths remain byte-preserved,
   uncommitted, and outside this lane.
-- T3B route-selection audit committed at `a907469aa`; it found the outer
-  Group 2 hash/chain contract ready but the decoded policy schema previously
-  unspecified, and proposed exact compact v1 JSON plus a dedicated principal.
-- Operator approved both proposed choices; the governed decision and two
-  secret-free `runas` launchers committed at `ef29dbc1f` after 89/89 checks.
-- Local corrected the 26-character, non-representable Windows username to the
-  exact 15-character `cvf-g1-approver` at `16a6273dc`, before provisioning.
-- Operator created the account with SID
-  `S-1-5-21-1644666849-912006174-747199667-1008`; it is enabled, expiring and
-  non-admin, but Windows still reports `PasswordRequired=false`.
-- The launcher now enforces enabled/password-required/non-admin posture and
-  fails closed at material commit `57a948c0f`.
-- Operator set the password-required flag; Local verified the exact SID,
-  enabled/expiring/non-admin posture and launcher exit 0.
-- Paired T3B baseline/work order committed at `97cae8068` after 89/89 checks.
-- Independent review found four consolidated defects: principal-readable
-  handoff ACLs, per-version event-hash binding, fail-closed supersession
-  citation, and packet/evidence-contract coherence.
-- The independent review, R1 baseline and R1 work order committed at
-  `0f9c5d040` after focused gates and 89/89 pre-commit checks.
-- The R1 worker return passed its declared self-tests, but Local independent
-  probes proved that its supersession prerequisite required an invalid
-  two-active-version state and that the durable event did not bind the
-  replacement version/hash. R1 is `REWORK_REQUIRED`; this is a root-contract
-  dispatch defect, not a worker-only implementation defect.
-- The R1 completion review plus R2 atomic-rotation baseline/work order committed
-  at `8ba852366` after focused gates and 89/89 pre-commit checks. R2 owns exactly
-  five paths, does not execute either principal, and must not create a real source.
-- Local accepted the corrected R2 implementation as `CLOSED_PASS_BOUNDED` at
-  `014f64391`: decision-writer self-test 74/74, Python suite 58/58, three
-  independent atomic-rotation probes 3/3, worker-return fast gate COMPLIANT,
-  and both real Group 2 output paths absent. The worker-return count overclaim
-  65/65 was reviewer-corrected to the observed 58/58 before commitment.
-- Reviewer corrected the closure-provenance omission at `030bc1e74` by
-  tracking the previously frozen spec writer at its already-reviewed SHA-256
-  `226b081d20f7e1aaf0c0b672c0dd004ebd53bd0b2350ca87ac38e829c7cb62e6`;
-  its hermetic self-test passed 48/48 and created no real Group 2 output.
-- Party A launcher was corrected at `47c8dd462` to invoke the verified Group 2
-  spec writer automatically after `runas`; operator input is now limited to
-  the account password and exact ceremony confirmation phrase.
-- The first real Party A attempt on 2026-09-21 failed closed during DACL
-  hardening because a redundant owner rewrite required unavailable privilege.
-  Local verified atomic rollback: neither real Group 2 path remained.
-- Local corrected both Group 2 writers at `5121004d4`: verify the existing
-  creator owner SID, mutate only the DACL, and reject any future `.SetOwner(`
-  regression. Evidence: spec writer 49/49, decision writer 75/75, Python
-  58/58, reviewer-fast 68/68 and pre-commit 89/89.
+- T3B authority selection, dedicated `cvf-g1-approver` provisioning and
+  secret-free launchers were governed through `a907469aa`, `ef29dbc1f`,
+  `16a6273dc`, `57a948c0f` and `97cae8068`.
+- Independent review exposed four atomic-rotation/root-contract defects; R1
+  was rejected and R2 was accepted `CLOSED_PASS_BOUNDED` at `014f64391` with
+  decision writer 74/74, Python 58/58 and three independent probes 3/3.
+- Closure provenance was corrected at `030bc1e74`; Party A launcher/writer
+  privilege handling was corrected at `47c8dd462` and `5121004d4`, with exact
+  owner/DACL enforcement and verified atomic rollback.
 - Party A successfully created `SPEC_v1.json`; Local independently verified
   the exact fixed-policy bytes, direct hash, closed-record hash, Party A owner
   and three-ACE protected DACL. The spec plus verification receipt committed
@@ -142,6 +107,15 @@ External agent memory files: non-canonical convenience only.
   committed at `7ce1f02fd` after 89/89 pre-commit; it keeps four worker paths
   and forbids credentials, Party B execution, real log, staging and commit.
 - AR1 baseline/work order committed at `dd76f9e00` after fresh operator authorization: it requires a real peer process, exception-safe mutex lifetime, exact semantic DACL restoration, complete ACE adversaries and final-return SHA-256 binding. R2 remains terminal and AR1 is a new chain.
+- Local reviewer-fixer replaced the crashed raw-thread/mutex-only proof with
+  the same writer running in a real second `pwsh` process and deterministic
+  READY/ATTEMPTING/PARENT_RELEASE/ENTERED/COMPLETE barriers. Exact semantic
+  owner/protection/ACE restoration and post-acquire cleanup are proven.
+  Evidence: writer 56/56, Python 42/42, checker self-test PASS,
+  worker-return fast gate COMPLIANT, reviewer-fast 68/68, pre-commit 89/89,
+  and canonical return pre/post SHA-256
+  `db8a821d52178835df28a8b9032cd7ec471580d3a6664351ae7300b620b29b0f`.
+  Material commit: `db78c87df`; real Group 3 log remains absent.
 
 ## T3B Readiness Inputs
 
@@ -154,11 +128,12 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_INTERNAL_WORK_ORDER; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_AR1_DISPATCHED_AT_dd76f9e00; NEXT_STEP=OPERATOR_FORWARDS_EXACT_COMMITTED_AR1_WORK_ORDER_TO_INTERNAL_AGENT; EXPANSION_ALLOWED=false. Execute only `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3C_C1_AR1_TRANSACTION_ARCHITECTURE_PROOF_CLOSURE_2026-09-22.md` with `WORKER_MUST_NOT_COMMIT`; update exactly its four owned paths and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Do not run Party B, read or create the real Group 3 source, create a fifth return, modify thirteen parked paths, create Party C, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_AR1_CLOSED_AT_db78c87df; NEXT_STEP=LOCAL_AUDITS_REPEATED_ORCHESTRATOR_AND_WORKER_FAILURES_AND_AUTHORS_PAIRED_GC018_BASELINE_WORK_ORDER_FOR_CVF_FOUNDATION_UPLIFT; EXPANSION_ALLOWED=false. Use the accepted AR1 return and the error-to-governance learning philosophy to define reusable process-barrier, exception-lifetime, semantic-security-rollback and final-evidence-binding controls. Do not implement the uplift before its packet is committed; do not run Party B or create the real Group 3 source, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
-- T3C real Party B execution/source creation pending worker return and Local acceptance;
+- CVF foundation-learning implementation pending a committed GC-018/work-order packet;
+- T3C real Party B execution/source creation remains separately parked;
 - T3D issuer source and T3E consumer wiring;
 - key promotion or candidate admission;
 - provider/live work, runtime activation, public sync, deployment or production;
