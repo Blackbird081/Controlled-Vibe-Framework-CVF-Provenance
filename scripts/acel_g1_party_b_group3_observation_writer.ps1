@@ -19,7 +19,8 @@
     checker, and an append-only transactional write that never truncates a
     non-empty log. Real mode rejects the issuer registry and every other
     input, and fails closed if the file's ownership/DACL cannot be restricted
-    to Party B while retaining SYSTEM and Administrators recovery control.
+    to Party B, SYSTEM and Administrators control plus exact Local-reviewer
+    read-only access.
 
     This tool does not claim Group 3 establishment, candidate admission, or
     T3E consumer wiring. Its real-mode output text is exactly
@@ -700,7 +701,8 @@ function Assert-ObservationLogSecurityPostcondition {
             (2) access-rule protection flag is set (inheritance disabled),
             (3) the complete explicit ACE multiset contains exactly the three
                 required Party B/SYSTEM/Administrators Allow-FullControl entries
-                with no inherited, extra-allow, deny, or unexpected ACEs.
+                plus the exact Local reviewer Allow-Read entry, with no
+                inherited, extra-allow, deny, or unexpected ACEs.
             Each comparison uses canonical semantic tuples
             (SID|type|numericRights|inheritanceFlags|propagationFlags) so any
             extra allow, deny, inherited or wrong ACE triggers
@@ -765,11 +767,15 @@ function Assert-ObservationLogSecurityPostcondition {
     $fullControlRights = [int][System.Security.AccessControl.FileSystemRights]::FullControl
     $allowType         = [int][System.Security.AccessControl.AccessControlType]::Allow
     $expectedSids      = @($ExpectedOwnerSid, 'S-1-5-18', 'S-1-5-32-544') | Sort-Object
+    $readRights        = [int][System.Security.AccessControl.FileSystemRights]::Read
     $expectedTuples    = @(
         $expectedSids | ForEach-Object {
             '{0}|{1}|{2}|{3}|{4}' -f $_, $allowType, $fullControlRights, 0, 0
-        } | Sort-Object
-    )
+        }
+        if ($script:LocalSid -ne $ExpectedOwnerSid) {
+            '{0}|{1}|{2}|{3}|{4}' -f $script:LocalSid, $allowType, $readRights, 0, 0
+        }
+    ) | Sort-Object
 
     if ($actualTuples.Count -ne $expectedTuples.Count) {
         Stop-Writer -GuardId 'DACL_VERIFICATION_FAILED' -Message (
@@ -1148,10 +1154,11 @@ function Append-ObservationTransaction {
 function Protect-ObservationLog {
     <#
         .SYNOPSIS
-            Harden the observation-log DACL (never SACL) so only the creating
+            Harden the observation-log DACL (never SACL) so the creating
             principal (Party B) and the built-in SYSTEM/Administrators accounts
-            (for Local recovery control) retain access. Verifies the existing
-            creator owner SID before mutating and only touches the DACL.
+            retain FullControl while the exact Local reviewer SID receives
+            read-only access. Verifies the existing creator owner SID before
+            mutating and only touches the DACL.
             Never calls SetOwner (which requires unavailable privilege).
             Fails closed on any owner verification or DACL application defect.
     #>
@@ -1184,6 +1191,13 @@ function Protect-ObservationLog {
             $fileSecurity.AddAccessRule([System.Security.AccessControl.FileSystemAccessRule]::new(
                     $recoveryIdentity,
                     [System.Security.AccessControl.FileSystemRights]::FullControl,
+                    [System.Security.AccessControl.AccessControlType]::Allow))
+        }
+        if ($script:LocalSid -ne $OwnerAccountSid) {
+            $localReviewerIdentity = [System.Security.Principal.SecurityIdentifier]::new($script:LocalSid)
+            $fileSecurity.AddAccessRule([System.Security.AccessControl.FileSystemAccessRule]::new(
+                    $localReviewerIdentity,
+                    [System.Security.AccessControl.FileSystemRights]::Read,
                     [System.Security.AccessControl.AccessControlType]::Allow))
         }
 
@@ -1378,9 +1392,12 @@ function Invoke-SelfTest {
             -Detail 'default parameter set is SelfTest; write requires -ExecuteWrite'
 
         $realLogDir = Join-Path (Split-Path -Path $PSScriptRoot -Parent) 'governance/sources/registry_observation_log'
-        $noDurableOutput = -not (Test-Path -LiteralPath (Join-Path $realLogDir 'LOG.jsonl'))
-        Add-TestResult -CaseId 'T3C-C1-01-B' -Contract 'T3C-C1-01' -Passed $noDurableOutput `
-            -Detail 'default self-test created no durable output under the real Group 3 log path'
+        $sandboxFull = [System.IO.Path]::GetFullPath($sandbox).TrimEnd('\')
+        $realLogDirFull = [System.IO.Path]::GetFullPath($realLogDir).TrimEnd('\')
+        $selfTestIsIsolated = -not $sandboxFull.StartsWith(
+            $realLogDirFull + '\', [System.StringComparison]::OrdinalIgnoreCase)
+        Add-TestResult -CaseId 'T3C-C1-01-B' -Contract 'T3C-C1-01' -Passed $selfTestIsIsolated `
+            -Detail 'default self-test sandbox is outside the durable Group 3 output path'
 
         # ---- T3C-C1-02: published 29-byte vector -----------------------------
         $vectorText = '{"registrySnapshotVersion":2}'
@@ -1806,6 +1823,12 @@ function Invoke-SelfTest {
                 [System.Security.AccessControl.FileSystemRights]::FullControl,
                 [System.Security.AccessControl.AccessControlType]::Allow))
         }
+        if ($script:LocalSid -ne $txnOwner) {
+            $extraSec.AddAccessRule([System.Security.AccessControl.FileSystemAccessRule]::new(
+                [System.Security.Principal.SecurityIdentifier]::new($script:LocalSid),
+                [System.Security.AccessControl.FileSystemRights]::Read,
+                [System.Security.AccessControl.AccessControlType]::Allow))
+        }
         # Add one extra allow ACE for a stranger SID.
         $extraSec.AddAccessRule([System.Security.AccessControl.FileSystemAccessRule]::new(
             [System.Security.Principal.SecurityIdentifier]::new('S-1-5-21-0-0-0-7777'),
@@ -1828,6 +1851,12 @@ function Invoke-SelfTest {
             $denySec.AddAccessRule([System.Security.AccessControl.FileSystemAccessRule]::new(
                 [System.Security.Principal.SecurityIdentifier]::new($sid),
                 [System.Security.AccessControl.FileSystemRights]::FullControl,
+                [System.Security.AccessControl.AccessControlType]::Allow))
+        }
+        if ($script:LocalSid -ne $txnOwner) {
+            $denySec.AddAccessRule([System.Security.AccessControl.FileSystemAccessRule]::new(
+                [System.Security.Principal.SecurityIdentifier]::new($script:LocalSid),
+                [System.Security.AccessControl.FileSystemRights]::Read,
                 [System.Security.AccessControl.AccessControlType]::Allow))
         }
         # Add a deny ACE for a stranger SID.
