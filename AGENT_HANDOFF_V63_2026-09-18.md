@@ -1,11 +1,11 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `9a14aab78`. Group 1 is
+Current material HEAD recorded for this handoff: `e25f6a1b`. Group 1 is
 `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is
 `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B is verified and
 T3C-C1 AR1 is reviewer-fixed, verified and materially closed; CVF-HRLTP-T1
-implementation is committed and Local independent review is in closure.
+is independently reviewed and accepted, pending only this continuity sync.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -19,8 +19,8 @@ and only then Approver decision writes.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer with a shared-workspace INTERNAL_AGENT
-worker. Phase: CVF-HRLTP-T1 foundation implementation. Decision owner: Local.
+Role: Local orchestrator/reviewer. Phase: post-CVF-HRLTP-T1 tranche selection.
+Decision owner: Local.
 
 External research is closed for this lane. A shared-workspace worker, if later
 dispatched, is `INTERNAL_AGENT`; the operator relays its work order only and
@@ -28,15 +28,15 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_hrltp_t1_worker_execution_checkpoint`;
-active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT
-executes the committed CVF-HRLTP-T1 work order without commit; parked
+Startup acknowledged: current mode=`cvf_hrltp_t1_closed_next_tranche_selection_checkpoint`;
+active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local audits
+current ACEL state and selects the next source-verified governed tranche; parked
 checkpoint=Party B real execution/source creation, T3D/T3E and
 promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-`cvf_hrltp_t1_worker_execution_checkpoint`.
+`cvf_hrltp_t1_closed_next_tranche_selection_checkpoint`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -136,7 +136,7 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=CVF_HRLTP_T1_DISPATCHED_AT_6b078bf8b; NEXT_STEP=INTERNAL_AGENT_EXECUTES_COMMITTED_HIGH_RISK_LOCAL_TRANSACTION_PROOF_FOUNDATION_T1_WORK_ORDER_WITHOUT_COMMIT; EXPANSION_ALLOWED=false. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_HIGH_RISK_LOCAL_TRANSACTION_PROOF_FOUNDATION_T1_2026-09-22.md exactly: ten worker-owned paths, WORKER_MUST_NOT_COMMIT, reviewer-independent probe pending. Preserve thirteen parked untracked paths byte-identically. Do not run Party B, create a real Group 3 source, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=CVF_HRLTP_T1_REVIEWER_ACCEPTED_AT_e25f6a1; NEXT_STEP=LOCAL_AUDITS_CURRENT_ACEL_PROGRAM_STATE_AND_SELECTS_THE_NEXT_SOURCE_VERIFIED_TRANCHE; EXPANSION_ALLOWED=false. CVF-HRLTP-T1 static governance foundation is accepted after an independent Local probe and bounded reviewer repair. Preserve thirteen parked untracked paths byte-identically. Do not run Party B, create a real Group 3 source, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy without a fresh governed authority packet. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -149,10 +149,11 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project AR1 dispatch `dd76f9e00` into
-the active front door and open the T3C-C1 AR1 worker execution checkpoint.
+Authorized guard-maintenance scope: project accepted CVF-HRLTP-T1 completion
+`e25f6a1b` into the active front door and open the next-tranche selection checkpoint.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/cvfHrltpT1Closure20260922.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
 `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
