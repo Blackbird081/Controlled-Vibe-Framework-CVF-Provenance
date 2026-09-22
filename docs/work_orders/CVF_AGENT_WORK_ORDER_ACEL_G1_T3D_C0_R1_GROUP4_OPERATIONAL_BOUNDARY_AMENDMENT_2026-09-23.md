@@ -4,7 +4,7 @@ Memory class: governed-work-order
 
 Status: DISPATCH_READY
 
-docType: work-order
+docType: work_order
 
 Date: 2026-09-23
 
@@ -105,7 +105,7 @@ to invoke them.
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"ACEL-G1-T3D-C0-R1-GROUP4-OPERATIONAL-BOUNDARY-AMENDMENT","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"DOC_CHANGE","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/","docs/audits/","docs/baselines/","docs/reference/","docs/reviews/","docs/work_orders/","governance/compat/"],"claims":["existing T2F contract gains parent-directory, fresh-input and issuer-observation operational boundary; no executable or source effect"],"requiredProof":["one controlling amendment","exact two-path worker delta","thirteen parked hashes","worker-return fast gate","Local independent review"],"operatorCheckpoints":["C0-R1 Local acceptance","C1-R2 tooling dispatch","real-token isolation proof","Party C registry creation","Party B issuer observation","response-log initialization","T3E"],"forbiddenEffects":["code or checker change","credential access","alternate-principal execution","operating-system security mutation","source creation","lookup","worker commit","provider/live/network","public sync","deployment"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"N/A with reason: bounded named files only","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"ACEL-G1-T3D-C0-R1-GROUP4-OPERATIONAL-BOUNDARY-AMENDMENT","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"DOC_CHANGE","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["CVF_SESSION/","EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/","docs/audits/","docs/baselines/","docs/reference/","docs/reviews/","docs/work_orders/","governance/compat/"],"claims":["existing T2F contract gains parent-directory, fresh-input and issuer-observation operational boundary; no executable or source effect"],"requiredProof":["one controlling amendment","exact two-path worker delta","thirteen parked hashes","worker-return fast gate","Local independent review"],"operatorCheckpoints":["C0-R1 Local acceptance","C1-R2 tooling dispatch","real-token isolation proof","Party C registry creation","Party B issuer observation","response-log initialization","T3E"],"forbiddenEffects":["code or checker change","credential access","alternate-principal execution","operating-system security mutation","source creation","lookup","worker commit","provider/live/network","public sync","deployment"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"N/A with reason: bounded named files only","completenessClaimChanged":false}}
 ```
 
 ## Review Dispatch Convergence And Invocation Budget Control
@@ -122,11 +122,35 @@ reviewRoundCount: 1
 
 rootCauseClusterId: T3D-C2-OPERATIONAL-BOUNDARY
 
-priorFindingSetDigest: `sha256:pending-dispatch-artifact-finalization`
+priorFindingSetDigest: 5bcfe058ba0de4a8d65fe94a6afc38d6a37fde189590aa3ddd2a788c15146a84
+
+dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
+
+reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
+
+regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 
 cumulativeExternalInvocationCount: 0
 
 externalInvocationCeiling: 0
+
+usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
+
+quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
+
+nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
+
+reworkGeneration: 1
+
+consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
+
+implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
+
+preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
+
+preExecutionReviewTrigger: NONE
+
+nextRoutineReviewBoundary: WORKER_RETURN
 
 newIndependentCriticalEvidence: YES - Local read-only probes identified the
 shared-parent delete/replace boundary and missing issuer-observation route.
@@ -163,6 +187,34 @@ adversarial proof, and strict C0/C1/C2/T3E lifecycle ceilings. A worker finding
 outside this class returns `BLOCKED_WITH_REASON` without widening scope.
 
 ## Independent Review Probe Admission Contract
+
+independentProbeRequired: YES
+
+independentProbeRiskClass: HIGH
+
+independentProbeDispositionAtDispatch: PLAN_ADMITTED_PENDING_REVIEWER_EXECUTION
+
+probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
+
+implementationOracleSeparation: REQUIRED_DIFFERENT_EXECUTION_AND_ASSERTION_PATH
+
+positiveControl: Local independently maps every readiness gap to the final T2F
+clause and checks the parent, reservation, fresh-input, issuer-observation and
+lifecycle matrices against the accepted C1 boundary.
+
+negativeMutationClasses: Party B or Party C parent deletion; cross-target
+replacement; fixture identity reused in real mode; verifier writer reused for
+issuer observation; premature source-created or consumer-bound promotion; and
+shared-directory success inferred without actual-token proof.
+
+expectedInformationGain: distinguish a complete fail-closed operational
+contract from plausible prose that still leaves a Windows authority or
+lifecycle join undefined.
+
+rerunCostReason: one focused Local semantic and adversarial probe resolves the
+acceptance decision without recreating the worker's full contract authoring.
+
+reviewerDecisionOwner: LOCAL
 
 The worker records `independentProbeDisposition: PENDING_REVIEWER_EXECUTION`.
 Local independently verifies the final contract against T2F, C1 code behavior
@@ -333,15 +385,25 @@ action, or an authority decision outside the frozen alternatives.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: N/A with reason: neither allowed worker
-path is `AGENTS.md`, a checker, hook, guard registry or generated session file.
+Authorized guard-maintenance scope: Local dispatcher/reviewer may correct this
+work order's machine-recognized `docType`, independent-probe and review-cost
+contracts and must reconcile the resulting exact work-order digest in the
+active Core source, bootstrap and generated aggregate. This authorization does
+not expand the worker's exact two-path material manifest.
 
-Protected paths: none.
+Protected paths:
 
-Operator authorization: bounded contract repair follows the Local-selected
-readiness audit.
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 
-Rollback boundary: only the uncommitted two-path worker delta.
+Operator authorization: the operator authorized Local orchestrator/reviewer
+to audit, repair bounded defects and commit accepted authority/continuity
+state; this correction is required by the fail-closed currentAuthority guard.
+
+Rollback boundary: the three protected files above and this work order only;
+the uncommitted two-path worker delta and thirteen parked paths remain outside
+this corrective commit.
 
 ## ADIF Defect Registry Disclosure
 

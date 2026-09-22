@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C0_R1_GROUP4_OPERATIONAL_BOUNDARY_AMENDMENT_2026-09-23.md",
     "baselineSha256": "6081749de455660fca6575fb06698167371395ddd987df66ff4d58476155a639",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C0_R1_GROUP4_OPERATIONAL_BOUNDARY_AMENDMENT_2026-09-23.md",
-    "workOrderSha256": "30a74c7a5229cfe7b055467cbfa8f97b2978b674ca0f355ccadeff11bd8d5b3f"
+    "workOrderSha256": "0320dd22c9212e9846ea913a97e2fd4314cd7b0fc76afd0059199773a25f7aba"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
