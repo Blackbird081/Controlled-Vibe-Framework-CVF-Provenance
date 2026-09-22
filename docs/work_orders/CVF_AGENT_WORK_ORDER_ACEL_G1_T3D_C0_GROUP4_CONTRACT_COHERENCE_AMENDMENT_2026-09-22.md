@@ -394,7 +394,7 @@ scopeClassification: DOCUMENTATION_AND_EVIDENCE_ONLY_NO_COMMIT
 
 evidenceReadinessContract: NOT_APPLICABLE_WITH_REASON: bounded two-document contract amendment has no discovery audit, discovery manifest, source root, or evidence-readiness index output
 
-requiredGate: `python governance/compat/run_worker_return_fast_gate.py --profile WORKER_RETURN_FAST_DOC_V1`
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C0_GROUP4_CONTRACT_COHERENCE_AMENDMENT_2026-09-22.md`
 
 individualCheckerSubstitution: FORBIDDEN
 
@@ -479,7 +479,7 @@ expansion. Do not return ordinary permitted documentation repair to the operator
 
 ```powershell
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
-python governance/compat/run_worker_return_fast_gate.py --profile WORKER_RETURN_FAST_DOC_V1
+python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C0_GROUP4_CONTRACT_COHERENCE_AMENDMENT_2026-09-22.md
 git diff --name-status
 git diff --cached --name-only
 git status --short --untracked-files=all
