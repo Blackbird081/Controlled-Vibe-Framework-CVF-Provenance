@@ -158,6 +158,24 @@ Group 1 checker fails, confirmation is mistyped, the transaction reports a
 write/DACL/rollback error, or the expected pending-verification token is absent.
 Do not transform any failure into a success claim or rerun automatically.
 
+## First-Attempt Diagnostic And Retry Disposition
+
+The first operator attempt stopped before `Append-ObservationTransaction`
+because the Party B `runas` profile could not resolve `python` while invoking
+the mandatory Group 1 checker. Local verified that
+`governance/sources/registry_observation_log/LOG.jsonl` remained absent; no
+transaction, durable record or partial source state existed.
+
+Root cause: the launcher projected the DELL-owned Node path but omitted the
+machine's per-user Python installation from Party B's process environment.
+Bounded correction: Party B received Read and Execute only (no write) on the
+pinned Python 3.11 runtime, and the launcher now verifies that executable and
+ACL binding before adding its directory to the Party B process `PATH`.
+
+Retry disposition: `AUTHORIZED_ONCE_AFTER_CORRECTED_LAUNCHER_CHECK_PASS`.
+Any further failure returns to Local diagnosis; no automatic third attempt is
+authorized.
+
 ## Review And Success Criteria
 
 T3C-C2 may be accepted only when the operator-mediated append succeeds and
