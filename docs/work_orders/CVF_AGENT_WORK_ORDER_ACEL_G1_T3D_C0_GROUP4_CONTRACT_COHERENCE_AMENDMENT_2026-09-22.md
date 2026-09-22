@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: ACEL-G1-T3D-C0-GROUP4-CONTRACT-COHERENCE-AMENDMENT
 
@@ -302,7 +302,7 @@ Returned defects: NONE_RETURNED
 | four decision-changing Group 4 gaps | Local audit | `docs/audits/CVF_ACEL_G1_T3D_GROUP4_PRE_IMPLEMENTATION_CONTRACT_GAP_AUDIT_2026-09-22.md` | Findings / Position; Selected Route | G4-GAP-01 through G4-GAP-04 | T3D-C0 amendment decision | ACCEPT |
 | Group 4 owner schema and lookup boundary | existing contract | `docs/audits/CVF_ACEL_G1_T2F_OPERATIONAL_SOURCE_ESTABLISHMENT_CONTRACT_2026-09-18.md` | Source Group 4; T2C Consumer-Binding Table; Establishment Evidence Checklist | `sourceRegistry.lookup(...)` | operational-source contract | ACCEPT |
 | Party B independent observation boundary | role contract | `docs/reviews/CVF_ACEL_G1_T2H_PARTY_B_IMMUTABLE_OBSERVATION_RECONCILIATION_WORKER_RETURN_2026-09-18.md` | Party B separation and immutable observation disposition | Party B observer role | operator-approved reconciliation | ACCEPT |
-| Party C concrete identity | Local OS evidence | `docs/audits/CVF_ACEL_G1_T3D_PARTY_C_PRINCIPAL_LOCAL_VERIFICATION_2026-09-22.md` | Findings / Position | `LAM-RUBY\\cvf-g1-party-c`, SID ending `-1010` | Windows local-account store | ACCEPT |
+| Party C concrete identity | Local OS evidence | `docs/audits/CVF_ACEL_G1_T3D_PARTY_C_PRINCIPAL_LOCAL_VERIFICATION_2026-09-22.md` | Findings / Position | local principal `cvf-g1-party-c`, SID ending `-1010` | Windows local-account store | ACCEPT |
 | no real Group 4 path created | current control state | `AGENT_HANDOFF_V63_2026-09-18.md` | Next Allowed Move; Parked Checkpoints | T3D-C1/T3E | active handoff | ACCEPT |
 
 ## Negative Search And Collision Discipline
@@ -573,6 +573,28 @@ Contradiction Or Gap Disposition and claim-boundary update.
 
 Claim Update Requirement: worker return records whether the contract claim was
 confirmed, revised, narrowed, or invalidated.
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| contract output | one T2F amendment plus one worker return | exact worker two-path output and reviewer completion | PASS |
+| Group 4 receipt semantics | no append before eligibility; exactly one terminal append after eligibility | accepted T2F G4-GAP-02 contract | PASS |
+| independent review | distinct reviewer verifies the four corrected gaps | `PASS_INDEPENDENT_PROBE` on exact terminal hashes | PASS |
+| operational boundary | no source, lookup, consumer, promotion, or admission | documentation-only closure | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_G1_T3D_C0_GROUP4_CONTRACT_COHERENCE_AMENDMENT_COMPLETION_2026-09-22.md` | terminal review and independent probe | PASS |
+| Roadmap state | active ACEL continuity | T3D-C0 contract closed; T3D-C1 separately gated | PASS |
+| Registry JSON | no source mutation in this tranche | documentation-only boundary | BLOCKED with reason: GC-051 registry mutation is outside T3D-C0 |
+| Registry Markdown | no registry-documentation mutation | documentation-only boundary | BLOCKED with reason: GC-051 registry update is outside T3D-C0 |
+| External evidence digest | no external evidence admitted | internal/local evidence only | N/A with reason: no external evidence applies |
+| System loop interlock | T3D-C1 and T3E | both remain closed pending separate authority | PASS |
+| Session continuity | active handoff and generated state | separate post-material sync | BLOCKED with reason: pending material commit SHA |
 
 ## Public Export Disposition
 

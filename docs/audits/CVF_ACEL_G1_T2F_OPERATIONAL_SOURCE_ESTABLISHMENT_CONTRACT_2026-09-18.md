@@ -188,7 +188,7 @@ Immutable Snapshot Identity, T2G-01 through T2G-05).
 | `cvf.specFile` (Group 2 spec file) | `specVersion`, `canonicalBytesBase64`, `authorId`, `proposedAt`, `specHashHex` (see below; included as a normal field here, not excluded, because it is not this record kind's own stored digest) | none | `specFileRecordHashHex` |
 | `cvf.specDecisionEvent` (Group 2 decision event) | `decisionEventId`, `eventType`, `specVersion`, `recomputedHashHex`, `replacementSpecVersion`, `replacementRecomputedHashHex`, `approverId`, `decidedAt`, `priorEntryHashHex` | `replacementSpecVersion`, `replacementRecomputedHashHex` (both `null` for `APPROVED`\|`REJECTED`\|ordinary `ACTIVATED`; both required non-null for `SUPERSEDED`, per Atomic Rotation T2F-R4-01) | `entryHashHex` |
 | `cvf.observationLogEntry` (Group 3 log entry) | `snapshotId`, `registryName`, `registrySnapshotVersion`, `snapshotHashHex`, `observedAt`, `authority`, `observerIdentity`, `priorEntryHashHex` | none | `entryHashHex` |
-| `cvf.issuerRegistryRow` (Group 4 registry row) | `issuerIdentity`, `entryVersion`, `issuerAttestedHash`, `canonicalContentHashHex`, `status`, `registeredAt`, `correctedAt`, `revokedAt` | `correctedAt`, `revokedAt` | none stored on this row; the row is read live, not hash-chained |
+| `cvf.issuerRegistryRow` (Group 4 registry row) | `issuerIdentity`, `entryVersion`, `issuerAttestedHash`, `canonicalContentBytesBase64`, `canonicalContentHashHex`, `status`, `registeredAt`, `correctedAt`, `revokedAt` | `correctedAt`, `revokedAt` | none stored on this row; the row is read live, not hash-chained |
 | `cvf.issuerLookupResponse` (Group 4 lookup response) | `lookupId`, `issuerIdentity`, `claimedIssuerHash`, `registrySnapshotId`, `registrySnapshotHashHex`, `registrySnapshotVersion`, `entryVersion`, `result`, `errorCode`, `queriedAt`, `consumerIdentity`, `observedSnapshotId`, `priorEntryHashHex` | `errorCode` | `entryHashHex` |
 
 `snapshot_content` for Group 3 is deliberately excluded from
@@ -653,22 +653,160 @@ unchanged by this design.
 | Proposed exact future path (registry) | `governance/sources/issuer_registry/REGISTRY.json` (`PROPOSED_LOCAL_REVIEW`) |
 | Proposed exact future path (lookup responses) | `governance/sources/issuer_registry/LOOKUP_RESPONSES.jsonl` (`PROPOSED_LOCAL_REVIEW`) |
 | Format / schema (registry envelope) | JSON object: `registrySnapshotId` (global snapshot identity), `registrySnapshotVersion` (monotonic integer), `writeTimestamp`, `rows` (array of issuer rows) |
-| Format / schema (issuer row) | `issuerIdentity` (stable identity), `entryVersion` (monotonic integer per `issuerIdentity`), `issuerAttestedHash`, `canonicalContentHashHex` (SHA-256 of the issuer's canonical content bytes, recomputed by the registry, distinct from the issuer's own attested hash), `status` (`registered`\|`ACTIVE`\|`corrected`\|`REVOKED`), `registeredAt`/`correctedAt`/`revokedAt` |
+| Format / schema (issuer row) | `issuerIdentity` (stable identity), `entryVersion` (monotonic integer per `issuerIdentity`), `issuerAttestedHash`, `canonicalContentBytesBase64` (strict unpadded base64url of the exact UTF-8 RFC 8785 JCS issuer-authority content object), `canonicalContentHashHex` (lowercase SHA-256 of the strictly decoded canonical-content bytes, recomputed by the registry), `status` (`registered`\|`ACTIVE`\|`corrected`\|`REVOKED`), `registeredAt`/`correctedAt`/`revokedAt` |
 | Format / schema (lookup response row) | `lookupId` (stable identity), `issuerIdentity`, `claimedIssuerHash` (the `issuerAttestedHash` the caller supplied), `registrySnapshotId`, `registrySnapshotHashHex`, `registrySnapshotVersion`, `entryVersion`, `result` (`IDENTITY_CONFIRMED`\|`IDENTITY_REJECTED`\|`IDENTITY_UNRESOLVED`), `errorCode` (nullable, populated only when `result` is `IDENTITY_UNRESOLVED`), `queriedAt`, `consumerIdentity`, `observedSnapshotId` (the immutable Group 3 `snapshotId` whose `snapshot_content` was consulted for this response), `priorEntryHashHex` (`null` at genesis), `entryHashHex` (stored digest) |
 | Stable source identity | `issuerIdentity` (registry row); `lookupId` (response row) |
 | Monotonic version/snapshot identity | `entryVersion` per `issuerIdentity`; `registrySnapshotVersion` for the whole registry envelope |
 | Accountable owner | Party C (`CVF Issuer Registry Authority / dedicated issuer-governance identity`), per Contract 4 |
-| Write principal | Party C exclusively for the registry; the lookup path itself appends to `LOOKUP_RESPONSES.jsonl` on every real query |
+| Write principal | Party C exclusively owns and mutates `REGISTRY.json`; Party B exclusively owns and appends `LOOKUP_RESPONSES.jsonl` after a query becomes receipt-eligible under the validation boundary below. Party C has no response-log access, and Party B has only read access to the registry. |
 | Allowed readers | verifier consumers calling `sourceRegistry.lookup(issuerIdentity, issuerAttestedHash, snapshot_content)`; Party B for observation-only reads |
 | Forbidden roles | Party C's own status assertion cannot satisfy correction/revocation evidence without independent observation (Cross-Source Identity And Access Matrix, Case 5); Party A is excluded from this registry |
-| Canonicalization / hashing rule | `cvf.source-record-canonicalization@1`; registry-row preimage domain `cvf.issuerRegistryRow`; lookup-response preimage domain `cvf.issuerLookupResponse`; see Canonicalization Profile above. `issuerAttestedHash` is caller-supplied and never trusted alone; the registry independently recomputes `canonicalContentHashHex` and a lookup response must compare that recomputed value, not the caller's claim |
+| Canonicalization / hashing rule | `cvf.source-record-canonicalization@1`; registry-row preimage domain `cvf.issuerRegistryRow`; lookup-response preimage domain `cvf.issuerLookupResponse`; see Canonicalization Profile above and the controlling T3D-C0 amendment below. `issuerAttestedHash` is never trusted alone; the registry strictly decodes `canonicalContentBytesBase64`, verifies byte identity with RFC 8785 JCS, and recomputes `canonicalContentHashHex`. Stored, attested, and claimed hashes must match before `IDENTITY_CONFIRMED`; a schema-complete mismatch instead permits exactly one `IDENTITY_REJECTED` receipt. |
 | Lifecycle / state transitions | `registered` to `ACTIVE` to `corrected` (new `entryVersion`, same `issuerIdentity`) or `REVOKED`; `REVOKED` is terminal |
-| Durable receipt | one `LOOKUP_RESPONSES.jsonl` line per real query, immutable once appended, hash-chained via `priorEntryHashHex`/`entryHashHex` |
+| Durable receipt | exactly one `LOOKUP_RESPONSES.jsonl` line per receipt-eligible real query whose validated inputs can populate the complete closed response schema, including terminal `IDENTITY_CONFIRMED`, `IDENTITY_REJECTED`, and `IDENTITY_UNRESOLVED` outcomes; malformed or incomplete pre-admission input returns an in-memory fail-closed result with no append; every appended line is immutable and hash-chained via `priorEntryHashHex`/`entryHashHex` |
 | Correction, rotation, supersession, revocation | Party C initiates; the route must produce independent Party B observation evidence, not a bare Party C status flip alone |
 | Named verifier consumer | T2C `LookupProvenanceCheck` pseudocode call `sourceRegistry.lookup(issuerIdentity, issuerAttestedHash, snapshot_content)`, which evaluates the issuer identity together with its attested hash against the observed snapshot content |
-| Validation order and failure taxonomy | (1) registry reachable, else `result: IDENTITY_UNRESOLVED`, (2) exactly one `issuerIdentity` match at the current `entryVersion`, else `IDENTITY_UNRESOLVED`, (3) status `ACTIVE`, else `IDENTITY_REJECTED`, (4) recomputed `canonicalContentHashHex` matches the caller-supplied `issuerAttestedHash` evaluated against `snapshot_content`, else `IDENTITY_REJECTED`, (5) an independent Party B observation (Group 3 record identified by `observedSnapshotId`) exists and is bound into the response; any unreachable, ambiguous, or unresolvable condition returns `IDENTITY_UNRESOLVED` rather than defaulting to confirmed |
-| Establishment evidence required | (a) registry/lookup path exists distinct from the rejected posture checker, (b) Party C write access proven, (c) at least one verifier consumer performs a real lookup call, (d) evidence that correction/revocation required more than Party C's own assertion, (e) every lookup response binds a real `observedSnapshotId`, (f) Local independently verifies (a)-(e) |
+| Validation order and failure taxonomy | Apply the controlling T3D-C0 order below: strict row/schema and encoding checks; decode once; UTF-8 JSON and RFC 8785 JCS byte identity; recompute and compare `canonicalContentHashHex`; require claimed/attested/recomputed equality; verify exact registry snapshot bytes, digest, and Party B observation binding; only then apply issuer identity, version, `ACTIVE` status, and lookup predicates. Classify at the first failed step. If the complete closed response schema cannot be populated, return an in-memory `IDENTITY_UNRESOLVED` or `IDENTITY_REJECTED` and append nothing. Otherwise append exactly one Party B response carrying the terminal confirmed, rejected, or unresolved outcome. |
+| Establishment evidence required | (a) registry and response-log paths exist with the exact protected owner/DACL matrices below, (b) Party C registry authority and Party B response-append authority are separately proven, (c) T3D reaches only `SOURCE_CREATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`, (d) a later T3E verifier consumer performs the first real lookup and binds its response to a real Group 3 `observedSnapshotId`, (e) correction/revocation requires more than Party C's own assertion, (f) Local independently verifies the T3E consumer-binding evidence before source establishment. |
 | Disposition | `SOURCE_NOT_CREATED`; admission `UNVERIFIED` |
+
+#### T3D-C0 Group 4 Contract Coherence Amendment (G4-GAP-01 through G4-GAP-04)
+
+This section is the controlling amendment for Source Group 4. It closes the
+four byte-identity, preimage, authority, and lifecycle gaps identified before
+implementation. It does not create either future file, authorize T3D-C1, or
+establish a verifier-consumer binding. Where earlier Group 4 wording is less
+specific, the rules and validation order in this section control.
+##### G4-GAP-01: Exact Published Registry Envelope And Party B Binding
+`governance/sources/issuer_registry/REGISTRY.json` is exactly one UTF-8 RFC
+8785 JCS serialization of one JSON object containing exactly
+`registrySnapshotId`, `registrySnapshotVersion`, `writeTimestamp`, and `rows`.
+The published bytes have no UTF-8 BOM, leading or trailing whitespace, or
+terminal newline. A parsed object, pretty-printed form, reconstructed object,
+subset, or any reserialization is not the published envelope.
+`registrySnapshotHashHex` is the lowercase SHA-256 hexadecimal digest of those
+exact published bytes. Party B's Group 3 observation for `issuer_registry`
+must store, in strict unpadded base64url form, exactly those bytes as
+`snapshot_content`. Strict decoding must yield bytes identical to the
+published registry bytes, and the observation's `snapshotHashHex` must equal
+`registrySnapshotHashHex`. A response repeats the same snapshot ID, version,
+and digest; parsed-only equality is insufficient.
+Positive vector `G4-SNAPSHOT-JCS-POSITIVE-01` is this single line's UTF-8
+bytes, excluding the fence delimiters and with no terminal newline:
+
+```json
+{"registrySnapshotId":"issuer-registry-snapshot-test-0001","registrySnapshotVersion":1,"rows":[{"canonicalContentBytesBase64":"eyJhdXRob3JpdHkiOiJBQ0VMX0cxX0RFQ0lTSU9OX09XTkVSIiwiaXNzdWVySWRlbnRpdHkiOiJpc3N1ZXItdGVzdC0wMDEiLCJwb2xpY3lWZXJzaW9uIjoxfQ","canonicalContentHashHex":"db76dcc22fcec9cc566c5b449b0aaa8eabdb657d157c62cba626aba8b26d12ca","correctedAt":null,"entryVersion":1,"issuerAttestedHash":"db76dcc22fcec9cc566c5b449b0aaa8eabdb657d157c62cba626aba8b26d12ca","issuerIdentity":"issuer-test-001","registeredAt":"2026-09-22T00:00:00Z","revokedAt":null,"status":"ACTIVE"}],"writeTimestamp":"2026-09-22T00:00:01Z"}
+```
+
+Its byte length is 618 and its required digest is
+`d31e0c206da091bc408005d490e69f7aa0eae733dac4b03c67edd280034827f2`.
+Acceptance must reconstruct the bytes by the declared JCS recipe and
+recompute the digest; copying the constant is not evidence.
+Adversarial vector `G4-SNAPSHOT-JCS-ADVERSARIAL-01` rejects before Party B
+observation or response append any BOM; leading/trailing whitespace or
+newline; non-JCS object-key ordering; row-array reordering relative to the
+observed published bytes; missing/extra envelope field; uppercase,
+malformed, or mismatched digest; padded, whitespace-bearing, invalid-alphabet,
+or noncanonical base64url; decoded-byte mismatch; snapshot ID/version drift;
+response digest drift; parsed-only equality; or Party C self-observation.
+##### G4-GAP-02: Noncircular Issuer Canonical-Content Preimage
+Every issuer row requires `canonicalContentBytesBase64`. Its value is the
+strict unpadded base64url encoding of exactly the UTF-8 RFC 8785 JCS bytes of
+the issuer-authority content object. `canonicalContentHashHex` is the lowercase
+SHA-256 hexadecimal digest of those strictly decoded bytes. The preimage is
+not the full issuer row, not a caller-supplied hash, not
+`issuerAttestedHash`, and never includes `canonicalContentHashHex` itself.
+Positive vector `G4-ISSUER-CONTENT-JCS-POSITIVE-01` has exact content bytes:
+
+```json
+{"authority":"ACEL_G1_DECISION_OWNER","issuerIdentity":"issuer-test-001","policyVersion":1}
+```
+
+Its strict unpadded base64url value is
+`eyJhdXRob3JpdHkiOiJBQ0VMX0cxX0RFQ0lTSU9OX09XTkVSIiwiaXNzdWVySWRlbnRpdHkiOiJpc3N1ZXItdGVzdC0wMDEiLCJwb2xpY3lWZXJzaW9uIjoxfQ`,
+and the required lowercase SHA-256 digest is
+`db76dcc22fcec9cc566c5b449b0aaa8eabdb657d157c62cba626aba8b26d12ca`.
+The validation order is mandatory: (1) require the closed row/schema fields,
+types, and strict unpadded base64url alphabet; (2) decode exactly once; (3)
+require valid UTF-8 JSON whose bytes are identical to its RFC 8785 JCS
+serialization; (4) recompute lowercase SHA-256; (5) compare it with the stored
+`canonicalContentHashHex`; (6) require `claimedIssuerHash ==
+issuerAttestedHash == canonicalContentHashHex`; (7) verify the exact registry
+snapshot bytes/digest and Party B observation binding from G4-GAP-01; (8) only
+then apply issuer identity, version, `ACTIVE` status, and lookup predicates.
+Classify at the first failed step. A malformed/incomplete pre-admission case
+that cannot populate the complete closed response schema returns a fail-closed
+in-memory result and appends nothing. Once schema-complete, the query is
+receipt-eligible and Party B appends exactly one terminal response, including
+`IDENTITY_REJECTED` and `IDENTITY_UNRESOLVED`; no query appends twice.
+Adversarial vector `G4-ISSUER-CONTENT-JCS-ADVERSARIAL-01` rejects padding,
+whitespace, invalid alphabet, noncanonical base64url, invalid UTF-8/JSON,
+non-JCS content bytes, field mutation, missing content bytes, uppercase or
+mismatched digest, stored/attested/claimed mismatch, caller-claim
+substitution, and any attempt to use the complete row as the content preimage.
+
+##### G4-GAP-03: Separated Party C And Party B Authority
+
+Both future files use protected DACLs: inheritance is disabled and inherited
+ACEs are removed. The listed ACEs are the complete DACL. No implicit
+principal, group, deny ACE, or extra allow ACE is permitted. Ownership is
+recorded separately and never substitutes for a listed access ACE.
+
+| File | Owner | Exact complete protected DACL | Prohibited identities |
+|---|---|---|---|
+| `governance/sources/issuer_registry/REGISTRY.json` | Party C `S-1-5-21-1644666849-912006174-747199667-1010` | Party C: Allow `FullControl`; `NT AUTHORITY\\SYSTEM`: Allow `FullControl`; `BUILTIN\\Administrators`: Allow `FullControl`; Party B `S-1-5-21-1644666849-912006174-747199667-1009`: Allow `Read`; Local `S-1-5-21-1644666849-912006174-747199667-1001`: Allow `Read` | Party A and Contract 2 Approver: no ACE and no effective access |
+| `governance/sources/issuer_registry/LOOKUP_RESPONSES.jsonl` | Party B `S-1-5-21-1644666849-912006174-747199667-1009` | Party B: Allow `FullControl`; `NT AUTHORITY\\SYSTEM`: Allow `FullControl`; `BUILTIN\\Administrators`: Allow `FullControl`; Local `S-1-5-21-1644666849-912006174-747199667-1001`: Allow `Read` | Party C, Party A, and Contract 2 Approver: no ACE and no effective access |
+
+Party C is the exclusive registry owner/writer and cannot append or access the
+response log. Party B is the exclusive response-log owner/appender, has only
+registry read access, and cannot alter the registry. Local is read-only on
+both files. Party A and the Contract 2 Approver have no read, append, write,
+ownership, or DACL-modification access to either file.
+
+Positive vector `G4-AUTHORITY-MATRIX-POSITIVE-01` requires the exact two
+owners, protected state, and complete ordered ACE matrices above. Adversarial
+vector `G4-AUTHORITY-MATRIX-ADVERSARIAL-01` rejects Party B registry mutation
+or DACL change; Party C response read, append, or DACL change; Local write or
+append; Party A or Approver access; inherited, extra, or deny ACEs; wrong
+owner; concurrent or partial response append; and any widened effective
+access. After any failed write, append, owner, or DACL attempt, the prior file
+bytes, owner, protection state, and complete ordered ACE matrix must be
+restored and compared byte-for-byte or semantically exactly as captured before
+the attempt. No partial file, response line, widened ACE, or ownership change
+may remain.
+
+##### G4-GAP-04: T3D-To-T3E Establishment Lifecycle
+
+The operational source lifecycle, which T3D-C0 does not enter, is:
+
+`TOOLING_ACCEPTED_SOURCE_NOT_CREATED` ->
+`SOURCE_CREATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING` ->
+`CONSUMER_BINDING_EXECUTED_PENDING_LOCAL_VERIFICATION` ->
+`SOURCE_ESTABLISHED_LOCAL_VERIFIED_CONSUMER_BOUND`.
+
+T3D-C0 ends at `CONTRACT_ACCEPTED_BOUNDED_SOURCE_NOT_CREATED` and makes no
+tooling-acceptance claim. A separately authorized T3D-C1 tooling step may
+reach `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`; a later source-creation step may
+reach only `SOURCE_CREATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING` after
+Local verifies the actual paths, bytes, digests, owners, DACLs, non-live
+adversarial cases, and rollback evidence. T3D must not check the Group 4
+real-verifier-consumer row or claim a lookup, consumer binding, establishment,
+promotion, or admission.
+
+T3E exclusively owns the first real verifier lookup call, final
+response-to-consumer comparison, and consumer-binding checklist row. T3E may
+record only `CONSUMER_BINDING_EXECUTED_PENDING_LOCAL_VERIFICATION`; only Local
+verification of that evidence may advance the source to
+`SOURCE_ESTABLISHED_LOCAL_VERIFIED_CONSUMER_BOUND`.
+
+Positive vector `G4-LIFECYCLE-POSITIVE-01` accepts C0 only at
+`CONTRACT_ACCEPTED_BOUNDED_SOURCE_NOT_CREATED`, separately accepts reviewed
+tooling at `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`, accepts later source
+evidence only at `SOURCE_CREATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`, and
+routes the real lookup plus final row to T3E. Adversarial vector
+`G4-LIFECYCLE-ADVERSARIAL-01` rejects C0 tooling/source language, any T3D
+`ESTABLISHED`, `CONSUMER_BOUND`, real-lookup, final-checklist, promotion, or
+admission wording, and any attempt to bypass T3E or Local's final verification.
 
 ## Cross-Source Identity And Access Matrix
 
@@ -706,7 +844,7 @@ similarity claim with field-for-field joins.
 | `observation.observedAt` (temporal order, freshness) | Group 3 record's `observedAt` | UNVERIFIED (`INVALID_TIME_ORDER` or `STALE_SNAPSHOT`) |
 | `observation.authority == receipt.verificationAuthority` | Group 3 record's `authority` | UNVERIFIED (authority mismatch) |
 | `sourceObservationLog.countObservationsFor(snapshotId) > 1` | literal count of Group 3 records bearing that exact `snapshotId` (always 0 or 1 under the write-time uniqueness guarantee; see Immutable Snapshot Identity) | UNVERIFIED (`FORKED_OBSERVATION`) on the fault case only |
-| `sourceRegistry.lookup(issuerIdentity, issuerAttestedHash, snapshot_content)` | Group 4 lookup response `result` field, computed against Group 3's `snapshot_content` | UNVERIFIED (`IDENTITY_UNRESOLVED`) on unreachable/ambiguous; `IDENTITY_REJECTED` on hash/status mismatch |
+| `sourceRegistry.lookup(issuerIdentity, issuerAttestedHash, snapshot_content)` | Group 4 returned `result`, computed against Group 3's `snapshot_content`; the same value is stored in `LOOKUP_RESPONSES.jsonl` when the query is receipt-eligible | UNVERIFIED (`IDENTITY_UNRESOLVED`) on unreachable/ambiguous; `IDENTITY_REJECTED` on hash/status mismatch; malformed/incomplete pre-admission input remains an in-memory fail-closed result with no durable row |
 | `registryLookupResult != receipt.lookupResult` | Group 4 lookup response `result` compared to the receipt's claimed `lookupResult` | UNVERIFIED (lookup result does not match registry state) |
 
 ## Negative Probes (T2F-R1-03)
