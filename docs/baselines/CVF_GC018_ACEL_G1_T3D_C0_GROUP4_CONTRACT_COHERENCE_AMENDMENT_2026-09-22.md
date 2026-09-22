@@ -133,6 +133,15 @@ encoding, non-JCS decoded content, invalid UTF-8/JSON, uppercase/non-hex or
 mismatched digest, missing content bytes, an attempt to hash the complete row,
 or a caller claim substituted for the recomputation.
 
+Failure classification and durable recording are distinct. A malformed
+request or source that cannot populate the closed lookup-response schema
+returns a fail-closed in-memory `IDENTITY_UNRESOLVED` or
+`IDENTITY_REJECTED` result and appends nothing. Once the request and source
+contain enough validated fields to populate that schema, the lookup is
+receipt-eligible and Party B appends exactly one terminal response for
+`IDENTITY_CONFIRMED`, `IDENTITY_REJECTED`, or `IDENTITY_UNRESOLVED`; no query
+may append more than one line.
+
 ### GAP3 - Separated Principals And Exact Protected DACLs
 
 The future registry file is `governance/sources/issuer_registry/REGISTRY.json`;
@@ -166,17 +175,19 @@ change may remain.
 
 ### GAP4 - Establishment Lifecycle Boundary
 
-The only permitted sequence is:
+The operational source lifecycle, which T3D-C0 does not enter, is:
 
 `TOOLING_ACCEPTED_SOURCE_NOT_CREATED` ->
 `SOURCE_CREATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING` ->
 `CONSUMER_BINDING_EXECUTED_PENDING_LOCAL_VERIFICATION` ->
 `SOURCE_ESTABLISHED_LOCAL_VERIFIED_CONSUMER_BOUND`.
 
-T3D-C0 ends at `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`. A future T3D-C1 may
+T3D-C0 ends at `CONTRACT_ACCEPTED_BOUNDED_SOURCE_NOT_CREATED` and makes no
+tooling-acceptance claim. A separately authorized T3D-C1 tooling step may
+reach `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`; a later source-creation step may
 reach only `SOURCE_CREATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING` after
-Local verifies paths, exact bytes, digests, owners, DACLs, and non-live
-negative/rollback tests. T3E, not T3D, performs the first real verifier
+Local verifies the actual paths, bytes, digests, owners, DACLs, and non-live
+negative/rollback evidence. T3E, not T3D, performs the first real verifier
 consumer lookup and records only
 `CONSUMER_BINDING_EXECUTED_PENDING_LOCAL_VERIFICATION`; Local verification of
 that evidence alone may advance to

@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `88658fd06`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
+Current material HEAD: `2a28787ee`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
 Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B and
 accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim.
 MCP/MUO discussion remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED`
@@ -8,7 +8,7 @@ at `820aae3ec`: one Party B observation, exact registry-byte binding, hash
 chain, owner and protected four-ACE DACL passed Local verification. No second
 observation is authorized. Party C is Local verified; the T3D-C0 contract
 amendment packet was dispatched at `dd1d0f344`; its pre-edit return contract
-was corrected at `d1f231256` and its gate invocation at `88658fd06`; Group 4 implementation and T3E remain closed.
+was corrected at `d1f231256`; its gate invocation was corrected at `88658fd06`, and its fast-doc commit-mode literal is now machine-readable. Group 4 implementation and T3E remain closed.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -162,7 +162,7 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 Authorized guard-maintenance scope: project the committed T3D-C0 dispatch
 `dd1d0f344` into the active front door, correct its pre-edit return-contract
-disposition and gate invocation, refresh the authority hash, and open bounded worker execution/review.
+disposition, gate invocation and fast-doc commit-mode literal, refresh the authority hash, and open bounded worker execution/review.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/acelG1T3cC2ExecutionCheckpoint20260922.json`;
