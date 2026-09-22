@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "cvf.acel.g1.partyCProvisioningResult.v1",
+  "disposition": "PARTY_C_PRINCIPAL_CREATED_PENDING_LOCAL_VERIFICATION",
+  "principalName": "LAM-RUBY\\cvf-g1-party-c",
+  "principalSid": "S-1-5-21-1644666849-912006174-747199667-1010",
+  "enabled": true,
+  "passwordRequired": true,
+  "isAdministrator": false,
+  "accountExpires": "2026-10-22T12:28:45.0000000Z",
+  "description": "CVF G1 Party C issuer registry authority",
+  "createdAtUtc": "2026-09-22T12:28:45.5622280Z",
+  "secretMaterialRecorded": false,
+  "claimBoundary": "principal provisioning result only; no issuer registry, lookup response, observation, consumer binding or admission claim"
+}
