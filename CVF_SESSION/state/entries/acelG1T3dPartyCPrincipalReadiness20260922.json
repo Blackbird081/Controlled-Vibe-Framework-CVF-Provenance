@@ -1,5 +1,5 @@
 {
   "stateOrder": 2843,
   "stateKey": "acelG1T3dPartyCPrincipalReadiness20260922",
-  "value": "ACEL G1 T3D Party C correction is committed at c7e8eb682 after the first attempt exposed the Windows 48-character local-user description limit. The operator rerun produced a secret-free success receipt and Local independently observed enabled=true, passwordRequired=true, non-admin posture, distinct SID ending 1010 and 30-day expiry. The receipt and Local verification audit remain pending material commit; Group 4 stays closed until that closure lands."
+  "value": "ACEL G1 T3D Party C principal provisioning is LOCAL_VERIFIED at material commit 7a5d509f3. The committed secret-free receipt and independent Local audit confirm enabled=true, passwordRequired=true, non-admin posture, distinct SID ending 1010, exact bounded description and 30-day expiry. The original orchestrator description exceeded Windows' 48-character limit; the narrow preflight and persisted failure diagnostic prevent recurrence at this surface. Group 4 tooling architecture/dispatch is now eligible, but no real source creation or T3E action is authorized."
 }

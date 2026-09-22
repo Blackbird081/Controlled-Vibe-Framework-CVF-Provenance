@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3d_party_c_principal_operator_checkpoint`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=operator runs the Party C provisioning launcher once, then Local verifies; role=Local orchestrator/reviewer; phase=T3D principal provisioning checkpoint; decision owner=Local; parked checkpoint=Group 4 implementation/T3E, second observation, promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3d_group4_architecture_decision`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local resolves Group 4 contract gaps and authors bounded tooling dispatch; role=Local orchestrator/reviewer; phase=T3D Group 4 architecture decision; decision owner=Local; parked checkpoint=real source creation/T3E, second observation, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_t3d_party_c_principal_operator_checkpoint`
-Current mode: `acel_g1_t3d_party_c_principal_operator_checkpoint`; previous mode marker: `acel_g1_t3d_party_c_principal_selection_checkpoint`
+Current mode marker: `acel_g1_t3d_group4_architecture_decision`
+Current mode: `acel_g1_t3d_group4_architecture_decision`; previous mode marker: `acel_g1_t3d_party_c_principal_operator_checkpoint`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_PARTY_C_CORRECTION_COMMITTED_AT_C7E8EB682; NEXT_STEP=LOCAL_COMMITS_PARTY_C_SUCCESS_RECEIPT_AND_INDEPENDENT_VERIFICATION_THEN_SELECTS_GROUP4_TOOLING_ROUTE; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Do not open Group 4 implementation/T3E, second observation, promotion, admission, provider/live API, public-sync or deployment before Party C verification closure. Latest closed LHW wave remains LHW24.
-Mode: `acel_g1_t3d_party_c_principal_operator_checkpoint`. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED`; the exact Party C provisioning launcher is committed and account creation remains pending operator execution plus Local verification. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_PARTY_C_LOCAL_VERIFIED_AT_7A5D509F3; NEXT_STEP=LOCAL_RESOLVES_GROUP4_HASH_CONTENT_APPEND_AUTHORITY_AND_T3E_BOUNDARY_THEN_AUTHORS_T3D_C1_TOOLING_DISPATCH; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. No real Group 4 source, second observation, T3E, promotion, admission, provider/live API, public-sync or deployment is authorized. Latest closed LHW wave remains LHW24.
+Mode: `acel_g1_t3d_group4_architecture_decision`. T3C-C2 and the Party C principal are Local verified; Group 4 tooling architecture/dispatch is next, while real Group 4 source creation and T3E remain parked. T2A, G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

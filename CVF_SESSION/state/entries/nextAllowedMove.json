@@ -1,5 +1,5 @@
 {
   "stateOrder": 2840,
   "stateKey": "nextAllowedMove",
-  "value": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_PARTY_C_CORRECTION_COMMITTED_AT_C7E8EB682; NEXT_STEP=LOCAL_COMMITS_PARTY_C_SUCCESS_RECEIPT_AND_INDEPENDENT_VERIFICATION_THEN_SELECTS_GROUP4_TOOLING_ROUTE; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Do not open Group 4 implementation/T3E, second observation, promotion, admission, provider/live API, public-sync or deployment before Party C verification closure. Latest closed LHW wave remains LHW24."
+  "value": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_PARTY_C_LOCAL_VERIFIED_AT_7A5D509F3; NEXT_STEP=LOCAL_RESOLVES_GROUP4_HASH_CONTENT_APPEND_AUTHORITY_AND_T3E_BOUNDARY_THEN_AUTHORS_T3D_C1_TOOLING_DISPATCH; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. No real Group 4 source, second observation, T3E, promotion, admission, provider/live API, public-sync or deployment is authorized. Latest closed LHW wave remains LHW24."
 }

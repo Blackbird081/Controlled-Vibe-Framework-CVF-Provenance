@@ -1,14 +1,14 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `c7e8eb682`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
+Current material HEAD: `7a5d509f3`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
 Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B and
 accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim.
 MCP/MUO discussion remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED`
 at `820aae3ec`: one Party B observation, exact registry-byte binding, hash
 chain, owner and protected four-ACE DACL passed Local verification. No second
-observation is authorized. The Party C 48-character correction is committed at
-`c7e8eb682`; operator success is pending Local evidence-commit closure.
+observation is authorized. Party C is `LOCAL_VERIFIED` at `7a5d509f3`; Group 4
+architecture decisions are next, while source creation and T3E remain closed.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -31,7 +31,7 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3d_party_c_principal_operator_checkpoint`;
+Startup acknowledged: current mode=`acel_g1_t3d_group4_architecture_decision`;
 active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator runs
 the Party C provisioning launcher once, then Local verifies the new principal;
 parked checkpoint=Group 4 implementation/T3E and
@@ -39,7 +39,7 @@ promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-`acel_g1_t3d_party_c_principal_operator_checkpoint`.
+`acel_g1_t3d_group4_architecture_decision`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -148,7 +148,7 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_PARTY_C_CORRECTION_COMMITTED_AT_C7E8EB682; NEXT_STEP=LOCAL_COMMITS_PARTY_C_SUCCESS_RECEIPT_AND_INDEPENDENT_VERIFICATION_THEN_SELECTS_GROUP4_TOOLING_ROUTE; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Do not open Group 4 implementation/T3E, second observation, promotion, admission, provider/live API, public-sync or deployment before Party C verification closure. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_PARTY_C_LOCAL_VERIFIED_AT_7A5D509F3; NEXT_STEP=LOCAL_RESOLVES_GROUP4_HASH_CONTENT_APPEND_AUTHORITY_AND_T3E_BOUNDARY_THEN_AUTHORS_T3D_C1_TOOLING_DISPATCH; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. No real Group 4 source, second observation, T3E, promotion, admission, provider/live API, public-sync or deployment is authorized. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 

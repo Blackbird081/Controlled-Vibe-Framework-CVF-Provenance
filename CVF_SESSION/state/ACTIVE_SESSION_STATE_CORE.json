@@ -109,7 +109,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "acel_g1_t3d_party_c_principal_operator_checkpoint",
+  "currentMode": "acel_g1_t3d_group4_architecture_decision",
   "previousMode": "acel_g1_t3d_party_c_principal_selection_checkpoint",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
