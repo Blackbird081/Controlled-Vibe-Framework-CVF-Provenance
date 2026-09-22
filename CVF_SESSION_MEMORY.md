@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3c_c1_architecture_reassessment_required`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=fresh architecture reassessment or separately authorized CVF foundation-learning tranche only; role=Local orchestrator/reviewer; phase=T3C-C1 terminal review; decision owner=Local; parked checkpoint=Party B real execution/source creation, bounded R3, T3D/T3E, promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3c_c1_ar1_worker_execution_checkpoint`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=operator forwards the exact committed AR1 work order to the INTERNAL_AGENT; role=Local orchestrator/reviewer; phase=T3C-C1 AR1 worker execution; decision owner=Local; parked checkpoint=Party B real execution/source creation, any AR1 scope expansion, T3D/T3E, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_t3c_c1_architecture_reassessment_required`
-Current mode: `acel_g1_t3c_c1_architecture_reassessment_required`; previous mode marker: `acel_g1_t3c_c1_worker_execution_checkpoint`
+Current mode marker: `acel_g1_t3c_c1_ar1_worker_execution_checkpoint`
+Current mode: `acel_g1_t3c_c1_ar1_worker_execution_checkpoint`; previous mode marker: `acel_g1_t3c_c1_architecture_reassessment_required`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=HOLD_ARCHITECTURE_REASSESSMENT_REQUIRED; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_R2_STOPPED_AT_6f22fb15c; NEXT_STEP=FRESH_OPERATOR_AUTHORIZED_ARCHITECTURE_REASSESSMENT_OR_SEPARATE_FOUNDATION_LEARNING_TRANCHE_ONLY; EXPANSION_ALLOWED=false. Do not issue a bounded R3 or run Party B. A future reassessment must redesign the deterministic peer-process harness, exception-safe guard lifetime, exact DACL rollback proof and final-return evidence binding before any new implementation order. The separately authorized CVF foundation-learning lane may consume the recorded machine-check candidates, but it must not reopen T3C-C1 implicitly. Do not read or create the real Group 3 source, create Party C, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths and four rejected T3C-C1 paths remain uncommitted. Latest closed LHW wave remains LHW24.
-Mode: `acel_g1_t3c_c1_architecture_reassessment_required`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_INTERNAL_WORK_ORDER; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_AR1_DISPATCHED_AT_dd76f9e00; NEXT_STEP=OPERATOR_FORWARDS_EXACT_COMMITTED_AR1_WORK_ORDER_TO_INTERNAL_AGENT; EXPANSION_ALLOWED=false. Execute only `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3C_C1_AR1_TRANSACTION_ARCHITECTURE_PROOF_CLOSURE_2026-09-22.md` with `WORKER_MUST_NOT_COMMIT`; update exactly its four owned paths and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Do not run Party B, read or create the real Group 3 source, create a fifth return, modify thirteen parked paths, create Party C, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.
+Mode: `acel_g1_t3c_c1_ar1_worker_execution_checkpoint`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

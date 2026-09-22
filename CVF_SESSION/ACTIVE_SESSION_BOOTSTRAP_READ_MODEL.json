@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "acel_g1_t3c_c1_architecture_reassessment_required",
+  "currentMode": "acel_g1_t3c_c1_ar1_worker_execution_checkpoint",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=HOLD_ARCHITECTURE_REASSESSMENT_REQUIRED; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_R2_STOPPED_AT_6f22fb15c; NEXT_STEP=FRESH_OPERATOR_AUTHORIZED_ARCHITECTURE_REASSESSMENT_OR_SEPARATE_FOUNDATION_LEARNING_TRANCHE_ONLY; EXPANSION_ALLOWED=false. Do not issue a bounded R3 or run Party B. A future reassessment must redesign the deterministic peer-process harness, exception-safe guard lifetime, exact DACL rollback proof and final-return evidence binding before any new implementation order. The separately authorized CVF foundation-learning lane may consume the recorded machine-check candidates, but it must not reopen T3C-C1 implicitly. Do not read or create the real Group 3 source, create Party C, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths and four rejected T3C-C1 paths remain uncommitted. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_INTERNAL_WORK_ORDER; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_AR1_DISPATCHED_AT_dd76f9e00; NEXT_STEP=OPERATOR_FORWARDS_EXACT_COMMITTED_AR1_WORK_ORDER_TO_INTERNAL_AGENT; EXPANSION_ALLOWED=false. Execute only `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3C_C1_AR1_TRANSACTION_ARCHITECTURE_PROOF_CLOSURE_2026-09-22.md` with `WORKER_MUST_NOT_COMMIT`; update exactly its four owned paths and return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Do not run Party B, read or create the real Group 3 source, create a fifth return, modify thirteen parked paths, create Party C, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3C_C1_R2_TRANSACTION_LIFETIME_AND_SECURITY_VERIFICATION_2026-09-21.md",
-    "baselineSha256": "49516f4eef9483ff58bc064a048d2b62d271efab70afa6efadd5c888817c0969",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3C_C1_R2_TRANSACTION_LIFETIME_AND_SECURITY_VERIFICATION_2026-09-21.md",
-    "workOrderSha256": "1f333bcb14f75272b466e29ab1e8a4f650fdc806ecd3db5aa2bf52e0befcf6d9"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3C_C1_AR1_TRANSACTION_ARCHITECTURE_REOPEN_2026-09-22.md",
+    "baselineSha256": "243f1270c576981dbf22a7b106b109b99eb328bb017b216389b150524d2f969c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3C_C1_AR1_TRANSACTION_ARCHITECTURE_PROOF_CLOSURE_2026-09-22.md",
+    "workOrderSha256": "cc4a558df6c64c08e952f9a5948abba56f85889ea77ac4b9c4a82475ae415bc5"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
