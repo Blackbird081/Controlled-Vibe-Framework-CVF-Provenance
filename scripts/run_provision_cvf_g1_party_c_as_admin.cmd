@@ -10,7 +10,7 @@ if /I "%~1"=="--elevated" goto elevated
 
 echo Requesting Administrator approval to provision the dedicated CVF G1 Party C account.
 powershell.exe -NoProfile -ExecutionPolicy Bypass -Command ^
-  "Start-Process -FilePath '%~f0' -Verb RunAs -ArgumentList '--elevated' -Wait"
+  "$p = Start-Process -FilePath '%~f0' -Verb RunAs -ArgumentList '--elevated' -PassThru -Wait; exit $p.ExitCode"
 exit /b %ERRORLEVEL%
 
 :elevated

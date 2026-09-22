@@ -59,6 +59,40 @@ function Assert-PartyCState {
 
 $repositoryRoot = (Resolve-Path -LiteralPath (Split-Path -Path $PSScriptRoot -Parent)).Path
 $receiptPath = Join-Path $repositoryRoot 'docs/reviews/evidence/cvf-acel-g1-t3d-party-c-provisioning-operator-result-2026-09-22.json'
+$failurePath = Join-Path $repositoryRoot 'docs/reviews/evidence/cvf-acel-g1-t3d-party-c-provisioning-failure-2026-09-22.json'
+$script:CreationOccurred = $false
+$script:RollbackAttempted = $false
+$script:RollbackSucceeded = $false
+
+trap {
+    $failureRecord = $_
+    $accountExistsAfterFailure = $null -ne (
+        Get-LocalUser -Name $script:AccountName -ErrorAction SilentlyContinue)
+    $failureReceipt = [ordered]@{
+        schemaVersion = 'cvf.acel.g1.partyCProvisioningFailure.v1'
+        disposition = 'PARTY_C_PROVISIONING_FAILED_NO_RETRY_PENDING_LOCAL_DIAGNOSIS'
+        failedAtUtc = [DateTime]::UtcNow.ToString('o')
+        errorMessage = $failureRecord.Exception.Message
+        fullyQualifiedErrorId = $failureRecord.FullyQualifiedErrorId
+        accountCreationOccurred = $script:CreationOccurred
+        rollbackAttempted = $script:RollbackAttempted
+        rollbackSucceeded = $script:RollbackSucceeded
+        accountExistsAfterFailure = $accountExistsAfterFailure
+        successReceiptExistsAfterFailure = Test-Path -LiteralPath $receiptPath -PathType Leaf
+        secretMaterialRecorded = $false
+        claimBoundary = 'secret-free failed-attempt diagnostic only; retry requires Local diagnosis'
+    }
+    try {
+        [System.IO.File]::WriteAllText(
+            $failurePath, (($failureReceipt | ConvertTo-Json -Depth 6) + [Environment]::NewLine),
+            [System.Text.UTF8Encoding]::new($false))
+        Write-Host "Failure diagnostic: $failurePath" -ForegroundColor Yellow
+    } catch {
+        Write-Warning "Could not persist the secret-free failure diagnostic: $($_.Exception.Message)"
+    }
+    Write-Error -Message $failureRecord.Exception.Message -ErrorAction Continue
+    exit 1
+}
 
 if ($PSCmdlet.ParameterSetName -eq 'Check') {
     $state = Get-PartyCState
@@ -74,6 +108,8 @@ if ($PSCmdlet.ParameterSetName -eq 'Check') {
     Write-Host "  sid     : $($state.Sid)"
     exit 0
 }
+
+Remove-Item -LiteralPath $failurePath -Force -ErrorAction SilentlyContinue
 
 $principal = [System.Security.Principal.WindowsPrincipal]::new(
     [System.Security.Principal.WindowsIdentity]::GetCurrent())
@@ -101,6 +137,7 @@ try {
     New-LocalUser -Name $script:AccountName -Password $password `
         -Description $script:Description -AccountExpires $expiry | Out-Null
     $created = $true
+    $script:CreationOccurred = $true
     Remove-Variable password -ErrorAction SilentlyContinue
 
     & net.exe user $script:AccountName /passwordreq:yes | Out-Null
@@ -127,6 +164,7 @@ try {
     [System.IO.File]::WriteAllText(
         $receiptPath, (($receipt | ConvertTo-Json -Depth 6) + [Environment]::NewLine),
         [System.Text.UTF8Encoding]::new($false))
+    Remove-Item -LiteralPath $failurePath -Force -ErrorAction SilentlyContinue
 
     Write-Host 'PARTY_C_PRINCIPAL_CREATED_PENDING_LOCAL_VERIFICATION'
     Write-Host "  account : $($receipt.principalName)"
@@ -135,7 +173,11 @@ try {
 } catch {
     Remove-Variable password -ErrorAction SilentlyContinue
     if ($created) {
-        try { Remove-LocalUser -Name $script:AccountName -ErrorAction Stop } catch {
+        $script:RollbackAttempted = $true
+        try {
+            Remove-LocalUser -Name $script:AccountName -ErrorAction Stop
+            $script:RollbackSucceeded = $true
+        } catch {
             throw "[PARTY_C_ROLLBACK_FAILED] account creation failed and rollback also failed: $($_.Exception.Message)"
         }
     }
