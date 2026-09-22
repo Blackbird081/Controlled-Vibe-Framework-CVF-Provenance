@@ -1,11 +1,11 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `db78c87df`. Group 1 is
+Current material HEAD recorded for this handoff: `6b078bf8b`. Group 1 is
 `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is
 `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B is verified and
-T3C-C1 AR1 is reviewer-fixed, verified and materially closed; the next
-authorized action is CVF foundation-learning packet authoring.
+T3C-C1 AR1 is reviewer-fixed, verified and materially closed; CVF-HRLTP-T1 is
+committed and the next authorized action is its no-commit worker execution.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -19,8 +19,8 @@ and only then Approver decision writes.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer. Phase: CVF foundation-learning packet
-authoring from accepted T3C-C1 evidence. Decision owner: Local.
+Role: Local orchestrator/reviewer with a shared-workspace INTERNAL_AGENT
+worker. Phase: CVF-HRLTP-T1 foundation implementation. Decision owner: Local.
 
 External research is closed for this lane. A shared-workspace worker, if later
 dispatched, is `INTERNAL_AGENT`; the operator relays its work order only and
@@ -28,16 +28,15 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3c_c1_ar1_closed_foundation_learning_authoring_checkpoint`;
-active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local
-authors the paired GC-018 baseline/work order for reusable CVF foundation
-learning; parked checkpoint=foundation implementation until packet commit,
-Party B real execution/source creation, T3D/T3E and
+Startup acknowledged: current mode=`cvf_hrltp_t1_worker_execution_checkpoint`;
+active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT
+executes the committed CVF-HRLTP-T1 work order without commit; parked
+checkpoint=Party B real execution/source creation, T3D/T3E and
 promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-`acel_g1_t3c_c1_ar1_closed_foundation_learning_authoring_checkpoint`.
+`cvf_hrltp_t1_worker_execution_checkpoint`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -116,6 +115,15 @@ External agent memory files: non-canonical convenience only.
   and canonical return pre/post SHA-256
   `db8a821d52178835df28a8b9032cd7ec471580d3a6664351ae7300b620b29b0f`.
   Material commit: `db78c87df`; real Group 3 log remains absent.
+- CVF-HRLTP-T1 foundation dispatch is committed at `6b078bf8b`. Its paired
+  baseline/work order converts the four accepted AR1 defect classes into one
+  reusable standard/checker/test/hook tranche. The INTERNAL_AGENT owns exactly
+  ten uncommitted paths, must preserve the thirteen parked paths, and returns
+  the independent probe as pending for Local execution. Dispatch author fast
+  gate passed; pre-dispatch passed 81/83, with only the two known cross-lane
+  parked-worktree findings from task routing and three historical probe-less
+  returns. The dispatch commit used a documented hook bypass rather than
+  misclassifying those parked paths as worker authority.
 
 ## T3B Readiness Inputs
 
@@ -128,11 +136,11 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_AR1_CLOSED_AT_db78c87df; NEXT_STEP=LOCAL_AUDITS_REPEATED_ORCHESTRATOR_AND_WORKER_FAILURES_AND_AUTHORS_PAIRED_GC018_BASELINE_WORK_ORDER_FOR_CVF_FOUNDATION_UPLIFT; EXPANSION_ALLOWED=false. Use the accepted AR1 return and the error-to-governance learning philosophy to define reusable process-barrier, exception-lifetime, semantic-security-rollback and final-evidence-binding controls. Do not implement the uplift before its packet is committed; do not run Party B or create the real Group 3 source, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=CVF_HRLTP_T1_DISPATCHED_AT_6b078bf8b; NEXT_STEP=INTERNAL_AGENT_EXECUTES_COMMITTED_HIGH_RISK_LOCAL_TRANSACTION_PROOF_FOUNDATION_T1_WORK_ORDER_WITHOUT_COMMIT; EXPANSION_ALLOWED=false. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_HIGH_RISK_LOCAL_TRANSACTION_PROOF_FOUNDATION_T1_2026-09-22.md exactly: ten worker-owned paths, WORKER_MUST_NOT_COMMIT, reviewer-independent probe pending. Preserve thirteen parked untracked paths byte-identically. Do not run Party B, create a real Group 3 source, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
-- CVF foundation-learning implementation pending a committed GC-018/work-order packet;
+- CVF-HRLTP-T1 implementation is released only to the committed no-commit INTERNAL_AGENT worker lane;
 - T3C real Party B execution/source creation remains separately parked;
 - T3D issuer source and T3E consumer wiring;
 - key promotion or candidate admission;

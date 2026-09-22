@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3c_c1_ar1_closed_foundation_learning_authoring_checkpoint`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local authors the paired GC-018 baseline/work order for reusable CVF foundation learning from AR1; role=Local orchestrator/reviewer; phase=foundation-learning packet authoring; decision owner=Local; parked checkpoint=foundation implementation until packet commit, Party B real execution/source creation, T3D/T3E, promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`cvf_hrltp_t1_worker_execution_checkpoint`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=INTERNAL_AGENT executes the committed CVF-HRLTP-T1 work order without commit; role=Local orchestrator/reviewer with shared-workspace INTERNAL_AGENT worker; phase=foundation implementation; decision owner=Local; parked checkpoint=Party B real execution/source creation, T3D/T3E, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_t3c_c1_ar1_closed_foundation_learning_authoring_checkpoint`
-Current mode: `acel_g1_t3c_c1_ar1_closed_foundation_learning_authoring_checkpoint`; previous mode marker: `acel_g1_t3c_c1_ar1_worker_execution_checkpoint`
+Current mode marker: `cvf_hrltp_t1_worker_execution_checkpoint`
+Current mode: `cvf_hrltp_t1_worker_execution_checkpoint`; previous mode marker: `acel_g1_t3c_c1_ar1_closed_foundation_learning_authoring_checkpoint`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_AR1_CLOSED_AT_db78c87df; NEXT_STEP=LOCAL_AUDITS_REPEATED_ORCHESTRATOR_AND_WORKER_FAILURES_AND_AUTHORS_PAIRED_GC018_BASELINE_WORK_ORDER_FOR_CVF_FOUNDATION_UPLIFT; EXPANSION_ALLOWED=false. Use the accepted AR1 return and the error-to-governance learning philosophy to define reusable process-barrier, exception-lifetime, semantic-security-rollback and final-evidence-binding controls. Do not implement the uplift before its packet is committed; do not run Party B or create the real Group 3 source, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.
-Mode: `acel_g1_t3c_c1_ar1_worker_execution_checkpoint`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=CVF_HRLTP_T1_DISPATCHED_AT_6b078bf8b; NEXT_STEP=INTERNAL_AGENT_EXECUTES_COMMITTED_HIGH_RISK_LOCAL_TRANSACTION_PROOF_FOUNDATION_T1_WORK_ORDER_WITHOUT_COMMIT; EXPANSION_ALLOWED=false. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_HIGH_RISK_LOCAL_TRANSACTION_PROOF_FOUNDATION_T1_2026-09-22.md exactly: ten worker-owned paths, WORKER_MUST_NOT_COMMIT, reviewer-independent probe pending. Preserve thirteen parked untracked paths byte-identically. Do not run Party B, create a real Group 3 source, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.
+Mode: `cvf_hrltp_t1_worker_execution_checkpoint`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

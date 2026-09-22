@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "acel_g1_t3c_c1_ar1_closed_foundation_learning_authoring_checkpoint",
+  "currentMode": "cvf_hrltp_t1_worker_execution_checkpoint",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_AR1_CLOSED_AT_db78c87df; NEXT_STEP=LOCAL_AUDITS_REPEATED_ORCHESTRATOR_AND_WORKER_FAILURES_AND_AUTHORS_PAIRED_GC018_BASELINE_WORK_ORDER_FOR_CVF_FOUNDATION_UPLIFT; EXPANSION_ALLOWED=false. Use the accepted AR1 return and the error-to-governance learning philosophy to define reusable process-barrier, exception-lifetime, semantic-security-rollback and final-evidence-binding controls. Do not implement the uplift before its packet is committed; do not run Party B or create the real Group 3 source, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=CVF_HRLTP_T1_DISPATCHED_AT_6b078bf8b; NEXT_STEP=INTERNAL_AGENT_EXECUTES_COMMITTED_HIGH_RISK_LOCAL_TRANSACTION_PROOF_FOUNDATION_T1_WORK_ORDER_WITHOUT_COMMIT; EXPANSION_ALLOWED=false. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_HIGH_RISK_LOCAL_TRANSACTION_PROOF_FOUNDATION_T1_2026-09-22.md exactly: ten worker-owned paths, WORKER_MUST_NOT_COMMIT, reviewer-independent probe pending. Preserve thirteen parked untracked paths byte-identically. Do not run Party B, create a real Group 3 source, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3C_C1_AR1_TRANSACTION_ARCHITECTURE_REOPEN_2026-09-22.md",
-    "baselineSha256": "243f1270c576981dbf22a7b106b109b99eb328bb017b216389b150524d2f969c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3C_C1_AR1_TRANSACTION_ARCHITECTURE_PROOF_CLOSURE_2026-09-22.md",
-    "workOrderSha256": "cc4a558df6c64c08e952f9a5948abba56f85889ea77ac4b9c4a82475ae415bc5"
+    "baselinePath": "docs/baselines/CVF_GC018_HIGH_RISK_LOCAL_TRANSACTION_PROOF_FOUNDATION_T1_2026-09-22.md",
+    "baselineSha256": "d4a453e5b29570456415319945547d7ab4152d577ef1a5a4ea7e2e989d26aaa6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_HIGH_RISK_LOCAL_TRANSACTION_PROOF_FOUNDATION_T1_2026-09-22.md",
+    "workOrderSha256": "0dbf3bf0b9d4dca6e3ab3f93424cec4e7a01060c9d414e9ad6ae41c9ab82821d"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
