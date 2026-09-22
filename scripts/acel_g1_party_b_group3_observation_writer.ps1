@@ -767,7 +767,14 @@ function Assert-ObservationLogSecurityPostcondition {
     $fullControlRights = [int][System.Security.AccessControl.FileSystemRights]::FullControl
     $allowType         = [int][System.Security.AccessControl.AccessControlType]::Allow
     $expectedSids      = @($ExpectedOwnerSid, 'S-1-5-18', 'S-1-5-32-544') | Sort-Object
-    $readRights        = [int][System.Security.AccessControl.FileSystemRights]::Read
+    # Windows normalizes a file Read allow ACE by adding Synchronize. Compare
+    # the rights value emitted by the same FileSystemAccessRule constructor,
+    # not the unnormalized enum literal.
+    $readRuleProbe = [System.Security.AccessControl.FileSystemAccessRule]::new(
+        [System.Security.Principal.SecurityIdentifier]::new($script:LocalSid),
+        [System.Security.AccessControl.FileSystemRights]::Read,
+        [System.Security.AccessControl.AccessControlType]::Allow)
+    $readRights        = [int]$readRuleProbe.FileSystemRights
     $expectedTuples    = @(
         $expectedSids | ForEach-Object {
             '{0}|{1}|{2}|{3}|{4}' -f $_, $allowType, $fullControlRights, 0, 0

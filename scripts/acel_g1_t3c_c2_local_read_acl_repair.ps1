@@ -87,7 +87,11 @@ function Get-ExpectedTuples {
     param([Parameter(Mandatory = $true)][bool] $IncludeLocalRead)
     $allow = [int][System.Security.AccessControl.AccessControlType]::Allow
     $full = [int][System.Security.AccessControl.FileSystemRights]::FullControl
-    $read = [int][System.Security.AccessControl.FileSystemRights]::Read
+    $readRuleProbe = [System.Security.AccessControl.FileSystemAccessRule]::new(
+        [System.Security.Principal.SecurityIdentifier]::new($script:LocalSid),
+        [System.Security.AccessControl.FileSystemRights]::Read,
+        [System.Security.AccessControl.AccessControlType]::Allow)
+    $read = [int]$readRuleProbe.FileSystemRights
     return @(
         foreach ($sid in @($script:PartyBSid, 'S-1-5-18', 'S-1-5-32-544')) {
             '{0}|{1}|{2}|False|0|0' -f $sid, $full, $allow
@@ -142,9 +146,8 @@ function Invoke-IndependentChecker {
 
 $principal = [System.Security.Principal.WindowsPrincipal]::new(
     [System.Security.Principal.WindowsIdentity]::GetCurrent())
-if (-not $principal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    throw '[ELEVATION_REQUIRED] run this one-time repair from an elevated PowerShell session'
-}
+$isAdministrator = $principal.IsInRole(
+    [System.Security.Principal.WindowsBuiltInRole]::Administrator)
 
 $repositoryRoot = (Resolve-Path -LiteralPath (Split-Path -Path $PSScriptRoot -Parent)).Path
 $logPath = Join-Path $repositoryRoot 'governance/sources/registry_observation_log/LOG.jsonl'
@@ -194,26 +197,42 @@ if ((Get-Sha256Hex -Bytes $snapshotBytes) -ne $script:ExpectedSnapshotHash) {
 
 $checkerBefore = Invoke-IndependentChecker -CheckerPath $checkerPath -LogPath $logPath
 $stateBefore = Get-SecurityState -Path $logPath
-Assert-SecurityState -State $stateBefore -IncludeLocalRead $false -Stage 'PRESTATE'
+$prestateAlreadyCompliant = $false
+try {
+    Assert-SecurityState -State $stateBefore -IncludeLocalRead $false -Stage 'PRESTATE'
+} catch {
+    $oldPolicyFailure = $_
+    try {
+        Assert-SecurityState -State $stateBefore -IncludeLocalRead $true -Stage 'PRESTATE_ALREADY_COMPLIANT'
+        $prestateAlreadyCompliant = $true
+    } catch {
+        throw $oldPolicyFailure
+    }
+}
+if (-not $prestateAlreadyCompliant -and -not $isAdministrator) {
+    throw '[ELEVATION_REQUIRED] old three-ACE policy requires an elevated one-time DACL repair'
+}
 
 $daclMutated = $false
 try {
-    $newSecurity = [System.Security.AccessControl.FileSecurity]::new()
-    $newSecurity.SetAccessRuleProtection($true, $false)
-    foreach ($sid in @($script:PartyBSid, 'S-1-5-18', 'S-1-5-32-544')) {
+    if (-not $prestateAlreadyCompliant) {
+        $newSecurity = [System.Security.AccessControl.FileSecurity]::new()
+        $newSecurity.SetAccessRuleProtection($true, $false)
+        foreach ($sid in @($script:PartyBSid, 'S-1-5-18', 'S-1-5-32-544')) {
+            $newSecurity.AddAccessRule([System.Security.AccessControl.FileSystemAccessRule]::new(
+                [System.Security.Principal.SecurityIdentifier]::new($sid),
+                [System.Security.AccessControl.FileSystemRights]::FullControl,
+                [System.Security.AccessControl.AccessControlType]::Allow))
+        }
         $newSecurity.AddAccessRule([System.Security.AccessControl.FileSystemAccessRule]::new(
-            [System.Security.Principal.SecurityIdentifier]::new($sid),
-            [System.Security.AccessControl.FileSystemRights]::FullControl,
+            [System.Security.Principal.SecurityIdentifier]::new($script:LocalSid),
+            [System.Security.AccessControl.FileSystemRights]::Read,
             [System.Security.AccessControl.AccessControlType]::Allow))
-    }
-    $newSecurity.AddAccessRule([System.Security.AccessControl.FileSystemAccessRule]::new(
-        [System.Security.Principal.SecurityIdentifier]::new($script:LocalSid),
-        [System.Security.AccessControl.FileSystemRights]::Read,
-        [System.Security.AccessControl.AccessControlType]::Allow))
 
-    [System.IO.FileSystemAclExtensions]::SetAccessControl(
-        [System.IO.FileInfo]::new($logPath), $newSecurity)
-    $daclMutated = $true
+        [System.IO.FileSystemAclExtensions]::SetAccessControl(
+            [System.IO.FileInfo]::new($logPath), $newSecurity)
+        $daclMutated = $true
+    }
 
     $stateAfter = Get-SecurityState -Path $logPath
     Assert-SecurityState -State $stateAfter -IncludeLocalRead $true -Stage 'POSTSTATE'
@@ -238,6 +257,7 @@ try {
         sourceBytesUnchanged = $true
         sourceCheckerBefore = 'PASS'
         sourceCheckerAfter = 'PASS'
+        daclMutationPerformed = $daclMutated
         ownerSid = $stateAfter.OwnerSid
         daclProtected = $stateAfter.Protected
         aceTuples = @($stateAfter.AceTuples)
@@ -255,7 +275,11 @@ try {
     Write-Host 'T3C_C2_LOCAL_VERIFICATION_AND_ACL_REPAIR_PASS'
     Write-Host "  logSha256 : $logHashAfter"
     Write-Host "  receipt   : $receiptPath"
-    Write-Host '  mutation  : DACL only; source bytes unchanged'
+    if ($daclMutated) {
+        Write-Host '  mutation  : DACL only; source bytes unchanged'
+    } else {
+        Write-Host '  mutation  : none; DACL was already compliant and source bytes are unchanged'
+    }
 } catch {
     if ($daclMutated) {
         try {

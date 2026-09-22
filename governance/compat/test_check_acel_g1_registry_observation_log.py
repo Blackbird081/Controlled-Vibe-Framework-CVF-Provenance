@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Focused positive/negative tests for check_acel_g1_registry_observation_log.
 
-Runs entirely against disposable in-memory/temporary fixtures. Never touches
-the real Group 3 governed log path and never claims any Group 3 source is
-created, established, admitted or consumer-wired.
+Runs against disposable in-memory/temporary fixtures. One lifecycle guard may
+read the real Group 3 path before and after checker self-test execution solely
+to prove byte-exact non-mutation; it never writes that path and never claims
+any Group 3 source is created, established, admitted or consumer-wired.
 
 Covers: genesis and two-entry positives; the published 29-byte vector;
 exact-byte whitespace drift; every strict-decoding failure (padding,
@@ -381,8 +382,16 @@ class NoMutationTests(unittest.TestCase):
                 checker.validate_log([bad])
             self.assertEqual(log_path.read_bytes(), before)
 
-    def test_real_log_absent(self):
-        self.assertFalse((REPO_ROOT / REAL_LOG_RELATIVE).exists())
+    def test_checker_self_test_does_not_mutate_real_log(self):
+        real_log = REPO_ROOT / REAL_LOG_RELATIVE
+        existed_before = real_log.exists()
+        bytes_before = real_log.read_bytes() if existed_before else None
+
+        self.assertEqual(checker._run_self_test(), 0)
+
+        self.assertEqual(real_log.exists(), existed_before)
+        if existed_before:
+            self.assertEqual(real_log.read_bytes(), bytes_before)
 
 
 class BlankLineRejectionTests(unittest.TestCase):

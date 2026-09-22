@@ -168,6 +168,32 @@ establishment, downstream binding or admission claim is accepted yet.
 | Manifest delta | pending final reconciliation before commit |
 | Deletion or rename disposition | none |
 
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: replace only the Group 3 checker test's
+pre-establishment-only real-log-absence assertion with a lifecycle-safe,
+read-only byte-invariance assertion after legitimate source creation.
+
+Protected path authorized for mutation:
+
+- `governance/compat/test_check_acel_g1_registry_observation_log.py`.
+
+Protected paths present only because they are pre-existing parked untracked
+worktree evidence and therefore listed for changed-set accounting:
+
+- `governance/compat/check_task_class_calibration_owner_evidence.py`;
+- `governance/compat/test_check_task_class_calibration_owner_evidence.py`.
+
+Operator authorization: standing Local reviewer/fixer authority within the
+operator-directed continuation of ACEL G1-G6. Rollback boundary: revert only
+the Group 3 lifecycle-test correction and its paired completion evidence if
+rejected; preserve the real source and every parked path.
+
+The two task-class paths are explicitly excluded from mutation, staging and
+commitment by this authorization. No checker-semantic relaxation, hook wiring,
+second observation, Group 4/T3E implementation, provider/live call, public
+sync, deployment or production action is authorized.
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
