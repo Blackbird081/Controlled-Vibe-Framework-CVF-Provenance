@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `19466bfdc`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`.
+Current material HEAD: `3403a1f13`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`.
 Party B and accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim; MCP/MUO remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED` at `820aae3ec` with one Local-verified Party B observation; no second is authorized.
 Party C is Local verified. T3D-C1 tooling remains `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`; T3D-C0-R1 contract-only operational-boundary repair is `CLOSED_PASS_BOUNDED` at `2fffa1ef7`. Required disposition is `STOP_REASSESS_ARCHITECTURE`; no T3D-C1-R2 successor, real Group 4 source creation or T3E is authorized. CVF-HRLTP-T2 operational role-capability consistency is dispatched at `19466bfdc`; only its exact eight-path no-commit INTERNAL_AGENT implementation is authorized.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
@@ -15,7 +15,7 @@ and only then Approver decision writes.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer. Phase: CVF-HRLTP-T2 implementation dispatch.
+Role: Local orchestrator/reviewer. Phase: autorun active-work-order lane-binding R1 implementation dispatch.
 Decision owner: Local.
 
 External research is closed for this lane. A shared-workspace worker, if later
@@ -24,10 +24,10 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_hrltp_t2_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT executes the committed HRLTP-T2 work order without commit, then Local reviews returned evidence; parked checkpoint=actual-token or alternate-principal proof, ACEL execution, credentials, source creation, T3D-C1-R2, T3E, promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`autorun_active_work_order_lane_binding_r1_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=INTERNAL_AGENT executes the committed five-path autorun repair without commit, then Local closes it and resumes HRLTP-T2; parked checkpoint=HRLTP-T2 implementation until repair acceptance, actual-token/alternate-principal proof, ACEL/source/credential/live/runtime/public/deployment.
 
 ## Current Mode
-`cvf_hrltp_t2_dispatched`.
+`autorun_active_work_order_lane_binding_r1_dispatched`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -150,11 +150,11 @@ principal-policy decision. This identity evidence is not source/activation proof
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=CVF_HRLTP_T2_DISPATCHED_AT_19466BFDC; CURRENT_TRANCHE_DISPOSITION=INTERNAL_AGENT_WORKER_EXECUTION_ONLY; NEXT_STEP=INTERNAL_AGENT_EXECUTES_COMMITTED_HRLTP_T2_WORK_ORDER_WITHOUT_COMMIT_THEN_LOCAL_REVIEWER_EVALUATES_RETURNED_EVIDENCE; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Worker may change only the eight worker-owned paths in the committed work order and must not stage or commit. Actual-token or alternate-principal proof, ACEL execution, credentials, source creation, T3D-C1-R2, T3E, provider/live API, runtime activation, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=AUTORUN_ACTIVE_WORK_ORDER_LANE_BINDING_R1_DISPATCHED_AT_3403A1F13; CURRENT_TRANCHE_DISPOSITION=INTERNAL_AGENT_WORKER_EXECUTION_ONLY; NEXT_STEP=INTERNAL_AGENT_EXECUTES_COMMITTED_AUTORUN_LANE_BINDING_R1_WITHOUT_COMMIT_THEN_LOCAL_REVIEWER_CLOSES_REPAIR_AND_RESUMES_HRLTP_T2; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths and committed HRLTP-T2 packet byte-identically. Worker may change only the five worker-owned repair paths and must not stage or commit. Checker semantics, receipt schema, HRLTP-T2 implementation, actual-token or alternate-principal proof, ACEL execution, credentials, source creation, provider/live API, runtime activation, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
-- CVF-HRLTP-T2 implementation is released only to the committed exact eight-path no-commit INTERNAL_AGENT worker lane;
+- autorun lane-binding R1 is released only to its exact five-path no-commit INTERNAL_AGENT worker lane; HRLTP-T2 resumes only after Local acceptance;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
 - T3D-C1 hermetic tooling is accepted at `9ed844c2a`; T3D-C0-R1 is closed at
   `2fffa1ef7`, while T3D-C1-R2, Group 4 source creation and T3E remain parked
@@ -165,14 +165,14 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project HRLTP-T2 dispatch `19466bfdc`, its exact current-authority hashes and no-commit worker route while preserving T3D-C0-R1 `STOP_REASSESS_ARCHITECTURE` and the source/T3E ban.
+Authorized guard-maintenance scope: project autorun lane-binding R1 dispatch `3403a1f13`, its exact current-authority hashes and no-commit worker route while preserving HRLTP-T2 and the T3D source/T3E ban.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cvfHrltpT2Dispatch20260923.json`
+- `CVF_SESSION/state/entries/autorunActiveWorkOrderLaneBindingR1Dispatch20260923.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 - `governance/compat/check_task_class_calibration_owner_evidence.py`
@@ -194,13 +194,13 @@ live/runtime/public or deployment effect.
 |---|---|
 | Actor | Local session-sync steward |
 | Provider or surface | private CVF workspace |
-| Session or invocation | CVF-HRLTP-T2 dispatch continuity, 2026-09-23 |
+| Session or invocation | autorun active-work-order lane-binding R1 dispatch continuity, 2026-09-23 |
 | Working directory | repository root |
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer and session-transition authority |
-| Before status evidence | material HEAD `19466bfdc`; HRLTP-T2 dispatch hook 90/90; thirteen parked paths untracked |
-| After status evidence | HRLTP-T2 exact eight-path worker execution is next; actual-token and real source execution remain closed |
+| Before status evidence | material HEAD `3403a1f13`; repair dispatch hook 90/90; thirteen parked paths untracked |
+| After status evidence | exact five-path autorun repair is next; HRLTP-T2 and real source execution remain paused |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and exact committed HRLTP-T2 worker routing only |
 | Claim boundary | continuity only; no implementation is claimed, no actual-token proof, ACEL/source action, promotion, admission, live/runtime/public effect |

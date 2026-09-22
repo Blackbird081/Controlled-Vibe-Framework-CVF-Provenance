@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_hrltp_t2_dispatched`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=INTERNAL_AGENT executes the committed HRLTP-T2 work order without commit, then Local reviews returned evidence; role=Local orchestrator/reviewer; phase=HRLTP-T2 implementation dispatch; decision owner=Local; parked checkpoint=actual-token or alternate-principal proof, ACEL execution, credentials, source creation, T3D-C1-R2, T3E, promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`autorun_active_work_order_lane_binding_r1_dispatched`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=INTERNAL_AGENT executes the committed five-path autorun repair without commit, then Local closes it and resumes HRLTP-T2; role=Local orchestrator/reviewer; phase=autorun lane-binding repair dispatch; decision owner=Local; parked checkpoint=HRLTP-T2 implementation until repair acceptance, actual-token/alternate-principal proof, ACEL/source/credential/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `cvf_hrltp_t2_dispatched`
-Current mode: `cvf_hrltp_t2_dispatched`; previous mode marker: `acel_g1_t3d_c0_r1_closed_reassess_architecture`
+Current mode marker: `autorun_active_work_order_lane_binding_r1_dispatched`
+Current mode: `autorun_active_work_order_lane_binding_r1_dispatched`; previous mode marker: `cvf_hrltp_t2_dispatched`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=CVF_HRLTP_T2_DISPATCHED_AT_19466BFDC; CURRENT_TRANCHE_DISPOSITION=INTERNAL_AGENT_WORKER_EXECUTION_ONLY; NEXT_STEP=INTERNAL_AGENT_EXECUTES_COMMITTED_HRLTP_T2_WORK_ORDER_WITHOUT_COMMIT_THEN_LOCAL_REVIEWER_EVALUATES_RETURNED_EVIDENCE; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Worker may change only the eight worker-owned paths in the committed work order and must not stage or commit. Actual-token or alternate-principal proof, ACEL execution, credentials, source creation, T3D-C1-R2, T3E, provider/live API, runtime activation, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.
-Mode: `cvf_hrltp_t2_dispatched`. HRLTP-T2 dispatch is committed at `19466bfdc`; worker execution is limited to the exact eight-path manifest. T3C-C2 and Party C remain Local verified; T3D-C1 tooling remains `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`; T3D-C0-R1 remains `CLOSED_PASS_BOUNDED` at `2fffa1ef7` with no successor or real Group 4 source authorized.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=AUTORUN_ACTIVE_WORK_ORDER_LANE_BINDING_R1_DISPATCHED_AT_3403A1F13; CURRENT_TRANCHE_DISPOSITION=INTERNAL_AGENT_WORKER_EXECUTION_ONLY; NEXT_STEP=INTERNAL_AGENT_EXECUTES_COMMITTED_AUTORUN_LANE_BINDING_R1_WITHOUT_COMMIT_THEN_LOCAL_REVIEWER_CLOSES_REPAIR_AND_RESUMES_HRLTP_T2; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths and committed HRLTP-T2 packet byte-identically. Worker may change only the five worker-owned repair paths and must not stage or commit. Checker semantics, receipt schema, HRLTP-T2 implementation, actual-token or alternate-principal proof, ACEL execution, credentials, source creation, provider/live API, runtime activation, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.
+Mode: `autorun_active_work_order_lane_binding_r1_dispatched`. Repair dispatch is committed at `3403a1f13`; HRLTP-T2 remains committed and paused only until the repair is independently accepted. T3D-C0-R1 remains `CLOSED_PASS_BOUNDED` with no real Group 4 source or T3E successor authorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

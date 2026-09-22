@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2874,
+  "stateKey": "autorunActiveWorkOrderLaneBindingR1Dispatch20260923",
+  "value": "Autorun active-work-order lane-binding R1 is DISPATCHED at material commit 3403a1f13. It is a bounded five-path no-commit repair of aggregate-to-independent-probe context propagation after HRLTP-T2 pre-implementation passed 84/85 and failed solely on three pre-existing parked historical returns. The opt-in binding is pre-implementation-only; every default and other phase remains broad, the current untracked return stays in the failing lane, parked findings remain visible, and command argv continues to bind receipt identity. Thirteen parked paths and the committed HRLTP-T2 packet remain outside worker authority."
+}
