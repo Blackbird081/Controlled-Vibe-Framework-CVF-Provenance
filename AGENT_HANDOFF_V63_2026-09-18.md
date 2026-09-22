@@ -1,13 +1,8 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `e14722e17`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
-Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B and
-accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim.
-MCP/MUO discussion remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED`
-at `820aae3ec`: one Party B observation, exact registry-byte binding, hash
-chain, owner and protected four-ACE DACL passed Local verification. No second
-observation is authorized. Party C is Local verified. T3D-C0 closed `CLOSED_PASS_BOUNDED`
-at `e14722e17` after independent review passed all four repaired contract joins; T3D-C1 tooling and T3E remain closed.
+Current material HEAD: `913460fc3`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`.
+Party B and accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim; MCP/MUO remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED` at `820aae3ec` with one Local-verified Party B observation; no second is authorized.
+Party C is Local verified. T3D-C0 is `CLOSED_PASS_BOUNDED` at `e14722e17`; T3D-C1 hermetic tooling is dispatched at `913460fc3`; real Group 4 source creation and T3E remain closed.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -29,11 +24,10 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3d_c0_contract_closed`; active
-handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local T3D-C1 tooling-dispatch audit/authoring; parked checkpoint=execution, real Group 4 source/T3E, promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3d_c1_tooling_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one INTERNAL_AGENT executes the exact-five-path hermetic T3D-C1 work order; parked checkpoint=credentials, Party B/C execution, real Group 4 source/T3E, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
-`acel_g1_t3d_c0_contract_closed`.
+`acel_g1_t3d_c1_tooling_dispatched`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -43,8 +37,7 @@ Latest closed learning-history wave remains `LHW24`.
 T3B is closed with one Local-verified active v1 specification. Party B is a
 verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
-T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local
-verified. T3D-C0 is closed contract-only at `e14722e17`; T3D-C1 tooling may be audited/authored next, while execution, source creation and T3E remain closed.
+T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C0 is closed contract-only at `e14722e17`; T3D-C1 tooling is dispatched at `913460fc3` for one hermetic no-commit worker, while credentials, alternate-principal execution, source creation and T3E remain closed.
 
 Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
 External agent memory files: non-canonical convenience only.
@@ -130,6 +123,8 @@ External agent memory files: non-canonical convenience only.
   admissible only as a bounded naturalistic observation; it does not prove
   topology or model cost/quality superiority and is not a P4 auto-enrollment.
 - T3D-C0 closed `CLOSED_PASS_BOUNDED` at `e14722e17`; independent review passed all four repaired T2F contract joins and pre-commit passed 90/90. A post-commit range run rejected the mixed material/current-authority projection because exact-hash projection and range separation conflict; no range PASS is claimed, and this remains a governance-learning input.
+- T3D-C1 Group 4 tooling dispatch is committed at `913460fc3`; independent adversarial review passed transaction, canonicalization, idempotency and DACL semantics, and the material hook passed 90/90.
+  Aggregate pre-dispatch was 82/83 only because three historical untracked returns are outside the lane; the active-work-order changed-lane probe passed and no parked byte changed. The worker owns exactly five uncommitted hermetic outputs and must not use credentials or create sources.
 
 ## T3B Readiness Inputs
 
@@ -142,22 +137,24 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C0_CONTRACT_CLOSED_AT_E14722E17; NEXT_STEP=LOCAL_AUDITS_AND_IF_COHERENT_AUTHORS_THE_BOUNDED_T3D_C1_GROUP4_TOOLING_DISPATCH_ONLY; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. T3D-C1 worker execution, real Group 4 source, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden until separately dispatched. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C1_GROUP4_TOOLING_DISPATCHED_AT_913460FC3; NEXT_STEP=ONE_INTERNAL_AGENT_EXECUTES_THE_COMMITTED_T3D_C1_WORK_ORDER_AND_RETURNS_EXACTLY_FIVE_UNCOMMITTED_OUTPUTS_FOR_LOCAL_REVIEW; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Credentials, Party B or Party C execution, real Group 4 source creation, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
 - CVF-HRLTP-T1 implementation is released only to the committed no-commit INTERNAL_AGENT worker lane;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
-- T3D-C0 contract closure is accepted at `e14722e17`; T3D-C1 tooling execution, Group 4 source creation and T3E remain parked;
+- T3D-C0 contract closure is accepted at `e14722e17`; T3D-C1 hermetic tooling
+  execution is dispatched at `913460fc3`, while Group 4 source creation and
+  T3E remain parked;
 - key promotion or candidate admission;
 - provider/live work, runtime activation, public sync, deployment or production;
 - mutation, staging or commitment of the thirteen parked untracked paths.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project accepted T3D-C0 closure `e14722e17`,
-its independent review and bounded range-shape contradiction, then open Local
-audit/authoring of the T3D-C1 tooling dispatch only.
+Authorized guard-maintenance scope: project the committed T3D-C1 dispatch at
+`913460fc3`, its independent adversarial review and bounded out-of-lane
+pre-dispatch finding, then open only the exact-five-path hermetic worker lane.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/acelG1T3cC2ExecutionCheckpoint20260922.json`;
@@ -165,6 +162,7 @@ Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION/state/entries/cvfHrltpT1Closure20260922.json`;
 `CVF_SESSION/state/entries/acelG1T3cC2Closure20260922.json`;
 `CVF_SESSION/state/entries/acelG1T3dPartyCPrincipalReadiness20260922.json`; `CVF_SESSION/state/entries/acelG1T3dGroup4ContractGapDecision20260922.json`; `CVF_SESSION/state/entries/acelG1T3dC0ContractAmendmentDispatch20260922.json`;
+`CVF_SESSION/state/entries/acelG1T3dC1Group4ToolingDispatch20260922.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
 `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
@@ -180,7 +178,8 @@ commitment by this session-sync change.
 
 Operator authorization: standing Local reviewer/closer, worker-dispatch and
 session-transition authority. Rollback boundary: revert only this continuity
-projection; preserve accepted sources, T3D-C0 closure, all worker inputs and
+projection; preserve accepted sources, T3D-C0 closure, committed T3D-C1
+dispatch, all worker inputs and
 all parked files. This change creates no Group 4 source and authorizes no
 alternate-principal execution, credential, second observation, promotion,
 admission, live/runtime/public or deployment effect.
@@ -191,18 +190,18 @@ admission, live/runtime/public or deployment effect.
 |---|---|
 | Actor | Local session-sync steward |
 | Provider or surface | private CVF workspace |
-| Session or invocation | ACEL G1 T3B Party A spec-execution continuity, 2026-09-20 |
+| Session or invocation | ACEL G1 T3D-C1 Group 4 tooling-dispatch continuity, 2026-09-22 |
 | Working directory | repository root |
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer authority |
-| Before status evidence | material HEAD `dd76f9e00`; AR1 baseline/order committed; thirteen parked paths plus four AR1 worker inputs untracked |
-| After status evidence | exact committed AR1 order is ready for operator relay to the INTERNAL_AGENT; real source execution remains closed |
+| Before status evidence | material HEAD `913460fc3`; T3D-C1 baseline/order committed; thirteen parked paths untracked |
+| After status evidence | exact committed T3D-C1 order is ready for one INTERNAL_AGENT; real source execution remains closed |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and Local audit routing only |
-| Claim boundary | continuity only; no Group 2 source, activation, promotion, admission, live/runtime/public effect |
+| Claim boundary | continuity only; no Group 4 source, T3E lookup, promotion, admission, live/runtime/public effect |
 | Agent type | Local session-sync steward |
-| Invocation ID | `acel-g1-t3c-c1-worker-dispatch-v63-continuity-20260921` |
+| Invocation ID | `acel-g1-t3d-c1-tooling-dispatch-v63-continuity-20260922` |
 | Expected manifest | handoff, front door, core, next-move, generated state and bootstrap |
 | Actual changed set | verified before commit |
 | Manifest delta | pending final diff reconciliation |
@@ -210,7 +209,7 @@ admission, live/runtime/public or deployment effect.
 
 ## Claim Boundary
 
-This handoff records continuity and the bounded T3C-C1 worker checkpoint only.
-It does not create an observation, establish Group 3, bind a verifier consumer,
+This handoff records continuity and the bounded T3D-C1 worker dispatch only.
+It does not create a Group 4 source, perform a T3E lookup, bind a verifier consumer,
 promote a key, admit a candidate, or authorize provider/live, runtime,
 public-sync, deployment or production behavior.

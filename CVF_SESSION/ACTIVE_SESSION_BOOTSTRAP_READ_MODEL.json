@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "acel_g1_t3d_c0_contract_amendment_dispatched",
+  "currentMode": "acel_g1_t3d_c1_tooling_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C0_CONTRACT_CLOSED_AT_E14722E17; NEXT_STEP=LOCAL_AUDITS_AND_IF_COHERENT_AUTHORS_THE_BOUNDED_T3D_C1_GROUP4_TOOLING_DISPATCH_ONLY; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. T3D-C1 worker execution, real Group 4 source, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden until separately dispatched. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C1_GROUP4_TOOLING_DISPATCHED_AT_913460FC3; NEXT_STEP=ONE_INTERNAL_AGENT_EXECUTES_THE_COMMITTED_T3D_C1_WORK_ORDER_AND_RETURNS_EXACTLY_FIVE_UNCOMMITTED_OUTPUTS_FOR_LOCAL_REVIEW; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Credentials, Party B or Party C execution, real Group 4 source creation, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C0_GROUP4_CONTRACT_COHERENCE_AMENDMENT_2026-09-22.md",
-    "baselineSha256": "874c57b032cf55baa4f1c0f569a9dfe9c678524286dbe8de3d06c60e3b411f90",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C0_GROUP4_CONTRACT_COHERENCE_AMENDMENT_2026-09-22.md",
-    "workOrderSha256": "4517731f66a350a58154429df2e287f0de5d19d59ef8fbdc15f142ccaff26c98"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C1_GROUP4_ISSUER_REGISTRY_LOOKUP_TOOLING_2026-09-22.md",
+    "baselineSha256": "8ccdd35ee381cbae4c2a453207d9205225a161fa2553483ef7f6aec085452a65",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C1_GROUP4_ISSUER_REGISTRY_LOOKUP_TOOLING_2026-09-22.md",
+    "workOrderSha256": "984579ab2fd05759b2406571f88fb3b9a61547e08f51cd63ad746c1315ba592c"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
