@@ -1,15 +1,13 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `fb7961510`. Group 1 is
-`SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is
-`ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B is verified and
-T3C-C1 AR1 is reviewer-fixed, verified and materially closed; CVF-HRLTP-T1
-is independently reviewed and accepted, and its bounded multi-agent routing
-observation is recorded without a cost-superiority claim.
-The MCP/MUO orchestration discussion is parked for a later tranche at
-`docs/reference/external_agent_invocation_control/CVF_AGENT_ORCHESTRATION_PLATFORM_MCP_DISCUSSION.md`;
-the external-agent invocation moratorium remains unchanged.
+Current material HEAD: `434d616a1`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
+Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B and
+accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim.
+MCP/MUO discussion is parked in its existing owner; the moratorium is unchanged.
+The first T3C-C2 attempt stopped before mutation on missing Party B Python.
+Commit `434d616a1` records no-source diagnosis, read/execute-only Python access,
+launcher preflight hardening and authorization for one corrected retry.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
