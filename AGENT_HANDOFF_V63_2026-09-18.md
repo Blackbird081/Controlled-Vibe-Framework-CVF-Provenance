@@ -1,14 +1,13 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `42fb34b53`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
+Current material HEAD: `e14722e17`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
 Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B and
 accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim.
 MCP/MUO discussion remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED`
 at `820aae3ec`: one Party B observation, exact registry-byte binding, hash
 chain, owner and protected four-ACE DACL passed Local verification. No second
-observation is authorized. Party C is Local verified; the T3D-C0 contract
-amendment packet was dispatched at `dd1d0f344`; its pre-edit return contract
-was corrected at `d1f231256`; its gate invocation was corrected at `88658fd06`, and its fast-doc commit-mode literal is now machine-readable. Group 4 implementation and T3E remain closed.
+observation is authorized. Party C is Local verified. T3D-C0 closed `CLOSED_PASS_BOUNDED`
+at `e14722e17` after independent review passed all four repaired contract joins; T3D-C1 tooling and T3E remain closed.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -30,15 +29,11 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3d_c0_contract_amendment_dispatched`;
-active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one
-INTERNAL_AGENT executes the committed T3D-C0 documentation packet and returns
-exactly two uncommitted outputs for Local review; parked checkpoint=T3D-C1,
-real Group 4 source/T3E and
-promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3d_c0_contract_closed`; active
+handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local T3D-C1 tooling-dispatch audit/authoring; parked checkpoint=execution, real Group 4 source/T3E, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
-`acel_g1_t3d_c0_contract_amendment_dispatched`.
+`acel_g1_t3d_c0_contract_closed`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -49,8 +44,7 @@ T3B is closed with one Local-verified active v1 specification. Party B is a
 verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
 T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local
-verified. T3D-C0 now authorizes only the committed two-document contract
-amendment; Group 4 tooling/source creation and T3E remain closed.
+verified. T3D-C0 is closed contract-only at `e14722e17`; T3D-C1 tooling may be audited/authored next, while execution, source creation and T3E remain closed.
 
 Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
 External agent memory files: non-canonical convenience only.
@@ -135,6 +129,7 @@ External agent memory files: non-canonical convenience only.
   token, quota and currency cost remain explicitly unavailable. The sample is
   admissible only as a bounded naturalistic observation; it does not prove
   topology or model cost/quality superiority and is not a P4 auto-enrollment.
+- T3D-C0 closed `CLOSED_PASS_BOUNDED` at `e14722e17`; independent review passed all four repaired T2F contract joins and pre-commit passed 90/90. A post-commit range run rejected the mixed material/current-authority projection because exact-hash projection and range separation conflict; no range PASS is claimed, and this remains a governance-learning input.
 
 ## T3B Readiness Inputs
 
@@ -147,22 +142,22 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C0_CONTRACT_AMENDMENT_PACKET_CORRECTED_AT_88658FD06; NEXT_STEP=INTERNAL_AGENT_EXECUTES_THE_COMMITTED_T3D_C0_WORK_ORDER_AND_RETURNS_EXACTLY_TWO_UNCOMMITTED_DOCUMENT_OUTPUTS_FOR_LOCAL_REVIEW; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. T3D-C1 implementation, real Group 4 source, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C0_CONTRACT_CLOSED_AT_E14722E17; NEXT_STEP=LOCAL_AUDITS_AND_IF_COHERENT_AUTHORS_THE_BOUNDED_T3D_C1_GROUP4_TOOLING_DISPATCH_ONLY; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. T3D-C1 worker execution, real Group 4 source, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden until separately dispatched. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
 - CVF-HRLTP-T1 implementation is released only to the committed no-commit INTERNAL_AGENT worker lane;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
-- T3D-C0 documentation worker execution and Local review are active; T3D-C1 issuer-source implementation and T3E remain parked;
+- T3D-C0 contract closure is accepted at `e14722e17`; T3D-C1 tooling execution, Group 4 source creation and T3E remain parked;
 - key promotion or candidate admission;
 - provider/live work, runtime activation, public sync, deployment or production;
 - mutation, staging or commitment of the thirteen parked untracked paths.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project the committed T3D-C0 dispatch
-`dd1d0f344` into the active front door, correct its pre-edit return-contract
-disposition, gate invocation and fast-doc commit-mode literal, refresh the authority hash, and open bounded worker execution/review.
+Authorized guard-maintenance scope: project accepted T3D-C0 closure `e14722e17`,
+its independent review and bounded range-shape contradiction, then open Local
+audit/authoring of the T3D-C1 tooling dispatch only.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/acelG1T3cC2ExecutionCheckpoint20260922.json`;
@@ -185,9 +180,10 @@ commitment by this session-sync change.
 
 Operator authorization: standing Local reviewer/closer, worker-dispatch and
 session-transition authority. Rollback boundary: revert only this continuity
-projection; preserve accepted sources, R1 dispatch, all worker inputs and all
-parked files. This change creates no Group 3 source and authorizes no Party B,
-credential, promotion, admission, live/runtime/public or deployment effect.
+projection; preserve accepted sources, T3D-C0 closure, all worker inputs and
+all parked files. This change creates no Group 4 source and authorizes no
+alternate-principal execution, credential, second observation, promotion,
+admission, live/runtime/public or deployment effect.
 
 ## Agent Operation Trace Block
 
