@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `2a28787ee`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
+Current material HEAD: `42fb34b53`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
 Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B and
 accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim.
 MCP/MUO discussion remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED`
