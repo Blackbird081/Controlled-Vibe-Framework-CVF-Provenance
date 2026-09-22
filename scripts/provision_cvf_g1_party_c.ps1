@@ -19,7 +19,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 $script:AccountName = 'cvf-g1-party-c'
-$script:Description = 'CVF G1 Party C dedicated issuer registry authority'
+$script:Description = 'CVF G1 Party C issuer registry authority'
 $script:ConfirmationPhrase = 'CREATE CVF G1 PARTY C'
 $script:ForbiddenSids = @(
     'S-1-5-21-1644666849-912006174-747199667-1001',
@@ -110,6 +110,10 @@ if ($PSCmdlet.ParameterSetName -eq 'Check') {
 }
 
 Remove-Item -LiteralPath $failurePath -Force -ErrorAction SilentlyContinue
+
+if ($script:Description.Length -gt 48) {
+    throw '[PARTY_C_DESCRIPTION_TOO_LONG] Windows local-user descriptions are limited to 48 characters'
+}
 
 $principal = [System.Security.Principal.WindowsPrincipal]::new(
     [System.Security.Principal.WindowsIdentity]::GetCurrent())
