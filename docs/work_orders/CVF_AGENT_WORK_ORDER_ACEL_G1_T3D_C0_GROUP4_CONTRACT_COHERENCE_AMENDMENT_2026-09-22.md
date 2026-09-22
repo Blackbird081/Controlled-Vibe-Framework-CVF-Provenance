@@ -82,7 +82,7 @@ source, tooling, credential, runtime transaction, or verifier consumer.
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"ACEL-G1-T3D-C0-GROUP4-CONTRACT-COHERENCE-AMENDMENT","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"DOC_CHANGE","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"NEW_INTERFACE"},"pathFamilies":["EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/","docs/audits/","docs/baselines/","docs/reference/","docs/reviews/","docs/work_orders/","governance/compat/"],"claims":["T2F Group 4 contract explicitly fixes four previously ambiguous design joins; no source is established"],"requiredProof":["four-resolution amendment matrix","exact T2F delta","planned adversarial vectors","worker-return fast gate","13/13 parked-path hashes"],"operatorCheckpoints":["T3D-C1 tooling dispatch","Party C registry write","Party B issuer observation","T3E real consumer call","candidate admission"],"forbiddenEffects":["credential access","local account action","registry or response source creation","runtime transaction","provider/live/network","worker commit","public sync","deployment"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"N/A with reason: bounded named files only","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"ACEL-G1-T3D-C0-GROUP4-CONTRACT-COHERENCE-AMENDMENT","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"DOC_CHANGE","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"NEW_INTERFACE"},"pathFamilies":["AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/","EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/","docs/audits/","docs/baselines/","docs/reference/","docs/reviews/","docs/work_orders/","governance/compat/"],"claims":["T2F Group 4 contract explicitly fixes four previously ambiguous design joins; no source is established"],"requiredProof":["four-resolution amendment matrix","exact T2F delta","planned adversarial vectors","worker-return fast gate","13/13 parked-path hashes"],"operatorCheckpoints":["T3D-C1 tooling dispatch","Party C registry write","Party B issuer observation","T3E real consumer call","candidate admission"],"forbiddenEffects":["credential access","local account action","registry or response source creation","runtime transaction","provider/live/network","worker commit","public sync","deployment"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"N/A with reason: bounded named files only","completenessClaimChanged":false}}
 ```
 
 ## Scaffold Provenance Block
@@ -392,7 +392,7 @@ contractProfile: WORKER_RETURN_FAST_DOC_V1
 
 scopeClassification: DOCUMENTATION_AND_EVIDENCE_ONLY_NO_COMMIT
 
-evidenceReadinessContract: REQUIRED_V1
+evidenceReadinessContract: NOT_APPLICABLE_WITH_REASON: bounded two-document contract amendment has no discovery audit, discovery manifest, source root, or evidence-readiness index output
 
 requiredGate: `python governance/compat/run_worker_return_fast_gate.py --profile WORKER_RETURN_FAST_DOC_V1`
 

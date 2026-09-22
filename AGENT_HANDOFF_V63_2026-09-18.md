@@ -161,7 +161,8 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: project the committed T3D-C0 dispatch
-`dd1d0f344` into the active front door and open bounded worker execution/review.
+`dd1d0f344` into the active front door, correct its pre-edit return-contract
+disposition, refresh the authority hash, and open bounded worker execution/review.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/acelG1T3cC2ExecutionCheckpoint20260922.json`;
