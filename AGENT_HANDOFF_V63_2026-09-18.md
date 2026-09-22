@@ -1,19 +1,18 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
-
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `dbb09dd5b`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
+Current material HEAD: `dd1d0f344`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
 Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B and
 accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim.
 MCP/MUO discussion remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED`
 at `820aae3ec`: one Party B observation, exact registry-byte binding, hash
 chain, owner and protected four-ACE DACL passed Local verification. No second
-observation is authorized. Party C is Local verified; T3D-C0 contract amendment
-is selected at `dbb09dd5b`, while Group 4 implementation and T3E remain closed.
+observation is authorized. Party C is Local verified; the T3D-C0 contract
+amendment packet is committed at `dd1d0f344`, while Group 4 implementation and
+T3E remain closed.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
 Status: ACTIVE
-
 ## Purpose
 
 Carry the independently verified Group 1 closure and route the bounded real
@@ -31,15 +30,15 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3d_c0_contract_amendment_authoring`;
-active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator runs
-the Party C provisioning launcher once, then Local verifies the new principal;
-parked checkpoint=Group 4 implementation/T3E and
+Startup acknowledged: current mode=`acel_g1_t3d_c0_contract_amendment_dispatched`;
+active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one
+INTERNAL_AGENT executes the committed T3D-C0 documentation packet and returns
+exactly two uncommitted outputs for Local review; parked checkpoint=T3D-C1,
+real Group 4 source/T3E and
 promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
-
-`acel_g1_t3d_c0_contract_amendment_authoring`.
+`acel_g1_t3d_c0_contract_amendment_dispatched`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -49,9 +48,9 @@ Latest closed learning-history wave remains `LHW24`.
 T3B is closed with one Local-verified active v1 specification. Party B is a
 verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
-T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`. T3D authorizes one
-operator-mediated creation of `cvf-g1-party-c` through the committed launcher;
-Group 4 implementation remains closed pending Local principal verification.
+T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local
+verified. T3D-C0 now authorizes only the committed two-document contract
+amendment; Group 4 tooling/source creation and T3E remain closed.
 
 Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
 External agent memory files: non-canonical convenience only.
@@ -148,28 +147,28 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C0_CONTRACT_AMENDMENT_SELECTED_AT_DBB09DD5B; NEXT_STEP=LOCAL_AUTHORS_AND_GATES_ONE_CONSOLIDATED_T3D_C0_BASELINE_AND_WORK_ORDER_FOR_THE_FOUR_GROUP4_GAPS; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. T3D-C1 implementation, real Group 4 source, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C0_CONTRACT_AMENDMENT_DISPATCHED_AT_DD1D0F344; NEXT_STEP=INTERNAL_AGENT_EXECUTES_THE_COMMITTED_T3D_C0_WORK_ORDER_AND_RETURNS_EXACTLY_TWO_UNCOMMITTED_DOCUMENT_OUTPUTS_FOR_LOCAL_REVIEW; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. T3D-C1 implementation, real Group 4 source, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
 - CVF-HRLTP-T1 implementation is released only to the committed no-commit INTERNAL_AGENT worker lane;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
-- T3D Party C principal operator checkpoint is active; issuer-source implementation and T3E remain parked;
+- T3D-C0 documentation worker execution and Local review are active; T3D-C1 issuer-source implementation and T3E remain parked;
 - key promotion or candidate admission;
 - provider/live work, runtime activation, public sync, deployment or production;
 - mutation, staging or commitment of the thirteen parked untracked paths.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project accepted CVF-HRLTP-T1 completion
-`e25f6a1b` into the active front door and open the next-tranche selection checkpoint.
+Authorized guard-maintenance scope: project the committed T3D-C0 dispatch
+`dd1d0f344` into the active front door and open bounded worker execution/review.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/acelG1T3cC2ExecutionCheckpoint20260922.json`;
 `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`;
 `CVF_SESSION/state/entries/cvfHrltpT1Closure20260922.json`;
 `CVF_SESSION/state/entries/acelG1T3cC2Closure20260922.json`;
-`CVF_SESSION/state/entries/acelG1T3dPartyCPrincipalReadiness20260922.json`; `CVF_SESSION/state/entries/acelG1T3dGroup4ContractGapDecision20260922.json`;
+`CVF_SESSION/state/entries/acelG1T3dPartyCPrincipalReadiness20260922.json`; `CVF_SESSION/state/entries/acelG1T3dGroup4ContractGapDecision20260922.json`; `CVF_SESSION/state/entries/acelG1T3dC0ContractAmendmentDispatch20260922.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
 `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
