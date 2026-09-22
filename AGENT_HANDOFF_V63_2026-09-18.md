@@ -1,13 +1,13 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `21904183d`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
+Current material HEAD: `820aae3ec`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
 Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B and
 accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim.
-MCP/MUO discussion remains parked. T3C-C2 produced one Party B observation;
-commits `bcf0d5b5c` and `21904183d` repair Local-reader policy, add byte-safe
-verification/diagnostics and await final Local source acceptance. No second
-observation or downstream tranche is authorized by this checkpoint.
+MCP/MUO discussion remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED`
+at `820aae3ec`: one Party B observation, exact registry-byte binding, hash
+chain, owner and protected four-ACE DACL passed Local verification. No second
+observation or downstream implementation is authorized by this checkpoint.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -30,15 +30,15 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3c_c2_operator_execution_checkpoint`;
-active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator runs
-the one-time Party B launcher, then Local independently verifies the result;
-parked checkpoint=T3D/T3E and
+Startup acknowledged: current mode=`acel_g1_t3d_party_c_principal_selection_checkpoint`;
+active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local audits
+and selects the bounded Party C principal-provisioning route for T3D;
+parked checkpoint=T3D implementation/T3E and
 promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-`acel_g1_t3c_c2_operator_execution_checkpoint`.
+`acel_g1_t3d_party_c_principal_selection_checkpoint`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -48,10 +48,9 @@ Latest closed learning-history wave remains `LHW24`.
 T3B is closed with one Local-verified active v1 specification. Party B is a
 verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
-T3C-C2 now authorizes exactly one operator-mediated Party B genesis
-observation through `scripts/run_as_cvf_g1_party_b.cmd`. All downstream actions
-remain closed, and no source claim is accepted before Local's independent
-post-run probe.
+T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`. T3D may advance only through
+a source-verified principal-first selection; Group 4 implementation and all
+downstream actions remain closed pending that decision.
 
 Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
 External agent memory files: non-canonical convenience only.
@@ -148,13 +147,13 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C2_EXECUTION_AUTHORIZED_AT_fb7961510; NEXT_STEP=OPERATOR_RUNS_SCRIPTS_RUN_AS_CVF_G1_PARTY_B_CMD_ONCE_THEN_LOCAL_INDEPENDENTLY_VERIFIES; EXPANSION_ALLOWED=false. The fresh T3C-C2 decision authorizes one Party B genesis observation only. Preserve thirteen parked untracked paths byte-identically. Do not retry a failed or partial run before Local diagnosis. Do not open T3D/T3E, append a second observation, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C2_CLOSED_AT_820aae3ec; NEXT_STEP=LOCAL_AUDITS_AND_SELECTS_T3D_PARTY_C_PRINCIPAL_PROVISIONING_ROUTE; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Do not append a second observation or open Group 4 implementation/T3E, promotion, admission, provider/live API, public-sync or deployment before the bounded T3D decision. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
 - CVF-HRLTP-T1 implementation is released only to the committed no-commit INTERNAL_AGENT worker lane;
-- T3C-C2 Party B execution is the active operator checkpoint; acceptance remains pending Local verification;
-- T3D issuer source and T3E consumer wiring;
+- T3C-C2 is closed and Local verified at `820aae3ec`;
+- T3D Party C principal selection is active; issuer-source implementation and T3E remain parked;
 - key promotion or candidate admission;
 - provider/live work, runtime activation, public sync, deployment or production;
 - mutation, staging or commitment of the thirteen parked untracked paths.
@@ -168,6 +167,7 @@ Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION/state/entries/acelG1T3cC2ExecutionCheckpoint20260922.json`;
 `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`;
 `CVF_SESSION/state/entries/cvfHrltpT1Closure20260922.json`;
+`CVF_SESSION/state/entries/acelG1T3cC2Closure20260922.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
 `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;

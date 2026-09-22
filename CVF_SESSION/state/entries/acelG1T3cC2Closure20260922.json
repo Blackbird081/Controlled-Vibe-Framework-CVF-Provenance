@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2842,
+  "stateKey": "acelG1T3cC2Closure20260922",
+  "value": "ACEL G1 T3C-C2 is SOURCE_CREATED_LOCAL_VERIFIED at material commit 820aae3ec. The Group 3 log contains exactly one Party B genesis observation of the Group 1 verifier-key registry. Local independently verified exact decoded snapshot bytes, snapshot SHA-256 87594cdcf8a1e0c3c4b439434aeda39444ff54a432674d97403f1980c995d883, entry SHA-256 a97f1066cc5fe33409eff6539c2ca68dcf72f794209c8de5df93a7f81dc6e1c3, whole-file SHA-256 e1d9dfd747df33eaf1b85664c22e19a49edcb521fbbc07a0c53f6c13636d8629, Party B owner and protected four-ACE DACL with exact Local read access. Writer 56/56, checker tests 42/42, reviewer-fast 69/69 and pre-commit 90/90 passed. No second observation, Group 4, T3E, promotion, admission, provider/live, public or deployment authority is opened."
+}
