@@ -1,12 +1,15 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `dd0e9eed`. Group 1 is
+Current material HEAD recorded for this handoff: `9493825e`. Group 1 is
 `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is
 `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B is verified and
 T3C-C1 AR1 is reviewer-fixed, verified and materially closed; CVF-HRLTP-T1
 is independently reviewed and accepted, and its bounded multi-agent routing
 observation is recorded without a cost-superiority claim.
+The MCP/MUO orchestration discussion is parked for a later tranche at
+`docs/reference/external_agent_invocation_control/CVF_AGENT_ORCHESTRATION_PLATFORM_MCP_DISCUSSION.md`;
+the external-agent invocation moratorium remains unchanged.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
