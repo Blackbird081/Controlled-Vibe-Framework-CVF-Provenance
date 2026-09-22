@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C1_GROUP4_ISSUER_REGISTRY_LOOKUP_TOOLING_2026-09-22.md",
     "baselineSha256": "8ccdd35ee381cbae4c2a453207d9205225a161fa2553483ef7f6aec085452a65",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C1_GROUP4_ISSUER_REGISTRY_LOOKUP_TOOLING_2026-09-22.md",
-    "workOrderSha256": "0bc0487f472429f013e5547633c02c88740301ed84e56c251f7c557f0e9e11f0"
+    "workOrderSha256": "46c80e0904ab7d416e93c2f118047bd5bf8cfa8117915dd145b31464336e7b70"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

@@ -802,7 +802,7 @@ undispatched.
 
 - [x] source/claim/manifest integrity and exact focused tests pass;
 - [x] return-time closeability recheck has no outside-authority blocker;
-- [x] worker-return fast, reviewer-fast, pre-commit and split-range closure pass;
+- [x] worker-return fast, reviewer-fast and pre-commit pass; the post-commit split-range probes are executed and any range-shape rejection is retained without a false PASS claim;
 - [x] no open checkbox in terminal evidence, failed gate or unowned path remains;
 - [x] final disposition is at most `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`;
 - [x] material and continuity commits are separate and truthful.

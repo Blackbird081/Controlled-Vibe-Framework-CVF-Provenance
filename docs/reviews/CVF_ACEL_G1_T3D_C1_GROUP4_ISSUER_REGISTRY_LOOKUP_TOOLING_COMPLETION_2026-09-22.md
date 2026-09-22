@@ -70,7 +70,7 @@ real source write, provider call, public sync or deployment occurred.
 | Artifact | SHA-256 at terminal review | Disposition |
 |---|---|---|
 | T3D-C1 baseline | `8ccdd35ee381cbae4c2a453207d9205225a161fa2553483ef7f6aec085452a65` | ACCEPTED_AUTHORITY |
-| T3D-C1 work order | `0bc0487f472429f013e5547633c02c88740301ed84e56c251f7c557f0e9e11f0` | ACCEPTED_AUTHORITY |
+| T3D-C1 work order | `46c80e0904ab7d416e93c2f118047bd5bf8cfa8117915dd145b31464336e7b70` | ACCEPTED_AUTHORITY |
 | Party C registry writer | `17de26f0f7189b2a6e0025883ffd6502275e782012e3b7e8ce4ff644e5b018bc` | ACCEPT |
 | Party B lookup-response writer | `054d73c7646b42c074501be869269142ce0c23a6b265ccd7f8b4c801ea206200` | ACCEPT |
 | issuer-registry checker | `dbe517c8b1dd45d71006dfdfafc6b6ba1980ef8456cdb04abec48b399224dd0d` | ACCEPT |
@@ -133,6 +133,21 @@ gate and reviewer-fast 69/69. The independent actor performed a final bounded
 read-only check of the corrected control flow and exact file hashes; it made
 no edit, staging change, commit, real-source write or alternate-principal run.
 
+## Post-Commit Range Gate Disposition
+
+splitRangeClosureDisposition: REJECTED_OBSERVATION_NOT_PASS
+
+The material range `f15d552b5..9ed844c2a` and continuity range
+`9ed844c2a..d9cbe15dc` were both executed after their commits. The range-shape
+preflight rejected the material range because the closed-work-order exact-hash
+projection required three protected session paths in the same material commit.
+It rejected the continuity range because the active handoff is both an Agent
+Operation Trace artifact and a protected session path, while three parked
+trace-bearing artifacts remain visible in the shared worktree. No post-commit
+range PASS is claimed. The two commit-time governance hooks remain valid 90/90
+evidence for their exact staged batches, and this rejected observation is
+retained for the post-ACEL governance-learning tranche.
+
 ## Semantic Convergence Outcome
 
 ```json
@@ -190,6 +205,7 @@ reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 | rollback marker represented intent rather than successful publication | DURABLE_TRANSACTION_OWNERSHIP_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | require publication-owned rollback markers to transition only after atomic replacement succeeds |
 | release/attempt ordering made a deterministic probe schedule-sensitive | ADVERSARIAL_PROBE_ORDERING_GAP | GOVERNANCE_CONTROL_PLANE | MACHINE_CHECK_CANDIDATE | require parent-release evidence to precede successor attempt where the tested parent transaction has already exited |
 | recurring worker corrections across transaction semantics | ORCHESTRATOR_CONTRACT_PRECISION_GAP | GOVERNANCE_CONTROL_PLANE | DEFERRED_WITH_OWNER | carry both findings into the already parked post-ACEL CVF foundation-learning tranche |
+| exact-hash state projection conflicts with split-range shape and the handoff has a dual trace/protected role | PHASE_GATE_PLACEMENT_GAP | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | retain both rejected range observations and resolve the choreography contract in the parked post-ACEL foundation-learning tranche |
 | per-agent cost telemetry unavailable | RUNTIME_SIGNAL_GAP | COST_ECONOMICS_LEARNING | N/A_WITH_REASON | retain actor/model/role/outcome/test receipts without asserting model-cost superiority |
 
 ## Epistemic Process Block
