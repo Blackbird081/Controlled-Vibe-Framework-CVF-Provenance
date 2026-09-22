@@ -1,13 +1,13 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `434d616a1`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
+Current material HEAD: `21904183d`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
 Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B and
 accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim.
-MCP/MUO discussion is parked in its existing owner; the moratorium is unchanged.
-The first T3C-C2 attempt stopped before mutation on missing Party B Python.
-Commit `434d616a1` records no-source diagnosis, read/execute-only Python access,
-launcher preflight hardening and authorization for one corrected retry.
+MCP/MUO discussion remains parked. T3C-C2 produced one Party B observation;
+commits `bcf0d5b5c` and `21904183d` repair Local-reader policy, add byte-safe
+verification/diagnostics and await final Local source acceptance. No second
+observation or downstream tranche is authorized by this checkpoint.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
