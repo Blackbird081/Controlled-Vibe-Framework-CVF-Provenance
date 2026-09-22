@@ -21,6 +21,10 @@ PRE_PUSH_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_core_guard_self_protection.py", "--enforce"],
         ),
         (
+            "high-risk local transaction proof",
+            ["python", "governance/compat/check_high_risk_local_transaction_proof.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "semantic convergence and escalation control",
             ["python", "governance/compat/check_semantic_convergence_control.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),

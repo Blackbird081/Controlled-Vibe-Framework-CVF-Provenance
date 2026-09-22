@@ -100,6 +100,18 @@ prescribe an agent's internal reasoning, algorithm, prompt, or tool order.
 
 ## Common Failure Patterns
 
+High-risk local transaction work routes through
+`docs/reference/CVF_HIGH_RISK_LOCAL_TRANSACTION_PROOF_STANDARD_2026-09-22.md`
+and `governance/compat/check_high_risk_local_transaction_proof.py`. Before
+dispatch, classify cross-process locking, durable append/write with rollback,
+ownership/DACL mutation, and post-acquire failure handling. Triggered current
+work orders require the exact applicability declaration and nine-field JSON
+contract. Reviewer-fast, pre-commit, and pre-push enforce declaration admission;
+the reviewer separately verifies the production-path peer, deterministic
+barriers, exception cleanup, semantic security rollback, and detached final
+return digest evidence. The worker's independent probe remains
+`PENDING_REVIEWER_EXECUTION`; static acceptance does not prove runtime safety.
+
 | Failure | Gate that catches it | Prevention |
 |---|---|---|
 | Worker commits before reviewer accepts | Core guard self-protection; tranche commit choreography | Check commit mode in work order; always use `WORKER_MUST_NOT_COMMIT` |

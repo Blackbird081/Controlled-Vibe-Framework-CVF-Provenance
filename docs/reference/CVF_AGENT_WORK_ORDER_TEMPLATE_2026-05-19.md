@@ -101,6 +101,20 @@ Full contract: `docs/reference/CVF_ARCHITECTURE_READINESS_ADMISSION_STANDARD_202
 Schema, applicability, allowed declarations, closed chain, fault attribution, quota, echo, and evidence truth are
 defined there. Rotated from this surface at DARA-T2-R1 to satisfy the near-threshold rotation requirement.
 
+## High-Risk Local Transaction Proof Routing
+
+For current work orders authorizing cross-process locking, durable write/append
+with rollback, ownership/DACL mutation, or post-acquire failure handling, copy
+the conditional declaration and nine-field JSON contract from
+`docs/reference/CVF_HIGH_RISK_LOCAL_TRANSACTION_PROOF_STANDARD_2026-09-22.md`.
+Use `High-Risk Local Transaction Proof Applicability: REQUIRED`; use
+`High-Risk Local Transaction Proof Applicability: NOT_APPLICABLE_WITH_REASON - <reason>`
+only when no target risk is authorized. REQUIRED packets contain one
+`High-Risk Local Transaction Proof Contract` section. The standard owns the
+schema, semantic obligations, detached final-digest receipt, and pending
+reviewer probe. `check_high_risk_local_transaction_proof.py` checks changed
+work orders in reviewer-fast, pre-commit, and pre-push; static PASS is not runtime proof.
+
 ## Enforcement / Verification
 
 Verification requirements:
