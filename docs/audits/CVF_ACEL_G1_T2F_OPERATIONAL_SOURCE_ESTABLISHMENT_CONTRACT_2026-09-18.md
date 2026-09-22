@@ -808,6 +808,8 @@ routes the real lookup plus final row to T3E. Adversarial vector
 `ESTABLISHED`, `CONSUMER_BOUND`, real-lookup, final-checklist, promotion, or
 admission wording, and any attempt to bypass T3E or Local's final verification.
 
+#### T3D-C0-R1 Group 4 Operational Boundary Amendment (Extracted): `docs/audits/CVF_ACEL_G1_T3D_C0_R1_GROUP4_OPERATIONAL_BOUNDARY_AMENDMENT_2026-09-23.md`, incorporated under GC-023 without creating a second operational-source owner
+
 ## Cross-Source Identity And Access Matrix
 
 | Case | Pattern | Groups involved | Disposition |

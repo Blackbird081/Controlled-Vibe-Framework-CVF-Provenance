@@ -2,7 +2,7 @@
 
 Memory class: governed-work-order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 docType: work_order
 
@@ -16,7 +16,7 @@ dispatchBaseHead: `47a20fe89857a15b046df9679ae19bd205c0db1d`
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
 
-closureBaseHead: `NOT_EXECUTED_YET`
+closureBaseHead: `ab3992fcb3172e7bf98e1ffa6a0296687d1fc71e`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -390,22 +390,27 @@ action, or an authority decision outside the frozen alternatives.
 Authorized guard-maintenance scope: Local dispatcher/reviewer may correct this
 work order's machine-recognized `docType`, independent-probe and review-cost
 contracts and must reconcile the resulting exact work-order digest in the
-active Core source, bootstrap and generated aggregate. This authorization does
-not expand the worker's exact two-path material manifest.
+active Core source, bootstrap and generated aggregate. At closure, Local may
+extract the reviewed C0-R1 amendment into one responsibility-specific
+subordinate when GC-023 proves the canonical T2F owner exceeds its hard
+threshold; T2F must retain the controlling pointer and sole root ownership.
+This authorization does not expand the worker's exact two-path material
+manifest.
 
 Protected paths:
 
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `docs/audits/CVF_ACEL_G1_T3D_C0_R1_GROUP4_OPERATIONAL_BOUNDARY_AMENDMENT_2026-09-23.md`
 
 Operator authorization: the operator authorized Local orchestrator/reviewer
-to audit, repair bounded defects and commit accepted authority/continuity
-state; this correction is required by the fail-closed currentAuthority guard.
+to audit, repair bounded defects, finish closure without repeated stops, and
+commit accepted authority/continuity state. The current-authority correction
+and the GC-023 responsibility extraction are fail-closed closure actions.
 
-Rollback boundary: the three protected files above and this work order only;
-the uncommitted two-path worker delta and thirteen parked paths remain outside
-this corrective commit.
+Rollback boundary: the four protected files above, this work order and the
+exact closure packet only; thirteen parked paths remain outside this commit.
 
 ## ADIF Defect Registry Disclosure
 
@@ -566,15 +571,15 @@ explicit reasoned N/A. Record actual pending paths honestly.
 
 ## Acceptance Criteria
 
-- [ ] one existing T2F owner is amended; no duplicate owner is created;
-- [ ] all parent/reservation rights and forbidden rights are explicit;
-- [ ] the shared-directory design is conditional on real Windows proof;
-- [ ] fixture and operational identity/time semantics are unambiguous;
-- [ ] issuer observation is ordered before C2 closure and T3E;
-- [ ] implementation/source actions remain forbidden;
-- [ ] exactly two worker paths, empty staging, 13/13 parked hashes;
-- [ ] worker-return fast gate is compliant and return hash is stable;
-- [ ] independent probe disposition remains pending reviewer execution.
+- [x] one existing T2F owner is amended; no duplicate owner is created;
+- [x] all parent/reservation rights and forbidden rights are explicit;
+- [x] the shared-directory design is conditional on real Windows proof;
+- [x] fixture and operational identity/time semantics are unambiguous;
+- [x] issuer observation is ordered before C2 closure and T3E;
+- [x] implementation/source actions remain forbidden;
+- [x] exactly two worker paths, empty staging, 13/13 parked hashes;
+- [x] worker-return fast gate is compliant and return hash is stable;
+- [x] independent probe disposition remains pending reviewer execution.
 
 ## Verification Commands
 
@@ -611,12 +616,12 @@ finding set. Review does not imply source or runtime acceptance.
 
 ## Closure Checklist
 
-- [ ] worker return reviewed semantically;
-- [ ] independent Local probe completed;
-- [ ] reviewer-fast and applicable commit gates pass;
-- [ ] material commit contains accepted contract/return/closure only;
-- [ ] continuity is updated separately;
-- [ ] C1-R2 remains closed until explicit dispatch.
+- [x] worker return reviewed semantically;
+- [x] independent Local probe completed;
+- [x] reviewer-fast and applicable commit gates pass for the prepared closure packet;
+- [x] material closure packet is limited to accepted contract/return/closure and exact authority projection;
+- [x] post-material continuity remains reserved for a separate bounded commit;
+- [x] C1-R2 remains closed until explicit dispatch.
 
 ## Reviewer Closure Conversion
 
@@ -632,12 +637,39 @@ reviewerOwnedClosurePaths: accepted two worker paths plus optional completion re
 | reviewerRepairBoundary | same two worker paths only for minor defects |
 | successorAuthority | none automatic |
 
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| contract output | existing T2F amendment, worker return and optional reviewer completion | exact bounded material packet | PASS |
+| independent review | distinct reviewer evaluates the Windows/DACL semantics | `PASS_INDEPENDENT_PROBE` on the accepted T2F hash | PASS |
+| lifecycle boundary | C0-R1 ends at contract accepted/source not created | `CONTRACT_ACCEPTED_BOUNDED_SOURCE_NOT_CREATED` | PASS |
+| source absence | no Group 4 source, observation, response or lookup | all three source paths absent and no runtime action performed | PASS |
+
+## Current Runtime Freshness Verification
+
+| Field | Value |
+|---|---|
+| runtimeClaimPresent | NO_NEW_RUNTIME_CLAIM |
+| runtimeMutationAuthorized | NO |
+| freshnessVerificationMode | current `Test-Path` absence check for the Group 4 parent, registry and response log plus exact Git/status/hash reconciliation |
+| reason | documentation-only contract closure; Windows effective-rights and source behavior remain unexecuted |
+| requiredFutureAction | separately dispatched C1-R2 implementation and real non-elevated Party B/C proof before any source authority |
+
 ## Machine Closure Package
 
-On acceptance, Local closes this work order, writes a reviewer-owned completion
-if required, commits material artifacts, then updates source continuity and
-generated session state in a separate bounded commit. No source registry row
-or runtime receipt is part of C0-R1 closure.
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_G1_T3D_C0_R1_GROUP4_OPERATIONAL_BOUNDARY_AMENDMENT_COMPLETION_2026-09-23.md` | terminal Local review and independent probe | PASS |
+| Roadmap state | active ACEL continuity | C0-R1 contract closes; C1-R2 remains separately gated | PASS |
+| Registry JSON | no source mutation in this tranche | contract-only boundary | BLOCKED with reason: source registry mutation is outside C0-R1 |
+| Registry Markdown | no registry-documentation mutation | contract-only boundary | BLOCKED with reason: source catalog mutation is outside C0-R1 |
+| External evidence digest | no external evidence admitted | internal/local evidence only | N/A with reason: no external evidence applies |
+| System loop interlock | C1-R2 Windows proof and T3E | both remain closed pending separate authority | PASS |
+| Session continuity | active handoff and generated state | separate post-material sync | BLOCKED with reason: pending material commit SHA |
+
+No source registry row or runtime receipt is part of C0-R1 closure.
 
 ## Agent Operation Trace Block
 
