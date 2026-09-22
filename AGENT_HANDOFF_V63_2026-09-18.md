@@ -1,10 +1,10 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `932038d14`. Group 1 is
+Current material HEAD recorded for this handoff: `6f22fb15c`. Group 1 is
 `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is
 `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B is verified and
-the next open action is forwarding the committed T3C-C1 R2 integrated root contract.
+T3C-C1 is stopped pending a fresh architecture reassessment; no R3 is open.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -27,7 +27,7 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3c_c1_worker_execution_checkpoint`;
+Startup acknowledged: current mode=`acel_g1_t3c_c1_architecture_reassessment_required`;
 active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator
 forwards the committed T3C-C1 work order to the INTERNAL_AGENT; parked checkpoint=Party B
 real execution/source creation, T3D/T3E and
@@ -35,7 +35,7 @@ promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-`acel_g1_t3c_c1_worker_execution_checkpoint`.
+`acel_g1_t3c_c1_architecture_reassessment_required`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -141,7 +141,7 @@ External agent memory files: non-canonical convenience only.
   rollback/race/blank-line defects and manifest overrun. Consolidated R1
   committed at `7ce1f02fd` after 89/89 pre-commit; it keeps four worker paths
   and forbids credentials, Party B execution, real log, staging and commit.
-- Local reran R1 evidence (Python 42/42, writer 31/31 and fast gates PASS) but rejected its transaction lifetime, creation cleanup and ACL read-back; the R1 completion review and exact-four-path R2 `ROOT_CONTRACT_REQUIRED / INTEGRATED_ROOT_CONTRACT` dispatch committed at `932038d14`.
+- R2 reached `STOP_REASSESS_ARCHITECTURE / NO_SUCCESSOR` at `6f22fb15c`: its tests did not execute a peer transaction, mutex acquisition preceded the release `try`, DACL rollback was not re-verified, and the worker's fifth-path return contradicted its claimed final gate.
 
 ## T3B Readiness Inputs
 
@@ -154,7 +154,7 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_R2_ROOT_CONTRACT_DISPATCHED_AT_932038d14; NEXT_STEP=OPERATOR_FORWARD_T3C_C1_R2_WORK_ORDER_TO_INTERNAL_AGENT; EXPANSION_ALLOWED=false. Forward `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3C_C1_R2_TRANSACTION_LIFETIME_AND_SECURITY_VERIFICATION_2026-09-21.md` in full to the shared-workspace INTERNAL_AGENT. Worker implements the integrated transaction-lifetime/security root contract in exactly four paths from current committed HEAD under `WORKER_MUST_NOT_COMMIT`, uses disposable fixtures only, and returns `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Do not provide credentials, execute as Party B, read or create the real Group 3 source, create Party C, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths remain unchanged. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=HOLD_ARCHITECTURE_REASSESSMENT_REQUIRED; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C1_R2_STOPPED_AT_6f22fb15c; NEXT_STEP=FRESH_OPERATOR_AUTHORIZED_ARCHITECTURE_REASSESSMENT_OR_SEPARATE_FOUNDATION_LEARNING_TRANCHE_ONLY; EXPANSION_ALLOWED=false. Do not issue a bounded R3 or run Party B. A future reassessment must redesign the deterministic peer-process harness, exception-safe guard lifetime, exact DACL rollback proof and final-return evidence binding before any new implementation order. The separately authorized CVF foundation-learning lane may consume the recorded machine-check candidates, but it must not reopen T3C-C1 implicitly. Do not read or create the real Group 3 source, create Party C, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Thirteen parked paths and four rejected T3C-C1 paths remain uncommitted. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -166,8 +166,8 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project R2 dispatch commit `932038d14` into
-the active front door and retain the T3C-C1 worker execution checkpoint.
+Authorized guard-maintenance scope: project terminal R2 review `6f22fb15c` into
+the active front door and close the T3C-C1 worker execution checkpoint.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
@@ -200,8 +200,8 @@ credential, promotion, admission, live/runtime/public or deployment effect.
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer authority |
-| Before status evidence | material HEAD `932038d14`; Party B verified; T3C-C1 R2 root-contract packet committed; thirteen parked paths plus four worker paths untracked |
-| After status evidence | exact four-path R2 worker execution is next; real source execution remains closed |
+| Before status evidence | material HEAD `6f22fb15c`; Party B verified; R2 terminal review committed; thirteen parked paths plus four rejected worker paths untracked |
+| After status evidence | architecture reassessment or separate foundation learning requires fresh authority; real source execution remains closed |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and Local audit routing only |
 | Claim boundary | continuity only; no Group 2 source, activation, promotion, admission, live/runtime/public effect |
