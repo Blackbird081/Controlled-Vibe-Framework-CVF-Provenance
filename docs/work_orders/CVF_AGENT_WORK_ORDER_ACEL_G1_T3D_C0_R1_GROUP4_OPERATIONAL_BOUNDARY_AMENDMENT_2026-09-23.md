@@ -32,6 +32,8 @@ Commit mode: `WORKER_MUST_NOT_COMMIT`.
 
 executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`.
 
+Worker return path: `docs/reviews/CVF_ACEL_G1_T3D_C0_R1_GROUP4_OPERATIONAL_BOUNDARY_AMENDMENT_WORKER_RETURN_2026-09-23.md`
+
 Current-time notes: C1 is accepted at material parent `dbce8d074`; the two
 Group 4 sources are absent; the readiness audit blocks real C2 execution.
 
