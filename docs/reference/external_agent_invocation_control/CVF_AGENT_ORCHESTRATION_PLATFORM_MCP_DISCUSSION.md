@@ -329,6 +329,46 @@ cần pin/version và source verification riêng nếu chuyển sang nghiên c�
 
 ## Open Questions For The Next Discussion
 
+### Operator discussion checkpoint — 2026-09-22
+
+The operator elected to defer further MCP/MUO clarification and return to the
+active ACEL G1-G6 program. The following points are retained for that later
+tranche without changing the current moratorium or opening implementation:
+
+1. Role-to-model assignment is not fixed. A model/effort declaration records
+   the current bounded invocation. An operator-mediated model switch in the
+   same conversation is `SINGLE_AGENT_MULTI_ROLE` with inherited context and
+   does not by itself establish different-actor review independence.
+2. Native subagents spawned by an authorized parent remain internal
+   orchestration unless they separately cross a process, provider/account,
+   credential, durable-action or authority boundary. A separately launched
+   CLI/MCP worker crosses the external invocation boundary even when it writes
+   into the same VS Code workspace.
+3. Cost optimization means total cost to an accepted outcome: worker effort,
+   review, failed attempts and rework. A cheaper model that creates more repair
+   work may have higher total cost. Model tier is therefore an adaptive routing
+   input, not a permanent role label or a quality claim.
+4. The accepted HRLTP-T1 naturalistic observation is persisted at
+   `docs/reviews/evidence/cvf-hrltp-t1-multi-agent-routing-observation-2026-09-22.json`
+   and material commit `dd0e9eed`. It records four lanes, three model/effort
+   configurations, test outcomes and reviewer-local repairs. Per-model elapsed
+   time, token, quota and currency cost remain unavailable; the observation is
+   not comparative superiority evidence or a P4 automatic enrollment.
+5. Manual work-order relay currently supplies a human admission and lifecycle
+   barrier. Replacing it with CLI/MCP requires machine-observable launch
+   identity, cumulative budget, progress, cancellation including process-tree
+   termination, exact workspace/path authority, child limits, terminal state,
+   execution receipt and result quarantine before reviewer admission.
+6. MCP alone is an interface, not a supervisor. A tool that starts a CLI and
+   waits for output can repeat the prior time/quota-control failure; timeout or
+   client cancellation does not prove that a downstream worker, retry or child
+   process stopped.
+
+Disposition: `DEFER_TO_FUTURE_MCP_OR_MUO_TRANCHE`. Continue to preserve the
+active external-agent invocation moratorium. This checkpoint authorizes no
+CLI/MCP worker launch, automated provider/model routing, runtime supervisor,
+live experiment or public/deployment action.
+
 1. Operator duyệt envelope nào để orchestrator tự chọn worker/model bên trong?
 2. Khi nào giao việc tạo lợi ích so với một agent thực hiện trực tiếp?
 3. Escaped-finding count/rate nào, dưới gate set và comparable conditions nào,
