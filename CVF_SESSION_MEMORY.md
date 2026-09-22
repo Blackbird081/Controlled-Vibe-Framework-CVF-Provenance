@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3d_c1_tooling_closed`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local audits and selects the bounded T3D-C2 Group 4 source-creation checkpoint; role=Local orchestrator/reviewer; phase=T3D-C1 closure/T3D-C2 selection; decision owner=Local; parked checkpoint=credentials, Party B/C real-mode execution, real Group 4 source creation, second observation, T3E, promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3d_c0_r1_dispatched`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=INTERNAL_AGENT executes the contract-only two-path T3D-C0-R1 amendment and returns pending Local review; role=Local orchestrator/reviewer; phase=T3D-C0-R1 worker execution; decision owner=Local; parked checkpoint=scripts/checkers, credentials, Party B/C real-mode execution, real Group 4 source creation, second observation, T3E, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_t3d_c1_tooling_closed`
-Current mode: `acel_g1_t3d_c1_tooling_closed`; previous mode marker: `acel_g1_t3d_c1_tooling_dispatched`
+Current mode marker: `acel_g1_t3d_c0_r1_dispatched`
+Current mode: `acel_g1_t3d_c0_r1_dispatched`; previous mode marker: `acel_g1_t3d_c1_tooling_closed`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C1_TOOLING_CLOSED_AT_DBCE8D074; NEXT_STEP=LOCAL_AUDITS_AND_SELECTS_T3D_C2_GROUP4_SOURCE_CREATION_CHECKPOINT; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Credentials, Party B or Party C real-mode execution, real Group 4 source creation, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden until separately authorized. Latest closed LHW wave remains LHW24.
-Mode: `acel_g1_t3d_c1_tooling_closed`. T3C-C2 and Party C are Local verified; T3D-C0 is closed at `e14722e17`; T3D-C1 tooling is accepted `TOOLING_ACCEPTED_SOURCE_NOT_CREATED` at `9ed844c2a`, with truthful terminal range evidence corrected at `dbce8d074`. T3D-C2 audit/selection is next; no real Group 4 source exists. T2A, G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C0_R1_DISPATCHED_AT_622BC4B0F; NEXT_STEP=INTERNAL_AGENT_EXECUTES_CONTRACT_ONLY_TWO_PATH_OPERATIONAL_BOUNDARY_AMENDMENT_THEN_RETURNS_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Scripts, checkers, credentials, Party B or Party C real-mode execution, real Group 4 source creation, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.
+Mode: `acel_g1_t3d_c0_r1_dispatched`. T3C-C2 and Party C are Local verified; T3D-C1 tooling remains `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`; T3D-C0-R1 contract repair is dispatched at `622bc4b0f`. Only the two worker-owned contract/return paths may change; no real Group 4 source exists. T2A, G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

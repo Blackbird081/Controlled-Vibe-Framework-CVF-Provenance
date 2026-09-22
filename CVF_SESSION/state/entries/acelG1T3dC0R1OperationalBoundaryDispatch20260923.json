@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2872,
+  "stateKey": "acelG1T3dC0R1OperationalBoundaryDispatch20260923",
+  "value": "ACEL G1 T3D-C0-R1 Group 4 operational-boundary amendment is DISPATCH_READY at material commit 622bc4b0f. The selected contract-only route owns exactly the existing T2F operational-source contract and one worker return; it creates no script, checker, credential, source directory, registry row, response log or runtime receipt. It freezes a shared-parent reservation candidate only as FEASIBLE_WITH_REQUIRED_WINDOWS_PROOF, requires fresh operational identity/time input and a dedicated Party B issuer-registry observation route, and retains a separate-layout or privileged-mediator stop fallback. The isolated commit passed the full 90/90 pre-commit hook after raw-byte-preserving checkout reconciliation; the shared workspace aggregate pre-dispatch rejection remained limited to three separately parked historical worker returns. Thirteen parked paths remain byte-identical and all Group 4 source paths remain absent. The next move is the no-commit INTERNAL_AGENT two-path contract amendment; real Party B/C execution, source creation and T3E remain forbidden."
+}
