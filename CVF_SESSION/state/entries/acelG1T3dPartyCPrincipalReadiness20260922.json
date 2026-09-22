@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2843,
+  "stateKey": "acelG1T3dPartyCPrincipalReadiness20260922",
+  "value": "ACEL G1 T3D Party C principal-first route is OPERATOR_PROVISIONING_READY at material commit 2ae347157. Local selected exact account cvf-g1-party-c because the T2E role is appointed but no concrete Party C principal exists, while T2F requires exclusive Party C authority before Group 4 registry/lookup implementation. Read-only check reports READY. The committed launcher requires elevation, exact confirmation, SecureString password input, password-required/non-admin/distinct-SID/bounded-expiry postconditions, secret-free receipt and targeted rollback. Operator may run it once; Local must verify the account and receipt before Group 4 tooling is opened."
+}
