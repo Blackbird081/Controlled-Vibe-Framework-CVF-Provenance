@@ -17,5 +17,4 @@ if "%CVF_EXIT%"=="0" (
 ) else (
   echo Verification or ACL repair failed with exit code %CVF_EXIT%.
 )
-pause
 exit /b %CVF_EXIT%

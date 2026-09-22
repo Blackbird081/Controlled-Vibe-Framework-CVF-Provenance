@@ -17,6 +17,29 @@ param()
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
+$script:FailureDiagnosticPath = $null
+
+trap {
+    $failureMessage = $_.Exception.Message
+    if ($null -ne $script:FailureDiagnosticPath) {
+        try {
+            $failurePayload = [ordered]@{
+                schemaVersion = 'cvf.acel.g1.t3cC2LocalVerificationFailure.v1'
+                disposition = 'FAILED_NO_ACCEPTANCE'
+                message = $failureMessage
+                scriptStackTrace = $_.ScriptStackTrace
+                recordedAtUtc = [DateTime]::UtcNow.ToString('o')
+                claimBoundary = 'diagnostic only; no source-establishment or repair-success claim'
+            }
+            [System.IO.File]::WriteAllText(
+                $script:FailureDiagnosticPath,
+                (($failurePayload | ConvertTo-Json -Depth 6) + [Environment]::NewLine),
+                [System.Text.UTF8Encoding]::new($false))
+        } catch { }
+    }
+    Write-Error $failureMessage
+    exit 1
+}
 
 $script:PartyBSid = 'S-1-5-21-1644666849-912006174-747199667-1009'
 $script:LocalSid = 'S-1-5-21-1644666849-912006174-747199667-1001'
@@ -87,7 +110,8 @@ function Assert-SecurityState {
     if (-not $State.Protected) { throw "[$Stage] DACL is not protected" }
     $expected = @(Get-ExpectedTuples -IncludeLocalRead $IncludeLocalRead)
     if ($State.AceTuples.Count -ne $expected.Count) {
-        throw "[$Stage] expected $($expected.Count) ACEs but found $($State.AceTuples.Count)"
+        throw ("[$Stage] expected $($expected.Count) ACEs but found $($State.AceTuples.Count); " +
+            "actual tuples: $($State.AceTuples -join '; ')")
     }
     for ($index = 0; $index -lt $expected.Count; $index++) {
         if ($State.AceTuples[$index] -ne $expected[$index]) {
@@ -127,6 +151,10 @@ $logPath = Join-Path $repositoryRoot 'governance/sources/registry_observation_lo
 $registryPath = Join-Path $repositoryRoot 'governance/sources/verifier_key_registry/REGISTRY.json'
 $checkerPath = Join-Path $repositoryRoot 'governance/compat/check_acel_g1_registry_observation_log.py'
 $receiptPath = Join-Path $repositoryRoot 'docs/reviews/evidence/cvf-acel-g1-t3c-c2-local-verification-2026-09-22.json'
+$script:FailureDiagnosticPath = Join-Path $repositoryRoot 'docs/reviews/evidence/cvf-acel-g1-t3c-c2-local-verification-failure-2026-09-22.json'
+if (Test-Path -LiteralPath $script:FailureDiagnosticPath -PathType Leaf) {
+    [System.IO.File]::Delete($script:FailureDiagnosticPath)
+}
 
 foreach ($requiredPath in @($logPath, $registryPath, $checkerPath)) {
     if (-not (Test-Path -LiteralPath $requiredPath -PathType Leaf)) {
@@ -220,6 +248,9 @@ try {
     [System.IO.File]::WriteAllText(
         $receiptPath, $receiptJson + [Environment]::NewLine,
         [System.Text.UTF8Encoding]::new($false))
+    if (Test-Path -LiteralPath $script:FailureDiagnosticPath -PathType Leaf) {
+        [System.IO.File]::Delete($script:FailureDiagnosticPath)
+    }
 
     Write-Host 'T3C_C2_LOCAL_VERIFICATION_AND_ACL_REPAIR_PASS'
     Write-Host "  logSha256 : $logHashAfter"
