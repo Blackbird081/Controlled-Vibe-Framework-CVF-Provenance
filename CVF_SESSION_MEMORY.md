@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_hrltp_t1_closed_next_tranche_selection_checkpoint`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local audits current ACEL state and selects the next source-verified governed tranche; role=Local orchestrator/reviewer; phase=post-foundation tranche selection; decision owner=Local; parked checkpoint=Party B real execution/source creation, T3D/T3E, promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3c_c2_operator_execution_checkpoint`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=operator runs the one-time Party B launcher, then Local independently verifies; role=Local orchestrator/reviewer; phase=T3C-C2 operator ceremony checkpoint; decision owner=Local; parked checkpoint=T3D/T3E, second observation, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `cvf_hrltp_t1_closed_next_tranche_selection_checkpoint`
-Current mode: `cvf_hrltp_t1_closed_next_tranche_selection_checkpoint`; previous mode marker: `cvf_hrltp_t1_worker_execution_checkpoint`
+Current mode marker: `acel_g1_t3c_c2_operator_execution_checkpoint`
+Current mode: `acel_g1_t3c_c2_operator_execution_checkpoint`; previous mode marker: `cvf_hrltp_t1_closed_next_tranche_selection_checkpoint`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=CVF_HRLTP_T1_REVIEWER_ACCEPTED_AT_e25f6a1; NEXT_STEP=LOCAL_AUDITS_CURRENT_ACEL_PROGRAM_STATE_AND_SELECTS_THE_NEXT_SOURCE_VERIFIED_TRANCHE; EXPANSION_ALLOWED=false. CVF-HRLTP-T1 static governance foundation is accepted after an independent Local probe and bounded reviewer repair. Preserve thirteen parked untracked paths byte-identically. Do not run Party B, create a real Group 3 source, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy without a fresh governed authority packet. Latest closed LHW wave remains LHW24.
-Mode: `cvf_hrltp_t1_closed_next_tranche_selection_checkpoint`. T2B rejection remains controlling; T2C through T2H remain documentation/evidence only. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C2_EXECUTION_AUTHORIZED_AT_fb7961510; NEXT_STEP=OPERATOR_RUNS_SCRIPTS_RUN_AS_CVF_G1_PARTY_B_CMD_ONCE_THEN_LOCAL_INDEPENDENTLY_VERIFIES; EXPANSION_ALLOWED=false. The fresh T3C-C2 decision authorizes one Party B genesis observation only. Preserve thirteen parked untracked paths byte-identically. Do not retry a failed or partial run before Local diagnosis. Do not open T3D/T3E, append a second observation, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.
+Mode: `acel_g1_t3c_c2_operator_execution_checkpoint`. T3C-C2 authorizes exactly one Party B genesis observation through the committed launcher, pending Local independent verification. T2A and G4 remain independently parked; G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.

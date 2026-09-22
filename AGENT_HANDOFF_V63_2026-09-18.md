@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `9493825e`. Group 1 is
+Current material HEAD recorded for this handoff: `fb7961510`. Group 1 is
 `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is
 `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B is verified and
 T3C-C1 AR1 is reviewer-fixed, verified and materially closed; CVF-HRLTP-T1
@@ -32,15 +32,15 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_hrltp_t1_closed_next_tranche_selection_checkpoint`;
-active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local audits
-current ACEL state and selects the next source-verified governed tranche; parked
-checkpoint=Party B real execution/source creation, T3D/T3E and
+Startup acknowledged: current mode=`acel_g1_t3c_c2_operator_execution_checkpoint`;
+active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator runs
+the one-time Party B launcher, then Local independently verifies the result;
+parked checkpoint=T3D/T3E and
 promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-`cvf_hrltp_t1_closed_next_tranche_selection_checkpoint`.
+`acel_g1_t3c_c2_operator_execution_checkpoint`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -50,7 +50,10 @@ Latest closed learning-history wave remains `LHW24`.
 T3B is closed with one Local-verified active v1 specification. Party B is a
 verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
-Real observation/source creation and all downstream actions remain closed.
+T3C-C2 now authorizes exactly one operator-mediated Party B genesis
+observation through `scripts/run_as_cvf_g1_party_b.cmd`. All downstream actions
+remain closed, and no source claim is accepted before Local's independent
+post-run probe.
 
 Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
 External agent memory files: non-canonical convenience only.
@@ -147,12 +150,12 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=CVF_HRLTP_T1_REVIEWER_ACCEPTED_AT_e25f6a1; NEXT_STEP=LOCAL_AUDITS_CURRENT_ACEL_PROGRAM_STATE_AND_SELECTS_THE_NEXT_SOURCE_VERIFIED_TRANCHE; EXPANSION_ALLOWED=false. CVF-HRLTP-T1 static governance foundation is accepted after an independent Local probe and bounded reviewer repair. Preserve thirteen parked untracked paths byte-identically. Do not run Party B, create a real Group 3 source, open T3D/T3E, promote a key, evaluate a candidate, call a provider, public-sync or deploy without a fresh governed authority packet. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3C_C2_EXECUTION_AUTHORIZED_AT_fb7961510; NEXT_STEP=OPERATOR_RUNS_SCRIPTS_RUN_AS_CVF_G1_PARTY_B_CMD_ONCE_THEN_LOCAL_INDEPENDENTLY_VERIFIES; EXPANSION_ALLOWED=false. The fresh T3C-C2 decision authorizes one Party B genesis observation only. Preserve thirteen parked untracked paths byte-identically. Do not retry a failed or partial run before Local diagnosis. Do not open T3D/T3E, append a second observation, promote a key, evaluate a candidate, call a provider, public-sync or deploy. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
 - CVF-HRLTP-T1 implementation is released only to the committed no-commit INTERNAL_AGENT worker lane;
-- T3C real Party B execution/source creation remains separately parked;
+- T3C-C2 Party B execution is the active operator checkpoint; acceptance remains pending Local verification;
 - T3D issuer source and T3E consumer wiring;
 - key promotion or candidate admission;
 - provider/live work, runtime activation, public sync, deployment or production;
@@ -164,6 +167,8 @@ Authorized guard-maintenance scope: project accepted CVF-HRLTP-T1 completion
 `e25f6a1b` into the active front door and open the next-tranche selection checkpoint.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`;
 `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/state/entries/acelG1T3cC2ExecutionCheckpoint20260922.json`;
+`CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`;
 `CVF_SESSION/state/entries/cvfHrltpT1Closure20260922.json`;
 `CVF_SESSION/state/entries/nextAllowedMove.json`;
 `CVF_SESSION/ACTIVE_SESSION_STATE.json`;

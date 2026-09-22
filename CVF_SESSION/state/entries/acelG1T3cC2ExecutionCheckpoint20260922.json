@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2841,
+  "stateKey": "acelG1T3cC2ExecutionCheckpoint20260922",
+  "value": "OPERATOR_EXECUTION_READY at material commit fb7961510. Local compared G1-G6 and selected ACEL G1 T3C-C2 as the nearest source-verified dependency. Decision: docs/audits/CVF_ACEL_G1_G6_NEXT_TRANCHE_SELECTION_AND_T3C_C2_EXECUTION_DECISION_2026-09-22.md. One-time launcher: scripts/run_as_cvf_g1_party_b.cmd. Non-mutating launcher check PASS; Party B is enabled, password-required, non-admin, exact SID S-1-5-21-1644666849-912006174-747199667-1009; Group 1 source checker PASS; Group 3 checker self-test PASS; writer self-test PASS 56/56; target log absent. Operator may create exactly one genesis observation as Party B. Source acceptance remains pending Local independent verification. No automatic retry, second append, T3D/T3E, promotion, admission, provider/live API, public-sync or deployment is authorized."
+}
