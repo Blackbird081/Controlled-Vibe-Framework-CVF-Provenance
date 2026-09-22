@@ -1,11 +1,12 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `e25f6a1b`. Group 1 is
+Current material HEAD recorded for this handoff: `dd0e9eed`. Group 1 is
 `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is
 `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B is verified and
 T3C-C1 AR1 is reviewer-fixed, verified and materially closed; CVF-HRLTP-T1
-is independently reviewed and accepted, pending only this continuity sync.
+is independently reviewed and accepted, and its bounded multi-agent routing
+observation is recorded without a cost-superiority claim.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -124,6 +125,13 @@ External agent memory files: non-canonical convenience only.
   parked-worktree findings from task routing and three historical probe-less
   returns. The dispatch commit used a documented hook bypass rather than
   misclassifying those parked paths as worker authority.
+- CVF-HRLTP-T1 multi-agent routing evidence is recorded at `dd0e9eed` in
+  `docs/reviews/evidence/cvf-hrltp-t1-multi-agent-routing-observation-2026-09-22.json`.
+  It preserves the four lane allocations, operator-reported raw time string,
+  verification results and reviewer-local repair counts. Per-model time,
+  token, quota and currency cost remain explicitly unavailable. The sample is
+  admissible only as a bounded naturalistic observation; it does not prove
+  topology or model cost/quality superiority and is not a P4 auto-enrollment.
 
 ## T3B Readiness Inputs
 
