@@ -1,5 +1,5 @@
 {
   "stateOrder": 2840,
   "stateKey": "nextAllowedMove",
-  "value": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_PARTY_C_PROVISIONING_READY_AT_2ae347157; NEXT_STEP=OPERATOR_RUNS_SCRIPTS_RUN_PROVISION_CVF_G1_PARTY_C_AS_ADMIN_CMD_ONCE_THEN_LOCAL_VERIFIES; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Do not retry a failed provisioning attempt before Local diagnosis or open Group 4 implementation/T3E, second observation, promotion, admission, provider/live API, public-sync or deployment. Latest closed LHW wave remains LHW24."
+  "value": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_PARTY_C_FIRST_ATTEMPT_DIAGNOSED_AT_F8DF5969B; NEXT_STEP=LOCAL_COMMITS_48_CHARACTER_DESCRIPTION_CORRECTION_THEN_RELAUNCHES_ONCE_AND_VERIFIES; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Do not open Group 4 implementation/T3E, second observation, promotion, admission, provider/live API, public-sync or deployment before Party C verification. Latest closed LHW wave remains LHW24."
 }

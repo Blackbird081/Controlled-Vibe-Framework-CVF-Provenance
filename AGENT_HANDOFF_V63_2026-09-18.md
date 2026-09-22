@@ -1,14 +1,14 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `2ae347157`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
+Current material HEAD: `f8df5969b`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`;
 Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`; Party B and
 accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim.
 MCP/MUO discussion remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED`
 at `820aae3ec`: one Party B observation, exact registry-byte binding, hash
 chain, owner and protected four-ACE DACL passed Local verification. No second
-observation is authorized. T3D Party C principal provisioning is prepared at
-`2ae347157`; Group 4 implementation remains closed pending Local verification.
+observation is authorized. T3D Party C failure diagnostics are hardened at
+`f8df5969b`; no account/receipt exists, and Local owns the 48-character fix.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -148,7 +148,7 @@ source-establishment or activation proof.
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_PARTY_C_PROVISIONING_READY_AT_2ae347157; NEXT_STEP=OPERATOR_RUNS_SCRIPTS_RUN_PROVISION_CVF_G1_PARTY_C_AS_ADMIN_CMD_ONCE_THEN_LOCAL_VERIFIES; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Do not retry a failed provisioning attempt before Local diagnosis or open Group 4 implementation/T3E, second observation, promotion, admission, provider/live API, public-sync or deployment. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_PARTY_C_FIRST_ATTEMPT_DIAGNOSED_AT_F8DF5969B; NEXT_STEP=LOCAL_COMMITS_48_CHARACTER_DESCRIPTION_CORRECTION_THEN_RELAUNCHES_ONCE_AND_VERIFIES; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Do not open Group 4 implementation/T3E, second observation, promotion, admission, provider/live API, public-sync or deployment before Party C verification. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
