@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2871,
+  "stateKey": "acelG1T3dC1Group4ToolingClosure20260923",
+  "value": "ACEL G1 T3D-C1 Group 4 issuer-registry and lookup-response tooling is accepted TOOLING_ACCEPTED_SOURCE_NOT_CREATED at material commit 9ed844c2a. Independent GPT-6 Astra read-only review closed the final append-publication ownership and successor-signal ordering defects; Local applied the two bounded corrections. Python 82/82, checker 9/9, Party C 53/53, Party B 51/51, worker-return fast gate, reviewer-fast 69/69 and the material pre-commit hook 90/90 passed. The thirteen parked paths remain byte-identical and both real Group 4 source paths remain absent. The next allowed move is Local audit/selection of the T3D-C2 source-creation checkpoint; credentials, alternate-principal execution, real source mutation, second observation and T3E remain separately gated."
+}
