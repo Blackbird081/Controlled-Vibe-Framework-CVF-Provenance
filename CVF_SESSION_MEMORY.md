@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3d_c0_r1_dispatched`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=INTERNAL_AGENT executes the contract-only two-path T3D-C0-R1 amendment and returns pending Local review; role=Local orchestrator/reviewer; phase=T3D-C0-R1 worker execution; decision owner=Local; parked checkpoint=scripts/checkers, credentials, Party B/C real-mode execution, real Group 4 source creation, second observation, T3E, promotion/admission/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3d_c0_r1_closed_reassess_architecture`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local audits accepted G1-G4 and multi-agent orchestration learnings and, if coherent, selects one bounded CVF foundation-learning tranche; role=Local orchestrator/reviewer; phase=post-T3D-C0-R1 architecture reassessment; decision owner=Local; parked checkpoint=T3D-C1-R2, scripts/credentials, Party B/C real-mode execution, real Group 4 source creation, second observation, T3E, promotion/admission/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_t3d_c0_r1_dispatched`
-Current mode: `acel_g1_t3d_c0_r1_dispatched`; previous mode marker: `acel_g1_t3d_c1_tooling_closed`
+Current mode marker: `acel_g1_t3d_c0_r1_closed_reassess_architecture`
+Current mode: `acel_g1_t3d_c0_r1_closed_reassess_architecture`; previous mode marker: `acel_g1_t3d_c0_r1_dispatched`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C0_R1_DISPATCHED_AT_622BC4B0F; NEXT_STEP=INTERNAL_AGENT_EXECUTES_CONTRACT_ONLY_TWO_PATH_OPERATIONAL_BOUNDARY_AMENDMENT_THEN_RETURNS_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. Scripts, checkers, credentials, Party B or Party C real-mode execution, real Group 4 source creation, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.
-Mode: `acel_g1_t3d_c0_r1_dispatched`. T3C-C2 and Party C are Local verified; T3D-C1 tooling remains `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`; T3D-C0-R1 contract repair is dispatched at `622bc4b0f`. Only the two worker-owned contract/return paths may change; no real Group 4 source exists. T2A, G3 T2 and the research-assisted absorption profile remain closed and parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C0_R1_CLOSED_AT_2FFFA1EF7; CURRENT_TRANCHE_DISPOSITION=STOP_REASSESS_ARCHITECTURE; NEXT_STEP=LOCAL_AUDITS_THE_ACCEPTED_G1_G4_AND_MULTI_AGENT_ORCHESTRATION_LEARNINGS_AND_IF_COHERENT_SELECTS_ONE_BOUNDED_CVF_FOUNDATION_LEARNING_TRANCHE; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths byte-identically. No T3D-C1-R2 successor is authorized. Scripts, credentials, Party B or Party C real-mode execution, real Group 4 source creation, second observation, T3E, promotion, admission, provider/live API, public-sync and deployment remain forbidden. Latest closed LHW wave remains LHW24.
+Mode: `acel_g1_t3d_c0_r1_closed_reassess_architecture`. T3C-C2 and Party C are Local verified; T3D-C1 tooling remains `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`; T3D-C0-R1 is `CLOSED_PASS_BOUNDED` at `2fffa1ef7`. No successor or real Group 4 source is authorized. T2A, G3 T2 and the research-assisted absorption profile remain closed and parked.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
