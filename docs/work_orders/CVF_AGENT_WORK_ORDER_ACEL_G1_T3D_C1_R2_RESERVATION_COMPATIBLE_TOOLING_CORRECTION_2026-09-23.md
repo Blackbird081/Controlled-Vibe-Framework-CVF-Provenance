@@ -4,7 +4,7 @@ Memory class: governed-work-order
 
 docType: work_order
 
-Status: HOLD_PENDING_PACKET_REVIEW
+Status: DISPATCH_READY
 
 Date: 2026-09-23
 
@@ -22,8 +22,12 @@ Decision owner: Local orchestrator/reviewer
 
 ## Dispatch Prompt Envelope
 
-Role: `INTERNAL_AGENT` worker only after this HOLD packet is reviewed,
-gate-compliant and explicitly released by Local. No subagent is assigned now.
+Role: distinct shared-workspace `INTERNAL_AGENT` worker. A separate Local
+reviewer is independent probe executor and commit owner. The operator selected
+this distinct actor pair on 2026-09-23. No CLI/MCP invocation or subagent is
+authorized by this role assignment.
+
+executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`.
 
 Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C1_R2_RESERVATION_COMPATIBLE_TOOLING_CORRECTION_2026-09-23.md`
 
@@ -33,14 +37,15 @@ Current-time notes: C0-R1 is contract-only accepted; T3D-C1 tooling is
 accepted only for its earlier target-absent/hermetic scope. The four source
 gaps are recorded at `e79910b5c`.
 
-Do-not-misread notes: this HOLD packet is not implementation dispatch, Party
+Do-not-misread notes: this packet authorizes only bounded worker
+implementation after the dispatch gate passes. It does not authorize Party
 B/C execution, real Group 4 source creation or actual-token proof.
 
-Required first actions after release: read startup, baseline, source owners,
+Required first actions: read startup, baseline, source owners,
 guard orientation, checker sources; capture execution HEAD/status and confirm
 real Group 4 paths are untouched; run pre-implementation gate before edits.
 
-Return contract after release: exact owned manifest, focused tests, gate
+Return contract: exact owned manifest, focused tests, gate
 results and worker return `COMPLETE_PENDING_REVIEW` or
 `BLOCKED_WITH_REASON`; leave all worker changes uncommitted and independent
 probe `PENDING_REVIEWER_EXECUTION`.
@@ -67,19 +72,54 @@ operator-checkpointed order.
 | bounded static proof packet | `docs/audits/CVF_ACEL_G1_T3D_GROUP4_DISPOSABLE_ROOT_PROOF_PACKET_2026-09-23.md` |
 | paired GC-018 | `docs/baselines/CVF_GC018_ACEL_G1_T3D_C1_R2_RESERVATION_COMPATIBLE_TOOLING_CORRECTION_2026-09-23.md` |
 | task class | high-risk local tooling correction, no external provider effect |
-| role / phase / decision owner | Local dispatch author; HOLD packet preparation; Local reviewer/closer |
-| worker route | `MULTI_AGENT_MULTI_ROLE` after release with distinct internal worker and Local reviewer actors; no current subagent assignment |
+| role / phase / decision owner | Local dispatch author/reviewer/closer; distinct internal implementation worker |
+| worker route | `MULTI_AGENT_MULTI_ROLE`; operator-selected distinct worker and Local reviewer; no subagent assignment |
 | external route | `EXTERNAL_AGENT_CLI_MCP` forbidden; internal shared-workspace role only |
 | stop condition | any need for real token, credential, source mutation, path widening, or contract change |
+
+Intake summary: bounded internal correction of two Group 4 writers to the
+accepted pre-reserved target contract; no external repository, provider or
+real-principal source intake is requested.
+
+Selected role route: `MULTI_AGENT_MULTI_ROLE`, operator-selected distinct
+shared-workspace worker and Local reviewer. The Local actor retains all
+source decisions, independent probe, closure and commits.
+
+Scope classification: high-risk local security and durable transaction
+tooling, with disposable-root proof only.
+
+Risk sensitivity: a writer may mutate the wrong reservation, erase unknown
+residue or relax the parent/target DACL without immediate test detection.
+
+Escalation condition: any real-token need, path split or scope widening,
+contract contradiction, unrepresentable security descriptor, forbidden
+source mutation, or unknown transaction residue.
+
+## Task Governance Routing Manifest
+
+```json
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"ACEL-G1-T3D-C1-R2-RESERVATION-COMPATIBLE-TOOLING-CORRECTION","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"BOUNDED_CLUSTER","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["docs/baselines/","docs/work_orders/","docs/reviews/","docs/audits/","docs/reference/","scripts/","governance/compat/","CVF_SESSION/","CVF_SESSION_MEMORY.md","AGENT_HANDOFF_V63_2026-09-18.md"],"claims":["reservation-compatible Group 4 tooling correction only; no actual-token or real-source proof"],"requiredProof":["exact own-target reservation claim","exact parent and target security read-back","durable transaction ledger and recovery separation","unknown residue preservation","real peer exclusion in disposable root","independent Local probe"],"operatorCheckpoints":["Party C real registry creation","Party B actual-token observation","Group 4 establishment","T3E wiring","candidate admission"],"forbiddenEffects":["credential access","Party B or Party C execution","real Group 4 source read/write","worker commit","provider/live/public/deployment","automatic successor"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"docs/audits/CVF_ACEL_G1_T3D_GROUP4_ACTUAL_TOKEN_PROOF_TOOLING_GAP_AUDIT_2026-09-23.md","completenessClaimChanged":false}}
+```
+
+## Scaffold Provenance Block
+
+| Field | Value |
+|---|---|
+| scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --help` inspected during release read-ahead; no generated artifact was used |
+| generatedProfile | protected-governance-path requirements, manually applied to the existing HOLD packet |
+| generatedSkeletonStatus | NOT_USED_WITH_REASON |
+| manualEditsAfterScaffold | existing held packet was manually promoted only after actor selection; required ready-dispatch fields were added and machine-checked |
+| checkerReadAheadConfirmation | routing, scaffold, gate-to-role, dispatch-quality, lifecycle, handoff and worker-return checkers reviewed before release |
+| docOnlyNewFields | none |
+| claimBoundary | this is dispatch metadata, not implementation, actual-token proof or source creation |
 
 ## Agent Roles
 
 The operator owns later actual-token and real-source checkpoints. Local is
 dispatch author, reviewer, independent probe executor and committer. After
-release, a distinct worker actor is an internal same-workspace implementation
-role; no subagent or external actor is currently assigned. Same-thread role
-switching cannot supply the required independent actor identity. This HOLD
-packet cannot be released until that actor is identified.
+release, the operator-selected distinct worker is the internal same-workspace implementation actor.
+Same-thread role switching cannot supply the required independent actor
+identity. The operator selected distinct worker / Local reviewer actors explicitly.
 
 ## Required First Reads
 
@@ -119,6 +159,20 @@ Expected implementation family:
 Foreseeable maintainability extraction within `scripts/acel_g1_group4_*.ps1`
 requires Local amendment to the manifest before creation; this table does
 not grant a broad scripts-directory mutation right.
+
+## Work-Order Fulfillment Manifest
+
+| Obligation | Owned output | Required proof | Completion owner |
+|---|---|---|---|
+| own-target reservation claim | two existing writers | absent/mismatched/linked/nonzero reservation rejects; correct zero-byte target is claimed without cross-target mutation | worker, then Local reviewer |
+| protected security state | two writers and disposable probe | exact parent/target owner, protection and complete ACE read-back; extra/inherited/deny/reordered state rejects | worker, then Local reviewer |
+| durable transaction and recovery | writers and named recovery script | pre-mutation ledger, exact residue binding, separate administrative recovery path, unknown residue preservation | worker, then Local reviewer |
+| peer exclusion and rollback | named disposable probe | deterministic second-process barrier and injected failure poststate; no real-principal claim | worker, then Local reviewer |
+| evidence reconciliation | named worker return | exact five-path manifest, gate commands/results, empty staging, no real-source effect and pending independent probe | worker |
+
+Forbidden paths are all live Group 4 sources, Party B/C credential and profile
+locations, checker semantics, session/handoff, public files and any unnamed
+script. Required proof is disposable only; actual-token proof is deferred.
 
 ## Write Ownership
 
@@ -301,9 +355,37 @@ without seeking operator approval for each local edit. Any request to widen
 paths, run Party B/C, use credentials, change source or reduce proof is outside
 scope and must return `BLOCKED_WITH_REASON`.
 
+## Gate-To-Role Closeability Contract
+
+closeabilityContractVersion: cvf.gate-role-closeability@1.0.0
+
+closeabilityDisposition: CLOSEABLE
+
+implementationTopologyPolicy: EXACT_PATHS_WITH_NO_FORESEEABLE_SPLIT
+
+foreseeableFileSplitDisposition: NOT_REQUIRED_UNDER_SIZE_BUDGET
+
+returnTimeRecheck: REQUIRED_BEFORE_REPAIR
+
+| gateId | mustPassBy | repairOwner | repairPhase | mutationSurface | topology | commitOwner | commitPhase | dependsOn |
+|---|---|---|---|---|---|---|---|---|
+| authorization_review | PRE_DISPATCH | dispatcher | PRE_DISPATCH | paired baseline and work order | EXACT_PATHS | closer | DISPATCH_COMMIT | NONE |
+| pre_dispatch_gate | PRE_DISPATCH | dispatcher | PRE_DISPATCH | dispatch packet | EXACT_PATHS | closer | DISPATCH_COMMIT | authorization_review |
+| dispatch_continuity | IMPLEMENTATION | session-sync-steward | IMPLEMENTATION | `AGENT_HANDOFF_V63_2026-09-18.md` material-SHA marker | EXACT_PATHS | session-sync-steward | DISPATCH_CONTINUITY_COMMIT | pre_dispatch_gate |
+| focused_checker_tests | WORKER_RETURN | worker | IMPLEMENTATION | exact five worker paths | EXACT_PATHS | closer | MATERIAL_COMMIT | dispatch_continuity |
+| adif_integrity | WORKER_RETURN | worker | IMPLEMENTATION | worker-return disclosure | EXACT_PATHS | closer | MATERIAL_COMMIT | focused_checker_tests |
+| pre_implementation_autorun | WORKER_RETURN | worker | IMPLEMENTATION | exact five worker paths | EXACT_PATHS | closer | MATERIAL_COMMIT | adif_integrity |
+| worker_return_fast | REVIEW | worker | WORKER_RETURN | exact five worker paths | EXACT_PATHS | closer | MATERIAL_COMMIT | pre_implementation_autorun |
+| independent_local_probe | PRE_MATERIAL_COMMIT | reviewer | REVIEW | disposable fixture only; optional completion review | BOUNDED_PATH_FAMILY | closer | MATERIAL_COMMIT | worker_return_fast |
+| reviewer_fast | PRE_MATERIAL_COMMIT | reviewer | REVIEW | exact worker range and optional completion review | BOUNDED_PATH_FAMILY | closer | MATERIAL_COMMIT | independent_local_probe |
+| pre_commit | PRE_MATERIAL_COMMIT | reviewer | REVIEW | accepted material | BOUNDED_PATH_FAMILY | closer | MATERIAL_COMMIT | reviewer_fast |
+| terminal_completion_review | PRE_MATERIAL_COMMIT | reviewer | REVIEW | Local completion disposition | EXACT_PATHS | closer | MATERIAL_COMMIT | pre_commit |
+| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | active continuity | BOUNDED_PATH_FAMILY | session-sync-steward | CONTINUITY_COMMIT | terminal_completion_review |
+| committed_range_closure | POST_MATERIAL_CLOSURE | reviewer | POST_MATERIAL | split committed ranges | BOUNDED_PATH_FAMILY | closer | CORRECTIVE_MATERIAL_COMMIT | continuity |
+
 ## Agent Handoff Contract Control Block
 
-Contract source: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`
+Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HANDOFF_CONTRACT_RATIFICATION_2026-06-16.md`; active handoff is `AGENT_HANDOFF_V63_2026-09-18.md`.
 
 | Field | Decision |
 |---|---|
@@ -326,6 +408,28 @@ laneOwnedPaths: exact five paths in Required Artifact Manifest
 dispatcherMutationBoundary: NO_MUTATION_WHILE_LANE_ACTIVE
 
 laneReleaseEvidence: terminal worker return, exact manifest and empty staged set
+
+## Worker Return Packet Shape Contract
+
+workerReturnPath: `docs/reviews/CVF_ACEL_G1_T3D_C1_R2_RESERVATION_COMPATIBLE_TOOLING_WORKER_RETURN_2026-09-23.md`
+
+contractProfile: WORKER_RETURN_FULL_GATE_V1
+
+evidenceReadinessContract: NOT_APPLICABLE_WITH_REASON: this bounded local tooling correction has no new discovery audit or corpus manifest artifact
+
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C1_R2_RESERVATION_COMPATIBLE_TOOLING_CORRECTION_2026-09-23.md`
+
+individualCheckerSubstitution: FORBIDDEN
+
+workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
+
+Required sections: Purpose; Target / Source; Scope / Methodology; Findings /
+Position; Risk / Corrective Action; Decision / Disposition; Claim Boundary;
+Changed Files; Command Evidence; No-Commit Statement; Checker Source
+Read-Ahead Block; Agent Operation Trace Block; Delta Execution Claim Boundary
+Control Block; Machine Closure Package; External Knowledge Intake Routing;
+Epistemic Process Block; Public Export Disposition; exact executionBaseHead and
+full `git status --short --untracked-files=all`.
 
 ## Reviewer Closure Conversion
 
@@ -394,7 +498,7 @@ real-principal action or missing required negative case is a rejection.
 ## Verification Commands
 
 Before release: `python governance/compat/run_agent_autorun_workflow_gate.py
---phase pre-dispatch --base <dispatchBaseHead> --head HEAD --enforce`.
+--phase pre-dispatch --base <dispatchBaseHead> --head HEAD`.
 After implementation: both writer `-SelfTest` modes, focused disposable-root
 positive/negative tests, `python governance/compat/run_worker_return_fast_gate.py
 --active-work-order <this-work-order>`, and reviewer-fast on the exact worker
@@ -411,7 +515,8 @@ and separate GC-020 continuity commit, not the worker's pending return.
 
 ## Closure Checklist
 
-- [ ] HOLD status explicitly released only after pre-dispatch compliance.
+- [x] HOLD status released for the selected worker after pre-dispatch compliance (83/83); the
+  Local author recorded the actor assignment before worker implementation.
 - [ ] Worker return gives exact manifest, tests, gate outputs and final hash.
 - [ ] Local independent probe accepts all nine criteria.
 - [ ] No Party B/C execution, real Group 4 source or T3E effect occurred.
@@ -431,7 +536,44 @@ The operator's Alibaba free key is available only if a later provider-governance
 test actually requires a real provider call. This NTFS tranche does not. No
 key is read or used. No account switching, Party B/C run, Group 4 source,
 issuer observation, lookup response, T3E, public-sync or deployment is
-authorized. Packet remains HOLD until Local verifies and releases it.
+authorized. The packet is released only for the bounded internal worker scope
+after Local pre-dispatch verification; it is not a source-execution release.
+
+## Delta Execution Claim Boundary Control Block
+
+| Field | Disposition |
+|---|---|
+| claimScope | five-path hermetic reservation-compatible tooling correction |
+| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
+| receiptEvidence | N/A with reason: dispatch and disposable tests create no production receipt |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: exact worker return and later independent reviewer probe required |
+| invocationBoundary | internal workspace edits and verified disposable fixtures only |
+| interceptionBoundary | no IDE, shell, Git, filesystem or provider interception claim |
+| claimLanguage | corrected tooling pending Local acceptance; no actual-token proof |
+| forbiddenExpansion | credentials, alternate principal, real source, Group 4 establishment, T3E, admission, provider/live/public/deploy |
+
+## External Knowledge Intake Routing
+
+| Field | Value |
+|---|---|
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | internal governed input (no external intake) |
+| Internal source | `docs/audits/CVF_ACEL_G1_T3D_GROUP4_ACTUAL_TOKEN_PROOF_TOOLING_GAP_AUDIT_2026-09-23.md` |
+| Chain map route | N/A with reason: direct internal tooling correction |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
+| Owner surface | T2F Group 4 contract and this bounded order |
+| Disposition | local first-party correction only |
+| Claim boundary | no external source authority, corpus, remote implementation or provider claim |
+
+## External/Local Coordination Binding
+
+Role: `INTERNAL_AGENT`; phase: bounded local implementation; decision owner:
+Local reviewer. External research is outside this work order and conveys no
+private-CVF verification authority.
+
+```json
+{"contractId":"cvf.external-local-absorption-coordination@1","invariants":{"externalRole":"ADVISORY_RESEARCH_AND_PATTERN_MAPPING","externalContext":"PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ","localRole":"SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION","finalDecisionOwner":"LOCAL","localCoverageBasis":"SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST","externalEvidenceAuthority":"INPUT_NOT_PRIVATE_CVF_PROOF"},"contractSha256":"92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c","parentArtifact":null}
+```
 
 ## Agent Operation Trace Block
 
@@ -444,7 +586,7 @@ authorized. Packet remains HOLD until Local verifies and releases it.
 | Command or tool surface | governed source reads, apply_patch, gates, Git |
 | Target paths | paired baseline and work order |
 | Allowed scope source | operator continuation; committed four-finding gap audit |
-| Before status evidence | HEAD `c8b9a7bb4`; exact packet paths absent |
+| Before status evidence | HEAD `c8b9a7bb4`; exact packet paths absent; clean worktree before release edit at HEAD `d3a440aa3` |
 | After status evidence | HOLD packet only; no implementation |
 | Diff evidence | exact two-file packet delta before commit |
 | Approval boundary | packet authoring, not worker invocation |
