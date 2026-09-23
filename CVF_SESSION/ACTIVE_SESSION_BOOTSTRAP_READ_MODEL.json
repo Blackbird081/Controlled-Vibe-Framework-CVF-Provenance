@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C3_ACTUAL_TOKEN_DISPOSABLE_RUNNER_2026-09-23.md",
     "baselineSha256": "b51a3a7d6ff8a57299ed00839d7b65ecdbe0491033ab5c9406def2fbb64b9cad",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C3_ACTUAL_TOKEN_DISPOSABLE_RUNNER_2026-09-23.md",
-    "workOrderSha256": "99407f9ffaf1746be290330cbf0a5061a0de5ce1cd684672f45dfc1c942ade64"
+    "workOrderSha256": "6dc845e66df98b645f6116fafc1a07e8930429b45ddefc5193f99fd7280bbc4d"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

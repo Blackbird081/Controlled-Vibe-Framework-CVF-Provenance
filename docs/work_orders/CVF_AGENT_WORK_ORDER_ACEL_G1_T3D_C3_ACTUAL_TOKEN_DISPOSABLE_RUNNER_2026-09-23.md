@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: APPROVED_FOR_EXECUTION
+Status: CLOSED_PASS_BOUNDED
 
 providerExecutionAuthority: FORBIDDEN
 
@@ -104,6 +104,11 @@ Allowed scope:
 - use separate real OS child processes in hermetic peer/crash tests;
 - capture complete file/security state and exact evidence hashes;
 - repair allowed-scope test or gate defects without asking the operator.
+- reviewer/closer may create `docs/reviews/CVF_ACEL_G1_T3D_C3_ACTUAL_TOKEN_DISPOSABLE_RUNNER_COMPLETION_2026-09-23.md`;
+- reviewer/closer may create `docs/reviews/evidence/cvf-acel-g1-t3d-c3-independent-probe-2026-09-23.json`.
+- reviewer/closer may project the closed work-order hash into `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- the state generator may update `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- the state generator may update `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 
 Forbidden scope:
 
@@ -277,7 +282,7 @@ reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
     "partialReadyClosures": 0,
     "reviewerScopeExpansions": 0,
     "sameClaimCorrections": 0,
-    "nonDecreasingBlockerTransitions": 0
+    "nonDecreasingBlockerTransitions": 1
   },
   "claims": [],
   "requiredDisposition": "CONTINUE_BOUNDED",
@@ -469,7 +474,7 @@ Base-anchor evidence:
 
 - `dispatchBaseHead`: `3ad4903dec375121b0af1a3c6774078ca199b8cf`
 - `executionBaseHead`: worker captures before edit
-- `closureBaseHead`: pending reviewer
+- `closureBaseHead`: `42151106dbbc183c4d90c25f1ec5aaae1fc591c9`
 - Commit mode: WORKER_MUST_NOT_COMMIT
 
 ## Verification Commands
@@ -486,14 +491,14 @@ git status --short --untracked-files=all
 
 ## Acceptance Criteria
 
-- [ ] exact manifest only; no accepted/real-source path changed;
-- [ ] three selftests pass after final edit with sourceMutation=false and realPrincipalClaimed=false;
-- [ ] eleven matrix classes are represented and completeness is fail closed;
-- [ ] identity/path/elevation/role/action/schema/hash mismatches reject before mutation;
-- [ ] finalizer cannot emit PASS for missing, duplicate, altered or self-certified evidence;
-- [ ] no credential is accepted, emitted or persisted;
-- [ ] worker return and detached digest binding pass required gate;
-- [ ] `independentProbeDisposition` remains `PENDING_REVIEWER_EXECUTION`.
+- [x] exact manifest only; no accepted/real-source path changed;
+- [x] three selftests pass after final edit with sourceMutation=false and realPrincipalClaimed=false;
+- [x] eleven matrix classes are represented and completeness is fail closed;
+- [x] identity/path/elevation/role/action/schema/hash mismatches reject before mutation;
+- [x] finalizer cannot emit PASS for missing, duplicate, altered or self-certified evidence;
+- [x] no credential is accepted, emitted or persisted;
+- [x] worker return and detached digest binding pass required gate;
+- [x] worker return retains `PENDING_REVIEWER_EXECUTION` and the terminal completion review records `PASS_INDEPENDENT_PROBE`.
 
 Fail conditions: any principal launch, password interaction, real-source touch,
 accepted-writer edit, incomplete matrix, optimistic cleanup or self-accepted
@@ -518,8 +523,8 @@ Learning Disposition; Epistemic Process Block; Machine Closure Package.
 
 | Field | Value |
 |---|---|
-| completionReviewPath | optional; reviewer records bounded corrections in the worker return unless a separate decision is needed |
-| reviewerOwnedClosurePaths | reviewer probe/receipt and optional completion review |
+| completionReviewPath | `docs/reviews/CVF_ACEL_G1_T3D_C3_ACTUAL_TOKEN_DISPOSABLE_RUNNER_COMPLETION_2026-09-23.md` |
+| reviewerOwnedClosurePaths | `docs/reviews/CVF_ACEL_G1_T3D_C3_ACTUAL_TOKEN_DISPOSABLE_RUNNER_COMPLETION_2026-09-23.md`; `docs/reviews/evidence/cvf-acel-g1-t3d-c3-independent-probe-2026-09-23.json` |
 | closureOwner | Local reviewer/closer distinct from implementation phase |
 | workerCommitPermission | FORBIDDEN |
 
@@ -532,9 +537,9 @@ switch must remain disclosed and cannot satisfy the independent actor claim.
 
 ## Operator Checkpoint
 
-`CLOSED_PENDING_TOOLING`. No operator command or credential action is requested
-by this work order. A later reviewed packet must explicitly change the status
-to `READY_FOR_OPERATOR_EXECUTION` before Party B/C can run.
+`CLOSED_PENDING_ACTUAL_TOKEN_AUTHORIZATION`. No operator command or credential
+action is requested by this closure. A later reviewed packet must explicitly
+change the status to `READY_FOR_OPERATOR_EXECUTION` before Party B/C can run.
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -595,14 +600,40 @@ private-CVF verification authority.
 | Manifest delta | MATCH expected paired dispatch set |
 | Deletion or rename disposition | none |
 
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| actor separation | implementation and probe actors/invocations differ | Codex implementation worker and Claude distinct shared-workspace reviewer with separate invocation identifiers | PASS |
+| script integrity | exact three committed script hashes remain stable | all three hashes matched before and after independent execution | PASS |
+| self-tests | coordinator 9/9, principal probe 7/7 and finalizer 6/6 | all passed with exit 0 | PASS |
+| matrix execution | 22 unique exact packet commands | all 22 named rows passed with zero omissions | PASS |
+| fail-closed TestPolicy | current-token evidence cannot claim actual-token proof | public finalizer returned only `TEST_POLICY_EVIDENCE_INADMISSIBLE` | PASS |
+| tamper control | altered envelope binding rejects | altered row rejected, original bytes restored and digest matched | PASS |
+| process proof | peer and crash rows use real child processes | child `pwsh` processes observed and no residual peer/crash process remained | PASS |
+| cleanup and repository state | disposable paths absent and repository unchanged | both exact temp paths absent; HEAD and Git status unchanged | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_G1_T3D_C3_ACTUAL_TOKEN_DISPOSABLE_RUNNER_COMPLETION_2026-09-23.md` | terminal review binds `PASS_INDEPENDENT_PROBE` | PASS |
+| Roadmap state | N/A with reason: T3D-C3 is a bounded interposed runner tranche | continuity returns to a separately governed actual-principal authorization decision | N/A with reason |
+| Registry JSON | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` | existing aggregate remains unchanged | PASS |
+| Registry Markdown | `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` | existing aggregate remains unchanged | PASS |
+| External evidence digest | `docs/reviews/evidence/cvf-acel-g1-t3d-c3-independent-probe-2026-09-23.json` | SHA-256 `1dc9bf969f45aadb8125174b5686f422d2215b5ee3ef968241c00de5d3df322c` | PASS |
+| System loop interlock | semantic convergence packet in the completion review | no automatic successor or worker redispatch | PASS |
+| Session continuity | later dedicated continuity commit | material closure precedes mode and next-move projection | PASS |
+
 ## Closure Checklist
 
-- [ ] exact manifest and all acceptance criteria pass;
-- [ ] return-time closeability recheck has no unresolved implementation blocker;
-- [ ] final return hash is unchanged across the final required gate;
-- [ ] reviewer executes the pending probe before acceptance;
-- [ ] material and continuity commits remain separate;
-- [ ] operator checkpoint remains closed unless separately reviewed and opened.
+- [x] exact manifest and all acceptance criteria pass;
+- [x] return-time closeability recheck has no unresolved implementation blocker;
+- [x] final return hash is unchanged across the final required gate;
+- [x] reviewer executes the pending probe before acceptance;
+- [x] material and continuity commits remain separate;
+- [x] operator checkpoint remains closed unless separately reviewed and opened.
 
 ## Return-To-Orchestrator Conditions
 
