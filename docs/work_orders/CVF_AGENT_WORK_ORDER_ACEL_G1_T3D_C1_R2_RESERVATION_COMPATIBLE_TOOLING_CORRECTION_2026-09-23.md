@@ -4,7 +4,7 @@ Memory class: governed-work-order
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_BOUNDED_CLOSURE_PENDING
 
 Date: 2026-09-23
 
@@ -12,9 +12,9 @@ Batch ID: ACEL-G1-T3D-C1-R2-RESERVATION-COMPATIBLE-TOOLING-CORRECTION
 
 dispatchBaseHead: `c8b9a7bb459738ca7c7614dc3ba60093c42749f3`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `8537cdedb002323ee767313835811e4262ab2021`
 
-closureBaseHead: `REVIEWER_MUST_CAPTURE_AT_CLOSURE`
+closureBaseHead: `8537cdedb002323ee767313835811e4262ab2021`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -27,7 +27,7 @@ reviewer is independent probe executor and commit owner. The operator selected
 this distinct actor pair on 2026-09-23. No CLI/MCP invocation or subagent is
 authorized by this role assignment.
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`.
+executionBaseHead: `8537cdedb002323ee767313835811e4262ab2021`.
 
 Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C1_R2_RESERVATION_COMPATIBLE_TOOLING_CORRECTION_2026-09-23.md`
 
@@ -413,6 +413,8 @@ laneReleaseEvidence: terminal worker return, exact manifest and empty staged set
 
 workerReturnPath: `docs/reviews/CVF_ACEL_G1_T3D_C1_R2_RESERVATION_COMPATIBLE_TOOLING_WORKER_RETURN_2026-09-23.md`
 
+Worker return path: `docs/reviews/CVF_ACEL_G1_T3D_C1_R2_RESERVATION_COMPATIBLE_TOOLING_WORKER_RETURN_2026-09-23.md`
+
 contractProfile: WORKER_RETURN_FULL_GATE_V1
 
 evidenceReadinessContract: NOT_APPLICABLE_WITH_REASON: this bounded local tooling correction has no new discovery audit or corpus manifest artifact
@@ -423,13 +425,7 @@ individualCheckerSubstitution: FORBIDDEN
 
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
-Required sections: Purpose; Target / Source; Scope / Methodology; Findings /
-Position; Risk / Corrective Action; Decision / Disposition; Claim Boundary;
-Changed Files; Command Evidence; No-Commit Statement; Checker Source
-Read-Ahead Block; Agent Operation Trace Block; Delta Execution Claim Boundary
-Control Block; Machine Closure Package; External Knowledge Intake Routing;
-Epistemic Process Block; Public Export Disposition; exact executionBaseHead and
-full `git status --short --untracked-files=all`.
+Required sections: Purpose; Target / Source; Scope / Methodology; Findings / Position; Risk / Corrective Action; Decision / Disposition; Claim Boundary; Changed Files; Command Evidence; No-Commit Statement; Checker Source Read-Ahead Block; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Machine Closure Package; External Knowledge Intake Routing; Epistemic Process Block; Public Export Disposition; Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; exact executionBaseHead and full `git status --short --untracked-files=all`.
 
 ## Reviewer Closure Conversion
 
@@ -470,6 +466,14 @@ high-risk cross-principal mutation boundary; no broad duplicate review.
 reviewerDecisionOwner: LOCAL
 
 ## Required Artifact Manifest
+
+| Path | Status | Purpose |
+|---|---|---|
+| `scripts/acel_g1_party_c_group4_registry_writer.ps1` | MODIFY | Reservation-compatible Party C own-target transaction |
+| `scripts/acel_g1_party_b_group4_lookup_response_writer.ps1` | MODIFY | Party B reservation initialization and guarded response transaction |
+| `scripts/acel_g1_group4_disposable_acl_probe.ps1` | NEW | Disposable fixture and adversarial transaction probe |
+| `scripts/acel_g1_group4_admin_recovery.ps1` | NEW | Separate exact ledger-bound administrative recovery |
+| `docs/reviews/CVF_ACEL_G1_T3D_C1_R2_RESERVATION_COMPATIBLE_TOOLING_WORKER_RETURN_2026-09-23.md` | NEW | Worker evidence and pending Local review disposition |
 
 The expected worker change set is the two existing writer scripts, any
 predeclared NEW disposable/recovery scripts actually necessary, and the named
@@ -517,9 +521,9 @@ and separate GC-020 continuity commit, not the worker's pending return.
 
 - [x] HOLD status released for the selected worker after pre-dispatch compliance (83/83); the
   Local author recorded the actor assignment before worker implementation.
-- [ ] Worker return gives exact manifest, tests, gate outputs and final hash.
-- [ ] Local independent probe accepts all nine criteria.
-- [ ] No Party B/C execution, real Group 4 source or T3E effect occurred.
+- [x] Worker return gives exact manifest, tests, gate outputs and final hash.
+- [x] Local independent probe accepts the full 14-case reviewer matrix.
+- [x] No Party B/C execution, real Group 4 source or T3E effect occurred.
 - [ ] Material commit and separate continuity sync pass their exact gates.
 
 ## Return-To-Orchestrator Conditions
@@ -605,7 +609,8 @@ Reason: private local Windows tooling correction.
 
 ## Claim Boundary
 
-This order is not dispatch-ready and supplies no runtime proof. C0-R1
-contract acceptance is preserved; Group 4 remains
-`TOOLING_ACCEPTED_SOURCE_NOT_CREATED` until later independently reviewed
-tooling and real-principal source checkpoints.
+This order is reviewer-accepted for the bounded hermetic tooling claim and
+supplies no actual-principal runtime proof. C0-R1 contract acceptance is
+preserved; Group 4 remains `TOOLING_ACCEPTED_SOURCE_NOT_CREATED` until later
+real-principal source checkpoints. Material commit and separate continuity
+sync remain closure-steward actions.
