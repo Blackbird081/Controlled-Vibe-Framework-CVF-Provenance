@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2900,
+  "stateKey": "acelG1T3DC1R2HeldPacket20260923",
+  "value": "At d5f660fc6, Local committed the GC-018 baseline and work order for ACEL G1 T3D-C1-R2 reservation-compatible Group 4 tooling correction. The paired packet is HOLD_PENDING_PACKET_REVIEW, pre-dispatch 83/83 compliant, and has not been released or executed. Release requires a distinct internal worker actor, a separate Local reviewer/probe actor, exact source refresh, and pre-dispatch rerun. No subagent was invoked; the operator's Alibaba free key was not used because this is NTFS transaction work. No Party B/C token run or real Group 4 source action is authorized."
+}

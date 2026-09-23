@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_group4_c1_r2_tooling_correction_dispatch_preparation`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local prepares a bounded C1-R2 reservation-compatible tooling correction baseline and work order without subagents; role=Local orchestrator/reviewer; phase=G1 Group 4 tooling correction pre-dispatch; decision owner=Local; parked checkpoint=HRLTP-T2 implementation, C1-R2 implementation, actual-token or alternate-principal execution, ACEL/source/credential/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_group4_c1_r2_hold_actor_assignment`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local resolves a distinct internal worker and Local reviewer before releasing the held C1-R2 packet; role=Local orchestrator/reviewer; phase=G1 Group 4 held dispatch; decision owner=Local; parked checkpoint=HRLTP-T2 implementation, C1-R2 execution, actual-token or alternate-principal execution, ACEL/source/credential/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_group4_c1_r2_tooling_correction_dispatch_preparation`
-Current mode: `acel_g1_group4_c1_r2_tooling_correction_dispatch_preparation`; previous mode marker: `acel_g1_group4_actual_token_proof_execution_checkpoint`
+Current mode marker: `acel_g1_group4_c1_r2_hold_actor_assignment`
+Current mode: `acel_g1_group4_c1_r2_hold_actor_assignment`; previous mode marker: `acel_g1_group4_c1_r2_tooling_correction_dispatch_preparation`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_GROUP4_TOOLING_GAP_AUDIT_AT_E79910B5C; CURRENT_TRANCHE_DISPOSITION=BLOCKED_ACTUAL_TOKEN_PROOF_PENDING_TOOLING_CORRECTION; NEXT_STEP=LOCAL_PREPARES_BOUNDED_C1_R2_RESERVATION_COMPATIBLE_TOOLING_CORRECTION_BASELINE_AND_WORK_ORDER_WITHOUT_SUBAGENT; EXPANSION_ALLOWED=false. T3D-C1 writer real modes are target-absent and orphan-sweeping; neither matches the accepted C0-R1 reserved-target and ledger-bound recovery contract. The 13 rejected T2/T2A/T2B paths remain archived. Preserve committed HRLTP-T2 byte-identically and paused. No C1-R2 implementation dispatch, subagent, actual-token or alternate-principal proof, ACEL source creation, credential use, provider/live API, runtime activation, public-sync or deployment is authorized by this continuity. Latest closed LHW wave remains LHW24.
-Mode: `acel_g1_group4_c1_r2_tooling_correction_dispatch_preparation`. Rejected G1 T2 evidence is archived at `333d687c6`; Group 4 architecture, static proof packet, and tooling-gap audit are committed at `8caacc64c`, `c395fd1aa`, and `e79910b5c`. HRLTP-T2 remains committed but paused; Group 4 proof and T3E remain closed.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C1_R2_HELD_DISPATCH_PACKET_AT_D5F660FC6; CURRENT_TRANCHE_DISPOSITION=HOLD_PENDING_DISTINCT_WORKER_ACTOR_AND_LOCAL_REVIEWER; NEXT_STEP=LOCAL_RESOLVES_DISTINCT_INTERNAL_WORKER_ACTOR_AND_INDEPENDENT_LOCAL_REVIEWER_THEN_REFRESHES_PRE_DISPATCH_BEFORE_RELEASE; EXPANSION_ALLOWED=false. The bounded C1-R2 baseline and work order are committed HOLD and pre-dispatch 83/83 compliant; no worker has been dispatched. The 13 rejected T2/T2A/T2B paths remain archived. Preserve HRLTP-T2 byte-identically and paused. No subagent invocation, actual-token or alternate-principal proof, ACEL source creation, credential use, provider API, runtime activation, public-sync or deployment is authorized by this continuity. The Alibaba key is not needed for NTFS tooling proof. Latest closed LHW wave remains LHW24.
+Mode: `acel_g1_group4_c1_r2_hold_actor_assignment`. Rejected G1 T2 evidence is archived at `333d687c6`; Group 4 architecture, static proof packet, tooling-gap audit and held C1-R2 packet are committed at `8caacc64c`, `c395fd1aa`, `e79910b5c`, and `d5f660fc6`. HRLTP-T2 remains paused; Group 4 proof and T3E remain closed.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
