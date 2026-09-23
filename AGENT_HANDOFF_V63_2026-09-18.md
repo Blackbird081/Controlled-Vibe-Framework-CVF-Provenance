@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `a1203c1eeeff0e23b808b766346baa402eec1b2d`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `88137e9a20abc8dcec0cc3b42db4162f6454b1c7`. Closure parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -22,10 +22,10 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_group4_actual_token_runner_material_committed_independent_review_next`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=distinct-actor review of the committed Group 4 actual-token runner, reusing returned evidence and executing only the independent probe; parked checkpoint=HRLTP-T2 implementation, actual Party B/C execution, passwords, Group 4 source creation, T3E, provider/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_group4_actual_token_runner_closed_checkpoint_selection_next`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local audit and selection of the actual-token operator checkpoint without executing Party B/C; parked checkpoint=HRLTP-T2 implementation, actual Party B/C execution, passwords, Group 4 source creation, T3E, provider/live/runtime/public/deployment.
 
 ## Current Mode
-`acel_g1_group4_actual_token_runner_material_committed_independent_review_next`.
+`acel_g1_group4_actual_token_runner_closed_checkpoint_selection_next`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -35,7 +35,7 @@ Latest closed learning-history wave remains `LHW24`.
 T3B is closed with one Local-verified active v1 specification. Party B is a
 verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
-T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`; its shared-parent route remains conditional on actual Windows proof. Local architecture selection `8caacc64c`, static proof packet `c395fd1aa` and source gap audit `e79910b5c` led to C1-R2. The correction is accepted at `988491791` for hermetic tooling only. Foundation T1 is closed at `c82f81d49`. The readiness audit at `a765880e4` confirmed the runner gap. The T3D-C3 bounded runner dispatch is committed at `4b68fa465`; its exact four-path material result is committed at `a1203c1ee`. The operator-authorized same-actor role switch is bounded confirmation only, so independent-actor acceptance remains pending. The operator checkpoint remains closed. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is dispatched at `19466bfdc` but paused.
+T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`; its shared-parent route remains conditional on actual Windows proof. Local architecture selection `8caacc64c`, static proof packet `c395fd1aa` and source gap audit `e79910b5c` led to C1-R2. The correction is accepted at `988491791` for hermetic tooling only. Foundation T1 is closed at `c82f81d49`. The readiness audit at `a765880e4` confirmed the runner gap. The T3D-C3 bounded runner dispatch is committed at `4b68fa465`; its exact four-path material result is committed at `a1203c1ee` and independently accepted bounded at `88137e9a2`. Claude's distinct-actor probe passed while retaining the TestPolicy inadmissibility boundary. The operator checkpoint remains closed. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is dispatched at `19466bfdc` but paused.
 
 Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
 External agent memory files: non-canonical convenience only.
@@ -135,16 +135,11 @@ External agent memory files: non-canonical convenience only.
   findings and a distinct read-only reviewer returned `PASS_INDEPENDENT_PROBE`.
   Fast/reviewer-fast 69/69/full-hook 90/90 passed; lossless extraction met
   GC-023 without an exception. `STOP_REASSESS_ARCHITECTURE`; no C1-R2 successor.
-- T3D-C3 actual-token disposable runner dispatch committed at `4b68fa465`.
-  Pre-dispatch passed 83/83 and the dispatch hook passed 90/90. The Local
-  implementation lane owns exactly three new PowerShell scripts plus one
-  worker return, must not commit, and may run only current-token hermetic tests.
-- T3D-C3 exact four-path runner material committed at `a1203c1ee`. Its 22/22
-  current-token hermetic checks, worker-return fast gate including reviewer-
-  fast 69/69, and pre-commit 90/90 passed. The operator authorized retaining
-  the implementation and a same-actor switch to reviewer/closer for this
-  result; that confirmation is not independent-actor proof. The return remains
-  `COMPLETE_PENDING_REVIEW` with `PENDING_REVIEWER_EXECUTION`.
+- T3D-C3 dispatch `4b68fa465`, material `a1203c1ee` and closure `88137e9a2`
+  preserve exact four-path tooling and `CLOSED_PASS_BOUNDED`. Claude's distinct
+  probe passed stable hashes, 22/22 TestPolicy rows, fail-closed finalization,
+  tamper rejection, real child-process evidence and exact cleanup. Tooling is
+  accepted; Party B/C ACL behavior remains unproven.
 
 ## T3B Readiness Inputs
 
@@ -154,7 +149,7 @@ principal-policy decision. This identity evidence is not source/activation proof
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_C3_ACTUAL_TOKEN_RUNNER_MATERIAL_COMMITTED_AT_A1203C1EE; CURRENT_TRANCHE_DISPOSITION=MATERIAL_COMMITTED_PENDING_INDEPENDENT_ACTOR_ACCEPTANCE; NEXT_STEP=DISTINCT_ACTOR_REVIEW_OF_COMMITTED_T3D_C3_RUNNER; EXPANSION_ALLOWED=false. Consume the committed worker return and its 22/22 hermetic evidence without recreating implementation. Execute only the independent reviewer probe required by the high-risk local transaction contract, under a disposable current-token root. The operator-authorized same-actor role switch is recorded as bounded confirmation evidence and is not independent-actor proof. Preserve HRLTP-T2 paused. Actual Party B/C execution, passwords, real Group 4 source creation, T3E, provider API, runtime activation, public-sync and deployment remain parked until independent acceptance and a separately opened operator checkpoint. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_C3_ACTUAL_TOKEN_RUNNER_CLOSED_AT_88137E9A2; CURRENT_TRANCHE_DISPOSITION=CLOSED_PASS_BOUNDED_TOOLING_ONLY; NEXT_STEP=LOCAL_AUDIT_AND_SELECT_ACTUAL_TOKEN_OPERATOR_CHECKPOINT; EXPANSION_ALLOWED=false. Consume the accepted completion review and independent probe receipt without rerunning the 22-command TestPolicy matrix. Audit the committed later-run packet, exact Party B/C principal prerequisites and cleanup boundary, then either prepare bounded operator instructions or retain the checkpoint closed with a reason. Do not collect passwords or execute Party B/C as an agent. Preserve HRLTP-T2 paused. Real Group 4 source creation, T3E, provider API, runtime activation, public-sync and deployment remain parked until separately authorized actual-token proof is reviewed. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -162,15 +157,15 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 - T3C-C2 is closed and Local verified at `820aae3ec`;
 - T3D-C1 hermetic tooling is accepted at `9ed844c2a`; T3D-C0-R1 is closed at
   `2fffa1ef7`, while C1-R2 tooling correction is accepted at `988491791`;
-  T3D-C3 runner material is committed at `a1203c1ee`, but independent-actor
-  acceptance, Group 4 actual-token proof, source creation and T3E remain parked;
+  T3D-C3 runner is accepted bounded at `88137e9a2`, but Group 4 actual-token
+  proof, source creation and T3E remain parked;
 - key promotion or candidate admission;
 - provider/live work, runtime activation, public sync, deployment or production;
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project the committed Group 4 runner material SHA `a1203c1ee` into exact active continuity sources and generated views; record the operator-authorized same-actor reviewer/closer switch without relabelling it independent; preserve HRLTP-T2 as paused and keep actual principal execution/source/T3E parked pending distinct-actor acceptance.
+Authorized guard-maintenance scope: project the independently accepted Group 4 runner closure SHA `88137e9a2` into exact active continuity sources and generated views; advance only to Local checkpoint selection; preserve HRLTP-T2 as paused and keep actual principal execution/source/T3E parked pending separate authorization.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -183,8 +178,8 @@ Protected paths:
 
 Operator authorization: explicit operator direction to continue and standing
 Local reviewer/closer session-transition authority. Rollback boundary: revert
-only this continuity projection; preserve material commit `a1203c1ee`, the
-readiness audit and prior accepted sources.
+only this continuity projection; preserve material commit `a1203c1ee`, closure
+commit `88137e9a2`, the readiness audit and prior accepted sources.
 This change creates no Group 4 source and authorizes no alternate-
 principal execution, credential, second observation, promotion, admission,
 live/runtime/public or deployment effect.
@@ -199,13 +194,13 @@ live/runtime/public or deployment effect.
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer and session-transition authority |
-| Before status evidence | material HEAD `a1203c1ee`; exact four-path result committed after 22/22 hermetic checks, worker-return fast including reviewer-fast 69/69, and pre-commit 90/90 |
-| After status evidence | material is retained; same-actor review is bounded confirmation only; distinct-actor acceptance is next; operator checkpoint and alternate-principal execution remain closed |
+| Before status evidence | closure HEAD `88137e9a2`; distinct-actor probe accepted and closure pre-commit passed 90/90 |
+| After status evidence | bounded tooling acceptance is retained; Local checkpoint selection is next; operator checkpoint and alternate-principal execution remain closed |
 | Diff evidence | exact continuity manifest before session-only commit |
-| Approval boundary | continuity projection and distinct-actor acceptance routing only |
-| Claim boundary | continuity only; committed implementation is recorded, but no independent acceptance, actual-token proof, ACEL/source action, promotion, admission, live/runtime/public effect is claimed |
+| Approval boundary | continuity projection and Local checkpoint-selection routing only |
+| Claim boundary | continuity only; bounded tooling acceptance is recorded, but no actual-token proof, ACEL/source action, promotion, admission, live/runtime/public effect is claimed |
 | Agent type | Local session-sync steward |
-| Invocation ID | `cvf-acel-g1-t3d-c3-runner-material-v63-continuity-20260923` |
+| Invocation ID | `cvf-acel-g1-t3d-c3-runner-closure-v63-continuity-20260923` |
 | Expected manifest | handoff, front door, core, next-move, generated state and bootstrap |
 | Actual changed set | verified before commit |
 | Manifest delta | exact source manifest plus two generated projections |
