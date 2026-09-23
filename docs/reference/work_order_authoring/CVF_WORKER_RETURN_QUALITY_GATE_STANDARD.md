@@ -531,6 +531,33 @@ from `CVF_WORKER_RETURN_FULL_GATE_CONTRACT_STANDARD.md`. The dispatch-quality
 checker validates all fail-closed eligibility terms before dispatch, and the
 worker-return checker validates the cited work order again at return time.
 
+### Active Work-Order Exact-Return Admission
+
+When the checker receives `--active-work-order <path>`, admission is rooted in
+that work order, not in Git changed-path discovery.
+`run_worker_return_fast_gate.py` forwards its own `--active-work-order` to this
+checker. The rules:
+
+- the path must be a repo-contained `docs/work_orders/*.md` file that exists;
+- it must carry exactly one `Worker return path:` and exactly one
+  `workerReturnPath:`, and the two must agree;
+- the bound return must be repo-contained, present and an eligible worker
+  return, and its `dispatchWorkOrder:` must name the active work order;
+- that exact return is diagnosed even when discovery selects zero returns
+  (for example, when it is already committed), so zero eligible returns cannot
+  pass;
+- an unrelated eligible return, changed or parked, cannot satisfy the active
+  work order. Changed unrelated returns are still diagnosed as before.
+
+Without `--active-work-order`, legacy changed-return behavior is preserved,
+including a compliant result when no eligible return changed. Terminal readiness
+(`terminalReadinessVerdict`) and rework-round stops remain owned by
+`check_review_cost_control.py`. This gate adds no second budget.
+
+A structural PASS is admission only. It is not evidence of productivity, lower
+cost, worker quality or semantic correctness. Unknown provider usage or cost
+stays recorded as unknown, never as zero.
+
 ## Claim Boundary
 
 This standard defines a structural quality gate only. It does not prove worker

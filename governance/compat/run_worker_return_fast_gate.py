@@ -51,8 +51,14 @@ def build_commands(
         "--enforce",
         "--changed-lane-only",
     ]
+    quality_command = [
+        "python",
+        "governance/compat/check_worker_return_quality_gate.py",
+        "--enforce",
+    ]
     if active_work_order:
         probe_admission_command += ["--active-work-order", active_work_order]
+        quality_command += ["--active-work-order", active_work_order]
     commands.extend(
         [
             FastGateCommand(
@@ -63,10 +69,7 @@ def build_commands(
                 "epistemic process packet",
                 ("python", "governance/compat/check_epistemic_process_packet.py", "--enforce"),
             ),
-            FastGateCommand(
-                "worker-return quality gate",
-                ("python", "governance/compat/check_worker_return_quality_gate.py", "--enforce"),
-            ),
+            FastGateCommand("worker-return quality gate", tuple(quality_command)),
             FastGateCommand("independent review probe admission", tuple(probe_admission_command)),
             FastGateCommand(
                 "reviewer-fast governance gate",
@@ -115,9 +118,10 @@ def main() -> int:
         default=None,
         help=(
             "Repo-relative path of the work order currently being executed. "
-            "Forwarded to the independent-probe-admission checker's "
-            "--active-work-order so the return this dispatch is producing "
-            "is always in the changed lane, even while untracked."
+            "Forwarded as --active-work-order to the worker-return quality "
+            "checker (exact bound return must exist and pass) and to the "
+            "independent-probe-admission checker (return stays in the changed "
+            "lane, even while untracked)."
         ),
     )
     args = parser.parse_args()

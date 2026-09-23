@@ -4,7 +4,7 @@ Memory class: governed-work-order
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 providerExecutionAuthority: FORBIDDEN
 rawMemoryReleased=false
 
@@ -14,9 +14,9 @@ Batch ID: ACEL-FOUNDATION-T1-DISPATCH-RETURN-LOOP-CONTROL
 
 dispatchBaseHead: `dc935676838b08754a6b26d0a13813128df24785`
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`
+executionBaseHead: `fad45cab4aa408cd337ba3b992fdcce4d24f959e`
 
-closureBaseHead: `REVIEWER_TO_SET`
+closureBaseHead: `fad45cab4aa408cd337ba3b992fdcce4d24f959e`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
@@ -33,7 +33,7 @@ Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_FOUNDATION_T1_DISP
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`.
 
-executionBaseHead: `WORKER_MUST_CAPTURE_AT_START`.
+executionBaseHead: `fad45cab4aa408cd337ba3b992fdcce4d24f959e`.
 
 Current-time notes: use current repository owners and checker source as
 authority; refresh exact bytes and execution HEAD before the first edit.
@@ -202,6 +202,19 @@ at handoff. No optional file creation is implied.
 | `AGENT_HANDOFF*.md` | handoff is Local-owned after material acceptance |
 | `AGENTS.md` | root carrier change is not required for this bounded control |
 | `.cvf/runtime/**` | runtime state is not worker evidence or a mutation target |
+
+## Pre-Existing Dirty Path Exemptions
+
+These exact paths were not worker-owned and were added only after lane release
+by the Local reviewer to keep the closed current-authority hash projection
+atomic with this work-order closure. They do not retroactively authorize worker
+mutation or any broader `CVF_SESSION/**` path.
+
+| Path | Reason |
+|---|---|
+| `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` | Local current-authority work-order hash refresh at closure |
+| `CVF_SESSION/ACTIVE_SESSION_STATE.json` | generated aggregate of the Local hash refresh |
+| `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | generated bootstrap projection of the Local hash refresh |
 
 ## Forbidden Filesystem State At Dispatch
 
@@ -446,7 +459,7 @@ reviewerOwnedClosurePaths: accepted eight-path worker manifest plus optional Loc
 
 allowedPendingWorkerReturnStatus: COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON
 
-forbiddenClosedEquivalentResidue: COMPLETE_PENDING_REVIEW; NOT_EXECUTED_YET; PRE_CLOSURE_NOT_RUN; DISPATCHED
+forbiddenClosedEquivalentResidue: NONE_AT_CLOSURE
 
 predecessorClosureFactSource: `docs/reviews/CVF_ACEL_G1_T3D_C1_R2_RESERVATION_COMPATIBLE_TOOLING_LOCAL_REVIEW_2026-09-23.md`
 
@@ -488,7 +501,7 @@ Claim Update Requirement: return states whether the structural admission claim w
 
 ```powershell
 python -m pytest governance/compat/test_check_dispatch_return_loop_control.py governance/compat/test_run_worker_return_fast_gate.py -q
-python governance/compat/check_work_order_dispatch_quality.py --base dc935676838b08754a6b26d0a13813128df24785 --head HEAD --enforce
+python governance/compat/check_work_order_dispatch_quality.py --base <executionBaseHead> --head HEAD --enforce
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
 python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_FOUNDATION_T1_DISPATCH_RETURN_LOOP_CONTROL_2026-09-23.md --pytest-target governance/compat/test_check_dispatch_return_loop_control.py --pytest-target governance/compat/test_run_worker_return_fast_gate.py
 git diff --check
@@ -504,12 +517,12 @@ command and path evidence is insufficient.
 
 ## Acceptance Criteria
 
-- [ ] DRC-01 through DRC-07 have explicit evidence and no open blocker.
-- [ ] Exact eight-path manifest matches `git status`; staged set is empty.
-- [ ] Focused tests and worker-return fast gate pass after the final edit.
-- [ ] Existing review-cost terminal-readiness responsibility is not duplicated or weakened.
-- [ ] Worker return reports `terminalReadinessVerdict: READY_FOR_REVIEW`, `consolidatedDefectClassSweep: COMPLETE_ALL_KNOWN_DEPENDENCIES`, and `adversarialRegressionDisposition: PASS_TARGETED_DEFECT_CLASS` only when all required evidence passes.
-- [ ] No subagent, provider call, CLI/MCP dispatch, runtime interception, session mutation or commit occurs.
+- [x] DRC-01 through DRC-07 have explicit evidence and no open blocker.
+- [x] Exact eight-path worker manifest matched return-time `git status`; staged set was empty.
+- [x] Focused tests and worker-return fast gate pass after the final reviewer edit.
+- [x] Existing review-cost terminal-readiness responsibility is not duplicated or weakened.
+- [x] Worker return reports `terminalReadinessVerdict: READY_FOR_REVIEW`, `consolidatedDefectClassSweep: COMPLETE_ALL_KNOWN_DEPENDENCIES`, and `adversarialRegressionDisposition: PASS_TARGETED_DEFECT_CLASS` with the required evidence.
+- [x] No subagent, provider call, CLI/MCP dispatch, runtime interception, session mutation or worker commit occurred.
 
 ## Return-To-Orchestrator Conditions
 
@@ -528,13 +541,13 @@ return isolation. Only Local may convert the return to terminal acceptance.
 
 ## Closure Checklist
 
-- [ ] exact eight-path worker delta and empty staging;
-- [ ] DRC-01 through DRC-07 evidenced with real counts;
-- [ ] focused tests, worker-return fast gate and reviewer-fast pass;
-- [ ] terminal-readiness responsibility remains in review-cost control;
-- [ ] Local independent probe uses distinct fixtures;
-- [ ] no subagent, provider, runtime, session, public or deployment action;
-- [ ] material and continuity commits remain separately attributable.
+- [x] exact eight-path worker delta and empty staging;
+- [x] DRC-01 through DRC-07 evidenced with real counts;
+- [x] focused tests, worker-return fast gate and reviewer-fast pass;
+- [x] terminal-readiness responsibility remains in review-cost control;
+- [x] Local independent probe uses distinct fixtures;
+- [x] no subagent, provider, runtime, session, public or deployment action;
+- [x] material and continuity commits remain separately attributable.
 
 ## Finding-To-Governance Learning Disposition
 
@@ -601,6 +614,31 @@ decision owner: Local. External research is not used.
 ```json
 {"contractId":"cvf.external-local-absorption-coordination@1","invariants":{"externalRole":"ADVISORY_RESEARCH_AND_PATTERN_MAPPING","externalContext":"PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ","localRole":"SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION","finalDecisionOwner":"LOCAL","localCoverageBasis":"SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST","externalEvidenceAuthority":"INPUT_NOT_PRIVATE_CVF_PROOF"},"contractSha256":"92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c","parentArtifact":null}
 ```
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED`; all closure checklist items checked | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_FOUNDATION_T1_DISPATCH_RETURN_LOOP_CONTROL_COMPLETION_2026-09-23.md` | Local adjudication and independent probe | PASS |
+| Worker return | `docs/reviews/CVF_ACEL_FOUNDATION_T1_DISPATCH_RETURN_LOOP_CONTROL_WORKER_RETURN_2026-09-23.md` | exact active-work-order return admission | PASS |
+| Roadmap state | N/A with reason: Foundation T1 is an interposed learning tranche | no roadmap mutation claimed | N/A with reason |
+| Registry JSON | `governance/corpus_scan_registry/CVF_CORPUS_SCAN_REGISTRY.json` | generated aggregate drift check | PASS |
+| Registry Markdown | `governance/corpus_scan_registry/CVF_CORPUS_SCAN_REGISTRY.md` | generated aggregate drift check | PASS |
+| External evidence digest | N/A with reason: no external evidence used | local first-party evidence only | N/A with reason |
+| System loop interlock | focused dispatch/return regression suite | DRC-01 through DRC-07 | PASS |
+| Session continuity | active handoff/front door/state | separate post-material continuity sync | N/A with reason: follows material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| DRC-01/02 dispatch admission | no ready no-commit packet without exact manifest/bindings | unconditional checker and focused negatives | PASS |
+| DRC-03 fast-gate forwarding | active work order reaches worker-return gate | forwarding regression | PASS |
+| DRC-04/05 exact return | absent or unrelated return cannot satisfy active order | focused regressions and Local probe | PASS |
+| DRC-06 compatibility | no-active-order legacy invocation preserved | legacy suites pass | PASS |
+| DRC-07 claim boundary | structural admission is not productivity or semantic proof | both standards carry the boundary | PASS |
+| independent review | Local uses a distinct persisted probe | completion review carries cryptographic bindings | PASS |
 
 ## Public Export Disposition
 

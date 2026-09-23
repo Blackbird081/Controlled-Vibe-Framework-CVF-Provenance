@@ -81,6 +81,27 @@ class WorkerReturnFastGateTests(unittest.TestCase):
             ),
         )
 
+    def test_active_work_order_is_forwarded_to_worker_return_quality(self) -> None:
+        # DRC-03: the exact-return admission must receive the active work
+        # order whenever the fast gate is given one.
+        work_order = "docs/work_orders/CVF_EXAMPLE_WORK_ORDER.md"
+        commands = MODULE.build_commands((), work_order)
+        by_name = {command.name: command.command for command in commands}
+        self.assertEqual(
+            by_name["worker-return quality gate"],
+            (
+                "python",
+                "governance/compat/check_worker_return_quality_gate.py",
+                "--enforce",
+                "--active-work-order",
+                work_order,
+            ),
+        )
+        self.assertEqual(
+            by_name["independent review probe admission"][-2:],
+            ("--active-work-order", work_order),
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
