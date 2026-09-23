@@ -1,8 +1,8 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `d5f660fc6`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`.
+Current material HEAD: `de7466ea9`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`.
 Party B and accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim; MCP/MUO remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED` at `820aae3ec` with one Local-verified Party B observation; no second is authorized.
-Party C is Local verified. T3D-C1 tooling remains `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`; T3D-C0-R1 contract-only repair is `CLOSED_PASS_BOUNDED` at `2fffa1ef7`. Group 4 architecture selection is static-only at `8caacc64c`; proof packet `c395fd1aa` is on execution hold. Tooling-gap audit `e79910b5c` blocks actual-token proof; bounded C1-R2 baseline/order is committed HOLD at `d5f660fc6` pending distinct worker/reviewer actors. Autorun lane-binding R1 is accepted at `ee81deeeb`. Thirteen rejected T2/T2A/T2B paths are archived at `333d687c6`, outside active tree. HRLTP-T2 remains paused; no C1-R2 implementation, real Group 4 source or T3E is authorized.
+Party C is Local verified. T3D-C1 tooling remains `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`; T3D-C0-R1 contract-only repair is `CLOSED_PASS_BOUNDED` at `2fffa1ef7`. Group 4 architecture selection is static-only at `8caacc64c`; proof packet `c395fd1aa` is on execution hold. Tooling-gap audit `e79910b5c` blocks actual-token proof; bounded C1-R2 baseline/order was held at `d5f660fc6` and released `DISPATCH_READY` for a distinct shared-workspace worker at `de7466ea9` after pre-dispatch 83/83 and pre-commit 90/90. Autorun lane-binding R1 is accepted at `ee81deeeb`. Thirteen rejected T2/T2A/T2B paths are archived at `333d687c6`, outside active tree. HRLTP-T2 remains paused; no C1-R2 implementation, real Group 4 source or T3E has occurred.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 
 Memory class: active-handoff
@@ -15,19 +15,19 @@ and only then Approver decision writes.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer. Phase: G1 Group 4 held C1-R2 dispatch actor assignment.
+Role: Local orchestrator/reviewer. Phase: G1 Group 4 bounded C1-R2 worker dispatch.
 Decision owner: Local.
 
-External research is closed for this lane. A shared-workspace worker, if later
-dispatched, is `INTERNAL_AGENT`; the operator relays its work order only and
+External research is closed for this lane. The selected shared-workspace
+worker is `INTERNAL_AGENT`; the operator relays its work order only and
 does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_group4_c1_r2_hold_actor_assignment`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local resolves distinct internal worker and reviewer actors before release; parked checkpoint=HRLTP-T2 implementation, C1-R2 execution, actual-token or alternate-principal execution, ACEL/source/credential/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_group4_c1_r2_worker_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator relays committed C1-R2 order to selected worker, then Local reviews return; parked checkpoint=HRLTP-T2 implementation, actual-token or alternate-principal execution, ACEL/source/credential/live/runtime/public/deployment.
 
 ## Current Mode
-`acel_g1_group4_c1_r2_hold_actor_assignment`.
+`acel_g1_group4_c1_r2_worker_dispatch_ready`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -37,7 +37,7 @@ Latest closed learning-history wave remains `LHW24`.
 T3B is closed with one Local-verified active v1 specification. Party B is a
 verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
-T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`; its shared-parent route remains conditional on actual Windows proof. Local architecture selection `8caacc64c`, static proof packet `c395fd1aa` and source gap audit `e79910b5c` led to a committed HOLD C1-R2 packet at `d5f660fc6`; it is not released. The thirteen rejected T2/T2A/T2B paths are archived with exact hashes in `docs/reviews/evidence/cvf-acel-g1-t2-rejected-parked-evidence-archive-2026-09-23.json`, with no active-path promotion. Credentials, alternate-principal execution, source creation and T3E remain closed. HRLTP-T2 is dispatched at `19466bfdc` but paused.
+T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`; its shared-parent route remains conditional on actual Windows proof. Local architecture selection `8caacc64c`, static proof packet `c395fd1aa` and source gap audit `e79910b5c` led to a HOLD C1-R2 packet at `d5f660fc6`, now released for bounded worker implementation at `de7466ea9`. The thirteen rejected T2/T2A/T2B paths are archived with exact hashes in `docs/reviews/evidence/cvf-acel-g1-t2-rejected-parked-evidence-archive-2026-09-23.json`, with no active-path promotion. Credentials, alternate-principal execution, source creation and T3E remain closed. HRLTP-T2 is dispatched at `19466bfdc` but paused.
 
 Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
 External agent memory files: non-canonical convenience only.
@@ -150,22 +150,22 @@ principal-policy decision. This identity evidence is not source/activation proof
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C1_R2_HELD_DISPATCH_PACKET_AT_D5F660FC6; CURRENT_TRANCHE_DISPOSITION=HOLD_PENDING_DISTINCT_WORKER_ACTOR_AND_LOCAL_REVIEWER; NEXT_STEP=LOCAL_RESOLVES_DISTINCT_INTERNAL_WORKER_ACTOR_AND_INDEPENDENT_LOCAL_REVIEWER_THEN_REFRESHES_PRE_DISPATCH_BEFORE_RELEASE; EXPANSION_ALLOWED=false. The bounded C1-R2 baseline and work order are committed HOLD and pre-dispatch 83/83 compliant; no worker has been dispatched. The 13 rejected T2/T2A/T2B paths remain archived. Preserve HRLTP-T2 byte-identically and paused. No subagent invocation, actual-token or alternate-principal proof, ACEL source creation, credential use, provider API, runtime activation, public-sync or deployment is authorized by this continuity. The Alibaba key is not needed for NTFS tooling proof. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C1_R2_WORKER_DISPATCH_READY_AT_DE7466EA9; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY_DISTINCT_INTERNAL_WORKER_LOCAL_REVIEWER; NEXT_STEP=OPERATOR_RELAYS_COMMITTED_C1_R2_WORK_ORDER_TO_SELECTED_SHARED_WORKSPACE_WORKER_THEN_LOCAL_REVIEWS_RETURN; EXPANSION_ALLOWED=false. The bounded C1-R2 baseline and work order are committed DISPATCH_READY after pre-dispatch 83/83 and pre-commit 90/90. No worker implementation has yet occurred. The 13 rejected T2/T2A/T2B paths remain archived. Preserve HRLTP-T2 byte-identically and paused. No Codex subagent invocation, actual-token or alternate-principal proof, ACEL source creation, credential use, provider API, runtime activation, public-sync or deployment is authorized by this continuity. The Alibaba key is not needed for NTFS tooling proof. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
 - T3D-C1 hermetic tooling is accepted at `9ed844c2a`; T3D-C0-R1 is closed at
-  `2fffa1ef7`, while T3D-C1-R2, Group 4 source creation and T3E remain parked
-  pending distinct worker/reviewer actors and release of held C1-R2 tooling packet;
+  `2fffa1ef7`, while C1-R2 is dispatch-ready for bounded worker implementation;
+  Group 4 actual-token proof, source creation and T3E remain parked;
 - key promotion or candidate admission;
 - provider/live work, runtime activation, public sync, deployment or production;
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: operator-directed G1 archive at `333d687c6`, Group 4 static architecture `8caacc64c`, proof packet `c395fd1aa`, gap audit `e79910b5c`, held C1-R2 packet `d5f660fc6`, and continuity update to actor assignment; preserve HRLTP-T2 as paused and T3D source/T3E ban.
+Authorized guard-maintenance scope: operator-directed G1 archive at `333d687c6`, Group 4 static architecture `8caacc64c`, proof packet `c395fd1aa`, gap audit `e79910b5c`, held C1-R2 packet `d5f660fc6`, release `de7466ea9`, and continuity update to dispatch-ready state; preserve HRLTP-T2 as paused and T3D source/T3E ban.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -194,13 +194,13 @@ live/runtime/public or deployment effect.
 |---|---|
 | Actor | Local session-sync steward |
 | Provider or surface | private CVF workspace |
-| Session or invocation | G1 Group 4 held C1-R2 packet continuity, 2026-09-23 |
+| Session or invocation | G1 Group 4 C1-R2 release continuity, 2026-09-23 |
 | Working directory | repository root |
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer and session-transition authority |
-| Before status evidence | material HEAD `d5f660fc6`; C1-R2 HOLD packet committed after hook 90/90 |
-| After status evidence | rejected G1 T2 evidence archived; C1-R2 packet waits for distinct actor/reviewer and release |
+| Before status evidence | material HEAD `de7466ea9`; C1-R2 release committed after pre-dispatch 83/83 and hook 90/90 |
+| After status evidence | rejected G1 T2 evidence archived; C1-R2 packet is dispatch-ready for distinct worker, no implementation yet |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and exact committed HRLTP-T2 worker routing only |
 | Claim boundary | continuity only; no implementation is claimed, no actual-token proof, ACEL/source action, promotion, admission, live/runtime/public effect |
