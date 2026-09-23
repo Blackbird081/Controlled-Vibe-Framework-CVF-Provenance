@@ -64,6 +64,15 @@ ACE sets and resolved effective access masks, not display names alone. If
 setup is partial, remove only the verified disposable setup before either
 principal runs, then restart; do not normalize an ambiguous prestate.
 
+This packet does not certify the accepted T3D-C1 writers as compatible with
+those reservations. The post-packet Local source audit at
+`docs/audits/CVF_ACEL_G1_T3D_GROUP4_ACTUAL_TOKEN_PROOF_TOOLING_GAP_AUDIT_2026-09-23.md`
+controls that prerequisite: the currently accepted real modes require absent
+targets, while the C0-R1 model requires both targets pre-reserved. A later
+actual-token dispatch must first cite accepted reservation-compatible tooling
+and independent Local review. Test-only peer/crash modes are not substitutes
+for the real-principal proof.
+
 ## Required Proof Ledger
 
 For every matrix row in the controlling amendment's `Required Actual-Token
@@ -117,9 +126,11 @@ real Group 4 authority blocked until Local accepts the complete ledger.
 
 ## Decision / Disposition
 
-`STATIC_PACKET_READY_EXECUTION_HOLD`. The next Local action is to decide
-whether to authorize and dispatch a disposable-root proof work order with the
-operator checkpoint. Until then C1-R2 and real Group 4 remain unopened.
+`STATIC_PACKET_READY_EXECUTION_HOLD`. The next Local action is to close the
+reservation/tooling mismatch in a separate documentation and hermetic tooling
+correction tranche. Only after its independent acceptance may Local consider
+a disposable-root actual-token proof order and operator checkpoint. Until
+then C1-R2 real execution and Group 4 source creation remain unopened.
 
 ## Claim Boundary
 
