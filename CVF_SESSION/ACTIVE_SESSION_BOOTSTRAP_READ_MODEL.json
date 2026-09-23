@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "acel_g1_group4_actual_token_runner_local_implementation_next",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_ACTUAL_TOKEN_READINESS_AUDIT_CLOSED_AT_A765880E4; CURRENT_TRANCHE_DISPOSITION=BLOCKED_ACTUAL_TOKEN_ENTRYPOINT_REQUIRED; NEXT_STEP=LOCAL_AUTHOR_AND_IMPLEMENT_G1_GROUP4_ACTUAL_TOKEN_DISPOSABLE_RUNNER_WITH_HERMETIC_TESTS; EXPANSION_ALLOWED=false. Continue without subagents. The runner tranche may author governed dispatch artifacts and implement disposable setup, principal-bound probe surfaces, evidence capture and Local finalization, but may execute only current-token hermetic tests. The operator checkpoint remains CLOSED_PENDING_TOOLING. Preserve HRLTP-T2 paused. Actual Party B/C execution, passwords, real Group 4 source creation, T3E, provider API, runtime activation, public-sync and deployment remain parked until the runner is accepted and the operator checkpoint is separately opened. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_C3_ACTUAL_TOKEN_RUNNER_DISPATCHED_AT_4B68FA465; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY_LOCAL_IMPLEMENTATION; NEXT_STEP=LOCAL_IMPLEMENT_EXACT_THREE_RUNNER_SCRIPTS_AND_WORKER_RETURN_WITH_CURRENT_TOKEN_HERMETIC_TESTS; EXPANSION_ALLOWED=false. Continue without subagents. Implement only the committed four-path worker manifest and execute only current-token hermetic tests below a disposable temporary root. The operator checkpoint remains CLOSED_PENDING_ACCEPTED_RUNNER. Preserve HRLTP-T2 paused. Actual Party B/C execution, passwords, real Group 4 source creation, T3E, provider API, runtime activation, public-sync and deployment remain parked until Local review accepts the runner and the operator checkpoint is separately opened. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_FOUNDATION_T1_DISPATCH_RETURN_LOOP_CONTROL_2026-09-23.md",
-    "baselineSha256": "89fbcaebc8f285148e6ab474fc0d007afbb74355f394ba46036d3c2386e17e6f",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_FOUNDATION_T1_DISPATCH_RETURN_LOOP_CONTROL_2026-09-23.md",
-    "workOrderSha256": "e9cffc1bfd0aee8c8fa59db35fee589ee9436ec2aeade5625a23239739846078"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C3_ACTUAL_TOKEN_DISPOSABLE_RUNNER_2026-09-23.md",
+    "baselineSha256": "b51a3a7d6ff8a57299ed00839d7b65ecdbe0491033ab5c9406def2fbb64b9cad",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C3_ACTUAL_TOKEN_DISPOSABLE_RUNNER_2026-09-23.md",
+    "workOrderSha256": "99407f9ffaf1746be290330cbf0a5061a0de5ce1cd684672f45dfc1c942ade64"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

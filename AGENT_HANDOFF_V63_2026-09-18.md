@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `a765880e4cf3a058d4c53d4007d0933a2c071fb8`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `4b68fa4654e2c0873c760347402efd5b40d88e6a`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -35,7 +35,7 @@ Latest closed learning-history wave remains `LHW24`.
 T3B is closed with one Local-verified active v1 specification. Party B is a
 verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
-T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`; its shared-parent route remains conditional on actual Windows proof. Local architecture selection `8caacc64c`, static proof packet `c395fd1aa` and source gap audit `e79910b5c` led to C1-R2. The correction is accepted at `988491791` for hermetic tooling only. Foundation T1 is closed at `c82f81d49`. The readiness audit at `a765880e4` confirms the exact principals exist and the real source is absent, but no governed disposable actual-token entrypoint exists. The next action is Local-only runner authoring/implementation with current-token hermetic tests; the operator checkpoint remains closed. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is dispatched at `19466bfdc` but paused.
+T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`; its shared-parent route remains conditional on actual Windows proof. Local architecture selection `8caacc64c`, static proof packet `c395fd1aa` and source gap audit `e79910b5c` led to C1-R2. The correction is accepted at `988491791` for hermetic tooling only. Foundation T1 is closed at `c82f81d49`. The readiness audit at `a765880e4` confirmed the runner gap. The T3D-C3 bounded runner dispatch is committed at `4b68fa465`; implementation is limited to its exact four-path manifest and current-token hermetic tests. The operator checkpoint remains closed. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is dispatched at `19466bfdc` but paused.
 
 Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
 External agent memory files: non-canonical convenience only.
@@ -139,6 +139,10 @@ External agent memory files: non-canonical convenience only.
   findings and a distinct read-only reviewer returned `PASS_INDEPENDENT_PROBE`.
   Fast/reviewer-fast 69/69/full-hook 90/90 passed; lossless extraction met
   GC-023 without an exception. `STOP_REASSESS_ARCHITECTURE`; no C1-R2 successor.
+- T3D-C3 actual-token disposable runner dispatch committed at `4b68fa465`.
+  Pre-dispatch passed 83/83 and the dispatch hook passed 90/90. The Local
+  implementation lane owns exactly three new PowerShell scripts plus one
+  worker return, must not commit, and may run only current-token hermetic tests.
 
 ## T3B Readiness Inputs
 
@@ -148,7 +152,7 @@ principal-policy decision. This identity evidence is not source/activation proof
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_ACTUAL_TOKEN_READINESS_AUDIT_CLOSED_AT_A765880E4; CURRENT_TRANCHE_DISPOSITION=BLOCKED_ACTUAL_TOKEN_ENTRYPOINT_REQUIRED; NEXT_STEP=LOCAL_AUTHOR_AND_IMPLEMENT_G1_GROUP4_ACTUAL_TOKEN_DISPOSABLE_RUNNER_WITH_HERMETIC_TESTS; EXPANSION_ALLOWED=false. Continue without subagents. The runner tranche may author governed dispatch artifacts and implement disposable setup, principal-bound probe surfaces, evidence capture and Local finalization, but may execute only current-token hermetic tests. The operator checkpoint remains CLOSED_PENDING_TOOLING. Preserve HRLTP-T2 paused. Actual Party B/C execution, passwords, real Group 4 source creation, T3E, provider API, runtime activation, public-sync and deployment remain parked until the runner is accepted and the operator checkpoint is separately opened. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_C3_ACTUAL_TOKEN_RUNNER_DISPATCHED_AT_4B68FA465; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY_LOCAL_IMPLEMENTATION; NEXT_STEP=LOCAL_IMPLEMENT_EXACT_THREE_RUNNER_SCRIPTS_AND_WORKER_RETURN_WITH_CURRENT_TOKEN_HERMETIC_TESTS; EXPANSION_ALLOWED=false. Continue without subagents. Implement only the committed four-path worker manifest and execute only current-token hermetic tests below a disposable temporary root. The operator checkpoint remains CLOSED_PENDING_ACCEPTED_RUNNER. Preserve HRLTP-T2 paused. Actual Party B/C execution, passwords, real Group 4 source creation, T3E, provider API, runtime activation, public-sync and deployment remain parked until Local review accepts the runner and the operator checkpoint is separately opened. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -163,7 +167,7 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project the committed Group 4 readiness-audit material SHA `a765880e4` into exact active continuity sources and generated views; preserve HRLTP-T2 as paused and keep actual principal execution/source/T3E parked while the Local runner is authored and hermetically tested.
+Authorized guard-maintenance scope: project the committed Group 4 runner-dispatch material SHA `4b68fa465` into exact active continuity sources and generated views; preserve HRLTP-T2 as paused and keep actual principal execution/source/T3E parked while the Local runner is implemented and hermetically tested.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -171,6 +175,7 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/acelG1T3dActualTokenReadinessAudit20260923.json`
+- `CVF_SESSION/state/entries/acelG1T3dC3ActualTokenRunnerDispatch20260923.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
@@ -187,18 +192,18 @@ live/runtime/public or deployment effect.
 |---|---|
 | Actor | Local session-sync steward |
 | Provider or surface | private CVF workspace |
-| Session or invocation | Group 4 actual-token readiness-audit continuity, 2026-09-23 |
+| Session or invocation | Group 4 actual-token runner-dispatch continuity, 2026-09-23 |
 | Working directory | repository root |
 | Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, front door, core/source state and generated state/bootstrap |
 | Allowed scope source | explicit operator approval plus standing Local reviewer/closer and session-transition authority |
-| Before status evidence | material HEAD `a765880e4`; readiness audit committed after autorun 85/85 and pre-commit 90/90 |
-| After status evidence | runner authoring/implementation is next; operator checkpoint and alternate-principal execution remain closed |
+| Before status evidence | material HEAD `4b68fa465`; dispatch committed after pre-dispatch 83/83 and pre-commit 90/90 |
+| After status evidence | exact four-path runner implementation is next; operator checkpoint and alternate-principal execution remain closed |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | continuity projection and Local-only runner implementation routing only |
 | Claim boundary | continuity only; no implementation is claimed, no actual-token proof, ACEL/source action, promotion, admission, live/runtime/public effect |
 | Agent type | Local session-sync steward |
-| Invocation ID | `cvf-acel-g1-t3d-actual-token-readiness-v63-continuity-20260923` |
+| Invocation ID | `cvf-acel-g1-t3d-c3-runner-dispatch-v63-continuity-20260923` |
 | Expected manifest | handoff, front door, core, next-move, generated state and bootstrap |
 | Actual changed set | verified before commit |
 | Manifest delta | exact source manifest plus two generated projections |
