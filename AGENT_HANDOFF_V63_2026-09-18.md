@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD: `ee81deeeb`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`.
+Current material HEAD: `6a89017f4`. Group 1 is `SOURCE_CREATED_LOCAL_VERIFIED`; Group 2 v1 is `ACTIVATED_LOCAL_VERIFIED_PENDING_CONSUMER_BINDING`.
 Party B and accepted T3C-C1/HRLTP-T1 proof are recorded without a cost-superiority claim; MCP/MUO remains parked. T3C-C2 is `SOURCE_CREATED_LOCAL_VERIFIED` at `820aae3ec` with one Local-verified Party B observation; no second is authorized.
 Party C is Local verified. T3D-C1 tooling remains `TOOLING_ACCEPTED_SOURCE_NOT_CREATED`; T3D-C0-R1 contract-only operational-boundary repair is `CLOSED_PASS_BOUNDED` at `2fffa1ef7`. Autorun lane-binding R1 is independently accepted at `ee81deeeb`. CVF-HRLTP-T2 remains committed at `19466bfdc` but paused for Local execution-route reassessment without subagents; no T3D-C1-R2 successor, real Group 4 source creation or T3E is authorized.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
