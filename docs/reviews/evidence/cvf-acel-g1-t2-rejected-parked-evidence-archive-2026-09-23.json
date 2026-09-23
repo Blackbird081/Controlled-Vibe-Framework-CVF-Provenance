@@ -1,0 +1,41 @@
+{
+  "schema": "cvf.rejected-evidence-archive.v1",
+  "status": "ARCHIVED_REJECTED_EVIDENCE_NOT_ACTIVE_AUTHORITY",
+  "date": "2026-09-23",
+  "decisionOwner": "LOCAL_ORCHESTRATOR_REVIEWER",
+  "operatorDirection": "Prioritize resolving the thirteen parked paths and clean the shared workspace while continuing G1",
+  "sourceHead": "6a89017f4b29dc7d077bfa61c0b815131058f63c",
+  "archivePath": "docs/reviews/evidence/CVF_ACEL_G1_T2_REJECTED_PARKED_EVIDENCE_2026-09-23.zip",
+  "archiveSha256": "d470cfb9c07f49c41738a3c3be93fb0dd79c337fc5709177c0c6e99b982fca9d",
+  "archiveFormat": "ZIP; original repository-relative paths retained as entries",
+  "localHoldingRoot": ".cvf/runtime/parked-rejected-g1-t2-2026-09-23",
+  "localHoldingDisposition": "13/13 originals moved byte-identically to an ignored, recoverable local holding root after archive extraction verification; archive is the portable evidence carrier",
+  "verification": "13/13 paths and original-versus-extracted SHA-256 bytes matched before original paths were retired",
+  "dispositions": {
+    "T2": "REVIEW_REJECTED_PARKED_REDESIGN_REQUIRED",
+    "T2A": "REVIEW_REJECTED_STOP_REASSESS_ARCHITECTURE",
+    "T2B": "PARKED_TRUST_ANCHOR_ARCHITECTURE_REQUIRED"
+  },
+  "decisionSources": [
+    "docs/reviews/CVF_ACEL_G1_T2_R2_INDEPENDENT_REVIEW_2026-09-17.md",
+    "docs/reviews/CVF_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_R2_INDEPENDENT_REVIEW_2026-09-17.md",
+    "docs/reviews/CVF_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_INDEPENDENT_REVIEW_2026-09-17.md"
+  ],
+  "entries": [
+    {"group":"T2","path":"EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/task.class.calibration.owner.contract.ts","sha256":"5c26e2bc732da98082ed3b0c1ed4c35fdcb40c5c5b16023e281ea6a3a741a37f"},
+    {"group":"T2","path":"EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/task.class.calibration.owner.contract.test.ts","sha256":"24302b66728de7de3173b4fcb999034412ef4a47c8c27f5e17fbf581352b8046"},
+    {"group":"T2A","path":"docs/audits/CVF_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_2026-09-17.md","sha256":"02b97f0db77b6518000c13aff30bc131b88b426809f9f8aa43c89bad2b5ebbda"},
+    {"group":"T2A","path":"docs/audits/CVF_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_MANIFEST_2026-09-17.json","sha256":"0bf99eeaf3e8a979000ffc411639a987abf60d1d5ff556dad38ba354b24f137e"},
+    {"group":"T2B","path":"docs/audits/CVF_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_2026-09-17.md","sha256":"5147bf905113e4c750f6b7f4aa84e1aeb4575417299258ad10dcf8ebbbb5575a"},
+    {"group":"T2B","path":"docs/audits/CVF_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_MANIFEST_2026-09-17.json","sha256":"5bfe577495bac91b99344827172d859ff0389cf1f67e14097d5af113a16eaeb9"},
+    {"group":"T2","path":"docs/audits/CVF_ACEL_G1_T2_TASK_CLASS_CALIBRATION_OWNER_IMPLEMENTATION_2026-09-17.md","sha256":"97510bff2a40e4868625d1f016e87d2bbaab9812380ded5a20c2f24b65625708"},
+    {"group":"T2","path":"docs/reference/agent_system_skills/CVF_TASK_CLASS_CALIBRATION_OWNER_CONTRACT.md","sha256":"3ddb27af5abf0d8197bfdaa28eac2e7b83c422c3342a4b3acb2abf25b65cdb86"},
+    {"group":"T2A","path":"docs/reviews/CVF_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_WORKER_RETURN_2026-09-17.md","sha256":"f12688934bcb1ef0fdaaea1ae45186cce14cfcba69fc5061334abbee8e8462f6"},
+    {"group":"T2B","path":"docs/reviews/CVF_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_WORKER_RETURN_2026-09-17.md","sha256":"25963195262048746436daee2ab4b2304fa96d54c8197ed375ab98e5e7dd29ce"},
+    {"group":"T2","path":"docs/reviews/CVF_ACEL_G1_T2_TASK_CLASS_CALIBRATION_OWNER_IMPLEMENTATION_WORKER_RETURN_2026-09-17.md","sha256":"1ac61b304063f57eda3f7db2a8ec3681a0af3d6c8e58ec04c3d5228e7f759594"},
+    {"group":"T2","path":"governance/compat/check_task_class_calibration_owner_evidence.py","sha256":"761eefa1f093e4cdddb4e73496b04f9694a15622a5ce34dd685d4acae3498d0f"},
+    {"group":"T2","path":"governance/compat/test_check_task_class_calibration_owner_evidence.py","sha256":"ac85ed1b6ad5288c95aeada7baab45782c58f97bbdfd45cb4a126ea6a124eeec"}
+  ],
+  "restoreProcedure": "Verify archive SHA-256, extract only to an isolated scratch directory, recompute every listed entry hash, and obtain a new Local decision before restoring any path to active workspace",
+  "claimBoundary": "Archive is rejected historical evidence only; it does not accept T2, T2A or T2B or authorize execution, calibration, source creation or admission"
+}
