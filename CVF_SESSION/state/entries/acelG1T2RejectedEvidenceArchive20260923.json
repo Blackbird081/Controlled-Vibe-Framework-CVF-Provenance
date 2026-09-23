@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2880,
+  "stateKey": "acelG1T2RejectedEvidenceArchive20260923",
+  "value": "The operator directed Local to resolve thirteen parked G1 T2/T2A/T2B paths before continuing G1. At material commit 333d687c6, Local archived the exact rejected evidence bytes in docs/reviews/evidence/CVF_ACEL_G1_T2_REJECTED_PARKED_EVIDENCE_2026-09-23.zip with a 13-row SHA-256 manifest. All thirteen original paths were extracted and hash-verified, then moved into ignored local holding storage. The active worktree contains none of those paths. The prior reviewer rejections remain controlling: this archive is not implementation acceptance or source authority. Continue with read-only Group 4 architecture reassessment without subagents. HRLTP-T2 and all real source, credential, live/runtime/public/deployment actions remain paused."
+}

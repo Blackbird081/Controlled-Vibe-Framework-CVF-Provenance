@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`autorun_lane_binding_r1_closed_hrltp_t2_route_reassessment`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local evaluates the single-agent/multi-role use case and reassesses HRLTP-T2 execution without subagents; role=Local orchestrator/reviewer; phase=post-autorun closure route reassessment; decision owner=Local; parked checkpoint=HRLTP-T2 implementation, actual-token or alternate-principal proof, ACEL/source/credential/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_parked_evidence_archived_group4_architecture_reassessment`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local reassesses G1 Group 4 architecture and selects a bounded static successor without subagents; role=Local orchestrator/reviewer; phase=G1 rejected-evidence archive closure; decision owner=Local; parked checkpoint=HRLTP-T2 implementation, actual-token or alternate-principal proof, ACEL/source/credential/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `autorun_lane_binding_r1_closed_hrltp_t2_route_reassessment`
-Current mode: `autorun_lane_binding_r1_closed_hrltp_t2_route_reassessment`; previous mode marker: `autorun_active_work_order_lane_binding_r1_dispatched`
+Current mode marker: `acel_g1_parked_evidence_archived_group4_architecture_reassessment`
+Current mode: `acel_g1_parked_evidence_archived_group4_architecture_reassessment`; previous mode marker: `autorun_lane_binding_r1_closed_hrltp_t2_route_reassessment`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=AUTORUN_ACTIVE_WORK_ORDER_LANE_BINDING_R1_CLOSED_AT_EE81DEEEB; CURRENT_TRANCHE_DISPOSITION=CLOSED_PASS_BOUNDED; NEXT_STEP=LOCAL_EVALUATES_THE_SINGLE_AGENT_MULTI_ROLE_USE_CASE_AND_REASSESSES_HRLTP_T2_EXECUTION_ROUTE_WITHOUT_SUBAGENT; EXPANSION_ALLOWED=false. Preserve thirteen parked untracked paths and the committed HRLTP-T2 packet byte-identically. No subagent dispatch is authorized by this continuity. HRLTP-T2 implementation, actual-token or alternate-principal proof, ACEL execution, credentials, source creation, provider/live API, runtime activation, public-sync and deployment remain paused. Latest closed LHW wave remains LHW24.
-Mode: `autorun_lane_binding_r1_closed_hrltp_t2_route_reassessment`. Autorun lane-binding R1 is independently accepted and materially committed at `ee81deeeb`; HRLTP-T2 remains committed but paused while Local evaluates the single-agent/multi-role route without subagents. T3D-C0-R1 remains `CLOSED_PASS_BOUNDED` with no real Group 4 source or T3E successor authorized.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T2_REJECTED_EVIDENCE_ARCHIVED_AT_333D687C6; CURRENT_TRANCHE_DISPOSITION=ARCHIVED_REJECTED_EVIDENCE_NOT_ACTIVE_AUTHORITY; NEXT_STEP=LOCAL_REASSESSES_G1_GROUP4_ARCHITECTURE_AND_SELECTS_BOUNDED_STATIC_SUCCESSOR_WITHOUT_SUBAGENT; EXPANSION_ALLOWED=false. Thirteen rejected T2/T2A/T2B paths are archived with a committed ZIP and manifest, not present as active workspace files. Preserve the committed HRLTP-T2 packet byte-identically; implementation remains paused. No subagent dispatch, actual-token or alternate-principal proof, ACEL source creation, credential use, provider/live API, runtime activation, public-sync or deployment is authorized by this continuity. Latest closed LHW wave remains LHW24.
+Mode: `acel_g1_parked_evidence_archived_group4_architecture_reassessment`. Rejected G1 T2 evidence is archived at `333d687c6`; HRLTP-T2 remains committed but paused. T3D-C0-R1 remains `CLOSED_PASS_BOUNDED` with no real Group 4 source or T3E successor authorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
