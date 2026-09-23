@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_group4_c1_r2_worker_dispatch_ready`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=operator relays committed C1-R2 order to selected shared-workspace worker, then Local reviews return; role=Local orchestrator/reviewer; phase=G1 Group 4 bounded dispatch; decision owner=Local; parked checkpoint=HRLTP-T2 implementation, actual-token or alternate-principal execution, ACEL/source/credential/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_group4_c1_r2_closed_foundation_learning_packet_next`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=author a fresh foundation learning packet for orchestrator completeness and agent-loop control; role=Local orchestrator/reviewer; phase=post-C1-R2 foundation packet authoring; decision owner=Local; parked checkpoint=HRLTP-T2 implementation, actual-token or alternate-principal execution, ACEL source creation, credentials, provider/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_group4_c1_r2_worker_dispatch_ready`
-Current mode: `acel_g1_group4_c1_r2_worker_dispatch_ready`; previous mode marker: `acel_g1_group4_c1_r2_hold_actor_assignment`
+Current mode marker: `acel_g1_group4_c1_r2_closed_foundation_learning_packet_next`
+Current mode: `acel_g1_group4_c1_r2_closed_foundation_learning_packet_next`; previous mode marker: `acel_g1_group4_c1_r2_worker_dispatch_ready`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C1_R2_WORKER_DISPATCH_READY_AT_DE7466EA9; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY_DISTINCT_INTERNAL_WORKER_LOCAL_REVIEWER; NEXT_STEP=OPERATOR_RELAYS_COMMITTED_C1_R2_WORK_ORDER_TO_SELECTED_SHARED_WORKSPACE_WORKER_THEN_LOCAL_REVIEWS_RETURN; EXPANSION_ALLOWED=false. The bounded C1-R2 baseline and work order are committed DISPATCH_READY after pre-dispatch 83/83 and pre-commit 90/90. No worker implementation has yet occurred. The 13 rejected T2/T2A/T2B paths remain archived. Preserve HRLTP-T2 byte-identically and paused. No Codex subagent invocation, actual-token or alternate-principal proof, ACEL source creation, credential use, provider API, runtime activation, public-sync or deployment is authorized by this continuity. The Alibaba key is not needed for NTFS tooling proof. Latest closed LHW wave remains LHW24.
-Mode: `acel_g1_group4_c1_r2_worker_dispatch_ready`. Rejected G1 T2 evidence is archived at `333d687c6`; Group 4 architecture, static proof packet, tooling-gap audit, held packet and release are committed at `8caacc64c`, `c395fd1aa`, `e79910b5c`, `d5f660fc6`, and `de7466ea9`. HRLTP-T2 remains paused; Group 4 proof and T3E remain closed.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_C1_R2_REVIEWER_ACCEPTED_AT_988491791; CURRENT_TRANCHE_DISPOSITION=TOOLING_ACCEPTED_SOURCE_NOT_CREATED; NEXT_STEP=AUTHOR_FRESH_GC018_AND_SOURCE_VERIFIED_WORK_ORDER_FOR_ORCHESTRATOR_PACKET_COMPLETENESS_AND_AGENT_LOOP_CONTROL; EXPANSION_ALLOWED=false. C1-R2 is accepted only for the 14-case hermetic current-token boundary at material commit `988491791`. The next packet must convert RV01/RV05 and the cross-provider retrospective into reusable pre-dispatch, terminal-readiness and cost-loop controls before implementation. Preserve HRLTP-T2 paused. Actual Party B/C execution, real Group 4 source creation, T3E, credentials, provider API, runtime activation, public-sync and deployment remain parked. No subagent is authorized for the next packet.
+Mode: `acel_g1_group4_c1_r2_closed_foundation_learning_packet_next`. Rejected G1 T2 evidence is archived at `333d687c6`; Group 4 architecture, static proof packet, tooling-gap audit, held packet, release and accepted correction are committed at `8caacc64c`, `c395fd1aa`, `e79910b5c`, `d5f660fc6`, `de7466ea9`, and `988491791`. HRLTP-T2 remains paused; Group 4 real source proof and T3E remain closed.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
