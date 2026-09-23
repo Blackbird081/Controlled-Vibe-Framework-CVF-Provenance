@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2923,
+  "stateKey": "acelG1T3dActualTokenReadinessAudit20260923",
+  "value": "ACEL G1 T3D post-C1-R2 actual-token readiness audit is committed at a765880e4 and concludes BLOCKED_ACTUAL_TOKEN_ENTRYPOINT_REQUIRED. Exact Local, Party B, Party C and approver accounts exist; the real Group 4 parent remains absent; accepted C1-R2 primitives remain hermetic-only. No governed entrypoint currently combines exact disposable setup, principal-specific matrix execution, complete evidence capture and Local adjudication. The operator checkpoint is defined but CLOSED_PENDING_TOOLING. Next action is Local-only authoring and implementation of the bounded actual-token disposable runner with hermetic tests; no subagents, Party B/C process, password request, ACL/source mutation, T3E, provider/live/runtime/public/deployment action is opened."
+}
