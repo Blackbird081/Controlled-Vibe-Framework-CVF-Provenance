@@ -1,0 +1,103 @@
+{
+  "schema": "cvf.agent-control-value-retrospective.v1",
+  "status": "LOCAL_ANALYSIS_LEARNING_CANDIDATE",
+  "recordedAtDate": "2026-09-23",
+  "reviewedHead": "85f2d834df06c78998d6b2593fc43d1673311835",
+  "decisionOwner": "LOCAL_ORCHESTRATOR_REVIEWER",
+  "scope": "Operator-reported long session plus targeted evidence from HRLTP-T1 and autorun lane-binding R1; not a complete session trace audit",
+  "measurements": {
+    "operatorReportedWorkedTimeRaw": "10h26m13s",
+    "operatorReportedWorkedSeconds": 37573,
+    "workedTimeSemantics": "Operator-visible Worked total; timer aggregation, precise start/end and inclusion of overlapping agents not independently verified",
+    "operatorReportedPeriodRaw": "hom qua / yesterday",
+    "operatorReportedQuotaRaw": "quota 1 tuan cua Codex / one week of Codex quota",
+    "quotaProvenance": "OPERATOR_REPORTED; no before/after usage receipt or attribution to individual tasks/models",
+    "quotaFraction": null,
+    "tokensPerModel": null,
+    "currencyCost": null,
+    "autorunSubtrancheGitElapsedSeconds": 6835,
+    "autorunSubtrancheGitStart": "3403a1f1344a0b29e1351f80136ddd4991cd750b",
+    "autorunSubtrancheGitEnd": "85f2d834df06c78998d6b2593fc43d1673311835",
+    "aggregationBoundary": "Git elapsed is a different interval and metric from Worked; do not add them or attribute the full session quota to this subtranche"
+  },
+  "sources": [
+    "docs/reviews/evidence/cvf-hrltp-t1-multi-agent-routing-observation-2026-09-22.json",
+    "docs/reviews/CVF_AUTORUN_ACTIVE_WORK_ORDER_LANE_BINDING_R1_WORKER_RETURN_2026-09-23.md",
+    "docs/reviews/CVF_AUTORUN_ACTIVE_WORK_ORDER_LANE_BINDING_R1_COMPLETION_2026-09-23.md",
+    "docs/audits/CVF_AUTORUN_ACTIVE_WORK_ORDER_LANE_BINDING_R1_INDEPENDENT_PROBE_2026-09-23.md"
+  ],
+  "findings": [
+    {
+      "id": "CONTROL-VALUE-01",
+      "finding": "Dispatch omitted the system-chain fingerprint dependency; the worker correctly returned blocked rather than editing outside its manifest",
+      "basis": "Committed R1 completion, findings and Local amendment sections",
+      "accountability": "ORCHESTRATOR_PACKET_GAP",
+      "lesson": "Check dependency closure before delegation; a correct refusal is boundary-control success but still exposes planning cost"
+    },
+    {
+      "id": "CONTROL-VALUE-02",
+      "finding": "Accepted targeted tests and independent probes demonstrate bounded technical value, while the operator rejects the total time/quota tradeoff",
+      "basis": "Committed test/probe evidence plus operator report",
+      "accountability": "END_TO_END_ORCHESTRATION",
+      "lesson": "Track accepted outcome, total elapsed, rework and operator interventions together; gate counts alone are not productivity"
+    },
+    {
+      "id": "CONTROL-VALUE-03",
+      "finding": "Existing review-cost standard explicitly excludes provider-native internal helpers from separately-dispatched external invocation accounting",
+      "basis": "CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md, Review Dispatch Convergence And Invocation Budget Control",
+      "accountability": "MEASUREMENT_COVERAGE_GAP",
+      "lesson": "An internal accounting exemption must not be interpreted as zero resource cost; record a parent-level observable budget even when provider meters are unavailable"
+    },
+    {
+      "id": "CONTROL-VALUE-04",
+      "finding": "Strong models and separate roles did not prevent dispatch omissions or root integration overhead",
+      "basis": "R1 allocation and dependency repair evidence; no controlled alternate-model experiment",
+      "accountability": "TOPOLOGY_AND_ROUTING_HYPOTHESIS",
+      "lesson": "Increase effort only for a named semantic uncertainty; task decomposition, context quality and verifiable acceptance remain separate requirements"
+    },
+    {
+      "id": "CONTROL-VALUE-05",
+      "finding": "Review independence is bounded: distinct read-only execution and separate fixtures do not provide separate provider, physical machine or organizational authority",
+      "basis": "R1 completion oracleSeparationBasis and shared-workspace allocation",
+      "accountability": "CLAIM_CALIBRATION",
+      "lesson": "Record actor, evidence and runtime isolation separately; changing a model or assigning a role alone does not establish independent review"
+    }
+  ],
+  "proposedOwnerChanges": [
+    {
+      "owner": "docs/reference/CVF_AGENT_DELEGATION_AND_SUBAGENT_BOUNDARY_STANDARD_2026-05-19.md",
+      "change": "Require an observable delegation benefit, disjoint write ownership, dependency readiness, return oracle, parent resource envelope and stop condition",
+      "acceptanceProbe": "Reject a proposed delegation with duplicate ownership, no bounded deliverable or no parent budget; preserve internal implementation autonomy",
+      "disposition": "CANDIDATE_NOT_IMPLEMENTED"
+    },
+    {
+      "owner": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+      "change": "Separate parent elapsed/Worked, agent cumulative duration, invocation counts, quota availability, rework and operator intervention telemetry; record internal-helper usage without fabricating unavailable tokens",
+      "acceptanceProbe": "Unknown usage remains unknown, never zero; overlapping durations cannot be summed as wall time; exhausted declared envelope stops further automatic delegation",
+      "disposition": "CANDIDATE_NOT_IMPLEMENTED"
+    },
+    {
+      "owner": "docs/reference/CVF_AGENT_ROLE_ASSIGNMENT_MATRIX_2026-05-19.md",
+      "change": "Select capability/effort by uncertainty, risk and verifiability rather than permanently binding a model to a role",
+      "acceptanceProbe": "Every escalation states an unresolved uncertainty and a measurable expected gain; routine wiring with a deterministic oracle does not require the strongest tier by default",
+      "disposition": "CANDIDATE_OWNER_MAPPING_TO_VERIFY_BEFORE_PROMOTION"
+    }
+  ],
+  "localOperatingDecision": {
+    "subagents": "DISABLED_BY_OPERATOR",
+    "executionRoute": "SINGLE_AGENT_MULTIPLE_EXPLICIT_ROLES",
+    "reviewClaim": "SELF_REVIEW_WITH_MACHINE_EVIDENCE; do not label new same-actor work independent",
+    "futureDelegationCriterion": "Expected reduction in accepted-outcome time/risk must exceed briefing, integration and review overhead",
+    "futureBudgetProposal": "Declare parent time/invocation envelope before dispatch; reassess at exhaustion or repeated same-root-cause rework, without opening automatic successor tranches",
+    "futureComparison": "Use a few naturally occurring comparable bounded tasks, record task difficulty and evidence quality, and compare accepted outcomes; no costly replay is authorized by this record"
+  },
+  "verdict": "BOUNDED_TECHNICAL_VALUE_OBSERVED_END_TO_END_EFFICIENCY_UNACCEPTABLE_TO_OPERATOR",
+  "limitations": [
+    "This observation cannot rank model capability or establish that a cheaper model would have succeeded faster.",
+    "No causal single-agent versus multi-agent comparison exists.",
+    "Historical fast-path labels and gate success are not evidence that the full operator-reported session met a time budget.",
+    "This JSON is a persisted learning candidate, not an activated guard, completed foundation upgrade or automatic P4 sample."
+  ],
+  "p4AutomaticEnrollmentDisposition": "NOT_ENROLLED",
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}
