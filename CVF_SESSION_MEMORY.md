@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_group4_static_feasibility_packet_preparation`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local prepares a bounded Group 4 disposable-root proof packet with an operator checkpoint, without subagents; role=Local orchestrator/reviewer; phase=G1 Group 4 architecture follow-through; decision owner=Local; parked checkpoint=HRLTP-T2 implementation, actual-token or alternate-principal proof, ACEL/source/credential/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_group4_actual_token_proof_execution_checkpoint`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=Local prepares a separate disposable-root actual-token proof dispatch for operator checkpoint, without subagents; role=Local orchestrator/reviewer; phase=G1 Group 4 proof execution hold; decision owner=Local; parked checkpoint=HRLTP-T2 implementation, actual-token or alternate-principal execution, ACEL/source/credential/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_group4_static_feasibility_packet_preparation`
-Current mode: `acel_g1_group4_static_feasibility_packet_preparation`; previous mode marker: `acel_g1_parked_evidence_archived_group4_architecture_reassessment`
+Current mode marker: `acel_g1_group4_actual_token_proof_execution_checkpoint`
+Current mode: `acel_g1_group4_actual_token_proof_execution_checkpoint`; previous mode marker: `acel_g1_group4_static_feasibility_packet_preparation`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_POST_C0_R1_ARCHITECTURE_SELECTED_AT_8CAACC64C; CURRENT_TRANCHE_DISPOSITION=STATIC_FEASIBILITY_SPEC_SELECTED_NOT_DISPATCHED; NEXT_STEP=LOCAL_PREPARES_BOUNDED_DISPOSABLE_ROOT_PROOF_PACKET_WITH_OPERATOR_CHECKPOINT_WITHOUT_SUBAGENT; EXPANSION_ALLOWED=false. Thirteen rejected T2/T2A/T2B paths are archived with committed ZIP and hash manifest, not present as active workspace files. Shared-parent Group 4 is a conditional candidate, not Windows-proven. Preserve the committed HRLTP-T2 packet byte-identically; implementation remains paused. No subagent dispatch, actual-token or alternate-principal proof, ACEL source creation, credential use, provider/live API, runtime activation, public-sync or deployment is authorized by this continuity. Latest closed LHW wave remains LHW24.
-Mode: `acel_g1_group4_static_feasibility_packet_preparation`. Rejected G1 T2 evidence is archived at `333d687c6`; Group 4 architecture is selected at `8caacc64c`; HRLTP-T2 remains committed but paused. T3D-C0-R1 remains `CLOSED_PASS_BOUNDED` with no real Group 4 source or T3E successor authorized.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=ACEL_G1_T3D_GROUP4_STATIC_PROOF_PACKET_AT_C395FD1AA; CURRENT_TRANCHE_DISPOSITION=STATIC_PACKET_READY_EXECUTION_HOLD; NEXT_STEP=LOCAL_PREPARES_SEPARATE_DISPOSABLE_ROOT_ACTUAL_TOKEN_PROOF_DISPATCH_FOR_OPERATOR_CHECKPOINT_WITHOUT_SUBAGENT; EXPANSION_ALLOWED=false. Thirteen rejected T2/T2A/T2B paths are archived with committed ZIP and hash manifest, not present as active workspace files. Shared-parent Group 4 is a conditional candidate, not Windows-proven. Preserve the committed HRLTP-T2 packet byte-identically; implementation remains paused. No subagent dispatch, actual-token or alternate-principal proof, ACEL source creation, credential use, provider/live API, runtime activation, public-sync or deployment is authorized by this continuity. Latest closed LHW wave remains LHW24.
+Mode: `acel_g1_group4_actual_token_proof_execution_checkpoint`. Rejected G1 T2 evidence is archived at `333d687c6`; Group 4 architecture and static proof packet are committed at `8caacc64c` and `c395fd1aa`; HRLTP-T2 remains committed but paused. T3D-C0-R1 remains `CLOSED_PASS_BOUNDED` with no real Group 4 source or T3E successor authorized.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
