@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2921,
+  "stateKey": "acelFoundationT1DispatchReturnLoopControlClosure20260923",
+  "value": "ACEL Foundation T1 dispatch-return loop control is CLOSED_PASS_BOUNDED at material commit c82f81d4928dbeb09c4d0fe0f9350d2d993b141a. Local rejected the worker's DRC-01 applicability narrowing, made enforcement unconditional, removed the contradictory legacy positive assertion, corrected and machine-guarded stale dispatchBaseHead verification, and persisted a cryptographically bound seven-assertion independent probe. Evidence: 152 neighboring tests, 29 focused fast-gate tests, independent probe 7/7, reviewer-fast 69/69, pre-commit 90/90, Python size COMPLIANT, and zero provider/live/subagent calls. The exact active work order now fails closed when its bound return is absent regardless of Git discovery. Continue G1 with a Local-only Group 4 actual-execution readiness audit; no actual Party B/C execution, source creation, T3E, provider/live/runtime/public/deployment action is opened."
+}
