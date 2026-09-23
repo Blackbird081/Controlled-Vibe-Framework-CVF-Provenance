@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2920,
+  "stateKey": "acelFoundationT1DispatchReturnLoopControlDispatch20260923",
+  "value": "ACEL Foundation T1 dispatch-return loop-control baseline and work order are committed at b963fd24f509c5b5565536f94b920e95552f7011 after pre-dispatch 83/83 and pre-commit 90/90 gates passed. The packet converts C1-R2 RV01/RV05 and the accepted multi-agent retrospective into a bounded eight-path no-commit worker tranche: unconditional ready-packet manifest/return binding admission, exact active-work-order return diagnosis when changed-path selection is empty, and explicit structural-evidence/cost claim boundaries. A distinct shared-workspace INTERNAL_AGENT worker may execute only the committed work order and return uncommitted evidence. Local owns the independent probe, review, material commit and later continuity. No subagent, external CLI/MCP dispatch, provider/live action, ACEL source creation, runtime interception, public sync or deployment is authorized."
+}

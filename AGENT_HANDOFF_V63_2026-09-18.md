@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `988491791ce6ae5ccf7bd9233b8f3bef310d86e9`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `b963fd24f509c5b5565536f94b920e95552f7011`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,7 +13,7 @@ and only then Approver decision writes.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer. Phase: post-C1-R2 foundation learning packet authoring.
+Role: Local orchestrator/reviewer. Phase: ACEL Foundation T1 worker dispatch.
 Decision owner: Local.
 
 External research is closed for this lane. The selected shared-workspace
@@ -22,10 +22,10 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_group4_c1_r2_closed_foundation_learning_packet_next`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=author a fresh foundation learning packet for orchestrator completeness and agent-loop control; parked checkpoint=HRLTP-T2 implementation, actual-token or alternate-principal execution, ACEL source creation, credentials, provider/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_foundation_t1_dispatch_return_loop_control_worker_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=transfer the committed Foundation T1 work order to one distinct no-commit INTERNAL_AGENT worker, then Local review; parked checkpoint=HRLTP-T2 implementation, actual-token or alternate-principal execution, ACEL source creation, credentials, provider/live/runtime/public/deployment.
 
 ## Current Mode
-`acel_g1_group4_c1_r2_closed_foundation_learning_packet_next`.
+`acel_foundation_t1_dispatch_return_loop_control_worker_ready`.
 
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
@@ -35,7 +35,7 @@ Latest closed learning-history wave remains `LHW24`.
 T3B is closed with one Local-verified active v1 specification. Party B is a
 verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
-T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`; its shared-parent route remains conditional on actual Windows proof. Local architecture selection `8caacc64c`, static proof packet `c395fd1aa` and source gap audit `e79910b5c` led to C1-R2. The correction is accepted at `988491791` for hermetic tooling only; the next authorized action is foundation packet authoring from its repeated orchestration findings. The thirteen rejected T2/T2A/T2B paths are archived with exact hashes in `docs/reviews/evidence/cvf-acel-g1-t2-rejected-parked-evidence-archive-2026-09-23.json`, with no active-path promotion. Credentials, alternate-principal execution, source creation and T3E remain closed. HRLTP-T2 is dispatched at `19466bfdc` but paused.
+T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`; its shared-parent route remains conditional on actual Windows proof. Local architecture selection `8caacc64c`, static proof packet `c395fd1aa` and source gap audit `e79910b5c` led to C1-R2. The correction is accepted at `988491791` for hermetic tooling only. Foundation T1 dispatch is committed at `b963fd24f`; the next authorized action is exact-manifest no-commit worker execution followed by Local independent review. The thirteen rejected T2/T2A/T2B paths are archived with exact hashes in `docs/reviews/evidence/cvf-acel-g1-t2-rejected-parked-evidence-archive-2026-09-23.json`, with no active-path promotion. Credentials, alternate-principal execution, source creation and T3E remain closed. HRLTP-T2 is dispatched at `19466bfdc` but paused.
 
 Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
 External agent memory files: non-canonical convenience only.
@@ -163,27 +163,21 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: operator-directed G1 archive at `333d687c6`, Group 4 static architecture `8caacc64c`, proof packet `c395fd1aa`, gap audit `e79910b5c`, held/released C1-R2 packet at `d5f660fc6`/`de7466ea9`, accepted material at `988491791`, and continuity update to foundation-packet-next state; preserve HRLTP-T2 as paused and T3D source/T3E ban.
+Authorized guard-maintenance scope: project the committed Foundation T1 dispatch material SHA `b963fd24f509c5b5565536f94b920e95552f7011` into exact active continuity sources and generated views; preserve HRLTP-T2 as paused and keep actual G1 execution/source/T3E closed.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/acelG1Group4ArchitectureReassessment20260923.json`
-- `CVF_SESSION/state/entries/acelG1T3DC1R2HeldPacket20260923.json`
-- `CVF_SESSION/state/entries/acelG1T3DC1R2Closure20260923.json`
+- `CVF_SESSION/state/entries/acelFoundationT1DispatchReturnLoopControlDispatch20260923.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
-- `governance/compat/check_task_class_calibration_owner_evidence.py`
-- `governance/compat/test_check_task_class_calibration_owner_evidence.py`
 
-The task-class checker paths are historical rejected archive entries. This
-session-sync change does not restore them to active code or claim acceptance.
-Operator authorization: explicit operator direction to resolve the thirteen
-parked paths and continue G1, plus standing Local session-transition authority.
-Rollback boundary: revert only this continuity projection; preserve accepted
-sources, committed T3D-C1 tooling, C0-R1 closure and rejected archive bytes.
+Operator authorization: explicit operator direction to complete the worker
+correction, promote the reusable learning, and continue G1, plus standing
+Local session-transition authority. Rollback boundary: revert only this
+continuity projection; preserve dispatch material and prior accepted sources.
 This change creates no Group 4 source and authorizes no alternate-
 principal execution, credential, second observation, promotion, admission,
 live/runtime/public or deployment effect.
