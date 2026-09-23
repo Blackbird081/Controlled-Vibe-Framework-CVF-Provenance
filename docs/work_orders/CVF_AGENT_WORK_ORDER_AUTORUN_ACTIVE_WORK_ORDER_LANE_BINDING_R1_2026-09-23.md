@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-AUTORUN-ACTIVE-WORK-ORDER-LANE-BINDING-R1
 
@@ -445,15 +445,15 @@ execution; it does not accept HRLTP-T2 implementation.
 
 ## Closure Checklist
 
-- [ ] exact five-path worker delta and reviewer-only completion boundary;
-- [ ] no worker stage or commit;
-- [ ] default and later phases remain broad;
-- [ ] bound pre-implementation route changes exactly one RIPA command;
-- [ ] current invalid return fails and parked findings stay visible;
-- [ ] receipt identity changes with binding;
-- [ ] focused, bound aggregate, worker-fast, reviewer-fast and pre-commit pass;
-- [ ] thirteen parked paths remain byte-identical;
-- [ ] no checker-semantic, receipt-schema, runtime or external expansion.
+- [x] exact five-path worker delta plus disclosed one-path Local fingerprint repair and reviewer completion;
+- [x] no worker stage or commit;
+- [x] default and later phases remain broad;
+- [x] bound pre-implementation route changes exactly one RIPA command;
+- [x] current invalid return fails and parked findings stay visible;
+- [x] receipt identity changes with binding;
+- [x] focused, bound aggregate, worker-fast, reviewer-fast and pre-commit pass;
+- [x] thirteen parked paths remain byte-identical;
+- [x] no checker-semantic, receipt-schema, runtime or external expansion.
 
 ## Corpus Completeness And Report Integrity
 
@@ -512,7 +512,7 @@ execution; it does not accept HRLTP-T2 implementation.
 | Target paths | paired baseline and this work order |
 | Allowed scope source | standing foundation-uplift authorization plus reproduced machine blocker |
 | Before status evidence | dispatch lane has a clean worktree relative to its exact two-path authoring scope at HEAD `40f7bbba71a959541bd424f147028b358a6b7f02`; thirteen disclosed parked paths remain outside this lane |
-| After status evidence | exact two-path dispatch authored; implementation not started |
+| After status evidence | implementation and independent probe accepted; one dependent source fingerprint repaired by Local; material commit pending |
 | Diff evidence | exact two-path dispatcher diff before commit |
 | Approval boundary | dispatch authoring only |
 | Claim boundary | no protected implementation or runtime action claimed |
@@ -583,6 +583,27 @@ actual focused and aggregate evidence.
 ```json
 {"contractId":"cvf.external-local-absorption-coordination@1","invariants":{"externalRole":"ADVISORY_RESEARCH_AND_PATTERN_MAPPING","externalContext":"PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ","localRole":"SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION","finalDecisionOwner":"LOCAL","localCoverageBasis":"SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST","externalEvidenceAuthority":"INPUT_NOT_PRIVATE_CVF_PROOF"},"contractSha256":"92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c","parentArtifact":null}
 ```
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_AUTORUN_ACTIVE_WORK_ORDER_LANE_BINDING_R1_COMPLETION_2026-09-23.md` | independent probe and Local terminal decision | PASS |
+| Roadmap state | active foundation learning sequence | HRLTP-T2 resumes only after continuity | PASS |
+| Registry JSON | no source/corpus registry mutation | bounded static repair | BLOCKED with reason: registry mutation was not authorized |
+| Registry Markdown | no source/corpus catalog mutation | bounded static repair | BLOCKED with reason: catalog mutation was not authorized |
+| External evidence digest | no external evidence admitted | internal-only coordination binding | N/A with reason: no external evidence |
+| System loop interlock | HRLTP-T2 remains separate | no successor implementation claimed here | PASS |
+| Session continuity | active handoff and generated state | separate post-material sync | BLOCKED with reason: pending material commit SHA |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| command identity | binding participates in the exact command manifest | bound and unbound manifest hashes differ | PASS |
+| receipt reuse | a receipt cannot cross binding context | both exchange directions reject on manifest mismatch | PASS |
+| schema boundary | no receipt schema change | existing v3 schema retained | PASS |
 
 ## Public Export Disposition
 

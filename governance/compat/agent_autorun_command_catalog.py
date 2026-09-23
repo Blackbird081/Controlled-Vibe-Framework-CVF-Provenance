@@ -53,7 +53,7 @@ def _range_command(name: str, script: str, base: str, head: str) -> GateCommand:
     )
 
 
-def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
+def _common_commands(base: str, head: str, active_work_order: str | None = None) -> tuple[GateCommand, ...]:
     return (
         GateCommand(
             "closure packaging preflight",
@@ -503,11 +503,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             "agent instruction carrier compaction",
             ("python", "governance/compat/check_agent_instruction_carriers.py", "--enforce"),
         ),
-        _range_command(
+        GateCommand(
             "independent review probe admission",
-            "governance/compat/check_independent_review_probe_admission.py",
-            base,
-            head,
+            ("python", "governance/compat/check_independent_review_probe_admission.py",
+             "--base", base, "--head", head, "--enforce")
+            + (("--changed-lane-only", "--active-work-order", active_work_order)
+               if active_work_order is not None else ()),
         ),
     )
 
