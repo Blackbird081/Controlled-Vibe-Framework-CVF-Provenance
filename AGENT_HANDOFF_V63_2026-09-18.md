@@ -13,7 +13,7 @@ and only then Approver decision writes.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer. Phase: post-audit prepare-only operator selection.
+Role: Local orchestrator/reviewer. Phase: post-prepare-failure repair selection.
 Decision owner: Local.
 
 External research is closed for this lane. The selected shared-workspace
@@ -22,19 +22,18 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_group4_actual_token_checkpoint_retained_closed_prepare_only_selection_next`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator selection of one bounded Local prepare-only packet or retention of the closed checkpoint; parked checkpoint=HRLTP-T2 implementation, actual Party B/C execution, passwords, Group 4 source creation, T3E, provider/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_group4_actual_token_prepare_failed_closed_repair_selection_next`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator selection of one bounded Local coordinator repair packet or retention of the closed checkpoint; parked checkpoint=HRLTP-T2 implementation, prepare retry, actual Party B/C execution, passwords, Group 4 source creation, T3E, provider/live/runtime/public/deployment.
 
 ## Current Mode
-`acel_g1_group4_actual_token_checkpoint_retained_closed_prepare_only_selection_next`.
+`acel_g1_group4_actual_token_prepare_failed_closed_repair_selection_next`.
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
 Latest closed learning-history wave remains `LHW24`.
 
 ## Active Boundary
 
-T3B is closed with one Local-verified active v1 specification. Party B is a
-verified exact local principal and T3C-C1 hermetic tooling is accepted at
+T3B is closed with one Local-verified active v1 specification. Party B is a verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
-T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`; its shared-parent route remains conditional on actual Windows proof. Local architecture selection `8caacc64c`, static proof packet `c395fd1aa` and source gap audit `e79910b5c` led to C1-R2. The correction is accepted at `988491791` for hermetic tooling only. Foundation T1 is closed at `c82f81d49`. The readiness audit at `a765880e4` confirmed the runner gap. The T3D-C3 bounded runner dispatch is committed at `4b68fa465`; its exact four-path material result is committed at `a1203c1ee` and independently accepted bounded at `88137e9a2`. The Local checkpoint-selection audit at `51cb06754` retains the operator checkpoint closed because no reviewed run-specific payload, root, prestate ledger or command packet exists. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is dispatched at `19466bfdc` but paused.
+T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`; its shared-parent route remains conditional on actual Windows proof. Local architecture selection `8caacc64c`, static proof packet `c395fd1aa` and source gap audit `e79910b5c` led to C1-R2. The correction is accepted at `988491791` for hermetic tooling only. Foundation T1 is closed at `c82f81d49`. The readiness audit at `a765880e4` confirmed the runner gap. The T3D-C3 bounded runner dispatch is committed at `4b68fa465`; its exact four-path material result is committed at `a1203c1ee` and independently accepted bounded at `88137e9a2`. The Local checkpoint-selection audit at `51cb06754` retained the operator checkpoint closed. The later operator-approved prepare-only attempt failed closed during root-first protected non-inheriting ACL setup; the exact partial root was diagnosed, hash-verified and removed without wildcard use before any Party B/C process. Current coordinator retry is prohibited pending a separately selected repair packet. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is dispatched at `19466bfdc` but paused.
 
 Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
 External agent memory files: non-canonical convenience only.
@@ -152,7 +151,7 @@ principal-policy decision. This identity evidence is not source/activation proof
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_C3_ACTUAL_TOKEN_CHECKPOINT_RETAINED_CLOSED_AT_51CB06754; CURRENT_TRANCHE_DISPOSITION=CHECKPOINT_RETAINED_CLOSED_EXECUTION_PACKET_NOT_MATERIALIZED; NEXT_STEP=OPERATOR_SELECT_BOUNDED_LOCAL_PREPARE_ONLY_PACKET_OR_RETAIN_CLOSED; EXPANSION_ALLOWED=false. The Local audit found accepted tooling and principals but no reviewed run-specific payload, disposable root, clean-prestate ledger or exact command packet. If the operator chooses to proceed, first identify one fresh nonempty operational registry payload and authorize only Local coordinator -PrepareProof against one exact absent %TEMP% root; do not launch Party B/C, request or record passwords, or treat preparation as actual-token proof. Review the generated manifest, 22 envelopes, command packet, containment and cleanup binding before a separate execution-opening decision. Preserve the seven observed prior input directories without wildcard cleanup or inference. HRLTP-T2 stays paused; Group 4 source, T3E, provider/live/runtime/public-sync/deployment remain parked. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_C3_PREPARE_ONLY_FAILED_CLOSED_20260923; CURRENT_TRANCHE_DISPOSITION=PREPARE_ONLY_FAILED_CLOSED_COORDINATOR_ACL_ORDERING_DEFECT; NEXT_STEP=OPERATOR_SELECT_BOUNDED_LOCAL_COORDINATOR_REPAIR_PACKET_OR_RETAIN_CLOSED; EXPANSION_ALLOWED=false. The operator-approved Local prepare-only attempt used one checker-valid 702-byte operational payload with SHA-256 `7059d44e11ace5b7937d7b830ff1c472631aa3246af1b0bbfd01d0e186bbc947` and one exact absent direct `%TEMP%` child. Elevated setup failed before any manifest, command packet, envelope, scenario or principal evidence was created: the coordinator installed a protected non-inheriting DACL on the root before explicit child DACLs, making the pre-created children inaccessible; catch cleanup then failed at the same boundary and masked the primary exception. Local performed read-only elevated and backup-mode diagnosis, verified exactly six relative paths plus the payload hash, restored cleanup access only on the exact root and removed it without wildcard use. Party B/C were never launched and no password was requested or stored. Do not retry the current coordinator. If the operator chooses to continue, separately authorize a bounded Local repair packet for actual ACL initialization ordering and exception-safe exact cleanup, followed by hermetic checks and one fresh reviewed Local prepare-only proof before any principal launch. HRLTP-T2 stays paused; Group 4 source, T3E, provider/live/runtime/public-sync/deployment remain parked. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -161,60 +160,61 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
 - T3D-C1 hermetic tooling is accepted at `9ed844c2a`; T3D-C0-R1 is closed at
   `2fffa1ef7`, while C1-R2 tooling correction is accepted at `988491791`;
   T3D-C3 runner is accepted bounded at `88137e9a2`; checkpoint selection at
-  `51cb06754` retains Party B/C execution closed pending a separately selected
-  Local prepare-only packet; source creation and T3E remain parked;
+  `51cb06754` retains Party B/C execution closed; the approved prepare-only
+  attempt failed at root-first non-inheriting ACL setup and its exact partial
+  root was removed; current coordinator retry is prohibited pending a
+  separately selected repair packet; source creation and T3E remain parked;
 - key promotion or candidate admission;
 - provider/live work, runtime activation, public sync, deployment or production;
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project checkpoint-selection material SHA `51cb06754` into exact active continuity sources and generated views; route only to operator selection of a Local prepare-only packet or continued closure; preserve HRLTP-T2 as paused and keep actual principal execution/source/T3E parked pending separate authorization.
+Authorized guard-maintenance scope: project the operator-approved prepare-only failure and exact verified root recovery into active continuity; route only to operator selection of a bounded Local coordinator repair packet or continued closure; preserve HRLTP-T2 as paused and keep retry, principal execution, source and T3E parked.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/acelG1T3dC3ActualTokenCheckpointSelection20260923.json`
+- `CVF_SESSION/state/entries/acelG1T3dC3ActualTokenPrepareOnlyFailure20260923.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit operator direction to continue and standing
-Local reviewer/closer session-transition authority. Rollback boundary: revert
-only this continuity projection; preserve material commit `a1203c1ee`, closure
-commit `88137e9a2`, checkpoint-selection commit `51cb06754`, the readiness audit
-and prior accepted sources.
-This change creates no Group 4 source and authorizes no alternate-
-principal execution, credential, second observation, promotion, admission,
+Operator authorization: explicit approval of the bounded Local prepare-only
+option plus standing Local session-transition authority. Rollback boundary:
+revert only this continuity projection; preserve commits `51cb06754`,
+`5e40a7437`, `88137e9a2` and prior accepted sources. This change authorizes no
+coordinator repair/retry, principal execution, credential, source/T3E,
 live/runtime/public or deployment effect.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local session-sync steward |
-| Provider or surface | private CVF workspace |
-| Session or invocation | Group 4 actual-token checkpoint-selection continuity, 2026-09-23 |
-| Working directory | repository root |
-| Command or tool surface | governed reads, apply_patch, state generator, governance gates and Git |
-| Target paths | active handoff, front door, core/source state and generated state/bootstrap |
-| Allowed scope source | explicit operator approval plus standing Local reviewer/closer and session-transition authority |
-| Before status evidence | checkpoint-selection material HEAD `51cb06754`; audit hook passed 90/90 |
-| After status evidence | operator checkpoint is explicitly retained closed; only prepare-only operator selection is next |
+| Actor | Local orchestrator/reviewer and session-sync steward |
+| Provider or surface | private CVF workspace and local Windows ACL APIs |
+| Session or invocation | Group 4 prepare-only failure/recovery continuity, 2026-09-23 to 2026-09-24 |
+| Working directory | repository root plus one exact payload directory and one exact removed disposable root |
+| Command or tool surface | payload generation/check, elevated coordinator, read-only ACL/backup diagnostics, exact-root recovery, apply_patch, state generator, governance gates and Git |
+| Target paths | active continuity paths plus one exact disposable root removed after inventory/hash verification |
+| Allowed scope source | operator approval of the bounded Local prepare-only option plus standing Local session-transition authority |
+| Before status evidence | clean HEAD `5e40a7437`; valid payload hash `7059d44e11ace5b7937d7b830ff1c472631aa3246af1b0bbfd01d0e186bbc947`; selected root absent; checkpoint closed |
+| After status evidence | setup failed before packet/principal execution; exact six-path partial root removed; repair selection or continued closure is next |
 | Diff evidence | exact continuity manifest before session-only commit |
-| Approval boundary | continuity projection and prepare-only operator-selection routing only |
-| Claim boundary | continuity only; bounded tooling acceptance is recorded, but no actual-token proof, ACEL/source action, promotion, admission, live/runtime/public effect is claimed |
-| Agent type | Local session-sync steward |
-| Invocation ID | `cvf-acel-g1-t3d-c3-checkpoint-selection-v63-continuity-20260923` |
-| Expected manifest | handoff, front door, core, next-move, generated state and bootstrap |
+| Approval boundary | prepare-only diagnosis/recovery and continuity projection only; no repair or retry |
+| Claim boundary | no Party B/C token proof, password, Group 4 source, T3E, live/runtime/public or deployment effect |
+| Agent type | Local orchestrator/reviewer and session-sync steward |
+| Invocation ID | `cvf-acel-g1-t3d-c3-prepare-failed-v63-continuity-20260924` |
+| Expected manifest | handoff, front door, core, prepare-failure entry, next-move entry, generated state and bootstrap |
 | Actual changed set | verified before commit |
 | Manifest delta | exact source manifest plus two generated projections |
-| Deletion or rename disposition | none |
+| Deletion or rename disposition | exact verified temporary root deleted and not recoverable; no repository path deleted or renamed |
 
 ## Claim Boundary
 
-This handoff records continuity for the bounded Group 4 readiness decision and
-routes only Local authoring/implementation with current-token hermetic tests. It
-does not claim actual-token proof, create a Group 4 source, perform a T3E lookup, bind a
-verifier consumer, promote a key, admit a candidate, or authorize provider/live,
-runtime, public-sync, deployment or production behavior.
+This handoff records continuity for the bounded Group 4 prepare-only failure
+and routes only operator selection of a Local coordinator repair packet or
+continued closure. It does not authorize a retry, claim Party B/C actual-token
+proof, create a Group 4 source, perform a T3E lookup, bind a verifier consumer,
+promote a key, admit a candidate, or authorize provider/live, runtime,
+public-sync, deployment or production behavior.
