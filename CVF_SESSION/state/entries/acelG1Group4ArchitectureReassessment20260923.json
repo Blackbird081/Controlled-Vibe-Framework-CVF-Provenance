@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2890,
+  "stateKey": "acelG1Group4ArchitectureReassessment20260923",
+  "value": "At material commit 8caacc64c, Local made the fresh post-C0-R1 Group 4 architecture decision in docs/audits/CVF_ACEL_G1_T3D_POST_C0_R1_GROUP4_ARCHITECTURE_REASSESSMENT_2026-09-23.md. The selected next static artifact is a bounded disposable-root proof packet for the exact accepted shared-parent candidate, with a separate operator checkpoint before any actual-token execution. Split protected parents and a privileged mediator remain conditional fallbacks, not authorized alternatives. C1-R2 is not dispatched; no real Group 4 source, credential, Party B/C execution, T3E binding or admission is authorized. The thirteen rejected T2/T2A/T2B paths remain archived, not active authority. No subagents were used."
+}
