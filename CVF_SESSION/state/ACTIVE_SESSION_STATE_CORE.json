@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C3_ACTUAL_TOKEN_DISPOSABLE_RUNNER_2026-09-23.md",
-    "baselineSha256": "b51a3a7d6ff8a57299ed00839d7b65ecdbe0491033ab5c9406def2fbb64b9cad",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C3_ACTUAL_TOKEN_DISPOSABLE_RUNNER_2026-09-23.md",
-    "workOrderSha256": "6dc845e66df98b645f6116fafc1a07e8930429b45ddefc5193f99fd7280bbc4d"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_2026-09-24.md",
+    "baselineSha256": "d7620eca52093a9ae7b8d025486dd8253c18ce8292bd6c97ed82b46edd091d97",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_2026-09-24.md",
+    "workOrderSha256": "c2e4905566734208ebd9225c0e1e6be91d11020ce0ec948f5993c4848e245ae6"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -109,8 +109,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "acel_g1_group4_actual_token_prepare_failed_closed_repair_selection_next",
-  "previousMode": "acel_g1_group4_actual_token_checkpoint_retained_closed_prepare_only_selection_next",
+  "currentMode": "acel_g1_t3d_c3_r1_actual_acl_correction_implementation_active",
+  "previousMode": "acel_g1_group4_actual_token_prepare_failed_closed_repair_selection_next",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "acel_g1_group4_actual_token_prepare_failed_closed_repair_selection_next",
+  "currentMode": "acel_g1_t3d_c3_r1_actual_acl_correction_implementation_active",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_C3_PREPARE_ONLY_FAILED_CLOSED_20260923; CURRENT_TRANCHE_DISPOSITION=PREPARE_ONLY_FAILED_CLOSED_COORDINATOR_ACL_ORDERING_DEFECT; NEXT_STEP=OPERATOR_SELECT_BOUNDED_LOCAL_COORDINATOR_REPAIR_PACKET_OR_RETAIN_CLOSED; EXPANSION_ALLOWED=false. The operator-approved Local prepare-only attempt used one checker-valid 702-byte operational payload with SHA-256 7059d44e11ace5b7937d7b830ff1c472631aa3246af1b0bbfd01d0e186bbc947 and one exact absent direct TEMP child. Elevated setup failed before any manifest, command packet, envelope, scenario or principal evidence was created: the coordinator installed a protected non-inheriting DACL on the root before explicit child DACLs, making the pre-created children inaccessible; catch cleanup then failed at the same boundary and masked the primary exception. Local performed read-only elevated and backup-mode diagnosis, verified exactly six relative paths plus the payload hash, restored cleanup access only on the exact root and removed it without wildcard use. Party B/C were never launched and no password was requested or stored. Do not retry the current coordinator. If the operator chooses to continue, separately authorize a bounded Local repair packet for actual ACL initialization ordering and exception-safe exact cleanup, followed by hermetic checks and one fresh reviewed Local prepare-only proof before any principal launch. HRLTP-T2 stays paused; Group 4 source, T3E, provider/live/runtime/public-sync/deployment remain parked. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_C3_R1_ACTUAL_ACL_CORRECTION_DISPATCH_20260924; CURRENT_TRANCHE_DISPOSITION=DISPATCH_COMMITTED_IMPLEMENTATION_ACTIVE; NEXT_STEP=LOCAL_WORKER_EXECUTE_EXACT_TWO_PATH_HERMETIC_CORRECTION_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Operator authorization selected one final bounded G1 correction. Dispatch commit 4b97391ccf15bdc9526c9512a03d99ea3d2ca57f passed pre-dispatch and pre-commit governance. The worker may change only the coordinator and create the exact worker return, must use current-token disposable fixtures, must not commit and must not run actual-mode prepare. A distinct Local reviewer may later run exactly one fresh actual-mode prepare-only proof. Party B/C execution, credentials, real Group 4 source access or creation, T3E, G2-G6, provider/live/runtime/public-sync/deployment and any second correction or prepare attempt remain parked. HRLTP-T2 remains paused and the latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C3_ACTUAL_TOKEN_DISPOSABLE_RUNNER_2026-09-23.md",
-    "baselineSha256": "b51a3a7d6ff8a57299ed00839d7b65ecdbe0491033ab5c9406def2fbb64b9cad",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C3_ACTUAL_TOKEN_DISPOSABLE_RUNNER_2026-09-23.md",
-    "workOrderSha256": "6dc845e66df98b645f6116fafc1a07e8930429b45ddefc5193f99fd7280bbc4d"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_2026-09-24.md",
+    "baselineSha256": "d7620eca52093a9ae7b8d025486dd8253c18ce8292bd6c97ed82b46edd091d97",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_2026-09-24.md",
+    "workOrderSha256": "c2e4905566734208ebd9225c0e1e6be91d11020ce0ec948f5993c4848e245ae6"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

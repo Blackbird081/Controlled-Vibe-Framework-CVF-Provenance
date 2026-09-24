@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `51cb067542aacf2c3085436c8330fcb0a036a159`. Checkpoint-selection material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `4b97391ccf15bdc9526c9512a03d99ea3d2ca57f`. R1 correction dispatch material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,8 +13,7 @@ and only then Approver decision writes.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer. Phase: post-prepare-failure repair selection.
-Decision owner: Local.
+Role: Local implementation worker. Phase: bounded correction implementation. Decision owner: Local reviewer.
 
 External research is closed for this lane. The selected shared-workspace
 worker is `INTERNAL_AGENT`; the operator relays its work order only and
@@ -22,18 +21,17 @@ does not become the reviewer.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_group4_actual_token_prepare_failed_closed_repair_selection_next`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator selection of one bounded Local coordinator repair packet or retention of the closed checkpoint; parked checkpoint=HRLTP-T2 implementation, prepare retry, actual Party B/C execution, passwords, Group 4 source creation, T3E, provider/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_t3d_c3_r1_actual_acl_correction_implementation_active`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local worker executes the exact two-path hermetic correction and returns `COMPLETE_PENDING_REVIEW`; parked checkpoint=actual-mode prepare-only reviewer probe, HRLTP-T2, actual Party B/C execution, passwords, Group 4 source creation, T3E, G2-G6, provider/live/runtime/public/deployment.
 
 ## Current Mode
-`acel_g1_group4_actual_token_prepare_failed_closed_repair_selection_next`.
-The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`.
-Latest closed learning-history wave remains `LHW24`.
+`acel_g1_t3d_c3_r1_actual_acl_correction_implementation_active`.
+The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`; latest closed learning-history wave remains `LHW24`.
 
 ## Active Boundary
 
 T3B is closed with one Local-verified active v1 specification. Party B is a verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
-T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`; its shared-parent route remains conditional on actual Windows proof. Local architecture selection `8caacc64c`, static proof packet `c395fd1aa` and source gap audit `e79910b5c` led to C1-R2. The correction is accepted at `988491791` for hermetic tooling only. Foundation T1 is closed at `c82f81d49`. The readiness audit at `a765880e4` confirmed the runner gap. The T3D-C3 bounded runner dispatch is committed at `4b68fa465`; its exact four-path material result is committed at `a1203c1ee` and independently accepted bounded at `88137e9a2`. The Local checkpoint-selection audit at `51cb06754` retained the operator checkpoint closed. The later operator-approved prepare-only attempt failed closed during root-first protected non-inheriting ACL setup; the exact partial root was diagnosed, hash-verified and removed without wildcard use before any Party B/C process. Current coordinator retry is prohibited pending a separately selected repair packet. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is dispatched at `19466bfdc` but paused.
+T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`; its shared-parent route remains conditional on actual Windows proof. Local architecture selection `8caacc64c`, static proof packet `c395fd1aa` and source gap audit `e79910b5c` led to C1-R2. The correction is accepted at `988491791` for hermetic tooling only. Foundation T1 is closed at `c82f81d49`. The readiness audit at `a765880e4` confirmed the runner gap. The T3D-C3 bounded runner dispatch is committed at `4b68fa465`; its exact four-path material result is committed at `a1203c1ee` and independently accepted bounded at `88137e9a2`. The Local checkpoint-selection audit at `51cb06754` retained the operator checkpoint closed. The later operator-approved prepare-only attempt failed closed during root-first protected non-inheriting ACL setup; the exact partial root was diagnosed, hash-verified and removed without wildcard use before any Party B/C process. Operator authorization selected one final correction, and its paired dispatch is committed at `4b97391cc`; worker execution is now limited to hermetic/current-token evidence and no commit. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is dispatched at `19466bfdc` but paused.
 
 Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
 External agent memory files: non-canonical convenience only.
@@ -142,6 +140,7 @@ External agent memory files: non-canonical convenience only.
   `CHECKPOINT_RETAINED_CLOSED_EXECUTION_PACKET_NOT_MATERIALIZED`: no fresh
   payload, root, prestate ledger or command packet exists. Seven prior input
   directories remain untouched; wildcard cleanup is prohibited.
+- Operator authorization selected one final G1 correction. The paired R1 baseline/work order is committed at `4b97391cc` after the 83-check pre-dispatch gate and 90/90 pre-commit checks. Worker scope is exactly the coordinator plus its worker return; actual-mode prepare stays reviewer-owned.
 
 ## T3B Readiness Inputs
 
@@ -151,7 +150,7 @@ principal-policy decision. This identity evidence is not source/activation proof
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_C3_PREPARE_ONLY_FAILED_CLOSED_20260923; CURRENT_TRANCHE_DISPOSITION=PREPARE_ONLY_FAILED_CLOSED_COORDINATOR_ACL_ORDERING_DEFECT; NEXT_STEP=OPERATOR_SELECT_BOUNDED_LOCAL_COORDINATOR_REPAIR_PACKET_OR_RETAIN_CLOSED; EXPANSION_ALLOWED=false. The operator-approved Local prepare-only attempt used one checker-valid 702-byte operational payload with SHA-256 `7059d44e11ace5b7937d7b830ff1c472631aa3246af1b0bbfd01d0e186bbc947` and one exact absent direct `%TEMP%` child. Elevated setup failed before any manifest, command packet, envelope, scenario or principal evidence was created: the coordinator installed a protected non-inheriting DACL on the root before explicit child DACLs, making the pre-created children inaccessible; catch cleanup then failed at the same boundary and masked the primary exception. Local performed read-only elevated and backup-mode diagnosis, verified exactly six relative paths plus the payload hash, restored cleanup access only on the exact root and removed it without wildcard use. Party B/C were never launched and no password was requested or stored. Do not retry the current coordinator. If the operator chooses to continue, separately authorize a bounded Local repair packet for actual ACL initialization ordering and exception-safe exact cleanup, followed by hermetic checks and one fresh reviewed Local prepare-only proof before any principal launch. HRLTP-T2 stays paused; Group 4 source, T3E, provider/live/runtime/public-sync/deployment remain parked. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_C3_R1_ACTUAL_ACL_CORRECTION_DISPATCH_20260924; CURRENT_TRANCHE_DISPOSITION=DISPATCH_COMMITTED_IMPLEMENTATION_ACTIVE; NEXT_STEP=LOCAL_WORKER_EXECUTE_EXACT_TWO_PATH_HERMETIC_CORRECTION_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Operator authorization selected one final bounded G1 correction. Dispatch commit `4b97391cc` passed pre-dispatch and pre-commit governance. The worker may change only `scripts/acel_g1_group4_actual_token_coordinator.ps1` and create the exact worker return, must use current-token disposable fixtures, must not commit and must not run actual-mode prepare. A distinct Local reviewer may later run exactly one fresh actual-mode prepare-only proof. Party B/C execution, credentials, real Group 4 source access or creation, T3E, G2-G6, provider/live/runtime/public-sync/deployment and any second correction or prepare attempt remain parked. HRLTP-T2 remains paused and the latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -162,59 +161,57 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
   T3D-C3 runner is accepted bounded at `88137e9a2`; checkpoint selection at
   `51cb06754` retains Party B/C execution closed; the approved prepare-only
   attempt failed at root-first non-inheriting ACL setup and its exact partial
-  root was removed; current coordinator retry is prohibited pending a
-  separately selected repair packet; source creation and T3E remain parked;
+  root was removed; the R1 correction dispatch is committed at `4b97391cc`
+  and hermetic worker implementation is active; actual prepare-only remains
+  reviewer-owned while principal execution, source creation and T3E stay parked;
 - key promotion or candidate admission;
 - provider/live work, runtime activation, public sync, deployment or production;
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project the operator-approved prepare-only failure and exact verified root recovery into active continuity; route only to operator selection of a bounded Local coordinator repair packet or continued closure; preserve HRLTP-T2 as paused and keep retry, principal execution, source and T3E parked.
+Authorized guard-maintenance scope: project the operator-authorized R1 dispatch into active continuity; route only to the exact hermetic worker implementation and pending independent review; preserve HRLTP-T2 as paused and keep actual prepare, principal execution, source, T3E and G2-G6 parked.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/acelG1T3dC3ActualTokenPrepareOnlyFailure20260923.json`
+- `CVF_SESSION/state/entries/acelG1T3dC3R1ActualAclCorrectionDispatch20260924.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit approval of the bounded Local prepare-only
-option plus standing Local session-transition authority. Rollback boundary:
-revert only this continuity projection; preserve commits `51cb06754`,
-`5e40a7437`, `88137e9a2` and prior accepted sources. This change authorizes no
-coordinator repair/retry, principal execution, credential, source/T3E,
-live/runtime/public or deployment effect.
+Operator authorization: explicit approval of the final bounded G1 correction plus standing Local session-transition authority. Rollback boundary: revert only this continuity projection; preserve dispatch commit `4b97391cc` and prior accepted sources. This change authorizes only hermetic worker execution;
+actual prepare, principal execution, credential, source/T3E, G2-G6 and
+live/runtime/public/deployment effects remain outside scope.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
 | Actor | Local orchestrator/reviewer and session-sync steward |
 | Provider or surface | private CVF workspace and local Windows ACL APIs |
-| Session or invocation | Group 4 prepare-only failure/recovery continuity, 2026-09-23 to 2026-09-24 |
-| Working directory | repository root plus one exact payload directory and one exact removed disposable root |
-| Command or tool surface | payload generation/check, elevated coordinator, read-only ACL/backup diagnostics, exact-root recovery, apply_patch, state generator, governance gates and Git |
-| Target paths | active continuity paths plus one exact disposable root removed after inventory/hash verification |
-| Allowed scope source | operator approval of the bounded Local prepare-only option plus standing Local session-transition authority |
-| Before status evidence | clean HEAD `5e40a7437`; valid payload hash `7059d44e11ace5b7937d7b830ff1c472631aa3246af1b0bbfd01d0e186bbc947`; selected root absent; checkpoint closed |
-| After status evidence | setup failed before packet/principal execution; exact six-path partial root removed; repair selection or continued closure is next |
+| Session or invocation | Group 4 R1 correction dispatch continuity, 2026-09-24 |
+| Working directory | repository root |
+| Command or tool surface | governed dispatch, pre-dispatch gate, pre-commit hook, apply_patch, state generator, governance gates and Git |
+| Target paths | active continuity paths for the committed R1 dispatch |
+| Allowed scope source | operator authorization of one final bounded G1 correction plus standing Local session-transition authority |
+| Before status evidence | clean material HEAD `4b97391cc`; dispatch gate PASS; commit hook 90/90 PASS |
+| After status evidence | implementation mode active; worker limited to exact two-path hermetic return; actual prepare still parked |
 | Diff evidence | exact continuity manifest before session-only commit |
-| Approval boundary | prepare-only diagnosis/recovery and continuity projection only; no repair or retry |
+| Approval boundary | continuity projection for committed dispatch; no actual-mode prepare or principal execution |
 | Claim boundary | no Party B/C token proof, password, Group 4 source, T3E, live/runtime/public or deployment effect |
 | Agent type | Local orchestrator/reviewer and session-sync steward |
-| Invocation ID | `cvf-acel-g1-t3d-c3-prepare-failed-v63-continuity-20260924` |
-| Expected manifest | handoff, front door, core, prepare-failure entry, next-move entry, generated state and bootstrap |
+| Invocation ID | `cvf-acel-g1-t3d-c3-r1-dispatch-v63-continuity-20260924` |
+| Expected manifest | handoff, front door, core, R1 dispatch entry, next-move entry, generated state and bootstrap |
 | Actual changed set | verified before commit |
 | Manifest delta | exact source manifest plus two generated projections |
-| Deletion or rename disposition | exact verified temporary root deleted and not recoverable; no repository path deleted or renamed |
+| Deletion or rename disposition | no repository or temporary path deleted or renamed in this sync |
 
 ## Claim Boundary
 
-This handoff records continuity for the bounded Group 4 prepare-only failure
-and routes only operator selection of a Local coordinator repair packet or
-continued closure. It does not authorize a retry, claim Party B/C actual-token
-proof, create a Group 4 source, perform a T3E lookup, bind a verifier consumer,
-promote a key, admit a candidate, or authorize provider/live, runtime,
-public-sync, deployment or production behavior.
+This handoff records continuity for the committed bounded R1 correction and
+routes only exact hermetic worker implementation followed by independent Local
+review. It does not authorize actual-mode prepare in the worker phase, claim
+Party B/C actual-token proof, create a Group 4 source, perform a T3E lookup,
+bind a verifier consumer, promote a key, admit a candidate, or authorize
+G2-G6, provider/live, runtime, public-sync, deployment or production behavior.
