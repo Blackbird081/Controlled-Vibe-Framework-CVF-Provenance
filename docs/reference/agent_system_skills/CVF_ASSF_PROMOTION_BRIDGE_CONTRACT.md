@@ -246,6 +246,29 @@ or `APPROVED`, a CVF reviewer must:
 Worker self-approval is not a reviewer decision. An agent that promoted
 the candidate may not also serve as its reviewer.
 
+## Proposal Impact And Rollback Evidence
+
+Every proposal that could change an active skill must produce one deterministic
+impact receipt before reviewer disposition. The receipt binds the exact
+proposal diff, source pin, immutable raw-evidence hash, persistent-knowledge
+hash, incumbent and candidate skill hashes, incumbent and candidate scores,
+strict-improvement result, decision, and rollback impact.
+
+The gate is strict: `candidateScore > incumbentScore`. A tie or regression is
+`REJECT_AND_ROLLBACK`. Rollback targets only the active-skill state; the raw
+evidence and persistent knowledge hashes before and after rollback must be
+identical. An accepted result is `ACCEPT_CANDIDATE_EVIDENCE` with
+`judgmentAuthority=EVIDENCE_ONLY`: it proposes the candidate hash but keeps the
+incumbent as the active hash until the existing reviewer-decision and UAT gates
+authorize promotion.
+
+Local implementation owner:
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/proposal-impact-rollback.evidence.contract.ts`.
+The behavior is independently adapted from the pinned
+`kenhuangus/wikiskill` source at
+`03633345829c452680d18a17004afd33eee729da`; no upstream code, prompt, package,
+or autonomous skill mutation authority is imported.
+
 ## UAT Requirement
 
 Before any candidate may advance from `APPROVED` to `ACTIVE`:

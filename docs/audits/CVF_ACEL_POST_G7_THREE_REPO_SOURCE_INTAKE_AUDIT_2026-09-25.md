@@ -205,11 +205,11 @@ deployment, production action, or public sync.
 | Unresolved items | HyperFrames 8,050 and WikiSkill 43 non-selected files remain semantically deferred; zero unreadable files |
 | Absorption maturity | `KNOWLEDGE_NORMALIZED_RUNTIME_PENDING` |
 | Named runtime consumer | none in T0; candidate consumers are the existing ASSF behavioral evaluation, ASSF promotion bridge, Learning Plane threshold, Model Gateway routing, and dispatch/handoff owners |
-| Integration evidence | Jev P0 is implemented in `docs/reference/agent_system_skills/CVF_ASSF_BEHAVIORAL_EVALUATION_CONTRACT.md`, `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/assf.behavioral.evaluation.contract.ts`, and `governance/compat/check_assf_behavioral_evaluation_evidence.py` |
-| Use proof | offline owner proof only: 84/84 TypeScript tests, TypeScript compile, and 61/61 Python tests; no provider/live or production consumer proof |
+| Integration evidence | Jev P0 is implemented in its ASSF behavioral contract/checker; WikiSkill P0 is implemented in `docs/reference/agent_system_skills/CVF_ASSF_PROMOTION_BRIDGE_CONTRACT.md` and `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/proposal-impact-rollback.evidence.contract.ts` |
+| Use proof | offline owner proof only: Jev 84/84 TypeScript plus 61/61 Python tests; WikiSkill 8/8 focused TypeScript tests; both package compiles PASS; no provider/live or production consumer proof |
 | Operator checkpoint | operator authorized Local absorption on 2026-09-25 and directed that external web research be used only when Local identifies a concrete research gap |
 | Absorption completion status | `ABSORPTION_NOT_COMPLETE` |
-| Completion claim boundary | source value and owner routing are complete for T0 and Jev P0 is normalized into the existing offline contract/checker; runtime integration, production use proof, public export, WikiSkill/HyperFrames implementation, and broad whole-repo semantic closure are not claimed |
+| Completion claim boundary | source value and owner routing are complete for T0; Jev and WikiSkill P0 are normalized into existing owners; production use proof, public export, HyperFrames implementation, three additional handoff reviews, and broad whole-repo semantic closure are not claimed |
 
 ## External Absorption Value Conversion Matrix
 
@@ -219,8 +219,8 @@ deployment, production action, or public sync.
 | Jev jaggedness routing | route arithmetic/date/indirection/context-rot cases toward code or explicit verification | `RUNTIME_CANDIDATE` | `EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts` | design a bounded routing-policy refinement after the behavioral-evidence change | no live routing activation in T0 |
 | HyperFrames artifact completion | expected artifact existence and verification, not child notification, is completion evidence | `DOCTRINE_ADAPTED` | `docs/reference/agent_handoff/README.md` | add the invariant in a later owner-specific documentation/test tranche | no HyperFrames runtime or asset import |
 | HyperFrames concurrency discipline | capacity changes batching, never work scope | `PACKAGE_CANDIDATE` | `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md` and execution-plane dispatch contract | encode scope-preservation invariant and test a capped-wave case | no generic scheduler adoption |
-| WikiSkill evidence separation | immutable raw evidence and persistent knowledge survive active-skill rollback | `DOCTRINE_ADAPTED` | ASSF promotion bridge and Learning Plane contracts | normalize this as an evidence-lifecycle invariant | no WikiSkill subsystem adoption |
-| WikiSkill strict improvement and impact log | exact proposal diff, incumbent/candidate score, decision, and rollback receipt | `PACKAGE_CANDIDATE` | Learning Plane threshold and ASSF promotion evidence | add a proposal-impact receipt at the existing owner | no automatic skill promotion |
+| WikiSkill evidence separation | immutable raw evidence and persistent knowledge survive active-skill rollback | `DOCTRINE_ADAPTED` | ASSF promotion bridge and Learning Plane contracts | applied: rollback preserves raw-evidence and persistent-knowledge hashes | no WikiSkill subsystem adoption |
+| WikiSkill strict improvement and impact log | exact proposal diff, incumbent/candidate score, decision, and rollback receipt | `PACKAGE_CANDIDATE` | Learning Plane threshold and ASSF promotion evidence | applied: deterministic evidence-only proposal-impact receipt with strict-improvement gate | no automatic skill promotion |
 | Upstream implementation files and generated assets | useful as source evidence but not safe as direct CVF dependencies | `REJECT_DIRECT_IMPORT` | source mirrors only | preserve pinned provenance and reimplement only selected invariants | upstream code, prompts, binaries, packages, and provider assumptions remain outside CVF runtime |
 | Remaining non-selected HyperFrames/WikiSkill files | no package or runtime claim is supported by the bounded semantic sample | `NO_PACKAGE_OR_RUNTIME_VALUE` | corpus registry deferred scope | reopen only for a named owner question, contradiction, or use-case gap | absence of current routing is not a permanent no-value verdict |
 
@@ -338,21 +338,22 @@ negative value conclusion.
 
 ## Next Governed Move
 
-Proceed without external-web escalation. Independently review and commit the
-applied Jev P0 refinement, then add the WikiSkill-derived proposal-impact and
-rollback evidence at its existing promotion/learning owner. HyperFrames
-dispatch refinements follow as a separate bounded owner change. Any
+Proceed without external-web escalation. Jev P0 and WikiSkill P0 are applied at
+existing owners. Next implement the HyperFrames-derived artifact-completion and
+concurrency-cap scope-preservation contract. Keep common Local closure blocked
+until the three additional operator-relayed handoffs are reviewed. Any
 external-web request must name a concrete unresolved source question; broad
 re-audit is not justified.
 
 ## Claim Boundary
 
 This audit proves that the three pinned repositories contain material,
-source-verified value that can enrich existing CVF owners and records one
-applied Jev-derived offline contract/checker refinement. It does not claim
+source-verified value that can enrich existing CVF owners and records applied
+Jev and WikiSkill P0 offline refinements. It does not claim
 that every file was semantically read, that upstream code is safe to import,
-that provider/live or production runtime behavior changed, or that WikiSkill
-and HyperFrames candidates are implemented. It does not reopen G1-G7.
+that provider/live or production runtime behavior changed, that HyperFrames P0
+is implemented, or that the three remaining handoffs are reviewed. It does not
+reopen G1-G7.
 
 ## Public Export Disposition
 

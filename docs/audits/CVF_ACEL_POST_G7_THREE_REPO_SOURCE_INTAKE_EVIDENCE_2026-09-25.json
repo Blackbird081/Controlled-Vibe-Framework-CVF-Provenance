@@ -171,7 +171,12 @@
       "overlap": "CVF already separates package, evaluation, promotion, learning signal, and memory owners.",
       "novelDelta": "Require immutable source traces and persistent learning evidence to survive active-skill rollback; never treat knowledge accumulation as activation authority.",
       "disposition": "ADAPT",
-      "priority": "P0"
+      "priority": "P0",
+      "implementationStatus": "APPLIED_PROMOTION_BRIDGE_AND_LEARNING_CONTRACT",
+      "implementationPaths": [
+        "docs/reference/agent_system_skills/CVF_ASSF_PROMOTION_BRIDGE_CONTRACT.md",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/proposal-impact-rollback.evidence.contract.ts"
+      ]
     },
     {
       "candidateId": "WIKI-02",
@@ -181,7 +186,13 @@
       "overlap": "CVF already owns evaluation thresholds and learning-signal intake.",
       "novelDelta": "Bind every proposed active-skill mutation to baseline, candidate score, exact diff, accept/reject reason, and rollback receipt.",
       "disposition": "ADAPT",
-      "priority": "P0"
+      "priority": "P0",
+      "implementationStatus": "APPLIED_OFFLINE_CONTRACT_AND_TESTS",
+      "implementationPaths": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/proposal-impact-rollback.evidence.contract.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/proposal-impact-rollback.evidence.contract.test.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/learning-activation.barrel.ts"
+      ]
     }
   ],
   "explicitNonAbsorptions": [
@@ -191,6 +202,6 @@
     "No external-agent conclusion owns final disposition.",
     "No G1-G7 status was reopened or changed."
   ],
-  "programVerdict": "SOURCE_VALUE_CONFIRMED_JEV_P0_ADAPTED_EXISTING_OWNER",
-  "nextMove": "Review and commit the Jev decision-evidence refinement, then implement the WikiSkill proposal-impact/rollback evidence at its existing owner; keep HyperFrames dispatch refinements as the next bounded owner tranche."
+  "programVerdict": "SOURCE_VALUE_CONFIRMED_JEV_AND_WIKISKILL_P0_ADAPTED_EXISTING_OWNERS",
+  "nextMove": "Implement HyperFrames artifact-completion and concurrency-cap scope-preservation evidence at existing dispatch/handoff owners; do not issue common Local closure until three additional operator-relayed handoffs are reviewed."
 }
