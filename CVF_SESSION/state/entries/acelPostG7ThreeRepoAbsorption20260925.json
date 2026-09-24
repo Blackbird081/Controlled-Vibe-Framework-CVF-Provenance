@@ -1,0 +1,25 @@
+{
+  "stateOrder": 2940,
+  "stateKey": "acelPostG7ThreeRepoAbsorption20260925",
+  "value": {
+    "status": "ACTIVE_JEV_P0_CLOSED",
+    "operatorAuthorizationDate": "2026-09-25",
+    "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
+    "sourceAudit": "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md",
+    "jevReview": "docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md",
+    "sourcePins": {
+      "typesafe-ai__skills": "65a39f393687675ce170e6094757de20370365b9",
+      "heygen-com__hyperframes": "7129340ae8e96fc32bb45102174528dd5ecafb56",
+      "kenhuangus__wikiskill": "03633345829c452680d18a17004afd33eee729da"
+    },
+    "verification": {
+      "typeScriptTests": "84/84 PASS",
+      "pythonTests": "61/61 PASS",
+      "typeScriptCompile": "PASS",
+      "preCommitGovernance": "90/90 PASS"
+    },
+    "nextSourceId": "kenhuangus__wikiskill",
+    "nextAction": "smallest proposal-impact and rollback-evidence refinement at existing ASSF/Learning Plane owners",
+    "boundary": "G1-G7 remain closed; no upstream import, provider/live, activation, certification mutation, deployment, production or public sync"
+  }
+}

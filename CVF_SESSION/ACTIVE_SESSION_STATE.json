@@ -109,8 +109,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "acel_g1_g7_research_terminally_closed",
-  "previousMode": "acel_g1_t3d_c3_r1_actual_acl_correction_implementation_active",
+  "currentMode": "acel_post_g7_multi_repo_absorption_active",
+  "previousMode": "acel_g1_g7_research_terminally_closed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16619,73 +16619,6 @@
     "contractSha256": "92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c",
     "parentArtifact": "docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md"
   },
-  "activeExternalAbsorptionProgram": {
-    "schemaVersion": "cvf.externalAbsorptionProgramContinuity.v1",
-    "programId": "AGENT-CAPABILITY-ENGINEERING-LAB-2026-09",
-    "status": "SCOPE_EXIT_AUTHORIZED",
-    "sourceIds": [
-      "agent-capability-engineering-lab__handoff-v2"
-    ],
-    "sourceStates": {
-      "agent-capability-engineering-lab__handoff-v2": "INCOMPLETE"
-    },
-    "nextSourceId": "agent-capability-engineering-lab__handoff-v2",
-    "nextActionClass": "STOPPED_NO_SUCCESSOR",
-    "expansionAllowed": false,
-    "exitDisposition": "OPERATOR_SCOPE_DECISION",
-    "exitEvidence": [
-      "docs/reviews/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_COMPLETION_2026-09-15.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_2026-09-16.md",
-      "docs/reviews/CVF_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_COMPLETION_2026-09-16.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_REAL_AGENT_EXPERIMENT_DESIGN_2026-09-16.md",
-      "docs/audits/CVF_ACEL_G2_T2_REAL_AGENT_EXPERIMENT_DESIGN_2026-09-16.md",
-      "docs/reviews/CVF_ACEL_G2_T2_REAL_AGENT_EXPERIMENT_DESIGN_WORKER_RETURN_2026-09-16.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_CANDIDATE_QUALIFICATION_T0_2026-09-16.md",
-      "docs/audits/CVF_ACEL_G2_T2_CANDIDATE_QUALIFICATION_T0_2026-09-16.md",
-      "docs/reviews/CVF_ACEL_G2_T2_CANDIDATE_QUALIFICATION_T0_WORKER_RETURN_2026-09-16.md",
-      "docs/baselines/CVF_GC018_ACEL_G2_T2_FRESH_DIRECT_CALIBRATION_T1_2026-09-16.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_FRESH_DIRECT_CALIBRATION_T1_2026-09-16.md",
-      "docs/reviews/CVF_ACEL_G2_T2_CALIBRATION_T1_LOCAL_DISPOSITION_2026-09-16.md",
-      "docs/baselines/CVF_GC018_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md",
-      "docs/reviews/CVF_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_COMPLETION_2026-09-16.md",
-      "docs/reviews/CVF_ACEL_G2_T2B_FRESH_HASH_BOUND_CALIBRATION_T1_COMPLETION_2026-09-16.md",
-      "docs/baselines/CVF_GC018_ACEL_G6_T1_IMPACT_DERIVED_VERIFICATION_EXPERIMENT_2026-09-16.md",
-      "docs/audits/CVF_ACEL_G6_T1_IMPACT_DERIVED_VERIFICATION_EXPERIMENT_RESULT_2026-09-16.md",
-      "docs/reviews/CVF_ACEL_G6_T1_IMPACT_DERIVED_VERIFICATION_EXPERIMENT_COMPLETION_2026-09-16.md",
-      "docs/baselines/CVF_GC018_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
-      "docs/audits/CVF_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
-      "docs/reviews/CVF_ACEL_G3_T1_BEHAVIORAL_EVALUATION_OWNER_COMPOSITION_DESIGN_COMPLETION_2026-09-16.md",
-      "docs/reviews/CVF_ACEL_G3_T2_BEHAVIORAL_EVALUATION_CONTRACT_IMPLEMENTATION_COMPLETION_2026-09-16.md",
-      "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md",
-      "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md",
-      "docs/baselines/CVF_GC018_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
-      "docs/reviews/CVF_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_COMPLETION_2026-09-17.md",
-      "docs/baselines/CVF_GC018_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_2026-09-17.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_2026-09-17.md",
-      "docs/reviews/CVF_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_COMPLETION_2026-09-17.md",
-      "docs/baselines/CVF_GC018_ACEL_G1_T2_TASK_CLASS_CALIBRATION_OWNER_IMPLEMENTATION_2026-09-17.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2_TASK_CLASS_CALIBRATION_OWNER_IMPLEMENTATION_2026-09-17.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_2026-09-17.md",
-      "docs/reviews/CVF_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_R1_INDEPENDENT_REVIEW_2026-09-17.md",
-      "docs/reviews/CVF_ACEL_G1_T2A_CANDIDATE_EVIDENCE_BINDING_SCHEMA_AMENDMENT_R2_INDEPENDENT_REVIEW_2026-09-17.md",
-      "docs/baselines/CVF_GC018_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_2026-09-17.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_2026-09-17.md",
-      "docs/reviews/CVF_ACEL_G1_T2B_CALIBRATION_ROOT_CONTRACT_ARCHITECTURE_REASSESSMENT_INDEPENDENT_REVIEW_2026-09-17.md",
-      "docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_LOCAL_ARCHITECTURE_DECISION_2026-09-17.md",
-      "docs/baselines/CVF_GC018_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_2026-09-17.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_2026-09-17.md",
-      "docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_COMPLETION_2026-09-17.md",
-      "docs/reviews/CVF_ACEL_G1_T2C_SOURCE_OWNER_RECONCILIATION_LOCAL_DECISION_2026-09-18.md",
-      "docs/baselines/CVF_GC018_ACEL_G1_T2D_SOURCE_OWNER_ESTABLISHMENT_2026-09-18.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2D_SOURCE_OWNER_ESTABLISHMENT_2026-09-18.md",
-      "docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md"
-    ],
-    "operatorScopeDecision": "docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md",
-    "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
-  },
   "outputRedactionT1Closure20260914": "OUTPUT-REDACTION-T1 is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED at material commit 45a2ace784ab6badf49b2d869915eebf69f4e369. The opt-in trusted-caller known-value transformation is accepted with 66/66 focused synthetic tests, TypeScript PASS, finite benchmark ceilings met, reviewer-fast 68/68, pre-implementation 84/84 and material pre-commit 89/89. No default CLI activation, ambient credential collection, provider/live execution, deployment or repository/program closure follows. R4 evidence is accepted bounded; all three program sources remain INCOMPLETE.",
   "qmServiceTokenReplayDedupeT1Dispatch20260914": "QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 is DISPATCH_READY at material commit 2cc9d2000590a8d3718a5fc6d28b3b2eb1102735. The roadmap, paired GC-018 baseline and work order authorize exactly five uncommitted worker paths for process-local exact valid-request replay deduplication; existing sync verifier API and five production route callers stay stable. Pre-commit passed 89/89 and P4-C1 reported SKIPPED_NO_ELIGIBLE_CANDIDATE. Before dispatch, Local adjudicated the prior OUTPUT-REDACTION continuity marker as REJECT_MEASUREMENT_SAMPLE and recoverably archived ignored marker SHA-256 6eb32adc685f74c9aae4349b8aef3edfdbb69247d77212e45fb46e2b4092f9c; no P4 sample was promoted. Next is INTERNAL_AGENT execution with zero commits followed by Local review. M4, M7, memory candidates, shared/durable replay, provider/live, public sync and deployment remain parked.",
   "qmServiceTokenReplayDedupeT1Closure20260914": "QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 is reviewer-accepted CLOSED_PASS_BOUNDED at material commit 74b30b725ab4f95def0a2679943f4ce6bcbd385d from execution base ac1dd70612228c45d19e4b4b7d2ab1785204172f. One worker rework fixed future-dated timestamp expiry and replaced absolute-only timing with paired added-latency measurement. Local then corrected the benchmark to exact same-input pairs with alternating order and added GC-051 coverage. Evidence: 22/22 focused tests, TypeScript PASS, two reviewer benchmark runs with added median 0.0031 ms and p95 at most 0.0074 ms, worker-return fast 68/68, and material pre-commit 89/89. The accepted claim is process-local only; M4, M7, memory candidates, shared/durable replay, provider/live, public sync and deployment remain unopened.",
@@ -16755,5 +16688,53 @@
   "acelG1G6TerminalStopClosure20260924": "ACEL G1-G6 terminal closure recorded on 2026-09-24. The final operator-authorized G1 reviewer prepare-only attempt exited 1 before manifest, command packet, envelope, scenario content or Party principal execution. Root cause: the candidate fixed directory ordering but protected control with non-inheriting ACEs before assigning the copied payload its explicit ACL, so registry-payload.json lost access. PREPARE_ERROR.txt SHA-256 is b9d2e86bed1da81dc30fd13898763fc5f27c8372f87ad891c2f490496eb490ba. Separately authorized cleanup-only elevation removed the exact six-item disposable root without wildcard or reparse traversal; cleanup receipt SHA-256 is 2c8a42366f7dabafb0d7fe7d0e6177743032b1c26a116d1a9266ce08efc7e18e and rootExistsAfter=false. The unaccepted worker source/return delta was discarded; committed coordinator SHA-256 11b449af03b8504682add9cb39c77fe03b9be4b2ac65c9069810358418f3290f is restored. G1 is STOPPED_FAIL_CLOSED_RESEARCH_EVIDENCE_ONLY; G2-G6 remain parked; no automatic successor exists.",
   "acelG7CrossRunCapabilityEvolutionResearchClosure20260924": "ACEL G7 cross-run capability-evolution research is G7_RESEARCH_CLOSED at material commit 660601f0e536e54190192ab3bdf9924e1c6d8b03. Canonical Local closure: docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md. The Local current-repository audit, external review and Local absorption converge on CVF_DISPOSITION=ADAPT_EXISTING_HANDOFF_ONLY, PATTERN_MATURITY=CROSS_SOURCE_CANDIDATE_WATCH and PRIMARY_GAP=LINKAGE_GAP. Execution-evidence joinability remains WATCH_EVIDENCE_SUFFICIENCY; candidate, governed Work Order and ASSF/CADP authority ceilings remain unchanged. The residual is a future stable qualified-decision/evidence reference, reviewed candidate-to-Work-Order conversion/binding, and downstream reference lineage across existing owners. No new subsystem, implementation, experiment, provider/live call, public sync, admission, exact-version activation or G1-G6 reopen is authorized. Any successor requires a new operator decision, bounded problem formulation and fresh GC-018/source-verified Work Order.",
   "acelPostG7FullCorpusAbsorptionClosure20260924": "ACEL post-G7 full-corpus external research absorption is CLOSED_LOCAL at material commit c5bec0ff04267271226280e377b4748a8cf276ff on 2026-09-24. Canonical Local closure: docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md. The hash-bound Local decision F22B52FE3E7C6BF1817886F8A8E2FB3F4E9024102CDE42806986EDA9532DCB38 and external closure return C9914F10CA5B9DC719C92219FBBFD606F4237D4B3B4902A2BB032F43812009A2 were reconciled with EXTERNAL_RETURN_DISPOSITION=ACCEPT_CONTENT_AFTER_LOCAL_NORMALIZATION and ABSORPTION_VERDICT=ABSORB_WITH_MAPPING_CORRECTIONS. External self-canonicalization was rejected; WikiSkill provenance, Jev V2, Unreal/MAO, current G3 and EP owner mappings were normalized. G1 remains stopped, G2-G6 remain parked and G7 remains G7_RESEARCH_CLOSED / ADAPT_EXISTING_HANDOFF_ONLY. No new pattern, structural capability-model change, CVF component, Local audit, implementation, provider/live call, public export or automatic successor is authorized.",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=STOPPED_NO_SUCCESSOR; CURRENT_TRANCHE_ACTION=POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_20260924; CURRENT_TRANCHE_DISPOSITION=G1_STOPPED_G2_G6_PARKED_G7_RESEARCH_CLOSED_POST_G7_CORPUS_CLOSED_ABSORB_WITH_MAPPING_CORRECTIONS; NEXT_STEP=NONE_UNLESS_NEW_OPERATOR_ROADMAP; EXPANSION_ALLOWED=false. The bounded post-G7 WikiSkill, HyperFrames, Unreal Agent, TypeSafe Jev V2, Human-Agent Boundary and CVF Positioning research packet is closed by Local at material commit c5bec0ff04267271226280e377b4748a8cf276ff; closure: docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md. External return content was accepted after Local normalization; external self-canonicalization was rejected. G1 remains stopped, G2-G6 remain parked and G7 remains G7_RESEARCH_CLOSED / ADAPT_EXISTING_HANDOFF_ONLY. No new Emerging Pattern, structural capability-model change, CVF component, Local audit, implementation, experiment, provider/live call, public sync, admission, version activation or automatic successor is authorized. Any future work requires a new operator roadmap, bounded problem formulation and applicable fresh governed authority. HRLTP-T2 remains paused and the latest closed LHW wave remains LHW24."
+  "activeExternalAbsorptionProgram": {
+    "schemaVersion": "cvf.externalAbsorptionProgramContinuity.v1",
+    "programId": "ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09",
+    "status": "LOCAL_RUNTIME_VALUE_RECOVERY",
+    "sourceIds": [
+      "typesafe-ai__skills",
+      "heygen-com__hyperframes",
+      "kenhuangus__wikiskill"
+    ],
+    "sourceStates": {
+      "typesafe-ai__skills": "TERMINAL_ACCEPTED",
+      "heygen-com__hyperframes": "INCOMPLETE",
+      "kenhuangus__wikiskill": "INCOMPLETE"
+    },
+    "nextSourceId": "kenhuangus__wikiskill",
+    "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
+    "expansionAllowed": false,
+    "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
+    "exitEvidence": [
+      "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md",
+      "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md",
+      "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md",
+      "docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md"
+    ],
+    "operatorScopeDecision": null,
+    "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
+  },
+  "acelPostG7ThreeRepoAbsorption20260925": {
+    "status": "ACTIVE_JEV_P0_CLOSED",
+    "operatorAuthorizationDate": "2026-09-25",
+    "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
+    "sourceAudit": "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md",
+    "jevReview": "docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md",
+    "sourcePins": {
+      "typesafe-ai__skills": "65a39f393687675ce170e6094757de20370365b9",
+      "heygen-com__hyperframes": "7129340ae8e96fc32bb45102174528dd5ecafb56",
+      "kenhuangus__wikiskill": "03633345829c452680d18a17004afd33eee729da"
+    },
+    "verification": {
+      "typeScriptTests": "84/84 PASS",
+      "pythonTests": "61/61 PASS",
+      "typeScriptCompile": "PASS",
+      "preCommitGovernance": "90/90 PASS"
+    },
+    "nextSourceId": "kenhuangus__wikiskill",
+    "nextAction": "smallest proposal-impact and rollback-evidence refinement at existing ASSF/Learning Plane owners",
+    "boundary": "G1-G7 remain closed; no upstream import, provider/live, activation, certification mutation, deployment, production or public sync"
+  },
+  "nextAllowedMove": "PROGRAM_ID=ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09; NEXT_SOURCE_ID=kenhuangus__wikiskill; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=JEV_P0_DECISION_EVIDENCE_ADAPTATION_CLOSED; CURRENT_TRANCHE_DISPOSITION=SOURCE_RECONCILED_JEV_P0_CLOSED_HYPERFRAMES_WIKISKILL_INCOMPLETE; NEXT_STEP=WIKISKILL_P0_PROPOSAL_IMPACT_ROLLBACK_EVIDENCE_EXISTING_OWNER; EXPANSION_ALLOWED=false. Operator authorization on 2026-09-25 opened a separate Local three-repository absorption program without reopening G1-G7. Source intake and Jev P0 are closed at material commit 9ac0ee8e59fa041ddaa93d725796c509400f257a; audit: docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md; review: docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md. Jev decision evidence now binds decision context, incomplete candidate escape, and EVIDENCE_ONLY authority. Next is the smallest WikiSkill-derived proposal-impact and rollback-evidence refinement at existing ASSF/Learning Plane owners. HyperFrames remains incomplete and follows as a separate dispatch/handoff refinement. External web research is advisory and may reopen only for a named unresolved source question. No upstream code/dependency import, provider/live call, activation, certification mutation, deployment, production action, public sync, or G1-G7 successor is authorized. Latest closed LHW wave remains LHW24."
 }

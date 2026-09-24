@@ -1,30 +1,34 @@
-# CVF Agent Handoff V63 - ACEL G1-G7 Terminal Research Closure
+# CVF Agent Handoff V63 - ACEL Post-G7 Three-Repository Absorption
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `cf8b000f5312d77bc08a6790e111603e46e5b6a9`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `9ac0ee8e59fa041ddaa93d725796c509400f257a`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
 ## Purpose
 
-Carry the terminal ACEL G1-G7 research posture. G1 is stopped, G2-G6 remain
-parked and G7 research is closed with a handoff-only adaptation conclusion.
-No automatic successor exists.
+Carry the operator-authorized post-G7 Local absorption of TypeSafe Jev,
+HyperFrames, and WikiSkill while preserving terminal G1-G7 posture. Jev P0 is
+closed; WikiSkill is the next incomplete source lane; HyperFrames follows as a
+separate existing-owner refinement.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local closure steward. Phase: terminal G1-G7 research closure. Decision owner: Local under explicit operator continuation.
+Role: Local source/runtime/value verifier. Phase: post-G7 three-repository absorption. Decision owner: Local under explicit operator continuation.
 
-External research is closed for this lane. Local agents owned private proof,
-cleanup and terminal disposition; the operator remained decision owner.
+External research is advisory and closed unless Local identifies a named
+source question. Local owns private proof, implementation review and final
+technical disposition; the operator remains roadmap/scope decision owner.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_g7_research_terminally_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=none unless a new operator roadmap opens a new problem formulation; parked checkpoint=all G1-G7 implementation/experiment work, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_post_g7_multi_repo_absorption_active`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=WikiSkill P0 proposal-impact and rollback-evidence refinement at existing owners; parked checkpoint=G1-G7 successors, upstream import, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
 
 ## Current Mode
-`acel_g1_g7_research_terminally_closed`.
-The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`; latest closed learning-history wave remains `LHW24`.
+`acel_post_g7_multi_repo_absorption_active`.
+The active program is restricted to `typesafe-ai__skills`,
+`heygen-com__hyperframes`, and `kenhuangus__wikiskill`; latest closed
+learning-history wave remains `LHW24`.
 
 ## Active Boundary
 
@@ -32,9 +36,7 @@ T3B is closed with one Local-verified active v1 specification. Party B is a veri
 `db78c87df`.
 T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but both actual-mode prepare-only attempts failed before Party B/C execution. The final R1 attempt exposed a payload/control non-inheriting ACL dependency; separately authorized exact cleanup removed the failed root without wildcard use. The unaccepted worker delta was discarded. G1 is stopped and G2-G6 remain parked. G7 research is closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`; execution-evidence join sufficiency stays WATCH and no implementation/experiment authority follows. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is paused. No automatic successor exists.
 
-Remote tracking branch: `origin/main`.
-Exact remote SHA must be derived live from git when needed.
-External agent memory files: non-canonical convenience only.
+Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
 
 ## Latest Work / Changes
 
@@ -145,15 +147,9 @@ External agent memory files: non-canonical convenience only.
   `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`.
   Disposition: `ADAPT_EXISTING_HANDOFF_ONLY`; existing authority owners remain unchanged.
 - The separate post-G7 corpus packet is closed by Local at material commit `c5bec0ff04267271226280e377b4748a8cf276ff`; review `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md`: `ABSORB_WITH_MAPPING_CORRECTIONS`; external content accepted after normalization, with no independent CVF authority.
-## T3B Readiness Inputs
-
-The approved principal is dedicated standard local account `cvf-g1-approver`,
-distinct from Parties A/B/C; its exact JCS policy is recorded in the T3B
-principal-policy decision. This identity evidence is not source/activation proof.
-
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=STOPPED_NO_SUCCESSOR; CURRENT_TRANCHE_ACTION=POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_20260924; CURRENT_TRANCHE_DISPOSITION=G1_STOPPED_G2_G6_PARKED_G7_RESEARCH_CLOSED_POST_G7_CORPUS_CLOSED_ABSORB_WITH_MAPPING_CORRECTIONS; NEXT_STEP=NONE_UNLESS_NEW_OPERATOR_ROADMAP; EXPANSION_ALLOWED=false. The bounded post-G7 research packet is closed by Local at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md`; external content was accepted after Local normalization and external self-canonicalization was rejected. G1 remains stopped, G2-G6 remain parked and G7 remains `G7_RESEARCH_CLOSED / ADAPT_EXISTING_HANDOFF_ONLY`. No new Emerging Pattern, capability-model structural change, CVF component, Local audit, implementation, experiment, provider/live, public, admission, version activation or automatic successor is authorized. Any future work requires a new operator roadmap, bounded problem formulation and applicable fresh governed authority. HRLTP-T2 remains paused; latest closed LHW wave remains LHW24.
+PROGRAM_ID=ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09; NEXT_SOURCE_ID=kenhuangus__wikiskill; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=JEV_P0_DECISION_EVIDENCE_ADAPTATION_CLOSED; CURRENT_TRANCHE_DISPOSITION=SOURCE_RECONCILED_JEV_P0_CLOSED_HYPERFRAMES_WIKISKILL_INCOMPLETE; NEXT_STEP=WIKISKILL_P0_PROPOSAL_IMPACT_ROLLBACK_EVIDENCE_EXISTING_OWNER; EXPANSION_ALLOWED=false. Operator authorization on 2026-09-25 opened a separate Local three-repository absorption program without reopening G1-G7. Source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`; audit: `docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md`; review: `docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md`. Jev decision evidence now binds decision context, incomplete candidate escape, and EVIDENCE_ONLY authority. Next is the smallest WikiSkill-derived proposal-impact and rollback-evidence refinement at existing ASSF/Learning Plane owners. HyperFrames remains incomplete and follows as a separate dispatch/handoff refinement. External web research is advisory and may reopen only for a named unresolved source question. No upstream code/dependency import, provider/live call, activation, certification mutation, deployment, production action, public sync, or G1-G7 successor is authorized. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -175,18 +171,19 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_A
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: preserve terminal G1-G7 state and synchronize the operator-authorized post-G7 research-absorption closure; keep every implementation/experiment path, principal execution, source and T3E closed.
+Authorized guard-maintenance scope: preserve terminal G1-G7 state and synchronize the operator-authorized post-G7 three-repository Local absorption after the Jev P0 material commit; keep upstream import, provider/live, activation, public sync, principal execution, Group 4 source and T3E closed.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/acelG7CrossRunCapabilityEvolutionResearchClosure20260924.json`; `CVF_SESSION/state/entries/acelPostG7FullCorpusAbsorptionClosure20260924.json`
+- `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`
+- `CVF_SESSION/state/entries/acelPostG7ThreeRepoAbsorption20260925.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit continuation after Local explained that the external handoff required a Local governed closure and continuity sync. Rollback boundary: revert only the G7 closure continuity projection if rejected; preserve the prior G1-G6 terminal closure and accepted source history. No implementation, experiment, retry, principal execution, credential, source/T3E, G1-G7 successor, provider/runtime, public or deployment effect is authorized.
+Operator authorization: explicit instruction on 2026-09-25 to proceed with Local absorption under the established Local decision-owner rule and use external web research only for a concrete Local-identified gap. Rollback boundary: revert only this post-G7 three-repository continuity projection if rejected; preserve material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`, prior G1-G7 terminal closure and accepted source history. No upstream import, new architecture, G1-G7 successor, principal execution, credential, Group 4 source/T3E, provider/live, activation, public, deployment or production effect is authorized.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
@@ -212,9 +209,4 @@ Operator authorization: explicit continuation after Local explained that the ext
 
 ## Claim Boundary
 
-This handoff records terminal G1-G6 closure, G7 research closure at
-`ADAPT_EXISTING_HANDOFF_ONLY`, and the bounded post-G7 corpus closure at
-`ABSORB_WITH_MAPPING_CORRECTIONS`. It authorizes no implementation,
-experiment, retry, Party B/C proof, Group 4 source, T3E, G1-G7 successor,
-provider/live, runtime, admission, version activation, public-sync, deployment
-or production behavior.
+This handoff records terminal G1-G7 closure and the separate post-G7 three-repository absorption. Jev P0 is closed at the existing offline owner; WikiSkill is next and HyperFrames remains incomplete. No upstream import, G1-G7 successor, Party B/C proof, Group 4 source, T3E, provider/live, activation, certification mutation, public sync, deployment or production behavior is authorized.
