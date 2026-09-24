@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `4a6d9ff545071b2d67fda7e099079bde8461457c`. ACEL G1-G6 terminal stop closure final material anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `3074c98d6591efa0de1c9d5c24b30c8e2075573e`. ACEL terminal closure HEAD before operator-authorized repository/public-sync hygiene.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -32,7 +32,8 @@ T3B is closed with one Local-verified active v1 specification. Party B is a veri
 `db78c87df`.
 T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but both actual-mode prepare-only attempts failed before Party B/C execution. The final R1 attempt exposed a payload/control non-inheriting ACL dependency; separately authorized exact cleanup removed the failed root without wildcard use. The unaccepted worker delta was discarded. G1 is stopped and G2-G6 remain parked with no automatic successor. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is paused.
 
-Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
+Remote tracking branch: `origin/main`.
+Exact remote SHA must be derived live from git when needed.
 External agent memory files: non-canonical convenience only.
 
 ## Latest Work / Changes
@@ -169,7 +170,7 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_A
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project terminal G1-G6 closure, exact-root cleanup and discarded worker delta into active continuity; preserve HRLTP-T2 as paused and keep every G1-G6 continuation, principal execution, source and T3E closed.
+Authorized guard-maintenance scope: preserve terminal G1-G6 closure while repairing pre-push continuity/exposure markers and synchronizing the operator-authorized provenance, public projection and external-agent packet; keep every G1-G6 continuation, principal execution, source and T3E closed.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -181,7 +182,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit approval of cleanup recovery and terminal G1-G6 closure plus standing Local session-transition authority. Rollback boundary: revert only this closure projection; preserve prior accepted sources. No retry, principal execution, credential, source/T3E, G1-G6 successor or live/runtime/public/deployment effect is authorized.
+Operator authorization: explicit approval of terminal G1-G6 closure and the subsequent provenance/public/external-agent packet cleanup and synchronization. Rollback boundary: revert only the hygiene projection if rejected; preserve prior accepted sources and closure. No retry, principal execution, credential, source/T3E, G1-G6 successor, provider/runtime or deployment effect is authorized.
 ## Agent Operation Trace Block
 
 | Field | Evidence |

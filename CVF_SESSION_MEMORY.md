@@ -105,7 +105,7 @@ Live retry, external T5 adapter runtime, out-of-manifest production TypeScript e
 T4 closed as standalone static checker work with no hook wiring or production-source mutation.
 Prior unrelated checkpoints remain historical.
 
-The `broad external knowledge absorption` lane remains outside the current release and blocked unless the operator opens a fresh, source-verified governed tranche.
+The `broad external knowledge absorption` lane remains outside the current release; blocked work classes remain G1-G6 continuation, Party B/C, credential handling, Group 4 source/T3E, provider/runtime/deployment, and any new absorption tranche without fresh operator authority.
 
 External absorption preparation closed at `b4fb661bb`, path correction `100d6bd8b`: public `main` is `132371c3`; protocol-1.3 packet `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` is live-refreshed with 5/5 hashes matching. Each new repo still needs its own immutable pin, license evidence, and new task capsule.
 
