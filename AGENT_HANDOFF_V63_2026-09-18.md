@@ -1,36 +1,36 @@
-# CVF Agent Handoff V63 - ACEL T3C Party B Principal Checkpoint
+# CVF Agent Handoff V63 - ACEL G1-G7 Terminal Research Closure
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `f1455bb01db9806d6d390b1db295f332e9fd1fce`. Operator-authorized repository/public-sync hygiene material anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `660601f0e536e54190192ab3bdf9924e1c6d8b03`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
 ## Purpose
 
-Carry the independently verified Group 1 closure and route the bounded real
-Group 2 ceremony in strict order: Party A spec write, Local verification, then
-and only then Approver decision writes.
+Carry the terminal ACEL G1-G7 research posture. G1 is stopped, G2-G6 remain
+parked and G7 research is closed with a handoff-only adaptation conclusion.
+No automatic successor exists.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local closure steward. Phase: terminal G1-G6 closure. Decision owner: Local under explicit operator stop instruction.
+Role: Local closure steward. Phase: terminal G1-G7 research closure. Decision owner: Local under explicit operator continuation.
 
 External research is closed for this lane. Local agents owned private proof,
 cleanup and terminal disposition; the operator remained decision owner.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_g6_tranche_terminally_stopped_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=none unless a new operator roadmap opens a new problem formulation; parked checkpoint=all G1-G6 continuation, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_g7_research_terminally_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=none unless a new operator roadmap opens a new problem formulation; parked checkpoint=all G1-G7 implementation/experiment work, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/runtime/public/deployment.
 
 ## Current Mode
-`acel_g1_g6_tranche_terminally_stopped_closed`.
+`acel_g1_g7_research_terminally_closed`.
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`; latest closed learning-history wave remains `LHW24`.
 
 ## Active Boundary
 
 T3B is closed with one Local-verified active v1 specification. Party B is a verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
-T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but both actual-mode prepare-only attempts failed before Party B/C execution. The final R1 attempt exposed a payload/control non-inheriting ACL dependency; separately authorized exact cleanup removed the failed root without wildcard use. The unaccepted worker delta was discarded. G1 is stopped and G2-G6 remain parked with no automatic successor. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is paused.
+T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but both actual-mode prepare-only attempts failed before Party B/C execution. The final R1 attempt exposed a payload/control non-inheriting ACL dependency; separately authorized exact cleanup removed the failed root without wildcard use. The unaccepted worker delta was discarded. G1 is stopped and G2-G6 remain parked. G7 research is closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`; execution-evidence join sufficiency stays WATCH and no implementation/experiment authority follows. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is paused. No automatic successor exists.
 
 Remote tracking branch: `origin/main`.
 Exact remote SHA must be derived live from git when needed.
@@ -141,6 +141,9 @@ External agent memory files: non-canonical convenience only.
   payload, root, prestate ledger or command packet exists. Seven prior input
   directories remain untouched; wildcard cleanup is prohibited.
 - The final G1 correction/prepare attempt failed closed on a payload/control ACL dependency. Exact cleanup removed the failed root, the unaccepted worker delta was discarded, and G1-G6 now have no successor.
+- G7 audit/review/Local absorption closed at `660601f0e`; canonical review:
+  `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`.
+  Disposition: `ADAPT_EXISTING_HANDOFF_ONLY`; existing authority owners remain unchanged.
 
 ## T3B Readiness Inputs
 
@@ -150,7 +153,7 @@ principal-policy decision. This identity evidence is not source/activation proof
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=STOPPED_NO_SUCCESSOR; CURRENT_TRANCHE_ACTION=G1_G6_TERMINAL_STOP_CLOSURE_20260924; CURRENT_TRANCHE_DISPOSITION=CLOSED_STOPPED_FAIL_CLOSED_RESEARCH_EVIDENCE_ONLY; NEXT_STEP=NONE_UNLESS_NEW_OPERATOR_ROADMAP; EXPANSION_ALLOWED=false. The final G1 prepare-only attempt failed before packet materialization on a payload/control non-inheriting ACL dependency. Party B/C were never launched; the real Group 4 source remained absent. Cleanup-only elevation removed the exact root without wildcard use; hashed receipts are preserved. The unaccepted worker delta was discarded and the committed coordinator restored. G1 is stopped; G2-G6 remain parked; no automatic successor exists. Any reopening requires a new operator decision, GC-018/source-verified work order and problem formulation. HRLTP-T2 remains paused; latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=STOPPED_NO_SUCCESSOR; CURRENT_TRANCHE_ACTION=G1_G7_RESEARCH_CLOSURE_20260924; CURRENT_TRANCHE_DISPOSITION=G1_G6_TERMINALLY_CLOSED_G7_RESEARCH_CLOSED_ADAPT_HANDOFF_ONLY; NEXT_STEP=NONE_UNLESS_NEW_OPERATOR_ROADMAP; EXPANSION_ALLOWED=false. G1 remains stopped and G2-G6 remain parked. G7 research is closed at material commit `660601f0e536e54190192ab3bdf9924e1c6d8b03` with `ADAPT_EXISTING_HANDOFF_ONLY`; no new component, implementation, experiment, provider/live, public, admission or version activation is authorized. Any future G1-G7 work requires a new operator decision, bounded problem formulation and fresh GC-018/source-verified Work Order. HRLTP-T2 remains paused; latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -165,50 +168,52 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_A
   its exact root was removed; G1 is stopped while G2-G6, principal execution,
   source creation and T3E remain parked with no automatic successor;
 - key promotion or candidate admission;
+- G7 candidate-to-Work-Order implementation, evidence-join activation,
+  derived-knowledge history expansion or any capability-evolution experiment;
 - provider/live work, runtime activation, public sync, deployment or production;
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: preserve terminal G1-G6 closure while repairing pre-push continuity/exposure markers and synchronizing the operator-authorized provenance, public projection and external-agent packet; keep every G1-G6 continuation, principal execution, source and T3E closed.
+Authorized guard-maintenance scope: preserve terminal G1-G6 closure and synchronize the operator-authorized G7 research closure; keep every G1-G7 implementation/experiment path, principal execution, source and T3E closed.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`
-- `CVF_SESSION/state/entries/acelG1G6TerminalStopClosure20260924.json`
+- `CVF_SESSION/state/entries/acelG7CrossRunCapabilityEvolutionResearchClosure20260924.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit approval of terminal G1-G6 closure and the subsequent provenance/public/external-agent packet cleanup and synchronization. Rollback boundary: revert only the hygiene projection if rejected; preserve prior accepted sources and closure. No retry, principal execution, credential, source/T3E, G1-G6 successor, provider/runtime or deployment effect is authorized.
+Operator authorization: explicit continuation after Local explained that the external handoff required a Local governed closure and continuity sync. Rollback boundary: revert only the G7 closure continuity projection if rejected; preserve the prior G1-G6 terminal closure and accepted source history. No implementation, experiment, retry, principal execution, credential, source/T3E, G1-G7 successor, provider/runtime, public or deployment effect is authorized.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local orchestrator/reviewer and session-sync steward |
-| Provider or surface | private CVF workspace and local Windows ACL APIs |
-| Session or invocation | ACEL G1-G6 terminal stop continuity, 2026-09-24 |
+| Actor | Local repository auditor, external-return reviewer and session-sync steward |
+| Provider or surface | private CVF workspace and operator-relayed external review files |
+| Session or invocation | ACEL G7 research closure continuity, 2026-09-24 |
 | Working directory | repository root |
-| Command or tool surface | reviewer proof, exact cleanup, rejected-delta rollback, apply_patch, state generator, governance gates and Git |
-| Target paths | terminal review, closed work order and active continuity paths |
-| Allowed scope source | explicit operator cleanup and terminal G1-G6 stop instruction plus standing session-transition authority |
-| Before status evidence | clean execution base `2259977c6`; final worker delta pending review; selected root absent |
-| After status evidence | proof failed closed; exact root absent; worker delta discarded; G1-G6 successor closed |
+| Command or tool surface | governed source reads, external hash verification, apply_patch, state generator, governance gates and Git |
+| Target paths | G7 closure review and active continuity paths |
+| Allowed scope source | operator-relayed G7 audit task and explicit continuation after closure-handoff assessment |
+| Before status evidence | G1-G6 terminally closed; clean audit base `375730933`; external closure advisory only |
+| After status evidence | G7 Local research closure committed at `660601f0e`; G1-G7 have no automatic successor |
 | Diff evidence | exact continuity manifest before session-only commit |
-| Approval boundary | terminal closure projection only; no retry or principal execution |
-| Claim boundary | no Party B/C token proof, password, Group 4 source, T3E, live/runtime/public or deployment effect |
+| Approval boundary | G7 research closure and continuity projection only |
+| Claim boundary | no implementation, experiment, Party B/C, credential, Group 4 source, T3E, live/runtime/public, admission, activation or deployment effect |
 | Agent type | Local orchestrator/reviewer and session-sync steward |
-| Invocation ID | `cvf-acel-g1-g6-terminal-stop-v63-continuity-20260924` |
-| Expected manifest | terminal review, closed work order, handoff, front door, core, terminal entry, next-move entry, generated state and bootstrap |
+| Invocation ID | `cvf-acel-g7-research-closure-v63-continuity-20260924` |
+| Expected manifest | handoff, front door, core, G7 closure state entry, next-move entry, generated state and bootstrap |
 | Actual changed set | verified before commit |
 | Manifest delta | exact source manifest plus two generated projections |
 | Deletion or rename disposition | no repository or temporary path deleted or renamed in this sync |
 
 ## Claim Boundary
 
-This handoff records terminal G1-G6 closure after final prepare-only failure,
-exact cleanup and rejected-delta rollback. It authorizes no retry, Party B/C
-proof, Group 4 source, T3E, G1-G6 successor, provider/live, runtime,
-public-sync, deployment or production behavior.
+This handoff records terminal G1-G6 closure plus G7 research closure at
+`ADAPT_EXISTING_HANDOFF_ONLY`. It authorizes no implementation, experiment,
+retry, Party B/C proof, Group 4 source, T3E, G1-G7 successor, provider/live,
+runtime, admission, version activation, public-sync, deployment or production
+behavior.

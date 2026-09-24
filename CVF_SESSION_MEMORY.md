@@ -42,17 +42,17 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_g6_tranche_terminally_stopped_closed`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=none unless a new operator roadmap opens a new problem formulation; role=Local closure steward; phase=terminal G1-G6 closure; decision owner=Local under explicit operator stop instruction; parked checkpoint=all G1-G6 continuation, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_g7_research_terminally_closed`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=none unless a new operator roadmap opens a new problem formulation; role=Local closure steward; phase=terminal G1-G7 research closure; decision owner=Local under explicit operator continuation; parked checkpoint=all G1-G7 implementation/experiment work, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/runtime/public/deployment.
 
 ## Current Mode
 
-Current mode marker: `acel_g1_g6_tranche_terminally_stopped_closed`
-Current mode: `acel_g1_g6_tranche_terminally_stopped_closed`; previous mode marker: `acel_g1_t3d_c3_r1_actual_acl_correction_implementation_active`
+Current mode marker: `acel_g1_g7_research_terminally_closed`
+Current mode: `acel_g1_g7_research_terminally_closed`; previous mode marker: `acel_g1_g6_tranche_terminally_stopped_closed`
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=STOPPED_NO_SUCCESSOR; CURRENT_TRANCHE_ACTION=G1_G6_TERMINAL_STOP_CLOSURE_20260924; CURRENT_TRANCHE_DISPOSITION=CLOSED_STOPPED_FAIL_CLOSED_RESEARCH_EVIDENCE_ONLY; NEXT_STEP=NONE_UNLESS_NEW_OPERATOR_ROADMAP; EXPANSION_ALLOWED=false. The final G1 prepare-only attempt failed before packet materialization on a payload/control non-inheriting ACL dependency. Party B/C were never launched; the real Group 4 source remained absent. Cleanup-only elevation removed the exact root without wildcard use; hashed receipts are preserved. The unaccepted worker delta was discarded and the committed coordinator restored. G1 is stopped; G2-G6 remain parked; no automatic successor exists. Any reopening requires a new operator decision, GC-018/source-verified work order and problem formulation. HRLTP-T2 remains paused; latest closed LHW wave remains LHW24.
-Mode: `acel_g1_g6_tranche_terminally_stopped_closed`. Terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`. The failed root is absent, unaccepted worker delta is discarded, G1 is stopped and G2-G6 remain parked.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=STOPPED_NO_SUCCESSOR; CURRENT_TRANCHE_ACTION=G1_G7_RESEARCH_CLOSURE_20260924; CURRENT_TRANCHE_DISPOSITION=G1_G6_TERMINALLY_CLOSED_G7_RESEARCH_CLOSED_ADAPT_HANDOFF_ONLY; NEXT_STEP=NONE_UNLESS_NEW_OPERATOR_ROADMAP; EXPANSION_ALLOWED=false. G1 remains stopped and G2-G6 remain parked under the terminal fail-closed closure. G7 repository audit, external review and Local absorption are closed at material commit `660601f0e536e54190192ab3bdf9924e1c6d8b03` with `PATTERN_MATURITY=CROSS_SOURCE_CANDIDATE_WATCH` and `CVF_DISPOSITION=ADAPT_EXISTING_HANDOFF_ONLY`. The only supported residual is a future reviewed reference/binding handoff across existing evidence/diagnostic, Learning Candidate, governed Work Order and ASSF/CADP/version owners. No new component, implementation, experiment, provider/live call, public sync, admission or version activation is authorized. Any future G1-G7 work requires a new operator decision, new bounded problem formulation and fresh GC-018/source-verified Work Order. HRLTP-T2 remains paused; latest closed LHW wave remains LHW24.
+Mode: `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`. G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. G1 is stopped, G2-G6 remain parked and G7 research is closed with no automatic successor.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
 remains fail-closed; additive v2 is consumable from the reviewed current HEAD.
@@ -105,7 +105,7 @@ Live retry, external T5 adapter runtime, out-of-manifest production TypeScript e
 T4 closed as standalone static checker work with no hook wiring or production-source mutation.
 Prior unrelated checkpoints remain historical.
 
-The `broad external knowledge absorption` lane remains outside the current release; blocked work classes remain G1-G6 continuation, Party B/C, credential handling, Group 4 source/T3E, provider/runtime/deployment, and any new absorption tranche without fresh operator authority.
+The `broad external knowledge absorption` lane remains outside the current release; blocked work classes remain G1-G6 continuation, G7 implementation/experiment work, Party B/C, credential handling, Group 4 source/T3E, provider/runtime/deployment, and any new absorption tranche without fresh operator authority.
 
 External absorption preparation closed at `b4fb661bb`, path correction `100d6bd8b`: public `main` is `132371c3`; protocol-1.3 packet `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` is live-refreshed with 5/5 hashes matching. Each new repo still needs its own immutable pin, license evidence, and new task capsule.
 
