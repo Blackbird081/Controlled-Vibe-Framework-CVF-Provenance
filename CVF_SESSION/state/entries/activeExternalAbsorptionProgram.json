@@ -4,7 +4,7 @@
   "value": {
     "schemaVersion": "cvf.externalAbsorptionProgramContinuity.v1",
     "programId": "ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09",
-    "status": "LOCAL_RUNTIME_VALUE_RECOVERY",
+    "status": "TERMINAL_ACCOUNTED",
     "sourceIds": [
       "typesafe-ai__skills",
       "heygen-com__hyperframes",
@@ -12,18 +12,19 @@
     ],
     "sourceStates": {
       "typesafe-ai__skills": "TERMINAL_ACCEPTED",
-      "heygen-com__hyperframes": "INCOMPLETE",
+      "heygen-com__hyperframes": "TERMINAL_ACCEPTED",
       "kenhuangus__wikiskill": "TERMINAL_ACCEPTED"
     },
     "nextSourceId": "heygen-com__hyperframes",
-    "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
+    "nextActionClass": "EXIT_TO_GOVERNED_ROADMAP",
     "expansionAllowed": false,
-    "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
+    "exitDisposition": "TERMINAL_ACCOUNTING_ACCEPTED",
     "exitEvidence": [
       "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md",
       "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md",
       "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md",
-      "docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md"
+      "docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md",
+      "docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md"
     ],
     "operatorScopeDecision": null,
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"

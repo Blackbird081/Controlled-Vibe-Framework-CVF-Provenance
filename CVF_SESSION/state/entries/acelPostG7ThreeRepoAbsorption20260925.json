@@ -2,11 +2,13 @@
   "stateOrder": 2940,
   "stateKey": "acelPostG7ThreeRepoAbsorption20260925",
   "value": {
-    "status": "P0_ADAPTATIONS_APPLIED_COMMON_CLOSURE_BLOCKED",
+    "status": "SIX_INPUT_ROADMAP_ACTIVE_COMMON_CLOSURE_BLOCKED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
     "wikiSkillP0Commit": "b06c2c7ec",
     "hyperFramesP0Commit": "bac44fed6",
+    "sixInputRoadmap": "docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md",
+    "sixInputRoadmapCommit": "53bce992f",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -26,10 +28,10 @@
       "affectedPackageCompiles": "PASS",
       "preCommitGovernance": "90/90 PASS PER MATERIAL COMMIT"
     },
-    "pendingHandoffCount": 3,
-    "commonLocalClosure": "BLOCKED_PENDING_THREE_HANDOFF_REVIEWS",
-    "nextSourceId": "heygen-com__hyperframes",
-    "nextAction": "review three operator-relayed handoffs before common Local closure; do not infer content or disposition before receipt",
-    "boundary": "G1-G7 remain closed; no upstream import, provider/live, activation, certification mutation, deployment, production, public sync or common Local closure"
+    "pendingHandoffCount": 0,
+    "commonLocalClosure": "BLOCKED_PENDING_AKOE_P1_P3_AND_P4_RECONCILIATION",
+    "nextSourceId": "AKOE-P1",
+    "nextAction": "author a bounded GC-018 baseline and work order for AKOE-P1 Human Control and Positioning reconciliation; do not begin implementation from the roadmap alone",
+    "boundary": "G1-G7 remain closed; roadmap authority permits P1 dispatch authoring only; no upstream import, implementation, provider/live, activation, certification mutation, deployment, production, public sync or common Local closure"
   }
 }

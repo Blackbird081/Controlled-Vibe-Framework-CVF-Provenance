@@ -109,7 +109,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "acel_post_g7_multi_repo_absorption_active",
+  "currentMode": "acel_applied_knowledge_owner_enrichment_active",
   "previousMode": "acel_g1_g7_research_terminally_closed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -16691,7 +16691,7 @@
   "activeExternalAbsorptionProgram": {
     "schemaVersion": "cvf.externalAbsorptionProgramContinuity.v1",
     "programId": "ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09",
-    "status": "LOCAL_RUNTIME_VALUE_RECOVERY",
+    "status": "TERMINAL_ACCOUNTED",
     "sourceIds": [
       "typesafe-ai__skills",
       "heygen-com__hyperframes",
@@ -16699,28 +16699,31 @@
     ],
     "sourceStates": {
       "typesafe-ai__skills": "TERMINAL_ACCEPTED",
-      "heygen-com__hyperframes": "INCOMPLETE",
+      "heygen-com__hyperframes": "TERMINAL_ACCEPTED",
       "kenhuangus__wikiskill": "TERMINAL_ACCEPTED"
     },
     "nextSourceId": "heygen-com__hyperframes",
-    "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
+    "nextActionClass": "EXIT_TO_GOVERNED_ROADMAP",
     "expansionAllowed": false,
-    "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
+    "exitDisposition": "TERMINAL_ACCOUNTING_ACCEPTED",
     "exitEvidence": [
       "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md",
       "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md",
       "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md",
-      "docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md"
+      "docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md",
+      "docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md"
     ],
     "operatorScopeDecision": null,
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
   },
   "acelPostG7ThreeRepoAbsorption20260925": {
-    "status": "P0_ADAPTATIONS_APPLIED_COMMON_CLOSURE_BLOCKED",
+    "status": "SIX_INPUT_ROADMAP_ACTIVE_COMMON_CLOSURE_BLOCKED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
     "wikiSkillP0Commit": "b06c2c7ec",
     "hyperFramesP0Commit": "bac44fed6",
+    "sixInputRoadmap": "docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md",
+    "sixInputRoadmapCommit": "53bce992f",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -16740,11 +16743,11 @@
       "affectedPackageCompiles": "PASS",
       "preCommitGovernance": "90/90 PASS PER MATERIAL COMMIT"
     },
-    "pendingHandoffCount": 3,
-    "commonLocalClosure": "BLOCKED_PENDING_THREE_HANDOFF_REVIEWS",
-    "nextSourceId": "heygen-com__hyperframes",
-    "nextAction": "review three operator-relayed handoffs before common Local closure; do not infer content or disposition before receipt",
-    "boundary": "G1-G7 remain closed; no upstream import, provider/live, activation, certification mutation, deployment, production, public sync or common Local closure"
+    "pendingHandoffCount": 0,
+    "commonLocalClosure": "BLOCKED_PENDING_AKOE_P1_P3_AND_P4_RECONCILIATION",
+    "nextSourceId": "AKOE-P1",
+    "nextAction": "author a bounded GC-018 baseline and work order for AKOE-P1 Human Control and Positioning reconciliation; do not begin implementation from the roadmap alone",
+    "boundary": "G1-G7 remain closed; roadmap authority permits P1 dispatch authoring only; no upstream import, implementation, provider/live, activation, certification mutation, deployment, production, public sync or common Local closure"
   },
-  "nextAllowedMove": "PROGRAM_ID=ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09; NEXT_SOURCE_ID=heygen-com__hyperframes; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=THREE_REPOSITORY_P0_OWNER_ADAPTATIONS_APPLIED; CURRENT_TRANCHE_DISPOSITION=COMMON_LOCAL_CLOSURE_BLOCKED_PENDING_THREE_HANDOFF_REVIEWS; NEXT_STEP=REVIEW_THREE_OPERATOR_RELAYED_HANDOFFS_BEFORE_COMMON_LOCAL_CLOSURE; EXPANSION_ALLOWED=false. Jev P0 is closed at 9ac0ee8e59fa041ddaa93d725796c509400f257a, WikiSkill P0 at b06c2c7ec, and HyperFrames P0 at bac44fed6. WikiSkill strict-improvement/rollback evidence passed 8/8 focused tests; HyperFrames artifact-completion and scope-preservation evidence passed 9/9 focused tests; affected package compiles passed. HyperFrames remains INCOMPLETE only for terminal program accounting until the three additional operator-relayed handoffs are received and reconciled; their contents and dispositions must not be inferred. External web research remains advisory and may reopen only for a named unresolved source question. No upstream import, provider/live call, activation, certification mutation, deployment, production action, public sync, common Local closure, or G1-G7 successor is authorized. Latest closed LHW wave remains LHW24."
+  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=AUTHOR_GC018_AND_WORK_ORDER; CURRENT_TRANCHE_ACTION=SIX_INPUT_ROADMAP_COMMITTED_AT_53bce992f; CURRENT_TRANCHE_DISPOSITION=AKOE_P1_READY_FOR_GC018_AUTHORING; NEXT_STEP=AUTHOR_BOUNDED_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_BASELINE_AND_WORK_ORDER; EXPANSION_ALLOWED=false. The three-repository P0 program is terminal-accounted: Jev 9ac0ee8e5, WikiSkill b06c2c7ec, HyperFrames bac44fed6. The three operator-relayed handoffs are reviewed and routed by origin: Human Boundary ADAPT candidate, Positioning primarily CONFIRMED_EXISTING, Async WATCH with upstream factual claims BLOCKED_SOURCE_NOT_FOUND until Local pinning. External web research remains advisory and may reopen only for a named unresolved source question. P1 implementation, P2/P3, upstream import, provider/live, activation, certification mutation, deployment, production action, public sync, common Local closure, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24."
 }

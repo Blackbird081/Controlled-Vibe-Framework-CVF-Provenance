@@ -1,20 +1,20 @@
-# CVF Agent Handoff V63 - ACEL Post-G7 Three-Repository Absorption
+# CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `bac44fed6`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `53bce992f`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
 ## Purpose
 
-Carry the operator-authorized post-G7 Local absorption of TypeSafe Jev,
-HyperFrames, and WikiSkill while preserving terminal G1-G7 posture. All three
-selected P0 owner adaptations are applied; common Local closure remains blocked
-until three additional operator-relayed handoffs are reviewed.
+Carry the operator-authorized six-input applied-knowledge roadmap while
+preserving terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are
+applied; Human Boundary, Positioning, and Async are reviewed and routed;
+common Local closure remains blocked through AKOE P1-P4.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local source/runtime/value verifier. Phase: post-G7 three-repository absorption. Decision owner: Local under explicit operator continuation.
+Role: Local source/runtime/value verifier and dispatch author. Phase: six-input applied-knowledge owner enrichment. Decision owner: Local under explicit operator continuation.
 
 External research is advisory and closed unless Local identifies a named
 source question. Local owns private proof, implementation review and final
@@ -22,12 +22,12 @@ technical disposition; the operator remains roadmap/scope decision owner.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_post_g7_multi_repo_absorption_active`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=review three operator-relayed handoffs before common Local closure; parked checkpoint=common Local closure, G1-G7 successors, upstream import, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
+Startup acknowledged: current mode=`acel_applied_knowledge_owner_enrichment_active`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=author the bounded AKOE-P1 GC-018 baseline and work order; parked checkpoint=P1 implementation, P2/P3, common Local closure, G1-G7 successors, upstream import, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
 
 ## Current Mode
-`acel_post_g7_multi_repo_absorption_active`.
-The active program is restricted to `typesafe-ai__skills`,
-`heygen-com__hyperframes`, and `kenhuangus__wikiskill`; latest closed
+`acel_applied_knowledge_owner_enrichment_active`.
+The active roadmap is restricted to `ACEL-AKOE-R1`; the predecessor
+three-repository program is terminal-accounted and the latest closed
 learning-history wave remains `LHW24`.
 
 ## Active Boundary
@@ -37,6 +37,8 @@ T3B is closed with one Local-verified active v1 specification. Party B is a veri
 T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but both actual-mode prepare-only attempts failed before Party B/C execution. The final R1 attempt exposed a payload/control non-inheriting ACL dependency; separately authorized exact cleanup removed the failed root without wildcard use. The unaccepted worker delta was discarded. G1 is stopped and G2-G6 remain parked. G7 research is closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`; execution-evidence join sufficiency stays WATCH and no implementation/experiment authority follows. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is paused. No automatic successor exists.
 
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
+
+The three operator-relayed Human Boundary, Positioning, and Async handoffs are now reviewed and combined with Jev, WikiSkill, and HyperFrames in `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md`, material commit `53bce992f`. Human Boundary is an `ADAPT` candidate, Positioning is primarily `CONFIRMED_EXISTING`, and Async remains `WATCH` with upstream factual claims `BLOCKED_SOURCE_NOT_FOUND` until Local pinning. The prior three-repository program is terminal-accounted; common Local closure remains blocked by AKOE P1-P3 execution and P4 reconciliation.
 
 ## Latest Work / Changes
 
@@ -147,9 +149,10 @@ Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59
   `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`.
   Disposition: `ADAPT_EXISTING_HANDOFF_ONLY`; existing authority owners remain unchanged.
 - The 2026-09-24 packet-only post-G7 reconciliation at `c5bec0ff0` is historical and superseded for repository absorption. Corrective commit `a4437ee8f` marks its closure review `SUPERSEDED_BY_SOURCE_VERIFIED_ABSORPTION` and removes the redundant root decision; exact history remains in Git. Current authority is the 2026-09-25 pinned-source audit and Jev P0 review.
+- Applied-knowledge roadmap `ACEL-AKOE-R1` is committed at `53bce992f`. It reuses the three P0 implementations, absorbs the useful constraints from the three handoffs under CVF authority, and stages P1 Human/Positioning reconciliation, P2 durable-intent/projection audit, P3 provider-free integration proof, and P4 common closure. Pre-implementation passed 85/85 and material pre-commit passed 90/90.
 ## Next Allowed Move
 
-PROGRAM_ID=ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09; NEXT_SOURCE_ID=heygen-com__hyperframes; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=THREE_REPOSITORY_P0_OWNER_ADAPTATIONS_APPLIED; CURRENT_TRANCHE_DISPOSITION=COMMON_LOCAL_CLOSURE_BLOCKED_PENDING_THREE_HANDOFF_REVIEWS; NEXT_STEP=REVIEW_THREE_OPERATOR_RELAYED_HANDOFFS_BEFORE_COMMON_LOCAL_CLOSURE; EXPANSION_ALLOWED=false. Jev P0 is closed at `9ac0ee8e59fa041ddaa93d725796c509400f257a`, WikiSkill P0 at `b06c2c7ec`, and HyperFrames P0 at `bac44fed6`. WikiSkill strict-improvement/rollback evidence passed 8/8 focused tests; HyperFrames artifact-completion and scope-preservation evidence passed 9/9 focused tests; affected package compiles passed. HyperFrames remains INCOMPLETE only for terminal program accounting until the three additional operator-relayed handoffs are received and reconciled; their contents and dispositions must not be inferred. External web research remains advisory and may reopen only for a named unresolved source question. No upstream import, provider/live call, activation, certification mutation, deployment, production action, public sync, common Local closure, or G1-G7 successor is authorized. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=AUTHOR_GC018_AND_WORK_ORDER; CURRENT_TRANCHE_ACTION=SIX_INPUT_ROADMAP_COMMITTED_AT_53bce992f; CURRENT_TRANCHE_DISPOSITION=AKOE_P1_READY_FOR_GC018_AUTHORING; NEXT_STEP=AUTHOR_BOUNDED_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_BASELINE_AND_WORK_ORDER; EXPANSION_ALLOWED=false. The three-repository P0 program is terminal-accounted: Jev `9ac0ee8e5`, WikiSkill `b06c2c7ec`, HyperFrames `bac44fed6`. The three operator-relayed handoffs are reviewed and routed by origin: Human Boundary `ADAPT` candidate, Positioning primarily `CONFIRMED_EXISTING`, Async `WATCH` with upstream factual claims `BLOCKED_SOURCE_NOT_FOUND` until Local pinning. External web research remains advisory and may reopen only for a named unresolved source question. P1 implementation, P2/P3, upstream import, provider/live, activation, certification mutation, deployment, production action, public sync, common Local closure, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -167,11 +170,12 @@ PROGRAM_ID=ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09; NEXT_SOURCE_ID=heygen-com
 - G7 candidate-to-Work-Order implementation, evidence-join activation,
   derived-knowledge history expansion or any capability-evolution experiment;
 - provider/live work, runtime activation, public sync, deployment or production;
+- AKOE-P1 implementation before a reviewed GC-018 baseline/work order; AKOE-P2/P3 and common Local closure before their roadmap entry gates;
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: preserve terminal G1-G7 state and synchronize the operator-authorized post-G7 three-repository Local absorption after all three selected P0 owner adaptations; keep common Local closure, upstream import, provider/live, activation, public sync, principal execution, Group 4 source and T3E closed.
+Authorized guard-maintenance scope: preserve terminal G1-G7 state and synchronize the operator-authorized six-input applied-knowledge roadmap after the three repository P0 adaptations and three handoff reviews; open only AKOE-P1 GC-018/work-order authoring and keep P1 implementation, P2/P3, common Local closure, upstream import, provider/live, activation, public sync, principal execution, Group 4 source and T3E closed.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -183,30 +187,30 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit instruction on 2026-09-25 to proceed through WikiSkill P0 and HyperFrames P0, then review three further handoffs before common Local closure. Rollback boundary: revert only this continuity projection if rejected; preserve material commits `9ac0ee8e5`, `b06c2c7ec`, and `bac44fed6`, prior G1-G7 terminal closure, and accepted source history. No upstream import, new architecture, G1-G7 successor, principal execution, credential, Group 4 source/T3E, provider/live, activation, public, deployment, production, or common Local closure effect is authorized.
+Operator authorization: explicit instruction on 2026-09-25 to absorb useful external knowledge under CVF authority and build a roadmap combining Jev, WikiSkill, HyperFrames, Human Boundary, Positioning, and Async. Rollback boundary: revert only this continuity projection if rejected; preserve material commits `9ac0ee8e5`, `b06c2c7ec`, `bac44fed6`, and roadmap commit `53bce992f`, prior G1-G7 terminal closure, and accepted source history. No P1 implementation, P2/P3, upstream import, new architecture, G1-G7 successor, principal execution, credential, Group 4 source/T3E, provider/live, activation, public, deployment, production, or common Local closure effect is authorized.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
 | Actor | Local repository auditor, external-return reviewer and session-sync steward |
 | Provider or surface | private CVF workspace and operator-relayed external review files |
-| Session or invocation | ACEL G7 research closure continuity, 2026-09-24 |
+| Session or invocation | ACEL-AKOE-R1 roadmap continuity, 2026-09-25 |
 | Working directory | repository root |
 | Command or tool surface | governed source reads, external hash verification, apply_patch, state generator, governance gates and Git |
-| Target paths | G7 closure review and active continuity paths |
-| Allowed scope source | operator-relayed G7 audit task and explicit continuation after closure-handoff assessment |
-| Before status evidence | G1-G6 terminally closed; clean audit base `375730933`; external closure advisory only |
-| After status evidence | G7 Local research closure committed at `660601f0e`; G1-G7 have no automatic successor |
+| Target paths | active handoff, split session-state sources, generated aggregate/bootstrap, and compact front door |
+| Allowed scope source | operator instruction to absorb useful external knowledge under CVF authority and build the combined roadmap |
+| Before status evidence | three P0 adaptations committed; three handoff reviews pending; common Local closure blocked |
+| After status evidence | roadmap committed at `53bce992f`; prior source program terminal-accounted; AKOE-P1 dispatch authoring is the only next move |
 | Diff evidence | exact continuity manifest before session-only commit |
-| Approval boundary | G7 research closure and continuity projection only |
-| Claim boundary | no implementation, experiment, Party B/C, credential, Group 4 source, T3E, live/runtime/public, admission, activation or deployment effect |
+| Approval boundary | six-input roadmap continuity and P1 dispatch-authoring route only |
+| Claim boundary | no P1 implementation, P2/P3, common closure, Party B/C, credential, Group 4 source, T3E, live/runtime/public, admission, activation or deployment effect |
 | Agent type | Local orchestrator/reviewer and session-sync steward |
-| Invocation ID | `cvf-acel-g7-research-closure-v63-continuity-20260924` |
-| Expected manifest | handoff, front door, core, G7 closure state entry, next-move entry, generated state and bootstrap |
+| Invocation ID | `cvf-acel-akoe-r1-v63-continuity-20260925` |
+| Expected manifest | handoff, front door, core mode, active-program entry, three-repo/roadmap entry, next-move entry, generated state and bootstrap |
 | Actual changed set | verified before commit |
 | Manifest delta | exact source manifest plus two generated projections |
 | Deletion or rename disposition | no repository or temporary path deleted or renamed in this sync |
 
 ## Claim Boundary
 
-This handoff records terminal G1-G7 closure and the separate post-G7 three-repository absorption. Jev, WikiSkill, and HyperFrames P0 adaptations are applied; common Local closure remains blocked on three handoff reviews. No upstream import, G1-G7 successor, Party B/C proof, Group 4 source, T3E, provider/live, activation, certification mutation, public sync, deployment or production behavior is authorized.
+This handoff records terminal G1-G7 closure, terminal accounting of the three-repository P0 program, and the active six-input applied-knowledge roadmap. The three handoffs are reviewed; AKOE-P1 GC-018/work-order authoring is the only next move. No P1 implementation, P2/P3, common Local closure, upstream import, G1-G7 successor, Party B/C proof, Group 4 source, T3E, provider/live, activation, certification mutation, public sync, deployment or production behavior is authorized.
