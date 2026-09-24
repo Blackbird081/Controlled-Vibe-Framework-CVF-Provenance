@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: CLOSED_RECONCILED
+Status: SUPERSEDED_BY_SOURCE_VERIFIED_ABSORPTION
 
 docType: review
 
@@ -13,6 +13,22 @@ External absorption review: REQUIRED
 External absorption core: REQUIRED
 
 External knowledge intake routing: REQUIRED
+
+## Supersession Notice
+
+This packet-only reconciliation is retained as historical decision evidence,
+but it is not the current repository-absorption disposition. It reconciled
+operator-relayed handoffs while explicitly excluding upstream source audit and
+implementation. That bounded method was insufficient to decide practical
+absorption value and incorrectly converted "no new architecture" into "no new
+Local audit or implementation required."
+
+Current authority for the three repositories is
+`docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md`
+and its source-pinned evidence. Jev P0 is implemented; WikiSkill and
+HyperFrames remain active incomplete absorption work. The former root decision
+file was removed from the active tree after supersession; its exact bytes and
+hash remain recoverable from Git commit `c5bec0ff0`.
 
 ## Purpose
 
@@ -68,7 +84,7 @@ full upstream-repository absorption.
 | Active handoff | `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Task ID | `ACEL-POST-G7-FULL-CORPUS-ABSORPTION-T0` |
 | Relay method | `cvf.cross-workspace-evidence-relay@1.0.0` |
-| Local decision | `ACEL_POST_G7_FULL_CORPUS_LOCAL_ABSORPTION_DECISION.md` |
+| Historical Local decision | Git commit `c5bec0ff0`, path `ACEL_POST_G7_FULL_CORPUS_LOCAL_ABSORPTION_DECISION.md`; removed from active root after supersession |
 | Local decision SHA-256 | `F22B52FE3E7C6BF1817886F8A8E2FB3F4E9024102CDE42806986EDA9532DCB38` |
 | External closure return | `C:\Users\DELL\Downloads\ACEL_POST_G7_FULL_CORPUS_CANONICAL_CLOSURE.md` |
 | External closure SHA-256 | `C9914F10CA5B9DC719C92219FBBFD606F4237D4B3B4902A2BB032F43812009A2` |
@@ -93,7 +109,7 @@ The manifest hash is SHA-256 over the UTF-8, LF-terminated, filename-sorted
 | PG7-08 | `CLAUDE_CODE_JEV_TYPESAFE_CANONICAL_HANDOFF_V2.md` | `D70B461E8FBBE4F36F5BCD57C4275E9280816E67A7944FF9E3B324B44C42CEC8` | ADAPTED | ADAPT V2; V1 superseded |
 | PG7-09 | `ASYNC_RUNTIME_CANONICAL_HANDOFF.md` | `A85D8FD35495E94257DF1D3A8BFA238D3E5661EAA04B52E156B4886987A4525B` | ADAPTED | ADAPT into existing MAO durability owners |
 | PG7-10 | `HUMAN_AGENT_BOUNDARY_CANONICAL_HANDOFF.md` | `29D52AF73990C4A8C6C678353951CB9A9FA166ADD7CE21A91F1255DB45B984EF` | NO_NEW_VALUE | NO_NEW_VALUE beyond existing doctrine; retain as constraint evidence |
-| PG7-11 | `ACEL_POST_G7_FULL_CORPUS_LOCAL_ABSORPTION_DECISION.md` | `F22B52FE3E7C6BF1817886F8A8E2FB3F4E9024102CDE42806986EDA9532DCB38` | READ | ABSORB as immediate Local predecessor |
+| PG7-11 | historical `ACEL_POST_G7_FULL_CORPUS_LOCAL_ABSORPTION_DECISION.md` at Git commit `c5bec0ff0` | `F22B52FE3E7C6BF1817886F8A8E2FB3F4E9024102CDE42806986EDA9532DCB38` | READ | Retain as superseded decision evidence; not an active root artifact |
 | PG7-12 | `ACEL_POST_G7_FULL_CORPUS_CANONICAL_CLOSURE.md` | `C9914F10CA5B9DC719C92219FBBFD606F4237D4B3B4902A2BB032F43812009A2` | ADAPTED | Accept content after Local normalization; REJECT self-canonicalization |
 
 No item is `DEFERRED`, `BLOCKED_UNREADABLE` or unresolved. `REJECTED` applies

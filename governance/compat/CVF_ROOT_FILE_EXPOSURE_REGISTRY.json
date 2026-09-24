@@ -20,10 +20,6 @@
   "ignoredRootFiles": [],
   "files": [
     {
-      "path": "ACEL_POST_G7_FULL_CORPUS_LOCAL_ABSORPTION_DECISION.md",
-      "exposureClass": "INTERNAL_ONLY"
-    },
-    {
       "path": ".cvf-c5-web-dev.err.log",
       "exposureClass": "INTERNAL_ONLY"
     },
