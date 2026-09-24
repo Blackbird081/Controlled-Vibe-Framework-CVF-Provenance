@@ -144,7 +144,7 @@ External agent memory files: non-canonical convenience only.
 - G7 audit/review/Local absorption closed at `660601f0e`; canonical review:
   `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`.
   Disposition: `ADAPT_EXISTING_HANDOFF_ONLY`; existing authority owners remain unchanged.
-
+- The separate post-G7 corpus packet is closed by Local at material commit `c5bec0ff04267271226280e377b4748a8cf276ff`; review `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md`: `ABSORB_WITH_MAPPING_CORRECTIONS`; external content accepted after normalization, with no independent CVF authority.
 ## T3B Readiness Inputs
 
 The approved principal is dedicated standard local account `cvf-g1-approver`,
@@ -153,7 +153,7 @@ principal-policy decision. This identity evidence is not source/activation proof
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=STOPPED_NO_SUCCESSOR; CURRENT_TRANCHE_ACTION=G1_G7_RESEARCH_CLOSURE_20260924; CURRENT_TRANCHE_DISPOSITION=G1_G6_TERMINALLY_CLOSED_G7_RESEARCH_CLOSED_ADAPT_HANDOFF_ONLY; NEXT_STEP=NONE_UNLESS_NEW_OPERATOR_ROADMAP; EXPANSION_ALLOWED=false. G1 remains stopped and G2-G6 remain parked. G7 research is closed at material commit `660601f0e536e54190192ab3bdf9924e1c6d8b03` with `ADAPT_EXISTING_HANDOFF_ONLY`; no new component, implementation, experiment, provider/live, public, admission or version activation is authorized. Any future G1-G7 work requires a new operator decision, bounded problem formulation and fresh GC-018/source-verified Work Order. HRLTP-T2 remains paused; latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=STOPPED_NO_SUCCESSOR; CURRENT_TRANCHE_ACTION=POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_20260924; CURRENT_TRANCHE_DISPOSITION=G1_STOPPED_G2_G6_PARKED_G7_RESEARCH_CLOSED_POST_G7_CORPUS_CLOSED_ABSORB_WITH_MAPPING_CORRECTIONS; NEXT_STEP=NONE_UNLESS_NEW_OPERATOR_ROADMAP; EXPANSION_ALLOWED=false. The bounded post-G7 research packet is closed by Local at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md`; external content was accepted after Local normalization and external self-canonicalization was rejected. G1 remains stopped, G2-G6 remain parked and G7 remains `G7_RESEARCH_CLOSED / ADAPT_EXISTING_HANDOFF_ONLY`. No new Emerging Pattern, capability-model structural change, CVF component, Local audit, implementation, experiment, provider/live, public, admission, version activation or automatic successor is authorized. Any future work requires a new operator roadmap, bounded problem formulation and applicable fresh governed authority. HRLTP-T2 remains paused; latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -175,14 +175,14 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_A
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: preserve terminal G1-G6 closure and synchronize the operator-authorized G7 research closure; keep every G1-G7 implementation/experiment path, principal execution, source and T3E closed.
+Authorized guard-maintenance scope: preserve terminal G1-G7 state and synchronize the operator-authorized post-G7 research-absorption closure; keep every implementation/experiment path, principal execution, source and T3E closed.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/acelG7CrossRunCapabilityEvolutionResearchClosure20260924.json`
+- `CVF_SESSION/state/entries/acelG7CrossRunCapabilityEvolutionResearchClosure20260924.json`; `CVF_SESSION/state/entries/acelPostG7FullCorpusAbsorptionClosure20260924.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
@@ -212,8 +212,9 @@ Operator authorization: explicit continuation after Local explained that the ext
 
 ## Claim Boundary
 
-This handoff records terminal G1-G6 closure plus G7 research closure at
-`ADAPT_EXISTING_HANDOFF_ONLY`. It authorizes no implementation, experiment,
-retry, Party B/C proof, Group 4 source, T3E, G1-G7 successor, provider/live,
-runtime, admission, version activation, public-sync, deployment or production
-behavior.
+This handoff records terminal G1-G6 closure, G7 research closure at
+`ADAPT_EXISTING_HANDOFF_ONLY`, and the bounded post-G7 corpus closure at
+`ABSORB_WITH_MAPPING_CORRECTIONS`. It authorizes no implementation,
+experiment, retry, Party B/C proof, Group 4 source, T3E, G1-G7 successor,
+provider/live, runtime, admission, version activation, public-sync, deployment
+or production behavior.
