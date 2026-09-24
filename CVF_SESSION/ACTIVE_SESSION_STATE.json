@@ -16700,9 +16700,9 @@
     "sourceStates": {
       "typesafe-ai__skills": "TERMINAL_ACCEPTED",
       "heygen-com__hyperframes": "INCOMPLETE",
-      "kenhuangus__wikiskill": "INCOMPLETE"
+      "kenhuangus__wikiskill": "TERMINAL_ACCEPTED"
     },
-    "nextSourceId": "kenhuangus__wikiskill",
+    "nextSourceId": "heygen-com__hyperframes",
     "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
     "expansionAllowed": false,
     "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
@@ -16716,9 +16716,11 @@
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
   },
   "acelPostG7ThreeRepoAbsorption20260925": {
-    "status": "ACTIVE_JEV_P0_CLOSED",
+    "status": "P0_ADAPTATIONS_APPLIED_COMMON_CLOSURE_BLOCKED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
+    "wikiSkillP0Commit": "b06c2c7ec",
+    "hyperFramesP0Commit": "bac44fed6",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -16733,11 +16735,16 @@
       "typeScriptTests": "84/84 PASS",
       "pythonTests": "61/61 PASS",
       "typeScriptCompile": "PASS",
-      "preCommitGovernance": "90/90 PASS"
+      "wikiSkillFocusedTests": "8/8 PASS",
+      "hyperFramesFocusedTests": "9/9 PASS",
+      "affectedPackageCompiles": "PASS",
+      "preCommitGovernance": "90/90 PASS PER MATERIAL COMMIT"
     },
-    "nextSourceId": "kenhuangus__wikiskill",
-    "nextAction": "smallest proposal-impact and rollback-evidence refinement at existing ASSF/Learning Plane owners",
-    "boundary": "G1-G7 remain closed; no upstream import, provider/live, activation, certification mutation, deployment, production or public sync"
+    "pendingHandoffCount": 3,
+    "commonLocalClosure": "BLOCKED_PENDING_THREE_HANDOFF_REVIEWS",
+    "nextSourceId": "heygen-com__hyperframes",
+    "nextAction": "review three operator-relayed handoffs before common Local closure; do not infer content or disposition before receipt",
+    "boundary": "G1-G7 remain closed; no upstream import, provider/live, activation, certification mutation, deployment, production, public sync or common Local closure"
   },
-  "nextAllowedMove": "PROGRAM_ID=ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09; NEXT_SOURCE_ID=kenhuangus__wikiskill; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=JEV_P0_DECISION_EVIDENCE_ADAPTATION_CLOSED; CURRENT_TRANCHE_DISPOSITION=SOURCE_RECONCILED_JEV_P0_CLOSED_HYPERFRAMES_WIKISKILL_INCOMPLETE; NEXT_STEP=WIKISKILL_P0_PROPOSAL_IMPACT_ROLLBACK_EVIDENCE_EXISTING_OWNER; EXPANSION_ALLOWED=false. Operator authorization on 2026-09-25 opened a separate Local three-repository absorption program without reopening G1-G7. Source intake and Jev P0 are closed at material commit 9ac0ee8e59fa041ddaa93d725796c509400f257a; audit: docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md; review: docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md. Jev decision evidence now binds decision context, incomplete candidate escape, and EVIDENCE_ONLY authority. Next is the smallest WikiSkill-derived proposal-impact and rollback-evidence refinement at existing ASSF/Learning Plane owners. HyperFrames remains incomplete and follows as a separate dispatch/handoff refinement. External web research is advisory and may reopen only for a named unresolved source question. No upstream code/dependency import, provider/live call, activation, certification mutation, deployment, production action, public sync, or G1-G7 successor is authorized. Latest closed LHW wave remains LHW24."
+  "nextAllowedMove": "PROGRAM_ID=ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09; NEXT_SOURCE_ID=heygen-com__hyperframes; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=THREE_REPOSITORY_P0_OWNER_ADAPTATIONS_APPLIED; CURRENT_TRANCHE_DISPOSITION=COMMON_LOCAL_CLOSURE_BLOCKED_PENDING_THREE_HANDOFF_REVIEWS; NEXT_STEP=REVIEW_THREE_OPERATOR_RELAYED_HANDOFFS_BEFORE_COMMON_LOCAL_CLOSURE; EXPANSION_ALLOWED=false. Jev P0 is closed at 9ac0ee8e59fa041ddaa93d725796c509400f257a, WikiSkill P0 at b06c2c7ec, and HyperFrames P0 at bac44fed6. WikiSkill strict-improvement/rollback evidence passed 8/8 focused tests; HyperFrames artifact-completion and scope-preservation evidence passed 9/9 focused tests; affected package compiles passed. HyperFrames remains INCOMPLETE only for terminal program accounting until the three additional operator-relayed handoffs are received and reconciled; their contents and dispositions must not be inferred. External web research remains advisory and may reopen only for a named unresolved source question. No upstream import, provider/live call, activation, certification mutation, deployment, production action, public sync, common Local closure, or G1-G7 successor is authorized. Latest closed LHW wave remains LHW24."
 }

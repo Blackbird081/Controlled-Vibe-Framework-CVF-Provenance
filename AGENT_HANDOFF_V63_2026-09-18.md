@@ -1,16 +1,16 @@
 # CVF Agent Handoff V63 - ACEL Post-G7 Three-Repository Absorption
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `b06c2c7ec`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `bac44fed6`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
 ## Purpose
 
 Carry the operator-authorized post-G7 Local absorption of TypeSafe Jev,
-HyperFrames, and WikiSkill while preserving terminal G1-G7 posture. Jev P0 is
-closed; WikiSkill is the next incomplete source lane; HyperFrames follows as a
-separate existing-owner refinement.
+HyperFrames, and WikiSkill while preserving terminal G1-G7 posture. All three
+selected P0 owner adaptations are applied; common Local closure remains blocked
+until three additional operator-relayed handoffs are reviewed.
 
 ## Scope / Target / Owner Boundary
 
@@ -22,7 +22,7 @@ technical disposition; the operator remains roadmap/scope decision owner.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_post_g7_multi_repo_absorption_active`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=WikiSkill P0 proposal-impact and rollback-evidence refinement at existing owners; parked checkpoint=G1-G7 successors, upstream import, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
+Startup acknowledged: current mode=`acel_post_g7_multi_repo_absorption_active`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=review three operator-relayed handoffs before common Local closure; parked checkpoint=common Local closure, G1-G7 successors, upstream import, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
 
 ## Current Mode
 `acel_post_g7_multi_repo_absorption_active`.
@@ -149,7 +149,7 @@ Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59
 - The 2026-09-24 packet-only post-G7 reconciliation at `c5bec0ff0` is historical and superseded for repository absorption. Corrective commit `a4437ee8f` marks its closure review `SUPERSEDED_BY_SOURCE_VERIFIED_ABSORPTION` and removes the redundant root decision; exact history remains in Git. Current authority is the 2026-09-25 pinned-source audit and Jev P0 review.
 ## Next Allowed Move
 
-PROGRAM_ID=ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09; NEXT_SOURCE_ID=kenhuangus__wikiskill; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=JEV_P0_DECISION_EVIDENCE_ADAPTATION_CLOSED; CURRENT_TRANCHE_DISPOSITION=SOURCE_RECONCILED_JEV_P0_CLOSED_HYPERFRAMES_WIKISKILL_INCOMPLETE; NEXT_STEP=WIKISKILL_P0_PROPOSAL_IMPACT_ROLLBACK_EVIDENCE_EXISTING_OWNER; EXPANSION_ALLOWED=false. Operator authorization on 2026-09-25 opened a separate Local three-repository absorption program without reopening G1-G7. Source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`; audit: `docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md`; review: `docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md`. Jev decision evidence now binds decision context, incomplete candidate escape, and EVIDENCE_ONLY authority. Next is the smallest WikiSkill-derived proposal-impact and rollback-evidence refinement at existing ASSF/Learning Plane owners. HyperFrames remains incomplete and follows as a separate dispatch/handoff refinement. External web research is advisory and may reopen only for a named unresolved source question. No upstream code/dependency import, provider/live call, activation, certification mutation, deployment, production action, public sync, or G1-G7 successor is authorized. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09; NEXT_SOURCE_ID=heygen-com__hyperframes; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=THREE_REPOSITORY_P0_OWNER_ADAPTATIONS_APPLIED; CURRENT_TRANCHE_DISPOSITION=COMMON_LOCAL_CLOSURE_BLOCKED_PENDING_THREE_HANDOFF_REVIEWS; NEXT_STEP=REVIEW_THREE_OPERATOR_RELAYED_HANDOFFS_BEFORE_COMMON_LOCAL_CLOSURE; EXPANSION_ALLOWED=false. Jev P0 is closed at `9ac0ee8e59fa041ddaa93d725796c509400f257a`, WikiSkill P0 at `b06c2c7ec`, and HyperFrames P0 at `bac44fed6`. WikiSkill strict-improvement/rollback evidence passed 8/8 focused tests; HyperFrames artifact-completion and scope-preservation evidence passed 9/9 focused tests; affected package compiles passed. HyperFrames remains INCOMPLETE only for terminal program accounting until the three additional operator-relayed handoffs are received and reconciled; their contents and dispositions must not be inferred. External web research remains advisory and may reopen only for a named unresolved source question. No upstream import, provider/live call, activation, certification mutation, deployment, production action, public sync, common Local closure, or G1-G7 successor is authorized. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -171,7 +171,7 @@ PROGRAM_ID=ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09; NEXT_SOURCE_ID=kenhuangus
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: preserve terminal G1-G7 state and synchronize the operator-authorized post-G7 three-repository Local absorption after the Jev P0 material commit; keep upstream import, provider/live, activation, public sync, principal execution, Group 4 source and T3E closed.
+Authorized guard-maintenance scope: preserve terminal G1-G7 state and synchronize the operator-authorized post-G7 three-repository Local absorption after all three selected P0 owner adaptations; keep common Local closure, upstream import, provider/live, activation, public sync, principal execution, Group 4 source and T3E closed.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -183,7 +183,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit instruction on 2026-09-25 to proceed with Local absorption under the established Local decision-owner rule and use external web research only for a concrete Local-identified gap. Rollback boundary: revert only this post-G7 three-repository continuity projection if rejected; preserve material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`, prior G1-G7 terminal closure and accepted source history. No upstream import, new architecture, G1-G7 successor, principal execution, credential, Group 4 source/T3E, provider/live, activation, public, deployment or production effect is authorized.
+Operator authorization: explicit instruction on 2026-09-25 to proceed through WikiSkill P0 and HyperFrames P0, then review three further handoffs before common Local closure. Rollback boundary: revert only this continuity projection if rejected; preserve material commits `9ac0ee8e5`, `b06c2c7ec`, and `bac44fed6`, prior G1-G7 terminal closure, and accepted source history. No upstream import, new architecture, G1-G7 successor, principal execution, credential, Group 4 source/T3E, provider/live, activation, public, deployment, production, or common Local closure effect is authorized.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
@@ -209,4 +209,4 @@ Operator authorization: explicit instruction on 2026-09-25 to proceed with Local
 
 ## Claim Boundary
 
-This handoff records terminal G1-G7 closure and the separate post-G7 three-repository absorption. Jev P0 is closed at the existing offline owner; WikiSkill is next and HyperFrames remains incomplete. No upstream import, G1-G7 successor, Party B/C proof, Group 4 source, T3E, provider/live, activation, certification mutation, public sync, deployment or production behavior is authorized.
+This handoff records terminal G1-G7 closure and the separate post-G7 three-repository absorption. Jev, WikiSkill, and HyperFrames P0 adaptations are applied; common Local closure remains blocked on three handoff reviews. No upstream import, G1-G7 successor, Party B/C proof, Group 4 source, T3E, provider/live, activation, certification mutation, public sync, deployment or production behavior is authorized.

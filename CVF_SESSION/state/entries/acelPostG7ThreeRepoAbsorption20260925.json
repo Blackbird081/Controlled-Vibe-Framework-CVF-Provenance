@@ -2,9 +2,11 @@
   "stateOrder": 2940,
   "stateKey": "acelPostG7ThreeRepoAbsorption20260925",
   "value": {
-    "status": "ACTIVE_JEV_P0_CLOSED",
+    "status": "P0_ADAPTATIONS_APPLIED_COMMON_CLOSURE_BLOCKED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
+    "wikiSkillP0Commit": "b06c2c7ec",
+    "hyperFramesP0Commit": "bac44fed6",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -19,10 +21,15 @@
       "typeScriptTests": "84/84 PASS",
       "pythonTests": "61/61 PASS",
       "typeScriptCompile": "PASS",
-      "preCommitGovernance": "90/90 PASS"
+      "wikiSkillFocusedTests": "8/8 PASS",
+      "hyperFramesFocusedTests": "9/9 PASS",
+      "affectedPackageCompiles": "PASS",
+      "preCommitGovernance": "90/90 PASS PER MATERIAL COMMIT"
     },
-    "nextSourceId": "kenhuangus__wikiskill",
-    "nextAction": "smallest proposal-impact and rollback-evidence refinement at existing ASSF/Learning Plane owners",
-    "boundary": "G1-G7 remain closed; no upstream import, provider/live, activation, certification mutation, deployment, production or public sync"
+    "pendingHandoffCount": 3,
+    "commonLocalClosure": "BLOCKED_PENDING_THREE_HANDOFF_REVIEWS",
+    "nextSourceId": "heygen-com__hyperframes",
+    "nextAction": "review three operator-relayed handoffs before common Local closure; do not infer content or disposition before receipt",
+    "boundary": "G1-G7 remain closed; no upstream import, provider/live, activation, certification mutation, deployment, production, public sync or common Local closure"
   }
 }

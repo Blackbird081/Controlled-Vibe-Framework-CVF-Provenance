@@ -13,9 +13,9 @@
     "sourceStates": {
       "typesafe-ai__skills": "TERMINAL_ACCEPTED",
       "heygen-com__hyperframes": "INCOMPLETE",
-      "kenhuangus__wikiskill": "INCOMPLETE"
+      "kenhuangus__wikiskill": "TERMINAL_ACCEPTED"
     },
-    "nextSourceId": "kenhuangus__wikiskill",
+    "nextSourceId": "heygen-com__hyperframes",
     "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
     "expansionAllowed": false,
     "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
