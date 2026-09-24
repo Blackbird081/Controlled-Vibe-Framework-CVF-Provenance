@@ -1,0 +1,49 @@
+{
+  "registryOrder": 198,
+  "id": "acel-post-g7-typesafe-jev-source-intake",
+  "corpusType": "EXTERNAL_SOURCE",
+  "displayName": "ACEL post-G7 TypeSafe Jev source-level intake",
+  "scopePaths": [
+    ".private_reference/source_mirrors/typesafe-ai__skills/"
+  ],
+  "fileCount": 6,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "ACEL-POST-G7-REFINEMENT-T0",
+  "scanDate": "2026-09-25",
+  "manifestHash": "324a4d01db0d1920e06f31a720f33d5a8194b7aaceaa86310dd480f84b87a88d",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "manifestPath": "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_EVIDENCE_2026-09-25.json",
+  "packetPath": "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md",
+  "completionReviewPath": "docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md",
+  "gcBaselineRef": "OPERATOR_DIRECT_AUTHORIZATION_2026-09-25",
+  "verdicts": {
+    "gc047": "PASS_COMPLETE_SOURCE_READ",
+    "gc048": "PASS_OWNER_ROUTED",
+    "gc050": "PASS_VALUE_CONVERSION_RECORDED"
+  },
+  "semanticRegions": [
+    "typed bounded judgment primitives",
+    "probability and confidence semantics",
+    "code-owned workflow and side effects",
+    "model jaggedness and negative routing classes"
+  ],
+  "priorAbsorption": "The bounded post-G7 research reconciliation classified TypeSafe Jev as ENRICH_EXISTING without a Local upstream mirror or source-level use-case recovery. This entry opens the distinct Local source-intake program authorized by the operator on 2026-09-25; it does not reopen G1-G7.",
+  "findings": [
+    {
+      "id": "ACEL-POST-G7-JEV-01",
+      "summary": "Decision-state binding, candidate-space completeness/no-match semantics, confidence-versus-authority separation, and requested-versus-actual executor identity are material refinements.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Implement the smallest cross-language behavioral-evidence refinement with negative tests.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "candidate completeness",
+    "no-match decision outcome",
+    "decision context hash",
+    "requested versus actual executor identity"
+  ],
+  "nextScanRecommendation": "Source scan complete. Implement the smallest cross-language behavioral-evidence refinement with negative tests; consult external research only if a named primary-source ambiguity remains."
+}

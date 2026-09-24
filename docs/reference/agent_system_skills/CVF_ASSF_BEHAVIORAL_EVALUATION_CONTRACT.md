@@ -13,6 +13,10 @@ Batch ID: ACEL-G3-T2-BEHAVIORAL-EVALUATION-CONTRACT-IMPLEMENTATION
 Rework: ACEL-G3-T2-R1-CONSOLIDATED-SEMANTIC-REWORK (R1-01, R1-02, R1-03,
 R1-04, R1-06 applied; see `## R1 Rework Disposition` below)
 
+Post-G7 refinement: ACEL-POST-G7-REFINEMENT-T0 applies source-verified Jev
+decision-evidence boundaries without changing this contract's owner,
+certification authority, capture modes, or runtime scope.
+
 EPISTEMIC_PROCESS_NA_WITH_REASON: fixed-schema contract document; it defines
 a normative evaluation model and vocabulary rather than testing an
 evidence-comparison hypothesis.
@@ -171,6 +175,20 @@ reviewer decision).
     must never silently consume a comparison pair; an unexpected pair
     supplied for a `NONE`-role fixture is itself rejected
     (`UNEXPECTED_PAIR_FOR_NONE_ROLE`).
+14. **Decision-context binding.** Any judgment-bearing fixture and trace must
+    carry the same canonical `decisionContextHash`. A source-equivalent trace
+    produced against different state is fail-closed
+    `DECISION_CONTEXT_MISMATCH`; typed output does not make a decision portable
+    across state changes.
+15. **Candidate-space and no-match semantics.** A fixture declares either
+    `candidateSpaceMode: COMPLETE` with an explicit null `noMatchOutcome`, or
+    `candidateSpaceMode: INCOMPLETE_WITH_ESCAPE` with a non-empty escape
+    outcome. An incomplete candidate set may never force the grader to select
+    one of the supplied candidates as though the set were exhaustive.
+16. **Judgment is evidence, not authority.** `judgmentAuthority` has the only
+    admitted value `EVIDENCE_ONLY`. Probability, confidence, or a typed choice
+    may inform routing, verification, or escalation, but never grants tool,
+    side-effect, certification, or promotion authority.
 
 ## Cross-Language Evidence Schema
 
@@ -188,6 +206,10 @@ capture mode or baseline role applies:
 | `fixtureId` | non-empty string | always | missing/empty fails closed |
 | `fixtureContentHash` | 64-char lowercase hex SHA-256 | always | missing/malformed fails closed |
 | `sourceContentHash` | 64-char lowercase hex SHA-256 | always | missing/malformed fails closed; mismatch against the package's own `sourceContentHash` fails closed as stale |
+| `decisionContextHash` | 64-char lowercase hex SHA-256 | always | missing/malformed fails closed; trace/fixture mismatch is `DECISION_CONTEXT_MISMATCH` |
+| `candidateSpaceMode` | `COMPLETE` \| `INCOMPLETE_WITH_ESCAPE` | always | missing/unknown fails closed |
+| `noMatchOutcome` | null or non-empty string | always | must be explicit null for `COMPLETE`; must be non-empty for `INCOMPLETE_WITH_ESCAPE` |
+| `judgmentAuthority` | `EVIDENCE_ONLY` | always | any other value fails closed; judgment evidence never grants action authority |
 | `repeatPolicy` | `DETERMINISTIC` \| `STOCHASTIC` | always | missing/unknown fails closed |
 | `repeatsObserved` | integer | always | missing/wrong-typed fails closed |
 | `repeatsRequired` | integer | always | missing/wrong-typed fails closed; must equal exactly 1 for `DETERMINISTIC` or exactly 3 for `STOCHASTIC`, else fails closed as inconsistent |
@@ -218,6 +240,12 @@ otherwise treat it as falsy-equivalent to a deliberate negative value.
 | `STALE_REPLAY_PROVENANCE` | a mock/replay trace is expired, provenance-less, or source-hash-mismatched |
 | `NONEQUIVALENT_BASELINE_PAIR` | a WITH/WITHOUT pair does not share byte-identical canonical input bytes |
 | `INSUFFICIENT_REPEAT_EVIDENCE` | a stochastic fixture has fewer than three consecutive passing repeats |
+
+`DECISION_CONTEXT_MISMATCH` is a fail-closed defect class under
+`FAIL_WITH_DEFECTS`: the trace and fixture describe the same source but not
+the same decision state. It is deliberately not a separate top-level result,
+so this refinement does not expand the established seven-result admission
+vocabulary.
 
 ## Dependency Direction (Unchanged From G3 T1)
 
@@ -303,6 +331,9 @@ current 79/79 and 55/55 counts obtained after reviewer repair and closure.
 | Stochastic under-sampling | Fewer than three consecutive passing repeats on a stochastic fixture is fail-closed `INSUFFICIENT_REPEAT_EVIDENCE` (rule 4); more than the required count is equally rejected under the exact-count rule. |
 | Positive-only or negative-only fixture set | A fixture set missing either class is rejected at admission before any individual fixture is graded (rule 12). |
 | Missing or same-role baseline pair | A `WITH`/`WITHOUT` fixture with no pair, a same-role pair, or a malformed role is rejected both by explicit admission and on the mandatory grading path (rule 13). |
+| Judgment applied to changed state | A trace whose `decisionContextHash` differs from the fixture fails with `DECISION_CONTEXT_MISMATCH` (rule 14). |
+| Incomplete candidates without escape | `INCOMPLETE_WITH_ESCAPE` without a non-empty `noMatchOutcome` is malformed and fails closed (rule 15). |
+| Probability treated as authority | Any `judgmentAuthority` other than `EVIDENCE_ONLY` is malformed and fails closed (rule 16). |
 
 ## Dual Agent Surface Matrix
 

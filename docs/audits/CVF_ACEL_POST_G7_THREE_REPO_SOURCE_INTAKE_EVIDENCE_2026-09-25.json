@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "cvf.externalSourceIntakeEvidence.v1",
+  "programId": "ACEL-POST-G7-REFINEMENT-T0",
+  "executionBaseHead": "97accc3df91fd6733a1aa1305b29fc0bd42009ef",
+  "operatorAuthorizationDate": "2026-09-25",
+  "roleBoundary": {
+    "externalRole": "ADVISORY_RESEARCH_ONLY_WHEN_LOCAL_GAP_IS_NAMED",
+    "localRole": "SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION",
+    "finalDecisionOwner": "LOCAL"
+  },
+  "sources": [
+    {
+      "sourceId": "typesafe-jev",
+      "repository": "https://github.com/typesafe-ai/skills.git",
+      "mirror": ".private_reference/source_mirrors/typesafe-ai__skills/",
+      "selectedPin": "65a39f393687675ce170e6094757de20370365b9",
+      "gitTree": "f98d7551952c295e0cba2e47d419bf51e110bad2",
+      "trackedFileCount": 6,
+      "pathSetSha256": "324a4d01db0d1920e06f31a720f33d5a8194b7aaceaa86310dd480f84b87a88d",
+      "license": "MIT",
+      "manifestScope": "ALL_TRACKED_FILES",
+      "readCount": 6,
+      "deferredCount": 0,
+      "unreadableCount": 0,
+      "corpusVerdict": "COMPLETE",
+      "readPaths": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        "LICENSE",
+        "README.md",
+        "skills/typesafe-ai/LICENSE",
+        "skills/typesafe-ai/SKILL.md"
+      ],
+      "sourceAuthority": "PINNED_REPOSITORY_PLUS_CURRENT_TYPESAFE_PRIMARY_DOCUMENTATION",
+      "findings": [
+        "Jev exposes bounded natural-language judgments as typed Choice, Noul, and Score data that code composes; code retains workflow and side-effect control.",
+        "Probability or distribution concentration is evidence for routing, not proof of correctness or permission to act; thresholds require target-domain validation.",
+        "Candidate-space completeness, an explicit no-match escape, decision-state binding, requested-versus-actual executor identity, and jaggedness failure classes are practical hardening inputs for existing CVF behavioral evaluation and routing owners.",
+        "Typed output guarantees an interface, not truth; arithmetic, date comparison, indirection, irrelevant context, adversarial content, and contradictory criteria remain named failure modes."
+      ]
+    },
+    {
+      "sourceId": "hyperframes-faceless-explainer",
+      "repository": "https://github.com/heygen-com/hyperframes.git",
+      "mirror": ".private_reference/source_mirrors/heygen-com__hyperframes/",
+      "selectedPin": "7129340ae8e96fc32bb45102174528dd5ecafb56",
+      "gitTree": "15e3d816f5d024ec2618bf574b6f91db8ca76e90",
+      "trackedFileCount": 8061,
+      "pathSetSha256": "9b70b00d51683e1718e927f95e31e6605b018aaf38c39cb2910c7f53f0660236",
+      "license": "Apache-2.0",
+      "manifestScope": "WHOLE_REPOSITORY_STRUCTURAL_SURVEY_PLUS_SELECTED_CAPABILITY",
+      "readCount": 11,
+      "deferredCount": 8050,
+      "unreadableCount": 0,
+      "corpusVerdict": "PARTIAL",
+      "readPaths": [
+        "skills/faceless-explainer/SKILL.md",
+        "skills/faceless-explainer/references/cut-catalog.md",
+        "skills/faceless-explainer/references/motion-language.md",
+        "skills/faceless-explainer/references/story-design.md",
+        "skills/faceless-explainer/references/visual-design.md",
+        "skills/faceless-explainer/sub-agents/frame-worker.md",
+        "skills/hyperframes/references/brief-contract.md",
+        "skills/hyperframes/references/frame-worker-core.md",
+        "skills/hyperframes/references/production-loop.md",
+        "skills/hyperframes/references/review-loop.md",
+        "skills/hyperframes/references/subagent-dispatch.md"
+      ],
+      "sourceAnomalies": [
+        "Git LFS reported 68 tracked paths that should have been pointers but were materialized as ordinary files; selected Markdown capability paths were unaffected and readable."
+      ],
+      "findings": [
+        "The workflow is an artifact dependency chain from locked brief through design truth, storyboard, bounded frame packets, assembly, verification, approval, and render.",
+        "A child is complete only when the expected artifact exists and verifies on disk; a harness completion notification is insufficient.",
+        "Concurrency limits reduce parallelism only; they must never drop, merge, or silently narrow required work.",
+        "Workers receive complete packets and exact write ownership, while integration claims are reserved for the assembly-level verifier."
+      ]
+    },
+    {
+      "sourceId": "wikiskill-independent-reimplementation",
+      "repository": "https://github.com/kenhuangus/wikiskill.git",
+      "mirror": ".private_reference/source_mirrors/kenhuangus__wikiskill/",
+      "selectedPin": "03633345829c452680d18a17004afd33eee729da",
+      "gitTree": "ced53ffebd8f2c488ec2e8ff7b14983b2380b47a",
+      "trackedFileCount": 58,
+      "pathSetSha256": "6b91e21455a0e8cf2a282ff665debcdf708f172eef74b7c411f29092c27d8f9a",
+      "license": "MIT_CODE_WITH_CC_BY_4_0_PAPER_DERIVATION_ATTRIBUTION_BOUNDARY",
+      "manifestScope": "WHOLE_REPOSITORY_STRUCTURAL_SURVEY_PLUS_SELECTED_IMPLEMENTATION_CHAIN",
+      "readCount": 15,
+      "deferredCount": 43,
+      "unreadableCount": 0,
+      "corpusVerdict": "PARTIAL",
+      "readPaths": [
+        "README.md",
+        "design.md",
+        "prd.md",
+        "src/wikiskill/orchestrator.py",
+        "src/wikiskill/agents.py",
+        "src/wikiskill/workspace.py",
+        "src/wikiskill/skills.py",
+        "src/wikiskill/metrics.py",
+        "src/wikiskill/prompts.py",
+        "tests/test_e2e.py",
+        "tests/test_agents.py",
+        "tests/test_workspace.py",
+        "tests/test_metrics.py",
+        "smoke_run/run_state.json",
+        "smoke_run/wiki/skill-impact.md"
+      ],
+      "sourceAuthority": "INDEPENDENT_REIMPLEMENTATION_FOR_CODE_BEHAVIOR; ARXIV_2608_27454V1_FOR_METHOD_PROVENANCE",
+      "findings": [
+        "The implementation separates immutable raw traces, persistent wiki knowledge, and active skills; the inference agent sees active skills but not the wiki.",
+        "Each iteration proposes one atomic skill change, accepts only strict validation improvement, restores only the active skill snapshot on rejection, and preserves the wiki and raw evidence.",
+        "The harness writes the proposal diff and accept/reject result to an impact ledger; self-reported agent success is not the decision authority.",
+        "Paired no-skill versus final-skill evaluation and explicit no-proposal or invalid-proposal records provide practical ASSF and Learning Plane evidence patterns."
+      ]
+    }
+  ],
+  "valueConversionMatrix": [
+    {
+      "candidateId": "JEV-01",
+      "sourceId": "typesafe-jev",
+      "sourceCapability": "typed bounded judgment with explicit probability semantics",
+      "localOwner": "docs/reference/agent_system_skills/CVF_ASSF_BEHAVIORAL_EVALUATION_CONTRACT.md",
+      "overlap": "CVF already owns fixture, trace, grader, repeat, baseline, and stale-evidence controls.",
+      "novelDelta": "Bind decision evidence to decision state and candidate-space/no-match semantics; separate probability or confidence from action authority.",
+      "disposition": "ADAPT",
+      "priority": "P0",
+      "implementationStatus": "APPLIED_OFFLINE_CONTRACT_AND_CHECKER",
+      "implementationPaths": [
+        "docs/reference/agent_system_skills/CVF_ASSF_BEHAVIORAL_EVALUATION_CONTRACT.md",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/assf.behavioral.evaluation.contract.ts",
+        "governance/compat/check_assf_behavioral_evaluation_evidence.py"
+      ]
+    },
+    {
+      "candidateId": "JEV-02",
+      "sourceId": "typesafe-jev",
+      "sourceCapability": "model jaggedness and code-owned execution",
+      "localOwner": "EXTENSIONS/CVF_MODEL_GATEWAY/src/routing-policy.ts",
+      "overlap": "CVF already owns provider/model routing and governed execution boundaries.",
+      "novelDelta": "Record requested and actual executor identity and route known arithmetic/date/indirection/context-rot classes to deterministic code or bounded verification.",
+      "disposition": "ADAPT",
+      "priority": "P1"
+    },
+    {
+      "candidateId": "HF-01",
+      "sourceId": "hyperframes-faceless-explainer",
+      "sourceCapability": "artifact-complete subagent dispatch",
+      "localOwner": "docs/reference/agent_handoff/README.md",
+      "overlap": "CVF already owns dispatch packets, exact write scope, return packets, and handoff closure.",
+      "novelDelta": "Make expected artifact existence and verification the completion predicate; agent notification alone is non-authoritative.",
+      "disposition": "ADAPT",
+      "priority": "P1"
+    },
+    {
+      "candidateId": "HF-02",
+      "sourceId": "hyperframes-faceless-explainer",
+      "sourceCapability": "concurrency-cap scope preservation",
+      "localOwner": "docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD.md",
+      "overlap": "CVF already owns topology and write-scope declarations.",
+      "novelDelta": "A resource cap may change batching or scheduling but must not silently reduce, merge, or omit declared work items.",
+      "disposition": "ADAPT",
+      "priority": "P1"
+    },
+    {
+      "candidateId": "WIKI-01",
+      "sourceId": "wikiskill-independent-reimplementation",
+      "sourceCapability": "three-layer evidence, knowledge, and active-skill separation",
+      "localOwner": "docs/reference/agent_system_skills/CVF_ASSF_PROMOTION_BRIDGE_CONTRACT.md",
+      "overlap": "CVF already separates package, evaluation, promotion, learning signal, and memory owners.",
+      "novelDelta": "Require immutable source traces and persistent learning evidence to survive active-skill rollback; never treat knowledge accumulation as activation authority.",
+      "disposition": "ADAPT",
+      "priority": "P0"
+    },
+    {
+      "candidateId": "WIKI-02",
+      "sourceId": "wikiskill-independent-reimplementation",
+      "sourceCapability": "strict improvement gate with programmatic impact ledger",
+      "localOwner": "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/evaluation.threshold.contract.ts",
+      "overlap": "CVF already owns evaluation thresholds and learning-signal intake.",
+      "novelDelta": "Bind every proposed active-skill mutation to baseline, candidate score, exact diff, accept/reject reason, and rollback receipt.",
+      "disposition": "ADAPT",
+      "priority": "P0"
+    }
+  ],
+  "explicitNonAbsorptions": [
+    "No upstream runtime, dependency, binary asset, prompt bundle, or provider integration was imported.",
+    "No new CVF architectural component or layer was created.",
+    "No source README claim was promoted as private-CVF runtime proof.",
+    "No external-agent conclusion owns final disposition.",
+    "No G1-G7 status was reopened or changed."
+  ],
+  "programVerdict": "SOURCE_VALUE_CONFIRMED_JEV_P0_ADAPTED_EXISTING_OWNER",
+  "nextMove": "Review and commit the Jev decision-evidence refinement, then implement the WikiSkill proposal-impact/rollback evidence at its existing owner; keep HyperFrames dispatch refinements as the next bounded owner tranche."
+}

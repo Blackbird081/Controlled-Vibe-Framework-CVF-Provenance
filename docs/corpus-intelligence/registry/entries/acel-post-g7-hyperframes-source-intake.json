@@ -1,0 +1,49 @@
+{
+  "registryOrder": 199,
+  "id": "acel-post-g7-hyperframes-source-intake",
+  "corpusType": "EXTERNAL_SOURCE",
+  "displayName": "ACEL post-G7 HyperFrames source-level intake",
+  "scopePaths": [
+    ".private_reference/source_mirrors/heygen-com__hyperframes/"
+  ],
+  "fileCount": 8061,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "ACEL-POST-G7-REFINEMENT-T0",
+  "scanDate": "2026-09-25",
+  "manifestHash": "9b70b00d51683e1718e927f95e31e6605b018aaf38c39cb2910c7f53f0660236",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "manifestPath": "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_EVIDENCE_2026-09-25.json",
+  "packetPath": "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": "OPERATOR_DIRECT_AUTHORIZATION_2026-09-25",
+  "verdicts": {
+    "gc047": "PASS_WHOLE_TREE_STRUCTURAL_SURVEY",
+    "gc048": "PASS_SELECTED_CAPABILITY_OWNER_ROUTING",
+    "gc050": "PASS_VALUE_CONVERSION_RECORDED"
+  },
+  "semanticRegions": [
+    "faceless-explainer orchestration",
+    "brief and resume contract",
+    "frame-worker packet and write scope",
+    "artifact completion and assembly verification",
+    "concurrency-cap scope preservation"
+  ],
+  "priorAbsorption": "The bounded post-G7 research reconciliation classified HyperFrames as ENRICH_EXISTING without a Local upstream mirror or whole-repository initial survey. This entry opens the distinct Local source-intake program authorized by the operator on 2026-09-25; it does not reopen G1-G7.",
+  "findings": [
+    {
+      "id": "ACEL-POST-G7-HF-01",
+      "summary": "Artifact-on-disk completion, bounded packet isolation, integration-level verification, and concurrency-cap scope preservation are material refinements.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Route an owner-specific dispatch and handoff refinement; retain 8,050 non-selected paths as DEFERRED.",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "completion notification authoritative",
+    "concurrency cap permits scope reduction",
+    "worker may claim integrated assembly"
+  ],
+  "nextScanRecommendation": "Route a later owner-specific dispatch/handoff refinement; reopen additional HyperFrames regions only for a named consumer, contradiction, or implementation question."
+}
