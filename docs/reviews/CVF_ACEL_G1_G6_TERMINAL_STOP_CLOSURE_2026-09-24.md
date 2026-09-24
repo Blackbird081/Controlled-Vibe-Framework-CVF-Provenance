@@ -135,6 +135,15 @@ actual-mode action. No such work is authorized here.
 evidence. Party B/C, Group 4 source creation, T3E and production integration
 remain closed.
 
+## Committed Range Finalization
+
+Initial closure content and continuity were committed together at
+`adc9a0ba2`, then the handoff was anchored separately at `29323a5d6`. The
+initial commit is retained as provenance but is not used as the single-range
+closure proof because it mixes material and protected continuity paths. This
+review-only finalization supplies the material closure range; its HEAD anchor
+is synchronized separately afterward.
+
 ## Claim Boundary
 
 Claimed: one authorized prepare-only failure, exact secret-free diagnostic,
@@ -169,7 +178,7 @@ High-Risk Local Transaction Proof Applicability: REQUIRED
 ## Machine Closure Package
 
 ```json
-{"schemaVersion":"cvf.machineClosurePackage.v1","batchId":"ACEL-G1-G6-TERMINAL-STOP-CLOSURE-20260924","status":"CLOSED_STOPPED_FAIL_CLOSED","materialBaseHead":"2259977c641de167e4a3a41add27235495c265ed","changedPathCount":2,"prepareProofDisposition":"EXECUTED_ONCE_FAIL_CLOSED","partyPrincipalLaunched":false,"exactCleanupDisposition":"PASS_ROOT_ABSENT","workerDeltaDisposition":"DISCARDED_UNACCEPTED","successorDisposition":"NO_SUCCESSOR"}
+{"schemaVersion":"cvf.machineClosurePackage.v1","batchId":"ACEL-G1-G6-TERMINAL-STOP-CLOSURE-20260924","status":"CLOSED_STOPPED_FAIL_CLOSED","materialBaseHead":"29323a5d6","changedPathCount":1,"prepareProofDisposition":"EXECUTED_ONCE_FAIL_CLOSED","partyPrincipalLaunched":false,"exactCleanupDisposition":"PASS_ROOT_ABSENT","workerDeltaDisposition":"DISCARDED_UNACCEPTED","successorDisposition":"NO_SUCCESSOR"}
 ```
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
@@ -253,8 +262,8 @@ tranche is terminally closed.
 | Claim boundary | no Party B/C, credential, real source, T3E, provider/live/runtime/public/deployment effect |
 | Agent type | INTERNAL_AGENT Local reviewer/closure steward |
 | Invocation ID | `acel-g1-g6-terminal-stop-closure-20260924` |
-| Expected manifest | governing work-order closure plus this terminal review before continuity sync |
-| Actual changed set | same two paths |
+| Expected manifest | this terminal review-only committed-range finalization |
+| Actual changed set | this terminal review only |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | unaccepted uncommitted worker return deleted; worker source delta reverted; exact disposable root deleted and unrecoverable; evidence bundle preserved |
 
