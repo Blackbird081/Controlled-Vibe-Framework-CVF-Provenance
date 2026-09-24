@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Post-G7 Three-Repository Absorption
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `9ac0ee8e59fa041ddaa93d725796c509400f257a`. Material parent anchor for the dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `a4437ee8f`. Material parent anchor for the dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -146,7 +146,7 @@ Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59
 - G7 audit/review/Local absorption closed at `660601f0e`; canonical review:
   `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`.
   Disposition: `ADAPT_EXISTING_HANDOFF_ONLY`; existing authority owners remain unchanged.
-- The separate post-G7 corpus packet is closed by Local at material commit `c5bec0ff04267271226280e377b4748a8cf276ff`; review `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md`: `ABSORB_WITH_MAPPING_CORRECTIONS`; external content accepted after normalization, with no independent CVF authority.
+- The 2026-09-24 packet-only post-G7 reconciliation at `c5bec0ff0` is historical and superseded for repository absorption. Corrective commit `a4437ee8f` marks its closure review `SUPERSEDED_BY_SOURCE_VERIFIED_ABSORPTION` and removes the redundant root decision; exact history remains in Git. Current authority is the 2026-09-25 pinned-source audit and Jev P0 review.
 ## Next Allowed Move
 
 PROGRAM_ID=ACEL-POST-G7-THREE-REPO-ABSORPTION-2026-09; NEXT_SOURCE_ID=kenhuangus__wikiskill; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=JEV_P0_DECISION_EVIDENCE_ADAPTATION_CLOSED; CURRENT_TRANCHE_DISPOSITION=SOURCE_RECONCILED_JEV_P0_CLOSED_HYPERFRAMES_WIKISKILL_INCOMPLETE; NEXT_STEP=WIKISKILL_P0_PROPOSAL_IMPACT_ROLLBACK_EVIDENCE_EXISTING_OWNER; EXPANSION_ALLOWED=false. Operator authorization on 2026-09-25 opened a separate Local three-repository absorption program without reopening G1-G7. Source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`; audit: `docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md`; review: `docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md`. Jev decision evidence now binds decision context, incomplete candidate escape, and EVIDENCE_ONLY authority. Next is the smallest WikiSkill-derived proposal-impact and rollback-evidence refinement at existing ASSF/Learning Plane owners. HyperFrames remains incomplete and follows as a separate dispatch/handoff refinement. External web research is advisory and may reopen only for a named unresolved source question. No upstream code/dependency import, provider/live call, activation, certification mutation, deployment, production action, public sync, or G1-G7 successor is authorized. Latest closed LHW wave remains LHW24.

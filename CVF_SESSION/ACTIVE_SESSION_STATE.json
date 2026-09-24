@@ -16719,6 +16719,9 @@
     "status": "ACTIVE_JEV_P0_CLOSED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
+    "correctiveClosureCommit": "a4437ee8f",
+    "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
+    "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
     "sourceAudit": "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md",
     "jevReview": "docs/reviews/CVF_ACEL_POST_G7_JEV_P0_LOCAL_REVIEW_2026-09-25.md",
     "sourcePins": {
