@@ -151,17 +151,28 @@
       "overlap": "CVF already owns dispatch packets, exact write scope, return packets, and handoff closure.",
       "novelDelta": "Make expected artifact existence and verification the completion predicate; agent notification alone is non-authoritative.",
       "disposition": "ADAPT",
-      "priority": "P1"
+      "priority": "P0",
+      "implementationStatus": "APPLIED_HANDOFF_AND_EXECUTION_CONTRACT",
+      "implementationPaths": [
+        "docs/reference/agent_handoff/README.md",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/artifact.completion.scope.contract.ts"
+      ]
     },
     {
       "candidateId": "HF-02",
       "sourceId": "hyperframes-faceless-explainer",
       "sourceCapability": "concurrency-cap scope preservation",
-      "localOwner": "docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD.md",
+      "localOwner": "docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md",
       "overlap": "CVF already owns topology and write-scope declarations.",
       "novelDelta": "A resource cap may change batching or scheduling but must not silently reduce, merge, or omit declared work items.",
       "disposition": "ADAPT",
-      "priority": "P1"
+      "priority": "P0",
+      "implementationStatus": "APPLIED_OFFLINE_CONTRACT_AND_TESTS",
+      "implementationPaths": [
+        "docs/reference/agent_handoff/README.md",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/artifact.completion.scope.contract.ts",
+        "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.artifact.completion.scope.contract.test.ts"
+      ]
     },
     {
       "candidateId": "WIKI-01",
@@ -202,6 +213,6 @@
     "No external-agent conclusion owns final disposition.",
     "No G1-G7 status was reopened or changed."
   ],
-  "programVerdict": "SOURCE_VALUE_CONFIRMED_JEV_AND_WIKISKILL_P0_ADAPTED_EXISTING_OWNERS",
-  "nextMove": "Implement HyperFrames artifact-completion and concurrency-cap scope-preservation evidence at existing dispatch/handoff owners; do not issue common Local closure until three additional operator-relayed handoffs are reviewed."
+  "programVerdict": "SOURCE_VALUE_CONFIRMED_THREE_REPOSITORY_P0_ADAPTATIONS_APPLIED_EXISTING_OWNERS",
+  "nextMove": "Review the three additional operator-relayed handoffs before common Local closure; keep the program active and do not infer their contents or disposition before receipt."
 }

@@ -1,0 +1,36 @@
+{
+  "registryOrder": 201,
+  "id": "acel-post-g7-hyperframes-p0-owner-adaptation",
+  "corpusType": "TEST_CORPUS",
+  "displayName": "ACEL post-G7 HyperFrames P0 owner adaptation",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/artifact.completion.scope.contract.ts",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.artifact.completion.scope.contract.test.ts"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "ACEL-POST-G7-HYPERFRAMES-P0",
+  "scanDate": "2026-09-25",
+  "manifestHash": null,
+  "manifestPath": "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_EVIDENCE_2026-09-25.json",
+  "packetPath": "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": "OPERATOR_DIRECT_AUTHORIZATION_2026-09-25",
+  "findings": [
+    {
+      "id": "ACEL-POST-G7-HF-P0-01",
+      "summary": "The Local offline contract preserves declared work scope across capped batches and requires hashed artifacts, assigned writers, and named assembly verification before completion.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Review three additional operator-relayed handoffs before common Local closure.",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "worker notification authorizes completion",
+    "concurrency cap reduces declared scope",
+    "unverified artifact satisfies integration"
+  ],
+  "nextScanRecommendation": "Re-scan only if the artifact-completion contract, its tests, or a named dispatch/handoff consumer changes.",
+  "notes": "Independent Local adaptation from pinned heygen-com/hyperframes source 7129340ae8e96fc32bb45102174528dd5ecafb56. No upstream code, runtime, prompt, asset, provider behavior, or autonomous integration authority is imported."
+}
