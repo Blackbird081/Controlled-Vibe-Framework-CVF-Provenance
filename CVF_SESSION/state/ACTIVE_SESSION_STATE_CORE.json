@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_2026-09-24.md",
     "baselineSha256": "d7620eca52093a9ae7b8d025486dd8253c18ce8292bd6c97ed82b46edd091d97",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_2026-09-24.md",
-    "workOrderSha256": "c2e4905566734208ebd9225c0e1e6be91d11020ce0ec948f5993c4848e245ae6"
+    "workOrderSha256": "78aa072bcc10418b345e37a7d2e5ce8869599cbe7104254f78e77cd27ba91606"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -109,8 +109,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "acel_g1_t3d_c3_r1_actual_acl_correction_implementation_active",
-  "previousMode": "acel_g1_group4_actual_token_prepare_failed_closed_repair_selection_next",
+  "currentMode": "acel_g1_g6_tranche_terminally_stopped_closed",
+  "previousMode": "acel_g1_t3d_c3_r1_actual_acl_correction_implementation_active",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

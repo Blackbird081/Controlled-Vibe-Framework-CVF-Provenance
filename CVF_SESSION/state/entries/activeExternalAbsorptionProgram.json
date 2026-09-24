@@ -4,7 +4,7 @@
   "value": {
     "schemaVersion": "cvf.externalAbsorptionProgramContinuity.v1",
     "programId": "AGENT-CAPABILITY-ENGINEERING-LAB-2026-09",
-    "status": "LOCAL_RUNTIME_VALUE_RECOVERY",
+    "status": "SCOPE_EXIT_AUTHORIZED",
     "sourceIds": [
       "agent-capability-engineering-lab__handoff-v2"
     ],
@@ -12,9 +12,9 @@
       "agent-capability-engineering-lab__handoff-v2": "INCOMPLETE"
     },
     "nextSourceId": "agent-capability-engineering-lab__handoff-v2",
-    "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
+    "nextActionClass": "STOPPED_NO_SUCCESSOR",
     "expansionAllowed": false,
-    "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
+    "exitDisposition": "OPERATOR_SCOPE_DECISION",
     "exitEvidence": [
       "docs/reviews/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_COMPLETION_2026-09-15.md",
       "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_TOPOLOGY_EXPERIMENT_T1_2026-09-16.md",
@@ -62,9 +62,10 @@
       "docs/reviews/CVF_ACEL_G1_T2C_VERIFIER_TRUST_ANCHOR_CONTRACT_DESIGN_COMPLETION_2026-09-17.md",
       "docs/reviews/CVF_ACEL_G1_T2C_SOURCE_OWNER_RECONCILIATION_LOCAL_DECISION_2026-09-18.md",
       "docs/baselines/CVF_GC018_ACEL_G1_T2D_SOURCE_OWNER_ESTABLISHMENT_2026-09-18.md",
-      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2D_SOURCE_OWNER_ESTABLISHMENT_2026-09-18.md"
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T2D_SOURCE_OWNER_ESTABLISHMENT_2026-09-18.md",
+      "docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md"
     ],
-    "operatorScopeDecision": null,
+    "operatorScopeDecision": "docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md",
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
   }
 }

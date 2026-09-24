@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "acel_g1_t3d_c3_r1_actual_acl_correction_implementation_active",
+  "currentMode": "acel_g1_g6_tranche_terminally_stopped_closed",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_C3_R1_ACTUAL_ACL_CORRECTION_DISPATCH_20260924; CURRENT_TRANCHE_DISPOSITION=DISPATCH_COMMITTED_IMPLEMENTATION_ACTIVE; NEXT_STEP=LOCAL_WORKER_EXECUTE_EXACT_TWO_PATH_HERMETIC_CORRECTION_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Operator authorization selected one final bounded G1 correction. Dispatch commit 4b97391ccf15bdc9526c9512a03d99ea3d2ca57f passed pre-dispatch and pre-commit governance. The worker may change only the coordinator and create the exact worker return, must use current-token disposable fixtures, must not commit and must not run actual-mode prepare. A distinct Local reviewer may later run exactly one fresh actual-mode prepare-only proof. Party B/C execution, credentials, real Group 4 source access or creation, T3E, G2-G6, provider/live/runtime/public-sync/deployment and any second correction or prepare attempt remain parked. HRLTP-T2 remains paused and the latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=STOPPED_NO_SUCCESSOR; CURRENT_TRANCHE_ACTION=G1_G6_TERMINAL_STOP_CLOSURE_20260924; CURRENT_TRANCHE_DISPOSITION=CLOSED_STOPPED_FAIL_CLOSED_RESEARCH_EVIDENCE_ONLY; NEXT_STEP=NONE_UNLESS_NEW_OPERATOR_ROADMAP; EXPANSION_ALLOWED=false. The final operator-authorized G1 actual-mode prepare-only attempt failed before packet materialization on a payload/control non-inheriting ACL dependency. Party B/C were never launched, no credential was requested or stored, and the real Group 4 source remained absent. A separately authorized cleanup-only elevation removed the exact failed root without wildcard use; hashed error and cleanup receipts are preserved. The unaccepted worker delta was discarded and the committed coordinator restored. G1 is stopped; G2-G6 remain parked; this tranche has no automatic successor. Any future reopening requires a new operator decision, new GC-018/source-verified work order and a new problem formulation. HRLTP-T2 remains paused and the latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_2026-09-24.md",
     "baselineSha256": "d7620eca52093a9ae7b8d025486dd8253c18ce8292bd6c97ed82b46edd091d97",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_2026-09-24.md",
-    "workOrderSha256": "c2e4905566734208ebd9225c0e1e6be91d11020ce0ec948f5993c4848e245ae6"
+    "workOrderSha256": "78aa072bcc10418b345e37a7d2e5ce8869599cbe7104254f78e77cd27ba91606"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

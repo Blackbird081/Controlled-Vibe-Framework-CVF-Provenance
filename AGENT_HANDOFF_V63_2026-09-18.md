@@ -13,25 +13,24 @@ and only then Approver decision writes.
 
 ## Scope / Target / Owner Boundary
 
-Role: Local implementation worker. Phase: bounded correction implementation. Decision owner: Local reviewer.
+Role: Local closure steward. Phase: terminal G1-G6 closure. Decision owner: Local under explicit operator stop instruction.
 
-External research is closed for this lane. The selected shared-workspace
-worker is `INTERNAL_AGENT`; the operator relays its work order only and
-does not become the reviewer.
+External research is closed for this lane. Local agents owned private proof,
+cleanup and terminal disposition; the operator remained decision owner.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_g1_t3d_c3_r1_actual_acl_correction_implementation_active`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local worker executes the exact two-path hermetic correction and returns `COMPLETE_PENDING_REVIEW`; parked checkpoint=actual-mode prepare-only reviewer probe, HRLTP-T2, actual Party B/C execution, passwords, Group 4 source creation, T3E, G2-G6, provider/live/runtime/public/deployment.
+Startup acknowledged: current mode=`acel_g1_g6_tranche_terminally_stopped_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=none unless a new operator roadmap opens a new problem formulation; parked checkpoint=all G1-G6 continuation, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/runtime/public/deployment.
 
 ## Current Mode
-`acel_g1_t3d_c3_r1_actual_acl_correction_implementation_active`.
+`acel_g1_g6_tranche_terminally_stopped_closed`.
 The active program remains restricted to `agent-capability-engineering-lab__handoff-v2`; latest closed learning-history wave remains `LHW24`.
 
 ## Active Boundary
 
 T3B is closed with one Local-verified active v1 specification. Party B is a verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
-T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`; its shared-parent route remains conditional on actual Windows proof. Local architecture selection `8caacc64c`, static proof packet `c395fd1aa` and source gap audit `e79910b5c` led to C1-R2. The correction is accepted at `988491791` for hermetic tooling only. Foundation T1 is closed at `c82f81d49`. The readiness audit at `a765880e4` confirmed the runner gap. The T3D-C3 bounded runner dispatch is committed at `4b68fa465`; its exact four-path material result is committed at `a1203c1ee` and independently accepted bounded at `88137e9a2`. The Local checkpoint-selection audit at `51cb06754` retained the operator checkpoint closed. The later operator-approved prepare-only attempt failed closed during root-first protected non-inheriting ACL setup; the exact partial root was diagnosed, hash-verified and removed without wildcard use before any Party B/C process. Operator authorization selected one final correction, and its paired dispatch is committed at `4b97391cc`; worker execution is now limited to hermetic/current-token evidence and no commit. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is dispatched at `19466bfdc` but paused.
+T3C-C2 is closed `SOURCE_CREATED_LOCAL_VERIFIED`, and Party C is Local verified. T3D-C1 tooling is accepted at `9ed844c2a` with no source created. T3D-C0-R1 is closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but both actual-mode prepare-only attempts failed before Party B/C execution. The final R1 attempt exposed a payload/control non-inheriting ACL dependency; separately authorized exact cleanup removed the failed root without wildcard use. The unaccepted worker delta was discarded. G1 is stopped and G2-G6 remain parked with no automatic successor. The thirteen rejected T2/T2A/T2B paths remain archived. HRLTP-T2 is paused.
 
 Remote tracking branch: `origin/main`; derive exact remote SHA live when needed.
 External agent memory files: non-canonical convenience only.
@@ -140,7 +139,7 @@ External agent memory files: non-canonical convenience only.
   `CHECKPOINT_RETAINED_CLOSED_EXECUTION_PACKET_NOT_MATERIALIZED`: no fresh
   payload, root, prestate ledger or command packet exists. Seven prior input
   directories remain untouched; wildcard cleanup is prohibited.
-- Operator authorization selected one final G1 correction. The paired R1 baseline/work order is committed at `4b97391cc` after the 83-check pre-dispatch gate and 90/90 pre-commit checks. Worker scope is exactly the coordinator plus its worker return; actual-mode prepare stays reviewer-owned.
+- The final G1 correction/prepare attempt failed closed on a payload/control ACL dependency. Exact cleanup removed the failed root, the unaccepted worker delta was discarded, and G1-G6 now have no successor.
 
 ## T3B Readiness Inputs
 
@@ -150,7 +149,7 @@ principal-policy decision. This identity evidence is not source/activation proof
 
 ## Next Allowed Move
 
-PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capability-engineering-lab__handoff-v2; NEXT_ACTION_CLASS=CONTINUE_ACTIVE_PROGRAM; CURRENT_TRANCHE_ACTION=G1_T3D_C3_R1_ACTUAL_ACL_CORRECTION_DISPATCH_20260924; CURRENT_TRANCHE_DISPOSITION=DISPATCH_COMMITTED_IMPLEMENTATION_ACTIVE; NEXT_STEP=LOCAL_WORKER_EXECUTE_EXACT_TWO_PATH_HERMETIC_CORRECTION_AND_RETURN_COMPLETE_PENDING_REVIEW; EXPANSION_ALLOWED=false. Operator authorization selected one final bounded G1 correction. Dispatch commit `4b97391cc` passed pre-dispatch and pre-commit governance. The worker may change only `scripts/acel_g1_group4_actual_token_coordinator.ps1` and create the exact worker return, must use current-token disposable fixtures, must not commit and must not run actual-mode prepare. A distinct Local reviewer may later run exactly one fresh actual-mode prepare-only proof. Party B/C execution, credentials, real Group 4 source access or creation, T3E, G2-G6, provider/live/runtime/public-sync/deployment and any second correction or prepare attempt remain parked. HRLTP-T2 remains paused and the latest closed LHW wave remains LHW24.
+PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=none; NEXT_ACTION_CLASS=STOPPED_NO_SUCCESSOR; CURRENT_TRANCHE_ACTION=G1_G6_TERMINAL_STOP_CLOSURE_20260924; CURRENT_TRANCHE_DISPOSITION=CLOSED_STOPPED_FAIL_CLOSED_RESEARCH_EVIDENCE_ONLY; NEXT_STEP=NONE_UNLESS_NEW_OPERATOR_ROADMAP; EXPANSION_ALLOWED=false. The final G1 prepare-only attempt failed before packet materialization on a payload/control non-inheriting ACL dependency. Party B/C were never launched; the real Group 4 source remained absent. Cleanup-only elevation removed the exact root without wildcard use; hashed receipts are preserved. The unaccepted worker delta was discarded and the committed coordinator restored. G1 is stopped; G2-G6 remain parked; no automatic successor exists. Any reopening requires a new operator decision, GC-018/source-verified work order and problem formulation. HRLTP-T2 remains paused; latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -161,57 +160,54 @@ PROGRAM_ID=AGENT-CAPABILITY-ENGINEERING-LAB-2026-09; NEXT_SOURCE_ID=agent-capabi
   T3D-C3 runner is accepted bounded at `88137e9a2`; checkpoint selection at
   `51cb06754` retains Party B/C execution closed; the approved prepare-only
   attempt failed at root-first non-inheriting ACL setup and its exact partial
-  root was removed; the R1 correction dispatch is committed at `4b97391cc`
-  and hermetic worker implementation is active; actual prepare-only remains
-  reviewer-owned while principal execution, source creation and T3E stay parked;
+  root was removed; the final R1 prepare-only attempt also failed closed and
+  its exact root was removed; G1 is stopped while G2-G6, principal execution,
+  source creation and T3E remain parked with no automatic successor;
 - key promotion or candidate admission;
 - provider/live work, runtime activation, public sync, deployment or production;
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: project the operator-authorized R1 dispatch into active continuity; route only to the exact hermetic worker implementation and pending independent review; preserve HRLTP-T2 as paused and keep actual prepare, principal execution, source, T3E and G2-G6 parked.
+Authorized guard-maintenance scope: project terminal G1-G6 closure, exact-root cleanup and discarded worker delta into active continuity; preserve HRLTP-T2 as paused and keep every G1-G6 continuation, principal execution, source and T3E closed.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/acelG1T3dC3R1ActualAclCorrectionDispatch20260924.json`
+- `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`
+- `CVF_SESSION/state/entries/acelG1G6TerminalStopClosure20260924.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit approval of the final bounded G1 correction plus standing Local session-transition authority. Rollback boundary: revert only this continuity projection; preserve dispatch commit `4b97391cc` and prior accepted sources. This change authorizes only hermetic worker execution;
-actual prepare, principal execution, credential, source/T3E, G2-G6 and
-live/runtime/public/deployment effects remain outside scope.
+Operator authorization: explicit approval of cleanup recovery and terminal G1-G6 closure plus standing Local session-transition authority. Rollback boundary: revert only this closure projection; preserve prior accepted sources. No retry, principal execution, credential, source/T3E, G1-G6 successor or live/runtime/public/deployment effect is authorized.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
 | Actor | Local orchestrator/reviewer and session-sync steward |
 | Provider or surface | private CVF workspace and local Windows ACL APIs |
-| Session or invocation | Group 4 R1 correction dispatch continuity, 2026-09-24 |
+| Session or invocation | ACEL G1-G6 terminal stop continuity, 2026-09-24 |
 | Working directory | repository root |
-| Command or tool surface | governed dispatch, pre-dispatch gate, pre-commit hook, apply_patch, state generator, governance gates and Git |
-| Target paths | active continuity paths for the committed R1 dispatch |
-| Allowed scope source | operator authorization of one final bounded G1 correction plus standing Local session-transition authority |
-| Before status evidence | clean material HEAD `4b97391cc`; dispatch gate PASS; commit hook 90/90 PASS |
-| After status evidence | implementation mode active; worker limited to exact two-path hermetic return; actual prepare still parked |
+| Command or tool surface | reviewer proof, exact cleanup, rejected-delta rollback, apply_patch, state generator, governance gates and Git |
+| Target paths | terminal review, closed work order and active continuity paths |
+| Allowed scope source | explicit operator cleanup and terminal G1-G6 stop instruction plus standing session-transition authority |
+| Before status evidence | clean execution base `2259977c6`; final worker delta pending review; selected root absent |
+| After status evidence | proof failed closed; exact root absent; worker delta discarded; G1-G6 successor closed |
 | Diff evidence | exact continuity manifest before session-only commit |
-| Approval boundary | continuity projection for committed dispatch; no actual-mode prepare or principal execution |
+| Approval boundary | terminal closure projection only; no retry or principal execution |
 | Claim boundary | no Party B/C token proof, password, Group 4 source, T3E, live/runtime/public or deployment effect |
 | Agent type | Local orchestrator/reviewer and session-sync steward |
-| Invocation ID | `cvf-acel-g1-t3d-c3-r1-dispatch-v63-continuity-20260924` |
-| Expected manifest | handoff, front door, core, R1 dispatch entry, next-move entry, generated state and bootstrap |
+| Invocation ID | `cvf-acel-g1-g6-terminal-stop-v63-continuity-20260924` |
+| Expected manifest | terminal review, closed work order, handoff, front door, core, terminal entry, next-move entry, generated state and bootstrap |
 | Actual changed set | verified before commit |
 | Manifest delta | exact source manifest plus two generated projections |
 | Deletion or rename disposition | no repository or temporary path deleted or renamed in this sync |
 
 ## Claim Boundary
 
-This handoff records continuity for the committed bounded R1 correction and
-routes only exact hermetic worker implementation followed by independent Local
-review. It does not authorize actual-mode prepare in the worker phase, claim
-Party B/C actual-token proof, create a Group 4 source, perform a T3E lookup,
-bind a verifier consumer, promote a key, admit a candidate, or authorize
-G2-G6, provider/live, runtime, public-sync, deployment or production behavior.
+This handoff records terminal G1-G6 closure after final prepare-only failure,
+exact cleanup and rejected-delta rollback. It authorizes no retry, Party B/C
+proof, Group 4 source, T3E, G1-G6 successor, provider/live, runtime,
+public-sync, deployment or production behavior.

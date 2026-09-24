@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY_LOCAL_IMPLEMENTATION
+Status: CLOSED_STOPPED_FAIL_CLOSED
 
 providerExecutionAuthority: FORBIDDEN
 
@@ -111,6 +111,16 @@ Allowed scope:
 - add hermetic self-tests for ordering and cleanup/error behavior;
 - run current-token disposable tests under `%TEMP%`;
 - machine-gate remediation inside allowed scope is mandatory worker-owned work.
+- create `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`
+  only when the preregistered no-retry stop condition is reached.
+- update `AGENT_HANDOFF_V63_2026-09-18.md`;
+- update `CVF_SESSION_MEMORY.md`;
+- update `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`;
+- regenerate `CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+- update `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+- update `CVF_SESSION/state/entries/activeExternalAbsorptionProgram.json`;
+- create `CVF_SESSION/state/entries/acelG1G6TerminalStopClosure20260924.json`;
+- update `CVF_SESSION/state/entries/nextAllowedMove.json`.
 
 Forbidden scope:
 
@@ -340,6 +350,7 @@ reviewerDecisionOwner: LOCAL
 |---|---|
 | `scripts/acel_g1_group4_actual_token_coordinator.ps1` | repair ACL order, exact cleanup and hermetic regressions |
 | `docs/reviews/CVF_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_WORKER_RETURN_2026-09-24.md` | create terminal worker return with exact evidence |
+| `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md` | Local reviewer records terminal stop only after the final actual-mode attempt fails closed |
 
 ## Work-Order Fulfillment Manifest
 
@@ -551,10 +562,14 @@ Local reviewer. External research is closed and supplies no private authority.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `DISPATCH_READY_LOCAL_IMPLEMENTATION` | PASS |
-| Worker return | exact return path | pending implementation | BLOCKED with reason: worker not yet executed |
-| Reviewer proof | reviewer-owned exact receipt | pending review | BLOCKED with reason: reviewer phase unopened |
-| Session continuity | active handoff | repair selected, principal checkpoint closed | PASS |
+| Work order status | this work order | `CLOSED_STOPPED_FAIL_CLOSED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md` | terminal fail-closed decision and G1-G6 disposition | PASS |
+| Roadmap state | N/A with reason: this bounded correction has no separate roadmap | terminal work-order disposition | PASS |
+| Registry JSON | N/A with reason: no registry source was created or changed | real source absent | PASS |
+| Registry Markdown | N/A with reason: no registry catalog was created or changed | real source absent | PASS |
+| External evidence digest | terminal review local receipt ledger | prepare error SHA-256 `b9d2e86bed1da81dc30fd13898763fc5f27c8372f87ad891c2f490496eb490ba`; cleanup SHA-256 `2c8a42366f7dabafb0d7fe7d0e6177743032b1c26a116d1a9266ce08efc7e18e` | PASS |
+| System loop interlock | terminal review G1-G6 disposition table | no automatic successor | PASS |
+| Session continuity | active handoff and generated state | terminal stop projection in the same closure batch | PASS |
 
 ## Closure Checklist
 
