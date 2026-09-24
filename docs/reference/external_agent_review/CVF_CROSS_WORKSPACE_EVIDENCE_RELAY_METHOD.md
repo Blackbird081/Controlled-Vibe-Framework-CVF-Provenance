@@ -214,6 +214,30 @@ A structurally valid return may still be rejected semantically. A damaged or
 wrong-task return may be returned for repair without discarding any separately
 verified useful evidence.
 
+### Repository-Absorption Closure Eligibility
+
+External-return reconciliation and repository absorption are different
+completion claims. A Local reviewer may reconcile a packet without being
+eligible to close the source repository or the owning multi-repository
+program. For every repository-absorption closure, Local must record these
+decisions independently:
+
+1. architecture novelty -- whether a new owner or layer is required;
+2. existing-owner overlap -- whether a current owner already covers part of
+   the responsibility;
+3. practical adaptation value -- whether source behavior, tests, examples,
+   skills, fixtures, failure cases, or operating recipes improve that owner;
+4. selected value conversion -- whether each accepted value is implemented,
+   governed-deferred with a trigger, rejected with evidence, or still open.
+
+`NO_NEW_ARCHITECTURE` and `OWNER_EXISTS` never imply `NO_NEW_VALUE`. An
+external handoff, shortlist, or packet-only reconciliation cannot establish
+source coverage. A closure claim requires a pinned Local source basis,
+behavioral reads beyond filenames/README claims, terminal selected-value
+accounting, and explicit deferred/unreviewed scope. Operator-authorized scope
+exit remains possible, but must be declared as such rather than mislabeled
+complete absorption.
+
 ## Research-Assisted Repository Absorption Profile
 
 Profile identifier: `cvf.research-assisted-repository-absorption@1.0.0`

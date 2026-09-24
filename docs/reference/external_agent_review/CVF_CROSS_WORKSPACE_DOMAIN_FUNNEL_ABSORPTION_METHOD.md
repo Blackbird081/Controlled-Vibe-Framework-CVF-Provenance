@@ -411,6 +411,25 @@ explicitly blocked mirrors; acquired repositories equal completed, reopened, or
 blocked Local use-case passes; retained and reopened mechanisms equal locally
 accepted, adapted, deferred, rejected, blocked, or no-new-value outcomes.
 
+Every changed repository-absorption closure must also include
+`## Repository Absorption Closure Eligibility` with these rows:
+
+| Field | Required disposition |
+|---|---|
+| Source verification basis | `PINNED_SOURCE_AND_LOCAL_BEHAVIORAL_READS` or `OPERATOR_SCOPE_EXIT_WITH_EVIDENCE` |
+| Architecture novelty | `NEW_ARCHITECTURE_REQUIRED` or `NO_NEW_ARCHITECTURE` |
+| Existing-owner overlap | `OWNER_EXISTS`, `OWNER_PARTIAL`, or `OWNER_NOT_FOUND` |
+| Practical adaptation value | `ADAPTATION_VALUE_FOUND`, `NO_NEW_VALUE_WITH_EXACT_OWNER_EVIDENCE`, or `DEFERRED_PENDING_SOURCE_REVIEW` |
+| Selected value conversion | `ALL_SELECTED_VALUES_IMPLEMENTED_OR_GOVERNED_DEFERRED`, `NO_SELECTED_VALUE_WITH_EXACT_OWNER_EVIDENCE`, or `INCOMPLETE` |
+| Deferred or unreviewed scope | `NONE` for ordinary closure; otherwise exact scope or operator-exit evidence |
+| Closure eligibility | `ELIGIBLE_ALL_SOURCES_TERMINAL`, `ELIGIBLE_OPERATOR_SCOPE_EXIT`, or `NOT_ELIGIBLE_SOURCE_REVIEW_INCOMPLETE` |
+
+An artifact that claims closure may use only an eligible closure disposition.
+Ordinary closure requires pinned Local behavioral reads, terminal selected-value
+conversion, and no deferred/unreviewed scope. A packet-only reconciliation may
+record `NOT_ELIGIBLE_SOURCE_REVIEW_INCOMPLETE`; it must not close repository
+absorption.
+
 ## Current EARA-AGW-T0 Scope Clarification
 
 `EARA-AGW-T0` is a Local-issued single-repository child task bound to
@@ -598,6 +617,25 @@ ordinary governed documentation/dispatch work, not retrospective sample use.
   an already-dispatched shared-workspace worker contract mid-execution.
 - Interim enforcement: dispatcher and reviewer apply this active reference
   manually and reject any umbrella-complete claim missing these records.
+
+## Core Guard Self-Protection Authorization - Closure Eligibility Correction
+
+Authorized guard-maintenance scope: enforce the existing Local source-derived
+coverage rule at repository-absorption closure and add focused positive and
+negative tests. This does not change Local/external roles, authorize external
+implementation, or weaken any existing source, authority, or completion gate.
+
+Protected paths: `governance/compat/check_external_knowledge_intake_routing.py`;
+`governance/compat/test_check_external_knowledge_intake_routing.py`.
+
+Operator authorization: on 2026-09-25 the operator directed Local to correct
+the coordination rules after a packet-only reconciliation was incorrectly
+treated as sufficient repository-absorption closure, then continue WikiSkill
+P0 and HyperFrames P0.
+
+Rollback boundary: revert only this closure-eligibility rule, its checker and
+focused tests if rejected. Preserve the source-pinned three-repository audit,
+Jev P0 implementation, G1-G7 terminal posture, and all unrelated governance.
 
 ## Public Export Disposition
 
