@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md",
-    "baselineSha256": "941c41c3dd5fc86ae48bc363e970163172da61def7faa3f2fb7e69211b14cc4e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md",
-    "workOrderSha256": "078b03beac792cdb3cb2d1fc13eda8eda9e7678d72f9077a8ce0f053a2042d01"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_2026-09-25.md",
+    "baselineSha256": "745c8b81a358cef04921c54fba74d43a5abeb8bf8440a4ba84dfab372585795e",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_2026-09-25.md",
+    "workOrderSha256": "c871a1339150374469bfa15041dab1268b7d31ef1603967781e720d054e18791"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -16617,7 +16617,7 @@
       "externalEvidenceAuthority": "INPUT_NOT_PRIVATE_CVF_PROOF"
     },
     "contractSha256": "92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c",
-    "parentArtifact": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md"
+    "parentArtifact": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_2026-09-25.md"
   },
   "outputRedactionT1Closure20260914": "OUTPUT-REDACTION-T1 is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED at material commit 45a2ace784ab6badf49b2d869915eebf69f4e369. The opt-in trusted-caller known-value transformation is accepted with 66/66 focused synthetic tests, TypeScript PASS, finite benchmark ceilings met, reviewer-fast 68/68, pre-implementation 84/84 and material pre-commit 89/89. No default CLI activation, ambient credential collection, provider/live execution, deployment or repository/program closure follows. R4 evidence is accepted bounded; all three program sources remain INCOMPLETE.",
   "qmServiceTokenReplayDedupeT1Dispatch20260914": "QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 is DISPATCH_READY at material commit 2cc9d2000590a8d3718a5fc6d28b3b2eb1102735. The roadmap, paired GC-018 baseline and work order authorize exactly five uncommitted worker paths for process-local exact valid-request replay deduplication; existing sync verifier API and five production route callers stay stable. Pre-commit passed 89/89 and P4-C1 reported SKIPPED_NO_ELIGIBLE_CANDIDATE. Before dispatch, Local adjudicated the prior OUTPUT-REDACTION continuity marker as REJECT_MEASUREMENT_SAMPLE and recoverably archived ignored marker SHA-256 6eb32adc685f74c9aae4349b8aef3edfdbb69247d77212e45fb46e2b4092f9c; no P4 sample was promoted. Next is INTERNAL_AGENT execution with zero commits followed by Local review. M4, M7, memory candidates, shared/durable replay, provider/live, public sync and deployment remain parked.",
@@ -16717,7 +16717,7 @@
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
   },
   "acelPostG7ThreeRepoAbsorption20260925": {
-    "status": "AKOE_P1_CLOSED_PASS_BOUNDED_AKOE_P2_PENDING_OPERATOR_CHECKPOINT_COMMON_CLOSURE_BLOCKED",
+    "status": "AKOE_P2_DISPATCHED_COMMON_CLOSURE_BLOCKED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
     "wikiSkillP0Commit": "b06c2c7ec",
@@ -16733,6 +16733,11 @@
     "akoeP1WorkerReturnCommit": "ecd86b75e",
     "akoeP1Completion": "docs/reviews/CVF_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_COMPLETION_2026-09-25.md",
     "akoeP1ClosureCommit": "af0e9a199",
+    "akoeP2DispatchCommit": "690b0765397d49f5c66c0410b6b8fbed3bc5079b",
+    "akoeP2Baseline": "docs/baselines/CVF_GC018_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_2026-09-25.md",
+    "akoeP2BaselineSha256": "745c8b81a358cef04921c54fba74d43a5abeb8bf8440a4ba84dfab372585795e",
+    "akoeP2WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_2026-09-25.md",
+    "akoeP2WorkOrderSha256": "c871a1339150374469bfa15041dab1268b7d31ef1603967781e720d054e18791",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -16755,8 +16760,8 @@
     "pendingHandoffCount": 0,
     "commonLocalClosure": "BLOCKED_PENDING_AKOE_P2_P3_AND_P4_RECONCILIATION",
     "nextSourceId": "AKOE-P2",
-    "nextAction": "Operator decides whether to authorize bounded AKOE-P2 GC-018 and work-order authoring",
-    "boundary": "G1-G7 and AKOE-P1 remain closed; no P2 dispatch or execution, P3/P4, upstream intake, provider/live, activation, certification mutation, deployment, production, public sync or common Local closure without fresh authority"
+    "nextAction": "execute the committed bounded AKOE-P2 audit-first work order and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON",
+    "boundary": "G1-G7 and AKOE-P1 remain closed; P2 is limited to the exact no-commit audit/test/conditional-repair manifest; no P3/P4, Unreal intake, new runtime owner, provider/live, activation, certification mutation, deployment, production, public sync, Local acceptance or common Local closure"
   },
-  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; NEXT_ACTION_CLASS=OPERATOR_CHECKPOINT_AKOE_P2; CURRENT_TRANCHE_ACTION=AKOE_P1_CLOSED_AT_af0e9a199; CURRENT_TRANCHE_DISPOSITION=AKOE_P1_CLOSED_PASS_BOUNDED; NEXT_STEP=OPERATOR_DECIDES_WHETHER_TO_AUTHOR_BOUNDED_AKOE_P2_GC018_AND_WORK_ORDER; EXPANSION_ALLOWED=false. P2 dispatch authoring requires fresh operator authorization; P2 execution, P3/P4, common Local closure, upstream intake, provider/live, activation, certification mutation, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24."
+  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_AKOE_P2_WORK_ORDER; CURRENT_TRANCHE_ACTION=AKOE_P2_DISPATCH_COMMITTED_AT_690b07653; CURRENT_TRANCHE_DISPOSITION=AKOE_P2_DISPATCH_READY_INTERNAL_AGENT; NEXT_STEP=INTERNAL_AGENT_EXECUTES_docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_2026-09-25.md_FROM_COMMITTED_CONTINUITY_HEAD_AND_RETURNS_COMPLETE_PENDING_REVIEW_OR_BLOCKED_WITH_REASON; EXPANSION_ALLOWED=false. P2 is audit-first: implementation changes require deterministic failing evidence and remain inside the exact manifest. P3/P4, common Local closure, optional Unreal intake, new runtime ownership, provider/live, activation, certification mutation, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24."
 }
