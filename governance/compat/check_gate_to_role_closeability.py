@@ -273,18 +273,35 @@ def check_recheck(path: str, text: str) -> list[Violation]:
     blockers = _scalar(section, "outsideAuthorityBlockers")
     route = _scalar(section, "nextRepairRoute")
     redispatch = _scalar(section, "workerRedispatchAllowed")
+    status = _scalar(text, "Status")
     issues: list[Violation] = []
     if disposition not in {"CLOSEABLE", "UNCLOSEABLE_PACKET_CONTRADICTION"}:
         issues.append(Violation(path, "return_disposition_invalid", "closeabilityDisposition is invalid"))
     if disposition == "CLOSEABLE" and blockers != "NONE":
         issues.append(Violation(path, "closeable_has_blockers", "CLOSEABLE requires outsideAuthorityBlockers: NONE"))
     if disposition == "UNCLOSEABLE_PACKET_CONTRADICTION":
+        if status != "BLOCKED_WITH_REASON":
+            issues.append(
+                Violation(
+                    path,
+                    "uncloseable_status_mismatch",
+                    "UNCLOSEABLE_PACKET_CONTRADICTION requires top-level Status: BLOCKED_WITH_REASON",
+                )
+            )
         if blockers in {"", "NONE"}:
             issues.append(Violation(path, "contradiction_without_blocker", "packet contradiction requires a named blocker"))
         if redispatch != "NO":
             issues.append(Violation(path, "contradictory_redispatch", "worker redispatch must be NO for an uncloseable packet"))
         if route not in {"CONSOLIDATED_ORCHESTRATOR_AMENDMENT", "OPERATOR_ESCALATION", "REVIEWER_LOCAL_REPAIR"}:
             issues.append(Violation(path, "repair_route_invalid", "uncloseable packet requires one controlled repair route"))
+    if status == "COMPLETE_PENDING_REVIEW" and (disposition != "CLOSEABLE" or blockers != "NONE"):
+        issues.append(
+            Violation(
+                path,
+                "complete_status_not_closeable",
+                "COMPLETE_PENDING_REVIEW requires closeabilityDisposition: CLOSEABLE and outsideAuthorityBlockers: NONE",
+            )
+        )
     if redispatch not in {"YES", "NO"}:
         issues.append(Violation(path, "redispatch_value_invalid", "workerRedispatchAllowed must be YES or NO"))
     return issues

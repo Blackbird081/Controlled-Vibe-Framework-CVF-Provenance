@@ -465,6 +465,74 @@ describe("MaoOperationalWorkerLauncher", () => {
     if (!relaunch.ok) expect(relaunch.reason).toBe("UNKNOWN_OR_NON_RUNNABLE_TASK");
   });
 
+  // --- Cancel/completion race (ACEL-AKOE-P2 class 4) ---
+
+  it("DEFECT PROBE: acceptCancellation racing a concurrent completion append can silently lose a durable event while both callers observe ok:true", async () => {
+    // ACEL-AKOE-P2 audit finding: MaoFileRunStore.appendEvent (durable.run.store.ts,
+    // outside this dispatch's Maximum Worker Path Manifest) performs its own
+    // loadAndReplay -> ledger.append -> atomicWriteJson sequence per call with
+    // no compare-and-swap or lock against a concurrent writer (contrast
+    // MaoFileDelegationLedgerStore, which does have CONCURRENT_WRITE_LOST_RACE
+    // / stale-lock handling for exactly this scenario). Two concurrent
+    // appendEvent calls against the SAME task each replay the SAME
+    // pre-race state, both consider their own transition valid from
+    // `running` (per ALLOWED_TRANSITIONS, both `succeeded` and `cancelled`
+    // are individually legal from `running`), and the second `rename()` in
+    // atomicWriteJson unconditionally clobbers the first's snapshot write.
+    // This reproduces at the public MaoOperationalWorkerLauncher.acceptCancellation
+    // surface: this test drives a durable INVOCATION_COMPLETED append
+    // concurrently with acceptCancellation()'s own CANCEL_ACCEPTED append.
+    // Both callers report `ok: true` (deterministically observed on this
+    // repository's non-faulty store/adapter), but durable replay retains
+    // only ONE of the two terminal events - the other is silently lost, not
+    // merely delayed. A caller that received `succeeded` and later resumes
+    // durably observes `cancelled` (or vice versa): a caller can observe a
+    // false positive for its own call's durability. This violates GC-018
+    // Baseline Invariant 6 ("Cancellation and completion races must have one
+    // deterministic durable outcome and may not fabricate success") because
+    // the LOSING caller's `ok: true` is itself a fabricated durability
+    // claim, and the defect's root cause and fix
+    // (MaoFileRunStore.appendEvent lacks a lock/CAS write path) fall inside
+    // durable.run.store.ts, which the paired work order does not authorize
+    // this worker to modify. See the worker return's P2 class 4 row and
+    // Risk / Corrective Action section for the required escalation.
+    const graph = compileGraph();
+    await store.createRun(graph);
+    const lifecycle = new MaoLifecycleController("2026-07-17T00:00:00.000Z");
+    await driveToRunningState(store, graph, lifecycle.clock.now());
+    const launcher = new MaoOperationalWorkerLauncher(store, createMaoDelegationAdapter(), lifecycle);
+    await launcher.requestCancellation(graph.taskGraphId, "t1");
+
+    const [acceptResult, completionAppend] = await Promise.all([
+      launcher.acceptCancellation(graph.taskGraphId, "t1"),
+      store.appendEvent(graph.taskGraphId, {
+        taskGraphId: graph.taskGraphId,
+        taskId: "t1",
+        eventType: "INVOCATION_COMPLETED",
+        resultingState: "succeeded",
+        occurredAt: "2026-07-17T00:00:01.000Z",
+      }),
+    ]);
+
+    const resumed = await store.resumeRun(graph.taskGraphId);
+    expect(resumed.ok).toBe(true);
+    if (!resumed.ok) return;
+    const terminalEvents = resumed.events.filter(
+      (e) => e.eventType === "CANCEL_ACCEPTED" || e.eventType === "INVOCATION_COMPLETED",
+    );
+
+    // DOCUMENTED CURRENT (DEFECTIVE) BEHAVIOR, not the desired contract: both
+    // calls report success, yet at most one terminal event survives durably.
+    // If a future durable.run.store.ts repair adds real concurrency control,
+    // this assertion should start failing (both should durably persist, or
+    // exactly one call should report ok:false) - that failure is the signal
+    // to replace this probe with a passing race-safety assertion instead of
+    // relaxing it further.
+    expect(acceptResult.ok).toBe(true);
+    expect(completionAppend.ok).toBe(true);
+    expect(terminalEvents.length).toBeLessThan(2);
+  });
+
   // --- Unknown graph/task and invalid state ---
 
   it("fails closed with DURABLE_STORE_REJECTED when the graph has never been created", async () => {

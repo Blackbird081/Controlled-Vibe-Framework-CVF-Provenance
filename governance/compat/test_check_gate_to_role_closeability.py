@@ -150,8 +150,16 @@ def test_topology_policy_pair_must_agree() -> None:
     assert "topology_policy_invalid" in codes(contract(valid_rows(), policy="EXACT_PATHS_WITH_NO_FORESEEABLE_SPLIT"))
 
 
-def recheck(disposition: str, blockers: str, route: str, redispatch: str) -> str:
-    return f"""Self-declared worker-return artifact: yes
+def recheck(
+    disposition: str,
+    blockers: str,
+    route: str,
+    redispatch: str,
+    *,
+    status: str = "COMPLETE_PENDING_REVIEW",
+) -> str:
+    return f"""Status: {status}
+Self-declared worker-return artifact: yes
 ## Return-Time Closeability Recheck
 
 closeabilityDisposition: {disposition}
@@ -170,11 +178,31 @@ def test_closeable_return_passes() -> None:
 
 
 def test_contradictory_return_blocks_redispatch() -> None:
-    assert "contradictory_redispatch" in recheck_codes(recheck("UNCLOSEABLE_PACKET_CONTRADICTION", "F1", "CONSOLIDATED_ORCHESTRATOR_AMENDMENT", "YES"))
+    assert "contradictory_redispatch" in recheck_codes(recheck("UNCLOSEABLE_PACKET_CONTRADICTION", "F1", "CONSOLIDATED_ORCHESTRATOR_AMENDMENT", "YES", status="BLOCKED_WITH_REASON"))
 
 
 def test_contradiction_requires_named_blocker() -> None:
-    assert "contradiction_without_blocker" in recheck_codes(recheck("UNCLOSEABLE_PACKET_CONTRADICTION", "NONE", "OPERATOR_ESCALATION", "NO"))
+    assert "contradiction_without_blocker" in recheck_codes(recheck("UNCLOSEABLE_PACKET_CONTRADICTION", "NONE", "OPERATOR_ESCALATION", "NO", status="BLOCKED_WITH_REASON"))
+
+
+def test_complete_pending_review_cannot_be_uncloseable() -> None:
+    result = recheck_codes(
+        recheck("UNCLOSEABLE_PACKET_CONTRADICTION", "F1", "OPERATOR_ESCALATION", "NO")
+    )
+    assert "uncloseable_status_mismatch" in result
+    assert "complete_status_not_closeable" in result
+
+
+def test_blocked_return_with_named_contradiction_passes() -> None:
+    assert not recheck_codes(
+        recheck(
+            "UNCLOSEABLE_PACKET_CONTRADICTION",
+            "F1",
+            "CONSOLIDATED_ORCHESTRATOR_AMENDMENT",
+            "NO",
+            status="BLOCKED_WITH_REASON",
+        )
+    )
 
 
 def test_common_autorun_catalog_contains_closeability_guard() -> None:
