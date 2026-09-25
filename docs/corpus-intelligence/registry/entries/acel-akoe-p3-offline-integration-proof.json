@@ -1,0 +1,44 @@
+{
+  "registryOrder": 202,
+  "id": "acel-akoe-p3-offline-integration-proof",
+  "corpusType": "PROJECT_SOURCE",
+  "displayName": "ACEL AKOE-P3 provider-free integrated application proof runner, test, and receipt",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/scripts/run-acel-akoe-p3-offline-integration-proof.ts",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/acel.akoe.p3.offline.integration.proof.test.ts",
+    "docs/reviews/evidence/cvf-acel-akoe-p3-offline-integration-proof-2026-09-25.json"
+  ],
+  "fileCount": 3,
+  "status": "SCANNED",
+  "scanWave": "ACEL-AKOE-P3",
+  "scanDate": "2026-09-25",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_WORKER_RETURN_2026-09-25.md",
+  "completionReviewPath": "docs/reviews/CVF_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_WORKER_RETURN_2026-09-25.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_2026-09-25.md",
+  "verdicts": {
+    "gc047": "NOT_RUN",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "EXECUTION_PACKAGE_TEST_COMMAND_AUTHORITY",
+    "MAO_ARTIFACT_COMPLETION_SCOPE",
+    "MAO_DURABLE_RUN_STORE",
+    "MAO_OPERATIONAL_OPERATOR_PROJECTION",
+    "MAO_TASK_GRAPH",
+    "ASSF_BEHAVIORAL_EVALUATION",
+    "LEARNING_PLANE_PROPOSAL_IMPACT_ROLLBACK",
+    "ACEL_AKOE_P3_OFFLINE_INTEGRATION_PROOF"
+  ],
+  "priorAbsorption": "ACEL-AKOE-P3 adds one bounded, deterministic, provider-free proof runner and focused test suite that composes six already-accepted CVF owner contracts (ASSF behavioral evaluation, Learning Plane proposal-impact-rollback, MAO artifact-completion-scope, MAO durable run store, MAO operational operator projection, and MAO task graph) into one synthetic, reversible scenario, plus the generated stable JSON evidence receipt from that runner. It imports and composes the existing owner APIs without modifying or reimplementing their validation, and does not itself accept, certify, or authorize production use. Judgment remains evidence-only and cannot approve its own proposal; execution, verification, acceptance, and accountability remain four separate terminal receipt objects; the receipt's independent-probe field and the worker return both explicitly record PENDING_REVIEWER_EXECUTION.",
+  "findings": [],
+  "negativeSearchTerms": [
+    "new runtime owner or package",
+    "provider or model invocation",
+    "production source mutation",
+    "worker self-acceptance or self-certified independent probe"
+  ],
+  "nextScanRecommendation": "Re-scan when a later authorized AKOE-P4 or common Local closure tranche changes this proof surface or promotes it beyond a provider-free offline composition proof."
+}
