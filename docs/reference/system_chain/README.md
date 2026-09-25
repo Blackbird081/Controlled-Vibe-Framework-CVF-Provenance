@@ -189,7 +189,7 @@ deployment, or production authority and does not raise this lane above
 UI route at
 `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance`.
 
-`CI_REPO_GATE` class evidence (the 186 `governance/compat/check_*.py`
+`CI_REPO_GATE` class evidence (the 207 `governance/compat/check_*.py`
 scripts, including the nine cross-family checkers from Lane 3) has proven
 **current** CLI aggregate/per-check human-readable output:
 `governance/compat/run_agent_autorun_workflow_gate.py` prints a
@@ -303,7 +303,7 @@ Operations exposes a bounded five-job-type subset
 (`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/web-governance-jobs.ts`),
 of which exactly one job type (`docs_governance_check`) wires directly to
 one named checker (`check_docs_governance_compat.py`). **No unified Web
-inventory across all 186 checkers exists** - this remains an explicit
+inventory across all 207 checkers exists** - this remains an explicit
 **future** gap, not something to infer from the presence of the
 `/governance` route directory alone.
 
@@ -383,7 +383,7 @@ This reference presents the five lane verdicts reviewer-accepted by
 MSEA-R90 Audit A at material commit `645df8b83`. It does not certify
 semantic correctness of every governed artifact in the repository, does not
 prove all fifty Governance Control Matrix rows are runtime-connected, does
-not claim a unified Web inventory exists for all 186 `governance/compat`
+not claim a unified Web inventory exists for all 207 `governance/compat`
 checkers, does not reopen or re-decide the R72F lifecycle disposition for
 the nine cross-family checkers, and does not authorize a Web dashboard,
 runtime/provider/live behavior, public export, or session-state mutation.

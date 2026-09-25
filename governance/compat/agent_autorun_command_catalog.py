@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import json
+from pathlib import Path
 
 @dataclass(frozen=True)
 class GateCommand:
@@ -51,6 +53,38 @@ def _range_command(name: str, script: str, base: str, head: str) -> GateCommand:
             "--enforce",
         ),
     )
+
+
+def _dispatch_release_command(active_work_order: str, head: str) -> GateCommand:
+    """Bind final dispatch admission to committed packet + continuity state."""
+    return GateCommand(
+        "dispatch release readiness",
+        (
+            "python",
+            "governance/compat/check_dispatch_release_readiness.py",
+            "--active-work-order",
+            active_work_order,
+            "--head",
+            head,
+            "--enforce",
+        ),
+    )
+
+
+def _active_work_order_binding_error(phase: str, active_work_order: str | None) -> str | None:
+    allowed = {"pre-dispatch", "pre-implementation"}
+    if active_work_order is not None and (phase not in allowed or not active_work_order.strip()):
+        return "--active-work-order requires a nonempty binding at pre-dispatch or pre-implementation only."
+    if phase != "pre-dispatch" or active_work_order is not None:
+        return None
+    path = Path(__file__).resolve().parents[2] / "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+    try:
+        next_move = str(json.loads(path.read_text(encoding="utf-8")).get("nextAllowedMove", "")).upper()
+    except (OSError, json.JSONDecodeError):
+        return "current bootstrap is unavailable; pre-dispatch requires --active-work-order fail-closed."
+    if "WORK_ORDER" in next_move or "WORK-ORDER" in next_move:
+        return "current nextAllowedMove is work-order based; pre-dispatch requires --active-work-order so committed packet and continuity readiness cannot be skipped."
+    return None
 
 
 def _common_commands(base: str, head: str, active_work_order: str | None = None) -> tuple[GateCommand, ...]:
