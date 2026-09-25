@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `390ca4ce8`. ACEL-AKOE-P2-R2 material-SHA marker binds the reviewer-correction closure at `390ca4ce8c835d133da9df6b0bf500a91af15c0e`; parent anchor for this dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `bc7291c0d`. ACEL-AKOE-P3 material-SHA marker binds the committed provider-free integration proof baseline and work order at `bc7291c0dcf3b36f9d6d170d98c0f719ceec6204`; parent anchor for this dedicated continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -18,7 +18,7 @@ technical disposition; the operator remains roadmap/scope decision owner.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_applied_knowledge_owner_enrichment_active`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=hold for explicit operator checkpoint before any AKOE-P3 packet; parked checkpoint=P3/P4, common Local closure, G1-G7 successors, optional Unreal intake, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
+Startup acknowledged: current mode=`acel_applied_knowledge_owner_enrichment_active`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute committed bounded AKOE-P3 proof after dispatch release; parked checkpoint=P3 acceptance, P4/common Local closure, G1-G7 successors, optional Unreal intake, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
 
 ## Current Mode
 `acel_applied_knowledge_owner_enrichment_active`.
@@ -152,8 +152,9 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 - Operator authorized the bounded P2 move with `next`. AKOE-P2 audit-first dispatch baseline and work order are materially committed at `690b07653`; baseline SHA-256 `745c8b81a358cef04921c54fba74d43a5abeb8bf8440a4ba84dfab372585795e`, work-order SHA-256 `c871a1339150374469bfa15041dab1268b7d31ef1603967781e720d054e18791`. Author-fast passed and material pre-commit passed 90/90.
 - AKOE-P2 returned truthfully blocked evidence at `fee4316f1`: the class-4 cancel/completion race reproduces two accepted calls with one lost durable event because `MaoFileRunStore.appendEvent` lacks a same-run writer transaction. That commit preserves the probes, records ADIF-0059, and rejects `COMPLETE_PENDING_REVIEW` with an uncloseable verdict. The bounded P2-R1 correction packet is committed at `e07ffe830`; baseline SHA-256 `094edc4ffdcc4bc9ea86e6e50465f3a7a4763c49dbad890fda83782e0e762807`, work-order SHA-256 `505fef2c15fdfa7a811e9e00d8893e0e9330e3b77ecdd874b650e82d882fa624`; material pre-commit passed 90/90.
 - AKOE-P2 is Local-accepted and `CLOSED_PASS_BOUNDED` at material commit `390ca4ce8`. The operator-authorized P2-R2 reviewer correction regularized the two corpus-registry paths, repaired TypeScript fast-gate routing, hardened manifest/required-gate/final-hash contradictions, passed focused Vitest 58/58, Python 68/68, reviewer-fast 69/69, an independent 25-iteration two-process probe with zero residue, and material pre-commit 90/90. P3 was not auto-opened.
+- Operator `next` opened the bounded AKOE-P3 packet. Its provider-free integration-proof baseline/work order are materially committed at `bc7291c0d`; baseline SHA-256 `051ae52a89d65fd87496b4f4781621187133397f621cae4b9227dcee499a902c`, work-order SHA-256 `32e8f5bff11688a592f013f9eea4ddf1ebaf8f2703570f6391dbb2f13ca807ff`; author-fast passed 5/5 and material pre-commit passed 90/90.
 ## Next Allowed Move
-PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_CHECKPOINT_AKOE_P3; CURRENT_TRANCHE_ACTION=AKOE_P2_CLOSED_AT_390ca4ce8; CURRENT_TRANCHE_DISPOSITION=CLOSED_PASS_BOUNDED_AFTER_REVIEWER_CORRECTION; NEXT_STEP=OPERATOR_DECIDES_WHETHER_TO_AUTHOR_A_BOUNDED_AKOE_P3_BASELINE_AND_WORK_ORDER; EXPANSION_ALLOWED=false. No P3 packet or implementation is authorized by this continuity sync. P4, common Local closure, optional Unreal intake, new runtime ownership, provider/live, activation, certification mutation, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_AKOE_P3_PROOF; CURRENT_TRANCHE_ACTION=AKOE_P3_PACKET_COMMITTED_AT_bc7291c0d; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY_PENDING_FINAL_MACHINE_RELEASE; NEXT_STEP=INTERNAL_AGENT_EXECUTES_docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_2026-09-25.md_FROM_CLEAN_COMMITTED_CONTINUITY_HEAD_AFTER_DISPATCH_RELEASE_PASS; EXPANSION_ALLOWED=false. P3 opens only the exact six-path offline proof manifest. P4, common Local closure, production-owner mutation, dependency installation, provider/live, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
@@ -171,12 +172,12 @@ PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_
 - G7 candidate-to-Work-Order implementation, evidence-join activation,
   derived-knowledge history expansion or any capability-evolution experiment;
 - provider/live work, runtime activation, public sync, deployment or production;
-- AKOE-P3 packet authoring/implementation before a fresh operator checkpoint; AKOE-P4 and common Local closure before their roadmap entry gates;
+- AKOE-P3 Local acceptance before compliant worker evidence and an independent reviewer probe; AKOE-P4 and common Local closure before their roadmap entry gates;
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: preserve terminal G1-G7, P1 closure, P2 blocked evidence/gate hardening at `fee4316f1`, P2-R1 packet material at `e07ffe830`, and P2 reviewer-correction closure at `390ca4ce8`; synchronize the closed P2 disposition and hold before P3.
+Authorized guard-maintenance scope: preserve terminal G1-G7, P1/P2 closure, and P3 packet material at `bc7291c0d`; synchronize only the exact P3 execution route after final dispatch release.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -189,30 +190,30 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: explicit confirmation on 2026-09-25 authorized the bounded P2-R2 reviewer correction and machine-gate hardening. Rollback boundary: revert only this continuity projection; preserve P2 closure `390ca4ce8`, P2-R1 packet `e07ffe830`, P2 blocked evidence `fee4316f1`, P2 dispatch `690b07653`, P1 closure `af0e9a199`, roadmap `53bce992f`, and prior terminal state. This sync grants no P3 authority.
+Operator authorization: operator `next` on 2026-09-25 authorizes the exact bounded P3 packet and later internal execution after release. Rollback boundary: revert only this continuity projection; preserve P3 material `bc7291c0d`, P2 closure `390ca4ce8`, P1 closure `af0e9a199`, roadmap `53bce992f`, and prior terminal state. This sync grants no P3 acceptance or P4 authority.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
 | Actor | Local repository auditor, external-return reviewer and session-sync steward |
 | Provider or surface | private CVF workspace and operator-relayed external review files |
-| Session or invocation | ACEL-AKOE-P2-R2 reviewer-correction closure continuity, 2026-09-25 |
+| Session or invocation | ACEL-AKOE-P3 dispatch continuity, 2026-09-25 |
 | Working directory | repository root |
 | Command or tool surface | governed source reads, external hash verification, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, split session-state sources, generated aggregate/bootstrap, and compact front door |
-| Allowed scope source | explicit operator confirmation authorizing bounded P2-R2 reviewer correction and gate hardening |
-| Before status evidence | P2-R1 packet released; returned packet carried a failed required gate, manifest delta, and invalid completion claim |
-| After status evidence | P2 reviewer correction is closed at `390ca4ce8`; next state is an operator checkpoint before P3 packet authoring |
+| Allowed scope source | operator `next` authorizing bounded P3 packet authoring and exact internal execution route |
+| Before status evidence | P2 closed at `390ca4ce8`; P3 held for explicit operator checkpoint |
+| After status evidence | P3 packet committed at `bc7291c0d`; exact worker route pending final dispatch-release PASS |
 | Diff evidence | exact continuity manifest before session-only commit |
-| Approval boundary | AKOE-P2 reviewer correction closure and continuity only |
-| Claim boundary | no P3/P4 packet or implementation, Unreal intake, new runtime owner, Party B/C, credential, Group 4 source, T3E, live/provider/public, activation or deployment effect |
+| Approval boundary | AKOE-P3 dispatch continuity and exact six-path worker route only |
+| Claim boundary | no P3 acceptance, P4/common closure, production mutation, dependency, live/provider/public, activation or deployment effect |
 | Agent type | Local orchestrator/reviewer and session-sync steward |
-| Invocation ID | `cvf-acel-akoe-p2-r2-reviewer-correction-closure-continuity-20260925` |
-| Expected manifest | handoff, front door, AKOE program entry, coordination entry, next-move entry, generated state and bootstrap |
+| Invocation ID | `cvf-acel-akoe-p3-dispatch-continuity-20260925` |
+| Expected manifest | handoff, front door, core authority, AKOE program entry, coordination entry, next-move entry, generated state and bootstrap |
 | Actual changed set | verified before commit |
 | Manifest delta | exact source manifest plus two generated projections |
 | Deletion or rename disposition | no repository or temporary path deleted or renamed in this sync |
 
 ## Claim Boundary
 
-This handoff records terminal G1-G7, AKOE-P1 closure, and AKOE-P2 reviewer-correction closure at `390ca4ce8`. The next move is an operator checkpoint before any AKOE-P3 packet. No P3/P4 implementation, new runtime owner, provider/live/public/deployment/production effect, or G1-G7 successor is authorized.
+This handoff records terminal G1-G7, AKOE-P1/P2 closure, and the bounded AKOE-P3 packet at `bc7291c0d`. Only exact P3 worker execution after final dispatch release is next. No P3 acceptance, P4/common closure, production-owner mutation, provider/live/public/deployment/production effect, or G1-G7 successor is authorized.

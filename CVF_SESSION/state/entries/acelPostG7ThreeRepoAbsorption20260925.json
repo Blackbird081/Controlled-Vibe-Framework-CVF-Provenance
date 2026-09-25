@@ -2,7 +2,7 @@
   "stateOrder": 2940,
   "stateKey": "acelPostG7ThreeRepoAbsorption20260925",
   "value": {
-    "status": "AKOE_P2_CLOSED_PENDING_OPERATOR_CHECKPOINT_FOR_P3",
+    "status": "AKOE_P3_DISPATCH_READY_COMMON_CLOSURE_BLOCKED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
     "wikiSkillP0Commit": "b06c2c7ec",
@@ -35,6 +35,12 @@
     "akoeP2R2Completion": "docs/reviews/CVF_ACEL_AKOE_P2_R2_DURABLE_RUN_STORE_REVIEWER_CORRECTION_COMPLETION_2026-09-25.md",
     "akoeP2R2MaterialCommit": "390ca4ce8c835d133da9df6b0bf500a91af15c0e",
     "akoeP2Disposition": "CLOSED_PASS_BOUNDED_AFTER_OPERATOR_AUTHORIZED_REVIEWER_CORRECTION",
+    "akoeP3Authorization": "OPERATOR_AUTHORIZED_BOUNDED_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF",
+    "akoeP3DispatchCommit": "bc7291c0dcf3b36f9d6d170d98c0f719ceec6204",
+    "akoeP3Baseline": "docs/baselines/CVF_GC018_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_2026-09-25.md",
+    "akoeP3BaselineSha256": "051ae52a89d65fd87496b4f4781621187133397f621cae4b9227dcee499a902c",
+    "akoeP3WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_2026-09-25.md",
+    "akoeP3WorkOrderSha256": "32e8f5bff11688a592f013f9eea4ddf1ebaf8f2703570f6391dbb2f13ca807ff",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -57,7 +63,7 @@
     "pendingHandoffCount": 0,
     "commonLocalClosure": "BLOCKED_PENDING_AKOE_P3_AND_P4_RECONCILIATION",
     "nextSourceId": "AKOE-P3",
-    "nextAction": "hold for an explicit operator checkpoint before authoring any bounded AKOE-P3 baseline or work order",
-    "boundary": "G1-G7, AKOE-P1, and AKOE-P2 are closed bounded; AKOE-P3 packet authoring and all implementation remain unauthorized until a fresh operator checkpoint; no P4, Unreal intake, new runtime owner, provider/live, activation, certification mutation, deployment, production, public sync or common Local closure"
+    "nextAction": "execute the committed bounded AKOE-P3 provider-free integration proof through one INTERNAL_AGENT after final dispatch-release PASS",
+    "boundary": "G1-G7, AKOE-P1, and AKOE-P2 are closed bounded; AKOE-P3 opens only its exact six-path offline proof manifest after dispatch release; no P4, common Local closure, production-owner mutation, dependency, provider/live, deployment, production or public sync"
   }
 }

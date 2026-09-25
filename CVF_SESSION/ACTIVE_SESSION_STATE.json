@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md",
-    "baselineSha256": "094edc4ffdcc4bc9ea86e6e50465f3a7a4763c49dbad890fda83782e0e762807",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md",
-    "workOrderSha256": "505fef2c15fdfa7a811e9e00d8893e0e9330e3b77ecdd874b650e82d882fa624"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_2026-09-25.md",
+    "baselineSha256": "051ae52a89d65fd87496b4f4781621187133397f621cae4b9227dcee499a902c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_2026-09-25.md",
+    "workOrderSha256": "32e8f5bff11688a592f013f9eea4ddf1ebaf8f2703570f6391dbb2f13ca807ff"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -16617,7 +16617,7 @@
       "externalEvidenceAuthority": "INPUT_NOT_PRIVATE_CVF_PROOF"
     },
     "contractSha256": "92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c",
-    "parentArtifact": "docs/reviews/CVF_ACEL_AKOE_P2_R2_DURABLE_RUN_STORE_REVIEWER_CORRECTION_COMPLETION_2026-09-25.md"
+    "parentArtifact": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_2026-09-25.md"
   },
   "outputRedactionT1Closure20260914": "OUTPUT-REDACTION-T1 is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED at material commit 45a2ace784ab6badf49b2d869915eebf69f4e369. The opt-in trusted-caller known-value transformation is accepted with 66/66 focused synthetic tests, TypeScript PASS, finite benchmark ceilings met, reviewer-fast 68/68, pre-implementation 84/84 and material pre-commit 89/89. No default CLI activation, ambient credential collection, provider/live execution, deployment or repository/program closure follows. R4 evidence is accepted bounded; all three program sources remain INCOMPLETE.",
   "qmServiceTokenReplayDedupeT1Dispatch20260914": "QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 is DISPATCH_READY at material commit 2cc9d2000590a8d3718a5fc6d28b3b2eb1102735. The roadmap, paired GC-018 baseline and work order authorize exactly five uncommitted worker paths for process-local exact valid-request replay deduplication; existing sync verifier API and five production route callers stay stable. Pre-commit passed 89/89 and P4-C1 reported SKIPPED_NO_ELIGIBLE_CANDIDATE. Before dispatch, Local adjudicated the prior OUTPUT-REDACTION continuity marker as REJECT_MEASUREMENT_SAMPLE and recoverably archived ignored marker SHA-256 6eb32adc685f74c9aae4349b8aef3edfdbb69247d77212e45fb46e2b4092f9c; no P4 sample was promoted. Next is INTERNAL_AGENT execution with zero commits followed by Local review. M4, M7, memory candidates, shared/durable replay, provider/live, public sync and deployment remain parked.",
@@ -16717,7 +16717,7 @@
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
   },
   "acelPostG7ThreeRepoAbsorption20260925": {
-    "status": "AKOE_P2_CLOSED_PENDING_OPERATOR_CHECKPOINT_FOR_P3",
+    "status": "AKOE_P3_DISPATCH_READY_COMMON_CLOSURE_BLOCKED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
     "wikiSkillP0Commit": "b06c2c7ec",
@@ -16750,6 +16750,12 @@
     "akoeP2R2Completion": "docs/reviews/CVF_ACEL_AKOE_P2_R2_DURABLE_RUN_STORE_REVIEWER_CORRECTION_COMPLETION_2026-09-25.md",
     "akoeP2R2MaterialCommit": "390ca4ce8c835d133da9df6b0bf500a91af15c0e",
     "akoeP2Disposition": "CLOSED_PASS_BOUNDED_AFTER_OPERATOR_AUTHORIZED_REVIEWER_CORRECTION",
+    "akoeP3Authorization": "OPERATOR_AUTHORIZED_BOUNDED_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF",
+    "akoeP3DispatchCommit": "bc7291c0dcf3b36f9d6d170d98c0f719ceec6204",
+    "akoeP3Baseline": "docs/baselines/CVF_GC018_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_2026-09-25.md",
+    "akoeP3BaselineSha256": "051ae52a89d65fd87496b4f4781621187133397f621cae4b9227dcee499a902c",
+    "akoeP3WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_2026-09-25.md",
+    "akoeP3WorkOrderSha256": "32e8f5bff11688a592f013f9eea4ddf1ebaf8f2703570f6391dbb2f13ca807ff",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -16772,8 +16778,8 @@
     "pendingHandoffCount": 0,
     "commonLocalClosure": "BLOCKED_PENDING_AKOE_P3_AND_P4_RECONCILIATION",
     "nextSourceId": "AKOE-P3",
-    "nextAction": "hold for an explicit operator checkpoint before authoring any bounded AKOE-P3 baseline or work order",
-    "boundary": "G1-G7, AKOE-P1, and AKOE-P2 are closed bounded; AKOE-P3 packet authoring and all implementation remain unauthorized until a fresh operator checkpoint; no P4, Unreal intake, new runtime owner, provider/live, activation, certification mutation, deployment, production, public sync or common Local closure"
+    "nextAction": "execute the committed bounded AKOE-P3 provider-free integration proof through one INTERNAL_AGENT after final dispatch-release PASS",
+    "boundary": "G1-G7, AKOE-P1, and AKOE-P2 are closed bounded; AKOE-P3 opens only its exact six-path offline proof manifest after dispatch release; no P4, common Local closure, production-owner mutation, dependency, provider/live, deployment, production or public sync"
   },
-  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_CHECKPOINT_AKOE_P3; CURRENT_TRANCHE_ACTION=AKOE_P2_CLOSED_AT_390ca4ce8; CURRENT_TRANCHE_DISPOSITION=CLOSED_PASS_BOUNDED_AFTER_REVIEWER_CORRECTION; NEXT_STEP=OPERATOR_DECIDES_WHETHER_TO_AUTHOR_A_BOUNDED_AKOE_P3_BASELINE_AND_WORK_ORDER; EXPANSION_ALLOWED=false. No P3 packet or implementation is authorized by this continuity sync. P4, common Local closure, optional Unreal intake, new runtime ownership, provider/live, activation, certification mutation, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24."
+  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_AKOE_P3_PROOF; CURRENT_TRANCHE_ACTION=AKOE_P3_PACKET_COMMITTED_AT_bc7291c0d; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY_PENDING_FINAL_MACHINE_RELEASE; NEXT_STEP=INTERNAL_AGENT_EXECUTES_docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_2026-09-25.md_FROM_CLEAN_COMMITTED_CONTINUITY_HEAD_AFTER_DISPATCH_RELEASE_PASS; EXPANSION_ALLOWED=false. P3 opens only the exact six-path offline proof manifest. P4, common Local closure, production-owner mutation, dependency installation, provider/live, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24."
 }
