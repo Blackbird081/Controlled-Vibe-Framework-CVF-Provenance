@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "acel_applied_knowledge_owner_enrichment_active",
+  "currentMode": "acel_applied_knowledge_owner_enrichment_closed_bounded",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_AKOE_P4_RECONCILIATION; ACTIVE_BATCH=ACEL-AKOE-P4; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_AND_CLOSURE_2026-09-26.md; CURRENT_TRANCHE_ACTION=AKOE_P4_DISPATCH_COMMITTED_AT_4a1a48e5b; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY; NEXT_STEP=EXECUTE_EXACT_THREE_PATH_NO_COMMIT_WORK_ORDER_AND_RETURN_COMPLETE_PENDING_REVIEW_OR_BLOCKED_WITH_REASON; EXPANSION_ALLOWED=false. Worker execution is limited to the exact three-path manifest and cannot accept common Local closure. Production-owner mutation, dependency installation, provider/live, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_CHECKPOINT_POST_AKOE; ACTIVE_BATCH=NONE; ACTIVE_WORK_ORDER=NONE; CURRENT_TRANCHE_ACTION=AKOE_P4_COMMON_LOCAL_CLOSURE_AT_a1541eb8b; CURRENT_TRANCHE_DISPOSITION=CLOSED_PASS_BOUNDED; NEXT_STEP=OPERATOR_DECIDES_ANY_SUCCESSOR; EXPANSION_ALLOWED=false. AKOE-P1 through AKOE-P4 and common Local reconciliation are closed bounded. Any successor, optional Unreal source intake, production-owner mutation, dependency installation, provider/live, deployment, production action, or public sync requires fresh operator authority. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_AND_CLOSURE_2026-09-26.md",
     "baselineSha256": "f5be4fa6c959c49bb099d4e2a5aaa45b5a2e7dffae46400492ea37736f8468c4",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_AND_CLOSURE_2026-09-26.md",
-    "workOrderSha256": "7851130ad6baca4d948cfa0402d94135e78a6aee793b98378a5b39289bd9bc5c"
+    "workOrderSha256": "40f41513d29b38d0ac6256d985e01e91913377afb3412392a835b7fc66d1678c"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

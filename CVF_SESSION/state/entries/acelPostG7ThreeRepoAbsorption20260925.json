@@ -1,8 +1,8 @@
 {
-  "stateOrder": 2940,
+  "stateOrder": 2943,
   "stateKey": "acelPostG7ThreeRepoAbsorption20260925",
   "value": {
-    "status": "AKOE_P4_DISPATCH_READY_WORKER_EXECUTION",
+    "status": "AKOE_COMMON_LOCAL_CLOSURE_CLOSED_PASS_BOUNDED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
     "wikiSkillP0Commit": "b06c2c7ec",
@@ -51,7 +51,14 @@
     "akoeP4Baseline": "docs/baselines/CVF_GC018_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_AND_CLOSURE_2026-09-26.md",
     "akoeP4BaselineSha256": "f5be4fa6c959c49bb099d4e2a5aaa45b5a2e7dffae46400492ea37736f8468c4",
     "akoeP4WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_AND_CLOSURE_2026-09-26.md",
-    "akoeP4WorkOrderSha256": "7851130ad6baca4d948cfa0402d94135e78a6aee793b98378a5b39289bd9bc5c",
+    "akoeP4WorkOrderSha256": "40f41513d29b38d0ac6256d985e01e91913377afb3412392a835b7fc66d1678c",
+    "akoeP4WorkerReturn": "docs/reviews/CVF_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_WORKER_RETURN_2026-09-26.md",
+    "akoeP4Report": "docs/reviews/CVF_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_REPORT_2026-09-26.md",
+    "akoeP4Ledger": "docs/reviews/evidence/cvf-acel-akoe-p4-terminal-disposition-ledger-2026-09-26.json",
+    "akoeP4IndependentProbe": "docs/reviews/evidence/cvf-acel-akoe-p4-independent-probe-2026-09-26.json",
+    "akoeP4Completion": "docs/reviews/CVF_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_COMPLETION_2026-09-26.md",
+    "akoeP4MaterialCommit": "a1541eb8b919909ca80499dff5df4f243b8c3a57",
+    "akoeP4Disposition": "CLOSED_PASS_BOUNDED_AFTER_REVIEWER_CORRECTION",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -72,9 +79,9 @@
       "preCommitGovernance": "90/90 PASS PER MATERIAL COMMIT"
     },
     "pendingHandoffCount": 0,
-    "commonLocalClosure": "PENDING_AKOE_P4_WORKER_RETURN_AND_INDEPENDENT_LOCAL_REVIEW",
-    "nextSourceId": "AKOE-P4",
-    "nextAction": "execute the committed exact three-path AKOE-P4 no-commit work order and return for independent Local review",
-    "boundary": "G1-G7 and AKOE-P1 through AKOE-P3 are closed bounded; AKOE-P4 dispatch is ready but its result and common Local closure remain pending; no production-owner mutation, dependency, provider/live, deployment, production or public sync"
+    "commonLocalClosure": "CLOSED_PASS_BOUNDED",
+    "nextSourceId": null,
+    "nextAction": "hold for a fresh operator decision before any post-AKOE successor",
+    "boundary": "G1-G7 and AKOE-P1 through AKOE-P4 are closed bounded; the six-family common Local reconciliation contains 19 terminally dispositioned candidates; no successor, production-owner mutation, dependency, provider/live, deployment, production or public sync is authorized"
   }
 }

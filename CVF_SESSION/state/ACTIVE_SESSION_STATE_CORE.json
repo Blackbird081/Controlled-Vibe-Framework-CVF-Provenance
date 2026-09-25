@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_AND_CLOSURE_2026-09-26.md",
     "baselineSha256": "f5be4fa6c959c49bb099d4e2a5aaa45b5a2e7dffae46400492ea37736f8468c4",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_AND_CLOSURE_2026-09-26.md",
-    "workOrderSha256": "7851130ad6baca4d948cfa0402d94135e78a6aee793b98378a5b39289bd9bc5c"
+    "workOrderSha256": "40f41513d29b38d0ac6256d985e01e91913377afb3412392a835b7fc66d1678c"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -109,7 +109,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "acel_applied_knowledge_owner_enrichment_active",
+  "currentMode": "acel_applied_knowledge_owner_enrichment_closed_bounded",
   "previousMode": "acel_g1_g7_research_terminally_closed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
