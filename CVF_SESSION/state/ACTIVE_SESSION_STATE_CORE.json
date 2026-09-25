@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_2026-09-24.md",
-    "baselineSha256": "d7620eca52093a9ae7b8d025486dd8253c18ce8292bd6c97ed82b46edd091d97",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_2026-09-24.md",
-    "workOrderSha256": "78aa072bcc10418b345e37a7d2e5ce8869599cbe7104254f78e77cd27ba91606"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md",
+    "baselineSha256": "941c41c3dd5fc86ae48bc363e970163172da61def7faa3f2fb7e69211b14cc4e",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md",
+    "workOrderSha256": "078b03beac792cdb3cb2d1fc13eda8eda9e7678d72f9077a8ce0f053a2042d01"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

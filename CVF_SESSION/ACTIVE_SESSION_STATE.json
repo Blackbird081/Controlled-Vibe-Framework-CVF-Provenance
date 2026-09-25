@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_2026-09-24.md",
-    "baselineSha256": "d7620eca52093a9ae7b8d025486dd8253c18ce8292bd6c97ed82b46edd091d97",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_2026-09-24.md",
-    "workOrderSha256": "78aa072bcc10418b345e37a7d2e5ce8869599cbe7104254f78e77cd27ba91606"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md",
+    "baselineSha256": "941c41c3dd5fc86ae48bc363e970163172da61def7faa3f2fb7e69211b14cc4e",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md",
+    "workOrderSha256": "078b03beac792cdb3cb2d1fc13eda8eda9e7678d72f9077a8ce0f053a2042d01"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -16617,7 +16617,7 @@
       "externalEvidenceAuthority": "INPUT_NOT_PRIVATE_CVF_PROOF"
     },
     "contractSha256": "92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c",
-    "parentArtifact": "docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md"
+    "parentArtifact": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md"
   },
   "outputRedactionT1Closure20260914": "OUTPUT-REDACTION-T1 is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED at material commit 45a2ace784ab6badf49b2d869915eebf69f4e369. The opt-in trusted-caller known-value transformation is accepted with 66/66 focused synthetic tests, TypeScript PASS, finite benchmark ceilings met, reviewer-fast 68/68, pre-implementation 84/84 and material pre-commit 89/89. No default CLI activation, ambient credential collection, provider/live execution, deployment or repository/program closure follows. R4 evidence is accepted bounded; all three program sources remain INCOMPLETE.",
   "qmServiceTokenReplayDedupeT1Dispatch20260914": "QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 is DISPATCH_READY at material commit 2cc9d2000590a8d3718a5fc6d28b3b2eb1102735. The roadmap, paired GC-018 baseline and work order authorize exactly five uncommitted worker paths for process-local exact valid-request replay deduplication; existing sync verifier API and five production route callers stay stable. Pre-commit passed 89/89 and P4-C1 reported SKIPPED_NO_ELIGIBLE_CANDIDATE. Before dispatch, Local adjudicated the prior OUTPUT-REDACTION continuity marker as REJECT_MEASUREMENT_SAMPLE and recoverably archived ignored marker SHA-256 6eb32adc685f74c9aae4349b8aef3edfdbb69247d77212e45fb46e2b4092f9c; no P4 sample was promoted. Next is INTERNAL_AGENT execution with zero commits followed by Local review. M4, M7, memory candidates, shared/durable replay, provider/live, public sync and deployment remain parked.",
@@ -16717,13 +16717,18 @@
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
   },
   "acelPostG7ThreeRepoAbsorption20260925": {
-    "status": "SIX_INPUT_ROADMAP_ACTIVE_COMMON_CLOSURE_BLOCKED",
+    "status": "AKOE_P1_DISPATCHED_COMMON_CLOSURE_BLOCKED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
     "wikiSkillP0Commit": "b06c2c7ec",
     "hyperFramesP0Commit": "bac44fed6",
     "sixInputRoadmap": "docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md",
     "sixInputRoadmapCommit": "53bce992f",
+    "akoeP1DispatchCommit": "d48bfb83f88f158d53db237d6b8a2e2c3880009d",
+    "akoeP1Baseline": "docs/baselines/CVF_GC018_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md",
+    "akoeP1BaselineSha256": "941c41c3dd5fc86ae48bc363e970163172da61def7faa3f2fb7e69211b14cc4e",
+    "akoeP1WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md",
+    "akoeP1WorkOrderSha256": "078b03beac792cdb3cb2d1fc13eda8eda9e7678d72f9077a8ce0f053a2042d01",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -16746,8 +16751,8 @@
     "pendingHandoffCount": 0,
     "commonLocalClosure": "BLOCKED_PENDING_AKOE_P1_P3_AND_P4_RECONCILIATION",
     "nextSourceId": "AKOE-P1",
-    "nextAction": "author a bounded GC-018 baseline and work order for AKOE-P1 Human Control and Positioning reconciliation; do not begin implementation from the roadmap alone",
-    "boundary": "G1-G7 remain closed; roadmap authority permits P1 dispatch authoring only; no upstream import, implementation, provider/live, activation, certification mutation, deployment, production, public sync or common Local closure"
+    "nextAction": "execute the committed bounded AKOE-P1 docs-only work order and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON",
+    "boundary": "G1-G7 remain closed; committed packet authority permits only bounded P1 docs reconciliation; no P2/P3, upstream import, provider/live, activation, certification mutation, deployment, production, public sync, Local acceptance or common Local closure"
   },
-  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=AUTHOR_GC018_AND_WORK_ORDER; CURRENT_TRANCHE_ACTION=SIX_INPUT_ROADMAP_COMMITTED_AT_53bce992f; CURRENT_TRANCHE_DISPOSITION=AKOE_P1_READY_FOR_GC018_AUTHORING; NEXT_STEP=AUTHOR_BOUNDED_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_BASELINE_AND_WORK_ORDER; EXPANSION_ALLOWED=false. The three-repository P0 program is terminal-accounted: Jev 9ac0ee8e5, WikiSkill b06c2c7ec, HyperFrames bac44fed6. The three operator-relayed handoffs are reviewed and routed by origin: Human Boundary ADAPT candidate, Positioning primarily CONFIRMED_EXISTING, Async WATCH with upstream factual claims BLOCKED_SOURCE_NOT_FOUND until Local pinning. External web research remains advisory and may reopen only for a named unresolved source question. P1 implementation, P2/P3, upstream import, provider/live, activation, certification mutation, deployment, production action, public sync, common Local closure, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24."
+  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_AKOE_P1_WORK_ORDER; CURRENT_TRANCHE_ACTION=AKOE_P1_DISPATCH_COMMITTED_AT_d48bfb83f; CURRENT_TRANCHE_DISPOSITION=AKOE_P1_DISPATCH_READY_INTERNAL_AGENT; NEXT_STEP=INTERNAL_AGENT_EXECUTES_docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md_FROM_COMMITTED_HEAD_d48bfb83f_AND_RETURNS_COMPLETE_PENDING_REVIEW_OR_BLOCKED_WITH_REASON; EXPANSION_ALLOWED=false. P1 implementation is limited to docs-only reconciliation under the paired GC-018 baseline and work order. P2/P3, common Local closure, upstream import, provider/live, activation, certification mutation, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24."
 }

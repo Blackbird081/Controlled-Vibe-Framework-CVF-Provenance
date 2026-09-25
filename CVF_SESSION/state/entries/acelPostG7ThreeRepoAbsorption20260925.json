@@ -2,13 +2,18 @@
   "stateOrder": 2940,
   "stateKey": "acelPostG7ThreeRepoAbsorption20260925",
   "value": {
-    "status": "SIX_INPUT_ROADMAP_ACTIVE_COMMON_CLOSURE_BLOCKED",
+    "status": "AKOE_P1_DISPATCHED_COMMON_CLOSURE_BLOCKED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
     "wikiSkillP0Commit": "b06c2c7ec",
     "hyperFramesP0Commit": "bac44fed6",
     "sixInputRoadmap": "docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md",
     "sixInputRoadmapCommit": "53bce992f",
+    "akoeP1DispatchCommit": "d48bfb83f88f158d53db237d6b8a2e2c3880009d",
+    "akoeP1Baseline": "docs/baselines/CVF_GC018_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md",
+    "akoeP1BaselineSha256": "941c41c3dd5fc86ae48bc363e970163172da61def7faa3f2fb7e69211b14cc4e",
+    "akoeP1WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md",
+    "akoeP1WorkOrderSha256": "078b03beac792cdb3cb2d1fc13eda8eda9e7678d72f9077a8ce0f053a2042d01",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -31,7 +36,7 @@
     "pendingHandoffCount": 0,
     "commonLocalClosure": "BLOCKED_PENDING_AKOE_P1_P3_AND_P4_RECONCILIATION",
     "nextSourceId": "AKOE-P1",
-    "nextAction": "author a bounded GC-018 baseline and work order for AKOE-P1 Human Control and Positioning reconciliation; do not begin implementation from the roadmap alone",
-    "boundary": "G1-G7 remain closed; roadmap authority permits P1 dispatch authoring only; no upstream import, implementation, provider/live, activation, certification mutation, deployment, production, public sync or common Local closure"
+    "nextAction": "execute the committed bounded AKOE-P1 docs-only work order and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON",
+    "boundary": "G1-G7 remain closed; committed packet authority permits only bounded P1 docs reconciliation; no P2/P3, upstream import, provider/live, activation, certification mutation, deployment, production, public sync, Local acceptance or common Local closure"
   }
 }
