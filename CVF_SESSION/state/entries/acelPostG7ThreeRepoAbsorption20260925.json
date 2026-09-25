@@ -2,7 +2,7 @@
   "stateOrder": 2940,
   "stateKey": "acelPostG7ThreeRepoAbsorption20260925",
   "value": {
-    "status": "AKOE_P3_DISPATCH_READY_COMMON_CLOSURE_BLOCKED",
+    "status": "AKOE_P3_CLOSED_P4_OPERATOR_CHECKPOINT",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
     "wikiSkillP0Commit": "b06c2c7ec",
@@ -41,6 +41,11 @@
     "akoeP3BaselineSha256": "051ae52a89d65fd87496b4f4781621187133397f621cae4b9227dcee499a902c",
     "akoeP3WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_2026-09-25.md",
     "akoeP3WorkOrderSha256": "32e8f5bff11688a592f013f9eea4ddf1ebaf8f2703570f6391dbb2f13ca807ff",
+    "akoeP3WorkerReturn": "docs/reviews/CVF_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_WORKER_RETURN_2026-09-25.md",
+    "akoeP3Completion": "docs/reviews/CVF_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_COMPLETION_2026-09-25.md",
+    "akoeP3MaterialCommit": "c79c82e2b39b83e4218af28f1d41e43f6f3cc0b1",
+    "akoeP3IndependentProbe": "docs/reviews/evidence/cvf-acel-akoe-p3-independent-probe-2026-09-26.json",
+    "akoeP3Disposition": "CLOSED_PASS_BOUNDED",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -61,9 +66,9 @@
       "preCommitGovernance": "90/90 PASS PER MATERIAL COMMIT"
     },
     "pendingHandoffCount": 0,
-    "commonLocalClosure": "BLOCKED_PENDING_AKOE_P3_AND_P4_RECONCILIATION",
-    "nextSourceId": "AKOE-P3",
-    "nextAction": "execute the committed bounded AKOE-P3 provider-free integration proof through one INTERNAL_AGENT after final dispatch-release PASS",
-    "boundary": "G1-G7, AKOE-P1, and AKOE-P2 are closed bounded; AKOE-P3 opens only its exact six-path offline proof manifest after dispatch release; no P4, common Local closure, production-owner mutation, dependency, provider/live, deployment, production or public sync"
+    "commonLocalClosure": "BLOCKED_PENDING_AKOE_P4_OPERATOR_AUTHORIZATION_AND_RECONCILIATION",
+    "nextSourceId": "AKOE-P4",
+    "nextAction": "hold for a fresh operator decision on AKOE-P4 independent Local reconciliation and common closure",
+    "boundary": "G1-G7 and AKOE-P1 through AKOE-P3 are closed bounded; AKOE-P4 and common Local closure remain unauthorized pending a fresh operator decision; no production-owner mutation, dependency, provider/live, deployment, production or public sync"
   }
 }

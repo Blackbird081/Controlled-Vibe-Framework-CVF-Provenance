@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_applied_knowledge_owner_enrichment_active`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=execute the committed bounded AKOE-P3 provider-free proof after dispatch release; role=Local dispatcher/reviewer with INTERNAL_AGENT worker; phase=P3 offline proof; decision owner=Local; parked checkpoint=P3 acceptance, P4/common Local closure, G1-G7 successors, optional Unreal intake, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
+Startup acknowledged: current mode=`acel_applied_knowledge_owner_enrichment_active`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=hold for a fresh operator decision on AKOE-P4; role=Local reviewer/closer; phase=P3 closed bounded, P4 unopened; decision owner=operator for P4 scope and Local for technical disposition; parked checkpoint=P4/common Local closure, G1-G7 successors, optional Unreal intake, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `acel_applied_knowledge_owner_enrichment_active`; previous mode ma
 
 ## Next Allowed Move
 Mode: `acel_applied_knowledge_owner_enrichment_active`
-PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_AKOE_P3_PROOF; CURRENT_TRANCHE_ACTION=AKOE_P3_PACKET_COMMITTED_AT_bc7291c0d; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY_PENDING_FINAL_MACHINE_RELEASE; NEXT_STEP=INTERNAL_AGENT_EXECUTES_docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_2026-09-25.md_FROM_CLEAN_COMMITTED_CONTINUITY_HEAD_AFTER_DISPATCH_RELEASE_PASS; EXPANSION_ALLOWED=false. P3 opens only the exact six-path offline proof manifest. P4, common Local closure, production-owner mutation, dependency installation, provider/live, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_CHECKPOINT_AKOE_P4; CURRENT_TRANCHE_ACTION=AKOE_P3_CLOSED_AT_c79c82e2b; CURRENT_TRANCHE_DISPOSITION=CLOSED_PASS_BOUNDED; NEXT_STEP=OPERATOR_DECIDES_WHETHER_TO_AUTHORIZE_AKOE_P4_INDEPENDENT_LOCAL_RECONCILIATION_AND_COMMON_CLOSURE; EXPANSION_ALLOWED=false. P4 and common Local closure remain unauthorized until a fresh operator decision. Production-owner mutation, dependency installation, provider/live, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
