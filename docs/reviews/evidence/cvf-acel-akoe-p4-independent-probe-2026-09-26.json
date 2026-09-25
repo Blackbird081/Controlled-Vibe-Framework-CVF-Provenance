@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "cvf.acel-akoe-p4-independent-probe.v1",
+  "batchId": "ACEL-AKOE-P4",
+  "reviewerRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "executionBaseHead": "ca7a061b01c8e46789dbf067be9c57064b137944",
+  "workerLedgerSha256BeforeReviewerCorrection": "f0f3493e6623a2c957a1f2213e324e8f3e47c63227f730ca347320b4db354a3a",
+  "reviewerCorrectedLedgerSha256": "6d8c210fef854890090dda40c84ee4ce8fdb8994b2a712a81cce320881a2b59c",
+  "oracleSeparation": "PowerShell ConvertFrom-Json, Get-FileHash, ordinal manifest reconstruction, direct Test-Path checks, grouping, and one direct sample per origin family; no worker helper or assertion code reused",
+  "reviewerFinding": {
+    "findingId": "AKOE-P4-RF-01",
+    "severity": "MATERIAL_RECONCILIATION_DEFECT",
+    "originalCondition": "P3 was declared cross-region closure evidence but was also counted as candidate C20 under a seventh INTEGRATED_APPLICATION_PROOF origin family",
+    "authorityConflict": "the work order requires exactly six origin families and states that P3 is evidence rather than a seventh family",
+    "repair": "removed duplicated C20, retained P3 as a cross-region evidence link, and recomputed all candidate, family, disposition, report, and return totals",
+    "repairOwner": "LOCAL_REVIEWER_CLOSER"
+  },
+  "observed": {
+    "candidateCount": 19,
+    "declaredCandidateCount": 19,
+    "uniqueCandidateIdCount": 19,
+    "originFamilyCount": 6,
+    "originCounts": {
+      "JEV_TYPESAFE_SKILLS": 3,
+      "WIKISKILL": 2,
+      "HYPERFRAMES": 2,
+      "HUMAN_AGENT_BOUNDARY_HANDOFF": 4,
+      "POSITIONING_CONSTRAINT_HANDOFF": 4,
+      "ASYNC_RUNTIME_HANDOFF": 4
+    },
+    "dispositionCounts": {
+      "ADAPT": 5,
+      "CONFIRMED_EXISTING": 8,
+      "DEFER_WITH_TRIGGER": 3,
+      "REJECT_DIRECT_IMPORT": 2,
+      "BLOCKED_SOURCE_NOT_FOUND": 1
+    },
+    "invalidDispositionCount": 0,
+    "incompleteDeferredOrBlockedTriggerCount": 0,
+    "missingCitedPathCount": 0,
+    "sourceManifestHashMismatchCount": 0,
+    "manifestSha256": "d4517ee9524fb7dcb4257cf6ed5a2a9069bce7d38fd08c1a8ad7de4aeafe2333",
+    "unmappedCandidateCount": 0
+  },
+  "originFamilySamples": [
+    "AKOE-P4-C01-JEV-JUDGMENT-EVIDENCE",
+    "AKOE-P4-C03-WIKISKILL-PROPOSAL-ROLLBACK",
+    "AKOE-P4-C04-HYPERFRAMES-ARTIFACT-COMPLETION",
+    "AKOE-P4-C08-HUMAN-BOUNDARY-EXECUTION-VERIFICATION-ACCEPTANCE",
+    "AKOE-P4-C12-POSITIONING-ACCEPTED-OUTCOME-FILTER",
+    "AKOE-P4-C16-ASYNC-DURABLE-INTENT-BEFORE-EFFECT"
+  ],
+  "negativeMutationsChecked": [
+    "seventh origin family",
+    "duplicate candidate ID",
+    "unknown disposition",
+    "missing cited path",
+    "deferred or blocked row without trigger owner",
+    "candidate or aggregate count mismatch",
+    "source manifest hash mismatch",
+    "unmapped residue"
+  ],
+  "disposition": "PASS_INDEPENDENT_PROBE",
+  "claimBoundary": "bounded six-family documentation reconciliation only; no runtime, provider, live, public, deployment, certification, or production claim"
+}

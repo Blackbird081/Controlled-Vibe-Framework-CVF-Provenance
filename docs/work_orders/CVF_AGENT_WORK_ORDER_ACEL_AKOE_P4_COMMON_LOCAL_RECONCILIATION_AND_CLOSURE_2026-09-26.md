@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: ACEL-AKOE-P4
 
@@ -154,6 +154,14 @@ has first issued new authority.
 | `CVF_SESSION/**`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF*.md` | continuity is reviewer/session-steward owned |
 | `.private_reference/**` | no source intake or mirror mutation |
 
+## Forbidden Filesystem State At Dispatch
+
+| Forbidden path | Expected state | Actual state at dispatch | Action if PRESENT |
+|---|---|---|---|
+| `docs/reviews/CVF_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_REPORT_2026-09-26.md` | ABSENT | ABSENT | N/A |
+| `docs/reviews/evidence/cvf-acel-akoe-p4-terminal-disposition-ledger-2026-09-26.json` | ABSENT | ABSENT | N/A |
+| `docs/reviews/CVF_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_WORKER_RETURN_2026-09-26.md` | ABSENT | ABSENT | N/A |
+
 ## Foundation Storage Layout Block
 
 No foundation runtime storage is added. The JSON ledger is review evidence
@@ -222,6 +230,8 @@ Same-token collision disposition: `REJECT_DIRECT_IMPORT` occurrence is authorita
 Same-token collision disposition: `IDs` occurrence is authoritative schema vocabulary with different meaning; NON_AUTHORITATIVE_FOR_PACKET_IDENTITY.
 Same-token collision disposition: `claimBoundary` occurrence is authoritative schema vocabulary with different meaning; NON_AUTHORITATIVE_FOR_PACKET_IDENTITY.
 Same-token collision disposition: `reopenTrigger` occurrence is authoritative schema vocabulary with different meaning; NON_AUTHORITATIVE_FOR_PACKET_IDENTITY.
+Same-token collision disposition: `PASS_INDEPENDENT` occurrence is reviewer-status vocabulary with different meaning; NON_AUTHORITATIVE_FOR_PACKET_IDENTITY.
+Same-token collision disposition: `PASS` occurrence is gate vocabulary with different meaning; NON_AUTHORITATIVE_FOR_PACKET_IDENTITY.
 
 | Check | Evidence | Disposition |
 |---|---|---|
@@ -682,23 +692,23 @@ complete trigger fields, equality of total counts, and zero unmapped residue.
 
 ## Acceptance Criteria
 
-- [ ] Dispatch material/continuity and bound pre-flight gates pass.
-- [ ] Exact three-path manifest; all existing artifacts remain unchanged.
-- [ ] Source manifest includes every Required First Reads evidence input with
+- [x] Dispatch material/continuity and bound pre-flight gates pass.
+- [x] Exact three-path manifest; all existing artifacts remain unchanged.
+- [x] Source manifest includes every Required First Reads evidence input with
   current SHA-256 and processing status.
-- [ ] Candidate inventory covers all six origin families and accepted P0-P3
+- [x] Candidate inventory covers all six origin families and accepted P0-P3
   value/disposition rows without unexplained residue.
-- [ ] Every candidate has exactly one allowed disposition and complete
+- [x] Every candidate has exactly one allowed disposition and complete
   owner/evidence/closure fields.
-- [ ] Every deferred or blocked row has a concrete trigger, trigger owner, and
+- [x] Every deferred or blocked row has a concrete trigger, trigger owner, and
   conditional-reopen disposition.
-- [ ] Candidate IDs are unique and all cited repository paths exist.
-- [ ] Origin totals, disposition totals, mapped/deferred/rejected/blocked
+- [x] Candidate IDs are unique and all cited repository paths exist.
+- [x] Origin totals, disposition totals, mapped/deferred/rejected/blocked
   totals, and total candidate count reconcile exactly.
-- [ ] Corpus verdict is bounded and truthful; knowledge unmapped count is zero.
-- [ ] Report values match ledger values.
-- [ ] Common-closure candidate remains pending independent Local review.
-- [ ] Worker full gate passes; staged set remains empty; worker does not commit.
+- [x] Corpus verdict is bounded and truthful; knowledge unmapped count is zero.
+- [x] Report values match ledger values.
+- [x] Common-closure candidate remained pending independent Local review at worker return.
+- [x] Worker full gate passes; staged set remains empty; worker does not commit.
 
 Fail conditions: missing source; source hash drift; candidate ambiguity;
 duplicate ID; invalid disposition; missing path; missing trigger/owner;
@@ -726,11 +736,36 @@ production use, or post-AKOE successor.
 
 ## Closure Checklist
 
-- [ ] All acceptance criteria have machine-readable evidence.
-- [ ] Independent Local probe is pending in worker evidence, never self-certified.
-- [ ] Return-Time Closeability Recheck has no outside-authority blocker.
-- [ ] Reviewer owns acceptance, completion, roadmap, commits and continuity.
-- [ ] No successor tranche is opened automatically.
+- [x] All acceptance criteria have machine-readable evidence.
+- [x] Independent Local probe was pending in worker evidence and was performed by the reviewer.
+- [x] Return-Time Closeability Recheck has no outside-authority blocker.
+- [x] Reviewer owns acceptance, completion, roadmap, commits and continuity.
+- [x] No successor tranche is opened automatically.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED`; all closure checklist items checked | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_COMPLETION_2026-09-26.md` | `ACCEPT_COMMON_LOCAL_RECONCILIATION_BOUNDED` | PASS |
+| Worker return | `docs/reviews/CVF_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_WORKER_RETURN_2026-09-26.md` | exact three-path no-commit return | PASS |
+| Roadmap state | `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md` | P1-P4 and common Local closure are `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-acel-akoe-p4-terminal-disposition-ledger-2026-09-26.json` | 19 candidates; exactly six origin families; zero unmapped residue | PASS |
+| Registry Markdown | P4 report and completion | terminal dispositions and reviewer correction recorded | PASS |
+| External evidence digest | `docs/reviews/evidence/cvf-acel-akoe-p4-independent-probe-2026-09-26.json` | SHA-256 `c8656d4eec966aad332ada86a2124f8357363627e2d53d18f7f11d53101c3ea7` | PASS |
+| System loop interlock | existing owners only | documentation-only closure; no runtime loop added | N/A with reason |
+| Session continuity | active handoff/front door/state | separate post-material continuity sync required | N/A with reason: follows material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Origin-family boundary | exactly six families | Jev, WikiSkill, HyperFrames, Human, Positioning, Async | PASS |
+| Candidate reconciliation | unique total equals declared total | 19 equals 19; zero duplicate or unmapped rows | PASS |
+| Terminal disposition totals | sum equals candidate total | 5 ADAPT + 8 CONFIRMED_EXISTING + 3 DEFER_WITH_TRIGGER + 2 REJECT_DIRECT_IMPORT + 1 BLOCKED_SOURCE_NOT_FOUND = 19 | PASS |
+| P3 evidence role | cross-region evidence only | retained as closure evidence and excluded from family/candidate totals | PASS |
+| Independent reviewer probe | distinct persisted probe | `PASS_INDEPENDENT_PROBE`; exact digest recorded above | PASS |
+| Successor authority | none | fresh operator checkpoint required | PASS |
 
 ## Return-To-Orchestrator Conditions
 

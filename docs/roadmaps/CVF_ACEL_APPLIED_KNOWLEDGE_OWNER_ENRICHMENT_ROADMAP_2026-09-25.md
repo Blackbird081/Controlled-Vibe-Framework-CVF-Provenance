@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: ACTIVE
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-25
 
@@ -132,9 +132,9 @@ Every tranche must satisfy all of these invariants:
 | Jev / TypeSafe skills | `.private_reference/source_mirrors/typesafe-ai__skills/` at `65a39f393687675ce170e6094757de20370365b9`; source identity recorded in `.private_reference/source_mirrors/INDEX.md` | `ACCEPT` as pinned upstream source input | reuse accepted P0 evidence; targeted P1/P2 use only when a named owner question requires it |
 | WikiSkill | `.private_reference/source_mirrors/kenhuangus__wikiskill/` at `03633345829c452680d18a17004afd33eee729da`; method provenance boundary retained | `ACCEPT` as pinned upstream source input | reuse accepted P0 proposal/rollback evidence; no subsystem adoption |
 | HyperFrames | `.private_reference/source_mirrors/heygen-com__hyperframes/` at `7129340ae8e96fc32bb45102174528dd5ecafb56` | `ACCEPT` as pinned upstream source input | reuse accepted P0 artifact/scope evidence; no media engine adoption |
-| Human-agent boundary handoff | `C:/Users/DELL/Downloads/HUMAN_AGENT_BOUNDARY_CANONICAL_HANDOFF.md`; SHA-256 `29d52af73990c4a8c6c678353951cb9a9fa166add7ce21a91f1255db45b984ef` | exact file read; `OPERATOR_AGENT_CO_DESIGNED`; not independent empirical evidence | `ADAPT` design constraints after existing-owner comparison |
-| Positioning-constraint handoff | `C:/Users/DELL/Downloads/CVF_POSITIONING_CONSTRAINT_CANONICAL_HANDOFF.md`; SHA-256 `5b2be8c31c65054b6269c34eec58fd4596ce147920cef2ec2fc92cf65cd50d57` | exact file read; `OPERATOR_AGENT_CO_DESIGNED`; not independent empirical evidence | primarily `CONFIRMED_EXISTING`; enrich only a proved owner gap |
-| Async-runtime handoff | `C:/Users/DELL/Downloads/ASYNC_RUNTIME_CANONICAL_HANDOFF.md`; SHA-256 `a85d8fd35495e94257df1d3a8bfa238d3e5661eaa04b52e156b4886987a4525b` | exact handoff read; underlying `unreallabsai/unreal-agent@1b9f778` corpus is not locally pinned or verified | `BLOCKED_SOURCE_NOT_FOUND` for upstream factual claims; `WATCH` as origin hypothesis and owner-audit prompt |
+| Human-agent boundary handoff | repo-local digest and terminal disposition in `docs/reviews/CVF_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_COMPLETION_2026-09-25.md`; SHA-256 `27d3c3dbbdddf425f6a7803aa2705c91613f20d238404f7e94d50eacb00ba29d` | Local-reviewed `OPERATOR_AGENT_CO_DESIGNED` input; not independent empirical evidence | `ADAPT` design constraints after existing-owner comparison |
+| Positioning-constraint handoff | repo-local digest and terminal disposition in `docs/reviews/CVF_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_COMPLETION_2026-09-25.md`; SHA-256 `27d3c3dbbdddf425f6a7803aa2705c91613f20d238404f7e94d50eacb00ba29d` | Local-reviewed `OPERATOR_AGENT_CO_DESIGNED` input; not independent empirical evidence | primarily `CONFIRMED_EXISTING`; enrich only a proved owner gap |
+| Async-runtime handoff | repo-local digest and terminal disposition in `docs/reviews/CVF_ACEL_AKOE_P2_R2_DURABLE_RUN_STORE_REVIEWER_CORRECTION_COMPLETION_2026-09-25.md`; SHA-256 `ff80b2c71a1972e9efd7eb145f115a4e4f7f96b248b41d6c737020cee9f471b4` | Local-reviewed handoff value; underlying `unreallabsai/unreal-agent@1b9f778` corpus is not locally pinned or verified | `BLOCKED_SOURCE_NOT_FOUND` for upstream factual claims; CVF-native durable correction closed bounded |
 | Current CVF positioning | `ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md` | `ACCEPT` as frozen supreme-governance owner | controlling authority; no doctrine rewrite from handoff prose |
 | Current MAO runtime owner | `docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_CONTRACT.md` and `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/operational.worker.launcher.ts` | `ACCEPT` as CVF contract and implementation evidence | compare async and human-control candidates against this owner |
 | Current durable command owner | `docs/baselines/CVF_GC018_DELTA_T3_GOVERNED_COMMAND_LAUNCHER_2026-06-19.md` and `EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/cli/governed-command-launcher.ts` | `ACCEPT` as existing CVF intent-before-run owner | reconcile rather than build a second durable launcher |
@@ -152,6 +152,15 @@ Every tranche must satisfy all of these invariants:
 | Absent-versus-collision disposition | the source corpus is absent for this claim and remains `BLOCKED_SOURCE_NOT_FOUND`; vocabulary collisions are not binding source evidence; current CVF-owned code can still be evaluated independently without attributing facts to Unreal Agent |
 
 Same-token collision dispositions: `ADAPT`, `CONFIRMED_EXISTING`, `CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_EVIDENCE_2026`, `CVF_PRODUCT_POSITIONING`, `DEFER_WITH_TRIGGER`, `ECOSYSTEM`, `MAO`, `NON_AUTHORITATIVE_UNTIL_REVIEWED`, `NOVEL_SYNTHESIS`, `OWNER_SURFACE_NOT_FOUND`, `PROVENANCE_BACKED_DERIVED_SYNTHESIS_CANDIDATE`, `REJECT_DIRECT_IMPORT`, `REQUIRED`, `SHA`, `WATCH`, `_RUNTIME_CANONICAL_HANDOFF`, `artifactClass`, and `authorityStatus` each have governance-vocabulary or file-name collisions elsewhere in the repository; every such occurrence is non-authoritative for Unreal Agent source presence and carries a different meaning from a pinned source mirror.
+
+Same-token collision disposition: `ETION_2026` is a file-name fragment with
+different meaning; NON_AUTHORITATIVE_FOR_SOURCE_PRESENCE.
+Same-token collision disposition: `ff80b2c71a1972e9efd7eb145f115a4e4f7f96b248b41d6c737020cee9f471b4`
+is a governed completion digest with different meaning; NON_AUTHORITATIVE_FOR_SOURCE_PRESENCE.
+Same-token collision disposition: `PASS_` is a status-token fragment with different
+meaning; NON_AUTHORITATIVE_FOR_SOURCE_PRESENCE.
+Same-token collision disposition: `PASS` is gate vocabulary with different meaning;
+NON_AUTHORITATIVE_FOR_SOURCE_PRESENCE.
 
 ## Completed Predecessor Baseline
 
@@ -184,7 +193,7 @@ specific expected information gain.
 | `AKOE-P1` | `CLOSED_PASS_BOUNDED` | reconcile Human Boundary and Positioning constraints against exact existing owners | one bounded decision packet; minimal owner updates only for proved gaps; negative-search ledger for confirmed-existing claims | roadmap accepted; exact handoff hashes match | Local closure `af0e9a199`: 13 `CONFIRMED_EXISTING`, one `REJECT_DIRECT_IMPORT`, zero owner edits; reviewer-fast 69/69 and pre-commit 90/90 |
 | `AKOE-P2` | `CLOSED_PASS_BOUNDED` | audit and harden durable intent, replay, and projection boundaries across MAO and governed-command launchers | cross-owner gap matrix; deterministic crash/replay/cancel/projection tests for any accepted delta; optional pinned Unreal source intake only if a source-specific claim remains necessary | P1 closes role/acceptance semantics; operator authorization recorded | Local closure `390ca4ce8`: durable-run transaction correction, independent 25-iteration probe, focused Vitest 58/58, and governance hardening accepted bounded |
 | `AKOE-P3` | `CLOSED_PASS_BOUNDED` | demonstrate the six-input composition in one provider-free offline use case | synthetic scenario, evidence receipts, rejection/rollback path, restart path, independent verifier result, operator-facing acceptance packet | P1 and P2 accepted; exact scenario and owner paths authorized by a work order | Local completion review accepts the deterministic eight-facet proof after focused 22/22 and a distinct cap-one verifier/rejection probe; no production or provider claim |
-| `AKOE-P4` | `READY_PENDING_OPERATOR_CHECKPOINT` | perform independent Local reconciliation and common closure | completion review, conditional-reopen dispositions, corpus/knowledge reconciliation, session sync, public-export disposition | P3 accepted bounded; fresh operator authorization still required | every candidate is `ADAPT`, `CONFIRMED_EXISTING`, `DEFER_WITH_TRIGGER`, `REJECT_DIRECT_IMPORT`, or `BLOCKED_SOURCE_NOT_FOUND`; no silent residue |
+| `AKOE-P4` | `CLOSED_PASS_BOUNDED` | perform independent Local reconciliation and common closure | completion review, conditional-reopen dispositions, corpus/knowledge reconciliation, session sync, public-export disposition | P3 accepted bounded; operator-authorized P4 packet and independent Local review complete | Local completion accepts 19 unique candidates across exactly six origin families after removing a duplicated P3 closure-evidence row; 5 `ADAPT`, 8 `CONFIRMED_EXISTING`, 3 `DEFER_WITH_TRIGGER`, 2 `REJECT_DIRECT_IMPORT`, 1 `BLOCKED_SOURCE_NOT_FOUND`; no silent residue |
 
 ### AKOE-P1 - Human Control And Positioning Reconciliation
 
@@ -582,15 +591,15 @@ a new architecture or immediate production/runtime claim.
 | Target paths | `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md` |
 | Allowed scope source | operator instruction to absorb useful external knowledge under CVF authority and build a combined roadmap |
 | Before status evidence | three P0 adaptations committed; three additional handoffs read and dispositioned informally; common Local closure blocked |
-| After status evidence | one staged CVF-native roadmap with exact source classes, owner map, acceptance criteria, stop boundaries, and common-closure route |
-| Diff evidence | new roadmap only at initial authoring; final `git diff --check` and changed-path status required |
-| Approval boundary | roadmap authoring and bounded next-tranche planning only |
-| Claim boundary | no source import, runtime activation, provider/live call, common closure, public sync, deployment, or production claim |
+| After status evidence | roadmap `CLOSED_PASS_BOUNDED`; P4 common Local closure accepted with 19 six-family candidates and explicit reopen residue |
+| Diff evidence | initial roadmap evidence plus P1-P4 completion artifacts; final closure gates and changed-path status required |
+| Approval boundary | roadmap common Local closure only; no successor authority |
+| Claim boundary | no source import, runtime activation, provider/live call, public sync, deployment, or production claim |
 | Agent type | Local internal agent |
 | Invocation ID | `ACEL-AKOE-R1-LOCAL-20260925` |
 | Expected manifest | one new roadmap path |
-| Actual changed set | one new roadmap path at initial authoring |
-| Manifest delta | zero at initial authoring; any repair must remain inside the roadmap path unless separately justified |
+| Actual changed set | roadmap closure projection plus reviewer-owned P4 closure evidence under the work-order conversion contract |
+| Manifest delta | MATCH for the P4 reviewer-closure material set |
 | Deletion or rename disposition | N/A with reason: no deletion or rename authorized or performed |
 
 ## Stop, Reopen, And Closure Rules
@@ -611,6 +620,30 @@ a new architecture or immediate production/runtime claim.
   production proof requires a fresh operator checkpoint and separate governed
   work order.
 
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Origin-family boundary | exactly six families | Jev, WikiSkill, HyperFrames, Human, Positioning, Async | PASS |
+| Candidate reconciliation | unique total equals declared total | 19 equals 19; zero duplicate or unmapped rows | PASS |
+| Terminal disposition totals | sum equals candidate total | 5 ADAPT + 8 CONFIRMED_EXISTING + 3 DEFER_WITH_TRIGGER + 2 REJECT_DIRECT_IMPORT + 1 BLOCKED_SOURCE_NOT_FOUND = 19 | PASS |
+| P3 evidence role | cross-region evidence only | retained as closure evidence and excluded from family/candidate totals | PASS |
+| Independent reviewer probe | distinct parser and evidence digest | `PASS_INDEPENDENT_PROBE`; digest bound below | PASS |
+| Successor authority | none | fresh operator checkpoint required | PASS |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_AND_CLOSURE_2026-09-26.md` | exact six-family closure contract fulfilled | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_COMPLETION_2026-09-26.md` | `ACCEPT_COMMON_LOCAL_RECONCILIATION_BOUNDED` | PASS |
+| Roadmap state | this roadmap | P1-P4 and common Local closure are `CLOSED_PASS_BOUNDED` | PASS |
+| Registry JSON | `docs/reviews/evidence/cvf-acel-akoe-p4-terminal-disposition-ledger-2026-09-26.json` | 19 candidates across six families; zero unmapped residue | PASS |
+| Registry Markdown | P4 report and completion | terminal dispositions and reviewer correction recorded | PASS |
+| External evidence digest | `docs/reviews/evidence/cvf-acel-akoe-p4-independent-probe-2026-09-26.json` | SHA-256 `c8656d4eec966aad332ada86a2124f8357363627e2d53d18f7f11d53101c3ea7` | PASS |
+| System loop interlock | existing owners only | no new runtime owner, dependency, or loop | N/A with reason: documentation-only closure |
+| Session continuity | active handoff and generated session state | dedicated post-material continuity commit required | N/A with reason: continuity follows material commit |
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
@@ -621,9 +654,8 @@ present.
 
 ## Claim Boundary
 
-This roadmap records Local planning and bounded source/owner reconciliation.
+This roadmap records completed bounded Local source/owner reconciliation.
 It does not make the handoffs canonical, verify the claimed Unreal Agent
 source, import external code, activate a package or skill, change provider or
 production behavior, prove semantic quality, complete all deferred corpus
-reading, reopen G1-G7, complete the common Local closure, or authorize public
-export.
+reading, reopen G1-G7, authorize a successor, or authorize public export.
