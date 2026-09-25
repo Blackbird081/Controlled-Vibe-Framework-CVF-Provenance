@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `af0e9a199`. ACEL-AKOE-P1 material-SHA marker binds the committed GC-018 baseline and bounded work order at `d48bfb83f88f158d53db237d6b8a2e2c3880009d`; worker return `ecd86b75e` and Local completion `af0e9a199` are committed, with this continuity projection anchored to the completion commit.
+Current HEAD recorded for this handoff: `3c8378b8b`. ACEL-AKOE-P1 material-SHA marker binds the committed GC-018 baseline and bounded work order at `d48bfb83f88f158d53db237d6b8a2e2c3880009d`; worker return `ecd86b75e`, Local completion `af0e9a199`, and closure projection `3c8378b8b` are committed, with this dedicated marker sync anchored to the closure-projection commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
