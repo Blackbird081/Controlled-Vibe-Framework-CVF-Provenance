@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "acel_applied_knowledge_owner_enrichment_active",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=AUTHOR_BOUNDED_AKOE_P2_R1_CORRECTION_PACKET; CURRENT_TRANCHE_ACTION=AKOE_P2_BLOCKED_EVIDENCE_AND_GATE_HARDENING_COMMITTED_AT_fee4316f1; CURRENT_TRANCHE_DISPOSITION=AKOE_P2_BLOCKED_RUNTIME_RACE_P2_R1_OPERATOR_AUTHORIZED; NEXT_STEP=LOCAL_DISPATCHER_AUTHORS_COMMITS_AND_SYNCS_docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md_BEFORE_ANY_WORKER_INVOCATION; EXPANSION_ALLOWED=false. P2-R1 may open only the exact durable-run-store source/test/worker-return correction paths after committed packet continuity and final dispatch-release PASS. P3/P4, common Local closure, optional Unreal intake, new runtime ownership, provider/live, activation, certification mutation, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_AKOE_P2_R1_CORRECTION; CURRENT_TRANCHE_ACTION=AKOE_P2_R1_PACKET_COMMITTED_AT_e07ffe830; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY_PENDING_FINAL_MACHINE_RELEASE; NEXT_STEP=INTERNAL_AGENT_EXECUTES_docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md_FROM_COMMITTED_CONTINUITY_HEAD_AFTER_DISPATCH_RELEASE_PASS; EXPANSION_ALLOWED=false. P2-R1 opens only the exact durable-run-store source/test/worker-return paths in its six-path manifest. P3/P4, common Local closure, optional Unreal intake, new runtime ownership, provider/live, activation, certification mutation, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_2026-09-25.md",
-    "baselineSha256": "745c8b81a358cef04921c54fba74d43a5abeb8bf8440a4ba84dfab372585795e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_2026-09-25.md",
-    "workOrderSha256": "c871a1339150374469bfa15041dab1268b7d31ef1603967781e720d054e18791"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md",
+    "baselineSha256": "094edc4ffdcc4bc9ea86e6e50465f3a7a4763c49dbad890fda83782e0e762807",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md",
+    "workOrderSha256": "505fef2c15fdfa7a811e9e00d8893e0e9330e3b77ecdd874b650e82d882fa624"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

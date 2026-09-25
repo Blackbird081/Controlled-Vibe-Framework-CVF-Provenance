@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_2026-09-25.md",
-    "baselineSha256": "745c8b81a358cef04921c54fba74d43a5abeb8bf8440a4ba84dfab372585795e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_2026-09-25.md",
-    "workOrderSha256": "c871a1339150374469bfa15041dab1268b7d31ef1603967781e720d054e18791"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md",
+    "baselineSha256": "094edc4ffdcc4bc9ea86e6e50465f3a7a4763c49dbad890fda83782e0e762807",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md",
+    "workOrderSha256": "505fef2c15fdfa7a811e9e00d8893e0e9330e3b77ecdd874b650e82d882fa624"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

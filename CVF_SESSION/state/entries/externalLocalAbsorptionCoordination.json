@@ -12,6 +12,6 @@
       "externalEvidenceAuthority": "INPUT_NOT_PRIVATE_CVF_PROOF"
     },
     "contractSha256": "92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c",
-    "parentArtifact": "docs/reviews/CVF_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_WORKER_RETURN_2026-09-25.md"
+    "parentArtifact": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md"
   }
 }

@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_2026-09-25.md",
-    "baselineSha256": "745c8b81a358cef04921c54fba74d43a5abeb8bf8440a4ba84dfab372585795e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_2026-09-25.md",
-    "workOrderSha256": "c871a1339150374469bfa15041dab1268b7d31ef1603967781e720d054e18791"
+    "baselinePath": "docs/baselines/CVF_GC018_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md",
+    "baselineSha256": "094edc4ffdcc4bc9ea86e6e50465f3a7a4763c49dbad890fda83782e0e762807",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md",
+    "workOrderSha256": "505fef2c15fdfa7a811e9e00d8893e0e9330e3b77ecdd874b650e82d882fa624"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -16617,7 +16617,7 @@
       "externalEvidenceAuthority": "INPUT_NOT_PRIVATE_CVF_PROOF"
     },
     "contractSha256": "92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c",
-    "parentArtifact": "docs/reviews/CVF_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_WORKER_RETURN_2026-09-25.md"
+    "parentArtifact": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md"
   },
   "outputRedactionT1Closure20260914": "OUTPUT-REDACTION-T1 is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED at material commit 45a2ace784ab6badf49b2d869915eebf69f4e369. The opt-in trusted-caller known-value transformation is accepted with 66/66 focused synthetic tests, TypeScript PASS, finite benchmark ceilings met, reviewer-fast 68/68, pre-implementation 84/84 and material pre-commit 89/89. No default CLI activation, ambient credential collection, provider/live execution, deployment or repository/program closure follows. R4 evidence is accepted bounded; all three program sources remain INCOMPLETE.",
   "qmServiceTokenReplayDedupeT1Dispatch20260914": "QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 is DISPATCH_READY at material commit 2cc9d2000590a8d3718a5fc6d28b3b2eb1102735. The roadmap, paired GC-018 baseline and work order authorize exactly five uncommitted worker paths for process-local exact valid-request replay deduplication; existing sync verifier API and five production route callers stay stable. Pre-commit passed 89/89 and P4-C1 reported SKIPPED_NO_ELIGIBLE_CANDIDATE. Before dispatch, Local adjudicated the prior OUTPUT-REDACTION continuity marker as REJECT_MEASUREMENT_SAMPLE and recoverably archived ignored marker SHA-256 6eb32adc685f74c9aae4349b8aef3edfdbb69247d77212e45fb46e2b4092f9c; no P4 sample was promoted. Next is INTERNAL_AGENT execution with zero commits followed by Local review. M4, M7, memory candidates, shared/durable replay, provider/live, public sync and deployment remain parked.",
@@ -16717,7 +16717,7 @@
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
   },
   "acelPostG7ThreeRepoAbsorption20260925": {
-    "status": "AKOE_P2_BLOCKED_P2_R1_AUTHORIZED_COMMON_CLOSURE_BLOCKED",
+    "status": "AKOE_P2_R1_DISPATCH_READY_COMMON_CLOSURE_BLOCKED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
     "wikiSkillP0Commit": "b06c2c7ec",
@@ -16741,6 +16741,11 @@
     "akoeP2BlockedWorkerReturn": "docs/reviews/CVF_ACEL_AKOE_P2_DURABLE_INTENT_AND_PROJECTION_RECONCILIATION_WORKER_RETURN_2026-09-25.md",
     "akoeP2BlockedEvidenceAndGateCommit": "fee4316f1affdcf2675c4e9832d96ebc7b917402",
     "akoeP2R1Authorization": "OPERATOR_AUTHORIZED_PACKET_AUTHORING_AND_LATER_EXACT_RUNTIME_CORRECTION_AFTER_DISPATCH_RELEASE",
+    "akoeP2R1DispatchCommit": "e07ffe830a58779bfa004bf9fcd90804f2d91b99",
+    "akoeP2R1Baseline": "docs/baselines/CVF_GC018_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md",
+    "akoeP2R1BaselineSha256": "094edc4ffdcc4bc9ea86e6e50465f3a7a4763c49dbad890fda83782e0e762807",
+    "akoeP2R1WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md",
+    "akoeP2R1WorkOrderSha256": "505fef2c15fdfa7a811e9e00d8893e0e9330e3b77ecdd874b650e82d882fa624",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -16763,8 +16768,8 @@
     "pendingHandoffCount": 0,
     "commonLocalClosure": "BLOCKED_PENDING_AKOE_P2_P3_AND_P4_RECONCILIATION",
     "nextSourceId": "AKOE-P2-R1",
-    "nextAction": "author, commit, and continuity-sync the bounded AKOE-P2-R1 correction packet before any worker invocation",
-    "boundary": "G1-G7 and AKOE-P1 remain closed; P2 is blocked by the durable run-store race; P2-R1 packet authoring is authorized but worker execution requires later committed dispatch continuity; no P3/P4, Unreal intake, new runtime owner, provider/live, activation, certification mutation, deployment, production, public sync, Local acceptance or common Local closure"
+    "nextAction": "execute the committed bounded AKOE-P2-R1 work order through one INTERNAL_AGENT after final dispatch-release PASS",
+    "boundary": "G1-G7 and AKOE-P1 remain closed; P2 is blocked by the durable run-store race; P2-R1 authorizes only its exact runtime source/test/return manifest after committed continuity and dispatch-release PASS; no P3/P4, Unreal intake, new runtime owner, provider/live, activation, certification mutation, deployment, production, public sync, Local acceptance or common Local closure"
   },
-  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=AUTHOR_BOUNDED_AKOE_P2_R1_CORRECTION_PACKET; CURRENT_TRANCHE_ACTION=AKOE_P2_BLOCKED_EVIDENCE_AND_GATE_HARDENING_COMMITTED_AT_fee4316f1; CURRENT_TRANCHE_DISPOSITION=AKOE_P2_BLOCKED_RUNTIME_RACE_P2_R1_OPERATOR_AUTHORIZED; NEXT_STEP=LOCAL_DISPATCHER_AUTHORS_COMMITS_AND_SYNCS_docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md_BEFORE_ANY_WORKER_INVOCATION; EXPANSION_ALLOWED=false. P2-R1 may open only the exact durable-run-store source/test/worker-return correction paths after committed packet continuity and final dispatch-release PASS. P3/P4, common Local closure, optional Unreal intake, new runtime ownership, provider/live, activation, certification mutation, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24."
+  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_AKOE_P2_R1_CORRECTION; CURRENT_TRANCHE_ACTION=AKOE_P2_R1_PACKET_COMMITTED_AT_e07ffe830; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY_PENDING_FINAL_MACHINE_RELEASE; NEXT_STEP=INTERNAL_AGENT_EXECUTES_docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md_FROM_COMMITTED_CONTINUITY_HEAD_AFTER_DISPATCH_RELEASE_PASS; EXPANSION_ALLOWED=false. P2-R1 opens only the exact durable-run-store source/test/worker-return paths in its six-path manifest. P3/P4, common Local closure, optional Unreal intake, new runtime ownership, provider/live, activation, certification mutation, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24."
 }
