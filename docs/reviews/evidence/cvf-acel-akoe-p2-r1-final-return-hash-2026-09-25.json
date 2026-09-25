@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "cvf.highRiskLocalTransactionProof.finalEvidenceHashBinding.v1",
+  "batchId": "ACEL-AKOE-P2-R1",
+  "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md",
+  "workerReturnPath": "docs/reviews/CVF_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_WORKER_RETURN_2026-09-25.md",
+  "algorithm": "SHA256",
+  "scope": "EXACT_RETURN_BYTES",
+  "capture": "BEFORE_AND_AFTER_FINAL_REQUIRED_GATE",
+  "finalRequiredGateCommand": "python governance/compat/run_worker_return_fast_gate.py --pytest-target EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.durable.run.store.test.ts --pytest-target EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.operational.worker.launcher.test.ts --pytest-target EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.durable.run.store.concurrent.peer.test.ts --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md",
+  "beforeGateSha256": "102c5cca716cac9dac7bdd2a73222c97dc43a72a81e09daa09819440fb754898",
+  "afterGateSha256": "102c5cca716cac9dac7bdd2a73222c97dc43a72a81e09daa09819440fb754898",
+  "equality": "REQUIRED",
+  "equalityResult": "MATCH",
+  "postGateMutation": "FORBIDDEN",
+  "postGateMutationResult": "NO_POST_GATE_MUTATION",
+  "note": "Reviewer-corrected blocked-return bytes after the operator-authorized P2-R2 intake correction. The original worker receipt is superseded because the original return incorrectly declared COMPLETE_PENDING_REVIEW despite a failed required gate and two paths outside its manifest. The hash pair binds the corrected truthful blocked return before and after the repaired worker-return fast gate.",
+  "capturedAt": "2026-09-25",
+  "capturedBy": "Local reviewer/closer under explicit operator P2-R2 correction authorization"
+}

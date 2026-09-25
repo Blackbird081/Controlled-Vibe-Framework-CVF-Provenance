@@ -467,35 +467,23 @@ describe("MaoOperationalWorkerLauncher", () => {
 
   // --- Cancel/completion race (ACEL-AKOE-P2 class 4) ---
 
-  it("DEFECT PROBE: acceptCancellation racing a concurrent completion append can silently lose a durable event while both callers observe ok:true", async () => {
-    // ACEL-AKOE-P2 audit finding: MaoFileRunStore.appendEvent (durable.run.store.ts,
-    // outside this dispatch's Maximum Worker Path Manifest) performs its own
-    // loadAndReplay -> ledger.append -> atomicWriteJson sequence per call with
-    // no compare-and-swap or lock against a concurrent writer (contrast
-    // MaoFileDelegationLedgerStore, which does have CONCURRENT_WRITE_LOST_RACE
-    // / stale-lock handling for exactly this scenario). Two concurrent
-    // appendEvent calls against the SAME task each replay the SAME
-    // pre-race state, both consider their own transition valid from
-    // `running` (per ALLOWED_TRANSITIONS, both `succeeded` and `cancelled`
-    // are individually legal from `running`), and the second `rename()` in
-    // atomicWriteJson unconditionally clobbers the first's snapshot write.
-    // This reproduces at the public MaoOperationalWorkerLauncher.acceptCancellation
-    // surface: this test drives a durable INVOCATION_COMPLETED append
-    // concurrently with acceptCancellation()'s own CANCEL_ACCEPTED append.
-    // Both callers report `ok: true` (deterministically observed on this
-    // repository's non-faulty store/adapter), but durable replay retains
-    // only ONE of the two terminal events - the other is silently lost, not
-    // merely delayed. A caller that received `succeeded` and later resumes
-    // durably observes `cancelled` (or vice versa): a caller can observe a
-    // false positive for its own call's durability. This violates GC-018
-    // Baseline Invariant 6 ("Cancellation and completion races must have one
-    // deterministic durable outcome and may not fabricate success") because
-    // the LOSING caller's `ok: true` is itself a fabricated durability
-    // claim, and the defect's root cause and fix
-    // (MaoFileRunStore.appendEvent lacks a lock/CAS write path) fall inside
-    // durable.run.store.ts, which the paired work order does not authorize
-    // this worker to modify. See the worker return's P2 class 4 row and
-    // Risk / Corrective Action section for the required escalation.
+  it("ONE_DURABLE_TERMINAL_WINNER: acceptCancellation racing a concurrent completion append durably persists exactly one terminal event and fails the loser closed", async () => {
+    // ACEL-AKOE-P2-R1 correction: MaoFileRunStore.appendEvent now holds a
+    // cross-instance/cross-process lockfile mutex (reusing
+    // MaoFileDelegationLedgerStore's own acquireLock/releaseLock primitive)
+    // across its whole load-replay-append-write transaction, so two
+    // concurrent appendEvent calls against the SAME task can no longer both
+    // observe a stale pre-race replay and unconditionally clobber each
+    // other's write. This test drives the identical race the former P2
+    // defect probe used - a durable INVOCATION_COMPLETED append concurrent
+    // with acceptCancellation()'s own CANCEL_ACCEPTED append - and asserts
+    // the desired contract instead of the former known-bug tolerance:
+    // exactly one conflicting terminal attempt succeeds, the other fails
+    // closed (never both ok:true with a silently lost event), and durable
+    // replay contains exactly the durable winner's terminal event. This
+    // satisfies GC-018 Baseline Invariant 6 ("Cancellation and completion
+    // races must have one deterministic durable outcome and may not
+    // fabricate success").
     const graph = compileGraph();
     await store.createRun(graph);
     const lifecycle = new MaoLifecycleController("2026-07-17T00:00:00.000Z");
@@ -514,6 +502,12 @@ describe("MaoOperationalWorkerLauncher", () => {
       }),
     ]);
 
+    // Exactly one conflicting terminal attempt succeeds; the loser must fail
+    // closed rather than fabricate an ok:true result for a write that never
+    // durably lands.
+    const outcomes = [acceptResult.ok, completionAppend.ok];
+    expect(outcomes.filter(Boolean)).toHaveLength(1);
+
     const resumed = await store.resumeRun(graph.taskGraphId);
     expect(resumed.ok).toBe(true);
     if (!resumed.ok) return;
@@ -521,16 +515,15 @@ describe("MaoOperationalWorkerLauncher", () => {
       (e) => e.eventType === "CANCEL_ACCEPTED" || e.eventType === "INVOCATION_COMPLETED",
     );
 
-    // DOCUMENTED CURRENT (DEFECTIVE) BEHAVIOR, not the desired contract: both
-    // calls report success, yet at most one terminal event survives durably.
-    // If a future durable.run.store.ts repair adds real concurrency control,
-    // this assertion should start failing (both should durably persist, or
-    // exactly one call should report ok:false) - that failure is the signal
-    // to replace this probe with a passing race-safety assertion instead of
-    // relaxing it further.
-    expect(acceptResult.ok).toBe(true);
-    expect(completionAppend.ok).toBe(true);
-    expect(terminalEvents.length).toBeLessThan(2);
+    // Durable replay contains exactly the durable winner: one terminal
+    // event, and it matches whichever call actually reported ok:true.
+    expect(terminalEvents).toHaveLength(1);
+    if (acceptResult.ok) {
+      expect(terminalEvents[0]?.eventType).toBe("CANCEL_ACCEPTED");
+    } else {
+      expect(completionAppend.ok).toBe(true);
+      expect(terminalEvents[0]?.eventType).toBe("INVOCATION_COMPLETED");
+    }
   });
 
   // --- Unknown graph/task and invalid state ---

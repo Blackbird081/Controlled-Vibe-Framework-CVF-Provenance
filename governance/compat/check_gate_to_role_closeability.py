@@ -82,6 +82,15 @@ def _scalar(section: str, field: str) -> str:
     return match.group(1).strip().strip("`") if match else ""
 
 
+def _trace_table_field(text: str, field: str) -> str:
+    section = _section(text, "## Agent Operation Trace Block")
+    for table in _tables(section):
+        for row in table[2:]:
+            if len(row) >= 2 and row[0] == field:
+                return row[1].strip()
+    return ""
+
+
 def _tables(section: str) -> list[list[list[str]]]:
     tables: list[list[list[str]]] = []
     current: list[list[str]] = []
@@ -274,6 +283,7 @@ def check_recheck(path: str, text: str) -> list[Violation]:
     route = _scalar(section, "nextRepairRoute")
     redispatch = _scalar(section, "workerRedispatchAllowed")
     status = _scalar(text, "Status")
+    manifest_delta = _trace_table_field(text, "Manifest delta")
     issues: list[Violation] = []
     if disposition not in {"CLOSEABLE", "UNCLOSEABLE_PACKET_CONTRADICTION"}:
         issues.append(Violation(path, "return_disposition_invalid", "closeabilityDisposition is invalid"))
@@ -302,6 +312,33 @@ def check_recheck(path: str, text: str) -> list[Violation]:
                 "COMPLETE_PENDING_REVIEW requires closeabilityDisposition: CLOSEABLE and outsideAuthorityBlockers: NONE",
             )
         )
+    if status == "COMPLETE_PENDING_REVIEW" and re.search(
+        r"(?i)(?:outside\s+(?:the\s+)?manifest|unauthori[sz]ed|partial[_ -]?match|mismatch)",
+        manifest_delta,
+    ):
+        issues.append(
+            Violation(
+                path,
+                "complete_status_manifest_delta",
+                "COMPLETE_PENDING_REVIEW cannot declare an out-of-manifest or unauthorized Manifest delta",
+            )
+        )
+    if status == "COMPLETE_PENDING_REVIEW" and "run_worker_return_fast_gate.py" in text:
+        limitation_sections = "\n".join(
+            match.group(0)
+            for match in re.finditer(
+                r"(?ims)^###\s+Known Machine-Gate Limitation[^\n]*run_worker_return_fast_gate\.py[\s\S]*?(?=^#{2,3}\s+|\Z)",
+                text,
+            )
+        )
+        if limitation_sections and re.search(r"(?i)\b(?:fail(?:ed|ure)?|cannot execute|did not pass)\b", limitation_sections):
+            issues.append(
+                Violation(
+                    path,
+                    "complete_status_required_gate_failed",
+                    "COMPLETE_PENDING_REVIEW cannot disclose a failed required worker-return gate",
+                )
+            )
     if redispatch not in {"YES", "NO"}:
         issues.append(Violation(path, "redispatch_value_invalid", "workerRedispatchAllowed must be YES or NO"))
     return issues

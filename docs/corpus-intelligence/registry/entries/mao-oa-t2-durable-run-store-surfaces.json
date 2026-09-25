@@ -5,10 +5,13 @@
   "displayName": "MAO-OA-T2 durable run store surfaces",
   "scopePaths": [
     "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/package.json",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/node_modules/vite-node/vite-node.mjs",
     "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/durable.run.store.ts",
-    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.durable.run.store.test.ts"
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.durable.run.store.test.ts",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.durable.run.store.concurrent.peer.test.ts",
+    "EXTENSIONS/**"
   ],
-  "fileCount": 3,
+  "fileCount": 6,
   "status": "SCANNED",
   "scanWave": "MAO-OA-T2",
   "scanDate": "2026-07-16",
@@ -27,7 +30,7 @@
     "MAO_DURABLE_RUN_STORE",
     "MAO_DURABLE_RUN_STORE_TESTS"
   ],
-  "priorAbsorption": "MAO-OA-T2 adds one bounded local file-backed durable run store persisting an immutable task graph plus append-only event entries under a caller-supplied root directory, with deterministic replay through the existing MaoEventLedger and fail-closed recovery. It does not establish worker/provider launch, lifecycle, reviewer/closer, public, or production authority.",
+  "priorAbsorption": "MAO-OA-T2 adds one bounded local file-backed durable run store persisting an immutable task graph plus append-only event entries under a caller-supplied root directory, with deterministic replay through the existing MaoEventLedger and fail-closed recovery. AKOE-P2-R2 additionally records the exact Vite runner path and the literal EXTENSIONS/** audit-scope token disclosed by its frozen worker return so the corpus registry gate can evaluate the staged evidence without widening any implementation claim. It does not establish worker/provider launch, lifecycle, reviewer/closer, public, or production authority.",
   "findings": [],
   "negativeSearchTerms": [
     "distributed concurrency",

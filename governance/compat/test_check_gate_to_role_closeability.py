@@ -193,6 +193,26 @@ def test_complete_pending_review_cannot_be_uncloseable() -> None:
     assert "complete_status_not_closeable" in result
 
 
+def test_complete_pending_review_rejects_nonmatching_manifest_delta() -> None:
+    text = recheck("CLOSEABLE", "NONE", "NO_REPAIR_REQUIRED", "NO") + """
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Manifest delta | two paths outside the manifest |
+"""
+    assert "complete_status_manifest_delta" in recheck_codes(text)
+
+
+def test_complete_pending_review_rejects_disclosed_required_gate_failure() -> None:
+    text = recheck("CLOSEABLE", "NONE", "NO_REPAIR_REQUIRED", "NO") + """
+### Known Machine-Gate Limitation - run_worker_return_fast_gate.py Cannot Execute A TypeScript Test
+
+The required gate failed because the target runner was incompatible.
+"""
+    assert "complete_status_required_gate_failed" in recheck_codes(text)
+
+
 def test_blocked_return_with_named_contradiction_passes() -> None:
     assert not recheck_codes(
         recheck(
