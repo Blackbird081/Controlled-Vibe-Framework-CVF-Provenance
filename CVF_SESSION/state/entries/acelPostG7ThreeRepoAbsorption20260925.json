@@ -2,7 +2,7 @@
   "stateOrder": 2940,
   "stateKey": "acelPostG7ThreeRepoAbsorption20260925",
   "value": {
-    "status": "AKOE_P2_R1_DISPATCH_READY_COMMON_CLOSURE_BLOCKED",
+    "status": "AKOE_P2_CLOSED_PENDING_OPERATOR_CHECKPOINT_FOR_P3",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
     "wikiSkillP0Commit": "b06c2c7ec",
@@ -31,6 +31,10 @@
     "akoeP2R1BaselineSha256": "094edc4ffdcc4bc9ea86e6e50465f3a7a4763c49dbad890fda83782e0e762807",
     "akoeP2R1WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_2026-09-25.md",
     "akoeP2R1WorkOrderSha256": "505fef2c15fdfa7a811e9e00d8893e0e9330e3b77ecdd874b650e82d882fa624",
+    "akoeP2R1WorkerReturn": "docs/reviews/CVF_ACEL_AKOE_P2_R1_DURABLE_RUN_STORE_CONCURRENCY_CORRECTION_WORKER_RETURN_2026-09-25.md",
+    "akoeP2R2Completion": "docs/reviews/CVF_ACEL_AKOE_P2_R2_DURABLE_RUN_STORE_REVIEWER_CORRECTION_COMPLETION_2026-09-25.md",
+    "akoeP2R2MaterialCommit": "390ca4ce8c835d133da9df6b0bf500a91af15c0e",
+    "akoeP2Disposition": "CLOSED_PASS_BOUNDED_AFTER_OPERATOR_AUTHORIZED_REVIEWER_CORRECTION",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -51,9 +55,9 @@
       "preCommitGovernance": "90/90 PASS PER MATERIAL COMMIT"
     },
     "pendingHandoffCount": 0,
-    "commonLocalClosure": "BLOCKED_PENDING_AKOE_P2_P3_AND_P4_RECONCILIATION",
-    "nextSourceId": "AKOE-P2-R1",
-    "nextAction": "execute the committed bounded AKOE-P2-R1 work order through one INTERNAL_AGENT after final dispatch-release PASS",
-    "boundary": "G1-G7 and AKOE-P1 remain closed; P2 is blocked by the durable run-store race; P2-R1 authorizes only its exact runtime source/test/return manifest after committed continuity and dispatch-release PASS; no P3/P4, Unreal intake, new runtime owner, provider/live, activation, certification mutation, deployment, production, public sync, Local acceptance or common Local closure"
+    "commonLocalClosure": "BLOCKED_PENDING_AKOE_P3_AND_P4_RECONCILIATION",
+    "nextSourceId": "AKOE-P3",
+    "nextAction": "hold for an explicit operator checkpoint before authoring any bounded AKOE-P3 baseline or work order",
+    "boundary": "G1-G7, AKOE-P1, and AKOE-P2 are closed bounded; AKOE-P3 packet authoring and all implementation remain unauthorized until a fresh operator checkpoint; no P4, Unreal intake, new runtime owner, provider/live, activation, certification mutation, deployment, production, public sync or common Local closure"
   }
 }
