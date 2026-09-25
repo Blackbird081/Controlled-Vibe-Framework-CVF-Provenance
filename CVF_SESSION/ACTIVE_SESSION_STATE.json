@@ -16717,7 +16717,7 @@
     "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY"
   },
   "acelPostG7ThreeRepoAbsorption20260925": {
-    "status": "AKOE_P1_COMPLETE_PENDING_LOCAL_REVIEW_COMMON_CLOSURE_BLOCKED",
+    "status": "AKOE_P1_MATERIAL_COMMITTED_PENDING_LOCAL_ACCEPTANCE_CLOSURE_COMMON_CLOSURE_BLOCKED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
     "wikiSkillP0Commit": "b06c2c7ec",
@@ -16729,6 +16729,8 @@
     "akoeP1BaselineSha256": "941c41c3dd5fc86ae48bc363e970163172da61def7faa3f2fb7e69211b14cc4e",
     "akoeP1WorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_2026-09-25.md",
     "akoeP1WorkOrderSha256": "078b03beac792cdb3cb2d1fc13eda8eda9e7678d72f9077a8ce0f053a2042d01",
+    "akoeP1WorkerReturn": "docs/reviews/CVF_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_WORKER_RETURN_2026-09-25.md",
+    "akoeP1WorkerReturnCommit": "ecd86b75e",
     "correctiveClosureCommit": "a4437ee8f",
     "supersededPacketClosure": "docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md",
     "supersessionReason": "packet-only handoff reconciliation excluded direct source audit and could not close repository absorption value or implementation need",
@@ -16751,8 +16753,8 @@
     "pendingHandoffCount": 0,
     "commonLocalClosure": "BLOCKED_PENDING_AKOE_P1_P3_AND_P4_RECONCILIATION",
     "nextSourceId": "AKOE-P1",
-    "nextAction": "Local reviewer evaluates the recovered AKOE-P1 return without recreating reconciliation and either accepts it or issues one consolidated repair",
-    "boundary": "G1-G7 remain closed; reviewer authority permits only AKOE-P1 returned-evidence evaluation and allowed-scope mechanical repair; no P2/P3, upstream import, provider/live, activation, certification mutation, deployment, production, public sync, acceptance before gate PASS or common Local closure"
+    "nextAction": "Local reviewer packages the terminal AKOE-P1 acceptance/closure disposition from the committed gate-clean return without recreating reconciliation",
+    "boundary": "G1-G7 remain closed; reviewer authority permits only AKOE-P1 terminal disposition and closure packaging; no P2/P3, upstream import, provider/live, activation, certification mutation, deployment, production, public sync or common Local closure"
   },
-  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=REVIEW_AKOE_P1_WORKER_RETURN; CURRENT_TRANCHE_ACTION=AKOE_P1_RETURN_RECOVERED_AFTER_CONCURRENT_STASH_AT_88b5f6c72; CURRENT_TRANCHE_DISPOSITION=AKOE_P1_COMPLETE_PENDING_LOCAL_REVIEW; NEXT_STEP=LOCAL_REVIEWER_EVALUATES_docs/reviews/CVF_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_WORKER_RETURN_2026-09-25.md_WITHOUT_RECREATING_RECONCILIATION_AND_RETURNS_ACCEPT_OR_ONE_CONSOLIDATED_REPAIR; EXPANSION_ALLOWED=false. Reviewer scope is source/hash integrity, claim-owner-disposition coherence, P1 question coverage, exact changed paths, owner-edit necessity, and gate evidence. P2/P3, common Local closure, upstream import, provider/live, activation, certification mutation, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24."
+  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=CLOSE_AKOE_P1_RETURN; CURRENT_TRANCHE_ACTION=AKOE_P1_RETURN_COMMITTED_AT_ecd86b75e_AFTER_GATE_CLEAN_REVIEW_REPAIR; CURRENT_TRANCHE_DISPOSITION=AKOE_P1_MATERIAL_COMMITTED_PENDING_LOCAL_ACCEPTANCE_CLOSURE; NEXT_STEP=LOCAL_REVIEWER_PACKAGES_TERMINAL_DISPOSITION_FOR_docs/reviews/CVF_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_WORKER_RETURN_2026-09-25.md_WITHOUT_RECREATING_RECONCILIATION; EXPANSION_ALLOWED=false. Reviewer scope remains source/hash integrity, claim-owner-disposition coherence, P1 question coverage, exact changed paths, owner-edit necessity, gate evidence, and closure packaging. P2/P3, common Local closure, upstream import, provider/live, activation, certification mutation, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24."
 }

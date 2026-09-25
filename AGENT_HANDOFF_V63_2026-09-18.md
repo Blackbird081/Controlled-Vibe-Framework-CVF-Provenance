@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `88b5f6c72`. ACEL-AKOE-P1 material-SHA marker binds the committed GC-018 baseline and bounded work order at `d48bfb83f88f158d53db237d6b8a2e2c3880009d`; parent anchor for this return-review continuity synchronization commit.
+Current HEAD recorded for this handoff: `ecd86b75e`. ACEL-AKOE-P1 material-SHA marker binds the committed GC-018 baseline and bounded work order at `d48bfb83f88f158d53db237d6b8a2e2c3880009d`; the gate-clean worker return is committed at `ecd86b75e` and is the parent anchor for this reviewer-closure continuity synchronization commit.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -22,7 +22,7 @@ technical disposition; the operator remains roadmap/scope decision owner.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_applied_knowledge_owner_enrichment_active`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local review of the recovered AKOE-P1 worker return without recreating reconciliation; parked checkpoint=AKOE-P1 acceptance/closure, P2/P3, common Local closure, G1-G7 successors, upstream import, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
+Startup acknowledged: current mode=`acel_applied_knowledge_owner_enrichment_active`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local acceptance/closure packaging of the committed AKOE-P1 worker return without recreating reconciliation; parked checkpoint=P2/P3, common Local closure, G1-G7 successors, upstream import, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
 
 ## Current Mode
 `acel_applied_knowledge_owner_enrichment_active`.
@@ -151,9 +151,10 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 - The 2026-09-24 packet-only post-G7 reconciliation at `c5bec0ff0` is historical and superseded for repository absorption. Corrective commit `a4437ee8f` marks its closure review `SUPERSEDED_BY_SOURCE_VERIFIED_ABSORPTION` and removes the redundant root decision; exact history remains in Git. Current authority is the 2026-09-25 pinned-source audit and Jev P0 review.
 - Applied-knowledge roadmap `ACEL-AKOE-R1` is committed at `53bce992f`. It reuses the three P0 implementations, absorbs the useful constraints from the three handoffs under CVF authority, and stages P1 Human/Positioning reconciliation, P2 durable-intent/projection audit, P3 provider-free integration proof, and P4 common closure. Pre-implementation passed 85/85 and material pre-commit passed 90/90.
 - AKOE-P1 dispatch baseline and work order are materially committed at `d48bfb83f`; baseline SHA-256 `941c41c3dd5fc86ae48bc363e970163172da61def7faa3f2fb7e69211b14cc4e`, work-order SHA-256 `078b03beac792cdb3cb2d1fc13eda8eda9e7678d72f9077a8ce0f053a2042d01`. Material pre-commit passed 90/90.
+- AKOE-P1 worker return is materially committed at `ecd86b75e` after exact stash recovery and reviewer-owned SCEC/corpus-receipt repair. Worker-return fast passed with reviewer-fast 69/69; material pre-commit passed 90/90. The return records 13 `CONFIRMED_EXISTING`, one `REJECT_DIRECT_IMPORT`, zero owner edits, and remains pending Local acceptance/closure packaging.
 ## Next Allowed Move
 
-PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=REVIEW_AKOE_P1_WORKER_RETURN; CURRENT_TRANCHE_ACTION=AKOE_P1_RETURN_RECOVERED_AFTER_CONCURRENT_STASH_AT_88b5f6c72; CURRENT_TRANCHE_DISPOSITION=AKOE_P1_COMPLETE_PENDING_LOCAL_REVIEW; NEXT_STEP=LOCAL_REVIEWER_EVALUATES_docs/reviews/CVF_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_WORKER_RETURN_2026-09-25.md_WITHOUT_RECREATING_RECONCILIATION_AND_RETURNS_ACCEPT_OR_ONE_CONSOLIDATED_REPAIR; EXPANSION_ALLOWED=false. Reviewer scope is source/hash integrity, claim-owner-disposition coherence, P1 question coverage, exact changed paths, owner-edit necessity, and gate evidence. P2/P3, common Local closure, upstream import, provider/live, activation, certification mutation, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=CLOSE_AKOE_P1_RETURN; CURRENT_TRANCHE_ACTION=AKOE_P1_RETURN_COMMITTED_AT_ecd86b75e_AFTER_GATE_CLEAN_REVIEW_REPAIR; CURRENT_TRANCHE_DISPOSITION=AKOE_P1_MATERIAL_COMMITTED_PENDING_LOCAL_ACCEPTANCE_CLOSURE; NEXT_STEP=LOCAL_REVIEWER_PACKAGES_TERMINAL_DISPOSITION_FOR_docs/reviews/CVF_ACEL_AKOE_P1_HUMAN_CONTROL_AND_POSITIONING_RECONCILIATION_WORKER_RETURN_2026-09-25.md_WITHOUT_RECREATING_RECONCILIATION; EXPANSION_ALLOWED=false. Reviewer scope remains source/hash integrity, claim-owner-disposition coherence, P1 question coverage, exact changed paths, owner-edit necessity, gate evidence, and closure packaging. P2/P3, common Local closure, upstream import, provider/live, activation, certification mutation, deployment, production action, public sync, and every G1-G7 successor remain unauthorized. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
