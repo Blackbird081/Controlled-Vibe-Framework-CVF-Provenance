@@ -2,7 +2,7 @@
   "stateOrder": 2940,
   "stateKey": "acelPostG7ThreeRepoAbsorption20260925",
   "value": {
-    "status": "AKOE_P1_DISPATCHED_COMMON_CLOSURE_BLOCKED",
+    "status": "AKOE_P1_COMPLETE_PENDING_LOCAL_REVIEW_COMMON_CLOSURE_BLOCKED",
     "operatorAuthorizationDate": "2026-09-25",
     "materialCommit": "9ac0ee8e59fa041ddaa93d725796c509400f257a",
     "wikiSkillP0Commit": "b06c2c7ec",
@@ -36,7 +36,7 @@
     "pendingHandoffCount": 0,
     "commonLocalClosure": "BLOCKED_PENDING_AKOE_P1_P3_AND_P4_RECONCILIATION",
     "nextSourceId": "AKOE-P1",
-    "nextAction": "execute the committed bounded AKOE-P1 docs-only work order and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON",
-    "boundary": "G1-G7 remain closed; committed packet authority permits only bounded P1 docs reconciliation; no P2/P3, upstream import, provider/live, activation, certification mutation, deployment, production, public sync, Local acceptance or common Local closure"
+    "nextAction": "Local reviewer evaluates the recovered AKOE-P1 return without recreating reconciliation and either accepts it or issues one consolidated repair",
+    "boundary": "G1-G7 remain closed; reviewer authority permits only AKOE-P1 returned-evidence evaluation and allowed-scope mechanical repair; no P2/P3, upstream import, provider/live, activation, certification mutation, deployment, production, public sync, acceptance before gate PASS or common Local closure"
   }
 }
