@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=review operator-relayed Web research before any new work order; role=Local orchestrator/reviewer; phase=R1/W01 accepted bounded and successor held; decision owner=operator for data/effect/expense and scope, Local for technical/design disposition; parked checkpoint=next dispatch, UI interaction/route/evaluate calls, credentials/provider/live, settings, deployment, public sync and production.
+Startup acknowledged: current mode=`cvf_ncr_r0_s01_core_skills_reconciliation_dispatch`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=S01 source reconciliation after committed bound pre-dispatch and operator relay; role=Local orchestrator/reviewer; phase=external design closed, internal dispatch; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=package changes, host exposure, skill/eval/provider/live execution, pilot, public and production.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold`
-Current mode: `cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold`; previous mode marker: `cvf_ncr_r1_w01_html_ux_copy_dispatch_reconciled`
+Current mode marker: `cvf_ncr_r0_s01_core_skills_reconciliation_dispatch`
+Current mode: `cvf_ncr_r0_s01_core_skills_reconciliation_dispatch`; previous mode marker: `cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold`
 
 ## Next Allowed Move
-Mode: `cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_RELAYED_WEB_RESEARCH; LAST_ACCEPTED_BATCH=CVF-NCR-R1-W01; REVIEW_COMMIT=5e99eb20910e7e3282d7431e6ca3d96c5e87860b; EXPANSION_ALLOWED=false. Local may read and critically reconcile the operator-relayed Web research with private CVF evidence. No next work order or worker dispatch until the operator's new information is assessed. R1/W01 accepted bounded for bilingual HTML UX copy and mocked tests only; no browser walkthrough, route invocation, P06/P08 closure, real profile, provider/live, public or pilot effect. Operator retains pilot data/effect/expense and scope decisions; guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.
+Mode: `cvf_ncr_r0_s01_core_skills_reconciliation_dispatch`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=INTERNAL_WORKER_SOURCE_RECONCILIATION; ACTIVE_BATCH=CVF-NCR-R0-S01; DISPATCH_COMMIT=ee2abee8962d4489710a8d6db021af4f384731b6; EXPANSION_ALLOWED=false. Operator transferred closed Web core-skills research to Local on 2026-09-27. D013 roadmap material db5ae4c43 selects source/owner reconciliation and evaluation design. Local stops at the committed work order for operator relay after bound pre-dispatch PASS. Worker may inspect named CVF owners and write exactly one pending S01 return; no package/registry/truth mutation, host exposure, skill/eval execution, provider/live, credentials, public or pilot effect. R1/W01 remains accepted bounded at 5e99eb209; HTML, guide/video and 52-deferred lanes stay separate. Operator retains data/effect/expense decisions; G1-G7 remain stopped/parked/closed; latest closed LHW wave is LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

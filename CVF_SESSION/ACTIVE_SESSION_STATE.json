@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
-    "baselineSha256": "2a4adeae99e5c3a05db63323ae9389238c84efd8a46a4ccf5055a5718b088648",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
-    "workOrderSha256": "ffc1df073de9868fc4cc8023a60859cbfd70b13ec3cdc1945be382228b0f9022"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_2026-09-27.md",
+    "baselineSha256": "ad9260b2e45147757c5a71eedfbe8cded099580de9872429cad9bcad63bc0d37",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_2026-09-27.md",
+    "workOrderSha256": "25cfd4179dc8dd77efabbb9b6ed4aa7636b5d6df71485b5136354dcc4d13acae"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -109,8 +109,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold",
-  "previousMode": "cvf_ncr_r1_w01_html_ux_copy_dispatch_reconciled",
+  "currentMode": "cvf_ncr_r0_s01_core_skills_reconciliation_dispatch",
+  "previousMode": "cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16844,5 +16844,5 @@
     "reviewCommit": "5e99eb20910e7e3282d7431e6ca3d96c5e87860b",
     "claimBoundary": "four accepted bilingual copy lines in existing component and focused mocked tests only; no browser walkthrough, real profile, P06/P08 closure, route call, provider/live, public or pilot authority; next work order held for operator-relayed Web research"
   },
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_RELAYED_WEB_RESEARCH; LAST_ACCEPTED_BATCH=CVF-NCR-R1-W01; REVIEW_COMMIT=5e99eb20910e7e3282d7431e6ca3d96c5e87860b; EXPANSION_ALLOWED=false. Local may read and critically reconcile the operator-relayed Web research with private CVF evidence. No next work order or worker dispatch until the operator's new information is assessed. R1/W01 accepted bounded for bilingual HTML UX copy and mocked tests only; no browser walkthrough, route invocation, P06/P08 closure, real profile, provider/live, public or pilot effect. Operator retains pilot data/effect/expense and scope decisions; guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24."
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=INTERNAL_WORKER_SOURCE_RECONCILIATION; ACTIVE_BATCH=CVF-NCR-R0-S01; DISPATCH_COMMIT=ee2abee8962d4489710a8d6db021af4f384731b6; EXPANSION_ALLOWED=false. Operator transferred closed Web core-skills research to Local on 2026-09-27. D013 roadmap material db5ae4c43 selects source/owner reconciliation and evaluation design. Local stops at the committed work order for operator relay after bound pre-dispatch PASS. Worker may inspect named CVF owners and write exactly one pending S01 return; no package/registry/truth mutation, host exposure, skill/eval execution, provider/live, credentials, public or pilot effect. R1/W01 remains accepted bounded at 5e99eb209; HTML, guide/video and 52-deferred lanes stay separate. Operator retains data/effect/expense decisions; G1-G7 remain stopped/parked/closed; latest closed LHW wave is LHW24."
 }

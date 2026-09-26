@@ -1,26 +1,24 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `eab79924040c79dd41698ce505c7de9231a7e72c`. CVF-NCR-R1-W01 accepted-review continuity parent anchor; reviewer material is `5e99eb20910e7e3282d7431e6ca3d96c5e87860b`.
+Current HEAD recorded for this handoff: `ee2abee8962d4489710a8d6db021af4f384731b6`. CVF-NCR-R0-S01 dispatch continuity parent anchor; R1/W01 acceptance remains bounded.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
 Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; this handoff does not freeze a remote-tracking SHA. External agent memory files: non-canonical convenience only.
 ## Purpose
 
-Carry CVF-NCR v2.1 as the selected planning successor while preserving closed AKOE and terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are routed; AKOE-P4/common reconciliation and optional U1 source intake remain closed bounded.
+Carry CVF-NCR v2.2 as the selected planning successor while preserving closed AKOE and terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are routed; AKOE-P4/common reconciliation and optional U1 source intake remain closed bounded.
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer and session steward. Phase: NCR-R1/W01 HTML UX copy accepted bounded; next work order held for operator-relayed Web research; HTML pilot effect pending. Decision owner: Local for technical/design disposition, operator for data/effect/budget and scope.
+Role: Local orchestrator/reviewer and session steward. Phase: Web core-skills design closed; NCR-R0/S01 internal source reconciliation packet for operator relay; HTML pilot effect pending. Decision owner: Local for technical/design disposition, operator for data/effect/budget and scope.
 
-External Web research on Claude plugin is advisory and separate from W01. Local owns private proof, implementation review and final technical disposition; the operator remains roadmap/scope decision owner.
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=review operator-relayed Web research before a new work order; parked checkpoint=next dispatch, UI interaction/route/evaluate calls, pilot data/effect/expense, credentials/provider/live, deployment, public sync and production.
+Startup acknowledged: current mode=`cvf_ncr_r0_s01_core_skills_reconciliation_dispatch`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=S01 source reconciliation after committed bound pre-dispatch and operator relay; role=Local orchestrator/reviewer; phase=external design closed, internal dispatch; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=package changes, host exposure, skill/eval/provider/live execution, pilot, public and production.
 ## Current Mode
-`cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold`.
-The selected planning successor is CVF-NCR v2.0 at `1673ee629`, refined by D008 at `8b0320f80`; NCR-R0/W00 GC-018 and work order were committed at `b991f6342`; the documentation-only worker return is Local-accepted bounded at `c7b7a2c72` for the operator-selected HTML pilot candidate. AKOE is closed and the latest
-learning-history wave remains `LHW24`.
+`cvf_ncr_r0_s01_core_skills_reconciliation_dispatch`.
+Current plan: NCR v2.2 D013; historical NCR/AKOE acceptance remains below. Latest closed learning-history wave: `LHW24`.
 
 ## Active Boundary
 
@@ -33,6 +31,8 @@ Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59
 The three operator-relayed Human Boundary, Positioning, and Async handoffs are now reviewed and combined with Jev, WikiSkill, and HyperFrames in `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md`, material commit `53bce992f`. Human Boundary is an `ADAPT` candidate, Positioning is primarily `CONFIRMED_EXISTING`, and Async remains `WATCH` with upstream factual claims `BLOCKED_SOURCE_NOT_FOUND` until Local pinning. The prior three-repository program is terminal-accounted; common Local closure remains blocked by AKOE P1-P3 execution and P4 reconciliation.
 
 ## Latest Work / Changes
+
+- D013 core-skills design is committed at `db5ae4c43`; Web closeout hash matches the Local convergence input. S01 source/owner/evaluation reconciliation packet is committed at `ee2abee8962d4489710a8d6db021af4f384731b6`. Author-fast passed 5/5 and material pre-commit passed 90/90. A prior fast run found two dispatch binding omissions and the expected post-roadmap HEAD marker drift; repaired before commit. No worker has executed. Final bound pre-dispatch follows this continuity sync.
 
 - Group 1 source is `SOURCE_CREATED_LOCAL_VERIFIED` at material commit
   `58281c2c6`; registry snapshot and genesis lifecycle receipt passed the
@@ -155,7 +155,7 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 - NCR W02 read-only return was Local-accepted at `c638f2ece` after source-claim repair and 90/90 pre-commit. The client fallback port `8000` differs from the server's documented `8100`; actual URL/port, ledger/log retention and pilot data/effect/expense remain open. R1/W00 static HTML UX contract worker return was reviewer-repaired and accepted bounded at `97532f7038f7bcc0d3768550b06a3695b72b8809`. R1/W01 paired baseline/work order committed at `e54dd51e8eb60364a814a921a0d31bb7d259e487`; exact component/test/return worker delta was reviewer-repaired and accepted bounded at `5e99eb20910e7e3282d7431e6ca3d96c5e87860b` after reviewer-fast 69/69 and pre-commit 90/90. Mocked UI tests do not establish actual browser walkthrough, route call, profile, P06/P08, or pilot effect; successor work order is held for Web research.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_RELAYED_WEB_RESEARCH; LAST_ACCEPTED_BATCH=CVF-NCR-R1-W01; REVIEW_COMMIT=5e99eb20910e7e3282d7431e6ca3d96c5e87860b; EXPANSION_ALLOWED=false. Local may read and critically reconcile the operator-relayed Web research with private CVF evidence. No next work order or worker dispatch until the operator's new information is assessed. R1/W01 accepted bounded for bilingual HTML UX copy and mocked tests only; no browser walkthrough, route invocation, P06/P08 closure, real profile, provider/live, public or pilot effect. Operator retains pilot data/effect/expense and scope decisions; guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=INTERNAL_WORKER_SOURCE_RECONCILIATION; ACTIVE_BATCH=CVF-NCR-R0-S01; DISPATCH_COMMIT=ee2abee8962d4489710a8d6db021af4f384731b6; EXPANSION_ALLOWED=false. Operator transferred closed Web core-skills research to Local on 2026-09-27. D013 roadmap material db5ae4c43 selects source/owner reconciliation and evaluation design. Local stops at the committed work order for operator relay after bound pre-dispatch PASS. Worker may inspect named CVF owners and write exactly one pending S01 return; no package/registry/truth mutation, host exposure, skill/eval execution, provider/live, credentials, public or pilot effect. R1/W01 remains accepted bounded at 5e99eb209; HTML, guide/video and 52-deferred lanes stay separate. Operator retains data/effect/expense decisions; G1-G7 remain stopped/parked/closed; latest closed LHW wave is LHW24.
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
@@ -177,7 +177,7 @@ PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_RELAYED_WEB_RESEARCH; LA
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: bind reviewer-accepted CVF-NCR-R1-W01 material at `5e99eb20910e7e3282d7431e6ca3d96c5e87860b` to hold-for-Web-research continuity; no guard logic or runtime owner is changed.
+Authorized guard-maintenance scope: bind committed NCR-R0/S01 source-reconciliation packet and D013 roadmap to active continuity; no checker or runtime owner changes.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -191,30 +191,30 @@ Protected paths:
 - `CVF_SESSION/state/entries/cvfNcrR1W00HtmlUxDispatch20260926.json`; `CVF_SESSION/state/entries/cvfNcrR1W01HtmlUxCopyDispatch20260926.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: operator assigned Local the orchestrator/reviewer role and explicitly requested final R1/W01 review with no next work order pending external Web information. This handoff binds accepted R1/W01 review at `5e99eb20910e7e3282d7431e6ca3d96c5e87860b` and retains R1/W00 bounded review at `97532f7038f7bcc0d3768550b06a3695b72b8809`. Rollback boundary: revert only this continuity projection; preserve accepted review, prior AKOE closure and the separate 52-deferred lane. Pilot data/effect/expense, UI/route invocation, provider/live/public, deployment and production remain parked.
+Operator authorization: operator transferred the converged core-skills research to Local and previously required stopping at work order for relay. Rollback boundary: revert only this continuity projection; retain D013 and dispatch material, accepted R1/W01, AKOE/U1 and the 52-deferred lane. Host exposure, package mutation, eval/provider/live, pilot, public and production remain separately gated.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
 | Actor | Local repository auditor, external-return reviewer and session-sync steward |
 | Provider or surface | private CVF workspace and operator-relayed external review files |
-| Session or invocation | ACEL-AKOE-P4 closure continuity, 2026-09-26 |
+| Session or invocation | CVF-NCR-R0-S01 dispatch continuity, 2026-09-27 |
 | Working directory | repository root |
 | Command or tool surface | governed source reads, external hash verification, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, split session-state sources, generated aggregate/bootstrap, and compact front door |
-| Allowed scope source | operator continuation, AKOE roadmap P4 entry, and closure material commit `a1541eb8b` |
-| Before status evidence | P4 dispatch committed at `4a1a48e5b`; worker return pending review |
-| After status evidence | P4 and common Local reconciliation closed bounded at `a1541eb8b`; successor held |
+| Allowed scope source | operator Local handoff, NCR D013 and committed S01 packet |
+| Before status evidence | D013 and S01 packet committed; current session still held for Web |
+| After status evidence | S01 packet bound for operator relay; no worker execution |
 | Diff evidence | exact continuity manifest before session-only commit |
-| Approval boundary | AKOE-P4 closure continuity and post-AKOE operator hold only |
+| Approval boundary | S01 document-only worker dispatch continuity |
 | Claim boundary | no successor, production mutation, dependency, live/provider/public, activation or deployment effect |
 | Agent type | Local orchestrator/reviewer and session-sync steward |
-| Invocation ID | `cvf-acel-akoe-p4-closure-continuity-20260926` |
-| Expected manifest | handoff, front door, core authority, AKOE program entry, coordination entry, next-move entry, generated state and bootstrap |
+| Invocation ID | `cvf-ncr-r0-s01-continuity-20260927` |
+| Expected manifest | handoff, front door, core authority, next-move entry, generated state and bootstrap |
 | Actual changed set | verified before commit |
 | Manifest delta | exact source manifest plus two generated projections |
 | Deletion or rename disposition | no repository or temporary path deleted or renamed in this sync |
 
 ## Claim Boundary
 
-This handoff records terminal G1-G7 and bounded AKOE-P1 through AKOE-P4 common Local closure at `a1541eb8b`. The next move is an operator checkpoint. No successor, production-owner mutation, provider/live/public/deployment/production effect, or G1-G7 successor is authorized.
+This handoff records terminal G1-G7 and bounded AKOE-P1 through AKOE-P4 common Local closure at `a1541eb8b`. The next move is the bounded NCR-R0/S01 packet after final pre-dispatch and operator relay. No package/host/provider/live/public/deployment/production effect or G1-G7 successor is authorized.
