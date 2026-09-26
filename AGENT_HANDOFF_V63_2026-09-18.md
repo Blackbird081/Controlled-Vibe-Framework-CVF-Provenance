@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `5ea38db6c`. CVF-NCR unified roadmap v2.0 is materially committed at `1673ee629`, with editorial decision-log correction at `5ea38db6c`; `5ea38db6c` is the parent anchor for this dedicated handoff-sync commit. AKOE-U1 remains `SOURCE_RECONCILED_DEFER_WITH_TRIGGER` at `d9132412a`; no import or runtime authority follows.
+Current HEAD recorded for this handoff: `8b0320f80`. CVF-NCR unified roadmap v2.0 is materially committed at `1673ee629`, with D008 internal-pilot scope refinement at `8b0320f80`; `8b0320f80` is the parent anchor for this dedicated handoff-sync commit. AKOE-U1 remains `SOURCE_RECONCILED_DEFER_WITH_TRIGGER` at `d9132412a`; no import or runtime authority follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE. Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; this handoff does not freeze a remote-tracking SHA. External agent memory files: non-canonical convenience only.
@@ -20,8 +20,8 @@ technical disposition; the operator remains roadmap/scope decision owner.
 Startup acknowledged: current mode=`cvf_ncr_r0_packet_authoring_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=author bounded NCR-R0/W00 packet; parked checkpoint=worker dispatch, runtime/owner mutation, U1 import/use, credentials/provider/live, settings, deployment, public sync and production.
 ## Current Mode
 `cvf_ncr_r0_packet_authoring_ready`.
-The selected planning successor is CVF-NCR v2.0 at `1673ee629`; NCR-R0/W00
-packet authoring is next, with no active work order. AKOE is closed and the latest
+The selected planning successor is CVF-NCR v2.0 at `1673ee629`, refined by D008 at `8b0320f80`; NCR-R0/W00
+packet authoring is next for an agent-simulated internal pilot, with no active work order. AKOE is closed and the latest
 learning-history wave remains `LHW24`.
 
 ## Active Boundary
