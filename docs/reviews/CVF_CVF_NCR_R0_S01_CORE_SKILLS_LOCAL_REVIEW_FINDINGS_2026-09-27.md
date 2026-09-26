@@ -4,9 +4,9 @@ Memory class: governed-review
 
 docType: review
 
-Status: REWORK_REQUIRED
+Status: CLOSED_PASS_BOUNDED
 
-Current review round: 2. The first rework repaired the dispatcher gate and substantial source mapping, but three dependent claim/evaluation defects remain. Keep valid first-round evidence; only the Round 2 findings below require another worker edit.
+Review history: Round 1 and Round 2 findings below are preserved as the repair record. The final Round 2 worker return is accepted at the bounded source-reconciliation and proposal level; no skill implementation or runtime behavior is accepted here.
 
 Worker return: `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_WORKER_RETURN_2026-09-27.md`
 
@@ -26,11 +26,11 @@ Read the return against six work-order obligations, inspect named owner contract
 
 ## Findings / Position
 
-The original six findings formed one dependent rework set. The first rework repaired the packet and much of the source mapping. Round 2 isolates the remaining evaluation, process-account and implementation-claim defects. Acceptance remains withheld.
+The original six findings formed one dependent rework set. Round 2 isolated three remaining evaluation, process-account and implementation-claim defects. The committed Round 2 return resolves those three for this document-only tranche.
 
 ## Review Disposition
 
-The return is structurally readable but cannot be accepted. The initial worker reported a failed bound pre-implementation gate (85/86) and continued despite the autorun stop rule. Local repaired the dispatcher-owned packet; the first rework reports clean pre-implementation and worker-return gates. That return still has the three Round 2 defects below. No worker-owned package, registry, host or provider change is authorized.
+Historical disposition: the initial return was not accepted after a failed bound pre-implementation gate (85/86) and six review findings. Local repaired the dispatcher packet; the first rework still left the three Round 2 defects below. Final disposition is in `## Final Reviewer Decision`. No worker-owned package, registry, host or provider change was authorized.
 
 ## Consolidated Findings
 
@@ -53,15 +53,15 @@ The return is structurally readable but cannot be accepted. The initial worker r
 
 ## Risk / Corrective Action
 
-Treat the initial worker return as pending rework. Correct the dispatcher-owned packet first, then require a fresh passing bound pre-implementation before the worker edits. Reuse valid source reads, with targeted additions only. A passing document gate cannot override the failed phase gate or certify host behavior.
+Historical corrective action: the initial worker return required rework after the failed phase gate. Local corrected the dispatcher-owned packet and required fresh bound pre-implementation before each worker repair. The final Round 2 return passes review for source/design content; a passing document gate still does not certify host behavior.
 
 ## Evidence Comparison
 
-Expected Result / Prediction: one valid, source-backed, closeable reconciliation. Evidence Comparison: document shape passed, but bound pre-implementation failed and six mapped semantic/claim issues remain. Contradiction Or Gap Disposition: REWORK_REQUIRED, with Local owning the packet defect. Claim Update: source inspection and useful proposals may be reused; completion and enforcement claims are withheld.
+Expected Result / Prediction: one valid, source-backed, closeable reconciliation. Evidence Comparison: initial document shape passed but pre-implementation failed; the final Round 2 return discloses that history, repairs the semantic/claim gaps and reports clean current gates. Contradiction Or Gap Disposition: initial `REWORK_REQUIRED` resolved through two bounded rounds. Claim Update: accept source inspection and proposals; runtime/host enforcement claims remain withheld.
 
 ## Evidence And Boundary
 
-Reviewer independently ran the worker-return fast gate against the current return: `COMPLIANT`, reviewer-fast 69/69. This establishes document-shape compliance only. Local also reproduced the `agent automation assist early diagnostics` failure with `--base db5ae4c43c0be75e86d8c7d8bfa76eedb49a47ed --head HEAD --json --enforce`. The autorun standard requires a stop on failed pre-implementation. The composition contract is `CANDIDATE` and does not itself prove resolver wiring. No broad gate rerun, host exposure, provider call, or public export is claimed here.
+Reviewer independently ran the worker-return fast gate on the earlier return: `COMPLIANT`, reviewer-fast 69/69; that result established document-shape compliance only. Local also reproduced the initial `agent automation assist early diagnostics` failure with `--base db5ae4c43c0be75e86d8c7d8bfa76eedb49a47ed --head HEAD --json --enforce`. The autorun standard requires a stop on failed pre-implementation. The final worker return reports its own Round 2 fast gate and pre-implementation PASS. The composition contract is `CANDIDATE` and does not itself prove resolver wiring. No broad duplicate rerun, host exposure, provider call or public export is claimed here.
 
 ## Checker Source Read-Ahead Block
 
@@ -110,7 +110,7 @@ Reviewer independently ran the worker-return fast gate against the current retur
 
 ## Claim Boundary
 
-This review establishes a rework disposition for an internal document return. It does not certify source promotion, behavior, host availability or production readiness.
+This review accepts a bounded internal source-reconciliation and proposal return. It does not certify new source promotion, skill behavior, host availability, composition enforcement or production readiness.
 
 ## Core Guard Self-Protection Authorization
 
@@ -122,7 +122,42 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 
-Operator authorization: Local owns technical review and routine dispatcher repair; the operator relays the finished work order. Rollback boundary: revert this hash-only authority projection with the repaired work order; retain the worker return as pending review. Host, provider and public actions remain outside scope.
+Operator authorization: Local owns technical review and routine dispatcher repair; the operator relays the next finished work order. Rollback boundary: revert only the bounded S01 closure/continuity delta if needed. Host, provider and public actions remain outside scope.
+
+## Final Reviewer Decision
+
+`CLOSED_PASS_BOUNDED` for CVF-NCR-R0/S01. The worker return was committed at `5f8addf3922c6dbee7dea33e451b2a4e29fbc247`; its reviewed raw SHA-256 is `3908c009067749c31adbefd3d8ec2a5e28ed3a9422590b1cce4d5a1dbd110458`. Repo status immediately before closure authoring was clean. The worker reported Round 2 pre-implementation `COMPLIANT` at `118a29d063a8bd54d6c5f53fa39fa592dc904f21` and full worker-return fast gate 69/69 plus whitespace; Local review evaluated the returned evidence and source claims without a broad duplicate rerun.
+
+| Finding set | Final disposition | Reviewer basis |
+|---|---|---|
+| S01-R1 through S01-R4 | RESOLVED_BOUNDED | Dispatcher packet corrected; five advisory audit labels restored; composition contract read; future cases now separate target oracle from observed enforcement. |
+| S01-R5 and S01-R2A | RESOLVED_BOUNDED | ASCP-P1-P3 completion review and package READMEs are traced; evaluation mapping now includes Rule 5 byte-identical WITH/WITHOUT input and Rule 8 independent runner/grader. The reason for the historical README-only scope remains a bounded unknown, not a blocker to this source-reconciliation return. |
+| S01-R6 and S01-R2B | RESOLVED_BOUNDED | Risk, retrospective and command evidence agree that the initial worker continuation after a failed gate was a conduct defect; subsequent PASS does not erase it. |
+| S01-R2C | RESOLVED_BOUNDED | Existing T2 metadata resolver and single-package production executor are identified; neither of the two inspected implementations enforces T5 cross-package conflicts. Other enforcement paths and host exposure were not exhaustively reviewed. |
+
+Local separately inspected `docs/reviews/CVF_ASCP_P4_P6_REMAINING_PACKAGE_PRODUCTION_SCALE_UP_COMPLETION_2026-06-30.md` `## Findings / Position` and `## Risk / Corrective Action`: its 18 promoted `SKILL.md` bodies were rewritten to ACTIVE wording. This supports the worker's learning-row comparison, although the worker did not itself read that review. The other learning row describes the **initial** work-order packet failure; it is historical and already repaired. Neither row authorizes a new checker or remediation tranche by itself.
+
+Accepted output is the source/lifecycle mismatch trace, discovery coverage mapping, five-label test-evidence-audit concept, behavioral-owner applicability, future cases and bounded next manifest. The proposed edits to two `SKILL.md` bodies remain unimplemented. A later work order must independently authorize any package-content change, candidate package, host projection, evaluation run or conflict enforcement.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | S01 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | this review and S01 completion | final decision with resolved finding IDs | PASS |
+| Roadmap state | NCR roadmap D013 | S01 bounded acceptance and five advisory labels | PASS |
+| Registry JSON | N/A | no registry mutation in this source-reconciliation tranche | BLOCKED with reason: unrelated registry closure was not evaluated in S01 |
+| Registry Markdown | N/A | no registry mutation in this source-reconciliation tranche | BLOCKED with reason: unrelated registry closure was not evaluated in S01 |
+| External evidence digest | worker return | raw SHA-256 `3908c009067749c31adbefd3d8ec2a5e28ed3a9422590b1cce4d5a1dbd110458` | PASS |
+| System loop interlock | existing owners | no runtime, host or provider effect | N/A with reason: document-only reconciliation |
+| Session continuity | active handoff and state | post-material continuity commit follows | N/A with reason: synchronization follows material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| S01 return | committed and reviewer-evaluated | `5f8addf3922c6dbee7dea33e451b2a4e29fbc247`; bounded decision above | PASS |
+| Registry acceptance | no S01 registry claim | no registry edit or acceptance asserted | PASS |
 
 ## Public Export Disposition
 

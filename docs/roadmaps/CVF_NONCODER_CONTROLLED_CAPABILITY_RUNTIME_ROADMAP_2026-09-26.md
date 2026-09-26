@@ -368,7 +368,9 @@ Current W01 update: `docs/reviews/CVF_CVF_NCR_R0_W01_HTML_PROFILE_WORKER_RETURN_
 | R2 conflict/delivery tranche, scope sau owner mapping | Admission/exposure decision theo host/profile/version/identity, full package/config/resource review; projection giữ restriction; rollback/stale/revoke và evidence theo phase | Pilot một host có phạm vi thực được xác minh; shared discovery root hoặc prefix không là cơ chế cô lập; provider built-ins không bị CVF ghi đè |
 | Evaluation rồi Local review | Tách content explicit, selector, host implicit discovery, body delivery và receipt; đo artifact đúng source/quyền/claim và rework/cost khi quan sát được | Chỉ chạy trong authority cụ thể; kết quả candidate không tự thành activation, production hoặc runtime governance proof |
 
-Candidate test-evidence-audit trả quyết định có target/evidence/reason: KEEP nêu proof cần giữ và proposal dư không thêm; CONSOLIDATE nêu keeper/assertion, không tự cho xoá; DEFER_WITH_REASON dành cho thiếu thông tin/quyền. Chọn theo đầu ra chính; TDD/code-review và test-audit có thể cùng cần trong task hỗn hợp nhưng không mặc định gọi cả ba. Giữ failure baseline và contract độc lập; recommendation không là test PASS. Không đổi enum máy bằng bảng nhãn thiết kế.
+NCR-R0/S01 `CLOSED_PASS_BOUNDED`: Local đã nghiệm thu source/owner reconciliation và case design tại `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_LOCAL_REVIEW_FINDINGS_2026-09-27.md`; worker return material `5f8addf3922c6dbee7dea33e451b2a4e29fbc247`. Hai `SKILL.md` còn prose APPROVED trong khi registry/source/truth ACTIVE; đây là đầu vào cho work order chỉnh nội dung riêng, chưa được sửa bởi S01. Behavioral contract vẫn CANDIDATE, T5 composition rules chưa có enforcement qua hai implementation đã kiểm tra. Không nâng trạng thái host/runtime từ S01.
+
+Candidate test-evidence-audit trả nhãn advisory có target/evidence/reason: KEEP nêu proof cần giữ và proposal dư không thêm; REPAIR khi proof hiện có đúng mục tiêu nhưng yếu; CONSOLIDATE nêu keeper/assertion, không tự cho xoá; ADD khi thiếu coverage đã được xác nhận; DEFER_WITH_REASON khi chưa đủ thông tin hoặc quyền để quyết định. Chọn theo đầu ra chính; TDD/code-review và test-audit có thể cùng cần trong task hỗn hợp nhưng không mặc định gọi cả ba. Giữ failure baseline và contract độc lập; recommendation không là test PASS. Năm nhãn thiết kế này không đổi enum máy.
 
 Skill thực hành phải nối input → quyết định → artifact dùng được, có ví dụ CVF-specific và owner cần đọc có lý do; tiếp tục phần đã được phép, giữ đúng tác động chưa được phép, không hỏi lại quyền đã cấp. Cases gồm dispatcher chuẩn bị packet không dispatch, worker hoàn thành output không publish, reviewer giữ proof tốt và tránh rerun dư, fake authority và no-match. Agent mô phỏng và operator Human đủ cho giai đoạn này; guide/video giữ lane riêng.
 
@@ -660,7 +662,9 @@ Repair read-ahead: `governance/compat/check_delta_execution_claim_boundary.py`, 
 
 ## Public Export Disposition
 
-DEFERRED_PRIVATE_ONLY: private planning artifact. No public-sync, public catalog, deployment or production claim.
+DEFERRED_PRIVATE_ONLY
+
+Reason: private planning artifact. No public-sync, public catalog, deployment or production claim.
 
 ## Claim Boundary
 

@@ -4,7 +4,9 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: REWORK_DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
+
+Closure: Local accepted the S01 document-only return in `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_LOCAL_REVIEW_FINDINGS_2026-09-27.md` after Round 2. The worker artifact was committed at `5f8addf3922c6dbee7dea33e451b2a4e29fbc247`; the historical dispatch/rework controls below remain as the execution record. No successor implementation is opened by this status change alone.
 
 Paired rework baseline: `docs/baselines/CVF_GC018_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_2026-09-27.md`. This work order and baseline must share the current material release commit.
 
@@ -400,7 +402,7 @@ N/A with reason: one pending return only; no durable storage/index design or mut
 
 | Field | Value |
 |---|---|
-| completionReviewPath | `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_COMPLETION_2026-09-27.md` is optional and reviewer-owned |
+| completionReviewPath | `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_COMPLETION_2026-09-27.md` is the Local-owned completion; the findings file remains the historical review record |
 | reviewerOwnedClosurePaths | accepted return disposition and continuity |
 | closureOwner | Local reviewer/closer distinct from worker |
 | workerCommitPermission | FORBIDDEN |
@@ -464,6 +466,36 @@ No test suite or provider call is needed to author this source reconciliation. R
 ## Claim Boundary
 
 This work order authorizes one internal source-reconciliation return. No package/registry/truth edit, installation, skill use, host exposure, evaluation execution, G3 resume, provider/live/public or production effect is authorized. Existing HTML, guide/video and 52-deferred scopes remain separate.
+
+## Current Runtime Freshness Verification
+
+| Field | Value |
+|---|---|
+| runtimeClaimPresent | NO |
+| runtimeMutationAuthorized | NO |
+| freshnessVerificationMode | NOT_APPLICABLE_WITH_REASON |
+| reason | S01 reconciles source and design evidence only; any absent-enforcement statement is bounded to inspected files |
+| requiredFutureAction | fresh source verification and separate authority before package, host or runtime claims |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | S01 Local review and completion | bounded final decision | PASS |
+| Roadmap state | NCR roadmap D013 | S01 outcome recorded | PASS |
+| Registry JSON | N/A | no registry output authorized | BLOCKED with reason: unrelated registry closure was not evaluated in S01 |
+| Registry Markdown | N/A | no registry output authorized | BLOCKED with reason: unrelated registry closure was not evaluated in S01 |
+| External evidence digest | committed worker return | SHA-256 `3908c009067749c31adbefd3d8ec2a5e28ed3a9422590b1cce4d5a1dbd110458` | PASS |
+| System loop interlock | existing governance owners | no runtime or host change | N/A with reason: document-only tranche |
+| Session continuity | active handoff and state | post-material sync follows | N/A with reason: continuity commit follows material closure |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| S01 return | committed and reviewer-evaluated | `5f8addf3922c6dbee7dea33e451b2a4e29fbc247`; Local findings | PASS |
+| Registry acceptance | no S01 registry claim | no registry edit or acceptance asserted | PASS |
 
 ## Public Export Disposition
 
