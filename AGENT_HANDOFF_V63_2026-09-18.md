@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `a1541eb8b`. ACEL-AKOE-P4 material-SHA marker binds common Local closure at `a1541eb8b919909ca80499dff5df4f243b8c3a57`; parent anchor for this dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `662c02d56`. CVF-NCR accepted-roadmap material-SHA marker binds the parked non-coder controlled-capability direction and its two independent reviews at `662c02d5626a13ba29b2f11a186478142f1990b7`; parent anchor for this dedicated handoff-only synchronization commit. ACEL-AKOE-P4 remains closed bounded at `a1541eb8b919909ca80499dff5df4f243b8c3a57`; mode and next allowed move are unchanged.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
