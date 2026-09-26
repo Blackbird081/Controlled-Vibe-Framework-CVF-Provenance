@@ -493,7 +493,7 @@ NOT_APPLICABLE_WITH_REASON: this task incorporates a unified roadmap, not a new 
 - Derived views: this roadmap's planning tables and R0-R6 sequence only
 - Semantic region ledger: no new semantic-region ledger; future R0 must use existing owner/catalog/GAP routes
 - Region reconciliation: assets=0; mapped=0; deferred=0; unmapped=0 for new knowledge assets introduced by this commit
-- Orphan or unmapped assets: none in this zero-new-asset planning batch; unresolved future work remains Q001-Q003
+- Orphan or unmapped assets: none in this zero-new-asset planning batch. Các quyết định còn mở được theo dõi tại *Decision And Change Log*; Q002 chỉ được xem xét tiếp khi trigger áp dụng.
 - Cross-region links: six historical input families remain linked through existing AKOE evidence; U1 is separate source-reconciled deferred evidence, not an added family or runtime activation
 - Drift check: NOT_RUN_PLANNING_ONLY; no current-map claim
 - Rebuildability check: roadmap can be rebuilt from cited CVF owners, AKOE/U1 completions, audit input hashes and external alignment reviews; external material remains advisory
