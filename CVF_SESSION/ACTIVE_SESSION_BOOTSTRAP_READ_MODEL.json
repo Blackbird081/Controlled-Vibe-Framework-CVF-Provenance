@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r0_w02_downstream_dispatch_ready",
+  "currentMode": "cvf_ncr_r0_w02_downstream_accepted_scope_pending",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R0_W02_DOC_ONLY; BATCH=CVF-NCR-R0-W02; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W02_HTML_DOWNSTREAM_2026-09-26.md; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_R0_W02_HTML_DOWNSTREAM_2026-09-26.md; MATERIAL_COMMIT=dde4d3c5768596f95acd22ccc27fe88aaecd793a; PRE_DISPATCH_GATE_REQUIRED=true; EXPANSION_ALLOWED=false. Internal worker reads tracked source and returns one pending W02 document; no UI/route/evaluate call, raw config, dependency, provider/live, settings, public or deployment effect. W00/W01 and AKOE/U1 stay closed bounded; 52-deferred lane stays separate. Operator decides data/effect/expense before any later pilot action; P06/P08 and actual profile remain open; latest closed LHW wave is LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=ASSESS_R0_PILOT_SCOPE_AFTER_W02; BATCH=CVF-NCR-R0-W02; WORKER_RETURN=docs/reviews/CVF_CVF_NCR_R0_W02_HTML_DOWNSTREAM_WORKER_RETURN_2026-09-26.md; MATERIAL_COMMIT=c638f2ece. Local may prepare the next bounded scope decision using accepted W00-W02 evidence; no automatic worker dispatch or UI/route/evaluate call. Actual URL/port, ledger and error-log retention, data class, latency/cost and P06/P08 remain open. Operator owns data/effect/expense for any pilot; Web/plugin guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `dde4d3c5768596f95acd22ccc27fe88aaecd793a`. Material CVF-NCR-R0-W02 dispatch commit and parent anchor for this continuity sync.
+Current HEAD recorded for this handoff: `c638f2ece`. Material CVF-NCR-R0-W02 accepted source packet and parent anchor for this continuity sync.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -11,15 +11,14 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 Carry CVF-NCR v2.1 as the selected planning successor while preserving closed AKOE and terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are routed; AKOE-P4/common reconciliation and optional U1 source intake remain closed bounded.
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer and session steward. Phase: NCR-R0/W01 bounded source/profile packet accepted; HTML pilot candidate selected, actual pilot scope pending. Decision owner: Local for source disposition/next scope, operator for data/effect/budget.
+Role: Local orchestrator/reviewer and session steward. Phase: NCR-R0/W02 bounded downstream source packet accepted; HTML pilot candidate selected, actual pilot scope pending. Decision owner: Local for source disposition/next scope, operator for data/effect/budget.
 
-External Web research on Claude plugin is advisory and separate from W01. Local owns private proof, implementation review and final
-technical disposition; the operator remains roadmap/scope decision owner.
+External Web research on Claude plugin is advisory and separate from W01. Local owns private proof, implementation review and final technical disposition; the operator remains roadmap/scope decision owner.
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r0_w02_downstream_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute exact committed W02 read-only source order after bound release gate; parked checkpoint=UI/route/evaluate calls, runtime/owner mutation, dependency, credentials/provider/live, settings, deployment, public sync and production.
+Startup acknowledged: current mode=`cvf_ncr_r0_w02_downstream_accepted_scope_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=assess bounded NCR-R0 pilot scope from accepted W00-W02 evidence; parked checkpoint=UI/route/evaluate calls, runtime/owner mutation, dependency, credentials/provider/live, settings, deployment, public sync and production.
 ## Current Mode
-`cvf_ncr_r0_w02_downstream_dispatch_ready`.
+`cvf_ncr_r0_w02_downstream_accepted_scope_pending`.
 The selected planning successor is CVF-NCR v2.0 at `1673ee629`, refined by D008 at `8b0320f80`; NCR-R0/W00 GC-018 and work order were committed at `b991f6342`; the documentation-only worker return is Local-accepted bounded at `c7b7a2c72` for the operator-selected HTML pilot candidate. AKOE is closed and the latest
 learning-history wave remains `LHW24`.
 
@@ -154,9 +153,9 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 - AKOE-P4 and common Local reconciliation are `CLOSED_PASS_BOUNDED` at material commit `a1541eb8b`. Reviewer correction removed a duplicated P3 closure-evidence row, leaving 19 unique candidates across exactly six origin families: 5 `ADAPT`, 8 `CONFIRMED_EXISTING`, 3 `DEFER_WITH_TRIGGER`, 2 `REJECT_DIRECT_IMPORT`, and 1 `BLOCKED_SOURCE_NOT_FOUND`. The distinct Local probe passed; content, machine-closure, dispatch-quality, continuation-chain, and independent-probe gates passed. Material pre-commit passed 88/90 with only the two expected pre-continuity frontier failures, resolved by this sync.
 - Operator-authorized ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at material commit `d9132412a`. The exact Web return is retained byte-identically at SHA-256 `c34381ff0d0e88627a984faa79ac399b31cfdaae2f1355f02bfd8c756cb5b27b`; Local verified the `unreallabsai/unreal-agent` pin `1b9f778453f411c029b39b85102aaefb95e7e48d`, tree `a2324fb6df4010b07041b2a2f161fd25b971bf67`, two MIT license boundaries, and all 42 advisory claim IDs. Disposition is `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`; returned line anchors were repaired to symbol/hash authority. Reviewer-fast passed 69/69 and material pre-commit passed 90/90. No import, upstream execution, runtime/provider use, dependency, public sync, or automatic successor was opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
-- NCR roadmap D011 was incorporated at `7b5758c72983da3295666748d3e89ed670325cf5`; handoff sync `522275ab0` followed. Operator resumed delegation. W02 baseline and work order were materially committed at `dde4d3c5768596f95acd22ccc27fe88aaecd793a`; read-only second-hop source mapping only. Final bound pre-dispatch must pass before worker relay; data/effect/expense for any pilot remain operator-owned.
+- NCR roadmap D011 was incorporated at `7b5758c72983da3295666748d3e89ed670325cf5`; handoff sync `522275ab0` followed. Operator resumed delegation. W02 baseline and work order were committed at `dde4d3c5768596f95acd22ccc27fe88aaecd793a`; the read-only worker return was Local-accepted at `c638f2ece` after source-claim repair and 90/90 pre-commit. The client fallback port `8000` differs from the server's documented `8100`; actual URL/port, ledger and log retention, data/effect/expense remain open. No UI or API call was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R0_W02_DOC_ONLY; BATCH=CVF-NCR-R0-W02; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W02_HTML_DOWNSTREAM_2026-09-26.md; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_R0_W02_HTML_DOWNSTREAM_2026-09-26.md; MATERIAL_COMMIT=dde4d3c5768596f95acd22ccc27fe88aaecd793a; PRE_DISPATCH_GATE_REQUIRED=true; EXPANSION_ALLOWED=false. Internal worker reads tracked source and returns one pending W02 document; no UI/route/evaluate call, raw config, dependency, provider/live, settings, public or deployment effect. W00/W01 and AKOE/U1 stay closed bounded; 52-deferred lane stays separate. Operator decides data/effect/expense before any later pilot action; P06/P08 and actual profile remain open; latest closed LHW wave is LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=ASSESS_R0_PILOT_SCOPE_AFTER_W02; BATCH=CVF-NCR-R0-W02; WORKER_RETURN=docs/reviews/CVF_CVF_NCR_R0_W02_HTML_DOWNSTREAM_WORKER_RETURN_2026-09-26.md; MATERIAL_COMMIT=c638f2ece. Local may prepare the next bounded scope decision using accepted W00-W02 evidence; no automatic worker dispatch or UI/route/evaluate call. Actual URL/port, ledger and error-log retention, data class, latency/cost and P06/P08 remain open. Operator owns data/effect/expense for any pilot; Web/plugin guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
@@ -178,7 +177,7 @@ PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R0_W02_DOC_ONLY; BATCH=CVF-NCR-R0-
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: bind committed W02 documentation-only dispatch at `dde4d3c5768596f95acd22ccc27fe88aaecd793a` to active continuity under resumed operator delegation; no guard logic or runtime owner is changed.
+Authorized guard-maintenance scope: bind Local-accepted W02 documentation-only review at `c638f2ece` to active continuity; no guard logic or runtime owner is changed.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -189,6 +188,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/acelPostG7ThreeRepoAbsorption20260925.json`
 - `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/cvfNcrR0W02DownstreamReview20260926.json`
 - `CVF_SESSION_MEMORY.md`
 
 Operator authorization: operator assigned Local the orchestrator/reviewer role, selected the HTML pilot candidate, clarified the overall guide/video follow-on, and asked to continue; this sync binds the bounded W01 packet without authorizing UI/runtime/effect. Rollback boundary: revert only this continuity projection; preserve material review commit `c7b7a2c721a3388a738eb2b2633fc4414cf1dff3`, prior AKOE closure and the separate 52-deferred lane. This sync grants no pilot execution, R1 dispatch, owner/runtime, provider/live/public, deployment, or production authority.

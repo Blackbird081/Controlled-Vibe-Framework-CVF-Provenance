@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2945,
+  "stateKey": "cvfNcrR0W02DownstreamReview20260926",
+  "value": {
+    "status": "ACCEPTED_BOUNDED_DOWNSTREAM_SOURCE_PACKET",
+    "materialCommit": "c638f2ece",
+    "workerReturn": "docs/reviews/CVF_CVF_NCR_R0_W02_HTML_DOWNSTREAM_WORKER_RETURN_2026-09-26.md",
+    "decisionOwner": "Local for technical/source disposition; operator for pilot data, effect and expense",
+    "openBeforePilot": [
+      "actual Governance Engine URL/port and service reachability",
+      "ledger path/retention/backup and error-log handling",
+      "P06/P08 evidence depth and data class",
+      "authorized UI walkthrough, measured latency and cost ceiling"
+    ],
+    "claimBoundary": "W02 source trace accepted only; no UI/API invocation, runtime/live/deployment/public authority or automatic next worker"
+  }
+}
