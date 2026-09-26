@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R0_W01_HTML_PROFILE_2026-09-26.md",
-    "baselineSha256": "cea279f4d7ed3cfa4ca430796a115d1472cff3eedf0ff967011653d26f47de3c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W01_HTML_PROFILE_2026-09-26.md",
-    "workOrderSha256": "3efde35b9ae3722ae735e04e21819206e5337d12577f566d84428ebeae7b5069"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R0_W02_HTML_DOWNSTREAM_2026-09-26.md",
+    "baselineSha256": "157c61453ae4a0c395ad860a0a38a2f139c5d857122acc972893f6767715a449",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W02_HTML_DOWNSTREAM_2026-09-26.md",
+    "workOrderSha256": "2d828180fb4890cdc00ad613ff700f8693d7bc5b950dad14c59a1f749435a6b3"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -109,7 +109,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r0_w01_profile_accepted_scope_pending",
+  "currentMode": "cvf_ncr_r0_w02_downstream_dispatch_ready",
   "previousMode": "cvf_ncr_r0_w01_html_profile_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -16813,5 +16813,5 @@
     ],
     "claimBoundary": "R0/W00 source recommendation only; no pilot execution, R1 dispatch, provider/live or public authority"
   },
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SCOPE_POST_W01_DOC_ONLY; CLOSED_BATCH=CVF-NCR-R0-W01; ACCEPTED_RETURN=docs/reviews/CVF_CVF_NCR_R0_W01_HTML_PROFILE_WORKER_RETURN_2026-09-26.md; NEXT_STEP=LOCAL_SCOPES_NEXT_BOUNDED_ORDER_FROM_Q001; EXPANSION_ALLOWED=false. W01 source/profile packet is Local-accepted bounded at d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6. Actual UI interaction, route/receipt call and runtime profile are not proven. NEXTAUTH_URL destination, retention, latency/cost and P06/P08 depth remain open. Local may prepare the next scoped order; operator decides data, effect and expense before a pilot action. Overall CVF guide and later video remain a separate documentation tranche; Web plugin research is advisory. No runtime/provider/live/dependency/settings/public/deployment/production authority. The 52-deferred lane stays separate; AKOE-P1 through P4 and U1 stay closed bounded; U1 remains SOURCE_RECONCILED_DEFER_WITH_TRIGGER; latest closed LHW wave is LHW24."
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R0_W02_DOC_ONLY; BATCH=CVF-NCR-R0-W02; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W02_HTML_DOWNSTREAM_2026-09-26.md; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_R0_W02_HTML_DOWNSTREAM_2026-09-26.md; MATERIAL_COMMIT=dde4d3c5768596f95acd22ccc27fe88aaecd793a; PRE_DISPATCH_GATE_REQUIRED=true; EXPANSION_ALLOWED=false. Internal worker reads tracked source and returns one pending W02 document; no UI/route/evaluate call, raw config, dependency, provider/live, settings, public or deployment effect. W00/W01 and AKOE/U1 stay closed bounded; 52-deferred lane stays separate. Operator decides data/effect/expense before any later pilot action; P06/P08 and actual profile remain open; latest closed LHW wave is LHW24."
 }
