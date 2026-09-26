@@ -1,24 +1,23 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `662c02d56`. CVF-NCR accepted-roadmap material-SHA marker binds the parked non-coder controlled-capability direction and its two independent reviews at `662c02d5626a13ba29b2f11a186478142f1990b7`; parent anchor for this dedicated handoff-only synchronization commit. ACEL-AKOE-P4 remains closed bounded at `a1541eb8b919909ca80499dff5df4f243b8c3a57`; mode and next allowed move are unchanged.
+Current HEAD recorded for this handoff: `d9132412a`. ACEL-AKOE-U1 material-SHA marker binds the operator-relayed Web return, pinned Local source reconciliation, and source-mirror index at `d9132412a`; parent anchor for this dedicated continuity synchronization commit. U1 is `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`; no import or runtime authority follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
 ## Purpose
 
-Carry the closed-bounded six-input applied-knowledge roadmap while preserving terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are reviewed and routed; AKOE-P4 and common Local reconciliation are closed bounded.
+Carry the closed-bounded applied-knowledge roadmap while preserving terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are reviewed and routed; AKOE-P4/common Local reconciliation and the later optional U1 Unreal source intake are closed bounded.
 
 ## Scope / Target / Owner Boundary
 
 Role: Local source/runtime/value verifier and dispatch author. Phase: six-input applied-knowledge owner enrichment. Decision owner: Local under explicit operator continuation.
 
-External research is advisory and closed unless Local identifies a named
-source question. Local owns private proof, implementation review and final
+External research is advisory and closed unless Local identifies a named source question. Local owns private proof, implementation review and final
 technical disposition; the operator remains roadmap/scope decision owner.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_applied_knowledge_owner_enrichment_closed_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=hold for a fresh post-AKOE operator checkpoint; parked checkpoint=all successors, optional Unreal intake, G1-G7 successors, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
+Startup acknowledged: current mode=`acel_applied_knowledge_owner_enrichment_closed_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=hold for a fresh post-AKOE-U1 operator checkpoint; parked checkpoint=all successors, U1 import/runtime use, G1-G7 successors, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
 ## Current Mode
 `acel_applied_knowledge_owner_enrichment_closed_bounded`.
 The active roadmap is restricted to `ACEL-AKOE-R1`; the predecessor
@@ -154,8 +153,9 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 - Operator `next` opened the bounded AKOE-P3 packet. Its provider-free integration-proof baseline/work order are materially committed at `bc7291c0d`; baseline SHA-256 `051ae52a89d65fd87496b4f4781621187133397f621cae4b9227dcee499a902c`, work-order SHA-256 `32e8f5bff11688a592f013f9eea4ddf1ebaf8f2703570f6391dbb2f13ca807ff`; author-fast passed 5/5 and material pre-commit passed 90/90.
 - AKOE-P3 is Local-accepted and `CLOSED_PASS_BOUNDED` at material commit `c79c82e2b`. The exact six-path worker proof passed focused Vitest 22/22, TypeScript compile, stable two-run receipt generation, registry drift, and the final worker gate with reviewer-fast 69/69. A distinct Local cap-one probe rejected the wrong assembly verifier and preserved incumbent/raw/persistent evidence on proposal rejection. Material pre-implementation passed 84/85; the only failure was the expected dirty-roadmap next-move transition, so the material commit used a recorded hook bypass and this continuity commit resolves that frontier. P4 was not auto-opened.
 - AKOE-P4 and common Local reconciliation are `CLOSED_PASS_BOUNDED` at material commit `a1541eb8b`. Reviewer correction removed a duplicated P3 closure-evidence row, leaving 19 unique candidates across exactly six origin families: 5 `ADAPT`, 8 `CONFIRMED_EXISTING`, 3 `DEFER_WITH_TRIGGER`, 2 `REJECT_DIRECT_IMPORT`, and 1 `BLOCKED_SOURCE_NOT_FOUND`. The distinct Local probe passed; content, machine-closure, dispatch-quality, continuation-chain, and independent-probe gates passed. Material pre-commit passed 88/90 with only the two expected pre-continuity frontier failures, resolved by this sync.
+- Operator-authorized ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at material commit `d9132412a`. The exact Web return is retained byte-identically at SHA-256 `c34381ff0d0e88627a984faa79ac399b31cfdaae2f1355f02bfd8c756cb5b27b`; Local verified the `unreallabsai/unreal-agent` pin `1b9f778453f411c029b39b85102aaefb95e7e48d`, tree `a2324fb6df4010b07041b2a2f161fd25b971bf67`, two MIT license boundaries, and all 42 advisory claim IDs. Disposition is `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`; returned line anchors were repaired to symbol/hash authority. Reviewer-fast passed 69/69 and material pre-commit passed 90/90. No import, upstream execution, runtime/provider use, dependency, public sync, or automatic successor was opened.
 ## Next Allowed Move
-PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_CHECKPOINT_POST_AKOE; ACTIVE_BATCH=NONE; ACTIVE_WORK_ORDER=NONE; CURRENT_TRANCHE_ACTION=AKOE_P4_COMMON_LOCAL_CLOSURE_AT_a1541eb8b; CURRENT_TRANCHE_DISPOSITION=CLOSED_PASS_BOUNDED; NEXT_STEP=OPERATOR_DECIDES_ANY_SUCCESSOR; EXPANSION_ALLOWED=false. AKOE-P1 through AKOE-P4 and common Local reconciliation are closed bounded. Any successor, optional Unreal source intake, production-owner mutation, dependency installation, provider/live, deployment, production action, or public sync requires fresh operator authority. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_CHECKPOINT_POST_AKOE_U1; ACTIVE_BATCH=NONE; ACTIVE_WORK_ORDER=NONE; CURRENT_TRANCHE_ACTION=AKOE_U1_LOCAL_SOURCE_RECONCILIATION_AT_d9132412a; CURRENT_TRANCHE_DISPOSITION=CLOSED_PASS_BOUNDED; NEXT_STEP=OPERATOR_DECIDES_ANY_SUCCESSOR; EXPANSION_ALLOWED=false. AKOE-P1 through AKOE-P4, common Local reconciliation, and the optional U1 Unreal source intake are closed bounded. U1 is SOURCE_RECONCILED_DEFER_WITH_TRIGGER and does not authorize import or runtime use. Any successor, production-owner mutation, dependency installation, provider/live, deployment, production action, or public sync requires fresh operator authority. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
