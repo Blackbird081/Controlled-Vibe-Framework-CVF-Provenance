@@ -59,7 +59,7 @@ Produce one reviewable NCR-R0/W00 selection packet. Trace a user outcome to a re
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-R0-W00","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"DOC_CHANGE","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["docs/baselines/","docs/work_orders/","docs/reviews/"],"claims":["bounded R0/W00 pilot recommendation","applicable finding map"],"requiredProof":["two-candidate source matrix","consumer-to-owner trace","P01-P10 three-axis matrix","exact changed set","worker-return full gate"],"operatorCheckpoints":["pilot/effect/expense choice","new source or owner authority","provider/live/public/deployment action"],"forbiddenEffects":["worker commit","source-code change","dependency installation","provider/live invocation","public write","automatic successor"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":"docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-R0-W00","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"DOC_CHANGE","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["docs/baselines/","docs/work_orders/","docs/reviews/","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json","CVF_SESSION/ACTIVE_SESSION_STATE.json","CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json","CVF_SESSION/state/entries/nextAllowedMove.json","CVF_SESSION_MEMORY.md"],"claims":["bounded R0/W00 pilot recommendation","applicable finding map"],"requiredProof":["two-candidate source matrix","consumer-to-owner trace","P01-P10 three-axis matrix","exact changed set","worker-return full gate"],"operatorCheckpoints":["pilot/effect/expense choice","new source or owner authority","provider/live/public/deployment action"],"forbiddenEffects":["worker commit","source-code change","dependency installation","provider/live invocation","public write","automatic successor"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":"docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md","completenessClaimChanged":false}}
 ```
 
 ## Authority Chain
@@ -274,6 +274,10 @@ Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_
 |---|---|---|---|---|---|
 | `INTERNAL_AGENT` | this packet and exact worker return | shared-workspace read-only source mapping; no commit/effect | current roadmap, source locators and Local review | shared-workspace file/Git return only | CONTRACT_ONLY |
 | `EXTERNAL_AGENT_CLI_MCP` | no external adapter work | no ingress/auth/approval/receipt/raw-data/mutation/public authority | external advisory already reconciled in roadmap | N/A with reason: CLI/MCP implementation is outside this batch | N/A_WITH_REASON |
+
+## Independent Review Probe Admission Contract
+
+independentProbeRequired: NOT_APPLICABLE_WITH_REASON: this R0/W00 assignment produces documentation-only source and applicability analysis, with no executable behavior oracle; distinct Local source review remains required.
 
 ## Gate-To-Role Closeability Contract
 

@@ -22,6 +22,8 @@ Worker target: shared-workspace `INTERNAL_AGENT` source-mapping role
 
 Authorize one bounded, documentation-only NCR-R0/W00 investigation. The worker traces one viable user outcome through current consumer and owners, compares the video-guide candidate with a simpler artifact fallback, maps only applicable P01-P10 findings, and returns a source-backed selection packet for Local review and operator scope choice.
 
+Dispatch correction: the paired work order covers its own continuity projection and explicitly classifies independent-probe applicability. This correction does not widen the worker's one-file scope.
+
 ## Scaffold Provenance Block
 
 | Field | Value |
