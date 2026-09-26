@@ -109,8 +109,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r0_w00_dispatch_ready",
-  "previousMode": "acel_applied_knowledge_owner_enrichment_closed_bounded",
+  "currentMode": "cvf_ncr_r0_w00_review_accepted_operator_pilot_pending",
+  "previousMode": "cvf_ncr_r0_w00_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16799,5 +16799,19 @@
     "nextAction": "hold for a fresh operator decision before any post-AKOE successor",
     "boundary": "G1-G7 and AKOE-P1 through AKOE-P4 are closed bounded; the six-family common Local reconciliation contains 19 terminally dispositioned candidates; no successor, production-owner mutation, dependency, provider/live, deployment, production or public sync is authorized"
   },
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; ROADMAP=docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; NEXT_ACTION_CLASS=EXECUTE_NCR_R0_W00_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R0-W00; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W00_PILOT_SELECTION_2026-09-26.md; CURRENT_TRANCHE_ACTION=NCR_R0_W00_DISPATCH_AT_b991f6342; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY_PENDING_OPERATOR_RELAY; NEXT_STEP=OPERATOR_RELAY_EXACT_COMMITTED_PACKET_TO_INTERNAL_WORKER; EXPANSION_ALLOWED=false. Operator authorized bounded R0/W00 work-order transfer to a separate internal worker. Worker performs read-only source/profile mapping and one uncommitted return; Local remains orchestrator/reviewer. No runtime or owner mutation, dependency install, provider/live, credentials, settings, deployment, public sync, or production action. The 52-deferred lane remains separate; AKOE-P1 through P4 and U1 stay closed bounded; U1 remains SOURCE_RECONCILED_DEFER_WITH_TRIGGER. Latest closed LHW wave remains LHW24."
+  "cvfNcrR0W00PilotSelectionReview20260926": {
+    "status": "ACCEPTED_BOUNDED_SOURCE_PACKET_OPERATOR_PILOT_PENDING",
+    "materialCommit": "c7b7a2c721a3388a738eb2b2633fc4414cf1dff3",
+    "workerReturn": "docs/reviews/CVF_CVF_NCR_R0_W00_PILOT_SELECTION_WORKER_RETURN_2026-09-26.md",
+    "recommendedCandidate": "existing HTML review packet in cvf-web Work Transfer",
+    "decisionOwner": "operator for pilot, effect and expense; Local for technical source disposition",
+    "openBeforePilot": [
+      "actual NEXTAUTH_URL and receipt-endpoint egress/retention",
+      "P06/P08 evidence depth",
+      "agent UI-interaction walkthrough",
+      "latency and cost profile"
+    ],
+    "claimBoundary": "R0/W00 source recommendation only; no pilot execution, R1 dispatch, provider/live or public authority"
+  },
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; ROADMAP=docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; NEXT_ACTION_CLASS=OPERATOR_DECIDES_NCR_R0_PILOT; ACTIVE_BATCH=CVF-NCR-R0-W00; REVIEWED_RETURN=docs/reviews/CVF_CVF_NCR_R0_W00_PILOT_SELECTION_WORKER_RETURN_2026-09-26.md; MATERIAL_REVIEW_COMMIT=c7b7a2c721a3388a738eb2b2633fc4414cf1dff3; CURRENT_TRANCHE_DISPOSITION=ACCEPTED_BOUNDED_SOURCE_PACKET_OPERATOR_PILOT_PENDING; NEXT_STEP=OPERATOR_DECIDES_PILOT_EFFECT_EXPENSE; EXPANSION_ALLOWED=false. Local accepted the bounded R0/W00 source comparison and recommends the existing HTML review-packet candidate for operator consideration; no pilot choice or R1 dispatch is granted. Before a pilot effect, classify the receipt helper's actual NEXTAUTH_URL, egress, latency, cost, retention, P06/P08 depth, and UI walkthrough scope. No runtime or owner mutation, dependency install, provider/live, credentials, settings, deployment, public sync, or production action. The 52-deferred lane remains separate; AKOE-P1 through P4 and U1 stay closed bounded; U1 remains SOURCE_RECONCILED_DEFER_WITH_TRIGGER. Latest closed LHW wave remains LHW24."
 }

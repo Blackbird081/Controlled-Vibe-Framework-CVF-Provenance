@@ -1,0 +1,18 @@
+{
+  "stateOrder": 2944,
+  "stateKey": "cvfNcrR0W00PilotSelectionReview20260926",
+  "value": {
+    "status": "ACCEPTED_BOUNDED_SOURCE_PACKET_OPERATOR_PILOT_PENDING",
+    "materialCommit": "c7b7a2c721a3388a738eb2b2633fc4414cf1dff3",
+    "workerReturn": "docs/reviews/CVF_CVF_NCR_R0_W00_PILOT_SELECTION_WORKER_RETURN_2026-09-26.md",
+    "recommendedCandidate": "existing HTML review packet in cvf-web Work Transfer",
+    "decisionOwner": "operator for pilot, effect and expense; Local for technical source disposition",
+    "openBeforePilot": [
+      "actual NEXTAUTH_URL and receipt-endpoint egress/retention",
+      "P06/P08 evidence depth",
+      "agent UI-interaction walkthrough",
+      "latency and cost profile"
+    ],
+    "claimBoundary": "R0/W00 source recommendation only; no pilot execution, R1 dispatch, provider/live or public authority"
+  }
+}
