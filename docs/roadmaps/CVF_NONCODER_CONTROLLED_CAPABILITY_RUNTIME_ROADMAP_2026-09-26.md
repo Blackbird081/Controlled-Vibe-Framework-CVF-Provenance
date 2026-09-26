@@ -10,9 +10,9 @@ Date: 2026-09-26
 
 Program ID: CVF-NCR
 
-Version: 2.1
+Version: 2.2
 
-Revision disposition: OPERATOR_APPROVED_CAPABILITY_LIFECYCLE_DESIGN_INCORPORATED
+Revision disposition: OPERATOR_APPROVED_CORE_SKILLS_DESIGN_INCORPORATED
 
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
@@ -46,7 +46,9 @@ Historical v2.0 startup acknowledged: current mode=`acel_applied_knowledge_owner
 
 Historical v2.0 bootstrap excerpt: `NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_CHECKPOINT_POST_AKOE_U1`; `NEXT_STEP=OPERATOR_DECIDES_ANY_SUCCESSOR`; `EXPANSION_ALLOWED=false`. Đây là các trường trích từ nextAllowedMove tại lần hợp nhất v2.0, không phải trạng thái hiện hành. Startup v2.1 bên dưới ghi mốc hiện tại; dispatch vẫn phải thỏa authority và continuity theo owner.
 
-Current v2.1 startup acknowledged: current mode=`cvf_ncr_r0_w01_profile_accepted_scope_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=post-W01 document-only scope preparation, now limited by operator to incorporating the agreed capability/plugin design; parked checkpoint=new worker dispatch, pilot effects, runtime, dependency, credentials/provider/live, settings, deployment and public sync. Role=Local orchestrator/reviewer; phase=design incorporation; decision owner=Local for technical disposition and operator for scope/data/effect/expense. Operator đã đồng ý tích hợp delta sau Web final return; tiếp tục tạm dừng giao work order mới cho worker theo chỉ đạo trước đó. Đồng ý sửa roadmap không tự gỡ tạm dừng hoặc mở implementation.
+Historical v2.1 startup acknowledged: current mode=`cvf_ncr_r0_w01_profile_accepted_scope_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=post-W01 document-only scope preparation, now limited by operator to incorporating the agreed capability/plugin design; parked checkpoint=new worker dispatch, pilot effects, runtime, dependency, credentials/provider/live, settings, deployment and public sync. Role=Local orchestrator/reviewer; phase=design incorporation; decision owner=Local for technical disposition and operator for scope/data/effect/expense. Operator đã đồng ý tích hợp delta sau Web final return; tiếp tục tạm dừng giao work order mới cho worker theo chỉ đạo trước đó. Đồng ý sửa roadmap không tự gỡ tạm dừng hoặc mở implementation.
+
+Current v2.2 startup acknowledged: current mode at entry=`cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; role=Local orchestrator/reviewer; phase=external research closed, internal planning; next allowed move=incorporate D013 and prepare bounded internal work order for operator relay. Operator ngày 2026-09-27 chuyển trách nhiệm sang Local sau Web closeout; điều kiện chờ nghiên cứu ở D012 đã được giải quyết. Quyết định kỹ thuật thuộc Local; dữ liệu/effect/expense thuộc operator. Không mở host exposure, lifecycle promotion, provider/live, public hoặc production từ quyết định này.
 
 ## Scope
 
@@ -355,6 +357,29 @@ Current W01 update: `docs/reviews/CVF_CVF_NCR_R0_W01_HTML_PROFILE_WORKER_RETURN_
 - Nghiệm thu: năng lực mới cải thiện user outcome đo được, không phá invariant hoặc tạo owner trùng. Chỉ tăng concurrency/số nguồn theo khả năng review và vận hành.
 - Exit: từng capability đóng bounded; chương trình không biến thành nghiên cứu vô hạn. Không xây/mở rộng marketplace năng lực, Kubernetes hoặc new plane nếu chưa có quyết định riêng dựa trên nhu cầu; route marketplace hiện có giữ disposition đã nêu trong baseline.
 
+### D013 - Core skills thực hành và conflict/host delivery trong NCR
+
+Đây là phần bổ sung cho R0 owner reconciliation, R1 hướng dẫn thực hành và R2 admission/delivery của cùng roadmap; không tạo roadmap hoặc plane mới. Hai stream: nội dung CVF-owned giúp agent hoàn thành công việc đúng quyền; và kiểm soát xung đột trước khi skill được đưa vào tập agent có thể chọn. Tên skill, prefix hay quyền sở hữu CVF không tự chứng minh an toàn hoặc host isolation.
+
+| Bước thuộc NCR | Đầu ra và điều kiện đóng bounded | Boundary |
+|---|---|---|
+| NCR-R0/S01 - Local source/owner reconciliation | Đối chiếu promotion/review và body/registry/source/truth của đúng TDD, code-review và discovery; chốt applicability của behavioral-evaluation owner; trả patch proposal và case/expected-outcome design có locator | Một worker return, read-only đối với owner; không audit lại toàn catalog, sửa status cho giống nhau hoặc chạy skill |
+| R1 skill-content tranche, scope sau review S01 | Candidate test-evidence-audit theo SOP; enrich discovery trong skill-selection/context-routing/governance-orientation; workflow skill riêng chỉ khi có consumer/input/output/trigger riêng | Author nội dung/case ngoài discovery trước; chưa cài/nạp/activate; metadata candidate không tự cho phép tạo runtime body |
+| R2 conflict/delivery tranche, scope sau owner mapping | Admission/exposure decision theo host/profile/version/identity, full package/config/resource review; projection giữ restriction; rollback/stale/revoke và evidence theo phase | Pilot một host có phạm vi thực được xác minh; shared discovery root hoặc prefix không là cơ chế cô lập; provider built-ins không bị CVF ghi đè |
+| Evaluation rồi Local review | Tách content explicit, selector, host implicit discovery, body delivery và receipt; đo artifact đúng source/quyền/claim và rework/cost khi quan sát được | Chỉ chạy trong authority cụ thể; kết quả candidate không tự thành activation, production hoặc runtime governance proof |
+
+Candidate test-evidence-audit trả quyết định có target/evidence/reason: KEEP nêu proof cần giữ và proposal dư không thêm; CONSOLIDATE nêu keeper/assertion, không tự cho xoá; DEFER_WITH_REASON dành cho thiếu thông tin/quyền. Chọn theo đầu ra chính; TDD/code-review và test-audit có thể cùng cần trong task hỗn hợp nhưng không mặc định gọi cả ba. Giữ failure baseline và contract độc lập; recommendation không là test PASS. Không đổi enum máy bằng bảng nhãn thiết kế.
+
+Skill thực hành phải nối input → quyết định → artifact dùng được, có ví dụ CVF-specific và owner cần đọc có lý do; tiếp tục phần đã được phép, giữ đúng tác động chưa được phép, không hỏi lại quyền đã cấp. Cases gồm dispatcher chuẩn bị packet không dispatch, worker hoàn thành output không publish, reviewer giữ proof tốt và tránh rerun dư, fake authority và no-match. Agent mô phỏng và operator Human đủ cho giai đoạn này; guide/video giữ lane riêng.
+
+Conflict decisions dùng owner ASSF package/composition và Skill Control Plane hiện có: COMPOSE_WITH_BOUNDARY, SELECT_ONE_WITH_REASON, BLOCK_AUTHORITY_CONFLICT, NEEDS_EVIDENCE chỉ là nhãn đề xuất cho mapping, chưa phải enum/resolver mới. Bootstrap governance không phụ thuộc auto-selection. Phân biệt structural lint, semantic review và control thực; instruction yêu cầu không làm không chứng minh tool bị chặn. Review cả metadata/body/scripts/resources/preprocessing/hooks và cấu hình có tác động trước exposure. Quyền host/provider và quyền tác vụ vẫn chi phối; không nâng authority bằng SKILL.md. Native host selection/read không tự tạo receipt ASSF.
+
+Evidence nối canonical source, projection/transformation, host-visible catalog, observed selection, body delivery và receipt đúng issuer/phase; thiếu body hash không xoá bằng chứng selection đã quan sát, nhưng giới hạn claim. Invalidate theo delta bị ảnh hưởng; tắt discovery không xoá context phiên cũ, không fallback âm thầm sang bản cũ. Projection tĩnh nhỏ được ưu tiên nếu đủ claim; plugin/MCP/daemon chỉ khi có consumer gap và authority riêng.
+
+Evaluation giữ baseline governance: enrichment so với bản hiện hành; skill mới so với cùng nhiệm vụ không có candidate. Không đối chứng yếu giả tạo, không bỏ kết quả sai hoặc tune trên toàn bộ case rồi nhận generalization. Competitor phải thực sự nằm trong tập thấy được nếu claim selection competition. Command-start signal không là exit/outcome proof. Chốt owner và claim trước: khi dùng `docs/reference/agent_system_skills/CVF_ASSF_BEHAVIORAL_EVALUATION_CONTRACT.md`, đáp ứng repeat/evidence/baseline/provenance của contract; ngân sách giới hạn việc làm, không hạ điều kiện PASS. Contract CANDIDATE có grader/checker thuần không cấp quyền runtime hoặc mở lại G3. Observation không được dùng để đi vòng gate bắt buộc; fixture P06/P08 không đóng runtime gate.
+
+Hai prerequisite scoped: (1) TDD/code-review có registry/source ACTIVE nhưng body APPROVED và hạn chế ACTIVE, cần đối chiếu promotion/review/truth trước competitor/projection; (2) behavioral owner cần mapping applicability, maturity và claim cụ thể trước eval. Không tự promote/demote, không mở G1-G7 hoặc 52-deferred, không chặn NCR HTML độc lập. Source-derived adaptation còn cần pin/license/source authority theo SOP; Web agreement không thay bằng chứng đó. S01 chỉ chuẩn bị phương án có thể review; work order triển khai tiếp theo chọn exact manifest sau Local review.
+
 ### User guide tổng quan và video ở tranche kế tiếp
 
 - Mục tiêu user guide ngắn: giúp người dùng hiểu CVF dùng để làm gì khi giao AI viết/sửa code và kiểm soát agent: người dùng nêu mục tiêu và ranh giới; agent thực hiện phần được giao; CVF đặt policy/identity/permission/evidence tại những điểm thuộc phạm vi kiểm soát; Human xem kết quả và quyết định các tác động cần phê duyệt. Có một ví dụ code cụ thể và nêu rõ giới hạn quan sát/enforcement theo surface thực. Không mô tả CVF như IDE, công cụ tự viết code, agent builder hoặc hệ thống kiểm soát mọi phiên agent.
@@ -424,6 +449,7 @@ Không đổi thứ tự chỉ vì công nghệ mới hấp dẫn. Có thể đi
 | D010 | 2026-09-26 | Operator muốn user guide ngắn về CVF tổng thể và video hướng dẫn ở tranche sau nếu phù hợp | Đối chiếu, cập nhật/liên kết hướng dẫn hiện có; video theo guide được review, giải thích coding/agent control và giới hạn thực, không đồng nhất với pilot HTML hoặc bằng chứng media pipeline |
 | D011 | 2026-09-26 | V2.1, Loại A: operator đồng ý tích hợp delta capability/plugin đã hết phản biện Web | Làm rõ component/dependency, effect lifecycle, loaded evidence và revoke/stop trong owner hiện có; chi tiết impact/evidence bên dưới. Giữ tạm dừng giao work order mới; implementation tăng scope phải phân loại lại |
 | D012 | 2026-09-26 | NCR-R1/W01 đóng bounded: bốn dòng HTML UX copy trên UI hiện hữu và focused mocked tests được Local review tại `5e99eb209` | Chưa có browser walkthrough, profile thực, P06/P08 proof hay pilot effect; operator yêu cầu dừng trước work order kế tiếp để xem thông tin Web mới. Các dependency Q001/Q005/Q007 và điều kiện R1/R2 giữ nguyên; không mở effect hoặc chi phí |
+| D013 | 2026-09-27 | V2.2: operator chuyển sang Local sau closeout SD-01–SD-13; nhận hai stream core skill practice và conflict/host delivery | Tích hợp ngay trong NCR R0/R1/R2; chuẩn bị S01 read-only reconciliation, dừng tại work order cho operator relay; không tạo roadmap thứ ba hoặc cấp host/runtime authority |
 | Q001 | PILOT_CANDIDATE_SELECTED_SCOPE_OPEN; D009/D010 | Ứng viên HTML đã chọn; còn L1/L2/L3, effect/threat model, `NEXTAUTH_URL`/egress/retention/latency/cost, P06/P08, UI walkthrough, provider/auth nếu áp dụng, baseline/metric và RPO/RTO; guide/video là nhánh tài liệu tiếp theo | Local xác minh source/profile và đề xuất work package nhỏ; operator chốt tác động/chi phí và ngưỡng trước đợt đo R3; cost chưa đo là `UNKNOWN`; video có scope/approval riêng |
 | Q002 | SOURCE_RECONCILED_DEFER_WITH_TRIGGER | U1 source intake đã đóng bounded; chỉ quyết định consumer/trigger tiếp theo nếu slice cần Unreal và owner comparison thấy gap | Không giao lại pin/license/source reconciliation; chưa import/runtime-enabled; không chặn pilot độc lập |
 | Q003 | INTERNAL_PILOT_SCOPE_DECIDED; HUMAN_RESEARCH_DEFERRED; D8 | Agent mô phỏng non-coder và operator góp ý/quyết định Human khi cần; đợt đánh giá người dùng thật tách riêng sau khi sản phẩm có người dùng | R0 ghi kịch bản/quyền UI, dữ liệu mẫu, log và phân loại bằng chứng; chỉ khi mở nghiên cứu có người mới chốt người phụ trách, consent, quyền dừng/rút, quyền truy cập, retention và recording consent riêng |
@@ -483,6 +509,12 @@ Get-FileHash -Algorithm SHA256 on the roadmap provides the reviewer the final re
 Validation correction (N1): bốn checker chặn lần chạy đầu v1.1 là `governance/compat/check_external_knowledge_intake_routing.py`, `governance/compat/check_external_absorption_core.py`, `governance/compat/check_external_absorption_value_conversion.py` và `governance/compat/check_external_absorption_overlap_discipline.py`. Repair read-ahead: đã đọc applicability, SOURCE_MARKERS/INTAKE_TEXT_MARKERS và required-section checks của bốn checker khi chẩn đoán lỗi v1.1, trước khi sửa locator; đây là read-ahead cho repair, không phải trước lần authoring đầu. Legacy root trực tiếp kích hoạt ba absorption guard; intake guard còn khớp cụm từ mô tả phép quét dù câu đang phủ định việc quét. Vì sửa roadmap không thực hiện intake/absorption, baseline dùng registry entry và scopePaths[0] làm locator canonical, đồng thời mô tả đúng phép kiểm tra locator bằng tiếng Việt; không tạo processing ledger hoặc maturity claim giả. Không đổi checker hoặc giấu hoạt động nguồn; review mockup sâu vẫn là việc R0 theo scope tương lai. Bảng kết quả và trace v1.1 phía trên/dưới là snapshot trước sửa N1/N2 đã được R2 kiểm chứng; bổ sung bốn checker làm tập locator thay đổi, không sửa ngược số đo lịch sử 35.
 
 Future evidence reuse: dùng receipt hợp lệ và kiểm tra freshness theo owner; chỉ chạy lại khi có mâu thuẫn, expected information gain và cost reason. Không tái tạo review từng hàng để tăng số test. Live/production/governance claims tương lai phải có proof đúng loại, không mượn gate PASS của roadmap.
+
+### D013 core-skills design incorporation evidence
+
+Baseline: HEAD `90128a22360ff46f3662d52ccf74a5c0552c613e`, worktree sạch trước sửa. Advisory inputs giữ ngoài repo: `CVF_NCR_CORE_SKILLS_PRACTICE_RESEARCH_RETURN_20260927.zip` SHA-256 `d235a3ff0e2f8915279ee5c80a6afa631b66e5280daa5981d135e0448686b82c`; Local convergence SHA-256 `9cd006faaf7731d9fd970b8295c1094b6b089585caaed76fe701e4bc49672192`; Web closeout `CVF_NCR_CORE_SKILLS_EXTERNAL_CLOSEOUT_20260927.md` SHA-256 `068a8f8d220cd7aefb523f6650a1cdf1c5c9cdcc03a8c3760b3929efd0a79fdd`. Closeout trỏ đúng hash Local, không có mâu thuẫn mới; sửa khuyến nghị repeat theo owner áp dụng. Kết thúc vòng Web ở mức thiết kế; không nhận private verification từ Web.
+
+Loại A design clarification cho I02/I04/I06/I07/I09/I10/I12 và A05/A08/A11/A12. Owner: `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md`, `docs/reference/agent_system_skills/CVF_ASSF_COMPOSITION_CONTROL_CONTRACT.md`, `docs/reference/agent_system_skills/CVF_SKILL_CONTROL_PLANE_INVENTORY_STANDARD.md`, productionization SOP và behavioral contract. Composition contract không là resolver đã enforcement; package discovery hiện hữu không là proof workflow practice đầy đủ. Local đọc source hai competitor, discovery và behavioral owner; không chạy eval. D013 giữ R0-R6, I01-I12, A01-A12 và toàn bộ closure HTML/AKOE/U1. Mỗi implementation tăng scope phải được phân loại lại. Rollback chỉ delta D013 bằng diff, không reset hoặc đè lane khác. Verification mới ghi sau gate, không tái dùng PASS v2.1.
 
 ### D011 capability/plugin design incorporation evidence
 
@@ -569,8 +601,8 @@ External research stays advisory and ends before internal implementation/review/
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_corpus_to_knowledge_map_reconciliation.py` |
 | literalTokensReviewed | roadmap headings Authorization, Purpose, Scope, Non-Goals, Design Control Gate, Work Plan, Acceptance Criteria, Verification; `applicableCheckersRead`, `literalTokensReviewed`, `gateRunPurpose`, `claimBoundary`; `Status` is non-closed; `Public Export Disposition`; `Text Encoding Exception`; `NOT_APPLICABLE_WITH_REASON`; delta claim `CLAIM_REJECTED` markers; no new source intake/corpus-complete claim |
-| gateRunPurpose | Confirmation of v2.1 document shape, routing and evidence boundaries after source read-ahead; not first discovery of literal requirements or runtime proof |
-| claimBoundary | Existing roadmap incorporates operator-approved D011 design; W00/W01 accepted bounded, new worker dispatch paused; no activation, live, hosted, public or production claim |
+| gateRunPurpose | Confirmation of v2.2 document shape, routing and evidence boundaries after source read-ahead; not first discovery of literal requirements or runtime proof |
+| claimBoundary | Existing roadmap incorporates operator-approved D013 design; R1/W01 accepted bounded; Local prepares bounded S01; no activation, live, hosted, public or production claim |
 
 ## Text Encoding Exception
 
@@ -579,9 +611,9 @@ User-facing Vietnamese roadmap requires Vietnamese characters for the non-coder 
 ## Package Skill Productionization Control Block
 
 - SOP source: `docs/reference/agent_system_skills/CVF_PACKAGE_SKILL_PRODUCTIONIZATION_SOP.md`
-- Current phase: roadmap design clarification only; no package productionization phase executed by D011.
+- Current phase: roadmap design clarification only; no package productionization phase executed by D011/D013.
 - Target lifecycle state: N/A with reason - no package lifecycle record changes in this document-only delta.
-- Prior phase evidence: existing owner contracts and D011 advisory-input hashes; not package acceptance evidence.
+- Prior phase evidence: existing owner contracts and D011/D013 advisory-input hashes; not package acceptance evidence.
 - Next forbidden skip: no candidate creation, activation, runtime or production promotion from roadmap approval; selected package follows SOP phases under its own authority.
 - Runtime/provider proof: N/A with reason - no package invocation or runtime behavior claim in this revision.
 - Claim boundary: design mapping only; T1 reference and T4/T5 candidate contracts retain their recorded maturity.
@@ -609,18 +641,18 @@ Repair read-ahead: `governance/compat/check_delta_execution_claim_boundary.py`, 
 |---|---|
 | Actor | Local reviewer / roadmap author |
 | Provider or surface | Local coding-agent workspace |
-| Session or invocation | CVF-NCR capability lifecycle incorporation-v2.1, 2026-09-26 |
+| Session or invocation | CVF-NCR core skills incorporation-v2.2, 2026-09-27 |
 | Working directory | Private CVF provenance repository root |
 | Command or tool surface | Read-only CVF/relay/Git inspection, apply_patch, document/governance checks |
 | Target paths | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Allowed scope source | Operator agreed to incorporate the converged capability/plugin design and validate documents; pause on new worker dispatch remains |
-| Before status evidence | HEAD `ad60a2e9217cfc4831ed8b37f8c61291490d1a3d`; worktree clean before edit; no fresh remote/public-sync claim |
-| After status evidence | Roadmap v2.1 is the intended working-tree delta; final status and gates recorded in D011 verification; no runtime/owner/session mutation by this authoring step |
+| Allowed scope source | Operator transferred converged research to Local; incorporate D013 and prepare bounded internal packet, stop for operator relay |
+| Before status evidence | HEAD `90128a22360ff46f3662d52ccf74a5c0552c613e`; worktree clean before edit; no fresh remote/public-sync claim |
+| After status evidence | Roadmap v2.2 is the intended working-tree delta; final status and gates recorded in D013 verification; no runtime/owner/session mutation by this authoring step |
 | Diff evidence | `git diff -- docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `git status --short` |
-| Approval boundary | D011 roadmap incorporation only; new worker dispatch stays paused and effects require exact authority and existing gates |
+| Approval boundary | D013 roadmap incorporation; internal packet requires scoped authority and pre-dispatch; effects remain separately gated |
 | Claim boundary | Accepted design with W00/W01 closed bounded and actual pilot scope pending; no completed capability or audit finding closure |
 | Agent type | INTERNAL_AGENT, orchestrator authoring role |
-| Invocation ID | cvf-ncr-capability-lifecycle-v2-1-2026-09-26 |
+| Invocation ID | cvf-ncr-core-skills-v2-2-2026-09-27 |
 | Expected manifest | This roadmap only |
 | Actual changed set | This roadmap only for the author delta; external advisory files remain outside the repository |
 | Manifest delta | Expected author delta MATCH: roadmap only; confirm from final git status before material commit |
@@ -632,4 +664,4 @@ DEFERRED_PRIVATE_ONLY: private planning artifact. No public-sync, public catalog
 
 ## Claim Boundary
 
-Roadmap tổng hợp hướng đã thống nhất và đề xuất trình tự thực hiện. Tài liệu không chứng minh capability đã tích hợp, agent đã bị enforcement, provider subscription đã được hỗ trợ, dữ liệu đã backup hoặc cloud đã sẵn sàng. NCR-R0/W00 và W01 đã được Local nghiệm thu bounded; operator đã chọn ứng viên HTML và đồng ý D011 ở mức thiết kế. Pilot effect, tài liệu hướng dẫn được phát hành và video vẫn cần scope/authority/evidence riêng. Giao work order mới vẫn tạm dừng; không tự mở runtime từ sự tồn tại của file này.
+Roadmap tổng hợp hướng đã thống nhất và đề xuất trình tự thực hiện. Tài liệu không chứng minh capability đã tích hợp, agent đã bị enforcement, provider subscription đã được hỗ trợ, dữ liệu đã backup hoặc cloud đã sẵn sàng. NCR-R0/W00 và W01 đã được Local nghiệm thu bounded; operator đã chọn ứng viên HTML và đồng ý D011 ở mức thiết kế. Pilot effect, tài liệu hướng dẫn được phát hành và video vẫn cần scope/authority/evidence riêng. D013 kết thúc chờ nghiên cứu Web và cho phép chuẩn bị packet nội bộ scoped; work order chỉ được giao sau bound pre-dispatch. Không tự mở runtime từ sự tồn tại của file này.
