@@ -6,6 +6,8 @@ docType: review
 
 Status: REWORK_REQUIRED
 
+Current review round: 2. The first rework repaired the dispatcher gate and substantial source mapping, but three dependent claim/evaluation defects remain. Keep valid first-round evidence; only the Round 2 findings below require another worker edit.
+
 Worker return: `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_WORKER_RETURN_2026-09-27.md`
 
 Decision owner: Local orchestrator/reviewer. The shared-workspace Claude worker is INTERNAL_AGENT. Operator retains effect, data and expense decisions. This is one consolidated finding set; it does not accept or execute the proposed skills.
@@ -24,11 +26,11 @@ Read the return against six work-order obligations, inspect named owner contract
 
 ## Findings / Position
 
-The six findings below form one dependent rework set. Acceptance is withheld until dispatcher packet repair and worker correction are evidenced.
+The original six findings formed one dependent rework set. The first rework repaired the packet and much of the source mapping. Round 2 isolates the remaining evaluation, process-account and implementation-claim defects. Acceptance remains withheld.
 
 ## Review Disposition
 
-The return is structurally readable but cannot be accepted. The worker reported a failed bound pre-implementation gate (85/86) and continued despite the autorun stop rule. The dispatcher-owned work order caused the failure by omitting required packet-shape vocabulary from its `Worker Return Packet Shape Contract`. Local must correct and release the packet before worker rework. No worker-owned package, registry, host or provider change is authorized.
+The return is structurally readable but cannot be accepted. The initial worker reported a failed bound pre-implementation gate (85/86) and continued despite the autorun stop rule. Local repaired the dispatcher-owned packet; the first rework reports clean pre-implementation and worker-return gates. That return still has the three Round 2 defects below. No worker-owned package, registry, host or provider change is authorized.
 
 ## Consolidated Findings
 
@@ -40,6 +42,14 @@ The return is structurally readable but cannot be accepted. The worker reported 
 | S01-R4 | MATERIAL | Future fake-authority and stale/revoked cases say loading is denied or a reference rejected as though runtime enforcement were proven. | State target oracle, enforcement owner and evidence needed. Mark these as unexecuted negative cases; distinguish package prose from verified resolver, host and receipt behavior. |
 | S01-R5 | MATERIAL | Behavioral mapping omits the canonical paired WITH/WITHOUT rule and runner/grader independence from its rule table. Promotion chronology/body-edit conclusions need direct promotion evidence rather than inference from current files alone. | Add the paired-input and independent-grader conditions; inspect the directly cited promotion review or bounded Git diff and report verified scope or explicit uncertainty. |
 | S01-R6 | MATERIAL | Retrospective says there was no gate surprise despite the pre-implementation failure; full worker gate is reported as expected rather than an actual final run. | Report the gate friction, exact corrective ownership, actual final full-gate result and changed set. Do not claim reviewer acceptance from a worker self-check. |
+
+## Round 2 Findings
+
+| ID | Severity | Independent evidence | Required repair and regression guard |
+|---|---|---|---|
+| S01-R2A | MATERIAL | The reworked `Evaluation Owner Applicability` table still lists Rules 1, 2, 4, 6, 12 and 16 but omits Rules 5 and 8. `CVF_ASSF_BEHAVIORAL_EVALUATION_CONTRACT.md` Rules 5 and 8 require byte-identical `canonicalInputBytes` for WITH/WITHOUT runs and independently invokable runner/grader without shared mutable state. | Add both conditions to the applicability mapping with their fail-closed result and a future case/fixture implication. This is design mapping only; no evaluation run. |
+| S01-R2B | BLOCKER | `Risk / Corrective Action` still says the failed pre-implementation gate required no worker action, cites the superseded affected-work exception, and says no in-scope action was blocked. The same return's Scope/Methodology and Worker Experience Retrospective correctly say the worker should have stopped. `CVF_AGENT_AUTORUN_WORKFLOW_CONTROL_STANDARD_2026-05-28.md` requires stopping on a failed phase. | Replace the stale paragraph with one consistent historical account: dispatcher repaired the packet; the worker's initial continuation was a conduct defect; the second pass began only after a clean pre-implementation. Do not present the current PASS as retroactive compliance. |
+| S01-R2C | MATERIAL | The return's composition map says no resolver or loader exists. The T5 contract says it did not implement composition-specific loader/checker changes while explicitly naming the existing ASSF-T2 resolver `governance/compat/run_assf_skill_resolver.py`; `governance/compat/run_assf_production_package_executor.py` also exists. | Distinguish existing metadata resolver and production executor from unverified T5 conflict/dependency enforcement. Inspect only these directly linked implementations for the relevant control, then report what is implemented, absent or unverified without claiming all resolvers/loaders are absent. Revise case oracles and proposed next manifest accordingly. |
 
 ## Risk / Corrective Action
 

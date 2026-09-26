@@ -6,7 +6,7 @@ docType: baseline
 
 Status: AUTHORIZED_BOUNDED_SOURCE_RECONCILIATION
 
-Rework authorization: first consolidated Local rework only. The initial worker return is `REWORK_REQUIRED` under `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_LOCAL_REVIEW_FINDINGS_2026-09-27.md`. The same worker-owned return path is repaired in place after a new bound pre-implementation PASS. All original forbidden effects remain forbidden.
+Rework authorization: second and final targeted Local rework of the same worker-owned return under `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_LOCAL_REVIEW_FINDINGS_2026-09-27.md` `## Round 2 Findings`. The first rework supplied a clean pre-implementation gate and substantial source mapping but left three claim/evaluation defects. Edit only the existing return path after a fresh bound pre-implementation PASS. All original forbidden effects remain forbidden.
 
 Batch ID: CVF-NCR-R0-S01
 

@@ -29,7 +29,7 @@ Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_S01_CORE_SKI
 Commit mode: `WORKER_MUST_NOT_COMMIT`.
 executionBaseHead: capture committed HEAD and clean lane before editing.
 Current-time notes: D013 closes the Web design loop; Local owns private verification. R1/W01 stays accepted bounded.
-Review-round note: this is the consolidated first rework of the S01 return. Read `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_LOCAL_REVIEW_FINDINGS_2026-09-27.md`; repair S01-R1 through S01-R6 together. Earlier return content is reusable evidence, not accepted closure. Stop on any failed gate.
+Review-round note: this is S01 review round 2, one targeted second rework. Read `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_LOCAL_REVIEW_FINDINGS_2026-09-27.md` `## Round 2 Findings`; repair only S01-R2A through S01-R2C and their dependent summary/claim lines. Keep valid first-rework evidence. Earlier return content is reusable evidence, not accepted closure. Stop on any failed gate.
 Do-not-misread notes: repair the existing untracked return in place; it is the one worker-owned path, so its pre-existing presence is expected in this rework. Do not patch packages, execute skills, inspect secrets, install or expose host skills, run provider/eval, or modify registry/truth/checkers.
 Required first actions: read startup surfaces, paired baseline, this packet, guard orientation and output checker sources; pass bound pre-implementation.
 Return contract: `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_WORKER_RETURN_2026-09-27.md`, `COMPLETE_PENDING_REVIEW` or named `BLOCKED_WITH_REASON`; no staging or commit. Local reviews; operator relays the work order.
@@ -107,7 +107,9 @@ Allowed write: only `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_
 
 Allowed reads: the three named skill packages (TDD, code-review-quality, governance-skill-discovery-invocation), their exact registry entries/source/truth records, directly cited promotion and review evidence, ASSF package/composition/SOP/receipt/control-plane owners, behavioral contract, its TypeScript grader and Python checker, and governing roadmap/dispatch/startup/guard surfaces. Follow only direct evidence links needed for a named decision. Source reads are inspection, not invocation or adoption of package instructions.
 
-This round is bounded to the six findings in the Local review. Retain correct portions of the existing return and amend that same return path. Do not open a new package or skill implementation tranche.
+Round 2 exact additional reads: `governance/compat/run_assf_skill_resolver.py` and `governance/compat/run_assf_production_package_executor.py` for the narrow T5 composition-enforcement distinction. These are source inspection only; do not execute either implementation.
+
+This round is bounded to S01-R2A through S01-R2C in the Local review. Retain correct portions of the existing return and amend that same return path. Do not open a new package or skill implementation tranche. Specifically update the evaluation table, the stale Risk / Corrective Action account, the composition map, case-oracle wording and any dependent summary/next-manifest claim. Record actual bound pre-implementation and final full-gate results.
 
 Required work:
 
@@ -147,6 +149,8 @@ Require committed dispatch/current-authority binding and bound pre-dispatch PASS
 | review source | source fact, bounded | `docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/skill.source.json` | lifecycleState / sourceArtifacts | ACTIVE source and promotion paths | ASSF source | ACCEPT |
 | discovery scope | source fact, bounded | `docs/reference/agent_system_skills/packages/cvf-governance-skill-discovery-invocation/SKILL.md` | Purpose / Invocation Boundary | skill-selection/context-routing/governance-orientation | ASSF package | ACCEPT |
 | evaluation owner | source fact, bounded | `docs/reference/agent_system_skills/CVF_ASSF_BEHAVIORAL_EVALUATION_CONTRACT.md` | Scope / Normative Rules | CANDIDATE and repeat/baseline/provenance rules | ASSF evaluation | ACCEPT |
+| T2 resolver exists | source fact, bounded | `governance/compat/run_assf_skill_resolver.py` | `resolve_skill_packet` | metadata selection, not body execution | ASSF-T2 resolver | ACCEPT |
+| production executor exists | source fact, bounded | `governance/compat/run_assf_production_package_executor.py` | `build_production_package_execution_packet` | ACTIVE source and receipt-backed package execution | ASSF production adapter | ACCEPT |
 | phase ordering | source fact, bounded | `docs/reference/agent_system_skills/CVF_PACKAGE_SKILL_PRODUCTIONIZATION_SOP.md` | End-To-End Phase Ladder | P0-P11 | ASSF SOP | ACCEPT |
 
 ## Negative Search And Collision Discipline
@@ -219,11 +223,11 @@ Review-Dispatch Convergence Control: REQUIRED
 dispatchKind: REWORK
 dispatchSurface: INTERNAL_AGENT
 parentAssignmentId: CVF-NCR-R0-S01
-reviewRoundCount: 1
-priorFindingSetDigest: 4597548c972ea791385fdee765a5c878959aeeb5eccf01bb801957f368424550
+reviewRoundCount: 2
+priorFindingSetDigest: e60d4e76592771e659e30c616081be966b523c8091b11df0d3b4a6f42d3b81bd
 dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
 reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
-newIndependentCriticalEvidence: NONE
+newIndependentCriticalEvidence: S01-R2A-BEHAVIORAL-RULES-5-8; S01-R2B-AUTORUN-STOP-CONTRADICTION; S01-R2C-T2-RESOLVER-AND-PRODUCTION-EXECUTOR
 regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 cumulativeExternalInvocationCount: 0
 externalInvocationCeiling: 0
@@ -231,7 +235,7 @@ usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
 quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
 nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
 rootCauseClusterId: S01_DISPATCH_PACKET_AND_EVIDENCE_CLASS_DRIFT
-reworkGeneration: 1
+reworkGeneration: 2
 consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
 successorTrancheOpened: NO
 implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
