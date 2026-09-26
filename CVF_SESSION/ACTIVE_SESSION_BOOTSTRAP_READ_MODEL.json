@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_w00_html_ux_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_w00_accepted_r1_w01_authoring",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_W00_DOC_ONLY; BATCH=CVF-NCR-R1-W00; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md; MATERIAL_COMMIT=f7c18d6fe73e3ef44991eebe49de3ca019f4d51b; PRE_DISPATCH_GATE_REQUIRED=true; EXPANSION_ALLOWED=false. Internal worker reads named source and returns one uncommitted static UX contract; no UI/browser, export/evaluate request, raw config, code/dependency, provider/live, public or deployment effect. W00-W02 accepted bounded; operator retains pilot data/effect/expense; P06/P08, actual profile, guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_R1_W01_HTML_UX_COPY; PRIOR_REVIEW_COMMIT=97532f7038f7bcc0d3768550b06a3695b72b8809; EXPANSION_ALLOWED=false. R1/W00 accepted bounded static UX contract; author one paired GC-018 baseline and work order for existing ArtifactExportPanel copy/test implementation, then bind committed dispatch before operator relay. No UI/browser, export/evaluate call, raw config, route/helper/dependency, provider/live, public or deployment effect. Operator retains pilot data/effect/expense; P06/P08, actual profile, guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
