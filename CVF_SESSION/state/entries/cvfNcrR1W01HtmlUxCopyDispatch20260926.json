@@ -3,7 +3,7 @@
   "stateKey": "cvfNcrR1W01HtmlUxCopyDispatch20260926",
   "value": {
     "status": "DISPATCH_READY",
-    "materialCommit": "7f881606b4a7719b3bfb6174fd86128ba90b7f30",
+    "materialCommit": "e54dd51e8eb60364a814a921a0d31bb7d259e487",
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
     "workerReturnPath": "docs/reviews/CVF_CVF_NCR_R1_W01_HTML_UX_COPY_WORKER_RETURN_2026-09-26.md",

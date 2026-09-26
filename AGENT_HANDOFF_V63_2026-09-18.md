@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `c164ae8eef93dad2b63bd247d15e70981c5484ac`. CVF-NCR-R1-W01 paired-material correction parent anchor.
+Current HEAD recorded for this handoff: `e54dd51e8eb60364a814a921a0d31bb7d259e487`. Corrected CVF-NCR-R1-W01 paired material and parent anchor for final continuity.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -155,7 +155,7 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 - NCR W02 read-only return was Local-accepted at `c638f2ece` after source-claim repair and 90/90 pre-commit. The client fallback port `8000` differs from the server's documented `8100`; actual URL/port, ledger/log retention and pilot data/effect/expense remain open. R1/W00 static HTML UX contract dispatch was corrected at `f7c18d6fe73e3ef44991eebe49de3ca019f4d51b`; the worker return was reviewer-repaired and accepted bounded at `97532f7038f7bcc0d3768550b06a3695b72b8809` after 69/69 reviewer-fast and 90/90 pre-commit. R1/W01 paired baseline/work order committed at `96f632b41c4556a5806db91c750e1188461253fd` after 90/90 pre-commit; only the HTML export component, focused test and one return are worker-owned. Operator relay follows bound pre-dispatch; no UI/API call or worker execution occurred.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_W01_HTML_UX_COPY; BATCH=CVF-NCR-R1-W01; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; MATERIAL_COMMIT=7f881606b4a7719b3bfb6174fd86128ba90b7f30; PRE_DISPATCH_GATE_REQUIRED=true; EXPANSION_ALLOWED=false. Internal worker edits only ArtifactExportPanel.tsx, its focused test and exact worker return after operator relay and bound gate. No UI/browser, export/evaluate request, raw config, route/helper/dependency, provider/live, public or deployment effect. R0/W00-W02 and R1/W00 accepted bounded; operator retains pilot data/effect/expense; P06/P08, actual profile, guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_W01_HTML_UX_COPY; BATCH=CVF-NCR-R1-W01; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; MATERIAL_COMMIT=e54dd51e8eb60364a814a921a0d31bb7d259e487; PRE_DISPATCH_GATE_REQUIRED=true; EXPANSION_ALLOWED=false. Internal worker edits only ArtifactExportPanel.tsx, its focused test and exact worker return after operator relay and bound gate. No UI/browser, export/evaluate request, raw config, route/helper/dependency, provider/live, public or deployment effect. R0/W00-W02 and R1/W00 accepted bounded; operator retains pilot data/effect/expense; P06/P08, actual profile, guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
@@ -177,7 +177,7 @@ PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_W01_HTML_UX_COPY; BATCH=CVF-NCR
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: rebind paired CVF-NCR-R1-W01 material and current-authority hashes after `c164ae8eef93dad2b63bd247d15e70981c5484ac`; no guard logic or runtime owner is changed.
+Authorized guard-maintenance scope: bind corrected CVF-NCR-R1-W01 paired material at `e54dd51e8eb60364a814a921a0d31bb7d259e487` to final continuity; no guard logic or runtime owner is changed.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
