@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_w00_accepted_r1_w01_authoring",
+  "currentMode": "cvf_ncr_r1_w01_html_ux_copy_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_R1_W01_HTML_UX_COPY; PRIOR_REVIEW_COMMIT=97532f7038f7bcc0d3768550b06a3695b72b8809; EXPANSION_ALLOWED=false. R1/W00 accepted bounded static UX contract; author one paired GC-018 baseline and work order for existing ArtifactExportPanel copy/test implementation, then bind committed dispatch before operator relay. No UI/browser, export/evaluate call, raw config, route/helper/dependency, provider/live, public or deployment effect. Operator retains pilot data/effect/expense; P06/P08, actual profile, guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_W01_HTML_UX_COPY; BATCH=CVF-NCR-R1-W01; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; MATERIAL_COMMIT=96f632b41c4556a5806db91c750e1188461253fd; PRE_DISPATCH_GATE_REQUIRED=true; EXPANSION_ALLOWED=false. Internal worker edits only ArtifactExportPanel.tsx, its focused test and exact worker return after operator relay and bound gate. No UI/browser, export/evaluate request, raw config, route/helper/dependency, provider/live, public or deployment effect. R0/W00-W02 and R1/W00 accepted bounded; operator retains pilot data/effect/expense; P06/P08, actual profile, guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md",
-    "baselineSha256": "7fea60edf9ecb231ab61dcd32f0704a2dd87a9d21f7175e05e05ebfc029c1f1f",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md",
-    "workOrderSha256": "3e3a19af4510db6a1028553d763f640c9fdb99a494ff73aceb49a571440fca32"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
+    "baselineSha256": "83bf0b4953b2b13ed66889ec97fc3178ecd7be598e52fcb66932045292a29b79",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
+    "workOrderSha256": "6c9a8ebc1cae2a2be55f6e8427345d6ad7f2e7c53c495598938abe84b696097b"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

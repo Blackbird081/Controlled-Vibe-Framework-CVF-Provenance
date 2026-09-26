@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_w00_accepted_r1_w01_authoring`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=author and bind R1/W01 copy work order for operator relay; role=Local orchestrator/reviewer; phase=R1/W00 accepted and R1/W01 authoring, pilot effect pending; decision owner=operator for data/effect/expense and Local for technical/design disposition; parked checkpoint=UI interaction/route/evaluate calls, credentials/provider/live, settings, deployment, public sync and production.
+Startup acknowledged: current mode=`cvf_ncr_r1_w01_html_ux_copy_dispatch_ready`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=operator relays exact R1/W01 packet after bound pre-dispatch PASS; role=Local orchestrator/reviewer; phase=R1/W00 accepted and R1/W01 dispatch ready, pilot effect pending; decision owner=operator for data/effect/expense and Local for technical/design disposition; parked checkpoint=UI interaction/route/evaluate calls, credentials/provider/live, settings, deployment, public sync and production.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_w00_accepted_r1_w01_authoring`
-Current mode: `cvf_ncr_r1_w00_accepted_r1_w01_authoring`; previous mode marker: `cvf_ncr_r0_w02_downstream_accepted_scope_pending`
+Current mode marker: `cvf_ncr_r1_w01_html_ux_copy_dispatch_ready`
+Current mode: `cvf_ncr_r1_w01_html_ux_copy_dispatch_ready`; previous mode marker: `cvf_ncr_r0_w02_downstream_accepted_scope_pending`
 
 ## Next Allowed Move
-Mode: `cvf_ncr_r1_w00_accepted_r1_w01_authoring`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_R1_W01_HTML_UX_COPY; PRIOR_REVIEW_COMMIT=97532f7038f7bcc0d3768550b06a3695b72b8809; EXPANSION_ALLOWED=false. R1/W00 accepted bounded static UX contract; author one paired GC-018 baseline and work order for existing ArtifactExportPanel copy/test implementation, then bind committed dispatch before operator relay. No UI/browser, export/evaluate call, raw config, route/helper/dependency, provider/live, public or deployment effect. Operator retains pilot data/effect/expense; P06/P08, actual profile, guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.
+Mode: `cvf_ncr_r1_w01_html_ux_copy_dispatch_ready`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_W01_HTML_UX_COPY; BATCH=CVF-NCR-R1-W01; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; MATERIAL_COMMIT=96f632b41c4556a5806db91c750e1188461253fd; PRE_DISPATCH_GATE_REQUIRED=true; EXPANSION_ALLOWED=false. Internal worker edits only ArtifactExportPanel.tsx, its focused test and exact worker return after operator relay and bound gate. No UI/browser, export/evaluate request, raw config, route/helper/dependency, provider/live, public or deployment effect. R0/W00-W02 and R1/W00 accepted bounded; operator retains pilot data/effect/expense; P06/P08, actual profile, guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

@@ -1,0 +1,12 @@
+{
+  "stateOrder": 2949,
+  "stateKey": "cvfNcrR1W01HtmlUxCopyDispatch20260926",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "96f632b41c4556a5806db91c750e1188461253fd",
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
+    "workerReturnPath": "docs/reviews/CVF_CVF_NCR_R1_W01_HTML_UX_COPY_WORKER_RETURN_2026-09-26.md",
+    "claimBoundary": "existing-component bilingual copy and focused mock test only; no UI interaction, route call, configuration, provider/live, public or pilot authority"
+  }
+}
