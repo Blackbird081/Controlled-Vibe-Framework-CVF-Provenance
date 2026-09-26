@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r0_s01_core_skills_reconciliation_dispatch",
+  "currentMode": "cvf_ncr_r1_s01_skill_content_work_order_preparation",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_INTERNAL_WORKER_SOURCE_RECONCILIATION_REWORK; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_2026-09-27.md; ACTIVE_BATCH=CVF-NCR-R0-S01; REVIEW_FINDINGS=docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_LOCAL_REVIEW_FINDINGS_2026-09-27.md; DISPATCH_COMMIT=da301812a612885232332d7532fe4268c0bcb5f6; REVIEW_ROUND=2; EXPANSION_ALLOWED=false. First S01 rework reports full worker gate and pre-implementation PASS but remains REWORK_REQUIRED on three independent claim/evaluation findings. Local paired the Round 2 baseline and work order; bound pre-dispatch must pass before operator relays. Worker edits only the existing untracked S01 return, runs bound pre-implementation before editing and stops on failure. No package/registry/truth mutation, host exposure, skill/eval/provider/live, credentials, public or pilot effect. R1/W01 stays accepted bounded; HTML, guide/video and 52-deferred lanes remain separate. Operator retains data/effect/expense; G1-G7 remain stopped/parked/closed; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PREPARE_R1_S01_SKILL_CONTENT_WORK_ORDER; ACTIVE_WORK_ORDER=NONE; ACTIVE_BATCH=CVF-NCR-R1-S01-PREPARATION; S01_WORKER_RETURN_COMMIT=5f8addf3922c6dbee7dea33e451b2a4e29fbc247; S01_CLOSURE_COMMIT=09b62aa3b57fd8dfda93140f30a845b7177be24c; S01_REVIEW=docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_LOCAL_REVIEW_FINDINGS_2026-09-27.md; EXPANSION_ALLOWED=false. Local accepts S01 source/owner reconciliation at document-only scope after Round 2 and is closed bounded at 09b62aa3b57fd8dfda93140f30a845b7177be24c. Prepare the smallest R1 skill-content work order from roadmap D013; stop at the work order for operator relay. Two SKILL.md lifecycle-prose edits, discovery enrichment and candidate test-evidence-audit require a new exact manifest and gates. No package mutation or host exposure follows from S01 alone; no skill/eval/provider/live, credentials, public or pilot effect. R1/W01 HTML remains accepted bounded; guide/video and 52-deferred lanes stay separate. Operator retains data/effect/expense; G1-G7 remain stopped/parked/closed; latest closed LHW wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_2026-09-27.md",
-    "baselineSha256": "25ba9e1688ab5e78db8f4f06796433140d010b9d1053cae971886fbc2757bd97",
+    "baselineSha256": "1d70090311dce51a2d97f4292565b3eb53c65b584b23fc411cfe37dd32e98fc3",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_2026-09-27.md",
-    "workOrderSha256": "7a069e3b32b03d345e7e86a9429f1e59fadd90ee5f6cf546848b32369978dae4"
+    "workOrderSha256": "fbf4eb9af7d72a33d081a8446b6e7b5ff065552dcbf789f238e7772b0bd9fb54"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
