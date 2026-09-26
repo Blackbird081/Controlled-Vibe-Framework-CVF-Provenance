@@ -98,6 +98,7 @@ runtime behavior is unmeasured.
 | First-hop profile | accepted W01 at `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6` | ACCEPT_BOUNDED: source only |
 | Downstream effects | accepted W02 at `c638f2ece` | ACCEPT_BOUNDED: actual reachability/retention open |
 | CI and release | local HEAD is 25 commits ahead of `origin/main`; recent remote workflow failures are at `4567d750087d47f369939a0e9891ca6fcb596034`, not this local HEAD | DEFER: no CI/release claim in this design order |
+| Dispatch continuity source | `CVF_SESSION/state/entries/cvfNcrR1W00HtmlUxDispatch20260926.json` was created in the dispatch continuity commit | ACCEPT: include this exact path in the work-order routing manifest |
 | Real UI/pilot profile | actual endpoint, data/effect/expense and UI walkthrough unresolved | DEFER: no effect authorized |
 
 ## Dual Agent Surface Matrix
