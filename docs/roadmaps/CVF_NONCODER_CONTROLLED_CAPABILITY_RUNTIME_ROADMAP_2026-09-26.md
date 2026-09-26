@@ -254,7 +254,7 @@ Audit W00–W06 là các work package nền; W07 được hấp thụ vào R0/R1
 | W05 | R2 exit/R3 entry cho phần pre-live; R4 tăng recovery | Integration theo chuỗi validation→binding→claim→transform→attempt→invoke→receipt/recovery; proof tại effect boundary, migration/rollback trên data copy khi áp dụng. Không còn P1 tác động trong pilot chưa xử lý hoặc containment có evidence. |
 | W06 | R3 live proof khi được cấp quyền; artifact/release/publish theo event riêng ở bất kỳ R phù hợp | Provider/model/corpus/call-cost/stop đúng authority; release-quality governance proof dùng real provider theo chuẩn hiện hành. Artifact sau projection, publishing và hosted deployment là các quyết định khác nhau. |
 
-**AL-01–AL-06 là chỉnh lý gate:** AL-01 yêu cầu trace entry→bridge/dependency/retry/fallback→effect và proof của route thay thế; AL-02 đưa durable admission, claim một operation, timeout/cancel/unknown và migration khi có vào R2 exit/R3 entry trước live; AL-03 tách hosted proof R5 khỏi artifact/public proof theo event; AL-04 giữ hai kết nối độc lập và A07 ở R4, không ép vào live R3 đầu; AL-05 giữ I01–I12/A01–A12, người thử thật và metric/baseline chốt trước đo; AL-06 bổ sung threat/metric, writer/RPO/RTO, quyền tách biệt và hosted decision vào Q/D hiện có, không tạo register khác.
+**AL-01–AL-06 là chỉnh lý gate:** AL-01 yêu cầu trace entry→bridge/dependency/retry/fallback→effect và proof của route thay thế; AL-02 đưa durable admission, claim một operation, timeout/cancel/unknown và migration khi có vào R2 exit/R3 entry trước live; AL-03 tách hosted proof R5 khỏi artifact/public proof theo event; AL-04 giữ hai kết nối độc lập và A07 ở R4, không ép vào live R3 đầu; AL-05 giữ I01–I12/A01–A12 và metric/baseline chốt trước đợt đo áp dụng, với bằng chứng người dùng thật chỉ khi mở đợt đánh giá tương ứng theo D008; AL-06 bổ sung threat/metric, writer/RPO/RTO, quyền tách biệt và hosted decision vào Q/D hiện có, không tạo register khác.
 
 **Evidence đã đóng cần tái dùng đúng phạm vi:** `docs/reviews/CVF_ACEL_AKOE_P2_R2_DURABLE_RUN_STORE_REVIEWER_CORRECTION_COMPLETION_2026-09-25.md` đóng bounded MAO concurrent terminal race và reviewer gate correction; `docs/reviews/CVF_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_COMPLETION_2026-09-25.md` đóng bounded provider-free composition; U1 source review đóng read-only intake. Không giao lại các phần đã giải quyết. `docs/reference/CVF_DISPATCH_RELEASE_READINESS_MACHINE_STANDARD_2026-09-25.md` đã sở hữu pre-dispatch binding/material/continuity gate; authoring trước commit và final worker release là hai pha. Các receipt này không chứng minh Web P03, provider/live, UX acceptance hay production.
 
@@ -269,12 +269,12 @@ Mọi giai đoạn dưới đây hiện là PLANNED_NOT_DISPATCHED; NCR-R0/W00 l
 - ID: NCR-R0. Vai trò: orchestrator + Local reviewer. Đầu vào: roadmap này và evidence AKOE hiện có.
 - Việc làm: lần theo một luồng user đến consumer thực; phân loại owner đã có/contract-only/wiring chưa rõ/gap đã chứng minh; đối chiếu catalog và system-chain GAP hiện có, không tạo inventory cạnh tranh.
 - Điểm xuất phát UI là cvf-web hiện có: approvals, artifacts, workspace, runtime, skills, marketplace, history, governance và các API providers, execute, sessions, integrations/test, approvals, artifacts/export. Lần theo route/component/service/owner của luồng được chọn; ghi reuse/change/defer và bằng chứng cho từng đoạn liên quan, không audit lại toàn web platform. Đối chiếu mockup legacy ở đúng path trong bảng baseline, không thăng cấp mockup thành authority.
-- Chọn một use case có giá trị non-coder, input dễ giới hạn, đầu ra xem trước được, ít side effect. Ứng viên: tạo một artifact nội dung/media ngắn bằng capability sẵn có; HyperFrames chỉ được chọn khi điều kiện dependency/license/resource phù hợp. Không mở nhiều demo cùng lúc.
+- Chọn một use case có giá trị non-coder, input dễ giới hạn, đầu ra xem trước được, ít side effect. Ứng viên: tạo một artifact nội dung/media ngắn bằng capability sẵn có; video hướng dẫn một luồng CVF đã xác minh là ứng viên cần kiểm khả thi, không phải slice đã chốt. HyperFrames P0 mới chứng minh artifact/scope contract, không chứng minh renderer/video integration; chỉ chọn media pipeline nếu consumer, renderer, dependency/license/resource và đường xuất artifact thật được Local xác minh. Nếu chưa đủ, chọn artifact đơn giản hơn cho vertical slice; video biên tập ngoài CVF có thể là tài liệu hướng dẫn nhưng không là proof pipeline CVF. Không mở nhiều demo cùng lúc.
 - W00: lập entry→bridge/dependency/retry/fallback→effect trace cho ứng viên; phân biệt P01–P10 tại mốc audit, applicability trên route/profile và evidence đủ cho gate. Ghi `CONFIRMED`, `CHANGED`, `NOT_APPLICABLE_WITH_REASON` hoặc `NEEDS_EVIDENCE` với locator; không tái test toàn finding hoặc gọi N/A từ tên route. Kế thừa AKOE-P2-R2/P3, U1 và dispatch readiness đúng claim đã đóng.
 - Chốt provider/auth đầu tiên từ kết nối user muốn dùng và host hỗ trợ; ngân sách chi phí/retry, dữ liệu mẫu, metric, threat model và RPO/RTO. Lựa chọn đầu tiên không trở thành khóa provider dài hạn.
 - U1 đã `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`; R0 chỉ kiểm consumer/trigger nếu slice cần Unreal và đối chiếu owner cho thấy gap. Không lặp pin/license/source intake, không import hoặc chạy runtime từ roadmap.
-- Chốt kế hoạch người thử theo Q003: nguồn tuyển, người phụ trách, consent, dữ liệu mẫu và retention trước khi mời/chạy thử; đây là dependency thật của nghiệm thu non-coder, không giao agent giả làm người dùng.
-- Đầu ra: bảng owner-consumer-gap có locator; một slice, mức L1/L2/L3, acceptance scenario, scope/effect/threat envelope, kế hoạch baseline và người thử, map finding/work package tối thiểu; danh sách quyết định còn mở; packet cho R1 hoặc tranche nhỏ hơn theo routing hiện hành. Thiếu số đo ghi `UNKNOWN`, không bịa baseline.
+- Chốt Q003 cho pilot nội bộ: agent mô phỏng góc nhìn người mới bằng walkthrough hoặc thao tác UI thực trong quyền user; operator tham gia ở góc nhìn Human khi cần lựa chọn, góp ý hoặc quyết định thuộc thẩm quyền. Ghi rõ lượt mô phỏng, thao tác thực và hỗ trợ đã dùng; không gọi agent là người thử thật. Tuyển người ngoài, consent và retention của nghiên cứu có người chỉ chuẩn bị khi operator mở đợt đó sau này, không là dependency của R0–R3 nội bộ.
+- Đầu ra: bảng owner-consumer-gap có locator; một slice, mức L1/L2/L3, acceptance scenario, scope/effect/threat envelope, kế hoạch baseline và mô phỏng nội bộ, map finding/work package tối thiểu; danh sách quyết định còn mở; packet cho R1 hoặc tranche nhỏ hơn theo routing hiện hành. Thiếu số đo ghi `UNKNOWN`, không bịa baseline.
 - Nghiệm thu/exit: một kết quả user rõ, các đoạn chưa wiring rõ, zero duplicate owner không có lý do. Không cần quét lại toàn bộ corpus. Dừng nếu chỉ còn lý do "repo nổi tiếng" mà không có user outcome.
 
 ### R1 - Hợp đồng job và trải nghiệm non-coder
@@ -284,8 +284,8 @@ Mọi giai đoạn dưới đây hiện là PLANNED_NOT_DISPATCHED; NCR-R0/W00 l
 - Bắt đầu từ route/component, OnboardingWizard và consumer đã đối chiếu ở R0; tham khảo mockup legacy khi còn phù hợp. Chỉ thiết kế delta thiếu, không tạo dashboard/chooser/approval flow song song. Đầu ra phải ghi rõ phần tái dùng, phần sửa và lý do.
 - Hoàn thiện capability card và provider/account chooser trên surface đã chọn; hiển thị mức kiểm soát, dữ liệu gửi ra ngoài, chi phí biết/chưa biết; không yêu cầu user nhập enum hay đọc log.
 - Đầu ra: flow/prototype, job/evidence field mapping, support matrix ban đầu và kiểm thử ngôn ngữ/tính dễ hiểu.
-- Nghiệm thu: người dùng thử giải thích được kết quả sắp tạo, quyền sắp cấp và tác động chưa thực hiện. Mock chỉ chứng minh cấu trúc UI, không governance behavior.
-- W01 sửa dependency/CI theo tập test cần cho slice khi được cấp quyền; W04 chốt P07/P10 theo data/cost profile. Q003 phải được quyết định trước mọi thử nghiệm có người, kể cả R1. Không bắt mọi package chưa dùng xanh trước wireframe, nhưng required checks của candidate phải đúng SHA/profile trước claim.
+- Nghiệm thu: agent mô phỏng thử tìm và giải thích kết quả sắp tạo, quyền sắp cấp và tác động chưa thực hiện; operator góp ý ở góc nhìn Human khi cần. Đây là kiểm tra luồng/copy nội bộ, không là bằng chứng người mới thật đã hiểu. Mock chỉ chứng minh cấu trúc UI, không governance behavior.
+- W01 sửa dependency/CI theo tập test cần cho slice khi được cấp quyền; W04 chốt P07/P10 theo data/cost profile. Nếu sau này mở thử nghiệm có người ngoài, Q003 phải được quyết định trước khi mời/chạy thử. Không bắt mọi package chưa dùng xanh trước wireframe, nhưng required checks của candidate phải đúng SHA/profile trước claim.
 - Exit: UX và contract đủ dùng cho đúng một slice. Không viết lại agent host; không mở credential/live trong giai đoạn này nếu chưa được cấp riêng.
 
 ### R2 - Adapter và execution boundary tối thiểu
@@ -298,15 +298,15 @@ Mọi giai đoạn dưới đây hiện là PLANNED_NOT_DISPATCHED; NCR-R0/W00 l
 - Nếu trace tới Web, W02-A/B/C xử lý P04/P03/P06 tuần tự trên route/binding chung; nếu không, Local chứng minh control tương đương của route thay thế tại effect boundary. W03 được xử lý khi candidate/artifact/release pipeline áp dụng, không mặc định đợi hosted. Diagnostics sandbox có authority có thể tái hiện lỗi; chưa qua gate live thì capability có effect giữ disabled.
 - Exit để xin live: offline integration/isolation phù hợp đã qua; durable intent/admission trước effect; write failure không cấp quyền; một operation claim, timeout/cancel/unknown outcome không replay mù. Nếu đổi schema, thử migration/rollback trên bản sao an toàn trước dữ liệu thật. W05 phần pre-live kiểm chuỗi validation→binding→claim→transform→attempt→invoke→receipt/recovery. Không dùng L1 để nghiệm thu L2/L3.
 
-### R3 - Vertical slice thực, kết quả user thực
+### R3 - Vertical slice thực, kết quả pilot nội bộ
 
 - ID: NCR-R3. Phụ thuộc: R2 và authority riêng cho provider/live, credential, dependency và effect cần thiết.
 - Việc làm: chạy toàn tuyến user goal -> selected agent -> admitted capability -> artifact -> verification -> preview -> user acceptance. Dùng đúng provider/auth được chọn và input an toàn; không công bố ra ngoài mặc định.
-- Đầu ra: artifact mở được, receipt gắn run/version/input/output, chi phí thực hoặc UNKNOWN, giới hạn mức kiểm soát và kết quả kiểm thử non-coder.
-- Nghiệm thu: user tạo rồi sửa sản phẩm bằng lời tự nhiên, không cần terminal; refresh UI không mất job; denial/cancel được giải thích; không có fallback hoặc side effect ngầm.
+- Đầu ra: artifact mở được, receipt gắn run/version/input/output, chi phí thực hoặc UNKNOWN, giới hạn mức kiểm soát và kết quả pilot nội bộ được phân loại theo mô phỏng agent, đánh giá operator và phép đo kỹ thuật.
+- Nghiệm thu: agent ở vai user tạo rồi sửa sản phẩm bằng lời tự nhiên qua UI, không cần terminal; operator tham gia khi có lựa chọn hoặc góp ý cần Human; refresh UI không mất job; denial/cancel được giải thích; không có fallback hoặc side effect ngầm.
 - Governance behavior phải có real-provider proof theo chuẩn hiện hành. Release-quality proof dùng `python scripts/run_cvf_release_gate_bundle.py --json` dưới authority tương ứng; thất bại/timeout phải diagnostic trước retry. Receipt cũ không thay proof mới.
 - Entry trước call/effect đầu tiên: R2/W05 pre-live đã qua trong scope; không còn P1 có thể tác động chưa xử lý hoặc containment được kiểm; Q004/Q005 và các quyền provider/model/auth/call-cost/data/stop riêng đã chốt. W06-live không tự bao gồm artifact publishing.
-- Exit: một use case dùng được với claim bounded và A01–A06, A08, A10–A12 theo scope. Pilot non-coder cần ít nhất 5 người không chuyên, ít nhất 80% hoàn thành, zero terminal/config trong luồng chính và comprehension trước effect; thiếu người hoặc test là `NOT_EVALUATED`, không scale theo demo. Nếu auth subscription không hỗ trợ, ghi giới hạn và xin user chọn đường khác; không lén dùng API trả phí.
+- Exit: một use case dùng được với claim bounded và A01–A06, A08, A10–A12 theo scope nội bộ. Agent mô phỏng đi luồng chính không dùng terminal/config và kiểm khả năng nhận biết tác động trước effect; phép kiểm hệ thống và operator decision vẫn độc lập với persona. Không yêu cầu tuyển non-coder thật hay ngưỡng 5 người/80% để đóng pilot nội bộ; kết quả usability trên người mới thật ghi `NOT_EVALUATED`, không suy từ mô phỏng thành mức sẵn sàng cho quần thể người dùng. Nếu auth subscription không hỗ trợ, ghi giới hạn và xin user chọn đường khác; không lén dùng API trả phí.
 
 ### R4 - Pilot local bền vững và chứng minh khả năng thay thế
 
@@ -336,24 +336,22 @@ Mọi giai đoạn dưới đây hiện là PLANNED_NOT_DISPATCHED; NCR-R0/W00 l
 
 ## Acceptance Criteria
 
-Các số dưới đây là mục tiêu đề xuất cho pilot, phải chốt trước R3 và giữ nguyên trong một đợt đo. Điều chỉnh phải có lý do, không hạ ngưỡng sau thất bại rồi gọi PASS.
-
-Q003 phải được giải quyết trước thử nghiệm có người tham gia, kể cả ở R1: operator chỉ định người phụ trách tuyển và phê duyệt nguồn tuyển; người thử biết mục tiêu, dữ liệu được thu và có quyền từ chối/dừng. Mặc định dùng dữ liệu mẫu không nhạy cảm, không thu credential; chỉ ghi hình/ghi âm nếu có đồng ý riêng. Kế hoạch chốt nơi lưu, người được truy cập, thời hạn giữ/xóa và cách xử lý yêu cầu rút dữ liệu. Chưa tuyển đủ thì A01 là NOT_EVALUATED, không PASS; có thể làm proof kỹ thuật đã được phép nhưng không kết luận pilot đạt nghiệm thu non-coder hoặc tăng quy mô dựa trên kết quả đó.
+Ngưỡng kỹ thuật/chi phí của slice phải chốt trước đợt đo áp dụng và giữ nguyên trong đợt đó. Điều chỉnh phải có lý do, không hạ ngưỡng sau thất bại rồi gọi PASS. Pilot nội bộ dùng agent mô phỏng góc nhìn non-coder và operator tham gia Human khi cần quyết định; không yêu cầu tuyển người mới thật trong R0–R3. Báo cáo tách bằng chứng thao tác UI của agent, nhận xét Human của operator, phép đo kỹ thuật và đánh giá người dùng thật `NOT_EVALUATED`. Khi sản phẩm có người dùng thực, phản hồi của họ có thể dẫn tới hiệu chỉnh; một đợt nghiên cứu có người nếu được mở riêng phải chốt mục tiêu, mẫu, consent, dữ liệu và metric trước khi đo.
 
 | ID | Tiêu chí | Bằng chứng cần |
 |---|---|---|
-| A01 | Ít nhất 5 người dùng non-coder thử luồng chính; >= 80% hoàn thành tạo/sửa/accept không cần hỗ trợ kỹ thuật | Script cố định, quan sát thực, ghi rõ hỗ trợ đã dùng; mẫu nhỏ không đại diện toàn thị trường |
-| A02 | Zero yêu cầu dùng terminal/sửa config trong luồng chính được nghiệm thu | Session usability; onboarding nâng cao được tách riêng |
-| A03 | Trước tác động nhạy cảm, mọi người thử giải thích đúng việc sắp xảy ra và cách từ chối | Comprehension check; không chỉ đếm nút đã bấm |
+| A01 | Pilot nội bộ chạy kịch bản non-coder mô phỏng; phản hồi người dùng thật sau khi sản phẩm có người dùng là đợt đánh giá riêng, không là gate R0–R3 | Log lượt agent thao tác UI, kết quả/hỗ trợ; operator review ghi đúng việc đã quan sát. Usability người mới thật `NOT_EVALUATED`, không suy tỷ lệ hoàn thành của người từ lượt agent; 5 người/80% trước đây không là ngưỡng bắt buộc hiện tại |
+| A02 | Luồng chính được thử không yêu cầu terminal/sửa config từ vai user | Quan sát agent qua UI với quyền user và kiểm tra route; onboarding nâng cao tách riêng, không cho persona dùng source/admin để cứu luồng |
+| A03 | Trước tác động nhạy cảm, UI cho biết điều sắp xảy ra và cách từ chối; Human có quyền quyết định khi cần | Agent kiểm tình huống từ chối và trạng thái; operator review nội dung/tác động khi thuộc thẩm quyền. Không gọi kết quả agent là Human comprehension |
 | A04 | Có đầu ra thực mở được, sửa được, gắn đúng input/run/version | Live bounded receipt + artifact verification |
 | A05 | Không có write/egress/spend ngoài scope trong bộ negative tests | Enforcement test tại boundary thực; không suy rộng thành an toàn tuyệt đối |
 | A06 | Timeout/crash/cancel không dẫn đến retry mù hoặc mất quyền sở hữu run | Fault scenarios, unknown-result reconciliation, lease/fencing evidence |
 | A07 | Đổi kết nối được mà không đổi hợp đồng user/job | Hai adapter/connection conformance receipts; auth giới hạn được công bố |
 | A08 | Không lộ secret trong log/artifact/export; revoke có hiệu lực theo semantics đã công bố | Secret-safe inspection và negative/revocation test |
 | A09 | Phục hồi được dữ liệu/job trên môi trường sạch | Restore drill đạt RPO/RTO đã chốt, kiểm tra artifact và tính nhất quán |
-| A10 | UI có trạng thái rõ, thao tác bằng bàn phím, tiếng Việt dễ hiểu và layout phù hợp màn hình nhỏ | UX/accessibility check theo DESIGN.md; không tuyên bố certification khi chưa audit |
+| A10 | UI có trạng thái rõ, thao tác bằng bàn phím, tiếng Việt dễ hiểu và layout phù hợp màn hình nhỏ | UI check theo DESIGN.md, walkthrough agent và góp ý operator khi cần; chưa có bằng chứng người mới thật hiểu hoặc accessibility certification nếu chưa audit |
 | A11 | Không cần user quan sát để sửa lỗi dispatch cơ học | Packet release/continuity preflight; retry ceiling; blocker/notification drill |
-| A12 | Governance không triệt tiêu giá trị sử dụng | Đo time-to-first-preview, success rate, review overhead và tổng cost; so với baseline R0 trước quyết định scale |
+| A12 | Governance không triệt tiêu giá trị sử dụng | Đo time-to-first-preview, success rate của lượt pilot nội bộ, review overhead và tổng cost; so với baseline R0 trước quyết định scale, không gọi đây là tỷ lệ thành công của người dùng thật |
 
 Time-to-first-preview phải tách thời gian setup, provider và governance. Ngưỡng latency/cost cụ thể phụ thuộc workload R0, chưa có số đo thì ghi UNKNOWN. Track tỷ lệ cần trợ giúp, retry/rework, false block, recovery success và giá trị artifact được user chấp nhận; không dùng số packet/test/repo làm proxy duy nhất cho giá trị.
 
@@ -361,7 +359,7 @@ Time-to-first-preview phải tách thời gian setup, provider và governance. N
 
 | Rủi ro | Cách xử lý / điều kiện dừng |
 |---|---|
-| UI quá nhiều thuật ngữ khiến non-coder trở thành operator kỹ thuật | Dừng scale, sửa flow và kiểm thử lại A01-A03; không giải quyết bằng thêm hướng dẫn dài |
+| UI quá nhiều thuật ngữ khiến non-coder trở thành operator kỹ thuật | Dừng scale, sửa flow và kiểm thử lại A01-A03 trong scope nội bộ; khi có phản hồi người dùng thật, hiệu chỉnh tiếp mà không suy luận từ agent rằng vấn đề đã hết |
 | Adapter không quan sát/chặn được tool của host | Hạ claim về mức đã chứng minh, xin lựa chọn khi mức bảo đảm đổi; không dán nhãn L3 |
 | Upstream license/auth/version không phù hợp | Disable candidate; giữ provenance và chọn phương án khác, không workaround credential |
 | Capability bị prompt injection hoặc supply-chain change | Pin, review delta, hạn quyền, verify digest và quarantine/revoke |
@@ -391,13 +389,16 @@ Không đổi thứ tự chỉ vì công nghệ mới hấp dẫn. Có thể đi
 | D005 | 2026-09-26 | Version 1.1, Loại A: sửa theo F1-F7 sau Local đối chiếu, chờ review vòng hai | Giữ I01-I12 và R0-R6; thêm consumer UI, làm rõ authority/evidence và dependency người thử; không tăng quyền thực thi |
 | D006 | 2026-09-26 | ACCEPTED_DIRECTION_PARKED; R2 chấp nhận F1-F7, N1/N2 đã sửa và gate chạy lại | Lưu roadmap và hai review; dùng Jev/TypeSafe skills, WikiSkill, HyperFrames và Unreal có điều kiện làm nhóm use case ưu tiên sau nâng cấp; không mở R0/runtime từ commit này |
 | D007 | 2026-09-26 | Operator yêu cầu nhập bản hợp nhất audit R2 + CVF-NCR vào roadmap này; external revised review đủ cơ sở trình operator | V2.0 giữ I01–I12, R0–R6, A01–A12; thêm foundation track, AL-01–AL-06 và evidence/CI boundary; R0/W00 pending scoped dispatch, không tự mở runtime/live |
-| Q001 | OPEN_R0; D1/D3 | Chọn một pilot, route/consumer/owner, L1/L2/L3, effect/threat model, provider/auth, budget/semantics cost, baseline/metric và mục tiêu RPO/RTO | Local đề xuất từ source/profile; operator chốt tác động/chi phí và ngưỡng trước đợt đo R3; cost chưa đo là `UNKNOWN` |
+| D008 | 2026-09-26 | Operator chọn pilot nội bộ bằng agent mô phỏng non-coder; operator tham gia góc nhìn Human khi cần lựa chọn/góp ý | Tuyển non-coder thật và ngưỡng 5 người/80% không là gate R0–R3; phản hồi người dùng thật sau khi có sản phẩm được đánh giá riêng; video hướng dẫn là ứng viên Q001, không tự nhận đã có media pipeline |
+| Q001 | OPEN_R0; D1/D3 | Chọn một pilot, route/consumer/owner, L1/L2/L3, effect/threat model, provider/auth, budget/semantics cost, baseline/metric và mục tiêu RPO/RTO; đánh giá ứng viên video hướng dẫn CVF nhưng không mặc định chọn | Local xác minh consumer/renderer và đề xuất từ source/profile; operator chốt tác động/chi phí và ngưỡng trước đợt đo R3; cost chưa đo là `UNKNOWN` |
 | Q002 | SOURCE_RECONCILED_DEFER_WITH_TRIGGER | U1 source intake đã đóng bounded; chỉ quyết định consumer/trigger tiếp theo nếu slice cần Unreal và owner comparison thấy gap | Không giao lại pin/license/source reconciliation; chưa import/runtime-enabled; không chặn pilot độc lập |
-| Q003 | OPEN_BEFORE_USER_TEST; D8 | Nguồn tuyển >= 5 non-coder, người phụ trách, consent, dữ liệu mẫu, quyền dừng/rút, quyền truy cập, retention và recording consent riêng | Chốt ở R0 trước thử nghiệm có người tham gia, kể cả R1; thiếu người thì A01 `NOT_EVALUATED` |
+| Q003 | INTERNAL_PILOT_SCOPE_DECIDED; HUMAN_RESEARCH_DEFERRED; D8 | Agent mô phỏng non-coder và operator góp ý/quyết định Human khi cần; đợt đánh giá người dùng thật tách riêng sau khi sản phẩm có người dùng | R0 ghi kịch bản/quyền UI, dữ liệu mẫu, log và phân loại bằng chứng; chỉ khi mở nghiên cứu có người mới chốt người phụ trách, consent, quyền dừng/rút, quyền truy cập, retention và recording consent riêng |
 | Q004 | OPEN_DEPENDENCY; D2 | Supported single/multi-writer, failure/data model, durable/accepted boundary, storage, restore và RPO/RTO | Trước P03 design/migration hoặc effect/data tương ứng; backup mã hóa NCR khác raw approval P07; mục tiêu chưa là SLA |
 | Q005 | OPEN_BY_ACTION; D4 | Tách quyền diagnostic/component/offline, worker/dependency, credential/provider/live, tạo artifact, publish, settings và deployment | Chốt đúng trước hành động tương ứng; live có model/call-cost/retry/stop riêng; publish không cấp quyền deploy |
 | Q006 | OPEN_BY_CLAIM; D5 | CI required checks/source SHA, public visibility/projection/settings; hosted host/ngân sách/vùng dữ liệu/remote access/secret | Settings chỉ chặn claim hoặc thay settings phụ thuộc; hosted quyết định trước R5/deployment, không chặn code CI được phép |
 | Q007 | OPEN_BEFORE_DISPATCH; D6 | Owner thực hiện/review/integrator/commit, exact file scope, khóa route/binding và release runner, lane 52 deferred | Trước work order/merge; một integrator hoặc merge tuần tự trên file chung, không chiếm lane ngoài scope |
+
+Các dòng F1–F7 bên dưới ghi lại disposition của revision 1.1 tại thời điểm đó. D008 thay điều kiện tuyển người/đo usability của F6 cho pilot nội bộ; các dòng lịch sử không còn là gate đang áp dụng về người thử.
 
 ### Independent Review Response - Revision 1.1
 
