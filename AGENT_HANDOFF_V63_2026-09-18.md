@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `8b0320f80`. CVF-NCR unified roadmap v2.0 is materially committed at `1673ee629`, with D008 internal-pilot scope refinement at `8b0320f80`; `8b0320f80` is the parent anchor for this dedicated handoff-sync commit. AKOE-U1 remains `SOURCE_RECONCILED_DEFER_WITH_TRIGGER` at `d9132412a`; no import or runtime authority follows.
+Current HEAD recorded for this handoff: `10a82be0f`. CVF-NCR R0/W00 dispatch batch `CVF-NCR-R0-W00` is materially committed at `10a82be0f`; `10a82be0f` is the parent anchor for this dedicated continuity commit. AKOE-U1 remains `SOURCE_RECONCILED_DEFER_WITH_TRIGGER` at `d9132412a`; no import or runtime authority follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE. Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; this handoff does not freeze a remote-tracking SHA. External agent memory files: non-canonical convenience only.
@@ -10,18 +10,18 @@ Carry CVF-NCR v2.0 as the selected planning successor while preserving closed AK
 
 ## Scope / Target / Owner Boundary
 
-Role: Local source/runtime/value verifier and dispatch author. Phase: NCR-R0/W00 packet authoring; no worker dispatch. Decision owner: Local for source disposition, operator for pilot/effect/budget.
+Role: Local orchestrator/reviewer and session steward. Phase: NCR-R0/W00 dispatch readiness before operator relay; no runtime work. Decision owner: Local for source disposition, operator for pilot/effect/budget.
 
 External research is advisory and closed unless Local identifies a named source question. Local owns private proof, implementation review and final
 technical disposition; the operator remains roadmap/scope decision owner.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r0_packet_authoring_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=author bounded NCR-R0/W00 packet; parked checkpoint=worker dispatch, runtime/owner mutation, U1 import/use, credentials/provider/live, settings, deployment, public sync and production.
+Startup acknowledged: current mode=`cvf_ncr_r0_w00_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator relay of committed NCR-R0/W00 packet after bound pre-dispatch PASS; parked checkpoint=runtime/owner mutation, U1 import/use, credentials/provider/live, settings, deployment, public sync and production.
 ## Current Mode
-`cvf_ncr_r0_packet_authoring_ready`.
+`cvf_ncr_r0_w00_dispatch_ready`.
 The selected planning successor is CVF-NCR v2.0 at `1673ee629`, refined by D008 at `8b0320f80`; NCR-R0/W00
-packet authoring is next for an agent-simulated internal pilot, with no active work order. AKOE is closed and the latest
+GC-018 and work order are committed at `10a82be0f` for a documentation-only internal worker; AKOE is closed and the latest
 learning-history wave remains `LHW24`.
 
 ## Active Boundary
@@ -155,7 +155,7 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 - AKOE-P4 and common Local reconciliation are `CLOSED_PASS_BOUNDED` at material commit `a1541eb8b`. Reviewer correction removed a duplicated P3 closure-evidence row, leaving 19 unique candidates across exactly six origin families: 5 `ADAPT`, 8 `CONFIRMED_EXISTING`, 3 `DEFER_WITH_TRIGGER`, 2 `REJECT_DIRECT_IMPORT`, and 1 `BLOCKED_SOURCE_NOT_FOUND`. The distinct Local probe passed; content, machine-closure, dispatch-quality, continuation-chain, and independent-probe gates passed. Material pre-commit passed 88/90 with only the two expected pre-continuity frontier failures, resolved by this sync.
 - Operator-authorized ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at material commit `d9132412a`. The exact Web return is retained byte-identically at SHA-256 `c34381ff0d0e88627a984faa79ac399b31cfdaae2f1355f02bfd8c756cb5b27b`; Local verified the `unreallabsai/unreal-agent` pin `1b9f778453f411c029b39b85102aaefb95e7e48d`, tree `a2324fb6df4010b07041b2a2f161fd25b971bf67`, two MIT license boundaries, and all 42 advisory claim IDs. Disposition is `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`; returned line anchors were repaired to symbol/hash authority. Reviewer-fast passed 69/69 and material pre-commit passed 90/90. No import, upstream execution, runtime/provider use, dependency, public sync, or automatic successor was opened.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; ROADMAP=docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; NEXT_ACTION_CLASS=AUTHOR_NCR_R0_W00_GC018_WORK_ORDER; ACTIVE_BATCH=NONE; ACTIVE_WORK_ORDER=NONE; CURRENT_TRANCHE_ACTION=NCR_UNIFIED_ROADMAP_V2_AT_1673ee629; CURRENT_TRANCHE_DISPOSITION=ACCEPTED_UNIFIED_ROADMAP_R0_PENDING_DISPATCH; NEXT_STEP=PREPARE_BOUNDED_R0_W00_PILOT_SELECTION_PACKET; EXPANSION_ALLOWED=false. Operator authorized incorporation of the reviewed unified roadmap and bounded R0/W00 packet preparation. R0 selects one consumer/pilot and maps applicable audit findings using current source/profile; no worker dispatch, production-owner mutation, dependency install, provider/live, credentials, settings, deployment, public sync, or production action is authorized by this marker. AKOE-P1 through P4 and U1 stay closed bounded; U1 remains SOURCE_RECONCILED_DEFER_WITH_TRIGGER. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=CVF-NCR; ROADMAP=docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; NEXT_ACTION_CLASS=EXECUTE_NCR_R0_W00_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R0-W00; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W00_PILOT_SELECTION_2026-09-26.md; CURRENT_TRANCHE_ACTION=NCR_R0_W00_DISPATCH_AT_10a82be0f; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY_PENDING_OPERATOR_RELAY; NEXT_STEP=OPERATOR_RELAY_EXACT_COMMITTED_PACKET_TO_INTERNAL_WORKER; EXPANSION_ALLOWED=false. Operator authorized bounded R0/W00 work-order transfer to a separate internal worker. Worker performs read-only source/profile mapping and one uncommitted return; Local remains orchestrator/reviewer. No runtime or owner mutation, dependency install, provider/live, credentials, settings, deployment, public sync, or production action. The 52-deferred lane remains separate; AKOE-P1 through P4 and U1 stay closed bounded; U1 remains SOURCE_RECONCILED_DEFER_WITH_TRIGGER. Latest closed LHW wave remains LHW24.
 
 ## Parked Checkpoints
 
