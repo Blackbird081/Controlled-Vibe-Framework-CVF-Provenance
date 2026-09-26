@@ -100,6 +100,7 @@ Record `UNKNOWN` where profile or runtime behavior is unmeasured.
 | Accepted R1/W00 copy | reviewer-repaired return at `97532f703`, `ACCEPTED_BOUNDED_UX_CONTRACT_PACKET` | ACCEPT_BOUNDED: copy candidate, not effect permission |
 | CI and release | current local HEAD and remote CI/profile must be rechecked before any release claim | DEFER: this order proves only focused offline component behavior |
 | Dispatch continuity source | active session bootstrap and next-move sources | ACCEPT: bind this dispatch after material commit |
+| Exact continuity manifest | corrected R1/W01 work-order routing manifest covers its new state entry | ACCEPT: worker still owns only the three paths named in Scope |
 | Real UI/pilot profile | actual endpoint, data/effect/expense and UI walkthrough unresolved | DEFER: no effect authorized |
 
 ## Dual Agent Surface Matrix

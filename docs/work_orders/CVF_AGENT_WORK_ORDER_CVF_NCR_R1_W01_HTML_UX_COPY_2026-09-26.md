@@ -123,6 +123,8 @@ Forbidden:
 
 Risk ceiling: source/test-only copy implementation. Actual UI walkthrough or
 pilot with possible receipt egress needs separate authority and profile.
+The dispatch routing manifest includes the R1/W01 continuity entry for Local
+commit accounting; it does not add that path to the worker's three-path set.
 
 ## Write Ownership
 

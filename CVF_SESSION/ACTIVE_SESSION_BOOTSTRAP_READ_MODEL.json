@@ -9,9 +9,9 @@
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
-    "baselineSha256": "83bf0b4953b2b13ed66889ec97fc3178ecd7be598e52fcb66932045292a29b79",
+    "baselineSha256": "2a4adeae99e5c3a05db63323ae9389238c84efd8a46a4ccf5055a5718b088648",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
-    "workOrderSha256": "fbf14e02dec62beda0a3fe9fbe159ff92a00a22218dfa2da806436ed32cc2c76"
+    "workOrderSha256": "ffc1df073de9868fc4cc8023a60859cbfd70b13ec3cdc1945be382228b0f9022"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
