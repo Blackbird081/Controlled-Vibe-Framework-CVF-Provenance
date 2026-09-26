@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `96f632b41c4556a5806db91c750e1188461253fd`. CVF-NCR-R1-W01 dispatch material and parent anchor for this continuity sync.
+Current HEAD recorded for this handoff: `1774b1a8b`. R1/W01 routing-manifest correction parent anchor; bound release follows correction.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -177,7 +177,7 @@ PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_W01_HTML_UX_COPY; BATCH=CVF-NCR
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: bind committed R1/W01 dispatch material at `96f632b41c4556a5806db91c750e1188461253fd` to active continuity; no guard logic or runtime owner is changed.
+Authorized guard-maintenance scope: correct R1/W01 routing-manifest path coverage and current-authority hash after `1774b1a8b`; no guard logic or runtime owner is changed.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
