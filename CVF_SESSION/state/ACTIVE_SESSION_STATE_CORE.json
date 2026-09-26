@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_2026-09-27.md",
     "baselineSha256": "ad9260b2e45147757c5a71eedfbe8cded099580de9872429cad9bcad63bc0d37",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_2026-09-27.md",
-    "workOrderSha256": "25cfd4179dc8dd77efabbb9b6ed4aa7636b5d6df71485b5136354dcc4d13acae"
+    "workOrderSha256": "a09aceba59d29e1dfd28c7c707295eb26b440954b52de9c0f626148cce559412"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

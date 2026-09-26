@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `bc13cb2a297e768709e91e38b158754c176146d1`. CVF-NCR-R0-S01 material dispatch `ee2abee8962d4489710a8d6db021af4f384731b6`; continuity parent anchor; R1/W01 acceptance remains bounded.
+Current HEAD recorded for this handoff: `2ad061a57a02f8f51523e46ef494cb3a2057db27`. CVF-NCR-R0-S01 consolidated Local review and rework packet committed at this parent; R1/W01 acceptance remains bounded.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -15,7 +15,7 @@ Role: Local orchestrator/reviewer and session steward. Phase: Web core-skills de
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r0_s01_core_skills_reconciliation_dispatch`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=S01 source reconciliation after committed bound pre-dispatch and operator relay; role=Local orchestrator/reviewer; phase=external design closed, internal dispatch; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=package changes, host exposure, skill/eval/provider/live execution, pilot, public and production.
+Startup acknowledged: current mode=`cvf_ncr_r0_s01_core_skills_reconciliation_dispatch`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=S01 consolidated rework after committed bound pre-dispatch and operator relay; role=Local orchestrator/reviewer; phase=external design closed, internal dispatch; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=package changes, host exposure, skill/eval/provider/live execution, pilot, public and production.
 ## Current Mode
 `cvf_ncr_r0_s01_core_skills_reconciliation_dispatch`.
 Current plan: NCR v2.2 D013; historical NCR/AKOE acceptance remains below. Latest closed learning-history wave: `LHW24`.
@@ -32,7 +32,7 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 
 ## Latest Work / Changes
 
-- D013 core-skills design is committed at `db5ae4c43`; Web closeout hash matches the Local convergence input. S01 source/owner/evaluation reconciliation packet is committed at `ee2abee8962d4489710a8d6db021af4f384731b6`. Author-fast passed 5/5 and material pre-commit passed 90/90. A prior fast run found two dispatch binding omissions and the expected post-roadmap HEAD marker drift; repaired before commit. No worker has executed. Final bound pre-dispatch follows this continuity sync.
+- D013 core-skills design is committed at `db5ae4c43`. Initial S01 dispatch was `ee2abee8962d4489710a8d6db021af4f384731b6`. Claude returned one untracked `COMPLETE_PENDING_REVIEW` artifact. Local review found a blocking failed pre-implementation phase and five dependent evidence/claim repairs; disposition `REWORK_REQUIRED` is recorded in the committed review at `2ad061a57a02f8f51523e46ef494cb3a2057db27`. Local corrected the dispatcher-owned packet; material pre-commit passed 90/90. The return remains untracked for worker in-place rework after bound pre-dispatch and operator relay.
 
 - Group 1 source is `SOURCE_CREATED_LOCAL_VERIFIED` at material commit
   `58281c2c6`; registry snapshot and genesis lifecycle receipt passed the
@@ -155,7 +155,7 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 - NCR W02 read-only return was Local-accepted at `c638f2ece` after source-claim repair and 90/90 pre-commit. The client fallback port `8000` differs from the server's documented `8100`; actual URL/port, ledger/log retention and pilot data/effect/expense remain open. R1/W00 static HTML UX contract worker return was reviewer-repaired and accepted bounded at `97532f7038f7bcc0d3768550b06a3695b72b8809`. R1/W01 paired baseline/work order committed at `e54dd51e8eb60364a814a921a0d31bb7d259e487`; exact component/test/return worker delta was reviewer-repaired and accepted bounded at `5e99eb20910e7e3282d7431e6ca3d96c5e87860b` after reviewer-fast 69/69 and pre-commit 90/90. Mocked UI tests do not establish actual browser walkthrough, route call, profile, P06/P08, or pilot effect; successor work order is held for Web research.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_INTERNAL_WORKER_SOURCE_RECONCILIATION; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_2026-09-27.md; ACTIVE_BATCH=CVF-NCR-R0-S01; DISPATCH_COMMIT=ee2abee8962d4489710a8d6db021af4f384731b6; EXPANSION_ALLOWED=false. Operator transferred closed Web core-skills research to Local on 2026-09-27. D013 roadmap material db5ae4c43 selects source/owner reconciliation and evaluation design. Local stops at the committed work order for operator relay after bound pre-dispatch PASS. Worker may inspect named CVF owners and write exactly one pending S01 return; no package/registry/truth mutation, host exposure, skill/eval execution, provider/live, credentials, public or pilot effect. R1/W01 remains accepted bounded at 5e99eb209; HTML, guide/video and 52-deferred lanes stay separate. Operator retains data/effect/expense decisions; G1-G7 remain stopped/parked/closed; latest closed LHW wave is LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REWORK_INTERNAL_WORKER_SOURCE_RECONCILIATION; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_2026-09-27.md; ACTIVE_BATCH=CVF-NCR-R0-S01; REVIEW_FINDINGS=docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_LOCAL_REVIEW_FINDINGS_2026-09-27.md; DISPATCH_COMMIT=2ad061a57a02f8f51523e46ef494cb3a2057db27; EXPANSION_ALLOWED=false. Initial S01 return remains untracked and REWORK_REQUIRED after failed pre-implementation plus six consolidated findings. Local repaired the dispatcher packet; bound pre-dispatch must pass before operator relays rework. Worker edits only the existing S01 return, reruns bound pre-implementation before editing and stops on failure. No package/registry/truth mutation, host exposure, skill/eval/provider/live, credentials, public or pilot effect. R1/W01 stays accepted bounded; HTML, guide/video and 52-deferred lanes stay separate. Operator retains data/effect/expense; G1-G7 remain stopped/parked/closed; latest closed LHW wave LHW24.
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
