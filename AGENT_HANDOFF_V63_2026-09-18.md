@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `1673ee629`. CVF-NCR unified roadmap v2.0 is materially committed at `1673ee629`; this is the parent anchor for the dedicated continuity sync. AKOE-U1 remains `SOURCE_RECONCILED_DEFER_WITH_TRIGGER` at `d9132412a`; no import or runtime authority follows.
+Current HEAD recorded for this handoff: `f6174cfa4`. CVF-NCR unified roadmap v2.0 is materially committed at `1673ee629`, with session continuity at `f6174cfa4`; `f6174cfa4` is the parent anchor for this dedicated handoff-sync commit. AKOE-U1 remains `SOURCE_RECONCILED_DEFER_WITH_TRIGGER` at `d9132412a`; no import or runtime authority follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE. Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; this handoff does not freeze a remote-tracking SHA. External agent memory files: non-canonical convenience only.
