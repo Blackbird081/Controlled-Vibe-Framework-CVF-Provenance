@@ -4,15 +4,15 @@ Memory class: FULL_RECORD
 
 docType: roadmap
 
-Status: ACCEPTED_DIRECTION_PARKED
+Status: ACCEPTED_UNIFIED_ROADMAP_R0_PENDING_DISPATCH
 
 Date: 2026-09-26
 
 Program ID: CVF-NCR
 
-Version: 1.1
+Version: 2.0
 
-Revision disposition: ACCEPTED_WITH_MINOR_NOTES_RESOLVED
+Revision disposition: OPERATOR_REQUESTED_AUDIT_ALIGNMENT_INCORPORATED
 
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
@@ -40,9 +40,11 @@ Operator yêu cầu tổng hợp thảo luận thành một roadmap chi tiết, 
 
 Roadmap này là định hướng kế tiếp, không sửa trạng thái đóng của ACEL-AKOE-R1 và không hồi sinh các lane G1-G7 đã dừng/đóng. Khi triển khai, mỗi tranche phải có phạm vi và thẩm quyền tương ứng theo các owner hiện hành. Không suy ra quyền chạy từ việc một giai đoạn được liệt kê ở đây.
 
-Startup acknowledged: current mode=`acel_applied_knowledge_owner_enrichment_closed_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; canonical next allowed move summary=hold for the post-AKOE operator checkpoint; parked checkpoint=implementation, provider/live, credentials, deployment and public sync. Role=Local orchestrator; phase=roadmap revision; final technical decision owner=Local; scope decision owner=operator.
+Ngày 2026-09-26, operator yêu cầu đưa bản hợp nhất CVF-NCR + audit R2 đã qua phản biện external vào **roadmap NCR hiện có** để chuẩn bị thi công. Quyền này cho phép sửa và kiểm roadmap, đồng thời chuẩn bị phạm vi NCR-R0/W00; nó không tự cấp work-order dispatch, sửa production owner, cài dependency, credentials/provider/live, thay settings, deployment, public-sync hay production. Roadmap v2.0 là kế hoạch thống nhất; từng hành động sau R0 vẫn cần authority và gate của owner hiện hành.
 
-Canonical bootstrap excerpt: `NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_CHECKPOINT_POST_AKOE`; `NEXT_STEP=OPERATOR_DECIDES_ANY_SUCCESSOR`; `EXPANSION_ALLOWED=false`. Đây là các trường trích từ nextAllowedMove, không phải toàn bộ giá trị. Tách biệt với trạng thái đó, operator đã yêu cầu tạo roadmap và nay cho phép sửa theo phản biện đã đối chiếu để review vòng hai. Quyền sửa tài liệu này không cập nhật bootstrap hoặc mở R0/runtime.
+Startup acknowledged: current mode=`acel_applied_knowledge_owner_enrichment_closed_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; canonical next allowed move summary=hold for the post-AKOE-U1 operator checkpoint; parked checkpoint=work-order dispatch, implementation, provider/live, credentials, deployment and public sync. Role=Local reviewer/roadmap author; phase=operator-requested roadmap incorporation; final technical decision owner=Local; scope decision owner=operator.
+
+Canonical bootstrap excerpt: `NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_CHECKPOINT_POST_AKOE_U1`; `NEXT_STEP=OPERATOR_DECIDES_ANY_SUCCESSOR`; `EXPANSION_ALLOWED=false`. Đây là các trường trích từ nextAllowedMove, không phải toàn bộ giá trị. Operator đã chọn successor ở mức hợp nhất roadmap; continuity vẫn phải được cập nhật theo quy trình trước khi gọi một work order là ready. Bản sửa này không giả định bootstrap đã mở R0 hoặc runtime.
 
 ## Scope
 
@@ -114,9 +116,9 @@ UI locators để bắt đầu R0: `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/s
 | Human Boundary handoff | Phân biệt làm, kiểm tra, chấp nhận, trách nhiệm | Thiết kế checkpoint dễ hiểu, tránh người dùng chỉ bấm duyệt máy móc |
 | Positioning handoff | Giữ CVF là lớp governance độc lập | Tích hợp upstream bằng adapter; không nhập bản sắc/authority của upstream |
 | Async handoff | CVF-native durable-run correction và offline composition | Đối chiếu restart, retry, cancel, ownership và trạng thái công việc |
-| ACEL-AKOE-U1 / Unreal Agent | Mã/phạm vi read-only do operator nêu trong hội thoại; chưa có packet/continuity tương ứng để viện dẫn làm active dispatch | Pin mục tiêu `unreallabsai/unreal-agent@1b9f778`; không phải nguồn thứ bảy của ledger AKOE cũ; mirror không thay thế Local acceptance |
+| ACEL-AKOE-U1 / Unreal Agent | Local read-only source reconciliation đã đóng bounded tại `docs/reviews/CVF_ACEL_AKOE_U1_UNREAL_AGENT_LOCAL_SOURCE_RECONCILIATION_2026-09-26.md`; status `SOURCE_RECONCILED_DEFER_WITH_TRIGGER` | Pin `unreallabsai/unreal-agent@1b9f778453f411c029b39b85102aaefb95e7e48d`; chưa import/runtime-enabled; không phải nguồn thứ bảy của ledger AKOE cũ |
 
-U1 là cách gọi tắt của phạm vi operator đã nêu trong hội thoại: "intake Local read-only", chỉ pin/license/source verification và reconciliation; không import code hoặc sửa runtime. Session canonical vẫn gọi đây là optional Unreal source intake đang parked. Cần đối chiếu và ghi nhận chỉ đạo đó vào packet/continuity theo quy trình trước khi dispatch hoặc tiếp tục tác vụ nguồn; không suy từ thiếu mã tracked rằng operator chưa từng chỉ đạo, cũng không dùng đoạn roadmap này thay release authority. Lần sửa hiện tại không mở hoặc tiếp tục U1. Nếu câu hỏi nguồn còn thiếu, dùng relay Web hiện có với câu hỏi cụ thể, pin, locator và điều kiện trả về. Local quyết định cuối cùng. Không để U1 chặn một pilot độc lập không dùng Unreal; không sửa ngược lịch sử source-blocked của AKOE chỉ vì có thêm nguồn sau này.
+U1 đã có Web advisory return được Local kiểm nguồn, license và owner overlap tại pin trên; việc pin/license/source reconciliation không được giao lại. Trigger để xem xét tiếp là một non-coder controlled-runtime consumer có nhu cầu durability/retry/cancel cụ thể và đối chiếu owner hiện có chỉ ra gap chưa giải quyết. Khi trigger xảy ra, Local đề xuất đúng phần adaptation/test còn thiếu dưới authority mới; không suy từ source reconciliation thành import, runtime integration hoặc provider proof. U1 không chặn pilot độc lập không dùng Unreal và không sửa ngược ledger AKOE sáu nguồn đã đóng.
 
 ### Nhóm use case ưu tiên sau nâng cấp
 
@@ -233,9 +235,34 @@ Restore drill phải dùng môi trường sạch, kiểm tra snapshot/manifest n
 
 Cutover: drain/pause job phù hợp, snapshot, chuyển state, chỉ một writer/lease có hiệu lực, revoke hoặc fence worker cũ, kiểm tra kết quả chưa xác định rồi mới nhận job mới. Rollback xét tương thích schema và dữ liệu mới; không bật lại cả hai phía hoặc copy DB cũ đè kết quả mới.
 
+## Foundation Readiness And Audit Alignment
+
+Roadmap này hợp nhất định hướng CVF-NCR với **nhánh củng cố nền theo đường chạy được chọn**. Audit external R2 V0.9 (`CVF_R2_RESPONSE_AND_ROADMAP_20260915.zip`, SHA-256 `780113c24694f3bad2f8438bf1602ea792616a638a6a1f00d046711574c7b912`) và review alignment (`CVF_TWO_ROADMAP_ALIGNMENT_REVIEW_20260926.zip`, SHA-256 `0320dce601d4dd2ca66df530173cf582482b9e47df5e9d48db98267bc9a664d0`; revised review `CVF_ALIGNMENT_REVISED_REVIEW_20260926.zip`, SHA-256 `eb041a077b442caf0c5d0df4b748273825172322dd7d63231149acaf7dd3dd93`) là **advisory input**, không là CVF source authority hoặc kết luận private runtime. Operator đã yêu cầu nhập bản hợp nhất vào roadmap hiện có; Local chịu trách nhiệm xác minh finding, owner và acceptance trên source/profile/candidate thực trước work order. Không mở lại ACK D01–D06.
+
+Audit W00–W06 là các work package nền; W07 được hấp thụ vào R0/R1/R3/R4 và A01–A12, không là điều kiện đóng P01–P10 mặc định. Bảng dưới là chỉ mục lập việc, không thay test T01–T10 chi tiết của R2; work order phải dẫn đúng tiêu chí gốc áp dụng hoặc ghi lý do không áp dụng. Mỗi finding có ba kết luận riêng: trạng thái tại mốc audit, khả năng ảnh hưởng route hiện tại, và evidence đủ cho gate đang xin. `NOT_APPLICABLE_WITH_REASON` của Web không chứng minh route thay thế an toàn; `NEEDS_EVIDENCE` không thành PASS; containment phải chặn/loại tác động có kiểm chứng, owner và mốc rà lại, không đổi finding thành `FIXED`.
+
+| Finding / work package | Đưa vào chặng và gate | Proof hoặc quyết định phải giữ |
+|---|---|---|
+| P01 + P05 / W01 | R0 xác định CI/dependency cần cho slice; R1 hoặc tranche nền được cấp quyền sửa; candidate/release dùng required checks đúng SHA | Clean dependency closure, typecheck/test/build đúng profile; required job fail/skip/cancel/absent không thành PASS; code workflow và GitHub settings là hai quyền riêng. |
+| P04 / W02-A | R2 nếu trace tới `cvf-web` execute route | Prompt sau DLP/SAF1 phải tới call boundary ở initial/retry/vision; BLOCK 0 invocation; binding/policy không đổi âm thầm. Route khác cần chứng minh control tương đương, không chỉ đổi tên adapter. |
+| P03 / W02-B | R2 pre-live nếu route dùng Web approval/effect; R4 tăng fault coverage | Durable approval claim fail-closed, actor/hash/expiry, concurrency một operation, restart/unknown outcome, writer và migration/rollback theo profile. MAO durable run-store AKOE-P2-R2 **không đóng** Web approval P03. |
+| P06 / W02-C | R2 trước effect trên ingress áp dụng | Validate schema/type/size trước normalization, raw signature giữ đúng, invalid input 0 invocation, valid fixtures không vỡ. |
+| P02 / W03-A | Khi tạo candidate/public projection ở bất kỳ R2–R6 | Pending và committed-tree residue, base/head, policy, mapped/overlaid artifact sau projection, candidate SHA/hash; không giả định phải đợi hosted R5. |
+| P08 / W03-B | Secret scan cho candidate/artifact đang dùng; secret-safe live evidence không đợi public export | Exemption fixture chính xác, không blanket skip test tree; synthetic secret ngoài allowlist bị bắt, báo scanned/skipped/unreadable và không in secret. |
+| P09 / W03-C | Ngay khi kết luận dựa vào release runner; W03-B/C tích hợp tuần tự | Console/JSON/file/exit thống nhất cho required PASS/FAIL/SKIP/ABSENT; dry-run và non-release exception đúng scope; không dùng mock để cấp release proof. |
+| P07 + P10 / W04 | R0/R1 chốt data/cost contract theo profile; trước effect hoặc hosted claim phụ thuộc | P07 inventory sink/retention/access/backup trước khi chọn encryption; approval expiry khác deletion. P10 phân biệt estimate/attempt limit với hard USD cap; hard cap chỉ thiết kế reserve/reconcile nếu contract thật yêu cầu. |
+| W05 | R2 exit/R3 entry cho phần pre-live; R4 tăng recovery | Integration theo chuỗi validation→binding→claim→transform→attempt→invoke→receipt/recovery; proof tại effect boundary, migration/rollback trên data copy khi áp dụng. Không còn P1 tác động trong pilot chưa xử lý hoặc containment có evidence. |
+| W06 | R3 live proof khi được cấp quyền; artifact/release/publish theo event riêng ở bất kỳ R phù hợp | Provider/model/corpus/call-cost/stop đúng authority; release-quality governance proof dùng real provider theo chuẩn hiện hành. Artifact sau projection, publishing và hosted deployment là các quyết định khác nhau. |
+
+**AL-01–AL-06 là chỉnh lý gate:** AL-01 yêu cầu trace entry→bridge/dependency/retry/fallback→effect và proof của route thay thế; AL-02 đưa durable admission, claim một operation, timeout/cancel/unknown và migration khi có vào R2 exit/R3 entry trước live; AL-03 tách hosted proof R5 khỏi artifact/public proof theo event; AL-04 giữ hai kết nối độc lập và A07 ở R4, không ép vào live R3 đầu; AL-05 giữ I01–I12/A01–A12, người thử thật và metric/baseline chốt trước đo; AL-06 bổ sung threat/metric, writer/RPO/RTO, quyền tách biệt và hosted decision vào Q/D hiện có, không tạo register khác.
+
+**Evidence đã đóng cần tái dùng đúng phạm vi:** `docs/reviews/CVF_ACEL_AKOE_P2_R2_DURABLE_RUN_STORE_REVIEWER_CORRECTION_COMPLETION_2026-09-25.md` đóng bounded MAO concurrent terminal race và reviewer gate correction; `docs/reviews/CVF_ACEL_AKOE_P3_PROVIDER_FREE_INTEGRATED_APPLICATION_PROOF_COMPLETION_2026-09-25.md` đóng bounded provider-free composition; U1 source review đóng read-only intake. Không giao lại các phần đã giải quyết. `docs/reference/CVF_DISPATCH_RELEASE_READINESS_MACHINE_STANDARD_2026-09-25.md` đã sở hữu pre-dispatch binding/material/continuity gate; authoring trước commit và final worker release là hai pha. Các receipt này không chứng minh Web P03, provider/live, UX acceptance hay production.
+
+**CI tại baseline `4567d750087d47f369939a0e9891ca6fcb596034`:** `.github/workflows/cvf-ci.yml` đã có bước cài SOT3 workspace dependency; `.github/workflows/cvf-web-ci.yml` đã có bước cài Execution Plane dependency. Job-level readout của GitHub Actions tại SHA này còn failure ở CVF CI, CVF CI Pipeline và Static CI Gate; riêng Pipeline dừng tại Governance Hook Chain, Static tại install SOT3. Sự tồn tại của workflow mới không là PASS; job/step failure chưa là root cause P01/P05. Trước mỗi work order, Local đối chiếu HEAD/remote/delta chưa push/dirty, failed-step diagnostics an toàn, required-check/settings profile, route/writer/data/provider profile, owner và candidate SHA. Không tái chạy rộng nếu không có mâu thuẫn và information gain rõ.
+
 ## Work Plan
 
-Mọi giai đoạn dưới đây hiện là PLANNED_NOT_DISPATCHED. Các bước cùng giai đoạn là gói công việc để tạo work order giới hạn, không phải lệnh thi công sẵn. Thời gian/ngân sách được chốt theo slice ở R0; không đặt lịch hoàn thành giả khi chưa biết provider, workload và hạ tầng.
+Mọi giai đoạn dưới đây hiện là PLANNED_NOT_DISPATCHED; NCR-R0/W00 là **tranche đầu cần chuẩn bị và dispatch có giới hạn** sau khi continuity/authority đúng. Các bước cùng giai đoạn là gói công việc để tạo work order giới hạn, không phải lệnh thi công sẵn. Thời gian/ngân sách được chốt theo slice ở R0; không đặt lịch hoàn thành giả khi chưa biết provider, workload và hạ tầng. Không tạo work order sửa toàn P01–P10 trước khi biết route/profile và finding áp dụng.
 
 ### R0 - Chốt consumer, owner và pilot nhỏ nhất
 
@@ -243,10 +270,11 @@ Mọi giai đoạn dưới đây hiện là PLANNED_NOT_DISPATCHED. Các bước
 - Việc làm: lần theo một luồng user đến consumer thực; phân loại owner đã có/contract-only/wiring chưa rõ/gap đã chứng minh; đối chiếu catalog và system-chain GAP hiện có, không tạo inventory cạnh tranh.
 - Điểm xuất phát UI là cvf-web hiện có: approvals, artifacts, workspace, runtime, skills, marketplace, history, governance và các API providers, execute, sessions, integrations/test, approvals, artifacts/export. Lần theo route/component/service/owner của luồng được chọn; ghi reuse/change/defer và bằng chứng cho từng đoạn liên quan, không audit lại toàn web platform. Đối chiếu mockup legacy ở đúng path trong bảng baseline, không thăng cấp mockup thành authority.
 - Chọn một use case có giá trị non-coder, input dễ giới hạn, đầu ra xem trước được, ít side effect. Ứng viên: tạo một artifact nội dung/media ngắn bằng capability sẵn có; HyperFrames chỉ được chọn khi điều kiện dependency/license/resource phù hợp. Không mở nhiều demo cùng lúc.
+- W00: lập entry→bridge/dependency/retry/fallback→effect trace cho ứng viên; phân biệt P01–P10 tại mốc audit, applicability trên route/profile và evidence đủ cho gate. Ghi `CONFIRMED`, `CHANGED`, `NOT_APPLICABLE_WITH_REASON` hoặc `NEEDS_EVIDENCE` với locator; không tái test toàn finding hoặc gọi N/A từ tên route. Kế thừa AKOE-P2-R2/P3, U1 và dispatch readiness đúng claim đã đóng.
 - Chốt provider/auth đầu tiên từ kết nối user muốn dùng và host hỗ trợ; ngân sách chi phí/retry, dữ liệu mẫu, metric, threat model và RPO/RTO. Lựa chọn đầu tiên không trở thành khóa provider dài hạn.
-- U1 chỉ được đối chiếu về chỉ đạo read-only và phần packet/continuity còn thiếu; không tự mở intake. Câu hỏi Web chỉ mở khi quyết định pilot/owner thực sự phụ thuộc câu trả lời và có task-bound authority.
+- U1 đã `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`; R0 chỉ kiểm consumer/trigger nếu slice cần Unreal và đối chiếu owner cho thấy gap. Không lặp pin/license/source intake, không import hoặc chạy runtime từ roadmap.
 - Chốt kế hoạch người thử theo Q003: nguồn tuyển, người phụ trách, consent, dữ liệu mẫu và retention trước khi mời/chạy thử; đây là dependency thật của nghiệm thu non-coder, không giao agent giả làm người dùng.
-- Đầu ra: bảng owner-consumer-gap có locator; acceptance scenario; scope/effect envelope; danh sách quyết định còn mở; packet cho R1 hoặc tranche nhỏ hơn theo routing hiện hành.
+- Đầu ra: bảng owner-consumer-gap có locator; một slice, mức L1/L2/L3, acceptance scenario, scope/effect/threat envelope, kế hoạch baseline và người thử, map finding/work package tối thiểu; danh sách quyết định còn mở; packet cho R1 hoặc tranche nhỏ hơn theo routing hiện hành. Thiếu số đo ghi `UNKNOWN`, không bịa baseline.
 - Nghiệm thu/exit: một kết quả user rõ, các đoạn chưa wiring rõ, zero duplicate owner không có lý do. Không cần quét lại toàn bộ corpus. Dừng nếu chỉ còn lý do "repo nổi tiếng" mà không có user outcome.
 
 ### R1 - Hợp đồng job và trải nghiệm non-coder
@@ -257,6 +285,7 @@ Mọi giai đoạn dưới đây hiện là PLANNED_NOT_DISPATCHED. Các bước
 - Hoàn thiện capability card và provider/account chooser trên surface đã chọn; hiển thị mức kiểm soát, dữ liệu gửi ra ngoài, chi phí biết/chưa biết; không yêu cầu user nhập enum hay đọc log.
 - Đầu ra: flow/prototype, job/evidence field mapping, support matrix ban đầu và kiểm thử ngôn ngữ/tính dễ hiểu.
 - Nghiệm thu: người dùng thử giải thích được kết quả sắp tạo, quyền sắp cấp và tác động chưa thực hiện. Mock chỉ chứng minh cấu trúc UI, không governance behavior.
+- W01 sửa dependency/CI theo tập test cần cho slice khi được cấp quyền; W04 chốt P07/P10 theo data/cost profile. Q003 phải được quyết định trước mọi thử nghiệm có người, kể cả R1. Không bắt mọi package chưa dùng xanh trước wireframe, nhưng required checks của candidate phải đúng SHA/profile trước claim.
 - Exit: UX và contract đủ dùng cho đúng một slice. Không viết lại agent host; không mở credential/live trong giai đoạn này nếu chưa được cấp riêng.
 
 ### R2 - Adapter và execution boundary tối thiểu
@@ -266,7 +295,8 @@ Mọi giai đoạn dưới đây hiện là PLANNED_NOT_DISPATCHED. Các bước
 - Chọn L2 hoặc L3 theo khả năng host; L1 có thể giữ như lựa chọn tương thích nhưng không được dùng để nghiệm thu enforcement của L3.
 - Đầu ra: consumer gọi được adapter, registry mapping, supported-version record, threat/negative tests, uninstall/revoke và rollback bản trước.
 - Nghiệm thu: chặn ngoài scope, thiếu approval/secret, pin sai, input lỗi và event giả; worker không sửa policy/evidence đã chấp nhận; retry/timeout không tự tạo duplicate effect.
-- Exit: offline integration và isolation test phù hợp đã qua, đủ điều kiện xin một live pilot giới hạn. Gate fail thì giữ capability disabled; không bypass để chạy demo.
+- Nếu trace tới Web, W02-A/B/C xử lý P04/P03/P06 tuần tự trên route/binding chung; nếu không, Local chứng minh control tương đương của route thay thế tại effect boundary. W03 được xử lý khi candidate/artifact/release pipeline áp dụng, không mặc định đợi hosted. Diagnostics sandbox có authority có thể tái hiện lỗi; chưa qua gate live thì capability có effect giữ disabled.
+- Exit để xin live: offline integration/isolation phù hợp đã qua; durable intent/admission trước effect; write failure không cấp quyền; một operation claim, timeout/cancel/unknown outcome không replay mù. Nếu đổi schema, thử migration/rollback trên bản sao an toàn trước dữ liệu thật. W05 phần pre-live kiểm chuỗi validation→binding→claim→transform→attempt→invoke→receipt/recovery. Không dùng L1 để nghiệm thu L2/L3.
 
 ### R3 - Vertical slice thực, kết quả user thực
 
@@ -275,24 +305,25 @@ Mọi giai đoạn dưới đây hiện là PLANNED_NOT_DISPATCHED. Các bước
 - Đầu ra: artifact mở được, receipt gắn run/version/input/output, chi phí thực hoặc UNKNOWN, giới hạn mức kiểm soát và kết quả kiểm thử non-coder.
 - Nghiệm thu: user tạo rồi sửa sản phẩm bằng lời tự nhiên, không cần terminal; refresh UI không mất job; denial/cancel được giải thích; không có fallback hoặc side effect ngầm.
 - Governance behavior phải có real-provider proof theo chuẩn hiện hành. Release-quality proof dùng `python scripts/run_cvf_release_gate_bundle.py --json` dưới authority tương ứng; thất bại/timeout phải diagnostic trước retry. Receipt cũ không thay proof mới.
-- Exit: một use case dùng được với claim bounded. Nếu auth subscription không hỗ trợ, ghi giới hạn và xin user chọn đường khác; không lén dùng API trả phí.
+- Entry trước call/effect đầu tiên: R2/W05 pre-live đã qua trong scope; không còn P1 có thể tác động chưa xử lý hoặc containment được kiểm; Q004/Q005 và các quyền provider/model/auth/call-cost/data/stop riêng đã chốt. W06-live không tự bao gồm artifact publishing.
+- Exit: một use case dùng được với claim bounded và A01–A06, A08, A10–A12 theo scope. Pilot non-coder cần ít nhất 5 người không chuyên, ít nhất 80% hoàn thành, zero terminal/config trong luồng chính và comprehension trước effect; thiếu người hoặc test là `NOT_EVALUATED`, không scale theo demo. Nếu auth subscription không hỗ trợ, ghi giới hạn và xin user chọn đường khác; không lén dùng API trả phí.
 
 ### R4 - Pilot local bền vững và chứng minh khả năng thay thế
 
 - ID: NCR-R4. Phụ thuộc: R3. Vai trò: reliability/integration worker và reviewer.
-- Việc làm: restart/crash/reconnect/duplicate submission/unknown-effect recovery; cap concurrency; kiểm tra workspace chéo; backup/restore lần đầu; resume từ thiết bị khác trong phạm vi đã cấu hình.
+- Việc làm: tăng fault coverage sau minimum pre-live đã chứng minh: restart/crash/reconnect/cancel/duplicate submission/unknown-effect recovery; cap concurrency; kiểm tra workspace chéo; backup/restore sạch; resume từ thiết bị khác trong phạm vi đã cấu hình.
 - Kiểm tra cùng job contract với ít nhất hai kết nối độc lập khả dụng. Mục tiêu có API và official account/host mode; nếu chưa có luồng account được hỗ trợ, giữ phần đó pending với evidence, không tuyên bố đủ tự do kết nối.
 - Đầu ra: test matrix có fault injection, measured latency/cost, restore receipt, support matrix cập nhật và onboarding/recovery hướng dẫn bằng tiếng Việt.
-- Nghiệm thu: không mất artifact đã nhận; không duplicate tác động ở các tình huống đã định nghĩa; user hiểu điểm cần quyết định; không yêu cầu đọc log để dùng bình thường.
+- Nghiệm thu: không mất artifact đã nhận; không duplicate tác động ở các tình huống đã định nghĩa; restore đạt RPO/RTO đã chốt; ít nhất hai kết nối độc lập có A07 conformance receipts cùng job/user contract; user hiểu điểm cần quyết định; không yêu cầu đọc log để dùng bình thường. Không dùng MAO run-store proof để đóng Web approval P03.
 - Exit: pilot local ổn định trong bộ scenario đã chốt. Không dùng một lần chạy thành công để kết luận production.
 
 ### R5 - VPS/cloud/hybrid, truy cập mọi nơi và bảo quản data
 
 - ID: NCR-R5. Phụ thuộc: R4; operator chọn host, ngân sách, vùng dữ liệu, quyền deployment và phương án secret.
-- Việc làm: triển khai profile portable, remote authentication, workspace isolation, encrypted backup độc lập; thực hiện restore từ môi trường sạch và cutover một-writer.
+- Việc làm: triển khai profile portable, remote authentication/session, workspace và OS isolation, secret/revoke, encrypted backup độc lập worker; thực hiện restore nhất quán state–artifact–evidence từ môi trường sạch, cutover một-writer/fencing, rollback và health/alert.
 - Đầu ra: deployment/config profile tái tạo được, migration/rollback runbook, data export, cost/retention policy, restore/cutover evidence và health/alert vận hành.
 - Nghiệm thu: người dùng mở và tiếp tục công việc từ máy khác; laptop tắt không làm mất cloud job; local-dependent job báo đúng; mất host vẫn phục hồi trong mục tiêu đã chọn.
-- Exit: bounded hosted pilot được chấp nhận. Public endpoint, production hoặc public catalog chỉ mở khi có authority/gate riêng; không suy ra từ việc VPS đã chạy.
+- Exit: bounded hosted pilot được chấp nhận theo RPO/RTO, auth/isolation/restore/cutover evidence của profile thực. W03/W06-public là gate theo sự kiện tạo artifact/release/publish ở bất kỳ chặng phù hợp, không thay hosted proof và không mặc định đợi R5. Public endpoint, production hoặc public catalog chỉ mở khi có authority/gate riêng; không suy ra từ việc VPS đã chạy.
 
 ### R6 - Mở rộng capability có chọn lọc và cải tiến có kiểm chứng
 
@@ -359,9 +390,14 @@ Không đổi thứ tự chỉ vì công nghệ mới hấp dẫn. Có thể đi
 | D004 | 2026-09-26 | Authoring only; R0-R6 chưa dispatch | Không chuyển yêu cầu viết roadmap thành quyền runtime |
 | D005 | 2026-09-26 | Version 1.1, Loại A: sửa theo F1-F7 sau Local đối chiếu, chờ review vòng hai | Giữ I01-I12 và R0-R6; thêm consumer UI, làm rõ authority/evidence và dependency người thử; không tăng quyền thực thi |
 | D006 | 2026-09-26 | ACCEPTED_DIRECTION_PARKED; R2 chấp nhận F1-F7, N1/N2 đã sửa và gate chạy lại | Lưu roadmap và hai review; dùng Jev/TypeSafe skills, WikiSkill, HyperFrames và Unreal có điều kiện làm nhóm use case ưu tiên sau nâng cấp; không mở R0/runtime từ commit này |
-| Q001 | OPEN_R0 | Chọn pilot, provider/auth, budget, metric, RPO/RTO | Local đề xuất dựa owner/consumer; operator quyết định phần tác động/chi phí |
-| Q002 | OPEN_R0 | Đối chiếu chỉ đạo U1 read-only trong hội thoại với optional Unreal intake ở session; xác định packet/continuity và source evidence còn thiếu | Chưa dispatch từ roadmap; không import/runtime; không sửa ngược lịch sử AKOE |
-| Q003 | OPEN_BEFORE_USER_TEST | Nguồn tuyển >= 5 non-coder, người phụ trách, consent, dữ liệu mẫu, quyền truy cập và thời hạn lưu/xóa | Chốt ở R0 trước thử nghiệm có người tham gia; thiếu người thử thì A01 chưa được đánh giá, không thay bằng agent hoặc tự hạ ngưỡng |
+| D007 | 2026-09-26 | Operator yêu cầu nhập bản hợp nhất audit R2 + CVF-NCR vào roadmap này; external revised review đủ cơ sở trình operator | V2.0 giữ I01–I12, R0–R6, A01–A12; thêm foundation track, AL-01–AL-06 và evidence/CI boundary; R0/W00 pending scoped dispatch, không tự mở runtime/live |
+| Q001 | OPEN_R0; D1/D3 | Chọn một pilot, route/consumer/owner, L1/L2/L3, effect/threat model, provider/auth, budget/semantics cost, baseline/metric và mục tiêu RPO/RTO | Local đề xuất từ source/profile; operator chốt tác động/chi phí và ngưỡng trước đợt đo R3; cost chưa đo là `UNKNOWN` |
+| Q002 | SOURCE_RECONCILED_DEFER_WITH_TRIGGER | U1 source intake đã đóng bounded; chỉ quyết định consumer/trigger tiếp theo nếu slice cần Unreal và owner comparison thấy gap | Không giao lại pin/license/source reconciliation; chưa import/runtime-enabled; không chặn pilot độc lập |
+| Q003 | OPEN_BEFORE_USER_TEST; D8 | Nguồn tuyển >= 5 non-coder, người phụ trách, consent, dữ liệu mẫu, quyền dừng/rút, quyền truy cập, retention và recording consent riêng | Chốt ở R0 trước thử nghiệm có người tham gia, kể cả R1; thiếu người thì A01 `NOT_EVALUATED` |
+| Q004 | OPEN_DEPENDENCY; D2 | Supported single/multi-writer, failure/data model, durable/accepted boundary, storage, restore và RPO/RTO | Trước P03 design/migration hoặc effect/data tương ứng; backup mã hóa NCR khác raw approval P07; mục tiêu chưa là SLA |
+| Q005 | OPEN_BY_ACTION; D4 | Tách quyền diagnostic/component/offline, worker/dependency, credential/provider/live, tạo artifact, publish, settings và deployment | Chốt đúng trước hành động tương ứng; live có model/call-cost/retry/stop riêng; publish không cấp quyền deploy |
+| Q006 | OPEN_BY_CLAIM; D5 | CI required checks/source SHA, public visibility/projection/settings; hosted host/ngân sách/vùng dữ liệu/remote access/secret | Settings chỉ chặn claim hoặc thay settings phụ thuộc; hosted quyết định trước R5/deployment, không chặn code CI được phép |
+| Q007 | OPEN_BEFORE_DISPATCH; D6 | Owner thực hiện/review/integrator/commit, exact file scope, khóa route/binding và release runner, lane 52 deferred | Trước work order/merge; một integrator hoặc merge tuần tự trên file chung, không chiếm lane ngoài scope |
 
 ### Independent Review Response - Revision 1.1
 
@@ -413,12 +449,25 @@ Validation correction (N1): bốn checker chặn lần chạy đầu v1.1 là `g
 
 Future evidence reuse: dùng receipt hợp lệ và kiểm tra freshness theo owner; chỉ chạy lại khi có mâu thuẫn, expected information gain và cost reason. Không tái tạo review từng hàng để tăng số test. Live/production/governance claims tương lai phải có proof đúng loại, không mượn gate PASS của roadmap.
 
+### Revision 2.0 incorporation evidence
+
+Operator yêu cầu đưa bản hợp nhất đã được external phản biện vào chính roadmap này. Input đối chiếu: proposal SHA-256 `0a1c3ad0aff6f45e305ef35a08c31261f52a3fa08a5a205c47cf7d8aa91ae446`; external revised review ZIP SHA-256 `eb041a077b442caf0c5d0df4b748273825172322dd7d63231149acaf7dd3dd93`, verdict advisory `ACCEPT_ALIGNMENT_FOR_OPERATOR_DECISION`; GitHub baseline và Local HEAD trước edit `4567d750087d47f369939a0e9891ca6fcb596034`. CRC của review ZIP và byte equality của proposal nhận về đã được Local kiểm trước lần authoring này. Không coi external verdict là private runtime acceptance hoặc CVF status mới.
+
+Local đối chiếu trực tiếp `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`, U1 Local source reconciliation, AKOE-P2-R2/P3 completions, dispatch-release standard, roadmap v1.1 và workflow CI hiện hành trước khi sửa. Trong GitHub Actions tại baseline, job/step failures còn mở; chưa có failed-step root-cause diagnostic hoặc profile pilot đủ để disposition P01/P05/P03. Bản sửa là document-only; không test/build runtime, dependency install, provider call, settings, commit/push hoặc public-sync. Kết quả gate v2.0 phải được ghi theo lệnh chạy thực sau khi authoring, không mượn bảng v1.1 ở trên.
+
+| V2.0 local check | Kết quả trong working tree trước material commit |
+|---|---|
+| Reference/encoding/whitespace recipe phía trên | 48 path tokens phân biệt; missing=[], replacement character=false, trailing whitespace lines=0 |
+| `python governance/compat/check_governed_file_size.py --enforce` | Exit 0; 0 violations, 71 repository-wide advisories; roadmap 560 dòng tại thời điểm kiểm |
+| `CVF_COMPAT_BASE=HEAD` rồi `python governance/compat/run_worker_return_fast_gate.py` | Exit 0; reviewer-fast 69/69 PASS và `git diff --check` PASS; đây là gate tài liệu/governance, không phải runtime/CI GitHub proof |
+| `git status --short` | Một tracked delta: roadmap này; không có thay đổi source/runtime/session trong lần authoring |
+
 ## External Repository Absorption Entry Control
 
 | Field | Disposition |
 |---|---|
 | Source type | Existing CVF-governed absorption evidence and operator design direction |
-| Upstream or source-mirror disposition | No acquisition or upstream execution in this revision; U1 is a conversation-scoped read-only task not released by this roadmap; legacy mockup is a reference only |
+| Upstream or source-mirror disposition | U1 source mirror đã được Local pin và reconcile read-only trong tranche riêng; revision roadmap này không acquisition, upstream execution, import hoặc runtime activation; legacy mockup vẫn chỉ là reference |
 | Enumeration or manifest plan | Reuse prior accepted inventories; future selected source investigation follows existing intake owners |
 | Per-file terminal-ledger plan | No new file-level absorption claim; preserve historical ledgers and deferred regions |
 | Owner or overlap route | Existing Baseline table; R0 consumer/owner reconciliation before new implementation |
@@ -427,7 +476,7 @@ Future evidence reuse: dùng receipt hợp lệ và kiểm tra freshness theo ow
 
 ## Mandatory Blind-Spot Control Block
 
-NOT_APPLICABLE_WITH_REASON: this task synthesizes a direction roadmap, not a new source scan. Unread upstream regions, unresolved U1 evidence, contract-to-consumer wiring and host control limitations remain explicit investigation boundaries, not assertions of no value.
+NOT_APPLICABLE_WITH_REASON: this task incorporates a unified roadmap, not a new source scan. Unread upstream regions, U1 runtime consumer/trigger, contract-to-consumer wiring and host control limitations remain explicit investigation boundaries, not assertions of no value. U1 source intake itself is already closed bounded.
 
 ## Corpus Completeness And Report Integrity
 
@@ -439,15 +488,15 @@ NOT_APPLICABLE_WITH_REASON: this task synthesizes a direction roadmap, not a new
 - Source manifest: existing AKOE roadmap/completion evidence cited in Existing Baseline; no new source manifest in this commit
 - Source manifest hash: N/A with reason - no new source manifest or corpus snapshot is created
 - Enumeration safety: filesystem-backed locator validation only; no source enumeration claim
-- Intake registry or ledger: existing AKOE terminal evidence remains authoritative; Q002 remains open for the not-opened U1 direction
+- Intake registry or ledger: existing AKOE terminal evidence remains authoritative; U1 source reconciliation is closed bounded and Q002 now concerns only consumer/trigger
 - Authority assets: existing CVF owners and accepted AKOE evidence cited above
 - Derived views: this roadmap's planning tables and R0-R6 sequence only
 - Semantic region ledger: no new semantic-region ledger; future R0 must use existing owner/catalog/GAP routes
 - Region reconciliation: assets=0; mapped=0; deferred=0; unmapped=0 for new knowledge assets introduced by this commit
 - Orphan or unmapped assets: none in this zero-new-asset planning batch; unresolved future work remains Q001-Q003
-- Cross-region links: six historical input families remain linked through existing AKOE evidence; U1 read-only direction is not opened and awaits Q002
+- Cross-region links: six historical input families remain linked through existing AKOE evidence; U1 is separate source-reconciled deferred evidence, not an added family or runtime activation
 - Drift check: NOT_RUN_PLANNING_ONLY; no current-map claim
-- Rebuildability check: roadmap can be rebuilt from cited CVF owners, AKOE completion and the two independent reviews
+- Rebuildability check: roadmap can be rebuilt from cited CVF owners, AKOE/U1 completions, audit input hashes and external alignment reviews; external material remains advisory
 - Retrieval boundary: planning locators only; no retrieval-readiness claim
 - Adversarial verification: independent reviews R1 and R2; N1/N2 repair gate rerun
 - Knowledge-map verdict: PARTIAL
@@ -462,10 +511,10 @@ External research stays advisory and ends before internal implementation/review/
 
 | Field | Evidence |
 |---|---|
-| applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; repair read-ahead: `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; pre-commit repair read-ahead: `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_corpus_to_knowledge_map_reconciliation.py` |
-| literalTokensReviewed | roadmap headings: Authorization, Purpose, Scope, Non-Goals, Design Control Gate, Work Plan, Acceptance Criteria, Verification; applicableCheckersRead, literalTokensReviewed, gateRunPurpose, claimBoundary; Text Encoding Exception; NOT_APPLICABLE_WITH_REASON |
-| gateRunPurpose | Confirmation of document shape and evidence boundaries, not first discovery of required literals or runtime proof |
-| claimBoundary | One planning artifact; no dispatched worker, implementation, activation, live or deployment claim |
+| applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_corpus_to_knowledge_map_reconciliation.py` |
+| literalTokensReviewed | roadmap headings Authorization, Purpose, Scope, Non-Goals, Design Control Gate, Work Plan, Acceptance Criteria, Verification; `applicableCheckersRead`, `literalTokensReviewed`, `gateRunPurpose`, `claimBoundary`; `Status` is non-closed; `Public Export Disposition`; `Text Encoding Exception`; `NOT_APPLICABLE_WITH_REASON`; delta claim `CLAIM_REJECTED` markers; no new source intake/corpus-complete claim |
+| gateRunPurpose | Confirmation of v2.0 document shape, routing and evidence boundaries after source read-ahead; not first discovery of literal requirements or runtime proof |
+| claimBoundary | Existing roadmap revised to unified planning; NCR-R0/W00 pending scoped dispatch, no worker execution, activation, live, hosted, public or production claim |
 
 ## Text Encoding Exception
 
@@ -490,23 +539,23 @@ Repair read-ahead: `governance/compat/check_delta_execution_claim_boundary.py`, 
 
 | Field | Evidence |
 |---|---|
-| Actor | Local orchestrator / roadmap author |
+| Actor | Local reviewer / roadmap author |
 | Provider or surface | Local coding-agent workspace |
-| Session or invocation | CVF-NCR roadmap revision-v1.1, 2026-09-26 |
+| Session or invocation | CVF-NCR unified roadmap incorporation-v2.0, 2026-09-26 |
 | Working directory | Private CVF provenance repository root |
-| Command or tool surface | Read-only file/Git inspection, apply_patch, document/governance checks |
+| Command or tool surface | Read-only source/Git/ZIP inspection, apply_patch, document/governance checks |
 | Target paths | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Allowed scope source | Operator requested roadmap revision using accepted review points for a second independent review |
-| Before status evidence | HEAD `3ff8d9e16b1773daa2622186d911257f27ebb1f2`; two untracked files: this roadmap and the independent review cited above |
-| After status evidence | Two untracked files remain; only roadmap content edited in this revision; no runtime/owner/session mutation |
-| Diff evidence | `git status --short`; explicit inspection of the new file because ordinary git diff omits untracked contents |
-| Approval boundary | Document authoring only; future implementation/effects require scoped authority |
-| Claim boundary | Proposed direction and staged acceptance criteria, not completed capability |
+| Allowed scope source | Operator requested incorporation of the externally reviewed unified roadmap into existing CVF-NCR roadmap for implementation planning |
+| Before status evidence | HEAD `4567d750087d47f369939a0e9891ca6fcb596034`; worktree clean, `origin/main` equal to HEAD before this edit |
+| After status evidence | Roadmap v2.0 is the intended working-tree delta; final git status and gates recorded in revision 2.0 verification, no runtime/owner/session mutation by this authoring step |
+| Diff evidence | `git diff -- docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `git status --short` |
+| Approval boundary | Roadmap incorporation and R0 scope preparation only; work-order dispatch and effects require exact authority and existing gates |
+| Claim boundary | Accepted unified plan with R0 pending dispatch, not completed capability or audit finding closure |
 | Agent type | INTERNAL_AGENT, orchestrator authoring role |
-| Invocation ID | cvf-ncr-roadmap-revision-v1.1-2026-09-26 |
+| Invocation ID | cvf-ncr-unified-roadmap-v2-2026-09-26 |
 | Expected manifest | This roadmap only |
-| Actual changed set | This roadmap only for the author delta; independent review is pre-existing untracked material and must remain byte-identical |
-| Manifest delta | Expected author delta MATCH: roadmap only; whole worktree also contains the pre-existing independent review, not authored or modified by this revision |
+| Actual changed set | This roadmap only for the author delta; external ZIPs remain outside the repository |
+| Manifest delta | Expected author delta MATCH: roadmap only; confirm from final git status before material commit |
 | Deletion or rename disposition | None; no stash, deletion, rename or unrelated cleanup authorized |
 
 ## Public Export Disposition
