@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`acel_applied_knowledge_owner_enrichment_closed_bounded`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=hold for a fresh post-AKOE-U1 operator checkpoint; role=Local reviewer/closer and session steward; phase=U1 source reconciliation closed; decision owner=operator for any successor; parked checkpoint=all successors, U1 import/runtime use, G1-G7 successors, HRLTP-T2, Party B/C, credentials, Group 4 source, T3E, provider/live/activation/public/deployment.
+Startup acknowledged: current mode=`cvf_ncr_r0_packet_authoring_ready`; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=prepare bounded NCR-R0/W00 GC-018 and work order; role=Local dispatch author/reviewer and session steward; phase=unified NCR roadmap accepted, R0 not dispatched; decision owner=operator for pilot/effect/expense and Local for source disposition; parked checkpoint=worker dispatch, runtime/owner edits, dependency, credentials/provider/live, settings, deployment, public sync and production.
 
 ## Current Mode
 
-Current mode marker: `acel_applied_knowledge_owner_enrichment_closed_bounded`
-Current mode: `acel_applied_knowledge_owner_enrichment_closed_bounded`; previous mode marker: `acel_applied_knowledge_owner_enrichment_active`
+Current mode marker: `cvf_ncr_r0_packet_authoring_ready`
+Current mode: `cvf_ncr_r0_packet_authoring_ready`; previous mode marker: `acel_applied_knowledge_owner_enrichment_closed_bounded`
 
 ## Next Allowed Move
-Mode: `acel_applied_knowledge_owner_enrichment_closed_bounded`
-PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_CHECKPOINT_POST_AKOE_U1; ACTIVE_BATCH=NONE; ACTIVE_WORK_ORDER=NONE; CURRENT_TRANCHE_ACTION=AKOE_U1_LOCAL_SOURCE_RECONCILIATION_AT_d9132412a; CURRENT_TRANCHE_DISPOSITION=CLOSED_PASS_BOUNDED; NEXT_STEP=OPERATOR_DECIDES_ANY_SUCCESSOR; EXPANSION_ALLOWED=false. AKOE-P1 through AKOE-P4, common Local reconciliation, and the optional U1 Unreal source intake are closed bounded. U1 is SOURCE_RECONCILED_DEFER_WITH_TRIGGER and does not authorize import or runtime use. Any successor, production-owner mutation, dependency installation, provider/live, deployment, production action, or public sync requires fresh operator authority. Latest closed LHW wave remains LHW24.
+Mode: `cvf_ncr_r0_packet_authoring_ready`
+PROGRAM_ID=CVF-NCR; ROADMAP=docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; NEXT_ACTION_CLASS=AUTHOR_NCR_R0_W00_GC018_WORK_ORDER; ACTIVE_BATCH=NONE; ACTIVE_WORK_ORDER=NONE; CURRENT_TRANCHE_ACTION=NCR_UNIFIED_ROADMAP_V2_AT_1673ee629; CURRENT_TRANCHE_DISPOSITION=ACCEPTED_UNIFIED_ROADMAP_R0_PENDING_DISPATCH; NEXT_STEP=PREPARE_BOUNDED_R0_W00_PILOT_SELECTION_PACKET; EXPANSION_ALLOWED=false. Operator authorized incorporation of the reviewed unified roadmap and bounded R0/W00 packet preparation. R0 selects one consumer/pilot and maps applicable audit findings using current source/profile; no worker dispatch, production-owner mutation, dependency install, provider/live, credentials, settings, deployment, public sync, or production action is authorized by this marker. AKOE-P1 through P4 and U1 stay closed bounded; U1 remains SOURCE_RECONCILED_DEFER_WITH_TRIGGER. Latest closed LHW wave remains LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
@@ -101,7 +101,7 @@ RSPB-AI-T14 is `CLOSED_PASS_BOUNDED`: material `6fc8f9872117f3fbadf3240569b92686
 RSPB-AI-T9 is `CLOSED_PASS_BOUNDED`: material and reviewer repair `5e5aeb8a4`, completion review `d34dce4c5`, machine closure `b78651eac`. Evidence: focused 42/42, T3/T8/T9 composed 105/105, package 743 plus 5 skipped, TypeScript PASS, freshness CURRENT, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls. Continue with the next highest-value local cluster without restarting full-corpus proof; all runtime/external authority remains parked.
 ## Parked Checkpoints
 
-Live retry, external T5 adapter runtime, every post-AKOE successor, U1 code import/runtime use, out-of-manifest production TypeScript edits, existing-guard edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation, CLI/MCP invocation, public sync, deployment, production, trusted-evidence readiness and cross-runtime determinism claims remain parked.
+NCR-R0/W00 packet authoring is the only selected post-AKOE successor. Worker release, U1 code import/runtime use, out-of-manifest production TypeScript edits, existing-guard edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation, CLI/MCP invocation, public sync, deployment, production, trusted-evidence readiness and cross-runtime determinism claims remain parked.
 T4 closed as standalone static checker work with no hook wiring or production-source mutation.
 Prior unrelated checkpoints remain historical.
 

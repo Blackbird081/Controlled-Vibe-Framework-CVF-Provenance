@@ -109,8 +109,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "acel_applied_knowledge_owner_enrichment_closed_bounded",
-  "previousMode": "acel_g1_g7_research_terminally_closed",
+  "currentMode": "cvf_ncr_r0_packet_authoring_ready",
+  "previousMode": "acel_applied_knowledge_owner_enrichment_closed_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16799,5 +16799,5 @@
     "nextAction": "hold for a fresh operator decision before any post-AKOE successor",
     "boundary": "G1-G7 and AKOE-P1 through AKOE-P4 are closed bounded; the six-family common Local reconciliation contains 19 terminally dispositioned candidates; no successor, production-owner mutation, dependency, provider/live, deployment, production or public sync is authorized"
   },
-  "nextAllowedMove": "PROGRAM_ID=ACEL-AKOE-R1; ROADMAP=docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_CHECKPOINT_POST_AKOE_U1; ACTIVE_BATCH=NONE; ACTIVE_WORK_ORDER=NONE; CURRENT_TRANCHE_ACTION=AKOE_U1_LOCAL_SOURCE_RECONCILIATION_AT_d9132412a; CURRENT_TRANCHE_DISPOSITION=CLOSED_PASS_BOUNDED; NEXT_STEP=OPERATOR_DECIDES_ANY_SUCCESSOR; EXPANSION_ALLOWED=false. AKOE-P1 through AKOE-P4, common Local reconciliation, and the optional U1 Unreal source intake are closed bounded. U1 is SOURCE_RECONCILED_DEFER_WITH_TRIGGER and does not authorize import or runtime use. Any successor, production-owner mutation, dependency installation, provider/live, deployment, production action, or public sync requires fresh operator authority. Latest closed LHW wave remains LHW24."
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; ROADMAP=docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; NEXT_ACTION_CLASS=AUTHOR_NCR_R0_W00_GC018_WORK_ORDER; ACTIVE_BATCH=NONE; ACTIVE_WORK_ORDER=NONE; CURRENT_TRANCHE_ACTION=NCR_UNIFIED_ROADMAP_V2_AT_1673ee629; CURRENT_TRANCHE_DISPOSITION=ACCEPTED_UNIFIED_ROADMAP_R0_PENDING_DISPATCH; NEXT_STEP=PREPARE_BOUNDED_R0_W00_PILOT_SELECTION_PACKET; EXPANSION_ALLOWED=false. Operator authorized incorporation of the reviewed unified roadmap and bounded R0/W00 packet preparation. R0 selects one consumer/pilot and maps applicable audit findings using current source/profile; no worker dispatch, production-owner mutation, dependency install, provider/live, credentials, settings, deployment, public sync, or production action is authorized by this marker. AKOE-P1 through P4 and U1 stay closed bounded; U1 remains SOURCE_RECONCILED_DEFER_WITH_TRIGGER. Latest closed LHW wave remains LHW24."
 }
