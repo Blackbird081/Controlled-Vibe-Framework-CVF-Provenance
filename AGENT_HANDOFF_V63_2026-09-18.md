@@ -1,9 +1,9 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `d9132412a`. ACEL-AKOE-U1 material-SHA marker binds the operator-relayed Web return, pinned Local source reconciliation, and source-mirror index at `d9132412a`; parent anchor for this dedicated continuity synchronization commit. U1 is `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`; no import or runtime authority follows.
+Current HEAD recorded for this handoff: `00b888d5`. ACEL-AKOE-U1 material-SHA marker binds the operator-relayed Web return, pinned Local source reconciliation, and source-mirror index at `d9132412a`; `00b888d5` is the parent anchor for this dedicated GC-020 repair commit. U1 is `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`; no import or runtime authority follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
-Status: ACTIVE
+Status: ACTIVE. Remote tracking branch: `origin/main`. Exact remote SHA must be derived live from git when needed; this handoff does not freeze a remote-tracking SHA. External agent memory files: non-canonical convenience only.
 ## Purpose
 
 Carry the closed-bounded applied-knowledge roadmap while preserving terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are reviewed and routed; AKOE-P4/common Local reconciliation and the later optional U1 Unreal source intake are closed bounded.
