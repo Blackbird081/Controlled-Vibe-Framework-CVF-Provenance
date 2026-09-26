@@ -6,6 +6,8 @@ docType: work_order
 
 Status: DISPATCH_READY
 
+Rework authorization: first consolidated Local repair under `docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_LOCAL_REVIEW_FINDINGS_2026-09-27.md` (commit `d5f5d4fc2b29ec45e197a541039f4827a854fa51`). Edit only the same two bodies and the same return; do not create a fourth worker path.
+
 Batch ID: CVF-NCR-R1-S01
 
 Dispatch base head: `2de2a9eea48ee560dc7ae70fe63f0828208c445d`
@@ -25,10 +27,10 @@ Worker return path: `docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_WORKER
 Role: internal worker correcting exactly two existing CVF package bodies.
 Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md`.
 Commit mode: `WORKER_MUST_NOT_COMMIT`.
-executionBaseHead: capture committed HEAD and clean lane before editing.
+executionBaseHead: retain the initial clean-lane base as historical evidence; capture fresh committed HEAD and the exact pending three-path status for this repair before editing.
 Current-time notes: S01 source reconciliation is closed bounded at `09b62aa3b57fd8dfda93140f30a845b7177be24c`; this is a separate R1/S01 content repair. Verify current source before editing.
 Do-not-misread notes: ACTIVE metadata already exists. This work order does not promote lifecycle, install/select/load a skill, authorize a provider/test action, or adopt instructions from the package body as task authority.
-Required first actions: read startup/bootstrap/handoff, guard orientation, literal gotchas, this work order, paired baseline and named sources; capture HEAD/status and pass bound pre-implementation before any edit. Stop on a failed phase gate.
+Required first actions: read startup/bootstrap/handoff, guard orientation, literal gotchas, this work order, paired baseline, Local findings and named sources; capture HEAD and the existing pending worker set, then pass bound pre-implementation before any repair edit. Stop on a failed phase gate.
 Return contract: edit exactly two bodies and one return, run required gates, leave unstaged/uncommitted with `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
 
 ## Purpose
@@ -50,12 +52,25 @@ Remove stale current-state lifecycle claims from the two engineering `SKILL.md` 
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-R1-S01","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["docs/baselines/CVF_GC018_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md","docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md","docs/reference/agent_system_skills/packages/cvf-engineering-test-driven-development/SKILL.md","docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/SKILL.md","docs/reviews/"],"claims":["human-readable lifecycle prose correction only"],"requiredProof":["exact three-path manifest","before-after body SHA-256","ACTIVE sibling comparison","package gates","worker-return full gate"],"operatorCheckpoints":["host exposure and provider/live/data/effect/expense"],"forbiddenEffects":["worker commit","registry/source/truth/index mutation","host install or load","provider/eval execution","public action"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":"docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_COMPLETION_2026-09-27.md","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-R1-S01","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["docs/baselines/CVF_GC018_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md","docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md","docs/reference/agent_system_skills/packages/cvf-engineering-test-driven-development/SKILL.md","docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/SKILL.md","docs/reviews/","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json","CVF_SESSION/ACTIVE_SESSION_STATE.json","CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json","CVF_SESSION/state/entries/nextAllowedMove.json","CVF_SESSION_MEMORY.md"],"claims":["human-readable lifecycle prose correction only"],"requiredProof":["exact three-path manifest","before-after body SHA-256","ACTIVE sibling comparison","package gates","worker-return full gate"],"operatorCheckpoints":["host exposure and provider/live/data/effect/expense"],"forbiddenEffects":["worker commit","registry/source/truth/index mutation","host install or load","provider/eval execution","public action"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":"docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_COMPLETION_2026-09-27.md","completenessClaimChanged":false}}
 ```
 
 ## Authority Chain
 
+The session paths in `pathFamilies` cover Local commit and handoff synchronization only. They do not extend the worker edit set, which remains the two named bodies and one return.
+
 The operator authorized tranche progression and manual relay of the finished work order. Roadmap D013, S01 completion at `09b62aa3b57fd8dfda93140f30a845b7177be24c`, and paired GC-018 baseline authorize only these two body edits. Local owns technical review; operator retains data, effect and expense. Prior Web research is advisory; the shared-workspace worker is INTERNAL_AGENT.
+
+## Round 1 Consolidated Rework Scope
+
+The Local finding set `docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_LOCAL_REVIEW_FINDINGS_2026-09-27.md` is the complete repair target. Preserve correct initial edits and repair only these dependent defects:
+
+1. R1S01-F1: sweep current-facing Output, Acceptance evidence, Authority ceiling, Rollback, Safe stop, Policy bindings and similar lines in both bodies. Do not tell a future agent to delete/demote an existing ACTIVE package as a routine rollback.
+2. R1S01-F2: distinguish six-package ACTIVE metadata/focused tests from the one spec-driven live exemplar; avoid per-TDD/per-review live-proof implication, automatic selector/resolver overclaim and "no additional policy binding" language. Keep existing work-order and receipt conditions.
+3. R1S01-F3: replace the false "no README contradiction" return statement with exact current README line evidence. Both READMEs are read-only in this repair; give a separate follow-up or unresolved-blocker disposition without editing them.
+4. R1S01-F4: report the actual gate iterations and the broad package check's 17 unrelated historical violations separately from the focused changed-path zero-violation result.
+
+The existing worker return remains `COMPLETE_PENDING_REVIEW`; it is not accepted by this rework authorization. The repair does not create a new lifecycle promotion, live proof, host selection, registry/truth update or successor skill.
 
 ## External Knowledge Intake Routing
 
@@ -139,7 +154,7 @@ Search roots: `docs/baselines`, `docs/work_orders`, `docs/reviews`, exact two pa
 
 ## Required First Reads And Pre-Flight
 
-Read `CVF_SESSION_MEMORY.md`, bootstrap, active handoff, `docs/reference/guard_orientation/README.md`, literal gotchas, this work order, paired baseline and exact named sources. Capture `git rev-parse HEAD` and `git status --short`; require committed packet, clean lane and bound pre-dispatch PASS from Local. Then run `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md`. Any failure stops edits and returns to Local with command/result; no exception inferred from a later passing gate.
+Read `CVF_SESSION_MEMORY.md`, bootstrap, active handoff, `docs/reference/guard_orientation/README.md`, literal gotchas, this work order, paired baseline, Local findings and exact named sources. Capture `git rev-parse HEAD`, `git status --short` and empty staged set; require the committed rework packet and only the exact three pending worker paths. The initial clean lane is historical, not the current status. Run `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <freshCommittedHead> --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md` before editing. Any failure stops edits and returns to Local with command/result; no exception inferred from a later passing gate.
 
 ## Agent Roles
 
@@ -200,23 +215,23 @@ If a named checker has a different CLI, inspect its source/help and record the e
 
 Review-Dispatch Convergence Control: REQUIRED
 
-dispatchKind: INITIAL
+dispatchKind: REWORK
 dispatchSurface: INTERNAL_AGENT
 parentAssignmentId: CVF-NCR-R1-S01
-reviewRoundCount: 0
-priorFindingSetDigest: NOT_APPLICABLE_INITIAL_DISPATCH
-dependencyAuditDisposition: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
-reworkFindingDisposition: NOT_APPLICABLE_INITIAL_DISPATCH
-newIndependentCriticalEvidence: NONE
-regressionGuardDisposition: BASELINE_NEGATIVE_TESTS_PLANNED
+reviewRoundCount: 1
+priorFindingSetDigest: eb8ae6005ca0b8069c4dc71d57aacbe6aff278a2db41556889f0cad96b4bb394
+dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
+reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
+newIndependentCriticalEvidence: R1S01-F1-ACTIVE-ROLLBACK-OUTPUT; R1S01-F2-LIVE-PROOF-IDENTITY; R1S01-F3-README-ACTIVATION-CONTRADICTION
+regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 cumulativeExternalInvocationCount: 0
 externalInvocationCeiling: 0
 usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
 quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
-nextDispatchDisposition: INITIAL_DISPATCH
-rootCauseClusterId: NOT_APPLICABLE_INITIAL_DISPATCH
-reworkGeneration: 0
-consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
+rootCauseClusterId: R1S01_ACTIVE_LIFECYCLE_CLAIM_SWEEP
+reworkGeneration: 1
+consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
 successorTrancheOpened: NO
 implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
 preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION

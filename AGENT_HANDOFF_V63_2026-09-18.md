@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `466841831dd47a386a592c46d7b4f20c229d5143`. Batch `CVF-NCR-R1-S01` two-body work order is committed and awaits continuity binding and operator relay. CVF-NCR-R0/S01 and R1/W01 HTML remain accepted bounded.
+Current material HEAD recorded for this handoff: `d5f5d4fc2b29ec45e197a541039f4827a854fa51`. Local R1/S01 finding set is committed; the first consolidated rework packet is staged for commit. CVF-NCR-R0/S01 and R1/W01 HTML remain accepted bounded.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE

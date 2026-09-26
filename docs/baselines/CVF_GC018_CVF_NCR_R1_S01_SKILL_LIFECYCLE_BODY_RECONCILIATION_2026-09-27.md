@@ -6,6 +6,8 @@ docType: baseline
 
 Status: DISPATCH_READY
 
+Rework authorization: first consolidated Local repair of the same three worker-owned paths. The finding set is `docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_LOCAL_REVIEW_FINDINGS_2026-09-27.md`, committed at `d5f5d4fc2b29ec45e197a541039f4827a854fa51` with raw SHA-256 `eb8ae6005ca0b8069c4dc71d57aacbe6aff278a2db41556889f0cad96b4bb394`. Keep the valid ACTIVE/status, bounded adapter and historical-provenance edits; correct R1S01-F1 through F4 in the existing two bodies and existing return. The READMEs are a disclosed dependent issue, not a worker write path.
+
 Batch ID: CVF-NCR-R1-S01
 
 Dispatch base head: `2de2a9eea48ee560dc7ae70fe63f0828208c445d`
@@ -31,6 +33,8 @@ The operator authorized Local to progress tranche by tranche and stop at the fin
 ## Scope
 
 Worker may edit only the two named `SKILL.md` bodies and create one pending worker return under the paired work order. Read the exact existing source JSON, registry, truth, promotion reviews and package productionization owner before editing. Reconcile all present-tense lifecycle and policy-binding claims in each body against existing ACTIVE evidence. Preserve historical APPROVED promotion statements by explicitly dating or qualifying them where needed.
+
+Round 1 rework starts with the already-dirty exact worker set, not a fictitious clean lane. The worker must capture new committed HEAD and the three pending paths, run the bound pre-implementation gate, and stop if it fails. The original clean-lane capture in the return remains historical evidence of the initial execution.
 
 ## Baseline Invariants
 
