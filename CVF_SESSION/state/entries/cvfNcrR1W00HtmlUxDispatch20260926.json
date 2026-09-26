@@ -1,0 +1,12 @@
+{
+  "stateOrder": 2947,
+  "stateKey": "cvfNcrR1W00HtmlUxDispatch20260926",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "939c422b1e941a0d9b1bde8869ff9a017cc31552",
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md",
+    "workerReturnPath": "docs/reviews/CVF_CVF_NCR_R1_W00_HTML_UX_CONTRACT_WORKER_RETURN_2026-09-26.md",
+    "claimBoundary": "documentation-only internal worker; no UI/route, code, configuration, provider/live, public or pilot authority"
+  }
+}
