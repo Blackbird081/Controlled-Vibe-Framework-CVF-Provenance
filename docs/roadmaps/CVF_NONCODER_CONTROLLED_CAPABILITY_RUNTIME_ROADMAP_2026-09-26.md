@@ -4,7 +4,7 @@ Memory class: FULL_RECORD
 
 docType: roadmap
 
-Status: ACCEPTED_UNIFIED_ROADMAP_R0_PENDING_DISPATCH
+Status: ACCEPTED_UNIFIED_ROADMAP_R0_W00_ACCEPTED_PILOT_SCOPE_PENDING
 
 Date: 2026-09-26
 
@@ -92,6 +92,7 @@ Các bất biến dưới đây là tiêu chí kiểm tra cho mọi tranche củ
 |---|---|---|
 | `ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md`, mục Mission / What CVF Is / What CVF Is NOT | CVF là governance infrastructure, bổ trợ framework và công cụ | UX non-coder không đổi CVF thành builder/framework |
 | `ECOSYSTEM/operating-model/CVF_VOM_QUICK_START.md`; `ECOSYSTEM/operating-model/CVF_AGENT_OPERATING_MODEL.md` | Entry points để R0 đối chiếu luồng user và trách nhiệm agent | Không tạo operating model thứ hai |
+| `docs/guides/CVF_QUICK_ORIENTATION.md`; `docs/GET_STARTED.md`; `docs/HOW_TO_APPLY_CVF.md`; `docs/reference/CVF_INTERNAL_USER_GUIDE.md` | Các hướng dẫn/entry point hiện có để đối chiếu nội dung user guide tổng quan | Không gọi là thiếu hoàn toàn guide; một số nội dung dài, kỹ thuật hoặc mang trạng thái lịch sử, phải đối chiếu authority và trạng thái hiện hành trước khi tái dùng |
 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/` | Consumer UI hiện có: dashboard approvals, artifacts, workspace, runtime, skills, marketplace, history, governance; API providers, execute, sessions, integrations/test, approvals, artifacts/export | Đối chiếu và tái dùng trước thiết kế mới; có route/code không đồng nghĩa toàn tuyến đã chạy được hoặc đủ quyền runtime |
 | `docs/corpus-intelligence/registry/entries/legacy-cvf-app-onboarding.json`, trường scopePaths[0] là locator thư mục App onboarding trong kho legacy | UI design reference legacy; registry ghi NOT_STARTED; dùng để đối chiếu mockup khi phù hợp | Dùng locator canonical trong registry, không thư mục App onboarding ở repo root; không coi mockup là active design authority hoặc capability đã nghiệm thu; DESIGN.md và owner hiện hành vẫn điều khiển |
 | `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md`; `docs/reviews/CVF_ACEL_AKOE_P4_COMMON_LOCAL_RECONCILIATION_COMPLETION_2026-09-26.md` | AKOE đóng bounded; 19 candidate thuộc sáu nguồn: 5 ADAPT, 8 CONFIRMED_EXISTING, 3 DEFER_WITH_TRIGGER, 2 REJECT_DIRECT_IMPORT, 1 source-blocked | Không suy ra toàn bộ repo đã đọc hoặc capability đã chạy live |
@@ -262,14 +263,14 @@ Audit W00–W06 là các work package nền; W07 được hấp thụ vào R0/R1
 
 ## Work Plan
 
-Mọi giai đoạn dưới đây hiện là PLANNED_NOT_DISPATCHED; NCR-R0/W00 là **tranche đầu cần chuẩn bị và dispatch có giới hạn** sau khi continuity/authority đúng. Các bước cùng giai đoạn là gói công việc để tạo work order giới hạn, không phải lệnh thi công sẵn. Thời gian/ngân sách được chốt theo slice ở R0; không đặt lịch hoàn thành giả khi chưa biết provider, workload và hạ tầng. Không tạo work order sửa toàn P01–P10 trước khi biết route/profile và finding áp dụng.
+Các giai đoạn dưới đây là kế hoạch, trừ NCR-R0/W00 đã được Local nghiệm thu bounded ở `docs/reviews/CVF_CVF_NCR_R0_W00_PILOT_SELECTION_WORKER_RETURN_2026-09-26.md`. Operator đã chọn HTML review packet làm ứng viên pilot nội bộ đầu tiên; việc chọn ứng viên không cấp quyền chạy pilot hoặc sửa runtime. Các bước còn lại là gói công việc để tạo work order giới hạn, không phải lệnh thi công sẵn. Thời gian/ngân sách được chốt theo slice ở R0; không đặt lịch hoàn thành giả khi chưa biết provider, workload và hạ tầng. Không tạo work order sửa toàn P01–P10 trước khi biết route/profile và finding áp dụng.
 
 ### R0 - Chốt consumer, owner và pilot nhỏ nhất
 
 - ID: NCR-R0. Vai trò: orchestrator + Local reviewer. Đầu vào: roadmap này và evidence AKOE hiện có.
 - Việc làm: lần theo một luồng user đến consumer thực; phân loại owner đã có/contract-only/wiring chưa rõ/gap đã chứng minh; đối chiếu catalog và system-chain GAP hiện có, không tạo inventory cạnh tranh.
 - Điểm xuất phát UI là cvf-web hiện có: approvals, artifacts, workspace, runtime, skills, marketplace, history, governance và các API providers, execute, sessions, integrations/test, approvals, artifacts/export. Lần theo route/component/service/owner của luồng được chọn; ghi reuse/change/defer và bằng chứng cho từng đoạn liên quan, không audit lại toàn web platform. Đối chiếu mockup legacy ở đúng path trong bảng baseline, không thăng cấp mockup thành authority.
-- Chọn một use case có giá trị non-coder, input dễ giới hạn, đầu ra xem trước được, ít side effect. Ứng viên: tạo một artifact nội dung/media ngắn bằng capability sẵn có; video hướng dẫn một luồng CVF đã xác minh là ứng viên cần kiểm khả thi, không phải slice đã chốt. HyperFrames P0 mới chứng minh artifact/scope contract, không chứng minh renderer/video integration; chỉ chọn media pipeline nếu consumer, renderer, dependency/license/resource và đường xuất artifact thật được Local xác minh. Nếu chưa đủ, chọn artifact đơn giản hơn cho vertical slice; video biên tập ngoài CVF có thể là tài liệu hướng dẫn nhưng không là proof pipeline CVF. Không mở nhiều demo cùng lúc.
+- Quyết định sau W00: dùng luồng HTML review packet hiện có qua Work Transfer UI làm ứng viên pilot đầu. W00 đã xác minh consumer UI/form/preview/download và route; chưa xác minh thao tác UI thực, độ sâu P06/P08 hoặc profile receipt-helper theo cấu hình. Video không là slice pilot đầu và không là bằng chứng media pipeline; xem nhánh user guide/video tổng quan bên dưới. Không mở nhiều demo cùng lúc.
 - W00: lập entry→bridge/dependency/retry/fallback→effect trace cho ứng viên; phân biệt P01–P10 tại mốc audit, applicability trên route/profile và evidence đủ cho gate. Ghi `CONFIRMED`, `CHANGED`, `NOT_APPLICABLE_WITH_REASON` hoặc `NEEDS_EVIDENCE` với locator; không tái test toàn finding hoặc gọi N/A từ tên route. Kế thừa AKOE-P2-R2/P3, U1 và dispatch readiness đúng claim đã đóng.
 - Chốt provider/auth đầu tiên từ kết nối user muốn dùng và host hỗ trợ; ngân sách chi phí/retry, dữ liệu mẫu, metric, threat model và RPO/RTO. Lựa chọn đầu tiên không trở thành khóa provider dài hạn.
 - U1 đã `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`; R0 chỉ kiểm consumer/trigger nếu slice cần Unreal và đối chiếu owner cho thấy gap. Không lặp pin/license/source intake, không import hoặc chạy runtime từ roadmap.
@@ -286,6 +287,7 @@ Mọi giai đoạn dưới đây hiện là PLANNED_NOT_DISPATCHED; NCR-R0/W00 l
 - Đầu ra: flow/prototype, job/evidence field mapping, support matrix ban đầu và kiểm thử ngôn ngữ/tính dễ hiểu.
 - Nghiệm thu: agent mô phỏng thử tìm và giải thích kết quả sắp tạo, quyền sắp cấp và tác động chưa thực hiện; operator góp ý ở góc nhìn Human khi cần. Đây là kiểm tra luồng/copy nội bộ, không là bằng chứng người mới thật đã hiểu. Mock chỉ chứng minh cấu trúc UI, không governance behavior.
 - W01 sửa dependency/CI theo tập test cần cho slice khi được cấp quyền; W04 chốt P07/P10 theo data/cost profile. Nếu sau này mở thử nghiệm có người ngoài, Q003 phải được quyết định trước khi mời/chạy thử. Không bắt mọi package chưa dùng xanh trước wireframe, nhưng required checks của candidate phải đúng SHA/profile trước claim.
+- Trước pilot HTML có effect: kiểm `NEXTAUTH_URL` thực của receipt helper, điểm nhận và loại dữ liệu gửi ra, retention, độ trễ, chi phí, khả năng từ chối/giới hạn effect; làm UI-interaction walkthrough riêng với source-reading của W00; xác minh phần còn thiếu của P06/P08 và route-specific gates. Nếu profile chưa rõ, chỉ làm đối chiếu read-only và giữ pilot chưa chạy.
 - Exit: UX và contract đủ dùng cho đúng một slice. Không viết lại agent host; không mở credential/live trong giai đoạn này nếu chưa được cấp riêng.
 
 ### R2 - Adapter và execution boundary tối thiểu
@@ -333,6 +335,13 @@ Mọi giai đoạn dưới đây hiện là PLANNED_NOT_DISPATCHED; NCR-R0/W00 l
 - Đầu ra: mỗi capability có người dùng/consumer, owner, support level, receipt và rollback; catalog phân biệt tested/enabled/deferred.
 - Nghiệm thu: năng lực mới cải thiện user outcome đo được, không phá invariant hoặc tạo owner trùng. Chỉ tăng concurrency/số nguồn theo khả năng review và vận hành.
 - Exit: từng capability đóng bounded; chương trình không biến thành nghiên cứu vô hạn. Không xây/mở rộng marketplace năng lực, Kubernetes hoặc new plane nếu chưa có quyết định riêng dựa trên nhu cầu; route marketplace hiện có giữ disposition đã nêu trong baseline.
+
+### User guide tổng quan và video ở tranche kế tiếp
+
+- Mục tiêu user guide ngắn: giúp người dùng hiểu CVF dùng để làm gì khi giao AI viết/sửa code và kiểm soát agent: người dùng nêu mục tiêu và ranh giới; agent thực hiện phần được giao; CVF đặt policy/identity/permission/evidence tại những điểm thuộc phạm vi kiểm soát; Human xem kết quả và quyết định các tác động cần phê duyệt. Có một ví dụ code cụ thể và nêu rõ giới hạn quan sát/enforcement theo surface thực. Không mô tả CVF như IDE, công cụ tự viết code, agent builder hoặc hệ thống kiểm soát mọi phiên agent.
+- Trước khi viết, đối chiếu `CVF_VOM_QUICK_START`, `CVF_QUICK_ORIENTATION`, `GET_STARTED`, `HOW_TO_APPLY_CVF` và entry point `CVF_INTERNAL_USER_GUIDE` với doctrine, owner và trạng thái sản phẩm hiện hành. Chọn một điểm vào tài liệu ngắn, sửa/liên kết nội dung có sẵn thay vì tạo nhiều guide mâu thuẫn; mọi câu về UI, provider, enforcement, lưu trữ hay tính sẵn sàng phải có nguồn và giới hạn tương ứng. Review bằng agent mô phỏng người mới và operator góc nhìn Human; chưa đặt nghiên cứu người dùng thật làm gate.
+- Video operator mong muốn là user guide **CVF tổng thể**, giải thích giá trị thực tế cho coding và agent control; không thu hẹp thành screencast HTML export. Sau khi guide ngắn được review và luồng minh họa có nguồn/trạng thái rõ, chọn kịch bản, thời lượng, hình thức minh họa và phạm vi sản xuất trong tranche riêng. Video bám bản guide đã chấp nhận; nếu quay sản phẩm, chỉ trình bày hành vi đã được chứng minh trên profile thực. Video biên tập ngoài CVF là tài liệu truyền thông, không phải proof của video-renderer/capability pipeline CVF.
+- Điều kiện mở tranche video: operator duyệt scope/chi phí/công bố phù hợp; Local xác nhận nội dung và ví dụ không vượt claim đã chứng minh. Việc chọn pilot HTML không tự mở sản xuất video, phát hành công khai hoặc thử nghiệm người dùng thật.
 
 ## Acceptance Criteria
 
@@ -390,7 +399,9 @@ Không đổi thứ tự chỉ vì công nghệ mới hấp dẫn. Có thể đi
 | D006 | 2026-09-26 | ACCEPTED_DIRECTION_PARKED; R2 chấp nhận F1-F7, N1/N2 đã sửa và gate chạy lại | Lưu roadmap và hai review; dùng Jev/TypeSafe skills, WikiSkill, HyperFrames và Unreal có điều kiện làm nhóm use case ưu tiên sau nâng cấp; không mở R0/runtime từ commit này |
 | D007 | 2026-09-26 | Operator yêu cầu nhập bản hợp nhất audit R2 + CVF-NCR vào roadmap này; external revised review đủ cơ sở trình operator | V2.0 giữ I01–I12, R0–R6, A01–A12; thêm foundation track, AL-01–AL-06 và evidence/CI boundary; R0/W00 pending scoped dispatch, không tự mở runtime/live |
 | D008 | 2026-09-26 | Operator chọn pilot nội bộ bằng agent mô phỏng non-coder; operator tham gia góc nhìn Human khi cần lựa chọn/góp ý | Tuyển non-coder thật và ngưỡng 5 người/80% không là gate R0–R3; phản hồi người dùng thật sau khi có sản phẩm được đánh giá riêng; video hướng dẫn là ứng viên Q001, không tự nhận đã có media pipeline |
-| Q001 | OPEN_R0; D1/D3 | Chọn một pilot, route/consumer/owner, L1/L2/L3, effect/threat model, provider/auth, budget/semantics cost, baseline/metric và mục tiêu RPO/RTO; đánh giá ứng viên video hướng dẫn CVF nhưng không mặc định chọn | Local xác minh consumer/renderer và đề xuất từ source/profile; operator chốt tác động/chi phí và ngưỡng trước đợt đo R3; cost chưa đo là `UNKNOWN` |
+| D009 | 2026-09-26 | Operator chọn HTML review packet qua Work Transfer UI làm ứng viên pilot nội bộ đầu từ W00 đã được Local nghiệm thu bounded | Chỉ chốt ứng viên; chưa cấp quyền effect/runtime. Local còn xác minh UI walkthrough, receipt-helper profile và P06/P08; operator giữ quyết định dữ liệu, tác động và chi phí trước pilot chạy |
+| D010 | 2026-09-26 | Operator muốn user guide ngắn về CVF tổng thể và video hướng dẫn ở tranche sau nếu phù hợp | Đối chiếu, cập nhật/liên kết hướng dẫn hiện có; video theo guide được review, giải thích coding/agent control và giới hạn thực, không đồng nhất với pilot HTML hoặc bằng chứng media pipeline |
+| Q001 | PILOT_CANDIDATE_SELECTED_SCOPE_OPEN; D009/D010 | Ứng viên HTML đã chọn; còn L1/L2/L3, effect/threat model, `NEXTAUTH_URL`/egress/retention/latency/cost, P06/P08, UI walkthrough, provider/auth nếu áp dụng, baseline/metric và RPO/RTO; guide/video là nhánh tài liệu tiếp theo | Local xác minh source/profile và đề xuất work package nhỏ; operator chốt tác động/chi phí và ngưỡng trước đợt đo R3; cost chưa đo là `UNKNOWN`; video có scope/approval riêng |
 | Q002 | SOURCE_RECONCILED_DEFER_WITH_TRIGGER | U1 source intake đã đóng bounded; chỉ quyết định consumer/trigger tiếp theo nếu slice cần Unreal và owner comparison thấy gap | Không giao lại pin/license/source reconciliation; chưa import/runtime-enabled; không chặn pilot độc lập |
 | Q003 | INTERNAL_PILOT_SCOPE_DECIDED; HUMAN_RESEARCH_DEFERRED; D8 | Agent mô phỏng non-coder và operator góp ý/quyết định Human khi cần; đợt đánh giá người dùng thật tách riêng sau khi sản phẩm có người dùng | R0 ghi kịch bản/quyền UI, dữ liệu mẫu, log và phân loại bằng chứng; chỉ khi mở nghiên cứu có người mới chốt người phụ trách, consent, quyền dừng/rút, quyền truy cập, retention và recording consent riêng |
 | Q004 | OPEN_DEPENDENCY; D2 | Supported single/multi-writer, failure/data model, durable/accepted boundary, storage, restore và RPO/RTO | Trước P03 design/migration hoặc effect/data tương ứng; backup mã hóa NCR khác raw approval P07; mục tiêu chưa là SLA |
@@ -398,7 +409,7 @@ Không đổi thứ tự chỉ vì công nghệ mới hấp dẫn. Có thể đi
 | Q006 | OPEN_BY_CLAIM; D5 | CI required checks/source SHA, public visibility/projection/settings; hosted host/ngân sách/vùng dữ liệu/remote access/secret | Settings chỉ chặn claim hoặc thay settings phụ thuộc; hosted quyết định trước R5/deployment, không chặn code CI được phép |
 | Q007 | OPEN_BEFORE_DISPATCH; D6 | Owner thực hiện/review/integrator/commit, exact file scope, khóa route/binding và release runner, lane 52 deferred | Trước work order/merge; một integrator hoặc merge tuần tự trên file chung, không chiếm lane ngoài scope |
 
-Các dòng F1–F7 bên dưới ghi lại disposition của revision 1.1 tại thời điểm đó. D008 thay điều kiện tuyển người/đo usability của F6 cho pilot nội bộ; các dòng lịch sử không còn là gate đang áp dụng về người thử.
+Các dòng F1–F7 bên dưới ghi lại disposition của revision 1.1 tại thời điểm đó. D008 thay điều kiện tuyển người/đo usability của F6 cho pilot nội bộ; D009/D010 thay việc đánh giá video là ứng viên pilot trong D008 và Q001 trước đây. Các dòng lịch sử không còn là gate đang áp dụng về người thử hoặc lựa chọn pilot.
 
 ### Independent Review Response - Revision 1.1
 
@@ -449,6 +460,10 @@ Get-FileHash -Algorithm SHA256 on the roadmap provides the reviewer the final re
 Validation correction (N1): bốn checker chặn lần chạy đầu v1.1 là `governance/compat/check_external_knowledge_intake_routing.py`, `governance/compat/check_external_absorption_core.py`, `governance/compat/check_external_absorption_value_conversion.py` và `governance/compat/check_external_absorption_overlap_discipline.py`. Repair read-ahead: đã đọc applicability, SOURCE_MARKERS/INTAKE_TEXT_MARKERS và required-section checks của bốn checker khi chẩn đoán lỗi v1.1, trước khi sửa locator; đây là read-ahead cho repair, không phải trước lần authoring đầu. Legacy root trực tiếp kích hoạt ba absorption guard; intake guard còn khớp cụm từ mô tả phép quét dù câu đang phủ định việc quét. Vì sửa roadmap không thực hiện intake/absorption, baseline dùng registry entry và scopePaths[0] làm locator canonical, đồng thời mô tả đúng phép kiểm tra locator bằng tiếng Việt; không tạo processing ledger hoặc maturity claim giả. Không đổi checker hoặc giấu hoạt động nguồn; review mockup sâu vẫn là việc R0 theo scope tương lai. Bảng kết quả và trace v1.1 phía trên/dưới là snapshot trước sửa N1/N2 đã được R2 kiểm chứng; bổ sung bốn checker làm tập locator thay đổi, không sửa ngược số đo lịch sử 35.
 
 Future evidence reuse: dùng receipt hợp lệ và kiểm tra freshness theo owner; chỉ chạy lại khi có mâu thuẫn, expected information gain và cost reason. Không tái tạo review từng hàng để tăng số test. Live/production/governance claims tương lai phải có proof đúng loại, không mượn gate PASS của roadmap.
+
+### D009/D010 decision evidence
+
+Operator đã chọn ứng viên HTML đầu tiên sau Local review NCR-R0/W00 và làm rõ video mong muốn là user guide tổng quan về CVF trong coding/agent control ở tranche sau nếu phù hợp. Local đối chiếu review W00 với Work Transfer UI, receipt-helper caveat, doctrine định vị và các guide/entry point hiện có trước khi cập nhật D009/D010. Đây là cập nhật roadmap và phạm vi tài liệu; chưa chạy UI pilot, chưa xác nhận profile cấu hình, chưa sản xuất/phát hành guide hoặc video. Các số đo/gate của revision 1.1 và 2.0 ở trên là snapshot lịch sử, không được tái dùng làm kết quả của lần chỉnh lý này.
 
 ### Revision 2.0 incorporation evidence
 
@@ -565,4 +580,4 @@ DEFERRED_PRIVATE_ONLY: private planning artifact. No public-sync, public catalog
 
 ## Claim Boundary
 
-Roadmap tổng hợp hướng đã thống nhất và đề xuất trình tự thực hiện. Tài liệu không chứng minh capability đã tích hợp, agent đã bị enforcement, provider subscription đã được hỗ trợ, dữ liệu đã backup hoặc cloud đã sẵn sàng. Bước triển khai kế tiếp là NCR-R0 khi được giao phạm vi; không tự phát hành worker work order từ sự tồn tại của file này.
+Roadmap tổng hợp hướng đã thống nhất và đề xuất trình tự thực hiện. Tài liệu không chứng minh capability đã tích hợp, agent đã bị enforcement, provider subscription đã được hỗ trợ, dữ liệu đã backup hoặc cloud đã sẵn sàng. NCR-R0/W00 đã được Local nghiệm thu bounded và operator đã chọn ứng viên HTML; pilot effect, tài liệu hướng dẫn được phát hành và video vẫn cần scope/authority/evidence riêng. Không tự phát hành worker work order hoặc mở runtime từ sự tồn tại của file này.
