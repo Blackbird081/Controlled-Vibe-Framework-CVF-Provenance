@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_w01_html_ux_copy_dispatch_reconciled",
+  "currentMode": "cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_W01_HTML_UX_COPY; BATCH=CVF-NCR-R1-W01; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; MATERIAL_COMMIT=e54dd51e8eb60364a814a921a0d31bb7d259e487; PRE_DISPATCH_GATE_REQUIRED=true; EXPANSION_ALLOWED=false. Internal worker edits only ArtifactExportPanel.tsx, its focused test and exact worker return after operator relay and a fresh bound pre-dispatch PASS. No UI/browser, export/evaluate request, raw config, route/helper/dependency, provider/live, public or deployment effect. R0/W00-W02 and R1/W00 accepted bounded; operator retains pilot data/effect/expense; P06/P08, actual profile, guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_RELAYED_WEB_RESEARCH; LAST_ACCEPTED_BATCH=CVF-NCR-R1-W01; REVIEW_COMMIT=5e99eb20910e7e3282d7431e6ca3d96c5e87860b; EXPANSION_ALLOWED=false. Local may read and critically reconcile the operator-relayed Web research with private CVF evidence. No next work order or worker dispatch until the operator's new information is assessed. R1/W01 accepted bounded for bilingual HTML UX copy and mocked tests only; no browser walkthrough, route invocation, P06/P08 closure, real profile, provider/live, public or pilot effect. Operator retains pilot data/effect/expense and scope decisions; guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

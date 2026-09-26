@@ -2,11 +2,12 @@
   "stateOrder": 2949,
   "stateKey": "cvfNcrR1W01HtmlUxCopyDispatch20260926",
   "value": {
-    "status": "DISPATCH_READY",
+    "status": "ACCEPTED_BOUNDED_HTML_UX_COPY_IMPLEMENTATION",
     "materialCommit": "e54dd51e8eb60364a814a921a0d31bb7d259e487",
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
     "workerReturnPath": "docs/reviews/CVF_CVF_NCR_R1_W01_HTML_UX_COPY_WORKER_RETURN_2026-09-26.md",
-    "claimBoundary": "existing-component bilingual copy and focused mock test only; fresh bound pre-dispatch required before operator relay; no UI interaction, route call, configuration, provider/live, public or pilot authority"
+    "reviewCommit": "5e99eb20910e7e3282d7431e6ca3d96c5e87860b",
+    "claimBoundary": "four accepted bilingual copy lines in existing component and focused mocked tests only; no browser walkthrough, real profile, P06/P08 closure, route call, provider/live, public or pilot authority; next work order held for operator-relayed Web research"
   }
 }
