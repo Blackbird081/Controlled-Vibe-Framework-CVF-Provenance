@@ -8427,6 +8427,39 @@
       "nextScanRecommendation": "Re-scan when a later authorized AKOE-P4 or common Local closure tranche changes this proof surface or promotes it beyond a provider-free offline composition proof."
     },
     {
+      "id": "cvf-ncr-r0-w02-governance-engine-targeted-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF-NCR-R0/W02 targeted Governance Engine downstream source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/"
+      ],
+      "fileCount": null,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "CVF-NCR-R0-W02",
+      "scanDate": "2026-09-26",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_CVF_NCR_R0_W02_HTML_DOWNSTREAM_WORKER_RETURN_2026-09-26.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CVF_NCR_R0_W02_HTML_DOWNSTREAM_2026-09-26.md",
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "EVALUATE_ENDPOINT_AND_DOCUMENTED_PORT",
+        "ORCHESTRATOR_REGISTRY_AND_LEDGER_EFFECTS",
+        "DEFAULT_LEDGER_FILE_WRITE_BEHAVIOR"
+      ],
+      "priorAbsorption": "W02 read named server, orchestrator, registry and ledger source to map a conditional downstream effect. This was a targeted source trace, not a complete extension scan or runtime verification.",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Revisit only if the pilot includes the Governance Engine or its endpoint, file-retention, or error-log behavior changes; verify the actual deployment profile separately."
+    },
+    {
       "id": "dsh-wra-r1-whole-repository-absorption",
       "corpusType": "EXTERNAL_SOURCE",
       "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",
