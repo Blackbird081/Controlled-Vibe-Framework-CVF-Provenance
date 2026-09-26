@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R0_W00_PILOT_SELECTION_2026-09-26.md",
-    "baselineSha256": "0ca2a7d763bf7f2950aa45420bd7cb550f2e83bbeea89028fa8cc3d2490c9626",
+    "baselineSha256": "0592cfdcd70068895175e5b3dfb51a8741f1aa041f90416710a9ba79831fb936",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W00_PILOT_SELECTION_2026-09-26.md",
-    "workOrderSha256": "e8a8f24020fc14e49af219bf0a15ba4b683cbf0e5c8770d2cf15169129e464f3"
+    "workOrderSha256": "d76b59f6d69e867b987d1fd514654da0f375b18d30903604d1ae2d8df173c267"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [

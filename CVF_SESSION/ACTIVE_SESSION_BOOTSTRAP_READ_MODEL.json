@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_r0_w00_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; ROADMAP=docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; NEXT_ACTION_CLASS=EXECUTE_NCR_R0_W00_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R0-W00; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W00_PILOT_SELECTION_2026-09-26.md; CURRENT_TRANCHE_ACTION=NCR_R0_W00_DISPATCH_AT_10a82be0f; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY_PENDING_OPERATOR_RELAY; NEXT_STEP=OPERATOR_RELAY_EXACT_COMMITTED_PACKET_TO_INTERNAL_WORKER; EXPANSION_ALLOWED=false. Operator authorized bounded R0/W00 work-order transfer to a separate internal worker. Worker performs read-only source/profile mapping and one uncommitted return; Local remains orchestrator/reviewer. No runtime or owner mutation, dependency install, provider/live, credentials, settings, deployment, public sync, or production action. The 52-deferred lane remains separate; AKOE-P1 through P4 and U1 stay closed bounded; U1 remains SOURCE_RECONCILED_DEFER_WITH_TRIGGER. Latest closed LHW wave remains LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; ROADMAP=docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; NEXT_ACTION_CLASS=EXECUTE_NCR_R0_W00_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R0-W00; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W00_PILOT_SELECTION_2026-09-26.md; CURRENT_TRANCHE_ACTION=NCR_R0_W00_DISPATCH_AT_b991f6342; CURRENT_TRANCHE_DISPOSITION=DISPATCH_READY_PENDING_OPERATOR_RELAY; NEXT_STEP=OPERATOR_RELAY_EXACT_COMMITTED_PACKET_TO_INTERNAL_WORKER; EXPANSION_ALLOWED=false. Operator authorized bounded R0/W00 work-order transfer to a separate internal worker. Worker performs read-only source/profile mapping and one uncommitted return; Local remains orchestrator/reviewer. No runtime or owner mutation, dependency install, provider/live, credentials, settings, deployment, public sync, or production action. The 52-deferred lane remains separate; AKOE-P1 through P4 and U1 stay closed bounded; U1 remains SOURCE_RECONCILED_DEFER_WITH_TRIGGER. Latest closed LHW wave remains LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R0_W00_PILOT_SELECTION_2026-09-26.md",
-    "baselineSha256": "0ca2a7d763bf7f2950aa45420bd7cb550f2e83bbeea89028fa8cc3d2490c9626",
+    "baselineSha256": "0592cfdcd70068895175e5b3dfb51a8741f1aa041f90416710a9ba79831fb936",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W00_PILOT_SELECTION_2026-09-26.md",
-    "workOrderSha256": "e8a8f24020fc14e49af219bf0a15ba4b683cbf0e5c8770d2cf15169129e464f3"
+    "workOrderSha256": "d76b59f6d69e867b987d1fd514654da0f375b18d30903604d1ae2d8df173c267"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
