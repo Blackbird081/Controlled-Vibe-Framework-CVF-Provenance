@@ -4,9 +4,30 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
-Rework authorization: first consolidated Local repair under `docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_LOCAL_REVIEW_FINDINGS_2026-09-27.md` (commit `d5f5d4fc2b29ec45e197a541039f4827a854fa51`). Edit only the same two bodies and the same return; do not create a fourth worker path.
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this R1/S01 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_COMPLETION_2026-09-27.md` | Local reviewer repair and bounded decision | PASS |
+| Roadmap state | NCR roadmap D013 | R1/S01 bounded outcome and README gap | PASS |
+| Registry JSON | existing package records | no source mutation; unrelated GC-051 registry closure not evaluated | BLOCKED with reason: outside this document-only scope |
+| Registry Markdown | existing front doors | no registry mutation; unrelated GC-051 registry closure not evaluated | BLOCKED with reason: outside this document-only scope |
+| External evidence digest | original worker return | raw SHA-256 `04e392c77a5d9b0f3288cf2a5fb46e79bf9a8ee7cc91a7fd65bb80d813fb0f5c` | PASS |
+| System loop interlock | existing owners | N/A with reason: document-only body correction | N/A with reason: unchanged |
+| Session continuity | active handoff and state | dedicated post-material sync | PASS after continuity commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Package state | two existing ACTIVE package records | source, registry and truth surfaces report ACTIVE | PASS |
+| R1/S01 live receipt | no new provider proof for this document correction | no new provider receipt claimed | PASS |
+| ASCP-P1-P3 exemplar identity | `cvf-engineering-spec-driven-development` only | cited completion reports that skill ID for its live proof | PASS |
+
+Round 1 rework authorization (superseded before relay): the consolidated finding set is `docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_LOCAL_REVIEW_FINDINGS_2026-09-27.md` (commit `d5f5d4fc2b29ec45e197a541039f4827a854fa51`). The operator clarified the reviewer-local repair default. Local corrected the same two bodies and records return-claim corrections in `docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_COMPLETION_2026-09-27.md`; the original worker return remains attributable to the worker. No Round 1 worker dispatch occurred.
 
 Batch ID: CVF-NCR-R1-S01
 
@@ -52,12 +73,12 @@ Remove stale current-state lifecycle claims from the two engineering `SKILL.md` 
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-R1-S01","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["docs/baselines/CVF_GC018_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md","docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md","docs/reference/agent_system_skills/packages/cvf-engineering-test-driven-development/SKILL.md","docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/SKILL.md","docs/reviews/","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json","CVF_SESSION/ACTIVE_SESSION_STATE.json","CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json","CVF_SESSION/state/entries/nextAllowedMove.json","CVF_SESSION_MEMORY.md"],"claims":["human-readable lifecycle prose correction only"],"requiredProof":["exact three-path manifest","before-after body SHA-256","ACTIVE sibling comparison","package gates","worker-return full gate"],"operatorCheckpoints":["host exposure and provider/live/data/effect/expense"],"forbiddenEffects":["worker commit","registry/source/truth/index mutation","host install or load","provider/eval execution","public action"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":"docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_COMPLETION_2026-09-27.md","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-R1-S01","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["docs/baselines/CVF_GC018_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md","docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md","docs/reference/agent_system_skills/packages/cvf-engineering-test-driven-development/SKILL.md","docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/SKILL.md","docs/reviews/","docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json","CVF_SESSION/ACTIVE_SESSION_STATE.json","CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json","CVF_SESSION/state/entries/nextAllowedMove.json","CVF_SESSION_MEMORY.md"],"claims":["human-readable lifecycle prose correction only"],"requiredProof":["exact three-path manifest","before-after body SHA-256","ACTIVE sibling comparison","package gates","worker-return full gate"],"operatorCheckpoints":["host exposure and provider/live/data/effect/expense"],"forbiddenEffects":["worker commit","registry/source/truth/index mutation","host install or load","provider/eval execution","public action"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":"docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_COMPLETION_2026-09-27.md","completenessClaimChanged":false}}
 ```
 
 ## Authority Chain
 
-The session paths in `pathFamilies` cover Local commit and handoff synchronization only. They do not extend the worker edit set, which remains the two named bodies and one return.
+The roadmap and session paths in `pathFamilies` cover Local closure and handoff synchronization only. They do not extend the worker edit set, which remains the two named bodies and one return.
 
 The operator authorized tranche progression and manual relay of the finished work order. Roadmap D013, S01 completion at `09b62aa3b57fd8dfda93140f30a845b7177be24c`, and paired GC-018 baseline authorize only these two body edits. Local owns technical review; operator retains data, effect and expense. Prior Web research is advisory; the shared-workspace worker is INTERNAL_AGENT.
 
@@ -186,7 +207,7 @@ Local uses `EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION`: inspect the
 - Exact three-path worker set, empty staging and no worker commit.
 - Source/registry/truth alignment and before/after hashes recorded.
 - Focused checks, full worker-return gate and whitespace check reported honestly.
-- Local completion, material commit, continuity and committed-range pre-closure remain reviewer-owned.
+- Local completion, material commit, continuity and committed-range closure are reviewer-owned and recorded by the completion artifact.
 
 ## Return-To-Orchestrator Conditions
 
@@ -319,7 +340,7 @@ Returned defects: NONE_RETURNED
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/check_package_skill_productionization_pipeline.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` |
-| literalTokensReviewed | first-section envelope, DISPATCH_READY, no-commit, source table columns, gate-to-role scalars/columns, worker-return full gate |
+| literalTokensReviewed | first-section envelope, initial dispatch status, no-commit, source table columns, gate-to-role scalars/columns, worker-return full gate |
 | gateRunPurpose | confirmation of authored packet against source-read requirements, not first discovery |
 | claimBoundary | static gate shape does not prove the worker edit or skill execution |
 

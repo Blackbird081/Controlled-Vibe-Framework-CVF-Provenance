@@ -4,9 +4,22 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
-Rework authorization: first consolidated Local repair of the same three worker-owned paths. The finding set is `docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_LOCAL_REVIEW_FINDINGS_2026-09-27.md`, committed at `d5f5d4fc2b29ec45e197a541039f4827a854fa51` with raw SHA-256 `eb8ae6005ca0b8069c4dc71d57aacbe6aff278a2db41556889f0cad96b4bb394`. Keep the valid ACTIVE/status, bounded adapter and historical-provenance edits; correct R1S01-F1 through F4 in the existing two bodies and existing return. The READMEs are a disclosed dependent issue, not a worker write path.
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired R1/S01 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_COMPLETION_2026-09-27.md` | Local reviewer repair and bounded decision | PASS |
+| Roadmap state | NCR roadmap D013 | R1/S01 bounded outcome and README gap | PASS |
+| Registry JSON | existing package records | no source mutation; unrelated GC-051 registry closure not evaluated | BLOCKED with reason: outside this document-only scope |
+| Registry Markdown | existing front doors | no registry mutation; unrelated GC-051 registry closure not evaluated | BLOCKED with reason: outside this document-only scope |
+| External evidence digest | original worker return | raw SHA-256 `04e392c77a5d9b0f3288cf2a5fb46e79bf9a8ee7cc91a7fd65bb80d813fb0f5c` | PASS |
+| System loop interlock | existing owners | N/A with reason: document-only body correction | N/A with reason: unchanged |
+| Session continuity | active handoff and state | dedicated post-material sync | PASS after continuity commit |
+
+Round 1 rework authorization (superseded before relay): the finding set is `docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_LOCAL_REVIEW_FINDINGS_2026-09-27.md`, committed at `d5f5d4fc2b29ec45e197a541039f4827a854fa51` with raw SHA-256 `eb8ae6005ca0b8069c4dc71d57aacbe6aff278a2db41556889f0cad96b4bb394`. The operator then clarified the CVF reviewer-local repair default. Local corrected the same two bodies, preserved the worker return as original evidence, and recorded F1-F4 dispositions in the reviewer-owned completion. The READMEs remain a disclosed dependent issue outside this write scope.
 
 Batch ID: CVF-NCR-R1-S01
 

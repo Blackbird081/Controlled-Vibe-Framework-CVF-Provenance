@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: APPROVED
+Status: ACTIVE
 
 docType: assf_package
 
@@ -19,9 +19,9 @@ Guide failing-test-first development discipline: write a failing test before wri
 | Field | Value |
 |---|---|
 | Package root | `docs/reference/agent_system_skills/packages/cvf-engineering-test-driven-development/` |
-| Owner surface | ASSF package proposal evidence under AGSK-R3 and bounded AGSK-R7 lifecycle promotion evidence |
-| Applies to | APPROVED internal package body read through the AGSK-R4 runtime package loader after explicit request |
-| Does not apply to | `ACTIVE`, automatic resolver invocation, CLI/MCP adapter, provider/live proof, public-sync, test execution authority, commit authority, or production readiness |
+| Owner surface | ASSF proposal evidence under AGSK-R3, bounded AGSK-R7 promotion evidence, and current ASCP-P1-P3 ACTIVE production package contract |
+| Applies to | ACTIVE receipt-backed production package execution through CVF adapters after explicit request |
+| Does not apply to | automatic invocation, CLI/MCP adapter beyond the implemented receipt-backed wrapper, provider/live proof, public-sync, test execution authority, commit authority, or production readiness |
 
 ## Invocation Boundary
 
@@ -32,52 +32,52 @@ Guide failing-test-first development discipline: write a failing test before wri
 | Allowed phases | INTAKE, DISPATCH_AUTHORING, WORKER_EXECUTION, REVIEWER_CLOSURE |
 | Allowed surfaces | docs/reference/agent_system_skills/packages/cvf-engineering-test-driven-development/, registry entries, review artifacts |
 | Risk ceiling | R1 |
-| Authority ceiling | metadata-only advisory; loading never authorizes automated test runner execution, CI integration, or external actions |
+| Authority ceiling | bounded advisory package guidance through the receipt-backed loader; loading never authorizes automated test runner execution, CI integration, or external actions |
 
 ## Inputs And Outputs
 
 | Field | Value |
 |---|---|
 | Inputs | operator request or governed task context; source mirror file `.private_reference/source_mirrors/addyosmani__agent-skills/skills/test-driven-development/SKILL.md`; active CVF authority and allowed-scope boundaries |
-| Outputs | proposed package-body guidance (awaiting reviewer acceptance); failing-test-first discipline, Prove-It Pattern, and test structure notes; recommended CVF owner-surface routing |
-| Acceptance evidence | AGSK-R3 worker return with package-root proposal evidence; reviewer-fast gate PASS; anatomy checker PASS |
+| Outputs | bounded failing-test-first guidance, Prove-It Pattern, and test structure notes after explicit authorized package use; recommended CVF owner-surface routing |
+| Acceptance evidence | AGSK-R3 proposal and AGSK-R7 promotion reviews; ASCP-P1-P3 six-package ACTIVE source admission, focused executor and CLI/MCP tests, and one live exemplar for a different skill ID |
 
 ## Risk And Authority
 
 | Field | Value |
 |---|---|
 | Risk class | R1 |
-| Authority ceiling | metadata-only advisory selection |
+| Authority ceiling | bounded advisory package guidance only; package use does not grant test-runner, CI, commit, provider, public, or external-action authority |
 | Side effects | none from metadata reading; automated test execution, CI wiring, or commit requires separate authorization |
-| Rollback | delete this package root and revert registry entry to CANDIDATE; regenerate generated index |
-| Safe stop | stop and open a fresh ASSF runtime tranche if automated test execution, CI integration, or authority above the active work order is needed |
-| Policy bindings | none until APPROVED or ACTIVE lifecycle state with separate reviewer authorization |
+| Rollback | revert only a later authorized change under its owning work order and review; this guidance does not authorize deleting or demoting the existing ACTIVE package |
+| Safe stop | stop if ACTIVE source checks, required receipts, or governed work-order authority are missing; automated test execution, CI integration, or broader action authority requires separate authorization |
+| Policy bindings | AGSK-R7 and ASCP-P1-P3 establish the bounded ACTIVE production package path; the active governed work order, activation policy, required receipts, and production runtime standard remain binding |
 
 ## Progressive Disclosure
 
 | Stage | Accessible fields |
 |---|---|
 | Metadata-only (CANDIDATE/PROPOSED) | skillId, name, status, purpose, triggerPatterns, riskCeiling, sourceArtifacts |
-| Post-reviewer-acceptance (APPROVED) | full failing-test-first protocol and Prove-It Pattern; requires reviewer decision gate |
-| Runtime (ACTIVE) | full instructions with active resolver; requires UAT evidence and separate ACTIVE tranche |
+| Post-reviewer-acceptance (historical APPROVED, AGSK-R6/R7) | full failing-test-first protocol and Prove-It Pattern; reviewer decision gate already satisfied |
+| Runtime (ACTIVE, current) | full instructions readable through the receipt-backed production package loader under a governed work order; ASCP-P1-P3 established six-package ACTIVE admission and focused adapter tests, with one live exemplar for `cvf-engineering-spec-driven-development`, not a TDD-specific live run |
 
 ## Evidence And UAT
 
 | Field | Value |
 |---|---|
-| Required evidence | AGSK-R3 worker return with source reads and 24-candidate coverage table; anatomy checker PASS |
-| UAT binding | PASSED for explicit internal package-loader body read only |
+| Required evidence | AGSK-R3 worker return with source reads and 24-candidate coverage table; anatomy checker PASS; ASCP-P1-P3 six-package ACTIVE admission and focused production executor/CLI-MCP tests; its live E2E exemplar used `cvf-engineering-spec-driven-development`, not this package |
+| UAT binding | PASSED for receipt-backed production package execution through CVF adapters |
 | Validation hooks | ASSF anatomy checker; certified metadata admission checker; generated-index drift checker; reviewer-fast gate |
-| Review evidence | docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md; docs/reviews/CVF_AGSK_R7_RUNTIME_PACKAGE_BATCH_PROMOTION_COMPLETION_2026-06-30.md |
+| Review evidence | docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md; docs/reviews/CVF_AGSK_R7_RUNTIME_PACKAGE_BATCH_PROMOTION_COMPLETION_2026-06-30.md; docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md |
 
 ## External Disposition
 
 | Field | Value |
 |---|---|
-| External CLI/MCP disposition | DEFERRED_WITH_REASON: no external adapter authorized in AGSK-R3 |
-| Adapter contract | N/A with reason: external adapter not authored in AGSK-R3 |
-| Adapter evidence | N/A with reason: no adapter implemented |
-| External mutation boundary | no external mutation, CLI/MCP export, provider call, public-sync, or package activation until separate ASSF adapter or runtime work order accepted |
+| External CLI/MCP disposition | IMPLEMENTED: bounded CLI/MCP envelope delegates to the CVF production package executor (ASCP-P1-P3) |
+| Adapter contract | `docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md` |
+| Adapter evidence | `docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md` |
+| External mutation boundary | external CLI/MCP wrapper may return receipt-backed package execution envelopes only; no external mutation, daemon behavior, public API, provider routing, public-sync, commit, or merge authority is permitted |
 
 ## Agent Operation Trace Block
 
@@ -104,6 +104,13 @@ Guide failing-test-first development discipline: write a failing test before wri
 
 ## Epistemic Process Block
 
+**Historical record (AGSK-R7, 2026-06-30).** The sub-sections below record
+the epistemic reasoning at the AGSK-R7 promotion step, when this package was
+APPROVED but not yet ACTIVE. ASCP-P1-P3 (2026-06-30) subsequently promoted
+this package to ACTIVE with a receipt-backed production executor and CLI/MCP
+adapter (see Claim Boundary); this historical block is preserved for
+provenance and is not a current-state claim.
+
 ### Expected Result / Prediction
 
 An APPROVED ASSF package root should preserve the upstream skill's useful
@@ -114,24 +121,32 @@ boundaries explicit.
 
 The package cites the pinned upstream source mirror, AGSK-R2 source-mirror
 backfill review, AGSK-R3 package-root worker return, AGSK-R6 pilot pattern, and
-AGSK-R7 batch promotion review. The package is APPROVED for explicit internal
-package-loader body reads only and does not claim ACTIVE resolver behavior,
-provider behavior, public export, or external adapter support.
+AGSK-R7 batch promotion review. At the AGSK-R7 step, the package was APPROVED
+for explicit internal package-loader body reads only and did not yet claim
+ACTIVE resolver behavior, provider behavior, public export, or external
+adapter support.
 
 ### Contradiction Or Gap Disposition
 
-AGSK-R7 resolves the prior reviewer-acceptance, UAT, certification, and
-internal-disposition gap for this batch package only. ACTIVE resolver behavior,
-CLI/MCP adapter support, provider proof, public export, and production
-readiness remain blockers for later promotion.
+AGSK-R7 resolved the prior reviewer-acceptance, UAT, certification, and
+internal-disposition gap for this batch package. At that step, ACTIVE
+resolver behavior, CLI/MCP adapter support, provider proof, public export,
+and production readiness remained blockers for later promotion; ASCP-P1-P3
+subsequently established ACTIVE source admission, the bounded production
+executor, CLI/MCP wrapper, and receipt path (see Claim Boundary and External
+Disposition). Automatic package selection was not demonstrated; public export and full
+production readiness beyond the bounded ASCP-P1-P3 scope remain separate,
+still-unopened blockers.
 
 ### Claim Update
 
-The package claim is narrowed to CVF-owned APPROVED package-loader body-read
-evidence only. It is not ACTIVE activation evidence.
+At the AGSK-R7 step, the package claim was narrowed to CVF-owned APPROVED
+package-loader body-read evidence only, not ACTIVE activation evidence.
+ASCP-P1-P3 subsequently updated this claim to ACTIVE receipt-backed
+production package execution; see Claim Boundary for the current claim.
 ## Claim Boundary
 
-This package root is an APPROVED CVF adaptation sourced from the upstream `test-driven-development` skill at pinned commit `aba7c4e9695c363e65cb59effe926c7f1d1abe3d`. It may be opened by the AGSK-R4 runtime package loader after AGSK-R7 lifecycle gates pass. It does not run test suites automatically, wire CI integrations, implement a CLI/MCP adapter, or claim automatic invocation.
+This package root is an ACTIVE CVF adaptation sourced from the upstream `test-driven-development` skill at pinned commit `aba7c4e9695c363e65cb59effe926c7f1d1abe3d`. It may be opened only through CVF receipt-backed production package adapters under active governed work-order authority. It does not run test suites automatically, wire CI integrations, trigger merges, mutate provider routing, publish public artifacts, or claim automatic invocation.
 
 ## Public Export Disposition
 
