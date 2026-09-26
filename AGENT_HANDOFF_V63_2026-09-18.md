@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `667c80de678467aa4cd37a5f71b1e0497adb19be`. Material dispatch commit for batch `CVF-NCR-R0-W01`; anchor for its dedicated continuity synchronization commit.
+Current HEAD recorded for this handoff: `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`. Material W01 acceptance commit and parent anchor for this session sync.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -11,17 +11,16 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 Carry CVF-NCR v2.0 as the selected planning successor while preserving closed AKOE and terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are routed; AKOE-P4/common reconciliation and optional U1 source intake remain closed bounded.
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer and session steward. Phase: NCR-R0/W01 bounded source/profile packet dispatch ready; HTML pilot candidate selected, no runtime work. Decision owner: Local for source disposition/worker scope, operator for effect/budget.
+Role: Local orchestrator/reviewer and session steward. Phase: NCR-R0/W01 bounded source/profile packet accepted; HTML pilot candidate selected, actual pilot scope pending. Decision owner: Local for source disposition/next scope, operator for data/effect/budget.
 
-External research is advisory and closed unless Local identifies a named source question. Local owns private proof, implementation review and final
+External Web research on Claude plugin is advisory and separate from W01. Local owns private proof, implementation review and final
 technical disposition; the operator remains roadmap/scope decision owner.
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r0_w01_html_profile_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=internal worker executes bounded W01 read-only HTML profile evidence; parked checkpoint=runtime/owner mutation, U1 import/use, credentials/provider/live, settings, deployment, public sync and production.
+Startup acknowledged: current mode=`cvf_ncr_r0_w01_profile_accepted_scope_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local scopes the next bounded order from accepted W01 evidence; parked checkpoint=UI/route/evaluate calls, runtime/owner mutation, dependency, credentials/provider/live, settings, deployment, public sync and production.
 ## Current Mode
-`cvf_ncr_r0_w01_html_profile_dispatch_ready`.
-The selected planning successor is CVF-NCR v2.0 at `1673ee629`, refined by D008 at `8b0320f80`; NCR-R0/W00
-GC-018 and work order were committed at `b991f6342`; the documentation-only worker return is Local-accepted bounded at `c7b7a2c72` for the operator-selected HTML pilot candidate. AKOE is closed and the latest
+`cvf_ncr_r0_w01_profile_accepted_scope_pending`.
+The selected planning successor is CVF-NCR v2.0 at `1673ee629`, refined by D008 at `8b0320f80`; NCR-R0/W00 GC-018 and work order were committed at `b991f6342`; the documentation-only worker return is Local-accepted bounded at `c7b7a2c72` for the operator-selected HTML pilot candidate. AKOE is closed and the latest
 learning-history wave remains `LHW24`.
 
 ## Active Boundary
@@ -154,8 +153,9 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 - AKOE-P3 is Local-accepted and `CLOSED_PASS_BOUNDED` at material commit `c79c82e2b`. The exact six-path worker proof passed focused Vitest 22/22, TypeScript compile, stable two-run receipt generation, registry drift, and the final worker gate with reviewer-fast 69/69. A distinct Local cap-one probe rejected the wrong assembly verifier and preserved incumbent/raw/persistent evidence on proposal rejection. Material pre-implementation passed 84/85; the only failure was the expected dirty-roadmap next-move transition, so the material commit used a recorded hook bypass and this continuity commit resolves that frontier. P4 was not auto-opened.
 - AKOE-P4 and common Local reconciliation are `CLOSED_PASS_BOUNDED` at material commit `a1541eb8b`. Reviewer correction removed a duplicated P3 closure-evidence row, leaving 19 unique candidates across exactly six origin families: 5 `ADAPT`, 8 `CONFIRMED_EXISTING`, 3 `DEFER_WITH_TRIGGER`, 2 `REJECT_DIRECT_IMPORT`, and 1 `BLOCKED_SOURCE_NOT_FOUND`. The distinct Local probe passed; content, machine-closure, dispatch-quality, continuation-chain, and independent-probe gates passed. Material pre-commit passed 88/90 with only the two expected pre-continuity frontier failures, resolved by this sync.
 - Operator-authorized ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at material commit `d9132412a`. The exact Web return is retained byte-identically at SHA-256 `c34381ff0d0e88627a984faa79ac399b31cfdaae2f1355f02bfd8c756cb5b27b`; Local verified the `unreallabsai/unreal-agent` pin `1b9f778453f411c029b39b85102aaefb95e7e48d`, tree `a2324fb6df4010b07041b2a2f161fd25b971bf67`, two MIT license boundaries, and all 42 advisory claim IDs. Disposition is `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`; returned line anchors were repaired to symbol/hash authority. Reviewer-fast passed 69/69 and material pre-commit passed 90/90. No import, upstream execution, runtime/provider use, dependency, public sync, or automatic successor was opened.
+- CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_NCR_R0_W01_DOC_ONLY; ACTIVE_BATCH=CVF-NCR-R0-W01; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W01_HTML_PROFILE_2026-09-26.md; MATERIAL_DISPATCH_COMMIT=667c80de678467aa4cd37a5f71b1e0497adb19be; NEXT_STEP=INTERNAL_WORKER_RETURNS_SECRET_SAFE_HTML_PROFILE_EVIDENCE; EXPANSION_ALLOWED=false. Operator selected Work Transfer HTML as first pilot candidate. Claude as INTERNAL_AGENT may perform only the committed W01 read-only source/profile analysis and write one pending return; Local owns review and commit. Actual UI interaction, route/receipt call, raw config or secret values, network/egress, provider/live, dependency, runtime/owner changes, public/deployment and production remain parked. P06/P08 depth and actual NEXTAUTH_URL-derived destination, data retention, latency and cost are open; mark unobserved values UNKNOWN. Overall CVF short user guide and later video are separate follow-on documentation work. The 52-deferred lane stays separate; AKOE-P1 through P4 and U1 remain closed bounded; U1 stays SOURCE_RECONCILED_DEFER_WITH_TRIGGER. Latest closed LHW wave remains LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SCOPE_POST_W01_DOC_ONLY; CLOSED_BATCH=CVF-NCR-R0-W01; ACCEPTED_RETURN=docs/reviews/CVF_CVF_NCR_R0_W01_HTML_PROFILE_WORKER_RETURN_2026-09-26.md; NEXT_STEP=LOCAL_SCOPES_NEXT_BOUNDED_ORDER_FROM_Q001; EXPANSION_ALLOWED=false. W01 source/profile packet is Local-accepted bounded at d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6. Actual UI interaction, route/receipt call and runtime profile are not proven. NEXTAUTH_URL destination, retention, latency/cost and P06/P08 depth remain open. Local may prepare the next scoped order; operator decides data, effect and expense before a pilot action. Overall CVF guide and later video remain a separate documentation tranche; Web plugin research is advisory. No runtime/provider/live/dependency/settings/public/deployment/production authority. The 52-deferred lane stays separate; AKOE-P1 through P4 and U1 stay closed bounded; U1 remains SOURCE_RECONCILED_DEFER_WITH_TRIGGER; latest closed LHW wave is LHW24.
 
 ## Parked Checkpoints
 
