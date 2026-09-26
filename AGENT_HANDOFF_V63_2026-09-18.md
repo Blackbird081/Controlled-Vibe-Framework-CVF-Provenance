@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `e54dd51e8eb60364a814a921a0d31bb7d259e487`. Corrected CVF-NCR-R1-W01 paired material and parent anchor for final continuity.
+Current HEAD recorded for this handoff: `b976ba40978fd43ecf620cfa9ca89fae30bc0a5a`. CVF-NCR-R1-W01 handoff correction parent anchor; paired material is `e54dd51e8eb60364a814a921a0d31bb7d259e487`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -188,10 +188,10 @@ Protected paths:
 - `CVF_SESSION/state/entries/acelPostG7ThreeRepoAbsorption20260925.json`
 - `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/cvfNcrR1W01HtmlUxCopyDispatch20260926.json`
+- `CVF_SESSION/state/entries/cvfNcrR1W00HtmlUxDispatch20260926.json`; `CVF_SESSION/state/entries/cvfNcrR1W01HtmlUxCopyDispatch20260926.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: operator assigned Local the orchestrator/reviewer role, selected the HTML pilot candidate, clarified the overall guide/video follow-on, and asked to continue; this sync binds the bounded W01 packet without authorizing UI/runtime/effect. Rollback boundary: revert only this continuity projection; preserve material review commit `c7b7a2c721a3388a738eb2b2633fc4414cf1dff3`, prior AKOE closure and the separate 52-deferred lane. This sync grants no pilot execution, R1 dispatch, owner/runtime, provider/live/public, deployment, or production authority.
+Operator authorization: operator assigned Local the orchestrator/reviewer role and asked to continue to the next work order for manual relay. This handoff binds R1/W00 bounded review at `97532f7038f7bcc0d3768550b06a3695b72b8809` and the corrected R1/W01 dispatch packet at `e54dd51e8eb60364a814a921a0d31bb7d259e487`. Rollback boundary: revert only this continuity projection; preserve accepted review, prior AKOE closure and the separate 52-deferred lane. Operator relay may authorize the exact UI copy/test edit; pilot data/effect/expense, UI/route invocation, provider/live/public, deployment and production remain parked.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
