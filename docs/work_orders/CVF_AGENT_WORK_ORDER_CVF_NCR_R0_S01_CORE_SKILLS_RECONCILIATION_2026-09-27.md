@@ -6,6 +6,8 @@ docType: work_order
 
 Status: REWORK_DISPATCH_READY
 
+Paired rework baseline: `docs/baselines/CVF_GC018_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_2026-09-27.md`. This work order and baseline must share the current material release commit.
+
 providerExecutionAuthority: FORBIDDEN
 
 Batch ID: CVF-NCR-R0-S01

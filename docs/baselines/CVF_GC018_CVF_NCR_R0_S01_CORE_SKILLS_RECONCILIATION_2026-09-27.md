@@ -6,6 +6,8 @@ docType: baseline
 
 Status: AUTHORIZED_BOUNDED_SOURCE_RECONCILIATION
 
+Rework authorization: first consolidated Local rework only. The initial worker return is `REWORK_REQUIRED` under `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_LOCAL_REVIEW_FINDINGS_2026-09-27.md`. The same worker-owned return path is repaired in place after a new bound pre-implementation PASS. All original forbidden effects remain forbidden.
+
 Batch ID: CVF-NCR-R0-S01
 
 Dispatch base head: `db5ae4c43c0be75e86d8c7d8bfa76eedb49a47ed`
@@ -38,6 +40,18 @@ The exact six obligations and bounded read set are in `docs/work_orders/CVF_AGEN
 ## Verification / Evidence
 
 Accept only a source-backed proposal with precise next manifest and unresolved dependencies. One return, correct locators/hashes and full worker-return gate are required; reviewer acceptance and committed closure belong to Local.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: bind this rework baseline and the paired work order to active current-authority hashes. No checker or runtime owner changes.
+
+Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+
+Operator authorization: Local owns the technical review and dispatcher repair; operator relays the packet. Rollback boundary: restore the prior baseline/work-order authority pair and corresponding hashes only. Package/host/provider/live/public effects remain outside scope.
 
 ## Scaffold Provenance Block
 
@@ -137,4 +151,3 @@ One-return source reconciliation and design authority only. No implementation, l
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY: provenance dispatch only.
-
