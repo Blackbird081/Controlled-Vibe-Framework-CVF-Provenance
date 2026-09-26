@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: REWORK_DISPATCH_READY
 
 providerExecutionAuthority: FORBIDDEN
 
@@ -27,7 +27,8 @@ Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_S01_CORE_SKI
 Commit mode: `WORKER_MUST_NOT_COMMIT`.
 executionBaseHead: capture committed HEAD and clean lane before editing.
 Current-time notes: D013 closes the Web design loop; Local owns private verification. R1/W01 stays accepted bounded.
-Do-not-misread notes: write one return only; do not patch packages, execute skills, inspect secrets, install or expose host skills, run provider/eval, or modify registry/truth/checkers.
+Review-round note: this is the consolidated first rework of the S01 return. Read `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_LOCAL_REVIEW_FINDINGS_2026-09-27.md`; repair S01-R1 through S01-R6 together. Earlier return content is reusable evidence, not accepted closure. Stop on any failed gate.
+Do-not-misread notes: repair the existing untracked return in place; it is the one worker-owned path, so its pre-existing presence is expected in this rework. Do not patch packages, execute skills, inspect secrets, install or expose host skills, run provider/eval, or modify registry/truth/checkers.
 Required first actions: read startup surfaces, paired baseline, this packet, guard orientation and output checker sources; pass bound pre-implementation.
 Return contract: `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_WORKER_RETURN_2026-09-27.md`, `COMPLETE_PENDING_REVIEW` or named `BLOCKED_WITH_REASON`; no staging or commit. Local reviews; operator relays the work order.
 
@@ -57,6 +58,27 @@ Resolve the two private prerequisites in roadmap D013 and provide a concrete con
 
 Operator transferred the converged core-skills research to Local on 2026-09-27 and previously instructed Local to stop at each work order for manual relay. Roadmap D013 in `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` owns the selected direction. Paired authorization: `docs/baselines/CVF_GC018_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_2026-09-27.md`. Active front doors: `CVF_SESSION_MEMORY.md` and `AGENT_HANDOFF_V63_2026-09-18.md`. Local owns technical disposition; operator retains effect/data/expense. Web input is advisory; this shared-workspace worker is INTERNAL_AGENT.
 
+## External Knowledge Intake Routing
+
+External knowledge intake routing: REQUIRED
+
+| Field | Value |
+|---|---|
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | internal governed input (no external intake) |
+| Internal source | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Chain map route | prior external research was already absorbed into roadmap D013; this rework consumes the governed roadmap and Local private-source findings |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; Local verifies actual private CVF owner sources |
+| Owner surface | roadmap D013, S01 baseline, Local review findings and current work order |
+| Disposition | NO_NEW_EXTERNAL_INTAKE; one internal worker rework only |
+| Claim boundary | no new Web research, external repo absorption or source-completeness claim |
+
+## External/Local Coordination Binding
+
+```json
+{"contractId":"cvf.external-local-absorption-coordination@1","invariants":{"externalRole":"ADVISORY_RESEARCH_AND_PATTERN_MAPPING","externalContext":"PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ","localRole":"SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION","finalDecisionOwner":"LOCAL","localCoverageBasis":"SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST","externalEvidenceAuthority":"INPUT_NOT_PRIVATE_CVF_PROOF"},"contractSha256":"92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c","parentArtifact":null}
+```
+
 ## Dependency Release Evidence
 
 | Dependency | Current evidence | Release rule | Disposition |
@@ -83,14 +105,16 @@ Allowed write: only `docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_
 
 Allowed reads: the three named skill packages (TDD, code-review-quality, governance-skill-discovery-invocation), their exact registry entries/source/truth records, directly cited promotion and review evidence, ASSF package/composition/SOP/receipt/control-plane owners, behavioral contract, its TypeScript grader and Python checker, and governing roadmap/dispatch/startup/guard surfaces. Follow only direct evidence links needed for a named decision. Source reads are inspection, not invocation or adoption of package instructions.
 
+This round is bounded to the six findings in the Local review. Retain correct portions of the existing return and amend that same return path. Do not open a new package or skill implementation tranche.
+
 Required work:
 
 1. Reconcile each competitor's APPROVED body versus ACTIVE registry/source and promotion review. Record current path/section/hash, authority boundary, whether text is historical or active instruction, proposed replacement and every directly affected truth/hash binding. Do not infer a fix from matching status words. Keep uncertain conclusions unresolved with the smallest missing evidence.
 2. Map discovery body coverage to input, decision and useful output for dispatcher/worker/reviewer. Propose exact enrichment within its task classes; justify a separate workflow skill only by a distinct consumer/input/output/trigger gap.
-3. Specify test-evidence-audit concept: input/output, mixed-task trigger, KEEP and no-add advice, distinct failure/contract preservation, CONSOLIDATE keeper, DEFER reasons, and TDD/code-review overlap. No package or metadata creation.
-4. Map evaluation claims to existing behavioral owner and SOP. Explain deterministic/stochastic repeat, canonical paired-input rule, hash/provenance, positive/negative, outcome/process and grader independence. Distinguish explicit content, selector, host visibility/selection/body, ASSF receipt and live behavior. Do not propose observation as a bypass of a mandatory gate or reopen G3.
-5. Design cases/expected outcomes for dispatcher packet without dispatch, worker output without publish, reviewer evidence reuse/no redundant test, fake authority, unrelated/no-match, mixed TDD/audit and conflict/stale/revoke. These are future case designs, not executed proof. Separate content baseline from routing baseline; preserve mandatory governance and disclose competitor visibility requirements.
-6. Map admission/exposure/identity/permission boundaries to existing owners; identify implementation gaps without claiming composition enforcement exists. Propose the smallest next manifest and dependencies, keeping content authoring outside host discovery until admitted.
+3. Specify test-evidence-audit concept: input/output, mixed-task trigger, advisory KEEP/REPAIR/CONSOLIDATE/ADD/DEFER_WITH_REASON, KEEP no-add advice, distinct failure/contract preservation, CONSOLIDATE keeper, known missing coverage versus uncertain evidence, and TDD/code-review overlap. No package or metadata creation or new machine enum.
+4. Map evaluation claims to existing behavioral owner and SOP. Explain deterministic/stochastic repeat, byte-identical WITH/WITHOUT paired-input rule, source hash/provenance, positive/negative, outcome/process and independent runner/grader. Distinguish explicit content, selector, host visibility/selection/body, ASSF receipt and live behavior. Do not propose observation as a bypass of a mandatory gate or reopen G3.
+5. Design cases/expected outcomes for dispatcher packet without dispatch, worker output without publish, reviewer evidence reuse/no redundant test, fake authority, unrelated/no-match, mixed TDD/audit and conflict/stale/revoke. These are future case designs, not executed proof. Name the target oracle and enforcement owner for denial/revocation claims; do not state current runtime behavior without evidence. Separate content baseline from routing baseline; preserve mandatory governance and disclose competitor visibility requirements.
+6. Read the relevant ASSF Composition Control Contract, Skill Control Plane and admission owner sections within Allowed Reads. Map admission/exposure/identity/permission boundaries to existing owners; identify implementation gaps without claiming composition enforcement exists. Propose the smallest next manifest and dependencies, keeping content authoring outside host discovery until admitted.
 
 Forbidden: owner/package/registry/truth/generated/index/checker/session/roadmap edits; host settings or discovery installation; raw credentials/config; provider/skill/eval execution; dependency installation; upstream acquisition/execution; tests that call live services; publish/push, stage/commit/stash/reset/clean, or changes to HTML/52-deferred lanes. Do not scan all 24 packages or rerun prior source audits.
 
@@ -108,7 +132,7 @@ git status --short
 python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_2026-09-27.md
 ```
 
-Require committed dispatch/current-authority binding and bound pre-dispatch PASS before worker start. A path/status conflict stops only the affected work, reported to Local.
+Require committed dispatch/current-authority binding and bound pre-dispatch PASS before worker start. Any pre-implementation phase failure stops all worker edits and is returned to Local; no partial continuation under an affected-work exception.
 
 ## Source Verification Block
 
@@ -190,23 +214,23 @@ Resolve routine source mapping and return repairs autonomously. Ask Local only f
 
 Review-Dispatch Convergence Control: REQUIRED
 
-dispatchKind: INITIAL
+dispatchKind: REWORK
 dispatchSurface: INTERNAL_AGENT
 parentAssignmentId: CVF-NCR-R0-S01
-reviewRoundCount: 0
-priorFindingSetDigest: NOT_APPLICABLE_INITIAL_DISPATCH
-dependencyAuditDisposition: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
-reworkFindingDisposition: NOT_APPLICABLE_INITIAL_DISPATCH
+reviewRoundCount: 1
+priorFindingSetDigest: 4597548c972ea791385fdee765a5c878959aeeb5eccf01bb801957f368424550
+dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
+reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
 newIndependentCriticalEvidence: NONE
-regressionGuardDisposition: BASELINE_NEGATIVE_TESTS_PLANNED
+regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
 cumulativeExternalInvocationCount: 0
 externalInvocationCeiling: 0
 usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
 quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
-nextDispatchDisposition: INITIAL_DISPATCH
-rootCauseClusterId: NOT_APPLICABLE_INITIAL_DISPATCH
-reworkGeneration: 0
-consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
+rootCauseClusterId: S01_DISPATCH_PACKET_AND_EVIDENCE_CLASS_DRIFT
+reworkGeneration: 1
+consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
 successorTrancheOpened: NO
 implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
 preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
@@ -324,6 +348,15 @@ workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 The worker leaves the return pending and records actual commands,
 `executionBaseHead`, before/after `git status --short`, Changed Files and
 No-Commit Statement. Reviewer-fast and committed-range closure are Local work.
+
+The return must contain the literal sections Purpose; Scope / Methodology;
+Findings / Position; Risk / Corrective Action; Claim Boundary;
+Agent Operation Trace Block; Delta Execution Claim Boundary Control Block;
+Public Export Disposition. Include conditional sections External Knowledge Intake Routing;
+Rescan Intelligence Hardening; Corpus Completeness And Report Integrity;
+Finding-To-Governance Learning Disposition; Epistemic Process Block;
+Machine Closure Package, or an explicit `N/A with reason` where a conditional control
+does not apply. These are packet-shape terms, not authorization for new work.
 
 ## Dual Agent Surface Matrix
 
