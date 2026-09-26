@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R0_W00_PILOT_SELECTION_2026-09-26.md",
-    "baselineSha256": "0592cfdcd70068895175e5b3dfb51a8741f1aa041f90416710a9ba79831fb936",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W00_PILOT_SELECTION_2026-09-26.md",
-    "workOrderSha256": "d76b59f6d69e867b987d1fd514654da0f375b18d30903604d1ae2d8df173c267"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R0_W01_HTML_PROFILE_2026-09-26.md",
+    "baselineSha256": "cea279f4d7ed3cfa4ca430796a115d1472cff3eedf0ff967011653d26f47de3c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W01_HTML_PROFILE_2026-09-26.md",
+    "workOrderSha256": "3efde35b9ae3722ae735e04e21819206e5337d12577f566d84428ebeae7b5069"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -109,7 +109,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_pilot_selected_profile_pending",
+  "currentMode": "cvf_ncr_r0_w01_html_profile_dispatch_ready",
   "previousMode": "cvf_ncr_r0_w00_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -16813,5 +16813,5 @@
     ],
     "claimBoundary": "R0/W00 source recommendation only; no pilot execution, R1 dispatch, provider/live or public authority"
   },
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_PREPARES_SCOPED_NCR_HTML_PROFILE_REVIEW; ACTIVE_BATCH=CVF-NCR-R0-W00; MATERIAL_REVIEW_COMMIT=c7b7a2c721a3388a738eb2b2633fc4414cf1dff3; CURRENT_TRANCHE_DISPOSITION=HTML_PILOT_CANDIDATE_SELECTED_SCOPE_PENDING; NEXT_STEP=LOCAL_PREPARES_PROFILE_AND_GUIDE_SCOPE_FOR_INTERNAL_WORKER; EXPANSION_ALLOWED=false. Operator selected the existing Work Transfer HTML review packet as the first internal pilot candidate and requested a concise overall CVF user guide, with video in a later suitable tranche. Local may prepare bounded source/profile and documentation work for an internal worker; no pilot run or R1 dispatch is granted. Before any pilot effect, classify actual NEXTAUTH_URL, egress, retention, latency, cost, P06/P08 depth, and UI walkthrough scope. No runtime or owner mutation, dependency install, provider/live, credentials, settings, deployment, public sync, or production action. The 52-deferred lane remains separate; AKOE-P1 through P4 and U1 stay closed bounded; U1 remains SOURCE_RECONCILED_DEFER_WITH_TRIGGER. Latest closed LHW wave remains LHW24."
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_NCR_R0_W01_DOC_ONLY; ACTIVE_BATCH=CVF-NCR-R0-W01; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R0_W01_HTML_PROFILE_2026-09-26.md; MATERIAL_DISPATCH_COMMIT=667c80de678467aa4cd37a5f71b1e0497adb19be; NEXT_STEP=INTERNAL_WORKER_RETURNS_SECRET_SAFE_HTML_PROFILE_EVIDENCE; EXPANSION_ALLOWED=false. Operator selected Work Transfer HTML as first pilot candidate. Claude as INTERNAL_AGENT may perform only the committed W01 read-only source/profile analysis and write one pending return; Local owns review and commit. Actual UI interaction, route/receipt call, raw config or secret values, network/egress, provider/live, dependency, runtime/owner changes, public/deployment and production remain parked. P06/P08 depth and actual NEXTAUTH_URL-derived destination, data retention, latency and cost are open; mark unobserved values UNKNOWN. Overall CVF short user guide and later video are separate follow-on documentation work. The 52-deferred lane stays separate; AKOE-P1 through P4 and U1 remain closed bounded; U1 stays SOURCE_RECONCILED_DEFER_WITH_TRIGGER. Latest closed LHW wave remains LHW24."
 }
