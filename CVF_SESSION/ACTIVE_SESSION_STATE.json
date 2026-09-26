@@ -16837,11 +16837,11 @@
   },
   "cvfNcrR1W01HtmlUxCopyDispatch20260926": {
     "status": "DISPATCH_READY",
-    "materialCommit": "96f632b41c4556a5806db91c750e1188461253fd",
+    "materialCommit": "7f881606b4a7719b3bfb6174fd86128ba90b7f30",
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md",
     "workerReturnPath": "docs/reviews/CVF_CVF_NCR_R1_W01_HTML_UX_COPY_WORKER_RETURN_2026-09-26.md",
     "claimBoundary": "existing-component bilingual copy and focused mock test only; no UI interaction, route call, configuration, provider/live, public or pilot authority"
   },
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_W01_HTML_UX_COPY; BATCH=CVF-NCR-R1-W01; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; MATERIAL_COMMIT=96f632b41c4556a5806db91c750e1188461253fd; PRE_DISPATCH_GATE_REQUIRED=true; EXPANSION_ALLOWED=false. Internal worker edits only ArtifactExportPanel.tsx, its focused test and exact worker return after operator relay and bound gate. No UI/browser, export/evaluate request, raw config, route/helper/dependency, provider/live, public or deployment effect. R0/W00-W02 and R1/W00 accepted bounded; operator retains pilot data/effect/expense; P06/P08, actual profile, guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24."
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_W01_HTML_UX_COPY; BATCH=CVF-NCR-R1-W01; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_R1_W01_HTML_UX_COPY_2026-09-26.md; MATERIAL_COMMIT=7f881606b4a7719b3bfb6174fd86128ba90b7f30; PRE_DISPATCH_GATE_REQUIRED=true; EXPANSION_ALLOWED=false. Internal worker edits only ArtifactExportPanel.tsx, its focused test and exact worker return after operator relay and bound gate. No UI/browser, export/evaluate request, raw config, route/helper/dependency, provider/live, public or deployment effect. R0/W00-W02 and R1/W00 accepted bounded; operator retains pilot data/effect/expense; P06/P08, actual profile, guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24."
 }
