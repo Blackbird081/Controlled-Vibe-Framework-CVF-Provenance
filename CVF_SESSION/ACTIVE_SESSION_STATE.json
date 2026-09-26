@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md",
-    "baselineSha256": "c749062c9325817945d847785c647546740fc6fa594db20c5367823154e4bed1",
+    "baselineSha256": "cc52b43e5545e3c99165469c34478c629d8d811c9d33d3e1a1afb8a9542e776e",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md",
-    "workOrderSha256": "63b7602a208ce5e29f3b0248d6b4eebe21eac006e28f7bb626a6f61752cf20cc"
+    "workOrderSha256": "e39a0892e025781f3853369927df9c9069cea0fabd6c28fb3f92e80399103b5c"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -109,7 +109,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s01_skill_lifecycle_body_rework_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_s01_skill_lifecycle_body_closed_bounded",
   "previousMode": "cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
@@ -16844,5 +16844,5 @@
     "reviewCommit": "5e99eb20910e7e3282d7431e6ca3d96c5e87860b",
     "claimBoundary": "four accepted bilingual copy lines in existing component and focused mocked tests only; no browser walkthrough, real profile, P06/P08 closure, route call, provider/live, public or pilot authority; next work order held for operator-relayed Web research"
   },
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_S01_REWORK_AFTER_OPERATOR_RELAY; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md; ACTIVE_BATCH=CVF-NCR-R1-S01; DISPATCH_PACKET_COMMIT=2ba629655237fc84c7b462d883312bc3e0356f1a; R1S01_REWORK_FINDINGS=docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_LOCAL_REVIEW_FINDINGS_2026-09-27.md; S01_WORKER_RETURN_COMMIT=5f8addf3922c6dbee7dea33e451b2a4e29fbc247; S01_CLOSURE_COMMIT=09b62aa3b57fd8dfda93140f30a845b7177be24c; S01_REVIEW=docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_LOCAL_REVIEW_FINDINGS_2026-09-27.md; EXPANSION_ALLOWED=false. Local accepts S01 source/owner reconciliation at document-only scope after Round 2 and is closed bounded at 09b62aa3b57fd8dfda93140f30a845b7177be24c. Relay the committed R1/S01 Round 1 rework work order for the same two bodies and return; stop before worker execution. Discovery enrichment and candidate test-evidence-audit remain separate future manifests. No package mutation or host exposure follows from S01 alone; no skill/eval/provider/live, credentials, public or pilot effect. R1/W01 HTML remains accepted bounded; guide/video and 52-deferred lanes stay separate. Operator retains data/effect/expense; G1-G7 remain stopped/parked/closed; latest closed LHW wave LHW24."
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PREPARE_R1_NEXT_D013_WORK_ORDER; CLOSED_BATCH=CVF-NCR-R1-S01; R1_S01_CLOSURE_COMMIT=59ebdd3be465cb3e39cb6dde4d16d69f946985e9; R1_S01_COMPLETION=docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_COMPLETION_2026-09-27.md; EXPANSION_ALLOWED=false. Local accepted the two corrected ACTIVE skill bodies with disclosed reviewer-local repair; the original worker return remains historical evidence. The prepared Round 1 worker rework packet was retired before relay. The two README front doors remain a separate dependent documentation gap. Next: source-check the next D013 bounded slice and prepare its work order for operator relay; stop before worker execution. No host, provider/live, public or production effect is authorized. Operator retains data, effect and expense decisions; G1-G7 remain stopped/parked/closed; latest closed LHW wave LHW24."
 }
