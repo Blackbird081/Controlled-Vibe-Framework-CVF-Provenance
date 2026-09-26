@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_r1_w00_html_ux_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_W00_DOC_ONLY; BATCH=CVF-NCR-R1-W00; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md; MATERIAL_COMMIT=939c422b1e941a0d9b1bde8869ff9a017cc31552; PRE_DISPATCH_GATE_REQUIRED=true; EXPANSION_ALLOWED=false. Internal worker reads named source and returns one uncommitted static UX contract; no UI/browser, export/evaluate request, raw config, code/dependency, provider/live, public or deployment effect. W00-W02 accepted bounded; operator retains pilot data/effect/expense; P06/P08, actual profile, guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_W00_DOC_ONLY; BATCH=CVF-NCR-R1-W00; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md; MATERIAL_COMMIT=f7c18d6fe73e3ef44991eebe49de3ca019f4d51b; PRE_DISPATCH_GATE_REQUIRED=true; EXPANSION_ALLOWED=false. Internal worker reads named source and returns one uncommitted static UX contract; no UI/browser, export/evaluate request, raw config, code/dependency, provider/live, public or deployment effect. W00-W02 accepted bounded; operator retains pilot data/effect/expense; P06/P08, actual profile, guide/video and 52-deferred lanes remain separate; latest closed LHW wave is LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md",
-    "baselineSha256": "e539aa0ce339c72165a75712c512a3a31d5559a489a8617b7f8b6f118f27556a",
+    "baselineSha256": "7fea60edf9ecb231ab61dcd32f0704a2dd87a9d21f7175e05e05ebfc029c1f1f",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md",
-    "workOrderSha256": "a158345d6a7f5bc65639a54477c15fa12f37b24f241e0fdb184a0204e4271b08"
+    "workOrderSha256": "3e3a19af4510db6a1028553d763f640c9fdb99a494ff73aceb49a571440fca32"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
