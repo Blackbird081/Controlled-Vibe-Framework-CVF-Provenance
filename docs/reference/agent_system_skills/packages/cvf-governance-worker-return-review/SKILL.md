@@ -75,6 +75,11 @@ is allowed. External Web agents remain advisory research sources.
    directly; `COMPLIANT` alone does not prove that field exists. For checkout
    line-ending questions, use the current committed-evidence contract and
    checker, not a visual diff or an assumed CRLF explanation.
+   If `committedEvidence` is missing, stop closure and diagnose the receipt
+   locally. Repair or rerun the bounded reviewer-owned evidence step when
+   current authority permits. Missing receipt binding alone is not REWORK;
+   return to a worker only if a material implementation change or new
+   worker-owned evidence is actually required under the governing packet.
 
 ## Risk And Authority
 

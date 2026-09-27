@@ -29,6 +29,33 @@ Strict truth packet and index, explicit body-read usage receipt, activation
 policy/projection, production dry run, package-specific live provider proof,
 safe diagnostic, focused guards, and commit closure.
 
+## Live Run Diagnostic Record
+
+| Field | Observed safe value |
+| --- | --- |
+| First attempt | `.cvf/runtime/assf-production/ncr-sra1/live.json` |
+| Failed stage and class | `provider_call`, `TimeoutError` |
+| Provider and model | `alibaba-dashscope`, `qwen3.8-max-0902` |
+| HTTP status and trace ID | absent; read timed out before a response |
+| Retryable and safe message | `true`; `The read operation timed out` |
+| Receipt ID | `sha256:e33f34d5b26c037bffa8970c5f99f48ea07de7fcbe12d381f3e848445b9aede2` |
+| Diagnostic decision before rerun | One bounded retry is expected to be informative using the ledger-enabled faster `qwen3.8-flash` model and a shorter synthetic four-case task; no secret or private worker content is included. The original max model and 45-second timeout are not repeated unchanged. |
+| Claim boundary | first attempt is a failure, not live proof or a reason to claim ACTIVE closure |
+
+The second call on `qwen3.8-flash` passed the production executor, but its
+stored output preview is capped at 1,200 characters. It shows the correct A
+reviewer-local route and B expanded-scope route, yet it stops before C and D.
+One additional, shorter C/D-only call is admitted for that exact missing
+behavioral evidence. The earlier passing proof is retained, not rewritten or
+discarded.
+
+The C/D probe produced a real defect: case C stopped correctly, but case D
+said `REWORK` solely for a missing receipt binding. Local rejected that output,
+held ACTIVE closure, restored committed APPROVED sources, and amended skill
+step 6 under the same authorized package scope. The UAT review records the
+source-change recheck. No previous live receipt is treated as passing D;
+fresh proof is required after the correction.
+
 ## Package Skill Productionization Control Block
 
 - SOP source: `docs/reference/agent_system_skills/CVF_PACKAGE_SKILL_PRODUCTIONIZATION_SOP.md`

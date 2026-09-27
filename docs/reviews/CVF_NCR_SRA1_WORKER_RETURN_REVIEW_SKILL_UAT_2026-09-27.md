@@ -48,6 +48,24 @@ known failure classes: unnecessary REWORK and unsupported closure. UAT is
 ceiling. This decision admits `APPROVED` internal package use and subsequent
 truth/receipt/ACTIVE gates; it does not itself prove those later stages.
 
+## Live Probe Finding And UAT Recheck
+
+The first package-specific C/D live probe after the APPROVED commit returned
+`REWORK` for case D solely because `committedEvidence` was absent. That is a
+behavioral defect against U4. Local held ACTIVE closure and restored the
+committed APPROVED state before editing the body. The corrected step 6 now
+states the required stop/diagnose/reviewer-local route and the narrower
+condition for worker REWORK. This is a source change, so the initial U4
+acceptance does not carry forward by assumption.
+
+Local reapplied the corrected body to U1-U4: U1 remains localized reviewer
+repair; U2 remains scope/authority stop before REWORK; U3 remains closeability
+stop; U4 now explicitly stops closure and calls for bounded reviewer-owned
+diagnosis/repair, with REWORK only if worker-owned implementation or evidence
+is truly needed. Source comparison against the review-cost and committed
+evidence owners passes. Certification remains bounded to this corrected body,
+subject to a fresh C/D provider probe before ACTIVE closure.
+
 ## Risk / Corrective Action
 
 The historical case provenance limits generalization to other workers and

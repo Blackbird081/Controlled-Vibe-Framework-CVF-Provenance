@@ -17,6 +17,10 @@
     "externalCliMcpDisposition": "DEFERRED_WITH_REASON"
   },
   "authorityBoundary": "Receipt-backed CVF package selection only; no automatic invocation, host installation, public sync, filesystem, git, commit, merge or provider authority from package loading.",
+  "sourceContentHashes": {
+    "packageBodySha256": "e9a70beb2e23ce62ff7997abfa511c2e3f3c5cd13a2e398fdb164c038025407b",
+    "uatReviewSha256": "58c718c936e6b81cd45a3743416f727834f12c6a6ba0669791dac0f71f86049a"
+  },
   "evidence": [
     {
       "evidenceId": "EV-REGISTRY",
@@ -127,8 +131,8 @@
   ],
   "receipt": {
     "receiptId": "RCPT-SKSOT-NCR-SRA1-cvf-governance-worker-return-review",
-    "hash": "sha256:c9782e177860c97ccb37737a51f31267b6622d28f15b1521629675ec624a68dd",
-    "previousHash": "N/A with reason: initial truth packet",
+    "hash": "sha256:faebcecff9550c8fefd9f743c30881db6e7e093d62a034a47670400461067b59",
+    "previousHash": "sha256:c9782e177860c97ccb37737a51f31267b6622d28f15b1521629675ec624a68dd",
     "status": "issued"
   }
 }

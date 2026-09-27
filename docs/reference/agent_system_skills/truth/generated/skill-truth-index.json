@@ -220,7 +220,7 @@
     },
     {
       "canonicalPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-governance-worker-return-review.json",
-      "receiptHash": "sha256:c9782e177860c97ccb37737a51f31267b6622d28f15b1521629675ec624a68dd",
+      "receiptHash": "sha256:faebcecff9550c8fefd9f743c30881db6e7e093d62a034a47670400461067b59",
       "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
       "skillId": "cvf-governance-worker-return-review",
       "truthPacketId": "SKSOT-NCR-SRA1-cvf-governance-worker-return-review",
