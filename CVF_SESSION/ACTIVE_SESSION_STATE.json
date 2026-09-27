@@ -41,6 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_CONTROLLED_APPROVAL_2026-09-27.md",
     "workOrderSha256": "2c5b23ce7d4ba148bdc80df7ef487f4dd7c70bafa5bf8238182506f240d66360"
   },
+  "currentAuthoritySyncReason": "R1/S06 release-readiness correction replaced the stale R1/S05 authority tuple; atomic continuity rebind parent 2c283ab28.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -16844,5 +16845,5 @@
     "reviewCommit": "5e99eb20910e7e3282d7431e6ca3d96c5e87860b",
     "claimBoundary": "four accepted bilingual copy lines in existing component and focused mocked tests only; no browser walkthrough, real profile, P06/P08 closure, route call, provider/live, public or pilot authority; next work order held for operator-relayed Web research"
   },
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S06; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_CONTROLLED_APPROVAL_2026-09-27.md; MATERIAL_COMMIT=f2cbc02d4; EXPANSION_ALLOWED=false. Operator authorized full P5 only. One INTERNAL_AGENT may execute the exact eight-path provider-free work order, complete five source-based UAT cases without running the audited tests, target APPROVED/PASSED/CERTIFIED/IMPLEMENTED, and record one explicit internal runtime-loader body-read receipt. No ACTIVE, P6-P10 truth, resolver, automatic invocation, external adapter, provider/network/live, public or production effect is authorized. Local remains reviewer/closer; operator retains later data, effect and expense decisions; latest closed LHW wave LHW24."
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S06; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_CONTROLLED_APPROVAL_2026-09-27.md; MATERIAL_COMMIT=f2cbc02d4; EXPANSION_ALLOWED=false. Operator authorized full P5 only; the R1/S06 authority tuple is source-corrected and release-bound. One INTERNAL_AGENT may execute the exact eight-path provider-free work order, complete five source-based UAT cases without running the audited tests, target APPROVED/PASSED/CERTIFIED/IMPLEMENTED, and record one explicit internal runtime-loader body-read receipt. No ACTIVE, P6-P10 truth, resolver, automatic invocation, external adapter, provider/network/live, public or production effect is authorized. Local remains reviewer/closer; operator retains later data, effect and expense decisions; latest closed LHW wave LHW24."
 }

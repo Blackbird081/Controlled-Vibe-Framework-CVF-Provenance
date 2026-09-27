@@ -41,6 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_CONTROLLED_APPROVAL_2026-09-27.md",
     "workOrderSha256": "2c5b23ce7d4ba148bdc80df7ef487f4dd7c70bafa5bf8238182506f240d66360"
   },
+  "currentAuthoritySyncReason": "R1/S06 release-readiness correction replaced the stale R1/S05 authority tuple; atomic continuity rebind parent 2c283ab28.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
