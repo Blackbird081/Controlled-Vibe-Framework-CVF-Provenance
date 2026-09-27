@@ -10,15 +10,15 @@
   "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
   "lifecycleSnapshot": {
     "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
-    "status": "APPROVED",
+    "status": "ACTIVE",
     "uatState": "PASSED",
     "certificationState": "CERTIFIED",
     "internalAgentDisposition": "IMPLEMENTED",
-    "externalCliMcpDisposition": "DEFERRED_WITH_REASON"
+    "externalCliMcpDisposition": "IMPLEMENTED"
   },
   "authorityBoundary": "Receipt-backed CVF package selection only; no automatic invocation, host installation, public sync, filesystem, git, commit, merge or provider authority from package loading.",
   "sourceContentHashes": {
-    "packageBodySha256": "e9a70beb2e23ce62ff7997abfa511c2e3f3c5cd13a2e398fdb164c038025407b",
+    "packageBodySha256": "748c1a6f79dc673637d4c085526cc51ef0dd54c30ff85bcedda7b9d51c3dede1",
     "uatReviewSha256": "58c718c936e6b81cd45a3743416f727834f12c6a6ba0669791dac0f71f86049a"
   },
   "evidence": [
@@ -44,6 +44,12 @@
       "evidenceId": "EV-STANDARD",
       "kind": "production_runtime_standard",
       "sourcePath": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md",
+      "status": "approved"
+    },
+    {
+      "evidenceId": "EV-COMPLETION",
+      "kind": "package_specific_runtime_review",
+      "sourcePath": "docs/reviews/CVF_NCR_SRA1_WORKER_RETURN_REVIEW_SKILL_ACTIVE_COMPLETION_2026-09-27.md",
       "status": "approved"
     }
   ],
@@ -121,7 +127,8 @@
       "method": "test",
       "status": "pass",
       "evidenceIds": [
-        "EV-STANDARD"
+        "EV-STANDARD",
+        "EV-COMPLETION"
       ],
       "obligationIds": [
         "OB-NO-AUTOMATIC-INVOCATION",
@@ -131,8 +138,8 @@
   ],
   "receipt": {
     "receiptId": "RCPT-SKSOT-NCR-SRA1-cvf-governance-worker-return-review",
-    "hash": "sha256:faebcecff9550c8fefd9f743c30881db6e7e093d62a034a47670400461067b59",
-    "previousHash": "sha256:c9782e177860c97ccb37737a51f31267b6622d28f15b1521629675ec624a68dd",
+    "hash": "sha256:c324eb096e64af57f0d87860aae38f8a1c6d1daf0824a43884e26f2c79734356",
+    "previousHash": "sha256:faebcecff9550c8fefd9f743c30881db6e7e093d62a034a47670400461067b59",
     "status": "issued"
   }
 }

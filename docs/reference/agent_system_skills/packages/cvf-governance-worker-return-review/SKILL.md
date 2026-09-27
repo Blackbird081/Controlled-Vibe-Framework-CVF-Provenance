@@ -7,7 +7,7 @@ description: Review a CVF worker return, decide reviewer-local repair versus REW
 
 Memory class: FULL_RECORD
 
-Status: APPROVED
+Status: ACTIVE
 
 docType: assf_package
 
@@ -94,13 +94,16 @@ blocker and stop the dependent action.
 
 The registry/index exposes metadata before the body. Read this body only after
 an explicit, authorized selection. Local UAT and reviewer certification are recorded in the NCR-SRA1 UAT review.
-Truth, usage receipt, ACTIVE production execution, host delivery, and automatic
-invocation remain separate gates. Behavioral use must not be claimed from
+Truth and usage receipts plus package-specific dry/live proof are recorded by
+the NCR-SRA1 completion. ACTIVE permits explicit receipt-backed selection in
+the existing CVF production executor and CLI/MCP envelope. Host delivery and
+automatic invocation remain separate work. Behavioral use must not be claimed from
 source authorship or a passing syntax check.
 
 ## External Disposition
 
-External CLI/MCP and remote-agent use are deferred. Local owns private-CVF
+The existing CVF CLI/MCP envelope is implemented for explicit receipt-backed
+package selection; no full MCP server or remote host installation is claimed. Local owns private-CVF
 verification and technical disposition; an external research return is
 advisory input only.
 
@@ -116,7 +119,6 @@ advisory input only.
 
 ## Claim Boundary
 
-This is a CVF-owned APPROVED package body for reviewer guidance. It neither
-proves agent comprehension nor makes this package selectable through the
-ACTIVE runtime. Existing machine gates remain the enforceable boundary for
+This is a CVF-owned ACTIVE package body for reviewer guidance. It neither
+proves agent comprehension nor grants action authority through the ACTIVE runtime. Existing machine gates remain the enforceable boundary for
 governed repository packets.

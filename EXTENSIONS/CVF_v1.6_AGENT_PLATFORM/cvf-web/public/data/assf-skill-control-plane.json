@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.1.0",
-  "generatedAt": "2026-09-27T01:03:54.959Z",
+  "generatedAt": "2026-09-27T01:07:00.790Z",
   "sourceInventory": "../../../docs/reference/agent_system_skills/control_plane/generated/skill-inventory.json",
   "sourceSkillIndex": "../../../docs/reference/agent_system_skills/generated/skill-index.json",
   "dashboardContract": "Read-only CVF Web projection of Skill Control Plane inventory. Web dashboards may consume this file for display and filtering, but it is not runtime authority, activation authority, provider authority, or public certification authority.",
@@ -9,7 +9,7 @@
     "packageRoots": 25,
     "runtimeEligiblePackages": 25,
     "activeResolverReadyPackages": 25,
-    "cliMcpAdapterPackages": 24,
+    "cliMcpAdapterPackages": 25,
     "selectionProfiledPackages": 25,
     "webProjectionItems": 53,
     "crossSurfaceDriftViolationCount": 0,
@@ -1432,7 +1432,7 @@
       "expectedOutputContribution": "Consolidated source-backed review findings and a justified repair or closure route.",
       "runtimeEligible": true,
       "activationDecision": "ACTIVATION_READY",
-      "cliMcpDisposition": "DEFERRED_WITH_REASON",
+      "cliMcpDisposition": "IMPLEMENTED",
       "packageRootPath": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
       "registryEntryPath": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
       "certificationState": "CERTIFIED",
@@ -1441,7 +1441,7 @@
       "verificationMode": "STRICT",
       "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
       "authorityCeiling": null,
-      "adapterContract": "N/A with reason: no external CLI/MCP adapter approved for this package"
+      "adapterContract": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md"
     }
   ],
   "claimBoundary": "This inventory is a generated Skill Control Plane read model. It classifies skill surfaces for governance review only. It is not canonical certification authority, package body authority, provider runtime authority, Web runtime authority, public-sync evidence, or permission to activate, execute, commit, push, or bypass governed work-order scope."

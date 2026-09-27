@@ -3254,9 +3254,9 @@
         "truthPacketRequired": true
       },
       "cliMcp": {
-        "adapterContract": "N/A with reason: no external CLI/MCP adapter approved for this package",
-        "adapterEvidence": "N/A with reason: no adapter implemented or evaluated",
-        "disposition": "DEFERRED_WITH_REASON"
+        "adapterContract": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md",
+        "adapterEvidence": "docs/reviews/CVF_NCR_SRA1_WORKER_RETURN_REVIEW_SKILL_ACTIVE_COMPLETION_2026-09-27.md",
+        "disposition": "IMPLEMENTED"
       },
       "drift": {
         "violations": []
@@ -3265,11 +3265,11 @@
         "exists": true,
         "rootPath": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
         "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/skill.source.json",
-        "sourceLifecycleState": "APPROVED"
+        "sourceLifecycleState": "ACTIVE"
       },
       "registry": {
         "approvalState": "APPROVED",
-        "candidateState": "APPROVED",
+        "candidateState": "ACTIVE",
         "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
         "certificationState": "CERTIFIED",
         "internalAgentDisposition": "IMPLEMENTED",
@@ -3278,7 +3278,7 @@
           "docs/reviews/CVF_NCR_SRA1_WORKER_RETURN_REVIEW_SKILL_UAT_2026-09-27.md"
         ],
         "skillId": "cvf-governance-worker-return-review",
-        "status": "APPROVED",
+        "status": "ACTIVE",
         "uatState": "PASSED"
       },
       "runtime": {
@@ -3334,6 +3334,8 @@
         "ASSF_PACKAGE_ROOT",
         "RUNTIME_ELIGIBLE_PACKAGE",
         "ACTIVE_RESOLVER_READY_PACKAGE",
+        "CLI_MCP_ADAPTER_PACKAGE",
+        "ACTIVE_SOURCE_PACKAGE",
         "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
@@ -3364,8 +3366,7 @@
   },
   "statusCounts": {
     "candidateState": {
-      "ACTIVE": 24,
-      "APPROVED": 1,
+      "ACTIVE": 25,
       "CANDIDATE": 8
     },
     "certificationState": {
@@ -3377,8 +3378,7 @@
       "IMPLEMENTED": 25
     },
     "status": {
-      "ACTIVE": 24,
-      "APPROVED": 1,
+      "ACTIVE": 25,
       "CANDIDATE": 8
     },
     "uatState": {
@@ -3388,9 +3388,9 @@
   },
   "summary": {
     "activeResolverReadyPackages": 25,
-    "activeSourcePackages": 24,
+    "activeSourcePackages": 25,
     "assfRegistryEntries": 33,
-    "cliMcpAdapterPackages": 24,
+    "cliMcpAdapterPackages": 25,
     "crossSurfaceDriftViolationCount": 0,
     "externalProviderRuntimeSkillMappings": 0,
     "packageRoots": 25,

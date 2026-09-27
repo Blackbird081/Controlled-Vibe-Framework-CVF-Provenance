@@ -2,18 +2,20 @@
 
 Memory class: governed-completion-review
 
-Status: IN_PROGRESS_PENDING_PROOF
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-27
 
 Batch ID: NCR-SRA1
 
+Closed work order: `CVF_AGENT_WORK_ORDER_NCR_SRA1_WORKER_RETURN_REVIEW_SKILL_ACTIVE_2026-09-27.md`
+
 ## Purpose
 
-Record Local reviewer disposition for the one-skill ACTIVE promotion. This
-artifact is opened before activation so the registry can name the exact
-governed adapter-evidence path. Its final status and evidence will be filled
-only after dry and live receipts have been inspected.
+Close the one-skill ACTIVE promotion after Local UAT, reviewer certification,
+strict truth/receipt admission, package-specific dry/live proof, and a
+source-backed repair of the live-discovered reviewer routing defect. The
+existing CVF package executor and CLI/MCP envelope are the runtime surface.
 
 ## Current Evidence
 
@@ -23,11 +25,17 @@ UAT and reviewer certification decision:
 Production contract:
 `docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md`.
 
-## Pending Gates
+## Gate Results
 
-Strict truth packet and index, explicit body-read usage receipt, activation
-policy/projection, production dry run, package-specific live provider proof,
-safe diagnostic, focused guards, and commit closure.
+| Stage | Observed result |
+| --- | --- |
+| P5 | Four-case Local UAT and reviewer certification accepted; D route rechecked after body correction at `302690398` |
+| P6 | Strict approved truth packet; `receipt.hash=sha256:c324eb096e64af57f0d87860aae38f8a1c6d1daf0824a43884e26f2c79734356`; source body hash matches packet |
+| P7 | Explicit APPROVED body-read produced one `CVF_ASSF_SKILL_USAGE_RECEIPT`; activation policy returned `USED_WITH_RECEIPT` |
+| P8 | Active resolver returned `ACTIVATION_READY`; CLI/MCP projection includes the skill; no automatic invocation |
+| P9 | Post-repair production executor dry run returned `DRY_RUN_PRODUCTION_PACKAGE_EXECUTION_READY`; ignored receipt SHA-256 `deded1af21738ad51d7d9f45fc3f69dee2e8aac8b59c4cdfedce615009fafa09` |
+| P10 | Post-repair live executor returned `PRODUCTION_PACKAGE_EXECUTION_PASS`, HTTP 200, `qwen3.8-flash`, execution receipt `sha256:4ab934afdad0e198f21e072a114a466bef81541e0fa140bdff674f5029658ef3`; ignored receipt SHA-256 `aabe5c2e1c6cd0643bb9b84d84a6f2b2f1776833d88147f0d5cf19aef94fc9ce` |
+| CLI/MCP envelope | External-consumer dry wrapper returned `DRY_RUN_PRODUCTION_PACKAGE_EXECUTION_READY` with source-truth trace; its `success=false` is expected without a live call and is not external live proof |
 
 ## Live Run Diagnostic Record
 
@@ -56,15 +64,23 @@ step 6 under the same authorized package scope. The UAT review records the
 source-change recheck. No previous live receipt is treated as passing D;
 fresh proof is required after the correction.
 
+The post-repair live preview now shows both decisions explicitly: C stops
+closure for a missing authorized commit owner; D stops closure and diagnoses
+the missing binding locally, with no automatic REWORK. The ignored receipt
+path is `.cvf/runtime/assf-production/ncr-sra1/live-cd-after-repair.json`.
+The package `sourceTruthTrace` joins registry, body, strict truth packet,
+usage receipt, policy receipt, use-proof receipt, and execution receipt.
+The receipt records `sourceMutations=[]` and an advisory authority boundary.
+
 ## Package Skill Productionization Control Block
 
 - SOP source: `docs/reference/agent_system_skills/CVF_PACKAGE_SKILL_PRODUCTIONIZATION_SOP.md`
-- Current phase: P6 truth and P7 receipt complete; P8-P10 pending
+- Current phase: P10 completed for the one promoted package
 - Target lifecycle state: `ACTIVE_PRODUCTION_RUNTIME`
 - Prior phase evidence: `docs/reviews/CVF_NCR_SRA1_WORKER_RETURN_REVIEW_SKILL_UAT_2026-09-27.md`
-- Next forbidden skip: do not close without activation checks, dry and live package proof
-- Runtime/provider proof: pending
-- Claim boundary: in-progress review path, not accepted runtime evidence yet
+- Next forbidden skip: future host/provider delivery or skill batch still needs its own governed tranche and proof
+- Runtime/provider proof: post-repair package-specific HTTP 200 and execution receipt above
+- Claim boundary: bounded ACTIVE CVF package runtime; no host installation, automatic invocation or action authority
 
 ## Public Export Disposition
 
@@ -79,18 +95,62 @@ the paired baseline/work order, package SOP and current production standard.
 
 ## Scope / Methodology
 
-Local controls each P5-P10 transition and examines the emitted receipt before
-claiming it. The final method and result will be recorded after proof.
+Local committed APPROVED UAT/truth at `9b1bcfa50`, separated its handoff sync,
+rejected a live-discovered D-route defect, corrected and re-UATed the body at
+`302690398`, separated that handoff sync, then repeated ACTIVE source
+admission and inspected post-repair dry/live receipts. The provider input was
+synthetic and contained no private worker-return text.
 
 ## Findings / Position
 
-P5 UAT and certification accepted; later-stage proof remains pending in this
-in-progress record.
+Accept ACTIVE for exactly this one CVF-owned package. Registry, source,
+README, body, strict truth packet, ASSF index, inventory and both private CVF
+Web projection read models agree. The package is explicitly selectable by the
+existing receipt-backed executor and bounded CLI/MCP envelope. No host-side
+skill installation or automatic selection was tested or claimed.
 
 ## Risk / Corrective Action
 
-Premature ACTIVE language would overclaim behavior. This review remains
-in-progress until the new package's own dry/live receipts pass.
+The failed max-model timeout and the incorrect first D-route are retained as
+negative evidence, not hidden by the final HTTP 200. The step-6 correction
+was tested against the same C/D prompt after a source reset and re-UAT. The
+live preview is a bounded synthetic sample, not a universal agent compliance
+guarantee. Future host integration must consume the ACTIVE package through
+its own roadmap gate.
+
+## Decision / Disposition
+
+`ACCEPT_ACTIVE_PRODUCTION_RUNTIME_BOUNDED` for
+`cvf-governance-worker-return-review` under the existing ASSF executor and
+CLI/MCP adapter. Local reviewer accepts the corrected body and evidence.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 baseline | paired NCR-SRA1 baseline | `CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | paired NCR-SRA1 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | this file | `ACCEPT_ACTIVE_PRODUCTION_RUNTIME_BOUNDED` | PASS |
+| Roadmap state | N/A with reason: no D013 mutation in this bounded promotion | next D013 packet remains separate | N/A with reason |
+| Registry JSON | one skill entry | ACTIVE, PASSED, CERTIFIED, IMPLEMENTED | PASS |
+| Registry Markdown | package README and SKILL body | ACTIVE bounded guidance | PASS |
+| Truth and projections | strict packet, generated ASSF/truth/inventory and Web read models | all source-aligned | PASS |
+| External evidence digest | ignored post-repair live receipt | SHA-256 `aabe5c2e1c6cd0643bb9b84d84a6f2b2f1776833d88147f0d5cf19aef94fc9ce` | PASS |
+| Runtime proof | post-repair production executor | HTTP 200, execution receipt above | PASS |
+| System loop interlock | existing runtime adapter, no new loop source | N/A with reason: no new loop implementation | N/A with reason |
+| Session continuity | active handoff | dedicated material-SHA sync after commit; verify in post-commit closure | PASS |
+| Public export | private provenance only | `DEFERRED_PRIVATE_ONLY` | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Skill identity | new worker-return review skill | `cvf-governance-worker-return-review` in receipt and trace | PASS |
+| Production execution | `PRODUCTION_PACKAGE_EXECUTION_PASS` | exact value, HTTP 200 | PASS |
+| Source state | ACTIVE, UAT PASSED, CERTIFIED | registry, source and strict truth agree | PASS |
+| Behavior C | stop uncloseable closure | post-repair preview says stop for missing commit owner | PASS |
+| Behavior D | stop/diagnose locally, no automatic REWORK | post-repair preview says missing binding is not REWORK | PASS |
+| Mutation boundary | no side effects from package loading | `sourceMutations=[]` in proof packet | PASS |
 
 ## Semantic Convergence Outcome
 
@@ -110,15 +170,15 @@ in-progress until the new package's own dry/live receipts pass.
 | Target paths | one package, truth, projections and paired packet |
 | Allowed scope source | paired GC-018 and work order |
 | Before status evidence | clean base `681ce92898ad26a5d318a4021f6f205dda2c3015` |
-| After status evidence | P5-P7 approved sources pending ACTIVE proof |
-| Diff evidence | staged P5-P7 exact set; final range pending |
+| After status evidence | post-repair ACTIVE source, aligned truth and projections, dry/live proof |
+| Diff evidence | prior approved/repair material commits and final ACTIVE changed set |
 | Approval boundary | operator authorized bounded ACTIVE promotion only |
 | Claim boundary | no host installation or independent action authority |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | cvf-ncr-sra1-local-review-20260927 |
 | Expected manifest | one package, truth, projections, UAT/completion, baseline/work order |
-| Actual changed set | pending final material-range reconciliation |
-| Manifest delta | PENDING_FINAL_RECONCILIATION |
+| Actual changed set | one package, truth, generated projections, paired baseline/work order and this completion |
+| Manifest delta | MATCH within authorized scope |
 
 ## Checker Source Read-Ahead Block
 
@@ -126,10 +186,12 @@ in-progress until the new package's own dry/live receipts pass.
 | --- | --- |
 | applicableCheckersRead | `governance/compat/check_semantic_convergence_control.py`; `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_package_skill_productionization_pipeline.py`; `governance/compat/check_cvf_web_skill_control_plane_projection.py` |
 | literalTokensReviewed | SCEC JSON, trace labels, package control and claim boundary |
-| gateRunPurpose | Confirmation and evidence of source-reviewed packet admission; final proof to follow, not first discovery |
-| claimBoundary | no closure claim from placeholder record |
+| gateRunPurpose | Confirmation and evidence of source-reviewed packet and observed post-repair proof, not first discovery |
+| claimBoundary | one ACTIVE package runtime, not host delivery or universal agent behavior |
 
 ## Claim Boundary
 
-This in-progress review is not final adapter or provider proof. Only the
-completed receipt and Local decision may close the tranche.
+This is a bounded source-and-receipt claim for one ACTIVE CVF package using
+the existing executor and CLI/MCP envelope. It grants no downstream action
+authority, host installation, automatic invocation, public sync, or broader
+NCR roadmap completion.

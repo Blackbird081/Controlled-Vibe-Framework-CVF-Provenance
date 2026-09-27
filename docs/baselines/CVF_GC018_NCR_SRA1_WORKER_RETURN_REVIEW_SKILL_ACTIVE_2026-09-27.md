@@ -2,7 +2,7 @@
 
 Memory class: gc-018-baseline
 
-Status: OPEN_BOUNDED
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-27
 
@@ -86,3 +86,26 @@ Reason: private reviewer governance package and live proof stay in provenance.
 
 This baseline scopes a single package promotion. Only the completion receipt
 can establish the final dry/live behavior claim.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 baseline | this file | `CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | paired NCR-SRA1 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | NCR-SRA1 ACTIVE completion | `ACCEPT_ACTIVE_PRODUCTION_RUNTIME_BOUNDED` | PASS |
+| Roadmap state | N/A with reason: bounded skill promotion, no D013 edit | D013 remains next planned slice | N/A with reason |
+| Registry JSON | one skill entry | ACTIVE, PASSED, CERTIFIED | PASS |
+| Registry Markdown | package README and SKILL | ACTIVE | PASS |
+| External evidence digest | ignored post-repair live receipt | SHA-256 `aabe5c2e1c6cd0643bb9b84d84a6f2b2f1776833d88147f0d5cf19aef94fc9ce` | PASS |
+| System loop interlock | existing adapter gates | no new loop runtime | N/A with reason |
+| Session continuity | active handoff | dedicated sync after material commit; verify in post-commit closure | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Skill | one named package | `cvf-governance-worker-return-review` | PASS |
+| State | ACTIVE after UAT and certification | registry/source/truth agree | PASS |
+| Runtime proof | production execution receipt and HTTP 200 | post-repair receipt `sha256:4ab934afdad0e198f21e072a114a466bef81541e0fa140bdff674f5029658ef3` | PASS |
+| Action boundary | no package-granted mutation | `sourceMutations=[]` | PASS |

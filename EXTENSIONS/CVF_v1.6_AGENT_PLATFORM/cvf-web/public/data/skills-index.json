@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T00:56:19.750Z",
+  "generatedAt": "2026-09-27T01:07:00.844Z",
   "categories": [
     {
       "id": "ai_ml_evaluation",
@@ -2738,7 +2738,7 @@
           "difficulty": "Governed",
           "summary": "Guide Local reviewer assessment of internal worker returns, reviewer-local repair routing, and evidence-supported bounded closure.",
           "path": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
-          "content": "# CVF Governance Worker-Return Review\n\nGuide Local reviewer assessment of internal worker returns, reviewer-local repair routing, and evidence-supported bounded closure.\n\n## Projection Boundary\nThis index is metadata-only. It is not evidence of runtime activation, CLI/MCP adapter implementation, provider availability, or external-agent authorization. Loading this index never grants authority to commit, activate, execute a package instruction body, or expand external-agent scope.\n\n## Source Trace\n- Canonical root: docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md\n- Certification state: CERTIFIED\n- UAT state: PASSED\n- External CLI/MCP disposition: DEFERRED_WITH_REASON\n- Runtime eligible: true\n- Activation decision: ACTIVATION_READY\n- Primary domain: worker-return-review\n\n## Review Artifacts\n- docs/reviews/CVF_NCR_SRA1_WORKER_RETURN_REVIEW_SKILL_UAT_2026-09-27.md",
+          "content": "# CVF Governance Worker-Return Review\n\nGuide Local reviewer assessment of internal worker returns, reviewer-local repair routing, and evidence-supported bounded closure.\n\n## Projection Boundary\nThis index is metadata-only. It is not evidence of runtime activation, CLI/MCP adapter implementation, provider availability, or external-agent authorization. Loading this index never grants authority to commit, activate, execute a package instruction body, or expand external-agent scope.\n\n## Source Trace\n- Canonical root: docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md\n- Certification state: CERTIFIED\n- UAT state: PASSED\n- External CLI/MCP disposition: IMPLEMENTED\n- Runtime eligible: true\n- Activation decision: ACTIVATION_READY\n- Primary domain: worker-return-review\n\n## Review Artifacts\n- docs/reviews/CVF_NCR_SRA1_WORKER_RETURN_REVIEW_SKILL_UAT_2026-09-27.md",
           "riskLevel": "R1",
           "allowedRoles": "reviewer, closer",
           "allowedPhases": "REVIEWER_CLOSURE",
@@ -2761,8 +2761,8 @@
             "docs/reviews/CVF_NCR_SRA1_WORKER_RETURN_REVIEW_SKILL_UAT_2026-09-27.md"
           ],
           "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
-          "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
-          "adapterContract": "N/A with reason: no external CLI/MCP adapter approved for this package",
+          "externalCliMcpDisposition": "IMPLEMENTED",
+          "adapterContract": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md",
           "runtimePackageProjection": true,
           "runtimeEligible": true,
           "activationDecision": "ACTIVATION_READY",

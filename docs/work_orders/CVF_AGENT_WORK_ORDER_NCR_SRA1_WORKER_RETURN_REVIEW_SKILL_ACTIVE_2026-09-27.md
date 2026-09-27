@@ -2,7 +2,7 @@
 
 Memory class: governed-work-order
 
-Status: IN_PROGRESS
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-27
 
@@ -208,15 +208,15 @@ outside this work order.
 | Target paths | exact scope in this work order |
 | Allowed scope source | operator instruction and paired GC-018 baseline |
 | Before status evidence | clean `681ce92898ad26a5d318a4021f6f205dda2c3015` |
-| After status evidence | P5-P7 sources staged; final status in completion review |
-| Diff evidence | staged exact changed set, then final material range |
+| After status evidence | ACTIVE source, strict truth, dry and live receipts; completion review owns final disposition |
+| Diff evidence | approved-stage commits `9b1bcfa50` and `302690398`; final ACTIVE material range follows |
 | Approval boundary | no host/provider installation or public sync |
 | Claim boundary | package admission and receipt-backed proof only |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | cvf-ncr-sra1-local-20260927 |
 | Expected manifest | paired packet, one package/truth, generated projections, UAT/completion |
-| Actual changed set | inspect staged and final material ranges |
-| Manifest delta | PENDING_FINAL_RECONCILIATION |
+| Actual changed set | one package, truth, generated projections, paired packet and completion |
+| Manifest delta | MATCH within scoped material paths |
 
 ## Semantic Convergence Outcome
 
@@ -238,3 +238,26 @@ outside this work order.
 This work order authorizes the one-skill process through existing adapters.
 It grants no host/provider installation, automatic invocation, public sync,
 or downstream action authority.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| GC-018 baseline | paired NCR-SRA1 baseline | `CLOSED_PASS_BOUNDED` | PASS |
+| Work order status | this file | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | NCR-SRA1 ACTIVE completion | `ACCEPT_ACTIVE_PRODUCTION_RUNTIME_BOUNDED` | PASS |
+| Roadmap state | N/A with reason: no D013 mutation | next move preserved | N/A with reason |
+| Registry JSON | one skill entry | ACTIVE, PASSED, CERTIFIED | PASS |
+| Registry Markdown | package README and SKILL | ACTIVE | PASS |
+| External evidence digest | ignored post-repair live receipt | SHA-256 `aabe5c2e1c6cd0643bb9b84d84a6f2b2f1776833d88147f0d5cf19aef94fc9ce` | PASS |
+| System loop interlock | existing executor/CLI adapter | no new loop runtime | N/A with reason |
+| Session continuity | active handoff | dedicated sync after material commit; verify in post-commit closure | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| Skill | one named package | `cvf-governance-worker-return-review` | PASS |
+| State | ACTIVE after UAT and certification | registry/source/truth agree | PASS |
+| Runtime proof | production execution receipt and HTTP 200 | post-repair receipt `sha256:4ab934afdad0e198f21e072a114a466bef81541e0fa140bdff674f5029658ef3` | PASS |
+| Action boundary | no package-granted mutation | `sourceMutations=[]` | PASS |
