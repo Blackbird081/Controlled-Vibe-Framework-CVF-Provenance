@@ -150,6 +150,19 @@ class ReceiptCandidateDiscoveryTests(unittest.TestCase):
         command = runner.call_args.args[0]
         self.assertEqual(command[-6:], ['--phase', 'pre-closure', '--base', 'parent-sha', '--head', 'trusted-sha'])
 
+    def test_receipt_generation_failure_preserves_named_failure_before_long_tail(self):
+        stdout = '[FAIL] session mode consistency (0.20s)\nroot cause line\n' + ('later pass output\n' * 1000) + 'VIOLATION: pre-closure blocked by 1 failing gate(s).\n'
+        stderr = 'non-fatal warning from subprocess\n'
+        failed = subprocess.CompletedProcess(['gate'], 1, stdout, stderr)
+        with mock.patch.object(autocollect, '_single_parent', return_value='parent-sha'), mock.patch.object(autocollect.subprocess, 'run', return_value=failed):
+            with self.assertRaises(autocollect.CollectionUnsafe) as ctx:
+                autocollect.generate_current_receipt('trusted-sha', 'disclosure-sha')
+        self.assertEqual(ctx.exception.code, 'UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED')
+        self.assertIn('[FAIL] session mode consistency', ctx.exception.detail)
+        self.assertIn('VIOLATION: pre-closure blocked', ctx.exception.detail)
+        self.assertIn('non-fatal warning from subprocess', ctx.exception.detail)
+        self.assertLessEqual(len(ctx.exception.detail), autocollect.observability.FAILURE_DIAGNOSTIC_LIMIT)
+
     def test_tampered_receipt_is_rejected(self):
         base = canary_core.git_head()
         fixture = _build_fresh_real_receipt('tampered', base, base)

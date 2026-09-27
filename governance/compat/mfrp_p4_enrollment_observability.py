@@ -10,6 +10,7 @@ from typing import Any, Iterable
 
 
 JOURNAL_SCHEMA = "cvf.mfrp.p4c1.pendingJournal.v2"
+FAILURE_DIAGNOSTIC_LIMIT = 12000
 STARVATION_ATTEMPT_THRESHOLD = 5
 
 _WORKER_RETURN = re.compile(
@@ -270,6 +271,33 @@ def recompute_counters(journal: dict[str, Any]) -> dict[str, Any]:
         "blocking": False,
     }
     return journal
+
+
+def bounded_failure_diagnostic(stdout: str, stderr: str) -> str:
+    """Preserve failure-bearing lines from both streams in a bounded detail."""
+    sections = []
+    if stdout.strip():
+        sections.append("=== stdout ===\n" + stdout.strip())
+    if stderr.strip():
+        sections.append("=== stderr ===\n" + stderr.strip())
+    combined = "\n\n".join(sections) or "no subprocess diagnostic output"
+    if len(combined) <= FAILURE_DIAGNOSTIC_LIMIT:
+        return combined
+
+    signal_pattern = re.compile(
+        r"(?:\[FAIL\]|\bFAIL:|\bVIOLATION:|\bERROR\b|Traceback)", re.IGNORECASE
+    )
+    signals = "\n".join(
+        line for line in combined.splitlines() if signal_pattern.search(line)
+    )
+    diagnostic = (
+        combined[:2000]
+        + "\n\n=== failure signal lines ===\n"
+        + (signals or "no explicit failure signal line found")
+        + "\n\n=== diagnostic tail ===\n"
+        + combined[-5000:]
+    )
+    return diagnostic[:FAILURE_DIAGNOSTIC_LIMIT]
 
 
 __all__ = [name for name in globals() if not name.startswith("__")]

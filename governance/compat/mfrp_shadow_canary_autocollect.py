@@ -243,8 +243,12 @@ def generate_current_receipt(
         capture_output=True,
     )
     if proc.returncode != 0:
-        tail = (proc.stderr or proc.stdout)[-2000:]
-        raise CollectionUnsafe("UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED", tail)
+        diagnostic = observability.bounded_failure_diagnostic(
+            proc.stdout, proc.stderr
+        )
+        raise CollectionUnsafe(
+            "UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED", diagnostic
+        )
     receipt_path = RECEIPT_DIR / GENERATED_RECEIPT_NAME
     if not receipt_path.is_file():
         raise CollectionUnsafe(
