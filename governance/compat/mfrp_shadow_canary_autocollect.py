@@ -566,6 +566,26 @@ def _persist_attempt(
     )
     _atomic_write_json(PENDING_JOURNAL_PATH, updated)
     return updated
+def _retry_is_replayable(attempt: dict[str, Any]) -> bool:
+    trusted_commit = str(attempt.get("trustedCommit") or "")
+    if not trusted_commit:
+        return False
+    try:
+        parent = _single_parent(trusted_commit)
+    except CollectionUnsafe:
+        return False
+    replayable, _ = committed_evidence.verify_worktree_matches_committed_target(
+        parent, trusted_commit, cwd=REPO_ROOT
+    )
+    return replayable
+def _select_replayable_retry_attempt(
+    journal: dict[str, Any],
+) -> dict[str, Any] | None:
+    return next(
+        (item for item in observability.retryable_attempts(journal)
+         if _retry_is_replayable(item)),
+        None,
+    )
 # ---------------------------------------------------------------------------
 # Top-level collection entrypoint
 # ---------------------------------------------------------------------------
@@ -602,7 +622,7 @@ def run_collection(commit: str | None = None) -> str:
                 selection=selection,
             )
             return f"P4-C1: {selection.reason}"
-        retry = observability.select_retryable_attempt(journal)
+        retry = _select_replayable_retry_attempt(journal)
         if retry:
             retry_commit = str(retry["trustedCommit"])
             retry_selection = _discover_candidate(retry_commit)

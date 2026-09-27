@@ -29,7 +29,7 @@ weakening receipt admission or inflating opportunity counts.
 | paired baseline/work order | exact retry bounds and manifest | ACCEPT |
 | ignored journal | 804 attempts, 73 opportunities, one sample, 34 retryable | ACCEPT_DIAGNOSTIC |
 | helper/collector diff | derived queue plus one retry seam | ACCEPT |
-| focused tests | 70 passed | ACCEPT |
+| focused tests | 71 passed | ACCEPT |
 
 ## Scope / Methodology
 
@@ -75,7 +75,7 @@ No independent-agent claim is made.
 
 | Evidence | Result |
 | --- | --- |
-| focused helper/collector suite | PASS, 70 tests |
+| focused helper/collector suite | PASS, 71 tests |
 | bounded retry hostile test | PASS |
 | retry counter non-inflation | PASS |
 | Python size guard | PASS; collector 809 lines |
@@ -116,6 +116,7 @@ Rollback boundary: exact seven-path material batch only.
 | retry attempts could inflate opportunity telemetry | MEASUREMENT_DENOMINATOR_DRIFT | RUNTIME_BEHAVIOR_LEARNING | TEST_ADDED | exclude retry-tagged attempts from candidate and eligible counters | handled |
 | unlimited automatic replay could repeatedly block commits | RECOVERY_LOOP_RISK | SAFETY_LEARNING | RULE_ADDED | at most one retry per trusted commit | handled |
 | retry on a material disclosure runs before continuity rebind and creates a false safety marker | EXECUTION_PHASE_MISMATCH | RUNTIME_BEHAVIOR_LEARNING | RULE_AND_TEST_ADDED | retry only on dedicated session-sync disclosures; material commits defer without consumption | handled |
+| a historical target whose changed paths no longer match the worktree cannot receive `committedEvidence` | HISTORICAL_REPLAY_MISMATCH | EVIDENCE_ADMISSION_LEARNING | RULE_AND_TEST_ADDED | select the newest retryable item that passes the canonical committed-target replay check; leave unreplayable evidence visible and unconsumed | handled |
 
 ## Epistemic Process Block
 
@@ -129,9 +130,11 @@ excluding historical, collected and already-retried commits.
 The pre-repair journal derived 34 retryable commits and selected the newest
 failed completion deterministically. The first live attempt exposed the
 continuity-timing gap and was preserved as an adjudicated failed attempt,
-leaving 33 retryable commits. Tests prove material deferral preserves the queue
-and a session-sync retry exhausts only its selected trusted commit without
-increasing the 73-opportunity denominator.
+leaving the backlog intact except for the preserved attempt. A live diagnostic
+found 5 of 34 current retryable commits still exactly replayable. Tests prove
+material deferral preserves the queue, replay selection skips an unreplayable
+newest item, and a session-sync retry exhausts only its selected trusted commit
+without inflating the opportunity denominator.
 
 ### Contradiction Or Gap Disposition
 
@@ -276,7 +279,7 @@ Exact changed manifest:
 
 | Assertion | Required value | Observed value | Status |
 | --- | --- | --- | --- |
-| focused tests | pass | 70 passed | PASS |
+| focused tests | pass | 71 passed | PASS |
 | retry backlog | prospective only | 34 derived before first live attempt; 33 remain after preserved failed attempt | PASS |
 | retry bound | once per trusted commit | hostile tests | PASS |
 | counter integrity | no retry inflation | hostile tests | PASS |
