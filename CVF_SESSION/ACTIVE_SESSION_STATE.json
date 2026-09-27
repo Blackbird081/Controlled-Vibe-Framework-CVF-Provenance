@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
-    "baselineSha256": "663aa7de2e15d26ccc3a2a121f644de3abd706328a733e2431beb8446f5d6cfe",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
-    "workOrderSha256": "0f08e01f2672cfa8606a26254df4266902aec77be0725260b6081d9f8b8da847"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md",
+    "baselineSha256": "c1413951710bf72fde57088f33ff798e7abdd3f22dd72ae3c5353b037c7fce04",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md",
+    "workOrderSha256": "196607e7a38b26da0a4a455227b600cc18c2bbc6001e9666e42aab939efbcb49"
   },
-  "currentAuthoritySyncReason": "P4-C1 bounded retry recovery is closed through phase correction ea6fe98e6 and replay-filter correction 131626025. The continuity disclosure above parent 20b10177c owns live full-gate validation; runtime journal counts remain non-authoritative for checkpoint admission until normal M5. NCR and M5/P5/P6 remain paused.",
+  "currentAuthoritySyncReason": "Operator resumed NCR after standardizing P4-C1 evidence collection. CVF-NCR-R1-S09 P8 activation-readiness dispatch is material at 1430482219627814710163e280a92b7900adbd87; it authorizes exact lifecycle/truth/projection reconciliation only. P9/P10, instruction use, external adapter and effectful runtime remain parked.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mfrp_p4_c1_bounded_retry_recovery_closed_paused",
-  "previousMode": "mfrp_p4_c1_bounded_retry_recovery_live_validation_ready",
+  "currentMode": "cvf_ncr_r1_s09_activation_readiness_dispatch_ready",
+  "previousMode": "mfrp_p4_c1_bounded_retry_recovery_closed_paused",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16851,5 +16851,5 @@
   "cvfNcrR1S07R1ActivationLearningRootReconciliationClosure20260927": "CLOSED_PASS_BOUNDED at material commit f7d8e4842. Local accepted the P6 truth packet and repaired the root contract so inventory and active resolver agree across the exact six-row activation matrix: runtime eligibility, truth presence/approval, lifecycle ACTIVE, then readiness. Finding-To-Governance now resolves recurring blocked returns by stable root-cause cluster and governed prior path, rejects false FIRST_OCCURRENCE declarations, and the worker-return scaffold plus golden fixture collect the required fields before execution. Focused suites passed 21/21, 29/29 and 94/94; independent matrix parity passed 6/6; truth receipt recomputed exactly. Worker use of stash and instruction-body loader were recorded as scope violations and excluded from acceptance evidence. Package remains APPROVED and DENIED_SOURCE_NOT_ACTIVE. No ACTIVE, P7-P10 execution, package-body acceptance proof, provider/live/public/deployment/production authority follows.",
   "cvfNcrR1S08UsageReceiptReadinessDispatch20260927": "CLOSED_PASS_BOUNDED. Worker evidence commit 4af51dd72 contains one generator-owned CVF_ASSF_SKILL_USAGE_RECEIPT and the reviewed return. Local independently recomputed bodyHash and receiptId, confirmed APPROVED lifecycle, DENIED_SOURCE_NOT_ACTIVE, SELECTED policy, activation false and output consumption false, then closed the work order at material commit e5ce21cb7. One noncanonical usage-disposition literal was repaired to NOT_USED_WITH_REASON before acceptance. NCR is paused; no ACTIVE transition or P8-P10 successor follows.",
   "cvfNcrR1S08DispatchEntrypointRootReconciliation20260927": "ROOT_RECONCILED through control material 1085d5ebb, paired-topology seal 202258ba7, and command-reference/learning correction b2f614037. The first S08 worker correctly stopped on a mixed historical preflight range; the second correctly stopped on a nonexistent eligibility checker. Local accepted both returns as evidence, moved preflight to the clean execution frontier, promoted packet-shape and independent-probe admissions into author-fast, replaced the missing command with the verified metadata-only eligibility audit, made dispatch quality reject nonexistent Python command paths, and enabled paired proactive operator-notice/successor-freeze escalation on a decision-relevant first occurrence. No loader read, instruction use, receipt, activation, provider/network or external effect occurred.",
-  "nextAllowedMove": "PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=PAUSE_FOR_OPERATOR_DIRECTION; ACTIVE_BATCH=MFRP-P4-C1-BOUNDED-RETRY-RECOVERY-CLOSED; INITIAL_MATERIAL_COMMIT=d27b4bfbe; PHASE_CORRECTION_COMMIT=ea6fe98e6; REPLAY_FILTER_COMMIT=131626025; LIVE_VALIDATION_DISCLOSURE_PARENT=20b10177c; EXPANSION_ALLOWED=false. Bounded retry now runs only on dedicated session-sync disclosures and selects only canonically replayable backlog items; this continuity disclosure is the live full-gate validation trigger and the ignored journal remains the runtime count authority. CVF-NCR-R1-S08 P7, NCR P8-P10 and M5/M10/M20/P5/P6 remain paused; no provider/network/live, public-sync, deployment or production authority; latest closed LHW wave LHW24."
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; ACTIVE_BATCH=CVF-NCR-R1-S09; MATERIAL_COMMIT=1430482219627814710163e280a92b7900adbd87; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md; EXPANSION_ALLOWED=false. Execute the committed P8 activation-readiness work order as one no-commit INTERNAL_AGENT, then return to Local independent review. P9/P10, instruction-body read, output consumption, external adapter, provider/network/live, public-sync, deployment and production remain parked; P4-C1 evidence collection continues gradually under its standardized mechanism; latest closed learning-history wave LHW24."
 }

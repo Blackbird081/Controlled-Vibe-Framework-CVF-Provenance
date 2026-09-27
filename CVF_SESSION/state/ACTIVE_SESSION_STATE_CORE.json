@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
-    "baselineSha256": "663aa7de2e15d26ccc3a2a121f644de3abd706328a733e2431beb8446f5d6cfe",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
-    "workOrderSha256": "0f08e01f2672cfa8606a26254df4266902aec77be0725260b6081d9f8b8da847"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md",
+    "baselineSha256": "c1413951710bf72fde57088f33ff798e7abdd3f22dd72ae3c5353b037c7fce04",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md",
+    "workOrderSha256": "196607e7a38b26da0a4a455227b600cc18c2bbc6001e9666e42aab939efbcb49"
   },
-  "currentAuthoritySyncReason": "P4-C1 bounded retry recovery is closed through phase correction ea6fe98e6 and replay-filter correction 131626025. The continuity disclosure above parent 20b10177c owns live full-gate validation; runtime journal counts remain non-authoritative for checkpoint admission until normal M5. NCR and M5/P5/P6 remain paused.",
+  "currentAuthoritySyncReason": "Operator resumed NCR after standardizing P4-C1 evidence collection. CVF-NCR-R1-S09 P8 activation-readiness dispatch is material at 1430482219627814710163e280a92b7900adbd87; it authorizes exact lifecycle/truth/projection reconciliation only. P9/P10, instruction use, external adapter and effectful runtime remain parked.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mfrp_p4_c1_bounded_retry_recovery_closed_paused",
-  "previousMode": "mfrp_p4_c1_bounded_retry_recovery_live_validation_ready",
+  "currentMode": "cvf_ncr_r1_s09_activation_readiness_dispatch_ready",
+  "previousMode": "mfrp_p4_c1_bounded_retry_recovery_closed_paused",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

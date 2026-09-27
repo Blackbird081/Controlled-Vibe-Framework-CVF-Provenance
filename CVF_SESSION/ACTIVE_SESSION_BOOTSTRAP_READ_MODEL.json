@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mfrp_p4_c1_bounded_retry_recovery_closed_paused",
+  "currentMode": "cvf_ncr_r1_s09_activation_readiness_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=PAUSE_FOR_OPERATOR_DIRECTION; ACTIVE_BATCH=MFRP-P4-C1-BOUNDED-RETRY-RECOVERY-CLOSED; INITIAL_MATERIAL_COMMIT=d27b4bfbe; PHASE_CORRECTION_COMMIT=ea6fe98e6; REPLAY_FILTER_COMMIT=131626025; LIVE_VALIDATION_DISCLOSURE_PARENT=20b10177c; EXPANSION_ALLOWED=false. Bounded retry now runs only on dedicated session-sync disclosures and selects only canonically replayable backlog items; this continuity disclosure is the live full-gate validation trigger and the ignored journal remains the runtime count authority. CVF-NCR-R1-S08 P7, NCR P8-P10 and M5/M10/M20/P5/P6 remain paused; no provider/network/live, public-sync, deployment or production authority; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; ACTIVE_BATCH=CVF-NCR-R1-S09; MATERIAL_COMMIT=1430482219627814710163e280a92b7900adbd87; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md; EXPANSION_ALLOWED=false. Execute the committed P8 activation-readiness work order as one no-commit INTERNAL_AGENT, then return to Local independent review. P9/P10, instruction-body read, output consumption, external adapter, provider/network/live, public-sync, deployment and production remain parked; P4-C1 evidence collection continues gradually under its standardized mechanism; latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
-    "baselineSha256": "663aa7de2e15d26ccc3a2a121f644de3abd706328a733e2431beb8446f5d6cfe",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
-    "workOrderSha256": "0f08e01f2672cfa8606a26254df4266902aec77be0725260b6081d9f8b8da847"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md",
+    "baselineSha256": "c1413951710bf72fde57088f33ff798e7abdd3f22dd72ae3c5353b037c7fce04",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md",
+    "workOrderSha256": "196607e7a38b26da0a4a455227b600cc18c2bbc6001e9666e42aab939efbcb49"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
