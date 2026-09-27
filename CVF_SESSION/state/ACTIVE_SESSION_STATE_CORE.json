@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md",
-    "baselineSha256": "585e6ef87a590a2c72081e297e9ff9f650d1ad6cb4d1c7e821eb70b889481840",
+    "baselineSha256": "d2998fae60afa98c359bb233a26f2d3c2d8b7db5769d75ba053795b23119e748",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md",
-    "workOrderSha256": "699bca3f3fdecb8217dc9f05e1252ae439c6b07a616aac2d84289a592ebf8164"
+    "workOrderSha256": "58ba1a68c70bf472531a530737140ebdf48c599d529b4db153d024d93c215a0f"
   },
-  "currentAuthoritySyncReason": "CVF-NCR-R1-S10 P9 packet is author-complete and held at material commit 22ddeada689b8e94877d619fdb61457c9e490269. Dry readiness is not accepted as instruction-use proof; the packet requires one explicitly released live provider call and forbids automatic retry. No worker may start until Local converts the held packet into a committed dispatch release.",
+  "currentAuthoritySyncReason": "CVF-NCR-R1-S10 P9 is DISPATCH_READY after the operator released exactly one Alibaba/DashScope call using qwen3.7-flash-2026-07-15 with no retry and Local bound the executable grant. The worker owns exactly the receipt and worker-return paths; P10 and broader effects remain parked.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s10_p9_live_checkpoint_held",
-  "previousMode": "cvf_ncr_dispatch_semantic_feasibility_closed_s10_author_ready",
+  "currentMode": "cvf_ncr_r1_s10_p9_dispatch_ready",
+  "previousMode": "cvf_ncr_r1_s10_p9_live_checkpoint_held",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

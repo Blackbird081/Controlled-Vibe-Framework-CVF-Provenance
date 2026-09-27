@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_s10_p9_live_checkpoint_held`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator decides whether to release exactly one no-retry P9 live provider call; role=Local orchestrator/reviewer; phase=S10 packet author-complete and held; decision owner=operator for live effect, Local for technical release/review; parked checkpoint=P10, external adapter, additional calls, public and production.
+Startup acknowledged: current mode=`cvf_ncr_r1_s10_p9_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=dispatch the committed S10/P9 packet to one INTERNAL_AGENT for exactly one no-retry live provider call; role=Local orchestrator/reviewer; phase=S10 P9 worker dispatch; decision owner=Local for technical review/closure under the released operator grant; parked checkpoint=P10, external adapter, additional calls, public and production.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_s10_p9_live_checkpoint_held`
-Current mode: `cvf_ncr_r1_s10_p9_live_checkpoint_held`; previous mode marker: `cvf_ncr_dispatch_semantic_feasibility_closed_s10_author_ready`
+Current mode marker: `cvf_ncr_r1_s10_p9_dispatch_ready`
+Current mode: `cvf_ncr_r1_s10_p9_dispatch_ready`; previous mode marker: `cvf_ncr_r1_s10_p9_live_checkpoint_held`
 
 ## Next Allowed Move
-Mode: `cvf_ncr_r1_s10_p9_live_checkpoint_held`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=OPERATOR_CHECKPOINT; ACTIVE_BATCH=CVF-NCR-R1-S10; MATERIAL_COMMIT=22ddeada689b8e94877d619fdb61457c9e490269; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md; EXPANSION_ALLOWED=false. S10/P9 packet is author-complete and HOLD_PENDING_OPERATOR_DECISION. The operator may release exactly one Alibaba/DashScope live provider call using qwen3.7-flash-2026-07-15 with no automatic retry; Local must then change both packet statuses, bind an executable provider grant, run pre-dispatch and commit release continuity before any worker starts. P10, external adapter, additional calls, public-sync, deployment and production remain parked; latest closed learning-history wave LHW24.
+Mode: `cvf_ncr_r1_s10_p9_dispatch_ready`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; ACTIVE_BATCH=CVF-NCR-R1-S10; MATERIAL_COMMIT=c90b4dc339a92390c4e90694d2828b430183df04; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md; EXPANSION_ALLOWED=false. S10/P9 is DISPATCH_READY under delegation `CVF-NCR-R1-S10-P9-ONE-CALL-20260928`: one INTERNAL_AGENT may run the exact dry command and at most one Alibaba/DashScope live call using qwen3.7-flash-2026-07-15, with no retry. The worker owns exactly the receipt and worker-return paths and must not commit. P10, external adapter, additional calls, public-sync, deployment and production remain parked; latest closed learning-history wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
