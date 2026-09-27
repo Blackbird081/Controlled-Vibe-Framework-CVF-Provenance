@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
     "baselineSha256": "8b317bf0ced8b5a624231a7f508d9304de30a2f3559295dda8d5540c0327e2d6",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
-    "workOrderSha256": "1494d6286e952ef012a181d1c35abb7e2621e8fbbb8e2e61cf0c5b1bf2342684"
+    "workOrderSha256": "2bef2d6bc22cada35af46c0be947734cc63d786b8c2ab633e29ef9f6ce3503f4"
   },
-  "currentAuthoritySyncReason": "R1/S08 P7 usage-receipt-readiness packet is dispatch-ready at material commit c8b35e958; exact baseline/work-order hashes are rebound here; atomic continuity-rebind parent c8b35e958.",
+  "currentAuthoritySyncReason": "R1/S08 P7 usage-receipt-readiness entrypoint is root-reconciled at material commit 1085d5ebb; the worker preflight now uses the clean execution frontier, and author-fast enforces packet-shape plus independent-probe admission; exact baseline/work-order hashes are rebound here; atomic continuity-rebind parent 1085d5ebb.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
