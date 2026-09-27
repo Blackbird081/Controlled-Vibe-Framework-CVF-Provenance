@@ -2,16 +2,19 @@
 
 Memory class: POINTER_RECORD
 
-Status: PROPOSED
+Status: APPROVED
 
 docType: assf_package_front_door
 
 ## Purpose
 
-This front door identifies the `PROPOSED` CVF-owned test-evidence-audit
+This front door identifies the `APPROVED` CVF-owned test-evidence-audit
 package. The body is `SKILL.md`; provenance and lifecycle declarations are
-in `skill.source.json`. Neither file grants approval, UAT, certification,
-truth, invocation, or runtime eligibility.
+in `skill.source.json`. `uatState: PASSED` and `certificationState:
+CERTIFIED` per the R1/S06 review; `internalAgentDisposition: IMPLEMENTED`
+grants explicit internal runtime-loader body-read eligibility only. Neither
+file grants `ACTIVE` status, truth, resolver activation, automatic
+invocation, or external/live/public/production effect.
 
 ## Scope / Applies-To
 
@@ -19,9 +22,10 @@ An advisory disposition (KEEP, REPAIR, CONSOLIDATE, ADD, or
 DEFER_WITH_REASON) for one asserted existing-proof claim tied to a named
 source file and a named test file. The package compresses the accepted
 `docs/audits/CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_CANDIDATE_2026-09-27.md`
-procedure into a compact instruction body. It is `PROPOSED` and
-contract-only: no P5 approval, UAT, certification, truth packet, resolver
-selection, or provider/host action follows from this proposal.
+procedure into a compact instruction body. It is `APPROVED` with UAT
+`PASSED` and certification `CERTIFIED`: this grants explicit internal
+runtime-loader body-read eligibility only, never truth packet, resolver
+selection, ACTIVE status, or provider/host action.
 
 ## Owner Surface
 
@@ -32,12 +36,15 @@ and its Local completion is
 `docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md`.
 The prior ASSF SOP P3 metadata-candidate closure is
 `docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md`.
+The P5 UAT/certification review is
+`docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md`.
 
 ## Claim Boundary
 
-This file is a package front door only. It does not certify test
-coverage, does not authorize test execution as a standing capability, and
-does not convert an advisory label into a test PASS or a deletion
-permission. UAT and certification are `NOT_STARTED`; this front door is
-not invocation, host installation, provider proof, public export, or
-production readiness evidence.
+This file is a package front door only. It does not certify
+repository-wide test coverage, does not authorize test execution as a
+standing capability, and does not convert an advisory label into a test
+PASS or a deletion permission. UAT is `PASSED` and certification is
+`CERTIFIED` per the R1/S06 review; this front door is not `ACTIVE` status,
+resolver activation, automatic invocation, host installation, provider
+proof, public export, or production readiness evidence.

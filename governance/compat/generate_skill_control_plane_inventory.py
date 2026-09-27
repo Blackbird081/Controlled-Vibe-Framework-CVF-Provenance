@@ -350,7 +350,11 @@ def _drift_for_record(
                     drift.append(f"PACKAGE_SOURCE_{field.upper()}_MISMATCH")
         drift.extend(_selection_profile_violations(selection_profile))
 
-    if runtime_eligible and not _truth_allows_activation(truth):
+    if (
+        runtime_eligible
+        and _upper(entry.get("status")) == "ACTIVE"
+        and not _truth_allows_activation(truth)
+    ):
         drift.append("RUNTIME_ELIGIBLE_WITHOUT_APPROVED_STRICT_TRUTH_PACKET")
 
     if _upper(entry.get("externalCliMcpDisposition")) == "IMPLEMENTED":

@@ -1,19 +1,19 @@
 {
   "schemaVersion": "0.1.0",
-  "generatedAt": "2026-09-27T01:07:00.790Z",
+  "generatedAt": "2026-09-27T09:29:45.138Z",
   "sourceInventory": "../../../docs/reference/agent_system_skills/control_plane/generated/skill-inventory.json",
   "sourceSkillIndex": "../../../docs/reference/agent_system_skills/generated/skill-index.json",
   "dashboardContract": "Read-only CVF Web projection of Skill Control Plane inventory. Web dashboards may consume this file for display and filtering, but it is not runtime authority, activation authority, provider authority, or public certification authority.",
   "summary": {
-    "assfRegistryEntries": 33,
-    "packageRoots": 25,
-    "runtimeEligiblePackages": 25,
+    "assfRegistryEntries": 34,
+    "packageRoots": 26,
+    "runtimeEligiblePackages": 26,
     "activeResolverReadyPackages": 25,
     "cliMcpAdapterPackages": 25,
-    "selectionProfiledPackages": 25,
+    "selectionProfiledPackages": 26,
     "webProjectionItems": 53,
     "crossSurfaceDriftViolationCount": 0,
-    "projectedRuntimePackages": 25
+    "projectedRuntimePackages": 26
   },
   "runtimePackages": [
     {
@@ -985,6 +985,64 @@
       "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
       "authorityCeiling": null,
       "adapterContract": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md"
+    },
+    {
+      "skillId": "cvf-engineering-test-evidence-audit",
+      "title": "CVF Engineering Test Evidence Audit",
+      "primaryDomain": "test-evidence-disposition",
+      "domainGroup": "engineering",
+      "secondaryDomains": [
+        "test-driven-development",
+        "code-review-quality"
+      ],
+      "recommendedWhen": [
+        "a comment, commit message, docstring, or prior review asserts a source file is tested or covered, and the claim needs an advisory check before being trusted or extended"
+      ],
+      "notRecommendedWhen": [
+        "the task is authoring a new failing test before implementation exists (TDD's trigger)",
+        "the task is reviewing a diff or PR for correctness/simplification/efficiency defects (code-review's trigger)",
+        "the task requires actually running, evaluating, or deleting the named test"
+      ],
+      "specSignals": [
+        "test evidence audit",
+        "advisory test disposition",
+        "keep repair consolidate add defer"
+      ],
+      "selectionKeywords": [
+        "is this tested",
+        "existing test coverage claim",
+        "test evidence audit",
+        "verify existing proof claim",
+        "advisory test disposition"
+      ],
+      "outputGoals": [
+        "advisory disposition row",
+        "cited test-assertion evidence",
+        "next-owner action, not a test result"
+      ],
+      "intendedUsers": [
+        "worker",
+        "reviewer",
+        "dispatcher"
+      ],
+      "agentUseCases": [
+        "check whether an asserted proof claim is actually tested",
+        "give a KEEP/REPAIR/CONSOLIDATE/ADD/DEFER_WITH_REASON disposition for one existing-proof claim",
+        "read actual test assertions instead of trusting a docstring or claim sentence"
+      ],
+      "expectedOutputContribution": "One advisory row disposing an existing-proof claim, with cited evidence and a next-owner action, never a test PASS or deletion permission.",
+      "runtimeEligible": true,
+      "activationDecision": "DENIED_MISSING_OR_UNAPPROVED_TRUTH_PACKET",
+      "cliMcpDisposition": "DEFERRED_WITH_REASON",
+      "packageRootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
+      "registryEntryPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
+      "certificationState": "CERTIFIED",
+      "uatState": "PASSED",
+      "truthStatus": null,
+      "verificationMode": null,
+      "runtimeEligibility": null,
+      "authorityCeiling": null,
+      "adapterContract": "N/A with reason: no external CLI/MCP adapter exists at ASSF SOP P4; adapter authorship requires a separate later-phase work order"
     },
     {
       "skillId": "cvf-governance-context-engineering",

@@ -3492,15 +3492,15 @@
       "version": "0.1.0"
     },
     {
-      "acceptanceEvidence": "docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md (content accepted; worker's prohibited fixture/pytest execution recorded as a disclosed scope violation and explicitly excluded from acceptance evidence); docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md (P3 metadata accepted with recorded worker scope violation for an unauthorized Git-mutation diagnostic, also excluded from acceptance evidence)",
+      "acceptanceEvidence": "docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md (content accepted; worker's prohibited fixture/pytest execution recorded as a disclosed scope violation and explicitly excluded from acceptance evidence); docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md (P3 metadata accepted with recorded worker scope violation for an unauthorized Git-mutation diagnostic, also excluded from acceptance evidence); docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md (P5 five-case source-based UAT, all PASS, no audited test execution)",
       "adapterContract": "N/A with reason: no external CLI/MCP adapter exists at ASSF SOP P4; adapter authorship requires a separate later-phase work order",
       "adapterEvidence": "N/A with reason: no adapter implemented at this phase",
-      "approvalState": "AWAITING_REVIEW",
+      "approvalState": "APPROVED",
       "authorityCeiling": "bounded advisory content guidance only; a label never mutates a test result, a checker verdict, or a file, and never authorizes deleting or skipping a test",
-      "candidateState": "PROPOSED",
+      "candidateState": "APPROVED",
       "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
-      "capabilityBoundary": "P4 contract-only PROPOSED package; README, SKILL.md, and skill.source.json exist as a compact instruction body; no approval, UAT, certification, truth packet, resolver selection, host installation, or test/fixture/evaluation execution authority",
-      "certificationState": "NOT_STARTED",
+      "capabilityBoundary": "P5 APPROVED package; UAT PASSED and certification CERTIFIED per docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md; internal disposition IMPLEMENTED grants explicit internal runtime-loader body-read eligibility only; no ACTIVE status, truth packet, resolver selection, host installation, or test/fixture/evaluation execution authority",
+      "certificationState": "CERTIFIED",
       "compositionOrder": 34,
       "conflicts": [],
       "contextProfile": "documentation-only-advisory-candidate",
@@ -3515,7 +3515,7 @@
         "the named source file path",
         "the named test file path (or an explicit statement that no test file is known, which forces DEFER_WITH_REASON)"
       ],
-      "internalAgentDisposition": "CONTRACT_ONLY",
+      "internalAgentDisposition": "IMPLEMENTED",
       "legacyRows": [],
       "license": "CVF_PRIVATE_GOVERNED",
       "loaderBoundary": "loading this metadata or the package body never grants authority to commit, activate, execute a test, delete a test, or expand any active work order",
@@ -3538,7 +3538,8 @@
       "retirement": "none",
       "reviewArtifacts": [
         "docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md",
-        "docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md"
+        "docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md",
+        "docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md"
       ],
       "riskCeiling": "R0",
       "riskProfile": "R0",
@@ -3562,7 +3563,7 @@
         "docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md",
         "docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md"
       ],
-      "status": "PROPOSED",
+      "status": "APPROVED",
       "successor": "none",
       "surfaces": [
         "docs/audits",
@@ -3578,7 +3579,7 @@
         "verify existing proof claim",
         "advisory test disposition"
       ],
-      "uatState": "NOT_STARTED",
+      "uatState": "PASSED",
       "useWhen": "A worker or reviewer holds an asserted existing-proof claim (a comment, commit message, docstring, or prior review stating a source file is tested or covered) tied to a specific source file and a specific test file or test function, and needs an advisory KEEP/REPAIR/CONSOLIDATE/ADD/DEFER_WITH_REASON disposition before trusting or extending that claim.",
       "version": "0.1.0"
     }

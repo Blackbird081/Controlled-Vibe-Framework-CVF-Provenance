@@ -226,6 +226,74 @@ class SkillControlPlaneInventoryTests(unittest.TestCase):
                 inventory["records"][0]["drift"]["violations"],
             )
 
+    def _build_lifecycle_fixture_inventory(self, status: str) -> dict[str, object]:
+        # _package_root_path in the generator under test resolves canonicalRoot
+        # against the module-level REPO_ROOT rather than the fixture's
+        # package_roots_dir, so a runtime-eligible fixture must reuse an
+        # existing real package root's canonicalRoot to satisfy the
+        # PACKAGE_ROOT_MISSING check. Only the registry entry and package
+        # source fields below are read by build_inventory for this test; no
+        # real registry/package-source file is read or mutated.
+        real_skill_id = "cvf-engineering-test-evidence-audit"
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entries_dir = root / "entries"
+            index_path = root / "skill-index.json"
+            truth_path = root / "truth-index.json"
+            web_path = root / "skills-index.json"
+            template_path = root / "skill-template-map.json"
+            selection_path = root / "skill-selection-profiles.json"
+            entry = _package_entry(real_skill_id, status=status)
+            entry["canonicalRoot"] = (
+                f"docs/reference/agent_system_skills/packages/{real_skill_id}/SKILL.md"
+            )
+            entry["certificationState"] = "CERTIFIED"
+            entry["uatState"] = "PASSED"
+            entry["internalAgentDisposition"] = "IMPLEMENTED"
+            _write_json(entries_dir / f"{real_skill_id}.json", entry)
+            _write_json(truth_path, {"entries": []})
+            _write_json(web_path, {"categories": []})
+            _write_json(template_path, {"templateToSkillMap": {}})
+            _write_json(selection_path, _selection_profiles(real_skill_id))
+            generate_index(index_path, entries_dir)
+
+            return build_inventory(
+                entries_dir=entries_dir,
+                index_path=index_path,
+                truth_index_path=truth_path,
+                selection_profiles_path=selection_path,
+                web_skill_index_path=web_path,
+                web_template_map_path=template_path,
+            )
+
+    def test_approved_runtime_eligible_without_truth_is_activation_denied_not_drift(self) -> None:
+        inventory = self._build_lifecycle_fixture_inventory("APPROVED")
+        record = inventory["records"][0]
+
+        self.assertTrue(record["runtime"]["eligible"])
+        self.assertEqual(
+            record["activation"]["decision"],
+            "DENIED_MISSING_OR_UNAPPROVED_TRUTH_PACKET",
+        )
+        self.assertNotIn(
+            "RUNTIME_ELIGIBLE_WITHOUT_APPROVED_STRICT_TRUTH_PACKET",
+            record["drift"]["violations"],
+        )
+
+    def test_active_runtime_eligible_without_truth_retains_hard_drift(self) -> None:
+        inventory = self._build_lifecycle_fixture_inventory("ACTIVE")
+        record = inventory["records"][0]
+
+        self.assertTrue(record["runtime"]["eligible"])
+        self.assertEqual(
+            record["activation"]["decision"],
+            "DENIED_MISSING_OR_UNAPPROVED_TRUTH_PACKET",
+        )
+        self.assertIn(
+            "RUNTIME_ELIGIBLE_WITHOUT_APPROVED_STRICT_TRUTH_PACKET",
+            record["drift"]["violations"],
+        )
+
     def test_spec_recommendation_uses_selection_keywords(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

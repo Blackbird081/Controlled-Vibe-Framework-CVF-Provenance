@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NCR-R1-S06-R1
 
@@ -143,6 +143,30 @@ Dispatch verification requires structural/dispatch/source/closeability gates,
 the reproduced one inventory violation and five Web violations, exact dirty-set
 evidence, and final worker proof through the paired work order. The two known
 runtime projection failures are the correction target, not accepted closure.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_COMPLETION_2026-09-27.md` | Local acceptance and independent probe | PASS |
+| Roadmap state | NCR D013 R1/S06 | P5 closed; P6-P10 parked | PASS |
+| Registry JSON | `docs/reference/agent_system_skills/registry/entries/cvf-engineering-test-evidence-audit.json` | APPROVED/PASSED/CERTIFIED/IMPLEMENTED | PASS |
+| Registry Markdown | package README and SKILL | P5 lifecycle and claim boundary | PASS |
+| External evidence digest | none | N/A with reason: internal governed evidence only | N/A with reason |
+| System loop interlock | inventory and Web projections | activation denied; zero target drift | PASS |
+| Session continuity | active handoff/session state | split continuity commit follows material closure | BLOCKED with reason: reviewer/session-sync owned after material commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Lifecycle | APPROVED/PASSED/CERTIFIED/IMPLEMENTED | registry and package source aligned | PASS |
+| Truth boundary | no P6 truth | target truth absent | PASS |
+| Activation | denied without approved STRICT truth | named denial decision | PASS |
+| ACTIVE safety | hard drift retained | hostile test and Local probe | PASS |
+| Web projection | target plus runtime count 26 | checker aligned | PASS |
+| Loader receipt | target-specific body receipt | receipt hash recorded | PASS |
 
 ## Package Skill Productionization Control Block
 

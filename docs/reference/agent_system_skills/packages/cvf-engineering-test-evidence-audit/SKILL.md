@@ -7,7 +7,7 @@ description: Give an advisory KEEP/REPAIR/CONSOLIDATE/ADD/DEFER_WITH_REASON disp
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED
+Status: APPROVED
 
 docType: assf_package
 
@@ -97,12 +97,16 @@ authority from read access.
 ## Progressive Disclosure
 
 The registry/index exposes metadata before this body. This body is
-`PROPOSED`: UAT and certification are `NOT_STARTED`, and no receipt-backed
-selection or invocation exists. The accepted content candidate and its
-Local completion remain the authoritative source for the five-label
-semantics, the adversarial/boundary cases, and the paired-evaluation
-design; this body compresses that source and does not add behavior beyond
-it.
+`APPROVED`: `uatState: PASSED` and `certificationState: CERTIFIED` per the
+five-case source-based review at
+`docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md`,
+and `internalAgentDisposition: IMPLEMENTED` grants explicit internal
+runtime-loader body-read eligibility only. This is not `ACTIVE` status,
+resolver activation, automatic invocation, or any external/live/public/
+production effect. The accepted content candidate and its Local completion
+remain the authoritative source for the five-label semantics, the
+adversarial/boundary cases, and the paired-evaluation design; this body
+compresses that source and does not add behavior beyond it.
 
 ## Source Provenance
 
@@ -112,17 +116,24 @@ and its Local completion
 `docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md`.
 The completion's recorded worker scope violation (unauthorized fixture
 and `pytest` execution) is excluded from this package's own evidence; it
-does not certify or imply that this package may execute tests.
+does not certify or imply that this package may execute tests. P5 UAT and
+certification evidence is recorded in
+`docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md`,
+which independently re-derived each of the five case dispositions from this
+same accepted content source without executing any audited test.
 
 ## Claim Boundary
 
-This package root is `PROPOSED` and contract-only. It compresses the
-already-accepted advisory audit procedure into a compact instruction
-body; it does not add new behavior, does not certify repository-wide test
-coverage, and does not authorize test execution, deletion, resolver
-selection, host exposure, or provider/live/public/production effect. It
-may be opened only through explicit, separately authorized CVF review
-under active governed work-order authority.
+This package root is `APPROVED` with `uatState: PASSED`,
+`certificationState: CERTIFIED`, and `internalAgentDisposition: IMPLEMENTED`.
+It grants explicit internal runtime-loader body-read eligibility only. It
+does not add new behavior beyond the already-accepted advisory audit
+procedure, does not certify repository-wide test coverage, and does not
+authorize `ACTIVE` status, resolver activation, automatic invocation, test
+execution, deletion, external adapter, host exposure, or
+provider/live/public/production effect. It may be opened only through
+explicit, separately authorized CVF review under active governed
+work-order authority.
 
 ## Public Export Disposition
 
