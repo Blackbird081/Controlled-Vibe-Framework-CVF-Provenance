@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_s03_discovery_practice_closed",
+  "currentMode": "cvf_ncr_r1_s04_test_evidence_audit_metadata_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SOURCE_VERIFY_NEXT_D013_SLICE; ACTIVE_BATCH=CVF-NCR-R1-S03-CLOSED; REVIEW=docs/reviews/CVF_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_COMPLETION_2026-09-27.md; MATERIAL_COMMIT=b8d8d32e2; EXPANSION_ALLOWED=false. R1/S03 three-role discovery-practice enrichment is CLOSED_PASS_BOUNDED after Local review. The worker return is accepted with reviewer normalization of the broad checker count to 19 historical out-of-manifest findings and one labeled corpus-verdict structural repair. Local may source-verify the next D013 slice and prepare a separate scoped packet; no new skill, package metadata/registry/truth/index mutation, resolver/executor/skill/test/eval execution, SOP promotion, host/provider/live/public/production effect follows. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S04; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_2026-09-27.md; MATERIAL_COMMIT=1f7d66349; EXPANSION_ALLOWED=false. R1/S04 is a no-commit INTERNAL_AGENT dispatch for ASSF productionization SOP P3 only: create registryOrder 34 candidate metadata for cvf-engineering-test-evidence-audit, regenerate the canonical skill index, and return the exact worker packet. Worker writes exactly the three work-order paths and runs only enumerated commands. No package root/SKILL/source/truth, P4-P10 promotion, resolver/loader/skill/test/eval execution, host/provider/live/public/production effect, staging or commit. Local owns review/closure; operator retains data, effect and expense decisions; latest closed LHW wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_2026-09-27.md",
-    "baselineSha256": "5d0cfa4c25d6ce08383516af4b489af259d7f3cc88e141670855c541d69b45fd",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_2026-09-27.md",
-    "workOrderSha256": "f8c3227fba75f0f8bdae05eaf5909793b218d3114d2b91e8d940faec78fcad58"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_2026-09-27.md",
+    "baselineSha256": "e05e526af64348d68419b48d220c0de6098c576baedc26b4be2b0a78852258a0",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_2026-09-27.md",
+    "workOrderSha256": "1714a16b39a46d52461a7c98cf565de3a6bfa7645b5c5a4dc30be1f6c5464136"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
