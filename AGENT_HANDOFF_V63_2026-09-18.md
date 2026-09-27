@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `0f7367f78` for batch `CVF-NCR-R1-S07-POSTCLOSE-CORRECTION`; atomic continuity-rebind parent: `0f7367f78`. The bounded prerequisite correction aligns the downstream activation-policy oracle with the repaired ACTIVE gate, adds an explicit APPROVED denial case, and repairs the S07 return's N/A corpus-verdict shape plus its bound digest. Pre-commit passed 90/90. R1/S07-R1 remains closed, the package remains APPROVED, and the next move remains P7 packet authoring only. No P7 execution, `ACTIVE`, P8-P10, package-body invocation, external adapter, provider/network/live, public-sync or production authority follows.
+Current material HEAD recorded for this handoff: `c8b35e958` for batch `CVF-NCR-R1-S08`; atomic continuity-rebind parent: `c8b35e958`. The source-verified P7 usage-receipt-readiness baseline, work order and reserved return are committed; author-fast and material pre-commit 90/90 passed. Exactly one no-commit INTERNAL_AGENT execution is authorized under that work order. No `ACTIVE`, P8-P10, instruction/output consumption, external adapter, provider/network/live, public-sync or production authority follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -10,13 +10,13 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 Carry CVF-NCR v2.2 as the selected planning successor while preserving closed AKOE and terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are routed; AKOE-P4/common reconciliation and optional U1 source intake remain closed bounded.
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer and session steward. Phase: NCR-R1/S07-R1 activation-phase and learning-escalation root-correction dispatch ready. Decision owner: Local for technical/design disposition, operator for data/effect/budget and every runtime/external expansion.
+Role: Local orchestrator/reviewer and session steward. Phase: NCR-R1/S08 P7 usage-receipt-readiness dispatch ready. Decision owner: Local for technical/design disposition and closure, operator for data/effect/budget and every runtime/external expansion.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=author and independently review a fresh P7 usage-receipt-readiness packet; role=Local orchestrator/reviewer; phase=R1/S07-R1 closed bounded; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=P7 execution, ACTIVE, P8-P10, package-body invocation, external adapter, provider/live, public and production.
+Startup acknowledged: current mode=`cvf_ncr_r1_s08_usage_receipt_readiness_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute the committed R1/S08 P7 usage-receipt-readiness work order as a no-commit INTERNAL_AGENT; role=Local orchestrator/reviewer; phase=R1/S08 dispatch ready; decision owner=Local technical disposition and closure, operator data/effect/expense; parked checkpoint=ACTIVE, P8-P10, instruction/output consumption, external adapter, provider/live, public and production.
 ## Current Mode
-`cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_closed`. Current plan: NCR v2.2 D013; R1/S07-R1 and P6 truth admission are closed bounded, while P7 execution and all later feature successors remain separately gated; historical NCR/AKOE acceptance remains below. Latest closed learning-history wave: `LHW24`.
+`cvf_ncr_r1_s08_usage_receipt_readiness_dispatch_ready`. Current plan: NCR v2.2 D013; R1/S07-R1 and P6 truth admission are closed bounded, and the committed R1/S08 packet authorizes only the bounded P7 receipt proof; all later feature successors remain separately gated. Latest closed learning-history wave: `LHW24`.
 
 ## Active Boundary
 
@@ -155,7 +155,7 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 - NCR W02 read-only return was Local-accepted at `c638f2ece` after source-claim repair and 90/90 pre-commit. The client fallback port `8000` differs from the server's documented `8100`; actual URL/port, ledger/log retention and pilot data/effect/expense remain open. R1/W00 static HTML UX contract worker return was reviewer-repaired and accepted bounded at `97532f7038f7bcc0d3768550b06a3695b72b8809`. R1/W01 paired baseline/work order committed at `e54dd51e8eb60364a814a921a0d31bb7d259e487`; exact component/test/return worker delta was reviewer-repaired and accepted bounded at `5e99eb20910e7e3282d7431e6ca3d96c5e87860b` after reviewer-fast 69/69 and pre-commit 90/90. Mocked UI tests do not establish actual browser walkthrough, route call, profile, P06/P08, or pilot effect; successor work order is held for Web research.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_SOURCE_VERIFIED_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S07-CLOSED; MATERIAL_COMMIT=f7d8e4842; CONTINUITY_REBIND_PARENT=f7d8e4842; EXPANSION_ALLOWED=false. R1/S07-R1 is CLOSED_PASS_BOUNDED with P6 truth admitted, activation denied until ACTIVE, exact inventory/resolver parity, automatic recurring-blocker escalation, and two worker scope violations recorded. Under the operator's standing successor-authoring authority, the next allowed move is to author and independently review a fresh P7 usage-receipt-readiness baseline/work order from the governed roadmap. Do not execute P7, promote ACTIVE, open P8-P10, invoke package bodies, call providers/network, public-sync, deploy, or claim production readiness without that separate accepted packet; latest closed LHW wave LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S08; MATERIAL_COMMIT=c8b35e958; CONTINUITY_REBIND_PARENT=c8b35e958; EXPANSION_ALLOWED=false. Execute exactly `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md` as one no-commit INTERNAL_AGENT P7 usage-receipt-readiness run from the clean committed dispatch/session-sync HEAD. The worker may perform the single explicitly authorized loader body read only to create the named durable usage receipt, but must not follow, use, execute, or consume package instructions or outputs. Return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`. Local owns independent review, material commit, closure, and later continuity. Do not promote ACTIVE, open P8-P10, mutate package/registry/truth/index/inventory/Web/checker/session surfaces, stage/stash/commit/push, call providers/network, public-sync, deploy, or claim production readiness; latest closed LHW wave LHW24.
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
@@ -177,14 +177,14 @@ PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_SOURCE_VERIFIED_WORK_ORDER; ACTIVE_
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: bind the committed R1/S07-R1 closure at material commit `f7d8e4842`, record exact closed-packet hashes, and regenerate the compact/full continuity projections. This continuity-only sync changes no worker-owned truth, package or generated projection path.
+Authorized guard-maintenance scope: bind the committed R1/S08 dispatch packet at material commit `c8b35e958`, record exact packet hashes and dispatch state, and regenerate the compact/full continuity projections. This continuity-only sync changes no worker-owned truth, package or generated projection path.
 Protected paths:
 
-- `AGENT_HANDOFF_V63_2026-09-18.md`
+- `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cvfNcrR1S07P6TruthPacketDispatch20260927.json`; `CVF_SESSION/state/entries/cvfNcrR1S07R1ActivationLearningRootReconciliationDispatch20260927.json`; `CVF_SESSION/state/entries/cvfNcrR1S07R1ActivationLearningRootReconciliationClosure20260927.json`
+- `CVF_SESSION/state/entries/cvfNcrR1S08UsageReceiptReadinessDispatch20260927.json`
 - `CVF_SESSION/state/entries/acelPostG7ThreeRepoAbsorption20260925.json`
 - `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`

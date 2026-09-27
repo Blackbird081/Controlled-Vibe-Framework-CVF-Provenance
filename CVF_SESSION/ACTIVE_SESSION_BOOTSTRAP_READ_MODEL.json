@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_closed",
+  "currentMode": "cvf_ncr_r1_s08_usage_receipt_readiness_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_SOURCE_VERIFIED_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S07-CLOSED; MATERIAL_COMMIT=f7d8e4842; CONTINUITY_REBIND_PARENT=f7d8e4842; EXPANSION_ALLOWED=false. R1/S07-R1 is CLOSED_PASS_BOUNDED with P6 truth admitted, activation denied until ACTIVE, exact inventory/resolver parity, automatic recurring-blocker escalation, and two worker scope violations recorded. Under the operator's standing successor-authoring authority, the next allowed move is to author and independently review a fresh P7 usage-receipt-readiness baseline/work order from the governed roadmap. Do not execute P7, promote ACTIVE, open P8-P10, invoke package bodies, call providers/network, public-sync, deploy, or claim production readiness without that separate accepted packet; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S08; MATERIAL_COMMIT=c8b35e958; CONTINUITY_REBIND_PARENT=c8b35e958; EXPANSION_ALLOWED=false. Execute exactly docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md as one no-commit INTERNAL_AGENT P7 usage-receipt-readiness run from the clean committed dispatch/session-sync HEAD. The worker may perform the single explicitly authorized loader body read only to create the named durable usage receipt, but must not follow, use, execute, or consume package instructions or outputs. Return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Local owns independent review, material commit, closure, and later continuity. Do not promote ACTIVE, open P8-P10, mutate package/registry/truth/index/inventory/Web/checker/session surfaces, stage/stash/commit/push, call providers/network, public-sync, deploy, or claim production readiness; latest closed LHW wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_2026-09-27.md",
-    "baselineSha256": "aa9b0a727f669c76492ea946fcb14b8aea9eeb1b4768a80316a2aa84eb6da8a4",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_2026-09-27.md",
-    "workOrderSha256": "d5a151ad2b15e0a9b63530c4ba8cff0992f6d146678f5f6145f15cef99e7e9bb"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
+    "baselineSha256": "8b317bf0ced8b5a624231a7f508d9304de30a2f3559295dda8d5540c0327e2d6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
+    "workOrderSha256": "1494d6286e952ef012a181d1c35abb7e2621e8fbbb8e2e61cf0c5b1bf2342684"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_2026-09-27.md",
-    "baselineSha256": "aa9b0a727f669c76492ea946fcb14b8aea9eeb1b4768a80316a2aa84eb6da8a4",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_2026-09-27.md",
-    "workOrderSha256": "d5a151ad2b15e0a9b63530c4ba8cff0992f6d146678f5f6145f15cef99e7e9bb"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
+    "baselineSha256": "8b317bf0ced8b5a624231a7f508d9304de30a2f3559295dda8d5540c0327e2d6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
+    "workOrderSha256": "1494d6286e952ef012a181d1c35abb7e2621e8fbbb8e2e61cf0c5b1bf2342684"
   },
-  "currentAuthoritySyncReason": "R1/S07-R1 closed bounded at material commit f7d8e4842 with activation parity, recurring-blocker escalation, P6 truth admission and recorded scope violations; exact closed packet hashes are rebound here; atomic continuity-rebind parent f7d8e4842.",
+  "currentAuthoritySyncReason": "R1/S08 P7 usage-receipt-readiness packet is dispatch-ready at material commit c8b35e958; exact baseline/work-order hashes are rebound here; atomic continuity-rebind parent c8b35e958.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_closed",
-  "previousMode": "cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_s08_usage_receipt_readiness_dispatch_ready",
+  "previousMode": "cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_closed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
