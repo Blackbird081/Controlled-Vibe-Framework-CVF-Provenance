@@ -913,6 +913,23 @@ touched."""
         status = autocollect.run_collection(canary_core.TRUSTED_COMMIT)
         self.assertEqual(status, 'P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE')
 
+    def test_empty_current_commit_consumes_one_bounded_retry_candidate(self):
+        trusted = 'b' * 40
+        prior = autocollect.observability.record_attempt({}, autocollect.observability.make_attempt('a' * 40, trusted, outcome='UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED', candidate_count=1, eligible=True, selected_path='docs/reviews/retry.md'))
+        autocollect._atomic_write_json(self._journal, prior)
+        candidate = autocollect.observability.EnrollmentCandidate(path='docs/reviews/retry.md', trusted_outcome='CLOSED_PASS_BOUNDED', phase='REVIEW', hard_obligation_locator='retry#status', hard_obligation_pattern='Status: CLOSED_PASS_BOUNDED', source_authority_locator='docs/work_orders/retry.md', origin='COMPLETION_REVIEW', priority=1)
+        empty = autocollect.observability.SelectionResult(None, 0, 'SKIPPED_NO_ELIGIBLE_CANDIDATE', ())
+        retry = autocollect.observability.SelectionResult(candidate, 1, 'SELECTED', (candidate.path,))
+        with mock.patch.object(autocollect, '_single_parent', return_value='c' * 40), mock.patch.object(autocollect, '_discover_candidate', side_effect=[empty, retry]), mock.patch.object(autocollect, '_read_committed_text', return_value=None):
+            status = autocollect.run_collection('d' * 40)
+        self.assertEqual(status, 'P4-C1: SKIPPED_UNREADABLE_COMMITTED_RETURN')
+        journal = autocollect._load_pending_journal()
+        attempt = next(item for item in journal['attempts'] if item['disclosureCommit'] == 'd' * 40)
+        self.assertEqual(attempt['retryOfTrustedCommit'], trusted)
+        self.assertEqual(journal['retryAttemptCount'], 1)
+        self.assertEqual(journal['retryableCount'], 0)
+        self.assertEqual(journal['eligibleCount'], 1)
+
     def test_successful_collection_never_writes_tracked_paths(self):
         """An honestly ineligible historical run touches no tracked path."""
         proc = subprocess.run(['git', 'status', '--short'], cwd=REPO_ROOT, capture_output=True, text=True)
