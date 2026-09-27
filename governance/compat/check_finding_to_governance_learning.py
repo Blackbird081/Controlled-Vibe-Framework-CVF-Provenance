@@ -553,20 +553,27 @@ def _validate_recurring_blocked_return(path: str, text: str) -> list[dict[str, s
                 "FIRST_OCCURRENCE is invalid because an earlier governed return carries the same rootCauseClusterId: "
                 + prior_cluster_paths[0],
             )
-        for match, field_name in (
-            (prior_match, "priorRelatedFinding"),
-            (notice_match, "operatorNoticeDisposition"),
-            (freeze_match, "successorFreezeDisposition"),
-        ):
-            if match is not None:
-                value = match.group(1).strip()
-                if not (value.upper().startswith("N/A") or "NOT_APPLICABLE_WITH_REASON" in value.upper()):
-                    _add(
-                        violations,
-                        path,
-                        "first_occurrence_disposition_invalid",
-                        f"FIRST_OCCURRENCE requires {field_name} to use NOT_APPLICABLE_WITH_REASON",
-                    )
+        if prior_match is not None:
+            prior_value = prior_match.group(1).strip().upper()
+            if not (prior_value.startswith("N/A") or "NOT_APPLICABLE_WITH_REASON" in prior_value):
+                _add(
+                    violations,
+                    path,
+                    "first_occurrence_disposition_invalid",
+                    "FIRST_OCCURRENCE requires priorRelatedFinding to use NOT_APPLICABLE_WITH_REASON",
+                )
+        notice_value = notice_match.group(1).strip() if notice_match is not None else ""
+        freeze_value = freeze_match.group(1).strip() if freeze_match is not None else ""
+        notice_na = notice_value.upper().startswith("N/A") or "NOT_APPLICABLE_WITH_REASON" in notice_value.upper()
+        freeze_na = freeze_value.upper().startswith("N/A") or "NOT_APPLICABLE_WITH_REASON" in freeze_value.upper()
+        proactive_pair = notice_value == OPERATOR_NOTICE_REQUIRED and freeze_value == FEATURE_SUCCESSORS_FROZEN
+        if not ((notice_na and freeze_na) or proactive_pair):
+            _add(
+                violations,
+                path,
+                "first_occurrence_disposition_invalid",
+                "FIRST_OCCURRENCE requires either two NOT_APPLICABLE_WITH_REASON dispositions or the paired proactive escalation OPERATOR_NOTICE_REQUIRED plus FEATURE_SUCCESSORS_FROZEN",
+            )
     else:
         _add(
             violations,

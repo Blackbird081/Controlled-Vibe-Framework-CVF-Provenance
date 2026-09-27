@@ -170,6 +170,12 @@ baseline's P7 scope, authority, acceptance criteria or parked checkpoints.
 This paired baseline/work-order refresh restores one common material dispatch
 commit as required by dispatch-release readiness.
 
+The second worker stop exposed an additional authoring defect: Verification
+Commands named a Python checker that never existed. The corrected command uses
+the existing metadata-only runtime eligibility audit with the target skill and
+JSON evidence, while dispatch quality now rejects missing Python script paths
+before release. Scope and authority remain unchanged.
+
 ## Claim Boundary
 
 This baseline authorizes one local governed loader body read solely to create

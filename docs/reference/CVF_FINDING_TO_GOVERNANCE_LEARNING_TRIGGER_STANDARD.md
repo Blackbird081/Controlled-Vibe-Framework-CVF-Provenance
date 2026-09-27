@@ -164,10 +164,14 @@ Every blocked return must carry these four fields, adjacent to or inside its
   `FIRST_OCCURRENCE`;
 - `operatorNoticeDisposition`: `OPERATOR_NOTICE_REQUIRED` when
   `recurrenceDisposition` is `RECURRING_CLUSTER_STOP`, or
-  `NOT_APPLICABLE_WITH_REASON` for a first occurrence;
+  `NOT_APPLICABLE_WITH_REASON` for a routine first occurrence. A first
+  occurrence may proactively use `OPERATOR_NOTICE_REQUIRED` when it exposes a
+  broader repeated control-plane pattern or decision-relevant safety gap;
 - `successorFreezeDisposition`: `FEATURE_SUCCESSORS_FROZEN` when
   `recurrenceDisposition` is `RECURRING_CLUSTER_STOP`, or
-  `NOT_APPLICABLE_WITH_REASON` for a first occurrence.
+  `NOT_APPLICABLE_WITH_REASON` for a routine first occurrence. Proactive
+  first-occurrence escalation must pair `OPERATOR_NOTICE_REQUIRED` with
+  `FEATURE_SUCCESSORS_FROZEN`; partial escalation is invalid.
 
 A `RECURRING_CLUSTER_STOP` disposition without a governed `priorRelatedFinding`
 path, without `OPERATOR_NOTICE_REQUIRED`, or without

@@ -405,6 +405,31 @@ def test_blocked_return_first_occurrence_complete_passes() -> None:
     assert issues == []
 
 
+def test_blocked_return_first_occurrence_proactive_escalation_passes() -> None:
+    doc = _BLOCKED_RETURN_FIRST_OCCURRENCE_COMPLETE.replace(
+        "operatorNoticeDisposition: NOT_APPLICABLE_WITH_REASON - first occurrence",
+        "operatorNoticeDisposition: OPERATOR_NOTICE_REQUIRED",
+    ).replace(
+        "successorFreezeDisposition: NOT_APPLICABLE_WITH_REASON - first occurrence",
+        "successorFreezeDisposition: FEATURE_SUCCESSORS_FROZEN",
+    )
+    issues = MODULE._validate_recurring_blocked_return(
+        "docs/reviews/CVF_TEST_RETURN.md", doc
+    )
+    assert issues == []
+
+
+def test_blocked_return_first_occurrence_partial_escalation_fails() -> None:
+    doc = _BLOCKED_RETURN_FIRST_OCCURRENCE_COMPLETE.replace(
+        "operatorNoticeDisposition: NOT_APPLICABLE_WITH_REASON - first occurrence",
+        "operatorNoticeDisposition: OPERATOR_NOTICE_REQUIRED",
+    )
+    issues = MODULE._validate_recurring_blocked_return(
+        "docs/reviews/CVF_TEST_RETURN.md", doc
+    )
+    assert "first_occurrence_disposition_invalid" in [issue["type"] for issue in issues]
+
+
 def test_blocked_return_recurring_without_escalation_fails() -> None:
     issues = MODULE._validate_recurring_blocked_return(
         "docs/reviews/CVF_TEST_RETURN.md", _BLOCKED_RETURN_RECURRING_WITHOUT_ESCALATION

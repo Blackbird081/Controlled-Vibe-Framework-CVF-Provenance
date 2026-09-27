@@ -75,7 +75,7 @@ Produce a source-backed P7 `USAGE_RECEIPT_READY` proof for
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-R1-S08","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"SINGLE_ROLE","novelty":"KNOWN_PATTERN"},"pathFamilies":["docs/baselines/","docs/work_orders/","docs/reviews/","docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md","governance/compat/run_dispatch_packet_author_fast_gate.py","governance/compat/test_run_dispatch_packet_author_fast_gate.py","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/"],"claims":["one explicit eligible loader read can create a deterministic P7 usage receipt","P7 receipt readiness does not imply activation or output use"],"requiredProof":["file-backed receipt","independent body and receipt digests","activation denial","exact two-path worker scope"],"operatorCheckpoints":["ACTIVE","P8-P10","provider/live/public/production"],"forbiddenEffects":["worker commit/stage/stash","instruction execution","output consumption","source mutation","provider/network/public action"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"docs/reviews/CVF_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_COMPLETION_2026-09-27.md","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-R1-S08","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"SINGLE_ROLE","novelty":"KNOWN_PATTERN"},"pathFamilies":["docs/baselines/","docs/work_orders/","docs/reviews/","docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md","docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md","governance/compat/run_dispatch_packet_author_fast_gate.py","governance/compat/test_run_dispatch_packet_author_fast_gate.py","governance/compat/check_work_order_dispatch_quality_core.py","governance/compat/test_check_work_order_dispatch_quality_machine_hardening.py","governance/compat/check_finding_to_governance_learning.py","governance/compat/test_check_finding_to_governance_learning.py","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/"],"claims":["one explicit eligible loader read can create a deterministic P7 usage receipt","P7 receipt readiness does not imply activation or output use"],"requiredProof":["file-backed receipt","independent body and receipt digests","activation denial","exact two-path worker scope"],"operatorCheckpoints":["ACTIVE","P8-P10","provider/live/public/production"],"forbiddenEffects":["worker commit/stage/stash","instruction execution","output consumption","source mutation","provider/network/public action"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"docs/reviews/CVF_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_COMPLETION_2026-09-27.md","completenessClaimChanged":false}}
 ```
 
 The additional authoring-control and continuity path families cover only this
@@ -290,7 +290,7 @@ Run from repository root in this order. The loader command is the only
 authorized body read and must be run exactly once.
 
 ```powershell
-python governance/compat/check_assf_runtime_eligibility.py --skill-id cvf-engineering-test-evidence-audit --enforce
+python governance/compat/run_assf_runtime_eligibility_audit.py --skill-id cvf-engineering-test-evidence-audit --include-items --json
 python governance/compat/run_assf_active_resolver.py --skill-id cvf-engineering-test-evidence-audit --json
 python governance/compat/run_assf_runtime_package_loader.py --skill-id cvf-engineering-test-evidence-audit --include-instruction-bodies --json --receipt-out docs/reviews/evidence/cvf-ncr-r1-s08-test-evidence-audit-usage-receipt.json
 python governance/compat/run_assf_activation_policy_resolver.py --skill-id cvf-engineering-test-evidence-audit --json
@@ -524,6 +524,10 @@ Protected paths:
 
 - `governance/compat/run_dispatch_packet_author_fast_gate.py`
 - `governance/compat/test_run_dispatch_packet_author_fast_gate.py`
+- `governance/compat/check_work_order_dispatch_quality_core.py`
+- `governance/compat/test_check_work_order_dispatch_quality_machine_hardening.py`
+- `governance/compat/check_finding_to_governance_learning.py`
+- `governance/compat/test_check_finding_to_governance_learning.py`
 
 Operator authorization: the operator instructed Local to handle the recurring
 root failure before continuing and has standing authority for this bounded

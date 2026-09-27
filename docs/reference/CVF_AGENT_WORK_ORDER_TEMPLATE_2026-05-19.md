@@ -1110,6 +1110,7 @@ A work order is not ready for execution unless it answers:
 - Which files may be touched?
 - Which files or actions are forbidden?
 - Which command proves pre-flight readiness?
+- Do all repository-relative Python script paths named in `Verification Commands` exist as regular files at authoring time?
 - Which evidence proves completion, including dispatch prompt envelope evidence per `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md` when delegated?
 - What stops the agent from continuing?
 
