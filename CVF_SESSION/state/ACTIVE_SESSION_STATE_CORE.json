@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md",
-    "baselineSha256": "c1413951710bf72fde57088f33ff798e7abdd3f22dd72ae3c5353b037c7fce04",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md",
-    "workOrderSha256": "196607e7a38b26da0a4a455227b600cc18c2bbc6001e9666e42aab939efbcb49"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md",
+    "baselineSha256": "585e6ef87a590a2c72081e297e9ff9f650d1ad6cb4d1c7e821eb70b889481840",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md",
+    "workOrderSha256": "699bca3f3fdecb8217dc9f05e1252ae439c6b07a616aac2d84289a592ebf8164"
   },
-  "currentAuthoritySyncReason": "Package-skill dispatch semantic feasibility is CLOSED_PASS_BOUNDED at material commit e14b367b2f65e272ed5e5b5007a2d47c773c8131. Pre-dispatch and pre-implementation now reject lifecycle/truth contradictions, external-adapter claim mismatches, omitted generated dependencies, and operator-question routing for Local technical blockers. The next move remains bounded S10/P9 work-order authoring under this gate; P10, external adapter and effectful runtime remain parked.",
+  "currentAuthoritySyncReason": "CVF-NCR-R1-S10 P9 packet is author-complete and held at material commit 22ddeada689b8e94877d619fdb61457c9e490269. Dry readiness is not accepted as instruction-use proof; the packet requires one explicitly released live provider call and forbids automatic retry. No worker may start until Local converts the held packet into a committed dispatch release.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_dispatch_semantic_feasibility_closed_s10_author_ready",
-  "previousMode": "cvf_ncr_r1_s09_activation_readiness_closed_s10_author_ready",
+  "currentMode": "cvf_ncr_r1_s10_p9_live_checkpoint_held",
+  "previousMode": "cvf_ncr_dispatch_semantic_feasibility_closed_s10_author_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

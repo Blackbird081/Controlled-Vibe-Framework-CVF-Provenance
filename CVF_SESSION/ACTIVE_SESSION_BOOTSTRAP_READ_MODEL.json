@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_dispatch_semantic_feasibility_closed_s10_author_ready",
+  "currentMode": "cvf_ncr_r1_s10_p9_live_checkpoint_held",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR; ACTIVE_BATCH=NONE; MATERIAL_COMMIT=e14b367b2f65e272ed5e5b5007a2d47c773c8131; ACTIVE_WORK_ORDER=NONE; EXPANSION_ALLOWED=false. The package-skill dispatch semantic-feasibility uplift is CLOSED_PASS_BOUNDED and now gates pre-dispatch plus pre-implementation. Author the bounded R1/S10 P9 instruction-use proof packet with the target-state feasibility contract and full loader/checker read-ahead; do not execute it in the authoring tranche. P10, external adapter, provider/network/live, public-sync, deployment and production remain parked; P4-C1 evidence collection continues gradually under its standardized mechanism; latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=OPERATOR_CHECKPOINT; ACTIVE_BATCH=CVF-NCR-R1-S10; MATERIAL_COMMIT=22ddeada689b8e94877d619fdb61457c9e490269; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md; EXPANSION_ALLOWED=false. S10/P9 packet is author-complete and HOLD_PENDING_OPERATOR_DECISION. The operator may release exactly one Alibaba/DashScope live provider call using qwen3.7-flash-2026-07-15 with no automatic retry; Local must then change both packet statuses, bind an executable provider grant, run pre-dispatch and commit release continuity before any worker starts. P10, external adapter, additional calls, public-sync, deployment and production remain parked; latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md",
-    "baselineSha256": "c1413951710bf72fde57088f33ff798e7abdd3f22dd72ae3c5353b037c7fce04",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md",
-    "workOrderSha256": "196607e7a38b26da0a4a455227b600cc18c2bbc6001e9666e42aab939efbcb49"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md",
+    "baselineSha256": "585e6ef87a590a2c72081e297e9ff9f650d1ad6cb4d1c7e821eb70b889481840",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md",
+    "workOrderSha256": "699bca3f3fdecb8217dc9f05e1252ae439c6b07a616aac2d84289a592ebf8164"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
