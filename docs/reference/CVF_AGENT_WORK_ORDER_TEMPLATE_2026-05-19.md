@@ -1041,6 +1041,13 @@ manifest. Record the material-only range result and the full-range result
 separately so a reviewer can distinguish a real packet defect from this
 range-comparison artifact.
 
+For a worker that starts from an already committed packet plus a later
+session-sync commit, make the mandatory pre-implementation command use the
+autorun wrapper's default clean worker-start frontier (omit `--base`) and bind
+the exact active work order. Do not reuse the earlier packet-authoring
+`dispatchBaseHead` as the worker gate base: that incorrectly mixes packet and
+continuity history into the worker changed-set lane.
+
 Mandatory remediation rule:
 
 - A gate failure inside this work order's Allowed scope is authorization to
@@ -1129,6 +1136,35 @@ verbatim into an actual work order.
 | interceptionBoundary | `<no IDE/shell/git/filesystem/provider interception claim>` |
 | claimLanguage | `<plain description of what this dispatch actually does>` |
 | forbiddenExpansion | `<explicitly list what this dispatch does not do>` |
+
+## Independent Review Probe Admission Contract
+
+Every active work order must declare exactly one
+`independentProbeRequired: YES` or
+`independentProbeRequired: NOT_APPLICABLE_WITH_REASON: <reason>`. High-risk
+work must use `YES`. When `YES`, include exactly one non-empty declaration for
+each field below inside this section; the controlled role and owner tokens are
+literal.
+
+independentProbeRequired: `<YES | NOT_APPLICABLE_WITH_REASON: concrete reason>`
+
+independentProbeRiskClass: `<bounded risk class>`
+
+independentProbeDispositionAtDispatch: `PENDING_REVIEWER_EXECUTION`
+
+probeExecutorRole: `LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER`
+
+implementationOracleSeparation: `<how the reviewer oracle differs from worker implementation evidence>`
+
+positiveControl: `<expected valid observation>`
+
+negativeMutationClasses: `<named hostile or invalid variants>`
+
+expectedInformationGain: `<decision-changing information>`
+
+rerunCostReason: `<why this bounded probe is proportionate>`
+
+reviewerDecisionOwner: `LOCAL`
 
 ## Related Artifacts
 

@@ -28,8 +28,9 @@ Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVI
 
 Commit mode: WORKER_MUST_NOT_COMMIT.
 
-executionBaseHead: capture `git rev-parse HEAD` before edits; expected dispatch
-base is `6736f68de5ed23df8a4e3d772d439f7df70fd519`.
+executionBaseHead: capture `git rev-parse HEAD` before edits; it must be the
+clean committed dispatch/session-sync HEAD named by the active continuity
+surfaces, not the earlier packet-authoring base.
 
 Current-time notes: private CVF workspace, 2026-09-27; S07-R1 is closed and
 the prerequisite downstream oracle/gate correction is committed.
@@ -74,8 +75,12 @@ Produce a source-backed P7 `USAGE_RECEIPT_READY` proof for
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-R1-S08","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"SINGLE_ROLE","novelty":"KNOWN_PATTERN"},"pathFamilies":["docs/baselines/","docs/work_orders/","docs/reviews/"],"claims":["one explicit eligible loader read can create a deterministic P7 usage receipt","P7 receipt readiness does not imply activation or output use"],"requiredProof":["file-backed receipt","independent body and receipt digests","activation denial","exact two-path worker scope"],"operatorCheckpoints":["ACTIVE","P8-P10","provider/live/public/production"],"forbiddenEffects":["worker commit/stage/stash","instruction execution","output consumption","source mutation","provider/network/public action"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"docs/reviews/CVF_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_COMPLETION_2026-09-27.md","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-R1-S08","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"SINGLE_ROLE","novelty":"KNOWN_PATTERN"},"pathFamilies":["docs/baselines/","docs/work_orders/","docs/reviews/","docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md","governance/compat/run_dispatch_packet_author_fast_gate.py","governance/compat/test_run_dispatch_packet_author_fast_gate.py","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/"],"claims":["one explicit eligible loader read can create a deterministic P7 usage receipt","P7 receipt readiness does not imply activation or output use"],"requiredProof":["file-backed receipt","independent body and receipt digests","activation denial","exact two-path worker scope"],"operatorCheckpoints":["ACTIVE","P8-P10","provider/live/public/production"],"forbiddenEffects":["worker commit/stage/stash","instruction execution","output consumption","source mutation","provider/network/public action"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"docs/reviews/CVF_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_COMPLETION_2026-09-27.md","completenessClaimChanged":false}}
 ```
+
+The additional authoring-control and continuity path families cover only this
+Local-owned root reconciliation and authority rebind. They do not enlarge the
+worker's exact two-path write manifest.
 
 ## Review Dispatch Convergence And Invocation Budget Control
 
@@ -141,6 +146,19 @@ adapter or provider coordination is part of this dispatch.
 {"contractId":"cvf.external-local-absorption-coordination@1","invariants":{"externalRole":"ADVISORY_RESEARCH_AND_PATTERN_MAPPING","externalContext":"PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ","localRole":"SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION","finalDecisionOwner":"LOCAL","localCoverageBasis":"SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST","externalEvidenceAuthority":"INPUT_NOT_PRIVATE_CVF_PROOF"},"contractSha256":"92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c","parentArtifact":null}
 ```
 
+## External Knowledge Intake Routing
+
+| Field | Value |
+|---|---|
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | internal governed input (no external intake) |
+| Internal source | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` |
+| Chain map route | N/A with reason: no external intake |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py` |
+| Owner surface | Local reviewer/closer |
+| Disposition | NOT_APPLICABLE_WITH_REASON: no external research or source claim |
+| Claim boundary | private CVF evidence only; no external claim promotion |
+
 ## Scope And Maximum Worker Path Manifest
 
 Maximum worker path count: 2.
@@ -154,7 +172,9 @@ created only by the governed loader's `--receipt-out` operation.
 ## Required Root Contract
 
 1. Capture `executionBaseHead` before any mutation and stop if it differs from
-   the dispatch base or if unrelated worktree changes exist.
+   the clean committed dispatch/session-sync HEAD named by active continuity
+   or if unrelated worktree changes exist. The historical packet-authoring
+   `Dispatch base head` is provenance, not the worker execution frontier.
 2. Verify target metadata, truth packet and package root without modifying
    them.
 3. Run exactly one authorized instruction-body loader invocation using the
@@ -212,7 +232,7 @@ Read startup/guard surfaces named in the Dispatch Prompt Envelope, then run:
 ```powershell
 git rev-parse HEAD
 git status --short --untracked-files=all
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 6736f68de5ed23df8a4e3d772d439f7df70fd519 --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md --serial
 ```
 
 ## Agent Roles
@@ -330,7 +350,7 @@ Contract source archive-qualified exception: `docs/reference/CVF_AHB_T2_AGENT_HA
 | route | SINGLE_AGENT_SINGLE_ROLE |
 | rolePattern | INTERNAL_AGENT worker -> Local reviewer/closer |
 | phase | P7_WORKER_EXECUTION |
-| baseHeadFor(phase) | dispatchBaseHead=`6736f68de5ed23df8a4e3d772d439f7df70fd519`; executionBaseHead=worker capture; closureBaseHead=Local sets |
+| baseHeadFor(phase) | dispatchBaseHead=`6736f68de5ed23df8a4e3d772d439f7df70fd519` is packet provenance; pre-implementation uses the clean worker-start `HEAD..HEAD`; executionBaseHead=worker capture; closureBaseHead=Local sets |
 | changedSetScope(phase) | exact two-path worker manifest |
 | traceScope(phase, actor) | loader/policy/digest commands and Git scope evidence |
 | commitOwner(phase) | WORKER_MUST_NOT_COMMIT; Local owns commit |
@@ -386,10 +406,16 @@ individualCheckerSubstitution: FORBIDDEN
 
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
-Required terms: Purpose; Scope / Methodology; Findings / Position; Risk /
-Corrective Action; Claim Boundary; Agent Operation Trace Block; Delta
-Execution Claim Boundary Control Block; CVF Skill Usage Receipt Trace; Public
-Export Disposition; executionBaseHead; git status --short.
+Required terms: Purpose; Scope / Methodology; Findings / Position;
+Risk / Corrective Action; Claim Boundary; Agent Operation Trace Block;
+Delta Execution Claim Boundary Control Block; CVF Skill Usage Receipt Trace;
+Public Export Disposition; External Knowledge Intake Routing;
+Rescan Intelligence Hardening; Corpus Completeness And Report Integrity;
+Finding-To-Governance Learning Disposition; Epistemic Process Block;
+Machine Closure Package; executionBaseHead; git status --short.
+Every conditionally inapplicable
+section must still be present with an explicit `N/A with reason` or
+`NOT_APPLICABLE_WITH_REASON` disposition.
 
 ## Work-Order Fulfillment Manifest
 
@@ -463,10 +489,49 @@ Claim boundary: receipt proves body read, not instruction use or authority.
 
 ## Independent Review Probe Admission Contract
 
+independentProbeRequired: YES
+
+independentProbeRiskClass: P7_INSTRUCTION_BODY_RECEIPT_AND_ACTIVATION_SEPARATION
+
+independentProbeDispositionAtDispatch: PENDING_REVIEWER_EXECUTION
+
+probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
+
+implementationOracleSeparation: worker creates the loader receipt; Local independently recomputes bodyHash and receiptId and checks metadata-only resolver state without rerunning the body read
+
+positiveControl: receipt schema, skill ID, LOADED disposition and both independent digests match
+
+negativeMutationClasses: receipt tamper, bodyHash mismatch, receiptId mismatch, ACTIVE claim, output-consumption claim or any third worker path
+
+expectedInformationGain: distinguish a valid authority-neutral body-read receipt from activation or instruction-use evidence
+
+rerunCostReason: Local hash and resolver probes are deterministic and avoid a duplicate instruction-body read; rerun loader only for a named contradiction
+
+reviewerDecisionOwner: LOCAL
+
 Local may independently recompute the two hashes, parse the receipt, query
 metadata-only resolver states and verify the two-path diff. Local must not
 rerun the loader body read unless a named contradiction makes the original
 receipt unverifiable; any rerun requires recorded information gain and cost.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: Local root reconciliation may add the two previously omitted
+dispatch-time admissions and focused regression coverage. This does not
+authorize weakening, bypassing or deleting any existing check.
+
+Protected paths:
+
+- `governance/compat/run_dispatch_packet_author_fast_gate.py`
+- `governance/compat/test_run_dispatch_packet_author_fast_gate.py`
+
+Operator authorization: the operator instructed Local to handle the recurring
+root failure before continuing and has standing authority for this bounded
+reviewer/orchestrator correction.
+
+Rollback boundary: revert only this author-fast/template/work-order correction
+and its focused test if it rejects valid dispatch packets. Do not weaken any
+other governance gate or revert accepted S07 package/truth material.
 
 ## Foundation Storage Layout Block
 
