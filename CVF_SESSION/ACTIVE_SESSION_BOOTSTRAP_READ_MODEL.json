@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mfrp_p4_c1_evidence_collection_audit_closed_paused",
+  "currentMode": "mfrp_p4_c1_bounded_retry_recovery_correction_active",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=PAUSE_FOR_OPERATOR_DIRECTION; ACTIVE_BATCH=MFRP-P4-C1-DIAGNOSTIC-RECONCILIATION-CLOSED; MATERIAL_COMMIT=8cd8e8e21; PACKET_CORRECTION_COMMITS=cbd63d2c5,7e4b64b88; CONTINUITY_REBIND_PARENT=7e4b64b88; EXPANSION_ALLOWED=false. CVF-NCR-R1-S08 P7 remains CLOSED_PASS_BOUNDED and NCR P8-P10 remain paused. P4-C1 diagnostic reconciliation is CLOSED_PASS_BOUNDED: accepted opportunity/sample counter semantics are preserved; the collector now retains bounded named failure signals from stdout and stderr; safety markers were recoverably adjudicated without deleting or promoting journal evidence. Natural evidence collection remains active with one collected sample, so M5/M10/M20 and P5/P6 remain closed. Await operator direction; no provider/network/live, public-sync, deployment or production authority; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=LOCAL_CORRECTION; ACTIVE_BATCH=MFRP-P4-C1-BOUNDED-RETRY-RECOVERY-CORRECTION; MATERIAL_COMMIT=d27b4bfbe; CONTINUITY_REBIND_PARENT=d27b4bfbe; EXPANSION_ALLOWED=false. CVF-NCR-R1-S08 P7 and NCR P8-P10 remain paused. The first bounded retry exposed a pre-continuity active-session phase mismatch; its failed attempt and marker were preserved and reviewer-adjudicated. Local must gate backlog retry to dedicated session-sync disclosures, add hostile proof, verify a live retry and then pause. M5/M10/M20 and P5/P6 remain closed; no provider/network/live, public-sync, deployment or production authority; latest closed LHW wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_RECEIPT_FAILURE_DIAGNOSTIC_RECONCILIATION_2026-09-27.md",
-    "baselineSha256": "b844d35d68506a377c2576b7e7bcfba47bc0bddf70b0d42ea1073d6c73313aed",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_RECEIPT_FAILURE_DIAGNOSTIC_RECONCILIATION_2026-09-27.md",
-    "workOrderSha256": "9b478a5e9d8a5b00e32a72944b776904fadc7e9488d603c7ca7bbee209d84f1c"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
+    "baselineSha256": "ac6701e23d040298f27d23a7e33709b059b81ce06f407e0b457abbbdfe6dc58f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
+    "workOrderSha256": "e403249fbcfc51ea33210f60aafa49de3f824151cad571d891447cfacd1fd232"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

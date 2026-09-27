@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_RECEIPT_FAILURE_DIAGNOSTIC_RECONCILIATION_2026-09-27.md",
-    "baselineSha256": "b844d35d68506a377c2576b7e7bcfba47bc0bddf70b0d42ea1073d6c73313aed",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_RECEIPT_FAILURE_DIAGNOSTIC_RECONCILIATION_2026-09-27.md",
-    "workOrderSha256": "9b478a5e9d8a5b00e32a72944b776904fadc7e9488d603c7ca7bbee209d84f1c"
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
+    "baselineSha256": "ac6701e23d040298f27d23a7e33709b059b81ce06f407e0b457abbbdfe6dc58f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
+    "workOrderSha256": "e403249fbcfc51ea33210f60aafa49de3f824151cad571d891447cfacd1fd232"
   },
-  "currentAuthoritySyncReason": "P4-C1 diagnostic reconciliation is CLOSED_PASS_BOUNDED at material commit 8cd8e8e21 with packet corrections cbd63d2c5 and 7e4b64b88; counter semantics remain split, bounded failure identity is preserved, and safety markers were recoverably adjudicated. NCR and M5/P5/P6 remain paused; exact hashes are rebound here; atomic continuity-rebind parent 7e4b64b88.",
+  "currentAuthoritySyncReason": "P4-C1 bounded retry recovery landed at material commit d27b4bfbe. Its first live retry preserved a real pre-continuity active-session phase mismatch, so Local correction remains active; the safety marker was recoverably adjudicated and no evidence was deleted. NCR and M5/P5/P6 remain paused; exact hashes are rebound here; atomic continuity-rebind parent d27b4bfbe.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mfrp_p4_c1_evidence_collection_audit_closed_paused",
-  "previousMode": "mfrp_p4_c1_evidence_collection_root_audit_ready",
+  "currentMode": "mfrp_p4_c1_bounded_retry_recovery_correction_active",
+  "previousMode": "mfrp_p4_c1_evidence_collection_audit_closed_paused",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
