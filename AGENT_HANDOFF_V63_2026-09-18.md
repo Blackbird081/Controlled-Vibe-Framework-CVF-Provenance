@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `59ebdd3be465cb3e39cb6dde4d16d69f946985e9`. Batch `CVF-NCR-R1-S01` is closed bounded with reviewer-local repair; the rework packet was retired before relay. CVF-NCR-R0/S01 and R1/W01 HTML remain accepted bounded.
+Current material HEAD recorded for this handoff: `baa40286c23e12dc900b315e837eee67e850e892`. The bounded reviewer-route and receipt-diagnostic correction is recorded at `docs/reviews/CVF_REVIEW_ROUTE_AND_RECEIPT_DIAGNOSTIC_REPAIR_2026-09-27.md`; NCR R1/S01 remains closed bounded. CVF-NCR-R0/S01 and R1/W01 HTML remain accepted bounded.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -177,7 +177,7 @@ PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PREPARE_R1_NEXT_D013_WORK_ORDER; CLOSED_BA
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: bind the committed NCR-R1/S01 reviewer-local closure and next-move state to active continuity; no checker or runtime owner changes.
+Authorized guard-maintenance scope: bind the committed NCR-R1/S01 reviewer-local closure and next-move state to active continuity, and perform this dedicated GC-020 handoff-only sync for the later reviewer-route and receipt-diagnostic material commit. This handoff edit changes no checker or runtime owner.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -191,7 +191,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/cvfNcrR1W00HtmlUxDispatch20260926.json`; `CVF_SESSION/state/entries/cvfNcrR1W01HtmlUxCopyDispatch20260926.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: operator transferred the converged core-skills research to Local and required tranche progression through a work order for relay. Rollback boundary: revert only this continuity projection; retain D013, S01 closure, R1/S01 dispatch material, accepted R1/W01, AKOE/U1 and the 52-deferred lane. Only the two named package bodies are worker-authorized; host exposure, other package mutation, eval/provider/live, pilot, public and production remain separately gated.
+Operator authorization: operator transferred the converged core-skills research to Local and, on 2026-09-27, instructed Local to resolve the reviewer-routing and receipt-diagnostic errors so they do not recur. Rollback boundary: revert only this continuity projection; retain D013, S01 closure, R1/S01 dispatch material, accepted R1/W01, AKOE/U1 and the 52-deferred lane. Only the two named package bodies were worker-authorized; host exposure, other package mutation, eval/provider/live, pilot, public and production remain separately gated.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
