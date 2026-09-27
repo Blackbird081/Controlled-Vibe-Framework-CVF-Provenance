@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md",
-    "baselineSha256": "cc52b43e5545e3c99165469c34478c629d8d811c9d33d3e1a1afb8a9542e776e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_RECONCILIATION_2026-09-27.md",
-    "workOrderSha256": "e39a0892e025781f3853369927df9c9069cea0fabd6c28fb3f92e80399103b5c"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_2026-09-27.md",
+    "baselineSha256": "f55d02c62432f21e489f49bcccba4bc60a1fa8bd3f43f76029f0287cc02999b3",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_2026-09-27.md",
+    "workOrderSha256": "c0d08b2681a1e239c5c9ab32fa1c028d61180d837f5410ee0559b8e4b6c548a7"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -109,8 +109,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s01_skill_lifecycle_body_closed_bounded",
-  "previousMode": "cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold",
+  "currentMode": "cvf_ncr_r1_s02_test_evidence_audit_dispatch_ready",
+  "previousMode": "cvf_ncr_r1_s01_skill_lifecycle_body_closed_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16844,5 +16844,5 @@
     "reviewCommit": "5e99eb20910e7e3282d7431e6ca3d96c5e87860b",
     "claimBoundary": "four accepted bilingual copy lines in existing component and focused mocked tests only; no browser walkthrough, real profile, P06/P08 closure, route call, provider/live, public or pilot authority; next work order held for operator-relayed Web research"
   },
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PREPARE_R1_NEXT_D013_WORK_ORDER; CLOSED_BATCH=CVF-NCR-R1-S01; R1_S01_CLOSURE_COMMIT=59ebdd3be465cb3e39cb6dde4d16d69f946985e9; R1_S01_COMPLETION=docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_COMPLETION_2026-09-27.md; EXPANSION_ALLOWED=false. Local accepted the two corrected ACTIVE skill bodies with disclosed reviewer-local repair; the original worker return remains historical evidence. The prepared Round 1 worker rework packet was retired before relay. The two README front doors remain a separate dependent documentation gap. Next: source-check the next D013 bounded slice and prepare its work order for operator relay; stop before worker execution. No host, provider/live, public or production effect is authorized. Operator retains data, effect and expense decisions; G1-G7 remain stopped/parked/closed; latest closed LHW wave LHW24."
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_S02_AFTER_OPERATOR_RELAY; ACTIVE_BATCH=CVF-NCR-R1-S02; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_2026-09-27.md; DISPATCH_COMMIT=2a5580cb5b79f6ed04914079a3dc572bf3c633be; EXPANSION_ALLOWED=false. Operator may relay the committed document-only packet to Claude as shared-workspace INTERNAL_AGENT after bound pre-dispatch PASS; Local stops before worker execution and awaits COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Worker writes only the candidate and return. TDD/code-review README gap remains separate. No package/registry/truth/discovery edit, skill activation, host/provider/live/public/production effect or G1-G7 successor is authorized. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24."
 }
