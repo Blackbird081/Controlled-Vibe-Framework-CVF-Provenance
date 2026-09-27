@@ -2,22 +2,24 @@
 
 Memory class: POINTER_RECORD
 
-Status: APPROVED
+Status: ACTIVE
 
 docType: assf_package_front_door
 
 ## Purpose
 
-This front door identifies the `APPROVED` CVF-owned test-evidence-audit
+This front door identifies the `ACTIVE` CVF-owned test-evidence-audit
 package. The body is `SKILL.md`; provenance and lifecycle declarations are
 in `skill.source.json`. `uatState: PASSED` and `certificationState:
 CERTIFIED` per the R1/S06 review; `internalAgentDisposition: IMPLEMENTED`
 grants explicit internal runtime-loader body-read eligibility only. An
-approved `STRICT` P6 source truth packet now exists at
+approved `STRICT` P6 source truth packet exists at
 `docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-evidence-audit.json`.
-Neither file, nor the truth packet, grants `ACTIVE` status, resolver
-activation, automatic invocation, or external/live/public/production
-effect.
+`ACTIVE` status plus the approved `STRICT` truth packet yields internal
+`ACTIVATION_READY` resolver, inventory and activation-policy readout only.
+Neither this file, nor the truth packet, grants automatic invocation,
+external adapter, host installation, or external/live/public/production
+effect; `externalCliMcpDisposition` remains `DEFERRED_WITH_REASON`.
 
 ## Scope / Applies-To
 
@@ -25,10 +27,12 @@ An advisory disposition (KEEP, REPAIR, CONSOLIDATE, ADD, or
 DEFER_WITH_REASON) for one asserted existing-proof claim tied to a named
 source file and a named test file. The package compresses the accepted
 `docs/audits/CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_CANDIDATE_2026-09-27.md`
-procedure into a compact instruction body. It is `APPROVED` with UAT
+procedure into a compact instruction body. It is `ACTIVE` with UAT
 `PASSED`, certification `CERTIFIED`, and an approved `STRICT` P6 truth
 packet: this grants explicit internal runtime-loader body-read eligibility
-only, never resolver selection, `ACTIVE` status, or provider/host action.
+and internal `ACTIVATION_READY` resolver/inventory/policy readout only,
+never external adapter readiness, automatic invocation, or provider/host
+action.
 
 ## Owner Surface
 
@@ -50,7 +54,8 @@ This file is a package front door only. It does not certify
 repository-wide test coverage, does not authorize test execution as a
 standing capability, and does not convert an advisory label into a test
 PASS or a deletion permission. UAT is `PASSED`, certification is
-`CERTIFIED`, and source truth is approved `STRICT` per the P6 packet; this
-front door is not `ACTIVE` status, resolver activation, automatic
-invocation, host installation, provider proof, public export, or
-production readiness evidence.
+`CERTIFIED`, source truth is approved `STRICT` per the P6 packet, and
+source `status` is `ACTIVE` with internal `ACTIVATION_READY`
+resolver/inventory/policy readout; this front door is not automatic
+invocation, external adapter readiness, host installation, provider proof,
+public export, or production readiness evidence.

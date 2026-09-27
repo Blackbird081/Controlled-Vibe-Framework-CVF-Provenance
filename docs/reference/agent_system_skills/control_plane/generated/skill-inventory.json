@@ -3356,7 +3356,7 @@
     },
     {
       "activation": {
-        "decision": "DENIED_SOURCE_NOT_ACTIVE",
+        "decision": "ACTIVATION_READY",
         "truthPacketRequired": true
       },
       "cliMcp": {
@@ -3371,11 +3371,11 @@
         "exists": true,
         "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
         "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/skill.source.json",
-        "sourceLifecycleState": "APPROVED"
+        "sourceLifecycleState": "ACTIVE"
       },
       "registry": {
         "approvalState": "APPROVED",
-        "candidateState": "APPROVED",
+        "candidateState": "ACTIVE",
         "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
         "certificationState": "CERTIFIED",
         "internalAgentDisposition": "IMPLEMENTED",
@@ -3386,7 +3386,7 @@
           "docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md"
         ],
         "skillId": "cvf-engineering-test-evidence-audit",
-        "status": "APPROVED",
+        "status": "ACTIVE",
         "uatState": "PASSED"
       },
       "runtime": {
@@ -3443,6 +3443,8 @@
         "ASSF_REGISTRY_ENTRY",
         "ASSF_PACKAGE_ROOT",
         "RUNTIME_ELIGIBLE_PACKAGE",
+        "ACTIVE_RESOLVER_READY_PACKAGE",
+        "ACTIVE_SOURCE_PACKAGE",
         "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
@@ -3473,8 +3475,7 @@
   },
   "statusCounts": {
     "candidateState": {
-      "ACTIVE": 25,
-      "APPROVED": 1,
+      "ACTIVE": 26,
       "CANDIDATE": 8
     },
     "certificationState": {
@@ -3486,8 +3487,7 @@
       "IMPLEMENTED": 26
     },
     "status": {
-      "ACTIVE": 25,
-      "APPROVED": 1,
+      "ACTIVE": 26,
       "CANDIDATE": 8
     },
     "uatState": {
@@ -3496,8 +3496,8 @@
     }
   },
   "summary": {
-    "activeResolverReadyPackages": 25,
-    "activeSourcePackages": 25,
+    "activeResolverReadyPackages": 26,
+    "activeSourcePackages": 26,
     "assfRegistryEntries": 34,
     "cliMcpAdapterPackages": 25,
     "crossSurfaceDriftViolationCount": 0,

@@ -7,7 +7,7 @@ description: Give an advisory KEEP/REPAIR/CONSOLIDATE/ADD/DEFER_WITH_REASON disp
 
 Memory class: FULL_RECORD
 
-Status: APPROVED
+Status: ACTIVE
 
 docType: assf_package
 
@@ -97,17 +97,19 @@ authority from read access.
 ## Progressive Disclosure
 
 The registry/index exposes metadata before this body. This body is
-`APPROVED`: `uatState: PASSED` and `certificationState: CERTIFIED` per the
+`ACTIVE`: `uatState: PASSED` and `certificationState: CERTIFIED` per the
 five-case source-based review at
 `docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md`,
 and `internalAgentDisposition: IMPLEMENTED` grants explicit internal
 runtime-loader body-read eligibility only. A P6 approved `STRICT` source
-truth packet now exists at
+truth packet exists at
 `docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-evidence-audit.json`;
-this records source truth only and does not change lifecycle state.
-Activation remains denied because this package is not `ACTIVE`. This is
-not `ACTIVE` status, resolver activation, automatic invocation, or any
-external/live/public/production effect. The accepted content candidate and
+its lifecycle snapshot reflects this package's `ACTIVE` status. `ACTIVE`
+status plus this approved `STRICT` truth packet yields internal
+`ACTIVATION_READY` resolver, inventory and activation-policy readout only.
+This is not automatic invocation, external adapter readiness, or any
+external/live/public/production effect; `externalCliMcpDisposition`
+remains `DEFERRED_WITH_REASON`. The accepted content candidate and
 its Local completion remain the authoritative source for the five-label
 semantics, the adversarial/boundary cases, and the paired-evaluation
 design; this body compresses that source and does not add behavior
@@ -129,16 +131,18 @@ same accepted content source without executing any audited test.
 
 ## Claim Boundary
 
-This package root is `APPROVED` with `uatState: PASSED`,
+This package root is `ACTIVE` with `uatState: PASSED`,
 `certificationState: CERTIFIED`, and `internalAgentDisposition: IMPLEMENTED`,
-and now carries an approved `STRICT` P6 truth packet. It grants explicit
-internal runtime-loader body-read eligibility only. It does not add new
-behavior beyond the already-accepted advisory audit procedure, does not
-certify repository-wide test coverage, and does not authorize `ACTIVE`
-status, resolver activation, automatic invocation, test execution,
-deletion, external adapter, host exposure, or provider/live/public/
-production effect. It may be opened only through explicit, separately
-authorized CVF review under active governed work-order authority.
+and carries an approved `STRICT` P6 truth packet. It grants explicit
+internal runtime-loader body-read eligibility, plus internal
+`ACTIVATION_READY` resolver, inventory and activation-policy readout. It
+does not add new behavior beyond the already-accepted advisory audit
+procedure, does not certify repository-wide test coverage, and does not
+authorize resolver activation into instruction use, automatic invocation,
+test execution, deletion, external adapter, host exposure, or
+provider/live/public/production effect. It may be opened only through
+explicit, separately authorized CVF review under active governed
+work-order authority.
 
 ## Public Export Disposition
 

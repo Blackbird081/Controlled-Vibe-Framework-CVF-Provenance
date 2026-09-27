@@ -1,5 +1,5 @@
 {
-  "authorityBoundary": "Truth packet for one bounded internal runtime-loader eligible P5 APPROVED package. This packet records source truth only; it does not activate the package, grant ACTIVE status, resolver selection, automatic invocation, external adapter, test execution, provider call, public sync, merge, commit, or filesystem action authority.",
+  "authorityBoundary": "Truth packet for one bounded internal runtime-loader eligible P8 ACTIVE package. This packet records source truth only; ACTIVE status plus this approved STRICT truth yields internal ACTIVATION_READY resolver/inventory/policy readout only. It does not grant automatic invocation, external adapter, test execution, provider call, public sync, merge, commit, or filesystem action authority.",
   "canonicalPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-evidence-audit.json",
   "evidence": [
     {
@@ -37,6 +37,12 @@
       "kind": "skill_truth_packet_standard",
       "sourcePath": "docs/reference/agent_system_skills/CVF_SKILL_SOURCE_OF_TRUTH_PACKET_STANDARD.md",
       "status": "approved"
+    },
+    {
+      "evidenceId": "EV-S09-P8-WORK-ORDER",
+      "kind": "package_skill_productionization_work_order",
+      "sourcePath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md",
+      "status": "approved"
     }
   ],
   "lifecycleSnapshot": {
@@ -44,7 +50,7 @@
     "certificationState": "CERTIFIED",
     "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
     "internalAgentDisposition": "IMPLEMENTED",
-    "status": "APPROVED",
+    "status": "ACTIVE",
     "uatState": "PASSED"
   },
   "obligations": [
@@ -77,6 +83,11 @@
       "obligationId": "OB-EXTERNAL-ADAPTER-DEFERRED-BOUNDARY",
       "state": "satisfied",
       "strength": "HARD"
+    },
+    {
+      "obligationId": "OB-P8-ACTIVATION-READINESS",
+      "state": "satisfied",
+      "strength": "HARD"
     }
   ],
   "packageRootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
@@ -103,12 +114,20 @@
         "EV-S06-UAT",
         "EV-S06R1-COMPLETION"
       ]
+    },
+    {
+      "claimId": "CLAIM-P8-ACTIVATION",
+      "label": "HUMAN_APPROVED",
+      "sourceEvidenceIds": [
+        "EV-REGISTRY",
+        "EV-S09-P8-WORK-ORDER"
+      ]
     }
   ],
   "receipt": {
-    "hash": "sha256:0d99ce6caf46397af1c0418bc3198086709bc7a6fbec9c5afac7ee5346917dfe",
-    "previousHash": "sha256:b6db3a24623a20bc7d537bfede2ac12de2519674fa393ba5d310d14b2cee38cc",
-    "receiptId": "RCPT-SKSOT-T1-cvf-engineering-test-evidence-audit-R1-S07",
+    "hash": "sha256:fefd9e542eb9830ca8774a1dd229c1929a6c0e2083417e17394c6406b6de598b",
+    "previousHash": "sha256:0d99ce6caf46397af1c0418bc3198086709bc7a6fbec9c5afac7ee5346917dfe",
+    "receiptId": "RCPT-SKSOT-T1-cvf-engineering-test-evidence-audit-R1-S09",
     "status": "issued"
   },
   "registryEntryPath": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-test-evidence-audit.json",
@@ -156,6 +175,18 @@
         "OB-EXTERNAL-ADAPTER-DEFERRED-BOUNDARY"
       ],
       "resultId": "VR-EXTERNAL-ADAPTER-BOUNDARY",
+      "status": "pass"
+    },
+    {
+      "evidenceIds": [
+        "EV-REGISTRY",
+        "EV-S09-P8-WORK-ORDER"
+      ],
+      "method": "source",
+      "obligationIds": [
+        "OB-P8-ACTIVATION-READINESS"
+      ],
+      "resultId": "VR-P8-ACTIVATION-READINESS",
       "status": "pass"
     }
   ]
