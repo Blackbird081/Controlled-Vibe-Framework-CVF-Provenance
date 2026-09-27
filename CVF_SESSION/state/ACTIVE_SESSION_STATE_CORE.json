@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md",
     "workOrderSha256": "196607e7a38b26da0a4a455227b600cc18c2bbc6001e9666e42aab939efbcb49"
   },
-  "currentAuthoritySyncReason": "Operator resumed NCR after standardizing P4-C1 evidence collection. CVF-NCR-R1-S09 P8 activation-readiness dispatch is material at 1430482219627814710163e280a92b7900adbd87; it authorizes exact lifecycle/truth/projection reconciliation only. P9/P10, instruction use, external adapter and effectful runtime remain parked.",
+  "currentAuthoritySyncReason": "CVF-NCR-R1-S09 P8 is CLOSED_PASS_BOUNDED at material commit 2180932150bf600d64df021fc0c8efe505310254 after Local root repair of the ACTIVE/external-adapter admission contradiction. Internal ACTIVATION_READY is proven while external body-read/output-use remain denied. The next move is bounded S10/P9 work-order authoring; P10, external adapter and effectful runtime remain parked.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s09_activation_readiness_dispatch_ready",
-  "previousMode": "mfrp_p4_c1_bounded_retry_recovery_closed_paused",
+  "currentMode": "cvf_ncr_r1_s09_activation_readiness_closed_s10_author_ready",
+  "previousMode": "cvf_ncr_r1_s09_activation_readiness_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

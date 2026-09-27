@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_s09_activation_readiness_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_s09_activation_readiness_closed_s10_author_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; ACTIVE_BATCH=CVF-NCR-R1-S09; MATERIAL_COMMIT=1430482219627814710163e280a92b7900adbd87; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md; EXPANSION_ALLOWED=false. Execute the committed P8 activation-readiness work order as one no-commit INTERNAL_AGENT, then return to Local independent review. P9/P10, instruction-body read, output consumption, external adapter, provider/network/live, public-sync, deployment and production remain parked; P4-C1 evidence collection continues gradually under its standardized mechanism; latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR; ACTIVE_BATCH=NONE; MATERIAL_COMMIT=2180932150bf600d64df021fc0c8efe505310254; ACTIVE_WORK_ORDER=NONE; EXPANSION_ALLOWED=false. R1/S09 P8 is CLOSED_PASS_BOUNDED after Local root repair and independent probe. Author the bounded R1/S10 P9 instruction-use proof packet with full loader/checker read-ahead before dispatch; do not execute it in the authoring tranche. P10, external adapter, provider/network/live, public-sync, deployment and production remain parked; P4-C1 evidence collection continues gradually under its standardized mechanism; latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
