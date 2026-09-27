@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_s03_discovery_practice_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_s03_discovery_practice_closed",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S03; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_2026-09-27.md; MATERIAL_COMMIT=3e6460770; EXPANSION_ALLOWED=false. Operator may relay the exact committed packet to one shared-workspace INTERNAL_AGENT. Worker may modify only the named discovery SKILL.md and create the named worker return, must run only the expressly listed validation commands, must not stage or commit, and stops at COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Local owns review, repair, commit and closure. Package metadata, registry, truth, indexes, resolver/executor/skill/test/eval execution, host/provider/live/public/production effects remain forbidden; operator retains data, effect and expense decisions; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SOURCE_VERIFY_NEXT_D013_SLICE; ACTIVE_BATCH=CVF-NCR-R1-S03-CLOSED; REVIEW=docs/reviews/CVF_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_COMPLETION_2026-09-27.md; MATERIAL_COMMIT=b8d8d32e2; EXPANSION_ALLOWED=false. R1/S03 three-role discovery-practice enrichment is CLOSED_PASS_BOUNDED after Local review. The worker return is accepted with reviewer normalization of the broad checker count to 19 historical out-of-manifest findings and one labeled corpus-verdict structural repair. Local may source-verify the next D013 slice and prepare a separate scoped packet; no new skill, package metadata/registry/truth/index mutation, resolver/executor/skill/test/eval execution, SOP promotion, host/provider/live/public/production effect follows. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_2026-09-27.md",
-    "baselineSha256": "fdc3721ddf4244e8498e05da4e0d6c8e87440c017995a244b9e5a4104205cdbc",
+    "baselineSha256": "5d0cfa4c25d6ce08383516af4b489af259d7f3cc88e141670855c541d69b45fd",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_2026-09-27.md",
-    "workOrderSha256": "5fc9cf5b984a4308f218b6830c979bc485dba387bbc87fd60829933f26b4e9f5"
+    "workOrderSha256": "f8c3227fba75f0f8bdae05eaf5909793b218d3114d2b91e8d940faec78fcad58"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

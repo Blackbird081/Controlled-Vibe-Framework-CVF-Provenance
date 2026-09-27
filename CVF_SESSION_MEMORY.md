@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_s03_discovery_practice_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=relay the committed R1/S03 packet to one INTERNAL_AGENT and await its exact two-path no-commit return; role=Local orchestrator/reviewer; phase=R1/S03 dispatch; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=metadata/registry/truth/index changes, resolver/executor/skill/test/eval execution, host/provider/live, pilot, public and production.
+Startup acknowledged: current mode=`cvf_ncr_r1_s03_discovery_practice_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=source-verify the next D013 slice and prepare a separate scoped packet; role=Local orchestrator/reviewer; phase=R1/S03 closure; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=new skill, metadata/registry/truth/index changes, resolver/executor/skill/test/eval execution, SOP promotion, host/provider/live, pilot, public and production.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_s03_discovery_practice_dispatch_ready`
-Current mode: `cvf_ncr_r1_s03_discovery_practice_dispatch_ready`; previous mode marker: `cvf_ncr_r1_s02_content_closed_scope_violation_recorded`
+Current mode marker: `cvf_ncr_r1_s03_discovery_practice_closed`
+Current mode: `cvf_ncr_r1_s03_discovery_practice_closed`; previous mode marker: `cvf_ncr_r1_s03_discovery_practice_dispatch_ready`
 
 ## Next Allowed Move
-Mode: `cvf_ncr_r1_s03_discovery_practice_dispatch_ready`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S03; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_2026-09-27.md; MATERIAL_COMMIT=3e6460770; EXPANSION_ALLOWED=false. Operator may relay the exact committed packet to one shared-workspace INTERNAL_AGENT. Worker may modify only the named discovery SKILL.md and create the named worker return, must run only the expressly listed validation commands, must not stage or commit, and stops at COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Local owns review, repair, commit and closure. Package metadata, registry, truth, indexes, resolver/executor/skill/test/eval execution, host/provider/live/public/production effects remain forbidden; operator retains data, effect and expense decisions; latest closed LHW wave LHW24.
+Mode: `cvf_ncr_r1_s03_discovery_practice_closed`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SOURCE_VERIFY_NEXT_D013_SLICE; ACTIVE_BATCH=CVF-NCR-R1-S03-CLOSED; REVIEW=docs/reviews/CVF_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_COMPLETION_2026-09-27.md; MATERIAL_COMMIT=b8d8d32e2; EXPANSION_ALLOWED=false. R1/S03 three-role discovery-practice enrichment is CLOSED_PASS_BOUNDED after Local review. The worker return is accepted with reviewer normalization of the broad checker count to 19 historical out-of-manifest findings and one labeled corpus-verdict structural repair. Local may source-verify the next D013 slice and prepare a separate scoped packet; no new skill, package metadata/registry/truth/index mutation, resolver/executor/skill/test/eval execution, SOP promotion, host/provider/live/public/production effect follows. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
