@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `baa40286c23e12dc900b315e837eee67e850e892`. The bounded reviewer-route and receipt-diagnostic correction is recorded at `docs/reviews/CVF_REVIEW_ROUTE_AND_RECEIPT_DIAGNOSTIC_REPAIR_2026-09-27.md`; NCR R1/S01 remains closed bounded. CVF-NCR-R0/S01 and R1/W01 HTML remain accepted bounded.
+Current material HEAD recorded for this handoff: `e7b2c766a0ea8eb9ce7997a5784a776910818f1d`. The reviewer-route correction is at `baa40286c23e12dc900b315e837eee67e850e892`; the mixed-EOL committed-evidence correction superseding its incomplete receipt diagnosis is at `docs/reviews/CVF_MIXED_EOL_COMMITTED_EVIDENCE_CORRECTION_2026-09-27.md`. NCR R1/S01 remains closed bounded; the next allowed move remains D013 work-order planning.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -177,7 +177,7 @@ PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PREPARE_R1_NEXT_D013_WORK_ORDER; CLOSED_BA
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: bind the committed NCR-R1/S01 reviewer-local closure and next-move state to active continuity, and perform this dedicated GC-020 handoff-only sync for the later reviewer-route and receipt-diagnostic material commit. This handoff edit changes no checker or runtime owner.
+Authorized guard-maintenance scope: bind the committed NCR-R1/S01 reviewer-local closure and next-move state to active continuity, and perform this dedicated GC-020 handoff-only sync for the later mixed-EOL committed-evidence correction. This handoff edit changes no checker or runtime owner.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
