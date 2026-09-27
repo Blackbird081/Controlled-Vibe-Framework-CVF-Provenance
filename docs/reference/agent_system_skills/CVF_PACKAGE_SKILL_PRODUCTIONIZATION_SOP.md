@@ -161,6 +161,17 @@ internal-consumer inputs. Decision priority is runtime eligibility, truth
 presence/approval, lifecycle status, then readiness. Surface-specific aliases
 are forbidden because they conceal order drift and weaken cross-surface tests.
 
+## Pre-Dispatch Target-State Feasibility
+
+Before any P3-P10 worker dispatch, the work order must satisfy
+`docs/reference/agent_system_skills/CVF_PACKAGE_SKILL_TARGET_STATE_FEASIBILITY_STANDARD.md`
+and pass `governance/compat/check_package_skill_target_state_feasibility.py`
+against the exact active work-order path at both pre-dispatch and
+pre-implementation. The declared contract must reconcile phase, lifecycle,
+truth, activation, external-adapter posture and inferred generated paths before
+the worker writes material files. Technical contradictions route to Local as
+`BLOCKED_WITH_REASON`; they do not create an operator-choice prompt.
+
 ## Runtime Package Production Admission
 
 A package is production-scale only when all of these are true:

@@ -71,6 +71,20 @@ def _dispatch_release_command(active_work_order: str, head: str) -> GateCommand:
     )
 
 
+def _package_skill_target_state_command(active_work_order: str) -> GateCommand:
+    """Validate the declared hypothetical package state before worker execution."""
+    return GateCommand(
+        "package skill target-state feasibility",
+        (
+            "python",
+            "governance/compat/check_package_skill_target_state_feasibility.py",
+            "--active-work-order",
+            active_work_order,
+            "--enforce",
+        ),
+    )
+
+
 def _active_work_order_binding_error(phase: str, active_work_order: str | None) -> str | None:
     allowed = {"pre-dispatch", "pre-implementation"}
     if active_work_order is not None and (phase not in allowed or not active_work_order.strip()):

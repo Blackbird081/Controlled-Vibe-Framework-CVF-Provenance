@@ -209,8 +209,8 @@
         },
         {
           "path": "governance/compat/run_agent_autorun_workflow_gate.py",
-          "sha256": "aa3c2592182066c167a109000a32bc921c58275bde8f75ab3d82c287f1a6c140",
-          "evidenceRole": "per-checker PASS/FAIL CLI print, bound dispatch-release admission, plus v3 JSON receipt owner"
+          "sha256": "8d28ac306eb2d7569571b53a833478b59708e89860ef11ff06115ba8a8ea6a1e",
+          "evidenceRole": "per-checker PASS/FAIL CLI print, bound dispatch-release and package target-state feasibility admission, plus v3 JSON receipt owner"
         },
         {
           "path": "governance/compat/agent_autorun_machine_verification.py",
