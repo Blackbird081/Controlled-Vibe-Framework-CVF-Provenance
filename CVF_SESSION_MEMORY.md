@@ -46,12 +46,12 @@ Startup acknowledged: current mode=`cvf_ncr_r1_s08_usage_receipt_readiness_dispa
 
 ## Current Mode
 
-Current mode marker: `mfrp_p4_c1_evidence_collection_root_audit_ready`
-Current mode: `mfrp_p4_c1_evidence_collection_root_audit_ready`; previous mode marker: `cvf_ncr_r1_s08_usage_receipt_readiness_dispatch_ready`
+Current mode marker: `mfrp_p4_c1_evidence_collection_audit_closed_paused`
+Current mode: `mfrp_p4_c1_evidence_collection_audit_closed_paused`; previous mode marker: `mfrp_p4_c1_evidence_collection_root_audit_ready`
 
 ## Next Allowed Move
-Mode: `mfrp_p4_c1_evidence_collection_root_audit_ready`
-PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=AUDIT_AND_RECONCILE_P4_C1_EVIDENCE_COLLECTION; ACTIVE_BATCH=MFRP-P4-C1-ROOT-AUDIT; MATERIAL_COMMIT=e5ce21cb7; CONTINUITY_REBIND_PARENT=e5ce21cb7; EXPANSION_ALLOWED=false. CVF-NCR-R1-S08 P7 is `CLOSED_PASS_BOUNDED` at worker evidence commit `4af51dd72` and closure commit `e5ce21cb7`; NCR is paused and P8-P10 remain closed. Audit the active P4-C1 post-commit collector, pending journal and checkpoint semantics, including `eligibleCount` versus `collectedCount`, 795 attempts, one collected row, 25 unsafe receipt-generation failures and prior adjudicated markers. Correct only source-proven root defects under a fresh bounded governance packet before claiming M5/M10/M20 or P5 readiness. Do not call providers/network, public-sync, deploy, or claim production readiness; latest closed LHW wave LHW24.
+Mode: `mfrp_p4_c1_evidence_collection_audit_closed_paused`
+PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=PAUSE_FOR_OPERATOR_DIRECTION; ACTIVE_BATCH=MFRP-P4-C1-DIAGNOSTIC-RECONCILIATION-CLOSED; MATERIAL_COMMIT=8cd8e8e21; CONTINUITY_REBIND_PARENT=8cd8e8e21; EXPANSION_ALLOWED=false. CVF-NCR-R1-S08 P7 remains `CLOSED_PASS_BOUNDED` and NCR P8-P10 remain paused. P4-C1 diagnostic reconciliation is `CLOSED_PASS_BOUNDED`: accepted opportunity/sample counter semantics are preserved; the collector now retains bounded named failure signals from stdout and stderr; the unresolved marker was recoverably adjudicated without deleting or promoting journal evidence. Natural evidence collection remains active with one collected sample, so M5/M10/M20 and P5/P6 remain closed. Await operator direction; do not resume NCR, call providers/network, public-sync, deploy, or claim production readiness; latest closed LHW wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
