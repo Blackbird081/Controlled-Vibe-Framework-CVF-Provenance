@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_r1_s08_usage_receipt_readiness_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S08; MATERIAL_COMMIT=202258ba7; CONTINUITY_REBIND_PARENT=202258ba7; EXPANSION_ALLOWED=false. The prior blocked return is accepted as root-cause evidence; the dispatch entrypoint and paired baseline/work-order material topology are corrected. Execute exactly docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md as one fresh no-commit INTERNAL_AGENT P7 usage-receipt-readiness run from the clean committed dispatch/session-sync HEAD. The worker may perform the single explicitly authorized loader body read only to create the named durable usage receipt, but must not follow, use, execute, or consume package instructions or outputs. Return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Local owns independent review, material commit, closure, and later continuity. Do not promote ACTIVE, open P8-P10, mutate package/registry/truth/index/inventory/Web/checker/session surfaces, stage/stash/commit/push, call providers/network, public-sync, deploy, or claim production readiness; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S08; MATERIAL_COMMIT=b2f614037; CONTINUITY_REBIND_PARENT=b2f614037; EXPANSION_ALLOWED=false. Both prior blocked returns are accepted as root-cause evidence; the dispatch entrypoint, paired packet topology, exact eligibility command and command-path admission are corrected. Execute exactly docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md as one fresh no-commit INTERNAL_AGENT P7 usage-receipt-readiness run from the clean committed dispatch/session-sync HEAD. The worker may perform the single explicitly authorized loader body read only to create the named durable usage receipt, but must not follow, use, execute, or consume package instructions or outputs. Return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Local owns independent review, material commit, closure, and later continuity. Do not promote ACTIVE, open P8-P10, mutate package/registry/truth/index/inventory/Web/checker/session surfaces, stage/stash/commit/push, call providers/network, public-sync, deploy, or claim production readiness; latest closed LHW wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
-    "baselineSha256": "0ebf604556f762882df8e16218523857de3a013bbcc99770fe0815eb8c07e158",
+    "baselineSha256": "7e346f7f308378c780a4685ccbb0ab333e0d93d7c68f54bbed891f1a4da023eb",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
-    "workOrderSha256": "497c67b423279e208655dd5a359ce7eaa822da9a03de83579bf7241e1afe7fe2"
+    "workOrderSha256": "4ee85a9330ba69dae219d42563c0e18b967e1aaeeea0f4a7634fde6f1c29b762"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

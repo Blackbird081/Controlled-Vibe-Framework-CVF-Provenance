@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
-    "baselineSha256": "0ebf604556f762882df8e16218523857de3a013bbcc99770fe0815eb8c07e158",
+    "baselineSha256": "7e346f7f308378c780a4685ccbb0ab333e0d93d7c68f54bbed891f1a4da023eb",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
-    "workOrderSha256": "497c67b423279e208655dd5a359ce7eaa822da9a03de83579bf7241e1afe7fe2"
+    "workOrderSha256": "4ee85a9330ba69dae219d42563c0e18b967e1aaeeea0f4a7634fde6f1c29b762"
   },
-  "currentAuthoritySyncReason": "R1/S08 P7 usage-receipt-readiness entrypoint is root-reconciled at 1085d5ebb and the paired baseline/work-order material topology is sealed at 202258ba7; the worker preflight uses the clean execution frontier, and author-fast enforces packet-shape plus independent-probe admission; exact hashes are rebound here; atomic continuity-rebind parent 202258ba7.",
+  "currentAuthoritySyncReason": "R1/S08 P7 usage-receipt-readiness dispatch is command-reference reconciled at material commit b2f614037: the nonexistent eligibility checker is replaced by the verified metadata-only audit, dispatch quality rejects missing Python script paths, and first-occurrence findings may proactively notify/freeze as a paired escalation; exact hashes are rebound here; atomic continuity-rebind parent b2f614037.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
