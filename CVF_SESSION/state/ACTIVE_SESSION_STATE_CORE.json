@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_2026-09-27.md",
-    "baselineSha256": "cb9059d9f3ea7ad2a0e758ca78fd5593610eb7c002d78f3f1ad0195d7ca7d04b",
+    "baselineSha256": "aa9b0a727f669c76492ea946fcb14b8aea9eeb1b4768a80316a2aa84eb6da8a4",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_2026-09-27.md",
-    "workOrderSha256": "5e319f97e0d2758c0904098f080b397a1cbe5c4d6ad99db00816c1f36540873c"
+    "workOrderSha256": "d5a151ad2b15e0a9b63530c4ba8cff0992f6d146678f5f6145f15cef99e7e9bb"
   },
-  "currentAuthoritySyncReason": "R1/S07-R1 freezes feature successors and binds the activation-phase plus finding-escalation root correction at material commit 7aae8b0f8; exact packet hashes are rebound here; atomic continuity-rebind parent 7aae8b0f8.",
+  "currentAuthoritySyncReason": "R1/S07-R1 closed bounded at material commit f7d8e4842 with activation parity, recurring-blocker escalation, P6 truth admission and recorded scope violations; exact closed packet hashes are rebound here; atomic continuity-rebind parent f7d8e4842.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_dispatch_ready",
-  "previousMode": "cvf_ncr_r1_s07_p6_truth_packet_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_closed",
+  "previousMode": "cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_closed",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S07-R1; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_2026-09-27.md; MATERIAL_COMMIT=7aae8b0f8; CONTINUITY_REBIND_PARENT=7aae8b0f8; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may execute the exact 25-path root correction: retain accepted P6 truth material; require ACTIVE plus valid truth for ACTIVATION_READY in inventory and resolver; preserve APPROVED loader read eligibility; enforce finding recurrence, operator notice and successor freeze; add ADIF-0060; regenerate bounded projections. All feature successors stay frozen. No ACTIVE transition, P7-P10, package-body invocation, external adapter, provider/network/live, public-sync, deployment or production effect is authorized. Worker must not stage, stash or commit; Local remains reviewer/closer; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_SOURCE_VERIFIED_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S07-CLOSED; MATERIAL_COMMIT=f7d8e4842; CONTINUITY_REBIND_PARENT=f7d8e4842; EXPANSION_ALLOWED=false. R1/S07-R1 is CLOSED_PASS_BOUNDED with P6 truth admitted, activation denied until ACTIVE, exact inventory/resolver parity, automatic recurring-blocker escalation, and two worker scope violations recorded. Under the operator's standing successor-authoring authority, the next allowed move is to author and independently review a fresh P7 usage-receipt-readiness baseline/work order from the governed roadmap. Do not execute P7, promote ACTIVE, open P8-P10, invoke package bodies, call providers/network, public-sync, deploy, or claim production readiness without that separate accepted packet; latest closed LHW wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_2026-09-27.md",
-    "baselineSha256": "cb9059d9f3ea7ad2a0e758ca78fd5593610eb7c002d78f3f1ad0195d7ca7d04b",
+    "baselineSha256": "aa9b0a727f669c76492ea946fcb14b8aea9eeb1b4768a80316a2aa84eb6da8a4",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_2026-09-27.md",
-    "workOrderSha256": "5e319f97e0d2758c0904098f080b397a1cbe5c4d6ad99db00816c1f36540873c"
+    "workOrderSha256": "d5a151ad2b15e0a9b63530c4ba8cff0992f6d146678f5f6145f15cef99e7e9bb"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

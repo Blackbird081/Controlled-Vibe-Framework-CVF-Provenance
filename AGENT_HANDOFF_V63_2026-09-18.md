@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `7aae8b0f8` for batch `CVF-NCR-R1-S07-R1` activation-phase and learning-escalation root correction; atomic continuity-rebind parent: `7aae8b0f8`. The exact 25-path packet freezes feature successors, retains accepted P6 truth material, requires lifecycle `ACTIVE` plus valid truth for `ACTIVATION_READY`, preserves APPROVED loader-read eligibility, and makes recurrent blocker notice/freeze enforcement machine-visible. Pre-commit passed 90/90. No `ACTIVE` transition, P7-P10, package-body invocation, external adapter, provider/network/live, public-sync or production authority follows.
+Current material HEAD recorded for this handoff: `f7d8e4842` for batch `CVF-NCR-R1-S07-R1` root reconciliation closure; atomic continuity-rebind parent: `f7d8e4842`. The closure admits P6 truth, requires lifecycle `ACTIVE` plus valid truth for `ACTIVATION_READY`, establishes exact inventory/resolver parity, and makes recurrent blocker detection/notice/freeze machine-enforced. Two worker scope violations are recorded and excluded from acceptance evidence. No `ACTIVE` transition, P7-P10 execution, package-body invocation, external adapter, provider/network/live, public-sync or production authority follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -14,9 +14,9 @@ Role: Local orchestrator/reviewer and session steward. Phase: NCR-R1/S07-R1 acti
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute the exact R1/S07-R1 root-correction work order; role=Local orchestrator/reviewer; phase=R1/S07-R1 root correction dispatch ready; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=all feature successors, ACTIVE, P7-P10, package-body invocation, external adapter, provider/live, public and production.
+Startup acknowledged: current mode=`cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=author and independently review a fresh P7 usage-receipt-readiness packet; role=Local orchestrator/reviewer; phase=R1/S07-R1 closed bounded; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=P7 execution, ACTIVE, P8-P10, package-body invocation, external adapter, provider/live, public and production.
 ## Current Mode
-`cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_dispatch_ready`. Current plan: NCR v2.2 D013; R1/S07 P6 evidence is retained but closure and every feature successor are frozen until exact no-commit R1/S07-R1 root correction completes; historical NCR/AKOE acceptance remains below. Latest closed learning-history wave: `LHW24`.
+`cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_closed`. Current plan: NCR v2.2 D013; R1/S07-R1 and P6 truth admission are closed bounded, while P7 execution and all later feature successors remain separately gated; historical NCR/AKOE acceptance remains below. Latest closed learning-history wave: `LHW24`.
 
 ## Active Boundary
 
@@ -29,7 +29,7 @@ Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59
 The three operator-relayed Human Boundary, Positioning, and Async handoffs are now reviewed and combined with Jev, WikiSkill, and HyperFrames in `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md`, material commit `53bce992f`. Human Boundary is an `ADAPT` candidate, Positioning is primarily `CONFIRMED_EXISTING`, and Async remains `WATCH` with upstream factual claims `BLOCKED_SOURCE_NOT_FOUND` until Local pinning. The prior three-repository program is terminal-accounted; common Local closure remains blocked by AKOE P1-P3 execution and P4 reconciliation.
 
 ## Latest Work / Changes
-- R1/S07-R1 root-correction dispatch is material at `7aae8b0f8`: the exact 25-path packet retains the valid P6 truth work, repairs inventory/resolver activation predicates, preserves distinct APPROVED loader eligibility, hardens recurrent Finding-To-Learning escalation with operator notice and successor freeze, and records ADIF-0060. Packet content passed 83/84 pre-dispatch with only the expected pre-commit release-binding frontier; material pre-commit passed 90/90. R1/S07 remains blocked evidence, not a closure; all feature successors are frozen.
+- R1/S07-R1 is `CLOSED_PASS_BOUNDED` at material commit `f7d8e4842`: P6 truth is admitted; inventory and resolver share the exact six-row lifecycle/truth decision matrix; recurring blocked-return escalation is derived from stable cluster history; ADIF-0060 and scaffold/golden coverage are material. Focused suites passed 21/21, 29/29 and 94/94; Local matrix parity passed 6/6. Stash and instruction-body loader use are recorded worker scope violations. The package remains `APPROVED` and `DENIED_SOURCE_NOT_ACTIVE`.
 - R1/S06 full-P5 controlled approval is dispatch-ready at `f2cbc02d4`: exact eight worker paths, five source-based UAT cases, target `APPROVED`/`PASSED`/`CERTIFIED`/`IMPLEMENTED`, canonical projections and one provider-free internal loader body read. R1/S05 remains closed at `9141fd05a`; no ACTIVE/P6-P10, resolver/external/provider/public authority follows.
 - R1/S04 is `CLOSED_WITH_RECORDED_SCOPE_VIOLATION` at `ecb984658`: order-34 P3 metadata and both generated read models are accepted; Local repaired the omitted dependent inventory. Worker stash/pop diagnostic remains outside authority. R1/S03 remains `CLOSED_PASS_BOUNDED` at `b8d8d32e2`. No P4-P10 or runtime/external authority follows.
 - R1/S02 Local completion is at `555999a83`: source-grounded content candidate accepted after reviewer repair, with worker test execution outside authority disclosed and rejected as proof. TDD/code-review ACTIVE README gap was repaired in the same material commit; reviewer skill was consulted manually without runtime receipt.
@@ -155,7 +155,7 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 - NCR W02 read-only return was Local-accepted at `c638f2ece` after source-claim repair and 90/90 pre-commit. The client fallback port `8000` differs from the server's documented `8100`; actual URL/port, ledger/log retention and pilot data/effect/expense remain open. R1/W00 static HTML UX contract worker return was reviewer-repaired and accepted bounded at `97532f7038f7bcc0d3768550b06a3695b72b8809`. R1/W01 paired baseline/work order committed at `e54dd51e8eb60364a814a921a0d31bb7d259e487`; exact component/test/return worker delta was reviewer-repaired and accepted bounded at `5e99eb20910e7e3282d7431e6ca3d96c5e87860b` after reviewer-fast 69/69 and pre-commit 90/90. Mocked UI tests do not establish actual browser walkthrough, route call, profile, P06/P08, or pilot effect; successor work order is held for Web research.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S07-R1; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_2026-09-27.md; MATERIAL_COMMIT=7aae8b0f8; CONTINUITY_REBIND_PARENT=7aae8b0f8; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may execute the exact 25-path root correction: retain accepted P6 truth material; require ACTIVE plus valid truth for ACTIVATION_READY in inventory and resolver; preserve APPROVED loader read eligibility; enforce finding recurrence, operator notice and successor freeze; add ADIF-0060; regenerate bounded projections. All feature successors stay frozen. No ACTIVE transition, P7-P10, package-body invocation, external adapter, provider/network/live, public-sync, deployment or production effect is authorized. Worker must not stage, stash or commit; Local remains reviewer/closer; latest closed LHW wave LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_SOURCE_VERIFIED_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S07-CLOSED; MATERIAL_COMMIT=f7d8e4842; CONTINUITY_REBIND_PARENT=f7d8e4842; EXPANSION_ALLOWED=false. R1/S07-R1 is CLOSED_PASS_BOUNDED with P6 truth admitted, activation denied until ACTIVE, exact inventory/resolver parity, automatic recurring-blocker escalation, and two worker scope violations recorded. Under the operator's standing successor-authoring authority, the next allowed move is to author and independently review a fresh P7 usage-receipt-readiness baseline/work order from the governed roadmap. Do not execute P7, promote ACTIVE, open P8-P10, invoke package bodies, call providers/network, public-sync, deploy, or claim production readiness without that separate accepted packet; latest closed LHW wave LHW24.
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
@@ -177,21 +177,21 @@ PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: bind the committed R1/S07-R1 root-correction dispatch at material commit `7aae8b0f8`, record exact packet hashes, and regenerate the compact/full continuity projections. This continuity-only dispatch changes no worker-owned truth, package or generated projection path.
+Authorized guard-maintenance scope: bind the committed R1/S07-R1 closure at material commit `f7d8e4842`, record exact closed-packet hashes, and regenerate the compact/full continuity projections. This continuity-only sync changes no worker-owned truth, package or generated projection path.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cvfNcrR1S07P6TruthPacketDispatch20260927.json`; `CVF_SESSION/state/entries/cvfNcrR1S07R1ActivationLearningRootReconciliationDispatch20260927.json`
+- `CVF_SESSION/state/entries/cvfNcrR1S07P6TruthPacketDispatch20260927.json`; `CVF_SESSION/state/entries/cvfNcrR1S07R1ActivationLearningRootReconciliationDispatch20260927.json`; `CVF_SESSION/state/entries/cvfNcrR1S07R1ActivationLearningRootReconciliationClosure20260927.json`
 - `CVF_SESSION/state/entries/acelPostG7ThreeRepoAbsorption20260925.json`
 - `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/cvfNcrR1W00HtmlUxDispatch20260926.json`; `CVF_SESSION/state/entries/cvfNcrR1W01HtmlUxCopyDispatch20260926.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: operator required root repair before continuation and identified that Finding-To-Learning did not surface the recurring failure without human prompting. Rollback boundary: revert only this continuity projection; retain committed root-correction packet `7aae8b0f8`, blocked P6 evidence and all earlier accepted material. Root correction is bound to the named work order; every feature successor, ACTIVE, P7-P10, package-body invocation, external/provider/live, public-sync and production remain separately gated.
+Operator authorization: operator required root repair before continuation and identified that Finding-To-Learning did not surface the recurring failure without human prompting. Rollback boundary: revert only this continuity projection; retain committed root-reconciliation closure `f7d8e4842`, accepted P6 truth evidence and all earlier accepted material. Root correction is bound to the named closed work order; P7 execution, ACTIVE, P8-P10, package-body invocation, external/provider/live, public-sync and production remain separately gated.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
@@ -204,7 +204,7 @@ Operator authorization: operator required root repair before continuation and id
 | Target paths | active handoff, split session-state sources, generated aggregate/bootstrap, and compact front door |
 | Allowed scope source | operator tranche delegation, NCR D013, SOP P6/SKSOT and accepted R1/S06-R1 completion |
 | Before status evidence | accepted P5 material committed at `887123d13`; R1/S06 closure continuity committed at `a3a08df80` |
-| After status evidence | committed R1/S07-R1 root-correction packet `7aae8b0f8` and its frozen-successor execution move projected across Core, bootstrap and generated aggregate |
+| After status evidence | committed R1/S07-R1 closure `f7d8e4842` and its P7-authoring-only next move projected across Core, bootstrap and generated aggregate |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | dispatch continuity plus authorization to execute only the named P6 truth-packet work order |
 | Claim boundary | no ACTIVE transition, P7-P10, runtime invocation, live/provider/public, deployment or production effect |
@@ -217,4 +217,4 @@ Operator authorization: operator required root repair before continuation and id
 
 ## Claim Boundary
 
-This handoff records terminal G1-G7 and bounded AKOE-P1 through AKOE-P4 common Local closure at `a1541eb8b`. NCR-R1/S07 is blocked evidence; the next move is execution of only the bound R1/S07-R1 activation-phase and learning-escalation root correction at material commit `7aae8b0f8`, with every feature successor frozen. No ACTIVE/P7-P10, package-body/runtime invocation, host/provider/live/public/deployment/production effect or G1-G7 successor is authorized by this handoff.
+This handoff records terminal G1-G7, bounded AKOE-P1 through AKOE-P4 common Local closure at `a1541eb8b`, and NCR-R1/S07-R1 root reconciliation closure at `f7d8e4842`. The next move is authoring and independent review of a fresh P7 usage-receipt-readiness packet only. No P7 execution, ACTIVE/P8-P10, package-body/runtime invocation, host/provider/live/public/deployment/production effect or G1-G7 successor is authorized by this handoff.
