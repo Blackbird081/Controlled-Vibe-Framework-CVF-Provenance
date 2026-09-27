@@ -8,6 +8,10 @@ Batch ID: CVF-NCR-R1-S06-R1
 
 Dispatch base head: `f6c3e0be2e850290d89ac542a5982502da9c0666`
 
+Worker execution head rule: capture the current committed HEAD after dispatch
+continuity; it is intentionally later than the dispatch base and must not be
+required to equal `f6c3e0be2`.
+
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
 Decision owner: Local orchestrator/reviewer under the operator's full-P5 authorization.

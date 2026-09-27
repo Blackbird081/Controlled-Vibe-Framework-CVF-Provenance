@@ -29,8 +29,10 @@ Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_R1_P5_PH
 Commit mode: `WORKER_MUST_NOT_COMMIT`.
 
 executionBaseHead: capture current committed HEAD and the exact inherited dirty
-set before editing. The expected committed base is `f6c3e0be2`; the eight
-R1/S06 worker paths are intentionally dirty and must not be reset or stashed.
+set before editing. `f6c3e0be2` is the packet's dispatchBaseHead, not the
+worker execution head; the execution head is the later clean committed HEAD
+after dispatch continuity. The eight R1/S06 worker paths are intentionally
+dirty and must not be reset or stashed.
 
 Current-time notes: R1/S06 UAT is 5/5 PASS and its exact P5 metadata is
 internally consistent. The blocked return exposed an unconditional truth-gap
