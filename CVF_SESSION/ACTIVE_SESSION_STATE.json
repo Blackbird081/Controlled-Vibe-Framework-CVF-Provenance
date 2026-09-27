@@ -109,8 +109,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s05_test_evidence_audit_package_proposal_closed",
-  "previousMode": "cvf_ncr_r1_s05_test_evidence_audit_package_proposal_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_s06_test_evidence_audit_controlled_approval_dispatch_ready",
+  "previousMode": "cvf_ncr_r1_s05_test_evidence_audit_package_proposal_closed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16844,5 +16844,5 @@
     "reviewCommit": "5e99eb20910e7e3282d7431e6ca3d96c5e87860b",
     "claimBoundary": "four accepted bilingual copy lines in existing component and focused mocked tests only; no browser walkthrough, real profile, P06/P08 closure, route call, provider/live, public or pilot authority; next work order held for operator-relayed Web research"
   },
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SOURCE_VERIFY_NEXT_D013_SLICE; ACTIVE_BATCH=CVF-NCR-R1-S05-CLOSED; REVIEW=docs/reviews/CVF_CVF_NCR_R1_S05_TEST_EVIDENCE_AUDIT_PACKAGE_ROOT_PROPOSAL_COMPLETION_2026-09-27.md; MATERIAL_COMMIT=9141fd05a; EXPANSION_ALLOWED=false. R1/S05 ASSF SOP P4 package-root proposal is CLOSED_PASS_BOUNDED after Local accepted the exact worker manifest and repaired one pre-existing Local-owned session-mode marker. The package remains PROPOSED and CONTRACT_ONLY; UAT and certification are NOT_STARTED. Local may source-verify a separate D013 successor packet. No P5-P10, approval/truth, skill/test/eval/resolver/loader execution, host/provider/live/public/production effect follows automatically. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24."
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S06; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_CONTROLLED_APPROVAL_2026-09-27.md; MATERIAL_COMMIT=f2cbc02d4; EXPANSION_ALLOWED=false. Operator authorized full P5 only. One INTERNAL_AGENT may execute the exact eight-path provider-free work order, complete five source-based UAT cases without running the audited tests, target APPROVED/PASSED/CERTIFIED/IMPLEMENTED, and record one explicit internal runtime-loader body-read receipt. No ACTIVE, P6-P10 truth, resolver, automatic invocation, external adapter, provider/network/live, public or production effect is authorized. Local remains reviewer/closer; operator retains later data, effect and expense decisions; latest closed LHW wave LHW24."
 }
