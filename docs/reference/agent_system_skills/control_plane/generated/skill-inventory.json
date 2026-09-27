@@ -3250,8 +3250,8 @@
     },
     {
       "activation": {
-        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
-        "truthPacketRequired": false
+        "decision": "ACTIVATION_READY",
+        "truthPacketRequired": true
       },
       "cliMcp": {
         "adapterContract": "N/A with reason: no external CLI/MCP adapter approved for this package",
@@ -3265,27 +3265,25 @@
         "exists": true,
         "rootPath": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
         "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/skill.source.json",
-        "sourceLifecycleState": "PROPOSED"
+        "sourceLifecycleState": "APPROVED"
       },
       "registry": {
-        "approvalState": "AWAITING_REVIEW",
-        "candidateState": "PROPOSED",
+        "approvalState": "APPROVED",
+        "candidateState": "APPROVED",
         "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
-        "certificationState": "NOT_STARTED",
-        "internalAgentDisposition": "CANDIDATE",
+        "certificationState": "CERTIFIED",
+        "internalAgentDisposition": "IMPLEMENTED",
         "name": "CVF Governance Worker-Return Review",
-        "reviewArtifacts": [],
+        "reviewArtifacts": [
+          "docs/reviews/CVF_NCR_SRA1_WORKER_RETURN_REVIEW_SKILL_UAT_2026-09-27.md"
+        ],
         "skillId": "cvf-governance-worker-return-review",
-        "status": "PROPOSED",
-        "uatState": "NOT_STARTED"
+        "status": "APPROVED",
+        "uatState": "PASSED"
       },
       "runtime": {
-        "eligible": false,
-        "ineligibilityReasons": [
-          "CERTIFICATION_NOT_CERTIFIED",
-          "UAT_NOT_PASSED",
-          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
-        ]
+        "eligible": true,
+        "ineligibilityReasons": []
       },
       "selection": {
         "agentUseCases": [
@@ -3334,20 +3332,23 @@
       "taxonomy": [
         "ASSF_REGISTRY_ENTRY",
         "ASSF_PACKAGE_ROOT",
+        "RUNTIME_ELIGIBLE_PACKAGE",
+        "ACTIVE_RESOLVER_READY_PACKAGE",
+        "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
-        "exists": false,
-        "runtimeEligibility": null,
-        "truthStatus": null,
-        "verificationMode": null
+        "exists": true,
+        "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
+        "truthStatus": "approved",
+        "verificationMode": "STRICT"
       },
       "webProjection": {
-        "assfProjectionClass": null,
-        "certificationState": null,
-        "domain": null,
-        "present": false,
-        "webKey": null
+        "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+        "certificationState": "CERTIFIED",
+        "domain": "worker-return-review",
+        "present": true,
+        "webKey": "cvf-governance-worker-return-review"
       }
     }
   ],
@@ -3364,29 +3365,29 @@
   "statusCounts": {
     "candidateState": {
       "ACTIVE": 24,
-      "CANDIDATE": 8,
-      "PROPOSED": 1
+      "APPROVED": 1,
+      "CANDIDATE": 8
     },
     "certificationState": {
-      "CERTIFIED": 25,
-      "NOT_STARTED": 8
+      "CERTIFIED": 26,
+      "NOT_STARTED": 7
     },
     "internalAgentDisposition": {
-      "CANDIDATE": 9,
-      "IMPLEMENTED": 24
+      "CANDIDATE": 8,
+      "IMPLEMENTED": 25
     },
     "status": {
       "ACTIVE": 24,
-      "CANDIDATE": 8,
-      "PROPOSED": 1
+      "APPROVED": 1,
+      "CANDIDATE": 8
     },
     "uatState": {
-      "NOT_STARTED": 8,
-      "PASSED": 25
+      "NOT_STARTED": 7,
+      "PASSED": 26
     }
   },
   "summary": {
-    "activeResolverReadyPackages": 24,
+    "activeResolverReadyPackages": 25,
     "activeSourcePackages": 24,
     "assfRegistryEntries": 33,
     "cliMcpAdapterPackages": 24,
@@ -3394,10 +3395,10 @@
     "externalProviderRuntimeSkillMappings": 0,
     "packageRoots": 25,
     "publicProdPackages": 0,
-    "runtimeEligiblePackages": 24,
+    "runtimeEligiblePackages": 25,
     "selectionProfiledPackages": 25,
     "templateMapEntries": 58,
-    "webProjectionItems": 52,
+    "webProjectionItems": 53,
     "webProjectionOnlyItems": 27
   },
   "taxonomy": {

@@ -7,7 +7,7 @@ description: Review a CVF worker return, decide reviewer-local repair versus REW
 
 Memory class: FULL_RECORD
 
-Status: PROPOSED
+Status: APPROVED
 
 docType: assf_package
 
@@ -88,9 +88,9 @@ blocker and stop the dependent action.
 ## Progressive Disclosure And Evidence
 
 The registry/index exposes metadata before the body. Read this body only after
-an explicit, authorized selection. The package remains PROPOSED; UAT,
-certification, truth packet, usage receipt, resolver admission, host delivery,
-and automatic invocation are unproven. Behavioral use must not be claimed from
+an explicit, authorized selection. Local UAT and reviewer certification are recorded in the NCR-SRA1 UAT review.
+Truth, usage receipt, ACTIVE production execution, host delivery, and automatic
+invocation remain separate gates. Behavioral use must not be claimed from
 source authorship or a passing syntax check.
 
 ## External Disposition
@@ -111,7 +111,7 @@ advisory input only.
 
 ## Claim Boundary
 
-This is a CVF-owned PROPOSED package body for reviewer guidance. It neither
+This is a CVF-owned APPROVED package body for reviewer guidance. It neither
 proves agent comprehension nor makes this package selectable through the
 ACTIVE runtime. Existing machine gates remain the enforceable boundary for
 governed repository packets.

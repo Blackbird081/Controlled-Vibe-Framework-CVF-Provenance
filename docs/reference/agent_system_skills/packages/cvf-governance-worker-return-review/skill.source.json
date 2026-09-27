@@ -9,11 +9,11 @@
     "docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_COMPLETION_2026-09-27.md",
     "docs/reviews/CVF_MIXED_EOL_COMMITTED_EVIDENCE_CORRECTION_2026-09-27.md"
   ],
-  "lifecycleState": "PROPOSED",
-  "uatState": "NOT_STARTED",
-  "certificationState": "NOT_STARTED",
-  "internalAgentDisposition": "CANDIDATE",
+  "lifecycleState": "APPROVED",
+  "uatState": "PASSED",
+  "certificationState": "CERTIFIED",
+  "internalAgentDisposition": "IMPLEMENTED",
   "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
   "cvfAdaptationBoundary": "CVF-owned reviewer routing and closure guidance derived from existing CVF standards and the NCR R1/S01 review finding; no third-party skill import",
-  "claimBoundary": "authored package body only; no UAT, certification, truth packet, usage receipt, ACTIVE resolver, host installation, automatic invocation, provider/live, public or production claim"
+  "claimBoundary": "Local UAT and reviewer certification accepted; truth, usage, ACTIVE production proof and host delivery remain separately gated"
 }

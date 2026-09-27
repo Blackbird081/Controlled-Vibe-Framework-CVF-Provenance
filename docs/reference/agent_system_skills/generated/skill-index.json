@@ -3400,15 +3400,15 @@
       "version": "0.1.0"
     },
     {
-      "acceptanceEvidence": "package anatomy and index drift checks; future UAT and reviewer acceptance are required before promotion",
+      "acceptanceEvidence": "docs/reviews/CVF_NCR_SRA1_WORKER_RETURN_REVIEW_SKILL_UAT_2026-09-27.md",
       "adapterContract": "N/A with reason: no external CLI/MCP adapter approved for this package",
       "adapterEvidence": "N/A with reason: no adapter implemented or evaluated",
-      "approvalState": "AWAITING_REVIEW",
+      "approvalState": "APPROVED",
       "authorityCeiling": "advisory review guidance under the current governed assignment; no independent mutation or commit grant",
-      "candidateState": "PROPOSED",
+      "candidateState": "APPROVED",
       "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
-      "capabilityBoundary": "separate from code-quality review; no automatic invocation, ACTIVE runtime, host install, provider, public, production, or action authority",
-      "certificationState": "NOT_STARTED",
+      "capabilityBoundary": "bounded internal CVF reviewer guidance; no automatic invocation, host install, public sync, or action authority",
+      "certificationState": "CERTIFIED",
       "compositionOrder": 33,
       "conflicts": [],
       "contextProfile": "local-governed-review",
@@ -3424,7 +3424,7 @@
         "current bootstrap and handoff",
         "gate receipts and Git range"
       ],
-      "internalAgentDisposition": "CANDIDATE",
+      "internalAgentDisposition": "IMPLEMENTED",
       "legacyRows": [],
       "license": "CVF_PRIVATE_GOVERNED",
       "loaderBoundary": "loading metadata never grants reviewer mutation, commit, provider, public, production, or external action authority",
@@ -3443,9 +3443,11 @@
       ],
       "platformCompatibility": "cross-platform guidance",
       "purpose": "Guide Local reviewer assessment of internal worker returns, reviewer-local repair routing, and evidence-supported bounded closure.",
-      "resolverBehavior": "metadata-only while PROPOSED; no package-body load through ACTIVE runtime",
+      "resolverBehavior": "metadata-only until explicit governed selection; body read requires an eligible package and usage receipt, never automatic invocation",
       "retirement": "none",
-      "reviewArtifacts": [],
+      "reviewArtifacts": [
+        "docs/reviews/CVF_NCR_SRA1_WORKER_RETURN_REVIEW_SKILL_UAT_2026-09-27.md"
+      ],
       "riskCeiling": "R1",
       "riskProfile": "R1",
       "riskTriggers": [
@@ -3467,7 +3469,7 @@
         "docs/reference/review_cost_control/CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md",
         "docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_COMPLETION_2026-09-27.md"
       ],
-      "status": "PROPOSED",
+      "status": "APPROVED",
       "successor": "none",
       "surfaces": [
         "docs/reviews",
@@ -3485,7 +3487,7 @@
         "reviewer-local repair or REWORK",
         "CVF tranche closure review"
       ],
-      "uatState": "NOT_STARTED",
+      "uatState": "PASSED",
       "useWhen": "A Local reviewer has an internal worker return and must decide findings, repair route, and closure evidence within an active governed assignment.",
       "version": "0.1.0"
     }

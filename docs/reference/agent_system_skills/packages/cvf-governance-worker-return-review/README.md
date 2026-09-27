@@ -2,20 +2,20 @@
 
 Memory class: POINTER_RECORD
 
-Status: PROPOSED
+Status: APPROVED
 
 docType: assf_package_front_door
 
 ## Purpose
 
-This front door identifies the proposed CVF-owned reviewer skill. The body is
+This front door identifies the approved CVF-owned reviewer skill. The body is
 `SKILL.md`; provenance and lifecycle declarations are in `skill.source.json`.
 
 ## Scope / Applies-To
 
-Local review of internal CVF worker returns. The package remains PROPOSED.
-Registry metadata and selection guidance may describe it, but the ACTIVE
-runtime cannot load it. Reviewer authority comes from the current work order
+Local review of internal CVF worker returns. The package is APPROVED after Local UAT and reviewer certification.
+The existing receipt-backed loader may read it on explicit selection; this
+does not yet claim ACTIVE production execution. Reviewer authority comes from the current work order
 and CVF standards, not from this package.
 
 ## Owner Surface
@@ -26,6 +26,6 @@ owns the metadata state. The package proposal review is
 
 ## Claim Boundary
 
-This file is a package front door only. It is not UAT, certification,
-invocation, host installation, provider proof, public export, or production
+This file is a package front door only. UAT and certification are recorded separately in the NCR-SRA1 UAT
+review. This front door is not invocation, host installation, provider proof, public export, or production
 readiness evidence.

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T09:31:57.002Z",
+  "generatedAt": "2026-09-27T00:56:19.750Z",
   "categories": [
     {
       "id": "ai_ml_evaluation",
@@ -2730,13 +2730,76 @@
             "metadata-first discovery"
           ],
           "projectionClaimBoundary": "This index is metadata-only. It is not evidence of runtime activation, CLI/MCP adapter implementation, provider availability, or external-agent authorization. Loading this index never grants authority to commit, activate, execute a package instruction body, or expand external-agent scope."
+        },
+        {
+          "id": "cvf-governance-worker-return-review",
+          "title": "CVF Governance Worker-Return Review",
+          "domain": "worker-return-review",
+          "difficulty": "Governed",
+          "summary": "Guide Local reviewer assessment of internal worker returns, reviewer-local repair routing, and evidence-supported bounded closure.",
+          "path": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
+          "content": "# CVF Governance Worker-Return Review\n\nGuide Local reviewer assessment of internal worker returns, reviewer-local repair routing, and evidence-supported bounded closure.\n\n## Projection Boundary\nThis index is metadata-only. It is not evidence of runtime activation, CLI/MCP adapter implementation, provider availability, or external-agent authorization. Loading this index never grants authority to commit, activate, execute a package instruction body, or expand external-agent scope.\n\n## Source Trace\n- Canonical root: docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md\n- Certification state: CERTIFIED\n- UAT state: PASSED\n- External CLI/MCP disposition: DEFERRED_WITH_REASON\n- Runtime eligible: true\n- Activation decision: ACTIVATION_READY\n- Primary domain: worker-return-review\n\n## Review Artifacts\n- docs/reviews/CVF_NCR_SRA1_WORKER_RETURN_REVIEW_SKILL_UAT_2026-09-27.md",
+          "riskLevel": "R1",
+          "allowedRoles": "reviewer, closer",
+          "allowedPhases": "REVIEWER_CLOSURE",
+          "authorityScope": "advisory review guidance under the current governed assignment; no independent mutation or commit grant",
+          "autonomy": "Read-only metadata projection",
+          "uatStatus": "PASSED",
+          "uatQuality": "Passed",
+          "specGate": "CERTIFIED",
+          "corpusClass": "AGENT_SYSTEM_SKILL_PACKAGE",
+          "frontDoorVisible": true,
+          "frontDoorTier": "ASSF_CERTIFIED",
+          "trustedBenchmarkSurface": false,
+          "hasRestrictedLinks": false,
+          "linkedTemplates": [],
+          "corpusNote": "ASSF certified package metadata projection; certificationState is separate from corpusClass.",
+          "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",
+          "certificationState": "CERTIFIED",
+          "uatState": "PASSED",
+          "reviewArtifacts": [
+            "docs/reviews/CVF_NCR_SRA1_WORKER_RETURN_REVIEW_SKILL_UAT_2026-09-27.md"
+          ],
+          "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
+          "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+          "adapterContract": "N/A with reason: no external CLI/MCP adapter approved for this package",
+          "runtimePackageProjection": true,
+          "runtimeEligible": true,
+          "activationDecision": "ACTIVATION_READY",
+          "primaryDomain": "worker-return-review",
+          "domainGroup": "governance",
+          "selectionKeywords": [
+            "worker return review",
+            "COMPLETE_PENDING_REVIEW",
+            "reviewer-local repair",
+            "REWORK",
+            "tranche closure"
+          ],
+          "specSignals": [
+            "review worker return",
+            "decide reviewer repair or rework",
+            "close CVF tranche"
+          ],
+          "recommendedWhen": [
+            "an internal worker has returned a governed CVF assignment for Local review"
+          ],
+          "notRecommendedWhen": [
+            "the task is external Web research",
+            "the task is ordinary code-quality review without a CVF worker return"
+          ],
+          "outputGoals": [
+            "worker-return disposition",
+            "reviewer-local repair decision",
+            "closure evidence"
+          ],
+          "projectionClaimBoundary": "This index is metadata-only. It is not evidence of runtime activation, CLI/MCP adapter implementation, provider availability, or external-agent authorization. Loading this index never grants authority to commit, activate, execute a package instruction body, or expand external-agent scope."
         }
       ]
     }
   ],
   "meta": {
     "totalScannedSkills": 62,
-    "frontDoorSkills": 52,
+    "frontDoorSkills": 53,
     "quarantinedSkills": 35,
     "trustedMappedSkills": 27,
     "reviewMappedSkills": 0,
@@ -2747,9 +2810,9 @@
       "docs/baselines/CVF_FRONT_DOOR_WAVE2_EXECUTION_NOTE_2026-04-21.md",
       "../../../docs/reference/agent_system_skills/generated/skill-index.json"
     ],
-    "assfProjectedSkills": 25,
-    "certifiedPackageProjections": 25,
-    "runtimePackageProjections": 24,
+    "assfProjectedSkills": 26,
+    "certifiedPackageProjections": 26,
+    "runtimePackageProjections": 25,
     "skillControlPlaneProjection": "public/data/assf-skill-control-plane.json"
   }
 }
