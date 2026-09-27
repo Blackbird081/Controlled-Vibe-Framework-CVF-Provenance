@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_s07_p6_truth_packet_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S07; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S07_TEST_EVIDENCE_AUDIT_TRUTH_PACKET_2026-09-27.md; MATERIAL_COMMIT=e46fb3f46; CONTINUITY_REBIND_PARENT=e46fb3f46; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may execute the exact eleven-path P6 packet: create one approved STRICT truth packet, align truth-boundary prose, regenerate skill/truth/inventory/Web read models, preserve APPROVED/PASSED/CERTIFIED/IMPLEMENTED and prove activation denied. No ACTIVE, P7-P10, resolver/loader/executor invocation, automatic invocation, external adapter, audited-test execution, provider/network/live, public-sync, deployment or production effect is authorized. Worker must not stage, stash or commit; Local remains reviewer/closer; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S07-R1; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_2026-09-27.md; MATERIAL_COMMIT=7aae8b0f8; CONTINUITY_REBIND_PARENT=7aae8b0f8; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may execute the exact 25-path root correction: retain accepted P6 truth material; require ACTIVE plus valid truth for ACTIVATION_READY in inventory and resolver; preserve APPROVED loader read eligibility; enforce finding recurrence, operator notice and successor freeze; add ADIF-0060; regenerate bounded projections. All feature successors stay frozen. No ACTIVE transition, P7-P10, package-body invocation, external adapter, provider/network/live, public-sync, deployment or production effect is authorized. Worker must not stage, stash or commit; Local remains reviewer/closer; latest closed LHW wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S07_TEST_EVIDENCE_AUDIT_TRUTH_PACKET_2026-09-27.md",
-    "baselineSha256": "c0e02556da5f6be417d866509223bd336786f4fc490a77d80c15d3e0bc0246a4",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S07_TEST_EVIDENCE_AUDIT_TRUTH_PACKET_2026-09-27.md",
-    "workOrderSha256": "865dc2c3465464e3ba2da524f5acbec07fe6693a287acc7c48ac761dd3d7feef"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_2026-09-27.md",
+    "baselineSha256": "cb9059d9f3ea7ad2a0e758ca78fd5593610eb7c002d78f3f1ad0195d7ca7d04b",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_2026-09-27.md",
+    "workOrderSha256": "5e319f97e0d2758c0904098f080b397a1cbe5c4d6ad99db00816c1f36540873c"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
