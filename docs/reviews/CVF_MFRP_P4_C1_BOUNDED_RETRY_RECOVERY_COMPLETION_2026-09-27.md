@@ -29,7 +29,7 @@ weakening receipt admission or inflating opportunity counts.
 | paired baseline/work order | exact retry bounds and manifest | ACCEPT |
 | ignored journal | 804 attempts, 73 opportunities, one sample, 34 retryable | ACCEPT_DIAGNOSTIC |
 | helper/collector diff | derived queue plus one retry seam | ACCEPT |
-| focused tests | 71 passed | ACCEPT |
+| focused tests | 72 passed | ACCEPT |
 
 ## Scope / Methodology
 
@@ -75,7 +75,7 @@ No independent-agent claim is made.
 
 | Evidence | Result |
 | --- | --- |
-| focused helper/collector suite | PASS, 71 tests |
+| focused helper/collector suite | PASS, 72 tests |
 | bounded retry hostile test | PASS |
 | retry counter non-inflation | PASS |
 | Python size guard | PASS; collector 809 lines |
@@ -117,6 +117,7 @@ Rollback boundary: exact seven-path material batch only.
 | unlimited automatic replay could repeatedly block commits | RECOVERY_LOOP_RISK | SAFETY_LEARNING | RULE_ADDED | at most one retry per trusted commit | handled |
 | retry on a material disclosure runs before continuity rebind and creates a false safety marker | EXECUTION_PHASE_MISMATCH | RUNTIME_BEHAVIOR_LEARNING | RULE_AND_TEST_ADDED | retry only on dedicated session-sync disclosures; material commits defer without consumption | handled |
 | a historical target whose changed paths no longer match the worktree cannot receive `committedEvidence` | HISTORICAL_REPLAY_MISMATCH | EVIDENCE_ADMISSION_LEARNING | RULE_AND_TEST_ADDED | select the newest retryable item that passes the canonical committed-target replay check; leave unreplayable evidence visible and unconsumed | handled |
+| replayable historical bytes can still fail stricter current governance | HISTORICAL_GOVERNANCE_DRIFT | EVIDENCE_ADMISSION_LEARNING | RULE_AND_TEST_ADDED | preserve `RETRY_REJECTED_CURRENT_GATE` diagnostic and consume that retry without a blocking safety marker | handled |
 
 ## Epistemic Process Block
 
@@ -279,7 +280,7 @@ Exact changed manifest:
 
 | Assertion | Required value | Observed value | Status |
 | --- | --- | --- | --- |
-| focused tests | pass | 71 passed | PASS |
+| focused tests | pass | 72 passed | PASS |
 | retry backlog | prospective only | 34 derived before first live attempt; 33 remain after preserved failed attempt | PASS |
 | retry bound | once per trusted commit | hostile tests | PASS |
 | counter integrity | no retry inflation | hostile tests | PASS |

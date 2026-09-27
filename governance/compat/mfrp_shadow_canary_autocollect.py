@@ -705,6 +705,16 @@ def run_collection(commit: str | None = None) -> str:
             trusted_commit, disclosure_commit
         )
     except CollectionUnsafe as unsafe:
+        if (
+            selection.retry_of_trusted_commit
+            and unsafe.code == "UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED"
+        ):
+            _persist_attempt(
+                journal, disclosure_commit, trusted_commit,
+                "RETRY_REJECTED_CURRENT_GATE", selection=selection,
+                detail=unsafe.detail,
+            )
+            return "P4-C1: RETRY_REJECTED_CURRENT_GATE"
         _persist_attempt(
             journal,
             disclosure_commit,

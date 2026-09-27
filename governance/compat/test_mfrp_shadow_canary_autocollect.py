@@ -950,6 +950,21 @@ touched."""
             selected = autocollect._select_replayable_retry_attempt({})
         self.assertIs(selected, older)
 
+    def test_retry_rejected_by_current_gate_is_nonblocking_evidence(self):
+        trusted = 'b' * 40
+        prior = autocollect.observability.record_attempt({}, autocollect.observability.make_attempt('a' * 40, trusted, outcome='UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED', candidate_count=1, eligible=True, selected_path='docs/reviews/retry.md'))
+        autocollect._atomic_write_json(self._journal, prior)
+        candidate = autocollect.observability.EnrollmentCandidate(path='docs/reviews/retry.md', trusted_outcome='CLOSED_PASS_BOUNDED', phase='REVIEW', hard_obligation_locator='retry#status', hard_obligation_pattern='Status: CLOSED_PASS_BOUNDED', source_authority_locator='docs/work_orders/retry.md', origin='COMPLETION_REVIEW', priority=1)
+        empty = autocollect.observability.SelectionResult(None, 0, 'SKIPPED_NO_ELIGIBLE_CANDIDATE', ())
+        retry = autocollect.observability.SelectionResult(candidate, 1, 'SELECTED', (candidate.path,))
+        order = {'orderOfRecordStatus': 'PROVEN'}
+        with mock.patch.object(autocollect, '_single_parent', return_value='c' * 40), mock.patch.object(autocollect, '_discover_candidate', side_effect=[empty, retry]), mock.patch.object(autocollect, '_is_session_sync_disclosure', return_value=True), mock.patch.object(autocollect, '_select_replayable_retry_attempt', return_value=prior['attempts'][0]), mock.patch.object(autocollect, '_read_committed_text', return_value='docType: completion_review\nStatus: CLOSED_PASS_BOUNDED'), mock.patch.object(autocollect.canary_core, 'verify_trusted_record_order', return_value=order), mock.patch.object(autocollect, 'find_receipt_candidate', side_effect=autocollect.CollectionUnsafe('UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED', 'current gate rejected historical artifact')):
+            status = autocollect.run_collection('d' * 40)
+        self.assertEqual(status, 'P4-C1: RETRY_REJECTED_CURRENT_GATE')
+        self.assertFalse(autocollect.safety_marker_present())
+        journal = autocollect._load_pending_journal()
+        self.assertEqual(journal['attempts'][-1]['outcome'], 'RETRY_REJECTED_CURRENT_GATE')
+
     def test_successful_collection_never_writes_tracked_paths(self):
         """An honestly ineligible historical run touches no tracked path."""
         proc = subprocess.run(['git', 'status', '--short'], cwd=REPO_ROOT, capture_output=True, text=True)
