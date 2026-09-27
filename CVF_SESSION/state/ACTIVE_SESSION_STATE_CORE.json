@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
     "baselineSha256": "7e346f7f308378c780a4685ccbb0ab333e0d93d7c68f54bbed891f1a4da023eb",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
-    "workOrderSha256": "4ee85a9330ba69dae219d42563c0e18b967e1aaeeea0f4a7634fde6f1c29b762"
+    "workOrderSha256": "02d1d89b1f80d4176a23c8d956e4554526eb81ae60540d8e30f9ec3952760191"
   },
-  "currentAuthoritySyncReason": "R1/S08 P7 usage-receipt-readiness dispatch is command-reference reconciled at material commit b2f614037: the nonexistent eligibility checker is replaced by the verified metadata-only audit, dispatch quality rejects missing Python script paths, and first-occurrence findings may proactively notify/freeze as a paired escalation; exact hashes are rebound here; atomic continuity-rebind parent b2f614037.",
+  "currentAuthoritySyncReason": "R1/S08 P7 is CLOSED_PASS_BOUNDED: worker evidence commit 4af51dd72 and closure material commit e5ce21cb7 preserve one valid usage receipt, independent digest matches, APPROVED lifecycle and DENIED_SOURCE_NOT_ACTIVE. NCR is paused before P8 while Local audits P4-C1 evidence collection; exact hashes are rebound here; atomic continuity-rebind parent e5ce21cb7.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s08_usage_receipt_readiness_dispatch_ready",
-  "previousMode": "cvf_ncr_r1_s07_r1_activation_learning_root_reconciliation_closed",
+  "currentMode": "mfrp_p4_c1_evidence_collection_root_audit_ready",
+  "previousMode": "cvf_ncr_r1_s08_usage_receipt_readiness_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
