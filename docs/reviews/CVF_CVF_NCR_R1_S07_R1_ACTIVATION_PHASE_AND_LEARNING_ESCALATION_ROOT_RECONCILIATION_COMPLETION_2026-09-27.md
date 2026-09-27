@@ -104,7 +104,7 @@ probeObservedResult: exact activation-token parity 6/6; approved plus approved t
 
 oracleSeparationBasis: Local constructed the matrix and assertions directly from the canonical policy order without calling worker fixture helpers; acceptance excludes the prohibited loader output
 
-workerOracleSha256: 02168d7aab192c95fb6c11d3ace2910a591ddcb89294d5abd47093b871f1e466
+workerOracleSha256: 8905c3448e670c062dd284c63c0e79b20119b68f4847099cc06f1e465d4b95a5
 
 probeOracleSha256: 06b0ea1bb32d9810ec3bcf7d9bad11b692ad60c1249b6e19d478cfba19814574
 
@@ -131,7 +131,12 @@ Protected paths:
 - `governance/compat/generate_skill_control_plane_inventory.py`
 - `governance/compat/run_assf_active_resolver.py`
 - `governance/compat/check_finding_to_governance_learning.py`
-- their focused tests, worker-return scaffold and golden fixture
+- `governance/compat/test_skill_control_plane_inventory.py`
+- `governance/compat/test_run_assf_active_resolver.py`
+- `governance/compat/test_run_assf_activation_policy_resolver.py`
+- `governance/compat/test_check_finding_to_governance_learning.py`
+- `governance/compat/build_worker_return_skeleton_scaffold.py`
+- `governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md`
 
 Operator authorization: the operator explicitly instructed Local to fix the
 root before continuing and then to handle the return directly.

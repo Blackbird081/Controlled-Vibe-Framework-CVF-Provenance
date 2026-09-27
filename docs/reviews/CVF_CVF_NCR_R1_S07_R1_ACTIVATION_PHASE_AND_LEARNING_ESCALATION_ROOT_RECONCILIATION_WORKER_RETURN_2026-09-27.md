@@ -482,13 +482,8 @@ by the reviewer/closer after material commit.
 
 ## Corpus Completeness And Report Integrity
 
-NOT_APPLICABLE_WITH_REASON: this worker return does not claim a full or
-bounded repository-wide corpus scan, inventory, or "all files read"
-disposition. Its claims are scoped to the 25 dispatched material paths plus
-one Local-authorized dependent golden fixture, all enumerated exactly in the
-Exact Manifest Status section below. No corpus
-completeness or corpus-to-knowledge-map claim is made or required for this
-correction.
+- Corpus verdict: NOT_APPLICABLE_WITH_REASON - this correction is limited to
+  the exact dispatch manifest and makes no broader source-set assertion.
 
 ## Return-Time Closeability Recheck
 

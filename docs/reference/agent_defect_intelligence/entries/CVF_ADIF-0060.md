@@ -15,10 +15,10 @@ lifecycleState: ACTIVE
 taskClasses: governance-checker-hardening; package-skill-productionization
 roles: worker; reviewer; closer
 lifecyclePhases: pre-implementation; worker-return
-surfaceSelectors: ASSF activation-decision predicates (`generate_skill_control_plane_inventory.py` `_activation_decision`, `run_assf_active_resolver.py` `_decision_for`); changed self-declared worker returns under docs/reviews/ evaluated by the Finding-To-Governance learning gate
-detectionSignals: activation decision reaches ACTIVATION_READY for a runtime-eligible, truth-approved package whose registry/source `status` is not ACTIVE; inventory and resolver disagree on matrix priority/token; a worker return's `## Findings / Position` heading carries no learning disposition; a blocked return self-declares FIRST_OCCURRENCE despite an earlier governed return with the same rootCauseClusterId
+surfaceSelectors: ASSF activation-decision predicates (`generate_skill_control_plane_inventory.py` `_activation_decision`, `run_assf_active_resolver.py` `_decision_for`); activation-policy wrapper tests in `test_run_assf_activation_policy_resolver.py`; changed self-declared worker returns under docs/reviews/ evaluated by the Finding-To-Governance learning gate
+detectionSignals: activation decision reaches ACTIVATION_READY for a runtime-eligible, truth-approved package whose registry/source `status` is not ACTIVE; inventory and resolver disagree on matrix priority/token; an activation-policy readiness fixture still uses APPROVED after the resolver status gate is repaired; a worker return's `## Findings / Position` heading carries no learning disposition; a blocked return self-declares FIRST_OCCURRENCE despite an earlier governed return with the same rootCauseClusterId
 enforcementLevel: MACHINE_CHECKED
-checkerBindings: governance/compat/test_skill_control_plane_inventory.py; governance/compat/test_run_assf_active_resolver.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/test_check_finding_to_governance_learning.py
+checkerBindings: governance/compat/test_skill_control_plane_inventory.py; governance/compat/test_run_assf_active_resolver.py; governance/compat/test_run_assf_activation_policy_resolver.py; governance/compat/check_finding_to_governance_learning.py; governance/compat/test_check_finding_to_governance_learning.py
 promotionState: MACHINE_CHECK_ADDED
 supersedes: NONE
 lastVerifiedCommit: a804d4129
@@ -95,6 +95,9 @@ prove it with a hostile APPROVED/ACTIVE regression pair in each of
 `test_skill_control_plane_inventory.py` and `test_run_assf_active_resolver.py`
 (including a corrected `_write_index` default so the resolver's own "ready"
 fixture no longer encodes the same defect it is meant to catch). Extend
+the same lifecycle oracle through the activation-policy wrapper: its ready
+fixture must default to `ACTIVE`, and an explicit `APPROVED` case must remain
+`SELECTED` with body read denied. Extend
 `FINDING_HEADING_RE` in `check_finding_to_governance_learning.py` to match
 `## Findings / Position` directly, and update
 `test_check_finding_to_governance_learning.py` so the heading alone (no
@@ -118,6 +121,7 @@ authoring dependent on agent memory.
 | `_has_finding_marker`'s heading regex did not recognize `## Findings / Position`, the standard worker-return findings heading, so a prose-only return under that heading could skip the learning-disposition requirement entirely | `MACHINE_GATE_GAP` | `GOVERNANCE_CONTROL_PLANE` | `MACHINE_CHECK_ADDED` | extend `FINDING_HEADING_RE` to match `Findings(?:\s*/\s*Position)?` and invert the prior negative-case test to a positive one | Handled in this correction round |
 | Recurrence enforcement trusted self-declared `FIRST_OCCURRENCE` and accepted non-path prior evidence | `MACHINE_GATE_GAP` | `GOVERNANCE_CONTROL_PLANE` | `MACHINE_CHECK_ADDED` | require stable cluster IDs, exact prior-cluster lookup, existing governed prior paths, operator notice and successor freeze | Handled by Local independent review correction |
 | Return scaffold omitted the recurrence fields while the template alone carried them | `SCAFFOLD_GAP` | `GOVERNANCE_CONTROL_PLANE` | `SCAFFOLD_UPDATED` | update scaffold and golden fixture atomically and retain exact-fixture tests | Handled by Local independent review correction |
+| Activation-policy readiness tests retained an `APPROVED` default and therefore asserted the pre-fix readiness oracle through a downstream wrapper | `STALE_TEST_ORACLE` | `GOVERNANCE_CONTROL_PLANE` | `MACHINE_CHECK_ADDED` | default the wrapper's ready fixture to `ACTIVE` and add an explicit `APPROVED` selected/body-read-denied regression | Handled before P7 dispatch |
 
 Runtime/provider/cost learning lane: `N/A_WITH_REASON` - both defects are
 entirely local repository governance/control-plane behavior; no provider
@@ -158,6 +162,9 @@ correction as evidence.
 `APPROVED`, runtime-eligible, truth-approved fixture returns
 `DENIED_SOURCE_NOT_ACTIVE` (not `ACTIVATION_READY`) and that an otherwise
 identical `ACTIVE` fixture returns `ACTIVATION_READY`.
+`governance/compat/test_run_assf_activation_policy_resolver.py` carries that
+same boundary through the policy wrapper: ready cases use `ACTIVE`, while an
+explicit `APPROVED` case remains `SELECTED` and cannot request a body read.
 `governance/compat/test_check_finding_to_governance_learning.py` asserts that
 a `## Findings / Position` heading with no learning disposition fails, and
 that the same heading with a disposition section passes. It also proves a
