@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md",
     "workOrderSha256": "a302baf0d96784c4f3dff00ef9e71222458b6db185230733610d5a09277cdc75"
   },
-  "currentAuthoritySyncReason": "R1/S06-R1 binds the source-verified P5/P6 phase-gate correction packet at material commit f8b440521; its recorded hook bypass covered only the two implementation-target inventory and Web projection failures; continuity authorization lists every protected projection path.",
+  "currentAuthoritySyncReason": "R1/S06-R1 binds the source-verified P5/P6 phase-gate correction packet at material commit f8b440521; its recorded hook bypass covered only the two implementation-target inventory and Web projection failures; continuity authorization lists every protected projection path; atomic continuity-rebind parent 899dab90a.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
