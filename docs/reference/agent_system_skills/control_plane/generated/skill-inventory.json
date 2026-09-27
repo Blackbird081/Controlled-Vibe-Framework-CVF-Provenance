@@ -24,7 +24,8 @@
     "skill-discovery-invocation": 1,
     "source-driven-development": 1,
     "spec-driven-development": 1,
-    "test-driven-development": 1
+    "test-driven-development": 1,
+    "worker-return-review": 1
   },
   "driftSummary": {},
   "generatedBy": "governance/compat/generate_skill_control_plane_inventory.py",
@@ -3246,6 +3247,108 @@
         "present": true,
         "webKey": "cvf-governance-skill-discovery-invocation"
       }
+    },
+    {
+      "activation": {
+        "decision": "DENIED_NOT_RUNTIME_ELIGIBLE",
+        "truthPacketRequired": false
+      },
+      "cliMcp": {
+        "adapterContract": "N/A with reason: no external CLI/MCP adapter approved for this package",
+        "adapterEvidence": "N/A with reason: no adapter implemented or evaluated",
+        "disposition": "DEFERRED_WITH_REASON"
+      },
+      "drift": {
+        "violations": []
+      },
+      "packageRoot": {
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
+      },
+      "registry": {
+        "approvalState": "AWAITING_REVIEW",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
+        "certificationState": "NOT_STARTED",
+        "internalAgentDisposition": "CANDIDATE",
+        "name": "CVF Governance Worker-Return Review",
+        "reviewArtifacts": [],
+        "skillId": "cvf-governance-worker-return-review",
+        "status": "PROPOSED",
+        "uatState": "NOT_STARTED"
+      },
+      "runtime": {
+        "eligible": false,
+        "ineligibilityReasons": [
+          "CERTIFICATION_NOT_CERTIFIED",
+          "UAT_NOT_PASSED",
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
+        ]
+      },
+      "selection": {
+        "agentUseCases": [
+          "review an internal worker return",
+          "choose reviewer-local repair or REWORK",
+          "verify bounded closure evidence"
+        ],
+        "domainGroup": "governance",
+        "expectedOutputContribution": "Consolidated source-backed review findings and a justified repair or closure route.",
+        "intendedUsers": [
+          "reviewer",
+          "closer"
+        ],
+        "notRecommendedWhen": [
+          "the task is external Web research",
+          "the task is ordinary code-quality review without a CVF worker return"
+        ],
+        "outputGoals": [
+          "worker-return disposition",
+          "reviewer-local repair decision",
+          "closure evidence"
+        ],
+        "primaryDomain": "worker-return-review",
+        "recommendedWhen": [
+          "an internal worker has returned a governed CVF assignment for Local review"
+        ],
+        "secondaryDomains": [
+          "review-cost-control",
+          "rework-routing"
+        ],
+        "selectionKeywords": [
+          "worker return review",
+          "COMPLETE_PENDING_REVIEW",
+          "reviewer-local repair",
+          "REWORK",
+          "tranche closure"
+        ],
+        "selectionPriority": 85,
+        "specSignals": [
+          "review worker return",
+          "decide reviewer repair or rework",
+          "close CVF tranche"
+        ]
+      },
+      "skillId": "cvf-governance-worker-return-review",
+      "taxonomy": [
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT",
+        "SPEC_SELECTION_PROFILE"
+      ],
+      "truth": {
+        "exists": false,
+        "runtimeEligibility": null,
+        "truthStatus": null,
+        "verificationMode": null
+      },
+      "webProjection": {
+        "assfProjectionClass": null,
+        "certificationState": null,
+        "domain": null,
+        "present": false,
+        "webKey": null
+      }
     }
   ],
   "schemaVersion": "skill-control-plane-v1",
@@ -3261,36 +3364,38 @@
   "statusCounts": {
     "candidateState": {
       "ACTIVE": 24,
-      "CANDIDATE": 8
+      "CANDIDATE": 8,
+      "PROPOSED": 1
     },
     "certificationState": {
       "CERTIFIED": 25,
-      "NOT_STARTED": 7
+      "NOT_STARTED": 8
     },
     "internalAgentDisposition": {
-      "CANDIDATE": 8,
+      "CANDIDATE": 9,
       "IMPLEMENTED": 24
     },
     "status": {
       "ACTIVE": 24,
-      "CANDIDATE": 8
+      "CANDIDATE": 8,
+      "PROPOSED": 1
     },
     "uatState": {
-      "NOT_STARTED": 7,
+      "NOT_STARTED": 8,
       "PASSED": 25
     }
   },
   "summary": {
     "activeResolverReadyPackages": 24,
     "activeSourcePackages": 24,
-    "assfRegistryEntries": 32,
+    "assfRegistryEntries": 33,
     "cliMcpAdapterPackages": 24,
     "crossSurfaceDriftViolationCount": 0,
     "externalProviderRuntimeSkillMappings": 0,
-    "packageRoots": 24,
+    "packageRoots": 25,
     "publicProdPackages": 0,
     "runtimeEligiblePackages": 24,
-    "selectionProfiledPackages": 24,
+    "selectionProfiledPackages": 25,
     "templateMapEntries": 58,
     "webProjectionItems": 52,
     "webProjectionOnlyItems": 27

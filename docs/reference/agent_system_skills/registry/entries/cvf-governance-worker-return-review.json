@@ -1,0 +1,91 @@
+{
+  "registryOrder": 33,
+  "skillId": "cvf-governance-worker-return-review",
+  "name": "CVF Governance Worker-Return Review",
+  "version": "0.1.0",
+  "owner": "CVF Local reviewer governance",
+  "status": "PROPOSED",
+  "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-governance-worker-return-review/SKILL.md",
+  "originLane": "NCR-R1-LOCAL-REVIEW-LEARNING",
+  "sourceArtifacts": [
+    "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+    "docs/reference/CVF_GATE_TO_ROLE_CLOSEABILITY_MACHINE_STANDARD.md",
+    "docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md",
+    "docs/reference/review_cost_control/CVF_COMMITTED_EVIDENCE_FINGERPRINT_CONTRACT.md",
+    "docs/reviews/CVF_CVF_NCR_R1_S01_SKILL_LIFECYCLE_BODY_COMPLETION_2026-09-27.md"
+  ],
+  "legacyRows": [],
+  "license": "CVF_PRIVATE_GOVERNED",
+  "reviewArtifacts": [],
+  "purpose": "Guide Local reviewer assessment of internal worker returns, reviewer-local repair routing, and evidence-supported bounded closure.",
+  "triggerPatterns": [
+    "review worker return",
+    "COMPLETE_PENDING_REVIEW review",
+    "reviewer-local repair or REWORK",
+    "CVF tranche closure review"
+  ],
+  "taskClasses": [
+    "worker-return-review",
+    "reviewer-closure",
+    "rework-routing"
+  ],
+  "useWhen": "A Local reviewer has an internal worker return and must decide findings, repair route, and closure evidence within an active governed assignment.",
+  "doNotUseWhen": "External Web research, initial worker execution, ordinary code-quality review without CVF return, or an unapproved runtime activation.",
+  "riskTriggers": [
+    "scope or effect expansion requires the governing authority route before action"
+  ],
+  "roles": [
+    "reviewer",
+    "closer"
+  ],
+  "phases": [
+    "REVIEWER_CLOSURE"
+  ],
+  "surfaces": [
+    "docs/reviews",
+    "docs/work_orders",
+    "governance/compat"
+  ],
+  "riskCeiling": "R1",
+  "contextProfile": "local-governed-review",
+  "inputs": [
+    "active work order and baseline",
+    "worker return and changed-set evidence",
+    "current bootstrap and handoff",
+    "gate receipts and Git range"
+  ],
+  "outputs": [
+    "source-backed consolidated findings",
+    "reviewer-local repair, REWORK, or stop disposition",
+    "bounded completion evidence when authorized"
+  ],
+  "executionConstraints": "read the current canonical owners; do not infer authority from package loading; do not rerun valid worker evidence without a named contradiction and cost reason",
+  "acceptanceEvidence": "package anatomy and index drift checks; future UAT and reviewer acceptance are required before promotion",
+  "riskProfile": "R1",
+  "authorityCeiling": "advisory review guidance under the current governed assignment; no independent mutation or commit grant",
+  "sideEffects": "none from skill loading; any reviewer edit or commit needs separate current authority",
+  "permissions": "read current governed sources and returned evidence within the active assignment",
+  "rollback": "revert only this proposed package, registry entry, and regenerated index/inventory if rejected",
+  "safeStop": "state the exact missing authority or evidence and stop the dependent review or dispatch action",
+  "candidateState": "PROPOSED",
+  "approvalState": "AWAITING_REVIEW",
+  "uatState": "NOT_STARTED",
+  "certificationState": "NOT_STARTED",
+  "deprecation": "none",
+  "successor": "none",
+  "retirement": "none",
+  "dependencies": [],
+  "conflicts": [],
+  "compositionOrder": 33,
+  "capabilityBoundary": "separate from code-quality review; no automatic invocation, ACTIVE runtime, host install, provider, public, production, or action authority",
+  "internalAgentDisposition": "CANDIDATE",
+  "resolverBehavior": "metadata-only while PROPOSED; no package-body load through ACTIVE runtime",
+  "loaderBoundary": "loading metadata never grants reviewer mutation, commit, provider, public, production, or external action authority",
+  "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+  "adapterContract": "N/A with reason: no external CLI/MCP adapter approved for this package",
+  "adapterEvidence": "N/A with reason: no adapter implemented or evaluated",
+  "externalMutationBoundary": "no external mutation permitted from this package",
+  "platformCompatibility": "cross-platform guidance",
+  "shellAssumptions": "commands follow the current workspace and canonical checker instructions",
+  "osConstraints": "none"
+}
