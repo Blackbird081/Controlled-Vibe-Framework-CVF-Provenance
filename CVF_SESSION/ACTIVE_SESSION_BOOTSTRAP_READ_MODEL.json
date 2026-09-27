@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_s04_test_evidence_audit_metadata_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_s04_test_evidence_audit_metadata_closed",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S04; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_2026-09-27.md; MATERIAL_COMMIT=1f7d66349; EXPANSION_ALLOWED=false. R1/S04 is a no-commit INTERNAL_AGENT dispatch for ASSF productionization SOP P3 only: create registryOrder 34 candidate metadata for cvf-engineering-test-evidence-audit, regenerate the canonical skill index, and return the exact worker packet. Worker writes exactly the three work-order paths and runs only enumerated commands. No package root/SKILL/source/truth, P4-P10 promotion, resolver/loader/skill/test/eval execution, host/provider/live/public/production effect, staging or commit. Local owns review/closure; operator retains data, effect and expense decisions; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SOURCE_VERIFY_NEXT_D013_SLICE; ACTIVE_BATCH=CVF-NCR-R1-S04-CLOSED; REVIEW=docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md; MATERIAL_COMMIT=ecb984658; EXPANSION_ALLOWED=false. R1/S04 ASSF SOP P3 metadata candidate is CLOSED_WITH_RECORDED_SCOPE_VIOLATION after Local accepted order-34 CANDIDATE metadata, retained the worker stash/pop authority violation, and repaired the mechanically dependent Skill Control Plane inventory. Local may source-verify a separate D013 successor packet. No P4 package root/SKILL/source, P5-P10, truth, resolver/loader/skill/test/eval execution, host/provider/live/public/production effect follows automatically. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_2026-09-27.md",
-    "baselineSha256": "e05e526af64348d68419b48d220c0de6098c576baedc26b4be2b0a78852258a0",
+    "baselineSha256": "3b7acc58cb9f8cdaea535d8dc309f118321aad53ded527c7b34a2aa6c16e5c3a",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_2026-09-27.md",
-    "workOrderSha256": "1714a16b39a46d52461a7c98cf565de3a6bfa7645b5c5a4dc30be1f6c5464136"
+    "workOrderSha256": "51ece7e80e05e95b4a68374a14578eec7375299446efe1d8e3746ad95a197757"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

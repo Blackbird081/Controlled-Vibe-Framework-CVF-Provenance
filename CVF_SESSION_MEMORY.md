@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_s04_test_evidence_audit_metadata_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute the bound R1/S04 P3 metadata-only work order; role=Local orchestrator/reviewer with one no-commit INTERNAL_AGENT worker; phase=R1/S04 dispatch; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=P4-P10, package/source/truth creation, resolver/loader/skill/test/eval execution, host/provider/live, pilot, public and production.
+Startup acknowledged: current mode=`cvf_ncr_r1_s04_test_evidence_audit_metadata_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=source-verify a separate D013 successor packet; role=Local orchestrator/reviewer; phase=R1/S04 closure; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=P4-P10, package/source/truth creation, resolver/loader/skill/test/eval execution, host/provider/live, pilot, public and production.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_s04_test_evidence_audit_metadata_dispatch_ready`
-Current mode: `cvf_ncr_r1_s04_test_evidence_audit_metadata_dispatch_ready`; previous mode marker: `cvf_ncr_r1_s03_discovery_practice_closed`
+Current mode marker: `cvf_ncr_r1_s04_test_evidence_audit_metadata_closed`
+Current mode: `cvf_ncr_r1_s04_test_evidence_audit_metadata_closed`; previous mode marker: `cvf_ncr_r1_s04_test_evidence_audit_metadata_dispatch_ready`
 
 ## Next Allowed Move
-Mode: `cvf_ncr_r1_s04_test_evidence_audit_metadata_dispatch_ready`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S04; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_2026-09-27.md; MATERIAL_COMMIT=1f7d66349; EXPANSION_ALLOWED=false. R1/S04 is a no-commit INTERNAL_AGENT dispatch for ASSF productionization SOP P3 only: create registryOrder 34 candidate metadata for cvf-engineering-test-evidence-audit, regenerate the canonical skill index, and return the exact worker packet. Worker writes exactly the three work-order paths and runs only enumerated commands. No package root/SKILL/source/truth, P4-P10 promotion, resolver/loader/skill/test/eval execution, host/provider/live/public/production effect, staging or commit. Local owns review/closure; operator retains data, effect and expense decisions; latest closed LHW wave LHW24.
+Mode: `cvf_ncr_r1_s04_test_evidence_audit_metadata_closed`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SOURCE_VERIFY_NEXT_D013_SLICE; ACTIVE_BATCH=CVF-NCR-R1-S04-CLOSED; REVIEW=docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md; MATERIAL_COMMIT=ecb984658; EXPANSION_ALLOWED=false. R1/S04 ASSF SOP P3 metadata candidate is CLOSED_WITH_RECORDED_SCOPE_VIOLATION after Local accepted order-34 CANDIDATE metadata, retained the worker stash/pop authority violation, and repaired the mechanically dependent Skill Control Plane inventory. Local may source-verify a separate D013 successor packet. No P4 package root/SKILL/source, P5-P10, truth, resolver/loader/skill/test/eval execution, host/provider/live/public/production effect follows automatically. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
