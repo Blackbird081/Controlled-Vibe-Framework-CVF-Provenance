@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_CONTROLLED_APPROVAL_2026-09-27.md",
-    "baselineSha256": "0028349e10ed04ab4a2fddd72af4a7bca0e6c5f6f8cbdb9914469003af3150aa",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_CONTROLLED_APPROVAL_2026-09-27.md",
-    "workOrderSha256": "2c5b23ce7d4ba148bdc80df7ef487f4dd7c70bafa5bf8238182506f240d66360"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md",
+    "baselineSha256": "c3160618fa04c877e8837cc1a5ec1eb8fd1b534da60a4acbc4675f86eff811b4",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md",
+    "workOrderSha256": "a302baf0d96784c4f3dff00ef9e71222458b6db185230733610d5a09277cdc75"
   },
-  "currentAuthoritySyncReason": "R1/S06 release-readiness correction replaced the stale R1/S05 authority tuple; atomic continuity rebind parent 2c283ab28.",
+  "currentAuthoritySyncReason": "R1/S06-R1 binds the source-verified P5/P6 phase-gate correction packet at material commit f8b440521; its recorded hook bypass covered only the two implementation-target inventory and Web projection failures.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s06_test_evidence_audit_controlled_approval_dispatch_ready",
-  "previousMode": "cvf_ncr_r1_s05_test_evidence_audit_package_proposal_closed",
+  "currentMode": "cvf_ncr_r1_s06_r1_p5_phase_gate_reconciliation_dispatch_ready",
+  "previousMode": "cvf_ncr_r1_s06_test_evidence_audit_controlled_approval_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

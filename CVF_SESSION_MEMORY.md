@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_s06_test_evidence_audit_controlled_approval_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute the exact R1/S06 full-P5 work order; role=Local orchestrator/reviewer; phase=R1/S06 controlled approval dispatch ready; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=ACTIVE, P6-P10 truth, resolver/automatic invocation, external adapter, provider/live, public and production.
+Startup acknowledged: current mode=`cvf_ncr_r1_s06_r1_p5_phase_gate_reconciliation_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute the exact R1/S06-R1 correction work order; role=Local orchestrator/reviewer; phase=R1/S06-R1 P5 phase-gate reconciliation dispatch ready; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=ACTIVE, P6-P10 truth, resolver/automatic invocation, external adapter, provider/live, public and production.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_s06_test_evidence_audit_controlled_approval_dispatch_ready`
-Current mode: `cvf_ncr_r1_s06_test_evidence_audit_controlled_approval_dispatch_ready`; previous mode marker: `cvf_ncr_r1_s05_test_evidence_audit_package_proposal_closed`
+Current mode marker: `cvf_ncr_r1_s06_r1_p5_phase_gate_reconciliation_dispatch_ready`
+Current mode: `cvf_ncr_r1_s06_r1_p5_phase_gate_reconciliation_dispatch_ready`; previous mode marker: `cvf_ncr_r1_s06_test_evidence_audit_controlled_approval_dispatch_ready`
 
 ## Next Allowed Move
-Mode: `cvf_ncr_r1_s06_test_evidence_audit_controlled_approval_dispatch_ready`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S06; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_CONTROLLED_APPROVAL_2026-09-27.md; MATERIAL_COMMIT=f2cbc02d4; EXPANSION_ALLOWED=false. Operator authorized full P5 only; the R1/S06 authority tuple is source-corrected and release-bound. One INTERNAL_AGENT may execute the exact eight-path provider-free work order, complete five source-based UAT cases without running the audited tests, target APPROVED/PASSED/CERTIFIED/IMPLEMENTED, and record one explicit internal runtime-loader body-read receipt. No ACTIVE, P6-P10 truth, resolver, automatic invocation, external adapter, provider/network/live, public or production effect is authorized. Local remains reviewer/closer; operator retains later data, effect and expense decisions; latest closed LHW wave LHW24.
+Mode: `cvf_ncr_r1_s06_r1_p5_phase_gate_reconciliation_dispatch_ready`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S06-R1; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md; MATERIAL_COMMIT=f8b440521; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may continue the retained R1/S06 P5 delta under the exact thirteen-path correction manifest: make the inventory truth-gap drift predicate lifecycle-sensitive, add the APPROVED/ACTIVE hostile regression pair, regenerate inventory and the two private Web read models, and finish the provider-free loader receipt and listed gates. Preserve APPROVED/PASSED/CERTIFIED/IMPLEMENTED and activation denial. No P6 truth, ACTIVE promotion, resolver, automatic invocation, external adapter, provider/network/live, public-sync, deployment or production effect is authorized. Local remains reviewer/closer; the worker must not commit; latest closed LHW wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
