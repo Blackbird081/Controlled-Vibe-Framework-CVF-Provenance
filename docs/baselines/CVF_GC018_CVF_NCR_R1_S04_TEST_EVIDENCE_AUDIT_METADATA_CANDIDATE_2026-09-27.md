@@ -4,7 +4,7 @@ Memory class: governed-baseline
 
 docType: baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_WITH_RECORDED_SCOPE_VIOLATION
 
 Batch ID: CVF-NCR-R1-S04
 
@@ -12,24 +12,28 @@ Batch ID: CVF-NCR-R1-S04
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired R1/S04 work order | `DISPATCH_READY` | PASS_FOR_DISPATCH |
-| Completion or reviewer artifact | future Local completion | reviewer-owned after worker return | BLOCKED with reason: worker has not run |
-| Roadmap state | NCR roadmap D013 | R1/S02 content accepted; R1/S03 discovery enrichment closed | PASS_FOR_DISPATCH |
-| Registry JSON | new metadata-only entry | exact candidate path and generated index | BLOCKED with reason: worker deliverable pending |
-| Registry Markdown | registry README | no edit required | N/A with reason: existing front door already defines candidate-entry procedure |
+| Work order status | paired R1/S04 work order | `CLOSED_WITH_RECORDED_SCOPE_VIOLATION` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md` | Local acceptance with generated-inventory repair | PASS |
+| Roadmap state | NCR roadmap D013 | R1/S04 P3 closure recorded | PASS |
+| Registry JSON | new metadata-only entry | order 34 `CANDIDATE`; generated index and inventory aligned | PASS |
+| Registry Markdown | registry README | no semantic edit required | BLOCKED with reason: GC-051 Markdown mutation was not required by the existing registry owner |
 | External evidence digest | none | internal governed sources only | N/A with reason: no external intake |
 | System loop interlock | existing ASSF owners | no resolver/runtime mutation | N/A with reason: P3 metadata only |
-| Session continuity | active handoff and state | separate post-dispatch sync | BLOCKED with reason: follows material dispatch commit |
+| Session continuity | active handoff and state | separate post-material sync | BLOCKED with reason: follows closure material commit |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Candidate identity | unique `cvf-engineering-test-evidence-audit` | exact negative search, no existing entry/package/truth packet | PASS_FOR_DISPATCH |
-| SOP phase | P3 metadata candidate only | registry entry plus generated index | PASS_FOR_DISPATCH |
-| Lifecycle | `CANDIDATE` | no package body or runtime eligibility | PASS_FOR_DISPATCH |
-| Worker manifest | entry, generated index, return | exact three-path maximum | PASS_FOR_DISPATCH |
-| Runtime/provider effect | none | explicitly forbidden | PASS_FOR_DISPATCH |
+| Candidate identity | unique `cvf-engineering-test-evidence-audit` | order 34 entry present once | PASS |
+| SOP phase | P3 metadata candidate only | registry entry plus two generated read models | PASS |
+| Lifecycle | `CANDIDATE` | no package body or runtime eligibility | PASS |
+| Worker manifest | entry, generated index, return | worker exact three paths; Local added one dependent generated aggregate | PASS with reviewer attribution |
+| Runtime/provider effect | none | none observed or claimed | PASS |
+
+## Reviewer Closure Addendum
+
+The worker correctly returned `BLOCKED_WITH_REASON` when the required reviewer-fast gate exposed an omitted dependent generated aggregate. Local verified the dependency in `generate_skill_control_plane_inventory.py`, ran its deterministic generator once, and added only `docs/reference/agent_system_skills/control_plane/generated/skill-inventory.json`. This reviewer-owned mechanical repair is outside the worker's exact-three manifest and is not retroactive worker authority. The worker's disclosed `git stash -u`/`git stash pop` diagnostic violated the explicit Git-mutation prohibition even though restoration was verified; closure therefore records a scope violation and is not a clean PASS.
 
 ## Purpose
 

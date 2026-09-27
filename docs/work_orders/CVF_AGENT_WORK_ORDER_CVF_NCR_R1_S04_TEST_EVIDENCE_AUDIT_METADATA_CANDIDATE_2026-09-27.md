@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_WITH_RECORDED_SCOPE_VIOLATION
 
 Batch ID: CVF-NCR-R1-S04
 
@@ -42,23 +42,27 @@ Return contract: create one registry entry, regenerate one index, create one wor
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this R1/S04 work order | `DISPATCH_READY` | PASS |
-| Completion or reviewer artifact | future Local completion | reviewer-owned after worker return | BLOCKED with reason: worker has not run |
-| Roadmap state | NCR roadmap D013 | P3 is the next separately scoped SOP phase | PASS |
-| Registry JSON | new candidate entry | exact P3 worker deliverable | BLOCKED with reason: pending worker |
+| Work order status | this R1/S04 work order | `CLOSED_WITH_RECORDED_SCOPE_VIOLATION` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md` | Local acceptance with dependent-aggregate repair | PASS |
+| Roadmap state | NCR roadmap D013 | R1/S04 P3 closure recorded | PASS |
+| Registry JSON | new candidate entry | order 34 `CANDIDATE`; both generated read models aligned | PASS |
 | Registry Markdown | existing registry README | no edit required in this P3 source-entry task | BLOCKED with reason: GC-051 Markdown mutation is outside this exact metadata/index scope |
 | External evidence digest | none | internal governed sources only | N/A with reason: no external input |
 | System loop interlock | existing ASSF owners | no runtime/system mutation | N/A with reason: metadata only |
-| Session continuity | active handoff and state | separate post-dispatch sync | BLOCKED with reason: follows dispatch commit |
+| Session continuity | active handoff and state | separate post-material sync | BLOCKED with reason: follows closure commit |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Candidate identity | unique ID and order 34 | source-verified; worker creation pending | PASS |
-| Lifecycle state | `CANDIDATE` only | exact packet requirement | PASS |
-| Generated index | deterministic new projection | pending worker generator run | BLOCKED with reason: implementation not started |
+| Candidate identity | unique ID and order 34 | present once in source and projections | PASS |
+| Lifecycle state | `CANDIDATE` only | no P4-P10 artifacts | PASS |
+| Generated index | deterministic new projection | worker index plus Local repaired control-plane inventory | PASS |
 | Runtime receipt | none required or claimed | no runtime authority | PASS |
+
+## Reviewer Closure Addendum
+
+The original worker manifest remains exact-three and the blocked return remains attributable to the worker. The required fast gate revealed that a registry-entry addition also changes the Skill Control Plane generated inventory, which the dispatch omitted. Local reviewer read the generator/checker, ran the deterministic generator once, and accepted that one fourth path as reviewer-owned mechanical closure repair. This does not authorize the worker retroactively or open P4-P10. The worker also disclosed forbidden `git stash -u` and `git stash pop`; those commands are a recorded scope violation despite verified restoration, so final status is not a clean PASS.
 
 ## Purpose
 
