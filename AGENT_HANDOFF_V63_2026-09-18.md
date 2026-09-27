@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `555999a83` for batch `CVF-NCR-R1-S02` Local closure. The document candidate is accepted after bounded Local repair; worker fixture/pytest execution violated the work-order authority and is excluded from acceptance proof. Two ACTIVE README front doors were corrected. Material pre-commit passed 90/90. No package, host/provider installation, automatic invocation, public sync or independent action authority follows.
+Current material HEAD recorded for this handoff: `3e6460770` for batch `CVF-NCR-R1-S03` dispatch. The paired baseline/work order authorizes exactly one existing discovery-package body enrichment plus one no-commit worker return. Material pre-commit passed 90/90. Resolver/executor/skill/test/eval execution, package metadata/registry/truth/index mutation, host/provider/live/public/production effects remain forbidden.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -11,13 +11,13 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 Carry CVF-NCR v2.2 as the selected planning successor while preserving closed AKOE and terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are routed; AKOE-P4/common reconciliation and optional U1 source intake remain closed bounded.
 ## Scope / Target / Owner Boundary
 
-Role: Local orchestrator/reviewer and session steward. Phase: Web core-skills design closed; NCR-R0/S01 and R1/S01 closed bounded; R1/S02 content closed with worker scope violation recorded; HTML pilot effect pending. Decision owner: Local for technical/design disposition, operator for data/effect/budget and scope.
+Role: Local orchestrator/reviewer and session steward. Phase: Web core-skills design closed; NCR-R0/S01 and R1/S01 closed bounded; R1/S02 content closed with worker scope violation recorded; R1/S03 dispatch ready; HTML pilot effect pending. Decision owner: Local for technical/design disposition, operator for data/effect/budget and scope.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_s02_content_closed_scope_violation_recorded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=source-verify next D013 slice and prepare a separate scoped packet; role=Local orchestrator/reviewer; phase=R1/S02 closure; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=package changes, host exposure, skill/eval/provider/live execution, pilot, public and production.
+Startup acknowledged: current mode=`cvf_ncr_r1_s03_discovery_practice_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=relay the committed R1/S03 packet to one INTERNAL_AGENT and await its exact two-path no-commit return; role=Local orchestrator/reviewer; phase=R1/S03 dispatch; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=metadata/registry/truth/index changes, resolver/executor/skill/test/eval execution, host/provider/live, pilot, public and production.
 ## Current Mode
-`cvf_ncr_r1_s02_content_closed_scope_violation_recorded`. Current plan: NCR v2.2 D013; historical NCR/AKOE acceptance remains below. Latest closed learning-history wave: `LHW24`.
+`cvf_ncr_r1_s03_discovery_practice_dispatch_ready`. Current plan: NCR v2.2 D013 R1/S03 exact two-path worker dispatch; historical NCR/AKOE acceptance remains below. Latest closed learning-history wave: `LHW24`.
 
 ## Active Boundary
 
@@ -31,9 +31,9 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 
 ## Latest Work / Changes
 
+- R1/S03 paired discovery-practice baseline/work order are materially committed at `3e6460770`: exactly one existing ACTIVE discovery `SKILL.md` body plus one no-commit worker return; three role-specific examples; only listed validation commands; no metadata/registry/truth/index, resolver/executor/skill/test/eval, host/provider/live/public/production authority.
 - R1/S02 Local completion is at `555999a83`: source-grounded content candidate accepted after reviewer repair, with worker test execution outside authority disclosed and rejected as proof. TDD/code-review ACTIVE README gap was repaired in the same material commit; reviewer skill was consulted manually without runtime receipt.
 - D013 core-skills design is committed at `db5ae4c43`. Initial S01 dispatch was `ee2abee8962d4489710a8d6db021af4f384731b6`. Local repaired the first worker-return packet and paired baseline/work order at `0d4995893d5a5a28316537027bc9b5c88c16bd3d`. Round 2 review, baseline and work order are material at `da301812a612885232332d7532fe4268c0bcb5f6`. The final worker return was committed at `5f8addf3922c6dbee7dea33e451b2a4e29fbc247`; Local bounded completion at `09b62aa3b57fd8dfda93140f30a845b7177be24c` passed the 90/90 material pre-commit gate. Two skill-body lifecycle prose repairs remain unimplemented and require a separate R1/S01 packet.
-- R1/S01 paired baseline and work order for exactly two existing `SKILL.md` lifecycle-prose repairs are committed at `466841831dd47a386a592c46d7b4f20c229d5143` with material pre-commit 90/90. Local must bind currentAuthority, pass bound pre-dispatch and stop at operator relay; no worker edits or package execution have begun.
 - Group 1 source is `SOURCE_CREATED_LOCAL_VERIFIED` at material commit
   `58281c2c6`; registry snapshot and genesis lifecycle receipt passed the
   canonical source checker and a separate canonical-hash recomputation.
@@ -155,7 +155,7 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 - NCR W02 read-only return was Local-accepted at `c638f2ece` after source-claim repair and 90/90 pre-commit. The client fallback port `8000` differs from the server's documented `8100`; actual URL/port, ledger/log retention and pilot data/effect/expense remain open. R1/W00 static HTML UX contract worker return was reviewer-repaired and accepted bounded at `97532f7038f7bcc0d3768550b06a3695b72b8809`. R1/W01 paired baseline/work order committed at `e54dd51e8eb60364a814a921a0d31bb7d259e487`; exact component/test/return worker delta was reviewer-repaired and accepted bounded at `5e99eb20910e7e3282d7431e6ca3d96c5e87860b` after reviewer-fast 69/69 and pre-commit 90/90. Mocked UI tests do not establish actual browser walkthrough, route call, profile, P06/P08, or pilot effect; successor work order is held for Web research.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SOURCE_VERIFY_NEXT_D013_SLICE; ACTIVE_BATCH=CVF-NCR-R1-S02-CLOSED; REVIEW=docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md; MATERIAL_COMMIT=555999a83; EXPANSION_ALLOWED=false. R1/S02 document candidate accepted after Local repair with WORKER_SCOPE_VIOLATION_TEST_EXECUTION disclosed; worker test outputs are not acceptance proof. Two ACTIVE README front doors are corrected. Local may source-verify the next roadmap slice and prepare a separate scoped packet; no worker dispatch or package/registry/truth/host/provider/live/public/production effect follows this closure. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S03; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_2026-09-27.md; MATERIAL_COMMIT=3e6460770; EXPANSION_ALLOWED=false. Operator may relay the exact committed packet to one shared-workspace INTERNAL_AGENT. Worker may modify only the named discovery SKILL.md and create the named worker return, must run only the expressly listed validation commands, must not stage or commit, and stops at COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Local owns review, repair, commit and closure. Package metadata, registry, truth, indexes, resolver/executor/skill/test/eval execution, host/provider/live/public/production effects remain forbidden; operator retains data, effect and expense decisions; latest closed LHW wave LHW24.
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;

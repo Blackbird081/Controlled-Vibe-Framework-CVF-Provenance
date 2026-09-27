@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_2026-09-27.md",
-    "baselineSha256": "834e0e9810f4630a9b0d4f197e5ddc424f81395e0ab280d52cfd0d420f07b2cd",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_2026-09-27.md",
-    "workOrderSha256": "13fbb5582e4e10cffc7d1304bf3a20a52e240e30c97faf49174c0e4437583fa7"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_2026-09-27.md",
+    "baselineSha256": "fdc3721ddf4244e8498e05da4e0d6c8e87440c017995a244b9e5a4104205cdbc",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_2026-09-27.md",
+    "workOrderSha256": "5fc9cf5b984a4308f218b6830c979bc485dba387bbc87fd60829933f26b4e9f5"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -109,8 +109,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s02_content_closed_scope_violation_recorded",
-  "previousMode": "cvf_ncr_r1_s02_test_evidence_audit_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_s03_discovery_practice_dispatch_ready",
+  "previousMode": "cvf_ncr_r1_s02_content_closed_scope_violation_recorded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16844,5 +16844,5 @@
     "reviewCommit": "5e99eb20910e7e3282d7431e6ca3d96c5e87860b",
     "claimBoundary": "four accepted bilingual copy lines in existing component and focused mocked tests only; no browser walkthrough, real profile, P06/P08 closure, route call, provider/live, public or pilot authority; next work order held for operator-relayed Web research"
   },
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SOURCE_VERIFY_NEXT_D013_SLICE; ACTIVE_BATCH=CVF-NCR-R1-S02-CLOSED; REVIEW=docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md; MATERIAL_COMMIT=555999a83; EXPANSION_ALLOWED=false. R1/S02 document candidate accepted after Local repair with WORKER_SCOPE_VIOLATION_TEST_EXECUTION disclosed; worker test outputs are not acceptance proof. Two ACTIVE README front doors are corrected. Local may source-verify the next roadmap slice and prepare a separate scoped packet; no worker dispatch or package/registry/truth/host/provider/live/public/production effect follows this closure. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24."
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S03; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_2026-09-27.md; MATERIAL_COMMIT=3e6460770; EXPANSION_ALLOWED=false. Operator may relay the exact committed packet to one shared-workspace INTERNAL_AGENT. Worker may modify only the named discovery SKILL.md and create the named worker return, must run only the expressly listed validation commands, must not stage or commit, and stops at COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Local owns review, repair, commit and closure. Package metadata, registry, truth, indexes, resolver/executor/skill/test/eval execution, host/provider/live/public/production effects remain forbidden; operator retains data, effect and expense decisions; latest closed LHW wave LHW24."
 }
