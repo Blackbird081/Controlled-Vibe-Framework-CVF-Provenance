@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
-    "baselineSha256": "8b317bf0ced8b5a624231a7f508d9304de30a2f3559295dda8d5540c0327e2d6",
+    "baselineSha256": "0ebf604556f762882df8e16218523857de3a013bbcc99770fe0815eb8c07e158",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md",
-    "workOrderSha256": "2bef2d6bc22cada35af46c0be947734cc63d786b8c2ab633e29ef9f6ce3503f4"
+    "workOrderSha256": "497c67b423279e208655dd5a359ce7eaa822da9a03de83579bf7241e1afe7fe2"
   },
-  "currentAuthoritySyncReason": "R1/S08 P7 usage-receipt-readiness entrypoint is root-reconciled at material commit 1085d5ebb; the worker preflight now uses the clean execution frontier, and author-fast enforces packet-shape plus independent-probe admission; exact baseline/work-order hashes are rebound here; atomic continuity-rebind parent 1085d5ebb.",
+  "currentAuthoritySyncReason": "R1/S08 P7 usage-receipt-readiness entrypoint is root-reconciled at 1085d5ebb and the paired baseline/work-order material topology is sealed at 202258ba7; the worker preflight uses the clean execution frontier, and author-fast enforces packet-shape plus independent-probe admission; exact hashes are rebound here; atomic continuity-rebind parent 202258ba7.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
