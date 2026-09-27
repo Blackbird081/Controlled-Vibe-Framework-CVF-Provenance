@@ -46,12 +46,12 @@ Startup acknowledged: current mode=`cvf_ncr_r1_s08_usage_receipt_readiness_dispa
 
 ## Current Mode
 
-Current mode marker: `mfrp_p4_c1_bounded_retry_recovery_live_validation_ready`
-Current mode: `mfrp_p4_c1_bounded_retry_recovery_live_validation_ready`; previous mode marker: `mfrp_p4_c1_bounded_retry_recovery_correction_active`
+Current mode marker: `mfrp_p4_c1_bounded_retry_recovery_closed_paused`
+Current mode: `mfrp_p4_c1_bounded_retry_recovery_closed_paused`; previous mode marker: `mfrp_p4_c1_bounded_retry_recovery_live_validation_ready`
 
 ## Next Allowed Move
-Mode: `mfrp_p4_c1_bounded_retry_recovery_live_validation_ready`
-PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=LIVE_VALIDATION_CONTINUITY; ACTIVE_BATCH=MFRP-P4-C1-BOUNDED-RETRY-RECOVERY-CORRECTION; INITIAL_MATERIAL_COMMIT=d27b4bfbe; CORRECTION_PARENT=ae580ab1e; EXPANSION_ALLOWED=false. Land the authorized exact mixed correction because active authority hashes cover the corrected packet bytes, then use dedicated continuity-only disclosures to prove one backlog retry through the unchanged full gate. CVF-NCR-R1-S08 P7, NCR P8-P10 and M5/M10/M20/P5/P6 remain paused; do not resume NCR, call providers/network, public-sync, deploy or claim production readiness; latest closed LHW wave LHW24.
+Mode: `mfrp_p4_c1_bounded_retry_recovery_closed_paused`
+PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=PAUSE_FOR_OPERATOR_DIRECTION; ACTIVE_BATCH=MFRP-P4-C1-BOUNDED-RETRY-RECOVERY-CLOSED; INITIAL_MATERIAL_COMMIT=d27b4bfbe; PHASE_CORRECTION_COMMIT=ea6fe98e6; REPLAY_FILTER_COMMIT=131626025; LIVE_VALIDATION_DISCLOSURE_PARENT=20b10177c; EXPANSION_ALLOWED=false. Bounded retry now runs only on dedicated session-sync disclosures and selects only canonically replayable backlog items; this continuity disclosure is the live full-gate validation trigger and the ignored journal remains the runtime count authority. CVF-NCR-R1-S08 P7, NCR P8-P10 and M5/M10/M20/P5/P6 remain paused; do not resume NCR, call providers/network, public-sync, deploy or claim production readiness; latest closed LHW wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
