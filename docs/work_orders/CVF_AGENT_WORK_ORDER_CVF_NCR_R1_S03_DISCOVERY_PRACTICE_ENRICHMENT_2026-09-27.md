@@ -4,7 +4,29 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this R1/S03 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_COMPLETION_2026-09-27.md` | Local bounded acceptance and checker-count normalization | PASS |
+| Roadmap state | NCR roadmap D013 | R1/S03 bounded outcome | PASS |
+| Registry JSON | existing package record | byte-unchanged; no mutation authorized | BLOCKED with reason: outside content-only scope |
+| Registry Markdown | existing package front door | byte-unchanged; no mutation required | BLOCKED with reason: outside content-only scope |
+| External evidence digest | worker return after labeled Local structural repair | SHA-256 `eb3d4f911a56fba2d2c721d5a555629f57ee02324d82e8821c376d9f32801923` | PASS |
+| System loop interlock | existing owner | N/A with reason: no system-loop mutation | N/A with reason: unchanged |
+| Session continuity | active handoff and state | separate post-material sync | PASS after continuity commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Worker manifest | one body and one return | exact two-path return | PASS |
+| Discovery examples | three existing roles/task classes | dispatcher, worker, reviewer examples | PASS |
+| Forbidden execution | none | no violation evidenced; exact-command return | PASS_BOUNDED |
+| Runtime receipt | no new claim | none claimed | PASS |
 
 Batch ID: CVF-NCR-R1-S03
 
@@ -329,7 +351,7 @@ Returned defects: NONE_RETURNED
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_dispatch_prompt_envelope.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/check_package_skill_productionization_pipeline.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py` |
-| literalTokensReviewed | first-section envelope, DISPATCH_READY, no-commit, Source Verification columns, gate-to-role scalars and columns, worker-return full gate |
+| literalTokensReviewed | first-section envelope, closed-equivalent status, no-commit, Source Verification columns, gate-to-role scalars and columns, worker-return full gate |
 | gateRunPurpose | confirmation of authored packet against source-read requirements, not first discovery |
 | claimBoundary | static gate shape does not prove the body edit, package use or worker command compliance |
 

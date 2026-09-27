@@ -4,7 +4,29 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired R1/S03 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S03_DISCOVERY_PRACTICE_ENRICHMENT_COMPLETION_2026-09-27.md` | Local bounded acceptance | PASS |
+| Roadmap state | NCR roadmap D013 | R1/S03 bounded outcome | PASS |
+| Registry JSON | existing package record | unchanged | BLOCKED with reason: outside content-only scope |
+| Registry Markdown | existing package front door | unchanged | BLOCKED with reason: outside content-only scope |
+| External evidence digest | worker return after labeled Local structural repair | SHA-256 `eb3d4f911a56fba2d2c721d5a555629f57ee02324d82e8821c376d9f32801923` | PASS |
+| System loop interlock | existing owner | N/A with reason: unchanged | N/A with reason: unchanged |
+| Session continuity | active handoff and state | separate post-material sync | PASS after continuity commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Worker manifest | one body and one return | exact two-path return | PASS |
+| Discovery examples | three existing roles/task classes | dispatcher, worker, reviewer examples | PASS |
+| Forbidden execution | none | no violation evidenced; exact-command return | PASS_BOUNDED |
+| Runtime receipt | no new claim | none claimed | PASS |
 
 Batch ID: CVF-NCR-R1-S03
 

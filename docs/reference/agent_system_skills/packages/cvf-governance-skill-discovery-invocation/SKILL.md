@@ -45,6 +45,82 @@ Use when a governed CVF task matches the `using-agent-skills` package pattern af
 | Acceptance evidence | AGSK-R3 worker return; AGSK-R5 eligibility audit; SCPL-T2 selection profile coverage; ASCP-P4-P6 production scale-up completion; generated index checks; representative live proof |
 | Trigger patterns | using agent skills, skill discovery, skill invocation, which skill applies, meta skill |
 
+## Worked Discovery Practice Examples
+
+These three examples translate the abstract `skill-selection`,
+`context-routing`, and `governance-orientation` task classes above into
+concrete input/decision/output/authority steps. They illustrate existing
+metadata-selection guidance only; they introduce no new task class,
+trigger pattern, registry field, or runtime behavior, and none of them
+authorizes package invocation, execution, or action beyond what the
+Invocation Boundary above already states.
+
+### Example 1: Dispatcher, `skill-selection`
+
+- **Input**: a candidate task description ("author a work order for a
+  bounded package-content enrichment") and the active work-order scope
+  under authoring.
+- **Evidence/match**: the dispatcher compares the task description
+  against this registry entry's `triggerPatterns` ("using agent skills",
+  "skill discovery", "skill invocation", "which skill applies", "meta
+  skill") and `taskClasses`. If the candidate task is itself about
+  choosing or citing a package for a work order, `skill-selection`
+  matches; if the task instead concerns, for example, database schema
+  design, no `triggerPatterns` match and no `taskClasses` apply.
+- **Decision**: on a match, the dispatcher selects this package as one
+  Allowed Read for the work order. On no match, the dispatcher records a
+  correct no-match and does not force a best-effort selection.
+- **Output**: a recommended package citation added to the work order's
+  Allowed Reads section (metadata selection only), or, on no match, no
+  citation at all.
+- **Authority result**: selection grants only a recommended Allowed Read.
+  It does not create a new Allowed Write, execution authority, or
+  invocation permission; those remain separately governed by the work
+  order the dispatcher is authoring.
+
+### Example 2: Worker, `context-routing`
+
+- **Input**: a work order that already names this package (or another
+  specific package) among its Allowed Reads, dispatched to the worker.
+- **Evidence/match**: the worker reads the work order's Allowed Reads
+  list and confirms which package(s) the dispatcher already authorized,
+  then opens the matching package body to confirm it is the one the
+  dispatcher intended (for example, checking `skillId` and `Package
+  root` against the work order's citation).
+- **Decision**: the worker routes to the already-named package body only.
+  The worker does not use `context-routing` to discover or add a package
+  the dispatcher did not name, and does not treat this package's own
+  guidance as authority to expand the work order's scope.
+- **Output**: confirmation, internal to the worker's own execution
+  trace, that the correct already-authorized package body was consulted.
+- **Authority result**: no new selection authority is created. The
+  worker's Allowed Reads and Allowed Writes remain exactly what the
+  dispatching work order already states.
+
+### Example 3: Reviewer, `governance-orientation`
+
+- **Input**: a worker return that cites having consulted this package
+  (or another specific package) during the worker's execution.
+- **Evidence/match**: the reviewer compares the citation against the
+  governing work order's Allowed Reads, and against this package's own
+  Invocation Boundary fields (`Allowed roles`, `Allowed phases`, `Risk
+  ceiling`), to check whether the citation was in-bounds.
+- **Decision**: three outcomes are possible. (a) The citation matches the
+  work order's Allowed Reads and this package's Invocation Boundary: the
+  reviewer accepts the citation. (b) The citation is broader than what
+  actually applied (for example, the worker claims a `reviewer`-role use
+  while filing as `worker`): the reviewer narrows the claim rather than
+  accepting it as stated. (c) The citation names a package the work order
+  never authorized as an Allowed Read: the reviewer rejects the citation
+  as out-of-scope package use.
+- **Output**: an accept, narrow, or reject disposition recorded in the
+  reviewer's own completion evidence, without the reviewer re-deriving or
+  re-executing the worker's original task.
+- **Authority result**: the reviewer's disposition governs only whether
+  the citation is accepted as compliant; it does not itself grant, retract,
+  or expand any package's Invocation Boundary, and it does not recreate
+  the worker's implementation.
+
 ## Risk And Authority
 
 | Field | Value |
