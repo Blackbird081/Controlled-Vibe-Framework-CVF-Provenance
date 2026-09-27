@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `27b9f5dd2f427fd96b1b3242f29934e072c501f5`. The operator-requested reviewer skill proposal is at `docs/reviews/CVF_NCR_REVIEW_SKILL_PROPOSAL_2026-09-27.md`; it is PROPOSED and runtime-ineligible. The reviewer-route and mixed-EOL corrections remain at `baa40286c23e12dc900b315e837eee67e850e892` and `e7b2c766a0ea8eb9ce7997a5784a776910818f1d`. NCR R1/S01 remains closed bounded; the next allowed move remains D013 work-order planning.
+Current material HEAD recorded for this handoff: `9b1bcfa509b3de55c7e8eee4218a427f7d2ff6d1`. The operator-requested reviewer skill is APPROVED after Local UAT/certification with a strict truth packet and explicit body-read receipt; its source is not yet ACTIVE. NCR-SRA1 production proof is in progress. A C/D live probe exposed an incorrect REWORK route for missing `committedEvidence`; Local is repairing and retesting that guidance before ACTIVE closure. The reviewer-route and mixed-EOL corrections remain at `baa40286c23e12dc900b315e837eee67e850e892` and `e7b2c766a0ea8eb9ce7997a5784a776910818f1d`. NCR R1/S01 remains closed bounded; D013 work-order planning follows this bounded skill promotion.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
