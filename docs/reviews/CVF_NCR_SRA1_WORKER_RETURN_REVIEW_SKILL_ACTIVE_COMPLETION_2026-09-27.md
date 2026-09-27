@@ -118,6 +118,14 @@ live preview is a bounded synthetic sample, not a universal agent compliance
 guarantee. Future host integration must consume the ACTIVE package through
 its own roadmap gate.
 
+The committed-range pre-closure exposed two dispatch-packet omissions that
+precommit did not surface against the narrower pending range: the baseline
+lacked the ADIF disclosure section, and the work order lacked the exact ADIF
+query line and subagent provider-execution authority token. The Local
+reviewer added those source-checked disclosures in a corrective material
+commit; the live proof did not need repetition because package source and
+receipt are unchanged.
+
 ## Decision / Disposition
 
 `ACCEPT_ACTIVE_PRODUCTION_RUNTIME_BOUNDED` for

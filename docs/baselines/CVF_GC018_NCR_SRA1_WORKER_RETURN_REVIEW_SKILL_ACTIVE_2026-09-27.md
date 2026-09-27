@@ -59,6 +59,13 @@ implementation is authorized here.
 | P9-P10 | Package-specific dry-run and live provider receipt with safe diagnostic and source-truth trace |
 | Closure | Focused guards, appropriate precommit and split-range preclosure, material and continuity commits |
 
+## ADIF Defect Registry Disclosure
+
+Resolver query: taskClass=`implementation`, role=`worker`, lifecyclePhase=`implementation`
+
+Returned defects: NONE_RETURNED. The resolver returned zero candidates for
+this bounded package-source promotion.
+
 ## Source Verification Block
 
 | Claimed item | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Source fact type | Disposition |

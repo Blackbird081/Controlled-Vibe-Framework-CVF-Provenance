@@ -88,9 +88,21 @@ or package-granted filesystem/git/commit authority.
 
 ## ADIF Defect Registry Disclosure
 
+Resolver query: taskClass=`implementation`, role=`worker`, lifecyclePhase=`implementation`
+
+Returned defects: NONE_RETURNED for the implementation query.
+
 Resolver command: `python governance/compat/run_adif_defect_resolver.py --task-class work_order_authoring --role dispatcher --lifecycle-phase pre-dispatch --json`
 
 Returned defects: NONE_RETURNED (0 candidates on 2026-09-27).
+
+## Subagent Provider Execution Authority
+
+providerExecutionAuthority: FORBIDDEN
+
+This forbids any delegated subagent provider execution. The Local reviewer
+performed the separately authorized bounded provider proof through the
+existing package adapter; the skill does not grant provider authority.
 
 ## Source Verification Block
 
