@@ -16,6 +16,8 @@ executionBaseHead: `bc4a969bf27e7e56521e1b93a660d0665f1e0e99`
 
 Commit mode: WORKER_MAY_COMMIT
 
+providerExecutionAuthority: FORBIDDEN
+
 Worker: Internal Agent bounded implementation role
 
 Reviewer/closer: Internal Agent reviewer/closer
@@ -223,7 +225,17 @@ reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 
 ## ADIF Defect Registry Disclosure
 
-Resolver query and zero-result evidence are inherited from the paired baseline.
+Resolver query: taskClass=`protected governance path implementation`, role=`reviewer`, lifecyclePhase=`review`
+
+Returned defects: NONE_RETURNED
+
+| Field | Value |
+| --- | --- |
+| Resolver command | `python governance/compat/run_adif_defect_resolver.py --task-class "protected governance path implementation" --role reviewer --lifecycle-phase review --risk-ceiling HIGH --json` |
+| Returned defect count | 0 |
+| Returned defects | NONE_RETURNED |
+| Disclosed defectIds | N/A with reason: resolver returned zero items |
+| Dispatch impact | no defect-specific expansion |
 
 ## Source Verification Block
 

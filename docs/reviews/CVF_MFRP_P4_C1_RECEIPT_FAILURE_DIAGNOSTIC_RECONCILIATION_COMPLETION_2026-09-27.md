@@ -68,6 +68,15 @@ Its SHA-256 remains
 No journal row was deleted or promoted. Future failures must now expose the
 named failing signal; a repeated named failure can open a separate root fix.
 
+The first post-closure disclosure then proved the diagnostic repair itself:
+the next marker named three packet defects that the prior tail-only capture
+would have hidden. The bounded correction adds the missing provider authority
+and full ADIF disclosure to the work order and changes the completed baseline
+from `DISPATCH_READY` to `CLOSED_PASS_BOUNDED`. That marker was recoverably
+archived as `ADJUDICATED_REJECTED_OBSERVATION_2026-09-27_P4C1_PACKET_GAPS.json`
+with SHA-256
+`6cd32af024297924cc4277e0ab38b258c3851cc1eeb79d0a3c44b38027b0fe25`.
+
 ## Decision / Disposition
 
 Reviewer verdict: `REVIEWER_ACCEPTED_BOUNDED`

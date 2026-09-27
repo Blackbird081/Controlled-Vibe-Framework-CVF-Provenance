@@ -4,7 +4,7 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Date: 2026-09-27
 
