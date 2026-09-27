@@ -36,10 +36,10 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_2026-09-27.md",
-    "baselineSha256": "3b7acc58cb9f8cdaea535d8dc309f118321aad53ded527c7b34a2aa6c16e5c3a",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_2026-09-27.md",
-    "workOrderSha256": "51ece7e80e05e95b4a68374a14578eec7375299446efe1d8e3746ad95a197757"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S05_TEST_EVIDENCE_AUDIT_PACKAGE_ROOT_PROPOSAL_2026-09-27.md",
+    "baselineSha256": "df092c0926956ebbf6169a37d3ba175fbe2ea2509391994766c863aac32794ca",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S05_TEST_EVIDENCE_AUDIT_PACKAGE_ROOT_PROPOSAL_2026-09-27.md",
+    "workOrderSha256": "b45c10b8435828b33b28fff50d340086ba1e92141f555f90e855c91d7dc68654"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -109,8 +109,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s04_test_evidence_audit_metadata_closed",
-  "previousMode": "cvf_ncr_r1_s04_test_evidence_audit_metadata_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_s05_test_evidence_audit_package_proposal_dispatch_ready",
+  "previousMode": "cvf_ncr_r1_s04_test_evidence_audit_metadata_closed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16844,5 +16844,5 @@
     "reviewCommit": "5e99eb20910e7e3282d7431e6ca3d96c5e87860b",
     "claimBoundary": "four accepted bilingual copy lines in existing component and focused mocked tests only; no browser walkthrough, real profile, P06/P08 closure, route call, provider/live, public or pilot authority; next work order held for operator-relayed Web research"
   },
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SOURCE_VERIFY_NEXT_D013_SLICE; ACTIVE_BATCH=CVF-NCR-R1-S04-CLOSED; REVIEW=docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md; MATERIAL_COMMIT=ecb984658; EXPANSION_ALLOWED=false. R1/S04 ASSF SOP P3 metadata candidate is CLOSED_WITH_RECORDED_SCOPE_VIOLATION after Local accepted order-34 CANDIDATE metadata, retained the worker stash/pop authority violation, and repaired the mechanically dependent Skill Control Plane inventory. Local may source-verify a separate D013 successor packet. No P4 package root/SKILL/source, P5-P10, truth, resolver/loader/skill/test/eval execution, host/provider/live/public/production effect follows automatically. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24."
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S05; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S05_TEST_EVIDENCE_AUDIT_PACKAGE_ROOT_PROPOSAL_2026-09-27.md; MATERIAL_COMMIT=b75fcad37; EXPANSION_ALLOWED=false. R1/S05 ASSF SOP P4 package-root proposal is DISPATCH_READY for one shared-workspace INTERNAL_AGENT. Worker owns exactly eight uncommitted paths: package README/SKILL/source, order-34 registry entry, selection-profile source, two generated aggregates and the named return. Target lifecycle is PROPOSED and CONTRACT_ONLY. No P5-P10, approval/UAT/certification/truth, skill/test/eval/resolver/loader execution, host/provider/live/public/production effect is authorized. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24."
 }
