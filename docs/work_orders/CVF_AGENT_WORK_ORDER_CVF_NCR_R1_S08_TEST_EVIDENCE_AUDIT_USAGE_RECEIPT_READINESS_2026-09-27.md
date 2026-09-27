@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NCR-R1-S08
 
@@ -594,13 +594,13 @@ cause, owned paths and proposed Local disposition.
 
 ## Acceptance Criteria
 
-- [ ] exactly one valid receipt exists at the authorized path;
-- [ ] independent body and receipt digest recomputations match;
-- [ ] target remains `APPROVED` and activation is denied;
-- [ ] policy state is `SELECTED`; no output consumption claimed;
-- [ ] worker return fast gate passes;
-- [ ] only the two worker paths differ; cached diff is empty;
-- [ ] no commit, stage, stash, push, network or provider action occurred.
+- [x] exactly one valid receipt exists at the authorized path;
+- [x] independent body and receipt digest recomputations match;
+- [x] target remains `APPROVED` and activation is denied;
+- [x] policy state is `SELECTED`; no output consumption claimed;
+- [x] worker return fast gate passes;
+- [x] only the two worker paths differ; cached diff is empty;
+- [x] no commit, stage, stash, push, network or provider action occurred.
 
 ## Review Gate
 
@@ -610,11 +610,11 @@ admitted above.
 
 ## Closure Checklist
 
-- [ ] P7 receipt accepted or tranche explicitly blocked.
-- [ ] no activation/lifecycle mutation.
-- [ ] findings receive a learning disposition.
-- [ ] Local material commit and continuity sync are separate from worker.
-- [ ] next move is P8 packet authoring only if Local explicitly releases it.
+- [x] P7 receipt accepted or tranche explicitly blocked.
+- [x] no activation/lifecycle mutation.
+- [x] findings receive a learning disposition.
+- [x] Local material commit and continuity sync are separate from worker.
+- [x] next move is P8 packet authoring only if Local explicitly releases it.
 
 ## Claim Boundary
 
