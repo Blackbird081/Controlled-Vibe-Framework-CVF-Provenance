@@ -139,6 +139,28 @@ Existing collector/helper tests, size guard, dispatch guards and normal
 pre-commit must pass. No flaky-checker identity is claimed without preserved
 evidence.
 
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | paired work order | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | paired completion review | `Status: CLOSED_PASS_BOUNDED` | PASS |
+| Roadmap state | active MFRP P4-C1 authority | checkpoint remains initialization | PASS |
+| Registry JSON | N/A | N/A with reason: no registry is in scope | PASS |
+| Registry Markdown | N/A | N/A with reason: no registry is in scope | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence used | N/A with reason: no external evidence used |
+| System loop interlock | current source | no system-loop surface changed | PASS |
+| Session continuity | active continuity | rebind follows this closure-shape correction | N/A with reason: performed in the following continuity commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| diagnostic preservation | named failure plus both streams within bound | focused hostile test passes | PASS |
+| counter semantics | accepted split unchanged | no counter code changed | PASS |
+| marker evidence | recoverable archives | hashes preserved | PASS |
+| closure shape | all closed artifacts carry closure package | this block plus paired artifacts | PASS |
+
 ## Public Export Disposition
 
 DEFERRED_PRIVATE_ONLY
