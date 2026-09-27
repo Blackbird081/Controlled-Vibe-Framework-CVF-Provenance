@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_r1_s06_r1_p5_phase_gate_reconciliation_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S06-R1; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md; MATERIAL_COMMIT=f8b440521; CONTINUITY_REBIND_PARENT=899dab90a; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may continue the retained R1/S06 P5 delta under the exact thirteen-path correction manifest: make the inventory truth-gap drift predicate lifecycle-sensitive, add the APPROVED/ACTIVE hostile regression pair, regenerate inventory and the two private Web read models, and finish the provider-free loader receipt and listed gates. Preserve APPROVED/PASSED/CERTIFIED/IMPLEMENTED and activation denial. No P6 truth, ACTIVE promotion, resolver, automatic invocation, external adapter, provider/network/live, public-sync, deployment or production effect is authorized. Local remains reviewer/closer; the worker must not commit; continuity authorization is bound; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S06-R1; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md; MATERIAL_COMMIT=d01419c5c; CONTINUITY_REBIND_PARENT=d01419c5c; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may continue the retained R1/S06 P5 delta under the exact thirteen-path correction manifest: make the inventory truth-gap drift predicate lifecycle-sensitive, add the APPROVED/ACTIVE hostile regression pair, regenerate inventory and the two private Web read models, and finish the provider-free loader receipt and listed gates. Preserve APPROVED/PASSED/CERTIFIED/IMPLEMENTED and activation denial. No P6 truth, ACTIVE promotion, resolver, automatic invocation, external adapter, provider/network/live, public-sync, deployment or production effect is authorized. Local remains reviewer/closer; the worker must not commit; continuity authorization is bound; latest closed LHW wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md",
-    "baselineSha256": "c3160618fa04c877e8837cc1a5ec1eb8fd1b534da60a4acbc4675f86eff811b4",
+    "baselineSha256": "ac5215fbf5a0b3881058583b13dcc2b4560483e736a6bdc51102ab0c0c12891c",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md",
-    "workOrderSha256": "a302baf0d96784c4f3dff00ef9e71222458b6db185230733610d5a09277cdc75"
+    "workOrderSha256": "da31116a63faa37e34f9b972ef084fceef4674b1c867c68c93d9ecbca03f9a9f"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

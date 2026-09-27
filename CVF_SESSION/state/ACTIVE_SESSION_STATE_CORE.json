@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md",
-    "baselineSha256": "c3160618fa04c877e8837cc1a5ec1eb8fd1b534da60a4acbc4675f86eff811b4",
+    "baselineSha256": "ac5215fbf5a0b3881058583b13dcc2b4560483e736a6bdc51102ab0c0c12891c",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md",
-    "workOrderSha256": "a302baf0d96784c4f3dff00ef9e71222458b6db185230733610d5a09277cdc75"
+    "workOrderSha256": "da31116a63faa37e34f9b972ef084fceef4674b1c867c68c93d9ecbca03f9a9f"
   },
-  "currentAuthoritySyncReason": "R1/S06-R1 binds the source-verified P5/P6 phase-gate correction packet at material commit f8b440521; its recorded hook bypass covered only the two implementation-target inventory and Web projection failures; continuity authorization lists every protected projection path; atomic continuity-rebind parent 899dab90a.",
+  "currentAuthoritySyncReason": "R1/S06-R1 binds the source-verified P5/P6 phase-gate correction packet at material commit d01419c5c; its recorded hook bypass covered only the two implementation-target inventory and Web projection failures; continuity authorization lists every protected projection path; atomic continuity-rebind parent d01419c5c.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
