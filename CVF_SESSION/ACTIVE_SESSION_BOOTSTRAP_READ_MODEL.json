@@ -8,10 +8,10 @@
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S05_TEST_EVIDENCE_AUDIT_PACKAGE_ROOT_PROPOSAL_2026-09-27.md",
-    "baselineSha256": "d3b787abdeb4906505c06c4ba0f47f837fe0d93aa86a1519592fcb466d7822af",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S05_TEST_EVIDENCE_AUDIT_PACKAGE_ROOT_PROPOSAL_2026-09-27.md",
-    "workOrderSha256": "b04b7a67ff7c6e8e28b465b53010b17bb9e52ea2779e65700c2a376722c99a4b"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_CONTROLLED_APPROVAL_2026-09-27.md",
+    "baselineSha256": "0028349e10ed04ab4a2fddd72af4a7bca0e6c5f6f8cbdb9914469003af3150aa",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_CONTROLLED_APPROVAL_2026-09-27.md",
+    "workOrderSha256": "2c5b23ce7d4ba148bdc80df7ef487f4dd7c70bafa5bf8238182506f240d66360"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

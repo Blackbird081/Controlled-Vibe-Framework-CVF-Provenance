@@ -177,7 +177,7 @@ PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: bind the latest committed NCR reviewer skill proposal to active continuity in a dedicated GC-020 handoff-only sync. This handoff edit changes no checker or runtime owner.
+Authorized guard-maintenance scope: correct the R1/S06 current-authority source and regenerate its compact/full projections after the release-readiness gate exposed the stale R1/S05 authority tuple. This continuity-only correction changes no checker, package or runtime owner.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -191,20 +191,20 @@ Protected paths:
 - `CVF_SESSION/state/entries/cvfNcrR1W00HtmlUxDispatch20260926.json`; `CVF_SESSION/state/entries/cvfNcrR1W01HtmlUxCopyDispatch20260926.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: operator transferred the converged core-skills research to Local, instructed Local to prevent the reviewer-routing and receipt errors from recurring, and then directly requested creation of the reviewer skill. Rollback boundary: revert only this continuity projection; retain D013, S01 closure, R1/S01 dispatch material, accepted R1/W01, AKOE/U1 and the 52-deferred lane. The new package remains PROPOSED; host exposure, eval/provider/live, pilot, public and production remain separately gated.
+Operator authorization: operator explicitly authorized full P5 after R1/S05 closure and instructed Local to audit carefully and prepare the successor dispatch. Rollback boundary: revert only this continuity projection; retain material dispatch `f2cbc02d4`, R1/S05 closure and all earlier accepted work. The worker scope remains exact eight paths; ACTIVE, P6-P10 truth, resolver/automatic invocation, external/provider/live, public and production remain separately gated.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
 | Actor | Local repository auditor, external-return reviewer and session-sync steward |
 | Provider or surface | private CVF workspace and operator-relayed external review files |
-| Session or invocation | CVF-NCR-R0-S01 dispatch continuity, 2026-09-27 |
+| Session or invocation | CVF-NCR-R1-S06 dispatch continuity correction, 2026-09-27 |
 | Working directory | repository root |
 | Command or tool surface | governed source reads, external hash verification, apply_patch, state generator, governance gates and Git |
 | Target paths | active handoff, split session-state sources, generated aggregate/bootstrap, and compact front door |
-| Allowed scope source | operator Local handoff, NCR D013 and committed S01 packet |
-| Before status evidence | D013 and S01 packet committed; current session still held for Web |
-| After status evidence | S01 packet bound for operator relay; no worker execution |
+| Allowed scope source | operator full-P5 authorization, NCR D013, closed R1/S05 and committed R1/S06 packet |
+| Before status evidence | R1/S06 material packet and initial continuity sync committed; release readiness exposed stale generated currentAuthority |
+| After status evidence | exact R1/S06 authority tuple projected across Core, bootstrap and generated aggregate; no worker execution |
 | Diff evidence | exact continuity manifest before session-only commit |
 | Approval boundary | S01 document-only worker dispatch continuity |
 | Claim boundary | no successor, production mutation, dependency, live/provider/public, activation or deployment effect |
