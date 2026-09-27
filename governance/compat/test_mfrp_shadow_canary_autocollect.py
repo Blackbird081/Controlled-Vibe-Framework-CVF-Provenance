@@ -138,6 +138,25 @@ class ReceiptCandidateDiscoveryTests(unittest.TestCase):
         with mock.patch.object(autocollect, 'generate_current_receipt', return_value=(current, 'parent-sha')):
             self.assertEqual(autocollect.find_receipt_candidate('trusted-sha', 'disclosure-sha'), (current, 'parent-sha'))
 
+    def test_validated_receipts_get_distinct_immutable_snapshot_paths(self):
+        commit = 'a' * 40
+        first = _build_fresh_real_receipt('snapshot-one', commit, commit)
+        second = _build_fresh_real_receipt('snapshot-two', commit, commit)
+        first_path = autocollect.receipt_snapshot.preserve(first['path'], self._scratch, commit, first['payload']['receiptDigest'])
+        second_path = autocollect.receipt_snapshot.preserve(second['path'], self._scratch, commit, second['payload']['receiptDigest'])
+        self.assertNotEqual(first_path, second_path)
+        self.assertEqual(first_path.read_bytes(), first['path'].read_bytes())
+        self.assertEqual(second_path.read_bytes(), second['path'].read_bytes())
+
+    def test_receipt_snapshot_collision_fails_closed(self):
+        commit = 'b' * 40
+        fixture = _build_fresh_real_receipt('snapshot-collision', commit, commit)
+        autocollect.receipt_snapshot.preserve(fixture['path'], self._scratch, commit, fixture['payload']['receiptDigest'])
+        fixture['path'].write_bytes(fixture['path'].read_bytes() + b'\n')
+        with self.assertRaises(autocollect.receipt_snapshot.ReceiptSnapshotUnsafe) as ctx:
+            autocollect.receipt_snapshot.preserve(fixture['path'], self._scratch, commit, fixture['payload']['receiptDigest'])
+        self.assertEqual(ctx.exception.code, 'UNSAFE_RECEIPT_SNAPSHOT_COLLISION')
+
     def test_generation_receipts_trusted_commit_without_disclosure_sync_paths(self):
         target = self._scratch / autocollect.GENERATED_RECEIPT_NAME
 

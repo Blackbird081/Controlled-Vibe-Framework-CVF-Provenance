@@ -29,7 +29,7 @@ weakening receipt admission or inflating opportunity counts.
 | paired baseline/work order | exact retry bounds and manifest | ACCEPT |
 | ignored journal | 804 attempts, 73 opportunities, one sample, 34 retryable | ACCEPT_DIAGNOSTIC |
 | helper/collector diff | derived queue plus one retry seam | ACCEPT |
-| focused tests | 72 passed | ACCEPT |
+| focused tests | 74 passed | ACCEPT |
 
 ## Scope / Methodology
 
@@ -75,10 +75,10 @@ No independent-agent claim is made.
 
 | Evidence | Result |
 | --- | --- |
-| focused helper/collector suite | PASS, 72 tests |
+| focused helper/collector suite | PASS, 74 tests |
 | bounded retry hostile test | PASS |
 | retry counter non-inflation | PASS |
-| Python size guard | PASS; collector 809 lines |
+| Python size guard | PASS; collector 874 lines after snapshot helper extraction |
 | provider/network calls | 0 |
 
 ## Required Artifact Manifest
@@ -89,6 +89,7 @@ No independent-agent claim is made.
 | paired work order | CREATE_ACCEPT_CLOSED |
 | observability helper | MODIFY_ACCEPT |
 | collector | MODIFY_ACCEPT_AND_SHRINK |
+| immutable receipt snapshot helper | CREATE_ACCEPT |
 | two focused test modules | MODIFY_ACCEPT |
 | this completion review | CREATE_ACCEPT |
 
@@ -100,13 +101,15 @@ integration, telemetry, tests and mechanical shrink.
 Protected paths:
 
 - `governance/compat/mfrp_p4_enrollment_observability.py`
+- `governance/compat/mfrp_receipt_snapshot.py`
 - `governance/compat/mfrp_shadow_canary_autocollect.py`
 - `governance/compat/test_mfrp_p4_enrollment_observability.py`
 - `governance/compat/test_mfrp_shadow_canary_autocollect.py`
 
 Operator authorization: explicit instruction to fix this evidence starvation.
 
-Rollback boundary: exact seven-path material batch only.
+Rollback boundary: original exact seven-path material batch plus the bounded
+four-path receipt-identity correction.
 
 ## Finding-To-Governance Learning Disposition
 
@@ -118,6 +121,7 @@ Rollback boundary: exact seven-path material batch only.
 | retry on a material disclosure runs before continuity rebind and creates a false safety marker | EXECUTION_PHASE_MISMATCH | RUNTIME_BEHAVIOR_LEARNING | RULE_AND_TEST_ADDED | retry only on dedicated session-sync disclosures; material commits defer without consumption | handled |
 | a historical target whose changed paths no longer match the worktree cannot receive `committedEvidence` | HISTORICAL_REPLAY_MISMATCH | EVIDENCE_ADMISSION_LEARNING | RULE_AND_TEST_ADDED | select the newest retryable item that passes the canonical committed-target replay check; leave unreplayable evidence visible and unconsumed | handled |
 | replayable historical bytes can still fail stricter current governance | HISTORICAL_GOVERNANCE_DRIFT | EVIDENCE_ADMISSION_LEARNING | RULE_AND_TEST_ADDED | preserve `RETRY_REJECTED_CURRENT_GATE` diagnostic and consume that retry without a blocking safety marker | handled |
+| the producer overwrites one fixed `pre-closure.json` path, so receipt-reuse protection rejected every eligible row after the first | RECEIPT_IDENTITY_PATH_COLLISION | EVIDENCE_ADMISSION_LEARNING | RULE_AND_TEST_ADDED | snapshot validated receipt bytes to a unique `trustedCommit + receiptDigest` path before append; fail closed on byte collision | handled |
 
 ## Epistemic Process Block
 
@@ -209,17 +213,17 @@ workerRedispatchAllowed: NO
 | Session or invocation | P4-C1 bounded retry recovery |
 | Working directory | repository root |
 | Command or tool surface | source/runtime inspection, apply_patch, mechanical blank-line shrink, pytest and guards |
-| Target paths | exact eleven-path phase-correction manifest below |
+| Target paths | exact twelve-path cumulative correction manifest below |
 | Allowed scope source | paired packet and operator instruction |
 | Before status evidence | clean at `ee09cf7d4`; no unresolved marker |
-| After status evidence | exact seven tracked paths |
+| After status evidence | exact twelve cumulative governed paths |
 | Diff evidence | `git diff --name-status`; `git diff --check` |
 | Approval boundary | bounded retry recovery only |
 | Claim boundary | no gate weakening, bulk drain or checkpoint promotion |
 | Agent type | Internal Agent |
 | Invocation ID | `mfrp-p4-c1-bounded-retry-recovery-review-2026-09-27` |
-| Expected manifest | exact eleven paths |
-| Actual changed set | exact eleven paths |
+| Expected manifest | exact twelve cumulative paths |
+| Actual changed set | exact twelve cumulative paths |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
 
@@ -248,6 +252,7 @@ Exact changed manifest:
 - `docs/reviews/CVF_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_COMPLETION_2026-09-27.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md`
 - `governance/compat/mfrp_shadow_canary_autocollect.py`
+- `governance/compat/mfrp_receipt_snapshot.py`
 - `governance/compat/test_mfrp_shadow_canary_autocollect.py`
 
 ## Delta Execution Claim Boundary Control Block
@@ -280,7 +285,7 @@ Exact changed manifest:
 
 | Assertion | Required value | Observed value | Status |
 | --- | --- | --- | --- |
-| focused tests | pass | 72 passed | PASS |
+| focused tests | pass | 74 passed | PASS |
 | retry backlog | prospective only | 34 derived before first live attempt; 33 remain after preserved failed attempt | PASS |
 | retry bound | once per trusted commit | hostile tests | PASS |
 | counter integrity | no retry inflation | hostile tests | PASS |

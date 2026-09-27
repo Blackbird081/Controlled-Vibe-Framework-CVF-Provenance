@@ -20,6 +20,7 @@ try:
     import mfrp_shadow_canary as canary
     import mfrp_shadow_canary_core as canary_core
     import mfrp_p4_enrollment_observability as observability
+    import mfrp_receipt_snapshot as receipt_snapshot
     import committed_evidence_fingerprint as committed_evidence
     from agent_automation_machine_verification_readout import (
         build_machine_verification_readout,
@@ -30,6 +31,7 @@ except ModuleNotFoundError:
     from governance.compat import mfrp_shadow_canary as canary
     from governance.compat import mfrp_shadow_canary_core as canary_core
     from governance.compat import mfrp_p4_enrollment_observability as observability
+    from governance.compat import mfrp_receipt_snapshot as receipt_snapshot
     from governance.compat import committed_evidence_fingerprint as committed_evidence
     from governance.compat.agent_automation_machine_verification_readout import (
         build_machine_verification_readout,
@@ -729,6 +731,8 @@ def run_collection(commit: str | None = None) -> str:
         reconciled = validate_and_reconcile_receipt(
             receipt_path, trusted_commit, disclosure_commit, expected_base
         )
+        receipt_path = receipt_snapshot.preserve(receipt_path, RUNTIME_DIR,
+            trusted_commit, str(reconciled["payload"].get("receiptDigest", "")))
     except CollectionSkipped as skip:
         _persist_attempt(
             journal,
@@ -748,6 +752,11 @@ def run_collection(commit: str | None = None) -> str:
             selection=selection,
             detail=unsafe.detail,
         )
+        write_safety_marker(unsafe.code, unsafe.detail)
+        return f"P4-C1: {unsafe.code}"
+    except receipt_snapshot.ReceiptSnapshotUnsafe as unsafe:
+        _persist_attempt(journal, disclosure_commit, trusted_commit, unsafe.code,
+            selection=selection, detail=unsafe.detail)
         write_safety_marker(unsafe.code, unsafe.detail)
         return f"P4-C1: {unsafe.code}"
     blob = canary_core.git_blob_at(trusted_commit, return_path)
