@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_s05_test_evidence_audit_package_proposal_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_s05_test_evidence_audit_package_proposal_closed",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S05; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S05_TEST_EVIDENCE_AUDIT_PACKAGE_ROOT_PROPOSAL_2026-09-27.md; MATERIAL_COMMIT=b75fcad37; EXPANSION_ALLOWED=false. R1/S05 ASSF SOP P4 package-root proposal is DISPATCH_READY for one shared-workspace INTERNAL_AGENT. Worker owns exactly eight uncommitted paths: package README/SKILL/source, order-34 registry entry, selection-profile source, two generated aggregates and the named return. Target lifecycle is PROPOSED and CONTRACT_ONLY. No P5-P10, approval/UAT/certification/truth, skill/test/eval/resolver/loader execution, host/provider/live/public/production effect is authorized. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SOURCE_VERIFY_NEXT_D013_SLICE; ACTIVE_BATCH=CVF-NCR-R1-S05-CLOSED; REVIEW=docs/reviews/CVF_CVF_NCR_R1_S05_TEST_EVIDENCE_AUDIT_PACKAGE_ROOT_PROPOSAL_COMPLETION_2026-09-27.md; MATERIAL_COMMIT=9141fd05a; EXPANSION_ALLOWED=false. R1/S05 ASSF SOP P4 package-root proposal is CLOSED_PASS_BOUNDED after Local accepted the exact worker manifest and repaired one pre-existing Local-owned session-mode marker. The package remains PROPOSED and CONTRACT_ONLY; UAT and certification are NOT_STARTED. Local may source-verify a separate D013 successor packet. No P5-P10, approval/truth, skill/test/eval/resolver/loader execution, host/provider/live/public/production effect follows automatically. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S05_TEST_EVIDENCE_AUDIT_PACKAGE_ROOT_PROPOSAL_2026-09-27.md",
-    "baselineSha256": "df092c0926956ebbf6169a37d3ba175fbe2ea2509391994766c863aac32794ca",
+    "baselineSha256": "d3b787abdeb4906505c06c4ba0f47f837fe0d93aa86a1519592fcb466d7822af",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S05_TEST_EVIDENCE_AUDIT_PACKAGE_ROOT_PROPOSAL_2026-09-27.md",
-    "workOrderSha256": "b45c10b8435828b33b28fff50d340086ba1e92141f555f90e855c91d7dc68654"
+    "workOrderSha256": "b04b7a67ff7c6e8e28b465b53010b17bb9e52ea2779e65700c2a376722c99a4b"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
