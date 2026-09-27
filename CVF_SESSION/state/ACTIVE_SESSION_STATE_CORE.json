@@ -37,9 +37,9 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_2026-09-27.md",
-    "baselineSha256": "f55d02c62432f21e489f49bcccba4bc60a1fa8bd3f43f76029f0287cc02999b3",
+    "baselineSha256": "834e0e9810f4630a9b0d4f197e5ddc424f81395e0ab280d52cfd0d420f07b2cd",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_2026-09-27.md",
-    "workOrderSha256": "c0d08b2681a1e239c5c9ab32fa1c028d61180d837f5410ee0559b8e4b6c548a7"
+    "workOrderSha256": "13fbb5582e4e10cffc7d1304bf3a20a52e240e30c97faf49174c0e4437583fa7"
   },
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
@@ -109,8 +109,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s02_test_evidence_audit_dispatch_ready",
-  "previousMode": "cvf_ncr_r1_s01_skill_lifecycle_body_closed_bounded",
+  "currentMode": "cvf_ncr_r1_s02_content_closed_scope_violation_recorded",
+  "previousMode": "cvf_ncr_r1_s02_test_evidence_audit_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

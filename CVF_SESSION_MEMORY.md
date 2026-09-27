@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_s02_test_evidence_audit_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=relay committed R1/S02 work order after bound pre-dispatch, then await worker return; role=Local orchestrator/reviewer; phase=R1/S02 internal dispatch; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=package changes, host exposure, skill/eval/provider/live execution, pilot, public and production.
+Startup acknowledged: current mode=`cvf_ncr_r1_s02_content_closed_scope_violation_recorded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=source-verify next D013 slice and prepare a separate scoped packet; role=Local orchestrator/reviewer; phase=R1/S02 closure; decision owner=Local technical disposition, operator data/effect/expense; parked checkpoint=package changes, host exposure, skill/eval/provider/live execution, pilot, public and production.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_s02_test_evidence_audit_dispatch_ready`
-Current mode: `cvf_ncr_r1_s02_test_evidence_audit_dispatch_ready`; previous mode marker: `cvf_ncr_r1_s01_skill_lifecycle_body_closed_bounded`
+Current mode marker: `cvf_ncr_r1_s02_content_closed_scope_violation_recorded`
+Current mode: `cvf_ncr_r1_s02_content_closed_scope_violation_recorded`; previous mode marker: `cvf_ncr_r1_s02_test_evidence_audit_dispatch_ready`
 
 ## Next Allowed Move
-Mode: `cvf_ncr_r1_s02_test_evidence_audit_dispatch_ready`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R1_S02_AFTER_OPERATOR_RELAY; ACTIVE_BATCH=CVF-NCR-R1-S02; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_2026-09-27.md; DISPATCH_COMMIT=2a5580cb5b79f6ed04914079a3dc572bf3c633be; EXPANSION_ALLOWED=false. Operator may relay the committed document-only packet to Claude as shared-workspace INTERNAL_AGENT after bound pre-dispatch PASS; Local stops before worker execution and awaits COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. Worker writes only the candidate and return. TDD/code-review README gap remains separate. No package/registry/truth/discovery edit, skill activation, host/provider/live/public/production effect or G1-G7 successor is authorized. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24.
+Mode: `cvf_ncr_r1_s02_content_closed_scope_violation_recorded`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SOURCE_VERIFY_NEXT_D013_SLICE; ACTIVE_BATCH=CVF-NCR-R1-S02-CLOSED; REVIEW=docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md; MATERIAL_COMMIT=555999a83; EXPANSION_ALLOWED=false. R1/S02 document candidate accepted after Local repair with WORKER_SCOPE_VIOLATION_TEST_EXECUTION disclosed; worker test outputs are not acceptance proof. Two ACTIVE README front doors are corrected. Local may source-verify the next roadmap slice and prepare a separate scoped packet; no worker dispatch or package/registry/truth/host/provider/live/public/production effect follows this closure. Operator retains data, effect and expense decisions; latest closed LHW wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
