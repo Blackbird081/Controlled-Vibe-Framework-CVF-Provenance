@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_s06_p5_controlled_approval_closed",
+  "currentMode": "cvf_ncr_r1_s07_p6_truth_packet_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S07; PRIOR_MATERIAL_COMMIT=887123d13; EXPANSION_ALLOWED=false. Local may author one paired baseline/work order for the separately gated P6 truth-packet phase of cvf-engineering-test-evidence-audit, using the accepted P5 package and the canonical SKSOT standard/SOP as sources. The packet may authorize a STRICT approved truth packet and deterministic truth/inventory/Web projections only after exact manifest and gate mapping are verified. It must preserve package status APPROVED and activation denial. No ACTIVE promotion, P7-P10, resolver, automatic invocation, external adapter, provider/network/live, public-sync, deployment or production effect is authorized. Stop after dispatch for operator relay to one INTERNAL_AGENT; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S07; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S07_TEST_EVIDENCE_AUDIT_TRUTH_PACKET_2026-09-27.md; MATERIAL_COMMIT=e46fb3f46; CONTINUITY_REBIND_PARENT=e46fb3f46; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may execute the exact eleven-path P6 packet: create one approved STRICT truth packet, align truth-boundary prose, regenerate skill/truth/inventory/Web read models, preserve APPROVED/PASSED/CERTIFIED/IMPLEMENTED and prove activation denied. No ACTIVE, P7-P10, resolver/loader/executor invocation, automatic invocation, external adapter, audited-test execution, provider/network/live, public-sync, deployment or production effect is authorized. Worker must not stage, stash or commit; Local remains reviewer/closer; latest closed LHW wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md",
-    "baselineSha256": "53864a8a4ab1856bc374fcab65d1f05b68e0e575cf1f14632bb84857851c165c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md",
-    "workOrderSha256": "0d840ae40003e1883f53aae1db3efdce95f0fb079b4c1090c7d09afdbaa8409d"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S07_TEST_EVIDENCE_AUDIT_TRUTH_PACKET_2026-09-27.md",
+    "baselineSha256": "c0e02556da5f6be417d866509223bd336786f4fc490a77d80c15d3e0bc0246a4",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S07_TEST_EVIDENCE_AUDIT_TRUTH_PACKET_2026-09-27.md",
+    "workOrderSha256": "865dc2c3465464e3ba2da524f5acbec07fe6693a287acc7c48ac761dd3d7feef"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
