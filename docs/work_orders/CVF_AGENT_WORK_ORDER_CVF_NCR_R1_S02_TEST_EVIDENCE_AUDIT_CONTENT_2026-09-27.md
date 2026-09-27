@@ -4,7 +4,28 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_WITH_RECORDED_SCOPE_VIOLATION
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this R1/S02 work order | `CLOSED_WITH_RECORDED_SCOPE_VIOLATION` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md` | Local content acceptance and worker scope-violation disposition | PASS |
+| Roadmap state | NCR roadmap D013 | R1/S02 content accepted with execution violation disclosed | PASS |
+| Registry JSON | existing ASSF records | no mutation required in this document-only tranche | BLOCKED with reason: no GC-051 registry mutation authorized |
+| Registry Markdown | existing ASSF front doors | no mutation required in this document-only tranche | BLOCKED with reason: no GC-051 registry mutation authorized |
+| External evidence digest | worker return in this repository | N/A with reason: no new external evidence | N/A with reason: internal return only |
+| System loop interlock | existing owner | N/A with reason: no runtime or loop mutation | N/A with reason: unchanged |
+| Session continuity | active handoff and state | separate post-material sync | PASS after continuity commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| First-case source | exact source/test assertions | Local verified named fixture and assertion | PASS |
+| Worker execution authority | no test execution | worker disclosed fixture and pytest execution | BLOCKED: explicit scope violation |
+| Skill runtime use | no invocation claim | no receipt-backed selection or body delivery in this review | PASS |
 
 Batch ID: CVF-NCR-R1-S02
 
@@ -35,6 +56,10 @@ Return contract: create exactly the two named worker artifacts, run required che
 
 Turn NCR D013's accepted test-evidence-audit concept into a reviewable content candidate with one source-grounded CVF case. The output is a proposed procedure and expected artifact, not a new callable package.
 
+## Reviewer Local Scope Addendum
+
+After worker return, the operator explicitly instructed Local to correct the two known TDD/code-review README front-door discrepancies during review. That authority is reviewer-owned and does not retroactively authorize worker edits. Local also corrects bounded candidate wording, preserves the original worker return, and records its unauthorized fixture/pytest execution in the completion. This addendum does not authorize new package status, skill invocation, test execution, host/provider/live or public effect.
+
 ## Scaffold Provenance Block
 
 | Field | Value |
@@ -50,7 +75,7 @@ Turn NCR D013's accepted test-evidence-audit concept into a reviewable content c
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-R1-S02","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["docs/baselines/CVF_GC018_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_2026-09-27.md","docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_2026-09-27.md","docs/audits/CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_CANDIDATE_2026-09-27.md","docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_WORKER_RETURN_2026-09-27.md","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json","CVF_SESSION/ACTIVE_SESSION_STATE.json","CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json","CVF_SESSION/state/entries/nextAllowedMove.json","CVF_SESSION_MEMORY.md"],"claims":["document-only content candidate"],"requiredProof":["source-located first case","five advisory decisions","full worker-return gate","exact two-path status"],"operatorCheckpoints":["data/effect/expense and later host/provider/live/public decisions"],"forbiddenEffects":["worker commit","package/registry/truth/discovery/README edit","skill invocation","test execution","host/provider/live/public action"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":"docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_COMPLETION_2026-09-27.md","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-R1-S02","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["docs/baselines/CVF_GC018_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_2026-09-27.md","docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_2026-09-27.md","docs/audits/CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_CANDIDATE_2026-09-27.md","docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_WORKER_RETURN_2026-09-27.md","docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md","docs/reference/agent_system_skills/packages/cvf-engineering-test-driven-development/README.md","docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/README.md","docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json","CVF_SESSION/ACTIVE_SESSION_STATE.json","CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json","CVF_SESSION/state/entries/nextAllowedMove.json","CVF_SESSION_MEMORY.md"],"claims":["document-only content candidate"],"requiredProof":["source-located first case","five advisory decisions","full worker-return gate","exact two-path status"],"operatorCheckpoints":["data/effect/expense and later host/provider/live/public decisions"],"forbiddenEffects":["worker commit","package/registry/truth/discovery/README edit","skill invocation","test execution","host/provider/live/public action"],"sourceEvidence":{"selectedFilesFullyRead":false,"corpusReceiptRef":"docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_COMPLETION_2026-09-27.md","completenessClaimChanged":false}}
 ```
 
 ## Authority Chain

@@ -4,7 +4,20 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_WITH_RECORDED_SCOPE_VIOLATION
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired R1/S02 work order | `CLOSED_WITH_RECORDED_SCOPE_VIOLATION` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md` | Local review and repair | PASS |
+| Roadmap state | NCR roadmap D013 | content accepted with scope violation disclosed | PASS |
+| Registry JSON | existing ASSF records | N/A with reason: no registry mutation | N/A with reason: unchanged |
+| Registry Markdown | existing ASSF front doors | N/A with reason: no registry mutation | N/A with reason: unchanged |
+| External evidence digest | internal worker return | N/A with reason: no external intake | N/A with reason: unchanged |
+| System loop interlock | existing owner | N/A with reason: no runtime change | N/A with reason: unchanged |
+| Session continuity | active handoff and state | separate post-material sync | PASS after continuity commit |
 
 Batch ID: CVF-NCR-R1-S02
 
@@ -27,6 +40,8 @@ Authorize a document-only content candidate and one source-grounded case for the
 ## Authorization / Decision
 
 The operator authorized tranche progression to a relay-ready work order. D013 requires content and cases outside discovery before package authoring. The R0/S01 concept is accepted as design input; R1/S01 corrected two existing package bodies. The separate TDD/code-review README front-door gap remains visible and does not become an edit in this slice.
+
+Reviewer-local addendum after return: the operator explicitly authorized Local to fix the two README front doors while reviewing this result. The worker's write scope did not change. Local accepts the candidate's source-backed content after bounded corrections, but rejects the worker's fixture and pytest execution as outside the explicit no-test-execution boundary; those runs are historical disclosure, not authorized proof.
 
 ## Scope
 
