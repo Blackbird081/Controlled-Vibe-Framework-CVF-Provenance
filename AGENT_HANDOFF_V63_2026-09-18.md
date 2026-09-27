@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `e7b2c766a0ea8eb9ce7997a5784a776910818f1d`. The reviewer-route correction is at `baa40286c23e12dc900b315e837eee67e850e892`; the mixed-EOL committed-evidence correction superseding its incomplete receipt diagnosis is at `docs/reviews/CVF_MIXED_EOL_COMMITTED_EVIDENCE_CORRECTION_2026-09-27.md`. NCR R1/S01 remains closed bounded; the next allowed move remains D013 work-order planning.
+Current material HEAD recorded for this handoff: `27b9f5dd2f427fd96b1b3242f29934e072c501f5`. The operator-requested reviewer skill proposal is at `docs/reviews/CVF_NCR_REVIEW_SKILL_PROPOSAL_2026-09-27.md`; it is PROPOSED and runtime-ineligible. The reviewer-route and mixed-EOL corrections remain at `baa40286c23e12dc900b315e837eee67e850e892` and `e7b2c766a0ea8eb9ce7997a5784a776910818f1d`. NCR R1/S01 remains closed bounded; the next allowed move remains D013 work-order planning.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -177,7 +177,7 @@ PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PREPARE_R1_NEXT_D013_WORK_ORDER; CLOSED_BA
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: bind the committed NCR-R1/S01 reviewer-local closure and next-move state to active continuity, and perform this dedicated GC-020 handoff-only sync for the later mixed-EOL committed-evidence correction. This handoff edit changes no checker or runtime owner.
+Authorized guard-maintenance scope: bind the latest committed NCR reviewer skill proposal to active continuity in a dedicated GC-020 handoff-only sync. This handoff edit changes no checker or runtime owner.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -191,7 +191,7 @@ Protected paths:
 - `CVF_SESSION/state/entries/cvfNcrR1W00HtmlUxDispatch20260926.json`; `CVF_SESSION/state/entries/cvfNcrR1W01HtmlUxCopyDispatch20260926.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: operator transferred the converged core-skills research to Local and, on 2026-09-27, instructed Local to resolve the reviewer-routing and receipt-diagnostic errors so they do not recur. Rollback boundary: revert only this continuity projection; retain D013, S01 closure, R1/S01 dispatch material, accepted R1/W01, AKOE/U1 and the 52-deferred lane. Only the two named package bodies were worker-authorized; host exposure, other package mutation, eval/provider/live, pilot, public and production remain separately gated.
+Operator authorization: operator transferred the converged core-skills research to Local, instructed Local to prevent the reviewer-routing and receipt errors from recurring, and then directly requested creation of the reviewer skill. Rollback boundary: revert only this continuity projection; retain D013, S01 closure, R1/S01 dispatch material, accepted R1/W01, AKOE/U1 and the 52-deferred lane. The new package remains PROPOSED; host exposure, eval/provider/live, pilot, public and production remain separately gated.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
