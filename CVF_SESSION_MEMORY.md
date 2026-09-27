@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_s09_activation_readiness_closed_s10_author_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=author bounded CVF-NCR-R1-S10 P9 packet without execution; role=Local orchestrator/reviewer; phase=R1/S09 P8 closed, S10 authoring ready; decision owner=Local technical review/dispatch; parked checkpoint=P10, external adapter, provider/live, public and production.
+Startup acknowledged: current mode=`cvf_ncr_dispatch_semantic_feasibility_closed_s10_author_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=author bounded CVF-NCR-R1-S10 P9 packet under the target-state feasibility gate, without execution; role=Local orchestrator/reviewer; phase=root dispatch hardening closed, S10 authoring ready; decision owner=Local technical review/dispatch; parked checkpoint=P10, external adapter, provider/live, public and production.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_s09_activation_readiness_closed_s10_author_ready`
-Current mode: `cvf_ncr_r1_s09_activation_readiness_closed_s10_author_ready`; previous mode marker: `cvf_ncr_r1_s09_activation_readiness_dispatch_ready`
+Current mode marker: `cvf_ncr_dispatch_semantic_feasibility_closed_s10_author_ready`
+Current mode: `cvf_ncr_dispatch_semantic_feasibility_closed_s10_author_ready`; previous mode marker: `cvf_ncr_r1_s09_activation_readiness_closed_s10_author_ready`
 
 ## Next Allowed Move
-Mode: `cvf_ncr_r1_s09_activation_readiness_closed_s10_author_ready`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR; ACTIVE_BATCH=NONE; MATERIAL_COMMIT=2180932150bf600d64df021fc0c8efe505310254; ACTIVE_WORK_ORDER=NONE; EXPANSION_ALLOWED=false. R1/S09 P8 is CLOSED_PASS_BOUNDED after Local root repair and independent probe. Author the bounded R1/S10 P9 instruction-use proof packet with full loader/checker read-ahead before dispatch; do not execute it in the authoring tranche. P10, external adapter, provider/network/live, public-sync, deployment and production remain parked. P4-C1 sample collection continues gradually under its standardized mechanism; latest closed learning-history wave LHW24.
+Mode: `cvf_ncr_dispatch_semantic_feasibility_closed_s10_author_ready`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR; ACTIVE_BATCH=NONE; MATERIAL_COMMIT=e14b367b2f65e272ed5e5b5007a2d47c773c8131; ACTIVE_WORK_ORDER=NONE; EXPANSION_ALLOWED=false. The package-skill dispatch semantic-feasibility uplift is CLOSED_PASS_BOUNDED and now gates pre-dispatch plus pre-implementation. Author the bounded R1/S10 P9 instruction-use proof packet with the target-state feasibility contract and full loader/checker read-ahead; do not execute it in the authoring tranche. P10, external adapter, provider/network/live, public-sync, deployment and production remain parked. P4-C1 sample collection continues gradually under its standardized mechanism; latest closed learning-history wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
