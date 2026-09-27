@@ -482,6 +482,9 @@ defect class is about. A genuine checkout under each setting is what the CRLF/LF
                 self._git_bytes('cat-file', 'blob', self._git('rev-parse', f'{head}:{path}')),
                 b'line one\nline two\n',
             )
+        self._write(paths[1], b'line one\r\nline two\n')
+        self._git('add', '--', paths[1])
+        self.assertEqual(self._git('status', '--short'), '')
         receipt = self._run_real_pre_closure(base, head)
         self.assertIn('committedEvidence', receipt)
         reconciled = self._reconcile_through_real_collector(receipt, head)

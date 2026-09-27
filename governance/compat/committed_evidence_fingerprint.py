@@ -25,8 +25,9 @@ filter and no ``core.autocrlf`` conversion can execute (rework-3: an
 earlier revision used ``git hash-object``, which does run a configured
 ``clean`` filter, so a filter that maps arbitrary content to one fixed
 blob could mask genuine semantic drift as false equivalence). The only
-representation exception is a metadata-authorized LF-blob to CRLF-checkout
-expansion with an unchanged target index blob. Binary/control bytes and
+representation exception is metadata-authorized CRLF-to-LF normalization
+of worktree bytes against an LF blob, including mixed LF/CRLF checkout
+files, with an unchanged target index blob. Binary/control bytes and
 unsupported transforms are not eligible. Neither fingerprint is normalized.
 
 Path-set policy (explicitly versioned):
@@ -228,7 +229,7 @@ def _read_worktree_bytes(repo_relative_path: str, *, cwd: Path = REPO_ROOT) -> b
 
 def _worktree_bytes_match_committed_blob(worktree_bytes: bytes, committed_bytes: bytes,
                                        *, allow_crlf_checkout: bool = False) -> bool:
-    """Exact bytes by default; optionally reproduce a proven CRLF checkout.
+    """Exact bytes by default; optionally admit proven CRLF checkout bytes.
 
     The caller must establish metadata eligibility before enabling this
     narrow exception. Never reduce both byte streams to normalized text.
@@ -240,7 +241,7 @@ def _worktree_bytes_match_committed_blob(worktree_bytes: bytes, committed_bytes:
     # Conservative text boundary: never normalize binary/control bytes.
     if any(byte < 32 and byte not in (9, 10) for byte in committed_bytes):
         return False
-    return worktree_bytes == committed_bytes.replace(b"\n", b"\r\n")
+    return worktree_bytes.replace(b"\r\n", b"\n") == committed_bytes
 
 
 def _allows_crlf_checkout(path: str, expected_blob: str, *, cwd: Path) -> bool:
@@ -316,8 +317,8 @@ def verify_worktree_matches_committed_target(
     committed target -- filtered blob equality is not semantic
     equivalence, and the governing contract's byte recipe explicitly
     forbids clean/smudge filter execution. The only representation
-    difference tolerated is a metadata-authorized LF-to-CRLF checkout
-    expansion with an unchanged index blob (never an external filter);
+    difference tolerated is metadata-authorized CRLF-to-LF normalization
+    against an LF blob with an unchanged index blob (never an external filter);
     any other difference,
     including any transform a repository's own filter configuration might
     otherwise apply, is treated as drift and rejected.
@@ -370,9 +371,9 @@ def verify_worktree_matches_committed_target(
             )
         crlf_shape = (
             worktree_bytes != expected_bytes
-            and b"\n" in expected_bytes
+            and b"\r\n" in worktree_bytes
             and b"\r" not in expected_bytes
-            and worktree_bytes == expected_bytes.replace(b"\n", b"\r\n")
+            and worktree_bytes.replace(b"\r\n", b"\n") == expected_bytes
         )
         crlf_metadata_allowed = (
             crlf_shape and _allows_crlf_checkout(path, expected_blob, cwd=cwd)

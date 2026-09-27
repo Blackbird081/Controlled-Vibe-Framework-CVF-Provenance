@@ -527,6 +527,19 @@ class WorktreeMatchesCommittedTargetTests(_TempRepoTestCase):
         )
         self.assertTrue(matches, reason)
 
+    def test_mixed_lf_crlf_worktree_matches_lf_blob_with_checkout_metadata(self):
+        self._git("config", "core.autocrlf", "true")
+        self._write("evidence.md", b"base\r\n")
+        commit_a = self._commit("A")
+        self._write("evidence.md", b"line1\r\nline2\r\nline3\r\n")
+        commit_b = self._commit("B")
+        self._write("evidence.md", b"line1\r\nline2\nline3\r\n")
+
+        matches, reason = cef.verify_worktree_matches_committed_target(
+            commit_a, commit_b, cwd=self._repo
+        )
+        self.assertTrue(matches, reason)
+
     def test_crlf_shape_without_checkout_metadata_is_not_misreported_as_semantic_drift(self):
         self._git("config", "core.autocrlf", "false")
         self._write("evidence.txt", b"base\n")
