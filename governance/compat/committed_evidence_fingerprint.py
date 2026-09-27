@@ -368,15 +368,29 @@ def verify_worktree_matches_committed_target(
                 f"{head_sha} expects blob content at {path!r} but the worktree "
                 "has no regular file there"
             )
+        crlf_shape = (
+            worktree_bytes != expected_bytes
+            and b"\n" in expected_bytes
+            and b"\r" not in expected_bytes
+            and worktree_bytes == expected_bytes.replace(b"\n", b"\r\n")
+        )
+        crlf_metadata_allowed = (
+            crlf_shape and _allows_crlf_checkout(path, expected_blob, cwd=cwd)
+        )
         if not _worktree_bytes_match_committed_blob(
             worktree_bytes, expected_bytes,
-            allow_crlf_checkout=(worktree_bytes != expected_bytes and
-                                 _allows_crlf_checkout(path, expected_blob, cwd=cwd)),
+            allow_crlf_checkout=crlf_metadata_allowed,
         ):
+            if crlf_shape and not crlf_metadata_allowed:
+                detail = "CRLF-shaped bytes lack the required index and checkout metadata"
+            elif crlf_shape:
+                detail = "CRLF-shaped bytes contain binary/control bytes and are not eligible as text"
+            else:
+                detail = "bytes differ outside the admitted checkout representation"
             return False, (
                 f"worktree content at {path!r} does not match {head_sha}'s "
-                f"committed blob {expected_blob} -- semantic drift, not a "
-                "benign checkout representation difference"
+                f"committed blob {expected_blob} -- {detail}; "
+                "committedEvidence binding withheld"
             )
     return True, "worktree content matches the committed target for every changed path"
 

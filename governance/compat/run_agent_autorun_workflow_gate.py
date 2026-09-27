@@ -703,11 +703,10 @@ def _run_phase(
             # the gate commands actually read for every base..head changed
             # path is equivalent to headSha's own committed blob for that
             # path -- not merely that two nearby worktree reads agreed with
-            # each other. Equivalence is decided by git hash-object (see
-            # committed_evidence_fingerprint.verify_worktree_matches_committed_target),
-            # which is CRLF/line-ending-tolerant exactly as Git's own
-            # checkout/commit filter is and binary-safe, never a hand-rolled
-            # text normalization that could mask a genuine difference. A
+            # each other. The helper compares raw disk and committed blob
+            # bytes; it admits only metadata-backed LF-to-CRLF expansion
+            # with an unchanged index blob. It never invokes a clean filter
+            # or git hash-object, which could hide genuine drift. A
             # later continuity-only HEAD remains admissible here precisely
             # because it does not change any base..head evidence path's
             # committed content, so the worktree (parked at the later

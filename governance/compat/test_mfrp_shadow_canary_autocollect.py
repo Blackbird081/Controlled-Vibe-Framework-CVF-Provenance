@@ -457,6 +457,39 @@ defect class is about. A genuine checkout under each setting is what the CRLF/LF
         self.assertEqual(reconciled_false['reconstructedFingerprint'], expected_fingerprint)
         self.assertEqual(primary_receipt['committedEvidence']['fingerprint'], secondary_receipt['committedEvidence']['fingerprint'])
 
+    def test_real_producer_binds_multifile_markdown_crlf_checkout(self):
+        """A documentation-shaped range with several CRLF checkout files
+        must retain the committedEvidence binding through the real producer.
+        This is the relevant shape of the NCR R1/S01 receipt incident.
+        """
+        self._git('config', 'core.autocrlf', 'true')
+        paths = (
+            'docs/baselines/packet.md',
+            'docs/reference/agent_system_skills/packages/review/SKILL.md',
+            'docs/reviews/completion.md',
+        )
+        for path in paths:
+            self._write(path, b'base\r\n')
+        base = self._commit('base documentation')
+        for path in paths:
+            self._write(path, b'line one\r\nline two\r\n')
+        head = self._commit('material documentation')
+        self._git('rm', '-q', '-f', '--', *paths)
+        self._git('checkout', 'HEAD', '--', *paths)
+        for path in paths:
+            self.assertEqual((self._repo / path).read_bytes(), b'line one\r\nline two\r\n')
+            self.assertEqual(
+                self._git_bytes('cat-file', 'blob', self._git('rev-parse', f'{head}:{path}')),
+                b'line one\nline two\n',
+            )
+        receipt = self._run_real_pre_closure(base, head)
+        self.assertIn('committedEvidence', receipt)
+        reconciled = self._reconcile_through_real_collector(receipt, head)
+        self.assertEqual(
+            reconciled['reconstructedFingerprint'],
+            receipt['committedEvidence']['fingerprint'],
+        )
+
     def _run_in_fresh_clone_with_autocrlf(self, autocrlf_value: str, base: str, head: str) -> dict:
         """Clone this class's primary fixture repo into a fresh second repository configured with the requested core.autocrlf value *before* the clone's own
 checkout happens, so that second repo's worktree bytes are a genuine fresh checkout under that setting -- never the primary repo's leftover disk bytes

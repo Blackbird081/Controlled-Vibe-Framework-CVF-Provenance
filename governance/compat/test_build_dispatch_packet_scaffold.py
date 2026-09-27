@@ -129,6 +129,8 @@ class TestGenericWorkerDispatch(unittest.TestCase):
         self.assertIn("rootCauseClusterId: cluster-lock-identity", work_order)
         self.assertIn("consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH", work_order)
         self.assertIn("nextDispatchDisposition: ONE_CONSOLIDATED_REWORK", work_order)
+        self.assertIn("reviewerLocalRepairBoundary: FILL_ME", work_order)
+        self.assertIn("reviewerLocalRepairBasis: FILL_ME", work_order)
 
     def test_dispatch_prompt_envelope_is_first_section(self) -> None:
         args = _base_args()
