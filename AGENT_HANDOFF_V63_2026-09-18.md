@@ -155,7 +155,7 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 - NCR W02 read-only return was Local-accepted at `c638f2ece` after source-claim repair and 90/90 pre-commit. The client fallback port `8000` differs from the server's documented `8100`; actual URL/port, ledger/log retention and pilot data/effect/expense remain open. R1/W00 static HTML UX contract worker return was reviewer-repaired and accepted bounded at `97532f7038f7bcc0d3768550b06a3695b72b8809`. R1/W01 paired baseline/work order committed at `e54dd51e8eb60364a814a921a0d31bb7d259e487`; exact component/test/return worker delta was reviewer-repaired and accepted bounded at `5e99eb20910e7e3282d7431e6ca3d96c5e87860b` after reviewer-fast 69/69 and pre-commit 90/90. Mocked UI tests do not establish actual browser walkthrough, route call, profile, P06/P08, or pilot effect; successor work order is held for Web research.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S06-R1; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md; MATERIAL_COMMIT=f8b440521; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may continue the retained R1/S06 P5 delta under the exact thirteen-path correction manifest: make the inventory truth-gap drift predicate lifecycle-sensitive, add the APPROVED/ACTIVE hostile regression pair, regenerate inventory and the two private Web read models, and finish the provider-free loader receipt and listed gates. Preserve APPROVED/PASSED/CERTIFIED/IMPLEMENTED and activation denial. No P6 truth, ACTIVE promotion, resolver, automatic invocation, external adapter, provider/network/live, public-sync, deployment or production effect is authorized. Local remains reviewer/closer; the worker must not commit; latest closed LHW wave LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S06-R1; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_2026-09-27.md; MATERIAL_COMMIT=f8b440521; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may continue the retained R1/S06 P5 delta under the exact thirteen-path correction manifest: make the inventory truth-gap drift predicate lifecycle-sensitive, add the APPROVED/ACTIVE hostile regression pair, regenerate inventory and the two private Web read models, and finish the provider-free loader receipt and listed gates. Preserve APPROVED/PASSED/CERTIFIED/IMPLEMENTED and activation denial. No P6 truth, ACTIVE promotion, resolver, automatic invocation, external adapter, provider/network/live, public-sync, deployment or production effect is authorized. Local remains reviewer/closer; the worker must not commit; continuity authorization is bound; latest closed LHW wave LHW24.
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
@@ -177,21 +177,21 @@ PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_WORK_ORDER; ACTIVE_BATCH=CVF
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: correct the R1/S06 current-authority source and regenerate its compact/full projections after the release-readiness gate exposed the stale R1/S05 authority tuple. This continuity-only correction changes no checker, package or runtime owner.
+Authorized guard-maintenance scope: bind the committed R1/S06-R1 correction packet, record its material SHA and regenerate the compact/full continuity projections. This continuity-only correction changes no worker-owned checker, package or runtime implementation.
 Protected paths:
 
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cvfNcrR0W00PilotSelectionReview20260926.json`
+- `CVF_SESSION/state/entries/cvfNcrR1S06R1P5PhaseGateReconciliationDispatch20260927.json`
 - `CVF_SESSION/state/entries/acelPostG7ThreeRepoAbsorption20260925.json`
 - `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/state/entries/cvfNcrR1W00HtmlUxDispatch20260926.json`; `CVF_SESSION/state/entries/cvfNcrR1W01HtmlUxCopyDispatch20260926.json`
 - `CVF_SESSION_MEMORY.md`
 
-Operator authorization: operator explicitly authorized full P5 after R1/S05 closure and instructed Local to audit carefully and prepare the successor dispatch. Rollback boundary: revert only this continuity projection; retain material dispatch `f2cbc02d4`, R1/S05 closure and all earlier accepted work. The worker scope remains exact eight paths; ACTIVE, P6-P10 truth, resolver/automatic invocation, external/provider/live, public and production remain separately gated.
+Operator authorization: operator explicitly authorized full P5 and instructed Local to audit carefully and proceed after the R1/S06 blocked return. Rollback boundary: revert only this continuity projection; retain correction material dispatch `f8b440521`, the R1/S06 evidence and all earlier accepted work. Worker scope is exactly thirteen material paths; ACTIVE, P6-P10 truth, resolver/automatic invocation, external/provider/live, public-sync and production remain separately gated.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
