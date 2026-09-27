@@ -620,6 +620,15 @@ instruction execution, output consumption, lifecycle promotion, P8-P10,
 automatic invocation, provider/live call, public sync, deployment or
 production readiness claim.
 
+## Dispatch Entrypoint Root Reconciliation
+
+The first worker stopped before the loader because the original
+pre-implementation range mixed packet and continuity history and the dispatch
+author gate omitted packet-shape and independent-probe admission. Material
+correction `1085d5ebb` repaired those controls without changing P7 scope or
+authority. This paired baseline/work-order refresh restores one common
+material dispatch commit as required by dispatch-release readiness.
+
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |

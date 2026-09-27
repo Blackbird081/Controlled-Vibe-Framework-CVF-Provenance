@@ -178,7 +178,7 @@ repair, since none of the affected paths are in this worker's write scope.
 ## Semantic Convergence Outcome
 
 ```json
-{"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"NCR_R1_S08_P7_USAGE_RECEIPT_READINESS","chainMode":"SUCCESSOR","chainOrdinal":1,"predecessor":{"path":"docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md","sha256":"2bef2d6bc22cada35af46c0be947734cc63d786b8c2ab633e29ef9f6ce3503f4"},"blockerDelta":{"prior":[],"resolved":[],"retained":[],"new":[],"reopened":[],"current":[]},"resolutionEvidence":{},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":0,"nonDecreasingBlockerTransitions":1},"claims":[],"requiredDisposition":"CONTINUE_BOUNDED","successorScope":"NO_SUCCESSOR"}
+{"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"NCR_R1_S08_P7_USAGE_RECEIPT_READINESS","chainMode":"SUCCESSOR","chainOrdinal":1,"predecessor":{"path":"docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S08_TEST_EVIDENCE_AUDIT_USAGE_RECEIPT_READINESS_2026-09-27.md","sha256":"497c67b423279e208655dd5a359ce7eaa822da9a03de83579bf7241e1afe7fe2"},"blockerDelta":{"prior":[],"resolved":[],"retained":[],"new":[],"reopened":[],"current":[]},"resolutionEvidence":{},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":0,"nonDecreasingBlockerTransitions":1},"claims":[],"requiredDisposition":"CONTINUE_BOUNDED","successorScope":"NO_SUCCESSOR"}
 ```
 
 ## Checker Source Read-Ahead Block

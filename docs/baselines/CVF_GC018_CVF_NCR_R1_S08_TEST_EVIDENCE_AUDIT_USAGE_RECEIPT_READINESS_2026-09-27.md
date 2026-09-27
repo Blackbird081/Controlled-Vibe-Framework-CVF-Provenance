@@ -160,6 +160,16 @@ tranche as `BLOCKED_WITH_REASON`.
 
 Pending; no P7 success claim exists at dispatch.
 
+## Dispatch Entrypoint Root Reconciliation
+
+The first worker stopped before the loader because the original
+pre-implementation range mixed packet and continuity history and the dispatch
+author gate omitted packet-shape and independent-probe admission. Material
+correction `1085d5ebb` repaired those controls without changing this
+baseline's P7 scope, authority, acceptance criteria or parked checkpoints.
+This paired baseline/work-order refresh restores one common material dispatch
+commit as required by dispatch-release readiness.
+
 ## Claim Boundary
 
 This baseline authorizes one local governed loader body read solely to create
