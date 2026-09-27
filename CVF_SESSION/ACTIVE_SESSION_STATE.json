@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
-    "baselineSha256": "ac6701e23d040298f27d23a7e33709b059b81ce06f407e0b457abbbdfe6dc58f",
+    "baselineSha256": "663aa7de2e15d26ccc3a2a121f644de3abd706328a733e2431beb8446f5d6cfe",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
-    "workOrderSha256": "e403249fbcfc51ea33210f60aafa49de3f824151cad571d891447cfacd1fd232"
+    "workOrderSha256": "0f08e01f2672cfa8606a26254df4266902aec77be0725260b6081d9f8b8da847"
   },
-  "currentAuthoritySyncReason": "P4-C1 bounded retry recovery landed at material commit d27b4bfbe. Its first live retry preserved a real pre-continuity active-session phase mismatch, so Local correction remains active; the safety marker was recoverably adjudicated and no evidence was deleted. NCR and M5/P5/P6 remain paused; exact hashes are rebound here; atomic continuity-rebind parent d27b4bfbe.",
+  "currentAuthoritySyncReason": "P4-C1 retry phase correction is ready above continuity parent ae580ab1e. Current-authority raw-byte hashes require the corrected packet bytes and session projections to land atomically under the exact mixed manifest; the next dedicated continuity disclosures own live validation. NCR and M5/P5/P6 remain paused.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "mfrp_p4_c1_bounded_retry_recovery_correction_active",
-  "previousMode": "mfrp_p4_c1_evidence_collection_audit_closed_paused",
+  "currentMode": "mfrp_p4_c1_bounded_retry_recovery_live_validation_ready",
+  "previousMode": "mfrp_p4_c1_bounded_retry_recovery_correction_active",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16851,5 +16851,5 @@
   "cvfNcrR1S07R1ActivationLearningRootReconciliationClosure20260927": "CLOSED_PASS_BOUNDED at material commit f7d8e4842. Local accepted the P6 truth packet and repaired the root contract so inventory and active resolver agree across the exact six-row activation matrix: runtime eligibility, truth presence/approval, lifecycle ACTIVE, then readiness. Finding-To-Governance now resolves recurring blocked returns by stable root-cause cluster and governed prior path, rejects false FIRST_OCCURRENCE declarations, and the worker-return scaffold plus golden fixture collect the required fields before execution. Focused suites passed 21/21, 29/29 and 94/94; independent matrix parity passed 6/6; truth receipt recomputed exactly. Worker use of stash and instruction-body loader were recorded as scope violations and excluded from acceptance evidence. Package remains APPROVED and DENIED_SOURCE_NOT_ACTIVE. No ACTIVE, P7-P10 execution, package-body acceptance proof, provider/live/public/deployment/production authority follows.",
   "cvfNcrR1S08UsageReceiptReadinessDispatch20260927": "CLOSED_PASS_BOUNDED. Worker evidence commit 4af51dd72 contains one generator-owned CVF_ASSF_SKILL_USAGE_RECEIPT and the reviewed return. Local independently recomputed bodyHash and receiptId, confirmed APPROVED lifecycle, DENIED_SOURCE_NOT_ACTIVE, SELECTED policy, activation false and output consumption false, then closed the work order at material commit e5ce21cb7. One noncanonical usage-disposition literal was repaired to NOT_USED_WITH_REASON before acceptance. NCR is paused; no ACTIVE transition or P8-P10 successor follows.",
   "cvfNcrR1S08DispatchEntrypointRootReconciliation20260927": "ROOT_RECONCILED through control material 1085d5ebb, paired-topology seal 202258ba7, and command-reference/learning correction b2f614037. The first S08 worker correctly stopped on a mixed historical preflight range; the second correctly stopped on a nonexistent eligibility checker. Local accepted both returns as evidence, moved preflight to the clean execution frontier, promoted packet-shape and independent-probe admissions into author-fast, replaced the missing command with the verified metadata-only eligibility audit, made dispatch quality reject nonexistent Python command paths, and enabled paired proactive operator-notice/successor-freeze escalation on a decision-relevant first occurrence. No loader read, instruction use, receipt, activation, provider/network or external effect occurred.",
-  "nextAllowedMove": "PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=LOCAL_CORRECTION; ACTIVE_BATCH=MFRP-P4-C1-BOUNDED-RETRY-RECOVERY-CORRECTION; MATERIAL_COMMIT=d27b4bfbe; CONTINUITY_REBIND_PARENT=d27b4bfbe; EXPANSION_ALLOWED=false. CVF-NCR-R1-S08 P7 and NCR P8-P10 remain paused. The first bounded retry exposed a pre-continuity active-session phase mismatch; its failed attempt and marker were preserved and reviewer-adjudicated. Local must gate backlog retry to dedicated session-sync disclosures, add hostile proof, verify a live retry and then pause. M5/M10/M20 and P5/P6 remain closed; no provider/network/live, public-sync, deployment or production authority; latest closed LHW wave LHW24."
+  "nextAllowedMove": "PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=LIVE_VALIDATION_CONTINUITY; ACTIVE_BATCH=MFRP-P4-C1-BOUNDED-RETRY-RECOVERY-CORRECTION; INITIAL_MATERIAL_COMMIT=d27b4bfbe; CORRECTION_PARENT=ae580ab1e; EXPANSION_ALLOWED=false. Land the authorized exact mixed correction because active authority hashes cover the corrected packet bytes, then use dedicated continuity-only disclosures to prove one backlog retry through the unchanged full gate. CVF-NCR-R1-S08 P7, NCR P8-P10 and M5/M10/M20/P5/P6 remain paused; no provider/network/live, public-sync, deployment or production authority; latest closed LHW wave LHW24."
 }

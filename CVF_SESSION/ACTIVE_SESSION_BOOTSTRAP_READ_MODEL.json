@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "mfrp_p4_c1_bounded_retry_recovery_correction_active",
+  "currentMode": "mfrp_p4_c1_bounded_retry_recovery_live_validation_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=LOCAL_CORRECTION; ACTIVE_BATCH=MFRP-P4-C1-BOUNDED-RETRY-RECOVERY-CORRECTION; MATERIAL_COMMIT=d27b4bfbe; CONTINUITY_REBIND_PARENT=d27b4bfbe; EXPANSION_ALLOWED=false. CVF-NCR-R1-S08 P7 and NCR P8-P10 remain paused. The first bounded retry exposed a pre-continuity active-session phase mismatch; its failed attempt and marker were preserved and reviewer-adjudicated. Local must gate backlog retry to dedicated session-sync disclosures, add hostile proof, verify a live retry and then pause. M5/M10/M20 and P5/P6 remain closed; no provider/network/live, public-sync, deployment or production authority; latest closed LHW wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=LIVE_VALIDATION_CONTINUITY; ACTIVE_BATCH=MFRP-P4-C1-BOUNDED-RETRY-RECOVERY-CORRECTION; INITIAL_MATERIAL_COMMIT=d27b4bfbe; CORRECTION_PARENT=ae580ab1e; EXPANSION_ALLOWED=false. Land the authorized exact mixed correction because active authority hashes cover the corrected packet bytes, then use dedicated continuity-only disclosures to prove one backlog retry through the unchanged full gate. CVF-NCR-R1-S08 P7, NCR P8-P10 and M5/M10/M20/P5/P6 remain paused; no provider/network/live, public-sync, deployment or production authority; latest closed LHW wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
-    "baselineSha256": "ac6701e23d040298f27d23a7e33709b059b81ce06f407e0b457abbbdfe6dc58f",
+    "baselineSha256": "663aa7de2e15d26ccc3a2a121f644de3abd706328a733e2431beb8446f5d6cfe",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md",
-    "workOrderSha256": "e403249fbcfc51ea33210f60aafa49de3f824151cad571d891447cfacd1fd232"
+    "workOrderSha256": "0f08e01f2672cfa8606a26254df4266902aec77be0725260b6081d9f8b8da847"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

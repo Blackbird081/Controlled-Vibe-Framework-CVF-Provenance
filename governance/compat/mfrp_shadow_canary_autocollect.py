@@ -45,6 +45,8 @@ AUTORUN_GATE_PATH = "governance/compat/run_agent_autorun_workflow_gate.py"
 GENERATED_RECEIPT_NAME = "pre-closure.json"
 ACTIVATION_COMMIT = "b9bdba71290a9d94a12438b413401ecb4c6a72a7"
 REVIEWS_GLOB_PREFIX = "docs/reviews/"
+SESSION_SYNC_PREFIXES = ("CVF_SESSION/", "AGENT_HANDOFF")
+SESSION_SYNC_EXACT_PATHS = ("CVF_SESSION_MEMORY.md",)
 OBSERVATION_BLOCK_HEADING = "## P4 Automatic Evidence Observation Block"
 FIELD_ELIGIBILITY = "p4ObservationEligibility"
 FIELD_PHASE = "p4ObservationPhase"
@@ -95,6 +97,21 @@ def _commit_changed_paths(commit: str) -> tuple[str, ...]:
     if code != 0:
         return ()
     return tuple(sorted(line for line in out.splitlines() if line))
+def _is_session_sync_disclosure(commit: str) -> bool:
+    """Return true only for a dedicated continuity disclosure.
+
+    Backlog receipts execute the full pre-closure bundle, whose active-session
+    checker can admit a newly landed commit only when that commit is a
+    session-sync commit naming its parent. Material commits necessarily run
+    before that rebind and therefore must defer retry without consuming it or
+    writing a false safety marker.
+    """
+    paths = _commit_changed_paths(commit)
+    return bool(paths) and all(
+        path in SESSION_SYNC_EXACT_PATHS
+        or path.startswith(SESSION_SYNC_PREFIXES)
+        for path in paths
+    )
 def _range_changed_paths(base: str, head: str) -> tuple[str, ...]:
     code, out, _ = _run_git(["diff", "--name-only", f"{base}..{head}"])
     if code != 0:
@@ -576,6 +593,15 @@ def run_collection(commit: str | None = None) -> str:
         return f"P4-C1: {unsafe.code}"
     selection = _discover_candidate(trusted_commit)
     if selection.selected is None:
+        if not _is_session_sync_disclosure(disclosure_commit):
+            _persist_attempt(
+                journal,
+                disclosure_commit,
+                trusted_commit,
+                selection.reason,
+                selection=selection,
+            )
+            return f"P4-C1: {selection.reason}"
         retry = observability.select_retryable_attempt(journal)
         if retry:
             retry_commit = str(retry["trustedCommit"])

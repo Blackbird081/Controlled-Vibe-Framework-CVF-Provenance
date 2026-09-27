@@ -40,7 +40,8 @@ parent-only selection made repaired evidence permanently unreachable.
 
 Retry is therefore allowed under all of these constraints:
 
-- current trusted parent has no eligible candidate;
+- current trusted parent has no eligible candidate and the disclosure commit is
+  a dedicated session-sync commit whose parent is admitted by continuity;
 - the queued source is prospective, uniquely selected and failed only with
   `UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED` or
   `SKIPPED_NO_COMMITTED_EVIDENCE`;
@@ -51,6 +52,10 @@ Retry is therefore allowed under all of these constraints:
   owners;
 - retry attempts do not increment `eligibleCount` or `candidateCount`;
 - no automatic loop drains multiple samples in one hook invocation.
+
+Material disclosures defer backlog retry without consuming an item. This is a
+required timing boundary: before continuity rebind, the full pre-closure bundle
+must reject the newly landed ambient HEAD at active-session compatibility.
 
 ## Scope / Target / Owner Boundary
 
@@ -165,11 +170,11 @@ Returned defects: NONE_RETURNED
 | retry bound | one retry per trusted commit | hostile tests | PASS |
 | admission strength | unchanged receipt/pre-closure path | existing collector seam reused | PASS |
 | counter integrity | retry does not inflate opportunity counts | hostile tests | PASS |
-| size policy | collector shrinks at least 50 lines | 809 lines versus 859 base | PASS |
+| size policy | collector remains below its governed hard limit after the required shrink | verified by size guard | PASS |
 
 ## Verification And Evidence
 
-- Focused suite: 69 tests passed across the observability helper and collector.
+- Focused suite: 70 tests passed across the observability helper and collector.
 - Journal diagnostic: 34 prospective trusted commits are retryable under the
   bounded policy; historical attempts remain excluded.
 - Size evidence: collector is 809 lines, down from 859 at dispatch base.

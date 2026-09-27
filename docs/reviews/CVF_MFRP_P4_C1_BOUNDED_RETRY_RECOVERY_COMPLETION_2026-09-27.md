@@ -29,7 +29,7 @@ weakening receipt admission or inflating opportunity counts.
 | paired baseline/work order | exact retry bounds and manifest | ACCEPT |
 | ignored journal | 804 attempts, 73 opportunities, one sample, 34 retryable | ACCEPT_DIAGNOSTIC |
 | helper/collector diff | derived queue plus one retry seam | ACCEPT |
-| focused tests | 69 passed | ACCEPT |
+| focused tests | 70 passed | ACCEPT |
 
 ## Scope / Methodology
 
@@ -41,9 +41,10 @@ exhaustion, candidate mismatch, counter projection and current-parent priority.
 
 The collector was active but one-shot. A failed eligible trusted commit became
 unreachable after its immediate disclosure. The repair derives a newest-first
-prospective queue, consumes no more than one item per otherwise-ineligible
-hook event, records `retryOfTrustedCommit`, and keeps the complete admission
-chain unchanged.
+prospective queue. A material disclosure defers backlog work until a dedicated
+session-sync disclosure makes active-session state admissible; that disclosure
+consumes no more than one item, records `retryOfTrustedCommit`, and keeps the
+complete admission chain unchanged.
 
 ## Risk / Corrective Action
 
@@ -74,7 +75,7 @@ No independent-agent claim is made.
 
 | Evidence | Result |
 | --- | --- |
-| focused helper/collector suite | PASS, 69 tests |
+| focused helper/collector suite | PASS, 70 tests |
 | bounded retry hostile test | PASS |
 | retry counter non-inflation | PASS |
 | Python size guard | PASS; collector 809 lines |
@@ -114,6 +115,7 @@ Rollback boundary: exact seven-path material batch only.
 | immediate-parent-only collection permanently stranded repaired evidence | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RULE_ADDED | bounded prospective retry queue | handled |
 | retry attempts could inflate opportunity telemetry | MEASUREMENT_DENOMINATOR_DRIFT | RUNTIME_BEHAVIOR_LEARNING | TEST_ADDED | exclude retry-tagged attempts from candidate and eligible counters | handled |
 | unlimited automatic replay could repeatedly block commits | RECOVERY_LOOP_RISK | SAFETY_LEARNING | RULE_ADDED | at most one retry per trusted commit | handled |
+| retry on a material disclosure runs before continuity rebind and creates a false safety marker | EXECUTION_PHASE_MISMATCH | RUNTIME_BEHAVIOR_LEARNING | RULE_AND_TEST_ADDED | retry only on dedicated session-sync disclosures; material commits defer without consumption | handled |
 
 ## Epistemic Process Block
 
@@ -124,19 +126,22 @@ excluding historical, collected and already-retried commits.
 
 ### Evidence Comparison
 
-The current journal derives 34 retryable commits and selects the newest failed
-completion deterministically. Tests prove one retry exhausts that trusted
-commit without increasing the 73-opportunity denominator.
+The pre-repair journal derived 34 retryable commits and selected the newest
+failed completion deterministically. The first live attempt exposed the
+continuity-timing gap and was preserved as an adjudicated failed attempt,
+leaving 33 retryable commits. Tests prove material deferral preserves the queue
+and a session-sync retry exhausts only its selected trusted commit without
+increasing the 73-opportunity denominator.
 
 ### Contradiction Or Gap Disposition
 
-No admission weakening was required. Backlog conversion remains prospective
-runtime evidence and is not claimed before the next clean disclosure.
+No admission weakening was required. The full active-session check remains in
+the receipt bundle; only the phase in which backlog work is attempted changed.
 
 ### Claim Update
 
-P4-C1 now supports bounded recovery; sample count remains one until a real
-post-commit retry passes.
+P4-C1 now supports continuity-safe bounded recovery. Sample count remains a
+runtime-journal fact and is not advanced by this source-only claim.
 
 ## Review Cost Telemetry And Stop Disposition
 
@@ -200,7 +205,7 @@ workerRedispatchAllowed: NO
 | Session or invocation | P4-C1 bounded retry recovery |
 | Working directory | repository root |
 | Command or tool surface | source/runtime inspection, apply_patch, mechanical blank-line shrink, pytest and guards |
-| Target paths | exact seven-path manifest |
+| Target paths | exact eleven-path phase-correction manifest below |
 | Allowed scope source | paired packet and operator instruction |
 | Before status evidence | clean at `ee09cf7d4`; no unresolved marker |
 | After status evidence | exact seven tracked paths |
@@ -209,10 +214,37 @@ workerRedispatchAllowed: NO
 | Claim boundary | no gate weakening, bulk drain or checkpoint promotion |
 | Agent type | Internal Agent |
 | Invocation ID | `mfrp-p4-c1-bounded-retry-recovery-review-2026-09-27` |
-| Expected manifest | exact seven paths |
-| Actual changed set | exact seven paths |
+| Expected manifest | exact eleven paths |
+| Actual changed set | exact eleven paths |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: none |
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+
+Atomicity reason: active-session compatibility hashes the current baseline and
+work-order raw bytes. The phase correction changes those bytes, so their source
+implementation and generated continuity projections must land together; a
+separate material commit would be rejected before its following session sync.
+
+Rollback boundary: revert this exact correction commit as one unit; preserve
+the initial material commit, journal attempts, adjudicated marker and unrelated
+continuity history.
+
+Exact changed manifest:
+
+- `AGENT_HANDOFF_V63_2026-09-18.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+- `docs/baselines/CVF_GC018_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md`
+- `docs/reviews/CVF_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_COMPLETION_2026-09-27.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md`
+- `governance/compat/mfrp_shadow_canary_autocollect.py`
+- `governance/compat/test_mfrp_shadow_canary_autocollect.py`
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -244,11 +276,11 @@ workerRedispatchAllowed: NO
 
 | Assertion | Required value | Observed value | Status |
 | --- | --- | --- | --- |
-| focused tests | pass | 69 passed | PASS |
-| retry backlog | prospective only | 34 derived before commit | PASS |
+| focused tests | pass | 70 passed | PASS |
+| retry backlog | prospective only | 34 derived before first live attempt; 33 remain after preserved failed attempt | PASS |
 | retry bound | once per trusted commit | hostile tests | PASS |
 | counter integrity | no retry inflation | hostile tests | PASS |
-| size | shrink at least 50 lines | 859 to 809 | PASS |
+| size | remain below governed hard limit after required shrink | size guard PASS | PASS |
 
 ## Public Export Disposition
 

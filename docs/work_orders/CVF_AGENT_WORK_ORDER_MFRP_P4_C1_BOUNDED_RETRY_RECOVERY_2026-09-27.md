@@ -86,13 +86,15 @@ only by the installed collector after a committed disclosure.
 
 1. Derive a deterministic prospective retry backlog in the pure helper.
 2. Add retry telemetry without inflating existing counters.
-3. Use one retry only when the current parent has no eligible candidate.
+3. Use one retry only when the current parent has no eligible candidate and
+   the disclosure is a dedicated session-sync commit; material disclosures
+   defer without consuming backlog.
 4. Re-run the unchanged receipt/reconciliation/append chain.
 5. Add hostile tests, shrink collector, close and sync continuity.
 
 ## Evidence Requirements
 
-Require 69 focused tests, size compliance, exact manifest, retry queue count,
+Require 70 focused tests, size compliance, exact manifest, retry queue count,
 one-retry exhaustion proof, unchanged checkpoint code and normal pre-commit.
 
 ## Review Gate
@@ -114,6 +116,7 @@ lines of its hard limit.
 ## Acceptance Criteria
 
 - [x] a current eligible candidate always takes priority over backlog recovery;
+- [x] material disclosures defer retry until active continuity is aligned;
 - [x] an otherwise-ineligible disclosure attempts no more than one retry;
 - [x] each trusted commit is retried at most once;
 - [x] historical, collected and non-retryable attempts remain excluded;
@@ -292,7 +295,7 @@ Returned defects: NONE_RETURNED
 
 | Assertion | Required value | Observed value | Status |
 | --- | --- | --- | --- |
-| focused tests | all pass | 69 passed | PASS |
+| focused tests | all pass | 70 passed | PASS |
 | retry bound | at most one | hostile test | PASS |
 | opportunity counters | no retry inflation | hostile test | PASS |
 | size | no violation | collector 809 lines | PASS |

@@ -1,5 +1,5 @@
 {
   "stateOrder": 2962,
   "stateKey": "nextAllowedMove",
-  "value": "PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=LOCAL_CORRECTION; ACTIVE_BATCH=MFRP-P4-C1-BOUNDED-RETRY-RECOVERY-CORRECTION; MATERIAL_COMMIT=d27b4bfbe; CONTINUITY_REBIND_PARENT=d27b4bfbe; EXPANSION_ALLOWED=false. CVF-NCR-R1-S08 P7 and NCR P8-P10 remain paused. The first bounded retry exposed a pre-continuity active-session phase mismatch; its failed attempt and marker were preserved and reviewer-adjudicated. Local must gate backlog retry to dedicated session-sync disclosures, add hostile proof, verify a live retry and then pause. M5/M10/M20 and P5/P6 remain closed; no provider/network/live, public-sync, deployment or production authority; latest closed LHW wave LHW24."
+  "value": "PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=LIVE_VALIDATION_CONTINUITY; ACTIVE_BATCH=MFRP-P4-C1-BOUNDED-RETRY-RECOVERY-CORRECTION; INITIAL_MATERIAL_COMMIT=d27b4bfbe; CORRECTION_PARENT=ae580ab1e; EXPANSION_ALLOWED=false. Land the authorized exact mixed correction because active authority hashes cover the corrected packet bytes, then use dedicated continuity-only disclosures to prove one backlog retry through the unchanged full gate. CVF-NCR-R1-S08 P7, NCR P8-P10 and M5/M10/M20/P5/P6 remain paused; no provider/network/live, public-sync, deployment or production authority; latest closed LHW wave LHW24."
 }
