@@ -291,11 +291,17 @@ def _truth_allows_activation(truth: dict[str, Any] | None) -> bool:
     )
 
 
-def _activation_decision(runtime_eligible: bool, truth: dict[str, Any] | None) -> str:
+def _activation_decision(
+    runtime_eligible: bool, status: str, truth: dict[str, Any] | None
+) -> str:
     if not runtime_eligible:
         return "DENIED_NOT_RUNTIME_ELIGIBLE"
+    if truth is None:
+        return "DENIED_MISSING_TRUTH_PACKET"
     if not _truth_allows_activation(truth):
-        return "DENIED_MISSING_OR_UNAPPROVED_TRUTH_PACKET"
+        return "DENIED_TRUTH_NOT_APPROVED"
+    if _upper(status) != "ACTIVE":
+        return "DENIED_SOURCE_NOT_ACTIVE"
     return "ACTIVATION_READY"
 
 
@@ -471,7 +477,9 @@ def build_inventory(
         truth = truth_by_skill.get(skill_id)
         reasons = _runtime_ineligibility_reasons(entry)
         runtime_eligible = not reasons
-        activation_decision = _activation_decision(runtime_eligible, truth)
+        activation_decision = _activation_decision(
+            runtime_eligible, _text(entry.get("status")), truth
+        )
         registry_root = _text(entry.get("canonicalRoot")).replace("\\", "/")
         web_item = web_by_root.get(registry_root)
         if web_item is not None:

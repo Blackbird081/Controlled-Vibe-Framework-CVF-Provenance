@@ -1,0 +1,162 @@
+{
+  "authorityBoundary": "Truth packet for one bounded internal runtime-loader eligible P5 APPROVED package. This packet records source truth only; it does not activate the package, grant ACTIVE status, resolver selection, automatic invocation, external adapter, test execution, provider call, public sync, merge, commit, or filesystem action authority.",
+  "canonicalPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-evidence-audit.json",
+  "evidence": [
+    {
+      "evidenceId": "EV-REGISTRY",
+      "kind": "assf_registry_entry",
+      "sourcePath": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-test-evidence-audit.json",
+      "status": "approved"
+    },
+    {
+      "evidenceId": "EV-PACKAGE",
+      "kind": "assf_package_root",
+      "sourcePath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
+      "status": "approved"
+    },
+    {
+      "evidenceId": "EV-S06-UAT",
+      "kind": "package_skill_uat_certification_review",
+      "sourcePath": "docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md",
+      "status": "approved"
+    },
+    {
+      "evidenceId": "EV-S06R1-COMPLETION",
+      "kind": "phase_gate_reconciliation_completion_review",
+      "sourcePath": "docs/reviews/CVF_CVF_NCR_R1_S06_R1_P5_PHASE_GATE_RECONCILIATION_COMPLETION_2026-09-27.md",
+      "status": "approved"
+    },
+    {
+      "evidenceId": "EV-SOP",
+      "kind": "package_skill_productionization_sop",
+      "sourcePath": "docs/reference/agent_system_skills/CVF_PACKAGE_SKILL_PRODUCTIONIZATION_SOP.md",
+      "status": "approved"
+    },
+    {
+      "evidenceId": "EV-SKSOT-STANDARD",
+      "kind": "skill_truth_packet_standard",
+      "sourcePath": "docs/reference/agent_system_skills/CVF_SKILL_SOURCE_OF_TRUTH_PACKET_STANDARD.md",
+      "status": "approved"
+    }
+  ],
+  "lifecycleSnapshot": {
+    "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
+    "certificationState": "CERTIFIED",
+    "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+    "internalAgentDisposition": "IMPLEMENTED",
+    "status": "APPROVED",
+    "uatState": "PASSED"
+  },
+  "obligations": [
+    {
+      "obligationId": "OB-UAT",
+      "state": "satisfied",
+      "strength": "HARD"
+    },
+    {
+      "obligationId": "OB-CERTIFICATION",
+      "state": "satisfied",
+      "strength": "HARD"
+    },
+    {
+      "obligationId": "OB-INTERNAL-DISPOSITION",
+      "state": "satisfied",
+      "strength": "HARD"
+    },
+    {
+      "obligationId": "OB-NO-AUTOMATIC-INVOCATION",
+      "state": "satisfied",
+      "strength": "HARD"
+    },
+    {
+      "obligationId": "OB-NO-ACTIVATION-BEFORE-ACTIVE",
+      "state": "satisfied",
+      "strength": "HARD"
+    },
+    {
+      "obligationId": "OB-EXTERNAL-ADAPTER-DEFERRED-BOUNDARY",
+      "state": "satisfied",
+      "strength": "HARD"
+    }
+  ],
+  "packageRootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
+  "provenanceLabels": [
+    {
+      "claimId": "CLAIM-LIFECYCLE",
+      "label": "MEASURED",
+      "sourceEvidenceIds": [
+        "EV-REGISTRY"
+      ]
+    },
+    {
+      "claimId": "CLAIM-RUNTIME-ELIGIBILITY",
+      "label": "COMPUTED",
+      "sourceEvidenceIds": [
+        "EV-REGISTRY",
+        "EV-PACKAGE"
+      ]
+    },
+    {
+      "claimId": "CLAIM-GOVERNED-APPROVAL",
+      "label": "HUMAN_APPROVED",
+      "sourceEvidenceIds": [
+        "EV-S06-UAT",
+        "EV-S06R1-COMPLETION"
+      ]
+    }
+  ],
+  "receipt": {
+    "hash": "sha256:0d99ce6caf46397af1c0418bc3198086709bc7a6fbec9c5afac7ee5346917dfe",
+    "previousHash": "sha256:b6db3a24623a20bc7d537bfede2ac12de2519674fa393ba5d310d14b2cee38cc",
+    "receiptId": "RCPT-SKSOT-T1-cvf-engineering-test-evidence-audit-R1-S07",
+    "status": "issued"
+  },
+  "registryEntryPath": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-test-evidence-audit.json",
+  "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
+  "schemaVersion": "0.1.0",
+  "skillId": "cvf-engineering-test-evidence-audit",
+  "truthPacketId": "SKSOT-T1-cvf-engineering-test-evidence-audit",
+  "truthStatus": "approved",
+  "verificationMode": "STRICT",
+  "verificationResults": [
+    {
+      "evidenceIds": [
+        "EV-REGISTRY",
+        "EV-PACKAGE"
+      ],
+      "method": "source",
+      "obligationIds": [
+        "OB-UAT",
+        "OB-CERTIFICATION",
+        "OB-INTERNAL-DISPOSITION"
+      ],
+      "resultId": "VR-LIFECYCLE-SOURCE",
+      "status": "pass"
+    },
+    {
+      "evidenceIds": [
+        "EV-S06-UAT",
+        "EV-S06R1-COMPLETION"
+      ],
+      "method": "review",
+      "obligationIds": [
+        "OB-NO-AUTOMATIC-INVOCATION",
+        "OB-NO-ACTIVATION-BEFORE-ACTIVE"
+      ],
+      "resultId": "VR-ACTIVATION-BOUNDARY",
+      "status": "pass"
+    },
+    {
+      "evidenceIds": [
+        "EV-REGISTRY",
+        "EV-SOP"
+      ],
+      "method": "source",
+      "obligationIds": [
+        "OB-EXTERNAL-ADAPTER-DEFERRED-BOUNDARY"
+      ],
+      "resultId": "VR-EXTERNAL-ADAPTER-BOUNDARY",
+      "status": "pass"
+    }
+  ]
+}

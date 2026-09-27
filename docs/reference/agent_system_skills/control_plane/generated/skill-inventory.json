@@ -3356,7 +3356,7 @@
     },
     {
       "activation": {
-        "decision": "DENIED_MISSING_OR_UNAPPROVED_TRUTH_PACKET",
+        "decision": "DENIED_SOURCE_NOT_ACTIVE",
         "truthPacketRequired": true
       },
       "cliMcp": {
@@ -3447,10 +3447,10 @@
         "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
-        "exists": false,
-        "runtimeEligibility": null,
-        "truthStatus": null,
-        "verificationMode": null
+        "exists": true,
+        "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
+        "truthStatus": "approved",
+        "verificationMode": "STRICT"
       },
       "webProjection": {
         "assfProjectionClass": "CERTIFIED_PACKAGE_PROJECTION",

@@ -10,6 +10,10 @@ docType: reference_sop
 
 Batch ID: PKGSOP-T1
 
+EPISTEMIC_PROCESS_NA_WITH_REASON: reference SOP defining a phase ladder and
+decision matrix; it does not itself make an evidence-comparison or
+hypothesis-testing claim.
+
 ## Purpose
 
 Define the standard operating procedure for moving skill value from external
@@ -128,6 +132,34 @@ production runtime admission.
 | `ACTIVE` | production runtime standard, external adapter implemented when external use is claimed, truth packet updated | adapter evidence absent or no production proof |
 | `DEPRECATED` | successor or retirement reason | no successor/retirement boundary |
 | `RETIRED` | no longer selectable and closure evidence retained | unresolved dependency |
+
+## P6/P8 Activation-Decision Matrix
+
+The Skill Control Plane inventory (`governance/compat/generate_skill_control_plane_inventory.py`
+`_activation_decision`) and the ACTIVE resolver
+(`governance/compat/run_assf_active_resolver.py` `_decision_for`) must both
+implement exactly this five-row lifecycle/truth decision matrix. A P6 truth
+packet proves truth admission only; it never substitutes for the P8 `ACTIVE`
+lifecycle gate.
+
+| Row | Runtime eligible | Source `status` | Truth packet | Decision | Meaning |
+|---|---|---|---|---|---|
+| 1 | false | any | any | `DENIED_NOT_RUNTIME_ELIGIBLE` | P4/P5 loader-eligibility gate not met; this priority applies even when truth is absent or invalid |
+| 2 | true | any (including `ACTIVE`) | absent or unapproved | `DENIED_MISSING_TRUTH_PACKET` or `DENIED_TRUTH_NOT_APPROVED` | P6 truth packet required before any activation decision |
+| 3 | true | `APPROVED` (not `ACTIVE`) | approved STRICT | `DENIED_SOURCE_NOT_ACTIVE` | P6 truth admission complete; P8 `ACTIVE` promotion not yet granted -- this is the row the S07 defect skipped |
+| 4 | true | `ACTIVE` | absent or unapproved | `DENIED_MISSING_TRUTH_PACKET` or `DENIED_TRUTH_NOT_APPROVED` (hard drift retained) | `ACTIVE` packages must never relax the truth requirement |
+| 5 | true | `ACTIVE` | approved STRICT | `ACTIVATION_READY` | P8 resolver/projection readiness; still not a body read or usage receipt |
+
+This matrix is the SOP's authoritative statement that setting a package's
+truth packet to `TRUTH_APPROVED` (P6) is distinct from, and does not imply,
+promoting its source `status` to `ACTIVE` (P8). Row 3 exists specifically so a
+runtime-eligible, truth-approved `APPROVED` package is denied activation
+without being misreported as a cross-surface drift violation.
+
+The inventory and resolver must emit the same decision token for the same
+internal-consumer inputs. Decision priority is runtime eligibility, truth
+presence/approval, lifecycle status, then readiness. Surface-specific aliases
+are forbidden because they conceal order drift and weaken cross-surface tests.
 
 ## Runtime Package Production Admission
 

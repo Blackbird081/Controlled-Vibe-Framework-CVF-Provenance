@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NCR-R1-S07-R1
 
@@ -190,6 +190,19 @@ roadmap cannot progress until the root correction is independently accepted.
 This baseline authorizes only private, reversible root reconciliation. It does
 not authorize ACTIVE promotion, P7-P10 execution, body loading, provider/live
 calls, network, public sync, deployment, production, or worker commit/stash.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_COMPLETION_2026-09-27.md` | Local decision and independent probe | PASS |
+| Roadmap state | NCR R1/S07-R1 | root correction closed; P7-P10 parked | PASS |
+| Registry JSON | target registry/truth/index surfaces | truth admitted; activation denied | PASS |
+| Registry Markdown | target README and SKILL | bounded P6 state | PASS |
+| External evidence digest | none | N/A with reason: internal governed evidence only | N/A with reason |
+| System loop interlock | inventory/resolver | exact lifecycle gate parity | PASS |
+| Session continuity | active handoff/session state | split continuity commit follows material commit | BLOCKED with reason: material commit SHA pending |
 
 ## Public Export Disposition
 

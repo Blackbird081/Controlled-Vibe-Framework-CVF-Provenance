@@ -574,6 +574,21 @@ Rules:
   returning the artifact.
 - do not treat `FAIL_EXPECTED_PENDING_FINALITY` as a closed-equivalent PASS;
   it is valid only for `WORKER_MUST_NOT_COMMIT` pending review handoff;
+- a worker return that sets top-level `Status: BLOCKED_WITH_REASON` must also
+  declare a stable non-placeholder `rootCauseClusterId`,
+  `recurrenceDisposition`, `priorRelatedFinding`,
+  `operatorNoticeDisposition`, and `successorFreezeDisposition` per
+  `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md`
+  ("Recurring Blocked-Return Escalation"); a `RECURRING_CLUSTER_STOP`
+  disposition requires a concrete governed `priorRelatedFinding` path,
+  `operatorNoticeDisposition: OPERATOR_NOTICE_REQUIRED`, and
+  `successorFreezeDisposition: FEATURE_SUCCESSORS_FROZEN`; state these
+  obligations in the work order before dispatch so the worker sees them
+  before execution, not only after a blocked-return gate failure;
+- `FIRST_OCCURRENCE` is not accepted only on self-report: the Finding-To-
+  Governance checker compares the declared `rootCauseClusterId` against prior
+  non-archived governed returns, and an exact prior match forces
+  `RECURRING_CLUSTER_STOP` plus a real matching governed path;
 
 ## 6E.1 Machine Closure Package
 

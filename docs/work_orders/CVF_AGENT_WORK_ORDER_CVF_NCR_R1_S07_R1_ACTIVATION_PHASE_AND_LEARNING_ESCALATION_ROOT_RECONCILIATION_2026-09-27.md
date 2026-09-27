@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NCR-R1-S07-R1
 
@@ -72,14 +72,17 @@ without mandatory operator notice or successor freeze.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order | this packet | `DISPATCH_READY` | PASS |
-| Predecessor | S07 blocked return | exact SHA and reproduced blocker | PASS |
-| Phase contract | SOP plus activation standard | five-row lifecycle/truth matrix | BLOCKED with reason: worker execution pending |
-| Inventory/resolver | sources plus tests | identical fail-closed lifecycle semantics | BLOCKED with reason: worker execution pending |
-| Learning escalation | standard/checker/tests/scaffold/template | blocked-return recurrence fields and hostile tests | BLOCKED with reason: worker execution pending |
-| ADIF | entry 0060 plus index | durable recurring-cluster record | BLOCKED with reason: worker execution pending |
-| P6 material | inherited truth/package/projections | approved truth; activation denied | BLOCKED with reason: root correction pending |
-| Session continuity | Local-owned after acceptance | closed correction or next move | BLOCKED with reason: reviewer-owned |
+| Work order status | this packet | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S07_R1_ACTIVATION_PHASE_AND_LEARNING_ESCALATION_ROOT_RECONCILIATION_COMPLETION_2026-09-27.md` | Local decision and independent probe | PASS |
+| Roadmap state | NCR R1/S07-R1 | root reconciliation closed; P7-P10 parked | PASS |
+| Registry JSON | target entry, truth packet and generated indexes | `APPROVED`; truth admitted; activation denied | PASS |
+| Registry Markdown | target README and SKILL | P6 truth/lifecycle boundary | PASS |
+| External evidence digest | none | N/A with reason: internal governed evidence only | N/A with reason |
+| System loop interlock | inventory/resolver and hostile tests | exact parity; `DENIED_SOURCE_NOT_ACTIVE` | PASS |
+| Phase contract | SOP plus activation standard | lifecycle/truth matrix | PASS |
+| Learning escalation | standard/checker/tests/scaffold/template | recurrence fields and hostile tests | PASS |
+| ADIF | entry 0060 plus index | durable recurring-cluster record | PASS |
+| Session continuity | Local-owned after acceptance | split continuity commit after material SHA | BLOCKED with reason: material commit pending |
 
 ## Acceptance Receipt Assertion Matrix
 
@@ -324,7 +327,7 @@ reviewerLocalRepairBasis: the active resolver and learning-trigger owner surface
 ## Semantic Convergence Outcome
 
 ```json
-{"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"cvf-ncr-r1-s07-test-evidence-audit-truth-packet","chainMode":"SUCCESSOR","chainOrdinal":1,"predecessor":{"path":"docs/reviews/CVF_CVF_NCR_R1_S07_TEST_EVIDENCE_AUDIT_TRUTH_PACKET_WORKER_RETURN_2026-09-27.md","sha256":"8368ba6c437f2972cdba623319d59a843d8484a5932a454422d293a0b3274c17"},"blockerDelta":{"prior":["ACTIVATION_DECISION_MISSING_STATUS_GATE"],"resolved":[],"retained":["ACTIVATION_DECISION_MISSING_STATUS_GATE"],"new":["ACTIVE_RESOLVER_SHARES_PREDICATE_DEFECT","FINDINGS_POSITION_EXCLUDED_FROM_TRIGGER"],"reopened":[],"current":["ACTIVATION_DECISION_MISSING_STATUS_GATE","ACTIVE_RESOLVER_SHARES_PREDICATE_DEFECT","FINDINGS_POSITION_EXCLUDED_FROM_TRIGGER"]},"resolutionEvidence":{},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":1,"nonDecreasingBlockerTransitions":1},"claims":[{"claimId":"ACTIVATION-PHASE-ROOT","claimClass":"OTHER","proofClass":"NAMED_OBSERVABLE_PROOF","evidenceRef":"governance/compat/generate_skill_control_plane_inventory.py"},{"claimId":"F2G-RECURRENCE-ROOT","claimClass":"OTHER","proofClass":"NAMED_OBSERVABLE_PROOF","evidenceRef":"governance/compat/check_finding_to_governance_learning.py"}],"requiredDisposition":"ROOT_CONTRACT_REQUIRED","successorScope":"INTEGRATED_ROOT_CONTRACT"}
+{"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"cvf-ncr-r1-s07-test-evidence-audit-truth-packet","chainMode":"SUCCESSOR","chainOrdinal":1,"predecessor":{"path":"docs/reviews/CVF_CVF_NCR_R1_S07_TEST_EVIDENCE_AUDIT_TRUTH_PACKET_WORKER_RETURN_2026-09-27.md","sha256":"d630e3793324740d1e19b289bcacdde11a172808133418a949eacca3009b2d1b"},"blockerDelta":{"prior":["ACTIVATION_DECISION_MISSING_STATUS_GATE"],"resolved":[],"retained":["ACTIVATION_DECISION_MISSING_STATUS_GATE"],"new":["ACTIVE_RESOLVER_SHARES_PREDICATE_DEFECT","FINDINGS_POSITION_EXCLUDED_FROM_TRIGGER"],"reopened":[],"current":["ACTIVATION_DECISION_MISSING_STATUS_GATE","ACTIVE_RESOLVER_SHARES_PREDICATE_DEFECT","FINDINGS_POSITION_EXCLUDED_FROM_TRIGGER"]},"resolutionEvidence":{},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":1,"nonDecreasingBlockerTransitions":1},"claims":[{"claimId":"ACTIVATION-PHASE-ROOT","claimClass":"OTHER","proofClass":"NAMED_OBSERVABLE_PROOF","evidenceRef":"governance/compat/generate_skill_control_plane_inventory.py"},{"claimId":"F2G-RECURRENCE-ROOT","claimClass":"OTHER","proofClass":"NAMED_OBSERVABLE_PROOF","evidenceRef":"governance/compat/check_finding_to_governance_learning.py"}],"requiredDisposition":"ROOT_CONTRACT_REQUIRED","successorScope":"INTEGRATED_ROOT_CONTRACT"}
 ```
 
 ## Gate-To-Role Closeability Contract
@@ -663,16 +666,16 @@ partial.
 
 ## Closure Checklist
 
-- [ ] Root standards reconciled.
-- [ ] Focused tests pass with exact counts.
-- [ ] Inventory/resolver parity proved.
-- [ ] Recurrence hostile cases proved.
-- [ ] ADIF-0060 and index consistent.
-- [ ] P6 target activation denied across inventory/Web.
-- [ ] Worker return fast gate passes.
-- [ ] Exact manifest and staging verified.
-- [ ] Local independent probes pass.
-- [ ] Material commit precedes continuity commit.
+- [x] Root standards reconciled.
+- [x] Focused tests pass with exact counts.
+- [x] Inventory/resolver parity proved.
+- [x] Recurrence hostile cases proved.
+- [x] ADIF-0060 and index consistent.
+- [x] P6 target activation denied across inventory/Web.
+- [x] Worker return fast gate passes after Local evidence repairs.
+- [x] Exact manifest and staging verified.
+- [x] Local independent probes pass.
+- [x] Material commit precedes continuity commit (enforced by the closure sequence).
 
 ## Claim Boundary
 

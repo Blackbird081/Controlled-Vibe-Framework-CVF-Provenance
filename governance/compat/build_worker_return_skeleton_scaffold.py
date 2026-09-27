@@ -282,6 +282,11 @@ externalAgentInvocationCount: {getattr(args, "cumulative_external_invocation_cou
 providerCallCount: 0
 tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: provider-neutral scaffold has no usage meter
 terminalReadinessVerdict: BLOCKED_WITH_REASON: generated scaffold pending worker evidence
+## Recurring Blocked-Return Escalation
+recurrenceDisposition: NOT_APPLICABLE_WITH_REASON - replace with FIRST_OCCURRENCE or RECURRING_CLUSTER_STOP when Status is BLOCKED_WITH_REASON
+priorRelatedFinding: NOT_APPLICABLE_WITH_REASON - replace with the exact governed prior path for a recurring cluster
+operatorNoticeDisposition: NOT_APPLICABLE_WITH_REASON - replace with OPERATOR_NOTICE_REQUIRED for a recurring cluster
+successorFreezeDisposition: NOT_APPLICABLE_WITH_REASON - replace with FEATURE_SUCCESSORS_FROZEN for a recurring cluster
 ## Purpose
 TO_FILL: state the mission prompt for this worker return.
 ## Scope / Methodology

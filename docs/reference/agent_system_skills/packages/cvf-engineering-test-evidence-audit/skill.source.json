@@ -13,5 +13,5 @@
   "internalAgentDisposition": "IMPLEMENTED",
   "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
   "cvfAdaptationBoundary": "CVF-owned advisory test-evidence-audit guidance compressed from the accepted R1/S02 content candidate; no third-party skill import",
-  "claimBoundary": "APPROVED package; UAT PASSED and certification CERTIFIED per the five-case source-based review at docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md; internalAgentDisposition IMPLEMENTED grants explicit internal runtime-loader body-read eligibility only; no ACTIVE status, truth packet, resolver selection, automatic invocation, external adapter, or provider/live/public/production authority exists at this phase"
+  "claimBoundary": "APPROVED package; UAT PASSED and certification CERTIFIED per the five-case source-based review at docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md; internalAgentDisposition IMPLEMENTED grants explicit internal runtime-loader body-read eligibility only; an approved STRICT P6 source truth packet exists at docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-evidence-audit.json; no ACTIVE status, resolver selection, automatic invocation, external adapter, or provider/live/public/production authority exists at this phase"
 }

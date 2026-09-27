@@ -3499,7 +3499,7 @@
       "authorityCeiling": "bounded advisory content guidance only; a label never mutates a test result, a checker verdict, or a file, and never authorizes deleting or skipping a test",
       "candidateState": "APPROVED",
       "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
-      "capabilityBoundary": "P5 APPROVED package; UAT PASSED and certification CERTIFIED per docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md; internal disposition IMPLEMENTED grants explicit internal runtime-loader body-read eligibility only; no ACTIVE status, truth packet, resolver selection, host installation, or test/fixture/evaluation execution authority",
+      "capabilityBoundary": "P5 APPROVED package with an approved STRICT P6 source truth packet at docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-evidence-audit.json; UAT PASSED and certification CERTIFIED per docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md; internal disposition IMPLEMENTED grants explicit internal runtime-loader body-read eligibility only; no ACTIVE status, resolver selection, host installation, or test/fixture/evaluation execution authority",
       "certificationState": "CERTIFIED",
       "compositionOrder": 34,
       "conflicts": [],
@@ -3553,7 +3553,7 @@
         "reviewer",
         "dispatcher"
       ],
-      "rollback": "restore this registry entry and package root to their pre-P4 PROPOSED-absent state and regenerate both canonical projections; no truth packet exists to roll back",
+      "rollback": "restore this registry entry and package root to their pre-P4 PROPOSED-absent state, remove the P6 truth packet at docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-evidence-audit.json, and regenerate all canonical projections",
       "safeStop": "if the named test file is absent or does not reference the named source symbol, stop at DEFER_WITH_REASON with a no-match reason rather than substituting a different file",
       "shellAssumptions": "no shell execution required or authorized for this contract-only PROPOSED package",
       "sideEffects": "none from metadata or package-body loading; the compressed instruction body itself performs no execution; any future approval, UAT, certification, truth, or evaluation requires separate authorization",

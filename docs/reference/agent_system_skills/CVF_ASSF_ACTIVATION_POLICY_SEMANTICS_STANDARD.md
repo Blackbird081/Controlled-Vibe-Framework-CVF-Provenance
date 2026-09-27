@@ -10,6 +10,10 @@ docType: reference_standard
 
 Batch ID: ASCP-T2
 
+EPISTEMIC_PROCESS_NA_WITH_REASON: reference standard defining state semantics
+and a bounded helper contract; it does not itself make an evidence-comparison
+or hypothesis-testing claim.
+
 ## Purpose
 
 Define the CVF-owned semantics for the four ASSF activation-policy states:
@@ -34,6 +38,27 @@ This standard does not create automatic package activation, lifecycle mutation
 to `ACTIVE`, external CLI/MCP adapter behavior, provider runtime interception,
 provider/live proof, public export, package body execution, or authority beyond
 the active governed work order.
+
+## Lifecycle Gate Precondition
+
+`ACTIVATION_READY` requires the source registry `status` to be `ACTIVE`, not
+merely `APPROVED` with an approved truth packet. The canonical five-row
+lifecycle/truth decision matrix that both
+`governance/compat/run_assf_active_resolver.py` and
+`governance/compat/generate_skill_control_plane_inventory.py` must implement
+identically is defined once in
+`docs/reference/agent_system_skills/CVF_PACKAGE_SKILL_PRODUCTIONIZATION_SOP.md`
+under "P6/P8 Activation-Decision Matrix"; this standard does not restate it. A
+P6 truth admission (`TRUTH_APPROVED`) is necessary but not sufficient for
+`ACTIVATION_READY`: both the resolver and the inventory deny with the shared
+`DENIED_SOURCE_NOT_ACTIVE` token when the source `status` has not also
+reached P8's `ACTIVE` state.
+
+For internal consumers, inventory and resolver also share the matrix's denial
+priority and exact tokens: runtime ineligibility precedes truth evaluation;
+missing truth uses `DENIED_MISSING_TRUTH_PACKET`; present but invalid truth
+uses `DENIED_TRUTH_NOT_APPROVED`. A projection-specific alias is not semantic
+parity and must fail the cross-surface hostile matrix.
 
 ## State Semantics
 

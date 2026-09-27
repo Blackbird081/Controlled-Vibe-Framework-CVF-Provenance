@@ -15,6 +15,10 @@ enumerate, map, or project CVF state.
 **Applies to:** any agent or operator working on a future ADIF tranche
 (ADIF-T1 through T5).
 
+EPISTEMIC_PROCESS_NA_WITH_REASON: navigation front-door reference; it points to
+tranche outputs and canonical owners, it does not itself make an evidence
+comparison or hypothesis-testing claim.
+
 ## Purpose
 
 ADIF is a planned, bounded, task-scoped defect-intelligence lookup layer.
@@ -44,7 +48,12 @@ ADIF itself owns.
    - the fixed entry field template every entry must follow.
 4. `docs/reference/agent_defect_intelligence/entries/` - eight seed entries
    (`ADIF-0001` through `ADIF-0008`), each citing canonical evidence and an
-   `enforcementLevel`.
+   `enforcementLevel`. The entry set has grown past the seed batch as later
+   tranches recorded newly confirmed recurring defects (most recently
+   `ADIF-0060`, the NCR-R1/S07-R1 activation-decision status-gate omission
+   and Finding-To-Governance heading escape); this front door does not
+   restate every entry, only the seed-batch orientation and the resolver
+   contract that reads the full `entries/` directory.
 5. `docs/reference/agent_defect_intelligence/CVF_ADIF_T2_RESOLVER_CONTRACT.md`
    - the read-only resolver's input/output contract.
 6. `docs/baselines/CVF_GC018_ADIF_CONTINUOUS_EXECUTION_AUTHORIZATION_2026-06-22.md`
