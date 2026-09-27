@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current material HEAD recorded for this handoff: `f7d8e4842` for batch `CVF-NCR-R1-S07-R1` root reconciliation closure; atomic continuity-rebind parent: `f7d8e4842`. The closure admits P6 truth, requires lifecycle `ACTIVE` plus valid truth for `ACTIVATION_READY`, establishes exact inventory/resolver parity, and makes recurrent blocker detection/notice/freeze machine-enforced. Two worker scope violations are recorded and excluded from acceptance evidence. No `ACTIVE` transition, P7-P10 execution, package-body invocation, external adapter, provider/network/live, public-sync or production authority follows.
+Current material HEAD recorded for this handoff: `0f7367f78` for batch `CVF-NCR-R1-S07-POSTCLOSE-CORRECTION`; atomic continuity-rebind parent: `0f7367f78`. The bounded prerequisite correction aligns the downstream activation-policy oracle with the repaired ACTIVE gate, adds an explicit APPROVED denial case, and repairs the S07 return's N/A corpus-verdict shape plus its bound digest. Pre-commit passed 90/90. R1/S07-R1 remains closed, the package remains APPROVED, and the next move remains P7 packet authoring only. No P7 execution, `ACTIVE`, P8-P10, package-body invocation, external adapter, provider/network/live, public-sync or production authority follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
