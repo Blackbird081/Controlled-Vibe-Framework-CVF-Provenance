@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NCR-R1-S05
 
@@ -42,24 +42,24 @@ Return contract: create the package trio, update the registry entry and selectio
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this R1/S05 packet | `DISPATCH_READY` | PASS_FOR_DISPATCH |
-| Completion/reviewer artifact | future Local completion | distinct review after worker return | BLOCKED with reason: execution pending |
-| Roadmap state | NCR D013 | separately authorized P4 slice | PASS_FOR_DISPATCH |
-| Registry JSON | existing order 34 entry | `PROPOSED` plus package canonical root | PASS_FOR_DISPATCH |
-| Registry Markdown | existing README | no edit required | N/A with reason: machine source/projections own this phase |
+| Work order status | this R1/S05 packet | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S05_TEST_EVIDENCE_AUDIT_PACKAGE_ROOT_PROPOSAL_COMPLETION_2026-09-27.md` | Local acceptance with one-line continuity repair | PASS |
+| Roadmap state | NCR D013 | bounded P4 closure; no automatic successor | PASS |
+| Registry JSON | existing order 34 entry | `PROPOSED` plus package canonical root | PASS |
+| Registry Markdown | package README front door | P4 documentation created | PASS |
 | External evidence digest | none | internal governed sources | N/A with reason: no external intake |
-| System loop interlock | selection profile and inventory | guidance only; no runtime activation | PASS_FOR_DISPATCH |
+| System loop interlock | selection profile and inventory | aligned guidance only; no runtime activation | PASS |
 | Session continuity | active handoff/state | Local post-material sync | BLOCKED with reason: follows dispatch commit |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Candidate identity | order 34 unchanged | current P3 source exists once | PASS |
-| Lifecycle | `PROPOSED`, contract-only | exact P4 target | PASS_FOR_DISPATCH |
-| Package anatomy | README, SKILL, source | named exact paths and anatomy gate | PASS_FOR_DISPATCH |
-| Generated state | two deterministic projections | generators/checkers enumerated | PASS_FOR_DISPATCH |
-| Runtime receipt | none | prohibited | PASS_FOR_DISPATCH |
+| Candidate identity | order 34 unchanged | source exists once and order is preserved | PASS |
+| Lifecycle | `PROPOSED`, contract-only | registry/source aligned | PASS |
+| Package anatomy | README, SKILL, source | anatomy gate PASS | PASS |
+| Generated state | two deterministic projections | both canonical checks PASS | PASS |
+| Runtime receipt | none | none claimed | PASS |
 
 ## Purpose
 

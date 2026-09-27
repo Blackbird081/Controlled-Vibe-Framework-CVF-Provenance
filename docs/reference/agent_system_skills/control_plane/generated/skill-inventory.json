@@ -25,6 +25,7 @@
     "source-driven-development": 1,
     "spec-driven-development": 1,
     "test-driven-development": 1,
+    "test-evidence-disposition": 1,
     "worker-return-review": 1
   },
   "driftSummary": {},
@@ -3359,7 +3360,7 @@
         "truthPacketRequired": false
       },
       "cliMcp": {
-        "adapterContract": "N/A with reason: no package root or adapter exists at ASSF SOP P3; adapter authorship requires a separate later-phase work order",
+        "adapterContract": "N/A with reason: no external CLI/MCP adapter exists at ASSF SOP P4; adapter authorship requires a separate later-phase work order",
         "adapterEvidence": "N/A with reason: no adapter implemented at this phase",
         "disposition": "DEFERRED_WITH_REASON"
       },
@@ -3367,23 +3368,24 @@
         "violations": []
       },
       "packageRoot": {
-        "exists": false,
-        "rootPath": null,
-        "sourceJsonPath": null,
-        "sourceLifecycleState": null
+        "exists": true,
+        "rootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
+        "sourceJsonPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/skill.source.json",
+        "sourceLifecycleState": "PROPOSED"
       },
       "registry": {
         "approvalState": "AWAITING_REVIEW",
-        "candidateState": "CANDIDATE",
-        "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-test-evidence-audit.json",
+        "candidateState": "PROPOSED",
+        "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
         "certificationState": "NOT_STARTED",
-        "internalAgentDisposition": "CANDIDATE",
+        "internalAgentDisposition": "CONTRACT_ONLY",
         "name": "CVF Engineering Test Evidence Audit",
         "reviewArtifacts": [
-          "docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md"
+          "docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md",
+          "docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md"
         ],
         "skillId": "cvf-engineering-test-evidence-audit",
-        "status": "CANDIDATE",
+        "status": "PROPOSED",
         "uatState": "NOT_STARTED"
       },
       "runtime": {
@@ -3391,27 +3393,59 @@
         "ineligibilityReasons": [
           "CERTIFICATION_NOT_CERTIFIED",
           "UAT_NOT_PASSED",
-          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED",
-          "PACKAGE_ROOT_OUT_OF_SCOPE"
+          "INTERNAL_DISPOSITION_NOT_IMPLEMENTED"
         ]
       },
       "selection": {
-        "agentUseCases": [],
-        "domainGroup": null,
-        "expectedOutputContribution": null,
-        "intendedUsers": [],
-        "notRecommendedWhen": [],
-        "outputGoals": [],
-        "primaryDomain": null,
-        "recommendedWhen": [],
-        "secondaryDomains": [],
-        "selectionKeywords": [],
-        "selectionPriority": null,
-        "specSignals": []
+        "agentUseCases": [
+          "check whether an asserted proof claim is actually tested",
+          "give a KEEP/REPAIR/CONSOLIDATE/ADD/DEFER_WITH_REASON disposition for one existing-proof claim",
+          "read actual test assertions instead of trusting a docstring or claim sentence"
+        ],
+        "domainGroup": "engineering",
+        "expectedOutputContribution": "One advisory row disposing an existing-proof claim, with cited evidence and a next-owner action, never a test PASS or deletion permission.",
+        "intendedUsers": [
+          "worker",
+          "reviewer",
+          "dispatcher"
+        ],
+        "notRecommendedWhen": [
+          "the task is authoring a new failing test before implementation exists (TDD's trigger)",
+          "the task is reviewing a diff or PR for correctness/simplification/efficiency defects (code-review's trigger)",
+          "the task requires actually running, evaluating, or deleting the named test"
+        ],
+        "outputGoals": [
+          "advisory disposition row",
+          "cited test-assertion evidence",
+          "next-owner action, not a test result"
+        ],
+        "primaryDomain": "test-evidence-disposition",
+        "recommendedWhen": [
+          "a comment, commit message, docstring, or prior review asserts a source file is tested or covered, and the claim needs an advisory check before being trusted or extended"
+        ],
+        "secondaryDomains": [
+          "test-driven-development",
+          "code-review-quality"
+        ],
+        "selectionKeywords": [
+          "is this tested",
+          "existing test coverage claim",
+          "test evidence audit",
+          "verify existing proof claim",
+          "advisory test disposition"
+        ],
+        "selectionPriority": 40,
+        "specSignals": [
+          "test evidence audit",
+          "advisory test disposition",
+          "keep repair consolidate add defer"
+        ]
       },
       "skillId": "cvf-engineering-test-evidence-audit",
       "taxonomy": [
-        "ASSF_REGISTRY_ENTRY"
+        "ASSF_REGISTRY_ENTRY",
+        "ASSF_PACKAGE_ROOT",
+        "SPEC_SELECTION_PROFILE"
       ],
       "truth": {
         "exists": false,
@@ -3441,19 +3475,22 @@
   "statusCounts": {
     "candidateState": {
       "ACTIVE": 25,
-      "CANDIDATE": 9
+      "CANDIDATE": 8,
+      "PROPOSED": 1
     },
     "certificationState": {
       "CERTIFIED": 26,
       "NOT_STARTED": 8
     },
     "internalAgentDisposition": {
-      "CANDIDATE": 9,
+      "CANDIDATE": 8,
+      "CONTRACT_ONLY": 1,
       "IMPLEMENTED": 25
     },
     "status": {
       "ACTIVE": 25,
-      "CANDIDATE": 9
+      "CANDIDATE": 8,
+      "PROPOSED": 1
     },
     "uatState": {
       "NOT_STARTED": 8,
@@ -3467,10 +3504,10 @@
     "cliMcpAdapterPackages": 25,
     "crossSurfaceDriftViolationCount": 0,
     "externalProviderRuntimeSkillMappings": 0,
-    "packageRoots": 25,
+    "packageRoots": 26,
     "publicProdPackages": 0,
     "runtimeEligiblePackages": 25,
-    "selectionProfiledPackages": 25,
+    "selectionProfiledPackages": 26,
     "templateMapEntries": 58,
     "webProjectionItems": 53,
     "webProjectionOnlyItems": 27

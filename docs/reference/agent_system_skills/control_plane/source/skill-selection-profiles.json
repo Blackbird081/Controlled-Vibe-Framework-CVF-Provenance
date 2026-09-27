@@ -814,6 +814,52 @@
     },
     {
       "agentUseCases": [
+        "check whether an asserted proof claim is actually tested",
+        "give a KEEP/REPAIR/CONSOLIDATE/ADD/DEFER_WITH_REASON disposition for one existing-proof claim",
+        "read actual test assertions instead of trusting a docstring or claim sentence"
+      ],
+      "domainGroup": "engineering",
+      "expectedOutputContribution": "One advisory row disposing an existing-proof claim, with cited evidence and a next-owner action, never a test PASS or deletion permission.",
+      "intendedUsers": [
+        "worker",
+        "reviewer",
+        "dispatcher"
+      ],
+      "notRecommendedWhen": [
+        "the task is authoring a new failing test before implementation exists (TDD's trigger)",
+        "the task is reviewing a diff or PR for correctness/simplification/efficiency defects (code-review's trigger)",
+        "the task requires actually running, evaluating, or deleting the named test"
+      ],
+      "outputGoals": [
+        "advisory disposition row",
+        "cited test-assertion evidence",
+        "next-owner action, not a test result"
+      ],
+      "primaryDomain": "test-evidence-disposition",
+      "recommendedWhen": [
+        "a comment, commit message, docstring, or prior review asserts a source file is tested or covered, and the claim needs an advisory check before being trusted or extended"
+      ],
+      "secondaryDomains": [
+        "test-driven-development",
+        "code-review-quality"
+      ],
+      "selectionKeywords": [
+        "is this tested",
+        "existing test coverage claim",
+        "test evidence audit",
+        "verify existing proof claim",
+        "advisory test disposition"
+      ],
+      "selectionPriority": 40,
+      "skillId": "cvf-engineering-test-evidence-audit",
+      "specSignals": [
+        "test evidence audit",
+        "advisory test disposition",
+        "keep repair consolidate add defer"
+      ]
+    },
+    {
+      "agentUseCases": [
         "set up agent context",
         "discover rules",
         "manage context budget"

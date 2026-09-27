@@ -4,7 +4,7 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 
 Batch ID: CVF-NCR-R1-S05
 
@@ -18,24 +18,24 @@ Decision owner: Local orchestrator/reviewer; operator retains data, effect, expe
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired R1/S05 work order | `DISPATCH_READY` | PASS_FOR_DISPATCH |
-| Completion or reviewer artifact | future Local completion review | worker return then distinct Local disposition | BLOCKED with reason: worker has not executed |
-| Roadmap state | NCR roadmap D013 | separately authorized SOP P4 slice | PASS_FOR_DISPATCH |
-| Registry JSON | existing order 34 entry | advance only to `PROPOSED` with package-root binding | PASS_FOR_DISPATCH |
-| Registry Markdown | existing registry README | no semantic edit required | N/A with reason: package sources and machine projections own this phase |
+| Work order status | paired R1/S05 work order | `CLOSED_PASS_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S05_TEST_EVIDENCE_AUDIT_PACKAGE_ROOT_PROPOSAL_COMPLETION_2026-09-27.md` | Local acceptance with continuity repair | PASS |
+| Roadmap state | NCR roadmap D013 | bounded SOP P4 closure; no automatic successor | PASS |
+| Registry JSON | existing order 34 entry | `PROPOSED` with package-root binding | PASS |
+| Registry Markdown | package README front door | P4 package documentation created | PASS |
 | External evidence digest | none | internal governed sources only | N/A with reason: no external intake |
-| System loop interlock | ASSF contracts and control plane | selection guidance only; no runtime activation | PASS_FOR_DISPATCH |
+| System loop interlock | ASSF contracts and control plane | selection guidance only; inventory aligned; no runtime activation | PASS |
 | Session continuity | active handoff and state | separate post-material sync | BLOCKED with reason: follows dispatch material commit |
 
 ## Acceptance Receipt Assertion Matrix
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| Candidate identity | existing order 34 candidate | source entry and both projections aligned at S04 closure | PASS |
-| SOP phase | P4 package-root proposal only | package body/source plus required metadata projections | PASS_FOR_DISPATCH |
-| Lifecycle | `PROPOSED` | UAT and certification remain `NOT_STARTED`; no runtime eligibility | PASS_FOR_DISPATCH |
-| Worker manifest | exactly eight paths | package trio, registry, selection profiles, two generated aggregates, return | PASS_FOR_DISPATCH |
-| Runtime/provider effect | none | prohibited | PASS_FOR_DISPATCH |
+| Candidate identity | existing order 34 candidate | order preserved; source and projections aligned | PASS |
+| SOP phase | P4 package-root proposal only | package body/source plus required metadata projections | PASS |
+| Lifecycle | `PROPOSED` | UAT and certification remain `NOT_STARTED`; no runtime eligibility | PASS |
+| Worker manifest | exactly eight paths | package trio, registry, selection profiles, two generated aggregates, return | PASS |
+| Runtime/provider effect | none | none observed or claimed | PASS |
 
 ## Purpose
 

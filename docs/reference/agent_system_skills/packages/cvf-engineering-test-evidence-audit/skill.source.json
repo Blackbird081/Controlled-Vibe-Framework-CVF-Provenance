@@ -1,0 +1,16 @@
+{
+  "skillId": "cvf-engineering-test-evidence-audit",
+  "originLane": "CVF-NCR-R1-S05",
+  "sourceArtifacts": [
+    "docs/audits/CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_CANDIDATE_2026-09-27.md",
+    "docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md",
+    "docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md"
+  ],
+  "lifecycleState": "PROPOSED",
+  "uatState": "NOT_STARTED",
+  "certificationState": "NOT_STARTED",
+  "internalAgentDisposition": "CONTRACT_ONLY",
+  "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+  "cvfAdaptationBoundary": "CVF-owned advisory test-evidence-audit guidance compressed from the accepted R1/S02 content candidate; no third-party skill import",
+  "claimBoundary": "PROPOSED contract-only package root; no approval, UAT, certification, truth packet, resolver selection, receipt-backed execution, or runtime eligibility exists at this phase"
+}

@@ -4,18 +4,19 @@
   "name": "CVF Engineering Test Evidence Audit",
   "version": "0.1.0",
   "owner": "CVF NCR D013 engineering-skill-content surface",
-  "status": "CANDIDATE",
-  "canonicalRoot": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-test-evidence-audit.json",
+  "status": "PROPOSED",
+  "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
   "originLane": "CVF-NCR-R1-S04",
   "sourceArtifacts": [
     "docs/audits/CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_CANDIDATE_2026-09-27.md",
     "docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md",
-    "docs/reviews/CVF_CVF_NCR_R0_S01_CORE_SKILLS_RECONCILIATION_WORKER_RETURN_2026-09-27.md"
+    "docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md"
   ],
   "legacyRows": [],
   "license": "CVF_PRIVATE_GOVERNED",
   "reviewArtifacts": [
-    "docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md"
+    "docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md",
+    "docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md"
   ],
   "purpose": "Give an advisory KEEP/REPAIR/CONSOLIDATE/ADD/DEFER_WITH_REASON disposition for one asserted existing-proof claim tied to a named source file and a named test file, by reading the actual test assertions rather than trusting the claim sentence or a docstring.",
   "triggerPatterns": [
@@ -59,15 +60,15 @@
     "one advisory artifact row: target, label, cited evidence, reason, confidence/unknowns, next owner/action",
     "no test PASS, no deletion permission, no runtime receipt"
   ],
-  "executionConstraints": "advisory only; loading or reading this metadata or its source candidate never authorizes running the named test, fixture creation, or any Git mutation; a KEEP/REPAIR/CONSOLIDATE/ADD/DEFER_WITH_REASON label is a recommendation attached to a target, evidence, and reason, never a test result",
-  "acceptanceEvidence": "docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md (content accepted; worker's prohibited fixture/pytest execution recorded as a disclosed scope violation and explicitly excluded from acceptance evidence)",
+  "executionConstraints": "advisory only; loading or reading this metadata, the package body, or the accepted content source never authorizes running the named test, fixture creation, or any Git mutation; a KEEP/REPAIR/CONSOLIDATE/ADD/DEFER_WITH_REASON label is a recommendation attached to a target, evidence, and reason, never a test result",
+  "acceptanceEvidence": "docs/reviews/CVF_CVF_NCR_R1_S02_TEST_EVIDENCE_AUDIT_CONTENT_COMPLETION_2026-09-27.md (content accepted; worker's prohibited fixture/pytest execution recorded as a disclosed scope violation and explicitly excluded from acceptance evidence); docs/reviews/CVF_CVF_NCR_R1_S04_TEST_EVIDENCE_AUDIT_METADATA_CANDIDATE_COMPLETION_2026-09-27.md (P3 metadata accepted with recorded worker scope violation for an unauthorized Git-mutation diagnostic, also excluded from acceptance evidence)",
   "riskProfile": "R0",
   "authorityCeiling": "bounded advisory content guidance only; a label never mutates a test result, a checker verdict, or a file, and never authorizes deleting or skipping a test",
-  "sideEffects": "none from metadata loading; the accepted content candidate itself performs no execution; any future package body or evaluation requires separate authorization",
+  "sideEffects": "none from metadata or package-body loading; the compressed instruction body itself performs no execution; any future approval, UAT, certification, truth, or evaluation requires separate authorization",
   "permissions": "read the named source file, the named test file, and any directly imported helper module the assertion depends on; no repository-wide read is claimed",
-  "rollback": "remove this registry entry and regenerate the canonical skill index; no package root, source record, or truth packet exists to roll back",
+  "rollback": "restore this registry entry and package root to their pre-P4 PROPOSED-absent state and regenerate both canonical projections; no truth packet exists to roll back",
   "safeStop": "if the named test file is absent or does not reference the named source symbol, stop at DEFER_WITH_REASON with a no-match reason rather than substituting a different file",
-  "candidateState": "CANDIDATE",
+  "candidateState": "PROPOSED",
   "approvalState": "AWAITING_REVIEW",
   "uatState": "NOT_STARTED",
   "certificationState": "NOT_STARTED",
@@ -77,15 +78,15 @@
   "dependencies": [],
   "conflicts": [],
   "compositionOrder": 34,
-  "capabilityBoundary": "P3 metadata-only CANDIDATE; no package root, SKILL.md, source record, or truth packet exists; no commit, no provider call, no runtime activation, no external-agent adapter, no test/fixture/evaluation execution authority",
-  "internalAgentDisposition": "CANDIDATE",
-  "resolverBehavior": "metadata-only; resolver returns identity and selector fields only; does not open any SKILL.md or instruction body because none exists at this phase",
-  "loaderBoundary": "loading this metadata never grants authority to commit, activate, execute a test, delete a test, or expand any active work order",
+  "capabilityBoundary": "P4 contract-only PROPOSED package; README, SKILL.md, and skill.source.json exist as a compact instruction body; no approval, UAT, certification, truth packet, resolver selection, host installation, or test/fixture/evaluation execution authority",
+  "internalAgentDisposition": "CONTRACT_ONLY",
+  "resolverBehavior": "metadata-only; resolver returns identity and selector fields only; opening the package body still requires an explicit, separately authorized selection under active governed work-order authority",
+  "loaderBoundary": "loading this metadata or the package body never grants authority to commit, activate, execute a test, delete a test, or expand any active work order",
   "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
-  "adapterContract": "N/A with reason: no package root or adapter exists at ASSF SOP P3; adapter authorship requires a separate later-phase work order",
+  "adapterContract": "N/A with reason: no external CLI/MCP adapter exists at ASSF SOP P4; adapter authorship requires a separate later-phase work order",
   "adapterEvidence": "N/A with reason: no adapter implemented at this phase",
-  "externalMutationBoundary": "no external mutation permitted; this candidate has no package body to expose through any adapter",
-  "platformCompatibility": "cross-platform metadata; content candidate is prose-only and platform-neutral",
-  "shellAssumptions": "no shell execution required or authorized for this metadata-only candidate",
+  "externalMutationBoundary": "no external mutation permitted; this PROPOSED package has no adapter to expose it externally",
+  "platformCompatibility": "cross-platform metadata; package body is prose-only and platform-neutral",
+  "shellAssumptions": "no shell execution required or authorized for this contract-only PROPOSED package",
   "osConstraints": "none"
 }
