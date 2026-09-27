@@ -2,7 +2,7 @@
 
 Memory class: governed-dispatch-baseline
 
-Status: HOLD_PENDING_OPERATOR_DECISION
+Status: DISPATCH_READY
 
 Batch ID: CVF-NCR-R1-S10
 
@@ -10,7 +10,7 @@ Dispatch base head: `acfe300bb`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
-Decision owner: Local orchestrator/reviewer; operator owns release of the one live provider call.
+Decision owner: Local orchestrator/reviewer; operator released exactly one live provider call on 2026-09-28.
 
 Reviewer owner: Local independent reviewer/closer.
 
@@ -21,8 +21,8 @@ Worker target: one shared-workspace `INTERNAL_AGENT` worker after checkpoint rel
 Define the bounded P9 instruction-use proof for
 `cvf-engineering-test-evidence-audit`: one dry adapter proof followed by at
 most one live Alibaba/DashScope provider call, one file-backed
-`CVF_ASSF_PACKAGE_USE_PROOF_RECEIPT`, and one worker return. This baseline is
-held because live/provider authority has not yet been released.
+`CVF_ASSF_PACKAGE_USE_PROOF_RECEIPT`, and one worker return. Provider authority
+is limited to the exact one-call grant carried by the paired work order.
 
 ## Scaffold Provenance Block
 
@@ -41,7 +41,7 @@ held because live/provider authority has not yet been released.
 | Dependency | Current evidence | Release rule | Disposition |
 |---|---|---|---|
 | `docs/reviews/CVF_CVF_NCR_R1_S09_R1_ACTIVE_EXTERNAL_ADAPTER_ADMISSION_ROOT_RECONCILIATION_2026-09-28.md` | P8 `CLOSED_PASS_BOUNDED`; material `218093215`; internal `ACTIVATION_READY`; external body/output denied | P9 may be authored without altering lifecycle or external adapter posture | RELEASED_FOR_AUTHORING |
-| operator live checkpoint | provider/live remained parked in continuity at packet base | exact operator release is required before status may become `DISPATCH_READY` | HOLD_PENDING_OPERATOR_DECISION |
+| operator live checkpoint | operator gave an affirmative response on 2026-09-28 after Local stated exact model, one-call ceiling and no-retry boundary | paired packet binds the exact executable provider grant | RELEASED_EXACTLY_ONE_CALL |
 
 ## Source Verification Block
 
@@ -60,6 +60,20 @@ held because live/provider authority has not yet been released.
 | literalTokensReviewed | held status; P9 phase; dry/live dispositions; receipt and return tokens |
 | gateRunPurpose | confirm held packet shape and semantic feasibility |
 | claimBoundary | checker read-ahead is not execution evidence |
+
+## ADIF Defect Registry Disclosure
+
+Resolver query: taskClass=`package_skill_productionization`, role=`dispatcher`, lifecyclePhase=`dispatch`.
+
+Returned defects: NONE_RETURNED
+
+| Field | Value |
+|---|---|
+| Resolver command | `python governance/compat/run_adif_defect_resolver.py --task-class package_skill_productionization --role dispatcher --lifecycle-phase dispatch --json` |
+| Returned defect count | 0 |
+| Returned defects | none |
+| Disclosed defectIds | none |
+| Dispatch impact | no registered defect changes the released exact one-call boundary |
 
 ## Negative Search And Collision Discipline
 
@@ -81,7 +95,7 @@ held because live/provider authority has not yet been released.
 
 Authoring evidence is the exact source-verification table, collision search,
 target-state feasibility gate, dispatch author fast gate, reviewer-fast gate
-and pre-commit result. Execution evidence remains unavailable while held and
+and pre-commit result. Execution evidence remains unavailable before the worker and
 must not be inferred from packet completeness.
 
 ## Package Skill Productionization Control Block
@@ -96,15 +110,16 @@ Prior phase evidence: S09 root-reconciliation completion.
 
 Next forbidden skip: P10 production runtime.
 
-Runtime/provider proof: held; future one-call proof only.
+Runtime/provider proof: released exact one-call proof; evidence pending worker.
 
 Claim boundary: baseline is not a use-proof receipt.
 
 ## Claim Boundary
 
-This held baseline authorizes packet preparation only. It does not authorize
-the worker, package body read, output consumption, provider call, P10,
-external adapter, public sync, deployment or production use.
+This baseline authorizes one internal worker to run the exact dry proof and at
+most one granted live provider call, then return evidence without commit. It
+does not authorize retry, P10, external adapter, public sync, deployment or
+production use.
 
 ## Public Export Disposition
 
@@ -116,12 +131,12 @@ Reason: private P9 dispatch packet and future secret-safe proof evidence.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | paired S10 work order | `HOLD_PENDING_OPERATOR_DECISION` | PASS |
-| Completion or reviewer artifact | future worker return | not executed | N/A with reason: held |
+| Work order status | paired S10 work order | `DISPATCH_READY` | PASS |
+| Completion or reviewer artifact | future worker return | not executed | N/A with reason: pending worker |
 | Roadmap state | NCR D013 P9 | packet authored; P10 closed | PASS |
 | Registry JSON | target registry/truth/index | unchanged | PASS |
 | Registry Markdown | target package | unchanged | PASS |
-| External evidence digest | future use-proof JSON | absent while held | N/A with reason: held |
+| External evidence digest | future use-proof JSON | pending worker execution | N/A with reason: pending execution |
 | System loop interlock | active resolver and external projection | internal ready; external denied | PASS |
 | Session continuity | active session surfaces | pending packet commit | BLOCKED with reason: commit pending |
 
@@ -129,8 +144,8 @@ Reason: private P9 dispatch packet and future secret-safe proof evidence.
 
 | Assertion | Required value | Observed value | Status |
 |---|---|---|---|
-| packet state | held before live release | `HOLD_PENDING_OPERATOR_DECISION` | PASS |
-| dry proof | exact dry readiness token | not run | N/A with reason: held |
-| live receipt | `LIVE_PROVIDER_USE_PROOF_PASS` and receipt | not run | N/A with reason: held |
-| provider calls | at most one after release | zero at authoring | PASS |
+| packet state | released only after explicit checkpoint | `DISPATCH_READY` after operator release | PASS |
+| dry proof | exact dry readiness token | not run | N/A with reason: pending worker |
+| live receipt | `LIVE_PROVIDER_USE_PROOF_PASS` and receipt | not run | N/A with reason: pending worker |
+| provider calls | at most one under exact grant | zero before worker start | PASS |
 

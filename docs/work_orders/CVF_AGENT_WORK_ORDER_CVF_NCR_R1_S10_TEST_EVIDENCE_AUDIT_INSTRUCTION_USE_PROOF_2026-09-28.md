@@ -4,15 +4,13 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: HOLD_PENDING_OPERATOR_DECISION
+Status: DISPATCH_READY
 
 Batch ID: CVF-NCR-R1-S10
 
 Dispatch base head: `acfe300bb`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
-
-providerExecutionAuthority: FORBIDDEN
 
 Worker: one shared-workspace `INTERNAL_AGENT` worker after release
 
@@ -22,12 +20,35 @@ Worker return path: `docs/reviews/CVF_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUC
 
 ## Dispatch Prompt Envelope
 
-Role: internal P9 evidence worker. Canonical packet: this file. Commit mode:
-`WORKER_MUST_NOT_COMMIT`. Capture `executionBaseHead` before edits. This packet
-is held and must not be executed until its status and paired baseline are
-changed to `DISPATCH_READY` by Local after an explicit operator live-release
-checkpoint. After release, execute the exact manifest and commands without
-asking the operator to choose a technical repair.
+Role: INTERNAL_AGENT P9 evidence worker.
+
+Canonical packet: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md`.
+
+Commit mode: `WORKER_MUST_NOT_COMMIT`.
+
+executionBaseHead: capture the exact clean committed release HEAD before edits.
+
+Current-time notes: release date is 2026-09-28; the one-call grant expires at
+2026-09-29T23:59:59+07:00.
+
+Do-not-misread notes: one provider call maximum, no retry; dry readiness is not
+P9 PASS; P10 remains closed; never ask the operator to choose a technical repair.
+
+Required first actions: read the startup/guard surfaces and paired packet,
+capture HEAD/status, then run the exact pre-implementation gate before reading
+the package instruction body.
+
+Return contract: leave exactly the two worker-owned paths uncommitted with empty
+staging; return `COMPLETE_PENDING_REVIEW` or `BLOCKED_WITH_REASON`.
+
+providerExecutionAuthority: ORCHESTRATOR_GRANT_REQUIRED
+providerExecutionGrantOwner: ORCHESTRATOR
+providerExecutionGrantSubject: CVF-NCR-R1-S10-P9-INTERNAL-WORKER
+providerExecutionGrantDelegationId: CVF-NCR-R1-S10-P9-ONE-CALL-20260928
+providerExecutionGrantMaxCalls: 1
+providerExecutionGrantExpiresAt: 2026-09-29T23:59:59+07:00
+providerExecutionGrantProviderAllowlist: alibaba-dashscope
+providerExecutionGrantModelAllowlist: qwen3.7-flash-2026-07-15
 
 ## Purpose
 
@@ -100,7 +121,7 @@ reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 |---|---|---|---|
 | P8 closure | `docs/reviews/CVF_CVF_NCR_R1_S09_R1_ACTIVE_EXTERNAL_ADAPTER_ADMISSION_ROOT_RECONCILIATION_2026-09-28.md`; internal `ACTIVATION_READY` | unchanged ACTIVE/STRICT/internal-only state | RELEASED_FOR_P9 |
 | root dispatch hardening | material commit `e14b367b2`; feasibility gate bound to pre-dispatch and pre-implementation | this work order passes exact active-work-order check | RELEASED |
-| operator live checkpoint | provider/live parked at dispatch base | operator explicitly releases exactly one live call; Local then changes both packet statuses and runs pre-dispatch | HOLD_PENDING_OPERATOR_DECISION |
+| operator live checkpoint | operator gave an affirmative response on 2026-09-28 after exact model, one-call ceiling and no-retry boundary were stated | bind exact grant and pass pre-dispatch before worker start | RELEASED_EXACTLY_ONE_CALL |
 
 ## Authority Chain
 
@@ -109,6 +130,10 @@ Roadmap P9 intent -> active session next move -> this paired GC-018/work order
 and closure. Packet authoring grants no execution authority by itself.
 
 ## Task Governance Routing Manifest
+
+```json
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-R1-S10","requestedProfile":"P4_CRITICAL","classification":{"taskKind":"LIVE_PROOF","authorityImpact":"USES_EXISTING_OWNER","externalEffect":"NETWORK_WRITE","dataSensitivity":"CREDENTIAL_REFERENCE","reversibility":"PARTIALLY_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"KNOWN_PATTERN"},"pathFamilies":["AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/","CVF_SESSION_MEMORY.md","docs/baselines/","docs/work_orders/","docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/","docs/reviews/evidence/","docs/reviews/"],"claims":["one bounded internal instruction-use proof may be attempted under the released grant","a valid saved receipt may support P9 review without lifecycle mutation"],"requiredProof":["pre-implementation admission","dry readiness","single live provider result","independent receipt hash recomputation","exact two-path reconciliation"],"operatorCheckpoints":["exactly one Alibaba/DashScope call using qwen3.7-flash-2026-07-15","no automatic retry","P10 remains closed"],"forbiddenEffects":["second provider call or retry","worker commit stage stash or push","lifecycle source registry truth index inventory or Web mutation","P10 external adapter public deployment or production action"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"docs/reviews/CVF_CVF_NCR_R1_S09_R1_ACTIVE_EXTERNAL_ADAPTER_ADMISSION_ROOT_RECONCILIATION_2026-09-28.md","completenessClaimChanged":false}}
+```
 
 | Role | Phase | Decision owner | Boundary |
 |---|---|---|---|
@@ -151,10 +176,19 @@ The dry proof writes no artifact. The live adapter alone creates the receipt
 path. No source, registry, truth, index, inventory, Web, checker, roadmap,
 packet, continuity or handoff path is worker-owned.
 
+## Work-Order Fulfillment Manifest
+
+## Required Artifact Manifest
+
+| Path | Required at worker handoff | Rule |
+|---|---|---|
+| `docs/reviews/evidence/cvf-ncr-r1-s10-test-evidence-audit-use-proof.json` | YES after a completed live attempt | adapter-created receipt; preserve a failed or ambiguous result if safely emitted; never synthesize |
+| `docs/reviews/CVF_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_WORKER_RETURN_2026-09-28.md` | YES | checker-safe terminal return with call count, result, scope and no-retry disposition |
+
 ## Required Root Contract
 
-1. Stop immediately while status is `HOLD_PENDING_OPERATOR_DECISION`.
-2. After release, run pre-implementation before any body read.
+1. Verify this committed packet is `DISPATCH_READY` and the grant is unexpired.
+2. Run pre-implementation before any body read.
 3. Run the dry proof once; require `DRY_RUN_READY_FOR_LIVE_PROVIDER_USE_PROOF`.
 4. Run the exact live proof once; require HTTP 200, non-empty output and `LIVE_PROVIDER_USE_PROOF_PASS`.
 5. Independently recompute receipt ID and output hash from the saved JSON without another provider call.
@@ -178,6 +212,18 @@ packet, continuity or handoff path is worker-owned.
 | planned baseline/work-order/return/receipt | all four `Test-Path` results false before authoring | NO_COLLISION |
 | batch/token search | exact `rg` returned no prior artifact | NO_COLLISION |
 | collision decision | fresh P9 phase packet | CREATE_NEW |
+
+## Intake Role Routing Decision
+
+| Field | Value |
+|---|---|
+| intake summary | one-package P9 live instruction-use proof and receipt integrity evidence |
+| scope classification | private local package read plus one bounded provider call and two worker outputs |
+| risk sensitivity | credential-referenced, quota-consuming, non-repeatable live proof |
+| selected role route | one shared-workspace INTERNAL_AGENT, then Local independent offline review |
+| escalation condition | preflight failure, provider ambiguity, receipt mismatch, second-call need or third write path |
+| canonical route mode | SINGLE_AGENT_SINGLE_ROLE |
+| decision owner | Local technical acceptance; operator grant is already bound to one exact call |
 
 ## Required First Reads And Pre-Flight
 
@@ -244,7 +290,7 @@ recompute hashes. It must record the exact command and must not write another ar
 
 closeabilityContractVersion: cvf.gate-role-closeability@1.0.0
 
-closeabilityDisposition: BLOCKED_PENDING_OPERATOR_DECISION
+closeabilityDisposition: CLOSEABLE
 
 implementationTopologyPolicy: EXACT_PATHS_WITH_NO_FORESEEABLE_SPLIT
 
@@ -255,12 +301,20 @@ returnTimeRecheck: REQUIRED_BEFORE_REPAIR
 | gateId | mustPassBy | repairOwner | repairPhase | mutationSurface | topology | commitOwner | commitPhase | dependsOn |
 |---|---|---|---|---|---|---|---|---|
 | operator_live_release | PRE_DISPATCH | operator | PRE_DISPATCH | checkpoint only | EXACT_PATHS | closer | DISPATCH_COMMIT | NONE |
-| target_state_feasibility | PRE_DISPATCH | dispatcher | PRE_DISPATCH | paired packet | EXACT_PATHS | closer | DISPATCH_COMMIT | operator_live_release |
-| pre_implementation | WORKER_RETURN | worker | IMPLEMENTATION | exact two paths | EXACT_PATHS | closer | MATERIAL_COMMIT | target_state_feasibility |
-| live_use_proof | WORKER_RETURN | worker | IMPLEMENTATION | use-proof JSON | EXACT_PATHS | closer | MATERIAL_COMMIT | pre_implementation |
-| worker_return_fast | REVIEW | worker | WORKER_RETURN | worker return | EXACT_PATHS | closer | MATERIAL_COMMIT | live_use_proof |
+| authorization_review | PRE_DISPATCH | dispatcher | PRE_DISPATCH | paired packet | EXACT_PATHS | closer | DISPATCH_COMMIT | operator_live_release |
+| target_state_feasibility | PRE_DISPATCH | dispatcher | PRE_DISPATCH | paired packet | EXACT_PATHS | closer | DISPATCH_COMMIT | authorization_review |
+| pre_dispatch_gate | PRE_DISPATCH | dispatcher | PRE_DISPATCH | paired packet | EXACT_PATHS | closer | DISPATCH_COMMIT | target_state_feasibility |
+| dispatch_continuity | IMPLEMENTATION | session-sync-steward | IMPLEMENTATION | `AGENT_HANDOFF_V63_2026-09-18.md` material-SHA marker | EXACT_PATHS | session-sync-steward | DISPATCH_CONTINUITY_COMMIT | pre_dispatch_gate |
+| adif_integrity | WORKER_RETURN | worker | IMPLEMENTATION | worker return disclosure | EXACT_PATHS | closer | MATERIAL_COMMIT | dispatch_continuity |
+| pre_implementation_autorun | WORKER_RETURN | worker | IMPLEMENTATION | exact two paths | EXACT_PATHS | closer | MATERIAL_COMMIT | adif_integrity |
+| focused_checker_tests | WORKER_RETURN | worker | IMPLEMENTATION | adapter tests and receipt evidence | EXACT_PATHS | closer | MATERIAL_COMMIT | dispatch_continuity |
+| live_use_proof | WORKER_RETURN | worker | IMPLEMENTATION | use-proof JSON | EXACT_PATHS | closer | MATERIAL_COMMIT | pre_implementation_autorun |
+| worker_return_fast | REVIEW | worker | WORKER_RETURN | worker return | EXACT_PATHS | closer | MATERIAL_COMMIT | focused_checker_tests |
 | reviewer_fast | PRE_MATERIAL_COMMIT | reviewer | REVIEW | accepted set | EXACT_PATHS | closer | MATERIAL_COMMIT | worker_return_fast |
-| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | active continuity | EXACT_PATHS | session-sync-steward | CONTINUITY_COMMIT | reviewer_fast |
+| terminal_completion_review | PRE_MATERIAL_COMMIT | reviewer | REVIEW | completion review | EXACT_PATHS | closer | MATERIAL_COMMIT | reviewer_fast |
+| pre_commit | PRE_MATERIAL_COMMIT | reviewer | REVIEW | accepted set | EXACT_PATHS | closer | MATERIAL_COMMIT | terminal_completion_review |
+| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | active continuity | EXACT_PATHS | session-sync-steward | CONTINUITY_COMMIT | terminal_completion_review |
+| committed_range_closure | POST_MATERIAL_CLOSURE | reviewer | POST_MATERIAL | material and continuity ranges | EXACT_PATHS | closer | CORRECTIVE_MATERIAL_COMMIT | continuity |
 
 ## Agent Handoff Contract Control Block
 
@@ -292,13 +346,15 @@ laneReleaseEvidence: terminal worker return, exact manifest reconciliation and e
 
 Resolver query: taskClass=`package_skill_productionization`, role=`dispatcher`, lifecyclePhase=`dispatch`.
 
+Returned defects: NONE_RETURNED
+
 | Field | Value |
 |---|---|
 | Resolver command | `python governance/compat/run_adif_defect_resolver.py --task-class package_skill_productionization --role dispatcher --lifecycle-phase dispatch --json` |
 | Returned defect count | 0 |
 | Returned defects | none |
 | Disclosed defectIds | none |
-| Dispatch impact | no registered defect changes the held boundary |
+| Dispatch impact | no registered defect changes the released exact one-call boundary |
 
 ## Checker Source Read-Ahead Block
 
@@ -344,7 +400,7 @@ it does not apply.
 
 | Field | Value |
 |---|---|
-| completionReviewPath | optional; Local may close in reviewed return if sufficient |
+| completionReviewPath | `docs/reviews/CVF_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_COMPLETION_2026-09-28.md` (optional; Local may close in the reviewed return if sufficient) |
 | reviewerOwnedClosurePaths | returned two-path set plus separately authorized continuity |
 | closureOwner | Local orchestrator/reviewer |
 | workerCommitPermission | FORBIDDEN |
@@ -458,7 +514,7 @@ queue, watcher or external adapter is created.
 | Target paths | paired baseline and work order |
 | Allowed scope source | active next move and operator continuation instruction |
 | Before status evidence | clean worktree at `acfe300bb` |
-| After status evidence | held packet pending operator live release |
+| After status evidence | released packet pending dispatch commit and continuity binding |
 | Diff evidence | `git diff --name-status` |
 | Approval boundary | packet authoring only |
 | Claim boundary | no body read or provider call |
@@ -472,14 +528,14 @@ queue, watcher or external adapter is created.
 
 | Field | Value |
 |---|---|
-| claimScope | held P9 packet authoring |
-| claimDisposition | CLAIM_REJECTED at authoring; live evidence required after release |
+| claimScope | released bounded P9 dispatch; execution evidence still pending |
+| claimDisposition | CLAIM_REJECTED at dispatch; worker live evidence required |
 | receiptEvidence | CLAIM_REJECTED_NO_RECEIPT: no P9 receipt yet |
 | actionEvidence | CLAIM_REJECTED_NO_ACTION: no P9 action executed |
 | invocationBoundary | future exact local adapter invocation only after release |
 | interceptionBoundary | no IDE/shell/git/filesystem/provider interception claim |
-| claimLanguage | held packet defines, but does not perform, one proof |
-| forbiddenExpansion | no execution while held; no P10/external/public/production effect |
+| claimLanguage | released packet authorizes one bounded proof but does not claim it occurred |
+| forbiddenExpansion | no retry, P10, external adapter, public or production effect |
 
 ## Epistemic Process Block
 
@@ -495,8 +551,8 @@ Claim Update Requirement: Local records confirmed, narrowed, revised or invalida
 
 ## Return-To-Orchestrator Conditions
 
-While held, do not start. After release, return `COMPLETE_PENDING_REVIEW` only
-when every criterion passes. Otherwise return `BLOCKED_WITH_REASON` with the
+After committed release and continuity binding, return `COMPLETE_PENDING_REVIEW`
+only when every criterion passes. Otherwise return `BLOCKED_WITH_REASON` with the
 exact failing command, safe evidence, root cause and proposed Local repair.
 
 ## Acceptance Criteria
@@ -511,13 +567,13 @@ exact failing command, safe evidence, root cause and proposed Local repair.
 
 ## Review Gate
 
-Packet cannot dispatch while held. After operator release, Local changes both
-statuses, runs exact pre-dispatch and commits packet/continuity separately.
-Local later reviews returned evidence without duplicating the live call.
+Operator release is recorded and exact pre-dispatch must pass before the
+release commit. Local later reviews returned evidence without duplicating the
+live call.
 
 ## Closure Checklist
 
-- [ ] held checkpoint released and recorded;
+- [x] held checkpoint released and recorded;
 - [ ] P9 evidence accepted or explicitly blocked;
 - [ ] no second provider call or P10 expansion;
 - [ ] Local owns material and continuity commits;
@@ -527,18 +583,17 @@ Local later reviews returned evidence without duplicating the live call.
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
-| Work order status | this work order | `HOLD_PENDING_OPERATOR_DECISION` | PASS |
-| P9 evidence | future use-proof JSON and worker return | not executed | BLOCKED with reason: live checkpoint parked |
+| Work order status | this work order | `DISPATCH_READY` | PASS |
+| P9 evidence | future use-proof JSON and worker return | not executed | N/A with reason: pending worker |
 | Roadmap state | NCR D013 P9 | P9 authored; P10 closed | PASS |
-| Session continuity | active session surfaces | update after held packet commit | BLOCKED with reason: packet commit pending |
+| Session continuity | active session surfaces | update after release packet commit | BLOCKED with reason: release commit pending |
 
 ## Claim Boundary
 
-This work order currently authorizes no worker execution. After an explicit
-operator live release and Local status transition, it authorizes exactly one
-dry proof, one live provider call, one P9 receipt and one worker return. It
-never authorizes a retry, P10, external adapter, public sync, deployment or
-production claim.
+This released work order authorizes exactly one dry proof, at most one live
+provider call under the bound grant, one P9 receipt and one worker return. A
+failed, partial, timed-out or ambiguous attempt consumes the grant. It never
+authorizes retry, P10, external adapter, public sync, deployment or production.
 
 ## Public Export Disposition
 
@@ -548,7 +603,6 @@ Reason: private P9 packet and proof evidence.
 
 ## Operator Checkpoint
 
-Required decision: release exactly one Alibaba/DashScope live provider call
-using `qwen3.7-flash-2026-07-15`, with no automatic retry. Until that explicit
-release is recorded, this packet remains held and must not be copied to a
-worker as executable authority.
+RELEASED on 2026-09-28: exactly one Alibaba/DashScope live provider call using
+`qwen3.7-flash-2026-07-15`, with no automatic retry. The worker receives no
+authority beyond the exact provider grant and manifest in this packet.
