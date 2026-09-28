@@ -159,8 +159,60 @@ describe('/api/artifacts/export', () => {
     expect(payload.data.governanceState).toBe('DRAFT_UNACCEPTED');
   });
 
+  it('joins the current Governance Engine response to an evaluated, unaccepted receipt', async () => {
+    process.env.NEXTAUTH_URL = 'http://localhost:3000';
+    vi.stubGlobal('fetch', vi.fn().mockImplementation(async (_url: string, options: RequestInit) => {
+      const sent = JSON.parse(String(options.body));
+      return { ok: true, json: async () => ({ success: true, data: {
+        report: {
+          request_summary: { request_id: sent.request_id, artifact_id: sent.artifact_id },
+          decision_analysis: { final_decision: 'ALLOW' },
+          report_metadata: { generated_at: '2026-09-28T00:00:00.000Z' },
+          cvf_risk_level: 'R0',
+          cvf_enforcement: { action: 'LOG_ONLY' },
+          integrity: { has_ledger_reference: true },
+        },
+        execution_record: { final_decision: 'ALLOW', ledger_attached: true },
+      } }) };
+    }));
+    const payload = await (await POST(makeRequest(BASE_REQUEST))).json();
+    expect(payload.data.governanceReceipt).toMatchObject({
+      decision: 'ALLOW', riskLevel: 'R0', evaluatedAt: '2026-09-28T00:00:00.000Z',
+    });
+    expect(payload.data.governanceReceipt.receiptId).toMatch(/^artifact-proof-receipt-new-knowledge-review-/);
+    expect(payload.data.governanceState).toBe('DRAFT_UNACCEPTED');
+  });
+
+  it.each(['request-id', 'artifact-id', 'decision', 'ledger']) (
+    'rejects a current-engine receipt with mismatched %s', async failure => {
+      process.env.NEXTAUTH_URL = 'http://localhost:3000';
+      vi.stubGlobal('fetch', vi.fn().mockImplementation(async (_url: string, options: RequestInit) => {
+        const sent = JSON.parse(String(options.body));
+        return { ok: true, json: async () => ({ success: true, data: {
+          report: {
+            request_summary: {
+              request_id: failure === 'request-id' ? 'other' : sent.request_id,
+              artifact_id: failure === 'artifact-id' ? 'other' : sent.artifact_id,
+            },
+            decision_analysis: { final_decision: 'ALLOW' },
+            report_metadata: { generated_at: '2026-09-28T00:00:00.000Z' },
+            cvf_risk_level: 'R0',
+            integrity: { has_ledger_reference: true },
+          },
+          execution_record: {
+            final_decision: failure === 'decision' ? 'DENY' : 'ALLOW',
+            ledger_attached: failure !== 'ledger',
+          },
+        } }) };
+      }));
+      const payload = await (await POST(makeRequest(BASE_REQUEST))).json();
+      expect(payload.data.governanceReceipt).toBeUndefined();
+      expect(payload.data.governanceState).toBe('DRAFT_UNACCEPTED');
+    },
+  );
+
   it.each(['APPROVED', 'MANUAL_REVIEW', 'REJECTED'])(
-    'interprets the actual Governance Engine %s response without inventing acceptance', async status => {
+    'interprets the older explicit %s approval envelope without inventing acceptance', async status => {
       process.env.NEXTAUTH_URL = 'http://localhost:3000';
       vi.stubGlobal('fetch', vi.fn().mockImplementation(async (_url: string, options: RequestInit) => {
         const sent = JSON.parse(String(options.body));

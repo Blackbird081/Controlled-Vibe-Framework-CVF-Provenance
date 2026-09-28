@@ -9,8 +9,22 @@ export interface GovernanceReceipt {
 }
 
 interface EvaluateResponseData {
-  report?: { status?: string; risk_level?: string; cvf_enforcement?: { action?: string } };
-  execution_record?: { request_id?: string; timestamp?: string };
+  report?: {
+    status?: string;
+    risk_level?: string;
+    cvf_enforcement?: { action?: string };
+    request_summary?: { request_id?: string; artifact_id?: string };
+    decision_analysis?: { final_decision?: string };
+    report_metadata?: { generated_at?: string };
+    cvf_risk_level?: string;
+    integrity?: { has_ledger_reference?: boolean };
+  };
+  execution_record?: {
+    request_id?: string;
+    timestamp?: string;
+    final_decision?: string;
+    ledger_attached?: boolean;
+  };
   [key: string]: unknown;
 }
 
@@ -69,7 +83,28 @@ export async function fetchGovernanceReceipt(
     if (payload.success !== true || !payload.data) return null;
 
     const data = payload.data;
-    // The in-repo Governance Engine returns report + execution_record, not a flat decision.
+    // Current Governance Engine reports the request identity and decision in
+    // nested report sections; its execution record does not repeat the ID.
+    const report = data.report;
+    const engineDecision = report?.decision_analysis?.final_decision;
+    if (report?.request_summary) {
+      if (report.request_summary.request_id !== requestId ||
+        report.request_summary.artifact_id !== artifactId ||
+        !['ALLOW', 'DENY', 'REVIEW', 'ESCALATE', 'SANDBOX'].includes(String(engineDecision)) ||
+        data.execution_record?.final_decision !== engineDecision ||
+        data.execution_record?.ledger_attached !== true ||
+        report.integrity?.has_ledger_reference !== true ||
+        typeof report.report_metadata?.generated_at !== 'string' || !report.report_metadata.generated_at ||
+        typeof report.cvf_risk_level !== 'string' || !/^R[0-4]$/.test(report.cvf_risk_level)) return null;
+      return {
+        receiptId: requestId,
+        decision: engineDecision as string,
+        evaluatedAt: report.report_metadata.generated_at,
+        riskLevel: report.cvf_risk_level,
+      };
+    }
+
+    // Retain the older explicit approval envelope for compatible callers.
     const status = data.report?.status;
     if (data.execution_record?.request_id !== requestId ||
       !['APPROVED', 'MANUAL_REVIEW', 'REJECTED', 'FROZEN'].includes(String(status)) ||
