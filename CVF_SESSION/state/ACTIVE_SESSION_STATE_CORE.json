@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md",
-    "baselineSha256": "5751ba52990665d2a22372186d4ff21f41423d33e08a86810b7c33dee5524540",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md",
-    "workOrderSha256": "e976795f468c3667124de3b33a45eb61cabbe2ed6254c6a31eeecca2a0b92d73"
+    "baselinePath": "docs/baselines/CVF_GC018_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
+    "baselineSha256": "4f674c489f1728d463845f2b16165781ab43473462e73f08323288ca78c9d6bd",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
+    "workOrderSha256": "d2be96c3b8035815a0aebbda4cb56c74063090cdd4c780e1be3ea316d12ab939"
   },
-  "currentAuthoritySyncReason": "RSE-T4-H1 closed CLOSED_BLOCKED_BOUNDED at material commit 532e49a72. Local rejected the completion claim, restored implementation sources, retained the worker return/completion/probe, and recorded systemic acceptance-chain learning ADIF-0062 at 0caf9ac47. Only chain-level corrective packet authoring is permitted; NCR remains parked at accepted P9.",
+  "currentAuthoritySyncReason": "RSE-T4-H1-R1 acceptance-chain root-correction packet is committed at 943baa81e and assigned to Local for phase-separated implementation/review. NCR remains parked at accepted P9 until terminal foundation closure.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_foundation_rse_t4_h1_r1_corrective_authoring",
+  "currentMode": "cvf_foundation_rse_t4_h1_r1_local_execution",
   "previousMode": "cvf_foundation_rse_t4_classifier_recovery_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

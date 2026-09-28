@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_foundation_rse_t4_h1_r1_corrective_authoring",
+  "currentMode": "cvf_foundation_rse_t4_h1_r1_local_execution",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-FOUNDATION; NEXT_ACTION_CLASS=AUTHOR_GOVERNED_CORRECTIVE_PACKET; ACTIVE_BATCH=RSE-T4-H1-R1-AUTHORING; MATERIAL_COMMIT=0caf9ac47; ACTIVE_WORK_ORDER=NONE; EXPANSION_ALLOWED=false. Author one corrective packet governed by ADIF-0062 that defines the machine-readable required-deliverable-to-artifact-to-proof-to-terminal-status acceptance join, restores dispatcher/Git oracle separation, fails closed on missing or unparseable rows, derives terminal status deterministically, and uses the four Local semantic false negatives as hostile end-to-end fixtures. Include pre-dispatch mutation feasibility and work-order-template rotation. No implementation is released until that packet is committed and continuity-bound. NCR remains parked at P9; P10/P11, provider/live, public sync, deployment and platform-interception claims remain forbidden; latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-FOUNDATION; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=RSE-T4-H1-R1; MATERIAL_COMMIT=943baa81e; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md; EXPANSION_ALLOWED=false. Local executes the exact acceptance-ledger artifact union, freezes the implementation, performs phase-separated hostile review, and closes the foundation lane only if the deterministic reducer and all gates pass. NCR remains parked at P9; P10/P11, provider/live, Claude dispatch, public sync, deployment and platform-interception claims remain forbidden; latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md",
-    "baselineSha256": "5751ba52990665d2a22372186d4ff21f41423d33e08a86810b7c33dee5524540",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md",
-    "workOrderSha256": "e976795f468c3667124de3b33a45eb61cabbe2ed6254c6a31eeecca2a0b92d73"
+    "baselinePath": "docs/baselines/CVF_GC018_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
+    "baselineSha256": "4f674c489f1728d463845f2b16165781ab43473462e73f08323288ca78c9d6bd",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
+    "workOrderSha256": "d2be96c3b8035815a0aebbda4cb56c74063090cdd4c780e1be3ea316d12ab939"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
