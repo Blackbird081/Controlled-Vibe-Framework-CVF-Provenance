@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2968,
+  "stateKey": "cvfNcrR1S10P9ReviewRootRepairAuthoring20260928",
+  "value": "BLOCKED_WITH_REASON after independent Local review. Material commit 80b6e6c1fb5a63ac7590cc305b8d49d1e55f3d27 preserves the valid one-call P9 receipt, worker return and completion review. Receipt integrity passed offline recomputation, but the focused adapter suite fails through a calendar-expired test-only quota fixture and the committed S09 return lacks the canonical eight-row NOT_USED_WITH_REASON trace. Local is authoring one provider-free S10-R1 repair packet. The existing receipt is immutable; a second provider call, credentials, lifecycle mutation and P10 are forbidden."
+}
