@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_2026-09-28.md",
     "workOrderSha256": "d4a2e2177d83c6cc0dc92e62ec2b1bc850bcfa631d34852a2253b4009d63cf31"
   },
-  "currentAuthoritySyncReason": "CVF-NCR-R1-S10 and S10-R1 are Local-accepted CLOSED_PASS_BOUNDED at material commit d30b31a3f65a67cc6a03b0b18d2a1731557cb6ad. P9 reached USE_PROOF_PASSED with the accepted receipt unchanged, focused tests 10/10, canonical S09 trace and both fast gates passing. P10 remains parked and requires a fresh Local-authored packet.",
+  "currentAuthoritySyncReason": "CVF-NCR-R1-S10 and S10-R1 are Local-accepted CLOSED_PASS_BOUNDED with final reviewer-oracle binding correction at b2b08a607. P9 reached USE_PROOF_PASSED with the accepted receipt unchanged, focused tests 10/10, canonical S09 trace and both fast gates passing. P10 remains parked and requires a fresh Local-authored packet.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

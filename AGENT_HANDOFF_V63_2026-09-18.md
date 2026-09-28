@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Material closure commit `d30b31a3f65a67cc6a03b0b18d2a1731557cb6ad` closes CVF-NCR-R1-S10/S10-R1 and accepts P9 as `USE_PROOF_PASSED`. The valid P9 receipt is preserved; no second provider call or P10 is authorized.
+Material closure commit `d30b31a3f` plus final reviewer-oracle binding correction `b2b08a607` close CVF-NCR-R1-S10/S10-R1 and accept P9 as `USE_PROOF_PASSED`. The valid P9 receipt is preserved; no second provider call or P10 is authorized.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,7 +13,7 @@ Role: Local orchestrator/reviewer and session steward. Phase: NCR R1/S10/S10-R1 
 ## Startup Acknowledgment
 Startup acknowledged: current mode=`cvf_ncr_r1_s10_p9_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=pause for operator direction after P9 closure; role=Local orchestrator/reviewer; phase=S10/S10-R1 terminal closure; decision owner=Local; parked checkpoint=P10 authoring/execution, repeat provider/live proof, public sync, deployment and production.
 ## Current Mode
-`cvf_ncr_r1_s10_p9_closed`. S10/S10-R1 are `CLOSED_PASS_BOUNDED` at `d30b31a3f`; P9 is `USE_PROOF_PASSED`. Focused tests pass 10/10, the S09 trace is canonical, both fast gates pass, and the accepted receipt is unchanged. P4-C1 collection continues independently. P10 and broader effects remain closed. Latest closed learning-history wave: `LHW24`.
+`cvf_ncr_r1_s10_p9_closed`. S10/S10-R1 are `CLOSED_PASS_BOUNDED` with final material `b2b08a607`; P9 is `USE_PROOF_PASSED`. Focused tests pass 10/10, the S09 trace is canonical, both fast gates pass, and the accepted receipt is unchanged. P4-C1 fail-closed caught and forced correction of one reviewer-oracle digest before final pause. P10 and broader effects remain closed. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
 T3B is closed with one Local-verified active v1 specification. Party B is a verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
@@ -23,15 +23,15 @@ Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59
 
 The three operator-relayed Human Boundary, Positioning, and Async handoffs are now reviewed and combined with Jev, WikiSkill, and HyperFrames in `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md`, material commit `53bce992f`. Human Boundary is an `ADAPT` candidate, Positioning is primarily `CONFIRMED_EXISTING`, and Async remains `WATCH` with upstream factual claims `BLOCKED_SOURCE_NOT_FOUND` until Local pinning. The prior three-repository program is terminal-accounted; common Local closure remains blocked by AKOE P1-P3 execution and P4 reconciliation.
 ## Latest Work / Changes
-- R1/S10 and S10-R1 are `CLOSED_PASS_BOUNDED` at `d30b31a3f`: Local accepted the exact three-path repair, hostile expiry denial, canonical S09 trace, focused pytest 10/10 and both fast gates. P9 is `USE_PROOF_PASSED`; the receipt is unchanged and no second provider call occurred.
+- R1/S10 and S10-R1 are `CLOSED_PASS_BOUNDED` at closure `d30b31a3f` with reviewer-oracle binding correction `b2b08a607`: Local accepted the exact three-path repair, hostile expiry denial, canonical S09 trace, focused pytest 10/10 and both fast gates. P9 is `USE_PROOF_PASSED`; the receipt is unchanged and no second provider call occurred.
 - R1/S07-R1 is `CLOSED_PASS_BOUNDED` at material commit `f7d8e4842`: P6 truth is admitted; inventory and resolver share the exact six-row lifecycle/truth decision matrix; recurring blocked-return escalation is derived from stable cluster history; ADIF-0060 and scaffold/golden coverage are material. Focused suites passed 21/21, 29/29 and 94/94; Local matrix parity passed 6/6. Stash and instruction-body loader use are recorded worker scope violations. The package remains `APPROVED` and `DENIED_SOURCE_NOT_ACTIVE`.
 - R1/S04 is `CLOSED_WITH_RECORDED_SCOPE_VIOLATION` at `ecb984658`: order-34 P3 metadata and both generated read models are accepted; Local repaired the omitted dependent inventory. Worker stash/pop diagnostic remains outside authority. R1/S03 remains `CLOSED_PASS_BOUNDED` at `b8d8d32e2`. No P4-P10 or runtime/external authority follows.
 
 ## Core Guard Self-Protection Authorization
 Authorized guard-maintenance scope: deterministic post-material synchronization of active continuity and generated projections for committed S10/S10-R1 closure.
 Protected paths: `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`, `CVF_SESSION/state/entries/cvfNcrR1S10P9Closure20260928.json`, `CVF_SESSION/state/entries/nextAllowedMove.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V63_2026-09-18.md`.
-Operator authorization: the operator directed Local to process the `COMPLETE_PENDING_REVIEW` result and then pause; Local reviewer/session-steward authority binds material closure `d30b31a3f`.
-Rollback boundary: revert only this continuity commit; preserve material closure `d30b31a3f`, packet commit `638b29ab9`, the accepted receipt and worker return.
+Operator authorization: the operator directed Local to process the `COMPLETE_PENDING_REVIEW` result and then pause; Local reviewer/session-steward authority binds final material `b2b08a607`.
+Rollback boundary: revert only this continuity commit; preserve closure `d30b31a3f`, binding correction `b2b08a607`, packet commit `638b29ab9`, the accepted receipt and worker return.
 - R1/S02 Local completion is at `555999a83`: source-grounded content candidate accepted after reviewer repair, with worker test execution outside authority disclosed and rejected as proof. TDD/code-review ACTIVE README gap was repaired in the same material commit; reviewer skill was consulted manually without runtime receipt.
 - D013 core-skills design is committed at `db5ae4c43`. Initial S01 dispatch was `ee2abee8962d4489710a8d6db021af4f384731b6`. Local repaired the first worker-return packet and paired baseline/work order at `0d4995893d5a5a28316537027bc9b5c88c16bd3d`. Round 2 review, baseline and work order are material at `da301812a612885232332d7532fe4268c0bcb5f6`. The final worker return was committed at `5f8addf3922c6dbee7dea33e451b2a4e29fbc247`; Local bounded completion at `09b62aa3b57fd8dfda93140f30a845b7177be24c` passed the 90/90 material pre-commit gate. Two skill-body lifecycle prose repairs remain unimplemented and require a separate R1/S01 packet.
 - Group 1 source is `SOURCE_CREATED_LOCAL_VERIFIED` at material commit
