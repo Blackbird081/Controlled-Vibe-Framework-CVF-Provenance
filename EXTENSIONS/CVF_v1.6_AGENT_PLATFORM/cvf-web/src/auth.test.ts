@@ -158,4 +158,26 @@ describe('legacy admin credentials fallback', () => {
 
     expect(result).toBeNull();
   });
+
+  it('rejects a known mock owner in production even when Auth.js configuration is present', async () => {
+    vi.stubEnv('NODE_ENV', 'production');
+
+    const result = await credentialsAuthorize()({
+      username: 'owner',
+      password: 'owner123',
+    });
+
+    expect(result).toBeNull();
+  });
+
+  it('retains the known mock owner in development for the local Q001 profile', async () => {
+    vi.stubEnv('NODE_ENV', 'development');
+
+    const result = await credentialsAuthorize()({
+      username: 'owner',
+      password: 'owner123',
+    });
+
+    expect(result).toMatchObject({ id: 'usr_1', role: 'owner' });
+  });
 });

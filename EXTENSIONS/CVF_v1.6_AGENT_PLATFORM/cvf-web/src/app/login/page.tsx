@@ -1,5 +1,7 @@
 'use client';
 
+// Text Encoding Exception: source-faithful Vietnamese login copy is required for the existing UI.
+
 import { Suspense, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useLanguage, LanguageToggle } from '@/lib/i18n';
@@ -12,6 +14,7 @@ function LoginPageContent() {
     const { language } = useLanguage();
     const { status } = useSession();
     const isVi = language === 'vi';
+    const isLocalMockLogin = process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test';
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -86,7 +89,7 @@ function LoginPageContent() {
                     </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                {isLocalMockLogin ? <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                             {isVi ? 'Tên đăng nhập' : 'Username'}
@@ -154,15 +157,25 @@ function LoginPageContent() {
                             ? (isVi ? 'Đang đăng nhập...' : 'Signing in...')
                             : (isVi ? 'Đăng nhập' : 'Sign in')}
                     </button>
-                </form>
+                </form> : <div className="space-y-3">
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                        {isVi ? 'Đăng nhập bằng nhà cung cấp đã cấu hình.' : 'Sign in with a configured provider.'}
+                    </p>
+                    <button type="button" onClick={() => void signIn('github', { callbackUrl: from })} className="w-full rounded-lg bg-blue-600 px-3 py-2 text-white hover:bg-blue-700">
+                        {isVi ? 'Đăng nhập bằng GitHub' : 'Sign in with GitHub'}
+                    </button>
+                    <button type="button" onClick={() => void signIn('google', { callbackUrl: from })} className="w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 dark:border-gray-600 dark:text-white">
+                        {isVi ? 'Đăng nhập bằng Google' : 'Sign in with Google'}
+                    </button>
+                </div>}
 
-                <div className="mt-6 text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-900/60 rounded-lg px-3 py-2 space-y-1">
+                {isLocalMockLogin && <div className="mt-6 text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-900/60 rounded-lg px-3 py-2 space-y-1">
                     <p className="font-semibold mb-1">{isVi ? 'Tài khoản giả lập (Enterprise Mock)' : 'Enterprise Mock Accounts'}:</p>
                     <p>• <strong>owner</strong> / owner123 (Full admin)</p>
                     <p>• <strong>admin</strong> / admin123 (Admin)</p>
                     <p>• <strong>dev</strong> / dev123 (Developer - Max: R2)</p>
                     <p>• <strong>reviewer</strong> / reviewer123 (Approver)</p>
-                </div>
+                </div>}
             </div>
         </div>
     );

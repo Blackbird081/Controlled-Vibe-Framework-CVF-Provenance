@@ -86,6 +86,10 @@ export const nextAuthConfig = {
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
+        // Mock enterprise users and the legacy admin fallback are local-only.
+        // A configured Auth.js secret/OAuth client must not make these demo
+        // credentials usable in a production session.
+        if (!isAuthMockDefaultAllowedEnvironment(process.env.NODE_ENV)) return null;
         if (!credentials?.username || !credentials?.password) return null;
 
         const username = credentials.username as string;
