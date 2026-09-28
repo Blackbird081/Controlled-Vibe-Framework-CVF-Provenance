@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Material commit `62fb54e7e` releases batch `RSE-T4-H1-R1` for Local execution; accepted foundation closure is `4cb65053c`; reconciled material-range HEAD is `e85284c66`. The paired corrective packet binds the exact worker return, complete independent-probe admission, ADIF-0062 acceptance ledger, H1 hostile fixtures and template rotation. NCR remains parked at accepted P9.
+Material commit `f4b7442c3` releases batch `CVF-NCR-R1-S11-R1` for Local execution. The corrective packet replaces the rejected S11 future-completion dependency with an already-committed adapter-evidence baseline and binds the exact thirteen-path acceptance ledger. P9 remains accepted; P10 execution is open only for this packet and one no-retry provider call.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -11,9 +11,9 @@ Carry CVF-NCR v2.2 as the selected planning successor while preserving closed AK
 ## Scope / Target / Owner Boundary
 Role: Local implementer/reviewer/closer and session steward. Phase: RSE-T4-H1-R1 acceptance-chain root correction. Decision owner: Local; NCR P10/P11, Claude dispatch, provider/live and broader expansion remain parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_corrective_replanning`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=RSE-T4-H1-R1 is closed; Local resumes NCR P10 corrective replanning; role=Local implementer/reviewer/closer; phase=foundation root correction; decision owner=Local; parked checkpoint=NCR P10 redispatch, P11, other packages, provider/live, Claude dispatch, public sync, deployment and platform production readiness.
+Startup acknowledged: current mode=`cvf_ncr_p10_corrective_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local executes and phase-separately reviews committed CVF-NCR-R1-S11-R1; role=Local implementer/reviewer/closer; phase=P10 corrective production runtime; decision owner=Local; parked checkpoint=P11, other packages, Claude dispatch, public sync, deployment and platform production readiness.
 ## Current Mode
-`cvf_ncr_p10_corrective_replanning`. RSE-T4-H1-R1 packet is committed at `62fb54e7e`; Local owns exact implementation, phase-separated hostile review and closure. P9 remains `USE_PROOF_PASSED`; NCR P10/P11 stay parked. Latest closed learning-history wave: `LHW24`.
+`cvf_ncr_p10_corrective_execution`. CVF-NCR-R1-S11-R1 packet is committed at `f4b7442c3`; Local owns exact implementation, provider-free independent review after the one authorized call, and closure. P9 remains `USE_PROOF_PASSED`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
 T3B is closed with one Local-verified active v1 specification. Party B is a verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
