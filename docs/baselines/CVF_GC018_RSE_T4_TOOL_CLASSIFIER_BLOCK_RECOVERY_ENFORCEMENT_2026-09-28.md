@@ -4,7 +4,7 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 Date: 2026-09-28
 
@@ -155,8 +155,37 @@ DEFERRED_PRIVATE_ONLY
 
 Reason: private governance hardening; no public-sync authority.
 
+## Current Runtime Freshness Verification
+
+No runtime or provider-registry absence claim is made. Current provider
+registry ownership remains `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts`
+and `PROVIDER_CAPABILITY_REGISTRY`; neither surface is changed or evaluated by
+this blocked local governance tranche.
+
 ## Claim Boundary
 
 This baseline authorizes an exact local documentation/checker/scaffold tranche.
 It does not weaken safety controls, suppress platform UI, execute a provider,
 reopen NCR, or claim prevention until independent review accepts the tests.
+
+Closure note: Local rejected the returned implementation after the independent
+probe found four semantic false negatives and the mandatory template
+deliverable was absent. See the named completion review; NCR remains parked.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Baseline status | this baseline | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Work order status | paired RSE-T4-H1 work order | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | named completion and worker return | rejection, rollback and evidence retention | PASS |
+| Roadmap state | N/A with reason: foundation defect tranche | NCR remains parked; corrective packet required | N/A with reason |
+| Registry JSON | GC-051 registry | no classification/corpus registry mutation authorized by this blocked tranche | BLOCKED with reason |
+| Registry Markdown | GC-051 registry companion | no classification/corpus registry mutation authorized by this blocked tranche | BLOCKED with reason |
+| External evidence digest | N/A with reason: no provider call | providerCallCount 0 | N/A with reason |
+| System loop interlock | named completion | incomplete implementation cannot activate | PASS |
+| Session continuity | active handoff/state | separate continuity commit follows material commit | N/A with reason |
+| Completion review | `docs/reviews/CVF_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_COMPLETION_2026-09-28.md` | rejection, rollback and park | PASS |
+| Independent probe | `docs/reviews/evidence/rse-t4-h1-independent-probe-2026-09-28.json` | four false negatives | BLOCKED |
+| Returned source delta | exact worker implementation paths | restored to dispatch base | PASS |
+| Provider/runtime effect | N/A with reason | zero calls and no external effect | N/A with reason |

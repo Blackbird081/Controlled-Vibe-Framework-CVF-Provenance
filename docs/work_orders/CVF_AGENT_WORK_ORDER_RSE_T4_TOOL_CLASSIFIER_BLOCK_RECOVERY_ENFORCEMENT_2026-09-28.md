@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 Batch ID: RSE-T4-H1
 
@@ -396,6 +396,10 @@ classifierEventCaptureRequired: YES
 | INTERNAL_AGENT | governed files, scaffolds and local checkers | documentation/local deterministic validation only | focused tests and return | IMPLEMENTED_BY_TRANCHE_IF_ACCEPTED |
 | EXTERNAL_AGENT_CLI_MCP | none | no adapter, remote execution or platform interception | explicit boundary | DEFERRED_WITH_REASON |
 
+## High-Risk Local Transaction Proof Applicability
+
+High-Risk Local Transaction Proof Applicability: NOT_APPLICABLE_WITH_REASON - this local documentation/scaffold/checker tranche authorizes no concurrent writer, durable external-state transaction, filesystem ownership/DACL mutation, or post-acquire failure handling.
+
 ## Independent Review Probe Admission Contract
 
 independentProbeRequired: YES
@@ -416,6 +420,11 @@ runtimeClaimPresent: NO_WITH_REASON - local documentation/scaffold/checker behav
 The external tool classifier is not a repository runtime owner. This tranche
 records the S11 signal through ADIF-0061 and does not claim access to or control
 over the platform classifier implementation.
+
+The current provider-registry surface remains
+`EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts` and
+`PROVIDER_CAPABILITY_REGISTRY`; this local blocked tranche neither changes nor
+claims absence of those surfaces.
 
 ## Core Guard Self-Protection Authorization
 
@@ -574,3 +583,26 @@ This order authorizes exact local RSE documentation, scaffold, checker and test
 changes. It does not guarantee that an external platform will stop prompting,
 weaken a safety classifier, automate UI choices, reopen NCR, call a provider,
 publish, deploy or establish universal agent compliance.
+
+Closure note: Local rejected `COMPLETE_PENDING_REVIEW`; the mandatory template
+deliverable was reverted and an independent hostile probe found four checker
+false negatives. Returned implementation sources were restored to dispatch
+base; only review evidence is retained.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | named completion and worker return | rejection, rollback and evidence retention | PASS |
+| Roadmap state | N/A with reason: foundation defect tranche | NCR remains parked; corrective packet required | N/A with reason |
+| Registry JSON | GC-051 registry | no classification/corpus registry mutation authorized by this blocked tranche | BLOCKED with reason |
+| Registry Markdown | GC-051 registry companion | no classification/corpus registry mutation authorized by this blocked tranche | BLOCKED with reason |
+| External evidence digest | N/A with reason: no provider call | providerCallCount 0 | N/A with reason |
+| System loop interlock | named completion | incomplete implementation cannot activate | PASS |
+| Session continuity | active handoff/state | separate continuity commit follows material commit | N/A with reason |
+| Completion review | `docs/reviews/CVF_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_COMPLETION_2026-09-28.md` | reviewer rejection and restore | PASS |
+| Worker return | named worker return | retained; claimed completion rejected | PASS_WITH_BLOCKED_DISPOSITION |
+| Independent probe | `docs/reviews/evidence/rse-t4-h1-independent-probe-2026-09-28.json` | four semantic false negatives | BLOCKED |
+| Source manifest | returned implementation sources | restored to dispatch base | PASS |
+| Corrective successor | fresh committed packet | not auto-opened by this closure | BLOCKED |
