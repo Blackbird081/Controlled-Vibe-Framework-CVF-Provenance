@@ -39,7 +39,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
     "baselineSha256": "ffbd3c4ae4ac080f3decb44e963ca41984e3caf1b4fc92e9ae1cd1814e7d97f6",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
-    "workOrderSha256": "ada35553a41d478a202c3bed86e1387356a54496f1bb8ac84ab2b32b9043e0ea"
+    "workOrderSha256": "878095037fd87d6f3040c6af23e859163b9ee733fb0ccc9bf133bfc0d6ba3cbd"
   },
   "currentAuthoritySyncReason": "RSE-T4-H1-R1 acceptance-chain root-correction packet with exact worker-return and probe-admission binding is committed at 62fb54e7e and assigned to Local for phase-separated implementation/review. NCR remains parked at accepted P9 until terminal foundation closure.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
