@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2975,
+  "stateKey": "rseT4ToolClassifierBlockRecoveryAuthoring20260928",
+  "value": "AUTHORING_RELEASED after S11 blocked closure 6a8545e64 and ADIF-0061. Local may author one bounded source-verified GC-018/work order for RSE-T4 tool/classifier block recovery: distinguish worker-authored escalation from platform-forced UI, define bounded atomic-edit/retry/block routing, require durable return evidence, update template/scaffold, add earliest practical machine admission and hostile tests, and preserve the no-platform-suppression claim boundary. No implementation or feature successor is authorized before committed dispatch and continuity binding."
+}
