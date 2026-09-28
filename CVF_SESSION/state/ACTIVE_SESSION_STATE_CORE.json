@@ -39,9 +39,9 @@
     "baselinePath": "docs/baselines/CVF_GC018_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
     "baselineSha256": "ffbd3c4ae4ac080f3decb44e963ca41984e3caf1b4fc92e9ae1cd1814e7d97f6",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
-    "workOrderSha256": "b0c10239370794cfd1b1f51e52dfe94d01a51622b103f646113d570399984299"
+    "workOrderSha256": "76ef7c49b69adf03537943b8c16f79aeff036afca550ab4535c32fa2eb20e5e9"
   },
-  "currentAuthoritySyncReason": "RSE-T4-H1-R1 acceptance-chain root-correction packet with exact worker-return and probe-admission binding is committed at 62fb54e7e and assigned to Local for phase-separated implementation/review. NCR remains parked at accepted P9 until terminal foundation closure.",
+  "currentAuthoritySyncReason": "RSE-T4-H1-R1 closed CLOSED_PASS_BOUNDED at review commit 4cb65053c after material commit 2bf3b0411 and a seven-case independent probe. Foundation hardening is complete; NCR returns to accepted P9 for fresh P10 corrective replanning.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_foundation_rse_t4_h1_r1_local_execution",
-  "previousMode": "cvf_foundation_rse_t4_classifier_recovery_dispatch_ready",
+  "currentMode": "cvf_ncr_p10_corrective_replanning",
+  "previousMode": "cvf_foundation_rse_t4_h1_r1_local_execution",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

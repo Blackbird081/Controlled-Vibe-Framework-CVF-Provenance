@@ -42,15 +42,15 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_foundation_rse_t4_h1_r1_local_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local executes and phase-separately reviews the committed RSE-T4-H1-R1 acceptance-chain packet; role=Local implementer/reviewer/closer; phase=foundation root correction; decision owner=Local; parked checkpoint=NCR P10 redispatch, P11, other packages, provider/live, Claude dispatch, public sync, deployment and platform production readiness.
+Startup acknowledged: current mode=`cvf_ncr_p10_corrective_replanning`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local executes and phase-separately reviews the committed RSE-T4-H1-R1 acceptance-chain packet; role=Local implementer/reviewer/closer; phase=foundation root correction; decision owner=Local; parked checkpoint=NCR P10 redispatch, P11, other packages, provider/live, Claude dispatch, public sync, deployment and platform production readiness.
 
 ## Current Mode
 
-Current mode marker: `cvf_foundation_rse_t4_h1_r1_local_execution`
-Current mode: `cvf_foundation_rse_t4_h1_r1_local_execution`; previous mode marker: `cvf_foundation_rse_t4_h1_r1_corrective_authoring`
+Current mode marker: `cvf_ncr_p10_corrective_replanning`
+Current mode: `cvf_ncr_p10_corrective_replanning`; previous mode marker: `cvf_foundation_rse_t4_h1_r1_corrective_authoring`
 
 ## Next Allowed Move
-Mode: `cvf_foundation_rse_t4_h1_r1_local_execution`
+Mode: `cvf_ncr_p10_corrective_replanning`
 PROGRAM_ID=CVF-FOUNDATION; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=RSE-T4-H1-R1; MATERIAL_COMMIT=62fb54e7e; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md; EXPANSION_ALLOWED=false. Local executes the exact acceptance-ledger artifact union, freezes the implementation, performs phase-separated hostile review, and closes the foundation lane only if the deterministic reducer and all gates pass. NCR remains parked at P9; P10/P11, provider/live, Claude dispatch, public sync, deployment and platform-interception claims remain forbidden; latest closed learning-history wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
