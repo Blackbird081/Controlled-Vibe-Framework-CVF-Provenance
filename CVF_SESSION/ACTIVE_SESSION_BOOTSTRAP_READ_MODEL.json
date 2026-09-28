@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_foundation_rse_t4_classifier_recovery_dispatch_ready",
+  "currentMode": "cvf_foundation_rse_t4_h1_r1_corrective_authoring",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-FOUNDATION; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=RSE-T4-H1; MATERIAL_COMMIT=09cd03e1d; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md; EXPANSION_ALLOWED=false. Execute only the exact twelve-path provider-free local governance-hardening packet for ADIF-0061 and return uncommitted evidence to Local. NCR remains parked at P9 USE_PROOF_PASSED; P10 redispatch, P11, provider/live, public sync, deployment and external platform-interception claims remain forbidden; latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-FOUNDATION; NEXT_ACTION_CLASS=AUTHOR_GOVERNED_CORRECTIVE_PACKET; ACTIVE_BATCH=RSE-T4-H1-R1-AUTHORING; MATERIAL_COMMIT=532e49a72; ACTIVE_WORK_ORDER=NONE; EXPANSION_ALLOWED=false. Author one corrective packet that pre-authorizes work-order-template rotation and closes the four Local semantic false negatives recorded in docs/reviews/evidence/rse-t4-h1-independent-probe-2026-09-28.json. No implementation is released until that packet is committed and continuity-bound. NCR remains parked at P9; P10/P11, provider/live, public sync, deployment and platform-interception claims remain forbidden; latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md",
-    "baselineSha256": "dcba6bc726fbfc7669b31278e1d38f3b2e4d2e03a2fb447576a120f725f0a75e",
+    "baselineSha256": "5751ba52990665d2a22372186d4ff21f41423d33e08a86810b7c33dee5524540",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md",
-    "workOrderSha256": "bd2b45a10421470035973609cf77e379c98b7372d0ff18f83fc17b55dbd2b710"
+    "workOrderSha256": "e976795f468c3667124de3b33a45eb61cabbe2ed6254c6a31eeecca2a0b92d73"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

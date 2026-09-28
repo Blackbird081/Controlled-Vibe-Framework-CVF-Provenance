@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md",
-    "baselineSha256": "dcba6bc726fbfc7669b31278e1d38f3b2e4d2e03a2fb447576a120f725f0a75e",
+    "baselineSha256": "5751ba52990665d2a22372186d4ff21f41423d33e08a86810b7c33dee5524540",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md",
-    "workOrderSha256": "bd2b45a10421470035973609cf77e379c98b7372d0ff18f83fc17b55dbd2b710"
+    "workOrderSha256": "e976795f468c3667124de3b33a45eb61cabbe2ed6254c6a31eeecca2a0b92d73"
   },
-  "currentAuthoritySyncReason": "RSE-T4-H1 classifier-block recovery baseline and work order are committed at material commit 09cd03e1d. The bounded local worker lane enforces recovery routing and event capture without claiming control over an external platform prompt; NCR remains parked at accepted P9 USE_PROOF_PASSED.",
+  "currentAuthoritySyncReason": "RSE-T4-H1 closed CLOSED_BLOCKED_BOUNDED at material commit 532e49a72. Local rejected the completion claim, restored implementation sources, retained the worker return/completion/probe, and permits only corrective packet authoring; NCR remains parked at accepted P9.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_foundation_rse_t4_classifier_recovery_dispatch_ready",
-  "previousMode": "cvf_foundation_rse_t4_classifier_recovery_authoring",
+  "currentMode": "cvf_foundation_rse_t4_h1_r1_corrective_authoring",
+  "previousMode": "cvf_foundation_rse_t4_classifier_recovery_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

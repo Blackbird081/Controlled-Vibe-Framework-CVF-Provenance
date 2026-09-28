@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_foundation_rse_t4_classifier_recovery_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute committed RSE-T4-H1 work order; role=Local orchestrator/reviewer; phase=foundation hardening dispatch; decision owner=Local; parked checkpoint=NCR P10 redispatch, P11, other packages, provider/live, public sync, deployment and platform production readiness.
+Startup acknowledged: current mode=`cvf_foundation_rse_t4_h1_r1_corrective_authoring`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=author one RSE-T4-H1-R1 corrective packet; role=Local orchestrator/reviewer; phase=foundation corrective authoring; decision owner=Local; parked checkpoint=NCR P10 redispatch, P11, other packages, provider/live, public sync, deployment and platform production readiness.
 
 ## Current Mode
 
-Current mode marker: `cvf_foundation_rse_t4_classifier_recovery_dispatch_ready`
-Current mode: `cvf_foundation_rse_t4_classifier_recovery_dispatch_ready`; previous mode marker: `cvf_foundation_rse_t4_classifier_recovery_authoring`
+Current mode marker: `cvf_foundation_rse_t4_h1_r1_corrective_authoring`
+Current mode: `cvf_foundation_rse_t4_h1_r1_corrective_authoring`; previous mode marker: `cvf_foundation_rse_t4_classifier_recovery_dispatch_ready`
 
 ## Next Allowed Move
-Mode: `cvf_foundation_rse_t4_classifier_recovery_dispatch_ready`
-PROGRAM_ID=CVF-FOUNDATION; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=RSE-T4-H1; MATERIAL_COMMIT=09cd03e1d; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md; EXPANSION_ALLOWED=false. Execute only the exact twelve-path provider-free local governance-hardening packet for ADIF-0061 and return uncommitted evidence to Local. NCR remains parked at P9 USE_PROOF_PASSED; P10 redispatch, P11, provider/live, public sync, deployment and external platform-interception claims remain forbidden; latest closed learning-history wave LHW24.
+Mode: `cvf_foundation_rse_t4_h1_r1_corrective_authoring`
+PROGRAM_ID=CVF-FOUNDATION; NEXT_ACTION_CLASS=AUTHOR_GOVERNED_CORRECTIVE_PACKET; ACTIVE_BATCH=RSE-T4-H1-R1-AUTHORING; MATERIAL_COMMIT=532e49a72; ACTIVE_WORK_ORDER=NONE; EXPANSION_ALLOWED=false. Author one corrective packet that pre-authorizes work-order-template rotation and closes the four Local semantic false negatives. No implementation is released until that packet is committed and continuity-bound. NCR remains parked at P9; P10/P11, provider/live, public sync, deployment and platform-interception claims remain forbidden; latest closed learning-history wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
