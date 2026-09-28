@@ -75,6 +75,16 @@ semantic reading. A bounded survey cannot justify repository-wide
 `NO_NEW_VALUE` or complete use-case coverage. Missing evidence and exhausted
 budget remain explicitly unresolved/deferred, never converted into no value.
 
+## Unified Development Direction
+
+Apply section 2.1 of
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`.
+Record independent pattern and runtime dispositions in the existing value record:
+name the work artifact, acceptance criteria, consumer/owner, control/evidence
+limits, alternatives and cost. Owner overlap cannot alone reject runtime reuse;
+pattern novelty or popularity cannot admit it. Prove one bounded chain, repair
+observed gaps in existing owners, then expand for demand under existing authority.
+
 ## Shared Evidence, Value Selection And Stop Rules
 
 Use one umbrella source ledger and linked capability/use-case records. Stable

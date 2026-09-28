@@ -24,6 +24,12 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 
 Đích đến không phải một bộ tài liệu lớn hơn, cũng không phải một agent framework mới. Đích đến là các công việc có giá trị, chạy được, biết giới hạn, phục hồi được và chuyển được từ máy cá nhân sang môi trường phù hợp.
 
+### Định hướng phát triển thống nhất - 2026-09-28
+
+Operator xác nhận: làm vững một system chain có phạm vi rõ -> nối một runtime thật phù hợp -> dùng evidence end-to-end sửa gap của chuỗi -> ổn định hợp đồng -> mở rộng runtime khi có nhu cầu. Không chờ hoàn thiện mọi plane và không xây lại governance theo kiến trúc upstream.
+Pattern absorption và runtime integration phải được đánh giá độc lập theo section 2.1 của `docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`. Thành công là artifact được nghiệm thu, quyền được giữ, trạng thái thực thi trung thực và khả năng thay runtime có bằng chứng; không đo bằng số repo/module hoặc star/hot trend.
+Đây là làm rõ định hướng v2.2, không sửa phase plan, không mở P11, dependency install, dispatch, runtime/provider/live hay public sync. Các owner, checkpoint và proof requirement hiện hành tiếp tục kiểm soát việc thi công.
+
 ### Đọc nhanh cho người dùng
 
 - Bạn nói việc muốn làm; không cần biết lập trình hoặc tự cấu hình hệ thống.
@@ -619,7 +625,7 @@ External research stays advisory and ends before internal implementation/review/
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_corpus_to_knowledge_map_reconciliation.py` |
 | literalTokensReviewed | roadmap headings Authorization, Purpose, Scope, Non-Goals, Design Control Gate, Work Plan, Acceptance Criteria, Verification; `applicableCheckersRead`, `literalTokensReviewed`, `gateRunPurpose`, `claimBoundary`; `Status` is non-closed; `Public Export Disposition`; `Text Encoding Exception`; `NOT_APPLICABLE_WITH_REASON`; delta claim `CLAIM_REJECTED` markers; no new source intake/corpus-complete claim |
-| gateRunPurpose | Confirmation of v2.2 document shape, routing and evidence boundaries after source read-ahead; not first discovery of literal requirements or runtime proof |
+| gateRunPurpose | 2026-09-28 operator direction clarification: GC-043 priority, external absorption core/overlap/value, packet encoding and public-export checker sources re-read; documentation only. Confirmation of v2.2 document shape, routing and evidence boundaries after source read-ahead; not first discovery of literal requirements or runtime proof |
 | claimBoundary | Existing roadmap incorporates operator-approved D013 design; R1/W01 accepted bounded; Local prepares bounded S01; no activation, live, hosted, public or production claim |
 
 ## Text Encoding Exception

@@ -33,6 +33,13 @@ Useful patterns may be absorbed only after they are mapped to CVF-owned
 contracts, source authority, claim boundaries, and current workflow-chain
 semantics.
 
+The binding development direction is section 2.1 of
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`.
+External research must distinguish pattern improvement from runtime reuse for a
+named job. Existing-owner overlap is not a runtime rejection; repo popularity is
+not an admission criterion. Local owns the final two dispositions under the core
+standard, and execution remains separately governed.
+
 ## Current References
 
 | Reference | Role |

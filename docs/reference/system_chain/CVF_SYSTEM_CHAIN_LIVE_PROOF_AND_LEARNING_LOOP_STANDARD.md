@@ -32,6 +32,18 @@ operator CLI and Web surfaces, durable evidence paths, and static governance
 chains. It does not require an external provider call when the claimed property
 is static or deterministic and has no provider boundary.
 
+## Development Direction And Runtime Reuse
+
+Apply the operator-ratified development direction in section 2.1 of
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`:
+prove one bounded work chain with a suitable real runtime, repair observed gaps
+in existing owners, stabilize its contract, and add another runtime when needed.
+Do not wait for global plane completion or treat a new runtime as a reason to
+rebuild governance. Scope proof to the job, adapter and actual control boundary;
+artifact acceptance, authority preservation and truthful execution/effect state
+remain separate obligations. No current runtime or substitution proof is claimed
+by this normative direction; the proof classes and authorization below apply.
+
 ## Orthogonal Proof Model
 
 Every system-chain conclusion has two independent dimensions:
