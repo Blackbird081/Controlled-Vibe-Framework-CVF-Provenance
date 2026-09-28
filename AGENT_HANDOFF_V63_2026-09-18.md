@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Material commit `f4b7442c3` releases batch `CVF-NCR-R1-S11-R1` for Local execution. The corrective packet replaces the rejected S11 future-completion dependency with an already-committed adapter-evidence baseline and binds the exact thirteen-path acceptance ledger. P9 remains accepted; P10 execution is open only for this packet and one no-retry provider call.
+Material commit `f4b7442c3` releases batch `CVF-NCR-R1-S11-R1` for Local execution; continuity predecessor `a363ba4dd` is reconciled in this session-sync-only commit. The corrective packet replaces the rejected S11 future-completion dependency with an already-committed adapter-evidence baseline and binds the exact thirteen-path acceptance ledger. P9 remains accepted; P10 execution is open only for this packet and one no-retry provider call.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
