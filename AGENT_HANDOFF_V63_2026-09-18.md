@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Material commit `6a8545e64` closes CVF-NCR-R1-S11/P10 `CLOSED_BLOCKED_BOUNDED`, restores the accepted P9 state and records ADIF-0061. NCR is parked; only bounded RSE-T4 hardening packet authoring is released.
+Material commit `09cd03e1d` binds batch `RSE-T4-H1`: the classifier-block recovery baseline/work order is committed and ready for exact provider-free worker execution. NCR remains parked at accepted P9.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,11 +9,11 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.2 as the selected planning successor while preserving closed AKOE and terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are routed; AKOE-P4/common reconciliation and optional U1 source intake remain closed bounded.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer and session steward. Phase: RSE-T4 tool/classifier recovery hardening authoring. Decision owner: Local; NCR P10/P11, provider/live and broader expansion remain parked.
+Role: Local orchestrator/reviewer and session steward. Phase: RSE-T4-H1 tool/classifier recovery hardening dispatch. Decision owner: Local; NCR P10/P11, provider/live and broader expansion remain parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_foundation_rse_t4_classifier_recovery_authoring`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=author one bounded RSE-T4 hardening packet for ADIF-0061; role=Local orchestrator/reviewer; phase=foundation hardening authoring; decision owner=Local; parked checkpoint=NCR P10 redispatch, P11, other packages, provider/live, public sync, deployment and platform production readiness.
+Startup acknowledged: current mode=`cvf_foundation_rse_t4_classifier_recovery_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute committed work order `docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md` for batch RSE-T4-H1; role=Local orchestrator/reviewer; phase=foundation hardening dispatch; decision owner=Local; parked checkpoint=NCR P10 redispatch, P11, other packages, provider/live, public sync, deployment and platform production readiness.
 ## Current Mode
-`cvf_foundation_rse_t4_classifier_recovery_authoring`. S11 is `CLOSED_BLOCKED_BOUNDED` at `6a8545e64`; Local restored all ten unproven P10 mutations and providerCallCount stayed zero. P9 remains `USE_PROOF_PASSED` with its receipt unchanged. NCR P10/P11 and broader effects are parked. ADIF-0061 releases only source-verified RSE-T4 packet authoring. Latest closed learning-history wave: `LHW24`.
+`cvf_foundation_rse_t4_classifier_recovery_dispatch_ready`. RSE-T4-H1 packet material is committed at `09cd03e1d`; only its exact twelve-path provider-free worker lane is released. S11 remains `CLOSED_BLOCKED_BOUNDED` at `6a8545e64`; P9 remains `USE_PROOF_PASSED`, while NCR P10/P11 and broader effects stay parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
 T3B is closed with one Local-verified active v1 specification. Party B is a verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
@@ -155,7 +155,7 @@ Rollback boundary: revert only this continuity sync; preserve closure material `
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 - NCR W02 read-only return was Local-accepted at `c638f2ece` after source-claim repair and 90/90 pre-commit. The client fallback port `8000` differs from the server's documented `8100`; actual URL/port, ledger/log retention and pilot data/effect/expense remain open. R1/W00 static HTML UX contract worker return was reviewer-repaired and accepted bounded at `97532f7038f7bcc0d3768550b06a3695b72b8809`. R1/W01 paired baseline/work order committed at `e54dd51e8eb60364a814a921a0d31bb7d259e487`; exact component/test/return worker delta was reviewer-repaired and accepted bounded at `5e99eb20910e7e3282d7431e6ca3d96c5e87860b` after reviewer-fast 69/69 and pre-commit 90/90. Mocked UI tests do not establish actual browser walkthrough, route call, profile, P06/P08, or pilot effect; successor work order is held for Web research.
 ## Next Allowed Move
-PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=PAUSE_FOR_OPERATOR_DIRECTION; ACTIVE_BATCH=MFRP-P4-C1-BOUNDED-RETRY-RECOVERY-CLOSED; INITIAL_MATERIAL_COMMIT=d27b4bfbe; PHASE_CORRECTION_COMMIT=ea6fe98e6; REPLAY_FILTER_COMMIT=131626025; NONBLOCKING_GATE_CORRECTION_COMMIT=0b17c3e85; RECEIPT_IDENTITY_FIX_COMMIT=e0be6df81; FIRST_NEW_SAMPLE_DISCLOSURE=6b8752bc1; LIVE_VALIDATION_DISCLOSURE_PARENT=6b8752bc1; EXPANSION_ALLOWED=false. Bounded retry runs only on dedicated session-sync disclosures, selects only canonically replayable backlog items, preserves each validated receipt at a unique immutable identity path, and records current-governance rejection without blocking; the ignored journal remains the runtime count authority. CVF-NCR-R1-S08 P7, NCR P8-P10 and M5/M10/M20/P5/P6 remain paused; do not resume NCR, call providers/network, public-sync, deploy or claim production readiness; latest closed LHW wave LHW24.
+PROGRAM_ID=CVF-FOUNDATION; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=RSE-T4-H1; MATERIAL_COMMIT=09cd03e1d; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md; EXPANSION_ALLOWED=false. Execute only the exact twelve-path provider-free local governance-hardening packet for ADIF-0061 and return uncommitted evidence to Local. NCR remains parked at P9 USE_PROOF_PASSED; P10 redispatch, P11, provider/live, public sync, deployment and external platform-interception claims remain forbidden; latest closed learning-history wave LHW24.
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
@@ -177,21 +177,8 @@ PROGRAM_ID=GCLH-MFRP; NEXT_ACTION_CLASS=PAUSE_FOR_OPERATOR_DIRECTION; ACTIVE_BAT
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: bind the command-reference and learning-corrected R1/S08 dispatch packet at material commit `b2f614037`, record both corrected packet hashes and root-reconciliation state, and regenerate the compact/full continuity projections. This continuity-only sync changes no worker-owned truth, package or generated projection path.
-Protected paths:
+Authorized guard-maintenance scope: continuity-only binding of committed RSE-T4-H1 dispatch material `09cd03e1d`, its exact authority hashes and executable next move. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: the operator delegated Local orchestration/review and instructed Local to park NCR then harden this recurring defect. Rollback boundary: revert only this continuity projection; preserve material `09cd03e1d`, S11 closure `6a8545e64`, P9 evidence and all unrelated history.
 
-- `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/cvfNcrR1S08UsageReceiptReadinessDispatch20260927.json`; `CVF_SESSION/state/entries/cvfNcrR1S08DispatchEntrypointRootReconciliation20260927.json`
-- `CVF_SESSION/state/entries/acelPostG7ThreeRepoAbsorption20260925.json`
-- `CVF_SESSION/state/entries/externalLocalAbsorptionCoordination.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/state/entries/cvfNcrR1W00HtmlUxDispatch20260926.json`; `CVF_SESSION/state/entries/cvfNcrR1W01HtmlUxCopyDispatch20260926.json`
-- `CVF_SESSION_MEMORY.md`
-
-Operator authorization: operator required root repair before continuation and identified that Finding-To-Learning did not surface the recurring failure without human prompting. Rollback boundary: revert only this continuity projection; retain committed root-reconciliation closure `f7d8e4842`, accepted P6 truth evidence and all earlier accepted material. Root correction is bound to the named closed work order; P7 execution, ACTIVE, P8-P10, package-body invocation, external/provider/live, public-sync and production remain separately gated.
 ## Agent Operation Trace Block
 
 | Field | Evidence |
