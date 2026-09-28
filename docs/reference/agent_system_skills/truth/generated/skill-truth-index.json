@@ -1,4 +1,6 @@
 {
+  "schemaVersion": "0.1.0",
+  "generatedFrom": "docs/reference/agent_system_skills/truth/packets",
   "entries": [
     {
       "canonicalPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-api-interface-design.json",
@@ -155,7 +157,7 @@
     },
     {
       "canonicalPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-evidence-audit.json",
-      "receiptHash": "sha256:fefd9e542eb9830ca8774a1dd229c1929a6c0e2083417e17394c6406b6de598b",
+      "receiptHash": "sha256:e295aaf9b9b7faa97f9331347ae441b37b69c28463f08a4f7c00a0d1c213698f",
       "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
       "skillId": "cvf-engineering-test-evidence-audit",
       "truthPacketId": "SKSOT-T1-cvf-engineering-test-evidence-audit",
@@ -234,7 +236,5 @@
       "truthStatus": "approved",
       "verificationMode": "STRICT"
     }
-  ],
-  "generatedFrom": "docs/reference/agent_system_skills/truth/packets",
-  "schemaVersion": "0.1.0"
+  ]
 }

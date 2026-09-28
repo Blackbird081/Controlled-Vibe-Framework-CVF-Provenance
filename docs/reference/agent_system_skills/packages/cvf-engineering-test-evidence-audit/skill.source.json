@@ -11,7 +11,7 @@
   "uatState": "PASSED",
   "certificationState": "CERTIFIED",
   "internalAgentDisposition": "IMPLEMENTED",
-  "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+  "externalCliMcpDisposition": "IMPLEMENTED",
   "cvfAdaptationBoundary": "CVF-owned advisory test-evidence-audit guidance compressed from the accepted R1/S02 content candidate; no third-party skill import",
-  "claimBoundary": "ACTIVE package; UAT PASSED and certification CERTIFIED per the five-case source-based review at docs/reviews/CVF_CVF_NCR_R1_S06_TEST_EVIDENCE_AUDIT_UAT_CERTIFICATION_2026-09-27.md; internalAgentDisposition IMPLEMENTED grants explicit internal runtime-loader body-read eligibility only; an approved STRICT P6 source truth packet exists at docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-evidence-audit.json; ACTIVE status plus approved STRICT truth yields internal ACTIVATION_READY resolver/inventory/policy readout only; no automatic invocation, external adapter, or provider/live/public/production authority exists at this phase"
+  "claimBoundary": "ACTIVE P10 package with approved STRICT truth and IMPLEMENTED internal plus external CLI/MCP dispositions. External use is available only through the receipt-backed production executor and adapter contract; package loading or advisory output grants no automatic invocation, test execution, filesystem/Git mutation, provider retry, public sync, deployment, or downstream action authority."
 }

@@ -3360,9 +3360,9 @@
         "truthPacketRequired": true
       },
       "cliMcp": {
-        "adapterContract": "N/A with reason: no external CLI/MCP adapter exists at ASSF SOP P4; adapter authorship requires a separate later-phase work order",
-        "adapterEvidence": "N/A with reason: no adapter implemented at this phase",
-        "disposition": "DEFERRED_WITH_REASON"
+        "adapterContract": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md",
+        "adapterEvidence": "docs/baselines/CVF_GC018_CVF_NCR_R1_S11_R1_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_CORRECTIVE_2026-09-28.md",
+        "disposition": "IMPLEMENTED"
       },
       "drift": {
         "violations": []
@@ -3444,6 +3444,7 @@
         "ASSF_PACKAGE_ROOT",
         "RUNTIME_ELIGIBLE_PACKAGE",
         "ACTIVE_RESOLVER_READY_PACKAGE",
+        "CLI_MCP_ADAPTER_PACKAGE",
         "ACTIVE_SOURCE_PACKAGE",
         "WEB_PROJECTION_CATALOG_ITEM",
         "SPEC_SELECTION_PROFILE"
@@ -3499,7 +3500,7 @@
     "activeResolverReadyPackages": 26,
     "activeSourcePackages": 26,
     "assfRegistryEntries": 34,
-    "cliMcpAdapterPackages": 25,
+    "cliMcpAdapterPackages": 26,
     "crossSurfaceDriftViolationCount": 0,
     "externalProviderRuntimeSkillMappings": 0,
     "packageRoots": 26,

@@ -87,7 +87,9 @@ grants that authority by itself.
 ## Risk And Authority
 
 This package grants no test execution, fixture creation, deletion, commit,
-provider call, host installation, public sync, or production authority.
+provider call, host installation, public sync, deployment, or downstream
+action authority. Its bounded production adapter is usable only through an
+explicit governed receipt-backed invocation.
 Reading or loading this metadata or its accepted content source never
 authorizes running the named test or any Git mutation. If the named test
 file is missing or the current work order forbids execution, stop at
@@ -107,9 +109,9 @@ truth packet exists at
 its lifecycle snapshot reflects this package's `ACTIVE` status. `ACTIVE`
 status plus this approved `STRICT` truth packet yields internal
 `ACTIVATION_READY` resolver, inventory and activation-policy readout only.
-This is not automatic invocation, external adapter readiness, or any
-external/live/public/production effect; `externalCliMcpDisposition`
-remains `DEFERRED_WITH_REASON`. The accepted content candidate and
+This is not automatic invocation or an external/live/public effect;
+`externalCliMcpDisposition` is `IMPLEMENTED` only for the existing bounded
+receipt-backed production CLI/MCP envelope. The accepted content candidate and
 its Local completion remain the authoritative source for the five-label
 semantics, the adversarial/boundary cases, and the paired-evaluation
 design; this body compresses that source and does not add behavior

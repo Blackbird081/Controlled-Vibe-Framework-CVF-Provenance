@@ -17,9 +17,12 @@ approved `STRICT` P6 source truth packet exists at
 `docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-evidence-audit.json`.
 `ACTIVE` status plus the approved `STRICT` truth packet yields internal
 `ACTIVATION_READY` resolver, inventory and activation-policy readout only.
-Neither this file, nor the truth packet, grants automatic invocation,
-external adapter, host installation, or external/live/public/production
-effect; `externalCliMcpDisposition` remains `DEFERRED_WITH_REASON`.
+The bounded production CLI/MCP adapter is `IMPLEMENTED` under
+`CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md`. It requires explicit
+receipt-backed execution authority. Neither this file nor the truth packet
+grants automatic invocation, test execution, downstream mutation, host
+installation, provider retry, public sync, deployment, or platform-wide
+production authority.
 
 ## Scope / Applies-To
 
@@ -55,7 +58,7 @@ repository-wide test coverage, does not authorize test execution as a
 standing capability, and does not convert an advisory label into a test
 PASS or a deletion permission. UAT is `PASSED`, certification is
 `CERTIFIED`, source truth is approved `STRICT` per the P6 packet, and
-source `status` is `ACTIVE` with internal `ACTIVATION_READY`
-resolver/inventory/policy readout; this front door is not automatic
-invocation, external adapter readiness, host installation, provider proof,
-public export, or production readiness evidence.
+source `status` is `ACTIVE` with internal `ACTIVATION_READY` and bounded
+external production-adapter availability. This front door is not automatic
+invocation, host installation, a provider grant, public export, deployment,
+or platform-wide production readiness evidence.

@@ -1,5 +1,5 @@
 {
-  "authorityBoundary": "Truth packet for one bounded internal runtime-loader eligible P8 ACTIVE package. This packet records source truth only; ACTIVE status plus this approved STRICT truth yields internal ACTIVATION_READY resolver/inventory/policy readout only. It does not grant automatic invocation, external adapter, test execution, provider call, public sync, merge, commit, or filesystem action authority.",
+  "authorityBoundary": "Truth packet for one bounded P10 ACTIVE production package. This packet records source truth and the governed production-adapter contract only. Receipt-backed internal or external use still requires explicit work-order and provider authority. It does not grant automatic invocation, test execution, downstream mutation, provider retry, public sync, deployment, merge, commit, or filesystem action authority.",
   "canonicalPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-evidence-audit.json",
   "evidence": [
     {
@@ -43,12 +43,24 @@
       "kind": "package_skill_productionization_work_order",
       "sourcePath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S09_TEST_EVIDENCE_AUDIT_ACTIVATION_READINESS_2026-09-27.md",
       "status": "approved"
+    },
+    {
+      "evidenceId": "EV-PRODUCTION-RUNTIME-STANDARD",
+      "kind": "production_package_runtime_standard",
+      "sourcePath": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md",
+      "status": "approved"
+    },
+    {
+      "evidenceId": "EV-S11-R1-P10-WORK-ORDER",
+      "kind": "package_skill_productionization_work_order",
+      "sourcePath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S11_R1_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_CORRECTIVE_2026-09-28.md",
+      "status": "approved"
     }
   ],
   "lifecycleSnapshot": {
     "canonicalRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
     "certificationState": "CERTIFIED",
-    "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
+    "externalCliMcpDisposition": "IMPLEMENTED",
     "internalAgentDisposition": "IMPLEMENTED",
     "status": "ACTIVE",
     "uatState": "PASSED"
@@ -80,12 +92,17 @@
       "strength": "HARD"
     },
     {
-      "obligationId": "OB-EXTERNAL-ADAPTER-DEFERRED-BOUNDARY",
+      "obligationId": "OB-EXTERNAL-ADAPTER-RECEIPT-BOUNDARY",
       "state": "satisfied",
       "strength": "HARD"
     },
     {
       "obligationId": "OB-P8-ACTIVATION-READINESS",
+      "state": "satisfied",
+      "strength": "HARD"
+    },
+    {
+      "obligationId": "OB-P10-PRODUCTION-RUNTIME",
       "state": "satisfied",
       "strength": "HARD"
     }
@@ -122,12 +139,20 @@
         "EV-REGISTRY",
         "EV-S09-P8-WORK-ORDER"
       ]
+    },
+    {
+      "claimId": "CLAIM-P10-PRODUCTION-RUNTIME",
+      "label": "HUMAN_APPROVED",
+      "sourceEvidenceIds": [
+        "EV-PRODUCTION-RUNTIME-STANDARD",
+        "EV-S11-R1-P10-WORK-ORDER"
+      ]
     }
   ],
   "receipt": {
-    "hash": "sha256:fefd9e542eb9830ca8774a1dd229c1929a6c0e2083417e17394c6406b6de598b",
-    "previousHash": "sha256:0d99ce6caf46397af1c0418bc3198086709bc7a6fbec9c5afac7ee5346917dfe",
-    "receiptId": "RCPT-SKSOT-T1-cvf-engineering-test-evidence-audit-R1-S09",
+    "hash": "sha256:e295aaf9b9b7faa97f9331347ae441b37b69c28463f08a4f7c00a0d1c213698f",
+    "previousHash": "sha256:fefd9e542eb9830ca8774a1dd229c1929a6c0e2083417e17394c6406b6de598b",
+    "receiptId": "RCPT-SKSOT-T1-cvf-engineering-test-evidence-audit-R1-S11-R1",
     "status": "issued"
   },
   "registryEntryPath": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-test-evidence-audit.json",
@@ -172,7 +197,7 @@
       ],
       "method": "source",
       "obligationIds": [
-        "OB-EXTERNAL-ADAPTER-DEFERRED-BOUNDARY"
+        "OB-EXTERNAL-ADAPTER-RECEIPT-BOUNDARY"
       ],
       "resultId": "VR-EXTERNAL-ADAPTER-BOUNDARY",
       "status": "pass"
@@ -187,6 +212,18 @@
         "OB-P8-ACTIVATION-READINESS"
       ],
       "resultId": "VR-P8-ACTIVATION-READINESS",
+      "status": "pass"
+    },
+    {
+      "evidenceIds": [
+        "EV-PRODUCTION-RUNTIME-STANDARD",
+        "EV-S11-R1-P10-WORK-ORDER"
+      ],
+      "method": "source",
+      "obligationIds": [
+        "OB-P10-PRODUCTION-RUNTIME"
+      ],
+      "resultId": "VR-P10-PRODUCTION-RUNTIME",
       "status": "pass"
     }
   ]

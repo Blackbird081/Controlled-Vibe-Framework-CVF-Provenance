@@ -1,6 +1,6 @@
 {
   "schemaVersion": "0.1.0",
-  "generatedAt": "2026-09-27T17:13:00.791Z",
+  "generatedAt": "2026-09-28T11:01:43.027Z",
   "sourceInventory": "../../../docs/reference/agent_system_skills/control_plane/generated/skill-inventory.json",
   "sourceSkillIndex": "../../../docs/reference/agent_system_skills/generated/skill-index.json",
   "dashboardContract": "Read-only CVF Web projection of Skill Control Plane inventory. Web dashboards may consume this file for display and filtering, but it is not runtime authority, activation authority, provider authority, or public certification authority.",
@@ -9,7 +9,7 @@
     "packageRoots": 26,
     "runtimeEligiblePackages": 26,
     "activeResolverReadyPackages": 26,
-    "cliMcpAdapterPackages": 25,
+    "cliMcpAdapterPackages": 26,
     "selectionProfiledPackages": 26,
     "webProjectionItems": 54,
     "crossSurfaceDriftViolationCount": 0,
@@ -1033,7 +1033,7 @@
       "expectedOutputContribution": "One advisory row disposing an existing-proof claim, with cited evidence and a next-owner action, never a test PASS or deletion permission.",
       "runtimeEligible": true,
       "activationDecision": "ACTIVATION_READY",
-      "cliMcpDisposition": "DEFERRED_WITH_REASON",
+      "cliMcpDisposition": "IMPLEMENTED",
       "packageRootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
       "registryEntryPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
       "certificationState": "CERTIFIED",
@@ -1042,7 +1042,7 @@
       "verificationMode": "STRICT",
       "runtimeEligibility": "RUNTIME_PACKAGE_ELIGIBLE",
       "authorityCeiling": null,
-      "adapterContract": "N/A with reason: no external CLI/MCP adapter exists at ASSF SOP P4; adapter authorship requires a separate later-phase work order"
+      "adapterContract": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md"
     },
     {
       "skillId": "cvf-governance-context-engineering",
