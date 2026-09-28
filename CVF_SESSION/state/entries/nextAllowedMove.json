@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2971,
+  "stateOrder": 2973,
   "stateKey": "nextAllowedMove",
-  "value": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; ACTIVE_BATCH=CVF-NCR-R1-S10-R1; MATERIAL_COMMIT=638b29ab99099e0132d962a66fcad6affcdad881; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_2026-09-28.md; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may execute the exact three-path offline repair and return directly to Local without operator questions or commit. Preserve the committed P9 receipt byte-for-byte; provider/live calls, credentials, production adapter/checker changes, lifecycle mutation, P10, public-sync, deployment and production remain forbidden; latest closed learning-history wave LHW24."
+  "value": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PAUSE_FOR_OPERATOR_DIRECTION; ACTIVE_BATCH=CVF-NCR-R1-S10-P9-CLOSED; MATERIAL_COMMIT=d30b31a3f65a67cc6a03b0b18d2a1731557cb6ad; COMPLETION_REVIEW=docs/reviews/CVF_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_COMPLETION_2026-09-28.md; EXPANSION_ALLOWED=false. P9 is USE_PROOF_PASSED and S10/S10-R1 are closed bounded. Preserve the accepted receipt; do not author or execute P10, repeat provider/live proof, public-sync, deploy or claim production readiness without a fresh operator-directed Local packet; latest closed learning-history wave LHW24."
 }

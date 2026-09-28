@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_2026-09-28.md",
     "workOrderSha256": "d4a2e2177d83c6cc0dc92e62ec2b1bc850bcfa631d34852a2253b4009d63cf31"
   },
-  "currentAuthoritySyncReason": "CVF-NCR-R1-S10-R1 is committed at 638b29ab99099e0132d962a66fcad6affcdad881 and DISPATCH_READY. One INTERNAL_AGENT owns exactly the focused test, the S09 historical trace and one worker return. The repair is offline-only; the P9 receipt is immutable and no provider call, credentials, lifecycle mutation or P10 is authorized.",
+  "currentAuthoritySyncReason": "CVF-NCR-R1-S10 and S10-R1 are Local-accepted CLOSED_PASS_BOUNDED at material commit d30b31a3f65a67cc6a03b0b18d2a1731557cb6ad. P9 reached USE_PROOF_PASSED with the accepted receipt unchanged, focused tests 10/10, canonical S09 trace and both fast gates passing. P10 remains parked and requires a fresh Local-authored packet.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s10_r1_offline_root_repair_dispatch_ready",
-  "previousMode": "cvf_ncr_r1_s10_r1_root_repair_authoring",
+  "currentMode": "cvf_ncr_r1_s10_p9_closed",
+  "previousMode": "cvf_ncr_r1_s10_r1_offline_root_repair_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
