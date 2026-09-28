@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Material review commit `80b6e6c1fb5a63ac7590cc305b8d49d1e55f3d27` preserves the valid CVF-NCR-R1-S10 P9 receipt and rejects terminal closure pending two offline prerequisites. Local is authoring S10-R1; no second provider call or P10 is authorized.
+Material dispatch commit `638b29ab99099e0132d962a66fcad6affcdad881` binds the CVF-NCR-R1-S10-R1 exact three-path offline root repair. The valid P9 receipt is immutable; no second provider call or P10 is authorized.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,11 +9,11 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.2 as the selected planning successor while preserving closed AKOE and terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are routed; AKOE-P4/common reconciliation and optional U1 source intake remain closed bounded.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer and session steward. Phase: NCR R1/S10-R1 root-repair authoring. Decision owner: Local; provider/live retry, receipt mutation, P10 and broader expansion remain parked.
+Role: Local orchestrator/reviewer and session steward. Phase: NCR R1/S10-R1 worker dispatch. Decision owner: Local; provider/live retry, receipt mutation, production-source change, P10 and broader expansion remain parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_r1_s10_r1_root_repair_authoring`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=finish and commit one S10-R1 offline root-repair packet; role=Local orchestrator/reviewer; phase=S10-R1 dispatch authoring; decision owner=Local; parked checkpoint=provider/live retry, credentials, receipt mutation, lifecycle change, P10, public and production.
+Startup acknowledged: current mode=`cvf_ncr_r1_s10_r1_offline_root_repair_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one INTERNAL_AGENT executes the exact three-path offline S10-R1 repair and returns to Local; role=Local orchestrator/reviewer; phase=S10-R1 worker dispatch; decision owner=Local; parked checkpoint=provider/live retry, credentials, receipt mutation, production-source change, lifecycle change, P10, public and production.
 ## Current Mode
-`cvf_ncr_r1_s10_r1_root_repair_authoring`. The P9 receipt is accepted and immutable; S10 terminal closure is blocked by the expired focused-test fixture and S09 receipt-trace shape. The next move is completion and committed release of one exact provider-free S10-R1 packet. P4-C1 collection continues independently. P10 and broader effects remain closed. Latest closed learning-history wave: `LHW24`.
+`cvf_ncr_r1_s10_r1_offline_root_repair_dispatch_ready`. The exact three-path packet is committed and ready for one INTERNAL_AGENT. It repairs only the focused fixture, S09 canonical trace rows and worker return, then returns to Local with no commit. P4-C1 collection continues independently. P10 and broader effects remain closed. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
 T3B is closed with one Local-verified active v1 specification. Party B is a verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
@@ -23,15 +23,15 @@ Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59
 
 The three operator-relayed Human Boundary, Positioning, and Async handoffs are now reviewed and combined with Jev, WikiSkill, and HyperFrames in `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md`, material commit `53bce992f`. Human Boundary is an `ADAPT` candidate, Positioning is primarily `CONFIRMED_EXISTING`, and Async remains `WATCH` with upstream factual claims `BLOCKED_SOURCE_NOT_FOUND` until Local pinning. The prior three-repository program is terminal-accounted; common Local closure remains blocked by AKOE P1-P3 execution and P4 reconciliation.
 ## Latest Work / Changes
-- R1/S10 P9 evidence is Local-reviewed at `80b6e6c1f`: the receipt passed independent offline hash/cross-field validation. Terminal completion was rejected because the mandatory focused suite has a calendar-expired test fixture and the S09 return lacks eight canonical N/A trace rows. S10-R1 packet authoring is the only open move; no repeat provider call is authorized.
+- R1/S10-R1 is `DISPATCH_READY` at `638b29ab9`: one INTERNAL_AGENT owns exactly the focused test, S09 trace block and one worker return. It must preserve hostile expiry behavior and the immutable P9 receipt, pass both offline fast gates, avoid operator questions and not commit.
 - R1/S07-R1 is `CLOSED_PASS_BOUNDED` at material commit `f7d8e4842`: P6 truth is admitted; inventory and resolver share the exact six-row lifecycle/truth decision matrix; recurring blocked-return escalation is derived from stable cluster history; ADIF-0060 and scaffold/golden coverage are material. Focused suites passed 21/21, 29/29 and 94/94; Local matrix parity passed 6/6. Stash and instruction-body loader use are recorded worker scope violations. The package remains `APPROVED` and `DENIED_SOURCE_NOT_ACTIVE`.
 - R1/S04 is `CLOSED_WITH_RECORDED_SCOPE_VIOLATION` at `ecb984658`: order-34 P3 metadata and both generated read models are accepted; Local repaired the omitted dependent inventory. Worker stash/pop diagnostic remains outside authority. R1/S03 remains `CLOSED_PASS_BOUNDED` at `b8d8d32e2`. No P4-P10 or runtime/external authority follows.
 
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: deterministic post-material synchronization of the active continuity sources and generated projections after Local S10 review.
-Protected paths: `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`, `CVF_SESSION/state/entries/cvfNcrR1S10P9ReviewRootRepairAuthoring20260928.json`, `CVF_SESSION/state/entries/nextAllowedMove.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V63_2026-09-18.md`.
-Operator authorization: the operator directed Local to continue; Local reviewer/session-steward authority records accepted evidence and routes the two exact offline defects into S10-R1 authoring.
-Rollback boundary: revert only this continuity commit; preserve material review commit `80b6e6c1f`, the accepted receipt and the original worker return.
+Authorized guard-maintenance scope: deterministic post-material synchronization of active continuity and generated projections for committed S10-R1 dispatch.
+Protected paths: `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`, `CVF_SESSION/ACTIVE_SESSION_STATE.json`, `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`, `CVF_SESSION/state/entries/cvfNcrR1S10R1OfflineRootRepairDispatch20260928.json`, `CVF_SESSION/state/entries/nextAllowedMove.json`, `CVF_SESSION_MEMORY.md`, `AGENT_HANDOFF_V63_2026-09-18.md`.
+Operator authorization: the operator directed Local to continue; Local dispatcher/session-steward authority binds committed material packet `638b29ab9` to exact worker execution.
+Rollback boundary: revert only this continuity commit; preserve material review commit `80b6e6c1f`, packet commit `638b29ab9`, the accepted receipt and original worker return.
 - R1/S02 Local completion is at `555999a83`: source-grounded content candidate accepted after reviewer repair, with worker test execution outside authority disclosed and rejected as proof. TDD/code-review ACTIVE README gap was repaired in the same material commit; reviewer skill was consulted manually without runtime receipt.
 - D013 core-skills design is committed at `db5ae4c43`. Initial S01 dispatch was `ee2abee8962d4489710a8d6db021af4f384731b6`. Local repaired the first worker-return packet and paired baseline/work order at `0d4995893d5a5a28316537027bc9b5c88c16bd3d`. Round 2 review, baseline and work order are material at `da301812a612885232332d7532fe4268c0bcb5f6`. The final worker return was committed at `5f8addf3922c6dbee7dea33e451b2a4e29fbc247`; Local bounded completion at `09b62aa3b57fd8dfda93140f30a845b7177be24c` passed the 90/90 material pre-commit gate. Two skill-body lifecycle prose repairs remain unimplemented and require a separate R1/S01 packet.
 - Group 1 source is `SOURCE_CREATED_LOCAL_VERIFIED` at material commit

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2970,
+  "stateKey": "cvfNcrR1S10R1OfflineRootRepairDispatch20260928",
+  "value": "DISPATCH_READY at material commit 638b29ab99099e0132d962a66fcad6affcdad881. The paired S10-R1 baseline/work order owns exactly three worker paths: focused use-proof adapter tests, the historical S09 receipt-trace block and one worker return. Required proof includes explicit hostile expiry coverage, canonical NOT_USED_WITH_REASON rows, original S10 and S10-R1 offline fast gates, unchanged receipt hash and empty staging. Provider/live calls, credentials, receipt mutation, production adapter/checker changes, lifecycle mutation and P10 are forbidden. Technical blockers return to Local, never to an operator question."
+}

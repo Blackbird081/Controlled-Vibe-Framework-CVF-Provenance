@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_s10_r1_root_repair_authoring`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=finish and commit one source-verified S10-R1 offline root-repair packet; role=Local orchestrator/reviewer; phase=S10-R1 dispatch authoring; decision owner=Local; parked checkpoint=provider/live retry, credentials, receipt mutation, lifecycle change, P10, public and production.
+Startup acknowledged: current mode=`cvf_ncr_r1_s10_r1_offline_root_repair_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one INTERNAL_AGENT executes the exact three-path offline S10-R1 repair and returns to Local; role=Local orchestrator/reviewer; phase=S10-R1 worker dispatch; decision owner=Local; parked checkpoint=provider/live retry, credentials, receipt mutation, production-source change, lifecycle change, P10, public and production.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_s10_r1_root_repair_authoring`
-Current mode: `cvf_ncr_r1_s10_r1_root_repair_authoring`; previous mode marker: `cvf_ncr_r1_s10_p9_dispatch_ready`
+Current mode marker: `cvf_ncr_r1_s10_r1_offline_root_repair_dispatch_ready`
+Current mode: `cvf_ncr_r1_s10_r1_offline_root_repair_dispatch_ready`; previous mode marker: `cvf_ncr_r1_s10_r1_root_repair_authoring`
 
 ## Next Allowed Move
-Mode: `cvf_ncr_r1_s10_r1_root_repair_authoring`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR; ACTIVE_BATCH=CVF-NCR-R1-S10-R1; MATERIAL_COMMIT=80b6e6c1fb5a63ac7590cc305b8d49d1e55f3d27; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md; EXPANSION_ALLOWED=false. Preserve the valid committed P9 receipt and finish source-verified authoring of one S10-R1 offline root-repair packet for the expired focused-test fixture and S09 canonical receipt-trace rows. Do not dispatch until the paired packet is committed, continuity binds its material SHA, and pre-dispatch passes. No provider/live call, credential read, receipt mutation, lifecycle change, P10, public-sync, deployment or production; latest closed learning-history wave LHW24.
+Mode: `cvf_ncr_r1_s10_r1_offline_root_repair_dispatch_ready`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; ACTIVE_BATCH=CVF-NCR-R1-S10-R1; MATERIAL_COMMIT=638b29ab99099e0132d962a66fcad6affcdad881; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_2026-09-28.md; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may execute the exact three-path offline repair and return directly to Local without operator questions or commit. Preserve the committed P9 receipt byte-for-byte; provider/live calls, credentials, production adapter/checker changes, lifecycle mutation, P10, public-sync, deployment and production remain forbidden; latest closed learning-history wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

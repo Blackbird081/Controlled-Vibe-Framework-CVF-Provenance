@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2969,
+  "stateOrder": 2971,
   "stateKey": "nextAllowedMove",
-  "value": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR; ACTIVE_BATCH=CVF-NCR-R1-S10-R1; MATERIAL_COMMIT=80b6e6c1fb5a63ac7590cc305b8d49d1e55f3d27; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md; EXPANSION_ALLOWED=false. Preserve the valid committed P9 receipt and finish source-verified authoring of one S10-R1 offline root-repair packet for the expired focused-test fixture and S09 canonical receipt-trace rows. Do not dispatch until the paired packet is committed, continuity binds its material SHA, and pre-dispatch passes. No provider/live call, credential read, receipt mutation, lifecycle change, P10, public-sync, deployment or production; latest closed learning-history wave LHW24."
+  "value": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; ACTIVE_BATCH=CVF-NCR-R1-S10-R1; MATERIAL_COMMIT=638b29ab99099e0132d962a66fcad6affcdad881; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_2026-09-28.md; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may execute the exact three-path offline repair and return directly to Local without operator questions or commit. Preserve the committed P9 receipt byte-for-byte; provider/live calls, credentials, production adapter/checker changes, lifecycle mutation, P10, public-sync, deployment and production remain forbidden; latest closed learning-history wave LHW24."
 }

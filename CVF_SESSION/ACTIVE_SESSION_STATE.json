@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md",
-    "baselineSha256": "d2998fae60afa98c359bb233a26f2d3c2d8b7db5769d75ba053795b23119e748",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md",
-    "workOrderSha256": "58ba1a68c70bf472531a530737140ebdf48c599d529b4db153d024d93c215a0f"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_2026-09-28.md",
+    "baselineSha256": "1c99130e1939520658c7baa33d50749f771369ef293ab7ee2b1d13436f6eb49f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_2026-09-28.md",
+    "workOrderSha256": "d4a2e2177d83c6cc0dc92e62ec2b1bc850bcfa631d34852a2253b4009d63cf31"
   },
-  "currentAuthoritySyncReason": "CVF-NCR-R1-S10 P9 evidence and Local review are committed at 80b6e6c1fb5a63ac7590cc305b8d49d1e55f3d27. The receipt is valid and immutable, but S10 closure is blocked by two offline prerequisites. Current authority remains the committed S10 work order while Local authors the fresh S10-R1 repair packet; no second provider call or P10 is authorized.",
+  "currentAuthoritySyncReason": "CVF-NCR-R1-S10-R1 is committed at 638b29ab99099e0132d962a66fcad6affcdad881 and DISPATCH_READY. One INTERNAL_AGENT owns exactly the focused test, the S09 historical trace and one worker return. The repair is offline-only; the P9 receipt is immutable and no provider call, credentials, lifecycle mutation or P10 is authorized.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s10_r1_root_repair_authoring",
-  "previousMode": "cvf_ncr_r1_s10_p9_dispatch_ready",
+  "currentMode": "cvf_ncr_r1_s10_r1_offline_root_repair_dispatch_ready",
+  "previousMode": "cvf_ncr_r1_s10_r1_root_repair_authoring",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
@@ -16856,5 +16856,6 @@
   "cvfNcrR1S10P9HeldPacket20260928": "AUTHOR_COMPLETE_HOLD at material commit 22ddeada689b8e94877d619fdb61457c9e490269. The paired S10/P9 baseline and work order pass author-fast, target-state feasibility, reviewer-fast 69/69 and pre-commit 90/90. The packet proves no use yet: dry mode only reaches DRY_RUN_READY_FOR_LIVE_PROVIDER_USE_PROOF, so USE_PROOF_PASSED requires one explicit live call. Provider execution remains forbidden until operator release and Local converts the held packet to a committed dispatch with an exact one-call grant. No worker execution, P10, external adapter, additional provider call, public sync, deployment or production authority follows.",
   "cvfNcrR1S10P9DispatchRelease20260928": "DISPATCH_READY. The operator released exactly one Alibaba/DashScope provider call using qwen3.7-flash-2026-07-15 with no automatic retry. Local converted the paired S10/P9 packet, bound delegation CVF-NCR-R1-S10-P9-ONE-CALL-20260928, and admitted exactly one INTERNAL_AGENT worker with two output paths and no commit authority. Dry readiness does not prove P9; a failed, partial, timed-out or ambiguous live attempt consumes the grant. P10, external adapter, additional calls, public sync, deployment and production remain parked.",
   "cvfNcrR1S10P9ReviewRootRepairAuthoring20260928": "BLOCKED_WITH_REASON after independent Local review. Material commit 80b6e6c1fb5a63ac7590cc305b8d49d1e55f3d27 preserves the valid one-call P9 receipt, worker return and completion review. Receipt integrity passed offline recomputation, but the focused adapter suite fails through a calendar-expired test-only quota fixture and the committed S09 return lacks the canonical eight-row NOT_USED_WITH_REASON trace. Local is authoring one provider-free S10-R1 repair packet. The existing receipt is immutable; a second provider call, credentials, lifecycle mutation and P10 are forbidden.",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR; ACTIVE_BATCH=CVF-NCR-R1-S10-R1; MATERIAL_COMMIT=80b6e6c1fb5a63ac7590cc305b8d49d1e55f3d27; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_TEST_EVIDENCE_AUDIT_INSTRUCTION_USE_PROOF_2026-09-28.md; EXPANSION_ALLOWED=false. Preserve the valid committed P9 receipt and finish source-verified authoring of one S10-R1 offline root-repair packet for the expired focused-test fixture and S09 canonical receipt-trace rows. Do not dispatch until the paired packet is committed, continuity binds its material SHA, and pre-dispatch passes. No provider/live call, credential read, receipt mutation, lifecycle change, P10, public-sync, deployment or production; latest closed learning-history wave LHW24."
+  "cvfNcrR1S10R1OfflineRootRepairDispatch20260928": "DISPATCH_READY at material commit 638b29ab99099e0132d962a66fcad6affcdad881. The paired S10-R1 baseline/work order owns exactly three worker paths: focused use-proof adapter tests, the historical S09 receipt-trace block and one worker return. Required proof includes explicit hostile expiry coverage, canonical NOT_USED_WITH_REASON rows, original S10 and S10-R1 offline fast gates, unchanged receipt hash and empty staging. Provider/live calls, credentials, receipt mutation, production adapter/checker changes, lifecycle mutation and P10 are forbidden. Technical blockers return to Local, never to an operator question.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; ACTIVE_BATCH=CVF-NCR-R1-S10-R1; MATERIAL_COMMIT=638b29ab99099e0132d962a66fcad6affcdad881; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_2026-09-28.md; EXPANSION_ALLOWED=false. One INTERNAL_AGENT may execute the exact three-path offline repair and return directly to Local without operator questions or commit. Preserve the committed P9 receipt byte-for-byte; provider/live calls, credentials, production adapter/checker changes, lifecycle mutation, P10, public-sync, deployment and production remain forbidden; latest closed learning-history wave LHW24."
 }
