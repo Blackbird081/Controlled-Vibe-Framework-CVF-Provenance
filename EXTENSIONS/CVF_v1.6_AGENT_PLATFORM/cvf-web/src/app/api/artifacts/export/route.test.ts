@@ -54,6 +54,7 @@ describe('/api/artifacts/export', () => {
   beforeEach(() => {
     process.env.CVF_SERVICE_TOKEN = SERVICE_TOKEN;
     delete process.env.NEXTAUTH_URL;
+    delete process.env.CVF_GOVERNANCE_RECEIPT_TIMEOUT_MS;
     vi.unstubAllGlobals();
     verifySessionCookieMock.mockReset();
     verifySessionCookieMock.mockResolvedValue(null);
@@ -156,6 +157,7 @@ describe('/api/artifacts/export', () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true, data: {} }) }));
     const payload = await (await POST(makeRequest(BASE_REQUEST))).json();
     expect(payload.data.governanceReceipt).toBeUndefined();
+    expect(payload.data.governanceReceiptStatus).toBe('INVALID_RESPONSE');
     expect(payload.data.governanceState).toBe('DRAFT_UNACCEPTED');
   });
 
@@ -169,7 +171,7 @@ describe('/api/artifacts/export', () => {
           decision_analysis: { final_decision: 'ALLOW' },
           report_metadata: { generated_at: '2026-09-28T00:00:00.000Z' },
           cvf_risk_level: 'R0',
-          cvf_enforcement: { action: 'LOG_ONLY' },
+          cvf_enforcement: { action: 'ALLOW' },
           integrity: { has_ledger_reference: true },
         },
         execution_record: { final_decision: 'ALLOW', ledger_attached: true },
@@ -180,10 +182,11 @@ describe('/api/artifacts/export', () => {
       decision: 'ALLOW', riskLevel: 'R0', evaluatedAt: '2026-09-28T00:00:00.000Z',
     });
     expect(payload.data.governanceReceipt.receiptId).toMatch(/^artifact-proof-receipt-new-knowledge-review-/);
+    expect(payload.data.governanceReceiptStatus).toBe('PRESENT');
     expect(payload.data.governanceState).toBe('DRAFT_UNACCEPTED');
   });
 
-  it.each(['request-id', 'artifact-id', 'decision', 'ledger']) (
+  it.each(['request-id', 'artifact-id', 'decision', 'ledger', 'enforcement']) (
     'rejects a current-engine receipt with mismatched %s', async failure => {
       process.env.NEXTAUTH_URL = 'http://localhost:3000';
       vi.stubGlobal('fetch', vi.fn().mockImplementation(async (_url: string, options: RequestInit) => {
@@ -197,6 +200,7 @@ describe('/api/artifacts/export', () => {
             decision_analysis: { final_decision: 'ALLOW' },
             report_metadata: { generated_at: '2026-09-28T00:00:00.000Z' },
             cvf_risk_level: 'R0',
+            cvf_enforcement: { action: failure === 'enforcement' ? 'LOG_ONLY' : 'ALLOW' },
             integrity: { has_ledger_reference: true },
           },
           execution_record: {
@@ -207,9 +211,24 @@ describe('/api/artifacts/export', () => {
       }));
       const payload = await (await POST(makeRequest(BASE_REQUEST))).json();
       expect(payload.data.governanceReceipt).toBeUndefined();
+      expect(payload.data.governanceReceiptStatus).toBe('INVALID_RESPONSE');
       expect(payload.data.governanceState).toBe('DRAFT_UNACCEPTED');
     },
   );
+
+  it('reports a timed-out check without promoting the HTML or losing its attempt ID', async () => {
+    process.env.NEXTAUTH_URL = 'http://localhost:3000';
+    process.env.CVF_GOVERNANCE_RECEIPT_TIMEOUT_MS = '1000';
+    vi.stubGlobal('fetch', vi.fn().mockImplementation((_url: string, options: RequestInit) =>
+      new Promise((_resolve, reject) => {
+        options.signal?.addEventListener('abort', () => reject(new DOMException('aborted', 'AbortError')));
+      })));
+    const payload = await (await POST(makeRequest(BASE_REQUEST))).json();
+    expect(payload.data.governanceReceiptStatus).toBe('TIMED_OUT');
+    expect(payload.data.governanceReceiptAttemptId).toMatch(/^artifact-proof-receipt-new-knowledge-review-/);
+    expect(payload.data.governanceReceipt).toBeUndefined();
+    expect(payload.data.governanceState).toBe('DRAFT_UNACCEPTED');
+  });
 
   it.each(['APPROVED', 'MANUAL_REVIEW', 'REJECTED'])(
     'interprets the older explicit %s approval envelope without inventing acceptance', async status => {

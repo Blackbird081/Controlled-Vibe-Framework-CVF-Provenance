@@ -340,11 +340,12 @@ export async function POST(request: NextRequest) {
   const verification = buildVerification(input, html);
 
   const serviceToken = process.env.CVF_SERVICE_TOKEN;
-  const governanceReceipt = await fetchGovernanceReceipt(
+  const receiptCheck = await fetchGovernanceReceipt(
     slugify(receiptAnchor),
     sourceContent,
     serviceToken,
   );
+  const governanceReceipt = receiptCheck.receipt;
 
   return NextResponse.json({
     success: true,
@@ -355,6 +356,8 @@ export async function POST(request: NextRequest) {
       receiptAnchor: slugify(receiptAnchor),
       verification,
       generatedAt,
+      governanceReceiptStatus: receiptCheck.status,
+      ...(receiptCheck.requestId ? { governanceReceiptAttemptId: receiptCheck.requestId } : {}),
       governanceState: governanceReceipt?.decision === 'APPROVED' && verification.every(item => item.passed)
         ? 'RECEIPT_ALLOW_REVIEW_REQUIRED'
         : 'DRAFT_UNACCEPTED',

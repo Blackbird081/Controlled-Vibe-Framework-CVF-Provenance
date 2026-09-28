@@ -132,6 +132,24 @@ describe('ArtifactExportPanel', () => {
     expect(screen.queryByTestId('governance-receipt-badge')).toBeNull();
   });
 
+  it('shows the timeout and attempt ID without offering an approval badge', async () => {
+    (fetch as unknown as { mockResolvedValue: (v: unknown) => void }).mockResolvedValue({
+      ok: true, status: 200,
+      json: async () => ({ success: true, data: {
+        ...EXPORT_RESULT,
+        governanceReceiptStatus: 'TIMED_OUT',
+        governanceReceiptAttemptId: 'artifact-proof-timeout-1',
+      } }),
+    });
+    render(<ArtifactExportPanel />);
+    fireEvent.click(screen.getByText('Build HTML'));
+    await waitFor(() => expect(screen.getByTestId('governance-receipt-absent-note').textContent)
+      .toMatch(/may still have processed the request/i));
+    expect(screen.getByTestId('governance-receipt-attempt-id').textContent).toBe('artifact-proof-timeout-1');
+    expect(screen.queryByTestId('governance-receipt-badge')).toBeNull();
+    expect(screen.getByTestId('artifact-draft-state')).toBeTruthy();
+  });
+
   it('shows a governance receipt badge instead of the absent-receipt note when a receipt is present', async () => {
     (fetch as unknown as { mockResolvedValue: (v: unknown) => void }).mockResolvedValue({
       ok: true,
@@ -163,6 +181,21 @@ describe('ArtifactExportPanel', () => {
     await waitFor(() => expect(screen.getByTestId('governance-receipt-denied-note').textContent).toMatch(/draft and unaccepted/));
     expect(screen.queryByTestId('governance-receipt-badge')).toBeNull();
     expect(screen.getByTestId('artifact-draft-state').textContent).toMatch(/DRAFT \/ UNACCEPTED/);
+  });
+
+  it('shows an ALLOW evaluation as evidence without calling it artifact approval', async () => {
+    (fetch as unknown as { mockResolvedValue: (v: unknown) => void }).mockResolvedValue({
+      ok: true, status: 200,
+      json: async () => ({ success: true, data: { ...EXPORT_RESULT, governanceReceiptStatus: 'PRESENT', governanceReceipt: {
+        receiptId: 'r-allow', decision: 'ALLOW', evaluatedAt: '2026-05-16T10:00:00.000Z', riskLevel: 'R0',
+      } } }),
+    });
+    render(<ArtifactExportPanel />);
+    fireEvent.click(screen.getByText('Build HTML'));
+    await waitFor(() => expect(screen.getByTestId('governance-receipt-evaluated-note').textContent)
+      .toMatch(/not artifact approval/i));
+    expect(screen.queryByTestId('governance-receipt-denied-note')).toBeNull();
+    expect(screen.queryByTestId('governance-receipt-badge')).toBeNull();
   });
 
   it('keeps an approved receipt truthful when presentation checks leave the packet draft', async () => {

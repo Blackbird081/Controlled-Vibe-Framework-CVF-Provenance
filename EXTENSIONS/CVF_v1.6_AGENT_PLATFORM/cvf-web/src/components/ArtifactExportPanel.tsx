@@ -49,6 +49,8 @@ export interface ArtifactExportResult {
   verification: ArtifactVerificationItem[];
   generatedAt: string;
   governanceReceipt?: GovernanceReceipt;
+  governanceReceiptStatus?: 'PRESENT' | 'NOT_CONFIGURED' | 'TIMED_OUT' | 'UNAVAILABLE' | 'INVALID_RESPONSE';
+  governanceReceiptAttemptId?: string;
   governanceState?: 'DRAFT_UNACCEPTED' | 'RECEIPT_ALLOW_REVIEW_REQUIRED';
 }
 
@@ -115,8 +117,13 @@ const LABELS = {
     pointerRecord: 'Reference record',
     preGenerateDisclosure: "Building this packet may send a short excerpt of your text to a review-checking service. Whether that happens, and where the data goes, depends on this deployment's setup and is not shown here.",
     receiptAbsentNote: 'No review-checking receipt was returned this time. This does not necessarily mean nothing was sent — see the note above.',
+    receiptTimedOutNote: 'The review check timed out. No receipt was received, but the service may still have processed the request. Ask an operator to check the attempt ID before trying again.',
+    receiptUnavailableNote: 'The review check was unavailable. No receipt was received; the request may still have reached the service. Check the attempt ID before trying again.',
+    receiptInvalidNote: 'The review response could not be verified. This packet remains draft and has no accepted receipt.',
+    receiptNotConfiguredNote: 'This deployment has no review-check address configured. No review receipt was requested.',
     draftNote: 'DRAFT / UNACCEPTED. This HTML is a review preview, not an accepted artifact.',
     deniedNote: 'Review check did not approve this packet. It remains draft and unaccepted.',
+    evaluatedNote: 'Governance evaluation returned ALLOW. This is not artifact approval; the packet remains draft and unaccepted.',
     allowNote: 'Review receipt: approved. Final artifact acceptance is still required.',
     approvedChecksNote: 'Review receipt: approved. Presentation checks still need attention; this packet remains draft and unaccepted.',
     secretRefusalRecovery: 'This text looks like it may contain a private key or token. Remove that value and try again.',
@@ -151,8 +158,13 @@ const LABELS = {
     pointerRecord: 'Bản tham chiếu',
     preGenerateDisclosure: 'Việc tạo gói này có thể gửi một đoạn ngắn nội dung của bạn đến một dịch vụ kiểm tra rà soát. Việc này có xảy ra hay không, và dữ liệu đi đâu, phụ thuộc vào cấu hình triển khai và không hiển thị ở đây.',
     receiptAbsentNote: 'Lần này không có biên nhận kiểm tra rà soát nào được trả về. Điều này không chắc có nghĩa là không có gì được gửi — xem ghi chú ở trên.',
+    receiptTimedOutNote: 'Kiểm tra rà soát đã hết thời gian chờ. Chưa nhận được receipt, nhưng dịch vụ có thể vẫn đã xử lý yêu cầu. Hãy nhờ người vận hành kiểm tra mã lần thử trước khi thử lại.',
+    receiptUnavailableNote: 'Dịch vụ kiểm tra rà soát không sẵn sàng. Chưa nhận được receipt; yêu cầu vẫn có thể đã tới dịch vụ. Hãy kiểm tra mã lần thử trước khi thử lại.',
+    receiptInvalidNote: 'Không xác minh được phản hồi kiểm tra. Gói này vẫn là bản nháp và chưa có receipt được chấp nhận.',
+    receiptNotConfiguredNote: 'Bản triển khai này chưa cấu hình địa chỉ kiểm tra rà soát. Chưa gửi yêu cầu lấy receipt.',
     draftNote: 'BẢN NHÁP / CHƯA ĐƯỢC CHẤP NHẬN. HTML này chỉ để xem xét.',
     deniedNote: 'Kiểm tra chưa phê duyệt gói này. Gói vẫn là bản nháp, chưa được chấp nhận.',
+    evaluatedNote: 'Đánh giá governance trả ALLOW. Đây không phải phê duyệt artifact; gói vẫn là bản nháp, chưa được chấp nhận.',
     allowNote: 'Biên nhận rà soát: đã duyệt. Vẫn cần nghiệm thu artifact cuối cùng.',
     approvedChecksNote: 'Biên nhận rà soát: đã duyệt. Kiểm tra trình bày vẫn cần xử lý; gói này là bản nháp, chưa được chấp nhận.',
     secretRefusalRecovery: 'Nội dung này có vẻ chứa khóa riêng tư hoặc mã token. Hãy xóa giá trị đó rồi thử lại.',
@@ -467,11 +479,22 @@ export function ArtifactExportPanel({
                       </div>
                     ) : result.governanceReceipt?.decision === 'APPROVED' ? (
                       <p data-testid="governance-approved-checks-note" className="mt-1 text-amber-700 dark:text-amber-300">{labels.approvedChecksNote}</p>
+                    ) : result.governanceReceipt?.decision === 'ALLOW' ? (
+                      <p data-testid="governance-receipt-evaluated-note" className="mt-1 text-amber-700 dark:text-amber-300">{labels.evaluatedNote}</p>
                     ) : result.governanceReceipt ? (
                       <p data-testid="governance-receipt-denied-note" className="mt-1 text-red-700 dark:text-red-300">{labels.deniedNote}</p>
                     ) : (
                       <p data-testid="governance-receipt-absent-note" className="mt-1 text-amber-700 dark:text-amber-300">
-                        {labels.receiptAbsentNote}
+                        {result.governanceReceiptStatus === 'TIMED_OUT' ? labels.receiptTimedOutNote
+                          : result.governanceReceiptStatus === 'UNAVAILABLE' ? labels.receiptUnavailableNote
+                            : result.governanceReceiptStatus === 'INVALID_RESPONSE' ? labels.receiptInvalidNote
+                              : result.governanceReceiptStatus === 'NOT_CONFIGURED' ? labels.receiptNotConfiguredNote
+                                : labels.receiptAbsentNote}
+                      </p>
+                    )}
+                    {!result.governanceReceipt && result.governanceReceiptAttemptId && (
+                      <p data-testid="governance-receipt-attempt-id" className="break-all font-mono">
+                        {result.governanceReceiptAttemptId}
                       </p>
                     )}
                   </div>

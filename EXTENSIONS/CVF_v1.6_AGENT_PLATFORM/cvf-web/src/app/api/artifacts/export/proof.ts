@@ -1,11 +1,27 @@
 const GOVERNANCE_EVALUATE_URL = '/api/governance/evaluate';
 const PROOF_TIMEOUT_MS = 4000;
+const MAX_PROOF_TIMEOUT_MS = 30000;
+
+export type GovernanceReceiptStatus = 'PRESENT' | 'NOT_CONFIGURED' | 'TIMED_OUT' | 'UNAVAILABLE' | 'INVALID_RESPONSE';
 
 export interface GovernanceReceipt {
   receiptId: string;
   decision: string;
   evaluatedAt: string;
   riskLevel: string;
+}
+
+export interface GovernanceReceiptCheck {
+  status: GovernanceReceiptStatus;
+  receipt: GovernanceReceipt | null;
+  requestId?: string;
+}
+
+function proofTimeoutMs(): number {
+  const configured = Number(process.env.CVF_GOVERNANCE_RECEIPT_TIMEOUT_MS);
+  return Number.isInteger(configured) && configured >= 1000 && configured <= MAX_PROOF_TIMEOUT_MS
+    ? configured
+    : PROOF_TIMEOUT_MS;
 }
 
 interface EvaluateResponseData {
@@ -49,21 +65,22 @@ export async function fetchGovernanceReceipt(
   artifactId: string,
   sourceContent: string,
   serviceToken?: string,
-): Promise<GovernanceReceipt | null> {
+): Promise<GovernanceReceiptCheck> {
   const url = resolveEvaluateUrl(GOVERNANCE_EVALUATE_URL);
 
   if (!isAbsoluteUrl(url)) {
-    return null;
+    return { status: 'NOT_CONFIGURED', receipt: null };
   }
 
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), PROOF_TIMEOUT_MS);
+  const timer = setTimeout(() => controller.abort(), proofTimeoutMs());
+  const requestId = `artifact-proof-${artifactId}-${Date.now()}`;
+  const failure = (status: GovernanceReceiptStatus): GovernanceReceiptCheck => ({ status, receipt: null, requestId });
 
   try {
     const headers: Record<string, string> = { 'Content-Type': 'application/json' };
     if (serviceToken) headers['x-cvf-service-token'] = serviceToken;
 
-    const requestId = `artifact-proof-${artifactId}-${Date.now()}`;
     const response = await fetch(url, {
       method: 'POST',
       headers,
@@ -77,10 +94,15 @@ export async function fetchGovernanceReceipt(
       }),
     });
 
-    if (!response.ok) return null;
+    if (!response.ok) return failure('UNAVAILABLE');
 
-    const payload = await response.json() as EvaluateResponse;
-    if (payload.success !== true || !payload.data) return null;
+    let payload: EvaluateResponse;
+    try {
+      payload = await response.json() as EvaluateResponse;
+    } catch {
+      return failure('INVALID_RESPONSE');
+    }
+    if (payload.success !== true || !payload.data) return failure('INVALID_RESPONSE');
 
     const data = payload.data;
     // Current Governance Engine reports the request identity and decision in
@@ -88,19 +110,27 @@ export async function fetchGovernanceReceipt(
     const report = data.report;
     const engineDecision = report?.decision_analysis?.final_decision;
     if (report?.request_summary) {
+      const expectedAction: Record<string, string> = {
+        ALLOW: 'ALLOW', DENY: 'BLOCK', REVIEW: 'NEEDS_APPROVAL',
+        ESCALATE: 'ESCALATE', SANDBOX: 'LOG_ONLY',
+      };
       if (report.request_summary.request_id !== requestId ||
         report.request_summary.artifact_id !== artifactId ||
-        !['ALLOW', 'DENY', 'REVIEW', 'ESCALATE', 'SANDBOX'].includes(String(engineDecision)) ||
+        !engineDecision || !expectedAction[engineDecision] ||
+        report.cvf_enforcement?.action !== expectedAction[engineDecision] ||
         data.execution_record?.final_decision !== engineDecision ||
         data.execution_record?.ledger_attached !== true ||
         report.integrity?.has_ledger_reference !== true ||
         typeof report.report_metadata?.generated_at !== 'string' || !report.report_metadata.generated_at ||
-        typeof report.cvf_risk_level !== 'string' || !/^R[0-4]$/.test(report.cvf_risk_level)) return null;
+        typeof report.cvf_risk_level !== 'string' || !/^R[0-4]$/.test(report.cvf_risk_level)) return failure('INVALID_RESPONSE');
       return {
-        receiptId: requestId,
-        decision: engineDecision as string,
-        evaluatedAt: report.report_metadata.generated_at,
-        riskLevel: report.cvf_risk_level,
+        status: 'PRESENT', requestId,
+        receipt: {
+          receiptId: requestId,
+          decision: engineDecision,
+          evaluatedAt: report.report_metadata.generated_at,
+          riskLevel: report.cvf_risk_level,
+        },
       };
     }
 
@@ -110,15 +140,20 @@ export async function fetchGovernanceReceipt(
       !['APPROVED', 'MANUAL_REVIEW', 'REJECTED', 'FROZEN'].includes(String(status)) ||
       typeof data.execution_record.timestamp !== 'string' || !data.execution_record.timestamp ||
       typeof data.report?.risk_level !== 'string' || !data.report.risk_level ||
-      (status === 'APPROVED' && data.report.cvf_enforcement?.action !== 'ALLOW')) return null;
+      (status === 'APPROVED' && data.report.cvf_enforcement?.action !== 'ALLOW')) return failure('INVALID_RESPONSE');
     return {
-      receiptId: requestId,
-      decision: status as string,
-      evaluatedAt: data.execution_record.timestamp,
-      riskLevel: data.report.risk_level,
+      status: 'PRESENT', requestId,
+      receipt: {
+        receiptId: requestId,
+        decision: status as string,
+        evaluatedAt: data.execution_record.timestamp,
+        riskLevel: data.report.risk_level,
+      },
     };
-  } catch {
-    return null;
+  } catch (error) {
+    return failure(controller.signal.aborted ||
+      (error !== null && typeof error === 'object' && 'name' in error && error.name === 'AbortError')
+      ? 'TIMED_OUT' : 'UNAVAILABLE');
   } finally {
     clearTimeout(timer);
   }
