@@ -30,6 +30,38 @@ Reviewer-fast passed 69/69. The reviewer then ran seven fresh semantic cases:
 the four H1 false negatives, unclaimed Git path, false terminal completion,
 and one positive exact-join control.
 
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+| --- | --- |
+| applicableCheckersRead | `governance/compat/check_machine_closure_package.py`; `governance/compat/check_independent_review_probe_admission.py`; `governance/compat/check_agent_operation_trace.py` |
+| literalTokensReviewed | closure row labels; `PASS_INDEPENDENT_PROBE`; trace field labels |
+| gateRunPurpose | confirmation of terminal reviewer evidence after material freeze |
+| claimBoundary | repository-local closure only |
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+| --- | --- |
+| Actor | Local phase-separated reviewer/closer |
+| Provider or surface | private CVF repository |
+| Session or invocation | RSE-T4-H1-R1 closure review |
+| Working directory | repository root |
+| Command or tool surface | read-only gates, fresh hostile probe, bounded closure edits |
+| Target paths | completion review, independent probe, terminal work-order status |
+| Allowed scope source | governing RSE-T4-H1-R1 work order and operator delegation |
+| Before status evidence | material commit `2bf3b0411` |
+| After status evidence | closure commit and clean worktree |
+| Diff evidence | `git diff --name-status` over split material and continuity ranges |
+| Approval boundary | Local review/closure only |
+| Claim boundary | no provider/runtime/public effect |
+| Agent type | INTERNAL_AGENT Local reviewer |
+| Invocation ID | RSE-T4-H1-R1-LOCAL-REVIEW |
+| Expected manifest | N/A with reason: reviewer evaluates the existing work-order ledger |
+| Actual changed set | N/A with reason: committed-range guard is authoritative |
+| Manifest delta | N/A with reason: no separate reviewer implementation manifest |
+| Deletion or rename disposition | N/A with reason: none |
+
 ## Findings / Position
 
 All mandatory acceptance-ledger rows join exactly to Git-observed artifacts and
@@ -65,7 +97,7 @@ probeObservedResult: seven of seven expected accept/reject outcomes matched
 oracleSeparationBasis: reviewer cases were authored after material commit and were not copied from implementation assertions
 workerInvocationId: RSE-T4-H1-R1-LOCAL-IMPLEMENTATION
 probeInvocationId: RSE-T4-H1-R1-LOCAL-INDEPENDENT-REVIEW
-workerOracleSha256: 9c8f62111c53268a0819d1d9e73b37df20b163ab296fb93604fe572dbe5073e9
+workerOracleSha256: 7f072b4ec347ceaf147217df90d78f4ade012b5c1de656a3681660d08693a6ad
 probeOracleSha256: dc55958704935f2546107a6a758352d3c2b87a3e98aba9d2ca59679650861b3a
 workerEvidenceRef: `docs/reviews/CVF_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_WORKER_RETURN_2026-09-28.md`
 probeEvidenceRef: `docs/reviews/evidence/rse-t4-h1-r1-independent-probe-2026-09-28.json`

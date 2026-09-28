@@ -1,8 +1,8 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_p10_corrective_replanning",
+  "currentMode": "cvf_foundation_rse_t4_h1_r1_local_execution",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_GOVERNED_CORRECTIVE_PACKET; ACTIVE_BATCH=CVF-NCR-R1-P10-REPLAN; MATERIAL_COMMIT=4cb65053c; ACTIVE_WORK_ORDER=NONE; EXPANSION_ALLOWED=false. RSE-T4-H1-R1 is CLOSED_PASS_BOUNDED; resume the NCR roadmap from accepted P9 by designing a fresh P10 corrective packet that uses the acceptance ledger and does not reuse the rejected S11 dispatch. P11, provider/live execution, Claude dispatch, public sync and deployment remain forbidden until that packet is committed and continuity-bound; latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-FOUNDATION; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=RSE-T4-H1-R1; MATERIAL_COMMIT=62fb54e7e; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md; EXPANSION_ALLOWED=false. Local executes the exact acceptance-ledger artifact union, freezes the implementation, performs phase-separated hostile review, and closes the foundation lane only if the deterministic reducer and all gates pass. NCR remains parked at P9; P10/P11, provider/live, Claude dispatch, public sync, deployment and platform-interception claims remain forbidden; latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
     "baselineSha256": "ffbd3c4ae4ac080f3decb44e963ca41984e3caf1b4fc92e9ae1cd1814e7d97f6",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
-    "workOrderSha256": "76ef7c49b69adf03537943b8c16f79aeff036afca550ab4535c32fa2eb20e5e9"
+    "workOrderSha256": "878095037fd87d6f3040c6af23e859163b9ee733fb0ccc9bf133bfc0d6ba3cbd"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

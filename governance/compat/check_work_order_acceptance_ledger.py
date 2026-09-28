@@ -202,7 +202,6 @@ def validate_return(work_order_text: str, return_text: str, observed_paths: set[
 def git_observed_paths(base: str) -> set[str]:
     commands = [
         ["git", "diff", "--name-only", base],
-        ["git", "diff", "--cached", "--name-only", base],
         ["git", "ls-files", "--others", "--exclude-standard"],
     ]
     paths: set[str] = set()

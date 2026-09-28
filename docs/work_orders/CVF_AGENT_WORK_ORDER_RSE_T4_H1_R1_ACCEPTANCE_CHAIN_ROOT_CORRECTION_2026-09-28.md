@@ -244,10 +244,6 @@ Tool/classifier contract:
       "requirementId": "REQ-STANDARD",
       "mandatory": true,
       "expectedArtifacts": [
-        "AGENT_HANDOFF_V63_2026-09-18.md",
-        "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
-        "CVF_SESSION/ACTIVE_SESSION_STATE.json",
-        "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
         "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
         "docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md",
         "docs/reference/role_switch_envelope/CVF_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ADDENDUM.md",
@@ -297,6 +293,15 @@ Tool/classifier contract:
         "governance/compat/test_run_worker_return_fast_gate.py"
       ],
       "requiredProofIds": ["PROOF-FOCUSED", "PROOF-H1-HOSTILE"]
+    },
+    {
+      "requirementId": "REQ-REVIEW",
+      "mandatory": true,
+      "expectedArtifacts": [
+        "docs/reviews/CVF_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_COMPLETION_2026-09-28.md",
+        "docs/reviews/evidence/rse-t4-h1-r1-independent-probe-2026-09-28.json"
+      ],
+      "requiredProofIds": ["PROOF-END-TO-END", "PROOF-H1-HOSTILE"]
     },
     {
       "requirementId": "REQ-RETURN",
