@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2976,
+  "stateKey": "cvfNcrQ001HtmlIngressRepair20260928",
+  "value": "ACCEPTED_BOUNDED_SOURCE_REPAIR at material commit bc6e8b010. The distinct INTERNAL_AGENT reviewer found two receipt/UI truth-state defects, Local repaired them, and reviewer accepted the bounded delta. Focused Vitest 35/35, TypeScript, targeted ESLint, mock-browser 2/2 and pre-implementation autorun passed. Q001 deployment destination, retention, cost, broad secret scan and live governance proof remain open; P11 and external runtimes are parked. Review: docs/reviews/CVF_CVF_NCR_Q001_HTML_INGRESS_REVIEW_2026-09-28.md."
+}
