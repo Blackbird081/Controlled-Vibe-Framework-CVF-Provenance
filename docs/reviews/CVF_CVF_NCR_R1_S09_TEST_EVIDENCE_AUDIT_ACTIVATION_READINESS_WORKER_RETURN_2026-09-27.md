@@ -271,9 +271,16 @@ choose; it surfaces the contradiction and stops, as instructed.
 
 ## CVF Skill Usage Receipt Trace
 
-N/A with reason: this work order's scope never authorizes an instruction-body
-read, and none occurred. No `CVF_ASSF_SKILL_USAGE_RECEIPT` is produced or
-expected by this tranche.
+| Field | Value |
+|---|---|
+| Usage disposition | NOT_USED_WITH_REASON |
+| CVF skill id | N/A with reason: no CVF-owned ASSF/runtime package instruction body was read this tranche |
+| Package root | N/A with reason: this work order's scope never authorizes an instruction-body read, and none occurred |
+| Invocation context | N/A with reason: no invocation was attempted; execution stopped at `check_assf_certified_metadata_admission.py` before any resolver/policy/CLI-MCP probe was reached |
+| Receipt evidence | N/A with reason: no `CVF_ASSF_SKILL_USAGE_RECEIPT` is produced or expected by this tranche |
+| Output consumed by CVF | N/A with reason: no package output exists to consume; no live or dry adapter call occurred |
+| Truth packet or source path | N/A with reason: the truth packet was edited for lifecycle-field promotion only (see Scope / Methodology step 6); its content was not read as an instruction body or consumed as skill output |
+| Authority boundary | N/A with reason: no skill usage occurred, so no usage-derived authority is claimed; this return does not grant authority |
 
 ## Semantic Convergence Outcome
 
