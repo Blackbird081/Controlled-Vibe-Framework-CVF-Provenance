@@ -92,7 +92,7 @@ probeObservedResult: focused pytest passed 10/10; receipt trace had 0 violations
 
 oracleSeparationBasis: Local inspected and reran the bounded offline oracles independently and did not use the worker's assertions as the acceptance oracle
 
-workerOracleSha256: cb4fae640102ef737d6ff68ba1ab94b293538e778582fc0ef751924030cdfbc1
+workerOracleSha256: 84a7331c28e5fa85068c729ac8c5135797b584c88a1990059fbe23a47589911c
 
 probeOracleSha256: e13fc1106f90d146948ed042df9464a318d38c9618b47fca77ea9abbbfee3556
 
