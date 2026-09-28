@@ -18,6 +18,7 @@ const EXPORT_RESULT: ArtifactExportResult = {
   filename: 'review-packet.html',
   receiptAnchor: 'receipt-review-packet',
   generatedAt: '2026-05-16T10:00:00.000Z',
+  governanceState: 'DRAFT_UNACCEPTED',
   verification: [
     { label: 'Source reference recorded', passed: true, detail: 'docs/reviews/review-packet.md' },
     { label: 'Review boundary visible', passed: true, detail: 'HTML review packet only.' },
@@ -137,7 +138,7 @@ describe('ArtifactExportPanel', () => {
       status: 200,
       json: async () => ({
         success: true,
-        data: { ...EXPORT_RESULT, governanceReceipt: { receiptId: 'r1', decision: 'ALLOW', evaluatedAt: '2026-05-16T10:00:00.000Z', riskLevel: 'R0' } },
+        data: { ...EXPORT_RESULT, governanceState: 'RECEIPT_ALLOW_REVIEW_REQUIRED', governanceReceipt: { receiptId: 'r1', decision: 'APPROVED', evaluatedAt: '2026-05-16T10:00:00.000Z', riskLevel: 'R0' } },
       }),
     });
     render(<ArtifactExportPanel />);
@@ -145,9 +146,37 @@ describe('ArtifactExportPanel', () => {
     fireEvent.click(screen.getByText('Build HTML'));
 
     await waitFor(() => {
-      expect(screen.getByTestId('governance-receipt-badge').textContent).toMatch(/Governed/);
+      expect(screen.getByTestId('governance-receipt-badge').textContent).toMatch(/Final artifact acceptance is still required/);
     });
     expect(screen.queryByTestId('governance-receipt-absent-note')).toBeNull();
+  });
+
+  it('shows DENY as draft and unaccepted, without a positive receipt badge', async () => {
+    (fetch as unknown as { mockResolvedValue: (v: unknown) => void }).mockResolvedValue({
+      ok: true, status: 200,
+      json: async () => ({ success: true, data: { ...EXPORT_RESULT, governanceReceipt: {
+        receiptId: 'r-deny', decision: 'DENY', evaluatedAt: '2026-05-16T10:00:00.000Z', riskLevel: 'R0',
+      } } }),
+    });
+    render(<ArtifactExportPanel />);
+    fireEvent.click(screen.getByText('Build HTML'));
+    await waitFor(() => expect(screen.getByTestId('governance-receipt-denied-note').textContent).toMatch(/draft and unaccepted/));
+    expect(screen.queryByTestId('governance-receipt-badge')).toBeNull();
+    expect(screen.getByTestId('artifact-draft-state').textContent).toMatch(/DRAFT \/ UNACCEPTED/);
+  });
+
+  it('keeps an approved receipt truthful when presentation checks leave the packet draft', async () => {
+    (fetch as unknown as { mockResolvedValue: (v: unknown) => void }).mockResolvedValue({
+      ok: true, status: 200,
+      json: async () => ({ success: true, data: { ...EXPORT_RESULT, governanceReceipt: {
+        receiptId: 'r-approved', decision: 'APPROVED', evaluatedAt: '2026-05-16T10:00:00.000Z', riskLevel: 'R0',
+      } } }),
+    });
+    render(<ArtifactExportPanel />);
+    fireEvent.click(screen.getByText('Build HTML'));
+    await waitFor(() => expect(screen.getByTestId('governance-approved-checks-note').textContent).toMatch(/Presentation checks still need attention/));
+    expect(screen.queryByTestId('governance-receipt-denied-note')).toBeNull();
+    expect(screen.getByTestId('artifact-draft-state')).toBeTruthy();
   });
 
   it('maps the secret-pattern rejection to plain-language recovery, keeping the raw error as secondary detail', async () => {

@@ -9,10 +9,8 @@ export interface GovernanceReceipt {
 }
 
 interface EvaluateResponseData {
-  request_id?: string;
-  decision?: string;
-  risk_level?: string;
-  evaluated_at?: string;
+  report?: { status?: string; risk_level?: string; cvf_enforcement?: { action?: string } };
+  execution_record?: { request_id?: string; timestamp?: string };
   [key: string]: unknown;
 }
 
@@ -51,12 +49,13 @@ export async function fetchGovernanceReceipt(
     const headers: Record<string, string> = { 'Content-Type': 'application/json' };
     if (serviceToken) headers['x-cvf-service-token'] = serviceToken;
 
+    const requestId = `artifact-proof-${artifactId}-${Date.now()}`;
     const response = await fetch(url, {
       method: 'POST',
       headers,
       signal: controller.signal,
       body: JSON.stringify({
-        request_id: `artifact-proof-${artifactId}-${Date.now()}`,
+        request_id: requestId,
         artifact_id: artifactId,
         payload: { content: sourceContent.slice(0, 500) },
         cvf_phase: 'REVIEW',
@@ -67,14 +66,21 @@ export async function fetchGovernanceReceipt(
     if (!response.ok) return null;
 
     const payload = await response.json() as EvaluateResponse;
-    if (!payload.success || !payload.data) return null;
+    if (payload.success !== true || !payload.data) return null;
 
     const data = payload.data;
+    // The in-repo Governance Engine returns report + execution_record, not a flat decision.
+    const status = data.report?.status;
+    if (data.execution_record?.request_id !== requestId ||
+      !['APPROVED', 'MANUAL_REVIEW', 'REJECTED', 'FROZEN'].includes(String(status)) ||
+      typeof data.execution_record.timestamp !== 'string' || !data.execution_record.timestamp ||
+      typeof data.report?.risk_level !== 'string' || !data.report.risk_level ||
+      (status === 'APPROVED' && data.report.cvf_enforcement?.action !== 'ALLOW')) return null;
     return {
-      receiptId: String(data.request_id ?? artifactId),
-      decision: String(data.decision ?? 'ALLOW'),
-      evaluatedAt: String(data.evaluated_at ?? new Date().toISOString()),
-      riskLevel: String(data.risk_level ?? 'R0'),
+      receiptId: requestId,
+      decision: status as string,
+      evaluatedAt: data.execution_record.timestamp,
+      riskLevel: data.report.risk_level,
     };
   } catch {
     return null;

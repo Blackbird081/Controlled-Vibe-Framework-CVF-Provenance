@@ -49,6 +49,7 @@ export interface ArtifactExportResult {
   verification: ArtifactVerificationItem[];
   generatedAt: string;
   governanceReceipt?: GovernanceReceipt;
+  governanceState?: 'DRAFT_UNACCEPTED' | 'RECEIPT_ALLOW_REVIEW_REQUIRED';
 }
 
 interface ArtifactExportApiResponse {
@@ -114,6 +115,10 @@ const LABELS = {
     pointerRecord: 'Reference record',
     preGenerateDisclosure: "Building this packet may send a short excerpt of your text to a review-checking service. Whether that happens, and where the data goes, depends on this deployment's setup and is not shown here.",
     receiptAbsentNote: 'No review-checking receipt was returned this time. This does not necessarily mean nothing was sent — see the note above.',
+    draftNote: 'DRAFT / UNACCEPTED. This HTML is a review preview, not an accepted artifact.',
+    deniedNote: 'Review check did not approve this packet. It remains draft and unaccepted.',
+    allowNote: 'Review receipt: approved. Final artifact acceptance is still required.',
+    approvedChecksNote: 'Review receipt: approved. Presentation checks still need attention; this packet remains draft and unaccepted.',
     secretRefusalRecovery: 'This text looks like it may contain a private key or token. Remove that value and try again.',
     missingFieldRecovery: 'Some required fields are empty. Check the form, fill in the missing fields, and try again.',
   },
@@ -146,6 +151,10 @@ const LABELS = {
     pointerRecord: 'Bản tham chiếu',
     preGenerateDisclosure: 'Việc tạo gói này có thể gửi một đoạn ngắn nội dung của bạn đến một dịch vụ kiểm tra rà soát. Việc này có xảy ra hay không, và dữ liệu đi đâu, phụ thuộc vào cấu hình triển khai và không hiển thị ở đây.',
     receiptAbsentNote: 'Lần này không có biên nhận kiểm tra rà soát nào được trả về. Điều này không chắc có nghĩa là không có gì được gửi — xem ghi chú ở trên.',
+    draftNote: 'BẢN NHÁP / CHƯA ĐƯỢC CHẤP NHẬN. HTML này chỉ để xem xét.',
+    deniedNote: 'Kiểm tra chưa phê duyệt gói này. Gói vẫn là bản nháp, chưa được chấp nhận.',
+    allowNote: 'Biên nhận rà soát: đã duyệt. Vẫn cần nghiệm thu artifact cuối cùng.',
+    approvedChecksNote: 'Biên nhận rà soát: đã duyệt. Kiểm tra trình bày vẫn cần xử lý; gói này là bản nháp, chưa được chấp nhận.',
     secretRefusalRecovery: 'Nội dung này có vẻ chứa khóa riêng tư hoặc mã token. Hãy xóa giá trị đó rồi thử lại.',
     missingFieldRecovery: 'Một số trường bắt buộc còn trống. Hãy kiểm tra biểu mẫu, điền các trường còn thiếu rồi thử lại.',
   },
@@ -447,14 +456,19 @@ export function ArtifactExportPanel({
                   <div className="space-y-1 text-xs text-gray-500 dark:text-gray-400">
                     <p className="break-all font-mono">#{result.receiptAnchor}</p>
                     <p>{new Date(result.generatedAt).toLocaleString()}</p>
-                    {result.governanceReceipt ? (
+                    <p data-testid="artifact-draft-state" className="font-semibold text-amber-700 dark:text-amber-300">{labels.draftNote}</p>
+                    {result.governanceReceipt?.decision === 'APPROVED' && result.governanceState === 'RECEIPT_ALLOW_REVIEW_REQUIRED' ? (
                       <div
                         data-testid="governance-receipt-badge"
                         className="mt-1 inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-200"
                       >
                         <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />
-                        Governed · {result.governanceReceipt.decision}
+                        {labels.allowNote}
                       </div>
+                    ) : result.governanceReceipt?.decision === 'APPROVED' ? (
+                      <p data-testid="governance-approved-checks-note" className="mt-1 text-amber-700 dark:text-amber-300">{labels.approvedChecksNote}</p>
+                    ) : result.governanceReceipt ? (
+                      <p data-testid="governance-receipt-denied-note" className="mt-1 text-red-700 dark:text-red-300">{labels.deniedNote}</p>
                     ) : (
                       <p data-testid="governance-receipt-absent-note" className="mt-1 text-amber-700 dark:text-amber-300">
                         {labels.receiptAbsentNote}
