@@ -10,6 +10,8 @@ Batch ID: RSE-T4-H1-R1
 
 Execution base: `cf0bbc1b2`
 
+Worker return path: `docs/reviews/CVF_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_WORKER_RETURN_2026-09-28.md`
+
 providerExecutionAuthority: FORBIDDEN
 
 ## Dispatch Prompt Envelope

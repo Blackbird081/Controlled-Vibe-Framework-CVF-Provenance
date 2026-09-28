@@ -8,6 +8,9 @@ Date: 2026-09-28
 
 Batch ID: RSE-T4-H1-R1
 
+Packet amendment: bind the exact worker-return path required by the independent
+probe admission gate; no scope or acceptance requirement changes.
+
 Risk ceiling: HIGH - protected governance templates and machine gates; local,
 provider-free and reversible.
 
