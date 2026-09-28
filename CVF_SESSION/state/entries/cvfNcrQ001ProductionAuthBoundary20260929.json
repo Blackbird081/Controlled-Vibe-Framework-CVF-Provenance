@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2982,
+  "stateKey": "cvfNcrQ001ProductionAuthBoundary20260929",
+  "value": "BOUNDED_SOURCE_CORRECTION at material commit e60b34f83. Known mock CredentialsProvider accounts now reject outside test/development; production login UI presents GitHub/Google controls without demo credentials. Focused 14/14, TypeScript, ESLint and pre-commit 90/90 passed. Auth.js production-like build still requires real operator-controlled OAuth configuration; OAuth callback, identity/role mapping and Q001 latency are unproved. No provider/live call, production acceptance, artifact approval, public sync or P11. Review: docs/reviews/CVF_CVF_NCR_Q001_PRODUCTION_AUTH_PROFILE_BOUNDARY_2026-09-29.md."
+}
