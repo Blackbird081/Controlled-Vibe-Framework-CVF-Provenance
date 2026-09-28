@@ -19,7 +19,8 @@ worker evidence, and a fresh phase-separated hostile probe.
 
 ## Target / Source
 
-Target: material commit `2bf3b0411`. Sources: governing work order, worker
+Target: material commit `2bf3b0411`. Sources: governing work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md`, worker
 return, ADIF-0062, focused tests, worker-return fast gate, Git changed-set
 evidence, and `docs/reviews/evidence/rse-t4-h1-r1-independent-probe-2026-09-28.json`.
 

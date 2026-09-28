@@ -21,7 +21,9 @@ whether `COMPLETE_PENDING_REVIEW` is supportable.
 ## Target / Source
 
 Target: RSE-T4-H1 returned implementation and its exact twelve-path contract.
-Sources: the committed work order and baseline, worker return, changed source
+Sources: the committed work order
+`docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md`
+and baseline, worker return, changed source
 diff, worker-fast receipt, and Local independent hostile probe.
 
 ## Scope / Methodology
