@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S11_R1_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_CORRECTIVE_2026-09-28.md",
     "workOrderSha256": "22618c185791df53aff59b93a2d3291f1b0a79b6f1e1231661ae645726609215"
   },
-  "currentAuthoritySyncReason": "CVF-NCR-R1-S11-R1 P10 remains closed bounded at bd15b2600. Q001 HTML repair, Docker receipt wiring, ledger/enforcement correction and browser UI walkthrough are bounded local evidence through 5c1ee025b. The artifact remains DRAFT_UNACCEPTED; cold dev receipt timeout is open. This did not reopen P10 or authorize live pilot effects. P11 and broader effects remain parked pending fresh operator authorization.",
+  "currentAuthoritySyncReason": "CVF-NCR-R1-S11-R1 P10 remains closed bounded at bd15b2600. Q001 receipt-status correction and first-export synthetic Docker UI observation are bounded local evidence through 65238b20d. Artifact remains DRAFT_UNACCEPTED. Production-like Auth.js/latency profile, retention, P08 and provider/live proof remain open. P11 and broader effects remain parked pending fresh operator authorization.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

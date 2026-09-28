@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2981,
+  "stateKey": "cvfNcrQ001ReceiptStatus20260929",
+  "value": "BOUNDED_LOCAL_CORRECTION_OBSERVED at material commit 65238b20d. Export receipt attempts now expose explicit status and attempt ID, a bounded timeout setting, and current decision/enforcement agreement. Focused 44/44, TypeScript, ESLint and pre-commit 90/90 passed. First export in one-server synthetic Docker development profile returned PRESENT/ALLOW, DRAFT_UNACCEPTED and a hash-valid ledger join. Production-like next build was blocked by missing required Auth.js configuration; no fake credentials, provider call, deployment, acceptance or Q001/R0 exit. Review: docs/reviews/CVF_CVF_NCR_Q001_RECEIPT_STATUS_CORRECTION_2026-09-29.md."
+}
