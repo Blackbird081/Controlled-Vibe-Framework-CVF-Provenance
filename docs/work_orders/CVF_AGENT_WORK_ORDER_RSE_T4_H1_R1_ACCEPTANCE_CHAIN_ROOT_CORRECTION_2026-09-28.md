@@ -13,6 +13,7 @@ Batch ID: RSE-T4-H1-R1
 Execution base: `cf0bbc1b2`
 
 Worker return path: `docs/reviews/CVF_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_WORKER_RETURN_2026-09-28.md`
+workerReturnPath: `docs/reviews/CVF_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_WORKER_RETURN_2026-09-28.md`
 
 providerExecutionAuthority: FORBIDDEN
 
@@ -62,7 +63,7 @@ rather than the complete problem.
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"RSE-T4-H1-R1","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"CREATES_OR_CHANGES_AUTHORITY","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"NEW_AUTHORITY"},"pathFamilies":["docs/baselines/","docs/work_orders/","docs/reference/work_order_template/","docs/reference/role_switch_envelope/","docs/reference/","governance/compat/","docs/reviews/"],"claims":["required deliverables join actual artifacts proof and terminal status","tool classifier recovery evidence is locally validated"],"requiredProof":["focused hostile tests","Git observed set","acceptance reducer","worker-return fast","Local review probe"],"operatorCheckpoints":[],"forbiddenEffects":["Claude dispatch","provider call","NCR mutation","classifier bypass","platform prompt suppression","public sync","deployment"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0062.md","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"RSE-T4-H1-R1","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"CREATES_OR_CHANGES_AUTHORITY","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"NEW_AUTHORITY"},"pathFamilies":["CVF_SESSION/","docs/baselines/","docs/work_orders/","docs/reference/work_order_template/","docs/reference/role_switch_envelope/","docs/reference/","governance/compat/","docs/reviews/"],"claims":["required deliverables join actual artifacts proof and terminal status","tool classifier recovery evidence is locally validated"],"requiredProof":["focused hostile tests","Git observed set","acceptance reducer","worker-return fast","Local review probe"],"operatorCheckpoints":[],"forbiddenEffects":["Claude dispatch","provider call","NCR mutation","classifier bypass","platform prompt suppression","public sync","deployment"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0062.md","completenessClaimChanged":false}}
 ```
 
 ## Authority Chain
@@ -242,8 +243,10 @@ Tool/classifier contract:
       "requirementId": "REQ-STANDARD",
       "mandatory": true,
       "expectedArtifacts": [
-        "docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM_2026-09-28.md",
-        "docs/reference/role_switch_envelope/CVF_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ADDENDUM.md"
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
+        "docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md",
+        "docs/reference/role_switch_envelope/CVF_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ADDENDUM.md",
+        "docs/reference/role_switch_envelope/README.md"
       ],
       "requiredProofIds": ["PROOF-FOCUSED"]
     },
@@ -254,7 +257,11 @@ Tool/classifier contract:
         "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
         "docs/reference/work_order_template/README.md",
         "governance/compat/build_dispatch_packet_scaffold.py",
-        "governance/compat/build_worker_return_skeleton_scaffold.py"
+        "governance/compat/build_dispatch_packet_acceptance_sections.py",
+        "governance/compat/build_worker_return_skeleton_scaffold.py",
+        "governance/compat/run_worker_return_scaffold.py",
+        "governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md",
+        "governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md"
       ],
       "requiredProofIds": ["PROOF-TEMPLATE-SIZE", "PROOF-FOCUSED"]
     },
@@ -363,10 +370,10 @@ git status --short --untracked-files=all
 ## Near-Threshold Owner Maintainability Plan
 
 Active owner entrypoint: `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`.
-Pre-change count: 1,181; hard threshold: 1,200. Extract detailed section 6G
+Baseline count: 1,181; hard threshold: 1,200. Extract detailed section 6G
 rules into the new addendum and retain a compact mandatory pointer. Minimum
-shrink target: 50 lines; required post-change maximum: 1,131. The entrypoint is
-explicitly in Allowed scope and Write Ownership.
+shrink target: 50 lines; required final maximum: 1,131. The entrypoint is
+explicitly in Allowed scope and the write-scope section.
 
 ## Gate-To-Role Closeability Contract
 
@@ -397,7 +404,28 @@ returnTimeRecheck: REQUIRED_BEFORE_REPAIR
 
 ## Review-Dispatch Convergence Control
 
+Review-Dispatch Convergence Control: REQUIRED
+
 dispatchKind: REWORK
+
+parentAssignmentId: RSE-T4-H1
+priorFindingSetDigest: 41bd1ca57b460db4bfcf22eff08f579b49e4348a91e67703181c2d1a1c476a02
+dependencyAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
+reworkFindingDisposition: CONSOLIDATED_ALL_DEPENDENT_FINDINGS
+regressionGuardDisposition: REQUIRED_AND_PLANNED_FOR_EACH_TARGETED_DEFECT
+usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
+quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
+nextDispatchDisposition: ONE_CONSOLIDATED_REWORK
+reworkGeneration: 1
+consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH
+successorTrancheOpened: NO
+implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
+preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
+preExecutionReviewTrigger: NONE
+nextRoutineReviewBoundary: WORKER_RETURN
+reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
+reviewerLocalRepairBoundary: WORK_ORDER_FORBIDS_REVIEWER_REPAIR
+reviewerLocalRepairBasis: H1 exposed a source-backed root acceptance-chain defect requiring implementation changes beyond reviewer-local prose repair
 
 reviewRoundCount: 1
 
@@ -456,16 +484,36 @@ reviewerDecisionOwner: LOCAL
 
 Authorized guard-maintenance scope: modify exactly the acceptance-ledger
 artifact union and focused tests declared above, then create the named Local
-return/review evidence. Protected paths: every expected artifact in the ledger
-and the paired packet. Operator authorization: explicit instruction that Local
+return/review evidence. Protected paths:
+
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `governance/compat/build_dispatch_packet_acceptance_sections.py`
+- `governance/compat/build_dispatch_packet_scaffold.py`
+- `governance/compat/build_worker_return_skeleton_scaffold.py`
+- `governance/compat/check_agent_operation_trace.py`
+- `governance/compat/check_dispatch_prompt_envelope.py`
+- `governance/compat/check_work_order_acceptance_ledger.py`
+- `governance/compat/check_work_order_dispatch_quality.py`
+- `governance/compat/check_worker_return_quality_gate.py`
+- `governance/compat/run_worker_return_fast_gate.py`
+- `governance/compat/run_worker_return_scaffold.py`
+- `governance/compat/test_build_dispatch_packet_scaffold.py`
+- `governance/compat/test_check_agent_operation_trace.py`
+- `governance/compat/test_check_dispatch_prompt_envelope.py`
+- `governance/compat/test_check_work_order_acceptance_ledger.py`
+- `governance/compat/test_check_work_order_dispatch_quality.py`
+- `governance/compat/test_check_worker_return_quality_gate.py`
+- `governance/compat/test_run_worker_return_fast_gate.py`
+- `governance/compat/test_run_worker_return_scaffold.py`
+
+Operator authorization: explicit instruction that Local
 perform and complete this repair before NCR. Rollback boundary: revert only
 RSE-T4-H1-R1; preserve ADIF-0061/0062, H1 evidence and NCR P9.
 
 ## High-Risk Local Transaction Proof Applicability
 
-High-Risk Local Transaction Proof Applicability: NOT_APPLICABLE_WITH_REASON -
-no concurrent durable writer, DACL mutation, provider call or external-state
-transaction is authorized.
+High-Risk Local Transaction Proof Applicability: NOT_APPLICABLE_WITH_REASON - no concurrent durable writer, privileged local mutation, provider call, or external-state transaction is authorized.
 
 ## Agent Handoff Contract Control Block
 
