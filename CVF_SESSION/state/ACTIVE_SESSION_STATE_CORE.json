@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ENFORCEMENT_2026-09-28.md",
     "workOrderSha256": "e976795f468c3667124de3b33a45eb61cabbe2ed6254c6a31eeecca2a0b92d73"
   },
-  "currentAuthoritySyncReason": "RSE-T4-H1 closed CLOSED_BLOCKED_BOUNDED at material commit 532e49a72. Local rejected the completion claim, restored implementation sources, retained the worker return/completion/probe, and permits only corrective packet authoring; NCR remains parked at accepted P9.",
+  "currentAuthoritySyncReason": "RSE-T4-H1 closed CLOSED_BLOCKED_BOUNDED at material commit 532e49a72. Local rejected the completion claim, restored implementation sources, retained the worker return/completion/probe, and recorded systemic acceptance-chain learning ADIF-0062 at 0caf9ac47. Only chain-level corrective packet authoring is permitted; NCR remains parked at accepted P9.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
