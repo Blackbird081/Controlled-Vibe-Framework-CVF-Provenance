@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Material commit `532e49a72` closes batch `RSE-T4-H1` as `CLOSED_BLOCKED_BOUNDED`: Local rejected the worker completion claim, restored implementation sources and retained the independent false-negative evidence. Only corrective packet authoring is released; NCR remains parked at accepted P9.
+Material commit `d479502ac` releases batch `RSE-T4-H1-R1` for Local execution: the paired corrective packet binds the exact worker return, ADIF-0062 acceptance ledger, H1 hostile fixtures and template rotation. NCR remains parked at accepted P9.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,7 +13,7 @@ Role: Local implementer/reviewer/closer and session steward. Phase: RSE-T4-H1-R1
 ## Startup Acknowledgment
 Startup acknowledged: current mode=`cvf_foundation_rse_t4_h1_r1_local_execution`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local executes and phase-separately reviews committed RSE-T4-H1-R1; role=Local implementer/reviewer/closer; phase=foundation root correction; decision owner=Local; parked checkpoint=NCR P10 redispatch, P11, other packages, provider/live, Claude dispatch, public sync, deployment and platform production readiness.
 ## Current Mode
-`cvf_foundation_rse_t4_h1_r1_local_execution`. RSE-T4-H1-R1 packet is committed at `943baa81e`; Local owns exact implementation, phase-separated hostile review and closure. P9 remains `USE_PROOF_PASSED`; NCR P10/P11 stay parked. Latest closed learning-history wave: `LHW24`.
+`cvf_foundation_rse_t4_h1_r1_local_execution`. RSE-T4-H1-R1 packet is committed at `d479502ac`; Local owns exact implementation, phase-separated hostile review and closure. P9 remains `USE_PROOF_PASSED`; NCR P10/P11 stay parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
 T3B is closed with one Local-verified active v1 specification. Party B is a verified exact local principal and T3C-C1 hermetic tooling is accepted at
 `db78c87df`.
@@ -155,7 +155,7 @@ Rollback boundary: revert only this continuity sync; preserve closure material `
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 - NCR W02 read-only return was Local-accepted at `c638f2ece` after source-claim repair and 90/90 pre-commit. The client fallback port `8000` differs from the server's documented `8100`; actual URL/port, ledger/log retention and pilot data/effect/expense remain open. R1/W00 static HTML UX contract worker return was reviewer-repaired and accepted bounded at `97532f7038f7bcc0d3768550b06a3695b72b8809`. R1/W01 paired baseline/work order committed at `e54dd51e8eb60364a814a921a0d31bb7d259e487`; exact component/test/return worker delta was reviewer-repaired and accepted bounded at `5e99eb20910e7e3282d7431e6ca3d96c5e87860b` after reviewer-fast 69/69 and pre-commit 90/90. Mocked UI tests do not establish actual browser walkthrough, route call, profile, P06/P08, or pilot effect; successor work order is held for Web research.
 ## Next Allowed Move
-PROGRAM_ID=CVF-FOUNDATION; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=RSE-T4-H1-R1; MATERIAL_COMMIT=943baa81e; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md; EXPANSION_ALLOWED=false. Local executes the exact acceptance-ledger artifact union, freezes the implementation, performs phase-separated hostile review, and closes the foundation lane only if the deterministic reducer and all gates pass. NCR remains parked at P9; P10/P11, provider/live, Claude dispatch, public sync, deployment and platform-interception claims remain forbidden; latest closed learning-history wave LHW24.
+PROGRAM_ID=CVF-FOUNDATION; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=RSE-T4-H1-R1; MATERIAL_COMMIT=d479502ac; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md; EXPANSION_ALLOWED=false. Local executes the exact acceptance-ledger artifact union, freezes the implementation, performs phase-separated hostile review, and closes the foundation lane only if the deterministic reducer and all gates pass. NCR remains parked at P9; P10/P11, provider/live, Claude dispatch, public sync, deployment and platform-interception claims remain forbidden; latest closed learning-history wave LHW24.
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
@@ -177,7 +177,7 @@ PROGRAM_ID=CVF-FOUNDATION; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIV
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: continuity-only binding of committed RSE-T4-H1-R1 packet `943baa81e`, its hashes and Local-execution next move. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/rseT4ToolClassifierBlockRecoveryAuthoring20260928.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: the operator instructed Local to execute and complete this foundation repair without Claude before returning to NCR. Rollback boundary: revert only this continuity projection; preserve packet `943baa81e`, learning `0caf9ac47`, H1 closure `532e49a72`, S11 closure `6a8545e64`, P9 evidence and all unrelated history.
+Authorized guard-maintenance scope: continuity-only binding of amended RSE-T4-H1-R1 packet `d479502ac`, its hashes and Local-execution next move. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/rseT4ToolClassifierBlockRecoveryAuthoring20260928.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: the operator instructed Local to execute and complete this foundation repair without Claude before returning to NCR. Rollback boundary: revert only this continuity projection; preserve packet `d479502ac`, learning `0caf9ac47`, H1 closure `532e49a72`, S11 closure `6a8545e64`, P9 evidence and all unrelated history.
 
 ## Agent Operation Trace Block
 

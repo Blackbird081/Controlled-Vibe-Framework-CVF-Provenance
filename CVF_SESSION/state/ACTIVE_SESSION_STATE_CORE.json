@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
-    "baselineSha256": "4f674c489f1728d463845f2b16165781ab43473462e73f08323288ca78c9d6bd",
+    "baselineSha256": "f7e14186c66b68f8d1ac0ebf98cd2dfb221ad9cd4dfb33d75bbde80cabee6e70",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
-    "workOrderSha256": "d2be96c3b8035815a0aebbda4cb56c74063090cdd4c780e1be3ea316d12ab939"
+    "workOrderSha256": "6d1bd63f31eedbf2abe57a4930fbb7b21c1354504ae2f081520e43df018c5035"
   },
-  "currentAuthoritySyncReason": "RSE-T4-H1-R1 acceptance-chain root-correction packet is committed at 943baa81e and assigned to Local for phase-separated implementation/review. NCR remains parked at accepted P9 until terminal foundation closure.",
+  "currentAuthoritySyncReason": "RSE-T4-H1-R1 acceptance-chain root-correction packet with exact worker-return binding is committed at d479502ac and assigned to Local for phase-separated implementation/review. NCR remains parked at accepted P9 until terminal foundation closure.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
