@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "cvf.independent-review-probe.v1",
+  "batchId": "CVF-NCR-R1-S11",
+  "probeInvocationId": "cvf-ncr-r1-s11-local-independent-probe-20260928",
+  "probeExecutorRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "method": "Inspect the pipeline path-existence branch, verify the named completion path was absent at worker return, verify providerCallCount was zero, then restore the ten worker mutation paths and compare them with base ca2101e76.",
+  "observed": {
+    "completionPathExistedAtReturn": false,
+    "pipelineRequiredExistingAdapterEvidence": true,
+    "providerCallCount": 0,
+    "workerMutationPathsRestoredToBase": 10,
+    "productionReceiptPresent": false
+  },
+  "verdict": "PASS_INDEPENDENT_PROBE_OF_BLOCKER_AND_ROLLBACK",
+  "claimBoundary": "Confirms the packet contradiction and exact rollback only; does not prove P10 production execution or external classifier behavior."
+}

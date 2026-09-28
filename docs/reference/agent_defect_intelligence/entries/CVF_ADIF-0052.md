@@ -18,7 +18,7 @@ lifecyclePhases: pre-dispatch; pre-implementation; pre-closure
 surfaceSelectors: exact changed-set contracts, Project Knowledge pins, canonical state, bootstrap and mirror projections
 detectionSignals: an authorized carrier edit changes multiple source-pinned files but the packet names only one pin; a required mode transition has no exact post-mode literal or equality assertion
 enforcementLevel: GUIDANCE_ONLY
-checkerBindings: governance/compat/check_project_knowledge.py; target-local session consistency tests
+checkerBindings: NOT_APPLICABLE_WITH_REASON - the historical project-knowledge checker path no longer exists; target-local session consistency tests are evidence, not an active CVF checker binding
 promotionState: MACHINE_CHECK_CANDIDATE
 supersedes: NONE
 lastVerifiedCommit: 9c4f8ecd1
@@ -56,7 +56,8 @@ absent from active projections.
 
 - `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md`.
 - `docs/reference/CVF_TRANCHE_COMMIT_CHOREOGRAPHY_STANDARD_2026-06-03.md`.
-- `governance/compat/check_project_knowledge.py`.
+- N/A with reason: the historical project-knowledge checker path no longer
+  exists; current entry enforcement remains guidance-only.
 
 ## Remediation
 

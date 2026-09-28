@@ -4,7 +4,7 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 Date: 2026-09-28
 
@@ -178,3 +178,34 @@ This baseline authorizes a bounded P10 worker packet and one exact provider
 call after pre-implementation admission. It does not claim the call succeeded,
 the package is accepted in production, CVF is production ready, or any
 downstream action authority follows from loading or using the advisory skill.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | paired S11 work order | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S11_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_COMPLETION_2026-09-28.md` | blocked P10, rollback and park | PASS |
+| Roadmap state | NCR roadmap | P10 blocked; NCR parked at P9 | PASS |
+| Registry JSON | package registry entry | restored to base | PASS |
+| Registry Markdown | package README/SKILL | restored to base | PASS |
+| External evidence digest | N/A with reason: no provider call | providerCallCount 0 | N/A with reason |
+| System loop interlock | completion review | feature successors frozen; foundation hardening only | PASS |
+| Session continuity | active front doors | separate continuity commit follows material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| P10 production execution receipt | absent; execution stopped before dry/live steps | BLOCKED |
+| Provider call ceiling | 0 of 1 calls consumed | PASS |
+| Accepted package mutation | none; ten worker mutation paths restored to base | PASS |
+| Final lifecycle frontier | P9 `USE_PROOF_PASSED` | PASS |
+
+## Current Runtime Freshness Verification
+
+The current provider registry owner remains
+`EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts`, including
+`PROVIDER_CAPABILITY_REGISTRY`; S11 neither modifies nor claims absence of that
+surface. The no-provider-call disposition is bounded to this worker attempt and
+is evidenced by the worker return plus
+`docs/reviews/evidence/cvf-ncr-r1-s11-independent-probe-2026-09-28.json`.

@@ -4,7 +4,7 @@ Memory class: governed-worker-dispatch
 
 docType: work_order
 
-Status: DISPATCH_READY
+Status: CLOSED_BLOCKED_BOUNDED
 
 Batch ID: CVF-NCR-R1-S11
 
@@ -622,13 +622,13 @@ P10 claim; Local alone accepts and closes.
 
 ## Acceptance Criteria
 
-- [ ] Exact twelve-path manifest only; staging empty and HEAD unchanged by worker.
-- [ ] Package/source/registry/truth agree on ACTIVE, approved STRICT truth and external IMPLEMENTED production adapter posture.
-- [ ] Five deterministic projections are regenerated and drift-free.
-- [ ] Existing focused tests and package governance checks pass.
-- [ ] Dry CLI/MCP envelope is ready with zero provider calls.
-- [ ] At most one live call produces a valid production execution receipt and complete sourceTruthTrace, or the return is truthfully blocked with the grant consumed.
-- [ ] No audited test or downstream mutation is executed from the advisory output.
+- PASS: worker remained inside the twelve-path manifest with empty staging and unchanged HEAD.
+- BLOCKED: external IMPLEMENTED posture was not admitted and was rolled back.
+- BLOCKED: regenerated projections were not retained because P10 was rejected.
+- BLOCKED: focused suite exposed two stale positive fixtures; the required pipeline gate also failed.
+- NOT_REACHED: dry CLI/MCP readiness after mutation.
+- NOT_REACHED: no live call or production execution receipt; providerCallCount remained zero.
+- PASS: no audited test or downstream mutation from advisory output occurred.
 
 Fail conditions: second call or retry; thirteenth path; source/truth mismatch;
 hand-edited projection; missing receipt after claimed success; raw secret output;
@@ -643,11 +643,11 @@ reviewer-owned completion artifact. Worker handoff is not closure.
 
 ## Closure Checklist
 
-- [ ] Source, projections, receipt and changed set accepted by Local.
-- [ ] No provider rerun during review.
-- [ ] Completion review binds the adapterEvidence path.
-- [ ] Material and continuity commits remain separate.
-- [ ] P11 and broader production/public/deploy effects remain closed.
+- BLOCKED: Local rejected the P10 source/projection mutations and restored them to base.
+- PASS: no provider call or rerun occurred during review.
+- PASS_WITH_BLOCKED_DISPOSITION: the named completion path records blocked closure and is not retained as package adapter evidence.
+- PASS: material and continuity commits remain separate.
+- PASS: P10 redispatch, P11 and broader production/public/deploy effects remain closed.
 
 ## Return-To-Orchestrator Conditions
 
@@ -678,3 +678,34 @@ one provider call. It does not authorize the worker to commit, retry, run the
 audited test, act on the advisory label, change generic runtime code, touch a
 thirteenth path, scale to another package, publish, deploy or claim CVF
 production readiness.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | this work order | `Status: CLOSED_BLOCKED_BOUNDED` | PASS |
+| Completion or reviewer artifact | `docs/reviews/CVF_CVF_NCR_R1_S11_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_COMPLETION_2026-09-28.md` | blocked P10, rollback and park | PASS |
+| Roadmap state | NCR roadmap | P10 blocked; NCR parked at P9 | PASS |
+| Registry JSON | package registry entry | restored to base | PASS |
+| Registry Markdown | package README/SKILL | restored to base | PASS |
+| External evidence digest | N/A with reason: no provider call | providerCallCount 0 | N/A with reason |
+| System loop interlock | completion review | feature successors frozen; foundation hardening only | PASS |
+| Session continuity | active front doors | separate continuity commit follows material commit | N/A with reason |
+
+## Acceptance Receipt Assertion Matrix
+
+| Required value | Observed value | Status |
+|---|---|---|
+| P10 production execution receipt | absent; execution stopped before dry/live steps | BLOCKED |
+| Provider call ceiling | 0 of 1 calls consumed | PASS |
+| Accepted package mutation | none; ten worker mutation paths restored to base | PASS |
+| Final lifecycle frontier | P9 `USE_PROOF_PASSED` | PASS |
+
+## Current Runtime Freshness Verification
+
+The current provider registry owner remains
+`EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-registry.ts`, including
+`PROVIDER_CAPABILITY_REGISTRY`; S11 neither modifies nor claims absence of that
+surface. The no-provider-call disposition is bounded to this worker attempt and
+is evidenced by the worker return plus
+`docs/reviews/evidence/cvf-ncr-r1-s11-independent-probe-2026-09-28.json`.
