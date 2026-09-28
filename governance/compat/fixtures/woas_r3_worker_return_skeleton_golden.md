@@ -10,6 +10,18 @@ dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS-R3-GOLDEN_2026-07
 executionBaseHead: TO_FILL_capture with `git rev-parse --short HEAD` before edits
 rawMemoryReleased=false
 contractProfile: WORKER_RETURN_FULL_GATE_V1
+## Tool / Classifier Block Recovery Event
+toolClassifierBlockRecoveryApplicability: NOT_APPLICABLE_WITH_REASON - replace after evaluating whether a classifier blocked an in-scope edit
+toolClassifierBlockEventCount: 0
+platformForcedOperatorPromptCount: 0
+workerAuthoredOperatorQuestionCount: 0
+recoveryAttemptCount: 0
+recoveryDisposition: NO_EVENT
+eventEvidence: NOT_APPLICABLE_WITH_REASON - no classifier block event occurred
+## Work-Order Acceptance Evidence Ledger
+```acceptance-evidence-json
+{"schemaVersion":"cvf.workOrderAcceptanceEvidence@1.0.0","executionBaseHead":"TO_FILL","results":[]}
+```
 ## Rework Convergence Self-Proof
 rootCauseClusterId: INITIAL_SCOPE_WOAS-R3-GOLDEN
 reworkGeneration: 0

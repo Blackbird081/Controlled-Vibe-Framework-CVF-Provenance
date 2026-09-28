@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Material commit `62fb54e7e` releases batch `RSE-T4-H1-R1` for Local execution: the paired corrective packet binds the exact worker return, complete independent-probe admission, ADIF-0062 acceptance ledger, H1 hostile fixtures and template rotation. NCR remains parked at accepted P9.
+Material commit `62fb54e7e` releases batch `RSE-T4-H1-R1` for Local execution; hardened dispatch/continuity chain HEAD is `a670b6882`. The paired corrective packet binds the exact worker return, complete independent-probe admission, ADIF-0062 acceptance ledger, H1 hostile fixtures and template rotation. NCR remains parked at accepted P9.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE

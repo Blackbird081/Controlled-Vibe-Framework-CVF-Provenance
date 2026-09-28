@@ -244,6 +244,11 @@ class TestNoCommitWorkerPacket(unittest.TestCase):
         self.assertIn("Shape-list rule:", work_order)
         self.assertIn("## Verification Commands", work_order)
         self.assertIn("python governance/compat/run_worker_return_fast_gate.py", work_order)
+        self.assertIn("## Work-Order Acceptance Requirement Ledger", work_order)
+        self.assertIn("```acceptance-ledger-json", work_order)
+        self.assertIn('"schemaVersion":"cvf.workOrderAcceptanceLedger@1.0.0"', work_order)
+        self.assertIn("## Tool / Classifier Block Recovery Contract", work_order)
+        self.assertIn("toolClassifierBlockRecoveryApplicability:", work_order)
 
     def test_no_commit_work_order_includes_worker_output_read_ahead_mandate(self) -> None:
         args = _base_args(commit_mode="WORKER_MUST_NOT_COMMIT")

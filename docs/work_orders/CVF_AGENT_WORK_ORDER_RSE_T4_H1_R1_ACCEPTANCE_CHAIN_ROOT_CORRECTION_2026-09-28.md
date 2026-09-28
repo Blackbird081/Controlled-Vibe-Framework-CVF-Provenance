@@ -63,7 +63,7 @@ rather than the complete problem.
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"RSE-T4-H1-R1","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"CREATES_OR_CHANGES_AUTHORITY","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"NEW_AUTHORITY"},"pathFamilies":["CVF_SESSION/","docs/baselines/","docs/work_orders/","docs/reference/work_order_template/","docs/reference/role_switch_envelope/","docs/reference/","governance/compat/","docs/reviews/"],"claims":["required deliverables join actual artifacts proof and terminal status","tool classifier recovery evidence is locally validated"],"requiredProof":["focused hostile tests","Git observed set","acceptance reducer","worker-return fast","Local review probe"],"operatorCheckpoints":[],"forbiddenEffects":["Claude dispatch","provider call","NCR mutation","classifier bypass","platform prompt suppression","public sync","deployment"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0062.md","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"RSE-T4-H1-R1","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"PURE_LOCAL_IMPLEMENTATION","authorityImpact":"CREATES_OR_CHANGES_AUTHORITY","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"NEW_AUTHORITY"},"pathFamilies":["AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION/","docs/baselines/","docs/work_orders/","docs/reference/work_order_template/","docs/reference/role_switch_envelope/","docs/reference/","governance/compat/","docs/reviews/"],"claims":["required deliverables join actual artifacts proof and terminal status","tool classifier recovery evidence is locally validated"],"requiredProof":["focused hostile tests","Git observed set","acceptance reducer","worker-return fast","Local review probe"],"operatorCheckpoints":[],"forbiddenEffects":["Claude dispatch","provider call","NCR mutation","classifier bypass","platform prompt suppression","public sync","deployment"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0062.md","completenessClaimChanged":false}}
 ```
 
 ## Authority Chain
@@ -243,6 +243,10 @@ Tool/classifier contract:
       "requirementId": "REQ-STANDARD",
       "mandatory": true,
       "expectedArtifacts": [
+        "AGENT_HANDOFF_V63_2026-09-18.md",
+        "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+        "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+        "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
         "docs/work_orders/CVF_AGENT_WORK_ORDER_RSE_T4_H1_R1_ACCEPTANCE_CHAIN_ROOT_CORRECTION_2026-09-28.md",
         "docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md",
         "docs/reference/role_switch_envelope/CVF_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ADDENDUM.md",
@@ -487,7 +491,9 @@ artifact union and focused tests declared above, then create the named Local
 return/review evidence. Protected paths:
 
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `governance/compat/build_dispatch_packet_acceptance_sections.py`
 - `governance/compat/build_dispatch_packet_scaffold.py`
 - `governance/compat/build_worker_return_skeleton_scaffold.py`

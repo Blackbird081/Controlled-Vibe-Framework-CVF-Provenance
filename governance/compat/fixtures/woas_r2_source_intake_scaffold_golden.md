@@ -176,6 +176,17 @@ Literal-shape reminders: do not list required headings as backticked `## ...` st
 | FILL_ME | FILL_ME |
 
 
+## Work-Order Acceptance Requirement Ledger
+
+```acceptance-ledger-json
+{"schemaVersion":"cvf.workOrderAcceptanceLedger@1.0.0","requirements":[{"requirementId":"REQ-FILL","mandatory":true,"expectedArtifacts":["docs/reviews/FILL_ME.md"],"requiredProofIds":["PROOF-FILL"]}],"proofCatalog":[{"proofId":"PROOF-FILL","kind":"COMMAND","locator":"FILL_ME"}]}
+```
+
+## Tool / Classifier Block Recovery Contract
+
+toolClassifierBlockRecoveryApplicability: NOT_APPLICABLE_WITH_REASON - classify before dispatch
+
+
 ## Worker Return Packet Shape Contract
 
 workerReturnPath: `docs/reviews/CVF_WOAS-R2-GOLDEN_WORKER_RETURN_2026-07-01.md`

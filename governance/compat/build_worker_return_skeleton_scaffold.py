@@ -269,6 +269,18 @@ dispatchWorkOrder: `{work_order_path}`
 executionBaseHead: TO_FILL_capture with `git rev-parse --short HEAD` before edits
 rawMemoryReleased=false
 contractProfile: {profile}
+## Tool / Classifier Block Recovery Event
+toolClassifierBlockRecoveryApplicability: NOT_APPLICABLE_WITH_REASON - replace after evaluating whether a classifier blocked an in-scope edit
+toolClassifierBlockEventCount: 0
+platformForcedOperatorPromptCount: 0
+workerAuthoredOperatorQuestionCount: 0
+recoveryAttemptCount: 0
+recoveryDisposition: NO_EVENT
+eventEvidence: NOT_APPLICABLE_WITH_REASON - no classifier block event occurred
+## Work-Order Acceptance Evidence Ledger
+```acceptance-evidence-json
+{{"schemaVersion":"cvf.workOrderAcceptanceEvidence@1.0.0","executionBaseHead":"TO_FILL","results":[]}}
+```
 ## Rework Convergence Self-Proof
 rootCauseClusterId: {args.root_cause_cluster_id if getattr(args, "dispatch_kind", "INITIAL") == "REWORK" else f"INITIAL_SCOPE_{args.batch_id}"}
 reworkGeneration: {getattr(args, "review_round_count", 0)}

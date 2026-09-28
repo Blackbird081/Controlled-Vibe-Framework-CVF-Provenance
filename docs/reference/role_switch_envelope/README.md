@@ -30,6 +30,7 @@ RSE standard; the standard holds the normative content.
 ## Read This
 
 - Standard: `docs/reference/role_switch_envelope/CVF_ROLE_SWITCH_ENVELOPE_STANDARD.md`
+- Tool/classifier recovery: `docs/reference/role_switch_envelope/CVF_RSE_T4_TOOL_CLASSIFIER_BLOCK_RECOVERY_ADDENDUM.md`
 
 The standard defines the canonical envelope fields an agent states when it
 changes or accepts a role, plus the operator-question boundary rule, a compliant
@@ -46,7 +47,8 @@ quota, roadmap or tranche selection, or explicit authorization.
 
 RSE is documentation and reference only and is a local view of the ratified Agent
 Handoff Contract. It adds no checker, helper, runtime, provider, public-sync, or
-interception behavior. RSE-T1, RSE-T2, and RSE-T3 are separate tranches.
+interception behavior on its own. RSE-T1 through RSE-T4 are separate tranches;
+RSE-T4 adds repository-local packet/checker semantics only.
 
 ## Public Export Disposition
 

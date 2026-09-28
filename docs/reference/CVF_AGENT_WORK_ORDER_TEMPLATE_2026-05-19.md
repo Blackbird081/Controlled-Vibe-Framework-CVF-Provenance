@@ -685,78 +685,15 @@ state:
 5. Run committed-range `pre-closure` only after the material/session commit and
    required handoff sync are complete.
 
-## 6F. Near-Threshold Owner Maintainability Plan
+## 6F-6G. Maintainability And Acceptance Ledger
 
-If Allowed scope adds or modifies source inside a registered owner domain whose
-active entrypoint is within the GC-023 near-hard margin, include this section
-before dispatch.
+Changed executable implementation work orders must apply:
+`docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md`.
 
-Required content:
-
-- active owner entrypoint path;
-- current line count and hard threshold;
-- split, extract, rotate, or archive action;
-- new helper/barrel/archive path;
-- `Minimum shrink target: 50 lines`;
-- command-backed post-change line count;
-- explicit statement that the owner entrypoint is in Allowed scope and Write
-  Ownership.
-
-Do not classify the near-threshold owner entrypoint as forbidden-touch while
-adding adjacent source.
-
-## 6G. Work-Order Fulfillment Manifest
-
-For runtime/source implementation work, include these machine-readable tables
-before dispatch.
-
-## Required Artifact Manifest
-
-| Path | Required at handoff | Purpose |
-|---|---|---|
-| <source/test/review path> | Yes | <why this file must exist> |
-
-## Forbidden Path Manifest
-
-| Path | Reason |
-|---|---|
-| <forbidden path or glob> | <why this path is out of scope> |
-
-## Forbidden Filesystem State At Dispatch
-
-Record the filesystem state of every forbidden path at the moment this work
-order is dispatched. The orchestrator must verify each path before dispatch.
-
-This block is verified by `check_forbidden_filesystem_state.py` at the
-`pre-implementation` autorun gate phase.
-
-| Forbidden path | Expected state | Actual state at dispatch | Action if PRESENT |
-|---|---|---|---|
-| <forbidden path> | ABSENT | ABSENT ✓ | N/A |
-
-Rules:
-
-- `ABSENT` — path does not exist on disk. Dispatch is safe.
-- `PRESENT` — path already exists. Dispatch is blocked until the orchestrator
-  either removes the files, opens a governance packet for them, or records an
-  explicit operator exemption with reason.
-- `PRESENT_EXEMPTED` — path exists; orchestrator has authorized worker to ignore
-  it; worker must not edit, stage, or claim the path.
-
-## Pre-Existing Dirty Path Exemptions
-
-Use only when the repository is already dirty before dispatch and the worker
-must ignore, not edit, the path.
-
-| Path | Status at dispatch | Exemption boundary |
-|---|---|---|
-| <pre-existing dirty path> | <M/A/?? from git status> | <do not edit/stage/claim> |
-
-## Required Proof Manifest
-
-| Proof | Path | Required literal | Required at handoff |
-|---|---|---|---|
-| <sentinel/invariant/test proof> | <test or source path> | <literal token> | Yes |
+That addendum owns the Near-Threshold Owner Maintainability Plan, strict JSON requirement/evidence
+ledgers, Git-observed artifact reconciliation, proof binding, deterministic
+terminal reduction, forbidden filesystem state and dirty-path exemptions.
+Human-readable manifests may summarize but never override the JSON ledger.
 
 ## 7. Write Ownership
 
