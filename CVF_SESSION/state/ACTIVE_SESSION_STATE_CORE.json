@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_2026-09-28.md",
-    "baselineSha256": "1c99130e1939520658c7baa33d50749f771369ef293ab7ee2b1d13436f6eb49f",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_2026-09-28.md",
-    "workOrderSha256": "d4a2e2177d83c6cc0dc92e62ec2b1bc850bcfa631d34852a2253b4009d63cf31"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S11_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_2026-09-28.md",
+    "baselineSha256": "253d7e854de50e32ee571fca901bb4013d8be49677daea186a9501a2fbac8a8f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S11_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_2026-09-28.md",
+    "workOrderSha256": "e254a7c0c68ca8fde6d294649bd574c3de29ee8d35ca95145ee91ce370f1b761"
   },
-  "currentAuthoritySyncReason": "CVF-NCR-R1-S10 and S10-R1 are Local-accepted CLOSED_PASS_BOUNDED with final reviewer-oracle binding correction at b2b08a607. P9 reached USE_PROOF_PASSED with the accepted receipt unchanged, focused tests 10/10, canonical S09 trace and both fast gates passing. P10 remains parked and requires a fresh Local-authored packet.",
+  "currentAuthoritySyncReason": "Operator delegated Local orchestrator/reviewer authority on 2026-09-28. The committed CVF-NCR-R1-S11 packet at c64fb5be8 opens exactly one P10 production-runtime worker lane for cvf-engineering-test-evidence-audit, twelve worker paths, one Alibaba/DashScope call using qwen3.7-flash-2026-07-15 and no retry. P9 receipt remains accepted and immutable.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,7 +110,7 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_r1_s10_p9_closed",
+  "currentMode": "cvf_ncr_r1_s11_p10_dispatch_ready",
   "previousMode": "cvf_ncr_r1_s10_r1_offline_root_repair_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",

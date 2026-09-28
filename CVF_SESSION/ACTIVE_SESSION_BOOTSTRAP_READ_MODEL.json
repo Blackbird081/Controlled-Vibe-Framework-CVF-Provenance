@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_s10_p9_closed",
+  "currentMode": "cvf_ncr_r1_s11_p10_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PAUSE_FOR_OPERATOR_DIRECTION; ACTIVE_BATCH=CVF-NCR-R1-S10-P9-CLOSED; MATERIAL_COMMIT=b2b08a607; COMPLETION_REVIEW=docs/reviews/CVF_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_COMPLETION_2026-09-28.md; EXPANSION_ALLOWED=false. P9 is USE_PROOF_PASSED and S10/S10-R1 are closed bounded. Preserve the accepted receipt; do not author or execute P10, repeat provider/live proof, public-sync, deploy or claim production readiness without a fresh operator-directed Local packet; latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S11-P10-DISPATCH-READY; MATERIAL_COMMIT=c64fb5be8; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S11_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_2026-09-28.md; EXPANSION_ALLOWED=false. One INTERNAL_AGENT worker may execute exactly the committed twelve-path P10 packet and at most one Alibaba/DashScope call using qwen3.7-flash-2026-07-15, with no retry. Preserve the accepted P9 receipt; worker must not stage, stash, commit or push and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON to Local. P11, other packages, additional provider calls, audited-test execution, downstream action, public sync, deployment and platform production-readiness claims remain parked; latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_2026-09-28.md",
-    "baselineSha256": "1c99130e1939520658c7baa33d50749f771369ef293ab7ee2b1d13436f6eb49f",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_2026-09-28.md",
-    "workOrderSha256": "d4a2e2177d83c6cc0dc92e62ec2b1bc850bcfa631d34852a2253b4009d63cf31"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S11_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_2026-09-28.md",
+    "baselineSha256": "253d7e854de50e32ee571fca901bb4013d8be49677daea186a9501a2fbac8a8f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S11_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_2026-09-28.md",
+    "workOrderSha256": "e254a7c0c68ca8fde6d294649bd574c3de29ee8d35ca95145ee91ce370f1b761"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

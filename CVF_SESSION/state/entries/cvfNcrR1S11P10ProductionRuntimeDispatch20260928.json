@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2974,
+  "stateKey": "cvfNcrR1S11P10ProductionRuntimeDispatch20260928",
+  "value": "DISPATCH_READY at packet material commit c64fb5be8. Operator delegated Local orchestrator/reviewer authority; Local opened exactly one P10 production-runtime lane for cvf-engineering-test-evidence-audit. The committed work order owns twelve worker paths, reuses the existing generic production executor and CLI/MCP envelope without code mutation, and authorizes at most one Alibaba/DashScope call using qwen3.7-flash-2026-07-15 with no retry. A failed, partial, timed-out or ambiguous live attempt consumes the grant. P9 receipt remains immutable. Worker is INTERNAL_AGENT, must not stage/stash/commit/push, and returns only COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON to Local. P11, other packages, additional calls, audited-test execution, downstream action, public sync, deployment and platform production readiness remain parked."
+}

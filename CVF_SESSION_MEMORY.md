@@ -42,16 +42,16 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_s10_p9_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=pause for operator direction after P9 closure; role=Local orchestrator/reviewer; phase=S10/S10-R1 terminal closure; decision owner=Local; parked checkpoint=P10 authoring/execution, repeat provider/live proof, public sync, deployment and production.
+Startup acknowledged: current mode=`cvf_ncr_r1_s11_p10_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute the committed twelve-path S11/P10 work order with one provider call and no retry; role=Local orchestrator/reviewer; phase=P10 production-runtime dispatch; decision owner=Local; parked checkpoint=P11, other packages, additional calls, audited-test execution, downstream action, public sync, deployment and platform production readiness.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_s10_p9_closed`
-Current mode: `cvf_ncr_r1_s10_p9_closed`; previous mode marker: `cvf_ncr_r1_s10_r1_offline_root_repair_dispatch_ready`
+Current mode marker: `cvf_ncr_r1_s11_p10_dispatch_ready`
+Current mode: `cvf_ncr_r1_s11_p10_dispatch_ready`; previous mode marker: `cvf_ncr_r1_s10_p9_closed`
 
 ## Next Allowed Move
-Mode: `cvf_ncr_r1_s10_p9_closed`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PAUSE_FOR_OPERATOR_DIRECTION; ACTIVE_BATCH=CVF-NCR-R1-S10-P9-CLOSED; MATERIAL_COMMIT=b2b08a607; COMPLETION_REVIEW=docs/reviews/CVF_CVF_NCR_R1_S10_R1_OFFLINE_CLOSURE_PREREQUISITE_ROOT_REPAIR_COMPLETION_2026-09-28.md; EXPANSION_ALLOWED=false. P9 is USE_PROOF_PASSED and S10/S10-R1 are closed bounded. Preserve the accepted receipt; do not author or execute P10, repeat provider/live proof, public-sync, deploy or claim production readiness without a fresh operator-directed Local packet; latest closed learning-history wave LHW24.
+Mode: `cvf_ncr_r1_s11_p10_dispatch_ready`
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_COMMITTED_WORK_ORDER; ACTIVE_BATCH=CVF-NCR-R1-S11-P10-DISPATCH-READY; MATERIAL_COMMIT=c64fb5be8; ACTIVE_WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S11_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_2026-09-28.md; EXPANSION_ALLOWED=false. One INTERNAL_AGENT worker may execute exactly the committed twelve-path P10 packet and at most one Alibaba/DashScope call using qwen3.7-flash-2026-07-15, with no retry. Preserve the accepted P9 receipt; worker must not stage, stash, commit or push and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON to Local. P11, other packages, additional provider calls, audited-test execution, downstream action, public sync, deployment and platform production-readiness claims remain parked; latest closed learning-history wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
