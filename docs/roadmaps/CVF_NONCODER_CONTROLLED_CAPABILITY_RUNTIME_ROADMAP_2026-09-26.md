@@ -10,9 +10,9 @@ Date: 2026-09-26
 
 Program ID: CVF-NCR
 
-Version: 2.3
+Version: 2.4
 
-Revision disposition: OPERATOR_APPROVED_RUNTIME_REUSE_DIRECTION_AND_FOUR_CANDIDATE_ROUTING
+Revision disposition: HTML_RUNTIME_NEED_RECONCILED_BOUNDED
 
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
@@ -56,7 +56,9 @@ Historical v2.1 startup acknowledged: current mode=`cvf_ncr_r0_w01_profile_accep
 
 Historical v2.2 startup acknowledged: current mode at entry=`cvf_ncr_r1_w01_html_ux_copy_accepted_web_research_hold`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; role=Local orchestrator/reviewer; phase=external research closed, internal planning; next allowed move=incorporate D013 and prepare bounded internal work order for operator relay. Operator ngày 2026-09-27 chuyển trách nhiệm sang Local sau Web closeout; điều kiện chờ nghiên cứu ở D012 đã được giải quyết. Quyết định kỹ thuật thuộc Local; dữ liệu/effect/expense thuộc operator. Không mở host exposure, lifecycle promotion, provider/live, public hoặc production từ quyết định này.
 
-Current v2.3 startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=hold for operator checkpoint, with this operator-requested bounded roadmap update; parked checkpoint=P11 execution/dispatch. Role=Local planner/source verifier; phase=internal roadmap disposition after external advisory; technical decision owner=Local, scope/effect/expense decision owner=operator.
+Historical v2.3 startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=hold for operator checkpoint, with this operator-requested bounded roadmap update; parked checkpoint=P11 execution/dispatch. Role=Local planner/source verifier; phase=internal roadmap disposition after external advisory; technical decision owner=Local, scope/effect/expense decision owner=operator.
+
+Current v2.4 startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator-requested read-only Q008 reconciliation while the P11 checkpoint remains parked; role=Local source verifier; phase=internal roadmap decision; technical decision owner=Local, effect/data/cost decision owner=operator.
 
 ## Scope
 
@@ -148,6 +150,19 @@ Operator yêu cầu đưa OMP, OMC, AKI và QM vào **roadmap này** theo địn
 Các locator nguồn cần đối chiếu lại trước việc tương ứng: OMP `packages/coding-agent/src/sdk.ts`, `modes/rpc/host-tools.ts`, `modes/rpc/rpc-session-settle.ts`; OMC `src/index.ts` và lock của Agent SDK; AKI `scripts/roots.js`, `scripts/allowlist.js`, `scripts/task-mcp.js`; QM `src/harness/harness.ts`, `src/sessions/session-syscalls.ts` và `docs/reviews/CVF_QM_SOURCE_TERMINAL_ACCOUNTING_2026-09-14.md`. Locator là index kiểm nguồn tại pin, không là danh sách file đã đọc hết hoặc chứng cứ chạy runtime.
 
 Quyết định này không thêm repo vào ledger AKOE sáu nguồn, không sửa QM terminal accounting và không tuyên bố quét đủ corpus bốn repo. Q1/Q2 external return có giá trị kỹ thuật đã được Local đối chiếu bounded nhưng machine intake của gói gốc vẫn `RETURN_FOR_REPAIR`; không gọi nó là source-pack được promote. Web chưa cần survey tiếp: chỉ sau khi R2 có job, adapter contract, pin và negative scenarios thì mới đặt câu hỏi phản biện hẹp về replaceability/gap mà Local không tự xác minh được. Web giữ vai trò advisory; Local giữ technical disposition.
+
+### D015 - Q008 quyết định cho HTML review packet, 2026-09-28
+
+Local đối chiếu lại source đang chạy theo route đã được W00–W02 nghiệm thu bounded; đây là quyết định nhu cầu runtime cho **một** slice, không phải bằng chứng UI walkthrough hoặc pilot/live. `ArtifactExportPanel.tsx:238-258` gọi `POST /api/artifacts/export`; `route.ts:235-306` xác thực route, parse/kiểm trường, tạo HTML trong tiến trình rồi trả response. `proof.ts:24-84` là helper receipt có thể gọi `/api/governance/evaluate` khi `NEXTAUTH_URL` tuyệt đối; W02 lần theo evaluate route tới Governance Engine với reachability và terminal effect phụ thuộc cấu hình. Không có call model, agent worker hay MCP tool trong path HTML đã đọc. So sánh các lựa chọn:
+
+| Lựa chọn cho HTML slice | Disposition | Bằng chứng / trigger đổi quyết định |
+|---|---|---|
+| Giữ route hiện hữu, sửa gap đúng owner | `SELECTED_NO_EXTERNAL_RUNTIME_FOR_HTML` | Consumer và renderer đã wired; ưu tiên P06 schema/type/size, P08 secret-scan evidence, receipt-hop URL/auth/retention/cost, UI walkthrough và artifact acceptance theo Q001. W00/W01/W02 là source/profile evidence; chưa có runtime pilot proof |
+| OMP SDK/RPC hoặc native Agent SDK | `DEFER_NO_AGENT_WORKER_JOB` | HTML export không giao task cho agent; chỉ mở lại khi một job khác có artifact cần worker, current route thiếu năng lực và có quyền/adapter contract cụ thể |
+| AKI MCP connector | `DEFER_NO_MCP_TOOL_JOB` | HTML export không cần MCP tool; mở lại với tool job được đặt tên và confinement/stop truth đã kiểm |
+| OMC helper/plugin hoặc QM platform | `DEFER_NO_INCREMENTAL_HTML_VALUE` | Không có giá trị riêng cho path HTML đã đọc; giữ D014 trigger cho job khác, không nhập dependency để chứng minh thay thế giả |
+
+Q008 đóng **chỉ cho HTML pilot hiện chọn**: không chọn runtime ngoài ở R2 cho slice này. Nếu sau này scope đổi sang job cần agent/tool thật, R0 lập một Q008 mới theo consumer và đánh giá lại D014; không chuyển kết luận này thành `NO_RUNTIME_VALUE` cho cả bốn repo. Sự vắng call trong path đã đọc không chứng minh mọi path CVF không cần runtime. P11 scale-up của package khác vẫn là checkpoint riêng và không được mở bởi D015.
 
 ### Nhóm use case ưu tiên sau nâng cấp
 
@@ -316,6 +331,7 @@ Current W01 update: `docs/reviews/CVF_CVF_NCR_R0_W01_HTML_PROFILE_WORKER_RETURN_
 - Chốt provider/auth đầu tiên từ kết nối user muốn dùng và host hỗ trợ; ngân sách chi phí/retry, dữ liệu mẫu, metric, threat model và RPO/RTO. Lựa chọn đầu tiên không trở thành khóa provider dài hạn.
 - U1 đã `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`; R0 chỉ kiểm consumer/trigger nếu slice cần Unreal và đối chiếu owner cho thấy gap. Không lặp pin/license/source intake, không import hoặc chạy runtime từ roadmap.
 - D014: đối với HTML job đã chọn, ghi rõ liệu route hiện tại thiếu năng lực worker, MCP tool hay không thiếu runtime nào. So sánh current route, OMP SDK/RPC, native Agent SDK (chỉ khi Claude là binding được chọn), AKI connector (chỉ khi có tool job), QM (chỉ khi có khả năng riêng cần dùng) và no-change; nêu artifact, authority/evidence gap, dependency/cost và lý do chọn hoặc defer. Không biến danh sách nguồn thành bốn pilot.
+- D015: Q008 đã được Local quyết định bounded cho HTML slice: dùng route hiện hữu, không thêm worker/MCP runtime. R0 còn xác minh Q001 profile/effect, P06/P08 và UI walkthrough; một job agent/tool khác phải có consumer/gap riêng trước khi đánh giá lại D014.
 - Chốt Q003 cho pilot nội bộ: agent mô phỏng góc nhìn người mới bằng walkthrough hoặc thao tác UI thực trong quyền user; operator tham gia ở góc nhìn Human khi cần lựa chọn, góp ý hoặc quyết định thuộc thẩm quyền. Ghi rõ lượt mô phỏng, thao tác thực và hỗ trợ đã dùng; không gọi agent là người thử thật. Tuyển người ngoài, consent và retention của nghiên cứu có người chỉ chuẩn bị khi operator mở đợt đó sau này, không là dependency của R0–R3 nội bộ.
 - Đầu ra: bảng owner-consumer-gap có locator; một slice, mức L1/L2/L3, acceptance scenario, scope/effect/threat envelope, kế hoạch baseline và mô phỏng nội bộ, map finding/work package tối thiểu; danh sách quyết định còn mở; packet cho R1 hoặc tranche nhỏ hơn theo routing hiện hành. Thiếu số đo ghi `UNKNOWN`, không bịa baseline.
 - Nghiệm thu/exit: một kết quả user rõ, các đoạn chưa wiring rõ, zero duplicate owner không có lý do. Không cần quét lại toàn bộ corpus. Dừng nếu chỉ còn lý do "repo nổi tiếng" mà không có user outcome.
@@ -495,6 +511,7 @@ Không đổi thứ tự chỉ vì công nghệ mới hấp dẫn. Có thể đi
 | D012 | 2026-09-26 | NCR-R1/W01 đóng bounded: bốn dòng HTML UX copy trên UI hiện hữu và focused mocked tests được Local review tại `5e99eb209` | Chưa có browser walkthrough, profile thực, P06/P08 proof hay pilot effect; operator yêu cầu dừng trước work order kế tiếp để xem thông tin Web mới. Các dependency Q001/Q005/Q007 và điều kiện R1/R2 giữ nguyên; không mở effect hoặc chi phí |
 | D013 | 2026-09-27 | V2.2: operator chuyển sang Local sau closeout SD-01–SD-13; nhận hai stream core skill practice và conflict/host delivery | Tích hợp ngay trong NCR R0/R1/R2; chuẩn bị S01 read-only reconciliation, dừng tại work order cho operator relay; không tạo roadmap thứ ba hoặc cấp host/runtime authority |
 | D014 | 2026-09-28 | V2.3, Loại A: thống nhất system-chain-first và đưa OMP/OMC/AKI/QM vào cùng decision path; pattern và runtime là hai quyết định riêng | OMP SDK là ứng viên đầu có điều kiện cho một worker; OMC helper deferred so với native SDK; AKI chỉ xét MCP job; QM giữ terminal accounting và runtime deferred. R0 chọn theo HTML job gap thực, R2 một adapter, R4 đo thay thế khi có nhu cầu; P11 vẫn parked |
+| D015 | 2026-09-28 | V2.4, Loại A: Local đóng Q008 cho HTML review packet bằng source trace hiện hữu; không cần external worker hoặc MCP runtime cho slice đã chọn | Tiếp tục đúng gap P06/P08, receipt-hop profile/effect và UI walkthrough của Q001; D014 vẫn là candidate routing cho job khác. Không mở P11, adapter, provider/live hoặc pilot effect từ quyết định này |
 | Q001 | PILOT_CANDIDATE_SELECTED_SCOPE_OPEN; D009/D010 | Ứng viên HTML đã chọn; còn L1/L2/L3, effect/threat model, `NEXTAUTH_URL`/egress/retention/latency/cost, P06/P08, UI walkthrough, provider/auth nếu áp dụng, baseline/metric và RPO/RTO; guide/video là nhánh tài liệu tiếp theo | Local xác minh source/profile và đề xuất work package nhỏ; operator chốt tác động/chi phí và ngưỡng trước đợt đo R3; cost chưa đo là `UNKNOWN`; video có scope/approval riêng |
 | Q002 | SOURCE_RECONCILED_DEFER_WITH_TRIGGER | U1 source intake đã đóng bounded; chỉ quyết định consumer/trigger tiếp theo nếu slice cần Unreal và owner comparison thấy gap | Không giao lại pin/license/source reconciliation; chưa import/runtime-enabled; không chặn pilot độc lập |
 | Q003 | INTERNAL_PILOT_SCOPE_DECIDED; HUMAN_RESEARCH_DEFERRED; D8 | Agent mô phỏng non-coder và operator góp ý/quyết định Human khi cần; đợt đánh giá người dùng thật tách riêng sau khi sản phẩm có người dùng | R0 ghi kịch bản/quyền UI, dữ liệu mẫu, log và phân loại bằng chứng; chỉ khi mở nghiên cứu có người mới chốt người phụ trách, consent, quyền dừng/rút, quyền truy cập, retention và recording consent riêng |
@@ -502,7 +519,7 @@ Không đổi thứ tự chỉ vì công nghệ mới hấp dẫn. Có thể đi
 | Q005 | OPEN_BY_ACTION; D4 | Tách quyền diagnostic/component/offline, worker/dependency, credential/provider/live, tạo artifact, publish, settings và deployment | Chốt đúng trước hành động tương ứng; live có model/call-cost/retry/stop riêng; publish không cấp quyền deploy |
 | Q006 | OPEN_BY_CLAIM; D5 | CI required checks/source SHA, public visibility/projection/settings; hosted host/ngân sách/vùng dữ liệu/remote access/secret | Settings chỉ chặn claim hoặc thay settings phụ thuộc; hosted quyết định trước R5/deployment, không chặn code CI được phép |
 | Q007 | OPEN_BEFORE_DISPATCH; D6 | Owner thực hiện/review/integrator/commit, exact file scope, khóa route/binding và release runner, lane 52 deferred | Trước work order/merge; một integrator hoặc merge tuần tự trên file chung, không chiếm lane ngoài scope |
-| Q008 | RUNTIME_SELECTION_PENDING_JOB_GAP; D014 | HTML job có cần worker/MCP runtime ngoài route hiện tại không; OMP HEAD đã đổi sau pin Q1, OMC/AKI/QM vẫn ở pin đã kiểm; chưa có adapter contract hoặc use proof | R0 chỉ định gap/consumer và no-change comparator; trước R2 chọn một surface, kiểm delta/license/capability/authority; sau contract mới cân nhắc Web phản biện hẹp. Không chặn tài liệu hoặc pilot không phụ thuộc runtime ngoài |
+| Q008 | CLOSED_FOR_SELECTED_HTML_SLICE_NO_EXTERNAL_RUNTIME; D014/D015 | `ArtifactExportPanel` gọi export API; route dựng HTML tại chỗ và chỉ có receipt/evaluate hop phụ thuộc profile. Không có worker/model/MCP task trong path đã đọc; P06/P08 và effect/receipt gap vẫn ở Q001 | Chọn no-change runtime cho HTML; không cài OMP/OMC/AKI/QM. Mở một quyết định mới khi job agent/tool cụ thể cần runtime ngoài; không kết luận no-runtime-value cho cả repo |
 
 Các dòng F1–F7 bên dưới ghi lại disposition của revision 1.1 tại thời điểm đó. D008 thay điều kiện tuyển người/đo usability của F6 cho pilot nội bộ; D009/D010 thay việc đánh giá video là ứng viên pilot trong D008 và Q001 trước đây. Các dòng lịch sử không còn là gate đang áp dụng về người thử hoặc lựa chọn pilot.
 
@@ -630,7 +647,7 @@ NOT_APPLICABLE_WITH_REASON: this task incorporates a unified roadmap, not a new 
 - Orphan or unmapped assets: none in this zero-new-asset planning batch. Các quyết định còn mở được theo dõi tại *Decision And Change Log*; Q002 chỉ được xem xét tiếp khi trigger áp dụng.
 - Cross-region links: six historical input families remain linked through existing AKOE evidence; U1 and D014's four repository candidates are separate bounded decisions, not added AKOE families or runtime activations
 - Drift check: NOT_RUN_PLANNING_ONLY; no current-map claim
-- Rebuildability check: roadmap can be rebuilt from cited CVF owners, AKOE/U1 completions, audit input hashes and external alignment reviews; external material remains advisory
+- Rebuildability check: roadmap can be rebuilt from cited CVF owners, AKOE/U1/QM completions, W00-W02 HTML source traces, audit input hashes and external alignment reviews; external material remains advisory
 - Retrieval boundary: planning locators only; no retrieval-readiness claim
 - Adversarial verification: independent reviews R1 and R2; N1/N2 repair gate rerun
 - Knowledge-map verdict: PARTIAL
@@ -647,8 +664,8 @@ External research stays advisory and ends before internal implementation/review/
 |---|---|
 | applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_packet_authority_and_encoding.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_governed_file_size.py`; `governance/compat/check_absorption_blindspot_control_presence.py`; `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_corpus_completeness_report_integrity.py`; `governance/compat/check_corpus_to_knowledge_map_reconciliation.py` |
 | literalTokensReviewed | roadmap headings Authorization, Purpose, Scope, Non-Goals, Design Control Gate, Work Plan, Acceptance Criteria, Verification; `applicableCheckersRead`, `literalTokensReviewed`, `gateRunPurpose`, `claimBoundary`; `Status` is non-closed; `Public Export Disposition`; `Text Encoding Exception`; `NOT_APPLICABLE_WITH_REASON`; delta claim `CLAIM_REJECTED` markers; D014 names source pins as conditional planning decisions without whole-repo intake/corpus-complete claim |
-| gateRunPurpose | 2026-09-28 D014: checker applicability and roadmap control blocks read before edit; confirmation/evidence of v2.3 candidate routing, existing owner/claim boundaries and no runtime promotion after source read-ahead; not first discovery of checker requirements |
-| claimBoundary | Existing roadmap incorporates operator-approved D013 and D014 direction; R1/W01 accepted bounded; four source candidates remain conditional; no activation, live, hosted, public or production claim |
+| gateRunPurpose | 2026-09-28 D015: checker applicability and roadmap control blocks read before edit; confirmation/evidence of v2.4 HTML-only runtime disposition, existing owner/claim boundaries and no runtime promotion after source read-ahead; not first discovery of checker requirements |
+| claimBoundary | Existing roadmap incorporates operator-approved D013/D014 direction and Local D015 HTML source decision; R1/W01 accepted bounded; four source candidates remain conditional for other jobs; no activation, live, hosted, public or production claim |
 
 ## Text Encoding Exception
 
@@ -712,4 +729,4 @@ Reason: private planning artifact. No public-sync, public catalog, deployment or
 
 ## Claim Boundary
 
-Roadmap tổng hợp hướng đã thống nhất và đề xuất trình tự thực hiện. Tài liệu không chứng minh capability đã tích hợp, agent đã bị enforcement, provider subscription đã được hỗ trợ, dữ liệu đã backup hoặc cloud đã sẵn sàng. NCR-R0/W00 và W01 đã được Local nghiệm thu bounded; operator đã chọn ứng viên HTML và đồng ý D011 ở mức thiết kế. Pilot effect, tài liệu hướng dẫn được phát hành và video vẫn cần scope/authority/evidence riêng. D014 chỉ đưa bốn repo vào phép chọn theo job; chưa nối runtime hoặc xác nhận khả năng thay thế. P11 vẫn parked; work order chỉ được giao sau authority và bounded pre-dispatch.
+Roadmap tổng hợp hướng đã thống nhất và đề xuất trình tự thực hiện. Tài liệu không chứng minh capability đã tích hợp, agent đã bị enforcement, provider subscription đã được hỗ trợ, dữ liệu đã backup hoặc cloud đã sẵn sàng. NCR-R0/W00 và W01 đã được Local nghiệm thu bounded; operator đã chọn ứng viên HTML và đồng ý D011 ở mức thiết kế. Pilot effect, tài liệu hướng dẫn được phát hành và video vẫn cần scope/authority/evidence riêng. D014 giữ bốn repo như ứng viên theo job; D015 chỉ kết luận HTML slice hiện tại không cần runtime ngoài, chưa chứng minh UI/live hay giá trị runtime của các job khác. P11 vẫn parked; work order chỉ được giao sau authority và bounded pre-dispatch.
