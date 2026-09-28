@@ -80,13 +80,17 @@ _default_approval_matrix = {
 
 _approval_workflow = ApprovalWorkflow(approval_matrix=_default_approval_matrix)
 
+_ledger = ImmutableLedger(
+    ledger_path=os.environ.get("CVF_GOVERNANCE_LEDGER_PATH", "ledger_layer/ledger_chain.json")
+)
+
 _orchestrator = CoreOrchestrator(
     policy_engine=BasePolicyEngine(),
     decision_matrix=DecisionMatrix(rules=[]),
     action_router=ActionRouter(),
     approval_workflow=_approval_workflow,
     registry=DomainRegistry(),
-    ledger=ImmutableLedger(),
+    ledger=_ledger,
 )
 
 
@@ -224,7 +228,7 @@ async def approve(req: ApproveRequest):
 @app.get("/api/v1/ledger", response_model=CVFResponse)
 async def ledger(limit: int = 50):
     """Query the most recent ledger entries."""
-    ledger_path = "ledger_layer/ledger_chain.json"
+    ledger_path = _ledger.ledger_path
     try:
         if os.path.exists(ledger_path):
             with open(ledger_path, "r") as f:

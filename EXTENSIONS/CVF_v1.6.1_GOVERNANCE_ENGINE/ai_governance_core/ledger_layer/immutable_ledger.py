@@ -16,11 +16,18 @@ class ImmutableLedger:
             os.makedirs(os.path.dirname(self.ledger_path), exist_ok=True)
             with open(self.ledger_path, "w") as f:
                 json.dump([], f)
+        self._read_chain()
+
+    def _read_chain(self):
+        with open(self.ledger_path, "r") as f:
+            chain = json.load(f)
+        if not isinstance(chain, list):
+            raise ValueError("Governance ledger must be a JSON block list")
+        return chain
 
     def append_event(self, event_payload):
         with _ledger_lock:
-            with open(self.ledger_path, "r") as f:
-                chain = json.load(f)
+            chain = self._read_chain()
 
             previous_hash = chain[-1]["hash"] if chain else "GENESIS"
 
