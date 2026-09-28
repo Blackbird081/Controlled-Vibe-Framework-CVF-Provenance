@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2977,
+  "stateKey": "cvfNcrQ001DockerReceipt20260928",
+  "value": "BOUNDED_LOCAL_INTEGRATION_OBSERVED at material commit 87a3da943. Docker Desktop ran cvf-web and Governance Engine on an internal network with synthetic content and development mock login. Real local HTTP returned receipt ALLOW/R0 joined by exact request_id to a verified sandbox ledger block; export remained DRAFT_UNACCEPTED. The current engine response-shape bridge was repaired with 40/40 focused tests, TypeScript, ESLint and pre-commit 90/90. Engine tracked ledger seed shape differs from runtime list contract; sandbox excluded it and initialized a fresh ledger. No real provider, hosted UI, durable retention, cost or Q001/R0 closure is claimed. Review: docs/reviews/CVF_CVF_NCR_Q001_DOCKER_RECEIPT_WIRING_EVIDENCE_2026-09-28.md."
+}
