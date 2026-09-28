@@ -2,6 +2,8 @@
 
 Memory class: FULL_RECORD
 
+docType: work_order
+
 Status: APPROVED_FOR_EXECUTION
 
 Date: 2026-09-28
@@ -425,7 +427,11 @@ ledger reconciliation and reducer PASS.
 
 independentProbeRequired: YES
 
-probeExecutorRole: LOCAL_REVIEWER_PHASE
+independentProbeRiskClass: PROTECTED_GOVERNANCE_ACCEPTANCE_CHAIN
+
+independentProbeDispositionAtDispatch: PENDING_REVIEWER_EXECUTION
+
+probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
 
 implementationOracleSeparation: freeze implementation first; construct fresh
 temporary ledgers/returns and Git-set inputs from the canonical contract, not
@@ -437,6 +443,14 @@ manifest; all four H1 classifier mutations
 
 expectedInformationGain: prove the whole acceptance route rejects semantic
 contradictions that component-shape gates previously admitted
+
+positiveControl: exact work-order and return ledgers with full Git/proof join
+reduce to COMPLETE_PENDING_REVIEW
+
+rerunCostReason: provider-free temporary fixtures with bounded high-value
+semantic coverage
+
+reviewerDecisionOwner: LOCAL
 
 ## Core Guard Self-Protection Authorization
 
