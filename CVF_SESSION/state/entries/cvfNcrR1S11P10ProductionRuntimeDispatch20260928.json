@@ -1,5 +1,5 @@
 {
   "stateOrder": 2974,
   "stateKey": "cvfNcrR1S11P10ProductionRuntimeDispatch20260928",
-  "value": "CLOSED_BLOCKED_BOUNDED at material commit 6a8545e64. Worker stopped before dry/live execution because the packet bound adapterEvidence to a later Local completion path while the required pipeline checker demanded that path already exist. Local review rejected and restored all ten P10 source/truth/projection mutations, retained the blocked return and independent probe, and recorded ADIF-0061 for the operator-reported tool/classifier escalation. providerCallCount remained zero; P9 receipt and USE_PROOF_PASSED remain authoritative. NCR, P10 redispatch, P11, other packages, provider/live, public sync and deployment are parked."
+  "value": "Original S11 remains CLOSED_BLOCKED_BOUNDED at 6a8545e64 as historical evidence. Corrective S11-R1 superseded its terminal disposition and closed P10 CLOSED_PASS_BOUNDED at closure bd15b2600 after material 1a538d10d. The package is ACTIVE_PRODUCTION_RUNTIME; exactly one authorized Alibaba/DashScope call returned HTTP 200 and a production receipt, Local independently recomputed production/use-proof receipt identities and all trace/hash links offline, and reviewer providerCallCount was zero. P11, other packages, public sync, deployment and platform-wide production remain parked."
 }

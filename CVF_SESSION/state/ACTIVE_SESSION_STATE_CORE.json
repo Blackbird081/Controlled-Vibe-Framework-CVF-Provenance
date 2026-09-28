@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S11_R1_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_CORRECTIVE_2026-09-28.md",
     "workOrderSha256": "22618c185791df53aff59b93a2d3291f1b0a79b6f1e1231661ae645726609215"
   },
-  "currentAuthoritySyncReason": "CVF-NCR-R1-S11-R1 corrective P10 packet committed at f4b7442c3 after acceptance-ledger, target-state, dispatch-quality, closeability and review-cost admission. Continuity predecessor a363ba4dd is reconciled across all generated/front-door surfaces. Local may now execute the exact thirteen-path implementation and one-call provider grant; P11 and broader effects remain closed.",
+  "currentAuthoritySyncReason": "CVF-NCR-R1-S11-R1 P10 corrective material committed at 1a538d10d and Local closure committed at bd15b2600. One authorized provider call passed, receipt identities and source-truth traces were independently recomputed offline, and the exact acceptance ledger closed. P11 and broader effects remain parked pending fresh operator authorization.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_p10_corrective_execution",
-  "previousMode": "cvf_foundation_rse_t4_h1_r1_local_execution",
+  "currentMode": "cvf_ncr_p10_closed_p11_parked",
+  "previousMode": "cvf_ncr_p10_corrective_execution",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
