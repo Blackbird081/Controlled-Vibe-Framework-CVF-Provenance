@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: OAUTH_ADMIN_UI_AND_LOCAL_LEDGER_JOIN_OBSERVED_RECEIPT_UI_OPEN
+Status: OAUTH_ADMIN_UI_AND_LOCAL_RECEIPT_DISPLAY_OBSERVED_BOUNDED
 
 docType: reference
 
@@ -45,17 +45,17 @@ The GitHub login email is not the CVF authority key. The public account lookup i
 - Completed bounded: production build passed with real local config; local HTTP probes saw only GitHub, `/login` 200, anonymous `/api/auth/me` 401; operator-relayed authenticated session JSON matched the reviewed CVF admin binding. No codes, tokens, cookies, client secret, or signed headers were recorded.
 - Completed bounded by operator report: `/admin/audit-log` opened in the same Firefox Private GitHub session. Local did not inspect its browser cookie or page contents.
 - Verify an unbound account is denied if one is available, and that removing the binding invalidates subsequent use after controlled configuration propagation. Do not infer immediate revocation from source tests.
-- Complete the Work Transfer browser receipt-status and route-auth observation for the local export below. Keep `DRAFT_UNACCEPTED` distinct from a receipt `ALLOW` decision. Measure first and warm export latency separately.
+- Read the exact route-auth proof from a safe export response if needed; the browser source supports only an inference below. Measure first and warm export latency separately. Keep `DRAFT_UNACCEPTED` distinct from a receipt `ALLOW` decision.
 
 ## Local Work Transfer Receipt Attempt
 
 On 2026-09-29, Local started the current Governance Engine on `127.0.0.1:8000` with a separate ignored ledger at `.cvf/runtime/q001-github-receipt-20260929/ledger_chain.json`. Engine health and CVF Web's `/api/governance/health` both returned `healthy`; the ledger was empty before the browser export. The operator used Work Transfer and relayed the resulting HTML, generated at `2026-09-29T05:25:12.200Z`, with the explicit `DRAFT / UNACCEPTED` notice and receipt anchor `transfer-1dbdb2e0-39d5-45c4-8d15-2900dff4b775`.
 
-The engine ledger then contained one block. Local recomputed its SHA-256 hash and `GENESIS` link, and independently read the same request ID through `/api/v1/ledger`: `artifact-proof-transfer-1dbdb2e0-39d5-45c4-8d15-2900dff4b775-1790659512204`. The block's decision was `ALLOW`; block hash was `90ec72d1f44d67e50485b0e67e40fb46560e718fa4e2ad0fe0ccbf11e1b7d410`. No engine error was logged. This establishes a bounded browser-triggered local evaluation and ledger join. The operator's relayed HTML did not include the CVF Web receipt-status panel or route-auth proof, so the exact UI receipt status and `session` auth mode remain unverified. The selected historical audit record names `usr_2 (admin)`; that record's actor must not be confused with the current GitHub subject `usr_github_206422451`. First/warm end-to-end latency remains unmeasured.
+The engine ledger then contained one block. Local recomputed its SHA-256 hash and `GENESIS` link, and independently read the same request ID through `/api/v1/ledger`: `artifact-proof-transfer-1dbdb2e0-39d5-45c4-8d15-2900dff4b775-1790659512204`. The block's decision was `ALLOW`; block hash was `90ec72d1f44d67e50485b0e67e40fb46560e718fa4e2ad0fe0ccbf11e1b7d410`. No engine error was logged. A subsequent operator-provided screenshot of Work Transfer shows `Blackbird081`/`Admin` in the sidebar, the matching export anchor, the UI's governance `ALLOW` note, and the explicit draft/unaccepted notice. Current `ArtifactExportPanel.tsx` renders that note only when `governanceReceipt.decision === 'ALLOW'`; `proof.ts` returns a receipt object only with status `PRESENT`. Thus the screenshot and source support a bounded displayed-receipt inference, not a direct inspection of the response JSON. The browser component sends no service-token header and the route requires either a valid token or session; `session` auth mode is likewise a source-supported inference, not a directly captured route-auth proof. The selected historical audit record names `usr_2 (admin)`; that record's actor must not be confused with the current GitHub subject `usr_github_206422451`. First/warm end-to-end latency remains unmeasured.
 
 ## Claim Boundary
 
-Existing source tests cover the binding contract. The local production build and operator-relayed real GitHub login plus admin page access establish a bounded authenticated admin UI path for the selected account; Local did not inspect the browser cookie, GitHub token, or audit page contents. A subsequent browser-triggered local export reached the engine ledger with a valid hash and `ALLOW` decision, while the HTML remained draft and unaccepted. The UI receipt-status panel, exact route-auth mode, latency distribution, binding revocation, provider governance behavior, artifact acceptance, deployment, and production readiness remain separate proof obligations. The Governance Engine was not running during the earlier OAuth check; it ran in an isolated local profile for the later receipt attempt. P11 and public export remain parked.
+Existing source tests cover the binding contract. The local production build and operator-relayed real GitHub login plus admin page access establish a bounded authenticated admin UI path for the selected account; Local did not inspect the browser cookie or GitHub token. A subsequent browser-triggered local export displayed `ALLOW` and draft/unaccepted state, and reached the engine ledger with a valid hash and matching request ID. The exact route-auth response proof, latency distribution, binding revocation, provider governance behavior, artifact acceptance, deployment, and production readiness remain separate proof obligations. The Governance Engine was not running during the earlier OAuth check; it ran in an isolated local profile for the later receipt attempt. P11 and public export remain parked.
 
 ## Epistemic Process Block
 
@@ -69,8 +69,8 @@ The first mismatched redirect failed, the next callback failed its PKCE cookie c
 
 ### Contradiction Or Gap Disposition
 
-The first two failures were not success evidence. The clean retry and same-session admin page access support the bounded login/access claim. The later ledger event supports an evaluation-path claim but does not establish what receipt status the browser displayed or the route-auth mode. The exact cause of the PKCE cookie failure remains open.
+The first two failures were not success evidence. The clean retry and same-session admin page access support the bounded login/access claim. The later screenshot plus ledger support a displayed `ALLOW` receipt and draft export; exact route-auth mode remains inferred from source. The exact cause of the PKCE cookie failure remains open.
 
 ### Claim Update
 
-Q001 GitHub login, selected admin session, and admin page access have operator-observed evidence in the local profile. A later Work Transfer export has a local engine ledger join and `ALLOW` decision, but its UI receipt status and session-auth proof remain open. No artifact acceptance follows from either observation.
+Q001 GitHub login, selected admin session, admin page access and Work Transfer `ALLOW`/draft display have operator-observed evidence in the local profile. The export has a local engine ledger join; exact session-auth proof and latency remain open. No artifact acceptance follows from either observation.
