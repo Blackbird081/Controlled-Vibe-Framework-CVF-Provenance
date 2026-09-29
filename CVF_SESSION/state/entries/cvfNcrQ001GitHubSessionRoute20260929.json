@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2992,
+  "stateKey": "cvfNcrQ001GitHubSessionRoute20260929",
+  "value": "BOUNDED_LOCAL_SESSION_ROUTE at material commit 1a28e0cb7. Operator triggered one GitHub-authenticated Work Transfer HTML export. HTTP 200 response directly gave authMode=session, actorId=usr_github_206422451, route ALLOW, receipt PRESENT/ALLOW, and DRAFT_UNACCEPTED in 85.7 ms at a temporary same-host relay. Receipt ID artifact-proof-transfer-1dbdb2e0-39d5-45c4-8d15-2900dff4b775-1790668534339 joined the seventh Governance Engine ledger block; all seven hashes and links recomputed valid, tip 24ad1bce923c04cddcf08227f64031e3883ec8acf35136d358bddd5353920b4d. Relay and second Web instance stopped; direct port 3000 Web login 200 and engine health healthy. Single warm relay observation, not latency distribution, hosted proof or artifact acceptance. Q001/R0 open; P11 parked."
+}

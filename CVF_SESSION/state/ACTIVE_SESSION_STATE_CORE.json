@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S11_R1_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_CORRECTIVE_2026-09-28.md",
     "workOrderSha256": "22618c185791df53aff59b93a2d3291f1b0a79b6f1e1231661ae645726609215"
   },
-  "currentAuthoritySyncReason": "CVF-NCR-R1-S11-R1 P10 remains closed bounded at bd15b2600. Q001 GitHub local login/admin UI is operator-observed bounded at 416a11609. Work Transfer export at 6d0581f7e joined a valid local engine ALLOW block; operator screenshot at b6690796e shows Blackbird081/Admin, ALLOW and DRAFT_UNACCEPTED. Five synthetic warm service-token exports at c2077caae were PRESENT/ALLOW/DRAFT_UNACCEPTED with 10.1 ms median; one six-block snapshot at 86533f64f was readable by a second local engine. Exact browser route-auth response, OAuth latency, durable retention, P08 and provider-governance proof remain open. P11 and broader effects remain parked.",
+  "currentAuthoritySyncReason": "CVF-NCR-R1-S11-R1 P10 remains closed bounded at bd15b2600. Q001 GitHub session export at 1a28e0cb7 directly proved session route, actor, PRESENT/ALLOW receipt, DRAFT_UNACCEPTED and seven-block valid ledger join in one 85.7 ms warm local relay observation. Service-token sample and quiescent snapshot remain bounded diagnostics. Q001/R0, distributed latency, retention/backup under failure, P08 and provider-governance proof remain open; P11 and broader effects parked.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
