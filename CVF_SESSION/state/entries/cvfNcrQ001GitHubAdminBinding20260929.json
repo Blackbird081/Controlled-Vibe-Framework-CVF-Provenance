@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2985,
+  "stateKey": "cvfNcrQ001GitHubAdminBinding20260929",
+  "value": "OPERATOR_SELECTED_ADMIN at material doc commit 483152de2. Ignored cvf-web/.env.local contains one GitHub binding: subject 206422451, CVF user usr_github_206422451, role admin, org_cvf/team_exec, local NEXTAUTH_URL and a generated 48-byte session secret. Local verification checked exact fields without printing secret material; git check-ignore confirmed the file is excluded. No GitHub OAuth App or GITHUB_ID/GITHUB_SECRET exists yet; no real callback, account-control proof, production-like build, governance provider call, artifact acceptance, public sync or P11 expansion."
+}
