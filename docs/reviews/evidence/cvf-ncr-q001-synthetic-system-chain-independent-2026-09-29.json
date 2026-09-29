@@ -1,0 +1,55 @@
+{
+  "claimBoundary": "Synthetic local reviewer probe; no artifact approval or live cutover.",
+  "executionBaseHead": "e6e5e3f1c2097d3e8bbb41d975f0c63cc2dff78e",
+  "hashOracle": "independent raw SQL + hashlib/json canonical block recomputation",
+  "negativeControls": {
+    "forwardedEngineCalls": 2,
+    "wrongIdAbsent": true,
+    "wrongStoreAbsent": true
+  },
+  "positive": {
+    "artifactState": "DRAFT_UNACCEPTED",
+    "attemptId": "artifact-proof-independent-positive-1790704712889081200-1790704715356",
+    "httpStatus": 200,
+    "rawSqlite": {
+      "count": 1,
+      "matches": [
+        [
+          1,
+          "883ef213c2e2c9037aed1e6d794bd137941644b03d5a78a0a0a62b389f8ae99b"
+        ]
+      ],
+      "tip": "883ef213c2e2c9037aed1e6d794bd137941644b03d5a78a0a0a62b389f8ae99b"
+    },
+    "receiptStatus": "PRESENT"
+  },
+  "processes": {
+    "enginePidInitial": 25728,
+    "enginePidRestart": 24644,
+    "webPid": 3084
+  },
+  "responseLoss": {
+    "artifactState": "DRAFT_UNACCEPTED",
+    "attemptId": "artifact-proof-independent-timeout-1790704716326146600-1790704716346",
+    "exactIdReconciliation": "FOUND",
+    "httpStatus": 200,
+    "rawSqlite": {
+      "count": 2,
+      "matches": [
+        [
+          2,
+          "6cc4180bcefbf00f4af92c50afd08e37b8be99100be90905ca0872fac8e8c138"
+        ]
+      ],
+      "tip": "6cc4180bcefbf00f4af92c50afd08e37b8be99100be90905ca0872fac8e8c138"
+    },
+    "receiptStatus": "TIMED_OUT",
+    "safeToRetry": false
+  },
+  "restart": {
+    "sameExactIdCountAndTip": true
+  },
+  "schemaVersion": "cvf.q001IndependentSystemChainReview.v1",
+  "scope": "DISPOSABLE_TRACKED_SOURCE_ONLY",
+  "stagedTrackedFileCount": 1150
+}
