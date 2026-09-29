@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_Q001_SYNTHETIC_SQLITE_CHAIN_PACKET; BATCH_ID=CVF-NCR-Q001-SYNTHETIC-SYSTEM-CHAIN; REVIEW_COMMIT=03b65d478; EXPANSION_ALLOWED=false. Author paired baseline/work order for disposable-data Web-to-engine-to-SQLite receipt, exact-ID reconciliation, restart and response-loss ambiguity; require independent Local review. No worker execution before a separately committed packet, continuity sync and bound dispatch PASS. GitHub JSON cutover, pilot/live, P11, external runtimes, public sync and deployment remain parked. Q001/R0, retention, full P08, cost, provider-governance proof and artifact acceptance remain open. Latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NCR-Q001-SYNTHETIC-SYSTEM-CHAIN; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SYNTHETIC_SYSTEM_CHAIN_2026-09-29.md; REVIEW_COMMIT=d29b72f72; EXPANSION_ALLOWED=false. Execute only after bound pre-dispatch PASS, using disposable Web/engine/SQLite and the four-path worker manifest. Worker must not commit; Local reviewer owns independent HTTP/store probe and acceptance. GitHub JSON cutover, pilot/live, P11, external runtimes, provider calls, public sync and deployment remain parked. Q001/R0, retention, P08, cost and artifact acceptance remain open. Latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md",
-    "baselineSha256": "61f166083d422d94f9a68e1b778685ddadb6458ca8a635016810b29db7b1a3d2",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md",
-    "workOrderSha256": "77e20822cae91122c7b6da41705ce978fed0aa99f59f08eedad359dcf0686e96"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_Q001_SYNTHETIC_SYSTEM_CHAIN_2026-09-29.md",
+    "baselineSha256": "13932c456e7c4a1ede0330f13f2bdee47868ffb58d7d88b91c14db4b379c9a2f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SYNTHETIC_SYSTEM_CHAIN_2026-09-29.md",
+    "workOrderSha256": "ebecd96bdba139916cd962442da3d4b249d7309c0257a243bb327a6d17838948"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

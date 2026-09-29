@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md",
-    "baselineSha256": "61f166083d422d94f9a68e1b778685ddadb6458ca8a635016810b29db7b1a3d2",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md",
-    "workOrderSha256": "77e20822cae91122c7b6da41705ce978fed0aa99f59f08eedad359dcf0686e96"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_Q001_SYNTHETIC_SYSTEM_CHAIN_2026-09-29.md",
+    "baselineSha256": "13932c456e7c4a1ede0330f13f2bdee47868ffb58d7d88b91c14db4b379c9a2f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SYNTHETIC_SYSTEM_CHAIN_2026-09-29.md",
+    "workOrderSha256": "ebecd96bdba139916cd962442da3d4b249d7309c0257a243bb327a6d17838948"
   },
-  "currentAuthoritySyncReason": "Q001 local SQLite worker candidate was committed at 49c5ab395 and independently accepted bounded at 8a8fdabc7. The GitHub JSON ledger remains active; Q001/R0 and parked boundaries remain open.",
+  "currentAuthoritySyncReason": "Q001 synthetic Web-engine-SQLite packet and independent packet review committed at d29b72f72. Execution remains bound to final pre-dispatch PASS; GitHub JSON cutover and Q001/R0 remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
