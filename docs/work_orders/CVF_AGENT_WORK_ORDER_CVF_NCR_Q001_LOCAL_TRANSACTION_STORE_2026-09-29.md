@@ -61,7 +61,7 @@ Replace the Q001 single-host JSON whole-file rewrite failure boundary with a tra
 ## Task Governance Routing Manifest
 
 ```json
-{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-Q001-LOCAL-TRANSACTION-STORE","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"STATEFUL_LOCAL_IMPLEMENTATION","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/","EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/","EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/","docs/baselines/","docs/work_orders/","docs/roadmaps/","docs/reviews/"],"claims":["bounded local SQLite ledger transaction repair","synthetic peer, fault and restore proof pending Local review"],"requiredProof":["failing-before passing-after regression","real second-process transaction ordering","post-acquire cleanup","verified JSON import","clean local backup restore","focused and integration tests","exact worker manifest","independent Local probe","detached final-return hash equality"],"operatorCheckpoints":["new storage host or deployment","real-ledger cutover","non-manifest path","provider/live/public effect","retention or RPO/RTO commitment"],"forbiddenEffects":["worker commit","current GitHub ledger mutation","OAuth/Web edit","provider invocation","external runtime","public sync","deployment","artifact acceptance claim"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"docs/reference/CVF_NCR_Q001_LEDGER_DURABILITY_FAILURE_PROFILE_2026-09-29.md","completenessClaimChanged":false}}
+{"schemaVersion":"cvf.taskGovernanceManifest.v1","taskId":"CVF-NCR-Q001-LOCAL-TRANSACTION-STORE","requestedProfile":"P3_ELEVATED","classification":{"taskKind":"STATEFUL_LOCAL_IMPLEMENTATION","authorityImpact":"ENRICHES_EXISTING_OWNER","externalEffect":"NONE","dataSensitivity":"PRIVATE_REPO","reversibility":"GIT_REVERSIBLE","sourceScale":"NAMED_FILES","delegation":"MULTI_ROLE_NO_COMMIT","novelty":"OWNER_COMPOSITION"},"pathFamilies":["EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/","EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/","EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/","docs/baselines/","docs/work_orders/","docs/roadmaps/","docs/reviews/","CVF_SESSION/"],"claims":["bounded local SQLite ledger transaction repair","synthetic peer, fault and restore proof pending Local review"],"requiredProof":["failing-before passing-after regression","real second-process transaction ordering","post-acquire cleanup","verified JSON import","clean local backup restore","focused and integration tests","exact worker manifest","independent Local probe","detached final-return hash equality"],"operatorCheckpoints":["new storage host or deployment","real-ledger cutover","non-manifest path","provider/live/public effect","retention or RPO/RTO commitment"],"forbiddenEffects":["worker commit","current GitHub ledger mutation","OAuth/Web edit","provider invocation","external runtime","public sync","deployment","artifact acceptance claim"],"sourceEvidence":{"selectedFilesFullyRead":true,"corpusReceiptRef":"docs/reference/CVF_NCR_Q001_LEDGER_DURABILITY_FAILURE_PROFILE_2026-09-29.md","completenessClaimChanged":false}}
 ```
 
 ## Agent Roles And Scope
@@ -112,13 +112,40 @@ Repair routine in-manifest source, test and return defects directly from the nam
 
 ## Pre-Flight Checks
 
-Capture `git rev-parse HEAD` and `git status --short`. Verify clean committed packet and current-authority binding; run dispatch-release readiness and bound pre-implementation autorun gate. A failed release check blocks implementation.
+Capture `git rev-parse HEAD` and `git status --short`. Verify clean committed packet and current-authority binding; run dispatch-release readiness and bound pre-implementation autorun gate. A failed release check blocks implementation. Before renewed worker return, run `python governance/compat/check_work_order_acceptance_ledger.py --work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md --enforce` to validate this dispatcher-owned prerequisite; the return must add exactly one matching `acceptance-evidence-json` block.
 
 ## Write Ownership
 
 Worker owns exactly the eight paths in the Required Artifact Manifest below, with no staging or commit. Reviewer/closer owns packet amendments, independent proof, roadmap and continuity. The existing JSON ledger data file, legacy validator, core orchestrator and all Web files are read-only.
 
 ## Work-Order Fulfillment Manifest
+
+## Work-Order Acceptance Requirement Ledger
+
+This dispatcher-owned ledger is the prerequisite for the already-required
+`run_worker_return_fast_gate.py` acceptance join. It scores the eight worker
+artifacts only. Independent Local reviewer execution and Q001/R0 closure remain
+separate gates; a worker PASS row cannot self-certify them.
+
+```acceptance-ledger-json
+{
+  "schemaVersion": "cvf.workOrderAcceptanceLedger@1.0.0",
+  "requirements": [
+    {"requirementId":"REQ-STORE","mandatory":true,"expectedArtifacts":["EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py"],"requiredProofIds":["PROOF-TRANSACTION"]},
+    {"requirementId":"REQ-CONSUMERS","mandatory":true,"expectedArtifacts":["EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/immutable_ledger.py","EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py"],"requiredProofIds":["PROOF-API"]},
+    {"requirementId":"REQ-TESTS","mandatory":true,"expectedArtifacts":["EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_ledger.py","EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_sqlite_ledger.py","EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/q001_sqlite_ledger_peer.py"],"requiredProofIds":["PROOF-PEER","PROOF-RESTORE"]},
+    {"requirementId":"REQ-RETURN","mandatory":true,"expectedArtifacts":["docs/reviews/CVF_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_WORKER_RETURN_2026-09-29.md","docs/reviews/evidence/cvf-ncr-q001-local-transaction-store-final-return-hash-2026-09-29.json"],"requiredProofIds":["PROOF-HASH"]}
+  ],
+  "proofCatalog": [
+    {"proofId":"PROOF-TRANSACTION","kind":"synthetic focused test","locator":"tests/test_sqlite_ledger.py::test_append_rollback_duplicate_and_exact_lookup"},
+    {"proofId":"PROOF-API","kind":"consumer compatibility test","locator":"tests/test_sqlite_ledger.py::test_api_backend_selection_and_limited_tail"},
+    {"proofId":"PROOF-PEER","kind":"real second-process barrier test","locator":"tests/test_sqlite_ledger.py::test_real_second_process_serializes_and_post_acquire_cleanup"},
+    {"proofId":"PROOF-RESTORE","kind":"verified import and clean restore test","locator":"tests/test_sqlite_ledger.py::test_import_rejects_bad_source_and_restores_clean_backup"},
+    {"proofId":"PROOF-HASH","kind":"detached exact-byte return receipt","locator":"docs/reviews/evidence/cvf-ncr-q001-local-transaction-store-final-return-hash-2026-09-29.json"}
+  ]
+}
+```
+
 
 ## Required Artifact Manifest
 
@@ -417,21 +444,35 @@ laneReleaseEvidence: terminal worker return, exact changed/staged sets, focused 
 |---|---|
 | Actor | Local dispatch author |
 | Provider or surface | private CVF workspace |
-| Session or invocation | Q001 local transaction-store packet, 2026-09-29 |
+| Session or invocation | Q001 acceptance-ledger packet repair, 2026-09-29 |
 | Working directory | repository root |
 | Command or tool surface | governed source reads, Git and static guard commands |
-| Target paths | paired baseline, this work order and NCR roadmap D029 |
+| Target paths | this work order acceptance-ledger contract and exact current-authority projection |
 | Allowed scope source | operator continuation, D028/Q001 and committed Local fault profile |
-| Before status evidence | clean worktree at HEAD `bbce6e07b`, prior HOLD packet committed |
-| After status evidence | amended paired packet and roadmap pending, implementation not started |
+| Before status evidence | clean worktree in isolated repair checkout at HEAD `2bcbfb453` before this amendment; committed DISPATCH_READY packet `02ecef12f`; blocked worker return preserved separately |
+| After status evidence | acceptance-ledger prerequisite and exact current-authority hash projected together; worker implementation remains uncommitted in main workspace |
 | Diff evidence | `git status --short` and `git diff --check` before commit |
 | Approval boundary | no real-ledger cutover, pilot, provider/live, public or deployment effect |
-| Claim boundary | authored dispatch packet only; worker release needs committed continuity and bound gate |
+| Claim boundary | dispatcher contract repair only; no worker proof or acceptance is created |
 | Agent type | dispatcher |
-| Invocation ID | cvf-ncr-q001-local-transaction-store-20260929 |
-| Expected manifest | `docs/baselines/CVF_GC018_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Manifest delta | MATCH; later continuity is a separate commit |
+| Invocation ID | cvf-ncr-q001-acceptance-ledger-repair-20260929 |
+| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH; current-authority continuity is a separate commit |
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: project the amended Q001 work-order SHA-256
+into current authority in the same dispatcher repair commit. Protected paths:
+`CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`;
+`CVF_SESSION/ACTIVE_SESSION_STATE.json`;
+`CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+Operator authorization: operator directed continuation of the bounded Q001
+roadmap; this corrects the missing dispatcher acceptance ledger and its exact
+current-authority binding, with no worker implementation or live effect.
+Rollback boundary: revert this work-order ledger amendment and the three
+corresponding state projections together; preserve the uncommitted worker
+implementation and all unrelated Q001 history.
 
 ## Checker Source Read-Ahead Block
 

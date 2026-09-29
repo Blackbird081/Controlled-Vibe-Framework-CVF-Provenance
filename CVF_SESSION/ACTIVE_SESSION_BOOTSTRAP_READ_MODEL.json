@@ -11,7 +11,7 @@
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md",
     "baselineSha256": "8666faf25a929866e0bb6aa5056001f2545de420c8a9ec3c1d790b17eb04bdb6",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md",
-    "workOrderSha256": "462c886ecad4dc97b574f33045850e3f90cd9882b84d14774991fb67bed297ed"
+    "workOrderSha256": "21b605d74127dfa50093600a73c651f3e85b279525ba401dcb1d8e6aeb434d8a"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
