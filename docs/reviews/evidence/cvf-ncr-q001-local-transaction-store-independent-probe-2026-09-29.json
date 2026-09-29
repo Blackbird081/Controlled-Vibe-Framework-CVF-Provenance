@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "cvf.localReviewerProbeObservation.v1",
+  "batchId": "CVF-NCR-Q001-LOCAL-TRANSACTION-STORE",
+  "reviewerActor": "q001-independent-review-subagent",
+  "invocationId": "cvf-q001-sqlite-independent-reprobe-20260929",
+  "baseHead": "19855dc42ff003a7909a2e8771b8f780a9f38942",
+  "workerReturnSha256": "e107e51c702472a5d4ce181195228e1c56e1f28e155b30760bd9b94b3767c95c",
+  "recordKind": "REVIEWER_AUTHORED_EXECUTION_OBSERVATION_NOT_AUTOMATED_TRANSCRIPT",
+  "command": "PowerShell here-string containing independent Python probe | python -",
+  "probeMethod": [
+    "Launch actual q001_sqlite_ledger_peer.py in six child processes against separate synthetic databases: three normal and three early-entry mutants.",
+    "Hold a raw sqlite3 BEGIN IMMEDIATE in the parent. Read READY, send START_ATTEMPT, receive ATTEMPTING, record perf_counter_ns immediately before parent commit. Parse child ENTERED occurrence time independently of the worker test helper.",
+    "Assert entered timestamp is earlier than release-start exactly for mutant runs; normal peers complete after release-start. Child exit codes must be zero.",
+    "Construct four version-1 incompatible databases directly with sqlite3: wrong ordinal type and key, composite unique request ID plus hash, partial unique request ID, and nullable request ID. Require ValueError from SqliteLedger for all four.",
+    "On a newly initialized valid database, append one event, require same-event retry to return the existing block, require conflicting retry to raise, then inspect raw SQL count and independently recompute SHA256 of sorted-key block JSON.",
+    "Recompute exact-byte worker return SHA256 and require the frozen digest. Close every raw connection and child stream and allow the disposable temporary directory to clean up."
+  ],
+  "observedStdout": {
+    "independent_event_time_oracle": ["NORMAL_PASS", "NORMAL_PASS", "NORMAL_PASS", "EARLY_REJECTED", "EARLY_REJECTED", "EARLY_REJECTED"],
+    "incompatible_schema_cases_rejected": 4,
+    "valid_schema_append_idempotency_conflict_hash": "PASS",
+    "temp_cleanup": "PASS",
+    "frozen_return_hash_match": "e107e51c702472a5d4ce181195228e1c56e1f28e155b30760bd9b94b3767c95c"
+  },
+  "exitCode": 0,
+  "initialFindings": [
+    "P1: worker barrier test passed an injected real child that atomically emitted ATTEMPTING and ENTERED before parent release; observation used parent read order.",
+    "P2: a version-1 incompatible schema with ordinal TEXT and composite uniqueness was admitted."
+  ],
+  "initialAdditionalProbe": {
+    "rawSqlAndIndependentChainHash": "PASS",
+    "processKilledAfterInsertBeforeCommitRollback": "PASS",
+    "subsequentAppendAfterCrash": "PASS",
+    "backupRestoreRawStateEquality": "PASS",
+    "processExitCode": 1,
+    "exitReason": "Assertions completed; reviewer-owned raw sqlite connection prevented initial TemporaryDirectory cleanup on Windows.",
+    "cleanupDisposition": "Exact subsequent cleanup command was blocked by tool policy. Initial synthetic temp residue was disclosed to closer; cleanup not claimed."
+  },
+  "disposition": "PASS_INDEPENDENT_PROBE",
+  "providerCalls": 0,
+  "realLedgerAccess": false,
+  "workerFileEdits": false,
+  "claimBoundary": "Synthetic single-host candidate proof only. No production cutover, Q001/R0 closure, power-loss durability, retention commitment or final artifact acceptance."
+}
