@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2993,
+  "stateKey": "cvfNcrQ001P08CandidateScan20260929",
+  "value": "P08_CANDIDATE_AND_SYNTHETIC_ARTIFACT_SCAN_BOUNDED at material commit 5dcd42d21. Git-visible cvf-web candidate: 1,007 text files scanned, one icon skipped, zero unreadable, nine exact path/line/hash fixture matches and zero new findings. One synthetic generated HTML was also scanned; SHA-256 9f0ae4dfd879a050dbff653c672a76677b2524436db81aec78134695091512b4. Four adversarial tests passed, including new secret in test tree, changed allowlisted line, HTML secret and unreadable artifact; output omitted secret values. Ignored .env.local was not read. Full release scanner still has six pinned-mirror findings and legacy exemptions. P08 full scope and Q001/R0 remain open; no provider/live, acceptance, P11 or public sync claim."
+}
