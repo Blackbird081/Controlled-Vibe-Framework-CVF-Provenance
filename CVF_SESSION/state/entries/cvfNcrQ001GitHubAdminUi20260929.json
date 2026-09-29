@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2987,
+  "stateKey": "cvfNcrQ001GitHubAdminUi20260929",
+  "value": "OPERATOR_OBSERVED_BOUNDED at material commit 416a11609. In the same fresh Firefox Private session as the real GitHub OAuth callback, the operator observed /api/auth/me authenticated=true for Blackbird081 -> usr_github_206422451/admin/org_cvf/team_exec and confirmed /admin/audit-log opened. Local independently passed production build and anonymous route probes, but did not inspect the browser cookie, provider token or audit page contents. Governance receipt/latency, ledger join, provider behavior, artifact acceptance, P11, public sync and deployment remain unproved or parked."
+}
