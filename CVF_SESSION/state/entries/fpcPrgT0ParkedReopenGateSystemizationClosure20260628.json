@@ -1,0 +1,29 @@
+{
+  "stateOrder": 1297,
+  "stateKey": "fpcPrgT0ParkedReopenGateSystemizationClosure20260628",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "8d4ed2f4",
+    "roadmap": "docs/roadmaps/CVF_FPC_PRG_T0_PARKED_REOPEN_GATE_SYSTEMIZATION_ROADMAP_2026-06-28.md",
+    "baseline": "docs/baselines/CVF_GC018_FPC_PRG_T0_PARKED_REOPEN_GATE_SYSTEMIZATION_ROADMAP_2026-06-28.md",
+    "completionReview": "docs/reviews/CVF_FPC_PRG_T0_PARKED_REOPEN_GATE_SYSTEMIZATION_ROADMAP_COMPLETION_2026-06-28.md",
+    "guidance": "docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md",
+    "decision": "SYSTEMIZE_PARKED_REOPEN_GATE_BEFORE_DOWNSTREAM_IMPLEMENTATION",
+    "selectedImplementationLane": "none",
+    "nextRecommendedTranche": "FPC-PRG-T1 Parked Reopen Condition Source Inventory",
+    "upstreamClosures": [
+      "FPC-DSD-T1 downstream hold decision at 24726307",
+      "FPC-SCG-T7 acceptance ledger and downstream reopen gates at be253923",
+      "FPC-SCG-T8 acceptance-ledger carrier reconciliation at e278c039"
+    ],
+    "verification": [
+      "python governance/compat/check_fpc_system_chain_acceptance_ledger.py --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base c6248014 --head HEAD --serial PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base c6248014 --head HEAD --enforce PASS",
+      "pre-commit hook PASS 59/59 at material commit 8d4ed2f4"
+    ],
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "liveProofDisposition": "N/A with reason: FPC-PRG-T0 made no runtime/provider governance claim and used no API keys",
+    "claimBoundary": "Private provenance parked reopen gate systemization roadmap only. No checker implementation, gate wiring, public-sync, runtime/provider/live proof, MPI-T6 runtime work, Policy_Local or Document Translator implementation, adapter implementation, package activation, certification, registry/checker/generated-state mutation beyond session sync, or push from the provenance workspace."
+  }
+}

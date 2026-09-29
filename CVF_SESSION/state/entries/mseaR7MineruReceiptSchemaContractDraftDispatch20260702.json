@@ -1,0 +1,30 @@
+{
+  "stateOrder": 690,
+  "stateKey": "mseaR7MineruReceiptSchemaContractDraftDispatch20260702",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "074144c9",
+    "dispatchCommit": "7aed70cb",
+    "acceptanceCommit": "074144c9",
+    "preDispatchBase": "ce48461e",
+    "sessionHygieneCommit": "ce48461e",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_WORKER_RETURN_2026-07-02.md",
+    "receiptSchemaContractDraft": "docs/reference/CVF_MSEA_R7_MINERU_RECEIPT_SCHEMA_CONTRACT_DRAFT_2026-07-02.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchBaseHead": "ce48461e",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamRepository": "https://github.com/opendatalab/MinerU.git",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "preDispatchGate": "PASS 72/72",
+    "preImplementationGate": "PASS 74/74",
+    "workerReturnFastGate": "PASS",
+    "reviewerFastGate": "PASS 59/59",
+    "materialPreCommitHook": "PASS 79/79",
+    "selectedRoute": "OPEN_RECEIPT_SCHEMA_CONTRACT_DRAFT",
+    "claimBoundary": "Documentation/reference receipt schema contract draft accepted only; no MinerU runtime, install, model download, parser/OCR/VLM/hybrid execution, API/router/Gradio/Docker run, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, schema implementation, receipt-writer code, or production-readiness claim.",
+    "nextRecommendedMove": "Operator selects the next high-value governed lane or authorizes a fresh source-verified follow-up; MSEA-CC-4 checker or schema implementation remains parked until fresh authorization."
+  }
+}

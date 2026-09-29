@@ -1,0 +1,33 @@
+{
+  "stateOrder": 659,
+  "stateKey": "kiodT1ExternalAbsorptionOverlapDisciplineGuardClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "211645e8",
+    "baseHead": "5fa153c0",
+    "completionReview": "docs/reviews/CVF_KNOWLEDGE_INTAKE_OVERLAP_DISCIPLINE_GUARD_COMPLETION_2026-06-30.md",
+    "checker": "governance/compat/check_external_absorption_overlap_discipline.py",
+    "test": "governance/compat/test_check_external_absorption_overlap_discipline.py",
+    "updatedWarningSurfaces": [
+      "docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md",
+      "docs/reference/external_agent_review/README.md",
+      "docs/reference/guard_orientation/README.md"
+    ],
+    "hookWiring": [
+      "governance/compat/agent_autorun_command_catalog.py",
+      "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+      "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "governance/compat/local_governance_hook_catalog_pre_push.py"
+    ],
+    "requiredSection": "## Overlap And Novelty Classification",
+    "allowedDispositions": [
+      "CONFIRMED_EXISTING",
+      "ENRICH_EXISTING",
+      "NEW_FINDING",
+      "REJECT_DIRECT_IMPORT",
+      "NO_NEW_VALUE",
+      "OWNER_SURFACE_NOT_FOUND"
+    ],
+    "claimBoundary": "Repo-local guard hardening only. No external source corpus, runtime, provider, public-sync, package activation, or production-readiness claim was added."
+  }
+}

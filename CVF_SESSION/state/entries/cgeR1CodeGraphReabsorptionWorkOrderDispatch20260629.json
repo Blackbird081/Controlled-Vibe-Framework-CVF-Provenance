@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1323,
+  "stateKey": "cgeR1CodeGraphReabsorptionWorkOrderDispatch20260629",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-06-29",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md",
+    "dispatchBaseHead": "302ae93e",
+    "dispatchMaterialCommit": "0041218b",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "externalCorpusRoot": ".private_reference/legacy/CVF 28.06/CodeGraph/CVF_Code_Intelligence_Capability",
+    "plannedWorkerReturn": "docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md",
+    "plannedOwnerSurfaceMatrix": "docs/reference/CVF_CGE_R1_CODE_INTELLIGENCE_OWNER_SURFACE_MATRIX_2026-06-29.md",
+    "nextAllowedMove": "Execute CGE-R1 as WORKER_MUST_NOT_COMMIT: full CodeGraph reabsorption review plus CVF-owned owner-surface matrix, no commit by worker.",
+    "claimBoundary": "documentation/reference dispatch only; no runtime, package root, SKILL.md, ASSF registry mutation, generated package index mutation, checker, resolver, CodeGraph install/init/index/MCP/watcher/daemon, provider/live proof, public-sync, session-sync by worker, package activation, lifecycle promotion, or production-readiness claim"
+  }
+}

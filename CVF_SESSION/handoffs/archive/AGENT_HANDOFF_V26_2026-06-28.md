@@ -1,0 +1,1187 @@
+# AGENT HANDOFF V26 - 2026-06-28
+
+Status: ACTIVE HANDOFF
+Memory class: active-handoff
+Supersedes: `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`
+
+## Startup Acknowledgment
+
+Startup acknowledged: current mode=`agsk_t5_work_order_dispatched_pending_worker_execution`; active handoff=AGENT_HANDOFF_V26_2026-06-28.md; next allowed move=execute AGSK-T5 as `WORKER_MUST_NOT_COMMIT` using `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`; parked checkpoint=AGSK-T5 dispatch-ready at `1cc52d7a`, AGSK-T4 riskTriggers contract patch closed at `2a84036a`; LHW24 remains the latest closed numbered LHW wave; EAVC-T1 external absorption value conversion guard closed at material commit `4f0ef2c9`; runtime/plugin/command/persona/hook/adapter/public/provider/live/production-readiness claims remain parked behind fresh governed authorization.
+
+## Current State
+
+| Field | Value |
+|---|---|
+| Active front door | `CVF_SESSION_MEMORY.md` |
+| Bootstrap read model | `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Canonical state registry | `CVF_SESSION/ACTIVE_SESSION_STATE.json` |
+| Active review queue | `CVF_SESSION/ACTIVE_REVIEW_QUEUE.json` |
+| Previous active handoff | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md` |
+| Remote tracking branch | `origin/codex/p1-p5-small-debt-remediation` |
+| Latest material closeout | `1cc52d7a` AGSK-T5 package candidate work-order dispatch |
+| Latest closed numbered LHW wave | `LHW24` |
+
+## Current Mode
+
+`agsk_t5_work_order_dispatched_pending_worker_execution`
+
+## Purpose
+
+Keep the active handoff compact after V25 reached the governed file-size guard
+near-threshold. V25 is archived as historical continuity; V26 is the sole root
+active handoff and now points to the next operator-selected external absorption
+target or roadmap audit.
+
+## Scope / Target / Owner Boundary
+
+Target: maintain compact active handoff V26, update active startup pointers,
+and preserve the AGSG-BSH-T1 closed checker boundary.
+
+Owner boundary: this handoff authorizes session continuity maintenance only. It
+does not authorize downstream implementation, runtime/provider/live work,
+public-sync mutation, CodeGraph runtime/MCP/watcher/daemon adoption, merge
+automation, hook repair, Agent Skills plugin/command/persona/hook import,
+package activation, certification, new checker implementation, or generated
+aggregate mutation beyond active-session sync.
+
+## Active Boundary
+
+Active handoff: `AGENT_HANDOFF_V26_2026-06-28.md`.
+
+Archived predecessor:
+`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`.
+
+Remote tracking branch: `origin/codex/p1-p5-small-debt-remediation`.
+
+Exact remote SHA must be derived live from git when needed.
+
+External agent memory files: non-canonical convenience only.
+
+External agent memory files and provider-local memory are non-canonical
+convenience only. Source facts for governed CVF work must be re-verified
+against CVF-governed surfaces.
+
+## Latest Work / Changes
+
+Material commit `66eb39ac` closed AGSG-T1 through T3:
+
+- `docs/baselines/CVF_GC018_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_2026-06-28.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_2026-06-28.md`
+- `docs/reviews/CVF_AGSG_T1_SOURCE_VERIFIED_ASSF_RECONCILIATION_COMPLETION_REVIEW_2026-06-28.md`
+- `docs/reference/agent_system_skills/CVF_AGSG_AGENT_SKILLS_ASSF_CAPABILITY_ANATOMY_AND_RATIONALIZATION_ADVISORY.md`
+- `docs/reviews/CVF_AGSG_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md`
+- `docs/roadmaps/CVF_AGSG_T0_AGENT_SKILLS_GOVERNANCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`
+
+The lane source-verified `addyosmani/agent-skills` at commit `30e55cb` and the
+operator-supplied `CVF Agent Skills Governance Absorption Pack`, promoted the
+valuable skill anatomy, progressive-disclosure, anti-rationalization,
+validator-owned exemption, persona-boundary, and evidence-receipt patterns into
+a CVF-owned ASSF advisory reference, and closed the checker lane with no
+checker now.
+
+Material commit `5ae9cb9e` added the AGSG-BSH-T1 blind-spot presence dispatch
+packet and ADIF-0014:
+
+- `docs/baselines/CVF_GC018_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_2026-06-28.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_2026-06-28.md`
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0014.md`
+- `docs/reference/agent_defect_intelligence/entries/README.md`
+
+Material commit `a8f45aa7` added
+`docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0015.md` and updated
+the ADIF entries README. The entry is guidance-only and does not retroactively
+change the already committed AGSG-BSH-T1 route fields.
+
+Material commit `328de12b` closed AGSG-BSH-T1:
+
+- `governance/compat/check_absorption_blindspot_control_presence.py`
+- `governance/compat/test_check_absorption_blindspot_control_presence.py`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_2026-06-28.md`
+- `docs/reviews/CVF_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_WORKER_RETURN_2026-06-29.md`
+- `docs/reviews/CVF_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_COMPLETION_2026-06-28.md`
+
+The checker now triggers from changed governed Markdown content that cites
+`.private_reference/legacy/` or `.private_reference/external_repos/` and
+requires the paired blind-spot and corpus controls, or explicit allowed
+dispositions.
+
+## Next Allowed Move
+
+Execute AGSK-T5 using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`
+as `WORKER_MUST_NOT_COMMIT`. LHW24 remains the latest closed numbered LHW wave.
+The worker may create
+`docs/reference/agent_system_skills/registry/entries/cvf-governance-external-absorption.json`,
+regenerate `docs/reference/agent_system_skills/generated/skill-index.json`,
+and create
+`docs/reviews/CVF_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_WORKER_RETURN_2026-06-29.md`.
+
+Required boundaries:
+
+- Treat AGSG-BSH-T1 as a closed offline governance checker, not as runtime,
+  provider, public-sync, package, or Agent Skills activation evidence.
+- Treat EAVC-T1 as a value-conversion evidence-shape guard, not as proof that
+  AGSK packages or runtime skills have been created.
+- Treat AGSK-T4 as a closed documentation-only ASSF contract patch. AGSK-T5 may
+  consume `riskTriggers` only as metadata in a `CANDIDATE` registry entry.
+- Treat AGSK-T5 as metadata-only registry-candidate work, not as a package root,
+  resolver, checker, runtime lane, lifecycle promotion, or activation.
+- Treat retained 2026-06-28 external source folders as advisory input under
+  `.private_reference/legacy/CVF 28.06/`, not as CVF source of truth.
+- Do not import Agent Skills plugin runtime, slash commands, personas, hooks,
+  prototype checkers, package instances, resolver mutations, CLI/MCP adapters,
+  provider/live proof, public-sync, benchmark, security certification,
+  production-readiness, or automatic skill invocation without fresh governed
+  authorization.
+
+## Parked Checkpoint
+
+AGSG-BSH-T1 is `CLOSED_PASS_BOUNDED` at material commit `328de12b`. The lane
+implemented only the offline scope-triggered governance checker and does not
+implement runtime behavior, plugin install, slash command import, persona
+orchestration, package activation, resolver mutation, CLI/MCP adapter,
+provider/live proof, benchmark, security certification, public export, or
+generated aggregates beyond active-session sync.
+
+TKG runtime/package/MCP/hypervisor/evidence database/obligation registry/
+provenance-label enforcement candidates remain parked behind their recorded
+reopen conditions.
+
+## Claim Boundary
+
+This handoff may be cited only as session-continuity evidence for the
+AGSG-BSH-T1 closed checker state and ADIF-0014/0015 records. It is not runtime,
+provider/live, public-sync, package, Agent Skills plugin import, slash command
+import, persona orchestration, adapter, benchmark, security, automatic skill
+invocation, or production-readiness evidence.
+
+Verification for this batch must come from the active-session generator,
+session-mode, next-move freshness, core-guard self-protection, governed
+file-size, markdown structural, and commit-steward gates run on the changed
+session-sync range.
+
+## Core Guard Self-Protection Authorization - AECG-T0 Session Sync And Handoff Rotation
+
+Authorized guard-maintenance scope: update active session continuity after
+AECG-T0 material roadmap commit `edee01a0`, archive near-threshold active
+handoff V25, open compact active handoff V26, and regenerate active session
+state so the front door, generated state sources, generated aggregates,
+bootstrap read model, and active handoff all point to AECG-T1 GC-018 authoring
+as the next allowed move.
+
+Protected paths:
+
+- `AGENTS.md`
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/aecgT0CodeGraphAgentEngineeringControlRoadmap20260628.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+- `docs/reference/CVF_FPC_PRG_T1_PARKED_REOPEN_CONDITION_SOURCE_INVENTORY_2026-06-28.json`
+
+Operator authorization: the operator instructed Codex to continue with
+`colbymchenry/codegraph` and `CVF_Agent_Engineering_Control_Standard`.
+
+Rollback boundary: if this session-sync and handoff-rotation batch is rejected,
+revert only the session-sync and V25-to-V26 handoff rotation changes. Do not
+revert AECG-T0 material commit `edee01a0`, TKG-T5 material commit `6ce94464`,
+TKG-T4 material commit `79f26845`, or earlier TKG/EverOS/PRG/FPC/session-sync
+commits.
+
+## GC-020 Marker - AECG-T0 CodeGraph And Agent Engineering Control Roadmap Commit
+
+Material commit `edee01a0` added
+`docs/roadmaps/CVF_AECG_T0_CODEGRAPH_AGENT_ENGINEERING_CONTROL_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
+The roadmap keeps prior CGE-T1/CGE-T2 CodeGraph boundaries binding, retains the
+operator-provided Agent Engineering Control folder under ignored legacy
+reference storage, and selects AECG-T1 source-verified triage/adaptation as the
+next governed move.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed AECG-T0 roadmap. It does not implement runtime, provider/live
+proof, public-sync export, CodeGraph install/init, MCP wiring, watcher/daemon,
+merge automation, hook repair, package activation, certification, checker
+implementation, generated aggregate beyond session sync, or
+production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - MSEA-T1-T3 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+MSEA-T1 through T3 material closeout commit `38f236bc` so the front door,
+generated state sources, generated aggregates, bootstrap read model, and active
+handoff all point to operator selection of the next external absorption
+repo/folder or another high-value roadmap audit before implementation.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaT0MineruStructuredExtractionRoadmap20260628.json`
+- `CVF_SESSION/state/entries/mseaT1T3MineruStructuredExtractionAbsorptionClosure20260628.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: operator instruction to finish the roadmap and material
+commit `38f236bc`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert MSEA material commit `38f236bc`, MSEA-T0
+material commit `3776d5db`, PINT material commits `c21cd0e9`, `3a729e83`,
+and `658bc76d`, AECG material commits `7701abb8` and `edee01a0`, or earlier
+TKG/EverOS/PRG/FPC commits.
+
+## GC-020 Marker - MSEA-T1-T3 MinerU Structured Extraction Absorption Closeout Commit
+
+Material commit `38f236bc` added
+`docs/baselines/CVF_GC018_MSEA_T1_SOURCE_VERIFIED_DOCUMENT_EXTRACTION_RECONCILIATION_2026-06-28.md`,
+`docs/reference/CVF_MSEA_T2_DOCUMENT_EXTRACTION_CLAIM_BOUNDARY_RECEIPT_QUALITY_AND_RAG_HANDOFF_ADVISORY_2026-06-28.md`,
+`docs/reviews/CVF_MSEA_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md`,
+and updated
+`docs/roadmaps/CVF_MSEA_T0_MINERU_STRUCTURED_EXTRACTION_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`
+to `CLOSED_PASS_BOUNDED`. The lane decision is
+`CLOSE_MSEA_ABSORPTION_LANE_NO_CHECKER_NOW`.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed MSEA-T1 through T3 material closeout. It does not implement
+runtime, provider/live proof, public-sync export, MinerU install, model
+download, OCR/VLM/hybrid execution, remote backend routing, API/router/Gradio
+service, RAG index write, parser execution, extraction receipt samples,
+extraction accuracy claim, document-truth claim, package activation,
+certification, checker implementation, generated aggregate beyond session
+sync, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - AECG-T0 Handoff Sync Marker
+
+Authorized guard-maintenance scope: update the active handoff with session-sync
+commit `4cedb4cb` so GC-020 active-session compatibility recognizes the
+dedicated handoff-sync parent after the AECG-T0 roadmap session sync and V25 to
+V26 handoff rotation.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+
+Operator authorization: the operator instructed Codex to continue with
+`colbymchenry/codegraph` and `CVF_Agent_Engineering_Control_Standard`, then
+finish the resulting roadmap/session continuity.
+
+Rollback boundary: if this marker is rejected, revert only this marker. Do not
+revert session-sync commit `4cedb4cb`, AECG-T0 material commit `edee01a0`, or
+earlier TKG/EverOS/PRG/FPC/session-sync commits.
+
+## GC-020 Marker - AECG-T0 Session Sync Commit
+
+Session-sync commit `4cedb4cb` rotated active handoff V25 into
+`CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V25_2026-06-28.md`, opened compact
+active handoff V26, updated active session front doors and generated state to
+the AECG-T1 next move, and repaired the FPC parked reopen inventory source
+authority pointer to the archived V25 path.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed AECG-T0 session-sync batch. It does not implement runtime,
+provider/live proof, public-sync export, CodeGraph install/init, MCP wiring,
+watcher/daemon, merge automation, hook repair, package activation,
+certification, checker implementation, generated aggregate beyond session
+sync, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - AECG-T1-T3 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AECG-T1 through T3 material closeout commit `7701abb8` so the front door,
+generated state sources, generated aggregates, bootstrap read model, and active
+handoff all point to the closed AECG lane and the next operator-selected
+external absorption boundary.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/aecgT1T3AgentEngineeringControlAbsorptionClosure20260628.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: the operator instructed Codex to finish the AECG
+roadmap.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert AECG-T1 through T3 material commit
+`7701abb8`, AECG-T0 material commit `edee01a0`, or earlier TKG/EverOS/PRG/FPC
+commits.
+
+## GC-020 Marker - AECG-T1-T3 Agent Engineering Control Closeout Commit
+
+Material commit `7701abb8` added
+`docs/baselines/CVF_GC018_AECG_T1_SOURCE_VERIFIED_AGENT_ENGINEERING_CONTROL_TRIAGE_2026-06-28.md`,
+`docs/reference/CVF_AECG_T2_AGENT_ENGINEERING_CONTROL_OWNER_SURFACE_MATRIX_2026-06-28.md`,
+and
+`docs/reviews/CVF_AECG_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md`,
+and updated the AECG-T0 roadmap to `CLOSED_PASS_BOUNDED`. The lane decision is
+`CLOSE_AECG_ABSORPTION_LANE_NO_CHECKER_NOW`.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed AECG-T1 through T3 material closeout. It does not implement
+runtime, provider/live proof, public-sync export, CodeGraph install/init, MCP
+wiring, watcher/daemon, merge automation, hook repair, package activation,
+certification, checker implementation, generated aggregate beyond session
+sync, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - PINT-T0 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+PINT-T0 material roadmap commit `658bc76d` so the front door, generated state
+sources, generated aggregates, bootstrap read model, and active handoff all
+point to PINT-T1 source-verified Model Gateway/provider-lane reconciliation as
+the next allowed move.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/pintT0ProviderIntelligenceRoadmap20260628.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: the operator instructed Codex to continue with folder
+`CVF_PROVIDER_INTELLIGENCE`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert PINT-T0 material commit `658bc76d`, AECG
+material commits `7701abb8` and `edee01a0`, or earlier TKG/EverOS/PRG/FPC
+commits.
+
+## GC-020 Marker - PINT-T0 Provider Intelligence Roadmap Commit
+
+Material commit `658bc76d` added
+`docs/roadmaps/CVF_PINT_T0_PROVIDER_INTELLIGENCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
+The roadmap audits the operator-provided `CVF_PROVIDER_INTELLIGENCE` folder,
+moves it to ignored legacy reference storage, rejects direct package and
+prototype-checker import, and selects PINT-T1 source-verified reconciliation as
+the next governed move.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed PINT-T0 roadmap. It does not implement runtime, provider/live
+proof, public-sync export, OpenRouter integration, MCP production routing,
+benchmark campaign, cost/latency measurement, automatic model selection,
+package activation, certification, checker implementation, generated aggregate
+beyond session sync, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - PINT-T1 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+PINT-T1 material reconciliation commit `3a729e83` so the front door, generated
+state sources, generated aggregates, bootstrap read model, and active handoff
+all point to PINT-T2 provider-intelligence claim-boundary and receipt-advisory
+reference authoring as the next allowed move.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/pintT0ProviderIntelligenceRoadmap20260628.json`
+- `CVF_SESSION/state/entries/pintT1ProviderIntelligenceReconciliationClosure20260628.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: active session next allowed move after PINT-T0 and
+operator instruction to continue.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert PINT-T1 material commit `3a729e83`, PINT-T0
+material commit `658bc76d`, AECG material commits `7701abb8` and `edee01a0`,
+or earlier TKG/EverOS/PRG/FPC commits.
+
+## GC-020 Marker - PINT-T1 Provider Intelligence Reconciliation Commit
+
+Material commit `3a729e83` added
+`docs/baselines/CVF_GC018_PINT_T1_SOURCE_VERIFIED_PROVIDER_INTELLIGENCE_RECONCILIATION_2026-06-28.md`.
+The baseline reconciles the retained Provider Intelligence source bundle
+against ProviderRegistry, ProviderHealthMonitor, DynamicModelRegistryContract,
+GatewayPolicyContext, GatewayReceipt, MCP bridge, and provider-lane owner
+surfaces; corrects the retained source path to
+`.private_reference/legacy/CVF 28.06/CVF_PROVIDER_INTELLIGENCE`; rejects direct
+package/OpenRouter/prototype-checker import; and selects PINT-T2 reference
+authoring as the next governed move.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed PINT-T1 material reconciliation. It does not implement runtime,
+provider/live proof, public-sync export, OpenRouter integration, MCP production
+routing, benchmark campaign, cost/latency measurement, automatic model
+selection, package activation, certification, checker implementation, generated
+aggregate beyond session sync, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - PINT-T1-T3 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+PINT-T1 through PINT-T3 material closeout commit `c21cd0e9` so the front door,
+generated state sources, generated aggregates, bootstrap read model, and active
+handoff all point to operator-selected next external absorption or roadmap
+audit as the next allowed move.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/state/entries/pintT0ProviderIntelligenceRoadmap20260628.json`
+- `CVF_SESSION/state/entries/pintT1T3ProviderIntelligenceAbsorptionClosure20260628.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: active session next allowed move after PINT-T1 and
+operator instruction to finish the roadmap.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert PINT-T1 through T3 material commit
+`c21cd0e9`, PINT-T1 material commit `3a729e83`, PINT-T0 material commit
+`658bc76d`, AECG material commits `7701abb8` and `edee01a0`, or earlier
+TKG/EverOS/PRG/FPC commits.
+
+## GC-020 Marker - PINT-T1-T3 Provider Intelligence Absorption Closeout Commit
+
+Material commit `c21cd0e9` added
+`docs/reference/CVF_PINT_T2_PROVIDER_INTELLIGENCE_CLAIM_BOUNDARY_AND_RECEIPT_ADVISORY_2026-06-28.md`,
+`docs/reviews/CVF_PINT_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md`,
+and updated
+`docs/roadmaps/CVF_PINT_T0_PROVIDER_INTELLIGENCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`
+to `CLOSED_PASS_BOUNDED`. The lane decision is
+`CLOSE_PINT_ABSORPTION_LANE_NO_CHECKER_NOW`.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed PINT-T1 through T3 material closeout. It does not implement
+runtime, provider/live proof, public-sync export, OpenRouter integration, MCP
+production routing, benchmark campaign, cost/latency measurement, automatic
+model selection, package activation, certification, checker implementation,
+generated aggregate beyond session sync, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - MSEA-T0 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+MSEA-T0 material roadmap commit `3776d5db` so the front door, generated state
+sources, generated aggregates, bootstrap read model, and active handoff all
+point to MSEA-T1 source-verified document extraction reconciliation and gateway
+adaptation as the next allowed move.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/mseaT0MineruStructuredExtractionRoadmap20260628.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: active session next allowed move after PINT closeout and
+operator instruction to continue with `opendatalab/MinerU` plus the
+operator-provided MinerU Structured Extraction Adapter folder.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert MSEA-T0 material commit `3776d5db`, PINT
+material commits `c21cd0e9`, `3a729e83`, and `658bc76d`, AECG material commits
+`7701abb8` and `edee01a0`, or earlier TKG/EverOS/PRG/FPC commits.
+
+## GC-020 Marker - MSEA-T0 MinerU Structured Extraction Roadmap Commit
+
+Material commit `3776d5db` added
+`docs/roadmaps/CVF_MSEA_T0_MINERU_STRUCTURED_EXTRACTION_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
+The roadmap audits current upstream `opendatalab/MinerU` at commit `3e60291`
+and the operator-provided MinerU Structured Extraction Adapter folder, moves
+the retained folder is now consolidated at
+`.private_reference/legacy/CVF 28.06/CVF_MinerU_Structured_Extraction_Adapter`,
+rejects direct runtime/package/checker import, and selects MSEA-T1
+source-verified reconciliation as the next governed move.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed MSEA-T0 material roadmap. It does not implement runtime,
+provider/live proof, public-sync export, MinerU install, model download,
+OCR/VLM/hybrid execution, remote backend routing, API/router/Gradio service,
+RAG index write, parser execution, extraction receipt samples, extraction
+accuracy claim, document-truth claim, package activation, certification,
+checker implementation, generated aggregate beyond session sync, or
+production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - AGSG-T0 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSG-T0 material roadmap commit `b7b31f4e` so the front door, generated state
+sources, generated aggregates, bootstrap read model, and active handoff all
+point to AGSG-T1 source-verified ASSF reconciliation as the next allowed move.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agsgT0AgentSkillsGovernanceRoadmap20260628.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: operator instruction to audit `addyosmani/agent-skills`
+and the operator-provided `CVF Agent Skills Governance Absorption Pack`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert AGSG-T0 material commit `b7b31f4e`, MSEA
+material commits `38f236bc` and `3776d5db`, PINT material commits `c21cd0e9`,
+`3a729e83`, and `658bc76d`, AECG material commits `7701abb8` and `edee01a0`,
+or earlier TKG/EverOS/PRG/FPC commits.
+
+## GC-020 Marker - AGSG-T0 Agent Skills Governance External Absorption Roadmap Commit
+
+Material commit `b7b31f4e` added
+`docs/roadmaps/CVF_AGSG_T0_AGENT_SKILLS_GOVERNANCE_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md`.
+The roadmap audits current upstream `addyosmani/agent-skills` at commit
+`30e55cb` and the operator-provided Agent Skills Governance Absorption Pack,
+moves the folder to
+`.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`,
+rejects direct plugin/runtime/command/persona/hook/checker import, and selects
+AGSG-T1 source-verified ASSF reconciliation as the next governed move.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed AGSG-T0 material roadmap. It does not implement runtime,
+provider/live proof, public-sync export, plugin install, slash-command import,
+persona orchestration, hook install, package activation, resolver mutation,
+certification, checker implementation, CLI/MCP adapter, benchmark, security
+certification, automatic skill invocation, generated aggregate beyond session
+sync, or production/hosted readiness.
+
+## Core Guard Self-Protection Authorization - AGSG-T1-T3 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSG-T1 through T3 material closeout commit `66eb39ac` so the front door,
+generated state sources, generated aggregates, bootstrap read model, and active
+handoff all point to next external absorption or roadmap-audit selection.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agsgT0AgentSkillsGovernanceRoadmap20260628.json`
+- `CVF_SESSION/state/entries/agsgT1T3AgentSkillsGovernanceAbsorptionClosure20260628.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: operator instruction to write all AGSG roadmap artifacts
+after auditing `addyosmani/agent-skills` and the operator-provided `CVF Agent
+Skills Governance Absorption Pack`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert AGSG-T1 through T3 material commit
+`66eb39ac`, AGSG-T0 material commit `b7b31f4e`, MSEA material commits
+`38f236bc` and `3776d5db`, PINT material commits `c21cd0e9`, `3a729e83`, and
+`658bc76d`, AECG material commits `7701abb8` and `edee01a0`, or earlier
+TKG/EverOS/PRG/FPC commits.
+
+## GC-020 Marker - AGSG-T1-T3 Agent Skills Governance Absorption Closeout
+
+Material commit `66eb39ac` closed AGSG-T1 through T3 and added the AGSG
+baseline, work order, completion review, ASSF advisory reference, T3 closeout,
+and roadmap closure update.
+
+The closeout source-verified upstream `addyosmani/agent-skills` at commit
+`30e55cb` and the operator-provided Agent Skills Governance Absorption Pack,
+absorbed high-value patterns into a stable CVF-owned ASSF advisory reference,
+and closed the checker lane with no checker now.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed AGSG-T1 through T3 material closeout. It does not implement
+runtime, provider/live proof, public-sync export, plugin install, slash-command
+import, persona orchestration, hook install, package activation, resolver
+mutation, certification, checker implementation, CLI/MCP adapter, benchmark,
+security certification, automatic skill invocation, generated aggregate beyond
+session sync, or production/hosted readiness.
+
+## GC-020 Marker - AGSG-BSH-T1 Blind-Spot Presence Dispatch Packet
+
+Material commit `5ae9cb9e` recorded ADIF-0014: CVF's Mandatory
+Knowledge Absorption Blind-Spot Control and Mandatory Corpus Completeness
+controls are claim-triggered, so the AGSG-T1 baseline closed `PASS` while
+carrying neither control block. The commit adds a GC-018 baseline and a
+`HOLD_PENDING_EXECUTOR` work order delegating a scope-triggered presence
+checker (`governance/compat/check_absorption_blindspot_control_presence.py`,
+not yet created) to an executor, per the dispatch-author-is-not-executor rule.
+
+A self-review during authoring also surfaced ADIF-0015: the dispatching agent
+declared `route: SINGLE_AGENT_SINGLE_ROLE` while performing many
+executor-shaped self-correction passes on the artifact's own content -
+recorded as a checklist item for other agents, not a retroactive change to the
+AGSG-BSH-T1 baseline/work order route fields.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+material commit `5ae9cb9e`. It does not implement the planned presence
+checker, runtime, provider/live proof, public-sync export, or any AGSG-T3
+reopen-gated capability.
+
+## GC-020 Marker - ADIF-0015 Declared-Route-Vs-Execution-Behavior Record
+
+Material commit `a8f45aa7` recorded ADIF-0015: a self-review
+finding that the AGSG-BSH-T1 dispatch packet declared
+`route: SINGLE_AGENT_SINGLE_ROLE` with the dispatching agent as author-only,
+while the same agent performed many executor-shaped self-correction passes on
+the artifact's substantive content to satisfy governance gates - matching
+CF-02's `one-agent-many-roles` pattern, not `author-then-executor`. This marker
+exists only to satisfy the GC-020 in-place handoff HEAD rule for commit
+`a8f45aa7`. It does not retroactively change the route/rolePattern fields
+already committed in the AGSG-BSH-T1 baseline or work order.
+
+## Core Guard Self-Protection Authorization - AGSG-BSH-T1 Dispatch Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSG-BSH-T1 dispatch commit `5ae9cb9e`, ADIF-0015 material commit `a8f45aa7`,
+and their handoff sync commits so the front door, generated state sources,
+generated aggregate, bootstrap read model, and active handoff all point to
+AGSG-BSH-T1 `HOLD_PENDING_EXECUTOR`.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agsgBshT1BlindspotPresenceDispatch20260629.json`
+- `CVF_SESSION/state/entries/adif0015RouteExecutionMismatchRecord20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: operator instruction to update the part requested from
+Claude.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert AGSG-BSH-T1 material commit `5ae9cb9e`,
+ADIF-0015 material commit `a8f45aa7`, AGSG-T1 through T3 material commit
+`66eb39ac`, or their prior session/handoff sync commits.
+
+## GC-020 Marker - AGSG-BSH-T1 Dispatch Session Sync Commit
+
+Session-sync commit `4adb18d1` updated active session continuity after the
+AGSG-BSH-T1 dispatch packet and ADIF-0015 record. It points the active front
+door, generated session state, bootstrap read model, and active handoff to
+AGSG-BSH-T1 `HOLD_PENDING_EXECUTOR` as the current governed next move.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+the committed AGSG-BSH-T1 session-sync batch. It does not implement the planned
+presence checker, runtime, provider/live proof, public-sync export, or any
+AGSG-T3 reopen-gated capability.
+
+## Core Guard Self-Protection Authorization - Legacy Source Folder Consolidation Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after the
+operator consolidated the external repos/folders absorbed on 2026-06-28 under
+`.private_reference/legacy/CVF 28.06/`. This is a path-pointer sync only.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/entries/agsgT0AgentSkillsGovernanceRoadmap20260628.json`
+- `CVF_SESSION/state/entries/agsgT1T3AgentSkillsGovernanceAbsorptionClosure20260628.json`
+- `CVF_SESSION/state/entries/legacySourceFolderConsolidation20260629.json`
+- `CVF_SESSION/state/entries/mseaT0MineruStructuredExtractionRoadmap20260628.json`
+- `CVF_SESSION/state/entries/mseaT1T3MineruStructuredExtractionAbsorptionClosure20260628.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: operator instruction that the repos absorbed yesterday
+were gathered into folder `CVF 28.06`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only this
+path-pointer update. Do not revert AGSG-BSH-T1, ADIF-0015, AGSG-T1 through T3,
+MSEA-T1 through T3, PINT-T1 through T3, AECG-T1 through T3, TKG-T0 through T5,
+or earlier material/session-sync commits.
+
+## GC-020 Marker - AGSG-BSH-T1 Blind-Spot Presence Checker Implementation Commit
+
+Material commit `328de12b` implemented and closed AGSG-BSH-T1. The material
+batch added the scope-triggered absorption blind-spot presence checker,
+focused unittest coverage, hook/catalog wiring, worker-return update, and
+completion review. It promoted ADIF-0014 to machine-checked coverage and kept
+ADIF-0015 as active guidance.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+material commit `328de12b`. It does not authorize runtime behavior, provider
+or live proof, public-sync export, Agent Skills plugin import, slash command
+import, persona orchestration, package activation, resolver mutation, CLI/MCP
+adapter, benchmark, security certification, production-readiness, or automatic
+skill invocation.
+
+## Core Guard Self-Protection Authorization - AGSG-BSH-T1 Closure Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSG-BSH-T1 material closure commit `328de12b` so the front door, generated
+state sources, generated aggregate, bootstrap read model, and active handoff
+all point to operator selection of the next external repo/folder absorption
+target or high-value roadmap audit.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agsgBshT1BlindspotPresenceClosure20260629.json`
+- `CVF_SESSION/state/entries/agsgBshT1BlindspotPresenceDispatch20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: operator instruction to commit the repaired AGSG-BSH-T1
+worktree after 26/26 tests passed and the worker return was updated.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert AGSG-BSH-T1 material commit `328de12b`,
+AGSG-BSH-T1 dispatch commit `5ae9cb9e`, ADIF-0015 material commit `a8f45aa7`,
+AGSG-T1 through T3 material commit `66eb39ac`, or their prior session/handoff
+sync commits.
+
+## Core Guard Self-Protection Authorization - EAC-T1 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+EAC-T1 external absorption core guard material commit `80a87e45` so the front
+door, generated state sources, generated aggregate, bootstrap read model, and
+active handoff all point to CVF 28.06 reabsorption under the new external
+absorption core standard and checker.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/eacT1ExternalAbsorptionCoreGuardClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: operator instruction that external repos may differ but
+the central absorption principle is invariant, and that agent completion claims
+need machine checking similar to the scan layer.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert EAC-T1 material commit `80a87e45`,
+AGSG-BSH-T1 material commit `328de12b`, AGSG-BSH-T1 dispatch commit
+`5ae9cb9e`, ADIF-0015 material commit `a8f45aa7`, AGSG-T1 through T3 material
+commit `66eb39ac`, or their prior session/handoff sync commits.
+
+## GC-020 Marker - EAC-T1 External Absorption Core Guard
+
+Material commit `80a87e45` added
+`docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`,
+`governance/compat/check_external_absorption_core.py`, focused tests, hook and
+autorun catalog wiring, chain-map updates, and completion review
+`docs/reviews/CVF_EAC_T1_EXTERNAL_ABSORPTION_CORE_GUARD_COMPLETION_2026-06-29.md`.
+
+The closure turns external repo/folder absorption from narrative-only closure
+into a machine-checked evidence-shape requirement: manifest, processing
+ledger, allowed statuses, disposition taxonomy, owner-surface map,
+unresolved-items visibility, external knowledge intake routing, and non-N/A
+corpus completeness evidence.
+
+Current mode:
+`eac_t1_external_absorption_core_guard_closed_pass_bounded_pending_cvf_2806_reabsorption`
+
+Next allowed move: resume full reabsorption of
+`.private_reference/legacy/CVF 28.06/` using the External Absorption Core
+standard and checker. If no other operator target is selected, start with
+`.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+material commit `80a87e45`. It does not authorize runtime behavior, provider
+or live proof, public-sync export, Agent Skills plugin import, slash command
+import, persona orchestration, package activation, resolver mutation, CLI/MCP
+adapter, benchmark, security certification, production-readiness, or automatic
+skill invocation.
+
+## Core Guard Self-Protection Authorization - AGSK Reabsorption Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSK absorption pack reabsorption review material commit `4d08aa64` so the
+front door, generated state sources, generated aggregate, bootstrap read model,
+and active handoff point to the next CVF 28.06 folder under the EAC core.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agskAbsorptionPackReabsorptionClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Authorization source: operator instruction that Codex reviews Claude's
+WORKER_MUST_NOT_COMMIT deliverable and that CVF processes the retained
+external repos/folders one by one.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert AGSK material commit `4d08aa64`, EAC-T1
+material commit `80a87e45`, or AGSG-BSH-T1 material commit `328de12b`.
+
+## GC-020 Marker - AGSK Absorption Pack Reabsorption Review
+
+Material commit `4d08aa64` closed
+`docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md`.
+The review processed the 29-file
+`.private_reference/legacy/CVF 28.06/CVF_Agent_Skills_Governance_Absorption_Pack`
+under the EAC core, with 8 adapted, 16 no-new-value, 2 deferred, 3 rejected,
+and 0 blocked-unreadable items.
+
+Current mode:
+`agsk_reabsorption_closed_pass_bounded_pending_cvf_2806_codegraph_review`
+
+Next allowed move: process the next retained external source folder under
+`.private_reference/legacy/CVF 28.06/` with EAC core; suggested next target is
+`.private_reference/legacy/CVF 28.06/CodeGraph` unless the operator selects a
+different folder.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+material commit `4d08aa64`. It does not authorize runtime behavior, provider
+or live proof, public-sync export, plugin import, slash command import,
+persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
+benchmark, security certification, production-readiness, or automatic skill
+invocation.
+
+## Core Guard Self-Protection Authorization - EAVC-T1 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+EAVC-T1 external absorption value conversion guard material commit `4f0ef2c9`
+so the front door, generated state sources, generated aggregate, bootstrap read
+model, and active handoff all point to AGSK package-candidate triage before
+CodeGraph.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agskAbsorptionPackReabsorptionClosure20260629.json`
+- `CVF_SESSION/state/entries/eavcT1ExternalAbsorptionValueConversionGuardClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: operator instructed Codex on 2026-06-29 to make the
+AGSK absorption principle a durable rule that always applies, and to apply it
+immediately to `CVF_Agent_Skills_Governance_Absorption_Pack`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only the
+session-sync changes. Do not revert EAVC-T1 material commit `4f0ef2c9`, AGSK
+reabsorption material commit `4d08aa64`, EAC-T1 material commit `80a87e45`, or
+AGSG-BSH-T1 material commit `328de12b`.
+
+## GC-020 Marker - EAVC-T1 External Absorption Value Conversion Guard
+
+Material commit `4f0ef2c9` added
+`governance/compat/check_external_absorption_value_conversion.py`, focused
+tests, hook and autorun catalog wiring, an EAC standard update, chain-map
+update, and completion review
+`docs/reviews/CVF_EAVC_T1_EXTERNAL_ABSORPTION_VALUE_CONVERSION_GUARD_COMPLETION_2026-06-29.md`.
+
+The closure turns external repo/folder absorption from pattern-only or
+doctrine-only closure into a machine-checked value-conversion requirement:
+`DOCTRINE_ADAPTED`, `PACKAGE_CANDIDATE`, `RUNTIME_CANDIDATE`,
+`CHECKER_CANDIDATE`, `REJECT_DIRECT_IMPORT`, and
+`NO_PACKAGE_OR_RUNTIME_VALUE`.
+
+Current mode:
+`eavc_t1_value_conversion_guard_closed_pending_agsk_package_candidate_triage`
+
+Next allowed move: open an AGSK package-candidate triage decision/roadmap using
+`docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md`
+before treating `CVF_Agent_Skills_Governance_Absorption_Pack` as exhausted or
+moving to CodeGraph. After that bounded triage is closed or explicitly parked,
+continue CVF 28.06 folder reabsorption under both EAC core and EAVC value
+conversion guards.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+material commit `4f0ef2c9`. It does not authorize runtime behavior, provider
+or live proof, public-sync export, plugin import, slash command import,
+persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
+benchmark, security certification, production-readiness, or automatic skill
+invocation.
+
+## GC-020 Marker - AGSK Package-Candidate Triage And T4 Dispatch
+
+## Core Guard Self-Protection Authorization - AGSK-T4 Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after AGSK
+package-candidate triage material commit `d8b14a2e` and AGSK-T4 work-order
+dispatch material commit `11590704`, so the front door, generated state
+sources, generated aggregate, bootstrap read model, and active handoff all
+point to AGSK-T4 worker execution.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agskT4RiskTriggersWorkOrderDispatch20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: operator requested the AGSK-T4 work order after the
+AGSK package-candidate triage roadmap. Session sync is required by GC-020 and
+next-move freshness after material commit `11590704`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only this
+AGSK-T4 session-sync batch. Do not revert AGSK-T4 dispatch material commit
+`11590704`, AGSK triage material commit `d8b14a2e`, EAVC-T1 material commit
+`4f0ef2c9`, or AGSK reabsorption material commit `4d08aa64`.
+
+Material commit `d8b14a2e` added
+`docs/roadmaps/CVF_AGSK_PACKAGE_CANDIDATE_TRIAGE_ROADMAP_2026-06-29.md`.
+The roadmap corrected the false "zero CANDIDATE skill candidates" claim,
+opened AGSK-T4 for `riskTriggers` contract repair, opened AGSK-T5 only after
+T4, and parked AGSK-T6 checker work.
+
+Dispatch artifact:
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_2026-06-29.md`.
+
+Dispatch commit:
+`11590704`.
+
+Current mode:
+`agsk_t4_work_order_dispatched_pending_worker_execution`
+
+Next allowed move: execute AGSK-T4 as `WORKER_MUST_NOT_COMMIT`. Worker may
+patch only `docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md`
+and create
+`docs/reviews/CVF_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_WORKER_RETURN_2026-06-29.md`.
+AGSK-T5 registry candidate work remains blocked until AGSK-T4 closes.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for AGSK-T4
+dispatch material commit `11590704` and triage material commit `d8b14a2e`. It
+does not authorize runtime behavior, provider or live proof, public-sync
+export, plugin import, slash command import, persona orchestration, package
+activation, resolver mutation, CLI/MCP adapter, benchmark, security
+certification, production-readiness, or automatic skill invocation.
+
+## Agent Operation Trace Block - AGSK-T4 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex dispatcher/session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | AGSK-T4 work order dispatch and session sync, 2026-06-29 |
+| Working directory | repository root |
+| Command or tool surface | source reads, ADIF resolver import, rg searches, apply_patch, active-session generator, governance gates |
+| Target paths | active session continuity surfaces only |
+| Allowed scope source | operator requested AGSK-T4 work order after AGSK package-candidate triage roadmap commit `d8b14a2e`; GC-020 required session sync after dispatch material commit `11590704` |
+| Before status evidence | AGSK-T4 dispatch committed at `11590704` |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status`; session-sync gates before commit |
+| Approval boundary | session continuity only; no AGSK-T4 contract execution |
+| Claim boundary | repo-local trace only; no runtime/provider/public claim |
+| Agent type | dispatcher/session-sync steward |
+| Invocation ID | `agsk-t4-risk-triggers-dispatch-session-sync-2026-06-29` |
+| Expected manifest | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT4RiskTriggersWorkOrderDispatch20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT4RiskTriggersWorkOrderDispatch20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## GC-020 Marker - Reusable Workflow Defect ADIF Learning
+
+Material commit `935ac253` added ADIF-0016 and ADIF-0017:
+
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0016.md`
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0017.md`
+- `docs/reference/agent_defect_intelligence/entries/README.md`
+
+ADIF-0016 records that reusable learning must not remain trapped only in a
+one-off work-order checklist. ADIF-0017 records that deterministic
+material/session commit-shape split rules must be planned with commit steward
+before staging, stashing, or probing commits.
+
+Current mode:
+`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
+
+Next allowed move remains unchanged: execute AGSK-T4 as
+`WORKER_MUST_NOT_COMMIT`, then keep AGSK-T5 blocked until AGSK-T4 closes.
+
+This marker exists only to satisfy the GC-020 in-place handoff HEAD rule for
+material commit `935ac253`. It does not authorize runtime behavior, provider
+or live proof, public-sync export, plugin import, slash command import,
+persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
+benchmark, security certification, production-readiness, or automatic skill
+invocation.
+
+## Core Guard Self-Protection Authorization - AGSK-T4 Closure Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSK-T4 riskTriggers contract patch material commit `2a84036a` so the front
+door, generated state sources, generated aggregate, bootstrap read model, and
+active handoff point to AGSK-T5 package-candidate registry-instance dispatch.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agskT4RiskTriggersContractPatchClosure20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: operator reported the AGSK-T4 worker handoff as
+`COMPLETE_PENDING_REVIEW`; reviewer accepted and committed the bounded
+documentation-only contract patch.
+
+Rollback boundary: if this session-sync batch is rejected, revert only this
+session-sync batch. Do not revert AGSK-T4 material commit `2a84036a`, AGSK-T4
+dispatch commit `11590704`, AGSK triage commit `d8b14a2e`, EAVC-T1 material
+commit `4f0ef2c9`, or AGSK reabsorption material commit `4d08aa64`.
+
+## GC-020 Marker - AGSK-T4 Risk Triggers Contract Patch
+
+Material commit `2a84036a` accepted the AGSK-T4 worker return and patched
+`docs/reference/agent_system_skills/CVF_ASSF_PACKAGE_CONTRACT.md` with the
+documentation-only `riskTriggers` field. Worker return:
+`docs/reviews/CVF_AGSK_T4_ASSF_RISK_TRIGGERS_FIELD_PATCH_WORKER_RETURN_2026-06-29.md`.
+
+Current mode:
+`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
+
+Next allowed move: author and dispatch AGSK-T5 first package-candidate
+registry instance using the AGSK triage roadmap, accepted `riskTriggers`
+contract field, and source-verified AGSK candidate evidence.
+
+AGSK-T5 remains documentation/registry-candidate only until separately
+reviewed and closed. This marker does not authorize runtime behavior,
+provider/live proof, public-sync export, plugin import, slash command import,
+persona orchestration, package activation, resolver mutation, CLI/MCP adapter,
+benchmark, security certification, production-readiness, or automatic skill
+invocation.
+
+## GC-020 Marker - Reviewer Pre-Work Rule Hardening
+
+Material commit `3425ba7d` added durable pre-work guidance for future agents:
+
+- `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0018.md`
+- `docs/reference/agent_defect_intelligence/entries/README.md`
+- `docs/reference/guard_orientation/README.md`
+- `docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md`
+
+The update records that optional completion reviews should not be created when
+worker-return evidence is sufficient, and that commit-shape planning should
+use commit steward before staging, stashing, or probing commits.
+
+Current mode remains:
+`agsk_t4_risk_triggers_contract_patch_closed_pending_agsk_t5_package_instance_dispatch`
+
+Next allowed move remains: author and dispatch AGSK-T5 first
+package-candidate registry instance. This marker does not authorize runtime
+behavior, provider/live proof, public-sync export, plugin import, slash command
+import, persona orchestration, package activation, resolver mutation, CLI/MCP
+adapter, benchmark, security certification, production-readiness, or automatic
+skill invocation.
+
+## Agent Operation Trace Block - AGSK-T4 Closure Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | AGSK-T4 closure session sync, 2026-06-29 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces only |
+| Allowed scope source | GC-020 after AGSK-T4 material commit `2a84036a` |
+| Before status evidence | material commit `2a84036a` closed AGSK-T4 contract patch |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no AGSK-T5 implementation |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `agsk-t4-closure-session-sync-2026-06-29` |
+| Expected manifest | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT4RiskTriggersContractPatchClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT4RiskTriggersContractPatchClosure20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |
+
+## Core Guard Self-Protection Authorization - AGSK-T5 Dispatch Session Sync
+
+Authorized guard-maintenance scope: update active session continuity after
+AGSK-T5 first external-absorption package-candidate work-order dispatch material
+commit `1cc52d7a`, so the front door, generated state sources, generated
+aggregate, bootstrap read model, and active handoff point to AGSK-T5 worker
+execution.
+
+Protected paths:
+
+- `AGENT_HANDOFF_V26_2026-06-28.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/agskT5PackageCandidateWorkOrderDispatch20260629.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+
+Operator authorization: operator requested the next tranche work order after
+AGSK-T4 closure. Session sync is required by GC-020 and next-move freshness
+after material dispatch commit `1cc52d7a`.
+
+Rollback boundary: if this session-sync batch is rejected, revert only this
+session-sync batch. Do not revert AGSK-T5 dispatch material commit `1cc52d7a`,
+AGSK-T4 material commit `2a84036a`, AGSK-T4 dispatch commit `11590704`, AGSK
+triage commit `d8b14a2e`, EAVC-T1 material commit `4f0ef2c9`, or AGSK
+reabsorption material commit `4d08aa64`.
+
+## GC-020 Marker - AGSK-T5 Package Candidate Work Order Dispatch
+
+Material commit `1cc52d7a` added
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`.
+The work order dispatches AGSK-T5 as `WORKER_MUST_NOT_COMMIT` to create one
+metadata-only `CANDIDATE` registry source entry,
+`docs/reference/agent_system_skills/registry/entries/cvf-governance-external-absorption.json`,
+regenerate `docs/reference/agent_system_skills/generated/skill-index.json`,
+and create the worker return
+`docs/reviews/CVF_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_WORKER_RETURN_2026-06-29.md`.
+
+Current mode:
+`agsk_t5_work_order_dispatched_pending_worker_execution`
+
+Next allowed move: execute AGSK-T5 using
+`docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_T5_FIRST_EXTERNAL_ABSORPTION_PACKAGE_CANDIDATE_2026-06-29.md`
+as `WORKER_MUST_NOT_COMMIT`.
+
+This marker satisfies the GC-020 in-place handoff HEAD rule for AGSK-T5 dispatch
+material commit `1cc52d7a`. It does not authorize package root creation,
+`SKILL.md`, resolver mutation, checker implementation, runtime behavior,
+provider/live proof, public-sync export, plugin import, slash command import,
+persona orchestration, package activation, lifecycle promotion, benchmark,
+security certification, production-readiness, or automatic skill invocation.
+
+## Agent Operation Trace Block - AGSK-T5 Dispatch Session Sync
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex session-sync steward |
+| Provider or surface | Codex local workspace |
+| Session or invocation | AGSK-T5 dispatch session sync, 2026-06-29 |
+| Working directory | repository root |
+| Command or tool surface | active-session source edits, active-session generator, governance gates |
+| Target paths | active session continuity surfaces only |
+| Allowed scope source | GC-020 after AGSK-T5 dispatch material commit `1cc52d7a` |
+| Before status evidence | material commit `1cc52d7a` dispatched AGSK-T5 work order |
+| After status evidence | session-sync paths pending commit |
+| Diff evidence | `git diff --name-status` before session-sync commit |
+| Approval boundary | session continuity only; no AGSK-T5 execution |
+| Claim boundary | repo-local continuity update only; no runtime/provider/public claim |
+| Agent type | session-sync steward |
+| Invocation ID | `agsk-t5-dispatch-session-sync-2026-06-29` |
+| Expected manifest | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT5PackageCandidateWorkOrderDispatch20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Actual changed set | `AGENT_HANDOFF_V26_2026-06-28.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/agskT5PackageCandidateWorkOrderDispatch20260629.json`; `CVF_SESSION/state/entries/nextAllowedMove.json` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |

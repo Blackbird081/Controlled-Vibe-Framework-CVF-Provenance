@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1318,
+  "stateKey": "eavcT1ExternalAbsorptionValueConversionGuardClosure20260629",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "4f0ef2c9",
+    "standard": "docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md",
+    "chainMap": "docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md",
+    "checker": "governance/compat/check_external_absorption_value_conversion.py",
+    "tests": "governance/compat/test_check_external_absorption_value_conversion.py",
+    "completionReview": "docs/reviews/CVF_EAVC_T1_EXTERNAL_ABSORPTION_VALUE_CONVERSION_GUARD_COMPLETION_2026-06-29.md",
+    "appliedReview": "docs/reviews/CVF_AGSK_ABSORPTION_PACK_REABSORPTION_REVIEW_2026-06-29.md",
+    "decision": "CLOSE_EAVC_T1_EXTERNAL_ABSORPTION_VALUE_CONVERSION_GUARD",
+    "nextAllowedMove": "OPEN_AGSK_PACKAGE_CANDIDATE_TRIAGE_BEFORE_CODEGRAPH",
+    "summary": "EAVC-T1 makes external absorption value conversion durable. Future external repo/folder absorption must include a machine-checked External Absorption Value Conversion Matrix with DOCTRINE_ADAPTED, PACKAGE_CANDIDATE, RUNTIME_CANDIDATE, CHECKER_CANDIDATE, REJECT_DIRECT_IMPORT, and NO_PACKAGE_OR_RUNTIME_VALUE lanes. AGSK now records package/runtime/checker candidates explicitly; it does not claim any package or runtime activation."
+  }
+}

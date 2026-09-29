@@ -1,0 +1,27 @@
+{
+  "stateOrder": 1428,
+  "stateKey": "mseaR24T4WorkflowReceiptPolicyClosure20260704",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-04",
+    "dispatchCommit": "0aa1f6c2",
+    "dispatchHandoffSyncCommit": "8b29fe16",
+    "materialCommit": "224a31a8",
+    "materialCommitFull": "224a31a8ef816da8dc0f909d1636779174a9da7c",
+    "executionBaseHead": "0aa1f6c2",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R24_T4_MINERU_WORKFLOW_CHAIN_RECEIPT_POLICY_AND_PRIVATE_OUTPUT_HANDLING_WORKER_RETURN_2026-07-04.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R24_T4_MINERU_WORKFLOW_CHAIN_RECEIPT_POLICY_AND_PRIVATE_OUTPUT_HANDLING_POLICY_2026-07-04.md",
+    "selectedResultToken": "WORKFLOW_RECEIPT_POLICY_READY",
+    "runtimeExecutionDisposition": "NOT_RUN_POLICY_ONLY",
+    "privateOutputHandlingDisposition": "METADATA_ONLY_NO_CONTENT_READ",
+    "r25ReleaseDisposition": "RELEASE_R25_ROADMAP_AUTHORING_ONLY",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 74/74",
+      "reviewer-return steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Author MSEA-R25 MinerU CVF workflow-chain systemization roadmap using T4 private receipt policy as planning boundary.",
+    "claimBoundary": "T4 policy closure only. The accepted evidence defines private receipt metadata and private output handling from the accepted T3A smoke receipt. It does not claim extraction accuracy, document truth, legal advice quality, current-law correctness, workflow-chain production readiness, public-sync, provider/live proof, runtime execution by T4, schema/writer/adapter/checker/package/source mutation, stage or commit by worker, or push."
+  }
+}

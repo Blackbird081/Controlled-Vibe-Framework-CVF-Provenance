@@ -1,0 +1,26 @@
+{
+  "stateOrder": 1414,
+  "stateKey": "mseaR19T1MineruEnvironmentModelServiceTeardownPlanningDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "000cd9c3",
+    "materialCommitFull": "000cd9c34a09b620f2d32709e320e51a702bb8d6",
+    "dispatchBaseHead": "add7eda4",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_PLANNING_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R19_T1_MINERU_LOCAL_EXTRACTION_ENVIRONMENT_MODEL_LIFECYCLE_AND_SERVICE_TEARDOWN_READINESS_MATRIX_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": [
+      "pre-dispatch autorun PASS 72/72",
+      "dispatch-quality PASS",
+      "agent packet authority PASS",
+      "dispatch scaffold provenance PASS",
+      "dispatch commit steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Execute the MSEA-R19-T1 work order under WORKER_MUST_NOT_COMMIT; worker creates only the named worker return and companion readiness matrix, performs source verification and read-only local environment inventory only, and selects exactly one route token.",
+    "claimBoundary": "Dispatch only. No MinerU install, import, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, corpus population, source document copy/import, document body read, extraction outputs, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, source import, package activation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, or workflow-chain completion claim is authorized."
+  }
+}

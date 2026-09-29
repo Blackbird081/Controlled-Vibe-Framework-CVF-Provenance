@@ -1,0 +1,11 @@
+{
+  "stateOrder": 1302,
+  "stateKey": "tkgT0T5TruthFoundationAbsorptionClosure20260628",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "6ce94464",
+    "checkerCommit": "79f26845",
+    "decision": "CLOSE_TKG_ABSORPTION_LANE_NO_NEXT_TRANCHE",
+    "summary": "Closed the Agent Governance Toolkit / Truth Kernel governed absorption lane after TKG-T0 through TKG-T5. CVF retained the truth foundation contract, owner-surface reconciliation, bounded checker plan, static claim guard, tests, and hook/catalog wiring. Remaining TKG runtime/package/MCP/hypervisor/evidence database/obligation registry/provenance-label enforcement candidates are parked behind explicit TKG-T5 reopen conditions."
+  }
+}

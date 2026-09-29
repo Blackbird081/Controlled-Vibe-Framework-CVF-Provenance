@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1351,
+  "stateKey": "kiodR8MarkerOvermatchLearningAddendum20260701",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-01",
+    "materialCommit": "b06b27db",
+    "materialCommitFull": "b06b27db7357e96182b18a1a4e6eb0b57ca7eb1b",
+    "adifEntry": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0021.md",
+    "warningSurface": "docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md",
+    "adifFrontDoor": "docs/reference/agent_defect_intelligence/entries/README.md",
+    "closureSummary": "Recorded KIOD-R8 marker-overmatch learning as ADIF-0021 and literal-format gotchas items 34-35. The addendum covers path-marker plus prose-marker self-trigger and checker opt-in markers that must use declaration-shape matching rather than bare substring matching.",
+    "verification": [
+      "python governance/compat/check_adif_entry_integrity.py --enforce PASS",
+      "git diff --check PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base a1cd2ca7 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base a1cd2ca7 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 76/76"
+    ],
+    "claimBoundary": "Governed learning addendum only. No runtime/provider/live behavior, public-sync, outside-source absorption pilot, source import, Web/UI/dashboard, MCP/CLI adapter, model-router work, package lifecycle mutation, action authority, automatic invocation, helper implementation, or production-readiness claim."
+  }
+}

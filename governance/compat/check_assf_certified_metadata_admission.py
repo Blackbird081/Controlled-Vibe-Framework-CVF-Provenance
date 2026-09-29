@@ -125,11 +125,6 @@ def _check_certified_entry(
                     f"{skill_id}: generated index field {field} does not match source"
                 )
 
-    if _upper(entry.get("status")) == ACTIVE:
-        violations.append(
-            f"{skill_id}: CERTIFIED metadata must not imply status ACTIVE"
-        )
-
     resolver_behavior = _as_text(entry.get("resolverBehavior")).lower()
     if "metadata-only" not in resolver_behavior:
         violations.append(
@@ -163,6 +158,28 @@ def _check_certified_entry(
             f"{skill_id}: non-PROHIBITED external disposition requires "
             "externalMutationBoundary"
         )
+
+    if _upper(entry.get("status")) == ACTIVE:
+        if _upper(entry.get("candidateState")) != ACTIVE:
+            violations.append(
+                f"{skill_id}: ACTIVE status requires candidateState ACTIVE"
+            )
+        if _upper(entry.get("internalAgentDisposition")) != IMPLEMENTED:
+            violations.append(
+                f"{skill_id}: ACTIVE status requires internalAgentDisposition IMPLEMENTED"
+            )
+        if external_disposition != IMPLEMENTED:
+            violations.append(
+                f"{skill_id}: ACTIVE status requires externalCliMcpDisposition IMPLEMENTED"
+            )
+        if _is_na_with_reason(entry.get("adapterContract")):
+            violations.append(
+                f"{skill_id}: ACTIVE status requires concrete adapterContract"
+            )
+        if _is_na_with_reason(entry.get("adapterEvidence")):
+            violations.append(
+                f"{skill_id}: ACTIVE status requires concrete adapterEvidence"
+            )
 
     return violations
 

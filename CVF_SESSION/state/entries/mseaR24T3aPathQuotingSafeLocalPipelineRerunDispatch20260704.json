@@ -1,0 +1,32 @@
+{
+  "stateOrder": 1426,
+  "stateKey": "mseaR24T3aPathQuotingSafeLocalPipelineRerunDispatch20260704",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-04",
+    "materialCommit": "1f169c74",
+    "dispatchBaseHead": "5a43cebe",
+    "batchId": "MSEA-R24-T3A",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_2026-07-04.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_2026-07-04.md",
+    "plannedWorkerReturnPath": "docs/reviews/CVF_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_WORKER_RETURN_2026-07-04.md",
+    "plannedReadinessMatrixPath": "docs/reference/CVF_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_READINESS_MATRIX_2026-07-04.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedResultTokens": [
+      "SMOKE_PASS_BOUNDED",
+      "SMOKE_FAIL_DIAGNOSTIC_RECORDED",
+      "HOLD_PENDING_RUNTIME_ENV_FIX",
+      "HOLD_ALL_RUNTIME_LANES"
+    ],
+    "t4ReleaseDisposition": "HELD_UNTIL_ACCEPTED_SUCCESSFUL_SMOKE_RECEIPT",
+    "runtimeBoundary": "one direct PowerShell call-operator MinerU CLI invocation only, or no invocation if preflight holds",
+    "verification": [
+      "pre-dispatch autorun PASS 72/72",
+      "dispatch-quality PASS",
+      "dispatch steward PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextAllowedMove": "Execute the MSEA-R24-T3A worker exactly inside the dispatched WORKER_MUST_NOT_COMMIT work order boundary. T4 remains held until reviewer accepts a successful smoke receipt.",
+    "claimBoundary": "T3A dispatch only. It does not run MinerU, accept a worker return, release T4, claim parser success, claim extraction accuracy, claim workflow-chain completion, or authorize worker commit/push."
+  }
+}

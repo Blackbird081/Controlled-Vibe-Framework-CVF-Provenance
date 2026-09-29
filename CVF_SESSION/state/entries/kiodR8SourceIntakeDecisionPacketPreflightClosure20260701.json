@@ -1,0 +1,38 @@
+{
+  "stateOrder": 1351,
+  "stateKey": "kiodR8SourceIntakeDecisionPacketPreflightClosure20260701",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-01",
+    "materialCommit": "303e62b9",
+    "materialCommitFull": "303e62b9ebbb3868686043e35174635c28daa797",
+    "dispatchCommit": "ce92d715",
+    "executionBaseHead": "4543b227",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_2026-07-01.md",
+    "standard": "docs/reference/external_agent_review/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_STANDARD.md",
+    "checker": "governance/compat/check_source_intake_decision_packet_preflight.py",
+    "tests": "governance/compat/test_source_intake_decision_packet_preflight.py",
+    "workerReturn": "docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_WORKER_RETURN_2026-07-01.md",
+    "completionReview": "docs/reviews/CVF_KIOD_R8_SOURCE_INTAKE_DECISION_PACKET_PREFLIGHT_COMPLETION_2026-07-01.md",
+    "reviewerDecision": "ACCEPTED_AFTER_REVIEWER_REPAIR",
+    "reviewerRepairs": [
+      "narrowed equivalence wording in worker return",
+      "expanded SIDP-04 escalation detection to include Overlap And Novelty Classification co-section",
+      "added focused fail/pass regression tests"
+    ],
+    "verification": [
+      "python -m unittest governance.compat.test_source_intake_decision_packet_preflight -v PASS 20/20",
+      "python governance/compat/check_source_intake_decision_packet_preflight.py --base 4543b227 --head HEAD --enforce PASS",
+      "python governance/compat/check_machine_closure_package.py --base 4543b227 --head HEAD --enforce PASS",
+      "python governance/compat/check_finding_to_governance_learning.py --base 4543b227 --head HEAD --enforce PASS",
+      "python governance/compat/run_worker_return_fast_gate.py PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 4543b227 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 4543b227 --head HEAD --enforce PASS",
+      "git diff --check PASS",
+      "pre-commit governance hook PASS 76/76"
+    ],
+    "nextAllowedMove": "Release WOAS-R1 held packet only through dependency-release evidence and reviewer/dispatcher validation before worker handoff.",
+    "claimBoundary": "KIOD-R8 local governance preflight only; no external-source absorption completion, runtime/provider/live proof, public-sync, Web/UI/dashboard, package lifecycle, MCP/CLI, model-router, helper implementation, action authority, automatic invocation, or production-readiness claim."
+  }
+}

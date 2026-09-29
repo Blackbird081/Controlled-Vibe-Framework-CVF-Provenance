@@ -1,0 +1,32 @@
+{
+  "stateOrder": 1296,
+  "stateKey": "fpcDsdT1FoundationDownstreamPostPublicExportLaneSelectionClosure20260628",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "24726307",
+    "roadmap": "docs/roadmaps/CVF_FPC_DSD_T1_FOUNDATION_DOWNSTREAM_POST_PUBLIC_EXPORT_LANE_SELECTION_ROADMAP_2026-06-28.md",
+    "baseline": "docs/baselines/CVF_GC018_FPC_DSD_T1_FOUNDATION_DOWNSTREAM_POST_PUBLIC_EXPORT_LANE_SELECTION_DECISION_2026-06-28.md",
+    "completionReview": "docs/reviews/CVF_FPC_DSD_T1_FOUNDATION_DOWNSTREAM_POST_PUBLIC_EXPORT_LANE_SELECTION_DECISION_COMPLETION_2026-06-28.md",
+    "guidance": "docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md",
+    "decision": "HOLD_DOWNSTREAM_IMPLEMENTATION",
+    "selectedImplementationLane": "none",
+    "upstreamClosures": [
+      "FPC-SCG-T8 acceptance-ledger carrier reconciliation at e278c039",
+      "FPC-UAP-T2 public README/catalog/snapshot export at provenance be253923 and public 04d88109317c780ceb2062a257c0e863e2379276"
+    ],
+    "reopenConditions": {
+      "use-case-adapter-public": "fresh GC-018 proves a concrete adapter behavior or public-surface gap remains after UAP-T2, cites owner source files, and includes public/provenance boundary evidence",
+      "runtime-provider-live": "fresh GC-018 proves a concrete runtime governance behavior claim needs live proof, with secret-safe diagnostics and quota/provider failure classification",
+      "MPI-T6-runtime": "fresh GC-018 proves an operator-stated product requirement explicitly needs the MPI lane itself and current MPI contract/helper/durable surfaces are insufficient"
+    },
+    "verification": [
+      "python governance/compat/check_fpc_system_chain_acceptance_ledger.py --enforce PASS",
+      "python governance/compat/check_work_order_dispatch_quality.py --base 77b30456 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base 77b30456 --head HEAD PASS except expected active-session handoff HEAD drift before this sync",
+      "pre-commit hook PASS 59/59 at material commit 24726307"
+    ],
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "liveProofDisposition": "N/A with reason: FPC-DSD-T1 made no runtime/provider governance claim and used no API keys",
+    "claimBoundary": "Private provenance downstream hold decision only. No public-sync, no runtime/provider/live proof, no MPI-T6 runtime work, no Policy_Local or Document Translator implementation, no adapter implementation, no package activation, no certification, no registry/checker/generated-state mutation beyond session sync, and no push from the provenance workspace."
+  }
+}

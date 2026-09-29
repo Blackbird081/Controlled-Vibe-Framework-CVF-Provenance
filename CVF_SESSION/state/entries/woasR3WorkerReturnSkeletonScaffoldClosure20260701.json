@@ -1,0 +1,29 @@
+{
+  "stateOrder": 1354,
+  "stateKey": "woasR3WorkerReturnSkeletonScaffoldClosure20260701",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-01",
+    "materialCommit": "38765baf",
+    "materialCommitFull": "38765baf82a9ee1b6bb01616cb1ac01d0e23dc73",
+    "dispatchCommit": "898f7a8c",
+    "dispatchCommitFull": "898f7a8c9828ee065e67393ed9fcc18f926118d0",
+    "baseline": "docs/baselines/CVF_GC018_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_2026-07-01.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_2026-07-01.md",
+    "workerReturn": "docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_WORKER_RETURN_2026-07-01.md",
+    "completionReview": "docs/reviews/CVF_WOAS_R3_WORKER_RETURN_SKELETON_SCAFFOLD_COMPLETION_2026-07-01.md",
+    "helper": "governance/compat/build_dispatch_packet_scaffold.py",
+    "splitHelper": "governance/compat/build_worker_return_skeleton_scaffold.py",
+    "fixture": "governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md",
+    "testPath": "governance/compat/test_build_dispatch_packet_scaffold.py",
+    "closureSummary": "Accepted no-commit worker return after reviewer repair. The scaffold helper now offers an opt-in worker-return skeleton, deterministic golden fixture coverage, stricter CLI assertions, checker-safe default skeleton values, and a same-domain split helper to satisfy Python automation size discipline.",
+    "verification": [
+      "python -m unittest governance.compat.test_build_dispatch_packet_scaffold -v PASS 54/54",
+      "python governance/compat/check_python_automation_size.py --enforce PASS",
+      "python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_build_dispatch_packet_scaffold.py PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 4317eef3 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 76/76 for material closure commit 38765baf"
+    ],
+    "claimBoundary": "Bounded helper/test/reference closure only. No real external source intake, source import, runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter behavior, package lifecycle mutation, model-router work, hook catalog wiring, new blocking checker semantics, action authority, automatic invocation, or production-readiness claim is authorized."
+  }
+}

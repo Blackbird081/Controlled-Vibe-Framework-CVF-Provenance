@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1371,
+  "stateKey": "mfeR1MemoryFoundationFutureEnrichmentSourceVerificationDispatch20260702",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-02",
+    "materialCommit": "cf51bbf4",
+    "materialCommitFull": "cf51bbf404659b1ac2623e0f7d866c49d0eaef80",
+    "dispatchBaseHead": "98793a19",
+    "baseline": "docs/baselines/CVF_GC018_MFE_R1_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_SOURCE_VERIFICATION_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFE_R1_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_SOURCE_VERIFICATION_2026-07-02.md",
+    "workerReturnPath": "docs/reviews/CVF_MFE_R1_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_SOURCE_VERIFICATION_WORKER_RETURN_2026-07-02.md",
+    "optionalDecisionPacketPath": "docs/reviews/CVF_MFE_R1_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_SOURCE_VERIFICATION_DECISION_2026-07-02.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": [
+      "python governance/compat/run_adif_defect_resolver.py --task-class \"work-order authoring / dispatch\" --role dispatcher --lifecycle-phase pre-dispatch returned NONE_RETURNED",
+      "python governance/compat/build_dispatch_packet_scaffold.py --packet-kind source-intake --batch-id MFE_R1_MEMORY_FOUNDATION_FUTURE_ENRICHMENT_SOURCE_VERIFICATION --title \"MFE-R1 Memory Foundation Future Enrichment Source Verification\" --date 2026-07-02 --base 98793a19 --commit-mode WORKER_MUST_NOT_COMMIT --include-worker-return-skeleton --stdout used as scaffold source",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 98793a19 --head HEAD PASS 72/72",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 98793a19 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 79/79 for material dispatch commit cf51bbf4"
+    ],
+    "claimBoundary": "Dispatch-only material commit. Authorizes worker return execution under WORKER_MUST_NOT_COMMIT only. No KIOD-R6 replay, C-file05 reopen, D-file06/I-file19 reopen, memory-reference edit, source import, runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, checker implementation, action authority, automatic invocation, or production-readiness claim is authorized."
+  }
+}

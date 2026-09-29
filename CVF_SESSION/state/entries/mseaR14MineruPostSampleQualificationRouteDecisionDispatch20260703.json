@@ -1,0 +1,32 @@
+{
+  "stateOrder": 1400,
+  "stateKey": "mseaR14MineruPostSampleQualificationRouteDecisionDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "b51cbb84",
+    "dispatchBaseHead": "68a3a809",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R14_MINERU_POST_SAMPLE_QUALIFICATION_ROUTE_DECISION_MATRIX_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchPurpose": "post-R12/R13 MinerU route decision only",
+    "expectedDefaultRoute": "OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE",
+    "allowedRouteTokens": [
+      "OPEN_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE",
+      "OPEN_SAMPLE_CORPUS_POPULATION_POLICY_AFTER_GAP_CLOSURE",
+      "OPEN_RECEIPT_SCHEMA_OR_WRITER_READINESS_ROADMAP",
+      "OPEN_LOCAL_PARSER_RUNTIME_PILOT_ROADMAP",
+      "RETURN_TO_MINERU_ADAPTER_READINESS_ROUTE",
+      "HOLD_SAMPLE_STRESSOR_LANE_PENDING_OPERATOR_INPUT",
+      "HOLD_ALL_IMPLEMENTATION_LANES"
+    ],
+    "preDispatchGate": "PASS 72/72",
+    "dispatchQualityGate": "PASS",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "Delegated worker executes MSEA-R14 route-decision matrix and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without commit/stage/push.",
+    "claimBoundary": "Dispatch only. Worker may create route-decision worker return and companion matrix only; no route execution, operator-confirmation collection, legal-domain product lane, document copy/import, sample corpus population, MinerU runtime/install/model download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter execution, source import, package activation, public-sync, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, worker commit/stage/push, or session-sync edit is authorized."
+  }
+}

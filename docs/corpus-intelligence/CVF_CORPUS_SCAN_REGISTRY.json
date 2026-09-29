@@ -4233,17 +4233,18 @@
       "displayName": "ASSF Web projection public skill-index surfaces",
       "scopePaths": [
         "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/build-skill-index.js",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/public/data/assf-skill-control-plane.json",
         "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/public/data/skills-index.json"
       ],
-      "fileCount": 2,
+      "fileCount": 3,
       "status": "SCANNED",
-      "scanWave": "ASSF-WEBPROJ-T1",
-      "scanDate": "2026-06-26",
+      "scanWave": "SCPL-WEB-T1",
+      "scanDate": "2026-06-30",
       "manifestHash": null,
       "manifestPath": null,
-      "packetPath": "docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_COMPLETION_2026-06-26.md",
-      "completionReviewPath": "docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_COMPLETION_2026-06-26.md",
-      "gcBaselineRef": "docs/baselines/CVF_GC018_ASSF_WEB_PROJECTION_IMPLEMENTATION_2026-06-26.md",
+      "packetPath": "docs/reviews/CVF_SCPL_WEB_T1_SKILL_CONTROL_PLANE_WEB_PROJECTION_COMPLETION_2026-06-30.md",
+      "completionReviewPath": "docs/reviews/CVF_SCPL_WEB_T1_SKILL_CONTROL_PLANE_WEB_PROJECTION_COMPLETION_2026-06-30.md",
+      "gcBaselineRef": "docs/baselines/CVF_GC018_SCPL_WEB_T1_SKILL_CONTROL_PLANE_WEB_PROJECTION_2026-06-30.md",
       "verdicts": {
         "gc047": "N/A",
         "gc048": "N/A",
@@ -4251,16 +4252,17 @@
       },
       "semanticRegions": [
         "ASSF_WEB_PROJECTION",
+        "SKILL_CONTROL_PLANE_WEB_PROJECTION",
         "PUBLIC_SKILL_INDEX_GENERATION"
       ],
-      "priorAbsorption": "ASSF-WEBPROJ-T1 reads certified ASSF metadata and projects it into the Web public skill-index read model without package execution, adapter behavior, provider proof, or ASSF registry mutation.",
+      "priorAbsorption": "SCPL-WEB-T1 reads certified ASSF metadata and generated Skill Control Plane inventory, then projects package-skill state into Web read models without package execution, adapter behavior, provider proof, or ASSF registry mutation.",
       "findings": [],
       "negativeSearchTerms": [
         "ASSF package execution by Web projection",
         "CLI MCP adapter implemented by Web skill index",
         "certification state derived from corpusClass"
       ],
-      "nextScanRecommendation": "Open a separate source-verified roadmap before adapter, provider, package execution, or public-sync behavior."
+      "nextScanRecommendation": "Open a separate source-verified roadmap before full Skill Governance Console build, adapter, provider, package execution, or public-sync behavior."
     },
     {
       "id": "workspace-layer-production-handoff-package",
@@ -4314,6 +4316,215 @@
         "MCP readiness claim from package scaffold"
       ],
       "nextScanRecommendation": "No rescan required unless the frozen package changes or a future runtime/MCP roadmap opens with fresh source verification."
+    },
+    {
+      "id": "cge-r1-codegraph-full-reabsorption-snapshot",
+      "corpusType": "EXTERNAL_SOURCE",
+      "displayName": "CGE-R1 CodeGraph full reabsorption snapshot",
+      "scopePaths": [
+        ".private_reference/legacy/CVF 28.06/CodeGraph/CVF_Code_Intelligence_Capability/",
+        "EXTENSIONS/CVF_CODE_INTELLIGENCE_CAPABILITY/",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/"
+      ],
+      "fileCount": 89,
+      "status": "SCANNED_WITH_FINDINGS",
+      "scanWave": "CGE-R1",
+      "scanDate": "2026-06-29",
+      "manifestHash": "89b95efad85bcc7a7a4e8f38095c658695b667f50dc13c2f980a8a011aeeeb63",
+      "hashAlgorithm": "sha256",
+      "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+      "manifestPath": "docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md#corpus-manifest-and-processing-ledger",
+      "packetPath": "docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md",
+      "completionReviewPath": "docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md",
+      "gcBaselineRef": "docs/work_orders/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_WORK_ORDER_2026-06-29.md",
+      "verdicts": {
+        "gc047": "COMPLETE_VERIFIED",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "CODE_INTELLIGENCE_CLAIM_BOUNDARY",
+        "GRAPH_STALENESS_AND_SYNC",
+        "GRAPH_QUERY_SCHEMA",
+        "GRAPH_RECEIPT_PROTOCOL",
+        "CODE_INTELLIGENCE_PACKAGE_CANDIDATE",
+        "CODEGRAPH_RUNTIME_CANDIDATE",
+        "CHECKER_CANDIDATE"
+      ],
+      "priorAbsorption": "CGE-R1 reabsorbed the bounded local CodeGraph capability snapshot after earlier partial absorption. The review dispositioned all 89 files: 33 ADAPTED, 54 REJECTED, 2 NO_NEW_VALUE, 0 DEFERRED, and moved reusable template/example/schema value into the CVF owner-surface matrix.",
+      "findings": [
+        {
+          "id": "CGE-R1-F1-template-example-schema-overdefer-repaired",
+          "summary": "Initial worker return over-deferred 16 value-bearing template, example, and schema files; reviewer repaired by adapting artifact-shape and schema-vocabulary doctrine into the owner-surface matrix.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Use the CGE-R1 owner-surface matrix as the documentation-only CVF reference; runtime, package activation, checker implementation, and public-sync require separate source-verified work orders.",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "learningLane": "GOVERNANCE_CONTROL_PLANE",
+          "f2gRef": "docs/reviews/CVF_CGE_R1_CODEGRAPH_FULL_REABSORPTION_REVIEW_2026-06-29.md#finding-to-governance-learning-disposition"
+        }
+      ],
+      "negativeSearchTerms": [
+        "CodeGraph runtime imported into CVF",
+        "CodeGraph MCP adapter activated",
+        "code intelligence package certified active",
+        "graph checker implemented in CGE-R1",
+        "public export completed for CGE-R1"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED unless a later CGE runtime, ASSF package, checker, or public-sync tranche is explicitly authorized."
+    },
+    {
+      "id": "msea-r28-t1-mineru-metadata-receipt-writer-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation MSEA-R28-T1 MinerU metadata receipt writer source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw_text (not present)",
+        "ocr_output (not present)",
+        "provider_response (not present)",
+        "memory_ingestion (not implemented)",
+        "rag_retrieval (not implemented)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MSEA-R28-T1",
+      "scanDate": "2026-07-04",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md",
+      "notes": "Deterministic metadata-only MinerU receipt writer that validates caller-supplied receipt id, source input slot, input sha256, private output class, output basenames, and outputContentRead=false. No document body read, generated output content read, MinerU runtime execution, memory ingestion, RAG retrieval, checker implementation, public-sync, or production workflow claim."
+    },
+    {
+      "id": "msea-r28-t1-mineru-metadata-receipt-writer-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Extraction Foundation MSEA-R28-T1 MinerU metadata receipt writer tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw_text (rejected content-like token)",
+        "ocr_output (rejected content-like token)",
+        "provider_response (not present)",
+        "memory_ingestion (not implemented)",
+        "rag_retrieval (not implemented)"
+      ],
+      "nextScanRecommendation": "NONE_REQUIRED",
+      "scanWave": "MSEA-R28-T1",
+      "scanDate": "2026-07-04",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md",
+      "notes": "Focused tests for stable metadata-only payload rendering, required receipt fields, outputContentRead=false, allowed MinerU output filenames, unsafe path rejection, content-like token rejection, held downstream release, and no runtime or memory/RAG readiness claim."
+    },
+    {
+      "id": "msea-r33-t3-mineru-internal-system-chain-harness-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Learning Plane Foundation MSEA-R33-T3 MinerU internal system-chain harness source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-internal-system-chain-harness.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "MinerU runtime execution (not present)",
+        "private output content read (not present)",
+        "file-backed production persistence (not used)",
+        "retrieval (not used)",
+        "vectorization (not used)",
+        "provider live proof (not used)"
+      ],
+      "nextScanRecommendation": "Revisit only if a future source-verified packet wires the Python receipt bridge, production memory/RAG release, retrieval, vectorization, provider/live proof, or file-backed production persistence.",
+      "scanWave": "MSEA-R33-T3",
+      "scanDate": "2026-07-05",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MSEA_R33_T5_MINERU_INTERNAL_SYSTEM_CHAIN_COMPLETION_2026-07-05.md",
+      "notes": "Deterministic in-process harness around the accepted T25/T22/T20 MinerU chain candidate. It records pythonReceiptBridgeStatus as not wired by R33 and keeps productionRouteAuthorized, fileBackedPersistenceUsed, mineruRuntimeExecuted, privateOutputContentRead, retrievalUsed, vectorizationUsed, providerLiveProofUsed, and publicRuntimeClaimed false."
+    },
+    {
+      "id": "msea-r33-t3-mineru-internal-system-chain-harness-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Learning Plane Foundation MSEA-R33-T3 MinerU internal system-chain harness tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-internal-system-chain-harness.test.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "production route authorization claim (not made)",
+        "Python receipt bridge claim (explicitly not wired)",
+        "file-backed persistence acceptance (rejected)",
+        "private generated output read acceptance (rejected)",
+        "R27 prerequisite bypass (rejected)"
+      ],
+      "nextScanRecommendation": "Retain focused regression for any future R33 or later harness changes.",
+      "scanWave": "MSEA-R33-T3",
+      "scanDate": "2026-07-05",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MSEA_R33_T5_MINERU_INTERNAL_SYSTEM_CHAIN_COMPLETION_2026-07-05.md",
+      "notes": "Focused Vitest coverage for the R33 internal system-chain harness: bounded pass path, explicit Python bridge non-wiring, private-output fail-closed, file-backed persistence fail-closed, R27 prerequisite fail-closed, and caller-provided in-process store behavior."
+    },
+    {
+      "id": "msea-r46-mineru-bounded-live-system-chain-proof-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Learning Plane Foundation MSEA-R46 MinerU bounded live system-chain proof source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-bounded-live-system-chain-proof.ts"
+      ],
+      "fileCount": 1,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "production route authorization claim (not made)",
+        "private output content read (not used)",
+        "MinerU runtime execution (not used)",
+        "retrieval (not used)",
+        "vectorization (not used)",
+        "public runtime claim (not made)"
+      ],
+      "nextScanRecommendation": "Revisit only if a future source-verified packet changes bounded MinerU system-chain proof, provider live proof evidence, or production Memory/RAG release authority.",
+      "scanWave": "MSEA-R46",
+      "scanDate": "2026-07-06",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MSEA_R46_MINERU_SCANLAYER_MEMORY_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_WORKER_RETURN_2026-07-06.md",
+      "notes": "Bounded proof harness for synthetic MinerU summary-only metadata routed into file-backed durable memory with read-back evidence. It preserves productionRouteAuthorized, mineruRuntimeExecuted, privateOutputContentRead, retrievalUsed, vectorizationUsed, providerLiveProofUsed, and publicRuntimeClaimed false."
+    },
+    {
+      "id": "msea-r46-mineru-bounded-live-system-chain-proof-tests",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF Learning Plane Foundation MSEA-R46 MinerU bounded live system-chain proof tests",
+      "scopePaths": [
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-bounded-live-system-chain-proof.test.ts",
+        "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-bounded-live-system-chain-proof.alibaba.test.ts"
+      ],
+      "fileCount": 2,
+      "status": "SCANNED",
+      "findings": [],
+      "negativeSearchTerms": [
+        "raw API key persistence (not present)",
+        "raw provider output persistence (not present)",
+        "production readiness claim (not made)",
+        "public readiness claim (not made)",
+        "private generated output read (not used)",
+        "use-case legal workflow (not present)"
+      ],
+      "nextScanRecommendation": "Retain focused deterministic and live-provider coverage for future R46 or later bounded system-chain proof changes.",
+      "scanWave": "MSEA-R46",
+      "scanDate": "2026-07-06",
+      "manifestHash": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_MSEA_R46_MINERU_SCANLAYER_MEMORY_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_WORKER_RETURN_2026-07-06.md",
+      "notes": "Focused Vitest coverage for file-backed write/read-back proof and Alibaba-compatible live provider echo. Evidence JSON records safe hashes, booleans, model, endpoint host, receipt decisions, and claim boundary only."
     }
   ]
 }

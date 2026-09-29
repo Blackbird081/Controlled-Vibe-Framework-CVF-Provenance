@@ -1,0 +1,24 @@
+{
+  "stateOrder": 644,
+  "stateKey": "ascpT4PackageLifecycleSourceStateDecisionClosure20260630",
+  "value": {
+    "batchId": "ASCP-T4",
+    "materialCommit": "1625ab8c",
+    "fullMaterialCommit": "1625ab8c175d986038981c472bcb0eaf82f6e5ab",
+    "disposition": "CLOSED_PASS_BOUNDED",
+    "decision": "HOLD_NO_ACTIVE_SOURCE_MUTATION",
+    "sourceMutationDisposition": "NO_SOURCE_MUTATIONS_AUTHORIZED",
+    "helper": "governance/compat/run_assf_package_lifecycle_decision.py",
+    "tests": "governance/compat/test_run_assf_package_lifecycle_decision.py",
+    "roadmap": "docs/roadmaps/CVF_ASSF_ACTIVE_RESOLVER_AND_ADAPTER_PILOT_ROADMAP_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASCP_T4_PACKAGE_LIFECYCLE_SOURCE_STATE_DECISION_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_ASCP_T4_PACKAGE_LIFECYCLE_SOURCE_STATE_DECISION_COMPLETION_2026-06-30.md",
+    "verification": [
+      "python -m unittest governance.compat.test_run_assf_package_lifecycle_decision PASS, 5 tests",
+      "python governance/compat/run_assf_package_lifecycle_decision.py --json returned 32 total candidates, 6 runtime eligible, 6 activation ready, 6 external projection ready, 0 active source records, and HOLD_NO_ACTIVE_SOURCE_MUTATION",
+      "pre-commit hook PASS, 69 checks"
+    ],
+    "claimBoundary": "ASCP-T4 decides no package lifecycle source moves to ACTIVE in this tranche. It does not mutate lifecycle sources, read package instruction bodies, emit or consume skill usage receipts, implement package execution adapters, call providers, public-sync, or grant action authority.",
+    "nextAllowedMove": "Superseded by ASCP-T5 closure at material commit d409b602. Current next move is operator selection of the next high-value lane; ACTIVE lifecycle promotion, remaining package conversion, external MCP package execution runtime, or public-sync requires fresh GC-018/source-verified work order."
+  }
+}

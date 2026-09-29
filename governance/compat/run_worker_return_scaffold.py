@@ -41,6 +41,7 @@ WORKER_RETURN_SCAFFOLD_SECTIONS = (
     "Agent Operation Trace Block",
     "Delta Execution Claim Boundary Control Block",
     "Public Export Disposition",
+    "Command Evidence",
     "Machine Closure Package",
 )
 
@@ -93,7 +94,7 @@ def _section_body(section: str) -> list[str]:
         ]
     if section == "Corpus Completeness And Report Integrity":
         return [
-            "- Corpus verdict: NOT_APPLICABLE_WITH_REASON - no corpus completeness claim in this worker return.",
+            "- Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason: no corpus completeness claim in this worker return.",
         ]
     if section == "Finding-To-Governance Learning Disposition":
         return [
@@ -170,6 +171,12 @@ def _section_body(section: str) -> list[str]:
             "",
             "Reason: worker return in private provenance workspace; no public-sync authorization.",
         ]
+    if section == "Command Evidence":
+        return [
+            "| Command | Result |",
+            "|---|---|",
+            "| `python governance/compat/run_worker_return_fast_gate.py` | TODO_PASS_FAIL_BLOCKED |",
+        ]
     if section == "Machine Closure Package":
         return [
             "| Artifact | Evidence | Disposition |",
@@ -196,6 +203,8 @@ def build_scaffold(title: str = "") -> str:
         "dispatchWorkOrder: `TODO_WORK_ORDER_PATH`",
         "",
         "executionBaseHead: `TODO_EXECUTION_BASE_HEAD`",
+        "",
+        "rawMemoryReleased=false",
         "",
         "NOTE: L1 scaffold only. Replace every TODO line before returning for review.",
         "",

@@ -33,6 +33,11 @@ export function SkillDetailView({ skill }: { skill: Skill }) {
                                     Certified ASSF
                                 </span>
                             )}
+                            {skill.runtimePackageProjection && (
+                                <span className="rounded-full bg-sky-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-sky-700 dark:bg-sky-500/10 dark:text-sky-300">
+                                    Runtime package
+                                </span>
+                            )}
                             {skill.difficulty && (
                                 <span className="rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
                                     {t('skills.difficultyLabel')}: {skill.difficulty}
@@ -50,6 +55,13 @@ export function SkillDetailView({ skill }: { skill: Skill }) {
                                 <div className="font-semibold">ASSF package projection</div>
                                 <div>Certification: {skill.certificationState}</div>
                                 <div>UAT: {skill.uatState}</div>
+                                {skill.runtimePackageProjection && (
+                                    <>
+                                        <div>Runtime eligible: {skill.runtimeEligible ? 'YES' : 'NO'}</div>
+                                        <div>Activation: {skill.activationDecision}</div>
+                                        {skill.primaryDomain && <div>Domain: {skill.primaryDomain}</div>}
+                                    </>
+                                )}
                                 <div>Adapter: {skill.externalCliMcpDisposition}</div>
                                 {skill.canonicalRoot && <div className="break-all">Source: {skill.canonicalRoot}</div>}
                             </div>

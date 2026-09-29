@@ -1,0 +1,26 @@
+{
+  "registryOrder": 116,
+  "id": "msea-r28-t1-mineru-metadata-receipt-writer-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Extraction Foundation MSEA-R28-T1 MinerU metadata receipt writer source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "raw_text (not present)",
+    "ocr_output (not present)",
+    "provider_response (not present)",
+    "memory_ingestion (not implemented)",
+    "rag_retrieval (not implemented)"
+  ],
+  "nextScanRecommendation": "NONE_REQUIRED",
+  "scanWave": "MSEA-R28-T1",
+  "scanDate": "2026-07-04",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MSEA_R28_T1_MINERU_MINIMAL_METADATA_RECEIPT_WRITER_WORKER_RETURN_2026-07-04.md",
+  "notes": "Deterministic metadata-only MinerU receipt writer that validates caller-supplied receipt id, source input slot, input sha256, private output class, output basenames, and outputContentRead=false. No document body read, generated output content read, MinerU runtime execution, memory ingestion, RAG retrieval, checker implementation, public-sync, or production workflow claim."
+}

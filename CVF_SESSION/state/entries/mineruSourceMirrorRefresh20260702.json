@@ -1,0 +1,5 @@
+{
+  "stateOrder": 681,
+  "stateKey": "mineruSourceMirrorRefresh20260702",
+  "value": "MinerU upstream source mirror refresh recorded at material commit ae7d5607. Fresh clone path: .private_reference/source_mirrors/opendatalab__MinerU/. Upstream repository: https://github.com/opendatalab/MinerU.git. Pinned upstream commit: 3e60291846cb7c3bf8fe7f4f16238f4fc6cce491. Tracked upstream file count: 425. Source mirror index row updated in .private_reference/source_mirrors/INDEX.md. Boundary: the clone payload remains ignored by git; no old external_repos source authority is reused; no install, model download, OCR/VLM/hybrid/remote backend, API/router/Gradio service, RAG write, package activation, checker wiring, provider/live proof, public-sync, direct import, or production-readiness claim is authorized by this mirror refresh."
+}

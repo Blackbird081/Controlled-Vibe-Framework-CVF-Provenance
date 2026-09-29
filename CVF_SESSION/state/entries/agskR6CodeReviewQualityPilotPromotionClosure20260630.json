@@ -1,0 +1,44 @@
+{
+  "stateOrder": 1344,
+  "stateKey": "agskR6CodeReviewQualityPilotPromotionClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "8caef205",
+    "materialCommitFull": "8caef205731a58b53c7c1943e58ee97dfd92cbdb",
+    "baseline": "docs/baselines/CVF_GC018_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_COMPLETION_2026-06-30.md",
+    "pilotPackage": "cvf-engineering-code-review-quality",
+    "registryEntry": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-code-review-quality.json",
+    "packageRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/SKILL.md",
+    "generatedIndex": "docs/reference/agent_system_skills/generated/skill-index.json",
+    "verification": [
+      "generated ASSF skill index PASS",
+      "skill-index drift check PASS",
+      "certified metadata admission PASS",
+      "package anatomy PASS",
+      "runtime loader body-read smoke PASS with packageBodyDisposition LOADED",
+      "runtime eligibility audit reports 24 package roots, 1 runtime eligible, 23 runtime ineligible",
+      "loader and audit unittest PASS 10/10",
+      "reviewer-fast PASS 46/46",
+      "pre-commit PASS 66/66"
+    ],
+    "auditResult": {
+      "totalAssfRecords": 32,
+      "packageRootRecords": 24,
+      "runtimeEligiblePackageRoots": 1,
+      "blockedPackageRoots": 23,
+      "readyForBodyLoad": [
+        "cvf-engineering-code-review-quality"
+      ],
+      "packageRootStatus": "APPROVED=1; PROPOSED=23",
+      "packageRootUatState": "PASSED=1; NOT_STARTED=23",
+      "packageRootCertificationState": "CERTIFIED=1; NOT_STARTED=23",
+      "packageRootInternalAgentDisposition": "IMPLEMENTED=1; CANDIDATE=23"
+    },
+    "runtimeBoundary": "bounded internal explicit package-loader body read for one package root only",
+    "nextAllowedMove": "operator may select the next bounded package lifecycle promotion tranche, choose an explicitly scoped batch, or open a separate ACTIVE resolver or CLI/MCP adapter tranche through fresh GC-018/source-verified work order",
+    "liveProofDisposition": "NOT_RUN_WITH_REASON: no provider, model, API, governance behavior, or live service claim is made",
+    "claimBoundary": "no automatic package activation, no resolver mutation, no CLI/MCP adapter, no provider/live proof, no public-sync, no direct import, no merge authority, no commit authority, and no production-readiness claim"
+  }
+}

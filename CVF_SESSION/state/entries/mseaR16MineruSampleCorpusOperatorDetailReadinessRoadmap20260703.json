@@ -1,0 +1,19 @@
+{
+  "stateOrder": 1404,
+  "stateKey": "mseaR16MineruSampleCorpusOperatorDetailReadinessRoadmap20260703",
+  "value": {
+    "status": "ROADMAP_READY_FOR_MSEA_R16_T1_GC018_AND_WORK_ORDER_AUTHORING",
+    "date": "2026-07-03",
+    "materialCommit": "4bf22a5d",
+    "materialCommitFull": "4bf22a5d24b9011b76a54918a2d9e090465dbca8",
+    "roadmapPath": "docs/roadmaps/CVF_MSEA_R16_MINERU_SAMPLE_CORPUS_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_ROADMAP_2026-07-03.md",
+    "sourceAcceptanceCommit": "836ce239",
+    "sourceAcceptancePath": "docs/reference/CVF_MSEA_R15_MINERU_SAMPLE_STRESSOR_PROVENANCE_GAP_CLOSURE_LEDGER_2026-07-03.md",
+    "selectedRouteToken": "OPEN_OPERATOR_DETAIL_AND_MINIMAL_POPULATION_READINESS_ROADMAP",
+    "preDispatchGate": "PASS 72/72",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "Author MSEA-R16-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for operator-detail and minimal sample-corpus population-readiness selection.",
+    "claimBoundary": "Roadmap-only planning. No sample document import, corpus population, MinerU install/runtime, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, schema implementation, receipt-writer code, adapter implementation, legal-domain product work, or production-readiness claim is authorized."
+  }
+}

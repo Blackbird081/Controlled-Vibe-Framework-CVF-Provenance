@@ -1,0 +1,30 @@
+{
+  "stateOrder": 1424,
+  "stateKey": "mseaR24T3MineruLocalPipelineRuntimeSmokeDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "2fa47915",
+    "materialCommitFull": "2fa4791515105943e0a95ca6d50bdf61a714e2b8",
+    "dispatchBaseHead": "71737425",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R24_T3_MINERU_LOCAL_PIPELINE_RUNTIME_SMOKE_2026-07-03.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T3_MINERU_LOCAL_PIPELINE_RUNTIME_SMOKE_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R24_T3_MINERU_LOCAL_PIPELINE_RUNTIME_SMOKE_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R24_T3_MINERU_LOCAL_PIPELINE_RUNTIME_SMOKE_READINESS_MATRIX_2026-07-03.md",
+    "selectedDispatchPurpose": "one bounded local MinerU CLI pipeline runtime smoke using accepted T2A config/cache receipt and one authorized Candidate Group A DOCX",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedRouteTokens": [
+      "SMOKE_PASS_BOUNDED",
+      "SMOKE_FAIL_DIAGNOSTIC_RECORDED",
+      "HOLD_PENDING_RUNTIME_ENV_FIX",
+      "HOLD_ALL_RUNTIME_LANES"
+    ],
+    "verification": [
+      "pre-dispatch autorun PASS 72/72",
+      "dispatch commit steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Execute the T3 worker exactly inside the work order boundary: capture executionBaseHead, perform preflight, run at most one allowed local MinerU CLI smoke or hold before command if preflight fails, create uncommitted worker return and readiness matrix, and run worker-return fast gate plus pre-implementation autorun.",
+    "claimBoundary": "Dispatch only. The dispatch did not run MinerU, did not process Candidate Group A input, did not create smoke output evidence, and did not claim parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, extraction accuracy, legal quality, provider/live proof, public-sync, production readiness, workflow-chain completion, stage, commit by worker, or push."
+  }
+}

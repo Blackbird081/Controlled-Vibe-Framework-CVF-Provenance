@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1454,
+  "stateKey": "startupAcknowledgmentRequired",
+  "value": [
+    "active_session_mode",
+    "active_handoff_path",
+    "active_review_queue",
+    "pain_point_closure_direction",
+    "post_pain_point_hardening_roadmap",
+    "required_first_reads",
+    "blocked_work_classes",
+    "next_allowed_move"
+  ]
+}

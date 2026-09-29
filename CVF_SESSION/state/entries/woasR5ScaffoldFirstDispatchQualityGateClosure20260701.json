@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1357,
+  "stateKey": "woasR5ScaffoldFirstDispatchQualityGateClosure20260701",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-01",
+    "materialCommit": "7ffbf3b4",
+    "materialCommitFull": "7ffbf3b4dfbd6dc54de9f8270bf5b9f41f0d5b68",
+    "workerReturn": "docs/reviews/CVF_WOAS_R5_SCAFFOLD_FIRST_DISPATCH_QUALITY_GATE_WORKER_RETURN_2026-07-01.md",
+    "standard": "docs/reference/work_order_authoring/CVF_DISPATCH_SCAFFOLD_PROVENANCE_STANDARD.md",
+    "helper": "governance/compat/build_dispatch_packet_scaffold.py",
+    "checker": "governance/compat/check_dispatch_scaffold_provenance.py",
+    "testPath": "governance/compat/test_check_dispatch_scaffold_provenance.py",
+    "closureSummary": "Accepted the no-commit worker return after reviewer repair to scaffoldHelperCommand provenance, added scaffold provenance standard/checker/tests, updated helper output and golden fixture, and wired the checker into reviewer-fast, pre-commit, pre-push, and autorun.",
+    "verification": [
+      "python governance/compat/check_dispatch_scaffold_provenance.py --base a407a8a2 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base a407a8a2 --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base a407a8a2 --head HEAD --enforce PASS",
+      "python governance/compat/run_local_governance_hook_chain.py --hook pre-commit PASS 78/78",
+      "pre-commit governance hook PASS 78/78 for material closure commit 7ffbf3b4"
+    ],
+    "claimBoundary": "Scaffold provenance documentation, local helper text generation, checker, fixture, and gate wiring only. No real external source intake, source import, source-mirror mutation, runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter behavior, package lifecycle mutation, model-router work, action authority, automatic invocation, or production-readiness claim is authorized."
+  }
+}

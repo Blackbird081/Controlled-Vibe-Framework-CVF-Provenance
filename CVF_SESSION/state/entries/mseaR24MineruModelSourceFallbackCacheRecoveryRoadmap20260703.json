@@ -1,0 +1,25 @@
+{
+  "stateOrder": 1417,
+  "stateKey": "mseaR24MineruModelSourceFallbackCacheRecoveryRoadmap20260703",
+  "value": {
+    "status": "ROADMAP_READY_FOR_MSEA_R24_T1_GC018_AND_WORK_ORDER_AUTHORING",
+    "date": "2026-07-03",
+    "materialCommit": "aa2614f6",
+    "materialCommitFull": "aa2614f63e4cf7d56fd54e0e8b8dd25fde79c0eb",
+    "roadmapBaseHead": "4065bb0e",
+    "roadmapPath": "docs/roadmaps/CVF_MSEA_R24_MINERU_MODEL_SOURCE_FALLBACK_AND_CACHE_COMPLETION_RECOVERY_ROADMAP_2026-07-03.md",
+    "selectedRoute": "OPEN_MSEA_R24_T1_MODEL_SOURCE_FALLBACK_DECISION",
+    "nextRecommendedMove": "Author fresh MSEA-R24-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for model-source fallback decision only.",
+    "plannedDependentTranches": [
+      "MSEA-R24-T1 source-verified model-source fallback decision",
+      "MSEA-R24-T2 bounded cache-completion recovery only after T1 releases a source route",
+      "MSEA-R24-T3 local pipeline runtime smoke only after T2 records config/cache receipt",
+      "MSEA-R24-T4 workflow-chain receipt policy only after T3 records smoke evidence"
+    ],
+    "verification": [
+      "pre-dispatch autorun PASS 72/72",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "claimBoundary": "Roadmap only. No cache mutation, model download, alternate-source execution, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, document body read, extraction output, provider/live proof, public-sync, schema/writer/adapter/checker implementation, runtime smoke, workflow-chain completion, or production readiness claim."
+  }
+}

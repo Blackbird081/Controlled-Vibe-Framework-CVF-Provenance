@@ -17,11 +17,11 @@
   ],
   "summary": {
     "activeRecentCount": 50,
-    "retainEvidenceCount": 257,
+    "retainEvidenceCount": 262,
     "safeToArchiveCount": 77,
     "archivedCount": 335,
     "derivedAt": "2026-06-27",
-    "derivationMethod": "Derived from scripts/cvf_active_archive.py full review screening and refreshed after live-reference reclassification for W2-T29 tranche closure evidence plus relocation/publication canon reviews still blocked by active references, including P4 CP6-CP12 review documents still pinned by live references, W57-T1/W59-T1/W61-T1/W64-T1/W65-T1 review artifacts still anchored by active execution plans, audits, baselines, and orientation docs, W105-T1 closure review retained by current handoff/front-door references, W123-W129 noncoder adoption and rollout evidence retained by W131 continuation references, and W130-W132 stability/export evidence retained by current handoff and roadmap boundary references. Re-derivation on 2026-05-16 added 55 dynamic retain-evidence entries surfaced by the pre-push retention guard for the 2026-05-07/08 RC2/WPR/W133-W152 tranche reviews. Refresh on 2026-06-27 retains review-scope DSCP-T11F completion evidence and leaves non-review baseline, roadmap, and work-order paths outside this review-only registry."
+    "derivationMethod": "Derived from scripts/cvf_active_archive.py full review screening and refreshed after live-reference reclassification for W2-T29 tranche closure evidence plus relocation/publication canon reviews still blocked by active references, including P4 CP6-CP12 review documents still pinned by live references, W57-T1/W59-T1/W61-T1/W64-T1/W65-T1 review artifacts still anchored by active execution plans, audits, baselines, and orientation docs, W105-T1 closure review retained by current handoff/front-door references, W123-W129 noncoder adoption and rollout evidence retained by W131 continuation references, and W130-W132 stability/export evidence retained by current handoff and roadmap boundary references. Re-derivation on 2026-05-16 added 55 dynamic retain-evidence entries surfaced by the pre-push retention guard for the 2026-05-07/08 RC2/WPR/W133-W152 tranche reviews. Refresh on 2026-06-27 retains review-scope DSCP-T11F completion evidence and five historical review artifacts surfaced by push-readiness preview dynamic retention scan; non-review baseline, roadmap, and work-order paths remain outside this review-only registry."
   },
   "retainEvidencePaths": [
     "docs/reviews/CVF_BASELINE_INTEGRITY_REVIEW_2026-03-21.md",
@@ -279,6 +279,11 @@
     "docs/reviews/CVF_WPR_2_MULTI_TARGET_DEPLOY_GUIDE_CLOSURE_DECISION_2026-05-08.md",
     "docs/reviews/CVF_WPR_3_PUBLIC_EXPOSURE_AUDIT_CLOSURE_DECISION_2026-05-08.md",
     "docs/reviews/CVF_WPR_4_PUBLIC_RC_TAG_BINDING_CLOSURE_DECISION_2026-05-08.md",
+    "docs/reviews/CVF_AGENT_ROLE_ASSIGNMENT_PREREQUISITE_COMPLETION_2026-05-19.md",
+    "docs/reviews/CVF_LANE_B_WORKFLOW_PACKAGING_COMPLETION_2026-05-19.md",
+    "docs/reviews/CVF_LANE_C_EXECUTION_GATEWAY_COMPLETION_2026-05-19.md",
+    "docs/reviews/CVF_LANE_H_MEMORY_RUNTIME_WIRING_COMPLETION_2026-05-19.md",
+    "docs/reviews/CVF_REAL_NONCODER_USAGE_TEST_OPERATOR_SAMPLE_2026-05-25.md",
     "docs/reviews/CVF_DSCP_T11F_PROFILE_SELECTION_ADAPTER_COMPLETION_2026-06-10.md",
     "docs/reviews/cvf_phase_governance/CVF_ROADMAP_HOAN_THIEN_TOAN_DIEN_2026-03-06.md"
   ]

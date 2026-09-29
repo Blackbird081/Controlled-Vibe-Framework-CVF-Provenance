@@ -1,0 +1,28 @@
+{
+  "stateOrder": 1437,
+  "stateKey": "mseaR28T3MineruReceiptBoundaryCheckerCandidateDesignClosure20260704",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-04",
+    "materialCommit": "4d64e33f",
+    "materialCommitFull": "4d64e33feea9e75025b7740f74eb54117432b200",
+    "executionBaseHead": "8266c9eb",
+    "dispatchMaterialCommit": "0567257f",
+    "dispatchSessionSyncCommit": "8266c9eb",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_2026-07-04.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_WORKER_RETURN_2026-07-04.md",
+    "companionDesignMatrixPath": "docs/reference/CVF_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_MATRIX_2026-07-04.md",
+    "selectedDesignDisposition": "RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_ONLY",
+    "checkerImplementationDisposition": "CHECKER_IMPLEMENTATION_HELD_PENDING_ACCEPTED_DESIGN",
+    "memoryRouteDisposition": "MEMORY_ROUTE_HELD_PENDING_ACTUAL_CHECKER_AND_QUALITY",
+    "verification": [
+      "worker-return fast gate PASS after reviewer GC-051 path-literal repair",
+      "pre-implementation autorun PASS 74/74",
+      "reviewer-return commit steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "AUTHOR_MSEA_R28_T4_GC018_AND_SOURCE_VERIFIED_WORK_ORDER_FOR_RECEIPT_BOUNDARY_CHECKER_IMPLEMENTATION_AND_HOOK_WIRING_DECISION",
+    "claimBoundary": "R28-T3 closure accepts docs-only checker-candidate design evidence and companion matrix. It does not implement or prove a checker, hook wiring, MinerU runtime, receipt writer change, private content read, generated output read, memory-layer flow, RAG ingestion, adapter, provider/live behavior, public-sync, standalone PDF app, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, or workflow-chain production readiness. Memory-route release remains held pending an actual checker plus quality/source-pointer prerequisites."
+  }
+}

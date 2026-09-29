@@ -1,0 +1,32 @@
+{
+  "stateOrder": 642,
+  "stateKey": "adifCliT1CliClassificationAndEntrypointsClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "0183e04f",
+    "materialCommitFull": "0183e04f746d8fd65f909a09bb11ac06968878fa",
+    "standard": "docs/reference/CVF_CLI_SURFACE_CLASSIFICATION_STANDARD_2026-06-30.md",
+    "registry": "governance/compat/CVF_CLI_SURFACE_CLASSIFICATION_REGISTRY.json",
+    "checker": "governance/compat/check_cli_surface_classification.py",
+    "baseline": "docs/baselines/CVF_GC018_ADIF_CLI_T1_CLI_CLASSIFICATION_AND_ENTRYPOINTS_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ADIF_CLI_T1_CLI_CLASSIFICATION_AND_ENTRYPOINTS_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_ADIF_CLI_T1_CLI_CLASSIFICATION_AND_ENTRYPOINTS_COMPLETION_2026-06-30.md",
+    "cliEntrypoints": [
+      "governance/compat/run_adif_defect_resolver.py",
+      "governance/compat/run_adif_preflight_readout.py",
+      "governance/compat/run_adif_finding_intake_bridge.py"
+    ],
+    "verification": [
+      "focused unittest PASS 44/44",
+      "ADIF resolver CLI smoke PASS with items=[] and totalCandidates=0 for ASSF context query",
+      "ADIF preflight CLI smoke PASS with 2 of 10 closure candidates",
+      "ADIF finding-intake CLI smoke PASS with LINK_TO_EXISTING_ENTRY",
+      "CLI surface classification checker PASS with 9 entries and 0 violations",
+      "pre-commit PASS 69/69",
+      "pre-closure PASS except expected active-session handoff sync requirement"
+    ],
+    "nextAllowedMove": "ASCP-T2 activation policy semantics before CLI/MCP adapter implementation",
+    "liveProofDisposition": "NOT_RUN_WITH_REASON: no provider, model, API, governance behavior, or live service claim is made",
+    "claimBoundary": "local CLI entrypoints and classification control only; no ADIF entry mutation, no automatic package activation, no ASSF package body read, no MCP adapter, no provider/live proof, no public-sync, no direct import, no merge authority, no commit authority, and no production-readiness claim"
+  }
+}

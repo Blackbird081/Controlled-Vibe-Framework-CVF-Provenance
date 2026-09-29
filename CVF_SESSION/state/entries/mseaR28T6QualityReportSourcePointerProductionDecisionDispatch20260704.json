@@ -1,0 +1,31 @@
+{
+  "stateOrder": 1441,
+  "stateKey": "mseaR28T6QualityReportSourcePointerProductionDecisionDispatch20260704",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-04",
+    "materialCommit": "03e04018",
+    "materialCommitFull": "03e04018cacc3baac4ad7af947df0c5da8a24b67",
+    "dispatchBaseHead": "facb2714",
+    "predecessorMaterialCommit": "4a824e6d",
+    "predecessorSessionSyncCommit": "facb2714",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T6_MINERU_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_DECISION_2026-07-04.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T6_MINERU_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_DECISION_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T6_MINERU_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_DECISION_WORKER_RETURN_2026-07-04.md",
+    "companionMatrixPath": "docs/reference/CVF_MSEA_R28_T6_MINERU_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_DECISION_MATRIX_2026-07-04.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedRoute": "QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_DECISION_ONLY",
+    "allowedWorkerPaths": [
+      "docs/reviews/CVF_MSEA_R28_T6_MINERU_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_DECISION_WORKER_RETURN_2026-07-04.md",
+      "docs/reference/CVF_MSEA_R28_T6_MINERU_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_DECISION_MATRIX_2026-07-04.md"
+    ],
+    "memoryRouteDisposition": "MEMORY_ROUTE_STILL_HELD_PENDING_ACTUAL_PRODUCTION_AND_MEMORY_OWNER_DECISION",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward preflight PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "EXECUTE_MSEA_R28_T6_WORKER_UNDER_WORKER_MUST_NOT_COMMIT_AND_RETURN_FOR_REVIEW",
+    "claimBoundary": "R28-T6 dispatch authorizes only the bounded no-commit docs-only worker lane named by the work order. It does not implement actual quality-report production, source-pointer resolution, source/test/checker edits, MinerU runtime execution, private or generated content read, Candidate Group A import, memory/RAG release, provider/live proof, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker stage/commit, or push."
+  }
+}

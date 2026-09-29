@@ -1,0 +1,32 @@
+{
+  "stateOrder": 563,
+  "stateKey": "mseaR38T1T4MineruToMemoryScanlayerSystemChainClosureAuditClosure20260706",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "42a0f1f02",
+    "materialCommitFull": "42a0f1f02414015c6b4367a7ad3fe5858951d5a8",
+    "dispatchCommit": "09ab88f13",
+    "dispatchBaseHead": "6b2304f9c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R38_T1_T4_MINERU_TO_MEMORY_SCANLAYER_SYSTEM_CHAIN_CLOSURE_AUDIT_2026-07-06.md",
+    "t1ChainMapPath": "docs/reference/CVF_MSEA_R38_T1_MINERU_TO_MEMORY_SCANLAYER_CURRENT_CHAIN_MAP_2026-07-06.md",
+    "t2GapClassificationPath": "docs/reference/CVF_MSEA_R38_T2_MINERU_TO_MEMORY_SCANLAYER_GAP_CLASSIFICATION_2026-07-06.md",
+    "t3HarnessDecisionPath": "docs/reference/CVF_MSEA_R38_T3_MINERU_TO_MEMORY_SCANLAYER_MINIMAL_E2E_HARNESS_DECISION_2026-07-06.md",
+    "t4ReleaseGateDecisionPath": "docs/reference/CVF_MSEA_R38_T4_MINERU_TO_MEMORY_SCANLAYER_RELEASE_GATE_DECISION_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R38_T1_T4_MINERU_TO_MEMORY_SCANLAYER_SYSTEM_CHAIN_CLOSURE_AUDIT_WORKER_RETURN_2026-07-06.md",
+    "completionReviewPath": "docs/reviews/CVF_MSEA_R38_T1_T4_MINERU_TO_MEMORY_SCANLAYER_SYSTEM_CHAIN_CLOSURE_AUDIT_COMPLETION_2026-07-06.md",
+    "selectedT3Decision": "NO_ADDITIONAL_HARNESS_VALUE_STOP",
+    "selectedT4Decision": "SYSTEM_FOUNDATION_COMPLETE_STOP",
+    "selectedDisposition": "R38_T1_T4_AUDIT_COMPLETE_SYSTEM_FOUNDATION_COMPLETE_STOP",
+    "systemAnswer": "MinerU, memory, and scan-layer surfaces are accepted as a coherent foundation/internal system chain, not as production memory/RAG, file-backed persistence, provider/live proof, public runtime proof, or use-case/legal workflow readiness.",
+    "verification": [
+      "worker-return fast gate PASS",
+      "check_work_order_dispatch_quality PASS",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80",
+      "pre-closure material range PASS on all non-session checks; active handoff continuity updated by this session-sync"
+    ],
+    "nextRecommendedMove": "OPERATOR_SELECT_EXACTLY_ONE_HELD_AUTHORITY_LANE_THROUGH_FRESH_SOURCE_VERIFIED_PACKET",
+    "claimBoundary": "R38 closure answers the system-chain status only. It does not authorize source/test edits, MinerU runtime execution, private/generated output content read, production durable-store invocation, production memory/RAG route release, file-backed production persistence, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted readiness, production readiness, interface/root-barrel/runtime wiring, provider-local or IDE config edits, worker commit, push, or public claim."
+  }
+}

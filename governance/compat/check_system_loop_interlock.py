@@ -24,6 +24,12 @@ except ModuleNotFoundError:
 REPO_ROOT = Path(__file__).resolve().parents[2]
 REGISTRY_PATH = REPO_ROOT / "docs" / "reference" / "CVF_SYSTEM_LOOP_INTERLOCK_REGISTRY_2026-06-02.json"
 STANDARD_PATH = REPO_ROOT / "docs" / "reference" / "CVF_SYSTEM_LOOP_INTERLOCK_STANDARD_2026-06-02.md"
+EXPECTED_CHAIN_MANIFEST_PATH = (
+    REPO_ROOT
+    / "docs"
+    / "reference"
+    / "CVF_FPC_T3_C03_INTERLOCK_EXPECTED_CHAIN_MANIFEST_2026-06-27.json"
+)
 AUTORUN_PATH = REPO_ROOT / "governance" / "compat" / "run_agent_autorun_workflow_gate.py"
 HOOK_CHAIN_PATH = REPO_ROOT / "governance" / "compat" / "run_local_governance_hook_chain.py"
 
@@ -141,6 +147,71 @@ def _validate_connection(conn: dict[str, Any], index: int) -> list[str]:
     return violations
 
 
+def _validate_expected_chain_manifest(registry: dict[str, Any]) -> list[str]:
+    violations: list[str] = []
+    if not EXPECTED_CHAIN_MANIFEST_PATH.exists():
+        rel = EXPECTED_CHAIN_MANIFEST_PATH.relative_to(REPO_ROOT)
+        return [f"missing expected-chain manifest: {rel}"]
+
+    try:
+        manifest = json.loads(EXPECTED_CHAIN_MANIFEST_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        rel = EXPECTED_CHAIN_MANIFEST_PATH.relative_to(REPO_ROOT)
+        return [f"invalid expected-chain manifest JSON: {rel}: {exc}"]
+
+    expected_chains = manifest.get("expectedChains")
+    if not isinstance(expected_chains, list) or not expected_chains:
+        return ["expected-chain manifest `expectedChains` must be a non-empty list"]
+
+    connections = registry.get("connections")
+    if not isinstance(connections, list):
+        return violations
+    by_id = {
+        str(conn.get("id")): conn
+        for conn in connections
+        if isinstance(conn, dict) and str(conn.get("id") or "").strip()
+    }
+
+    seen_expected_ids: set[str] = set()
+    for idx, chain in enumerate(expected_chains):
+        if not isinstance(chain, dict):
+            violations.append(f"expectedChains[{idx}] must be an object")
+            continue
+        disposition = str(chain.get("futureCheckerDisposition") or "")
+        if disposition != "ELIGIBLE_FOR_EXPECTED_CHAIN_CHECK":
+            continue
+
+        expected_id = str(chain.get("expectedRegistryId") or "").strip()
+        candidate_id = str(chain.get("candidateId") or f"expectedChains[{idx}]")
+        if not expected_id:
+            violations.append(f"{candidate_id}: missing `expectedRegistryId`")
+            continue
+        if expected_id in seen_expected_ids:
+            violations.append(f"{candidate_id}: duplicate expectedRegistryId `{expected_id}`")
+        seen_expected_ids.add(expected_id)
+
+        conn = by_id.get(expected_id)
+        if conn is None:
+            violations.append(f"{candidate_id}: expected registry id is missing: {expected_id}")
+            continue
+
+        expected_status = str(chain.get("expectedStatus") or "").strip()
+        if expected_status and conn.get("status") != expected_status:
+            violations.append(
+                f"{candidate_id}: expected `{expected_id}` status `{expected_status}` "
+                f"but found `{conn.get('status')}`"
+            )
+
+        expected_automation = str(chain.get("expectedAutomationLevel") or "").strip()
+        if expected_automation and conn.get("automationLevel") != expected_automation:
+            violations.append(
+                f"{candidate_id}: expected `{expected_id}` automationLevel "
+                f"`{expected_automation}` but found `{conn.get('automationLevel')}`"
+            )
+
+    return violations
+
+
 def validate_registry() -> list[str]:
     violations: list[str] = []
     if not REGISTRY_PATH.exists():
@@ -173,6 +244,8 @@ def validate_registry() -> list[str]:
         if cid:
             seen.add(cid)
         violations.extend(_validate_connection(conn, idx))
+
+    violations.extend(_validate_expected_chain_manifest(registry))
 
     return violations
 

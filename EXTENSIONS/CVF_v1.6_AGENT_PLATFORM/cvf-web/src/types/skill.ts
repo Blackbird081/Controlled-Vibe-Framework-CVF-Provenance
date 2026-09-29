@@ -38,6 +38,16 @@ export interface Skill {
     canonicalRoot?: string;
     externalCliMcpDisposition?: string;
     adapterContract?: string;
+    runtimePackageProjection?: boolean;
+    runtimeEligible?: boolean;
+    activationDecision?: string;
+    primaryDomain?: string;
+    domainGroup?: string;
+    selectionKeywords?: string[];
+    specSignals?: string[];
+    recommendedWhen?: string[];
+    notRecommendedWhen?: string[];
+    outputGoals?: string[];
     projectionClaimBoundary?: string;
 }
 
@@ -57,6 +67,8 @@ export interface SkillIndexMeta {
     governanceSource: string[];
     assfProjectedSkills?: number;
     certifiedPackageProjections?: number;
+    runtimePackageProjections?: number;
+    skillControlPlaneProjection?: string;
 }
 
 export interface SkillIndexPayload {

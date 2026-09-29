@@ -1,0 +1,22 @@
+{
+  "stateOrder": 646,
+  "stateKey": "pkgSopT1PackageSkillProductionizationSopClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "693608cb",
+    "fullMaterialCommit": "693608cb9053680c8f2664fe3305aed9c6451d84",
+    "baseline": "docs/baselines/CVF_GC018_PKGSOP_T1_PACKAGE_SKILL_PRODUCTIONIZATION_SOP_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PKGSOP_T1_PACKAGE_SKILL_PRODUCTIONIZATION_SOP_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_PKGSOP_T1_PACKAGE_SKILL_PRODUCTIONIZATION_SOP_COMPLETION_2026-06-30.md",
+    "sop": "docs/reference/agent_system_skills/CVF_PACKAGE_SKILL_PRODUCTIONIZATION_SOP.md",
+    "scope": "documentation-only SOP for package-skill productionization from external repo or Learning Plane intake through production runtime admission",
+    "verification": [
+      "focused document gates PASS: structural completeness, dispatch quality, machine closure, finding-to-governance learning, external intake routing, and rescan hardening",
+      "pre-dispatch autorun PASS",
+      "pre-implementation autorun PASS",
+      "implementation commit steward PASS",
+      "pre-commit hook PASS 69/69 before material commit"
+    ],
+    "claimBoundary": "SOP documentation only; no package conversion, lifecycle mutation, runtime helper, provider call, Model Gateway/model router implementation, provider registry mutation, public-sync, or action authority from package loading."
+  }
+}

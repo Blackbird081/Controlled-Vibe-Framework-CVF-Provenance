@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1309,
+  "stateKey": "mseaT1T3MineruStructuredExtractionAbsorptionClosure20260628",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "38f236bc",
+    "roadmap": "docs/roadmaps/CVF_MSEA_T0_MINERU_STRUCTURED_EXTRACTION_EXTERNAL_ABSORPTION_ROADMAP_2026-06-28.md",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_T1_SOURCE_VERIFIED_DOCUMENT_EXTRACTION_RECONCILIATION_2026-06-28.md",
+    "reference": "docs/reference/CVF_MSEA_T2_DOCUMENT_EXTRACTION_CLAIM_BOUNDARY_RECEIPT_QUALITY_AND_RAG_HANDOFF_ADVISORY_2026-06-28.md",
+    "closeout": "docs/reviews/CVF_MSEA_T3_STATIC_CHECKER_VALUE_DECISION_AND_LANE_CLOSEOUT_2026-06-28.md",
+    "upstreamRepo": "opendatalab/MinerU",
+    "upstreamCommit": "3e60291",
+    "sourceFolder": ".private_reference/legacy/CVF 28.06/CVF_MinerU_Structured_Extraction_Adapter",
+    "decision": "CLOSE_MSEA_ABSORPTION_LANE_NO_CHECKER_NOW",
+    "nextAllowedMove": "OPERATOR_SELECT_NEXT_EXTERNAL_ABSORPTION_OR_ROADMAP_AUDIT",
+    "summary": "MSEA-T1 through T3 closed the MinerU Structured Extraction absorption roadmap. The lane source-verified upstream MinerU and the retained adapter folder against CVF_EXTRACTION_FOUNDATION owner surfaces, promoted the high-value claim-boundary/receipt/quality/RAG-handoff doctrine into a CVF-owned reference, and decided no static checker now. Runtime, model download, OCR/VLM/hybrid/remote backend, RAG index, public-sync, checker, extraction accuracy, document truth, and production-readiness work remain parked behind recorded MSEA-T3 reopen conditions."
+  }
+}

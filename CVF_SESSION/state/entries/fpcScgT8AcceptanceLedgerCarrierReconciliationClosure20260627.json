@@ -1,0 +1,31 @@
+{
+  "stateOrder": 1295,
+  "stateKey": "fpcScgT8AcceptanceLedgerCarrierReconciliationClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "e278c039",
+    "baseline": "docs/baselines/CVF_GC018_FPC_SCG_T8_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_PROVENANCE_CARRIER_RECONCILIATION_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T8_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_PROVENANCE_CARRIER_RECONCILIATION_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_SCG_T8_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_PROVENANCE_CARRIER_RECONCILIATION_COMPLETION_2026-06-27.md",
+    "changedPaths": [
+      "docs/reference/CVF_FPC_SCG_T7_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_2026-06-27.json",
+      "governance/compat/check_fpc_system_chain_acceptance_ledger.py",
+      "governance/compat/test_check_fpc_system_chain_acceptance_ledger.py",
+      "docs/reference/CVF_FOUNDATION_PLANE_SYSTEM_CHAIN_GAP_PRIORITY_GUIDANCE_2026-06-27.md",
+      "docs/baselines/CVF_GC018_FPC_SCG_T8_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_PROVENANCE_CARRIER_RECONCILIATION_2026-06-27.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T8_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_PROVENANCE_CARRIER_RECONCILIATION_FOR_CODEX_2026-06-27.md",
+      "docs/reviews/CVF_FPC_SCG_T8_FOUNDATION_SYSTEM_CHAIN_ACCEPTANCE_LEDGER_PROVENANCE_CARRIER_RECONCILIATION_COMPLETION_2026-06-27.md"
+    ],
+    "verification": [
+      "python governance/compat/check_fpc_system_chain_acceptance_ledger.py --enforce PASS with 0 violations",
+      "python -m pytest governance/compat/test_check_fpc_system_chain_acceptance_ledger.py -q PASS with 5 tests",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 1f229fc6 --head HEAD --serial PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base 1f229fc6 --head HEAD --enforce PASS",
+      "pre-commit hook PASS 59/59 at material commit e278c039"
+    ],
+    "closureSummary": "Reconciled T7 acceptance ledger materialCommit carrier rows so FPC-SCG-T0 and FPC-SCG-T2 through FPC-SCG-T6 use current provenance carrier be253923 while FPC-SCG-T1 remains anchored to 75fcad20. Hardened the acceptance ledger checker with EXPECTED_MATERIAL_COMMITS and added focused stale-carrier regression coverage.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "liveProofDisposition": "N/A with reason: FPC-SCG-T8 made no runtime/provider governance claim and used no API keys",
+    "claimBoundary": "Private provenance acceptance-ledger carrier reconciliation only. No runtime/provider/live proof, no MPI-T6 runtime work, no Policy_Local or Document Translator implementation, no adapter implementation, no package activation, no certification, no public-sync mutation, and no generated-state mutation beyond session sync."
+  }
+}

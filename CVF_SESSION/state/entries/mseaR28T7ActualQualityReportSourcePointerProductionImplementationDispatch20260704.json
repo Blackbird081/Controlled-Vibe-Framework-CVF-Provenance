@@ -1,0 +1,46 @@
+{
+  "stateOrder": 1443,
+  "stateKey": "mseaR28T7ActualQualityReportSourcePointerProductionImplementationDispatch20260704",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-04",
+    "dispatchMaterialCommit": "3b4488e5",
+    "dispatchMaterialCommitFull": "3b4488e5d4fa3710a8ff4ec63dfb07067c4007f8",
+    "dispatchBaseHead": "75802a8d",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T7_MINERU_ACTUAL_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_IMPLEMENTATION_2026-07-04.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T7_MINERU_ACTUAL_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_IMPLEMENTATION_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T7_MINERU_ACTUAL_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_IMPLEMENTATION_WORKER_RETURN_2026-07-04.md",
+    "selectedRoute": "ACTUAL_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_IMPLEMENTATION",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedWorkerPaths": [
+      "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py",
+      "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py",
+      "docs/reviews/CVF_MSEA_R28_T7_MINERU_ACTUAL_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_IMPLEMENTATION_WORKER_RETURN_2026-07-04.md"
+    ],
+    "forbiddenUntilT7Closure": [
+      "T8",
+      "T9",
+      "T10",
+      "MinerU runtime execution",
+      "private or generated content read",
+      "Candidate Group A import",
+      "memory/RAG write",
+      "provider/live proof",
+      "public-sync",
+      "checker or hook edits",
+      "standalone app",
+      "legal/use-case deep dive",
+      "production workflow claim",
+      "worker stage",
+      "worker commit",
+      "push"
+    ],
+    "verification": [
+      "dispatch-quality PASS",
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T7 dispatch authorizes only no-commit deterministic local source/test implementation for quality-report/source-pointer metadata production in the named Extraction Foundation receipt writer source/test files plus worker return. It does not authorize MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG release, provider/live proof, public-sync, checker/hook edits, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker stage/commit, or push."
+  }
+}

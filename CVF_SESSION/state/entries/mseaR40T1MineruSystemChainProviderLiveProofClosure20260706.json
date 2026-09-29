@@ -1,0 +1,27 @@
+{
+  "stateOrder": 567,
+  "stateKey": "mseaR40T1MineruSystemChainProviderLiveProofClosure20260706",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "513a41c66",
+    "materialCommitFull": "513a41c66b44be4e151dee1cedec62c8c738d58b",
+    "closureBaseHead": "1b9df6ff0",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_WORKER_RETURN_2026-07-06.md",
+    "completionReviewPath": "docs/reviews/CVF_MSEA_R40_T1_MINERU_SYSTEM_CHAIN_PROVIDER_LIVE_PROOF_COMPLETION_2026-07-06.md",
+    "liveTestPath": "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-system-chain-live.alibaba.test.ts",
+    "selectedDisposition": "R40_T1_PROVIDER_LIVE_PROOF_COMPLETE_BOUNDED_PRIVATE",
+    "verification": [
+      "worker-return fast gate PASS after handoff marker sync",
+      "pre-implementation autorun PASS 75/75",
+      "deterministic MinerU Vitest set PASS 5 files / 73 tests",
+      "Python MinerU metadata receipt writer tests PASS 71 tests",
+      "focused live Alibaba/DashScope Vitest PASS 1 file / 1 test",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "SELECT_NEXT_ROADMAP_OR_STOP_NO_USE_CASE_DRIFT",
+    "claimBoundary": "R40-T1 closes only the bounded provider/live proof lane for the current MinerU summary-only system-chain foundation. It does not authorize MinerU runtime execution, private/generated output content reads, production Memory/RAG route release, production durable-store invocation, file-backed production persistence, retrieval, vectorization, public-sync, use-case/legal workflow, extraction-truth claims, current-law claims, hosted readiness, production readiness, worker commit, push, or public claim."
+  }
+}

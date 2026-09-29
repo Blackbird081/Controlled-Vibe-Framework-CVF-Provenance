@@ -1,0 +1,19 @@
+{
+  "stateOrder": 686,
+  "stateKey": "mseaR5MineruDeepDocumentLayerScanAbsorptionDispatch20260702",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "7bb7b509",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_ABSORPTION_2026-07-02.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_ABSORPTION_2026-07-02.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_ABSORPTION_WORKER_RETURN_2026-07-02.md",
+    "ownerSurfaceDelta": "docs/reference/CVF_MSEA_R5_MINERU_DEEP_DOCUMENT_LAYER_SCAN_OWNER_SURFACE_DELTA_2026-07-02.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamRepository": "https://github.com/opendatalab/MinerU.git",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "targetSubsetCount": 373,
+    "summary": "MSEA-R5 dispatch authorizes a no-commit worker to deeply absorb the MinerU docs, non-CLI mineru internals, and Docker content left partial by MSEA-R4. Runtime/provider/live/source-import/package/public/Web/MCP/model-router/action-authority/production claims remain forbidden."
+  }
+}

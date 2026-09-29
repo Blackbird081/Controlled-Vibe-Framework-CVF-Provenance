@@ -33,6 +33,7 @@
   ],
   "useWhen": "A dispatcher or reviewer must verify that a work-order and baseline pair satisfy all dispatch-quality gates before worker execution.",
   "doNotUseWhen": "Worker execution is already in progress; do not re-validate mid-execution. Do not use as a substitute for the full pre-implementation autorun gate.",
+  "riskTriggers": [],
   "roles": [
     "dispatcher",
     "reviewer"

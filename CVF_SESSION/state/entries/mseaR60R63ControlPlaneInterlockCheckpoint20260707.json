@@ -1,0 +1,46 @@
+{
+  "stateOrder": 912,
+  "stateKey": "mseaR60R63ControlPlaneInterlockCheckpoint20260707",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "f7e9d36d2",
+    "materialCommitFull": "f7e9d36d2dbfc5babedf4ede7d579c2005c7b7d5",
+    "r60ReviewPath": "docs/reviews/CVF_MSEA_R60_PUSH_CONTINUITY_POSTURE_RECONCILIATION_2026-07-07.md",
+    "r61ReviewPath": "docs/reviews/CVF_MSEA_R61_PLANE_CONSUMER_TARGET_SELECTION_2026-07-07.md",
+    "r62ReviewPath": "docs/reviews/CVF_MSEA_R62_CONTROL_PLANE_INTERLOCK_READINESS_2026-07-07.md",
+    "r63ReviewPath": "docs/reviews/CVF_MSEA_R63_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_PACKET_2026-07-07.md",
+    "interlockReferencePath": "docs/reference/CVF_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_2026-07-07.md",
+    "selectedR60Disposition": "R60_PROVENANCE_PUSH_POSTURE_RECONCILED_REMOTE_CURRENT",
+    "selectedR61Disposition": "R61_SELECT_CONTROL_PLANE_CONSUMER_FOR_FOUNDATION_IO_CONTRACT",
+    "selectedR62Disposition": "R62_READY_FOR_DOCS_ONLY_CONTROL_PLANE_INTERLOCK_REFERENCE",
+    "selectedR63Disposition": "R63_FOUNDATION_TO_CONTROL_PLANE_INTERLOCK_REFERENCE_ADDED_RUNTIME_HELD",
+    "verification": [
+      "pre-implementation autorun PASS 75/75 on 0ddf326ac..HEAD before material commit",
+      "reviewer-return commit steward PASS on 0ddf326ac..HEAD",
+      "material pre-commit hook PASS 80/80",
+      "R60 verified local HEAD and remote tracking branch both resolved to 0ddf326ac before R60-R63 material authoring"
+    ],
+    "boundedDecisionFacts": {
+      "provenancePushPostureReconciledAtBatchStart": true,
+      "controlPlaneConsumerSelected": true,
+      "controlPlaneInterlockReferenceReady": true,
+      "controlPlaneInterlockReferenceAdded": true,
+      "runtimeImplementationAuthorized": false,
+      "checkerImplementationAuthorized": false,
+      "publicSyncAuthorized": false,
+      "sourceOrTestEditAuthorized": false,
+      "runtimeProviderMcpProofAuthorized": false,
+      "productionMemoryRagReleased": false,
+      "rawMemoryReleased": false,
+      "privateOutputContentReadAuthorized": false,
+      "retrievalReleased": false,
+      "vectorizationReleased": false,
+      "p3Reopened": false,
+      "useCaseLegalWorkflowOpened": false,
+      "publicClaimAuthorized": false
+    },
+    "nextAllowedMove": "Stop/checkpoint unless the operator selects a fresh source-verified target. Future runtime wiring, checker work, public-safe export, or concrete adapter work requires a fresh source-verified packet.",
+    "claimBoundary": "R60/R63 closes only a private provenance docs/reference checkpoint. It reconciles pre-batch push posture, selects the Governance Control Plane as the consumer/checkpoint target, records docs-only interlock readiness, and adds a reusable foundation-to-Control-Plane interlock reference. It does not authorize implementation, checker work, source/test edit, runtime/provider proof, production Memory/RAG release, public-sync mutation, retrieval/vectorization, P3 reopen, external source import, private/generated MinerU output read, use-case/legal workflow, public claim, or downstream release."
+  }
+}

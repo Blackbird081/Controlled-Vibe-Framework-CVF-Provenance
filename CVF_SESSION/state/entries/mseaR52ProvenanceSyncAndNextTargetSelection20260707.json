@@ -1,0 +1,40 @@
+{
+  "stateOrder": 1494,
+  "stateKey": "mseaR52ProvenanceSyncAndNextTargetSelection20260707",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "18f177033",
+    "materialCommitFull": "18f17703332214e16438a58379902578a2f8d794",
+    "reviewPath": "docs/reviews/CVF_MSEA_R52_PROVENANCE_SYNC_AND_NEXT_TARGET_SELECTION_PACKET_2026-07-07.md",
+    "registrySidecarPath": "governance/compat/CVF_ROOT_FILE_EXPOSURE_REGISTRY.json",
+    "selectedDisposition": "R52_SELECT_PLANE_ABSORB_REPO_TARGET_DISCOVERY_AND_READINESS_DECISION",
+    "selectedNextTarget": "MSEA-R53 Plane/Absorb Repo Target Discovery And Readiness Decision",
+    "prePushHygieneDisposition": "R52_PROVENANCE_PUSH_HYGIENE_ACTIVE_HANDOFF_ROOT_FILE_CLASSIFIED_INTERNAL_ONLY",
+    "verification": [
+      "focused structural/read-ahead/public-export/ADIF/P3 gates PASS",
+      "focused external/delta/corpus/rescan/F2G/AOT/epistemic/machine-closure gates PASS",
+      "pre-implementation autorun PASS 75/75 on 0a545b1b5..HEAD",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "boundedTargetSelectionFacts": {
+      "mineruFoundationLaneStopped": true,
+      "r51PublicSafeSnapshotAlreadyExported": true,
+      "nextTargetSelected": true,
+      "selectedTargetIsDiscoveryOnly": true,
+      "activeRootHandoffClassifiedInternalOnly": true,
+      "externalSourceAbsorptionAuthorized": false,
+      "sourceOrTestEditAuthorized": false,
+      "runtimeProviderMcpProofAuthorized": false,
+      "productionMemoryRagReleased": false,
+      "additionalPublicSyncAuthorized": false,
+      "privateOutputContentReadAuthorized": false,
+      "retrievalReleased": false,
+      "vectorizationReleased": false,
+      "useCaseLegalWorkflowOpened": false
+    },
+    "nextAllowedMove": "Author a fresh source-verified MSEA-R53 Plane/Absorb Repo Target Discovery And Readiness Decision packet. R53 is docs-only target discovery/readiness: it may enumerate candidate plane/absorb repositories or owner surfaces and select exactly one target or stop. It must not edit source/tests, import external source, run runtime/provider/MCP proof, mutate public-sync, read private/generated MinerU output, release production Memory/RAG, perform retrieval/vectorization, open use-case/legal workflow, or claim public/hosted/production readiness.",
+    "claimBoundary": "R52 closes only a bounded private provenance target-selection and push-hygiene packet. It selects MSEA-R53 Plane/Absorb Repo Target Discovery And Readiness Decision as the next target class and classifies the active root handoff file as internal-only for pre-push readiness. It does not authorize implementation, external absorption, source/test edit, runtime/provider/MCP proof, production Memory/RAG release, public-sync, private/generated MinerU output read, retrieval, vectorization, use-case/legal workflow, provider-local config edit, or public claim."
+  }
+}

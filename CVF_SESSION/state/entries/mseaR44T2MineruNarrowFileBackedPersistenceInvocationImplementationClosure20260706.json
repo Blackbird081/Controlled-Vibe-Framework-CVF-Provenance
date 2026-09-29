@@ -1,0 +1,30 @@
+{
+  "stateOrder": 642,
+  "stateKey": "mseaR44T2MineruNarrowFileBackedPersistenceInvocationImplementationClosure20260706",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "8004f30c6",
+    "materialCommitFull": "8004f30c68a3e27d6fc28a92e055cada9455c78f",
+    "dispatchCommit": "790f59ad2",
+    "dispatchCommitFull": "790f59ad2297df022a7921681f6e2e67c4370266",
+    "sessionSyncAfterDispatch": "30ad5afa7",
+    "executionBaseHead": "30ad5afa7",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R44_T2_MINERU_NARROW_FILE_BACKED_PERSISTENCE_INVOCATION_IMPLEMENTATION_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R44_T2_MINERU_NARROW_FILE_BACKED_PERSISTENCE_INVOCATION_IMPLEMENTATION_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R44_T2_MINERU_NARROW_FILE_BACKED_PERSISTENCE_INVOCATION_IMPLEMENTATION_WORKER_RETURN_2026-07-06.md",
+    "sourcePath": "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-system-chain-route-candidate.ts",
+    "testPath": "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-system-chain-route-candidate.test.ts",
+    "selectedDisposition": "R44_T2_NARROW_FILE_BACKED_PERSISTENCE_INVOCATION_IMPLEMENTATION_ACCEPTED_BOUNDED",
+    "reviewerDecision": "ACCEPTED_FOR_MATERIAL_COMMIT",
+    "verification": [
+      "focused Vitest PASS 1 file / 21 tests",
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75 on 30ad5afa7..HEAD",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "SELECT_NEXT_ROADMAP_OR_AUTHOR_FRESH_POST_R44_RELEASE_OR_STOP_DECISION_PACKET",
+    "claimBoundary": "R44-T2 accepts only bounded route-candidate source/test behavior. It widens file-backed mode under explicit request and OPERATOR/GOVERNOR actor-role authority while preserving productionRouteAuthorized=false and the T25 held token. It does not authorize MinerU runtime execution, private/generated output read, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, provider-local or IDE config edits, worker commit, push, or public claim."
+  }
+}

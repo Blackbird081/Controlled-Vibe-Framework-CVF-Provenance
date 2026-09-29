@@ -1,0 +1,41 @@
+{
+  "stateOrder": 1347,
+  "stateKey": "sksotT1SkillTruthPacketFoundationClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "c2278349",
+    "materialCommitFull": "c2278349e3d0e7379e3752635d73df4851fb5dd8",
+    "standard": "docs/reference/agent_system_skills/CVF_SKILL_SOURCE_OF_TRUTH_PACKET_STANDARD.md",
+    "baseline": "docs/baselines/CVF_GC018_SKSOT_T1_SKILL_TRUTH_PACKET_FOUNDATION_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SKSOT_T1_SKILL_TRUTH_PACKET_FOUNDATION_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_SKSOT_T1_SKILL_TRUTH_PACKET_FOUNDATION_COMPLETION_2026-06-30.md",
+    "packetSourceLayout": "docs/reference/agent_system_skills/truth/packets/",
+    "generatedTruthIndex": "docs/reference/agent_system_skills/truth/generated/skill-truth-index.json",
+    "checker": "governance/compat/check_skill_truth_packets.py",
+    "tests": "governance/compat/test_check_skill_truth_packets.py",
+    "catalogWiring": [
+      "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+      "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "governance/compat/agent_autorun_command_catalog.py"
+    ],
+    "verification": [
+      "unit test PASS 6/6",
+      "skill truth packet checker PASS on 291788b6..c2278349",
+      "external provider skill usage trace checker PASS on 291788b6..c2278349",
+      "reviewer-fast PASS 48/48 before material commit",
+      "pre-commit PASS 68/68 before material commit"
+    ],
+    "truthPacketCount": 6,
+    "runtimeEligiblePackageRoots": [
+      "cvf-engineering-code-review-quality",
+      "cvf-engineering-debugging-error-recovery",
+      "cvf-engineering-planning-task-breakdown",
+      "cvf-engineering-security-hardening",
+      "cvf-engineering-spec-driven-development",
+      "cvf-engineering-test-driven-development"
+    ],
+    "nextAllowedMove": "operator may choose a Skill Control Plane inventory/reconciliation tranche over truth packets and ASSF registry, another provider-skill governance tranche, another bounded package lifecycle promotion tranche, an explicitly scoped remaining-package batch, or a separate ACTIVE resolver/CLI-MCP adapter tranche through fresh GC-018/source-verified work order",
+    "liveProofDisposition": "NOT_RUN_WITH_REASON: no provider, model, API, governance behavior, or live service claim is made",
+    "claimBoundary": "no package lifecycle mutation, no automatic package activation, no resolver mutation, no CLI/MCP adapter, no provider/live proof, no public-sync, no direct import, no merge authority, no commit authority, and no production-readiness claim"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "stateOrder": 1413,
+  "stateKey": "mseaR18T1MineruCandidateGroupALocalExtractionPilotPlanClosure20260703",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "d40e21c8",
+    "materialCommitFull": "d40e21c84cb1c664bda3356193793aeecf1e6abc",
+    "dispatchCommit": "fb42439d",
+    "sessionSyncAfterDispatch": "75243246",
+    "executionBaseHead": "75243246",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_SELECTION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R18_T1_MINERU_CANDIDATE_GROUP_A_LOCAL_EXTRACTION_PILOT_PLAN_AND_RECEIPT_READINESS_MATRIX_2026-07-03.md",
+    "reviewerDisposition": "ACCEPTED_FOR_MATERIAL_COMMIT",
+    "selectedRouteToken": "HOLD_RUNTIME_PENDING_ENVIRONMENT_OR_MODEL_PLAN",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 74/74",
+      "reviewer-return steward preflight PASS including reviewer-fast 59/59",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Author a fresh GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order or roadmap for MinerU local extraction environment/model lifecycle/local temporary service teardown planning if the operator chooses to continue toward a runtime pilot.",
+    "claimBoundary": "Closed bounded planning and route-selection acceptance only. The selected route keeps runtime held pending environment/model/local-service planning. No MinerU runtime/install/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, corpus population, source document copy/import, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, RAG/S3, schema/writer/adapter/checker implementation, source import, package activation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, or workflow-chain completion claim is authorized."
+  }
+}

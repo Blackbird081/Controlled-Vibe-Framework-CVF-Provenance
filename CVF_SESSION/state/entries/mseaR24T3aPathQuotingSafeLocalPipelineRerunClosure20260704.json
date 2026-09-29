@@ -1,0 +1,29 @@
+{
+  "stateOrder": 1427,
+  "stateKey": "mseaR24T3aPathQuotingSafeLocalPipelineRerunClosure20260704",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-04",
+    "materialCommit": "04b99044",
+    "materialCommitFull": "04b990449f694b8a82c023587f35b043739b0e63",
+    "dispatchCommit": "1f169c74",
+    "executionBaseHead": "141ea37d",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_WORKER_RETURN_2026-07-04.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R24_T3A_MINERU_PATH_QUOTING_SAFE_LOCAL_PIPELINE_RERUN_READINESS_MATRIX_2026-07-04.md",
+    "selectedResultToken": "SMOKE_PASS_BOUNDED",
+    "runtimeSmokeReceiptDisposition": "SMOKE_RECEIPT_PRESENT_METADATA_ONLY",
+    "commandAttemptCount": 1,
+    "commandExitCode": 0,
+    "commandDurationSeconds": 25.465,
+    "outputFileCount": 6,
+    "t4ReleaseDisposition": "RELEASE_T4_WORK_ORDER_AUTHORING_ONLY",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 74/74",
+      "reviewer-return steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Author fresh MSEA-R24-T4 GC-018 baseline and source-verified work order for workflow-chain receipt policy and private output handling only.",
+    "claimBoundary": "T3A smoke receipt closure only. The accepted evidence records one successful local MinerU CLI pipeline smoke with metadata-only ignored runtime output inventory and no lingering process. It does not claim extraction accuracy, document truth, legal advice quality, current-law correctness, workflow-chain completion, public-sync, provider/live proof, production readiness, stage or commit by worker, or push."
+  }
+}

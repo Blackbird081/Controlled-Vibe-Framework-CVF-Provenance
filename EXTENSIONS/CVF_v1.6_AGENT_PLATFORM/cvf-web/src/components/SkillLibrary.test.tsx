@@ -208,4 +208,19 @@ describe('SkillLibrary', () => {
             expect(screen.getByText('Adapter: DEFERRED_WITH_REASON')).toBeTruthy();
         });
     });
+
+    it('renders runtime package projection metadata from the Skill Control Plane', async () => {
+        render(<SkillLibrary />);
+        await waitFor(() => expect(screen.getByText('CVF Engineering API And Interface Design')).toBeTruthy());
+
+        fireEvent.click(screen.getByText('CVF Engineering API And Interface Design'));
+
+        await waitFor(() => {
+            expect(screen.getByText('Runtime package')).toBeTruthy();
+            expect(screen.getByText('Runtime eligible: YES')).toBeTruthy();
+            expect(screen.getByText('Activation: ACTIVATION_READY')).toBeTruthy();
+            expect(screen.getByText('Domain: api-interface-design')).toBeTruthy();
+            expect(screen.getByText('Adapter: IMPLEMENTED')).toBeTruthy();
+        });
+    });
 });

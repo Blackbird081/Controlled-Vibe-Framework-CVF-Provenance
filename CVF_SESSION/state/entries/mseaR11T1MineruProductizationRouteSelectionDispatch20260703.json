@@ -1,0 +1,37 @@
+{
+  "stateOrder": 1385,
+  "stateKey": "mseaR11T1MineruProductizationRouteSelectionDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "3e5f54ce",
+    "materialCommitFull": "3e5f54ce1fdd3e267fd1567bcb242a30c412e759",
+    "dispatchBaseHead": "8f73e469",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_DECISION_MATRIX_2026-07-03.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamRepository": "https://github.com/opendatalab/MinerU.git",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "adifDisclosure": "NONE_RETURNED",
+    "preDispatchGate": "PASS 72/72",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "allowedSelectedRouteTokens": [
+      "OPEN_SAMPLE_CORPUS_AND_EXPECTED_RECEIPT_POLICY_ROADMAP",
+      "OPEN_RECEIPT_SCHEMA_IMPLEMENTATION_ROADMAP",
+      "OPEN_RECEIPT_WRITER_CODE_ROADMAP",
+      "OPEN_LOCAL_PARSER_RUNTIME_PILOT_ROADMAP",
+      "OPEN_RAG_HANDOFF_ADAPTER_ROADMAP",
+      "OPEN_PROVIDER_OR_S3_BOUNDARY_ROADMAP",
+      "OPEN_DOCKER_PACKAGE_LANE_ROADMAP",
+      "OPEN_OVERCLAIM_CHECKER_ROADMAP",
+      "HOLD_ALL_PRODUCTIZATION_LANES"
+    ],
+    "dispatcherRecommendation": "Bias toward OPEN_SAMPLE_CORPUS_AND_EXPECTED_RECEIPT_POLICY_ROADMAP if worker evidence confirms schema/writer/runtime/RAG routes need a concrete input corpus and expected receipt policy first.",
+    "claimBoundary": "No worker execution by dispatcher and no MinerU install/runtime, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, schema implementation, receipt-writer code, adapter implementation, production-readiness claim, worker commit/stage/push, or session-sync edit is authorized for the worker."
+  }
+}

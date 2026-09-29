@@ -1,0 +1,30 @@
+{
+  "stateOrder": 552,
+  "stateKey": "mseaR34T2MineruFoundationLaneStopOrNarrowReleaseDecisionDispatch20260705",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-05",
+    "materialCommit": "de19d6891",
+    "materialCommitFull": "de19d6891dddee85bc3471ac157eabf837342213",
+    "dispatchBaseHead": "737f92d34",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R34_T2_MINERU_FOUNDATION_LANE_STOP_OR_NARROW_RELEASE_DECISION_2026-07-05.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R34_T2_MINERU_FOUNDATION_LANE_STOP_OR_NARROW_RELEASE_DECISION_2026-07-05.md",
+    "allowedWorkerPaths": [
+      "docs/reference/CVF_MSEA_R34_T2_MINERU_FOUNDATION_LANE_STOP_OR_NARROW_RELEASE_DECISION_MATRIX_2026-07-05.md",
+      "docs/reviews/CVF_MSEA_R34_T2_MINERU_FOUNDATION_LANE_STOP_OR_NARROW_RELEASE_DECISION_WORKER_RETURN_2026-07-05.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchDisposition": "R34_T2_STOP_OR_NARROW_RELEASE_DECISION_DISPATCH_READY",
+    "allowedDecisionDispositions": [
+      "MINERU_FOUNDATION_PLANE_STOP_HERE_PENDING_OPERATOR_NEW_INITIATIVE",
+      "MINERU_NARROW_RELEASE_PROOF_LANE_WORK_ORDER_AUTHORING_READY"
+    ],
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "EXECUTE_MSEA_R34_T2_NO_COMMIT_DOCS_ONLY_DECISION_WORKER",
+    "claimBoundary": "R34-T2 dispatch authored and accepted a source-verified GC-018 baseline and WORKER_MUST_NOT_COMMIT work order for a docs-only stop-or-one-narrow-release-lane decision. It authorizes only the named decision matrix and worker return. It does not authorize production memory/RAG route release, live Python process invocation, file-based Python output consumption, MinerU runtime execution, private/generated output content read, production durable-store invocation, file-backed production persistence, retrieval, vectorization, provider/live proof, public-sync, Web/UI, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted readiness, production readiness, source/test edits, provider-local or IDE config edits, worker stage, worker commit, or push."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "stateOrder": 1342,
+  "stateKey": "agskR3PackageRootsClosure20260629",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "4003289a",
+    "baseline": "docs/baselines/CVF_GC018_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_2026-06-29.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_FOR_WORKER_2026-06-29.md",
+    "workerReturn": "docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md",
+    "result": "24 AGSK-R2 metadata-only candidates converted into 24 PROPOSED ASSF package roots with regenerated generated index",
+    "claimBoundary": "package-root proposal and metadata lifecycle source-state only; no UAT, certification, ACTIVE state, resolver mutation, provider/live proof, CLI/MCP adapter, public-sync, or production-readiness"
+  }
+}

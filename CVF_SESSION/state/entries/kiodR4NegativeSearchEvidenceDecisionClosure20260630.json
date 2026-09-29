@@ -1,0 +1,31 @@
+{
+  "stateOrder": 715,
+  "stateKey": "kiodR4NegativeSearchEvidenceDecisionClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "0416843c",
+    "materialCommitFull": "0416843cd1a9891db92b0724afdf90573e33caee",
+    "baseHead": "ccb08f09",
+    "dispatchMaterialCommit": "c5f93805",
+    "dispatchSessionSyncCommit": "ccb08f09",
+    "decisionToken": "PACKET_BLOCK_REQUIRED_NOW",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_FOR_CLAUDE_2026-06-30.md",
+    "workerReturn": "docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_COMPLETION_2026-06-30.md",
+    "roadmap": "docs/roadmaps/CVF_KIOD_T0_KNOWLEDGE_INTAKE_OVERLAP_DEDUPLICATION_ROADMAP_2026-06-30.md",
+    "roadmapStatus": "ROADMAP_READY_FOR_KIOD_R5_PACKET_BLOCKED_PILOT",
+    "nextAllowedMove": "AUTHOR_KIOD_R5_GC018_FOR_PACKET_BLOCKED_NEXT_REPO_FOLDER_PILOT",
+    "verification": [
+      "worker-return fast gate PASS",
+      "focused pytest external knowledge intake routing PASS 8/8",
+      "reviewer-fast PASS 53/53",
+      "machine closure package PASS",
+      "work-order dispatch quality PASS",
+      "commit steward reviewer-return PASS",
+      "pre-commit PASS 73/73",
+      "post-commit material pre-closure content gates PASS except expected active-session handoff HEAD drift before this sync"
+    ],
+    "claimBoundary": "Documentation/governance decision closure only. Negative-search evidence is mandatory packet content now; checker implementation is deferred to a future source-verified tranche after pilot evidence defines a machine-parseable shape. No runtime, provider, MCP/CLI adapter, dashboard, public-sync, source import, automatic invocation, action authority, or production-readiness claim."
+  }
+}

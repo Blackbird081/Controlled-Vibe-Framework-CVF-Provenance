@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1420,
+  "stateKey": "mseaR24T2MineruHuggingFaceCacheCompletionRecoveryDispatch20260703",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-03",
+    "materialCommit": "2ed430ba",
+    "materialCommitFull": "2ed430ba",
+    "dispatchBaseHead": "2356c27c",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_2026-07-03.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R24_T2_MINERU_HUGGINGFACE_CACHE_COMPLETION_RECOVERY_READINESS_MATRIX_2026-07-03.md",
+    "selectedRouteToken": "SELECT_HUGGINGFACE_CACHE_RECOVERY",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": [
+      "pre-dispatch autorun PASS 72/72",
+      "dispatch commit steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Execute the T2 worker exactly inside the work order boundary: one HuggingFace pipeline cache-completion command, then uncommitted worker return and readiness matrix.",
+    "claimBoundary": "Dispatch only. The dispatch did not run the cache command, did not create config/cache receipt evidence, did not run runtime smoke, and did not claim parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, document processing, provider/live proof, public-sync, production readiness, stage, commit by worker, or push."
+  }
+}

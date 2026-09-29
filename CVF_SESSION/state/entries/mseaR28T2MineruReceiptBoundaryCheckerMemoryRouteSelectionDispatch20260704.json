@@ -1,0 +1,29 @@
+{
+  "stateOrder": 1434,
+  "stateKey": "mseaR28T2MineruReceiptBoundaryCheckerMemoryRouteSelectionDispatch20260704",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-04",
+    "materialCommit": "5b67c128",
+    "materialCommitFull": "5b67c1283cdca6d7bfecd7dd1aa2dbeaddb5abbd",
+    "dispatchBaseHead": "95734097",
+    "predecessorMaterialCommit": "23177f27",
+    "predecessorSessionSyncCommit": "95734097",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_SELECTION_2026-07-04.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_SELECTION_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_SELECTION_WORKER_RETURN_2026-07-04.md",
+    "companionDecisionMatrixPath": "docs/reference/CVF_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_DECISION_MATRIX_2026-07-04.md",
+    "allowedWorkerPaths": [
+      "docs/reviews/CVF_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_SELECTION_WORKER_RETURN_2026-07-04.md",
+      "docs/reference/CVF_MSEA_R28_T2_MINERU_RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_DECISION_MATRIX_2026-07-04.md"
+    ],
+    "selectedRoute": "RECEIPT_BOUNDARY_CHECKER_AND_MEMORY_ROUTE_RELEASE_SELECTION",
+    "verification": [
+      "pre-dispatch autorun PASS 72/72",
+      "dispatch commit steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Execute the MSEA-R28-T2 worker under WORKER_MUST_NOT_COMMIT, producing only the worker return and companion decision matrix.",
+    "claimBoundary": "R28-T2 dispatch authorizes docs-only route selection and companion decision-matrix authoring. It does not authorize checker implementation or hook wiring, source/test edits, MinerU runtime execution, private document read, generated output content read or quote, Candidate Group A source or generated output import, public-sync, provider/live proof, memory/RAG/S3/Web/MCP/model-router/action-authority implementation, standalone PDF application, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, stage or commit by worker, or push."
+  }
+}

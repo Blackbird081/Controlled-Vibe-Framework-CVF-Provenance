@@ -1,0 +1,23 @@
+{
+  "stateOrder": 1259,
+  "stateKey": "fpcScgT4WorkerReturnFastGateEpistemicFixtureClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "baseline": "docs/baselines/CVF_GC018_FPC_SCG_T4_WORKER_RETURN_FAST_GATE_EPISTEMIC_FIXTURE_2026-06-27.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FPC_SCG_T4_WORKER_RETURN_FAST_GATE_EPISTEMIC_FIXTURE_FOR_CODEX_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_SCG_T4_WORKER_RETURN_FAST_GATE_EPISTEMIC_FIXTURE_COMPLETION_2026-06-27.md",
+    "fastGate": "governance/compat/run_worker_return_fast_gate.py",
+    "focusedTests": "governance/compat/test_run_worker_return_fast_gate.py",
+    "epistemicChecker": "governance/compat/check_epistemic_process_packet.py",
+    "verification": [
+      "pre-commit hook PASS 58/58 at material commit be253923",
+      "focused pytest PASS 18/18 for worker-return fast gate and epistemic checker tests",
+      "worker-return fast gate PASS with epistemic process packet step before reviewer-fast",
+      "pre-implementation commit steward PASS before material commit",
+      "pre-closure content gates PASS except expected session-sync handoff HEAD drift before this sync"
+    ],
+    "nextAllowedMove": "Open a fresh GC-018/source-verified P1 tranche for FPC-SCG-T5 interlock registry expected-chain manifest source verification before any FPC-T3-C03 checker extension.",
+    "claimBoundary": "Static worker-return fast-gate local-governance visibility only. No runtime/provider/live/public/use-case readiness, registry mutation, generated workspace state, resolver, package, certification, DICE runtime expansion, MPI-T6 runtime, or push scope."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "stateOrder": 1340,
+  "stateKey": "agskR2AgentSkillsSourceMirrorBackfillClosure20260629",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "50689173",
+    "review": "docs/reviews/CVF_AGSK_R2_AGENT_SKILLS_SOURCE_MIRROR_FULL_PACKAGE_BACKFILL_2026-06-29.md",
+    "sourceMirror": {
+      "repo": "https://github.com/addyosmani/agent-skills.git",
+      "localPath": ".private_reference/source_mirrors/addyosmani__agent-skills/",
+      "pinnedCommit": "aba7c4e9695c363e65cb59effe926c7f1d1abe3d",
+      "manifestFileCount": 96,
+      "manifestSha256": "0646d46838e34cccc1e8323f24ccc52a40a7a8e4e9bc2e1a27e8c7fba9c6f771"
+    },
+    "assfBackfill": {
+      "upstreamSkillCount": 24,
+      "candidateState": "CANDIDATE",
+      "generatedIndex": "docs/reference/agent_system_skills/generated/skill-index.json",
+      "registryRoot": "docs/reference/agent_system_skills/registry/entries/"
+    },
+    "guardHardening": {
+      "sourceMirrorMigrationChecker": "governance/compat/check_source_mirror_migration.py",
+      "wiredInto": [
+        "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+        "governance/compat/local_governance_hook_catalog_pre_commit.py",
+        "governance/compat/agent_autorun_command_catalog.py"
+      ]
+    },
+    "verification": [
+      "reviewer-fast PASS 46/46",
+      "pre-commit PASS 66/66",
+      "commit steward implementation preflight PASS",
+      "ASSF package candidate anatomy PASS",
+      "generated ASSF index drift check PASS",
+      "source mirror migration guard checked AGSK-R2 review"
+    ],
+    "nextAllowedMove": "operator selects the next external repo/folder absorption target under the source-mirror-backed full-value absorption rule",
+    "claimBoundary": "metadata-only package-candidate backfill and guard discipline only; no runtime activation, package activation, resolver mutation, CLI/MCP adapter, hook execution, provider/live proof, public-sync, direct import, or production-readiness claim"
+  }
+}

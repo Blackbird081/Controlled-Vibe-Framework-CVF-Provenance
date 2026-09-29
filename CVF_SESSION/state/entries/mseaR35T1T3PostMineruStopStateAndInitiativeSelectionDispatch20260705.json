@@ -1,0 +1,29 @@
+{
+  "stateOrder": 555,
+  "stateKey": "mseaR35T1T3PostMineruStopStateAndInitiativeSelectionDispatch20260705",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-05",
+    "materialCommit": "1d42f331",
+    "materialCommitFull": "1d42f3318333b5d54c2816b766f70272f445bc96",
+    "dispatchBaseHead": "f2b8e5611",
+    "roadmapPath": "docs/roadmaps/CVF_MSEA_R35_POST_MINERU_STOP_STATE_AND_INITIATIVE_SELECTION_ROADMAP_2026-07-05.md",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R35_T1_T3_POST_MINERU_STOP_STATE_AND_INITIATIVE_SELECTION_2026-07-05.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R35_T1_T3_POST_MINERU_STOP_STATE_AND_INITIATIVE_SELECTION_2026-07-05.md",
+    "allowedWorkerPaths": [
+      "docs/reference/CVF_MSEA_R35_T1_POST_MINERU_STOP_STATE_AND_INITIATIVE_SELECTION_MATRIX_2026-07-05.md",
+      "docs/reference/CVF_MSEA_R35_T2_CVF_CURRENT_PRODUCT_CAPABILITY_SNAPSHOT_2026-07-05.md",
+      "docs/reference/CVF_MSEA_R35_T3_NEXT_INITIATIVE_CANDIDATE_RANKING_2026-07-05.md",
+      "docs/reviews/CVF_MSEA_R35_T1_T3_POST_MINERU_STOP_STATE_AND_INITIATIVE_SELECTION_WORKER_RETURN_2026-07-05.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchDisposition": "R35_POST_MINERU_STOP_STATE_CONSOLIDATION_AND_RANKING_AUTHORIZED_BOUNDED",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "EXECUTE_MSEA_R35_NO_COMMIT_DOCS_ONLY_WORKER",
+    "claimBoundary": "R35 dispatch authored and accepted a docs-only roadmap, GC-018 baseline, and WORKER_MUST_NOT_COMMIT work order for post-MinerU stop-state consolidation, capability snapshot refresh, and next-initiative candidate ranking. It authorizes only the named T1, T2, T3 reference artifacts and worker return. It does not authorize selecting a next initiative, production memory/RAG route release, live Python process invocation, file-based Python output consumption, MinerU runtime execution, private/generated output content read, production durable-store invocation, file-backed production persistence, retrieval, vectorization, provider/live proof, public-sync, Web/UI, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted readiness, production readiness, source/test edits, existing capability-inventory edits, provider-local or IDE config edits, worker stage, worker commit, or push."
+  }
+}

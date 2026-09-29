@@ -1,0 +1,31 @@
+{
+  "stateOrder": 1436,
+  "stateKey": "mseaR28T3MineruReceiptBoundaryCheckerCandidateDesignDispatch20260704",
+  "value": {
+    "status": "DISPATCH_READY_PENDING_WORKER_RETURN",
+    "date": "2026-07-04",
+    "materialCommit": "0567257f",
+    "materialCommitFull": "0567257fabfef29e2febb26b90f4a7859ac7aee5",
+    "dispatchBaseHead": "606043f5",
+    "predecessorMaterialCommit": "3e230445",
+    "predecessorSessionSyncCommit": "606043f5",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_2026-07-04.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_WORKER_RETURN_2026-07-04.md",
+    "companionDesignMatrixPath": "docs/reference/CVF_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_MATRIX_2026-07-04.md",
+    "allowedWorkerPaths": [
+      "docs/reviews/CVF_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_WORKER_RETURN_2026-07-04.md",
+      "docs/reference/CVF_MSEA_R28_T3_MINERU_RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_MATRIX_2026-07-04.md"
+    ],
+    "selectedRoute": "RECEIPT_BOUNDARY_CHECKER_CANDIDATE_DESIGN_ONLY",
+    "downstreamImplementationDisposition": "CHECKER_IMPLEMENTATION_HELD_PENDING_ACCEPTED_DESIGN",
+    "memoryRouteDisposition": "MEMORY_ROUTE_HELD_PENDING_ACTUAL_CHECKER_AND_QUALITY",
+    "verification": [
+      "pre-dispatch autorun PASS 72/72",
+      "dispatch commit steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Execute the MSEA-R28-T3 worker under WORKER_MUST_NOT_COMMIT, producing only the worker return and companion checker-candidate design matrix.",
+    "claimBoundary": "R28-T3 dispatch authorizes docs-only checker-candidate design and companion matrix authoring. It does not authorize checker implementation or hook wiring, source/test edits, MinerU runtime execution, private document read, generated output content read or quote, Candidate Group A source or generated output import, public-sync, provider/live proof, memory/RAG/S3/Web/MCP/model-router/action-authority implementation, standalone PDF application, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, stage or commit by worker, or push."
+  }
+}

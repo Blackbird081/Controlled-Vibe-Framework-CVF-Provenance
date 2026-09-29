@@ -1,0 +1,13 @@
+{
+  "stateOrder": 659,
+  "stateKey": "mseaR20T1MineruModelCacheLocalSourceTeardownPrepClosure20260703",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "df5b71fa",
+    "workerReturn": "docs/reviews/CVF_MSEA_R20_T1_MINERU_MODEL_CACHE_LOCAL_SOURCE_AND_TEARDOWN_PREP_WORKER_RETURN_2026-07-03.md",
+    "companionReference": "docs/reference/CVF_MSEA_R20_T1_MINERU_MODEL_CACHE_LOCAL_SOURCE_AND_TEARDOWN_PREP_READINESS_MATRIX_2026-07-03.md",
+    "selectedRouteToken": "HOLD_PENDING_OPERATOR_MODEL_SOURCE_CHOICE",
+    "nextAllowedMove": "Operator chooses local model path/cache proof, modelscope download permission, huggingface download permission, explicit auto/config write-back authorization, or runtime defer before any MinerU runtime smoke work order.",
+    "claimBoundary": "No MinerU install/import/model download/parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, local temporary service startup, provider/live proof, document body read, extraction outputs, public-sync, schema/writer/checker/adapter/source-import/package/Web/MCP/model-router/action-authority/benchmark/document-truth/extraction-accuracy/legal-advice-quality/current-law-correctness/production/workflow-chain claim."
+  }
+}

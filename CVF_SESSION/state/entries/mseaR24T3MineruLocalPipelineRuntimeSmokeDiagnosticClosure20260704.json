@@ -1,0 +1,30 @@
+{
+  "stateOrder": 1425,
+  "stateKey": "mseaR24T3MineruLocalPipelineRuntimeSmokeDiagnosticClosure20260704",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-04",
+    "materialCommit": "4fe1b044",
+    "materialCommitFull": "4fe1b044099839ee8fd3f474c4cc707eb3ae8060",
+    "dispatchCommit": "2fa47915",
+    "executionBaseHead": "dcb31ace",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R24_T3_MINERU_LOCAL_PIPELINE_RUNTIME_SMOKE_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R24_T3_MINERU_LOCAL_PIPELINE_RUNTIME_SMOKE_READINESS_MATRIX_2026-07-03.md",
+    "selectedRouteToken": "SMOKE_FAIL_DIAGNOSTIC_RECORDED",
+    "runtimeSmokeReceiptDisposition": "DIAGNOSTIC_RECORDED_NO_OUTPUT_RECEIPT",
+    "commandAttemptCount": 1,
+    "commandExitCode": 2,
+    "commandDurationSeconds": 4.294,
+    "diagnosticClass": "LOCAL_INVOCATION_ARGUMENT_QUOTING",
+    "diagnosticStage": "CLI_ARGUMENT_VALIDATION",
+    "t4ReleaseDisposition": "NOT_RELEASED_WITH_REASON",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 74/74",
+      "reviewer-return steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Author fresh MSEA-R24-T3A GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for one path-quoting-safe local MinerU pipeline rerun, if continuing. T4 remains held until a successful smoke receipt exists.",
+    "claimBoundary": "T3 diagnostic closure only. The accepted evidence records one failed local invocation diagnostic before document processing, no output directory, and no lingering MinerU/API process. It does not claim successful runtime smoke, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, extraction output, extraction accuracy, legal advice quality, current-law correctness, provider/live proof, public-sync, workflow-chain completion, production readiness, stage or commit by worker, or push."
+  }
+}

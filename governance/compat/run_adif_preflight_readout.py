@@ -13,7 +13,9 @@ understood it.
 
 from __future__ import annotations
 
+import argparse
 import importlib.util
+import json
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -122,3 +124,44 @@ def build_preflight_readout(
             "or acted on the listed entries."
         ),
     )
+
+
+def _build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="Build a bounded human-readable ADIF preflight readout."
+    )
+    parser.add_argument("--task-class", default=None, help="Optional task class filter")
+    parser.add_argument("--role", default=None, help="Optional role filter")
+    parser.add_argument("--lifecycle-phase", default=None, help="Optional lifecycle phase filter")
+    parser.add_argument("--surface-selector", default=None, help="Optional surface selector substring")
+    parser.add_argument("--risk-ceiling", default=None, help="Optional LOW, MEDIUM, or HIGH ceiling")
+    parser.add_argument("--max-results", type=int, default=5)
+    parser.add_argument("--json", action="store_true", help="Print JSON output")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = _build_parser()
+    args = parser.parse_args(argv)
+    try:
+        readout = build_preflight_readout(
+            task_class=args.task_class,
+            role=args.role,
+            lifecycle_phase=args.lifecycle_phase,
+            surface_selector=args.surface_selector,
+            risk_ceiling=args.risk_ceiling,
+            max_results=args.max_results,
+        )
+    except ValueError as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
+
+    if args.json:
+        print(json.dumps(readout.to_dict(), indent=2, ensure_ascii=False))
+    else:
+        print(readout.to_human_text())
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

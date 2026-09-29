@@ -1,0 +1,35 @@
+{
+  "stateOrder": 1343,
+  "stateKey": "agskR5RuntimeEligibilityAuditClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "3a742e6e",
+    "baseline": "docs/baselines/CVF_GC018_AGSK_R5_RUNTIME_ELIGIBILITY_AUDIT_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSK_R5_RUNTIME_ELIGIBILITY_AUDIT_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_AGSK_R5_RUNTIME_ELIGIBILITY_AUDIT_COMPLETION_2026-06-30.md",
+    "helper": "governance/compat/run_assf_runtime_eligibility_audit.py",
+    "tests": "governance/compat/test_run_assf_runtime_eligibility_audit.py",
+    "verification": [
+      "focused unittest PASS 3/3",
+      "loader regression unittest PASS 7/7",
+      "real-index package-root audit reports 24 package roots, 0 runtime eligible",
+      "real-index all-record audit reports 32 ASSF records, 0 runtime eligible",
+      "reviewer-fast PASS 46/46",
+      "commit steward reviewer-return PASS",
+      "pre-commit PASS 66/66"
+    ],
+    "auditResult": {
+      "totalAssfRecords": 32,
+      "packageRootRecords": 24,
+      "runtimeEligiblePackageRoots": 0,
+      "blockedPackageRoots": 24,
+      "packageRootStatus": "PROPOSED=24",
+      "packageRootUatState": "NOT_STARTED=24",
+      "packageRootCertificationState": "NOT_STARTED=24",
+      "packageRootInternalAgentDisposition": "CANDIDATE=24"
+    },
+    "runtimeBoundary": "bounded internal no-body metadata audit summary only",
+    "nextAllowedMove": "operator may select a bounded package lifecycle promotion tranche for explicit UAT, certification, and internalAgentDisposition evidence, preferably a pilot package or explicitly scoped batch",
+    "claimBoundary": "no automatic package activation, no resolver mutation, no CLI/MCP adapter, no provider/live proof, no public-sync, no direct import, and no production-readiness claim"
+  }
+}

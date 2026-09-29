@@ -28,6 +28,7 @@
   ],
   "useWhen": "A worker has completed all required in-scope deliverables and must produce a return packet for reviewer acceptance before any commit.",
   "doNotUseWhen": "Implementation is not yet complete; stop conditions require BLOCKED_WITH_REASON; reviewer closure or commit is already in progress.",
+  "riskTriggers": [],
   "roles": [
     "worker"
   ],

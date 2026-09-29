@@ -1,0 +1,30 @@
+{
+  "stateOrder": 1362,
+  "stateKey": "kiodR9MemoryLedgerSchemaBoundaryClosure20260701",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-01",
+    "materialCommit": "6ed7f257",
+    "materialCommitFull": "6ed7f257839c3d2b43a7c66358f805325acc4f7f",
+    "dispatchCommit": "063b9001",
+    "dispatchCommitFull": "063b900144fd471f2631fedfcc9f5f81dd80b2aa",
+    "dispatchBaseHead": "72881d3a",
+    "executionBaseHead": "90df5b7c",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_2026-07-01.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_2026-07-01.md",
+    "workerReturn": "docs/reviews/CVF_KIOD_R9_MEMORY_LEDGER_SCHEMA_BOUNDARY_WORKER_RETURN_2026-07-01.md",
+    "reference": "docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_LEDGER_SCHEMA_BOUNDARY.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "closureSummary": "Reviewer accepted and repaired the KIOD-R9 no-commit worker return, added the bounded CVF-native memory ledger schema boundary reference for C-file05, and closed the tranche as documentation-only memory-foundation enrichment.",
+    "reviewerRepairs": [
+      "Narrowed reference prose so rejected source table/path/SQL-shaped details are not reproduced in value-conversion and overlap rows.",
+      "Added a Mandatory Blind-Spot Control Block to the worker return after pre-commit made check_absorption_blindspot_control_presence.py applicable."
+    ],
+    "verification": [
+      "python governance/compat/check_absorption_blindspot_control_presence.py --base 90df5b7c --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 90df5b7c --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 78/78 for material closure commit 6ed7f257"
+    ],
+    "claimBoundary": "Documentation-only memory-foundation reference and worker-return acceptance. No checker implementation, runtime/provider/live proof, source import, public-sync, Web/UI dashboard, MCP/CLI adapter behavior, package lifecycle mutation, model-router work, action authority, automatic invocation, or production-readiness claim is authorized."
+  }
+}

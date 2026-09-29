@@ -1,0 +1,32 @@
+{
+  "stateOrder": 1462,
+  "stateKey": "mseaR28T15MineruCandidateReviewAndStoreWriteAuthorityDecisionClosure20260704",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-04",
+    "materialCommit": "50afaa0f",
+    "materialCommitFull": "50afaa0f3d0af8d41e4edc2699e23fb5687e4fa3",
+    "executionBaseHead": "a9ac31bf",
+    "dispatchSessionSyncCommit": "a9ac31bf",
+    "dispatchSessionSyncCommitFull": "a9ac31bf86457d06e4b766082178f505770b11b5",
+    "dispatchMaterialCommit": "e3ef73e4",
+    "dispatchMaterialCommitFull": "e3ef73e4da51b099edc0a1284d7e02a1953d64a4",
+    "dispatchBaseHead": "13b22b94",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T15_MINERU_CANDIDATE_REVIEW_AND_STORE_WRITE_AUTHORITY_DECISION_2026-07-04.md",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T15_MINERU_CANDIDATE_REVIEW_AND_STORE_WRITE_AUTHORITY_DECISION_2026-07-04.md",
+    "matrixPath": "docs/reference/CVF_MSEA_R28_T15_MINERU_CANDIDATE_REVIEW_AND_STORE_WRITE_AUTHORITY_DECISION_MATRIX_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T15_MINERU_CANDIDATE_REVIEW_AND_STORE_WRITE_AUTHORITY_DECISION_WORKER_RETURN_2026-07-04.md",
+    "selectedT16Disposition": "MEMORY_STORE_WRITE_WORK_ORDER_AUTHORING_READY",
+    "memoryWriteDisposition": "MEMORY_WRITE_NOT_AUTHORIZED_BY_T15_DECISION_ONLY",
+    "adapterMappingDisposition": "T16_MAPPING_REQUIRED_BEFORE_ANY_WRITE",
+    "privateOutputDisposition": "PRIVATE_OUTPUT_CONTENT_READ_FORBIDDEN",
+    "t16Disposition": "T16_FRESH_MEMORY_STORE_ADAPTER_MAPPING_WORK_ORDER_AUTHORIZED_FOR_AUTHORING",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T15 accepted only docs-only candidate review and source-backed store-write authority decision artifacts. It releases future T16 GC-018/work-order authoring for a bounded memory-store adapter/mapping implementation. It does not authorize actual memory/RAG write, vectorization, retrieval, MinerU runtime, private/generated content read, Candidate Group A import, provider/live proof, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "stateOrder": 1349,
+  "stateKey": "ascpT1ActiveResolverPilotClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "ddb65952",
+    "materialCommitFull": "ddb659522451000b8a88e282a5fd193fdadcd411",
+    "roadmap": "docs/roadmaps/CVF_ASSF_ACTIVE_RESOLVER_AND_ADAPTER_PILOT_ROADMAP_2026-06-30.md",
+    "baseline": "docs/baselines/CVF_GC018_ASCP_T1_ACTIVE_RESOLVER_PILOT_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASCP_T1_ACTIVE_RESOLVER_PILOT_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_ASCP_T1_ACTIVE_RESOLVER_PILOT_COMPLETION_2026-06-30.md",
+    "helper": "governance/compat/run_assf_active_resolver.py",
+    "tests": [
+      "governance/compat/test_run_assf_active_resolver.py"
+    ],
+    "verification": [
+      "focused unittest PASS 7/7",
+      "resolver smoke observed 32 generated-index candidates and 6 ACTIVATION_READY packages",
+      "pre-commit PASS 69/69",
+      "pre-closure PASS except expected active-session handoff sync requirement"
+    ],
+    "readyPackageCount": 6,
+    "totalGeneratedCandidates": 32,
+    "nextAllowedMove": "ASCP-T2 activation policy semantics before CLI/MCP adapter implementation",
+    "liveProofDisposition": "NOT_RUN_WITH_REASON: no provider, model, API, governance behavior, or live service claim is made",
+    "claimBoundary": "no package lifecycle mutation, no package body read, no automatic package activation, no automatic skill invocation telemetry outside the bounded loader, no CLI/MCP adapter, no provider/live proof, no public-sync, no direct import, no merge authority, no commit authority, and no production-readiness claim"
+  }
+}

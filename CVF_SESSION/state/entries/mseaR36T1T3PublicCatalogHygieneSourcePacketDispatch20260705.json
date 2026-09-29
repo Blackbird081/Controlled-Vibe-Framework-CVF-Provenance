@@ -1,0 +1,29 @@
+{
+  "stateOrder": 557,
+  "stateKey": "mseaR36T1T3PublicCatalogHygieneSourcePacketDispatch20260705",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-05",
+    "materialCommit": "cfab0813c",
+    "materialCommitFull": "cfab0813c311d9590cb1f0665b2643c6613964f4",
+    "dispatchBaseHead": "b0ab23ae2",
+    "roadmapPath": "docs/roadmaps/CVF_MSEA_R36_PUBLIC_CATALOG_HYGIENE_SOURCE_PACKET_ROADMAP_2026-07-05.md",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R36_T1_T3_PUBLIC_CATALOG_HYGIENE_SOURCE_PACKET_2026-07-05.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R36_T1_T3_PUBLIC_CATALOG_HYGIENE_SOURCE_PACKET_2026-07-05.md",
+    "allowedWorkerPaths": [
+      "docs/reference/CVF_MSEA_R36_T1_PUBLIC_CATALOG_STALENESS_SOURCE_MATRIX_2026-07-05.md",
+      "docs/reference/CVF_MSEA_R36_T2_PUBLIC_SAFE_CATALOG_UPDATE_CLAIM_BOUNDARY_PLAN_2026-07-05.md",
+      "docs/reference/CVF_MSEA_R36_T3_PUBLIC_SYNC_READINESS_DECISION_MATRIX_2026-07-05.md",
+      "docs/reviews/CVF_MSEA_R36_T1_T3_PUBLIC_CATALOG_HYGIENE_SOURCE_PACKET_WORKER_RETURN_2026-07-05.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchDisposition": "R36_PUBLIC_CATALOG_HYGIENE_SOURCE_PACKET_AUTHORIZED_BOUNDED",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "EXECUTE_MSEA_R36_NO_COMMIT_DOCS_ONLY_WORKER",
+    "claimBoundary": "R36 dispatch authorizes only a private provenance source packet for public catalog hygiene. It does not authorize public-sync execution, push, public README/catalog edits, production memory/RAG route release, live Python process invocation, file-based Python output consumption, MinerU runtime execution, private/generated output content read, production durable-store invocation, file-backed production persistence, retrieval, vectorization, provider/live proof, Web/UI implementation, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted readiness, production readiness, source/test edits, provider-local or IDE config edits, worker stage, worker commit, or public claim."
+  }
+}

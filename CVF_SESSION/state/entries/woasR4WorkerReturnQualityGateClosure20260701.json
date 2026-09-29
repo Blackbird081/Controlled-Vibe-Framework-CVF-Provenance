@@ -1,0 +1,23 @@
+{
+  "stateOrder": 1355,
+  "stateKey": "woasR4WorkerReturnQualityGateClosure20260701",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-01",
+    "materialCommit": "e6a56718",
+    "materialCommitFull": "e6a5671885fbf6608e48b274b196b58c5fecc2b6",
+    "completionReview": "docs/reviews/CVF_WOAS_R4_WORKER_RETURN_QUALITY_GATE_COMPLETION_2026-07-01.md",
+    "standard": "docs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md",
+    "checker": "governance/compat/check_worker_return_quality_gate.py",
+    "testPath": "governance/compat/test_check_worker_return_quality_gate.py",
+    "workerReturnFastGate": "governance/compat/run_worker_return_fast_gate.py",
+    "closureSummary": "Added an early structural worker-return quality gate, skeleton self-declaration fields, focused tests, and hook/autorun wiring so unresolved no-commit worker-return defects fail before reviewer acceptance.",
+    "verification": [
+      "python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_check_worker_return_quality_gate.py --pytest-target governance/compat/test_check_worker_experience_retrospective.py --pytest-target governance/compat/test_run_worker_return_fast_gate.py --pytest-target governance/compat/test_run_local_governance_hook_chain.py --pytest-target governance/compat/test_build_dispatch_packet_scaffold.py PASS 89 pytest tests and reviewer-fast 57/57",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base b2ddfd29 --head HEAD PASS 72/72",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base b2ddfd29 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 77/77 for material closure commit e6a56718"
+    ],
+    "claimBoundary": "Structural worker-return quality checker and local gate wiring only. No real external source intake, source import, runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter behavior, package lifecycle mutation, model-router work, action authority, automatic invocation, or production-readiness claim is authorized."
+  }
+}

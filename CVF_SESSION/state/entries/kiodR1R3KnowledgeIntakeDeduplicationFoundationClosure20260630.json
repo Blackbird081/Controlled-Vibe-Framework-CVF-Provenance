@@ -1,0 +1,33 @@
+{
+  "stateOrder": 713,
+  "stateKey": "kiodR1R3KnowledgeIntakeDeduplicationFoundationClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "5d453bce",
+    "materialCommitFull": "5d453bce1bcfe834f866597436a3922479ca0344",
+    "baseHead": "f3200159",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R1_R3_KNOWLEDGE_INTAKE_DEDUPLICATION_FOUNDATION_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R1_R3_KNOWLEDGE_INTAKE_DEDUPLICATION_FOUNDATION_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_KIOD_R1_R3_KNOWLEDGE_INTAKE_DEDUPLICATION_FOUNDATION_COMPLETION_2026-06-30.md",
+    "roadmap": "docs/roadmaps/CVF_KIOD_T0_KNOWLEDGE_INTAKE_OVERLAP_DEDUPLICATION_ROADMAP_2026-06-30.md",
+    "r1OwnerSurfaceTaxonomy": "docs/reference/external_agent_review/CVF_KIOD_R1_OWNER_SURFACE_TAXONOMY.md",
+    "r2PreScanPacketStandard": "docs/reference/external_agent_review/CVF_KIOD_R2_PRE_SCAN_PACKET_STANDARD.md",
+    "r3OverlapRoutingMatrix": "docs/reference/external_agent_review/CVF_KIOD_R3_OVERLAP_ROUTING_MATRIX_STANDARD.md",
+    "nextAllowedMove": "AUTHOR_KIOD_R4_GC018_FOR_NEGATIVE_SEARCH_EVIDENCE_DECISION",
+    "verification": [
+      "pre-implementation autorun PASS on f3200159..HEAD before material edit",
+      "ADIF disclosure query PASS with NONE_RETURNED",
+      "external knowledge intake routing PASS",
+      "markdown structural completeness PASS",
+      "foundation storage layout PASS",
+      "work-order dispatch quality PASS",
+      "package skill productionization pipeline PASS",
+      "Delta execution claim boundary PASS",
+      "agent handoff boundary PASS",
+      "machine closure package PASS",
+      "commit steward implementation PASS",
+      "pre-commit PASS 73/73"
+    ],
+    "claimBoundary": "Documentation foundation only. No selected source intake, source mirror mutation, runtime, package activation, generated Web data, provider/live proof, public-sync, checker implementation, dashboard, adapter, automatic invocation, or production-readiness claim."
+  }
+}

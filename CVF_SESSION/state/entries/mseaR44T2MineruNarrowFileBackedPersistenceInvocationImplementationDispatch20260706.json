@@ -1,0 +1,24 @@
+{
+  "stateOrder": 640,
+  "stateKey": "mseaR44T2MineruNarrowFileBackedPersistenceInvocationImplementationDispatch20260706",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-06",
+    "materialCommit": "790f59ad2",
+    "materialCommitFull": "790f59ad2297df022a7921681f6e2e67c4370266",
+    "dispatchBaseHead": "31472cfcc",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R44_T2_MINERU_NARROW_FILE_BACKED_PERSISTENCE_INVOCATION_IMPLEMENTATION_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R44_T2_MINERU_NARROW_FILE_BACKED_PERSISTENCE_INVOCATION_IMPLEMENTATION_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R44_T2_MINERU_NARROW_FILE_BACKED_PERSISTENCE_INVOCATION_IMPLEMENTATION_WORKER_RETURN_2026-07-06.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "predecessorClosure": "MSEA-R44-T1 at c892ba922",
+    "preDispatchGate": "PASS 73/73",
+    "dispatchQualityGate": "PASS",
+    "adifDisclosure": "PASS",
+    "handoffBoundaryGate": "PASS",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 80/80",
+    "nextRecommendedMove": "DELEGATED_NO_COMMIT_R44_T2_WORKER_EXECUTION",
+    "claimBoundary": "Dispatch only. Worker may edit only the route candidate source, focused route candidate test, and R44-T2 worker return path named by the work order. No MinerU runtime execution, private/generated output read, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, provider-local or IDE config edits, worker commit, push, or public claim is authorized."
+  }
+}

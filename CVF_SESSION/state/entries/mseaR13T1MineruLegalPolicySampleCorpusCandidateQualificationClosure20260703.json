@@ -1,0 +1,30 @@
+{
+  "stateOrder": 1399,
+  "stateKey": "mseaR13T1MineruLegalPolicySampleCorpusCandidateQualificationClosure20260703",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "c14398b2",
+    "materialCommitFull": "c14398b2098e6f3b65c87a4b4cb39963aa32b5f2",
+    "dispatchCommit": "c58de9ec",
+    "sessionSyncAfterDispatch": "a60a2ae2",
+    "executionBaseHead": "a60a2ae2",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R13_T1_MINERU_LEGAL_POLICY_SAMPLE_CORPUS_CANDIDATE_QUALIFICATION_LEDGER_2026-07-03.md",
+    "reviewerDisposition": "ACCEPTED_FOR_MATERIAL_COMMIT_WITH_REVIEWER_REPAIR",
+    "reviewerRepair": "Corrected effective-date wording and narrowed route implication so the legal-policy use case is only a MinerU sample stressor/candidate evidence, not a legal-domain product lane or runtime reopen condition.",
+    "workerReturnFastGate": "PASS",
+    "reviewerFastGate": "PASS 59/59",
+    "reviewerReturnCommitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "candidateReadiness": {
+      "groupA": "PARTIALLY_READY_PENDING_OPERATOR_CONFIRMATION",
+      "groupBVerifiedSubset": "PARTIALLY_READY_PENDING_OPERATOR_CONFIRMATION",
+      "groupBUngovernedDerivedOutputs": "NOT_READY"
+    },
+    "nextRecommendedMove": "Operator chooses the next MinerU route. If continuing this legal-policy set only as a MinerU sample stressor, the next fresh GC-018/work order may close permission/license, privacy/redaction, and proof-use confirmation gaps. Otherwise return to the broader MinerU route decision. Corpus population, schema/writer/runtime/adapter/checker/provider/public work remains held.",
+    "claimBoundary": "Closed bounded documentation/reference candidate qualification only. No document copy/import, sample corpus population, MinerU runtime/install/model download/parser/OCR/VLM/provider/RAG/schema/writer/checker/adapter execution, source import, package activation, public-sync, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, legal-domain product lane, production-readiness claim, or runtime reopen condition was authorized or accepted."
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "stateOrder": 654,
+  "stateKey": "ascpP4P6RemainingPackageProductionScaleUpClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "687d4423",
+    "fullMaterialCommit": "687d44234e1776e6740433ac255efc0fe55d7612",
+    "baseline": "docs/baselines/CVF_GC018_ASCP_P4_P6_REMAINING_PACKAGE_PRODUCTION_SCALE_UP_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASCP_P4_P6_REMAINING_PACKAGE_PRODUCTION_SCALE_UP_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_ASCP_P4_P6_REMAINING_PACKAGE_PRODUCTION_SCALE_UP_COMPLETION_2026-06-30.md",
+    "standard": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_SCALE_UP_STANDARD.md",
+    "inventory": "docs/reference/agent_system_skills/control_plane/generated/skill-inventory.json",
+    "skillIndex": "docs/reference/agent_system_skills/generated/skill-index.json",
+    "truthIndex": "docs/reference/agent_system_skills/truth/generated/skill-truth-index.json",
+    "productionExecutor": "governance/compat/run_assf_production_package_executor.py",
+    "cliMcpAdapter": "governance/compat/run_assf_production_cli_mcp_adapter.py",
+    "inventoryReadout": {
+      "assfRegistryEntries": 32,
+      "packageRoots": 24,
+      "runtimeEligiblePackages": 24,
+      "activationReadyPackages": 24,
+      "cliMcpAdapterPackages": 24,
+      "selectionProfiledPackages": 24,
+      "webProjectionItems": 28,
+      "crossSurfaceDriftViolations": 0
+    },
+    "liveProof": {
+      "representativePackage": "cvf-engineering-api-interface-design",
+      "provider": "alibaba-dashscope",
+      "model": "deepseek-v4-flash",
+      "httpStatus": 200,
+      "latencyMs": 7742,
+      "providerTraceId": "afc6a064-2e8d-9b8d-8856-f5b3ba7497e6",
+      "productionExecutionReceipt": "sha256:08e3c7e292f2195966d3970d79033299f027b0a7327ab58d68911761b5fa3327",
+      "packageUseProofReceipt": "sha256:6ab1d99ada8d64c948a15ea234c37c03f8e10648adfef8055390724a4e57970b",
+      "skillUsageReceipt": "sha256:5f5ad366f69abb3d0eeacaa3dc0eb92f3deb61e8e7918bc6cdbf0fbaad12554d",
+      "policyReceipt": "sha256:bfce1a80845af14c6cb79952493502ed3316d11e916a9ef94f21f596821483f8",
+      "outputHash": "sha256:5f50b57afe2bf2af6b06bd4c571e10ef3cc3ad9da49f83964b5f45d57c0fc4dd",
+      "evidenceHash": "sha256:e877c37f09ed7debc56f818ecd0abf0b63b2c8fba5a78db98cf63e940c7928ad"
+    },
+    "dryRunMatrix": {
+      "packageCount": 18,
+      "passCount": 18,
+      "evidenceHash": "sha256:085dec69d1570f8dfd4ab192911006dd519df3a65e3cf462a28c16f6ff0907d7"
+    },
+    "scope": "production scale-up for the eighteen remaining CVF-owned ASSF package roots through existing bounded package executor and CLI/MCP adapter envelope",
+    "verification": [
+      "runtime eligibility audit PASS: 24 runtime eligible and 0 runtime ineligible",
+      "Skill Control Plane inventory PASS: 24 runtime eligible, 24 activation-ready, 24 CLI/MCP adapter packages, 0 drift",
+      "dry-run matrix PASS: 18/18 newly promoted packages",
+      "representative live proof PASS: PRODUCTION_PACKAGE_EXECUTION_PASS, HTTP 200",
+      "pre-dispatch autorun PASS",
+      "pre-implementation autorun PASS",
+      "commit steward implementation preflight PASS",
+      "pre-commit hook PASS"
+    ],
+    "claimBoundary": "bounded production runtime for 24 CVF-owned package skills only; no full MCP server, production Model Gateway/model router, provider registry mutation, public-sync, automatic invocation, filesystem/git/browser/downstream action authority, or broader production-readiness claim."
+  }
+}

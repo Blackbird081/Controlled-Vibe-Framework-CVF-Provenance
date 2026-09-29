@@ -19,7 +19,9 @@ module.
 
 from __future__ import annotations
 
+import argparse
 import importlib.util
+import json
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -105,6 +107,20 @@ class FindingIntakeOutcome:
                 "ADIF entry file."
             ),
         }
+
+    def to_human_text(self) -> str:
+        matched = self.matched_defect_id or "NONE"
+        return "\n".join(
+            [
+                "ADIF finding-intake bridge",
+                f"Outcome: {self.outcome}",
+                f"Matched defect: {matched}",
+                f"Defect class: {self.defect_class or 'NONE'}",
+                f"Defect role: {self.defect_role or 'NONE'}",
+                f"Reason: {self.reason}",
+                "Claim boundary: This classification does not create, modify, or promote any ADIF entry file.",
+            ]
+        )
 
 
 def _entry_exists(defect_id: str, entries: tuple) -> bool:
@@ -197,3 +213,45 @@ def classify_finding(
         defect_class=request.defect_class,
         defect_role=request.defect_role,
     )
+
+
+def _build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="Classify one ADIF reviewer finding into a bounded intake outcome."
+    )
+    parser.add_argument("--summary", required=True, help="Finding summary")
+    parser.add_argument("--defect-class", default=None, help="Canonical F2G defect class")
+    parser.add_argument("--defect-role", default=None, help="Canonical FPRC defect role")
+    parser.add_argument("--session-local", action="store_true", help="Reject as non-reusable")
+    parser.add_argument("--checker-binding", default=None, help="Existing governance/compat/*.py checker path")
+    parser.add_argument("--matching-defect-id", default=None, help="Existing ADIF defect id")
+    parser.add_argument("--json", action="store_true", help="Print JSON output")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = _build_parser()
+    args = parser.parse_args(argv)
+    request = FindingIntakeRequest(
+        summary=args.summary,
+        defect_class=args.defect_class,
+        defect_role=args.defect_role,
+        is_session_local=args.session_local,
+        checker_binding=args.checker_binding,
+        matching_defect_id=args.matching_defect_id,
+    )
+    try:
+        outcome = classify_finding(request)
+    except ValueError as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
+
+    if args.json:
+        print(json.dumps(outcome.to_dict(), indent=2, ensure_ascii=False))
+    else:
+        print(outcome.to_human_text())
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

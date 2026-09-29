@@ -1,0 +1,23 @@
+{
+  "stateOrder": 648,
+  "stateKey": "mseaR46MineruScanlayerMemoryBoundedLiveSystemChainProofDispatch20260706",
+  "value": {
+    "status": "DISPATCHED",
+    "date": "2026-07-06",
+    "dispatchCommit": "d00362790",
+    "dispatchCommitFull": "d003627903af29210621cac0d5e3f830164bebe7",
+    "dispatchBaseHead": "b35a809f0",
+    "roadmapPath": "docs/roadmaps/CVF_MSEA_R46_MINERU_SCANLAYER_MEMORY_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_ROADMAP_2026-07-06.md",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R46_MINERU_SCANLAYER_MEMORY_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R46_MINERU_SCANLAYER_MEMORY_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R46_MINERU_SCANLAYER_MEMORY_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_WORKER_RETURN_2026-07-06.md",
+    "evidencePath": "docs/reviews/evidence/CVF_MSEA_R46_MINERU_SCANLAYER_MEMORY_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_2026-07-06.json",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73 on b35a809f0..HEAD",
+      "dispatch commit steward PASS",
+      "dispatch material pre-commit hook PASS 80/80"
+    ],
+    "nextAllowedMove": "Execute and review only the bounded R46 proof lane authorized by the work order.",
+    "claimBoundary": "R46 dispatch authorizes bounded internal proof only: synthetic summary-only MinerU metadata, file-backed durable memory write/read-back, one Alibaba-compatible live provider proof with secret-safe evidence, worker return, reviewer closure, and session-sync. It does not authorize production Memory/RAG release, public-sync, private/generated MinerU output read, broad MinerU OCR/model extraction, retrieval, vectorization, use-case/legal workflow, extraction accuracy, document truth, legal quality, current-law correctness, hosted release, standalone app work, provider-local config edit, worker commit, push, or public claim."
+  }
+}

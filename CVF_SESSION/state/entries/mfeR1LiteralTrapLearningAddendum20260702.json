@@ -1,0 +1,32 @@
+{
+  "stateOrder": 1373,
+  "stateKey": "mfeR1LiteralTrapLearningAddendum20260702",
+  "value": {
+    "status": "RECORDED",
+    "date": "2026-07-02",
+    "materialCommit": "faf09d46",
+    "materialCommitFull": "faf09d4646bf658e689b38d53a22c09703bc2716",
+    "baseCommit": "8ffa0182",
+    "artifacts": [
+      "docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md",
+      "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0022.md",
+      "docs/reference/agent_defect_intelligence/entries/README.md"
+    ],
+    "disposition": "MFE-R1 worker-return literal-format traps recorded as reusable guidance.",
+    "learning": [
+      "Avoid repeating never-created optional governed artifact paths in review absence-evidence rows; describe the optional artifact in prose and cite an existing governed artifact instead.",
+      "When a finding row exists, use a real Finding-To-Governance DEFECT_CLASSES enum token such as RULE_GAP; N/A_WITH_REASON is a disposition, not a defect class."
+    ],
+    "verification": [
+      "python governance/compat/check_adif_entry_integrity.py --enforce PASS",
+      "python governance/compat/check_agent_packet_authority_and_encoding.py --base 8ffa0182 --head HEAD --enforce PASS",
+      "python governance/compat/check_finding_to_governance_learning.py --base 8ffa0182 --head HEAD --enforce PASS",
+      "python governance/compat/check_agent_operation_trace.py --base 8ffa0182 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 8ffa0182 --head HEAD PASS 74/74",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base 8ffa0182 --head HEAD --enforce PASS",
+      "python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast PASS 59/59",
+      "python governance/compat/run_local_governance_hook_chain.py --hook pre-commit PASS 79/79"
+    ],
+    "claimBoundary": "Documentation/reference learning only. No worker execution, source import, runtime/provider/live proof, public-sync, Web/UI dashboard, MCP/CLI adapter implementation, model-router work, package lifecycle mutation, checker implementation, action authority, automatic invocation, or production-readiness claim."
+  }
+}

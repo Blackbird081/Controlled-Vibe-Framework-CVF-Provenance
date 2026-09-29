@@ -1,0 +1,21 @@
+{
+  "stateOrder": 1395,
+  "stateKey": "mseaR12MineruSampleCorpusExpectedReceiptPolicyRoadmap20260703",
+  "value": {
+    "status": "ROADMAP_READY_FOR_MSEA_R12_T1_GC018_AND_WORK_ORDER_AUTHORING",
+    "date": "2026-07-03",
+    "materialCommit": "072c15f1",
+    "materialCommitFull": "072c15f12959860e110698fd6479537601f1ea47",
+    "roadmapPath": "docs/roadmaps/CVF_MSEA_R12_MINERU_SAMPLE_CORPUS_EXPECTED_RECEIPT_POLICY_ROADMAP_2026-07-03.md",
+    "selectedRouteToken": "OPEN_SAMPLE_CORPUS_AND_EXPECTED_RECEIPT_POLICY_ROADMAP",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamRepository": "https://github.com/opendatalab/MinerU.git",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "preDispatchGate": "PASS 72/72",
+    "commitStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "nextRecommendedMove": "Author MSEA-R12-T1 GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for documentation/reference sample-corpus and expected-receipt-policy definition.",
+    "claimBoundary": "Roadmap-only policy-definition planning. No sample document import, corpus population, MinerU install/runtime, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, schema implementation, receipt-writer code, adapter implementation, or production-readiness claim is authorized."
+  }
+}

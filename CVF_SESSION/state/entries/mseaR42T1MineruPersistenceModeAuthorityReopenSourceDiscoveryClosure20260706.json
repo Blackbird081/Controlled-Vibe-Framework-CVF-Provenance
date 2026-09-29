@@ -1,0 +1,29 @@
+{
+  "stateOrder": 627,
+  "stateKey": "mseaR42T1MineruPersistenceModeAuthorityReopenSourceDiscoveryClosure20260706",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "f88ecfaca",
+    "materialCommitFull": "f88ecfacaaac3c6d5b09be03ac129c92a6d39886",
+    "closureBaseHead": "91716ebab",
+    "dispatchCommit": "9198f09ca",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_2026-07-06.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_MATRIX_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_WORKER_RETURN_2026-07-06.md",
+    "completionReviewPath": "docs/reviews/CVF_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_COMPLETION_2026-07-06.md",
+    "selectedDisposition": "R42_T1_PERSISTENCE_AUTHORITY_SOURCE_MISSING_CONFIRMED",
+    "closureDisposition": "R42_T1_SOURCE_DISCOVERY_COMPLETE_MISSING_CONFIRMED",
+    "reviewerRepair": "Repaired worker source-claim precision: mineru-durable-store-invocation.ts imports RuntimeMemoryActorRole as a type cast, but no cited source uses evaluateRuntimeMemoryAction to decide fileBackedPersistenceRequested or selects createFileBackedDurableMemoryStore for this path.",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75 commands",
+      "reviewer-return commit steward PASS",
+      "corpus scan registry path-literal check PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "OPERATOR_SELECT_FRESH_ACTOR_ROLE_WIRING_DESIGN_PACKET_OR_DIFFERENT_HELD_MINERU_LANE_OR_STOP_OR_NEW_INITIATIVE",
+    "claimBoundary": "R42-T1 closes a docs-only source-discovery decision and confirms the R41-T2 persistence authority source remains missing. It does not authorize source/test edits, MinerU runtime execution, private/generated output content reads, file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, provider-local or IDE config edits, worker commit, push, or public claim."
+  }
+}

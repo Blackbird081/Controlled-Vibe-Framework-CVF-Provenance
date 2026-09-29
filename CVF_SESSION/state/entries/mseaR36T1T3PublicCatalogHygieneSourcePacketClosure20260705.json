@@ -1,0 +1,29 @@
+{
+  "stateOrder": 558,
+  "stateKey": "mseaR36T1T3PublicCatalogHygieneSourcePacketClosure20260705",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-05",
+    "materialCommit": "507bda564",
+    "materialCommitFull": "507bda5646cbdf4b67ff1585897245bb1ea525db",
+    "dispatchCommit": "cfab0813c",
+    "dispatchSessionSyncCommit": "5a1f26444",
+    "closureBaseHead": "5a1f26444",
+    "acceptedArtifacts": [
+      "docs/reference/CVF_MSEA_R36_T1_PUBLIC_CATALOG_STALENESS_SOURCE_MATRIX_2026-07-05.md",
+      "docs/reference/CVF_MSEA_R36_T2_PUBLIC_SAFE_CATALOG_UPDATE_CLAIM_BOUNDARY_PLAN_2026-07-05.md",
+      "docs/reference/CVF_MSEA_R36_T3_PUBLIC_SYNC_READINESS_DECISION_MATRIX_2026-07-05.md",
+      "docs/reviews/CVF_MSEA_R36_T1_T3_PUBLIC_CATALOG_HYGIENE_SOURCE_PACKET_WORKER_RETURN_2026-07-05.md"
+    ],
+    "selectedDisposition": "READY_FOR_SEPARATE_PUBLIC_SYNC_PACKET",
+    "decision": "R36 accepted a bounded docs-only public catalog hygiene source packet. T1 re-verified stale capability-inventory surfaces, T2 drafted public-safe claim boundaries for production-usable governance tooling, foundation-only MinerU work, and held surfaces, and T3 selected readiness for a future separate public-sync packet without executing public-sync.",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "AUTHOR_FRESH_PUBLIC_SYNC_GC018_AND_WORK_ORDER_FROM_R36_SOURCE_PACKET",
+    "claimBoundary": "R36 closure accepts only private provenance source material for a future public-sync batch. It does not authorize public-sync execution, push, public README/catalog edits, production memory/RAG route release, live Python process invocation, file-based Python output consumption, MinerU runtime execution, private/generated output content read, production durable-store invocation, file-backed production persistence, retrieval, vectorization, provider/live proof, Web/UI implementation, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted readiness, production readiness, source/test edits, provider-local or IDE config edits, worker stage, worker commit, or public claim."
+  }
+}

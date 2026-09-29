@@ -1,0 +1,40 @@
+{
+  "stateOrder": 911,
+  "stateKey": "mseaR58R59PlaneIoRegistryCheckpoint20260707",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "a960db753",
+    "materialCommitFull": "a960db753e7d6cd1f7e1b536feb3dc4a521d451f",
+    "r58ReviewPath": "docs/reviews/CVF_MSEA_R58_PROVENANCE_SYNC_PUSH_READINESS_CHECKPOINT_2026-07-07.md",
+    "r59ReviewPath": "docs/reviews/CVF_MSEA_R59_PUBLIC_SAFE_SNAPSHOT_AND_PLANE_IO_REGISTRY_DECISION_2026-07-07.md",
+    "registryReferencePath": "docs/reference/CVF_FOUNDATION_PLANE_IO_CONTRACT_REGISTRY_2026-07-07.md",
+    "selectedR58Disposition": "R58_PROVENANCE_SYNC_PUSH_HELD_BY_PUSH_DEBT_AND_SPLIT_RANGE_REQUIREMENT",
+    "selectedR59Disposition": "R59_PLANE_IO_REGISTRY_ADDED_PUBLIC_SAFE_SNAPSHOT_DEFERRED_PRIVATE_ONLY",
+    "verification": [
+      "pre-implementation autorun PASS 75/75 on e3d84e3fb..HEAD",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80",
+      "push-readiness preview before material authoring reported upstream push debt over limit 2 and broad-range material/session split requirements"
+    ],
+    "boundedDecisionFacts": {
+      "r56ContractPromotedToReusableReference": true,
+      "provenancePushReady": false,
+      "publicSafeSnapshotDeferred": true,
+      "publicSyncAuthorized": false,
+      "sourceOrTestEditAuthorized": false,
+      "runtimeProviderMcpProofAuthorized": false,
+      "checkerImplementationAuthorized": false,
+      "productionMemoryRagReleased": false,
+      "rawMemoryReleased": false,
+      "privateOutputContentReadAuthorized": false,
+      "retrievalReleased": false,
+      "vectorizationReleased": false,
+      "p3Reopened": false,
+      "useCaseLegalWorkflowOpened": false,
+      "publicClaimAuthorized": false
+    },
+    "nextAllowedMove": "Stop/checkpoint unless the operator selects a fresh source-verified target. Provenance push requires a dedicated push-prep or push execution batch that clears push-readiness preview findings. Public-safe snapshot/public-sync remains deferred unless separately authorized from the sibling public-sync clone.",
+    "claimBoundary": "R58/R59 closes only a private provenance docs/reference checkpoint. It adds a reusable R56-derived foundation plane I/O contract reference, records provenance push held by push-debt/split-range findings, and defers public-safe snapshot. It does not authorize implementation, checker work, source/test edit, runtime/provider proof, production Memory/RAG release, public-sync mutation, retrieval/vectorization, P3 reopen, external source import, private/generated MinerU output read, use-case/legal workflow, public claim, or downstream release."
+  }
+}

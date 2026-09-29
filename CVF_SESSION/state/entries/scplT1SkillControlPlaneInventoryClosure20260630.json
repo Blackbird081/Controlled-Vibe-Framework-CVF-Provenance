@@ -1,0 +1,43 @@
+{
+  "stateOrder": 650,
+  "stateKey": "scplT1SkillControlPlaneInventoryClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "c5670974",
+    "fullMaterialCommit": "c5670974c86aeae2941060288e6096bb6ba90201",
+    "baseline": "docs/baselines/CVF_GC018_SCPL_T1_SKILL_CONTROL_PLANE_INVENTORY_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCPL_T1_SKILL_CONTROL_PLANE_INVENTORY_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_SCPL_T1_SKILL_CONTROL_PLANE_INVENTORY_COMPLETION_2026-06-30.md",
+    "standard": "docs/reference/agent_system_skills/CVF_SKILL_CONTROL_PLANE_INVENTORY_STANDARD.md",
+    "inventory": "docs/reference/agent_system_skills/control_plane/generated/skill-inventory.json",
+    "generator": "governance/compat/generate_skill_control_plane_inventory.py",
+    "cli": "governance/compat/run_skill_control_plane_inventory.py",
+    "checker": "governance/compat/check_skill_control_plane_inventory.py",
+    "test": "governance/compat/test_skill_control_plane_inventory.py",
+    "catalogBindings": [
+      "governance/compat/agent_autorun_command_catalog.py",
+      "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+      "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "governance/compat/local_governance_hook_catalog_pre_push.py"
+    ],
+    "inventoryReadout": {
+      "assfRegistryEntries": 32,
+      "packageRoots": 24,
+      "runtimeEligiblePackages": 6,
+      "activationReadyPackages": 6,
+      "cliMcpAdapterPackages": 6,
+      "webProjectionItems": 28,
+      "crossSurfaceDriftViolations": 0
+    },
+    "scope": "generated central Skill Control Plane inventory, CLI readout, and cross-surface drift guard for ASSF registry entries, package roots, runtime eligibility, activation readiness, CLI/MCP adapter projection, and Web projection catalog items",
+    "verification": [
+      "focused unittest PASS: python -m unittest governance.compat.test_skill_control_plane_inventory",
+      "checker PASS: python governance/compat/check_skill_control_plane_inventory.py --enforce",
+      "CLI summary PASS: python governance/compat/run_skill_control_plane_inventory.py --summary-only",
+      "pre-dispatch autorun PASS",
+      "pre-implementation autorun PASS",
+      "material pre-closure PASS except expected GC-020 session-sync drift"
+    ],
+    "claimBoundary": "control-plane inventory/readout/drift guard only; no package conversion, lifecycle mutation, package body invocation, provider/live proof, Web page, full MCP server, production Model Gateway/model router, provider registry mutation, public-sync, or broader production-readiness expansion."
+  }
+}

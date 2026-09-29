@@ -1,0 +1,35 @@
+{
+  "stateOrder": 1440,
+  "stateKey": "mseaR28T5QualitySourcePointerReceiptSchemaExtensionClosure20260704",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-04",
+    "materialCommit": "4a824e6d",
+    "materialCommitFull": "4a824e6dba04956cd0805a6b840fb1b89e938a9d",
+    "executionBaseHead": "c8f5604f",
+    "dispatchMaterialCommit": "042fa17b",
+    "dispatchSessionSyncCommit": "c8f5604f",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T5_MINERU_QUALITY_SOURCE_POINTER_RECEIPT_SCHEMA_EXTENSION_AND_CHECKER_UPDATE_DECISION_2026-07-04.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T5_MINERU_QUALITY_SOURCE_POINTER_RECEIPT_SCHEMA_EXTENSION_AND_CHECKER_UPDATE_DECISION_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T5_MINERU_QUALITY_SOURCE_POINTER_RECEIPT_SCHEMA_EXTENSION_AND_CHECKER_UPDATE_DECISION_WORKER_RETURN_2026-07-04.md",
+    "implementedPaths": [
+      "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py",
+      "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py",
+      "governance/compat/check_mineru_receipt_boundary.py",
+      "governance/compat/test_check_mineru_receipt_boundary.py"
+    ],
+    "selectedImplementationDisposition": "QUALITY_SOURCE_POINTER_RECEIPT_SCHEMA_EXTENSION_AND_CHECKER_UPDATE_DECISION",
+    "memoryRouteDisposition": "MEMORY_ROUTE_STILL_HELD_AFTER_QUALITY_SOURCE_POINTER_SCHEMA_EXTENSION",
+    "nextRecommendedMove": "AUTHOR_MSEA_R28_T6_GC018_AND_SOURCE_VERIFIED_WORK_ORDER_FOR_ACTUAL_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_DECISION",
+    "verification": [
+      "reviewer repair removed out-of-scope temporary work-order edit before closure",
+      "focused pytest PASS 47/47",
+      "MinerU receipt boundary checker PASS over c8f5604f..HEAD",
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T5 closure accepts metadata-only qualityReportRef and sourcePointer receipt fields, writer validation/payload rendering, receipt-boundary checker required-field/value validation, focused tests, and the worker return. It does not run MinerU, read private or generated content, create a committed receipt instance, compute quality, resolve a source pointer, release memory/RAG, implement a memory adapter, run provider/live proof, public-sync, build an app, perform legal/use-case deep dive, or claim extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, or push."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "stateOrder": 635,
+  "stateKey": "mseaR43T2MineruActorRolePersistenceAuthorityWiringImplementationClosure20260706",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "db2599f49",
+    "materialCommitFull": "db2599f49aab71ce943306c78b0ce564a98b321c",
+    "dispatchCommit": "43abc2791",
+    "dispatchCommitFull": "43abc27914c1e6b1f2a5422ffefca599376b57a1",
+    "sessionSyncAfterDispatch": "35954028e",
+    "sessionSyncAfterDispatchFull": "35954028ebe0e8c4f68a4ae1dffeab156f5105e4",
+    "executionBaseHead": "35954028e",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R43_T2_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_IMPLEMENTATION_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R43_T2_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_IMPLEMENTATION_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R43_T2_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_IMPLEMENTATION_WORKER_RETURN_2026-07-06.md",
+    "selectedImplementation": "FILE_BACKED_PERSISTENCE_ACTOR_ROLE_AUTHORITY_GATE_WIRED_WITH_OPERATOR_GOVERNOR_ALLOWLIST",
+    "operatorApprovedFileBackedPersistenceActorRoles": [
+      "OPERATOR",
+      "GOVERNOR"
+    ],
+    "reviewerDecision": "ACCEPTED_FOR_MATERIAL_COMMIT",
+    "verification": [
+      "focused route-candidate vitest PASS 1 file / 16 tests",
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75 on 35954028e..HEAD",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "NEXT_ROADMAP_SELECTION_OR_AUTHOR_FRESH_R44_T1_FILE_BACKED_PERSISTENCE_RELEASE_RECHECK_OR_STOP_PACKET",
+    "claimBoundary": "R43-T2 wires route-boundary actor-role authority and focused tests only. It records that CVF controls route-boundary authority, evidence, traceability, and responsibility review, not agent internal operation. No MinerU runtime execution, private/generated output content read, real file-backed persistence invocation, persistence-mode widening beyond the packet, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, worker commit, push, or public claim is authorized."
+  }
+}

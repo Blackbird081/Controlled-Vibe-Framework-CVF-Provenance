@@ -5,17 +5,18 @@
   "displayName": "ASSF Web projection public skill-index surfaces",
   "scopePaths": [
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/build-skill-index.js",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/public/data/assf-skill-control-plane.json",
     "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/public/data/skills-index.json"
   ],
-  "fileCount": 2,
+  "fileCount": 3,
   "status": "SCANNED",
-  "scanWave": "ASSF-WEBPROJ-T1",
-  "scanDate": "2026-06-26",
+  "scanWave": "SCPL-WEB-T1",
+  "scanDate": "2026-06-30",
   "manifestHash": null,
   "manifestPath": null,
-  "packetPath": "docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_COMPLETION_2026-06-26.md",
-  "completionReviewPath": "docs/reviews/CVF_ASSF_WEB_PROJECTION_IMPLEMENTATION_COMPLETION_2026-06-26.md",
-  "gcBaselineRef": "docs/baselines/CVF_GC018_ASSF_WEB_PROJECTION_IMPLEMENTATION_2026-06-26.md",
+  "packetPath": "docs/reviews/CVF_SCPL_WEB_T1_SKILL_CONTROL_PLANE_WEB_PROJECTION_COMPLETION_2026-06-30.md",
+  "completionReviewPath": "docs/reviews/CVF_SCPL_WEB_T1_SKILL_CONTROL_PLANE_WEB_PROJECTION_COMPLETION_2026-06-30.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_SCPL_WEB_T1_SKILL_CONTROL_PLANE_WEB_PROJECTION_2026-06-30.md",
   "verdicts": {
     "gc047": "N/A",
     "gc048": "N/A",
@@ -23,14 +24,15 @@
   },
   "semanticRegions": [
     "ASSF_WEB_PROJECTION",
+    "SKILL_CONTROL_PLANE_WEB_PROJECTION",
     "PUBLIC_SKILL_INDEX_GENERATION"
   ],
-  "priorAbsorption": "ASSF-WEBPROJ-T1 reads certified ASSF metadata and projects it into the Web public skill-index read model without package execution, adapter behavior, provider proof, or ASSF registry mutation.",
+  "priorAbsorption": "SCPL-WEB-T1 reads certified ASSF metadata and generated Skill Control Plane inventory, then projects package-skill state into Web read models without package execution, adapter behavior, provider proof, or ASSF registry mutation.",
   "findings": [],
   "negativeSearchTerms": [
     "ASSF package execution by Web projection",
     "CLI MCP adapter implemented by Web skill index",
     "certification state derived from corpusClass"
   ],
-  "nextScanRecommendation": "Open a separate source-verified roadmap before adapter, provider, package execution, or public-sync behavior."
+  "nextScanRecommendation": "Open a separate source-verified roadmap before full Skill Governance Console build, adapter, provider, package execution, or public-sync behavior."
 }

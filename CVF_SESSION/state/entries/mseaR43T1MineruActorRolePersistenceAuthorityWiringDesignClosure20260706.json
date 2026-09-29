@@ -1,0 +1,27 @@
+{
+  "stateOrder": 631,
+  "stateKey": "mseaR43T1MineruActorRolePersistenceAuthorityWiringDesignClosure20260706",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-06",
+    "materialCommit": "f92e089b6",
+    "materialCommitFull": "f92e089b6d487beed501b9c9267be4db907ec47d",
+    "closureBaseHead": "07a0347ad",
+    "dispatchCommit": "d27fc56fa",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R43_T1_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_DESIGN_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R43_T1_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_DESIGN_2026-07-06.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R43_T1_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_DESIGN_MATRIX_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R43_T1_MINERU_ACTOR_ROLE_PERSISTENCE_AUTHORITY_WIRING_DESIGN_WORKER_RETURN_2026-07-06.md",
+    "selectedDisposition": "R43_T1_ACTOR_ROLE_WIRING_DESIGN_READY_FOR_IMPLEMENTATION_PACKET",
+    "selectedDesign": "OPTION_B_PURPOSE_BUILT_ROUTE_AUTHORITY_ACTOR_ROLE_FIELD_AND_FAIL_CLOSED_ALLOWLIST_CHECK",
+    "reviewerDecision": "ACCEPTED_FOR_CLOSURE",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75 commands",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "AUTHOR_R43_T2_OPTION_B_ACTOR_ROLE_WIRING_IMPLEMENTATION_PACKET_OR_STOP",
+    "claimBoundary": "R43-T1 closes a docs-only actor-role authority wiring design and accepts Option B as ready for a fresh implementation packet. It does not authorize source/test edits, MinerU runtime execution, private/generated output content reads, file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, implementation wiring, interface or root-barrel runtime wiring, provider-local or IDE config edits, worker commit, push, or public claim."
+  }
+}

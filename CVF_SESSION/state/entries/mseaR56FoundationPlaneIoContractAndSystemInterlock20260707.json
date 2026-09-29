@@ -1,0 +1,38 @@
+{
+  "stateOrder": 1502,
+  "stateKey": "mseaR56FoundationPlaneIoContractAndSystemInterlock20260707",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-07",
+    "materialCommit": "18253d95b",
+    "materialCommitFull": "18253d95beb1d85c6e1e29ae7b7c7eba6423adf0",
+    "reviewPath": "docs/reviews/CVF_MSEA_R56_FOUNDATION_PLANE_IO_CONTRACT_AND_SYSTEM_INTERLOCK_PACKET_2026-07-07.md",
+    "selectedDisposition": "R56_FOUNDATION_PLANE_IO_CONTRACT_DEFINED_READY_FOR_R57_RELEASE_OR_STOP_DECISION",
+    "selectedNextPacket": "MSEA-R57 Foundation Plane I/O Contract Release-Or-Stop Decision",
+    "verification": [
+      "focused structural/read-ahead/AOT/delta/external/corpus/rescan/F2G/epistemic/public-export/machine-closure/work-order-dispatch/raw-memory/MEMCON gates PASS",
+      "pre-implementation autorun PASS 75/75 on 699015afa..HEAD",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "boundedDecisionFacts": {
+      "foundationPlaneIoContractDefined": true,
+      "systemInterlockRulesDefined": true,
+      "mineruChainAcceptedAsBoundedSourceEvidenceOnly": true,
+      "runtimeProviderMcpProofAuthorized": false,
+      "sourceOrTestEditAuthorized": false,
+      "externalSourceImportAuthorized": false,
+      "productionMemoryRagReleased": false,
+      "rawMemoryReleased": false,
+      "publicSyncAuthorized": false,
+      "privateOutputContentReadAuthorized": false,
+      "retrievalReleased": false,
+      "vectorizationReleased": false,
+      "p3Reopened": false,
+      "useCaseLegalWorkflowOpened": false,
+      "publicClaimAuthorized": false
+    },
+    "nextAllowedMove": "Author a fresh source-verified MSEA-R57 Foundation Plane I/O Contract Release-Or-Stop Decision packet. R57 is docs-only decision work: decide whether the R56 contract is sufficient to stop at an architecture/control-plane checkpoint, authorize a narrower implementation or checker packet, or require operator target narrowing. R57 must not implement source/tests, run runtime/provider/MCP proof, read private/generated MinerU output, release production Memory/RAG, perform retrieval/vectorization, mutate public-sync, reopen P3, import external source, open use-case/legal workflow, or claim public/hosted/production readiness.",
+    "claimBoundary": "R56 closes only a bounded private provenance foundation plane I/O contract and system interlock packet. It defines contract rows and interlock rules for how accepted plane outputs may become downstream inputs when receipts, boundaries, owners, and held scopes are explicit. It does not authorize implementation, source/test edit, runtime/provider/MCP proof, public-sync mutation, private/generated MinerU output read, production Memory/RAG release, retrieval, vectorization, P3 restructuring or reconciliation, external source import, use-case/legal workflow, provider-local config edit, worker execution, public claim, or direct implementation."
+  }
+}

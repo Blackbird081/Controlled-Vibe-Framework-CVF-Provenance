@@ -1,0 +1,36 @@
+{
+  "stateOrder": 1460,
+  "stateKey": "mseaR28T14MineruMemoryRecordCandidateBuilderClosure20260704",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-04",
+    "materialCommit": "1b367302",
+    "materialCommitFull": "1b3673027500724647903a2fb9ebd884b8377859",
+    "executionBaseHead": "820b7e75",
+    "dispatchSessionSyncCommit": "820b7e75",
+    "dispatchSessionSyncCommitFull": "820b7e755c738f5bbbc64780a8271f5eb68afca1",
+    "dispatchMaterialCommit": "1b0a50fd",
+    "dispatchMaterialCommitFull": "1b0a50fd5e568bc9fdedc4995ddc9869d712bdde",
+    "dispatchBaseHead": "ef99f417",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T14_MINERU_MEMORY_RECORD_CANDIDATE_BUILDER_2026-07-04.md",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R28_T14_MINERU_MEMORY_RECORD_CANDIDATE_BUILDER_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T14_MINERU_MEMORY_RECORD_CANDIDATE_BUILDER_WORKER_RETURN_2026-07-04.md",
+    "sourcePath": "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py",
+    "testPath": "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py",
+    "selectedImplementationDisposition": "MEMORY_RECORD_CANDIDATE_BUILDER_IMPLEMENTED",
+    "candidateDisposition": "MEMORY_RECORD_CANDIDATE_READY_FOR_REVIEW",
+    "memoryWriteDisposition": "MEMORY_WRITE_NOT_AUTHORIZED_BY_T14_CANDIDATE_ONLY",
+    "futureAuthorityRequired": "FUTURE_MEMORY_STORE_WRITE_AUTHORITY_REQUIRED",
+    "t15Disposition": "T15_FRESH_CANDIDATE_REVIEW_AND_STORE_WRITE_AUTHORITY_WORK_ORDER_AUTHORIZED_FOR_AUTHORING",
+    "t16Disposition": "T16_ACTUAL_MEMORY_RAG_WRITE_HELD_PENDING_SOURCE_BACKED_STORE_WRITE_AUTHORITY",
+    "privateOutputDisposition": "PRIVATE_OUTPUT_NOT_READ_OR_RELEASED",
+    "verification": [
+      "focused pytest PASS 48/48",
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T14 accepted only local deterministic metadata-only memory-record candidate builder source/test behavior and a worker return. It does not authorize actual memory/RAG write, memory store adapter, vectorization, retrieval, MinerU runtime, private/generated content read, Candidate Group A import, checker/hook/session edit outside a fresh work order, provider/live proof, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push."
+  }
+}

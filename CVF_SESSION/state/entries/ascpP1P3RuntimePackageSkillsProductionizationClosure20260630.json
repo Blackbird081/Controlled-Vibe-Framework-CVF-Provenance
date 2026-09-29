@@ -1,0 +1,46 @@
+{
+  "stateOrder": 644,
+  "stateKey": "ascpP1P3RuntimePackageSkillsProductionizationClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "43e4092f",
+    "fullMaterialCommit": "43e4092f9fff3fca2db02b09a23dde938c57f700",
+    "baseline": "docs/baselines/CVF_GC018_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md",
+    "standard": "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md",
+    "executor": "governance/compat/run_assf_production_package_executor.py",
+    "cliMcpAdapter": "governance/compat/run_assf_production_cli_mcp_adapter.py",
+    "activeRuntimePackages": [
+      "cvf-engineering-code-review-quality",
+      "cvf-engineering-debugging-error-recovery",
+      "cvf-engineering-planning-task-breakdown",
+      "cvf-engineering-security-hardening",
+      "cvf-engineering-spec-driven-development",
+      "cvf-engineering-test-driven-development"
+    ],
+    "verification": [
+      "runtime eligibility audit PASS: runtimeEligibleCount=6 and statusCounts.ACTIVE=6",
+      "focused unittest PASS 19/19",
+      "ASCP regression unittest PASS 39/39",
+      "generated ASSF skill index check PASS",
+      "certified metadata admission PASS",
+      "skill truth packet guard PASS on 02e26d49..HEAD before material commit",
+      "pre-dispatch PASS",
+      "commit steward implementation preflight PASS",
+      "pre-commit hook PASS 69/69 before material commit"
+    ],
+    "liveProof": {
+      "provider": "alibaba-dashscope",
+      "model": "deepseek-v4-flash",
+      "httpStatus": 200,
+      "latencyMs": 12872,
+      "executionDisposition": "PRODUCTION_PACKAGE_EXECUTION_PASS",
+      "productionExecutionReceipt": "sha256:e60d0b3d9edb455b483b5f847b942d918ed5e6bdd1523cb1c60f59b9b16c59d5",
+      "useProofReceipt": "sha256:bf0a7afa7fcb66a13f2949af1c68d0b4f7928c3047b894047ce529dae39dc803",
+      "evidenceFileHash": "sha256:36e615e5fcff0b2dcdb27ed553f02292a42116bd9b7dce80309a4d3da5422e37"
+    },
+    "nextAllowedMove": "operator selects the next high-value lane. Remaining 18 package conversions, full MCP server, production Model Gateway/model router, provider registry mutation, public-sync, or broader production-readiness claim require fresh GC-018/source-verified work order.",
+    "claimBoundary": "bounded production runtime for six CVF-owned ASSF package skills only; no remaining package activation, full MCP server, production Model Gateway/model router, provider registry mutation, public-sync, or action authority from package loading alone."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "stateOrder": 1390,
+  "stateKey": "mseaR11T1MineruRouteSelectionClosure20260703",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "bfa451dc",
+    "materialCommitFull": "bfa451dcbf27c562cd4985718ea7ec9b0e281f61",
+    "dispatchCommit": "3e5f54ce",
+    "executionBaseHead": "694c32c0",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_2026-07-03.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R11_T1_MINERU_PRODUCTIZATION_READINESS_ROUTE_SELECTION_DECISION_MATRIX_2026-07-03.md",
+    "selectedRouteToken": "OPEN_SAMPLE_CORPUS_AND_EXPECTED_RECEIPT_POLICY_ROADMAP",
+    "workerReturnStatus": "COMPLETE_PENDING_REVIEW_ACCEPTED",
+    "workerReturnFastGate": "PASS",
+    "reviewerFastGate": "PASS 59/59",
+    "reviewerReturnStewardPreflight": "PASS",
+    "materialPreCommitHook": "PASS 79/79",
+    "sourceMirrorPath": ".private_reference/source_mirrors/opendatalab__MinerU/",
+    "upstreamCommit": "3e60291846cb7c3bf8fe7f4f16238f4fc6cce491",
+    "trackedFileCount": 425,
+    "nextRecommendedMove": "Author source-verified roadmap for MinerU sample corpus and expected receipt policy definition.",
+    "claimBoundary": "Accepted route-selection evidence only. No sample corpus or receipt policy was authored, and no MinerU install/runtime, model download, parser/OCR/VLM/hybrid/API/router/Gradio/Docker execution, provider/live call, credentials/S3, RAG write, source import, package activation, checker implementation, public-sync, Web/MCP/model-router/action-authority, automatic invocation, benchmark, document-truth, extraction-accuracy, schema implementation, receipt-writer code, adapter implementation, production-readiness claim, worker commit/stage/push, or session-sync edit is authorized without a later fresh source-verified work order."
+  }
+}

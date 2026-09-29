@@ -1,0 +1,22 @@
+{
+  "stateOrder": 722,
+  "stateKey": "kiodR7DispatchPacketLifecycleHygieneDispatch20260701",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "eef49493",
+    "materialCommitFull": "eef49493ceac1efdf9fa088b0df1c5d01375ff93",
+    "closureMaterialCommit": "dee9ebf9",
+    "closureMaterialCommitFull": "dee9ebf98da0a164a16eb28874c2fe4207e343bd",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_2026-07-01.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_KIOD_R7_DISPATCH_PACKET_LIFECYCLE_HYGIENE_WORKER_RETURN_2026-07-01.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Authorizes a bounded guard-maintenance worker tranche to create or enrich the dispatch packet lifecycle hygiene standard, implement a changed-range checker, focused tests, and autorun/reviewer-fast/pre-commit/pre-push wiring.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base b743c085 --head HEAD PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base b743c085 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 74/74"
+    ],
+    "claimBoundary": "Closed bounded local governance checker tranche only. No KIOD-R6 rework, runtime/provider/live proof, source import, public-sync, Web/UI/dashboard, MCP/CLI adapter, package lifecycle mutation, action authority, automatic invocation, or production-readiness claim is authorized."
+  }
+}

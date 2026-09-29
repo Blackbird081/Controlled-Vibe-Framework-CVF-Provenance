@@ -22,6 +22,7 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
         self.assertTrue(text.startswith("# Example Worker Return"))
         self.assertIn("dispatchWorkOrder:", text)
         self.assertIn("executionBaseHead:", text)
+        self.assertIn("rawMemoryReleased=false", text)
         for section in scaffold.WORKER_RETURN_SCAFFOLD_SECTIONS:
             self.assertIn(f"## {section}", text)
         self.assertIn("CVF_RECEIPT_PRESENT", text)
@@ -32,8 +33,11 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
         self.assertIn("## Epistemic Process Block", text)
         self.assertIn("## Worker Return Scaffold Effectiveness Measurement", text)
         self.assertIn("## Worker Return Jurisdiction Block", text)
+        self.assertIn("## Command Evidence", text)
         self.assertIn("## Machine Closure Package", text)
         self.assertIn("| TODO: fill before review | READ |", text)
+        self.assertIn("python governance/compat/run_worker_return_fast_gate.py", text)
+        self.assertIn("Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason", text)
 
     def test_external_knowledge_intake_routing_uses_required_row_label_shape(self):
         text = scaffold.build_scaffold("Example Worker Return")

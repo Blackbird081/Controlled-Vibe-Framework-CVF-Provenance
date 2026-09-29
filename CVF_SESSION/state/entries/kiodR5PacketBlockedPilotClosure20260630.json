@@ -1,0 +1,28 @@
+{
+  "stateOrder": 718,
+  "stateKey": "kiodR5PacketBlockedPilotClosure20260630",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be6be4e2",
+    "materialCommitFull": "be6be4e2fce8af33f3185015fbb516b2a76ed81d",
+    "dispatchCommit": "2924fddd",
+    "sessionSyncBeforeWorker": "8a02e741",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R5_PACKET_BLOCKED_NEXT_REPO_FOLDER_PILOT_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R5_PACKET_BLOCKED_PILOT_2026-06-30.md",
+    "workerReturn": "docs/reviews/CVF_KIOD_R5_PACKET_BLOCKED_PILOT_WORKER_RETURN_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_KIOD_R5_PACKET_BLOCKED_PILOT_COMPLETION_2026-06-30.md",
+    "sourceRepo": "https://github.com/EverMind-AI/EverOS.git",
+    "sourceRepoHead": "0341f1230fef170d28d83c4295ab9d93570b0f2d",
+    "selectedLocalFolder": ".private_reference/legacy/CVF 28.06/CVF Controlled Memory Index Store",
+    "selectedFileCount": 26,
+    "closureSummary": "KIOD-R5 accepted the worker return after reviewer repair. The selected folder was scanned as documentation-only with 26/26 files accounted, seven negative-search commands recorded, and overlap/value conversion classified. Memory-foundation enrichment and a possible CVF-authored checker remain future governed work; direct import, runtime, SQLite/LanceDB implementation, adapter, public-sync, package mutation, and production-readiness claims remain unauthorized.",
+    "verification": [
+      "python governance/compat/run_agent_automation_assist.py --base 8a02e741 --head HEAD --json --enforce PASS",
+      "python governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast PASS",
+      "python governance/compat/check_machine_closure_package.py --base 8a02e741 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode reviewer-return --base 8a02e741 --head HEAD --enforce PASS",
+      "pre-commit governance hook PASS 73/73"
+    ],
+    "claimBoundary": "Documentation-only KIOD-R5 closure. No runtime/provider behavior, SQLite/LanceDB implementation, MCP/CLI adapter, dashboard, public-sync, source import, generated aggregate edit beyond session sync, automatic invocation, action authority, package lifecycle mutation, direct checker import, or production-readiness claim."
+  }
+}

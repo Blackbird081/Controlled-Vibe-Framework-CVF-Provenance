@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1419,
+  "stateKey": "mseaR24T1MineruModelSourceFallbackDecisionClosure20260703",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "86097efe",
+    "materialCommitFull": "86097efeaca705bb9f6851731b3f76ded1331653",
+    "sessionPrerequisiteCommit": "5b870df7",
+    "workerExecutionBaseHead": "5b870df7",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R24_T1_MINERU_MODEL_SOURCE_FALLBACK_DECISION_MATRIX_2026-07-03.md",
+    "selectedRouteToken": "SELECT_HUGGINGFACE_CACHE_RECOVERY",
+    "t2ReleaseDisposition": "RELEASE_T2_WORK_ORDER_AUTHORING_ONLY",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 74/74",
+      "reviewer-return steward preflight PASS",
+      "material pre-commit hook PASS 79/79"
+    ],
+    "nextRecommendedMove": "Author the successor GC-018 baseline and source-verified work order for one bounded HuggingFace cache-completion recovery command and config/cache receipt diagnostic.",
+    "claimBoundary": "T1 route selection only. No cache command, model download, parser/OCR/VLM/API/router/Gradio/Docker/WSL execution, local service startup, source document copy/import, document body read, extraction output, provider/live proof, public-sync, schema/writer/adapter/checker implementation, runtime smoke, workflow-chain completion, production readiness, stage, commit, or push was authorized or performed by T1."
+  }
+}

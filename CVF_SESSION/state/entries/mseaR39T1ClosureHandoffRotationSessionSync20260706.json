@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1450,
+  "stateKey": "mseaR39T1ClosureHandoffRotationSessionSync20260706",
+  "value": "SESSION_SYNC_ONLY after MSEA-R39-T1 closure material commit bdc865ce0. The governed file-size guard detected active handoff AGENT_HANDOFF_V36_2026-07-04.md at 1197 lines near the 1200-line hard threshold during closure session-sync. Codex archived V36 at CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V36_2026-07-04.md, opened compact active successor AGENT_HANDOFF_V37_2026-07-06.md, updated CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json activeHandoff and supersededHandoffs, regenerated CVF_SESSION/ACTIVE_SESSION_STATE.json and CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json, and refreshed CVF_SESSION_MEMORY.md plus AGENTS.md startup routing. Boundary: continuity and handoff maintainability only; no source/test implementation, MinerU runtime, private/generated output read, Memory/RAG invocation or release, production durable-store invocation, file-backed persistence, retrieval, vectorization, provider/live proof, public-sync, worker commit, push, or public claim."
+}

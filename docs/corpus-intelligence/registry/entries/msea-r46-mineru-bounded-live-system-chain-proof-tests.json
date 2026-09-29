@@ -1,0 +1,28 @@
+{
+  "registryOrder": 121,
+  "id": "msea-r46-mineru-bounded-live-system-chain-proof-tests",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF Learning Plane Foundation MSEA-R46 MinerU bounded live system-chain proof tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-bounded-live-system-chain-proof.test.ts",
+    "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-bounded-live-system-chain-proof.alibaba.test.ts"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "findings": [],
+  "negativeSearchTerms": [
+    "raw API key persistence (not present)",
+    "raw provider output persistence (not present)",
+    "production readiness claim (not made)",
+    "public readiness claim (not made)",
+    "private generated output read (not used)",
+    "use-case legal workflow (not present)"
+  ],
+  "nextScanRecommendation": "Retain focused deterministic and live-provider coverage for future R46 or later bounded system-chain proof changes.",
+  "scanWave": "MSEA-R46",
+  "scanDate": "2026-07-06",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MSEA_R46_MINERU_SCANLAYER_MEMORY_BOUNDED_LIVE_SYSTEM_CHAIN_PROOF_WORKER_RETURN_2026-07-06.md",
+  "notes": "Focused Vitest coverage for file-backed write/read-back proof and Alibaba-compatible live provider echo. Evidence JSON records safe hashes, booleans, model, endpoint host, receipt decisions, and claim boundary only."
+}

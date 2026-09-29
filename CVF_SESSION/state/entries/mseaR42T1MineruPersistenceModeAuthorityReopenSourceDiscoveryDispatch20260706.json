@@ -1,0 +1,25 @@
+{
+  "stateOrder": 625,
+  "stateKey": "mseaR42T1MineruPersistenceModeAuthorityReopenSourceDiscoveryDispatch20260706",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-06",
+    "dispatchCommit": "9198f09ca",
+    "dispatchCommitFull": "9198f09cad75e3b19a92c7154cae6fc55fe577f4",
+    "dispatchBaseHead": "680d3492a",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_WORKER_RETURN_2026-07-06.md",
+    "decisionMatrixPath": "docs/reference/CVF_MSEA_R42_T1_MINERU_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_MATRIX_2026-07-06.md",
+    "route": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchDisposition": "R42_T1_PERSISTENCE_MODE_AUTHORITY_REOPEN_SOURCE_DISCOVERY_DISPATCHED",
+    "verification": [
+      "dispatch-quality check PASS",
+      "pre-dispatch autorun PASS 73 commands",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "EXECUTE_R42_T1_DOCS_ONLY_SOURCE_DISCOVERY_WORKER_THEN_RETURN_FOR_REVIEW_NO_COMMIT",
+    "claimBoundary": "R42-T1 dispatch authorizes only docs-only source discovery for the R41-T2 persistence-mode authority reopen condition. It does not authorize source/test edits, MinerU runtime execution, private/generated output content reads, file-backed persistence invocation, persistence-mode widening, production durable-store invocation, production Memory/RAG route invocation or release, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted release claim, production release claim, provider-local or IDE config edits, worker commit, push, or public claim."
+  }
+}

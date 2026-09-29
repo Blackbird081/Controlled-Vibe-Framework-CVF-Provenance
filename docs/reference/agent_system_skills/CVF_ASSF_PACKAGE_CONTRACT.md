@@ -4,11 +4,13 @@ Memory class: FULL_RECORD
 
 Status: ACTIVE_REFERENCE
 
-Date: 2026-06-23
+Date: 2026-06-29
 
 docType: reference
 
-Batch ID: ASSF-T1
+Batch ID: ASSF-T1 (AGSK-T4 field repair 2026-06-29)
+
+rawMemoryReleased=false
 
 ## Purpose
 
@@ -65,7 +67,7 @@ Required field families:
 |---|---|---:|---|
 | Identity | `skillId`, `name`, `version`, `owner`, `status`, `canonicalRoot` | yes | CVF Skill Spec Skill Identity; roadmap Candidate Package Contract |
 | Provenance | `originLane`, `sourceArtifacts`, `legacyRows`, `license`, `reviewArtifacts` | yes | roadmap Candidate Package Contract; T0.1 ledger |
-| Purpose and trigger | `purpose`, `triggerPatterns`, `taskClasses`, `useWhen`, `doNotUseWhen` | yes | CVF Skill Spec Intent Layer; Hermes trigger pattern |
+| Purpose and trigger | `purpose`, `triggerPatterns`, `taskClasses`, `useWhen`, `doNotUseWhen`, `riskTriggers` | yes | CVF Skill Spec Intent Layer; Hermes trigger pattern; AGSK-T4 |
 | Selectors | `roles`, `phases`, `surfaces`, `riskCeiling`, `contextProfile` | yes | CVF Skill Spec Authority Mapping; Workflow GoClaw activation profile |
 | Capability | `inputs`, `outputs`, `executionConstraints`, `acceptanceEvidence` | yes | CVF Skill Spec Capability Layer |
 | Risk and authority | `riskProfile`, `authorityCeiling`, `sideEffects`, `permissions`, `rollback`, `safeStop` | yes | CVF Skill Spec Risk Profile; HF risk and policy fields |
@@ -114,6 +116,7 @@ Risk fields:
 | `rollback` | required for mutating or external-impact packages |
 | `safeStop` | required for every package |
 | `policyBindings` | required when a package can affect runtime or external behavior in later tranches |
+| `riskTriggers` | zero-or-more list of CVF-normalized pattern labels that identify input or context conditions requiring elevated risk scrutiny; each entry is a trigger string optionally associated with an escalated risk class or a required approval note; `riskTriggers` is documentation-only guidance and must not raise the package authority beyond `authorityCeiling` or bypass `riskCeiling`; sourced from AGSK-T4 (advisory; no runtime enforcement until a separate checker or resolver tranche is authorized) |
 
 ## Composition And Dependency Fields
 

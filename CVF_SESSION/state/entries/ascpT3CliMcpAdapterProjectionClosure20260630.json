@@ -1,0 +1,23 @@
+{
+  "stateOrder": 643,
+  "stateKey": "ascpT3CliMcpAdapterProjectionClosure20260630",
+  "value": {
+    "batchId": "ASCP-T3",
+    "materialCommit": "a5ab2689",
+    "fullMaterialCommit": "a5ab2689a7118cfc259932769bb9b8178e2987d2",
+    "disposition": "CLOSED_PASS_BOUNDED",
+    "standard": "docs/reference/agent_system_skills/CVF_ASSF_CLI_MCP_ADAPTER_PROJECTION_STANDARD.md",
+    "helper": "governance/compat/run_assf_cli_mcp_adapter_projection.py",
+    "tests": "governance/compat/test_run_assf_cli_mcp_adapter_projection.py",
+    "roadmap": "docs/roadmaps/CVF_ASSF_ACTIVE_RESOLVER_AND_ADAPTER_PILOT_ROADMAP_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ASCP_T3_CLI_MCP_ADAPTER_PROJECTION_2026-06-30.md",
+    "completionReview": "docs/reviews/CVF_ASCP_T3_CLI_MCP_ADAPTER_PROJECTION_COMPLETION_2026-06-30.md",
+    "verification": [
+      "python -m unittest governance.compat.test_run_assf_external_agent_metadata_readout governance.compat.test_check_assf_external_agent_metadata_readout governance.compat.test_run_assf_activation_policy_resolver governance.compat.test_run_assf_cli_mcp_adapter_projection PASS, 26 tests",
+      "projection smoke returned IMPLEMENTED_BOUNDED_PROJECTION EXTERNAL_AGENT_CLI_MCP ACTIVATION_READY DENIED_EXTERNAL_BODY_READ_NOT_IMPLEMENTED DENIED_EXTERNAL_OUTPUT_USE_NOT_IMPLEMENTED",
+      "pre-commit hook PASS, 69 checks"
+    ],
+    "claimBoundary": "ASCP-T3 projects allowlisted metadata and activation policy state only. It does not activate packages, mutate lifecycle sources, read package instruction bodies, emit or consume skill usage receipts, implement package execution adapters, call providers, public-sync, or grant action authority.",
+    "nextAllowedMove": "ASCP-T4 package lifecycle source-state decision through fresh GC-018/work order."
+  }
+}

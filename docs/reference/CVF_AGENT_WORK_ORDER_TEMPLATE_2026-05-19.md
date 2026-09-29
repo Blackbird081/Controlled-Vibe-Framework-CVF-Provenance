@@ -901,14 +901,20 @@ or committer must approve disposition, commit the reviewed owned diff, and run
 the committed-range `pre-closure` gate before changing status to a
 closed-equivalent value.
 
-No-commit worker returns should run the worker-return fast gate before handoff:
+No-commit worker returns use the compact full-gate contract:
 
-```powershell
-python governance/compat/run_worker_return_fast_gate.py
+```text
+## Worker Return Packet Shape Contract
+
+contractProfile: WORKER_RETURN_FULL_GATE_V1
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
+individualCheckerSubstitution: FORBIDDEN
+workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 ```
 
-When the work order names focused tests, add one `--pytest-target <path>` per
-test path.
+`## Verification Commands` must include
+`python governance/compat/run_worker_return_fast_gate.py`. When the work order
+names focused tests, add one `--pytest-target <path>` per test path.
 
 When a no-commit worker return is expected, create the packet from the scaffold
 before writing long prose:
@@ -936,6 +942,34 @@ Worker-return `## Source Inventory` tables must use a bare action token in the
 action cell: `READ`, `FULL_READ`, `PARTIAL_READ`, or `SOURCE_VERIFIED`. Put
 qualifiers such as targeted grep, line-range read, or reason text outside the
 action cell.
+
+Worker Output Quality Controls:
+
+rawMemoryReleased=false. This template guidance does not release raw memory,
+retrieval, reinjection, private-output, or memory/RAG write behavior; any such
+release still requires a fresh source-verified work order and accepted closure.
+
+For any no-commit worker return, especially source/test or high-evidence
+tranches, the work order should require the worker to complete and record this
+self-audit before `COMPLETE_PENDING_REVIEW`:
+
+- rerun every exact required command after the last material edit, including
+  focused tests and worker-return gates named by the work order;
+- copy each required command exactly as run, with working directory and focused
+  target where applicable;
+- classify any final command result as PASS, FAIL with allowed-scope repair
+  completed and rerun, BLOCKED with reason, or N/A with reason;
+- record `git status --short --untracked-files=all` after the worker-return
+  file exists, so pending owned files and unexpected untracked files are visible
+  to the reviewer;
+- remove or disclose any provider-local or IDE side-channel file before
+  handoff, and do not stage or claim such files unless the work order
+  explicitly authorizes them;
+- record any static-analysis diagnostic as fixed inside Allowed scope or as
+  out-of-scope with no source/test edit claim;
+- when the tranche touches security, private output, memory write, route
+  release, unsafe metadata, or normalization behavior, include at least one
+  negative or edge-case test proving the risky input fails closed.
 
 When a work order requires a `docs/reviews/` review artifact (a worker return,
 a UAT review, or a completion review), name these three sections explicitly in

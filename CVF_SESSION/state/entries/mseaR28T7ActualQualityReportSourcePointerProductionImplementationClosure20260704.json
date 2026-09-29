@@ -1,0 +1,28 @@
+{
+  "stateOrder": 1444,
+  "stateKey": "mseaR28T7ActualQualityReportSourcePointerProductionImplementationClosure20260704",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-04",
+    "materialCommit": "67b98170",
+    "materialCommitFull": "67b981708646b6dce8c6d53b8be07294648d00c3",
+    "executionBaseHead": "807307fd",
+    "dispatchMaterialCommit": "3b4488e5",
+    "dispatchMaterialCommitFull": "3b4488e5d4fa3710a8ff4ec63dfb07067c4007f8",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R28_T7_MINERU_ACTUAL_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_IMPLEMENTATION_2026-07-04.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R28_T7_MINERU_ACTUAL_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_IMPLEMENTATION_WORKER_RETURN_2026-07-04.md",
+    "implementedSourcePath": "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/src/mineru_metadata_receipt_writer.py",
+    "implementedTestPath": "EXTENSIONS/CVF_EXTRACTION_FOUNDATION/tests/test_mineru_metadata_receipt_writer.py",
+    "selectedRoute": "ACTUAL_QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_IMPLEMENTATION",
+    "implementationDisposition": "QUALITY_REPORT_SOURCE_POINTER_PRODUCTION_IMPLEMENTED",
+    "memoryRouteDisposition": "MEMORY_ROUTE_HELD_PENDING_ALLOWED_DOWNSTREAM_USE_AND_MEMORY_OWNER_DECISION",
+    "verification": [
+      "focused pytest PASS 29/29",
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 75/75",
+      "reviewer-return commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "claimBoundary": "R28-T7 accepted deterministic local metadata helper and focused tests for quality-report/source-pointer production. It does not authorize MinerU runtime, private/generated content read, Candidate Group A import, memory/RAG release, provider/live proof, public-sync, checker/hook edits, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, workflow-chain production readiness, worker commit, or push."
+  }
+}

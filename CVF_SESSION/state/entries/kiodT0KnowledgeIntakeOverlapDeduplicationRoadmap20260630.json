@@ -1,0 +1,30 @@
+{
+  "stateOrder": 660,
+  "stateKey": "kiodT0KnowledgeIntakeOverlapDeduplicationRoadmap20260630",
+  "value": {
+    "status": "ROADMAP_READY_FOR_KIOD_R4_NEGATIVE_SEARCH_DECISION_AFTER_R1_R3_PASS",
+    "materialCommit": "5d453bce",
+    "materialCommitFull": "5d453bce1bcfe834f866597436a3922479ca0344",
+    "baseHead": "fdcc88b6",
+    "roadmap": "docs/roadmaps/CVF_KIOD_T0_KNOWLEDGE_INTAKE_OVERLAP_DEDUPLICATION_ROADMAP_2026-06-30.md",
+    "decision": "OPEN_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION",
+    "recommendedNext": "AUTHOR_KIOD_R4_GC018_FOR_NEGATIVE_SEARCH_EVIDENCE_DECISION",
+    "plannedTranches": [
+      "KIOD-R1 owner-surface taxonomy - PASS_BOUNDED",
+      "KIOD-R2 pre-scan packet standard - PASS_BOUNDED",
+      "KIOD-R3 overlap routing matrix - PASS_BOUNDED",
+      "KIOD-R4 negative-search evidence guard decision",
+      "KIOD-R5 next repo/folder pilot"
+    ],
+    "verification": [
+      "pre-implementation autorun PASS before KIOD-R1-R3 material edit",
+      "direct external knowledge intake routing PASS",
+      "direct markdown structural completeness PASS",
+      "foundation storage layout PASS",
+      "work-order dispatch quality PASS",
+      "commit steward implementation PASS",
+      "pre-commit PASS 73/73"
+    ],
+    "claimBoundary": "Planning roadmap only. No external source corpus absorption, runtime, package, provider, public-sync, checker implementation, dashboard, adapter, or production-readiness claim."
+  }
+}

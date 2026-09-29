@@ -1,0 +1,23 @@
+{
+  "stateOrder": 1291,
+  "stateKey": "fpcDsdT0FoundationDownstreamLaneSelectionClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "roadmap": "docs/roadmaps/CVF_FPC_DSD_T0_FOUNDATION_DOWNSTREAM_LANE_SELECTION_ROADMAP_2026-06-27.md",
+    "baseline": "docs/baselines/CVF_GC018_FPC_DSD_T0_FOUNDATION_DOWNSTREAM_LANE_SELECTION_DECISION_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_DSD_T0_FOUNDATION_DOWNSTREAM_LANE_SELECTION_DECISION_COMPLETION_2026-06-27.md",
+    "selectedLane": "use-case-adapter-public",
+    "nextRecommendedRoadmap": "FPC-UAP-T0 Use-Case Adapter Public Boundary And Dev-Facing Comprehension Roadmap",
+    "upstreamClosure": "FPC-SCG-T7 acceptance ledger and downstream reopen gate at be253923",
+    "verification": [
+      "focused checker PASS: python governance/compat/check_fpc_system_chain_acceptance_ledger.py --enforce",
+      "pre-implementation autorun PASS at receipt .cvf/runtime/autorun-receipts/pre-implementation.json",
+      "reviewer-fast PASS 40/40",
+      "pre-commit hook PASS 59/59 at material commit be253923",
+      "material pre-closure content gates PASS except expected active-session handoff HEAD drift before this sync"
+    ],
+    "liveProofDisposition": "N/A with reason: FPC-DSD-T0 made no runtime/provider governance claim and used no API keys",
+    "claimBoundary": "Downstream lane selection and next-roadmap routing only. No public-sync, no public README/catalog/snapshot edits, no runtime/MCP/CLI/IDE bridge implementation, no provider/live proof, no Policy_Local or Document Translator implementation, no Model Gateway/Sandbox Runtime expansion, no MPI-T6 runtime work, no resolver/adapter/package/certification/registry/checker/generated-state mutation, and no push."
+  }
+}

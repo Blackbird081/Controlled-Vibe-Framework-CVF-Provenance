@@ -1,0 +1,31 @@
+{
+  "stateOrder": 1328,
+  "stateKey": "agskT6AssfPackageAnatomyCheckerClosure20260629",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "1a5bdee1",
+    "reviewArtifact": "docs/reviews/CVF_AGSK_T6_ASSF_PACKAGE_ANATOMY_CHECKER_VALUE_PROBE_AND_CLOSURE_2026-06-29.md",
+    "checker": "governance/compat/check_assf_package_candidate_anatomy.py",
+    "tests": "governance/compat/test_check_assf_package_candidate_anatomy.py",
+    "registryBackfill": [
+      "docs/reference/agent_system_skills/registry/entries/cvf-dispatch-quality-reviewer.json",
+      "docs/reference/agent_system_skills/registry/entries/cvf-worker-return-author.json"
+    ],
+    "generatedIndex": "docs/reference/agent_system_skills/generated/skill-index.json",
+    "hookWiring": [
+      "governance/compat/agent_autorun_command_catalog.py",
+      "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "governance/compat/local_governance_hook_catalog_pre_push.py",
+      "governance/compat/local_governance_hook_catalog_reviewer_fast.py"
+    ],
+    "verification": [
+      "focused unit tests PASS 5/5",
+      "ASSF package candidate anatomy checker PASS",
+      "ASSF skill index drift PASS",
+      "reviewer-fast PASS with ASSF package candidate anatomy gate",
+      "pre-commit governance hook PASS 65/65"
+    ],
+    "nextAllowedMove": "operator selects the next external repo/folder absorption target under the full-value absorption rule",
+    "claimBoundary": "AGSK doctrine/package/checker value closed for current source pack; no runtime, package activation, resolver mutation, external CLI/MCP adapter, provider/live proof, public-sync, lifecycle promotion, automatic skill invocation, or production-readiness claim"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "stateOrder": 714,
+  "stateKey": "kiodR4NegativeSearchEvidenceDecisionDispatch20260630",
+  "value": {
+    "status": "DISPATCHED_TO_CLAUDE_WORKER",
+    "materialDispatchCommit": "c5f93805",
+    "baseHead": "b510be26",
+    "baseline": "docs/baselines/CVF_GC018_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_2026-06-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_FOR_CLAUDE_2026-06-30.md",
+    "plannedWorkerReturn": "docs/reviews/CVF_KIOD_R4_NEGATIVE_SEARCH_EVIDENCE_DECISION_WORKER_RETURN_2026-06-30.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "decisionTokens": [
+      "CHECKER_REQUIRED_NOW",
+      "PACKET_BLOCK_REQUIRED_NOW",
+      "BLOCKED_PENDING_PILOT_EVIDENCE"
+    ],
+    "nextAllowedMove": "Claude worker executes KIOD-R4 decision work order and returns uncommitted worker-return artifact only.",
+    "verification": [
+      "ADIF disclosure PASS",
+      "external knowledge intake routing PASS",
+      "agent handoff boundary PASS",
+      "work-order dispatch quality PASS",
+      "Delta execution claim boundary PASS",
+      "pre-dispatch autorun PASS 66/66",
+      "commit steward dispatch PASS",
+      "pre-commit PASS 73/73"
+    ],
+    "claimBoundary": "Dispatch only. No checker implementation, new owner surface, next repo/folder pilot, runtime, MCP/CLI adapter, provider/live proof, public-sync, dashboard, generated aggregate, source import, or production-readiness claim."
+  }
+}

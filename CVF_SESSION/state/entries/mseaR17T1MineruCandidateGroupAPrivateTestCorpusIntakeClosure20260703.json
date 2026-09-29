@@ -1,0 +1,25 @@
+{
+  "stateOrder": 1411,
+  "stateKey": "mseaR17T1MineruCandidateGroupAPrivateTestCorpusIntakeClosure20260703",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-03",
+    "materialCommit": "eb127b7f",
+    "materialCommitFull": "eb127b7fa30e63aba5045ce0eab74c343731ea99",
+    "executionBaseHead": "d142df96",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_AND_RECEIPT_DRY_RUN_WORKER_RETURN_2026-07-03.md",
+    "companionReferencePath": "docs/reference/CVF_MSEA_R17_T1_MINERU_CANDIDATE_GROUP_A_PRIVATE_TEST_CORPUS_INTAKE_LEDGER_2026-07-03.md",
+    "selectedCandidateGroup": "CANDIDATE_GROUP_A_ONLY",
+    "selectedNextRouteToken": "PRIVATE_METADATA_INTAKE_ACCEPTED_PENDING_FRESH_NEXT_WORK_ORDER",
+    "verification": [
+      "worker-return fast gate PASS",
+      "pre-implementation autorun PASS 74/74",
+      "reviewer-return steward preflight PASS",
+      "independent reviewer path/hash/size check PASS",
+      "material pre-commit hook PASS 79/79",
+      "committed-range pre-closure content gates PASS with expected pre-session-sync handoff HEAD drift"
+    ],
+    "nextRecommendedMove": "Author a fresh GC-018 baseline and source-verified WORKER_MUST_NOT_COMMIT work order for MSEA-R18-T1 extraction-planning or schema/receipt-readiness selection if the operator chooses.",
+    "claimBoundary": "Private metadata-only intake acceptance. The two Candidate Group A files are verified by path presence, size, SHA-256, slot assignment, operator authorization boundary, and receipt dry-run non-claims. No source document copy/import into the repository, public-sync, redistribution, fuller content inclusion, Candidate Group B, rejected derived outputs, MinerU runtime/install/model download/parser/OCR/VLM/API/Docker execution, provider/live proof, corpus population, RAG/S3, schema/writer/adapter/checker implementation, source import, package activation, Web/MCP/model-router/action-authority, benchmark, document-truth, extraction-accuracy, legal advice quality, current-law correctness, production-readiness claim, or workflow-chain completion claim is authorized."
+  }
+}

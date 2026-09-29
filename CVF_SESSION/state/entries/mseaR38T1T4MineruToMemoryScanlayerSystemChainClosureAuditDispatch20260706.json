@@ -1,0 +1,23 @@
+{
+  "stateOrder": 562,
+  "stateKey": "mseaR38T1T4MineruToMemoryScanlayerSystemChainClosureAuditDispatch20260706",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-06",
+    "materialCommit": "09ab88f13",
+    "materialCommitFull": "09ab88f130653baff1756d3a6f1a45ef9757a7cd",
+    "dispatchBaseHead": "aeaadccf9",
+    "baselinePath": "docs/baselines/CVF_GC018_MSEA_R38_T1_T4_MINERU_TO_MEMORY_SCANLAYER_SYSTEM_CHAIN_CLOSURE_AUDIT_2026-07-06.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R38_T1_T4_MINERU_TO_MEMORY_SCANLAYER_SYSTEM_CHAIN_CLOSURE_AUDIT_2026-07-06.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R38_T1_T4_MINERU_TO_MEMORY_SCANLAYER_SYSTEM_CHAIN_CLOSURE_AUDIT_WORKER_RETURN_2026-07-06.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedDispatchDisposition": "R38_T1_T4_MINERU_TO_MEMORY_SCANLAYER_SYSTEM_CHAIN_CLOSURE_AUDIT_AUTHORIZED_DOCS_ONLY",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73",
+      "dispatch commit steward PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextRecommendedMove": "EXECUTE_R38_T1_T4_DOCS_ONLY_WORKER_THEN_RETURN_FOR_REVIEW_NO_COMMIT",
+    "claimBoundary": "R38 dispatch authorizes only docs-only source-verified audit and decision artifacts about current MinerU output, memory, and scan-layer system-chain status. It does not authorize source/test edits, MinerU runtime execution, private/generated output content read, production durable-store invocation, production memory/RAG route release, file-backed production persistence, retrieval, vectorization, provider/live proof, Web/UI implementation, public-sync, standalone app work, legal/use-case deep dive, extraction accuracy, document truth, legal quality, current-law correctness, hosted readiness, production readiness, interface/root-barrel/runtime wiring, provider-local or IDE config edits, worker commit, or push."
+  }
+}

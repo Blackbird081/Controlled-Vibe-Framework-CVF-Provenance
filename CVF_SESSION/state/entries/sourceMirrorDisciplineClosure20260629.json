@@ -1,0 +1,29 @@
+{
+  "stateOrder": 1330,
+  "stateKey": "sourceMirrorDisciplineClosure20260629",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "27c692e0",
+    "standard": "docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md",
+    "sourceMirrorControlPlane": [
+      ".private_reference/source_mirrors/README.md",
+      ".private_reference/source_mirrors/INDEX.md",
+      ".private_reference/source_mirrors/.gitignore"
+    ],
+    "upstreamMirror": {
+      "repo": "https://github.com/addyosmani/agent-skills.git",
+      "localPath": ".private_reference/source_mirrors/addyosmani__agent-skills/",
+      "pinnedCommit": "aba7c4e9695c363e65cb59effe926c7f1d1abe3d"
+    },
+    "verification": [
+      "source mirror payload ignored by git",
+      "index classification PASS",
+      "external absorption core PASS",
+      "external absorption value conversion PASS",
+      "reviewer-fast PASS",
+      "pre-commit governance hook PASS 65/65"
+    ],
+    "nextAllowedMove": "execute AGSK-R2 source-mirror-backed agent-skills full package backfill",
+    "claimBoundary": "source mirror control-plane only; no runtime activation, package activation, resolver mutation, CLI/MCP adapter, hook execution, provider/live proof, public-sync, direct import, or production-readiness claim"
+  }
+}

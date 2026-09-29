@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1292,
+  "stateKey": "fpcUapT0UseCaseAdapterPublicBoundaryRoadmapClosure20260627",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "be253923",
+    "roadmap": "docs/roadmaps/CVF_FPC_UAP_T0_USE_CASE_ADAPTER_PUBLIC_BOUNDARY_AND_DEV_FACING_COMPREHENSION_ROADMAP_2026-06-27.md",
+    "baseline": "docs/baselines/CVF_GC018_FPC_UAP_T0_USE_CASE_ADAPTER_PUBLIC_BOUNDARY_AND_DEV_FACING_COMPREHENSION_ROADMAP_2026-06-27.md",
+    "completionReview": "docs/reviews/CVF_FPC_UAP_T0_USE_CASE_ADAPTER_PUBLIC_BOUNDARY_AND_DEV_FACING_COMPREHENSION_ROADMAP_COMPLETION_2026-06-27.md",
+    "selectedLane": "use-case-adapter-public",
+    "nextRecommendedTranche": "FPC-UAP-T1 Use-Case Adapter Public Comprehension Surface Inventory And Boundary Work Order",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "upstreamClosure": "FPC-DSD-T0 downstream lane selection at be253923",
+    "verification": [
+      "focused checker PASS: python governance/compat/check_fpc_system_chain_acceptance_ledger.py --enforce",
+      "pre-implementation autorun PASS at receipt .cvf/runtime/autorun-receipts/pre-implementation.json",
+      "reviewer-fast PASS 40/40",
+      "pre-commit hook PASS 59/59 at material commit be253923",
+      "material pre-closure content gates PASS except expected active-session handoff HEAD drift before this sync"
+    ],
+    "liveProofDisposition": "N/A with reason: FPC-UAP-T0 made no runtime/provider governance claim and used no API keys",
+    "claimBoundary": "Public/provenance boundary and dev-facing comprehension roadmap only. No public-sync, no public README/catalog/snapshot edits, no runtime/MCP/CLI/IDE bridge implementation, no provider/live proof, no Policy_Local or Document Translator implementation, no Model Gateway/Sandbox Runtime expansion, no MPI-T6 runtime work, no resolver/adapter/package/certification/registry/checker/generated-state mutation, and no push."
+  }
+}

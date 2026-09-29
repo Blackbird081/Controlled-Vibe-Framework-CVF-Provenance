@@ -25,6 +25,7 @@ def _certified_entry(skill_id: str = "skill-certified") -> dict:
         ],
         "uatState": "PASSED",
         "certificationState": "CERTIFIED",
+        "internalAgentDisposition": "IMPLEMENTED",
         "resolverBehavior": "metadata-only; no instruction body opened",
         "loaderBoundary": "loading this metadata never grants authority",
         "externalCliMcpDisposition": "DEFERRED_WITH_REASON",
@@ -126,6 +127,39 @@ class CertifiedMetadataAdmissionTests(unittest.TestCase):
 
             self.assertTrue(any("adapterContract" in v for v in violations))
             self.assertTrue(any("adapterEvidence" in v for v in violations))
+
+    def test_active_certified_entry_requires_concrete_adapter_evidence(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entries_dir, index_path = _make_repo(root)
+            entry = _certified_entry()
+            entry["status"] = "ACTIVE"
+            entry["candidateState"] = "ACTIVE"
+            entry["externalCliMcpDisposition"] = "IMPLEMENTED"
+            _write_entry(entries_dir, entry)
+            generate_index(index_path, entries_dir)
+
+            violations = check(index_path, entries_dir, repo_root=root)
+
+            self.assertTrue(any("concrete adapterContract" in v for v in violations))
+            self.assertTrue(any("concrete adapterEvidence" in v for v in violations))
+
+    def test_active_certified_entry_passes_with_concrete_adapter_evidence(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entries_dir, index_path = _make_repo(root)
+            entry = _certified_entry()
+            entry["status"] = "ACTIVE"
+            entry["candidateState"] = "ACTIVE"
+            entry["externalCliMcpDisposition"] = "IMPLEMENTED"
+            entry["adapterContract"] = "docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md"
+            entry["adapterEvidence"] = "docs/reviews/CVF_ASSF_TEST_REVIEW_ARTIFACT.md"
+            _write_entry(entries_dir, entry)
+            generate_index(index_path, entries_dir)
+
+            violations = check(index_path, entries_dir, repo_root=root)
+
+            self.assertEqual(violations, [])
 
     def test_require_certified_fails_when_none_present(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

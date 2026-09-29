@@ -28,6 +28,7 @@ class LocalGovernanceHookChainTests(unittest.TestCase):
         self.assertIn("external knowledge intake routing", labels)
         self.assertIn("active session state compatibility", labels)
         self.assertIn("epistemic process packet", labels)
+        self.assertIn("worker-return quality gate", labels)
 
     def test_commit_and_push_chains_include_external_knowledge_routing(self) -> None:
         for hook in ("pre-commit", "pre-push"):

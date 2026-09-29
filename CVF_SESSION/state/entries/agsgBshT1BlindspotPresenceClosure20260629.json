@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1315,
+  "stateKey": "agsgBshT1BlindspotPresenceClosure20260629",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "328de12b",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_2026-06-28.md",
+    "workerReturn": "docs/reviews/CVF_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_WORKER_RETURN_2026-06-29.md",
+    "completionReview": "docs/reviews/CVF_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_GUARD_COMPLETION_2026-06-28.md",
+    "checker": "governance/compat/check_absorption_blindspot_control_presence.py",
+    "tests": "governance/compat/test_check_absorption_blindspot_control_presence.py",
+    "adifEntry": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0014.md",
+    "decision": "CLOSE_AGSG_BSH_T1_SCOPE_TRIGGERED_BLINDSPOT_PRESENCE_CHECKER",
+    "nextAllowedMove": "OPERATOR_SELECT_NEXT_EXTERNAL_ABSORPTION_OR_ROADMAP_AUDIT",
+    "summary": "AGSG-BSH-T1 closes the claim-triggered absorption blind-spot gap with a content-triggered governed Markdown checker for .private_reference/legacy/ and .private_reference/external_repos/ references. Focused unittest coverage reports 26 tests passing, the checker passes on the real range with scopeTriggered true, and the pre-commit hook passed 62/62 checks. Boundary: offline governance checker only; no runtime/provider/live/public-sync/plugin/import/persona/hook/package-activation/production-readiness claim."
+  }
+}
