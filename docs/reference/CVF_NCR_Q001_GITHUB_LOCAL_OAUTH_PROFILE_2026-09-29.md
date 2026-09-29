@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: OAUTH_ADMIN_SESSION_OBSERVED_RECEIPT_PROFILE_OPEN
+Status: OAUTH_ADMIN_UI_OBSERVED_RECEIPT_PROFILE_OPEN
 
 docType: reference
 
@@ -43,13 +43,13 @@ The GitHub login email is not the CVF authority key. The public account lookup i
 ## Bounded Verification
 
 - Completed bounded: production build passed with real local config; local HTTP probes saw only GitHub, `/login` 200, anonymous `/api/auth/me` 401; operator-relayed authenticated session JSON matched the reviewed CVF admin binding. No codes, tokens, cookies, client secret, or signed headers were recorded.
-- Pending: confirm the authenticated audit page/API is accessible under the `admin` role.
+- Completed bounded by operator report: `/admin/audit-log` opened in the same Firefox Private GitHub session. Local did not inspect its browser cookie or page contents.
 - Verify an unbound account is denied if one is available, and that removing the binding invalidates subsequent use after controlled configuration propagation. Do not infer immediate revocation from source tests.
 - Exercise one Work Transfer HTML export with the authenticated session and join the receipt ID to the governance ledger. Keep `DRAFT_UNACCEPTED` distinct from a receipt `ALLOW` decision. Measure first and warm export latency separately.
 
 ## Claim Boundary
 
-Existing source tests cover the binding contract. The local production build and an operator-relayed real GitHub login establish a bounded authenticated admin session for the selected account; Local did not inspect the browser cookie or GitHub token. Audit-route access, binding revocation, receipt latency/ledger join, provider governance behavior, artifact acceptance, deployment, and production readiness remain separate proof obligations. The Governance Engine was not running during this OAuth check. P11 and public export remain parked.
+Existing source tests cover the binding contract. The local production build and operator-relayed real GitHub login plus admin page access establish a bounded authenticated admin UI path for the selected account; Local did not inspect the browser cookie, GitHub token, or audit page contents. Binding revocation, receipt latency/ledger join, provider governance behavior, artifact acceptance, deployment, and production readiness remain separate proof obligations. The Governance Engine was not running during this OAuth check. P11 and public export remain parked.
 
 ## Epistemic Process Block
 
@@ -63,8 +63,8 @@ The first mismatched redirect failed, the next callback failed its PKCE cookie c
 
 ### Contradiction Or Gap Disposition
 
-The first two failures were not success evidence. The clean retry supports the bounded login claim. The exact cause of the PKCE cookie failure and admin-route/receipt behavior remain open.
+The first two failures were not success evidence. The clean retry and same-session admin page access support the bounded login/access claim. The exact cause of the PKCE cookie failure and receipt behavior remain open.
 
 ### Claim Update
 
-Q001 GitHub login and the selected admin session have operator-observed end-to-end evidence in the local profile. No governance receipt or artifact acceptance follows from this login alone.
+Q001 GitHub login, selected admin session, and admin page access have operator-observed end-to-end evidence in the local profile. No governance receipt or artifact acceptance follows from this login alone.
