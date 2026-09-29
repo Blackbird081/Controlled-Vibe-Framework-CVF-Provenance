@@ -1,0 +1,108 @@
+{
+  "claimBoundary": "Synthetic process/store proof only; no artifact approval, real GitHub cutover, provider call or Q001/R0 exit.",
+  "deniedAuth": {
+    "decision": "DENY",
+    "httpStatus": 401
+  },
+  "executionBaseHead": "e6e5e3f1c2097d3e8bbb41d975f0c63cc2dff78e",
+  "malformed": {
+    "httpStatus": 200,
+    "receiptStatus": "INVALID_RESPONSE"
+  },
+  "negativeControls": {
+    "forwardedEngineCalls": 2,
+    "wrongRequestIdAbsent": true,
+    "wrongStoreAbsent": true
+  },
+  "positive": {
+    "artifactState": "DRAFT_UNACCEPTED",
+    "attemptId": "artifact-proof-q001-positive-1790703164143-1790703164166",
+    "authMode": "service_token",
+    "engineReport": {
+      "action": "ALLOW",
+      "artifactId": "q001-positive-1790703164143",
+      "decision": "ALLOW",
+      "ledgerAttached": true,
+      "requestId": "artifact-proof-q001-positive-1790703164143-1790703164166"
+    },
+    "httpStatus": 200,
+    "receiptStatus": "PRESENT",
+    "routeDecision": "ALLOW",
+    "sqlite": {
+      "blockDecision": {
+        "evaluated_at": "2026-09-29T17:32:44.561057",
+        "final_decision": "ALLOW",
+        "risk_score": 0.0,
+        "triggered_rules": []
+      },
+      "blockHash": "c0f7e05260f30ea00d3214c505603a519a80fc20990420b163da31938623b35e",
+      "chainValid": true,
+      "count": 1,
+      "exactIdFound": true,
+      "tipHash": "c0f7e05260f30ea00d3214c505603a519a80fc20990420b163da31938623b35e"
+    }
+  },
+  "processes": {
+    "enginePidInitial": 25848,
+    "enginePidRestart": 20052,
+    "proxyPort": 51538,
+    "webPid": 25136
+  },
+  "responseLoss": {
+    "artifactState": "DRAFT_UNACCEPTED",
+    "attemptId": "artifact-proof-q001-timeout-1790703165693-1790703165714",
+    "engineReport": {
+      "action": "ALLOW",
+      "artifactId": "q001-timeout-1790703165693",
+      "decision": "ALLOW",
+      "ledgerAttached": true,
+      "requestId": "artifact-proof-q001-timeout-1790703165693-1790703165714"
+    },
+    "exactIdReconciliation": "FOUND",
+    "httpStatus": 200,
+    "receiptStatus": "TIMED_OUT",
+    "safeToRetry": false,
+    "sqlite": {
+      "blockDecision": {
+        "evaluated_at": "2026-09-29T17:32:45.725538",
+        "final_decision": "ALLOW",
+        "risk_score": 0.0,
+        "triggered_rules": []
+      },
+      "blockHash": "4cc5bc2c051bddcf8a0fb198b09b66aec656b39b1536f2e0bb5a952b480a83ef",
+      "chainValid": true,
+      "count": 2,
+      "exactIdFound": true,
+      "tipHash": "4cc5bc2c051bddcf8a0fb198b09b66aec656b39b1536f2e0bb5a952b480a83ef"
+    }
+  },
+  "restart": {
+    "sameExactIdCountAndTip": true,
+    "sqlite": {
+      "blockDecision": {
+        "evaluated_at": "2026-09-29T17:32:44.561057",
+        "final_decision": "ALLOW",
+        "risk_score": 0.0,
+        "triggered_rules": []
+      },
+      "blockHash": "c0f7e05260f30ea00d3214c505603a519a80fc20990420b163da31938623b35e",
+      "chainValid": true,
+      "count": 1,
+      "exactIdFound": true,
+      "tipHash": "c0f7e05260f30ea00d3214c505603a519a80fc20990420b163da31938623b35e"
+    }
+  },
+  "schemaVersion": "cvf.q001SyntheticSystemChainEvidence.v1",
+  "scope": "DISPOSABLE_TRACKED_SOURCE_ONLY",
+  "stageExcludesEnvLocalAndCurrentJsonLedger": true,
+  "stagedTrackedFileCount": 1150,
+  "storeIdentityCategory": "fresh-disposable-sqlite-in-ignored-runtime",
+  "timeoutMs": {
+    "innerEngine": 8000,
+    "outerReceipt": 1200
+  },
+  "unavailable": {
+    "httpStatus": 200,
+    "receiptStatus": "UNAVAILABLE"
+  }
+}
