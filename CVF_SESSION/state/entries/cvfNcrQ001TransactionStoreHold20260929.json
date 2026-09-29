@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2996,
+  "stateKey": "cvfNcrQ001TransactionStoreHold20260929",
+  "value": "Q001_LOCAL_TRANSACTION_STORE_PACKET_HOLD_PRE_DISPATCH at material commit 185ce875b. Paired GC-018 baseline and work order select Python SQLite for local single-host proof only, with validated JSON import, exact-ID lookup, real second-process barrier, pre-commit fault rollback, clean restore and independent Local probe as planned evidence. High-risk, dispatch-quality and closeability static checks passed; active-work-order pre-dispatch release correctly remains blocked because this HOLD packet is not currentAuthority, lacks dispatch release and no worker implementation is authorized. Finalize exact manifest/graph and resolve the DB-only security-tuple proof scope before separate dispatch admission. GitHub ledger untouched; Q001/R0, P11, public export and deployment remain open."
+}
