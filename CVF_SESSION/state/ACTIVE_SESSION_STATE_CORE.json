@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S11_R1_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_CORRECTIVE_2026-09-28.md",
     "workOrderSha256": "22618c185791df53aff59b93a2d3291f1b0a79b6f1e1231661ae645726609215"
   },
-  "currentAuthoritySyncReason": "CVF-NCR-R1-S11-R1 P10 remains closed bounded at bd15b2600. Q001 production-auth source correction is bounded local evidence through e60b34f83; known mock credentials reject outside test/development. Real OAuth identity/role/config, first-export production-like latency, retention, P08 and provider/live proof remain open. Artifact remains DRAFT_UNACCEPTED. P11 and broader effects remain parked.",
+  "currentAuthoritySyncReason": "CVF-NCR-R1-S11-R1 P10 remains closed bounded at bd15b2600. Q001 one-provider OAuth identity contract is bounded local source/test evidence through 569cf4aa3. Provider/subject/role selection, real callback/config and production-like latency, retention, P08 and provider/live proof remain open. Artifact remains DRAFT_UNACCEPTED. P11 and broader effects remain parked.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

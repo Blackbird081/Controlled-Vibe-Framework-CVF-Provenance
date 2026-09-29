@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2983,
+  "stateKey": "cvfNcrQ001SingleOAuthBinding20260929",
+  "value": "BOUNDED_SOURCE_CONTRACT at material commit 569cf4aa3. Production Auth.js selects one GitHub or Google provider with its client pair and requires exact provider-subject to CVF user/role/org/team binding. Unknown or revoked production sessions fail closed in JWT and API session readers; local mock login remains test/development only. Focused 36/36, adjacent 41/41, TypeScript, ESLint and pre-commit 90/90 passed. No provider selection, real subject/secret, OAuth callback, production-like receipt latency, public sync, deployment or Q001/R0 exit. Review: docs/reviews/CVF_CVF_NCR_Q001_SINGLE_OAUTH_IDENTITY_BINDING_2026-09-29.md."
+}
