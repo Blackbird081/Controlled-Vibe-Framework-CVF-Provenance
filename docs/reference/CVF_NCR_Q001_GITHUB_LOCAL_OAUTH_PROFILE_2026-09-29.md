@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: OAUTH_ADMIN_UI_AND_LOCAL_RECEIPT_DISPLAY_OBSERVED_BOUNDED
+Status: OAUTH_SESSION_ROUTE_AND_LOCAL_RECEIPT_OBSERVED_BOUNDED
 
 docType: reference
 
@@ -10,7 +10,7 @@ Date: 2026-09-29
 
 ## Purpose
 
-Record the exact local GitHub OAuth setup for the bounded Q001 sign-in and receipt profile. This is a configuration recipe, not a completed login or governance proof. Local owns private-CVF verification and final technical disposition.
+Record the exact local GitHub OAuth setup and bounded Q001 sign-in, session route, and receipt evidence. Local owns private-CVF verification and final technical disposition.
 
 ## Scope / Applies To
 
@@ -45,7 +45,7 @@ The GitHub login email is not the CVF authority key. The public account lookup i
 - Completed bounded: production build passed with real local config; local HTTP probes saw only GitHub, `/login` 200, anonymous `/api/auth/me` 401; operator-relayed authenticated session JSON matched the reviewed CVF admin binding. No codes, tokens, cookies, client secret, or signed headers were recorded.
 - Completed bounded by operator report: `/admin/audit-log` opened in the same Firefox Private GitHub session. Local did not inspect its browser cookie or page contents.
 - Verify an unbound account is denied if one is available, and that removing the binding invalidates subsequent use after controlled configuration propagation. Do not infer immediate revocation from source tests.
-- Read the exact route-auth proof from a safe export response if needed; the browser source supports only an inference below. Measure first and warm export latency separately. Keep `DRAFT_UNACCEPTED` distinct from a receipt `ALLOW` decision.
+- The exact route-auth proof from one later browser export is recorded below. A single warm response time is not a first-run or latency-distribution measurement. Keep `DRAFT_UNACCEPTED` distinct from a receipt `ALLOW` decision.
 
 ## Local Work Transfer Receipt Attempt
 
@@ -57,7 +57,15 @@ The engine ledger then contained one block. Local recomputed its SHA-256 hash an
 
 With the same production-built CVF Web and local engine already warm, Local sent five sequential synthetic `POST /api/artifacts/export` requests using the configured service token and per-request HMAC signature. No browser cookie, user text or external provider call entered this probe. All five returned HTTP 200, `routeGovernanceProof.authMode=service_token`, receipt status `PRESENT`, decision `ALLOW` and state `DRAFT_UNACCEPTED`. Elapsed client times were 59.8, 10.8, 9.6, 10.1 and 9.0 ms; median 10.1 ms, attempts 2-5 range 9.0-10.8 ms. Local recomputed all six ledger block hashes and previous-hash links, including the earlier browser-triggered block, and joined each of the five new receipt IDs to a distinct ledger request ID. Six-block tip hash: `95172cb62f2d04dd40fdf6bf5771eea7075ccfe454a99c139129f81db663964f`.
 
-This small, same-host warm sample is diagnostic only. The first request includes a new Node client's connection setup; it is not a cold CVF Web or engine start. It cannot establish a latency distribution, timeout policy, hosted behavior or GitHub-session export time. The exact browser response `routeGovernanceProof` still needs a safe direct observation.
+This small, same-host warm sample is diagnostic only. The first request includes a new Node client's connection setup; it is not a cold CVF Web or engine start. It cannot establish a latency distribution, timeout policy, hosted behavior or GitHub-session export time.
+
+## Direct Browser Session Route Proof
+
+On 2026-09-29, Local temporarily placed a transparent same-host HTTP relay on `localhost:3000` in front of a second instance of the same production-built CVF Web on port 3001. The relay forwarded request and response bytes and recorded only the export response's selected status/proof fields and elapsed time in ignored local runtime storage. It did not persist cookies, tokens, request bodies, response HTML, or raw headers. Before the operator action, `/login` returned HTTP 200, the proxied engine health was `healthy`, and anonymous `/api/auth/me` returned 401. The operator refreshed Work Transfer in the existing GitHub-authenticated Firefox Private window and triggered one HTML export.
+
+That `POST /api/artifacts/export` returned HTTP 200 and `success=true` in 85.7 ms measured at the relay, with `routeGovernanceProof.authMode=session`, `actorId=usr_github_206422451`, route decision `ALLOW`, receipt status `PRESENT`, receipt decision `ALLOW`, and `governanceState=DRAFT_UNACCEPTED`. Receipt ID and attempt ID both were `artifact-proof-transfer-1dbdb2e0-39d5-45c4-8d15-2900dff4b775-1790668534339`. The engine ledger grew from six to seven blocks; its last block had that request ID, decision `ALLOW`, previous hash `95172cb62f2d04dd40fdf6bf5771eea7075ccfe454a99c139129f81db663964f`, and tip hash `24ad1bce923c04cddcf08227f64031e3883ec8acf35136d358bddd5353920b4d`. Local recomputed all seven block hashes with the engine's sorted-key JSON SHA-256 method and checked every previous-hash link; all passed. The operator confirmed the export completed. Local then removed the relay and second Web instance and restored direct production-built Web on port 3000; `/login` returned 200 and engine health remained `healthy`.
+
+This directly establishes the session auth mode and ledger join for one local browser export. The 85.7 ms is a single warm same-host relay observation, not a browser navigation measurement, cold-start result, percentile, timeout distribution, or hosted target. The selected Work Transfer record still names historical actor `usr_2`; route actor `usr_github_206422451` is the authenticated caller, not a rewrite of that audit record.
 
 ## Bounded Ledger Snapshot Restore Check
 
@@ -65,7 +73,7 @@ Local copied the six-block synthetic ledger to an ignored backup path, then copi
 
 ## Claim Boundary
 
-Existing source tests cover the binding contract. The local production build and operator-relayed real GitHub login plus admin page access establish a bounded authenticated admin UI path for the selected account; Local did not inspect the browser cookie or GitHub token. A subsequent browser-triggered local export displayed `ALLOW` and draft/unaccepted state, and reached the engine ledger with a valid hash and matching request ID. Five service-token exports provide a small warm-path latency diagnostic, and one offline snapshot was readable by a second local engine. Neither establishes OAuth latency or durable backup policy. The exact browser route-auth response proof, latency distribution, binding revocation, provider governance behavior, artifact acceptance, deployment, and production readiness remain separate proof obligations. The Governance Engine was not running during the earlier OAuth check; it ran in an isolated local profile for the later receipt attempts. P11 and public export remain parked.
+Existing source tests cover the binding contract. The local production build and operator-relayed real GitHub login plus admin page access establish a bounded authenticated admin UI path for the selected account; Local did not inspect the browser cookie or GitHub token. The later browser-triggered local export directly returned session route proof, `ALLOW` receipt and draft/unaccepted state, and reached the engine ledger with a valid hash and matching request ID. Five service-token exports and one session export provide small warm-path diagnostics, and one offline snapshot was readable by a second local engine. They do not establish latency distribution or durable backup policy. Binding revocation, provider governance behavior, artifact acceptance, deployment, and production readiness remain separate proof obligations. The Governance Engine was not running during the earlier OAuth check; it ran in an isolated local profile for the later receipt attempts. P11 and public export remain parked.
 
 ## Epistemic Process Block
 
@@ -75,12 +83,12 @@ With the GitHub redirect and local browser origin aligned, a clean callback for 
 
 ### Evidence Comparison
 
-The first mismatched redirect failed, the next callback failed its PKCE cookie check, and a clean Firefox Private retry returned the expected `/api/auth/me` fields by operator report. The server's unauthenticated route probes and provider listing were observed locally. A later Work Transfer export returned draft HTML by operator report and created one independently hash-checked engine ledger event with a matching receipt anchor. Five subsequent synthetic service-token requests returned distinct receipts joined to a valid six-block chain.
+The first mismatched redirect failed, the next callback failed its PKCE cookie check, and a clean Firefox Private retry returned the expected `/api/auth/me` fields by operator report. The server's unauthenticated route probes and provider listing were observed locally. A later Work Transfer export returned draft HTML by operator report and created one independently hash-checked engine ledger event with a matching receipt anchor. Five subsequent synthetic service-token requests returned distinct receipts joined to a valid six-block chain. One additional GitHub-session browser export returned direct route proof and a receipt joined to the seventh hash-valid ledger block.
 
 ### Contradiction Or Gap Disposition
 
-The first two failures were not success evidence. The clean retry and same-session admin page access support the bounded login/access claim. The later screenshot plus ledger support a displayed `ALLOW` receipt and draft export; exact route-auth mode remains inferred from source. The exact cause of the PKCE cookie failure remains open.
+The first two failures were not success evidence. The clean retry and same-session admin page access support the bounded login/access claim. The later screenshot plus ledger support a displayed `ALLOW` receipt and draft export; the additional browser export directly confirms `session` route auth mode and actor. The exact cause of the PKCE cookie failure remains open.
 
 ### Claim Update
 
-Q001 GitHub login, selected admin session, admin page access and Work Transfer `ALLOW`/draft display have operator-observed evidence in the local profile. The export has a local engine ledger join; the separate service-token probe gives a bounded warm local latency sample; one quiescent ledger snapshot was restored by a second engine. Exact browser route-auth proof, OAuth-path latency, durable backup/retention and artifact acceptance remain open.
+Q001 GitHub login, selected admin session, admin page access and Work Transfer `ALLOW`/draft display have operator-observed evidence in the local profile. A later direct response confirms session route auth, GitHub actor, receipt and hash-valid ledger join in 85.7 ms through a temporary local relay; the separate service-token probe gives a bounded warm local latency sample. One quiescent ledger snapshot was restored by a second engine. First-run and distributed OAuth-path latency, durable backup/retention and artifact acceptance remain open.
