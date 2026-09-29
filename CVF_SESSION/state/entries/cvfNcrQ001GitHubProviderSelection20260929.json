@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2984,
+  "stateKey": "cvfNcrQ001GitHubProviderSelection20260929",
+  "value": "OPERATOR_SELECTED_GITHUB at config commit ca847cc7a; local loopback origin and callback recipe at 1cd95b6f1 (docs/reference/CVF_NCR_Q001_GITHUB_LOCAL_OAUTH_PROFILE_2026-09-29.md). Operator named public account Blackbird081; GitHub REST /users/Blackbird081 returned numeric id 206422451 on 2026-09-29, and installed Auth.js maps it to providerAccountId string 206422451. Public lookup is not account-control or OAuth callback proof. Login email is not a CVF authority key. Role/org/team remains an operator checkpoint; no binding, client secret, real callback, provider governance call, production profile, artifact acceptance, public sync or P11 expansion."
+}
