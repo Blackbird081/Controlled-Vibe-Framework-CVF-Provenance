@@ -45,6 +45,11 @@ and exactly one result per requirement. Each result binds `requirementId`,
 - Any mandatory row not `PASS` requires `BLOCKED_WITH_REASON`.
 
 Machine check: `governance/compat/check_work_order_acceptance_ledger.py`.
+For a work order that binds `run_worker_return_fast_gate.py`, the changed-file
+dispatch-quality check validates this ledger before material commit. The
+dispatch-release readiness check validates the active committed work order
+again before handoff. An absent ledger is a dispatch defect, not a worker
+return defect to discover after execution.
 
 ## Near-Threshold And Fulfillment Manifest Rules
 

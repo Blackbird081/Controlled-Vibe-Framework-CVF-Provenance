@@ -36,10 +36,13 @@ responsible for packet content before the material SHA exists.
 | `DR-04` | handoff, bootstrap, active aggregate, and front door share a clean committed continuity sync after the material commit | session continuity is missing, partial, or uncommitted |
 | `DR-05` | active handoff GC-020 marker names the batch and material commit | worker cannot bind instructions to committed dispatch evidence |
 | `DR-06` | bootstrap next move names the batch, exact work order, and an `EXECUTE` action class | current session authority has not released execution |
+| `DR-07` | a work order binding `run_worker_return_fast_gate.py` contains one valid dispatcher-owned `acceptance-ledger-json` block | worker-return gate would fail after dispatch because its required acceptance contract is absent or invalid |
 
 The gate is intentionally two-commit aware. It does not demand a material SHA
 before the material commit can exist. It demands the completed packet commit
 plus a later continuity commit before any worker handoff can be called ready.
+`DR-07` also rechecks the active packet after commit; the changed-file
+dispatch-quality gate checks the same ledger during authoring.
 
 ## Machine Binding
 

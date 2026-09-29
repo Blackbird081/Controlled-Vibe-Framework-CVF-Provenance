@@ -874,6 +874,11 @@ individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 ```
 
+For either fast-gate profile, the dispatcher must include a valid
+`acceptance-ledger-json` block in the work order before dispatch. Bind exact
+expected artifact paths and required proof IDs under the acceptance-ledger
+addendum in Section 6F-6G; the worker supplies matching evidence on return.
+
 For a GC-018-authorized docs-only no-commit tranche, the dispatcher may use
 `WORKER_RETURN_FAST_DOC_V1` exactly as defined by
 `docs/reference/work_order_authoring/CVF_WORKER_RETURN_FULL_GATE_CONTRACT_STANDARD.md`.
