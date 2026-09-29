@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2991,
+  "stateKey": "cvfNcrQ001SnapshotRestore20260929",
+  "value": "BOUNDED_LOCAL_SNAPSHOT_READ at material commit 86533f64f. Source, backup and restored copies of the six-block synthetic ledger had identical SHA-256 d9fda5194d0204820f90a9ac77663a4c5341ac2e4e47d78496f129296a750842. A second local engine on 127.0.0.1:8101 read the restored path and returned six matching request IDs and tip hash; Local stopped it and the primary remained healthy. This is one quiescent local snapshot only, not online consistency, durable/off-machine backup, retention policy, failure recovery, RPO or RTO. Q001/R0 remain open; P11, public sync and deployment parked."
+}
