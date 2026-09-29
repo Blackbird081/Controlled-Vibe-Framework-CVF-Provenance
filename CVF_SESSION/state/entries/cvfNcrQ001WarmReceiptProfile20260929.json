@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2990,
+  "stateKey": "cvfNcrQ001WarmReceiptProfile20260929",
+  "value": "BOUNDED_LOCAL_SERVICE_TOKEN_PROFILE at material commit c2077caae. Five sequential synthetic exports on production-built warm local Web/engine returned HTTP 200, authMode service_token, receipt PRESENT/ALLOW and DRAFT_UNACCEPTED. Client times 59.8, 10.8, 9.6, 10.1, 9.0 ms; median 10.1 ms. Five IDs joined distinct events; six-block ledger hash chain valid, tip 95172cb62f2d04dd40fdf6bf5771eea7075ccfe454a99c139129f81db663964f. No user text or provider call; not GitHub-session latency, cold start, timeout distribution, deployment SLA or artifact acceptance. Exact browser route-auth response, retention, P08 and provider-governance proof remain open; P11/public sync/deployment parked."
+}
