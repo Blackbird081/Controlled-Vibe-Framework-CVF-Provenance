@@ -4,19 +4,19 @@ Memory class: governed-dispatch-baseline
 
 docType: baseline
 
-Status: HOLD_PRE_DISPATCH
+Status: DISPATCH_READY
 
 Batch ID: CVF-NCR-Q001-LOCAL-TRANSACTION-STORE
 
 Decision owner: Local reviewer/closer
 
-Dispatch base head: `b93d372bf89e0135f3df3bfa790df335d852627c`
+Dispatch base head: `bbce6e07b6861d4b86893a94bff5c2d850661a99`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
 ## Purpose
 
-Bound the repair of the confirmed Q001 JSON-ledger failure to a local, single-host transaction store. This baseline authorizes a design and proof packet; implementation starts only when the paired work order passes pre-dispatch admission and its current-authority marker is committed.
+Bound the repair of the confirmed Q001 JSON-ledger failure to a local, single-host transaction store. Implementation starts only when the paired packet is committed, current authority is synchronized, and bound pre-dispatch admission passes.
 
 ## Authority And Source
 
@@ -28,7 +28,7 @@ The fault profile is committed at `1722db834`; the current JSON implementation i
 
 ## Decision / Baseline / Proposed Tranche
 
-Decision: SQLite for the local single-host candidate only. Baseline: JSON rewrite is `REPAIR_REQUIRED`. Proposed tranche: transactional append, validated migration, exact-ID lookup and clean local restore, subject to dispatch admission.
+Decision: SQLite for the local single-host candidate only. Baseline: JSON rewrite is `REPAIR_REQUIRED`. Proposed tranche: transactional append, validated migration, exact-ID lookup and clean local restore. `DISPATCH_READY` describes authored packet content; final worker release still requires the committed continuity and bound pre-dispatch PASS.
 
 ## Scope / Target / Owner Boundary
 
@@ -55,7 +55,7 @@ No mutation of the live GitHub ledger, OAuth secret/configuration, Web UI, exter
 
 ## Evidence / Verification
 
-At HOLD, source inspection and static contract checks are the only evidence. Later worker proof must include real peer barriers, fault rollback, duplicate-ID behavior, clean restore and final-return hash. Reviewer acceptance requires a separately executed probe.
+At dispatch authoring, source inspection and static contract checks are the only evidence. Worker proof must later include real peer barriers, fault rollback, duplicate-ID behavior, clean restore and final-return hash. Reviewer acceptance requires a separately executed probe.
 
 ## External Knowledge Intake Routing
 
@@ -80,7 +80,7 @@ At HOLD, source inspection and static contract checks are the only evidence. Lat
 
 Resolver query: taskClass=`work_order_authoring`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`
 
-Command: `python governance/compat/run_adif_defect_resolver.py --task-class work_order_authoring --role dispatcher --lifecycle-phase pre-dispatch --json`; returned 0 items, `truncated=false`. No ADIF item supplies execution authority; this packet remains HOLD.
+Command: `python governance/compat/run_adif_defect_resolver.py --task-class work_order_authoring --role dispatcher --lifecycle-phase pre-dispatch --json`; returned 0 items, `truncated=false`. No ADIF item supplies execution authority; release is gated separately.
 
 Returned defects: NONE_RETURNED
 
@@ -89,9 +89,21 @@ Returned defects: NONE_RETURNED
 | Field | Value |
 |---|---|
 | applicableCheckersRead | `governance/compat/check_high_risk_local_transaction_proof.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_gate_to_role_closeability.py` |
-| literalTokensReviewed | `HOLD_PRE_DISPATCH`; `WORKER_MUST_NOT_COMMIT`; `High-Risk Local Transaction Proof Applicability: REQUIRED`; nine-key contract; closeability graph |
+| literalTokensReviewed | `DISPATCH_READY`; `WORKER_MUST_NOT_COMMIT`; `High-Risk Local Transaction Proof Applicability: REQUIRED`; nine-key contract; closeability graph |
 | gateRunPurpose | Confirmation of authored source and contract evidence, not first discovery of gate shape; no implementation or runtime truth follows from a static pass. |
-| claimBoundary | This baseline is a scoped design gate only. |
+| claimBoundary | This baseline authorizes a bounded later worker tranche only after final dispatch release. |
+
+## Scaffold Provenance Block
+
+| Field | Value |
+|---|---|
+| scaffoldHelperCommand | `python governance/compat/build_dispatch_packet_scaffold.py --help` inspected during authoring; no scaffold output was used |
+| generatedProfile | manually authored GC-018 Q001 local transaction baseline |
+| generatedSkeletonStatus | NOT_USED_WITH_REASON |
+| manualEditsAfterScaffold | prior HOLD baseline amended from source and acceptance invariants |
+| checkerReadAheadConfirmation | dispatch, high-risk, closeability, release-readiness and scaffold-provenance checker sources inspected |
+| docOnlyNewFields | exact local SQLite scope and bounded proof semantics |
+| claimBoundary | packet provenance only; no runtime transaction proof |
 
 ## Claim Boundary
 
