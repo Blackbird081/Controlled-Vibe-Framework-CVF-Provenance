@@ -34,6 +34,10 @@ Return contract: modify only the eight worker-owned paths, leave the reviewer pr
 
 High-Risk Local Transaction Proof Applicability: REQUIRED
 
+## Packet Correction
+
+This paired material revision binds the baseline and work order to one dispatch commit after the acceptance-ledger repair. The existing eight-path worker delta remains outside this commit.
+
 ## Purpose
 
 Replace the Q001 single-host JSON whole-file rewrite failure boundary with a transactional local store while preserving the existing ledger consumer shape and `DRAFT_UNACCEPTED` artifact boundary.
@@ -447,7 +451,7 @@ laneReleaseEvidence: terminal worker return, exact changed/staged sets, focused 
 | Session or invocation | Q001 acceptance-ledger packet repair, 2026-09-29 |
 | Working directory | repository root |
 | Command or tool surface | governed source reads, Git and static guard commands |
-| Target paths | this work order acceptance-ledger contract and exact current-authority projection |
+| Target paths | paired baseline/work-order correction and exact current-authority projection |
 | Allowed scope source | operator continuation, D028/Q001 and committed Local fault profile |
 | Before status evidence | clean worktree in isolated repair checkout at HEAD `2bcbfb453` before this amendment; committed DISPATCH_READY packet `02ecef12f`; blocked worker return preserved separately |
 | After status evidence | acceptance-ledger prerequisite and exact current-authority hash projected together; worker implementation remains uncommitted in main workspace |
@@ -456,8 +460,8 @@ laneReleaseEvidence: terminal worker return, exact changed/staged sets, focused 
 | Claim boundary | dispatcher contract repair only; no worker proof or acceptance is created |
 | Agent type | dispatcher |
 | Invocation ID | cvf-ncr-q001-acceptance-ledger-repair-20260929 |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Expected manifest | `docs/baselines/CVF_GC018_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH; current-authority continuity is a separate commit |
 
 ## Core Guard Self-Protection Authorization

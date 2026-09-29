@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md",
-    "baselineSha256": "8666faf25a929866e0bb6aa5056001f2545de420c8a9ec3c1d790b17eb04bdb6",
+    "baselineSha256": "61f166083d422d94f9a68e1b778685ddadb6458ca8a635016810b29db7b1a3d2",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md",
-    "workOrderSha256": "21b605d74127dfa50093600a73c651f3e85b279525ba401dcb1d8e6aeb434d8a"
+    "workOrderSha256": "77e20822cae91122c7b6da41705ce978fed0aa99f59f08eedad359dcf0686e96"
   },
-  "currentAuthoritySyncReason": "Q001 dispatcher correction binds the missing work-order acceptance ledger and its exact raw hash. The eight-path synthetic worker implementation remains uncommitted and pending renewed return gate and independent Local review; Q001/R0 and parked boundaries remain open.",
+  "currentAuthoritySyncReason": "Q001 paired material correction binds baseline and work-order acceptance ledger to one dispatch commit. Worker delta remains eight uncommitted paths pending return gate and independent review; Q001/R0 and parked boundaries remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

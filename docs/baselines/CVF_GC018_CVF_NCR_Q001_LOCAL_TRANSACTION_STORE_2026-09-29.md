@@ -14,6 +14,10 @@ Dispatch base head: `bbce6e07b6861d4b86893a94bff5c2d850661a99`
 
 Commit mode: `WORKER_MUST_NOT_COMMIT`
 
+## Packet Correction
+
+The paired work order now carries the acceptance requirement ledger required by its worker-return fast gate. This dispatch amendment changes no implementation or closure claim.
+
 ## Purpose
 
 Bound the repair of the confirmed Q001 JSON-ledger failure to a local, single-host transaction store. Implementation starts only when the paired packet is committed, current authority is synchronized, and bound pre-dispatch admission passes.
