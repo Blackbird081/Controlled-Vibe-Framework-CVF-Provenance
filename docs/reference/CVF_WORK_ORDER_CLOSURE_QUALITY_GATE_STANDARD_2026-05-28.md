@@ -8,7 +8,14 @@ docType: reference
 
 Date: 2026-05-28
 
-Last updated: 2026-06-07
+Last updated: 2026-09-23
+
+rawMemoryReleased=false
+
+providerExecutionAuthority: FORBIDDEN
+
+EPISTEMIC_PROCESS_NA_WITH_REASON: this reference standard defines structural
+closure and admission rules and does not compare implementation evidence.
 
 Authority: restored active canonical path plus CI/LPCI closure-friction learning
 and reviewer-fast gate hardening
@@ -59,7 +66,8 @@ equivalent final state unless the applicable closure gates below are satisfied:
 9. corpus completeness and knowledge reconciliation when applicable;
 10. worker autonomy and no-question rule for delegated packets;
 11. self-reported gate evidence consistency;
-12. work-order fulfillment manifest for runtime/source work;
+12. work-order fulfillment manifest for runtime/source work, with manifest and
+    exact return-binding admission at pre-dispatch;
 13. machine closure package for downstream loop inputs;
 14. closure packaging preflight before full pre-closure claim.
 
@@ -191,6 +199,23 @@ rotation, archive, or shrink evidence in the same governed batch.
 
 Runtime/source work must declare required artifacts, forbidden paths, and
 forbidden filesystem state before implementation.
+
+Earliest-phase admission: every ready `WORKER_MUST_NOT_COMMIT` work order is
+checked at pre-dispatch, with no dependence on runtime or source changes in the
+range and no marker-trigger prerequisite. It must carry one parseable
+`## Required Artifact Manifest` table with a path column. A table without a
+required-at-handoff column lists only required rows. It must also carry exactly
+one `Worker return path:` scalar and exactly one `workerReturnPath:` field that
+agree and name a required manifest row. Artifact existence checks still wait for
+implementation activity, because the worker creates the return later. A packet
+that declares none of these surfaces fails before dispatch rather than waiting
+for return time. Owner: `check_work_order_dispatch_quality.py` (range module).
+
+Claim boundary for this admission: a structural PASS is packet admission only.
+It is not evidence of productivity, lower cost, worker quality or semantic
+correctness. Unknown provider usage or cost stays recorded as unknown, never as
+zero. Terminal readiness and rework-round stops remain owned by
+`check_review_cost_control.py`.
 
 ### Closure Packaging Preflight
 
@@ -389,3 +414,26 @@ their own required standards and proof commands.
 DEFERRED_PRIVATE_ONLY
 
 Reason: this is an internal provenance workflow and closure-evidence standard.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | INTERNAL_AGENT implementation worker, ACEL Foundation T1 |
+| Provider or surface | private CVF shared workspace, local tools only |
+| Session or invocation | ACEL Foundation T1 dispatch-return loop control, 2026-09-23 |
+| Working directory | repository root |
+| Command or tool surface | file edit tools, focused pytest, governance gates |
+| Target paths | this standard (Work-Order Fulfillment Manifest earliest-phase admission, rule 12, metadata) |
+| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_FOUNDATION_T1_DISPATCH_RETURN_LOOP_CONTROL_2026-09-23.md` |
+| Before status evidence | clean HEAD `fad45cab4aa408cd337ba3b992fdcce4d24f959e` |
+| After status evidence | exact eight-path pending worker manifest, unstaged |
+| Diff evidence | `git diff --name-status` recorded in the paired worker return |
+| Approval boundary | structural admission rule text only; no checker authority moved |
+| Claim boundary | no productivity, cost, semantic-correctness or runtime claim |
+| Agent type | INTERNAL_AGENT worker |
+| Invocation ID | `acel-foundation-t1-dispatch-return-loop-control-worker-20260923` |
+| Expected manifest | eight Required Artifact Manifest paths |
+| Actual changed set | same eight paths |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename |

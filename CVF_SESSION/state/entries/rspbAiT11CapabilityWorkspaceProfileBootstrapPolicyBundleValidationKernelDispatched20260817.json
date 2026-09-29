@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2266,
+  "stateKey": "rspbAiT11CapabilityWorkspaceProfileBootstrapPolicyBundleValidationKernelDispatched20260817",
+  "value": "RSPB-AI-T11 workspace-profile/bootstrap-policy bundle-validation baseline and work order are committed at 8996a4e0e74856e293ee5ba36fa310b57f50a030. Seven selected local-template hashes matched; pre-dispatch passed 77/77 and pre-commit passed 85/85. The operator will manually copy the committed work order to one external implementation worker. The worker is restricted to exactly five paths, must not stage or commit, and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. This current independent reviewer/orchestrator owns full-diff inspection, adversarial proof, bounded repair, acceptance, material commit, and closure. No candidate file loading/copying, workspace materialization, filesystem/environment read, persistence, acquisition, installation, mutation, executor, provider/live, public, deployment, or production authority is opened."
+}

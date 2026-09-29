@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "cvf.lpciProviderLiveProof.v1",
+  "batchId": "LPCI1-WEB-UC01-LIVE",
+  "timestampUtc": "2026-08-09T15:28:47.306Z",
+  "executionBaseHead": "52d8b393c01633ab1f81394f88630b97ade570db",
+  "authorizationToken": "AUTHORIZE_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ONLY",
+  "providerId": "openai",
+  "modelId": "gpt-4o",
+  "endpointClass": "CANONICAL_OPENAI_HTTPS",
+  "credentialPresence": "PRESENT_REDACTED",
+  "callCountAttempted": 1,
+  "retryCount": 0,
+  "result": "success",
+  "latencyMs": 3301,
+  "httpStatus": 200,
+  "responseLength": 31,
+  "responseSha256": "5c1d70a310ed3f0e79df99f6b3aca335ef910f0b2f10eb192ea276b9c3374e21",
+  "diagnostic": null,
+  "secretSafety": "No secret value, value metadata, authorization header, prompt, generated answer, or raw request/response body is persisted.",
+  "claimBoundary": "One local UC-01 provider-binding attempt at this timestamp only; no route, release, production, deployment, public, or provider-generalization claim."
+}

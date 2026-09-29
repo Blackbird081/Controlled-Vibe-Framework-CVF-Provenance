@@ -1,0 +1,20 @@
+{
+  "stateOrder": 1768,
+  "stateKey": "systemChainUc02RendererRepairClosure20260714",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "36aefceab",
+    "rendererOwnerCount": 3,
+    "generatedOutputCount": 20,
+    "governedMarkdownConformance": "12_OF_12_PASS",
+    "focusedTests": "5_OF_5_PASS",
+    "archivePathTests": "15_OF_15_PASS",
+    "workerReturnFastGate": "62_OF_62_PASS_PLUS_DIFF_HYGIENE",
+    "rendererGap": "CLOSED_WITH_EVIDENCE",
+    "uc02ProofCallsDuringRepair": 0,
+    "scenarioEventsDuringRepair": 0,
+    "providerCallsDuringRepair": 0,
+    "nextAllowedMove": "reconcile the system-chain roadmap before UC-03 packet authoring",
+    "claimBoundary": "Local generated-Markdown conformance closure only; accepted UC-02 proof is unchanged and no provider, public, production, scale, universal, certification, or user-value claim is added."
+  }
+}

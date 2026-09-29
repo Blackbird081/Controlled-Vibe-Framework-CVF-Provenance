@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2179,
+  "stateKey": "cadpAiT3ADependencyRefreshDispatch20260813",
+  "value": "CADP-AI-T3A baseline and work order dependency anchors were refreshed after T2A-R1 closure and committed at 55d1fd6fd. The packet now cites T2A-R1 completion and material commit 944bfe852, preserves the first T3A BLOCKED_AUTHORITY_DRIFT return at c0e2a8e4b as historical evidence, and requires a fresh six-path no-commit worker execution. Pre-dispatch passed 76/76 and the dispatch commit passed 84/84 governance checks. Scope remains a hermetic non-executing Execution Plane eligibility projection with executionAuthorized=false; T3B and provider/live/public/deployment/production lanes remain parked."
+}

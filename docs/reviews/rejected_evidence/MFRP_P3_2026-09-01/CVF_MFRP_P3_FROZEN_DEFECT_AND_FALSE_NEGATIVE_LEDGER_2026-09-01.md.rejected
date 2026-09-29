@@ -1,0 +1,228 @@
+# CVF MFRP-P3 Frozen Defect And False-Negative Ledger
+
+Memory class: governed-review
+
+docType: review
+
+Status: FROZEN_BEFORE_FIRST_REPLAY
+
+Date: 2026-09-01
+
+Batch ID: MFRP-P3
+
+Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md`
+
+executionBaseHead: `c87390b118de46c86eaa5e6b5e5f9b0a1e681415`
+
+Commit mode: WORKER_MUST_NOT_COMMIT (no commit performed by this worker)
+
+## Purpose
+
+Freeze the exact corpus identity, case-set identity, and expected zero-tolerance
+outcomes for the MFRP-P3 historical replay fixture before the first replay
+invocation runs. This ledger is authored and frozen together with the fixture;
+neither is edited after the first replay executes.
+
+## Target / Source
+
+Target: `governance/compat/fixtures/mfrp_p3_historical_replay.json`.
+
+Source authority: `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md`
+and its paired baseline
+`docs/baselines/CVF_GC018_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md`.
+The seven frozen historical sources are listed in the Source Verification
+Block below with independently recomputed SHA-256 values.
+
+## Scope / Methodology
+
+1. Recompute all seven frozen historical source SHA-256 values and compare
+   against the work order's Frozen Historical Source Set table.
+2. Author the fixture corpus binding every case to one of the seven sources,
+   labeling any synthetic mutation `SEEDED_DERIVATION` and every case sourced
+   directly from a historical outcome `HISTORICAL_OUTCOME`.
+3. Compute the corpus SHA-256 over the fixture file bytes exactly as written.
+4. Compute the case-set digest as SHA-256 over the sorted UTF-8 case IDs
+   joined by `LF` with one trailing `LF`.
+5. Record both digests here with `freezeState: FROZEN_BEFORE_FIRST_REPLAY`
+   before the first replay invocation runs.
+6. Run the replay helper once; record first-run evidence in the worker return
+   without editing this ledger or the fixture afterward.
+
+## Source Verification Block
+
+| Claimed item | Claim type | Source file | Verified line/section | Verified path or symbol | Owning interface/function/schema | Disposition |
+|---|---|---|---|---|---|---|
+| H0 verifier-identity hostile ledger | committed CVF evidence | `docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md` | Mandatory Hostile Test Ledger | `7e46de88180cdd0f0c6fac3ba97c1ed1491f73ef5518499fab58be6ca69ae2f0` | historical review evidence | ACCEPT |
+| P1 contract-ratification outcome | committed CVF evidence | `docs/reviews/CVF_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_WORKER_RETURN_2026-09-01.md` | Decision / Disposition | `9a9ae6eb9bad0387548a3eb77d657e99e4529562e47a2e0619d07c47f3324e06` | historical review evidence | ACCEPT |
+| P2 receipt/readout composition outcome | committed CVF evidence | `docs/reviews/CVF_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_WORKER_RETURN_2026-09-01.md` | Agent Roles; Semantic Convergence Outcome; Independent Reviewer Addendum | `b2461af32c1da084cc90a7c1a4cbcc6a614ab454ce1327fe313374e9d6409a1f` | historical review evidence | ACCEPT |
+| GCLH-T0 same-agent multi-role control block | committed CVF evidence | `docs/reviews/CVF_GCLH_T0_GOVERNANCE_CONTROL_LOSS_LEARNING_INTAKE_REVIEW_2026-09-01.md` | Single-Agent Multi-Role Control Block; GCLH-RV-3 | `5b4921a5d2dc410f576148b7d228be6ab2d5fcfd935e3aba79602cf17234f658` | historical review evidence | ACCEPT |
+| WEB-UX unauthorized-path finding | committed CVF evidence | `docs/reviews/CVF_WEB_UX_T3_WORKER_RETURN_2026-07-19.md` | Findings / Position; Finding-To-Governance Learning Disposition | `014148d41ef5363ef09689e38c960dbc58af494ba547ba72e5db711b13689fe1` | historical review evidence | ACCEPT |
+| CADP-AI-T1 F11 self-attestation residual | committed CVF evidence | `docs/reviews/CVF_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_WORKER_RETURN_2026-08-13.md` | Round-2 F11 Residual Block; 18 full-file audit probes row | `48539fd30f038a46cc4cbe3282aa90ba79880bb907634ee4e24cc53b83c451b1` | historical review evidence | ACCEPT |
+| Governance latency inherited-secret finding | committed CVF evidence | `docs/reviews/CVF_GOVERNANCE_LATENCY_WS2_T0_COMPLETION_2026-08-05.md` | Findings / Position; Finding-To-Governance Learning Disposition | `3629e33e6cda3171c7d3035f2423475e1c5005e936b6a3e94441bcf0cac3af45` | historical review evidence | ACCEPT |
+| replay fixture corpus | authored artifact | `governance/compat/fixtures/mfrp_p3_historical_replay.json` | full file | `5b27701520f843ffcdbf4a05f7c1f9b9a76530f78b04c2f1ac6f79768d17dd5e` | this ledger | ACCEPT |
+
+## Freeze Record
+
+| Field | Value |
+|---|---|
+| fixturePath | `governance/compat/fixtures/mfrp_p3_historical_replay.json` |
+| corpusSha256 | `5b27701520f843ffcdbf4a05f7c1f9b9a76530f78b04c2f1ac6f79768d17dd5e` |
+| corpusByteLength | `16466` |
+| caseCount | `20` |
+| caseSetDigestRecipe | sorted UTF-8 `caseId` values, ordinal code-point order, joined by LF, one trailing LF |
+| caseSetDigest | `cdaa2fb6895a50d95ac6ebc296aa5ad299958d8fbfcbbc9e894cfb158cf3e0ef` |
+| freezeState | `FROZEN_BEFORE_FIRST_REPLAY` |
+| freezeSequenceOrdinal | fixture and this ledger authored together; both frozen before the first replay invocation in the same worker pass |
+| supportingNonAuthorityEvidence | `git diff --numstat` at freeze time showed only the new fixture and this ledger as untracked additions; no tracked path was modified |
+
+## Family And Zero-Tolerance Reconciliation (Expected, Pre-Replay)
+
+| Roadmap family | Case count | Bound source(s) |
+|---|---|---|
+| clean documentation-only phase return | 1 | P1 |
+| same-agent/multi-role return | 1 | GCLH |
+| multi-agent/multi-role return | 1 | P2 |
+| missing predecessor and predecessor digest mismatch | 1 | P2 |
+| stale/non-authority/archive source reference | 1 | CADP |
+| expected/actual manifest omission and unauthorized path | 2 | WEBUX, P2 |
+| worker-modified verifier used for self-acceptance | 2 | CADP, H0 |
+| verifier or shared dependency changed in a prior batch while cached range identity remains unchanged | 1 | H0 |
+| stale receipt after checker hardening | 1 | H0 |
+| shared-import, registry/config/fixture and interpreter drift | 1 | H0 |
+| unrecognized hash byte-domain or normalization recipe | 1 | GCLH |
+| hard obligation with only `LLM_INFERRED` support | 1 | P1 |
+| fabricated/missing test receipt | 1 | H0 |
+| constraint drift hidden by passing narrow test | 1 | CADP |
+| secret-bearing evidence or unsafe diagnostic | 1 | LATENCY |
+| cache hit with exact identity and cache invalidation after one bound input changes | 1 | H0 |
+| focused probe contradiction requiring escalation | 1 | CADP |
+| high-risk/live/public/destructive task forced to conservative verification | 1 | LATENCY |
+
+Total: 18 families, 20 cases (two families carry two cases each for
+redundant zero-tolerance coverage). Minimum roadmap requirement of 18 cases
+covering every family is satisfied with margin.
+
+| Zero-tolerance class | Case count (pre-replay expectation) |
+|---|---|
+| authority bypass | 3 |
+| unauthorized path | 2 |
+| secret exposure | 1 |
+| destructive/irreversible action | 2 |
+| verifier self-attestation | 3 |
+| predecessor-chain forgery | 1 |
+| closure without hard-obligation evidence | 2 |
+| NONE (non-zero-tolerance clean case) | 6 |
+
+Expected recall for every zero-tolerance class listed above is 100% (each
+class's cases must all resolve to a detected-or-conservatively-surfaced
+outcome). No averaging or waiver across classes is authorized.
+
+## Findings / Position
+
+No findings are raised by this freeze record itself; it declares the
+pre-replay expected state. Any replay divergence from this frozen expectation
+is a false negative or false positive to be recorded in the worker return, not
+in this ledger, since this ledger does not change after the first replay.
+
+## Risk / Corrective Action
+
+| Risk | Corrective action |
+|---|---|
+| corpus tuned after first replay to manufacture a pass | this ledger and the fixture are both frozen before first replay; the worker return records first-run evidence unedited |
+| seeded mutation misrepresented as historical | every `SEEDED_DERIVATION` case is labeled honestly in the fixture and cross-referenced here; only `HISTORICAL_OUTCOME` cases claim a real historical result |
+| zero-tolerance averaging | the reconciliation table above lists each class with an explicit non-zero case count; the replay helper reports per-class recall, never an aggregate |
+| source hash silently refreshed | seven source hashes are pinned in `sourceManifest` and independently recomputed in the Source Verification Block above before this freeze |
+
+## Decision / Disposition
+
+`FROZEN_BEFORE_FIRST_REPLAY`. The fixture and this ledger are complete and
+frozen. The next step is one replay invocation and preservation of its
+first-run output in the worker return; this ledger itself receives no further
+edits from this worker.
+
+## Claim Boundary
+
+This ledger records pre-replay frozen corpus/case-set identity and expected
+zero-tolerance coverage only. It makes no runtime, semantic-truth, activation,
+canary, closure, provider/live, public-sync, deployment, or production
+readiness claim. `successorTrancheOpened: NO`; P4-P6 remain unopened.
+
+## Core Guard Self-Protection Authorization - MFRP-P3
+
+Authorized guard-maintenance scope: create only the new P3 replay helper and
+its focused tests, exactly as authorized by the canonical work order's own
+Core Guard Self-Protection Authorization section. No existing production
+guard/receipt/readout source is modified.
+
+Protected paths:
+
+- `governance/compat/mfrp_historical_replay.py`
+- `governance/compat/test_mfrp_historical_replay.py`
+
+Operator authorization: the operator instructed continuation at the accepted
+P2/P3 checkpoint; the canonical work order's Core Guard Self-Protection
+Authorization section pre-authorizes exactly these two new paths plus the new
+fixture.
+
+Rollback boundary: remove these two new protected paths, the new fixture, and
+the two new review outputs; retain P2, historical sources, and full review
+behavior unchanged.
+
+## Epistemic Process Block
+
+### Expected Result / Prediction
+
+The frozen corpus and case-set digests recorded in the Freeze Record above
+should remain byte-identical through the worker return's first and final
+replay evidence; every zero-tolerance class should reach 100% recall with
+zero averaging.
+
+### Evidence Comparison
+
+The corpus SHA-256 and case-set digest values in the Freeze Record are the
+same values the replay helper independently recomputes from the fixture file
+on disk, reported separately in the worker return's first-run and final-run
+command evidence.
+
+### Contradiction Or Gap Disposition
+
+No contradiction exists in this ledger's own frozen content. Any divergence
+between this ledger's frozen expectation and an actual replay run is recorded
+in the worker return, which this ledger does not restate or override.
+
+### Claim Update
+
+This freeze record's evidence supports `FROZEN_BEFORE_FIRST_REPLAY` only; it
+does not itself claim `REPLAY_PASS_CANDIDATE` or `REPLAY_PASS`.
+
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+|---|---|
+| applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_epistemic_process_packet.py`; `governance/compat/check_core_guard_self_protection.py`; `governance/compat/check_worker_return_quality_gate.py` |
+| literalTokensReviewed | review-docType structural heading groups (target/source, scope/methodology, findings/position, risk/corrective action, decision/disposition); the agent-operation trace section's full label set; the epistemic-process section's required subsection names; this checker-read-ahead section's four scalar fields |
+| gateRunPurpose | confirmation evidence after adding the required administrative sections named by the fast-gate's own failure output, not first discovery |
+| claimBoundary | this block records source read-ahead only; it does not itself certify gate PASS or alter the Freeze Record, Source Verification Block, or reconciliation tables above |
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | delegated local no-commit replay worker |
+| Provider or surface | local private provenance repository |
+| Session or invocation | MFRP-P3 historical replay, 2026-09-01 |
+| Working directory | repository root |
+| Command or tool surface | governed reads, `git rev-parse HEAD`, `git status --short --untracked-files=all`, SHA-256 recomputation, `python governance/compat/mfrp_historical_replay.py`, `python -m pytest`, governance gates |
+| Target paths | `governance/compat/fixtures/mfrp_p3_historical_replay.json`; `governance/compat/mfrp_historical_replay.py`; `governance/compat/test_mfrp_historical_replay.py`; `docs/reviews/CVF_MFRP_P3_FROZEN_DEFECT_AND_FALSE_NEGATIVE_LEDGER_2026-09-01.md`; `docs/reviews/CVF_MFRP_P3_HISTORICAL_REPLAY_WORKER_RETURN_2026-09-01.md` |
+| Allowed scope source | `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_HISTORICAL_REPLAY_AND_FROZEN_DEFECT_LEDGER_2026-09-01.md` |
+| Before status evidence | executionBaseHead `c87390b118de46c86eaa5e6b5e5f9b0a1e681415`; worktree clean; five authorized output paths absent; pre-implementation gate 83/83 PASS at clean base |
+| After status evidence | fixture and this ledger frozen together before the first replay invocation; this ledger's Freeze Record, Source Verification Block, and reconciliation tables are unedited after that freeze; only the administrative sections named by the fast-gate's structural/trace/epistemic requirements were added in this same worker pass, before any commit |
+| Diff evidence | `git diff --numstat` (empty; both files were untracked additions) and `git status --short --untracked-files=all` at freeze time; `git diff --name-status` against the clean execution base afterward |
+| Approval boundary | P3 replay ledger authoring only; commit authority remains reviewer/closer |
+| Claim boundary | local deterministic replay evidence only; no semantic truth, closure, activation, or next-phase authority |
+| Agent type | worker |
+| Invocation ID | `mfrp-p3-historical-replay-2026-09-01` |
+| Expected manifest | `governance/compat/fixtures/mfrp_p3_historical_replay.json`; `governance/compat/mfrp_historical_replay.py`; `governance/compat/test_mfrp_historical_replay.py`; `docs/reviews/CVF_MFRP_P3_FROZEN_DEFECT_AND_FALSE_NEGATIVE_LEDGER_2026-09-01.md`; `docs/reviews/CVF_MFRP_P3_HISTORICAL_REPLAY_WORKER_RETURN_2026-09-01.md` |
+| Actual changed set | `governance/compat/fixtures/mfrp_p3_historical_replay.json`; `governance/compat/mfrp_historical_replay.py`; `governance/compat/test_mfrp_historical_replay.py`; `docs/reviews/CVF_MFRP_P3_FROZEN_DEFECT_AND_FALSE_NEGATIVE_LEDGER_2026-09-01.md`; `docs/reviews/CVF_MFRP_P3_HISTORICAL_REPLAY_WORKER_RETURN_2026-09-01.md` |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: no deletion or rename in this batch |

@@ -33,14 +33,29 @@ Useful patterns may be absorbed only after they are mapped to CVF-owned
 contracts, source authority, claim boundaries, and current workflow-chain
 semantics.
 
+The binding development direction is section 2.1 of
+`docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`.
+External research must distinguish pattern improvement from runtime reuse for a
+named job. Existing-owner overlap is not a runtime rejection; repo popularity is
+not an admission criterion. Local owns the final two dispositions under the core
+standard, and execution remains separately governed.
+
 ## Current References
 
 | Reference | Role |
 |---|---|
+| `CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md` | Identity, version compatibility, precedence, and snapshot-freshness contract for the public compact guide and portable expanded packet. |
+| `CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md` | Canonical method for operator-mediated evidence transfer when remote research agents and the Local Agent do not share a workspace; Local owns final private-CVF technical disposition. |
+| `CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md` | Multi-repository absorption method: group and filter remotely for priority, then locally mirror every GitHub-backed researched repository, resolve exact freshness deltas, recover operational use cases, reopen missed value, and reconcile retained mechanisms with current private CVF. |
+| `CVF_EXTERNAL_AGENT_OWNER_SURFACE_INDEX.json` | Public-safe bounded owner-discovery projection consumed by the packet refresh workflow. |
+| `CVF_EXTERNAL_AGENT_TASK_CAPSULE.schema.json` | Strict top-level shape for the generated per-task capsule. |
+| `scripts/external_agent_packet.py` | Fail-closed snapshot refresh, task-capsule generation, and semantic return validation. |
+| `scripts/external_agent_return_contract.py` | `DETACHED_EXTERNAL_AGENT` versus `SHARED_WORKSPACE_DELEGATED_WORKER` execution classes, the strict manifest authority object, `PROPOSED_TARGET_MAP.json` and proposed-changeset path/inventory safety, the independent state vector, and the derived completion projection for detached implementation-proposal returns. Maximum positive result is `EXTERNAL_RETURN_READY_FOR_LOCAL_VERIFICATION`; never local promotion, integration, or SOT proof. |
 | `CVF_EXTERNAL_AGENT_REVIEW_CONTEXT_STANDARD.md` | Standard for giving external agents enough context to review CVF without exposing private provenance source. |
 | `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` | Central chain map connecting external/corpus/repo input, old blind-spot/corpus/legacy rules, external-agent review packets, returned-output absorption, GC-018, work orders, source verification, and autorun. |
 | `CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md` | Central index for external-absorption package, runtime, checker, and value-parked candidates that retain CVF value but require concrete reopen evidence before future work. |
 | `CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md` | Central external absorption standard, including overlap and novelty classification before new owner surfaces or follow-up lanes are opened. |
+| `CVF_MIXED_ORIGIN_DERIVED_SYNTHESIS_ABSORPTION_STANDARD.md` | SOT for local packs combining upstream, public CVF, operator requirement, operator-agent co-design, and novel synthesis; separates value, import, runtime, and authority decisions. |
 | `.private_reference/source_mirrors/README.md` | Private-reference control plane for local cloned upstream repositories used as source authority during external absorption. |
 | `.private_reference/source_mirrors/INDEX.md` | Private source-mirror index linking upstream repos to derived external-agent packs and absorption lanes. |
 | `CVF_WORKFLOW_CHAIN_PUBLIC_REVIEW_CONTEXT.md` | Canonical distinction between public/simple workflow vocabulary and internal governed workflow-chain system. |
@@ -55,35 +70,211 @@ semantics.
 
 ## Authoring Flow
 
+Current coordination agreement: domain-funnel method `1.2.0` defines two
+steps: external domain research, then the existing Local absorption process.
+Read its Two-Step Operating Agreement, Shared Evidence/Stop Rules, and Pilot
+sections before any new batch. All repos receive a bounded initial survey;
+selected capability/use-case groups receive deeper investigation. External
+reports retain common mechanisms, per-repo value and unknowns separately.
+Validate the approach on a small domain pilot before broad rollout.
+
+For Web-research-assisted repository audits, also apply
+`cvf.research-assisted-repository-absorption@1.0.0` from the relay method.
+Refresh the bounded External Agent Read context before dispatch, keep each audit
+question independently traceable, validate integrity before semantics, and let
+the Local repository and Local reviewer control contradictions and final
+disposition. Use `NO_CHANGE`, `ADAPT`, `WATCH`, and high-bar `ADOPT` only through
+their documented mapping to the existing absorption taxonomy. External and
+internal-worker returns remain separate evidence lanes.
+
 1. Read this front door, the context standard, and
    `CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md`.
 2. Classify the input type through the chain map before deciding whether the
    task is packet authoring, returned-output absorption, legacy/corpus intake,
    or implementation planning.
-3. For high-value external repositories, check
-   `.private_reference/source_mirrors/INDEX.md`. If only a derived
-   external-agent pack exists and the upstream repo can be cloned, create or
-   request a pinned source mirror before claiming full absorption.
-4. Start from `CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md` when an external
+3. When the remote research surface cannot share the Local Agent's workspace,
+   apply `CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md`; treat the
+   operator as the content-neutral transport bridge and preserve task, source,
+   public-CVF pin, artifact, integrity, and claim-boundary bindings.
+4. When the absorption program begins with multiple repositories, apply
+   `CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md`: preserve the
+   umbrella source ledger, group sources by domain, filter and deduplicate
+   source-backed mechanisms remotely, then treat the shortlist as priority
+   input rather than a Local corpus boundary. Locally mirror every remotely
+   researched repository with a usable GitHub clone URL, record the remote pin
+   versus Local observed-upstream pin, run the bounded use-case recovery pass,
+   and reopen missed operational value before final private-CVF disposition. A
+   one-repository child return must not be mistaken for completion of the
+   umbrella program.
+5. Treat issuance of a governed work order as the hard lifecycle transition
+   from external research to `INTERNAL_AGENT` execution. From that point the
+   worker and reviewer use the shared Local workspace and governed SOT; the
+   external agent has no implementation, review, or closure role, and the
+   operator relay is no longer the task evidence channel. Model/provider/chat
+   identity does not change this workspace-based classification.
+6. If the changed artifact touches `.private_reference/legacy/`,
+   `.private_reference/external_repos/`, or
+   `.private_reference/source_mirrors/`, or uses bounded explicit intake
+   language ("external repository absorption", "copied folder absorption",
+   "external repo or copied folder"), declare the R85-style
+   `## External Repository Absorption Entry Control` block (source type,
+   upstream/source-mirror disposition, enumeration/manifest plan, per-file
+   terminal-ledger plan, owner/overlap route, value-disposition route, claim
+   boundary) required by the `AGENTS.md` Mandatory External Repository
+   Absorption Entry Rule section and machine-checked by
+   `governance/compat/check_absorption_blindspot_control_presence.py`
+   (ADIF-0014) before proceeding to source-mirror checks or packet
+   authoring. Use the narrow `COMPARISON_ONLY_NO_ABSORPTION` disposition only
+   when the reference is genuinely comparison-only.
+7. For every remotely researched repository with a usable GitHub clone URL,
+   check `.private_reference/source_mirrors/INDEX.md` and create or refresh a
+   pinned Local source mirror before final Local disposition. Record the
+   external research pin or `EXTERNAL_PIN_UNKNOWN`, Local observed upstream
+   HEAD, exact Local absorption pin, fetch time, freshness delta, and license at
+   that pin. Clone presence is source acquisition only. Before closeout, run
+   the domain-funnel use-case recovery and runtime-sufficiency pass; if cloning
+   is blocked, record `BLOCKED_SOURCE_MIRROR_WITH_REASON` rather than inferring
+   no value.
+8. When the local pack includes operator requirements, operator-agent
+   co-design, or novel synthesis, apply
+   `CVF_MIXED_ORIGIN_DERIVED_SYNTHESIS_ABSORPTION_STANDARD.md`; do not use
+   missing GitHub provenance or unmerged maturity as a no-value decision.
+9. Start from `CVF_EXTERNAL_AGENT_REVIEW_PACKET_TEMPLATE.md` when an external
    agent review packet is needed.
-5. Run the checks in `CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md`.
-6. Use `CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md` as
+10. Run the checks in `CVF_EXTERNAL_AGENT_REVIEW_AUTHORING_CHECKLIST.md`.
+11. Use `CVF_EXTERNAL_AGENT_REVIEW_SAMPLE_PACKET_WORKFLOW_MCP_WORKSPACE.md` as
    the bounded example for workflow-chain, MCP, and workspace review context.
-7. After the external agent returns output, classify every returned item through
+12. After the external agent returns output, classify every returned item through
     `CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md` before creating a
     finding, standard, roadmap, work order, review, reference artifact, or
     operator decision.
-8. Before opening a new owner surface or follow-up lane, fill the
+13. Before opening a new owner surface or follow-up lane, fill the
    `## Overlap And Novelty Classification` section required by
    `CVF_EXTERNAL_ABSORPTION_CORE_STANDARD.md`; compare against existing CVF
    owner surfaces and use `CONFIRMED_EXISTING`, `ENRICH_EXISTING`,
    `NEW_FINDING`, `REJECT_DIRECT_IMPORT`, `NO_NEW_VALUE`, or
    `OWNER_SURFACE_NOT_FOUND`.
-9. If a closeout parks a package, runtime, checker, or valuable deferred item,
+14. If a closeout parks a package, runtime, checker, or valuable deferred item,
    add or update `CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`, cite an
    existing row, or state `NO_CONDITIONAL_REOPEN_INDEX_ENTRY_WITH_REASON`.
-10. For changed external-return absorption reviews, satisfy
+15. For changed external-return absorption reviews, satisfy
    `governance/compat/check_external_agent_absorption_table.py` before closure.
+
+## Operator-Local External-Agent Round-Trip Kit Recognition
+
+The public `docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md` is the compact
+projection of protocol `cvf.external-agent-round-trip`. The operator-local
+core packet, together with any generated task-specific supplements, is its
+expanded portable representation. Their version,
+compatibility, precedence, and freshness rules are owned by
+`CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md`.
+
+The operator may give an external agent a portable core packet outside this
+repository:
+
+- `CVF_EXTERNAL_AGENT_BOOTSTRAP_INSTRUCTIONS.md`;
+- `CVF_CONTEXT_BRIEF.md`;
+- `CVF_CURRENT_PUBLIC_SNAPSHOT.md`;
+- `CVF_EXTERNAL_AGENT_RETURN_CONTRACT.md`.
+
+Generated task-specific supplements, including a task capsule and refresh
+receipt, may accompany that stable core packet.
+
+These files are non-authoritative orientation and return-shape aids. Their
+presence does not prove that the external agent followed them and does not
+replace current CVF source verification.
+
+Protocol `1.1.0` keeps these four files stable and adds generated supplements:
+the public owner-surface index, a refresh receipt, and, for a specific task,
+`CVF_EXTERNAL_AGENT_TASK_CAPSULE.json`. Generate a new capsule for every new
+repo/task; never reuse a previous capsule by merely editing its title.
+
+### Task-Proportional Context Groups (EACQ-FV-MV2)
+
+The capsule schema additively carries four optional root context groups:
+`protectedPaths`, `ownerMap`, `invariants`, and `verification`. Every group is
+strict (`additionalProperties: false`) and carries `consumers` (one or more of
+`worker`, `reviewer`, `return validator` - role/interface names, never a
+provider name) and a `freshness` object naming the current `anchor` source and
+the exact `regenerateWhen` condition that makes the group stale.
+
+| Group | Content | Consumer purpose |
+| --- | --- | --- |
+| `protectedPaths` | Exact repo-relative paths or path families the worker must not mutate. | Worker scope enforcement before edits. |
+| `ownerMap` | Current owner path/symbol/version and competing owners already checked. | Worker/reviewer duplicate-implementation prevention. |
+| `invariants` | Must-preserve behaviors and explicit forbidden transitions. | Worker/reviewer correctness boundary. |
+| `verification` | Exact focused tests, negative cases, deterministic checks, and required outputs. | Worker execution and reviewer/return-validator acceptance evidence. |
+
+The generator never invents owner facts or silently fills a missing group; a
+capsule for `BUILD_NEW_REPOSITORY` or `EXTEND_SUPPLIED_REPOSITORY` fails
+closed before write if any of the four groups is absent. `REVIEW_ONLY`,
+`DESIGN_ONLY`, and `SOURCE_PACK_PREPARATION` are proportionally exempt because
+those modes do not mutate a target repository, so a protected-path/owner-map/
+invariant contract has no referent yet; they may still carry the groups if
+supplied.
+
+### Live Versus Offline Source Posture
+
+`cvfPublicSource.sourcePosture` distinguishes how the pinned CVF public commit
+was established:
+
+- `VERIFIED_LIVE_PUBLIC_MAIN_AT_CREATION` - the existing `prepare-task` route,
+  which calls `refresh_snapshot` first and proves the public-sync worktree
+  equals live `origin/main` before capsule creation;
+- `OPERATOR_PINNED_NOT_LIVE_VERIFIED` - the new `create-capsule-offline` route
+  (CLI subcommand `create-capsule-offline`; wrapper mode `PrepareTaskOffline`),
+  which takes an operator-supplied `--cvf-public-commit` and a local
+  `--context-file` JSON holding the four context groups, and makes zero
+  network or Git-remote calls. It does not read or reuse a prior refresh
+  receipt as current truth.
+
+Both routes validate the assembled capsule against the strict schema before
+writing; an invalid offline context file fails before any existing capsule
+file is overwritten. `refresh-snapshot`, the live `prepare-task` route without
+a context file, and `validate-return` are unchanged and remain backward
+compatible.
+
+After a public update is pushed, run
+`.\scripts\Update-CVF-External-Agent-Packet.ps1 -Mode RefreshSnapshot`. The command
+must prove the public-sync checkout equals live `origin/main` before changing
+the operator-local snapshot. Refresh also fails closed unless it can reproject
+the current release/version posture from public `CHANGELOG.md` and the three
+provider lanes from `docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md`;
+the receipt binds SHA-256 hashes for those sources. Before sending a packet for a repo-specific task,
+use `-Mode PrepareTask` with an immutable upstream commit. On return, use
+`-Mode ValidateReturn` to create an independent semantic validation receipt.
+For `DETACHED_IMPLEMENTATION_PROPOSAL`, supply the exact generated capsule to
+`-Mode ValidateDetachedReturn -TaskCapsule <path>`; readiness fails closed when
+the capsule digest, task/protocol identity, source pin, public-CVF pin, full
+hidden-file inventory, path normalization, symlink boundary, or secret scan
+does not reconcile.
+
+When a returned repo or folder contains
+`EXTERNAL_AGENT_RETURN_MANIFEST.json` with schema
+`cvf.externalAgentReturn.v1`, treat it as a structured mixed-origin derived
+synthesis candidate and apply this fast-intake order:
+
+1. preserve the exact returned root and record its stable identity;
+2. validate the return-manifest JSON and authority tokens
+   `PROVENANCE_BACKED_DERIVED_SYNTHESIS_CANDIDATE` and
+   `NON_AUTHORITATIVE_UNTIL_REVIEWED`;
+3. verify `FILE_INVENTORY.sha256` against a hidden/no-ignore enumeration and
+   reconcile declared exclusions;
+4. verify pinned public CVF and upstream commits, paths, licenses, origins,
+   dependencies, test evidence, and claim boundary;
+5. reuse a fresh reconciled manifest/ledger as candidate evidence, while
+   independently sampling semantic claims and all high-risk/value-bearing
+   groups; do not require the pack to prove value from zero without a named
+   drift, integrity, origin, or owner contradiction;
+6. route the pack through the mixed-origin standard, returned-finding workflow,
+   owner/overlap classification, value-conversion matrix, and conditional
+   reopen handling before any CVF-native promotion.
+
+Missing or invalid return artifacts reduce intake confidence but do not erase
+the source pack's possible value. Record the defect and fall back to the normal
+full manifest/ledger route. The portable packet accelerates evidence intake;
+it never grants direct import, implementation, runtime, provider, public, or
+production authority.
 
 ## Required Read Trigger
 
@@ -96,6 +287,10 @@ Read this folder when a task:
 - consumes corpus, legacy, public/simple, or external repo input before
   implementation planning;
 - compares a derived external-agent pack against its upstream repository;
+- receives a repo or folder carrying schema `cvf.externalAgentReturn.v1` or
+  the portable external-agent round-trip filenames above;
+- transfers task evidence through an operator because the remote research
+  surface and Local Agent do not share a workspace;
 - notices an external agent treating a public/simple lifecycle as internal CVF
   workflow-chain authority;
 - needs to decide what can be public context without publishing private
@@ -105,6 +300,10 @@ Read this folder when a task:
 
 This front door is a reference index. It does not make private provenance files
 public, and it does not authorize public-sync or external-facing readiness.
+The task-capsule four context groups and offline creation route documented
+above are a local context contract only; they make no claim of improved
+external-agent coding quality, no universal enforcement claim, no provider or
+MCP runtime-adapter claim, and no measured-uplift claim.
 
 ## External Absorption Core
 
@@ -119,7 +318,13 @@ public, and it does not authorize public-sync or external-facing readiness.
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
 | Owner-surface map | inline `## Current References` table in this file |
 | Unresolved items | 0 |
-| Completion claim boundary | reference front door only; no runtime, provider, public, package, checker, or production expansion |
+| Absorption maturity | NO_RUNTIME_VALUE_WITH_REASON |
+| Named runtime consumer | N/A_NO_RUNTIME_VALUE_WITH_REASON: reference front door only |
+| Integration evidence | N/A_NO_RUNTIME_VALUE_WITH_REASON: no runtime behavior owned here |
+| Use proof | N/A_NO_RUNTIME_VALUE_WITH_REASON: front-door navigation only |
+| Operator checkpoint | N/A_NO_RUNTIME_VALUE_WITH_REASON |
+| Absorption completion status | NO_RUNTIME_VALUE_WITH_REASON |
+| Completion claim boundary | reference front door only; no foundation-uplift absorption or runtime/provider/public expansion |
 
 ## Corpus Completeness And Report Integrity
 
@@ -161,6 +366,18 @@ public, and it does not authorize public-sync or external-facing readiness.
 | Direct external implementation ideas | Existing governed CVF owner surface or `OWNER_SURFACE_NOT_FOUND` per artifact | REJECT_DIRECT_IMPORT | Direct import stays rejected even when CVF-native doctrine or candidate value remains. | Route through value matrix and overlap ledger. |
 | Duplicate or already-owned guidance | Existing governed CVF owner surface | NO_NEW_VALUE | Material must be compared before no-value closure. | State no-new-value reason in the artifact. |
 
+## Source Mirror Migration Control
+
+| Field | Value |
+|---|---|
+| Legacy source path | `.private_reference/external_repos/` |
+| Source mirror path | `.private_reference/source_mirrors/` |
+| Mirror index row | `.private_reference/source_mirrors/INDEX.md` (see the Mirror Ledger for per-repository rows) |
+| Pinned upstream commit | LEGACY_REFERENCE_ONLY_WITH_REASON: this front door names the legacy path descriptively as one of the ADIF-0014 trigger prefixes and does not migrate a specific repository |
+| Migration disposition | LEGACY_REFERENCE_ONLY_WITH_REASON |
+| Legacy cleanup disposition | N/A with reason: no repository-specific legacy folder is being cleaned up by this front-door update |
+| Claim boundary | this section documents the trigger vocabulary only; it authorizes no runtime, no install, no package activation, no provider, no public, and no production behavior |
+
 ## External Knowledge Intake Routing
 
 | Field | Value |
@@ -168,9 +385,9 @@ public, and it does not authorize public-sync or external-facing readiness.
 | Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
 | Input type | external knowledge intake routing guard implementation |
 | Chain map route | external-agent review front door -> chain-map classification -> context packet, returned-output absorption, conditional reopen index, or governed implementation planning |
-| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py` |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_absorption_core.py`; `governance/compat/check_external_absorption_value_conversion.py`; `governance/compat/check_external_absorption_overlap_discipline.py`; `governance/compat/check_absorption_blindspot_control_presence.py` |
 | Owner surface | `docs/reference/external_agent_review/README.md` |
-| Disposition | ADAPT front-door routing to include the conditional reopen index |
+| Disposition | ADAPT front-door routing to include the conditional reopen index and the R95 external repository absorption entry control step |
 | Claim boundary | front-door routing only; no runtime, provider, public, package activation, checker wiring, or production claim |
 
 ## Epistemic Process Block
@@ -189,3 +406,21 @@ Contradiction Or Gap Disposition: N/A with reason: if future reference routing
 changes, this front door must be updated in the same governed batch.
 
 Claim Update: front-door routing now includes the conditional reopen index.
+
+## External/Local Coordination Binding
+
+```json
+{
+  "contractId": "cvf.external-local-absorption-coordination@1",
+  "invariants": {
+    "externalRole": "ADVISORY_RESEARCH_AND_PATTERN_MAPPING",
+    "externalContext": "PUBLIC_GITHUB_AND_REFRESHED_EXTERNAL_AGENT_READ",
+    "localRole": "SOURCE_RUNTIME_VALUE_AND_PRIVATE_CVF_VERIFICATION",
+    "finalDecisionOwner": "LOCAL",
+    "localCoverageBasis": "SOURCE_DERIVED_NOT_EXTERNAL_SHORTLIST",
+    "externalEvidenceAuthority": "INPUT_NOT_PRIVATE_CVF_PROOF"
+  },
+  "contractSha256": "92df8a7c9492e8c3cedf624cfaa79b8185ca31442ecaf96107fd88dfcb81800c",
+  "parentArtifact": null
+}
+```

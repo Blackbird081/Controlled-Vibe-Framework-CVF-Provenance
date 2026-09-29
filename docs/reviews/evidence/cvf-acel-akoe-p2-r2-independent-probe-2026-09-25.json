@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "cvf.independentReviewProbeEvidence.v1",
+  "batchId": "ACEL-AKOE-P2-R2",
+  "probeInvocationId": "acel-akoe-p2-r2-independent-probe-20260925",
+  "method": "temporary standalone vite-node script using two independent MaoFileRunStore instances; direct competing INVOCATION_COMPLETED and CANCEL_ACCEPTED appends; fresh-instance replay and residue assertions; script deleted after execution",
+  "iterations": 25,
+  "result": "PASS_INDEPENDENT_PROBE",
+  "winners": {
+    "INVOCATION_COMPLETED": 19,
+    "CANCEL_ACCEPTED": 6
+  },
+  "durableWinnerMismatches": 0,
+  "lockOrTempResidue": 0,
+  "providerCalls": 0,
+  "capturedAt": "2026-09-25",
+  "capturedBy": "Local reviewer/closer"
+}

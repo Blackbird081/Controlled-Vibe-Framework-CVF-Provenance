@@ -4,11 +4,10 @@ Status: ACTIVE_REFERENCE
 
 Memory class: GOVERNED_REFERENCE_LEDGER
 
-Last updated: 2026-06-18
+Last updated: 2026-09-10
 
 Source: operator-provided Alibaba Model Studio free-quota screenshots in the
-2026-06-18 Codex session, plus the bounded secret-safe Alibaba diagnostic rerun
-performed in the same session.
+2026-09-10 session. Diagnostic results dated 2026-06-18 remain historical.
 
 ## Purpose
 
@@ -46,6 +45,15 @@ For the current operator key alias used in the 2026-06-18 diagnostic rerun,
 should not assume endpoint equivalence. If endpoint selection changes, record a
 fresh diagnostic before interpreting failures.
 
+## Current T6 Target Note
+
+The current free-quota target for the next governed T6 dispatch is the
+`qwen3.7-flash` alias. The operator screenshot also shows the dated snapshot
+`qwen3.7-flash-2026-07-15`; both rows are enabled, the dated snapshot has
+1,000,000 of 1,000,000 and the alias has 997,560 of 1,000,000 remaining, and
+both expire on 2026-10-22. This is quota-selection evidence,
+not live compatibility proof.
+
 ## Use-Before-Live-Test Rule
 
 1. Compare today's date to the `Expiration date` below.
@@ -63,24 +71,26 @@ fresh diagnostic before interpreting failures.
 
 | Model code | Expiration date | Free quota remaining at capture | Status at capture | Notes |
 |---|---:|---:|---|---|
-| `qwen3.6-plus-2026-04-02` | 2026-07-01 | 1,000,000 / 1,000,000 | Enabled | Screenshot source. |
-| `qwen3.6-plus` | 2026-07-01 | 911,370 / 1,000,000 | Enabled | Screenshot source. |
-| `qwen3.6-flash` | 2026-07-16 | 1,000,000 / 1,000,000 | Enabled | Screenshot source. |
-| `qwen3.6-flash-2026-04-16` | 2026-07-16 | 998,675 / 1,000,000 | Enabled | Screenshot source; diagnostic rerun PASS on `dashscope-intl.aliyuncs.com`. |
-| `qwen3.6-35b-a3b` | 2026-07-16 | 998,835 / 1,000,000 | Enabled | Screenshot source. |
-| `qwen3.6-max-preview` | 2026-07-19 | 1,000,000 / 1,000,000 | Enabled | Screenshot source. |
-| `qwen3.5-plus-2026-04-20` | 2026-07-22 | 1,000,000 / 1,000,000 | Enabled | Screenshot source. |
-| `qwen3.6-27b` | 2026-07-22 | 1,000,000 / 1,000,000 | Enabled | Screenshot source. |
-| `deepseek-v4-flash` | 2026-07-23 | 998,902 / 1,000,000 | Enabled | Screenshot source; diagnostic rerun PASS on `dashscope-intl.aliyuncs.com`. |
-| `deepseek-v4-pro` | 2026-07-23 | 1,000,000 / 1,000,000 | Enabled | Screenshot source. |
-| `qwen3.7-max` | 2026-08-19 | 1,000,000 / 1,000,000 | Enabled | Screenshot source. |
-| `qwen3.7-max-2026-05-20` | 2026-08-19 | 1,000,000 / 1,000,000 | Enabled | Screenshot source. |
-| `qwen3.7-max-2026-05-17` | 2026-08-23 | 1,000,000 / 1,000,000 | Enabled | Screenshot source. |
-| `qwen3.7-max-preview` | 2026-08-23 | 1,000,000 / 1,000,000 | Enabled | Screenshot source. |
-| `glm-5.1` | 2026-08-25 | 1,000,000 / 1,000,000 | Enabled | Screenshot source. |
-| `qwen3.7-plus` | 2026-08-31 | 998,474 / 1,000,000 | Enabled | Screenshot source; diagnostic rerun PASS on `dashscope-intl.aliyuncs.com`. |
-| `qwen3.7-plus-2026-05-26` | 2026-08-31 | 1,000,000 / 1,000,000 | Enabled | Screenshot source. |
-| `qwen3.7-max-2026-06-08` | 2026-09-07 | 1,000,000 / 1,000,000 | Enabled | Screenshot source. |
+| `qwen3.7-flash-2026-07-15` | 2026-10-22 | 1,000,000 / 1,000,000 | Enabled | Current screenshot source. |
+| `qwen3.7-plus` | 2026-08-31 | 989,246 / 1,000,000 | Enabled | Current screenshot source. |
+| `qwen3.7-flash` | 2026-10-22 | 997,560 / 1,000,000 | Enabled | Current screenshot source; selected T6 alias. |
+| `qwen3.7-max-2026-05-17` | 2026-08-23 | 1,000,000 / 1,000,000 | Enabled | Current screenshot source. |
+| `qwen3.7-max-2026-06-08` | 2026-09-07 | 1,000,000 / 1,000,000 | Enabled | Current screenshot source. |
+| `glm-5.1` | 2026-08-25 | 1,000,000 / 1,000,000 | Enabled | Current screenshot source. |
+| `qwen3.7-max-preview` | 2026-08-23 | 1,000,000 / 1,000,000 | Enabled | Current screenshot source. |
+| `deepseek-v4-flash-0731` | 2026-10-30 | 1,000,000 / 1,000,000 | Enabled | Current screenshot source. |
+| `qwen3.7-max` | 2026-08-19 | 951,277 / 1,000,000 | Enabled | Current screenshot source. |
+| `glm-5.2` | 2026-09-23 | 798,158 / 1,000,000 | Enabled | Current screenshot source. |
+| `kimi-k2.7-code` | 2026-09-23 | 1,000,000 / 1,000,000 | Enabled | Current screenshot source. |
+| `deepseek-v4-pro-0813` | 2026-11-12 | 999,908 / 1,000,000 | Enabled | Current screenshot source. |
+| `qwen3.7-max-2026-05-20` | 2026-08-19 | 1,000,000 / 1,000,000 | Enabled | Current screenshot source. |
+| `qwen3.7-plus-2026-05-26` | 2026-08-31 | 1,000,000 / 1,000,000 | Enabled | Current screenshot source. |
+| `qwen3.8-2.4t-a95b` | 2026-11-11 | 1,000,000 / 1,000,000 | Enabled | Current screenshot source. |
+| `qwen3.8-max` | 2026-10-31 | 999,836 / 1,000,000 | Enabled | Current screenshot source. |
+| `qwen3.8-27b` | 2026-11-16 | 999,933 / 1,000,000 | Enabled | Added from 2026-09-10 screenshot. |
+| `kimi-k3` | 2026-11-16 | 1,000,000 / 1,000,000 | Enabled | Added from 2026-09-10 screenshot. |
+| `qwen3.8-flash` | 2026-11-24 | 1,000,000 / 1,000,000 | Enabled | Added from 2026-09-10 screenshot. |
+| `qwen3.8-max-0902` | 2026-11-30 | 1,000,000 / 1,000,000 | Enabled | Added from 2026-09-10 screenshot. |
 
 ## Diagnostic Rerun Summary
 
@@ -89,7 +99,7 @@ alias record. Raw key values were not printed or committed.
 
 | Model code | Endpoint host | Result |
 |---|---|---|
-| `qwen-turbo` | `dashscope-intl.aliyuncs.com` | PASS |
+| `qwen3.7-flash` | `dashscope-intl.aliyuncs.com` | NOT_RUN_PENDING_T6 |
 | `qwen3.7-plus` | `dashscope-intl.aliyuncs.com` | PASS |
 | `deepseek-v4-flash` | `dashscope-intl.aliyuncs.com` | PASS |
 | `qwen3.6-flash-2026-04-16` | `dashscope-intl.aliyuncs.com` | PASS |
@@ -103,8 +113,9 @@ or when a governed diagnostic proves a model's availability has changed.
 
 ## Claim Boundary
 
-This ledger verifies only the model codes and expiration dates visible in the
-operator-provided screenshots and the bounded diagnostic results named above.
+This ledger verifies only the model codes, quota balances, status labels, and
+expiration dates visible in the operator-provided screenshots and the bounded
+historical diagnostic results named above.
 It does not guarantee future quota availability, endpoint availability, model
 quality, provider parity, paid access, production readiness, public readiness,
 or Model Gateway runtime correctness.

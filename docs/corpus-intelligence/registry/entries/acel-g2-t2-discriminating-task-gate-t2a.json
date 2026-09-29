@@ -1,0 +1,41 @@
+{
+  "registryOrder": 191,
+  "id": "acel-g2-t2-discriminating-task-gate-t2a",
+  "corpusType": "TEST_CORPUS",
+  "displayName": "ACEL G2 T2A offline discriminating task and quality gate",
+  "scopePaths": [
+    "docs/baselines/CVF_GC018_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/g2.t2.discriminating.task.contract.ts",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/g2.t2.discriminating.task.contract.test.ts",
+    "docs/audits/CVF_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md",
+    "docs/reviews/CVF_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_WORKER_RETURN_2026-09-16.md",
+    "docs/reviews/CVF_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_COMPLETION_2026-09-16.md"
+  ],
+  "fileCount": 7,
+  "status": "SCANNED_WITH_FINDINGS",
+  "findings": [
+    {
+      "id": "acel-g2-t2a-reviewer-semantic-hardening",
+      "summary": "Independent review rejected provider-tolerant markdown-fence repair, unknown schema fields, and rollback keyword-only credit; the accepted offline contract now fails those cases closed.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Keep actual-agent calibration, provider calls, T6B, and callable composition behind a separate operator-authorized packet.",
+      "defectClass": "WORKER_EXECUTION_ERROR",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "markdown-fence repair in exact response schema",
+    "rollback credit from keyword mention alone",
+    "automatic live qualification from offline fixtures",
+    "T1-to-MAO callable consumer"
+  ],
+  "nextScanRecommendation": "Re-scan only when a separately authorized calibration or composition tranche changes this isolated contract.",
+  "scanWave": "ACEL-G2-T2A",
+  "scanDate": "2026-09-16",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_2026-09-16.md",
+  "completionReviewPath": "docs/reviews/CVF_ACEL_G2_T2_DISCRIMINATING_TASK_GATE_T2A_COMPLETION_2026-09-16.md",
+  "notes": "Reviewer-added GC-051 coverage and bounded semantic repair for an isolated offline proposal. No provider, agent, network, credential, runtime consumer, public, deployment, or production authority is claimed."
+}

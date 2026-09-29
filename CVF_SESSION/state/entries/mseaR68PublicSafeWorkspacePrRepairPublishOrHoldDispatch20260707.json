@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1526,
+  "stateKey": "mseaR68PublicSafeWorkspacePrRepairPublishOrHoldDispatch20260707",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "15e736a65",
+    "materialCommitFull": "15e736a6537cfc6407700d96e7bab23c39a2e5de",
+    "dispatchBaseHead": "d6d576891",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_2026-07-07.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_WORKER_RETURN_2026-07-07.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "dispatchSummary": "Dispatched a no-commit R68 worker tranche to verify R67 local PR-branch repair worktrees, refresh PR #20/#3 metadata, classify transfer/publish readiness, and return an operator-ready checklist or exact hold reason. No public push, GitHub merge, broad overlay acceptance, provider/live proof, or worker commit is authorized.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base d6d576891 --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base d6d576891 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "publicSyncStatusAtDispatch": "clean; main...origin/main [ahead 4]; latest local commit e85252a47; public remote https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git; public push not performed",
+    "nextAllowedMove": "No-commit R68 worker execution only. Worker must create docs/reviews/CVF_MSEA_R68_PUBLIC_SAFE_WORKSPACE_PR_REPAIR_PUBLISH_OR_HOLD_WORKER_RETURN_2026-07-07.md, refresh PR metadata/check rollups, verify R67 repair worktrees, classify publish-or-hold readiness, run required gates, and leave all changes uncommitted.",
+    "claimBoundary": "R68 dispatch authorizes only no-commit worker execution and publish-or-hold decision evidence. It does not authorize public push, GitHub merge, broad overlay-pipeline acceptance, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, worker commit, or direct downstream release."
+  }
+}

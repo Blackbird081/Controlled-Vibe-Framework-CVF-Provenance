@@ -11,7 +11,7 @@
 [![Guard Contract](https://img.shields.io/badge/Guard%20Contract-187%20tests%20pass-brightgreen.svg)](EXTENSIONS/CVF_GUARD_CONTRACT/)
 [![MCP Bridge](https://img.shields.io/badge/MCP%20Bridge-4%20endpoints%20active-blue.svg)](EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/guards/)
 [![Non-Coder Value](https://img.shields.io/badge/non--coder%20value-1%20provider%20proven-brightgreen.svg)](docs/reference/archive/CVF_PUBLIC_NONCODER_VALUE_STATEMENT_2026-04-17.md)
-[![Multi Provider](https://img.shields.io/badge/multi--provider-Alibaba%20CERTIFIED%20%7C%20DeepSeek%20CERTIFIED-brightgreen.svg)](docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md)
+[![Multi Provider](https://img.shields.io/badge/multi--provider-Alibaba%20EXPERIMENTAL%20%7C%20DeepSeek%20CERTIFIED-brightgreen.svg)](docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md)
 [![Knowledge Benefit](https://img.shields.io/badge/knowledge%20benefit-%2B0.775%20delta-brightgreen.svg)](docs/assessments/CVF_W102_T1_POST_RUN_QUALITY_ASSESSMENT_2026-04-17.md)
 [![AI Safety](https://img.shields.io/badge/AI%20Safety-Kernel%20Active-green.svg)](docs/assessments/CVF_ANTIGRAVITY_INDEPENDENT_ASSESSMENT_2026-02-26.md)
 [![CI](https://img.shields.io/badge/CI-governed%20verification%20active-brightgreen.svg)](.github/workflows/cvf-ci.yml)
@@ -108,7 +108,7 @@ The gate runs UI-only mock E2E plus live governance E2E, and it must fail if no 
 
 ## Current Live-Proof Boundary
 
-> Current live proof: Alibaba/DashScope is the primary certified release lane, with W149 proving the 40-form trusted corpus through direct API and browser UI journeys and W152 preserving a `7/7` release gate PASS. DeepSeek is a certified provider lane with canary evidence and W149 confirmatory subset coverage (`12/12`), but full provider parity is not claimed. Other providers may have adapter contracts or experimental integration surfaces, but they are not certified until their own live canary receipts are saved.
+> Historical live proof: Alibaba/DashScope was the certified release lane on its prior model, with W149 proving the 40-form trusted corpus through direct API and browser UI journeys and W152 preserving a `7/7` release gate PASS; those receipts do not transfer to the current `qwen-flash` target, which is `EXPERIMENTAL` pending fresh live proof. DeepSeek is the current certified provider lane, with canary evidence and W149 confirmatory subset coverage (`12/12`), but full provider parity is not claimed. Other providers may have adapter contracts or experimental integration surfaces, but they are not certified until their own live canary receipts are saved.
 
 ## What CVF Is
 
@@ -116,11 +116,44 @@ CVF is a governance-first control plane — a layer that decides whether an AI c
 
 CVF solves three problems in AI-assisted development: uncontrolled provider costs, ungoverned agent execution, and lack of verifiable audit trails. Without CVF, agents can call providers without budget enforcement, leak or repeat sensitive content in outputs, and leave weak evidence of what ran. CVF puts a governed control plane between your code and your AI providers.
 
-Its active reference path is built around one canonical controlled loop:
+Its active reference path is built around one canonical seven-step controlled
+loop:
 
-`INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE`
+`INTAKE -> DESIGN -> SPEC -> WORK ORDER -> BUILD -> REVIEW -> FREEZE`
 
-Intake — the step where CVF captures the request, context, risk signals, and policy constraints before execution — starts that loop.
+Each step answers a different control question:
+
+| Stage | Decision preserved by CVF | Minimum governed output |
+| --- | --- | --- |
+| `INTAKE` | What outcome is requested, by whom, and under which risk, cost, data, and authority constraints? | Normalized intent, context, success criteria, risk signals, and approval needs. |
+| `DESIGN` | What solution shape may satisfy that intent without granting implementation authority? | Architecture, trust and mutation boundaries, reuse choices, evidence plan, and explicit non-goals. |
+| `SPEC` | What exact contract must be true, and what must fail closed? | Source-verifiable inputs, outputs, interfaces, invariants, negative cases, and acceptance criteria. |
+| `WORK ORDER` | Who may execute which bounded assignment, with which tools, paths, budget, stop rules, and handoff route? | Base anchors, allowed scope, forbidden actions, provider/credential envelope when applicable, required evidence, and commit ownership. |
+| `BUILD` | Was only the approved assignment executed? | Scoped changes plus tests, diffs, diagnostics, and receipts. |
+| `REVIEW` | Does the result satisfy the intent, design, specification, and authority grant? | Independent findings, bounded repairs or return, and an evidence-backed disposition. |
+| `FREEZE` | What result, limitations, evidence, public disposition, and next move are now durable? | Closure anchors, claim boundary, unresolved limits, export status, and reopen conditions. |
+
+Roadmaps normally divide work into bounded tranches. A tranche does not restart
+all seven stages from zero: it may inherit accepted upstream `INTAKE`, `DESIGN`,
+or `SPEC` evidence and enter at the earliest stage authorized for that tranche.
+Each stage must return enough evidence for a transition gate, but that gate does
+not always require a separate independent-review artifact. Machines verify
+deterministic facts such as paths, hashes, manifests, schemas, and test results;
+reviewers retain semantic judgment and authority to advance, return, or block.
+`REVIEW` is the formal result-evaluation stage before `FREEZE`, and `FREEZE`
+records the durable closure. The seven-stage lifecycle vocabulary by itself
+does not prove that every downstream workspace or integration machine-enforces
+every gate; use the current roadmap, work order, receipts, and accepted review
+to determine actual enforcement and authority.
+
+`SPEC` is deliberately separate from `DESIGN`: a proposed solution is not yet
+a testable contract. `WORK ORDER` is deliberately separate from `BUILD`: a
+contract is not yet permission for an agent to mutate files, call a provider,
+or spend quota. CVF may prepare these controls for a non-coder, but it preserves
+the decisions and requests human approval where policy or risk requires it.
+
+For the role and authority flow when several agents share one filesystem, see
+[Seven-Step Shared-Workspace Agent Relationship Model](docs/reference/CVF_SEVEN_STEP_SHARED_WORKSPACE_AGENT_RELATIONSHIP_MODEL_2026-09-09.md).
 
 What CVF is good at:
 
@@ -156,7 +189,7 @@ Public-safe product wording:
 Boundaries that still matter:
 
 - one-provider non-coder value is proven on the Alibaba lane
-- multi-provider operability is proven on Alibaba `qwen-turbo` and DeepSeek `deepseek-chat`
+- historical multi-provider evidence exists for Alibaba and DeepSeek; Alibaba now targets `qwen-flash` pending fresh live proof, while DeepSeek `deepseek-chat` remains certified
 - W149 proved the full trusted-form corpus on Alibaba direct API `40/40`, Alibaba browser UI `40/40`, and a DeepSeek confirmatory subset `12/12`
 - provider speed, strength, reliability, and cost remain provider-lane economics chosen by the user
 - the public `Skill Library` front door is now synced to a governed subset, but benchmark truth still comes only from the `GC-044` trusted subset
@@ -252,7 +285,7 @@ npm run dev
 
 Then open `http://localhost:3000`.
 
-Provider proof note: the current certified release lane is Alibaba/DashScope; DeepSeek has certified canary evidence and bounded confirmatory coverage, but CVF does not claim provider parity. See [Current Live-Proof Boundary](#current-live-proof-boundary).
+Provider proof note: the current certified release lane is DeepSeek; Alibaba/DashScope's `qwen-flash` target is `EXPERIMENTAL` pending fresh live proof, and CVF does not claim provider parity. See [Current Live-Proof Boundary](#current-live-proof-boundary).
 
 In `Settings`, enable the provider keys you want to use. Each admitted `provider + model` pair is treated as a governed run lane for future Product Value Validation.
 
@@ -319,7 +352,7 @@ Current posture on the active reference path:
 | Architecture baseline | `v3.7-W46T1 CLOSURE-ASSESSED` |
 | MC sequence | `MC1-MC5 FULLY COMPLETE` |
 | One-provider non-coder value | `PROVEN — governed path value proven on Alibaba lane` |
-| Multi-provider operability | `PROVEN — Alibaba qwen-turbo CERTIFIED (3/3 pass) + DeepSeek deepseek-chat CERTIFIED (3/3 pass)` |
+| Multi-provider operability | `HISTORICAL TWO-LANE EVIDENCE — Alibaba now targets qwen-flash pending fresh live proof; DeepSeek deepseek-chat remains CERTIFIED` |
 | Knowledge-native execute-path value | `PROVEN — injected 0.950 vs raw 0.175 (+0.775 delta)` |
 | Trusted-form non-coder corpus | `LIVE-USABLE — W149 Alibaba direct 40/40, Alibaba browser 40/40, DeepSeek confirmatory 12/12` |
 | Post-closure integration wave | `CVF ADDING NEW + Windows_Skill_Normalization INTEGRATED` |
@@ -466,6 +499,7 @@ Primary status anchors:
 ### Track status and evidence
 
 - [Technical Product Catalog](docs/reference/CVF_TECHNICAL_PRODUCT_CATALOG_2026-05-18.md) — what CVF can do today, key extensions, and delivery history
+- [SOT Three-Layer Knowledge Authority](docs/reference/sot_three_layer/README.md) — bounded knowledge-authority architecture (Refinery, Truth Kernel, Truth Flow); local-ready owners, proven in one activation seam and one downstream application, not a universal or provider-wide claim
 - [Release Manifest](docs/reference/CVF_RELEASE_MANIFEST.md)
 - [Module Inventory](docs/reference/CVF_MODULE_INVENTORY.md)
 - [Release Readiness](docs/reference/CVF_RELEASE_READINESS_STATUS_2026-03-20.md)

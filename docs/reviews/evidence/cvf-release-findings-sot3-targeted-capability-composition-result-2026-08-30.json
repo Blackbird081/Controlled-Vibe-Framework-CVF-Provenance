@@ -1,0 +1,28 @@
+{
+  "a4ReturnCode": 0,
+  "batchId": "SOT3-ACT-A5",
+  "finishedAtUtc": "2026-08-30T02:16:01.760291+00:00",
+  "schemaVersion": "cvf.sot3ActA5ReleaseProof.v1",
+  "secretSafety": {
+    "fullPromptPersisted": false,
+    "rawKeyPersisted": false,
+    "rawOutputPersisted": false,
+    "rawProviderBodyPersisted": false
+  },
+  "sot3": {
+    "admissionFailures": [],
+    "approvedContextIncluded": true,
+    "claim": "SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED",
+    "durableOwnerCorrelationComplete": true,
+    "httpStatus": 200,
+    "localNegativeGatePassed": true,
+    "negativeCaseCount": 19,
+    "overall": "PASS",
+    "providerSuccess": true,
+    "recoveryProviderCallCount": 1,
+    "rollbackProviderCallCount": 1,
+    "traceCount": 1,
+    "zeroProviderCallCaseCount": 18
+  },
+  "startedAtUtc": "2026-08-30T02:14:32.192671+00:00"
+}

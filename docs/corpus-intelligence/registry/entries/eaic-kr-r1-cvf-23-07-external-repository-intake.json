@@ -1,0 +1,71 @@
+{
+  "registryOrder": 154,
+  "id": "eaic-kr-r1-cvf-23-07-external-repository-intake",
+  "corpusType": "EXTERNAL_SOURCE",
+  "displayName": "EAIC-KR-R1 CVF 23.07 external repository intake",
+  "scopePaths": [
+    ".private_reference/legacy/CVF 23.07/CVF_Conversation_Resilient_Governance/",
+    ".private_reference/legacy/CVF 23.07/CVF_INTERACTION_PROJECTION/"
+  ],
+  "fileCount": 231,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "EAIC-KR-R1",
+  "scanDate": "2026-07-23",
+  "manifestHash": "5799cc627491e466379878a8542c26740a167032de1afa92237d998a5aa49ad5",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "manifestPath": "docs/audits/CVF_EAIC_KR_R1_CVF_23_07_EXTERNAL_REPOSITORY_INTAKE_MANIFEST_2026-07-23.json",
+  "packetPath": "docs/audits/CVF_EAIC_KR_R1_CVF_23_07_EXTERNAL_REPOSITORY_INTAKE_AUDIT_2026-07-23.md",
+  "completionReviewPath": "docs/audits/CVF_EAIC_KR_R1_ADVERSARIAL_REVIEW_2026-07-23.md",
+  "gcBaselineRef": null,
+  "verdicts": {
+    "gc047": "COMPLETE_VERIFIED",
+    "gc048": "PARTIAL",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "authority-and-decision",
+    "identity-and-role",
+    "budget-quota-and-unknown-usage",
+    "receipt-and-diagnostic",
+    "lifecycle-stop-and-reconnect",
+    "adapter-ui-and-accessibility",
+    "provenance-and-reuse"
+  ],
+  "priorAbsorption": "No prior registry entry or pinned source mirror was found before intake. After the operator supplied the upstream URL, Brainless was pinned at commit 4c5d5ab65ff6cfa8dbb6f27cb8c88d9092a48deb and indexed as theswerd__brainless; Conversation-Resilient Governance provenance remains unresolved.",
+  "findings": [
+    {
+      "id": "EAIC-KR-R1-F01",
+      "summary": "Interaction Projection provides high-value secondary policy vocabulary for the held EAIC-KR T2 decisions; pinned Brainless upstream evidence supports UI interaction patterns but not runtime enforcement.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Create a documentation-only T2 decision-evidence supplement without releasing the hold.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    },
+    {
+      "id": "EAIC-KR-R1-F02",
+      "summary": "Conversation-Resilient Governance adds decision persistence, verified reconsideration, trajectory, and capability-composition concepts but still lacks upstream, authorship, and license evidence.",
+      "disposition": "REJECT",
+      "nextAction": "Reject direct import; obtain provenance or retain only as explicitly non-authoritative doctrine input.",
+      "defectClass": "UNVERIFIED_CLAIM",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    },
+    {
+      "id": "EAIC-KR-R1-F03",
+      "summary": "Wholesale import would duplicate existing CVF authority, receipt, workflow, execution, provider, and UI owners.",
+      "disposition": "REJECT",
+      "nextAction": "Rewrite accepted value into existing owner surfaces through fresh governed tranches.",
+      "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "no matching prior corpus registry entry",
+    "no source-mirror index row for Conversation-Resilient Governance",
+    "no upstream URL in Conversation-Resilient Governance",
+    "no license declaration in Conversation-Resilient Governance",
+    "no admission owner in either copied pack",
+    "no process-tree enforcement proof in either copied pack"
+  ],
+  "nextScanRecommendation": "Accept the selective absorption plan, then author only an EAIC-KR T2 documentation evidence supplement; Brainless upstream verification is complete for UI-pattern facts, while Conversation provenance and all product, runtime, checker, CLI, MCP, and provider lanes remain parked until separately authorized."
+}

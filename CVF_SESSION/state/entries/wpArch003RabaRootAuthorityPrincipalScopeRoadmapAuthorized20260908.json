@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2791,
+  "stateKey": "wpArch003RabaRootAuthorityPrincipalScopeRoadmapAuthorized20260908",
+  "value": "Operator-authorized WP-ARCH-003-RABA root authority and principal-scope architecture reassessment roadmap is committed at cd56ac953d411f6781758d2fe625ea88a9545644. It is a new parent, not AR1-R2, and reuses the bounded ARCH-ABS-021 result while requiring source proof for a higher-authority approval issuer, trusted principal/task/file-scope binding, fail-closed verification, one canonical owner and a real non-test runtime consumer. The next release is RABA-T0 GC-018 and work-order authoring only. This roadmap consumes zero delegated-worker invocations and does not reset AR1 usage 2/2; worker execution requires a later operator relay checkpoint."
+}

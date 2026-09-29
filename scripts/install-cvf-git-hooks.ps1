@@ -23,6 +23,7 @@ if (-not $LocalOnly) {
         Write-Host " - $_"
     }
     Write-Host "Hook roles:"
-    Write-Host " - pre-commit: governance hook chain wrapper (file size + exception registry + docs governance)"
+    Write-Host " - pre-commit: governance hook chain wrapper (file size + exception registry + docs governance); also fail-closes on an unresolved P4-C1 safety marker"
+    Write-Host " - post-commit: P4-C1 bounded automatic MFRP shadow-canary evidence collector (never rewrites the commit; writes only to the ignored .cvf/runtime/mfrp-p4-shadow-canary/ journal)"
     Write-Host " - pre-push: governance hook chain wrapper (docs + tracker/handoff compat + size/ownership guards + guard registry/contract checks)"
 }

@@ -42,6 +42,37 @@ individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 ```
 
+## Fast Doc Contract
+
+Use the lighter profile only when the dispatching GC-018 and work order make
+the eligibility decision before worker execution:
+
+```text
+## Worker Return Packet Shape Contract
+
+contractProfile: WORKER_RETURN_FAST_DOC_V1
+scopeClassification: DOCUMENTATION_AND_EVIDENCE_ONLY_NO_COMMIT
+requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
+individualCheckerSubstitution: FORBIDDEN
+workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
+publicSyncDisposition: FORBIDDEN
+liveRuntimeDisposition: FORBIDDEN
+checkerMutationDisposition: FORBIDDEN
+workerSelfSelection: FORBIDDEN
+```
+
+Eligibility also requires `Commit mode: WORKER_MUST_NOT_COMMIT`. The profile
+may consolidate only EKI, RIH, and CCRI conditional controls into:
+
+```text
+## Conditional Controls Disposition
+conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA
+```
+
+The worker-return checker resolves `dispatchWorkOrder` and rejects compact
+self-selection, missing work-order evidence, or any missing protected
+worker-return heading or token.
+
 `## Verification Commands` must also include:
 
 ```powershell
@@ -66,6 +97,9 @@ for generated no-commit work orders.
 `governance/compat/build_worker_return_skeleton_scaffold.py` and
 `governance/compat/run_worker_return_scaffold.py` carry the detailed
 worker-return section shape.
+
+`run_worker_return_scaffold.py --profile WORKER_RETURN_FAST_DOC_V1` emits the
+compact conditional-control shape. The default remains the full profile.
 
 ## Agent Operation Trace Block
 

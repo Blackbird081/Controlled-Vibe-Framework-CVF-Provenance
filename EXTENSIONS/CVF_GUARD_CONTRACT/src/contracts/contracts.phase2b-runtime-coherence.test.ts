@@ -242,7 +242,7 @@ function buildRuntimeCoherenceNodes(): Phase2BAdapterNode[] {
         displayName: 'DashScope',
         status: 'enabled' as const,
         riskClass: 'medium' as const,
-        models: [{ id: 'qwen-turbo', riskClass: 'medium' as const }],
+        models: [{ id: 'qwen-flash', riskClass: 'medium' as const }],
       },
     ]),
     health: new ProviderHealthMonitor(() => new Date(FIXED_NOW)),
@@ -255,7 +255,7 @@ function buildRuntimeCoherenceNodes(): Phase2BAdapterNode[] {
   );
   const routingRequest = {
     traceId: TRACE_ID,
-    requestedModelId: 'qwen-turbo',
+    requestedModelId: 'qwen-flash',
     policy: { traceId: TRACE_ID, policyResult: 'allow' as const },
   };
   const routingDecision = routing.decide(routingRequest);
@@ -278,7 +278,7 @@ function buildRuntimeCoherenceNodes(): Phase2BAdapterNode[] {
   ).buildEnvelope({
     traceId: TRACE_ID,
     providerId: 'dashscope',
-    selectedModelId: 'qwen-turbo',
+    selectedModelId: 'qwen-flash',
     decision: 'selected',
     reason: 'policy_health_quota_selected',
     validationState: 'passed',

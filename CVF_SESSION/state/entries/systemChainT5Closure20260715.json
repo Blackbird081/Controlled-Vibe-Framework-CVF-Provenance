@@ -1,0 +1,19 @@
+{
+  "stateOrder": 1818,
+  "stateKey": "systemChainT5Closure20260715",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "61662d9b0",
+    "workOrderId": "SCLP-T5",
+    "executionBaseHead": "edec8008a",
+    "useCasesReconciled": 4,
+    "lanesReconciled": 5,
+    "liveInvocations": 0,
+    "providerCalls": 0,
+    "semanticRepairs": "stale coverage next-use-case pointer; contradictory worker telemetry; stale roadmap paragraph",
+    "learningEntry": "ADIF-0039",
+    "roadmapStatus": "CLOSED_PASS_BOUNDED",
+    "nextAllowedMove": "no active SCLP tranche; reopen only on a concrete parked trigger or materially new claim with a fresh proof packet",
+    "claimBoundary": "Final reverse projection and bounded sequence closure only. Unified Web inventory, public, production, scale, certification, shipment, and real-user value remain excluded."
+  }
+}

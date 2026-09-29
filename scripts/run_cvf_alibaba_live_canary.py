@@ -148,7 +148,7 @@ def build_receipt(vitest: dict, api_key_present: bool) -> dict:
         "run_id": run_id,
         "timestamp": now.isoformat(),
         "provider": "alibaba",
-        "model": "qwen-turbo",
+        "model": "qwen-flash",
         "triggered_by": "cli",
         "scenarios": scenario_rows,
         "overall_status": overall,

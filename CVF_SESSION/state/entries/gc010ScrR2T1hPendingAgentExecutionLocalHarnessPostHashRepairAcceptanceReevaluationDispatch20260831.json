@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2440,
+  "stateKey": "gc010ScrR2T1hPendingAgentExecutionLocalHarnessPostHashRepairAcceptanceReevaluationDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_PENDING_EXTERNAL_DECISION_RETURN",
+    "materialCommit": "f18348daccb7c55cd5cd536f4865554235c6a06e",
+    "dispatchBaseHead": "6b3b42b898bada669767269cd5e9ad3659cde408",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md",
+    "workerManifest": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1H_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_POST_HASH_REPAIR_ACCEPTANCE_REEVALUATION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "objective": "Re-evaluate whether the committed T1E local harness now satisfies its bounded non-production acceptance contract after T1G repaired canonical approval hashing.",
+    "workerBoundary": "One operator-mediated external Claude worker creates exactly two documentation artifacts, performs read-only offline proof, does not stage or commit, and stops for independent orchestrator review.",
+    "nextAllowedMove": "Operator transfers the exact committed T1H packet to one Claude worker; worker returns exactly the two named uncommitted documentation artifacts for independent orchestrator/reviewer closure.",
+    "claimBoundary": "Dispatch only. T1E is not yet accepted; no source/test edit, package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync, deployment or production authority is opened."
+  }
+}

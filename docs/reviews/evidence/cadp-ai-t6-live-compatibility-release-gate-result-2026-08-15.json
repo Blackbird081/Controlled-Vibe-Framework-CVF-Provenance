@@ -1,0 +1,77 @@
+{
+  "date": "2026-08-15",
+  "gate_result": "FAIL",
+  "checks": [
+    {
+      "name": "Web build (npm run build)",
+      "status": "FAIL",
+      "message": "Build failed",
+      "detail": [
+        "[WinError 2] The system cannot find the file specified"
+      ]
+    },
+    {
+      "name": "TypeScript check (guard contract)",
+      "status": "FAIL",
+      "message": "TypeScript errors found",
+      "detail": [
+        "[WinError 2] The system cannot find the file specified"
+      ]
+    },
+    {
+      "name": "Provider readiness",
+      "status": "PASS",
+      "message": "CERTIFIED lanes: 3 \u2014 status: CERTIFIED",
+      "detail": []
+    },
+    {
+      "name": "Secrets scan",
+      "status": "FAIL",
+      "message": "Potential secrets found in 1 location(s)",
+      "detail": [
+        ".private_reference\\legacy\\CVF 13.08\\CVF_CAPABILITY_ADMISSION_DISTRIBUTION_PROFILE\\fixtures\\negative\\admission-with-secret.yaml:62"
+      ]
+    },
+    {
+      "name": "Docs governance (RC docs present)",
+      "status": "PASS",
+      "message": "All 3 required RC docs present",
+      "detail": []
+    },
+    {
+      "name": "E2E Playwright UI (mock)",
+      "status": "FAIL",
+      "message": "Playwright UI mock suite failed",
+      "detail": [
+        "[WinError 2] The system cannot find the file specified"
+      ]
+    },
+    {
+      "name": "SOT3 canonical release proof (A5)",
+      "status": "FAIL",
+      "message": "SOT3 proof did not PASS",
+      "detail": [
+        "a4_local_negative_gate_not_passed",
+        "a4_live_receipt_missing_or_unreadable"
+      ]
+    }
+  ],
+  "sot3": {
+    "admissionFailures": [
+      "a4_local_negative_gate_not_passed",
+      "a4_live_receipt_missing_or_unreadable"
+    ],
+    "approvedContextIncluded": null,
+    "claim": null,
+    "durableOwnerCorrelationComplete": false,
+    "httpStatus": null,
+    "localNegativeGatePassed": false,
+    "negativeCaseCount": null,
+    "overall": "FAIL",
+    "providerSuccess": null,
+    "recoveryProviderCallCount": null,
+    "rollbackProviderCallCount": null,
+    "traceCount": null,
+    "zeroProviderCallCaseCount": null
+  }
+}

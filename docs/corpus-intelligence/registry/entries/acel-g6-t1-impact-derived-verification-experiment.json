@@ -1,0 +1,44 @@
+{
+  "registryOrder": 193,
+  "id": "acel-g6-t1-impact-derived-verification-experiment",
+  "corpusType": "TEST_CORPUS",
+  "displayName": "ACEL G6 T1 impact-derived verification hermetic experiment",
+  "scopePaths": [
+    "docs/baselines/CVF_GC018_ACEL_G6_T1_IMPACT_DERIVED_VERIFICATION_EXPERIMENT_2026-09-16.md",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/impact.verification.experiment.contract.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/impact.verification.experiment.contract.test.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/scripts/run-acel-g6-t1-impact-verification-experiment.ts",
+    "docs/audits/CVF_ACEL_G6_T1_IMPACT_DERIVED_VERIFICATION_EXPERIMENT_32_RUN_RECEIPT_2026-09-16.json",
+    "docs/audits/CVF_ACEL_G6_T1_IMPACT_DERIVED_VERIFICATION_EXPERIMENT_RESULT_2026-09-16.md",
+    "docs/reviews/CVF_ACEL_G6_T1_IMPACT_DERIVED_VERIFICATION_EXPERIMENT_COMPLETION_2026-09-16.md"
+  ],
+  "fileCount": 7,
+  "status": "SCANNED_WITH_FINDINGS",
+  "findings": [
+    {
+      "id": "acel-g6-t1-positive-hermetic-cost-signal",
+      "summary": "Impact-derived selection preserved all seeded-regression detections and reduced deterministic cost by 64.2% on the closed eight-case corpus.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Keep production integration parked; require a separately governed independently sourced change/regression corpus before reviewing composition.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "production verifier selection",
+    "mandatory gate reduction",
+    "provider execution",
+    "runtime wiring",
+    "public export"
+  ],
+  "nextScanRecommendation": "Re-scan only when a separately authorized real-corpus verification-composition tranche exists.",
+  "scanWave": "ACEL-G6-T1",
+  "scanDate": "2026-09-16",
+  "manifestHash": "7cdee0dd741b4b26af2ba78cefe71e5b7e9a3096415b89abc4cb295490774e88",
+  "hashAlgorithm": "sha256",
+  "hashInput": "manifest-internal-hash-from-script-output",
+  "manifestPath": "docs/audits/CVF_ACEL_G6_T1_IMPACT_DERIVED_VERIFICATION_EXPERIMENT_32_RUN_RECEIPT_2026-09-16.json",
+  "packetPath": "docs/baselines/CVF_GC018_ACEL_G6_T1_IMPACT_DERIVED_VERIFICATION_EXPERIMENT_2026-09-16.md",
+  "completionReviewPath": "docs/reviews/CVF_ACEL_G6_T1_IMPACT_DERIVED_VERIFICATION_EXPERIMENT_COMPLETION_2026-09-16.md",
+  "notes": "Reviewer-added GC-051 coverage for a proposal-only hermetic comparison. No production consumer, provider, subagent, network, runtime, public, or deployment claim."
+}

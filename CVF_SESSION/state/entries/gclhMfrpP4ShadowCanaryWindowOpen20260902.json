@@ -1,0 +1,32 @@
+{
+  "stateOrder": 2747,
+  "stateKey": "gclhMfrpP4ShadowCanaryWindowOpen20260902",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_CANARY_WINDOW_OPEN_BOUNDED",
+    "authorityAmendmentCommit": "625f00b65",
+    "authorityCheckpointCommit": "a7acf1593",
+    "materialCommit": "8de63c077",
+    "workerReturnPath": "docs/reviews/CVF_MFRP_P4_SHADOW_CANARY_WORKER_RETURN_2026-09-02.md",
+    "implementationPaths": 6,
+    "focusedTests": "90/90 PASS twice after split",
+    "preCommitChecks": "88/88 PASS",
+    "eligibleObservationCount": 0,
+    "initialObservationDisposition": "BLOCKED_NO_ELIGIBLE_NATURAL_PAIR",
+    "reviewAdmission": {
+      "preExecutionReview": "NOT_REQUIRED",
+      "perReturnRoutineReview": "FORBIDDEN",
+      "routineCheckpoints": ["M5", "M10", "M20_SAMPLE_COMPLETE", "DAY30_SUNSET_ADJUDICATION"],
+      "earlyReview": "DERIVED_SAFETY_TRIGGER_ONLY"
+    },
+    "p5ReopenSampleGate": {
+      "requiredEligibleCount": 20,
+      "sampleSatisfied": false,
+      "calendarWaitRequiredAfterSampleSatisfied": false,
+      "day30AloneAuthorizesReopen": false,
+      "day30InsufficientSampleDisposition": "INSUFFICIENT_EVIDENCE",
+      "materialCommit": "3942cef57"
+    },
+    "nextAllowedMove": "Collect natural eligible return/receipt pairs without per-return review. Stop for M5, M10, M20 or a derived safety trigger. At M20 a separate P5 decision may proceed immediately. Day 30 is sunset adjudication only and cannot replace missing samples.",
+    "claimBoundary": "P4 initialization implementation is accepted bounded and the observation window is open. Trusted review remains controlling. No recall, saving, P5, route replacement, P2 mutation or external effect is authorized or claimed."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1717,
+  "stateKey": "sot3T4Dispatch20260712",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-12",
+    "materialCommit": "52e8b0a4c",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_T4_TRUTH_KERNEL_HARDENING_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T4_TRUTH_KERNEL_HARDENING_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "targetRoot": "EXTENSIONS/CVF_TRUTH_KERNEL/",
+    "nextAllowedMove": "one bounded deterministic SOT3-T4 Kernel execution and no-commit worker return",
+    "claimBoundary": "T4 Kernel only; T5-T7, activation, Flow, monitors, database, adapters, provider/live and public remain held"
+  }
+}

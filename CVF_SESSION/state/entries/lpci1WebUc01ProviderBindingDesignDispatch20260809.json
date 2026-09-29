@@ -1,0 +1,18 @@
+{
+  "stateOrder": 2011,
+  "stateKey": "lpci1WebUc01ProviderBindingDesignDispatch20260809",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-UC01-D1",
+    "dispatchCommit": "e2ebbc984",
+    "operatorAuthority": "AUTHORIZE_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_DESIGN_ONLY",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_DESIGN_2026-08-09.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_DESIGN_2026-08-09.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerOutputCount": 2,
+    "providerLiveNetworkActionCount": 0,
+    "nextAllowedMove": "One no-commit documentation-design worker executes the committed packet, then the primary reviewer independently accepts or returns it.",
+    "claimBoundary": "DESIGN dispatch only; no DESIGN acceptance, SPEC, BUILD, runtime/config/package mutation, provider/live, public-sync, deployment, or readiness claim."
+  }
+}

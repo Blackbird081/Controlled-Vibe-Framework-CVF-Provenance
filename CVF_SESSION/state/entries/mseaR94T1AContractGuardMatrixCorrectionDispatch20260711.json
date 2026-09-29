@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1650,
+  "stateKey": "mseaR94T1AContractGuardMatrixCorrectionDispatch20260711",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-11",
+    "materialCommit": "f32175bdc",
+    "dispatchBaseHead": "756d93733",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R94_T1A_CONTRACT_GUARD_MATRIX_EVIDENCE_CORRECTION_2026-07-11.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R94_T1A_CONTRACT_GUARD_MATRIX_EVIDENCE_CORRECTION_2026-07-11.md",
+    "workerReturn": "docs/reviews/CVF_MSEA_R94_T1A_CONTRACT_GUARD_MATRIX_EVIDENCE_CORRECTION_WORKER_RETURN_2026-07-11.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "targetRows": ["GC-001", "GC-002", "GC-003", "GC-005", "GC-006", "GC-008"],
+    "verification": ["pre-dispatch PASS 74/74", "pre-commit PASS 81/81", "ADIF resolver returned no defects"],
+    "nextAllowedMove": "worker executes only R94-T1A and returns COMPLETE_PENDING_REVIEW without committing",
+    "claimBoundary": "six matrix evidence-cell corrections only; no test, runtime, other row, later R94 tranche, lifecycle, provider, public, or session mutation"
+  }
+}

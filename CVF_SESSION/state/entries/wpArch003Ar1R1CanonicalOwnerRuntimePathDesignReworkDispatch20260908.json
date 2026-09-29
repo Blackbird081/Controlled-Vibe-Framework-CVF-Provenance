@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2787,
+  "stateKey": "wpArch003Ar1R1CanonicalOwnerRuntimePathDesignReworkDispatch20260908",
+  "value": "Operator-authorized WP-ARCH-003 AR1 R1 consolidated design rework is DISPATCH_READY at material commit da8cc1bec. The work order binds reviewer findings R1-01 through R1-04 as one dependency class, authorizes one operator-relayed external invocation from same-parent usage 1 to ceiling 2, and restricts the worker to modifying the same two untracked assessment/return paths without staging or commit. The initial reviewer rejection dd985013c remains authority; implementation, DARA-T5, MFRP mutation, provider/live/public/deploy and automatic third invocation remain closed."
+}

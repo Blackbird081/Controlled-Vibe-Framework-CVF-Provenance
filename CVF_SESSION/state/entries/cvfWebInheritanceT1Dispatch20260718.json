@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1929,
+  "stateKey": "cvfWebInheritanceT1Dispatch20260718",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "0b3f0e990",
+    "dispatchBaseHead": "884f69849",
+    "roadmap": "docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T1_SOT3_RUNTIME_MODULE_REGISTRY_TRUTH_CORRECTION_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T1_SOT3_RUNTIME_MODULE_REGISTRY_TRUTH_CORRECTION_2026-07-18.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedPaths": 3,
+    "verification": "dispatch-author fast 5/5 PASS; pre-dispatch 75/75 PASS; dispatch steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact T1 registry/test work order and return for independent review.",
+    "heldNextTranche": "T2-T5 and all external mutation lanes remain parked.",
+    "claimBoundary": "Three SOT3 registry entries, focused registry test, and worker return only."
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2833,
+  "stateKey": "dshCodeReviewQualityT1Dispatch20260914",
+  "value": "DSH-CODE-REVIEW-QUALITY-T1 is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED after rework generation 1. Local accepted the exact five worker paths, MIT license correction, explicit CR5 structural-remedy rule and package-loader receipt; completion review is docs/reviews/CVF_DSH_CODE_REVIEW_QUALITY_T1_COMPLETION_REVIEW_2026-09-14.md. Material commit: 4be990ffce7fda1e559e4dcc9b5d660a2560fc0b. DSH-UC-03 remains DEFERRED_WITH_TRIGGER. DeepSeek Harness remains INCOMPLETE until Local source-terminal accounting closes."
+}

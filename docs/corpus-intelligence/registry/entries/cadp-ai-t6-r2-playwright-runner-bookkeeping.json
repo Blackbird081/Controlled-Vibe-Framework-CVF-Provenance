@@ -1,0 +1,36 @@
+{
+  "registryOrder": 166,
+  "id": "cadp-ai-t6-r2-playwright-runner-bookkeeping",
+  "corpusType": "TEST_CORPUS",
+  "displayName": "CADP-AI-T6-R2 Playwright runner bookkeeping path",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results/.last-run.json"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "scanWave": "CADP-AI-T6-R2",
+  "scanDate": "2026-08-15",
+  "manifestHash": null,
+  "manifestPath": "docs/reviews/evidence/cadp-ai-t6-r2-release-gate-manifest-2026-08-15.json",
+  "packetPath": "docs/reviews/CVF_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_WORKER_RETURN_2026-08-15.md",
+  "completionReviewPath": "docs/reviews/CVF_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_COMPLETION_2026-08-15.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_2026-08-15.md",
+  "verdicts": {
+    "gc047": "NOT_RUN",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "PLAYWRIGHT_RUNNER_BOOKKEEPING",
+    "CADP_LIVE_PROOF_MANIFEST_ISOLATION",
+    "REVIEWER_OWNED_TEST_SIDE_EFFECT_RECONCILIATION"
+  ],
+  "priorAbsorption": "R2's mandated mock Playwright supplement rewrote the tracked last-run bookkeeping path when the browser binary was absent. Independent review installed the exact browser and reran the two mock specs; 6/6 passed and the file returned to its HEAD blob without a manual source edit.",
+  "findings": [],
+  "negativeSearchTerms": [
+    "provider response content in Playwright bookkeeping",
+    "secret value in Playwright bookkeeping",
+    "live-call authority conveyed by last-run status"
+  ],
+  "nextScanRecommendation": "Re-scan only if Playwright bookkeeping ownership, ignore policy, or the CADP release-bundle E2E path changes."
+}

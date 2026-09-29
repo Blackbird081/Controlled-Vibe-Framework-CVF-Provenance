@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2189,
+  "stateKey": "cadpAiT6LiveCompatibilityProofDispatch20260815",
+  "value": "CADP-AI-T6 bounded live compatibility proof is DISPATCH_READY at material commit 1405017db. Exact authority is baseline SHA-256 f37dbbad35ef6e0054d5c3b4cd633ccc7b6f2417f3ff343f9b8967f81aac2dd9 and work-order SHA-256 96ebb8556c4bbbe2241df250cd8c269953e2dbf9d48c28ea742910caad141132. Independent review repaired the worker packet so --e2e selects UI-mock E2E plus exactly one real SOT3 Alibaba/DashScope call, requires an official-price worst-case bound below US$1 before calling, rejects provider-retention overclaims, and reports secrets only as redacted presence status. Evidence: pre-dispatch 76/76 PASS, GC-051 PASS, commit-steward preflight PASS, and material pre-commit 84/84 PASS. The live worker owns exactly one return plus four evidence JSON paths, must not stage or commit, and may not implement T5, invoke MCP/CLI, disclose secrets, mutate source, sync public artifacts, deploy, or claim production, trusted-evidence, universal-provider, or cross-runtime readiness."
+}

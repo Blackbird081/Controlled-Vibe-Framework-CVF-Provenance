@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1642,
+  "stateKey": "maoT7ClosureAwaitingT8PilotSelection20260711",
+  "value": "MAO-T7 Evidence, Observability, And Operator Readout is REVIEWER_ACCEPTED_BOUNDED at material commit 2ae63592e from clean execution HEAD 3a56da449. Worker returned exactly five uncommitted outputs. Codex independently reran the focused suite and typecheck, found that the graph-bound ledger accepted cross-graph evidence, repaired it with fail-closed TASK_GRAPH_ID_MISMATCH handling, and added a negative test. Final evidence: focused Vitest PASS 35/35, TypeScript typecheck PASS, worker-return fast gate PASS, reviewer-fast 61/61 PASS, pre-commit 82/82 PASS, and committed-range pre-closure content gates PASS except the expected active-handoff HEAD freshness before this session sync. The catalog artifact remains CANDIDATE_PENDING_ADMISSION and the secret-safety claim is bounded to denylisted-field-name redaction. Next move is a fresh MAO-T8 pilot-selection checkpoint naming one real bounded task and proof class; T8 execution and T9 remain held."
+}

@@ -1,0 +1,35 @@
+{
+  "registryOrder": 183,
+  "id": "brigade-eartr-context-compaction-runtime-surfaces",
+  "corpusType": "PROJECT_SOURCE",
+  "displayName": "Brigade EARTR context compaction runtime realization surfaces",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/context.tool-result.compaction.contract.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/context.tool-result.compaction.contract.test.ts"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "scanWave": "BRIGADE-EARTR-R1-RUNTIME-REALIZATION",
+  "scanDate": "2026-08-30",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_BRIGADE_EARTR_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md",
+  "completionReviewPath": "docs/reviews/CVF_BRIGADE_EARTR_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md",
+  "gcBaselineRef": null,
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+    "gc050": "PASS"
+  },
+  "semanticRegions": [
+    "tool-output-aware-context-compaction",
+    "control-plane-context-packager-tests"
+  ],
+  "priorAbsorption": "The Brigade EARTR source-pack entry inventories the external source corpus. This project-source entry separately covers the two CVF-native Control Plane realization surfaces so external-corpus counts are not conflated with local implementation coverage.",
+  "findings": [],
+  "negativeSearchTerms": [
+    "provider summarizer introduced for compaction",
+    "unsafe late compaction silently accepted"
+  ],
+  "nextScanRecommendation": "Re-scan only when the context tool-result compaction contract or its focused tests change."
+}

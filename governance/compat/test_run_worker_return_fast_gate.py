@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -24,6 +25,7 @@ class WorkerReturnFastGateTests(unittest.TestCase):
                 "corpus scan registry aggregate drift",
                 "epistemic process packet",
                 "worker-return quality gate",
+                "independent review probe admission",
                 "reviewer-fast governance gate",
                 "git diff whitespace check",
             ],
@@ -36,6 +38,24 @@ class WorkerReturnFastGateTests(unittest.TestCase):
         self.assertEqual(
             commands[0].command,
             ("python", "-m", "pytest", "tests/example_test.py", "-q"),
+        )
+
+    def test_typescript_targets_route_to_package_vitest(self) -> None:
+        targets = (
+            "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.durable.run.store.test.ts",
+            "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.operational.worker.launcher.test.ts",
+        )
+        commands = MODULE.build_commands(targets)
+
+        self.assertEqual(commands[0].name, "focused vitest targets")
+        self.assertEqual(commands[0].cwd, "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION")
+        self.assertEqual(
+            commands[0].command,
+            (
+                "npx", "vitest", "run",
+                "tests/mao.durable.run.store.test.ts",
+                "tests/mao.operational.worker.launcher.test.ts",
+            ),
         )
 
     def test_epistemic_packet_check_runs_before_reviewer_fast(self) -> None:
@@ -62,6 +82,65 @@ class WorkerReturnFastGateTests(unittest.TestCase):
         self.assertEqual(
             commands[labels.index("worker-return quality gate")].command,
             ("python", "governance/compat/check_worker_return_quality_gate.py", "--enforce"),
+        )
+
+    def test_independent_review_probe_admission_uses_changed_lane_only(self) -> None:
+        # RIPA-ROOT-09: the fast gate must not fail on a pre-existing
+        # unrelated parked artifact's known finding, so it invokes the
+        # checker's narrower changed-lane-only mode.
+        commands = MODULE.build_commands()
+        labels = [command.name for command in commands]
+        self.assertEqual(
+            commands[labels.index("independent review probe admission")].command,
+            (
+                "python",
+                "governance/compat/check_independent_review_probe_admission.py",
+                "--enforce",
+                "--changed-lane-only",
+            ),
+        )
+
+    def test_active_work_order_is_forwarded_to_worker_return_quality(self) -> None:
+        # DRC-03: the exact-return admission must receive the active work
+        # order whenever the fast gate is given one.
+        work_order = "docs/work_orders/CVF_EXAMPLE_WORK_ORDER.md"
+        original_root = MODULE.REPO_ROOT
+        with tempfile.TemporaryDirectory() as temp_dir:
+            MODULE.REPO_ROOT = Path(temp_dir)
+            path = MODULE.REPO_ROOT / work_order
+            path.parent.mkdir(parents=True)
+            path.write_text(
+                "workerReturnPath: `docs/reviews/CVF_EXAMPLE_WORKER_RETURN.md`\n",
+                encoding="utf-8",
+            )
+            commands = MODULE.build_commands((), work_order)
+        MODULE.REPO_ROOT = original_root
+        by_name = {command.name: command.command for command in commands}
+        self.assertEqual(
+            by_name["worker-return quality gate"],
+            (
+                "python",
+                "governance/compat/check_worker_return_quality_gate.py",
+                "--enforce",
+                "--active-work-order",
+                work_order,
+            ),
+        )
+        self.assertEqual(
+            by_name["independent review probe admission"][-2:],
+            ("--active-work-order", work_order),
+        )
+        self.assertEqual(
+            by_name["work-order acceptance ledger"],
+            (
+                "python",
+                "governance/compat/check_work_order_acceptance_ledger.py",
+                "--work-order",
+                work_order,
+                "--return",
+                "docs/reviews/CVF_EXAMPLE_WORKER_RETURN.md",
+                "--enforce",
+            ),
         )
 
 

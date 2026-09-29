@@ -1,0 +1,13 @@
+{
+  "stateOrder": 1667,
+  "stateKey": "mseaAscT0SourceSchemaContractDispatch20260711",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-11",
+    "dispatchCommit": "cbc5348bf",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_ASC_T0_SOURCE_SCHEMA_AND_RECONCILIATION_CONTRACT_2026-07-11.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "delegated worker executes exactly five output paths and returns COMPLETE_PENDING_REVIEW",
+    "claimBoundary": "T0 schema/reconciliation/topology contracts only; no implementation or ASC-T1+"
+  }
+}

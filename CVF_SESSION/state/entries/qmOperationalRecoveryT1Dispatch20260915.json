@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2835,
+  "stateKey": "qmOperationalRecoveryT1Dispatch20260915",
+  "value": "QM-OPERATIONAL-RECOVERY-T1 is REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED after rework generation 1. Local accepted the exact nine worker paths plus the Local work-order status/completion review: one process-local replay CONTROL, one execute/QBS consumer EDGE, minimal Web module linkage, current generated catalog/GAP views, and one VALUE_PARKED_WITH_REOPEN_CONDITIONS redaction GAP. Completion review: docs/reviews/CVF_QM_OPERATIONAL_RECOVERY_T1_COMPLETION_REVIEW_2026-09-15.md. Material commit: b4cec6e0fb749fc2ec0363ef3b3e2ba99f1b486e. Focused worker tests passed 22/22; reviewer-fast passed 68/68. Runtime, schemas and checkers remained unchanged; provider/live/public/deployment calls and invented redaction consumers remained forbidden."
+}

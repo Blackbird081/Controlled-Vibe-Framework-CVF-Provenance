@@ -5,6 +5,8 @@ from __future__ import annotations
 from runtime_evidence_manifest.common import REPO_ROOT
 
 
+PHASE_GOVERNANCE_ARCHIVE = REPO_ROOT / "docs" / "reviews" / "cvf_phase_governance" / "archive"
+
 SCHEMA_VERSION = "2026-03-07"
 REQUEST_ID = "REQ-20260307-002"
 TRACE_BATCH = "CVF_CROSS_EXTENSION_CONFORMANCE_BATCH_2026-03-07"
@@ -234,8 +236,8 @@ RUNTIME_FAMILY_CONFIG = {
         "versionToken": "v1.9",
         "adapter": None,
         "receipts": None,
-        "defaultArtifact": REPO_ROOT / "docs" / "reviews" / "cvf_phase_governance" / "CVF_W4_REMEDIATION_RECEIPTS_LOCAL_BASELINE_2026-03-07.json",
-        "defaultLog": REPO_ROOT / "docs" / "reviews" / "cvf_phase_governance" / "CVF_W4_REMEDIATION_RECEIPT_LOG_2026-03-07.md",
+        "defaultArtifact": PHASE_GOVERNANCE_ARCHIVE / "CVF_W4_REMEDIATION_RECEIPTS_LOCAL_BASELINE_2026-03-07.json",
+        "defaultLog": PHASE_GOVERNANCE_ARCHIVE / "CVF_W4_REMEDIATION_RECEIPT_LOG_2026-03-07.md",
     },
     "CVF_v1.8_SAFETY_HARDENING": {
         "cliKey": "v18",

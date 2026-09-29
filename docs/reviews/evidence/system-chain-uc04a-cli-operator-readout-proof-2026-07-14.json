@@ -1,0 +1,332 @@
+{
+  "proofClass": "CLI_OPERATOR_READOUT_INVOCATION",
+  "useCaseId": "UC-04A-CLI-OPERATOR-READOUT",
+  "cliOwner": "governance/compat/run_agent_autorun_workflow_gate.py",
+  "positive_pre_dispatch": {
+    "exitCode": 1,
+    "aggregateCompliant": false,
+    "printedDenominator": 75,
+    "perCheckResults": [
+      {
+        "name": "governed artifact checker read-ahead",
+        "status": "PASS"
+      },
+      {
+        "name": "markdown structural completeness",
+        "status": "PASS"
+      },
+      {
+        "name": "closure packaging preflight",
+        "status": "FAIL"
+      },
+      {
+        "name": "docs governance compatibility",
+        "status": "PASS"
+      },
+      {
+        "name": "core guard self-protection",
+        "status": "FAIL"
+      },
+      {
+        "name": "worker-return quality gate",
+        "status": "PASS"
+      },
+      {
+        "name": "source intake decision packet preflight",
+        "status": "PASS"
+      },
+      {
+        "name": "dispatch packet lifecycle hygiene",
+        "status": "PASS"
+      },
+      {
+        "name": "ADIF defect registry disclosure",
+        "status": "PASS"
+      },
+      {
+        "name": "work-order dispatch quality",
+        "status": "PASS"
+      },
+      {
+        "name": "agent workspace state",
+        "status": "PASS"
+      },
+      {
+        "name": "dispatch prompt envelope",
+        "status": "PASS"
+      },
+      {
+        "name": "PLCS companion routing block",
+        "status": "PASS"
+      },
+      {
+        "name": "agent workspace runtime boundary",
+        "status": "PASS"
+      },
+      {
+        "name": "agent workspace skeleton",
+        "status": "PASS"
+      },
+      {
+        "name": "agent operation trace integrity",
+        "status": "PASS"
+      },
+      {
+        "name": "agent handoff boundary",
+        "status": "PASS"
+      },
+      {
+        "name": "agent workspace design boundary",
+        "status": "PASS"
+      },
+      {
+        "name": "machine closure package",
+        "status": "PASS"
+      },
+      {
+        "name": "roadmap closure freshness",
+        "status": "PASS"
+      },
+      {
+        "name": "multi-provider execution log quality",
+        "status": "PASS"
+      },
+      {
+        "name": "finding-to-governance learning quality",
+        "status": "PASS"
+      },
+      {
+        "name": "external-agent absorption table",
+        "status": "PASS"
+      },
+      {
+        "name": "external knowledge intake routing",
+        "status": "PASS"
+      },
+      {
+        "name": "external absorption core",
+        "status": "PASS"
+      },
+      {
+        "name": "external absorption overlap discipline",
+        "status": "PASS"
+      },
+      {
+        "name": "Delta mutating profile boundary",
+        "status": "PASS"
+      },
+      {
+        "name": "external absorption value conversion",
+        "status": "PASS"
+      },
+      {
+        "name": "source mirror migration",
+        "status": "PASS"
+      },
+      {
+        "name": "Delta execution claim boundary",
+        "status": "PASS"
+      },
+      {
+        "name": "rescan intelligence hardening",
+        "status": "PASS"
+      },
+      {
+        "name": "public export disposition quality",
+        "status": "PASS"
+      },
+      {
+        "name": "absorption blind-spot control presence",
+        "status": "PASS"
+      },
+      {
+        "name": "foundation storage layout",
+        "status": "PASS"
+      },
+      {
+        "name": "corpus completeness and report integrity",
+        "status": "PASS"
+      },
+      {
+        "name": "corpus-to-knowledge-map reconciliation",
+        "status": "PASS"
+      },
+      {
+        "name": "CVF skill usage receipt trace",
+        "status": "PASS"
+      },
+      {
+        "name": "external provider skill usage trace",
+        "status": "PASS"
+      },
+      {
+        "name": "skill truth packets",
+        "status": "PASS"
+      },
+      {
+        "name": "skill control plane inventory",
+        "status": "PASS"
+      },
+      {
+        "name": "CVF Web skill control plane projection",
+        "status": "PASS"
+      },
+      {
+        "name": "corpus intelligence classification",
+        "status": "PASS"
+      },
+      {
+        "name": "index classification",
+        "status": "PASS"
+      },
+      {
+        "name": "memory access claim",
+        "status": "PASS"
+      },
+      {
+        "name": "truth foundation claim guard",
+        "status": "PASS"
+      },
+      {
+        "name": "package skill productionization pipeline",
+        "status": "PASS"
+      },
+      {
+        "name": "raw memory release invariant",
+        "status": "PASS"
+      },
+      {
+        "name": "DICE machine-candidate coverage",
+        "status": "PASS"
+      },
+      {
+        "name": "corpus packet normalized path (NR-05)",
+        "status": "PASS"
+      },
+      {
+        "name": "corpus packet source hash (NR-04)",
+        "status": "PASS"
+      },
+      {
+        "name": "corpus scan registry",
+        "status": "PASS"
+      },
+      {
+        "name": "ASSF package candidate anatomy",
+        "status": "PASS"
+      },
+      {
+        "name": "ASSF certified metadata admission",
+        "status": "PASS"
+      },
+      {
+        "name": "corpus packet disposition canonical (NR-11)",
+        "status": "PASS"
+      },
+      {
+        "name": "ASSF external-agent metadata readout",
+        "status": "PASS"
+      },
+      {
+        "name": "ERH CI public-evaluation workflow chain",
+        "status": "PASS"
+      },
+      {
+        "name": "ERH public-surface drift workflow chain",
+        "status": "PASS"
+      },
+      {
+        "name": "ERH dependency risk workflow chain",
+        "status": "PASS"
+      },
+      {
+        "name": "ERH cvf-web dependency audit workflow chain",
+        "status": "PASS"
+      },
+      {
+        "name": "system loop interlock",
+        "status": "PASS"
+      },
+      {
+        "name": "ERH SAF1 safety workflow chain",
+        "status": "PASS"
+      },
+      {
+        "name": "ERH SAF2 output safety workflow chain",
+        "status": "PASS"
+      },
+      {
+        "name": "ERH DUR1 durable evidence policy snapshot workflow chain",
+        "status": "PASS"
+      },
+      {
+        "name": "FPC parked reopen inventory",
+        "status": "PASS"
+      },
+      {
+        "name": "FPC system-chain acceptance ledger",
+        "status": "PASS"
+      },
+      {
+        "name": "ERH DUR2 external storage adapter workflow chain",
+        "status": "PASS"
+      },
+      {
+        "name": "system chain map freshness",
+        "status": "PASS"
+      },
+      {
+        "name": "KIOD runtime candidate reopen inventory",
+        "status": "PASS"
+      },
+      {
+        "name": "next-move freshness",
+        "status": "PASS"
+      },
+      {
+        "name": "as-built system catalog drift",
+        "status": "PASS"
+      },
+      {
+        "name": "dispatch scaffold provenance",
+        "status": "PASS"
+      },
+      {
+        "name": "active session state compatibility",
+        "status": "PASS"
+      },
+      {
+        "name": "MinerU receipt boundary",
+        "status": "PASS"
+      },
+      {
+        "name": "governed python automation size",
+        "status": "PASS"
+      },
+      {
+        "name": "governed file size compatibility",
+        "status": "PASS"
+      }
+    ],
+    "receiptDenominator": 0,
+    "denominatorMatch": false,
+    "receipt": null,
+    "commandSha256": "d9e2bfadda9ffaf6b571912492f6b9f7cf9b5061a9f0411e0267f07c8691a0a9",
+    "durationSeconds": 6.621
+  },
+  "negative_pre_closure": {
+    "exitCode": 1,
+    "nonEmptyRangeFailure": true,
+    "dirtyFinalityObserved": true,
+    "cleanFinalityObserved": false,
+    "commandSha256": "6646e4179e267c028e4343df30254f5c28e9631ea5896fcf51ad6050e8b3c1de",
+    "durationSeconds": 6.556
+  },
+  "harnessInvocationCount": 1,
+  "cliInvocationCount": 2,
+  "retryCount": 0,
+  "providerCallCount": 0,
+  "caseDenominator": 2,
+  "casePassCount": 1,
+  "overallResult": "FAIL"
+}

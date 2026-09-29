@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2210,
+  "stateKey": "cadpAiT5R2TransportNeutralAdapterFoundationClosure20260815",
+  "value": "CADP-AI-T5-R2 transport-neutral external-readout adapter foundation is independently accepted bounded at material commit ad76d743337a6f62315451a8901452a1f68e62a0. Reviewer repair added the required candidateMetadata input, composed redaction and allowlist over it, removed ambient rejection ordinal state, and added deterministic malformed-input coverage. TypeScript and 69/69 focused T5-R1/R2 tests pass; the CADP drift checker reports five surfaces and zero violations. T5-R1 retains shared package-root fixture proof; R2 exports are source/typecheck confirmed while independent duplicate-root fixture coverage remains deferred. No authentication owner, MCP/CLI/HTTP runtime, credential, provider/live call, mutation, external invocation, public action, deployment, production, or moratorium lift is authorized."
+}

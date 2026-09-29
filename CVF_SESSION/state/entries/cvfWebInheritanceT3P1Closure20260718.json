@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1943,
+  "stateKey": "cvfWebInheritanceT3P1Closure20260718",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_WITH_REPAIR",
+    "materialCommit": "c282312b9",
+    "executionBaseHead": "233940c5b",
+    "completionReview": "docs/reviews/CVF_WEB_INHERITANCE_T3P1_COMPLETION_REVIEW_2026-07-18.md",
+    "verification": "focused 32/32; full package 1790/1790; TypeScript PASS; reviewer-fast 62/62; file-size and pre-commit 83/83 PASS",
+    "reviewerRepair": "Replaced symlink-following stat classification with non-following Dirent regular-file classification and expanded regression coverage.",
+    "nextAllowedMove": "Author and dispatch the documentation-only T3P2 evidence/liveness availability decision.",
+    "heldNextTranche": "T3B and T4-T5 remain parked; no Web, provider/live, public, push, or production mutation.",
+    "claimBoundary": "T3P1 closes read-only run discovery only."
+  }
+}

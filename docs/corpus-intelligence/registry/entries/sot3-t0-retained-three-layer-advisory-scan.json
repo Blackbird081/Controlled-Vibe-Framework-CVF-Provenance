@@ -1,0 +1,79 @@
+{
+  "registryOrder": 139,
+  "id": "sot3-t0-retained-three-layer-advisory-scan",
+  "corpusType": "LEGACY_FOLDER",
+  "displayName": "SOT3-T0 retained Refinery, Truth Kernel, and Truth Flow advisory scan",
+  "scopePaths": [
+    ".private_reference/legacy/CVF_SOT 10.07/CVF_Refinery_Patch/",
+    ".private_reference/legacy/CVF_SOT 10.07/CVF_Truth_Kernel_Patch/",
+    ".private_reference/legacy/CVF_SOT 10.07/CVF_Truth_Flow_Patch/",
+    "EXTENSIONS/CVF_GUARD_CONTRACT/",
+    "EXTENSIONS/CVF_REFINERY/",
+    "EXTENSIONS/CVF_TRUTH_KERNEL/",
+    "EXTENSIONS/CVF_TRUTH_FLOW/",
+    "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/"
+  ],
+  "fileCount": 305,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "SOT3-T0",
+  "scanDate": "2026-07-12",
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": "docs/evidence/sot/sot3-t0-source-manifest.json",
+  "packetPath": "docs/reviews/CVF_SOT3_T0_EXTERNAL_REVIEW_RETURN_2026-07-12.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": "docs/baselines/CVF_GC018_SOT3_T0_EXTERNAL_THREE_LAYER_REVIEW_2026-07-12.md",
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "REFINERY_DETERMINISTIC_PREPARATION",
+    "REFINERY_PACKET_AND_LINEAGE",
+    "TRUTH_KERNEL_EVIDENCE_OBLIGATION_PROVENANCE",
+    "TRUTH_KERNEL_RECEIPT_AND_RELEASE",
+    "TRUTH_FLOW_POST_KERNEL_ROUTING_AND_LIFECYCLE",
+    "CROSS_LAYER_CONTRACT_MISMATCH",
+    "FAIL_CLOSED_EMPTY_EVIDENCE_INVARIANT"
+  ],
+  "priorAbsorption": "SOT3-T0 produced a 305-file manifest and advisory external critique. Reviewer retained corpus identity and major architecture findings, rejected work-order closure, and required SOT3-T0R semantic reconciliation before architecture ratification or implementation.",
+  "findings": [
+    {
+      "id": "SOT3-T0-F1-empty-collection-fail-open",
+      "summary": "Empty stage or verification collections can vacuously reach ready or pass states in retained Refinery and Truth Kernel prototypes.",
+      "disposition": "DEFER_WITH_ROADMAP",
+      "nextAction": "SOT3-T0R must decide a fail-closed empty-evidence invariant before later contract work.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+      "f2gRef": "docs/reviews/CVF_SOT3_T0_EXTERNAL_REVIEW_RETURN_2026-07-12.md#finding-to-governance-learning-disposition",
+      "roadmapRef": "docs/roadmaps/CVF_SOT_THREE_LAYER_ABSORPTION_ROADMAP_2026-07-12.md"
+    },
+    {
+      "id": "SOT3-T0-F2-flow-topology-and-packet-contradiction",
+      "summary": "Retained Truth Flow documentation places Flow both before and after Kernel and includes a second incompatible RefineryPacket.",
+      "disposition": "DEFER_WITH_ROADMAP",
+      "nextAction": "SOT3-T0R must recommend one canonical layer topology and packet chain.",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_SOT3_T0_EXTERNAL_REVIEW_RETURN_2026-07-12.md#finding-to-governance-learning-disposition",
+      "roadmapRef": "docs/roadmaps/CVF_SOT_THREE_LAYER_ABSORPTION_ROADMAP_2026-07-12.md"
+    },
+    {
+      "id": "SOT3-T0-F3-advisory-evidence-not-valid-closure",
+      "summary": "The worker evidence retains value but cannot close SOT3-T0 because the committed dispatch remained HOLD and the original evidence contract was incomplete.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Treat the files as advisory input to SOT3-T0R; do not claim SOT3-T0 closure or implementation readiness.",
+      "defectClass": "ORCHESTRATOR_PACKET_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_SOT3_T0_EXTERNAL_REVIEW_RETURN_2026-07-12.md#finding-to-governance-learning-disposition"
+    }
+  ],
+  "negativeSearchTerms": [
+    "current general RefineryPacket owner",
+    "current shared Truth Flow lifecycle owner",
+    "receipt-bound retained Flow VERIFIED transition"
+  ],
+  "nextScanRecommendation": "Execute SOT3-T0R semantic reconciliation from committed advisory evidence. Do not rescan file hashes and do not implement runtime or contracts."
+}

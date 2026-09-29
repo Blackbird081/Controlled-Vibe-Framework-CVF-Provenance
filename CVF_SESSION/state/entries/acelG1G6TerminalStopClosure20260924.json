@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2933,
+  "stateKey": "acelG1G6TerminalStopClosure20260924",
+  "value": "ACEL G1-G6 terminal closure recorded on 2026-09-24. The final operator-authorized G1 reviewer prepare-only attempt exited 1 before manifest, command packet, envelope, scenario content or Party principal execution. Root cause: the candidate fixed directory ordering but protected control with non-inheriting ACEs before assigning the copied payload its explicit ACL, so registry-payload.json lost access. PREPARE_ERROR.txt SHA-256 is b9d2e86bed1da81dc30fd13898763fc5f27c8372f87ad891c2f490496eb490ba. Separately authorized cleanup-only elevation removed the exact six-item disposable root without wildcard or reparse traversal; cleanup receipt SHA-256 is 2c8a42366f7dabafb0d7fe7d0e6177743032b1c26a116d1a9266ce08efc7e18e and rootExistsAfter=false. The unaccepted worker source/return delta was discarded; committed coordinator SHA-256 11b449af03b8504682add9cb39c77fe03b9be4b2ac65c9069810358418f3290f is restored. G1 is STOPPED_FAIL_CLOSED_RESEARCH_EVIDENCE_ONLY; G2-G6 remain parked; no automatic successor exists."
+}

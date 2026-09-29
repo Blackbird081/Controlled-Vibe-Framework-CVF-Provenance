@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2865,
+  "stateKey": "acelG1T2aCandidateEvidenceBindingSchemaAmendmentR2Review20260917",
+  "value": "ACEL-G1-T2A-CANDIDATE-EVIDENCE-BINDING-SCHEMA-AMENDMENT is REVIEW_REJECTED_STOP_REASSESS_ARCHITECTURE at Local material review 3a027fa2e844f3eb94c9ab652b140b70a220c7ce. Valid scope, frozen hashes, GC-026 topology, SCEC correction and non-pooling correction are retained as bounded evidence. The root contract is rejected because the exact required/supplemental topology was not implemented, canonical serialization remains ambiguous with a concrete delimiter collision, accept-time provenance does not bind later invalidation events, and the required-gate failure did not produce BLOCKED_WITH_REASON. Do not redispatch the same three artifacts. A future Local architecture decision must first choose fixture authority, required/supplemental separation, typed canonical serialization and invalidation-event evidence. Ten worker/frozen paths remain uncommitted. G1 implementation/R3, G4 implementation/experiment, real calibration, provider/live, runtime, public sync and deployment remain parked."
+}

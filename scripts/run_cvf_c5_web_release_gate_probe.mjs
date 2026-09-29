@@ -160,7 +160,7 @@ async function main() {
       localStorage.setItem('cvf_onboarding_seen', '1');
       localStorage.setItem('cvf_settings', JSON.stringify({
         providers: {
-          alibaba: { apiKey: '', enabled: true, selectedModel: 'qwen-turbo' },
+          alibaba: { apiKey: '', enabled: true, selectedModel: 'qwen-flash' },
         },
         preferences: {
           defaultProvider: 'alibaba',

@@ -1,0 +1,39 @@
+{
+  "registryOrder": 165,
+  "id": "cadp-ai-t3b-model-gateway-constraint-projection-tests",
+  "corpusType": "TEST_CORPUS",
+  "displayName": "CADP-AI-T3B Model Gateway constraint projection tests",
+  "scopePaths": [
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/cadp.constraint.projection.contract.test.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/cadp.package.root.exports.test.ts"
+  ],
+  "fileCount": 2,
+  "status": "SCANNED",
+  "scanWave": "CADP-AI-T3B",
+  "scanDate": "2026-08-14",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_CADP_AI_T3B_MODEL_GATEWAY_CONSTRAINT_PROJECTION_WORKER_RETURN_2026-08-13.md",
+  "completionReviewPath": "docs/reviews/CVF_CADP_AI_T3B_MODEL_GATEWAY_CONSTRAINT_PROJECTION_COMPLETION_2026-08-13.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_CADP_AI_T3B_MODEL_GATEWAY_CONSTRAINT_PROJECTION_2026-08-13.md",
+  "verdicts": {
+    "gc047": "NOT_RUN",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "CADP_MODEL_GATEWAY_CONSTRAINT_PROJECTION",
+    "CADP_PROVIDER_NEUTRAL_CONSTRAINT_TESTS",
+    "CADP_NON_AUTHORITY_NEGATIVE_TESTS",
+    "MODEL_GATEWAY_PACKAGE_ROOT_EXPORT"
+  ],
+  "priorAbsorption": "CADP-AI-T3B adds hermetic tests for a provider-neutral Model Gateway constraint projection. The tests cover strict input shape, opaque owner identity matching, copyable non-authoritative T3A metadata, repository-owned capability negotiation, immutable results, and four literal false authorization flags. They add no credential resolution, quota mutation, provider call, network, CLI/MCP, public, deployment or production authority.",
+  "findings": [],
+  "negativeSearchTerms": [
+    "copied T3A projection treated as execution authority",
+    "caller-supplied provider capability widening",
+    "credential or quota mutation seam invoked",
+    "authorization flag true"
+  ],
+  "nextScanRecommendation": "Re-scan only if an authorized later CADP tranche changes these tests or opens a distinct provider/live boundary."
+}

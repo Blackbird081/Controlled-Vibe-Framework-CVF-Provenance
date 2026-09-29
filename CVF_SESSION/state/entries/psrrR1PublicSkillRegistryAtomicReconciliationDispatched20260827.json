@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2380,
+  "stateKey": "psrrR1PublicSkillRegistryAtomicReconciliationDispatched20260827",
+  "value": {
+    "status": "PSRR_R1_DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_ROADMAP_2026-08-27.md",
+    "baseline": "docs/baselines/CVF_GC018_PSRR_R1_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_2026-08-27.md",
+    "baselineSha256": "eb66794d4dd9595c7e3d57b899e7e7a3379e7294a41bca81c026fb6bb955cfa4",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PSRR_R1_PUBLIC_SKILL_REGISTRY_ATOMIC_RECONCILIATION_2026-08-27.md",
+    "workOrderSha256": "ec5a46b340639118031613d2adff87c0e5d6b03a70bd4e936b70285efe657d50",
+    "dispatchCommit": "b3115315ae8918874943865ef4c139e3ef72d014",
+    "publicExecutionBase": "86b1e728d8363e66c700ffdde9c2f6c02c93ed1e",
+    "evidence": "The existing generator owns 62 source projections but leaves stale records; the public registry has 335 records. Read-only name reconciliation finds six retained names, 329 stale names and 56 new names. Hosted run 33047367938 is red only on registry validation and its dependent fail-closed status job.",
+    "workerBoundary": "One no-commit worker may edit the public generator, one focused test, exact generated user records/index, and the named private return. Generated deletion is limited to manifest-stale USR records after isolated failure-atomicity proof.",
+    "successorBoundary": "No automatic PSRR-R2. Reviewer owns any commit, public push and exact-SHA hosted proof; PR merge and deploy remain separate actions after required checks are green."
+  }
+}

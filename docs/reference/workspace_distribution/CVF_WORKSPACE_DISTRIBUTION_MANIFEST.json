@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0",
+  "distributionVersion": "0.2.0-rc1",
+  "publicRemote": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+  "supportedShells": [
+    "Windows PowerShell 5.1",
+    "PowerShell 7"
+  ],
+  "supportedProfiles": [
+    "public-free",
+    "paid-user-safe"
+  ],
+  "requiredCoreFiles": [
+    "scripts/install_cvf_workspace_root_wrappers.ps1",
+    "scripts/sync_cvf_workspace_public_profile.ps1",
+    "scripts/update_cvf_workspace_public_core.ps1",
+    "scripts/get_cvf_workspace_status.ps1",
+    "scripts/repair_cvf_workspace.ps1",
+    "scripts/manage_cvf_workspace.ps1"
+  ],
+  "requiredWorkspaceRootFiles": [
+    "WORKSPACE_RULES.md",
+    "New-CVF-Governed-Project.ps1",
+    "Run-CVF-NewProject-Enforcement.ps1",
+    "Update-CVF-Workspace.ps1",
+    "Update-CVF-Workspace-Public-Profile.ps1",
+    "Test-CVF-Workspace.ps1",
+    "Repair-CVF-Workspace.ps1",
+    "Manage-CVF-Workspace.ps1",
+    "CVF_WORKSPACE_USER_GUIDE.md",
+    "CVF_WORKSPACE_HUONG_DAN_SU_DUNG.md",
+    "CVF_WORKSPACE_CLASSIFICATION_GUIDE.md",
+    "CVF_WORKSPACE_MEMORY.md",
+    "AGENT_HANDOFF.md"
+  ],
+  "rootTemplates": [
+    {
+      "sourcePath": "workspace_templates/CVF_WORKSPACE_MEMORY_TEMPLATE.md",
+      "targetPath": "CVF_WORKSPACE_MEMORY.md"
+    },
+    {
+      "sourcePath": "workspace_templates/AGENT_HANDOFF_TEMPLATE.md",
+      "targetPath": "AGENT_HANDOFF.md"
+    }
+  ],
+  "profiles": {
+    "public-free": [
+      "docs/guides/CVF_WORKSPACE_CLASSIFICATION_AND_USAGE_GUIDE.md",
+      "docs/reference/CVF_WORKSPACE_RULES.md",
+      "docs/reference/CVF_WORKSPACE_PROFILE_TIERS.md",
+      "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+      "workspace_templates/CVF_WORKSPACE_MEMORY_TEMPLATE.md",
+      "workspace_templates/AGENT_HANDOFF_TEMPLATE.md",
+      "docs/reference/CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md",
+      "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md"
+    ],
+    "paid-user-safe": [
+      "docs/guides/CVF_WORKSPACE_CLASSIFICATION_AND_USAGE_GUIDE.md",
+      "docs/reference/CVF_WORKSPACE_RULES.md",
+      "docs/reference/CVF_WORKSPACE_PROFILE_TIERS.md",
+      "docs/reference/CVF_WORKSPACE_PAID_USER_AUTHORING_GUIDE.md",
+      "docs/reference/CVF_WORKSPACE_PAID_USER_SAFE_ONBOARDING_FLOW.md",
+      "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+      "workspace_templates/CVF_WORKSPACE_MEMORY_TEMPLATE.md",
+      "workspace_templates/AGENT_HANDOFF_TEMPLATE.md",
+      "docs/reference/CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md",
+      "docs/reference/CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md"
+    ]
+  }
+}

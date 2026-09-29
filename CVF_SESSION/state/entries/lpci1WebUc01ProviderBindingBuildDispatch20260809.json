@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2013,
+  "stateKey": "lpci1WebUc01ProviderBindingBuildDispatch20260809",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-UC01-B2",
+    "dispatchCommit": "e37dfbff9",
+    "operatorAuthority": "AUTHORIZE_LPCI1_WEB_UC01_PROVIDER_BINDING_BUILD_ONLY",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_BUILD_2026-08-09.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_BUILD_2026-08-09.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerManifestCount": 15,
+    "preDispatchEvidence": "PASS_75_OF_75",
+    "providerLiveNetworkActionCount": 0,
+    "nextAllowedMove": "One no-commit implementation worker executes the committed B2 packet, then the primary reviewer independently accepts, repairs, or returns it.",
+    "claimBoundary": "BUILD dispatch only; no implementation acceptance, provider/live proof, public-sync, deployment, or readiness claim."
+  }
+}

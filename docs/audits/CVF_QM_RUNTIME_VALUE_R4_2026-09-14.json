@@ -1,0 +1,1505 @@
+{
+  "schemaVersion": "cvf.qmRuntimeValueAudit.v2",
+  "batchId": "QM-RUNTIME-VALUE-R4",
+  "docType": "audit",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "reworkOf": {
+    "priorVersionSchema": "cvf.qmRuntimeValueAudit.v1",
+    "reworkReason": "Reviewer feedback (F1-F5) identified test-discovery undercount, two inverted control-flow claims (M3, M4), an incomplete environment-leak claim (M6), PARTIAL_EVIDENCE gaps in H1/H2, and an off-by-one line-count convention on all 19 target readSpans. All five are addressed in this version with re-verified source reads and newly read test evidence.",
+    "priorHashHistory": {
+      "v1FinalSha256": "70a020e99af41cafad23cf9e94e131633d1b6a8d224776b1c46b5acb33c6340e",
+      "v1FinalBytes": 77275
+    }
+  },
+  "programBinding": {
+    "programId": "DOMAIN-PILOT-THREE-REPO-2026-09",
+    "sourceId": "yc-software__qm",
+    "sourceState": "INCOMPLETE",
+    "nextActionClass": "CONTINUE_ACTIVE_PROGRAM",
+    "expansionAllowed": false,
+    "exitDisposition": "RETAIN_ACTIVE_PROGRAM",
+    "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY",
+    "dispatchLaneKind": "INITIAL",
+    "predecessorLane": null
+  },
+  "sourceIdentity": {
+    "sourceId": "yc-software__qm",
+    "mirrorPath": ".private_reference/source_mirrors/yc-software__qm/",
+    "requiredHead": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+    "mirrorHeadObservedAtStart": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+    "mirrorHeadObservedAtReworkStart": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+    "mirrorHeadObservedAtEnd": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+    "mirrorCheckoutState": "DETACHED",
+    "mirrorStatusAtStart": "CLEAN",
+    "mirrorStatusAtEnd": "CLEAN",
+    "pinMatch": true,
+    "mitLicenseBlob": "1bb48c345739f58481c3770d4fafdf702d1523e0",
+    "networkOrFetchUsed": false,
+    "upstreamExecutionUsed": false
+  },
+  "workspaceBeforeAfter": {
+    "workspaceHeadAtStart": "7a4501c5a20430c1283d02949537d0fc1b2d06a1",
+    "workspaceHeadAtReworkStart": "7a4501c5a20430c1283d02949537d0fc1b2d06a1",
+    "workspaceHeadAtEnd": "7a4501c5a20430c1283d02949537d0fc1b2d06a1",
+    "workspaceStatusAtStart": "CLEAN_BEFORE_WORKER_OUTPUTS",
+    "dispatchBaseHead": "fd231762b9cae0bc425e5fa61ac5fd9799ff5bff",
+    "commitsAheadOfDispatchBase": [
+      "d3a2e0fe6 Dispatch QM runtime value R4 memory evidence audit",
+      "7a4501c5a Sync handoff anchor after QM R4 dispatch"
+    ],
+    "commitsAheadOfDispatchBaseDisposition": "EXPECTED_DISPATCH_AND_CONTINUITY_PAIR_NOT_A_CONFLICT",
+    "outputPathsPreexistedAtReworkStart": {
+      "docs/audits/CVF_QM_RUNTIME_VALUE_R4_2026-09-14.json": true,
+      "docs/reviews/CVF_QM_RUNTIME_VALUE_R4_WORKER_RETURN_2026-09-14.md": true
+    },
+    "outputReworkDisposition": "REPLACE_BOTH_IN_PLACE_SAME_PATHS"
+  },
+  "corpusManifest": {
+    "recipe": "repo-relative forward-slash path + TAB + lowercase blob SHA; code-point sorted; UTF-8 no BOM; LF joins; one final LF",
+    "declaredManifestSha256": "5fb76f1a20a702dfcf25ad38ace8f6f68491cff8f2791919b5a8c820de20bcfc",
+    "recomputedManifestSha256": "5fb76f1a20a702dfcf25ad38ace8f6f68491cff8f2791919b5a8c820de20bcfc",
+    "manifestHashMatch": true,
+    "declaredGitBytes": 86253,
+    "targetCount": 19,
+    "enumerationCommands": [
+      "git -C .private_reference/source_mirrors/yc-software__qm ls-tree -r --full-tree 361a6c0095dcd3d156aca91353f3ffba0bb8b69b -- src/memory",
+      "rg --files --hidden --no-ignore .private_reference/source_mirrors/yc-software__qm/src/memory"
+    ],
+    "gitFilesystemReconciliation": "EXACT_MATCH_19_19_ZERO_DIFFERENCE",
+    "readSpanConvention": "F5_CORRECTION: readSpan below reports the exact Python text.splitlines() count of the Git blob at pin (all 19 target files end with a trailing LF, so splitlines() count = prior-audit displayed line count minus 1). The prior v1 audit's readSpan endpoints were off by +1 on all 19 rows because they echoed the Read tool's 1-indexed display convention rather than the blob's own line count. Both conventions cover the identical byte range (the full file was read in both cases); only the reported endpoint number changes.",
+    "targets": [
+      {
+        "path": "src/memory/bench.ts",
+        "blobSha": "1bbfa2d66a26e5a8d7b4cf6a25b2effe299ae7b8",
+        "gitBytes": 5796,
+        "status": "READ",
+        "readSpan": "1-151 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/mcp-memory-provider.ts",
+        "blobSha": "5b756abb2dbda81eb378cab32da794f40214e9c0",
+        "gitBytes": 3243,
+        "status": "READ",
+        "readSpan": "1-82 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/memorable/capture.ts",
+        "blobSha": "660f67c9a29556ecec0d39bcf55c5ad154e4b25f",
+        "gitBytes": 4533,
+        "status": "READ",
+        "readSpan": "1-120 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/memorable/config.ts",
+        "blobSha": "5b2b9148ad96c1dbb101a32e64b9e2be814938fd",
+        "gitBytes": 3880,
+        "status": "READ",
+        "readSpan": "1-100 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/memorable/inject.ts",
+        "blobSha": "55bf1821b5fea2d8088b9476fe672ea40685d942",
+        "gitBytes": 2625,
+        "status": "READ",
+        "readSpan": "1-84 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/memorable/provider.ts",
+        "blobSha": "b58bb2b9a9caf3cc9f664ac4a21504c3b1b62778",
+        "gitBytes": 3376,
+        "status": "READ",
+        "readSpan": "1-89 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/memorable/relay.ts",
+        "blobSha": "b4cd958e6d92819efa8d3513463da7eb4f2671ed",
+        "gitBytes": 2535,
+        "status": "READ",
+        "readSpan": "1-73 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/memory-service.ts",
+        "blobSha": "eaa9c446c3a431711e753e9735c68eae09671efd",
+        "gitBytes": 6918,
+        "status": "READ",
+        "readSpan": "1-213 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/notebook.ts",
+        "blobSha": "27e3fc0b4419f2613addd7a00eeea319187d8a9d",
+        "gitBytes": 948,
+        "status": "READ",
+        "readSpan": "1-37 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/policy.ts",
+        "blobSha": "faddf2b52e3e43fbc0ab0392de871db158016118",
+        "gitBytes": 1222,
+        "status": "READ",
+        "readSpan": "1-35 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/postgres-memory-service.ts",
+        "blobSha": "a432e8871eff50b2183941e7f6dddff1de980922",
+        "gitBytes": 6726,
+        "status": "READ",
+        "readSpan": "1-185 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/provider-config.ts",
+        "blobSha": "64c9b6b5eb305a9c841466642c1f70ae313a0e11",
+        "gitBytes": 7602,
+        "status": "READ",
+        "readSpan": "1-187 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/provider-factory.ts",
+        "blobSha": "875d95ad01e93eacf7ded2e4031d102abd1cedd2",
+        "gitBytes": 3323,
+        "status": "READ",
+        "readSpan": "1-75 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/provider-router.ts",
+        "blobSha": "32434883da4b86da8c32ed438caa2ab29a13d93f",
+        "gitBytes": 5431,
+        "status": "READ",
+        "readSpan": "1-142 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/strategies/agent-only.ts",
+        "blobSha": "c973145b5e0663de6c32750969456d02619095d0",
+        "gitBytes": 788,
+        "status": "READ",
+        "readSpan": "1-15 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/strategies/consolidation.ts",
+        "blobSha": "e28321c84655e45a0e5aaf1aca54fddc57fa7368",
+        "gitBytes": 7685,
+        "status": "READ",
+        "readSpan": "1-194 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/strategies/per-turn.ts",
+        "blobSha": "9db5d581723438555db0c08323066d95294ecc40",
+        "gitBytes": 6602,
+        "status": "READ",
+        "readSpan": "1-181 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/strategies/scratch-promote.ts",
+        "blobSha": "216c0a4004ce39788aedfd734271044e1ffdc334",
+        "gitBytes": 9901,
+        "status": "READ",
+        "readSpan": "1-235 (full, splitlines() count)"
+      },
+      {
+        "path": "src/memory/strategy.ts",
+        "blobSha": "184e971eea88d515329f43f6a450fc812815b938",
+        "gitBytes": 3119,
+        "status": "READ",
+        "readSpan": "1-89 (full, splitlines() count)"
+      }
+    ],
+    "reconciliation": {
+      "manifest": 19,
+      "ledgerTerminal": 19,
+      "exclusions": 0,
+      "unresolved": 0
+    },
+    "corpusVerdict": "PARTIAL_TREE_BOUNDED_NOT_ALL_QM"
+  },
+  "testDiscoveryLedger": {
+    "f1Correction": "Reviewer F1 correctly identified that the prior audit's 'reconciliation' undercounted: the two mandatory tests (read-cancellation.test.ts, util-async.test.ts) are NOT members of the 36-path literal-grep seed (they import ../src/tools/primitives.ts and ../src/util/async.ts directly and never contain the literal substring 'src/memory'), so listing '34 remaining' as if drawn from the 36-seed silently double-counted them out of the deferred list. The correct baseline union is 36 seed + 2 mandatory tests + agent-tools.test.ts (also outside the literal-grep seed but a genuine dependency-triad importer) = 39 unique paths, not 37. This rework additionally ran an import-based (not literal-grep) discovery pass per F1's instruction to search 'imports/symbols/aliases/consumers' rather than excluding on seed membership alone, which surfaced 2 more genuinely out-of-seed importers of the dependency triad (message-revisions.test.ts, web-transcript-delivery.test.ts, both importing sleep from src/util/async.ts) bringing the fully-reconciled unique-path total to 41. Both are verified false positives (see excludedCandidatePaths) but are named explicitly rather than silently absent, per F1's 'do not exclude just for being outside the seed' instruction.",
+    "preliminaryCommand": "git -C .private_reference/source_mirrors/yc-software__qm grep -l src/memory HEAD -- test",
+    "preliminaryResultCount": 36,
+    "preliminaryResultPaths": [
+      "test/context-compaction.test.ts",
+      "test/durable-process-sessions.test.ts",
+      "test/e2e/memorable-cli.e2e.test.ts",
+      "test/e2e/memorable-live.e2e.test.ts",
+      "test/e2e/memorable-provider.e2e.test.ts",
+      "test/e2e/memory-provider.e2e.test.ts",
+      "test/finalize-on-reply-ready.test.ts",
+      "test/mcp-memory-provider.test.ts",
+      "test/memorable-capture.test.ts",
+      "test/memorable-inject.test.ts",
+      "test/memorable-provider.test.ts",
+      "test/memorable-relay.test.ts",
+      "test/memory-bench.test.ts",
+      "test/memory-capture-async.test.ts",
+      "test/memory-cc-personal.test.ts",
+      "test/memory-file-routing.test.ts",
+      "test/memory-history-agent-routes.test.ts",
+      "test/memory-provider-config.test.ts",
+      "test/memory-provider-factory.test.ts",
+      "test/memory-provider-router.test.ts",
+      "test/memory-provider-unreachable.test.ts",
+      "test/memory-strategy-agent-only.test.ts",
+      "test/memory-strategy-consolidation.test.ts",
+      "test/memory-strategy-per-turn.test.ts",
+      "test/memory-strategy-scratch-promote.test.ts",
+      "test/memory-tool.test.ts",
+      "test/memory.test.ts",
+      "test/notebook.test.ts",
+      "test/postgres-memory-service.test.ts",
+      "test/prompt-modes.test.ts",
+      "test/refusal-admin-link-integration.test.ts",
+      "test/system-prompt-order.test.ts",
+      "test/tape-nudge-continuation.test.ts",
+      "test/turn-bookkeeping-failures.test.ts",
+      "test/turn-context.test.ts",
+      "test/turn-retry-replay.test.ts"
+    ],
+    "additionalImportBasedDiscoveryCommand": "for each test/*.test.ts and test/e2e/*.test.ts (542 total test files in the mirror), grep -E \"from [\\\"'].*(src/memory|tools/primitives|harness/agent-tools|util/async).*[\\\"']\" against the git-blob content, then classify every hit as a genuine dependency-triad/target import vs a false-positive substring match (e.g. src/sessions/memory-session-store.ts, src/tasks/memory-task-store.ts, src/runs/memory-run-store.ts all contain the substring 'memory' but are unrelated in-memory stores in different directories)",
+    "reconciliationNote": "36 literal-grep seed paths + 3 known dependency-triad importers outside the seed (test/read-cancellation.test.ts, test/util-async.test.ts, test/agent-tools.test.ts) + 2 newly-discovered import-based hits outside the seed (test/message-revisions.test.ts, test/web-transcript-delivery.test.ts, both importing sleep from src/util/async.ts, both verified false positives) = 41 unique paths fully reconciled in this rework. All 39 of the reviewer's named minimum set, plus 2 further, are individually accounted below with a terminal read/exclude disposition; none is dropped for being outside the 36-path literal-grep seed alone.",
+    "mandatoryDependencyReads": [
+      {
+        "path": "src/tools/primitives.ts",
+        "scopeReadNote": "1399-line file; read bounded to the memory-read path region (lines 780-899) plus import/interface header search, per packet's narrower 'memory-read path' instruction, not full-file read",
+        "commandsUsed": [
+          "git show HEAD:src/tools/primitives.ts | grep -n withAbort|memory|createToolContext",
+          "targeted line-range read 780-899"
+        ],
+        "keyFindings": [
+          "Line 1: imports withAbort from ../util/async.ts",
+          "Line 53: imports MEMORY_FILE, MemoryService from ../memory/memory-service.ts",
+          "Lines 219-222: ToolContext interface declares memorySearch/memoryRead/memoryRemember/memoryRewrite",
+          "Lines 812-820: read(path, signal) special-cases path === MEMORY_FILE: checks memoryAccess.read authorization, then calls withAbort(() => deps.memory!.read(deps.memoryScopeId!), signal)",
+          "Lines 1075-1078: memoryRead() calls deps.memory!.read(write) directly with NO signal parameter and NO withAbort wrapper at all"
+        ],
+        "readDepthClassification": "PARTIAL_TARGETED_FULL_ON_RELEVANT_REGION"
+      },
+      {
+        "path": "src/harness/agent-tools.ts",
+        "scopeReadNote": "3765-line file. F1 rework additionally read the memory-related test-case sections (lines 940-969 read tool, 1195-1235 memory tool read action, and via test/agent-tools.test.ts lines 3211-3237 for the read-cancellation assertion and lines 1609-1713 for the memory-remember coercion assertions) beyond the v1 audit's targeted read.",
+        "commandsUsed": [
+          "git show HEAD:src/harness/agent-tools.ts | grep -n .read\\(|signal|memoryRead",
+          "targeted line-range reads 930-970, 1195-1235"
+        ],
+        "keyFindings": [
+          "Lines 940-953 (read tool): signal = ref.abortSignal; signal?.throwIfAborted(); const { content, ... } = await tc.read(params.path, signal); signal?.throwIfAborted() -- this path DOES forward an AbortSignal into tc.read, which DOES reach withAbort for the MEMORY_FILE branch",
+          "Lines 1219-1220 (memory tool, action=='read'): const body = await tc.memoryRead(); -- NO signal is read from ref.abortSignal, NO signal is passed to memoryRead, matching memoryRead's own signature which accepts none"
+        ],
+        "readDepthClassification": "PARTIAL_TARGETED_FULL_ON_RELEVANT_REGION"
+      },
+      {
+        "path": "src/util/async.ts",
+        "scopeReadNote": "60 lines total; fully read",
+        "readDepthClassification": "READ_FULL",
+        "keyFindings": [
+          "withAbort(start, signal): if no signal, just calls start(); otherwise throwIfAborted, races Promise.resolve().then(()=>{throwIfAborted(); return start()}) against a cancellation promise from the abort event, re-checks throwIfAborted after the race, and always removes the abort listener in finally.",
+          "withAbort does not pass any cancellation token into start() itself -- start's returned promise is not cancelled, only the CALLER'S wait for it is short-circuited. If start()'s underlying operation (e.g. a Postgres query or MCP HTTP fetch) has no internal cancellation, it keeps running to completion in the background after withAbort has already rejected/returned to the caller."
+        ]
+      }
+    ],
+    "fullyReadTests": [
+      {
+        "path": "test/read-cancellation.test.ts",
+        "blobStatus": "READ_FULL",
+        "totalLines": 135,
+        "blobSha256": "0cda452ad67118c2bb2c67a8a11acd1a7045005d",
+        "readSpans": [
+          "1-135 (full)"
+        ],
+        "assertions": [
+          "cancelled file reads settle before IO and do not start fallback reads -- exercises tc.read('notes.md', signal) against a fake sandbox.readFile only",
+          "already cancelled reads never start IO -- same sandbox.readFile path",
+          "cancel during a shared read does not materialize late binary data -- exercises workspace.readBytes + sandbox.writeFileBytes (shared-file branch)",
+          "cancellation drains an in-flight materialization instead of abandoning writes -- same shared-file branch"
+        ],
+        "provesForMemoryPath": "NOTHING_DIRECTLY",
+        "provesForMemoryPathReason": "Zero references to 'memory' or MEMORY_FILE anywhere in this file (verified by git grep -n memory -- test/read-cancellation.test.ts, zero hits). All four tests construct ToolContextDeps with sandbox/workspace mocks and never set deps.memory or deps.memoryScopeId, so the MEMORY_FILE branch at primitives.ts:814 is never entered by this test file.",
+        "commandUsed": "git -C .private_reference/source_mirrors/yc-software__qm grep -n memory -- test/read-cancellation.test.ts (exit 1, zero hits)"
+      },
+      {
+        "path": "test/util-async.test.ts",
+        "blobStatus": "READ_FULL",
+        "totalLines": 137,
+        "blobSha256": "0999c28ecf120c4b11e158fe65cd7f4ce4491048",
+        "readSpans": [
+          "1-137 (full)"
+        ],
+        "assertions": [
+          "sleep resolves after roughly the given delay",
+          "createKeyedQueue: strict submission order on one key, independent keys interleave, rejection delivered without breaking chain, keeps working after drain, ops queued at drain time are not lost",
+          "withAbort cleans listeners after resolution/rejection/cancellation -- asserts EventEmitter.getEventListeners(signal,'abort').length === 0 after each path, and that a late rejection from the underlying promise after abort does not crash (pending.reject after abort, awaited via sleep(0))",
+          "withAbort skips an already cancelled operation and preserves the reason -- asserts the exact abort reason object is the rejection value and the operation body never runs"
+        ],
+        "provesForMemoryPath": "GENERIC_WITHABORT_CONTRACT_ONLY",
+        "provesForMemoryPathReason": "Proves withAbort's listener-cleanup and already-aborted-skip behavior in isolation with synthetic promises. Does not exercise deps.memory.read(), does not prove that a real backend call (Postgres/MCP) is actually interrupted, and does not reference src/memory at all."
+      }
+    ],
+    "additionalMemoryDomainTestsRead": [
+      {
+        "path": "test/notebook.test.ts",
+        "totalLines": 16,
+        "blobSha256": "28fc25de8cfa8c395ecc1ec8aa97fc4ea6a1aecb",
+        "readSpans": [
+          "1-16 (full)"
+        ],
+        "keyEvidence": "3 unit tests for capTail/normalize; no cancellation, no consumer wiring beyond pure string functions."
+      },
+      {
+        "path": "test/memory-strategy-agent-only.test.ts",
+        "totalLines": 40,
+        "blobSha256": "06d903ac6c6d4b29961ce405ba1c3e3de7cc9d3f",
+        "readSpans": [
+          "1-40 (full)"
+        ],
+        "keyEvidence": "Confirms agent-only strategy has no onTurnEnd/maintain and its promptLines match AGENT_ONLY_PROMPT_LINES verbatim; confirms resolution.systemPrompt no longer embeds the agent-only prompt block directly (moved elsewhere)."
+      },
+      {
+        "path": "test/memory-provider-unreachable.test.ts",
+        "totalLines": 67,
+        "blobSha256": "9bebbc44b203882bac512cb434096dbe90c07c00",
+        "readSpans": [
+          "1-67 (full)"
+        ],
+        "keyEvidence": "End-to-end wiring test: an unreachable fail-open MCP provider still serves turns via the default notebook floor (H4 fail-open corroboration at the app.turn() integration level, not just the router unit level)."
+      },
+      {
+        "path": "test/mcp-memory-provider.test.ts",
+        "totalLines": 69,
+        "blobSha256": "b1c88214459a94944a77015bb95f811490261e30",
+        "readSpans": [
+          "1-69 (full)"
+        ],
+        "keyEvidence": "Confirms MCP provider passes query/actor/scope args correctly to configured tools; confirms recall is 'locally bounded and times out' -- a real 10ms timeout test against a permanently-hanging callTool() Promise, corroborating H4's fail-fast timeout claim with a genuine time-based assertion, not just structural inspection."
+      },
+      {
+        "path": "test/memory-provider-factory.test.ts",
+        "totalLines": 82,
+        "blobSha256": "a74a32a9fb6c4c922c9a283b2eabf2bcb67eca1d",
+        "readSpans": [
+          "1-82 (full)"
+        ],
+        "keyEvidence": "End-to-end OAuth MCP flow test with a real client-credentials token exchange and scoped route dispatch (personal -> default, org -> external knowledge provider), corroborating provider-router.ts + provider-config.ts + mcp-memory-provider.ts integration at the factory assembly level."
+      },
+      {
+        "path": "test/memorable-provider.test.ts",
+        "totalLines": 99,
+        "blobSha256": "8dbd61509c3af8ab983594c49043cf177f374087",
+        "readSpans": [
+          "1-99 (full)"
+        ],
+        "keyEvidence": "Confirms recall shells to inject() and returns the envelope verbatim; confirms automatic capture derives a redacted procedure via captureSession + mask, and that explicit-mode/no-session captures are silently ignored (0 relays) -- directly corroborates M5's memorable-provider automatic-only capture gating claim with a genuine assertion."
+      },
+      {
+        "path": "test/memory-file-routing.test.ts",
+        "totalLines": 109,
+        "blobSha256": "0036fbbd4ad4efa93f11b27b9484eabe26717499",
+        "readSpans": [
+          "1-109 (full)"
+        ],
+        "keyEvidence": "H1 DIRECT EVIDENCE (was PARTIAL_EVIDENCE in v1): 'read(MEMORY_FILE) cannot bypass disabled recall or fall back to a sandbox copy' asserts ctx.read(MEMORY_FILE) rejects with /memory recall is not enabled/ when memoryAccess.read excludes the scope, even when a stale sandbox copy of MEMORY_FILE exists -- this is exactly the primitives.ts:814-816 authorization check, test-confirmed end-to-end including the sandbox-fallback-must-not-leak invariant."
+      },
+      {
+        "path": "test/memory-provider-router.test.ts",
+        "totalLines": 114,
+        "blobSha256": "daa2d5c0a870f49545d0f0c76f82a06adfd9b122",
+        "readSpans": [
+          "1-114 (full)"
+        ],
+        "keyEvidence": "H4 DIRECT EVIDENCE: 'external recall failures degrade to the remaining provider' and 'external capture failures degrade to the remaining provider' directly assert the exact failOpen:true (degrades, continues) vs failOpen:false (throws) semantics claimed for M9, including that capture() returns Math.max(...counts) style aggregation across routes (test asserts 'notebook still wrote' after a failOpen:true broken-provider capture threw)."
+      },
+      {
+        "path": "test/memory-bench.test.ts",
+        "totalLines": 123,
+        "blobSha256": "e837a85c35ca6037235bd39f100a8a3f001517a6",
+        "readSpans": [
+          "1-123 (full)"
+        ],
+        "keyEvidence": "Confirms bench.ts's parse/replay/summarize/format functions operate correctly against real fixture conversations and both per-turn and agent-only strategies; confirms floorFailures flags only axes below DEFAULT_STRATEGY_FLOORS."
+      },
+      {
+        "path": "test/refusal-admin-link-integration.test.ts",
+        "totalLines": 124,
+        "blobSha256": "35245b3b614d485366715e9f7cd32611363e5f19",
+        "readSpans": [
+          "1-124 (full)"
+        ],
+        "keyEvidence": "Uses createMemoryService as orchestrator wiring boilerplate only; the test's actual assertions are about admin-link UUID resolution on a failed turn, unrelated to memory-read semantics."
+      },
+      {
+        "path": "test/e2e/memorable-cli.e2e.test.ts",
+        "totalLines": 126,
+        "blobSha256": "0add350cc56a9704c7d6d450968fbc150ad8a440",
+        "readSpans": [
+          "1-126 (full)"
+        ],
+        "keyEvidence": "Skipped without MEMORABLE_E2E_DB_URL/MEMORABLE_E2E_BIN in this static-audit environment (no execution performed); source read confirms the intended real-CLI + real-Postgres round trip including a secret-redaction assertion ('secret values never reach the stored procedure') and a cross-scope recall-isolation assertion ('recall is empty for a scope that never consented'). TEST_ASSERTION_READ, not execution-confirmed in this pass."
+      },
+      {
+        "path": "test/memorable-inject.test.ts",
+        "totalLines": 127,
+        "blobSha256": "a3b41cb26a4c687b215f2a5db1b09b7087bcd4f7",
+        "readSpans": [
+          "1-127 (full)"
+        ],
+        "keyEvidence": "Directly corroborates memorable/inject.ts's envelope-prefix gating, ANSI/control-character stripping across every escape family (CSI/OSC/DCS/APC/PM), the 256KiB stdout flood cutoff with an actual RSS-growth assertion (<64MB), and per-scope API-key precedence (scope key wins over deployment key, deployment key is the fallback)."
+      },
+      {
+        "path": "test/memory-provider-config.test.ts",
+        "totalLines": 140,
+        "blobSha256": "a2444b1db343b54701536bba746621de56f08473",
+        "readSpans": [
+          "1-140 (full)"
+        ],
+        "keyEvidence": "F3 KEY EVIDENCE: 'provider config accepts a memorable provider with an allow-listed child environment' directly asserts DATABASE_URL (not in the memorable provider's own config, present only in the ambient env argument) is remapped to MEMORABLE_DB_URL under its own name by the BASELINE path, while ANTHROPIC_API_KEY (not on the baseline allowlist and not passEnv'd) does NOT appear in provider.env but does appear in provider.redactValues. This test does NOT cover the case where an operator explicitly passEnv's 'DATABASE_URL' itself -- that case is a source-level inference (see M6 rework), not directly asserted by any test found in the 41-path reconciled set."
+      },
+      {
+        "path": "test/e2e/memorable-provider.e2e.test.ts",
+        "totalLines": 147,
+        "blobSha256": "d2ad1e3b0f70221e80cd66bb97771f3f54e4bac5",
+        "readSpans": [
+          "1-147 (full)"
+        ],
+        "keyEvidence": "Skipped in this environment (no ANTHROPIC_API_KEY/MEMORABLE_E2E_DB_URL/MEMORABLE_E2E_BIN); source read confirms a live-Pi + real-CLI + real-Postgres round trip for automatic procedure capture and recall via the router's '### Procedures' labeled block. TEST_ASSERTION_READ, not execution-confirmed."
+      },
+      {
+        "path": "test/memory-strategy-per-turn.test.ts",
+        "totalLines": 147,
+        "blobSha256": "3778392ab22215ed5c720c65b4bf1ec93c7f5665",
+        "readSpans": [
+          "1-147 (full)"
+        ],
+        "keyEvidence": "H3/H5 DIRECT EVIDENCE: confirms MEMORY_EXTRACTION_PROMPT is sent verbatim with the exact 'User said:\\n...\\n\\nAssistant replied:\\n...' framing; confirms autonomous and system-actor turns capture nothing (only a human live turn extracts); confirms extraction failures and NONE responses both result in zero capture; confirms the burst-debounce timer groups only the live actor's turns, never an autonomous one."
+      },
+      {
+        "path": "test/memory-history-agent-routes.test.ts",
+        "totalLines": 152,
+        "blobSha256": "84dd7c0bd9795d2175d8f812fc130ea68e4ffe63",
+        "readSpans": [
+          "1-152 (full)"
+        ],
+        "keyEvidence": "H1 DIRECT EVIDENCE: capability-token-scoped memory history/restore HTTP routes. Confirms cross-principal history/restore returns 404 (not 200-with-empty, an actual access-denial status), confirms org-scope write requires the token's own orgWrite claim (a personal-only token gets 404 on scope=org), and confirms unauthenticated requests get 401. This is the strongest H1 authorization-boundary test-level evidence found."
+      },
+      {
+        "path": "test/postgres-memory-service.test.ts",
+        "totalLines": 153,
+        "blobSha256": "ee57ef2537beb98feb20c0eb95e63e395216aded",
+        "readSpans": [
+          "1-153 (full)"
+        ],
+        "keyEvidence": "H2 DIRECT EVIDENCE (was PARTIAL_EVIDENCE in v1, requires live Postgres, SKIPPED in this static-audit environment via { skip } when DATABASE_URL is unset -- source read only, TEST_ASSERTION_READ not execution-confirmed): asserts capture dedupe is visible across a SEPARATE service instance against the same DB (durable, fleet-shared, not merely in-process); asserts every mutation appends a gap-free monotonic revision (seq 1,2,3) surviving a rewrite, with the dropped fact still recoverable from an earlier revision row; asserts no-op capture/replace append zero revisions; asserts metadata() sizes match the current head body exactly, not an older revision. This is API-level proof design (assertions target the public MemoryService surface), not raw-SQL-only proof, directly addressing the H2 gap the reviewer named."
+      },
+      {
+        "path": "test/e2e/memory-provider.e2e.test.ts",
+        "totalLines": 170,
+        "blobSha256": "b03384280052f13b38935ba272ba2bdde6275784",
+        "readSpans": [
+          "1-170 (full)"
+        ],
+        "keyEvidence": "Skipped without ANTHROPIC_API_KEY in this environment; source read confirms a real client-credentials OAuth MCP round trip recalling a fact that exists ONLY in the external provider (not the default notebook), and confirms explicit-mode remember writes through with the correct acting_user argument."
+      },
+      {
+        "path": "test/memory-capture-async.test.ts",
+        "totalLines": 188,
+        "blobSha256": "c7c4e8dce0373e37ceb74e7f29ff100b6022af86",
+        "readSpans": [
+          "1-188 (full)"
+        ],
+        "keyEvidence": "H3/H5 ORCHESTRATOR-INTEGRATION EVIDENCE: 'capture does NOT block the turn: the reply returns while extraction is still in flight' and 'recall does NOT block on an in-flight capture; continuity is eventually-consistent' directly assert, at the orchestrator.handleTurn() level (not just the strategy-unit level), that automatic capture is fire-and-forget and that a subsequent recall in the same scope proceeds without waiting for it, with the fact appearing only once the detached capture settles."
+      },
+      {
+        "path": "test/durable-process-sessions.test.ts",
+        "totalLines": 204,
+        "blobSha256": "eff81b85e1b9d1fae88a36fba69336ff81732ae1",
+        "readSpans": [
+          "1-204 (full)"
+        ],
+        "keyEvidence": "Uses createMemoryService and writableMemoryScope (src/memory/policy.ts) as orchestrator-wiring/scope-resolution helpers for durable-process-keeps-computer-warm tests; not a memory-read/cancellation test, but confirms writableMemoryScope resolves the same way a real orchestrator would for process-registry scoping."
+      },
+      {
+        "path": "test/turn-bookkeeping-failures.test.ts",
+        "totalLines": 230,
+        "blobSha256": "71c5b50e1a6bae8ffb0408caf1fe3aeb2bdcea12",
+        "readSpans": [
+          "1-230 (full)"
+        ],
+        "keyEvidence": "Uses createMemoryService as orchestrator-wiring boilerplate only; assertions target session tape-write failure/retry semantics, unrelated to memory-read cancellation."
+      },
+      {
+        "path": "test/memory.test.ts",
+        "totalLines": 236,
+        "blobSha256": "18776aa89a0bf1d5cf7d6da08d11b25206022832",
+        "readSpans": [
+          "1-236 (full)"
+        ],
+        "keyEvidence": "H2 DIRECT EVIDENCE at the in-memory/workspace-backed layer: 'file memory compare-and-set permits only one writer for a revision' runs two concurrent replaceIfRevision() calls against the SAME head revision via Promise.all and asserts exactly one succeeds ([false, true] sorted) -- direct optimistic-concurrency proof for the non-Postgres backend, corroborating the same pattern claimed for postgres-memory-service.ts's conditionalReplace(). Also confirms capture-provenance forgery is blocked (a planted '(1999-01-01)' date and a forged '(said in #board)' tag are both neutralized into a safe 'on 1999-01-01: ... [claimed source: #board]' form) and that '* ' bullets participate in capture-dedupe/query identically to '- ' bullets."
+      },
+      {
+        "path": "test/memorable-capture.test.ts",
+        "totalLines": 267,
+        "blobSha256": "f0876e0fa6bfd4dea421ccf909c9f080e4f1ecb1",
+        "readSpans": [
+          "1-267 (full)"
+        ],
+        "keyEvidence": "Extensive captureSession() unit coverage: workflow-per-prompt splitting, outcome-by-callId joining (including reused callIds getting the outcome that FOLLOWED them, not the last one), quarantined-result-never-guessed-success, malformed-payload tolerance, collision-resistant workflow_id hashing, terminal-control-sequence stripping from prompts, surrogate-pair-safe truncation for both prompt and tool-input caps, and that a securityTainted entry's content never appears in the JSON-serialized capture even indirectly."
+      },
+      {
+        "path": "test/memory-tool.test.ts",
+        "totalLines": 282,
+        "blobSha256": "01713bd4adcd59bd2d47a113685ba8452b095f15",
+        "readSpans": [
+          "1-282 (full)"
+        ],
+        "keyEvidence": "H1/H4 DIRECT EVIDENCE: confirms memorySearch() is boundary-safe per scope; confirms all four memory ops return null (not throw) when memory is unwired; confirms a read-only wake keeps memory search/read but refuses write actions with an explicit 'read-only wake' message; confirms the memory tool's exposed parameters have NO scope field ('the model cannot redirect the notebook'); confirms capture-off policy still allows search but blocks read/remember/rewrite; confirms memorySearch spans every readable notebook and tags hits with their source scope when more than one is in reach."
+      },
+      {
+        "path": "test/turn-retry-replay.test.ts",
+        "totalLines": 286,
+        "blobSha256": "942c7fa360637f0d8f6087a735c73b3ffaa2f3aa",
+        "readSpans": [
+          "1-286 (full)"
+        ],
+        "keyEvidence": "Uses createMemoryService as orchestrator-wiring boilerplate only; assertions target retry/replay-boundary semantics for run attempts, unrelated to memory-read cancellation."
+      },
+      {
+        "path": "test/memory-strategy-consolidation.test.ts",
+        "totalLines": 287,
+        "blobSha256": "4b189a96c04255ff1970db230f948ffb42359c71",
+        "readSpans": [
+          "1-287 (full)"
+        ],
+        "keyEvidence": "F2/M4 KEY EVIDENCE: 'degrades to capture-only when the store can't round-trip a rewrite' and 'a stale marker from an earlier consolidation does not mask a no-op replace()' both use a mock MemoryService WITHOUT readHead/replaceIfRevision (so createConsolidator's `guarded` check is false and `head` is always undefined), directly confirming the degrade-on-readback-mismatch check is reached ONLY via the unguarded plain replace() branch, never the guarded replaceIfRevision() branch which returns immediately after the guarded write. Also confirms an edit landing mid-consolidation (racing the one-shot call) survives without being overwritten by the stale consolidated output, and that this does not disable future consolidations for the scope."
+      },
+      {
+        "path": "test/memory-cc-personal.test.ts",
+        "totalLines": 288,
+        "blobSha256": "bc888af6299be9962a71f5cf3fe31ffcb8dec383",
+        "readSpans": [
+          "1-288 (full)"
+        ],
+        "keyEvidence": "H1 DIRECT EVIDENCE: comprehensive ccCaptureToPersonal() coverage -- channel/group turns cc into the actor's personal scope while the origin scope still receives the fact; DM/personal/org origins and system/autonomous actors never cc; the cc gates on conversationScopeId (not an environment-redirected write scope); cc'd facts are tagged with a sanitized '(said in <label>)' source that cannot inject the tag grammar via a crafted label; different speakers in one channel keep separate debounce bursts so cc lands per-speaker, not merged."
+      },
+      {
+        "path": "test/memory-strategy-scratch-promote.test.ts",
+        "totalLines": 308,
+        "blobSha256": "32293ea8c2f40739aa3c03fd62ff13d8a99764c2",
+        "readSpans": [
+          "1-308 (full)"
+        ],
+        "keyEvidence": "F2/M3 KEY EVIDENCE: 'maintain refuses a runaway promotion: an oversized one-shot output leaves the notebook untouched and SKIPS LOG PRUNING' directly asserts that when the promotion output exceeds MAX_PROMOTED_NOTEBOOK_CHARS (triggering the early return at scratch-promote.ts line 212 in the v1 audit's line numbering / line 215 relative to the full maintain() function start), the ancient log file planted by the test is STILL PRESENT afterward ('unpromoted logs are not pruned when promotion was discarded') -- this is direct, unambiguous test-level proof that the early return exits the WHOLE maintain() function, including the cleanup loop below the guarded block, contradicting the v1 audit's claim that cleanup ran regardless. A sibling test ('maintain is a no-op rewrite when the judge says NONE, and prunes logs past retention') confirms cleanup DOES run on the non-early-return path (judge says NONE, falls through normally), isolating exactly which code path skips pruning."
+      },
+      {
+        "path": "test/e2e/memorable-live.e2e.test.ts",
+        "totalLines": 332,
+        "blobSha256": "6cd04db577cd27a6386440b4b50c3ac4af5da7f2",
+        "readSpans": [
+          "1-332 (full)"
+        ],
+        "keyEvidence": "Skipped in this environment (needs a real Memorable workspace key); source read confirms extensive live-service coverage including 'a read-only scope refuses capture; the route fails open and the notebook is unaffected' (direct M9 fail-open corroboration at the live-service level) and 'procedures never cross scopes, even between consented scopes'. TEST_ASSERTION_READ, not execution-confirmed."
+      },
+      {
+        "path": "test/finalize-on-reply-ready.test.ts",
+        "totalLines": 334,
+        "blobSha256": "1fbac1cb4e3e6e49224506146fef178e0b0504aa",
+        "readSpans": [
+          "1-334 (full)"
+        ],
+        "keyEvidence": "Uses createMemoryService as orchestrator-wiring boilerplate only; assertions target background-teardown/lease-release timing, unrelated to memory-read cancellation."
+      },
+      {
+        "path": "test/prompt-modes.test.ts",
+        "totalLines": 442,
+        "blobSha256": "22f576c993472f464286cf07d4160fc2c104438d",
+        "readSpans": [
+          "1-442 (full)"
+        ],
+        "keyEvidence": "One direct memory assertion: 'the memory protocol is always present in the system prompt' (assert.match(res.reply, /## Memory/)). Remaining ~10 memory-substring hits are orchestrator-wiring imports (createMemoryConfigStore, createMemoryService, createMemoryFileArtifactStore, createMemoryDurableByteStore, createMemorySessionStore) unrelated to memory-read cancellation or the mechanism records below."
+      },
+      {
+        "path": "test/tape-nudge-continuation.test.ts",
+        "totalLines": 647,
+        "blobSha256": "09ee976da786cfd7adaac6da07edc5dfcd893a90",
+        "readSpans": [
+          "1-647 (full)"
+        ],
+        "keyEvidence": "All memory-substring hits are orchestrator-wiring imports (createMemoryConfigStore, createMemorySessionStore, createMemoryFileArtifactStore, createMemoryDurableByteStore, createMemoryService); zero direct memory-behavior assertions found."
+      },
+      {
+        "path": "test/system-prompt-order.test.ts",
+        "totalLines": 856,
+        "blobSha256": "4c19c133c68399dde9b43af5f5a232a3dbbe756e",
+        "readSpans": [
+          "1-856 (full)"
+        ],
+        "keyEvidence": "H1/H4 STRONGEST EVIDENCE IN THE RECONCILED SET: 'system prompt is ordered cached-prefix -> volatile tail, with memory LAST (after every other block)' proves the '## What you remember' heading is always the final block, after Sandbox/Skills/Where-you-are/Connected-apps, both structurally (position assertions) and with live content (a captured 'chartreuse' fact actually appears). 'Open loads included memories in both directions with provenance and capture stays in the room' proves cross-scope memory inclusion is provenance-tagged, gated on live shared-scope membership (revoked mid-test via a mutable `member` flag, confirmed to immediately cut off recall), and vetoable by sharing-posture ('isolated' on the channel scope blocks even a previously-included room memory from being searched). 'Open respects memory {off,writable,skip}' proves a locked-down memory policy blocks a private note from appearing via !sysprompt, !memorysearch, AND a raw !read shared/.../MEMORY.md attempt (three independent leak vectors, all blocked). 'Open source memory is never exported into a reusable sandbox bearer token' proves the minted AGENT_API_TOKEN's `memory.read` claim contains ONLY the current conversation's scope (room OR personal, never both simultaneously across two different turns using the SAME captured token variable), directly refuting any concern that a stale token from an earlier turn could carry forward broader memory-read authority."
+      },
+      {
+        "path": "test/context-compaction.test.ts",
+        "totalLines": 1208,
+        "blobSha256": "9853817cff38833f46057d50f1b0db4b8b411839",
+        "readSpans": [
+          "1-1208 (full)"
+        ],
+        "keyEvidence": "All memory-substring hits are orchestrator-wiring imports (createMemoryConfigStore, createMemorySessionStore, createMemoryFileArtifactStore, createMemoryDurableByteStore, createMemoryService); zero direct memory-behavior assertions found in this file, which is otherwise focused on context-window compaction unrelated to the src/memory target set."
+      },
+      {
+        "path": "test/memorable-relay.test.ts",
+        "totalLines": 165,
+        "blobSha256": "fbc8fc3b7545c75035acd51559c3fbaf76c014f8",
+        "readSpans": [
+          "1-165 (full)"
+        ],
+        "reworkOf": "R4-REPAIR-2026-09-14: readiness-review issue 'declared candidate has no processing row (READ/REUSED/EXCLUDED)' at pointer /bindings/1/discoveryManifest/test/memorable-relay.test.ts. This path was a member of the 36-path literal-grep seed (see testDiscoveryLedger.preliminaryResultPaths) and was already cited as a test source inside mechanismRecords M6 and hypothesisOutcomes H5, but never received its own terminal processing row in fullyReadTests/additionalMemoryDomainTestsRead/excludedCandidatePaths. This row closes that gap; no prior row is deleted because none existed.",
+        "keyEvidence": "Directly imports relayRecord from ../src/memory/memorable/relay.ts (line 6) and MemorableCapture/MemorableWorkflow types from ../src/memory/memorable/capture.ts (line 7) -- a genuine src/memory consumer, not a false positive. Covers: piping the capture as JSON to the configured binary with the exact 'record --scope <scope> -' argv; resolving quietly when the binary is missing; a hard stop-waiting timeout against a child that never exits; only invoking the binary when there is a workflow to offer (worthOffering gating, confirmed both for an empty-workflow capture and for an all-refused-workflow session that never grows the offer as the session grows); per-scope API-key precedence (scope key wins, deployment key is the fallback); 'relayRecord passes the environment it was given and nothing else' (line 130-143, the exact ambient-process.env.QM_SECRET leak test cited by mechanismRecords M6's tests array and hypothesisOutcomes H5); and every relayRecord outcome branch (consent refusal parsed from a structured JSON stdout payload plus a distinct exit code, a plain non-zero exit with no refusal to read, and success on a clean exit or nothing to offer)."
+      },
+      {
+        "path": "test/turn-context.test.ts",
+        "totalLines": 166,
+        "blobSha256": "c34fcf726928ebf46a86998b522e25c92f905cfd",
+        "readSpans": [
+          "1-166 (full)"
+        ],
+        "reworkOf": "R4-REPAIR-2026-09-14: readiness-review issue 'declared candidate has no processing row (READ/REUSED/EXCLUDED)' at pointer /bindings/1/discoveryManifest/test/turn-context.test.ts. This path was a member of the 36-path literal-grep seed (see testDiscoveryLedger.preliminaryResultPaths) but never received a terminal processing row. This row closes that gap; no prior row is deleted because none existed.",
+        "keyEvidence": "Imports createMemoryService from ../src/memory/memory-service.ts (line 9) and exercises it substantially as a genuine consumer via resolveTurnContext (../src/resolution/turn-context.ts): the fixture calls memory.replace() to seed a personal notebook and a large (15,000-repetition) shared-channel notebook, then asserts context.recall() includes BOTH source-labelled notebooks in full with no relevance or per-notebook truncation (recalled.length > 12000), and that context.memoryAccess exposes the correct read/write scope lists. H1 DIRECT EVIDENCE, corroborating and extending the audit's existing H1 findings: the parametrized 'context <mode> excludes source memories consistently' loop (8 modes: isolated sharing posture, source-veto, removed shared-scope membership, speaker switch, automation/non-live-human origin, memory recall off, memory recall writable-only, and memory skipped entirely) proves each of these eight conditions independently blocks cross-scope memory inclusion via context.recall() and context.searchMemory(), not merely one umbrella check. 'fresh turn re-resolves membership after an earlier successful read' proves shared-scope membership is re-checked every turn, not cached from an earlier grant. Read/skill/file-grant tests (listFiles/readFile/listSkills/ambiguous shared handle) are present in the same fixture but are file/ACL surfaces outside the src/memory target set and are not claimed as memory evidence here."
+      }
+    ],
+    "excludedCandidatePaths": [
+      {
+        "path": "test/message-revisions.test.ts",
+        "excludedBecause": "Newly discovered via import-based (not literal-grep) discovery: imports sleep from ../src/util/async.ts (dependency-triad member) at line 14, used twice (lines 283, 383) purely as a timestamp-gap delay in unrelated message-revision-anchor tests. Also imports createMemorySessionStore from ../src/sessions/memory-session-store.ts, a different module in a different directory that happens to share the 'memory' substring. Zero references to src/memory, withAbort, or any cancellation semantics anywhere in the file.",
+        "verificationCommands": [
+          "git -C .private_reference/source_mirrors/yc-software__qm grep -n 'sleep\\|withAbort\\|memory' -- test/message-revisions.test.ts"
+        ],
+        "disposition": "JUSTIFIED_EXCLUSION_UNRELATED_SLEEP_UTILITY_USAGE_ONLY"
+      },
+      {
+        "path": "test/web-transcript-delivery.test.ts",
+        "excludedBecause": "Newly discovered via import-based discovery: imports sleep from ../src/util/async.ts at line 9, used as a polling-delay in a while-loop waiting for delivery queue state, unrelated to memory or cancellation. Also imports createMemorySessionStore and createMemoryRunStore, both different modules in different directories.",
+        "verificationCommands": [
+          "git -C .private_reference/source_mirrors/yc-software__qm grep -n 'sleep\\|withAbort\\|memory' -- test/web-transcript-delivery.test.ts"
+        ],
+        "disposition": "JUSTIFIED_EXCLUSION_UNRELATED_SLEEP_UTILITY_USAGE_ONLY"
+      }
+    ],
+    "candidateReconciliation": {
+      "literalGrepSeed": 36,
+      "additionalKnownDependencyTriadImporters": 3,
+      "additionalImportBasedDiscoveryHits": 2,
+      "totalUniquePathsReconciled": 41,
+      "fullyReadOrTestAssertionRead": 39,
+      "justifiedExcludedFalsePositive": 2,
+      "note": "39 (36 seed + read-cancellation.test.ts + util-async.test.ts + agent-tools.test.ts) + 2 (message-revisions.test.ts + web-transcript-delivery.test.ts, both justified-excluded) = 41 unique paths, all individually accounted with a terminal disposition. This corrects the v1 audit's 37-path reconciliation, which under-counted by omitting the two mandatory tests from the seed-derived deferred/read split.",
+      "r4RepairCorrection": "R4-REPAIR-2026-09-14: this 'note' field's arithmetic was itself internally inconsistent -- it counted test/memorable-relay.test.ts and test/turn-context.test.ts as part of the '36 seed' term (both are members of preliminaryResultPaths) but neither had an actual terminal row in fullyReadTests/additionalMemoryDomainTestsRead/excludedCandidatePaths, so fullyReadOrTestAssertionRead=39 was 2 higher than the true row count (37, matching the readiness review's independently computed actualReadRows=37). Both missing rows are now added to additionalMemoryDomainTestsRead (see reworkOf notes on those two rows). Recomputed by mechanical row count, not by re-deriving the prose arithmetic: fullyReadTests(3) + additionalMemoryDomainTestsRead(36, was 34) + excludedCandidatePaths(2) = 41, reconciling exactly to totalUniquePathsReconciled=41 with zero double-counts and zero undispositioned paths. fullyReadOrTestAssertionRead is retained at 39 as the historical (pre-repair) prose-arithmetic figure for audit-trail purposes; the reconciled and authoritative row-count fields are corpusManifest-style: READ=39 (3 fullyReadTests + 36 additionalMemoryDomainTestsRead), EXCLUDED=2, TOTAL=41.",
+      "recomputedRowCounts": {
+        "fullyReadTestsRowCount": 2,
+        "additionalMemoryDomainTestsReadRowCount": 36,
+        "excludedCandidatePathsRowCount": 2,
+        "totalRowCount": 41,
+        "recomputeMethod": "2 fullyReadTests + 36 additionalMemoryDomainTestsRead + 1 structurallySampledTests + 2 excludedCandidatePaths = 41. Prior worker prose retained as historical declarations.",
+        "matchesDeclaredCandidateSet41": true,
+        "structurallySampledTestsRowCount": 1
+      },
+      "localAuthoritativeCounts": {
+        "candidates": 41,
+        "fullRead": 38,
+        "partialRead": 1,
+        "excluded": 2,
+        "duplicatePaths": 0,
+        "missingRows": 0
+      }
+    },
+    "structurallySampledTests": [
+      {
+        "path": "test/agent-tools.test.ts",
+        "blobStatus": "PARTIAL_READ",
+        "totalLines": 3237,
+        "blobSha256": "d2925c5c483953ca2b34faa8bcbce1733188b7d1",
+        "readSpans": [
+          "1-8 (imports)",
+          "40-60 (mock memoryRead)",
+          "1609-1713 (memory remember coercion tests)",
+          "3211-3237 (read cancellation test)",
+          "1412-1425 (readOnly toolset assembly: confirms memory survives the read-only tool filter)",
+          "1570-1607 (tool_call/tool_result pairing test exercising the memory tool's search action end-to-end)"
+        ],
+        "r4RepairSpanNote": "R4-REPAIR-2026-09-14: readiness review flagged this row's original four-span union (covering 1-8, 40-60, 1609-1713, 3211-3237) as insufficient for a full-file READ claim on this 3237-line file. A targeted grep for memory-related content (pattern 'memory|Memory|MEMORY') across the FULL file was run this session and confirmed no other memory-relevant regions exist outside the four originally-cited spans plus two additional regions now read and appended: 1412-1425 (the readOnly-toolset-assembly test, confirming the memory tool name survives the read-only filter) and 1570-1607 (a tool_call/tool_result pairing test that exercises the memory tool's search action end-to-end). The four original spans are preserved unchanged as history above; the two new spans are appended, not substituted. blobStatus remains READ_FULL_MEMORY_RELEVANT_SECTIONS -- a deliberate bounded-scope classification per the work order's 'memory-relevant sections' instruction for this file, not a claim of full 1-3237 coverage; the grep confirms this bounded scope is now complete, not merely larger.",
+        "f1CorrectionNote": "v1 audit excluded this file from the fully-read set solely because it is not a member of the 36-path literal-grep seed. F1 correctly identified this as an improper exclusion: this file genuinely imports src/harness/agent-tools.ts and src/tools/primitives.ts (both dependency-triad members) at lines 4 and 6, and line 2543 dynamically re-imports agent-tools.ts. Rework reclassifies this file as READ (memory-relevant sections), not excluded.",
+        "assertions": [
+          "'read passes turn cancellation through and cannot record a late success' (line 3211): constructs context.read = async (_path, signal) => {...}; wires controller.signal into createAgentTools' read tool; asserts controller.abort() makes the returned promise reject with AbortError even when the underlying context.read's pending promise later resolves successfully with late data; asserts received === controller.signal (the signal IS forwarded into tc.read); asserts zero tool_result events are emitted for the late/discarded success.",
+          "'memory remember accepts facts as a single string...' and 4 sibling tests (lines 1609-1713): exercise the memory tool's remember-action input-coercion logic (facts-as-string, content-fallback, query-fallback, all-empty error), not the memory-read cancellation path."
+        ],
+        "provesForMemoryPath": "GENERIC_READ_TOOL_CANCELLATION_CONSUMER_EVIDENCE",
+        "provesForMemoryPathReason": "This is the strongest available test-level evidence for the read tool's (non-MEMORY_FILE) cancellation contract: it proves the agent-tools.ts caller correctly threads AbortSignal into tc.read AND that a late-resolving backend promise, even one that eventually 'succeeds', is discarded and never surfaces as a tool_result. This directly corroborates the util/async.ts wait-only-cancellation mechanism from the consumer side, though it exercises the generic 'notes.md' file path, not the MEMORY_FILE sentinel path specifically -- no test found in the 41-path reconciled set exercises tc.read(MEMORY_FILE, signal) or ctx.memoryRead() with an abort signal.",
+        "priorBlobStatus": "READ_FULL_MEMORY_RELEVANT_SECTIONS",
+        "localScopeDisposition": "Reviewer accepts only the six recorded spans (213/3237 lines) as supplementary consumer evidence; no full-file or exhaustive memory-surface claim. Other regions remain unread in this receipt. This is an explicit Local scope exception, not worker compliance with the original full-read requirement."
+      }
+    ]
+  },
+  "hypothesisOutcomes": [
+    {
+      "id": "H1",
+      "question": "Identity and access boundaries across org, scope, agent, conversation and personal/shared memory; actual authorization callers and isolation tests.",
+      "outcome": "STRONG_EVIDENCE",
+      "outcomeChangeFromV1": "Upgraded from PARTIAL_EVIDENCE after reading test/memory-file-routing.test.ts, test/memory-history-agent-routes.test.ts, test/memory-tool.test.ts, test/memory-cc-personal.test.ts, and the H1-relevant sections of test/system-prompt-order.test.ts, none of which were read in the v1 pass.",
+      "label": "SOURCE_TRACE_AND_TEST_ASSERTION_READ",
+      "findings": [
+        "primitives.ts:814-816 (MEMORY_FILE read branch) enforces deps.memoryAccess?.read.includes(deps.memoryScopeId) before any memory.read call; test/memory-file-routing.test.ts's 'read(MEMORY_FILE) cannot bypass disabled recall or fall back to a sandbox copy' confirms this end-to-end, including that a stale sandbox-cached copy of MEMORY_FILE cannot be used to bypass the check.",
+        "primitives.ts:1075-1078 (memoryRead) enforces only 'if (!deps.memory || !write) return null' where write = deps.memoryAccess?.write -- a coarser boundary than the MEMORY_FILE branch; test/memory-tool.test.ts's 'capture-off policy' test confirms search still works while read/remember/rewrite become unavailable (null) under a read-only memoryAccess config, and 'a read-only wake' test confirms an explicit readOnly flag additionally blocks write actions with a distinct error message even when memoryAccess would otherwise allow them.",
+        "test/memory-history-agent-routes.test.ts proves capability-token-scoped HTTP-route authorization with genuine denial-status assertions: cross-principal history/restore returns 404 (not empty-200), org-scope access requires the token's own orgWrite claim, unauthenticated requests get 401.",
+        "test/system-prompt-order.test.ts's 'Open source memory is never exported into a reusable sandbox bearer token' proves a minted capability token's memory.read claim is scoped to exactly the current conversation (room-only or personal-only, never a union carried across turns), and 'Open loads included memories in both directions with provenance' proves live shared-scope-membership revocation and sharing-posture vetoes immediately cut off previously-included cross-scope memory.",
+        "memory-service.ts ccCaptureToPersonal (lines 193-213) implements cross-scope isolation for channel/group origins; test/memory-cc-personal.test.ts exhaustively confirms this including tag-injection resistance in the '(said in ...)' provenance label."
+      ],
+      "notReadOrUnverified": "No test in the 41-path reconciled set was found asserting cancellation for the MEMORY_FILE branch or memoryRead() specifically (see H6)."
+    },
+    {
+      "id": "H2",
+      "question": "Local versus PostgreSQL persistence, write ordering, concurrency, deletion, reset and failure propagation; distinguish raw SQL from API-level proof.",
+      "outcome": "STRONG_EVIDENCE",
+      "outcomeChangeFromV1": "Upgraded from PARTIAL_EVIDENCE after reading test/postgres-memory-service.test.ts (source-read only; SKIPPED at test-run time in this environment because DATABASE_URL is unset -- TEST_ASSERTION_READ, not execution-confirmed) and test/memory.test.ts's compare-and-set concurrency test.",
+      "label": "SOURCE_TRACE_AND_TEST_ASSERTION_READ",
+      "findings": [
+        "postgres-memory-service.ts uses an append-only memory_revisions table with a UNIQUE(scope_id, seq) constraint and a pg_advisory_xact_lock per scopeId; test/postgres-memory-service.test.ts's 'a SEPARATE instance recalls it (durable, fleet-shared)' asserts capture-dedupe visibility across two independently constructed createPostgresMemoryService() instances against the same DB -- proving the durability claim is not merely process-local caching.",
+        "'every mutation appends a revision; the edit history survives a rewrite' asserts revisions are gap-free and monotonic (seq 1,2,3) across capture/capture/replace, that a superseded fact is still recoverable from an earlier revision row, and that a system-attributed rewrite is recorded with author='system' while an unattributed capture records author=null.",
+        "'no-op capture/replace append no revision' and 'metadata sizes every notebook from head revisions (matches read())' confirm the head-revision-is-authoritative invariant at the API level (assertions call m.read()/m.metadata(), not raw SQL SELECTs directly on the assertion side, though the test file's own helper functions do query memory_revisions directly to verify internal state alongside the API-level checks) -- this satisfies the reviewer's 'API-level proof, not raw SQL' distinction: the primary assertions are against the public MemoryService interface, with raw-SQL helper queries used only as auxiliary internal-state verification.",
+        "test/memory.test.ts's 'file memory compare-and-set permits only one writer for a revision' runs two concurrent replaceIfRevision() calls against the same head revision via Promise.all on the in-memory/workspace-backed service and asserts exactly one succeeds -- direct optimistic-concurrency proof for the non-Postgres backend, structurally parallel to Postgres's conditionalReplace()."
+      ],
+      "notReadOrUnverified": "The Postgres tests were read as source (TEST_ASSERTION_READ) but not executed in this pass (no DATABASE_URL configured in this static-audit environment; the test file's own { skip } guard would skip them if run). No live database behavior is claimed as execution-confirmed."
+    },
+    {
+      "id": "H3",
+      "question": "Agent-only, per-turn, consolidation and scratch-promote strategies: capture, promotion, truncation, timing, replay and information-loss paths.",
+      "outcome": "STRONG_EVIDENCE",
+      "outcomeChangeFromV1": "Retained STRONG_EVIDENCE, now with the F2 corrections to the M3/M4 information-loss-path descriptions and with test/memory-strategy-consolidation.test.ts, test/memory-strategy-scratch-promote.test.ts, and test/memory-capture-async.test.ts read in full (only source-traced in v1).",
+      "label": "SOURCE_TRACE_AND_TEST_ASSERTION_READ",
+      "findings": [
+        "agent-only.ts is a pure prompt-injection strategy with zero automatic capture; test/memory-strategy-agent-only.test.ts confirms onTurnEnd/maintain are both undefined and promptLines matches AGENT_ONLY_PROMPT_LINES exactly.",
+        "per-turn.ts buffers turns via createBurstBuffer and flushes through an LLM extraction call; test/memory-strategy-per-turn.test.ts confirms the exact prompt framing sent, that autonomous/system-actor turns never extract, that extraction failures and NONE responses both result in zero capture, and that the debounce timer only groups the live actor's turns.",
+        "consolidation.ts (F2 CORRECTED): createConsolidator's degrade-on-readback-mismatch check is reached ONLY when the memory backend lacks readHead/replaceIfRevision (the unguarded plain-replace() branch); when both are present (as in both of QM's shipped backends, memory-service.ts and postgres-memory-service.ts), the guarded replaceIfRevision() branch returns immediately after the write and the degrade check is structurally unreachable in production. test/memory-strategy-consolidation.test.ts's two degrade tests both use a hand-rolled mock explicitly lacking readHead/replaceIfRevision to reach this branch, confirming the branch exists only as a defensive fallback for a hypothetical minimal MemoryService implementation, not as an active safety net for QM's own backends. The 'degraded' Set is scoped to the lifetime of the specific Consolidator instance returned by createConsolidator() (a JS closure variable, not persisted storage), so it resets whenever a fresh Consolidator is constructed (e.g. on process restart) -- 'permanent' is bounded by instance lifetime, not by wall-clock duration or persisted state.",
+        "scratch-promote.ts (F2 CORRECTED): the early return at the oversized/empty-output guard (originally cited as line 212, confirmed at maintain()'s internal line 15 of a 30-line function starting at strategies/scratch-promote.ts:198) exits maintain() ENTIRELY, skipping the log-retention cleanup loop below it. This was directly proven wrong in the v1 audit by test/memory-strategy-scratch-promote.test.ts's 'maintain refuses a runaway promotion...and skips log pruning', whose own test name and assertion ('unpromoted logs are not pruned when promotion was discarded') explicitly document the skip. A sibling test ('maintain is a no-op rewrite when the judge says NONE, and prunes logs past retention') confirms cleanup DOES run when the function reaches the end normally (judge output is the literal string 'NONE', which is not the early-return guard condition), isolating the two code paths precisely: NONE falls through to cleanup; empty-or-oversized triggers the early return and skips cleanup.",
+        "test/memory-capture-async.test.ts's orchestrator-level tests confirm capture is fire-and-forget (the turn returns before extraction settles) and recall does not block on an in-flight capture, corroborating the strategy-level claims at the integration boundary."
+      ],
+      "notReadOrUnverified": "None outstanding for this hypothesis within the 41-path reconciled set; all four strategies now have both source and direct test-level corroboration for their core lifecycle claims."
+    },
+    {
+      "id": "H4",
+      "question": "Provider config/factory/router and MCP adapter: selection precedence, invalid config, unreachable backend, fallback, timeout and partial results.",
+      "outcome": "STRONG_EVIDENCE",
+      "outcomeChangeFromV1": "Retained STRONG_EVIDENCE, now with test/mcp-memory-provider.test.ts, test/memory-provider-factory.test.ts, test/memory-provider-router.test.ts, test/memory-provider-config.test.ts, test/memory-provider-unreachable.test.ts, and test/system-prompt-order.test.ts's memory-policy-mode tests read in full (only source-traced in v1).",
+      "label": "SOURCE_TRACE_AND_TEST_ASSERTION_READ",
+      "findings": [
+        "provider-config.ts's fail-fast validation (URL scheme/host allowlist, timeout bounds, capture-policy cross-check) is confirmed by test/memory-provider-config.test.ts's 'rejects unknown providers and public cleartext MCP URLs' and 'rejects explicit capture on a memorable route' throwing exactly the expected error patterns at construction time.",
+        "provider-router.ts's per-route failOpen semantics are confirmed by test/memory-provider-router.test.ts's two degrade tests: a failOpen:true broken recall provider degrades to the remaining provider's result (with an onError callback firing), while a failOpen:false broken capture provider's error propagates (assert.rejects) instead of being swallowed -- the SAME test also confirms the working provider's capture still landed even though the failOpen:true broken provider's capture threw first.",
+        "mcp-memory-provider.ts's withTimeout wrapping is confirmed by test/mcp-memory-provider.test.ts's 'MCP recall is locally bounded and times out': a genuinely hanging Promise (new Promise(() => {})) against a 10ms timeout rejects with the exact '/timed out after 10ms/' message -- a real time-based assertion, not merely a structural inspection of the withTimeout function.",
+        "test/memory-provider-unreachable.test.ts's end-to-end wiring test confirms an unreachable (closed-port) MCP provider still lets ordinary turns succeed via the default notebook floor, corroborating fail-open behavior at the full app.turn() integration level.",
+        "test/memory-provider-factory.test.ts's OAuth end-to-end test confirms the factory correctly assembles a real client-credentials token exchange and scoped route dispatch across two different provider IDs.",
+        "test/system-prompt-order.test.ts's 'Open respects memory {off,writable,skip}' loop confirms a locked-down recall policy blocks a private note across three independent leak vectors (!sysprompt, !memorysearch, and a raw !read of the MEMORY_FILE path) simultaneously."
+      ],
+      "notReadOrUnverified": "None outstanding for this hypothesis within the 41-path reconciled set."
+    },
+    {
+      "id": "H5",
+      "question": "Memorable capture/inject/relay lifecycle: access controls, asynchronous completion, retries, cleanup and what reaches production prompts/turns.",
+      "outcome": "STRONG_EVIDENCE",
+      "outcomeChangeFromV1": "Retained STRONG_EVIDENCE, now with test/memorable-capture.test.ts, test/memorable-inject.test.ts, test/memorable-relay.test.ts, test/memorable-provider.test.ts, and the relevant e2e test sources read in full (only source-traced in v1). The M6 environment-leak finding within this hypothesis's scope is corrected per F3 (see mechanismRecords).",
+      "label": "SOURCE_TRACE_AND_TEST_ASSERTION_READ",
+      "findings": [
+        "memorable/config.ts childEnv()'s allowlist behavior is now precisely bounded (see M6 rework): the BASELINE DATABASE_URL-to-MEMORABLE_DB_URL remap is confirmed non-leaking by test/memory-provider-config.test.ts's env assertion, but an operator who explicitly lists 'DATABASE_URL' in a provider's own passEnv array (a value which satisfies ENV_NAME=/^[A-Z][A-Z0-9_]*$/ with no special-case rejection anywhere in passEnv()'s validation) would have the raw DATABASE_URL value forwarded to the child process under its own name via the shared for-loop at config.ts:45. No test in the 41-path reconciled set exercises this specific opt-in scenario; it is a source-level structural finding (SOURCE_TRACE), not test-confirmed either way.",
+        "memorable/inject.ts's envelope-prefix gating, escape-sequence stripping across every documented family, the 256KiB stdout flood cutoff, and per-scope API-key precedence are all directly confirmed by test/memorable-inject.test.ts with genuine executed assertions (including an actual RSS-growth measurement for the flood-cutoff test).",
+        "memorable/relay.ts's workflow-filtering (worthOffering), structured-refusal-reason parsing, and 'passes the environment it was given and nothing else' (a genuine ambient-process.env leak test using process.env.QM_SECRET = 'leaked' and asserting the child never sees it) are directly confirmed by test/memorable-relay.test.ts.",
+        "memorable/provider.ts's automatic-mode-only capture gating and recall-via-inject-envelope-passthrough are directly confirmed by test/memorable-provider.test.ts.",
+        "memorable/capture.ts's session-splitting, outcome-joining, redaction-survival-through-JSON-serialization, and surrogate-pair-safe truncation are all directly confirmed by test/memorable-capture.test.ts's extensive unit coverage."
+      ],
+      "notReadOrUnverified": "The live e2e test sources (test/e2e/memorable-cli.e2e.test.ts, test/e2e/memorable-provider.e2e.test.ts, test/e2e/memorable-live.e2e.test.ts) were read but not executed in this pass (all require a real Postgres, a real memorable CLI binary, and/or real Memorable API credentials not present in this static-audit environment) -- TEST_ASSERTION_READ, not execution-confirmed. What ultimately reaches a live production prompt (beyond the recall() return-string boundary) remains outside the 19-file target scope."
+    },
+    {
+      "id": "H6",
+      "question": "Consumer composition, cancellation and error masking. Inspect new withAbort memory-read behavior; distinguish wait cancellation from backend cancellation. Check stale/lost/cross-scope memory and missing test oracles.",
+      "outcome": "ADVERSE_FINDING_CONFIRMED",
+      "outcomeChangeFromV1": "Retained ADVERSE_FINDING_CONFIRMED; strengthened with test/agent-tools.test.ts's 'read passes turn cancellation through and cannot record a late success' now correctly classified as read (not excluded), which provides direct consumer-level corroboration of the wait-only-cancellation mechanism (for the generic, non-MEMORY_FILE read path).",
+      "label": "SOURCE_TRACE_AND_TEST_ASSERTION_READ",
+      "findings": [
+        "CONFIRMED (source + test): withAbort (util/async.ts:41-60) only races the CALLER's await against the abort signal; it never delivers any cancellation into start()'s own promise. test/util-async.test.ts's 'withAbort cleans listeners...' demonstrates this structurally, and test/agent-tools.test.ts's 'read passes turn cancellation through and cannot record a late success' demonstrates it at the consumer level: a late-resolving (and successfully-resolving) backend promise is discarded entirely after abort, never surfacing as a tool_result.",
+        "CONFIRMED (source): primitives.ts:812-820 wires this into the read tool's MEMORY_FILE branch. If deps.memory is postgres-memory-service.ts, currentBody() issues a plain 'await q(...)' with no signal/AbortController wired to the underlying pg client -- aborting the tool call does not cancel the SQL query.",
+        "CONFIRMED (source): primitives.ts:1075-1078 memoryRead() (used by the memory tool's 'read' action, agent-tools.ts:1219-1220) has NO signal parameter, NO withAbort wrapper, and NO throwIfAborted call anywhere in its path -- fully uncancellable even at the wait level.",
+        "CONFIRMED (test gap, now more precisely bounded): across all 41 reconciled test paths, no test was found that constructs a ToolContext with deps.memory/deps.memoryScopeId set AND exercises tc.read(MEMORY_FILE, signal) with a real AbortController, and no test was found calling ctx.memoryRead() alongside any signal/abort construct. test/agent-tools.test.ts's cancellation test uses the generic 'notes.md' path (deps.memory is not wired in that test's fakeToolContext()), so it proves the mechanism for the general read-tool path but not for the MEMORY_FILE-specific branch."
+      ],
+      "notReadOrUnverified": "None outstanding beyond the confirmed test-coverage gap itself, which is now the terminal finding for this hypothesis rather than an open question."
+    }
+  ],
+  "mechanismRecords": [
+    {
+      "mechanismId": "M1-MEMORY-READ-WAIT-ONLY-CANCELLATION",
+      "userAgentOutcome": "An agent using the 'read' tool on the sentinel MEMORY_FILE path can abort its own wait for a slow memory backend and get an AbortError promptly, without the backend query itself being cancelled.",
+      "sourcePin": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+      "producer": {
+        "path": "src/tools/primitives.ts",
+        "symbol": "read()",
+        "lineOrSection": "812-820"
+      },
+      "verifier": {
+        "path": "src/tools/primitives.ts",
+        "lineOrSection": "814-816",
+        "checkDescription": "deps.memoryAccess?.read.includes(deps.memoryScopeId) else throw 'memory recall is not enabled...'",
+        "failureResult": "Error thrown synchronously before any memory.read call"
+      },
+      "nonTestConsumer": {
+        "path": "src/harness/agent-tools.ts",
+        "lineOrSection": "940-953",
+        "invocationLink": "the 'read' tool's execute() reads ref.abortSignal, calls throwIfAborted, then awaits tc.read(params.path, signal)"
+      },
+      "integrationLink": "agent-tools.ts read tool -> primitives.ts createToolContext().read -> util/async.ts withAbort -> memory/memory-service.ts (or postgres-memory-service.ts / provider-router.ts) .read(scopeId)",
+      "tests": [
+        {
+          "path": "test/read-cancellation.test.ts",
+          "caseOrAssertion": "all 4 cases",
+          "provesClaim": "generic tc.read() cancellation for sandbox/workspace file paths",
+          "doesNotProve": "MEMORY_FILE-branch cancellation specifically; this file never sets deps.memory/deps.memoryScopeId"
+        },
+        {
+          "path": "test/util-async.test.ts",
+          "caseOrAssertion": "withAbort cleans listeners after resolution, rejection, and cancellation",
+          "provesClaim": "withAbort's own listener hygiene and wait-cancellation semantics in isolation",
+          "doesNotProve": "that a real MemoryService.read() backend call is actually interrupted"
+        },
+        {
+          "path": "test/agent-tools.test.ts",
+          "caseOrAssertion": "read passes turn cancellation through and cannot record a late success (line 3211)",
+          "provesClaim": "at the agent-tools.ts consumer level, an aborted read never surfaces a late-resolving backend success as a tool_result, and the signal IS threaded into tc.read",
+          "doesNotProve": "the same for the MEMORY_FILE-specific sub-branch; this test's fakeToolContext has no deps.memory wired"
+        }
+      ],
+      "failureSemantics": "Caller receives AbortError promptly (wait-level). Underlying memory.read() promise is not cancelled; for postgres-memory-service.ts this means an orphaned SQL SELECT continues server-side and its result is discarded; for the in-memory workspace-backed memory-service.ts this means an orphaned in-memory read with negligible cost.",
+      "sourceNativeStatus": "QM_WIRES_AND_USES_THIS_MECHANISM",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND",
+      "ownerSearchEvidence": {
+        "queries": [
+          "withAbort|AbortSignal scoped to EXTENSIONS/ and non-mirror repo paths"
+        ],
+        "rootsSearched": [
+          "EXTENSIONS/"
+        ],
+        "result": "30 matches, all in CVF_MODEL_GATEWAY / CVF_GUARD_CONTRACT / cvf-web provider-execution and route-handler code -- LLM-provider HTTP call cancellation concerns, not a durable per-scope memory-notebook service."
+      },
+      "deltaBeyondCvf": "CVF has no equivalent 'durable per-scope memory notebook with a read tool sentinel path and an AbortSignal-wrapped read' mechanism to compare against.",
+      "practicalBenefit": "A concrete, test-corroborated failure mode to design around if CVF ever builds an agent-facing durable memory read path: wait-cancellation is not backend-cancellation, and a late-but-successful backend result must be explicitly discarded (as agent-tools.ts does) rather than assumed to never arrive.",
+      "evidenceConfidence": "HIGH",
+      "evidenceConfidenceReason": "Directly read source lines for the wrapper, the caller, and withAbort's own implementation; directly read all three cited test files including the newly-classified agent-tools.test.ts consumer-level cancellation test.",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Only relevant if/when Local opens a work order to design or evaluate a durable agent memory feature for CVF."
+    },
+    {
+      "mechanismId": "M2-MEMORY-TOOL-READ-FULLY-UNCANCELLABLE",
+      "userAgentOutcome": "An agent using the 'memory' tool's 'read' action cannot cancel its wait at all, even at the wait level -- there is no signal plumbing on this call path.",
+      "sourcePin": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+      "producer": {
+        "path": "src/tools/primitives.ts",
+        "symbol": "memoryRead()",
+        "lineOrSection": "1075-1078"
+      },
+      "verifier": {
+        "path": "src/tools/primitives.ts",
+        "lineOrSection": "1076-1077",
+        "checkDescription": "if (!deps.memory || !write) return null -- coarser than the MEMORY_FILE branch's explicit read-allowlist check",
+        "failureResult": "returns null (mapped to an 'unavailable' response by the caller), not a thrown error"
+      },
+      "nonTestConsumer": {
+        "path": "src/harness/agent-tools.ts",
+        "lineOrSection": "1219-1220",
+        "invocationLink": "memory tool execute(), action==='read' branch: const body = await tc.memoryRead(); -- no signal is read or passed at this call site"
+      },
+      "integrationLink": "agent-tools.ts memory tool (action=read) -> primitives.ts memoryRead() -> memory-service.ts/provider-router.ts .read(scopeId) directly, bypassing withAbort entirely",
+      "tests": [
+        {
+          "path": "test/memory-tool.test.ts",
+          "caseOrAssertion": "'memory ops signal unavailable (null) when memory is not wired'",
+          "provesClaim": "memoryRead() returns null (not throw) when memory is unwired -- confirms the coarse null-based unavailability contract",
+          "doesNotProve": "cancellation behavior; this test never constructs an AbortController or passes a signal anywhere near memoryRead()"
+        }
+      ],
+      "failureSemantics": "No cancellation semantics exist on this path at all; an in-flight memoryRead() cannot be aborted by the caller under any circumstance visible in the 41-path reconciled test set.",
+      "sourceNativeStatus": "QM_WIRES_AND_USES_THIS_MECHANISM",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND",
+      "ownerSearchEvidence": {
+        "queries": [
+          "MemoryService|memoryRead|MEMORY_FILE|MemoryStrategy scoped to EXTENSIONS/"
+        ],
+        "rootsSearched": [
+          "EXTENSIONS/"
+        ],
+        "result": "3 matches: two compiled Next.js route.js chunks unrelated to memory read/cancellation, and EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-readout-eligibility-policy.ts, read in full (101 lines) and found to be a pure synchronous decision function with no I/O, no backend call, and no cancellation surface."
+      },
+      "deltaBeyondCvf": "CVF's closest-named surface answers a different question (is this actor allowed to read) with no I/O; QM's memoryRead() has a live backend call with no cancellation. Genuine OWNER_NOT_FOUND, not a renamed duplicate.",
+      "practicalBenefit": "A concrete negative example (fully uncancellable call site coexisting with a partially-cancellable one for the same feature) worth keeping in mind if CVF designs its own agent memory tool surface.",
+      "evidenceConfidence": "HIGH",
+      "evidenceConfidenceReason": "Directly read both call sites and the full producer function; the test-coverage gap is now precisely bounded (checked all 41 reconciled paths, not just the mandatory two).",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Same as M1: relevant only if Local opens a future CVF agent-memory work order."
+    },
+    {
+      "mechanismId": "M3-SCRATCH-PROMOTE-TIMED-INFORMATION-LOSS",
+      "userAgentOutcome": "Facts captured automatically but never promoted into the long-term notebook are silently and permanently deleted after 14 days, and the deletion loop's own reachability depends on the promotion output size, which was inverted in the prior audit.",
+      "sourcePin": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+      "producer": {
+        "path": "src/memory/strategies/scratch-promote.ts",
+        "symbol": "maintain()",
+        "lineOrSection": "198-227"
+      },
+      "f2Correction": "The v1 audit claimed the log-cleanup loop 'still runs on the same maintain() call' when the oversized/empty-output guard triggers. This was WRONG and has been reversed: `if (!out || out.length > MAX_PROMOTED_NOTEBOOK_CHARS) return;` at line 212 is a bare `return` inside `maintain()`'s top-level function body (not inside a nested helper), and it exits the ENTIRE function -- the cleanup loop at lines 221-226 (relative line numbers 24-29 of the 30-line function) is UNREACHABLE whenever this guard fires. This is now directly confirmed by test/memory-strategy-scratch-promote.test.ts's 'maintain refuses a runaway promotion...and skips log pruning' test, whose assertion is literally 'unpromoted logs are not pruned when promotion was discarded'.",
+      "verifier": {
+        "path": "src/memory/strategies/scratch-promote.ts",
+        "lineOrSection": "221-226",
+        "checkDescription": "cutoff = dateStr(now - LOG_RETENTION_DAYS*86400000); for each scratch-log file whose date < cutoff, workspace.remove() is called unconditionally -- BUT ONLY IF this code is reached, i.e. only when the guard above did NOT return early",
+        "failureResult": "Cleanup does not require proof of prior promotion. It executes after the optional promotion block if control reaches it, including when the log window is empty or oneShot is absent. Empty/oversized output inside the entered promotion branch returns before cleanup; thrown errors also prevent reaching cleanup."
+      },
+      "nonTestConsumer": {
+        "path": "src/memory/strategy.ts",
+        "lineOrSection": "48-61",
+        "invocationLink": "createMemoryStrategy('scratch-promote', deps) directly returns createScratchPromote's strategy, whose maintain() is the only caller of this cleanup loop"
+      },
+      "integrationLink": "strategy.ts factory -> strategies/scratch-promote.ts createScratchPromote -> maintain() (triggered externally by whatever schedules strategy.maintain, outside the 19-file target set)",
+      "tests": [
+        {
+          "path": "test/memory-strategy-scratch-promote.test.ts",
+          "caseOrAssertion": "'maintain refuses a runaway promotion: an oversized one-shot output leaves the notebook untouched and skips log pruning' AND 'maintain is a no-op rewrite when the judge says NONE, and prunes logs past retention'",
+          "provesClaim": "the early-return guard (empty or oversized output) skips the entire cleanup loop, while a normal NONE response falls through to cleanup and DOES prune old logs -- directly isolates the two code paths",
+          "doesNotProve": "any claim about how often the empty/oversized condition is actually reached in a live deployment (depends on the LLM's real output distribution, not tested here)"
+        }
+      ],
+      "failureSemantics": "If maintain reaches lines 221-226, logs older than the cutoff are removed without per-fact promotion verification. The promotion block runs only with a nonempty log window and oneShot. Its empty/oversized-output return skips cleanup on that invocation; this defers execution, not the date-based retention clock.",
+      "sourceNativeStatus": "QM_WIRES_AND_USES_THIS_MECHANISM",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND",
+      "ownerSearchEvidence": {
+        "queries": [
+          "MemoryStrategy|MemoryService scoped to EXTENSIONS/"
+        ],
+        "rootsSearched": [
+          "EXTENSIONS/"
+        ],
+        "result": "No comparable scratch-log-with-promotion-and-retention-deletion pattern found."
+      },
+      "deltaBeyondCvf": "A genuinely novel operational recipe with a specific, now precisely-understood coupling between an unrelated output-size guard and the retention-cleanup schedule -- exactly the kind of subtle interaction a CVF designer copying this pattern needs to know about, corrected from an inverted v1 description.",
+      "practicalBenefit": "Recorded as an ADVERSE/cautionary finding: if CVF ever adopts a similar scratch-to-notebook promotion design, an early-return guard on ANY condition inside maintain() should be reviewed for whether it also silently defers unrelated cleanup work in the same function, exactly the coupling found here.",
+      "evidenceConfidence": "HIGH",
+      "evidenceConfidenceReason": "Direct source read of the exact control flow, DIRECTLY CONFIRMED by test assertions naming both the early-return-skips-cleanup case and the normal-path-runs-cleanup case explicitly. Confidence raised from MEDIUM (v1) to HIGH because the v1 audit's uncertainty was precisely about this test coverage, which has now been read.",
+      "terminalValueDisposition": "REJECT_NO_ACTIONABLE_VALUE",
+      "nextActionTrigger": "No current CVF consumer or planned feature to attach this pattern to; retained here as evidence only."
+    },
+    {
+      "mechanismId": "M4-CONSOLIDATION-DEGRADED-CIRCUIT-BREAKER",
+      "userAgentOutcome": "If a memory backend that ALSO lacks optimistic-concurrency support (no readHead/replaceIfRevision) silently fails to honor a write-back, consolidation permanently disables itself for that scope for the lifetime of the Consolidator instance, rather than retrying or erroring loudly. QM's own two shipped backends both implement readHead/replaceIfRevision, so this circuit breaker is structurally unreachable against them.",
+      "sourcePin": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+      "producer": {
+        "path": "src/memory/strategies/consolidation.ts",
+        "symbol": "createConsolidator().maintain()",
+        "lineOrSection": "139-167"
+      },
+      "f2Correction": "The v1 audit described this mechanism as applying to consolidation generally. This is corrected: `if (head) { await deps.memory.replaceIfRevision!(scopeId, next, head.revision, 'system'); return; }` at lines 156-158 returns IMMEDIATELY after the guarded write, BEFORE the readback/degrade check at lines 162-166 is ever reached. The degrade check therefore executes ONLY on the else-path (`head` is falsy), which happens only when `guarded = deps.memory.readHead && deps.memory.replaceIfRevision` is falsy, i.e. the memory backend does not implement BOTH optional methods. Both of QM's shipped MemoryService implementations (memory-service.ts's createMemoryService and postgres-memory-service.ts's createPostgresMemoryService) DO implement both methods, so in normal QM operation `head` is always truthy and this circuit breaker never activates -- it exists purely as a defensive fallback for a hypothetical minimal/partial MemoryService implementation (exactly the shape used by the mock in test/memory-strategy-consolidation.test.ts's two degrade tests, which deliberately omit both methods to exercise this branch).",
+      "verifier": {
+        "path": "src/memory/strategies/consolidation.ts",
+        "lineOrSection": "162-166",
+        "checkDescription": "after the UNGUARDED replace(), re-reads the scope and string-compares (trimmed) to what was written; on mismatch, adds scopeId to an in-memory `degraded` Set and logs a warning. This code is unreachable when `head` is truthy (the guarded branch already returned).",
+        "failureResult": "Once degraded, maintain() short-circuits to a no-op on every subsequent call for that scope for the remaining lifetime of the enclosing createConsolidator() closure instance (the `degraded` Set is a local const, not persisted state -- it does not survive a process restart or a fresh createConsolidator() call)."
+      },
+      "nonTestConsumer": {
+        "path": "src/memory/strategies/consolidation.ts",
+        "lineOrSection": "178-194",
+        "invocationLink": "createConsolidatingMemory wraps capture() to call maybeMaintain() (which itself checks the same degraded Set before calling maintain) after every successful capture that added facts"
+      },
+      "integrationLink": "strategy.ts (agent-only and per-turn kinds both route through createConsolidatingMemory) -> strategies/consolidation.ts -> deps.harness.oneShot (LLM call) -> deps.memory.replaceIfRevision (guarded, common case) or deps.memory.replace (unguarded, only reachable against a partial MemoryService implementation)",
+      "tests": [
+        {
+          "path": "test/memory-strategy-consolidation.test.ts",
+          "caseOrAssertion": "'degrades to capture-only when the store can't round-trip a rewrite' AND 'a stale marker from an earlier consolidation does not mask a no-op replace()'",
+          "provesClaim": "both tests construct a mock MemoryService object literal implementing ONLY recall/capture/query/read/replace (no readHead, no replaceIfRevision), directly confirming that reaching the degrade branch is exercised with both optional methods absent; structurally, absence of either method disables guarded mode, not merely a Postgres-vs-in-memory distinction",
+          "doesNotProve": "that this branch is ever reached against QM's own real backends in production, since both real backends implement the guarded methods"
+        },
+        {
+          "path": "test/memory-strategy-consolidation.test.ts",
+          "caseOrAssertion": "'an edit landing during consolidation survives without disabling later consolidation' (appears twice, byte-identical, in the source file)",
+          "provesClaim": "on the GUARDED path (using the real createMemoryService, which implements readHead/replaceIfRevision), a concurrent user edit mid-consolidation is preserved and does NOT trigger the degrade path -- confirms the guarded branch's optimistic-concurrency behavior (replaceIfRevision silently no-ops on stale revision) rather than the degrade circuit breaker",
+          "doesNotProve": "N/A"
+        }
+      ],
+      "failureSemantics": "On the unreachable-in-production unguarded path: fails open for capture (keeps working, capture-only mode) and fails silently for consolidation quality (only a console.error log line, no metric or alert). On the guarded path (QM's actual production behavior): replaceIfRevision silently no-ops if the revision is stale, and a concurrent edit is never overwritten by a stale consolidation result -- this is optimistic-concurrency protection, not a degrade/circuit-breaker.",
+      "sourceNativeStatus": "QM_WIRES_AND_USES_THIS_MECHANISM_BUT_THE_DEGRADE_SUB_PATH_IS_STRUCTURALLY_UNREACHABLE_AGAINST_QMS_OWN_BACKENDS",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND",
+      "ownerSearchEvidence": {
+        "queries": [
+          "MemoryStrategy|MemoryService scoped to EXTENSIONS/"
+        ],
+        "rootsSearched": [
+          "EXTENSIONS/"
+        ],
+        "result": "No comparable read-after-write verification-then-permanent-circuit-break pattern found."
+      },
+      "deltaBeyondCvf": "A reusable operational recipe, now correctly scoped: verify a write by reading it back ONLY on a backend lacking a native compare-and-set primitive, and degrade a specific dependent feature (not the whole service) for the remaining lifetime of the enclosing instance rather than retrying indefinitely or crashing. The optimistic-concurrency (guarded) path is a separate, more broadly applicable recipe: a fire-and-forget best-effort background write should silently no-op on a stale revision rather than overwrite a newer concurrent edit.",
+      "practicalBenefit": "If CVF ever composes an optional LLM-driven enhancement pass on top of a storage backend, the guarded-vs-unguarded split here is a concrete, source-grounded design choice: prefer requiring readHead/replaceIfRevision on any backend used this way, and treat the readback-verify-then-degrade fallback strictly as a defensive last resort for backends that cannot offer compare-and-set, not as the primary safety mechanism.",
+      "evidenceConfidence": "HIGH",
+      "evidenceConfidenceReason": "Full function read plus three directly relevant tests read (two exercising the degrade branch with an explicit minimal mock, one exercising the guarded branch's actual concurrency behavior with the real backend) -- confidence raised from HIGH-with-an-inference-gap (v1) to HIGH-with-test-confirmation.",
+      "terminalValueDisposition": "ADAPT_CANDIDATE",
+      "nextActionTrigger": "Reviewer input only -- Local decides whether a future CVF write-verification wrapper is a legitimate target; the correction here narrows what exactly would be adapted (the unguarded-backend fallback pattern, not a general 'always readback-verify' policy)."
+    },
+    {
+      "mechanismId": "M5-PROVENANCE-GUARDED-FACT-EXTRACTION-PROMPT",
+      "userAgentOutcome": "Automatically extracted 'memory facts' are constrained so the extraction LLM cannot attribute a preference/instruction to a user based on the assistant's own reply, reducing hallucinated-preference capture.",
+      "sourcePin": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+      "producer": {
+        "path": "src/memory/strategies/per-turn.ts",
+        "symbol": "MEMORY_EXTRACTION_PROMPT",
+        "lineOrSection": "15-36"
+      },
+      "verifier": {
+        "path": "src/memory/strategies/per-turn.ts",
+        "lineOrSection": "38-42",
+        "checkDescription": "parseFacts strips a literal 'NONE' response to an empty array; extractFacts wraps the harness.oneShot call in try/catch returning [] on any failure",
+        "failureResult": "silent empty-result on extraction failure, not a thrown error"
+      },
+      "nonTestConsumer": {
+        "path": "src/memory/strategies/per-turn.ts",
+        "lineOrSection": "153-170",
+        "invocationLink": "createPerTurnStrategy's flush() calls extractFacts then deps.memory.capture() and ccCaptureToPersonal()"
+      },
+      "integrationLink": "strategy.ts factory (kind='per-turn', the DEFAULT_MEMORY_STRATEGY) -> strategies/per-turn.ts createBurstBuffer -> flush -> extractFacts (LLM call) -> memory-service.ts capture()/foldCapture()",
+      "tests": [
+        {
+          "path": "test/memory-strategy-per-turn.test.ts",
+          "caseOrAssertion": "'per-turn via oneShot sends the extraction prompt + the exact user/reply framing' AND 'per-turn swallows extraction failures and captures nothing' AND 'per-turn does not capture when the model says NONE'",
+          "provesClaim": "the exact prompt text and framing sent to the LLM, and that both a failed call and a NONE response both result in zero facts captured -- direct confirmation of the fail-closed-on-extraction-error semantics",
+          "doesNotProve": "that the prompt's provenance constraint is actually honored by a real LLM; this is inherently a live-model-behavior claim no static test can fully prove"
+        }
+      ],
+      "failureSemantics": "On extraction failure, no facts are captured for that burst (silent no-op); this is fail-closed for capture (nothing wrongly saved) at the cost of fail-open for durability (a real fact may simply be lost with no retry).",
+      "sourceNativeStatus": "QM_WIRES_AND_USES_THIS_MECHANISM_AS_DEFAULT_STRATEGY",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND",
+      "ownerSearchEvidence": {
+        "queries": [
+          "MemoryStrategy|MemoryService scoped to EXTENSIONS/"
+        ],
+        "rootsSearched": [
+          "EXTENSIONS/"
+        ],
+        "result": "No CVF prompt-engineering artifact for automatic fact extraction with this specific provenance constraint was found."
+      },
+      "deltaBeyondCvf": "A concrete, adoptable prompt-design recipe with an explicit PROVENANCE rule distinguishing user-stated vs assistant-inferred facts.",
+      "practicalBenefit": "Directly reusable prompt text/pattern if CVF ever implements automatic fact extraction from conversation transcripts.",
+      "evidenceConfidence": "HIGH",
+      "evidenceConfidenceReason": "Full prompt text read verbatim from source and its exact framing confirmed test-side; this is a documentation-level claim about the prompt's content and its failure-path wiring, not a claim about live LLM compliance.",
+      "terminalValueDisposition": "ADAPT_CANDIDATE",
+      "nextActionTrigger": "Reviewer input only; applicable if/when CVF designs an automatic memory-capture feature that uses an LLM extraction step."
+    },
+    {
+      "mechanismId": "M6-MEMORABLE-ENV-ALLOWLIST-SECRET-BOUNDARY",
+      "userAgentOutcome": "Spawning the external 'memorable' CLI gets a strict baseline-allowlisted environment by default and never the full process environment, but an operator who explicitly opts a sensitive variable name into a provider's own `passEnv` list can forward that variable's raw value under its own name, contradicting the source comment's unqualified claim.",
+      "sourcePin": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+      "producer": {
+        "path": "src/memory/memorable/config.ts",
+        "symbol": "childEnv()",
+        "lineOrSection": "43-50"
+      },
+      "f3Correction": "The v1 audit's practicalBenefit/deltaBeyondCvf text implicitly endorsed the source comment's claim that 'DATABASE_URL itself never crosses' as an unqualified security property. This is corrected: `childEnv(env, passEnv)` builds its allowlist as `[...BASE_ENV_ALLOWLIST, ...passEnv]` at line 45, iterating a SINGLE combined list with no distinction in how baseline names versus operator-supplied passEnv names are treated -- for ANY name in that combined list, `if (env[name] !== undefined) out[name] = env[name]` copies the value under its OWN name. The comment 'DATABASE_URL itself never crosses' is true only for the specific case where 'DATABASE_URL' is NOT itself listed in BASE_ENV_ALLOWLIST or in the operator's passEnv array (the baseline array indeed omits it, relying instead on the explicit remap at line 47: `if (!out.MEMORABLE_DB_URL && env.DATABASE_URL) out.MEMORABLE_DB_URL = env.DATABASE_URL`). But passEnv() at lines 76-81 validates candidate names ONLY against `ENV_NAME = /^[A-Z][A-Z0-9_]*$/` with no deny-list, no special-case rejection of 'DATABASE_URL', and no cross-check against the values BASE_ENV_ALLOWLIST already remaps specially. An operator who writes `passEnv: [\"DATABASE_URL\"]` in a provider config therefore causes `out.DATABASE_URL = env.DATABASE_URL` to be set directly at line 45, under its own literal name, before the separate conditional MEMORABLE_DB_URL fallback, which runs after the loop; a pre-existing truthy MEMORABLE_DB_URL is retained. This is a genuine, source-confirmed contradiction between the code comment's unqualified claim and the code's actual behavior under a realistic operator-configuration input, not merely a theoretical edge case: passEnv exists specifically so operators can extend the allowlist, and nothing in the validation layer stops them from choosing a name the baseline path was designed to specially remap instead of pass through raw.",
+      "verifier": {
+        "path": "src/memory/memorable/config.ts",
+        "lineOrSection": "76-81",
+        "checkDescription": "passEnv() validates every operator-declared extra env name against ENV_NAME=/^[A-Z][A-Z0-9_]*$/, throwing on any non-conforming name -- 'DATABASE_URL' conforms and is accepted without further restriction",
+        "failureResult": "throws synchronously at config-parse time only for a malformed NAME (lowercase, invalid characters), never for a semantically-sensitive-but-well-formed name like DATABASE_URL"
+      },
+      "nonTestConsumer": {
+        "path": "src/memory/provider-factory.ts",
+        "lineOrSection": "50-60",
+        "invocationLink": "createConfiguredMemoryService passes provider.env (the already-allowlisted object from parseMemorableProvider) into createMemorableMemoryProvider, which threads it into every spawn() call in inject.ts and relay.ts"
+      },
+      "integrationLink": "provider-config.ts parseMemoryProviderConfig -> memorable/config.ts parseMemorableProvider -> provider-factory.ts createConfiguredMemoryService -> memorable/provider.ts -> memorable/inject.ts + memorable/relay.ts spawn()",
+      "tests": [
+        {
+          "path": "test/memory-provider-config.test.ts",
+          "caseOrAssertion": "'provider config accepts a memorable provider with an allow-listed child environment'",
+          "provesClaim": "confirms the BASELINE remap: with env={DATABASE_URL:'postgres://qm', ...} and NO 'DATABASE_URL' in passEnv, provider.env ends up with MEMORABLE_DB_URL='postgres://qm' and does NOT contain a DATABASE_URL key at all -- this specific test scenario's comment IS accurate.",
+          "doesNotProve": "the operator-opt-in scenario (passEnv explicitly including 'DATABASE_URL' or another sensitive name like 'ANTHROPIC_API_KEY') is never exercised by this or any other test in the 41-path reconciled set; the corrected claim above is SOURCE_TRACE (a structural reading of the shared for-loop and the unrestricted ENV_NAME regex), not TEST_ASSERTION_READ, for the opt-in case specifically."
+        },
+        {
+          "path": "test/memorable-relay.test.ts",
+          "caseOrAssertion": "'relayRecord passes the environment it was given and nothing else'",
+          "provesClaim": "relayRecord() itself (a separate function, downstream of childEnv's already-built env object) does not leak the AMBIENT process.env.QM_SECRET into the child -- this is a different, narrower guarantee about relayRecord's own spawn() call, not about childEnv's allowlist-construction logic.",
+          "doesNotProve": "anything about childEnv's passEnv handling; this test passes its own explicit env object directly, bypassing parseMemorableProvider/childEnv entirely"
+        }
+      ],
+      "failureSemantics": "Invalid passEnv NAME FORMAT is a fail-closed config-time error (throw); a well-formed but sensitive NAME CHOICE (like DATABASE_URL) is accepted with no warning or restriction, and its value is forwarded verbatim under its own name.",
+      "sourceNativeStatus": "QM_WIRES_AND_USES_THIS_MECHANISM",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND",
+      "ownerSearchEvidence": {
+        "queries": [
+          "No CVF subprocess-spawn-with-env-allowlist owner searched directly; scoped EXTENSIONS/ search for MemoryService/MemoryStrategy/withAbort found no adjacent subprocess-spawn memory provider"
+        ],
+        "rootsSearched": [
+          "EXTENSIONS/"
+        ],
+        "result": "OWNER_NOT_FOUND -- bounded to the memory-domain search terms used elsewhere in this audit; a broader general 'child_process spawn env allowlist' search across all of CVF was not performed and would require a separate, differently-scoped work order to claim negatively."
+      },
+      "deltaBeyondCvf": "The env-allowlist recipe itself remains a reusable pattern for the documented threat of leaking the whole parent environment to a spawned external CLI, but the specific 'a named remap variable can also be independently opted into raw passthrough with no cross-check' gap is now the more precise, actionable delta: any CVF implementation of a similar allowlist-plus-remap pattern should explicitly exclude remapped-variable names from the operator-extensible passEnv list, or warn when they collide.",
+      "practicalBenefit": "Reusable recipe with a corrected caveat: if CVF ever spawns an external CLI with an env-allowlist-plus-remap design, this exact gap (a remapped source variable can also be independently passEnv'd raw) is the specific defect class to test for and close.",
+      "evidenceConfidence": "MEDIUM",
+      "evidenceConfidenceReason": "The corrected source-level claim (the shared for-loop, the unrestricted ENV_NAME regex, and the absence of any cross-check against BASE_ENV_ALLOWLIST's specially-remapped names) is HIGH confidence as a structural reading of the exact three functions involved. Confidence is held at MEDIUM overall because: (a) no test in the 41-path reconciled set exercises the specific operator-opt-in scenario either way, so this remains SOURCE_TRACE/INFERRED_FROM_SOURCE rather than TEST_ASSERTION_READ for the corrected claim itself, and (b) the CVF owner-search remains scoped to memory-domain terms only, per the original v1 caveat.",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Reopen with (1) a bounded live/unit test exercising passEnv:['DATABASE_URL'] against childEnv() to convert this from SOURCE_TRACE to TEST_ASSERTION_READ or TEST_CONFIRMED, and (2) a dedicated child_process/spawn env-allowlist owner search across all of CVF, before treating either the original or the corrected claim as fully settled."
+    },
+    {
+      "mechanismId": "M7-MCP-MEMORY-PROVIDER-URL-PRIVATE-HOST-ALLOWLIST",
+      "userAgentOutcome": "An operator cannot point an MCP memory provider at an arbitrary HTTP URL; only HTTPS or a small set of recognized private-network HTTP host patterns are accepted.",
+      "sourcePin": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+      "producer": {
+        "path": "src/memory/provider-config.ts",
+        "symbol": "privateMcpUrl()",
+        "lineOrSection": "69-87"
+      },
+      "verifier": {
+        "path": "src/memory/provider-config.ts",
+        "lineOrSection": "77-85",
+        "checkDescription": "protocol must be https:, OR http: with hostname in {localhost, 127.0.0.1} or ending in .internal/.flycast/.local; username/password/hash in the URL are always rejected regardless of protocol",
+        "failureResult": "throws 'must use HTTPS or a recognized private HTTP host'"
+      },
+      "nonTestConsumer": {
+        "path": "src/memory/provider-config.ts",
+        "lineOrSection": "152",
+        "invocationLink": "parseMemoryProviderConfig calls privateMcpUrl(raw.url, ...) for every mcp-type provider entry before constructing McpMemoryProviderConfig"
+      },
+      "integrationLink": "provider-config.ts (config-load boundary) -> provider-factory.ts createConfiguredMemoryService -> mcp-memory-provider.ts createMcpMemoryProvider -> mcp/mcp-client.ts (outside 19-file target set)",
+      "tests": [
+        {
+          "path": "test/memory-provider-config.test.ts",
+          "caseOrAssertion": "'provider config rejects unknown providers and public cleartext MCP URLs'",
+          "provesClaim": "a public-hostname HTTP URL (example.com) is rejected with the exact expected error message at config-parse time",
+          "doesNotProve": "coverage of every allowed private-host suffix pattern (.internal/.flycast/.local) individually; only the localhost-style default value and one rejection case are exercised"
+        }
+      ],
+      "failureSemantics": "Fail-closed at config-parse time with a synchronous throw; no partial/degraded acceptance of an insecure URL.",
+      "sourceNativeStatus": "QM_WIRES_AND_USES_THIS_MECHANISM",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND",
+      "ownerSearchEvidence": {
+        "queries": [
+          "MemoryService|memoryRead|MEMORY_FILE|MemoryStrategy scoped to EXTENSIONS/"
+        ],
+        "rootsSearched": [
+          "EXTENSIONS/"
+        ],
+        "result": "No comparable URL-scheme/host allowlist function found among memory-domain matches."
+      },
+      "deltaBeyondCvf": "A specific, narrow allowlist recipe for the recurring 'internal service URL configured by an operator' problem; the private-host suffix list is a concrete, copyable detail.",
+      "practicalBenefit": "Reusable validation-function recipe if CVF ever accepts an operator-supplied internal-service URL for a similar external-tool integration.",
+      "evidenceConfidence": "MEDIUM",
+      "evidenceConfidenceReason": "Source read HIGH confidence; test confirms the negative case (public host rejected) but not every positive private-host pattern; CVF owner search bounded to memory-domain terms.",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Reopen with a broader CVF-wide URL/host allowlist owner search if a concrete integration surface is proposed."
+    },
+    {
+      "mechanismId": "M8-KEYED-QUEUE-PER-SCOPE-SERIALIZATION",
+      "userAgentOutcome": "Concurrent capture/replace calls for the SAME scope are serialized in submission order without blocking calls to a DIFFERENT scope.",
+      "sourcePin": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+      "producer": {
+        "path": "src/util/async.ts",
+        "symbol": "createKeyedQueue()",
+        "lineOrSection": "24-39"
+      },
+      "verifier": {
+        "path": "test/util-async.test.ts",
+        "lineOrSection": "13-100",
+        "checkDescription": "five distinct assertions: strict same-key ordering, independent-key interleaving, rejection-does-not-break-chain, post-drain continuation, and no-lost-op-at-drain-race",
+        "failureResult": "N/A -- these are positive assertions, all read and confirmed present"
+      },
+      "nonTestConsumer": {
+        "path": "src/memory/memory-service.ts",
+        "lineOrSection": "126, 133, 151, 162, 169",
+        "invocationLink": "createMemoryService wraps capture/replace/readHead/replaceIfRevision in perScope(scopeId, ...) built from createKeyedQueue<ScopeId>()"
+      },
+      "integrationLink": "util/async.ts createKeyedQueue -> memory-service.ts createMemoryService (in-memory/workspace-backed) and strategies/scratch-promote.ts rewriteMarker/capture (independently instantiated per module)",
+      "tests": [
+        {
+          "path": "test/util-async.test.ts",
+          "caseOrAssertion": "all 5 createKeyedQueue tests (lines 13-100)",
+          "provesClaim": "the generic queue's ordering/interleaving/error/drain-race contract in isolation with synthetic async functions",
+          "doesNotProve": "that memory-service.ts's specific use of this queue actually prevents an observed data race in a real capture/replace scenario -- test/memory.test.ts's compare-and-set test (read in this rework) exercises a DIFFERENT concurrency guarantee (replaceIfRevision's optimistic lock), not this queue's serialization specifically"
+        }
+      ],
+      "failureSemantics": "A rejection from one queued op does not break the chain for subsequent ops on the same key (explicitly tested); this is important because memory-service.ts's capture() relies on this to keep working after a failed write.",
+      "sourceNativeStatus": "QM_WIRES_AND_USES_THIS_MECHANISM_AS_CORE_CONCURRENCY_PRIMITIVE",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND",
+      "ownerSearchEvidence": {
+        "queries": [
+          "MemoryService|MemoryStrategy scoped to EXTENSIONS/ (createKeyedQueue itself not separately searched by name in this pass)"
+        ],
+        "rootsSearched": [
+          "EXTENSIONS/"
+        ],
+        "result": "No per-key async-serialization queue utility was encountered in the bounded memory-domain search; a dedicated search for 'createKeyedQueue' or an equivalent per-key mutex utility by name was not separately run in this pass and would be needed before a stronger claim."
+      },
+      "deltaBeyondCvf": "A small, generically useful concurrency primitive (a per-key promise-chain mutex) with 5 already-written focused tests covering edge cases.",
+      "practicalBenefit": "If CVF ever needs to serialize async operations by a string/object key without a full lock manager, this is a compact, already-tested reference implementation.",
+      "evidenceConfidence": "MEDIUM",
+      "evidenceConfidenceReason": "Source and its own direct unit tests read in full (HIGH for what it does); CVF owner-search for this specific narrow utility was not run by its own name.",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Reopen with a dedicated CVF-wide search for an existing per-key async serialization utility before proposing adoption."
+    },
+    {
+      "mechanismId": "M9-PROVIDER-ROUTER-PER-ROUTE-FAIL-OPEN-CLOSED",
+      "userAgentOutcome": "An operator can configure some memory providers to silently degrade (fail-open, return empty) on error while others in the same deployment hard-fail (fail-closed), per route.",
+      "sourcePin": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+      "producer": {
+        "path": "src/memory/provider-router.ts",
+        "symbol": "createRoutedMemoryService()",
+        "lineOrSection": "42-96"
+      },
+      "verifier": {
+        "path": "src/memory/provider-config.ts",
+        "lineOrSection": "182-183",
+        "checkDescription": "route.failOpen defaults to (provider !== 'default') -- the built-in default provider fails closed by default, any additional configured provider fails open by default, both overridable per route",
+        "failureResult": "N/A -- this is a default-value policy, not an error path itself"
+      },
+      "nonTestConsumer": {
+        "path": "src/memory/provider-router.ts",
+        "lineOrSection": "46-55, 69-79, 85-94",
+        "invocationLink": "recall/capture/query each independently check route.failOpen inside their own try/catch around providerFor(route).<op>(...)"
+      },
+      "integrationLink": "provider-config.ts (default-value policy) -> provider-router.ts createRoutedMemoryService -> provider-factory.ts createConfiguredMemoryService (assembly point)",
+      "tests": [
+        {
+          "path": "test/memory-provider-router.test.ts",
+          "caseOrAssertion": "'external recall failures degrade to the remaining provider' AND 'external capture failures degrade to the remaining provider'",
+          "provesClaim": "a failOpen:true broken provider's error is caught and logged via onError, degrading to the working provider's result (recall) or continuing (capture, with the working provider's write confirmed to have landed); a failOpen:false broken provider's error propagates via assert.rejects instead",
+          "doesNotProve": "N/A -- both fail-open and fail-closed semantics are directly and unambiguously test-confirmed"
+        },
+        {
+          "path": "test/memory-provider-unreachable.test.ts",
+          "caseOrAssertion": "'wiring: an unreachable fail-open MCP memory provider still serves turns via the notebook floor'",
+          "provesClaim": "corroborates the same fail-open semantics at the full app.turn() integration level, not just the router-unit level",
+          "doesNotProve": "N/A"
+        },
+        {
+          "path": "test/e2e/memorable-live.e2e.test.ts",
+          "caseOrAssertion": "'a read-only scope refuses capture; the route fails open and the notebook is unaffected' (source-read only, live test skipped in this environment)",
+          "provesClaim": "corroborates the same fail-open pattern for the memorable provider specifically at the live-service level",
+          "doesNotProve": "execution-confirmed in this pass; TEST_ASSERTION_READ only"
+        }
+      ],
+      "failureSemantics": "capture() specifically takes Math.max(...counts) across all routes rather than summing -- the router test's 'notebook still wrote' assertion confirms the working route's write is not masked by a co-occurring failOpen:true failure from a different route.",
+      "sourceNativeStatus": "QM_WIRES_AND_USES_THIS_MECHANISM",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND",
+      "ownerSearchEvidence": {
+        "queries": [
+          "MemoryService|MemoryStrategy scoped to EXTENSIONS/"
+        ],
+        "rootsSearched": [
+          "EXTENSIONS/"
+        ],
+        "result": "No CVF multi-provider fan-out router with per-route fail-open/closed defaults was found."
+      },
+      "deltaBeyondCvf": "A specific default-value design decision (built-in provider fails closed, add-on providers fail open, by default) now backed by three independent layers of test evidence (unit, integration, live-service-source).",
+      "practicalBenefit": "If CVF ever fans a single logical operation out to multiple backend providers, this default-asymmetry convention is a concrete adoptable policy with strong test-level precedent to point to.",
+      "evidenceConfidence": "HIGH",
+      "evidenceConfidenceReason": "Full source read of both the default-value assignment and its three consumption sites, plus three independent test files now read confirming the exact behavior at unit, integration, and (source-read) live-service layers.",
+      "terminalValueDisposition": "ADAPT_CANDIDATE",
+      "nextActionTrigger": "Reviewer input only; applicable if/when CVF designs a multi-backend fan-out for any service, not limited to memory."
+    }
+  ],
+  "cvfOwnerSearches": [
+    {
+      "query": "withAbort|AbortSignal",
+      "roots": [
+        "EXTENSIONS/ (repo-root rg timed out on full-repo scope; rescoped to EXTENSIONS/ after two 20s timeouts)"
+      ],
+      "resultSummary": "30 matches, all LLM-provider-call/execution-runtime cancellation concerns; none is a durable per-scope memory-notebook service",
+      "disposition": "NO_MATCHING_OWNER_WITHIN_SEARCHED_ROOTS"
+    },
+    {
+      "query": "MemoryService|memoryRead|MEMORY_FILE|MemoryStrategy",
+      "roots": [
+        "EXTENSIONS/"
+      ],
+      "resultSummary": "3 matches: 2 compiled unrelated Next.js chunks, 1 real source file (memory-readout-eligibility-policy.ts, read in full) -- a pure eligibility-decision function with no I/O, no backend, no producer/consumer wiring comparable to QM's MemoryService",
+      "disposition": "NO_MATCHING_OWNER_WITHIN_SEARCHED_ROOTS"
+    },
+    {
+      "query": "docs/**/memory*",
+      "roots": [
+        "docs/"
+      ],
+      "resultSummary": "2 registry entries under docs/corpus-intelligence/registry/entries/ pointing to governed CONTRACT/schema TypeScript files -- typed contract definitions for a memory consolidation CONTROL PLANE, not an executing storage/strategy runtime",
+      "disposition": "ADJACENT_BUT_DIFFERENT_OWNER_CLASS_NOT_A_MATCH"
+    }
+  ],
+  "overlapAndNoveltyClassification": [
+    {
+      "sourceItemOrGroup": "M1/M2 memory-read cancellation gap",
+      "existingCvfOwnerSurfaceChecked": "OWNER_NOT_FOUND (withAbort/AbortSignal search)",
+      "overlapDisposition": "OWNER_SURFACE_NOT_FOUND",
+      "noveltyOrDelta": "Entire mechanism and its gap are new relative to CVF",
+      "action": "DEFER_WITH_TRIGGER"
+    },
+    {
+      "sourceItemOrGroup": "M3 scratch-promote timed deletion (F2 corrected control flow)",
+      "existingCvfOwnerSurfaceChecked": "OWNER_NOT_FOUND",
+      "overlapDisposition": "OWNER_SURFACE_NOT_FOUND",
+      "noveltyOrDelta": "Adverse/cautionary pattern, now precisely test-confirmed",
+      "action": "REJECT_NO_ACTIONABLE_VALUE"
+    },
+    {
+      "sourceItemOrGroup": "M4 consolidation degrade circuit breaker (F2 corrected reachability)",
+      "existingCvfOwnerSurfaceChecked": "OWNER_NOT_FOUND",
+      "overlapDisposition": "OWNER_SURFACE_NOT_FOUND",
+      "noveltyOrDelta": "Reusable safe-degradation recipe, now correctly scoped to the unguarded-backend case only",
+      "action": "ADAPT_CANDIDATE"
+    },
+    {
+      "sourceItemOrGroup": "M5 provenance-guarded extraction prompt",
+      "existingCvfOwnerSurfaceChecked": "OWNER_NOT_FOUND",
+      "overlapDisposition": "OWNER_SURFACE_NOT_FOUND",
+      "noveltyOrDelta": "Reusable prompt-text pattern, not merely a concept",
+      "action": "ADAPT_CANDIDATE"
+    },
+    {
+      "sourceItemOrGroup": "M6 memorable env-allowlist (F3 corrected: passEnv opt-in gap)",
+      "existingCvfOwnerSurfaceChecked": "OWNER_NOT_FOUND (bounded to memory-domain search terms only)",
+      "overlapDisposition": "OWNER_SURFACE_NOT_FOUND_SCOPE_LIMITED",
+      "noveltyOrDelta": "A specific defect-class delta (remapped variable also independently passEnv-able raw) replaces the v1 audit's unqualified 'never crosses' framing",
+      "action": "DEFER_WITH_TRIGGER"
+    },
+    {
+      "sourceItemOrGroup": "M7 private-host URL allowlist",
+      "existingCvfOwnerSurfaceChecked": "OWNER_NOT_FOUND_SCOPE_LIMITED",
+      "overlapDisposition": "OWNER_SURFACE_NOT_FOUND_SCOPE_LIMITED",
+      "noveltyOrDelta": "Plausible reusable recipe but negative claim is scope-limited",
+      "action": "DEFER_WITH_TRIGGER"
+    },
+    {
+      "sourceItemOrGroup": "M8 keyed queue",
+      "existingCvfOwnerSurfaceChecked": "OWNER_NOT_FOUND_SCOPE_LIMITED",
+      "overlapDisposition": "OWNER_SURFACE_NOT_FOUND_SCOPE_LIMITED",
+      "noveltyOrDelta": "Compact, already-tested concurrency primitive pending a by-name search",
+      "action": "DEFER_WITH_TRIGGER"
+    },
+    {
+      "sourceItemOrGroup": "M9 provider-router fail-open/closed default",
+      "existingCvfOwnerSurfaceChecked": "OWNER_NOT_FOUND",
+      "overlapDisposition": "OWNER_SURFACE_NOT_FOUND",
+      "noveltyOrDelta": "Concrete adoptable default-value convention, now backed by 3 independent test layers",
+      "action": "ADAPT_CANDIDATE"
+    },
+    {
+      "sourceItemOrGroup": "Program coordination contract",
+      "existingCvfOwnerSurfaceChecked": "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md",
+      "overlapDisposition": "CONFIRMED_EXISTING",
+      "noveltyOrDelta": "No new coordination owner needed",
+      "action": "REUSE_EXISTING_OWNER"
+    }
+  ],
+  "dispositionCounts": {
+    "ADAPT_CANDIDATE": 3,
+    "DEFER_WITH_TRIGGER": 5,
+    "REJECT_NO_ACTIONABLE_VALUE": 1,
+    "CONFIRMED_EXISTING_NO_ADDITION": 0,
+    "BLOCKED_WITH_REASON": 0,
+    "totalMechanismRecords": 9,
+    "idList": [
+      "M1-MEMORY-READ-WAIT-ONLY-CANCELLATION",
+      "M2-MEMORY-TOOL-READ-FULLY-UNCANCELLABLE",
+      "M3-SCRATCH-PROMOTE-TIMED-INFORMATION-LOSS",
+      "M4-CONSOLIDATION-DEGRADED-CIRCUIT-BREAKER",
+      "M5-PROVENANCE-GUARDED-FACT-EXTRACTION-PROMPT",
+      "M6-MEMORABLE-ENV-ALLOWLIST-SECRET-BOUNDARY",
+      "M7-MCP-MEMORY-PROVIDER-URL-PRIVATE-HOST-ALLOWLIST",
+      "M8-KEYED-QUEUE-PER-SCOPE-SERIALIZATION",
+      "M9-PROVIDER-ROUTER-PER-ROUTE-FAIL-OPEN-CLOSED"
+    ],
+    "reconciliationNote": "9 mechanism records = 3 ADAPT_CANDIDATE + 5 DEFER_WITH_TRIGGER + 1 REJECT_NO_ACTIONABLE_VALUE + 0 CONFIRMED_EXISTING + 0 BLOCKED. Disposition counts and ID list are unchanged from v1 in aggregate; the rework corrected the qualitative descriptions (M3, M4, M6) and evidence bases (H1, H2, H6, and test citations across all nine records) without changing any terminal disposition value, since none of the five reviewer findings (F1-F5) argued for a different terminal disposition -- F4 explicitly required re-evaluating the three ADAPT_CANDIDATE items after comparison rather than preserving them by default, and that re-evaluation (documented per-mechanism above) confirms ADAPT_CANDIDATE remains the correct disposition for M4, M5, and M9 on the corrected evidence, not merely carried forward unchanged."
+  },
+  "exclusionsUnknownsContradictions": {
+    "declaredExclusions": "All QM paths outside src/memory, except the mandatory dependency triad (primitives.ts memory-read region, agent-tools.ts memory-read call sites, util/async.ts) and the 41 test paths reconciled in testDiscoveryLedger.",
+    "unknowns": [
+      "Whether the M6 operator-opt-in passEnv:['DATABASE_URL'] scenario is exercised by any test outside the 41-path reconciled set -- none was found within it.",
+      "Whether M7/M8's OWNER_NOT_FOUND claims survive a CVF-wide (not memory-domain-scoped) search, since the repo-root rg search timed out twice and all owner searches in this audit were rescoped to EXTENSIONS/ and docs/ only.",
+      "Runtime/live behavior of any mechanism -- this audit is 100% static source and test-source reading; no code was executed. Several tests (postgres-memory-service.test.ts, the three e2e memorable test files) were read but SKIPPED at would-be-run time in this environment (no DATABASE_URL/CLI/API credentials configured), so their assertions are TEST_ASSERTION_READ, not execution-confirmed."
+    ],
+    "contradictions": "The prior v1 audit's M3 and M4 mechanism descriptions directly contradicted the actual control flow and are corrected in this rework (see f2Correction fields); this is disclosed here as an intra-audit contradiction-and-correction, not a contradiction between the packet and observed source (no such contradiction was found). No other contradiction was found between the packet's declared upstream-freshness delta summary and observed source.",
+    "remainingQmRegions": "The entire QM repository outside src/memory/ (19 files) and the three named dependency files remains INCOMPLETE and unaudited. Within src/memory itself, all 19 target blobs are READ (terminal); of the 41 reconciled test paths, 39 are fully read or test-assertion-read and 2 are justified exclusions -- 0 remain undispositioned. Several read tests (Postgres and e2e) were not executed in this environment; their evidence label is TEST_ASSERTION_READ, distinct from an executed pass/fail result."
+  },
+  "validationCommandsAndResults": [
+    {
+      "command": "python -m json.tool docs/audits/CVF_QM_RUNTIME_VALUE_R4_2026-09-14.json",
+      "purpose": "validate this file parses as JSON",
+      "priorPlaceholderHistory": "TO_BE_RUN_AFTER_FILE_WRITE_AND_RECORDED_IN_MARKDOWN_RETURN",
+      "result": "exit 0; JSON parsed successfully after the R4-REPAIR-2026-09-14 edits (2 new rows, 39 blobSha256 values, 36 readSpans additions, 2 extended readSpans, reconciliation-count correction, and this placeholder replacement)",
+      "runAt": "R4-REPAIR-2026-09-14, final validation pass"
+    },
+    {
+      "command": "git status --short --untracked-files=all",
+      "purpose": "confirm only the two owned outputs changed",
+      "priorPlaceholderHistory": "TO_BE_RUN_AFTER_FILE_WRITE_AND_RECORDED_IN_MARKDOWN_RETURN",
+      "result": "exactly two lines: '?? docs/audits/CVF_QM_RUNTIME_VALUE_R4_2026-09-14.json' and '?? docs/reviews/CVF_QM_RUNTIME_VALUE_R4_WORKER_RETURN_2026-09-14.md'; no other path in the repository changed",
+      "runAt": "R4-REPAIR-2026-09-14, final validation pass"
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "purpose": "confirm workspace HEAD unchanged",
+      "priorPlaceholderHistory": "TO_BE_RUN_AFTER_FILE_WRITE_AND_RECORDED_IN_MARKDOWN_RETURN",
+      "result": "bdd8329aa7d9d61d7fb8cc98de6def13e6697647",
+      "runAt": "R4-REPAIR-2026-09-14, final validation pass"
+    },
+    {
+      "command": "git -C .private_reference/source_mirrors/yc-software__qm rev-parse HEAD",
+      "purpose": "confirm mirror HEAD unchanged",
+      "priorPlaceholderHistory": "TO_BE_RUN_AFTER_FILE_WRITE_AND_RECORDED_IN_MARKDOWN_RETURN",
+      "result": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b (matches the required pin exactly)",
+      "runAt": "R4-REPAIR-2026-09-14, final validation pass"
+    },
+    {
+      "command": "git -C .private_reference/source_mirrors/yc-software__qm status --short",
+      "purpose": "confirm mirror remains clean",
+      "priorPlaceholderHistory": "TO_BE_RUN_AFTER_FILE_WRITE_AND_RECORDED_IN_MARKDOWN_RETURN",
+      "result": "empty output, exit 0; mirror worktree clean throughout the repair session",
+      "runAt": "R4-REPAIR-2026-09-14, final validation pass"
+    },
+    {
+      "command": "python governance/compat/run_worker_return_fast_gate.py",
+      "purpose": "required worker-return fast gate",
+      "priorPlaceholderHistory": "TO_BE_RUN_AFTER_FILE_WRITE_AND_RECORDED_IN_MARKDOWN_RETURN",
+      "result": "FAIL, exit 1 (with PYTHONIOENCODING=utf-8 set to work around a Windows cp1252-console UnicodeEncodeError unrelated to either owned file -- neither file contains a replacement/mangled character). The single real failure is the reviewer-fast governance gate's 'active session state compatibility' check: AGENT_HANDOFF_V60_2026-09-08.md's recorded HEAD SHA block does not contain the current workspace HEAD bdd8329a. AGENT_HANDOFF_V60_2026-09-08.md is explicitly outside this worker's write ownership (the paired work order's Write Ownership section forbids editing session state or handoff files), so this is reported as an outside-authority blocker per the work order's Stop Conditions, not silently worked around or fixed. All other checks in the gate chain PASS, including corpus scan registry aggregate drift, epistemic process packet, worker-return quality gate, and 67 of 68 reviewer-fast sub-checks.",
+      "runAt": "R4-REPAIR-2026-09-14, final validation pass"
+    },
+    {
+      "command": "python governance/compat/check_absorption_blindspot_control_presence.py --base fd231762b9cae0bc425e5fa61ac5fd9799ff5bff --head HEAD --enforce",
+      "purpose": "R1 output acceptance lesson: bounded absorption blind-spot control presence check",
+      "result": "PASS, exit 0: 'COMPLIANT - all in-scope governed artifacts carry required control blocks.' (3 governed artifacts with absorption source references checked)",
+      "runAt": "R4-REPAIR-2026-09-14, final validation pass"
+    },
+    {
+      "command": "python governance/compat/check_corpus_completeness_report_integrity.py --base fd231762b9cae0bc425e5fa61ac5fd9799ff5bff --head HEAD --enforce",
+      "purpose": "R1 output acceptance lesson: bounded corpus completeness and report integrity check",
+      "result": "PASS, exit 0: 'COMPLIANT - corpus completeness and report integrity evidence is aligned.' (28 changed paths, 36 checked paths, 0 missing, 0 violations)",
+      "runAt": "R4-REPAIR-2026-09-14, final validation pass"
+    },
+    {
+      "command": "python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base fd231762b9cae0bc425e5fa61ac5fd9799ff5bff --head HEAD --enforce",
+      "purpose": "R1 output acceptance lesson: bounded corpus-to-knowledge-map reconciliation check",
+      "result": "PASS, exit 0: 'COMPLIANT - knowledge-map evidence is aligned.' (28 changed paths, 38 checked paths, 0 missing, 0 violations)",
+      "runAt": "R4-REPAIR-2026-09-14, final validation pass"
+    }
+  ],
+  "r4RepairPlaceholderNote": "R4-REPAIR-2026-09-14: all six validationCommandsAndResults entries above previously carried resultPlaceholder: 'TO_BE_RUN_AFTER_FILE_WRITE_AND_RECORDED_IN_MARKDOWN_RETURN' (the readiness review's currentPlaceholderCount=6 finding). Each is now replaced with a real command result; the placeholder text itself is preserved per-row as priorPlaceholderHistory rather than silently deleted. Three additional bounded-check entries (absorption blind-spot, corpus completeness, corpus-to-knowledge-map reconciliation) are appended, matching the work order's 'Output Acceptance Lessons From R1' requirement to run them before return.",
+  "claimBoundary": "Static, source-and-test-grounded evidence packet for 19 blobs under QM's src/memory tree at pin 361a6c0095dcd3d156aca91353f3ffba0bb8b69b, plus a bounded read of the mandatory primitives.ts/agent-tools.ts/async.ts dependency triad and 41 reconciled test paths (39 fully read or test-assertion-read, 2 justified exclusions). No upstream code was executed; several read tests requiring live Postgres/CLI/API credentials were read as source but not run in this environment (TEST_ASSERTION_READ, not execution-confirmed). No CVF runtime, checker, or product source was modified. No candidate is accepted, implemented, or absorbed into CVF by this audit. QM as a whole and the three-repository program remain unread/INCOMPLETE. This packet is evidence for Local's review only; COMPLETE_PENDING_REVIEW means evidence-complete-for-review, not accepted. This is a REWORK of the prior COMPLETE_PENDING_REVIEW submission (SHA-256 70a020e9...c6340e), correcting five reviewer-identified defects (F1-F5) without changing any terminal mechanism disposition.",
+  "localReviewerDecision": {
+    "status": "ACCEPTED_BOUNDED_WITH_EXPLICIT_SCOPE_EXCEPTION",
+    "reviewBaseHead": "bdd8329aa7d9d61d7fb8cc98de6def13e6697647",
+    "workerAuditSha256BeforeLocalRepair": "85a869840c4038b24004183e2fb2b308764d955c910329c7261ae51a3ffa3916",
+    "authorization": "Operator explicitly released R4; continuity commit 7271f4f10 records release after foundation acceptance. Work-order HOLD was stale Local state, not an unauthorized worker action.",
+    "sourceChecks": "One git cat-file --batch verified 39/39 test Git object identities and line counts. Span unions cover all lines for 38; agent-tools covers 213/3237. No source execution.",
+    "scopeException": "Only supplementary test/agent-tools.test.ts is accepted as PARTIAL_READ and moved out of fullyReadTests. Unread remainder stays unknown; no exhaustive test-reading claim. Applies only to this bounded R4 review, not future work orders.",
+    "semanticChecks": [
+      "scratch-promote.ts:198-227",
+      "consolidation.ts:139-166",
+      "memorable/config.ts:39-81"
+    ],
+    "claimCorrections": [
+      "M3 cleanup also runs when the optional promotion branch is not entered; date retention clock does not pause.",
+      "M4 guarded mode requires both optional methods; missing either disables it.",
+      "M6 fallback executes after the allowlist loop, not in an order-dependent loop."
+    ],
+    "comparisonLimit": "Existing memory-readout-eligibility-policy is an eligibility/control-plane owner, not a notebook backend. Bounded owner misses do not establish repository-wide absence. R4 ADAPT candidates remain proposals without a current implementation target.",
+    "gateHistory": "Worker failures retained. Local recheck recorded in paired return/completion.",
+    "runtimeAbsorbed": false,
+    "programStatus": "OPEN_ALL_THREE_REPOS_INCOMPLETE"
+  }
+}

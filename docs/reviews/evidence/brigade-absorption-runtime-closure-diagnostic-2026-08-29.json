@@ -1,0 +1,117 @@
+{
+  "artifact": "brigade-absorption-runtime-closure-diagnostic",
+  "recordedAt": "2026-08-29",
+  "absorptionScope": "BRIGADE-MAO-R1 atomic reservation, abort cascade, completion serialization, and consumer-driven recovery",
+  "operatorCheckpoint": "SATISFIED_BY_OPERATOR_INSTRUCTION_2026-08-29",
+  "maintainabilityBoundary": {
+    "status": "PASS",
+    "focusedTests": "31/31",
+    "fullExecutionPlaneTests": "1981/1981",
+    "typescript": "PASS",
+    "governedFileSizeViolations": 0,
+    "preDispatchChecks": "80/80"
+  },
+  "liveCostControlPilot": {
+    "status": "PASS",
+    "receipt": "docs/reviews/evidence/mao-live-t1-comparative-receipt-2026-08-29.json",
+    "provider": "alibaba",
+    "model": "qwen3.7-plus",
+    "providerCallsSpent": 2,
+    "providerCallCeiling": 4,
+    "directProviderCalls": 1,
+    "governedMaoProviderCalls": 1,
+    "revisionProviderCalls": 0,
+    "directLatencyMs": 12613,
+    "governedMaoLatencyMs": 12878,
+    "controlLatencyDeltaMs": 265,
+    "controlLatencyDeltaPercent": 2.1,
+    "directReportedTokens": 676,
+    "governedMaoReportedTokens": 747,
+    "reportedTokenDelta": 71,
+    "tokenAttribution": "NOT_CAUSALLY_ATTRIBUTABLE_TO_CONTROL_LAYER_FROM_ONE_STOCHASTIC_SAMPLE; prompts and provider call counts were equal and review/closer execution was local"
+  },
+  "representativeLauncherPilotAttempts": [
+    {
+      "attempt": 1,
+      "stage": "local_runtime_invariant",
+      "class": "ASSERTION_FAILED_BEFORE_RECEIPT",
+      "retryable": false,
+      "userAction": "inspect the named deterministic invariant before one corrected run",
+      "provider": null,
+      "model": null,
+      "httpStatus": null,
+      "latencyMs": null,
+      "traceOrReceipt": null,
+      "safeMessage": "runtime_pilot_invariant_failed",
+      "providerCallsSpent": 0
+    },
+    {
+      "attempt": 2,
+      "stage": "task_graph_compile",
+      "class": "BUDGET_CONCURRENCY_EXCEEDS_CEILING",
+      "retryable": false,
+      "userAction": "align the representative graph with the existing T0 concurrency ceiling before one corrected run",
+      "provider": null,
+      "model": null,
+      "httpStatus": null,
+      "latencyMs": null,
+      "traceOrReceipt": null,
+      "safeMessage": "maxConcurrentRoles 4 exceeded the task-graph pilot ceiling 3",
+      "providerCallsSpent": 0
+    },
+    {
+      "attempt": 3,
+      "stage": "representative_local_runtime",
+      "class": "PASS",
+      "retryable": false,
+      "userAction": "none",
+      "provider": null,
+      "model": null,
+      "httpStatus": null,
+      "latencyMs": 460,
+      "traceOrReceipt": "docs/reviews/evidence/brigade-atomic-delegation-runtime-pilot-2026-08-29.json",
+      "safeMessage": "launcher restart/replay, completion serialization, one parent wake, and leaf-first abort cascade passed",
+      "providerCallsSpent": 0
+    }
+  ],
+  "releaseGateDiagnostic": {
+    "command": "python scripts/run_cvf_release_gate_bundle.py --json",
+    "overall": "FAIL_OUTSIDE_BRIGADE_ABSORPTION_SCOPE",
+    "rerunPerformed": false,
+    "liveGovernanceE2e": "PASS",
+    "providerReadiness": "PASS_CERTIFIED_3",
+    "guardContractTypecheck": "PASS",
+    "failures": [
+      {
+        "stage": "web_build",
+        "class": "TIMEOUT",
+        "retryable": false,
+        "userAction": "diagnose CVF Web build performance under its own owner before any rerun",
+        "safeMessage": "npm run build exceeded the release runner's 900-second timeout"
+      },
+      {
+        "stage": "secrets_scan",
+        "class": "PRIVATE_REFERENCE_MATCHES",
+        "retryable": false,
+        "userAction": "review scanner exclusions and private fixture/mirror posture under the release owner",
+        "safeMessage": "ten matches were reported only under private reference fixtures or source mirrors"
+      },
+      {
+        "stage": "ui_mock_e2e",
+        "class": "TEST_FAILURE",
+        "retryable": false,
+        "userAction": "route two UI mock failures to the CVF Web owner",
+        "safeMessage": "admin RBAC browser context closed and provider-lane certified-count assertion failed"
+      },
+      {
+        "stage": "sot3_release_proof",
+        "class": "MISSING_PREREQUISITE_RECEIPT",
+        "retryable": false,
+        "userAction": "restore or regenerate the governed A4 live receipt under the SOT3 owner before rerun",
+        "safeMessage": "a4_live_receipt_missing_or_unreadable"
+      }
+    ],
+    "claimBoundary": "These repository-wide release failures do not reopen BRIGADE-MAO-R1 semantics or invalidate its independent representative live-use receipt. They block a repository-wide release PASS only."
+  },
+  "secretSafety": "No raw key, bearer token, signed header, grant JSON, or provider request body is stored in this artifact."
+}

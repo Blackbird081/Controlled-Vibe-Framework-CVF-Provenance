@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1788,
+  "stateKey": "systemChainUc04bR1Dispatch20260714",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "b224015f8",
+    "workOrderId": "SCLP-UC04B-R1",
+    "dispatchBaseHead": "97becbd7d",
+    "authPreflight": "DIRECT_NEXTAUTH_CSRF_CALLBACK_SESSION_REQUIRED_BEFORE_LIVE",
+    "proofSourceFreeze": "SHA256_AND_MONOTONIC_LEDGER_REQUIRED",
+    "playwrightInvocationCeiling": 1,
+    "webSubmissionCount": 2,
+    "checkerExecutionCount": 1,
+    "retryCount": 0,
+    "providerCallCount": 0,
+    "positiveCaseId": "positive_developer_docs_check",
+    "negativeCaseId": "negative_reviewer_docs_check",
+    "workerCommitPermission": "FORBIDDEN",
+    "nextAllowedMove": "one no-commit R1 worker execution; no second Playwright command under any outcome",
+    "claimBoundary": "Dispatch authorization only. No current UC-04B Web proof, unified inventory, provider governance, public, production, scale, certification, or user-value claim."
+  }
+}

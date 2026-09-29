@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2393,
+  "stateKey": "gc010ScrR2T1dPendingAgentExecutionNonProductionConsumerPackageExportBoundaryDecisionDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_DECISION_ONLY_PENDING_WORKER_RETURN",
+    "dispatchCommit": "7af7914ee",
+    "predecessorMaterialCommit": "82c64a6f5",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_2026-08-31.md",
+    "workerOutputs": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1D_PENDING_AGENT_EXECUTION_NON_PRODUCTION_CONSUMER_PACKAGE_EXPORT_BOUNDARY_DECISION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "objective": "Select or park the smallest genuine non-production consumer and exact package-export/composition boundary over accepted T1C without implementing it.",
+    "workerBoundary": "One no-commit worker creates exactly the assessment and worker return. All existing source, tests, scripts, routes, packages, workflows and continuity are read-only; provider and external effects are forbidden.",
+    "nextAllowedMove": "Execute the committed T1D work order and return exactly two uncommitted documentation artifacts for independent orchestrator review.",
+    "claimBoundary": "Dispatch only. No consumer, export, runtime construction, route/provider/audit integration, production consumer, distributed safety, public sync, deployment or production authority is opened."
+  }
+}

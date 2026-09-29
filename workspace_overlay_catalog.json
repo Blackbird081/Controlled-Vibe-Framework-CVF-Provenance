@@ -15,6 +15,153 @@
       "reason": "Primary guard-orientation entrypoint used before governed authoring and execution."
     },
     {
+      "artifactId": "workspace-rules-reference",
+      "path": "docs\\reference\\CVF_WORKSPACE_RULES.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-standard",
+        "workspace-boundary"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Canonical workspace topology, bootstrap, and boundary rule set."
+    },
+    {
+      "artifactId": "workspace-profile-tiers-reference",
+      "path": "docs\\reference\\CVF_WORKSPACE_PROFILE_TIERS.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-standard",
+        "workspace-boundary"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Product-facing profile tier map for choosing public-free, paid-user-safe, or operator-local workspace rule packs."
+    },
+    {
+      "artifactId": "workspace-classification-and-usage-guide",
+      "path": "docs\\guides\\CVF_WORKSPACE_CLASSIFICATION_AND_USAGE_GUIDE.md",
+      "artifactClass": "workspace-guide",
+      "selectionTags": [
+        "workspace-standard",
+        "workspace-boundary"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Decision tree and command guide for classifying workspace audience, profile, health, and downstream project state."
+    },
+    {
+      "artifactId": "workspace-paid-user-authoring-guide",
+      "path": "docs\\reference\\CVF_WORKSPACE_PAID_USER_AUTHORING_GUIDE.md",
+      "artifactClass": "reference-guide",
+      "selectionTags": [
+        "paid-user-safe",
+        "agent-authoring"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Public-safe downstream authoring guide for paid-user-safe workspaces without private continuity state."
+    },
+    {
+      "artifactId": "workspace-paid-user-safe-onboarding-flow",
+      "path": "docs\\reference\\CVF_WORKSPACE_PAID_USER_SAFE_ONBOARDING_FLOW.md",
+      "artifactClass": "reference-guide",
+      "selectionTags": [
+        "paid-user-safe",
+        "workspace-onboarding"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Setup and verification flow for paid-user-safe workspaces without private continuity state."
+    },
+    {
+      "artifactId": "downstream-agents-template",
+      "path": "governance\\toolkit\\05_OPERATION\\CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+      "artifactClass": "agent-template",
+      "selectionTags": [
+        "workspace-standard",
+        "downstream-governance"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Reusable downstream agent instruction template generated into new governed projects."
+    },
+    {
+      "artifactId": "workspace-memory-template",
+      "path": "workspace_templates\\CVF_WORKSPACE_MEMORY_TEMPLATE.md",
+      "artifactClass": "workspace-root-template",
+      "selectionTags": [
+        "workspace-standard",
+        "workspace-continuity"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "workspaceRootTarget": "CVF_WORKSPACE_MEMORY.md",
+      "rootMaterializationPolicy": "create-if-missing",
+      "reason": "Workspace-safe equivalent of the provenance session front door for local agent continuity without copying private provenance state."
+    },
+    {
+      "artifactId": "workspace-agent-handoff-template",
+      "path": "workspace_templates\\AGENT_HANDOFF_TEMPLATE.md",
+      "artifactClass": "workspace-root-template",
+      "selectionTags": [
+        "workspace-standard",
+        "workspace-continuity"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "workspaceRootTarget": "AGENT_HANDOFF.md",
+      "rootMaterializationPolicy": "create-if-missing",
+      "reason": "Workspace-safe active handoff template so agents can pass compact task state across sessions."
+    },
+    {
+      "artifactId": "governed-artifact-literal-format-gotchas",
+      "path": "docs\\reference\\CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md",
+      "artifactClass": "reference-checklist",
+      "selectionTags": [
+        "agent-authoring"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Compact checklist for avoiding repeated literal-format checker traps."
+    },
+    {
+      "artifactId": "text-encoding-and-symbol-discipline",
+      "path": "docs\\reference\\CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-standard",
+        "agent-authoring"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Low-cost text and encoding discipline that prevents common cross-machine drift."
+    },
+    {
+      "artifactId": "live-run-diagnostic-standard",
+      "path": "docs\\reference\\archive\\CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-standard",
+        "live-operations"
+      ],
+      "stability": "high",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Reusable diagnostic discipline for live API or provider proof failures; archive-qualified because no active-path copy exists in the current tree."
+    },
+    {
+      "artifactId": "agent-error-learning-philosophy",
+      "path": "docs\\reference\\CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-standard",
+        "agent-authoring"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "manual-reviewed",
+      "reason": "Guidance for turning repeated agent defects into bounded rules without overfitting."
+    },
+    {
       "artifactId": "operational-reference-index",
       "path": "docs\\reference\\CVF_OPERATIONAL_REFERENCE_INDEX_2026-05-23.md",
       "artifactClass": "reference-index",
@@ -103,6 +250,7 @@
       "path": "docs\\reference\\CVF_AGENTS_CRITICAL_REPOSITORY_BOUNDARY_2026-06-23.md",
       "artifactClass": "reference-standard",
       "selectionTags": [
+        "workspace-standard",
         "workspace-premium",
         "repository-boundary"
       ],
@@ -133,6 +281,42 @@
       "stability": "medium",
       "reviewPolicy": "manual-reviewed",
       "reason": "Machine checker for template and skill standard guard."
+    },
+    {
+      "artifactId": "gate-to-role-closeability-standard",
+      "path": "docs\\reference\\CVF_GATE_TO_ROLE_CLOSEABILITY_MACHINE_STANDARD.md",
+      "artifactClass": "reference-standard",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "downstream-machine-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "local-only",
+      "reason": "Canonical ADIF-0057 responsibility-topology contract for operator-local downstream projects."
+    },
+    {
+      "artifactId": "gate-to-role-closeability-checker",
+      "path": "governance\\compat\\check_gate_to_role_closeability.py",
+      "artifactClass": "compat-checker",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "downstream-machine-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "local-only",
+      "reason": "Machine checker with an explicit downstream repository adapter for operator-local projects."
+    },
+    {
+      "artifactId": "adif-0057-entry",
+      "path": "docs\\reference\\agent_defect_intelligence\\entries\\CVF_ADIF-0057.md",
+      "artifactClass": "defect-intelligence-entry",
+      "selectionTags": [
+        "workspace-provenance-local",
+        "downstream-machine-governance"
+      ],
+      "stability": "medium",
+      "reviewPolicy": "local-only",
+      "reason": "Operator-local provenance for the authority-closeability defect and its machine binding."
     },
     {
       "artifactId": "knowledge-absorption-priority-guard",
@@ -232,7 +416,7 @@
     },
     {
       "artifactId": "active-versioned-handoff",
-      "path": "AGENT_HANDOFF_V23_2026-06-26.md",
+      "path": "AGENT_HANDOFF_V59_2026-08-11.md",
       "artifactClass": "continuity-surface",
       "selectionTags": [
         "workspace-provenance-local",
@@ -240,7 +424,7 @@
       ],
       "stability": "volatile",
       "reviewPolicy": "local-only",
-      "reason": "Current active handoff required for private continuity on the operator machine."
+      "reason": "Current active handoff required for private continuity on the operator machine; the sync script resolves the live filename from the bootstrap read model."
     },
     {
       "artifactId": "session-memory-front-door",

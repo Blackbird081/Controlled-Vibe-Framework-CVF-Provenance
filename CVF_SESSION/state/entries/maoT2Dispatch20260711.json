@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1677,
+  "stateKey": "maoT2Dispatch20260711",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "570cd6452",
+    "baseline": "docs/baselines/CVF_GC018_MAO_T2_RISK_BASED_ROLE_RESOLVER_2026-07-11.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_T2_RISK_BASED_ROLE_RESOLVER_2026-07-11.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerOutputs": 4,
+    "nextAllowedMove": "delegated worker captures clean post-sync HEAD, implements MAO-T2 locally, and returns uncommitted material",
+    "claimBoundary": "deterministic local role-admission policy only; no provider, adapter, queue, UI, public, or production claim"
+  }
+}

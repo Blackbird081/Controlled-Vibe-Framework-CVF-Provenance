@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1688,
+  "stateKey": "odvrT0Closure20260712",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_AFTER_REPAIR",
+    "date": "2026-07-12",
+    "materialCommit": "2af788683",
+    "roadmap": "docs/roadmaps/CVF_OPERATOR_DECISION_AND_VALUE_READOUT_ROADMAP_2026-07-12.md",
+    "baseline": "docs/baselines/CVF_GC018_ODVR_T0_SOURCE_OVERLAP_AND_READOUT_CONTRACT_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ODVR_T0_SOURCE_OVERLAP_AND_READOUT_CONTRACT_2026-07-12.md",
+    "completionReview": "docs/reviews/CVF_ODVR_T0_SOURCE_OVERLAP_AND_READOUT_CONTRACT_COMPLETION_2026-07-12.md",
+    "contractFrontDoor": "docs/reference/operator_decision_value_readout/README.md",
+    "nextAllowedMove": "fresh ODVR-T1 GC-018 and source-verified no-commit work-order authoring only",
+    "claimBoundary": "ODVR-T0 docs/schema closure only; no composer, CLI, UI, provider/live proof, state mutation, public-sync, ODVR-T2 value proof, outside-source absorption, or production readiness"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "stateOrder": 2021,
+  "stateKey": "lpci1WebUc01ReleaseReadinessDiscoveryDispatch20260810",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER",
+    "date": "2026-08-10",
+    "batchId": "LPCI1-WEB-UC01-RELEASE-READINESS-DISCOVERY",
+    "authorityToken": "AUTHORIZE_LPCI1_WEB_UC01_RELEASE_READINESS_DISCOVERY_ONLY",
+    "dispatchBaseHead": "d309a60c5",
+    "dispatchCommit": "f187fc0af",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_RELEASE_READINESS_DISCOVERY_2026-08-10.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_RELEASE_READINESS_DISCOVERY_2026-08-10.md",
+    "preDispatchEvidence": "PASS_75_OF_75",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerOutputCount": 2,
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Delegated worker executes the exact repository-local readiness discovery and returns two uncommitted review outputs.",
+    "claimBoundary": "Discovery only; no remediation, mutation, secret/private access, browser/server/provider/network/live, release, deploy, rollback execution, public-sync, push, or worker commit."
+  }
+}

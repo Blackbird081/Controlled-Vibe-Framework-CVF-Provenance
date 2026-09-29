@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2305,
+  "stateKey": "runtimeFindingsRemediationR4Dispatch20260824",
+  "value": "RFR-R4 material-context-manifest remediation is freshly dispatched at material commit 9660fb5a1e1508e6c73931a6056f023cd324cdc9. The paired GC-018 baseline and no-commit work order bind finding F5 to an exact eight-path Model Gateway manifest, deterministic secret-safe canonicalization, fail-closed trace/evidence validation, hermetic proof, and independent review. Dispatch author-fast, pre-dispatch 78/78, and material pre-commit 86/86 passed. No implementation, provider/live call, credential access, network, deployment, public sync or push occurred."
+}

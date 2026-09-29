@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1695,
+  "stateKey": "sot3T1Dispatch20260712",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-12",
+    "materialCommit": "20b70908e",
+    "roadmap": "docs/roadmaps/CVF_SOT_THREE_LAYER_ABSORPTION_ROADMAP_2026-07-12.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_T1_OWNER_NOVELTY_RECONCILIATION_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T1_OWNER_NOVELTY_RECONCILIATION_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "plannedOutputs": 3,
+    "nextAllowedMove": "one no-commit SOT3-T1 worker execution and reviewer return",
+    "claimBoundary": "owner/novelty evidence only; no owner creation, contracts, implementation, runtime, provider/live, or public work"
+  }
+}

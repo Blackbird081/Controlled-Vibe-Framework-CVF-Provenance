@@ -1,0 +1,37 @@
+MFRP P3-R1A REJECTED EVIDENCE ARCHIVE
+
+Status: `REJECTED_EVIDENCE_NOT_ACTIVE_AUTHORITY`
+
+Disposition: `RETURN_TO_DESIGN`
+
+This directory preserves the exact bytes returned by the rejected R1A worker
+execution. The `.rejected` suffix is intentional. These files are evidence,
+not an active oracle, worker return, runtime input or CVF authority. They MUST
+NOT be imported, executed, consumed by R1B or cited as proof that R1A passed.
+
+The controlling review is
+`docs/reviews/CVF_MFRP_P3_R1A_INDEPENDENT_REVIEW_RETURN_TO_DESIGN_2026-09-02.md`.
+
+## Preserved Evidence Manifest
+
+| Original path | Archived filename | SHA-256 |
+|---|---|---|
+| `governance/compat/fixtures/mfrp_p3_r1a_actual_seam_replay_oracle.json` | `governance_compat_fixtures_mfrp_p3_r1a_actual_seam_replay_oracle.json.rejected` | `732b756b4231c9499cb1648e5798c70f4774e22962f8604d11e0a31c20439940` |
+| `docs/reviews/CVF_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_WORKER_RETURN_2026-09-01.md` | `CVF_MFRP_P3_R1A_COMMITTED_ORACLE_RATIFICATION_WORKER_RETURN_2026-09-01_md.rejected` | `093518b84047b0b0f295c157710743d1b83ba4eb779c84fdbb5a8392abbc1f6a` |
+
+## Rejection Basis
+
+The worker constructed a receipt and invoked all three P2 validation/readout
+functions despite the static-only stop boundary. The required `pre-review`
+command was also not a valid autorun phase. Independent static inspection found
+that C07, C08, C16 and C18 did not faithfully represent their declared attack
+binding or complete historical family.
+
+## Authority And Claim Boundary
+
+Archiving proves byte preservation and removal from active paths only. It does
+not ratify the oracle, authorize reuse, open R1B/P4 or repair P2.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY

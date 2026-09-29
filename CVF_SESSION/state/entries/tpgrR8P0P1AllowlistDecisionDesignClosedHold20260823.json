@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2295,
+  "stateKey": "tpgrR8P0P1AllowlistDecisionDesignClosedHold20260823",
+  "value": "TPGR-R8 is CLOSED_PASS_BOUNDED at 859f851ac with accepted assessment SHA-256 4392429c04b0434740b315402b37b1109564e9ad3d614c571fc7a68c0547bcc3 and worker-return SHA-256 52a8ee8a655a137ed6a046ac73d881f365d63dfda34bd19c1f4b03e28b16f0fd. Independent review confirmed P0 0/6, P1 6/6, 8/8 hostile admission cases, 12/12 negative-test designs, strict H3 binding, honest evidence-state labels, Tier 1 default for ambiguity, separated cost/value labels, zero legacy suppression or added enforcement, and a zero-edit R9 manifest. Reviewer repaired a circular activation-as-admission predicate and worker evidence-shape tokens without changing the hold result. Worker-return fast 65/65, pre-implementation 80/80, commit-steward PASS, pre-closure 78/78, and pre-commit 86/86 passed. Final disposition HOLD_EMPTY_P0_ALLOWLIST_PENDING_OBSERVED_DUAL_RUN_EVIDENCE. Reopen requires fresh exact-identity OBSERVED_CURRENT dual-run evidence, applicable current H3 binding, independent review, and fresh operator authority."
+}

@@ -135,6 +135,15 @@ Nếu cần xác định baseline/release line/module status hiện hành:
 - `reference/CVF_REPOSITORY_EXPOSURE_CLASSIFICATION.md`
 - `reference/CVF_PREPUBLIC_PUBLICATION_DECISION_MEMO_2026-04-02.md`
 - `reference/CVF_PREPUBLIC_P3_READINESS.md`
+
+## Agent Build Loop And Public Trust
+
+- `reference/agent_build_loop/README.md` - optional BUILD micro-loop, receipt
+  schema, metrics, and example; no global runtime or checker enforcement.
+- `reference/public_trust/README.md` - operator trust outcomes and public threat
+  model with explicit control-status boundaries.
+- `guides/CVF_5_MINUTE_TRUST_DEMO.md` - bounded structure-only or live-proof
+  walkthrough that keeps freeze authority with the operator.
 - `reviews/CVF_MULTI_AGENT_INTAKE_REVIEW_PREPUBLIC_RESTRUCTURING_2026-04-02.md`
 - `reviews/CVF_MULTI_AGENT_REBUTTAL_PREPUBLIC_RESTRUCTURING_2026-04-02.md`
 - `reviews/CVF_MULTI_AGENT_DECISION_PACK_PREPUBLIC_RESTRUCTURING_2026-04-02.md`

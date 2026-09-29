@@ -1,0 +1,254 @@
+{
+  "schema": "cvf.dshWholeRepositorySemanticRegionLedger.v1",
+  "totalAssets": 8953,
+  "mapped": 1939,
+  "deferred": 7014,
+  "unmapped": 0,
+  "reconciles": true,
+  "regions": [
+    {
+      "regionId": "agent-loop-tool-runtime-guard-approval",
+      "fileCount": 62,
+      "ownerHint": "EXTENSIONS/CVF_GUARD_CONTRACT/",
+      "disposition": "NO_NEW_VALUE",
+      "adversarialSamplePaths": [
+        "packages/acp/acp/tests/approval.spec.ts",
+        "packages/core/agent-loop/tests/tool-order.spec.ts",
+        "packages/interaction/user-approval/tests/approval.spec.ts"
+      ],
+      "reopenConditionRequired": false
+    },
+    {
+      "regionId": "agents-notes-architecture-doctrine",
+      "fileCount": 2459,
+      "ownerHint": "docs/reference (doctrine-adapted evidence only)",
+      "disposition": "DEFER",
+      "adversarialSamplePaths": [
+        ".agents/notes/AGENTS.md",
+        ".agents/notes/implemented/bug-fix/2026-08-11-synchronous-subprocess-exit-cleanup.i18n.yaml",
+        ".agents/skills/record-browser-gif/scripts/encode_gif.py"
+      ],
+      "reopenConditionRequired": true
+    },
+    {
+      "regionId": "api-ui-web-client",
+      "fileCount": 1457,
+      "ownerHint": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/",
+      "disposition": "DEFER",
+      "adversarialSamplePaths": [
+        "packages/api/gateway/src/client/index.ts",
+        "packages/client/ui-primitives/src/relative-time.ts",
+        "packages/web/web/tsconfig.json"
+      ],
+      "reopenConditionRequired": true
+    },
+    {
+      "regionId": "ci-workflow-config",
+      "fileCount": 31,
+      "ownerHint": "OWNER_SURFACE_NOT_FOUND (CI/workflow config is evidence-only, no CVF owner; forbidden to edit CI)",
+      "disposition": "REJECT",
+      "adversarialSamplePaths": [
+        ".github/AGENTS.md",
+        ".github/workflows/ci.yml",
+        ".github/workflows/sandbox.yml"
+      ],
+      "reopenConditionRequired": false
+    },
+    {
+      "regionId": "docs-site-website",
+      "fileCount": 8,
+      "ownerHint": "docs/ (doctrine-adapted evidence only)",
+      "disposition": "DEFER",
+      "adversarialSamplePaths": [
+        "website/.gitignore",
+        "website/docs.ts",
+        "website/public/wordmark.svg"
+      ],
+      "reopenConditionRequired": true
+    },
+    {
+      "regionId": "docs-subsystem-architecture",
+      "fileCount": 357,
+      "ownerHint": "docs/reference (doctrine-adapted evidence only)",
+      "disposition": "DEFER",
+      "adversarialSamplePaths": [
+        "docs/AGENTS.md",
+        "docs/subsystems/goal.zh.md",
+        "docs/web-styling.zh.md"
+      ],
+      "reopenConditionRequired": true
+    },
+    {
+      "regionId": "example-demo-apps",
+      "fileCount": 327,
+      "ownerHint": "OWNER_SURFACE_NOT_FOUND (example apps are demonstration code, not CVF runtime)",
+      "disposition": "REJECT",
+      "adversarialSamplePaths": [
+        "apps/cli/README.i18n.yaml",
+        "apps/web/tests/approval-composer.e2e.ts",
+        "apps/web/vite.config.ts"
+      ],
+      "reopenConditionRequired": false
+    },
+    {
+      "regionId": "filesystem-subprocess-sandbox-credentials-hooks-mcp-skills",
+      "fileCount": 361,
+      "ownerHint": "EXTENSIONS/CVF_v1.7.1_SAFETY_RUNTIME/simulation/sandbox.isolation.contract.ts + EXTENSIONS/CVF_GUARD_CONTRACT/",
+      "disposition": "DEFER",
+      "adversarialSamplePaths": [
+        ".claude/skills",
+        "packages/sandbox/sandbox-windows-acl/tests/ffi.spec.ts",
+        "packages/subprocess/win32-process/verify/abi-probe.cpp"
+      ],
+      "reopenConditionRequired": true
+    },
+    {
+      "regionId": "generated-catalog-scripts",
+      "fileCount": 204,
+      "ownerHint": "governance/compat generated-aggregate + drift-check owners",
+      "disposition": "DEFER",
+      "adversarialSamplePaths": [
+        "scripts/AGENTS.md",
+        "scripts/release/families.spec.ts",
+        "scripts/wine-windows-gates.sh"
+      ],
+      "reopenConditionRequired": true
+    },
+    {
+      "regionId": "generated-snapshots-fixtures",
+      "fileCount": 626,
+      "ownerHint": "test fixture / generated snapshot, no runtime owner",
+      "disposition": "REJECT",
+      "adversarialSamplePaths": [
+        "snapshots/AGENTS.md",
+        "snapshots/session/persistent-pwsh-tool-turn/system-prompt.expected.md",
+        "snapshots/web/workspace-management/snapshot.yml"
+      ],
+      "reopenConditionRequired": false
+    },
+    {
+      "regionId": "llm-adapters-retry-timeout-streaming-routing",
+      "fileCount": 169,
+      "ownerHint": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/ + src/lib/rate-limit.ts + EXTENSIONS/CVF_MODEL_GATEWAY/",
+      "disposition": "ADAPT",
+      "adversarialSamplePaths": [
+        "packages/client/ui-settings-models/tests/provider-form.client.spec.tsx",
+        "packages/llm/llm-retry/package.json",
+        "packages/web/web-search-perplexity/src/provider.ts"
+      ],
+      "reopenConditionRequired": false
+    },
+    {
+      "regionId": "packages-other-package-family",
+      "fileCount": 1459,
+      "ownerHint": "OWNER_SURFACE_NOT_FOUND (package family pending per-package classification)",
+      "disposition": "DEFER",
+      "adversarialSamplePaths": [
+        "packages/AGENTS.md",
+        "packages/fs/fs/tsconfig.json",
+        "packages/workspace/workspace/tsconfig.json"
+      ],
+      "reopenConditionRequired": true
+    },
+    {
+      "regionId": "python-bridge-tooling",
+      "fileCount": 36,
+      "ownerHint": "OWNER_SURFACE_NOT_FOUND (no CVF python runtime owner)",
+      "disposition": "DEFER",
+      "adversarialSamplePaths": [
+        "python/README.i18n.yaml",
+        "python/sdk/examples/README.i18n.yaml",
+        "python/sdk/uv.lock"
+      ],
+      "reopenConditionRequired": true
+    },
+    {
+      "regionId": "root-build-config",
+      "fileCount": 45,
+      "ownerHint": "OWNER_SURFACE_NOT_FOUND (build tooling config; forbidden to mutate CI/build)",
+      "disposition": "REJECT",
+      "adversarialSamplePaths": [
+        ".editorconfig",
+        "SAFETY.md",
+        "vitest.web.perf.config.ts"
+      ],
+      "reopenConditionRequired": false
+    },
+    {
+      "regionId": "session-eventlog-persistence-checkpoint-telemetry",
+      "fileCount": 350,
+      "ownerHint": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/durable.run.store.ts + event.ledger.contract.ts",
+      "disposition": "DEFER",
+      "adversarialSamplePaths": [
+        "packages/client/ui-chat/src/client/conversation-nodes/compaction.ts",
+        "packages/session/session-persistence-sqlite/tests/built-package.spec.ts",
+        "packages/web/tool-web/tests/spill.spec.ts"
+      ],
+      "reopenConditionRequired": true
+    },
+    {
+      "regionId": "subagent-jobs-scheduling-lifecycle",
+      "fileCount": 322,
+      "ownerHint": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/lifecycle.controller.contract.ts + delegation.adapter.contract.ts",
+      "disposition": "DEFER",
+      "adversarialSamplePaths": [
+        "packages/client/ui-settings-plugins/src/client/subagent-model-selection-card-controller.ts",
+        "packages/subagent/subagent-in-process-driver/README.md",
+        "packages/workflow/workflow/tsconfig.json"
+      ],
+      "reopenConditionRequired": true
+    },
+    {
+      "regionId": "tests-diagnostics-operational",
+      "fileCount": 554,
+      "ownerHint": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/ + focused test owners",
+      "disposition": "NO_NEW_VALUE",
+      "adversarialSamplePaths": [
+        "packages/acp/acp/tests/bridge.spec.ts",
+        "packages/host/directory-picker-browse/tests/service.spec.ts",
+        "packages/workspace/workspace/tests/workspace.spec.ts"
+      ],
+      "reopenConditionRequired": false
+    },
+    {
+      "regionId": "uncategorized-other",
+      "fileCount": 1,
+      "ownerHint": "OWNER_SURFACE_NOT_FOUND (residual bucket; individually reviewed)",
+      "disposition": "DEFER",
+      "adversarialSamplePaths": [
+        "patches/node-pty@1.2.0-beta.15.patch"
+      ],
+      "reopenConditionRequired": true
+    },
+    {
+      "regionId": "vendor-native-thirdparty",
+      "fileCount": 125,
+      "ownerHint": "REJECT_DIRECT_IMPORT (vendor payload, no CVF owner)",
+      "disposition": "REJECT",
+      "adversarialSamplePaths": [
+        "native/README.i18n.yaml",
+        "vendor/cordis/src/logger.ts",
+        "vendor/timer/tsconfig.json"
+      ],
+      "reopenConditionRequired": false
+    }
+  ],
+  "crossRegionLinks": [
+    {
+      "fromRegion": "llm-adapters-retry-timeout-streaming-routing",
+      "toRegion": "session-eventlog-persistence-checkpoint-telemetry",
+      "relationship": "DSH-001 candidate: durable event lineage informs model-visible context composition"
+    },
+    {
+      "fromRegion": "subagent-jobs-scheduling-lifecycle",
+      "toRegion": "filesystem-subprocess-sandbox-credentials-hooks-mcp-skills",
+      "relationship": "DSH-005 candidate: scope-owned registration lifecycle links to sandbox/capability admission"
+    },
+    {
+      "fromRegion": "agent-loop-tool-runtime-guard-approval",
+      "toRegion": "tests-diagnostics-operational",
+      "relationship": "Guard/tool runtime tests validate monotonic BLOCK behavior already owned by CVF Guard Contract"
+    }
+  ],
+  "claimBoundary": "Deterministic semantic-region reconciliation for the pinned mirror only; group-level dispositions are backed by per-file ledger rows and bounded deep review of adversarial samples, not exhaustive manual narration of every file."
+}

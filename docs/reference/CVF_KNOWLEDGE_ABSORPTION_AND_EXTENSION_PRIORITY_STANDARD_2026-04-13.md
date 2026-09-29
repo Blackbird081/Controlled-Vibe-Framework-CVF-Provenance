@@ -21,6 +21,86 @@ Unless a fresh operator decision and explicit `GC-018` state otherwise, the defa
 
 This rule is binding for any future knowledge-absorption or CVF-extension wave.
 
+## 2.1. Unified Development Direction - Operator Decision 2026-09-28
+
+CVF develops its existing planes into a bounded system chain that can complete
+real work and produce artifacts acceptable under CVF-owned governance. It then
+reuses suitable external runtimes through adapters. Learning how another agent
+is built, the number of repositories absorbed, and the number of modules CVF
+owns are not the end goal or measures of success.
+
+The development sequence is:
+
+`bounded system chain -> one suitable real runtime -> end-to-end evidence ->
+repair observed chain gaps -> stabilize the contract -> another runtime when
+there is a concrete need`.
+
+Foundation-first means the selected work has a sufficient authority, execution,
+evidence and acceptance path before its authorized proof. It does not require
+completing every plane before trying one bounded integration. Runtime evidence
+must feed back into existing chain owners; a successful run does not waive a
+missing authority or acceptance boundary.
+
+### Two Independent Reuse Decisions
+
+| Decision | Required question | Evidence boundary |
+|---|---|---|
+| Pattern absorption | What knowledge, test, contract or failure lesson improves an existing CVF owner? | Conceptual overlap may reduce this value without deciding runtime value. |
+| Runtime integration | Can this runtime deliver a named work artifact under the required CVF authority and evidence contract, at an acceptable integration and operating cost? | No new architectural idea is required; source/API availability alone is not integration or use proof. |
+
+Record both decisions in the existing value/disposition record. Use the existing
+disposition vocabulary and give a reason for DEFER, BLOCK, REJECT or no value.
+An existing owner or a duplicate pattern cannot by itself reject operational
+reuse. Pattern value cannot by itself admit an executable dependency either.
+Do not invent a consumer to justify an attractive repository.
+
+### Work Selection And Architecture Preservation
+
+Start with the actual job, expected artifact, acceptance criteria, current
+consumer or named unresolved consumer, owner and measurable gap. Compare reuse
+through an adapter with the current route, native SDK/API where relevant, and
+no change. Evaluate capability, control/observation limits, version/license,
+maintenance, integration/review cost and task outcome before selecting a lane.
+Stars, popularity, visual polish, benchmarks detached from the job and hot
+trends may help discovery; none is admission or architecture-change evidence.
+
+CVF retains task admission, authority/resource/model/credential bindings,
+acceptance and evidence ownership. An adapter translates and verifies the
+runtime contract; the runtime supplies execution capability. Keep the existing
+planes and owner boundaries. A new owner or governance rewrite requires a
+source-backed gap and its own explicit bounded decision, never a dependency's
+preferred architecture. Do not rebuild upstream capability merely to own it.
+
+Unsupported enforcement or observation must produce explicit rejection,
+deferment or unknown state; prompt instructions and event logging cannot be
+reported as enforced resource controls. Preserve distinctions among admission,
+start, completion, cancellation requested/confirmed, unresolved side effects
+and artifact acceptance. Fallback, retries, resume and descendant work must
+retain the authorized envelope or be rejected/re-admitted by the existing owner.
+Do not erase capability differences to make runtimes appear interchangeable.
+
+### Success, Stop And Reopen
+
+Measure accepted work artifacts with sufficient evidence, preserved authority,
+truthful failure/cancel state, and the cost of integration and operation. A
+runtime substitution succeeds when the required governance and acceptance
+invariants remain valid without rebuilding governance; record unsupported
+capabilities and any contract version migration. Do not claim replaceability
+from an interface alone or connect a second runtime solely to inflate coverage.
+
+Stop research when the bounded decision is supported. Reuse valid evidence;
+reopen only for a named consumer need, material source drift or an observed
+failure with expected information gain and cost reason. Preserve useful future
+candidates with existing conditional reopen records. A missing value measure
+is UNKNOWN, not zero or a claimed saving.
+
+This clarification makes operational reuse a first-class independent decision
+within doctrine-first / governance-first absorption. Existing proof of fit may
+be reused; conceptual novelty and repeated doctrine rewrites are not required.
+It grants no implementation, provider, install, dispatch or release authority,
+changes no frozen doctrine, and reopens no parked tranche. Existing GC-018,
+owner admission and proof requirements still control execution.
+
 ## 3. What This Means In Practice
 
 When CVF absorbs a new knowledge packet, the next step must default to:
@@ -136,7 +216,7 @@ It demonstrates the correct sequencing discipline.
 
 Use this standard together with:
 
-- `AGENT_HANDOFF.md`
+- `CVF_SESSION_MEMORY.md` (routes to the active handoff)
 - `docs/reference/CVF_MASTER_ARCHITECTURE_WHITEPAPER.md`
 - `docs/assessments/CVF_EXECUTIVE_VALUE_PRIORITIZATION_NOTE_2026-04-13.md`
 - `docs/roadmaps/CVF_GRAPHIFY_LLM_POWERED_PALACE_SYNTHESIS_ONLY_ROADMAP_2026-04-13.md`

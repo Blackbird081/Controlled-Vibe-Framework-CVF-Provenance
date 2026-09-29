@@ -1,0 +1,48 @@
+{
+  "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+  "evidence": [
+    {
+      "path": "docs/reviews/evidence/post-adif0057-live-release-gate-recovery-result-2026-09-10.json",
+      "sha256": "4205b807e220c1357e9c0f944ce492f97522215c6ffada3b472f27e2c058559a",
+      "sizeBytes": 2383
+    },
+    {
+      "path": "docs/reviews/evidence/post-adif0057-live-release-gate-recovery-sot3-diagnostic-2026-09-10.json",
+      "sha256": "677daa334d3b7d4c05505bfdd363894ebb01f3700dcb4ad2eba0822c091a46dc",
+      "sizeBytes": 544
+    },
+    {
+      "path": "docs/reviews/evidence/post-adif0057-live-release-gate-recovery-e2e-diagnostic-2026-09-10.json",
+      "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789",
+      "sizeBytes": 6
+    }
+  ],
+  "externalAnchor": {
+    "anchorId": "",
+    "anchorUrl": "",
+    "status": "NOT_PROVIDED"
+  },
+  "generatedAt": "2026-09-10T04:56:54.081662+00:00",
+  "repository": {
+    "branch": "main",
+    "commit": "157c8f6cb517c75bbb5f949282ae2955cb2ace74",
+    "dirtyStatus": "M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json\n M scripts/run_cvf_release_gate_bundle.py\n M scripts/test_run_cvf_release_gate_bundle.py\n?? docs/reviews/evidence/post-adif0057-live-release-gate-e2e-diagnostic-2026-09-10.json\n?? docs/reviews/evidence/post-adif0057-live-release-gate-manifest-2026-09-10.json\n?? docs/reviews/evidence/post-adif0057-live-release-gate-recovery-e2e-diagnostic-2026-09-10.json\n?? docs/reviews/evidence/post-adif0057-live-release-gate-recovery-result-2026-09-10.json\n?? docs/reviews/evidence/post-adif0057-live-release-gate-recovery-sot3-diagnostic-2026-09-10.json\n?? docs/reviews/evidence/post-adif0057-live-release-gate-result-2026-09-10.json\n?? docs/reviews/evidence/post-adif0057-live-release-gate-sot3-diagnostic-2026-09-10.json",
+    "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+  },
+  "rerun": {
+    "acceptedSecretEnv": [
+      "DASHSCOPE_API_KEY",
+      "ALIBABA_API_KEY",
+      "CVF_ALIBABA_API_KEY",
+      "CVF_BENCHMARK_ALIBABA_KEY"
+    ],
+    "command": "python scripts/run_cvf_release_gate_bundle.py --sot3-diagnostic-output <path> --e2e-diagnostic-output <path> --json",
+    "requiresLiveProviderKey": true
+  },
+  "schema": "cvf.liveEvidenceManifest.v1",
+  "signature": {
+    "algorithm": "hmac-sha256",
+    "digest": "",
+    "status": "UNSIGNED"
+  }
+}

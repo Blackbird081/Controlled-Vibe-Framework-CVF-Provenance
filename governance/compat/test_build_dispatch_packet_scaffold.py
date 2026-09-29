@@ -17,7 +17,13 @@ from build_dispatch_packet_scaffold import (
     build_worker_return_skeleton,
     detect_triggers,
     main,
+    resolve_evidence_readiness_applicable,
     TRIGGER_FAMILIES,
+)
+from run_agent_automation_assist import (
+    diagnose_no_commit_work_order,
+    WORKER_RETURN_PACKET_SHAPE_CONDITIONAL_TERMS,
+    WORKER_RETURN_PACKET_SHAPE_REQUIRED_TERMS,
 )
 
 FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures"
@@ -80,13 +86,51 @@ class TestGenericWorkerDispatch(unittest.TestCase):
             "## Checker Source Read-Ahead Block",
             "## Source Verification Block",
             "## Negative Search And Collision Discipline",
-            "## Work-Order Fulfillment Manifest",
+            "## Required Artifact Manifest",
             "## Worker Return Packet Shape Contract",
             "## Agent Operation Trace Block",
             "## Delta Execution Claim Boundary Control Block",
             "## Public Export Disposition",
         ):
             self.assertIn(marker, work_order)
+
+    def test_generated_work_order_opts_into_convergence_checker(self) -> None:
+        args = _base_args()
+        work_order = build_work_order(args, detect_triggers(args))
+        self.assertIn("docType: work_order", work_order)
+        self.assertIn("Review-Dispatch Convergence Control: REQUIRED", work_order)
+        self.assertIn("dispatchKind: INITIAL", work_order)
+        self.assertIn("consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX", work_order)
+        self.assertIn("successorTrancheOpened: NO", work_order)
+        self.assertIn(
+            "implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY",
+            work_order,
+        )
+        self.assertIn("preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION", work_order)
+        self.assertIn("preExecutionReviewTrigger: NONE", work_order)
+        self.assertIn("nextRoutineReviewBoundary: WORKER_RETURN", work_order)
+        self.assertIn(
+            "reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION",
+            work_order,
+        )
+
+    def test_rework_scaffold_emits_one_consolidated_packet(self) -> None:
+        args = _base_args(
+            dispatch_kind="REWORK",
+            dispatch_surface="EXTERNAL_AGENT_CLI_MCP",
+            review_round_count=1,
+            root_cause_cluster_id="cluster-lock-identity",
+            prior_finding_set_digest="a" * 64,
+            cumulative_external_invocation_count=1,
+            external_invocation_ceiling=2,
+        )
+        work_order = build_work_order(args, detect_triggers(args))
+        self.assertIn("reworkGeneration: 1", work_order)
+        self.assertIn("rootCauseClusterId: cluster-lock-identity", work_order)
+        self.assertIn("consolidatedDefectClassSweep: COMPLETE_BEFORE_REWORK_DISPATCH", work_order)
+        self.assertIn("nextDispatchDisposition: ONE_CONSOLIDATED_REWORK", work_order)
+        self.assertIn("reviewerLocalRepairBoundary: FILL_ME", work_order)
+        self.assertIn("reviewerLocalRepairBasis: FILL_ME", work_order)
 
     def test_dispatch_prompt_envelope_is_first_section(self) -> None:
         args = _base_args()
@@ -200,6 +244,11 @@ class TestNoCommitWorkerPacket(unittest.TestCase):
         self.assertIn("Shape-list rule:", work_order)
         self.assertIn("## Verification Commands", work_order)
         self.assertIn("python governance/compat/run_worker_return_fast_gate.py", work_order)
+        self.assertIn("## Work-Order Acceptance Requirement Ledger", work_order)
+        self.assertIn("```acceptance-ledger-json", work_order)
+        self.assertIn('"schemaVersion":"cvf.workOrderAcceptanceLedger@1.0.0"', work_order)
+        self.assertIn("## Tool / Classifier Block Recovery Contract", work_order)
+        self.assertIn("toolClassifierBlockRecoveryApplicability:", work_order)
 
     def test_no_commit_work_order_includes_worker_output_read_ahead_mandate(self) -> None:
         args = _base_args(commit_mode="WORKER_MUST_NOT_COMMIT")
@@ -315,7 +364,22 @@ class TestTriggerDrivenOptionalBlocks(unittest.TestCase):
 
 class TestSourceIntakeGoldenFixture(unittest.TestCase):
     """WOAS-R2: source-intake scaffold output regression fixture and
-    marker-overmatch avoidance (AC1, AC4)."""
+    marker-overmatch avoidance (AC1, AC4).
+
+    SCEC-T1 note: `include_scec_block=False` here is deliberate and scoped
+    only to this pre-existing, out-of-manifest golden fixture
+    (`governance/compat/fixtures/woas_r2_source_intake_scaffold_golden.md`,
+    which SCEC-T1's Required Artifact Manifest does not authorize touching).
+    Every other `ScaffoldArgs` construction site in this module and in
+    `check_semantic_convergence_control.py`'s own tests keeps the class
+    default `include_scec_block=True`, so new work orders still emit a valid
+    SCEC block by default per the SCEC-T1 scaffold requirement.
+
+    DARA-T2 note: `include_architecture_readiness_block=False` follows the
+    same established out-of-manifest-fixture pattern for this tranche's new
+    `## Architecture Readiness Admission` block; every other construction
+    site keeps the class default `True`.
+    """
 
     GOLDEN_ARGS = dict(
         packet_kind="source-intake",
@@ -325,6 +389,8 @@ class TestSourceIntakeGoldenFixture(unittest.TestCase):
         base="GOLDENFIXTUREBASEHEAD",
         commit_mode="WORKER_MUST_NOT_COMMIT",
         dependencies=[],
+        include_scec_block=False,
+        include_architecture_readiness_block=False,
     )
 
     def _golden_work_order(self) -> str:
@@ -418,7 +484,21 @@ class TestSourceIntakeGoldenFixture(unittest.TestCase):
 
 class TestWorkerReturnSkeleton(unittest.TestCase):
     """WOAS-R3: worker-return skeleton generation, golden fixture, CLI opt-in,
-    default-output stability, and KIOD-R8 marker-overmatch avoidance."""
+    default-output stability, and KIOD-R8 marker-overmatch avoidance.
+
+    DARA-T2 note: `include_architecture_readiness_echo=False` follows the
+    same established out-of-manifest-fixture pattern SCEC-T1 set for this
+    class's checked-in golden fixture
+    (`governance/compat/fixtures/woas_r3_worker_return_skeleton_golden.md`,
+    which this tranche's Required Artifact Manifest does not authorize
+    touching). Every other construction site keeps the default `True`, so
+    new worker-return skeletons still emit the echo block by default.
+
+    DARA-T2B note: `include_p4_observation_block=False` extends the same
+    out-of-manifest-fixture pattern to the P4 Automatic Evidence Observation
+    Block, which the checked-in golden fixture predates and does not
+    contain. Every other construction site keeps the default `True`.
+    """
 
     GOLDEN_ARGS = dict(
         packet_kind="generic-worker-dispatch",
@@ -428,6 +508,8 @@ class TestWorkerReturnSkeleton(unittest.TestCase):
         base="GOLDENFIXTUREBASEHEAD",
         commit_mode="WORKER_MUST_NOT_COMMIT",
         dependencies=[],
+        include_architecture_readiness_echo=False,
+        include_p4_observation_block=False,
     )
 
     def _golden_skeleton(self) -> str:
@@ -463,6 +545,14 @@ class TestWorkerReturnSkeleton(unittest.TestCase):
         self.assertIn("executionBaseHead:", skeleton)
         self.assertIn("rawMemoryReleased=false", skeleton)
         self.assertIn("git rev-parse --short HEAD", skeleton)
+
+    def test_skeleton_emits_empty_resolution_evidence_default(self) -> None:
+        import check_semantic_convergence_control as scec_checker
+
+        skeleton = self._golden_skeleton()
+        blocks = scec_checker.find_active_blocks(skeleton)
+        self.assertEqual(len(blocks), 1)
+        self.assertEqual(blocks[0].get("resolutionEvidence"), {})
 
     def test_skeleton_has_no_banned_worker_return_quality_gate_placeholder(self) -> None:
         """WOAS-R7: generated skeleton must be checker-safe by construction -
@@ -714,6 +804,253 @@ class TestCliBehavior(unittest.TestCase):
             ]
         )
         self.assertEqual(exit_code, 0)
+
+
+class TestEacqFvL2ExecutionBasePacketShapeHardening(unittest.TestCase):
+    """EACQ-FV-L2: execution-base command literal, complete scoped
+    packet-shape contract, and canonical Required Artifact Manifest heading
+    for generated no-commit work orders (Focused Case Matrix rows 1-7)."""
+
+    def test_no_commit_generated_command_uses_execution_base_placeholder(self) -> None:
+        """Case 1: no-commit generated command contains <executionBaseHead>
+        and not the dispatch-base literal in the pre-implementation command."""
+        args = _base_args(commit_mode="WORKER_MUST_NOT_COMMIT", base="abc1234")
+        active = detect_triggers(args)
+        work_order = build_work_order(args, active)
+        pre_impl_line = next(
+            line
+            for line in work_order.splitlines()
+            if "--phase pre-implementation" in line
+        )
+        self.assertIn("<executionBaseHead>", pre_impl_line)
+        self.assertNotIn("abc1234", pre_impl_line)
+        self.assertIn("--head HEAD", pre_impl_line)
+
+    def test_scoped_contract_contains_every_required_term(self) -> None:
+        """Case 2: every current required term is present inside the
+        Worker Return Packet Shape Contract section."""
+        args = _base_args(commit_mode="WORKER_MUST_NOT_COMMIT")
+        active = detect_triggers(args)
+        work_order = build_work_order(args, active)
+        section = work_order.split("## Worker Return Packet Shape Contract", 1)[1]
+        section = section.split("\n## ", 1)[0]
+        for term in WORKER_RETURN_PACKET_SHAPE_REQUIRED_TERMS:
+            self.assertIn(term, section, f"missing required term: {term}")
+
+    def test_scoped_contract_contains_every_conditional_term(self) -> None:
+        """Case 3: every current conditional term is present inside the
+        Worker Return Packet Shape Contract section."""
+        args = _base_args(commit_mode="WORKER_MUST_NOT_COMMIT")
+        active = detect_triggers(args)
+        work_order = build_work_order(args, active)
+        section = work_order.split("## Worker Return Packet Shape Contract", 1)[1]
+        section = section.split("\n## ", 1)[0]
+        for term in WORKER_RETURN_PACKET_SHAPE_CONDITIONAL_TERMS:
+            self.assertIn(term, section, f"missing conditional term: {term}")
+
+    def test_scoped_contract_contains_na_with_reason_instruction(self) -> None:
+        """Case 4: the N/A with reason instruction is present inside the
+        contract section."""
+        args = _base_args(commit_mode="WORKER_MUST_NOT_COMMIT")
+        active = detect_triggers(args)
+        work_order = build_work_order(args, active)
+        section = work_order.split("## Worker Return Packet Shape Contract", 1)[1]
+        section = section.split("\n## ", 1)[0]
+        self.assertIn("N/A with reason", section)
+
+    def test_generated_work_order_has_exactly_one_canonical_manifest_heading(self) -> None:
+        """Case 5: exactly one canonical heading; old heading absent."""
+        args = _base_args(commit_mode="WORKER_MUST_NOT_COMMIT")
+        active = detect_triggers(args)
+        work_order = build_work_order(args, active)
+        self.assertEqual(work_order.count("## Required Artifact Manifest"), 1)
+        self.assertEqual(work_order.count("## Work-Order Fulfillment Manifest"), 0)
+        self.assertIn("| Artifact | Required worker action |", work_order)
+        self.assertNotIn("| Path | Required at handoff | Purpose |", work_order)
+
+    def test_automation_assist_diagnostic_reports_clean_contract(self) -> None:
+        """Case 6: automation-assist reports has_contract=true, no missing
+        required/conditional terms, no missing N/A instruction."""
+        args = _base_args(commit_mode="WORKER_MUST_NOT_COMMIT")
+        active = detect_triggers(args)
+        work_order = build_work_order(args, active)
+        diagnostic = diagnose_no_commit_work_order("generated-work-order.md", work_order)
+        self.assertTrue(diagnostic.has_contract)
+        self.assertEqual(diagnostic.missing_required, ())
+        self.assertEqual(diagnostic.missing_conditional, ())
+        self.assertFalse(diagnostic.missing_na_instruction)
+        self.assertTrue(diagnostic.is_clean)
+
+    def test_existing_packet_kind_and_commit_mode_variants_remain_passing(self) -> None:
+        """Case 7: existing packet-kind/commit-mode variants still generate
+        and the WORKER_MAY_COMMIT variant omits the no-commit-only contract
+        while still using the canonical manifest heading."""
+        for packet_kind in ("generic-worker-dispatch", "held-dependency", "protected-governance-path"):
+            for commit_mode in ("WORKER_MUST_NOT_COMMIT", "WORKER_MAY_COMMIT"):
+                args = _base_args(packet_kind=packet_kind, commit_mode=commit_mode)
+                active = detect_triggers(args)
+                work_order = build_work_order(args, active)
+                self.assertEqual(work_order.count("## Required Artifact Manifest"), 1)
+                self.assertEqual(work_order.count("## Work-Order Fulfillment Manifest"), 0)
+                pre_impl_line = next(
+                    line
+                    for line in work_order.splitlines()
+                    if "--phase pre-implementation" in line
+                )
+                self.assertIn("<executionBaseHead>", pre_impl_line)
+                self.assertNotIn(args.base, pre_impl_line)
+
+    def test_worker_may_commit_generated_command_also_uses_execution_base(self) -> None:
+        """Boundary: commit-capable packet-kind generation still passes and
+        uses the worker-captured execution-base placeholder, not the
+        dispatch-base literal, in the pre-implementation command."""
+        args = _base_args(commit_mode="WORKER_MAY_COMMIT", base="deadbeef")
+        active = detect_triggers(args)
+        work_order = build_work_order(args, active)
+        pre_impl_line = next(
+            line
+            for line in work_order.splitlines()
+            if "--phase pre-implementation" in line
+        )
+        self.assertIn("<executionBaseHead>", pre_impl_line)
+        self.assertNotIn("deadbeef", pre_impl_line)
+
+
+class TestScecBlockEmission(unittest.TestCase):
+    """SCEC-T1: dispatch scaffold must support emitting a valid initial or
+    successor SCEC block from explicit CLI arguments, and must never
+    fabricate predecessor hashes, proof evidence, or readiness."""
+
+    def test_default_work_order_emits_valid_initial_scec_block(self) -> None:
+        import check_semantic_convergence_control as scec_checker
+
+        args = _base_args()
+        self.assertTrue(args.include_scec_block)
+        work_order = build_work_order(args, detect_triggers(args))
+        blocks = scec_checker.find_active_blocks(work_order)
+        self.assertEqual(len(blocks), 1)
+        result = scec_checker.validate_block(blocks[0])
+        self.assertEqual(result.violations, ())
+        self.assertEqual(blocks[0]["chainMode"], "INITIAL")
+        self.assertIsNone(blocks[0]["predecessor"])
+
+    def test_internal_legacy_golden_override_omits_the_section(self) -> None:
+        args = _base_args(include_scec_block=False)
+        work_order = build_work_order(args, detect_triggers(args))
+        self.assertNotIn("## Semantic Convergence Outcome", work_order)
+
+    def test_successor_without_explicit_hash_emits_unresolved_sentinel(self) -> None:
+        """Missing successor facts must produce the explicit unresolved
+        sentinel, which the checker rejects pre-dispatch -- not a fabricated
+        hash."""
+        import check_semantic_convergence_control as scec_checker
+
+        args = _base_args(scec_chain_mode="SUCCESSOR", scec_chain_ordinal=1)
+        work_order = build_work_order(args, detect_triggers(args))
+        blocks = scec_checker.find_active_blocks(work_order)
+        self.assertEqual(len(blocks), 1)
+        predecessor = blocks[0]["predecessor"]
+        self.assertEqual(predecessor["path"], "SCEC_PREDECESSOR_HASH_UNRESOLVED")
+        self.assertEqual(predecessor["sha256"], "SCEC_PREDECESSOR_HASH_UNRESOLVED")
+        result = scec_checker.validate_block(blocks[0])
+        codes = {v.code for v in result.violations}
+        self.assertIn("PREDECESSOR_UNRESOLVED_SENTINEL", codes)
+
+    def test_successor_with_explicit_hash_and_real_predecessor_file_passes(self) -> None:
+        import check_semantic_convergence_control as scec_checker
+
+        predecessor_content = "example predecessor content"
+        real_hash = scec_checker.sha256_of_text(predecessor_content)
+        args = _base_args(
+            scec_chain_mode="SUCCESSOR",
+            scec_chain_ordinal=1,
+            scec_predecessor_path="docs/reviews/example.md",
+            scec_predecessor_sha256=real_hash,
+        )
+        work_order = build_work_order(args, detect_triggers(args))
+        blocks = scec_checker.find_active_blocks(work_order)
+        self.assertEqual(len(blocks), 1)
+        result = scec_checker.validate_block(
+            blocks[0], predecessor_hash_resolver=lambda path: real_hash
+        )
+        self.assertEqual(result.violations, ())
+
+    def test_scec_disposition_and_scope_flow_through_from_cli_shaped_args(self) -> None:
+        args = _base_args(
+            scec_required_disposition="ROOT_CONTRACT_REQUIRED",
+            scec_successor_scope="INTEGRATED_ROOT_CONTRACT",
+        )
+        work_order = build_work_order(args, detect_triggers(args))
+        self.assertIn('"requiredDisposition": "ROOT_CONTRACT_REQUIRED"', work_order)
+        self.assertIn('"successorScope": "INTEGRATED_ROOT_CONTRACT"', work_order)
+
+
+class TestArchitectureReadinessAdmissionScaffold(unittest.TestCase):
+    """DARA-T2: the dispatch scaffold must emit a checker-safe blocked
+    default for `Architecture-Readiness Admission` and never invent an
+    architecture matrix row for the author. External-surface dispatches get
+    the fail-closed unclassified default; internal-agent dispatches get the
+    excluded-from-ceiling default. Neither default may accidentally pass
+    the dispatch-quality architecture validator on its own."""
+
+    def test_external_agent_dispatch_gets_blocked_unclassified_default(self) -> None:
+        args = _base_args(dispatch_surface="EXTERNAL_AGENT_CLI_MCP")
+        work_order = build_work_order(args, detect_triggers(args))
+        self.assertIn("## Architecture Readiness Admission", work_order)
+        self.assertIn(
+            "Architecture-Readiness Admission: BLOCKED_ARCHITECTURE_APPLICABILITY_UNCLASSIFIED",
+            work_order,
+        )
+
+    def test_internal_agent_dispatch_gets_excluded_default(self) -> None:
+        args = _base_args(dispatch_surface="INTERNAL_AGENT")
+        work_order = build_work_order(args, detect_triggers(args))
+        self.assertIn(
+            "Architecture-Readiness Admission: NOT_APPLICABLE_INTERNAL_AGENT_WITH_REASON",
+            work_order,
+        )
+
+    def test_scaffold_never_emits_a_fabricated_architecture_binding_matrix(self) -> None:
+        """HT-08 at scaffold level: the generated packet must not contain a
+        real `## Architecture Binding Matrix` heading (a worker-selected or
+        invented matrix table); the reason prose may still name the heading
+        in backticks as documentation. The author must add a real matrix
+        deliberately after proving applicability."""
+        heading_pattern = re.compile(r"^##\s+Architecture Binding Matrix\s*$", re.MULTILINE)
+        for surface in ("EXTERNAL_AGENT_CLI_MCP", "INTERNAL_AGENT"):
+            args = _base_args(dispatch_surface=surface)
+            work_order = build_work_order(args, detect_triggers(args))
+            self.assertIsNone(heading_pattern.search(work_order))
+
+    def test_architecture_readiness_section_extracted_to_helper(self) -> None:
+        """R1-05 extraction regression: architecture_readiness_section must be importable
+        from build_dispatch_packet_architecture_readiness and must produce output identical
+        to the previously inlined _architecture_readiness_block function. The scaffold
+        must not define _architecture_readiness_block itself after extraction."""
+        import build_dispatch_packet_architecture_readiness as ar_helper
+        import build_dispatch_packet_scaffold as scaffold_mod
+
+        self.assertTrue(
+            hasattr(ar_helper, "architecture_readiness_section"),
+            "architecture_readiness_section must be exported from the helper module",
+        )
+        self.assertFalse(
+            hasattr(scaffold_mod, "_architecture_readiness_block"),
+            "_architecture_readiness_block must not remain in build_dispatch_packet_scaffold after extraction",
+        )
+        external_args = _base_args(dispatch_surface="EXTERNAL_AGENT_CLI_MCP")
+        section_lines = ar_helper.architecture_readiness_section(external_args)
+        self.assertTrue(section_lines, "helper must return non-empty list for external dispatch")
+        self.assertTrue(
+            any("BLOCKED_ARCHITECTURE_APPLICABILITY_UNCLASSIFIED" in line for line in section_lines)
+        )
+        excluded_args = _base_args(include_architecture_readiness_block=False)
+        self.assertEqual(
+            ar_helper.architecture_readiness_section(excluded_args),
+            [],
+            "helper must return [] when include_architecture_readiness_block=False",
+        )
+
 
 
 if __name__ == "__main__":

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2181,
+  "stateKey": "cadpAiT3BModelGatewayConstraintProjectionDispatch20260813",
+  "value": "CADP-AI-T3B Model Gateway constraint projection is DISPATCH_READY at material commit 7d897a5d8. Operator direction released only the committed no-commit worker packet. Exact worker scope is six manifest rows with system-chain map conditional-with-reason. The projection must treat T3A eligibility bytes as non-authoritative metadata, bind identity to an opaque owner handle, use repository-owned pure capability negotiation, and keep executionAuthorized, liveExecutionAuthorized, providerCallAuthorized, and credentialResolutionAuthorized literal false. Credential resolution, quota mutation, provider adapters, execution bridge, network/process, provider/live, T4-T7, CLI/MCP, public, deploy, production, trusted-evidence and cross-runtime claims remain forbidden."
+}

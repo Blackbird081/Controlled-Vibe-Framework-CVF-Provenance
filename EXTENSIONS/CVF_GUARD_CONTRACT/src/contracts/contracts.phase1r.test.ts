@@ -104,7 +104,7 @@ describe('GatewayReceipt payload conformance', () => {
   it('a minimal GatewayReceiptPayload satisfies the interface', () => {
     const payload: GatewayReceiptPayload = {
       requestId: 'req-001',
-      modelId: 'qwen-turbo',
+      modelId: 'qwen-flash',
       providerId: 'alibaba-dashscope',
       riskLevel: 'R1',
       decision: 'allow',

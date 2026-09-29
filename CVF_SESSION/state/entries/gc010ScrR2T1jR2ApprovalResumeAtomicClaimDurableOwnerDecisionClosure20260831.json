@@ -1,0 +1,20 @@
+{
+  "stateOrder": 2530,
+  "stateKey": "gc010ScrR2T1jR2ApprovalResumeAtomicClaimDurableOwnerDecisionClosure20260831",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_CORRECTION",
+    "terminal": "PARTIAL_READY_REQUIRES_FAILURE_RECOVERY_INTERFACE_DECISION",
+    "successorTrancheOpened": "NO",
+    "materialCommit": "df5571b9106f086b22491103a37a5690e9c9ddc6",
+    "dispatchCommit": "47b130b32a3a7e7faf16676c39d1fdb05425939b",
+    "executionBaseHead": "1f20225422166dc5161bfd3db50d3ae6788b27df",
+    "assessment": "docs/assessments/CVF_GC010_SCR_R2_T1J_R2_APPROVAL_RESUME_ATOMIC_CLAIM_DURABLE_OWNER_DECISION_2026-08-31.md",
+    "assessmentSha256": "58ffd9721421f6fd47f34c2336f570d1a45d96c347a8a78f0bdd951ce3e45e5f",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1J_R2_APPROVAL_RESUME_ATOMIC_CLAIM_DURABLE_OWNER_DECISION_WORKER_RETURN_2026-08-31.md",
+    "workerReturnSha256": "010a631a669df7fdf894ab93a5b224668552147ad9cfa3f5033dfcf0ad748e07",
+    "reviewerCorrection": "Retained the worker's partial-ready terminal but rejected the claim that SQLite connection lifetime was the only gap. Current route ordering creates approval before the mandatory gateway; no production adapter builds the required immutable payload and GuardPolicySnapshot; SQLite lifecycle and authorized restart recovery remain unassigned.",
+    "verification": "Worker-return fast gate COMPLIANT, reviewer-fast 66/66 PASS, git diff whitespace PASS, and material pre-commit 87/87 PASS; exact two-document material manifest committed separately.",
+    "nextAllowedMove": "Await operator authorization for one consolidated T1J-R3 integration-interface decision covering route ordering, payload/policy-snapshot adapter ownership, SQLite lifecycle, and recovery invocation ownership.",
+    "claimBoundary": "Decision closure only. Candidate 2 is preferred but not ready for T1K. T1K, T2, implementation, provider/live, public sync, deployment and production remain parked."
+  }
+}

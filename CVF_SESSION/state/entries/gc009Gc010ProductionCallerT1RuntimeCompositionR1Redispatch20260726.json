@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2100,
+  "stateKey": "gc009Gc010ProductionCallerT1RuntimeCompositionR1Redispatch20260726",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_REDISPATCH_READY_R1_ROUTE_TEST_MOCK",
+    "date": "2026-07-26",
+    "materialCommit": "a71d65877",
+    "originalExecutionBaseHead": "871251726",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_2026-07-26.md",
+    "roadmap": "docs/roadmaps/CVF_GC009_GC010_PRODUCTION_CALLER_AND_BOUNDED_E2E_RUNTIME_ROADMAP_2026-07-25.md",
+    "workerReturn": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T1_RUNTIME_COMPOSITION_WORKER_RETURN_2026-07-26.md",
+    "blockedDisposition": "BLOCKED_SCOPE_EXPANSION_REQUIRED",
+    "reviewerDecision": "replace the unused planned route.mandatory-gateway.test.ts path with the existing route.test.ts suite; authorize its deterministic appendAuditEvent mock default and full 31-test rerun",
+    "verification": "author-fast 5/5 PASS; pre-dispatch 75/75 PASS; dispatch commit steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "resume the same WORKER_MUST_NOT_COMMIT implementation worker under R1 authority",
+    "laterTranches": "T2-T4 and GC-010 AgentExecutionRuntime remain HOLD_*",
+    "claimBoundary": "R1 test-manifest repair only. No closure, live proof, CLI/MCP, browser, network, public-sync, push, deployment, or production claim."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0",
+  "scanId": "EAIC-KR-R1",
+  "generatedAt": "2026-07-23T08:11:52+07:00",
+  "sourceType": "COPIED_FOLDERS_WITHOUT_GIT_METADATA",
+  "roots": [
+    ".private_reference/legacy/CVF 23.07/CVF_Conversation_Resilient_Governance",
+    ".private_reference/legacy/CVF 23.07/CVF_INTERACTION_PROJECTION"
+  ],
+  "enumerationCommand": "rg --files --hidden --no-ignore -g '!.git/**' -- <root> | Sort-Object",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "hashPathForm": "workspace-relative POSIX paths including each copied-root prefix",
+  "hashSortOrder": "Python ordinal Unicode code-point order via sorted()",
+  "hashEncoding": "UTF-8 without BOM",
+  "hashRecordSeparator": "LF",
+  "hashTrailingNewline": true,
+  "manifestHash": "5799cc627491e466379878a8542c26740a167032de1afa92237d998a5aa49ad5",
+  "fileCount": 231,
+  "rootCounts": {
+    "conversationResilientGovernance": 18,
+    "interactionProjection": 213
+  },
+  "formatCounts": {
+    "markdown": 185,
+    "json": 41,
+    "yaml": 1,
+    "gitkeep": 4
+  },
+  "integrity": {
+    "unreadableCount": 0,
+    "unsupportedCount": 0,
+    "jsonParseFailureCount": 0,
+    "markdownMissingH1Count": 0,
+    "duplicateContentGroups": 1,
+    "duplicateContentNote": "The only duplicate-content group contains four empty .gitkeep files."
+  },
+  "terminalDispositionCounts": {
+    "ADAPT": 112,
+    "CHECKER_CANDIDATE": 14,
+    "DEFER": 50,
+    "NO_PACKAGE_OR_RUNTIME_VALUE": 11,
+    "PACKAGE_CANDIDATE": 41,
+    "RUNTIME_CANDIDATE": 3
+  },
+  "overlapCounts": {
+    "CONFIRMED_EXISTING": 65,
+    "ENRICH_EXISTING": 147,
+    "NEW_FINDING": 8,
+    "NO_NEW_VALUE": 11
+  },
+  "fileLedgers": [
+    "docs/audits/CVF_EAIC_KR_R1_CONVERSATION_RESILIENT_GOVERNANCE_FILE_LEDGER_2026-07-23.json",
+    "docs/audits/CVF_EAIC_KR_R1_INTERACTION_PROJECTION_FILE_LEDGER_2026-07-23.json"
+  ],
+  "processingStatus": "COMPLETE_VERIFIED",
+  "declaredExclusions": [],
+  "scopeBoundaries": [
+    "No code, fixture, command, dependency, provider, MCP, CLI, or process was executed.",
+    "The later 321-file pinned Brainless source mirror is a targeted upstream-verification input recorded in the audit; it is intentionally outside this 231-file copied-pack manifest and terminal ledger.",
+    "Path-level terminal classification was combined with targeted full reads of high-value authority, budget, receipt, identity, cancellation, reconnect, trajectory, and provenance artifacts; it is not a line-by-line semantic certification of all 231 files."
+  ],
+  "claimBoundary": "Complete filesystem enumeration and terminal planning classification for the two copied packs only; the audit separately records pinned Brainless upstream verification. No deep semantic correctness, runtime behavior, implementation authority, or T2 release claim."
+}

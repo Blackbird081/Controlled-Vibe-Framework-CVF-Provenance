@@ -148,7 +148,7 @@ Confirm the action. Show that:
 
 ### What this demonstrates
 
-CVF supports multiple AI providers. Alibaba and DeepSeek are both CERTIFIED by canary evidence. The operator can see lane status, inspect evidence, and run a live canary when fresh proof is required.
+CVF supports multiple AI providers. DeepSeek is CERTIFIED by canary evidence; Alibaba's current `qwen-flash` target is EXPERIMENTAL pending fresh live proof (its historical receipt does not transfer). The operator can see lane status, inspect evidence, and run a live canary when fresh proof is required.
 
 ### Steps
 
@@ -160,15 +160,20 @@ Navigate to `http://localhost:3000/settings` or open Settings from the sidebar.
 
 Point out the provider cards:
 - Anthropic (default, always present)
-- Alibaba Cloud (qwen-turbo)
+- Alibaba Cloud (qwen-flash)
 - DeepSeek (deepseek-chat)
 
 **Step 3 — Show lane status badges**
 
-For Alibaba and DeepSeek, lane badges display:
+For DeepSeek, the lane badge displays:
 - `Certified` (green badge)
 - `3/3 PASS` pass window
 - tooltip: "User-paid provider lane — Certification reflects CVF canary evidence, not universal provider parity"
+
+For Alibaba, the lane badge displays:
+- `Experimental` (badge)
+- `Fresh live proof pending` pass window
+- note: current target `qwen-flash`; historical Alibaba receipts do not transfer to this model
 
 For an unconfigured provider (no key set), the badge shows `Unconfigured`.
 
@@ -215,7 +220,7 @@ Expected output: 6/6 scenarios PASS, receipt printed to console.
 - "CVF is production-ready for enterprise deployment" — say "CVF is a governance framework ready for governed development and evaluation"
 - "All providers have the same performance" — say "CVF certifies behavioral compliance; provider economics vary"
 - "CVF replaces your existing CI/CD" — say "CVF adds a governance layer over AI-assisted development"
-- "This works with any model" — say "Alibaba and DeepSeek are certified; other providers are experimental until canary-run"
+- "This works with any model" - say "DeepSeek is certified; Alibaba's current target and other providers are experimental until canary-run"
 
 **If asked about API keys during demo:**
 
@@ -227,7 +232,7 @@ Expected output: 6/6 scenarios PASS, receipt printed to console.
 
 **If asked about cost:**
 
-> "CVF itself has no usage cost. Live canary runs consume the operator's provider API credits. A 6-scenario Alibaba canary costs fractions of a cent at qwen-turbo rates."
+> "CVF itself has no usage cost. Live canary runs consume the operator's provider API credits; consult current Alibaba pricing before execution."
 
 ---
 

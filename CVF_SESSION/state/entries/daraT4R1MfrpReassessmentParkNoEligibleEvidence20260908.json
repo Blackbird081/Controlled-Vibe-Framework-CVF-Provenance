@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2781,
+  "stateKey": "daraT4R1MfrpReassessmentParkNoEligibleEvidence20260908",
+  "value": "DARA-T4 R1 reassessment is CLOSED_PASS_BOUNDED_PARK_NO_ELIGIBLE_EVIDENCE at material commit d6b87f98c7c657f5bb0f56c52d9b0f937a7c527b. The current P4-C1 collector returned SKIPPED_NO_ELIGIBLE_CANDIDATE after the accepted DARA-T3 R2 closure: that offline bounded replay has no eligible YES P4 observation metadata or matching validated P2 receipt and is not retrofitted as a natural phase return. Eligible count increment remains 0, safety trigger is NONE, and no collector journal, receipt or checkpoint row was created. WP-ARCH-003 is not reopened; DARA-T5 and provider/live/public/deploy authority remain parked."
+}

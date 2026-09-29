@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2172,
+  "stateKey": "localRetentionSemanticAbsorptionT0Closure20260813",
+  "value": "Independent Codex review accepted LRA-SA-T0 at material commit 6e575bf984d8af49eb8a1ab2db026802787a6cc3 after recomputing the ZIP digest and all 56 entry hashes, reading both changed metadata files and one full file from every other group, and confirming 20 SUPERSEDED_BY_CURRENT_CVF_OWNER plus 36 NO_NEW_VALUE with zero blocked or unresolved rows. Reviewer corrected the dispatcher-owned dated stable-reference ledger path to CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER.md and fixed one 13/14 prose mismatch; final worker-return gate passed 63/63 and material pre-commit passed 84/84. T0 is closed; T1 archive release/deletion remains parked pending explicit operator release."
+}

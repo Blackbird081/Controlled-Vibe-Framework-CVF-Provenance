@@ -1,0 +1,159 @@
+{
+  "adapterImplementation": "IMPLEMENTED_PRODUCTION_CLI_MCP_PACKAGE_ADAPTER",
+  "claimBoundary": "This packet is a CLI/MCP-facing envelope for production ASSF package execution. It delegates to the production package executor and exposes receipt and trace fields for audit. It is not a daemon, MCP server, public API, provider router, or authority grant outside the active governed work order.",
+  "consumer": "EXTERNAL_AGENT_CLI_MCP",
+  "executionDisposition": "PRODUCTION_PACKAGE_EXECUTION_PASS",
+  "executionReceiptId": "sha256:16f40d3a061fb1160cbeb411005d0841aea01dfe9f40808f6d3309384f0316c4",
+  "executionResult": {
+    "claimBoundary": "This packet is a production-scoped ASSF package execution adapter result. It requires ACTIVE package source state and receipt-backed package use. It does not grant filesystem, git, browser, provider, public-sync, or production action authority beyond the active governed work order.",
+    "consumer": "EXTERNAL_AGENT_CLI_MCP",
+    "executionMode": "LIVE_PROVIDER_EXECUTION",
+    "productionAdapterImplementation": "IMPLEMENTED_PRODUCTION_PACKAGE_EXECUTOR",
+    "skillId": "cvf-engineering-test-evidence-audit",
+    "sourceMutations": [],
+    "sourcePaths": {
+      "freeQuotaLedger": "docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json",
+      "packageUseProofAdapter": "governance/compat/run_assf_package_use_proof_adapter.py",
+      "productionExecutor": "governance/compat/run_assf_production_package_executor.py",
+      "skillIndex": "docs/reference/agent_system_skills/generated/skill-index.json",
+      "truthIndex": "docs/reference/agent_system_skills/truth/generated/skill-truth-index.json"
+    },
+    "activeSourceCheck": {
+      "candidateState": "ACTIVE",
+      "externalCliMcpDisposition": "IMPLEMENTED",
+      "reasons": [],
+      "status": "ACTIVE"
+    },
+    "packageUseProof": {
+      "adapterImplementation": "IMPLEMENTED_BOUNDED_USE_PROOF_ADAPTER",
+      "claimBoundary": "This packet is a bounded ASSF package use-proof adapter result. It may prove one explicit package body read, receipt-backed output use, and one live provider completion. It does not activate package lifecycle state, mutate ASSF registry/index/truth/package sources, implement MCP server behavior, grant authority, commit, push, public-sync, or bypass governed work-order scope.",
+      "executionMode": "LIVE_PROVIDER_USE_PROOF",
+      "lifecycleMutation": false,
+      "activePromotionAuthorized": false,
+      "sourceMutations": [],
+      "provider": "alibaba-dashscope",
+      "model": "qwen3.7-flash-2026-07-15",
+      "skillId": "cvf-engineering-test-evidence-audit",
+      "sourcePaths": {
+        "runtimePackageLoader": "governance/compat/run_assf_runtime_package_loader.py",
+        "activationPolicyResolver": "governance/compat/run_assf_activation_policy_resolver.py",
+        "skillIndex": "docs/reference/agent_system_skills/generated/skill-index.json",
+        "truthIndex": "docs/reference/agent_system_skills/truth/generated/skill-truth-index.json",
+        "freeQuotaLedger": "docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json"
+      },
+      "modelSelection": {
+        "requestedProvider": "alibaba-dashscope",
+        "resolvedProvider": "alibaba-dashscope",
+        "providerStatus": "PROVIDER_USABLE",
+        "requestedModel": "qwen3.7-flash-2026-07-15",
+        "resolvedModel": "qwen3.7-flash-2026-07-15",
+        "status": "MODEL_FREE_QUOTA_USABLE",
+        "ledgerPath": "docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json",
+        "expirationDate": "2026-10-22",
+        "freeQuotaRemaining": 1000000,
+        "diagnosticRerunResult": null,
+        "reason": null
+      },
+      "providerSelection": {
+        "requestedProvider": "alibaba-dashscope",
+        "resolvedProvider": "alibaba-dashscope",
+        "providerStatus": "PROVIDER_USABLE",
+        "selectionBoundary": "ASCP-T5 Model Gateway use case only; not a production model router"
+      },
+      "safeLoadedEnvFiles": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.env.local"
+      ],
+      "packageRead": {
+        "packageBodyDisposition": "LOADED",
+        "packageRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
+        "runtimeEligible": true,
+        "ineligibilityReasons": [],
+        "instructionBodyHash": "sha256:f6733847783ff4d855e39c26b5dc22beb48fa539d893977d084d8b27eb70b511",
+        "instructionBodyChars": 8258,
+        "skillUsageReceiptId": "sha256:0b28dc32628249f6abd96aaf89d842435e73b33cdaf1ab38f031fb3d3fa4d7ff",
+        "skillUsageReceiptType": "CVF_ASSF_SKILL_USAGE_RECEIPT"
+      },
+      "activationPolicy": {
+        "activationPolicyState": "USED_WITH_RECEIPT",
+        "matchedUsageReceiptIds": [
+          "sha256:0b28dc32628249f6abd96aaf89d842435e73b33cdaf1ab38f031fb3d3fa4d7ff"
+        ],
+        "policyReasons": [],
+        "policyDecisionReceiptId": "sha256:26b9bce58f886c0ef0456915a8caa7a182c402d545b6ec0eef17e58b443ade6c",
+        "usedWithReceipt": true
+      },
+      "executionTask": {
+        "taskPromptHash": "sha256:3dd4dbdaa5c0a8e6f080e2a0599b2149abcfbc2cf5ac3ea556fd5730a429b52e",
+        "maxInstructionChars": 6000
+      },
+      "credentialSource": "DASHSCOPE_API_KEY",
+      "liveCall": {
+        "httpStatus": 200,
+        "latencyMs": 26665,
+        "providerTraceId": "5cdbeebd-2507-9610-b73a-809da52c7844",
+        "responseHash": "sha256:25888d385b50d90d312bce4015d60c38dffa88f12735ac706371204561f0dccf",
+        "outputHash": "sha256:b926c1240a656ddc786dbdc73c75e9889de542cda470f02e303dee91acba10b1",
+        "outputPreview": "**Applied Package Controls**\n- Invoked bounded CVF ASSF package `cvf-engineering-test-evidence-audit` (R0 advisory guidance).\n- Strictly enforced: no test execution, fixture creation, deletion, Git mutation, or deployment authority granted.\n- Disposition derivation limited to reading actual `assert*` calls and fixture values; docstrings/comments excluded as evidence.\n- Missing/unspecified inputs trigger mandatory `DEFER_WITH_REASON` per Audit Procedure steps 1\u20132 and Risk & Authority clause.\n\n**Execution Output**\n| Field | Value |\n|---|---|\n| **Target** | `[Awaiting source_file_path & test_file_path]` |\n| **Label** | `DEFER_WITH_REASON` |\n| **Cited Evidence** | No concrete claim sentence, source file path, or test file path provided for assertion-level verification. |\n| **Reason** | Inputs incomplete; bounded procedure requires exact source/test paths to locate symbols and inspect executable assertions. Missing/unspecified files force deferral per package rules. |\n| **Confidence/Unknowns** | Unknown (input gap) |\n| **Next Owner/Action** | Provider supplies the exact claim sentence, source file path, and test file path to resume audit. |\n\n**Claim Boundary**\n- **Scope**: Advisory disp",
+        "outputChars": 1668
+      },
+      "executionDisposition": "LIVE_PROVIDER_USE_PROOF_PASS",
+      "packageUseProofReceipt": {
+        "receiptId": "sha256:3c458a43e018a89fb3f1dd9a4be9dccdc5f0d65ec8452015425f77fa1e8c84bb",
+        "authorityBoundary": "use-proof receipt proves one receipt-backed bounded package execution only; it does not grant authority, activate package lifecycle state, or bypass governed work-order scope",
+        "generatedBy": "governance/compat/run_assf_package_use_proof_adapter.py",
+        "httpStatus": 200,
+        "latencyMs": 26665,
+        "model": "qwen3.7-flash-2026-07-15",
+        "outputConsumed": true,
+        "outputHash": "sha256:b926c1240a656ddc786dbdc73c75e9889de542cda470f02e303dee91acba10b1",
+        "policyReceiptId": "sha256:26b9bce58f886c0ef0456915a8caa7a182c402d545b6ec0eef17e58b443ade6c",
+        "provider": "alibaba-dashscope",
+        "providerTraceId": "5cdbeebd-2507-9610-b73a-809da52c7844",
+        "receiptType": "CVF_ASSF_PACKAGE_USE_PROOF_RECEIPT",
+        "responseHash": "sha256:25888d385b50d90d312bce4015d60c38dffa88f12735ac706371204561f0dccf",
+        "schemaVersion": "0.1.0",
+        "skillId": "cvf-engineering-test-evidence-audit",
+        "skillUsageReceiptId": "sha256:0b28dc32628249f6abd96aaf89d842435e73b33cdaf1ab38f031fb3d3fa4d7ff"
+      },
+      "diagnostic": null
+    },
+    "executionDisposition": "PRODUCTION_PACKAGE_EXECUTION_PASS",
+    "productionExecutionReceipt": {
+      "receiptId": "sha256:16f40d3a061fb1160cbeb411005d0841aea01dfe9f40808f6d3309384f0316c4",
+      "authorityBoundary": "receipt proves one ACTIVE source package execution through the production-scoped adapter; it does not grant action authority outside the active governed work order",
+      "consumer": "EXTERNAL_AGENT_CLI_MCP",
+      "generatedBy": "governance/compat/run_assf_production_package_executor.py",
+      "httpStatus": 200,
+      "model": "qwen3.7-flash-2026-07-15",
+      "packageRootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
+      "packageUseProofReceiptId": "sha256:3c458a43e018a89fb3f1dd9a4be9dccdc5f0d65ec8452015425f77fa1e8c84bb",
+      "provider": "alibaba-dashscope",
+      "receiptType": "CVF_ASSF_PRODUCTION_PACKAGE_EXECUTION_RECEIPT",
+      "schemaVersion": "0.1.0",
+      "skillId": "cvf-engineering-test-evidence-audit"
+    },
+    "sourceTruthTrace": {
+      "executionReceiptId": "sha256:16f40d3a061fb1160cbeb411005d0841aea01dfe9f40808f6d3309384f0316c4",
+      "packageRootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
+      "policyReceiptId": "sha256:26b9bce58f886c0ef0456915a8caa7a182c402d545b6ec0eef17e58b443ade6c",
+      "registryEntryPath": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-test-evidence-audit.json",
+      "skillId": "cvf-engineering-test-evidence-audit",
+      "skillUsageReceiptId": "sha256:0b28dc32628249f6abd96aaf89d842435e73b33cdaf1ab38f031fb3d3fa4d7ff",
+      "truthPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-evidence-audit.json",
+      "useProofReceiptId": "sha256:3c458a43e018a89fb3f1dd9a4be9dccdc5f0d65ec8452015425f77fa1e8c84bb"
+    }
+  },
+  "requestId": "cvf-ncr-r1-s11-r1-p10-live",
+  "skillId": "cvf-engineering-test-evidence-audit",
+  "sourceTruthTrace": {
+    "executionReceiptId": "sha256:16f40d3a061fb1160cbeb411005d0841aea01dfe9f40808f6d3309384f0316c4",
+    "packageRootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
+    "policyReceiptId": "sha256:26b9bce58f886c0ef0456915a8caa7a182c402d545b6ec0eef17e58b443ade6c",
+    "registryEntryPath": "docs/reference/agent_system_skills/registry/entries/cvf-engineering-test-evidence-audit.json",
+    "skillId": "cvf-engineering-test-evidence-audit",
+    "skillUsageReceiptId": "sha256:0b28dc32628249f6abd96aaf89d842435e73b33cdaf1ab38f031fb3d3fa4d7ff",
+    "truthPacketPath": "docs/reference/agent_system_skills/truth/packets/cvf-engineering-test-evidence-audit.json",
+    "useProofReceiptId": "sha256:3c458a43e018a89fb3f1dd9a4be9dccdc5f0d65ec8452015425f77fa1e8c84bb"
+  },
+  "success": true
+}

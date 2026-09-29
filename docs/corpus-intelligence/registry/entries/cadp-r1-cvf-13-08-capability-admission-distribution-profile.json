@@ -1,0 +1,155 @@
+{
+  "registryOrder": 163,
+  "id": "cadp-r1-cvf-13-08-capability-admission-distribution-profile",
+  "corpusType": "LEGACY_FOLDER",
+  "displayName": "CADP-R1 CVF 13.08 capability admission distribution profile",
+  "scopePaths": [
+    ".private_reference/legacy/CVF 13.08/CVF_CAPABILITY_ADMISSION_DISTRIBUTION_PROFILE/"
+  ],
+  "fileCount": 140,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "CADP-R1",
+  "scanDate": "2026-08-13",
+  "manifestHash": "4c8e34d426fd4ba6c8c39e972871b68dc95a30ee9adc5c6fa3749f25c74bfe45",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "manifestPath": "docs/corpus-intelligence/manifests/cadp-r1-cvf-13-08-capability-admission-distribution-profile.json",
+  "packetPath": "docs/corpus-intelligence/findings/cadp-r1-cvf-13-08-capability-admission-distribution-profile.md",
+  "completionReviewPath": "docs/reviews/CVF_CADP_AI_T1_INDEPENDENT_ADVERSARIAL_REVIEW_2026-08-13.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_CADP_R1_CVF_13_08_CAPABILITY_ADMISSION_DISTRIBUTION_PROFILE_ABSORPTION_2026-08-13.md",
+  "verdicts": {
+    "gc047": "COMPLETE_VERIFIED",
+    "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "capability-admission",
+    "capability-assignment",
+    "capability-distribution",
+    "compatibility-evidence",
+    "remote-side-effects",
+    "workspace-distribution",
+    "work-order-integration",
+    "schema-candidate",
+    "owner-reconciliation",
+    "structure-evidence",
+    "local-reference-implementation",
+    "internal-schema-candidate",
+    "machine-fixture-candidate",
+    "test-candidate",
+    "source-self-evidence"
+  ],
+  "priorAbsorption": "No matching corpus registry entry or exact CADP-R1 governed artifact was found before dispatch.",
+  "findings": [
+    {
+      "id": "CADP-R1-F01",
+      "summary": "The corpus proposes a capability-assignment record that separates target discovery/availability from task execution authority, but no exact current owner surface was found.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Independent reviewer decides whether the concept maps into an existing workspace or role owner, or should enter the conditional reopen index.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    },
+    {
+      "id": "CADP-R1-F02",
+      "summary": "The distribution manifest adds provenance-preserving bundle states and install/assign/activate/authorize separation that may enrich current workspace distribution owners.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Reconcile field-by-field with the current agent-workspace and distribution owners before any schema proposal.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    },
+    {
+      "id": "CADP-R1-F03",
+      "summary": "The six-level exact-combination compatibility evidence ladder has no exact named current owner and may be reusable as a package-level evidence contract.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Identify an evidence or certification owner before opening any contract or schema tranche.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    },
+    {
+      "id": "CADP-R1-F04",
+      "summary": "The admission record schema may enrich the current External Capability Admission Contract with broader candidate, side-effect, evidence, and provenance fields.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Run a future field-level owner reconciliation; direct schema import remains rejected.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    },
+    {
+      "id": "CADP-R1-F05",
+      "summary": "The proposed capabilityGrants projection binds admission, assignment, package/action/resource/transport/budget/receipt constraints into a task grant, but is not part of the current work-order owner.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Source-verify canonical work-order seams before any new-field proposal.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    },
+    {
+      "id": "CADP-R1-F06",
+      "summary": "SaaS guidance adds explicit idempotency classes, asynchronous completion boundaries, cancellation/compensation, and actual remote-state reconciliation to capability admission.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Reviewer decides whether to enrich the existing admission contract or park the delta for demand-gated follow-up.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    },
+    {
+      "id": "CADP-R1-F07",
+      "summary": "Direct import of source schemas, fictional examples, roadmap, draft work order, and source-local BUILD/REVIEW/FREEZE authority records is rejected.",
+      "disposition": "REJECT",
+      "nextAction": "None; retain the copied folder as private secondary evidence only.",
+      "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    },
+    {
+      "id": "CADP-R1-F08",
+      "summary": "The expanded corpus contains a standalone pure-local validator, projection, receipt, and actual-versus-granted reconciliation implementation that is a runtime candidate only.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Open a separate source-verified integration tranche before executing or importing any source module.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    },
+    {
+      "id": "CADP-R1-F09",
+      "summary": "Positive and negative fixtures plus tests encode candidate machine assertions for authority minting, scope, secrets, private export, limits, and reconciliation.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Independent reviewer selects only assertions not already owned by current CVF checkers.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    },
+    {
+      "id": "CADP-R1-F10",
+      "summary": "The 36-directory, 140-file tree is independently enumerated; all 139 source inventory hashes match and the source inventory excludes only itself.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Use the CVF manifest, not the source-supplied inventory, as the authoritative scan snapshot.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    },
+    {
+      "id": "CADP-R1-F11",
+      "summary": "Compatibility evidence levels are raised from structural presence of opaque receipt, work-order, and review references without validating their authenticity or owner authority.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Require owner-resolved evidence validation before adapting the evidence ladder.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    },
+    {
+      "id": "CADP-R1-F12",
+      "summary": "The source calls its receipt deterministic while receipt construction uses UUID4 and the current timestamp.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Do not reuse the receipt implementation without an explicit determinism contract and repair.",
+      "defectClass": "UNVERIFIED_CLAIM",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    },
+    {
+      "id": "CADP-R1-F13",
+      "summary": "The self-evidence record reports 133 files excluding generated caches although the observed 140-file source tree contains no generated cache paths; the counting scope is unexplained.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Treat the source count as self-reported and require explanation during any integration review.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "CapabilityAssignmentRecord exact current owner - rg -n --fixed-strings 'CapabilityAssignmentRecord' docs/reference returned no results",
+    "CompatibilityEvidenceRecord exact current owner - rg -n --fixed-strings 'CompatibilityEvidenceRecord' docs/reference returned no results",
+    "capabilityGrants projection - rg -n --fixed-strings 'capabilityGrants:' docs/reference returned no results"
+  ],
+  "nextScanRecommendation": "CADP-R1 and CADP-AI-T1 are accepted with bounded scope. Execute only the separately authorized CADP-AI-T2 owner-binding work order; F11 remains open until T2 is independently accepted. Source execution and direct import remain prohibited."
+}

@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1957,
+  "stateKey": "cvfWebInheritanceT5Dispatch20260718",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "eb7f7df1e",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T5_WEB_INFORMATION_QA_AND_ROADMAP_CLOSURE_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T5_WEB_INFORMATION_QA_AND_ROADMAP_CLOSURE_2026-07-18.md",
+    "roadmap": "docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md",
+    "workerRoute": "WORKER_MUST_NOT_COMMIT",
+    "allowedPathCount": 9,
+    "verification": "author-fast, pre-dispatch 75/75, dispatch commit steward, governed file size, and pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute exactly the nine-path T5 Web information and provider-free QA worker, then return for independent review and roadmap closure.",
+    "heldNextTranche": "T4 implementation remains deferred; provider/live, public-sync, push, release, production, and external mutation remain parked.",
+    "claimBoundary": "Dispatch authority only; no T5 implementation result, QA result, roadmap closure, release, public, live-provider, or production claim."
+  }
+}

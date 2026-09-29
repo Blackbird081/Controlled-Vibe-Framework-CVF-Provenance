@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1945,
+  "stateKey": "cvfWebInheritanceT3P2Dispatch20260718",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "497253d8b",
+    "dispatchBaseHead": "f2e0b7161",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T3P2_EVIDENCE_AND_LIVENESS_AVAILABILITY_DECISION_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T3P2_EVIDENCE_AND_LIVENESS_AVAILABILITY_DECISION_2026-07-18.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedPaths": 2,
+    "verification": "dispatch-author fast 5/5; pre-dispatch 75/75; dispatch steward; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact T3P2 documentation-only decision and return for independent review.",
+    "heldNextTranche": "T3B and T4-T5 remain parked.",
+    "claimBoundary": "Evidence/liveness availability decision only; no implementation."
+  }
+}

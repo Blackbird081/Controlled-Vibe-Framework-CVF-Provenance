@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1678,
+  "stateKey": "maoT2Closure20260711",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "materialCommit": "854bb3a92",
+    "completionReview": "docs/reviews/CVF_MAO_T2_RISK_BASED_ROLE_RESOLVER_COMPLETION_2026-07-11.md",
+    "focusedVerification": "22/22 tests PASS and TypeScript typecheck PASS",
+    "governanceVerification": "reviewer-fast 61/61 and pre-commit 82/82 PASS",
+    "reviewerRepairs": ["serialized overlap", "role receipt semantics", "authority risk and hash", "route and concurrency budget enforcement"],
+    "nextAllowedMove": "fresh MAO-T3 GC-018 and source-verified work-order authoring only",
+    "claimBoundary": "tested local control-plane role resolver only; no provider adapter, live runtime, public, or production claim"
+  }
+}

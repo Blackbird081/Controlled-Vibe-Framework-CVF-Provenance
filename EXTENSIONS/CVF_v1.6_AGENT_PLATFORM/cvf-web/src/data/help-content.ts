@@ -1,6 +1,8 @@
 /**
  * Help page bilingual content.
  * Extracted from help/page.tsx to keep the component focused on rendering.
+ * Text Encoding Exception: localized Vietnamese user-facing copy is this
+ * file's entire purpose and existing convention.
  */
 
 export type Lang = 'vi' | 'en';
@@ -40,9 +42,9 @@ export interface HelpContent {
 export const HELP_CONTENT: Record<Lang, HelpContent> = {
     vi: {
         header: {
-            title: '🎯 Hướng dẫn sử dụng CVF',
-            subtitle: 'Quy trình 5 bước + các tính năng nâng cao để sử dụng CVF hiệu quả',
-            cta: 'Bắt đầu sử dụng CVF →',
+            title: '🎯 Hướng dẫn sử dụng Tri thức',
+            subtitle: 'Quy trình 5 bước từ thu thập đến bàn giao',
+            cta: 'Bắt đầu sử dụng →',
         },
         roleLabels: {
             user: 'End User',
@@ -51,57 +53,55 @@ export const HELP_CONTENT: Record<Lang, HelpContent> = {
         steps: [
             {
                 number: 1,
-                title: '📝 Xác định Mục tiêu',
+                title: '📖 Tìm hiểu',
                 role: 'user',
-                content: 'Bạn mô tả bạn cần gì, không phải AI làm gì.',
+                content: 'Đọc hướng dẫn và làm quen với quy trình quản lý tri thức của hệ thống.',
                 example: {
-                    correct: 'Tôi cần phân tích 3 phương án kinh doanh để chọn 1',
-                    wrong: 'Hãy suy nghĩ như chuyên gia và dùng SWOT',
+                    correct: 'Đọc kỹ tài liệu hướng dẫn (Learn)',
+                    wrong: 'Bỏ qua bước tìm hiểu và làm bừa',
                 },
             },
             {
                 number: 2,
-                title: '📋 Chọn Template',
+                title: '📥 Thu thập',
                 role: 'user',
-                content: 'Chọn template phù hợp từ thư viện 50 templates trong 8 danh mục:',
-                categories: ['📊 Business', '💻 Technical', '📝 Content', '🔬 Research', '📣 Marketing', '🎨 Product', '🔐 Security', '💻 Development'],
+                content: 'Đưa dữ liệu thô vào hệ thống qua form thu thập.',
+                categories: ['Văn bản', 'Hình ảnh', 'Mã nguồn', 'Tài liệu'],
             },
             {
                 number: 3,
-                title: '📝 Điền Form',
-                role: 'user',
-                content: 'Điền thông tin vào form theo template. Không cần viết prompt!',
-                fields: ['Mục tiêu', 'Bối cảnh', 'Ràng buộc', 'Kết quả mong đợi'],
+                title: '🛡️ Kiểm duyệt',
+                role: 'system',
+                content: 'Quá trình đánh giá và phê duyệt dữ liệu (Governance).',
+                fields: ['Chờ duyệt (Pending)', 'Chấp nhận (Approved)', 'Từ chối (Rejected)'],
             },
             {
                 number: 4,
-                title: '⚙️ CVF Xử lý & Xuất Spec',
+                title: '📦 Đóng gói',
                 role: 'system',
-                content: 'CVF tự động xử lý và cho phép bạn chọn 1 trong 3 chế độ xuất:',
+                content: 'Xuất dữ liệu đã kiểm duyệt thành các gói tin chuẩn (Artifacts).',
                 steps: [
-                    '📝 Brief — Spec gọn để copy/paste',
-                    '⚠️ Agent Handoff — Packet build có guardrails, khuyến nghị cho non-coder',
-                    '🚦 CVF Guided Agent — Quy trình 5 phase đầy đủ + governance metadata',
-                    '→ Copy & paste vào AI bất kỳ HOẶC nhấn "🤖 Gửi Packet cho Agent" để gửi trực tiếp',
+                    'Kiểm tra định dạng chuẩn',
+                    'Đóng gói thành Artifact',
+                    'Chuẩn bị dữ liệu để bàn giao',
                 ],
             },
             {
                 number: 5,
-                title: '✅ Đánh giá Kết quả',
+                title: '🚀 Bàn giao',
                 role: 'user',
-                content: 'Bạn đánh giá output theo tiêu chí đã đặt:',
+                content: 'Gửi gói dữ liệu sang hệ thống khác hoặc bàn giao cho agent (Handoff).',
                 responses: [
-                    { icon: '✅', label: 'ACCEPT', desc: 'Kết quả dùng được' },
-                    { icon: '🔄', label: 'REVISE', desc: 'Cần chỉnh sửa nhỏ' },
-                    { icon: '❌', label: 'REJECT', desc: 'Không đạt, làm lại' },
+                    { icon: '✅', label: 'Thành công', desc: 'Bàn giao hoàn tất' },
+                    { icon: '❌', label: 'Thất bại', desc: 'Lỗi trong quá trình bàn giao' },
                 ],
             },
         ],
         features: [
             {
                 icon: '🤖',
-                title: 'Agent Chat',
-                desc: 'Chat trực tiếp với AI (Gemini/OpenAI/Claude) ngay trên web, có governance tự động inject.',
+                title: 'Trò chuyện với AI',
+                desc: 'Trao đổi trực tiếp với AI ngay trên web; các quy tắc quản trị được áp dụng ở phía sau.',
                 event: 'cvf:openAgent',
             },
             {
@@ -111,8 +111,8 @@ export const HELP_CONTENT: Record<Lang, HelpContent> = {
             },
             {
                 icon: '🧪',
-                title: 'Self-UAT (1-click)',
-                desc: 'Kiểm tra AI compliance bằng 1 nút bấm. 6 tiêu chí: Awareness, Phase, Role, Risk, Skill, Refusal.',
+                title: 'Tự kiểm tra an toàn',
+                desc: 'Kiểm tra nhanh sáu điểm: nhận biết, giai đoạn, vai trò, rủi ro, kỹ năng và quyền từ chối.',
                 event: 'cvf:openAgent',
             },
             {
@@ -129,16 +129,30 @@ export const HELP_CONTENT: Record<Lang, HelpContent> = {
             },
             {
                 icon: '🎯',
-                title: 'Multi-Agent Workflow',
-                desc: '4 agents: Orchestrator → Architect → Builder → Reviewer. Phối hợp tự động.',
+                title: 'Quy trình nhiều trợ lý',
+                desc: 'Bốn vai trò phối hợp: điều phối, lập kế hoạch, thực hiện và rà soát.',
                 event: 'cvf:openMultiAgent',
             },
             {
                 icon: '📖',
-                title: 'Hướng dẫn chi tiết Toolkit',
-                desc: 'Authority Matrix, GovernanceBar, Self-UAT, SpecExport — giải thích từng bước.',
+                title: 'Hướng dẫn công cụ quản trị',
+                desc: 'Giải thích từng bước về quyền hạn, rủi ro, tự kiểm tra và xuất gói.',
                 link: '/help/toolkit',
                 linkText: 'Xem hướng dẫn chi tiết',
+            },
+            {
+                icon: '📋',
+                title: 'Bằng chứng SOT3',
+                desc: 'Xem trạng thái chỉ-đọc của bằng chứng kích hoạt tri thức SOT3 đã lưu trữ. Không có nút thao tác.',
+                link: '/governance/sot3-evidence',
+                linkText: 'Xem Bằng chứng SOT3',
+            },
+            {
+                icon: '🔄',
+                title: 'Lượt chạy MAO bền vững',
+                desc: 'Xem chỉ-đọc các lượt chạy MAO bền vững: khám phá, trạng thái tác vụ, số lần timeout, và thời điểm sự kiện gần nhất. Không khởi chạy, hủy, hay thử lại.',
+                link: '/governance/mao-runs',
+                linkText: 'Xem Lượt chạy MAO',
             },
         ],
         tips: [
@@ -152,18 +166,18 @@ export const HELP_CONTENT: Record<Lang, HelpContent> = {
         doList: [
             'Mô tả rõ mục tiêu cần đạt',
             'Nêu ràng buộc và giới hạn',
-            'Đánh giá output, không process',
-            'Chấp nhận escalation khi cần',
-            'Dùng GovernanceBar để chọn Phase/Role/Risk',
-            'Chạy Self-UAT trước khi dùng cho production',
+            'Đánh giá kết quả, không can thiệp cách xử lý',
+            'Chấp nhận chuyển cấp khi cần',
+            'Chọn đúng giai đoạn, vai trò và mức rủi ro',
+            'Tự kiểm tra trước khi dùng trong môi trường thật',
         ],
         dontList: [
             'Dẫn dắt kết quả mong muốn',
             'Chỉ định cách AI làm việc',
             'Ép tiếp tục khi bị từ chối',
             'Bỏ qua cảnh báo rủi ro',
-            'Bỏ qua governance khi task quan trọng',
-            'Dùng Simple mode cho task có risk cao',
+            'Bỏ qua quản trị khi công việc quan trọng',
+            'Dùng chế độ đơn giản cho công việc rủi ro cao',
         ],
         quote: {
             text: '"CVF không giúp bạn tránh quyết định khó.\nCVF giúp bạn tránh những quyết định tệ."',
@@ -183,49 +197,47 @@ export const HELP_CONTENT: Record<Lang, HelpContent> = {
         steps: [
             {
                 number: 1,
-                title: '📝 Define the Goal',
+                title: '📖 Learn',
                 role: 'user',
-                content: 'Describe what you need, not what the AI should do.',
+                content: 'Read guides and familiarize yourself with the knowledge management workflow.',
                 example: {
-                    correct: 'I need to compare 3 business options and choose one',
-                    wrong: 'Think like an expert and use SWOT',
+                    correct: 'Read the documentation carefully',
+                    wrong: 'Skip the guide and guess',
                 },
             },
             {
                 number: 2,
-                title: '📋 Choose a Template',
+                title: '📥 Intake',
                 role: 'user',
-                content: 'Pick a suitable template from 50 templates in 8 categories:',
-                categories: ['📊 Business', '💻 Technical', '📝 Content', '🔬 Research', '📣 Marketing', '🎨 Product', '🔐 Security', '💻 Development'],
+                content: 'Input raw data into the system via the intake form.',
+                categories: ['Text', 'Images', 'Code', 'Documents'],
             },
             {
                 number: 3,
-                title: '📝 Fill the Form',
-                role: 'user',
-                content: 'Fill in the template form. No prompt writing needed!',
-                fields: ['Goal', 'Context', 'Constraints', 'Expected outcome'],
+                title: '🛡️ Govern',
+                role: 'system',
+                content: 'Evaluate and approve knowledge data (Governance).',
+                fields: ['Pending', 'Approved', 'Rejected'],
             },
             {
                 number: 4,
-                title: '⚙️ CVF Processing & Spec Export',
+                title: '📦 Export',
                 role: 'system',
-                content: 'CVF processes the input and lets you choose 1 of 3 export modes:',
+                content: 'Export governed data into standard packets (Artifacts).',
                 steps: [
-                    '📝 Brief — Lightweight spec for copy/paste',
-                    '⚠️ Agent Handoff — Guardrailed build packet, recommended for non-coders',
-                    '🚦 CVF Guided Agent — Full 5-phase protocol + governance metadata',
-                    '→ Copy & paste into any AI OR click "🤖 Send Packet to Agent" to send directly',
+                    'Check standard format',
+                    'Pack into Artifact',
+                    'Prepare for handoff',
                 ],
             },
             {
                 number: 5,
-                title: '✅ Evaluate Results',
+                title: '🚀 Handoff',
                 role: 'user',
-                content: 'Evaluate the output against your criteria:',
+                content: 'Transfer the data packet to another system or agent (Handoff).',
                 responses: [
-                    { icon: '✅', label: 'ACCEPT', desc: 'Usable result' },
-                    { icon: '🔄', label: 'REVISE', desc: 'Minor changes needed' },
-                    { icon: '❌', label: 'REJECT', desc: 'Not acceptable, redo' },
+                    { icon: '✅', label: 'Success', desc: 'Handoff completed' },
+                    { icon: '❌', label: 'Failure', desc: 'Error during handoff' },
                 ],
             },
         ],
@@ -271,6 +283,20 @@ export const HELP_CONTENT: Record<Lang, HelpContent> = {
                 desc: 'Authority Matrix, GovernanceBar, Self-UAT, SpecExport — explained step by step.',
                 link: '/help/toolkit',
                 linkText: 'View detailed guide',
+            },
+            {
+                icon: '📋',
+                title: 'SOT3 Evidence',
+                desc: 'Read-only status view over durable SOT3 knowledge-activation evidence. No action controls.',
+                link: '/governance/sot3-evidence',
+                linkText: 'View SOT3 Evidence',
+            },
+            {
+                icon: '🔄',
+                title: 'MAO Durable Runs',
+                desc: 'Read-only durable MAO run status: discovery, task state, timeout counts, and latest event time. No launch, cancel, or retry.',
+                link: '/governance/mao-runs',
+                linkText: 'View MAO Runs',
             },
         ],
         tips: [

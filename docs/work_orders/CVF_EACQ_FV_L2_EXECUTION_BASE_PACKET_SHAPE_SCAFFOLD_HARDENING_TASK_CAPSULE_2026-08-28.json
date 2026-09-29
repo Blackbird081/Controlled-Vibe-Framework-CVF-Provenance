@@ -1,0 +1,163 @@
+{
+  "schema": "cvf.externalAgentTaskCapsule.v1",
+  "protocolVersion": "1.1.0",
+  "projectionOf": "cvf.external-agent-round-trip",
+  "generatedAt": "2026-08-28T18:00:00+07:00",
+  "task": {
+    "id": "eacq-fv-l2-execution-base-packet-shape-scaffold-hardening",
+    "title": "EACQ-FV L2 Execution-Base Packet-Shape Scaffold Hardening",
+    "objective": "Correct the existing dispatch scaffold so no-commit work orders use worker-captured execution-base evidence and emit the complete current packet-shape and artifact-manifest contract.",
+    "workingMode": "EXTEND_SUPPLIED_REPOSITORY",
+    "outputRoot": "docs/reviews/CVF_EACQ_FV_L2_EXECUTION_BASE_PACKET_SHAPE_SCAFFOLD_HARDENING_WORKER_RETURN_2026-08-28.md",
+    "nonGoals": [
+      "Do not change checker, autorun, hook, registry, work-order template, or session behavior.",
+      "Do not create a new scaffold, contract vocabulary, manifest mechanism, or runtime owner.",
+      "Do not open UAA or modify any absorption ledger/index disposition.",
+      "Do not commit, stage, push, publish, deploy, call providers, or use credentials."
+    ]
+  },
+  "cvfPublicSource": {
+    "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "commit": "d1042ab0b2f044ca99fa3c812e38e33631b20869",
+    "sourcePosture": "OPERATOR_PINNED_NOT_LIVE_VERIFIED"
+  },
+  "sourceRepositories": [
+    {
+      "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+      "commit": "d1042ab0b2f044ca99fa3c812e38e33631b20869",
+      "usage": "REFERENCE_AND_ANALYSIS"
+    }
+  ],
+  "gateA": {
+    "name": "SOURCE_OWNER_OVERLAP",
+    "requiredBefore": "DESIGN_OR_CODE",
+    "requiredEvidence": [
+      "Read the current dispatch scaffold helper, focused tests, automation-assist packet-shape constants, work-order base-anchor template rule, and L1/MV3 closure evidence.",
+      "Confirm L1 owns only stale pre-closure dispatch-base rejection and did not solve pre-implementation execution-base or scaffold packet-shape defaults.",
+      "Confirm the existing scaffold helper is the only implementation owner to enrich.",
+      "Confirm work-order template, diagnostics, checkers, autorun, hook and session surfaces remain read-only."
+    ],
+    "terminalStates": ["PASS", "RETURN_FOR_REPAIR", "BLOCKED"]
+  },
+  "gateB": {
+    "name": "DESIGN_CODE_TEST",
+    "opensOnlyWhen": "gateA=PASS",
+    "requiredEvidence": [
+      "Change only the existing helper, its focused test file, and the named worker return.",
+      "Emit the worker-captured execution-base placeholder in pre-implementation commands.",
+      "Emit every current required/conditional packet-shape term and the N/A-with-reason instruction inside the contract section.",
+      "Emit the canonical Required Artifact Manifest heading and reject the old generated heading in focused tests.",
+      "Run focused scaffold tests, automation-assist regressions, Python size guard, and worker-return fast gate."
+    ]
+  },
+  "authorityEnvelope": {
+    "commit": false,
+    "push": false,
+    "publication": false,
+    "deployment": false,
+    "providerCalls": false,
+    "credentials": false,
+    "destructiveActions": false
+  },
+  "protectedPaths": {
+    "consumers": ["worker", "reviewer"],
+    "freshness": {
+      "anchor": "dispatch base 87c545146 and paired L2 work order",
+      "regenerateWhen": "dispatch base, write ownership, pinned sources, or authority envelope changes"
+    },
+    "paths": [
+      "AGENTS.md",
+      "CVF_SESSION/",
+      "docs/reference/",
+      "docs/roadmaps/",
+      "docs/baselines/",
+      "docs/work_orders/",
+      "docs/audits/",
+      "governance/compat/run_agent_automation_assist.py",
+      "governance/compat/check_work_order_dispatch_quality.py",
+      "governance/compat/run_agent_autorun_workflow_gate.py",
+      "governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json",
+      "governance/compat/CVF_PYTHON_AUTOMATION_SIZE_EXCEPTION_REGISTRY.json"
+    ]
+  },
+  "ownerMap": {
+    "consumers": ["worker", "reviewer", "return validator"],
+    "freshness": {
+      "anchor": "pinned SHA-256 hashes in the L2 work order",
+      "regenerateWhen": "dispatch scaffold, focused tests, automation-assist constants, or base-anchor template rule changes"
+    },
+    "owners": [
+      {
+        "path": "governance/compat/build_dispatch_packet_scaffold.py",
+        "symbol": "_verification_commands_block; _worker_return_packet_shape_contract; work-order artifact manifest builder",
+        "version": "SHA-256 f8c71ae8e7e3e706e3426750d3cb021275c42e1c709ae7cdc73fff1c033539c2",
+        "competingOwnersChecked": ["run_agent_automation_assist.py consumes and diagnoses generated shape but does not own scaffold emission."]
+      },
+      {
+        "path": "governance/compat/run_agent_automation_assist.py",
+        "symbol": "WORKER_RETURN_PACKET_SHAPE_REQUIRED_TERMS; WORKER_RETURN_PACKET_SHAPE_CONDITIONAL_TERMS",
+        "version": "SHA-256 dba216aa5923632b053d9750f0ecbb7eeca6e0a1dd517046f78d036bb9984923",
+        "competingOwnersChecked": ["This diagnostic owner remains read-only; L2 aligns generated output to its existing contract."]
+      },
+      {
+        "path": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+        "symbol": "Commit Mode And Base-Anchor Lifecycle",
+        "version": "SHA-256 a1e077521122c1e1b9782a77ce2e768b725e9bb68eaccf69a2a4c262f00f1d39",
+        "competingOwnersChecked": ["The near-hard canonical template remains read-only; the scaffold implements its existing execution-base distinction."]
+      }
+    ]
+  },
+  "invariants": {
+    "consumers": ["worker", "reviewer"],
+    "freshness": {
+      "anchor": "L1 and MV3 accepted closure evidence",
+      "regenerateWhen": "scaffold generation or diagnostic packet-shape contract changes"
+    },
+    "mustPreserve": [
+      "Preserve all existing packet kinds, trigger families, commit modes, and public/provider boundaries.",
+      "Keep dispatchBaseHead, executionBaseHead, and closureBaseHead as distinct lifecycle anchors.",
+      "Keep packet-shape vocabulary identical to current diagnostic constants; introduce no third contract owner.",
+      "Keep the helper below its 900-line hard limit and minimize net growth."
+    ],
+    "forbiddenTransitions": [
+      "Do not change checker, automation-assist, autorun, hook, registry, template, or session files.",
+      "Do not treat dispatch base as worker execution base.",
+      "Do not retain both old and canonical generated manifest headings.",
+      "Do not stage or commit worker changes."
+    ]
+  },
+  "verification": {
+    "consumers": ["worker", "reviewer", "return validator"],
+    "freshness": {
+      "anchor": "final unstaged worker diff against execution base",
+      "regenerateWhen": "any helper, test, or worker-return line changes after verification"
+    },
+    "focusedTests": [
+      "python -m pytest governance/compat/test_build_dispatch_packet_scaffold.py -q",
+      "python -m pytest governance/compat/test_run_agent_automation_assist.py -q",
+      "python governance/compat/check_python_automation_size.py --enforce",
+      "python governance/compat/run_worker_return_fast_gate.py"
+    ],
+    "negativeCases": [
+      "A generated no-commit work order whose scoped packet-shape contract omits any current required/conditional term or N/A instruction fails.",
+      "A generated pre-implementation command containing the dispatch-base literal fails.",
+      "A generated work order retaining Work-Order Fulfillment Manifest or missing Required Artifact Manifest fails.",
+      "Any changed path outside the exact helper/test/return manifest fails."
+    ],
+    "deterministicChecks": [
+      "Generated no-commit work order returns a clean automation-assist packet-shape diagnostic.",
+      "Generated pre-implementation command contains the execution-base placeholder and not the dispatch base.",
+      "Generated work order contains exactly one Required Artifact Manifest heading and zero old fulfillment headings.",
+      "WORKER_MAY_COMMIT packet generation remains covered by the full focused suite.",
+      "git diff --check",
+      "git diff --name-only",
+      "git diff --cached --name-only",
+      "git status --short"
+    ],
+    "requiredOutputs": [
+      "governance/compat/build_dispatch_packet_scaffold.py",
+      "governance/compat/test_build_dispatch_packet_scaffold.py",
+      "docs/reviews/CVF_EACQ_FV_L2_EXECUTION_BASE_PACKET_SHAPE_SCAFFOLD_HARDENING_WORKER_RETURN_2026-08-28.md"
+    ]
+  }
+}

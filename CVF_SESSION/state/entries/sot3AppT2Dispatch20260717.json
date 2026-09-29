@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1901,
+  "stateKey": "sot3AppT2Dispatch20260717",
+  "value": {
+    "status": "DISPATCHED",
+    "date": "2026-07-17",
+    "materialCommit": "608746eb4",
+    "dispatchBaseHead": "e023be9f9",
+    "dependencyCommit": "f193bf2e9",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T2_APPLICATION_BOUNDARY_FAIL_CLOSED_HARDENING_2026-07-17.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "externalPathCount": 9,
+    "provenanceOutputCount": 2,
+    "verification": "Pre-dispatch autorun 75/75 PASS; commit steward PASS; pre-commit 83/83 PASS.",
+    "nextAllowedMove": "Execute the exact T2 no-commit worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "claimBoundary": "Deterministic sibling source/test work only; no provider/network/live/browser/public/T3 action."
+  }
+}

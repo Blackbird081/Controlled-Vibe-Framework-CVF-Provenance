@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2777,
+  "stateKey": "daraT4MfrpHandoffParkNoEligibleEvidence20260908",
+  "value": "DARA-T4 is CLOSED_PASS_BOUNDED with terminal disposition PARK_NO_ELIGIBLE_EVIDENCE at material commit 5191357734261b4990b64ab47526b475162a45c3. The existing MFRP P4-C1 collector returned SKIPPED_NO_ELIGIBLE_CANDIDATE before and after commit: rejected/uncommitted DARA-T3 worker material is not a trusted natural phase return and has no matching validated P2 receipt. Eligible count increment is 0, safety trigger is NONE, and no new collector, receipt or checkpoint was created. DARA-T5 and WP-ARCH-003 remain parked; provider/live/public/deploy authority remains closed."
+}

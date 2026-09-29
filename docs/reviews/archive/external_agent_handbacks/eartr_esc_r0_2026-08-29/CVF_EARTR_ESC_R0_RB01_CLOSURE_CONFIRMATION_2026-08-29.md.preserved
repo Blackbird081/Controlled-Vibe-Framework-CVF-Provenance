@@ -1,0 +1,155 @@
+# CVF EARTR-ESC-R0 RB-01 Closure Confirmation
+
+Mode: `REVIEW_ONLY / DESIGN_ONLY`
+
+Reviewed RB-01-revised design:
+`CVF_EARTR_ESC_R0_SOURCE_COLLABORATION_ENRICHMENT_DESIGN_DECISION_2026-08-29.md`
+
+Recomputed SHA-256:
+`ff3ca9815a52bcd2383f7da3f063fade6f53c02fc0d2da94972925c6c13c06c1`
+
+Expected SHA-256:
+`ff3ca9815a52bcd2383f7da3f063fade6f53c02fc0d2da94972925c6c13c06c1`
+
+Reviewed final external adversarial review:
+`CVF_EARTR_ESC_R0_FINAL_EXTERNAL_ADVERSARIAL_REVIEW_2026-08-29.md`
+
+Recomputed SHA-256:
+`e466de1b97239fefb3c492d959bf49ce4e7c6c08a0d5d03f656c8d1cc732eee2`
+
+Expected SHA-256:
+`e466de1b97239fefb3c492d959bf49ce4e7c6c08a0d5d03f656c8d1cc732eee2`
+
+Hash pre-flight:
+`PASS`
+
+## Verdict
+
+`ACCEPT`
+
+RB-01 is closed at design-review level.
+
+The bounded Local repair directly addresses the only remaining blocker from the
+final external adversarial review without reopening settled architecture or
+introducing a parallel protocol, owner, registry, runtime, receipt owner,
+schema, state machine, or fifth implementation path.
+
+Acceptance here closes design review only. It grants no implementation,
+packet-refresh, public-export, commit, push, provider, deployment, or production
+authority.
+
+## RB-01 Closure Check
+
+| Check | Result | Evidence from revised design | Conclusion |
+|---|---|---|---|
+| Receipt machine-binds exact return-manifest SHA-256 | `PASS` | The Local reconciliation binding records `returnManifestSha256`; the referenced PASS receipt must expose `validatedReturnManifestSha256`; Local reconciliation requires exact equality. | Exact manifest binding is explicit and machine-checkable. |
+| Receipt records `validatedProtocolVersion: 1.2.0` | `PASS` | The receipt contract explicitly requires `validatedProtocolVersion: 1.2.0`; Local reconciliation checks equality to that protocol version. | A candidate-unaware or wrong-protocol PASS cannot satisfy typed reconciliation. |
+| Receipt records `validatedCandidateContractVersion: 1` | `PASS` | The receipt contract explicitly requires `validatedCandidateContractVersion: 1`; Local reconciliation checks it against `externalReturnBinding.candidateContractVersion`. | Strict candidate semantics actually enforced are now part of the evidence relation. |
+| Receipt requires `status: PASS` | `PASS` | The receipt contract includes `status: PASS`; Local reconciliation explicitly checks `receipt.status == PASS`. | Receipt identity alone is insufficient; successful validation is required. |
+| Local reconciliation verifies all receipt-binding relations | `PASS` | The revised contract compares manifest hash, candidate-contract version, PASS status, protocol version, and validated candidate-contract version. | The former “two independent hashes” ambiguity is removed. |
+| Legacy or candidate-unaware PASS is insufficient | `PASS` | The revised design states that a legacy/candidate-unaware PASS remains historical evidence but cannot open typed Local reconciliation; the compatibility section repeats that candidate-unaware validators cannot produce sufficient typed evidence. | The residual BF-03 compatibility hole is closed. |
+| Requested negative tests remain in the four-path delta | `PASS` | The focused-test responsibility includes wrong-manifest receipt, mismatched candidate-contract version, legacy-validator PASS, malformed discriminator, silent legacy promotion, contamination, reference integrity, and authority widening. | RB-01 failure modes are represented in the future test surface. |
+| No new receipt owner, schema, registry, protocol, or fifth path | `PASS` | The design retains the existing four paths only and explicitly states no new schema file is justified. Receipt binding remains within the existing representation/validator/test ownership. | The repair preserves the existing-owner architecture. |
+| Optional source-ref set-equality refinement is safe | `PASS` | The external-value candidate now requires `set(sourceRefs) == set(sourceLocations[].sourceRef)`. | Duplicate representations cannot drift or credit a source lacking an exact location. |
+| Every new 1.2 producer emits the discriminator, including empty candidate arrays | `PASS` | The compatibility section requires every new 1.2 producer to emit `candidateContractVersion: 1`; absent discriminator + empty array is legacy-read compatibility only. | Producer semantics are deterministic while preserving 1.1 read compatibility. |
+
+RB-01 closure relation is now:
+
+```text
+externalReturnBinding.returnManifestSha256
+  ==
+receipt.validatedReturnManifestSha256
+
+externalReturnBinding.candidateContractVersion
+  ==
+receipt.validatedCandidateContractVersion
+
+receipt.status
+  ==
+PASS
+
+receipt.validatedProtocolVersion
+  ==
+1.2.0
+
+receipt.validatedCandidateContractVersion
+  ==
+1
+```
+
+This is sufficient to prove, at the proposed design-contract level, that the
+typed Local reconciliation is opened only by a PASS receipt for the exact
+manifest under the strict candidate-aware 1.2 semantics.
+
+The stable candidate identity remains:
+
+```text
+(returnManifestSha256, candidateId)
+```
+
+No globally allocated candidate ID or candidate registry is required.
+
+## Remaining Blocking Findings
+
+`NONE`
+
+No new blocker was introduced by the RB-01 repair.
+
+The optional refinements requested by the closing prompt are both safely
+resolved:
+
+1. exact set equality between `sourceRefs` and
+   `sourceLocations[].sourceRef` is now normative for external-value candidates;
+2. every new protocol-1.2 producer must emit
+   `candidateContractVersion: 1`, including when the candidate collection is
+   empty.
+
+The following previously settled decisions remain intact:
+
+- reuse `cvf.external-agent-round-trip`;
+- protocol target `1.2.0`;
+- retain `cvf.externalAgentReturn.v1`;
+- dual-reader preservation for historical 1.1 evidence;
+- two mutually exclusive candidate provenance lanes;
+- deterministic parent-return/candidate join;
+- Local Agent verifies current CVF overlap;
+- Operator selection does not grant implementation authority;
+- `WORK_ORDER_AUTHORIZED` remains rejected;
+- no new collaboration protocol or profile;
+- no new verified-map registry;
+- no global collaboration state machine;
+- no new runtime;
+- no new truth owner;
+- no new receipt owner;
+- no new authority owner;
+- no new schema file;
+- four-path future implementation delta only.
+
+## Final Recommendation
+
+Close EARTR-ESC-R0 design review with verdict:
+
+`ACCEPT`
+
+The Local Agent may now present the bounded final design to the Operator for
+disposition.
+
+If the Operator accepts it, any implementation must still open a separate
+governed CVF Work Order and remain confined to the already identified four-path
+future delta:
+
+```text
+docs/reference/external_agent_review/
+|-- CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md
+`-- CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md
+
+scripts/
+|-- external_agent_packet.py
+`-- test_external_agent_packet.py
+```
+
+This closure confirmation does not authorize implementation, update
+`EXTERNAL_AGENT_READ`, refresh public/portable representations, commit, push,
+publish, deploy, call providers, or make runtime/production claims.
+
+Status: COMPLETE_PENDING_LOCAL_REVIEW

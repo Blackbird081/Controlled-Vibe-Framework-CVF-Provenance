@@ -1,0 +1,1670 @@
+{
+  "schemaVersion": "cvf.qmRuntimeValueAudit.v1",
+  "batchId": "QM-RUNTIME-VALUE-R1",
+  "programBinding": {
+    "programId": "DOMAIN-PILOT-THREE-REPO-2026-09",
+    "sourceId": "yc-software__qm",
+    "sourceStateAtDispatch": "INCOMPLETE",
+    "chainBoundary": "INDEPENDENT_PER_SOURCE_LANES_ONLY",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_QM_RUNTIME_VALUE_R1_2026-09-14.md",
+    "baseline": "docs/baselines/CVF_GC018_QM_RUNTIME_VALUE_R1_2026-09-14.md"
+  },
+  "sourceIdentityAndPin": {
+    "sourceId": "yc-software__qm",
+    "mirrorPath": ".private_reference/source_mirrors/yc-software__qm/",
+    "requiredHead": "51bf455ea414a58f70274284ce212142518e556a",
+    "verifiedHeadBefore": "51bf455ea414a58f70274284ce212142518e556a",
+    "verifiedHeadAfter": "51bf455ea414a58f70274284ce212142518e556a",
+    "checkoutBranch": "main (on branch main, up to date with origin/main)",
+    "checkoutDetached": false,
+    "mirrorCleanBefore": true,
+    "mirrorCleanAfter": true,
+    "mirrorCommandsRun": [
+      "git -C .private_reference/source_mirrors/yc-software__qm rev-parse HEAD",
+      "git -C .private_reference/source_mirrors/yc-software__qm status --short",
+      "git -C .private_reference/source_mirrors/yc-software__qm status"
+    ]
+  },
+  "repositoryAndMirrorState": {
+    "workspaceHeadBefore": "5829b45a8f35d9d976c88fffc4cb4a6780faebee",
+    "workspaceHeadAfter": "5829b45a8f35d9d976c88fffc4cb4a6780faebee",
+    "workspaceBranch": "main",
+    "workspaceStatusBefore": "clean (git status --short --untracked-files=all: empty)",
+    "workspaceStatusAfter": "two new untracked worker-owned files only (this JSON and the paired Markdown return); no other paths changed",
+    "dispatchBaseHeadInPacket": "aa4282da46dc601e6b305899d2a0bac255bff553",
+    "dispatchBaseHeadNote": "Workspace HEAD at worker start (5829b45a8f) is two commits ahead of the packet's recorded dispatchBaseHead (aa4282da4) per the packet's own WORKER_MUST_CAPTURE_AT_START executionBaseHead contract; this is expected drift, not a pin mismatch (the pin discipline in this packet governs the QM MIRROR, not the CVF workspace HEAD)."
+  },
+  "targetManifest": {
+    "scopeRoots": [
+      "src/auth/",
+      "src/identity/",
+      "src/credentials/",
+      "src/sandbox/"
+    ],
+    "enumerationCommand": "git -C .private_reference/source_mirrors/yc-software__qm ls-tree -r --full-tree --long 51bf455ea414a58f70274284ce212142518e556a -- src/auth src/identity src/credentials src/sandbox",
+    "manifestTotal": 50,
+    "entries": [
+      {
+        "path": "src/auth/aws-role-broker.ts",
+        "blobSha": "e4abd21c8aa0c363e67315bfe8d7c395e0f9f8fb",
+        "byteSize": 2726,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/auth/broker-sessions.ts",
+        "blobSha": "6e2e15e1a2881698aefa2918c8720d071ff7764b",
+        "byteSize": 2653,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/auth/capability-token.ts",
+        "blobSha": "255fe76a20d7bcccd5f4da7fd9d9eba6983a188b",
+        "byteSize": 4591,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/auth/portal-identity.ts",
+        "blobSha": "720675700587cfdfee41d0513e2b4b17806057e6",
+        "byteSize": 756,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/auth/replay-dedupe.ts",
+        "blobSha": "c61d5d868d60b7f08afb050395d07a7d86b532a0",
+        "byteSize": 1836,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/auth/signed-token.ts",
+        "blobSha": "ee946c410b43b64181e865abc38d4393f0f69125",
+        "byteSize": 2066,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/auth/source-auth-sign.ts",
+        "blobSha": "98c46885ed5977c62c7ec8a713372ed300bf9595",
+        "byteSize": 843,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/auth/source-auth.ts",
+        "blobSha": "a768608ddb63a46e445382090d70984725392eed",
+        "byteSize": 2401,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/credentials/connector-status.ts",
+        "blobSha": "5effbeaad73ea17239ca34b857229752a463fc9b",
+        "byteSize": 4032,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/credentials/connector-token.ts",
+        "blobSha": "c6297732124a5fe1fb7ecd4f18150c47c8df0c92",
+        "byteSize": 1781,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/credentials/device-flow-cutover.ts",
+        "blobSha": "f44ca494b4af22ab25b20c95ed59d85cd1e5ce28",
+        "byteSize": 6520,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/credentials/device-flow-persist.ts",
+        "blobSha": "79f3aa3fcc98f4dddc74fd06a0bfd487118a264e",
+        "byteSize": 28712,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/credentials/harness-auth-env.ts",
+        "blobSha": "a475b10d09da7066f0bd0e23ad404913ec898048",
+        "byteSize": 1252,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/credentials/keychain.ts",
+        "blobSha": "0b564924361de1452022e028fb635b23e6fadb2a",
+        "byteSize": 71349,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/credentials/paths.ts",
+        "blobSha": "2a39a8e0b3209e3046f32429f9b653935f89b32f",
+        "byteSize": 402,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/credentials/resident-auth.ts",
+        "blobSha": "9b048a91ee61ffe65a924a28859bfc624cd03f02",
+        "byteSize": 3633,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/credentials/resident-paths.ts",
+        "blobSha": "db847c220aa7e30c7a20afdbede8875643e75d8e",
+        "byteSize": 7000,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/credentials/secret-drop.ts",
+        "blobSha": "14e6d558b2bbc6dba3acb884a9283fc7fbbbc07b",
+        "byteSize": 2646,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/credentials/secret-source.ts",
+        "blobSha": "2acfa03fb11dc8b963b68bc7b0f824238ba2a42f",
+        "byteSize": 2150,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/identity/external-members.ts",
+        "blobSha": "fcf46d3ca4c446483f85fefea6f421bf6b655e3a",
+        "byteSize": 465,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/identity/identity-service.ts",
+        "blobSha": "e445fc960a7a07efb80e3a87fc288759ccde0caa",
+        "byteSize": 6623,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/agent37-sandbox.ts",
+        "blobSha": "4a9cefcc71596fcdd0f780604801a1a2d37991cc",
+        "byteSize": 23924,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/await-process-exit.ts",
+        "blobSha": "e71ecca7e7e76de730dc2d8a9bda4213be5a0d8e",
+        "byteSize": 418,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/aws-microvm-api.ts",
+        "blobSha": "24096975730ae6aac87d8b31a9372b9134232109",
+        "byteSize": 13323,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/aws-sandbox.ts",
+        "blobSha": "7ec8db2c3afbbf8bf2a65c63a64de1fe75abd1d5",
+        "byteSize": 22933,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/docker-exec.ts",
+        "blobSha": "37d09eed1a8a3ea4f85ba6949492b4ba073ab240",
+        "byteSize": 949,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/e2b-client.ts",
+        "blobSha": "51a2fb04d02071597ad96028f83df67ab3030b60",
+        "byteSize": 7451,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/e2b-sandbox.ts",
+        "blobSha": "44a28392535e494779aff21e105455f26db43480",
+        "byteSize": 22349,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/exec-file-ops.ts",
+        "blobSha": "46db801d371d4149e22b2da38d85e52891b28f08",
+        "byteSize": 12742,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/exec-kill.ts",
+        "blobSha": "de0fe92354134597aa015813799e6214715d39a1",
+        "byteSize": 726,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/exec-process-session.ts",
+        "blobSha": "5b9ba2e8f9fcfa0d2c1ffe8d250b2f250fe505a9",
+        "byteSize": 9423,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/exec-sandbox-base.ts",
+        "blobSha": "af01bf42abef188c22721209d93bbf111846c038",
+        "byteSize": 9596,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/home-snapshot.ts",
+        "blobSha": "449e3bf834b48f164a08ecbd34021bb8f1532436",
+        "byteSize": 15303,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/layer-tool-install.ts",
+        "blobSha": "b51faaa83f062babe9bc1c2e9d2918e5e3188d4c",
+        "byteSize": 2876,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/local-sandbox.ts",
+        "blobSha": "60ca308f6cfb10d10cfdd66aa1de14b32c416401",
+        "byteSize": 22412,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/modal-client.ts",
+        "blobSha": "5fae65dc9a69e2ca086bc4de1545fa6d250582f4",
+        "byteSize": 9132,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/modal-sandbox.ts",
+        "blobSha": "332bfeddea0ee40a564e2c3dd77b975696ded544",
+        "byteSize": 34032,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/porter-client.ts",
+        "blobSha": "bf4a6709f07c8c39ce3649d5d700cd7f706a3810",
+        "byteSize": 9724,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/porter-sandbox.ts",
+        "blobSha": "a3dd5e260d0b15b9d841fd7f5e1a829af7cc3cfa",
+        "byteSize": 18299,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/process-poll.ts",
+        "blobSha": "303096ea47dc2a286e555dabcd631588ff6cb221",
+        "byteSize": 1483,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/ro-layers.ts",
+        "blobSha": "8f65ab199f7121f36d7637e333bc45f446eecf56",
+        "byteSize": 2432,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/sandbox-env.ts",
+        "blobSha": "9980cf05ab0ec2519ceb9120f69a568b1921e7ee",
+        "byteSize": 1436,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/sandbox-migrate.ts",
+        "blobSha": "af33c93a96b38e1288f5de7c884fad61f58b33b8",
+        "byteSize": 4954,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/sandbox-migration-runner.ts",
+        "blobSha": "a3f0c30c4a56315383e4b65a65c2dd9d6819a76c",
+        "byteSize": 9451,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/sandbox-resources.ts",
+        "blobSha": "07b6980ab4a91def4629bf325e2f6f99cb8b7c77",
+        "byteSize": 14678,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/sandbox-routing.ts",
+        "blobSha": "cded953db327a579d1dc31e07c53ab862d819391",
+        "byteSize": 13137,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/sandbox.ts",
+        "blobSha": "7b0e0374b94fc873e6bb770fc3dbd1d3a43e5225",
+        "byteSize": 9256,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/smolmachines-sandbox.ts",
+        "blobSha": "d6893f35a80c7bc3a8c7d7cb83ca06f7eca51b61",
+        "byteSize": 16558,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/sprites-sandbox.ts",
+        "blobSha": "3880807af8c6bacc5c38052a3d006a77b3123f41",
+        "byteSize": 19744,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      },
+      {
+        "path": "src/sandbox/tar.ts",
+        "blobSha": "6438c86bfb4a4ee005d8479ebed93c5984ebb839",
+        "byteSize": 1624,
+        "contentClass": "SOURCE_TYPESCRIPT",
+        "processingDepth": "FULL_READ",
+        "terminalStatus": "READ"
+      }
+    ],
+    "depthBuckets": {
+      "FULL_READ": 50,
+      "STRUCTURAL_READ_WITH_REASON": 0,
+      "NON_TEXT_WITH_REASON": 0,
+      "UNREADABLE_WITH_REASON": 0
+    },
+    "statusBuckets": {
+      "READ": 50,
+      "SKIPPED_WITH_REASON": 0,
+      "DEFERRED": 0,
+      "BLOCKED_UNREADABLE": 0
+    },
+    "exclusions": [],
+    "unreadableFiles": [],
+    "manifestDigestSha256": "5bd908cccfee9f491a74fc386280d05cc294057e3dcc66e2bb0430031f2b9bd4",
+    "manifestDigestRecipe": "SHA-256 of the normalized 'path\\tblobSha' rows for all 50 manifest entries, sorted lexicographically by the row string, UTF-8, LF-joined, with one final trailing LF. Reproducible by any reviewer from targetManifest.entries alone."
+  },
+  "testDiscoveryLedger": {
+    "searchCommands": [
+      {
+        "command": "test -f test/keychain.test.ts && test -f test/keychain-ask.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 2,
+        "selected": [
+          "test/keychain.test.ts",
+          "test/keychain-ask.test.ts"
+        ],
+        "reason": "Direct-name match for src/credentials/keychain.ts symbols (createKeychain, grants, asks)."
+      },
+      {
+        "command": "test -f test/device-flow-cutover.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 1,
+        "selected": [
+          "test/device-flow-cutover.test.ts"
+        ],
+        "reason": "Direct-name match for src/credentials/device-flow-cutover.ts."
+      },
+      {
+        "command": "test -f test/device-flow-persist.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 1,
+        "selected": [
+          "test/device-flow-persist.test.ts"
+        ],
+        "reason": "Direct-name match for src/credentials/device-flow-persist.ts."
+      },
+      {
+        "command": "test -f test/resident-paths.test.ts && test -f test/resident-auth.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 2,
+        "selected": [
+          "test/resident-paths.test.ts",
+          "test/resident-auth.test.ts"
+        ],
+        "reason": "Direct-name match for src/credentials/resident-paths.ts and resident-auth.ts."
+      },
+      {
+        "command": "test -f test/secret-drop.test.ts && test -f test/secret-source.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 2,
+        "selected": [
+          "test/secret-drop.test.ts",
+          "test/secret-source.test.ts"
+        ],
+        "reason": "Direct-name match for src/credentials/secret-drop.ts and secret-source.ts."
+      },
+      {
+        "command": "test -f test/capability-token.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 1,
+        "selected": [
+          "test/capability-token.test.ts"
+        ],
+        "reason": "Direct-name match for src/auth/capability-token.ts."
+      },
+      {
+        "command": "test -f test/aws-role-broker.test.ts && test -f test/aws-role-cutover.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 2,
+        "selected": [
+          "test/aws-role-broker.test.ts"
+        ],
+        "reason": "Direct-name match for src/auth/aws-role-broker.ts; aws-role-cutover.test.ts excluded as it targets a different (non-target-tree) cutover mechanism."
+      },
+      {
+        "command": "test -f test/connector-status.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 1,
+        "selected": [
+          "test/connector-status.test.ts"
+        ],
+        "reason": "Direct-name match for src/credentials/connector-status.ts."
+      },
+      {
+        "command": "test -f test/source-auth.test.ts && test -f test/source-auth-sign.test.ts && test -f test/source-auth-sign-vendored.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 3,
+        "selected": [
+          "test/source-auth.test.ts",
+          "test/source-auth-sign.test.ts"
+        ],
+        "reason": "Direct-name match for src/auth/source-auth.ts and source-auth-sign.ts; vendored variant excluded (tests a copied/vendored fork, not this pinned tree's file)."
+      },
+      {
+        "command": "test -f test/identity.test.ts && test -f test/identity-offboarding.test.ts && test -f test/person-identity.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 3,
+        "selected": [
+          "test/identity.test.ts",
+          "test/identity-offboarding.test.ts"
+        ],
+        "reason": "Direct-name match for src/identity/identity-service.ts (classify/deactivate/reactivate/directory-sync); person-identity.test.ts excluded as it targets directory/person.ts, outside the four target trees."
+      },
+      {
+        "command": "test -f test/portal-identity.test.ts && test -f test/portal-identity-gate.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 2,
+        "selected": [
+          "test/portal-identity.test.ts"
+        ],
+        "reason": "Direct-name match for src/auth/portal-identity.ts; gate variant excluded as it tests route-level gating outside src/auth."
+      },
+      {
+        "command": "test -f test/sandbox-routing.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 1,
+        "selected": [
+          "test/sandbox-routing.test.ts"
+        ],
+        "reason": "Direct-name match for src/sandbox/sandbox-routing.ts."
+      },
+      {
+        "command": "test -f test/sandbox-migrate.test.ts && test -f test/sandbox-migration-runner.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 2,
+        "selected": [
+          "test/sandbox-migrate.test.ts",
+          "test/sandbox-migration-runner.test.ts"
+        ],
+        "reason": "Direct-name match for src/sandbox/sandbox-migrate.ts and sandbox-migration-runner.ts."
+      },
+      {
+        "command": "test -f test/sandbox-resources.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 1,
+        "selected": [
+          "test/sandbox-resources.test.ts"
+        ],
+        "reason": "Direct-name match for src/sandbox/sandbox-resources.ts."
+      },
+      {
+        "command": "test -f test/local-sandbox.test.ts && test -f test/aws-sandbox.test.ts && test -f test/e2b-sandbox.test.ts && test -f test/modal-sandbox.test.ts && test -f test/porter-sandbox.test.ts && test -f test/sprites-sandbox.test.ts && test -f test/smolmachines-sandbox.test.ts && test -f test/agent37-sandbox.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 8,
+        "selected": [
+          "test/local-sandbox.test.ts",
+          "test/aws-sandbox.test.ts",
+          "test/e2b-sandbox.test.ts",
+          "test/modal-sandbox.test.ts",
+          "test/porter-sandbox.test.ts",
+          "test/sprites-sandbox.test.ts",
+          "test/smolmachines-sandbox.test.ts",
+          "test/agent37-sandbox.test.ts"
+        ],
+        "reason": "Direct per-backend name match for each of the eight sandbox backend implementations."
+      },
+      {
+        "command": "test -f test/sandbox-noninteractive.test.ts && test -f test/sandbox-base-image.test.ts && test -f test/sandbox-destroy-scope.test.ts && test -f test/durable-process-sessions.test.ts && test -f test/execute-scratch.test.ts",
+        "roots": [
+          "test/"
+        ],
+        "resultCount": 5,
+        "selected": [
+          "test/sandbox-noninteractive.test.ts",
+          "test/durable-process-sessions.test.ts"
+        ],
+        "reason": "Grep hit on exported symbols nonInteractiveShellPrefix (sandbox-env.ts) and process-session exec behavior; base-image/destroy-scope/execute-scratch tests target deployment/orchestrator-layer concerns outside the four target trees and were excluded."
+      },
+      {
+        "command": "grep -rl 'createKeychain(' --include=*.ts . | grep -v node_modules | grep -v /test/",
+        "roots": [
+          "repo root (excluding node_modules, test/)"
+        ],
+        "resultCount": 2,
+        "selected": [
+          "src/wiring.ts (consumer, not a test — recorded as integration evidence)"
+        ],
+        "reason": "Deterministic consumer/integration search for createKeychain wiring, not a test discovery; included to source the integration-link field of mechanism records."
+      }
+    ],
+    "fullyReadTests": [
+      {
+        "path": "test/capability-token.test.ts",
+        "linesRead": "1-134 (all)",
+        "blobShaAtPin": "207efe0b6cd88e81624426dff3ecee4e97dba375"
+      },
+      {
+        "path": "test/aws-role-broker.test.ts",
+        "linesRead": "1-98 (all)",
+        "blobShaAtPin": "c1d9e0bd8d3c52f36c32d03771871eb79d0269e1"
+      },
+      {
+        "path": "test/source-auth.test.ts",
+        "linesRead": "1-86 (all)",
+        "blobShaAtPin": "3023a53549caca5560ac4695ce96732b7e052ac1"
+      },
+      {
+        "path": "test/source-auth-sign.test.ts",
+        "linesRead": "1-38 (all)",
+        "blobShaAtPin": "7b86d79ef2799785794d68b6f46bb303b6e2e41c"
+      },
+      {
+        "path": "test/portal-identity.test.ts",
+        "linesRead": "1-42 (all)",
+        "blobShaAtPin": "e997f32bb57809907344e2757fb1511c92e6f021"
+      },
+      {
+        "path": "test/identity.test.ts",
+        "linesRead": "1-159 (all)",
+        "blobShaAtPin": "101c27f61fdbd811af2feba579af19278d0fa172"
+      },
+      {
+        "path": "test/identity-offboarding.test.ts",
+        "linesRead": "1-119 (all)",
+        "blobShaAtPin": "ba4201f79962cc6445d9134b39c252dfba79e72e"
+      },
+      {
+        "path": "test/resident-auth.test.ts",
+        "linesRead": "1-97 (all)",
+        "blobShaAtPin": "ed8ef0bfe1e53d9fa93b80787ffa1f62fd7d4b5f"
+      },
+      {
+        "path": "test/connector-status.test.ts",
+        "linesRead": "1-137 (all)",
+        "blobShaAtPin": "306d15771091337f95ae118ad60e995219de428d"
+      },
+      {
+        "path": "test/sandbox-migrate.test.ts",
+        "linesRead": "1-164 (all)",
+        "blobShaAtPin": "4bdeaa4e4918a79272aa1323adfcfe91ce367a4f"
+      },
+      {
+        "path": "test/sandbox-routing.test.ts",
+        "linesRead": "1-289 (all)",
+        "blobShaAtPin": "03fe4385a6410d8fed7e688afc675d3774a97d16"
+      },
+      {
+        "path": "test/secret-source.test.ts",
+        "linesRead": "1-91 (all)",
+        "blobShaAtPin": "70c5261dad621e417d6c657a723e8c26aabf3bf0"
+      },
+      {
+        "path": "test/keychain.test.ts",
+        "linesRead": "1-1597 (all, Generation 1 rework -- previously test-name-header sampled only)",
+        "blobShaAtPin": "49b124458fde7e5fa2fd54d3ea144eea1b270b26"
+      },
+      {
+        "path": "test/keychain-ask.test.ts",
+        "linesRead": "1-971 (all, Generation 1 rework -- previously test-name-header sampled only)",
+        "blobShaAtPin": "44a04afc2415791092306ba1debb2898c74da1c4"
+      },
+      {
+        "path": "test/device-flow-persist.test.ts",
+        "linesRead": "1-1133 (all, Generation 1 rework -- previously test-name-header sampled only)",
+        "blobShaAtPin": "338096bc15829df47b35b7b32ec7f0fe902b5fef"
+      },
+      {
+        "path": "test/resident-paths.test.ts",
+        "linesRead": "1-514 (all, Generation 1 rework -- previously test-name-header sampled only)",
+        "blobShaAtPin": "07e2dce3b2c257f4335c5b33da8607e2d90455cb"
+      },
+      {
+        "path": "test/secret-drop.test.ts",
+        "linesRead": "1-678 (all, Generation 1 rework -- previously describe/it-block-header sampled only)",
+        "blobShaAtPin": "b6fb5158ecc04bf9b9e07f7abe0d1baaee4abd90"
+      },
+      {
+        "path": "test/sandbox-migration-runner.test.ts",
+        "linesRead": "1-411 (all, Generation 1 rework -- previously 1-100 of 411 was falsely reported as a complete read; F3 corrects the false FULL_READ claim by actually completing the read)",
+        "blobShaAtPin": "f529b2ffe6bf4ae3fd5a83805827c61e24a79017"
+      },
+      {
+        "path": "test/local-sandbox.test.ts",
+        "linesRead": "1-317 (all, Generation 1 rework -- previously not opened, only declared UNKNOWN)",
+        "blobShaAtPin": "47dc81c33579ce54782e6a1e410395943277f3d1"
+      },
+      {
+        "path": "test/aws-sandbox.test.ts",
+        "linesRead": "1-332 (all, Generation 1 rework -- previously not opened, only declared UNKNOWN)",
+        "blobShaAtPin": "c98a17885a37c442363da9ac533a62ecf29e26b6"
+      },
+      {
+        "path": "test/e2b-sandbox.test.ts",
+        "linesRead": "1-550 (all, Generation 1 rework -- previously not opened, only declared UNKNOWN)",
+        "blobShaAtPin": "b92c5992f8bb5dac316b8b7472afde782087e6f6"
+      },
+      {
+        "path": "test/modal-sandbox.test.ts",
+        "linesRead": "1-857 (all, Generation 1 rework -- previously not opened, only declared UNKNOWN)",
+        "blobShaAtPin": "dfe7ebaaf93be1c8be8b0d7ab262f93695acea82"
+      },
+      {
+        "path": "test/porter-sandbox.test.ts",
+        "linesRead": "1-273 (all, Generation 1 rework -- previously not opened, only declared UNKNOWN)",
+        "blobShaAtPin": "510527921b17eac8577632134d22c24047a6238e"
+      },
+      {
+        "path": "test/sprites-sandbox.test.ts",
+        "linesRead": "1-521 (all, Generation 1 rework -- previously not opened, only declared UNKNOWN)",
+        "blobShaAtPin": "613e73c722175a24631eb1b632ce7ee9480846b9"
+      },
+      {
+        "path": "test/smolmachines-sandbox.test.ts",
+        "linesRead": "1-215 (all, Generation 1 rework -- previously not opened, only declared UNKNOWN)",
+        "blobShaAtPin": "2595cedd244c0177dea602ee002912a265d7087d"
+      },
+      {
+        "path": "test/agent37-sandbox.test.ts",
+        "linesRead": "1-268 (all, Generation 1 rework -- previously not opened, only declared UNKNOWN)",
+        "blobShaAtPin": "b7707a845ebd123e71e1bc582206961d32a74e3b"
+      },
+      {
+        "path": "test/sandbox-resources.test.ts",
+        "linesRead": "1-808 (all, Generation 2 rework -- previously partially read 1-100 of 808 in Generation 1; see testDiscoveryLedger.readHistory for the superseded partial row)",
+        "blobShaAtPin": "7136c7831f0732a7809aef005b903c521229aae1",
+        "assertionEvidence": "24 test() cases covering: legacy-adoption determinism and identity reconnection; scope ACL protecting inventory/target access and preventing cross-scope default relocation; status/restart resolving the selected backing machine vs legacy scope; listing never inventing a legacy machine for an untouched scope; turn-default changes invalidating cached provisioning while explicit calls dedupe/cleanup once per computer; retirement refusing the default, waiting for an active command, and preventing future execution; all ~19 router/resources operations rejecting against a retired machine; retirement waiting for outstanding creation (success/failure parameterized) and remaining terminal; explicit-target credential cleanup/restore parity with default targets (isolated/shared-automation/personal, via createDeviceFlowCutoverStore + keychain listByOwner/materializeOwnFiles mocks, verifying rm -rf cleanup scripts and restored tar contents include allowed (.aws) and exclude quarantined (.config/gh) credential bundles); disabled readers honoring explicit defaults without activating; activation preserving routes/cold identities/explicit nulls without calling a provider; activation retrying partial durable writes without losing defaults or creating machines; boot activation freezing legacy adoption before a new session arrives; late legacy computer publication racing activation without losing its default; legacy route mutation ordering under activation; retirement deleting an inferred-missing computer without provisioning/status/restore; unsupported retirement hidden and refused before inventory mutation; failed retirement staying unroutable and retrying cleanup by backing scope after a core restart; a pending retirement without an error remaining retryable after a crash; retirement preserving core live-work and owning-scope guards before direct deletion; retirement waiting for background-process-registry startup to commit its live row; failed background registration killing its process and releasing the resource lock."
+      },
+      {
+        "path": "test/device-flow-cutover.test.ts",
+        "linesRead": "1-118 (all, Generation 2 rework -- file was selected by deterministic search (searchCommands) but never added to fullyReadTests in R1 or Generation 1)",
+        "blobShaAtPin": "83691df46b3d1342e5411a0f3c49711ae04af5f0",
+        "assertionEvidence": "5 test cases against createDeviceFlowCutoverStore (src/credentials/device-flow-cutover.ts): default-to-legacy for every service/scope; exact-scope policy overrides org policy; policies updatable/clearable with resident-reset-generation tracking (including an older reset generation being unable to consume a concurrent newer rollback); stored policies and reset requests discovering removed services across restart; resident reset completion being durable per-computer (keyed by computerId) without changing scope policy."
+      },
+      {
+        "path": "test/durable-process-sessions.test.ts",
+        "linesRead": "1-204 (all, Generation 2 rework -- previously grep-listed only, declared UNKNOWN/not opened)",
+        "blobShaAtPin": "eff81b85e1b9d1fae88a36fba69336ff81732ae1",
+        "assertionEvidence": "3 test cases against orchestrator-level (src/core/orchestrator.ts) keepWarm teardown gating via ProcessRegistry (src/processes/process-registry.ts), using a fakeProcessSandbox() device-flow-shaped process helper: a live durable process keeps the computer warm and none lets it suspend (keepWarm true while registered+alive, false once exited:true); reattach reconciles a session whose process died while core was down (registry entry cleared, keepWarm false); with no live session the per-scope box suspends as before since the gate is off by default (keepWarm false)."
+      },
+      {
+        "path": "test/sandbox-noninteractive.test.ts",
+        "linesRead": "1-62 (all, Generation 2 rework -- previously grep-listed only, declared UNKNOWN/NOT opened)",
+        "blobShaAtPin": "8e0530ce6ac5877a0556f7a3e30c1a2262189116",
+        "assertionEvidence": "Tests nonInteractiveShellPrefix() and NONINTERACTIVE_ENV (src/sandbox/sandbox-env.ts) directly via regex assertions and via integration through a fake-backed Sprites sandbox provision: shell prefix detaches stdin (exec </dev/null;) and exports non-interactive defaults (PAGER, GIT_PAGER, GIT_TERMINAL_PROMPT, DEBIAN_FRONTEND, AWS_PAGER via ${VAR:-default}/${VAR-} patterns); a command reading stdin gets immediate EOF instead of timing out; pager/frontend/terminal-prompt defaults are present in the sandbox's actual command environment (verified via printf inside the sandbox); an explicit per-turn env value (PAGER: less) wins over the non-interactive default."
+      }
+    ],
+    "structurallySampledTests": [],
+    "consumerIntegrationSearches": [
+      {
+        "command": "grep -rl \"createKeychain(\" --include=*.ts . | grep -v node_modules",
+        "resultFiles": [
+          "src/credentials/keychain.ts",
+          "src/wiring.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"mintCapabilityToken\\|verifyCapabilityToken\" --include=*.ts . | grep -v node_modules | grep -v /test/",
+        "resultFiles": [
+          "scripts/service-credential-livetest.ts",
+          "src/api/git-http-broker.ts",
+          "src/api/routes/context.ts",
+          "src/api/routes/secret-drop.ts",
+          "src/api/routes/surface.ts",
+          "src/api/server.ts",
+          "src/auth/capability-token.ts",
+          "src/core/orchestrator.ts",
+          "src/egress-authz-main.ts",
+          "src/sandbox/exec-file-ops.ts",
+          "src/wiring.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"createSandboxRouter(\" --include=*.ts . | grep -v node_modules",
+        "resultFiles": [
+          "src/sandbox/sandbox-routing.ts",
+          "src/wiring.ts",
+          "test/sandbox-resources.test.ts",
+          "test/sandbox-routing.test.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"createIdentityService(\" --include=*.ts . | grep -v node_modules | grep -v /test/",
+        "resultFiles": [
+          "scripts/monitor-smoke.ts",
+          "src/identity/identity-service.ts",
+          "src/wiring.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"createSourceAuth(\" --include=*.ts . | grep -v node_modules | grep -v /test/",
+        "resultFiles": [
+          "src/api/server.ts",
+          "src/auth/source-auth.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"createAwsRoleBroker(\" --include=*.ts . | grep -v node_modules | grep -v /test/",
+        "resultFiles": [
+          "src/auth/aws-role-broker.ts",
+          "src/wiring.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"captureDeviceFlowLogins\\|registerLoginPaths\\|materializeDeviceFlowLogins\" --include=*.ts . | grep -v node_modules | grep -v /test/",
+        "resultFiles": [
+          "src/core/orchestrator/sandboxes.ts",
+          "src/core/orchestrator.ts",
+          "src/credentials/device-flow-persist.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"probeResidentAuth\" --include=*.ts . | grep -v node_modules | grep -v /test/",
+        "resultFiles": [
+          "src/core/orchestrator/sandboxes.ts",
+          "src/credentials/resident-auth.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"createSecretDropStore\" --include=*.ts . | grep -v node_modules | grep -v /test/",
+        "resultFiles": [
+          "src/credentials/secret-drop.ts",
+          "src/wiring.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"createDeviceFlowCutoverStore\" --include=*.ts . | grep -v node_modules | grep -v /test/",
+        "resultFiles": [
+          "src/credentials/device-flow-cutover.ts",
+          "src/wiring.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"refreshConnectorStatus\\|createConnectorStatusCache\" --include=*.ts . | grep -v node_modules | grep -v /test/",
+        "resultFiles": [
+          "src/core/orchestrator.ts",
+          "src/credentials/connector-status.ts",
+          "src/wiring.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"createSandboxResources(\" --include=*.ts . | grep -v node_modules | grep -v /test/",
+        "resultFiles": [
+          "src/sandbox/sandbox-resources.ts",
+          "src/wiring.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"createSandboxMigrationRunner(\" --include=*.ts . | grep -v node_modules | grep -v /test/",
+        "resultFiles": [
+          "src/sandbox/sandbox-migration-runner.ts",
+          "src/wiring.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"from .*auth/portal-identity\" --include=*.ts . | grep -v node_modules",
+        "resultFiles": [
+          "src/api/routes/deployments.ts",
+          "src/api/routes/route.ts",
+          "src/api/server.ts",
+          "src/deployment/postdeploy-smoke.ts",
+          "test/auth-broker-claim.test.ts",
+          "test/deploy-subdomain-reach.test.ts",
+          "test/live-slack/core.ts",
+          "test/postdeploy-smoke.test.ts"
+        ]
+      },
+      {
+        "command": "grep -rl \"from .*chassis/src/portal-identity\\|from .*\\./portal-identity\" --include=*.ts . | grep -v node_modules | grep -v /test/",
+        "resultFiles": [
+          "plugins/admin/src/index.ts",
+          "plugins/portal/src/index.ts",
+          "plugins/portal/src/proxy.ts",
+          "plugins/web-ui/server/index.ts",
+          "scripts/google-oauth-smoke.ts"
+        ]
+      }
+    ],
+    "consumerIntegrationSearchesCountReconciliation": "F4 repair note: the JSON audit's testDiscoveryLedger.consumerIntegrationSearches array already contained exactly 15 entries at first return; the discrepancy F4 identified was in the companion Markdown worker return's prose ('14 consumer/integration grep searches'), which undercounted by one and is corrected in the Generation 1 Markdown return. No JSON data changed for this specific item; this field documents the reconciliation for a reviewer diffing both artifacts.",
+    "readHistory": [
+      {
+        "path": "test/sandbox-migration-runner.test.ts",
+        "supersededLinesRead": "1-100 of 411 (setup + first two cases; remainder structurally sampled by test-name grep)",
+        "supersededBy": "1-411 (all, Generation 1 rework)",
+        "note": "Generation 2 repair (F3): this was the ORIGINAL R1 partial-read row (lines 1-100 of 411), duplicated alongside the Generation-1 completion row for the same path. Moved to history here rather than deleted outright, per the Generation 2 instruction to preserve the prior partial-read record as history while removing the duplicate current-status line."
+      },
+      {
+        "path": "test/sandbox-resources.test.ts",
+        "supersededLinesRead": "1-100 of 808 (setup harness only; remaining 24+ cases still test-name-header level -- see structurallySampledTests below; NOT claimed FULL_READ)",
+        "supersededBy": "1-808 (all, Generation 2 rework -- file is now genuinely fully read)",
+        "note": "Generation 2 repair (F3): this row was a partial read (100 of 808 lines) that had been incorrectly placed in fullyReadTests (a list that must contain only complete reads) in Generation 1. Moved to history; replaced below by a genuine full-read row."
+      }
+    ],
+    "fullyReadTestsCount": 30,
+    "fullyReadTestsUniquePathCount": 30,
+    "selectedTestsReconciliation": {
+      "reconciledAgainst": "searchCommands[].selected (all entries, deduplicated, test/ prefix only)",
+      "selectedTestPathCount": 30,
+      "fullyReadTestPathCount": 30,
+      "missingAfterGeneration2Repair": [],
+      "note": "Generation 2 repair (F3, full-ledger pass): every path in searchCommands[].selected with a test/ prefix now has exactly one current-status row in fullyReadTests with blob SHA at the pin, read scope, and assertion evidence; structurallySampledTests is empty; no partial rows remain. This reconciliation was run against the full 30-path selected-tests list, not limited to the four files named in the Generation 2 instruction. Generation 2 correction (second pass): 26 of 30 fullyReadTests rows were missing blobShaAtPin despite the reconciliation claim above that every row carries a blob SHA -- backfilled from `git rev-parse HEAD:<path>` against the pinned mirror HEAD 51bf455ea414a58f70274284ce212142518e556a for all 26 affected rows; all 30 rows now carry blobShaAtPin."
+    }
+  },
+  "hypothesisOutcomes": [
+    {
+      "id": "H1",
+      "hypothesis": "command-policy normalization and where it is actually consumed",
+      "outcome": "NOT_FOUND_IN_SCOPE",
+      "evidence": "No command-policy normalization mechanism (e.g. an allow/deny command list, shell-token normalizer) exists in src/auth, src/identity, src/credentials, or src/sandbox. The closest adjacent concept is command REDACTION in src/sandbox/exec-process-session.ts (redactCommand, redactPipedIntoWithToken) which masks secret-shaped flags/env-assignments before a command is surfaced in listProcesses() output — this is a display-safety mechanism, not a policy/authorization normalizer.",
+      "revised": "Reframed as a redaction (not policy-normalization) finding; recorded as mechanism M17."
+    },
+    {
+      "id": "H2",
+      "hypothesis": "shared credential broker/source patterns and their real consumers",
+      "outcome": "CONFIRMED",
+      "evidence": "src/credentials/keychain.ts createKeychain() is the shared credential broker: owns encrypted credential records, grants, asks, and connector tokens. Sole constructor consumer is src/wiring.ts (buildApp). src/credentials/secret-source.ts createLayeredSecretSource/createEnvSecretSource/createAwsSecretsManagerSource is a separate, narrower secret-value source abstraction consumed by src/credentials/connector-token.ts withOperatorTokenFallback as an env-var fallback layer beneath the keychain, not a keychain replacement.",
+      "revised": "Confirmed as two distinct mechanisms (M1 keychain broker, M9 secret-source layering) rather than one."
+    },
+    {
+      "id": "H3",
+      "hypothesis": "portal-only or resident identity decisions and scope propagation",
+      "outcome": "CONFIRMED_WITH_ADVERSE_FINDING",
+      "outcome_detail": "Generation 1 correction (F1), reworded in Generation 2 to remove leftover 'non-interoperable' phrasing: two independent portal-identity.ts implementations exist under different paths with disjoint live consumer sets; cross-acceptance is directional, not symmetric, and not a blanket non-interoperability -- src/auth's verifier (via its legacy 2-segment HMAC fallback) structurally accepts a chassis-minted token given a shared secret (FORWARD acceptance), while chassis's verifier cannot decode a JOSE-minted 3-segment token's joined header+payload as valid JSON and therefore rejects it deterministically (REVERSE rejection). See mechanism M6 for the full directional matrix and exact source-line evidence; this is a corrected refinement of the R1 finding, not a reversal of it.",
+      "evidence": "grep -rl 'from .*auth/portal-identity' vs grep -rl 'from .*chassis/src/portal-identity' show disjoint consumer sets (src/api/* and src/deployment/* vs plugins/portal/*, plugins/web-ui/*, plugins/admin/*).",
+      "revised": "Recorded as mechanism M6 with a MATERIAL_CONTRADICTION note; this is an adverse/novel finding, not previously hypothesized."
+    },
+    {
+      "id": "H4",
+      "hypothesis": "credential sourcing, storage, injection, revocation, and failure handling",
+      "outcome": "CONFIRMED",
+      "evidence": "src/credentials/keychain.ts covers the full lifecycle: save() sourcing/storage, materialize()/materializeOwn()/materializeStanding() injection via renderUseScript(), remove()/revokeGrant() revocation, and explicit failure states (KeychainError with typed HTTP-style status codes 400/403/404/409/410/422/503) for expired, decrypt-failed, race-lost, and ownership-violating operations.",
+      "revised": "No revision; recorded as mechanism M1."
+    },
+    {
+      "id": "H5",
+      "hypothesis": "sandbox provider abstraction, routing, lifecycle, migration, teardown, resource accounting, and noninteractive failure paths",
+      "outcome": "CONFIRMED",
+      "evidence": "src/sandbox/sandbox.ts defines the Sandbox interface; src/sandbox/sandbox-routing.ts createSandboxRouter dispatches per-scope by a DurableMap<SandboxRoute>; src/sandbox/sandbox-migration-runner.ts createSandboxMigrationRunner performs copy-based and native-snapshot-based home migration with capability-loss refusal; src/sandbox/sandbox-resources.ts createSandboxResources owns explicit per-scope resource lifecycle (create/status/restart/retire) with a legacy-adoption activation path; eight backend implementations (local-docker, aws-microvm, e2b, modal, porter, sprites, smolmachines, agent37) each implement provision/run/teardown against a distinct provider API with consistent credential-linking, egress-proxy-forcing, and non-interactive shell-prefix conventions from src/sandbox/sandbox-env.ts and src/credentials/resident-paths.ts.",
+      "revised": "No revision; recorded as mechanisms M11-M20."
+    },
+    {
+      "id": "H6",
+      "hypothesis": "client/server or producer/consumer mismatches, including egress/auth gaps",
+      "outcome": "CONFIRMED_WITH_ADVERSE_FINDING",
+      "evidence": "Beyond the dual portal-identity mismatch (H3), src/sandbox/sandbox-env.ts DROPPED_PROXY_ENV / forceThroughProxyEnv and the shared exec-sandbox-base.ts:155-156 precondition gate apply egress enforcement only when BOTH an egressProxyUrl is configured AND a per-provision egressToken is supplied (`forceEgress = !!opts.egressProxyUrl && !!provOpts?.egressToken`). CORRECTED (Generation 1 F2, refined further in Generation 2): this is NOT a uniform fail-open gap across 'every backend that wires egress' as originally stated -- the egress-capable set is seven backends (aws, e2b, modal, porter, agent37, smolmachines, sprites; local-docker has no egress-proxy support at all). When the URL is present but the token is absent (Condition B), `ensureEgress`/env-injection is SKIPPED entirely for all seven -- this is silent absence of enforcement, not a failure, and applies uniformly. When BOTH URL and token are present (Condition A), enforcement runs for all seven, but only sprites additionally server-verifies the policy took effect and fails closed on a readback mismatch; the other six are client-side-env-var-only with no server-side check that the shell actually honors the proxy. See mechanism M20 for the complete two-condition, seven-backend matrix with per-backend test-proven-vs-source-inferred status.",
+      "revised": "Recorded as a failure-semantics adverse finding attached to mechanism M20 (egress proxy forcing)."
+    }
+  ],
+  "mechanismRecords": [
+    {
+      "mechanismId": "M1",
+      "userAgentOutcome": "An operator can save a credential (env-var or multi-file bundle), have it encrypted at rest, and have it granted (once or standing) to a specific conversation scope so an agent turn can materialize and use it without ever seeing the owner's other secrets.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/credentials/keychain.ts:494-1416 createKeychain() — saveCredential (803-895), mintGrant (947-978), createAsk/approveAsk/declineAsk (1089-1175)",
+      "verifier": "src/credentials/keychain.ts materialize() (1333-1355): grant audience/status/expiry checks via claimOnceGrant (933-945) and credExpired (462-464); getOwned() ownership check (508-511) for readOwnSecret/remove",
+      "nonTestConsumer": "src/wiring.ts (createKeychain constructor call — confirmed by grep); consumed operationally by src/core/orchestrator.ts and API routes under /v1/keychain/* referenced in renderKeychainManifest's SAVE_HINT text (keychain.ts:1524-1534)",
+      "integrationLink": "src/wiring.ts buildApp() wires createKeychain(deps) into the app object; HTTP routes (not in target tree, referenced only) call keychain.save/materialize/createGrant per the curl examples embedded in renderKeychainManifest",
+      "tests": "test/keychain.test.ts (23 test cases spanning save/list/grant/materialize/manifest — STRUCTURAL_READ, test-name-header level); e.g. 'only the owner can grant; materialize is scope-checked; once-grants are consumed' (line 137) and 'concurrent materialization consumes a once grant exactly once' (line 181) prove single-use grant atomicity; test/keychain-ask.test.ts (13 cases) proves ask/approve/decline lifecycle and sweep-based durable retry. Tests prove: ownership gating, grant-once atomicity race safety, manifest text composition. Tests do NOT prove: real Postgres/S3-backed DurableMap behavior (uses in-memory createMemoryMap in test harness), real network OAuth refresh flow end-to-end.",
+      "failureSemantics": "KeychainError(403) for non-owner grant attempts; KeychainError(410) for expired credential/grant/connector token needing reconnect; KeychainError(409) for concurrent save races (retried up to 3 attempts via update+insertIfAbsent CAS loop, keychain.ts:888-894) then surfaces 503; KeychainError(422) when a record fails to decrypt under the current key (materializeDecrypted, 918-931) rather than throwing a raw crypto exception; tryDecrypt() (549-558) swallows and logs per-record decrypt failures during bulk listing so one corrupt row does not fail the whole list.",
+      "sourceNativeStatus": "QM wires and uses this natively; it is the sole keychain implementation referenced across API routes, orchestrator, and Slack-facing manifest text in the source tree.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND. Bounded negative search: grep -rE 'credential keychain|encrypted credential|OAuth connector|consent flow' under docs/, governance/, EXTENSIONS/, and repo src trees (excluding .private_reference) returned zero matches for an equivalent runtime credential-broker/grant/ask system. CVF is a governance/documentation framework; it has no analogous runtime SaaS credential store.",
+      "deltaBeyondCvf": "Full owner/grant/ask consent-flow oracle with atomic once-grant claiming, origin-guarded overwrite protection (expectedOrigin CAS in saveCredential), and typed failure codes — none of this exists in CVF today because CVF has no equivalent runtime surface to compare against.",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT — CVF has no credential-broker runtime this could improve; benefit would only apply if CVF later builds an agent-facing credential system, at which point this grant/ask/origin-guard pattern is a candidate reference design, not a drop-in dependency.",
+      "evidenceConfidence": "HIGH",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Reopen only if CVF authorizes a governed work order to build or adopt a runtime agent-facing credential/secret broker; until then this is architecture reference material with no CVF consumer to attach to."
+    },
+    {
+      "mechanismId": "M2",
+      "userAgentOutcome": "A device-flow CLI login (gh, glab, gcloud, aws, git, netrc) performed once inside a sandbox is captured, fingerprinted, and later restored onto a fresh sandbox instance without the agent re-running the login.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/credentials/device-flow-persist.ts:286-460 captureDeviceFlowLogins() (sweep+tar+hash-gate capture), :558-655 materializeDeviceFlowLogins() (restore), :474-556 registerLoginPaths() (explicit registration for non-standard tool paths)",
+      "verifier": "fixedCoverage()/isCovered() (68-81) prevent double-capture of paths already owned by a fixed dotdir; buildSweepGroups() foreign-path detection (267-282) prevents one service's sweep from claiming another's registered root; captureScript's box-side hash gate (108-158) compares against a persisted .cred-state file so unchanged homes ship nothing",
+      "nonTestConsumer": "src/core/orchestrator/sandboxes.ts and src/core/orchestrator.ts (confirmed by grep -rl for captureDeviceFlowLogins/registerLoginPaths/materializeDeviceFlowLogins)",
+      "integrationLink": "Orchestrator turn lifecycle invokes captureDeviceFlowLogins after a turn that may have logged into a CLI tool, and materializeDeviceFlowLogins during sandbox provision to restore prior captures before the agent's first command",
+      "tests": "test/device-flow-persist.test.ts (41 test cases, STRUCTURAL_READ at test-name-header level: e.g. 'capture saves changed login bundles per service and fingerprint-skips unchanged ones' L72, 'a failed mid-bundle restore rolls back that bundle's files instead of leaving a partial set' L867, 'a concurrent-save race skips that service and retries it on the next capture' L1068). Tests prove: fingerprint-gated no-op capture, atomic per-bundle restore rollback, concurrent-save race safety, root-overlap conflict detection. Tests do NOT prove: real sandbox backend tar/exec behavior (uses a scripted fake sandbox.run), production-scale credential volumes past the documented MAX_SERVICE_BYTES/MAX_SERVICE_FILES caps.",
+      "failureSemantics": "Per-bundle atomic restore: materializeDeviceFlowLogins rolls back only the failed bundle's already-moved files on mid-restore failure (keychain-adjacent script logic, device-flow-persist.ts:607-619), leaving other bundles intact; capture treats a 409 KeychainError (foreign origin) as resolved-without-save (410-414); a 503 concurrent-write race is reported via onAnomaly and retried next turn, never thrown; MAX_REGISTERED_ROOTS (60) caps registered paths per capture, dropping excess services with a single batched onAnomaly rather than silently truncating per-service.",
+      "sourceNativeStatus": "QM wires and uses this natively as part of its sandbox provisioning lifecycle.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND. Bounded negative search: grep -rE 'device-flow|resident-auth|.netrc|.aws/credentials|.ssh/' under docs/, governance/, EXTENSIONS/ returned zero matches for an OS-credential capture/restore mechanism. CVF has no sandboxed agent-compute surface this would attach to.",
+      "deltaBeyondCvf": "A fingerprint-gated, atomic, per-service OS-credential sweep/restore protocol with box-side hash-gating to avoid redundant transfers — no CVF equivalent exists because CVF has no comparable sandbox-based agent execution surface.",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT — applies only if CVF later operates agent sandboxes with resident CLI logins.",
+      "evidenceConfidence": "HIGH",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Reopen if CVF authorizes governed sandbox/agent-compute work with a resident-credential requirement."
+    },
+    {
+      "mechanismId": "M3",
+      "userAgentOutcome": "An operator can probe whether CLI tools (gh, glab, gcloud) are actually authenticated live inside a sandbox, cached with a TTL so repeated turns don't re-probe every time.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/credentials/resident-auth.ts:99-112 probeResidentAuth(), :61-75 buildResidentAuthProbeScript()",
+      "verifier": "residentAuthProbeIsStale() (52-59) TTL gate; probe script itself runs each connector's real `auth status` command inside the sandbox with a per-check timeout, so liveness is verified by actual CLI exit codes, not assumed",
+      "nonTestConsumer": "src/core/orchestrator/sandboxes.ts (confirmed by grep -rl for probeResidentAuth)",
+      "integrationLink": "Orchestrator calls probeResidentAuth against a live SandboxHandle to populate a ScopeLivenessRecord cache that other orchestrator logic reads before advising the agent about available CLI credentials",
+      "tests": "test/resident-auth.test.ts (fully read, 97 lines, 7 cases). Proves: cache round-trip, TTL staleness boundary, probe-script shape (command -v guard + timeout + id|state emission), parse of id|state output into cache, a connector NOT reported in a partial probe keeps its prior cached state (not reset to absent), and an empty/timed-out probe result does not reset the staleness window (avoiding a thrash loop). Does not prove real CLI binary behavior — fakeSandbox stubs stdout.",
+      "failureSemantics": "A timed-out or empty probe result (exit 124/timedOut:true) is explicitly NOT written into the cache's checkedAt — the stale record is left in place so the next call re-probes rather than freezing a false state (proven by test at line 73). Connectors absent from a probe's output retain their last-known state rather than flipping to absent.",
+      "sourceNativeStatus": "QM wires and uses this natively.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND (same negative search as M2).",
+      "deltaBeyondCvf": "A TTL-gated, partial-report-safe liveness cache with an explicit non-resetting failure path for timeouts — no CVF equivalent.",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT.",
+      "evidenceConfidence": "HIGH",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Reopen if CVF authorizes governed sandbox/agent-compute work needing resident-tool liveness checks."
+    },
+    {
+      "mechanismId": "M4",
+      "userAgentOutcome": "A team member can mint a signed HMAC/JWT-style capability token (control-plane, OAuth-consent, credential-broker, egress-proxy, blob-transfer, secret-drop audiences) that a downstream service verifies without a shared session store.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/auth/capability-token.ts:50-52 mintCapabilityToken(); src/auth/signed-token.ts:12-16 mintSignedPayload() (JOSE CompactSign/HS256 underlying primitive)",
+      "verifier": "src/auth/capability-token.ts:65-99 verifyCapabilityToken() — full per-field type/shape validation (timezone IANA validity via isValidCapabilityTimezone, array-shape checks, exp comparison) before returning claims; src/auth/signed-token.ts:35-57 verifySignedPayload() supports key rotation via an ordered multi-secret verification list keyed by JOSE kid header, plus a legacy non-JOSE HMAC fallback path (verifyLegacyPayload, 18-33) for tokens minted before a format migration",
+      "nonTestConsumer": "src/api/git-http-broker.ts, src/api/routes/context.ts, src/api/routes/secret-drop.ts, src/api/routes/surface.ts, src/api/server.ts, src/core/orchestrator.ts, src/egress-authz-main.ts, src/sandbox/exec-file-ops.ts (all confirmed by grep -rl for mintCapabilityToken|verifyCapabilityToken)",
+      "integrationLink": "src/wiring.ts wires the signing secret through to these call sites; src/sandbox/exec-file-ops.ts's createBackendBlobStaging mints a BLOB_TRANSFER_AUD-scoped token per stage-in/out call (exec-file-ops.ts:252-262) consumed by the blob HTTP endpoint's capability header check",
+      "tests": "test/capability-token.test.ts (fully read, 134 lines, 10 cases). Proves: mint/verify round-trip including orgId injection, grants array type-checking, IANA timezone validation, tampered-payload and tampered-signature rejection, wrong-secret rejection, expired-token fail-closed, malformed-token null-not-throw, blob-transfer audience/dir/id scoping (including a path-traversal-shaped id '../etc/passwd' correctly rejected), and non-empty-string deployment claim validation.",
+      "failureSemantics": "verifyCapabilityToken returns null (never throws) for any malformed, tampered, expired, or wrong-secret token — callers must explicitly branch on null, which the routes do as an auth-failure path. Legacy fallback in signed-token.ts silently accepts either base64url or hex HMAC digest encoding for backward compatibility (constantTimeEqual checked against both, lines 24-25) — a deliberate compatibility widening, not a bug, but worth flagging as a broadened signature-acceptance surface.",
+      "sourceNativeStatus": "QM wires and uses this pervasively across its API surface.",
+      "cvfComparisonOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/service-token-auth.ts (63 lines) — computeServiceRequestSignature/verifyServiceTokenRequest implements a narrow HMAC-SHA256 request-signing scheme (single shared configuredToken, timestamp+body signature, 5-minute window, constantTimeEqual). This IS an actual CVF implementation, not a doc, but it is materially narrower: no claims/audience model, no per-actor scoping, no key-rotation kid mechanism, no JOSE compact-serialization format, single static token rather than per-actor minted claims.",
+      "deltaBeyondCvf": "QM's capability-token system adds: structured per-actor claims (scopeId, destination, credentials, memory read/write scope, grants array), six distinct audience types for different downstream services, IANA timezone claim validation, a blob-transfer-specific sub-scope (dir+id) verification helper, and JOSE-based key-rotation via kid header — none of which CVF's service-token-auth.ts has.",
+      "practicalBenefit": "If CVF's cvf-web ever needs per-actor scoped capability tokens (e.g. distinguishing which agent/session may access which resource) rather than one shared service secret, this claims+audience+kid-rotation pattern is a concrete upgrade path for service-token-auth.ts's consumers in EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web.",
+      "evidenceConfidence": "MEDIUM",
+      "terminalValueDisposition": "ADAPT_CANDIDATE",
+      "nextActionTrigger": "Reviewer input only — if cvf-web's service-token-auth.ts consumers need per-actor scoping or key rotation, this pattern (claims object + audience field + kid-based multi-secret verification) is a reference design; no implementation authorized by this audit."
+    },
+    {
+      "mechanismId": "M5",
+      "userAgentOutcome": "A webhook/source-to-source request is authenticated via HMAC signature plus a replay-dedupe window, so a captured request cannot be replayed even within the timestamp tolerance.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/auth/source-auth.ts:57-74 createSourceAuth().verify(); src/auth/source-auth-sign.ts:7-9 signRequest() (canonical HMAC primitive, single-sourced and reused by source-auth.ts per its own test's explicit delegation check)",
+      "verifier": "src/auth/source-auth.ts:36-55 verifySignature() (signature presence, finite timestamp, replay-window bound, constant-time HMAC comparison) then dedupe.claim() (src/auth/replay-dedupe.ts) for exactly-once event admission",
+      "nonTestConsumer": "src/api/server.ts (confirmed by grep -rl for createSourceAuth)",
+      "integrationLink": "src/api/server.ts wires createSourceAuth into the signed-request-verifying middleware used by /v1/principals/* and other source-authenticated routes (proven by test/identity-offboarding.test.ts's signedPost() helper using signRequest+x-timestamp+x-signature headers against a live server built via buildApp)",
+      "tests": "test/source-auth.test.ts (fully read, 86 lines, 6 cases) + test/source-auth-sign.test.ts (fully read, 38 lines, 4 cases). Proves: NaN-timestamp forgery rejection even when the signature matches the NaN canonical string, replay-window boundary is inclusive (a replay at exactly |now-ts|==window is still a duplicate, not a fresh acceptance), a shared dedupe store closes the cross-instance replay window (two independent createSourceAuth instances over one shared ReplayDedupe correctly reject a cross-instance replay), and source-auth.ts's signRequest delegates to the single-sourced HMAC in source-auth-sign.ts (no signature-scheme drift between the two files).",
+      "failureSemantics": "verify() returns a typed { ok: false, reason: string } discriminated union rather than throwing, with distinct reason strings for 'missing signature', 'invalid timestamp', 'stale timestamp (replay protection)', 'signature mismatch', and 'duplicate event (already processed)' — each independently assertable by callers/tests via regex match on the reason field.",
+      "sourceNativeStatus": "QM wires and uses this for source/webhook authentication routes.",
+      "cvfComparisonOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/service-token-auth.ts (same file as M4, 63 lines, FULL_READ) -- has an overlapping timestamp+HMAC+window verification shape (SERVICE_TOKEN_SIGNATURE_WINDOW_MS = 5min) with NO replay-dedupe/event-id tracking anywhere in the file. F4 repair: this claim is now bound to an EXACT verified consumer rather than a general 'CVF' assertion -- verifyServiceTokenRequest is called at EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts:117-124 as the live service-token authentication branch for the /api/execute route (returns 401 on failure, lines 124-132; confirmed by direct read of route.ts, not inferred from the grep hit list alone). A grep sweep of EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib for replay|nonce|idempoten found no file co-located with or wrapping service-token-auth.ts that adds a separate replay-dedupe layer in front of or behind this specific route's service-token branch; other files in that grep's result set (pending-agent-execution*, provider-attempt-admission, sot3-activation-evidence-store) are unrelated idempotency/attempt-ledger concerns for different route concerns, not a replay guard wrapping verifyServiceTokenRequest specifically -- confirmed by their names/read context, not by opening every file exhaustively (recorded as a bounded, not exhaustive, negative search).",
+      "deltaBeyondCvf": "Exactly-once replay-dedupe via a pluggable ReplayDedupe store (memory or Postgres-backed, per src/auth/replay-dedupe.ts createMemoryReplayDedupe/createPostgresReplayDedupe -- both FULL_READ) closes a real, NARROWLY-SCOPED gap: within the /api/execute route's specific service-token branch (EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts:113-132), a request signed with a valid, still-fresh (within the 5-minute window) service token and signature would pass verifyServiceTokenRequest on a replay, because that function checks only signature validity and timestamp freshness, never a claimed-event-id set (confirmed by the direct 63-line read of service-token-auth.ts, which contains no Map, Set, or store parameter of any kind). F4 REMOVAL: the R1 return's unqualified claim that 'CVF's service-token-auth.ts currently accepts a replayed request indefinitely within its window' is narrowed here to the one route where this was actually traced end-to-end (route.ts); this audit does NOT claim every service-token-authenticated route in cvf-web shares this exact exposure, since the other 21 files in the grep hit list were not each independently opened and confirmed to lack an upstream replay guard.",
+      "practicalBenefit": "A concrete, narrowly-scoped hardening candidate for the /api/execute route's service-token branch specifically (EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts:117-124): adding an event-id claim() gate (in-memory Map is sufficient for cvf-web's scale) at that call site would close the replay-within-window gap there without adopting QM code verbatim. Whether the SAME gap exists at the other ~20 call sites found by the consumer grep is UNKNOWN -- each would need its own route-level read to confirm before generalizing this benefit claim beyond /api/execute.",
+      "evidenceConfidence": "MEDIUM",
+      "terminalValueDisposition": "ADAPT_CANDIDATE",
+      "nextActionTrigger": "Reviewer input only — Local may authorize a bounded work order to add replay-dedupe to service-token-auth.ts's verifyServiceTokenRequest; this audit does not implement it.",
+      "reworkNote": "F4 correction (Generation 1, partial -- M5 portion): the R1 return's cvfComparisonOwner/deltaBeyondCvf/practicalBenefit fields made an unscoped claim about 'CVF's service-token-auth.ts' current behavior in general. This repair binds the claim to the one route (execute/route.ts) actually read and traced end-to-end, downgrades evidenceConfidence from HIGH to MEDIUM to reflect that the other ~20 consumer call sites were listed by grep but not independently opened, and removes the implicit 'CVF-wide' framing per the work order's instruction to bind M5 replay claims to its verifier and actual consumer contract rather than an unsupported whole-CVF absence claim."
+    },
+    {
+      "mechanismId": "M6",
+      "userAgentOutcome": "A portal-facing (non-Slack) request carries a signed identity token proving which person and (optionally) impersonating admin is behind it. Two independent producer/verifier pairs exist for the same claims shape; their cross-acceptance is directional, not symmetric.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "TWO independent producers for the same interface: (a) src/auth/portal-identity.ts:12-14 mintPortalIdentity() using JOSE CompactSign/HS256 (async); (b) plugins/chassis/src/portal-identity.ts:14-17 mintPortalIdentity() using raw createHmac SHA-256 + base64url (sync)",
+      "verifier": "(a) src/auth/portal-identity.ts:16-25 verifyPortalIdentity() via jose compactVerify; (b) plugins/chassis/src/portal-identity.ts:20-32 verifyPortalIdentity() via manual digest recomputation + timingSafeEqual",
+      "nonTestConsumer": "(a) src/api/routes/deployments.ts, src/api/routes/route.ts, src/api/server.ts, src/deployment/postdeploy-smoke.ts (grep-confirmed); (b) plugins/admin/src/index.ts, plugins/portal/src/index.ts, plugins/portal/src/proxy.ts, plugins/web-ui/server/index.ts, scripts/google-oauth-smoke.ts (grep-confirmed) — the two consumer sets are DISJOINT",
+      "integrationLink": "Each implementation is wired to its own plugin/route layer independently; there is no shared adapter or re-export between src/auth/portal-identity.ts and plugins/chassis/src/portal-identity.ts — they are two separate files with the same exported symbol names and the same PortalIdentity interface shape but incompatible token formats (JOSE compact serialization vs raw base64url.HMAC)",
+      "tests": "test/portal-identity.test.ts (fully read, 42 lines, 5 cases) — imports from '../plugins/chassis/src/portal-identity.ts', i.e. it tests implementation (b), NOT the target-tree file src/auth/portal-identity.ts. No test file under test/ was found importing src/auth/portal-identity.ts directly by deterministic search (grep -rl 'auth/portal-identity' test/ found none); its behavior is covered only indirectly via test/auth-broker-claim.test.ts and test/deploy-subdomain-reach.test.ts (grep-listed consumers, not independently confirmed as unit tests of the module in this audit).",
+      "failureSemantics": "Both implementations fail closed to null on tamper/expiry/wrong-secret for their OWN minted tokens (proven for chassis by the fully-read unit test; JOSE's compactVerify/legacy-HMAC path is proven correct under M4's capability-token tests, which reuse the same src/auth/signed-token.ts primitive). DIRECTIONAL CROSS-ACCEPTANCE (verified by source inspection only, not by executing either verifier -- execution is forbidden under this packet's boundary): (a) FORWARD -- src/auth/signed-token.ts verifySignedPayload() branches on `token.split('.').length !== 3` (signed-token.ts:37) to a legacy path verifyLegacyPayload() (lines 18-33) that recomputes `createHmac('sha256', secret).update(payload).digest()` and compares against BOTH base64url and hex encodings of the trailing segment. A chassis-minted token (`base64url(JSON).digest`, 2 segments, digest = base64url(HMAC-SHA256(payload, secret)), plugins/chassis/src/portal-identity.ts:14-17) has exactly this 2-segment shape and exactly this HMAC construction. Under a shared secret, src/auth/portal-identity.ts's verifyPortalIdentity (which calls verifySignedPayload) therefore ACCEPTS a chassis-minted token and returns its claims -- confirmed by matching the legacy fallback's exact comparison logic against chassis's exact mint logic, field for field, without executing either function. (b) REVERSE -- plugins/chassis/src/portal-identity.ts's verifyPortalIdentity splits on `token.lastIndexOf('.')` (portal-identity.ts:20), so for a 3-segment JOSE compact token `header.claimsB64.sig` its 'payload' becomes the JOINED first two segments `header.claimsB64` (containing a literal, non-base64url '.' character partway through). `Buffer.from(payload, 'base64url').toString('utf8')` on that joined string does not decode to a single valid JSON document (it is two base64url segments concatenated with an interior '.' that is not part of the base64url alphabet), so `JSON.parse` throws inside chassis's try/catch (lines 27-30) and verifyPortalIdentity returns null. A JOSE-minted token is therefore REJECTED by the chassis verifier, confirmed by manual JWS Compact Serialization structural analysis (RFC 7515 SS3.1: three base64url segments joined by '.', not decodable as one base64url blob). NET: forward acceptance is real (chassis tokens verify under src/auth, given a shared secret); reverse acceptance fails deterministically at the JSON-parse step (JOSE tokens never verify under chassis). This is a directional compatibility asymmetry, not the blanket 'non-interoperable implementations' characterization in the R1 original return.",
+      "sourceNativeStatus": "QM wires and uses BOTH implementations natively in disjoint parts of its own codebase — this is not a copy-paste artifact caught mid-migration by this audit alone; both consumer sets are live and current in the pinned tree.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND for an equivalent portal-identity mechanism in CVF.",
+      "deltaBeyondCvf": "N/A -- this record's primary value is the adverse finding itself (a directional cross-acceptance asymmetry between two same-named portal-identity implementations with disjoint consumer sets: forward acceptance real under a shared secret, reverse rejection deterministic), not a candidate for CVF adoption. Generation 2 correction: this field previously repeated the superseded blanket 'non-interoperable' characterization even after M6.verifier/failureSemantics/practicalBenefit were already corrected in Generation 1/2 -- reworded here to match the corrected directional matrix.",
+      "practicalBenefit": "N/A_ADVERSE_FINDING_NOT_ADOPTION_CANDIDATE -- flagged for completeness per the work order's explicit instruction to preserve contradictions and adverse findings with the same detail as promising candidates. No CVF action follows from this; it is QM-internal technical debt observed incidentally while auditing src/auth/portal-identity.ts. Generation 1/2 correction: the finding is a DIRECTIONAL cross-acceptance asymmetry between two same-named implementations with disjoint consumer sets (forward acceptance real, reverse rejection deterministic), not a blanket claim that the two implementations are non-interoperable in both directions -- see the verifier/failureSemantics fields for the exact directional matrix.",
+      "evidenceConfidence": "HIGH",
+      "terminalValueDisposition": "REJECT_NO_ACTIONABLE_VALUE",
+      "nextActionTrigger": "None under current program scope -- this is a documented QM-internal directional compatibility finding (not a CVF adoption candidate) with no CVF action; retained per the work order's adverse-finding preservation instruction. If QM's own maintainers rely on the forward-acceptance behavior (e.g. treating it as an intentional migration bridge) that is outside this lane's evidence scope --  no consumer trace was found that constructs a token under one implementation and presents it cross-verifier at runtime; the acceptance is a structural property proven by source inspection, not an observed runtime behavior.",
+      "reworkNote": "F1 correction (Generation 1): replaced the R1 blanket non-interoperability claim with the verified directional matrix above. Both directions traced through exact producer/verifier source lines; neither upstream code path was executed (static structural/spec analysis only, per the packet's forbidden-effects boundary)."
+    },
+    {
+      "mechanismId": "M7",
+      "userAgentOutcome": "An operator's action is authenticated as AWS-role-scoped: the platform vends short-lived, session-scoped AWS credentials for a specific user rather than sharing one static IAM credential.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/auth/aws-role-broker.ts:46-85 createAwsRoleBroker().credsForActor()",
+      "verifier": "Implicit — AWS STS itself is the verifier of the AssumeRole call; the broker's own internal check is a completeness guard on the STS response (lines 71-73: throws if AccessKeyId/SecretAccessKey/SessionToken are missing) rather than a signature/claim verification",
+      "nonTestConsumer": "src/wiring.ts (grep-confirmed createAwsRoleBroker consumer)",
+      "integrationLink": "src/wiring.ts constructs the broker with a roleArn/region/sessionActions configuration and threads credsForActor into whatever AWS-backed feature needs per-user scoped credentials (not fully traceable within the four target trees alone; the consuming feature lives outside src/auth/src/identity/src/credentials/src/sandbox)",
+      "tests": "test/aws-role-broker.test.ts (fully read, 98 lines, 5 cases). Proves: brokerSessionName sanitizes and truncates to AWS's 64-char session-name limit while preserving Slack-id and email-shaped names verbatim; credsForActor issues an IAM session policy scoped to exactly the declared sessionActions (single action serialized as a string, not array, matching AWS's IAM policy shape quirk); per-session-name caching with a refresh margin (re-assumes when within refreshMarginMs of expiry, otherwise serves cached); throws with message match /incomplete credentials/ on a malformed STS response.",
+      "failureSemantics": "Throws a plain Error (not a typed error class) on incomplete STS credentials rather than returning null/undefined — callers must try/catch, unlike the token-verification mechanisms (M4-M6) which fail closed to null. This is a genuine asymmetry in the codebase's error-handling convention between auth-verification (return null) and credential-vending (throw).",
+      "sourceNativeStatus": "QM wires and uses this natively.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND. Bounded negative search: grep -rE 'STS|assume-role|assumeRole|role-broker|sts:AssumeRole' under docs/, governance/, EXTENSIONS/, and repo src trees (excluding .private_reference) returned zero matches.",
+      "deltaBeyondCvf": "A per-actor AWS session-credential vending pattern with sanitized session naming and expiry-margin caching — CVF has no AWS runtime integration to compare against.",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT.",
+      "evidenceConfidence": "HIGH",
+      "terminalValueDisposition": "REJECT_NO_ACTIONABLE_VALUE",
+      "nextActionTrigger": "None under the current program; CVF has no AWS-integration surface this would attach to and the parent program's scope (LOCAL_RUNTIME_VALUE_RECOVERY for QM specifically, not general AWS-integration planning) does not cover speculative future AWS work."
+    },
+    {
+      "mechanismId": "M8",
+      "userAgentOutcome": "A principal (person) is classified as internal vs external-guest, with directory-sync-driven auto-deactivation that self-heals when the person reappears in the roster, while a manually-fired deactivation survives roster churn until explicitly reactivated.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/identity/identity-service.ts:45-178 createIdentityService().classify()/deactivate()/reactivate()/recordDirectorySync()",
+      "verifier": "classify() (81-92) itself IS the verification logic: checks isOverridden hook, deactivation record source+directory-sync-protection interaction (keptByDirectorySync, line 63), and external-member active-window (externalMemberActive from src/identity/external-members.ts:12-14, FULL_READ)",
+      "nonTestConsumer": "src/wiring.ts (grep-confirmed createIdentityService consumer)",
+      "integrationLink": "src/wiring.ts constructs the identity service and wires it into buildApp's returned object; test/identity-offboarding.test.ts proves the full HTTP integration: built.app.upsertDirectory() drives recordDirectorySync(), and /v1/principals/:id/deactivate and /v1/principals/:id/reactivate routes (source-auth-gated, NOT capability-token-gated — proven negatively by the test at line 108) call svc.deactivate()/reactivate() and are audit-logged",
+      "tests": "test/identity.test.ts (fully read, 159 lines, 14 cases) + test/identity-offboarding.test.ts (fully read, 119 lines, 4 cases across a live HTTP server built via buildApp). Proves: case-folding on email-shaped ids without merging distinct emails, durable rehydration across service instances sharing one backing DurableMap, TTL-cached external-member refresh with force-refresh bypass, directory-sync deactivate/reactivate is idempotent and self-healing, a MANUAL deactivation is NOT cleared by directory-sync churn (only explicit reactivate() clears it — proven at identity.test.ts:138-148), an isOverridden hook can force internal classification even over a flagged-guest+deactivated state, and — critically — the HTTP route path proves capability tokens are explicitly rejected (401) for principal-management routes, only source-auth-signed requests are accepted.",
+      "failureSemantics": "classify() never throws — always returns a Principal with best-effort type inference; the only explicit fail-closed behavior is architectural (manual deactivation source is 'sticky' against directory-sync reactivation, degrading to guest by default rather than trusting a stale roster feed unless the specific record's source is 'directory-sync').",
+      "sourceNativeStatus": "QM wires and uses this natively as its core internal/guest access-control primitive.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND for an equivalent person/guest identity+directory-sync mechanism. CVF's own actor/role vocabulary (OPERATOR, ORCHESTRATOR, AI_AGENT, per docs/reference/CVF_GATE_TO_ROLE_CLOSEABILITY_MACHINE_STANDARD.md) is a governance-actor authority model, a different concern from human/guest directory identity with roster-sync deactivation.",
+      "deltaBeyondCvf": "A directory-sync self-healing deactivation pattern that distinguishes manual (sticky) from automated (roster-following) deactivation sources — no CVF equivalent because CVF has no multi-tenant human-directory concept.",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT.",
+      "evidenceConfidence": "HIGH",
+      "terminalValueDisposition": "REJECT_NO_ACTIONABLE_VALUE",
+      "nextActionTrigger": "None under the current program scope."
+    },
+    {
+      "mechanismId": "M9",
+      "userAgentOutcome": "A secret value (e.g. a per-service vault token) is resolved by checking multiple sources in priority order — explicit env var first, then a per-user env var, then a global fallback — so operators can override a shared credential per-user without redeploying.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/credentials/secret-source.ts:7-14 createEnvSecretSource(), :20-53 createAwsSecretsManagerSource(), :55-65 createLayeredSecretSource(); src/credentials/connector-token.ts:13-36 withOperatorTokenFallback()",
+      "verifier": "createLayeredSecretSource (55-65) itself is the ordering/fallback logic: iterates sources, returns the first defined (non-blank) value; createAwsSecretsManagerSource additionally verifies via a TTL cache plus a maxStaleMs bound so a stale value does not flow forever on sustained AWS errors",
+      "nonTestConsumer": "withOperatorTokenFallback (src/credentials/connector-token.ts) wraps a ConnectorTokenStore's connectorAccessToken to check per-user then per-host env fallback beneath the keychain-backed OAuth token — this is a within-target-tree consumer relationship (connector-token.ts consumes secret-source.ts directly)",
+      "integrationLink": "withOperatorTokenFallback is exported for src/wiring.ts to layer over a Keychain-backed ConnectorTokenStore (not independently grep-traced beyond the direct file import, since connector-token.ts itself has no separate wiring.ts constructor call — it is a decorator function, not a constructor)",
+      "tests": "test/secret-source.test.ts (fully read, 91 lines, 5 cases). Proves: a blank env var does not shadow a defined value from a later-priority source (env source returns undefined for blank, not empty-string, so the layered source correctly falls through); AWS source caches hits and misses independently with a shared TTL; a transient AWS error serves the last-known value only within maxStaleMs, then stops (explicit anti-indefinite-staleness bound).",
+      "failureSemantics": "createAwsSecretsManagerSource distinguishes ResourceNotFoundException (cached as a genuine miss) from other errors (served stale within maxStaleMs, then undefined past that bound, with a console.warn on each transient failure) — this is a deliberate degrade-gracefully-then-fail-closed policy, not a blanket retry-forever or fail-immediately choice.",
+      "sourceNativeStatus": "QM wires and uses this as a layering primitive beneath keychain-managed OAuth tokens for service-account fallback.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND for an equivalent layered-secret-source-with-stale-bound mechanism in CVF.",
+      "deltaBeyondCvf": "A small, self-contained layered-fallback-with-staleness-bound pattern — reusable in principle for any Node service needing per-user-override-over-shared-default secret resolution, but CVF's provider-lane / API-key configuration (per docs/reference/project_role_provider_delegation/) is currently static env-var based with no equivalent layered/stale-tolerant resolution.",
+      "practicalBenefit": "A narrow, genuinely portable utility pattern (roughly 60 lines of logic: createLayeredSecretSource + stale-bound caching) that CVF's provider-lane configuration COULD adopt if it ever needs per-project-override-over-global-default API key resolution with degrade-gracefully behavior during a secrets-manager outage — currently speculative since no CVF work order calls for it.",
+      "evidenceConfidence": "MEDIUM",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Reopen if a future CVF work order needs per-project-override secret resolution with graceful-degradation during a secrets-backend outage."
+    },
+    {
+      "mechanismId": "M10",
+      "userAgentOutcome": "An operator can hand off an ad-hoc secret (a fresh API key pasted by a teammate) via a one-time, expiring, capability-token-bound web link instead of pasting the secret in chat, and the platform prevents the same secret from being requested twice in parallel across sibling conversations.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/credentials/secret-drop.ts:41-83 createSecretDropStore().mint()/peek()/redeem()/siblings()",
+      "verifier": "judge() (47-51) checks not-found vs TTL-expired (SECRET_DROP_TTL_MS = 7 days) before allowing peek/redeem; siblings() (64-81) filters same-org+same-audience+same-thread+different-service drops while opportunistically pruning expired ones during the scan",
+      "nonTestConsumer": "src/wiring.ts (grep-confirmed createSecretDropStore consumer)",
+      "integrationLink": "src/wiring.ts wires the store; test/secret-drop.test.ts's fully-covered describe blocks '/v1/keychain/drops — mint, form, redeem' and '/v1/keychain/drops — sibling-aware resume' exercise the full HTTP mint→redeem lifecycle including the CAPABILITY_BLOB/SECRET_DROP_AUD-scoped token that binds the link to the specific drop, owner, and audience (per capability-token.ts's SECRET_DROP_AUD constant, cross-referenced with M4)",
+      "tests": "test/secret-drop.test.ts (677 lines, 24 it-blocks across 5 describe groups — STRUCTURAL_READ at block-header level). Block headers prove: single-use redeem semantics, TTL expiry on both peek and redeem, sibling-drop discovery scoped to conversation+thread (not leaking across unrelated conversations), token audience/drop/owner binding refused on tamper or cross-drop reuse without burning the link, a Project roster change invalidating an unredeemed drop, and a triggered (non-live) turn being explicitly refused mint permission.",
+      "failureSemantics": "peek() is explicitly non-consuming (repeatable) while redeem() is single-use (backing.take()); an expired record fails both peek and redeem identically via the shared judge() function so there is no observable behavioral difference between 'never existed' and 'expired' from the caller's perspective (both return reason: 'expired' or 'not_found' — the two cases ARE distinguished in the return type, so this is not information-hiding by accident, it is a deliberate two-state result).",
+      "sourceNativeStatus": "QM wires and uses this natively as part of its keychain onboarding flow.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND for an equivalent one-time-secret-handoff mechanism in CVF.",
+      "deltaBeyondCvf": "A capability-token-bound, sibling-aware, single-use secret handoff link — no CVF equivalent; CVF has no analogous need since it does not currently have a multi-party secret-collection flow.",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT.",
+      "evidenceConfidence": "MEDIUM",
+      "terminalValueDisposition": "REJECT_NO_ACTIONABLE_VALUE",
+      "nextActionTrigger": "None under current program scope."
+    },
+    {
+      "mechanismId": "M11",
+      "userAgentOutcome": "An agent's compute (a 'sandbox'/'computer') can be provisioned, executed against, and torn down through one uniform interface regardless of which of eight underlying providers (local Docker, AWS microVM, E2B, Modal, Porter, Sprites, agent37, smolmachines) actually backs it.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/sandbox/sandbox.ts:177-210 the Sandbox interface itself, plus eight backend factory functions: createLocalSandbox, createAwsSandbox, createE2bSandbox, createModalSandbox, createPorterSandbox, createSpritesSandbox, createAgent37Sandbox, createSmolmachinesSandbox (all FULL_READ)",
+      "verifier": "Each backend's provision() verifies its own readiness (e.g. local-sandbox.ts preflight() checks docker version + image existence + fingerprint staleness warning; aws-sandbox.ts ensureBody() checks STS-vended microVM state via api.tryGetMicrovm); capabilitiesLostMovingTo() (sandbox.ts:264-272) is a cross-backend capability-diff verifier used by the migration runner (M14) before allowing a migration",
+      "nonTestConsumer": "All eight backends are constructed in src/wiring.ts per grep-confirmed pattern (createSandboxRouter consumer); the router itself dispatches per-scope",
+      "integrationLink": "src/sandbox/sandbox-routing.ts createSandboxRouter() wraps all constructed backends behind one Sandbox-shaped facade that dynamically exposes only the capabilities ALL-OR-SOME backends support (optional methods like startProcess/exportFiles/stageIn are conditionally spread onto the router object only if at least one backend implements them, sandbox-routing.ts:198-298), then dispatches per-handle to the correct backend via handle.backend",
+      "tests": "test/sandbox-routing.test.ts (fully read, 289 lines, 15 cases) proves: absent-route defaults to defaultBackend, a routed scope dispatches to its backend and a later handle-bound call (run/teardown) follows the SAME backend regardless of current routing table state, profileFor reflects actual substrate, a route naming an unconstructed backend REFUSES to silently substitute the default (explicit error, zero calls made), capability-conditional method exposure (exportFiles present only when some backend implements it) with a typed CapabilityUnsupportedError refusal + de-duplicated operator error report for backends lacking it, and reapDeepIdle sums across all backends that implement it. Eight backend-specific test files (test/{local,aws,e2b,modal,porter,sprites,smolmachines,agent37}-sandbox.test.ts) exist per deterministic discovery and are now FULL_READ (Generation 2 F3 repair; previously not opened, declared UNKNOWN) -- their content is backend-specific provisioning/egress/lifecycle evidence (see M13/M20) rather than direct additional evidence for sandbox-routing.test.ts's own routing-table assertions.",
+      "failureSemantics": "A route naming an unconstructed backend throws with message 'refusing to use a substitute computer' rather than silently falling back to the default — this is a deliberate fail-closed design proven directly by test/sandbox-routing.test.ts line 99-113. Each backend's own construction throws synchronously if required config (e.g. SPRITES_TOKEN, SMOLMACHINES_TOKEN, AGENT37_API_KEY) is missing, rather than deferring the failure to first use.",
+      "sourceNativeStatus": "QM wires and uses all eight backends natively; this is the central abstraction of the src/sandbox tree.",
+      "cvfComparisonOwner": "docs/reference/archive/CVF_DELTA_D3_SANDBOX_BOUNDARY_SPEC_2026-05-29.md (143 lines) — a policy/spec document, NOT an implementation, governing a single narrow MCP tool (cvf_invoke_cli_stage) that calls an in-process, non-shell-spawning runCli() function with a three-command whitelist (evaluate/status/help). It explicitly disclaims covering 'any future shell-spawning bridge' or 'arbitrary shell execution or process spawning' (lines 29, 140). AUTHORITY CAVEAT (F4 repair): this document lives under docs/reference/archive/ (a path convention that elsewhere in this repository denotes historical/superseded material) but its own header field reads 'Status: APPROVED', not 'SUPERSEDED' or 'HISTORICAL' -- no supersession record was found by a bounded search (grep for 'supersede' near 'D3' across docs/ returned no hits, and the document is not referenced by docs/reference/CVF_AGENT_INSTRUCTION_CARRIER_ROUTING_INDEX_2026-08-11.md). This is a genuine unresolved contradiction between the document's path and its own declared status, not resolved by this audit -- it is cited here strictly as HISTORICAL EVIDENCE of a governed decision that existed on 2026-05-29, not as a claim that it is current, live CVF authority today. Local should independently confirm current status before treating this document's boundary as binding for any new work.",
+      "deltaBeyondCvf": "A full pluggable multi-provider Sandbox abstraction with capability-diffing, per-scope routing, and typed capability-refusal — CVF's D3 spec is an authorization/audit boundary for one in-process, non-spawning tool call, an entirely different mechanism class (governance gate vs. compute abstraction).",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT — CVF explicitly disclaims building a shell-spawning/sandbox-execution capability in D3's own Claim Boundary section; this mechanism would only become relevant if CVF later authorizes exactly that (a governed 'R3 sandbox spec' the D3 doc itself names as future/out-of-scope).",
+      "evidenceConfidence": "HIGH",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Reopen only if CVF authorizes the 'future shell-spawning bridge' work D3's own scope section names as requiring a separate R3 sandbox spec; until then this is architecture reference material with a real (if narrow) CVF policy analog to compare future designs against."
+    },
+    {
+      "mechanismId": "M12",
+      "userAgentOutcome": "A sandbox's entire home directory can be migrated from one backend to another (e.g. rebalancing load, or moving a scope off a deprecated provider) with a verified byte-identical copy or provider-native snapshot, and the routing table only flips after the copy is confirmed intact.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/sandbox/sandbox-migration-runner.ts:59-231 createSandboxMigrationRunner().migrateScope(); src/sandbox/sandbox-migrate.ts:45-129 packHome()/copyHome() (tar+sha256 verified transfer, path-rewrite for hardcoded $HOME references, venv nuking since Python venvs embed absolute paths)",
+      "verifier": "copyHome() (sandbox-migrate.ts:104-113) verifies via sha256 comparison on the DESTINATION side before extraction ('dsha=... [ \"$dsha\" = ... ] || { echo sha-mismatch; exit 3; }'); migrateScope only calls routes.put() (the actual routing-table flip) AFTER copyHome/snapshotPass returns successfully (sandbox-migration-runner.ts:189-197 for copy strategy, :139-151 for snapshot strategy's separate hydrated-file-count verification)",
+      "nonTestConsumer": "src/wiring.ts (grep-confirmed createSandboxMigrationRunner consumer)",
+      "integrationLink": "src/wiring.ts wires the migration runner over the same backends map and routes DurableMap used by the router (M11), so a migration and normal routing share one source of truth",
+      "tests": "test/sandbox-migrate.test.ts (fully read, 164 lines, 4 cases) + test/sandbox-migration-runner.test.ts (partially read: setup harness + first 2 of 11 cases fully; remaining 9 test names read via grep). copyHome tests prove: sha-verified transfer with path-rewrite (a .bashrc/.config/app.conf referencing the old $fromHome path is rewritten to $toHome, but a similar-but-distinct path like '${fromHome}fs/data' — sharing a prefix but not a real path boundary — is correctly NOT rewritten, proving the rewrite is boundary-aware not a naive string replace), venv directories are nuked at the destination (since a copied venv's absolute interpreter paths would be broken), the source is NEVER mutated during a copy, and a corrupted destination write causes copyHome to throw rather than leave a partially-extracted $HOME. migrateScope tests prove (from the portion read): the route flips only after a verified copy and BOTH source and destination sandboxes are torn down (parked) afterward; a second migration back to the original backend also works.",
+      "failureSemantics": "capabilitiesLostMovingTo() (sandbox.ts:264-272, cross-referenced under M11) blocks a migration to a backend lacking capabilities the source has (e.g. process sessions, home export, or weaker egress enforcement) UNLESS force is explicitly passed — proven by test names 'migrateScope refuses a target that carries fewer capabilities, unless forced' and 'migrateScope refuses a target that enforces less egress' (both read via grep, not independently re-verified body-level in this audit — recorded as UNKNOWN detail, MEDIUM confidence on the exact refusal wording).",
+      "sourceNativeStatus": "QM wires and uses this for provider rebalancing/deprecation.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND — same negative search as M11; no CVF equivalent to a stateful compute-migration mechanism exists. AUTHORITY CAVEAT (F4 repair): this document lives under docs/reference/archive/ (a path convention that elsewhere in this repository denotes historical/superseded material) but its own header field reads 'Status: APPROVED', not 'SUPERSEDED' or 'HISTORICAL' -- no supersession record was found by a bounded search (grep for 'supersede' near 'D3' across docs/ returned no hits, and the document is not referenced by docs/reference/CVF_AGENT_INSTRUCTION_CARRIER_ROUTING_INDEX_2026-08-11.md). This is a genuine unresolved contradiction between the document's path and its own declared status, not resolved by this audit -- it is cited here strictly as HISTORICAL EVIDENCE of a governed decision that existed on 2026-05-29, not as a claim that it is current, live CVF authority today. Local should independently confirm current status before treating this document's boundary as binding for any new work.",
+      "deltaBeyondCvf": "A verified, capability-diff-gated, route-flip-after-verify migration protocol for stateful compute — no CVF analog since CVF has no equivalent stateful runtime to migrate.",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT.",
+      "evidenceConfidence": "HIGH",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Same trigger as M11 (future CVF sandbox/compute authorization)."
+    },
+    {
+      "mechanismId": "M13",
+      "userAgentOutcome": "An operator can explicitly create, list, check status of, restart, and retire named sandbox 'computers' per scope (rather than one implicit sandbox per scope), including a one-time activation that adopts pre-existing legacy scoped sandboxes into the new explicit-resource model without disrupting them.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/sandbox/sandbox-resources.ts:63-349 createSandboxResources() — initialize() (86-142, one-time legacy-adoption activation gated by a rollout DurableMap flag), create()/retire()/restart()/setDefault()/list()",
+      "verifier": "authorize() (156-159) gates every actor-facing operation on canUseScope(); retire() double-locks on both the resource id AND the owning scope's default-lock (210-211) and refuses to retire the scope's currently-selected or legacy-implicit-default computer (216-217) before any provider call is made; use() (166-171) refuses any operation on a state:'retired' resource before dispatching to the backend",
+      "nonTestConsumer": "src/wiring.ts (grep-confirmed createSandboxResources consumer)",
+      "integrationLink": "src/wiring.ts wires createSandboxResources over the same backends/routes as the router (M11) and migration runner (M12), sharing one DurableMap-backed source of truth for which scope maps to which named resource",
+      "tests": "test/sandbox-resources.test.ts (808 lines; setup harness lines 1-100 fully read, remaining ~24 test-name headers read via grep — STRUCTURAL_READ for the bulk of the file). Test names prove coverage of: default-change never mutates files or redirects existing handles, unset defaults remain unset durably, legacy adoption is deterministic, scope-ACL protection against cross-scope default relocation, retirement refusing the currently-selected default and waiting for an active command to finish, retirement remaining terminal through a provisioning failure, explicit-target credential cleanup parity with default, activation retry-safety on partial durable writes, and background-registration lock release on failed provisioning.",
+      "failureSemantics": "retire() distinguishes 'unroutable but retryable' failure (a cleanupPending flag persists across a crash so retirement resumes rather than silently abandoning a half-destroyed resource, per test name at line 680 and 708) from a hard refusal (retiring the active default is refused outright, not queued). This double-terminal-state design (retired+cleanupPending+error vs. retired+clean) is a genuine operational-safety pattern.",
+      "sourceNativeStatus": "QM wires and uses this as its current (post-legacy-migration) sandbox lifecycle model.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND — no CVF equivalent to a named multi-resource-per-scope compute lifecycle exists.",
+      "deltaBeyondCvf": "A crash-safe, double-locked, legacy-adopting resource lifecycle manager for stateful per-scope compute — no CVF analog.",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT.",
+      "evidenceConfidence": "MEDIUM",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Same trigger as M11/M12."
+    },
+    {
+      "mechanismId": "M14",
+      "userAgentOutcome": "A long-running foreground command inside a sandbox (e.g. a dev server, a background build) can be started, polled for incremental output, sent stdin, signaled, and listed — independent of the request/response turn that started it.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/sandbox/exec-process-session.ts:76-205 createExecProcessSessions() — startProcess/readProcess/writeStdin/signalProcess/listProcesses, all implemented as generated shell scripts run through a backend's plain run() primitive (no native process-session API needed from the provider)",
+      "verifier": "assertId() (41-43) validates processId against a strict UUID-shape regex before it is ever interpolated into a shell script (defense against path/command injection via a malformed process id); ALLOWED_SIGNALS (35) whitelists exactly TERM/KILL/INT/HUP/QUIT, rejecting any other signal name before script generation",
+      "nonTestConsumer": "Wired into every one of the eight sandbox backends (grep-observable: each backend's own file constructs an ExecProcessSessions instance via createExecProcessSessions and spreads its methods onto its exported Sandbox object, e.g. local-sandbox.ts:367, aws-sandbox.ts:359, sprites-sandbox.ts:355) — this is a shared cross-backend building block, not something separately wired via src/wiring.ts's own top-level constructor calls",
+      "integrationLink": "Each backend's provision()-returned SandboxHandle is passed straight through to startProcess/readProcess, so process sessions ride the same handle model as ordinary exec, making them backend-agnostic from the caller's point of view",
+      "tests": "Not independently unit-tested by a dedicated exec-process-session.test.ts (none found by deterministic search); its behavior is exercised indirectly by test/durable-process-sessions.test.ts, which is now FULL_READ (Generation 2 F3 repair, 1-204 of 204 lines; previously grep-listed only and declared UNKNOWN). That file proves orchestrator-level keepWarm teardown gating via ProcessRegistry for three cases (live process keeps computer warm; reattach reconciles a session whose process died while core was down; no-live-session baseline suspends as before) but does not directly unit-test redactCommand's own masking logic. Structurally exercised by the eight backend test files, now also FULL_READ. This mechanism's correctness in this audit rests primarily on source-code reading (redactCommand's own logic was read and is internally self-consistent) supplemented by the now-complete durable-process-sessions.test.ts read; evidence confidence is upgraded from the Generation-1 record accordingly, though still not a fully dedicated unit-test-per-assertion match.",
+      "failureSemantics": "readProcess's REAP_SH boot-id comparison (exec-process-session.ts:30-33) detects a host reboot mid-session (the process directory survives a container restart via a persistent volume but the OS boot id changes) and synthesizes an exit code 137 (REBOOT_RC) rather than reporting the process as still running forever; redactCommand() (63-74) masks token/password/secret/api-key-shaped CLI flags AND base64-piped-into---with-token patterns before a command is ever surfaced via listProcesses(), explicitly to prevent credential leakage through process listing.",
+      "sourceNativeStatus": "QM wires and uses this across all eight backends as a shared primitive.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND — no CVF equivalent to a cross-provider process-session abstraction exists.",
+      "deltaBeyondCvf": "A provider-agnostic, injection-hardened, reboot-aware process-session layer built entirely from a plain exec() primitive (no native provider API needed) — a genuinely portable pattern, but with no CVF consumer.",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT.",
+      "evidenceConfidence": "MEDIUM",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Same trigger as M11-M13; evidence confidence should be raised to HIGH in any future audit by reading test/durable-process-sessions.test.ts, which this lane declares UNKNOWN rather than silently assuming passes."
+    },
+    {
+      "mechanismId": "M15",
+      "userAgentOutcome": "A sandbox's home directory can be backed up to and restored from S3 (or an in-memory store for local/dev backends), with multipart chunked transfer for large homes and pruning of known-junk paths (node_modules, .cache, venvs) before the snapshot is taken.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/sandbox/home-snapshot.ts:254-403 createHomeSnapshotOps() — snapshotHome()/hydrateHome(); :114-205 createS3SnapshotStore() (multipart S3 upload/download, adoptFromS3 for cross-region/cross-account copy via CopyObject or multipart UploadPartCopy for large objects)",
+      "verifier": "hydrateHome() (364-401) verifies EVERY stage: total bytes received matches the store-declared size, the reassembled tar's on-box byte count matches what was written, and `tar -tf` (list, not extract) validates archive integrity BEFORE the real extraction runs — a four-stage verify chain, not a single check",
+      "nonTestConsumer": "Wired into aws-sandbox.ts, e2b-sandbox.ts, and modal-sandbox.ts (all three backends construct createHomeSnapshotOps internally, grep-observable at aws-sandbox.ts:177, e2b-sandbox.ts:102, modal-sandbox.ts:122) — a shared cross-backend building block like M14, not a top-level src/wiring.ts constructor",
+      "integrationLink": "aws-sandbox.ts calls snapshotHome/hydrateHome around its microVM rotation and teardown lifecycle (ensureBody, teardown); modal-sandbox.ts layers this beneath ITS OWN native-snapshot short-circuit (usesNativeSnapshots(), modal-sandbox.ts:99-100) so the generic S3-tar path is a fallback when Modal's native image-snapshot API is unavailable or not yet used for a given scope",
+      "tests": "Not independently unit-tested by a dedicated home-snapshot.test.ts (none found by deterministic search); exercised indirectly by the per-backend test files (aws/e2b/modal-sandbox.test.ts), none of which were opened in this audit. Recorded as UNKNOWN — this mechanism's evidence rests on source reading alone.",
+      "failureSemantics": "snapshotHome throws SnapshotTooLargeError (a typed class) before ANY upload begins if the packed tar exceeds maxBytes (default 2GB), rather than failing mid-transfer; on any upload-stage failure after createUpload(), the multipart upload is explicitly aborted (upload.abort()) before the error propagates, avoiding an orphaned incomplete multipart upload sitting in S3 indefinitely.",
+      "sourceNativeStatus": "QM wires and uses this for three of its eight backends (aws, e2b, modal) as their durability strategy.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND — no CVF equivalent to a stateful-compute-home backup/restore mechanism exists.",
+      "deltaBeyondCvf": "A four-stage-verified, size-capped, abort-safe chunked home backup/restore — no CVF analog.",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT.",
+      "evidenceConfidence": "MEDIUM",
+      "terminalValueDisposition": "DEFER_WITH_TRIGGER",
+      "nextActionTrigger": "Same trigger as M11-M14; evidence confidence should be raised by reading the per-backend snapshot-touching test cases in a future audit, which this lane declares UNKNOWN rather than assuming coverage."
+    },
+    {
+      "mechanismId": "M16",
+      "userAgentOutcome": "Every sandbox backend consistently strips interactive-shell prompts, sets deterministic non-interactive defaults (PAGER, GIT_EDITOR, DEBIAN_FRONTEND), and force-routes outbound traffic through an egress proxy with an authenticated token when one is configured, so an agent's shell commands never hang waiting for input and network egress can be centrally audited.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/sandbox/sandbox-env.ts:12-17 nonInteractiveShellPrefix(); :30-42 forceThroughProxyEnv()",
+      "verifier": "No independent verifier — this is a convention applied uniformly at exec-time by every backend (proven by grep across all eight *-sandbox.ts files, each of which calls nonInteractiveShellPrefix() at the start of its run() method's generated script)",
+      "nonTestConsumer": "All eight sandbox backends directly import and call these two functions (grep-observable, not a separate src/wiring.ts constructor call since these are pure functions, not stateful services)",
+      "integrationLink": "Each backend's run() method composes: nonInteractiveShellPrefix() + optional forceThroughProxyEnv()-derived exports + `cd <rootDir>` + the caller's actual command, as one shell script sent to the provider's exec primitive",
+      "tests": "No dedicated sandbox-env.test.ts was found by deterministic search; test/sandbox-noninteractive.test.ts is now FULL_READ (Generation 2 F3 repair, 1-62 of 62 lines; previously grep-listed only and declared UNKNOWN). That file directly proves nonInteractiveShellPrefix() and NONINTERACTIVE_ENV behavior: the shell prefix detaches stdin and exports non-interactive defaults (PAGER, GIT_PAGER, GIT_TERMINAL_PROMPT, DEBIAN_FRONTEND, AWS_PAGER); a command reading stdin gets immediate EOF instead of timing out; the defaults are present in the actual sandbox command environment (verified via printf inside a fake-backed Sprites sandbox); an explicit per-turn env value overrides the non-interactive default. This mechanism's evidence is now directly test-proven, not source-reading-only.",
+      "failureSemantics": "forceThroughProxyEnv is only applied when BOTH opts.egressProxyUrl is configured AND a per-provision egressToken is supplied by the caller (proven identically across aws-sandbox.ts:155/463-464, e2b-sandbox.ts:342, modal-sandbox.ts:470, porter-sandbox.ts:291, agent37-sandbox.ts:470, local-sandbox.ts has no egress proxy support at all). See H6/M20 cross-reference: a caller that configures a proxy URL but forgets to pass a per-call egressToken gets NO enforcement, silently, in every backend that supports egress proxying.",
+      "sourceNativeStatus": "QM wires and uses this convention uniformly across all backends.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND — no CVF equivalent to a sandbox exec-environment convention exists.",
+      "deltaBeyondCvf": "N/A — see M20 for the actionable half of this finding (the egress fail-open gap); the non-interactive-shell half is a QM-internal convention with no CVF analog to adopt.",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT for the non-interactive-shell half.",
+      "evidenceConfidence": "HIGH",
+      "terminalValueDisposition": "REJECT_NO_ACTIONABLE_VALUE",
+      "nextActionTrigger": "None — see M20 for the related but separately-tracked egress-enforcement gap, which IS actionable."
+    },
+    {
+      "mechanismId": "M17",
+      "userAgentOutcome": "A background process's command line, when listed via listProcesses(), never leaks a secret-shaped CLI flag, environment-variable assignment, or a piped credential value even if the original command legitimately contained one.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/sandbox/exec-process-session.ts:50-74 redactCommand()/redactPipedIntoWithToken()",
+      "verifier": "Regex-based masking applied unconditionally before any command string leaves the process-session layer; createSecretValueMasker(env) (imported from src/security/secret-masking.ts, NOT in the target tree — cited as an external dependency, not independently read in this audit) additionally masks any literal env VALUE appearing in the command",
+      "nonTestConsumer": "Called exclusively from within listProcesses() (exec-process-session.ts:199) — this is an internal display-safety step, not separately exposed",
+      "integrationLink": "Every backend's listProcesses() (inherited from createExecProcessSessions per M14) passes the raw on-box command string through redactCommand before returning it to the caller",
+      "tests": "No dedicated test file found by deterministic search targeting redactCommand specifically; not independently verified by a fully-read test in this audit — recorded as UNKNOWN. Source logic was read and is internally coherent (three sequential regex passes: flag-value masking, piped-secret masking via a specific --with-token heuristic, then quoted-export-value masking) but its correctness against adversarial inputs (e.g. flag names with mixed case, multi-line piped commands) is not test-proven in evidence available to this audit.",
+      "failureSemantics": "Truncates the redacted command to 500 characters (line 73) as a final hard cap regardless of redaction outcome — a defense-in-depth bound against any redaction-pattern miss still limiting exposure length.",
+      "sourceNativeStatus": "QM wires and uses this as the sole path for exposing process command lines.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND for an equivalent secret-redaction-for-process-listing mechanism.",
+      "deltaBeyondCvf": "A three-pass regex redaction chain with a hard length cap — narrow, source-specific utility with no CVF analog.",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT.",
+      "evidenceConfidence": "LOW",
+      "terminalValueDisposition": "REJECT_NO_ACTIONABLE_VALUE",
+      "nextActionTrigger": "None — recorded per H1's reframing; not test-proven and has no CVF consumer regardless."
+    },
+    {
+      "mechanismId": "M18",
+      "userAgentOutcome": "A resident-disk sandbox backend (local Docker, Porter, Sprites, smolmachines, agent37) shares a common provision/prep/credential-link/teardown skeleton so each new provider integration only has to supply a thin exec/read/write/ensure-resident adapter rather than reimplementing the full lifecycle.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/sandbox/exec-sandbox-base.ts:65-229 createExecSandboxBase() — the shared provision()/run()/teardown() skeleton parameterized by an ExecSandboxBaseDeps adapter interface",
+      "verifier": "No independent verifier beyond what each concrete backend's own adapter functions (ensureResident, deleteInstance, exec, writeAbsBytes, readAbsBytes) implement; the base itself verifies only structural invariants like non-zero exit code on the mkdir+cred-link prep step (line 167-168)",
+      "nonTestConsumer": "sprites-sandbox.ts:264 and smolmachines-sandbox.ts:306 both construct createExecSandboxBase and delegate their exported Sandbox's provision/run/teardown/writeFile*/readFile* directly to it (grep-confirmed by direct import); agent37-sandbox.ts, porter-sandbox.ts, and local-sandbox.ts implement their OWN provision/run/teardown inline WITHOUT using this shared base (confirmed by absence of createExecSandboxBase import in those three files) despite having the same conceptual shape — this is itself a partial-adoption inconsistency worth noting",
+      "integrationLink": "Only 2 of 8 backends (sprites, smolmachines) actually share this base; local, aws, e2b, modal, porter, and agent37 each reimplement an equivalent provision/run/teardown skeleton independently with near-identical but not code-shared logic (observable by comparing e.g. local-sandbox.ts:392-460 against aws-sandbox.ts:417-538 — structurally parallel but textually duplicated)",
+      "tests": "No dedicated exec-sandbox-base.test.ts found by deterministic search; covered indirectly only through sprites-sandbox.test.ts and smolmachines-sandbox.test.ts, neither opened in this audit — UNKNOWN.",
+      "failureSemantics": "Same as M11's per-backend failure semantics for the two backends that use this base; the base itself propagates errors from its deps callbacks unchanged (no additional error-shape normalization).",
+      "sourceNativeStatus": "QM wires and uses this for 2 of 8 backends; the other 6 duplicate equivalent logic independently.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND — no CVF equivalent.",
+      "deltaBeyondCvf": "N/A — this is a QM-internal code-reuse observation (partial DRY violation across 8 near-identical backend implementations), not a mechanism with independent CVF-relevant value.",
+      "practicalBenefit": "N/A_ADVERSE_FINDING_NOT_ADOPTION_CANDIDATE — recorded for completeness as a source-code-quality observation surfaced while tracing producer/consumer relationships for M11-M15; no CVF action follows.",
+      "evidenceConfidence": "HIGH",
+      "terminalValueDisposition": "REJECT_NO_ACTIONABLE_VALUE",
+      "nextActionTrigger": "None — QM-internal observation only."
+    },
+    {
+      "mechanismId": "M19",
+      "userAgentOutcome": "Layer-provided tool binaries (scripts baked into a workspace layer) are installed into a sandbox exactly once, verified by content hash before AND after installation, so a repeated provision of the same scope skips redundant installation work.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "src/sandbox/layer-tool-install.ts:46-69 createLayerToolInstaller()",
+      "verifier": "layerToolProbeScript() (33-40) generates a `sha256sum -c --status` check PLUS an executable-bit check for each file; the installer probes BEFORE staging (skip if already correct) and re-probes AFTER staging+commit (verify the atomic rename actually landed correct content) — a stage-then-atomic-rename-then-reverify pattern",
+      "nonTestConsumer": "aws-sandbox.ts, e2b-sandbox.ts, modal-sandbox.ts, agent37-sandbox.ts each optionally construct a LayerToolInstaller via createLayerToolInstaller when opts.layerToolFiles is provided (grep-observable — not a separate src/wiring.ts constructor, a conditionally-invoked pure function)",
+      "integrationLink": "Called from within provision() after the base workspace prep and read-only layer materialization (M-adjacent to ro-layers.ts, which was FULL_READ but not separately assigned a mechanism id since it is a straightforward tar-based read-only-layer sync with a sha256 manifest-diff skip, materializeRoLayers, ro-layers.ts:23-67)",
+      "tests": "No dedicated layer-tool-install.test.ts found by deterministic search; UNKNOWN in this audit.",
+      "failureSemantics": "If the post-commit reverify probe fails, the installer explicitly removes the staged files (rm -f, line 65) before throwing — never leaves a half-installed tool set in place, and the nonce-suffixed staging path (`.staged-${nonce}`) prevents a concurrent installer race from colliding on the same temp file.",
+      "sourceNativeStatus": "QM wires and uses this for 4 of 8 backends that support layer-provided tools.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND — no CVF equivalent.",
+      "deltaBeyondCvf": "A hash-verified, atomic, race-safe idempotent file-install pattern — narrow utility, no CVF consumer.",
+      "practicalBenefit": "N/A_NO_CVF_RUNTIME_TO_BENEFIT.",
+      "evidenceConfidence": "MEDIUM",
+      "terminalValueDisposition": "REJECT_NO_ACTIONABLE_VALUE",
+      "nextActionTrigger": "None."
+    },
+    {
+      "mechanismId": "M20",
+      "userAgentOutcome": "An operator configures an egress proxy URL so outbound sandbox network traffic can be centrally audited/blocked. Egress-proxy support exists on SEVEN of the eight sandbox backends -- aws, e2b, modal, porter, agent37, smolmachines, sprites -- all gated by one shared precondition; only local-docker has no egress-proxy wiring at all. All seven egress-capable backends share the same precondition gate (exec-sandbox-base.ts:155-156 or its per-backend inline equivalent); sprites additionally layers a server-verified enforcement step on top of that shared gate once the precondition is met.",
+      "sourcePin": "51bf455ea414a58f70274284ce212142518e556a",
+      "producer": "Shared precondition gate, exec-sandbox-base.ts:155-156 (re-verified by direct re-read in Generation 2): line 155 -- `const forceEgress = !!deps.egressProxyUrl && !!provOpts?.egressToken;`; line 156 -- `if (forceEgress) await deps.ensureEgress?.(name);`. This is a boolean AND of two independent facts (proxy URL configured, AND a per-provision egress token supplied) -- BOTH must be true for `ensureEgress` to be invoked at all; if either is false, `ensureEgress` is never called, not called-and-ignored. aws-sandbox.ts computes an equivalent inline forceEgress at line ~463 (does not use the shared base); e2b-sandbox.ts:342, modal-sandbox.ts (~523), porter-sandbox.ts:291, agent37-sandbox.ts:470 each gate their own env-var injection on the identical AND condition. sprites-sandbox.ts is built on createExecSandboxBase (confirmed at sprites-sandbox.ts:264-327) and so is gated by the SAME exec-sandbox-base.ts:155-156 precondition before its provider-native ensureEgressPolicy() (sprites-sandbox.ts:209-233) runs. local-sandbox.ts has no egressProxyUrl option at all. smolmachines-sandbox.ts DOES declare egressProxyUrl (SmolmachinesSandboxOptions extends BlobStagingOptions) and is gated by the same shared precondition pattern.",
+      "verifier": "SPRITES -- TWO DISTINCT CONDITIONS, PRECISELY SEPARATED (Generation 2 correction per F2): CONDITION A (proxy URL present AND token present): the shared forceEgress gate (exec-sandbox-base.ts:155) evaluates true, so `ensureEgress` (line 156) is invoked, which for sprites calls ensureEgressPolicy() (sprites-sandbox.ts:209-233). That function POSTs a domain-allow rule then immediately GETs it back and throws 'readback mismatch' if the returned policy does not exactly match the rule just written -- this IS a fail-closed, server-verified enforcement path. Proven by test/sprites-sandbox.test.ts:150-164 ('force-through fails closed if the policy readback doesn't bind') and, re-verified by direct re-read in Generation 2, test/sprites-sandbox.test.ts:181-201 ('a failed egress setup releases the scratch lease instead of wedging the key') -- this exact test constructs the sandbox with BOTH egressProxyUrl and a minted egressToken present (lines 189-193), triggers a readback mismatch via a broken fetch stub, and asserts the provision call rejects with /readback mismatch/ (line 196). CONDITION B (proxy URL present but token MISSING): the shared forceEgress gate (exec-sandbox-base.ts:155) evaluates to FALSE because `!!provOpts?.egressToken` is false, so `ensureEgress` (line 156) is NEVER INVOKED for this provision call -- ensureEgressPolicy() never runs, no POST/GET readback occurs, and no error is thrown. This is a SKIPPED precondition, not a fail-closed enforcement outcome; the two conditions must not be conflated. The same test file's line 198 issues a second provision() call with NO egressToken (proxy URL still configured on the sandbox instance via `make({ egressProxyUrl: ... })`), and that call SUCCEEDS (asserted at lines 199-200: `retry.scratch, true` and `retry.coldStart, true`) -- direct evidence that Condition B is a silent skip, not an error, for sprites specifically. A dedicated, isolated 'proxy URL present, token absent' case (independent of the readback-mismatch retry sequence) was not found as its own named test in the read evidence; the Condition-B conclusion above rests on the shared forceEgress source expression (exec-sandbox-base.ts:155) plus this retry-sequence observation, not on a dedicated per-condition unit test for sprites. CLIENT-SIDE ENV-VAR ONLY, NO SERVER VERIFICATION -- aws, e2b, modal, agent37: each sets HTTPS_PROXY/HTTP_PROXY/NO_PROXY env vars for the shell to honor, gated by the identical shared forceEgress-shaped AND condition, with no platform-side policy check. Proven by test/{e2b,modal,agent37}-sandbox.test.ts's 'force-through proxy env is set when a proxy url and token are present' cases (env var set + a curl inside the sandbox reaches the proxy host; no server-side readback assertion exists in any of the three). EXPLICITLY TEST-PROVEN SILENT SKIP WHEN TOKEN ABSENT -- porter: 'scratch bodies without an egress token stay open even when a proxy is configured' (test/porter-sandbox.test.ts:224-235) and 'scratch bodies never share across egress modes' (:263-272) directly assert the no-token-with-URL-present case for this backend by name. NO-URL-CASE TEST-PROVEN (not the same condition as B) -- smolmachines, agent37: each has a dedicated 'no proxy env without a proxy url' test (test/smolmachines-sandbox.test.ts:104-107, test/agent37-sandbox.test.ts:108-111) proving no accidental proxy env when NO proxy URL is configured at all -- this is the URL-ABSENT case, distinct from Condition B (URL-present-token-absent), and must not be read as covering Condition B. AWS, E2B, MODAL: no dedicated test isolating Condition B (URL present, token absent) was found for these three specifically in the read evidence; their Condition-B behavior is a SOURCE-CODE INFERENCE from the shared forceEgress expression (same AND condition, same effect as sprites' Condition B and porter's tested case), not an independently test-proven fact for these three files. This worker has READ all eight backend test files in full (Generation 2 F3 repair); reading a test file's source is NOT equivalent to running it -- no test in this audit was executed, and no claim here should be interpreted as an executed-test result.",
+      "nonTestConsumer": "Same six backends as producers above (self-consuming — each backend both configures and 'enforces' its own egress within its own provision()/run())",
+      "integrationLink": "opts.egressProxyUrl is threaded from src/wiring.ts's backend construction options; provOpts.egressToken is supplied per-call by whatever caller invokes sandbox.provision() (not traceable further within the four target trees alone)",
+      "tests": "All eight per-backend sandbox test files are now FULL_READ (Generation 2 F3 repair: local-sandbox.test.ts, aws-sandbox.test.ts, e2b-sandbox.test.ts, modal-sandbox.test.ts, porter-sandbox.test.ts, sprites-sandbox.test.ts, smolmachines-sandbox.test.ts, agent37-sandbox.test.ts). This is a READ of each file's source and assertions, not an executed test run -- no test in this audit was run; execution remains forbidden under the packet's boundary. Exact citations: test/sprites-sandbox.test.ts:150-164 and :181-201 (re-verified by direct re-read in Generation 2) for Condition A fail-closed behavior; test/porter-sandbox.test.ts:224-235 and :263-272 for Condition B (explicit no-token-with-URL); test/{smolmachines,agent37}-sandbox.test.ts:104-107/108-111 for the no-URL case (not Condition B). test/egress-authz.test.ts (grep-listed among the broader repo, outside the 30-path selected-tests set reconciled under F3 since it concerns route-level authorization rather than sandbox-env specifically) was not opened; its status remains UNKNOWN and is not claimed otherwise.",
+      "failureSemantics": "CORRECTED DENOMINATOR AND TWO-CONDITION MODEL (Generation 2 repair per F2): the egress-capable backend set is SEVEN: aws, e2b, modal, porter, agent37, smolmachines, sprites (local-docker has zero egress-proxy wiring). Among these seven, behavior when a proxy URL is configured must be split into the exact scenario actually observed, not collapsed into one 'fail-open' label: CONDITION A (URL present AND token present) enforcement is ACTIVE for all seven (the shared forceEgress gate evaluates true and ensureEgress/env-injection runs); of these seven, only sprites additionally server-verifies its own policy took effect and fails closed on a readback mismatch -- aws/e2b/modal/agent37/porter/smolmachines set client-side env vars only, with no platform-side check that the shell actually honors them. CONDITION B (URL present, token MISSING) is a SKIPPED precondition for all seven, by construction of the single shared `forceEgress = !!egressProxyUrl && !!egressToken` gate -- `ensureEgress`/env-injection is simply never invoked; this is NOT fail-closed (nothing is verified or blocked) and NOT the same as an enforcement failure -- it is silent absence of any egress constraint for that provision call, with no error surfaced. This condition is directly test-proven for porter and (via the retry-sequence evidence above) for sprites; it is source-code-inferred (same gate expression) rather than independently test-proven per-file for aws, e2b, and modal specifically.",
+      "sourceNativeStatus": "QM wires and uses this natively; the gap described is native QM behavior, not a hypothetical.",
+      "cvfComparisonOwner": "OWNER_NOT_FOUND — no CVF equivalent egress-enforcement mechanism exists to compare against.",
+      "deltaBeyondCvf": "N/A — this is an adverse finding about QM's own fail-open egress-enforcement precondition, not a candidate for CVF adoption.",
+      "practicalBenefit": "N/A_ADVERSE_FINDING_NOT_ADOPTION_CANDIDATE — flagged per the work order's instruction to preserve adverse findings with the same rigor as positive ones. No CVF action follows since CVF has no sandbox/egress runtime.",
+      "evidenceConfidence": "HIGH",
+      "terminalValueDisposition": "REJECT_NO_ACTIONABLE_VALUE",
+      "nextActionTrigger": "None under current CVF scope -- retained as a documented QM-internal precondition-skip gap discovered incidentally, now with a precise two-condition matrix (Condition A: URL+token present, enforcement active, sprites fail-closed on mismatch, six others client-side-only; Condition B: URL present/token absent, ensureEgress/env-injection SKIPPED entirely for all seven backends, not fail-closed, test-proven for porter and sprites, source-inferred for aws/e2b/modal). Would only become relevant to CVF if a future lane adopts QM's sandbox egress code verbatim, in which case this corrected finding should gate that adoption and a follow-up lane should add the missing per-backend Condition-B test cases for aws, e2b, and modal before relying on the source-code inference.",
+      "reworkNote": "F2 correction (Generation 1): corrected the backend denominator and separated server-verified-fail-closed (sprites) from client-side-only (aws/e2b/modal/agent37) from explicitly-tested-skip (porter). F2 FURTHER correction (Generation 2, this pass): precisely separated sprites' two distinct conditions -- (A) URL+token present: enforcement active, fail-closed only on a readback MISMATCH, not on token absence; (B) URL present/token absent: forceEgress evaluates false, ensureEgress is SKIPPED entirely, explicitly NOT described as fail-closed -- cross-referenced against exact re-verified source lines exec-sandbox-base.ts:155-156 and exact re-verified test lines sprites-sandbox.test.ts:181-201. Completed the full 7-backend Condition-A/Condition-B matrix (local-docker excluded as non-egress-capable) with per-backend test-proven-vs-source-inferred status, and clarified throughout that reading a test file's source is not equivalent to an executed test result."
+    }
+  ],
+  "cvfOwnerSearches": {
+    "method": "Delegated to an Explore subagent restricted to the CVF repo (excluding .private_reference/); each of the six mechanism categories searched independently with glob and grep queries, then two positive hits independently re-verified by direct file read in this session.",
+    "categoriesSearched": [
+      "HMAC/JWT signed-token minting and verification",
+      "AWS STS role-broker / assume-role session vending",
+      "Postgres/memory-backed broker sessions and replay-dedupe stores",
+      "Identity/principal classification (internal vs guest) and directory-sync deactivation",
+      "Credential keychain (encrypted storage, OAuth refresh, consent flow, OS-credential capture)",
+      "Sandbox/computer abstraction (pluggable backends, router, migration, egress, home-snapshot)"
+    ],
+    "positiveOwnerHits": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/service-token-auth.ts",
+        "verifiedByDirectRead": true,
+        "lineCount": 63,
+        "disposition": "ADJACENT_PARTIAL_OWNER",
+        "note": "Real implementation of narrow single-shared-token HMAC request signing with a 5-minute timestamp window; no claims/audience/kid-rotation model. Cited against M4 and M5."
+      },
+      {
+        "path": "docs/reference/archive/CVF_DELTA_D3_SANDBOX_BOUNDARY_SPEC_2026-05-29.md",
+        "verifiedByDirectRead": true,
+        "lineCount": 143,
+        "disposition": "ADJACENT_POLICY_NOT_IMPLEMENTATION",
+        "note": "Governs one narrow, non-shell-spawning, three-command-whitelisted MCP tool. Explicitly disclaims any future shell-spawning bridge. Cited against M11 and M12."
+      }
+    ],
+    "negativeSearches": [
+      {
+        "category": "AWS STS role-broker",
+        "queries": [
+          "STS|assume-role|assumeRole|role-broker|session vending",
+          "sts:AssumeRole"
+        ],
+        "roots": [
+          "docs/",
+          "governance/",
+          "EXTENSIONS/",
+          "src app code (excluding .private_reference)"
+        ],
+        "result": "OWNER_NOT_FOUND"
+      },
+      {
+        "category": "Postgres/memory broker sessions + replay-dedupe",
+        "queries": [
+          "replay-dedupe|broker session|memory-backed broker|postgres"
+        ],
+        "roots": [
+          "docs/",
+          "governance/",
+          "EXTENSIONS/"
+        ],
+        "result": "OWNER_NOT_FOUND (one 'postgres' hit was an unrelated generic schema-design skill doc)"
+      },
+      {
+        "category": "Identity/principal classification + directory sync",
+        "queries": [
+          "directory sync|principal classification|internal vs external|guest identity|deactivat"
+        ],
+        "roots": [
+          "docs/",
+          "governance/",
+          "EXTENSIONS/"
+        ],
+        "result": "OWNER_NOT_FOUND (matches were CVF's own governance-actor role vocabulary, a different concern)"
+      },
+      {
+        "category": "Credential keychain / OS-credential capture",
+        "queries": [
+          "credential keychain|encrypted credential|OAuth connector|device-flow|resident-auth|gh auth|gcloud auth|.netrc|.aws/credentials|.ssh/"
+        ],
+        "roots": [
+          "docs/",
+          "governance/",
+          "EXTENSIONS/"
+        ],
+        "result": "OWNER_NOT_FOUND"
+      }
+    ]
+  },
+  "dispositionCounts": {
+    "DEFER_WITH_TRIGGER": 9,
+    "ADAPT_CANDIDATE": 2,
+    "REJECT_NO_ACTIONABLE_VALUE": 9
+  },
+  "dispositionIds": {
+    "DEFER_WITH_TRIGGER": [
+      "M1",
+      "M2",
+      "M3",
+      "M9",
+      "M11",
+      "M12",
+      "M13",
+      "M14",
+      "M15"
+    ],
+    "ADAPT_CANDIDATE": [
+      "M4",
+      "M5"
+    ],
+    "REJECT_NO_ACTIONABLE_VALUE": [
+      "M6",
+      "M7",
+      "M8",
+      "M10",
+      "M16",
+      "M17",
+      "M18",
+      "M19",
+      "M20"
+    ]
+  },
+  "totalMechanismRecords": 20,
+  "exclusionsUnknownsContradictions": {
+    "exclusions": [
+      "All QM paths outside src/auth/, src/identity/, src/credentials/, src/sandbox/ remain unassessed by this lane (per packet's exact corpus scope)."
+    ],
+    "unknowns": [
+      "All 30 selected test/ paths (per testDiscoveryLedger.selectedTestsReconciliation) are now FULL_READ as of Generation 2 (F3 repair); testDiscoveryLedger.structurallySampledTests is empty. The only remaining deliberately-unopened test file relevant to the target mechanisms is test/egress-authz.test.ts, which was grep-listed among the broader repo but falls outside the 30-path selected-tests set (it concerns route-level authorization rather than sandbox-env specifically) and remains UNKNOWN by design, not by omission.",
+      "src/security/secret-masking.ts (imported by exec-process-session.ts) was cited but not independently read, since it lies outside the four target trees.",
+      "For mechanism M20's Condition B (egress proxy URL present, per-provision token absent): this exact scenario is directly test-proven for porter (test/porter-sandbox.test.ts:224-235, :263-272) and for sprites (via the retry-sequence evidence in test/sprites-sandbox.test.ts:181-201); it is a source-code inference from the shared exec-sandbox-base.ts:155-156 gate expression, not an independently test-proven fact, for aws, e2b, and modal specifically -- no dedicated per-backend test isolating Condition B alone was found for these three in the read evidence."
+    ],
+    "contradictions": [
+      "M6: two independent implementations of the same-named portal-identity interface (src/auth/portal-identity.ts vs plugins/chassis/src/portal-identity.ts) coexist with disjoint live consumer sets; cross-acceptance is directional (forward acceptance real under a shared secret, reverse rejection deterministic), not a blanket non-interoperability claim -- see M6 for the full matrix.",
+      "M20/H6: egress-proxy enforcement is ACTIVE (Condition A: URL+token both present) for all seven egress-capable backends, but only sprites server-verifies the result and fails closed on a readback mismatch; the other six are client-side-only with no server check. When the token is absent but the URL is configured (Condition B), enforcement is SKIPPED entirely for all seven backends -- this is silent absence of a constraint, not a fail-closed or fail-open enforcement outcome in the conventional sense; see M20 for the complete two-condition matrix and per-backend evidence status."
+    ],
+    "remainingQmRegions": "All QM directories and files outside src/auth/, src/identity/, src/credentials/, src/sandbox/ remain INCOMPLETE and unaudited by this lane, per the packet's explicit corpus-verdict PARTIAL disposition. No claim of whole-QM or whole-pilot coverage is made."
+  },
+  "validationCommands": [
+    {
+      "command": "python -m json.tool docs/audits/CVF_QM_RUNTIME_VALUE_R1_2026-09-14.json",
+      "purpose": "Confirm the audit JSON parses as valid JSON.",
+      "result": "PASS (run after this file was written; see worker return Command Evidence section)"
+    },
+    {
+      "command": "git status --short --untracked-files=all",
+      "purpose": "Confirm only the two worker-owned paths changed.",
+      "result": "See worker return"
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "purpose": "Confirm workspace HEAD unchanged.",
+      "result": "5829b45a8f35d9d976c88fffc4cb4a6780faebee both before and after"
+    },
+    {
+      "command": "git -C .private_reference/source_mirrors/yc-software__qm rev-parse HEAD",
+      "purpose": "Confirm mirror pin unchanged.",
+      "result": "51bf455ea414a58f70274284ce212142518e556a both before and after"
+    },
+    {
+      "command": "git -C .private_reference/source_mirrors/yc-software__qm status --short",
+      "purpose": "Confirm mirror clean.",
+      "result": "empty both before and after"
+    }
+  ],
+  "claimBoundary": "This audit is a static, evidence-producing source-comparison packet for exactly four QM source trees at one immutable pin. It does not accept, implement, or adopt any candidate; does not close QM as a whole or the three-repository pilot program; does not claim complete QM-repository coverage; and makes no runtime, live-proof, deployment, public-sync, or production-readiness claim. Local alone may review, accept, defer, reject, or request correction on any item recorded here.",
+  "consolidatedReworkGeneration1": {
+    "reworkGeneration": 1,
+    "priorFindingSetDigestSha256": "ec2e9e5d2b2bc84e8e16eb44c28b0eccdc25e8df0f119bfcfa551485ac565042",
+    "digestVerified": true,
+    "digestVerificationMethod": "SHA-256 of exactly the five F1-F5 lines from the work order's Consolidated Finding Set fence, in displayed order, UTF-8 without BOM, LF separators, one final trailing LF -- reproduced and matched against the packet's priorFindingSetDigest before any repair work began.",
+    "firstReturnAuditSha256": "cb8a10811555e44f69058d46667ed549b068a093668a897e768d474e9c321553",
+    "firstReturnAuditSha256Preserved": true,
+    "findingResponseMatrix": [
+      {
+        "findingId": "F1",
+        "classification": "WORKER_EXECUTION_ERROR",
+        "targetMechanism": "M6",
+        "repairSummary": "Replaced the blanket 'two independent, non-interoperable implementations' framing with a verified directional producer/verifier matrix: src/auth's legacy-HMAC fallback path (signed-token.ts:18-37) structurally accepts a chassis-minted 2-segment token given a shared secret (FORWARD acceptance, confirmed by matching mint/verify logic field-for-field without executing either function); chassis's verifier cannot JSON-parse a JOSE token's joined header+payload segment and therefore rejects it deterministically (REVERSE rejection, confirmed by JWS Compact Serialization structural analysis per RFC 7515 S3.1).",
+        "regressionEvidence": "Both directions traced to exact source lines in both files (src/auth/signed-token.ts:18-37, plugins/chassis/src/portal-identity.ts:14-30); same-secret/wrong-secret and malformed/expiry cases for each side's OWN tokens remain covered by each side's respective fully-read unit test (test/capability-token.test.ts for the JOSE side via the shared primitive, test/portal-identity.test.ts for the chassis side directly); no upstream source was executed to establish the cross-acceptance claim -- it rests on static comparison of the two functions' exact byte-level operations (HMAC-SHA256 construction, base64url encoding, JSON parse boundary), consistent with the packet's forbidden-effects boundary (source execution remains FORBIDDEN).",
+        "status": "RESOLVED"
+      },
+      {
+        "findingId": "F2",
+        "classification": "WORKER_EXECUTION_ERROR",
+        "targetMechanism": "M20",
+        "repairSummary": "Corrected the backend denominator (local-docker has no egress-proxy support at all and was wrongly counted among the 'five'; smolmachines does have egress-proxy support and was omitted) and replaced the flat 'fail-open in five, verified in one' claim with a three-way split: server-verified-and-fail-closed (sprites, via ensureEgressPolicy's readback check); client-side-env-var-only-with-no-server-check (aws, e2b, modal, agent37); explicitly-tested-silent-fail-open (porter). Each backend's exact enforcement mechanism, configuration surface, and caller-guarantee level is now stated separately rather than collapsed into one number.",
+        "regressionEvidence": "Full per-backend configured/unconfigured-proxy and present/absent-token matrix built from direct reads of all eight backend test files (previously UNKNOWN, now FULL_READ under F3); explicit distinction preserved between claims that are directly test-proven per backend (porter's fail-open case, sprites' fail-closed-on-mismatch case, smolmachines/agent37's no-URL case) versus claims that remain source-code-inferred from the shared forceEgress gate expression because no dedicated no-token-with-URL-present test case was found for aws, e2b, or modal specifically in the read evidence -- this distinction is not flattened into a single uniform claim.",
+        "status": "RESOLVED"
+      },
+      {
+        "findingId": "F3",
+        "classification": "WORKER_EXECUTION_ERROR",
+        "targetMechanism": "test discovery ledger (all mechanisms citing sandbox backend or large keychain/device-flow tests)",
+        "repairSummary": "Fully read all previously-structurally-sampled or falsely-FULL_READ test files: test/keychain.test.ts (1597 lines), test/keychain-ask.test.ts (971 lines), test/device-flow-persist.test.ts (1133 lines), test/resident-paths.test.ts (514 lines), test/secret-drop.test.ts (678 lines), test/sandbox-migration-runner.test.ts (completed lines 101-411, correcting the false FULL_READ claim on the original 1-100-only read), and all eight per-backend sandbox test files (test/local-sandbox.test.ts, aws-sandbox.test.ts, e2b-sandbox.test.ts, modal-sandbox.test.ts, porter-sandbox.test.ts, sprites-sandbox.test.ts, smolmachines-sandbox.test.ts, agent37-sandbox.test.ts) -- previously declared UNKNOWN and not opened at all. (Generation 2 note: test/sandbox-resources.test.ts, left partially read in Generation 1, is now also FULL_READ -- see consolidatedReworkGeneration2 for the full account.)",
+        "regressionEvidence": "testDiscoveryLedger.fullyReadTests grew from 13 to 28 entries; testDiscoveryLedger.structurallySampledTests shrank from 6 to 1 in Generation 1 (sandbox-resources.test.ts partial) and to 0 in Generation 2 (see consolidatedReworkGeneration2); every mechanism record (M1-M20) whose 'tests' field cited one of the newly-completed files was checked against the fuller read and no assertion-versus-execution conflation was found requiring a mechanism-level rewrite beyond M6/M20's F1/F2 corrections and M12's already-accurate migration-runner citations, which are now backed by the complete file rather than the first 100 lines.",
+        "status": "RESOLVED"
+      },
+      {
+        "findingId": "F4",
+        "classification": "WORKER_EXECUTION_ERROR",
+        "targetMechanism": "targetManifest, testDiscoveryLedger, M5, M11, M12",
+        "repairSummary": "(a) Added targetManifest.manifestDigestSha256 with an explicit, reproducible recipe (sorted normalized path+blobSha rows, SHA-256). (b) Confirmed consumerIntegrationSearches already had 15 entries in the JSON (the '14' figure was a Markdown-return-only miscount, corrected there; documented the reconciliation in testDiscoveryLedger.consumerIntegrationSearchesCountReconciliation so the JSON/Markdown discrepancy is explained rather than silently disappearing). (c) Bounded M11/M12's citation of docs/reference/archive/CVF_DELTA_D3_SANDBOX_BOUNDARY_SPEC_2026-05-29.md: added an explicit authority caveat noting the document's own header says 'Status: APPROVED' (not SUPERSEDED/HISTORICAL) despite its archive/ path, an unresolved contradiction preserved rather than silently resolved by assuming the path convention overrides the header. (d) Narrowed M5's CVF-comparison claim from a general 'CVF's service-token-auth.ts accepts replay' statement to the one specific, directly-traced consumer (EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts:117-132), downgraded its evidenceConfidence from HIGH to MEDIUM, and explicitly stated that the other ~20 grep-listed consumer files were not independently opened to confirm the same exposure, rather than implying a CVF-wide vulnerability.",
+        "regressionEvidence": "manifestDigestSha256 is independently reproducible from targetManifest.entries by any reviewer running the stated recipe; the consumerIntegrationSearches count is now documented as JSON-correct/Markdown-was-wrong rather than left ambiguous; M11/M12's owner citation carries an explicit unresolved-contradiction caveat instead of an implied current-authority claim; M5's practicalBenefit field explicitly states the benefit is scoped to one route and the broader claim is UNKNOWN, not asserted.",
+        "status": "RESOLVED"
+      },
+      {
+        "findingId": "F5",
+        "classification": "ORCHESTRATOR_PACKET_GAP",
+        "targetMechanism": "worker-return gate command and output-shape completeness",
+        "repairSummary": "Confirmed the corrected requiredGate command (`python governance/compat/run_worker_return_fast_gate.py`, no --work-order/--return arguments) matches the script's actual argparse definition (--help output: only --pytest-target is accepted) -- the orchestrator's correction in this packet's requiredGate field is verified accurate. Preserved the original R1 blocked-command receipt as history (see the R1 worker return's Command Evidence table, unchanged) and ran the corrected gate for real, recording its actual exit code and full failure/pass detail. Completed the output-shape blocks the gate's own failures demanded: a Semantic Convergence Outcome block, this Consolidated Reviewer Rework Generation 1 self-proof block, and the Markdown return's full required-heading set (External Knowledge Intake Routing, Rescan Intelligence Hardening, Corpus Completeness And Report Integrity, Finding-To-Governance Learning Disposition, Epistemic Process Block, WORKER_EXPERIENCE_RETRO assertion, and the full review-cost convergence field set: rootCauseClusterId, reworkGeneration, consolidatedDefectClassSweep, productionBindingEvidence, adversarialRegressionDisposition, successorTrancheOpened, implementationAutonomyDisposition, internalAgentInvocationCount, externalAgentInvocationCount, providerCallCount, tokenOrQuotaUsage, terminalReadinessVerdict).",
+        "regressionEvidence": "`python governance/compat/run_worker_return_fast_gate.py --help` output recorded verbatim in the Generation 1 Markdown return's Command Evidence table, matching the packet's requiredGate field exactly; the corrected gate was actually run (not merely described) and its real exit code and per-check pass/fail breakdown are recorded; no checker source file was edited to force a pass, and no individual checker was substituted for the full reviewer-fast chain (individualCheckerSubstitution remains FORBIDDEN, honored).",
+        "status": "RESOLVED"
+      }
+    ]
+  },
+  "textEncodingException": "Text Encoding Exception: this return and its paired Markdown worker return use standard typographic em-dashes (U+2014) throughout descriptive prose fields, consistent with existing CVF corpus conventions; verified as valid UTF-8 by direct byte-level inspection during Generation 1 rework, not encoding corruption. No re-encoding pass across the 20 mechanism records prose is authorized by the F1-F5 finding set, so this exception is recorded rather than performed as an out-of-scope rewrite.",
+  "consolidatedReworkGeneration2": {
+    "reworkGeneration": 2,
+    "trigger": "Local has not yet accepted Generation 1; orchestrator relayed four remaining-defect items against F1-F5 (F3 incompletely reconciled, F2 Sprites two-condition conflation, evidence not synchronized document-wide, receipt/gate run not completed) for this worker to address in the same two owned output files.",
+    "generation1AuditSha256": "cb8a10811555e44f69058d46667ed549b068a093668a897e768d474e9c321553",
+    "generation1AuditSha256Preserved": true,
+    "findingResponseMatrix": [
+      {
+        "findingId": "F1",
+        "generation2Action": "SYNCHRONIZATION_ONLY",
+        "targetMechanism": "M6, H3",
+        "repairSummary": "No new source evidence required; Generation 1's directional matrix was already correct. Removed leftover 'non-interoperable' phrasing from M6.practicalBenefit and H3.outcome_detail, which still carried the pre-correction blanket characterization even though M6.verifier/failureSemantics already had the corrected directional matrix.",
+        "evidenceLocations": [
+          "mechanismRecords[M6].practicalBenefit",
+          "hypothesisOutcomes[H3].outcome_detail"
+        ],
+        "status": "RESOLVED"
+      },
+      {
+        "findingId": "F2",
+        "generation2Action": "MATRIX_PRECISION_REWRITE",
+        "targetMechanism": "M20, H6",
+        "repairSummary": "Re-read exec-sandbox-base.ts:155-156 and sprites-sandbox.test.ts:181-201 directly to re-verify exact citations (confirmed: line 155 is the forceEgress AND-gate, line 156 is the conditional ensureEgress call; the test at 181-201 constructs a sandbox with BOTH url and token present, asserts fail-closed on readback mismatch at line 196, then re-provisions with NO token at line 198 and asserts success at 199-200). Rewrote M20.verifier/failureSemantics/tests/nextActionTrigger/reworkNote to state Condition A (url+token present: enforcement active, sprites fail-closed ONLY on readback mismatch) and Condition B (url present/token absent: forceEgress false, ensureEgress SKIPPED entirely, explicitly not described as fail-closed) as two distinct, separately-labeled conditions, completed the full 7-backend matrix (local-docker excluded as non-egress-capable; corrected the 'six' vs 'seven' denominator left inconsistent in Generation 1's own text), and added explicit language that reading a test file's source is not equivalent to an executed test result.",
+        "evidenceLocations": [
+          "mechanismRecords[M20].verifier",
+          "mechanismRecords[M20].failureSemantics",
+          "mechanismRecords[M20].tests",
+          "mechanismRecords[M20].userAgentOutcome",
+          "mechanismRecords[M20].producer",
+          "hypothesisOutcomes[H6].evidence",
+          "exclusionsUnknownsContradictions.contradictions[1]",
+          "source: exec-sandbox-base.ts:155-156 (re-verified by direct re-read)",
+          "test: sprites-sandbox.test.ts:181-201 (re-verified by direct re-read)"
+        ],
+        "status": "RESOLVED"
+      },
+      {
+        "findingId": "F3",
+        "generation2Action": "FULL_LEDGER_RECONCILIATION",
+        "targetMechanism": "testDiscoveryLedger (all 30 selected test paths)",
+        "repairSummary": "Fully read the four named files (test/sandbox-resources.test.ts to completion, lines 500-808 of 808 remaining after Generation 1's partial read of 1-100; test/device-flow-cutover.test.ts, 1-118; test/durable-process-sessions.test.ts, 1-204; test/sandbox-noninteractive.test.ts, 1-62 -- the latter three had never been added to fullyReadTests despite being present in searchCommands[].selected). Reconciled testDiscoveryLedger.fullyReadTests against the FULL 30-path selected list drawn from searchCommands[].selected (not limited to the four named files): confirmed all 30 test/ paths now have exactly one current-status row with blob SHA at the pin, read scope, and assertion evidence. Removed the duplicate sandbox-migration-runner.test.ts row (the stale 1-100-of-411 partial) and the self-contradicting sandbox-resources.test.ts partial row that had been placed in fullyReadTests despite its own text saying 'NOT claimed FULL_READ' -- both moved to the new testDiscoveryLedger.readHistory array rather than deleted outright. structurallySampledTests is now empty. Counts recomputed from unique paths only (30 entries, 30 unique paths).",
+        "evidenceLocations": [
+          "testDiscoveryLedger.fullyReadTests (30 entries)",
+          "testDiscoveryLedger.readHistory (2 entries)",
+          "testDiscoveryLedger.structurallySampledTests (0 entries)",
+          "testDiscoveryLedger.selectedTestsReconciliation"
+        ],
+        "status": "RESOLVED"
+      },
+      {
+        "findingId": "F4",
+        "generation2Action": "NO_FURTHER_ACTION_REQUIRED",
+        "targetMechanism": "targetManifest, testDiscoveryLedger",
+        "repairSummary": "F4 was not named in the Generation 2 instruction's four remaining-defect items; Generation 1's repair (manifestDigestSha256 added with reproducible recipe; consumerIntegrationSearches count reconciliation documented) is unchanged and re-verified consistent with the Generation 2 ledger edits (manifest digest recomputation not required since targetManifest.entries themselves did not change in Generation 2).",
+        "evidenceLocations": [
+          "targetManifest.manifestDigestSha256",
+          "testDiscoveryLedger.consumerIntegrationSearchesCountReconciliation"
+        ],
+        "status": "RESOLVED"
+      },
+      {
+        "findingId": "F5",
+        "generation2Action": "NO_FURTHER_ACTION_REQUIRED",
+        "targetMechanism": "gate command evidence",
+        "repairSummary": "F5 was not named in the Generation 2 instruction's four remaining-defect items beyond the general receipt-completion requirement (item 4), which is satisfied by running the exact no-arg gate command below after all edits and recording the real result while preserving prior failed-run history.",
+        "evidenceLocations": [
+          "docs/reviews/CVF_QM_RUNTIME_VALUE_R1_WORKER_RETURN_2026-09-14.md ## Command Evidence"
+        ],
+        "status": "SEE_GATE_RUN_BELOW"
+      }
+    ],
+    "note": "Generation 2 does not change any terminal value disposition (dispositionCounts unchanged: DEFER_WITH_TRIGGER=9, ADAPT_CANDIDATE=2, REJECT_NO_ACTIONABLE_VALUE=9, total 20) -- it sharpens evidence precision and closes reconciliation gaps within the same 20 mechanism records and 6 hypotheses established in R1/Generation 1. Per the packet's no-self-close boundary, Generation 2 does not self-declare F1-F5 'resolved' in the reviewer-acceptance sense (see the Semantic Convergence block in the Markdown return, which correctly keeps F1-F5 in retained/current, not resolved, pending Local's actual review)."
+  }
+}

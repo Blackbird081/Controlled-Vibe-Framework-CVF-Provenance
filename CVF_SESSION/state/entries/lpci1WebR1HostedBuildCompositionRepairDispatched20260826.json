@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2368,
+  "stateKey": "lpci1WebR1HostedBuildCompositionRepairDispatched20260826",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_2026-08-26.md",
+    "dispatchCommit": "4b8d436c485b001f181a6fe4c695884c4fca826b",
+    "workerReturn": "docs/reviews/CVF_LPCI1_WEB_UC01_PUBLIC_HOSTED_BUILD_COMPOSITION_REPAIR_WORKER_RETURN_2026-08-26.md",
+    "finding": "Public main 9c018329 cannot complete the cvf-web production build because LPCI imports the Model Gateway root barrel, whose TypeScript and monorepo-relative dependency graph are not package-safe for the hosted Next.js build.",
+    "proof": "Exact public-tip local build reproduced the parse failure; a reverted transpilation probe exposed five transitive monorepo-relative resolution failures; pre-dispatch 79/79 and dispatch pre-commit 87/87 passed.",
+    "boundary": "Private no-commit implementation only; no public-sync mutation, push, deploy, hosted smoke, provider/live/network/credential/store call or scope expansion."
+  }
+}

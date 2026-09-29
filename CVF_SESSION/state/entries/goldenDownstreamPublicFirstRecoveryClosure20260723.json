@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2023,
+  "stateKey": "goldenDownstreamPublicFirstRecoveryClosure20260723",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-23",
+    "completionReview": "docs/reviews/CVF_PUBLIC_FIRST_GOLDEN_DOWNSTREAM_BOOTSTRAP_RECOVERY_2026-07-23.md",
+    "provenanceClosureCommit": "ec362af35",
+    "publicCorrectiveCommit": "27137db4d",
+    "provenanceRemote": "Blackbird081/Controlled-Vibe-Framework-CVF-Provenance",
+    "publicRemote": "Blackbird081/Controlled-Vibe-Framework-CVF",
+    "bootstrapHarness": "69/69 PASS in provenance and public clones",
+    "publicCorrection": "five internal execution-evidence files removed by a normal forward commit; public-safe kit retained",
+    "mapperRepair": "WorkspaceKitOnly now projects all public-safe golden downstream catalog surfaces",
+    "parkedFinding": "PUBLIC_PROJECTION_GATE_PROFILE_GAP",
+    "publicExportDisposition": "EXPORTED",
+    "claimBoundary": "Repository recovery and bootstrap projection only. No provider/API, CLI/MCP agent invocation, runtime deployment, history rewrite, or force push."
+  }
+}

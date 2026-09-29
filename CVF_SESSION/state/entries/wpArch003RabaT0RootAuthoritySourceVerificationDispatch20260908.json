@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2793,
+  "stateKey": "wpArch003RabaT0RootAuthoritySourceVerificationDispatch20260908",
+  "value": "WP-ARCH-003 RABA-T0 root-authority source-verification packet is DISPATCH_READY at material commit d1f2a34be36679131ad851121394ca4a3cb0f87a. The paired GC-018 baseline and work order passed pre-dispatch 81/81, reviewer-fast 67/67 and pre-commit 88/88; P4-C1 returned SKIPPED_NO_ELIGIBLE_CANDIDATE. This fresh parent remains at external usage 0 of ceiling 1. One operator-relayed external invocation may create only the named assessment and worker return, unstaged and uncommitted, and must decide PROCEED_TO_INTEGRATED_ROOT_CONTRACT_DESIGN or PARK_NO_TRUTHFUL_AUTHORITY_ROOT from current source. No implementation, RABA-T1, DARA-T5, MFRP mutation, provider/live/public/deploy or worker commit is authorized."
+}

@@ -9,6 +9,37 @@ Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS-R3-GOLDEN_20
 dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_WOAS-R3-GOLDEN_2026-07-01.md`
 executionBaseHead: TO_FILL_capture with `git rev-parse --short HEAD` before edits
 rawMemoryReleased=false
+contractProfile: WORKER_RETURN_FULL_GATE_V1
+## Tool / Classifier Block Recovery Event
+toolClassifierBlockRecoveryApplicability: NOT_APPLICABLE_WITH_REASON - replace after evaluating whether a classifier blocked an in-scope edit
+toolClassifierBlockEventCount: 0
+platformForcedOperatorPromptCount: 0
+workerAuthoredOperatorQuestionCount: 0
+recoveryAttemptCount: 0
+recoveryDisposition: NO_EVENT
+eventEvidence: NOT_APPLICABLE_WITH_REASON - no classifier block event occurred
+## Work-Order Acceptance Evidence Ledger
+```acceptance-evidence-json
+{"schemaVersion":"cvf.workOrderAcceptanceEvidence@1.0.0","executionBaseHead":"TO_FILL","results":[]}
+```
+## Rework Convergence Self-Proof
+rootCauseClusterId: INITIAL_SCOPE_WOAS-R3-GOLDEN
+reworkGeneration: 0
+consolidatedDefectClassSweep: PENDING_BEFORE_READY
+productionBindingEvidence: PENDING_BEFORE_READY
+adversarialRegressionDisposition: PENDING_BEFORE_READY
+successorTrancheOpened: NO
+implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
+internalAgentInvocationCount: 0
+externalAgentInvocationCount: 0
+providerCallCount: 0
+tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: provider-neutral scaffold has no usage meter
+terminalReadinessVerdict: BLOCKED_WITH_REASON: generated scaffold pending worker evidence
+## Recurring Blocked-Return Escalation
+recurrenceDisposition: NOT_APPLICABLE_WITH_REASON - replace with FIRST_OCCURRENCE or RECURRING_CLUSTER_STOP when Status is BLOCKED_WITH_REASON
+priorRelatedFinding: NOT_APPLICABLE_WITH_REASON - replace with the exact governed prior path for a recurring cluster
+operatorNoticeDisposition: NOT_APPLICABLE_WITH_REASON - replace with OPERATOR_NOTICE_REQUIRED for a recurring cluster
+successorFreezeDisposition: NOT_APPLICABLE_WITH_REASON - replace with FEATURE_SUCCESSORS_FROZEN for a recurring cluster
 ## Purpose
 TO_FILL: state the mission prompt for this worker return.
 ## Scope / Methodology
@@ -17,6 +48,42 @@ TO_FILL: state the scope and methodology of this worker execution.
 TO_FILL: state findings and position with evidence.
 ## Risk / Corrective Action
 TO_FILL: state risks and corrective actions if any.
+## Semantic Convergence Outcome
+
+Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md`
+
+```json
+{
+  "schemaVersion": "cvf.semanticConvergenceControl.v1",
+  "problemKey": "woas-r3-golden-problem",
+  "chainMode": "SUCCESSOR",
+  "chainOrdinal": 1,
+  "predecessor": {
+    "path": "SCEC_PREDECESSOR_HASH_UNRESOLVED",
+    "sha256": "SCEC_PREDECESSOR_HASH_UNRESOLVED"
+  },
+  "blockerDelta": {
+    "prior": [],
+    "resolved": [],
+    "retained": [],
+    "new": [],
+    "reopened": [],
+    "current": []
+  },
+  "resolutionEvidence": {},
+  "counters": {
+    "partialReadyClosures": 0,
+    "reviewerScopeExpansions": 0,
+    "sameClaimCorrections": 0,
+    "nonDecreasingBlockerTransitions": 0
+  },
+  "claims": [],
+  "requiredDisposition": "CONTINUE_BOUNDED",
+  "successorScope": "INITIAL_BOUNDED"
+}
+```
+
+Author reminder: fill `blockerDelta`, `counters`, and `claims` with real declared outcome evidence before returning for review; never replace an unresolved `SCEC_PREDECESSOR_HASH_UNRESOLVED` with a fabricated path or hash.
 ## Checker Source Read-Ahead Block
 | Field | Value |
 | --- | --- |

@@ -1,0 +1,20 @@
+{
+  "stateOrder": 1762,
+  "stateKey": "systemChainUc02CurrentRerunDispatch20260714",
+  "value": {
+    "status": "DISPATCH_READY",
+    "dispatchCommit": "a16f5b7d1",
+    "baseline": "docs/baselines/CVF_GC018_SYSTEM_CHAIN_UC02_CURRENT_RERUN_2026-07-14.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SYSTEM_CHAIN_UC02_CURRENT_RERUN_2026-07-14.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "proofInvocationCeiling": 1,
+    "workerRetryCeiling": 0,
+    "scenarioDenominator": 9,
+    "providerCalls": 0,
+    "plannedGeneratedPaths": 24,
+    "preDispatch": "75_OF_75_PASS",
+    "preCommit": "83_OF_83_PASS",
+    "nextAllowedMove": "one no-commit worker executes SCLP-UC02-R2 exactly once and returns COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON",
+    "claimBoundary": "Dispatch only. UC-02 remains STALE until a reviewer accepts fresh 9/9 evidence; GAP closure, UC-03/UC-04, provider, public, production, scale, universal, and user-value claims remain unavailable."
+  }
+}

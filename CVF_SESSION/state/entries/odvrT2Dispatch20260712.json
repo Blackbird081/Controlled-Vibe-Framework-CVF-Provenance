@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1691,
+  "stateKey": "odvrT2Dispatch20260712",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-12",
+    "dispatchCommit": "1a79ba7a3",
+    "baseline": "docs/baselines/CVF_GC018_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "expectedOutputs": 3,
+    "nextAllowedMove": "one delegated no-commit ODVR-T2 execution with exactly three evidence outputs",
+    "claimBoundary": "representative operator value measurement only; no implementation edit, UI, provider/live, state mutation, public-sync, outside-source absorption, or production claim"
+  }
+}

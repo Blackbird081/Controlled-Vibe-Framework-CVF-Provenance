@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2356,
+  "stateKey": "tpgrTV1TrancheValueAdmissionDesignAccepted20260826",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_PROCEED_TO_TV2_SHADOW_IMPLEMENTATION_DECISION_REQUIRED",
+    "materialCommit": "5084910cecd33dbf876c6cd597365d72cb9987b6",
+    "assessment": "docs/assessments/CVF_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_2026-08-26.md",
+    "assessmentSha256": "fd507236dd3739ce30502f2e679d48a6ed2636dfd42128df2ffc864b26366445",
+    "workerReturn": "docs/reviews/CVF_TPGR_TV1_TRANCHE_VALUE_ADMISSION_DESIGN_WORKER_RETURN_2026-08-26.md",
+    "workerReturnSha256": "a8c52d860f46a4e07f2061c59f7cb4e1321af68e07001794c189cf8be7dc2f3b",
+    "reviewerRepair": "Separated finding/value evidence; typed root-cause identity; explicit invalid-input handling; authority-sourced cap; serious-finding cap escalation; governed override; existing checker owner only.",
+    "proof": "worker-return fast and reviewer-fast 66/66 PASS; task route COMPLIANT with selective execution false and RUN_FULL_LEGACY_BUNDLE; pre-implementation 81/81 PASS; material pre-commit 87/87 PASS.",
+    "successorBoundary": "TV2 requires a fresh operator decision and exact shadow-only dispatch; TV3 remains value-gated; no TV4.",
+    "claimBoundary": "Accepted documentation design only; no TV2 dispatch, owner-surface implementation, selective execution, TPGR-R9, external effect, public sync, deployment or push."
+  }
+}

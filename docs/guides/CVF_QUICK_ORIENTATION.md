@@ -5,7 +5,7 @@
 > **Cập nhật:** 2026-04-21 (W111 live evidence publication sync)
 >
 > **Trạng thái hiện tại (2026-04-21):** CVF đã đạt Release Candidate. Các mốc lớn đã đóng:
-> non-coder value proven with live governance E2E · Alibaba CERTIFIED · DeepSeek CERTIFIED · provider UX delivered · front-door product proof passed.
+> non-coder value proven with live governance E2E · DeepSeek CERTIFIED · Alibaba EXPERIMENTAL (qwen-flash, fresh live proof pending) · provider UX delivered · front-door product proof passed.
 > Xem: [Live Evidence Packet](../reference/CVF_LIVE_EVIDENCE_PUBLICATION_PACKET_2026-04-21.md) · [RC Truth Packet](../reference/CVF_RELEASE_CANDIDATE_TRUTH_PACKET_2026-04-21.md) · [Demo Script](CVF_DEMO_SCRIPT_2026-04-21.md) · [Known Limitations](../reference/CVF_KNOWN_LIMITATIONS_REGISTER_2026-04-21.md)
 
 ---
@@ -25,17 +25,23 @@
 | Cộng tác Human + AI | Tự động hóa hoàn toàn |
 | Hoạt động với mọi AI (Claude, GPT, Gemini...) | Gắn riêng với một AI nào |
 
-### 5-Phase Controlled Loop — Trái tim của CVF
+### Seven-Stage Controlled Loop — Trái tim của CVF
 
 ```
-Phase A: Intake     → Làm rõ yêu cầu, scope, assumptions
-Phase B: Design     → Chốt hướng đi và kế hoạch
-Phase C: Build      → AI thực thi trong phạm vi đã duyệt
-Phase D: Review     → Kiểm tra kết quả và acceptance
-Phase E: Freeze     → Chốt trạng thái cuối và khóa phạm vi
+Stage A: Intake       → Làm rõ yêu cầu, scope, assumptions
+Stage B: Design       → Chốt hướng đi và kiến trúc
+Stage C: Spec         → Chuyển thiết kế thành contract kiểm chứng được
+Stage D: Work Order   → Cấp quyền, phạm vi, công cụ và stop rules
+Stage E: Build        → AI thực thi trong phạm vi đã duyệt
+Stage F: Review       → Kiểm tra kết quả và acceptance
+Stage G: Freeze       → Chốt trạng thái cuối và khóa bằng chứng
 ```
 
-**Quy tắc cứng:** Không skip phase, không merge phase. Con người luôn là authority cuối cùng.
+**Quy tắc cứng:** Không bỏ qua hay nhập nhằng các quyết định kiểm soát. Một
+tranche có thể kế thừa evidence đã được chấp nhận từ stage trước, nên không cần
+chạy lại cả bảy stage từ đầu. Mỗi transition phải có evidence/gate, nhưng không
+bắt buộc tạo một independent-review document riêng sau từng stage. Máy kiểm tra
+fact xác định được; reviewer giữ semantic judgment và quyền chuyển tiếp.
 
 ### Risk Model R0–R3
 
@@ -60,7 +66,7 @@ Phase E: Freeze     → Chốt trạng thái cuối và khóa phạm vi
    └── AnotherApp/                        ← Project khác
    ```
 
-2. **Cho AI đọc CVF rules** khi bắt đầu phiên làm việc — AI sẽ tự tuân thủ 5-phase controlled loop, risk model, governance guards.
+2. **Cho AI đọc CVF rules** khi bắt đầu phiên làm việc — AI phải tuân thủ seven-stage controlled loop, risk model và governance guards trong phạm vi mà workspace hiện hành thực sự enforce.
 
 3. **Dùng Skill Library** (62 active skills, 12 domains) — chọn skill phù hợp trước khi code.
 
@@ -90,7 +96,7 @@ Quick glance vào trạng thái hệ thống hiện tại:
 | Phase 0 | Baseline freeze | ✅ Done | Mốc đối soát đã ổn |
 | Phase 1 | Unified control plane | ✅ Closed on active path | Guard contract + runtime gates wired into current web/API path |
 | Phase 2 | E2E conformance | ✅ Live-gated | Release gate includes UI mock `6 passed` + live governance `7 passed` |
-| Phase 3 | Skill/provider governance | ✅ Current scope proven | Alibaba + DeepSeek certified lanes; mock is UI-only |
+| Phase 3 | Skill/provider governance | ✅ Current scope proven | DeepSeek certified lane; Alibaba `qwen-flash` experimental pending fresh proof; mock is UI-only |
 | Phase 4 | Durable execution | 🟡 Mostly done | Rollback/replay/recovery exist; full SaaS durability not claimed |
 | Phase 5 | Release discipline | ✅ Done | Manifest/inventory/matrix + live evidence packet |
 | Phase 6 | Enterprise evidence | 🟡 Bounded | Enterprise/admin evidence exists; hosted production SaaS not claimed |
@@ -114,3 +120,9 @@ Quick glance vào trạng thái hệ thống hiện tại:
 ---
 
 > **Cập nhật file này khi:** Phase status thay đổi, hoặc sau mỗi đợt nâng cấp lớn.
+
+Text Encoding Exception: this bilingual guide preserves pre-existing Vietnamese
+text and status symbols (including the middle-dot separator and checkmark used
+throughout) unchanged; the EAFR-R4 provider-status edit reused the file's
+existing separator/marker style rather than introducing a new non-ASCII
+character class.

@@ -1,0 +1,286 @@
+# CVF Three-Repo Pattern Comparison Return — 2026-09-13
+
+Request ID: `CVF-THREE-REPO-PATTERN-COMPARISON-2026-09-13`  
+Posture: `ADVISORY_ONLY`  
+Working mode: `REVIEW_ONLY`  
+Method: `cvf.cross-workspace-domain-funnel-absorption@1.2.0`  
+Protocol posture: `cvf.external-agent-round-trip@1.3.0`  
+Implementation / repository mutation / provider calls / credential use: `NONE`  
+Automatic follow-up research: `NOT_AUTHORIZED`
+
+## 1. Source and packet binding
+
+### Supplied packet
+
+`PACKET_MANIFEST.json` was recomputed locally before analysis. All six declared file SHA-256 values matched the extracted packet files.
+
+Public CVF comparison anchor:
+
+- repository: `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF`
+- commit: `483c5e33d188b6b2d35d6cd19ee38a3c8548abc4`
+- refresh receipt: `2026-09-13T23:16:44+07:00`
+- posture: unchanged public anchor; dated public evidence, not private-CVF proof
+
+Assigned source pins:
+
+| Repo ID | Repository | Assigned pin | This pass access posture |
+|---|---|---|---|
+| `PILOT-ARCH-R1` | `https://github.com/agentgateway/agentgateway` | `3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826` | Reused prior pinned source evidence; direct exact-pin blob fetches in this pass returned cache misses. Current public pages were used only as non-pin context where explicitly labeled. |
+| `PILOT-ARCH-R2` | `https://github.com/yc-software/qm` | `51bf455ea414a58f70274284ce212142518e556a` | Local-assigned pin accepted as task identity. Direct exact-pin blob fetches returned cache misses. Current public `README.md`, `SECURITY.md`, and `LICENSE` were readable and are used only to narrow earlier generalizations; byte identity with the assigned pin is not claimed. |
+| `PILOT-ARCH-R3` | `https://github.com/deepseek-ai/deepseek-harness` | `cd5ef8148158c3a752a658978873241fdf8e2bbc` | Reused prior pinned source-pack evidence. Current public session/persistence pages corroborate the same event-sourced design; current-page evidence is not silently substituted for the assigned pin. |
+
+The packet says the three pins are Local-assigned snapshots, not assertions of latest upstream. This return preserves that distinction.
+
+## 2. Executive revision
+
+The September 11 domain choice still holds: the pilot is useful because Agentgateway and QM share governance principles while applying them in materially different runtime surfaces, and DeepSeek Harness remains a distinct application control around event-sourced execution state.
+
+However, two earlier formulations were too broad:
+
+1. `PILOT-MECH-002` should not be read as “one verified principal/scope is universally propagated everywhere.” Agentgateway authentication is configuration-sensitive, while QM's own security posture documents incomplete or bypassing paths.
+2. `PILOT-MECH-003` should not be read as “all policy composition is globally fail-closed.” The useful common principle is narrower: authority-bearing policy composition should not silently widen authority, but coverage and enforcement differ by path, configuration, and source.
+
+The strongest unchanged distinction is `PILOT-MECH-004`: DeepSeek's canonical append-only event state with derived model-visible history remains materially different from generic audit/telemetry.
+
+## 3. Revised four-pattern matrix
+
+### `PILOT-MECH-001` — Trusted policy / authorization outside untrusted execution
+
+**Prior claim:** Agentgateway and QM both support a shared mechanism in which authorization/policy is outside the untrusted execution subject; DeepSeek ToolGuard is a partial comparator.
+
+**Revision:** `NARROW`
+
+**Reason:** The common principle is supported, but QM explicitly documents that the agent/sandbox is not trusted for authorization while also documenting important paths that sit outside some core gates. The principle therefore survives as an architectural trust-boundary pattern, not as a claim of universal enforcement coverage.
+
+| Repository | Upstream evidence | Revised interpretation | Confidence / unread regions |
+|---|---|---|---|
+| Agentgateway | Prior pinned evidence: `crates/agentgateway/src/proxy/httpproxy.rs` (`apply_gateway_policies`, `HTTPProxy::proxy_internal`, `apply_request_policies`); `crates/agentgateway/src/mcp/rbac.rs`; immutable target: `https://github.com/agentgateway/agentgateway/blob/3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826/crates/agentgateway/src/proxy/httpproxy.rs` | Policy is evaluated in gateway-owned request/MCP paths rather than delegated to the downstream model/tool. This is strong evidence for the trust-boundary principle, but individual controls are configuration-dependent and not all entrypoints were exhaustively proven. | `INHERITED_PINNED_EVIDENCE`; exact-pin blob fetch cache-missed this pass; whole-route exhaustiveness remains unread. |
+| QM | Current public `SECURITY.md` states that the agent and sandbox are not trusted to make authorization decisions and that Core is intended to enforce identity, scope, grants, delivery, and deterministic effect gates. Immutable assigned-pin target: `https://github.com/yc-software/qm/blob/51bf455ea414a58f70274284ce212142518e556a/SECURITY.md` | **Common principle confirmed, universal wording rejected.** QM also says browser actions sit outside some core gates, command policy is bypassable, and some provider paths bypass the intended gateway. | `CURRENT_PUBLIC_DIRECT + PIN_ASSIGNED_NOT_BYTE_VERIFIED`; exact-pin code paths and whether the same limitations existed at the pin remain Local-verification questions. |
+| DeepSeek Harness | Prior pinned source pack: ToolGuard path was retained as a comparator, not promoted as a new CVF guard owner. | Useful only as a narrower comparator for “policy decision outside tool body / monotonic final guard”; it is not evidence of the same organization-wide identity/scope authority boundary as QM. | `INHERITED_PINNED_EVIDENCE`; no re-audit performed. |
+
+**Public CVF comparison**
+
+Declared public owner discovery gives a concrete MCP/runtime boundary at:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/blob/483c5e33d188b6b2d35d6cd19ee38a3c8548abc4/docs/reference/mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md`
+
+For the broader “trusted authorization core outside all untrusted execution” principle, the supplied public owner index does **not** identify one exact universal owner path. Therefore the proper outcome is not a remote novelty claim.
+
+**Private-CVF question:** Which current Local Guard / Execution / authority owner is canonical for the generic “untrusted executor cannot self-authorize” invariant, and do any current execution channels bypass that owner by design?
+
+**Per-repo distinction that survives grouping**
+
+- Agentgateway: gateway/MCP placement and routing-stage enforcement.
+- QM: organization/person/room scope plus resource/effect gates across workplace surfaces.
+- DeepSeek: tool-pipeline guard comparator, not organization-scope identity governance.
+
+---
+
+### `PILOT-MECH-002` — Verified principal/scope context propagated downstream
+
+**Prior claim:** Agentgateway and QM both provide verified principal/scope context that propagates into downstream policy/resource decisions.
+
+**Revision:** `CORRECT`
+
+**Reason:** The earlier phrase conflated two different things: (a) production of a provenance-bearing identity context, and (b) universal propagation across all downstream resources. The sources support bounded variants, not one universal contract.
+
+| Repository | Upstream evidence | Revised interpretation | Confidence / unread regions |
+|---|---|---|---|
+| Agentgateway | Prior pinned evidence: `crates/agentgateway/src/http/jwt.rs` (`Mode`, `JWTValidationOptions`, `Jwt::apply`, `Jwt::validate_claims`) projects successfully validated claims into request extensions; immutable target: `https://github.com/agentgateway/agentgateway/blob/3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826/crates/agentgateway/src/http/jwt.rs` | Agentgateway demonstrates **verified-claims production for specific configured auth paths**. It does not prove universal identity presence: prior review found `Strict`, `Optional`, and `Permissive` modes, with non-strict paths able to continue without a valid JWT. | `INHERITED_PINNED_EVIDENCE`; all non-JWT identities, tenants and route entrypoints remain outside this bounded proof. |
+| QM | Current public `README.md` says each person/room has scoped memory, files, keychain view, permissions, crons, web apps and durable sandbox; `SECURITY.md` says QM resolves a principal and scope for each turn, separates scope workspaces, uses signed ingress/capability tokens, applies grants/audience checks, and records security-relevant actions. Immutable assigned-pin targets: `.../README.md` and `.../SECURITY.md` at `51bf455...`. | The earlier “one principal/scope governs every listed resource” claim was **overstated**. The source supports a strong design/runtime direction, but the same security document lists incomplete origin labeling, conditional egress, bearer app links, browser paths outside some core gates, and provider paths bypassing the intended gateway. | `CURRENT_PUBLIC_DIRECT + PIN_ASSIGNED_NOT_BYTE_VERIFIED`; exact producer → verifier → each listed non-test consumer path at the assigned pin remains unread remotely. |
+| DeepSeek Harness | No bounded evidence from the prior source pack establishes the same principal/tenant propagation contract. | `NOT_PRIMARY`; do not force DeepSeek into this equivalence class merely because it has scoped lifecycle/context constructs. | `INSUFFICIENT_FOR_EQUIVALENCE`. |
+
+**Revised common principle**
+
+> Provenance-bearing identity/scope should be bound before the downstream policy/resource decisions that rely on it; the breadth of propagation and bypass surface is application-specific and must be proven per consumer.
+
+This is materially narrower than the September 11 wording.
+
+**Public CVF comparison**
+
+For MCP ingress and credential/admission boundaries, the declared public comparison remains:
+
+`docs/reference/mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md`
+
+Immutable public link:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/blob/483c5e33d188b6b2d35d6cd19ee38a3c8548abc4/docs/reference/mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md`
+
+For a universal person/workspace/resource principal-scope envelope, use `NOT_FOUND_IN_DECLARED_SEARCH` rather than infer absence from private CVF.
+
+**Private-CVF question:** Does current Local CVF already have one verified execution-scope envelope propagated across task/workspace, files, credentials, tools, memory, adapters and effects; if so, which Agentgateway/QM application semantics remain residual rather than duplicate?
+
+---
+
+### `PILOT-MECH-003` — Compositional admission/effect/resource policy without silent authority widening
+
+**Prior claim:** Agentgateway and QM overlap on compositional admission/effect/resource policy with deny/fail-stop behavior; DeepSeek ToolGuard is a useful comparator.
+
+**Revision:** `NARROW`
+
+**Reason:** The anti-widening idea remains useful, but “fail-closed policy composition” was too global. Each source has different policy algebra, coverage, bypasses, and configuration.
+
+| Repository | Upstream evidence | Revised interpretation | Confidence / unread regions |
+|---|---|---|---|
+| Agentgateway | Prior pinned evidence: `crates/agentgateway/src/http/authorization.rs` (`RuleSets::merge`, `RuleSets::validate`, `RuleSet::denies`, `all_requires_match`, `allows`); MCP resource/method authorization in `mcp/rbac.rs` and filtering in `mcp/handler.rs`. Immutable targets: `https://github.com/agentgateway/agentgateway/blob/3d5f59f8e2e17fd05e99b443e6e1bcc76daa5826/crates/agentgateway/src/http/authorization.rs` and `.../mcp/rbac.rs`. | Concrete merge/evaluation semantics are valuable. But prior source review itself warned that an expression failure in a `Deny` rule can fail to deny and that no-rule behavior can allow. Therefore Agentgateway is evidence for **explicit policy algebra**, not a universal fail-closed guarantee. | `INHERITED_PINNED_EVIDENCE`; exact configuration coverage and post-request policy semantics remain bounded. |
+| QM | Current `SECURITY.md`: Core intends deterministic effect gates; admin grant changes, impersonation, and command approval are deliberately kept outside the agent self-API. It also states command policy is bypassable, browser actions sit outside some gates, screening is heuristic, and egress enforcement is conditional. Assigned-pin immutable target: `https://github.com/yc-software/qm/blob/51bf455ea414a58f70274284ce212142518e556a/SECURITY.md`. | QM contributes a strong **authority-separation and deliberate non-agent decision** pattern, not evidence of one universal compositional policy algebra. The portal-only walls are especially useful as a design distinction: some future-authorizing decisions are intentionally unreachable from the agent. | `CURRENT_PUBLIC_DIRECT + PIN_ASSIGNED_NOT_BYTE_VERIFIED`; exact implementation functions/tests at the pin remain Local work. |
+| DeepSeek Harness | Prior pinned source pack: `DSH-003` retained a monotonic final ToolGuard where missing approval support turns “ask” into denial; direct import/new ToolGuard owner was rejected pending Local overlap. | Useful comparator for **monotonic final guard / no silent approval synthesis**, but not equivalent to gateway RBAC or organization-wide effect grants. | `INHERITED_PINNED_EVIDENCE`; no broader ToolGuard re-audit. |
+
+**Public CVF comparison**
+
+For MCP-specific admission/enforcement:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/blob/483c5e33d188b6b2d35d6cd19ee38a3c8548abc4/docs/reference/mcp_gateway/CVF_MODEL_GATEWAY_MCP_RUNTIME_BRIDGE_BOUNDARY.md`
+
+The supplied public index also points to agent/system-skill owner discovery:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/blob/483c5e33d188b6b2d35d6cd19ee38a3c8548abc4/docs/reference/CVF_AECG_T2_AGENT_ENGINEERING_CONTROL_OWNER_SURFACE_MATRIX_2026-06-28.md`
+
+Neither path alone proves a universal current private-CVF policy-composition implementation.
+
+**Private-CVF question:** What is the current Local merge/precedence contract when multiple authority-bearing policies apply, and can any later/lower-precedence evaluator erase an inherited DENY/REQUIRE/approval constraint?
+
+**Per-repo distinction that survives grouping**
+
+- Agentgateway: explicit rule merge/evaluation and MCP resource filtering.
+- QM: decisions that authorize future agent behavior are deliberately outside agent reach; effect boundaries have known coverage gaps.
+- DeepSeek: monotonic final tool guard and fail-closed missing-approval behavior.
+
+---
+
+### `PILOT-MECH-004` — Canonical event state versus derived consumer/model views
+
+**Prior claim:** DeepSeek Harness is the distinct-application control: append-only typed session events are canonical state; model-visible history is derived; persistence preserves the same logical event vocabulary.
+
+**Revision:** `KEEP`
+
+**Reason:** This is still the clearest repository-specific value in the pilot. It should not be collapsed into generic logging, audit, or telemetry.
+
+| Repository | Upstream evidence | Revised interpretation | Confidence / unread regions |
+|---|---|---|---|
+| DeepSeek Harness | Prior pinned source evidence: `packages/core/session/src/types.ts` (`SessionEventMap`, `SessionEvent`), `packages/core/session/src/index.ts` (`Session.deriveMessages`), `packages/session/session-persistence/src/index.ts` (`SessionPersistence`). Immutable links at `cd5ef814...`: `https://github.com/deepseek-ai/deepseek-harness/blob/cd5ef8148158c3a752a658978873241fdf8e2bbc/packages/core/session/src/index.ts`; `https://github.com/deepseek-ai/deepseek-harness/blob/cd5ef8148158c3a752a658978873241fdf8e2bbc/packages/session/session-persistence/src/index.ts`; `https://github.com/deepseek-ai/deepseek-harness/blob/cd5ef8148158c3a752a658978873241fdf8e2bbc/docs/subsystems/persistence.md`. | Preserve the semantic distinction: the event log is canonical interaction state, model-visible history is a projection, and persistence should not invent a second semantic event vocabulary. Current public docs additionally describe flush/durability barriers, crash recovery, rejection of unsupported/corrupt stored state, and separation of storage metadata from conversation events. | `PINNED_EVIDENCE_REUSED + CURRENT_PUBLIC_CORROBORATION`; no build/runtime execution performed in this pass. |
+| Agentgateway | The bounded Agentgateway evidence establishes logs/metrics/traces and policy outcomes, but not an equivalent canonical application-event log from which model context is deterministically derived. | `DISTINCT`; do not equate observability receipts with canonical replay state. | `BOUNDED_EVIDENCE`; whole telemetry subsystem not re-audited. |
+| QM | Current security text confirms audit records and durable data, but this pass found no source-backed basis to claim a DeepSeek-equivalent event → derived-model-context contract. | `UNKNOWN / NOT_EQUIVALENTLY_PROVEN`; do not infer absence beyond the declared search. | `INSUFFICIENT_EVIDENCE` for equivalence. |
+
+**Public CVF comparison**
+
+The supplied public index routes truth/knowledge reconciliation to:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/blob/483c5e33d188b6b2d35d6cd19ee38a3c8548abc4/docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md`
+
+and:
+
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF/blob/483c5e33d188b6b2d35d6cd19ee38a3c8548abc4/docs/reference/CVF_KNOWLEDGE_MAINTENANCE_AND_REFACTOR_OWNER_MAP_2026-04-14.md`
+
+Those are owner-discovery surfaces, not proof that current Local CVF already implements an equivalent session-event replay contract.
+
+**Private-CVF question:** Does Local CVF already have a canonical append-only execution/context event vocabulary from which model-visible context is deterministically derived and replayed across persistence; if yes, which DeepSeek semantics remain as `MATERIAL_VARIANT` versus `NO_NEW_VALUE`?
+
+## 4. Agentgateway regex / webhook / masking distinction
+
+The relay explicitly asks that Agentgateway content-guard behavior not be turned into a claim about what CVF “needs.”
+
+The useful distinction is:
+
+| Surface | What it represents | What it does **not** prove |
+|---|---|---|
+| Response masking | A transformation/enforcement action on returned content when a guardrail produces a masking/anonymization outcome | That masking is the correct CVF response for every unsafe/governance result; masking can hide evidence if applied at the wrong owner boundary |
+| Guardrail audit / metrics | Evidence that a guardrail ran and which coarse action occurred; current Agentgateway public discussions describe `allow/mask/reject` counters and note gaps in richer decision-trace detail | That logging itself prevents an unsafe action or creates authorization |
+| Webhook guardrail | An external/custom evaluation mechanism invoked as a guardrail backend | That the webhook is an authority root, that it is fail-closed in every configuration, or that CVF should replace existing DLP/SAF policy owners with it |
+| Regex guardrail | Deterministic pattern-based content detection/transformation | Semantic safety, authorization, or complete DLP coverage |
+
+The Local-attested context already classifies `AGW-UC-02` as `DEFER_WITH_TRIGGER`: response masking is a source capability, while an authorized CVF consumer policy is still missing and existing DLP/SAF responsibilities must be considered. This pass does **not** reopen that decision.
+
+Current public Agentgateway documentation corroborates that guardrails include regex and custom webhooks, and current public guardrail discussions distinguish blocking/masking from observability. Exact pinned content-guard source bytes at `3d5f59...` were not independently fetched in this pass, so no new pin-specific content-guard finding is asserted.
+
+**Local question:** If AGW response masking is ever reconsidered, which existing DLP/SAF owner is allowed to request masking, what evidence remains unmasked for review/audit, and which unsafe/governance decisions must remain explicit reject/hold rather than be transformed into apparently “safe” output?
+
+## 5. What changed from the September 11 nomination
+
+### Useful and retained
+
+1. **The domain choice was good.** The three repositories do test both mechanism deduplication and recovery of application-specific value.
+2. **Agentgateway remains the clearest gateway/MCP application.** Ordered policy placement, verified-claim projection and MCP resource/method authorization are distinct operational seams even when the governance principle is duplicate.
+3. **DeepSeek remains the strongest distinct-application control.** Event-sourced state → derived model context is not reducible to “another authorization system.”
+4. **Repository-specific value must survive headline dedup.** This remains the most useful methodological contribution of the nomination.
+
+### Changed / corrected
+
+1. **QM is now pinned by Local, but remote exact-pin access was not achieved.** The pin fixes task identity, not remote byte verification.
+2. **QM's earlier broad “one principal/scope governs all resources” phrasing was too strong.** Public security evidence explicitly documents bypasses, incomplete labeling/filtering, conditional enforcement and bearer-capability exceptions.
+3. **`PILOT-MECH-002` is corrected from universal propagation to bounded provenance-bearing propagation per proven consumer.**
+4. **`PILOT-MECH-003` is narrowed from generic fail-closed composition to explicit anti-widening / precedence semantics that must be proven per policy path.**
+
+### Still inaccessible remotely
+
+- Exact current private-CVF owner implementations and runtime coverage.
+- Exact QM assigned-pin source bytes/symbol-level producer → verifier → consumer paths from this environment.
+- Local acceptance/closure evidence for internal worker assignments.
+- Whole-repository semantic completeness for any of the three sources.
+- Live runtime behavior, provider behavior, deployment behavior and production posture.
+
+## 6. Advisory contribution versus Local runtime absorption
+
+The external domain-funnel step is useful when it does three things:
+
+1. compresses repeated architectural language into a small number of mechanism groups;
+2. preserves application-specific residuals instead of discarding a repo as “duplicate”;
+3. returns precise Local questions where public evidence cannot decide equivalence.
+
+It is **not** a substitute for Local runtime-value recovery. The QM correction is the clearest example: a high-level pattern can be directionally right while source-native security limitations materially change the strength and scope of the claim.
+
+Therefore this pass supports the **method** of bounded cross-repository pattern triage, but it does not establish that every retained pattern should be absorbed or that broader rollout is pre-approved.
+
+## 7. Priority Local questions
+
+No more than five are proposed:
+
+1. **QM exact-pin enforcement:** At `51bf455ea414a58f70274284ce212142518e556a`, which exact producer → verifier → non-test consumer paths bind principal/scope to memory, files, keychain, crons, web apps and sandbox, and which of the current documented bypasses already existed at that pin?
+2. **Current Local principal/scope owner:** Does Local CVF already provide one verified execution-scope envelope across task/workspace/resources/effects? If yes, classify Agentgateway and QM residuals as `MATERIAL_VARIANT`, `APPLICATION_SPECIFIC_VALUE`, or `NO_NEW_VALUE`.
+3. **Policy precedence / anti-widening:** Across current Local Guard/MCP/effect owners, can a later evaluator erase an inherited DENY/REQUIRE/approval constraint, or is monotonic narrowing already enforced?
+4. **DeepSeek event/context equivalence:** Does Local CVF already have canonical append-only execution/context events with deterministic model-context derivation and replay/persistence semantics? If yes, identify the precise residual delta rather than create a parallel event owner.
+5. **AGW masking consumer policy:** If response masking is reconsidered, which existing DLP/SAF owner may authorize it, which evidence must remain visible for audit/review, and which decisions must remain explicit reject/hold rather than be masked?
+
+## 8. Observed effort and stop condition
+
+### Observed effort
+
+- Supplied packet: six bound files plus `PACKET_MANIFEST.json`.
+- Packet hash verification: performed; all six declared hashes matched.
+- Reused prior nomination and prior pinned research evidence.
+- Bounded public lookups performed only for the assigned repositories and declared CVF owner surfaces.
+- No broad repository discovery, clone, dependency install, build, runtime, provider call or private-source access.
+- Actual elapsed time: `UNKNOWN`.
+- Actual model/provider tokens: `UNKNOWN`.
+- Actual monetary cost: `UNKNOWN`.
+
+### Stop condition
+
+Satisfied for this advisory pass:
+
+- all four prior pattern IDs were revisited;
+- each has `KEEP`, `NARROW`, or `CORRECT`;
+- common principle versus per-repo application was separated;
+- public owner discovery or precise Local questions were recorded;
+- Agentgateway masking/audit/webhook semantics were separated without inferring a CVF need;
+- inaccessible private/exact-pin evidence was labeled rather than guessed;
+- no follow-up research or implementation was triggered.
+
+## 9. Final bounded disposition
+
+| Pattern | Disposition | Short result |
+|---|---|---|
+| `PILOT-MECH-001` | `NARROW` | Trusted policy outside untrusted execution remains a valid common principle; enforcement coverage is path-specific and QM documents explicit gaps. |
+| `PILOT-MECH-002` | `CORRECT` | Replace “universal verified principal/scope propagation” with provenance-bearing identity/scope proven per downstream consumer. |
+| `PILOT-MECH-003` | `NARROW` | Preserve anti-widening / explicit policy algebra as the common principle; do not claim universal fail-closed composition. |
+| `PILOT-MECH-004` | `KEEP` | DeepSeek canonical event state → derived model view remains a materially distinct application value pending Local equivalence checking. |
+
+**Overall advisory conclusion:** `BOUNDED_PATTERN_METHOD_USEFUL_WITH_CLAIM_NARROWING`
+
+This is not an absorption decision, implementation recommendation, private-CVF novelty finding, internal review closure, runtime proof, or broader-program approval.
+
+## Claim boundary
+
+This report is external advisory pattern mapping based on the supplied relay packet, reused prior pinned evidence, and bounded public-source checks. Local CVF owns source/runtime-value recovery, private owner verification, final technical disposition, acceptance, implementation authority and closure.
+
+No upstream code was executed; no dependency was installed; no provider/live test, credential use, repository mutation, deployment, publication or automatic second pass was performed.

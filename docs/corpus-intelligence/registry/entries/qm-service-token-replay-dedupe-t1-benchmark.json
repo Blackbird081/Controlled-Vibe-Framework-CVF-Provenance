@@ -1,0 +1,40 @@
+{
+  "registryOrder": 188,
+  "id": "qm-service-token-replay-dedupe-t1-benchmark",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 bounded synthetic benchmark",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/scripts/benchmark-service-token-replay-dedupe.ts"
+  ],
+  "fileCount": null,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1",
+  "scanDate": "2026-09-14",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_QM_SERVICE_TOKEN_REPLAY_DEDUPE_T1_WORKER_RETURN_2026-09-14.md",
+  "notes": "One bounded local benchmark reviewed with synthetic verifier fixtures and a ledger-disabled same-function control. Registry coverage only; no source-wide completeness or universal latency claim.",
+  "findings": [
+    {
+      "id": "QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1-BENCH-01",
+      "summary": "Paired same-input alternating-order measurements isolate process-local replay-ledger first-use overhead.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Retain finite synthetic and process-local measurement boundaries; no deployment-wide SLA.",
+      "defectClass": "UNVERIFIED_CLAIM",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "Revisit if benchmark source, verifier signature contract or replay-ledger design changes.",
+  "completionReviewPath": "docs/reviews/CVF_QM_SERVICE_TOKEN_REPLAY_DEDUPE_T1_COMPLETION_2026-09-14.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_QM_SERVICE_TOKEN_REPLAY_DEDUPE_T1_2026-09-14.md",
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "NOT_APPLICABLE",
+    "gc050": "NOT_APPLICABLE"
+  },
+  "semanticRegions": {},
+  "priorAbsorption": {},
+  "hashAlgorithm": null,
+  "hashInput": null
+}

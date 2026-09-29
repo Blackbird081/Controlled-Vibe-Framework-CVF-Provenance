@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1991,
+  "stateKey": "cvfWebUxT2Closure20260719",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "batchId": "CVF-WEB-UX-T2",
+    "materialClosureCommit": "bb1418554",
+    "completionReview": "docs/reviews/CVF_WEB_UX_T2_COMPLETION_2026-07-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T2_LANGUAGE_AND_GUIDED_KNOWLEDGE_JOURNEY_2026-07-19.md",
+    "verification": "Focused 18/18, provider-free 3245 passed plus 2 skipped, TypeScript, production build, durable localhost desktop/mobile evidence, file-size, and pre-commit 83/83 passed.",
+    "nextAllowedMove": "Author the bounded T3 baseline and source-verified work order only.",
+    "parked": "T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Current-source localhost language and guided-journey acceptance only; no hosted freshness, deployment, provider behavior, public export, or production claim."
+  }
+}

@@ -293,12 +293,14 @@ describe('ai/providers', () => {
         it('handles Alibaba API error', async () => {
             fetchMock.mockResolvedValueOnce({
                 ok: false,
+                status: 403,
                 json: async () => ({ error: { message: 'Alibaba error' } }),
             });
 
             const result = await executeAI('alibaba', 'ali-key', 'Hello');
             expect(result.success).toBe(false);
             expect(result.error).toContain('Alibaba error');
+            expect(result.diagnostic?.httpStatus).toBe(403);
         });
 
         it('handles Alibaba API error without message', async () => {
@@ -389,18 +391,18 @@ describe('ai/providers', () => {
             fetchMock.mockResolvedValueOnce({
                 ok: true,
                 json: async () => ({
-                    choices: [{ message: { content: 'qwen turbo response' } }],
+                    choices: [{ message: { content: 'qwen flash response' } }],
                     usage: { total_tokens: 13 },
                 }),
             });
 
             const result = await executeAI('alibaba', 'ali-key', 'Hello', {
-                model: 'qwen-turbo',
+                model: 'qwen-flash',
             });
 
             expect(result.success).toBe(true);
             const body = JSON.parse(fetchMock.mock.calls[fetchMock.mock.calls.length - 1][1].body);
-            expect(body.model).toBe('qwen-turbo');
+            expect(body.model).toBe('qwen-flash');
             expect(body.enable_thinking).toBeUndefined();
         });
 

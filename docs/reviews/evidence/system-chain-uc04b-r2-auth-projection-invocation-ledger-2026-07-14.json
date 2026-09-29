@@ -1,0 +1,23 @@
+{
+  "packet": "SCLP-UC04B-R2",
+  "executionBaseHead": "9a10434041a3c8e453ff0abfb188116a66b80b6e",
+  "commandFingerprint": "npx playwright test tests/e2e/system-chain-uc04b-auth-projection-regression.spec.ts --config playwright.config.ts --workers=1",
+  "frozenSpecPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/system-chain-uc04b-auth-projection-regression.spec.ts",
+  "frozenSpecSha256": "2d4980dc57e4dd2cfc9d02cd04cad0c5493dd7b662b1754cd6424bf12afbac07",
+  "invocationCeiling": 1,
+  "invocationStarted": 1,
+  "ledgerCreatedAt": "2026-07-15T03:28:00Z",
+  "invocationStartedAt": "2026-07-15T03:28:30Z",
+  "invocationCompletedAt": "2026-07-15T03:29:30Z",
+  "result": "FAIL",
+  "cases": [
+    "positive_developer_auth_projection",
+    "negative_anonymous_auth_projection"
+  ],
+  "counters": {
+    "businessSubmissions": 0,
+    "checkerExecutions": 0,
+    "retries": 0,
+    "providerCalls": 0
+  }
+}

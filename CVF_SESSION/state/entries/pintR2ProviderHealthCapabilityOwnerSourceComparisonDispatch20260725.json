@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2025,
+  "stateKey": "pintR2ProviderHealthCapabilityOwnerSourceComparisonDispatch20260725",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS",
+    "date": "2026-07-25",
+    "materialCommit": "15dcf624c",
+    "baseline": "docs/baselines/CVF_GC018_PINT_R2_PROVIDER_HEALTH_AND_CAPABILITY_OWNER_SOURCE_COMPARISON_2026-07-25.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PINT_R2_PROVIDER_HEALTH_AND_CAPABILITY_OWNER_SOURCE_COMPARISON_2026-07-25.md",
+    "scope": "two semantic candidates covering three retained PINT files compared against eleven named owner source/test files",
+    "reviewerRepairs": "corrected provider-health state and test inventory, corpus cardinality, unresolved counts, role routing, legacy coverage disposition, lane-release framing, and neutralized premature semantic hints",
+    "nextAllowedMove": "operator manual copy/paste to one no-commit worker at the committed execution base head",
+    "claimBoundary": "Documentation-only comparison dispatch. Candidate lanes remain NOT_RELEASED taxonomy coverage. No CLI/MCP invocation, provider/API/account/network/browser use, process action, runtime/checker/package/UI implementation, public sync, or invocation-moratorium lift."
+  }
+}

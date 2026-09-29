@@ -1,0 +1,23 @@
+{
+  "stateOrder": 1859,
+  "stateKey": "maoOaT1Closure20260716",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR",
+    "date": "2026-07-16",
+    "materialCommit": "1bb5ff7f3",
+    "closureBaseHead": "77e6c3a64",
+    "roadmap": "docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md",
+    "baseline": "docs/baselines/CVF_GC018_MAO_OA_T1_PACKAGE_ROOT_AND_ORCHESTRATION_COMPOSITION_CONTRACT_2026-07-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T1_PACKAGE_ROOT_AND_ORCHESTRATION_COMPOSITION_CONTRACT_2026-07-16.md",
+    "workerReturn": "docs/reviews/CVF_MAO_OA_T1_WORKER_RETURN_2026-07-16.md",
+    "completionReview": "docs/reviews/CVF_MAO_OA_T1_COMPLETION_REVIEW_2026-07-16.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT honored",
+    "sourceTestEvidence": "execution 3/3 PASS; control 11/11 PASS; both TypeScript checks PASS; execution root 1418/1450 lines",
+    "registryEvidence": "initial worker return fast gate 61/62 with three uncovered new paths; reviewer source entry covers those paths plus the changed control root cited by staged reviews; generated aggregate and reviewer-fast 62/62 PASS",
+    "preCommitEvidence": "83/83 PASS",
+    "nextAllowedMove": "Await an explicit operator checkpoint before any MAO-OA-T2 packet authoring or dispatch.",
+    "heldNextTranche": "MAO-OA-T2 through T7 remain parked.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "claimBoundary": "Package-root discoverability and pure deterministic graph-plus-role composition only. No durable state, worker/provider launch, live behavior, public, production, or user-value claim."
+  }
+}

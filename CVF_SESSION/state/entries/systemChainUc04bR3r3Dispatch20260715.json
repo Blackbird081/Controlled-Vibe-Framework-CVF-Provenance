@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1812,
+  "stateKey": "systemChainUc04bR3r3Dispatch20260715",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "523748cec",
+    "workOrderId": "SCLP-UC04B-R3R3",
+    "dispatchBaseHead": "ae9607022",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedCase": "negative_reviewer_docs_check",
+    "focusedExpected": "34/34",
+    "typecheckRequired": true,
+    "browserInvocationCeiling": 1,
+    "webSubmissionCeiling": 1,
+    "selectedCheckerJobCeiling": 0,
+    "retryCeiling": 0,
+    "providerCallCeiling": 0,
+    "expectedCounters": "1/1/0/0/0",
+    "nextAllowedMove": "execute the exact no-commit R3R3 negative-only proof and return for reviewer closure",
+    "claimBoundary": "Reviewer negative path only. Positive rerun, full UC-04B, unified inventory, provider, public, production, scale, certification, and user value remain excluded."
+  }
+}

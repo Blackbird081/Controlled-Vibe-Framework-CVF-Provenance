@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2861,
+  "stateKey": "acelG1T2TaskClassCalibrationOwnerImplementationDispatch20260917",
+  "value": "ACEL-G1-T2-TASK-CLASS-CALIBRATION-OWNER-IMPLEMENTATION is DISPATCH_READY at material commit 985029ee107345f68f3ebcc345a19f869d1e2c9f. Pre-dispatch passed 82/82 and material pre-commit 89/89. The INTERNAL_AGENT worker owns exactly seven create-only offline paths: five accepted successor paths, one implementation audit and one full return. WORKER_MUST_NOT_COMMIT. G4 implementation and experiment remain parked. No real calibration, provider/live, configuration mutation, Core runtime, package lifecycle, public sync or deployment. Local owns review, closure and commit."
+}

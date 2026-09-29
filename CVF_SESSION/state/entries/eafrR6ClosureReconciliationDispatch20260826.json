@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2329,
+  "stateKey": "eafrR6ClosureReconciliationDispatch20260826",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "dispatchCommit": "c3c7ed691",
+    "baseline": "docs/baselines/CVF_GC018_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_2026-08-26.md",
+    "baselineSha256": "52e7297f619849ee27ccbe7376132e68a02ab3849fcf0b0d9fb8fd68cb104337",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R6_CLOSURE_RECONCILIATION_AND_RFR_RESUME_DECISION_2026-08-26.md",
+    "workOrderSha256": "d2e11d5391325987387dcd9abb665609b195921e890a5fb6f989e419a6f9e003",
+    "preDispatch": "79/79 COMPLIANT",
+    "providerExecutionAuthority": "FORBIDDEN",
+    "expectedVerdict": "RECOMMEND_RFR_RESUME_BLOCKED when any NOT_COVERED/P1 endpoint surface remains",
+    "nextAllowedMove": "Execute the no-commit R6 worker only and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "claimBoundary": "Decision and reconciliation only; no provider/live call, source repair, build, RFR resume, public-sync, deployment, push or worker commit."
+  }
+}

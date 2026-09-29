@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2028,
+  "stateKey": "ppmcpR1PinnedUpstreamLegacyDeltaReintakeClosure20260725",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS",
+    "date": "2026-07-25",
+    "materialCommit": "539e453a7",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md",
+    "audit": "docs/audits/CVF_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_2026-07-25.md",
+    "completionReview": "docs/reviews/CVF_PPMCP_R1_PINNED_UPSTREAM_AND_LEGACY_DELTA_REINTAKE_COMPLETION_2026-07-25.md",
+    "corpusRegistryEntry": "docs/corpus-intelligence/registry/entries/ppmcp-r1-pinned-upstream-and-legacy-delta-reintake.json",
+    "scope": "98 pinned upstream files plus 9 retained legacy files; 107 exact manifest tuples independently verified",
+    "reviewerRepairs": "reconciled candidate arithmetic, rejected keyword-heuristic risk classification as CVF value, retained provider-neutral schema validation, and added five concrete conditional reopen rows",
+    "nextAllowedMove": "operator checkpoint: select a new governed external intake, or authorize a fresh GC-018 for one PPMCP candidate only after its recorded reopen condition is evidenced",
+    "claimBoundary": "No dependency install, upstream execution, CLI/MCP agent invocation, provider/network/process action, runtime/checker/package implementation, public sync, or invocation-moratorium lift."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "stateOrder": 1808,
+  "stateKey": "systemChainUc04bR3r2Dispatch20260715",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "23f884abf",
+    "workOrderId": "SCLP-UC04B-R3R2",
+    "dispatchBaseHead": "8785005e5",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "repair": "ambient server session initial projection plus retained client auth refresh",
+    "focusedExpected": "34/34",
+    "typecheckRequired": true,
+    "browserInvocationCeiling": 0,
+    "webSubmissionCeiling": 0,
+    "selectedCheckerJobCeiling": 0,
+    "retryCeiling": 0,
+    "providerCallCeiling": 0,
+    "nextAllowedMove": "execute the exact no-commit R3R2 local repair and return for reviewer closure",
+    "claimBoundary": "Dispatch and local repair only. Reviewer browser denial, full UC-04B, unified inventory, provider, public, production, scale, certification, and user value remain unproven."
+  }
+}

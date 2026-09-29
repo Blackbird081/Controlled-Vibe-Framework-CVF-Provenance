@@ -11,6 +11,7 @@ decision.
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -19,14 +20,36 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 ALLOWED_DIR = "docs/reviews/"
 SCAFFOLD_TODO = "TODO: worker fills this section before returning for review."
 SCAFFOLD_TABLE_TODO = "TODO: fill before review"
+FULL_PROFILE = "WORKER_RETURN_FULL_GATE_V1"
+FAST_DOC_PROFILE = "WORKER_RETURN_FAST_DOC_V1"
+SCEC_SCHEMA_VERSION = "cvf.semanticConvergenceControl.v1"
+SCEC_UNRESOLVED_PREDECESSOR_SENTINEL = "SCEC_PREDECESSOR_HASH_UNRESOLVED"
+
+FIELD_ELIGIBILITY = "p4ObservationEligibility"
+FIELD_PHASE = "p4ObservationPhase"
+FIELD_HARD_OBLIGATION_LOCATOR = "p4HardObligationLocator"
+FIELD_HARD_OBLIGATION_PATTERN = "p4HardObligationPattern"
+FIELD_SOURCE_AUTHORITY_LOCATOR = "p4SourceAuthorityLocator"
+
+ARCH_ECHO_SCHEMA = "architectureMatrixSchema"
+ARCH_ECHO_DIGEST = "architectureMatrixCanonicalDigest"
+ARCH_ECHO_REVIEW_PATH = "architectureSemanticReviewPath"
+ARCH_ECHO_REVIEW_COMMIT = "architectureSemanticReviewCommit"
+ARCH_ECHO_REVIEW_SHA = "architectureSemanticReviewFileSha256"
+ARCH_ECHO_DISPOSITION = "architectureBindingEchoDisposition"
 
 WORKER_RETURN_SCAFFOLD_SECTIONS = (
     "Source Inventory",
+    "Rework Convergence Self-Proof",
+    "Semantic Convergence Outcome",
     "Purpose",
     "Scope / Methodology",
     "Findings / Position",
     "Risk / Corrective Action",
+    "P4 Automatic Evidence Observation Block",
+    "Architecture Readiness Echo",
     "Claim Boundary",
+    "Checker Source Read-Ahead Block",
     "Gate Evidence",
     "Actual Changed Set",
     "Core Guard Self-Protection Authorization",
@@ -41,14 +64,105 @@ WORKER_RETURN_SCAFFOLD_SECTIONS = (
     "Agent Operation Trace Block",
     "Delta Execution Claim Boundary Control Block",
     "Public Export Disposition",
+    "git status --short",
+    "Changed Files",
     "Command Evidence",
+    "No-Commit Statement",
     "Machine Closure Package",
+)
+FAST_DOC_SCAFFOLD_SECTIONS = tuple(
+    section
+    for section in WORKER_RETURN_SCAFFOLD_SECTIONS
+    if section
+    not in {
+        "External Knowledge Intake Routing",
+        "Rescan Intelligence Hardening",
+        "Corpus Completeness And Report Integrity",
+    }
 )
 
 
 def _section_body(section: str) -> list[str]:
     if section == "Source Inventory":
         return ["| File | Action |", "|---|---|", f"| {SCAFFOLD_TABLE_TODO} | READ |"]
+    if section == "Rework Convergence Self-Proof":
+        return [
+            "rootCauseClusterId: INITIAL_SCOPE_PENDING_WORK_ORDER_BINDING",
+            "reworkGeneration: 0",
+            "consolidatedDefectClassSweep: PENDING_BEFORE_READY",
+            "productionBindingEvidence: PENDING_BEFORE_READY",
+            "adversarialRegressionDisposition: PENDING_BEFORE_READY",
+            "successorTrancheOpened: NO",
+            "implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY",
+            "internalAgentInvocationCount: 0",
+            "externalAgentInvocationCount: 0",
+            "providerCallCount: 0",
+            "tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: provider-neutral scaffold has no usage meter",
+            "terminalReadinessVerdict: BLOCKED_WITH_REASON: generated scaffold pending worker evidence",
+        ]
+    if section == "Semantic Convergence Outcome":
+        block = {
+            "schemaVersion": SCEC_SCHEMA_VERSION,
+            "problemKey": "TODO-stable-problem-key",
+            "chainMode": "SUCCESSOR",
+            "chainOrdinal": 1,
+            "predecessor": {
+                "path": SCEC_UNRESOLVED_PREDECESSOR_SENTINEL,
+                "sha256": SCEC_UNRESOLVED_PREDECESSOR_SENTINEL,
+            },
+            "blockerDelta": {
+                "prior": [],
+                "resolved": [],
+                "retained": [],
+                "new": [],
+                "reopened": [],
+                "current": [],
+            },
+            "resolutionEvidence": {},
+            "counters": {
+                "partialReadyClosures": 0,
+                "reviewerScopeExpansions": 0,
+                "sameClaimCorrections": 0,
+                "nonDecreasingBlockerTransitions": 0,
+            },
+            "claims": [],
+            "requiredDisposition": "CONTINUE_BOUNDED",
+            "successorScope": "INITIAL_BOUNDED",
+        }
+        rendered = json.dumps(block, indent=2)
+        return [
+            "Standard: `docs/reference/semantic_convergence_control/"
+            "CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md`",
+            "",
+            "```json",
+            rendered,
+            "```",
+            "",
+            "TODO: replace `problemKey`, `chainMode`, `chainOrdinal`, "
+            "`predecessor`, `blockerDelta`, `counters`, `claims`, "
+            "`requiredDisposition`, and `successorScope` with the real "
+            "declared outcome for this worker return. A `SUCCESSOR` block "
+            f"must never resolve `{SCEC_UNRESOLVED_PREDECESSOR_SENTINEL}` "
+            "with a fabricated hash; leave the sentinel until the real "
+            "predecessor path/hash is known.",
+        ]
+    if section == "P4 Automatic Evidence Observation Block":
+        return [
+            f"{FIELD_ELIGIBILITY}: AUTO",
+            f"{FIELD_PHASE}: N/A with reason: not a natural P4 observation candidate",
+            f"{FIELD_HARD_OBLIGATION_LOCATOR}: N/A with reason: not a natural P4 observation candidate",
+            f"{FIELD_HARD_OBLIGATION_PATTERN}: N/A with reason: not a natural P4 observation candidate",
+            f"{FIELD_SOURCE_AUTHORITY_LOCATOR}: N/A with reason: not a natural P4 observation candidate",
+        ]
+    if section == "Architecture Readiness Echo":
+        return [
+            f"{ARCH_ECHO_SCHEMA}: NOT_APPLICABLE_WITH_REASON: dispatching work order did not declare Architecture-Readiness Admission: REQUIRED",
+            f"{ARCH_ECHO_DIGEST}: N/A with reason: no accepted architecture matrix to echo",
+            f"{ARCH_ECHO_REVIEW_PATH}: N/A with reason: no accepted architecture matrix to echo",
+            f"{ARCH_ECHO_REVIEW_COMMIT}: N/A with reason: no accepted architecture matrix to echo",
+            f"{ARCH_ECHO_REVIEW_SHA}: N/A with reason: no accepted architecture matrix to echo",
+            f"{ARCH_ECHO_DISPOSITION}: N/A with reason: no accepted architecture matrix to echo",
+        ]
     if section == "Gate Evidence":
         return [
             "| Command | Result |",
@@ -62,6 +176,15 @@ def _section_body(section: str) -> list[str]:
             "- `TODO/path/to/changed-file.ext`",
             "",
             "List real paths; do not replace this with prose.",
+        ]
+    if section == "Checker Source Read-Ahead Block":
+        return [
+            "| Field | Value |",
+            "|---|---|",
+            f"| applicableCheckersRead | {SCAFFOLD_TABLE_TODO}: list `governance/compat/check_*.py` paths actually read |",
+            f"| literalTokensReviewed | {SCAFFOLD_TABLE_TODO}: exact headings, table labels, enum tokens, or regex-sensitive words reviewed |",
+            f"| gateRunPurpose | {SCAFFOLD_TABLE_TODO}: state confirmation/evidence after reading checker source ahead of writing |",
+            f"| claimBoundary | {SCAFFOLD_TABLE_TODO}: bound what this read-ahead block does and does not cover |",
         ]
     if section == "Core Guard Self-Protection Authorization":
         return [
@@ -96,6 +219,8 @@ def _section_body(section: str) -> list[str]:
         return [
             "- Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason: no corpus completeness claim in this worker return.",
         ]
+    if section == "Conditional Controls Disposition":
+        return ["conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA"]
     if section == "Finding-To-Governance Learning Disposition":
         return [
             "| Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |",
@@ -176,6 +301,28 @@ def _section_body(section: str) -> list[str]:
             "| Command | Result |",
             "|---|---|",
             "| `python governance/compat/run_worker_return_fast_gate.py` | TODO_PASS_FAIL_BLOCKED |",
+            "",
+            "LAST-MILE FINALIZATION: before returning this packet for review, replace every",
+            "`TODO_PASS_FAIL_BLOCKED`, `TODO_YES_NO`, `TODO_NONE_OR_SECTION`, and",
+            f"`{SCAFFOLD_TABLE_TODO}` placeholder with the actual first-run and final-run",
+            "fast-gate result, the actual final status output, and real changed-set/diff",
+            "evidence captured after edits are complete. Do not leave a scaffold",
+            "placeholder token anywhere in the returned packet.",
+        ]
+    if section == "git status --short":
+        return [
+            "```",
+            f"{SCAFFOLD_TABLE_TODO}: paste `git status --short` output here",
+            "```",
+        ]
+    if section == "Changed Files":
+        return [
+            f"{SCAFFOLD_TABLE_TODO}: list changed files with `git diff --name-status` evidence.",
+        ]
+    if section == "No-Commit Statement":
+        return [
+            "WORKER_MUST_NOT_COMMIT honored: HEAD unchanged; no git commit performed by",
+            "worker. Reviewer/closer owns material commit.",
         ]
     if section == "Machine Closure Package":
         return [
@@ -189,7 +336,7 @@ def _section_body(section: str) -> list[str]:
     return [SCAFFOLD_TODO]
 
 
-def build_scaffold(title: str = "") -> str:
+def build_scaffold(title: str = "", profile: str = FULL_PROFILE) -> str:
     heading = title.strip() or "Worker Return Scaffold"
     lines = [
         f"# {heading}",
@@ -200,16 +347,40 @@ def build_scaffold(title: str = "") -> str:
         "",
         "Status: TODO_WORKER_STATUS",
         "",
+        "Self-declared worker-return artifact: yes",
+        "",
+        "Responds to work order: `TODO_WORK_ORDER_PATH`",
+        "",
         "dispatchWorkOrder: `TODO_WORK_ORDER_PATH`",
         "",
         "executionBaseHead: `TODO_EXECUTION_BASE_HEAD`",
         "",
         "rawMemoryReleased=false",
+        f"contractProfile: {profile}",
+        "",
+        "## Tool / Classifier Block Recovery Event",
+        "",
+        "toolClassifierBlockRecoveryApplicability: NOT_APPLICABLE_WITH_REASON - replace after evaluating whether a classifier blocked an in-scope edit",
+        "toolClassifierBlockEventCount: 0",
+        "platformForcedOperatorPromptCount: 0",
+        "workerAuthoredOperatorQuestionCount: 0",
+        "recoveryAttemptCount: 0",
+        "recoveryDisposition: NO_EVENT",
+        "eventEvidence: NOT_APPLICABLE_WITH_REASON - no classifier block event occurred",
+        "",
+        "## Work-Order Acceptance Evidence Ledger",
+        "",
+        "```acceptance-evidence-json",
+        '{"schemaVersion":"cvf.workOrderAcceptanceEvidence@1.0.0","executionBaseHead":"TO_FILL","results":[]}',
+        "```",
         "",
         "NOTE: L1 scaffold only. Replace every TODO line before returning for review.",
         "",
     ]
-    for section in WORKER_RETURN_SCAFFOLD_SECTIONS:
+    sections = WORKER_RETURN_SCAFFOLD_SECTIONS
+    if profile == FAST_DOC_PROFILE:
+        sections = FAST_DOC_SCAFFOLD_SECTIONS + ("Conditional Controls Disposition",)
+    for section in sections:
         lines.append(f"## {section}")
         lines.append("")
         lines.extend(_section_body(section))
@@ -226,7 +397,7 @@ def _path_is_allowed(path: Path) -> bool:
     return resolved != allowed_root and allowed_root in resolved.parents
 
 
-def write_scaffold(target: str, title: str = "") -> Path:
+def write_scaffold(target: str, title: str = "", profile: str = FULL_PROFILE) -> Path:
     candidate = Path(target)
     if not candidate.is_absolute():
         candidate = REPO_ROOT / candidate
@@ -239,7 +410,7 @@ def write_scaffold(target: str, title: str = "") -> Path:
     candidate.parent.mkdir(parents=True, exist_ok=True)
     derived_title = title.strip() or candidate.stem.replace("_", " ")
     with open(candidate, "x", encoding="utf-8") as handle:
-        handle.write(build_scaffold(derived_title))
+        handle.write(build_scaffold(derived_title, profile))
     return candidate
 
 
@@ -250,15 +421,21 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--emit", action="store_true", help="Print scaffold to stdout")
     parser.add_argument("--write", metavar="PATH", help="Create one new scaffold file")
     parser.add_argument("--title", default="", help="Optional scaffold title")
+    parser.add_argument(
+        "--profile",
+        choices=(FULL_PROFILE, FAST_DOC_PROFILE),
+        default=FULL_PROFILE,
+        help="Worker-return contract profile",
+    )
     args = parser.parse_args(argv)
     if args.emit == bool(args.write):
         print("VIOLATION: choose exactly one of --emit or --write", file=sys.stderr)
         return 2
     if args.emit:
-        print(build_scaffold(args.title), end="")
+        print(build_scaffold(args.title, args.profile), end="")
         return 0
     try:
-        written = write_scaffold(args.write, args.title)
+        written = write_scaffold(args.write, args.title, args.profile)
     except ValueError as exc:
         print(f"VIOLATION: {exc}", file=sys.stderr)
         return 2

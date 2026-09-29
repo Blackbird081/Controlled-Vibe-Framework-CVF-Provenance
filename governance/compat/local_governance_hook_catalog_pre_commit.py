@@ -17,8 +17,32 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
             ["python", "governance/compat/check_core_guard_self_protection.py", "--enforce"],
         ),
         (
+            "high-risk local transaction proof",
+            ["python", "governance/compat/check_high_risk_local_transaction_proof.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "semantic convergence and escalation control",
+            ["python", "governance/compat/check_semantic_convergence_control.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "subagent provider execution authority",
+            ["python", "governance/compat/check_subagent_provider_execution_authority.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "task-proportional governance shadow route",
+            ["python", "governance/compat/check_task_governance_route.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
             "governed file size compatibility",
             ["python", "governance/compat/check_governed_file_size.py", "--enforce"],
+        ),
+        (
+            "system chain map freshness",
+            ["python", "governance/compat/check_system_chain_map_freshness.py", "--enforce"],
+        ),
+        (
+            "as-built system catalog drift",
+            ["python", "governance/compat/check_as_built_system_catalog_drift.py", "--enforce"],
         ),
         (
             "governed python automation size",
@@ -66,6 +90,14 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
         (
             "worker experience retrospective",
             ["python", "governance/compat/check_worker_experience_retrospective.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "review cost control",
+            ["python", "governance/compat/check_review_cost_control.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "gate-to-role closeability",
+            ["python", "governance/compat/check_gate_to_role_closeability.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "worker-return quality gate",
@@ -142,6 +174,10 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
         (
             "external absorption value conversion",
             ["python", "governance/compat/check_external_absorption_value_conversion.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+        ),
+        (
+            "mixed-origin derived synthesis absorption",
+            ["python", "governance/compat/check_mixed_origin_derived_synthesis_absorption.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
         ),
         (
             "external absorption overlap discipline",
@@ -334,5 +370,9 @@ PRE_COMMIT_CHECKS: list[tuple[str, list[str]]] = [
     (
         "MinerU receipt boundary",
         ["python", "governance/compat/check_mineru_receipt_boundary.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "agent instruction carrier compaction",
+        ["python", "governance/compat/check_agent_instruction_carriers.py", "--enforce"],
     ),
     ]

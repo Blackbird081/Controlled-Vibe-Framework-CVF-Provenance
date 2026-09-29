@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import json
+from pathlib import Path
 
 @dataclass(frozen=True)
 class GateCommand:
@@ -53,7 +55,53 @@ def _range_command(name: str, script: str, base: str, head: str) -> GateCommand:
     )
 
 
-def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
+def _dispatch_release_command(active_work_order: str, head: str) -> GateCommand:
+    """Bind final dispatch admission to committed packet + continuity state."""
+    return GateCommand(
+        "dispatch release readiness",
+        (
+            "python",
+            "governance/compat/check_dispatch_release_readiness.py",
+            "--active-work-order",
+            active_work_order,
+            "--head",
+            head,
+            "--enforce",
+        ),
+    )
+
+
+def _package_skill_target_state_command(active_work_order: str) -> GateCommand:
+    """Validate the declared hypothetical package state before worker execution."""
+    return GateCommand(
+        "package skill target-state feasibility",
+        (
+            "python",
+            "governance/compat/check_package_skill_target_state_feasibility.py",
+            "--active-work-order",
+            active_work_order,
+            "--enforce",
+        ),
+    )
+
+
+def _active_work_order_binding_error(phase: str, active_work_order: str | None) -> str | None:
+    allowed = {"pre-dispatch", "pre-implementation"}
+    if active_work_order is not None and (phase not in allowed or not active_work_order.strip()):
+        return "--active-work-order requires a nonempty binding at pre-dispatch or pre-implementation only."
+    if phase != "pre-dispatch" or active_work_order is not None:
+        return None
+    path = Path(__file__).resolve().parents[2] / "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+    try:
+        next_move = str(json.loads(path.read_text(encoding="utf-8")).get("nextAllowedMove", "")).upper()
+    except (OSError, json.JSONDecodeError):
+        return "current bootstrap is unavailable; pre-dispatch requires --active-work-order fail-closed."
+    if "WORK_ORDER" in next_move or "WORK-ORDER" in next_move:
+        return "current nextAllowedMove is work-order based; pre-dispatch requires --active-work-order so committed packet and continuity readiness cannot be skipped."
+    return None
+
+
+def _common_commands(base: str, head: str, active_work_order: str | None = None) -> tuple[GateCommand, ...]:
     return (
         GateCommand(
             "closure packaging preflight",
@@ -62,6 +110,20 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
         GateCommand(
             "core guard self-protection",
             ("python", "governance/compat/check_core_guard_self_protection.py", "--base", base, "--head", head, "--enforce"),
+        ),
+        _range_command(
+            "semantic convergence and escalation control",
+            "governance/compat/check_semantic_convergence_control.py",
+            base,
+            head,
+        ),
+        GateCommand(
+            "subagent provider execution authority",
+            ("python", "governance/compat/check_subagent_provider_execution_authority.py", "--base", base, "--head", head, "--enforce"),
+        ),
+        GateCommand(
+            "task-proportional governance shadow route",
+            ("python", "governance/compat/check_task_governance_route.py", "--base", base, "--head", head, "--enforce"),
         ),
         _range_command(
             "docs governance compatibility",
@@ -84,6 +146,18 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
         _range_command(
             "work-order dispatch quality",
             "governance/compat/check_work_order_dispatch_quality.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "review cost and rework dispatch convergence",
+            "governance/compat/check_review_cost_control.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "gate-to-role closeability",
+            "governance/compat/check_gate_to_role_closeability.py",
             base,
             head,
         ),
@@ -204,6 +278,12 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
         _range_command(
             "external absorption value conversion",
             "governance/compat/check_external_absorption_value_conversion.py",
+            base,
+            head,
+        ),
+        _range_command(
+            "mixed-origin derived synthesis absorption",
+            "governance/compat/check_mixed_origin_derived_synthesis_absorption.py",
             base,
             head,
         ),
@@ -444,6 +524,14 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             ("python", "governance/compat/check_governed_file_size.py", "--enforce"),
         ),
         GateCommand(
+            "system chain map freshness",
+            ("python", "governance/compat/check_system_chain_map_freshness.py", "--enforce"),
+        ),
+        GateCommand(
+            "as-built system catalog drift",
+            ("python", "governance/compat/check_as_built_system_catalog_drift.py", "--enforce"),
+        ),
+        GateCommand(
             "governed python automation size",
             ("python", "governance/compat/check_python_automation_size.py", "--enforce"),
         ),
@@ -458,6 +546,17 @@ def _common_commands(base: str, head: str) -> tuple[GateCommand, ...]:
             "governance/compat/check_mineru_receipt_boundary.py",
             base,
             head,
+        ),
+        GateCommand(
+            "agent instruction carrier compaction",
+            ("python", "governance/compat/check_agent_instruction_carriers.py", "--enforce"),
+        ),
+        GateCommand(
+            "independent review probe admission",
+            ("python", "governance/compat/check_independent_review_probe_admission.py",
+             "--base", base, "--head", head, "--enforce")
+            + (("--changed-lane-only", "--active-work-order", active_work_order)
+               if active_work_order is not None else ()),
         ),
     )
 

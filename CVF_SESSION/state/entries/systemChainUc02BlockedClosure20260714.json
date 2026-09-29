@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1756,
+  "stateKey": "systemChainUc02BlockedClosure20260714",
+  "value": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "materialCommit": "7619d807a",
+    "completionReview": "docs/reviews/CVF_SYSTEM_CHAIN_UC02_RUNTIME_TO_ENFORCEMENT_CURRENT_RUN_COMPLETION_2026-07-14.md",
+    "receipt": "docs/reviews/evidence/system-chain-uc02-current-run-2026-07-14.json",
+    "result": "FAIL_BOOTSTRAP_0_OF_9",
+    "coverageStatus": "STALE",
+    "gapId": "cvf.asc.gap.packet_posture_bootstrap_archive_path_drift.v1",
+    "nextAllowedMove": "author fresh GC-018 and source-verified archive-to-consumer path reconciliation repair packet",
+    "claimBoundary": "The current invocation proves a shared-bootstrap archive/live path defect, not UC-02 operational success; no retry, provider call, UC-03/UC-04 dispatch, public, production, scale, universal, or user-value claim."
+  }
+}

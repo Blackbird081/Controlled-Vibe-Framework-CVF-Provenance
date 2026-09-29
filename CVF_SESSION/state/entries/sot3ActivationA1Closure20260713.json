@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1728,
+  "stateKey": "sot3ActivationA1Closure20260713",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-13",
+    "materialCommit": "149832b16",
+    "completionReview": "docs/reviews/CVF_SOT3_ACT_A1_SCOPED_KNOWLEDGE_CONTEXT_PRODUCT_ADAPTER_COMPLETION_2026-07-13.md",
+    "roadmapStatus": "A1_CLOSED_PASS_BOUNDED_A2_PACKET_NEXT",
+    "claim": "PRODUCT_PATH_WIRED_LOCAL",
+    "reviewerRepair": "one complete Refinery-Kernel-Flow lifecycle per chunk; aggregate only acknowledged outputs; complete audit ID arrays",
+    "learning": "ADIF-0028 records aggregated-output versus per-item-authority cardinality",
+    "verification": "focused 37/37 PASS; full non-live suite, typecheck, build, reviewer-fast 62/62, pre-commit 83/83 PASS",
+    "nextAllowedMove": "fresh A2 GC-018 and source-verified work-order authoring only",
+    "claimBoundary": "no durable restart evidence, live provider behavior, release-quality proof, production readiness, public export, universal control, or user validation"
+  }
+}

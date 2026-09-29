@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1843,
+  "stateKey": "sot3AppT0Dispatch20260715",
+  "value": {
+    "status": "DISPATCH_READY",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_APP_T0_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION_2026-07-15.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0_SOURCE_LEDGER_AND_PROVENANCE_DISPOSITION_2026-07-15.md",
+    "dispatchCommit": "dcbce63a4",
+    "preDispatch": "PASS_75_OF_75",
+    "preCommit": "PASS_83_OF_83",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "plannedOutputs": [
+      "docs/reviews/CVF_SOT3_APP_T0_SOURCE_PROCESSING_AND_PROVENANCE_LEDGER_2026-07-15.md",
+      "docs/reviews/CVF_SOT3_APP_T0_WORKER_RETURN_2026-07-15.md"
+    ],
+    "sourceSnapshot": "336 files; 238522 bytes; aggregate SHA-256 538d602504e1dec3e9b19581847aebdd73cb14a7490e8251a7cae16f5f9176dc",
+    "hiddenCloneSnapshot": "clean main at a78b35c; origin https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "nextAllowedMove": "Execute only the exact two-output, read-only source-intake worker contract and return COMPLETE_PENDING_REVIEW without commit.",
+    "claimBoundary": "Dispatch evidence only; no SOT-Application or hidden-clone mutation, application/runtime/test/build/typecheck/CI/live-provider/browser/server/binding-validation/public-sync/push execution, provenance acceptance, or product-readiness proof."
+  }
+}

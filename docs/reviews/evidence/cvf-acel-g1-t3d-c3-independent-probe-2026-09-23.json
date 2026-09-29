@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "cvf.acel.g1.t3dC3IndependentProbeReceipt.v1",
+  "result": "PASS_INDEPENDENT_PROBE",
+  "reviewedHead": "42151106dbbc183c4d90c25f1ec5aaae1fc591c9",
+  "materialCommit": "a1203c1eeeff0e23b808b766346baa402eec1b2d",
+  "materialCommitAncestorConfirmed": true,
+  "reviewerRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "reviewerActor": "shared-workspace-internal-agent-claude-t3d-c3-reviewer",
+  "reviewIndependence": "DISTINCT_ACTOR_SHARED_WORKSPACE",
+  "evidenceOrigin": "operator-relayed complete reviewer return; reviewer scratch harness was not persisted in the repository",
+  "repositoryMutation": "NONE",
+  "commitCreated": false,
+  "providerCalls": 0,
+  "principalExecution": {
+    "disposition": "CURRENT_TOKEN_TESTPOLICY_ONLY",
+    "accountName": "LAM-RUBY\\DELL",
+    "sidSuffix": "-1001",
+    "isAdministrator": false,
+    "partyBOrCExecution": false
+  },
+  "scriptHashes": {
+    "coordinator": "11b449af03b8504682add9cb39c77fe03b9be4b2ac65c9069810358418f3290f",
+    "principalProbe": "8a3ab4acfe62ed9eb02194279a836e08b53251e63a07e87ee03b0ebc4a3c28d9",
+    "localFinalizer": "a35726e6f5bbd922f0af4c07f036a10ca669de6d4acee163c7dc4f34e8e5b43d",
+    "checkedBeforeAndAfter": true
+  },
+  "selfTests": {
+    "coordinator": "PASS_9_OF_9_EXIT_0",
+    "principalProbe": "PASS_7_OF_7_EXIT_0",
+    "localFinalizer": "PASS_6_OF_6_EXIT_0"
+  },
+  "freshPacket": {
+    "disposableRoot": "DIRECT_CHILD_OF_TEMP_WITH_REQUIRED_TEST_PREFIX",
+    "rootAbsentBeforeRun": true,
+    "payloadOutsideRepositoryAndDisposableRoot": true,
+    "realSourceUsed": false,
+    "testPolicy": true,
+    "prepareDisposition": "DISPOSABLE_PACKET_PREPARED_NO_PRINCIPAL_EXECUTION",
+    "matrixRows": 22,
+    "uniqueRoleActionPairs": 22,
+    "passwordRequiredFromAgent": false,
+    "allCommandsCarryTestPolicy": true
+  },
+  "matrixResult": {
+    "commandsPassed": 22,
+    "commandsTotal": 22,
+    "exactPacketExecutableAndArgumentsUsed": true,
+    "skippedCommands": 0,
+    "evidenceRowsPass": 22,
+    "allEvidenceTestPolicy": true,
+    "observedEqualsExpected": true,
+    "partyBOrCSidObserved": false
+  },
+  "publicFinalizer": {
+    "disposition": "INCONCLUSIVE_OR_FAILED",
+    "reasons": [
+      "TEST_POLICY_EVIDENCE_INADMISSIBLE"
+    ],
+    "actualTokenProofClaimed": false,
+    "exitCode": 0
+  },
+  "tamperResult": {
+    "row": "PARTY_B|HARDLINK",
+    "mutation": "envelopeBindingSha256Hex only",
+    "detected": true,
+    "reason": "EVIDENCE_ENVELOPE_BINDING_INVALID_PARTY_B|HARDLINK",
+    "originalBytesRestored": true,
+    "restoredSha256Matched": true,
+    "controlFinalizerReturnedOnlyTestPolicyReason": true
+  },
+  "peerBarrierResult": {
+    "disposition": "PASS",
+    "rolesPassed": 2,
+    "protocol": [
+      "READY",
+      "START_ATTEMPT",
+      "ATTEMPTING",
+      "PARENT_RELEASE",
+      "ENTERED",
+      "COMPLETE"
+    ],
+    "realChildPwshObservedPerConcurrencyRow": 1,
+    "unexpectedPeerOnNonPeerRows": false
+  },
+  "crashSuccessorResult": {
+    "disposition": "PASS",
+    "rolesPassed": 2,
+    "hardTerminationAfterAcquireObserved": true,
+    "successorAcquiredAbandonedGuard": true,
+    "realChildPwshObservedPerCrashRow": 1,
+    "residualPeerOrCrashProcess": false
+  },
+  "cleanupResult": {
+    "exactNamedPathsOnly": true,
+    "globUsed": false,
+    "disposableRootExistsAfterCleanup": false,
+    "payloadDirectoryExistsAfterCleanup": false
+  },
+  "finalGitStatus": {
+    "worktree": "CLEAN",
+    "stagedSet": "EMPTY",
+    "headUnchanged": true
+  },
+  "observations": [
+    {
+      "id": "O1",
+      "disposition": "NON_BLOCKING_DECLARED_TESTPOLICY_BOUNDARY",
+      "summary": "Current-token TestPolicy denial rows use a denial sentinel and do not prove real cross-principal ACL denial."
+    },
+    {
+      "id": "O2",
+      "disposition": "NON_BLOCKING_DEFENSE_IN_DEPTH_ASYMMETRY",
+      "summary": "Finalizer containment lacks a separate repository-root comparison but still requires canonical containment below the named TEMP disposable root, rejects reparse traversal, and rejects the real source subtree."
+    }
+  ],
+  "implementationDefects": [],
+  "claimBoundary": "Independent current-token TestPolicy review only; no actual Party B/C proof, source creation, T3E, provider/live/runtime/public/deployment or production-readiness claim."
+}

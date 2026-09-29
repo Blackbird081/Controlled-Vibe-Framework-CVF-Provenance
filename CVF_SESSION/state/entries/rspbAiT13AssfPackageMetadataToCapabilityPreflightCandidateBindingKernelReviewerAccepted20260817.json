@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2273,
+  "stateKey": "rspbAiT13AssfPackageMetadataToCapabilityPreflightCandidateBindingKernelReviewerAccepted20260817",
+  "value": "RSPB-AI-T13 is REVIEWER_ACCEPTED_PENDING_CLOSER at material commit 737ae97fb3e2fb29524019df04b29f8f4b618a5c after bounded reviewer repair. Proof: focused 39/39, composed T7/T12/T13 93/93, full Guard Contract 856 passed plus 5 skipped, TypeScript PASS, system-chain freshness CURRENT, worker-return fast PASS, reviewer-fast 65/65, pre-commit 86/86, and zero provider/live calls. Candidate-field projection, ACTIVE passed-UAT gating, revoked Proxy-array safety, packet completeness, and freshness are repaired; completion review, work-order conversion, and final continuity remain closer-owned."
+}

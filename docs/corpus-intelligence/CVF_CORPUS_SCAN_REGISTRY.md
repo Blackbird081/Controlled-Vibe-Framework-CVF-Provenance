@@ -8,7 +8,7 @@ docType: reference
 
 Date: 2026-06-02
 
-Last updated: 2026-06-12 (EXA-T2 scan route decision contracts closure)
+Last updated: 2026-08-16 (MODS-T0 mixed-origin RSPB correction)
 
 Standard: `docs/reference/CVF_CORPUS_SCAN_REGISTRY_STANDARD_2026-06-02.md`
 
@@ -19,6 +19,13 @@ Machine registry: `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
 Registry authoring sources: `docs/corpus-intelligence/registry/`
 
 Generator: `governance/compat/generate_corpus_scan_registry.py`
+
+Current corrective projection: RSPB-AI-T0 retains its verified 764-file
+accounting and upstream safety/direct-import rejection. The local Capability
+Preflight & Bootstrap corpus is now classified as a provenance-backed
+mixed-origin derived-synthesis candidate, with selective knowledge absorption
+and staged runtime, per
+`docs/assessments/CVF_RSPB_AI_T0_MIXED_ORIGIN_CORRECTIVE_REASSESSMENT_2026-08-16.md`.
 
 ---
 
@@ -76,10 +83,12 @@ prior scan here before starting new work.
 
 | Corpus | Type | Status | Wave | Files | Key findings |
 | --- | --- | --- | --- | --- | --- |
+| `CVF_PROVIDER_INTELLIGENCE` retained legacy corpus | EXTERNAL_SOURCE | SCANNED_WITH_FINDINGS | PINT-R1 | 50 | Full-content ledger and canonical digests reconciled; six advisory doctrine groups retained, two owner-source checks deferred, two variants closed as no-new-value; EAIC runtime knowledge gap remains parked |
 | `MLW-RT1 durable memory runtime proof` | RUNTIME_PROOF | SCANNED_WITH_FINDINGS | MLW-RT1 | 9 | Existing file-backed `/api/execute` durable-memory write/read continuity proved; backend migration/public readiness deferred |
 | `CVF_Important/Knowledge Base_Graphify/` | LEGACY | SCANNED_WITH_FINDINGS | CI1-T2 | 5 | G-GM-* guard absent; CLI absent; KGR1 partial |
 | `CVF ADD/code-review-graph/` | LEGACY | SCANNED_WITH_FINDINGS | CI1-T3 | 7 | graph governance signals deferred; command/MCP surface deferred; performance claims bounded |
 | `CGE-R1 CodeGraph full reabsorption snapshot` | EXTERNAL_SOURCE | SCANNED_WITH_FINDINGS | CGE-R1 | 89 | 33 ADAPTED, 54 REJECTED, 2 NO_NEW_VALUE; template/example/schema over-defer repaired into owner-surface doctrine; runtime/package/checker/public lanes remain separately gated |
+| `SOT3-T0 retained Refinery, Truth Kernel, and Truth Flow advisory scan` | LEGACY_FOLDER | PARTIALLY_SCANNED | SOT3-T0 | 305 | Per-file corpus identity and major architecture findings retained; semantic dispositions and final three-layer decision require SOT3-T0R; no implementation authorized |
 | `CVF_Important/` (broad) | LEGACY | PARTIALLY_SCANNED | LHW-RESCAN-A | 230 | Inventory only; Graphify subfamily done |
 | `CVF ADD/` | LEGACY | PARTIALLY_SCANNED | LHW-RESCAN-C | 167 | `code-review-graph/` is CI1-T3 candidate |
 | `CVF 16.5/` | LEGACY | PARTIALLY_SCANNED | LHW-RESCAN-C | 100 | Broad routing only |
@@ -124,6 +133,11 @@ prior scan here before starting new work.
 
 | `CVF Extraction Foundation EXA-T2 scan route decision source` | CVF_EXTENSION | SCANNED | EXA-T2 | 1 | Deterministic DocumentScanSignals + ScanRouteDecision + decide_scan_route(); maps PASS/NEEDS_TIER2_OCR/OCR_LOW_CONFIDENCE/PARTIAL/EMPTY to four stable dispositions; unsupported source type or language -> BLOCKED_UNSUPPORTED; no OCR, provider, or raw content |
 | `CVF Extraction Foundation EXA-T2 scan route decision tests` | CVF_EXTENSION | SCANNED | EXA-T2 | 1 | Focused pytest coverage for PASS/local route, OCR-eligible route, OCR_LOW_CONFIDENCE/partial/empty escalation, unsupported language blocking, unsupported source-type blocking, docx support, deterministic repeatability, version+claim-boundary presence, and no raw-content fields |
+| `CADP-R1 capability admission distribution profile` | LEGACY_FOLDER | SCANNED_WITH_FINDINGS | CADP-R1 | 140 | 140/140 terminal ledger rows reconciled; T1 contract accepted bounded after R01-R28 review; F11 caller-self-attested trust remains open and routed to released T2 owner binding |
+| `CADP-AI-T3B Model Gateway constraint projection tests` | TEST_CORPUS | SCANNED | CADP-AI-T3B | 2 | Strict owner/projection/constraint boundary and package-root export coverage; all authorization flags remain false; no provider/live behavior claimed |
+| `CADP-AI-T5-R1 external readout authority foundation source and tests` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | CADP-AI-T5-R1 | 2 | Pure internal identity/ingress/allowlist/redaction/freshness/receipt foundation; reviewer repaired canonical snapshot and calendar validation; no adapter or transport authority |
+| `CADP-AI-T5-R2 transport-neutral external readout adapter source and tests` | PROJECT_SOURCE | SCANNED_WITH_FINDINGS | CADP-AI-T5-R2 | 2 | Pure always-rejecting adapter composition; reviewer repaired candidate-metadata stages and ambient receipt ordinal; no auth or transport runtime authority |
+| `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | LEGACY_FOLDER | DEEP_CLASSIFIED | LRA-SA-T0 | 129 | All 129 entries are terminal with zero ARCHIVE_EVIDENCE_ONLY, unresolved, or DEFER_REQUIRES_NEW_AUTHORITY rows: 56 packages/ entries (54 same-hash + 2 changed-metadata) were exhaustively per-file semantically absorbed by LRA-SA-T0 into SUPERSEDED_BY_CURRENT_CVF_OWNER (20) or NO_NEW_VALUE (36); 18 V041-delta package entries are terminally REJECT_DIRECT_IMPORT_NO_OWNER after remediated per-row search -- 16 of 18 have a governed concept owner in CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md but NO_CURRENT_EXECUTABLE_OWNER; 39 review-artifacts/ entries are stale/corrupt dot-cvf runtime snapshots (REJECT_RAW_RUNTIME_STATE/REJECT_STALE_AUTHORITY); 6 untracked/ governance artifacts are SUPERSEDED by already-closed Core tranches |
 ---
 
 ## Finding Index
@@ -174,6 +188,27 @@ Use this index to find prior findings by domain keyword.
 | Finding ID | Corpus | Summary | Disposition |
 | --- | --- | --- | --- |
 | DSCP-T1-F1-governance-envelope-wrapper-needed | `DSCP-T1 domain-agnostic owner source surfaces` | ContextPackagerRequest and RAG pipeline types are reusable owner surfaces but need a governance envelope wrapper before cross-domain runtime use | DEFER_WITH_ROADMAP |
+
+### Local Retention Artifact Audit (LRA-T0)
+
+| Finding ID | Corpus | Summary | Disposition |
+| --- | --- | --- | --- |
+| F1-T2-package-lane-v041-delta-terminally-rejected-concept-overlap-acknowledged | `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | T2 remediation corrected a blanket no-overlap claim; 16 of 18 V041-delta entries have a governed concept owner (CVF_WORKSPACE_LAYER_EXTERNAL_PACKAGE_ABSORPTION_MAP.md) but NO_CURRENT_EXECUTABLE_OWNER; all 18 remain REJECT_DIRECT_IMPORT_NO_OWNER | ACCEPT_NO_ACTION |
+| F2-review-artifacts-are-stale-runtime-snapshots | `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | 39 review-artifacts/ entries are frozen 2026-08-11 dot-cvf runtime captures superseded by the live Core runtime owner | ACCEPT_NO_ACTION |
+| F3-untracked-governance-artifacts-superseded | `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | 6 untracked/ governance artifacts are superseded by already-closed/archived Core tranches | ACCEPT_NO_ACTION |
+| F4-T2-all-129-entries-terminal | `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | T2 brought all 129 corpus entries to a terminal disposition class with zero DEFER_REQUIRES_NEW_AUTHORITY rows; LRA-SA-T0 (see F5) subsequently resolved the remaining 56 ARCHIVE_EVIDENCE_ONLY rows into fully terminal SUPERSEDED_BY_CURRENT_CVF_OWNER/NO_NEW_VALUE dispositions | ACCEPT_NO_ACTION |
+| F5-SA-T0-all-56-evidence-only-entries-semantically-terminal | `Local Retention Artifact ZIP (LRA-T0/T2/SA-T0)` | LRA-SA-T0 read all 56 ARCHIVE_EVIDENCE_ONLY entries in full and assigned terminal semantic dispositions: 20 SUPERSEDED_BY_CURRENT_CVF_OWNER, 36 NO_NEW_VALUE, zero BLOCKED_VALUE_GAP; every concept found already maps to the existing absorption map or runtime expansion readiness contract | ACCEPT_NO_ACTION |
+
+### Capability Admission Distribution Profile (CADP-R1)
+
+| Finding ID | Corpus | Summary | Disposition |
+| --- | --- | --- | --- |
+| CADP-R1-F01-F10-F12-F13 | `CADP-R1 capability admission distribution profile` | Corpus and selected T1 contract value are accepted with bounded scope; direct import remains rejected | ACCEPT_WITH_BOUNDARY |
+| CADP-R1-F11 | `CADP-R1 capability admission distribution profile` | A caller-created trusted index can still self-attest to evidence rank 5 | DEFER_WITH_ROADMAP - T2 owner binding released |
+| CADP-AI-T5-R1-F01 | `CADP-AI-T5-R1 external readout authority foundation source and tests` | Initial receipt serialization invoked caller-controlled `toJSON` and lacked canonical frozen snapshot semantics; reviewer repaired and regression-covered before closure | ACCEPT_WITH_BOUNDARY |
+| CADP-AI-T5-R2-F01 | `CADP-AI-T5-R2 transport-neutral external readout adapter source and tests` | Worker omitted candidate metadata from the exact API and did not compose redaction/allowlist over it; reviewer repaired and regression-covered | ACCEPT_WITH_BOUNDARY |
+| CADP-AI-T5-R2-F02 | `CADP-AI-T5-R2 transport-neutral external readout adapter source and tests` | T5-R2A preserves unique contract-source ownership while independently checking T5-R1 and T5-R2 module-qualified exports over their shared package root | ACCEPT_WITH_BOUNDARY |
+| CADP-AI-T5-R3-F01 | `CADP-AI-T5-R3 external authentication owner adoption readiness source decision` | `authorizeRouteGovernanceProof` is selected only as the bounded authentication-composition owner; CADP authorization, hardened configuration, deterministic proof time, receipt persistence, route registration, and runtime remain separate | ACCEPT_WITH_BOUNDARY |
 
 ---
 

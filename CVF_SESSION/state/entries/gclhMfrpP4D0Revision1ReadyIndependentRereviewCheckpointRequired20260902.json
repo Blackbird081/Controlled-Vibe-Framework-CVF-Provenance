@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2727,
+  "stateKey": "gclhMfrpP4D0Revision1ReadyIndependentRereviewCheckpointRequired20260902",
+  "value": {
+    "status": "P4_D0_REVISION_1_READY_INDEPENDENT_REREVIEW_CHECKPOINT_REQUIRED",
+    "critiqueMaterialCommit": "e79308d2cd5c0ff81e012c963428af3045ff990c",
+    "revisionMaterialCommit": "7890f8274e4471a2994e2e078ab307fd7df3e73d",
+    "revisionPath": "docs/assessments/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_2026-09-02.md",
+    "revisionSha256": "65698a95dc7bb7f437fe061a81559701b91a3e611c445f5122ad8145c5f13df5",
+    "revisionDisposition": "CANARY_DESIGN_REVISION_1_READY_FOR_INDEPENDENT_REVIEW_R1B_RETAINED",
+    "correctionSummary": "F-01 through F-08 addressed: distinct semantic-return/mechanical-receipt objects; consistency-not-correctness and common-mode disclosure; pre-shadow immutable trusted record; one closed sample formula; observable closed audit-input manifest; one-off P4 worker-return owner; p95 deleted and median diagnostic narrowed; docType aligned to assessment.",
+    "nextAllowedMove": "Independently re-review Revision 1 against F-01 through F-08. R1B authoring may be considered only after bounded acceptance; R1B execution and P4 canary execution remain separate closed checkpoints.",
+    "claimBoundary": "Documentary design correction only. No R1B authoring/execution, P4 canary run, route-authority change, provider/live/network, public-sync, deployment or production action is claimed."
+  }
+}

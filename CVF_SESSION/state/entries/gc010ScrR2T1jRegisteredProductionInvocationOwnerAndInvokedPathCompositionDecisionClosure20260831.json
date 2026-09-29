@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2490,
+  "stateKey": "gc010ScrR2T1jRegisteredProductionInvocationOwnerAndInvokedPathCompositionDecisionClosure20260831",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "terminalToken": "NO_VIABLE_PRODUCTION_OWNER_RETAIN_FORMAL_T1_PARKED",
+    "materialCommit": "9245f4218def623b503f7ef157cf173abff3fa25",
+    "dispatchCommit": "3a6f143fab457bfd476a0d30d9ca5f2a3f6232fb",
+    "executionBaseHead": "65b5512b5f75cbf4ce5139aa3df673c113759447",
+    "assessment": "docs/assessments/CVF_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_2026-08-31.md",
+    "assessmentSha256": "88173edc1fa61883cd1961cce2fdac6a69293944061398af0cf16ba09e89589b",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1J_REGISTERED_PRODUCTION_INVOCATION_OWNER_AND_INVOKED_PATH_COMPOSITION_DECISION_WORKER_RETURN_2026-08-31.md",
+    "workerReturnSha256": "366f48ebac18f16f1754f05178ed0bffd9bb04139e7cec72bb2f352da9190a4b",
+    "verification": "Independent reviewer reproduced the registered-trigger and construction-site searches, confirmed the exact two-document manifest, accepted the five-family and fifteen-question analysis, and ran worker-return fast, reviewer-fast and pre-commit gates successfully.",
+    "reviewerCorrection": "The reviewer corrected an overclaim that GC-009 response reconciliation was a durable persistence owner and bounded broad search language. Current source proves response-carried reconciliation, while the invoked-path durable owner remains absent; the terminal is unchanged and strengthened.",
+    "nextAllowedMove": "Await a separately authorized, source-backed concrete product caller before any formal T1 reopen; no T1K or T2 opens automatically.",
+    "claimBoundary": "T1J closes only the owner/topology decision. Formal T1 and T2 remain parked; no source/test/roadmap edit, route/package/provider/audit implementation, provider/live, public sync, deployment or production authority is opened."
+  }
+}

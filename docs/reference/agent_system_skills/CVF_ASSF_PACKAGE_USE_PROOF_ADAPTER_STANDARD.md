@@ -143,7 +143,7 @@ This prevents nested helper execution from reporting a false
 | ASSF live provider/model selector rejects unsupported providers | `governance/compat/assf_live_model_selection.py` | `resolve_provider_model` | `AUTO_FROM_ASSF_LIVE_PROVIDER_CANDIDATES`; `PROVIDER_NOT_SOURCE_BACKED_FOR_ASSF_USE_CASE` | ASSF live provider/model selection helper | RUNTIME_BEHAVIOR | ACCEPT |
 | ASSF live provider/model selector rejects absent or expired free-quota models | `governance/compat/assf_live_model_selection.py` | `resolve_provider_model`; `resolve_free_quota_model` | `MODEL_FREE_QUOTA_NOT_VERIFIED`; `MODEL_FREE_QUOTA_EXPIRED` | ASSF live provider/model selection helper | RUNTIME_BEHAVIOR | ACCEPT |
 | Alibaba free-quota model selection is controlled by the model ledger `models` array | `docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json` | `models`; `useBeforeLiveTestRule` | `modelCode`; `expirationDate` | Alibaba free-quota ledger | VALUE_SET | ACCEPT |
-| Provider capability registry entries are not current free-quota selection authority | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts`; `docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.md` | `PROVIDER_CAPABILITY_REGISTRY`; `Use-Before-Live-Test Rule` | `qwen-turbo`; `MODEL_FREE_QUOTA_NOT_VERIFIED` | Model Gateway capability registry and free-quota ledger | LITERAL_INVARIANT | ACCEPT |
+| Provider capability registry entries are not current free-quota selection authority | `EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts`; `docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.md` | `PROVIDER_CAPABILITY_REGISTRY`; `Use-Before-Live-Test Rule` | `qwen-flash`; `MODEL_FREE_QUOTA_NOT_VERIFIED` | Model Gateway capability registry and free-quota ledger | LITERAL_INVARIANT | ACCEPT |
 | Live run diagnostic standard requires secret-safe failure classification | `docs/reference/archive/CVF_LIVE_RUN_DIAGNOSTIC_STANDARD_2026-05-24.md` | Required Diagnostic Record | `stage`; `class`; `retryable`; `safeMessage` | live run diagnostic standard | LITERAL_INVARIANT | ACCEPT |
 | Package use-proof adapter is new in ASCP-T5 | `governance/compat/run_assf_package_use_proof_adapter.py` | ASCP-T5 new file | `build_package_use_proof_packet` | package use-proof adapter | DOC_ONLY_NEW | ACCEPT |
 
@@ -185,3 +185,7 @@ proof surfaces. Public-safe export requires separate public-sync authorization.
 ASCP-T5 implements bounded package use-proof only. It does not activate
 packages, mutate lifecycle state, convert remaining packages, implement an MCP
 server, public-sync, or claim production readiness.
+
+## Epistemic Process Block
+
+Epistemic Process Applicability: EPISTEMIC_PROCESS_NA_WITH_REASON: reference artifact with no empirical prediction; the QTDM-01 migration changes only the deprecated model identifier and makes no evidence comparison claim.

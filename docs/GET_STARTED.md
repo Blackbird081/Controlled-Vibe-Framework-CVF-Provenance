@@ -1,5 +1,8 @@
 # CVF - Bắt Đầu Trong 5 Phút
 
+Text Encoding Exception: this existing user-facing guide intentionally uses
+Vietnamese text.
+
 [🇬🇧 English guides](guides/) | 🇻🇳 Tiếng Việt
 
 > **🎯 Mục tiêu:** Giúp bạn hiểu và chạy được CVF project đầu tiên trong 5 phút
@@ -43,15 +46,24 @@ Kết quả:
 - `D:\CVF-Workspace\Trading-Tools\.cvf\manifest.json`
 - `D:\CVF-Workspace\Trading-Tools\.cvf\policy.json`
 - `D:\CVF-Workspace\Trading-Tools\docs\CVF_BOOTSTRAP_LOG_YYYYMMDD.md`
-- `D:\CVF-Workspace\New-CVF-Governed-Project.ps1` (wrapper: bootstrap + doctor + gate trong 1 lệnh)
-- `D:\CVF-Workspace\Run-CVF-NewProject-Enforcement.ps1` (wrapper: enforcement gate cho toàn workspace)
-- `D:\CVF-Workspace\CVF_WORKSPACE_USER_GUIDE.md` / `CVF_WORKSPACE_HUONG_DAN_SU_DUNG.md` (hướng dẫn workspace-root, song ngữ)
+- `D:\CVF-Workspace\Trading-Tools\docs\catalog\ARTIFACT_REGISTRY.json` / `MODULE_REGISTRY.json` (governed catalog sources of truth, closed schemas under `docs\catalog\schemas\`)
+- `D:\CVF-Workspace\Trading-Tools\docs\INDEX.md` / `docs\catalog\MODULE_CATALOG.md` (generated views - do not hand-edit; regenerate with the catalog manager below)
+- `D:\CVF-Workspace\Trading-Tools\scripts\manage_cvf_downstream_catalog.ps1` (executable catalog manager: `-Check` / `-Write`)
+- `D:\CVF-Workspace\New-CVF-Governed-Project.ps1` (wrapper: bootstrap + doctor + gate in one command)
+- `D:\CVF-Workspace\Run-CVF-NewProject-Enforcement.ps1` (wrapper: workspace-wide enforcement gate)
+- `D:\CVF-Workspace\CVF_WORKSPACE_USER_GUIDE.md` / `CVF_WORKSPACE_HUONG_DAN_SU_DUNG.md` (workspace-root guides, EN and VI)
 
-Kiểm tra agent-enforcement artifacts:
+Kiểm tra agent-enforcement artifacts (bao gồm governed downstream catalog khi có):
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\check_cvf_workspace_agent_enforcement.ps1 `
   -ProjectPath "D:\CVF-Workspace\Trading-Tools"
+```
+
+Kiểm tra riêng catalog (Artifact Registry / Module Registry / generated views):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "D:\CVF-Workspace\Trading-Tools\scripts\manage_cvf_downstream_catalog.ps1" -Check
 ```
 
 Nếu `.Controlled-Vibe-Framework-CVF` đã tồn tại từ lịch sử cũ hoặc lệch với
@@ -67,6 +79,28 @@ powershell -ExecutionPolicy Bypass -File .\scripts\update_cvf_workspace_public_c
 Doctor kiểm tra enforcement artifacts, public bootstrap kit, đúng public
 remote và freshness so với `origin/main`. Live governance proof vẫn là gate
 riêng.
+
+### Tiếp tục sau khi clone sang máy khác
+
+Với chính repo CVF, chạy lệnh sau ngay sau fresh clone, trước khi agent bắt đầu
+công việc:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\initialize_cvf_repository_clone.ps1
+```
+
+Với project downstream đã được CVF bootstrap, chạy initializer nằm trong chính
+project:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\initialize_cvf_clone.ps1
+```
+
+Initializer sẽ dựng hoặc kiểm tra CVF core sibling từ public Git remote, kiểm
+tra commit pin có thể truy xuất từ `origin/main`, tạo local binding bị Git
+ignore, rồi chạy workspace doctor. Vì vậy Git chỉ lưu repository URL, commit và
+đường dẫn tương đối; đường dẫn tuyệt đối của từng máy không trở thành source of
+truth.
 
 Mốc W113 đã chứng minh luồng project downstream thật đầu tiên với live API-backed governance evidence: [W113-T1 First Downstream Project Proof](roadmaps/CVF_W113_T1_FIRST_DOWNSTREAM_PROJECT_PROOF_ROADMAP_2026-04-22.md).
 
@@ -160,9 +194,9 @@ Khi bạn dùng AI (ChatGPT/Claude/Copilot) để code:
 #### CVF Solution: Controlled Execution Loop
 
 ```
-INTAKE  →  DESIGN  →  BUILD  →  REVIEW  →  FREEZE
-   ↓         ↓         ↓         ↓          ↓
-Scope      Plan     Execute    Validate   Close + lock evidence
+INTAKE → DESIGN → SPEC → WORK ORDER → BUILD → REVIEW → FREEZE
+  ↓        ↓       ↓         ↓          ↓        ↓        ↓
+Scope     Plan   Contract  Authority   Execute  Validate  Close
 ```
 
 **Nguyên tắc vàng:** AI là executor, BẠN là decision maker.
@@ -201,7 +235,7 @@ Console này chỉ chạy các job governance được allowlist, hiển thị r
 **What to try:**
 1. Click "Templates" → Chọn "Simple Todo App"
 2. Fill form → Click "Generate"
-3. See canonical 5-phase breakdown
+3. See the canonical seven-stage breakdown
 4. Export prompt to use with AI
 
 #### Option B: Manual (Core CVF)

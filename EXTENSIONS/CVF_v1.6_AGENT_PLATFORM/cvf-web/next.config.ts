@@ -40,6 +40,10 @@ const nextConfig: NextConfig = {
     'cvf-guard-contract',
     'cvf-control-plane-foundation',
     'cvf-learning-plane-foundation',
+    'cvf-refinery',
+    'cvf-truth-kernel',
+    'cvf-truth-flow',
+    'cvf-model-gateway',
   ],
   turbopack: {
     // TypeScript ESM packages use explicit .js extensions in their internal

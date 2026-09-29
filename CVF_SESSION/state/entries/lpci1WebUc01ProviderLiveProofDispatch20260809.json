@@ -1,0 +1,20 @@
+{
+  "stateOrder": 2015,
+  "stateKey": "lpci1WebUc01ProviderLiveProofDispatch20260809",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-UC01-LIVE",
+    "authorityToken": "AUTHORIZE_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_ONLY",
+    "dispatchCommit": "5f202caa0",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_2026-08-09.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_PROVIDER_LIVE_PROOF_2026-08-09.md",
+    "preDispatchEvidence": "PASS_75_OF_75",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "callBudget": 1,
+    "retryBudget": 0,
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Delegated worker executes the exact evidence-only packet and returns two sanitized outputs for independent review.",
+    "claimBoundary": "Provider-live proof only; no source/config/session/public mutation, deployment, production readiness, other provider/model, or later roadmap authority."
+  }
+}

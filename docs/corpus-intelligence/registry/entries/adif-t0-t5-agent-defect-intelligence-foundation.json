@@ -16,13 +16,14 @@
     "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0006.md",
     "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0007.md",
     "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0008.md",
+    "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0034.md",
     "governance/compat/run_adif_defect_resolver.py",
     "governance/compat/run_adif_preflight_readout.py",
     "governance/compat/run_adif_finding_intake_bridge.py",
     "governance/compat/check_adif_entry_integrity.py",
     "docs/roadmaps/CVF_AGENT_DEFECT_INTELLIGENCE_FOUNDATION_ROADMAP_2026-06-22.md"
   ],
-  "fileCount": 17,
+  "fileCount": 18,
   "status": "SCANNED_WITH_FINDINGS",
   "findings": [
     {

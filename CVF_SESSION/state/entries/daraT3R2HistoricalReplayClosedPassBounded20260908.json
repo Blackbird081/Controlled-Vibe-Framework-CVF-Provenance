@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2779,
+  "stateKey": "daraT3R2HistoricalReplayClosedPassBounded20260908",
+  "value": "Operator-reopened DARA-T3 R2 is independently accepted CLOSED_PASS_BOUNDED at material commit d4a6b422f. One governed external-agent CLI repair at execution base 8b8778321 resolved DARA-T3-R2-01 through R2-03: focused tests pass 41/41, worker-return fast gate passes, unknown usage and reached ceiling emit their accepted fail-closed classes, earliest-stop inversion is detected, and fixture/ledger SHA-256 freeze receipts remain equal. Same-parent external usage is exhausted at 3/3. The earlier R1 rejection and DARA-T4 PARK_NO_ELIGIBLE_EVIDENCE remain historical evidence; DARA-T4 is not automatically rerun, and DARA-T5 plus substantive WP-ARCH-003 implementation remain parked."
+}

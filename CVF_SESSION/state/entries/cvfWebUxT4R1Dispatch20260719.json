@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1995,
+  "stateKey": "cvfWebUxT4R1Dispatch20260719",
+  "value": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T4-R1",
+    "materialDispatchCommit": "f2f8c95e1",
+    "blockedReview": "docs/reviews/CVF_WEB_UX_T4_BLOCKED_RETURN_REVIEW_2026-07-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_R1_BROWSER_EVIDENCE_REPAIR_2026-07-19.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Recapture the full current-source localhost matrix with row-level visible anchors, screenshot paths, hashes, interaction traces, and keyboard focus traces.",
+    "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Dispatch authority only; original T4 browser acceptance and roadmap closure remain blocked pending independent R1 review."
+  }
+}

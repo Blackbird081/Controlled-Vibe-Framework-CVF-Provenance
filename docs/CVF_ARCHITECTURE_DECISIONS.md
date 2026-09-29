@@ -1284,3 +1284,85 @@ only to satisfy a numeric guard is not acceptable.
 - `governance/toolkit/05_OPERATION/CVF_GOVERNED_FILE_SIZE_GUARD.md`
 - `governance/compat/check_governed_file_size.py`
 - `governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json`
+
+## ADR-053: SOT Three-Layer Absorption Becomes A Bounded Contract-To-Runtime Architecture Owner
+
+### Status
+ACCEPTED - 2026-07-18
+
+### Context
+The SOT Three-Layer (SOT3) family absorbed an external Source-of-Truth
+architecture pattern into CVF across a multi-tranche 2026-07 roadmap: a
+canonical contract chain (SOT3-T2), four bounded runtime owners (Refinery,
+Truth Kernel, Truth Flow, and a vertical-slice orchestrator), a ratified A0
+product-activation seam, an accepted A1-A5 live-governance proof ladder, and
+one accepted downstream application proof at a bounded product seam. No ADR
+entry recorded this absorption, so `ARCHITECTURE.md`,
+`CVF_ECOSYSTEM_ARCHITECTURE.md`, and `docs/reference/CVF_ARCHITECTURE_MAP.md`
+had no architecture-decision anchor to cite when they were updated to project
+this accepted work, unlike every other major architecture addition documented
+in this file.
+
+### Decision
+CVF records SOT3 as a bounded contract-to-runtime architecture owner:
+
+- Refinery prepares deterministic source-bound material and holds no truth
+  authority (`EXTENSIONS/CVF_REFINERY/`).
+- Truth Kernel alone owns evaluation, decision, receipt, and truth-reference
+  authority (`EXTENSIONS/CVF_TRUTH_KERNEL/`).
+- Truth Flow manages post-Kernel distribution and lifecycle without
+  recreating upstream authority (`EXTENSIONS/CVF_TRUTH_FLOW/`).
+- A vertical-slice orchestrator proves real cross-package composition through
+  a fixed scenario lifecycle (`EXTENSIONS/CVF_SOT_THREE_LAYER_SLICE/`).
+- Provider output remains downstream content, never truth authority.
+- Activation is bounded to one ratified product seam
+  (`docs/reference/sot_three_layer/CVF_SOT3_ACTIVATION_ARCHITECTURE_DECISION.md`)
+  and one accepted live-governance proof ladder
+  (`docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md`,
+  claim `LIVE_GOVERNANCE_PROVEN_BOUNDED`).
+- Downstream application proof is bounded to one accepted product seam
+  (`docs/reviews/CVF_SOT3_APP_T5_COMPLETION_REVIEW_2026-07-18.md`), not
+  universal SOT3 availability.
+
+### Rejected Overclaims
+
+- SOT3 is not globally activated or always invoked by any CVF Web or
+  production request path.
+- SOT3 is not a provider boundary and does not certify a provider lane.
+- SOT3 is not publicly exported or production-ready.
+- SOT3 does not redefine, widen, or supersede the frozen L0-L6 doctrine
+  layer model; it is projected using the existing contract-to-runtime plane
+  vocabulary from the as-built system architecture catalog.
+- SOT3 does not replace or narrow `docs/reference/truth_foundation/`'s
+  upstream doctrine ownership of source authority, provenance labels, and
+  claim-movement semantics.
+
+### Consequences
+
+- `ARCHITECTURE.md`, `CVF_ECOSYSTEM_ARCHITECTURE.md`, and
+  `docs/reference/CVF_ARCHITECTURE_MAP.md` gained SOT3 architecture pointers
+  in the same tranche that authored this ADR, closing the documented-practice
+  gap this file's own ADR history otherwise showed.
+- `docs/reference/CVF_MASTER_ARCHITECTURE_WHITEPAPER.md` and
+  `docs/reference/CVF_ARCHITECTURE_DIAGRAMS.md` remain deliberately unchanged:
+  the whitepaper is frozen at snapshot `v3.7-W46T1` with `NONE` as its active
+  tranche, and the diagram set is explicitly scoped to `v1.0` through
+  `v1.7.2`; both predate SOT3 by design, not by oversight.
+- Future SOT3 tranches (public export, additional activation seams, or
+  production-readiness claims) require their own dependency-released work
+  order and, where applicable, a superseding or additive ADR; this entry does
+  not pre-authorize them.
+
+### Related Files
+
+- `docs/reference/sot_three_layer/README.md`
+- `docs/reference/sot_three_layer/CVF_SOT3_ACTIVATION_ARCHITECTURE_DECISION.md`
+- `docs/reference/system_architecture_catalog/entries/module.sot3_refinery_runtime.v1.json`
+- `docs/reference/system_architecture_catalog/entries/module.sot3_truth_kernel_runtime.v1.json`
+- `docs/reference/system_architecture_catalog/entries/module.sot3_truth_flow_runtime.v1.json`
+- `docs/reference/system_architecture_catalog/entries/module.sot3_three_layer_slice.v1.json`
+- `docs/roadmaps/CVF_SOT3_ACTIVATION_AND_OPERATIONAL_PROOF_ROADMAP_2026-07-13.md`
+- `docs/reviews/CVF_SOT3_APP_T5_COMPLETION_REVIEW_2026-07-18.md`
+- `ARCHITECTURE.md`
+- `CVF_ECOSYSTEM_ARCHITECTURE.md`
+- `docs/reference/CVF_ARCHITECTURE_MAP.md`

@@ -1,0 +1,12 @@
+{
+  "stage": "e2e_execution",
+  "class": "timeout",
+  "retryable": true,
+  "userAction": "classify_timeout_stage_then_retry",
+  "safeMessage": "The E2E run exceeded its bounded timeout.",
+  "provider": "alibaba",
+  "model": null,
+  "httpStatus": null,
+  "latencyMs": 109813,
+  "traceOrReceipt": null
+}

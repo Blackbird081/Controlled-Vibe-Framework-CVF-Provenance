@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2723,
+  "stateKey": "gclhMfrpP4D0ShadowCanaryDesignReadyIndependentReviewCheckpointRequired20260902",
+  "value": {
+    "status": "P4_D0_SHADOW_CANARY_DESIGN_READY_INDEPENDENT_REVIEW_CHECKPOINT_REQUIRED",
+    "designMaterialCommit": "3ac41e8c7d9acd10d606b6e6304f66d8427ed9d9",
+    "designPath": "docs/assessments/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_2026-09-02.md",
+    "designSha256": "cf5615388f58b6d49fa603a0679d70b22ba28ff175062f5a1973e4f17573d8df",
+    "designDisposition": "DESIGN_ONLY_READY_FOR_INDEPENDENT_REVIEW",
+    "canaryBoundary": "Shadow-only comparison over the same real phase return and evidence; trusted route remains controlling; no second authoring pass, no semantic work duplication, no agent-role stratification, and no inspection of prompts, reasoning, tool order, decomposition or intermediate drafts.",
+    "governanceTaxBudget": "At most one marginal machine command per eligible return; clean-agreement audit sample at most 20 percent and at most 4 cases; zero duplicated semantic work; no provider calls; unavailable timing evidence blocks a cost-saving claim rather than the safety observation.",
+    "nextAllowedMove": "Independently review the P4-D0 canary design. Acceptance may authorize separate R1B work-order authoring, but R1B implementation and P4 canary execution remain closed until their own checkpoints.",
+    "claimBoundary": "Design-only checkpoint. No R1B authoring or execution, actual canary run, phase-route authority change, lifecycle activation, downstream application, provider/live/network, public-sync, deployment or production action is claimed."
+  }
+}

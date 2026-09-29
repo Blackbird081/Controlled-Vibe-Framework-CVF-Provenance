@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1999,
+  "stateKey": "cvfWebUxT4R3Dispatch20260720",
+  "value": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T4-R3",
+    "materialDispatchCommit": "a3a23a783",
+    "blockedReview": "docs/reviews/CVF_WEB_UX_T4_R2_BLOCKED_RETURN_REVIEW_2026-07-20.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_R3_INTERACTION_TRACE_REPAIR_2026-07-20.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "retainedEvidence": "R2 820px persistent-sidebar and 767px drawer pair accepted bounded; preferences and semantic focus claims rejected",
+    "nextAllowedMove": "Capture deterministic preferences and five target-bound keyboard interaction traces from running localhost Web.",
+    "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
+  }
+}

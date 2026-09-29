@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2725,
+  "stateKey": "gclhMfrpP4D0ExternalCritiqueReviseBeforeR1BCorrectionCheckpointRequired20260902",
+  "value": {
+    "status": "P4_D0_EXTERNAL_CRITIQUE_REVISE_BEFORE_R1B_CORRECTION_CHECKPOINT_REQUIRED",
+    "critiqueMaterialCommit": "e79308d2cd5c0ff81e012c963428af3045ff990c",
+    "critiquePath": "docs/reviews/CVF_MFRP_P4_SHADOW_CANARY_AND_GOVERNANCE_TAX_BUDGET_DESIGN_EXTERNAL_CRITIQUE_2026-09-02.md",
+    "critiqueSha256": "a379503d642f40bb76ecbd868c4c86f816ac94a29b1616f8dfe0671df97b533d",
+    "reviewerDisposition": "REVISE_BEFORE_R1B",
+    "blockingFindings": ["F-01", "F-02", "F-03", "F-04", "F-05"],
+    "nonBlockingFindings": ["F-06", "F-07", "F-08"],
+    "nextAllowedMove": "Revise the P4-D0 design to discharge F-01 through F-05 and address F-06 through F-08, then return the revision to independent review. Do not author or execute R1B and do not run P4.",
+    "claimBoundary": "Independent documentary critique only. No design acceptance, R1B authoring/execution, P4 canary execution, route-authority change, provider/live/network, public-sync, deployment or production action is claimed."
+  }
+}

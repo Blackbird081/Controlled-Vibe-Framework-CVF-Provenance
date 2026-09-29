@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2292,
+  "stateKey": "tpgrR7DualRunCanaryAndRollbackRehearsalDesignDispatched20260818",
+  "value": "TPGR-R7 documentation-only design dispatch is materially committed at 555066418. Authority is the paired R7 baseline SHA-256 782ad852e358c4d98bcf44c218d803414a00dbb70936b8eb6cc9b5783c8064e9 and work order SHA-256 c8d8975e561613e7cb8ae257b895c80075e3d63735baad0d893dbb7786ec1458. The worker may create exactly the R7 assessment and worker-return paths, must not stage or commit, and must preserve the unchanged phase-appropriate legacy bundle as sole controller. R7 implementation/canary execution, R8-R9, T15, selective execution, protected edits, source intake, and external effects remain unauthorized."
+}

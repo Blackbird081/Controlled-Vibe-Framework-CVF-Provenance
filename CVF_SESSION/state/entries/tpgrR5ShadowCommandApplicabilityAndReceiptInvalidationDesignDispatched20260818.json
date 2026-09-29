@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2288,
+  "stateKey": "tpgrR5ShadowCommandApplicabilityAndReceiptInvalidationDesignDispatched20260818",
+  "value": "TPGR-R5 documentation-only shadow command-applicability and receipt-invalidation design is dispatched at 3e79f7f4e from R4 final disposition PROCEED_TO_R5_SHADOW_COMMAND_AND_RECEIPT_INVALIDATION and the operator's standing CVF-governed authorization. The exact baseline SHA-256 is c6f65175c54a8bd65a8ca60a9eaaa0ef243fd266c5f6004caf67719530ed7d33; the exact work-order SHA-256 is f28618bedb52c65ee98be6bd1aaf345ebcd607391df86906c43652dab0c9fdee. Pre-dispatch 78/78, reviewer-fast 65/65, commit-steward dispatch preflight PASS, and pre-commit 86/86 passed. The no-commit worker may create only the two named design outputs and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON. R5 implementation, R6-R9, T15, selective execution, protected edits, new source intake, runtime/provider/live/public/deploy/production remain unauthorized."
+}

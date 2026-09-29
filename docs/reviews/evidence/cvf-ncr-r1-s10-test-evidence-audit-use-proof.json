@@ -1,0 +1,93 @@
+{
+  "adapterImplementation": "IMPLEMENTED_BOUNDED_USE_PROOF_ADAPTER",
+  "claimBoundary": "This packet is a bounded ASSF package use-proof adapter result. It may prove one explicit package body read, receipt-backed output use, and one live provider completion. It does not activate package lifecycle state, mutate ASSF registry/index/truth/package sources, implement MCP server behavior, grant authority, commit, push, public-sync, or bypass governed work-order scope.",
+  "executionMode": "LIVE_PROVIDER_USE_PROOF",
+  "lifecycleMutation": false,
+  "activePromotionAuthorized": false,
+  "sourceMutations": [],
+  "provider": "alibaba-dashscope",
+  "model": "qwen3.7-flash-2026-07-15",
+  "skillId": "cvf-engineering-test-evidence-audit",
+  "sourcePaths": {
+    "runtimePackageLoader": "governance/compat/run_assf_runtime_package_loader.py",
+    "activationPolicyResolver": "governance/compat/run_assf_activation_policy_resolver.py",
+    "skillIndex": "docs/reference/agent_system_skills/generated/skill-index.json",
+    "truthIndex": "docs/reference/agent_system_skills/truth/generated/skill-truth-index.json",
+    "freeQuotaLedger": "docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json"
+  },
+  "modelSelection": {
+    "requestedProvider": "alibaba-dashscope",
+    "resolvedProvider": "alibaba-dashscope",
+    "providerStatus": "PROVIDER_USABLE",
+    "requestedModel": "qwen3.7-flash-2026-07-15",
+    "resolvedModel": "qwen3.7-flash-2026-07-15",
+    "status": "MODEL_FREE_QUOTA_USABLE",
+    "ledgerPath": "docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json",
+    "expirationDate": "2026-10-22",
+    "freeQuotaRemaining": 1000000,
+    "diagnosticRerunResult": null,
+    "reason": null
+  },
+  "providerSelection": {
+    "requestedProvider": "alibaba-dashscope",
+    "resolvedProvider": "alibaba-dashscope",
+    "providerStatus": "PROVIDER_USABLE",
+    "selectionBoundary": "ASCP-T5 Model Gateway use case only; not a production model router"
+  },
+  "safeLoadedEnvFiles": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.env.local"
+  ],
+  "packageRead": {
+    "packageBodyDisposition": "LOADED",
+    "packageRoot": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
+    "runtimeEligible": true,
+    "ineligibilityReasons": [],
+    "instructionBodyHash": "sha256:ed822c2320dddc1ed88e1bae16d29c762bc2a2103491c77f4c1bc3f0d39c0a00",
+    "instructionBodyChars": 8119,
+    "skillUsageReceiptId": "sha256:e17e1fa4f113882d10038a22841f5a18ca138a3193a16799e19a2ee102fcfecf",
+    "skillUsageReceiptType": "CVF_ASSF_SKILL_USAGE_RECEIPT"
+  },
+  "activationPolicy": {
+    "activationPolicyState": "USED_WITH_RECEIPT",
+    "matchedUsageReceiptIds": [
+      "sha256:e17e1fa4f113882d10038a22841f5a18ca138a3193a16799e19a2ee102fcfecf"
+    ],
+    "policyReasons": [],
+    "policyDecisionReceiptId": "sha256:6b15fdeda24cfa75df586613b8b8d0c2c68714d4e25b119780d9e5d8f7c20d5d",
+    "usedWithReceipt": true
+  },
+  "executionTask": {
+    "taskPromptHash": "sha256:3dd4dbdaa5c0a8e6f080e2a0599b2149abcfbc2cf5ac3ea556fd5730a429b52e",
+    "maxInstructionChars": 6000
+  },
+  "credentialSource": "DASHSCOPE_API_KEY",
+  "liveCall": {
+    "httpStatus": 200,
+    "latencyMs": 28159,
+    "providerTraceId": "88be67d3-dc6b-9e6b-9e29-e344f0b1f945",
+    "responseHash": "sha256:2ade2e3618adc983d17552d24e6992a2f4d09e7e22ecbb1bdc4bb00ac20fdd2d",
+    "outputHash": "sha256:149cbcb9da952304fcddee1bb172fc6523964ec1904710b7a2aebf535f80799b",
+    "outputPreview": "**Applied Package Controls**\n- Advisory-only (R0): Zero test execution, fixture creation, deletion, commit, or runtime authority.\n- Input gating: Requires asserted claim sentence, source file path, and test file path. Missing/unspecified inputs force `DEFER_WITH_REASON` per invocation boundary.\n- Assertion-first evaluation: Ignores docstrings/comments; validates only executable `assert*` calls, fixture setup, and concrete value checks.\n- Single-label classification: Exactly one of {KEEP, REPAIR, CONSOLIDATE, ADD, DEFER_WITH_REASON} based on observed assertion rigor.\n- Non-self-executing: Output is a handoff artifact; never becomes a test PASS or deletion permission.\n\n**Execution Output**\n*(Note: The prompt did not supply the required asserted claim, source path, or test path. Per package rules, missing inputs trigger a procedural defer.)*\n```\ntarget: [source_file_path] -> [test_file_path]\nlabel: DEFER_WITH_REASON\ncited_evidence: N/A (inputs pending)\nreason: Audit cannot proceed without the asserted claim sentence, source file path, and test file path. Per package invocation boundary, missing or unspecified inputs force DEFER_WITH_REASON until concrete paths and the claim are suppli",
+    "outputChars": 1861
+  },
+  "executionDisposition": "LIVE_PROVIDER_USE_PROOF_PASS",
+  "packageUseProofReceipt": {
+    "receiptId": "sha256:b0f8a1030650a5c5544e3583b17ae9e64eaa05166dff7e9223be3ff6228c942e",
+    "authorityBoundary": "use-proof receipt proves one receipt-backed bounded package execution only; it does not grant authority, activate package lifecycle state, or bypass governed work-order scope",
+    "generatedBy": "governance/compat/run_assf_package_use_proof_adapter.py",
+    "httpStatus": 200,
+    "latencyMs": 28159,
+    "model": "qwen3.7-flash-2026-07-15",
+    "outputConsumed": true,
+    "outputHash": "sha256:149cbcb9da952304fcddee1bb172fc6523964ec1904710b7a2aebf535f80799b",
+    "policyReceiptId": "sha256:6b15fdeda24cfa75df586613b8b8d0c2c68714d4e25b119780d9e5d8f7c20d5d",
+    "provider": "alibaba-dashscope",
+    "providerTraceId": "88be67d3-dc6b-9e6b-9e29-e344f0b1f945",
+    "receiptType": "CVF_ASSF_PACKAGE_USE_PROOF_RECEIPT",
+    "responseHash": "sha256:2ade2e3618adc983d17552d24e6992a2f4d09e7e22ecbb1bdc4bb00ac20fdd2d",
+    "schemaVersion": "0.1.0",
+    "skillId": "cvf-engineering-test-evidence-audit",
+    "skillUsageReceiptId": "sha256:e17e1fa4f113882d10038a22841f5a18ca138a3193a16799e19a2ee102fcfecf"
+  },
+  "diagnostic": null
+}

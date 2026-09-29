@@ -1,0 +1,51 @@
+{
+  "registryOrder": 200,
+  "id": "acel-post-g7-wikiskill-source-intake",
+  "corpusType": "EXTERNAL_SOURCE",
+  "displayName": "ACEL post-G7 WikiSkill source-level intake",
+  "scopePaths": [
+    ".private_reference/source_mirrors/kenhuangus__wikiskill/"
+  ],
+  "fileCount": 58,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "ACEL-POST-G7-REFINEMENT-T0",
+  "scanDate": "2026-09-25",
+  "manifestHash": "6b91e21455a0e8cf2a282ff665debcdf708f172eef74b7c411f29092c27d8f9a",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "manifestPath": "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_EVIDENCE_2026-09-25.json",
+  "packetPath": "docs/audits/CVF_ACEL_POST_G7_THREE_REPO_SOURCE_INTAKE_AUDIT_2026-09-25.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": "OPERATOR_DIRECT_AUTHORIZATION_2026-09-25",
+  "verdicts": {
+    "gc047": "PASS_WHOLE_TREE_STRUCTURAL_SURVEY",
+    "gc048": "PASS_SELECTED_IMPLEMENTATION_OWNER_ROUTING",
+    "gc050": "PASS_VALUE_CONVERSION_RECORDED"
+  },
+  "semanticRegions": [
+    "immutable raw trace layer",
+    "persistent wiki knowledge layer",
+    "active skill mutation layer",
+    "strict-improvement gate and skill-only rollback",
+    "programmatic proposal impact ledger",
+    "paired no-skill versus skilled evaluation"
+  ],
+  "priorAbsorption": "The bounded post-G7 research reconciliation classified the WikiSkill concept as ENRICH_EXISTING and correctly bounded this repository as an independent reimplementation, but did not perform a Local source-level survey. This entry opens the distinct Local source-intake program authorized by the operator on 2026-09-25; it does not reopen G1-G7.",
+  "findings": [
+    {
+      "id": "ACEL-POST-G7-WIKI-01",
+      "summary": "Evidence/knowledge/active-mutation separation and exact proposal-impact receipts are material refinements for ASSF and Learning Plane owners.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Implement a bounded proposal-impact and rollback-evidence refinement while preserving paper-versus-reimplementation provenance.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "RUNTIME_BEHAVIOR_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "active skill rollback erases raw traces",
+    "proposer self-approves mutation",
+    "neutral score accepted",
+    "wiki grants activation authority"
+  ],
+  "nextScanRecommendation": "Implement a bounded proposal-impact and rollback-evidence refinement at the existing promotion/learning owner; defer the remaining 43 files until a named question requires them."
+}

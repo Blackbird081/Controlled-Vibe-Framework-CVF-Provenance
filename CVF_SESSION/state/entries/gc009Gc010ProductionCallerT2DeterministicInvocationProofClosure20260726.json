@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2106,
+  "stateKey": "gc009Gc010ProductionCallerT2DeterministicInvocationProofClosure20260726",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_GC009_INVOCATION_PROVEN",
+    "date": "2026-07-26",
+    "materialCommit": "2e4412c88",
+    "executionBaseHead": "df0eaf632",
+    "completionReview": "docs/reviews/CVF_GC009_GC010_PRODUCTION_CALLER_T2_DETERMINISTIC_INVOCATION_PROOF_COMPLETION_2026-07-26.md",
+    "focusedTest": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.mandatory-gateway-invocation.test.ts",
+    "verification": "independent focused 2/2; combined route 33/33; T1 regression 20/20; TypeScript PASS; GC-023 PASS; worker-return fast PASS; pre-implementation 77/77; pre-commit 83/83",
+    "acceptedClaim": "bounded local GC-009 actual-route invocation with mocked provider seam",
+    "nextAllowedMove": "operator checkpoint to select a fresh T3 operator-projection packet, a separate GC-010 AgentExecutionRuntime packet, or park the lane",
+    "laterTranches": "T3-T4 and GC-010 remain HOLD_* pending fresh source-verified authority",
+    "claimBoundary": "No live provider, deployment, production-readiness, public export, GC-010, T3-T4, or whole paired-gap closure claim."
+  }
+}

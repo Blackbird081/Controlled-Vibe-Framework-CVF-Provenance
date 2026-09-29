@@ -1,0 +1,20 @@
+{
+  "stateOrder": 1903,
+  "stateKey": "sot3AppT2R1Dispatch20260717",
+  "value": {
+    "status": "DISPATCHED_R1",
+    "date": "2026-07-17",
+    "materialCommit": "4be38018f",
+    "dispatchBaseHead": "772774fd1",
+    "originalDispatchCommit": "608746eb4",
+    "blockedReturn": "docs/reviews/CVF_SOT3_APP_T2_WORKER_RETURN_2026-07-17.md",
+    "blockedReturnReview": "docs/reviews/CVF_SOT3_APP_T2_BLOCKED_RETURN_REVIEW_AND_R1_REDISPATCH_2026-07-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T2_APPLICATION_BOUNDARY_FAIL_CLOSED_HARDENING_2026-07-17.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "externalPathCount": 9,
+    "provenanceOutputCount": 2,
+    "verification": "Independent automation-assist reproduction accepted the stop-before-edit block; repaired packet passed automation-assist, worker-return fast gate 62/62, pre-dispatch 75/75, commit steward, and pre-commit 83/83.",
+    "nextAllowedMove": "Execute the exact T2-R1 no-commit worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "claimBoundary": "Deterministic sibling source/test work only; no provider/network/live/browser/public/T3 action."
+  }
+}

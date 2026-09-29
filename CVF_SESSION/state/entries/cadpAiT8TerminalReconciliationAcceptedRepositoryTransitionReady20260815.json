@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2233,
+  "stateKey": "cadpAiT8TerminalReconciliationAcceptedRepositoryTransitionReady20260815",
+  "value": "CADP-AI-T8 is independently accepted closed bounded at material commit 3b906862b. The roadmap, 140-row finding overlay, and conditional reopen index are reconciled through T5-R6; the historical ledger segment is byte-identical. External CADP runtime is PARKED_DEMAND_GATED under six conjunctive reopen conditions. The current repository is cleanly documented for an operator-selected next repository, but no transfer, push, public sync, deployment, or production action was performed."
+}

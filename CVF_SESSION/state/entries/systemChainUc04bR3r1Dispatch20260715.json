@@ -1,0 +1,23 @@
+{
+  "stateOrder": 1804,
+  "stateKey": "systemChainUc04bR3r1Dispatch20260715",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "ac46a1bf7",
+    "workOrderId": "SCLP-UC04B-R3R1",
+    "dispatchBaseHead": "a41660892",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "selectedCase": "negative_reviewer_docs_check",
+    "positiveCaseExcluded": true,
+    "playwrightBaseUrl": "http://localhost:3001",
+    "playwrightInvocationCeiling": 1,
+    "webSubmissionCeiling": 1,
+    "selectedCheckerExecutionCeiling": 0,
+    "retryCeiling": 0,
+    "providerCallCeiling": 0,
+    "proofMutationAuthorized": "one exact locator-expression replacement only",
+    "runtimeMutationAuthorized": false,
+    "nextAllowedMove": "execute the exact no-commit negative-only R3R1 work order once and return for reviewer closure",
+    "claimBoundary": "Dispatch authority only. R3 positive evidence is retained and must not be rerun; reviewer denial, full UC-04B, unified inventory, provider, public, production, scale, certification, and user value are not yet promoted."
+  }
+}

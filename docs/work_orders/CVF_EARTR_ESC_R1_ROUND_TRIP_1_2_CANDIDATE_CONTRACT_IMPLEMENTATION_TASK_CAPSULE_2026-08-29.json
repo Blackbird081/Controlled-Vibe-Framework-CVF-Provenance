@@ -1,0 +1,192 @@
+{
+  "schema": "cvf.externalAgentTaskCapsule.v1",
+  "protocolVersion": "1.1.0",
+  "projectionOf": "cvf.external-agent-round-trip",
+  "generatedAt": "2026-08-29T15:00:00+07:00",
+  "task": {
+    "id": "eartr-esc-r1-round-trip-1-2-candidate-contract",
+    "title": "EARTR-ESC-R1 Round-Trip 1.2 Candidate Contract Implementation",
+    "objective": "Implement the accepted typed two-lane absorption-candidate, dual-reader, deterministic Local binding, and candidate-aware validation receipt semantics within exactly four existing owners.",
+    "workingMode": "EXTEND_SUPPLIED_REPOSITORY",
+    "outputRoot": "docs/reviews/CVF_EARTR_ESC_R1_ROUND_TRIP_1_2_CANDIDATE_CONTRACT_IMPLEMENTATION_WORKER_RETURN_2026-08-29.md",
+    "nonGoals": [
+      "Do not create a new protocol, profile, schema, registry, runtime, truth owner, receipt owner, authority owner, or state machine.",
+      "Do not modify public or portable packet representations in this worker tranche.",
+      "Do not stage, commit, push, publish, deploy, call providers, use credentials, or claim protocol 1.2.0 released."
+    ]
+  },
+  "cvfPublicSource": {
+    "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "commit": "2aa17841892fac3cde74214ad0471814084294e0",
+    "sourcePosture": "OPERATOR_PINNED_NOT_LIVE_VERIFIED"
+  },
+  "sourceRepositories": [
+    {
+      "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+      "commit": "2aa17841892fac3cde74214ad0471814084294e0",
+      "usage": "REFERENCE_AND_ANALYSIS"
+    }
+  ],
+  "gateA": {
+    "name": "SOURCE_OWNER_OVERLAP",
+    "requiredBefore": "DESIGN_OR_CODE",
+    "requiredEvidence": [
+      "Recompute every pinned input hash before edits.",
+      "Read the accepted design, external closure, baseline, work order, task capsule, and all four owner paths.",
+      "Confirm dispatch-base ancestry, clean worktree, empty staging, and exact five-path worker ownership.",
+      "Confirm no competing validator, finding-workflow, protocol-version, or receipt owner exists."
+    ],
+    "terminalStates": [
+      "PASS",
+      "RETURN_FOR_REPAIR",
+      "BLOCKED"
+    ]
+  },
+  "gateB": {
+    "name": "DESIGN_CODE_TEST",
+    "opensOnlyWhen": "gateA=PASS",
+    "requiredEvidence": [
+      "Implement mutually exclusive external-source-value and internal-CVF-defect candidate variants.",
+      "Implement candidateContractVersion 1 dual reading without legacy promotion.",
+      "Bind PASS receipts to exact manifest, protocol version, and candidate-contract version.",
+      "Add focused positive, negative, contamination, reference-integrity, dual-reader, receipt-mismatch, and authority-widening tests.",
+      "Return exact changed-set and empty-staging evidence."
+    ]
+  },
+  "authorityEnvelope": {
+    "commit": false,
+    "push": false,
+    "publication": false,
+    "deployment": false,
+    "providerCalls": false,
+    "credentials": false,
+    "destructiveActions": false
+  },
+  "protectedPaths": {
+    "consumers": [
+      "worker",
+      "reviewer"
+    ],
+    "freshness": {
+      "anchor": "dispatch base 590cf8ab71805abb947a2c49b8dcc33335aadc1e and paired work order",
+      "regenerateWhen": "dispatch base, write ownership, pinned hashes, protocol design, or authority envelope changes"
+    },
+    "paths": [
+      "AGENTS.md",
+      "CVF_SESSION/",
+      "docs/baselines/",
+      "docs/work_orders/",
+      "docs/roadmaps/",
+      "docs/guides/",
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_TASK_CAPSULE.schema.json",
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_OWNER_SURFACE_INDEX.json",
+      "scripts/Update-CVF-External-Agent-Packet.ps1"
+    ]
+  },
+  "ownerMap": {
+    "consumers": [
+      "worker",
+      "reviewer",
+      "return validator"
+    ],
+    "freshness": {
+      "anchor": "pinned SHA-256 hashes in the EARTR-ESC-R1 work order",
+      "regenerateWhen": "any owner path or accepted design hash changes"
+    },
+    "owners": [
+      {
+        "path": "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md",
+        "symbol": "returned-output provenance and Local reconciliation workflow",
+        "competingOwnersChecked": [
+          "KIOD and Core Standard remain supporting authorities; no second Local candidate-to-reconciliation owner was found."
+        ]
+      },
+      {
+        "path": "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md",
+        "symbol": "Protocol Identity and Update Rule",
+        "version": "cvf.external-agent-round-trip@1.1.0",
+        "competingOwnersChecked": [
+          "Public and portable projections are representations, while this contract owns version compatibility and same-release synchronization."
+        ]
+      },
+      {
+        "path": "scripts/external_agent_packet.py",
+        "symbol": "PROTOCOL_VERSION, _validate_source_rows, validate_return",
+        "competingOwnersChecked": [
+          "No alternate return-manifest validator or validation-receipt emitter was found in the governed packet surfaces."
+        ]
+      },
+      {
+        "path": "scripts/test_external_agent_packet.py",
+        "symbol": "_make_return and validate-return focused tests",
+        "competingOwnersChecked": [
+          "No separate focused test owner covers return candidate semantics, dual reading, or receipt binding."
+        ]
+      }
+    ]
+  },
+  "invariants": {
+    "consumers": [
+      "worker",
+      "reviewer"
+    ],
+    "freshness": {
+      "anchor": "accepted design SHA-256 ff3ca9815a52bcd2383f7da3f063fade6f53c02fc0d2da94972925c6c13c06c1",
+      "regenerateWhen": "accepted design, closure verdict, candidate fields, or receipt relation changes"
+    },
+    "mustPreserve": [
+      "External Agent performs discovery and public pre-mapping, not current CVF authority determination.",
+      "External source value and incidental CVF internal defects remain mutually exclusive provenance classes.",
+      "Candidate IDs are unique only within one return and are joined under the exact return-manifest hash.",
+      "Legacy 1.1 non-empty candidates remain historical untyped evidence and cannot be silently promoted.",
+      "Operator acceptance, owner binding, and Work Order existence do not independently authorize implementation.",
+      "Return validation PASS proves bounded intake integrity only, not semantic value or CVF acceptance."
+    ],
+    "forbiddenTransitions": [
+      "Do not create a new owner, schema file, registry, runtime, profile, truth surface, receipt owner, authority owner, or global state machine.",
+      "Do not interpret public absence as current-local absence or authority to invent an owner.",
+      "Do not let a legacy or candidate-unaware PASS receipt open typed Local reconciliation.",
+      "Do not modify or distribute the public/portable representations in this worker tranche.",
+      "Do not stage or commit worker changes."
+    ]
+  },
+  "verification": {
+    "consumers": [
+      "worker",
+      "reviewer",
+      "return validator"
+    ],
+    "freshness": {
+      "anchor": "final unstaged worker diff against executionBaseHead",
+      "regenerateWhen": "any implementation, contract, or test line changes after verification"
+    },
+    "focusedTests": [
+      "python -m pytest scripts/test_external_agent_packet.py -q",
+      "python governance/compat/run_worker_return_fast_gate.py --pytest-target scripts/test_external_agent_packet.py"
+    ],
+    "negativeCases": [
+      "mixed source-value and internal-defect fields fail",
+      "broken or inconsistent source references fail",
+      "invalid public-only status enums fail",
+      "legacy non-empty candidates cannot be silently promoted",
+      "unsupported or malformed candidateContractVersion fails",
+      "strict-v1 manifest plus legacy-validator PASS receipt is insufficient",
+      "receipt bound to a different manifest fails",
+      "receipt candidate-contract version mismatch fails",
+      "candidate or receipt authority widening fails"
+    ],
+    "deterministicChecks": [
+      "git diff --check",
+      "git diff --name-only",
+      "git diff --cached --name-only",
+      "git status --short"
+    ],
+    "requiredOutputs": [
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md",
+      "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md",
+      "scripts/external_agent_packet.py",
+      "scripts/test_external_agent_packet.py",
+      "docs/reviews/CVF_EARTR_ESC_R1_ROUND_TRIP_1_2_CANDIDATE_CONTRACT_IMPLEMENTATION_WORKER_RETURN_2026-08-29.md"
+    ]
+  }
+}

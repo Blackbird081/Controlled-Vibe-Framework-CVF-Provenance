@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1567,
+  "stateKey": "mseaR73ProductValueRecoveryLeanGovernanceClosure20260708",
+  "value": "CLOSED_PASS_BOUNDED_PENDING_OPERATOR_REVIEW. R73A-R73F accepted as one low-commit product-value recovery batch at base 5790a2ee4. Material repairs committed at a7be6f2b4: scripts/new-cvf-workspace.ps1 now requires and invokes scripts/install_cvf_workspace_root_wrappers.ps1 during bootstrap, uses safer path checks, literal here-strings for static Markdown blocks, and non-backtick template substitution; scripts/update_cvf_workspace_public_core.ps1 now defines the wrapper-installer path and includes the installer in required/overlay public-core files. Evidence: PowerShell parse checks PASS for both changed scripts; temp-workspace bootstrap smoke PASS; generated guide token scan PASS for public-safe leakage strings; material pre-commit hook PASS 80/80. Boundary: public-sync sibling clone verified clean and public-remote-bound, but no public-sync mutation or push was performed; no checker retirement, hook/Fast Lane edit, runtime/provider/live proof, hosted/public/production claim, or product extraction was performed."
+}

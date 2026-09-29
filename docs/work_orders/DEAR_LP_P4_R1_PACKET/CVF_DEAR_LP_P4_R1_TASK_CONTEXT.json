@@ -1,0 +1,100 @@
+{
+  "protectedPaths": {
+    "consumers": [
+      "worker",
+      "reviewer"
+    ],
+    "freshness": {
+      "anchor": "DEAR-LP-R1 P0-P3 reviewer acceptance on 2026-08-30",
+      "regenerateWhen": "the task capsule, target path, or return contract changes"
+    },
+    "paths": [
+      "AGENTS.md",
+      "CVF_SESSION/",
+      "governance/compat/",
+      "docs/reference/external_agent_review/",
+      "scripts/external_agent_packet.py",
+      "scripts/external_agent_return_contract.py"
+    ]
+  },
+  "ownerMap": {
+    "consumers": [
+      "worker",
+      "reviewer"
+    ],
+    "freshness": {
+      "anchor": "operator-pinned public CVF commit d7860138350130d6d105826ce186f1beeaba3c2d",
+      "regenerateWhen": "the public pin or proposed target changes"
+    },
+    "owners": [
+      {
+        "path": "docs/examples/external_agent_pilot/DEAR_LP_P4_OPERATOR_CHECKLIST.md",
+        "symbol": "new documentation-only pilot candidate",
+        "version": "proposal-only",
+        "competingOwnersChecked": [
+          "docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md",
+          "docs/reference/external_agent_review/README.md"
+        ]
+      }
+    ]
+  },
+  "invariants": {
+    "consumers": [
+      "worker",
+      "reviewer"
+    ],
+    "freshness": {
+      "anchor": "DEAR-LP P4 representative-pilot contract",
+      "regenerateWhen": "the required return layout or authority vocabulary changes"
+    },
+    "mustPreserve": [
+      "external output remains EXTERNAL_PROPOSAL and NOT_CVF_SOT",
+      "automaticPromotionAllowed remains false",
+      "absorptionComplete and runtimeUseProven remain false",
+      "exact task-capsule and source/public pins bind the return",
+      "all returned files except FILE_INVENTORY.sha256 are inventoried by SHA-256"
+    ],
+    "forbiddenTransitions": [
+      "external return to CVF source of truth",
+      "external return to local promotion",
+      "external return to runtime or representative-use proof",
+      "external return to commit, push, publication, or deployment"
+    ]
+  },
+  "verification": {
+    "consumers": [
+      "worker",
+      "return validator"
+    ],
+    "freshness": {
+      "anchor": "DEAR-LP P4 work-order verification section",
+      "regenerateWhen": "the return manifest, target map, or inventory contract changes"
+    },
+    "focusedTests": [
+      "parse both returned JSON files",
+      "recompute SHA-256 for the proposed file and every inventory entry"
+    ],
+    "negativeCases": [
+      "no local-only receipt",
+      "no secret-like value",
+      "no forbidden completion or authority claim",
+      "no symlink or path traversal"
+    ],
+    "deterministicChecks": [
+      "LF UTF-8 text",
+      "sorted complete inventory",
+      "second hash computation matches the first"
+    ],
+    "requiredOutputs": [
+      "README.md",
+      "EXTERNAL_AGENT_RETURN_MANIFEST.json",
+      "SOURCE_MANIFEST.md",
+      "DECISION_LOG.md",
+      "TEST_EVIDENCE.md",
+      "CLAIM_BOUNDARY.md",
+      "PROPOSED_TARGET_MAP.json",
+      "FILE_INVENTORY.sha256",
+      "PROPOSED_CVF_CHANGESET/docs/examples/external_agent_pilot/DEAR_LP_P4_OPERATOR_CHECKLIST.md"
+    ]
+  }
+}

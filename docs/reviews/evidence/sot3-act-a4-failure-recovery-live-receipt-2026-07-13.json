@@ -1,0 +1,60 @@
+{
+  "batchId": "SOT3-ACT-A4",
+  "claim": "SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED",
+  "contextObservation": {
+    "approvedContextHash": "bc835f5934430193afca03fa7c66d6845554c23a37e80c23d258df9c6a6c5d2a",
+    "approvedContextIncluded": true,
+    "providerRequestObserved": true,
+    "providerSystemPromptHash": "be324a60b8f694a87a762459d81893b7950d91e5a741a6319a6f28b81f33b6c1",
+    "rawPromptPersisted": false
+  },
+  "correlation": {
+    "envelopeId": "env-mrjdmknn-tnrxqh",
+    "flowPackageIds": [
+      "DPKG-000001"
+    ],
+    "governanceReceiptId": "rcpt-env-mrjdmknn-tnrxqh",
+    "kernelDecisionIds": [
+      "KD-000001"
+    ],
+    "packetIds": [
+      "RP-000001"
+    ],
+    "sot3IntegrityHash": "sha256:f4634acc12b653bf38fde5d2f9850e7f6550c2aea673205e6a063914ca499e81",
+    "sot3RecordId": "SOT3EV-557237b988c060931811cc5c5f2995ad",
+    "sot3RequestId": "e6060777-eeb1-4bed-a4c6-e46f1e70da1d",
+    "traceCount": 1,
+    "truthReceiptIds": [
+      "RCPT-000001"
+    ],
+    "truthReferenceIds": [
+      "TREF-000001"
+    ]
+  },
+  "executionBaseHead": "f16f358c9",
+  "finishedAtUtc": "2026-07-13T15:28:02.362626+00:00",
+  "localNegativeGatePassed": true,
+  "negativeCaseCount": 19,
+  "note": "Reuses the existing A3 route-adjacent live test implementation unaltered, per the A4 work order's Allowed Scope. This receipt is a fresh A4-scoped artifact; it does not modify or supersede the historical A3 receipt or claim.",
+  "overall": "PASS",
+  "providerProof": {
+    "httpStatus": 200,
+    "keyAliasUsed": "ALIBABA_API_KEY",
+    "latencyMs": 2643,
+    "model": "qwen-turbo",
+    "outputLength": 1471,
+    "provider": "alibaba",
+    "success": true
+  },
+  "recoveryProviderCallCount": 1,
+  "rollbackProviderCallCount": 1,
+  "schemaVersion": "cvf.sot3ActA4LiveReceipt.v1",
+  "secretSafety": {
+    "fullPromptPersisted": false,
+    "rawKeyPersisted": false,
+    "rawOutputPersisted": false,
+    "rawProviderBodyPersisted": false
+  },
+  "startedAtUtc": "2026-07-13T15:26:58.733446+00:00",
+  "zeroProviderCallCaseCount": 18
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2283,
+  "stateKey": "tpgrR2gGeneralizedAbsorptionRoutingFeasibilityAssessmentClosed20260818",
+  "value": "TPGR-R2G is CLOSED_PASS_BOUNDED. Original exact two-file assessment/worker-return material is committed at 94c13660ef3697d65d1151d6ccafb805cdadbaba; independent reviewer evidence correction is committed at 6dae3bc20ed9f6b6ab809e7b05f2847e9e1a2629. Final artifact SHA-256 values are f452f26204a7a60d70a9d4696f8cc1fdc0289db414f72ff38d8536cfd0b1a5fd for the assessment and 1687167146c05ea1051bdde45e17ace3cef6616d72f25dbec877b7ce3ead4345 for the worker return. Evidence: 170 registry entries with exact type/status distribution; 193 checker files; 80 pre-implementation command rows comprising 79 direct checker invocations and one automation-assist wrapper; 114 checker files not directly referenced with no indirect-use conclusion; worker-return fast PASS; both material pre-commit bundles 86/86 PASS. Final disposition PROCEED_TO_THRESHOLD_DESIGN. R3 requires fresh operator authorization and governed dispatch; RSPB cluster selection remains independent."
+}

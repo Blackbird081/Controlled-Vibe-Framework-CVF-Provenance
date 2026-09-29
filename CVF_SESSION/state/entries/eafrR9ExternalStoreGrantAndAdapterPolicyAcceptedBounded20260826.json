@@ -1,0 +1,18 @@
+{
+  "stateOrder": 2343,
+  "stateKey": "eafrR9ExternalStoreGrantAndAdapterPolicyAcceptedBounded20260826",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED",
+    "materialCommit": "7767c728fcc81190867c9ec825b6a18ba340c219",
+    "dispatchCommit": "85a6f809e",
+    "workerReturn": "docs/reviews/CVF_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_WORKER_RETURN_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
+    "roadmap": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+    "corpusRegistryEntry": "docs/corpus-intelligence/registry/entries/eafr-r9-authority-and-destination-policy-source-surfaces.json",
+    "decisions": "Accept a sibling ExternalStoreExecutionGrant/evaluateExternalStoreExecutionAuthority design and DESIGNATED_SHARED_PACKAGE_OWNER=cvf-model-gateway with exact adapter-destination-policy.ts interface.",
+    "reviewRepairs": "Corrected the gateway dependency claim to distinguish zero runtime/local-workspace dependencies from four tooling devDependencies, and replaced a non-binding destination-policy example with an exact module, type, function signature, and consumer normalization contract.",
+    "proof": "All 13 pinned hashes matched; worker-return fast and reviewer-fast 66/66 passed; material pre-commit 87/87 passed; GC-051 aggregate covers 175 corpora; zero provider, network, external-store, live, build, or runtime action occurred.",
+    "nextAllowedMove": "Author and validate a fresh GC-018 baseline and source-verified work order for a separately named implementation tranche only; implementation remains parked until that packet is committed.",
+    "claimBoundary": "Design closure only. RFR, provider/live/network and external-store calls, build, BuildAuthority repair, runtime implementation, package-dependency edits, public-sync, deployment and push remain parked."
+  }
+}

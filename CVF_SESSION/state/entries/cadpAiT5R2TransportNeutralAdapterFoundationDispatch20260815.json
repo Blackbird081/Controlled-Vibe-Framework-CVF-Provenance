@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2208,
+  "stateKey": "cadpAiT5R2TransportNeutralAdapterFoundationDispatch20260815",
+  "value": "CADP-AI-T5-R2 transport-neutral external-readout adapter foundation dispatch is committed at 2f6d0248873c4cedc607057a64f19cc9c1aa8439. The reviewed GC-018 baseline and exact work order authorize a WORKER_MUST_NOT_COMMIT seven-path tranche: one pure adapter contract, focused test, internal and package-root named exports, bounded T4 fixture reconciliation, one negative-proof reference, and one pending worker return. The adapter must remain authentication-required and fail closed; no caller input may produce accepted metadata. MCP/CLI/HTTP registration or invocation, authentication implementation, credentials, provider/live/network action, mutation, hooks/CI, public sync, deployment, production, and moratorium lift remain forbidden."
+}

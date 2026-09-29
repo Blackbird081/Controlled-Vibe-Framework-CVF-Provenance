@@ -1,0 +1,153 @@
+{
+  "schema": "cvf.externalAgentTaskCapsule.v1",
+  "protocolVersion": "1.1.0",
+  "projectionOf": "cvf.external-agent-round-trip",
+  "generatedAt": "2026-08-28T10:30:00+07:00",
+  "task": {
+    "id": "eacq-fv-l1-preclosure-base-range-dispatch-guard",
+    "title": "EACQ-FV L1 Pre-Closure Base Range Dispatch Guard",
+    "objective": "Reject dispatch-ready no-commit work orders that pin a pre-closure HEAD range to their dispatch base, while preserving safe commands and explanatory prose.",
+    "workingMode": "EXTEND_SUPPLIED_REPOSITORY",
+    "outputRoot": "docs/reviews/CVF_EACQ_FV_L1_PRECLOSURE_BASE_RANGE_DISPATCH_GUARD_WORKER_RETURN_2026-08-28.md",
+    "nonGoals": [
+      "Do not change autorun runtime behavior, governed standards, hooks, catalogs, roadmaps, or session state.",
+      "Do not rewrite historical closed work orders or create a parallel checker.",
+      "Do not open MV-3 or UAA.",
+      "Do not commit, push, publish, deploy, call providers, or use credentials."
+    ]
+  },
+  "cvfPublicSource": {
+    "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "commit": "d1042ab0b2f044ca99fa3c812e38e33631b20869",
+    "sourcePosture": "OPERATOR_PINNED_NOT_LIVE_VERIFIED"
+  },
+  "sourceRepositories": [
+    {
+      "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+      "commit": "d1042ab0b2f044ca99fa3c812e38e33631b20869",
+      "usage": "REFERENCE_AND_ANALYSIS"
+    }
+  ],
+  "gateA": {
+    "name": "SOURCE_OWNER_OVERLAP",
+    "requiredBefore": "DESIGN_OR_CODE",
+    "requiredEvidence": [
+      "Read the template base-anchor rule, literal-format gotcha 12, three recurring worker-return findings, checker owner, and autorun owner.",
+      "Confirm dispatch base ancestry, pinned hashes, exact three-path write ownership, and empty staging.",
+      "Confirm the missing layer is pre-dispatch validation and not runtime range-shape enforcement.",
+      "Confirm no parallel dispatch-quality owner exists."
+    ],
+    "terminalStates": ["PASS", "RETURN_FOR_REPAIR", "BLOCKED"]
+  },
+  "gateB": {
+    "name": "DESIGN_CODE_TEST",
+    "opensOnlyWhen": "gateA=PASS",
+    "requiredEvidence": [
+      "Reject literal and symbolic dispatch-base reuse in executable pre-closure HEAD commands.",
+      "Preserve safe pre-implementation and distinct-material-base commands.",
+      "Ignore explanatory prose outside Verification Commands.",
+      "Run the six focused cases and dispatch-quality regression gate.",
+      "Return exact changed-set, size, and empty-staging evidence."
+    ]
+  },
+  "authorityEnvelope": {
+    "commit": false,
+    "push": false,
+    "publication": false,
+    "deployment": false,
+    "providerCalls": false,
+    "credentials": false,
+    "destructiveActions": false
+  },
+  "protectedPaths": {
+    "consumers": ["worker", "reviewer"],
+    "freshness": {
+      "anchor": "dispatch base 3a7d210bebdec728a10e708468fde3947da3581b and paired work order",
+      "regenerateWhen": "dispatch base, write ownership, pinned hashes, or authority envelope changes"
+    },
+    "paths": [
+      "AGENTS.md",
+      "CVF_SESSION/",
+      "governance/compat/run_agent_autorun_workflow_gate.py",
+      "governance/compat/check_work_order_dispatch_quality.py",
+      "docs/reference/",
+      "docs/roadmaps/"
+    ]
+  },
+  "ownerMap": {
+    "consumers": ["worker", "reviewer", "return validator"],
+    "freshness": {
+      "anchor": "pinned SHA-256 hashes in the L1 work order",
+      "regenerateWhen": "dispatch-quality range module, autorun owner, template, gotcha 12, or dispatch base changes"
+    },
+    "owners": [
+      {
+        "path": "governance/compat/check_work_order_dispatch_quality_range.py",
+        "symbol": "_validate_work_order and new bounded pre-closure base validator",
+        "version": "dispatch-quality split owner at 3a7d210be",
+        "competingOwnersChecked": ["Main checker loads this range module; no separate pre-dispatch stale-base validator was found."]
+      },
+      {
+        "path": "governance/compat/run_agent_autorun_workflow_gate.py",
+        "symbol": "committed-range shape preflight",
+        "competingOwnersChecked": ["This remains the runtime range-shape owner and is read-only for L1."]
+      },
+      {
+        "path": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+        "symbol": "base-anchor lifecycle and committed-range guidance",
+        "competingOwnersChecked": ["Literal-format gotcha 12 corroborates the rule; neither source is modified by L1."]
+      }
+    ]
+  },
+  "invariants": {
+    "consumers": ["worker", "reviewer"],
+    "freshness": {
+      "anchor": "EV-1 closure c921a7528 and L1 dispatch base",
+      "regenerateWhen": "work-order lifecycle rules, range-shape behavior, or dispatch ownership changes"
+    },
+    "mustPreserve": [
+      "Keep autorun as the authoritative committed-range shape owner.",
+      "Validate only dispatch-ready work orders and the real Verification Commands section.",
+      "Keep historical untouched artifacts suppressed by the existing range-aware checker behavior.",
+      "Keep worker changes unstaged and uncommitted."
+    ],
+    "forbiddenTransitions": [
+      "Do not modify autorun, standards, hooks, catalogs, roadmap, session, or public paths.",
+      "Do not create a new checker or perform Git lookups inside the new validation.",
+      "Do not reject safe distinct material bases or prose-only examples.",
+      "Do not stage or commit worker changes."
+    ]
+  },
+  "verification": {
+    "consumers": ["worker", "reviewer", "return validator"],
+    "freshness": {
+      "anchor": "final unstaged worker diff against execution base",
+      "regenerateWhen": "any implementation, test, or return line changes after verification"
+    },
+    "focusedTests": [
+      "python -m pytest governance/compat/test_check_work_order_dispatch_quality_preclosure_base_range.py -q",
+      "python governance/compat/check_work_order_dispatch_quality.py --base HEAD --head HEAD --json",
+      "python governance/compat/run_worker_return_fast_gate.py --pytest-target governance/compat/test_check_work_order_dispatch_quality_preclosure_base_range.py"
+    ],
+    "negativeCases": [
+      "literal dispatch SHA reused by pre-closure plus HEAD fails",
+      "symbolic dispatchBaseHead reused by pre-closure plus HEAD fails"
+    ],
+    "deterministicChecks": [
+      "pre-implementation with dispatch base passes",
+      "pre-closure with distinct material base passes",
+      "unsafe command in prose outside Verification Commands passes",
+      "work order without pre-closure command passes",
+      "git diff --check",
+      "git diff --name-only",
+      "git diff --cached --name-only",
+      "git status --short"
+    ],
+    "requiredOutputs": [
+      "governance/compat/check_work_order_dispatch_quality_range.py",
+      "governance/compat/test_check_work_order_dispatch_quality_preclosure_base_range.py",
+      "docs/reviews/CVF_EACQ_FV_L1_PRECLOSURE_BASE_RANGE_DISPATCH_GUARD_WORKER_RETURN_2026-08-28.md"
+    ]
+  }
+}
+

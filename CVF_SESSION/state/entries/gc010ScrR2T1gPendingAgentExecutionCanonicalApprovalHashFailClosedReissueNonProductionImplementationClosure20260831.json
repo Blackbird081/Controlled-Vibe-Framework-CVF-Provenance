@@ -1,0 +1,21 @@
+{
+  "stateOrder": 2430,
+  "stateKey": "gc010ScrR2T1gPendingAgentExecutionCanonicalApprovalHashFailClosedReissueNonProductionImplementationClosure20260831",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "terminalToken": "CANONICAL_APPROVAL_HASH_FAIL_CLOSED_REISSUE_IMPLEMENTED_NON_PRODUCTION",
+    "materialCommit": "068d7939171669454668fabc6655d44925d5cfb6",
+    "dispatchCommit": "dd3caef6cb0915ca62946b4e86bba25975b66dcc",
+    "executionBaseHead": "8bec349bfaa148b2451284c7aeb78eb1e0906c5f",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1G_PENDING_AGENT_EXECUTION_CANONICAL_APPROVAL_HASH_FAIL_CLOSED_REISSUE_NON_PRODUCTION_IMPLEMENTATION_WORKER_RETURN_2026-08-31.md",
+    "implementationManifest": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/approvals/approval-binding.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/approvals/approval-binding.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/pending-agent-execution-local-harness.test.ts"
+    ],
+    "verification": "Seven-file offline bundle 173/173 PASS; TypeScript PASS; worker-return fast gate COMPLIANT; pre-commit 87/87 PASS; material pre-closure passed 79/80 with only the expected pre-continuity handoff HEAD mismatch.",
+    "nextAllowedMove": "Await fresh operator instruction before a separately governed T1E harness acceptance re-evaluation or another explicitly selected GC010 system-chain tranche.",
+    "claimBoundary": "Bounded non-production canonical approval hashing only. T1E acceptance, package export, route/provider/audit integration, production consumer, distributed safety, provider/live, public sync, deployment and production remain parked."
+  }
+}

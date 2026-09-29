@@ -2,6 +2,8 @@
 
 Memory class: governed-worker-dispatch
 
+docType: work_order
+
 Status: HOLD_PENDING_OPERATOR_DECISION
 
 Batch ID: WOAS-R2-GOLDEN
@@ -49,6 +51,35 @@ FILL_ME: state the mission prompt for this work order.
 | checkerReadAheadConfirmation | FILL_ME (list `governance/compat/check_*.py` paths read before authoring) |
 | docOnlyNewFields | FILL_ME (list new doc-only field names introduced by this dispatch) |
 | claimBoundary | Dispatch authoring provenance only; no runtime/provider/live/public/Web/MCP/model-router behavior claim. |
+
+
+## Review Dispatch Convergence And Invocation Budget Control
+
+Review-Dispatch Convergence Control: REQUIRED
+
+dispatchKind: INITIAL
+dispatchSurface: INTERNAL_AGENT
+parentAssignmentId: WOAS-R2-GOLDEN
+reviewRoundCount: 0
+priorFindingSetDigest: NOT_APPLICABLE_INITIAL_DISPATCH
+dependencyAuditDisposition: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+reworkFindingDisposition: NOT_APPLICABLE_INITIAL_DISPATCH
+newIndependentCriticalEvidence: NONE
+regressionGuardDisposition: BASELINE_NEGATIVE_TESTS_PLANNED
+cumulativeExternalInvocationCount: 0
+externalInvocationCeiling: 0
+usageAvailability: NOT_APPLICABLE_INTERNAL_AGENT
+quotaAdmissionDisposition: NOT_APPLICABLE_INTERNAL_AGENT
+nextDispatchDisposition: INITIAL_DISPATCH
+rootCauseClusterId: NOT_APPLICABLE_INITIAL_DISPATCH
+reworkGeneration: 0
+consolidatedDefectClassSweep: COMPLETE_INITIAL_ACCEPTANCE_MATRIX
+successorTrancheOpened: NO
+implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
+preExecutionReviewAdmission: NOT_REQUIRED_BEFORE_EXECUTION
+preExecutionReviewTrigger: NONE
+nextRoutineReviewBoundary: WORKER_RETURN
+reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
 
 
 ## Worker Autonomy / No-Question Rule
@@ -138,11 +169,22 @@ Before writing each worker-owned output artifact, read checker source for that f
 
 Literal-shape reminders: do not list required headings as backticked `## ...` strings before the real section; write source-not-found disposition spelling instead of the exact blocked enum in literalTokensReviewed; avoid `after ... closure` wording unless a dependency-release row cites the accepted artifact path and commit.
 
-## Work-Order Fulfillment Manifest
+## Required Artifact Manifest
 
 | Artifact | Required worker action |
 | --- | --- |
 | FILL_ME | FILL_ME |
+
+
+## Work-Order Acceptance Requirement Ledger
+
+```acceptance-ledger-json
+{"schemaVersion":"cvf.workOrderAcceptanceLedger@1.0.0","requirements":[{"requirementId":"REQ-FILL","mandatory":true,"expectedArtifacts":["docs/reviews/FILL_ME.md"],"requiredProofIds":["PROOF-FILL"]}],"proofCatalog":[{"proofId":"PROOF-FILL","kind":"COMMAND","locator":"FILL_ME"}]}
+```
+
+## Tool / Classifier Block Recovery Contract
+
+toolClassifierBlockRecoveryApplicability: NOT_APPLICABLE_WITH_REASON - classify before dispatch
 
 
 ## Worker Return Packet Shape Contract
@@ -153,13 +195,19 @@ requiredGate: `python governance/compat/run_worker_return_fast_gate.py`
 individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 
+Required terms: Purpose; Scope / Methodology; Findings / Position; Risk / Corrective Action; Claim Boundary; Agent Operation Trace Block; Delta Execution Claim Boundary Control Block; Public Export Disposition; executionBaseHead; git status --short.
+
+Conditional terms: External Knowledge Intake Routing; Rescan Intelligence Hardening; Corpus Completeness And Report Integrity; Finding-To-Governance Learning Disposition; Epistemic Process Block; Machine Closure Package.
+
+Use `N/A with reason` for every non-applicable conditional block.
+
 Shape-list rule: when listing required worker-output sections, write section names without the `##` prefix. Reserve actual heading syntax for real sections so structural checkers do not treat this checklist as the artifact section body.
 
 
 ## Verification Commands
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base GOLDENFIXTUREBASEHEAD --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base <executionBaseHead> --head HEAD
 python governance/compat/run_worker_return_fast_gate.py
 git status --short
 ```

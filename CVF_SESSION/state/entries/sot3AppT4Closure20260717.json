@@ -1,0 +1,21 @@
+{
+  "stateOrder": 1917,
+  "stateKey": "sot3AppT4Closure20260717",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIR",
+    "materialCommit": "1f815d7f5",
+    "dispatchCommit": "fdc00c96e",
+    "executionBaseHead": "be5ea7e85",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T4_COMPLETION_REVIEW_2026-07-17.md",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "workerReturn": "docs/reviews/CVF_SOT3_APP_T4_WORKER_RETURN_2026-07-17.md",
+    "evidence": "docs/reviews/CVF_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_EVIDENCE_2026-07-17.md",
+    "reviewerRepair": "Work-order Worker Return Packet Shape Contract literal terms repaired after worker correctly returned BLOCKED_WITH_REASON for forbidden-scope document defect.",
+    "verification": "pre-implementation PASS 77/77 after repair; worker-return fast PASS; reviewer-fast 62/62 PASS; commit steward PASS; pre-commit 83/83 PASS; vertical-slice PASS; focused e2e 1/1 PASS; root test 30 files and 45 tests PASS; root typecheck/build/doctor PASS.",
+    "proofStatus": "LOCAL_CONTROLLED_QUOTATION_REPLAY_PASS",
+    "receiptStatus": "REPLAY_RECEIPT_CHAIN_VERIFIED",
+    "verifiedReceipts": 16,
+    "nextAllowedMove": "T5 packet authoring only; provider/live execution remains parked until a fresh source-verified T5 packet releases the exact boundary.",
+    "claimBoundary": "Deterministic local in-process T4 proof only; no provider/live/browser/UI/public-sync/push/production or T5 execution claim."
+  }
+}

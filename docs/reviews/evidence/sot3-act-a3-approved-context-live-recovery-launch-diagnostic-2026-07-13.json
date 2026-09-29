@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "cvf.sot3ActA3LiveReceipt.v1",
+  "batchId": "SOT3-ACT-A3R-LAUNCH-DIAGNOSTIC",
+  "executionBaseHead": "40d790039",
+  "startedAtUtc": "2026-07-13T10:20:00+00:00",
+  "finishedAtUtc": "2026-07-13T10:20:01+00:00",
+  "overall": "BLOCKED",
+  "claim": "N/A with reason: local launcher failed before any provider call",
+  "callBudget": {
+    "operatorQuotaPolicy": "ALIBABA_PROVIDER_UNMETERED_2026-07-13",
+    "runnerInvocationLimit": 1,
+    "priorBlockedCallCount": 3,
+    "observedCallCount": 0,
+    "taskObservedCallCount": 3
+  },
+  "providerProof": {
+    "provider": "alibaba",
+    "model": "qwen-turbo",
+    "keyAliasUsed": null,
+    "httpStatus": null,
+    "success": false,
+    "latencyMs": null,
+    "outputLength": null
+  },
+  "diagnostic": {
+    "stage": "routing",
+    "class": "unknown_error",
+    "retryable": true,
+    "userAction": "none",
+    "provider": "alibaba",
+    "model": "qwen-turbo",
+    "safeMessage": "The governed runner could not launch the local npx executable on Windows. No provider call occurred. Resolve npx.cmd explicitly before rerun."
+  },
+  "secretSafety": {
+    "rawKeyPersisted": false,
+    "rawProviderBodyPersisted": false,
+    "rawOutputPersisted": false,
+    "fullPromptPersisted": false
+  }
+}

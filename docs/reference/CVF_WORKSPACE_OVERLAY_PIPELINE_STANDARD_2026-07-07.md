@@ -1,6 +1,16 @@
 # CVF Workspace Overlay Pipeline Standard
 
+Memory class: ACTIVE_REFERENCE
+
+Status: ACTIVE_REFERENCE
+
+docType: reference
+
 Date: 2026-07-07
+
+## Scope / Applies To
+
+Applies to workspaces that inherit CVF premium assets or private continuity files using the local-first overlay pipeline. Does not apply to public-core workspaces that stay anchored strictly to the public core repository.
 
 ## Purpose
 
@@ -199,3 +209,18 @@ The checker must fail when:
 - `workspace-premium` includes private continuity surfaces;
 - `workspace-provenance-local` uses anything other than `local-only` review
   policy.
+## Claim Boundary
+
+This standard defines the local-first overlay vocabulary, catalog shape, and
+profile separation rules for future workspace overlay work. It does not create
+or validate overlay scripts, apply an overlay, mutate public-sync, publish a
+public artifact, claim hosted or production readiness, or authorize runtime,
+provider/live, source, test, checker, wrapper, bootstrap, or installer changes.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: R70A is a private provenance definition tranche. Public export or
+public-safe adaptation of this overlay standard requires a later governed
+public-sync packet and separate operator authorization.

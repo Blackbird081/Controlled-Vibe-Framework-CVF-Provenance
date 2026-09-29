@@ -1,0 +1,89 @@
+{
+  "schema": "cvf.agent-topology-efficiency-observation.v1",
+  "observationId": "cvf-hrltp-t1-multi-agent-routing-2026-09-22",
+  "observedAtDate": "2026-09-22",
+  "taskId": "CVF-HRLTP-T1",
+  "route": "MULTI_AGENT_MULTI_ROLE",
+  "decisionOwner": "LOCAL_ORCHESTRATOR_REVIEWER",
+  "sourceRefs": {
+    "completionReview": "docs/reviews/CVF_HIGH_RISK_LOCAL_TRANSACTION_PROOF_FOUNDATION_T1_COMPLETION_2026-09-22.md",
+    "workerReturn": "docs/reviews/CVF_HIGH_RISK_LOCAL_TRANSACTION_PROOF_FOUNDATION_T1_WORKER_RETURN_2026-09-22.md",
+    "materialCommit": "9a14aab78edd20756864db92aab94ee4bf4bfddf",
+    "completionCommit": "e25f6a1b94b2728a149025e07fad512f986098e7",
+    "workerReturnSha256": "dbeb82f5614a1cba63a82ffc59037ace7d888a6147aad6c6768b38760f88616c"
+  },
+  "allocation": [
+    {
+      "lane": "root-orchestrator-integrator-reviewer-closer",
+      "model": "gpt-6-astra",
+      "reasoningEffort": "medium",
+      "workClass": "orchestration, integration, independent probe, bounded repair and closure"
+    },
+    {
+      "lane": "standard-contract-worker",
+      "model": "gpt-6-astra",
+      "reasoningEffort": "high",
+      "workClass": "semantic standard, template and orientation changes"
+    },
+    {
+      "lane": "checker-tests-worker",
+      "model": "gpt-6-astra",
+      "reasoningEffort": "high",
+      "workClass": "semantic checker implementation and adversarial tests"
+    },
+    {
+      "lane": "hook-wiring-worker",
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": "medium",
+      "workClass": "bounded deterministic hook wiring"
+    }
+  ],
+  "measurement": {
+    "operatorReportedWallClockRaw": "42m212",
+    "normalizedWallClockSeconds": null,
+    "normalizedWallClockDisposition": "NOT_AVAILABLE_WITH_REASON: the operator-visible string is preserved verbatim but its display grammar is not available, so it is not normalized or interpreted",
+    "perLaneElapsed": null,
+    "perLaneElapsedDisposition": "NOT_AVAILABLE_WITH_REASON: the collaboration surface exposed no governed per-lane elapsed-time receipts",
+    "perModelTokenUsage": null,
+    "perModelTokenUsageDisposition": "NOT_AVAILABLE_WITH_REASON: the collaboration surface exposed no provider-neutral per-model token meter",
+    "perModelQuotaUsage": null,
+    "perModelQuotaUsageDisposition": "NOT_AVAILABLE_WITH_REASON: the collaboration surface exposed no per-model quota meter",
+    "currencyCost": null,
+    "currencyCostDisposition": "NOT_AVAILABLE_WITH_REASON: no price-bound usage receipt was exposed",
+    "externalProviderCallCount": 0
+  },
+  "outcome": {
+    "focusedTests": "53/53 PASS",
+    "reviewerFast": "69/69 PASS",
+    "preCommitAndMaterialHook": "90/90 PASS",
+    "workerRedispatchCount": 0,
+    "reviewerLocalSemanticRepairCount": 1,
+    "reviewerLocalPackagingRepairCount": 1,
+    "openFindingCount": 0,
+    "acceptedDisposition": "REVIEWER_ACCEPTED_STATIC_GOVERNANCE_FOUNDATION"
+  },
+  "interpretation": {
+    "costObjective": "total cost to an accepted outcome, including worker execution, review, failed attempts and rework",
+    "routingPrinciple": "select model strength adaptively from task risk, semantic difficulty, expected error and rework cost; do not bind a role permanently to a model tier",
+    "observedValue": "parallel bounded ownership produced an accepted result and allowed the reviewer to concentrate on integration and an unseen adversarial probe",
+    "observedCostSignal": "one semantic false-negative and one packaging defect still required reviewer-local repair; a lower nominal model price alone would not establish lower end-to-end cost",
+    "comparativeVerdict": "OBSERVATION_ONLY_NO_CAUSAL_OR_COST_SUPERIORITY_CLAIM"
+  },
+  "limitations": [
+    "No same-task single-agent replay exists.",
+    "No alternate-model replay exists.",
+    "No per-lane time, token, quota or currency-cost telemetry exists.",
+    "Model identity and effort describe this session allocation; they are not a permanent role-to-model policy.",
+    "Actor count does not itself prove evidence validity or review independence."
+  ],
+  "samplingDisposition": "ACCEPT_AS_BOUNDED_NATURALISTIC_CANDIDATE_FOR_FUTURE_MULTI_AGENT_VERSUS_SINGLE_AGENT_MULTI_ROLE_AGGREGATION",
+  "p4AutomaticEnrollmentDisposition": "NOT_CLAIMED: this observation is not represented as an eligible MFRP P4 automatic row or as a substitute for that collector's trusted receipt chain",
+  "p4SafetyMarkerAdjudication": {
+    "markerCode": "UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED",
+    "attemptId": "ATTEMPT-90eee9293a1ab558",
+    "disclosureCommit": "5e0be9121c8b9da172476fccecd409275f11b5f8",
+    "decision": "RETAIN_FAILED_ATTEMPT_EXCLUDE_FROM_P4_ENROLLMENT_AND_CLEAR_RUNTIME_MARKER",
+    "reason": "The collector correctly failed closed because the historical completion artifact does not satisfy the later independent-probe binding checker and the worktree contains thirteen intentionally parked paths. The failed attempt remains in the ignored pending journal. This new observation neither repairs nor enrolls that historical P4 candidate, so carrying the runtime marker forward would block unrelated governed commits without adding information."
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}

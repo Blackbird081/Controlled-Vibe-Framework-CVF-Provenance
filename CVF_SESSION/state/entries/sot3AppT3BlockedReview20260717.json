@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1909,
+  "stateKey": "sot3AppT3BlockedReview20260717",
+  "value": {
+    "status": "REVIEWED_BLOCK_ACCEPTED_R1_REQUIRED",
+    "materialCommit": "30dbcae4a",
+    "executionBaseHead": "41e96d206",
+    "workerDisposition": "BLOCKED_WITH_REASON",
+    "passingEvidence": "frozen install; 29 test files; 42 tests; doctor healthy",
+    "blockers": [
+      "apps/api/src/middleware/error.middleware.ts:6 unknown error dereference",
+      "apps/web/src/layouts/application-layout.tsx:27 undefined navigation target inference"
+    ],
+    "reviewArtifact": "docs/reviews/CVF_SOT3_APP_T3_BLOCKED_RETURN_REVIEW_2026-07-17.md",
+    "nextAllowedMove": "fresh T3-R1 packet authoring only",
+    "parked": "T4+, provider/model/live/browser/UI/public-sync/push/production"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1742,
+  "stateKey": "sot3ActivationA4Closure20260713",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "cab8133ea",
+    "claim": "SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED",
+    "localNegativeRows": 19,
+    "zeroProviderCallRows": 18,
+    "rollbackProviderSpyCalls": 1,
+    "retainedLiveRecoveryCalls": 1,
+    "reviewerLiveCalls": 0,
+    "nextAllowedMove": "fresh A5 GC-018 and source-verified work-order authoring only",
+    "claimBoundary": "A5, final LIVE_GOVERNANCE_PROVEN_BOUNDED, public, production, scale, and user validation remain open."
+  }
+}

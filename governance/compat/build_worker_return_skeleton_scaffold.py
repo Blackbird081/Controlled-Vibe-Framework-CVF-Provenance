@@ -3,7 +3,217 @@
 
 from __future__ import annotations
 
+import json
+import sys
+from pathlib import Path
 from typing import Any
+
+try:
+    from worker_evidence_readiness import (
+        BINDING_SCHEMA_VALUE,
+        EVIDENCE_BINDING_HEADING,
+        EVIDENCE_READINESS_CONTRACT_TOKEN,
+        resolve_evidence_readiness_applicable,
+    )
+except ImportError:  # pragma: no cover - import path fallback for direct script execution
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from worker_evidence_readiness import (
+        BINDING_SCHEMA_VALUE,
+        EVIDENCE_BINDING_HEADING,
+        EVIDENCE_READINESS_CONTRACT_TOKEN,
+        resolve_evidence_readiness_applicable,
+    )
+
+SCEC_SCHEMA_VERSION = "cvf.semanticConvergenceControl.v1"
+SCEC_UNRESOLVED_PREDECESSOR_SENTINEL = "SCEC_PREDECESSOR_HASH_UNRESOLVED"
+
+
+def render_scec_outcome_block(
+    *,
+    problem_key: str,
+    chain_mode: str,
+    chain_ordinal: int,
+    predecessor_path: str | None,
+    predecessor_sha256: str | None,
+    required_disposition: str,
+    successor_scope: str,
+    reminder: str,
+) -> str:
+    predecessor = None if chain_mode == "INITIAL" else {
+        "path": predecessor_path or SCEC_UNRESOLVED_PREDECESSOR_SENTINEL,
+        "sha256": predecessor_sha256 or SCEC_UNRESOLVED_PREDECESSOR_SENTINEL,
+    }
+    block = {
+        "schemaVersion": SCEC_SCHEMA_VERSION,
+        "problemKey": problem_key,
+        "chainMode": chain_mode,
+        "chainOrdinal": chain_ordinal,
+        "predecessor": predecessor,
+        "blockerDelta": {name: [] for name in ("prior", "resolved", "retained", "new", "reopened", "current")},
+        "resolutionEvidence": {},
+        "counters": {
+            "partialReadyClosures": 0, "reviewerScopeExpansions": 0,
+            "sameClaimCorrections": 0, "nonDecreasingBlockerTransitions": 0,
+        },
+        "claims": [],
+        "requiredDisposition": required_disposition,
+        "successorScope": successor_scope,
+    }
+    return (
+        "## Semantic Convergence Outcome\n\n"
+        "Standard: `docs/reference/semantic_convergence_control/"
+        "CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md`\n\n"
+        f"```json\n{json.dumps(block, indent=2)}\n```\n\n{reminder}"
+    )
+
+
+def render_p4_observation_block() -> str:
+    """Render the optional P4-C1 automatic evidence observation block.
+
+    Must stay byte-identical (as its own standalone rendered text) to
+    ``run_worker_return_scaffold``'s equivalent section. Default ``AUTO``
+    eligibility prevents ordinary worker returns from accidentally
+    enrolling; this block carries no trusted-disposition field of its own --
+    the reviewer/closer-owned disposition elsewhere in the return remains
+    the sole trusted-disposition source.
+    """
+    return (
+        "## P4 Automatic Evidence Observation Block\n\n"
+        f"{FIELD_ELIGIBILITY}: AUTO\n"
+        f"{FIELD_PHASE}: N/A with reason: not a natural P4 observation candidate\n"
+        f"{FIELD_HARD_OBLIGATION_LOCATOR}: N/A with reason: not a natural P4 observation candidate\n"
+        f"{FIELD_HARD_OBLIGATION_PATTERN}: N/A with reason: not a natural P4 observation candidate\n"
+        f"{FIELD_SOURCE_AUTHORITY_LOCATOR}: N/A with reason: not a natural P4 observation candidate\n"
+    )
+
+
+def p4_observation_block_fields() -> str:
+    """The field-only body (no heading), for cross-generator byte-equality
+    comparison against ``run_worker_return_scaffold``'s section body."""
+    return (
+        f"{FIELD_ELIGIBILITY}: AUTO\n"
+        f"{FIELD_PHASE}: N/A with reason: not a natural P4 observation candidate\n"
+        f"{FIELD_HARD_OBLIGATION_LOCATOR}: N/A with reason: not a natural P4 observation candidate\n"
+        f"{FIELD_HARD_OBLIGATION_PATTERN}: N/A with reason: not a natural P4 observation candidate\n"
+        f"{FIELD_SOURCE_AUTHORITY_LOCATOR}: N/A with reason: not a natural P4 observation candidate\n"
+    )
+
+
+FIELD_ELIGIBILITY = "p4ObservationEligibility"
+FIELD_PHASE = "p4ObservationPhase"
+FIELD_HARD_OBLIGATION_LOCATOR = "p4HardObligationLocator"
+FIELD_HARD_OBLIGATION_PATTERN = "p4HardObligationPattern"
+FIELD_SOURCE_AUTHORITY_LOCATOR = "p4SourceAuthorityLocator"
+
+ARCH_ECHO_SCHEMA = "architectureMatrixSchema"
+ARCH_ECHO_DIGEST = "architectureMatrixCanonicalDigest"
+ARCH_ECHO_REVIEW_PATH = "architectureSemanticReviewPath"
+ARCH_ECHO_REVIEW_COMMIT = "architectureSemanticReviewCommit"
+ARCH_ECHO_REVIEW_SHA = "architectureSemanticReviewFileSha256"
+ARCH_ECHO_DISPOSITION = "architectureBindingEchoDisposition"
+
+
+def render_architecture_echo_block() -> str:
+    """Render the optional DARA-T2 Architecture Readiness echo block.
+
+    Must stay byte-identical (as its own standalone rendered text) to
+    ``run_worker_return_scaffold``'s equivalent section. This is a
+    documentation-only identity echo, never a second reviewer workflow: the
+    default `NOT_APPLICABLE` disposition means the dispatching work order
+    did not declare `Architecture-Readiness Admission: REQUIRED`, so no
+    accepted matrix identity exists to echo. A worker whose dispatching
+    work order did declare `REQUIRED` must replace every field below with
+    the exact accepted values, never invent or approximate them.
+    """
+    return (
+        "## Architecture Readiness Echo\n\n"
+        f"{ARCH_ECHO_SCHEMA}: NOT_APPLICABLE_WITH_REASON: dispatching work order did not declare Architecture-Readiness Admission: REQUIRED\n"
+        f"{ARCH_ECHO_DIGEST}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_REVIEW_PATH}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_REVIEW_COMMIT}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_REVIEW_SHA}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_DISPOSITION}: N/A with reason: no accepted architecture matrix to echo\n"
+    )
+
+
+def architecture_echo_block_fields() -> str:
+    """The field-only body (no heading), for cross-generator byte-equality
+    comparison against ``run_worker_return_scaffold``'s section body."""
+    return (
+        f"{ARCH_ECHO_SCHEMA}: NOT_APPLICABLE_WITH_REASON: dispatching work order did not declare Architecture-Readiness Admission: REQUIRED\n"
+        f"{ARCH_ECHO_DIGEST}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_REVIEW_PATH}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_REVIEW_COMMIT}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_REVIEW_SHA}: N/A with reason: no accepted architecture matrix to echo\n"
+        f"{ARCH_ECHO_DISPOSITION}: N/A with reason: no accepted architecture matrix to echo\n"
+    )
+
+
+def render_evidence_readiness_binding_block() -> str:
+    """Render the compact evidence-readiness acceptance/binding block.
+
+    Included automatically for applicable tasks (EVIDENCE-READINESS-T1
+    requirement 6): a future worker cannot omit it by forgetting, because
+    the scaffold -- not the worker's memory -- decides whether the block
+    ships. Emitted only when the dispatching work order declares
+    `worker_evidence_readiness.EVIDENCE_READINESS_CONTRACT_TOKEN`
+    (`{token}`); the checker independently re-derives applicability from
+    that same trusted work-order token at return time, so this scaffold
+    block is a convenience, never the applicability source of truth.
+    """
+    return (
+        f"{EVIDENCE_BINDING_HEADING}\n\n"
+        "Repeat this section per source root/pin; each section binds its own audit projection and candidate manifest.\n"
+        "Audit JSON uses schemaVersion cvf.evidenceAudit.v1 and workerReturnPath pointing to this return.\n\n"
+        f"evidenceBindingSchema: {BINDING_SCHEMA_VALUE}\n"
+        "auditPath: TO_FILL (repo-relative path to the bound audit/evidence artifact)\n"
+        "auditSha256: TO_FILL (sha256 of the audit artifact's current bytes; "
+        "capture after the audit is finalized, never before)\n"
+        "discoveryManifestPath: TO_FILL (repo-relative path to the declared, "
+        "independent discovery manifest -- one normalized candidate path per line)\n"
+        "sourceRoot: TO_FILL (source root the rows below are relative to)\n"
+        "sourcePin: TO_FILL (immutable Git ref/commit or exact snapshot identity)\n\n"
+        "| path | blobSha256 | lineCount | readSpans | status |\n"
+        "| --- | --- | --- | --- | --- |\n"
+        "| TO_FILL | TO_FILL | TO_FILL | TO_FILL | READ/REUSED/EXCLUDED |\n\n"
+        "Author reminder: every path in `discoveryManifestPath` needs exactly "
+        "one row below (selected or excluded); a `READ` row's `readSpans` "
+        "must union-cover `1-lineCount` -- a partial read cannot satisfy a "
+        "full-read claim; `REUSED` rows must cite an immutable prior "
+        "artifact digest/row, never the current audit's own digest.\n"
+    )
+
+
+def evidence_readiness_binding_block_fields() -> str:
+    """The field-only body (no heading), for cross-generator byte-equality
+    comparison against the dispatch-packet-scaffold's equivalent section."""
+    return render_evidence_readiness_binding_block().split("\n\n", 1)[1]
+
+
+def build_scec_outcome_block(args: Any) -> str:
+    """Emit an outcome-shaped SCEC block for a worker-return skeleton.
+
+    Mirrors `build_dispatch_packet_scaffold._scec_block`'s no-fabrication
+    rule: a SUCCESSOR outcome without an explicit predecessor hash emits the
+    explicit unresolved sentinel rather than inventing readiness evidence.
+    """
+    problem_key = getattr(args, "scec_problem_key", None) or f"{args.batch_id.lower()}-problem"
+    # A worker return is always the successor outcome of its dispatch packet.
+    # Emit an unresolved predecessor rather than a fresh valid INITIAL block;
+    # the author must bind the real work-order path/hash before return.
+    chain_mode = "SUCCESSOR"
+    return render_scec_outcome_block(
+        problem_key=problem_key,
+        chain_mode=chain_mode,
+        chain_ordinal=getattr(args, "scec_chain_ordinal", 0) + 1,
+        predecessor_path=None,
+        predecessor_sha256=None,
+        required_disposition=getattr(args, "scec_required_disposition", "CONTINUE_BOUNDED"),
+        successor_scope=getattr(args, "scec_successor_scope", "INITIAL_BOUNDED"),
+        reminder="Author reminder: fill `blockerDelta`, `counters`, and `claims` with real "
+        "declared outcome evidence before returning for review; never replace an unresolved "
+        f"`{SCEC_UNRESOLVED_PREDECESSOR_SENTINEL}` with a fabricated path or hash.",
+    )
 
 
 def build_worker_return_skeleton(args: Any) -> str:
@@ -12,6 +222,41 @@ def build_worker_return_skeleton(args: Any) -> str:
         f"docs/work_orders/CVF_AGENT_WORK_ORDER_{args.batch_id}_{args.date}.md"
     )
     invocation_id = f"{args.batch_id.lower()}-{args.date}"
+    profile = getattr(args, "worker_return_profile", "WORKER_RETURN_FULL_GATE_V1")
+    fast_doc = profile == "WORKER_RETURN_FAST_DOC_V1"
+    p4_observation = (
+        f"{render_p4_observation_block()}\n"
+        if getattr(args, "include_p4_observation_block", True)
+        else ""
+    )
+    architecture_echo = (
+        render_architecture_echo_block()
+        if getattr(args, "include_architecture_readiness_echo", True)
+        else ""
+    )
+    evidence_readiness_binding = (
+        f"{render_evidence_readiness_binding_block()}\n"
+        if resolve_evidence_readiness_applicable(args)
+        else ""
+    )
+    conditional_controls = """## Conditional Controls Disposition
+conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA
+""" if fast_doc else """## External Knowledge Intake Routing
+| Field | Value |
+| --- | --- |
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | operator-provided external comparison, critique, or recommendation |
+| Chain map route | N/A with reason: fill if external knowledge intake applies |
+| Matching local-view guard | TO_FILL or N/A with reason |
+| Owner surface | TO_FILL |
+| Disposition | NOT_APPLICABLE_WITH_REASON: fill if external knowledge intake applies |
+| Claim boundary | TO_FILL |
+## Rescan Intelligence Hardening
+- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
+Reason: N/A with reason: this worker return is not a rescan, intake-refresh, or source-backed reassessment output.
+## Corpus Completeness And Report Integrity
+- Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason: no corpus completeness claim in this worker return.
+"""
     return f"""# CVF {args.batch_id} Worker Return Skeleton
 Memory class: FULL_RECORD
 Status: COMPLETE_PENDING_REVIEW
@@ -23,6 +268,37 @@ Responds to work order: `{work_order_path}`
 dispatchWorkOrder: `{work_order_path}`
 executionBaseHead: TO_FILL_capture with `git rev-parse --short HEAD` before edits
 rawMemoryReleased=false
+contractProfile: {profile}
+## Tool / Classifier Block Recovery Event
+toolClassifierBlockRecoveryApplicability: NOT_APPLICABLE_WITH_REASON - replace after evaluating whether a classifier blocked an in-scope edit
+toolClassifierBlockEventCount: 0
+platformForcedOperatorPromptCount: 0
+workerAuthoredOperatorQuestionCount: 0
+recoveryAttemptCount: 0
+recoveryDisposition: NO_EVENT
+eventEvidence: NOT_APPLICABLE_WITH_REASON - no classifier block event occurred
+## Work-Order Acceptance Evidence Ledger
+```acceptance-evidence-json
+{{"schemaVersion":"cvf.workOrderAcceptanceEvidence@1.0.0","executionBaseHead":"TO_FILL","results":[]}}
+```
+## Rework Convergence Self-Proof
+rootCauseClusterId: {args.root_cause_cluster_id if getattr(args, "dispatch_kind", "INITIAL") == "REWORK" else f"INITIAL_SCOPE_{args.batch_id}"}
+reworkGeneration: {getattr(args, "review_round_count", 0)}
+consolidatedDefectClassSweep: PENDING_BEFORE_READY
+productionBindingEvidence: PENDING_BEFORE_READY
+adversarialRegressionDisposition: PENDING_BEFORE_READY
+successorTrancheOpened: NO
+implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY
+internalAgentInvocationCount: 0
+externalAgentInvocationCount: {getattr(args, "cumulative_external_invocation_count", 0)}
+providerCallCount: 0
+tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: provider-neutral scaffold has no usage meter
+terminalReadinessVerdict: BLOCKED_WITH_REASON: generated scaffold pending worker evidence
+## Recurring Blocked-Return Escalation
+recurrenceDisposition: NOT_APPLICABLE_WITH_REASON - replace with FIRST_OCCURRENCE or RECURRING_CLUSTER_STOP when Status is BLOCKED_WITH_REASON
+priorRelatedFinding: NOT_APPLICABLE_WITH_REASON - replace with the exact governed prior path for a recurring cluster
+operatorNoticeDisposition: NOT_APPLICABLE_WITH_REASON - replace with OPERATOR_NOTICE_REQUIRED for a recurring cluster
+successorFreezeDisposition: NOT_APPLICABLE_WITH_REASON - replace with FEATURE_SUCCESSORS_FROZEN for a recurring cluster
 ## Purpose
 TO_FILL: state the mission prompt for this worker return.
 ## Scope / Methodology
@@ -31,6 +307,7 @@ TO_FILL: state the scope and methodology of this worker execution.
 TO_FILL: state findings and position with evidence.
 ## Risk / Corrective Action
 TO_FILL: state risks and corrective actions if any.
+{p4_observation}{architecture_echo}{evidence_readiness_binding}{build_scec_outcome_block(args)}
 ## Checker Source Read-Ahead Block
 | Field | Value |
 | --- | --- |
@@ -73,21 +350,7 @@ TO_FILL: state risks and corrective actions if any.
 ## Public Export Disposition
 DEFERRED_PRIVATE_ONLY
 Reason: TO_FILL: default private-only worker return; override with real EXPORTED or BLOCKED_MISSING_PUBLIC_ARTIFACTS evidence only if this return genuinely changes public-sync scope.
-## External Knowledge Intake Routing
-| Field | Value |
-| --- | --- |
-| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
-| Input type | operator-provided external comparison, critique, or recommendation |
-| Chain map route | N/A with reason: fill if external knowledge intake applies |
-| Matching local-view guard | TO_FILL or N/A with reason |
-| Owner surface | TO_FILL |
-| Disposition | NOT_APPLICABLE_WITH_REASON: fill if external knowledge intake applies |
-| Claim boundary | TO_FILL |
-## Rescan Intelligence Hardening
-- Rescan intelligence verdict: NOT_APPLICABLE_WITH_REASON
-Reason: N/A with reason: this worker return is not a rescan, intake-refresh, or source-backed reassessment output.
-## Corpus Completeness And Report Integrity
-- Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason: no corpus completeness claim in this worker return.
+{conditional_controls.rstrip()}
 ## Finding-To-Governance Learning Disposition
 | Field | Value |
 | --- | --- |

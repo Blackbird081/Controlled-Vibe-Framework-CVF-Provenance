@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2849,
+  "stateKey": "acelG2T2DiscriminatingTaskGateT2ADispatch20260916",
+  "value": "ACEL-G2-T2-DISCRIMINATING-TASK-GATE-T2A is CLOSED_PASS_BOUNDED at material commit 81a1c751747c7d7cfd0a80e7f12681e3e7a24841. Local repaired one consolidated exact-schema and causal-grading cluster, added four adversarial regressions, and resolved GC-051 coverage. Evidence: focused 32/32, TypeScript PASS, worker-return fast PASS, reviewer-fast 68/68, pre-commit 89/89, and zero provider/agent/network calls. The accepted result is an offline candidate task only. Fresh calibration, provider/live execution, T6B, actual-agent comparison, callable composition, production, public sync and deployment remain parked behind a new operator packet."
+}

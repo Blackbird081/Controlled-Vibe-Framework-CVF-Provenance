@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2829,
+  "stateKey": "qmServiceTokenReplayDedupeT1Dispatch20260914",
+  "value": "QM-SERVICE-TOKEN-REPLAY-DEDUPE-T1 is DISPATCH_READY at material commit 2cc9d2000590a8d3718a5fc6d28b3b2eb1102735. The roadmap, paired GC-018 baseline and work order authorize exactly five uncommitted worker paths for process-local exact valid-request replay deduplication; existing sync verifier API and five production route callers stay stable. Pre-commit passed 89/89 and P4-C1 reported SKIPPED_NO_ELIGIBLE_CANDIDATE. Before dispatch, Local adjudicated the prior OUTPUT-REDACTION continuity marker as REJECT_MEASUREMENT_SAMPLE and recoverably archived ignored marker SHA-256 6eb32adc685f74c9aae4349b8aef3edfdbb69247d77212e45fb46e2b4092f9c; no P4 sample was promoted. Next is INTERNAL_AGENT execution with zero commits followed by Local review. M4, M7, memory candidates, shared/durable replay, provider/live, public sync and deployment remain parked."
+}

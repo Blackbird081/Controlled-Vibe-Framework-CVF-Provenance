@@ -1,0 +1,7 @@
+{
+  "stage": "web_playwright_execution",
+  "failureClass": "PROOF_PROCEDURE_AND_EVIDENCE_DEFECT",
+  "retryableWithinWorkerScope": false,
+  "providerModel": "N/A (zero provider calls)",
+  "message": "Reviewer reconciliation: the focused owner suite passes 20/20 with the correct focused Vitest command, .env.local exists, and current auth source supplies a fallback secret plus mock credentials. The retained attempts prove only that authentication did not complete before submission. Playwright was invoked twice after a spec repair, exceeding the one-invocation and zero-retry ceiling, while the original receipt reported one invocation. No further invocation is authorized in this packet."
+}

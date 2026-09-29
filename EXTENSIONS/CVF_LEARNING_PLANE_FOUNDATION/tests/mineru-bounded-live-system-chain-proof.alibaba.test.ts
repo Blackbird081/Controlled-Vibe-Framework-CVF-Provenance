@@ -9,7 +9,7 @@ import {
 
 const DASHSCOPE_URL =
   "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions";
-const MODEL = "qwen-turbo";
+const MODEL = "qwen-flash";
 const KEY_NAMES = [
   "DASHSCOPE_API_KEY",
   "ALIBABA_API_KEY",
@@ -67,6 +67,11 @@ function resolveAlibabaKey(): string {
     if (value) return value;
   }
   throw new Error("missing_dashscope_compatible_live_key");
+}
+
+function hasAlibabaKey(): boolean {
+  loadLocalEnv();
+  return KEY_NAMES.some((keyName) => Boolean(process.env[keyName]?.trim()));
 }
 
 async function callAlibaba(apiKey: string, context: string): Promise<string> {
@@ -127,7 +132,7 @@ function cleanup(): void {
 afterEach(cleanup);
 
 describe("MSEA-R46 MinerU bounded live system-chain proof", () => {
-  it("uses file-backed write/read evidence in a live Alibaba response without production release", async () => {
+  (hasAlibabaKey() ? it : it.skip)("uses file-backed write/read evidence in a live Alibaba response without production release", async () => {
     cleanup();
     const apiKey = resolveAlibabaKey();
     const proof = runMineruBoundedLiveSystemChainProof({

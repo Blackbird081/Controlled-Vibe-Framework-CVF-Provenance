@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2931,
+  "stateKey": "acelG1T3dC3R1ActualAclCorrectionDispatch20260924",
+  "value": "ACEL G1 T3D-C3 R1 bounded actual-ACL setup and cleanup correction was authorized by the operator and dispatched at material commit 4b97391ccf15bdc9526c9512a03d99ea3d2ca57f on 2026-09-24. The paired GC-018 baseline and work order passed the 83-check pre-dispatch autorun gate and the commit passed 90/90 governance checks. Worker scope is exactly scripts/acel_g1_group4_actual_token_coordinator.ps1 plus docs/reviews/CVF_ACEL_G1_T3D_C3_R1_ACTUAL_ACL_SETUP_AND_CLEANUP_CORRECTION_WORKER_RETURN_2026-09-24.md under WORKER_MUST_NOT_COMMIT. Worker proof is hermetic/current-token only. One fresh actual-mode prepare-only proof is reserved for a distinct Local reviewer after a COMPLETE_PENDING_REVIEW return. Party B/C execution, credentials, real Group 4 source access or creation, T3E, G2-G6, provider/live/runtime/public-sync/deployment and any second correction or prepare attempt remain forbidden without new direction."
+}

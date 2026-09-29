@@ -1,0 +1,35 @@
+{
+  "registryOrder": 128,
+  "id": "msea-r96-doctrine-route-gap-reconciliation",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "MSEA-R96 doctrine route candidate sources",
+  "scopePaths": [
+    "EXTENSIONS/examples/",
+    "EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/"
+  ],
+  "fileCount": 14,
+  "status": "SCANNED_WITH_FINDINGS",
+  "findings": [
+    {
+      "id": "msea-r96-l4-l6-route-candidates",
+      "summary": "The L4 candidate remains draft/pre-public; the L6 example responsibility is real but distributed and EXTENSIONS/examples is absent from the module inventory.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Retain the R96 bounded dispositions; any L4 promotion or L6 inventory/consolidation change requires a fresh governed packet.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "ratified L4 doctrine owner",
+    "consolidated root examples owner"
+  ],
+  "nextScanRecommendation": "DEMAND_GATED",
+  "scanWave": "MSEA-R96",
+  "scanDate": "2026-07-11",
+  "manifestHash": "fe9d2d9950f5ae55112c18df49189773c8451c201e466ac9b805547b2360a528",
+  "hashAlgorithm": "sha256",
+  "hashInput": "manifest-internal-hash-from-script-output",
+  "manifestPath": "docs/audits/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_EVIDENCE_2026-07-11.json",
+  "packetPath": "docs/reviews/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_COMPLETION_2026-07-11.md",
+  "notes": "Registry coverage for the two extension candidate roots directly examined by R96."
+}

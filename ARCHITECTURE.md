@@ -2,7 +2,7 @@
 
 > Front-door architecture view for GitHub readers.
 >
-> Current readout: CVF is a governance-first AI/agent control framework with live non-coder governance proof, certified Alibaba + DeepSeek provider lanes, and mandatory live API release evidence for governance claims.
+> Current readout: CVF is a governance-first AI/agent control framework with live non-coder governance proof, a certified DeepSeek provider lane (Alibaba `qwen-flash` is the current target, `EXPERIMENTAL` pending fresh live proof), and mandatory live API release evidence for governance claims.
 >
 > This page is one of the three root front-door entrypoints alongside `README.md` and `START_HERE.md`.
 
@@ -18,7 +18,7 @@ CVF is easiest to understand as a governance-first stack with four distinct role
 The current publication posture is live-first:
 
 - governance behavior is proven through real provider execution, not mock strings;
-- Alibaba `qwen-turbo` and DeepSeek `deepseek-chat` are certified provider lanes;
+- Alibaba has retained historical provider-lane evidence and now targets `qwen-flash`, pending fresh live compatibility proof; DeepSeek `deepseek-chat` remains certified;
 - mock mode is valid only for UI structure checks;
 - release-quality proof runs through `python scripts/run_cvf_release_gate_bundle.py --json`.
 - Web is governance-inherited on the active governed AI path, but is not the full CVF runtime.
@@ -133,14 +133,14 @@ flowchart TB
         INTENT["User intent<br/>coder / non-coder"]
         ENTRY["Entry surface<br/>SDK / wizard / API"]
         GUARDS["Guard contract<br/>phase / role / risk / scope"]
-        ORCH["Runtime orchestrator<br/>INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE"]
+        ORCH["Runtime orchestrator<br/>INTAKE -> DESIGN -> SPEC -> WORK ORDER<br/>-> BUILD -> REVIEW -> FREEZE"]
     end
 
     subgraph RUN["Approved execution"]
         direction LR
         APPROVAL["Approval checkpoints"]
         EXEC["Execution<br/>inside approved boundary"]
-        PROVIDER["Certified provider lane<br/>Alibaba primary<br/>DeepSeek bounded"]
+        PROVIDER["Provider lane<br/>DeepSeek certified<br/>Alibaba experimental (fresh proof pending)"]
     end
 
     subgraph CLOSE["Evidence closure"]
@@ -159,7 +159,24 @@ flowchart TB
     REVIEW --> FREEZE
 ```
 
-Diagram note: this is the path that must reach a real provider API call before CVF can claim governance behavior. Alibaba/DashScope is the primary certified release lane; DeepSeek has certified canary evidence and bounded confirmatory coverage. Provider parity is not claimed.
+Diagram note: this is the path that must reach a real provider API call before CVF can claim governance behavior. DeepSeek is the current certified release lane with canary evidence and bounded confirmatory coverage; Alibaba/DashScope's `qwen-flash` target is historically certified on a prior model but is `EXPERIMENTAL` pending fresh live proof on the current model. Provider parity is not claimed.
+
+The seven stages are separate control decisions, even when one interface makes
+them feel continuous to the user:
+
+| Stage | Architecture responsibility |
+| --- | --- |
+| `INTAKE` | Normalize intent, authority, context, risk, and approval needs. |
+| `DESIGN` | Select the solution shape, owners, trust boundaries, and evidence plan. |
+| `SPEC` | Freeze source-verifiable requirements, invariants, negative cases, and acceptance criteria. |
+| `WORK ORDER` | Grant bounded execution authority: role, base, paths, tools, budget, evidence, stop rules, and handoff. |
+| `BUILD` | Execute inside that grant and emit scoped implementation evidence. |
+| `REVIEW` | Independently compare intent, design, spec, authority, output, and evidence. |
+| `FREEZE` | Preserve the accepted result, limitations, export disposition, and next allowed move. |
+
+`SPEC` must not collapse into `DESIGN`, because a solution direction is not a
+testable contract. `WORK ORDER` must not collapse into `BUILD`, because a
+contract is not execution authority.
 
 ## 4. Interaction Model
 
@@ -187,7 +204,41 @@ sequenceDiagram
 
 Diagram note: mock UI tests can validate screens and navigation, but this sequence only counts as governance proof when the provider call is live and the resulting receipt/evidence is captured.
 
-## 5. What This Means
+## 5. SOT3 Knowledge Authority Path
+
+The accepted SOT Three-Layer (SOT3) family governs how retrieved knowledge
+context earns truth authority before it can be injected into a governed
+request. It is a knowledge-authority path, not a replacement for the
+governed request path in Section 3 above; it sits before governed execution
+when a knowledge-context seam is activated.
+
+```mermaid
+flowchart LR
+    SRC["Source intake<br/>SourceEnvelope"]
+    REF["Refinery<br/>deterministic prepare, no truth authority"]
+    KER["Truth Kernel<br/>sole decision/receipt/reference authority"]
+    FLO["Truth Flow<br/>post-Kernel distribution/lifecycle"]
+    CTX["Governed context<br/>Flow-approved knowledge only"]
+    EXEC["Governed execution<br/>Section 3 active path"]
+    REV["Review / freeze"]
+    IMP["Impact / recall"]
+
+    SRC --> REF --> KER --> FLO --> CTX --> EXEC --> REV --> IMP
+```
+
+Diagram note: Refinery prepares source-bound material deterministically and
+holds no truth authority. Truth Kernel alone evaluates trust and issues
+decision, receipt, and reference authority. Truth Flow distributes only
+Flow-approved, post-Kernel context; provider output remains downstream
+content, not truth authority. This path is bounded: the four SOT3 module
+owners are `LOCAL_READY` and accepted-review-evidenced, not globally
+activated, always-invoked, a provider boundary, publicly exported, or
+production-ready. Activation and downstream-application proof are bounded to
+one seam (`docs/reference/sot_three_layer/CVF_SOT3_ACTIVATION_ARCHITECTURE_DECISION.md`),
+not universal CVF behavior. Full contract, implementation, and proof
+references live in `docs/reference/sot_three_layer/README.md`.
+
+## 6. What This Means
 
 The architecture should be read this way:
 
@@ -199,13 +250,13 @@ The architecture should be read this way:
 - provider choice is user-owned, but governance evidence remains CVF-owned
 - release-quality governance claims require live API-backed evidence; mock mode is UI-only
 
-## 6. Current Evidence Posture
+## 7. Current Evidence Posture
 
 | Claim | Current status | Evidence |
 | --- | --- | --- |
 | Non-coder governed AI path | Live-proven | W149 trusted-form corpus: Alibaba direct API `40/40`, Alibaba browser UI `40/40`, DeepSeek confirmatory subset `12/12` |
 | Non-coder adoption journey | Live-proven | W119 evidence pack `3/3` locked journeys pass: first governed output, project knowledge use, evidence handoff |
-| Multi-provider operability | Certified on 2 lanes | Alibaba `qwen-turbo` and DeepSeek `deepseek-chat` both `CERTIFIED`; provider parity is not claimed |
+| Multi-provider operability | Historical 2-lane evidence; Alibaba revalidation open | Alibaba now targets `qwen-flash` pending fresh live proof; DeepSeek `deepseek-chat` remains `CERTIFIED`; provider parity is not claimed |
 | Release gate | Mandatory live governance | W152 preserves `python scripts/run_cvf_release_gate_bundle.py --json` PASS, including live governance E2E |
 | Mock boundary | UI-only | `AGENTS.md` and live evidence packet |
 | Provider parity | Not claimed | Speed, cost, quality, latency, and reliability remain provider economics |
@@ -214,7 +265,7 @@ The architecture should be read this way:
 | Downstream adoption proof | Repeatable across 3 tested kinds | W114-CP7 proves cli-productivity, web-app-planning, and data-analysis — all doctor 11/11 PASS, all tests pass, sample 3 includes a secret-free bridge to live Web evidence |
 | Trusted-form web front door | Live-usable under W149 boundary | 40-form corpus locked; Alibaba full matrix passed; DeepSeek subset passed |
 
-## 7. Current Control Boundaries
+## 8. Current Control Boundaries
 
 ### Web
 
@@ -242,7 +293,7 @@ Delivered W113-T1 proof:
 
 - bootstrap a real downstream sample project outside CVF core
 - record first-request agent declaration
-- execute `INTAKE -> DESIGN -> BUILD -> REVIEW -> FREEZE`
+- execute `INTAKE -> DESIGN -> SPEC -> WORK ORDER -> BUILD -> REVIEW -> FREEZE`
 - capture live API-backed governance evidence
 
 ### Non-Coder Value
@@ -266,7 +317,7 @@ Current posture: W119 closed delivered. Downstream adoption pattern is repeatabl
 
 Latest closed non-coder value roadmap: [W119-T1 Non-Coder Adoption Proof And Evidence UX](docs/roadmaps/CVF_W119_T1_NONCODER_ADOPTION_PROOF_AND_EVIDENCE_UX_ROADMAP_2026-04-23.md).
 
-## 8. Read Next
+## 9. Read Next
 
 ### General Orientation
 

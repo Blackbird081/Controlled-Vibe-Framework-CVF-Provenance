@@ -1,0 +1,7 @@
+{
+  "profileName": "public-free",
+  "description": "Public-safe starter tier for free users and public-core-only workspaces.",
+  "extends": [
+    "workspace-standard"
+  ]
+}

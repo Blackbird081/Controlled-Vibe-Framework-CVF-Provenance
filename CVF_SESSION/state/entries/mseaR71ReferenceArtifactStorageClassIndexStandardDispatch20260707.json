@@ -1,0 +1,42 @@
+{
+  "stateOrder": 915,
+  "stateKey": "mseaR71ReferenceArtifactStorageClassIndexStandardDispatch20260707",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "599269898",
+    "materialCommitFull": "5992698980e4cca98f95396762317272a0343a3b",
+    "gc018BaselinePath": "docs/baselines/CVF_GC018_MSEA_R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_2026-07-07.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_2026-07-07.md",
+    "selectedDisposition": "R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_DISPATCH_READY",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": [
+      "pre-dispatch autorun PASS 73/73 on 32093b1b1..HEAD before material commit",
+      "dispatch commit steward PASS on 32093b1b1..HEAD",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "workerOwnedOutputs": [
+      "docs/reference/reference_artifact_storage/README.md",
+      "docs/reference/reference_artifact_storage/CVF_REFERENCE_ARTIFACT_STORAGE_CLASS_STANDARD.md",
+      "docs/reference/CVF_REFERENCE_ARTIFACT_INDEX.md",
+      "docs/reviews/CVF_MSEA_R71_REFERENCE_ARTIFACT_STORAGE_CLASS_AND_INDEX_STANDARD_WORKER_RETURN_2026-07-07.md"
+    ],
+    "boundedDecisionFacts": {
+      "readmeFrontDoorWorkerOutputAuthorized": true,
+      "referenceArtifactIndexWorkerOutputAuthorized": true,
+      "forwardOnlyStorageClassStandardAuthorized": true,
+      "historicalRenameSweepAuthorized": false,
+      "checkerImplementationAuthorized": false,
+      "publicSyncMutationAuthorized": false,
+      "runtimeImplementationAuthorized": false,
+      "sourceOrTestEditAuthorized": false,
+      "providerLiveProofAuthorized": false,
+      "directExternalImportAuthorized": false,
+      "privateOutputContentReadAuthorized": false,
+      "productionMemoryRagReleased": false,
+      "workerCommitAuthorized": false
+    },
+    "nextAllowedMove": "No-commit R71 worker execution only: create the README front door, storage-class standard, reference artifact index, and worker return, then stop for reviewer closure.",
+    "claimBoundary": "R71 dispatch authorizes only no-commit documentation/reference worker outputs. It does not authorize historical rename/move sweep, public-sync mutation, source/test/runtime/checker edits, provider/live proof, direct external import, production Memory/RAG release, private/generated MinerU output read, retrieval/vectorization, P3 reopen, use-case/legal workflow, push, or public/hosted/production claims."
+  }
+}

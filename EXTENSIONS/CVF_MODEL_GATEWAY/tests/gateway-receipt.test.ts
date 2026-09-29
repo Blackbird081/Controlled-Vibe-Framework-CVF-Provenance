@@ -12,8 +12,8 @@ describe("GatewayReceiptBuilder", () => {
     const receipt = builder.build({
       traceId: "trace-1",
       providerId: "dashscope",
-      requestedModelId: "qwen-turbo",
-      selectedModelId: "qwen-turbo",
+      requestedModelId: "qwen-flash",
+      selectedModelId: "qwen-flash",
       decision: "selected",
       reason: "policy_health_quota_selected",
       policy: {
@@ -42,7 +42,7 @@ describe("GatewayReceiptBuilder", () => {
     const envelope: GatewayReceiptEnvelope = builder.buildEnvelope({
       traceId: "trace-envelope",
       providerId: "dashscope",
-      selectedModelId: "qwen-turbo",
+      selectedModelId: "qwen-flash",
       decision: "selected",
       reason: "policy_health_quota_selected",
       validationState: "passed",
@@ -76,6 +76,36 @@ describe("GatewayReceiptBuilder", () => {
     expect(sanitizeReceiptMetadata({ token: "abc", nested: { secret: "def", value: 1 } })).toEqual({
       token: "[REDACTED]",
       nested: { secret: "[REDACTED]", value: 1 },
+    });
+  });
+
+  describe("CSCC-R1-T2 canonicalExecutionId (additive, legacy-compatible)", () => {
+    it("omits canonicalExecutionId when the input omits it (legacy caller)", () => {
+      const builder = new GatewayReceiptBuilder(
+        () => new Date("2026-09-03T00:00:00Z"),
+        () => "abc123",
+      );
+      const receipt = builder.build({
+        traceId: "trace-legacy",
+        decision: "selected",
+        reason: "test",
+      });
+      expect(receipt.canonicalExecutionId).toBeUndefined();
+    });
+
+    it("carries canonicalExecutionId through to the built receipt when present", () => {
+      const builder = new GatewayReceiptBuilder(
+        () => new Date("2026-09-03T00:00:00Z"),
+        () => "abc123",
+      );
+      const receipt = builder.build({
+        traceId: "trace-canonical",
+        canonicalExecutionId: "env-canonical-001",
+        decision: "selected",
+        reason: "test",
+      });
+      expect(receipt.canonicalExecutionId).toBe("env-canonical-001");
+      expect(receipt.traceId).toBe("trace-canonical");
     });
   });
 });

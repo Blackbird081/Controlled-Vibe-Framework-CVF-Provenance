@@ -383,6 +383,23 @@ jobs:
         run: |
           python governance/compat/check_corpus_to_knowledge_map_reconciliation.py --base "$BASE_SHA" --head "$HEAD_SHA" --enforce
 
+  agent-instruction-carrier-compaction:
+    name: Agent Instruction Carrier Compaction
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Enforce ACRC-T2B instruction carrier compaction contract
+        run: |
+          python governance/compat/check_agent_instruction_carriers.py --enforce
+
   multi-agent-review-governance:
     name: Multi-Agent Review Governance
     runs-on: ubuntu-latest
@@ -508,6 +525,21 @@ jobs:
         run: |
           python governance/compat/check_governed_file_size.py --enforce
 
+  system-chain-map-freshness:
+    name: System Chain Map Freshness
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Enforce system chain map freshness guard
+        run: |
+          python governance/compat/check_system_chain_map_freshness.py --enforce
+
   test-partition-ownership:
     name: Test Partition Ownership
     runs-on: ubuntu-latest
@@ -622,8 +654,8 @@ jobs:
         run: |
           python governance/compat/check_repository_lifecycle_classification.py --enforce
 
-    repository-exposure-classification:
-      name: Repository Exposure Classification
+  repository-exposure-classification:
+    name: Repository Exposure Classification
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -635,28 +667,28 @@ jobs:
         with:
           python-version: '3.11'
 
-        - name: Enforce GC-038 repository exposure classification
-          run: |
-            python governance/compat/check_repository_exposure_classification.py --enforce
+      - name: Enforce GC-038 repository exposure classification
+        run: |
+          python governance/compat/check_repository_exposure_classification.py --enforce
 
-    prepublic-p3-readiness:
-      name: Pre-Public P3 Readiness
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-          with:
-            fetch-depth: 0
+  prepublic-p3-readiness:
+    name: Pre-Public P3 Readiness
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-        - name: Set up Python
-          uses: actions/setup-python@v4
-          with:
-            python-version: '3.11'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-        - name: Enforce GC-039 pre-public p3 readiness
-          run: |
-            python governance/compat/check_prepublic_p3_readiness.py --enforce
+      - name: Enforce GC-039 pre-public p3 readiness
+        run: |
+          python governance/compat/check_prepublic_p3_readiness.py --enforce
 
-    audit-retention-registry:
+  audit-retention-registry:
     name: Audit Retention Registry
     runs-on: ubuntu-latest
     steps:
@@ -793,10 +825,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Install markdownlint
         run: npm install -g markdownlint-cli
-      
+
       - name: Lint all markdown files
         run: |
           markdownlint --config .markdownlintrc '**/*.md' \
@@ -810,21 +842,21 @@ jobs:
     strategy:
       matrix:
         python-version: ['3.9', '3.10', '3.11']
-    
+
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-      
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pytest pytest-cov
           pip install -e ./EXTENSIONS/CVF_v1.3_IMPLEMENTATION_TOOLKIT/sdk
-      
+
       - name: Run unit tests
         run: |
           pytest EXTENSIONS/CVF_v1.3_IMPLEMENTATION_TOOLKIT/sdk/tests/unit \
@@ -832,7 +864,7 @@ jobs:
             --cov=EXTENSIONS/CVF_v1.3_IMPLEMENTATION_TOOLKIT/sdk \
             --cov-report=xml \
             --cov-report=html
-      
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
@@ -844,21 +876,21 @@ jobs:
     name: Integration Tests
     runs-on: ubuntu-latest
     needs: test
-    
+
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pytest
           pip install -e ./EXTENSIONS/CVF_v1.3_IMPLEMENTATION_TOOLKIT/sdk
-      
+
       - name: Run integration tests
         run: |
           pytest EXTENSIONS/CVF_v1.3_IMPLEMENTATION_TOOLKIT/sdk/tests/integration \
@@ -868,10 +900,10 @@ jobs:
   documentation-build:
     name: Documentation Build
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Validate documentation structure
         run: |
           echo "Checking for required documentation files..."
@@ -901,7 +933,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [docs-governance-compat, governed-artifact-authoring, markdown-structural-completeness, baseline-update-compat, depth-audit-continuation-compat, gc018-stop-boundary-semantics, session-governance-bootstrap, progress-tracker-sync, multi-agent-review-governance, boardroom-runtime-governance, extension-package-check, incremental-test-log-rotation, conformance-trace-rotation, python-automation-size, governed-file-size, test-partition-ownership, release-manifest-consistency, cross-channel-guard-compat, guard-registry-compat, guard-authoring-standard, active-window-registry, repository-lifecycle-classification, repository-exposure-classification, prepublic-p3-readiness, foundational-guard-surfaces, enterprise-evidence-pack, conformance-artifact-consistency, conformance-golden-diff, conformance-release-grade, markdown-lint, test, integration-test, documentation-build, registry-validate]
     if: always()
-    
+
     steps:
       - name: Check status
         run: |

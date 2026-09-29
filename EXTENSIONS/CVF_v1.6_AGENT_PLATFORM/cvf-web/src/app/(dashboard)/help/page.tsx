@@ -1,9 +1,12 @@
 'use client';
 
+// Text Encoding Exception: localized Vietnamese user-facing copy follows this file's existing convention.
+
 import Link from 'next/link';
 import { useState } from 'react';
-import { BookOpen, LifeBuoy, Rocket, Users } from 'lucide-react';
+import { BookOpen, ClipboardList, LifeBuoy, RefreshCw, Rocket, Users } from 'lucide-react';
 import { SurfaceTopBar } from '@/components';
+import { KnowledgeJourneyNav } from '@/components/KnowledgeJourneyNav';
 import { HELP_CONTENT } from '@/data/help-content';
 import { useLanguage } from '@/lib/i18n';
 
@@ -17,6 +20,8 @@ export default function HelpPage() {
         { icon: Rocket, title: content.features[2]?.title, desc: content.features[2]?.desc, href: content.features[2]?.link, event: content.features[2]?.event },
         { icon: Users, title: content.features[5]?.title, desc: content.features[5]?.desc, href: content.features[5]?.link, event: content.features[5]?.event },
         { icon: LifeBuoy, title: content.features[6]?.title, desc: content.features[6]?.desc, href: content.features[6]?.link, event: content.features[6]?.event },
+        { icon: ClipboardList, title: content.features[7]?.title, desc: content.features[7]?.desc, href: content.features[7]?.link, event: content.features[7]?.event },
+        { icon: RefreshCw, title: content.features[8]?.title, desc: content.features[8]?.desc, href: content.features[8]?.link, event: content.features[8]?.event },
     ].filter(card => card.title && card.desc);
 
     return (
@@ -24,19 +29,20 @@ export default function HelpPage() {
             <SurfaceTopBar
                 title={language === 'vi' ? 'Trung tâm trợ giúp' : 'Help Center'}
                 subtitle={language === 'vi'
-                    ? 'Hướng dẫn sử dụng từng tính năng — từ template đơn giản đến quy trình AI nâng cao.'
+                    ? 'Bắt đầu từ mục tiêu, rồi đi theo một luồng rõ ràng từ thu thập đến bàn giao.'
                     : 'Guides for every feature — from simple templates to advanced AI workflows.'}
                 actions={(
                     <Link
                         href="/docs"
                         className="cvf-control inline-flex items-center rounded-2xl bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-600 transition hover:bg-indigo-100 dark:bg-indigo-500/10 dark:text-indigo-300 dark:hover:bg-indigo-500/15"
                     >
-                        {language === 'vi' ? 'Mở docs' : 'Open docs'}
+                        {language === 'vi' ? 'Mở tài liệu' : 'Open docs'}
                     </Link>
                 )}
             />
 
             <div className="space-y-8 px-4 py-6 sm:px-6">
+                <KnowledgeJourneyNav currentStep={1} />
                 <section className="grid gap-5 md:grid-cols-2">
                     {supportCards.map((card) => {
                         const Icon = card.icon;

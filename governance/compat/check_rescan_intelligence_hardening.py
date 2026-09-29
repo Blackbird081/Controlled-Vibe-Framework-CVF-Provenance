@@ -94,14 +94,21 @@ APPLICABILITY_PATTERNS = (
     r"\bintake refresh\b",
 )
 
+RESCAN_TOKEN_RE = r"(?:rescan|re-scan)"
 RESCAN_GUARD_MAINTENANCE_NOUNS = (
     r"hardening|guard(?:'s)?|checker|standard|section|body|block|verdict|"
     r"packet|rule|filtering|phrase|phrasing|exclusion|defect|trigger|"
     r"maintenance|false[- ]trigger"
 )
 RESCAN_SELF_REFERENCE_COMPOUND_RE = re.compile(
-    rf"\brescan\b(?:[\s,-]+\w+){{0,3}}[\s,-]+(?:{RESCAN_GUARD_MAINTENANCE_NOUNS})\b"
-    rf"|\b(?:{RESCAN_GUARD_MAINTENANCE_NOUNS})\b(?:[\s,-]+\w+){{0,3}}[\s,-]+\brescan\b",
+    rf"\b{RESCAN_TOKEN_RE}\b(?:[\s,-]+\w+){{0,3}}[\s,-]+(?:{RESCAN_GUARD_MAINTENANCE_NOUNS})\b"
+    rf"|\b(?:{RESCAN_GUARD_MAINTENANCE_NOUNS})\b(?:[\s,-]+\w+){{0,3}}[\s,-]+\b{RESCAN_TOKEN_RE}\b",
+    re.I,
+)
+NEGATED_RESCAN_CONTEXT_RE = re.compile(
+    r"\b(?:not|never|no|without)\b[^.\n;]{0,120}\b"
+    r"(?:rescan|re-scan|intake[- ]refresh|knowledge absorption|"
+    r"source[- ]backed reassessment|source[- ]verified rescan)\b[^.\n;]*",
     re.I,
 )
 
@@ -320,6 +327,7 @@ def _has_real_rescan_signal_outside_section(path: str, text: str) -> bool:
     lowered = re.sub(r"\bnot\s+(?:a|itself\s+a)\s+rescan[^.\n]*", " ", lowered)
     lowered = re.sub(r"\bnot\s+performing\s+a\s+rescan[^.\n]*", " ", lowered)
     for _ in range(3):
+        lowered = NEGATED_RESCAN_CONTEXT_RE.sub(" ", lowered)
         lowered = RESCAN_SELF_REFERENCE_COMPOUND_RE.sub(" ", lowered)
     return any(re.search(pattern, lowered, re.I) for pattern in APPLICABILITY_PATTERNS)
 
@@ -345,9 +353,7 @@ def _is_applicable_output(path: str, text: str) -> bool:
     if path.startswith("docs/work_orders/"):
         path_haystack = path.lower().replace("_", " ").replace("-", " ")
         return any(re.search(pattern, path_haystack, re.I) for pattern in APPLICABILITY_PATTERNS)
-    signal_text = _strip_non_signal_text(strip_marked_discussion_sections(text))
-    lowered = re.sub(r"rescan[- ]intelligence(?:[- ]hardening)?", "", signal_text.lower())
-    return any(re.search(pattern, lowered, re.I) for pattern in APPLICABILITY_PATTERNS)
+    return _has_real_rescan_signal_outside_section(path, text)
 
 
 def _validate_standard(path: str, text: str) -> list[dict[str, str]]:

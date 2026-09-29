@@ -1,0 +1,372 @@
+"""Focused tests for the MFRP-P3 historical replay helper.
+
+Covers: source-identity drift detection, every replay family present in the
+frozen fixture, false-negative/false-positive accounting, freeze binding to
+the fixture's own declared schema/profile, deterministic case ordering, and
+idempotence across repeated invocations. All tests are pure/read-only: no
+subprocess, network, provider call, or filesystem write.
+"""
+
+from __future__ import annotations
+
+import copy
+import hashlib
+import json
+from pathlib import Path
+
+import pytest
+
+import mfrp_historical_replay as replay
+
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+FIXTURE_PATH = REPO_ROOT / "governance" / "compat" / "fixtures" / "mfrp_p3_historical_replay.json"
+
+
+@pytest.fixture()
+def fixture_data() -> dict:
+    return json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
+
+
+def test_fixture_file_exists_and_is_frozen_schema(fixture_data: dict) -> None:
+    assert fixture_data["schema"] == replay.FIXTURE_SCHEMA
+    assert fixture_data["profile"] == replay.FIXTURE_PROFILE
+
+
+def test_fixture_has_minimum_eighteen_cases(fixture_data: dict) -> None:
+    assert len(fixture_data["cases"]) >= 18
+
+
+def test_fixture_covers_all_required_roadmap_families(fixture_data: dict) -> None:
+    required_families = {
+        "clean_documentation_only_phase_return",
+        "same_agent_multi_role_return",
+        "multi_agent_multi_role_return",
+        "missing_predecessor_and_predecessor_digest_mismatch",
+        "stale_non_authority_archive_source_reference",
+        "expected_actual_manifest_omission_and_unauthorized_path",
+        "worker_modified_verifier_used_for_self_acceptance",
+        "verifier_or_shared_dependency_changed_in_prior_batch_cached_range_identity_unchanged",
+        "stale_receipt_after_checker_hardening",
+        "shared_import_registry_config_fixture_interpreter_drift",
+        "unrecognized_hash_byte_domain_or_normalization_recipe",
+        "hard_obligation_with_only_llm_inferred_support",
+        "fabricated_missing_test_receipt",
+        "constraint_drift_hidden_by_passing_narrow_test",
+        "secret_bearing_evidence_or_unsafe_diagnostic",
+        "cache_hit_exact_identity_and_cache_invalidation_after_one_bound_input_changes",
+        "focused_probe_contradiction_requiring_escalation",
+        "high_risk_live_public_destructive_task_forced_to_conservative_verification",
+    }
+    present_families = {case["family"] for case in fixture_data["cases"]}
+    missing = required_families - present_families
+    assert not missing, f"missing required families: {missing}"
+
+
+def test_fixture_covers_all_seven_zero_tolerance_classes(fixture_data: dict) -> None:
+    present = {
+        case["zeroToleranceClass"]
+        for case in fixture_data["cases"]
+        if case["zeroToleranceClass"] != "NONE"
+    }
+    assert present == set(replay.ZERO_TOLERANCE_CLASSES)
+
+
+def test_every_case_binds_to_a_declared_source(fixture_data: dict) -> None:
+    declared_source_ids = {entry["sourceId"] for entry in fixture_data["sourceManifest"]}
+    for case in fixture_data["cases"]:
+        assert case["sourceId"] in declared_source_ids
+
+
+def test_seeded_derivation_cases_are_labeled_honestly(fixture_data: dict) -> None:
+    seeded = [case for case in fixture_data["cases"] if case["outcomeClass"] == "SEEDED_DERIVATION"]
+    assert seeded, "fixture should contain at least one seeded synthetic mutation case"
+    for case in seeded:
+        assert case["mutation"] != "none"
+    historical = [case for case in fixture_data["cases"] if case["outcomeClass"] == "HISTORICAL_OUTCOME"]
+    for case in historical:
+        assert case["mutation"] == "none"
+
+
+def test_source_manifest_matches_committed_files_exactly(fixture_data: dict) -> None:
+    results = replay.verify_source_manifest(fixture_data["sourceManifest"], REPO_ROOT)
+    assert len(results) == 7
+    for entry in results:
+        assert entry["status"] == "MATCH"
+
+
+def test_source_drift_is_detected_when_a_source_hash_is_wrong(fixture_data: dict) -> None:
+    mutated_manifest = copy.deepcopy(fixture_data["sourceManifest"])
+    mutated_manifest[0]["sha256"] = "0" * 64
+    results = replay.verify_source_manifest(mutated_manifest, REPO_ROOT)
+    assert results[0]["status"] == "SOURCE_DRIFT"
+
+
+def test_source_missing_path_is_detected() -> None:
+    manifest = [
+        {
+            "sourceId": "MISSING",
+            "path": "docs/reviews/CVF_DOES_NOT_EXIST_ANYWHERE_2099-01-01.md",
+            "sha256": "0" * 64,
+        }
+    ]
+    results = replay.verify_source_manifest(manifest, REPO_ROOT)
+    assert results[0]["status"] == "SOURCE_MISSING"
+
+
+def test_source_path_outside_repository_is_rejected() -> None:
+    manifest = [
+        {
+            "sourceId": "ESCAPE",
+            "path": "../../../etc/passwd",
+            "sha256": "0" * 64,
+        }
+    ]
+    results = replay.verify_source_manifest(manifest, REPO_ROOT)
+    assert results[0]["status"] == "PATH_OUTSIDE_REPOSITORY"
+
+
+def test_corpus_sha256_matches_recomputation_from_raw_bytes() -> None:
+    expected = hashlib.sha256(FIXTURE_PATH.read_bytes()).hexdigest()
+    corpus_sha256, corpus_length = replay.compute_corpus_identity(FIXTURE_PATH)
+    assert corpus_sha256 == expected
+    assert corpus_length == len(FIXTURE_PATH.read_bytes())
+
+
+def test_case_set_digest_uses_sorted_ids_lf_joined_with_trailing_lf(fixture_data: dict) -> None:
+    case_ids = sorted(case["caseId"] for case in fixture_data["cases"])
+    expected = hashlib.sha256(("\n".join(case_ids) + "\n").encode("utf-8")).hexdigest()
+    assert replay.compute_case_set_digest(fixture_data["cases"]) == expected
+
+
+def test_case_set_digest_is_order_independent_of_input_list_order(fixture_data: dict) -> None:
+    forward = replay.compute_case_set_digest(fixture_data["cases"])
+    reversed_cases = list(reversed(fixture_data["cases"]))
+    backward = replay.compute_case_set_digest(reversed_cases)
+    assert forward == backward
+
+
+def test_zero_tolerance_recall_is_100_percent_for_every_class() -> None:
+    report = replay.run_replay(FIXTURE_PATH, REPO_ROOT)
+    for cls in replay.ZERO_TOLERANCE_CLASSES:
+        totals = report["zeroToleranceTotals"][cls]
+        assert totals["total"] > 0, f"class {cls} has no bound cases"
+        assert totals["detected"] == totals["total"], f"class {cls} recall is not 100%"
+    assert report["falseNegatives"] == []
+
+
+def test_frozen_fixture_replay_reports_no_false_positives() -> None:
+    report = replay.run_replay(FIXTURE_PATH, REPO_ROOT)
+    assert report["falsePositives"] == []
+
+
+def test_frozen_fixture_replay_result_is_pass_candidate_never_pass() -> None:
+    report = replay.run_replay(FIXTURE_PATH, REPO_ROOT)
+    assert report["result"] == "REPLAY_PASS_CANDIDATE"
+    serialized = json.dumps(report)
+    assert "REPLAY_PASS\"" not in serialized
+    assert '"REPLAY_PASS"' not in serialized
+
+
+def test_helper_never_emits_bare_replay_pass_literal() -> None:
+    source_text = (REPO_ROOT / "governance" / "compat" / "mfrp_historical_replay.py").read_text(
+        encoding="utf-8"
+    )
+    assert '"REPLAY_PASS"' not in source_text
+    assert "'REPLAY_PASS'" not in source_text
+
+
+def test_synthetic_zero_tolerance_miss_is_reported_as_false_negative() -> None:
+    hostile_fixture = {
+        "schema": replay.FIXTURE_SCHEMA,
+        "profile": replay.FIXTURE_PROFILE,
+        "sourceManifest": [
+            {
+                "sourceId": "H0",
+                "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
+                "sha256": "7e46de88180cdd0f0c6fac3ba97c1ed1491f73ef5518499fab58be6ca69ae2f0",
+            }
+        ],
+        "cases": [
+            {
+                "caseId": "HOSTILE-01",
+                "family": "missing_predecessor_and_predecessor_digest_mismatch",
+                "sourceId": "H0",
+                "locator": "synthetic hostile probe",
+                "outcomeClass": "SEEDED_DERIVATION",
+                "routeClass": "predecessor_binding",
+                "mutation": "predecessor digest forged",
+                "expectedReceiptResult": "VALID_NO_MUTATION_NEEDED",
+                "expectedReadoutResult": "DETERMINISTIC_PREFLIGHT_COMPLETE",
+                "expectedSurfacedGaps": [],
+                "zeroToleranceClass": "PREDECESSOR_CHAIN_FORGERY",
+            }
+        ],
+        "claimBoundary": "hostile probe fixture, not the frozen P3 corpus",
+    }
+    evaluation = replay._evaluate_case(hostile_fixture["cases"][0])
+    assert evaluation["detected"] is False
+
+
+def test_malformed_fixture_schema_raises_replay_error(tmp_path: Path) -> None:
+    bad = tmp_path / "bad.json"
+    bad.write_text(json.dumps({"schema": "wrong", "profile": "wrong"}), encoding="utf-8")
+    with pytest.raises(replay.ReplayError):
+        replay.load_fixture(bad)
+
+
+def test_malformed_json_raises_replay_error(tmp_path: Path) -> None:
+    bad = tmp_path / "bad.json"
+    bad.write_text("{not valid json", encoding="utf-8")
+    with pytest.raises(replay.ReplayError):
+        replay.load_fixture(bad)
+
+
+def test_missing_fixture_file_raises_replay_error(tmp_path: Path) -> None:
+    missing = tmp_path / "does_not_exist.json"
+    with pytest.raises(replay.ReplayError):
+        replay.load_fixture(missing)
+
+
+def test_case_shape_validation_flags_missing_field() -> None:
+    incomplete_case = {
+        "caseId": "INCOMPLETE-01",
+        "family": "clean_documentation_only_phase_return",
+        "sourceId": "P1",
+    }
+    problems = replay._validate_case_shape(incomplete_case)
+    assert any("missing field" in problem for problem in problems)
+
+
+def test_case_shape_validation_flags_invalid_zero_tolerance_class() -> None:
+    case = {
+        "caseId": "INVALID-ZT-01",
+        "family": "clean_documentation_only_phase_return",
+        "sourceId": "P1",
+        "locator": "x",
+        "outcomeClass": "HISTORICAL_OUTCOME",
+        "routeClass": "x",
+        "mutation": "none",
+        "expectedReceiptResult": "VALID_NO_MUTATION_NEEDED",
+        "expectedReadoutResult": "DETERMINISTIC_PREFLIGHT_COMPLETE",
+        "expectedSurfacedGaps": [],
+        "zeroToleranceClass": "NOT_A_REAL_CLASS",
+    }
+    problems = replay._validate_case_shape(case)
+    assert any("invalid zeroToleranceClass" in problem for problem in problems)
+
+
+def test_helper_is_read_only_and_defines_no_write_or_subprocess_calls() -> None:
+    assert not hasattr(replay, "subprocess")
+    assert not hasattr(replay, "urllib")
+    assert not hasattr(replay, "socket")
+    assert not hasattr(replay, "requests")
+    source_text = (REPO_ROOT / "governance" / "compat" / "mfrp_historical_replay.py").read_text(
+        encoding="utf-8"
+    )
+    assert "import subprocess" not in source_text
+    assert "import urllib" not in source_text
+    assert "import socket" not in source_text
+    assert "import requests" not in source_text
+    assert ".write_text(" not in source_text
+    assert ".write_bytes(" not in source_text
+    assert "open(" not in source_text
+
+
+def test_replay_is_idempotent_across_repeated_invocations() -> None:
+    first = replay.run_replay(FIXTURE_PATH, REPO_ROOT)
+    second = replay.run_replay(FIXTURE_PATH, REPO_ROOT)
+    assert first == second
+
+
+def test_replay_does_not_mutate_fixture_file_on_disk() -> None:
+    before = FIXTURE_PATH.read_bytes()
+    replay.run_replay(FIXTURE_PATH, REPO_ROOT)
+    after = FIXTURE_PATH.read_bytes()
+    assert before == after
+
+
+def test_deterministic_case_ordering_independent_of_dict_insertion_order(fixture_data: dict) -> None:
+    shuffled = {
+        "schema": fixture_data["schema"],
+        "profile": fixture_data["profile"],
+        "sourceManifest": list(reversed(fixture_data["sourceManifest"])),
+        "cases": list(reversed(fixture_data["cases"])),
+        "claimBoundary": fixture_data["claimBoundary"],
+    }
+    forward_digest = replay.compute_case_set_digest(fixture_data["cases"])
+    shuffled_digest = replay.compute_case_set_digest(shuffled["cases"])
+    assert forward_digest == shuffled_digest
+
+
+def test_family_and_case_count_reconciliation_matches_ledger(fixture_data: dict) -> None:
+    report = replay.run_replay(FIXTURE_PATH, REPO_ROOT)
+    assert report["caseCount"] == len(fixture_data["cases"])
+    assert report["familyCount"] == 18
+    assert report["corpusSha256"] == "5b27701520f843ffcdbf4a05f7c1f9b9a76530f78b04c2f1ac6f79768d17dd5e"
+    assert report["caseSetDigest"] == "cdaa2fb6895a50d95ac6ebc296aa5ad299958d8fbfcbbc9e894cfb158cf3e0ef"
+
+
+def test_main_json_mode_prints_result_and_respects_enforce(capsys: pytest.CaptureFixture) -> None:
+    exit_code = replay.main(
+        [
+            "--fixture",
+            str(FIXTURE_PATH),
+            "--json",
+            "--enforce",
+        ]
+    )
+    captured = capsys.readouterr()
+    payload = json.loads(captured.out)
+    assert payload["result"] == "REPLAY_PASS_CANDIDATE"
+    assert exit_code == 0
+
+
+def test_main_human_mode_does_not_crash(capsys: pytest.CaptureFixture) -> None:
+    exit_code = replay.main(["--fixture", str(FIXTURE_PATH)])
+    captured = capsys.readouterr()
+    assert "Result: REPLAY_PASS_CANDIDATE" in captured.out
+    assert exit_code == 0
+
+
+def test_main_enforce_fails_closed_on_return_to_design(tmp_path: Path) -> None:
+    hostile_fixture_path = tmp_path / "hostile.json"
+    hostile_payload = {
+        "schema": replay.FIXTURE_SCHEMA,
+        "profile": replay.FIXTURE_PROFILE,
+        "sourceManifest": [
+            {
+                "sourceId": "H0",
+                "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
+                "sha256": "0" * 64,
+            }
+        ],
+        "cases": [
+            {
+                "caseId": "HOSTILE-DRIFT-01",
+                "family": "clean_documentation_only_phase_return",
+                "sourceId": "H0",
+                "locator": "x",
+                "outcomeClass": "HISTORICAL_OUTCOME",
+                "routeClass": "x",
+                "mutation": "none",
+                "expectedReceiptResult": "VALID_NO_MUTATION_NEEDED",
+                "expectedReadoutResult": "DETERMINISTIC_PREFLIGHT_COMPLETE",
+                "expectedSurfacedGaps": [],
+                "zeroToleranceClass": "NONE",
+            }
+        ],
+        "claimBoundary": "hostile probe fixture",
+    }
+    hostile_fixture_path.write_text(json.dumps(hostile_payload), encoding="utf-8")
+    exit_code = replay.main(["--fixture", str(hostile_fixture_path), "--json", "--enforce"])
+    assert exit_code == 1
+
+
+def test_main_missing_fixture_returns_to_design_without_crash(tmp_path: Path, capsys: pytest.CaptureFixture) -> None:
+    missing_path = tmp_path / "missing.json"
+    exit_code = replay.main(["--fixture", str(missing_path), "--json", "--enforce"])
+    captured = capsys.readouterr()
+    payload = json.loads(captured.out)
+    assert payload["result"] == "RETURN_TO_DESIGN"
+    assert exit_code == 1

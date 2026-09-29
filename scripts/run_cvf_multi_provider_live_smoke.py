@@ -65,7 +65,7 @@ def provider_specs(env: dict[str, str]) -> list[dict[str, str | None]]:
         },
         {
             "provider": "alibaba",
-            "model": "qwen-turbo",
+            "model": "qwen-flash",
             "api_style": "openai-compatible",
             "url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions",
             "key": env.get("ALIBABA_API_KEY")

@@ -176,7 +176,7 @@ describe('web-governance-envelope', () => {
                 envelope: env,
                 decision: 'ALLOW',
                 provider: 'alibaba',
-                model: 'qwen-turbo',
+                model: 'qwen-flash',
                 routingDecision: 'alibaba',
                 knowledgeSource: 'project',
                 knowledgeInjected: true,
@@ -292,7 +292,7 @@ describe('web-governance-envelope', () => {
                 envelope: env,
                 decision: 'ALLOW',
                 provider: 'alibaba',
-                model: 'qwen-turbo',
+                model: 'qwen-flash',
                 runtimeTelemetry: {
                     schemaVersion: 'cvf.runtimeTelemetry.v1',
                     providerLatencyMs: 321,
@@ -341,7 +341,7 @@ describe('web-governance-envelope', () => {
                 decision: 'ALLOW',
                 riskLevel: 'R1',
                 provider: 'alibaba',
-                model: 'qwen-turbo',
+                model: 'qwen-flash',
                 routingDecision: 'ALLOW',
                 receiptIntegrity: {
                     signingSecret: 'builder-test-secret',
@@ -363,6 +363,51 @@ describe('web-governance-envelope', () => {
             expect(receipt.receiptIntegrity?.receiptHash).toMatch(/^[a-f0-9]{64}$/);
             expect(receipt.receiptIntegrity?.signatureDigest).toMatch(/^[a-f0-9]{64}$/);
             expect(JSON.stringify(receipt)).not.toContain('builder-test-secret');
+        });
+
+        describe('CSCC-R1-T2: canonicalExecutionId identity equality (additive, legacy-compatible)', () => {
+            it('sets canonicalExecutionId equal to the same receipt envelopeId on a success-path receipt', () => {
+                const envelope = buildGovernanceEnvelope({
+                    routeId: '/api/execute',
+                    surfaceClass: 'governance-execution',
+                    evidenceMode: 'live',
+                });
+                const receipt = buildEvidenceReceipt({ envelope, decision: 'ALLOW', provider: 'openai', model: 'gpt-4o' });
+                expect(receipt.canonicalExecutionId).toBe(receipt.envelopeId);
+                expect(receipt.canonicalExecutionId).toBe(envelope.envelopeId);
+            });
+
+            it('sets canonicalExecutionId equal to envelopeId identically on a denial-path receipt', () => {
+                const envelope = buildGovernanceEnvelope({
+                    routeId: '/api/execute',
+                    surfaceClass: 'governance-execution',
+                    evidenceMode: 'live',
+                });
+                const receipt = buildEvidenceReceipt({ envelope, decision: 'BLOCK', provider: 'openai', model: 'blocked' });
+                expect(receipt.canonicalExecutionId).toBe(envelope.envelopeId);
+            });
+
+            it('legacy readers that only inspect envelopeId are unaffected by the additive field', () => {
+                const envelope = buildGovernanceEnvelope({
+                    routeId: '/api/execute',
+                    surfaceClass: 'governance-execution',
+                    evidenceMode: 'live',
+                });
+                const receipt = buildEvidenceReceipt({ envelope, decision: 'ALLOW', provider: 'openai', model: 'gpt-4o' });
+                // A legacy reader destructuring only envelopeId still sees the
+                // exact same value it always did; envelopeId itself is
+                // unrenamed and unremoved.
+                const { envelopeId } = receipt;
+                expect(envelopeId).toBe(envelope.envelopeId);
+            });
+
+            it('produces distinct canonicalExecutionId values for distinct requests, matching envelopeId uniqueness', () => {
+                const envelopeA = buildGovernanceEnvelope({ routeId: '/api/execute', surfaceClass: 'governance-execution', evidenceMode: 'live' });
+                const envelopeB = buildGovernanceEnvelope({ routeId: '/api/execute', surfaceClass: 'governance-execution', evidenceMode: 'live' });
+                const receiptA = buildEvidenceReceipt({ envelope: envelopeA, decision: 'ALLOW' });
+                const receiptB = buildEvidenceReceipt({ envelope: envelopeB, decision: 'ALLOW' });
+                expect(receiptA.canonicalExecutionId).not.toBe(receiptB.canonicalExecutionId);
+            });
         });
     });
 });

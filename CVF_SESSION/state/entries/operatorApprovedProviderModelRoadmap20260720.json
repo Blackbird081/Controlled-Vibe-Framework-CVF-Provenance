@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2013,
+  "stateKey": "operatorApprovedProviderModelRoadmap20260720",
+  "value": {
+    "status": "PROPOSED_OPERATOR_REVIEW_REQUIRED",
+    "roadmapId": "CVF-OPM-AIR",
+    "roadmap": "docs/roadmaps/CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP_2026-07-20.md",
+    "materialCommit": "bd9850373",
+    "providerNeutral": true,
+    "reusedFoundations": "provider registry, provider capability registry, dynamic model registry, gateway receipt, credential boundary, fallback policy, provider execution bridge, and live diagnostic standard",
+    "contractGroups": "operator approval envelope, task assignment receipt, invocation receipt, and reviewer reconciliation decision",
+    "tranches": "T0 source map; T1 approval/assignment; T2 invocation reconciliation; T3 orchestrator seam; T4 negative fixtures; T5 separately authorized live pilot",
+    "nextAllowedMove": "Operator reviews the proposed roadmap and accepts, repairs, or parks it.",
+    "parked": "GC-018/work order, implementation, credentials, provider calls, live proof, Continuous Projection T3-T4, public-sync, push, deployment, and production action.",
+    "claimBoundary": "Proposed documentation-only provider-neutral roadmap; no provider/model default or runtime behavior is established."
+  }
+}

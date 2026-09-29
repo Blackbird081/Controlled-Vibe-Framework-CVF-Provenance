@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "cvf.acelG4OwnerCompositionDesignManifest.v1",
+  "batchId": "ACEL-G4-T1-INCREMENTAL-VALUE-OWNER-COMPOSITION-DESIGN",
+  "executionBaseHead": "9ceec78bc3ec60e5c121d76f3aa966f6beda00cf",
+  "dispatchBaseHead": "9993246bf65f5699135061111e8f515cce0adedc",
+  "terminalDisposition": "DESIGN_READY_FOR_SEPARATE_IMPLEMENTATION_WORK_ORDER",
+  "humanReadableCompanion": "docs/audits/CVF_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_2026-09-17.md",
+  "ledger": [
+    {
+      "claimId": "G4T1-L01",
+      "path": "docs/reviews/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_COMPLETION_2026-09-15.md",
+      "sha256": "107808cde5991393786949a9b7a2bae4c40b53620342bd181791031c69729cae",
+      "status": "READ",
+      "extractedFact": "T0 accepted G4 as ADAPT: current review-cost machinery records execution/compliance counters and explicitly leaves semantic incremental value to reviewer judgment."
+    },
+    {
+      "claimId": "G4T1-L02",
+      "path": "docs/audits/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_2026-09-15.md",
+      "sha256": "5073932e1bcb18754ff914003b1bbac80037dad2b7599b50c29fb497f2eea39a",
+      "status": "READ",
+      "extractedFact": "G4-C1 finding: the review-cost standard and checker self-disclose they never score value delta; CVF has rich execution/compliance receipts but explicitly and by design does not compute incremental value. Hash matches baseline-cited value exactly; zero drift since T0 acceptance."
+    },
+    {
+      "claimId": "G4T1-L03",
+      "path": "docs/audits/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_EVIDENCE_T0_2026-09-15.json",
+      "sha256": "a1ec2a5ce31e15dc5ca369c0b9587c7a61f54a517f1439355bd6f49b5caaefe3",
+      "status": "READ",
+      "extractedFact": "Machine ledger records G4-C1 as FACT/ADAPT/MEDIUM confidence, citing the review-cost checker's own docstring line 18 disclaimer as first-party confirmation, not an inference from absence. Hash matches baseline-cited value exactly; zero drift."
+    },
+    {
+      "claimId": "G4T1-L04",
+      "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+      "sha256": "f4daec03545cfcd4a13d5f3a4d6f340cff68f3b4afb846fe79dc6d348f86b68f",
+      "status": "READ",
+      "extractedFact": "Claim Update section states the standard machine-enforces review evidence shape plus forward-only work-order dispatch convergence and cumulative invocation admission; root-cause independence, criticality, and incremental value remain reviewer judgment. Standard does not implement semantic scoring, automatic review closure, or automatic criticality judgment (Non-Goals section)."
+    },
+    {
+      "claimId": "G4T1-L05",
+      "path": "governance/compat/check_review_cost_control.py",
+      "sha256": "e840de6bd489b1031c2bffb20b1d8335556fd18df73989eece812e53dadb3946",
+      "status": "READ",
+      "extractedFact": "Module docstring (lines 15-22): checker validates field presence, value shape, controlled tokens, round-three escalation, and multi-commit exception; 'It never scores semantic review quality, root-cause independence, or value delta; those remain reviewer judgment.' Applicability is artifact-shape based, not bare-substring based."
+    },
+    {
+      "claimId": "G4T1-L06",
+      "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/assf.behavioral.evaluation.contract.ts",
+      "sha256": "83201e79a1172e50bcaaecd444b3dc5c7709658f0a83256f1c7d23b5cfd659cd",
+      "status": "READ",
+      "extractedFact": "admitBaselinePair mandates a complementary paired fixture with byte-identical canonicalInputBytes whenever baselineRole is WITH or WITHOUT, and fails closed with named tokens (MISSING_PAIR, SAME_ROLE_PAIR, MALFORMED_ROLE, NONEQUIVALENT_INPUT_BYTES, UNEXPECTED_PAIR_FOR_NONE_ROLE) on any structural defect; its own claim boundary states this is a pure structural admission check that does not grade either fixture and does not imply PASS_WITH_EVIDENCE. Hash matches G3 T2 completion review's cited final SHA-256 exactly, confirming the accepted closed version was read."
+    },
+    {
+      "claimId": "G4T1-L07",
+      "path": "docs/audits/CVF_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md",
+      "sha256": "752762a04a897f188af5ea479b96f4d95f6ff1609e7ec1ad75aea35a205c7648",
+      "status": "READ",
+      "extractedFact": "G1 design explicitly defers G4 throughout: 'G4 (marginal/incremental value measurement) is excluded and deferred throughout. No G4 output, score, or ratio is computed or consumed here.' Notes G4 could later consume OperatingPointAssessment/RegressionBinding pairs as WITH/WITHOUT evidence but creates no interface, hook, or promise toward that. This file's own self-declared Status header still reads COMPLETE_PENDING_REVIEW/DESIGN_READY_FOR_SEPARATE_IMPLEMENTATION_WORK_ORDER because it predates Local's R1 repair pass; current session/handoff authority records the design as CLOSED_PASS_BOUNDED at material commit d87aadaec (not yet implemented as an owner contract)."
+    },
+    {
+      "claimId": "G4T1-L08",
+      "path": "docs/reference/CVF_NON_CODER_VALUE_MEASUREMENT_STANDARD_2026-04-14.md",
+      "sha256": "f76c6423f46fc1314fada27ae75e8fc3012e46d99639aa351b47283ff236cd01",
+      "status": "READ",
+      "extractedFact": "W93-T1 (section 8) requires comparing same task, same provider, same model family, same template, with only one controlled variable changed (with/without knowledge-native support), over a frozen 4-template evaluation set, ending in exactly one of three named outcome tokens (PROVEN / NOT PROVEN yet / MIXED), supported by rubric deltas and evidence excerpts, not narrative preference. Scoped to the non-coder value wave (W90-W94) only; not a general-purpose CVF value-delta mechanism."
+    }
+  ],
+  "g4ClaimReconciliation": {
+    "G4-C1": { "t0Disposition": "ADAPT", "confidence": "MEDIUM", "currentSourceMatch": true, "freshnessDelta": "NONE", "thisDesignConfidence": "HIGH" }
+  },
+  "ownerQuestionResolution": "No current owner can be extended in place without violating its own claim boundary: review-cost standard/checker explicitly and repeatedly disclaims value-delta scoring; G3 is admission/grading only; G1 design is CLOSED_PASS_BOUNDED at d87aadaec but its owner contract is unimplemented. Resolution is one new thin composition/decision owner that calls G3 and review-cost evidence read-only, mirroring the shape of the accepted G1 design's decision layer without code-identity between them.",
+  "ownerMatrix": [
+    { "surface": "CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md / check_review_cost_control.py", "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md", "disposition": "REUSE", "role": "optional disclosed resource-dimension input only; never itself asked to emit a value verdict; disclaimer unmodified" },
+    { "surface": "assf.behavioral.evaluation.contract.ts (admitBaselinePair, gradeBehavioralEvaluation, admitFixtureSet)", "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/assf.behavioral.evaluation.contract.ts", "disposition": "REUSE", "role": "mandatory WITH/WITHOUT paired-condition admission and outcome grading; new owner verifies candidate/baseline binding envelope G3 does not provide" },
+    { "surface": "G1 design, CLOSED_PASS_BOUNDED at d87aadaec (OperatingPointAssessment / RegressionBinding, owner contract unimplemented)", "path": "docs/audits/CVF_ACEL_G1_T1_EMPIRICAL_CALIBRATION_OWNER_COMPOSITION_DESIGN_2026-09-16.md", "disposition": "DEFER", "role": "optional future evidence source once separately implemented; zero dependency, interface, or hook created by this design" },
+    { "surface": "CVF_NON_CODER_VALUE_MEASUREMENT_STANDARD_2026-04-14.md (W93-T1)", "path": "docs/reference/CVF_NON_CODER_VALUE_MEASUREMENT_STANDARD_2026-04-14.md", "disposition": "REUSE_AS_PRECEDENT_NOT_IMPORTED", "role": "existing scoped counterexample to a blanket absence claim; lane-specific rubric/threshold machinery not imported or generalized" },
+    { "surface": "G2 runtime topology reallocation", "path": "N/A_INDEPENDENT_GAP", "disposition": "DEFER", "role": "independent T0 gap; not composed into this owner" },
+    { "surface": "G6 change-aware verification selection", "path": "N/A_INDEPENDENT_GAP", "disposition": "DEFER", "role": "independent T0 gap; not composed into this owner" },
+    { "surface": "new independent value-scoring engine, universal scalar benefit score, or review-cost checker disclaimer modification", "path": "N/A_NOT_PROPOSED", "disposition": "REJECT_DUPLICATE", "role": "not proposed; would duplicate G3 primitives, contradict the review-cost owner's accepted claim boundary, and violate the work order's prohibition on a universal scalar benefit score" }
+  ],
+  "ownerDependencyGraph": {
+    "nodes": [
+      "intervention_declaration_baseline_candidate_identity",
+      "frozen_task_case_population",
+      "g3_fixture_set_admission",
+      "g3_baseline_pair_admission",
+      "g3_behavioral_evaluation_with",
+      "g3_behavioral_evaluation_without",
+      "review_cost_evidence_optional",
+      "g1_operating_point_assessment_optional_future",
+      "incremental_value_composition_function_NEW",
+      "incremental_value_assessment_NEW",
+      "invalidation_trigger_evaluation"
+    ],
+    "edges": [
+      { "from": "intervention_declaration_baseline_candidate_identity", "to": "frozen_task_case_population" },
+      { "from": "frozen_task_case_population", "to": "g3_fixture_set_admission" },
+      { "from": "g3_fixture_set_admission", "to": "g3_baseline_pair_admission" },
+      { "from": "g3_baseline_pair_admission", "to": "g3_behavioral_evaluation_with" },
+      { "from": "g3_baseline_pair_admission", "to": "g3_behavioral_evaluation_without" },
+      { "from": "frozen_task_case_population", "to": "review_cost_evidence_optional" },
+      { "from": "frozen_task_case_population", "to": "g1_operating_point_assessment_optional_future" },
+      { "from": "g3_behavioral_evaluation_with", "to": "incremental_value_composition_function_NEW" },
+      { "from": "g3_behavioral_evaluation_without", "to": "incremental_value_composition_function_NEW" },
+      { "from": "review_cost_evidence_optional", "to": "incremental_value_composition_function_NEW" },
+      { "from": "g1_operating_point_assessment_optional_future", "to": "incremental_value_composition_function_NEW" },
+      { "from": "incremental_value_composition_function_NEW", "to": "incremental_value_assessment_NEW" },
+      { "from": "incremental_value_assessment_NEW", "to": "invalidation_trigger_evaluation" }
+    ],
+    "dependencyDirection": "ONE_WAY_DOWNSTREAM: new decision layer depends on G3 (mandatory) and review-cost evidence plus a future G1 owner (both optional); none of those existing owners depends on or is modified by the new layer"
+  },
+  "comparisonAdmissionContract": {
+    "baselineAndCandidateIdentity": "stable immutable baselineId/candidateId bound to G3 baselineRole WITHOUT/WITH fixtures respectively; a baselineRole NONE fixture cannot participate in a G4 comparison",
+    "frozenTaskPopulation": "identical fixtureSetContentHash required on both sides, mirroring G3's byte-identical canonicalInputBytes pairing rule extended to the population level",
+    "candidateTraceEvaluationLinkage": "each side supplies {baselineOrCandidateId, fixtureId, fixtureContentHash, traceIds, traceContentHashes, traceCaptureModes, g3ResultHash, producerReceiptRef}; decision layer verifies against supplied G3 outputs and a producer receipt tying each trace to its declared side",
+    "interventionVariableRule": "each round declares exactly one interventionVariable (e.g. PROVIDER_LANE, CAPABILITY_CHANGE, DELEGATION_DECISION, TOPOLOGY_CHANGE); its identity is in comparabilityFingerprint, while its distinct baseline/candidate content-hashed values are provenance-bound and excluded from held-fixed equality. Missing declaration or value binding with two sides is INSUFFICIENT_EVIDENCE; identical values are INCOMPARABLE. Pairing alone does not prove causal attribution.",
+    "heldFixedConditions": ["environment", "policy", "budget", "timeWindow", "providerLane (held fixed only when interventionVariable != PROVIDER_LANE)"],
+    "multipleUncontrolledVariablesRule": "a round that varies more than one dimension at once (the declared intervention variable plus any other dimension) is INCOMPARABLE with reason MULTIPLE_UNCONTROLLED_VARIABLES",
+    "outcomeDimensionRule": "each declared metric carries an explicit name, unit, and direction declared before measurement, never inferred after seeing results",
+    "reviewCostUsageRule": "review-cost counters may populate only the disclosed resource dimension of an already-classified round; they can never by themselves establish a classification",
+    "pairedAggregationRule": "aggregates only over the intersection of admitted fixture IDs on both sides, subject to a predeclared immutable minimum intersection-coverage threshold with 0 < minimum <= 1; missing/out-of-range declaration is INSUFFICIENT_EVIDENCE, nonempty below-threshold intersection is INCOMPARABLE (INTERSECTION_BELOW_DECLARED_MINIMUM), empty intersection is INSUFFICIENT_EVIDENCE (EMPTY_INTERSECTION); these are admission checks before terminal delta classification; asymmetric members are disclosed by side",
+    "uncertaintyDisclosureRule": "discloses only descriptive repeat counts (G3's repeatsObserved/repeatsRequired per fixture) for STOCHASTIC fixtures; no statistical confidence-interval or variance-estimation method is defined by this design, and no numeric confidence figure may be reported until a future tranche defines and cites one",
+    "missingPartialEvidenceRule": "reused directly from G1's search/held-out separation; a fixture exposed to candidate tuning before the round cannot supply accepted evidence for that round",
+    "selectionBiasHoldoutLeakageRule": "REUSED_HELDOUT_SEARCH_DATA-shaped rejection reused from G1 for any fixture ID/canonical-input-hash/source-hash overlap with a declared search/tuning set",
+    "noEffectNegativeEffectRule": "explicitly first-class output states; never silently folded into a generic PASS or omitted",
+    "tieIncomparabilityRule": "equal observed outcomes are reported as zero/near-zero under the otherwise admissible classification, never implicit preference, statistical significance, or causal effect"
+  },
+  "classificationStates": [
+    { "state": "MEASURED_COMPARABLE_DELTA", "meaning": "both sides are admitted G3 WITH/WITHOUT pairs under one matching comparabilityFingerprint, complete bound evidence, predeclared metric/unit/direction; aggregated observed difference and descriptive repeat counts reported, without causal or numeric confidence claim" },
+    { "state": "DESCRIPTIVE_NONCAUSAL_DELTA", "meaning": "comparable evidence exists but was not produced under a controlled, admitted G3 WITH/WITHOUT design; description only, never a causal claim" },
+    { "state": "INCOMPARABLE", "meaning": "different comparabilityFingerprint, a held-fixed dimension varies, multiple dimensions vary at once (MULTIPLE_UNCONTROLLED_VARIABLES), or intersection coverage is below the declared minimum (INTERSECTION_BELOW_DECLARED_MINIMUM); never merged or scored" },
+    { "state": "INSUFFICIENT_EVIDENCE", "meaning": "missing/ambiguous binding, unadmitted or contaminated holdout, incomplete G3 trace/repeat evidence, REUSED_HELDOUT_SEARCH_DATA contamination on either side, or an empty fixture intersection (EMPTY_INTERSECTION)" },
+    { "state": "NO_MEASUREMENT", "meaning": "no comparison attempted or no second (baseline or candidate) side exists at all; tests absence of a second side only, never pairing quality; must never be silently reported as a delta state, and a genuine complete two-sided uncontrolled comparison is DESCRIPTIVE_NONCAUSAL_DELTA, not this state" }
+  ],
+  "classificationStatesExhaustiveAndExclusive": true,
+  "classificationPrecedence": [
+    "stage1: no second (baseline or candidate) side exists at all -> NO_MEASUREMENT",
+    "stage2: both sides exist but held-fixed conditions mismatch, multiple dimensions vary, intervention values are identical, or a nonempty fixture intersection is below the predeclared minimum -> INCOMPARABLE",
+    "stage3: both sides exist and are otherwise comparable but intervention/value/coverage declaration, binding, admission, or trace/repeat evidence is missing/ambiguous/contaminated, or the fixture intersection is empty -> INSUFFICIENT_EVIDENCE",
+    "stage4: both sides exist, are comparable, and are complete, but the pairing was not produced under an admitted G3 WITH/WITHOUT design -> DESCRIPTIVE_NONCAUSAL_DELTA",
+    "stage5: both sides exist, are comparable, are complete, and were produced under an admitted G3 WITH/WITHOUT pairing with predeclared metric/unit/direction -> MEASURED_COMPARABLE_DELTA",
+    "no stage may be skipped and no later stage overturns an earlier stage's classification"
+  ],
+  "negativeCases": [
+    { "case": "missing_baseline_or_candidate", "behavior": "NO_MEASUREMENT; no delta claim emitted" },
+    { "case": "unmatched_task_sets_fixture_versions_or_held_fixed_condition", "behavior": "INCOMPARABLE with the specific mismatched held-fixed dimension named (provider lane only counts as held-fixed when it is not the declared interventionVariable)" },
+    { "case": "multiple_uncontrolled_variables", "behavior": "INCOMPARABLE with MULTIPLE_UNCONTROLLED_VARIABLES when the declared intervention variable plus any other dimension both vary" },
+    { "case": "no_intervention_variable_or_value_binding_declared", "behavior": "two-sided round is INSUFFICIENT_EVIDENCE, never NO_MEASUREMENT solely due to missing declaration" },
+    { "case": "identical_intervention_values", "behavior": "INCOMPARABLE; no intervention contrast exists" },
+    { "case": "missing_or_invalid_intersection_minimum", "behavior": "INSUFFICIENT_EVIDENCE; predeclared minimum must satisfy 0 < minimum <= 1" },
+    { "case": "duplicate_or_ambiguous_trace_binding", "behavior": "INSUFFICIENT_EVIDENCE; a trace that could belong to either side is never assigned by inference" },
+    { "case": "held_out_contamination", "behavior": "INSUFFICIENT_EVIDENCE with REUSED_HELDOUT_SEARCH_DATA; that side's evidence never trusted even if otherwise complete" },
+    { "case": "unequal_exposure_or_repeat_counts", "behavior": "INSUFFICIENT_EVIDENCE using G3's repeatsObserved/repeatsRequired; never rounded up, averaged, or treated as equivalent" },
+    { "case": "missing_cost_units", "behavior": "affected dimension excluded and logged UNKNOWN_UNIT_EXCLUDED; if none remain valid, round cannot reach MEASURED_COMPARABLE_DELTA" },
+    { "case": "incomplete_runs", "behavior": "INSUFFICIENT_EVIDENCE using G3's INCOMPLETE_TRACE defect where applicable; never partial-credited" },
+    { "case": "regression_or_negative_gain", "behavior": "first-class disclosed result; MEASURED_COMPARABLE_DELTA may carry a negative-direction outcome; never suppressed or reclassified as NO_MEASUREMENT" },
+    { "case": "absolute_pass_or_readiness_receipt_as_incremental_value", "behavior": "rejected as proof of a delta; NO_MEASUREMENT when only one side's receipt exists (stage 1), DESCRIPTIVE_NONCAUSAL_DELTA when two sides' receipts both exist and are otherwise comparable/complete (stage 4); a single absolute-pass-shaped receipt never justifies MEASURED_COMPARABLE_DELTA under either path" },
+    { "case": "review_cost_counters_as_value_delta", "behavior": "rejected by design; counters populate only the disclosed resource dimension of an already-classified round; can never by themselves establish a classification" },
+    { "case": "ties_or_equal_observed_outcomes", "behavior": "zero/near-zero observed difference under the otherwise admissible classification; no positive, causal or statistical-significance claim" },
+    { "case": "intersection_below_declared_minimum", "behavior": "INCOMPARABLE with INTERSECTION_BELOW_DECLARED_MINIMUM; never aggregated on the narrowed subset regardless of apparent confidence" },
+    { "case": "empty_intersection", "behavior": "INSUFFICIENT_EVIDENCE with EMPTY_INTERSECTION; distinct from a below-threshold-but-nonempty intersection" },
+    { "case": "numeric_confidence_requested_without_defined_estimator", "behavior": "rejected; report discloses only descriptive repeat counts, never a derived confidence value, until a future tranche defines and cites a concrete estimation method" }
+  ],
+  "provenanceFingerprint": {
+    "comparabilityFingerprintFormula": "SHA-256(canonicalVersion | interventionVariable | baselineId | candidateId | fixtureSetContentHash | environmentDescriptorHash | policyId | budgetCeilingDeclaration | timeWindowDeclaration | heldFixedProviderLaneId)",
+    "heldFixedProviderLaneIdRule": "included in the fingerprint only when interventionVariable != PROVIDER_LANE; when the provider/model lane is itself the declared intervention, this field is the sentinel NOT_HELD_FIXED_IS_INTERVENTION and is excluded from the comparability check",
+    "provenanceFingerprintFormula": "SHA-256(canonicalVersion | comparabilityFingerprint | baselineInterventionValueHash | candidateInterventionValueHash | classification | orderedEvidenceEnvelopeHashes[] | dimensionDeclarationHash)"
+  },
+  "invalidationTriggers": [
+    "fixture_set_content_hash_changes_for_bound_population",
+    "baseline_or_candidate_identity_bound_trace_result_or_producer_receipt_changes",
+    "environment_policy_budget_or_time_window_declaration_changes",
+    "held_fixed_provider_lane_identity_changes_when_provider_lane_is_not_the_intervention_variable",
+    "g3_admission_or_grading_result_changes_for_either_side",
+    "review_cost_owner_disclosed_counters_superseded_by_later_review_round"
+  ],
+  "invalidationAction": "mark IncrementalValueAssessment.status=STALE and require a fresh assessment before reliance; never automatic configuration mutation or candidate promotion",
+  "g1Boundary": "G1 (empirical calibration owner composition) is excluded from any dependency and referenced only as a possible future, optional evidence source once separately implemented; G1 design is CLOSED_PASS_BOUNDED at material commit d87aadaec per current session/handoff authority (not the raw design document's own pre-repair COMPLETE_PENDING_REVIEW self-declaration), but its owner contract itself remains unimplemented; zero interface, hook, or promise created by this design.",
+  "g3Boundary": "G3 admitBaselinePair/gradeBehavioralEvaluation/admitFixtureSet are consumed structurally as the required paired-input stream; G3's own claim boundary is pure structural admission, not a comparison verdict; G3 remains CLOSED_PASS_BOUNDED_G3_PARKED and is not reopened by this design.",
+  "reviewCostBoundary": "Review-cost evidence is used strictly as an optional disclosed resource-dimension input, never as classification evidence by itself, and never promoted beyond the disclaimed role stated in its own accepted claim boundary.",
+  "nonCoderValueStandardBoundary": "W93-T1 is cited solely as the existing scoped counterexample to a blanket absence claim; its lane-specific rubric/threshold machinery is not imported, generalized, or extended by this design.",
+  "successorManifest": [
+    { "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/incremental.value.owner.contract.ts", "role": "pure decision-layer implementation" },
+    { "path": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/incremental.value.owner.contract.test.ts", "role": "adversarial test suite covering every declared negative case" },
+    { "path": "governance/compat/check_incremental_value_owner_evidence.py", "role": "read-only evidence/schema checker" },
+    { "path": "governance/compat/test_check_incremental_value_owner_evidence.py", "role": "checker test suite" },
+    { "path": "docs/reference/agent_system_skills/CVF_INCREMENTAL_VALUE_OWNER_CONTRACT.md", "role": "normative reference contract" }
+  ],
+  "successorManifestBlockerCount": 0,
+  "atMostOneSeparatelyGovernedImplementationTranche": true,
+  "automaticSuccessorAuthorized": false,
+  "noUniversalScalarInvented": true,
+  "reconciliation": {
+    "ledgerCount": 8,
+    "hashedCount": 8,
+    "readCount": 8,
+    "unresolvedCount": 0,
+    "driftDetected": false
+  },
+  "r1RepairPass": {
+    "generation": 1,
+    "fixedDefects": [
+      "classificationPrecedence stage1 narrowed from no-controlled-pairing to no-second-side, so DESCRIPTIVE_NONCAUSAL_DELTA is reachable",
+      "interventionVariable identity is fingerprinted; its differing side values are provenance-bound and excluded from held-fixed equality, separating intervention from providerLane when providerLane is held fixed",
+      "pairedAggregationRule given a mandatory declared minimum intersection-coverage threshold with INCOMPARABLE/INSUFFICIENT_EVIDENCE outcomes below it",
+      "G1 status corrected from the raw design document's own pre-repair self-declaration to current session authority (CLOSED_PASS_BOUNDED at d87aadaec); repeat-count-derived confidence language replaced with descriptive-repeat-count-only disclosure"
+    ]
+  },
+  "claimBoundary": "This manifest records a bounded eight-source design audit for G4 owner composition. It does not authorize implementation, benchmark or provider execution, credentials, network access, configuration selection/mutation, a real measured value number, G1 implementation, runtime wiring, hook/CI changes, public sync, deployment, production, or an automatic successor."
+}

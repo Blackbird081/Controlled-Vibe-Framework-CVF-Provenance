@@ -1,0 +1,54 @@
+{
+  "packet": "SCLP-UC04B-R3R1",
+  "executionBaseHead": "c8995160ed804dae4c9005179d753b6f2254d723",
+  "canonicalOrigin": "http://localhost:3001",
+  "frozenSpecPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts",
+  "preEditSpecSha256": "89aaf5a078c7c90bb01265d5f982110f6a077343641bff09e245eb5cff271d49",
+  "postEditSpecSha256": "6568f0463feaa0b2680365e89bcd31c49c4245648cd3de12d409ed37e713f0ec",
+  "preEditHashMatchesDeclared": true,
+  "diffSummary": "exactly one line changed at the negative case's pre-submission role assertion; replaced page.getByText('reviewer') with page.getByText('Active role', { exact: true }).locator('..').getByText('reviewer', { exact: true })",
+  "commandFingerprint": "$env:PLAYWRIGHT_BASE_URL='http://localhost:3001'; npx playwright test tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts --config playwright.config.ts --workers=1 --grep \"negative_reviewer_docs_check\"",
+  "listSelectionResult": "exactly 1 test: negative_reviewer_docs_check (positive case excluded)",
+  "invocationCount": 1,
+  "cases": {
+    "negative_reviewer_docs_check": "FAIL"
+  },
+  "projections": {
+    "negative": {
+      "actorRole": "reviewer",
+      "serverSideSessionConfirmed": true,
+      "serverSideSessionRole": "reviewer",
+      "clientRoleHydrationObserved": false,
+      "clientAuthMeFetchObserved": false,
+      "reviewerPostAttempted": false,
+      "httpStatus": null,
+      "decision": null,
+      "auditSequence": [],
+      "failureLocator": "getByText('Active role', { exact: true }).locator('..').getByText('reviewer', { exact: true })",
+      "failureMode": "element(s) not found (0 matches, timeout) -- not a strict-mode multi-match error",
+      "reason": "Operations page client-side role hydration did not complete before the 15s assertion timeout; see diagnostic"
+    }
+  },
+  "focusedUnitTests": {
+    "command": "npx vitest run \"src/app/(dashboard)/governance/operations/page.test.tsx\" src/app/api/system/jobs/route.test.ts src/lib/server/web-governance-jobs.test.ts src/lib/middleware-auth.test.ts src/app/api/auth/me/route.test.ts --reporter=dot",
+    "result": "PASS",
+    "passed": 32,
+    "failed": 0
+  },
+  "counters": {
+    "playwrightInvocations": 1,
+    "webSubmissions": 0,
+    "webSubmissionsExpected": 1,
+    "selectedCheckerExecutions": 0,
+    "selectedCheckerExecutionsExpected": 0,
+    "retries": 0,
+    "providerCalls": 0
+  },
+  "observedHosts": [
+    "localhost:3001"
+  ],
+  "runtimeAuditNewEvents": 0,
+  "diagnosticPath": "docs/reviews/evidence/system-chain-uc04b-r3r1-negative-diagnostic-2026-07-15.json",
+  "overallResult": "BLOCKED_WITH_REASON",
+  "blockReason": "The authorized locator repair resolved the R3 strict-mode multi-match ambiguity (0 matches now, not 5), but the negative case still failed because the Operations page's client-side role/auth hydration did not complete within the assertion window, so the reviewer POST was never attempted. This is a distinct issue from the locator ambiguity and is outside this work order's locator-only repair scope."
+}

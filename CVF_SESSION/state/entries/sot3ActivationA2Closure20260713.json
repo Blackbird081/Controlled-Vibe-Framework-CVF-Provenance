@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1730,
+  "stateKey": "sot3ActivationA2Closure20260713",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-07-13",
+    "materialCommit": "fdead7c99",
+    "completionReview": "docs/reviews/CVF_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_COMPLETION_2026-07-13.md",
+    "roadmapStatus": "A2_CLOSED_PASS_BOUNDED_A3_PACKET_NEXT",
+    "claim": "DURABLE_EVIDENCE_REPLAY_PROVEN_LOCAL",
+    "reviewerRepair": "full owner-field projection, strict admission integrity, canonical byte ordering, exact diagnostics, deterministic runtime injection",
+    "learning": "ADIF-0029 records durable evidence projection and admission drift",
+    "verification": "focused 71/71 PASS; full non-live 3207 PASS with 2 skipped; typecheck, build, reviewer-fast 62/62, pre-commit 83/83 PASS",
+    "nextAllowedMove": "fresh A3 GC-018 and source-verified work-order authoring only",
+    "claimBoundary": "no live provider proof, release-quality proof, production readiness, distributed durability, public export, universal control, or user validation"
+  }
+}

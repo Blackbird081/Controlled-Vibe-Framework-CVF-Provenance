@@ -66,6 +66,52 @@ When an agent makes a mistake, CVF must ask what control was missing:
 
 The answer becomes governance improvement work.
 
+## Chain-First Assessment For Novel Or Strange Findings
+
+A novel, surprising, or apparently isolated finding defaults to
+`SYSTEM_CHAIN_ASSESSMENT_REQUIRED` until the reviewer shows that the governing
+end-to-end chain is joined and functioning. Do not begin by shrinking the
+finding to the worker action or use case that exposed it.
+
+The first assessment maps this chain:
+
+`authority and required deliverable -> dispatch feasibility -> execution
+artifact -> machine-observed actual state -> proof -> terminal status ->
+closure and continuity`
+
+For each transition, determine whether the downstream value is derived from an
+independent owner or merely repeated from the worker's own report. In
+particular, inspect for:
+
+- a requirement that has no stable machine-readable identity;
+- an expected manifest parsed from worker prose instead of dispatcher-owned
+  authority;
+- an actual artifact list that is self-attested instead of derived from Git or
+  the governed execution surface;
+- proof that is present but not joined to the exact required deliverable;
+- a terminal status selected by the worker instead of reduced from all
+  mandatory requirement results;
+- fail-open parsing, lexical phrase matching, or a gate that checks document
+  shape without checking the chain's semantic joins;
+- a phase boundary where feasibility or failure could only be discovered after
+  implementation; and
+- manual Local review acting as a compensating control for a missing machine
+  join.
+
+The reviewer must also ask whether the complete production-like route has
+actually been exercised. Component tests, per-use-case fixes, and passing
+shape gates can leave a chain defect dormant when the full route has not run.
+Discovery during a real end-to-end run is therefore positive learning evidence:
+the run has made a latent system defect observable. It is not evidence that the
+foundation hardening itself was a mistake.
+
+Only after this assessment may the finding be classified as local. If any join
+is missing, the learning and corrective packet must name the system-chain gap,
+its earliest enforceable phase, and the end-to-end proof needed for closure.
+An acceptance-critical workflow should converge on a machine-readable ledger
+that joins each required deliverable to its actual artifact, proof, and
+deterministically reduced terminal status.
+
 ## Escalation Ladder
 
 Use this ladder when reviewing a meaningful or repeated agent defect:
@@ -105,6 +151,58 @@ Therefore:
   source-verification requirement, phase gate, or closure check;
 - do record which failure mode each model exposed, so the governance layer can
   harden against it.
+
+## Outcome-Bounded Agent Intelligence
+
+CVF governs the execution envelope, not the worker's intelligence inside that
+envelope. The operator supplies the desired outcome and the boundaries they
+care about. The orchestrator turns those inputs into observable acceptance,
+risk, authority, evidence, and external-effect constraints. The worker remains
+free to select the implementation approach inside those constraints.
+
+Governance must not compensate for reviewer uncertainty by prescribing file
+layout, internal decomposition, symbol placement, or repair order when those
+choices do not change the accepted objective, risk class, authority ceiling,
+external effects, or protected-path boundary. Exact path ownership remains
+mandatory where a path is protected, carries canonical authority, crosses a
+repository boundary, or creates a material external effect. For ordinary
+implementation topology, a dispatch should use a source-verified path family
+or another bounded topology allowance when the final physical split cannot be
+known honestly before implementation.
+
+A worker never gains unilateral scope expansion from this rule. If a necessary
+implementation path was not covered by the dispatched envelope, the worker
+stops and returns the evidence. The orchestrator then owns one prompt decision:
+classify the path as ordinary implementation topology already inside the
+approved path or artifact class, authority ceiling, external-effect class,
+role route, protected-path boundary, and commit ownership, and amend only that
+topology description; or classify it as a change to any of those boundaries
+and return the decision to the operator. Repeatedly asking the worker to solve
+the same task inside a known-uncloseable envelope is a governance defect.
+
+## First-Return Orchestrator And Reviewer Duty
+
+At the first worker return, before issuing a repair prompt, the orchestrator or
+reviewer must test whether the assignment is closeable as written:
+
+- every mandatory gate has a named phase and result owner;
+- the role expected to produce PASS can write every path that the gate may
+  legitimately require it to change;
+- later-role generated or catalog work is not required to be complete before
+  that later role is admitted;
+- file-size, generated-output, migration, or dependency rules do not force
+  paths forbidden by the exact manifest; and
+- every blocker is attributed to worker execution, packet design, rule,
+  machine coverage, phase placement, or operator scope before re-dispatch.
+
+If this closeability test fails, worker re-dispatch stops. The reviewer applies
+one bounded reviewer-local correction when already authorized and objectively
+determined; otherwise the orchestrator issues one consolidated amendment. If a
+business, risk, authority, external-effect, or irreversible-action choice is
+required, the operator receives a prompt plain-language notice stating what is
+blocked, why the agents cannot resolve it inside current authority, the risk of
+continuing, and the next safe choice. A non-coder operator must not be asked to
+debug role choreography, path manifests, or checker ordering.
 
 ## Non-Coder Trust Boundary
 

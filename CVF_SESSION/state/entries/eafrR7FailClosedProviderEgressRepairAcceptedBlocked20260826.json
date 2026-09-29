@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2335,
+  "stateKey": "eafrR7FailClosedProviderEgressRepairAcceptedBlocked20260826",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_BLOCKED",
+    "materialCommit": "74cf99354",
+    "completionReview": "docs/reviews/CVF_EAFR_R7_FAIL_CLOSED_PROVIDER_EGRESS_AUTHORITY_REPAIR_COMPLETION_2026-08-26.md",
+    "workerReturn": "docs/reviews/CVF_EAFR_R7_FAIL_CLOSED_PROVIDER_EGRESS_AUTHORITY_REPAIR_WORKER_RETURN_2026-08-26.md",
+    "proof": "Focused 26/26; TypeScript PASS; full non-live 3465 pass/88 named fail; worker-return fast 66/66; pre-commit 87/87; zero provider calls.",
+    "reviewerRepair": "Denied protocol-relative external destinations, added blob/file coverage, corrected post-test arithmetic, and repaired dispatch handoff mode drift.",
+    "blockers": "Ambient Upstash external-store use in non-live tests and unguarded adapter fetch injection.",
+    "nextAllowedMove": "Fresh EAFR-R8 source verification and dispatch authoring only.",
+    "claimBoundary": "No R8 implementation, provider/live/network call, build, RFR resume, BuildAuthority repair, public-sync, deployment or push authority."
+  }
+}

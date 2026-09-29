@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1658,
+  "stateKey": "mseaR96DoctrineRouteGapReconciliationClosure20260711",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-11",
+    "materialCommit": "d733abd70",
+    "completionReview": "docs/reviews/CVF_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_COMPLETION_2026-07-11.md",
+    "manifest": "17/17 COMPLETE_VERIFIED",
+    "freshnessState": "CURRENT",
+    "layerDispositions": {"L1": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE", "L2": "ADAPTATION_CANDIDATE", "L4": "SOURCE_OWNER_UNRESOLVED_WITH_SEARCH_EVIDENCE", "L6": "PARTIAL_OWNER_WITH_GAP"},
+    "nextAllowedMove": "fresh bounded owner-action packet; recommended L6 inventory decision first",
+    "claimBoundary": "no doctrine gap closed, no owner ratified, no structural/runtime/public/MAO implementation"
+  }
+}

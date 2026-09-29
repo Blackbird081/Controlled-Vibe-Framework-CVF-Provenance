@@ -17,9 +17,19 @@ This document defines the canonical workspace topology for CVF-managed local wor
 ```text
 CVF-Workspace/
   .Controlled-Vibe-Framework-CVF/
+  CVF_RULE_PACKS/
   <Application-Project-1>/
   <Application-Project-2>/
   WORKSPACE_RULES.md
+  CVF_WORKSPACE_RULE_PACKS.md
+  CVF_WORKSPACE_MEMORY.md
+  AGENT_HANDOFF.md
+  WORKSPACE_PROJECT_ENFORCEMENT_BASELINE.json
+  Update-CVF-Workspace-RulePack.ps1
+  .agents/workflows/
+  New-CVF-Governed-Project.ps1
+  Run-CVF-NewProject-Enforcement.ps1
+  Update-CVF-Workspace.ps1
 ```
 
 ## Governance Repository
@@ -54,8 +64,21 @@ Most shared downstream apps are expected to come from `https://github.com/CVF-Ec
 The workspace root should stay clean:
 
 - It should contain `WORKSPACE_RULES.md`.
+- It may contain `CVF_RULE_PACKS/` and `CVF_WORKSPACE_RULE_PACKS.md` when a
+  curated local rule pack has been installed.
+- It may contain `CVF_WORKSPACE_MEMORY.md` and a workspace handoff root file
+  for local agent continuity.
+- It should contain `WORKSPACE_PROJECT_ENFORCEMENT_BASELINE.json`; the
+  public-safe installer creates an empty baseline when it is missing and
+  preserves an existing baseline.
+- It may contain `Update-CVF-Workspace-RulePack.ps1` after an operator-local
+  rule-pack sync.
+- It may contain `.agents/workflows/` with workspace-local agent workflow
+  notes.
 - It should contain the hidden CVF core clone.
 - It should contain application project folders.
+- It should contain the public-safe root wrappers after bootstrap or
+  reconciliation.
 - It should not contain mixed application source files directly at root.
 - It should not be initialized as a git repository.
 
@@ -72,8 +95,141 @@ For new downstream projects, the bootstrap must produce:
 - `knowledge/` folder
 - bootstrap log under `docs/`
 - workspace-root `WORKSPACE_RULES.md`
+- a governed downstream catalog kit (tranche `CVF-BSL-T1`):
+  - machine sources of truth `docs/catalog/ARTIFACT_REGISTRY.json` and
+    `docs/catalog/MODULE_REGISTRY.json`, with closed-vocabulary schemas at
+    `docs/catalog/schemas/`
+  - generated human views `docs/INDEX.md` and `docs/catalog/MODULE_CATALOG.md`,
+    rendered only from the registries above - never hand-edit these
+  - an executable, standard-library catalog manager at
+    `scripts/manage_cvf_downstream_catalog.ps1` (`-Check` / `-Write`)
+  - an Artifact Registry populated with the bootstrap kit's own authority
+    surfaces (schemas, tool, manifest, policy, continuity, implementation
+    truth, generated views, governed artifact families) and an empty Module
+    Registry that makes no runtime-module claim
 
-The workspace doctor must verify that the generated project remains isolated from CVF core and that the workspace-root rules file is present.
+The generated downstream instructions must carry the canonical seven-stage
+decision lifecycle:
+
+```text
+INTAKE -> DESIGN -> SPEC -> WORK_ORDER -> BUILD -> REVIEW -> FREEZE
+```
+
+For roadmap work, a tranche may inherit accepted evidence and enter at the
+earliest still-open stage. Bootstrap must not teach agents to recreate all
+seven artifacts for every tranche. It must require the inherited evidence and
+entry decision to be recorded, require enough evidence at every applicable
+transition, and distinguish a transition gate from a standalone independent
+review artifact. `REVIEW` remains the formal result evaluation before
+`FREEZE`. Lifecycle traceability alone does not prove that every transition is
+machine-enforced.
+
+The workspace doctor must verify that the generated project remains isolated
+from CVF core and that the workspace-root rules file is present. A project is
+**governed** if its `.cvf/manifest.json` carries the `catalogKitVersion`
+marker **or** any governed-catalog surface exists on disk (the manager
+script, its library, the Artifact Registry, or either schema file) - not
+only when the manager script specifically is present. A governed project
+must be complete: the doctor runs the catalog manager in check mode and
+treats a failure as blocking, and if the marker or any surface is present
+while another required surface is missing, that is `DAMAGED_GOVERNED_KIT` -
+also a blocking failure, never a silent fallback to legacy compatibility.
+Only a project with **no** governed marker and **no** governed surface at
+all - one bootstrapped before this kit existed - keeps the pre-existing
+checks only, as a bounded legacy-compatibility path. See
+`governance/toolkit/05_OPERATION/downstream_catalog/CVF_DOWNSTREAM_CATALOG_GUARD.md`
+for the closed vocabulary, the full catalog-state classifier and the
+rejected-condition reference.
+
+Bootstrap and reconciliation also install (or refresh) a small set of
+workspace-root wrapper scripts and guides via
+`scripts/install_cvf_workspace_root_wrappers.ps1`:
+
+- `New-CVF-Governed-Project.ps1` - bootstrap + doctor + workspace gate in one command
+- `Run-CVF-NewProject-Enforcement.ps1` - workspace-wide enforcement gate
+- `Update-CVF-Workspace.ps1` - public-core fast-forward plus wrapper refresh
+- `.agents/workflows/` - workspace-local agent workflow notes for onboarding and project pre-commit routing
+- `WORKSPACE_PROJECT_ENFORCEMENT_BASELINE.json` - local legacy-project exemption baseline, created if missing and preserved if present
+- `CVF_WORKSPACE_USER_GUIDE.md` / `CVF_WORKSPACE_HUONG_DAN_SU_DUNG.md` - bilingual workspace-root guide
+
+These wrappers only cover the public-safe flow (new-project bootstrap,
+enforcement gate, public core update, agent workflow notes, and workspace-root
+guidance). Local-only overlay tooling and private full-repository state are
+separate operator-machine concerns and are not part of this public-safe wrapper
+set.
+
+## Adopt Existing Project Flow
+
+An older project may already be listed in
+`WORKSPACE_PROJECT_ENFORCEMENT_BASELINE.json` as a local legacy exemption. To
+adopt that project into current workspace enforcement, run the project wrapper
+for the existing project name:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ".\New-CVF-Governed-Project.ps1" `
+  -ProjectName "<existing-project>"
+```
+
+After the project doctor passes, the wrapper removes that project from the
+legacy baseline and the workspace-wide gate reports it as enforced. Use
+`-KeepLegacyExemption` only when the project should keep its old local
+exemption after refresh.
+
+Manual promotion is also available through the workspace gate:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ".\Run-CVF-NewProject-Enforcement.ps1" `
+  -PromoteProjectName "<existing-project>"
+```
+
+The workspace doctor warns when a downstream project `.gitignore` hides the
+bootstrap log pattern under `docs/`. Treat that as a local tracking decision:
+either track the log, add a narrow unignore rule, or document why the project
+keeps the log untracked.
+
+## Rule Packs And Local Continuity
+
+Operator-local workspaces may install curated rule packs from an
+operator-approved source into the workspace root. When present:
+
+- `CVF_RULE_PACKS/ACTIVE_RULE_PACK.json` records the active selected pack.
+- `CVF_WORKSPACE_RULE_PACKS.md` explains the installed pack and refresh flow.
+- `Update-CVF-Workspace-RulePack.ps1` may be installed by an operator-local
+  rule-pack sync so agents can refresh or switch the active pack without
+  remembering the full source path.
+- `CVF_WORKSPACE_MEMORY.md` is the workspace-local memory front door.
+- The workspace handoff root file is the workspace-local agent handoff.
+- `.agents/workflows/` gives agents short, workspace-local procedures for
+  onboarding and pre-commit routing.
+
+Rule packs are selected guidance, not full repository export. They do not turn
+the workspace into the private full CVF repository and do not replace
+project-level `AGENTS.md`, manifests, policies, or handoffs.
+
+### Product Profile Tiers
+
+Workspace rule packs use three product-facing tier names:
+
+| Profile | Intended use | Boundary |
+|---|---|---|
+| `public-free` | Free or public-core-only workspace that needs the lightest guidance set. | No private continuity state. |
+| `paid-user-safe` | Paid user or shared downstream team that needs curated authoring and repository-boundary references. | No private continuity state or full governance library. |
+| `operator-local` | Private operator machine that needs full local continuity on top of the curated governance set. | Requires explicit continuity allowance and must not be copied into public or customer workspaces. |
+
+Use `paid-user-safe` as the default future customer profile. Use
+`operator-local` only for the operator's own local machine.
+
+For paid-user-safe setup, first refresh the workspace, then select the profile,
+then verify the active manifest and project-local checks:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ".\Update-CVF-Workspace.ps1" -RunGate
+powershell -ExecutionPolicy Bypass -File ".\Update-CVF-Workspace-RulePack.ps1" -ProfileName "paid-user-safe"
+```
+
+The active manifest should record `paid-user-safe` in
+`CVF_RULE_PACKS/ACTIVE_RULE_PACK.json`. This profile must not use
+`-AllowProvenanceContinuity`.
 
 Bootstrap and reconciliation also install (or refresh) a small set of
 workspace-root wrapper scripts and guides via
@@ -91,7 +247,14 @@ public-safe wrapper set.
 ## Update Flow
 
 Reconcile an existing hidden public-core clone from inside
-`.Controlled-Vibe-Framework-CVF`:
+the workspace root:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File ".\Update-CVF-Workspace.ps1" -RunGate
+```
+
+If the root wrapper is missing, use the hidden-core reconciler directly from
+inside `.Controlled-Vibe-Framework-CVF`:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts\update_cvf_workspace_public_core.ps1 `

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1647,
+  "stateKey": "maoPostClosureLiveProofAndPilotSelection20260712",
+  "value": "Canonical live release gate PASS is recorded at a0b40ecfb: Web build, guard TypeScript, provider readiness with three certified lanes, secrets scan, RC docs, UI mock six tests, and live governance Playwright all passed in one 261.5-second invocation with no key printed. This proves CVF live governance health, not live MAO orchestration. Operator then selected one bounded MAO-LIVE-T1 value pilot. Packet authoring must reuse current Model Gateway live harness authority and compare direct-call baseline with the governed MAO worker-reviewer-revision-closer chain under strict budget and secret-safe diagnostics."
+}

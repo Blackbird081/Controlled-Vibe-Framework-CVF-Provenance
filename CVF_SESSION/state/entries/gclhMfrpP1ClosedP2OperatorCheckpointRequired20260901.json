@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2707,
+  "stateKey": "gclhMfrpP1ClosedP2OperatorCheckpointRequired20260901",
+  "value": {
+    "status": "P1_CLOSED_P2_OPERATOR_CHECKPOINT_REQUIRED",
+    "materialCommit": "dc370ba33a3a39cee677453b2bedc14b94bfc798",
+    "decisionPacketPath": "docs/reviews/CVF_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_PACKET_2026-09-01.md",
+    "decisionPacketSha256": "388f9f63a6eb810efee9cd5f0ce193bfcc19719ac8f5bf42d6c394ce6bdfad09",
+    "workerReturnPath": "docs/reviews/CVF_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_WORKER_RETURN_2026-09-01.md",
+    "workerReturnSha256": "9a9ae6eb9bad0387548a3eb77d657e99e4529562e47a2e0619d07c47f3324e06",
+    "acceptedDisposition": "CONTRACT_ACCEPTED_BOUNDED",
+    "reviewEvidence": "Independent review found and repaired one missing explicit command-ledger baseline; owner samples, sixteen required threats, machine/reviewer boundary, SCEC binding, P2 interlock, worker-fast 67/67 and pre-commit 88/88 passed. Material pre-closure reached 80/81 with only the expected post-commit continuity mismatch pending this sync.",
+    "nextAllowedMove": "Stop for explicit operator authorization before authoring or dispatching P2 owner-local implementation work; no successor is opened automatically.",
+    "claimBoundary": "P1 ratifies existing-owner placement and a non-active seven-phase return-contract design only. P2, owner-local changes, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1649,
+  "stateKey": "maoLiveT1Dispatch20260712",
+  "value": "MAO-LIVE-T1 is DISPATCH_READY at 013e9fe21. Worker owns exactly six outputs: thin bridge, focused fake-fetch tests, bounded MAO export, secret-safe live runner, comparative evidence, and worker return. WORKER_MUST_NOT_COMMIT. One provider lane, same task/model/rubric, maximum four live calls, one repair maximum, and diagnostic-before-retry are binding. Pre-dispatch PASS 75/75 and pre-commit PASS 82/82."
+}

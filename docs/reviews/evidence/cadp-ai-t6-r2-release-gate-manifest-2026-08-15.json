@@ -1,0 +1,48 @@
+{
+  "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+  "evidence": [
+    {
+      "path": "docs/reviews/evidence/cadp-ai-t6-r2-release-gate-result-2026-08-15.json",
+      "sha256": "7071d49d6501b5736c22659825a2cd6397b713b60de36c197f22c58828a84f55",
+      "sizeBytes": 3096
+    },
+    {
+      "path": "docs/reviews/evidence/cadp-ai-t6-r2-sot3-diagnostic-2026-08-15.json",
+      "sha256": "a8bffaee0d6a6fa77f8a520c6757fb3084678f2f01ae5957f8e6e1f07d90c8ba",
+      "sizeBytes": 472
+    },
+    {
+      "path": "docs/reviews/evidence/cadp-ai-t6-r2-e2e-diagnostic-2026-08-15.json",
+      "sha256": "9c8916b3f1bb4b935e627788e33603681abdeb1b9dd86e641b10c1748551fc56",
+      "sizeBytes": 367
+    }
+  ],
+  "externalAnchor": {
+    "anchorId": "",
+    "anchorUrl": "",
+    "status": "NOT_PROVIDED"
+  },
+  "generatedAt": "2026-08-15T04:29:11.732039+00:00",
+  "repository": {
+    "branch": "main",
+    "commit": "c6574f58eab264fda83943dd5dddff503e1483c7",
+    "dirtyStatus": "M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results/.last-run.json\n?? docs/reviews/evidence/cadp-ai-t6-r2-e2e-diagnostic-2026-08-15.json\n?? docs/reviews/evidence/cadp-ai-t6-r2-free-quota-preflight-2026-08-15.json\n?? docs/reviews/evidence/cadp-ai-t6-r2-local-negative-receipt-2026-08-15.json\n?? docs/reviews/evidence/cadp-ai-t6-r2-release-gate-result-2026-08-15.json\n?? docs/reviews/evidence/cadp-ai-t6-r2-sot3-diagnostic-2026-08-15.json",
+    "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+  },
+  "rerun": {
+    "acceptedSecretEnv": [
+      "DASHSCOPE_API_KEY",
+      "ALIBABA_API_KEY",
+      "CVF_ALIBABA_API_KEY",
+      "CVF_BENCHMARK_ALIBABA_KEY"
+    ],
+    "command": "python scripts/run_cvf_release_gate_bundle.py --e2e --sot3-diagnostic-output <path> --e2e-diagnostic-output <path> --json",
+    "requiresLiveProviderKey": true
+  },
+  "schema": "cvf.liveEvidenceManifest.v1",
+  "signature": {
+    "algorithm": "hmac-sha256",
+    "digest": "",
+    "status": "UNSIGNED"
+  }
+}

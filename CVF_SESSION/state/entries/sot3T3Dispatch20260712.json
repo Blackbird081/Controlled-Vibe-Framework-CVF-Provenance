@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1713,
+  "stateKey": "sot3T3Dispatch20260712",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-12",
+    "materialCommit": "200889d32",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_T3_REFINERY_CORE_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_T3_REFINERY_CORE_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "targetRoot": "EXTENSIONS/CVF_REFINERY/",
+    "nextAllowedMove": "one bounded deterministic no-AI SOT3-T3 package execution and no-commit worker return",
+    "claimBoundary": "T3 Refinery Core only; T4-T7, package activation, provider/live, public-sync, and unrelated Catalog/GAP mutation remain held"
+  }
+}

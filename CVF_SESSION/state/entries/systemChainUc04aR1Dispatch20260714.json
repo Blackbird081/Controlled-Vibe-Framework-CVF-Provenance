@@ -1,0 +1,19 @@
+{
+  "stateOrder": 1780,
+  "stateKey": "systemChainUc04aR1Dispatch20260714",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "d1ffbf3eb",
+    "workOrderId": "SCLP-UC04A-R1",
+    "dispatchBaseHead": "ed6561581",
+    "plannedFocusedTestCount": 39,
+    "plannedPositiveCliInvocationCount": 1,
+    "plannedNegativeInvocationCount": 0,
+    "retryCeiling": 0,
+    "providerCallCeiling": 0,
+    "protectedPathMutation": "FORBIDDEN",
+    "retainedEvidence": "UC-04A negative_pre_closure PASS at material commit da93a4b73",
+    "nextAllowedMove": "one no-commit positive-only worker execution; do not invoke the retained two-call runner",
+    "claimBoundary": "Dispatch authorization only. No new UC-04A positive proof, UC-04B Web, provider, public, production, scale, certification, or user-value claim."
+  }
+}

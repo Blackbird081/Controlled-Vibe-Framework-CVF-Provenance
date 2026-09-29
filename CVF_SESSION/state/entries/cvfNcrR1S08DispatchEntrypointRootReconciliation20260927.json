@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2961,
+  "stateKey": "cvfNcrR1S08DispatchEntrypointRootReconciliation20260927",
+  "value": "ROOT_RECONCILED through control material 1085d5ebb, paired-topology seal 202258ba7, and command-reference/learning correction b2f614037. The first S08 worker correctly stopped on a mixed historical preflight range; the second correctly stopped on a nonexistent eligibility checker. Local accepted both returns as evidence, moved preflight to the clean execution frontier, promoted packet-shape and independent-probe admissions into author-fast, replaced the missing command with the verified metadata-only eligibility audit, made dispatch quality reject nonexistent Python command paths, and enabled paired proactive operator-notice/successor-freeze escalation on a decision-relevant first occurrence. No loader read, instruction use, receipt, activation, provider/network or external effect occurred."
+}

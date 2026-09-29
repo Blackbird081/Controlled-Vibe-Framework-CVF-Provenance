@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2735,
+  "stateKey": "gclhMfrpReviewAdmissionMachineEnforcedR1BExecutionReady20260902",
+  "value": {
+    "status": "REVIEW_ADMISSION_MACHINE_ENFORCED_R1B_EXECUTION_READY",
+    "reviewAdmissionFields": [
+      "preExecutionReviewAdmission",
+      "preExecutionReviewTrigger",
+      "nextRoutineReviewBoundary",
+      "reviewerWorkBoundary"
+    ],
+    "machineOwner": "governance/compat/check_review_cost_control.py",
+    "defaultRoute": "NOT_REQUIRED_BEFORE_EXECUTION -> WORKER_RETURN",
+    "triggeredRoute": "REQUIRED_TRIGGERED -> PRE_EXECUTION_REVIEW",
+    "workOrderSha256": "a77609a7ac34b2d6f9e58aa71aa1977c7ca3af2f4b1b84a6508adf4085002a86",
+    "nextAllowedMove": "Execute the exact no-commit MFRP-P3-R1B work order and return its four-path result for routine independent review.",
+    "claimBoundary": "This state records deterministic admission-shape enforcement, not semantic criticality inference, reviewer correctness, R1B result acceptance, P4 opening, provider/live/network or external effect."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2741,
+  "stateKey": "gclhMfrpP3R1BR2DispatchReadyExecutionAuthorized20260902",
+  "value": {
+    "status": "R1B_R2_DISPATCH_READY_EXECUTION_AUTHORIZED",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_P3_R1B_R2_ACTUAL_SEAM_REPLAY_REPAIR_2026-09-02.md",
+    "baselineSha256": "ef0f9a2de787b38d733675b50adfa517cc05c54cc9cda327b3688f614e1f7c16",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P3_R1B_R2_ACTUAL_SEAM_REPLAY_REPAIR_2026-09-02.md",
+    "workOrderSha256": "40c2c734af546b90993a89482408f16462ca70a77728cf70e26e4d9adc0710c8",
+    "dispatchCommit": "34310bf0731e008ba2189ecd7656d0155b0d88d9",
+    "oracleContainingCommit": "e15cf55d8060a44056f44dd819b399ae3aec1fb0",
+    "reviewAdmission": "NOT_REQUIRED_BEFORE_EXECUTION",
+    "nextRoutineReviewBoundary": "WORKER_RETURN",
+    "nextAllowedMove": "Execute the bounded R1B-R2 work order without commit on exactly the two replay implementation/test paths, the replay-result fixture, and the new R1B-R2 worker return. Review resumes only at worker return.",
+    "claimBoundary": "Dispatch readiness and execution authorization only. No R1B-R2 replay result, P4 canary opening, P2 mutation, provider/live/network, public-sync, deployment or production effect is claimed."
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2227,
+  "stateKey": "cadpAiT5R6ReadOnlyAuthorizationConsumerValueDecisionDispatch20260815",
+  "value": "CADP-AI-T5-R6 is dispatched at material commit 5110ea55d as a documentation-only, WORKER_MUST_NOT_COMMIT value/cost decision. Proceed only if all eight mandatory gates pass and the sensitivity-tested value margin is at least 12; otherwise STOP_LOW_VALUE or BLOCKED_MISSING_PREREQUISITE. No route, registry row, runtime mutation, provider/live/network access, credentials, public sync, deployment, or production work is authorized."
+}

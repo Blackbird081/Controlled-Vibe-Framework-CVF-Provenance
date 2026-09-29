@@ -1,0 +1,11 @@
+{
+  "stateOrder": 1685,
+  "stateKey": "maoT6ClosureT7Release20260711",
+  "value": {
+    "status": "MAO_T6_ACCEPTED_MAO_T7_RELEASED",
+    "maoT6MaterialCommit": "ee5a1a400",
+    "verification": "58/58 focused tests, typecheck and governance gates PASS",
+    "nextAllowedMove": "refresh T7 packet then one no-commit T7 execution",
+    "claimBoundary": "T6 local closure and T7 local evidence/readout packet release only"
+  }
+}

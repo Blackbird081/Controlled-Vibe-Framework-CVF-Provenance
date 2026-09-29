@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2219,
+  "stateKey": "cadpAiT5R4AuthenticationCompositionContractHardeningDispatch20260815",
+  "value": "CADP-AI-T5-R4 documentation-only authentication composition contract hardening is dispatched at material commit 8cb60f519. The later WORKER_MUST_NOT_COMMIT phase may create exactly the T5-R4 reference contract and worker return. It must define credential precedence, body-text boundary, principal and impersonation provenance, public deny redaction, CADP authorization separation, proof-only versus durable receipt disposition, injected deterministic time, non-test environment invariants, exact future implementation paths, focused negative tests, rollback, reopen conditions, dual-agent boundaries, and one contract-readiness token. Production source, tests, routes, authentication, registries, runtime, credentials, external invocation, public sync, deployment, production, and worker commit remain forbidden."
+}

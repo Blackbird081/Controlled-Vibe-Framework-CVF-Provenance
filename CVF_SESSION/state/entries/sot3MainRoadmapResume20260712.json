@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1711,
+  "stateKey": "sot3MainRoadmapResume20260712",
+  "value": {
+    "status": "ACTIVE_T3_PACKET_AUTHORING_NEXT",
+    "date": "2026-07-12",
+    "materialCommit": "c897094d8",
+    "mainRoadmap": "docs/roadmaps/CVF_SOT_THREE_LAYER_ABSORPTION_ROADMAP_2026-07-12.md",
+    "acceptedTranches": "T0, T0R, T1, T2",
+    "remainingTranches": "T3, T4, T5, T6, T7",
+    "nextAllowedMove": "fresh SOT3-T3 GC-018 and source-verified work-order authoring for deterministic no-AI Refinery Core",
+    "claimBoundary": "main absorption roadmap remains active; no T3 implementation before dispatch and T4-T7 remain dependency-held"
+  }
+}

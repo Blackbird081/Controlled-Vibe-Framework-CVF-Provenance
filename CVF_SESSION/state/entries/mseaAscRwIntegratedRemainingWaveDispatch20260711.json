@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1669,
+  "stateKey": "mseaAscRwIntegratedRemainingWaveDispatch20260711",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-11",
+    "dispatchCommit": "fa4838c57",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_ASC_RW_INTEGRATED_REMAINING_WAVE_2026-07-11.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_ASC_RW_INTEGRATED_REMAINING_WAVE_2026-07-11.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "one integrated ASC-T1 through ASC-T5 execution and one final COMPLETE_PENDING_REVIEW return",
+    "claimBoundary": "exact authorized catalog, gap, automation, test, and wiring paths only; no substitute owner, doctrine, R91 semantic, runtime, public, provider, session, L4 promotion, commit, or push"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2175,
+  "stateKey": "cadpAiT2Dispatch20260813",
+  "value": "CADP-AI-T2 was dispatched at material commit 9f08655f3d755873ad15854843dd015c56e8d95d from session-sync base 1dd6ed07eb517e140acfe2e2ec0c41ea196ab2b4. The committed baseline/work order require module-private runtime-verifiable owner identity, removal of the caller-supplied CompatibilityEvidenceIndex trust path, exact grant-versus-observation reconciliation, adversarial forge/copy/serialization tests, no generic caller mint, explicit evaluatedAt, no side effects, an exact 11-path maximum manifest, WORKER_MUST_NOT_COMMIT, and independent reviewer probes. Pre-dispatch passed 76/76 and pre-commit passed 84/84. F11 remains open until independent T2 acceptance."
+}

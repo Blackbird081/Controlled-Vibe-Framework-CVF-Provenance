@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "cvf.rseT4AcceptanceChainIndependentProbe@1.0.0",
+  "batchId": "RSE-T4-H1-R1",
+  "reviewerRole": "LOCAL_PHASE_SEPARATED_REVIEWER",
+  "implementationCommit": "2bf3b0411",
+  "providerCallCount": 0,
+  "cases": [
+    {"caseId":"RSE-EXACT-APPLICABILITY","mutation":"APPLICABLE_BOGUS","expected":"REJECT","observed":"REJECT","status":"PASS"},
+    {"caseId":"RSE-NONZERO-NO-EVENT","mutation":"eventCount=1; disposition=NO_EVENT","expected":"REJECT","observed":"REJECT","status":"PASS"},
+    {"caseId":"RSE-NONNUMERIC-RETRY","mutation":"recoveryAttemptCount=abc","expected":"REJECT","observed":"REJECT","status":"PASS"},
+    {"caseId":"RSE-PROMPT-COUNT-OVERFLOW","mutation":"platformForcedOperatorPromptCount=2; eventCount=1","expected":"REJECT","observed":"REJECT","status":"PASS"},
+    {"caseId":"LEDGER-UNCLAIMED-GIT-PATH","mutation":"Git observed extra.txt absent from evidence","expected":"REJECT","observed":"REJECT","status":"PASS"},
+    {"caseId":"LEDGER-FALSE-COMPLETE","mutation":"mandatory row BLOCKED with COMPLETE_PENDING_REVIEW","expected":"REJECT","observed":"REJECT","status":"PASS"},
+    {"caseId":"LEDGER-POSITIVE-CONTROL","mutation":"exact requirement/artifact/proof/Git join","expected":"ACCEPT","observed":"ACCEPT","status":"PASS"}
+  ],
+  "verdict": "PASS_ALL_SEVEN_INDEPENDENT_CASES"
+}

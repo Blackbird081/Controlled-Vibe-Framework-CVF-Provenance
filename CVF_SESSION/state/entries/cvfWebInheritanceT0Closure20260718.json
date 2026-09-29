@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1927,
+  "stateKey": "cvfWebInheritanceT0Closure20260718",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED_WITH_REPAIRS",
+    "materialCommit": "90aa165c6",
+    "executionBaseHead": "2852ae25f",
+    "completionReview": "docs/reviews/CVF_WEB_INHERITANCE_T0_COMPLETION_REVIEW_2026-07-18.md",
+    "seedCapabilityCount": 12,
+    "routing": "T1=2; T2=2; T3=2; T4=2; T5=2; NONE_WITH_REASON=2",
+    "reviewerRepairs": "Corrected 14-import overcount to two production plus one live-test importer, rejected package-level use as MAO capability inheritance, and reconciled registry/operator totals.",
+    "verification": "reviewer-fast 62/62 PASS; commit steward PASS; material pre-commit 83/83 PASS",
+    "nextAllowedMove": "Author and dispatch fresh CVF-WEB-INHERITANCE-T1 for SOT3 runtime-module registry truth and focused tests.",
+    "heldNextTranche": "T2-T5 and all external mutation lanes remain parked.",
+    "claimBoundary": "Bounded T0 inventory closure only; no cvf-web implementation or external mutation."
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2202,
+  "stateKey": "cadpAiT5R1ExecutionAnchorRepairHold20260815",
+  "value": "Independent dispatch review found that the committed T5-R1 worker preflight still compared execution HEAD to the obsolete packet-authoring base 576af12fb. Worker dispatch is temporarily held while that one material authority defect is repaired. Current authority is temporarily returned to the already-closed T6-R2 packet so the T5-R1 work order can be corrected in an independently gated material commit without a stale current-authority hash. No worker implementation or external action is authorized during this repair hold."
+}

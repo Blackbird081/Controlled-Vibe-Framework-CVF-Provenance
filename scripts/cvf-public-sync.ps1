@@ -32,6 +32,8 @@ $ErrorActionPreference = 'Stop'
 $GOVERNANCE_ROOT  = Split-Path -Parent $PSScriptRoot
 $PUBLIC_SYNC_ROOT = 'D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF-public-sync'
 $PUBLIC_REMOTE    = 'https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git'
+$PUBLIC_BRANCH    = 'main'
+$PUBLIC_REPO      = 'Blackbird081/Controlled-Vibe-Framework-CVF'
 
 # Allowlist: directory trees that may be synced
 $ALLOWED_TREES = @(
@@ -69,14 +71,34 @@ $ALLOWED_ROOT_FILES = @(
 $ALLOWED_SCRIPT_FILES = @(
     'scripts\bootstrap_foundations.ps1',
     'scripts\bootstrap_foundations.sh',
+    'scripts\check_cvf_public_sync_candidate.py',
     'scripts\check_cvf_workspace_agent_enforcement.ps1',
     'scripts\check_cvf_workspace_new_project_enforcement.ps1',
     'scripts\ingest_cvf_downstream_knowledge.ps1',
     'scripts\install_cvf_hooks.ps1',
+    'scripts\install_cvf_workspace.ps1',
+    'scripts\build_cvf_workspace_distribution.ps1',
+    'scripts\get_cvf_workspace_status.ps1',
+    'scripts\repair_cvf_workspace.ps1',
+    'scripts\manage_cvf_workspace.ps1',
     'scripts\new-cvf-workspace.ps1',
+    'scripts\lib\downstream_catalog\CvfDownstreamBootstrapContent.ps1',
+    'scripts\lib\downstream_catalog\CvfDownstreamCatalogLib.ps1',
+    'scripts\lib\downstream_catalog\CvfGoldenHarnessSupport.ps1',
+    'scripts\lib\downstream_catalog\CvfWorkspaceDoctorLiveReadiness.ps1',
+    'scripts\lib\downstream_catalog\manage_cvf_downstream_catalog.ps1',
+    'scripts\lib\downstream_catalog\schemas\ARTIFACT_REGISTRY.schema.json',
+    'scripts\lib\downstream_catalog\schemas\MODULE_REGISTRY.schema.json',
+    'scripts\sync_cvf_workspace_public_profile.ps1',
+    'scripts\test_cvf_golden_downstream_bootstrap.ps1',
     'scripts\update_cvf_workspace_public_core.ps1',
     'scripts\w114_cp7_multi_sample_downstream_proof.ps1',
     'scripts\write_cvf_workspace_web_evidence_bridge.ps1'
+)
+
+$ALLOWED_WORKSPACE_TEMPLATE_FILES = @(
+    'workspace_templates\CVF_WORKSPACE_MEMORY_TEMPLATE.md',
+    'workspace_templates\AGENT_HANDOFF_TEMPLATE.md'
 )
 
 # Mapped exports keep private provenance root files private while still
@@ -93,19 +115,36 @@ $MAPPED_FILES = @(
     @{
         Source      = 'scripts\install_cvf_workspace_root_wrappers_public.ps1'
         Destination = 'scripts\install_cvf_workspace_root_wrappers.ps1'
+    },
+    @{
+        Source      = 'scripts\cvf-public-pre-push-hook.sh'
+        Destination = '.githooks\pre-push'
+    }
     }
 )
 
 $WORKSPACE_KIT_FILES = @(
     'docs\GET_STARTED.md',
+    'docs\guides\CVF_WORKSPACE_CLASSIFICATION_AND_USAGE_GUIDE.md',
+    'docs\reference\CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_DESIGN_2026-07-23.md',
+    'docs\reference\CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_LEARNING_INTAKE_2026-07-23.md',
+    'docs\reference\CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_SPEC_2026-07-23.md',
     'docs\reference\CVF_NEW_MACHINE_SETUP_CHECKLIST.md',
     'docs\reference\CVF_W114_PUBLIC_EVIDENCE_PACKET_2026-04-23.md',
     'docs\reference\CVF_WORKSPACE_RULES.md',
+    'docs\reference\CVF_WORKSPACE_PROFILE_TIERS.md',
+    'docs\reference\CVF_WORKSPACE_PAID_USER_AUTHORING_GUIDE.md',
+    'docs\reference\CVF_WORKSPACE_PAID_USER_SAFE_ONBOARDING_FLOW.md',
+    'docs\reference\CVF_TEXT_ENCODING_AND_SYMBOL_DISCIPLINE_STANDARD_2026-06-07.md',
+    'docs\reference\CVF_AGENT_ERROR_TO_GOVERNANCE_LEARNING_PHILOSOPHY_2026-05-28.md',
+    'docs\reference\workspace_distribution\README.md',
+    'docs\reference\workspace_distribution\CVF_WORKSPACE_DISTRIBUTION_MANIFEST.json',
     'governance\toolkit\05_OPERATION\CVF_DOWNSTREAM_AGENTS_TEMPLATE.md',
     'governance\toolkit\05_OPERATION\CVF_PUBLIC_CORE_AGENTS.md',
     'governance\toolkit\05_OPERATION\CVF_PUBLIC_CORE_CONTINUATION.md',
-    'governance\toolkit\05_OPERATION\CVF_WORKSPACE_ISOLATION_GUARD.md'
-) + $ALLOWED_SCRIPT_FILES
+    'governance\toolkit\05_OPERATION\CVF_WORKSPACE_ISOLATION_GUARD.md',
+    'governance\toolkit\05_OPERATION\downstream_catalog\CVF_DOWNSTREAM_CATALOG_GUARD.md'
+) + $ALLOWED_WORKSPACE_TEMPLATE_FILES + $ALLOWED_SCRIPT_FILES
 
 # Allowlist: docs/ sub-paths that may be synced
 # baselines/, reviews/, roadmaps/ are intentionally absent
@@ -127,6 +166,33 @@ $DENY_PATTERNS = @(
     '^docs[/\\]baselines[/\\]',
     '^docs[/\\]reviews[/\\]',
     '^docs[/\\]roadmaps[/\\]',
+    '^docs[/\\]reference[/\\]archive[/\\]',
+    '^docs[/\\]reference[/\\]CVF_EXTERNAL_AGENT_ROUND_TRIP_PUBLIC_SYNC_RECORD_',
+    '^docs[/\\]reference[/\\]external_agent_invocation_control[/\\]',
+    '^docs[/\\]reference[/\\]CVF_MSEA_R72_R84_T0_GOVERNANCE_LOAD_EFFECTIVENESS_EVIDENCE_LEDGER_2026-07-22\.md$',
+    '^docs[/\\]reference[/\\]agent_workspace[/\\]CVF_WORKSPACE_LAYER_V041_SEMANTIC_ABSORPTION_LEDGER\.md$',
+    '^docs[/\\]reference[/\\]external_agent_review[/\\](?:README|CVF_EXTERNAL_ABSORPTION_CORE_STANDARD|CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP)\.md$',
+    '^governance[/\\]capability-grants[/\\]cadp-ai-t2a-owner-binding-grant\.v[12]\.json$',
+    '^EXTENSIONS[/\\]CVF_GUARD_CONTRACT[/\\]src[/\\]contracts[/\\](?:repository-capability-owner\.source|capability-owner-binding\.contract)(?:\.test)?\.ts$',
+    '^EXTENSIONS[/\\]CVF_GUARD_CONTRACT[/\\]src[/\\]contracts[/\\](?:assf-capability-preflight|cadp-|capability-|controlled-acquisition)[^/\\]*\.ts$',
+    '^EXTENSIONS[/\\]CVF_GUARD_CONTRACT[/\\]src[/\\]contracts[/\\](?:index|contracts\.phase1r\.test|contracts\.phase2b-runtime-coherence\.test)\.ts$',
+    '^EXTENSIONS[/\\]CVF_GUARD_CONTRACT[/\\]src[/\\](?:index|package\.boundary\.test)\.ts$',
+    '^EXTENSIONS[/\\]CVF_EXECUTION_PLANE_FOUNDATION[/\\](?:src[/\\](?:index|cadp\.capability\.consumer\.contract)|tests[/\\]cadp\.capability\.consumer\.contract\.test)\.ts$',
+    '^EXTENSIONS[/\\]CVF_MODEL_GATEWAY[/\\](?:src[/\\](?:index|cadp\.constraint\.projection\.contract)|tests[/\\]cadp\.constraint\.projection\.contract\.test)\.ts$',
+    '^EXTENSIONS[/\\](?:CVF_EXECUTION_PLANE_FOUNDATION|CVF_MODEL_GATEWAY)[/\\]tests[/\\]cadp\.package\.root\.exports\.test\.ts$',
+    '^EXTENSIONS[/\\]CVF_v1\.6_AGENT_PLATFORM[/\\]cvf-web[/\\]src[/\\]lib[/\\]cadp-(?:authentication-policy|authorization)(?:\.test)?\.ts$',
+    '^EXTENSIONS[/\\]CVF_LEARNING_PLANE_FOUNDATION[/\\](?:src[/\\](?:index|capability-learning-candidate-projection)|tests[/\\]capability-learning-candidate-projection\.test)\.ts$',
+    '^governance[/\\]compat[/\\](?:test_)?check_cadp_authority_boundary_drift\.py$',
+    '^governance[/\\]compat[/\\]fixtures[/\\]cadp_authority_boundary_contract\.v1\.json$',
+    '^docs[/\\]reference[/\\]system_architecture_catalog[/\\]entries[/\\]interface\.cadp_capability_admission_distribution_profile\.v1\.json$',
+    '^governance[/\\]compat[/\\](?:test_)?check_mixed_origin_derived_synthesis_absorption\.py$',
+    '^governance[/\\]compat[/\\](?:agent_autorun_command_catalog|local_governance_hook_catalog_(?:pre_commit|pre_push|reviewer_fast))\.py$',
+    '^docs[/\\]reference[/\\](?:CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19|guard_orientation[/\\]README)\.md$',
+    '^docs[/\\]reference[/\\]CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_BUILD_EVIDENCE_2026-07-23\.md$',
+    '^docs[/\\]reference[/\\]CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_INDEPENDENT_REVIEW_2026-07-23\.md$',
+    '^docs[/\\]reference[/\\]CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_INDEPENDENT_REVIEW_FINDINGS_2026-07-23\.md$',
+    '^docs[/\\]reference[/\\]CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_WORK_ORDER_2026-07-23\.md$',
+    '^docs[/\\]reference[/\\]CVF_GOLDEN_DOWNSTREAM_BOOTSTRAP_WORK_ORDER_AMENDMENT_1_2026-07-23\.md$',
     # Internal operation scripts - provenance repo only
     'scripts[/\\]cvf-provenance-push\.ps1$',
     'scripts[/\\]cvf-public-sync\.ps1$',
@@ -141,19 +207,64 @@ $DENY_PATTERNS = @(
     '[/\\]playwright-report[/\\]',
     '[/\\]__pycache__[/\\]',
     '[/\\]\.data[/\\]',
+    '(^|[/\\])\.cvf[/\\](runtime|config)([/\\]|$)',
+    '\.jsonl$',
+    'RAW',
+    'HANDOFF',
     '\.tsbuildinfo$',
     '\.pyc$',
     '\.log$',
     '\.tmp$'
 )
 
+# Narrow public-safe exceptions for names that intentionally contain a
+# blocked token. Keep this list aligned with the public-surface manifest;
+# runtime state and receipt streams are never exceptions here.
+$DENY_EXCEPTIONS = @(
+    'workspace_templates\AGENT_HANDOFF_TEMPLATE.md',
+    'EXTENSIONS\CVF_GUARD_CONTRACT\src\runtime\agent-handoff.ts',
+    'EXTENSIONS\CVF_GUARD_CONTRACT\src\runtime\agent-handoff.test.ts',
+    'EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\src\lib\agent-handoff-validator.ts',
+    'EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\src\lib\agent-handoff-validator.test.ts',
+    'EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\src\app\api\execute\route.web-build-handoff.alibaba.live.test.ts',
+    'EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\src\lib\spec-export-portable-handoff.ts',
+    'EXTENSIONS\CVF_CONTROL_PLANE_FOUNDATION\src\agent.handoff.contract.ts',
+    'EXTENSIONS\CVF_CONTROL_PLANE_FOUNDATION\tests\agent.handoff.contract.test.ts',
+    'EXTENSIONS\CVF_v1.2.1_EXTERNAL_INTEGRATION\models\external-skill.raw.ts',
+    'EXTENSIONS\CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS\product_ux\claude_design_handoff.skill.md',
+    'governance\compat\check_agent_handoff_guard_compat.py',
+    'governance\compat\test_check_agent_handoff_guard_compat.py',
+    'governance\toolkit\05_OPERATION\CVF_AGENT_HANDOFF_GUARD.md',
+    'governance\toolkit\05_OPERATION\CVF_AGENT_HANDOFF_TRANSITION_GUARD.md',
+    'docs\reference\CVF_AGENT_HANDOFF_TEMPLATE.md',
+    'docs\reference\CVF_ADR_AGENT_HANDOFF_CONTRACT_RELATIONSHIP_2026-05-17.md'
+)
+
 # -----------------------------------------------------------------------
 
 function Test-Denied {
     param([string]$RelPath)
+    $normalized = $RelPath -replace '/', '\'
+    if ($normalized -in $DENY_EXCEPTIONS) { return $false }
     foreach ($pattern in $DENY_PATTERNS) {
         if ($RelPath -match $pattern) { return $true }
     }
+
+    # A governed artifact that explicitly declares a non-export disposition is
+    # private by contract even when it sits below an otherwise allowed tree.
+    # Limit the search to the artifact's own disposition section so standards
+    # and templates that merely document the vocabulary remain exportable.
+    $sourcePath = Join-Path $GOVERNANCE_ROOT $RelPath
+    if ($RelPath -match '\.md$' -and (Test-Path $sourcePath -PathType Leaf)) {
+        $content = Get-Content -LiteralPath $sourcePath -Raw
+        $sectionPattern = '(?ms)^## Public Export Disposition\s*\r?\n(?<body>.*?)(?=^##\s|\z)'
+        $section = [regex]::Match($content, $sectionPattern)
+        if ($section.Success -and
+            $section.Groups['body'].Value -match '(?m)^\s*(?:Disposition:\s*)?`?(?:DEFERRED_PRIVATE_ONLY|BLOCKED_MISSING_PUBLIC_ARTIFACTS)`?\s*$') {
+            return $true
+        }
+    }
+
     return $false
 }
 
@@ -170,6 +281,11 @@ function Get-AllowedFiles {
     foreach ($scriptPath in $ALLOWED_SCRIPT_FILES) {
         $full = Join-Path $GOVERNANCE_ROOT $scriptPath
         if (Test-Path $full -PathType Leaf) { $files.Add($scriptPath) }
+    }
+
+    foreach ($templatePath in $ALLOWED_WORKSPACE_TEMPLATE_FILES) {
+        $full = Join-Path $GOVERNANCE_ROOT $templatePath
+        if (Test-Path $full -PathType Leaf) { $files.Add($templatePath) }
     }
 
     # Allowed directory trees
@@ -294,9 +410,90 @@ foreach ($mapping in $MAPPED_FILES) {
     $copied++
 }
 
+# Project the Guard Contract barrel from its canonical source while removing
+# only export statements whose referenced contract module is intentionally
+# absent from the public projection. This preserves public runtime exports
+# (including the mandatory gateway) without leaking private capability grants.
+$guardIndexSource = Join-Path $GOVERNANCE_ROOT 'EXTENSIONS\CVF_GUARD_CONTRACT\src\index.ts'
+$guardIndexDestination = Join-Path $PUBLIC_SYNC_ROOT 'EXTENSIONS\CVF_GUARD_CONTRACT\src\index.ts'
+$guardIndexContent = Get-Content -LiteralPath $guardIndexSource -Raw
+$missingGuardModules = [System.Collections.Generic.List[string]]::new()
+$guardExportPattern = "(?ms)^export(?:\s+type)?\s*\{.*?\}\s+from\s+'(?<module>\./contracts/[^']+)';\s*\r?\n"
+$guardIndexProjected = [regex]::Replace($guardIndexContent, $guardExportPattern, {
+    param($match)
+    $module = $match.Groups['module'].Value
+    $relativeModule = ($module.Substring(2) -replace '/', '\') + '.ts'
+    $publicModule = Join-Path (Split-Path $guardIndexDestination -Parent) $relativeModule
+    if (-not (Test-Path $publicModule -PathType Leaf)) {
+        $missingGuardModules.Add($module)
+        return ''
+    }
+    return $match.Value
+})
+if ($missingGuardModules.Count -eq 0) {
+    throw 'Expected at least one private/deferred Guard Contract module to be removed from the public barrel.'
+}
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+[System.IO.File]::WriteAllText($guardIndexDestination, $guardIndexProjected, $utf8NoBom)
+$copied++
+Write-Host "Projected public Guard Contract barrel; removed $($missingGuardModules.Count) absent module export blocks." -ForegroundColor Yellow
+
+# Rebuild generated catalog output from the public projection's own compact
+# entries. The provenance aggregate may include private/deferred entries that
+# this allowlist correctly omits, so copying that aggregate verbatim would
+# leave the public projection internally inconsistent.
+$catalogGenerator = Join-Path $PUBLIC_SYNC_ROOT 'governance\compat\generate_as_built_system_catalog.py'
+if (-not (Test-Path $catalogGenerator -PathType Leaf)) {
+    throw "Public catalog generator not found: $catalogGenerator"
+}
+Write-Host 'Regenerating public as-built catalog aggregate...' -ForegroundColor Yellow
+& python $catalogGenerator --target catalog --json
+if ($LASTEXITCODE -ne 0) {
+    throw "Public catalog aggregate generation failed with exit code $LASTEXITCODE"
+}
+
 Write-Host "  Copied : $copied"
 Write-Host "  Denied : $denied"
 Write-Host ''
+
+# Run one general, current-candidate preflight before review or staging. This
+# replaces ad-hoc use of private hooks and stale range-pinned policy profiles.
+# The temporary ownership manifest is outside both repositories and is always
+# removed, including on a fail-closed result.
+$authorizedPending = [System.Collections.Generic.HashSet[string]]::new(
+    [System.StringComparer]::OrdinalIgnoreCase
+)
+foreach ($path in $allowedFiles) {
+    [void]$authorizedPending.Add(($path -replace '\\', '/'))
+}
+foreach ($mapping in $MAPPED_FILES) {
+    [void]$authorizedPending.Add(($mapping.Destination -replace '\\', '/'))
+}
+[void]$authorizedPending.Add('EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts')
+[void]$authorizedPending.Add('docs/reference/system_architecture_catalog/CVF_AS_BUILT_SYSTEM_CATALOG_AGGREGATE.json')
+
+$ownershipManifest = Join-Path ([System.IO.Path]::GetTempPath()) ("cvf-public-sync-owned-{0}.json" -f [guid]::NewGuid())
+$preflight = Join-Path $GOVERNANCE_ROOT 'scripts\check_cvf_public_sync_candidate.py'
+try {
+    [System.IO.File]::WriteAllText(
+        $ownershipManifest,
+        (@($authorizedPending) | Sort-Object | ConvertTo-Json),
+        $utf8NoBom
+    )
+    Write-Host 'Running one-shot public candidate preflight...' -ForegroundColor Yellow
+    & python $preflight `
+        --public-root $PUBLIC_SYNC_ROOT `
+        --authorized-paths-json $ownershipManifest `
+        --expected-remote $PUBLIC_REMOTE `
+        --expected-branch $PUBLIC_BRANCH `
+        --json
+    if ($LASTEXITCODE -ne 0) {
+        throw "Public candidate preflight failed with exit code $LASTEXITCODE"
+    }
+}
+finally {
+    Remove-Item -LiteralPath $ownershipManifest -Force -ErrorAction SilentlyContinue
+}
 
 # Commit
 Set-Location $PUBLIC_SYNC_ROOT
@@ -339,8 +536,41 @@ Write-Host ''
 
 # Push
 if (-not $NoPush) {
-    Write-Host "Pushing to $PUBLIC_REMOTE ..." -ForegroundColor Yellow
-    git push origin main
+    if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
+        throw 'GitHub CLI is required for mandatory server-side public-sync verification.'
+    }
+    git config core.hooksPath .githooks
+    $candidateSha = git rev-parse HEAD
+    $candidateBranch = "cvf-public-sync-candidate-$($candidateSha.Substring(0, 12))"
+    Write-Host "Pushing candidate branch $candidateBranch ..." -ForegroundColor Yellow
+    git push origin "HEAD:refs/heads/$candidateBranch"
+    if ($LASTEXITCODE -ne 0) {
+        throw "Candidate branch push failed with exit code $LASTEXITCODE"
+    }
+
+    $runId = $null
+    for ($attempt = 0; $attempt -lt 12 -and -not $runId; $attempt++) {
+        Start-Sleep -Seconds 5
+        $runs = gh run list --repo $PUBLIC_REPO --workflow public-sync-preflight.yml --branch $candidateBranch --limit 10 --json databaseId,headSha | ConvertFrom-Json
+        $matchingRun = $runs | Where-Object { $_.headSha -eq $candidateSha } | Select-Object -First 1
+        if ($matchingRun) { $runId = $matchingRun.databaseId }
+    }
+    if (-not $runId) {
+        throw "No GitHub preflight run appeared for candidate $candidateSha"
+    }
+
+    Write-Host "Waiting for mandatory GitHub preflight run $runId ..." -ForegroundColor Yellow
+    gh run watch $runId --repo $PUBLIC_REPO --exit-status
+    if ($LASTEXITCODE -ne 0) {
+        throw "Mandatory GitHub preflight failed for candidate $candidateSha"
+    }
+
+    Write-Host "Promoting verified commit to protected main ..." -ForegroundColor Yellow
+    git push origin "HEAD:$PUBLIC_BRANCH"
+    if ($LASTEXITCODE -ne 0) {
+        throw "Protected main push failed with exit code $LASTEXITCODE"
+    }
+    git push origin --delete $candidateBranch
     Write-Host ''
     Write-Host 'Public sync complete.' -ForegroundColor Green
 } else {

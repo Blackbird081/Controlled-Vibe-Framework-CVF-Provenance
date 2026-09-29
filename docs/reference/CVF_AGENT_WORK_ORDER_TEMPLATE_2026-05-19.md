@@ -2,7 +2,7 @@
 
 Memory class: POINTER_RECORD
 
-Status: reusable template for scoped agent execution orders.
+Status: reusable template for scoped agent execution orders. providerExecutionAuthority: FORBIDDEN (skeleton prose; a real dispatch declares its own).
 
 Text Encoding Exception: em dash and standard punctuation used in governance prose
 
@@ -19,23 +19,16 @@ the read-first requirement before copying any other section order.
 
 ## Purpose
 
-A CVF Agent Work Order is the tactical execution packet that an orchestrator,
-reviewer, or operator gives to an implementing agent.
-
-It sits below roadmap and governance authorization, and above raw task prompts.
-It exists to prevent scope drift by making the worker's mission, authority
-chain, write ownership, forbidden actions, evidence requirements, and return
-conditions explicit.
+A CVF Agent Work Order is the tactical execution packet given to an
+implementing agent. It sits below roadmap and governance authorization and
+prevents scope drift by fixing mission, authority, write ownership, forbidden
+actions, evidence, and return conditions.
 
 Work orders are mandatory after a final roadmap when an orchestrator, reviewer,
 operator, or lead agent delegates implementation to another agent or a later
 session.
 
-Work orders are governed by the operating workflow in
-`docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`.
-
-**Template family front door:**
-`docs/reference/work_order_template/README.md`
+Governing workflow: `docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md`; template family front door: `docs/reference/work_order_template/README.md`.
 
 ## Owner / Source
 
@@ -86,6 +79,41 @@ Contract:
 - the implementer follows the allowed scope and forbidden scope;
 - the reviewer evaluates evidence against acceptance criteria;
 - the orchestrator receives a closure packet or a stop condition.
+
+## Review Dispatch Convergence And Invocation Budget Control
+Review-Dispatch Convergence Control: REQUIRED; copy the exact scalar fields and controlled values from
+`docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md`;
+the pre-dispatch gate rejects review-by-drip, round-three auto-dispatch,
+unknown external usage, and a reached parent-assignment invocation ceiling.
+
+## Gate-To-Role Closeability Contract
+
+Every ready work order must copy the versioned graph contract from
+`docs/reference/CVF_GATE_TO_ROLE_CLOSEABILITY_MACHINE_STANDARD.md`. Map every
+mandatory gate to its pass deadline, repair owner/phase, complete mutation
+surface, topology, commit owner/phase, and dependencies. Use a bounded path
+family when ordinary file topology is not honestly predictable; never widen a
+protected path implicitly. Worker returns and completion reviews must record a
+Return-Time Closeability Recheck before another repair dispatch.
+
+## Architecture Readiness Admission
+Full contract: `docs/reference/CVF_ARCHITECTURE_READINESS_ADMISSION_STANDARD_2026-09-07.md` (DARA-T2-R1).
+Schema, applicability, allowed declarations, closed chain, fault attribution, quota, echo, and evidence truth are
+defined there. Rotated from this surface at DARA-T2-R1 to satisfy the near-threshold rotation requirement.
+
+## High-Risk Local Transaction Proof Routing
+
+For current work orders authorizing cross-process locking, durable write/append
+with rollback, ownership/DACL mutation, or post-acquire failure handling, copy
+the conditional declaration and nine-field JSON contract from
+`docs/reference/CVF_HIGH_RISK_LOCAL_TRANSACTION_PROOF_STANDARD_2026-09-22.md`.
+Use `High-Risk Local Transaction Proof Applicability: REQUIRED`; use
+`High-Risk Local Transaction Proof Applicability: NOT_APPLICABLE_WITH_REASON - <reason>`
+only when no target risk is authorized. REQUIRED packets contain one
+`High-Risk Local Transaction Proof Contract` section. The standard owns the
+schema, semantic obligations, detached final-digest receipt, and pending
+reviewer probe. `check_high_risk_local_transaction_proof.py` checks changed
+work orders in reviewer-fast, pre-commit, and pre-push; static PASS is not runtime proof.
 
 ## Enforcement / Verification
 
@@ -236,6 +264,21 @@ Status token rule for authors:
   review, or fully closed roadmap.
 
 Copy and complete the block below.
+
+For an intake that combines upstream material, public CVF input, operator
+requirements, operator-agent co-design, or novel synthesis, cite
+`docs/reference/external_agent_review/CVF_MIXED_ORIGIN_DERIVED_SYNTHESIS_ABSORPTION_STANDARD.md`
+
+For mixed-origin local packs, reuse a fresh reconciled manifest/ledger and
+review by capability cluster. Do not require per-file semantic re-adjudication
+or an additional value-probe tranche unless a named freshness, integrity,
+origin, owner, or decision-changing gap is recorded. The applicable work order
+must carry the `## Absorption Efficiency And Provenance Reuse` controls from
+that standard. Mutating-runtime risk may park the executor without suppressing
+lower-risk contract, doctrine, schema, fixture, or checker absorption.
+and include its provenance, decision-vector, and system-chain blocks. Do not
+use unreviewed/unmerged status as a value decision or one tranche-wide
+value/cost verdict across heterogeneous inputs.
 
 ```text
 # CVF Agent Work Order - <Scope>
@@ -437,7 +480,8 @@ Rules:
 - every required roadmap field must appear in the output artifact or in the
   New Doc-Only Fields table;
 - `PASS` is allowed only after the final artifact exists and has been checked;
-- missing rows block dispatch or closure.
+- missing rows block dispatch or closure;
+- optional `trancheValue` object in the manifest JSON follows the TPGR standard's Tranche Admission And Continuation Value section and its schema; omitted, routing is unchanged and its shadow output stays non-authoritative.
 
 ## 6C. Worker Autonomy / No-Question Rule
 
@@ -530,6 +574,21 @@ Rules:
   returning the artifact.
 - do not treat `FAIL_EXPECTED_PENDING_FINALITY` as a closed-equivalent PASS;
   it is valid only for `WORKER_MUST_NOT_COMMIT` pending review handoff;
+- a worker return that sets top-level `Status: BLOCKED_WITH_REASON` must also
+  declare a stable non-placeholder `rootCauseClusterId`,
+  `recurrenceDisposition`, `priorRelatedFinding`,
+  `operatorNoticeDisposition`, and `successorFreezeDisposition` per
+  `docs/reference/CVF_FINDING_TO_GOVERNANCE_LEARNING_TRIGGER_STANDARD.md`
+  ("Recurring Blocked-Return Escalation"); a `RECURRING_CLUSTER_STOP`
+  disposition requires a concrete governed `priorRelatedFinding` path,
+  `operatorNoticeDisposition: OPERATOR_NOTICE_REQUIRED`, and
+  `successorFreezeDisposition: FEATURE_SUCCESSORS_FROZEN`; state these
+  obligations in the work order before dispatch so the worker sees them
+  before execution, not only after a blocked-return gate failure;
+- `FIRST_OCCURRENCE` is not accepted only on self-report: the Finding-To-
+  Governance checker compares the declared `rootCauseClusterId` against prior
+  non-archived governed returns, and an exact prior match forces
+  `RECURRING_CLUSTER_STOP` plus a real matching governed path;
 
 ## 6E.1 Machine Closure Package
 
@@ -626,78 +685,15 @@ state:
 5. Run committed-range `pre-closure` only after the material/session commit and
    required handoff sync are complete.
 
-## 6F. Near-Threshold Owner Maintainability Plan
+## 6F-6G. Maintainability And Acceptance Ledger
 
-If Allowed scope adds or modifies source inside a registered owner domain whose
-active entrypoint is within the GC-023 near-hard margin, include this section
-before dispatch.
+Changed executable implementation work orders must apply:
+`docs/reference/work_order_template/CVF_WORK_ORDER_ACCEPTANCE_LEDGER_ADDENDUM.md`.
 
-Required content:
-
-- active owner entrypoint path;
-- current line count and hard threshold;
-- split, extract, rotate, or archive action;
-- new helper/barrel/archive path;
-- `Minimum shrink target: 50 lines`;
-- command-backed post-change line count;
-- explicit statement that the owner entrypoint is in Allowed scope and Write
-  Ownership.
-
-Do not classify the near-threshold owner entrypoint as forbidden-touch while
-adding adjacent source.
-
-## 6G. Work-Order Fulfillment Manifest
-
-For runtime/source implementation work, include these machine-readable tables
-before dispatch.
-
-## Required Artifact Manifest
-
-| Path | Required at handoff | Purpose |
-|---|---|---|
-| <source/test/review path> | Yes | <why this file must exist> |
-
-## Forbidden Path Manifest
-
-| Path | Reason |
-|---|---|
-| <forbidden path or glob> | <why this path is out of scope> |
-
-## Forbidden Filesystem State At Dispatch
-
-Record the filesystem state of every forbidden path at the moment this work
-order is dispatched. The orchestrator must verify each path before dispatch.
-
-This block is verified by `check_forbidden_filesystem_state.py` at the
-`pre-implementation` autorun gate phase.
-
-| Forbidden path | Expected state | Actual state at dispatch | Action if PRESENT |
-|---|---|---|---|
-| <forbidden path> | ABSENT | ABSENT ✓ | N/A |
-
-Rules:
-
-- `ABSENT` — path does not exist on disk. Dispatch is safe.
-- `PRESENT` — path already exists. Dispatch is blocked until the orchestrator
-  either removes the files, opens a governance packet for them, or records an
-  explicit operator exemption with reason.
-- `PRESENT_EXEMPTED` — path exists; orchestrator has authorized worker to ignore
-  it; worker must not edit, stage, or claim the path.
-
-## Pre-Existing Dirty Path Exemptions
-
-Use only when the repository is already dirty before dispatch and the worker
-must ignore, not edit, the path.
-
-| Path | Status at dispatch | Exemption boundary |
-|---|---|---|
-| <pre-existing dirty path> | <M/A/?? from git status> | <do not edit/stage/claim> |
-
-## Required Proof Manifest
-
-| Proof | Path | Required literal | Required at handoff |
-|---|---|---|---|
-| <sentinel/invariant/test proof> | <test or source path> | <literal token> | Yes |
+That addendum owns the Near-Threshold Owner Maintainability Plan, strict JSON requirement/evidence
+ledgers, Git-observed artifact reconciliation, proof binding, deterministic
+terminal reduction, forbidden filesystem state and dirty-path exemptions.
+Human-readable manifests may summarize but never override the JSON ledger.
 
 ## 7. Write Ownership
 
@@ -725,33 +721,11 @@ path — a `governance/compat/*.py` checker, any `CVF_SESSION/**` state/handoff
 file, `CVF_SESSION_MEMORY.md`, or an `AGENT_HANDOFF*.md` file — the work order
 itself must carry a `Core Guard Self-Protection Authorization` block.
 
-Required fields:
-
-- `## Core Guard Self-Protection Authorization` heading;
-- `Authorized guard-maintenance scope`;
-- `Protected paths` — a list of every protected path authorized;
-- `Operator authorization` — the governance authority that permits the change;
-- `Rollback boundary` — what may and must not be reverted if rejected.
-
-Omitting this block when a protected path is in scope is a dispatch-quality
-violation (enforced by `governance/compat/check_work_order_dispatch_quality.py`).
-
-Example skeleton:
-
-```text
-## Core Guard Self-Protection Authorization
-
-Authorized guard-maintenance scope: <permitted guard/state change; out-of-scope note>.
-
-Protected paths:
-
-- governance/compat/check_<name>.py
-- CVF_SESSION/ACTIVE_SESSION_STATE.json
-
-Operator authorization: <instruction or governance authority>.
-
-Rollback boundary: revert only <this change> if rejected; do not revert <prior closures>.
-```
+The block must name: Authorized guard-maintenance scope, every Protected path,
+Operator authorization, and Rollback boundary. The authoritative shape and
+enforcement live in `governance/compat/check_core_guard_self_protection.py` and
+`governance/compat/check_work_order_dispatch_quality.py`; do not maintain a
+second example copy here.
 
 ## 8. Execution Plan
 
@@ -795,23 +769,11 @@ Canonical standard:
 
 `docs/reference/CVF_AGENT_OPERATION_TRACE_AND_WORKSPACE_INTEGRITY_STANDARD_2026-06-13.md`
 
-Required block:
-
-| Field | Evidence |
-| --- | --- |
-| Actor | <agent/operator/provider role> |
-| Provider or surface | <Codex, Claude, CLI, IDE tab, MCP, browser, etc.> |
-| Session or invocation | <session id, commit range, or N/A with reason> |
-| Working directory | <cwd or repo root> |
-| Command or tool surface | <commands/tools used; safe summaries allowed> |
-| Target paths | <changed or intended paths> |
-| Allowed scope source | <operator instruction, roadmap, GC-018, work order> |
-| Before status evidence | <git status --short, base HEAD, or N/A with reason> |
-| After status evidence | <git status --short or closure status evidence> |
-| Diff evidence | <git diff --name-status / committed range> |
-| Approval boundary | <what was authorized and by whom/source> |
-| Claim boundary | <repo-local trace only; no OS/user attribution unless separately proven> |
-| Deletion or rename disposition | <required only when protected paths are deleted/renamed; otherwise N/A with reason> |
+Use the canonical field list from the standard above. At minimum record actor,
+surface, invocation, working directory, tools, targets, scope source,
+before/after status, diff, approval and claim boundaries. Add deletion/rename
+disposition only when applicable; do not copy provider-specific authority into
+the trace.
 
 ## 8C. Epistemic Process Block (FPC-T3-C04)
 
@@ -912,6 +874,10 @@ individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 ```
 
+For a GC-018-authorized docs-only no-commit tranche, the dispatcher may use
+`WORKER_RETURN_FAST_DOC_V1` exactly as defined by
+`docs/reference/work_order_authoring/CVF_WORKER_RETURN_FULL_GATE_CONTRACT_STANDARD.md`.
+
 `## Verification Commands` must include
 `python governance/compat/run_worker_return_fast_gate.py`. When the work order
 names focused tests, add one `--pytest-target <path>` per test path.
@@ -923,6 +889,9 @@ before writing long prose:
 python governance/compat/run_worker_return_scaffold.py --write docs/reviews/<worker-return>.md --title "<worker return title>"
 python governance/compat/run_worker_return_fast_gate.py
 ```
+
+For an eligible compact dispatch, append
+`--profile WORKER_RETURN_FAST_DOC_V1` to the scaffold command.
 
 Run the fast gate once while the file is still a short skeleton, then fill the
 content and rerun. This catches required headings, literal fields, and Source
@@ -952,6 +921,7 @@ release still requires a fresh source-verified work order and accepted closure.
 For any no-commit worker return, especially source/test or high-evidence
 tranches, the work order should require the worker to complete and record this
 self-audit before `COMPLETE_PENDING_REVIEW`:
+
 
 - rerun every exact required command after the last material edit, including
   focused tests and worker-return gates named by the work order;
@@ -1008,6 +978,13 @@ manifest. Record the material-only range result and the full-range result
 separately so a reviewer can distinguish a real packet defect from this
 range-comparison artifact.
 
+For a worker that starts from an already committed packet plus a later
+session-sync commit, make the mandatory pre-implementation command use the
+autorun wrapper's default clean worker-start frontier (omit `--base`) and bind
+the exact active work order. Do not reuse the earlier packet-authoring
+`dispatchBaseHead` as the worker gate base: that incorrectly mixes packet and
+continuity history into the worker changed-set lane.
+
 Mandatory remediation rule:
 
 - A gate failure inside this work order's Allowed scope is authorization to
@@ -1021,55 +998,15 @@ waiver for this work order.
 
 ## 12. Closure Checklist
 
-- [ ] All acceptance criteria satisfied or explicitly marked N/A with reason
-- [ ] Required tests or evidence commands run
-- [ ] Autorun `pre-closure` gate passed:
-  `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-closure --base <baseHead> --head HEAD`
-- [ ] Commit mode recorded as `WORKER_MAY_COMMIT` or `WORKER_MUST_NOT_COMMIT`
-- [ ] `dispatchBaseHead`, `executionBaseHead`, and closure-stage base evidence
-  recorded without treating a stale dispatch anchor as current worker proof
-- [ ] For `WORKER_MUST_NOT_COMMIT`, pending handoff used a non-closed status,
-  recorded actual `git status --short`, and left committed-range
-  `pre-closure` to reviewer / committer
-- [ ] For `WORKER_MUST_NOT_COMMIT`, Worker Pending-Return Gate results are
-  recorded, required component-gate failures inside Allowed scope are repaired,
-  and remaining failures are explicitly `BLOCKED`, `N/A with reason`, or
-  `FAIL_EXPECTED_PENDING_FINALITY`
-- [ ] For `WORKER_MUST_NOT_COMMIT`, worker-return fast gate result is recorded
-  with focused pytest targets when applicable
-- [ ] Agent Operation Trace Block is present and complete for this work order,
-  worker return, or completion review
-- [ ] Closure gate used a non-empty committed diff range; no `--base HEAD --head HEAD`
-- [ ] Changed-file set from `git diff --name-status` is inside this work
-  order's Allowed scope, or every extra path has explicit operator/work-order
-  authorization
-- [ ] If this closes a multi-tranche connector wave roadmap, the pre-closure
-  range includes all tranche artifacts, not only the final tranche
-- [ ] Any line-count threshold or "actual line count" claim is current and
-  command-backed
-- [ ] Roadmap-to-work-order trace matrix final statuses are PASS or N/A with reason
-- [ ] Closure Diff Gate completed: roadmap, work order, final artifact, and
-  completion claims were compared
-- [ ] Claim Integrity Scan completed with `git diff --name-status`,
-  `git status --short`, committed diff output, receipt, command output, or N/A
-  evidence for file-change and boundary claims
-- [ ] Fail conditions checked and absent, or work returned BLOCKED
-- [ ] No open checkbox residue remains in roadmap, work order, completion
-  packet, or public-sync checklist
-- [ ] No closed work order contains unresolved `HOLD`, `PENDING`, or
-  `READY_FOR_DISPATCH` checklist rows or stale dispatch-blocking prose
-- [ ] Public catalog updated or explicitly N/A with reason
-- [ ] Public/provenance repository boundary checked if public files changed
-- [ ] GC-020 handoff updated with current HEAD after commit
-- [ ] Post-commit active-session gate passed:
-  `python governance/compat/check_active_session_state.py --enforce`
-- [ ] Active session front door and state registry updated if mode, next
-  allowed move, public-sync status, roadmap status, or handoff status changed
-- [ ] Completion packet filed if the roadmap requires one
-- [ ] Changed files listed for reviewer
-- [ ] No closed-equivalent claim remains if any autorun phase gate failed
-- [ ] Any allowed-scope autorun/guard failure was repaired and rerun, not left
-  as an operator preference checkpoint
+- [ ] Acceptance, exact changed set, source/claim integrity and required tests pass.
+- [ ] Closeability graph and return-time recheck have no unresolved blocker.
+- [ ] Worker-return fast, reviewer-fast, pre-commit and non-empty committed-range closure pass as applicable.
+- [ ] Commit mode, execution base, role ownership and material/continuity choreography are truthful.
+- [ ] No open checkbox, stale terminal token, failed required gate, or unowned path remains.
+- [ ] Public export, repository boundary, active continuity and GC-020 are synchronized when applicable.
+
+The detailed machine-owned closure requirements are the current checker and
+autorun catalogs; this compact checklist is not a duplicate source of truth.
 
 ## 13. Return-To-Orchestrator Conditions
 
@@ -1110,6 +1047,7 @@ A work order is not ready for execution unless it answers:
 - Which files may be touched?
 - Which files or actions are forbidden?
 - Which command proves pre-flight readiness?
+- Do all repository-relative Python script paths named in `Verification Commands` exist as regular files at authoring time?
 - Which evidence proves completion, including dispatch prompt envelope evidence per `docs/reference/CVF_AGENT_DISPATCH_PROMPT_ENVELOPE_STANDARD_2026-06-15.md` when delegated?
 - What stops the agent from continuing?
 
@@ -1136,6 +1074,35 @@ verbatim into an actual work order.
 | interceptionBoundary | `<no IDE/shell/git/filesystem/provider interception claim>` |
 | claimLanguage | `<plain description of what this dispatch actually does>` |
 | forbiddenExpansion | `<explicitly list what this dispatch does not do>` |
+
+## Independent Review Probe Admission Contract
+
+Every active work order must declare exactly one
+`independentProbeRequired: YES` or
+`independentProbeRequired: NOT_APPLICABLE_WITH_REASON: <reason>`. High-risk
+work must use `YES`. When `YES`, include exactly one non-empty declaration for
+each field below inside this section; the controlled role and owner tokens are
+literal.
+
+independentProbeRequired: `<YES | NOT_APPLICABLE_WITH_REASON: concrete reason>`
+
+independentProbeRiskClass: `<bounded risk class>`
+
+independentProbeDispositionAtDispatch: `PENDING_REVIEWER_EXECUTION`
+
+probeExecutorRole: `LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER`
+
+implementationOracleSeparation: `<how the reviewer oracle differs from worker implementation evidence>`
+
+positiveControl: `<expected valid observation>`
+
+negativeMutationClasses: `<named hostile or invalid variants>`
+
+expectedInformationGain: `<decision-changing information>`
+
+rerunCostReason: `<why this bounded probe is proportionate>`
+
+reviewerDecisionOwner: `LOCAL`
 
 ## Related Artifacts
 

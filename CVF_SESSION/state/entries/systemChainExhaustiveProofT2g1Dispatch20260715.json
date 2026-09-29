@@ -1,0 +1,20 @@
+{
+  "stateOrder": 1832,
+  "stateKey": "systemChainExhaustiveProofT2g1Dispatch20260715",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "6634796da",
+    "workOrderId": "SCLP-X-T2G1",
+    "dispatchBaseHead": "241f5fec0",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "pairedGapEntryCount": 1,
+    "workerOutputCount": 4,
+    "runtimeInvocationCeiling": 0,
+    "testInvocationCeiling": 0,
+    "liveInvocationCeiling": 0,
+    "providerCallCeiling": 0,
+    "sourceCatalogAdifMutationCeiling": 0,
+    "nextAllowedMove": "execute exact four-path no-commit T2G1 paired architecture-GAP recording worker only",
+    "claimBoundary": "Dispatch authority for one compact paired GAP entry and its generated/human read models only. No runtime or test execution, live or provider proof, runtime/source/catalog/ADIF mutation, T3-T4 release, public, production, scale, certification, shipment, or user-value claim."
+  }
+}

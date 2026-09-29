@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2021,
+  "stateKey": "portableCloneContinuityClosure20260722",
+  "value": {
+    "status": "CLOSED_PASS_PUBLISHED_VERIFIED",
+    "date": "2026-07-22",
+    "provenanceMaterialCommit": "4442f4b24",
+    "publicCoreCommit": "c1076dc4b",
+    "downstreamProjectCommit": "f451e2af",
+    "downstreamRepository": "CVF-Ecosystem/shift-operations-workspace",
+    "workspaceDoctor": "24/24 PASS",
+    "freshCloneResult": "REMOTE_FRESH_CLONE_ACCEPTANCE_PASS",
+    "windowsLongPathRepair": "git clone uses core.longpaths=true and persists the local setting",
+    "continuityResult": "relative manifest resolved; ignored local binding created; public core pin reachable; active handoff exists; public repository continuity ready",
+    "publicExportDisposition": "EXPORTED",
+    "liveProofDisposition": "N/A with reason: Git/filesystem continuity only; no AI governance runtime or provider behavior claim",
+    "claimBoundary": "Portable repository continuity only. No hidden cross-chat memory, provider/API, browser, deployment, production, or live PostgreSQL claim."
+  }
+}

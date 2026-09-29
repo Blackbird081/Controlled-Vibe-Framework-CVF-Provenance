@@ -108,6 +108,170 @@ these columns:
 - Runtime, provider, public, production, release, MCP, or workspace readiness
   claims require current CVF proof.
 
+## Typed Absorption Candidate Contract (Protocol 1.2.0, Compatible Through 1.3.0)
+
+The return manifest's `suggestedAbsorptionCandidates` array may carry two
+mutually exclusive, discriminated candidate variants once the manifest
+declares `candidateContractVersion: 1`. This enriches the existing return
+schema `cvf.externalAgentReturn.v1`; it does not introduce a new schema,
+registry, protocol, or runtime owner.
+
+### Candidate Discriminator
+
+`candidateContractVersion` is a collection-level field, not a per-row field.
+Every row's `preliminaryLane` selects exactly one of:
+
+- `EXTERNAL_SOURCE_VALUE_CANDIDATE`
+- `CVF_INTERNAL_DEFECT_CANDIDATE`
+
+The parent manifest's `authorityStatus` governs every candidate row; no
+per-row authority status is permitted.
+
+Strict-v1 candidate rows use a closed top-level field set: undeclared fields
+fail validation. `candidateId` must be a non-blank string unique within the
+parent return, and `questionsForLocalAgent` must be a non-empty list of
+non-blank strings. Optional `sourceEvidence`, when present on either lane,
+must be a non-blank bounded summary; on an internal-defect row it may describe
+only the cited public-CVF evidence, never external-source credit.
+
+Both lanes use this exact public-owner search shape:
+
+```json
+{
+  "status": "OWNER_CANDIDATES_FOUND",
+  "candidates": [
+    {"path": "docs/reference/owner.md", "symbol": "Owner heading", "basis": "public evidence"}
+  ]
+}
+```
+
+`status` must be one of `OWNER_CANDIDATES_FOUND`,
+`PUBLIC_OWNER_SURFACE_NOT_FOUND`, `PUBLIC_INSUFFICIENT_EVIDENCE`, or
+`NOT_APPLICABLE`. `candidates` is required and non-empty only for
+`OWNER_CANDIDATES_FOUND`; otherwise it must be absent or empty. Candidate
+paths must be safe relative paths, and `symbol` and `basis` must be non-blank.
+
+### External Source Value Candidate
+
+Requires: unique `candidateId` (unique within the return), non-empty
+`sourceRefs`, `sourceLocations` entries each bound to a `sourceRef` with a
+safe path and non-blank symbols, a neutral `candidateSummary`, `claimedValue`,
+a bounded `publicOwnerSearch` status, a bounded `publicOverlap` status, a
+`preliminaryValueDisposition`, and `questionsForLocalAgent`.
+
+The exact allowed top-level fields are the required fields above plus optional
+`sourceEvidence`; `cvfPublicLocations`, `triggerContextSourceRefs`,
+`authorityStatus`, and every undeclared field are forbidden. Each
+`sourceLocations` row requires `sourceRef`, safe relative `path`, and a
+non-empty `symbols` list of non-blank strings. `publicOverlap` requires a
+non-blank `basis` and one of: `PUBLIC_CONFIRMED_EXISTING`,
+`PUBLIC_SUGGESTS_ENRICHMENT`, `PUBLIC_OWNER_SURFACE_NOT_FOUND`,
+`PUBLIC_INSUFFICIENT_EVIDENCE`, or `NOT_APPLICABLE`.
+
+`preliminaryValueDisposition` must be one of `ABSORB`, `ADAPT`, `DEFER`,
+`REJECT`, `BLOCK`, or `NO_NEW_VALUE`.
+
+Every `sourceRefs` entry must resolve to an existing manifest `sources[].id`.
+`set(sourceRefs)` must exactly equal `set(sourceLocations[].sourceRef)` so a
+source cannot receive candidate credit without an exact cited location, and
+the two representations cannot drift apart.
+
+### Incidental CVF Internal Defect Candidate
+
+Requires: unique `candidateId`, non-empty `cvfPublicLocations` (each entry a
+safe path with non-blank symbols), a neutral `candidateSummary` stated as a
+hypothesis, a bounded `publicOwnerSearch` status, and
+`questionsForLocalAgent`.
+
+`cvfPublicLocations` binds to the manifest's top-level `cvfPublicSource`; no
+synthetic `sources` row is created to represent the CVF codebase itself.
+Optional `triggerContextSourceRefs`, when present, must resolve to existing
+`sources[].id` values, but they are non-evidentiary context only: they
+record which audited source triggered the observation and can never receive
+credit for the defect.
+
+This variant forbids `sourceLocations`, `claimedValue`, `publicOverlap`, and
+`preliminaryValueDisposition`. Mixing these fields into an internal-defect row
+is a contamination error and fails validation.
+
+Its exact allowed top-level fields are `candidateId`, `preliminaryLane`,
+`cvfPublicLocations`, `candidateSummary`, `publicOwnerSearch`,
+`questionsForLocalAgent`, and the optional `triggerContextSourceRefs` and
+`sourceEvidence`. `sourceRefs`, `authorityStatus`, and every undeclared field
+are also forbidden. Each `cvfPublicLocations` row requires a safe relative
+`path` and a non-empty `symbols` list of non-blank strings.
+
+### Provenance Lane Separation
+
+`EXTERNAL_SOURCE_VALUE` and `CVF_INTERNAL_DEFECT` remain mutually exclusive
+per atomic row. A defect noticed while auditing an external source is never
+attributed to that source as value; if one raw observation mixes both, it
+must be split into two candidate rows with separate evidence.
+
+### Dual-Reader Compatibility
+
+| Input shape | Read result | Required behavior |
+|---|---|---|
+| `candidateContractVersion` absent, empty array | `LEGACY_EMPTY` | accept as historical empty collection; no typed-candidate claim |
+| discriminator absent, non-empty array | `LEGACY_UNTYPED_NOT_PROMOTABLE` | preserve as historical/untyped evidence only; never silently promote a row into Local reconciliation |
+| `candidateContractVersion: 1` | `STRICT_V1` | validate every non-empty row against its selected variant; fail closed on any row error |
+| unsupported or malformed discriminator | `UNSUPPORTED_OR_MALFORMED` | return for repair; never downgrade to legacy handling |
+
+Every new protocol-1.2 producer must emit `candidateContractVersion: 1`,
+including when the candidate array is empty. A discriminator-absent empty
+array is accepted only as legacy-read compatibility, never as a valid new 1.2
+producer shape.
+
+### Deterministic Parent-Return Join And Local Reconciliation
+
+One Local reconciliation artifact binds to exactly one validated return
+through `externalReturnBinding`, recording `returnManifestSha256` and
+`candidateContractVersion`. The stable candidate row key is
+`(returnManifestSha256, candidateId)`; candidate IDs are return-local only and
+no global candidate ID or registry is introduced.
+
+Local reconciliation may open typed candidate review only when the paired
+validation receipt satisfies all of:
+
+```text
+externalReturnBinding.returnManifestSha256
+  == receipt.validatedReturnManifestSha256
+externalReturnBinding.candidateContractVersion
+  == receipt.validatedCandidateContractVersion
+receipt.status == PASS
+receipt.validatedProtocolVersion in {1.2.0, 1.3.0}
+receipt.validatedCandidateContractVersion == 1
+```
+
+Protocol `1.3.0` is `ADDITIVE_MINOR_WITH_LEGACY_READ_ALIAS` over `1.2.0` per
+`CVF_EXTERNAL_AGENT_PROTOCOL_REPRESENTATION_CONTRACT.md`: it adds the detached
+`DETACHED_IMPLEMENTATION_PROPOSAL` working mode and `executionClass` field
+without changing this candidate contract, the return schema
+`cvf.externalAgentReturn.v1`, or any existing required field. A validated
+`1.3.0` receipt therefore satisfies this binding exactly as a `1.2.0` receipt
+does; the strict `candidateContractVersion == 1` and exact
+`returnManifestSha256` equality requirements are unchanged and unweakened.
+
+A legacy or candidate-unaware `PASS` receipt remains historical evidence but
+cannot open typed Local reconciliation. A receipt whose
+`validatedProtocolVersion` is outside `{1.2.0, 1.3.0}` also cannot open typed
+Local reconciliation. `implementationAuthorized: false` is an artifact
+invariant of every reconciliation row; Operator selection, owner binding, and
+Work Order existence remain distinct from implementation authority and do not
+themselves authorize implementation.
+
+## External Knowledge Intake Routing
+
+| Field | Value |
+| --- | --- |
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | external-agent returned output |
+| Chain map route | external-agent review return -> atomic-observation classification -> Disposition Matrix -> owning CVF artifact -> Required Absorption Table -> Finding-To-Governance Learning Disposition where reusable |
+| Matching local-view guard | `governance/compat/check_external_agent_absorption_table.py` |
+| Owner surface | `docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md` |
+| Disposition | ADAPT: this workflow is the canonical existing owner for classifying and routing returned external-agent output; no new intake owner is introduced |
+| Claim boundary | classification and routing rules only; no corpus scan, absorption-ledger, or CVF acceptance claim is made by this section |
+
 ## Machine Check
 
 Changed external-return absorption reviews must include the Required Absorption

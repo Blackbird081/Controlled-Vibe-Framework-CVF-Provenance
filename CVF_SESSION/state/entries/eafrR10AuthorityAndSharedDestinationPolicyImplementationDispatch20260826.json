@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2345,
+  "stateKey": "eafrR10AuthorityAndSharedDestinationPolicyImplementationDispatch20260826",
+  "value": {
+    "status": "DISPATCH_READY_COMMITTED_AWAITING_WORKER_HANDOFF",
+    "materialCommit": "ebdfdbd29f8958bf8fea90ec85900a9bfdf02151",
+    "baseline": "docs/baselines/CVF_GC018_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_BASELINE_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_2026-08-26.md",
+    "roadmap": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+    "workerReturn": "docs/reviews/CVF_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_WORKER_RETURN_2026-08-26.md",
+    "implementationManifest": "Create two gateway source/test files, modify eight named foundation/gateway/Web source-test files, and create one worker return; no other path.",
+    "proof": "Source-verified hashes and absent-path checks completed; dispatch pre-commit passed 87/87 twice including commit hook; material packet committed at ebdfdbd29; zero provider, network, external-store, live, credential, build, runtime, public, deployment, or push action occurred.",
+    "nextAllowedMove": "Transfer the committed packet to the no-commit worker. The worker proves ebdfdbd29 ancestry, implements the exact manifest, runs focused local fake-based tests and typechecks, runs the worker-return fast gate, and yields COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON without staging or committing.",
+    "claimBoundary": "Implementation dispatch only. The external-store contract is not live-store authority; runtime store wiring and every external effect remain parked."
+  }
+}

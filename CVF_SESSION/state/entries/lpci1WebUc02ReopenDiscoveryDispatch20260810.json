@@ -1,0 +1,20 @@
+{
+  "stateOrder": 2019,
+  "stateKey": "lpci1WebUc02ReopenDiscoveryDispatch20260810",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER",
+    "date": "2026-08-10",
+    "batchId": "LPCI1-WEB-UC02-REOPEN-DISCOVERY",
+    "authorityToken": "AUTHORIZE_LPCI1_WEB_UC02_REOPEN_DISCOVERY_ONLY",
+    "dispatchBaseHead": "24a0d6dbd",
+    "dispatchCommit": "e22c5d1bc",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_UC02_REOPEN_DISCOVERY_2026-08-09.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC02_REOPEN_DISCOVERY_2026-08-09.md",
+    "preDispatchEvidence": "PASS_75_OF_75",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerOutputCount": 2,
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Delegated worker executes the exact current-source discovery packet and returns two uncommitted review outputs.",
+    "claimBoundary": "Discovery only; no DESIGN, BUILD, consumer/corpus/index/registry/source/runtime mutation, private-data/credential access, provider/live, deploy, public-sync, or worker commit."
+  }
+}

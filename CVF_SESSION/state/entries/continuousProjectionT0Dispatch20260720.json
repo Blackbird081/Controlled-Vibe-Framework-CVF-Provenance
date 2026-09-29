@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2005,
+  "stateKey": "continuousProjectionT0Dispatch20260720",
+  "value": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-CONTINUOUS-PROJECTION-T0",
+    "materialDispatchCommit": "ebc0242fd",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T0_THREE_ROOT_DRIFT_CONTRACT_FOR_CLAUDE_2026-07-20.md",
+    "baseline": "docs/baselines/CVF_GC018_CONTINUOUS_PROJECTION_T0_THREE_ROOT_DRIFT_CONTRACT_2026-07-20.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Create exactly two T0 review outputs from read-only three-root inspection.",
+    "parked": "T1-T4 implementation, automatic semantic edits, apply, commit, push, deployment, public-sync mutation, provider/live calls, production action, and unattended mutation.",
+    "claimBoundary": "Dispatch authority for a documentation audit only."
+  }
+}

@@ -30,7 +30,7 @@ const PROVIDER_TIMEOUT_MS = Number(process.env.EVT4_PROVIDER_TIMEOUT_MS || proce
 const DIRECT_EMPTY_RETRIES = Number(process.env.EVT4_DIRECT_EMPTY_RETRIES || 2);
 const PROVIDER_CONFIGS = {
   alibaba: {
-    defaultModel: process.env.EVT4_ALIBABA_MODEL || 'qwen-turbo',
+    defaultModel: process.env.EVT4_ALIBABA_MODEL || 'qwen-flash',
     endpoint: 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions',
     keyNames: ['DASHSCOPE_API_KEY', 'ALIBABA_API_KEY', 'CVF_ALIBABA_API_KEY', 'CVF_BENCHMARK_ALIBABA_KEY'],
     canonicalKeyName: 'DASHSCOPE_API_KEY',

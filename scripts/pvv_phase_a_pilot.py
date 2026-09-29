@@ -3,7 +3,7 @@ CVF PVV Phase A — 5-Task Pilot for New Alibaba Lanes
 Authorization: W66-T2 Phase A (pending GC-018; pilot is the prerequisite gate)
 
 Lanes under pilot:
-  LANE-ALIBABA-004 : qwen-turbo       (ROUTER role)
+  LANE-ALIBABA-004 : qwen-flash       (ROUTER role)
   LANE-ALIBABA-005 : qwen-plus        (ANALYST role)
   LANE-ALIBABA-006 : qwen-max         (EXECUTOR role)
   LANE-ALIBABA-007 : qwq-32b          (REVIEWER role)
@@ -37,7 +37,7 @@ if not ALIBABA_KEY:
     raise SystemExit('ERROR: ALIBABA_API_KEY is not set. Compatibility aliases: CVF_BENCHMARK_ALIBABA_KEY, CVF_ALIBABA_API_KEY.')
 
 LANES = [
-    {'lane_id': 'LANE-ALIBABA-004', 'model': 'qwen-turbo',  'role': 'ROUTER',   'stream': False},
+    {'lane_id': 'LANE-ALIBABA-004', 'model': 'qwen-flash',  'role': 'ROUTER',   'stream': False},
     {'lane_id': 'LANE-ALIBABA-005', 'model': 'qwen-plus',   'role': 'ANALYST',  'stream': False},
     {'lane_id': 'LANE-ALIBABA-006', 'model': 'qwen-max',    'role': 'EXECUTOR', 'stream': False},
     # qwq-32b / qwq-32b-preview → 404 on dashscope-intl (same as qvq-max-2025-03-25 pattern)

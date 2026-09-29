@@ -1,0 +1,21 @@
+{
+  "stateOrder": 2347,
+  "stateKey": "eafrR10AuthorityAndSharedDestinationPolicyImplementationAcceptedBounded20260826",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_PASS_BOUNDED",
+    "dispatchCommit": "ebdfdbd29f8958bf8fea90ec85900a9bfdf02151",
+    "materialCommit": "58995408545471d26f82fed1ffb3454124eef284",
+    "baseline": "docs/baselines/CVF_GC018_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_BASELINE_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_2026-08-26.md",
+    "roadmap": "docs/roadmaps/CVF_EAFR_REMEDIATION_ROADMAP_2026-08-25.md",
+    "workerReturn": "docs/reviews/CVF_EAFR_R10_EXTERNAL_STORE_AUTHORITY_AND_SHARED_ADAPTER_DESTINATION_POLICY_IMPLEMENTATION_WORKER_RETURN_2026-08-26.md",
+    "corpusRegistryEntry": "docs/corpus-intelligence/registry/entries/eafr-r10-authority-and-shared-destination-policy-implementation-source-surfaces.json",
+    "reviewerRepairs": [
+      "Corrected the work-order Web verification command from nonexistent npm run typecheck to the pinned package's npm run check and disclosed the worker's noncompliant substitution.",
+      "Removed providerForHostname and knownProviderHostnames from the gateway public surface so the implementation matches R9's exact two-symbol public interface."
+    ],
+    "proof": "Foundation focused 57/57, gateway focused 30/30, Web guard 26/26, all three package checks, worker-return fast, reviewer-fast 66/66, and pre-commit 87/87 passed. Material commit hook also passed 87/87. Zero provider, network, external-store, credential, live, deployment, public-sync, or push action occurred.",
+    "nextAllowedMove": "Author a fresh GC-018 final EAFR reconciliation packet that independently re-evaluates all R6 P1 rows and decides whether RFR may resume. Do not execute RFR as part of that dispatch.",
+    "claimBoundary": "R10 closes only the sibling external-store authority contract/evaluator and shared adapter destination-policy implementation tranche. It does not authorize live-store wiring, runtime store use, RFR, BuildAuthority, or any external effect."
+  }
+}

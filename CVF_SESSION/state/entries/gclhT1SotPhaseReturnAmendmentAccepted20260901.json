@@ -1,0 +1,18 @@
+{
+  "stateOrder": 2670,
+  "stateKey": "gclhT1SotPhaseReturnAmendmentAccepted20260901",
+  "value": {
+    "status": "SOT_BOUND_PHASE_RETURN_CONTROL_ACCEPTED_BOUNDED",
+    "materialCommit": "c0ee6b8817e2c51fadd6d96427b538d86d522ffc",
+    "design": "docs/assessments/CVF_GCLH_T1_INTEGRATED_CORE_CONTROL_DESIGN_2026-09-01.md",
+    "designSha256": "0d8516d26b1eae60af1fee50c31da5331a62c60a2e8f31c0b2007d95d68d76e3",
+    "review": "docs/reviews/CVF_GCLH_T1_INTEGRATED_CORE_CONTROL_DESIGN_REVIEW_2026-09-01.md",
+    "reviewSha256": "860d103e424459613e751bdb56719312ee20fc65747e3a7b98a04cd969616a1e",
+    "roadmapSha256": "b5017288bb27a6c26b2afcb5993b529e027c2775da19f475e698a279b5f91f6b",
+    "topologyRule": "Single/multi-agent and single/multi-role topology is attribution only; it neither grants nor removes trust.",
+    "controlRootRule": "Each phase returns a governed predecessor-bound envelope whose canonical authority, provenance, obligations, evidence and verification results are resolvable by the reviewer.",
+    "sotBoundary": "Truth Foundation owns authority and claim movement; SOT3 supplies bounded authority topology semantics but is not claimed globally active.",
+    "nextAllowedMove": "Author and review the GCLH-T2 protected-path work order; implementation remains unopened.",
+    "claimBoundary": "Design amendment only; no checker/template/runtime/downstream/provider/public/deploy mutation."
+  }
+}

@@ -32,20 +32,55 @@ import argparse
 import json
 import os
 import re
-import shutil
 import subprocess
 import sys
+import tempfile
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from types import SimpleNamespace
 
 from build_cvf_live_evidence_manifest import build_manifest as build_live_evidence_manifest
-from _local_env import bootstrap_repo_env
+import cvf_doctor
+from cvf_release_e2e_diagnostic import (
+    SUBPROCESS_TIMEOUT_EXIT_CODE,
+    build_e2e_diagnostic,
+)
+from cvf_release_runtime_support import bootstrap_live_provider_env, platform_cmd
+from cvf_release_secret_scan_policy import (
+    PRIVATE_REFERENCE_SECRET_ALLOWLIST,
+    SCAN_EXTENSIONS,
+    SCAN_SKIP,
+    SECRET_PATTERNS,
+)
+from cvf_release_web_runtime_isolation import (
+    E2E_RUNTIME_ENV,
+    WEB_BUILD_DIST_DIR,
+    WEB_BUILD_STRUCTURAL_ENV,
+)
 
 REPO_ROOT = Path(__file__).parent.parent
 CVF_WEB = REPO_ROOT / "EXTENSIONS" / "CVF_v1.6_AGENT_PLATFORM" / "cvf-web"
 GUARD_CONTRACT = REPO_ROOT / "EXTENSIONS" / "CVF_GUARD_CONTRACT"
 PROVIDER_READINESS = REPO_ROOT / "scripts" / "check_cvf_provider_release_readiness.py"
+SOT3_A5_ADAPTER = REPO_ROOT / "scripts" / "run_cvf_sot3_a5_release_proof.py"
+
+# Fields that must be present with a required value for a SOT3 payload to be
+# admitted as PASS-supporting. Mirrors the accepted A4 denominators; kept in
+# sync with run_cvf_sot3_a5_release_proof.py's own admission logic, which is
+# the actual source of truth for the underlying provider-call/owner-array
+# validation. This dict only checks that the projected top-level fields the
+# release JSON depends on are present and hold their required shape/value.
+SOT3_REQUIRED_FIELD_CHECKS: list[tuple[str, object]] = [
+    ("localNegativeGatePassed", True),
+    ("negativeCaseCount", 19),
+    ("zeroProviderCallCaseCount", 18),
+    ("rollbackProviderCallCount", 1),
+    ("recoveryProviderCallCount", 1),
+    ("approvedContextIncluded", True),
+    ("durableOwnerCorrelationComplete", True),
+    ("httpStatus", 200),
+]
 
 # Required docs for the docs governance check
 REQUIRED_DOCS = [
@@ -53,37 +88,6 @@ REQUIRED_DOCS = [
     REPO_ROOT / "docs" / "reference" / "CVF_KNOWN_LIMITATIONS_REGISTER_2026-04-21.md",
     REPO_ROOT / "docs" / "guides" / "CVF_DEMO_SCRIPT_2026-04-21.md",
 ]
-
-# Patterns that indicate a committed secret
-SECRET_PATTERNS = [
-    r"sk-[A-Za-z0-9]{20,}",                 # OpenAI / Anthropic-style keys
-    r"DASHSCOPE_API_KEY\s*=\s*['\"][^'\"]+", # Alibaba DashScope inline value
-    r"DEEPSEEK_API_KEY\s*=\s*['\"][^'\"]+",  # DeepSeek inline value
-    r"api[_-]?key\s*=\s*['\"][A-Za-z0-9_\-]{16,}['\"]",  # generic api_key = "..."
-    r"-----BEGIN (RSA|EC|OPENSSH) PRIVATE KEY-----",      # private keys
-    r"ghp_[A-Za-z0-9]{36}",                 # GitHub personal access token
-    r"ANTHROPIC_API_KEY\s*=\s*['\"][^'\"]+", # Anthropic inline value
-]
-
-# Files/dirs to skip in secrets scan
-SCAN_SKIP = {
-    ".git", "node_modules", "__pycache__", ".next", "dist", "build",
-    "coverage", ".nyc_output", "docs/audits", ".claude",  # receipts/local tool state contain masked or local keys
-}
-
-SCAN_EXTENSIONS = {".py", ".ts", ".tsx", ".js", ".jsx", ".env", ".json", ".md", ".yaml", ".yml", ".sh"}
-
-
-def bootstrap_live_provider_env() -> None:
-    bootstrap_repo_env()
-    if os.environ.get("DASHSCOPE_API_KEY"):
-        return
-    for alias in ("ALIBABA_API_KEY", "CVF_ALIBABA_API_KEY", "CVF_BENCHMARK_ALIBABA_KEY"):
-        value = os.environ.get(alias, "").strip()
-        if value:
-            os.environ["DASHSCOPE_API_KEY"] = value
-            return
-
 
 @dataclass
 class CheckResult:
@@ -93,7 +97,21 @@ class CheckResult:
     detail: list[str] = field(default_factory=list)
 
 
-def run_cmd(cmd: list[str], cwd: Path | None = None, timeout: int = 300) -> tuple[int, str, str]:
+# Conventional Unix subprocess-timeout sentinel (the same code a shell
+# reports for a command killed by `timeout(1)`). `run_cmd` returns this exact
+# code only when the subprocess itself was killed for exceeding `timeout`;
+# every other failure (nonzero exit, launch error) keeps its own real code or
+# falls back to 1. Callers that need to distinguish "the process was killed
+# for running too long" from "the process exited normally but reported a
+# failure that merely mentions timing" (e.g. a Playwright locator/assertion
+# message containing the word "timeout") must check for this exact code
+# rather than pattern-matching captured output text.
+def run_cmd(
+    cmd: list[str],
+    cwd: Path | None = None,
+    timeout: int = 300,
+    env: dict[str, str] | None = None,
+) -> tuple[int, str, str]:
     try:
         r = subprocess.run(
             platform_cmd(cmd),
@@ -103,24 +121,13 @@ def run_cmd(cmd: list[str], cwd: Path | None = None, timeout: int = 300) -> tupl
             encoding="utf-8",
             errors="replace",
             timeout=timeout,
+            env=env,
         )
         return r.returncode, r.stdout, r.stderr
     except subprocess.TimeoutExpired:
-        return 1, "", "Command timed out"
+        return SUBPROCESS_TIMEOUT_EXIT_CODE, "", "Command timed out"
     except Exception as e:
         return 1, "", str(e)
-
-
-def platform_cmd(cmd: list[str]) -> list[str]:
-    if os.name != "nt" or not cmd:
-        return cmd
-    exe = shutil.which(cmd[0])
-    if exe:
-        return [exe, *cmd[1:]]
-    cmd_exe = shutil.which(f"{cmd[0]}.cmd")
-    if cmd_exe:
-        return [cmd_exe, *cmd[1:]]
-    return cmd
 
 
 def is_allowed_secret_line(path: Path, line: str) -> bool:
@@ -135,20 +142,80 @@ def is_allowed_secret_line(path: Path, line: str) -> bool:
         "<your", "your-", "your_", "your_key", "your-key", "xxx", "...",
         "test-key", "dummy", "placeholder", "secret-123", "ds-key", "claude-key",
     ]
-    return any(marker in lowered for marker in placeholder_markers)
+    if any(marker in lowered for marker in placeholder_markers):
+        return True
+
+    # Exact-path, exact-line allowlist for known non-live matches inside
+    # pinned, read-only .private_reference/ inputs (negative-test fixtures,
+    # source-mirror smoke-test placeholders). Never applies outside
+    # .private_reference/, and any edited line or genuine key substituted
+    # into these files no longer matches the recorded fingerprint and fails
+    # closed.
+    rel_posix = rel.as_posix()
+    if parts and next(iter(rel.parts)) == ".private_reference":
+        if (rel_posix, line) in PRIVATE_REFERENCE_SECRET_ALLOWLIST:
+            return True
+
+    return False
 
 
 # ---------------------------------------------------------------------------
 # Individual checks
 # ---------------------------------------------------------------------------
 
+def check_capability_preflight(dry_run: bool) -> CheckResult:
+    """Capability environment preflight: a bounded, secret-free, non-mutating
+    early check that observes git/python/node/npm/npx availability via
+    `cvf_doctor.py`'s isolated snapshot builder before any expensive release
+    work runs.
+
+    This is read-only evidence, never execution/mutation/deployment
+    authority. On non-dry-run FAIL, the caller (main()) short-circuits the
+    rest of the expensive check sequence. Dry-run never executes anything for
+    real and is marked SKIP.
+    """
+    name = "Capability environment preflight"
+    if dry_run:
+        return CheckResult(
+            name, "SKIP",
+            "dry-run - would run: python scripts/cvf_doctor.py --capability-snapshot --json",
+        )
+
+    payload, _exit_code = cvf_doctor.run_capability_snapshot_cli()
+    ready = payload.get("ready", False)
+    reason = payload.get("readinessReason", "")
+    command_summary = [
+        f"{c['name']}:{c['availability']}" for c in payload.get("commands", [])
+    ]
+    if ready:
+        return CheckResult(name, "PASS", "Capability environment preflight PASS", command_summary)
+    message = "Capability environment preflight FAIL"
+    if reason:
+        message = f"{message}: {reason}"
+    return CheckResult(name, "FAIL", message, command_summary)
+
+
 def check_web_build(dry_run: bool) -> CheckResult:
     name = "Web build (npm run build)"
     if dry_run:
         return CheckResult(name, "SKIP", "dry-run — would run: npm run build", [str(CVF_WEB)])
     if not CVF_WEB.exists():
+        _LAST_E2E_DIAGNOSTIC = {
+            "stage": "e2e_execution",
+            "class": "dependency_unavailable",
+            "retryable": False,
+            "userAction": "restore_cvf_web_workspace",
+            "safeMessage": "The cvf-web workspace was not available to the release runner.",
+            "provider": None,
+            "model": None,
+            "httpStatus": None,
+            "latencyMs": None,
+            "traceOrReceipt": None,
+        }
         return CheckResult(name, "FAIL", "cvf-web directory not found", [str(CVF_WEB)])
-    code, stdout, stderr = run_cmd(["npm", "run", "build"], cwd=CVF_WEB, timeout=900)
+    build_env = {**os.environ, **{k: v for k, v in WEB_BUILD_STRUCTURAL_ENV.items() if not os.environ.get(k)}}
+    build_env["NEXT_DIST_DIR"] = WEB_BUILD_DIST_DIR
+    code, stdout, stderr = run_cmd(["npm", "run", "build"], cwd=CVF_WEB, timeout=900, env=build_env)
     if code == 0:
         return CheckResult(name, "PASS", "Build succeeded")
     lines = (stdout + stderr).splitlines()
@@ -232,7 +299,11 @@ def check_secrets(dry_run: bool) -> CheckResult:
     return CheckResult(name, "PASS", "No secret patterns detected")
 
 
+_LAST_E2E_DIAGNOSTIC: dict | None = None
+
+
 def check_e2e(dry_run: bool, live: bool) -> CheckResult:
+    global _LAST_E2E_DIAGNOSTIC
     mode = "live governance" if live else "UI mock"
     config = "playwright.config.ts" if live else "playwright.config.mock.ts"
     specs = [
@@ -248,30 +319,34 @@ def check_e2e(dry_run: bool, live: bool) -> CheckResult:
         cmd_str = f"npx playwright test --config {config} {' '.join(specs)} --reporter=line"
         return CheckResult(name, "SKIP", f"dry-run — would run: {cmd_str}", [str(CVF_WEB)])
     if not CVF_WEB.exists():
+        _LAST_E2E_DIAGNOSTIC = build_e2e_diagnostic(
+            "cvf-web workspace not found", mode
+        )
         return CheckResult(name, "FAIL", "cvf-web directory not found", [str(CVF_WEB)])
     if live:
         bootstrap_live_provider_env()
     if live and not os.environ.get("DASHSCOPE_API_KEY"):
+        message = "No DashScope-compatible live key set - live governance E2E is mandatory for release-quality CVF proof"
+        _LAST_E2E_DIAGNOSTIC = build_e2e_diagnostic(message, mode)
         return CheckResult(
             name, "FAIL",
-            "No DashScope-compatible live key set — live governance E2E is mandatory for release-quality CVF proof"
+            message
         )
     cmd = ["npx", "playwright", "test", "--config", config, *specs, "--reporter=line"]
-    code, stdout, stderr = run_cmd(cmd, cwd=CVF_WEB, timeout=600)
+    started = time.monotonic()
+    e2e_env = {**os.environ, **E2E_RUNTIME_ENV[live]}
+    code, stdout, stderr = run_cmd(cmd, cwd=CVF_WEB, timeout=600, env=e2e_env)
+    latency_ms = round((time.monotonic() - started) * 1000)
     output = (stdout + stderr).strip()
     lines = output.splitlines()
     summary = next((l for l in reversed(lines) if l.strip()), "")
     if code == 0:
         return CheckResult(name, "PASS", f"Playwright {mode} suite passed", [summary] if summary else [])
-    retry_code, retry_stdout, retry_stderr = run_cmd(cmd, cwd=CVF_WEB, timeout=600)
-    retry_output = (retry_stdout + retry_stderr).strip()
-    retry_lines = retry_output.splitlines()
-    retry_summary = next((l for l in reversed(retry_lines) if l.strip()), "")
-    if retry_code == 0:
-        detail = ["initial attempt failed; retry passed"]
-        if retry_summary:
-            detail.append(retry_summary)
-        return CheckResult(name, "PASS", f"Playwright {mode} suite passed on retry", detail)
+    # No automatic blind retry. Return the first failure and a diagnostic
+    # summary; a later rerun may only happen after a human/worker records an
+    # explicit result-changing action outside this bundle (per the A5 work
+    # order's no-blind-retry requirement).
+    _LAST_E2E_DIAGNOSTIC = build_e2e_diagnostic(output, mode, latency_ms, exit_code=code)
     failures = [l for l in lines if "failed" in l.lower() or "error" in l.lower()][:8]
     return CheckResult(name, "FAIL", f"Playwright {mode} suite failed", failures or lines[-8:])
 
@@ -282,6 +357,90 @@ def check_docs_governance() -> CheckResult:
     if missing:
         return CheckResult(name, "FAIL", f"{len(missing)} required RC doc(s) missing", missing)
     return CheckResult(name, "PASS", f"All {len(REQUIRED_DOCS)} required RC docs present")
+
+
+def call_sot3_a5_adapter(output_path: Path, diagnostic_path: Path) -> tuple[dict | None, int]:
+    """Invokes scripts/run_cvf_sot3_a5_release_proof.py --run as a subprocess.
+
+    Returns (parsed_result_json_or_None, returncode). This is the only call
+    site for the SOT3 A5 adapter; the release bundle never invokes Vitest or
+    the provider route directly itself -- the adapter (which in turn invokes
+    only the accepted A4 runner) owns that chain.
+    """
+    cmd = [
+        sys.executable,
+        str(SOT3_A5_ADAPTER),
+        "--run",
+        "--json",
+        "--output", str(output_path),
+        "--diagnostic-output", str(diagnostic_path),
+    ]
+    code, stdout, stderr = run_cmd(cmd, cwd=REPO_ROOT, timeout=600)
+    try:
+        data = json.loads(output_path.read_text(encoding="utf-8")) if output_path.exists() else None
+    except (OSError, ValueError, json.JSONDecodeError):
+        data = None
+    return data, code
+
+
+_LAST_SOT3_PAYLOAD: dict | None = None
+
+
+def check_sot3(dry_run: bool, diagnostic_output: Path | None = None) -> CheckResult:
+    """Mandatory SOT3 canonical release proof check.
+
+    Only `--dry-run` may mark this SKIP. `--mock` has no effect on this
+    check at all -- there is no mock-bypass parameter -- so `--mock` cannot
+    cause SOT3 to report PASS without a real adapter invocation.
+
+    The parsed `sot3` payload (or a secret-safe absent/malformed marker) is
+    cached in the module-level `_LAST_SOT3_PAYLOAD` so `main()` can project it
+    as a top-level `sot3` object in the release JSON without re-running the
+    adapter a second time. When `diagnostic_output` is provided, the A5
+    adapter's own secret-safe diagnostic is persisted there (for both PASS
+    and FAIL) so it can also be hashed into the live evidence manifest.
+    """
+    global _LAST_SOT3_PAYLOAD
+    name = "SOT3 canonical release proof (A5)"
+    if dry_run:
+        _LAST_SOT3_PAYLOAD = {"overall": "SKIP", "reason": "dry_run"}
+        return CheckResult(
+            name, "SKIP",
+            "dry-run - would run: python scripts/run_cvf_sot3_a5_release_proof.py --run --json",
+            [str(SOT3_A5_ADAPTER)],
+        )
+    if not SOT3_A5_ADAPTER.exists():
+        _LAST_SOT3_PAYLOAD = {"overall": "FAIL", "reason": "adapter_script_not_found"}
+        return CheckResult(name, "FAIL", "SOT3 A5 adapter script not found", [str(SOT3_A5_ADAPTER)])
+
+    with tempfile.TemporaryDirectory(prefix="cvf-release-sot3-") as tmp:
+        output_path = Path(tmp) / "sot3-a5-result.json"
+        tmp_diagnostic_path = Path(tmp) / "sot3-a5-diagnostic.json"
+        data, code = call_sot3_a5_adapter(output_path, tmp_diagnostic_path)
+        if diagnostic_output is not None and tmp_diagnostic_path.exists():
+            diagnostic_output.parent.mkdir(parents=True, exist_ok=True)
+            diagnostic_output.write_text(tmp_diagnostic_path.read_text(encoding="utf-8"), encoding="utf-8")
+
+    if data is None or "sot3" not in data or not isinstance(data.get("sot3"), dict):
+        _LAST_SOT3_PAYLOAD = {"overall": "FAIL", "reason": "missing_or_malformed_payload", "adapterReturnCode": code}
+        return CheckResult(name, "FAIL", "SOT3 payload missing or malformed", [f"adapter returncode={code}"])
+
+    sot3 = data["sot3"]
+    _LAST_SOT3_PAYLOAD = sot3
+
+    if sot3.get("overall") != "PASS":
+        admission_failures = sot3.get("admissionFailures") or []
+        return CheckResult(name, "FAIL", "SOT3 proof did not PASS", admission_failures[:8] or [f"overall={sot3.get('overall')}"])
+
+    mismatches = [
+        f"{field}!={expected}(got {sot3.get(field)!r})"
+        for field, expected in SOT3_REQUIRED_FIELD_CHECKS
+        if sot3.get(field) != expected
+    ]
+    if mismatches:
+        return CheckResult(name, "FAIL", "SOT3 payload failed strict field admission", mismatches[:8])
+
+    return CheckResult(name, "PASS", "SOT3 canonical release proof PASS with full owner correlation", [])
 
 
 # ---------------------------------------------------------------------------
@@ -320,16 +479,42 @@ def print_results(results: list[CheckResult], date: str) -> int:
     return 1 if fails else 0
 
 
-def result_payload(results: list[CheckResult], date: str) -> dict:
+def result_payload(results: list[CheckResult], date: str, sot3: dict | None = None) -> dict:
+    """Builds the machine-readable release JSON payload.
+
+    `sot3` is the top-level SOT3 evidence object. A missing, malformed, or
+    non-PASS SOT3 payload always makes `gate_result` FAIL, independent of
+    every other check's status -- including the dry-run case, where SOT3 is
+    SKIP and can never support a PASS claim. Callers that omit `sot3`
+    entirely (legacy call shape) are treated as a missing payload only when
+    a SOT3-named check is present in `results`; when no SOT3-related check is
+    part of this payload at all (a caller building a non-release, non-SOT3
+    payload shape), `sot3` is omitted from gate-result computation.
+    """
     fails = sum(1 for r in results if r.status == "FAIL")
-    return {
+    has_sot3_check = any(r.name.startswith("SOT3") for r in results)
+
+    sot3_payload = sot3
+    if sot3_payload is None and has_sot3_check:
+        sot3_payload = {"overall": "ABSENT", "reason": "sot3_payload_not_provided"}
+
+    sot3_blocks_pass = False
+    if has_sot3_check or sot3_payload is not None:
+        sot3_blocks_pass = not (isinstance(sot3_payload, dict) and sot3_payload.get("overall") == "PASS")
+
+    gate_result = "FAIL" if (fails or sot3_blocks_pass) else "PASS"
+
+    payload: dict = {
         "date": date,
-        "gate_result": "FAIL" if fails else "PASS",
+        "gate_result": gate_result,
         "checks": [
             {"name": r.name, "status": r.status, "message": r.message, "detail": r.detail}
             for r in results
         ],
     }
+    if sot3_payload is not None:
+        payload["sot3"] = sot3_payload
+    return payload
 
 
 def write_json_payload(payload: dict, output_path: Path) -> None:
@@ -347,20 +532,30 @@ def build_secret_safe_rerun_command(args: argparse.Namespace) -> str:
         parts.append("--e2e")
     if args.e2e_live:
         parts.append("--e2e-live")
+    if getattr(args, "sot3_diagnostic_output", None):
+        parts.append("--sot3-diagnostic-output <path>")
+    if getattr(args, "e2e_diagnostic_output", None):
+        parts.append("--e2e-diagnostic-output <path>")
     parts.append("--json")
     return " ".join(parts)
 
 
 def write_live_evidence_manifest(
-    evidence_path: Path,
+    evidence_paths: list[Path],
     manifest_path: Path,
     rerun_command: str,
     anchor_id: str,
     anchor_url: str,
 ) -> None:
+    """Hashes every path in `evidence_paths` into one manifest.
+
+    When both the release result JSON and the SOT3 A5 diagnostic JSON are
+    supplied (`--output` and `--sot3-diagnostic-output` both present), the
+    manifest hashes both artifacts, not just one.
+    """
     manifest = build_live_evidence_manifest(
         SimpleNamespace(
-            evidence=[str(evidence_path)],
+            evidence=[str(p) for p in evidence_paths],
             command=rerun_command,
             anchor_id=anchor_id,
             anchor_url=anchor_url,
@@ -397,6 +592,16 @@ def main() -> None:
     )
     parser.add_argument("--manifest-anchor-id", default="", help="Optional external immutable anchor identifier")
     parser.add_argument("--manifest-anchor-url", default="", help="Optional external immutable anchor URL")
+    parser.add_argument(
+        "--sot3-diagnostic-output",
+        type=Path,
+        help="Write the SOT3 A5 secret-safe diagnostic to this JSON path; also hashed into the manifest when --manifest-output is supplied",
+    )
+    parser.add_argument(
+        "--e2e-diagnostic-output",
+        type=Path,
+        help="Write the secret-safe E2E failure diagnostic, or JSON null on success; also hash it into the evidence manifest",
+    )
     parser.add_argument("--e2e", action="store_true", dest="e2e", help="Targeted run: UI-only mock Playwright specs")
     parser.add_argument(
         "--e2e-live",
@@ -415,13 +620,47 @@ def main() -> None:
         print(f"\nCVF Release Gate Bundle — DRY RUN ({today})")
         print("The following checks would run:\n")
 
-    results: list[CheckResult] = [
+    # Capability environment preflight runs first, before any expensive
+    # check. On a real (non-dry-run) FAIL, every expensive check below
+    # (build, typecheck, provider readiness, secrets scan, E2E, SOT3) is
+    # skipped entirely -- they must not be invoked -- and the bundle returns
+    # a secret-safe FAIL result containing only the preflight CheckResult.
+    # On PASS, or in --dry-run mode (preflight itself never executes for
+    # real and is marked SKIP), the existing check sequence and mandatory
+    # SOT3 live-proof policy run completely unchanged.
+    preflight_result = check_capability_preflight(args.dry_run)
+    results: list[CheckResult] = [preflight_result]
+
+    if not args.dry_run and preflight_result.status == "FAIL":
+        payload = result_payload(results, today, sot3=None)
+        if args.output:
+            write_json_payload(payload, args.output)
+        if args.e2e_diagnostic_output:
+            args.e2e_diagnostic_output.parent.mkdir(parents=True, exist_ok=True)
+            args.e2e_diagnostic_output.write_text("null\n", encoding="utf-8")
+        if args.manifest_output:
+            evidence_paths = [args.output]
+            if args.e2e_diagnostic_output and args.e2e_diagnostic_output.exists():
+                evidence_paths.append(args.e2e_diagnostic_output)
+            write_live_evidence_manifest(
+                evidence_paths,
+                args.manifest_output,
+                build_secret_safe_rerun_command(args),
+                args.manifest_anchor_id,
+                args.manifest_anchor_url,
+            )
+        if args.json_out:
+            sys.exit(json_output(payload))
+        else:
+            sys.exit(print_results(results, today))
+
+    results.extend([
         check_web_build(args.dry_run),
         check_ts_typecheck(args.dry_run),
         check_provider_readiness(args.dry_run, args.mock),
         check_secrets(args.dry_run),
         check_docs_governance(),
-    ]
+    ])
 
     if args.e2e:
         results.append(check_e2e(args.dry_run, live=False))
@@ -431,12 +670,28 @@ def main() -> None:
         results.append(check_e2e(args.dry_run, live=False))
         results.append(check_e2e(args.dry_run, live=True))
 
-    payload = result_payload(results, today)
+    # SOT3 is a mandatory check in the default canonical release path. It is
+    # appended once per run regardless of --e2e/--e2e-live scoping; only
+    # --dry-run marks it SKIP, and --mock has no bypass effect on it at all.
+    results.append(check_sot3(args.dry_run, diagnostic_output=args.sot3_diagnostic_output))
+
+    payload = result_payload(results, today, sot3=_LAST_SOT3_PAYLOAD)
     if args.output:
         write_json_payload(payload, args.output)
+    if args.e2e_diagnostic_output:
+        args.e2e_diagnostic_output.parent.mkdir(parents=True, exist_ok=True)
+        args.e2e_diagnostic_output.write_text(
+            json.dumps(_LAST_E2E_DIAGNOSTIC, indent=2) + "\n",
+            encoding="utf-8",
+        )
     if args.manifest_output:
+        evidence_paths = [args.output]
+        if args.sot3_diagnostic_output and Path(args.sot3_diagnostic_output).exists():
+            evidence_paths.append(args.sot3_diagnostic_output)
+        if args.e2e_diagnostic_output and Path(args.e2e_diagnostic_output).exists():
+            evidence_paths.append(args.e2e_diagnostic_output)
         write_live_evidence_manifest(
-            args.output,
+            evidence_paths,
             args.manifest_output,
             build_secret_safe_rerun_command(args),
             args.manifest_anchor_id,

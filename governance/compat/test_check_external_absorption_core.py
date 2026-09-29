@@ -32,7 +32,13 @@ External absorption core: REQUIRED
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
 | Owner-surface map | inline table mapping accepted rows to docs/reference/example.md |
 | Unresolved items | 0 |
-| Completion claim boundary | bounded documentation-only absorption; no runtime/provider/public/production claim |
+| Absorption maturity | KNOWLEDGE_NORMALIZED_RUNTIME_PENDING |
+| Named runtime consumer | PENDING_NOT_NAMED |
+| Integration evidence | PENDING_RUNTIME_INTEGRATION |
+| Use proof | PENDING_OPERATOR_AUTHORIZED_RUNTIME_PROOF |
+| Operator checkpoint | REQUIRED_BEFORE_RUNTIME_EXECUTION |
+| Absorption completion status | ABSORPTION_NOT_COMPLETE |
+| Completion claim boundary | knowledge normalized only; ABSORPTION_NOT_COMPLETE; no runtime/provider/public/production claim |
 
 ## Corpus Completeness And Report Integrity
 
@@ -115,11 +121,78 @@ This absorbs `.private_reference/legacy/CVF 28.06/Pack`.
 
         self.assertTrue(any(item["type"] == "external_absorption_core_status_missing" for item in violations))
 
+    def test_documentation_only_cannot_claim_absorption_complete(self) -> None:
+        text = VALID_ARTIFACT.replace(
+            "| Absorption completion status | ABSORPTION_NOT_COMPLETE |",
+            "| Absorption completion status | ABSORPTION_COMPLETE_USE_PROVEN |",
+        )
+
+        violations = MODULE.check_text("docs/reviews/CVF_SAMPLE.md", text)
+
+        self.assertTrue(any(item["type"] == "external_absorption_core_complete_without_use_proven" for item in violations))
+        self.assertTrue(any(item["type"] == "external_absorption_core_premature_completion" for item in violations))
+
+    def test_use_proven_requires_consumer_evidence_and_operator_checkpoint(self) -> None:
+        text = VALID_ARTIFACT.replace(
+            "| Absorption maturity | KNOWLEDGE_NORMALIZED_RUNTIME_PENDING |",
+            "| Absorption maturity | USE_PROVEN |",
+        ).replace(
+            "| Absorption completion status | ABSORPTION_NOT_COMPLETE |",
+            "| Absorption completion status | ABSORPTION_COMPLETE_USE_PROVEN |",
+        )
+
+        violations = MODULE.check_text("docs/reviews/CVF_SAMPLE.md", text)
+
+        types = {item["type"] for item in violations}
+        self.assertIn("external_absorption_core_runtime_consumer_missing", types)
+        self.assertIn("external_absorption_core_integration_evidence_missing", types)
+        self.assertIn("external_absorption_core_use_proof_missing", types)
+        self.assertIn("external_absorption_core_operator_checkpoint_missing", types)
+
+    def test_use_proven_with_runtime_evidence_passes(self) -> None:
+        text = VALID_ARTIFACT.replace(
+            "| Absorption maturity | KNOWLEDGE_NORMALIZED_RUNTIME_PENDING |",
+            "| Absorption maturity | USE_PROVEN |",
+        ).replace(
+            "| Named runtime consumer | PENDING_NOT_NAMED |",
+            "| Named runtime consumer | EXTENSIONS/example/src/runtime.consumer.ts |",
+        ).replace(
+            "| Integration evidence | PENDING_RUNTIME_INTEGRATION |",
+            "| Integration evidence | docs/reviews/runtime-integration.md |",
+        ).replace(
+            "| Use proof | PENDING_OPERATOR_AUTHORIZED_RUNTIME_PROOF |",
+            "| Use proof | docs/evidence/runtime-use-receipt.json |",
+        ).replace(
+            "| Operator checkpoint | REQUIRED_BEFORE_RUNTIME_EXECUTION |",
+            "| Operator checkpoint | OPERATOR_CHECKPOINT_SATISFIED: operator approved runtime proof |",
+        ).replace(
+            "| Absorption completion status | ABSORPTION_NOT_COMPLETE |",
+            "| Absorption completion status | ABSORPTION_COMPLETE_USE_PROVEN |",
+        )
+
+        self.assertEqual([], MODULE.check_text("docs/reviews/CVF_SAMPLE.md", text))
+
     def test_unrelated_internal_doc_is_ignored(self) -> None:
         violations = MODULE.check_text(
             "docs/reviews/CVF_INTERNAL_ONLY_COMPLETION.md",
             "# Internal\n\nStatus: CLOSED_PASS_BOUNDED\n",
         )
+
+        self.assertEqual([], violations)
+
+    def test_remote_url_plus_chain_map_absorption_word_is_ignored(self) -> None:
+        text = """
+# Internal Governance Review
+
+## Evidence
+
+Remote evidence: https://github.com/example/project.git
+
+Required routing source:
+docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md
+"""
+
+        violations = MODULE.check_text("docs/reviews/CVF_INTERNAL_ROUTE_REVIEW.md", text)
 
         self.assertEqual([], violations)
 
@@ -132,6 +205,65 @@ This absorbs `.private_reference/legacy/CVF 28.06/Pack`.
         )
 
         self.assertEqual([], violations)
+
+    # --- EARTR-ESC-R1 Amendment 1: exact-path non-execution-owner exemption -
+
+    def test_canonical_workflow_specification_is_non_applicable(self) -> None:
+        """The finding-workflow specification owner is exempt by exact path:
+        it classifies/routes returned external-agent output, it never records
+        a real bounded external-repository or copied-folder absorption, so it
+        must not be forced to carry fabricated corpus/ledger/owner-map
+        evidence merely because its path and a pre-existing machine-check
+        marker phrase coincidentally satisfy the general heuristic."""
+        text = (
+            "# CVF External Agent Finding Absorption Workflow\n\n"
+            "Status: ACTIVE_WORKFLOW\n\n"
+            "This workflow classifies external absorption findings returned "
+            "from an external repository review.\n\n"
+            "## Machine Check\n\n"
+            "`External absorption review: REQUIRED`\n"
+        )
+
+        violations = MODULE.check_text(
+            "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md",
+            text,
+        )
+
+        self.assertEqual([], violations)
+
+    def test_genuine_external_repository_absorption_artifact_remains_applicable(self) -> None:
+        """A real absorption artifact at a different path must still be
+        caught with no core section, proving the exemption did not weaken
+        detection generally (only the one named exact path is exempt)."""
+        text = """
+# Sample
+
+This absorbs `.private_reference/legacy/CVF 28.06/Pack`.
+
+## Corpus Completeness And Report Integrity
+
+- Corpus verdict: COMPLETE_VERIFIED
+
+## External Knowledge Intake Routing
+
+| Field | Value |
+|---|---|
+| Chain map | docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md |
+"""
+
+        violations = MODULE.check_text("docs/reviews/CVF_GENUINE_ABSORPTION_REVIEW.md", text)
+
+        self.assertTrue(any(item["type"] == "external_absorption_core_section_missing" for item in violations))
+
+    def test_canonical_absorption_standard_remains_applicable(self) -> None:
+        """The standard path itself must remain applicable and still be
+        validated against its own required markers after adding the
+        exemption, since the exemption targets only the finding-workflow
+        specification's exact path."""
+        violations = MODULE.check_text(MODULE.STANDARD_PATH, "# Incomplete Standard\n")
+
+        self.assertTrue(any(item["type"] == "external_absorption_core_standard_marker_missing" for item in violations))
+        self.assertTrue(len(violations) > 0)
 
 
 if __name__ == "__main__":

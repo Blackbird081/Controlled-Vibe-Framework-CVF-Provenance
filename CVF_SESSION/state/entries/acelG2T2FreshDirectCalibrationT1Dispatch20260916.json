@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2847,
+  "stateKey": "acelG2T2FreshDirectCalibrationT1Dispatch20260916",
+  "value": "ACEL-G2-T2-FRESH-DIRECT-CALIBRATION-T1 is DISPATCH_READY at material commit 6f70571ed99f83012a0bf211b5d4623fd6386f8f under operator authorization 'Dong y G2-T2 calibration'. The baseline and work order are the current authority. INTERNAL_AGENT may retarget the existing T6A runner to a new receipt, verify current provider model/pricing/account Free Quota Only/current quota and key alias without exposing secrets, and execute at most one fresh qwen3.7-flash provider call with no retry. If preconditions fail, return BLOCKED_WITH_REASON with zero calls. Only the runner edit, new receipt JSON and worker return are worker-owned; historical receipt must remain byte-identical. Successful parse requires independent deterministic rescoring; parse failure is NOT_ACCEPTED. Historical T6A result remains NOT_ACCEPTED. No call has been made by Local. Local is final technical decision owner; actual-agent experiment, callable seam, broader runtime, public sync and deployment remain parked."
+}

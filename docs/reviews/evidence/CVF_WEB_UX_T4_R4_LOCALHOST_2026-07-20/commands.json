@@ -1,0 +1,27 @@
+[
+  {
+    "command": "npx next dev -p 3000",
+    "result": "Ready in 640ms; Local: http://localhost:3000",
+    "status": "PASS"
+  },
+  {
+    "command": "npm run test:run -- src/components/OutcomeQuickActions.test.tsx src/components/DynamicForm.test.tsx src/app/(dashboard)/workspace/page.test.tsx src/app/(dashboard)/governance/knowledge/page.test.tsx",
+    "result": "Test Files: 4 passed (4), Tests: 14 passed (14), Duration: 3.18s",
+    "status": "PASS"
+  },
+  {
+    "command": "python governance/compat/check_governed_file_size.py --enforce",
+    "result": "COMPLIANT - Governed file size is within active policy (0 violations)",
+    "status": "PASS"
+  },
+  {
+    "command": "python governance/compat/run_worker_return_fast_gate.py",
+    "result": "COMPLIANT - worker-return fast gate passed (62/62 checks passed)",
+    "status": "PASS"
+  },
+  {
+    "command": "netstat -ano | findstr LISTENING | findstr :3000",
+    "result": "NO_ACTIVE_LISTENER",
+    "status": "PASS"
+  }
+]

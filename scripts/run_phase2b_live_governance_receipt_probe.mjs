@@ -148,7 +148,7 @@ async function main() {
     await page.addInitScript((key) => {
       localStorage.setItem('cvf_settings', JSON.stringify({
         providers: {
-          alibaba: { apiKey: key, enabled: true, selectedModel: 'qwen-turbo' },
+          alibaba: { apiKey: key, enabled: true, selectedModel: 'qwen-flash' },
         },
         preferences: {
           defaultProvider: 'alibaba',
@@ -195,7 +195,7 @@ Clear recommendation, risk notes, and governance receipt evidence.`,
           priority: 'Governed live proof',
         },
         provider: 'alibaba',
-        model: 'qwen-turbo',
+        model: 'qwen-flash',
         mode: 'simple',
         action: 'analyze',
         aiCommit: {
@@ -244,7 +244,7 @@ Clear recommendation, risk notes, and governance receipt evidence.`,
       schemaVersion: 'phase2b-live-governance-proof-result-1',
       status: 'PASS',
       providerLane: 'alibaba',
-      model: receipt.model ?? 'qwen-turbo',
+      model: receipt.model ?? 'qwen-flash',
       decision: receipt.decision ?? providerRouting.decision,
       routingDecision: receipt.routingDecision ?? providerRouting.decision,
       receiptId: receipt.receiptId,

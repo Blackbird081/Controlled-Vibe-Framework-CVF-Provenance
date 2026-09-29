@@ -1,0 +1,13 @@
+{
+  "stateOrder": 1721,
+  "stateKey": "sot3T4R1Closure20260713",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-13",
+    "materialCommit": "cda8fec64",
+    "completionReview": "docs/reviews/CVF_SOT3_T4R1_COMPLETION_REVIEW_2026-07-13.md",
+    "verification": "typecheck and build PASS; Vitest 7 suites and 54 tests PASS; reviewer-fast and pre-commit PASS",
+    "nextAllowedMove": "refresh and re-review held SOT3-T5 packet only",
+    "claimBoundary": "T5 implementation and T6-T7 remain held"
+  }
+}

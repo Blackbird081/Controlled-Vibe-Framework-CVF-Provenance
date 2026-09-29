@@ -1,0 +1,34 @@
+{
+  "stateOrder": 1548,
+  "stateKey": "mseaR72GciClaudeReviewRepairAccepted20260708",
+  "value": {
+    "status": "GCI_CLAUDE_REVIEW_REPAIR_ACCEPTED_PENDING_R72A_GC018",
+    "date": "2026-07-08",
+    "materialCommit": "7f25ad753",
+    "materialCommitFull": "7f25ad753fd1b9c4a8d5ac5e01ee8642bbdc4fcf",
+    "sourceReview": "docs/reviews/CVF_R72_GOVERNANCE_CONTROL_INDEX_CLAUDE_REVIEW_2026-07-07.md",
+    "sourceAssessment": "docs/reviews/CVF_INDEPENDENT_EA_ASSESSMENT_CLAUDE_2026-07-07.md",
+    "artifacts": [
+      "docs/reference/governance_control_index/CVF_GOVERNANCE_CONTROL_INDEX.md",
+      "docs/roadmaps/CVF_MSEA_R72_EA_ASSESSMENT_INTAKE_AND_GOVERNANCE_LOAD_REBALANCING_ROADMAP_2026-07-07.md",
+      "docs/reviews/CVF_INDEPENDENT_EA_ASSESSMENT_CLAUDE_2026-07-07.md",
+      "docs/reviews/CVF_R72_GOVERNANCE_CONTROL_INDEX_CLAUDE_REVIEW_2026-07-07.md"
+    ],
+    "statusSummary": "Accepted Claude's independent R72 GCI review with bounded repairs: GCI-014 now names the public-sync static CI and public-surface scripts, the R72F no-candidate stop condition requires a named WATCH row and exact missing evidence, the roadmap now owns R72G human-operator onboarding and R72H product/governance separability, and the checker-count baseline distinguishes the direct checker-script count from broader checker-test-inclusive counts.",
+    "verification": [
+      "python governance/compat/check_agent_packet_authority_and_encoding.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_corpus_scan_registry.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_markdown_structural_completeness.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_governed_artifact_checker_read_ahead.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_agent_operation_trace.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_index_classification.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_public_export_disposition.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/check_finding_to_governance_learning.py --base a37c32dc8 --head HEAD --enforce PASS",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base a37c32dc8 --head HEAD PASS 75/75",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode implementation --base a37c32dc8 --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextAllowedMove": "Fresh source-verified MSEA-R72A Public Main CI Health And Governance-Load Baseline GC-018 and work-order authoring only. R72A must cite repaired GCI-014 for public-main CI/public-surface evidence, carry the R72D direct-checker-count correction, preserve the R72F named-WATCH-row/no-silent-zero-retirement guardrail, and leave R72G/R72H for their own downstream bounded tranches.",
+    "claimBoundary": "This repair accepts and records bounded roadmap/GCI corrections only. It does not implement checker retirement, delete or disable checkers, mutate public-sync, repair CI, edit runtime/source/tests/checkers, run provider/live proof, push, merge, extract product surfaces, onboard operators, or make public/production claims."
+  }
+}

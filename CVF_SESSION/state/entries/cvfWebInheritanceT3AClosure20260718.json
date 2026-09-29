@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1939,
+  "stateKey": "cvfWebInheritanceT3AClosure20260718",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_WITH_REPAIRS",
+    "materialCommit": "c0d88ff34",
+    "executionBaseHead": "da62d1e67",
+    "roadmap": "docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md",
+    "completionReview": "docs/reviews/CVF_WEB_INHERITANCE_T3A_COMPLETION_REVIEW_2026-07-18.md",
+    "decision": "SPLIT_T3B_PREREQUISITE_OWNER_REQUIRED",
+    "reviewerRepairs": "Corrected direct-versus-transitive dependency wording and acknowledged existing heartbeat/timeout owners while preserving the restart-safe read-seam gap.",
+    "verification": "worker-return fast and reviewer-fast 62/62 PASS; governed file-size PASS; reviewer-return commit steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Author and dispatch the narrow T3P1 durable run-discovery prerequisite only.",
+    "heldNextTranche": "T3P2, T3B, and T4-T5 remain parked; no Web, provider/live, public, push, or production mutation.",
+    "claimBoundary": "T3A is a source decision only; no runtime or Web behavior was implemented."
+  }
+}

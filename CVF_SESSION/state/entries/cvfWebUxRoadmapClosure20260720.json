@@ -1,0 +1,14 @@
+{
+  "stateOrder": 2004,
+  "stateKey": "cvfWebUxRoadmapClosure20260720",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialClosureCommit": "d757fe5ac",
+    "roadmap": "docs/roadmaps/CVF_WEB_TASK_FIRST_UX_AND_AUDIENCE_CLARITY_REMEDIATION_ROADMAP_2026-07-19.md",
+    "completionReview": "docs/reviews/CVF_WEB_UX_T4_COMPLETION_2026-07-20.md",
+    "learningEntry": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0042.md",
+    "nextAllowedMove": "Author the fresh GC-018 baseline and source-verified T0 work order for continuous projection.",
+    "parked": "implementation, automatic semantic edits, real-root apply, commit, push, deployment, public-sync, provider/live calls, production action, and unattended mutation.",
+    "claimBoundary": "Current-source localhost browser acceptance only; no hosted freshness, deployment, provider, public, or production claim."
+  }
+}

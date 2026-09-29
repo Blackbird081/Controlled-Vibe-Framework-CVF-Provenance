@@ -1,0 +1,7 @@
+{
+  "stage": "cli_proof_execution",
+  "failureClass": "EXPECTED_BEHAVIOR_NOT_MET",
+  "retryableWithinWorkerScope": false,
+  "providerModel": "N/A (zero provider calls)",
+  "message": "failed cases: ['positive_pre_dispatch: NOT_COMPLIANT']"
+}

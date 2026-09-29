@@ -1,0 +1,43 @@
+{
+  "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+  "evidence": [
+    {
+      "path": "docs/reviews/evidence/sot3-act-a5-release-gate-result-2026-07-13.json",
+      "sha256": "bde6c8baeb69215c413dfccc9b2bf1a77b1b0851d6c95c4627c0503142e3c351",
+      "sizeBytes": 2733
+    },
+    {
+      "path": "docs/reviews/evidence/sot3-act-a5-release-sot3-diagnostic-2026-07-13.json",
+      "sha256": "7b5ca8d7c574bf410d9f74cb8613d392d0d7a4248eca60330bdaa209eac26d31",
+      "sizeBytes": 472
+    }
+  ],
+  "externalAnchor": {
+    "anchorId": "",
+    "anchorUrl": "",
+    "status": "NOT_PROVIDED"
+  },
+  "generatedAt": "2026-07-13T16:23:13.896349+00:00",
+  "repository": {
+    "branch": "main",
+    "commit": "bab1eb1463e9d27310af64460f73f2928f08d3ff",
+    "dirtyStatus": "M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results/.last-run.json\n M scripts/run_cvf_release_gate_bundle.py\n?? docs/reviews/evidence/sot3-act-a5-release-gate-result-2026-07-13.json\n?? docs/reviews/evidence/sot3-act-a5-release-sot3-diagnostic-2026-07-13.json\n?? scripts/run_cvf_sot3_a5_release_proof.py\n?? scripts/test_run_cvf_sot3_a5_release_integration.py",
+    "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+  },
+  "rerun": {
+    "acceptedSecretEnv": [
+      "DASHSCOPE_API_KEY",
+      "ALIBABA_API_KEY",
+      "CVF_ALIBABA_API_KEY",
+      "CVF_BENCHMARK_ALIBABA_KEY"
+    ],
+    "command": "python scripts/run_cvf_release_gate_bundle.py --sot3-diagnostic-output <path> --json",
+    "requiresLiveProviderKey": true
+  },
+  "schema": "cvf.liveEvidenceManifest.v1",
+  "signature": {
+    "algorithm": "hmac-sha256",
+    "digest": "",
+    "status": "UNSIGNED"
+  }
+}

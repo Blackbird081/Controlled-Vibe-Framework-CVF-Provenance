@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1776,
+  "stateKey": "systemChainUc04aDispatch20260714",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "f48430d7d",
+    "workOrderId": "SCLP-UC04A-T3",
+    "selectedOwner": "governance/compat/run_agent_autorun_workflow_gate.py",
+    "executionBoundary": "one no-commit worker; one proof harness invocation; exactly two local CLI calls; zero retries; zero provider calls",
+    "caseIds": ["positive_pre_dispatch", "negative_pre_closure"],
+    "positiveBoundary": "pre-dispatch per-check PASS, aggregate COMPLIANT, and structured PASS receipt",
+    "negativeBoundary": "pre-closure non-empty committed-range failure plus dirty-finality observation",
+    "uc04bStatus": "HELD",
+    "nextAllowedMove": "execute the committed UC-04A work order once with no worker commit",
+    "claimBoundary": "Dispatch only; no UC-04A operational PASS, UC-04B Web, unified inventory, provider, public, production, scale, certification, or user-value claim."
+  }
+}

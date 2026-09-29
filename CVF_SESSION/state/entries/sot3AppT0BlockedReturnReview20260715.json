@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1844,
+  "stateKey": "sot3AppT0BlockedReturnReview20260715",
+  "value": {
+    "status": "REVIEWED_PACKET_DEFECT_REDISPATCH_REQUIRED",
+    "materialCommit": "2a948fdb2",
+    "workerReturn": "docs/reviews/CVF_SOT3_APP_T0_WORKER_RETURN_2026-07-15.md",
+    "review": "docs/reviews/CVF_SOT3_APP_T0_BLOCKED_RETURN_REVIEW_2026-07-15.md",
+    "workerStopDisposition": "ACCEPTED_AS_CONTRACT_COMPLIANT",
+    "sourceDriftDisposition": "REJECTED",
+    "packetDefect": "Dispatch digest used case-insensitive path sorting; contract requires ordinal code-point sorting.",
+    "canonicalAggregateSha256": "bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee",
+    "rejectedDiagnosticAggregateSha256": "538d602504e1dec3e9b19581847aebdd73cb14a7490e8251a7cae16f5f9176dc",
+    "nextAllowedMove": "Repair and validate only the three-file R1 redispatch packet, then sync continuity before worker execution.",
+    "claimBoundary": "No 336-row ledger, hidden-clone provenance acceptance, T0 closure, T1 release, source mutation, runtime proof, public-sync, or product-readiness claim."
+  }
+}

@@ -4,7 +4,7 @@ Authorization: GC018-W66-T2-PHASE-A-FULL-BATCH (issued after pilot gate pass)
 Runs 90 corpus tasks × 4 new lanes × 3 runs = 1,080 direct-mode runs.
 
 Lanes (new; CP3A lanes ALIBABA-001/003 data already collected):
-  LANE-ALIBABA-004 : qwen-turbo  (ROUTER role)
+  LANE-ALIBABA-004 : qwen-flash  (ROUTER role)
   LANE-ALIBABA-005 : qwen-plus   (ANALYST role)
   LANE-ALIBABA-006 : qwen-max    (EXECUTOR role)
   LANE-ALIBABA-007 : qwq-32b     (REVIEWER role, stream=True)
@@ -37,7 +37,7 @@ if not ALIBABA_KEY:
     raise SystemExit('ERROR: ALIBABA_API_KEY is not set. Compatibility aliases: CVF_BENCHMARK_ALIBABA_KEY, CVF_ALIBABA_API_KEY.')
 
 LANES = [
-    {'lane_id': 'LANE-ALIBABA-004', 'model': 'qwen-turbo', 'role': 'ROUTER',   'stream': False},
+    {'lane_id': 'LANE-ALIBABA-004', 'model': 'qwen-flash', 'role': 'ROUTER',   'stream': False},
     {'lane_id': 'LANE-ALIBABA-005', 'model': 'qwen-plus',  'role': 'ANALYST',  'stream': False},
     {'lane_id': 'LANE-ALIBABA-006', 'model': 'qwen-max',   'role': 'EXECUTOR', 'stream': False},
     # qwq-32b → 404 on dashscope-intl; replaced with qwen2.5-72b-instruct (HTTP 200 confirmed)

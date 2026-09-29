@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2701,
+  "stateKey": "gclhMfrpH0WorkOrderAcceptedImplementationAllowed20260901",
+  "value": {
+    "status": "H0_WORK_ORDER_ACCEPTED_IMPLEMENTATION_ALLOWED",
+    "dispatchCommit": "a834cad4e135619bea32247c422dc1bd13dbc9ba",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
+    "baselineSha256": "29cb00bf693b7a0428501ea7a422e2b0ee19d33e35a5741e51becec26efee640",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
+    "workOrderSha256": "271426c989d40004fb0daf2b915074168d00223b65405c0f22c15222bdfd7eeb",
+    "acceptedDesign": "Versioned v2 receipt binds a conservative Git-tracked plus untracked-nonignored repository snapshot, exact interpreter identity, restricted JCS profile and pre/post execution identity equality; incomplete identity is a cache miss and cannot write reusable evidence.",
+    "independentReviewEvidence": "Published Unicode vector independently recomputed to 37730e62eac9a4f900b100c4734aee20311d596fd6426cebea7f6ae8d1a63575; pre-dispatch 81/81 PASS; pre-commit 88/88 PASS.",
+    "nextAllowedMove": "Execute only the committed MFRP-H0 work order as a no-commit protected-path worker, then return the exact two Python changes plus one worker-return artifact for independent evidence review.",
+    "claimBoundary": "H0 implementation only; P1/P2, command or checker semantics, hooks, new standards/ADIF, downstream workspace, provider/live, public-sync, deployment and production remain parked."
+  }
+}

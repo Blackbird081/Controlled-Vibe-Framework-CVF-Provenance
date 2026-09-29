@@ -33,8 +33,8 @@ absorption.
 
 ## Central Core
 
-External absorption is not complete because an agent says it inspected the
-source. It is complete only within a bounded corpus after the artifact records:
+Source reconciliation is not absorption completion. It establishes a bounded
+corpus and value decision only after the artifact records:
 
 - a filesystem-backed or source-backed manifest;
 - a file-level processing ledger;
@@ -43,8 +43,17 @@ source. It is complete only within a bounded corpus after the artifact records:
 - unresolved, deferred, rejected, and blocked items;
 - a value-conversion matrix that explicitly evaluates package, runtime, and
   checker opportunities instead of stopping at pattern adaptation;
+- an absorption maturity, named consumer, integration evidence, use proof and
+  operator checkpoint;
 - a claim boundary that prevents runtime, provider, public, or production
   expansion without fresh governed work.
+
+For value presented as a CVF foundation uplift, documentation, schemas,
+standards, roadmaps and candidate indexes are intermediate normalization
+artifacts. `ABSORPTION_COMPLETE_USE_PROVEN` is allowed only after the value is
+integrated into a named non-test runtime consumer and an operator-authorized
+use proof passes. Until then the correct status is
+`ABSORPTION_NOT_COMPLETE`.
 
 This standard extends the external knowledge chain map. It does not make
 external material canonical, authorize implementation, execute providers,
@@ -95,6 +104,13 @@ for upstream facts must prefer the pinned source mirror. The external-agent
 pack may still be used as comparison material, gap-finding input, or a
 secondary interpretation artifact.
 
+When a local pack was produced from upstream material, a public CVF snapshot,
+operator requirements, operator-agent co-design, or novel synthesis, do not
+collapse the whole pack into "secondary proposal" status. Apply
+`CVF_MIXED_ORIGIN_DERIVED_SYNTHESIS_ABSORPTION_STANDARD.md`: classify origin
+per concept, keep the pack non-authoritative until reviewed, and validate each
+claim against the evidence type appropriate to that claim.
+
 Clone presence is not absorption evidence by itself. Absorption still requires
 the manifest, processing ledger, value-conversion matrix, owner-surface map,
 conditional reopen handling, and reviewer semantic value audit defined below.
@@ -118,8 +134,35 @@ closes value from an external repo or copied folder must include this block:
 | Disposition taxonomy | ABSORB, ADAPT, DEFER, REJECT, BLOCK, NO_NEW_VALUE |
 | Owner-surface map | <CVF owner reference, roadmap, work order, source path, or BLOCKED_SOURCE_NOT_FOUND> |
 | Unresolved items | <0 or explicit list> |
-| Completion claim boundary | <bounded claim; no runtime/provider/public/production expansion> |
+| Absorption maturity | SOURCE_RECONCILED, KNOWLEDGE_NORMALIZED_RUNTIME_PENDING, RUNTIME_INTEGRATED_USE_PENDING, USE_PROVEN, or NO_RUNTIME_VALUE_WITH_REASON |
+| Named runtime consumer | <non-test consumer path/symbol, PENDING_NOT_NAMED, or N/A_NO_RUNTIME_VALUE_WITH_REASON> |
+| Integration evidence | <reviewable path/receipt, PENDING_RUNTIME_INTEGRATION, or N/A_NO_RUNTIME_VALUE_WITH_REASON> |
+| Use proof | <reviewable receipt/path, PENDING_OPERATOR_AUTHORIZED_RUNTIME_PROOF, or N/A_NO_RUNTIME_VALUE_WITH_REASON> |
+| Operator checkpoint | REQUIRED_BEFORE_RUNTIME_EXECUTION, OPERATOR_CHECKPOINT_SATISFIED:<evidence>, or N/A_NO_RUNTIME_VALUE_WITH_REASON |
+| Absorption completion status | ABSORPTION_NOT_COMPLETE, ABSORPTION_COMPLETE_USE_PROVEN, or NO_RUNTIME_VALUE_WITH_REASON |
+| Completion claim boundary | <bounded maturity claim; no expansion beyond evidence> |
 ```
+
+## Runtime Realization And Proactive Execution Rule
+
+The agent must immediately perform useful, reversible work inside an existing
+owner when scope and authority are already established. This includes source
+verification, CVF-native normalization, local contract/schema/source changes,
+provider-free deterministic tests, negative cases, registry updates and
+rollback preparation. Do not park such work merely because the source is
+external or because a later runtime proof needs a checkpoint.
+
+The agent pauses and proposes a concrete next tranche only when:
+
+- a material product/architecture choice lacks an existing owner decision;
+- new authority, credentials, budget, destructive action or external
+  coordination is required;
+- runtime execution, provider/live proof, deployment, public mutation, or
+  another external effect is about to occur.
+
+The proposal must name the consumer, implementation paths, acceptance tests,
+runtime command/effect, rollback and expected value. A docs-only output may be
+useful evidence, but it cannot close a foundation-uplift absorption.
 
 When a high-value upstream repo has a local source mirror, the `Input root or
 repository` row must include the upstream URL, pinned commit, and local mirror
@@ -277,11 +320,73 @@ audit the disposition ledger after all fast gates pass:
 - treat `run_worker_return_fast_gate.py` and the external absorption guards as
   necessary pre-review hygiene, not as proof that value-bearing files have been
   fully converted.
+- do not use `UNREVIEWED`, `UNMERGED`, or `UNPROVEN_BASELINE` as a no-value
+  rationale; those are maturity/authority facts;
+- keep knowledge absorption, direct import, runtime activation, and authority
+  promotion as separate decisions;
+- review a derived local pack as a composed system chain before using file
+  counts or full-runtime cost to decide its value.
 
 This rule is the reviewer-side complement to the value-conversion matrix. It
 closes the CGE-R1 lesson where a worker repaired gate-shape failures but still
 left 16 value-bearing template, example, and schema files parked until reviewer
 repair.
+
+### Forward-Value Delta
+
+Maturity, authorization, and terminal ledger status answer whether a source
+was accepted now. They do not answer whether the underlying idea would have
+been valuable to have earlier, or whether losing it later would cost more
+than preserving it now. The reviewer must apply the following two questions,
+one deterministic selection rule, and two secondary dispositions in addition
+to the bullets above, not instead of them.
+
+Required forward-value questions:
+
+- counterfactual acceleration: if the idea had been available earlier, would
+  source-backed evidence show it avoided later CVF design, test, or review
+  work?
+- option value: is the evidence-backed cost of losing the idea materially
+  larger than the bounded cost of parking it?
+
+Deterministic selection (no discretionary sampling): review every `DEFERRED`
+semantic group; also review every `NO_NEW_VALUE` or `REJECTED` semantic group
+that either lacks a cited owner path or contains at least five ledger rows.
+Process stable semantic-group IDs in ascending order.
+
+Secondary dispositions, applied only to groups selected above:
+
+- `FORWARD_VALUE_PRESERVED` only when a current conditional-reopen index row
+  names an owner and a conjunctive evidence trigger for that group;
+- `NO_FORWARD_VALUE` only when an exact existing owner or a source-backed
+  reason proves no reusable CVF-native value remains.
+
+A secondary disposition does not replace the terminal ledger status recorded
+above, and it does not by itself grant maturity, authority, runtime, or
+implementation readiness. `FORWARD_VALUE_PRESERVED` keeps a candidate visible
+in the conditional reopen index only; it opens no gate, checker, package, or
+runtime work on its own.
+
+Examples:
+
+- positive - the MPA-AI-T0 eight-file utility-under-attack cluster is
+  `DEFERRED` and carries the conditional reopen index row
+  `MPA-AI-utility-under-attack-evaluation-precursor`
+  (`docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CONDITIONAL_REOPEN_INDEX.md`),
+  which names the EACQ-FV roadmap as the current owner route and makes
+  acceptance by a future named evaluation owner one part of a three-part
+  conjunctive reopen trigger for UAA-G1. Both forward-value questions have
+  source-backed answers, so the group receives `FORWARD_VALUE_PRESERVED`;
+  the group's terminal ledger status stays `DEFERRED`, and no UAA gate opens
+  from this disposition alone.
+- negative - the MPA-AI-T0 file ledger's nine-row
+  `TRACEABILITY_REFERENCE_NOT_COPY_OVERLAP` semantic group has terminal
+  status `NO_NEW_VALUE`; every row cites the exact owner
+  `docs/reference/truth_foundation/CVF_TRUTH_FOUNDATION_SOURCE_PROVENANCE_AND_VERIFICATION_CONTRACT.md`
+  and records no uncovered consumer or reusable delta. The group is selected
+  because it contains at least five ledger rows, receives `NO_FORWARD_VALUE`,
+  and remains outside the conditional reopen index. Evidence:
+  `docs/audits/CVF_MPA_AI_T0_LOCAL_MEMORY_POISONING_FILE_LEDGER_2026-08-27.json`.
 
 ## Machine Guard
 
@@ -292,6 +397,8 @@ Machine guards:
 `governance/compat/check_external_absorption_value_conversion.py`
 
 `governance/compat/check_external_absorption_overlap_discipline.py`
+
+`governance/compat/check_mixed_origin_derived_synthesis_absorption.py`
 
 The guard is forward-only and range-aware. It checks changed active governed
 Markdown artifacts that reference external absorption sources, external

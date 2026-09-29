@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1987,
+  "stateKey": "cvfWebUxT1PClosure20260719",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "batchId": "CVF-WEB-UX-T1P",
+    "materialCommit": "45d505836",
+    "completionReview": "docs/reviews/CVF_WEB_UX_T1P_COMPLETION_2026-07-19.md",
+    "disposition": "Visible hosted/current output drift accepted; exact hosted build identity and packaging mechanism remain insufficient evidence.",
+    "nextAllowedMove": "Author and dispatch CVF-WEB-UX-T2 for language and guided knowledge journey remediation.",
+    "parked": "T3-T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Read-only private diagnosis only; no hosted repair, deploy, public export, provider behavior, or production claim."
+  }
+}

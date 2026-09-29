@@ -1,0 +1,482 @@
+# CVF External Agent Findings — Independent Verification Report
+
+Memory class: NOT_CVF_SOURCE (provider-local verification aid)
+
+Status: VERIFICATION_COMPLETE_NO_REPAIR_PERFORMED
+
+docType: verification_report
+
+Date: 2026-08-25
+
+Verifier: independent local session (Claude Code), read-only
+
+Verification base HEAD: `7a4c9fd8fbaf4eb6dc0911f668fc4a2e9753d2ae`
+
+## 0. Purpose And Reading Instruction
+
+An external agent was given the public repository
+`https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git` plus the
+orientation packet at `D:\UNG DUNG AI\EXTERNAL_AGENT_READ`, and returned a
+findings-and-remediation prompt. This report independently verifies that
+agent's factual claims against **current live private repository state** and
+against the **cited external research**.
+
+This report performs **no repair**. It changes no source, no test, no
+governance surface. It is evidence for a reviewer/operator decision only.
+
+Every claim below is either backed by an exact file/line citation reproducible
+at the verification base HEAD, or is explicitly marked as unverified.
+
+Authority rule applied, per the external agent's own instruction:
+
+> Current canonical owner surface > generated snapshot > old packet > historical observation.
+
+## 1. Before State
+
+| Field | Value |
+| --- | --- |
+| Branch | `main` |
+| Local HEAD | `7a4c9fd8fbaf4eb6dc0911f668fc4a2e9753d2ae` |
+| Working tree | not clean; carries in-flight RFR-R7C tranche (see §7) |
+| Local remote (fetch) | `https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git` |
+| Local remote (push) | `DISABLED_PROVENANCE_ARCHIVE_DO_NOT_PUSH_FROM_THIS_WORKSPACE` |
+| External packet root | `D:\UNG DUNG AI\EXTERNAL_AGENT_READ` (7 files, present) |
+| Packet-pinned public commit | `9c01832930226f2f770eafa346e01279160f22cb` |
+| Packet public commit date | `2026-08-24T08:04:27+07:00` |
+| Packet protocol version | `1.1.0` |
+| Packet status | `REFRESHED_LIVE_PUBLIC_MAIN` |
+
+Note: this workspace is the **private provenance** repository. The external
+agent worked against the **public** repository. These are two different
+remotes. Any repair dispatched from this report must state which repository it
+targets.
+
+## 2. Verification Verdict Summary
+
+| ID | Claim under test | Verdict | Severity |
+| --- | --- | --- | --- |
+| V1 | Provider public-claim semantic drift exists | CONFIRMED | P0 |
+| V2 | Drift is worse than reported: model identity differs | CONFIRMED_WORSE | P0 |
+| V3 | `provenanceScore ?? 1` fail-open default in durable store | CONFIRMED | P1 |
+| V4 | Durable store is unwired / not a live production route | PARTIALLY_CONTRADICTED | see §5.3 |
+| V5 | GC-022 is a current canonical owner surface | DRIFT_CHANGED | advisory |
+| V6 | `rawMemoryReleased = false` holds in retrieval policy | CONFIRMED | — |
+| V7 | `auditTrust` is a ranking scalar worth auditing | CONFIRMED | P1 |
+| V8 | Retrieval is vulnerable to query-shaped content | CONFIRMED_NEW | P1 |
+| V9 | arXiv:2608.21230 exists; cited figures accurate | CONFIRMED | — |
+| V10 | `auditTrust` is caller-supplied over HTTP, type-checked only | CONFIRMED_NEW | P1 |
+
+No claim made by the external agent was found to be fabricated.
+
+## 3. V1 / V2 — Provider Public-Claim Semantic Drift
+
+### 3.1 Model-specific readiness owner (authoritative)
+
+Owner: `docs/reference/CVF_PROVIDER_LANE_READINESS_MATRIX.md`
+
+Verified rows at lines 46-48:
+
+| Line | Provider | Model | Status | Cited condition |
+| --- | --- | --- | --- | --- |
+| 46 | Alibaba | `qwen-flash` | `EXPERIMENTAL` | "Fresh T6 live proof pending"; historical Alibaba receipt "not transferable to the new model" |
+| 47 | DeepSeek | `deepseek-chat` | `CERTIFIED` | 3 consecutive PASS 6/6 |
+| 48 | OpenAI | `gpt-4o-mini` | `EXPERIMENTAL` | "current public certification remains held" |
+
+Lines 65-66 of the same owner restate: Alibaba `qwen-flash` is "the current
+target pending fresh live proof"; DeepSeek `deepseek-chat` is "the current
+unambiguous public `CERTIFIED` lane."
+
+### 3.2 Conflicting broad claims (drift)
+
+| Surface | Line | Verbatim claim |
+| --- | --- | --- |
+| `ARCHITECTURE.md` | 5 | "...certified Alibaba + DeepSeek provider lanes..." |
+| `ARCHITECTURE.md` | 162 | "Alibaba/DashScope is the primary certified release lane..." |
+| `README.md` | 111 | "Alibaba/DashScope is the primary certified release lane..." |
+
+These three statements are semantically inconsistent with the model-specific
+readiness owner, which marks the current Alibaba model `EXPERIMENTAL`. This
+reproduces the external agent's P0 finding. **CONFIRMED.**
+
+### 3.3 The drift is materially worse than reported — model identity mismatch
+
+The external agent framed the drift as "matrix says `qwen-flash` EXPERIMENTAL
+vs README says certified." Verification shows a second, sharper defect the
+agent did not report.
+
+Public snapshot packet
+`D:\UNG DUNG AI\EXTERNAL_AGENT_READ\CVF_CURRENT_PUBLIC_SNAPSHOT.md`, §5
+"Provider boundary", lines 99-101, states:
+
+```text
+- Alibaba `qwen-turbo`: `CERTIFIED` public lane;
+- DeepSeek `deepseek-chat`: `CERTIFIED` public lane;
+- OpenAI: model-specific historical canary evidence but `EXPERIMENTAL` under
+  the reviewed public boundary.
+```
+
+The certified model named publicly is **`qwen-turbo`**. The model named by the
+current private readiness owner is **`qwen-flash`**.
+
+Corroborating surface: a governed deprecation tranche for the publicly
+certified model already exists in this repository —
+`docs/work_orders/CVF_AGENT_WORK_ORDER_QWEN_TURBO_DEPRECATION_MIGRATION_2026-08-15.md`
+and `docs/reviews/CVF_QWEN_TURBO_DEPRECATION_MIGRATION_WORKER_RETURN_2026-08-15.md`.
+
+Therefore the public surface asserts `CERTIFIED` for a **deprecated** model
+lane, while the **current** lane carries no fresh live proof. This is not only
+a wording inconsistency; it is a certification statement attached to the wrong
+model identity.
+
+**Verdict: CONFIRMED_WORSE.** Any repair must correct model identity, not just
+the adjective "certified."
+
+### 3.4 Explicit non-claim
+
+This report does **not** claim `qwen-flash` should be certified, nor that
+historical `qwen-turbo` evidence transfers. The readiness owner already forbids
+that transfer (line 46). Repair must preserve historical proof separately from
+current certification.
+
+## 4. V5 — GC-022 Ownership Status
+
+The external agent listed "GC-022 / Memory Governance" as a current owner
+surface to read and align.
+
+Verified: the only GC-022 artifacts present are
+
+- `docs/baselines/archive/CVF_GC022_MEMORY_GOVERNANCE_ADOPTION_DELTA_2026-03-22.md`
+- `docs/baselines/archive/CVF_GC021_GC022_ROLE_CLARIFICATION_DELTA_2026-03-22.md`
+
+Both are under `docs/baselines/archive/`. Per `CLAUDE.md` and the session
+startup contract, archived surfaces are not current authority.
+
+**Verdict: DRIFT_CHANGED.** The memory-language alignment objective may still
+be valid, but GC-022 is the wrong owner to edit. A repair packet must first
+resolve the *current* memory-governance owner. Editing an archived baseline
+would create a false authority trail.
+
+## 5. V3 / V4 — Durable Memory Store Provenance Default
+
+### 5.1 The defect
+
+Owner: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/durable-memory-store.ts`
+
+| Line | Verified code | Meaning |
+| --- | --- | --- |
+| 60 | `provenanceScore?: number;` | write input field is optional |
+| 98 | `const MIN_PROVENANCE_SCORE = 0.7;` | rejection threshold |
+| 249 | `const provenanceScore = input.provenanceScore ?? 1;` | **absent provenance becomes 1.0** |
+| 262 | `: provenanceScore < MIN_PROVENANCE_SCORE ? "low_provenance_score" : undefined` | rejects only *below* threshold |
+| 287 | `provenanceScore,` | defaulted value is persisted into the record |
+
+Composed behavior: a write that supplies **no provenance metadata at all**
+receives the **maximum** provenance value, passes the threshold check, and is
+persisted as if it were maximally attested. Omission is rewarded, not
+penalized.
+
+**Verdict: CONFIRMED.** This is a fail-open epistemic default.
+
+### 5.2 Existing counter-evidence (fairness to current implementation)
+
+An adjacent owner already implements the *correct* discipline, which shows the
+pattern is achievable in-repo without inventing new concepts:
+
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-python-receipt-bridge.test.ts:141`
+  — `it("fails closed when provenanceScore is missing (undefined)", ...)`
+- same file line 153 — fails closed on non-finite `provenanceScore`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/mineru-memory-rag-route-release.test.ts:185`
+  — fails closed when the score is not a finite number
+
+So the repository contains **both** a fail-closed provenance contract (MinerU
+bridge/route owners) and a fail-open one (durable store). The defect is an
+inconsistency between sibling owners, which strengthens the case for repair and
+identifies a reusable in-repo precedent.
+
+### 5.3 Correction to the external agent's risk framing
+
+The external agent asserted the durable store is `CONTRACT_ONLY` / unwired and
+instructed that this must not be reported as an exploited production
+vulnerability.
+
+Verified: the string `CONTRACT_ONLY` does **not** appear in
+`durable-memory-store.ts`. The module is imported by non-test sources:
+
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/index.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/web-runtime.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/mineru-durable-store-invocation.ts`
+- `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-durable-readiness.ts`
+- and further `mineru-*` chain sources
+
+**Verdict: PARTIALLY_CONTRADICTED.** The "unwired" premise was not verified by
+this report and appears to be inherited from the packet snapshot rather than
+from current source. This does **not** establish an exploited production
+vulnerability either — no live route, deployment, or external caller was traced
+in this read-only pass. What it does establish is that the agent's stated
+mitigating premise is **unproven at current HEAD**, so the defect should not be
+downgraded on the strength of that premise alone.
+
+Required next step before any severity downgrade: trace whether
+`web-runtime.ts` or the MinerU invocation chain reaches a live write path.
+
+## 6. V6 / V7 / V8 — Memory Retrieval Policy
+
+Owner: `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts`
+
+### 6.1 V6 — reinjection boundary holds
+
+Verified: the policy return object sets `rawMemoryReleased: false` (end of
+`applyMemoryRetrievalPolicy`). The external agent's statement that the current
+path does not release raw memory is **CONFIRMED**. No active provider-context
+poisoning path is claimed by this report.
+
+### 6.2 V7 — `auditTrust` is a live ranking scalar
+
+Verified:
+
+| Line | Code | Meaning |
+| --- | --- | --- |
+| 23 | `auditTrust: number;` | candidate field |
+| 246 | `return b.auditTrust - a.auditTrust \|\| b.createdAt - a.createdAt;` | ranks candidates by the scalar under `method === "audit_trust"` |
+
+Provenance of the scalar's value is **not uniform**:
+
+| Line | Source of value |
+| --- | --- |
+| 77 | `graphConfidenceToAuditTrust(node.confidence)` — derived from graph node confidence |
+| 92 | `node.confidence` — KGR node confidence passed through directly |
+
+`EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-attribution.ts:26-28`
+then converts the same scalar into human-facing labels `high_trust` (>= 0.9)
+and `medium_trust` (>= 0.75).
+
+Observation: a value that originates as a **model/extraction confidence** is
+consumed as a **trust** signal and surfaced with **trust** vocabulary. That is
+the exact conflation the external agent flagged in its §17, and it is the
+conflation arXiv:2608.21230 measures as ineffective (see §8). **CONFIRMED** as
+worth a bounded audit. This report does not claim the scalar is unsafe; it
+claims its semantics are overloaded and undocumented at the ranking seam.
+
+### 6.3 V8 — new finding not reported by the external agent
+
+Verified at lines 98-104:
+
+```ts
+function matchesQuery(candidate: MemoryRetrievalCandidate, query: string): boolean {
+  const normalized = query.trim().toLowerCase();
+  if (normalized.length === 0) {
+    return true;
+  }
+  return `${candidate.summary} ${candidate.content ?? ""}`.toLowerCase().includes(normalized);
+}
+```
+
+Relevance is decided by a **substring match against attacker-controllable
+stored text** (`summary` + `content`). A memory record crafted to contain the
+expected query string is therefore maximally "relevant" by construction.
+
+Combined with §6.2, the composed retrieval behavior is: *content the record
+itself carries* decides relevance, and *a confidence number the record itself
+carries* decides rank. Neither input is independently grounded.
+
+This is precisely the "query-shaped false memory" fixture the external agent
+listed as a required test case in its §18 — but the agent did not report that
+the current implementation already exhibits the enabling mechanism.
+
+**Verdict: CONFIRMED_NEW (P1).** Recommend this be added to any repair or
+evaluation packet.
+
+Explicit non-claim: no exploit was executed, no live retrieval path was
+invoked, and `rawMemoryReleased = false` still bounds downstream impact.
+
+### 6.4 V7 addendum — `auditTrust` crosses a package boundary as caller-supplied input
+
+Added after a delayed search completed; not present in the first issue of this
+report.
+
+`auditTrust` is not confined to the Learning Plane package. It appears in the
+web platform HTTP surface:
+
+`EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts`
+
+| Line | Verified fact |
+| --- | --- |
+| 19-28 | `candidates[]` is part of the **HTTP request body** type; each candidate carries `auditTrust: number` |
+| 25 | `auditTrust: number;` declared as a caller-provided field |
+| 90 | validation is `typeof cand.auditTrust !== 'number'` — **type check only**, no range or provenance check |
+| 99 | value is passed through unchanged into the candidate object |
+
+Composed consequence: for this route, the trust scalar used for ranking is
+**supplied by the caller in the request body**, not derived by the server from
+graph/KGR confidence as in `memory-retrieval-policy.ts:77,92`. A caller may
+submit `auditTrust: 1` for any candidate, and only its numeric type is checked.
+
+This is the same defect class the RFR-R7A reviewer rejected as
+**self-attestation** (R7A-F2): a caller declaring its own authority evidence.
+
+### 6.5 Mitigating control — the route is authenticated
+
+Verified at lines 135-163 of the same file: the `POST` handler requires either
+a valid session cookie (`verifySessionCookie`) or a signed service token
+(`verifyServiceTokenRequest` with `x-cvf-service-token`,
+`x-cvf-service-signature`, `x-cvf-service-timestamp`), and returns `401`
+otherwise.
+
+Therefore this is **not** an unauthenticated public poisoning endpoint. The
+correct characterization is narrower:
+
+> An **authenticated** caller can supply an arbitrary in-range trust scalar that
+> is used for ranking, with no server-side derivation or bound.
+
+Severity assessment: P1, not P0. Authentication bounds *who* can do this; it
+does not restore the epistemic property, because an authenticated caller is
+still not an authority on the trustworthiness of the record it submits.
+
+**Verdict: CONFIRMED_NEW.** This materially strengthens the case for narrowing
+the scalar's semantics and answers, negatively, the open question of whether
+`auditTrust` is package-internal.
+
+## 7. In-Flight Work Conflict
+
+The working tree at verification time is **not clean**. It carries the
+uncommitted RFR-R7C tranche:
+
+```text
+ M CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json
+ M CVF_SESSION/ACTIVE_SESSION_STATE.json
+ M CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json
+ M EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/src/tools/model-gateway-composition-proof.test.ts
+ M docs/roadmaps/CVF_RUNTIME_FINDINGS_CLOSURE_ROADMAP_2026-08-24.md
+ M docs/work_orders/CVF_AGENT_WORK_ORDER_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_2026-08-25.md
+?? docs/reviews/CVF_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_COMPLETION_2026-08-25.md
+?? docs/reviews/CVF_RFR_R7C_TRUTHFUL_ROLE_COMPOSITION_PROOF_WORKER_RETURN_2026-08-25.md
+```
+
+Any repair dispatched from this report must not be interleaved with that
+tranche. Isolate the work.
+
+## 8. External Research Verification — arXiv:2608.21230
+
+Retrieved live from `https://arxiv.org/abs/2608.21230`.
+
+| Field | Verified value |
+| --- | --- |
+| Title | *Utility Under Attack: Agent Memory Poisoning and the Limits of Content Screening and Provenance Ranking* |
+| Author | Arulnidhi Karunanidhi |
+| Submitted | 2026-08-21 |
+
+Cited-figure reconciliation against the external agent's report:
+
+| Figure as reported by the agent | Source text | Verdict |
+| --- | --- | --- |
+| poison 1.2% → accuracy 0.850 to 0.300 | "Poisoning 1.2% of a LongMemEval corpus reduces accuracy from 0.850 to 0.300" | ACCURATE |
+| 0 of 360 poison records rejected | "rejects 0 of 360 poisoned memories" | ACCURATE |
+| four-stage write-time screening | "four-stage write-time screening" | ACCURATE |
+| corpus = LongMemEval | LongMemEval | ACCURATE |
+| default provenance weighting ≈ no defense | "statistically indistinguishable from no defense (p=0.80)" | ACCURATE |
+| aggressive weighting suppresses legitimate untrusted evidence | "settings strong enough to resist poisoning simultaneously suppress legitimate untrusted evidence" | ACCURATE |
+| authors propose bounded occupancy | "proposes bounded occupancy constraints at retrieval" | ACCURATE |
+
+Additional figures present in the source that the agent did **not** cite, and
+which strengthen its own argument:
+
+- the screening pipeline achieved **0.832 recall on indirect prompt injection**
+  while rejecting **0 of 360** plain poisoned memories — i.e. prompt-injection
+  screening and poisoning defense are empirically distinct problems;
+- when answer-bearing evidence itself arrived untrusted, accuracy fell to
+  **0.0417 with zero evidence recall** — the strongest available evidence for
+  the concern raised in §6.2 about trust-scalar suppression of valid evidence.
+
+**Verdict: CONFIRMED.** No figure was fabricated or inflated. The agent's
+citation discipline was, if anything, more conservative than the source.
+
+### 8.1 Claim discipline retained
+
+Per the external agent's own §16 and §19, and retained here: these are
+benchmark results from one tested setup on one corpus. They do **not**
+establish that CVF is vulnerable at the same rate, and bounded occupancy is
+**not** a proven CVF defense. Nothing in this report claims otherwise.
+
+## 9. Absorption Map (Advisory Only)
+
+Classification of the paper's lessons against verified CVF state. No
+implementation is authorized by this report.
+
+| Paper lesson | CVF disposition | Basis |
+| --- | --- | --- |
+| Content screening cannot detect plain false assertions | ALREADY_COVERED in doctrine | Truth Foundation "Integrity ≠ Truth" principle already stated |
+| Provenance presence ≠ truth | ALREADY_COVERED in doctrine | same |
+| Missing provenance must not imply trust | ADAPT_EXISTING_OWNER | §5.1 defect; §5.2 in-repo fail-closed precedent exists |
+| Trust scalars can suppress valid evidence | ADAPT_EXISTING_OWNER | §6.2 `auditTrust` overload |
+| Retrieval relevance can be attacker-shaped | ADAPT_EXISTING_OWNER | §6.3 `matchesQuery` substring match |
+| Bounded occupancy as defense | EXPERIMENT_ONLY | unproven for CVF; agent's §16 correctly gates it |
+| Duplicate sources ≠ independent corroboration | NEEDS_OWNER_TRACE | not verified in this pass |
+| Action-time revalidation | NEEDS_OWNER_TRACE | not verified in this pass |
+
+## 10. Changes Not Made
+
+No file was modified by this verification. Specifically **not** done, and why:
+
+| Candidate repair | Why not performed here |
+| --- | --- |
+| Fix `ARCHITECTURE.md` / `README.md` provider wording | requires governed baseline + work order + independent reviewer; also must resolve public-vs-private repository target first |
+| Fix `provenanceScore ?? 1` | runtime behavior change; requires bounded work order and adversarial tests before activation |
+| Align memory truth-language | current owner unresolved (§4); GC-022 is archived |
+| Narrow `auditTrust` semantics | requires owner decision on what the scalar means; premature to edit |
+| Add poisoning evaluation lane | requires existing evaluation owner identification; must not create a new Evaluation Plane |
+| Any commit or push | this workspace's push remote is disabled by policy; public sync requires separate authorization |
+
+## 11. Recommended Bounded Tranches
+
+Ordering follows dependency, not severity alone.
+
+**Tranche A — public claim reconciliation (P0).**
+Resolve target repository first. Correct model identity (`qwen-turbo` vs
+`qwen-flash`) and the "primary certified release lane" wording in
+`ARCHITECTURE.md:5`, `ARCHITECTURE.md:162`, `README.md:111`, and the public
+snapshot generator that produced `CVF_CURRENT_PUBLIC_SNAPSHOT.md:99`. Repair
+the generator/source, not only the derived packet. Preserve historical receipts
+as history, never as current certification.
+
+**Tranche B — owner resolution (blocking for C).**
+Identify the current memory-governance owner replacing archived GC-022.
+Determine whether the durable store is reachable from a live route
+(`web-runtime.ts`, MinerU chain). Both are read-only investigations.
+
+**Tranche C — activation-readiness hardening (P1).**
+`provenanceScore` fail-closed default, mirroring the existing MinerU
+fail-closed precedent; `auditTrust` semantic narrowing; `matchesQuery`
+relevance hardening. Requires adversarial tests including omitted provenance
+and query-shaped records.
+
+**Tranche D — evaluation (P2).**
+Bounded poisoning fixtures under an existing evaluation owner. Must measure
+retained utility on benign untrusted evidence, not only poison suppression.
+
+## 12. Remaining Risks (Verified Only)
+
+| Rank | Risk | Status |
+| --- | --- | --- |
+| 1 | Public surface certifies a deprecated model lane while the current lane lacks fresh proof | verified; unrepaired |
+| 2 | Absent provenance is persisted as maximum provenance | verified; unrepaired |
+| 3 | Retrieval relevance and rank are both decided by record-carried data | verified; unrepaired |
+| 4 | `auditTrust` accepted from an authenticated caller with type-check only, then used for ranking | verified; unrepaired |
+| 5 | Durable-store reachability unknown; "unwired" premise unproven | superseded — see proposal §1.1 |
+| 6 | Current memory-governance owner unidentified | resolved — see proposal §1.2 |
+
+## 13. Claim Boundary
+
+Proven by this report: the file/line facts cited in §3, §4, §5.1, §5.2, §6, §7,
+and the external-research figures in §8, all reproducible at HEAD
+`7a4c9fd8fbaf4eb6dc0911f668fc4a2e9753d2ae`.
+
+Contract-defined only, not proven: every remediation design in §11.
+
+Explicitly **not** claimed: no exploited production vulnerability; no live
+route trace; no runtime, provider, live-proof, deployment, public-sync or
+production-readiness claim; no assertion that CVF prevents, solves, or
+guarantees defense against memory poisoning; no claim that SOT3 is globally
+active; no acceptance, closure, or roadmap transition.
+
+This report is `NOT_CVF_SOURCE`. It is verification evidence for operator and
+reviewer decision. It confers no implementation authority.

@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1657,
+  "stateKey": "mseaR96DoctrineRouteGapReconciliationDispatch20260711",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-11",
+    "dispatchCommit": "54666a41d",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R96_DOCTRINE_ROUTE_GAP_RECONCILIATION_2026-07-11.md",
+    "workerCommitPolicy": "WORKER_MUST_NOT_COMMIT",
+    "scope": ["L1", "L2", "L4", "L6"],
+    "preDispatch": "74/74 PASS",
+    "preCommit": "81/81 PASS",
+    "nextAllowedMove": "execute only the R96 no-commit worker order",
+    "claimBoundary": "four-layer source decision only; no legacy promotion, doctrine/runtime mutation, public-sync, or MAO work"
+  }
+}

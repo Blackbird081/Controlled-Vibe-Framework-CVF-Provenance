@@ -1,0 +1,26 @@
+{
+  "stateOrder": 2660,
+  "stateKey": "gclhT1IntegratedCoreControlDesignAccepted20260901",
+  "value": {
+    "status": "DESIGN_ACCEPTED_BOUNDED",
+    "mode": "SINGLE_AGENT_MULTI_ROLE",
+    "independentMultiAgentReviewClaimed": "NO",
+    "design": "docs/assessments/CVF_GCLH_T1_INTEGRATED_CORE_CONTROL_DESIGN_2026-09-01.md",
+    "designSha256": "5b305c2e41fc6abfb33bc4471893b9b990a9e91dacf589721290b76776c5b741",
+    "review": "docs/reviews/CVF_GCLH_T1_INTEGRATED_CORE_CONTROL_DESIGN_REVIEW_2026-09-01.md",
+    "reviewSha256": "86750f0e3150e60ddb2d6444f574f4144d995a515afe812a940197637a39e0b8",
+    "roadmap": "docs/roadmaps/CVF_GCLH_GOVERNANCE_CONTROL_LOSS_HARDENING_ROADMAP_2026-08-31.md",
+    "roadmapSha256": "818d82147f5650227023b0066c44063dd6437cbc6b25140e0677c5d2db7dfac7",
+    "materialCommit": "2dfc771ed47ccbfd83a00d550ef4e2a3d0096ed2",
+    "reviewValidityRule": "Evidence reconstruction and reconciliation control validity; role switching is allowed and actor count is not a validity condition.",
+    "acceptedContracts": [
+      "phase-transition capability and semantic readiness evidence",
+      "immutable parent-constraint projection",
+      "canonical exact-hash byte-domain receipt",
+      "downstream control-projection freshness receipt",
+      "SCEC and Review Cost incident-replay composition"
+    ],
+    "nextAllowedMove": "Author and review a protected-path GCLH-T2 work order; implementation remains unopened.",
+    "claimBoundary": "Design acceptance only; no standard/template/checker/schema/runtime/downstream/provider/live/public/deploy mutation."
+  }
+}

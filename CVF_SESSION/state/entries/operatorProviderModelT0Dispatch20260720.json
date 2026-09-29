@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2015,
+  "stateKey": "operatorProviderModelT0Dispatch20260720",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY_WITH_REPAIRS",
+    "batchId": "OPM-AIR-T0",
+    "dispatchCommit": "d3ec1e79b",
+    "dispatchBaseHead": "683543e49",
+    "worker": "Claude",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "outputs": "source-map ledger; usage-measurement baseline; worker return",
+    "reviewerRepairs": "missing control blocks; JSONL NOT_CVF_SOURCE boundary; clean execution-base contract; exact completion review; caller-timeout child-survival diagnostic",
+    "packetGates": "dispatch-fast 5/5 PASS; pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Claude executes exactly three outputs and returns no-commit for Codex review.",
+    "parked": "T1-T5, credentials, provider calls, live proof, public-sync, push, deployment, and production action."
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2966,
+  "stateKey": "cvfNcrR1S10P9DispatchRelease20260928",
+  "value": "DISPATCH_READY. The operator released exactly one Alibaba/DashScope provider call using qwen3.7-flash-2026-07-15 with no automatic retry. Local converted the paired S10/P9 packet, bound delegation CVF-NCR-R1-S10-P9-ONE-CALL-20260928, and admitted exactly one INTERNAL_AGENT worker with two output paths and no commit authority. Dry readiness does not prove P9; a failed, partial, timed-out or ambiguous live attempt consumes the grant. P10, external adapter, additional calls, public sync, deployment and production remain parked."
+}

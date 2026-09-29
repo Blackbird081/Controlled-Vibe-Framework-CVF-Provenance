@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2937,
+  "stateKey": "acelPostG7FullCorpusAbsorptionClosure20260924",
+  "value": "ACEL post-G7 full-corpus external research absorption is CLOSED_LOCAL at material commit c5bec0ff04267271226280e377b4748a8cf276ff on 2026-09-24. Canonical Local closure: docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md. The hash-bound Local decision F22B52FE3E7C6BF1817886F8A8E2FB3F4E9024102CDE42806986EDA9532DCB38 and external closure return C9914F10CA5B9DC719C92219FBBFD606F4237D4B3B4902A2BB032F43812009A2 were reconciled with EXTERNAL_RETURN_DISPOSITION=ACCEPT_CONTENT_AFTER_LOCAL_NORMALIZATION and ABSORPTION_VERDICT=ABSORB_WITH_MAPPING_CORRECTIONS. External self-canonicalization was rejected; WikiSkill provenance, Jev V2, Unreal/MAO, current G3 and EP owner mappings were normalized. G1 remains stopped, G2-G6 remain parked and G7 remains G7_RESEARCH_CLOSED / ADAPT_EXISTING_HANDOFF_ONLY. No new pattern, structural capability-model change, CVF component, Local audit, implementation, provider/live call, public export or automatic successor is authorized."
+}

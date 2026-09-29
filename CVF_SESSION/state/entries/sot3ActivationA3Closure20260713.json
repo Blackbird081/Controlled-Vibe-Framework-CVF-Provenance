@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1736,
+  "stateKey": "sot3ActivationA3Closure20260713",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "4d9263c7d",
+    "claim": "REAL_PROVIDER_APPROVED_CONTEXT_PROVEN_BOUNDED",
+    "provider": "alibaba",
+    "model": "qwen-turbo",
+    "recoveryHttpStatus": 200,
+    "recoveryObservedCallCount": 1,
+    "approvedContextIncluded": true,
+    "traceCount": 1,
+    "completionReview": "docs/reviews/CVF_SOT3_ACT_A3_REAL_PROVIDER_APPROVED_CONTEXT_PROOF_COMPLETION_2026-07-13.md",
+    "nextTranche": "A4_PACKET_AUTHORING",
+    "claimBoundary": "A4 failure/recovery, A5 release proof, and LIVE_GOVERNANCE_PROVEN_BOUNDED remain open."
+  }
+}

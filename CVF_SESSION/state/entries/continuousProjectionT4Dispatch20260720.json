@@ -1,0 +1,30 @@
+{
+  "stateOrder": 2020,
+  "stateKey": "continuousProjectionT4Dispatch20260720",
+  "value": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "date": "2026-07-21",
+    "materialCommit": "5885cf32f",
+    "priorDispatchCommit": "248d799f3",
+    "priorBlockedExecutionBaseHead": "8824cb8c7",
+    "priorBlockedDisposition": "ACCEPTED_BLOCKED_RETURN",
+    "priorRealRootScanInvocationCount": 1,
+    "priorBlockedDiagnosticCode": "START_PROCESS_ARGUMENT_SPLIT_BEFORE_TARGET_SCRIPT",
+    "r1FixtureEvidence": "53/53; 91/91; 144/144",
+    "r2ReceiptMode": "STDOUT_ONLY_NO_RECEIPT_OUTPUT_PATH_INTERRUPTED_BY_PARENT_HARNESS",
+    "r3ExecutionEnvelope": "ONE_HIDDEN_LOCAL_PROCESS_ONE_PERSISTED_PID_SHORT_MANUAL_POLLS_NO_RELAUNCH",
+    "r3FinalDisposition": "ONE_PID_EXITED_BEFORE_FIRST_POLL_TARGET_SCRIPT_NOT_EXECUTED_NO_R4",
+    "completionReview": "docs/reviews/CVF_CONTINUOUS_PROJECTION_T4_COMPLETION_REVIEW_2026-07-20.md",
+    "adifLearning": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0045.md",
+    "revision": "R3",
+    "dependencyCommit": "e21199dfa",
+    "baseline": "docs/baselines/CVF_GC018_CONTINUOUS_PROJECTION_T4_BOUNDED_PILOT_AND_CLOSURE_2026-07-20.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T4_BOUNDED_PILOT_AND_CLOSURE_2026-07-20.md",
+    "handoffMode": "MANUAL_COPY_PASTE_ONLY",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "realRootScanCeiling": 1,
+    "allowedOutputCount": 4,
+    "cliMcpProviderCallCeiling": 0,
+    "claimBoundary": "T1-T3 remain accepted. T4 and the roadmap are CLOSED_BLOCKED_BOUNDED because R3 argument splitting prevented the target script from executing. No R4, agent CLI/MCP, provider/API/account use, retry or relaunch, browser, network service, mutation, public-sync, push, deployment, production, or unattended execution is authorized."
+  }
+}

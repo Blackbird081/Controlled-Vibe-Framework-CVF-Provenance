@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2247,
+  "stateKey": "rspbAiT4IndependentReviewRejectedRepairRequired20260816",
+  "value": "RSPB-AI-T4 material commit b571cd4b3 is not independently ratified. Independent review recorded REVIEW_REJECTED_REPAIR_REQUIRED: HIGH zero-threshold ambiguity bypass, MEDIUM unresolved single-candidate high-risk behavior, and inaccurate prior closure-role evidence. Local-synthesis-first governance learning is independently accepted and committed separately at 7f948cbaa. T4 requires bounded repair, adversarial tests, and another independent review before any next absorption cluster."
+}

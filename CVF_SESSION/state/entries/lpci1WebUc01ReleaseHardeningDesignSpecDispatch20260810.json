@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2121,
+  "stateKey": "lpci1WebUc01ReleaseHardeningDesignSpecDispatch20260810",
+  "value": "DISPATCH_READY at material commit 9c3308bf8. Operator approval of the immediately preceding canonical token AUTHORIZE_LPCI1_WEB_UC01_RELEASE_HARDENING_DESIGN_SPEC_ONLY releases one no-commit documentation worker for exactly the design audit, normative spec, and worker return. Pre-dispatch passed on the real range from f391ec180. Primary retains independent review, closure, commit, and session-sync ownership. No BUILD, runtime/test/config/UI mutation, secret/private access, browser/server/provider/network/live action, hosted execution, deployment, rollback execution, public-sync, push, production, or readiness authority."
+}

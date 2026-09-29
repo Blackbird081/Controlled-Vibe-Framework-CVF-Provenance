@@ -1,0 +1,45 @@
+MFRP P3 REJECTED EVIDENCE ARCHIVE
+
+Status: `REJECTED_EVIDENCE_NOT_ACTIVE_AUTHORITY`
+
+Disposition: `RETURN_TO_DESIGN`
+
+This directory preserves the exact bytes returned by the rejected P3 worker
+execution. The `.rejected` suffix is intentional: these files are evidence,
+not active Python modules, tests, fixtures, ledgers, worker returns, or CVF
+authority. They MUST NOT be imported, executed, consumed as a current oracle,
+or cited as proof that P3 passed.
+
+The controlling review is
+`docs/reviews/CVF_MFRP_P3_INDEPENDENT_REVIEW_RETURN_TO_DESIGN_2026-09-01.md`.
+The replacement design is
+`docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md`.
+
+## Preserved Evidence Manifest
+
+| Original path | Archived filename | SHA-256 |
+|---|---|---|
+| `governance/compat/fixtures/mfrp_p3_historical_replay.json` | `governance_compat_fixtures_mfrp_p3_historical_replay.json.rejected` | `5b27701520f843ffcdbf4a05f7c1f9b9a76530f78b04c2f1ac6f79768d17dd5e` |
+| `governance/compat/mfrp_historical_replay.py` | `governance_compat_mfrp_historical_replay.py.rejected` | `497840c0d5c71c42fe05bca9d9e411d71ed8b8f9e609882628c25d5c513c84d6` |
+| `governance/compat/test_mfrp_historical_replay.py` | `governance_compat_test_mfrp_historical_replay.py.rejected` | `973a1b9f46f46f27d1e8cade660a0098f49b86ef4bf3d42de7aa78c5fa7265e7` |
+| `docs/reviews/CVF_MFRP_P3_FROZEN_DEFECT_AND_FALSE_NEGATIVE_LEDGER_2026-09-01.md` | `CVF_MFRP_P3_FROZEN_DEFECT_AND_FALSE_NEGATIVE_LEDGER_2026-09-01.md.rejected` | `51e56e080392bb4b396127ff72cb9d9e67ad4dcfe2c157caddcdc6cc35b3d935` |
+| `docs/reviews/CVF_MFRP_P3_HISTORICAL_REPLAY_WORKER_RETURN_2026-09-01.md` | `CVF_MFRP_P3_HISTORICAL_REPLAY_WORKER_RETURN_2026-09-01.md.rejected` | `a985f879d0239bf2d90844d38d87eb445673a3c95940efb3e20c79ef9aaf4347` |
+
+## Rejection Basis
+
+The returned helper compared fixture-authored expectations to an allowlist
+instead of invoking the actual P2 verification seams. It could emit a pass
+candidate for a hostile, source-unbound, zero-safety-coverage fixture and did
+not enforce the committed freeze digest, source locators, mutation coverage,
+or full ledger coverage at runtime. The ledger was also edited after its
+declared freeze boundary. These are control failures, not cosmetic defects.
+
+## Authority And Claim Boundary
+
+Archiving proves only preservation and removal from active/importable paths.
+It does not ratify the rejected oracle, accept P3, implement P3-R1, repair P2,
+open P4, or authorize any external effect.
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY

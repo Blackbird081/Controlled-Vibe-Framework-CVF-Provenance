@@ -2,7 +2,7 @@ import type { EnforcementResult } from '@/lib/enforcement';
 import type { LaneStatus } from '@/lib/provider-lane-status';
 import type { WorkflowCompositionSummary } from '@/lib/workflow-composition';
 import type { AifMemoryReinjectionReceipt, AifMemoryReinjectionRequest } from '@/lib/aif-memory-reinjection';
-import type { DurableMemoryReceipt } from 'cvf-learning-plane-foundation';
+import type { DurableMemoryReceipt } from 'cvf-learning-plane-foundation/web-runtime';
 import type { ExecutionDiagnostic } from '@/lib/execution-diagnostics';
 
 // AI Provider Types and Interfaces
@@ -29,6 +29,9 @@ export interface ExecutionRequest {
     mode?: 'simple' | 'governance' | 'full';
     cvfPhase?: string;
     cvfRiskLevel?: string;
+    /** Resolved governance family metadata; never a governance decision by itself. */
+    governanceFamily?: string;
+    qbsFamily?: string;
     skillPreflightPassed?: boolean;
     skillPreflightDeclaration?: string;
     skillPreflightRecordRef?: string;
@@ -138,6 +141,14 @@ export interface GovernanceEvidenceReceipt {
     routingDecision?: string;
     policySnapshotId?: string;
     envelopeId?: string;
+    /**
+     * CSCC-R1-T2 additive identity join field, always equal to this same
+     * receipt's `envelopeId` at construction time (both are the same
+     * underlying value under two field names during the transition window;
+     * see `docs/reference/CVF_CANONICAL_EXECUTION_IDENTITY_AND_RECEIPT_JOIN_CONTRACT_2026-09-03.md`).
+     * `envelopeId` is retained unchanged; no existing consumer is broken.
+     */
+    canonicalExecutionId?: string;
     knowledgeSource?: string;
     knowledgeInjected?: boolean;
     knowledgeCollectionId?: string | null;
@@ -151,8 +162,22 @@ export interface GovernanceEvidenceReceipt {
     workflowComposition?: WorkflowCompositionSummary;
     governanceTrace?: GovernanceTraceEntry[];
     runtimeTelemetry?: RuntimeTelemetryReceipt;
+    providerAttemptReconciliation?: ProviderAttemptReconciliationReceipt;
     receiptIntegrity?: ReceiptIntegrityAnchor;
     generatedAt: string;
+}
+
+export interface ProviderAttemptReconciliationReceipt {
+    schemaVersion: 'cvf.providerAttemptReconciliation.v1';
+    inboundRequestCount: number;
+    providerCallCount: number;
+    retryCount: number;
+    admittedAttemptCount: number;
+    deniedAttemptCount: number;
+    provider: string;
+    model: string;
+    reconciles: boolean;
+    claimBoundary: 'summary_counts_only_no_secret_provider_payload_or_raw_body';
 }
 
 export interface ExecutionResponse {
@@ -192,7 +217,7 @@ export const DEFAULT_MODELS: Record<AIProvider, string> = {
     openai: 'gpt-4o-mini',
     claude: 'claude-sonnet-4-20250514',
     gemini: 'gemini-2.5-flash',
-    alibaba: 'qwen-turbo',
+    alibaba: 'qwen-flash',
     openrouter: 'meta-llama/llama-4-maverick',
     deepseek: 'deepseek-chat',
 };

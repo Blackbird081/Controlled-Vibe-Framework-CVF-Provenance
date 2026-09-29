@@ -1,0 +1,14 @@
+{
+  "stateOrder": 1841,
+  "stateKey": "fscbAdaptT0Dispatch20260715",
+  "value": {
+    "status": "DISPATCH_READY",
+    "roadmap": "docs/roadmaps/CVF_FOUR_SURFACE_CONTROL_BOUNDARY_ADAPTATION_ROADMAP_2026-07-15.md",
+    "baseline": "docs/baselines/CVF_GC018_FSCB_ADAPT_T0_SOURCE_LEDGER_AND_CROSSWALK_2026-07-15.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_FSCB_ADAPT_T0_SOURCE_LEDGER_AND_CROSSWALK_2026-07-15.md",
+    "dispatchCommit": "8fd769cec",
+    "preDispatch": "PASS",
+    "nextAllowedMove": "Execute the exact documentation-only three-output worker batch and return COMPLETE_PENDING_REVIEW without commit.",
+    "claimBoundary": "No retained-source, checker, runtime, test, build, live-provider, public-sync, package, Catalog, GAP, ADIF, or SOT-Application implementation is authorized."
+  }
+}

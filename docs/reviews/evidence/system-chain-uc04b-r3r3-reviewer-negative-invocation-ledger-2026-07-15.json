@@ -1,0 +1,41 @@
+{
+  "packetId": "SCLP-UC04B-R3R3",
+  "executionBaseHead": "9c04a8d67",
+  "commandFingerprint": "npx playwright test tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts --config playwright.config.ts --workers=1 --grep \"negative_reviewer_docs_check\"",
+  "canonicalOrigin": "http://localhost:3001",
+  "proofSourceHash": "6568f0463feaa0b2680365e89bcd31c49c4245648cd3de12d409ed37e713f0ec",
+  "invocationCeiling": 1,
+  "invocationsUsed": 1,
+  "invocationStarted": true,
+  "startTimestamp": "2026-07-15T07:05:30.000Z",
+  "selectedCase": "negative_reviewer_docs_check: reviewer is blocked from submitting docs_governance_check",
+  "positiveCaseExcluded": true,
+  "listPreflight": {
+    "totalTests": 1,
+    "positivePresent": false
+  },
+  "localPreflight": {
+    "focusedVitestResult": "PASS_34_OF_34",
+    "typecheckResult": "PASS",
+    "playwrightListResult": "PASS_ONE_NEGATIVE_CASE_ONLY"
+  },
+  "auditBaseline": {
+    "assumedLocalPathExisted": false,
+    "assumedLocalPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.cvf/runtime/web-governance-jobs.jsonl",
+    "authoritativeAuditPath": ".cvf/runtime/web-governance-jobs.jsonl",
+    "authoritativeBaselineStatus": "NOT_CAPTURED_WITH_REASON",
+    "baselineEventCount": null,
+    "note": "The pre-spawn check targeted a non-authoritative assumed local path. The authoritative repo-root file pre-existed; acceptance uses exact jobId isolation and event sequence, not a zero global baseline."
+  },
+  "endTimestamp": "2026-07-15T07:06:14.000Z",
+  "result": "PASS",
+  "playwrightCommandOutcome": "1 passed (25.7s)",
+  "observedHosts": ["http://localhost:3001"],
+  "webSubmissions": 1,
+  "checkerExecutions": 0,
+  "retries": 0,
+  "providerCalls": 0,
+  "diagnosticDisposition": "NOT_REQUIRED_CLEAN_PASS",
+  "headUnchanged": true,
+  "isolatedJobId": "f86d8265-6fa6-4487-86a4-5cbbe03b5b9f"
+}

@@ -1,0 +1,16 @@
+{
+  "a4LocalNegativeGatePassed": true,
+  "a4ReturnCode": 0,
+  "admissionFailures": [],
+  "batchId": "SOT3-ACT-A5",
+  "diagnostic": null,
+  "finishedAtUtc": "2026-08-15T04:29:11.720249+00:00",
+  "schemaVersion": "cvf.sot3ActA5Diagnostic.v1",
+  "secretSafety": {
+    "fullPromptPersisted": false,
+    "rawKeyPersisted": false,
+    "rawOutputPersisted": false,
+    "rawProviderBodyPersisted": false
+  },
+  "startedAtUtc": "2026-08-15T04:27:44.516370+00:00"
+}

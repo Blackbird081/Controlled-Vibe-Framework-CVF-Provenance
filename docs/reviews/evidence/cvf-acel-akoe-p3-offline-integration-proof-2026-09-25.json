@@ -1,0 +1,322 @@
+{
+  "artifactGraph": {
+    "assemblyVerifierMismatchResult": {
+      "ok": true,
+      "receipt": {
+        "batches": [
+          [
+            "work-a",
+            "work-b"
+          ],
+          [
+            "work-c",
+            "work-d"
+          ]
+        ],
+        "completionAuthority": "ARTIFACT_AND_ASSEMBLY_VERIFICATION",
+        "concurrencyCap": 2,
+        "declaredWorkItemIds": [
+          "work-a",
+          "work-b",
+          "work-c",
+          "work-d"
+        ],
+        "dispatchId": "akoe-p3-dispatch-verifier-mismatch-1",
+        "evaluatedAt": "2026-09-25T00:00:00.000Z",
+        "expectedArtifactCount": 4,
+        "issues": [
+          "ASSEMBLY_VERIFIER_MISMATCH"
+        ],
+        "notificationAuthority": "NON_AUTHORITATIVE",
+        "receiptHash": "c93bc69eafe0ee89cbea5ee23fc1f25b",
+        "scheduledWorkItemIds": [
+          "work-a",
+          "work-b",
+          "work-c",
+          "work-d"
+        ],
+        "schemaVersion": "cvf.mao-artifact-completion-scope.v1",
+        "scopePreserved": true,
+        "sourcePin": "acel-akoe-p3-offline-integration-proof-v1",
+        "status": "INCOMPLETE",
+        "verifiedArtifactCount": 3,
+        "workerNotificationCount": 0
+      }
+    },
+    "cappedSchedulingResult": {
+      "ok": true,
+      "receipt": {
+        "batches": [
+          [
+            "work-a",
+            "work-b"
+          ],
+          [
+            "work-c",
+            "work-d"
+          ]
+        ],
+        "completionAuthority": "ARTIFACT_AND_ASSEMBLY_VERIFICATION",
+        "concurrencyCap": 2,
+        "declaredWorkItemIds": [
+          "work-a",
+          "work-b",
+          "work-c",
+          "work-d"
+        ],
+        "dispatchId": "akoe-p3-dispatch-1",
+        "evaluatedAt": "2026-09-25T00:00:00.000Z",
+        "expectedArtifactCount": 4,
+        "issues": [],
+        "notificationAuthority": "NON_AUTHORITATIVE",
+        "receiptHash": "c9c18db7058d26632b172b460b90a161",
+        "scheduledWorkItemIds": [
+          "work-a",
+          "work-b",
+          "work-c",
+          "work-d"
+        ],
+        "schemaVersion": "cvf.mao-artifact-completion-scope.v1",
+        "scopePreserved": true,
+        "sourcePin": "acel-akoe-p3-offline-integration-proof-v1",
+        "status": "COMPLETE",
+        "verifiedArtifactCount": 4,
+        "workerNotificationCount": 4
+      }
+    },
+    "declaredWorkItemIds": [
+      "work-a",
+      "work-b",
+      "work-c",
+      "work-d"
+    ],
+    "missingArtifactResult": {
+      "ok": true,
+      "receipt": {
+        "batches": [
+          [
+            "work-a",
+            "work-b"
+          ],
+          [
+            "work-c",
+            "work-d"
+          ]
+        ],
+        "completionAuthority": "ARTIFACT_AND_ASSEMBLY_VERIFICATION",
+        "concurrencyCap": 2,
+        "declaredWorkItemIds": [
+          "work-a",
+          "work-b",
+          "work-c",
+          "work-d"
+        ],
+        "dispatchId": "akoe-p3-dispatch-missing-artifact-1",
+        "evaluatedAt": "2026-09-25T00:00:00.000Z",
+        "expectedArtifactCount": 4,
+        "issues": [
+          "MISSING_ARTIFACT"
+        ],
+        "notificationAuthority": "NON_AUTHORITATIVE",
+        "receiptHash": "9585024f7dd7956d1b5eed0a185b3c0d",
+        "scheduledWorkItemIds": [
+          "work-a",
+          "work-b",
+          "work-c",
+          "work-d"
+        ],
+        "schemaVersion": "cvf.mao-artifact-completion-scope.v1",
+        "scopePreserved": true,
+        "sourcePin": "acel-akoe-p3-offline-integration-proof-v1",
+        "status": "INCOMPLETE",
+        "verifiedArtifactCount": 3,
+        "workerNotificationCount": 4
+      }
+    }
+  },
+  "decisionContextHash": "740bac570f711dd70e1bf5e8bca7a3f9d16cc451f0b32f9be5527d7621642e54",
+  "execution": {
+    "appendOk": true,
+    "authorityHash": "cd474f47c0198cc0d4274966d4d2c1e5",
+    "createOk": true,
+    "duplicateAppendReason": "EVENT_REPLAY_REJECTED",
+    "duplicateAppendRejected": true,
+    "resumeIdentityMatchesCreate": true,
+    "resumeOk": true,
+    "taskGraphId": "97c451bbc541863186bdaad805386973"
+  },
+  "generatedAt": "2026-09-25T00:00:00.000Z",
+  "humanAcceptance": {
+    "accountableOwner": "LOCAL_REVIEWER_CLOSER",
+    "checkpointApplicable": true,
+    "checkpointKind": "PARTIAL_RESULT_ACCEPTANCE",
+    "decision": "PENDING_LOCAL_REVIEWER_DECISION",
+    "evidenceLocator": "docs/reviews/evidence/cvf-acel-akoe-p3-offline-integration-proof-2026-09-25.json",
+    "rejectionOpportunity": "AVAILABLE_BEFORE_ACCEPTANCE"
+  },
+  "judgment": {
+    "baselinePairAdmission": {
+      "admission": "ADMITTED_NO_PAIR_REQUIRED",
+      "claimBoundary": "pure structural admission check of a WITH/WITHOUT baseline pairing; does not grade either fixture and does not imply PASS_WITH_EVIDENCE"
+    },
+    "canAuthorizeProposal": false,
+    "fixtureSetAdmission": {
+      "admission": "ADMITTED",
+      "claimBoundary": "pure structural admission check of a fixture set's class composition; does not grade any individual fixture and does not imply PASS_WITH_EVIDENCE for any fixture in the set",
+      "negativeCount": 1,
+      "positiveCount": 1
+    },
+    "judgmentAuthority": "EVIDENCE_ONLY",
+    "noMatchEscapeResult": {
+      "claimBoundary": "pure offline grading of a supplied fixture/trace pair; never certifies, never executes a real skill/provider/agent, and never trusts a self-reported pass field; OFFLINE_SYNTHETIC, MOCK_REPLAY and LIVE_REFERENCE_ONLY capture modes are never live provider proof",
+      "defects": [],
+      "fixtureId": "akoe-p3-judgment-fixture-no-match-1",
+      "repeatsObserved": 1,
+      "repeatsRequired": 1,
+      "result": "PASS_WITH_EVIDENCE",
+      "sourceContentHash": "055b3dd5066de3601063a7d375d6f6f0edcfffaf3f92fab9b31a9ed97431b7e1"
+    },
+    "positiveMatchResult": {
+      "claimBoundary": "pure offline grading of a supplied fixture/trace pair; never certifies, never executes a real skill/provider/agent, and never trusts a self-reported pass field; OFFLINE_SYNTHETIC, MOCK_REPLAY and LIVE_REFERENCE_ONLY capture modes are never live provider proof",
+      "defects": [],
+      "fixtureId": "akoe-p3-judgment-fixture-1",
+      "repeatsObserved": 1,
+      "repeatsRequired": 1,
+      "result": "PASS_WITH_EVIDENCE",
+      "sourceContentHash": "055b3dd5066de3601063a7d375d6f6f0edcfffaf3f92fab9b31a9ed97431b7e1"
+    },
+    "selfApprovalAttemptResult": {
+      "claimBoundary": "pure offline grading of a supplied fixture/trace pair; never certifies, never executes a real skill/provider/agent, and never trusts a self-reported pass field; OFFLINE_SYNTHETIC, MOCK_REPLAY and LIVE_REFERENCE_ONLY capture modes are never live provider proof",
+      "defects": [
+        {
+          "defectClass": "INCOMPLETE_TRACE",
+          "detail": "missing required event(s): 7:planned|8:evaluate|9:evaluated"
+        },
+        {
+          "defectClass": "UNDECLARED_TOOL_USE",
+          "detail": "trace used transition(s) outside the fixture's allowed-transition table: planned -undeclared-self-approve-> evaluated"
+        }
+      ],
+      "fixtureId": "akoe-p3-judgment-fixture-1",
+      "repeatsObserved": 0,
+      "repeatsRequired": 1,
+      "result": "UNDECLARED_TOOL_USE",
+      "sourceContentHash": "055b3dd5066de3601063a7d375d6f6f0edcfffaf3f92fab9b31a9ed97431b7e1"
+    }
+  },
+  "projection": {
+    "freshFreshnessClass": "CURRENT",
+    "freshReadModelOnly": true,
+    "staleCannotOverrideExecution": true,
+    "staleFreshnessClass": "STALE",
+    "unbackedGuardOk": false,
+    "unbackedGuardReason": "UNBACKED_GUARD_PASS"
+  },
+  "proposal": {
+    "acceptedCandidateResult": {
+      "ok": true,
+      "receipt": {
+        "activeSkillHash": "ad3f3b36968cb2eb3338f961c167955027c64cd36e5dab57d5cee2613c938ed0",
+        "candidateScore": 0.9,
+        "candidateSkillHash": "c5d0b59b1ef50d52008bdabac086df4a1cc424931d5152e199afe1cc26977c2e",
+        "decision": "ACCEPT_CANDIDATE_EVIDENCE",
+        "evaluatedAt": "2026-09-25T00:00:00.000Z",
+        "improvementDelta": 0.20000000000000007,
+        "incumbentScore": 0.7,
+        "incumbentSkillHash": "ad3f3b36968cb2eb3338f961c167955027c64cd36e5dab57d5cee2613c938ed0",
+        "judgmentAuthority": "EVIDENCE_ONLY",
+        "proposalDiffHash": "babab84e34ca86ef4271acb21d1ed6705efc5c9c5c4ff09c7d21ca1115e10124",
+        "proposalId": "akoe-p3-proposal-1",
+        "proposedActiveSkillHash": "c5d0b59b1ef50d52008bdabac086df4a1cc424931d5152e199afe1cc26977c2e",
+        "receiptHash": "e755007061d76a0d059c4cb5f9b54451",
+        "rollbackImpact": {
+          "persistentKnowledgeHashAfter": "2f39f6cb737fe9b427566ef3d32aff0d88384d6c236cabe38dcd5e14e487cac7",
+          "persistentKnowledgeHashBefore": "2f39f6cb737fe9b427566ef3d32aff0d88384d6c236cabe38dcd5e14e487cac7",
+          "rawEvidenceHashAfter": "fc21894b844dfec296903fed26417c2c9bcaa6783ac606b53bd1bf82a5ccf70b",
+          "rawEvidenceHashBefore": "fc21894b844dfec296903fed26417c2c9bcaa6783ac606b53bd1bf82a5ccf70b",
+          "required": false,
+          "targetActiveSkillHash": "ad3f3b36968cb2eb3338f961c167955027c64cd36e5dab57d5cee2613c938ed0"
+        },
+        "schemaVersion": "cvf.proposal-impact-rollback-evidence.v1",
+        "sourcePin": "acel-akoe-p3-offline-integration-proof-v1",
+        "strictImprovement": true
+      }
+    },
+    "malformedEvidenceResult": {
+      "issues": [
+        "MISSING_IDENTITY",
+        "MISSING_EVIDENCE_HASH",
+        "ACTIVE_INCUMBENT_MISMATCH"
+      ],
+      "ok": false
+    },
+    "rejectedCandidateResult": {
+      "ok": true,
+      "receipt": {
+        "activeSkillHash": "ad3f3b36968cb2eb3338f961c167955027c64cd36e5dab57d5cee2613c938ed0",
+        "candidateScore": 0.5,
+        "candidateSkillHash": "1bd9440f7be27b10caa77a718fafe0b2af8a1a963131becf139f9cc8029765c7",
+        "decision": "REJECT_AND_ROLLBACK",
+        "evaluatedAt": "2026-09-25T00:00:00.000Z",
+        "improvementDelta": -0.19999999999999996,
+        "incumbentScore": 0.7,
+        "incumbentSkillHash": "ad3f3b36968cb2eb3338f961c167955027c64cd36e5dab57d5cee2613c938ed0",
+        "judgmentAuthority": "EVIDENCE_ONLY",
+        "proposalDiffHash": "babab84e34ca86ef4271acb21d1ed6705efc5c9c5c4ff09c7d21ca1115e10124",
+        "proposalId": "akoe-p3-proposal-rejected-1",
+        "proposedActiveSkillHash": null,
+        "receiptHash": "9d5dfebc7761a8dfd7849f9f2bc97376",
+        "rollbackImpact": {
+          "persistentKnowledgeHashAfter": "2f39f6cb737fe9b427566ef3d32aff0d88384d6c236cabe38dcd5e14e487cac7",
+          "persistentKnowledgeHashBefore": "2f39f6cb737fe9b427566ef3d32aff0d88384d6c236cabe38dcd5e14e487cac7",
+          "rawEvidenceHashAfter": "fc21894b844dfec296903fed26417c2c9bcaa6783ac606b53bd1bf82a5ccf70b",
+          "rawEvidenceHashBefore": "fc21894b844dfec296903fed26417c2c9bcaa6783ac606b53bd1bf82a5ccf70b",
+          "required": true,
+          "targetActiveSkillHash": "ad3f3b36968cb2eb3338f961c167955027c64cd36e5dab57d5cee2613c938ed0"
+        },
+        "schemaVersion": "cvf.proposal-impact-rollback-evidence.v1",
+        "sourcePin": "acel-akoe-p3-offline-integration-proof-v1",
+        "strictImprovement": false
+      }
+    }
+  },
+  "receiptSha256": "c2763a8ca90dc50a6a90ecf75c81bb2d5b266f7f80de1d3d4ef8fa8a3daebb46",
+  "rejectionPreservation": {
+    "incumbentSkillHash": "ad3f3b36968cb2eb3338f961c167955027c64cd36e5dab57d5cee2613c938ed0",
+    "persistentKnowledgeHashPreserved": true,
+    "rawEvidenceHashPreserved": true
+  },
+  "scenarioId": "acel-akoe-p3-offline-integration-proof-v1",
+  "schemaVersion": "cvf.acel-akoe-p3-offline-integration-proof.v1",
+  "sourceOwnerBindings": {
+    "artifactGraph": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/artifact.completion.scope.contract.ts#evaluateArtifactCompletionScope",
+    "execution": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/durable.run.store.ts#MaoFileRunStore",
+    "judgment": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/assf.behavioral.evaluation.contract.ts#gradeBehavioralEvaluation",
+    "projection": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/operational.operator.projection.ts#buildOperationalOperatorProjection",
+    "proposal": "EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/proposal-impact-rollback.evidence.contract.ts#evaluateProposalImpactRollback",
+    "taskGraph": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/task.graph.contract.ts#compileTaskGraph"
+  },
+  "stateHash": "222ce5d941d9c4f688553e1d413bc8315b55380d4543467518507be7045f789b",
+  "terminalReceipts": {
+    "acceptance": {
+      "status": "PENDING_LOCAL_DECISION"
+    },
+    "accountability": {
+      "accountableOwner": "LOCAL_REVIEWER_CLOSER",
+      "workerAuthority": "NO_ACCEPTANCE_AUTHORITY"
+    },
+    "execution": {
+      "authorityHash": "cd474f47c0198cc0d4274966d4d2c1e5",
+      "status": "EXECUTED",
+      "taskGraphId": "97c451bbc541863186bdaad805386973"
+    },
+    "verification": {
+      "status": "PENDING_REVIEWER_EXECUTION"
+    }
+  },
+  "verification": {
+    "claimBoundary": "worker-produced verification is advisory only; it is never the independent Local reviewer result",
+    "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+    "workerVerificationResult": "WORKER_SELF_CHECK_ADVISORY_ONLY"
+  }
+}

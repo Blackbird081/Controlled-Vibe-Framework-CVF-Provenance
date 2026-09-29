@@ -1,0 +1,165 @@
+{
+  "authorityEnvelope": {
+    "commit": false,
+    "credentials": false,
+    "deployment": false,
+    "destructiveActions": false,
+    "providerCalls": false,
+    "publication": false,
+    "push": false
+  },
+  "cvfPublicSource": {
+    "commit": "d7860138350130d6d105826ce186f1beeaba3c2d",
+    "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "sourcePosture": "OPERATOR_PINNED_NOT_LIVE_VERIFIED"
+  },
+  "gateA": {
+    "name": "SOURCE_OWNER_OVERLAP",
+    "requiredBefore": "DESIGN_OR_CODE",
+    "requiredEvidence": [
+      "immutable source identity",
+      "license expression and source",
+      "CVF owner surface",
+      "overlap/novelty disposition"
+    ],
+    "terminalStates": [
+      "PASS",
+      "RETURN_FOR_REPAIR",
+      "BLOCKED"
+    ]
+  },
+  "gateB": {
+    "name": "DESIGN_CODE_TEST",
+    "opensOnlyWhen": "gateA=PASS",
+    "requiredEvidence": [
+      "positive tests",
+      "negative semantic tests",
+      "malformed-input tests",
+      "claim boundary",
+      "exact commands and results"
+    ]
+  },
+  "generatedAt": "2026-08-30T16:48:56+07:00",
+  "invariants": {
+    "consumers": [
+      "worker",
+      "reviewer"
+    ],
+    "forbiddenTransitions": [
+      "external return to CVF source of truth",
+      "external return to local promotion",
+      "external return to runtime or representative-use proof",
+      "external return to commit, push, publication, or deployment"
+    ],
+    "freshness": {
+      "anchor": "DEAR-LP P4 representative-pilot contract",
+      "regenerateWhen": "the required return layout or authority vocabulary changes"
+    },
+    "mustPreserve": [
+      "external output remains EXTERNAL_PROPOSAL and NOT_CVF_SOT",
+      "automaticPromotionAllowed remains false",
+      "absorptionComplete and runtimeUseProven remain false",
+      "exact task-capsule and source/public pins bind the return",
+      "all returned files except FILE_INVENTORY.sha256 are inventoried by SHA-256"
+    ]
+  },
+  "ownerMap": {
+    "consumers": [
+      "worker",
+      "reviewer"
+    ],
+    "freshness": {
+      "anchor": "operator-pinned public CVF commit d7860138350130d6d105826ce186f1beeaba3c2d",
+      "regenerateWhen": "the public pin or proposed target changes"
+    },
+    "owners": [
+      {
+        "competingOwnersChecked": [
+          "docs/guides/CVF_EXTERNAL_AGENT_ROUND_TRIP_KIT.md",
+          "docs/reference/external_agent_review/README.md"
+        ],
+        "path": "docs/examples/external_agent_pilot/DEAR_LP_P4_OPERATOR_CHECKLIST.md",
+        "symbol": "new documentation-only pilot candidate",
+        "version": "proposal-only"
+      }
+    ]
+  },
+  "projectionOf": "cvf.external-agent-round-trip",
+  "protectedPaths": {
+    "consumers": [
+      "worker",
+      "reviewer"
+    ],
+    "freshness": {
+      "anchor": "DEAR-LP-R1 P0-P3 reviewer acceptance on 2026-08-30",
+      "regenerateWhen": "the task capsule, target path, or return contract changes"
+    },
+    "paths": [
+      "AGENTS.md",
+      "CVF_SESSION/",
+      "governance/compat/",
+      "docs/reference/external_agent_review/",
+      "scripts/external_agent_packet.py",
+      "scripts/external_agent_return_contract.py"
+    ]
+  },
+  "protocolVersion": "1.3.0",
+  "schema": "cvf.externalAgentTaskCapsule.v1",
+  "sourceRepositories": [
+    {
+      "commit": "d7860138350130d6d105826ce186f1beeaba3c2d",
+      "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+      "usage": "REFERENCE_AND_ANALYSIS"
+    }
+  ],
+  "task": {
+    "executionClass": "DETACHED_EXTERNAL_AGENT",
+    "expectedReturnStatus": "EXTERNAL_RETURN_READY_FOR_LOCAL_VERIFICATION",
+    "id": "DEAR-LP-P4-R1",
+    "nonGoals": [
+      "Do not read or modify the private CVF workspace.",
+      "Do not commit, push, publish, deploy, call provider APIs, use credentials, or create a local promotion receipt.",
+      "Do not claim CVF authority, integration, absorption completion, runtime use, or representative use proof."
+    ],
+    "objective": "Using only this capsule and the dispatch prompt, create one documentation-only proposed changeset containing an operator checklist and a complete non-authoritative detached return package that can pass the local DEAR-LP validator.",
+    "outputRoot": "DEAR_LP_P4_R1_RETURN",
+    "title": "Representative detached implementation-return transport pilot",
+    "workingMode": "DETACHED_IMPLEMENTATION_PROPOSAL"
+  },
+  "verification": {
+    "consumers": [
+      "worker",
+      "return validator"
+    ],
+    "deterministicChecks": [
+      "LF UTF-8 text",
+      "sorted complete inventory",
+      "second hash computation matches the first"
+    ],
+    "focusedTests": [
+      "parse both returned JSON files",
+      "recompute SHA-256 for the proposed file and every inventory entry"
+    ],
+    "freshness": {
+      "anchor": "DEAR-LP P4 work-order verification section",
+      "regenerateWhen": "the return manifest, target map, or inventory contract changes"
+    },
+    "negativeCases": [
+      "no local-only receipt",
+      "no secret-like value",
+      "no forbidden completion or authority claim",
+      "no symlink or path traversal"
+    ],
+    "requiredOutputs": [
+      "README.md",
+      "EXTERNAL_AGENT_RETURN_MANIFEST.json",
+      "SOURCE_MANIFEST.md",
+      "DECISION_LOG.md",
+      "TEST_EVIDENCE.md",
+      "CLAIM_BOUNDARY.md",
+      "PROPOSED_TARGET_MAP.json",
+      "FILE_INVENTORY.sha256",
+      "PROPOSED_CVF_CHANGESET/docs/examples/external_agent_pilot/DEAR_LP_P4_OPERATOR_CHECKLIST.md"
+    ]
+  }
+}

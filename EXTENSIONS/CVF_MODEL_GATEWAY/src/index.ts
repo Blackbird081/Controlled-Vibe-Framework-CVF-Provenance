@@ -301,6 +301,7 @@ export type {
   GatewayEmbeddingRequest,
   GatewayEmbeddingResponse,
   GatewayHealthResponse,
+  GatewayMaterialContextManifestDisposition,
   UnifiedGatewayInterfaceContract,
 } from "./unified-gateway-interface-contract";
 export { UNIFIED_GATEWAY_INTERFACE_CONTRACT_VERSION } from "./unified-gateway-interface-contract";
@@ -314,11 +315,58 @@ export type {
   ProviderExecutionAdapterResult,
   ProviderExecutionBridgeOptions,
   ProviderExecutionBridgeResult,
+  ProviderExecutionBridgeExecuteOptions,
+  CanonicalExecutionAttemptBoundary,
+  CanonicalExecutionAttemptBoundaryInput,
+  CanonicalExecutionAttemptBoundaryOutcome,
+  CanonicalExecutionAttemptOutcomeSummary,
 } from "./provider-execution-bridge";
 export {
   ProviderExecutionBridge,
   PROVIDER_EXECUTION_BRIDGE_VERSION,
 } from "./provider-execution-bridge";
+
+export type {
+  CanonicalExecutionPort,
+  CanonicalExecutionPortRequest,
+  CanonicalExecutionPortResult,
+  CanonicalExecutionPortRoutingRequest,
+} from "./canonical-execution-port";
+export {
+  CanonicalExecutionAdapter,
+  CANONICAL_EXECUTION_PORT_VERSION,
+} from "./canonical-execution-port";
+
+export type {
+  MaterialContextClass,
+  MaterialContextEntry,
+  MaterialContextEntryStatus,
+  MaterialContextManifest,
+  MaterialContextManifestBuildResult,
+  MaterialContextManifestFailure,
+  MaterialContextManifestFailureReason,
+  MaterialContextManifestSuccess,
+  MaterialContextInvocationBinding,
+} from "./material-context-manifest";
+export {
+  buildMaterialContextManifest,
+  MATERIAL_CONTEXT_MANIFEST_VERSION,
+  MATERIAL_CONTEXT_TRANSFORMATION_VERSION,
+  validateMaterialContextManifest,
+} from "./material-context-manifest";
+
+export type {
+  CredentialBoundOpenAiCompatibleAdapterOptions,
+  OpenAiCompatibleAdapterOptions,
+  OpenAiCompatibleFetch,
+} from "./openai-compatible-execute-adapter";
+export {
+  createCredentialBoundOpenAiCompatibleExecuteAdapter,
+  createOpenAiCompatibleExecuteAdapter,
+} from "./openai-compatible-execute-adapter";
+
+export type { AdapterDestinationDecision } from "./adapter-destination-policy";
+export { classifyAdapterDestination } from "./adapter-destination-policy";
 
 export type {
   ProviderAdapterConformanceStatus,
@@ -369,3 +417,25 @@ export const MODEL_GATEWAY_WRAPPER = {
   preservesReleaseEvidencePaths: true,
   enforcesGuardContractBeforeRouting: true,
 } as const;
+
+// CADP-AI-T3B - Model Gateway provider-neutral constraint projection
+export type {
+  CadpConstraintProjectionDecision,
+  CadpConstraintProjectionEligibilityInput,
+  CadpConstraintProjectionIssue,
+  CadpConstraintProjectionIssueCode,
+  CadpConstraintProjectionRequest,
+  CadpConstraintProjectionConstraints,
+  CadpConstraintProjectionResult,
+  CadpConstraintProjection,
+  CadpConstraintRetentionPolicy,
+  CadpConstraintRemoteSideEffectPolicy,
+  CadpConstraintCredentialMode,
+} from "./cadp.constraint.projection.contract";
+export {
+  CADP_CONSTRAINT_PROJECTION_BOUNDS,
+  CADP_CONSTRAINT_PROJECTION_CONTRACT_VERSION,
+  CadpConstraintProjectionContract,
+  createCadpConstraintProjectionContract,
+  evaluateCadpConstraintProjection,
+} from "./cadp.constraint.projection.contract";

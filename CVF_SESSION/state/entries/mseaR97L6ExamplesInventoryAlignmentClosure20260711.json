@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1660,
+  "stateKey": "mseaR97L6ExamplesInventoryAlignmentClosure20260711",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-11",
+    "materialCommit": "8295f5534",
+    "completionReview": "docs/reviews/CVF_MSEA_R97_L6_EXAMPLES_INVENTORY_ALIGNMENT_COMPLETION_2026-07-11.md",
+    "reviewBoundary": "SINGLE_AGENT_MULTI_ROLE_SELF_REVIEW_INDEPENDENCE_NOT_CLAIMED",
+    "trackedFiles": 13,
+    "l6Disposition": "PARTIAL_OWNER_WITH_GAP",
+    "freshnessState": "CURRENT",
+    "nextAllowedMove": "fresh L2 doctrine-ratification decision packet or another governed lane",
+    "claimBoundary": "inventory omission removed; L6 not closed and no consolidation/doctrine/runtime/public action"
+  }
+}

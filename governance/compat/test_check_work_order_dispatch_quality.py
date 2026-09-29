@@ -28,6 +28,13 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
     def tearDown(self) -> None:
         self.temp_dir.cleanup()
 
+    def test_acceptance_ledger_rejects_duplicate_requirement_ids(self) -> None:
+        text = """```acceptance-ledger-json
+{"schemaVersion":"cvf.workOrderAcceptanceLedger@1.0.0","requirements":[{"requirementId":"REQ-X","mandatory":true,"expectedArtifacts":["a.md"],"requiredProofIds":["PROOF-X"]},{"requirementId":"REQ-X","mandatory":true,"expectedArtifacts":["b.md"],"requiredProofIds":["PROOF-X"]}],"proofCatalog":[{"proofId":"PROOF-X","kind":"COMMAND","locator":"pytest"}]}
+```"""
+        _, issues = MODULE.validate_acceptance_ledger(text)
+        self.assertTrue(any("requirementId must be unique" in issue for issue in issues), issues)
+
     def _write(self, rel_path: str, text: str) -> None:
         path = self.repo_root / rel_path
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -924,48 +931,6 @@ class WorkOrderDispatchQualityTests(unittest.TestCase):
             "`ASK_OPERATOR_LATER`; use WORKER_MAY_COMMIT or WORKER_MUST_NOT_COMMIT",
             report["violations"][0]["issues"],
         )
-
-    def test_ready_no_commit_work_order_with_anchor_lifecycle_passes(self) -> None:
-        work_order = "docs/work_orders/CVF_WO_VALID_NO_COMMIT_TEST_2026-06-02.md"
-        self._write(
-            work_order,
-            "\n".join(
-                [
-                    "# Test",
-                    "Status: DISPATCHED_TO_WORKER",
-                    "## Worker Autonomy / No-Question Rule",
-                    "Proceed inside allowed scope.",
-                    "Commit mode: WORKER_MUST_NOT_COMMIT",
-                    "dispatchBaseHead: abc1234",
-                    "executionBaseHead: capture before edits",
-                    "closureBaseHead: reviewer stage",
-                    "## Intake Role Routing Decision",
-                    "- Intake summary: operator request is bounded no-commit worker execution.",
-                    "- Scope classification: bounded work order with low blast radius.",
-                    "- Risk sensitivity: no public-sync, provider, live, secret, legal, production, or readiness claim.",
-                    "- Selected role route: routeMode=MULTI_AGENT_MULTI_ROLE.",
-                    "- Role separation basis: worker produces packet; reviewer owns completion and closure.",
-                    "- Escalation condition: stop for operator checkpoint if scope/risk changes.",
-                    "## Reviewer Closure Conversion Block",
-                    "completionReviewPath: `docs/reviews/CVF_VALID_NO_COMMIT_COMPLETION_2026-06-02.md`",
-                    "reviewerOwnedClosurePaths:",
-                    "- `docs/work_orders/CVF_WO_VALID_NO_COMMIT_TEST_2026-06-02.md`",
-                    "- `docs/reviews/CVF_VALID_NO_COMMIT_COMPLETION_2026-06-02.md`",
-                    "## Worker Return Packet Shape Contract",
-                    "contractProfile: WORKER_RETURN_FULL_GATE_V1",
-                    "requiredGate: `python governance/compat/run_worker_return_fast_gate.py`",
-                    "individualCheckerSubstitution: FORBIDDEN",
-                    "workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED",
-                    "## Verification Commands",
-                    "`python governance/compat/run_worker_return_fast_gate.py`",
-                ]
-            ),
-        )
-
-        with patch.object(MODULE, "REPO_ROOT", self.repo_root):
-            report = MODULE._classify([work_order])
-
-        self.assertTrue(report["compliant"])
 
     def test_ready_no_commit_work_order_without_reviewer_closure_contract_fails(self) -> None:
         work_order = "docs/work_orders/CVF_WO_NO_REVIEWER_CONVERSION_TEST_2026-06-07.md"

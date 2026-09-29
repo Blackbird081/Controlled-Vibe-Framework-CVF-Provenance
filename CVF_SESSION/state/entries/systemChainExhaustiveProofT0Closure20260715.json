@@ -1,0 +1,24 @@
+{
+  "stateOrder": 1822,
+  "stateKey": "systemChainExhaustiveProofT0Closure20260715",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "e6034224c",
+    "workOrderId": "SCLP-X-T0",
+    "executionBaseHead": "671cfe3bf",
+    "sourceFamilyCounts": "5/20/50/24",
+    "sourceItemTotal": 99,
+    "normalizedClaimTotal": 99,
+    "dispositionDistribution": {
+      "PROVEN": 5,
+      "STATIC_NOT_APPLICABLE": 78,
+      "VALUE_PARKED": 13,
+      "MISSING_PROOF": 3
+    },
+    "reviewerRepair": "cross-family registry edge observedProofClass aligned to CURRENT_RUNTIME_INVOCATION",
+    "liveInvocationCount": 0,
+    "providerCallCount": 0,
+    "nextAllowedMove": "author fresh source-verified SCLP-X-T1 reviewer reconciliation and value-selection packet only",
+    "claimBoundary": "Exhaustive four-family repository-evidence inventory only. No universal E2E proof, live execution release, owner/GAP promotion, provider, public, production, scale, certification, shipment, or user-value claim."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "packet": "SCLP-UC04B-R2R1",
+  "executionBaseHead": "054ed004c568017b5f9b33ceb3a98bfe3246090d",
+  "canonicalOrigin": "http://localhost:3001",
+  "frozenSpecPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/system-chain-uc04b-auth-projection-regression.spec.ts",
+  "frozenSpecSha256": "2d4980dc57e4dd2cfc9d02cd04cad0c5493dd7b662b1754cd6424bf12afbac07",
+  "specHashMatchesR2": true,
+  "commandFingerprint": "$env:PLAYWRIGHT_BASE_URL='http://localhost:3001'; npx playwright test tests/e2e/system-chain-uc04b-auth-projection-regression.spec.ts --config playwright.config.ts --workers=1",
+  "invocationCount": 1,
+  "cases": {
+    "positive_developer_auth_projection": "PASS",
+    "negative_anonymous_auth_projection": "PASS"
+  },
+  "projections": {
+    "positive": {
+      "directSession": "role developer (asserted via /api/auth/session after credentials callback)",
+      "authMe": "200, authenticated true, role developer",
+      "operationsPage": "active role text 'operator' visible"
+    },
+    "negative": {
+      "authMe": "401, authenticated false",
+      "operationsPage": "active role text 'anonymous_local' visible"
+    }
+  },
+  "focusedUnitTests": {
+    "command": "npx vitest run src/lib/middleware-auth.test.ts src/app/api/auth/me/route.test.ts --reporter=verbose",
+    "result": "PASS",
+    "passed": 12,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "npx tsc --noEmit -p tsconfig.json",
+    "result": "PASS"
+  },
+  "counters": {
+    "businessSubmissions": 0,
+    "checkerExecutions": 0,
+    "retries": 0,
+    "providerCalls": 0
+  },
+  "observedHosts": [
+    "localhost:3001"
+  ],
+  "diagnosticPath": null,
+  "overallResult": "PASS"
+}

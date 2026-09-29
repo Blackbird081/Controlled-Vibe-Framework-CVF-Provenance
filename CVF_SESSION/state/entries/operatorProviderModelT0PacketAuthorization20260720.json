@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2014,
+  "stateKey": "operatorProviderModelT0PacketAuthorization20260720",
+  "value": {
+    "status": "PACKET_AUTHORING_AUTHORIZED",
+    "roadmap": "docs/roadmaps/CVF_OPERATOR_APPROVED_PROVIDER_MODEL_ASSIGNMENT_AND_INVOCATION_RECEIPT_ROADMAP_2026-07-20.md",
+    "authorizationCommit": "252e0aed8",
+    "packetAuthor": "Claude",
+    "reviewer": "Codex",
+    "worker": "Claude after reviewer-accepted committed dispatch only",
+    "closureOwner": "Codex reviewer/closer",
+    "usageBaseline": "operator UI snapshot: current session 21 percent; weekly all-models 41 percent; usage credits off; USD 0.00 spent",
+    "nextAllowedMove": "Claude authors only the paired T0 GC-018 and work order and returns no-commit for review.",
+    "parked": "T0 implementation and every credential, provider-call, live, public, push, deployment, or production action."
+  }
+}

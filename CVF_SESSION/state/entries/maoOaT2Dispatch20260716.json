@@ -1,0 +1,21 @@
+{
+  "stateOrder": 1861,
+  "stateKey": "maoOaT2Dispatch20260716",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-16",
+    "materialCommit": "54a5e3452",
+    "dispatchBaseHead": "b5aa0d8a3",
+    "roadmap": "docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md",
+    "baseline": "docs/baselines/CVF_GC018_MAO_OA_T2_DURABLE_RUN_STORE_REPLAY_RECOVERY_AND_IDEMPOTENT_RESUME_2026-07-16.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T2_DURABLE_RUN_STORE_REPLAY_RECOVERY_AND_IDEMPOTENT_RESUME_2026-07-16.md",
+    "expectedWorkerReturn": "docs/reviews/CVF_MAO_OA_T2_WORKER_RETURN_2026-07-16.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "workerManifest": "exact six paths: durable store source, MAO local barrel, focused test, narrow GC-051 source entry, generator-owned corpus aggregate, and worker return",
+    "verification": "reviewer-fast 62/62 PASS; pre-dispatch working-tree 75/75 PASS; pre-commit 83/83 PASS; commit steward PASS",
+    "nextAllowedMove": "Execute only the committed MAO-OA-T2 work order and return uncommitted evidence for independent review.",
+    "heldNextTranche": "MAO-OA-T3 through T7 remain parked.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "claimBoundary": "Dispatch packet only. No worker implementation, durable behavior, provider/live action, public action, production readiness, or user-value claim."
+  }
+}

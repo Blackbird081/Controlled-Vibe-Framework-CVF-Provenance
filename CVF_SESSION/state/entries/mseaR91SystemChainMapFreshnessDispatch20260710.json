@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1643,
+  "stateKey": "mseaR91SystemChainMapFreshnessDispatch20260710",
+  "value": "DISPATCH_READY at commit 4b5b02f7c. The source-verified GC-018 and work order authorize Claude under WORKER_MUST_NOT_COMMIT to build the stable system-chain map from accepted MSEA-R90 evidence, add a deterministic source-fingerprint and age freshness checker, wire local autorun and hook catalogs plus documentation CI and a weekly read-only reminder, correct confirmed stale owner paths, add tests and GC-051 registration, and return the exact worker-owned changed set. Web/runtime/provider/public/session changes, advisory-directory relocation, and R72F lifecycle re-decision remain excluded."
+}

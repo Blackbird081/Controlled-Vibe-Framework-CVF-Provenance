@@ -145,6 +145,8 @@ export type {
 } from "./agent.handoff.contract";
 
 export {
+  evaluateExternalStoreExecutionAuthority,
+  evaluateProviderExecutionAuthority,
   validateClosureReport,
   validateDelegationContract,
   validateWriteScope,
@@ -154,6 +156,12 @@ export type {
   DelegationRiskCeiling,
   DelegationValidationResult,
   DelegationWriteScope,
+  ExternalStoreExecutionAuthority,
+  ExternalStoreExecutionGrant,
+  ExternalStoreExecutionRequest,
+  ProviderExecutionAuthority,
+  ProviderExecutionGrant,
+  ProviderExecutionRequest,
 } from "./delegation.contract";
 
 export const CONTROL_PLANE_FOUNDATION_COORDINATION = {

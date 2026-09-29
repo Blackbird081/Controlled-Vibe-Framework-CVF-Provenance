@@ -1,7 +1,7 @@
-import type { GovernanceEvidenceReceipt, GovernanceTraceEntry, GovernanceTraceStage, RuntimeTelemetryReceipt } from '@/lib/ai';
+import type { GovernanceEvidenceReceipt, GovernanceTraceEntry, GovernanceTraceStage, RuntimeTelemetryReceipt, ProviderAttemptReconciliationReceipt } from '@/lib/ai';
 import { generatePolicySnapshotId } from '@/lib/policy-snapshot-registry';
 import type { AifMemoryReinjectionReceipt } from '@/lib/aif-memory-reinjection';
-import type { DurableMemoryReceipt } from 'cvf-learning-plane-foundation';
+import type { DurableMemoryReceipt } from 'cvf-learning-plane-foundation/web-runtime';
 import { buildReceiptIntegrityAnchor } from '@/lib/receipt-integrity-anchor';
 
 /**
@@ -70,6 +70,7 @@ export interface BuildGovernanceEvidenceReceiptInput {
     durableMemoryWriteReceipt?: DurableMemoryReceipt;
     governanceTrace?: GovernanceTraceEntry[];
     runtimeTelemetry?: Omit<RuntimeTelemetryReceipt, 'governanceTraceEntryCount'>;
+    providerAttemptReconciliation?: ProviderAttemptReconciliationReceipt;
     receiptIntegrity?: {
         signingSecret?: string | null;
         externalAnchorId?: string | null;
@@ -260,6 +261,11 @@ export function buildEvidenceReceipt(
         routingDecision: input.routingDecision,
         policySnapshotId: input.envelope.policySnapshotId,
         envelopeId: input.envelope.envelopeId,
+        // CSCC-R1-T2: canonicalExecutionId is set from the same source value
+        // as envelopeId, on every branch (no separate terminal-only
+        // assignment), so a denial-path receipt and a success-path receipt
+        // both carry the identity identically.
+        canonicalExecutionId: input.envelope.envelopeId,
         knowledgeSource: input.knowledgeSource,
         knowledgeInjected: input.knowledgeInjected,
         knowledgeCollectionId: input.knowledgeCollectionId ?? null,
@@ -271,6 +277,7 @@ export function buildEvidenceReceipt(
         durableMemoryWriteReceipt: input.durableMemoryWriteReceipt,
         governanceTrace,
         runtimeTelemetry,
+        providerAttemptReconciliation: input.providerAttemptReconciliation,
         generatedAt: input.envelope.requestTimestamp,
     };
     const receiptIntegrity = input.receiptIntegrity

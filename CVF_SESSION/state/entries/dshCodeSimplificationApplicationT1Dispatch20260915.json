@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2836,
+  "stateKey": "dshCodeSimplificationApplicationT1Dispatch20260915",
+  "value": "DSH-CODE-SIMPLIFICATION-APPLICATION-T1 is DISPATCH_READY at material bc26c666ba9c4b9dbbc8ef96b09d640fe0e9c4c1. The exact seven worker paths consolidate duplicated Alibaba, DeepSeek, and OpenAI API-key environment lookup behind one pure helper while preserving all current exports, aliases, precedence, trimming, source-name and configured-state behavior. Dispatcher package load returned packageBodyDisposition=LOADED with usage receipt sha256:e50a889ad8cadc238e5a6986c879641a333b0a3888c8e6f8493796b7a69a76ac and body hash sha256:481e0e4f5d52ecad945e8a7bb3d1246940686a088e080a30dd93cc0e4cf1f7b1. Shared-workspace execution is INTERNAL_AGENT; worker must not commit; Local owns final review."
+}

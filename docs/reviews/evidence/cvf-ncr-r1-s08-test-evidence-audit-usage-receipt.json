@@ -1,0 +1,17 @@
+{
+  "claimBoundary": "This packet is a bounded internal ASSF runtime-package readout. It does not activate a package, grant authority, run tools, call providers, implement CLI/MCP adapter behavior, mutate ASSF registry or generated index sources, commit, push, public-sync, or bypass work-order scope.",
+  "skillUsageReceipts": [
+    {
+      "receiptId": "sha256:240bf9667ca97e8e1f980d811fcce39e4bf6c655a13d4da504fc0bcc4848f59c",
+      "authorityBoundary": "receipt proves an explicit eligible package body read only; it does not grant authority, activate the package, call providers, or bypass governed work-order scope",
+      "bodyHash": "sha256:aa77f23da1fd5daf413ea490545ba3347484cdd10dc1b3cdc8c871dccb495e63",
+      "generatedBy": "governance/compat/run_assf_runtime_package_loader.py",
+      "packageBodyDisposition": "LOADED",
+      "packageRootPath": "docs/reference/agent_system_skills/packages/cvf-engineering-test-evidence-audit/SKILL.md",
+      "receiptType": "CVF_ASSF_SKILL_USAGE_RECEIPT",
+      "schemaVersion": "0.1.0",
+      "skillId": "cvf-engineering-test-evidence-audit",
+      "sourceIndexPath": "docs/reference/agent_system_skills/generated/skill-index.json"
+    }
+  ]
+}

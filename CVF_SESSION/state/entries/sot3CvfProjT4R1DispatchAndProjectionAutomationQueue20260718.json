@@ -1,0 +1,13 @@
+{
+  "stateOrder": 1975,
+  "stateKey": "sot3CvfProjT4R1DispatchAndProjectionAutomationQueue20260718",
+  "value": {
+    "status": "T4_R1_DISPATCH_READY_AUTOMATION_LANE_QUEUED",
+    "materialCommit": "4d469cf94",
+    "blockedReturnReview": "docs/reviews/CVF_SOT3_CVF_PROJ_T4_BLOCKED_RETURN_REVIEW_AND_R1_REDISPATCH_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_CVF_PROJ_T4_PRODUCT_CLAIM_ALIGNMENT_AND_ROADMAP_CLOSURE_2026-07-18.md",
+    "futureAutomationObjective": "Record the 2026-07-18 provenance/public GitHub/cvf-web projection closures as a landmark and build a fail-closed dry-run mapper that reports required projection updates before any separately authorized apply or push.",
+    "verification": "blocked return accepted; continuity repair 426d490cc; worker-fast PASS; reviewer-fast 62/62 PASS; pre-dispatch 75/75 PASS; pre-commit 83/83 PASS",
+    "claimBoundary": "Automation is queued after T4 roadmap closure; this state does not authorize public-sync mutation, push, or unattended semantic edits."
+  }
+}

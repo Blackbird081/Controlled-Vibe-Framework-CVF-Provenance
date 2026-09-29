@@ -2,7 +2,9 @@
 
 Memory class: POINTER_RECORD
 
-Status: DEFINED - procedural standard for bounded delegation and subagent use.
+Status: DEFINED - bounded delegation with provider-execution enforcement.
+
+rawMemoryReleased=false
 
 ## Purpose
 
@@ -26,11 +28,13 @@ In scope:
 Out of scope:
 
 - live subagent spawning;
+- provider-native internal reasoning, exploration, context management, and
+  task decomposition performed inside one already-authorized agent session;
 - autonomous parallel runtimes;
 - runtime worker registry implementation;
 - provider prompt reinjection;
 - deployment or release authority;
-- changing existing CPF/EPF delegation contracts.
+- provider SDKs or adapters outside a CVF-owned enforcement boundary.
 
 Owner: CVF orchestration and delegation surface.
 
@@ -67,6 +71,13 @@ A worker or subagent is subordinate to CVF governance. It may execute only the
 assigned task and may not self-upgrade, self-authorize, spawn unmanaged
 workers, write durable truth memory, or bypass policy gates.
 
+For this standard, `worker or subagent` means an execution actor separately
+dispatched by CVF or separately crossing an invocation, process, provider,
+credential, durable-action, or authority boundary. A provider-native Explore
+helper or internal subagent used inside one authorized agent session is an
+internal orchestration choice, not a separately delegated CVF worker, unless
+it crosses one of those boundaries.
+
 ## Rule
 
 No delegation may occur without a bounded task, explicit authority chain,
@@ -91,6 +102,11 @@ Forbidden:
 - write durable truth memory from a worker by default;
 - bypass policy, review, or operator escalation.
 
+The unmanaged-worker prohibition does not ban provider-native internal
+orchestration that remains within the parent session's scope and perimeter.
+CVF governs the parent assignment, external actions, aggregate envelope, and
+reviewable outcome; it does not micromanage internal reasoning steps.
+
 ## Exceptions
 
 Exceptions require explicit operator or governance record when:
@@ -101,9 +117,40 @@ Exceptions require explicit operator or governance record when:
 - the orchestrator executes fallback work instead of delegating to a matching
   specialist lane.
 
+## Provider Execution Authority
+
+Provider execution is a separately granted capability. Every worker or
+subagent delegation defaults to `providerExecutionAuthority: FORBIDDEN`.
+Possession of an API key, a loaded local environment, selection of a live test
+file, or use of a command mode named `live` is not authority to make a provider
+call.
+
+Only the orchestrator may change the disposition to
+`ORCHESTRATOR_GRANT_REQUIRED`. An executable grant must bind all of:
+
+- a unique grant id;
+- `authorizedBy: ORCHESTRATOR`;
+- the exact subject agent id and delegation id;
+- an explicit provider allowlist;
+- a positive maximum call count;
+- an absolute expiry timestamp.
+
+The runtime adapter must deny before network I/O when the grant is absent,
+malformed, expired, exhausted, or mismatched. Provider credentials and grant
+issuer capability must not be placed in a worker-authored file or inherited
+from repository `.env` files. A worker may request authority, but may not mint,
+expand, renew, or substitute its own grant. A failed, partial, timed-out, or
+ambiguous live execution consumes the attempted authority and requires a new
+orchestrator decision before any repeat.
+
+Work orders that mention provider, API, credential, or live execution must
+carry one of the two exact authority dispositions. When execution is not
+needed, use `FORBIDDEN`; live-test discovery and listing remain allowed under
+that disposition because they perform no provider request.
+
 ## Enforcement Surface
 
-The enforcement surface is procedural in this document:
+The enforcement surface combines procedural and machine controls:
 
 - Agent Work Orders;
 - delegation contracts and handoff records;
@@ -111,8 +158,14 @@ The enforcement surface is procedural in this document:
 - evidence trace blocks;
 - review and completion packets;
 - active session and handoff guards.
+- `DelegationContract.providerExecution` validation;
+- provider-adapter denial before network I/O;
+- the subagent provider-execution authority compatibility checker.
 
-Runtime worker isolation remains out of scope.
+These controls govern CVF-owned execution paths. They do not claim universal
+network isolation for an adversarial process that has unrestricted shell and
+network access; the orchestrator/runtime host must also withhold credentials
+and network capability when that stronger isolation is required.
 
 ### Delegation Decision
 
@@ -157,6 +210,7 @@ Every delegated task must define:
 - escalation route;
 - review gate;
 - memory write authority, defaulting to none.
+- provider execution authority, defaulting to `FORBIDDEN`.
 
 ### Context Boundary
 
@@ -274,6 +328,17 @@ Do not use this standard to:
 - spawn nested workers by default;
 - make orchestrator convenience a reason to skip specialist routing;
 - treat worker output as durable memory without review.
+
+Do not use this standard to intercept or approve every internal helper, tool
+sequence, reasoning branch, or context-management action. Such deep
+interference reduces agent capability and adds governance latency without
+creating a stronger external-action boundary.
+
+## Revision Ledger
+
+| Date | Change | Reason |
+| --- | --- | --- |
+| 2026-07-22 | Distinguished CVF-dispatched workers from provider-native internal orchestration | Operator correction preserving agent autonomy while keeping external invocation and authority boundaries governed |
 
 ## Source Reuse Decisions
 

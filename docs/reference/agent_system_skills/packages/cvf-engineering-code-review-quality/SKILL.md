@@ -2,7 +2,7 @@
 
 Memory class: FULL_RECORD
 
-Status: APPROVED
+Status: ACTIVE
 
 docType: assf_package
 
@@ -19,9 +19,9 @@ Guide multi-axis code review across correctness, readability, architecture, secu
 | Field | Value |
 |---|---|
 | Package root | `docs/reference/agent_system_skills/packages/cvf-engineering-code-review-quality/` |
-| Owner surface | ASSF package proposal evidence under AGSK-R3 and bounded AGSK-R6 lifecycle promotion evidence |
-| Applies to | APPROVED internal package body read through the AGSK-R4 runtime package loader after explicit request |
-| Does not apply to | `ACTIVE`, automatic resolver invocation, CLI/MCP adapter, provider/live proof, public-sync, merge execution, commit authority, or production readiness |
+| Owner surface | ASSF proposal evidence under AGSK-R3, bounded AGSK-R6 promotion evidence, and current ASCP-P1-P3 ACTIVE production package contract |
+| Applies to | ACTIVE receipt-backed production package execution through CVF adapters after explicit request |
+| Does not apply to | automatic invocation, CLI/MCP adapter beyond the implemented receipt-backed wrapper, provider/live proof, public-sync, merge execution, commit authority, or production readiness |
 
 ## Invocation Boundary
 
@@ -40,7 +40,65 @@ Guide multi-axis code review across correctness, readability, architecture, secu
 |---|---|
 | Inputs | operator request or governed task context; source mirror file `.private_reference/source_mirrors/addyosmani__agent-skills/skills/code-review-and-quality/SKILL.md`; active CVF authority and allowed-scope boundaries |
 | Outputs | bounded code-review guidance; five-axis review framework notes; severity classification discipline; recommended CVF owner-surface routing |
-| Acceptance evidence | AGSK-R3 worker return with package-root proposal evidence; AGSK-R5 eligibility audit; AGSK-R6 source-state update; runtime package-loader body-read smoke; certified metadata admission checker PASS; anatomy checker PASS |
+| Acceptance evidence | AGSK-R3 proposal, AGSK-R5 eligibility audit, AGSK-R6 promotion and loader smoke; ASCP-P1-P3 six-package ACTIVE source admission, focused executor/CLI-MCP tests, and one live exemplar for a different skill ID |
+
+## Review Procedure
+
+This bounded procedure fulfills the five-axis outputs declared above. It is
+advisory guidance for a human or agent reviewer already authorized by an
+active governed work order; loading this body never grants edit, merge,
+commit, provider, public, or production authority (see CR6).
+
+1. Establish intent: read the exact base/head range, the allowed scope, and
+   the project's existing conventions before opening the diff.
+2. Inspect tests first, then enough surrounding implementation to understand
+   actual behavior; tests reveal intent and coverage gaps that the diff alone
+   does not show.
+3. Review across the five axes -- correctness, readability/simplicity,
+   architecture, security, and performance -- leading with correctness,
+   security, lifecycle, and any broken required behavior before style or
+   preference feedback. For the architecture axis, explicitly determine
+   whether a refactor reduces complexity or merely relocates it: count the
+   concepts a reader must hold before and after the change. When the count is
+   unchanged or a structural risk is present (added coupling, a moved but not
+   removed branch, a new indirection layer), name that risk and propose at
+   least one concrete structural remedy rather than a general "cleaner"
+   verdict -- for example, separating orchestration from business logic,
+   moving feature-specific logic to its canonical owning module, reusing an
+   existing canonical helper instead of a near-duplicate, collapsing
+   redundant branches into one clearer flow, introducing an explicit type
+   boundary so downstream branching disappears, or deleting a pass-through
+   wrapper that adds indirection without clarifying the API (see CR5).
+4. For an authorization or enforcement change, trace every denial branch to
+   the operation it protects, and exercise direct and alternate callers that
+   might bypass a schema, prompt, facade, wrapper, or listener-ordering layer.
+   A passing facade-level test is not sufficient when another caller can still
+   reach the protected operation directly (see CR1/CR2).
+5. Classify every finding as Critical, Required, Optional/Consider, Nit, or
+   FYI, and support each blocking finding with an exact path/symbol and its
+   concrete failure consequence rather than a general impression.
+6. Verify the verification story itself (what was run, what passed, what a
+   screenshot or manual check covered) and return one bounded verdict.
+   Package loading and this review grant no edit, merge, commit, provider,
+   public, or production authority beyond the active governed work order.
+
+### Enforcement-Path Tracing (Supplemental)
+
+For changes that add or modify authorization, permission, or denial logic,
+apply this supplemental check in addition to Step 4 above: do not accept a
+single enforcement point as sufficient coverage without confirming every
+caller actually converges on it. Concretely:
+
+- Follow each denial path forward to the exact operation it is meant to
+  prevent, not just to the point where a check returns a boolean.
+- Enumerate alternate entry points (a direct service call, an internal
+  helper, a second route, a differently ordered listener) that could reach
+  the same protected operation, and confirm each one is covered by the same
+  enforcement or an equivalent one.
+- Treat a route- or facade-level test that only exercises the primary caller
+  as incomplete evidence when a bypass-capable alternate caller exists (CR1);
+  when every caller is confirmed to converge on one enforcement point, record
+  the traced path as evidence rather than inventing a blocker (CR2).
 
 ## Risk And Authority
 
@@ -49,35 +107,35 @@ Guide multi-axis code review across correctness, readability, architecture, secu
 | Risk class | R1 |
 | Authority ceiling | bounded advisory review guidance only |
 | Side effects | none from metadata reading; merge decisions, commit actions, or production changes require separate authorization |
-| Rollback | restore this package root and registry entry to AGSK-R3 PROPOSED state; regenerate generated index |
-| Safe stop | stop and open a fresh ASSF runtime or adapter tranche if automated merge execution, production change authority, external exposure, provider proof, or authority above the active work order is needed |
-| Policy bindings | AGSK-R6 permits explicit internal package-loader body read only; ACTIVE resolver behavior still requires a later tranche |
+| Rollback | revert only a later authorized change under its owning work order and review; this guidance does not authorize demoting the existing ACTIVE package to AGSK-R3 PROPOSED |
+| Safe stop | stop if ACTIVE source checks, required receipts, or governed work-order authority are missing; automated merge, production changes, or broader external action requires separate authorization |
+| Policy bindings | AGSK-R6 and ASCP-P1-P3 establish the bounded ACTIVE production package path; the active governed work order, activation policy, required receipts, and production runtime standard remain binding |
 
 ## Progressive Disclosure
 
 | Stage | Accessible fields |
 |---|---|
 | Metadata-only (CANDIDATE/PROPOSED) | skillId, name, status, purpose, triggerPatterns, riskCeiling, sourceArtifacts |
-| Post-reviewer-acceptance (APPROVED) | full five-axis review guidance through explicit runtime package-loader request; no automatic invocation |
-| Runtime (ACTIVE) | full instructions with active resolver; requires separate ACTIVE tranche |
+| Post-reviewer-acceptance (historical APPROVED, AGSK-R6) | full five-axis review guidance through explicit runtime package-loader request; reviewer decision gate already satisfied |
+| Runtime (ACTIVE, current) | full instructions readable through the receipt-backed production package loader under a governed work order; ASCP-P1-P3 established six-package ACTIVE admission and focused adapter tests, with one live exemplar for `cvf-engineering-spec-driven-development`, not a code-review-specific live run; no automatic invocation |
 
 ## Evidence And UAT
 
 | Field | Value |
 |---|---|
-| Required evidence | AGSK-R3 worker return with source reads and 24-candidate coverage table; AGSK-R5 runtime eligibility audit; AGSK-R6 package-loader body-read smoke; anatomy checker PASS; certified metadata admission checker PASS |
-| UAT binding | PASSED for explicit internal package-loader body read only |
+| Required evidence | AGSK-R3 worker return with source reads and 24-candidate coverage table; AGSK-R5 runtime eligibility audit; AGSK-R6 package-loader body-read smoke; anatomy and certified metadata checkers PASS; ASCP-P1-P3 six-package ACTIVE admission and focused production executor/CLI-MCP tests; its live E2E exemplar used `cvf-engineering-spec-driven-development`, not this package |
+| UAT binding | PASSED for receipt-backed production package execution through CVF adapters |
 | Validation hooks | ASSF anatomy checker; certified metadata admission checker; generated-index drift checker; reviewer-fast gate |
-| Review evidence | docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md; docs/reviews/CVF_AGSK_R5_RUNTIME_ELIGIBILITY_AUDIT_COMPLETION_2026-06-30.md; docs/reviews/CVF_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_COMPLETION_2026-06-30.md |
+| Review evidence | docs/reviews/CVF_AGSK_R3_RUNTIME_PACKAGE_ACTIVATION_WORKER_RETURN_2026-06-29.md; docs/reviews/CVF_AGSK_R5_RUNTIME_ELIGIBILITY_AUDIT_COMPLETION_2026-06-30.md; docs/reviews/CVF_AGSK_R6_CODE_REVIEW_QUALITY_PILOT_PROMOTION_COMPLETION_2026-06-30.md; docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md |
 
 ## External Disposition
 
 | Field | Value |
 |---|---|
-| External CLI/MCP disposition | DEFERRED_WITH_REASON: no external adapter authorized in AGSK-R3 |
-| Adapter contract | N/A with reason: external adapter not authored in AGSK-R3 |
-| Adapter evidence | N/A with reason: no adapter implemented |
-| External mutation boundary | no external mutation, CLI/MCP export, provider call, public-sync, ACTIVE resolver activation, or automatic package invocation until separate ASSF adapter or runtime work order accepted |
+| External CLI/MCP disposition | IMPLEMENTED: bounded CLI/MCP envelope delegates to the CVF production package executor (ASCP-P1-P3) |
+| Adapter contract | `docs/reference/agent_system_skills/CVF_ASSF_PRODUCTION_PACKAGE_RUNTIME_STANDARD.md` |
+| Adapter evidence | `docs/reviews/CVF_ASCP_P1_P3_RUNTIME_PACKAGE_SKILLS_PRODUCTIONIZATION_COMPLETION_2026-06-30.md` |
+| External mutation boundary | external CLI/MCP wrapper may return receipt-backed package execution envelopes only; no external mutation, daemon behavior, public API, provider routing, public-sync, commit, or merge authority is permitted |
 
 ## Agent Operation Trace Block
 
@@ -104,6 +162,13 @@ Guide multi-axis code review across correctness, readability, architecture, secu
 
 ## Epistemic Process Block
 
+**Historical record (AGSK-R6, 2026-06-30).** The sub-sections below record
+the epistemic reasoning at the AGSK-R6 promotion step, when this package was
+APPROVED but not yet ACTIVE. ASCP-P1-P3 (2026-06-30) subsequently promoted
+this package to ACTIVE with a receipt-backed production executor and CLI/MCP
+adapter (see Claim Boundary); this historical block is preserved for
+provenance and is not a current-state claim.
+
 ### Expected Result / Prediction
 
 An APPROVED ASSF package root should preserve the upstream skill's useful
@@ -114,33 +179,114 @@ boundaries explicit.
 
 The package cites the pinned upstream source mirror, the AGSK-R2 source-mirror
 backfill review, the AGSK-R3 baseline, the AGSK-R3 worker return, the AGSK-R5
-eligibility audit, and the AGSK-R6 promotion review. The package is APPROVED
-for explicit internal package-loader body reads only and does not claim ACTIVE
-resolver behavior, provider behavior, public export, or external adapter
-support.
+eligibility audit, and the AGSK-R6 promotion review. At the AGSK-R6 step, the
+package was APPROVED for explicit internal package-loader body reads only and
+did not yet claim ACTIVE resolver behavior, provider behavior, public export,
+or external adapter support.
 
 ### Contradiction Or Gap Disposition
 
-AGSK-R6 resolves the prior reviewer-acceptance, UAT, certification, and
-internal-disposition gap for this pilot package only. ACTIVE resolver behavior,
-CLI/MCP adapter support, provider proof, public export, and production
-readiness remain blockers for later promotion.
+AGSK-R6 resolved the prior reviewer-acceptance, UAT, certification, and
+internal-disposition gap for this pilot package. At that step, ACTIVE
+resolver behavior, CLI/MCP adapter support, provider proof, public export,
+and production readiness remained blockers for later promotion; ASCP-P1-P3
+subsequently established ACTIVE source admission, the bounded production
+executor, CLI/MCP wrapper, and receipt path (see Claim Boundary and External
+Disposition). Automatic package selection was not demonstrated; public export and full
+production readiness beyond the bounded ASCP-P1-P3 scope remain separate,
+still-unopened blockers.
 
 ### Claim Update
 
-The package claim is narrowed to CVF-owned APPROVED package-loader body-read
-evidence only. It is not ACTIVE activation evidence.
-## AGSK-R6 Lifecycle Promotion
+At the AGSK-R6 step, the package claim was narrowed to CVF-owned APPROVED
+package-loader body-read evidence only, not ACTIVE activation evidence.
+ASCP-P1-P3 subsequently updated this claim to ACTIVE receipt-backed
+production package execution; see Claim Boundary for the current claim.
 
-AGSK-R6 promotes this package to APPROVED, UAT PASSED, certification CERTIFIED,
-and internal-agent disposition IMPLEMENTED for explicit internal runtime-loader
-body reads only. This does not make the package ACTIVE, does not add automatic
-resolver invocation, and does not authorize merge, commit, provider, public, or
-production actions.
+## AGSK-R6 And ASCP-P1-P3 Lifecycle Promotion
+
+AGSK-R6 (2026-06-30) promoted this package to APPROVED, UAT PASSED,
+certification CERTIFIED, and internal-agent disposition IMPLEMENTED for
+explicit internal runtime-loader body reads only; at that step it did not
+make the package ACTIVE. ASCP-P1-P3 (2026-06-30) subsequently promoted this
+package to ACTIVE with a receipt-backed production executor and CLI/MCP
+adapter (see External Disposition). Neither promotion authorizes merge,
+commit, provider routing, public export, or production actions beyond the
+receipt-backed production adapter boundary.
+
+## Source Attribution
+
+| Source | Role | Pin | License |
+|---|---|---|---|
+| `addyosmani/agent-skills` `code-review-and-quality` | Primary source: five-axis review framework and review process | `aba7c4e9695c363e65cb59effe926c7f1d1abe3d` | MIT (full notice below) |
+| `deepseek-ai/deepseek-harness` `dsh-code-review` | Supplemental source: enforcement-path/alternate-caller bypass tracing only (Enforcement-Path Tracing section above) | `cd5ef8148158c3a752a658978873241fdf8e2bbc` | MIT (full notice below) |
+
+This package remains an Addy-derived primary adaptation; DeepSeek supplies one
+bounded supplemental concept and is not a co-primary or replacement source.
+Repository-specific DeepSeek commands, tooling, and policies (for example its
+`pnpm --silent run change-scope` invocation and its own repository AGENTS.md
+conventions) are excluded; only the source-independent enforcement-path
+concept is imported (CR7).
+
+### Addy Agent-Skills MIT Notice
+
+Verbatim from `.private_reference/source_mirrors/addyosmani__agent-skills/LICENSE`:
+
+```
+MIT License
+
+Copyright (c) 2025 Addy Osmani
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+### DeepSeek Harness MIT Notice
+
+Verbatim from `.private_reference/source_mirrors/deepseek-ai__deepseek-harness/LICENSE`:
+
+```
+MIT License
+
+Copyright (c) 2026 DeepSeek
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
 
 ## Claim Boundary
 
-This package root is an APPROVED CVF adaptation sourced from the upstream `code-review-and-quality` skill at pinned commit `aba7c4e9695c363e65cb59effe926c7f1d1abe3d`. It may be opened by the AGSK-R4 runtime package loader after AGSK-R6 lifecycle gates pass. It does not execute code reviews autonomously, trigger merges, implement a CLI/MCP adapter, or claim automatic invocation.
+This package root is an ACTIVE CVF adaptation sourced primarily from the upstream `code-review-and-quality` skill at pinned commit `aba7c4e9695c363e65cb59effe926c7f1d1abe3d`, with one bounded supplemental enforcement-path concept adapted from `deepseek-ai/deepseek-harness` `dsh-code-review` at pinned commit `cd5ef8148158c3a752a658978873241fdf8e2bbc` (see Source Attribution). It may be opened only through CVF receipt-backed production package adapters under active governed work-order authority. It does not execute code reviews autonomously, trigger merges, mutate provider routing, publish public artifacts, or claim automatic invocation.
 
 ## Public Export Disposition
 

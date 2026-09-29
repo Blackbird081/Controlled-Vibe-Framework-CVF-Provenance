@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2841,
+  "stateKey": "acelG2TopologyExperimentT1Dispatch20260916",
+  "value": "ACEL-G2-TOPOLOGY-EXPERIMENT-T1 is DISPATCH_READY at material commit a9f19f07f4ed2b7e1f2e87257aa83116a8d13164. The INTERNAL_AGENT worker owns exactly eight paths and must not commit. T1 implements an isolated non-production contract, eight fixtures, focused tests and a deterministic 32-run hermetic receipt across two policies and two repetitions. All evidence remains PROPOSAL_ONLY. Actual agents/subagents, providers, network effects, production integration, dependencies, T2, public sync and deployment remain unauthorized; Local owns review and final disposition."
+}

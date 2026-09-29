@@ -1,0 +1,21 @@
+{
+  "stateOrder": 1915,
+  "stateKey": "sot3AppT4Dispatch20260717",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "fdc00c96e",
+    "dispatchBaseHead": "dfd77f881",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_2026-07-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_2026-07-17.md",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "workerReturnPath": "docs/reviews/CVF_SOT3_APP_T4_WORKER_RETURN_2026-07-17.md",
+    "evidencePath": "docs/reviews/CVF_SOT3_APP_T4_LOCAL_CONTROLLED_QUOTATION_PROOF_EVIDENCE_2026-07-17.md",
+    "allowedExternalPaths": [
+      "scripts/run-controlled-quotation.ts",
+      "tests/e2e/controlled-quotation.e2e.test.ts"
+    ],
+    "verification": "pre-dispatch autorun 75/75 PASS; commit steward PASS; pre-commit 83/83 PASS.",
+    "nextAllowedMove": "Execute exact T4 no-commit work order; worker must capture executionBaseHead from current HEAD and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "claimBoundary": "Dispatch packet only; no T4 implementation/review closure, T5/service, provider/live/browser/UI/public-sync/push/production claim."
+  }
+}

@@ -252,3 +252,322 @@ export {
   getMetricsByEmissionStatus,
   getMetricsByEmissionPhase,
 } from './operational-metrics.schema';
+
+export type {
+  CadpIssueCode,
+  CadpIssue,
+  CadpValidationResult,
+  CapabilityAdmissionDecision,
+  CapabilityMutationType,
+  CapabilityAdmissionAction,
+  CapabilityAdmissionRecord,
+  CapabilityAssignmentRecord,
+  CapabilityDistributionItem,
+  CapabilityDistributionManifest,
+  CompatibilityEvidenceLevel,
+  CompatibilityArtifactType,
+  CompatibilityEvidenceRecord,
+  DeterministicCadpReceiptInput,
+  DeterministicCadpReceipt,
+} from './capability-admission-distribution-profile.contract';
+
+export {
+  CADP_CONTRACT_VERSION,
+  validateCapabilityAdmission,
+  validateCapabilityAssignment,
+  validateCapabilityDistribution,
+  validateCompatibilityEvidence,
+  createDeterministicCadpReceipt,
+} from './capability-admission-distribution-profile.contract';
+
+export type {
+  CadpExternalReadoutIssueCode,
+  CadpExternalReadoutIssue,
+  CadpExternalReadoutValidationResult,
+  CadpExternalReadoutAllowlistedMetadata,
+  CadpExternalCallerIdentityInput,
+  CadpExternalReadoutIngressRequest,
+  CadpExternalReadoutFreshnessInput,
+  CadpExternalReadoutFreshnessDisposition,
+  CadpExternalReadoutFreshnessResult,
+  CadpExternalReadoutReceiptInput,
+  CadpExternalReadoutReceipt,
+} from './cadp-external-readout-foundation.contract';
+
+export {
+  CADP_EXTERNAL_READOUT_FOUNDATION_CONTRACT_VERSION,
+  CADP_EXTERNAL_READOUT_REDACTED_FIELD_NAMES,
+  validateCadpExternalCallerIdentityInput,
+  validateCadpExternalReadoutIngress,
+  redactCadpExternalReadoutPayload,
+  validateCadpExternalReadoutAllowlistedMetadata,
+  evaluateCadpExternalReadoutFreshness,
+  createDeterministicCadpExternalReadoutReceipt,
+} from './cadp-external-readout-foundation.contract';
+
+export type {
+  CadpExternalReadoutAdapterStage,
+  CadpExternalReadoutAdapterIssueCode,
+  CadpExternalReadoutAdapterIssue,
+  CadpExternalReadoutAdapterRequest,
+  CadpExternalReadoutAdapterRejectedPayload,
+  CadpExternalReadoutAdapterResponse,
+} from './cadp-external-readout-adapter.contract';
+
+export {
+  CADP_EXTERNAL_READOUT_ADAPTER_CONTRACT_VERSION,
+  evaluateCadpExternalReadoutAdapter,
+} from './cadp-external-readout-adapter.contract';
+
+export type {
+  CapabilityOwnerBindingIssueCode,
+  CapabilityOwnerBindingIssue,
+  CapabilityOwnerBindingResult,
+  CapabilityOwnerBindData,
+  BoundArtifactType,
+  CapabilityOwnerHandle,
+  BoundArtifactProjection,
+  CapabilityOwnerGrantProjection,
+  CapabilityExecutionObservationInput,
+} from './capability-owner-binding.contract';
+
+export {
+  CAPABILITY_OWNER_BINDING_CONTRACT_VERSION,
+  bindCommittedCapabilityOwnerGrant,
+  isBoundCapabilityOwner,
+  readBoundArtifact,
+  readBoundGrantIdentity,
+  reconcileGrantWithObservation,
+} from './capability-owner-binding.contract';
+
+export type {
+  AcquisitionOperationPhase,
+  AcquisitionAction,
+  AcquisitionMutationKind,
+  ControlledAcquisitionOperation,
+  ControlledAcquisitionMutation,
+  ControlledAcquisitionPlan,
+  ControlledAcquisitionApproval,
+  ControlledAcquisitionIssueCode,
+  ControlledAcquisitionIssue,
+  ControlledAcquisitionAuthorizationResult,
+  ControlledAcquisitionOperationResult,
+  ControlledAcquisitionReceipt,
+  ControlledAcquisitionReceiptResult,
+  ControlledAcquisitionRepairInput,
+  ControlledAcquisitionRepairDecision,
+} from './controlled-acquisition.contract';
+
+export type {
+  CapabilityRiskLevel,
+  CapabilityRouteStage,
+  CapabilityReadinessState,
+  CapabilityRouteCandidate,
+  CapabilityCandidateSet,
+  CapabilityRouteIssue,
+  CapabilityRouteDecision,
+  CapabilityRouteEvaluationOptions,
+  CapabilityReadinessInput,
+  CapabilityReadinessDecision,
+} from './capability-route-readiness.contract';
+
+export {
+  CAPABILITY_ROUTE_READINESS_CONTRACT_VERSION,
+  CAPABILITY_ROUTE_DECISION_VERSION,
+  CAPABILITY_READINESS_DECISION_VERSION,
+  evaluateCapabilityRoute,
+  evaluateCapabilityReadiness,
+} from './capability-route-readiness.contract';
+
+export {
+  CONTROLLED_ACQUISITION_CONTRACT_VERSION,
+  CONTROLLED_ACQUISITION_PLAN_VERSION,
+  CONTROLLED_ACQUISITION_APPROVAL_VERSION,
+  CONTROLLED_ACQUISITION_RECEIPT_VERSION,
+  computeControlledAcquisitionPlanDigest,
+  evaluateControlledAcquisitionAuthorization,
+  reconcileControlledAcquisitionReceipt,
+  evaluateControlledAcquisitionRepair,
+} from './controlled-acquisition.contract';
+
+export type {
+  CapabilityPreflightRiskLevel,
+  CapabilityPreflightNetworkMode,
+  CapabilityPreflightPrivilegePolicy,
+  CapabilityPreflightProfile,
+  CapabilityPreflightProfilePolicyInput,
+  CapabilityPreflightProfilePolicyIssueCode,
+  CapabilityPreflightProfilePolicyIssue,
+  CapabilityPreflightProfilePolicyResult,
+} from './capability-preflight-profile-policy.contract';
+
+export {
+  CAPABILITY_PREFLIGHT_PROFILE_POLICY_CONTRACT_VERSION,
+  CAPABILITY_PREFLIGHT_PROFILE_POLICY_RESULT_VERSION,
+  evaluateCapabilityPreflightProfilePolicy,
+} from './capability-preflight-profile-policy.contract';
+
+export type {
+  CapabilityBootstrapApprovalEnvelopeClass,
+  CapabilityBootstrapMutationEnvelopeEntry,
+  CapabilityBootstrapApprovalEvidence,
+  CapabilityBootstrapApprovalEvidenceBindingInput,
+  CapabilityBootstrapApprovalEvidenceIssueCode,
+  CapabilityBootstrapApprovalEvidenceIssue,
+  CapabilityBootstrapApprovalEvidenceBindingResult,
+} from './capability-bootstrap-approval-evidence.contract';
+
+export {
+  CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_CONTRACT_VERSION,
+  CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_SCHEMA_VERSION,
+  CAPABILITY_BOOTSTRAP_APPROVAL_EVIDENCE_RESULT_VERSION,
+  evaluateCapabilityBootstrapApprovalEvidenceBinding,
+} from './capability-bootstrap-approval-evidence.contract';
+
+export type {
+  CapabilityAcquisitionReceiptOperationStatus,
+  CapabilityAcquisitionReceiptRollbackStatus,
+  CapabilityAcquisitionReceiptVerificationStatus,
+  CapabilityAcquisitionReceiptOperationResult,
+  CapabilityAcquisitionReceiptMutation,
+  CapabilityAcquisitionReceiptArtifact,
+  CapabilityAcquisitionReceiptVerification,
+  CapabilityAcquisitionReceipt,
+  CapabilityAcquisitionReceiptVerificationInput,
+  CapabilityAcquisitionReceiptVerificationIssueCode,
+  CapabilityAcquisitionReceiptVerificationIssue,
+  CapabilityAcquisitionReceiptVerificationResult,
+} from './capability-acquisition-receipt-verification.contract';
+
+export {
+  CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_CONTRACT_VERSION,
+  CAPABILITY_ACQUISITION_RECEIPT_SCHEMA_VERSION,
+  CAPABILITY_ACQUISITION_RECEIPT_VERIFICATION_RESULT_VERSION,
+  evaluateCapabilityAcquisitionReceiptVerification,
+} from './capability-acquisition-receipt-verification.contract';
+
+export type {
+  ProjectionStalenessState,
+  FindingVerificationState,
+  FindingSeverity,
+  PathStepKind,
+  CapabilityCaseProjectionInput,
+  CanonicalEvidenceInput,
+  DomainFindingInput,
+  DomainPathStepInput,
+  DomainPathInput,
+  DomainEvidenceProjectionInput,
+  CaseEvidenceProjectionIssueCode,
+  CaseEvidenceProjectionIssue,
+  ProjectedFinding,
+  ProjectedPathStep,
+  ProjectedPath,
+  ProjectedEvidence,
+  CapabilityCaseEvidenceProjection,
+} from './capability-case-evidence-projection.contract';
+
+export {
+  CAPABILITY_CASE_EVIDENCE_PROJECTION_CONTRACT_VERSION,
+  CAPABILITY_CASE_PROJECTION_VERSION,
+  DOMAIN_EVIDENCE_PROJECTION_VERSION,
+  projectCapabilityCaseEvidence,
+} from './capability-case-evidence-projection.contract';
+
+export type {
+  CapabilityDependencyKind,
+  CapabilityDependencyAvailability,
+  CapabilityDependencyVerificationLevel,
+  CapabilityNetworkMode,
+  CapabilitySandboxStatus,
+  CapabilityCredentialBindingStatus,
+  CapabilitySnapshotVerificationStatus,
+  CapabilityEnvironmentSnapshotPackage,
+  CapabilityEnvironmentSnapshotDependency,
+  CapabilityEnvironmentSnapshot,
+  CapabilityEnvironmentSnapshotReadinessPolicyEvidence,
+  CapabilityEnvironmentSnapshotEvidenceInput,
+  CapabilityEnvironmentSnapshotEvidenceIssueCode,
+  CapabilityEnvironmentSnapshotEvidenceIssue,
+  CapabilityEnvironmentSnapshotEvidenceStatus,
+  CapabilityEnvironmentSnapshotEvidenceResult,
+} from './capability-environment-snapshot-evidence.contract';
+
+export {
+  CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_CONTRACT_VERSION,
+  CAPABILITY_ENVIRONMENT_SNAPSHOT_VERSION,
+  CAPABILITY_ENVIRONMENT_SNAPSHOT_EVIDENCE_RESULT_VERSION,
+  evaluateCapabilityEnvironmentSnapshotEvidence,
+} from './capability-environment-snapshot-evidence.contract';
+
+export type {
+  CapabilityWorkspaceBootstrapProfile,
+  CapabilityWorkspaceBootstrapPolicy,
+  CapabilityWorkspaceBootstrapPolicyBundleInput,
+  CapabilityWorkspaceBootstrapPolicyBundleIssueCode,
+  CapabilityWorkspaceBootstrapPolicyBundleIssue,
+  CapabilityWorkspaceBootstrapPolicyBundleResult,
+} from './capability-workspace-bootstrap-policy-bundle.contract';
+
+export {
+  CAPABILITY_WORKSPACE_BOOTSTRAP_POLICY_BUNDLE_CONTRACT_VERSION,
+  CAPABILITY_WORKSPACE_BOOTSTRAP_POLICY_BUNDLE_RESULT_VERSION,
+  evaluateCapabilityWorkspaceBootstrapPolicyBundle,
+} from './capability-workspace-bootstrap-policy-bundle.contract';
+
+export type {
+  CapabilityBootstrapClosureEvidenceBundleInput,
+  CapabilityBootstrapClosureEvidenceBundleIssueCode,
+  CapabilityBootstrapClosureEvidenceBundleIssue,
+  CapabilityBootstrapClosureEvidenceBundleStatus,
+  CapabilityBootstrapClosureEvidenceBundleResult,
+} from './capability-bootstrap-closure-evidence-bundle.contract';
+
+export {
+  CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_CONTRACT_VERSION,
+  CAPABILITY_BOOTSTRAP_CLOSURE_EVIDENCE_BUNDLE_RESULT_VERSION,
+  evaluateCapabilityBootstrapClosureEvidenceBundle,
+} from './capability-bootstrap-closure-evidence-bundle.contract';
+
+export type {
+  AssfPackageLifecycleStatus,
+  AssfPackageRiskLevel,
+  AssfCliMcpDisposition,
+  AssfCandidateApprovalState,
+  AssfCandidateUatState,
+  AssfCandidateCertificationState,
+  AssfPackageMetadata,
+  AssfCapabilityPreflightCandidateBindingInput,
+  AssfCapabilityPreflightCandidateBindingIssueCode,
+  AssfCapabilityPreflightCandidateBindingIssue,
+  AssfCapabilityPreflightCandidateBindingStatus,
+  AssfCapabilityPreflightCandidateBindingResult,
+} from './assf-capability-preflight-candidate-binding.contract';
+
+export {
+  ASSF_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_CONTRACT_VERSION,
+  ASSF_CAPABILITY_PREFLIGHT_CANDIDATE_BINDING_RESULT_VERSION,
+  evaluateAssfCapabilityPreflightCandidateBinding,
+} from './assf-capability-preflight-candidate-binding.contract';
+
+export type {
+  CapabilityPreflightAdvisoryProjectionInput,
+  CapabilityPreflightAdvisoryProjectionIssueCode,
+  CapabilityPreflightAdvisoryProjectionIssue,
+  CapabilityPreflightAdvisoryProjectionStatus,
+  CapabilityAdvisoryRouteView,
+  CapabilityAdvisoryReadinessView,
+  CapabilityAdvisoryApprovalPresence,
+  CapabilityAdvisoryApprovalBoundaryView,
+  CapabilityAdvisoryFindingView,
+  CapabilityAdvisoryPathStepView,
+  CapabilityAdvisoryPathView,
+  CapabilityAdvisoryEvidencePresence,
+  CapabilityAdvisoryEvidenceView,
+  CapabilityPreflightAdvisoryProjectionResult,
+} from './capability-preflight-advisory-projection.contract';
+
+export {
+  CAPABILITY_PREFLIGHT_ADVISORY_PROJECTION_CONTRACT_VERSION,
+  CAPABILITY_PREFLIGHT_ADVISORY_PROJECTION_RESULT_VERSION,
+  evaluateCapabilityPreflightAdvisoryProjection,
+} from './capability-preflight-advisory-projection.contract';

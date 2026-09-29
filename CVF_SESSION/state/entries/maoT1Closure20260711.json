@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1676,
+  "stateKey": "maoT1Closure20260711",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "materialCommit": "01618e9dc",
+    "completionReview": "docs/reviews/CVF_MAO_T1_TASK_GRAPH_AND_STATE_CONTRACT_COMPLETION_2026-07-11.md",
+    "sourceRoot": "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/",
+    "focusedVerification": "39/39 tests PASS and TypeScript typecheck PASS",
+    "fullPackageVerification": "1366/1366 tests PASS in worker execution",
+    "governanceVerification": "pre-commit 82/82 PASS",
+    "nextAllowedMove": "fresh MAO-T2 GC-018 and source-verified work-order authoring only",
+    "claimBoundary": "local task-graph, append-only event-ledger, and generated read-model foundation only; no provider, adapter, queue, UI, public, or production claim"
+  }
+}

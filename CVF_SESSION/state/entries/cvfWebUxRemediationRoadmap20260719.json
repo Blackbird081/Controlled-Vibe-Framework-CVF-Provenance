@@ -1,0 +1,12 @@
+{
+  "stateOrder": 1982,
+  "stateKey": "cvfWebUxRemediationRoadmap20260719",
+  "value": {
+    "status": "ACTIVE_T1_DISPATCH_AUTHORIZED",
+    "materialCommit": "479e31701",
+    "roadmap": "docs/roadmaps/CVF_WEB_TASK_FIRST_UX_AND_AUDIENCE_CLARITY_REMEDIATION_ROADMAP_2026-07-19.md",
+    "nextAllowedMove": "Author and dispatch CVF-WEB-UX-T1 for task-first navigation and workspace audience separation.",
+    "parked": "T1P-T4, public-sync, deployment, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Roadmap and T1 packet authority only; no UI implementation yet."
+  }
+}

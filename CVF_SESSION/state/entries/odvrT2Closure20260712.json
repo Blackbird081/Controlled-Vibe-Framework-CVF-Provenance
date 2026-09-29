@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1692,
+  "stateKey": "odvrT2Closure20260712",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_VALUE_NOT_PROVEN",
+    "date": "2026-07-12",
+    "materialCommit": "da53959ec",
+    "roadmap": "docs/roadmaps/CVF_OPERATOR_DECISION_AND_VALUE_READOUT_ROADMAP_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_2026-07-12.md",
+    "completionReview": "docs/reviews/CVF_ODVR_T2_REPRESENTATIVE_OPERATOR_VALUE_PROOF_COMPLETION_2026-07-12.md",
+    "closedLaneFactsPreserved": "3/7",
+    "parkedLaneFactsPreserved": "0/7",
+    "nextAllowedMove": "operator selects one newly justified external repository or folder for source-mirror-first governed absorption entry",
+    "claimBoundary": "ODVR closed value not proven; no UI, implementation continuation, provider/live, public-sync, or automatic external absorption"
+  }
+}

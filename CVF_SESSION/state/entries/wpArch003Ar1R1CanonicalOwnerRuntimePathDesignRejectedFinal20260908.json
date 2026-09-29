@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2789,
+  "stateKey": "wpArch003Ar1R1CanonicalOwnerRuntimePathDesignRejectedFinal20260908",
+  "value": "WP-ARCH-003 AR1 R1 consolidated design rework is independently reviewed RETURN_TO_DESIGN with terminal status REJECTED_RETURN_TO_DESIGN_FINAL_NO_REDISPATCH at review commit 8ab5a361cbacacbc5f9c1d9e78590342a1173a23. ARCH-ABS-021 now has a bounded real non-test consumer, but ARCH-ABS-007 still lacks a trustworthy higher-authority approval producer and real runtime caller, ARCH-ABS-017 remains caller-self-attested and omission-bypassable, and the Future Implementation Manifest does not reconcile exactly with the matrix. The two exact worker artifacts remain untracked and uncommitted at SHA-256 a0754be2ee03a982d122d847b9ec1191018f4bd1f68e15d1e81b164f835c66a8 and 75e811ed51ce3dd83be5cdc394d26329f9933ec511ddcea53176597a4f3d990c. Same-parent external usage is exhausted at 2/2; no automatic third invocation or same-shape repair is authorized."
+}

@@ -79,12 +79,12 @@ SUCCESS CRITERIA:
     inputs: {
       topic: 'Small-team launch plan',
       context: 'A non-coder founder wants a short plan for testing a customer onboarding offer with five pilot customers.',
-      options: 'Use strategy_analysis template\nUse Alibaba qwen-turbo\nExport or copy the governance receipt after execution',
+      options: 'Use strategy_analysis template\nUse Alibaba qwen-flash\nExport or copy the governance receipt after execution',
       constraints: 'Plain-language output; no code required; do not claim broad production stability.',
       priority: 'P1 non-coder first receipt',
     },
     provider: 'alibaba',
-    model: 'qwen-turbo',
+    model: 'qwen-flash',
     mode: 'simple',
     action: 'analyze',
     aiCommit: {

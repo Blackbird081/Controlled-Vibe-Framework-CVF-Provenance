@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2959,
+  "stateKey": "cvfNcrR1S08UsageReceiptReadinessDispatch20260927",
+  "value": "CLOSED_PASS_BOUNDED. Worker evidence commit 4af51dd72 contains one generator-owned CVF_ASSF_SKILL_USAGE_RECEIPT and the reviewed return. Local independently recomputed bodyHash and receiptId, confirmed APPROVED lifecycle, DENIED_SOURCE_NOT_ACTIVE, SELECTED policy, activation false and output consumption false, then closed the work order at material commit e5ce21cb7. One noncanonical usage-disposition literal was repaired to NOT_USED_WITH_REASON before acceptance. NCR is paused; no ACTIVE transition or P8-P10 successor follows."
+}

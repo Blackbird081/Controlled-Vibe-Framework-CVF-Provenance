@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1979,
+  "stateKey": "cvfWebUxClarityT0Dispatch20260718",
+  "value": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T0",
+    "materialDispatchCommit": "426c14a05",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_UX_CLARITY_T0_LIVE_AND_SOURCE_AUDIT_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_CLARITY_T0_LIVE_AND_SOURCE_AUDIT_2026-07-18.md",
+    "workerMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Execute the bounded live and source audit, create exactly the two authorized review outputs, and return COMPLETE_PENDING_REVIEW for independent review.",
+    "parked": "UI implementation, redesign roadmap release, public-sync, deployment, provider/live calls, and the continuous projection drift roadmap.",
+    "claimBoundary": "Audit dispatch only; no runtime or UI mutation, production action, public export, deploy, or provider/live authority."
+  }
+}

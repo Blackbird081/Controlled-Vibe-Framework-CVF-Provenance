@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "cvf.cadpAiT6R2FreeQuotaPreflight.v1",
+  "batchId": "CADP-AI-T6-R2",
+  "executionBaseHead": "c6574f58eab264fda83943dd5dddff503e1483c7",
+  "capturedAtUtc": "2026-08-15T04:25:00+00:00",
+  "model": "qwen3.7-flash",
+  "modelSnapshotReference": "qwen3.7-flash-2026-07-15",
+  "freeQuotaCostGate": {
+    "point1_currentGovernedConsoleEvidence": {
+      "sourcePath": "docs/reference/model_gateway/CVF_ALIBABA_FREE_QUOTA_MODEL_LEDGER.json",
+      "modelRow": {
+        "modelCode": "qwen3.7-flash",
+        "freeQuotaRemaining": 1000000,
+        "freeQuotaTotal": 1000000,
+        "expirationDate": "2026-10-22",
+        "statusAtCapture": "Enabled"
+      },
+      "ledgerCaptureDate": "2026-08-15",
+      "executionDate": "2026-08-15",
+      "executionDateOnOrBeforeExpiration": true,
+      "evidenceSourceType": "REUSED_GOVERNED_LEDGER_SNAPSHOT",
+      "sameSessionLiveConsolePull": false,
+      "disclosure": "This worker environment has no interactive Alibaba Model Studio console access. The evidence is the governed repository ledger snapshot captured on the same calendar date as this execution (2026-08-15), not a fresh same-session console pull. Disclosed as such per work order point 1."
+    },
+    "point2_freeQuotaOnlyToggleState": {
+      "state": "ENABLED",
+      "evidenceSource": "GOVERNED_OPERATOR_SCREENSHOT_COMMITTED_IN_R2_BASELINE",
+      "evidenceSourcePath": "docs/baselines/CVF_GC018_CADP_AI_T6_R2_QWEN37_FLASH_FREE_QUOTA_COST_GATE_RETRY_2026-08-15.md",
+      "evidenceSourceSection": "Authorization And Dependency Release Evidence, row: operator console toggle evidence",
+      "screenshotCaptureDate": "2026-08-15",
+      "executionDate": "2026-08-15",
+      "sameCalendarDateAsScreenshotCapture": true,
+      "sameSessionConsolePull": false,
+      "disclosure": "The R2 baseline records an operator-provided Model Studio Free Quota screenshot captured 2026-08-15 showing the qwen3.7-flash row with Stop-on-Exhaust (Free Quota Only) enabled, disposition ACCEPT_AS_OF_CAPTURE_DATE. Execution remains on the same calendar capture date, so this governed evidence is used per work order point 2's explicit allowance; it is not a fresh same-session console observation and is disclosed as such. Had execution occurred on a later date without fresher evidence, this field would read UNCONFIRMED and the tranche would stop BLOCKED_WITH_REASON."
+    },
+    "point3_remainingQuotaAboveCeiling": {
+      "freeQuotaRemaining": 1000000,
+      "requestCeiling": {
+        "maxTokensOutput": 4096,
+        "conservativeFixedInputBound": 8000,
+        "conservativeTotalTokenEstimate": 12096
+      },
+      "remainingExceedsCeiling": true,
+      "marginTokens": 987904
+    },
+    "point4_officialDocumentationCitation": {
+      "url": "https://www.alibabacloud.com/help/en/model-studio/new-free-quota",
+      "accessDate": "2026-08-15",
+      "toggleName": "Free Quota Only",
+      "haltErrorCode": "AllocationQuota.FreeTierOnly",
+      "quotedBehavior": "When this feature is enabled, the service stops responding and returns the error code AllocationQuota.FreeTierOnly once your free quota is exhausted. You will not be charged for further usage.",
+      "zeroChargeGuaranteeConfirmed": true,
+      "disposition": "ADAPTED_WITH_REASON"
+    }
+  },
+  "allFourPointsEstablished": true,
+  "gateResult": "PASS",
+  "secretSafety": {
+    "rawKeyPersisted": false,
+    "rawProviderBodyPersisted": false,
+    "rawOutputPersisted": false,
+    "fullPromptPersisted": false
+  }
+}

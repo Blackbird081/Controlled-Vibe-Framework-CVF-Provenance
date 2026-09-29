@@ -1,0 +1,25 @@
+{
+  "stateOrder": 2410,
+  "stateKey": "gc010ScrR2T1fPendingAgentExecutionApprovalSnapshotDurableCompatibilityCorrectionDecisionClosure20260831",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "terminalToken": "CANONICAL_APPROVAL_REQUEST_HASH_FAIL_CLOSED_REISSUE_READY_FOR_BOUNDED_IMPLEMENTATION",
+    "materialCommit": "52a84fecf992c9045a9ae412aa7528da4899c8e9",
+    "dispatchCommit": "64806388622b6e5b735e86d9639ceaad6390c1bc",
+    "executionBaseHead": "68682362839c9bcdbfc569e2aac9393902626663",
+    "assessment": "docs/assessments/CVF_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_WORKER_RETURN_2026-08-31.md",
+    "completionReview": "docs/reviews/CVF_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_COMPLETION_2026-08-31.md",
+    "selectedOwner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/approvals/approval-binding.ts remains the approval identity owner",
+    "selectedContract": "Hash the exact schema projection with ordinal root/input key ordering, omit normalized optional undefined, reject malformed or unknown own shapes, and compute SHA-256 over UTF-8 compact JSON.",
+    "legacyBehavior": "Legacy or missing hashes fail closed and require reissue; no dual acceptance, silent rewrite or migration grant is authorized.",
+    "futureImplementationManifest": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/approvals/approval-binding.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/approvals/approval-binding.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/pending-agent-execution-local-harness.test.ts"
+    ],
+    "nextAllowedMove": "Await fresh operator instruction before separately authoring T1G implementation dispatch for the exact four-file manifest.",
+    "claimBoundary": "Decision only. T1E harness acceptance remains blocked; no source, package export, route/provider/audit, production consumer, distributed safety, provider/live, public, deployment or production authority changed."
+  }
+}

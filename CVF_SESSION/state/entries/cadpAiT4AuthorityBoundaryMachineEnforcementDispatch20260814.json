@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2183,
+  "stateKey": "cadpAiT4AuthorityBoundaryMachineEnforcementDispatch20260814",
+  "value": "CADP-AI-T4 authority-boundary machine enforcement is DISPATCH_READY at material commit 1b7ddb140. Exact current authority is bound to baseline SHA-256 d1d9336dec6196171c2072d5920312d0e30a0148f77f0aafb3fc824c50ce8d2e and work-order SHA-256 d6d4bcced458104c51190c3246f7bd60d7e98d9c18f9f685a4d26b8eb68d5bf7. Worker scope is exact four paths: one strict JSON fixture, one read-only checker, one focused negative/package-boundary test, and one worker return. The checker taxonomy covers fixture schema, missing surfaces, contract-version drift, authority type/value widening, forbidden execution seams, and package-export drift. No production TypeScript, existing guard, hook/autorun/CI wiring, registry, roadmap, session, provider/live, external adapter, public, deployment, production, or commit action is authorized. Independent review owns acceptance, repair, closure artifacts, registry/roadmap decisions, and commits."
+}

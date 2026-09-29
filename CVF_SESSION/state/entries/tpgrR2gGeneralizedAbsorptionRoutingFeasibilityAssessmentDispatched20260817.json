@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2281,
+  "stateKey": "tpgrR2gGeneralizedAbsorptionRoutingFeasibilityAssessmentDispatched20260817",
+  "value": "Operator approved APPROVE_GENERALIZED_R2_FEASIBILITY_ASSESSMENT. The generalized TPGR R2G documentation-only feasibility baseline and no-commit work order are committed at 618dfe0b092133fa2b294232a9737e3c60000267. Baseline SHA-256 is c9642558b1bdf38f1d2e3bc6392ab1214dbebc35ae7869ef33fc7df9b4ad5e6a; work-order SHA-256 is f484f3ed18c09e4e3f6aa0bc289c2d3b5fe6c72bc853c66052e02970d01b32fe. Worker scope is exactly two documentation outputs and WORKER_MUST_NOT_COMMIT. Independent reviewer retains diff inspection, evidence reproduction, acceptance, and commits. R3-R9, T15, rules/checkers/registries/catalogs, new intake, runtime/provider/live/public/deploy/production remain unauthorized."
+}

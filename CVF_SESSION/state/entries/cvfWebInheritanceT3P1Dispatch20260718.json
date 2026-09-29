@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1941,
+  "stateKey": "cvfWebInheritanceT3P1Dispatch20260718",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "11f39850b",
+    "dispatchBaseHead": "0e7904349",
+    "roadmap": "docs/roadmaps/CVF_WEB_CAPABILITY_INHERITANCE_AND_OPERATOR_PROJECTION_ROADMAP_2026-07-18.md",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T3P1_MAO_DURABLE_RUN_DISCOVERY_PREREQUISITE_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_INHERITANCE_T3P1_MAO_DURABLE_RUN_DISCOVERY_PREREQUISITE_2026-07-18.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "allowedPaths": 5,
+    "verification": "dispatch-author fast 5/5 PASS; pre-dispatch 75/75 PASS; dispatch steward PASS; pre-commit 83/83 PASS",
+    "nextAllowedMove": "Execute the exact T3P1 read-only run-discovery prerequisite and return for independent review.",
+    "heldNextTranche": "T3P2, T3B, and T4-T5 remain parked; no Web, provider/live, public, push, or production mutation.",
+    "claimBoundary": "One read-only discovery method, type export, focused tests, and worker return only."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2110,
+  "stateKey": "gc010AgentExecutionRuntimeT0OwnerProviderReceiptDecisionDispatch20260726",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_DISPATCH_READY",
+    "date": "2026-07-26",
+    "materialCommit": "f6010788a",
+    "dispatchBaseHead": "53f93910a",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_AGENT_EXECUTION_RUNTIME_T0_OWNER_PROVIDER_RECEIPT_DECISION_2026-07-26.md",
+    "baseline": "docs/baselines/CVF_GC018_GC010_AGENT_EXECUTION_RUNTIME_T0_OWNER_PROVIDER_RECEIPT_DECISION_2026-07-26.md",
+    "workerRoute": "one Claude documentation worker; WORKER_MUST_NOT_COMMIT; exactly audit plus worker return",
+    "verification": "automation assist PASS; pre-dispatch 75/75; commit steward PASS; pre-commit 83/83",
+    "nextAllowedMove": "send the complete committed GC010-AER-T0 work order to Claude; Claude creates exactly the audit and worker return without staging or commit; Codex then independently reviews and decides closure",
+    "claimBoundary": "No runtime/test/package/export/provider/CLI/MCP edit or execution, live provider/API/account/network use, latency benchmark, rollback action, public export, push, deployment, or production-readiness claim."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "stateOrder": 2947,
+  "stateKey": "cvfNcrR1W00HtmlUxDispatch20260926",
+  "value": {
+    "status": "ACCEPTED_BOUNDED_UX_CONTRACT_PACKET",
+    "materialCommit": "f7c18d6fe73e3ef44991eebe49de3ca019f4d51b",
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_W00_HTML_UX_CONTRACT_2026-09-26.md",
+    "workerReturnPath": "docs/reviews/CVF_CVF_NCR_R1_W00_HTML_UX_CONTRACT_WORKER_RETURN_2026-09-26.md",
+    "reviewCommit": "97532f7038f7bcc0d3768550b06a3695b72b8809",
+    "claimBoundary": "accepted static UX contract and repaired copy candidate only; no UI interaction, route call, configuration, provider/live, public or pilot authority"
+  }
+}

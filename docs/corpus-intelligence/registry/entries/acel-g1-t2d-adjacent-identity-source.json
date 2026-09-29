@@ -1,0 +1,45 @@
+{
+  "registryOrder": 197,
+  "id": "acel-g1-t2d-adjacent-identity-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "ACEL G1 T2D bounded adjacent identity-manager owner comparison",
+  "scopePaths": [
+    "EXTENSIONS/CVF_ECO_v2.3_AGENT_IDENTITY/src/identity.manager.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "ACEL-G1-T2D",
+  "scanDate": "2026-09-18",
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": null,
+  "packetPath": "docs/audits/CVF_ACEL_G1_T2D_SOURCE_OWNER_OPTIONS_2026-09-18.md",
+  "completionReviewPath": "docs/reviews/CVF_ACEL_G1_T2D_SOURCE_OWNER_ESTABLISHMENT_LOCAL_REVIEW_2026-09-18.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_ACEL_G1_T2D_SOURCE_OWNER_ESTABLISHMENT_2026-09-18.md",
+  "verdicts": {
+    "gc047": "NOT_RUN",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "agent credential association",
+    "adjacent G1 verifier-owner exclusion"
+  ],
+  "priorAbsorption": "Read-only adjacent-owner comparison only; no G1 key registry, independent issuer lookup, implementation, or authority promotion.",
+  "findings": [
+    {
+      "id": "ACEL-G1-T2D-IDENTITY-01",
+      "summary": "IdentityManager.verify checks credential association, not Ed25519 verifier signature or an independently observed issuer registry.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Keep the G1 trust-owner dependencies UNVERIFIED pending separate source-owner evidence and operator decision.",
+      "defectClass": "UNVERIFIED_CLAIM",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "Ed25519 verifier-key registry in identity.manager.ts",
+    "independent issuer registry observation in identity.manager.ts"
+  ],
+  "nextScanRecommendation": "Reopen only if this exact source changes materially or a separately authorized G1 owner-identification tranche requests it."
+}

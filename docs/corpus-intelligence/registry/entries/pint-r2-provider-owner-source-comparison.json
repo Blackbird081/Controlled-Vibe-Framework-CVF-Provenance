@@ -1,0 +1,64 @@
+{
+  "registryOrder": 157,
+  "id": "pint-r2-provider-owner-source-comparison",
+  "corpusType": "LEGACY_FOLDER",
+  "displayName": "PINT-R2 provider health and capability owner-source comparison",
+  "scopePaths": [
+    ".private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/EXTENSIONS/CVF_PROVIDER_INTELLIGENCE/PROVIDER_HEALTH_PROTOCOL.md",
+    ".private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/06_PROVIDER_HEALTH_AND_AVAILABILITY_PROTOCOL.md",
+    ".private_reference/legacy/CVF_PROVIDER_INTELLIGENCE/docs/absorptions/openrouter-provider-intelligence/07_TASK_CAPABILITY_MATRIX_SPEC.md",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-health.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-health.test.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-capability-registry.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/src/provider-method-contract.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-capability-registry.test.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/dynamic-model-registry-contract.test.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-adapter-admission.test.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-method-fallback-normalization.test.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/unified-gateway-interface-contract.test.ts"
+  ],
+  "fileCount": 12,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "PINT-R2",
+  "scanDate": "2026-07-25",
+  "manifestHash": null,
+  "manifestPath": "docs/audits/CVF_PINT_R2_PROVIDER_HEALTH_AND_CAPABILITY_OWNER_SOURCE_COMPARISON_2026-07-25.md",
+  "packetPath": "docs/audits/CVF_PINT_R2_PROVIDER_HEALTH_AND_CAPABILITY_OWNER_SOURCE_COMPARISON_2026-07-25.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_PINT_R2_PROVIDER_HEALTH_AND_CAPABILITY_OWNER_SOURCE_COMPARISON_2026-07-25.md",
+  "verdicts": {
+    "gc047": "N/A",
+    "gc048": "RECONCILED_VERIFIED",
+    "gc050": "N/A"
+  },
+  "semanticRegions": [
+    "PROVIDER_HEALTH_STATE_COMPARISON",
+    "TASK_CAPABILITY_AXIS_COMPARISON",
+    "MODEL_GATEWAY_OWNER_SOURCE_TESTS"
+  ],
+  "priorAbsorption": "PINT-R1 fully scanned the 50-file retained Provider Intelligence corpus. PINT-R2 reopens only three retained files and compares them with eight named owner source/test files plus one corroborating owner test discovered by negative search.",
+  "findings": [
+    {
+      "id": "pint-r2-health-stale-documentation-enrichment",
+      "summary": "The retained six-state health vocabulary adds stale to the five-state owner enum, while the owner has timestamps but no TTL evaluation.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Retain as ENRICH_EXISTING documentation value. Runtime or enum work requires a separate source-verified dispatch.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    },
+    {
+      "id": "pint-r2-task-capability-owner-deferred",
+      "summary": "The retained task-type and capability-tag vocabulary is a different axis from ProviderMethodName and has no current owner surface.",
+      "disposition": "DEFER_DEMAND_GATED",
+      "nextAction": "Reopen only after a task-classification owner and ordering against GatewayPolicyContext are source-verified.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "stale owner state",
+    "task_type owner field",
+    "capability_tag owner field",
+    "automatic runtime lane release"
+  ],
+  "nextScanRecommendation": "No repeat corpus scan. Reopen candidate A only through a separately authorized owner-enrichment tranche, and candidate B only after a task-classification owner source exists."
+}

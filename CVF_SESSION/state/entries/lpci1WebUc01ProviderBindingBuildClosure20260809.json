@@ -1,0 +1,20 @@
+{
+  "stateOrder": 2014,
+  "stateKey": "lpci1WebUc01ProviderBindingBuildClosure20260809",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-UC01-B2",
+    "materialCommit": "5c86f6d77",
+    "materialAnchorCommit": "145f9a5bc",
+    "completionReview": "docs/reviews/CVF_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_BUILD_COMPLETION_2026-08-09.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_CONTEXT_TO_LLM_PROVIDER_BINDING_BUILD_2026-08-09.md",
+    "roadmapStatus": "LPCI1_WEB_UC01_BUILD_ACCEPTED_BOUNDED_HOLD_BEFORE_FRESH_PROVIDER_LIVE_AUTHORITY",
+    "focusedTests": "70_PASS",
+    "preClosureEvidence": "PASS_75_OF_75",
+    "providerLiveNetworkActionCount": 0,
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Hold until fresh explicit operator authority opens a provider/live-proof packet.",
+    "claimBoundary": "Accepted local deterministic BUILD only; no real credential validity, provider/live, public-sync, deployment, or readiness claim."
+  }
+}

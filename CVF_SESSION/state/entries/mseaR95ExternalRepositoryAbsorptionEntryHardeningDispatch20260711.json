@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1655,
+  "stateKey": "mseaR95ExternalRepositoryAbsorptionEntryHardeningDispatch20260711",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-11",
+    "dispatchCommit": "dd92fa6d6",
+    "baseline": "docs/baselines/CVF_GC018_MSEA_R95_EXTERNAL_REPOSITORY_ABSORPTION_ENTRY_HARDENING_2026-07-11.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R95_EXTERNAL_REPOSITORY_ABSORPTION_ENTRY_HARDENING_2026-07-11.md",
+    "workerCommitPolicy": "WORKER_MUST_NOT_COMMIT",
+    "preDispatch": "74/74 PASS",
+    "preCommit": "81/81 PASS",
+    "nextAllowedMove": "execute only the R95 no-commit worker order and return COMPLETE_PENDING_REVIEW",
+    "claimBoundary": "dispatch authorizes bounded checker, focused-test, and guidance hardening only; no new checker, hook, runtime, provider, Web, public-sync, actual repository absorption, or MAO work"
+  }
+}

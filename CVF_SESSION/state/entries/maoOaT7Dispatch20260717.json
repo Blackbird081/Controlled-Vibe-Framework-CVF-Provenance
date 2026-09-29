@@ -1,0 +1,18 @@
+{
+  "stateOrder": 1881,
+  "stateKey": "maoOaT7Dispatch20260717",
+  "value": {
+    "status": "DISPATCHED",
+    "date": "2026-07-17",
+    "materialCommit": "4c0a03fc8",
+    "dispatchBaseHead": "43c916a50",
+    "roadmap": "docs/roadmaps/CVF_MAO_OPERATIONAL_ADOPTION_AND_AGENT_EXECUTION_ASSURANCE_ROADMAP_2026-07-16.md",
+    "baseline": "docs/baselines/CVF_GC018_MAO_OA_T7_INDEPENDENT_CRITIQUE_AND_ROADMAP_CLOSURE_ASSESSMENT_2026-07-17.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MAO_OA_T7_INDEPENDENT_CRITIQUE_AND_ROADMAP_CLOSURE_ASSESSMENT_2026-07-17.md",
+    "workerRoute": "WORKER_MUST_NOT_COMMIT with exactly two new review paths",
+    "boundary": "Documentation-only independent critique; no roadmap, source, registry, state, provider, live, public, or push mutation.",
+    "verification": "Dispatch-author fast gate PASS; pre-dispatch 75/75 PASS; commit steward PASS; pre-commit 83/83 PASS.",
+    "nextAllowedMove": "Execute the exact T7 no-commit work order and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+  }
+}

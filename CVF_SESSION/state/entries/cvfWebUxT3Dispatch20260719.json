@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1992,
+  "stateKey": "cvfWebUxT3Dispatch20260719",
+  "value": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T3",
+    "materialDispatchCommit": "d2bbe3f43",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_UX_T3_HOME_ONBOARDING_CHROME_AND_DENSITY_2026-07-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T3_HOME_ONBOARDING_CHROME_AND_DENSITY_2026-07-19.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Execute bounded T3 current-source Web work from the final session-sync HEAD and return COMPLETE_PENDING_REVIEW without committing.",
+    "parked": "T4, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Dispatch authority only; no UI acceptance, hosted freshness, deployment, provider behavior, public export, or production claim."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "registryOrder": 151,
+  "id": "cvf-web-inheritance-t3b-mao-durable-readout",
+  "corpusType": "PROJECT_SOURCE",
+  "displayName": "CVF Web inheritance T3B MAO durable-event readout surfaces",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/.env.example",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package-lock.json",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/mao-durable-run-readout.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/mao-durable-run-readout.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/runtime-modules.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/runtime-modules.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance/mao-runs/page.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance/mao-runs/page.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance/page.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/governance/page.test.tsx"
+  ],
+  "fileCount": 11,
+  "status": "SCANNED",
+  "scanWave": "CVF-WEB-INHERITANCE-T3B",
+  "scanDate": "2026-07-18",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_WEB_INHERITANCE_T3B_WORKER_RETURN_2026-07-18.md",
+  "completionReviewPath": "docs/reviews/CVF_WEB_INHERITANCE_T3B_COMPLETION_REVIEW_2026-07-18.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_CVF_WEB_INHERITANCE_T3B_MAO_DURABLE_EVENT_OPERATOR_READOUT_2026-07-18.md",
+  "verdicts": {
+    "gc047": "N/A",
+    "gc048": "N/A",
+    "gc050": "N/A"
+  },
+  "semanticRegions": [
+    "CVF_WEB_INHERITANCE",
+    "MAO_DURABLE_EVENT_READOUT",
+    "READ_ONLY_OPERATOR_PROJECTION"
+  ],
+  "priorAbsorption": "T3B composes existing MAO durable discovery, replay, and generated read-model owners into a bounded read-only Web projection with no exposed action.",
+  "findings": [],
+  "negativeSearchTerms": [
+    "evidence ledger projection in T3B",
+    "heartbeat or live-process projection in T3B",
+    "MAO mutation control in cvf-web T3B"
+  ],
+  "nextScanRecommendation": "Reopen these surfaces only for a source-owned scale contract or a later source-verified MAO Web change."
+}

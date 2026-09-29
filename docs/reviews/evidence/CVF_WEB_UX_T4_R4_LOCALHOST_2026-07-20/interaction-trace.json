@@ -1,0 +1,73 @@
+[
+  {
+    "scenario": "Home dismiss onboarding and activate Tao PRD to form",
+    "route": "/home",
+    "viewport": "1440x900",
+    "orderedKeys": [
+      "Enter (dismiss onboarding)",
+      "Tab",
+      "Enter"
+    ],
+    "targetAccessibleName": "T\u1ea1o PRD",
+    "targetTagRole": "button",
+    "stableSelector": "button[aria-label=\"T\u1ea1o PRD\"]",
+    "focusedBefore": "T\u1ea1o PRD",
+    "beforeState": "onboarding_no_onboarding_dialog_visible_quick_actions_visible",
+    "activationKey": "Enter",
+    "focusedAfter": "DynamicForm",
+    "afterState": "dynamic_form_rendered",
+    "resultAnchor": "\ud83d\udce6\ud83d\udce6 T\u1ea1o \u1ee8ng d\u1ee5ng Ho\u00e0n ch\u1ec9nh | label: 1. T\u00ean app / s\u1ea3n ph\u1ea9m*",
+    "consoleDelta": [],
+    "terminalVerdict": "PASS"
+  },
+  {
+    "scenario": "Workspace advanced details toggle false-true-false",
+    "route": "/workspace",
+    "viewport": "1440x900",
+    "orderedKeys": [
+      "Tab",
+      "Enter",
+      "Enter"
+    ],
+    "targetAccessibleName": "Chi ti\u1ebft k\u1ef9 thu\u1eadt n\u00e2ng cao (mode, handoff, dispatch, lanes, ",
+    "targetTagRole": "summary",
+    "stableSelector": "details[data-testid=\"advanced-detail\"] > summary",
+    "focusedBefore": "summary",
+    "beforeState": false,
+    "intermediateState": true,
+    "finalState": false,
+    "activationKey": "Enter",
+    "focusedAfter": "summary",
+    "afterState": "details.open=false",
+    "resultAnchor": "details.open toggled false -> true -> false",
+    "consoleDelta": [],
+    "terminalVerdict": "PASS"
+  },
+  {
+    "scenario": "Knowledge Bien soan action to 401 response and visible error",
+    "route": "/governance/knowledge",
+    "viewport": "1440x900",
+    "orderedKeys": [
+      "Tab (content filled)",
+      "Tab",
+      "Enter"
+    ],
+    "targetAccessibleName": "Bi\u00ean so\u1ea1n",
+    "targetTagRole": "button",
+    "stableSelector": "button:has-text(\"Bi\u00ean so\u1ea1n\")",
+    "focusedBefore": "Bi\u00ean so\u1ea1n",
+    "beforeState": "textarea_filled_compile_enabled",
+    "activationKey": "Enter",
+    "networkResponse": {
+      "url": "http://localhost:3000/api/governance/knowledge/compile",
+      "status": 401,
+      "statusText": "Unauthorized",
+      "error": "Unauthorized: please login."
+    },
+    "focusedAfter": "Bi\u00ean so\u1ea1n",
+    "afterState": "401_error_displayed",
+    "resultAnchor": "Unauthorized: please login.",
+    "consoleDelta": [],
+    "terminalVerdict": "PASS"
+  }
+]

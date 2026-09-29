@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1770,
+  "stateKey": "systemChainUc02RoadmapReconciliation20260714",
+  "value": {
+    "status": "RECONCILED",
+    "materialCommit": "ed4052a27",
+    "roadmapStatus": "ACTIVE_UC02_AND_RENDERER_REPAIR_CLOSED_UC03_PACKET_NEXT",
+    "uc02Status": "CLOSED_PASS_BOUNDED",
+    "rendererRepairStatus": "CLOSED_PASS_BOUNDED",
+    "uc03Status": "NOT_DISPATCHED_NOT_EXECUTED",
+    "uc04Status": "HELD",
+    "nextAllowedMove": "author one bounded UC-03 GC-018 and source-verified route-selection work order",
+    "claimBoundary": "Roadmap reconciliation only; no UC-03 execution, provider, public, production, scale, universal, certification, or user-value claim."
+  }
+}

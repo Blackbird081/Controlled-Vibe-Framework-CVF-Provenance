@@ -1,0 +1,45 @@
+{
+  "registryOrder": 196,
+  "id": "acel-g4-t1-incremental-value-owner-composition-design",
+  "corpusType": "TEST_CORPUS",
+  "displayName": "ACEL G4 T1 incremental value owner-composition design",
+  "scopePaths": [
+    "docs/baselines/CVF_GC018_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_2026-09-17.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_2026-09-17.md",
+    "docs/audits/CVF_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_2026-09-17.md",
+    "docs/audits/CVF_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_MANIFEST_2026-09-17.json",
+    "docs/reviews/CVF_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_WORKER_RETURN_2026-09-17.md",
+    "docs/reviews/CVF_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_COMPLETION_2026-09-17.md",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/incremental.value.owner.contract.ts",
+    "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/incremental.value.owner.contract.test.ts",
+    "governance/compat/check_incremental_value_owner_evidence.py",
+    "governance/compat/test_check_incremental_value_owner_evidence.py",
+    "docs/reference/agent_system_skills/CVF_INCREMENTAL_VALUE_OWNER_CONTRACT.md"
+  ],
+  "fileCount": 11,
+  "status": "SCANNED_WITH_FINDINGS",
+  "findings": [
+    {
+      "id": "acel-g4-t1-owner-composition-ready",
+      "summary": "Eight current sources support one G4 offline comparison-owner design after worker R1 and Local repair of intervention identity, state precedence, coverage admission and epistemic boundary.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Require a separate governed selection and GC-018 work order before creating any of the five planned successor paths or running an experiment.",
+      "defectClass": "WORKER_EXECUTION_ERROR",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE"
+    }
+  ],
+  "negativeSearchTerms": [
+    "general marginal-value decision owner in G3",
+    "review-cost counters as semantic value delta",
+    "absolute evaluation receipt as incremental value",
+    "G1 design as implemented G4 input"
+  ],
+  "nextScanRecommendation": "Re-scan only after a separately authorized successor creates a planned path or a current owner source changes.",
+  "scanWave": "ACEL-G4-T1",
+  "scanDate": "2026-09-17",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_2026-09-17.md",
+  "completionReviewPath": "docs/reviews/CVF_ACEL_G4_T1_INCREMENTAL_VALUE_OWNER_COMPOSITION_DESIGN_COMPLETION_2026-09-17.md",
+  "notes": "Design-only closure. Five successor paths are planned, not existing files or authority. G1 implementation, G4 experiment, provider/live, runtime and deployment remain parked."
+}

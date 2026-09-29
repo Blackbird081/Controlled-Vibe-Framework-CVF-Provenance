@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2384,
+  "stateKey": "gc010ScrR1T0SingleConsumerBoundaryDecisionDispatch20260830",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "beffeafc6",
+    "roadmap": "docs/roadmaps/CVF_GC010_SINGLE_CONSUMER_SYSTEM_CHAIN_PRODUCT_ROADMAP_2026-08-30.md",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R1_T0_SINGLE_CONSUMER_BOUNDARY_DECISION_2026-08-30.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R1_T0_SINGLE_CONSUMER_BOUNDARY_DECISION_2026-08-30.md",
+    "workerBoundary": "The no-commit documentation worker created exactly the architecture audit and worker return; the reviewer repaired only packet, closure and continuity defects and added the required completion review.",
+    "proof": "Terminal token NO_VIABLE_CONSUMER_RETAIN_PARKED independently accepted; pre-implementation passed 82/82, worker-return fast gate was COMPLIANT, reviewer-fast passed 66/66, and material pre-commit/commit hook passed 87/87. Provider/live/network/browser/credential calls were zero.",
+    "completionReview": "docs/reviews/CVF_GC010_SCR_R1_T0_SINGLE_CONSUMER_BOUNDARY_DECISION_COMPLETION_2026-08-30.md",
+    "nextAllowedMove": "Select a fresh source-verified, non-duplicate value lane outside GC010-SCR-R1. T1-T5 remain parked because the historical four-fact reopen condition is unsatisfied.",
+    "claimBoundary": "T0 current-source decision closed bounded only; GC-010 and the paired gap remain open and parked, with no runtime, provider/live, public-sync, deployment or production authority."
+  }
+}

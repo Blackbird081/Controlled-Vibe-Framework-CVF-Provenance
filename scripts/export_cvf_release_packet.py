@@ -19,14 +19,15 @@ from release_packet.cross_family_render import build_cross_family_lines
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_TRACE = REPO_ROOT / "docs" / "reviews" / "cvf_phase_governance" / "CVF_UPGRADE_TRACE_2026-03-07.md"
+PHASE_GOVERNANCE_ARCHIVE = REPO_ROOT / "docs" / "reviews" / "cvf_phase_governance" / "archive"
+DEFAULT_TRACE = PHASE_GOVERNANCE_ARCHIVE / "CVF_UPGRADE_TRACE_2026-03-07.md"
 DEFAULT_MANIFEST = REPO_ROOT / "docs" / "reference" / "CVF_RELEASE_MANIFEST.md"
 DEFAULT_TEST_LOG = REPO_ROOT / "docs" / "CVF_INCREMENTAL_TEST_LOG.md"
-DEFAULT_BASELINE = REPO_ROOT / "docs" / "reviews" / "cvf_phase_governance" / "CVF_DANH_GIA_DOC_LAP_TOAN_DIEN_2026-03-06.md"
-DEFAULT_EXECUTIVE = REPO_ROOT / "docs" / "reviews" / "cvf_phase_governance" / "CVF_EXECUTIVE_REVIEW_BASELINE_2026-03-06.md"
+DEFAULT_BASELINE = PHASE_GOVERNANCE_ARCHIVE / "CVF_DANH_GIA_DOC_LAP_TOAN_DIEN_2026-03-06.md"
+DEFAULT_EXECUTIVE = PHASE_GOVERNANCE_ARCHIVE / "CVF_EXECUTIVE_REVIEW_BASELINE_2026-03-06.md"
 DEFAULT_ROADMAP = REPO_ROOT / "docs" / "reviews" / "cvf_phase_governance" / "CVF_ROADMAP_HOAN_THIEN_TOAN_DIEN_2026-03-06.md"
-DEFAULT_REMEDIATION_JSON = REPO_ROOT / "docs" / "reviews" / "cvf_phase_governance" / "CVF_W4_REMEDIATION_RECEIPTS_LOCAL_BASELINE_2026-03-07.json"
-DEFAULT_REMEDIATION_LOG = REPO_ROOT / "docs" / "reviews" / "cvf_phase_governance" / "CVF_W4_REMEDIATION_RECEIPT_LOG_2026-03-07.md"
+DEFAULT_REMEDIATION_JSON = PHASE_GOVERNANCE_ARCHIVE / "CVF_W4_REMEDIATION_RECEIPTS_LOCAL_BASELINE_2026-03-07.json"
+DEFAULT_REMEDIATION_LOG = PHASE_GOVERNANCE_ARCHIVE / "CVF_W4_REMEDIATION_RECEIPT_LOG_2026-03-07.md"
 DEFAULT_RUNTIME_EVIDENCE_MANIFEST = REPO_ROOT / "docs" / "reviews" / "cvf_phase_governance" / "CVF_W4_MULTI_RUNTIME_EVIDENCE_MANIFEST_2026-03-07.json"
 DEFAULT_RUNTIME_EVIDENCE_LOG = REPO_ROOT / "docs" / "reviews" / "cvf_phase_governance" / "CVF_W4_MULTI_RUNTIME_EVIDENCE_LOG_2026-03-07.md"
 DEFAULT_OUTPUT = REPO_ROOT / "docs" / "reviews" / "cvf_phase_governance" / "CVF_RELEASE_APPROVAL_PACKET_LOCAL_BASELINE_2026-03-07.md"
@@ -37,7 +38,10 @@ def _read(path: Path) -> str:
 
 
 def _rel(path: Path) -> str:
-    return str(path.relative_to(REPO_ROOT)).replace("\\", "/")
+    try:
+        return str(path.relative_to(REPO_ROOT)).replace("\\", "/")
+    except ValueError:
+        return str(path).replace("\\", "/")
 
 
 def _extract_field(label: str, text: str) -> str:
@@ -51,7 +55,7 @@ def _extract_latest_batch_title(test_log: str) -> str:
     if not matches:
         return "unknown"
     latest_date, latest_name = matches[-1]
-    return f"{latest_date} — {latest_name.strip()}"
+    return f"{latest_date} - {latest_name.strip()}"
 
 
 def _find_manifest_row(version_token: str, manifest: str) -> tuple[str, str]:
@@ -124,6 +128,17 @@ def build_packet(
         [
             f"# CVF Release Approval Packet - {output.stem.replace('_', ' ')}",
             "",
+            "Memory class: FULL_RECORD",
+            "",
+            "docType: review",
+            "",
+            "Status: GENERATED",
+            "",
+            "## Purpose",
+            "",
+            "Render the current canonical release/trace/baseline references into a",
+            "reviewable release approval packet.",
+            "",
             "## Packet Header",
             "",
             f"- packet type: {packet_type}",
@@ -135,6 +150,16 @@ def build_packet(
             f"- target release line: {resolved_release_line}",
             f"- target module / version: {resolved_target_module}",
             f"- baseline reference: {_rel(DEFAULT_BASELINE)}",
+            "",
+            "## Target",
+            "",
+            f"- target release line: {resolved_release_line}",
+            f"- target module / version: {resolved_target_module}",
+            "",
+            "## Scope",
+            "",
+            f"- canonical release packet export for {resolved_target_module}",
+            "- excludes broader ecosystem conformance rollout and push/publication decision",
             "",
             "## 1. Release Scope",
             "",
@@ -172,12 +197,12 @@ def build_packet(
             "## 4. Verification Evidence",
             "",
             "- compat gate result:",
-            "  - python governance/compat/check_core_compat.py --base HEAD~1 --head HEAD -> PASS",
+            "  - python governance/compat/check_core_compat.py --base <execution-range> --head HEAD -> PASS",
             "- tests executed:",
             f"  - python scripts/export_cvf_release_packet.py --output {_rel(output)} -> PASS",
             f"  - python governance/compat/check_enterprise_evidence_pack.py --packet {_rel(output)} --enforce -> PASS",
             "  - python governance/compat/check_docs_governance_compat.py --enforce -> PASS",
-            "  - python governance/compat/check_test_doc_compat.py --base HEAD --head HEAD --enforce -> PASS",
+            "  - python governance/compat/check_test_doc_compat.py --base <execution-range> --head HEAD --enforce -> PASS",
             runtime_manifest_field,
             runtime_manifest_log_field,
             *remediation_evidence_lines,
@@ -220,6 +245,44 @@ def build_packet(
             "- approval date: 2026-03-07",
             "- follow-up actions:",
             "  - keep packet regenerated from canonical sources when trace or release state changes",
+            "",
+            "## Findings",
+            "",
+            f"This packet reflects the canonical release/trace/baseline references at",
+            "generation time. No manual finding is asserted beyond the tabulated",
+            "sections above.",
+            "",
+            "## Risk",
+            "",
+            f"- known open risks: {known_open_risks}",
+            "",
+            "## Decision",
+            "",
+            f"- decision: {decision}",
+            "",
+            "## Finding-To-Governance Learning Disposition",
+            "",
+            "| Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |",
+            "|---|---|---|---|---|---|",
+            "| N/A with reason: this generated packet states only tabulated canonical references with no asserted defect | RUNTIME_SIGNAL_GAP | DOCUMENTATION_ONLY_LEARNING | N/A_WITH_REASON | none | N/A |",
+            "",
+            "EPISTEMIC_PROCESS_NA_WITH_REASON: this is a deterministic rendering of the named canonical references with no prediction, evidence comparison, or claim update",
+            "",
+            "## Checker Source Read-Ahead Block",
+            "",
+            "| Field | Value |",
+            "|---|---|",
+            "| applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_work_order_dispatch_quality.py`; `governance/compat/check_agent_packet_authority_and_encoding.py` |",
+            "| literalTokensReviewed | `Memory class`; `Status`; `## Purpose`; `## Target`; `## Claim Boundary`; `## Checker Source Read-Ahead Block` |",
+            "| gateRunPurpose | confirmation evidence for a deterministically generated packet; not first discovery |",
+            "| claimBoundary | this packet states only the canonical references present at generation time |",
+            "",
+            "## Claim Boundary",
+            "",
+            "This packet is a deterministic rendering of the named canonical",
+            "references only. It makes no provider, production, public, scale,",
+            "certification, or user-value claim beyond the local release posture",
+            "stated above.",
             "",
         ]
     )

@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2713,
+  "stateKey": "gclhMfrpP3R1DesignReviewCheckpointRequired20260901",
+  "value": {
+    "status": "P3_RETURN_TO_DESIGN_P3_R1_DESIGN_REVIEW_CHECKPOINT_REQUIRED",
+    "materialCommit": "0cb164a1d6b27fef21cf829d32465923d1331c49",
+    "roadmapPath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
+    "redesignPath": "docs/assessments/CVF_MFRP_P3_R1_ACTUAL_SEAM_REPLAY_AND_COMMITTED_ORACLE_REDESIGN_2026-09-01.md",
+    "rejectionReviewPath": "docs/reviews/CVF_MFRP_P3_INDEPENDENT_REVIEW_RETURN_TO_DESIGN_2026-09-01.md",
+    "rejectedEvidenceManifest": "docs/reviews/rejected_evidence/MFRP_P3_2026-09-01/ARCHIVE_MANIFEST.txt",
+    "acceptedOutcome": "Original P3 is rejected. Its five worker artifacts are byte-preserved as NOT_ACTIVE_AUTHORITY with non-executable .rejected suffixes. P3-R1 now separates dispatcher/reviewer-owned committed-oracle ratification from an actual-P2-seam runner and post-run observation ledger.",
+    "reviewEvidence": "Bounded hostile probes reproduced false-pass behavior; focused governance gates passed; reviewer-fast 67/67 and material pre-commit 88/88 passed. No provider/live/network call occurred.",
+    "nextAllowedMove": "Obtain an independent critique of the committed P3-R1 redesign. Do not implement R1A or R1B until that critique is reconciled, the operator explicitly approves the next tranche, and a fresh source-verified baseline/work order is committed.",
+    "claimBoundary": "Archive preservation and design readiness only. No P3 replay acceptance, oracle ratification, runner implementation, P2 mutation, P4 opening, lifecycle activation, downstream application or external effect is claimed."
+  }
+}

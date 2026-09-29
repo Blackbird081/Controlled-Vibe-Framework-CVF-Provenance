@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "cvf.independentReviewProbeEvidence.v1",
+  "batchId": "CVF-NCR-R1-S07-R1",
+  "probeInvocationId": "cvf-ncr-r1-s07-r1-independent-probe-20260927",
+  "executorRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "method": "Direct imports of both production activation-decision functions over independently constructed inputs; no worker fixture helper used.",
+  "matrix": [
+    {"case": "ineligible_missing", "inventory": "DENIED_NOT_RUNTIME_ELIGIBLE", "resolver": "DENIED_NOT_RUNTIME_ELIGIBLE"},
+    {"case": "ineligible_good", "inventory": "DENIED_NOT_RUNTIME_ELIGIBLE", "resolver": "DENIED_NOT_RUNTIME_ELIGIBLE"},
+    {"case": "eligible_missing", "inventory": "DENIED_MISSING_TRUTH_PACKET", "resolver": "DENIED_MISSING_TRUTH_PACKET"},
+    {"case": "eligible_bad", "inventory": "DENIED_TRUTH_NOT_APPROVED", "resolver": "DENIED_TRUTH_NOT_APPROVED"},
+    {"case": "approved_good", "inventory": "DENIED_SOURCE_NOT_ACTIVE", "resolver": "DENIED_SOURCE_NOT_ACTIVE"},
+    {"case": "active_good", "inventory": "ACTIVATION_READY", "resolver": "ACTIVATION_READY"}
+  ],
+  "matrixVerdict": "PASS_6_OF_6",
+  "truthReceiptRecompute": "sha256:0d99ce6caf46397af1c0418bc3198086709bc7a6fbec9c5afac7ee5346917dfe",
+  "recurrenceHostileVerdict": "PASS_NON_PATH_REJECTED_AND_FALSE_FIRST_OCCURRENCE_REJECTED",
+  "claimBoundary": "Provider-free source and policy parity only; no package body, activation, provider, network, public, deployment, or production effect."
+}

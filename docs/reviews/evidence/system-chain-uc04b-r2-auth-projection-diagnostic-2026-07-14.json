@@ -1,0 +1,22 @@
+{
+  "packet": "SCLP-UC04B-R2",
+  "diagnosticCreatedAt": "2026-07-15T03:30:33Z",
+  "stage": "e2e_proof_invocation",
+  "class": "ENVIRONMENT_DEV_SERVER_CROSS_ORIGIN_COOKIE_SPLIT",
+  "retryable": false,
+  "userAction": "Reviewer decision required: add 127.0.0.1 to Next.js allowedDevOrigins (config file is read-only under this work order's manifest), or repoint the Operations-page client fetch/page navigation to a single consistent dev host, before a fresh R2-successor packet can rerun this proof.",
+  "providerOrModel": "N/A_NO_PROVIDER_CALL",
+  "httpStatusOrLatency": "N/A_NOT_A_PROVIDER_CALL",
+  "receiptOrTracePath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results/system-chain-uc04b-auth-pr-39cc2-perations-projections-agree/trace.zip",
+  "message": "The one authorized Playwright invocation ran both cases serially; case 1 (positive_developer_auth_projection) failed and case 2 (negative_anonymous_auth_projection) did not run as a serial-mode consequence. Direct-credentials auth, /api/auth/csrf, /api/auth/callback/credentials, /api/auth/session, and the case's page.request.get('/api/auth/me') call (base URL http://127.0.0.1:3001) all completed with expected statuses per the captured trace network log. The subsequent page.goto(OPERATIONS_URL) browser navigation resolved to http://localhost:3001 instead of http://127.0.0.1:3001 -- a different origin with a separate cookie jar under the dev server's default same-origin behavior -- so the NextAuth session cookie set for 127.0.0.1 was not sent on that navigation, and the Operations page's own client-side fetch('/api/auth/me') read an unauthenticated context, rendering active role anonymous_local instead of operator. The dev server log for this run also emitted a 'Blocked cross-origin request ... from 127.0.0.1' warning citing Next.js allowedDevOrigins, corroborating a host-origin split rather than an auth-projection defect. next.config.ts has no allowedDevOrigins entry and is a read-only owner under this work order's Planned Worker Fulfillment Manifest, so no fix is authorized in this packet.",
+  "rootCauseConfidence": "SOURCE_BACKED: trace network log shows explicit host mismatch (127.0.0.1 for API calls vs localhost for page navigation); webServer log independently names the same Next.js allowedDevOrigins mechanism for the same host.",
+  "runtimeRepairStatus": "verifySessionCookie request-bound projection change is unit-test proven (12/12 focused tests PASS, including 5 new request-bound cases covering identity/role/org/team/expiry mapping, null-token, and impersonation-via-request) and is not implicated by this failure -- the request-bound code path was never reached because the browser navigation itself carried no session cookie under the mismatched-origin condition.",
+  "invocationLedgerReconciliation": {
+    "invocationCeiling": 1,
+    "invocationsRun": 1,
+    "retries": 0,
+    "businessSubmissions": 0,
+    "checkerExecutions": 0,
+    "providerCalls": 0
+  }
+}

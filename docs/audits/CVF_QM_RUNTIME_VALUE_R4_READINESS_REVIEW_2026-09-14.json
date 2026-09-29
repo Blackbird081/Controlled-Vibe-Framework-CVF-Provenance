@@ -1,0 +1,528 @@
+{
+  "schemaVersion": "cvf.r4ReadinessReview.v1",
+  "sourceAuditSha256": "0ef9a50b98de55c3ff40c05b6fc4a1f719efe4872d67af57bcb3ec599f2e559a",
+  "pin": "361a6c0095dcd3d156aca91353f3ffba0bb8b69b",
+  "legacyAutomaticallyValidated": false,
+  "method": "Explicit reviewer projection of original declarations; no upstream execution and no invented read spans/blob evidence.",
+  "declaredCandidates": 41,
+  "actualCandidateSet": 41,
+  "declaredReadCount": 39,
+  "actualReadRows": 37,
+  "missingCandidateRows": [
+    "test/memorable-relay.test.ts",
+    "test/turn-context.test.ts"
+  ],
+  "currentPlaceholderCount": 6,
+  "validatorElapsedMs": 246.897,
+  "gitCalls": 4,
+  "validatorClean": false,
+  "issues": [
+    {
+      "pointer": "/bindings/1/rows/test/agent-tools.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-3237",
+      "observed": "((1, 8), (40, 60), (1609, 1713), (3211, 3237))"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/notebook.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-16",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-strategy-agent-only.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-40",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-provider-unreachable.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-67",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/mcp-memory-provider.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-69",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-provider-factory.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-82",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memorable-provider.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-99",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-file-routing.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-109",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-provider-router.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-114",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-bench.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-123",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/refusal-admin-link-integration.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-124",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/e2e/memorable-cli.e2e.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-126",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memorable-inject.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-127",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-provider-config.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-140",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/e2e/memorable-provider.e2e.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-147",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-strategy-per-turn.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-147",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-history-agent-routes.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-152",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/postgres-memory-service.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-153",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/e2e/memory-provider.e2e.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-170",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-capture-async.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-188",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/durable-process-sessions.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-204",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/turn-bookkeeping-failures.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-230",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-236",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memorable-capture.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-267",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-tool.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-282",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/turn-retry-replay.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-286",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-strategy-consolidation.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-287",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-cc-personal.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-288",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-strategy-scratch-promote.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-308",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/e2e/memorable-live.e2e.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-332",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/finalize-on-reply-ready.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-334",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/prompt-modes.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-442",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/tape-nudge-continuation.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-647",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/system-prompt-order.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-856",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/context-compaction.test.ts/readSpans",
+      "message": "partial read span cannot satisfy a full-read (READ) claim",
+      "expected": "union covers 1-1208",
+      "observed": "()"
+    },
+    {
+      "pointer": "/bindings/1/discoveryManifest/test/memorable-relay.test.ts",
+      "message": "declared candidate has no processing row (READ/REUSED/EXCLUDED)",
+      "expected": "present in rows",
+      "observed": "absent"
+    },
+    {
+      "pointer": "/bindings/1/discoveryManifest/test/turn-context.test.ts",
+      "message": "declared candidate has no processing row (READ/REUSED/EXCLUDED)",
+      "expected": "present in rows",
+      "observed": "absent"
+    },
+    {
+      "pointer": "/bindings/1/binding/auditPath#/totalCount",
+      "message": "audit JSON structurally declared count does not match current binding row counts",
+      "expected": "39",
+      "observed": "41"
+    },
+    {
+      "pointer": "/bindings/1/rows/test/read-cancellation.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "0cda452ad67118c2bb2c67a8a11acd1a7045005d",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/util-async.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "0999c28ecf120c4b11e158fe65cd7f4ce4491048",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/agent-tools.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "d2925c5c483953ca2b34faa8bcbce1733188b7d1",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/notebook.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "28fc25de8cfa8c395ecc1ec8aa97fc4ea6a1aecb",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-strategy-agent-only.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "06d903ac6c6d4b29961ce405ba1c3e3de7cc9d3f",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-provider-unreachable.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "9bebbc44b203882bac512cb434096dbe90c07c00",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/mcp-memory-provider.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "b1c88214459a94944a77015bb95f811490261e30",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-provider-factory.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "a74a32a9fb6c4c922c9a283b2eabf2bcb67eca1d",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memorable-provider.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "8dbd61509c3af8ab983594c49043cf177f374087",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-file-routing.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "0036fbbd4ad4efa93f11b27b9484eabe26717499",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-provider-router.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "daa2d5c0a870f49545d0f0c76f82a06adfd9b122",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-bench.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "e837a85c35ca6037235bd39f100a8a3f001517a6",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/refusal-admin-link-integration.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "35245b3b614d485366715e9f7cd32611363e5f19",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/e2e/memorable-cli.e2e.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "0add350cc56a9704c7d6d450968fbc150ad8a440",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memorable-inject.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "a3b41cb26a4c687b215f2a5db1b09b7087bcd4f7",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-provider-config.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "a2444b1db343b54701536bba746621de56f08473",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/e2e/memorable-provider.e2e.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "d2ad1e3b0f70221e80cd66bb97771f3f54e4bac5",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-strategy-per-turn.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "3778392ab22215ed5c720c65b4bf1ec93c7f5665",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-history-agent-routes.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "84dd7c0bd9795d2175d8f812fc130ea68e4ffe63",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/postgres-memory-service.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "ee57ef2537beb98feb20c0eb95e63e395216aded",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/e2e/memory-provider.e2e.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "b03384280052f13b38935ba272ba2bdde6275784",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-capture-async.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "c7c4e8dce0373e37ceb74e7f29ff100b6022af86",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/durable-process-sessions.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "eff81b85e1b9d1fae88a36fba69336ff81732ae1",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/turn-bookkeeping-failures.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "71c5b50e1a6bae8ffb0408caf1fe3aeb2bdcea12",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "18776aa89a0bf1d5cf7d6da08d11b25206022832",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memorable-capture.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "f0876e0fa6bfd4dea421ccf909c9f080e4f1ecb1",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-tool.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "01713bd4adcd59bd2d47a113685ba8452b095f15",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/turn-retry-replay.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "942c7fa360637f0d8f6087a735c73b3ffaa2f3aa",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-strategy-consolidation.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "4b189a96c04255ff1970db230f948ffb42359c71",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-cc-personal.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "bc888af6299be9962a71f5cf3fe31ffcb8dec383",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/memory-strategy-scratch-promote.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "32293ea8c2f40739aa3c03fd62ff13d8a99764c2",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/e2e/memorable-live.e2e.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "6cd04db577cd27a6386440b4b50c3ac4af5da7f2",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/finalize-on-reply-ready.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "1fbac1cb4e3e6e49224506146fef178e0b0504aa",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/prompt-modes.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "22f576c993472f464286cf07d4160fc2c104438d",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/tape-nudge-continuation.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "09ee976da786cfd7adaac6da07edc5dfcd893a90",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/system-prompt-order.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "4c19c133c68399dde9b43af5f5a232a3dbbe756e",
+      "observed": ""
+    },
+    {
+      "pointer": "/bindings/1/rows/test/context-compaction.test.ts/blobSha256",
+      "message": "row is missing a declared blobSha256 for a resolvable source",
+      "expected": "9853817cff38833f46057d50f1b0db4b8b411839",
+      "observed": ""
+    }
+  ],
+  "issueGroups": {
+    "partial read span cannot satisfy a full-read (READ) claim": 35,
+    "declared candidate has no processing row (READ/REUSED/EXCLUDED)": 2,
+    "audit JSON structurally declared count does not match current binding row counts": 1,
+    "row is missing a declared blobSha256 for a resolvable source": 37
+  },
+  "targetIssues": 0,
+  "projectionHistory": [
+    "Initial reviewer projection joined multiple spans with commas, producing one projection-format error; corrected to schema semicolons and rerun. No R4 input changed."
+  ],
+  "limitations": [
+    "The six current placeholders were located by reviewer inspection, not automatically by this projected validator run.",
+    "34 test rows omit explicit spans; one declares partial spans. These are insufficient FULL_READ proof, not proof that source was never read.",
+    "Legacy R4 does not carry the new binding contract, so its old fast-gate pass alone does not invoke this projection."
+  ],
+  "foundationMaterialCommit": "2719dd2b1e55c8620c9c26f0e3e31666bd6f2d81",
+  "reviewerDisposition": "REWORK_REQUIRED",
+  "reviewConclusion": "Improved mechanical consistency checking: one bounded validator pass reports set/count/identity/read-span gaps. No claim of reduced total review time or semantic correctness.",
+  "nextRepairScope": [
+    "Add terminal rows for test/memorable-relay.test.ts and test/turn-context.test.ts; do not infer reading from candidate discovery.",
+    "Attach exact blob identities to 37 existing test rows at the pinned source; preserve earlier declarations as history.",
+    "Supply real span provenance for 34 rows without spans; retain the one explicitly partial row as partial unless completed or exact-blob prior READ receipt exists.",
+    "Reconcile 41 candidates against all processing rows and two justified exclusions.",
+    "Replace six current result placeholders with actual command receipts while preserving failed-run history.",
+    "Migrate the corrected return using the accepted evidence binding; retain original R4 bytes as the comparison baseline.",
+    "Re-review M3/M4/M6 safety/control-flow claims after structural readiness; do not treat validator PASS as semantic proof."
+  ],
+  "packagingHistory": [
+    {
+      "attempt": "diagnostic-only commit before continuity synchronization",
+      "result": "REJECTED_BY_HOOK",
+      "failures": [
+        "active session state compatibility",
+        "continuation chain GC-020 drift"
+      ],
+      "resolution": "Synchronize the six existing continuity surfaces separately; no hook bypass."
+    },
+    {
+      "commit": "7271f4f10",
+      "result": "continuity commit succeeded; pre-commit 89/89 passed",
+      "telemetry": "P4-C1 emitted UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED; no successful measurement collection claimed."
+    }
+  ],
+  "p4SafetyAdjudication": {
+    "role": "Local reviewer/closer",
+    "authority": "docs/baselines/CVF_GC018_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_2026-09-02.md#pending-evidence-boundary",
+    "markerSha256": "52c5cf233da212100c73beb01d0ef905c9d8ce13855397cf652c16e9cfc8cb9c",
+    "marker": {
+      "claimBoundary": "This marker fail-closes the next pre-commit until reviewer/closer adjudication explicitly removes it. The post-commit collector never clears its own marker.",
+      "code": "UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED",
+      "detail": "json\nM\tCVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json\nM\tdocs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md\nA\tdocs/reviews/CVF_EVIDENCE_READINESS_T1_COMPLETION_2026-09-14.md\nA\tdocs/reviews/CVF_EVIDENCE_READINESS_T1_WORKER_RETURN_2026-09-14.md\nM\tdocs/work_orders/CVF_AGENT_WORK_ORDER_EVIDENCE_READINESS_T1_2026-09-14.md\nM\tgovernance/compat/build_dispatch_packet_scaffold.py\nM\tgovernance/compat/build_worker_return_skeleton_scaffold.py\nM\tgovernance/compat/check_worker_return_quality_gate.py\nA\tgovernance/compat/test_build_dispatch_evidence_scaffold.py\nM\tgovernance/compat/test_build_dispatch_packet_scaffold.py\nM\tgovernance/compat/test_check_worker_return_quality_gate.py\nA\tgovernance/compat/test_worker_evidence_readiness.py\nA\tgovernance/compat/test_worker_evidence_readiness_git.py\nA\tgovernance/compat/worker_evidence_contract.py\nA\tgovernance/compat/worker_evidence_readiness.py\nA\tgovernance/compat/worker_evidence_sources.py\n\n=== committed range shape preflight ===\nFAIL: range mixes Agent Operation Trace exact-manifest artifacts with protected session/handoff paths.\nThis range is not valid closure evidence for a single exact-manifest batch.\nRun split ranges instead: material range first, then closure/session range.\nRecommended steward lane: split: material first, session-sync/handoff-sync second\nTrace artifacts:\n  - docs/reference/work_order_authoring/CVF_WORKER_RETURN_QUALITY_GATE_STANDARD.md\n  - docs/reviews/CVF_EVIDENCE_READINESS_T1_COMPLETION_2026-09-14.md\n  - docs/reviews/CVF_EVIDENCE_READINESS_T1_WORKER_RETURN_2026-09-14.md\n  - docs/reviews/CVF_QM_RUNTIME_VALUE_R4_WORKER_RETURN_2026-09-14.md\n  - docs/work_orders/CVF_AGENT_WORK_ORDER_EVIDENCE_READINESS_T1_2026-09-14.md\nProtected session/handoff paths:\n  - CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json\n  - CVF_SESSION/ACTIVE_SESSION_STATE.json\n  - CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json\n\nVIOLATION: pre-closure blocked by committed range shape before running the full guard bundle.\n",
+      "schema": "cvf.mfrp.p4c1.safetyMarker.v1"
+    },
+    "disposition": "REJECT_MEASUREMENT_SAMPLE",
+    "reason": "Foundation material includes three authority hash projections; its committed range is ineligible as homogeneous material-only closure evidence. Preserve commits and failed receipt; do not count or promote this attempt as a successful P4 sample. Focused implementation tests and pre-commit results retain their bounded meanings.",
+    "action": "Reviewer clears this adjudicated marker only. No journal/checker/hook mutation and no successful receipt invented."
+  }
+}

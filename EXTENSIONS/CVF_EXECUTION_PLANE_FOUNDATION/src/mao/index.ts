@@ -1,0 +1,441 @@
+// CVF MAO-T1 - Local Module Front Door
+//
+// Stable local barrel for the src/mao/ task-graph/event-ledger/read-model
+// foundation. MAO-OA-T1 forwards this barrel through the package root
+// (../index.ts, one `export * from "./mao"` line) so the compiler and
+// related MAO contracts are discoverable from the execution-plane package
+// entrypoint. This barrel remains the local source of truth; it is not
+// wired to any queue, scheduler, UI, or runtime caller.
+//
+// MAO-T2 consumer note: the control-plane role resolver
+// (EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/mao/role.resolver.contract.ts)
+// imports MaoTaskGraph, MaoAuthorityEnvelope, MaoTaskDefinition,
+// MaoRiskLevel, and MaoTaskRole directly from ./task.graph.contract (not
+// through this barrel, to avoid adding a barrel-level dependency edge). The
+// dependency direction is control-plane -> execution-plane only, per the
+// MAO contract's Role Resolver Ownership decision: execution-plane owns
+// task-graph/state mechanics; the control-plane resolver owns admission
+// policy and must never be imported back into this module.
+//
+// See docs/reference/multi_agent_orchestration/README.md and
+// docs/reference/multi_agent_orchestration/CVF_MAO_RUNTIME_FOUNDATION_CONTRACT.md
+// for the design authority this module implements.
+
+export type {
+  MaoRoute,
+  MaoRiskLevel,
+  MaoTaskRole,
+  MaoApprovalCheckpoint,
+  MaoBudgetAllocation,
+  MaoAuthorityEnvelopeInput,
+  MaoAuthorityEnvelope,
+  MaoTaskDefinition,
+  MaoTaskDefinitionInput,
+  MaoDependencyEdge,
+  MaoTaskGraphInput,
+  MaoTaskGraph,
+  MaoGraphCompileFailureReason,
+  MaoGraphCompileSuccess,
+  MaoGraphCompileFailure,
+  MaoGraphCompileResult,
+} from "./task.graph.contract";
+
+export {
+  computeAuthorityHash,
+  buildAuthorityEnvelope,
+  verifyAuthorityEnvelope,
+  detectDependencyCycle,
+  compileTaskGraph,
+  directDependents,
+  directDependencies,
+} from "./task.graph.contract";
+
+export type {
+  MaoTaskState,
+  MaoEventType,
+  MaoEventLedgerEntry,
+  MaoAppendEventInput,
+  MaoLedgerAppendFailureReason,
+  MaoLedgerAppendSuccess,
+  MaoLedgerAppendFailure,
+  MaoLedgerAppendResult,
+} from "./event.ledger.contract";
+
+export {
+  MAO_TERMINAL_STATES,
+  isTerminalState,
+  descendantPropagationFor,
+  MaoEventLedger,
+} from "./event.ledger.contract";
+
+export type {
+  MaoTerminalOutcome,
+  MaoReadModelTaskState,
+  MaoGeneratedReadModel,
+  MaoReadModelBuildInput,
+} from "./read.model.contract";
+
+export { buildReadModel, readModelsAreEqual } from "./read.model.contract";
+
+export type {
+  MaoAdmissionReceiptLike,
+  MaoDiagnosticClass,
+  MaoCapabilityDeclaration,
+  MaoUsageEnvelope,
+  MaoInvocationReceipt,
+  MaoInvocationRejectionReason,
+  MaoInvocationRequest,
+  MaoInvocationSuccess,
+  MaoInvocationFailure,
+  MaoInvocationResult,
+} from "./delegation.adapter.contract";
+
+export { MaoDelegationAdapter, createMaoDelegationAdapter } from "./delegation.adapter.contract";
+
+// --- MAO-T4 reviewer isolation, dissent, and revision loop ---
+
+export type {
+  MaoIsolatedSourcePacket,
+  MaoExcludedContextEntry,
+  MaoReviewerSourceContract,
+  MaoSelfApprovalCheck,
+  MaoRecomputedEvidence,
+} from "./reviewer.isolation.contract";
+
+export {
+  buildIsolatedSourcePacket,
+  verifyIsolatedSourcePacket,
+  checkSelfApproval,
+  checkEvidenceIndependence,
+  buildRecomputedEvidence,
+} from "./reviewer.isolation.contract";
+
+export type {
+  MaoDefectClass,
+  MaoReviewDecision,
+  MaoDissentRecord,
+  MaoDefectEntry,
+  MaoReviewReceipt,
+  MaoRevisionLedger,
+  MaoReviewReceiptInput,
+  MaoRevisionCeilingCheck,
+  MaoRecordReviewResult,
+  MaoReviewTerminalDecision,
+} from "./dissent.revision.contract";
+
+export {
+  buildReviewReceipt,
+  buildDefectEntry,
+  buildDissentRecord,
+  checkRevisionCeiling,
+  createRevisionLedger,
+  recordReviewInLedger,
+  terminalReviewDecision,
+  verifyDissentDeterminism,
+  verifyReviewReceiptConsistency,
+} from "./dissent.revision.contract";
+
+// --- MAO-T5 designated closer and commit/session interlock ---
+
+export type {
+  MaoIntegrationDecision,
+  MaoIntegrationReceipt,
+  MaoIntegrationReceiptInput,
+  MaoCloserValidationResult,
+  MaoCommitAuthorizationResult,
+  MaoSessionSyncProjection,
+} from "./closer.interlock.contract";
+
+export {
+  validateExactlyOneCloser,
+  checkCloserIdentity,
+  buildIntegrationReceipt,
+  checkCommitAuthorization,
+  buildSessionSyncProjection,
+  makeIntegrationDecision,
+  verifyIntegrationReceiptConsistency,
+} from "./closer.interlock.contract";
+
+// --- MAO-T6 timeout, heartbeat, cancel, retry, and recovery ---
+
+export type {
+  MaoDeterministicClock,
+  MaoTimeoutResult,
+  MaoHeartbeatRecord,
+  MaoCancelState,
+  MaoCancelTracker,
+  MaoRetryClass,
+  MaoIdempotencyGuard,
+  MaoOrphanClassification,
+  MaoAttemptRecord,
+} from "./lifecycle.controller.contract";
+
+export {
+  createDeterministicClock,
+  detectTimeout,
+  recordHeartbeat,
+  isHeartbeatStale,
+  createCancelTracker,
+  requestCancel,
+  acceptCancel,
+  mayStartNewChild,
+  classifyRetry,
+  createIdempotencyGuard,
+  classifyOrphan,
+  MaoLifecycleController,
+} from "./lifecycle.controller.contract";
+
+// --- MAO-T7 evidence, observability, and operator readout ---
+
+export type {
+  MaoReceiptKind,
+  MaoRedactionResult,
+  MaoEvidenceRecord,
+  MaoIngestReceiptEvidenceInput,
+  MaoIngestEvidenceFailureReason,
+  MaoIngestEvidenceResult,
+  MaoEvidenceReadout,
+  MaoRetentionDecision,
+  MaoRetentionPolicyInput,
+  MaoFreshnessClass,
+  MaoWorkspaceMilestoneKind,
+  MaoWorkspaceMilestoneProjection,
+} from "./evidence.readout.contract";
+
+export {
+  MAO_MILESTONE_RECEIPT_KINDS,
+  redactFields,
+  MaoEvidenceLedger,
+  buildEvidenceReadout,
+  readoutsAreEqual,
+  evaluateRetention,
+  classifyReadoutFreshness,
+  milestoneForReceiptKind,
+  projectWorkspaceMilestones,
+} from "./evidence.readout.contract";
+
+// --- MAO-T8 representative end-to-end pilot harness ---
+
+export type {
+  MaoPilotSeedReceipt,
+  MaoPilotReviewOutcome,
+  MaoPilotCloseOutcome,
+  MaoPilotDuplicateResult,
+  MaoPilotTimeoutResult,
+  MaoPilotCancelResult,
+  MaoPilotBudgetResult,
+  MaoPilotChainResult,
+} from "./representative.pilot.contract";
+
+export {
+  PILOT_TASK_ID,
+  PILOT_WORKER_IDENTITY,
+  PILOT_REVIEWER_IDENTITY,
+  PILOT_CLOSER_IDENTITY,
+  PILOT_TASK_GRAPH_ID,
+  PILOT_STALE_AFTER_MS,
+  PILOT_MAX_REVISION_DEPTH,
+  compilePilotGraph,
+  runWorkerPhase,
+  runReviewerPhase,
+  runCloserPhase,
+  runDuplicateAdmissionNegative,
+  runTimeoutNegative,
+  runCancelNegative,
+  runBudgetCeilingNegative,
+  runPilotChain,
+} from "./representative.pilot.contract";
+
+// --- MAO-LIVE-T1 live provider adapter value pilot bridge ---
+
+export type {
+  MaoLiveRubricScore,
+  MaoLiveCallDiagnosticClass,
+  MaoLiveCallDiagnostic,
+  MaoLiveDirectLaneResult,
+  MaoLiveWorkerAttempt,
+  MaoLiveReviewOutcome,
+  MaoLiveLaneResult,
+  MaoLiveValueVerdict,
+  MaoLiveComparativeResult,
+} from "./live.provider.value.pilot";
+
+export {
+  LIVE_PILOT_TASK_ID,
+  LIVE_PILOT_WORKER_IDENTITY,
+  LIVE_PILOT_REVIEWER_IDENTITY,
+  LIVE_PILOT_CLOSER_IDENTITY,
+  LIVE_PILOT_TASK_GRAPH_ID,
+  LIVE_PILOT_MAX_REVISION_DEPTH,
+  LIVE_PILOT_MAX_LIVE_CALLS,
+  LIVE_PILOT_TASK_PROMPT,
+  LIVE_PILOT_EXPECTED_TOKENS,
+  LIVE_PILOT_REQUIRED_MATCH_COUNT,
+  LIVE_PILOT_MAX_RESPONSE_LENGTH,
+  scoreAgainstRubric,
+  MaoLiveCallLedger,
+  runDirectLane,
+  runMaoLane,
+  decideValueVerdict,
+} from "./live.provider.value.pilot";
+
+// --- MAO-OA-T2 durable run store, replay recovery, and idempotent resume ---
+
+export type {
+  MaoDurableRunSnapshot,
+  MaoDurableRunStoreFailureReason,
+  MaoDurableRunStoreFailure,
+  MaoDurableRunCreateSuccess,
+  MaoDurableRunAppendSuccess,
+  MaoDurableRunResumeSuccess,
+  MaoDurableRunListSuccess,
+} from "./durable.run.store";
+
+export { MAO_DURABLE_RUN_SNAPSHOT_SCHEMA_VERSION, MaoFileRunStore } from "./durable.run.store";
+
+// --- MAO-OA-T3 operational worker launcher and liveness wiring ---
+
+export type {
+  MaoOperationalAdapterPort,
+  MaoOperationalLaunchRequest,
+  MaoOperationalLaunchFailureReason,
+  MaoOperationalLaunchFailure,
+  MaoOperationalLaunchSuccess,
+  MaoOperationalLaunchResult,
+  MaoOperationalHeartbeatFailure,
+  MaoOperationalHeartbeatSuccess,
+  MaoOperationalHeartbeatResult,
+  MaoOperationalTimeoutFailureReason,
+  MaoOperationalTimeoutFailure,
+  MaoOperationalTimeoutNotYetResult,
+  MaoOperationalTimeoutDetectedResult,
+  MaoOperationalTimeoutResult,
+  MaoOperationalCancelFailureReason,
+  MaoOperationalCancelFailure,
+  MaoOperationalCancelRequestSuccess,
+  MaoOperationalCancelAcceptSuccess,
+  MaoOperationalCancelRequestResult,
+  MaoOperationalCancelAcceptResult,
+  MaoOperationalReconcileFailureReason,
+  MaoOperationalReconcileFailure,
+  MaoOperationalReconcileSuccess,
+  MaoOperationalReconcileResult,
+} from "./operational.worker.launcher";
+
+export { MaoOperationalWorkerLauncher } from "./operational.worker.launcher";
+
+// --- BRIGADE-MAO-R1 atomic delegation lifecycle composition ---
+
+export type {
+  MaoAtomicDelegationPolicy,
+  MaoDelegationJoinPolicy,
+  MaoDelegationReservationRequest,
+  MaoDelegationReservationFailureReason,
+  MaoDelegationReservationReceipt,
+  MaoDelegationReservationResult,
+  MaoDelegationSettlementOutcome,
+  MaoDelegationSettlementFailureReason,
+  MaoDelegationCompletionReceipt,
+  MaoDelegationSettlementResult,
+  MaoDelegationSettlementIdentity,
+  MaoDelegationAbortCascadeReceipt,
+} from "./atomic.delegation.lifecycle.coordinator";
+
+export { MaoAtomicDelegationLifecycleCoordinator } from "./atomic.delegation.lifecycle.coordinator";
+
+export type {
+  MaoDurableDelegationPort,
+  MaoDelegationLedgerOperation,
+  MaoDelegationLedgerEntry,
+  MaoDelegationLedgerSnapshot,
+  MaoDelegationLedgerStoreFailureReason,
+  MaoDelegationLedgerStoreFailure,
+  MaoDelegationLedgerCreateSuccess,
+  MaoDelegationLedgerReplaySuccess,
+  LockAcquireFailureReason,
+  LockAcquireResult,
+  LockReleaseResult,
+  LockFileContent,
+} from "./durable.delegation.ledger.store";
+
+// NOTE (reviewer RETURN_FOR_REWORK R5, requirement 5): earlier rounds (R3,
+// R4) kept an admin-only, offline-maintenance lock-recovery function in
+// durable.delegation.ledger.store.ts, first excluded from this barrel, then
+// additionally gated behind a required boolean acknowledgment argument. The
+// reviewer correctly rejected that boolean as enforcement of stopped-world
+// state - it proves only that the caller typed the word `true`, not that
+// any writer is actually stopped. That function has been REMOVED FROM THE
+// SOURCE MODULE ENTIRELY (not merely left unexported here); see that
+// module's own header comment for the manual, human-supervised filesystem
+// recovery procedure it documents in its place. A source-boundary test in
+// tests/mao.atomic.delegation.fail.closed.rework.test.ts asserts neither
+// this barrel's nor the store module's own source text contains any
+// force-unlock-shaped export or definition.
+export {
+  MAO_DELEGATION_LEDGER_SNAPSHOT_SCHEMA_VERSION,
+  MAO_DELEGATION_LOCK_STALE_AFTER_MS,
+  MaoFileDelegationLedgerStore,
+  delegationLockFilePathFor,
+  acquireLock,
+  releaseLock,
+  readLockFileContent,
+  writeLockFileContentForTest,
+} from "./durable.delegation.ledger.store";
+
+// --- MAO-OA-T4 operational review convergence and commit/session interlock ---
+
+export type {
+  MaoOperationalReviewRequest,
+  MaoOperationalReviewFailureReason,
+  MaoOperationalReviewFailure,
+  MaoOperationalReviewSuccess,
+  MaoOperationalReviewResult,
+  MaoOperationalClosureRequest,
+  MaoOperationalClosureFailureReason,
+  MaoOperationalClosureFailure,
+  MaoOperationalClosureSuccess,
+  MaoOperationalClosureResult,
+} from "./operational.review.convergence";
+
+export { MaoOperationalReviewConvergence, createMaoOperationalReviewConvergence } from "./operational.review.convergence";
+
+// --- MAO-OA-T5 operational operator readout and workspace session projection ---
+
+export type {
+  MaoOperationalWorkspaceLane,
+  MaoOperationalWorkspaceItemSnapshot,
+  MaoOperationalGuardStatus,
+  MaoOperationalGuardSnapshot,
+  MaoOperationalOperatorProjectionInput,
+  MaoOperationalOperatorProjectionFailureReason,
+  MaoOperationalOperatorProjectionFailure,
+  MaoOperationalOperatorReadout,
+  MaoOperationalOperatorProjectionSuccess,
+  MaoOperationalOperatorProjectionResult,
+} from "./operational.operator.projection";
+
+export {
+  MAO_OPERATIONAL_CANONICAL_LANES,
+  buildOperationalOperatorProjection,
+  MaoOperationalOperatorProjection,
+} from "./operational.operator.projection";
+
+// --- ACEL post-G7 HyperFrames P0 artifact completion and scope evidence ---
+
+export type {
+  MaoArtifactCompletionStatus,
+  MaoArtifactCompletionIssueCode,
+  MaoExpectedArtifact,
+  MaoObservedArtifact,
+  MaoWorkerCompletionNotification,
+  MaoArtifactCompletionScopeInput,
+  MaoArtifactCompletionScopeReceipt,
+  MaoArtifactCompletionScopeFailure,
+  MaoArtifactCompletionScopeSuccess,
+  MaoArtifactCompletionScopeResult,
+} from "./artifact.completion.scope.contract";
+
+export {
+  MAO_ARTIFACT_COMPLETION_SCOPE_VERSION,
+  evaluateArtifactCompletionScope,
+} from "./artifact.completion.scope.contract";

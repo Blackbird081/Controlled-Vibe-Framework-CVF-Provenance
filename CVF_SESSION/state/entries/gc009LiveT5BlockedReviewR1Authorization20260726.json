@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2117,
+  "stateKey": "gc009LiveT5BlockedReviewR1Authorization20260726",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BLOCKED_WITH_DIAGNOSTIC_R1_AUTHORIZED",
+    "date": "2026-07-26",
+    "materialCommit": "6b6cd6ab1",
+    "executionBaseHead": "f8b5a66b0",
+    "completionReview": "docs/reviews/CVF_GC009_LIVE_T5_BOUNDED_OPERATOR_ACCEPTANCE_PROOF_COMPLETION_2026-07-26.md",
+    "verification": "source-backed fixture diagnosis; liveCallCount=0; reviewer-fast 62/62; non-live 7/7; TypeScript PASS; pre-commit 83/83",
+    "reviewerCorrection": "logging-only did not satisfy the result-changing-action prerequisite, so rerun compliance was rejected",
+    "r1Authority": "existing keys may be used; one fixture correction; offline safety-regex preflight; exactly one new focused live run; no rerun",
+    "nextAllowedMove": "author, gate, and commit the R1 redispatch packet, then send it to the same no-commit Claude worker",
+    "claimBoundary": "Blocked diagnostic acceptance only. No live ALLOW, authority BLOCK, gateway event, audit projection, latency, production, public, or deployment proof."
+  }
+}

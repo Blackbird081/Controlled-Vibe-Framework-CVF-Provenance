@@ -1,0 +1,22 @@
+{
+  "registryOrder": 142,
+  "id": "sot3-act-a5r1-refinery-import-chain-dev-regression",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "SOT3 ACT A5R1 real-development Refinery import-chain regression",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/refinery-import-chain-dev.spec.ts"
+  ],
+  "fileCount": 1,
+  "status": "SCANNED",
+  "scanWave": "SOT3-ACT-A5R1",
+  "scanDate": "2026-07-14",
+  "manifestHash": null,
+  "manifestPath": "docs/reviews/evidence/sot3-act-a5r1-recovery-release-gate-manifest-2026-07-14.json",
+  "packetPath": "docs/reviews/CVF_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_WORKER_RETURN_2026-07-14.md",
+  "completionReviewPath": "docs/reviews/CVF_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_COMPLETION_2026-07-14.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_SOT3_ACT_A5R1_BOUNDED_RECOVERY_REFINERY_IMPORT_CHAIN_2026-07-13.md",
+  "notes": "Focused zero-provider Playwright regression proving the linked SOT3 TypeScript import chain compiles under the explicitly selected real Next.js development bundler and returns JSON before provider execution.",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "NONE_REQUIRED"
+}

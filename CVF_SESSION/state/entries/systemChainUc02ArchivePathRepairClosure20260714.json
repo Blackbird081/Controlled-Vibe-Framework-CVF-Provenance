@@ -1,0 +1,19 @@
+{
+  "stateOrder": 1760,
+  "stateKey": "systemChainUc02ArchivePathRepairClosure20260714",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED",
+    "materialCommit": "abb58be27",
+    "completionReview": "docs/reviews/CVF_SYSTEM_CHAIN_UC02_ARCHIVE_PATH_RECONCILIATION_COMPLETION_2026-07-14.md",
+    "focusedTests": "15_PASS",
+    "reviewerFast": "62_OF_62_PASS",
+    "preCommit": "83_OF_83_PASS",
+    "realBootstrapCalls": 0,
+    "uc02ProofCalls": 0,
+    "providerCalls": 0,
+    "coverageStatus": "STALE",
+    "gapStatus": "OPEN_UNTIL_9_OF_9",
+    "nextAllowedMove": "author a fresh source-verified packet for exactly one UC-02 current rerun",
+    "claimBoundary": "Structural archive/live ownership and bootstrap ordering are accepted; UC-02 operational success, coverage promotion, GAP closure, UC-03/UC-04, public, production, scale, universal, and user-value claims remain unavailable."
+  }
+}

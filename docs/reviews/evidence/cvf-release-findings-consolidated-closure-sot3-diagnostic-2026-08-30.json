@@ -1,0 +1,24 @@
+{
+  "a4LocalNegativeGatePassed": true,
+  "a4ReturnCode": 1,
+  "admissionFailures": [
+    "a4_live_receipt_missing_or_unreadable"
+  ],
+  "batchId": "SOT3-ACT-A5",
+  "diagnostic": {
+    "class": "unknown_error",
+    "retryable": false,
+    "safeMessage": "The A4 live runner subprocess exited non-zero. See its own secret-safe diagnostic for the underlying stage/class.",
+    "stage": "provider",
+    "userAction": "inspect_receipt"
+  },
+  "finishedAtUtc": "2026-08-29T18:44:56.530766+00:00",
+  "schemaVersion": "cvf.sot3ActA5Diagnostic.v1",
+  "secretSafety": {
+    "fullPromptPersisted": false,
+    "rawKeyPersisted": false,
+    "rawOutputPersisted": false,
+    "rawProviderBodyPersisted": false
+  },
+  "startedAtUtc": "2026-08-29T18:42:59.084606+00:00"
+}

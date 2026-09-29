@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1648,
+  "stateKey": "maoLiveRoadmapProposed20260712",
+  "value": "MAO Live Provider Adapter Value Pilot roadmap is PROPOSED at material commit 82b3fb511. It authorizes packet authoring only for MAO-LIVE-T1: reuse the existing Model Gateway OpenAI-compatible live harness, compare one same-task direct call with one governed worker-reviewer-revision-closer chain, cap the accepted run at four live calls, and issue VALUE_PROVEN, VALUE_NOT_PROVEN, or BLOCKED_LIVE_PROVIDER. No implementation begins before fresh GC-018/work-order gates pass."
+}

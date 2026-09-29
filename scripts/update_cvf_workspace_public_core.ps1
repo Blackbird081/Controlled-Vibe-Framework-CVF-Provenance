@@ -18,10 +18,22 @@ $requiredPublicCoreFiles = @(
     "docs\reference\CVF_WORKSPACE_RULES.md",
     "governance\toolkit\05_OPERATION\CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
     "scripts\check_cvf_workspace_agent_enforcement.ps1",
+    "scripts\install_cvf_workspace_root_wrappers.ps1",
+    "scripts\sync_cvf_workspace_public_profile.ps1",
+    "scripts\get_cvf_workspace_status.ps1",
+    "scripts\repair_cvf_workspace.ps1",
+    "scripts\manage_cvf_workspace.ps1",
     "scripts\ingest_cvf_downstream_knowledge.ps1",
     "scripts\new-cvf-workspace.ps1",
     "scripts\update_cvf_workspace_public_core.ps1",
-    "scripts\write_cvf_workspace_web_evidence_bridge.ps1"
+    "scripts\write_cvf_workspace_web_evidence_bridge.ps1",
+    "scripts\lib\downstream_catalog\CvfDownstreamCatalogLib.ps1",
+    "scripts\lib\downstream_catalog\CvfDownstreamBootstrapContent.ps1",
+    "scripts\lib\downstream_catalog\CvfWorkspaceDoctorLiveReadiness.ps1",
+    "scripts\lib\downstream_catalog\manage_cvf_downstream_catalog.ps1",
+    "scripts\lib\downstream_catalog\schemas\ARTIFACT_REGISTRY.schema.json",
+    "scripts\lib\downstream_catalog\schemas\MODULE_REGISTRY.schema.json",
+    "governance\toolkit\05_OPERATION\downstream_catalog\CVF_DOWNSTREAM_CATALOG_GUARD.md"
 )
 $overlayFiles = @(
     "README.md",
@@ -35,6 +47,11 @@ $overlayFiles = @(
     "scripts\bootstrap_foundations.ps1",
     "scripts\bootstrap_foundations.sh",
     "scripts\check_cvf_workspace_agent_enforcement.ps1",
+    "scripts\install_cvf_workspace_root_wrappers.ps1",
+    "scripts\sync_cvf_workspace_public_profile.ps1",
+    "scripts\get_cvf_workspace_status.ps1",
+    "scripts\repair_cvf_workspace.ps1",
+    "scripts\manage_cvf_workspace.ps1",
     "scripts\ingest_cvf_downstream_knowledge.ps1",
     "scripts\install_cvf_hooks.ps1",
     "scripts\new-cvf-workspace.ps1",
@@ -111,8 +128,15 @@ downstream projects. Application work belongs in each project folder.
 ~~~text
 CVF-Workspace/
   .Controlled-Vibe-Framework-CVF/
+  CVF_RULE_PACKS/
   <Application-Project>/
   WORKSPACE_RULES.md
+  CVF_WORKSPACE_RULE_PACKS.md
+  CVF_WORKSPACE_MEMORY.md
+  AGENT_HANDOFF.md
+  New-CVF-Governed-Project.ps1
+  Run-CVF-NewProject-Enforcement.ps1
+  Update-CVF-Workspace.ps1
 ~~~
 
 ## Public Core
@@ -125,9 +149,24 @@ CVF-Workspace/
 Reconcile the hidden core with the latest public remote:
 
 ~~~powershell
+powershell -ExecutionPolicy Bypass -File ".\Update-CVF-Workspace.ps1" -RunGate
+~~~
+
+If the root update wrapper is missing, run the hidden-core reconciler directly:
+
+~~~powershell
 powershell -ExecutionPolicy Bypass -File ".Controlled-Vibe-Framework-CVF\scripts\update_cvf_workspace_public_core.ps1" ``
   -WorkspaceRoot "$Workspace"
 ~~~
+
+## Rule Packs And Agent Continuity
+
+- `CVF_RULE_PACKS/ACTIVE_RULE_PACK.json` records the active rule pack when one is installed.
+- `CVF_WORKSPACE_RULE_PACKS.md` explains the installed rule pack and refresh flow.
+- `CVF_WORKSPACE_MEMORY.md` is the workspace-local memory front door.
+- `AGENT_HANDOFF.md` is the workspace-local handoff file.
+- Rule packs are selected local guidance; they do not turn this workspace into the private full CVF repository.
+- Project-level `AGENTS.md`, manifests, policies, and handoffs still belong to each downstream project.
 
 ## Current Sibling Projects
 
@@ -157,6 +196,8 @@ $corePath = Assert-PathInsideWorkspace -Path (Join-Path $workspaceResolved ".Con
 $backupRoot = Assert-PathInsideWorkspace -Path (Join-Path $workspaceResolved "_cvf-core-backups") -Workspace $workspaceResolved
 $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
 $backupPath = Assert-PathInsideWorkspace -Path (Join-Path $backupRoot ".Controlled-Vibe-Framework-CVF-$timestamp") -Workspace $workspaceResolved
+$workspaceWrapperInstallerPath = Join-Path $corePath "scripts\install_cvf_workspace_root_wrappers.ps1"
+$activeProfilePath = Join-Path $workspaceResolved "CVF_RULE_PACKS\ACTIVE_RULE_PACK.json"
 
 Write-Info "Workspace root: $workspaceResolved"
 Write-Info "Public remote:  $publicRemote"
@@ -179,9 +220,13 @@ if (Test-Path -LiteralPath $corePath -PathType Container) {
 
 try {
     Write-Info "Cloning latest public core..."
-    git clone $publicRemote $corePath
+    git -c core.longpaths=true clone $publicRemote $corePath
     if ($LASTEXITCODE -ne 0) {
         throw "git clone failed with exit code $LASTEXITCODE"
+    }
+    git -C $corePath config core.longpaths true
+    if ($LASTEXITCODE -ne 0) {
+        throw "failed to persist core.longpaths for the hidden public core"
     }
 
     if (-not [string]::IsNullOrWhiteSpace($OverlaySourcePath)) {
@@ -234,6 +279,16 @@ try {
     }
     else {
         Write-Warn "Workspace wrapper installer not found: $workspaceWrapperInstallerPath"
+    }
+    if (Test-Path -LiteralPath $activeProfilePath -PathType Leaf) {
+        $activeProfile = Get-Content -LiteralPath $activeProfilePath -Raw -Encoding utf8 | ConvertFrom-Json
+        if (@("public-free", "paid-user-safe") -contains $activeProfile.activeProfile) {
+            $profileScript = Join-Path $corePath "scripts\sync_cvf_workspace_public_profile.ps1"
+            & powershell -ExecutionPolicy Bypass -File $profileScript -WorkspaceRoot $workspaceResolved -ProfileName $activeProfile.activeProfile
+            if ($LASTEXITCODE -ne 0) {
+                throw "Public profile refresh failed with exit code $LASTEXITCODE"
+            }
+        }
     }
 }
 catch {

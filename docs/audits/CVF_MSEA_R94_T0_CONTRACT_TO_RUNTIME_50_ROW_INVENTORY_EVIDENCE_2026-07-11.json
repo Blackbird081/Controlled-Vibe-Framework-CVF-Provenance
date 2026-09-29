@@ -1,0 +1,3055 @@
+{
+  "schemaVersion": "cvf.msea_r94.t0.v4",
+  "batchId": "MSEA-R94-T0",
+  "generatedUtc": "2026-07-11T01:58:35Z",
+  "executionBaseHead": "5d6d8b98f",
+  "dispatchBaseHead": "28d762c9c",
+  "worker": "delegated worker role",
+  "commitMode": "WORKER_MUST_NOT_COMMIT",
+  "revisionNote": "Round 3: invocation evidence cites executable catalog entries (pre-push/pre-commit/reviewer-fast/autorun/CI); operatorEvidenceRouteEvidence populated for all 50 rows.",
+  "dispositionSummary": {
+    "INVOKED_TEST_PAIRING_MISMATCH": 6,
+    "PROVEN_CONNECTED": 26,
+    "IMPLEMENTED_NOT_INVOCATION_PROVEN": 4,
+    "PROVEN_CONNECTED_BOUNDED_NO_STANDALONE_TEST": 12,
+    "CONTRACT_ONLY_WITH_REASON": 2
+  },
+  "testPairingSummary": {
+    "rowsWithMatchingTests": 28,
+    "rowsWithNoStandaloneTest": 12,
+    "rowsWithTestMismatch": 6
+  },
+  "enforcementClassCounts": {
+    "RUNTIME_GUARD": 8,
+    "GATEWAY_PRECONDITION": 2,
+    "APPROVAL_CHECKPOINT": 6,
+    "CI_REPO_GATE": 31,
+    "GOVERNANCE_DECISION_GATE": 3
+  },
+  "sourceManifest": [
+    {
+      "path": ".github/workflows/documentation-testing.yml",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.test.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.test.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.test.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/wiring/extension.bridge.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/conformance.runner.test.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/extension.bridge.test.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/multi.agent.runtime.test.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/pipeline.orchestrator.test.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/sdk.test.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/guard-engine-singleton.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/guard-runtime-adapter.ts",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNANCE_CONTROL_MATRIX.md",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/agent_autorun_command_catalog.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_active_window_registry.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_agent_handoff_guard_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_baseline_update_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_batch_contract_determinism.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_boardroom_runtime_governance_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_canon_summary_evidence_separation.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_core_guard_self_protection.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_corpus_completeness_report_integrity.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_corpus_intelligence_classification.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_corpus_to_knowledge_map_reconciliation.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_cpf_batch_helper_adoption.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_cpf_public_surface_maintainability.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_depth_audit_continuation_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_docs_governance_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_extension_package_check.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_fast_lane_governance_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_governed_artifact_authoring.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_governed_file_size.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_guard_authoring_standard.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_knowledge_absorption_priority_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_markdown_structural_completeness.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_memory_governance_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_multi_agent_review_governance_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_prepublic_p3_readiness.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_product_value_validation_guard_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_progress_tracker_sync.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_release_manifest_consistency.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_repository_exposure_classification.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_repository_lifecycle_classification.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_session_governance_bootstrap.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_surface_scan_registry.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_template_skill_standard_guard_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/check_test_partition_ownership.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/local_governance_hook_catalog_pre_commit.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/local_governance_hook_catalog_pre_push.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/local_governance_hook_catalog_reviewer_fast.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/run_agent_autorun_workflow_gate.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/run_local_governance_hook_chain.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_active_window_registry.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_agent_handoff_guard_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_batch_contract_determinism.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_canon_summary_evidence_separation.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_core_guard_self_protection.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_corpus_completeness_report_integrity.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_corpus_to_knowledge_map_reconciliation.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_cpf_batch_helper_adoption.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_cpf_public_surface_maintainability.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_governed_artifact_authoring.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_governed_file_size.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_guard_authoring_standard.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_knowledge_absorption_priority_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_markdown_structural_completeness.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_prepublic_p3_readiness.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_progress_tracker_sync.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_repository_exposure_classification.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_repository_lifecycle_classification.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_surface_scan_registry.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_template_skill_standard_guard_compat.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/compat/test_check_test_partition_ownership.py",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "governance/toolkit/05_OPERATION/CVF_STRUCTURAL_CHANGE_AUDIT_GUARD.md",
+      "terminalStatus": "READ"
+    }
+  ],
+  "manifestHash": "5bd27a365a1a265a165f863df9b614e7d779d13e005342b122f4aaeba5aae433",
+  "manifestHashAlgorithm": "sha256",
+  "operatorEvidenceCoverage": "50/50",
+  "catalogEvidenceRowCount": 34,
+  "rows": [
+    {
+      "rowId": "GC-001",
+      "matrixClaim": {
+        "controlId": "GC-001",
+        "governanceRule": "AI agents cannot act in human-only phases",
+        "primaryOwner": "PhaseGateGuard",
+        "enforcementClass": "RUNTIME_GUARD",
+        "activeEntrypoints": "shared guard engine, runtime SDK, Web/API adapters",
+        "primaryEvidence": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/phase-gate.guard.ts, EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CITED_TEST_PAIRING_MISMATCH",
+      "operatorEvidenceRouteStatus": "WEB_API_ROUTE",
+      "finalDisposition": "INVOKED_TEST_PAIRING_MISMATCH",
+      "nextAction": "REPAIR_CANDIDATE: cited test imports protocol guards, not contract guards",
+      "confidence": "MEDIUM",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-001",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/",
+          "symbol": "PhaseGateGuard",
+          "claim": "Contract guard PhaseGateGuard exists. Exported from barrel and registered by createGuardEngine()."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-001",
+          "type": "invocationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
+          "lineSection": "lines 115-130, createGuardEngine()",
+          "claim": "createGuardEngine() instantiates and registers all 8 contract guards. Called by cvf-web guard-engine-singleton.ts:23, guard-runtime-adapter.ts:81, health/route.ts:12, execute/route.ts:583."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-001",
+          "type": "testPairingEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts",
+          "claim": "Cited test imports protocol guards, not contract guards. Does not test the matrix-cited contract guard implementation."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_WEB_API",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+          "lineSection": "line 583, getSharedGuardEngine() -> createGuardEngine()",
+          "claim": "Web execute route calls getSharedGuardEngine() which calls createGuardEngine() with contract guards. Governance dashboard at /governance route."
+        }
+      ],
+      "enforcementClass": "RUNTIME_GUARD"
+    },
+    {
+      "rowId": "GC-002",
+      "matrixClaim": {
+        "controlId": "GC-002",
+        "governanceRule": "high-risk actions must escalate or block",
+        "primaryOwner": "RiskGateGuard",
+        "enforcementClass": "RUNTIME_GUARD",
+        "activeEntrypoints": "shared guard engine, runtime SDK, multi-agent runtime",
+        "primaryEvidence": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/risk-gate.guard.ts, EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/conformance.runner.test.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CITED_TEST_PAIRING_MISMATCH",
+      "operatorEvidenceRouteStatus": "WEB_API_ROUTE",
+      "finalDisposition": "INVOKED_TEST_PAIRING_MISMATCH",
+      "nextAction": "REPAIR_CANDIDATE: cited test imports protocol guards, not contract guards",
+      "confidence": "MEDIUM",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-002",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/",
+          "symbol": "RiskGateGuard",
+          "claim": "Contract guard RiskGateGuard exists. Exported from barrel and registered by createGuardEngine()."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-002",
+          "type": "invocationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
+          "lineSection": "lines 115-130, createGuardEngine()",
+          "claim": "createGuardEngine() instantiates and registers all 8 contract guards. Called by cvf-web guard-engine-singleton.ts:23, guard-runtime-adapter.ts:81, health/route.ts:12, execute/route.ts:583."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-002",
+          "type": "testPairingEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/conformance.runner.test.ts",
+          "claim": "Cited test imports protocol guards, not contract guards. Does not test the matrix-cited contract guard implementation."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_WEB_API",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+          "lineSection": "line 583, getSharedGuardEngine() -> createGuardEngine()",
+          "claim": "Web execute route calls getSharedGuardEngine() which calls createGuardEngine() with contract guards. Governance dashboard at /governance route."
+        }
+      ],
+      "enforcementClass": "RUNTIME_GUARD"
+    },
+    {
+      "rowId": "GC-003",
+      "matrixClaim": {
+        "controlId": "GC-003",
+        "governanceRule": "non-human actors cannot approve, deploy, merge, or override gates",
+        "primaryOwner": "AuthorityGateGuard",
+        "enforcementClass": "RUNTIME_GUARD",
+        "activeEntrypoints": "shared guard engine, runtime SDK, Web execute path",
+        "primaryEvidence": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/authority-gate.guard.ts, EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/sdk.test.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CITED_TEST_PAIRING_MISMATCH",
+      "operatorEvidenceRouteStatus": "WEB_API_ROUTE",
+      "finalDisposition": "INVOKED_TEST_PAIRING_MISMATCH",
+      "nextAction": "REPAIR_CANDIDATE: cited test imports protocol guards, not contract guards",
+      "confidence": "MEDIUM",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-003",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/",
+          "symbol": "AuthorityGateGuard",
+          "claim": "Contract guard AuthorityGateGuard exists. Exported from barrel and registered by createGuardEngine()."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-003",
+          "type": "invocationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
+          "lineSection": "lines 115-130, createGuardEngine()",
+          "claim": "createGuardEngine() instantiates and registers all 8 contract guards. Called by cvf-web guard-engine-singleton.ts:23, guard-runtime-adapter.ts:81, health/route.ts:12, execute/route.ts:583."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-003",
+          "type": "testPairingEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/sdk.test.ts",
+          "claim": "Cited test imports protocol guards, not contract guards. Does not test the matrix-cited contract guard implementation."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_WEB_API",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+          "lineSection": "line 583, getSharedGuardEngine() -> createGuardEngine()",
+          "claim": "Web execute route calls getSharedGuardEngine() which calls createGuardEngine() with contract guards. Governance dashboard at /governance route."
+        }
+      ],
+      "enforcementClass": "RUNTIME_GUARD"
+    },
+    {
+      "rowId": "GC-004",
+      "matrixClaim": {
+        "controlId": "GC-004",
+        "governanceRule": "mutating AI actions require ai_commit evidence",
+        "primaryOwner": "AiCommitGuard",
+        "enforcementClass": "RUNTIME_GUARD",
+        "activeEntrypoints": "shared guard engine, runtime SDK defaults",
+        "primaryEvidence": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/ai-commit.guard.ts, EXTENSIONS/CVF_GUARD_CONTRACT/src/index.test.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "WEB_API_ROUTE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-004",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/",
+          "symbol": "AiCommitGuard",
+          "claim": "Contract guard AiCommitGuard exists. Exported from barrel and registered by createGuardEngine()."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-004",
+          "type": "invocationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
+          "lineSection": "lines 115-130, createGuardEngine()",
+          "claim": "createGuardEngine() instantiates and registers all 8 contract guards. Called by cvf-web guard-engine-singleton.ts:23, guard-runtime-adapter.ts:81, health/route.ts:12, execute/route.ts:583."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-004",
+          "type": "testPairingEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.test.ts",
+          "claim": "Tests AiCommitGuard by instantiating and evaluating the contract guard class."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_WEB_API",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+          "lineSection": "line 583, getSharedGuardEngine() -> createGuardEngine()",
+          "claim": "Web execute route calls getSharedGuardEngine() which calls createGuardEngine() with contract guards. Governance dashboard at /governance route."
+        }
+      ],
+      "enforcementClass": "RUNTIME_GUARD"
+    },
+    {
+      "rowId": "GC-005",
+      "matrixClaim": {
+        "controlId": "GC-005",
+        "governanceRule": "mutations must stay within budget",
+        "primaryOwner": "MutationBudgetGuard",
+        "enforcementClass": "RUNTIME_GUARD",
+        "activeEntrypoints": "shared guard engine, runtime SDK defaults",
+        "primaryEvidence": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/mutation-budget.guard.ts, EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CITED_TEST_PAIRING_MISMATCH",
+      "operatorEvidenceRouteStatus": "WEB_API_ROUTE",
+      "finalDisposition": "INVOKED_TEST_PAIRING_MISMATCH",
+      "nextAction": "REPAIR_CANDIDATE: cited test imports protocol guards, not contract guards",
+      "confidence": "MEDIUM",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-005",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/",
+          "symbol": "MutationBudgetGuard",
+          "claim": "Contract guard MutationBudgetGuard exists. Exported from barrel and registered by createGuardEngine()."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-005",
+          "type": "invocationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
+          "lineSection": "lines 115-130, createGuardEngine()",
+          "claim": "createGuardEngine() instantiates and registers all 8 contract guards. Called by cvf-web guard-engine-singleton.ts:23, guard-runtime-adapter.ts:81, health/route.ts:12, execute/route.ts:583."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-005",
+          "type": "testPairingEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts",
+          "claim": "Cited test imports protocol guards, not contract guards. Does not test the matrix-cited contract guard implementation."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_WEB_API",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+          "lineSection": "line 583, getSharedGuardEngine() -> createGuardEngine()",
+          "claim": "Web execute route calls getSharedGuardEngine() which calls createGuardEngine() with contract guards. Governance dashboard at /governance route."
+        }
+      ],
+      "enforcementClass": "RUNTIME_GUARD"
+    },
+    {
+      "rowId": "GC-006",
+      "matrixClaim": {
+        "controlId": "GC-006",
+        "governanceRule": "file mutations must stay inside declared file scope",
+        "primaryOwner": "FileScopeGuard",
+        "enforcementClass": "RUNTIME_GUARD",
+        "activeEntrypoints": "shared guard engine, runtime SDK, multi-agent runtime",
+        "primaryEvidence": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/file-scope.guard.ts, EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/multi.agent.runtime.test.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CITED_TEST_PAIRING_MISMATCH",
+      "operatorEvidenceRouteStatus": "WEB_API_ROUTE",
+      "finalDisposition": "INVOKED_TEST_PAIRING_MISMATCH",
+      "nextAction": "REPAIR_CANDIDATE: cited test imports protocol guards, not contract guards",
+      "confidence": "MEDIUM",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-006",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/",
+          "symbol": "FileScopeGuard",
+          "claim": "Contract guard FileScopeGuard exists. Exported from barrel and registered by createGuardEngine()."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-006",
+          "type": "invocationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
+          "lineSection": "lines 115-130, createGuardEngine()",
+          "claim": "createGuardEngine() instantiates and registers all 8 contract guards. Called by cvf-web guard-engine-singleton.ts:23, guard-runtime-adapter.ts:81, health/route.ts:12, execute/route.ts:583."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-006",
+          "type": "testPairingEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/multi.agent.runtime.test.ts",
+          "claim": "Cited test imports protocol guards, not contract guards. Does not test the matrix-cited contract guard implementation."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_WEB_API",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+          "lineSection": "line 583, getSharedGuardEngine() -> createGuardEngine()",
+          "claim": "Web execute route calls getSharedGuardEngine() which calls createGuardEngine() with contract guards. Governance dashboard at /governance route."
+        }
+      ],
+      "enforcementClass": "RUNTIME_GUARD"
+    },
+    {
+      "rowId": "GC-007",
+      "matrixClaim": {
+        "controlId": "GC-007",
+        "governanceRule": "protected governance/root paths cannot be modified freely",
+        "primaryOwner": "ScopeGuard",
+        "enforcementClass": "RUNTIME_GUARD",
+        "activeEntrypoints": "shared guard engine, runtime SDK defaults",
+        "primaryEvidence": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/scope.guard.ts, EXTENSIONS/CVF_GUARD_CONTRACT/src/index.test.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "WEB_API_ROUTE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-007",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/",
+          "symbol": "ScopeGuard",
+          "claim": "Contract guard ScopeGuard exists. Exported from barrel and registered by createGuardEngine()."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-007",
+          "type": "invocationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
+          "lineSection": "lines 115-130, createGuardEngine()",
+          "claim": "createGuardEngine() instantiates and registers all 8 contract guards. Called by cvf-web guard-engine-singleton.ts:23, guard-runtime-adapter.ts:81, health/route.ts:12, execute/route.ts:583."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-007",
+          "type": "testPairingEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.test.ts",
+          "claim": "Tests ScopeGuard by instantiating and evaluating the contract guard class."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_WEB_API",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+          "lineSection": "line 583, getSharedGuardEngine() -> createGuardEngine()",
+          "claim": "Web execute route calls getSharedGuardEngine() which calls createGuardEngine() with contract guards. Governance dashboard at /governance route."
+        }
+      ],
+      "enforcementClass": "RUNTIME_GUARD"
+    },
+    {
+      "rowId": "GC-008",
+      "matrixClaim": {
+        "controlId": "GC-008",
+        "governanceRule": "request, agent, and trace evidence must exist for governed actions",
+        "primaryOwner": "AuditTrailGuard",
+        "enforcementClass": "RUNTIME_GUARD",
+        "activeEntrypoints": "shared guard engine, runtime SDK defaults",
+        "primaryEvidence": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/audit-trail.guard.ts, EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CITED_TEST_PAIRING_MISMATCH",
+      "operatorEvidenceRouteStatus": "WEB_API_ROUTE",
+      "finalDisposition": "INVOKED_TEST_PAIRING_MISMATCH",
+      "nextAction": "REPAIR_CANDIDATE: cited test imports protocol guards, not contract guards",
+      "confidence": "MEDIUM",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-008",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/",
+          "symbol": "AuditTrailGuard",
+          "claim": "Contract guard AuditTrailGuard exists. Exported from barrel and registered by createGuardEngine()."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-008",
+          "type": "invocationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/index.ts",
+          "lineSection": "lines 115-130, createGuardEngine()",
+          "claim": "createGuardEngine() instantiates and registers all 8 contract guards. Called by cvf-web guard-engine-singleton.ts:23, guard-runtime-adapter.ts:81, health/route.ts:12, execute/route.ts:583."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-008",
+          "type": "testPairingEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/guard.runtime.test.ts",
+          "claim": "Cited test imports protocol guards, not contract guards. Does not test the matrix-cited contract guard implementation."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_WEB_API",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+          "lineSection": "line 583, getSharedGuardEngine() -> createGuardEngine()",
+          "claim": "Web execute route calls getSharedGuardEngine() which calls createGuardEngine() with contract guards. Governance dashboard at /governance route."
+        }
+      ],
+      "enforcementClass": "RUNTIME_GUARD"
+    },
+    {
+      "rowId": "GC-009",
+      "matrixClaim": {
+        "controlId": "GC-009",
+        "governanceRule": "every execution channel must pass through guard evaluation first",
+        "primaryOwner": "MandatoryGateway",
+        "enforcementClass": "GATEWAY_PRECONDITION",
+        "activeEntrypoints": "guard contract runtime helpers, channel entry wrappers",
+        "primaryEvidence": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts, EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.test.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "NO_CONFIRMED_PRODUCTION_CALLER_FOUND",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "NO_MACHINE_SURFACE",
+      "finalDisposition": "IMPLEMENTED_NOT_INVOCATION_PROVEN",
+      "nextAction": "REPAIR_CANDIDATE: add production caller or downgrade matrix claim",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-009",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.ts",
+          "claim": "Source file exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-009",
+          "type": "invocationEvidence",
+          "claim": "No non-test production caller found for GC-009."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-009",
+          "type": "testPairingEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/mandatory-gateway.test.ts",
+          "claim": "Cited test exists and imports from cited source."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_GC-009",
+          "type": "operatorEvidenceRouteEvidence",
+          "claim": "No dedicated operator surface for gateway with no confirmed production caller."
+        }
+      ],
+      "enforcementClass": "GATEWAY_PRECONDITION"
+    },
+    {
+      "rowId": "GC-010",
+      "matrixClaim": {
+        "controlId": "GC-010",
+        "governanceRule": "governed helper runtime must stop on approval-required escalations",
+        "primaryOwner": "AgentExecutionRuntime",
+        "enforcementClass": "GATEWAY_PRECONDITION",
+        "activeEntrypoints": "guard contract runtime helpers, governed helper sessions",
+        "primaryEvidence": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.ts, EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.test.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "NO_CONFIRMED_PRODUCTION_CALLER_FOUND",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "NO_MACHINE_SURFACE",
+      "finalDisposition": "IMPLEMENTED_NOT_INVOCATION_PROVEN",
+      "nextAction": "REPAIR_CANDIDATE: add production caller or downgrade matrix claim",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-010",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.ts",
+          "claim": "Source file exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-010",
+          "type": "invocationEvidence",
+          "claim": "No non-test production caller found for GC-010."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-010",
+          "type": "testPairingEvidence",
+          "path": "EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-execution-runtime.test.ts",
+          "claim": "Cited test exists and imports from cited source."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_GC-010",
+          "type": "operatorEvidenceRouteEvidence",
+          "claim": "No dedicated operator surface for gateway with no confirmed production caller."
+        }
+      ],
+      "enforcementClass": "GATEWAY_PRECONDITION"
+    },
+    {
+      "rowId": "GC-011",
+      "matrixClaim": {
+        "controlId": "GC-011",
+        "governanceRule": "governed BUILD requires plan evidence before execution proceeds",
+        "primaryOwner": "PipelineOrchestrator",
+        "enforcementClass": "APPROVAL_CHECKPOINT",
+        "activeEntrypoints": "runtime orchestrator, SDK bridge workflows",
+        "primaryEvidence": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts, EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/pipeline.orchestrator.test.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-011",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts",
+          "claim": "Source exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-011",
+          "type": "invocationEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/sdk/cvf.sdk.ts",
+          "claim": "PipelineOrchestrator imported and used by SDK."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-011",
+          "type": "testPairingEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/pipeline.orchestrator.test.ts",
+          "claim": "Test pairs with PipelineOrchestrator."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "APPROVAL_CHECKPOINT"
+    },
+    {
+      "rowId": "GC-012",
+      "matrixClaim": {
+        "controlId": "GC-012",
+        "governanceRule": "governed BUILD and FREEZE checkpoints require explicit approval",
+        "primaryOwner": "PipelineOrchestrator",
+        "enforcementClass": "APPROVAL_CHECKPOINT",
+        "activeEntrypoints": "runtime orchestrator, SDK bridge workflows",
+        "primaryEvidence": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/sdk.test.ts, EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/pipeline.orchestrator.test.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "NO_SPECIFIC_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "IMPLEMENTED_NOT_INVOCATION_PROVEN",
+      "nextAction": "DOCUMENTATION_CORRECTION",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-012",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/sdk.test.ts",
+          "claim": "Source exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-012",
+          "type": "invocationEvidence",
+          "claim": "Shares PipelineOrchestrator owner with GC-011. No independent implementation."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-012",
+          "type": "testPairingEvidence",
+          "claim": "No test for distinct GC-012 semantics."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "APPROVAL_CHECKPOINT"
+    },
+    {
+      "rowId": "GC-013",
+      "matrixClaim": {
+        "controlId": "GC-013",
+        "governanceRule": "governed FREEZE requires execution and review evidence before closure",
+        "primaryOwner": "PipelineOrchestrator",
+        "enforcementClass": "APPROVAL_CHECKPOINT",
+        "activeEntrypoints": "runtime orchestrator, SDK bridge workflows",
+        "primaryEvidence": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts, docs/baselines/archive/CVF_SYSTEM_UNIFICATION_PHASE2_CONTROL_LOOP_DELTA_2026-03-20.md"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "NO_SPECIFIC_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "IMPLEMENTED_NOT_INVOCATION_PROVEN",
+      "nextAction": "DOCUMENTATION_CORRECTION",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-013",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/pipeline.orchestrator.ts",
+          "claim": "Source exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-013",
+          "type": "invocationEvidence",
+          "claim": "Shares PipelineOrchestrator owner with GC-011. No independent implementation."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-013",
+          "type": "testPairingEvidence",
+          "claim": "No test for distinct GC-013 semantics."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "APPROVAL_CHECKPOINT"
+    },
+    {
+      "rowId": "GC-014",
+      "matrixClaim": {
+        "controlId": "GC-014",
+        "governanceRule": "rollback actions must preserve failure reason and rollback evidence",
+        "primaryOwner": "ExtensionBridge",
+        "enforcementClass": "APPROVAL_CHECKPOINT",
+        "activeEntrypoints": "cross-extension workflow runtime",
+        "primaryEvidence": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/wiring/extension.bridge.ts, EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/extension.bridge.test.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-014",
+          "type": "implementationEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/wiring/extension.bridge.ts",
+          "claim": "Source exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-014",
+          "type": "invocationEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/governance/guard_runtime/wiring/extension.bridge.ts",
+          "claim": "ExtensionBridge imported in production code."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-014",
+          "type": "testPairingEvidence",
+          "path": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/tests/extension.bridge.test.ts",
+          "claim": "Test pairs."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "APPROVAL_CHECKPOINT"
+    },
+    {
+      "rowId": "GC-015",
+      "matrixClaim": {
+        "controlId": "GC-015",
+        "governanceRule": "baseline artifact must be updated after every substantive change",
+        "primaryOwner": "check_baseline_update_compat.py",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "CI, local pre-push hook chain",
+        "primaryEvidence": "governance/compat/check_baseline_update_compat.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CHECKER_HAS_NO_STANDALONE_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED_BOUNDED_NO_STANDALONE_TEST",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-015",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_baseline_update_compat.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-015",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 249,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_baseline_update_compat.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:249; CI: .github/workflows/documentation-testing.yml:187. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-015",
+          "type": "testPairingEvidence",
+          "claim": "No standalone test found for check_baseline_update_compat.py."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-016",
+      "matrixClaim": {
+        "controlId": "GC-016",
+        "governanceRule": "docs, bug, and test evidence must remain historically consistent",
+        "primaryOwner": "docs governance + bug/test compat gates",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "CI, local hooks",
+        "primaryEvidence": "governance/compat/check_docs_governance_compat.py, governance/compat/check_bug_doc_compat.py, governance/compat/check_test_doc_compat.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CHECKER_HAS_NO_STANDALONE_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED_BOUNDED_NO_STANDALONE_TEST",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-016",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_docs_governance_compat.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-016",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 21,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_docs_governance_compat.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:21; pre-commit: governance/compat/local_governance_hook_catalog_pre_commit.py:56; reviewer-fast: governance/compat/local_governance_hook_catalog_reviewer_fast.py:21; autorun: governance/compat/agent_autorun_command_catalog.py:68; CI: .github/workflows/documentation-testing.yml:39. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-016",
+          "type": "testPairingEvidence",
+          "claim": "No standalone test found for check_docs_governance_compat.py."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-017",
+      "matrixClaim": {
+        "controlId": "GC-017",
+        "governanceRule": "release/readiness claims must stay aligned with actual reference docs",
+        "primaryOwner": "check_release_manifest_consistency.py",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "CI, release-readiness verification",
+        "primaryEvidence": "governance/compat/check_release_manifest_consistency.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CHECKER_HAS_NO_STANDALONE_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED_BOUNDED_NO_STANDALONE_TEST",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-017",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_release_manifest_consistency.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-017",
+          "type": "invocationEvidence",
+          "catalogPath": ".github/workflows/documentation-testing.yml",
+          "line": 554,
+          "phase": "CI",
+          "checkerPath": "governance/compat/check_release_manifest_consistency.py",
+          "claim": "Executable catalog entry: CI: .github/workflows/documentation-testing.yml:554. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-017",
+          "type": "testPairingEvidence",
+          "claim": "No standalone test found for check_release_manifest_consistency.py."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-018",
+      "matrixClaim": {
+        "controlId": "GC-018",
+        "governanceRule": "roadmap deepening must stop unless depth-audit scoring justifies continuation",
+        "primaryOwner": "CVF_DEPTH_AUDIT_GUARD",
+        "enforcementClass": "GOVERNANCE_DECISION_GATE",
+        "activeEntrypoints": "roadmap continuation decisions",
+        "primaryEvidence": "governance/compat/check_depth_audit_continuation_compat.py, governance/compat/check_gc018_stop_boundary_semantics.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CHECKER_HAS_NO_STANDALONE_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED_BOUNDED_NO_STANDALONE_TEST",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-018",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_depth_audit_continuation_compat.py",
+          "claim": "Depth audit checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-018",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 321,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_depth_audit_continuation_compat.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:321; CI: .github/workflows/documentation-testing.yml:207."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-018",
+          "type": "testPairingEvidence",
+          "claim": "No standalone test found."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "GOVERNANCE_DECISION_GATE"
+    },
+    {
+      "rowId": "GC-019",
+      "matrixClaim": {
+        "controlId": "GC-019",
+        "governanceRule": "major structural changes must complete audit review",
+        "primaryOwner": "CVF_STRUCTURAL_CHANGE_AUDIT_GUARD",
+        "enforcementClass": "GOVERNANCE_DECISION_GATE",
+        "activeEntrypoints": "restructuring roadmap execution",
+        "primaryEvidence": "governance/toolkit/05_OPERATION/CVF_STRUCTURAL_CHANGE_AUDIT_GUARD.md"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "HUMAN_TEMPLATE_ENFORCED",
+      "testPairingStatus": "NO_TEST_APPLICABLE",
+      "operatorEvidenceRouteStatus": "NO_MACHINE_SURFACE",
+      "finalDisposition": "CONTRACT_ONLY_WITH_REASON",
+      "nextAction": "DEFER",
+      "confidence": "MEDIUM",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-019",
+          "type": "implementationEvidence",
+          "path": "governance/toolkit/05_OPERATION/CVF_STRUCTURAL_CHANGE_AUDIT_GUARD.md",
+          "claim": "Guard doc exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-019",
+          "type": "invocationEvidence",
+          "claim": "Human/template enforced."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-019",
+          "type": "testPairingEvidence",
+          "claim": "No test applicable."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_NO_MACHINE_SURFACE",
+          "type": "operatorEvidenceRouteEvidence",
+          "claim": "No machine operator surface exists for this documentation-only or human-enforced control. The controlling guard/template doc is the operator-facing artifact."
+        }
+      ],
+      "enforcementClass": "GOVERNANCE_DECISION_GATE"
+    },
+    {
+      "rowId": "GC-020",
+      "matrixClaim": {
+        "controlId": "GC-020",
+        "governanceRule": "governed work pauses must classify transition first",
+        "primaryOwner": "CVF_AGENT_HANDOFF_GUARD",
+        "enforcementClass": "APPROVAL_CHECKPOINT",
+        "activeEntrypoints": "pause/resume checkpoints",
+        "primaryEvidence": "governance/compat/check_agent_handoff_guard_compat.py, EXTENSIONS/CVF_GUARD_CONTRACT/src/runtime/agent-handoff.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-020",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_agent_handoff_guard_compat.py",
+          "claim": "Source exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-020",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 253,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_agent_handoff_guard_compat.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:253"
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-020",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_agent_handoff_guard_compat.py",
+          "claim": "Test imports check_agent_handoff_guard_compat.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "APPROVAL_CHECKPOINT"
+    },
+    {
+      "rowId": "GC-021",
+      "matrixClaim": {
+        "controlId": "GC-021",
+        "governanceRule": "low-risk additive work may use fast-lane governance",
+        "primaryOwner": "CVF_FAST_LANE_GOVERNANCE_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "additive tranche-local batches",
+        "primaryEvidence": "governance/compat/check_fast_lane_governance_compat.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CHECKER_HAS_NO_STANDALONE_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED_BOUNDED_NO_STANDALONE_TEST",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-021",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_fast_lane_governance_compat.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-021",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 313,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_fast_lane_governance_compat.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:313. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-021",
+          "type": "testPairingEvidence",
+          "claim": "No standalone test found for check_fast_lane_governance_compat.py."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-022",
+      "matrixClaim": {
+        "controlId": "GC-022",
+        "governanceRule": "memory-bearing records must declare durable memory class",
+        "primaryOwner": "CVF_MEMORY_GOVERNANCE_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "evidence-bearing docs",
+        "primaryEvidence": "governance/compat/check_memory_governance_compat.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CHECKER_HAS_NO_STANDALONE_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED_BOUNDED_NO_STANDALONE_TEST",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-022",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_memory_governance_compat.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-022",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 317,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_memory_governance_compat.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:317. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-022",
+          "type": "testPairingEvidence",
+          "claim": "No standalone test found for check_memory_governance_compat.py."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-023",
+      "matrixClaim": {
+        "controlId": "GC-023",
+        "governanceRule": "governed files must stay under maintainability thresholds",
+        "primaryOwner": "CVF_GOVERNED_FILE_SIZE_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "governed source/test surface",
+        "primaryEvidence": "governance/compat/check_governed_file_size.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-023",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_governed_file_size.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-023",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 329,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_governed_file_size.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:329; pre-commit: governance/compat/local_governance_hook_catalog_pre_commit.py:21; autorun: governance/compat/agent_autorun_command_catalog.py:444; CI: .github/workflows/documentation-testing.yml:509. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-023",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_governed_file_size.py",
+          "claim": "Test imports check_governed_file_size.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-024",
+      "matrixClaim": {
+        "controlId": "GC-024",
+        "governanceRule": "split test surface must keep canonical ownership file",
+        "primaryOwner": "CVF_TEST_PARTITION_OWNERSHIP_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "tranche-local test extraction",
+        "primaryEvidence": "governance/compat/check_test_partition_ownership.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-024",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_test_partition_ownership.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-024",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 341,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_test_partition_ownership.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:341; CI: .github/workflows/documentation-testing.yml:539. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-024",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_test_partition_ownership.py",
+          "claim": "Test imports check_test_partition_ownership.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-025",
+      "matrixClaim": {
+        "controlId": "GC-025",
+        "governanceRule": "new sessions must load one canonical bootstrap first",
+        "primaryOwner": "CVF_SESSION_GOVERNANCE_BOOTSTRAP_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "new chat/session startup",
+        "primaryEvidence": "governance/compat/check_session_governance_bootstrap.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CHECKER_HAS_NO_STANDALONE_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED_BOUNDED_NO_STANDALONE_TEST",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-025",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_session_governance_bootstrap.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-025",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 265,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_session_governance_bootstrap.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:265; CI: .github/workflows/documentation-testing.yml:247. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-025",
+          "type": "testPairingEvidence",
+          "claim": "No standalone test found for check_session_governance_bootstrap.py."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-026",
+      "matrixClaim": {
+        "controlId": "GC-026",
+        "governanceRule": "tranche posture changes must update progress tracker",
+        "primaryOwner": "CVF_PROGRESS_TRACKER_SYNC_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "tranche closure",
+        "primaryEvidence": "governance/compat/check_progress_tracker_sync.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-026",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_progress_tracker_sync.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-026",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 269,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_progress_tracker_sync.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:269; CI: .github/workflows/documentation-testing.yml:267. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-026",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_progress_tracker_sync.py",
+          "claim": "Test imports check_progress_tracker_sync.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-027",
+      "matrixClaim": {
+        "controlId": "GC-027",
+        "governanceRule": "multi-agent intake review docs must stay standardized",
+        "primaryOwner": "CVF_MULTI_AGENT_REVIEW_DOC_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "multi-agent proposal evaluation",
+        "primaryEvidence": "governance/compat/check_multi_agent_review_governance_compat.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CHECKER_HAS_NO_STANDALONE_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED_BOUNDED_NO_STANDALONE_TEST",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-027",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_multi_agent_review_governance_compat.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-027",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 301,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_multi_agent_review_governance_compat.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:301; CI: .github/workflows/documentation-testing.yml:404. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-027",
+          "type": "testPairingEvidence",
+          "claim": "No standalone test found for check_multi_agent_review_governance_compat.py."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-028",
+      "matrixClaim": {
+        "controlId": "GC-028",
+        "governanceRule": "live AI Boardroom must converge through transition gate",
+        "primaryOwner": "BoardroomTransitionGateContract",
+        "enforcementClass": "APPROVAL_CHECKPOINT",
+        "activeEntrypoints": "live control-plane boardroom sessions",
+        "primaryEvidence": "governance/compat/check_boardroom_runtime_governance_compat.py, EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/boardroom.transition.gate.contract.ts"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CHECKER_HAS_NO_STANDALONE_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED_BOUNDED_NO_STANDALONE_TEST",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-028",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_boardroom_runtime_governance_compat.py",
+          "claim": "Source exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-028",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 305,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_boardroom_runtime_governance_compat.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:305; CI: .github/workflows/documentation-testing.yml:424"
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-028",
+          "type": "testPairingEvidence",
+          "claim": "No standalone test found."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "APPROVAL_CHECKPOINT"
+    },
+    {
+      "rowId": "GC-029",
+      "matrixClaim": {
+        "controlId": "GC-029",
+        "governanceRule": "touched extension packages must pass package-level check",
+        "primaryOwner": "CVF_EXTENSION_PACKAGE_CHECK_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "extension-local changes",
+        "primaryEvidence": "governance/compat/check_extension_package_check.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CHECKER_HAS_NO_STANDALONE_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED_BOUNDED_NO_STANDALONE_TEST",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-029",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_extension_package_check.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-029",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 309,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_extension_package_check.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:309; CI: .github/workflows/documentation-testing.yml:449. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-029",
+          "type": "testPairingEvidence",
+          "claim": "No standalone test found for check_extension_package_check.py."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-030",
+      "matrixClaim": {
+        "controlId": "GC-030",
+        "governanceRule": "new guards must satisfy canonical authoring contract",
+        "primaryOwner": "CVF_GUARD_AUTHORING_STANDARD_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "new guard creation",
+        "primaryEvidence": "governance/compat/check_guard_authoring_standard.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-030",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_guard_authoring_standard.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-030",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 349,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_guard_authoring_standard.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:349; CI: .github/workflows/documentation-testing.yml:604. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-030",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_guard_authoring_standard.py",
+          "claim": "Test imports check_guard_authoring_standard.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-031",
+      "matrixClaim": {
+        "controlId": "GC-031",
+        "governanceRule": "rotation guards must register active window",
+        "primaryOwner": "CVF_ACTIVE_WINDOW_REGISTRY_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "dedicated rotation guards",
+        "primaryEvidence": "governance/compat/check_active_window_registry.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-031",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_active_window_registry.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-031",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 353,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_active_window_registry.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:353; CI: .github/workflows/documentation-testing.yml:621. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-031",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_active_window_registry.py",
+          "claim": "Test imports check_active_window_registry.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-032",
+      "matrixClaim": {
+        "controlId": "GC-032",
+        "governanceRule": "governed packets must be authored from source truth",
+        "primaryOwner": "CVF_GOVERNED_ARTIFACT_AUTHORING_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "governed docs authoring",
+        "primaryEvidence": "governance/compat/check_governed_artifact_authoring.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-032",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_governed_artifact_authoring.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-032",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 25,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_governed_artifact_authoring.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:25; CI: .github/workflows/documentation-testing.yml:59. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-032",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_governed_artifact_authoring.py",
+          "claim": "Test imports check_governed_artifact_authoring.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-033",
+      "matrixClaim": {
+        "controlId": "GC-033",
+        "governanceRule": "public barrels must remain thin routing surfaces",
+        "primaryOwner": "CVF_PUBLIC_SURFACE_MAINTAINABILITY_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "CPF public barrel maintenance",
+        "primaryEvidence": "governance/compat/check_cpf_public_surface_maintainability.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-033",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_cpf_public_surface_maintainability.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-033",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 221,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_cpf_public_surface_maintainability.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:221; CI: .github/workflows/documentation-testing.yml:116. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-033",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_cpf_public_surface_maintainability.py",
+          "claim": "Test imports check_cpf_public_surface_maintainability.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-034",
+      "matrixClaim": {
+        "controlId": "GC-034",
+        "governanceRule": "barrel smoke tests must remain small",
+        "primaryOwner": "CVF_BARREL_SMOKE_OWNERSHIP_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "CPF barrel smoke maintenance",
+        "primaryEvidence": "governance/compat/check_cpf_public_surface_maintainability.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-034",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_cpf_public_surface_maintainability.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-034",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 221,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_cpf_public_surface_maintainability.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:221; CI: .github/workflows/documentation-testing.yml:116. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-034",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_cpf_public_surface_maintainability.py",
+          "claim": "Test imports check_cpf_public_surface_maintainability.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-035",
+      "matrixClaim": {
+        "controlId": "GC-035",
+        "governanceRule": "CPF batch families must adopt shared batch helper",
+        "primaryOwner": "CVF_SHARED_BATCH_HELPER_ADOPTION_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "CPF batch-contract maintenance",
+        "primaryEvidence": "governance/compat/check_cpf_batch_helper_adoption.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-035",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_cpf_batch_helper_adoption.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-035",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 225,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_cpf_batch_helper_adoption.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:225; CI: .github/workflows/documentation-testing.yml:133. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-035",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_cpf_batch_helper_adoption.py",
+          "claim": "Test imports check_cpf_batch_helper_adoption.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-036",
+      "matrixClaim": {
+        "controlId": "GC-036",
+        "governanceRule": "canonical summary docs must separate from evidence",
+        "primaryOwner": "CVF_CANON_SUMMARY_EVIDENCE_SEPARATION_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "whitepaper/tracker maintenance",
+        "primaryEvidence": "governance/compat/check_canon_summary_evidence_separation.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-036",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_canon_summary_evidence_separation.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-036",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 233,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_canon_summary_evidence_separation.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:233; CI: .github/workflows/documentation-testing.yml:167. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-036",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_canon_summary_evidence_separation.py",
+          "claim": "Test imports check_canon_summary_evidence_separation.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-037",
+      "matrixClaim": {
+        "controlId": "GC-037",
+        "governanceRule": "visible roots must be lifecycle-classified",
+        "primaryOwner": "CVF_REPOSITORY_LIFECYCLE_CLASSIFICATION_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "pre-public repository cleanup",
+        "primaryEvidence": "governance/compat/check_repository_lifecycle_classification.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-037",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_repository_lifecycle_classification.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-037",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 398,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_repository_lifecycle_classification.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:398; CI: .github/workflows/documentation-testing.yml:638. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-037",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_repository_lifecycle_classification.py",
+          "claim": "Test imports check_repository_lifecycle_classification.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-038",
+      "matrixClaim": {
+        "controlId": "GC-038",
+        "governanceRule": "visible roots must be exposure-classified",
+        "primaryOwner": "CVF_REPOSITORY_EXPOSURE_CLASSIFICATION_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "pre-public publication planning",
+        "primaryEvidence": "governance/compat/check_repository_exposure_classification.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-038",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_repository_exposure_classification.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-038",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 402,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_repository_exposure_classification.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:402; CI: .github/workflows/documentation-testing.yml:655. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-038",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_repository_exposure_classification.py",
+          "claim": "Test imports check_repository_exposure_classification.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-039",
+      "matrixClaim": {
+        "controlId": "GC-039",
+        "governanceRule": "no P3 relocation without explicit readiness truth",
+        "primaryOwner": "CVF_PREPUBLIC_P3_READINESS_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "pre-public P3 readiness review",
+        "primaryEvidence": "governance/compat/check_prepublic_p3_readiness.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-039",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_prepublic_p3_readiness.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-039",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 406,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_prepublic_p3_readiness.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:406; CI: .github/workflows/documentation-testing.yml:672. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-039",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_prepublic_p3_readiness.py",
+          "claim": "Test imports check_prepublic_p3_readiness.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-040",
+      "matrixClaim": {
+        "controlId": "GC-040",
+        "governanceRule": "CPF and EPF batch contracts must preserve deterministic identity",
+        "primaryOwner": "CVF_BATCH_CONTRACT_DETERMINISM_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "governed batch-contract maintenance",
+        "primaryEvidence": "governance/compat/check_batch_contract_determinism.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-040",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_batch_contract_determinism.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-040",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 229,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_batch_contract_determinism.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:229; CI: .github/workflows/documentation-testing.yml:150. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-040",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_batch_contract_determinism.py",
+          "claim": "Test imports check_batch_contract_determinism.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-041",
+      "matrixClaim": {
+        "controlId": "GC-041",
+        "governanceRule": "workers must inherit surface scan state from registry",
+        "primaryOwner": "CVF_SURFACE_SCAN_CONTINUITY_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "fresh quality assessment",
+        "primaryEvidence": "governance/compat/check_surface_scan_registry.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-041",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_surface_scan_registry.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-041",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 273,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_surface_scan_registry.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:273; CI: .github/workflows/documentation-testing.yml:284. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-041",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_surface_scan_registry.py",
+          "claim": "Test imports check_surface_scan_registry.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-042",
+      "matrixClaim": {
+        "controlId": "GC-042",
+        "governanceRule": "product-value claims must use frozen evidence chain",
+        "primaryOwner": "CVF_PRODUCT_VALUE_VALIDATION_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "product-value validation planning",
+        "primaryEvidence": "governance/compat/check_product_value_validation_guard_compat.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CHECKER_HAS_NO_STANDALONE_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED_BOUNDED_NO_STANDALONE_TEST",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-042",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_product_value_validation_guard_compat.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-042",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 277,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_product_value_validation_guard_compat.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:277; CI: .github/workflows/documentation-testing.yml:304. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-042",
+          "type": "testPairingEvidence",
+          "claim": "No standalone test found for check_product_value_validation_guard_compat.py."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-043",
+      "matrixClaim": {
+        "controlId": "GC-043",
+        "governanceRule": "knowledge absorption must default to doctrine-first",
+        "primaryOwner": "CVF_KNOWLEDGE_ABSORPTION_PRIORITY_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "knowledge-absorption roadmaps",
+        "primaryEvidence": "governance/compat/check_knowledge_absorption_priority_compat.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-043",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_knowledge_absorption_priority_compat.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-043",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 281,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_knowledge_absorption_priority_compat.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:281; CI: .github/workflows/documentation-testing.yml:344. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-043",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_knowledge_absorption_priority_compat.py",
+          "claim": "Test imports check_knowledge_absorption_priority_compat.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-044",
+      "matrixClaim": {
+        "controlId": "GC-044",
+        "governanceRule": "skill intake must use deterministic CVF-standard quality rule",
+        "primaryOwner": "CVF_TEMPLATE_SKILL_STANDARD_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "repo-derived skill intake",
+        "primaryEvidence": "governance/compat/check_template_skill_standard_guard_compat.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-044",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_template_skill_standard_guard_compat.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-044",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 285,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_template_skill_standard_guard_compat.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:285; CI: .github/workflows/documentation-testing.yml:324. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-044",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_template_skill_standard_guard_compat.py",
+          "claim": "Test imports check_template_skill_standard_guard_compat.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-045",
+      "matrixClaim": {
+        "controlId": "GC-045",
+        "governanceRule": "new governed Markdown must include required structural sections",
+        "primaryOwner": "CVF_MARKDOWN_STRUCTURAL_COMPLETENESS_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "new governed Markdown files",
+        "primaryEvidence": "governance/compat/check_markdown_structural_completeness.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-045",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_markdown_structural_completeness.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-045",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 29,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_markdown_structural_completeness.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:29; pre-commit: governance/compat/local_governance_hook_catalog_pre_commit.py:60; reviewer-fast: governance/compat/local_governance_hook_catalog_reviewer_fast.py:25; autorun: governance/compat/agent_autorun_command_catalog.py:74; CI: .github/workflows/documentation-testing.yml:79. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-045",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_markdown_structural_completeness.py",
+          "claim": "Test imports check_markdown_structural_completeness.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-046",
+      "matrixClaim": {
+        "controlId": "GC-046",
+        "governanceRule": "multi-agent absorption reviews must use Evidence Trace Blocks",
+        "primaryOwner": "CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD",
+        "enforcementClass": "GOVERNANCE_DECISION_GATE",
+        "activeEntrypoints": "multi-agent absorption reviews",
+        "primaryEvidence": "governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "HUMAN_TEMPLATE_ENFORCED",
+      "testPairingStatus": "NO_TEST_APPLICABLE",
+      "operatorEvidenceRouteStatus": "NO_MACHINE_SURFACE",
+      "finalDisposition": "CONTRACT_ONLY_WITH_REASON",
+      "nextAction": "DEFER",
+      "confidence": "MEDIUM",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-046",
+          "type": "implementationEvidence",
+          "path": "governance/toolkit/05_OPERATION/CVF_AGENT_REVIEW_ANTI_COLLUSION_GUARD.md",
+          "claim": "Guard doc exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-046",
+          "type": "invocationEvidence",
+          "claim": "Human/template enforced."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-046",
+          "type": "testPairingEvidence",
+          "claim": "No test applicable."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_NO_MACHINE_SURFACE",
+          "type": "operatorEvidenceRouteEvidence",
+          "claim": "No machine operator surface exists for this documentation-only or human-enforced control. The controlling guard/template doc is the operator-facing artifact."
+        }
+      ],
+      "enforcementClass": "GOVERNANCE_DECISION_GATE"
+    },
+    {
+      "rowId": "GC-047",
+      "matrixClaim": {
+        "controlId": "GC-047",
+        "governanceRule": "bounded-corpus reports must prove source-corpus completeness",
+        "primaryOwner": "CVF_CORPUS_COMPLETENESS_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "folder/file-based agent tasks",
+        "primaryEvidence": "governance/compat/check_corpus_completeness_report_integrity.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-047",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_corpus_completeness_report_integrity.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-047",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 137,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_corpus_completeness_report_integrity.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:137; pre-commit: governance/compat/local_governance_hook_catalog_pre_commit.py:180; autorun: governance/compat/agent_autorun_command_catalog.py:248; CI: .github/workflows/documentation-testing.yml:364. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-047",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_corpus_completeness_report_integrity.py",
+          "claim": "Test imports check_corpus_completeness_report_integrity.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-048",
+      "matrixClaim": {
+        "controlId": "GC-048",
+        "governanceRule": "corpus-derived knowledge maps must preserve source authority",
+        "primaryOwner": "CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "architecture maps, semantic-region ledgers",
+        "primaryEvidence": "governance/compat/check_corpus_to_knowledge_map_reconciliation.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-048",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_corpus_to_knowledge_map_reconciliation.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-048",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 145,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_corpus_to_knowledge_map_reconciliation.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:145; pre-commit: governance/compat/local_governance_hook_catalog_pre_commit.py:192; autorun: governance/compat/agent_autorun_command_catalog.py:266; CI: .github/workflows/documentation-testing.yml:384. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-048",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_corpus_to_knowledge_map_reconciliation.py",
+          "claim": "Test imports check_corpus_to_knowledge_map_reconciliation.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-049",
+      "matrixClaim": {
+        "controlId": "GC-049",
+        "governanceRule": "core guard/control files are frozen by default",
+        "primaryOwner": "CVF_CORE_GUARD_SELF_PROTECTION_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "guard scripts, hook chains",
+        "primaryEvidence": "governance/compat/check_core_guard_self_protection.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "TEST_PAIRS_WITH_CITED_SOURCE",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-049",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_core_guard_self_protection.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-049",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 17,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_core_guard_self_protection.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:17; pre-commit: governance/compat/local_governance_hook_catalog_pre_commit.py:17; reviewer-fast: governance/compat/local_governance_hook_catalog_reviewer_fast.py:17; autorun: governance/compat/agent_autorun_command_catalog.py:64. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-049",
+          "type": "testPairingEvidence",
+          "path": "governance/compat/test_check_core_guard_self_protection.py",
+          "claim": "Test imports check_core_guard_self_protection.py via importlib."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    },
+    {
+      "rowId": "GC-050",
+      "matrixClaim": {
+        "controlId": "GC-050",
+        "governanceRule": "corpus-derived intelligence classification must use a ledger",
+        "primaryOwner": "CVF_CORPUS_INTELLIGENCE_CLASSIFICATION_GUARD",
+        "enforcementClass": "CI_REPO_GATE",
+        "activeEntrypoints": "corpus classification ledgers",
+        "primaryEvidence": "governance/compat/check_corpus_intelligence_classification.py"
+      },
+      "implementationStatus": "IMPLEMENTED",
+      "invocationStatus": "INVOKED",
+      "testPairingStatus": "CHECKER_HAS_NO_STANDALONE_TEST",
+      "operatorEvidenceRouteStatus": "CLI_AGGREGATE",
+      "finalDisposition": "PROVEN_CONNECTED_BOUNDED_NO_STANDALONE_TEST",
+      "nextAction": "NO_CHANGE",
+      "confidence": "HIGH",
+      "implementationEvidence": [
+        {
+          "id": "E_IMPL_GC-050",
+          "type": "implementationEvidence",
+          "path": "governance/compat/check_corpus_intelligence_classification.py",
+          "claim": "Checker exists."
+        }
+      ],
+      "invocationEvidence": [
+        {
+          "id": "E_INV_GC-050",
+          "type": "invocationEvidence",
+          "catalogPath": "governance/compat/local_governance_hook_catalog_pre_push.py",
+          "line": 149,
+          "phase": "pre-push",
+          "checkerPath": "governance/compat/check_corpus_intelligence_classification.py",
+          "claim": "Executable catalog entry: pre-push: governance/compat/local_governance_hook_catalog_pre_push.py:149; pre-commit: governance/compat/local_governance_hook_catalog_pre_commit.py:196; autorun: governance/compat/agent_autorun_command_catalog.py:272. Loaded and executed by run_local_governance_hook_chain.py or run_agent_autorun_workflow_gate.py."
+        }
+      ],
+      "testPairingEvidence": [
+        {
+          "id": "E_TEST_GC-050",
+          "type": "testPairingEvidence",
+          "claim": "No standalone test found for check_corpus_intelligence_classification.py."
+        }
+      ],
+      "operatorEvidenceRouteEvidence": [
+        {
+          "id": "E_OP_CLI_AGGREGATE",
+          "type": "operatorEvidenceRouteEvidence",
+          "path": "governance/compat/run_local_governance_hook_chain.py",
+          "function": "output printed by run_local_governance_hook_chain.py via _run_step_captured() (line ~144), which subprocess-executes checker commands from catalog entries and prints [PASS]/[FAIL] per checker. Aggregate output also from run_agent_autorun_workflow_gate.py _print_result() (line ~70).",
+          "claim": "CLI aggregate output: each checker's result appears as a PASS/FAIL line with duration. No dedicated Web UI route for CI_REPO_GATE checkers."
+        }
+      ],
+      "enforcementClass": "CI_REPO_GATE"
+    }
+  ],
+  "manifestCount": 82,
+  "manifestHashNormalization": "sort-records-by-path-ordinal; serialize-each-as-path-TAB-terminalStatus; join-with-LF-no-trailing; encode-UTF-8-no-BOM; sha256-lowercase-hex"
+}

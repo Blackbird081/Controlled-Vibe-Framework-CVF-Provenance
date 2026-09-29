@@ -1,0 +1,23 @@
+{
+  "stateOrder": 1806,
+  "stateKey": "systemChainUc04bR3r1BlockedClosure20260715",
+  "value": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "materialCommit": "0856e090d",
+    "workOrderId": "SCLP-UC04B-R3R1",
+    "completionReview": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3R1_NEGATIVE_LOCATOR_RECOVERY_COMPLETION_2026-07-15.md",
+    "locatorAmbiguityGap": "CLOSED_WITH_EVIDENCE",
+    "reviewerAuthProjectionGap": "OPEN_CONFIRMED_GAP",
+    "observedCounters": {
+      "playwrightInvocations": 1,
+      "webSubmissions": 0,
+      "selectedCheckerExecutions": 0,
+      "retries": 0,
+      "providerCalls": 0
+    },
+    "traceObservation": "direct session reviewer; shell admin; Operations anonymous_local; zero /api/auth/me requests",
+    "adifId": "ADIF-0037",
+    "nextAllowedMove": "author one source-verified R3R2 reviewer auth-projection packet with deterministic local regression before any browser retry",
+    "claimBoundary": "Locator ambiguity only is closed. Reviewer browser denial, full UC-04B, unified inventory, provider, public, production, scale, certification, and user value remain unproven."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2721,
+  "stateKey": "gclhMfrpP3R1AR1OracleRatifiedBoundedR1BAuthoringCheckpointRequired20260902",
+  "value": {
+    "status": "P3_R1A_R1_ORACLE_RATIFIED_BOUNDED_R1B_AUTHORING_CHECKPOINT_REQUIRED",
+    "dispatchMaterialCommit": "64a0182fffe7d1022cc417fbd097c600e6f55789",
+    "ratificationMaterialCommit": "7f607d353bdec11e456731793f181e72abddc297",
+    "ratifiedOraclePath": "governance/compat/fixtures/mfrp_p3_r1a_r1_static_only_oracle.json",
+    "ratifiedOracleSha256": "6aa32c3157092c974441c269d17e85aed20d5ba535479523eda5b64d23b3fbf2",
+    "workerReturnPath": "docs/reviews/CVF_MFRP_P3_R1A_R1_STATIC_ONLY_ORACLE_CORRECTION_WORKER_RETURN_2026-09-02.md",
+    "workerReturnSha256": "32dabae39e0a4465b5e3a7ad4ba10e4cdf1aa7be7c20c1f6f8ba21f0ad87dee6",
+    "workerTerminalReturn": "COMPLETE_PENDING_REVIEW",
+    "workerTerminalCandidate": "ORACLE_RATIFICATION_CANDIDATE",
+    "reviewerDisposition": "ORACLE_RATIFIED_BOUNDED",
+    "reviewerEvidence": "Independently recomputed all 9 pinned source/P2-seam SHA-256 hashes (all MATCH); confirmed exact 19-case set covering all 18 required families and 7 required zero-tolerance classes with zero missing/extra; ran a forbidden observed*/actual*-key scan (zero matches); confirmed 19/19 unique source-excerpt digests; verified the three NOT_REPRESENTABLE_BY_CURRENT_P2 dispositions (C07 attacker-rebound, C08 cross-batch verifier/dependency drift, C18 high-risk/live/public/destructive authority) directly against governance/compat/agent_autorun_machine_verification.py's _validate_receipt_integrity source; independently reran worker-return fast gate (COMPLIANT) and reviewer-fast (67/67 PASS); confirmed final git status shows only the two authorized paths staged and no other tracked file changed.",
+    "nextAllowedMove": "Author a separate R1B work order (byte-change and same-payload runtime proof) under fresh operator authorization. This ratification does not open R1B.",
+    "claimBoundary": "Static oracle ratification only. No R1B execution, replay, P2 import/invocation/mutation, receipt construction, lifecycle activation, downstream application, provider/live/network, public-sync, deployment or production action is claimed."
+  }
+}

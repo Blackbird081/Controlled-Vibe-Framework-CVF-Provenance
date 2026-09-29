@@ -1,0 +1,21 @@
+{
+  "stateOrder": 2017,
+  "stateKey": "lpci1WebUc01FullRouteLiveProofDispatch20260809",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER",
+    "date": "2026-08-09",
+    "batchId": "LPCI1-WEB-UC01-ROUTE-LIVE",
+    "authorityToken": "AUTHORIZE_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_ONLY",
+    "dispatchCommit": "9aead6b4c",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_2026-08-09.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_UC01_FULL_ROUTE_LIVE_PROOF_2026-08-09.md",
+    "preDispatchEvidence": "PASS_75_OF_75",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "routeInvocationBudget": 1,
+    "providerFetchBudget": 1,
+    "retryBudget": 0,
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Delegated worker executes the exact evidence-only signed route packet and returns two sanitized outputs for independent review.",
+    "claimBoundary": "Full-route live proof only; no source/config/session/public mutation, hosted/release proof, deployment, production, other corpus/pair, or later roadmap authority."
+  }
+}

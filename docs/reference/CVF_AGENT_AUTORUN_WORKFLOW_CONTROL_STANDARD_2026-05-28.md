@@ -19,6 +19,14 @@ not machine-checkable.
 
 ## Scope
 
+Task-proportional routing is governed by
+`docs/reference/CVF_TASK_PROPORTIONAL_GOVERNANCE_ROUTING_STANDARD_2026-08-17.md`.
+TPGR-T0 adds a mandatory shadow classification check for newly active work
+orders after its activation boundary. It does not remove, skip, or reorder any
+command in this standard; invalid or absent routing evidence falls back to the
+full legacy bundle. Selective execution remains unauthorized until TPGR-T2 and
+equivalence acceptance.
+
 This standard applies to every new or resumed CVF agent that drafts,
 dispatches, implements, reviews, closes, commits, pushes, or public-syncs
 governed work after 2026-05-28.
@@ -58,7 +66,9 @@ Canonical sources:
 The autorun workflow has four blocking gates:
 
 1. `pre-dispatch`: before a work order, roadmap, or Fast Lane audit may be
-   marked ready, dispatched, or equivalent.
+   marked ready, dispatched, or equivalent. For a work-order dispatch this is
+   the final release gate after both the material packet commit and the later
+   session-continuity commit; it is not merely an authoring-shape check.
 2. `pre-implementation`: after dispatch evidence exists and before file edits
    outside the dispatch packet begin.
 3. `pre-closure`: before any artifact may claim `CLOSED`, `CLOSED_PASS`,
@@ -177,8 +187,18 @@ clone after `git remote -v` proves the target repository.
 Required command:
 
 ```powershell
-python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base <baseHead> --head HEAD
+python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base <baseHead> --head HEAD --active-work-order <exact-work-order-path>
 ```
+
+For a work-order dispatch, `--active-work-order` is mandatory when the current
+bootstrap next move is work-order based. The phase-specific dispatch-release
+checker must prove that the baseline/work order are committed and hash-bound,
+the active handoff material-SHA marker names that commit and batch, continuity
+surfaces share a later clean commit, `currentAuthority` selects the exact
+packet, and `nextAllowedMove` authorizes execution. Author-fast and ordinary
+pre-commit checks may run before these commits, but their PASS is never a
+worker-release receipt. See
+`docs/reference/CVF_DISPATCH_RELEASE_READINESS_MACHINE_STANDARD_2026-09-25.md`.
 
 The gate must include source verification schema, roadmap trace matrix,
 structural completeness, docs governance naming, active session state, and file
@@ -213,6 +233,22 @@ python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implemen
 The Worker confirms that dispatch artifacts pass the same checks immediately
 before editing. This prevents an agent from implementing from an obsolete or
 partially corrected work order.
+
+A worker may explicitly bind the current dispatch by adding
+`--active-work-order <repo-relative-work-order.md>` at `pre-implementation`
+only. The aggregate forwards `--changed-lane-only --active-work-order <path>`
+to exactly the independent review probe admission command. Its existing
+checker validates the path and unique declared worker return, keeps that
+return in the failing lane even when untracked, and diagnoses parked findings
+outside the lane. Successful parallel output must retain those diagnostics.
+An empty binding or a binding at any other phase is rejected. Invalid,
+missing or ambiguous work-order bindings fail through the existing checker.
+
+Without this option every command remains broad. Pre-dispatch, pre-closure,
+pre-push and hook behavior remain broad. No other command is narrowed; no
+checker semantics or receipt schema changes. Exact command argv, including
+the binding, remains part of command-manifest and receipt reuse identity, so
+bound and unbound receipts cannot be exchanged.
 
 Implementation is blocked when:
 
@@ -377,6 +413,7 @@ This standard does not:
 | Public export disposition is missing or overclaims public-sync export | Add the disposition, cite public-sync evidence, or downgrade to `DEFERRED_PRIVATE_ONLY` / `BLOCKED_MISSING_PUBLIC_ARTIFACTS`. |
 | Machine gate fails inside Allowed scope | Repair the allowed-scope defect and rerun the gate; do not ask the operator whether routine remediation should happen. |
 | Agent asks operator whether to fix an allowed-scope gate failure | Record a governance/control-plane learning signal and tighten the relevant work-order wording or guard. |
+| Work-order packet passes authoring checks but is uncommitted or continuity still names its predecessor | Complete the material packet commit and later continuity commit, then rerun `pre-dispatch` with the exact `--active-work-order`; do not invoke the worker first. |
 | `pre-dispatch` fails | Keep artifact in `DRAFT`, `HOLD_*`, or `BLOCKED`; return to Orchestrator. |
 | `pre-implementation` fails | Stop edits; return the blocker to Orchestrator or Reviewer. |
 | `pre-closure` fails | Do not mark closed; file a blocking finding or correction batch. |

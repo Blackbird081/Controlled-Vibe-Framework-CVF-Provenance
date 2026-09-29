@@ -178,7 +178,8 @@ Template:
     -> PASS.
   - `node scripts/run_cvf_r2_durable_memory_route_live_probe.mjs` -> PASS,
     live receipt `rcpt-env-mpjdj5rc-p1g9go`, trace
-    `env-mpjdj5rc-p1g9go`, provider `alibaba`, model `qwen-turbo`,
+    `env-mpjdj5rc-p1g9go`, provider `alibaba`, retired model identifier retained
+    only in the immutable underlying receipt,
     memory id `r2-skill-safe`, `rawMemoryReleased=false`.
   - `python scripts/run_cvf_release_gate_bundle.py --json` -> PASS, 7/7.
   - Public-sync `Test-Path` for Step 0 guide, first-receipt guide, and public

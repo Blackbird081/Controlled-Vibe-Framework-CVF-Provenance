@@ -1,0 +1,20 @@
+{
+  "stateOrder": 1792,
+  "stateKey": "systemChainUc04bR2Dispatch20260714",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "978aa3e8d",
+    "workOrderId": "SCLP-UC04B-R2",
+    "dispatchBaseHead": "76f70a13b",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "playwrightInvocationCeiling": 1,
+    "businessSubmissionCeiling": 0,
+    "checkerExecutionCeiling": 0,
+    "retryCeiling": 0,
+    "providerCallCeiling": 0,
+    "protectedProofPathAuthorized": true,
+    "businessSpecExecutionAuthorized": false,
+    "nextAllowedMove": "execute the exact no-commit R2 work order and return for reviewer closure",
+    "claimBoundary": "Dispatch authority only. No repair execution, UC-04B business proof, unified inventory, provider governance, public, production, scale, certification, or user-value claim."
+  }
+}

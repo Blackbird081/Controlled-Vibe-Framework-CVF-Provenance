@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "workOrderId": "SCLP-UC04B-R1",
+  "executionBaseHead": "c3a8bd89b",
+  "commandFingerprint": "npx playwright test tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts --config playwright.config.ts --workers=1",
+  "proofSpecPath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts",
+  "proofSpecSha256": "89aaf5a078c7c90bb01265d5f982110f6a077343641bff09e245eb5cff271d49",
+  "authorizedInvocationCeiling": 1,
+  "invocationStarted": 1,
+  "invocationStartedAt": "2026-07-14T17:43:20+07:00",
+  "invocationEndedAt": "2026-07-14T17:44:18+07:00",
+  "result": "FAIL",
+  "caseIds": [
+    "positive_developer_docs_check",
+    "negative_reviewer_docs_check"
+  ],
+  "playwrightInvocationCount": 1,
+  "webSubmissionCount": 0,
+  "checkerExecutionCount": 0,
+  "retryCount": 0,
+  "providerCallCount": 0,
+  "diagnosticPath": "docs/reviews/evidence/system-chain-uc04b-r1-web-operations-diagnostic-2026-07-14.json",
+  "monotonicityRule": "invocationStarted and playwrightInvocationCount may only increase from 0 to 1; the ledger must never be replaced or reset",
+  "claimBoundary": "The sole authorized invocation failed before Web submission. No second invocation or proof-source repair is permitted."
+}

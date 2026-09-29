@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2839,
+  "stateKey": "acelT0LocalGapVerificationDispatch20260915",
+  "value": "ACEL-CVF-AUDIT-T0 is DISPATCH_READY at material commit cdf72695a346bfee720b2e051e83ca339819fe91. The operator-relayed external handoff is preserved byte-exact at SHA-256 e2180deefab71f1b5ba12d436d482d994d12724a8506481e6376f176affa817a and remains advisory input only. One INTERNAL_AGENT worker may perform read-only current-CVF verification of G1-G6 and create exactly the three work-order-owned audit outputs without commit. The external multi-repository source inventory, immutable pins, licenses, experiments, implementation, provider/live, public and deployment remain unauthorized."
+}

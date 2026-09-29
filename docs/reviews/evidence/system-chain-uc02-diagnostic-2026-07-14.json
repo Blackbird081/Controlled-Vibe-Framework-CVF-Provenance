@@ -1,0 +1,25 @@
+{
+  "stage": "shared_bootstrap_dependency_chain",
+  "failureClass": "PRE_EXISTING_ENVIRONMENT_ARTIFACT_PATH_DRIFT",
+  "retryable": false,
+  "retryableWithinWorkerScope": false,
+  "invocationCount": 1,
+  "diagnosedAt": "2026-07-14",
+  "rootCause": "scripts/run_cvf_packet_posture_state_bootstrap.py (PACKET_POSTURE_STATE_GROUP bootstrap, unmodified existing source) calls scripts/run_cvf_cross_family_packet_coverage_conformance.py, which via scripts/export_cvf_multi_runtime_evidence_manifest.py -> scripts/runtime_evidence_manifest/baselines.py requires docs/reviews/cvf_phase_governance/CVF_W4_REMEDIATION_RECEIPTS_LOCAL_BASELINE_2026-03-07.json at its live (non-archive) path; a second existing consumer, scripts/export_cvf_release_packet.py, additionally requires docs/reviews/cvf_phase_governance/CVF_UPGRADE_TRACE_2026-03-07.md at its live path. Both files currently exist only under docs/reviews/cvf_phase_governance/archive/, not at the live path five existing scripts hardcode (export_cvf_release_packet.py, export_cvf_remediation_receipt_log.py, run_cvf_remediation_export_conformance.py, runtime_evidence_manifest/fixtures.py, runtime_evidence_manifest/baselines.py caller chain).",
+  "evidenceCommandsRun": [
+    "python scripts/run_cvf_packet_posture_state_bootstrap.py",
+    "python scripts/run_cvf_cross_family_packet_coverage_conformance.py"
+  ],
+  "observedTracebacks": [
+    "FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\UNG DUNG AI\\\\TOOL AI 2026\\\\Controlled-Vibe-Framework-CVF\\\\docs\\\\reviews\\\\cvf_phase_governance\\\\CVF_UPGRADE_TRACE_2026-03-07.md' (scripts/export_cvf_release_packet.py:36)",
+    "FileNotFoundError: Missing required canonical artifact: docs/reviews/cvf_phase_governance/CVF_W4_REMEDIATION_RECEIPTS_LOCAL_BASELINE_2026-03-07.json (scripts/runtime_evidence_manifest/common.py:41)"
+  ],
+  "confirmedArchivePresence": [
+    "docs/reviews/cvf_phase_governance/archive/CVF_UPGRADE_TRACE_2026-03-07.md",
+    "docs/reviews/cvf_phase_governance/archive/CVF_W4_REMEDIATION_RECEIPTS_LOCAL_BASELINE_2026-03-07.json"
+  ],
+  "scopeBoundary": "Repair requires modifying or restoring files consumed by scripts/export_cvf_release_packet.py, scripts/export_cvf_multi_runtime_evidence_manifest.py, scripts/runtime_evidence_manifest/baselines.py, or scripts/run_cvf_cross_family_packet_coverage_conformance.py, none of which are in the SCLP-UC02 Planned Worker Fulfillment Manifest. These are read-only existing sources under the work order's Scope/Target/Owner Boundary.",
+  "userAction": "Reviewer/operator decision required: either restore the two archived evidence files to their live paths (repository state repair, outside this work order) or dispatch a separate bounded work order to repair the bootstrap dependency chain before UC-02 can reach a real 9/9 or honest partial scenario result.",
+  "retryDisposition": "NO_RETRY_ATTEMPTED: the one planned invocation already demonstrates the failure is a stable pre-existing environment condition, not a transient or code-path issue in the new proof runner; a second invocation would reproduce the identical result and would also exceed the one-retry ceiling without a concrete repair.",
+  "message": "UC-02 bootstrap fails closed due to a pre-existing missing-artifact dependency in existing, out-of-scope scripts; the new proof runner's selection, command-preservation, and fail-closed logic performed correctly and is not implicated."
+}

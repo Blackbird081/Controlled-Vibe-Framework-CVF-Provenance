@@ -1,0 +1,20 @@
+{
+  "stateOrder": 1778,
+  "stateKey": "systemChainUc04aBlockedClosure20260714",
+  "value": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "materialCommit": "da93a4b73",
+    "workOrderId": "SCLP-UC04A-T3",
+    "executionBaseHead": "aad31dc23",
+    "harnessInvocationCount": 1,
+    "cliInvocationCount": 2,
+    "retryCount": 0,
+    "providerCallCount": 0,
+    "positiveResult": "FAIL_73_OF_75_PROTECTED_PATH_AUTHORIZATION_GAP",
+    "negativeResult": "PASS_RANGE_AND_DIRTY_FINALITY_READOUT",
+    "rootCause": "ORCHESTRATOR_PACKET_GAP",
+    "durableLearning": "CVF_ADIF-0033",
+    "nextAllowedMove": "author a positive-only UC-04A-R1 recovery packet; retain negative evidence and do not execute before dispatch review",
+    "claimBoundary": "Negative CLI readout proven only; positive aggregate receipt remains blocked. No UC-04B Web, unified inventory, provider, public, production, scale, certification, or user-value claim."
+  }
+}

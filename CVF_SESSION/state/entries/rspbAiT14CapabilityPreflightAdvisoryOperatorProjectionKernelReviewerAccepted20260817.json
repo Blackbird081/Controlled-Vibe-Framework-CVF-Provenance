@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2276,
+  "stateKey": "rspbAiT14CapabilityPreflightAdvisoryOperatorProjectionKernelReviewerAccepted20260817",
+  "value": "RSPB-AI-T14 is REVIEWER_ACCEPTED_PENDING_CLOSER at material commit 6fc8f9872117f3fbadf3240569b92686c4f24809 after bounded reviewer repair. Proof: focused 38/38, composed T4/T5/T8/T10/T14 155/155, full Guard Contract 894 passed plus 5 skipped, TypeScript PASS, file-size guard PASS without exception, system-chain freshness CURRENT, worker-return fast PASS, reviewer-fast 65/65 before material commit, pre-commit 86/86, and zero provider/live calls. Direct T10 composition, workspace/approval binding, evidence-reference fidelity, stale-case blocking, bounded hostile-array traversal, packet completeness, and type-only maintainability rotation are repaired. Completion review is authored; work-order conversion and final continuity remain closer-owned."
+}

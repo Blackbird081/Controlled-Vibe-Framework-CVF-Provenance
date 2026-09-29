@@ -1,0 +1,288 @@
+{
+  "batchId": "SOT3-ACT-A4",
+  "executionBaseHead": "f16f358c9",
+  "finishedAtUtc": "2026-07-13T15:45:43.755209+00:00",
+  "invocations": [
+    {
+      "label": "cvf-truth-kernel-negative-matrix",
+      "numFailedTests": 0,
+      "numPassedTests": 15,
+      "numTotalTests": 15,
+      "returncode": 0,
+      "success": true
+    },
+    {
+      "label": "cvf-truth-flow",
+      "numFailedTests": 0,
+      "numPassedTests": 33,
+      "numTotalTests": 33,
+      "returncode": 0,
+      "success": true
+    },
+    {
+      "label": "cvf-web-sot3-knowledge-adapter",
+      "numFailedTests": 0,
+      "numPassedTests": 22,
+      "numTotalTests": 22,
+      "returncode": 0,
+      "success": true
+    },
+    {
+      "label": "cvf-web-sot3-activation-evidence-store",
+      "numFailedTests": 0,
+      "numPassedTests": 21,
+      "numTotalTests": 21,
+      "returncode": 0,
+      "success": true
+    },
+    {
+      "label": "cvf-web-route-knowledge",
+      "numFailedTests": 0,
+      "numPassedTests": 12,
+      "numTotalTests": 12,
+      "returncode": 0,
+      "success": true
+    },
+    {
+      "label": "cvf-web-route-sot3-activation-failure-recovery",
+      "numFailedTests": 0,
+      "numPassedTests": 5,
+      "numTotalTests": 5,
+      "returncode": 0,
+      "success": true
+    }
+  ],
+  "localNegativeGatePassed": true,
+  "matrix": [
+    {
+      "case": "empty source input",
+      "matchedTestNames": [
+        "evaluateSot3KnowledgeActivation returns NO_CONTEXT with no chunks"
+      ],
+      "owner": "Refinery plus product adapter",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "not approved",
+      "status": "GREEN"
+    },
+    {
+      "case": "structurally invalid source",
+      "matchedTestNames": [
+        "evaluateSot3KnowledgeActivation rejects with REFINERY_NOT_READY on incorrect expected content hash"
+      ],
+      "owner": "Refinery plus product adapter",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "REFINERY_NOT_READY",
+      "status": "GREEN"
+    },
+    {
+      "case": "wrong-packet evidence",
+      "matchedTestNames": [
+        " negative matrix evidence bound to another packet -> reject or require evidence"
+      ],
+      "owner": "real Kernel",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "non-acceptance",
+      "status": "GREEN"
+    },
+    {
+      "case": "expired reference",
+      "matchedTestNames": [
+        " negative matrix referenced TruthReference.reference_state is EXPIRED -> package creation rejected"
+      ],
+      "owner": "Kernel resolver plus Flow",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "rejected",
+      "status": "GREEN"
+    },
+    {
+      "case": "revoked reference",
+      "matchedTestNames": [
+        " consumeFor - strict consumption binding (SOT3-ACT-A4) revoked reference at consumption time -> REFERENCE_NOT_CURRENTLY_ACTIVE via strict consume (existing check preserved)"
+      ],
+      "owner": "Kernel resolver plus Flow",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "rejected",
+      "status": "GREEN"
+    },
+    {
+      "case": "superseded or inactive reference",
+      "matchedTestNames": [
+        " negative matrix referenced TruthReference.reference_state is SUPERSEDED -> package creation rejected (NC-10)"
+      ],
+      "owner": "Kernel resolver plus Flow",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "rejected",
+      "status": "GREEN"
+    },
+    {
+      "case": "wrong recipient",
+      "matchedTestNames": [
+        " consumeFor - strict consumption binding (SOT3-ACT-A4) wrong recipient -> PACKAGE_CONSUMER_BINDING_MISMATCH"
+      ],
+      "owner": "strict Flow consume",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "binding mismatch",
+      "status": "GREEN"
+    },
+    {
+      "case": "wrong role",
+      "matchedTestNames": [
+        " consumeFor - strict consumption binding (SOT3-ACT-A4) wrong role -> PACKAGE_CONSUMER_BINDING_MISMATCH"
+      ],
+      "owner": "strict Flow consume",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "binding mismatch",
+      "status": "GREEN"
+    },
+    {
+      "case": "wrong phase",
+      "matchedTestNames": [
+        " consumeFor - strict consumption binding (SOT3-ACT-A4) wrong phase -> PACKAGE_CONSUMER_BINDING_MISMATCH"
+      ],
+      "owner": "strict Flow consume",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "binding mismatch",
+      "status": "GREEN"
+    },
+    {
+      "case": "wrong task",
+      "matchedTestNames": [
+        " consumeFor - strict consumption binding (SOT3-ACT-A4) wrong task -> PACKAGE_CONSUMER_BINDING_MISMATCH"
+      ],
+      "owner": "strict Flow consume",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "binding mismatch",
+      "status": "GREEN"
+    },
+    {
+      "case": "wrong dose",
+      "matchedTestNames": [
+        " consumeFor - strict consumption binding (SOT3-ACT-A4) wrong dose -> PACKAGE_CONSUMER_BINDING_MISMATCH"
+      ],
+      "owner": "strict Flow consume",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "binding mismatch",
+      "status": "GREEN"
+    },
+    {
+      "case": "expired package",
+      "matchedTestNames": [
+        " consumeFor - strict consumption binding (SOT3-ACT-A4) expired package with correct binding -> PACKAGE_EXPIRED (existing expiry check still applies after binding passes)"
+      ],
+      "owner": "strict Flow consume",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "package expired",
+      "status": "GREEN"
+    },
+    {
+      "case": "duplicate request same record",
+      "matchedTestNames": [
+        "sot3-activation-evidence-store duplicate and conflict semantics returns DUPLICATE_NOOP and leaves main bytes and record count unchanged for identical duplicates"
+      ],
+      "owner": "A2 store",
+      "providerCallAssertion": "zero additional call",
+      "providerCallCount": 0,
+      "requiredResult": "duplicate no-op",
+      "status": "GREEN"
+    },
+    {
+      "case": "duplicate request conflict",
+      "matchedTestNames": [
+        "sot3-activation-evidence-store duplicate and conflict semantics throws a classified conflict and leaves main bytes unchanged for a same-identity different-hash duplicate"
+      ],
+      "owner": "A2 store",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "typed conflict",
+      "status": "GREEN"
+    },
+    {
+      "case": "replay after acknowledgement",
+      "matchedTestNames": [
+        " consumeFor - strict consumption binding (SOT3-ACT-A4) replay after acknowledgement - correctly bound second consumeFor call is rejected as not actionable, not silently re-approved"
+      ],
+      "owner": "strict Flow consume",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "not actionable",
+      "status": "GREEN"
+    },
+    {
+      "case": "restart and valid recovery",
+      "matchedTestNames": [
+        "sot3-activation-evidence-store incoming record admission and canonical document ordering SOT3-ACT-A4: restart-and-valid-recovery row - a fresh store instance after process restart integrity-verifies and restores every previously persisted record with zero additional writes"
+      ],
+      "owner": "fresh A2 store reader",
+      "providerCallAssertion": "live released only after PASS",
+      "providerCallCount": 0,
+      "requiredResult": "integrity-valid record restored",
+      "status": "GREEN"
+    },
+    {
+      "case": "corrupt main file",
+      "matchedTestNames": [
+        "sot3-activation-evidence-store corrupt store handling throws a classified corrupt-store error and preserves exact bytes for invalid JSON"
+      ],
+      "owner": "A2 store",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "typed corrupt-store diagnostic",
+      "status": "GREEN"
+    },
+    {
+      "case": "partial/temp write",
+      "matchedTestNames": [
+        "sot3-activation-evidence-store injected write and rename failure propagates a classified persistence failure and leaves prior valid main bytes unchanged on rename failure"
+      ],
+      "owner": "A2 store fault port",
+      "providerCallAssertion": "zero",
+      "providerCallCount": 0,
+      "requiredResult": "prior main record survives",
+      "status": "GREEN"
+    },
+    {
+      "case": "ENFORCE to OFF rollback",
+      "matchedTestNames": [
+        "/api/execute - SOT3-ACT-A4 failure/recovery boundary (route-level) ENFORCE-to-OFF rollback restores legacy provider execution with exactly one provider spy call"
+      ],
+      "owner": "execute route",
+      "providerCallAssertion": "exactly one provider spy call",
+      "providerCallCount": 1,
+      "requiredResult": "legacy behavior restored",
+      "status": "GREEN"
+    },
+    {
+      "case": "bounded live recovery",
+      "matchedTestNames": [],
+      "owner": "real execute route and Alibaba",
+      "providerCallAssertion": "exactly one per invocation",
+      "providerCallCount": null,
+      "requiredResult": "approved context and correlated durable evidence",
+      "status": "DEFERRED_TO_LIVE_PHASE"
+    }
+  ],
+  "negativeCaseCount": 19,
+  "overall": "PASS",
+  "rollbackProviderCallCount": 1,
+  "schemaVersion": "cvf.sot3ActA4NegativeReceipt.v1",
+  "secretSafety": {
+    "fullPromptPersisted": false,
+    "rawKeyPersisted": false,
+    "rawOutputPersisted": false,
+    "rawProviderBodyPersisted": false
+  },
+  "startedAtUtc": "2026-07-13T15:45:12.287728+00:00",
+  "zeroProviderCallCaseCount": 18
+}

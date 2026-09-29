@@ -12,6 +12,8 @@ from __future__ import annotations
 
 import argparse
 from dataclasses import dataclass
+import os
+import re
 import subprocess
 import sys
 import time
@@ -21,21 +23,115 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
+def _worker_return_path(active_work_order: str) -> str:
+    work_order_path = (REPO_ROOT / active_work_order).resolve()
+    try:
+        work_order_path.relative_to(REPO_ROOT.resolve())
+    except ValueError as exc:
+        raise ValueError("active work order escapes the repository") from exc
+    text = work_order_path.read_text(encoding="utf-8")
+    match = re.search(r"(?m)^workerReturnPath:\s*`([^`]+)`\s*$", text)
+    if not match:
+        raise ValueError("active work order lacks an exact workerReturnPath")
+    return match.group(1)
+
+
+def _configure_stdout() -> None:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
+
 @dataclass(frozen=True)
 class FastGateCommand:
     name: str
     command: tuple[str, ...]
+    cwd: str | None = None
 
 
-def build_commands(pytest_targets: tuple[str, ...] = ()) -> tuple[FastGateCommand, ...]:
+def _focused_test_commands(targets: tuple[str, ...]) -> list[FastGateCommand]:
+    """Route Python targets to pytest and TypeScript targets to Vitest.
+
+    ``--pytest-target`` predates TypeScript worker packets.  Preserve the
+    public flag for compatibility, but do not send a ``.test.ts`` path to a
+    runner that cannot collect it.  TypeScript targets must share one package
+    root containing ``package.json`` so the command uses that package's
+    already-declared Vitest installation and configuration.
+    """
+
+    python_targets = tuple(target for target in targets if not target.lower().endswith((".ts", ".tsx")))
+    typescript_targets = tuple(target for target in targets if target.lower().endswith((".ts", ".tsx")))
     commands: list[FastGateCommand] = []
-    if pytest_targets:
+    if python_targets:
         commands.append(
             FastGateCommand(
                 "focused pytest targets",
-                ("python", "-m", "pytest", *pytest_targets, "-q"),
+                ("python", "-m", "pytest", *python_targets, "-q"),
             )
         )
+    if typescript_targets:
+        package_roots: set[Path] = set()
+        relative_targets: list[str] = []
+        for raw_target in typescript_targets:
+            target = (REPO_ROOT / raw_target).resolve()
+            try:
+                target.relative_to(REPO_ROOT.resolve())
+            except ValueError as exc:
+                raise ValueError(f"focused TypeScript target escapes the repository: {raw_target}") from exc
+            package_root = next(
+                (parent for parent in (target.parent, *target.parents) if (parent / "package.json").is_file()),
+                None,
+            )
+            if package_root is None:
+                raise ValueError(f"focused TypeScript target has no package.json ancestor: {raw_target}")
+            package_roots.add(package_root)
+            relative_targets.append(target.relative_to(package_root).as_posix())
+        if len(package_roots) != 1:
+            raise ValueError("focused TypeScript targets must share one package root")
+        package_root = next(iter(package_roots))
+        commands.append(
+            FastGateCommand(
+                "focused vitest targets",
+                ("npx", "vitest", "run", *relative_targets),
+                package_root.relative_to(REPO_ROOT).as_posix(),
+            )
+        )
+    return commands
+
+
+def build_commands(
+    pytest_targets: tuple[str, ...] = (), active_work_order: str | None = None
+) -> tuple[FastGateCommand, ...]:
+    commands: list[FastGateCommand] = _focused_test_commands(pytest_targets)
+    probe_admission_command = [
+        "python",
+        "governance/compat/check_independent_review_probe_admission.py",
+        "--enforce",
+        "--changed-lane-only",
+    ]
+    quality_command = [
+        "python",
+        "governance/compat/check_worker_return_quality_gate.py",
+        "--enforce",
+    ]
+    if active_work_order:
+        probe_admission_command += ["--active-work-order", active_work_order]
+        quality_command += ["--active-work-order", active_work_order]
+        acceptance_command = FastGateCommand(
+            "work-order acceptance ledger",
+            (
+                "python",
+                "governance/compat/check_work_order_acceptance_ledger.py",
+                "--work-order",
+                active_work_order,
+                "--return",
+                _worker_return_path(active_work_order),
+                "--enforce",
+            ),
+        )
+    else:
+        acceptance_command = None
     commands.extend(
         [
             FastGateCommand(
@@ -46,10 +142,9 @@ def build_commands(pytest_targets: tuple[str, ...] = ()) -> tuple[FastGateComman
                 "epistemic process packet",
                 ("python", "governance/compat/check_epistemic_process_packet.py", "--enforce"),
             ),
-            FastGateCommand(
-                "worker-return quality gate",
-                ("python", "governance/compat/check_worker_return_quality_gate.py", "--enforce"),
-            ),
+            *([acceptance_command] if acceptance_command else []),
+            FastGateCommand("worker-return quality gate", tuple(quality_command)),
+            FastGateCommand("independent review probe admission", tuple(probe_admission_command)),
             FastGateCommand(
                 "reviewer-fast governance gate",
                 ("python", "governance/compat/run_local_governance_hook_chain.py", "--hook", "reviewer-fast"),
@@ -64,9 +159,12 @@ def _run(command: FastGateCommand) -> int:
     print(f"\n=== {command.name} ===")
     print(" ".join(command.command))
     start = time.perf_counter()
+    execution_command = list(command.command)
+    if os.name == "nt" and execution_command[0] in {"npm", "npx"}:
+        execution_command[0] += ".cmd"
     proc = subprocess.run(
-        list(command.command),
-        cwd=REPO_ROOT,
+        execution_command,
+        cwd=REPO_ROOT / command.cwd if command.cwd else REPO_ROOT,
         text=True,
         encoding="utf-8",
         errors="replace",
@@ -84,12 +182,24 @@ def _run(command: FastGateCommand) -> int:
 
 
 def main() -> int:
+    _configure_stdout()
     parser = argparse.ArgumentParser(description="Run the CVF worker-return fast gate")
     parser.add_argument(
         "--pytest-target",
         action="append",
         default=[],
-        help="Focused pytest path/module to run before reviewer-fast. Repeat for multiple targets.",
+        help="Focused test path/module to run before reviewer-fast; .ts/.tsx targets route to their package Vitest runner. Repeat for multiple targets.",
+    )
+    parser.add_argument(
+        "--active-work-order",
+        default=None,
+        help=(
+            "Repo-relative path of the work order currently being executed. "
+            "Forwarded as --active-work-order to the worker-return quality "
+            "checker (exact bound return must exist and pass) and to the "
+            "independent-probe-admission checker (return stays in the changed "
+            "lane, even while untracked)."
+        ),
     )
     args = parser.parse_args()
 
@@ -97,7 +207,7 @@ def main() -> int:
     print("Purpose: fail early on worker-return defects before full closure gates.")
     failures = 0
     total_start = time.perf_counter()
-    for command in build_commands(tuple(args.pytest_target)):
+    for command in build_commands(tuple(args.pytest_target), args.active_work_order):
         if _run(command) != 0:
             failures += 1
     elapsed = time.perf_counter() - total_start

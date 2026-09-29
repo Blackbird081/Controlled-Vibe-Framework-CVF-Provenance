@@ -83,7 +83,7 @@ SUCCESS CRITERIA:
       priority: 'C5 hosted readiness proof',
     },
     provider: 'alibaba',
-    model: 'qwen-turbo',
+    model: 'qwen-flash',
     mode: 'simple',
     action: 'analyze',
     aiCommit: {

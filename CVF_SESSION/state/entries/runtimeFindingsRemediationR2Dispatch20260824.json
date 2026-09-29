@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2297,
+  "stateKey": "runtimeFindingsRemediationR2Dispatch20260824",
+  "value": "RFR-R2 immutable mandatory-core baseline and no-commit work order are committed at fb8e7d0f4. Authority closes only verified F2-F4 through existing GuardRuntimeEngine and MandatoryGateway owners. The external worker may modify exactly engine.ts, index.test.ts, mandatory-gateway.ts, mandatory-gateway.test.ts, the reviewed CONTRACT_TO_RUNTIME system-chain map, and the R2 worker return. Source hashes are pinned; pre-dispatch passed 78/78 and material pre-commit passed 86/86. The worker must not stage or commit. The current orchestrator owns independent review, bounded repair, material commit, and separate continuity sync. R3-R6 and every external-effect lane remain parked."
+}

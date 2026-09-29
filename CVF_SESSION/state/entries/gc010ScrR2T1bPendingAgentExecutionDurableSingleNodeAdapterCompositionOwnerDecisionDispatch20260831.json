@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2389,
+  "stateKey": "gc010ScrR2T1bPendingAgentExecutionDurableSingleNodeAdapterCompositionOwnerDecisionDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_DECISION_ONLY",
+    "materialCommit": "5eb3c882f",
+    "dispatchBase": "25e3b22ed",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
+    "workerOutputs": [
+      "docs/assessments/CVF_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
+      "docs/reviews/CVF_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_WORKER_RETURN_2026-08-31.md"
+    ],
+    "nextAllowedMove": "One no-commit worker executes the committed decision-only packet, creates exactly the two named documents, and stops for orchestrator review.",
+    "claimBoundary": "No adapter, composition owner, route, tests, production consumer, cross-process/distributed safety, provider/live, public sync, deployment or production implementation is authorized."
+  }
+}

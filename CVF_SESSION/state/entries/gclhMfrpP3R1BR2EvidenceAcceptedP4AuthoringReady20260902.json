@@ -1,0 +1,24 @@
+{
+  "stateOrder": 2743,
+  "stateKey": "gclhMfrpP3R1BR2EvidenceAcceptedP4AuthoringReady20260902",
+  "value": {
+    "status": "R1B_R2_EVIDENCE_ACCEPTED_RETURN_TO_DESIGN_BOUNDED_P4_AUTHORING_READY",
+    "materialCommit": "040ebfcff081062956c543f2b1d7e9cc04533b62",
+    "reviewerDisposition": "REVIEWER_ACCEPTED_EVIDENCE_RETURN_TO_DESIGN_BOUNDED",
+    "workerReturnPath": "docs/reviews/CVF_MFRP_P3_R1B_R2_ACTUAL_SEAM_REPLAY_REPAIR_WORKER_RETURN_2026-09-02.md",
+    "workerReturnSha256": "0842f9e275eaf2e44db79f265e8e9301bd7942eda2c2c9008ae3e8a0495f17c1",
+    "ledgerSha256": "6b36ed295a7ffb0e74d3c7a32577428870c1b7e74da9e2ce7234c56d6c7f20ff",
+    "reviewCostRuleCommit": "40493e0b16b93b318bf78beee9a4141ca36723ed",
+    "reviewCostStandardSha256": "a8815cfc123d1ea085badcfe4e3d89b8d2cf4fef30662ccbb1f73e1511051d2d",
+    "reviewAdmissionMeasurement": {
+      "milestone": "M2",
+      "preExecutionReviewCount": 0,
+      "routineReviewBoundary": "WORKER_RETURN",
+      "providerLiveNetworkCallCount": 0,
+      "admissionFalseNegativeObserved": 0,
+      "recallConclusion": "NOT_YET_ESTIMABLE"
+    },
+    "nextAllowedMove": "Author the fresh bounded P4 shadow-canary work order pinned to accepted R1B-R2 evidence and the accepted P4 design. Authoring is not P4 execution and does not add pre-execution review.",
+    "claimBoundary": "R1B-R2 replay evidence is accepted while its C15 false negative and C07/C08/C18 exclusions remain authoritative. No P2 safety pass, P4 execution, route change or external effect is claimed."
+  }
+}

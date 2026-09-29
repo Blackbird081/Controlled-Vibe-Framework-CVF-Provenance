@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1530,
+  "stateKey": "mseaR70WorkspaceOverlayPipelineFeatureSplitReviewDecisionDispatch20260707",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-07",
+    "materialCommit": "a18d2ef99",
+    "materialCommitFull": "a18d2ef9984d08a356955fa1998a8071903ce5a5",
+    "dispatchBaseHead": "0260fec3b",
+    "gc018Baseline": "docs/baselines/CVF_GC018_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_2026-07-07.md",
+    "workerReturnPath": "docs/reviews/CVF_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_WORKER_RETURN_2026-07-07.md",
+    "dispatchSummary": "Dispatched a no-commit R70 worker tranche to evaluate the residual workspace overlay pipeline feature bundle from closed provenance PR #20. The worker must refresh PR #20 evidence, separate the candidate overlay feature commits from the already-handled public-safe leakfix commits, assess value, maintainability, PowerShell safety, and public/provenance boundary safety, and return an accept/split/hold/reject recommendation without implementation.",
+    "verification": [
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-dispatch --base 0260fec3b --head HEAD PASS 73/73",
+      "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base 0260fec3b --head HEAD --enforce PASS",
+      "material pre-commit hook PASS 80/80"
+    ],
+    "nextAllowedMove": "No-commit R70 worker execution only. Worker must create docs/reviews/CVF_MSEA_R70_WORKSPACE_OVERLAY_PIPELINE_FEATURE_SPLIT_AND_REVIEW_DECISION_WORKER_RETURN_2026-07-07.md, refresh PR #20 metadata/diff/check evidence, classify the residual overlay feature bundle, run required gates, and leave all changes uncommitted.",
+    "claimBoundary": "R70 dispatch authorizes only no-commit feature split and review decision work. It does not authorize implementation, merge, push, cherry-pick, public-sync mutation, runtime/source/test/checker edit, provider/live proof, provider status edit, OpenAI certification uplift, production Memory/RAG release, retrieval/vectorization, P3 reopen, use-case/legal workflow, hosted/public/production claim, historical rename/move sweep, worker commit, or direct downstream release."
+  }
+}

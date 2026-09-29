@@ -1,0 +1,73 @@
+{
+  "date": "2026-08-15",
+  "gate_result": "FAIL",
+  "checks": [
+    {
+      "name": "Web build (npm run build)",
+      "status": "PASS",
+      "message": "Build succeeded",
+      "detail": []
+    },
+    {
+      "name": "TypeScript check (guard contract)",
+      "status": "PASS",
+      "message": "TypeScript check clean",
+      "detail": []
+    },
+    {
+      "name": "Provider readiness",
+      "status": "PASS",
+      "message": "CERTIFIED lanes: 3 \u2014 status: CERTIFIED",
+      "detail": []
+    },
+    {
+      "name": "Secrets scan",
+      "status": "FAIL",
+      "message": "Potential secrets found in 1 location(s)",
+      "detail": [
+        ".private_reference\\legacy\\CVF 13.08\\CVF_CAPABILITY_ADMISSION_DISTRIBUTION_PROFILE\\fixtures\\negative\\admission-with-secret.yaml:62"
+      ]
+    },
+    {
+      "name": "Docs governance (RC docs present)",
+      "status": "PASS",
+      "message": "All 3 required RC docs present",
+      "detail": []
+    },
+    {
+      "name": "E2E Playwright UI (mock)",
+      "status": "FAIL",
+      "message": "Playwright UI mock suite failed",
+      "detail": [
+        "    Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+        "    Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+        "    Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+        "    Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+        "    Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+        "    Error: browserType.launch: Executable doesn't exist at C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+        "\u001b[1A\u001b[2K  6 failed"
+      ]
+    },
+    {
+      "name": "SOT3 canonical release proof (A5)",
+      "status": "PASS",
+      "message": "SOT3 canonical release proof PASS with full owner correlation",
+      "detail": []
+    }
+  ],
+  "sot3": {
+    "admissionFailures": [],
+    "approvedContextIncluded": true,
+    "claim": "SOT3_FAILURE_RECOVERY_PROVEN_BOUNDED",
+    "durableOwnerCorrelationComplete": true,
+    "httpStatus": 200,
+    "localNegativeGatePassed": true,
+    "negativeCaseCount": 19,
+    "overall": "PASS",
+    "providerSuccess": true,
+    "recoveryProviderCallCount": 1,
+    "rollbackProviderCallCount": 1,
+    "traceCount": 1,
+    "zeroProviderCallCaseCount": 18
+  }
+}

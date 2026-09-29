@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2935,
+  "stateKey": "acelG7CrossRunCapabilityEvolutionResearchClosure20260924",
+  "value": "ACEL G7 cross-run capability-evolution research is G7_RESEARCH_CLOSED at material commit 660601f0e536e54190192ab3bdf9924e1c6d8b03. Canonical Local closure: docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md. The Local current-repository audit, external review and Local absorption converge on CVF_DISPOSITION=ADAPT_EXISTING_HANDOFF_ONLY, PATTERN_MATURITY=CROSS_SOURCE_CANDIDATE_WATCH and PRIMARY_GAP=LINKAGE_GAP. Execution-evidence joinability remains WATCH_EVIDENCE_SUFFICIENCY; candidate, governed Work Order and ASSF/CADP authority ceilings remain unchanged. The residual is a future stable qualified-decision/evidence reference, reviewed candidate-to-Work-Order conversion/binding, and downstream reference lineage across existing owners. No new subsystem, implementation, experiment, provider/live call, public sync, admission, exact-version activation or G1-G6 reopen is authorized. Any successor requires a new operator decision, bounded problem formulation and fresh GC-018/source-verified Work Order."
+}

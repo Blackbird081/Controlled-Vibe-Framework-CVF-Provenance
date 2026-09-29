@@ -64,6 +64,26 @@ work order, completion review, and git history. Superseded stable files move to
 `docs/reference/agent_handoff/archive/` only under a separate governed archive
 batch.
 
+## Artifact Completion Evidence
+
+A worker or child-agent completion notification is advisory only. A delegated
+work item is complete only when its declared output artifact exists with a
+non-empty content hash, the recorded writer matches the dispatch-assigned write
+owner, and the named assembly verifier has verified it. The orchestrator or
+assembly verifier owns the integration claim; a worker may not promote its own
+notification into that claim.
+
+A concurrency cap changes batching only. The scheduled work-item set must equal
+the declared work-item set: the cap may not drop, merge, truncate, or silently
+redefine scope. Each declared work item retains exactly one expected artifact
+path and assigned write owner across all batches.
+
+The Local offline contract is
+`EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/artifact.completion.scope.contract.ts`.
+It independently adapts this invariant from pinned `heygen-com/hyperframes`
+source `7129340ae8e96fc32bb45102174528dd5ecafb56`; no upstream runtime, prompt,
+package, generated asset, or provider assumption is imported.
+
 ## Agent Operation Trace Block
 
 | Field | Evidence |

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2796,
+  "stateKey": "wpArch003RabaF01F02RootEvidenceReassessmentDispatchReady20260908",
+  "value": "Operator authorized resolving RABA-T0 reviewer findings R1-01 and R1-02 before broader reassessment or repository absorption. New bounded parent WP-ARCH-003-RABA-F01-F02 is dispatch-ready at material commit 64b8a2e90 with fresh external usage 0/1. Its work order requires complete classification of the Web approval, ProviderExecutionGrant, DelegationContract/validateWriteScope and MCP mutating-profile approval families, plus literal two-path Expected manifest and Actual changed set evidence with truthful gate-cause attribution. Exactly two new documentation outputs are writable under WORKER_MUST_NOT_COMMIT. The four rejected AR1/RABA-T0 worker artifacts were moved byte-exact outside the active repository view to CVF_REJECTED_WORKER_ARTIFACT_ARCHIVE/WP_ARCH_003_2026-09-08; hashes remain those recorded in the accepted completion review. RABA-T1 through RABA-T3 and all implementation/runtime/provider/live/public/deploy actions remain parked pending independent review."
+}

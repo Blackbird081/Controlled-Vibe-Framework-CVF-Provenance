@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2703,
+  "stateKey": "gclhMfrpH0ClosedP1OperatorCheckpointRequired20260901",
+  "value": {
+    "status": "H0_CLOSED_PASS_BOUNDED_P1_OPERATOR_CHECKPOINT_REQUIRED",
+    "materialCommit": "5705a8d1c0a2512f0ce20fa705552316ebc85721",
+    "baselinePath": "docs/baselines/CVF_GC018_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_2026-09-01.md",
+    "reviewPath": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
+    "acceptedOutcome": "cvf.autorun.pass-receipt.v2 binds conservative tracked plus untracked-nonignored repository bytes, direct command inputs, resolved interpreter identity and equal pre/post snapshots; incomplete identity fails closed to full execution and writes no reusable receipt.",
+    "reviewEvidence": "Independent reviewer repaired restricted-I-JSON type acceptance and missing/ignored argv-input omission; focused 46/46, pre-implementation 83/83, reviewer-fast 67/67 and pre-commit 88/88 PASS; system-chain freshness CURRENT.",
+    "nextAllowedMove": "Stop for explicit operator authorization before MFRP-P1. If authorized, author and independently review a fresh P1 owner-and-contract-ratification work order; no P1 implementation is yet authorized.",
+    "claimBoundary": "H0 local optional-receipt identity hardening only. P1 does not open automatically; P2, downstream workspace, GC010, provider/live, public-sync, deployment and production remain parked."
+  }
+}

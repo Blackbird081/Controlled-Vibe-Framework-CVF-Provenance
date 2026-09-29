@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2928,
+  "stateKey": "acelG1T3dC3ActualTokenCheckpointSelection20260923",
+  "value": "ACEL G1 T3D-C3 actual-token operator checkpoint selection is committed at 51cb06754 with disposition CHECKPOINT_RETAINED_CLOSED_EXECUTION_PACKET_NOT_MATERIALIZED. Accepted tooling and independent review pass, and the exact Party B/C accounts remain enabled, password-required and without enumerated local-group membership. No fresh operational payload, exact disposable root, actual clean-prestate ledger or run-specific 22-command packet has been materialized and reviewed; runtime non-elevation/effective-group facts also remain probe-time assertions. Seven prior Local-owned cvf-g4-actual-token-input-* directories were observed read-only and were not selected, classified or deleted. A future operator may separately select one Local prepare-only packet using one fresh payload and one exact absent root; Party B/C execution stays closed until that packet is reviewed and explicitly opened. HRLTP-T2, credentials, Group 4 source, T3E, provider/live/runtime/public/deployment remain parked."
+}

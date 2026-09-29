@@ -1,0 +1,303 @@
+# CVF MFRP P4-C1 Bounded Retry Recovery Completion
+
+Memory class: FULL_RECORD
+
+docType: completion_review
+
+Status: CLOSED_PASS_BOUNDED
+
+Date: 2026-09-27
+
+Batch ID: MFRP_P4_C1_BOUNDED_RETRY_RECOVERY
+
+executionBaseHead: `ee09cf7d41352bdd5bee12004c1bd809f3de7c37`
+
+Review-Cost Telemetry: REQUIRED
+
+Independent review claimed: NO - one Internal Agent performed bounded
+implementation and reviewer roles with separate hostile tests.
+
+## Purpose
+
+Accept bounded retry recovery for missed prospective P4-C1 evidence without
+weakening receipt admission or inflating opportunity counts.
+
+## Target / Source
+
+| Source | Evidence | Disposition |
+| --- | --- | --- |
+| paired baseline/work order | exact retry bounds and manifest | ACCEPT |
+| ignored journal | 804 attempts, 73 opportunities, one sample, 34 retryable | ACCEPT_DIAGNOSTIC |
+| helper/collector diff | derived queue plus one retry seam | ACCEPT |
+| focused tests | 74 passed | ACCEPT |
+
+## Scope / Methodology
+
+The reviewer separated historical diagnostics, duplicate attempts and
+prospective admission failures, then exercised queue selection, retry
+exhaustion, candidate mismatch, counter projection and current-parent priority.
+
+## Findings / Position
+
+The collector was active but one-shot. A failed eligible trusted commit became
+unreachable after its immediate disclosure. The repair derives a newest-first
+prospective queue. A material disclosure defers backlog work until a dedicated
+session-sync disclosure makes active-session state admissible; that disclosure
+consumes no more than one item, records `retryOfTrustedCommit`, and keeps the
+complete admission chain unchanged.
+
+## Risk / Corrective Action
+
+Automatic retry is intentionally single-use per trusted commit. A second
+failure remains visible but cannot loop on every commit. Historical diagnostic
+opportunities remain excluded. A separate future decision is required before
+any manual second retry or bulk reconciliation.
+
+## Decision / Disposition
+
+Reviewer verdict: `REVIEWER_ACCEPTED_BOUNDED`
+
+Retry recovery: `IMPLEMENTED_ONE_ATTEMPT_PER_TRUSTED_COMMIT`
+
+Gate strength: `UNCHANGED`
+
+M5/P5/P6: `CLOSED`
+
+NCR: `PAUSED`
+
+## Independent Reviewer Adjudication
+
+Reviewer disposition: `REVIEWER_ACCEPTED_BOUNDED`
+
+No independent-agent claim is made.
+
+## Verification Evidence
+
+| Evidence | Result |
+| --- | --- |
+| focused helper/collector suite | PASS, 74 tests |
+| bounded retry hostile test | PASS |
+| retry counter non-inflation | PASS |
+| Python size guard | PASS; collector 874 lines after snapshot helper extraction |
+| provider/network calls | 0 |
+
+## Required Artifact Manifest
+
+| Artifact | Final disposition |
+| --- | --- |
+| paired baseline | CREATE_ACCEPT |
+| paired work order | CREATE_ACCEPT_CLOSED |
+| observability helper | MODIFY_ACCEPT |
+| collector | MODIFY_ACCEPT_AND_SHRINK |
+| immutable receipt snapshot helper | CREATE_ACCEPT |
+| two focused test modules | MODIFY_ACCEPT |
+| this completion review | CREATE_ACCEPT |
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: bounded retry selection, collector
+integration, telemetry, tests and mechanical shrink.
+
+Protected paths:
+
+- `governance/compat/mfrp_p4_enrollment_observability.py`
+- `governance/compat/mfrp_receipt_snapshot.py`
+- `governance/compat/mfrp_shadow_canary_autocollect.py`
+- `governance/compat/test_mfrp_p4_enrollment_observability.py`
+- `governance/compat/test_mfrp_shadow_canary_autocollect.py`
+
+Operator authorization: explicit instruction to fix this evidence starvation.
+
+Rollback boundary: original exact seven-path material batch plus the bounded
+four-path receipt-identity correction.
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Learning lane | Disposition | Next control action | Handled or deferred |
+| --- | --- | --- | --- | --- | --- |
+| immediate-parent-only collection permanently stranded repaired evidence | RUNTIME_SIGNAL_GAP | RUNTIME_BEHAVIOR_LEARNING | RULE_ADDED | bounded prospective retry queue | handled |
+| retry attempts could inflate opportunity telemetry | MEASUREMENT_DENOMINATOR_DRIFT | RUNTIME_BEHAVIOR_LEARNING | TEST_ADDED | exclude retry-tagged attempts from candidate and eligible counters | handled |
+| unlimited automatic replay could repeatedly block commits | RECOVERY_LOOP_RISK | SAFETY_LEARNING | RULE_ADDED | at most one retry per trusted commit | handled |
+| retry on a material disclosure runs before continuity rebind and creates a false safety marker | EXECUTION_PHASE_MISMATCH | RUNTIME_BEHAVIOR_LEARNING | RULE_AND_TEST_ADDED | retry only on dedicated session-sync disclosures; material commits defer without consumption | handled |
+| a historical target whose changed paths no longer match the worktree cannot receive `committedEvidence` | HISTORICAL_REPLAY_MISMATCH | EVIDENCE_ADMISSION_LEARNING | RULE_AND_TEST_ADDED | select the newest retryable item that passes the canonical committed-target replay check; leave unreplayable evidence visible and unconsumed | handled |
+| replayable historical bytes can still fail stricter current governance | HISTORICAL_GOVERNANCE_DRIFT | EVIDENCE_ADMISSION_LEARNING | RULE_AND_TEST_ADDED | preserve `RETRY_REJECTED_CURRENT_GATE` diagnostic and consume that retry without a blocking safety marker | handled |
+| the producer overwrites one fixed `pre-closure.json` path, so receipt-reuse protection rejected every eligible row after the first | RECEIPT_IDENTITY_PATH_COLLISION | EVIDENCE_ADMISSION_LEARNING | RULE_AND_TEST_ADDED | snapshot validated receipt bytes to a unique `trustedCommit + receiptDigest` path before append; fail closed on byte collision | handled |
+
+## Epistemic Process Block
+
+### Expected Result / Prediction
+
+A source-derived queue should expose missed prospective evidence while
+excluding historical, collected and already-retried commits.
+
+### Evidence Comparison
+
+The pre-repair journal derived 34 retryable commits and selected the newest
+failed completion deterministically. The first live attempt exposed the
+continuity-timing gap and was preserved as an adjudicated failed attempt,
+leaving the backlog intact except for the preserved attempt. A live diagnostic
+found 5 of 34 current retryable commits still exactly replayable. Tests prove
+material deferral preserves the queue, replay selection skips an unreplayable
+newest item, and a session-sync retry exhausts only its selected trusted commit
+without inflating the opportunity denominator.
+
+### Contradiction Or Gap Disposition
+
+No admission weakening was required. The full active-session check remains in
+the receipt bundle; only the phase in which backlog work is attempted changed.
+
+### Claim Update
+
+P4-C1 now supports continuity-safe bounded recovery. Sample count remains a
+runtime-journal fact and is not advanced by this source-only claim.
+
+## Review Cost Telemetry And Stop Disposition
+
+reviewRoundCount: 1
+
+workerRepairTurnCount: 1
+
+newRootCauseCountThisRound: 1
+
+dependentFindingCountThisRound: 2
+
+providerCallCount: 0
+
+materialCommitCount: 1
+
+continuityCommitCount: 1
+
+elapsedReviewMinutes: NOT_AVAILABLE_WITH_REASON: no trusted timer
+
+tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: no provider-neutral meter
+
+valueDelta: repaired samples are no longer permanently unreachable
+
+stopDisposition: COMPLETE_REVIEW
+
+preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
+
+commitPlanDisposition: DEFAULT_ONE_MATERIAL_ONE_CONTINUITY
+
+latencyDisposition: WITHIN_FAST_PATH_TARGET
+
+avoidableDelayClass: NONE
+
+reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION
+
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+| --- | --- |
+| applicableCheckersRead | `governance/compat/check_machine_closure_package.py`; `governance/compat/check_review_cost_control.py`; `governance/compat/check_gate_to_role_closeability.py`; `governance/compat/check_delta_execution_claim_boundary.py`; `governance/compat/check_finding_to_governance_learning.py` |
+| literalTokensReviewed | closure rows, telemetry enums, closeability fields, receipt/action tokens, learning rows |
+| gateRunPurpose | confirm bounded completion evidence |
+| claimBoundary | conformance does not claim a collected retry before disclosure |
+
+## Return-Time Closeability Recheck
+
+closeabilityDisposition: CLOSEABLE
+
+outsideAuthorityBlockers: NONE
+
+nextRepairRoute: N/A with reason: bounded recovery implementation is complete
+
+workerRedispatchAllowed: NO
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+| --- | --- |
+| Actor | Internal Agent implementer/reviewer |
+| Provider or surface | local private CVF workspace |
+| Session or invocation | P4-C1 bounded retry recovery |
+| Working directory | repository root |
+| Command or tool surface | source/runtime inspection, apply_patch, mechanical blank-line shrink, pytest and guards |
+| Target paths | exact twelve-path cumulative correction manifest below |
+| Allowed scope source | paired packet and operator instruction |
+| Before status evidence | clean at `ee09cf7d4`; no unresolved marker |
+| After status evidence | exact twelve cumulative governed paths |
+| Diff evidence | `git diff --name-status`; `git diff --check` |
+| Approval boundary | bounded retry recovery only |
+| Claim boundary | no gate weakening, bulk drain or checkpoint promotion |
+| Agent type | Internal Agent |
+| Invocation ID | `mfrp-p4-c1-bounded-retry-recovery-review-2026-09-27` |
+| Expected manifest | exact twelve cumulative paths |
+| Actual changed set | exact twelve cumulative paths |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+
+Atomicity reason: active-session compatibility hashes the current baseline and
+work-order raw bytes. The phase correction changes those bytes, so their source
+implementation and generated continuity projections must land together; a
+separate material commit would be rejected before its following session sync.
+
+Rollback boundary: revert this exact correction commit as one unit; preserve
+the initial material commit, journal attempts, adjudicated marker and unrelated
+continuity history.
+
+Exact changed manifest:
+
+- `AGENT_HANDOFF_V63_2026-09-18.md`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION_MEMORY.md`
+- `docs/baselines/CVF_GC018_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md`
+- `docs/reviews/CVF_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_COMPLETION_2026-09-27.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_BOUNDED_RETRY_RECOVERY_2026-09-27.md`
+- `governance/compat/mfrp_shadow_canary_autocollect.py`
+- `governance/compat/mfrp_receipt_snapshot.py`
+- `governance/compat/test_mfrp_shadow_canary_autocollect.py`
+
+## Delta Execution Claim Boundary Control Block
+
+| Field | Disposition |
+| --- | --- |
+| claimScope | existing P4-C1 retry recovery lane |
+| claimDisposition | BOUNDED_CLAIM_WITH_EVIDENCE |
+| receiptEvidence | CVF_RECEIPT_PRESENT: focused tests and repository gates |
+| actionEvidence | ACTION_EVIDENCE_PRESENT: exact implementation/test diff |
+| invocationBoundary | existing post-commit hook |
+| interceptionBoundary | no new hook, daemon, provider or watcher |
+| claimLanguage | bounded one-retry recovery |
+| forbiddenExpansion | historical promotion, bulk drain, M5/P5/P6 or NCR resume |
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+| --- | --- | --- | --- |
+| Work order status | paired work order | closed status | PASS |
+| Completion or reviewer artifact | this file | closed status | PASS |
+| Roadmap state | P4-C1 collection | M5 closed | PASS |
+| Registry JSON | N/A | N/A with reason: no registry | PASS |
+| Registry Markdown | N/A | N/A with reason: no registry | PASS |
+| External evidence digest | N/A | N/A with reason: no external evidence | N/A with reason: no external evidence |
+| System loop interlock | current source | unchanged | PASS |
+| Session continuity | active continuity | separate rebind | N/A with reason: following commit |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+| --- | --- | --- | --- |
+| focused tests | pass | 74 passed | PASS |
+| retry backlog | prospective only | 34 derived before first live attempt; 33 remain after preserved failed attempt | PASS |
+| retry bound | once per trusted commit | hostile tests | PASS |
+| counter integrity | no retry inflation | hostile tests | PASS |
+| size | remain below governed hard limit after required shrink | size guard PASS | PASS |
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private evidence-measurement repair.
+
+## Claim Boundary
+
+This review accepts bounded retry recovery only. It does not claim that the
+next runtime retry succeeds, advance M5, resume NCR or open P5/P6.

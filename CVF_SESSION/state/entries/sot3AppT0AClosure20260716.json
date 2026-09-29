@@ -1,0 +1,27 @@
+{
+  "stateOrder": 1849,
+  "stateKey": "sot3AppT0AClosure20260716",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS",
+    "materialCommit": "5a49ee650",
+    "executionBaseHead": "120c0f90a",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0A_CORPUS_FREEZE_AND_SEMANTIC_CALIBRATION_2026-07-16.md",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T0A_COMPLETION_2026-07-16.md",
+    "ledger": "docs/reviews/CVF_SOT3_APP_T0A_CORPUS_METADATA_AND_SAMPLE_LEDGER_2026-07-16.md",
+    "workerReturn": "docs/reviews/CVF_SOT3_APP_T0A_WORKER_RETURN_2026-07-16.md",
+    "acceptedEvidence": {
+      "metadataFrozen": 336,
+      "semanticSampleTerminal": 20,
+      "semanticUnresolved": 316,
+      "declarationOccurrences": 13,
+      "missingDeclaredExtensionTargets": 3,
+      "terminalDeclarationDispositions": 0,
+      "corpusVerdict": "PARTIAL"
+    },
+    "reviewerRepairs": "Three declaration targets corrected to targetExists=false; SAM-07 runtime-consumption overclaim removed; SAM-12 continuation semantics narrowed; SAM-15 Fastify fall-through overclaim and rebuttal citation corrected; stale T0A-pending status reconciled.",
+    "gateEvidence": "reviewer-fast 62/62 PASS; pre-commit 83/83 PASS; material pre-closure 74/75 PASS with continuity sync as the sole remaining requirement",
+    "nextAllowedMove": "Author and validate only a fresh T0B GC-018 baseline and source-verified work order; T0B execution remains held pending dependency release and pre-dispatch PASS.",
+    "claimBoundary": "Documentation-only metadata freeze and bounded semantic calibration; no terminal disposition for the remaining 316 rows or 13 declaration occurrences, external-root mutation, runtime/test/build/live proof, public-sync, or product-readiness claim."
+  }
+}

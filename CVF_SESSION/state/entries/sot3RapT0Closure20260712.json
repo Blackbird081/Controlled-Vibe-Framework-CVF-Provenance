@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1703,
+  "stateKey": "sot3RapT0Closure20260712",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_BOUNDED",
+    "date": "2026-07-12",
+    "materialCommit": "d394b6018",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_RAP_T0_REVERSE_ARCHITECTURE_PROJECTION_2026-07-12.md",
+    "completionReview": "docs/reviews/CVF_SOT3_RAP_T0_COMPLETION_REVIEW_2026-07-12.md",
+    "catalogEntities": "24/24 unique",
+    "gapEntries": "6/6 unique",
+    "workerRepairRounds": 0,
+    "liveQuotaCalls": 0,
+    "nextAllowedMove": "fresh source-verified SOT3-RCS-T1 GC-018 and work-order authoring only",
+    "claimBoundary": "reverse architecture projection accepted; no SOT3 runtime owner, T1 implementation, provider/live, public-sync, or further Catalog/GAP mutation authorized"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2001,
+  "stateKey": "cvfWebUxT4R4Dispatch20260720",
+  "value": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T4-R4",
+    "materialDispatchCommit": "650b26578",
+    "blockedReview": "docs/reviews/CVF_WEB_UX_T4_R3_BLOCKED_RETURN_REVIEW_2026-07-20.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_R4_FINAL_INTERACTION_AND_COMMAND_PROOF_2026-07-20.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "retainedEvidence": "R3 Preferences/violet and drawer accepted bounded; Home, Workspace, Knowledge, command, and teardown evidence require R4",
+    "nextAllowedMove": "Capture exactly three corrected interaction results plus terminal command and teardown evidence.",
+    "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Dispatch authority only; T4 and roadmap closure remain reviewer-owned."
+  }
+}

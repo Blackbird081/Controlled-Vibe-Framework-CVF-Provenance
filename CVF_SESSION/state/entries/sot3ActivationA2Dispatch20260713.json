@@ -1,0 +1,16 @@
+{
+  "stateOrder": 1729,
+  "stateKey": "sot3ActivationA2Dispatch20260713",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-13",
+    "dispatchCommit": "7e118f16e",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_2026-07-13.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_ACT_A2_DURABLE_ACTIVATION_EVIDENCE_2026-07-13.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "preDispatch": "75/75 PASS",
+    "preCommit": "83/83 PASS",
+    "nextAllowedMove": "one bounded no-commit A2 implementation and COMPLETE_PENDING_REVIEW return",
+    "claimBoundary": "local durable activation-evidence implementation only; no A3-A5 provider/live, release, public export, production readiness, distributed durability, or user validation"
+  }
+}

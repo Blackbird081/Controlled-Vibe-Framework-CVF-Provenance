@@ -1,0 +1,48 @@
+{
+  "claimBoundary": "Manifest records file hashes, rerun command, repo commit, and optional HMAC. It does not prove third-party execution unless an external anchor is provided.",
+  "evidence": [
+    {
+      "path": "docs/reviews/evidence/sot3-act-a5r1-recovery-release-gate-result-2026-07-14.json",
+      "sha256": "3e65e359de66888f45c143ea9a2809f29f27e6b7097edf0a910db2c855f0ca8b",
+      "sizeBytes": 1964
+    },
+    {
+      "path": "docs/reviews/evidence/sot3-act-a5r1-recovery-release-sot3-diagnostic-2026-07-14.json",
+      "sha256": "eff7486db35c55d1b6a00fdda4cfb09d0b5eaeef1e315efe4370e71c5506637b",
+      "sizeBytes": 472
+    },
+    {
+      "path": "docs/reviews/evidence/sot3-act-a5r1-recovery-release-e2e-diagnostic-2026-07-14.json",
+      "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789",
+      "sizeBytes": 6
+    }
+  ],
+  "externalAnchor": {
+    "anchorId": "",
+    "anchorUrl": "",
+    "status": "NOT_PROVIDED"
+  },
+  "generatedAt": "2026-07-13T17:26:45.050653+00:00",
+  "repository": {
+    "branch": "main",
+    "commit": "fa03f028fbb12ea3fd1ade81383ec08aa2da42d8",
+    "dirtyStatus": "M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json\n M scripts/run_cvf_release_gate_bundle.py\n?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/refinery-import-chain-dev.spec.ts\n?? docs/reviews/evidence/sot3-act-a5r1-recovery-release-e2e-diagnostic-2026-07-14.json\n?? docs/reviews/evidence/sot3-act-a5r1-recovery-release-gate-result-2026-07-14.json\n?? docs/reviews/evidence/sot3-act-a5r1-recovery-release-sot3-diagnostic-2026-07-14.json",
+    "remoteOrigin": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF-Provenance.git"
+  },
+  "rerun": {
+    "acceptedSecretEnv": [
+      "DASHSCOPE_API_KEY",
+      "ALIBABA_API_KEY",
+      "CVF_ALIBABA_API_KEY",
+      "CVF_BENCHMARK_ALIBABA_KEY"
+    ],
+    "command": "python scripts/run_cvf_release_gate_bundle.py --sot3-diagnostic-output <path> --e2e-diagnostic-output <path> --json",
+    "requiresLiveProviderKey": true
+  },
+  "schema": "cvf.liveEvidenceManifest.v1",
+  "signature": {
+    "algorithm": "hmac-sha256",
+    "digest": "",
+    "status": "UNSIGNED"
+  }
+}

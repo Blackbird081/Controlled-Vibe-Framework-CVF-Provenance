@@ -1,0 +1,117 @@
+{
+    "receiptId":  "c54aae0a0ab8fa2a63a9804cf592ea0d70851fc8e797b9ec76090950fd1c311e",
+    "schemaVersion":  "1.0.0",
+    "sourceRoot":  "PROVENANCE_ROOT",
+    "targetRoot":  "PUBLIC_SYNC_ROOT",
+    "cvfWebRoot":  "CVF_WEB_ROOT",
+    "rootsValidated":  {
+                           "provenance":  "PASS",
+                           "publicSync":  "PASS"
+                       },
+    "policyParity":  {
+                         "allowedTrees":  "MATCH",
+                         "allowedRootFiles":  "MATCH",
+                         "allowedScriptFiles":  "MATCH",
+                         "allowedWorkspaceTemplateFiles":  "MATCH",
+                         "allowedDocsPaths":  "MATCH",
+                         "denyPatterns":  "MATCH",
+                         "publicRemote":  "MATCH",
+                         "mappedFiles":  "MATCH"
+                     },
+    "candidates":  [
+                       {
+                           "sourcePath":  ".env.fixture.txt",
+                           "targetPath":  ".env.fixture.txt",
+                           "candidateAction":  "SKIP_DENIED",
+                           "matchedAllowlistRule":  null,
+                           "matchedDenyPattern":  "\\.env"
+                       },
+                       {
+                           "sourcePath":  "ALLOWED_ROOT.txt",
+                           "targetPath":  "ALLOWED_ROOT.txt",
+                           "candidateAction":  "COPY_CANDIDATE_ABSENT_TARGET",
+                           "matchedAllowlistRule":  "allowedRootFiles",
+                           "matchedDenyPattern":  null
+                       },
+                       {
+                           "sourcePath":  "AllowedTree/inner.txt",
+                           "targetPath":  "AllowedTree/inner.txt",
+                           "candidateAction":  "COPY_CANDIDATE_ABSENT_TARGET",
+                           "matchedAllowlistRule":  "allowedTrees",
+                           "matchedDenyPattern":  null
+                       },
+                       {
+                           "sourcePath":  "DENY_ME_file.txt",
+                           "targetPath":  "DENY_ME_file.txt",
+                           "candidateAction":  "SKIP_DENIED",
+                           "matchedAllowlistRule":  null,
+                           "matchedDenyPattern":  "DENY_ME"
+                       },
+                       {
+                           "sourcePath":  "MappedSource.txt",
+                           "targetPath":  "MappedDestination.txt",
+                           "candidateAction":  "FLAG_SEMANTIC_REVIEW_CHANGED",
+                           "matchedAllowlistRule":  "mappedFiles",
+                           "matchedDenyPattern":  null
+                       },
+                       {
+                           "sourcePath":  "MappedSource.txt",
+                           "targetPath":  "MappedSource.txt",
+                           "candidateAction":  "SKIP_NOT_ALLOWLISTED",
+                           "matchedAllowlistRule":  null,
+                           "matchedDenyPattern":  null
+                       },
+                       {
+                           "sourcePath":  "README.md",
+                           "targetPath":  "README.md",
+                           "candidateAction":  "SKIP_UNCHANGED",
+                           "matchedAllowlistRule":  "allowedRootFiles",
+                           "matchedDenyPattern":  null
+                       },
+                       {
+                           "sourcePath":  "UNLISTED_ROOT_FILE.txt",
+                           "targetPath":  "UNLISTED_ROOT_FILE.txt",
+                           "candidateAction":  "SKIP_NOT_ALLOWLISTED",
+                           "matchedAllowlistRule":  null,
+                           "matchedDenyPattern":  null
+                       }
+                   ],
+    "summary":  {
+                    "totalCandidates":  8,
+                    "copyCandidateAbsentCount":  2,
+                    "semanticReviewFlagCount":  1,
+                    "skipUnchangedCount":  1,
+                    "deniedPathCount":  2,
+                    "notAllowlistedCount":  2,
+                    "reconciliationMatch":  true
+                },
+    "cvfWebObservation":  {
+                              "dependencyCount":  3,
+                              "registryEntryCount":  3,
+                              "sot3ObservedEntries":  [
+                                                          {
+                                                              "id":  "cvf-refinery",
+                                                              "presentInDependencies":  true,
+                                                              "presentInRegistry":  true
+                                                          },
+                                                          {
+                                                              "id":  "cvf-truth-flow",
+                                                              "presentInDependencies":  true,
+                                                              "presentInRegistry":  true
+                                                          },
+                                                          {
+                                                              "id":  "cvf-truth-kernel",
+                                                              "presentInDependencies":  true,
+                                                              "presentInRegistry":  true
+                                                          }
+                                                      ],
+                              "semanticReviewFlags":  [
+
+                                                      ]
+                          },
+    "pathEscapeChecksRun":  9,
+    "noTargetWriteConfirmation":  "CONFIRMED_NO_TARGET_WRITE: this run performed zero filesystem writes inside ProvenanceRoot, PublicSyncRoot, or CvfWebRoot.",
+    "errors":  [
+
+               ]
+}

@@ -12,6 +12,7 @@ const TEMPLATE_CLASS_OVERRIDE_PATHS = [
     path.resolve(BASE_DIR, '../../../docs/baselines/CVF_FRONT_DOOR_WAVE2_EXECUTION_NOTE_2026-04-21.md'),
 ];
 const MAP_DATA_PATH = path.resolve(BASE_DIR, 'src/data/skill-template-map.json');
+const PUBLIC_CLASSIFICATION_PATH = path.resolve(BASE_DIR, 'src/data/skill-corpus-public-classification.json');
 
 const TRUSTED = 'TRUSTED_FOR_VALUE_PROOF';
 const REVIEW = 'REVIEW_REQUIRED';
@@ -124,6 +125,11 @@ function loadTemplateClassMap() {
         Object.assign(map, parseTemplateClassOverrides(overrideSection));
     }
 
+    if (Object.keys(map).length === 0) {
+        const publicClassification = JSON.parse(readFile(PUBLIC_CLASSIFICATION_PATH) || '{}');
+        Object.assign(map, publicClassification.templateClassMap || {});
+    }
+
     return map;
 }
 
@@ -134,7 +140,10 @@ function loadTrustedBenchmarkSet() {
     if (tableIds.size > 0) {
         return tableIds;
     }
-    return collectTemplateIdsFromSection(section);
+    const extracted = collectTemplateIdsFromSection(section);
+    if (extracted.size > 0) return extracted;
+    const publicClassification = JSON.parse(readFile(PUBLIC_CLASSIFICATION_PATH) || '{}');
+    return new Set(publicClassification.trustedBenchmarkSet || []);
 }
 
 function buildSkillGovernanceMap() {

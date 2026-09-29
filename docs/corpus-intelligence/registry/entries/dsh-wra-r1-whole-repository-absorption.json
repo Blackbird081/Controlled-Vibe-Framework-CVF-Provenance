@@ -1,0 +1,73 @@
+{
+  "id": "dsh-wra-r1-whole-repository-absorption",
+  "corpusType": "EXTERNAL_SOURCE",
+  "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",
+  "scopePaths": [
+    ".private_reference/source_mirrors/deepseek-ai__deepseek-harness/"
+  ],
+  "fileCount": 8953,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "DSH-WRA-R1",
+  "scanDate": "2026-08-30",
+  "manifestHash": "347475162906d7e27daf5cdee8a574fa03da7f34698d73b1c91ee70826bf2fbb",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "manifestPath": "docs/audits/CVF_DSH_WHOLE_REPOSITORY_MANIFEST_2026-08-30.json",
+  "packetPath": "docs/reviews/CVF_DSH_WRA_R1_WHOLE_REPOSITORY_ABSORPTION_AND_RUNTIME_REALIZATION_WORKER_RETURN_2026-08-30.md",
+  "completionReviewPath": "docs/reviews/CVF_DSH_WRA_R1_WHOLE_REPOSITORY_ABSORPTION_AND_RUNTIME_REALIZATION_WORKER_RETURN_2026-08-30.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_DSH_WRA_R1_WHOLE_REPOSITORY_ABSORPTION_AND_RUNTIME_REALIZATION_2026-08-30.md",
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "RECONCILED_WITH_DECLARED_GAPS",
+    "gc050": "PASS"
+  },
+  "semanticRegions": [
+    "agent-loop-tool-runtime-guard-approval",
+    "agents-notes-architecture-doctrine",
+    "api-ui-web-client",
+    "ci-workflow-config",
+    "docs-site-website",
+    "docs-subsystem-architecture",
+    "example-demo-apps",
+    "filesystem-subprocess-sandbox-credentials-hooks-mcp-skills",
+    "generated-catalog-scripts",
+    "generated-snapshots-fixtures",
+    "llm-adapters-retry-timeout-streaming-routing",
+    "packages-other-package-family",
+    "python-bridge-tooling",
+    "root-build-config",
+    "session-eventlog-persistence-checkpoint-telemetry",
+    "subagent-jobs-scheduling-lifecycle",
+    "tests-diagnostics-operational",
+    "uncategorized-other",
+    "vendor-native-thirdparty"
+  ],
+  "priorAbsorption": "The prior DSH-EARTR-UC001 closure (2026-08-29, see dsh-eartr-uc001-fresh-chat-return-absorption.json) reconciled only a bounded seven-file external-agent return packet against the same pinned upstream commit, and reached NO_RUNTIME_VALUE_WITH_REASON with zero runtime integration. This DSH-WRA-R1 entry is the first whole-repository (8,953 tracked file) reconciliation of the pinned mirror itself, and the first tranche to implement and prove a runtime-integrated delta (provider-attempt/quota admission composition in the existing Web execute route and rate-limit service).",
+  "findings": [
+    {
+      "id": "DSH-WRA-R1-F1-provider-attempt-admission-gap-closed",
+      "summary": "The existing Web execute route (/api/execute) admitted only one inbound request via limiter.consume() at the top of the handler, then made up to three actual provider calls (one initial plus up to two output-validation retries) via executeAI() with no independent per-attempt admission before each call, even though the rate-limit service already exposed an unused consumeProviderAttempt() primitive for exactly this purpose.",
+      "disposition": "ACCEPT",
+      "nextAction": "Implemented: EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts composes consumeProviderAttempt() and is called before the initial executeAI() call and before every retry call in route.ts. A denied admission returns a safe structured 429 response before any provider call, and reconciliation evidence (inboundRequestCount, providerCallCount, retryCount, admittedAttemptCount, deniedAttemptCount) is attached to the governance evidence receipt on every terminal response path.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "RUNTIME_BEHAVIOR_LEARNING",
+      "f2gRef": "docs/reviews/CVF_DSH_WRA_R1_WHOLE_REPOSITORY_ABSORPTION_AND_RUNTIME_REALIZATION_WORKER_RETURN_2026-08-30.md#findings--position"
+    },
+    {
+      "id": "DSH-WRA-R1-F2-dsh-001-dsh-005-reassessment",
+      "summary": "DSH-001 (event-to-model-context lineage) and DSH-005 (scope-owned reversible lifecycle) were reassessed at execution time against current source per the work order's mandatory reassessment requirement.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "See the worker return's Overlap And Novelty Classification and External Absorption Value Conversion Matrix sections for the execution-time disposition and evidence for each candidate.",
+      "defectClass": "UNVERIFIED_CLAIM",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_DSH_WRA_R1_WHOLE_REPOSITORY_ABSORPTION_AND_RUNTIME_REALIZATION_WORKER_RETURN_2026-08-30.md#overlap-and-novelty-classification"
+    }
+  ],
+  "negativeSearchTerms": [
+    "second parallel provider-attempt owner outside lib/rate-limit.ts (not created; existing consumeProviderAttempt composed, not duplicated)",
+    "new event-sourcing subsystem for DSH-001 (not created; existing Model Gateway/MAO owners evaluated, no second event vocabulary)",
+    "Cordis or generic plugin runtime import for DSH-005 (not created; existing MAO lifecycle owners evaluated only)",
+    "direct DeepSeek Harness source code copied into CVF (none; contracts/behavior extracted only, CVF-native implementation)"
+  ],
+  "nextScanRecommendation": "Do not rescan the unchanged pinned mirror commit cd5ef8148158c3a752a658978873241fdf8e2bbc. Reuse this manifest and ledger. Reopen only on upstream drift, or when a DEFERRED region's named conjunctive reopen condition becomes true per the conditional reopen index."
+}

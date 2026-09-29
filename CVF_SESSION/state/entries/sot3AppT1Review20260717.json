@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1887,
+  "stateKey": "sot3AppT1Review20260717",
+  "value": {
+    "status": "REVIEWED_NOT_ACCEPTED_R1_REQUIRED",
+    "date": "2026-07-17",
+    "materialCommit": "ef9b09648",
+    "executionBaseHead": "93e8bf628",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T1_COMPLETION_REVIEW_2026-07-17.md",
+    "findingCount": 6,
+    "workerBoundary": "WORKER_MUST_NOT_COMMIT honored; exact two worker outputs were independently reviewed.",
+    "nextAllowedMove": "Author and validate one fresh T1-R1 correction packet; T2 remains parked.",
+    "claimBoundary": "T1 contract ratification is not accepted and no application source/runtime compatibility is proven."
+  }
+}

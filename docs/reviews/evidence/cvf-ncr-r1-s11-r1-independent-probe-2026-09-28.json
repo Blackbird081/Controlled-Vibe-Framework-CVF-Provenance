@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "cvf.independentReviewProbe.v1",
+  "batchId": "CVF-NCR-R1-S11-R1",
+  "probeExecutorRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "probeInvocationId": "cvf-ncr-r1-s11-r1-independent-probe-20260928",
+  "independentProbeDisposition": "PASS_INDEPENDENT_PROBE",
+  "providerCallCountDuringReview": 0,
+  "materialCommit": "1a538d10d4bf54a676fe0cd031943adbfa6707b7",
+  "receiptPath": "docs/reviews/evidence/cvf-ncr-r1-s11-r1-test-evidence-audit-production-runtime.json",
+  "receiptFileSha256": "70e9ff795dc8f42219f2cb33a5e9176f4b0c49de7079738e97b9ec59b85d72d9",
+  "checks": {
+    "productionReceiptIdRecomputed": true,
+    "useProofReceiptIdRecomputed": true,
+    "sourceTruthExecutionTraceMatches": true,
+    "sourceTruthUseProofTraceMatches": true,
+    "outputHashCrossReferenceMatches": true,
+    "responseHashCrossReferenceMatches": true,
+    "httpStatus200": true,
+    "productionExecutionDispositionPass": true,
+    "skillProviderModelMatch": true,
+    "adapterEvidenceExistsBeforeCompletion": true,
+    "focusedTestsPassed": 14,
+    "workerReturnFastGateCompliant": true,
+    "secondProviderCallObserved": false
+  },
+  "receiptIds": {
+    "productionStored": "sha256:16f40d3a061fb1160cbeb411005d0841aea01dfe9f40808f6d3309384f0316c4",
+    "productionComputed": "sha256:16f40d3a061fb1160cbeb411005d0841aea01dfe9f40808f6d3309384f0316c4",
+    "useProofStored": "sha256:3c458a43e018a89fb3f1dd9a4be9dccdc5f0d65ec8452015425f77fa1e8c84bb",
+    "useProofComputed": "sha256:3c458a43e018a89fb3f1dd9a4be9dccdc5f0d65ec8452015425f77fa1e8c84bb"
+  },
+  "negativeMutationCoverage": [
+    "wrong package denied by package-specific admission tests",
+    "stale truth denied by production executor tests",
+    "deferred external disposition denied before execution",
+    "receipt tamper detected by canonical ID recomputation",
+    "output or response mismatch detected by cross-reference comparison",
+    "expired model ledger denied while hostile expiry fixture remains intact",
+    "second provider call forbidden and not performed"
+  ],
+  "oracleSeparationBasis": "Local consumed the committed worker evidence and independently recomputed canonical receipt identities and cross-traces offline; no provider or live command was rerun.",
+  "claimBoundary": "One package-specific P10 production-runtime closure only; no P11, other package, public sync, deployment, server, daemon, audited-test action, or platform-wide readiness claim."
+}

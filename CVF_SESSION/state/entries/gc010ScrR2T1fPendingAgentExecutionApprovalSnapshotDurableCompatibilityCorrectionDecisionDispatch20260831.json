@@ -1,0 +1,18 @@
+{
+  "stateOrder": 2405,
+  "stateKey": "gc010ScrR2T1fPendingAgentExecutionApprovalSnapshotDurableCompatibilityCorrectionDecisionDispatch20260831",
+  "value": {
+    "status": "DISPATCHED_DECISION_BOUNDED",
+    "materialCommit": "648063886",
+    "dispatchBaseHead": "061f92cf9",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_2026-08-31.md",
+    "workerAssessment": "docs/assessments/CVF_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1F_PENDING_AGENT_EXECUTION_APPROVAL_SNAPSHOT_DURABLE_COMPATIBILITY_CORRECTION_DECISION_WORKER_RETURN_2026-08-31.md",
+    "executionRoute": "one internal no-commit decision worker followed by independent orchestrator review",
+    "decisionBoundary": "Compare canonical approval hashing, SQLite insertion-order preservation, pending-core semantic equivalence and versioned hash/preimage migration without editing source.",
+    "workerWriteScope": "Exactly the named assessment and worker return.",
+    "nextAllowedMove": "Execute the T1F worker and stop for independent review; implementation remains separately governed.",
+    "claimBoundary": "Dispatch only; no approval hash, persistence, pending execution, route, provider, public, deployment or production behavior changed."
+  }
+}

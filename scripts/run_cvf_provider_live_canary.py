@@ -25,7 +25,7 @@ CVF_WEB = REPO_ROOT / "EXTENSIONS" / "CVF_v1.6_AGENT_PLATFORM" / "cvf-web"
 
 PROVIDER_CONFIGS = {
     "alibaba": {
-        "model": "qwen-turbo",
+        "model": "qwen-flash",
         "key_env_names": ["ALIBABA_API_KEY", "DASHSCOPE_API_KEY"],
         "key_export_env": "ALIBABA_API_KEY",
         "test_pattern": "route.front-door-rewrite.alibaba.live.test.ts",

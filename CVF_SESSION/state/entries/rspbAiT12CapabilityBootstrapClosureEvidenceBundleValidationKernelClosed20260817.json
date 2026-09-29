@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2271,
+  "stateKey": "rspbAiT12CapabilityBootstrapClosureEvidenceBundleValidationKernelClosed20260817",
+  "value": "RSPB-AI-T12 is CLOSED_PASS_BOUNDED with material bd1187c8402da94d3bf47a6df7e3b31dad3ae02f and completion review f280f82ef39d017512835e453f76cb5f30cb7326. Independent review repaired missing refreshed-snapshot and profile-context bindings, one raw NUL test byte, and worker-return evidence shape. Evidence: focused 28/28, composed T9-T12 116/116, package 817 passed plus 5 skipped, TypeScript PASS, system-chain CURRENT, reviewer-fast 65/65, material pre-commit 86/86, and zero provider/live calls. This is the first closed post-activation TPGR-T0 tranche; selective execution remains unauthorized."
+}

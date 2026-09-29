@@ -4,9 +4,11 @@
   "corpusType": "CVF_EXTENSION",
   "displayName": "CVF Model Gateway C-02 P4B-A provider execution bridge tests",
   "scopePaths": [
-    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-execution-bridge.test.ts"
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/provider-execution-bridge.test.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/canonical-execution-port.test.ts",
+    "EXTENSIONS/CVF_MODEL_GATEWAY/tests/gateway-receipt.test.ts"
   ],
-  "fileCount": 1,
+  "fileCount": 3,
   "status": "SCANNED",
   "findings": [],
   "negativeSearchTerms": [
@@ -26,5 +28,5 @@
   "manifestHash": null,
   "manifestPath": null,
   "packetPath": "docs/reviews/CVF_MODEL_GATEWAY_C02_P4B_A_PROVIDER_EXECUTION_BRIDGE_WORKER_RETURN_2026-06-15.md",
-  "notes": "Deterministic test suite for ProviderExecutionBridge. 21 tests covering denied/approval/no-candidate routing, missing or provider-mismatched adapter, missing/unavailable credential metadata, unusable health (routing-layer and bridge-layer), over-quota (routing-layer and bridge-layer), successful adapter invocation, health/quota recording, provider/model response, adapter error shielding, serialized secret non-leakage, ordered execution spy verification, and negative source assertions. No concrete adapter import, network call, credential secret, or live proof."
+  "notes": "Deterministic tests for ProviderExecutionBridge and the additive CanonicalExecutionPort. Coverage includes pre-adapter stops, callback denial/throw/allow ordering, legacy-call compatibility, canonical identity propagation, secret-safe receipts/manifests, and negative import-boundary assertions. No live provider call or credential secret is used."
 }

@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2680,
+  "stateKey": "gclhT1MinimalReviewerVerificationAmendmentAccepted20260901",
+  "value": {
+    "status": "MINIMAL_SUFFICIENT_REVIEW_VERIFICATION_ACCEPTED",
+    "materialCommit": "56e0c0e22e7df2a2411c6ba5e279cdc62b6ddd6d",
+    "designSha256": "3998d23f7726fa0d7d71fc2232caa45d3404df012645b88c53b88d82b348d367",
+    "reviewSha256": "0bd403fd4c719811584c367ca640868539855ffae5b4924d9d8ac116e19da163",
+    "roadmapSha256": "32508d7e64ada3df4729c75ea0fa07b8350dcb7ecd73e146d303945d29917d52",
+    "reviewerBoundary": "Evaluate the returned result and reconstruct its evidence graph; do not repeat the producing role's work.",
+    "defaultVerification": "Identity, predecessor chain, authority resolution, claim-obligation-evidence coverage, contradictions and manifest checks.",
+    "rerunRule": "Focused only when disposition-relevant; broad rerun requires named insufficiency or contradiction, bounded claim, expected information gain and cost/latency justification.",
+    "missingEvidenceRule": "Return or block missing work; reviewer must not silently complete it.",
+    "nextAllowedMove": "Author and review the GCLH-T2 protected-path work order; implementation remains unopened.",
+    "claimBoundary": "Review-cost design amendment only; no implementation or downstream/external effect."
+  }
+}

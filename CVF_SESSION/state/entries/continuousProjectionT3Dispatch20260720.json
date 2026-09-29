@@ -1,0 +1,22 @@
+{
+  "stateOrder": 2018,
+  "stateKey": "continuousProjectionT3Dispatch20260720",
+  "value": {
+    "status": "DISPATCH_READY_WAITING_NO_COMMIT_WORKER_RETURN",
+    "date": "2026-07-20",
+    "materialCommit": "d68a132e7",
+    "roadmap": "docs/roadmaps/CVF_CONTINUOUS_PROJECTION_DRIFT_DETECTION_AND_REVIEW_PACKET_AUTOMATION_ROADMAP_2026-07-19.md",
+    "baseline": "docs/baselines/CVF_GC018_CONTINUOUS_PROJECTION_T3_AUDIENCE_PRESENTATION_GATE_2026-07-20.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CONTINUOUS_PROJECTION_T3_AUDIENCE_PRESENTATION_GATE_2026-07-20.md",
+    "workerReturn": "docs/reviews/CVF_CONTINUOUS_PROJECTION_T3_WORKER_RETURN_2026-07-20.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "handoffMode": "MANUAL_COPY_PASTE_ONLY",
+    "allowedPaths": [
+      "scripts/get_cvf_projection_audience_gate.ps1",
+      "scripts/test_cvf_projection_audience_gate.ps1",
+      "docs/reviews/CVF_CONTINUOUS_PROJECTION_T3_WORKER_RETURN_2026-07-20.md"
+    ],
+    "t4Disposition": "HOLD_UNTIL_T3_PASS",
+    "claimBoundary": "No automated agent CLI/MCP/provider call, browser/live proof, real-root scan, public-sync, worker commit, push, deployment, or unattended mutation."
+  }
+}

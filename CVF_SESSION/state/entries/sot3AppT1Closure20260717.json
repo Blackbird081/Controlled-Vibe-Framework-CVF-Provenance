@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1899,
+  "stateKey": "sot3AppT1Closure20260717",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS",
+    "date": "2026-07-17",
+    "materialCommit": "f193bf2e9",
+    "executionBaseHead": "91f0c1ba9",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T1_R3_COMPLETION_REVIEW_2026-07-17.md",
+    "evidence": "37 raw direct-call matches reconcile to 29 terminal invocations plus 8 exclusions; zero unresolved; all caller-result dispositions independently source-read.",
+    "reviewRoundCount": 4,
+    "workerRepairTurnCount": 3,
+    "reviewerRepairs": "Corrected false 30/7 packet denominator to 29/8, removed one duplicate excluded placeholder, and normalized eleven producer labels.",
+    "nextAllowedMove": "Author and validate only a fresh source-verified SOT3-APP-T2 GC-018 baseline and work order; execution remains parked until fresh dispatch.",
+    "claimBoundary": "Documentation-only T1 closure; no T2 execution, downstream source mutation, runtime/live/public action, or push."
+  }
+}

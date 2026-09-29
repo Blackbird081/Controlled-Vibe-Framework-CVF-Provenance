@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2278,
+  "stateKey": "taskProportionalGovernanceSecondUpgradeCritiquePlanCommitted20260817",
+  "value": "The TPGR second-upgrade external-critique plan is committed at b6bee448ce4ccc69b5969315d00255ca9100f1be, path docs/assessments/CVF_TASK_PROPORTIONAL_GOVERNANCE_SECOND_UPGRADE_EXTERNAL_CRITIQUE_PLAN_2026-08-17.md, SHA-256 6cc0cde0dd98b6dbc79aa9bd01357e24fcc4657860c67e5aa1ca7ec1c7882653. It separates provenance from task stage, defines typed evidence inheritance and invalidation, claim/impact routing, a concrete checker dependency graph, phase-specific verification, full-fallback triggers, replay/canary evidence, and progressive activation. Status remains plan-only pending external critique and operator approval; selective execution, T15, runtime/provider/live/public/deploy/production remain unauthorized."
+}

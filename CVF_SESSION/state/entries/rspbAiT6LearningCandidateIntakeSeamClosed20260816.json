@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2252,
+  "stateKey": "rspbAiT6LearningCandidateIntakeSeamClosed20260816",
+  "value": "RSPB-AI-T6 is CLOSED_PASS_BOUNDED. Material plus disclosed bounded reviewer repair is committed at 2529cc8d3d71fc40dbd838acb0cf7335e6a7c9b1; reviewer acceptance and continuity evidence is committed at 8c5965be1bdc7ba9cea1d542d188b1abb00cf164; machine closure packet is committed at 145d9dab27ee2faf78a9a1cf1c97e4e7ef8fee15. Evidence: focused 60/60, bridge 3/3, direct full Learning Plane package PASS, TypeScript PASS, reviewer-fast 64/64, pre-commit 85/85, zero provider/live calls. The seam is pure, pending-only, and opens no storage, promotion, mutation, runtime service, public, or production authority."
+}

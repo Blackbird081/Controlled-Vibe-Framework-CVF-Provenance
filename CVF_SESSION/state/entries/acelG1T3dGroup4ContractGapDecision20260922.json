@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2844,
+  "stateKey": "acelG1T3dGroup4ContractGapDecision20260922",
+  "value": "ACEL G1 T3D Group 4 pre-implementation audit is REWORK_REQUIRED at material commit dbb09dd5b. Four decision-changing gaps block tooling: exact registrySnapshotHashHex bytes, exact non-circular canonicalContentHashHex input/preimage, lookup-response append principal/DACL, and the T3D source-verification versus T3E consumer-binding boundary. Local selected one consolidated T3D-C0 amendment before T3D-C1. No real Group 4 source, second observation, T3E, admission, provider/live, public-sync or deployment action is authorized."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2229,
+  "stateKey": "cadpAiT5R6ReadOnlyAuthorizationConsumerValueDecisionClosedStopLowValue20260815",
+  "value": "CADP-AI-T5-R6 is independently accepted and closed STOP_LOW_VALUE at material commit 83491ade1. No current non-test consumer, concrete blocked workflow, or authoritative runtime metadata owner was found; base margin is -22 and sensitized margin is -26 against a required +12. CADP contract and authentication foundations remain accepted, but route, registry, runtime, provider/live/network, credentials, public sync, deployment, and production expansion are parked."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2974,
+  "stateKey": "cvfNcrR1S11P10ProductionRuntimeDispatch20260928",
+  "value": "Original S11 remains CLOSED_BLOCKED_BOUNDED at 6a8545e64 as historical evidence. Corrective S11-R1 superseded its terminal disposition and closed P10 CLOSED_PASS_BOUNDED at closure bd15b2600 after material 1a538d10d. The package is ACTIVE_PRODUCTION_RUNTIME; exactly one authorized Alibaba/DashScope call returned HTTP 200 and a production receipt, Local independently recomputed production/use-proof receipt identities and all trace/hash links offline, and reviewer providerCallCount was zero. P11, other packages, public sync, deployment and platform-wide production remain parked."
+}

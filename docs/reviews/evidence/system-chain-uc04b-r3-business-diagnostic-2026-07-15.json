@@ -1,0 +1,24 @@
+{
+  "packet": "SCLP-UC04B-R3",
+  "diagnosticCreatedAt": "2026-07-15T04:58:30Z",
+  "stage": "e2e_negative_case_pre_submission_ui_assertion",
+  "class": "RETAINED_PROOF_SPEC_LOCATOR_AMBIGUITY",
+  "retryable": false,
+  "userAction": "Reviewer decision required: the retained spec's negative case uses `page.getByText('reviewer')` at line 113, which is not unique on the Operations page for a user with username/role both containing the literal text 'reviewer' (the mock user is 'Eve Reviewer', role 'reviewer'); Playwright's strict-mode locator found 5 matching elements (sidebar name, sidebar role badge, header role badge, header active-role value, sidebar name repeat) and refused to pick one. A successor packet with an updated/scoped locator (e.g. role/testid-scoped `page.getByText('reviewer', { exact: true }).first()` or a `data-testid` on the active-role element) is needed before the negative case can complete; the proof spec is read-only under this work order and cannot be edited here.",
+  "providerOrModel": "N/A_NO_PROVIDER_CALL",
+  "httpStatusOrLatency": "N/A_NOT_REACHED: the ambiguous locator assertion failed before the negative case's page.request.post('/api/system/jobs') call executed, so no HTTP status was produced for the negative case",
+  "receiptOrTracePath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results/system-chain-uc04b-web-ope-c1f9c-tting-docs-governance-check/trace.zip",
+  "message": "The one authorized Playwright invocation ran both cases serially. Case 1 (positive_developer_docs_check) PASSED: developer submitted docs_governance_check once through the UI, received HTTP 200/allowed/succeeded, saw matching job type/status/readout text, and the runtime audit log shows exactly the expected requested/running/succeeded sequence for job 0b57a99a-56d1-4a15-9186-1d10863d7027. Case 2 (negative_reviewer_docs_check) FAILED at its own pre-submission assertion `await expect(page.getByText('reviewer')).toBeVisible()`: Playwright's strict-mode locator matched 5 elements on the reviewer's own Operations page load (the reviewer's display name 'Eve Reviewer' contains no 'reviewer' substring, but the role text 'reviewer' appears in the sidebar user block, a header role badge, and the main active-role value, each rendered as a separate matching node), so the assertion threw before the case could reach its own reviewer-denial POST at line 119. No HTTP request, decision, or audit event was produced for the negative case as a direct result.",
+  "rootCauseConfidence": "SOURCE_BACKED: the captured error-context.md page snapshot for the failed test enumerates the exact 5 matched elements and their locator paths; the retained spec source at lines 109-135 shows the ambiguous assertion precedes the reviewer POST at line 119, and no code path in this proof spec, the Operations page, or the jobs API/job-definition owners was edited by this worker.",
+  "runtimeProofStatus": "The runtime business path itself (docs_governance_check submission, fixed checker argv, audit trail) is proven working end to end by the positive case's PASS and its exact 3-event audit sequence. The reviewer-denial runtime behavior (canTrigger returning read_only_role_cannot_trigger, submitGovernanceJob stopping before the runner) remains unproven by this invocation only because the retained proof's own pre-submission locator is ambiguous, not because of any defect in the reviewer/policy/job-execution owners.",
+  "invocationLedgerReconciliation": {
+    "invocationCeiling": 1,
+    "invocationsRun": 1,
+    "retries": 0,
+    "webSubmissions": 1,
+    "webSubmissionsExpected": 2,
+    "selectedCheckerExecutions": 1,
+    "selectedCheckerExecutionsExpected": 1,
+    "providerCalls": 0
+  }
+}

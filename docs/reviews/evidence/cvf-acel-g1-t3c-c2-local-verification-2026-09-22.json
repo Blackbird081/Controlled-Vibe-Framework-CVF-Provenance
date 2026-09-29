@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "cvf.acel.g1.t3cC2LocalVerificationReceipt.v1",
+  "disposition": "LOCAL_VERIFICATION_PASS",
+  "sourcePath": "governance/sources/registry_observation_log/LOG.jsonl",
+  "snapshotId": "snap-9037220e94434acaa4909cb1cba2e2fc-eec908be7c0243d4",
+  "snapshotHashHex": "87594cdcf8a1e0c3c4b439434aeda39444ff54a432674d97403f1980c995d883",
+  "entryHashHex": "a97f1066cc5fe33409eff6539c2ca68dcf72f794209c8de5df93a7f81dc6e1c3",
+  "observerIdentity": "S-1-5-21-1644666849-912006174-747199667-1009",
+  "fileSha256Before": "e1d9dfd747df33eaf1b85664c22e19a49edcb521fbbc07a0c53f6c13636d8629",
+  "fileSha256After": "e1d9dfd747df33eaf1b85664c22e19a49edcb521fbbc07a0c53f6c13636d8629",
+  "sourceBytesUnchanged": true,
+  "sourceCheckerBefore": "PASS",
+  "sourceCheckerAfter": "PASS",
+  "daclMutationPerformed": false,
+  "ownerSid": "S-1-5-21-1644666849-912006174-747199667-1009",
+  "daclProtected": true,
+  "aceTuples": [
+    "S-1-5-18|2032127|0|False|0|0",
+    "S-1-5-21-1644666849-912006174-747199667-1001|1179785|0|False|0|0",
+    "S-1-5-21-1644666849-912006174-747199667-1009|2032127|0|False|0|0",
+    "S-1-5-32-544|2032127|0|False|0|0"
+  ],
+  "executedAtUtc": "2026-09-22T11:53:25.4731288Z",
+  "claimBoundary": "Group 3 artifact and Local-read ACL verified; no establishment, admission, T3E wiring, provider, deployment or public-export claim"
+}

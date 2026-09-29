@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2190,
+  "stateKey": "cadpAiT6LiveCompatibilityProofBlocked20260815",
+  "value": "CADP-AI-T6 bounded live compatibility proof was independently accepted as BLOCKED_WITH_REASON evidence and materially committed at 25c0b2217. The release bundle failed before provider execution because node was present but npm and npx were absent; SOT3 reported a non-green local negative gate and no readable live receipt. Reviewer verification confirmed the toolchain absence. Zero provider API calls, zero quota consumption, no live compatibility claim, and no secret disclosure occurred. The worker's provisional qwen3.6-flash route edit was recorded with the blocked attempt; official Alibaba lifecycle evidence identifies qwen-flash/qwen-flash-2025-07-28 as the Qwen-Turbo replacement. A fresh deprecation migration must update active authority while preserving historical receipts and archives. No live retry is authorized from this state."
+}

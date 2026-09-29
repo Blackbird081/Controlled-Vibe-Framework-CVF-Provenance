@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "cvf.independentReviewProbe.v1",
+  "batchId": "RSE-T4-H1",
+  "date": "2026-09-28",
+  "executorRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "executionBaseHead": "52d005bd6",
+  "providerCallCount": 0,
+  "probeClass": "LOCAL_DETERMINISTIC_HOSTILE_MUTATION",
+  "results": [
+    {
+      "mutation": "toolClassifierBlockRecoveryApplicability: APPLICABLE_BOGUS",
+      "expected": "REJECT",
+      "observedIssues": [],
+      "disposition": "FALSE_NEGATIVE"
+    },
+    {
+      "mutation": "toolClassifierBlockEventCount=1 with recoveryDisposition=NO_EVENT and non-default evidence",
+      "expected": "REJECT",
+      "observedIssues": [],
+      "disposition": "FALSE_NEGATIVE"
+    },
+    {
+      "mutation": "recoveryAttemptCount: abc",
+      "expected": "REJECT",
+      "observedIssues": [],
+      "disposition": "FALSE_NEGATIVE"
+    },
+    {
+      "mutation": "platformForcedOperatorPromptCount=2 while toolClassifierBlockEventCount=1",
+      "expected": "REJECT",
+      "observedIssues": [],
+      "disposition": "FALSE_NEGATIVE"
+    }
+  ],
+  "verdict": "REJECT_COMPLETE_PENDING_REVIEW",
+  "claimBoundary": "This probe evaluates only the returned local checker semantics. It makes no external classifier, runtime, provider, public or deployment claim."
+}

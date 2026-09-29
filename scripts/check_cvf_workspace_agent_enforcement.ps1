@@ -15,11 +15,36 @@ $requiredPublicCoreFiles = @(
     "docs\reference\CVF_WORKSPACE_RULES.md",
     "governance\toolkit\05_OPERATION\CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
     "scripts\check_cvf_workspace_agent_enforcement.ps1",
+    "scripts\check_cvf_workspace_new_project_enforcement.ps1",
     "scripts\ingest_cvf_downstream_knowledge.ps1",
+    "scripts\initialize_cvf_project_clone.ps1",
+    "scripts\initialize_cvf_repository_clone.ps1",
     "scripts\new-cvf-workspace.ps1",
     "scripts\update_cvf_workspace_public_core.ps1",
-    "scripts\write_cvf_workspace_web_evidence_bridge.ps1"
+    "scripts\write_cvf_workspace_web_evidence_bridge.ps1",
+    "scripts\lib\downstream_catalog\CvfDownstreamCatalogLib.ps1",
+    "scripts\lib\downstream_catalog\CvfDownstreamBootstrapContent.ps1",
+    "scripts\lib\downstream_catalog\CvfWorkspaceDoctorLiveReadiness.ps1",
+    "scripts\lib\downstream_catalog\manage_cvf_downstream_catalog.ps1",
+    "scripts\lib\downstream_catalog\schemas\ARTIFACT_REGISTRY.schema.json",
+    "scripts\lib\downstream_catalog\schemas\MODULE_REGISTRY.schema.json",
+    "governance\toolkit\05_OPERATION\downstream_catalog\CVF_DOWNSTREAM_CATALOG_GUARD.md"
 )
+
+function Resolve-ProjectBoundPath {
+    param(
+        [string]$ProjectRoot,
+        [string]$RelativePath,
+        [string]$AbsolutePath
+    )
+    if (-not [string]::IsNullOrWhiteSpace($RelativePath)) {
+        return [System.IO.Path]::GetFullPath((Join-Path $ProjectRoot $RelativePath))
+    }
+    if (-not [string]::IsNullOrWhiteSpace($AbsolutePath)) {
+        return [System.IO.Path]::GetFullPath($AbsolutePath)
+    }
+    return $null
+}
 
 $projectResolved = [System.IO.Path]::GetFullPath($ProjectPath)
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -50,111 +75,7 @@ function Add-Warn {
     })
 }
 
-function Normalize-EnvValue {
-    param([string]$Value)
-    if ([string]::IsNullOrWhiteSpace($Value)) {
-        return ""
-    }
-    $trimmed = $Value.Trim()
-    if (($trimmed.StartsWith('"') -and $trimmed.EndsWith('"')) -or
-        ($trimmed.StartsWith("'") -and $trimmed.EndsWith("'"))) {
-        return $trimmed.Substring(1, $trimmed.Length - 2).Trim()
-    }
-    return $trimmed
-}
-
-function Get-LocalEnvKeySource {
-    param(
-        [string]$CorePath,
-        [string[]]$KeyNames
-    )
-
-    if ([string]::IsNullOrWhiteSpace($CorePath) -or -not (Test-Path $CorePath -PathType Container)) {
-        return $null
-    }
-
-    $envFiles = @(
-        (Join-Path $CorePath "EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\.env.local"),
-        (Join-Path $CorePath "EXTENSIONS\CVF_v1.6_AGENT_PLATFORM\cvf-web\.env"),
-        (Join-Path $CorePath ".env.local"),
-        (Join-Path $CorePath ".env")
-    )
-
-    foreach ($envFile in $envFiles) {
-        if (-not (Test-Path $envFile -PathType Leaf)) {
-            continue
-        }
-
-        $lines = Get-Content -Path $envFile -Encoding utf8
-        foreach ($line in $lines) {
-            $trimmed = $line.Trim()
-            if ([string]::IsNullOrWhiteSpace($trimmed) -or $trimmed.StartsWith("#")) {
-                continue
-            }
-            if ($trimmed.StartsWith("export ")) {
-                $trimmed = $trimmed.Substring(7).Trim()
-            }
-
-            foreach ($keyName in $KeyNames) {
-                if ($trimmed -match "^$([regex]::Escape($keyName))\s*=(.+)$") {
-                    $value = Normalize-EnvValue $Matches[1]
-                    if (-not [string]::IsNullOrWhiteSpace($value)) {
-                        return [PSCustomObject]@{
-                            KeyName = $keyName
-                            Source  = "ignored_local_env"
-                            Path    = $envFile
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    return $null
-}
-
-function Get-LiveReadiness {
-    param([string]$CorePath)
-
-    $dashScopeAliases = @(
-        "DASHSCOPE_API_KEY",
-        "ALIBABA_API_KEY",
-        "CVF_ALIBABA_API_KEY",
-        "CVF_BENCHMARK_ALIBABA_KEY"
-    )
-
-    foreach ($alias in $dashScopeAliases) {
-        $value = [Environment]::GetEnvironmentVariable($alias)
-        if (-not [string]::IsNullOrWhiteSpace($value)) {
-            return [PSCustomObject]@{
-                LiveKeyAvailable = $true
-                ProviderLane     = "alibaba"
-                KeyName          = $alias
-                Source           = "process_env"
-                Path             = ""
-            }
-        }
-    }
-
-    $localSource = Get-LocalEnvKeySource -CorePath $CorePath -KeyNames $dashScopeAliases
-    if ($null -ne $localSource) {
-        return [PSCustomObject]@{
-            LiveKeyAvailable = $true
-            ProviderLane     = "alibaba"
-            KeyName          = $localSource.KeyName
-            Source           = $localSource.Source
-            Path             = $localSource.Path
-        }
-    }
-
-    return [PSCustomObject]@{
-        LiveKeyAvailable = $false
-        ProviderLane     = "none"
-        KeyName          = "none"
-        Source           = "none"
-        Path             = ""
-    }
-}
+. (Join-Path $PSScriptRoot "lib\downstream_catalog\CvfWorkspaceDoctorLiveReadiness.ps1")
 
 Write-Host ""
 Write-Host "CVF Workspace Agent Enforcement Doctor" -ForegroundColor Cyan
@@ -200,12 +121,32 @@ if ($manifestExists) {
     try {
         $manifestContent = Get-Content $manifestPath -Raw -Encoding utf8
         $manifestObj = $manifestContent | ConvertFrom-Json
-        $requiredFields = @("cvfCorePath","cvfCoreCommit","workspaceRoot","projectPath","phaseModel",
-                            "liveGovernanceEvidenceRequired","mockAllowedOnlyForUi","requiredDocs",
-                            "bootstrapDate","enforcementVersion")
+        $portableManifest = ($manifestObj.PSObject.Properties.Name -contains "cvfCoreRelativePath")
+        $requiredFields = if ($portableManifest) {
+            @("schemaVersion", "cvfCoreRepository", "cvfCoreCommit", "cvfCoreRelativePath",
+              "workspaceRulesRelativePath", "phaseModel", "liveGovernanceEvidenceRequired",
+              "mockAllowedOnlyForUi", "requiredDocs", "bootstrapDate", "enforcementVersion")
+        }
+        else {
+            @("cvfCorePath","cvfCoreCommit","workspaceRoot","projectPath","phaseModel",
+              "liveGovernanceEvidenceRequired","mockAllowedOnlyForUi","requiredDocs",
+              "bootstrapDate","enforcementVersion")
+        }
         $missing = $requiredFields | Where-Object { -not ($manifestObj.PSObject.Properties.Name -contains $_) }
-        $manifestValid = ($missing.Count -eq 0)
-        $manifestDetail = if ($manifestValid) { "All required fields present" } else { "Missing fields: $($missing -join ', ')" }
+        $absolutePortableFields = @()
+        if ($portableManifest) {
+            foreach ($field in @("cvfCoreRelativePath", "workspaceRulesRelativePath")) {
+                if ([System.IO.Path]::IsPathRooted([string]$manifestObj.$field)) {
+                    $absolutePortableFields += $field
+                }
+            }
+        }
+        $manifestValid = ($missing.Count -eq 0) -and ($absolutePortableFields.Count -eq 0)
+        $manifestDetail = if ($manifestValid) {
+            if ($portableManifest) { "Portable schema fields present; tracked paths are relative" } else { "Legacy schema fields present" }
+        }
+        elseif ($missing.Count -gt 0) { "Missing fields: $($missing -join ', ')" }
+        else { "Portable path fields must be relative: $($absolutePortableFields -join ', ')" }
     }
     catch {
         $manifestDetail = "JSON parse error: $_"
@@ -245,10 +186,34 @@ $bootstrapLogExists = ($bootstrapLogs.Count -gt 0)
 $bootstrapLogDetail = if ($bootstrapLogExists) { $bootstrapLogs[0].FullName } else { "No CVF_BOOTSTRAP_LOG_*.md found in $docsDir" }
 Add-Check "Bootstrap log exists" $bootstrapLogExists $bootstrapLogDetail
 
+if ($bootstrapLogExists -and (Test-Path -LiteralPath (Join-Path $projectResolved ".git") -PathType Container)) {
+    $bootstrapLogRelative = "docs/" + $bootstrapLogs[0].Name
+    $ignoreOutput = git -C $projectResolved check-ignore -v $bootstrapLogRelative 2>$null
+    $ignoreDetail = ($ignoreOutput | Out-String).Trim()
+    $lastIgnoreRule = @($ignoreOutput | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Last 1)
+    $isUnignoredByNegation = ($lastIgnoreRule.Count -gt 0 -and $lastIgnoreRule[0] -match '^[^:]+:\d+:!')
+    if ($LASTEXITCODE -eq 0 -and -not [string]::IsNullOrWhiteSpace($ignoreDetail) -and -not $isUnignoredByNegation) {
+        Add-Warn "Bootstrap log is visible to git" "IGNORED_BY_PROJECT_GITIGNORE: $bootstrapLogRelative -> $ignoreDetail"
+    }
+}
+
 # Check 9: CVF core path is reachable
 $cvfCorePath = $null
-if ($null -ne $manifestObj -and $manifestObj.cvfCorePath) {
-    $cvfCorePath = $manifestObj.cvfCorePath
+$localBindingPath = Join-Path $projectResolved ".cvf\local-binding.json"
+$localBinding = $null
+if (Test-Path -LiteralPath $localBindingPath -PathType Leaf) {
+    try {
+        $localBinding = Get-Content -LiteralPath $localBindingPath -Raw -Encoding utf8 | ConvertFrom-Json
+    }
+    catch {
+        Add-Check "Local CVF binding is valid" $false "JSON parse error: $_"
+    }
+}
+if ($null -ne $manifestObj) {
+    $boundCorePath = if ($null -ne $localBinding) { [string]$localBinding.cvfCorePath } else { "" }
+    $cvfCorePath = Resolve-ProjectBoundPath -ProjectRoot $projectResolved `
+        -RelativePath ([string]$manifestObj.cvfCoreRelativePath) `
+        -AbsolutePath $(if ($boundCorePath) { $boundCorePath } else { [string]$manifestObj.cvfCorePath })
 }
 $coreReachable = $false
 if ($cvfCorePath) {
@@ -256,12 +221,18 @@ if ($cvfCorePath) {
     Add-Check "CVF core path reachable" $coreReachable $cvfCorePath
 }
 else {
-    Add-Check "CVF core path reachable" $false "cvfCorePath not found in manifest"
+    Add-Check "CVF core path reachable" $false "No portable relative path or local/legacy binding found"
 }
 
 # Check 10: Workspace rules file exists at workspace root
 $workspaceRulesPath = $null
-if ($null -ne $manifestObj -and $manifestObj.workspaceRulesPath) {
+if ($null -ne $localBinding -and $localBinding.workspaceRulesPath) {
+    $workspaceRulesPath = $localBinding.workspaceRulesPath
+}
+elseif ($null -ne $manifestObj -and $manifestObj.workspaceRulesRelativePath) {
+    $workspaceRulesPath = Resolve-ProjectBoundPath -ProjectRoot $projectResolved -RelativePath ([string]$manifestObj.workspaceRulesRelativePath) -AbsolutePath ""
+}
+elseif ($null -ne $manifestObj -and $manifestObj.workspaceRulesPath) {
     $workspaceRulesPath = $manifestObj.workspaceRulesPath
 }
 elseif ($null -ne $manifestObj -and $manifestObj.workspaceRoot) {
@@ -274,14 +245,15 @@ if ($workspaceRulesPath) {
     Add-Check "Workspace rules file exists" $workspaceRulesExists $workspaceRulesPath
 }
 else {
-    Add-Check "Workspace rules file exists" $false "workspaceRoot/workspaceRulesPath not found in manifest"
+    Add-Check "Workspace rules file exists" $false "workspaceRulesRelativePath/local binding not found"
 }
 
 # Check 11: CVF core remote is the public CVF repository
 if ($coreReachable) {
     $actualRemote = (git -C $cvfCorePath remote get-url origin 2>$null | Out-String).Trim()
-    $remoteMatches = ($actualRemote -eq $expectedPublicRemote)
-    $remoteDetail = if ($remoteMatches) { $actualRemote } else { "Expected: $expectedPublicRemote / Actual: $actualRemote" }
+    $manifestRemote = if ($null -ne $manifestObj -and $manifestObj.cvfCoreRepository) { [string]$manifestObj.cvfCoreRepository } else { $expectedPublicRemote }
+    $remoteMatches = ($actualRemote -eq $manifestRemote)
+    $remoteDetail = if ($remoteMatches) { $actualRemote } else { "Expected: $manifestRemote / Actual: $actualRemote" }
     Add-Check "CVF core origin is public remote" $remoteMatches $remoteDetail
 }
 
@@ -331,9 +303,9 @@ if ($coreReachable) {
 # Check 14: CVF core commit matches manifest
 if ($coreReachable -and $manifestObj.cvfCoreCommit) {
     $ErrorActionPreference = "SilentlyContinue"
-    $actualCommit = git -C $cvfCorePath rev-parse --short HEAD 2>$null
+    $actualCommit = (git -C $cvfCorePath rev-parse HEAD 2>$null | Out-String).Trim()
     $ErrorActionPreference = "SilentlyContinue"
-    $commitMatch = ($actualCommit -eq $manifestObj.cvfCoreCommit)
+    $commitMatch = $actualCommit.StartsWith([string]$manifestObj.cvfCoreCommit, [System.StringComparison]::OrdinalIgnoreCase)
     $commitDetail = if ($commitMatch) { "Commit: $actualCommit" } else { "Manifest: $($manifestObj.cvfCoreCommit) / Actual: $actualCommit (warn only - core may have updated)" }
     Add-Check "CVF core commit matches manifest" $commitMatch $commitDetail
     if (-not $commitMatch) {
@@ -371,6 +343,140 @@ if ($null -ne $manifestObj -and $manifestObj.knowledgePath) {
         Status = if ($knowledgeFolderExists) { "PASS" } else { "WARN" }
         Detail = $knowledgeDetail
     })
+}
+
+# Check 17: canonical seven-step phase model is present and ordered.
+if ($null -ne $manifestObj -and $manifestObj.phaseModel) {
+    $expectedPhaseModel = @("INTAKE", "DESIGN", "SPEC", "WORK_ORDER", "BUILD", "REVIEW", "FREEZE")
+    $actualPhaseModel = @($manifestObj.phaseModel)
+    $phaseModelMatches = (($actualPhaseModel -join "|") -eq ($expectedPhaseModel -join "|"))
+    Add-Check "Seven-step phase model is canonical" $phaseModelMatches ($actualPhaseModel -join " -> ")
+}
+
+# Check 18: project continuity and discovery surfaces exist.
+$governanceFrontDoors = @(
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION\ACTIVE_SESSION_STATE.json",
+    "IMPLEMENTATION_STATUS.json",
+    "docs\INDEX.md",
+    "docs\catalog\MODULE_REGISTRY.json",
+    "docs\catalog\MODULE_CATALOG.md"
+)
+$missingFrontDoors = @($governanceFrontDoors | Where-Object {
+    -not (Test-Path -LiteralPath (Join-Path $projectResolved $_) -PathType Leaf)
+})
+Add-Check "Project continuity and catalog front doors exist" ($missingFrontDoors.Count -eq 0) $(if ($missingFrontDoors.Count -eq 0) { "All required front doors present" } else { "Missing: $($missingFrontDoors -join ', ')" })
+
+# Check 19: active state is valid and points to an existing handoff.
+$activeStatePath = Join-Path $projectResolved "CVF_SESSION\ACTIVE_SESSION_STATE.json"
+$activeStateValid = $false
+$activeHandoffDetail = "Active state unavailable"
+if (Test-Path -LiteralPath $activeStatePath -PathType Leaf) {
+    try {
+        $projectState = Get-Content -LiteralPath $activeStatePath -Raw -Encoding utf8 | ConvertFrom-Json
+        $stateFields = @("currentMode", "activePhase", "phaseModel", "activeHandoff", "nextAllowedMove", "activeRole", "roleRoute")
+        $missingStateFields = @($stateFields | Where-Object { -not ($projectState.PSObject.Properties.Name -contains $_) })
+        $handoffPath = if ($projectState.activeHandoff) { Join-Path $projectResolved $projectState.activeHandoff } else { "" }
+        $handoffExists = (-not [string]::IsNullOrWhiteSpace($handoffPath)) -and (Test-Path -LiteralPath $handoffPath -PathType Leaf)
+        $activeStateValid = ($missingStateFields.Count -eq 0) -and $handoffExists
+        $activeHandoffDetail = if ($activeStateValid) { $projectState.activeHandoff } else { "Missing fields: $($missingStateFields -join ', '); handoff exists: $handoffExists" }
+    }
+    catch {
+        $activeHandoffDetail = "JSON parse or pointer error: $_"
+    }
+}
+Add-Check "Active session state resolves its handoff" $activeStateValid $activeHandoffDetail
+
+# Check 20: machine-readable implementation and catalog files parse as JSON.
+$jsonTruthFiles = @("IMPLEMENTATION_STATUS.json", "docs\catalog\MODULE_REGISTRY.json")
+$invalidTruthFiles = @()
+foreach ($relativeJson in $jsonTruthFiles) {
+    try {
+        $null = Get-Content -LiteralPath (Join-Path $projectResolved $relativeJson) -Raw -Encoding utf8 | ConvertFrom-Json
+    }
+    catch {
+        $invalidTruthFiles += $relativeJson
+    }
+}
+Add-Check "Implementation status and module registry are valid JSON" ($invalidTruthFiles.Count -eq 0) $(if ($invalidTruthFiles.Count -eq 0) { "Both JSON truth surfaces parse" } else { "Invalid: $($invalidTruthFiles -join ', ')" })
+
+# Check 21: downstream agent contract is provider-neutral and role-aware.
+$agentsContractValid = $false
+if (Test-Path -LiteralPath $agentsPath -PathType Leaf) {
+    $agentsText = Get-Content -LiteralPath $agentsPath -Raw -Encoding utf8
+    $requiredRoleTokens = @("ORCHESTRATOR", "SPEC_AUTHOR", "WORK_ORDER_AUTHOR", "IMPLEMENTATION_WORKER", "REVIEWER", "CLOSER", "SESSION_SYNC_STEWARD")
+    $missingRoleTokens = @($requiredRoleTokens | Where-Object { $agentsText -notmatch [regex]::Escape($_) })
+    $agentsContractValid = ($missingRoleTokens.Count -eq 0) -and ($agentsText -match "INTAKE -> DESIGN -> SPEC -> WORK_ORDER -> BUILD -> REVIEW -> FREEZE")
+    $agentsContractDetail = if ($agentsContractValid) { "Seven-step chain and provider-neutral roles present" } else { "Missing role tokens: $($missingRoleTokens -join ', ')" }
+    Add-Check "AGENTS contract defines roles and seven steps" $agentsContractValid $agentsContractDetail
+}
+
+# Portable manifests may pin only commits that are reachable from public origin/main.
+if ($coreReachable -and $manifestObj.cvfCoreCommit) {
+    git -C $cvfCorePath merge-base --is-ancestor $manifestObj.cvfCoreCommit origin/main 2>$null
+    $pinReachable = ($LASTEXITCODE -eq 0)
+    Add-Check "Pinned CVF core commit is public-remote reachable" $pinReachable $(if ($pinReachable) { [string]$manifestObj.cvfCoreCommit } else { "BLOCKED_CORE_COMMIT_NOT_REMOTE_REACHABLE: $($manifestObj.cvfCoreCommit)" })
+}
+
+# Check 22: startup and tranche transitions require fresh continuity reads.
+$continuityRehydrationValid = $false
+$continuityRehydrationDetail = "AGENTS.md unavailable"
+if (Test-Path -LiteralPath $agentsPath -PathType Leaf) {
+    if (-not $agentsText) {
+        $agentsText = Get-Content -LiteralPath $agentsPath -Raw -Encoding utf8
+    }
+    $rehydrationTokens = @(
+        "Mandatory Continuity Rehydration",
+        "new or resumed chat/session",
+        "new tranche or work order",
+        "Do not rely on chat history",
+        "BLOCKED_CONTINUITY_DRIFT"
+    )
+    $missingRehydrationTokens = @($rehydrationTokens | Where-Object {
+        $agentsText -notmatch [regex]::Escape($_)
+    })
+    $continuityRehydrationValid = ($missingRehydrationTokens.Count -eq 0)
+    $continuityRehydrationDetail = if ($continuityRehydrationValid) {
+        "Session/tranche continuity rehydration contract present"
+    }
+    else {
+        "Missing contract tokens: $($missingRehydrationTokens -join ', ')"
+    }
+}
+Add-Check "Session and tranche continuity rehydration required" $continuityRehydrationValid $continuityRehydrationDetail
+
+# Check 23: governed downstream catalog. BSL-R3: a project is "governed" if
+# ITS MANIFEST carries the catalogKitVersion marker OR ANY governed-catalog
+# surface exists on disk. A governed project must be COMPLETE - a partially
+# deleted/damaged kit is a blocking FAIL, never a silent fallback to legacy
+# compatibility. Only a project with NO governed marker and NO governed
+# surface at all gets the bounded legacy-compatibility warning below.
+$catalogManagerPath = Join-Path $projectResolved "scripts\manage_cvf_downstream_catalog.ps1"
+$governedCatalogSurfaces = @(
+    "scripts\manage_cvf_downstream_catalog.ps1",
+    "scripts\lib\downstream_catalog\CvfDownstreamCatalogLib.ps1",
+    "docs\catalog\ARTIFACT_REGISTRY.json",
+    "docs\catalog\schemas\ARTIFACT_REGISTRY.schema.json",
+    "docs\catalog\schemas\MODULE_REGISTRY.schema.json"
+)
+$manifestHasCatalogMarker = ($null -ne $manifestObj) -and ($manifestObj.PSObject.Properties.Name -contains "catalogKitVersion")
+$presentGovernedSurfaces = @($governedCatalogSurfaces | Where-Object { Test-Path -LiteralPath (Join-Path $projectResolved $_) -PathType Leaf })
+$anyGovernedSignal = $manifestHasCatalogMarker -or ($presentGovernedSurfaces.Count -gt 0)
+
+if ($anyGovernedSignal) {
+    $missingGovernedSurfaces = @($governedCatalogSurfaces | Where-Object { -not (Test-Path -LiteralPath (Join-Path $projectResolved $_) -PathType Leaf) })
+    if ($missingGovernedSurfaces.Count -gt 0) {
+        Add-Check "Governed downstream catalog kit is complete" $false "DAMAGED_GOVERNED_KIT: a governed marker or surface is present but the kit is incomplete. Missing: $($missingGovernedSurfaces -join ', ')"
+    }
+    else {
+        $catalogOutput = & powershell -ExecutionPolicy Bypass -File $catalogManagerPath -Check -ProjectPath $projectResolved 2>&1
+        $catalogOk = ($LASTEXITCODE -eq 0)
+        $catalogDetail = if ($catalogOk) { "manage_cvf_downstream_catalog.ps1 -Check passed" } else { ($catalogOutput | Out-String).Trim() }
+        Add-Check "Governed downstream catalog validates (--check)" $catalogOk $catalogDetail
+    }
+}
+else {
+    Add-Warn "Governed downstream catalog kit not present" "LEGACY_PROJECT: no governed-catalog manifest marker or surface found (manifest, manager, registry, or schemas); skipping governed catalog check for bounded legacy compatibility."
 }
 
 # Print results table

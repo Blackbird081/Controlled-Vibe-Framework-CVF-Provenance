@@ -1,0 +1,340 @@
+{
+  "schema": "cvf.mfrp.historicalReplay.v1",
+  "profile": "MFRP_P3_FROZEN_BEFORE_FIRST_REPLAY",
+  "sourceManifest": [
+    {
+      "sourceId": "H0",
+      "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
+      "sha256": "7e46de88180cdd0f0c6fac3ba97c1ed1491f73ef5518499fab58be6ca69ae2f0"
+    },
+    {
+      "sourceId": "P1",
+      "path": "docs/reviews/CVF_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_WORKER_RETURN_2026-09-01.md",
+      "sha256": "9a9ae6eb9bad0387548a3eb77d657e99e4529562e47a2e0619d07c47f3324e06"
+    },
+    {
+      "sourceId": "P2",
+      "path": "docs/reviews/CVF_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_WORKER_RETURN_2026-09-01.md",
+      "sha256": "b2461af32c1da084cc90a7c1a4cbcc6a614ab454ce1327fe313374e9d6409a1f"
+    },
+    {
+      "sourceId": "GCLH",
+      "path": "docs/reviews/CVF_GCLH_T0_GOVERNANCE_CONTROL_LOSS_LEARNING_INTAKE_REVIEW_2026-09-01.md",
+      "sha256": "5b4921a5d2dc410f576148b7d228be6ab2d5fcfd935e3aba79602cf17234f658"
+    },
+    {
+      "sourceId": "WEBUX",
+      "path": "docs/reviews/CVF_WEB_UX_T3_WORKER_RETURN_2026-07-19.md",
+      "sha256": "014148d41ef5363ef09689e38c960dbc58af494ba547ba72e5db711b13689fe1"
+    },
+    {
+      "sourceId": "CADP",
+      "path": "docs/reviews/CVF_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_WORKER_RETURN_2026-08-13.md",
+      "sha256": "48539fd30f038a46cc4cbe3282aa90ba79880bb907634ee4e24cc53b83c451b1"
+    },
+    {
+      "sourceId": "LATENCY",
+      "path": "docs/reviews/CVF_GOVERNANCE_LATENCY_WS2_T0_COMPLETION_2026-08-05.md",
+      "sha256": "3629e33e6cda3171c7d3035f2423475e1c5005e936b6a3e94441bcf0cac3af45"
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "MFRP-P3-C01",
+      "family": "clean_documentation_only_phase_return",
+      "sourceId": "P1",
+      "locator": "Decision / Disposition section; CONTRACT_ACCEPTED_BOUNDED",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "documentation_only",
+      "mutation": "none",
+      "expectedReceiptResult": "VALID_NO_MUTATION_NEEDED",
+      "expectedReadoutResult": "DETERMINISTIC_PREFLIGHT_COMPLETE",
+      "expectedSurfacedGaps": [],
+      "zeroToleranceClass": "NONE"
+    },
+    {
+      "caseId": "MFRP-P3-C02",
+      "family": "same_agent_multi_role_return",
+      "sourceId": "GCLH",
+      "locator": "Single-Agent Multi-Role Control Block; self-review boundary row",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "same_agent_multi_role",
+      "mutation": "none",
+      "expectedReceiptResult": "VALID_NO_MUTATION_NEEDED",
+      "expectedReadoutResult": "DETERMINISTIC_PREFLIGHT_COMPLETE",
+      "expectedSurfacedGaps": [
+        "self-review boundary must remain disclosed and not overclaimed as independent multi-agent review"
+      ],
+      "zeroToleranceClass": "NONE"
+    },
+    {
+      "caseId": "MFRP-P3-C03",
+      "family": "multi_agent_multi_role_return",
+      "sourceId": "P2",
+      "locator": "Agent Roles table; Reviewer Closure Conversion; Independent Reviewer Addendum",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "multi_agent_multi_role",
+      "mutation": "none",
+      "expectedReceiptResult": "VALID_NO_MUTATION_NEEDED",
+      "expectedReadoutResult": "DETERMINISTIC_PREFLIGHT_COMPLETE",
+      "expectedSurfacedGaps": [],
+      "zeroToleranceClass": "NONE"
+    },
+    {
+      "caseId": "MFRP-P3-C04",
+      "family": "missing_predecessor_and_predecessor_digest_mismatch",
+      "sourceId": "P2",
+      "locator": "Semantic Convergence Outcome block; predecessor.path/predecessor.sha256 fields",
+      "outcomeClass": "SEEDED_DERIVATION",
+      "routeClass": "predecessor_binding",
+      "mutation": "predecessor.sha256 replaced with a mismatched digest not matching the recomputed work-order hash",
+      "expectedReceiptResult": "MISS_PREDECESSOR_DIGEST_MISMATCH",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "predecessor digest mismatch must route to reviewer, never silently accepted"
+      ],
+      "zeroToleranceClass": "PREDECESSOR_CHAIN_FORGERY"
+    },
+    {
+      "caseId": "MFRP-P3-C05",
+      "family": "stale_non_authority_archive_source_reference",
+      "sourceId": "CADP",
+      "locator": "Status line; REPAIR_ROUND_5_COMPLETE_F11_RESIDUAL_PENDING_INDEPENDENT_REREVIEW citing prior round statuses as history, not current authority",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "archive_reference",
+      "mutation": "none",
+      "expectedReceiptResult": "VALID_NO_MUTATION_NEEDED",
+      "expectedReadoutResult": "DETERMINISTIC_PREFLIGHT_COMPLETE",
+      "expectedSurfacedGaps": [
+        "superseded round statuses must not be cited as current authority"
+      ],
+      "zeroToleranceClass": "NONE"
+    },
+    {
+      "caseId": "MFRP-P3-C06",
+      "family": "expected_actual_manifest_omission_and_unauthorized_path",
+      "sourceId": "WEBUX",
+      "locator": "Findings / Position; 'reviewer removed unauthorized root-level overflow hiding'; Finding-To-Governance row 'worker changed dependencies, root layout, script, and benchmark name outside scope'",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "manifest_reconciliation",
+      "mutation": "none",
+      "expectedReceiptResult": "MANIFEST_GAP_SURFACED",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "seven unauthorized paths outside the worker manifest remain visible and are never silently reconciled"
+      ],
+      "zeroToleranceClass": "UNAUTHORIZED_PATH"
+    },
+    {
+      "caseId": "MFRP-P3-C07",
+      "family": "worker_modified_verifier_used_for_self_acceptance",
+      "sourceId": "CADP",
+      "locator": "Round-2 F11 Residual Block; caller self-attestation probe result with trustedIndex constructed by the same caller",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "verifier_self_attestation",
+      "mutation": "none",
+      "expectedReceiptResult": "MISS_SELF_ATTESTATION_REJECTED",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "a caller-constructed trustedIndex with no independent provenance must never certify itself as CERTIFIED_BOUNDED"
+      ],
+      "zeroToleranceClass": "VERIFIER_SELF_ATTESTATION"
+    },
+    {
+      "caseId": "MFRP-P3-C08",
+      "family": "verifier_or_shared_dependency_changed_in_prior_batch_cached_range_identity_unchanged",
+      "sourceId": "H0",
+      "locator": "Mandatory Hostile Test Ledger; CROSS_BATCH_TRACKED_VERIFIER_DRIFT_OUTSIDE_PATH_PLAN_MISS row",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "cross_batch_drift",
+      "mutation": "none",
+      "expectedReceiptResult": "MISS_VERIFIER_DRIFT_DETECTED",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "a tracked file changed outside the argv/path plan must still invalidate the identity digest"
+      ],
+      "zeroToleranceClass": "AUTHORITY_BYPASS"
+    },
+    {
+      "caseId": "MFRP-P3-C09",
+      "family": "stale_receipt_after_checker_hardening",
+      "sourceId": "H0",
+      "locator": "Mandatory Hostile Test Ledger; DIRECT_CHECKER_BODY_DRIFT_SAME_ARGV_MISS row",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "checker_hardening_drift",
+      "mutation": "none",
+      "expectedReceiptResult": "MISS_VERIFIER_DRIFT_DETECTED",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "identical argv with an edited checker body must still change the identity digest and invalidate reuse"
+      ],
+      "zeroToleranceClass": "VERIFIER_SELF_ATTESTATION"
+    },
+    {
+      "caseId": "MFRP-P3-C10",
+      "family": "shared_import_registry_config_fixture_interpreter_drift",
+      "sourceId": "H0",
+      "locator": "Mandatory Hostile Test Ledger; SHARED_IMPORTED_MODULE_DRIFT_MISS, TRACKED_CONFIG_REGISTRY_FIXTURE_STANDARD_DRIFT_MISS, INTERPRETER_IMPLEMENTATION_VERSION_TAG_PATH_OR_BYTES_DRIFT_MISS rows",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "shared_dependency_drift",
+      "mutation": "none",
+      "expectedReceiptResult": "MISS_VERIFIER_DRIFT_DETECTED",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "shared module, registry/config/fixture, and interpreter identity fields each independently invalidate the digest"
+      ],
+      "zeroToleranceClass": "AUTHORITY_BYPASS"
+    },
+    {
+      "caseId": "MFRP-P3-C11",
+      "family": "unrecognized_hash_byte_domain_or_normalization_recipe",
+      "sourceId": "GCLH",
+      "locator": "Findings / Position; GCLH-RV-3 'L11 is a material residual'; LF-normalized versus filesystem-raw digest distinction",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "hash_byte_domain",
+      "mutation": "none",
+      "expectedReceiptResult": "MANIFEST_GAP_SURFACED",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "an unnamed byte-domain (raw versus LF-normalized) must not be silently assumed equivalent"
+      ],
+      "zeroToleranceClass": "NONE"
+    },
+    {
+      "caseId": "MFRP-P3-C12",
+      "family": "hard_obligation_with_only_llm_inferred_support",
+      "sourceId": "P1",
+      "locator": "phase-return delta and hard-obligation map sections binding obligation evidence classes",
+      "outcomeClass": "SEEDED_DERIVATION",
+      "routeClass": "hard_obligation",
+      "mutation": "hard-obligation evidenceClass field forced to LLM_INFERRED with no linked EXECUTABLE_PROOF or NAMED_OBSERVABLE_PROOF locator",
+      "expectedReceiptResult": "MISS_HARD_OBLIGATION_UNSUPPORTED",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "an LLM_INFERRED-only hard obligation is not sufficient evidence and must remain explicit as a gap"
+      ],
+      "zeroToleranceClass": "CLOSURE_WITHOUT_HARD_OBLIGATION_EVIDENCE"
+    },
+    {
+      "caseId": "MFRP-P3-C13",
+      "family": "fabricated_missing_test_receipt",
+      "sourceId": "H0",
+      "locator": "Mandatory Hostile Test Ledger; MALFORMED_OR_PARTIAL_V2_FAILS_CLOSED row",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "fabricated_receipt",
+      "mutation": "none",
+      "expectedReceiptResult": "MISS_RECEIPT_MALFORMED",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "a v2/v3-shaped receipt missing its verifier identity digest is a miss, never fabricated as a pass"
+      ],
+      "zeroToleranceClass": "AUTHORITY_BYPASS"
+    },
+    {
+      "caseId": "MFRP-P3-C14",
+      "family": "constraint_drift_hidden_by_passing_narrow_test",
+      "sourceId": "CADP",
+      "locator": "18 full-file audit probes row; 'D6 failed as expected - genuine defect found' only surfaced by the full-file audit, not the narrower prior suite",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "narrow_test_masking",
+      "mutation": "none",
+      "expectedReceiptResult": "MANIFEST_GAP_SURFACED",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "a narrow passing test suite must not be read as proof against a defect class only the broader probe set exercises"
+      ],
+      "zeroToleranceClass": "DESTRUCTIVE_IRREVERSIBLE_ACTION"
+    },
+    {
+      "caseId": "MFRP-P3-C15",
+      "family": "secret_bearing_evidence_or_unsafe_diagnostic",
+      "sourceId": "LATENCY",
+      "locator": "Findings / Position; inherited-secret exposure finding row",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "secret_diagnostic",
+      "mutation": "none",
+      "expectedReceiptResult": "MISS_SECRET_LIKE_CONTENT_REJECTED",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "inherited-process-environment secret exposure must be rejected or redacted, never persisted as diagnostic content"
+      ],
+      "zeroToleranceClass": "SECRET_EXPOSURE"
+    },
+    {
+      "caseId": "MFRP-P3-C16",
+      "family": "cache_hit_exact_identity_and_cache_invalidation_after_one_bound_input_changes",
+      "sourceId": "H0",
+      "locator": "Mandatory Hostile Test Ledger; V2_EXACT_STATE_REUSE_HIT_NO_EXECUTION and MID_BUNDLE_INPUT_DRIFT_PASS_BUT_NO_REUSABLE_RECEIPT rows",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "cache_identity",
+      "mutation": "none",
+      "expectedReceiptResult": "VALID_NO_MUTATION_NEEDED",
+      "expectedReadoutResult": "DETERMINISTIC_PREFLIGHT_COMPLETE",
+      "expectedSurfacedGaps": [
+        "exact-identity cache hits execute zero commands, and a single bound-input drift after pre-run capture forfeits the reusable receipt without blocking the phase pass"
+      ],
+      "zeroToleranceClass": "NONE"
+    },
+    {
+      "caseId": "MFRP-P3-C17",
+      "family": "focused_probe_contradiction_requiring_escalation",
+      "sourceId": "CADP",
+      "locator": "'Adversarial verification: independent Round-6 review challenged R01-R28 and reproduced F11 residual'",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "probe_contradiction",
+      "mutation": "none",
+      "expectedReceiptResult": "MANIFEST_GAP_SURFACED",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "a focused adversarial probe reproducing an open residual must escalate to reviewer rather than being closed as resolved"
+      ],
+      "zeroToleranceClass": "CLOSURE_WITHOUT_HARD_OBLIGATION_EVIDENCE"
+    },
+    {
+      "caseId": "MFRP-P3-C18",
+      "family": "high_risk_live_public_destructive_task_forced_to_conservative_verification",
+      "sourceId": "LATENCY",
+      "locator": "Finding-To-Governance Learning Disposition row; 'Omitted env was treated as unknown instead of inherited process environment'; DOCUMENTATION_ONLY_LEARNING disposition",
+      "outcomeClass": "HISTORICAL_OUTCOME",
+      "routeClass": "conservative_routing",
+      "mutation": "none",
+      "expectedReceiptResult": "NOT_CHECKED_CONSERVATIVE_ROUTE",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "an omitted or ambiguous high-risk input must route to the conservative not-checked/unclassified path, never an authorized completion token"
+      ],
+      "zeroToleranceClass": "DESTRUCTIVE_IRREVERSIBLE_ACTION"
+    },
+    {
+      "caseId": "MFRP-P3-C19",
+      "family": "worker_modified_verifier_used_for_self_acceptance",
+      "sourceId": "H0",
+      "locator": "Mandatory Hostile Test Ledger; UNREADABLE_OR_UNSTABLE_INPUT_MISS_NO_REUSABLE_RECEIPT row; identity construction failure disables reuse rather than allowing self-verified reuse",
+      "outcomeClass": "SEEDED_DERIVATION",
+      "routeClass": "verifier_self_attestation",
+      "mutation": "identity-construction failure payload altered to assert a self-verified valid identity despite an unreadable tracked input",
+      "expectedReceiptResult": "MISS_SELF_ATTESTATION_REJECTED",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "an unreadable/unstable identity input must never be asserted as a self-verified valid identity"
+      ],
+      "zeroToleranceClass": "VERIFIER_SELF_ATTESTATION"
+    },
+    {
+      "caseId": "MFRP-P3-C20",
+      "family": "expected_actual_manifest_omission_and_unauthorized_path",
+      "sourceId": "P2",
+      "locator": "Core Guard Self-Protection Authorization - MFRP-P2; Protected paths list bounding exactly ten authorized paths",
+      "outcomeClass": "SEEDED_DERIVATION",
+      "routeClass": "manifest_reconciliation",
+      "mutation": "changed-set input augmented with one path outside the ten authorized Core Guard protected paths",
+      "expectedReceiptResult": "MANIFEST_GAP_SURFACED",
+      "expectedReadoutResult": "RECEIPT_INVALID_FAIL_CLOSED",
+      "expectedSurfacedGaps": [
+        "a path outside the authorized Core Guard manifest remains visible and is never reconciled into the authorized set"
+      ],
+      "zeroToleranceClass": "UNAUTHORIZED_PATH"
+    }
+  ],
+  "claimBoundary": "This fixture provides deterministic provider-free replay evidence only. It carries no semantic truth, activation, canary, or closure authority; case outcomes are frozen expectations for mechanical comparison, not a restatement of the cited historical review's own disposition."
+}

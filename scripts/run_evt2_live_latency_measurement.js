@@ -96,7 +96,7 @@ function buildPayload(index) {
       mustPreserve: 'Mention scope, acceptance checks, and owner.',
     },
     provider: 'alibaba',
-    model: 'qwen-turbo',
+    model: 'qwen-flash',
     mode: 'governance',
     cvfPhase: 'INTAKE',
     cvfRiskLevel: 'R1',

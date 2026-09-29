@@ -1,0 +1,33 @@
+{
+  "stableId": "cvf.asc.module.web_agent_platform.v1",
+  "entityType": "MODULE",
+  "name": "Web Agent Platform Owner",
+  "authorityClass": "ACTIVE_GOVERNED_STANDARD",
+  "maturity": "ACTIVE",
+  "ownerPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/"
+  ],
+  "planeMembership": [
+    "cvf.asc.plane.evidence_to_operator_surface.v1"
+  ],
+  "inboundEdgeIds": [
+    "cvf.asc.edge.qm_service_token_replay_consumers.v1"
+  ],
+  "outboundEdgeIds": [],
+  "citations": [
+    {
+      "path": "docs/reference/CVF_MODULE_INVENTORY.md",
+      "lineOrSection": "cited row",
+      "evidenceRole": "module owner/status evidence"
+    }
+  ],
+  "claimBoundary": "Current main Web UI line; hosts the confirmed governance dashboard route and the bounded 5-job-type Web Operations registry.",
+  "freshnessInputs": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/"
+  ],
+  "lastReviewed": {
+    "date": "2026-09-15",
+    "acceptedArtifact": "docs/reviews/CVF_THREE_REPO_PILOT_FINAL_ASSESSMENT_AND_RECOVERY_2026-09-15.md"
+  },
+  "priorDisposition": ""
+}

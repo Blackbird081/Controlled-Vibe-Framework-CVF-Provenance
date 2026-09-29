@@ -1,0 +1,128 @@
+[
+  {
+    "scenario": "preferences open/select violet/close",
+    "route": "/home",
+    "viewport": "1440x900",
+    "orderedKeys": [
+      "Tab",
+      "Enter",
+      "Tab",
+      "Enter"
+    ],
+    "targetAccessibleName": "violet",
+    "targetTagRole": "button",
+    "stableSelector": "button[aria-label=\"violet\"]",
+    "focusedBefore": "C\u00e0i \u0111\u1eb7t",
+    "beforeState": "panel-closed",
+    "activationKey": "Enter",
+    "focusedAfter": "violet",
+    "afterState": "panel-open_violet-selected",
+    "resultAnchor": "violet",
+    "consoleDelta": [],
+    "terminalVerdict": "PASS"
+  },
+  {
+    "scenario": "767px drawer open/focus close/close",
+    "route": "/home",
+    "viewport": "767x1024",
+    "orderedKeys": [
+      "Enter",
+      "Tab",
+      "Enter"
+    ],
+    "targetAccessibleName": "Close sidebar",
+    "targetTagRole": "button",
+    "stableSelector": "button[aria-label=\"Close sidebar\"]",
+    "focusedBefore": "Open sidebar",
+    "beforeState": "CLOSED_translate-x-full",
+    "activationKey": "Enter",
+    "focusedAfter": "Close sidebar",
+    "afterState": "CLOSED_translate-x-full",
+    "resultAnchor": "sidebar transition: CLOSED_translate-x-full -> OPEN_translate-x-0 -> CLOSED_translate-x-full",
+    "consoleDelta": [],
+    "terminalVerdict": "PASS"
+  },
+  {
+    "scenario": "Home Tao PRD action to form",
+    "route": "/home",
+    "viewport": "1440x900",
+    "orderedKeys": [
+      "Tab",
+      "Enter"
+    ],
+    "targetAccessibleName": "T\u1ea1o PRDBi\u1ebfn \u00fd t\u01b0\u1edfng s\u1ea3n ph\u1ea9m th\u00e0nh brief y\u00eau c\u1ea7u c\u00f3 governance.Xu\u1ea5t g\u00f3iC\u00f3 bi\u00ean nh\u1eadn",
+    "targetTagRole": "button",
+    "stableSelector": "button:has-text(\"T\u1ea1o PRD\")",
+    "focusedBefore": "T\u1ea1o PRDBi\u1ebfn \u00fd t\u01b0\u1edfng s\u1ea3n ph\u1ea9m th\u00e0nh brief y\u00eau c\u1ea7u c\u00f3 governance.Xu\u1ea5t g\u00f3iC\u00f3 bi\u00ean nh\u1eadn",
+    "beforeState": "quick_actions_visible",
+    "activationKey": "Enter",
+    "focusedAfter": "form-field",
+    "afterState": "form_visible",
+    "resultAnchor": "Ch\u00e0o m\u1eebng \u0111\u1ebfn CVF",
+    "consoleDelta": [],
+    "terminalVerdict": "PASS"
+  },
+  {
+    "scenario": "Workspace advanced details open/close",
+    "route": "/workspace",
+    "viewport": "1440x900",
+    "orderedKeys": [
+      "Tab",
+      "Enter",
+      "Enter"
+    ],
+    "targetAccessibleName": "Chi ti\u1ebft k\u1ef9 thu\u1eadt n\u00e2ng cao (mode, handoff, dispatch, lanes, ",
+    "targetTagRole": "summary",
+    "stableSelector": "details[data-testid=\"advanced-detail\"] > summary",
+    "focusedBefore": "Chi ti\u1ebft k\u1ef9 thu\u1eadt n\u00e2ng cao (mode, handoff, dispatch, lanes, ",
+    "beforeState": "details.open=false",
+    "activationKey": "Enter",
+    "focusedAfter": "Chi ti\u1ebft k\u1ef9 thu\u1eadt n\u00e2ng cao (mode, handoff, dispatch, lanes, ",
+    "afterState": "details.open=true",
+    "resultAnchor": "details.open toggled false -> true",
+    "consoleDelta": [],
+    "terminalVerdict": "PASS"
+  },
+  {
+    "scenario": "Knowledge Bien soan action to result or terminal local diagnostic",
+    "route": "/governance/knowledge",
+    "viewport": "1440x900",
+    "orderedKeys": [
+      "Tab (textarea fill)",
+      "Tab",
+      "Enter"
+    ],
+    "targetAccessibleName": "1. Bi\u00ean so\u1ea1n v\u00e0 duy\u1ec7t",
+    "targetTagRole": "button",
+    "stableSelector": "button:has-text(\"Bi\u00ean so\u1ea1n\")",
+    "focusedBefore": "1. Bi\u00ean so\u1ea1n v\u00e0 duy\u1ec7t",
+    "beforeState": "ready",
+    "activationKey": "Enter",
+    "focusedAfter": "1. Bi\u00ean so\u1ea1n v\u00e0 duy\u1ec7t",
+    "afterState": "compile_attempted",
+    "resultAnchor": "compile_attempted",
+    "consoleDelta": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      },
+      {
+        "type": "log",
+        "text": "[Fast Refresh] done in 401ms"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      }
+    ],
+    "terminalVerdict": "PASS"
+  }
+]

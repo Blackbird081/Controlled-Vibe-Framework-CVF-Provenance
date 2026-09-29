@@ -1,0 +1,32 @@
+{
+  "proofClass": "CONTRACT_TO_RUNTIME_INVOCATION",
+  "useCaseId": "UC-03-CONTRACT-TO-RUNTIME-REPRESENTATIVE-PATH",
+  "selectedControlId": "GC-011",
+  "callerChain": "CvfSdk -> PipelineOrchestrator",
+  "proofRunInvocationCount": 1,
+  "retryCount": 0,
+  "providerCallCount": 0,
+  "caseDenominator": 2,
+  "casePassCount": 2,
+  "overallResult": "PASS",
+  "durationSeconds": 2.627,
+  "cases": [
+    {
+      "name": "tests/system.chain.uc03.contract.runtime.proof.test.ts > UC-03 Contract-To-Runtime Representative Path",
+      "result": "PASS"
+    },
+    {
+      "name": "tests/system.chain.uc03.contract.runtime.proof.test.ts > UC-03 Contract-To-Runtime Representative Path",
+      "result": "PASS"
+    }
+  ],
+  "command": [
+    "npx",
+    "vitest",
+    "run",
+    "--reporter=verbose",
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL\\tests\\system.chain.uc03.contract.runtime.proof.test.ts"
+  ],
+  "commandSha256": "e2673e7e31d9e0462ff52a7ebe4e8985b51d82df530226058dfc27c85e0fb946",
+  "workdir": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL"
+}

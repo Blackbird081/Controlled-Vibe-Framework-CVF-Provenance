@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1752,
+  "stateKey": "systemChainLiveProofProcessEstablished20260714",
+  "value": {
+    "status": "T0_PROCESS_ESTABLISHED",
+    "materialCommit": "e4a585b8c",
+    "standard": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_AND_LEARNING_LOOP_STANDARD.md",
+    "coverageLedger": "docs/reference/system_chain/CVF_SYSTEM_CHAIN_LIVE_PROOF_COVERAGE.json",
+    "roadmap": "docs/roadmaps/CVF_SYSTEM_CHAIN_LIVE_PROOF_USE_CASE_ROADMAP_2026-07-14.md",
+    "sot3UseCase": "UC-01-SOT3-BOUNDED-ACTIVATION",
+    "nextUseCase": "UC-02-RUNTIME-TO-ENFORCEMENT-CURRENT-RUN",
+    "nextAllowedMove": "author fresh UC-02 GC-018 and source-verified work order only",
+    "claimBoundary": "Process, classification, and checker enforcement are established; UC-02 through UC-04 are not dispatched or executed."
+  }
+}

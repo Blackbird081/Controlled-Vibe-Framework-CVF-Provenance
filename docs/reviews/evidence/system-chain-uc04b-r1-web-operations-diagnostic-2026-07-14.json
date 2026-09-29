@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "workOrderId": "SCLP-UC04B-R1",
+  "result": "BLOCKED_WITH_REASON",
+  "stage": "operations_page_auth_projection",
+  "failureClass": "RUNTIME_AUTH_CONTEXT_SPLIT",
+  "retryableWithinPacket": false,
+  "userAction": "Reviewer should open a separate source-verified repair packet for the boundary between NextAuth session endpoint state and verifySessionCookie/auth() state used by application API routes.",
+  "provider": null,
+  "model": null,
+  "httpStatus": null,
+  "latencyMs": 36100,
+  "receiptPath": "docs/reviews/evidence/system-chain-uc04b-r1-web-operations-proof-2026-07-14.json",
+  "traceDisposition": "Playwright runtime trace retained only as local diagnostic input and not staged",
+  "safeMessage": "Direct NextAuth authentication returned a developer session, but the real Operations page remained anonymous_local because its application auth lookup did not observe that session. The run stopped before any Web submission.",
+  "evidence": {
+    "directSessionEndpoint": "PASS_ROLE_DEVELOPER",
+    "operationsPageObservedRole": "anonymous_local",
+    "operationsPageUser": "Local browser",
+    "newUc04bAuditEvents": 0,
+    "negativeCase": "NOT_RUN_SERIAL_AFTER_POSITIVE_FAILURE"
+  },
+  "excludedDiagnoses": [
+    "missing_env_local",
+    "missing_nextauth_secret",
+    "global_vitest_failure",
+    "provider_failure"
+  ],
+  "rootCauseBoundary": "The failing auth propagation boundary is proven; the internal implementation cause is not yet proven and must be source-verified in a separate repair packet.",
+  "playwrightInvocationCount": 1,
+  "webSubmissionCount": 0,
+  "checkerExecutionCount": 0,
+  "retryCount": 0,
+  "providerCallCount": 0,
+  "claimBoundary": "Diagnostic only; it does not authorize a rerun or prove a specific repair."
+}

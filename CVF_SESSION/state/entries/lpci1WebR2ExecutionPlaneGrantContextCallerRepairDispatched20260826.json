@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2372,
+  "stateKey": "lpci1WebR2ExecutionPlaneGrantContextCallerRepairDispatched20260826",
+  "value": {
+    "status": "DISPATCHED_PENDING_WORKER_RETURN",
+    "roadmap": "docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md",
+    "dispatchCommit": "56a63b57d",
+    "baseline": "docs/baselines/CVF_GC018_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_2026-08-26.md",
+    "workerReturn": "docs/reviews/CVF_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_WORKER_RETURN_2026-08-26.md",
+    "gateEvidence": "Pre-dispatch 79/79 and material pre-commit 87/87 PASS.",
+    "workerBoundary": "WORKER_MUST_NOT_COMMIT; offline fake-only proof; no provider/live/network/credential/store call.",
+    "claimBoundary": "R2 repairs only the two Execution Plane grant-context caller sites and runner preflight. Public sync, push, Netlify deploy, hosted smoke and unrelated successors remain parked."
+  }
+}

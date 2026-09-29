@@ -1,0 +1,21 @@
+{
+  "stateOrder": 2700,
+  "stateKey": "gclhMfrpP0rReconciledH0WorkOrderRequired20260901",
+  "value": {
+    "status": "REVISE_APPLIED_H0_WORK_ORDER_REQUIRED",
+    "absorptionCommit": "2b501582d2bba64993b4266713cad641c24c3eed",
+    "masterRoadmapCorrectionCommit": "7e422548da0385b55868ba43f93d2beac163795e",
+    "roadmapPath": "docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md",
+    "roadmapSha256": "b93ae54a6fb9991cd1515c869d09de342468ff894bb4fbfad1a62da35f8a8a1d",
+    "critiquePath": "docs/reviews/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_CLAUDE_CRITIQUE_2026-09-01.md",
+    "critiqueOriginalHandbackSha256": "f84b3cd04d3c19db6e627df640419c464064daf32a97117f8baa189f5b30affb",
+    "critiqueGovernedSha256": "9ec239590abe873b4ee82b8284609f98ab69a2d37c2e005757c289d50c234586",
+    "reconciliationPath": "docs/reviews/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_EXTERNAL_FINDING_ABSORPTION_AND_CVF_RECONCILIATION_2026-09-01.md",
+    "reconciliationSha256": "2335d80c2e6e52077460b4186979dcc007bd1a097b50fdb52fb62e2e0b5ecde0",
+    "masterRoadmapSha256": "c1d0de845ecce86a36fe8bd35be8f371e9466f71f384ba07b8ec7d9333d54716",
+    "acceptedCoreFinding": "Existing autorun receipt command manifest binds argv but not the conservative verifier dependency closure, leaving cross-batch reuse unable to prove which verifier logic ran.",
+    "calibrations": "Bind shared dependencies/configuration/fixtures and interpreter, not only direct checker files; reuse SOT3 canonical mechanics without misusing its TruthReceipt-specific profile label.",
+    "nextAllowedMove": "Author and review MFRP-H0 protected-path work order only; implementation remains unopened.",
+    "claimBoundary": "P0 critique absorption and roadmap revision only; no verifier, schema, hook, runtime or downstream mutation."
+  }
+}

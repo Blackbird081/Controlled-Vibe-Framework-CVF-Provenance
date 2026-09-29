@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "cvf.acel-akoe-p3-independent-probe.v1",
+  "verdict": "PASS_INDEPENDENT_PROBE",
+  "probeInvocationId": "acel-akoe-p3-independent-probe-20260926",
+  "probeExecutorActor": "local-orchestrator-reviewer",
+  "fixture": {
+    "workItemCount": 3,
+    "concurrencyCap": 1,
+    "assemblyVerifierId": "reviewer-assembly-verifier",
+    "negativeVerifierId": "wrong-verifier"
+  },
+  "observations": {
+    "scopePreserved": true,
+    "scheduledBatchCount": 3,
+    "artifactStatus": "INCOMPLETE",
+    "artifactIssues": [
+      "ASSEMBLY_VERIFIER_MISMATCH"
+    ],
+    "proposalDecision": "REJECT_AND_ROLLBACK",
+    "incumbentPreserved": true,
+    "rawEvidencePreserved": true,
+    "persistentKnowledgePreserved": true
+  },
+  "oracleSeparationBasis": "standalone direct-owner calls with a three-artifact cap-one fixture and strict node assertions; no worker runner, Vitest fixture, helper, or assertion code invoked",
+  "workerOracleSha256": "09547e5b32ebaa2b02e40c058de2e621df6472598ee9e2ad6138a95d677fe1a4",
+  "probeScriptSha256": "f56addeb126ec791c30a5278cdabebe4bafd376235973effc84ba19e0ea3c861",
+  "workerReceiptFileSha256": "e374344182cc542f168e3414087889d7e0922a0ba59699ad51a8d32a14331389",
+  "providerCallCount": 0,
+  "claimBoundary": "bounded provider-free Local verification only; no production, provider, live, public, deployment, or successor-tranche claim"
+}

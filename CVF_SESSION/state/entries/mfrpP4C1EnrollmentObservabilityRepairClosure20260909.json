@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2815,
+  "stateKey": "mfrpP4C1EnrollmentObservabilityRepairClosure20260909",
+  "value": "MFRP_P4_C1_ENROLLMENT_OBSERVABILITY_REPAIR is CLOSED_PASS_BOUNDED at c2971bb8c. Material bb7b0ce500d5aaade9be4d14c31af3d3963a509b passed the normal pre-commit chain 88/88; focused proof passed 68 tests; closure reviewer-fast passed 67/67 and closure pre-commit passed 88/88. Journal v2 had 153 visible attempts before this dedicated continuity disclosure, 17 candidates, 17 historical eligible opportunities, 0 collected samples, and no fabricated row. The continuity commit is expected to disclose the closed completion as a trusted parent for the first prospective collection; its ignored runtime result must be observed after commit rather than predicted in tracked state."
+}

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2142,
+  "stateKey": "activeContinuityReadCostT3Dispatch20260811",
+  "value": "ACRC-T3 shift-operations continuity migration is DISPATCH_READY at Core authority commit 4f89c0a29ebf2db0874fa555526e5febd75ae2f5. Fresh source verification proved P4-A1 worker/reviewer stopped at accepted closure ffe1c5b500f2f27f4166ded97423c4fc76354c67 and independent review d56b835d9c72ec706fc3b8d293aaf85a147ecd6f62c20cfa1afc29baed52ef22 with NONE/NONE. Target base is clean b62271d42150da68d4fb80983cd56260ee11cee1. Exact baseline/work-order SHA-256 values are carried by currentAuthority. Worker scope is exact-14, no commit; all product, provider/live, public, push, deployment, production and core-pin work remain parked."
+}

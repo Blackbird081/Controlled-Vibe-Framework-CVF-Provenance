@@ -1,0 +1,2780 @@
+{
+  "schemaVersion": "0.1.0",
+  "batchId": "SOT3-T0",
+  "snapshotDate": "2026-07-12",
+  "evidenceDisposition": "ADVISORY_CORPUS_IDENTITY_VERIFIED",
+  "dispatchDigestDisposition": "DISPATCH_ALGORITHM_UNSPECIFIED_VALUES_NOT_REPRODUCED",
+  "digestFormula": "per-root sha256 over LC_ALL=C-sorted lines of 'sourceRelativePath\nsha256\n'; worker-defined reproducible convention",
+  "roots": [
+    {
+      "rootId": "REFINERY",
+      "sourceRoot": ".private_reference/legacy/CVF_SOT 10.07/CVF_Refinery_Patch",
+      "count": 133,
+      "bytes": 160461,
+      "aggregateDigest": "ea5a3605225b72a576d677e09f1db51734dc25820f34024643673211e4233748"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRoot": ".private_reference/legacy/CVF_SOT 10.07/CVF_Truth_Kernel_Patch",
+      "count": 93,
+      "bytes": 78007,
+      "aggregateDigest": "30ca86b501649d8ee5fa7f44129174e9fbb1fed3518f6c14e0d0ae9fe25bbcb3"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRoot": ".private_reference/legacy/CVF_SOT 10.07/CVF_Truth_Flow_Patch",
+      "count": 79,
+      "bytes": 78380,
+      "aggregateDigest": "a78d7c2d078847eb018a8740fb0e9e75f3dc2362221894d8ea729ff068cd6e78"
+    }
+  ],
+  "fileCount": 305,
+  "totalBytes": 316848,
+  "records": [
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "Architecture.md",
+      "sha256": "ed250d74bf1246a57f15d2bdc0807aa4045d7a0cb59069740bd6c875861b5124",
+      "bytes": 943,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "architecture.md"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/README.md",
+      "sha256": "453e7a14b0755e91556bd4a3c3d8e3288afb1d6d24c4f1d6bd62c3a55472dc16",
+      "bytes": 7459,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/docs/CLAIM_BOUNDARY.md",
+      "sha256": "7a4fd1aba7039ad0d554a7cd1660b9252da009ba1ee264035c4845117afa9e32",
+      "bytes": 633,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/docs/CONTEXT_DISTRIBUTION.md",
+      "sha256": "6eb873f2be669481ad5327a7310663df7b5170e2d89d6aeefa409a4db4755851",
+      "bytes": 483,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "distribut"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/docs/FEEDBACK_LOOP.md",
+      "sha256": "43b129ab75fde4bd557069933d4875ded922e7826c3a3821d2c8bb9b92cdeb1a",
+      "bytes": 429,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "feedback"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/docs/FLOW_PIPELINE.md",
+      "sha256": "4eb72d0a0c82a7367060d66d5013b725062b4614ec5d5f9689438dc11c9d3109",
+      "bytes": 996,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "pipeline"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/docs/FLOW_ROUTING.md",
+      "sha256": "982c0161087ad476f43f497da5b756f5e717f04f16e954a78f546d76441706e0",
+      "bytes": 469,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "routing"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/docs/INFORMATION_DOSE.md",
+      "sha256": "f36551ebe3446719368f89eedc5b7ab90e0991641fa65457eea6c36dc342a961",
+      "bytes": 373,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "dose"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/docs/LIFECYCLE_SPEC.md",
+      "sha256": "b86b89572fc933610c0ae7d6b363b3ca07a89e311702b3a6c3d0652bc4b21da0",
+      "bytes": 632,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "lifecycle"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/docs/MULTI_LEVEL_SOT.md",
+      "sha256": "09c2b6c60fc033204220f5905a1af27e13123e9785ae31020919b337240b692f",
+      "bytes": 607,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/docs/REFINERY_SPEC.md",
+      "sha256": "3147d166cee95ba806a519f943ef03a4341b05c8fb287b789ab9d642df8d4122",
+      "bytes": 655,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/docs/TRUTH_FLOW_DOCTRINE.md",
+      "sha256": "b266c76aa32fa61826153bb54a6688f7d942aaae40d672810779f3cb5eaccecd",
+      "bytes": 1053,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/examples/enterprise/environment_sot.sample.yaml",
+      "sha256": "018b0becb9ede46baf7fc3db98ecd627ffa1d884445514730ab7894f55fb42ec",
+      "bytes": 304,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/examples/enterprise/feedback.sample.yaml",
+      "sha256": "5d4dd9f2b93b6c9eb9e0031290e0773e42750e228d8afea06dc5a802a1890879",
+      "bytes": 365,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "feedback"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/examples/enterprise/internal_sot.sample.yaml",
+      "sha256": "77531f3e43603bf13195153a65b0a3b51298ed33125c7c21708e0f5610784531",
+      "bytes": 270,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/examples/enterprise/project_sot.sample.yaml",
+      "sha256": "8b0bf9e61e3c333c15e062b5b4645ca06b01c79223e9ec0f7ad9a80341330616",
+      "bytes": 363,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/examples/enterprise/routing_policy.sample.yaml",
+      "sha256": "e8ddc874644d390e51ea9cd8dc9c487677f9bb793f047c5cba6e8bef20475c64",
+      "bytes": 307,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "routing"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/examples/generic/intake.sample.yaml",
+      "sha256": "bff9eafd2fc03fca3b00ce9d9cdd982c46c3e34250d45d8416718f3a876fa544",
+      "bytes": 395,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/examples/generic/lifecycle.sample.yaml",
+      "sha256": "3e2969c026c869349943cd457910791405047187a8a66e19fa8da737acfb3360",
+      "bytes": 690,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "lifecycle"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/examples/generic/routing.sample.yaml",
+      "sha256": "65607604c541f1ab9a51d4ad61809e0031fbf8b787c1327c0da84964eb1a83ed",
+      "bytes": 310,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "routing"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/package.json",
+      "sha256": "8ca14837f30395369dd78896d1c4d949c6f4c1feb15c466fbaece22c01f8a27a",
+      "bytes": 499,
+      "extension": "json",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/schemas/distribution.profile.schema.json",
+      "sha256": "79f0d70727af0bc9c57f6c5ae4281475edb7a2e9077248ff1a2af20428ab26df",
+      "bytes": 971,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "distribut"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/schemas/feedback.event.schema.json",
+      "sha256": "f7d35f1e4a8fef2228db811a9889fd575f02610f4cc04c591a453aeee67c363d",
+      "bytes": 1170,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "feedback"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/schemas/intake.record.schema.json",
+      "sha256": "5877ddf1dff9fdf7c3315fac211d954a26748f748a1a91110e386670fd878b3a",
+      "bytes": 1463,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "schema"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/schemas/lifecycle.packet.schema.json",
+      "sha256": "bd711c914c4f81e76f59b768da2dbf93b5dc1c36c06e90a0e2c52d2aed4d6e43",
+      "bytes": 1615,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/schemas/refinery.packet.schema.json",
+      "sha256": "5008bf0a1a360161a6fe06eff0e63ca6c2e509d70fee2b3e9da42dfc0921b224",
+      "bytes": 1299,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/schemas/routing.policy.schema.json",
+      "sha256": "3631fda785e50e02a5c27dd5abd3698be2ba5780f77d4a02fc4b50fc0949bdbb",
+      "bytes": 1585,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "routing"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/adapters/guard-contract-adapter.ts",
+      "sha256": "23d2747f6647f0d50a785c2b021016438cf5f538269c3c1f772b7d12f21f3dde",
+      "bytes": 551,
+      "extension": "ts",
+      "artifactFamily": "guard",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/adapters/phase-governance-adapter.ts",
+      "sha256": "d036bb5f3a13aa530c40468c242dd1e1c5c205c768203bcd8d09ae09fc5e4ae5",
+      "bytes": 639,
+      "extension": "ts",
+      "artifactFamily": "adapter",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/adapters/truth-kernel-adapter.ts",
+      "sha256": "d344870921c3eaeb0757d5be06bd58bdde564debcc2aaccaf92061978d2f484b",
+      "bytes": 844,
+      "extension": "ts",
+      "artifactFamily": "adapter",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/agent-profile.ts",
+      "sha256": "00666780fdbffbefe5077002f25328cda141905d1910c7ef1cf3c29ab69aab56",
+      "bytes": 717,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "distribut"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/context-profile.ts",
+      "sha256": "ad4a92325a6f1d6abcd96764b51946f8ddc118af670bb130d4732e7357c7392e",
+      "bytes": 687,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "distribut"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/distribution-engine.ts",
+      "sha256": "ee4c61daedfc428a41026cbfdffea0098f5ddb0b759081a4efe126ebb8082c6e",
+      "bytes": 1947,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "distribut"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/information-dose.ts",
+      "sha256": "e4d1e706e038a07e5cb85de10dd7721e5aec53e780a0db45f5b53182f8a6c328",
+      "bytes": 1087,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "distribut"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/distribution/role-profile.ts",
+      "sha256": "e3aeeabd8987bccc317760a94010f1c973255127101215dd0ef82f490e34b623",
+      "bytes": 323,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "distribut"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/feedback/distribution-feedback.ts",
+      "sha256": "051c398cc9a9fb4766e2968fdb54e17c443efb227de53aff46b404cd26382f25",
+      "bytes": 736,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "distribut"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/feedback/feedback-engine.ts",
+      "sha256": "1bb0bdebcef1729e0678dbf67a5d38e79b35381c6b23fcdf4362454e4c9d0932",
+      "bytes": 920,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "feedback"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/feedback/routing-feedback.ts",
+      "sha256": "ace4f28e09d8a6fd7b38319192d6cbe8a54a7435af0335ae350884cb66924db6",
+      "bytes": 610,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "routing"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/feedback/source-score.ts",
+      "sha256": "5b25b1658e8c7d2f0c9e40166b052cd5214348b078293dc324b3c4f10dcf66ab",
+      "bytes": 535,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "feedback"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/feedback/trust-update.ts",
+      "sha256": "0700fee9e16edfffa1dd98667a00e19105135cdbc23aa50a0538f733a0df3fc6",
+      "bytes": 476,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "feedback"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/index.ts",
+      "sha256": "2a12edae2a185a8b82c5dd98defe03c7ffd24519995b2ac603172c26037008d7",
+      "bytes": 1838,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "index"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/intake/intake-pipeline.ts",
+      "sha256": "69e5453291b3d9eea7b9ec38cdd4905715b33efab613d0719ed157bdafb75f18",
+      "bytes": 1758,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "pipeline"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/intake/intake-receipt.ts",
+      "sha256": "c43b81dbefb3ef63ef6da1604a2ff4a9054f8fffe09e902f1646bf3b7843ec27",
+      "bytes": 672,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "receipt"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/intake/source-classifier.ts",
+      "sha256": "bc0c39d57a35f9cf7cba638364386b44edb3adb8a77a102e1867c4d7e3b1c84e",
+      "bytes": 1210,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/intake/source-discovery.ts",
+      "sha256": "707b68d608c71ddd60837cfdb66553f96baf165d8d94894ab366e88825f2a026",
+      "bytes": 639,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/lifecycle/acquire.ts",
+      "sha256": "1f8a66c2f81bc9ee48dbd11fd56a765af1e55fb20f0e924a449648e1c5edaa45",
+      "bytes": 414,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "lifecycle"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/lifecycle/consume.ts",
+      "sha256": "b890cb066e40318a7bfb76f69be224060e69c8446eedd861f1def043bc537c44",
+      "bytes": 264,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "lifecycle"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/lifecycle/feedback.ts",
+      "sha256": "b3387ff9ce67216a2e6f15c1b69fef3e901e3bfc1cf6ddf20df2679120c82952",
+      "bytes": 277,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "lifecycle"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/lifecycle/lifecycle-engine.ts",
+      "sha256": "04fedde7d296450643e40bfa4fac21c010e8fe13eb68863ccb5d8271b325132b",
+      "bytes": 1811,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "lifecycle"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/lifecycle/observe.ts",
+      "sha256": "874c7230e5ed4f9fade404d05a807ce255a9fccc8a688e1bcd064de84dd97b2e",
+      "bytes": 264,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "lifecycle"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/lifecycle/publish.ts",
+      "sha256": "88437a40e87424700f26e8cdbda25367867b4d9e763cb9f32dc2f8599381da69",
+      "bytes": 266,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "lifecycle"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/lifecycle/refine.ts",
+      "sha256": "f6a071b904a3bbb7fcc3b5cd4f6cc3c9761c48a48f3c5dbd6451a6b18746da83",
+      "bytes": 264,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "lifecycle"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/lifecycle/retire.ts",
+      "sha256": "2b818f7ed86fd8f29f9d2b0e46ed993bdd372f9b92af00f8a9eeb8fa8fe01a36",
+      "bytes": 262,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "lifecycle"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/monitor/distribution-monitor.ts",
+      "sha256": "a1f889d77965509502442db88b3d559031bb99baece70fb501fbaf8fdad119ce",
+      "bytes": 626,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "distribut"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/monitor/flow-monitor.ts",
+      "sha256": "b7a498de0b380857b514d367313d868ab83aa3af8f07f00aa99cacb590f7945f",
+      "bytes": 604,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/monitor/lifecycle-monitor.ts",
+      "sha256": "f914ceb4d288e88a82b3e7eedcd45617a9bb3624775125f11558637b9225f5c7",
+      "bytes": 531,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "lifecycle"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/monitor/routing-monitor.ts",
+      "sha256": "34f441dfb9e4e41844574125cdf45876b8ef3e96cfbe8e13eb53a9268125aefb",
+      "bytes": 416,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "routing"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/refinery/attach-source.ts",
+      "sha256": "4499774764ad95165971de2eb3ef6f0db982035041300257d96d8ef2bb44927e",
+      "bytes": 521,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/refinery/cross-reference.ts",
+      "sha256": "d09c1afd3168ca9455d7822ad6c47164a2abea90f9bf2a791e7080d7dc118397",
+      "bytes": 1208,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/refinery/enrichment.ts",
+      "sha256": "b41a42589b9934c7060b0104766906ca4ef079f89c5500be8e0fdc3d7b13de07",
+      "bytes": 505,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/refinery/normalize.ts",
+      "sha256": "55cc5d77d0049bd8c8adc599dec9b49c36805067d39123f2007a0ccb33a684a6",
+      "bytes": 959,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "normaliz"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/refinery/refinery-engine.ts",
+      "sha256": "af1f576157258252b9c77d36af64af4bbdcd6fb990c40c5cf4d0c9428a39d6f2",
+      "bytes": 2540,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/refinery/verification.ts",
+      "sha256": "e6a779cdf684c424b7e65c5aea90045a6936e3df74e1954165ebe17d16723a1b",
+      "bytes": 720,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "verification"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/routing/context-router.ts",
+      "sha256": "024f38f20879c9d7d423c3d3a789838ff5f266be17b5f4a6855ffda83a7eb224",
+      "bytes": 912,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "routing"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/routing/publish-gate.ts",
+      "sha256": "36dc5faa9fc35176d3d44fdaaf46cb7cae631ac26b3f77434e1de1acb496ed0a",
+      "bytes": 1260,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "routing"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/routing/routing-engine.ts",
+      "sha256": "69249d7820d5ea7403888be92dfbea661299bdc72a0bf7d8d78e78a935f96c3c",
+      "bytes": 1271,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "routing"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/routing/routing-policy.ts",
+      "sha256": "33d785d56ce11ae2c90433f0e9c0e56fb41ac0724027489e0561389d61121135",
+      "bytes": 1062,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "routing"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/src/routing/scope-router.ts",
+      "sha256": "c0de87cd45960eac698ddf81cf9761b46755fc02688b59368bb6b824b8b949fc",
+      "bytes": 896,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "routing"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/tests/adapters.test.ts",
+      "sha256": "2e56d9d1b023b41bafadf3df107f10977654cc82c4008fd454c25c9b5420c051",
+      "bytes": 1097,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/tests/distribution.test.ts",
+      "sha256": "8327e76ef0585ce4bf1b1ecfd18b41a86d97640e087b4f1c014ce6ccf3e79d92",
+      "bytes": 952,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "distribut"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/tests/feedback.test.ts",
+      "sha256": "b29262378cd836a744bd255faf46ff48212105d617493b1e2614ec7ee7e0b55a",
+      "bytes": 665,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "feedback"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/tests/intake.test.ts",
+      "sha256": "6592912704022c8b8e47c39d6da9dc403138c38d38ce0478f32dd6688d0c8d7e",
+      "bytes": 800,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/tests/lifecycle.test.ts",
+      "sha256": "cef728d81415f0e175a1c63523ef7ee3b4350d114cae622ab654ca860963255c",
+      "bytes": 787,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "lifecycle"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/tests/refinery.test.ts",
+      "sha256": "988e03ce0fd81a518bcdb371320f6d54020e0db1d6bf2cce1fe03ba2f40ddf66",
+      "bytes": 868,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/tests/routing.test.ts",
+      "sha256": "ba0b5fd6fc847ff8bd28e0a582dee2de6518716552cae9abb6c59a4d9f66e622",
+      "bytes": 1063,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "routing"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/tsconfig.json",
+      "sha256": "53bb9c39c0a70a64aa9d74e4b532afa21ab2418b37e1452484cf1f9bdab116cf",
+      "bytes": 427,
+      "extension": "json",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_FLOW/vitest.config.ts",
+      "sha256": "0daf37cc4f24bfc64649030edad41e2b5e0330eae7b0f1788641c78cd257052d",
+      "bytes": 212,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "cvf_truth_flow"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "README.md",
+      "sha256": "2f5b9d6df85448426ebe7cdbaf65a9bbcacbb4d5e916cf536457c61b9eae2710",
+      "bytes": 7199,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "readme.md"
+    },
+    {
+      "rootId": "FLOW",
+      "sourceRelativePath": "TREEVIEW.md",
+      "sha256": "cb22412bd3c152ae756429b2ac522923cf8b346a44c9ebd60c886e951d9c8232",
+      "bytes": 3930,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "treeview.md"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/obligation-check.guard.ts",
+      "sha256": "8fc7ce0842ead6eec3bbea9308bfbb3da6cc3c4c0382639046f2b71cd7107f3c",
+      "bytes": 642,
+      "extension": "ts",
+      "artifactFamily": "guard",
+      "capabilityFamily": "obligation"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/provenance-required.guard.ts",
+      "sha256": "1d1a3174cb26cef83bd329244e14c9bb7571a84b699cbd6784e9ce1ae35deb7a",
+      "bytes": 579,
+      "extension": "ts",
+      "artifactFamily": "guard",
+      "capabilityFamily": "provenance"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/truth-boundary.guard.ts",
+      "sha256": "c937788edd63e9b45559b935659e9605a1a6e80766f1d827d52b9cdd27fd1168",
+      "bytes": 623,
+      "extension": "ts",
+      "artifactFamily": "guard",
+      "capabilityFamily": "cvf_guard_contract"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/README.md",
+      "sha256": "d73a11989aba4370a3ca7c2ec1d7601ade43ce8c8facd7a1ef8bc6b1b130c314",
+      "bytes": 5889,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/examples/generic/evidence.sample.yaml",
+      "sha256": "ddd637ba86e56a9419b1540611b5ea4252e440179b0ba0d69a24ac9d10e7e5fa",
+      "bytes": 359,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "evidence"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/examples/generic/obligation.sample.yaml",
+      "sha256": "7cfc0870314391954cce2624cf96cf54508c6d09beac7822de804c157256a685",
+      "bytes": 338,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "obligation"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/examples/generic/truth_packet.sample.yaml",
+      "sha256": "37909fcb4580005a9215ba1bef98912eb432d9cdd28274658bdc101024ccc05d",
+      "bytes": 495,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/examples/logistics/evidence/fuel_price.sample.yaml",
+      "sha256": "0e1ea973c236e5dfdadaae4418cbac88b84584ad7c35af9610e45fe455e82c99",
+      "bytes": 462,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "evidence"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/examples/logistics/evidence/port_code.sample.yaml",
+      "sha256": "4b990e500aefb1c55dc966d755d0c11eb36bdc9a65696ba6102a3fb460305bef",
+      "bytes": 368,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "evidence"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/examples/logistics/obligations/surcharge_rule.sample.yaml",
+      "sha256": "8b52bbe7c8c5f3e4cb96c690b5aad0c60316a9d7308dcbebc569efe8b6fe67d6",
+      "bytes": 384,
+      "extension": "yaml",
+      "artifactFamily": "rule",
+      "capabilityFamily": "obligation"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/examples/logistics/project_truth_references.sample.yaml",
+      "sha256": "0131d0ec6c96498a48f414101d481ccab545cf8fd06e88c89dfce336b963de88",
+      "bytes": 296,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/package.json",
+      "sha256": "13fa4d75e7feee8fb2595994689462f3931664cf68d4f36a96416bda8a31b42f",
+      "bytes": 457,
+      "extension": "json",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/schemas/evidence.record.schema.json",
+      "sha256": "3809ef44fb6fff9db87b7121e297d0d988946a7d35f78a7e8a3d1b6b790bb827",
+      "bytes": 1583,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "evidence"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/schemas/obligation.record.schema.json",
+      "sha256": "5b2df90f3d24252734be4a2710b3b53cbb115413759e5bf9dd0cf2c74d06df88",
+      "bytes": 1639,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "obligation"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/schemas/provenance.label.schema.json",
+      "sha256": "c6452359718485a2d12fca76d97023855fe7fb28de63d7df2151e3b2179c98e8",
+      "bytes": 844,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "provenance"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/schemas/sot.index.schema.json",
+      "sha256": "2be0cf1f64c4f6cae230086d59b604629ef4599691d3e881735659d241c8f21a",
+      "bytes": 747,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/schemas/truth.packet.schema.json",
+      "sha256": "859d85ed51be0e05ee874644dc88b9eb4fb6b60626f45b7f2a40be14dd5e3da8",
+      "bytes": 1037,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/schemas/verification.result.schema.json",
+      "sha256": "45d1422fac3916dde0ce5468f62d46175b7bcc1b557a5d4469516f84abc9e29d",
+      "bytes": 1099,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "verification"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/adapters/guard-contract-adapter.ts",
+      "sha256": "89cd429c24815373a939076d13db45055b2df372b0bddae82a9b87bbe015d8c9",
+      "bytes": 632,
+      "extension": "ts",
+      "artifactFamily": "guard",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/adapters/phase-governance-adapter.ts",
+      "sha256": "13b67e5206351107b921a4dc91a3a0849caf901aa73526938808d9801d5bdbf5",
+      "bytes": 828,
+      "extension": "ts",
+      "artifactFamily": "adapter",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/gates/blocked-mode.ts",
+      "sha256": "35b5d3cd806c2267252e33515dc1002e2acf1da9ee6da678b164b82015e51d01",
+      "bytes": 162,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/gates/relaxed-mode.ts",
+      "sha256": "e2c81863af008c0c06075ba969b8a78e4983c30e3664e39c1689b02ef7b15f22",
+      "bytes": 530,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/gates/strict-mode.ts",
+      "sha256": "449da40edb0324dead7d0440d9467373602c9db5eb51650a244f893a389f08a5",
+      "bytes": 405,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/gates/verification-gate.ts",
+      "sha256": "f33b01916c0bf115dbef4172ef5171398ee8f54912db0d836eb484b08943c28b",
+      "bytes": 940,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "verification"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/index.ts",
+      "sha256": "6a94dbb69358eb8a9ab9fa4463628aaf692421f2d5561fe9bb6186c10d62e98b",
+      "bytes": 1363,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/monitor/obligation-drift-monitor.ts",
+      "sha256": "e2528d7e8e78c4240378a1e33b34d7bf08585b9bea70ecd971fe0be51aea1791",
+      "bytes": 661,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "obligation"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/monitor/runtime-monitor.ts",
+      "sha256": "f1c6a3d042f54cc1ea51d7e9232e2bde1eff92c0a260cf504b664df93ff9fb77",
+      "bytes": 688,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/monitor/source-drift-monitor.ts",
+      "sha256": "1af5461afa0321fb7c8874768ad30d5d6611462ddd21c80741210ef1d026dd1e",
+      "bytes": 609,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/monitor/staleness-monitor.ts",
+      "sha256": "9f5f237b582106493058821a146a0df6f54152cc771b291c0a99bc4f2a744523",
+      "bytes": 829,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/provenance/provenance-collapse-detector.ts",
+      "sha256": "b2a5514de4a2fbf32a842323b00a1744dc75e4c6dee3012740a0834e6cd84de3",
+      "bytes": 1499,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "provenance"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/provenance/provenance-label.ts",
+      "sha256": "3384de63a02eaf2e0e26e44b9c0201672f87b5c72ee1716258e48475d7fb1497",
+      "bytes": 773,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "provenance"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/receipts/hash-chain.ts",
+      "sha256": "270bb6884b35c4ba87fed738162acd968b730b004a117874f83cc3feb68f4a3a",
+      "bytes": 714,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "receipt"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/receipts/release-truth-packet.ts",
+      "sha256": "66071e62711ff3078d9ce3682b42289f008f0f90db088f7ab42b5acb9e2bbd72",
+      "bytes": 756,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/receipts/truth-receipt.ts",
+      "sha256": "6dbd3c1f7d6ccd52e5d2856c866afd625d5ceba4d3e4f866db91a69a2be16c48",
+      "bytes": 1652,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "receipt"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/registries/evidence-registry.ts",
+      "sha256": "84d1c9242c86cb41a5e7255a99a0007db818b6a5f94c6a9cafc72117e8335016",
+      "bytes": 961,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "evidence"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/registries/obligation-registry.ts",
+      "sha256": "623810dbc55d22873de7d4f4717e1cb800c4f64df809ee1a9972d90a57fa7efe",
+      "bytes": 1035,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "obligation"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/registries/sot-index.ts",
+      "sha256": "4e37f49d51f070cb91886873f2f7b35edbd4eb5d5e0e4259f45c081c98950808",
+      "bytes": 922,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/types/evidence.ts",
+      "sha256": "f8a045dee02f9c8bff050c010df1e37d3b4abbd6fb875695b3ee06a7fd9ae217",
+      "bytes": 675,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "evidence"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/types/obligation.ts",
+      "sha256": "27ae51b9c850de07ea5f4055512275d2f3650710b4751468b038477a898fce10",
+      "bytes": 757,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "obligation"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/types/provenance.ts",
+      "sha256": "b4c8d4aff8d741404e4638f87a92a5c773b4b98464b0809801031f1612f0705c",
+      "bytes": 413,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "provenance"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/types/sot-index.ts",
+      "sha256": "a68e2a23033619e8c32ff71117b9f618a8113b48a3bcec5dae4a7638f4ead42e",
+      "bytes": 483,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/types/truth-packet.ts",
+      "sha256": "a4108d416c017a314c00418dad1b2cfa9f2c96dc45bab45fce6168b2c35c9784",
+      "bytes": 1283,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/types/verification.ts",
+      "sha256": "3d4328071027574319b24360504a59c38432bfd7214f0b8fb468192cd04d6ebf",
+      "bytes": 758,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "verification"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/verifier/formula-verifier.ts",
+      "sha256": "b78f1089194a66acecefbd663df077a9b4f851e934f702ac26f4255a0c16df7c",
+      "bytes": 763,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/verifier/independent-verifier.ts",
+      "sha256": "cb810992b742abae4fee332c0490f7f8be8015cbce49c56271734655f20cb284",
+      "bytes": 1342,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/verifier/obligation-verifier.ts",
+      "sha256": "e36250e1c9212089d452d263a54afc2176428eef1bcac29e7b2383b971d53d36",
+      "bytes": 1413,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "obligation"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/verifier/schema-verifier.ts",
+      "sha256": "800cb2f985fb3713ada679ad5aad20bbce60ccac98bce02e28e4ef78e7c05f07",
+      "bytes": 825,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/src/verifier/source-verifier.ts",
+      "sha256": "6e09ef8ae1a4f0f50be023ffa5017d011bb5b64b03a71832688f901f9a6b2d00",
+      "bytes": 896,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/tests/evidence-registry.test.ts",
+      "sha256": "f4e1440b0c62f611fa0ec16b33ca37bd06dbf9c84c669d7b77094d2f3169ade4",
+      "bytes": 774,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "evidence"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/tests/independent-verifier.test.ts",
+      "sha256": "22f9e986787be9101e14e54ab361f8e42145014aee61b59ed3da54510ce18404",
+      "bytes": 582,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/tests/obligation-registry.test.ts",
+      "sha256": "0f14beaeb59d34b4ab031b9fc3ca9da748537bad49d4e6d0d4370a883a5b584f",
+      "bytes": 741,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "obligation"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/tests/provenance-label.test.ts",
+      "sha256": "49d3c088819f922116657657fe0ce0d2ac9a90c51d4ae3a74050ce4d32360473",
+      "bytes": 487,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "provenance"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/tests/runtime-monitor.test.ts",
+      "sha256": "21cc608f3461eb32b7ef85eadb0437b730ca406e4d6807f9f1c5fc0a686b06c3",
+      "bytes": 660,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/tests/truth-packet.test.ts",
+      "sha256": "92e9b7a7bc610d49171131d1c20c278c19dce0ca5602d565e422be2284696948",
+      "bytes": 624,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/tests/verification-gate.test.ts",
+      "sha256": "d067113954503d604fca855f8ccb08b8a8431d2f72fa2e875fa3ad7556d1599a",
+      "bytes": 701,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "verification"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/tsconfig.json",
+      "sha256": "0ab37e0fb4982cfaee450d80a64edb732c407df9a709b14b241b444e5444da29",
+      "bytes": 408,
+      "extension": "json",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_TRUTH_KERNEL/vitest.config.ts",
+      "sha256": "c45bcd010feebb4d7fc0e3d94311c01249294f04057cf93e5e150dfb2e4975cb",
+      "bytes": 156,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/runtime/truth/truth-gate-binding.ts",
+      "sha256": "1ce27cec5bf5d14ed6f56eb9b10f0a14eab56e2a8a57f95be7905f8b3214095e",
+      "bytes": 843,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "cvf_v1.1.1_phase_governance_protocol"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/runtime/truth/truth-packet-phase-binding.ts",
+      "sha256": "e1c3b2f2f69101088cfec9cfbbc47c0ec868aec1c0da06589ac6e2a7ad70d482",
+      "bytes": 518,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/evidence/truth_kernel/README.md",
+      "sha256": "297ee0816e554af322f9b9c715b62d356b3b2d0b99779a355d57f9f496d3e68d",
+      "bytes": 481,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "evidence"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/evidence/truth_kernel/SAMPLE_RELEASE_TRUTH_RECEIPT.md",
+      "sha256": "1d3fa6ca1363b3a86ef42f90367bc20e9b3ea5de1287ffc90d28fed29f1db7c0",
+      "bytes": 767,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "receipt"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/evidence/truth_kernel/SAMPLE_TRUTH_PACKET.md",
+      "sha256": "0eccc0e31166b4c6621bf715cd3098c22108efbc4eaf0e507353cfa41880161d",
+      "bytes": 916,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/guides/truth/NON_CODER_TRUTH_INTAKE_GUIDE.md",
+      "sha256": "f3ff23f695d374a13567752eb556990a4ab99551f4a90d88c57c75fbb38e57be",
+      "bytes": 832,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "docs"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/guides/truth/PROJECT_TRUTH_REFERENCES_GUIDE.md",
+      "sha256": "e1ad93477a79c46ef8e8c6c7a8bc94fb72b15ce2df27a255d49717ca9e55c697",
+      "bytes": 731,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "docs"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/guides/truth/TRUTH_KERNEL_QUICKSTART.md",
+      "sha256": "996184060a128aa1ed1813d490ebea75860d37aeb01965cffd22b93a800b0f9f",
+      "bytes": 951,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reference/truth/CVF_TRUTH_KERNEL_DOCTRINE.md",
+      "sha256": "c82bcdf012038e080fc184c180dd5653cc39275220f513bdb30813bf08e991e4",
+      "bytes": 2047,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reference/truth/EVIDENCE_REGISTRY_SPEC.md",
+      "sha256": "7e7d96d7ed22d8cd51e6ae90444bbbae05d42b30f065232c32c64d11df8ad9d7",
+      "bytes": 1427,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "evidence"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reference/truth/HUMAN_RESPONSIBILITY_SPEC.md",
+      "sha256": "414cf24180e4f64456260fb05b3d77276df861856f99094662afeb0ee8fc4ff4",
+      "bytes": 985,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "docs"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reference/truth/INDEPENDENT_VERIFIER_SPEC.md",
+      "sha256": "daa479075ecbb39b4a22388cc396ebef9c23f3d99904c37b8839a478762e6935",
+      "bytes": 961,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "docs"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reference/truth/OBLIGATION_REGISTRY_SPEC.md",
+      "sha256": "746fec8de46aa91a81d87e33d292009ce736b176edc30ea092816ebe9478cb0e",
+      "bytes": 1352,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "obligation"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reference/truth/PROVENANCE_LABEL_SPEC.md",
+      "sha256": "bc86a39662518b65dfe0d951b5ee46bdd23238641b65182ba7920a7447233922",
+      "bytes": 1121,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "provenance"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reference/truth/README.md",
+      "sha256": "64220462f72f7abe3263af1d3771d93ddbe3a5f5e6587c6fd0db70d732a777f6",
+      "bytes": 1269,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "docs"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reference/truth/RUNTIME_MONITOR_SPEC.md",
+      "sha256": "6eb42e863ba344be46bbb0c78847194ca38aa4ee61706a8a74b74bc44a0f6067",
+      "bytes": 687,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "docs"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reference/truth/SOT_INDEX_SPEC.md",
+      "sha256": "3f431595dc28abd556c6ac67abb8c7971521504ee04a65e1c8c3aba71ee167b6",
+      "bytes": 938,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "index"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reference/truth/VERIFICATION_GATE_SPEC.md",
+      "sha256": "a37e2474dcd1262d6bab72817e7daec278fca408d08af6cf4be38ddc9ec3f1c1",
+      "bytes": 1085,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "verification"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reviews/external_knowledge_absorption/AGENT_HARNESS_FAIL_STOP_MAP.md",
+      "sha256": "68b2d62a3fd5a2937979aff79e240fbab58713efa4fabfe61efc5010f9b1d0f4",
+      "bytes": 984,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "docs"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reviews/external_knowledge_absorption/MICROSOFT_AGENT_GOVERNANCE_TOOLKIT_MAP.md",
+      "sha256": "09028951ed4f2053f041a90287437100ab238f6269b69453ad4bafaf2375ad23",
+      "bytes": 932,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "docs"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reviews/external_knowledge_absorption/SANTANDER_MECHANICAL_GOVERNANCE_MAP.md",
+      "sha256": "2ae353d7d4cedc4973aba57cd2d1847d0e7c5b4663b7893fe9634a69907823da",
+      "bytes": 1110,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "docs"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "docs/reviews/external_knowledge_absorption/SOT_KERNEL_MAP.md",
+      "sha256": "c4880afd779865e4834064dd826b2eef3c88667b77b50314059b8a900927422e",
+      "bytes": 925,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "governance/truth/check_no_unlabeled_claims.ts",
+      "sha256": "4c5b6a77ec06ed1effc9ca92882a82ddc01713702ef098546455fa038ce14990",
+      "bytes": 857,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "governance"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "governance/truth/check_obligation_registry.ts",
+      "sha256": "4b7ec74e60c93577a86e7875d06da496d0b37bc572e0bc38ff0d59572bf37baa",
+      "bytes": 815,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "obligation"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "governance/truth/check_provenance_labels.ts",
+      "sha256": "5149cfc097595c9bf6e54c14fbd6cba59b84617b437d302a021d707f7869d4ad",
+      "bytes": 534,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "provenance"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "governance/truth/check_truth_kernel_contract.ts",
+      "sha256": "035544d4b110d5b2481b443c724ad365655f361ebf62e11e809d055b0207576c",
+      "bytes": 569,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "governance/truth/check_truth_receipt_integrity.ts",
+      "sha256": "f21c7fa259e296e328d817902029f842920c0be8d0bd94b3405d97c9292622a9",
+      "bytes": 841,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "integrity"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "scripts/truth/atomize_source_to_truth_packet.ts",
+      "sha256": "9cab38883ca8342a6920dc28857fa303695f6fab352f31b012f93ac034da2f6a",
+      "bytes": 899,
+      "extension": "ts",
+      "artifactFamily": "script",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "scripts/truth/generate_truth_receipt.ts",
+      "sha256": "d480206cb6214099e6946dc441e56c3c8ad7d837f565328a0e5189c69ae893c0",
+      "bytes": 769,
+      "extension": "ts",
+      "artifactFamily": "script",
+      "capabilityFamily": "receipt"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "scripts/truth/inspect_truth_references.ts",
+      "sha256": "e73af8b9428c945895f3c01fd0cf6ff37c0129cb9d510da3cfdc9eefcc3af93a",
+      "bytes": 392,
+      "extension": "ts",
+      "artifactFamily": "script",
+      "capabilityFamily": "scripts"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "scripts/truth/validate_truth_packet.ts",
+      "sha256": "eca3312b3060194a4f2fb05a3161504efbcdbc138feb742452afe2034714b186",
+      "bytes": 535,
+      "extension": "ts",
+      "artifactFamily": "script",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "tools/truth/README.md",
+      "sha256": "416898732dd17701b87651584b32a0bb215e0618553edebe23f9d5b954af391a",
+      "bytes": 263,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "tools"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "tools/truth/evidence_record_template.yaml",
+      "sha256": "f7a8f286b7b5fdb55200e5184f237b7e14db5031c5e3fbefc464c39c42f74fec",
+      "bytes": 280,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "evidence"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "tools/truth/obligation_record_template.yaml",
+      "sha256": "f4de88af501313efbd73c15d7a6fa69337d77e3ca2f2bcc839d6281bccb591bb",
+      "bytes": 249,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "obligation"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "tools/truth/project_truth_references_template.yaml",
+      "sha256": "b38939a505390281071e77944a52570342a0ac0bf20d59b8760af3be2118efe6",
+      "bytes": 197,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "tools"
+    },
+    {
+      "rootId": "KERNEL",
+      "sourceRelativePath": "tools/truth/truth_packet_template.yaml",
+      "sha256": "4b55c50b930b21be9b2ab008773356439224865667738dee6f0bb2bc36146969",
+      "bytes": 404,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/no-truth-claim-from-refinery.guard.ts",
+      "sha256": "cfb0da550d945a6f6b789d3e4028d014676a7cea0d1d65fc53c113c102b80901",
+      "bytes": 624,
+      "extension": "ts",
+      "artifactFamily": "guard",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/refinery-boundary.guard.ts",
+      "sha256": "e626e9962e6ed8dfff3a4ad3e28cd08bf5bf72f82a0777a35e801028f4ed6434",
+      "bytes": 850,
+      "extension": "ts",
+      "artifactFamily": "guard",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_GUARD_CONTRACT/src/guards/refinery-packet-required.guard.ts",
+      "sha256": "9914f53bbd563f74bd9c1265c05849cd5278567b583774d1cbbf168b95c77057",
+      "bytes": 1199,
+      "extension": "ts",
+      "artifactFamily": "guard",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/README.md",
+      "sha256": "b0bcfda5d6624fd1808b82f0ba8f197f65a44183b6ceffa5e9298f2694253c3e",
+      "bytes": 3719,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/examples/generic/conflict-set.sample.yaml",
+      "sha256": "002e7cc6d62390f46da8f2d83869f0980dd39351156db7d4001e9af4873fe40e",
+      "bytes": 542,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "conflict"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/examples/generic/normalized-record.sample.yaml",
+      "sha256": "acf94da68ae925a352a4885774d553dc40ed3d18808169aca713cc557499b318",
+      "bytes": 507,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "normaliz"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/examples/generic/refinery-packet.sample.yaml",
+      "sha256": "22e76fbd2d8b59e9ca78aef368a805155392aa9ddc89263b270f2111d2828c9c",
+      "bytes": 1013,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/examples/generic/source-envelope.sample.yaml",
+      "sha256": "d229b96a971425e5dc957bdd4605d9050d941c4b918ac6eda7037b8d6ea647de",
+      "bytes": 539,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "envelope"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/examples/sot_vertical_slice/expected-conflicts.sample.yaml",
+      "sha256": "d63428afaba277ffc1c68b2dabb5aa3ed0b695c63376399928e9fe82a7baf5b3",
+      "bytes": 805,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "conflict"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/examples/sot_vertical_slice/expected-refinery-packet.sample.yaml",
+      "sha256": "1c59268063436e3ee502e4960ec06784a90049a161221912c656f79b97161d88",
+      "bytes": 1202,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/examples/sot_vertical_slice/internal-price-source.sample.yaml",
+      "sha256": "6d9a36e97d563585550eddf4b18d72d0c9ee4134201131f3797f9b629d00b4f8",
+      "bytes": 719,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/examples/sot_vertical_slice/market-reference-source.sample.yaml",
+      "sha256": "52997beda58504134fb8d69f324e61f20c85ae1aad645eff686117bc7d51ee2d",
+      "bytes": 750,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/examples/sot_vertical_slice/project-price-source.sample.yaml",
+      "sha256": "ed6ec04cc60b694461b88c097892a32e4ba1669b8a79a24953b954a6ebdbfbb1",
+      "bytes": 740,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/package.json",
+      "sha256": "dc636cf48bcf7335e1e737465b418a5c9239d934a36c91ed198f37f5fb8fa925",
+      "bytes": 541,
+      "extension": "json",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/rules/default/owner-required.yaml",
+      "sha256": "83391ee5ef64c2ce74299d4cc32c6424c8660d426eff80776a20578ccc186b61",
+      "bytes": 267,
+      "extension": "yaml",
+      "artifactFamily": "rule",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/rules/default/required-fields.yaml",
+      "sha256": "ef41c3cb25eb70c4eacf812b1b6298eeb399c8dd2cf9d4f904ebcf9edddb471b",
+      "bytes": 280,
+      "extension": "yaml",
+      "artifactFamily": "rule",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/rules/default/scope-required.yaml",
+      "sha256": "9d7c102a9a8a9fc7c7394d04fcbc8ee276bbfb5eb24690c25a2b20436cbab2ed",
+      "bytes": 291,
+      "extension": "yaml",
+      "artifactFamily": "rule",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/rules/default/staleness.yaml",
+      "sha256": "7fe0c94a22b3ce295d59cea27849f1d60a8753824362d7022d9e4dc4a6ca0194",
+      "bytes": 317,
+      "extension": "yaml",
+      "artifactFamily": "rule",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/rules/default/unit-consistency.yaml",
+      "sha256": "fd00d3c47f71d744adf681085eadc9d7f127d7f0b655b697fc5070561055ca73",
+      "bytes": 337,
+      "extension": "yaml",
+      "artifactFamily": "rule",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/rules/logistics/fuel-price.yaml",
+      "sha256": "d0e9066cfc5c5e098a9bbe9a9f80b11d5a4be8400b0fab43a2eb706775480008",
+      "bytes": 440,
+      "extension": "yaml",
+      "artifactFamily": "rule",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/rules/logistics/port-code.yaml",
+      "sha256": "1ac96d93dd47e8db53f974612a59b3114ead746490a1a4af1ade36e1fdae0a61",
+      "bytes": 408,
+      "extension": "yaml",
+      "artifactFamily": "rule",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/rules/logistics/surcharge-input.yaml",
+      "sha256": "03abbf515220b04138a22cbd556dc51ff839d7bff5c17b31aaa913be409c6a3b",
+      "bytes": 450,
+      "extension": "yaml",
+      "artifactFamily": "rule",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/schemas/conflict.set.schema.json",
+      "sha256": "436424d00fffee8fce76b30656c2a4ba20d68aa0dce4ede2c0fcadf91d9896ef",
+      "bytes": 1421,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "conflict"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/schemas/duplicate.group.schema.json",
+      "sha256": "dd60967c5a96e522bceb239175a6c3719beb23ec25dc71296d877270165aaaca",
+      "bytes": 1105,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "duplicate"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/schemas/lineage.event.schema.json",
+      "sha256": "0bd110fb0f71f1ec883d909806559635a9cb3a2e92a3a30ce50722b8e394e5ce",
+      "bytes": 1280,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "lineage"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/schemas/normalized.record.schema.json",
+      "sha256": "de6dc1290e433b18d8bd50aee49e43a920c52053dfed2e2f40138abee14cfc6e",
+      "bytes": 1293,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "normaliz"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/schemas/quality.finding.schema.json",
+      "sha256": "1a7de0b02366de0fcc198241a391a1a1e517b5a5ab00e7a458aa009f337dee8b",
+      "bytes": 1089,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "quality"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/schemas/refinery.packet.schema.json",
+      "sha256": "21e622e5f08999c05b1408835735eec3f00911fb36efc020e92454d6a026c723",
+      "bytes": 1722,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/schemas/refinery.receipt.schema.json",
+      "sha256": "bd4d1c1e9f939634a1aeeaeb5ddc61861cbd94e1c72e59f314d4c2fdcf16f249",
+      "bytes": 1607,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "receipt"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/schemas/source.envelope.schema.json",
+      "sha256": "91be37d102157c8903896b5be973d3cfae6d3f5754e222d2f509d7079c9812fc",
+      "bytes": 2536,
+      "extension": "json",
+      "artifactFamily": "schema",
+      "capabilityFamily": "envelope"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/adapters/guard-contract-adapter.ts",
+      "sha256": "ca10ea4791be5ecf6cea7d92cac47da0e7146fd480853519cc8e8e7c51ae91cb",
+      "bytes": 737,
+      "extension": "ts",
+      "artifactFamily": "guard",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/adapters/phase-governance-adapter.ts",
+      "sha256": "f11ed5bcba1aa98490df46aa24041fc362fbb38d5f1b8886fb5827e4c2256dc4",
+      "bytes": 779,
+      "extension": "ts",
+      "artifactFamily": "adapter",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/adapters/truth-kernel-adapter.ts",
+      "sha256": "652782f70af2fa31d14c092c16bdf622f5326295c5af862e2903f900fd6ccfd7",
+      "bytes": 1294,
+      "extension": "ts",
+      "artifactFamily": "adapter",
+      "capabilityFamily": "kernel"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/conflicts/conflict-detector.ts",
+      "sha256": "82ada1c6f73d527f55f8736742868bc8b164baef37962694a99bbaf904169423",
+      "bytes": 2673,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "conflict"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/conflicts/conflict-policy.ts",
+      "sha256": "29d641065a92499122a6aa028905ea3a87ca9f37b8493bdf283bf4a42866ab5a",
+      "bytes": 675,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "conflict"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/conflicts/conflict-set-builder.ts",
+      "sha256": "682bb604094979b4b815d1dbc8a4b0a0d3e392876607382e7f82855b1e6bee1a",
+      "bytes": 551,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "conflict"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/dedupe/duplicate-detector.ts",
+      "sha256": "eb7767d94c5c58c4211d18e582db62be3e14b002bd8032b8f569d7b95edaf1b5",
+      "bytes": 929,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "dedup"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/dedupe/duplicate-group-builder.ts",
+      "sha256": "17bb1034d24af482ae2675a4494827af43938662134019fbcb7d134166898cc7",
+      "bytes": 676,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "dedup"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/dedupe/fingerprint.ts",
+      "sha256": "dfdda3c495e6491e9655ab6f5e51a91923a1ec19cc6c57fac261da51f593d286",
+      "bytes": 771,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "dedup"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/index.ts",
+      "sha256": "8c0855968f78e02d6f64d083e905a895d365908b05a3a5a6fb1205498be629ec",
+      "bytes": 2382,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/intake/intake-receipt.ts",
+      "sha256": "0f4e3d228270c8e86beffea7f3caed1080e6f5edee2464688ddb8f27ebc68896",
+      "bytes": 676,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "receipt"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/intake/source-classifier.ts",
+      "sha256": "4a9163f9630c180ad3df324aa0e90793003a78e0c65f2bc3ea83284ddf5445c8",
+      "bytes": 1723,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/intake/source-envelope.ts",
+      "sha256": "a4ca80f91be82b8a0bcf28097aff8b172d211fd1d8a6e847e77a4b61f416293e",
+      "bytes": 1460,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "envelope"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/intake/source-validator.ts",
+      "sha256": "353b810753660d8c41a48e366bda3e6bc06aaacd9cd5f410ecde0b6cdbdf9b4a",
+      "bytes": 2118,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/integrity/content-hash.ts",
+      "sha256": "107e311423708e592592a6923778c2bdb5be28640de398aad8ab2f2c2810f669",
+      "bytes": 783,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "integrity"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/integrity/integrity-check.ts",
+      "sha256": "412951897d14f0526406dda498021b86f422bc74637cd192ff02f8c7c1dc5877",
+      "bytes": 617,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "integrity"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/lineage/lineage-builder.ts",
+      "sha256": "94b9aaf9e5a9697e8be92c7f8ce2c837bcd4894ea8ca37abf9ebbd607680cce8",
+      "bytes": 1035,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "lineage"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/lineage/transformation-log.ts",
+      "sha256": "12c62ed12405374a74c9dab243f33e4501b55813df13fdef68a31ec8e43c3e22",
+      "bytes": 597,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "lineage"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/monitor/quality-drift-monitor.ts",
+      "sha256": "1d9f46b4c6d7b60798bdfe28df13839891dec2811d7e4ef46547fd3593c647ad",
+      "bytes": 758,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "quality"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/monitor/refinery-monitor.ts",
+      "sha256": "22952b48b3e515c6b8fc4b250dcff05db9f9f03dc1699da0b8c6dd30e7c6f6db",
+      "bytes": 1122,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/monitor/rule-drift-monitor.ts",
+      "sha256": "5f17ea547a99e04fcb41659a6b3e3706e5c5bd61614c8431716fe94c70b3dea6",
+      "bytes": 1261,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/normalize/canonical-field-map.ts",
+      "sha256": "a1576c02d5dc6f38be511043fb9a5d7e36d630176b3d25cf13e2bf6eac578793",
+      "bytes": 376,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "normaliz"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/normalize/normalize-dates.ts",
+      "sha256": "d0d9d47afc94c7a60f607da94cd111066cd91884598cffbef91e1ea773994508",
+      "bytes": 629,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "normaliz"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/normalize/normalize-record.ts",
+      "sha256": "e2d639e1b36433407a8412538553f746b07de82f78ef3fc9885fc43d5e5d035e",
+      "bytes": 1449,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "normaliz"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/normalize/normalize-text.ts",
+      "sha256": "b5dda41eb6a0be706148a4ff735d8e5518afdac28ac4e9538027f2fd1eb4afba",
+      "bytes": 448,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "normaliz"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/normalize/normalize-units.ts",
+      "sha256": "fc5ea1dd6bcd85692b3b7066786fab64064a88354bd4a8aebc2db2b5ef929ee0",
+      "bytes": 792,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "normaliz"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/packet/refinery-packet-builder.ts",
+      "sha256": "e32f9d3ebeceeace3ae68465b0590acaef2354280b56f6776ba9fed17d578ded",
+      "bytes": 2498,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/packet/refinery-packet-validator.ts",
+      "sha256": "75a8635253bb89ff0f49eb628d56812f691b72217e9e474d6d43c2d71e4b3dff",
+      "bytes": 1032,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/packet/refinery-status.ts",
+      "sha256": "b03609c381b81a86a4335c092da9fcb627643a5ae4a1afb5cee3fbf3564dfbf3",
+      "bytes": 1149,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/pipeline/pipeline-context.ts",
+      "sha256": "d28fca5c52c30e788991f82ffd2b46a9a0d4566b14c15dec453be76a1c35dd2c",
+      "bytes": 915,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "pipeline"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/pipeline/refinery-engine.ts",
+      "sha256": "0b2faf705d753271f2dbdd436375b01925e05bc7e18d669941ca92fb4adf5739",
+      "bytes": 2269,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "pipeline"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/pipeline/stage-runner.ts",
+      "sha256": "295a03f87c03eef935ec4a6c7acfa1c6f681fd771e2d4c7d5f14a51c7ee03f5e",
+      "bytes": 582,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "pipeline"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/quality/quality-engine.ts",
+      "sha256": "cf0a250ea838a12a0774988e2477c3e4e83f906a0211046bfecd9885f6022624",
+      "bytes": 967,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "quality"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/quality/quality-score.ts",
+      "sha256": "3213c9176136fa67ca7f630bfc6fd4edb22cc2e8483510177001d9e267b98389",
+      "bytes": 887,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "quality"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/quality/rules/integrity.rule.ts",
+      "sha256": "3d5d47f04d6cdfb1bcb903f205aa78eec10b2d00d8edb449bba383ffa64ff65c",
+      "bytes": 750,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "quality"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/quality/rules/required-fields.rule.ts",
+      "sha256": "559470b7908ed19490689944128370912c506bc1c84ff842f2cba37b6ed3a65c",
+      "bytes": 938,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "quality"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/quality/rules/source-owner.rule.ts",
+      "sha256": "715e9fbfff1e032815c0c2f56c60210e094bb28a4594dc484367795aaf1b8031",
+      "bytes": 697,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "quality"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/quality/rules/source-scope.rule.ts",
+      "sha256": "d92c7b67b6b061aaef302125ebcb046250f6d9a2be93aa661b673ad0690bbb8b",
+      "bytes": 730,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "quality"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/quality/rules/staleness.rule.ts",
+      "sha256": "a343263671987b908382644af88aa9f04378c74cbec1fc242fb483cd57cc3341",
+      "bytes": 1380,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "quality"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/quality/rules/unit-consistency.rule.ts",
+      "sha256": "703e2df39cdd123668a0ae821307c6495d01c377a22b4c0a4e7411e960ac8d7d",
+      "bytes": 1373,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "quality"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/receipts/receipt-integrity.ts",
+      "sha256": "66ba0f04f61c608caae871548c3087bfd7c68904a4b3e668e57c531378d9c322",
+      "bytes": 416,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "integrity"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/receipts/refinery-receipt.ts",
+      "sha256": "eada5ee82982f4d391241afa4d30d512486cfd5683e838075db1747e335493bb",
+      "bytes": 1295,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "receipt"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/types/conflict-set.ts",
+      "sha256": "c42cd9514ee980badf4a412dc604bed7d11493ba6dda25ca8052a28ce28dc8d4",
+      "bytes": 527,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "conflict"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/types/duplicate-group.ts",
+      "sha256": "a883a8979b38000b1b8cbdc61db1540af77ef5ed8d479a90f970f4ff65b5e932",
+      "bytes": 413,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "duplicate"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/types/lineage-event.ts",
+      "sha256": "c4294837e40d03174a9b6f7e0ce78afa3191ab8ff44a617cf24319bb23c2ce03",
+      "bytes": 454,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "lineage"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/types/normalized-record.ts",
+      "sha256": "04764d31ca43df992b04aa73081c0129194aea5c12e6c75df6ad8af38ad324ea",
+      "bytes": 375,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "normaliz"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/types/quality-finding.ts",
+      "sha256": "c234c24bb46fc6e31a27df1b5359ef797c9b0ff038657a514d0cae225ec061a9",
+      "bytes": 345,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "quality"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/types/refinery-packet.ts",
+      "sha256": "8c0f0d4a4e6006f103563b963aa763f7cbef254c2e3c698261c5ed13eb9f885c",
+      "bytes": 1193,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/types/refinery-receipt.ts",
+      "sha256": "65069e9a2ffed066455d822e8786debe39a5fde3ab71bba18187b32582b2690c",
+      "bytes": 508,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "receipt"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/src/types/source-envelope.ts",
+      "sha256": "f3d97873adf4047953e3613bfebb72f6bb45a3d2599a87040f3b20af5226387a",
+      "bytes": 846,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "envelope"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/tests/adapters.test.ts",
+      "sha256": "18825cb00e3d835329a5585db1e8fe67f8a453396ee7679bec1fa82f5c0513fc",
+      "bytes": 1971,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/tests/conflict-detection.test.ts",
+      "sha256": "4d3c5240e55be7517d8d4a97d2a6bb21dae7b6029074783182a137fe3f4e9c13",
+      "bytes": 2503,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "conflict"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/tests/duplicate-detection.test.ts",
+      "sha256": "4700e45e4c9053e8dcd58321d86c7837e9e4fbf32cadc76e626fa302bb098e95",
+      "bytes": 1036,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "duplicate"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/tests/failure-injection.test.ts",
+      "sha256": "a332f357c10abb610dd50863d90c7a2c21bb5c1db3d54c47634213ab1a296792",
+      "bytes": 2094,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/tests/integrity.test.ts",
+      "sha256": "cb457fd4c6e6a95836b10f6d079b1a0d745f196480b51cb33c24a44c7509f583",
+      "bytes": 1241,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "integrity"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/tests/lineage.test.ts",
+      "sha256": "d5b64a34148a538b2b0b1feb745b5eed6d5770466fc55535bc8475015bf8f6a8",
+      "bytes": 731,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "lineage"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/tests/normalization.test.ts",
+      "sha256": "67d28f8607f119fdbc4bbf0ce55fb72edd1cab1763d1c573d01d024763350121",
+      "bytes": 1140,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "normaliz"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/tests/quality-engine.test.ts",
+      "sha256": "55412acce4c51dad9f6c330c5e5da4a126881886981e64867a869256d2408df7",
+      "bytes": 857,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "quality"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/tests/refinery-packet.test.ts",
+      "sha256": "507d7d13bdd48ceb8a37ccf5a10810a17c6b9521d17af6bbd8dd97f91cc8c73e",
+      "bytes": 2896,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/tests/source-envelope.test.ts",
+      "sha256": "c9ca39a6e95984f076adad4247f471e2e7d382473e25c454ee7991c9f87809b4",
+      "bytes": 1360,
+      "extension": "ts",
+      "artifactFamily": "test",
+      "capabilityFamily": "envelope"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/tsconfig.json",
+      "sha256": "79a52929688e71bb0a8974f5abb0eeaaf42723858ecf20290de89fabdcb38377",
+      "bytes": 502,
+      "extension": "json",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_REFINERY/vitest.config.ts",
+      "sha256": "73105c1f5a2ca3e53da4ac4e965c441533529505dcd53bc700d08c356e09f7df",
+      "bytes": 158,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/runtime/refinery/refinery-evidence-binding.ts",
+      "sha256": "b7143bf800b1c1215876685b926c227c93c7145265690c5eff476aa869c965ad",
+      "bytes": 1451,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "evidence"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "EXTENSIONS/CVF_v1.1.1_PHASE_GOVERNANCE_PROTOCOL/runtime/refinery/refinery-phase-binding.ts",
+      "sha256": "58011489fc6ce27844db8137a0203a8424ac763c8823094f80ba0f41570c9f05",
+      "bytes": 1667,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "README.md",
+      "sha256": "3a99ae507f14223793d6a17ec6e61809afa9f64d453649f5ab62ae5013cabc94",
+      "bytes": 16348,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "readme.md"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "TREEVIEW.md",
+      "sha256": "319034da66f4636a360ac7314ec2b00bd5162be120f191af7964c379e9be3c1b",
+      "bytes": 10185,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "treeview.md"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/evidence/refinery/README.md",
+      "sha256": "bccb4cacf6cd2723d4bdfb1560562bb6be765db572ee316e395970168452c4a5",
+      "bytes": 458,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "evidence"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/evidence/refinery/SAMPLE_FAILURE_INJECTION_REPORT.md",
+      "sha256": "1189479858e4f059a32e72468430e68a06e752a1c1d09c1cd2468b11fc47184c",
+      "bytes": 796,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "evidence"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/evidence/refinery/SAMPLE_REFINERY_PACKET.md",
+      "sha256": "2ad1cf1b8feacbf60c436c8e30a1e82e807b9e6cbac92941de3fef4f80966f14",
+      "bytes": 759,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/evidence/refinery/SAMPLE_REFINERY_RECEIPT.md",
+      "sha256": "9995b97c50923129c590e1c0aae8e08524b5d6dbf6c8ce79215243118714d99d",
+      "bytes": 620,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "receipt"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/guides/refinery/NON_CODER_SOURCE_INTAKE_GUIDE.md",
+      "sha256": "428779f4d6267e152634fd98f756c80877fccc1cf13242e4de91555a773a183d",
+      "bytes": 741,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/guides/refinery/REFINERY_QUICKSTART.md",
+      "sha256": "3f92f477bab466c4f06221ca441eefbf7c133e8530ae83a175eaa4bd175a7f00",
+      "bytes": 1364,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/guides/refinery/RULE_AUTHORING_GUIDE.md",
+      "sha256": "514bab57825388851142432a33767c4e294edb35d6c9ba68525cfc4975e95e0d",
+      "bytes": 818,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/guides/refinery/SOT_VERTICAL_SLICE_GUIDE.md",
+      "sha256": "0b2234395d0126a69b7a225b673a953b46ce52ccb80d0fdffd000efb52840947",
+      "bytes": 1068,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/reference/refinery/CLAIM_BOUNDARY.md",
+      "sha256": "008675c8a689a6224a8c7ab46c58cc06dbad0a50dac12a66eb648fb57596fd3b",
+      "bytes": 1086,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/reference/refinery/CONFLICT_SET_SPEC.md",
+      "sha256": "8b62ded60ffd85baa0d979d61443311cb18c63cf6f273a06c5be7bd3e9f58a28",
+      "bytes": 1014,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "conflict"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/reference/refinery/CVF_REFINERY_BINDING_SPEC.md",
+      "sha256": "d7d43a0228646b84bbb4ef87a2cefdd3f86fac2aeed0b02ff684d3d3198fc8d3",
+      "bytes": 1242,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/reference/refinery/CVF_REFINERY_DOCTRINE.md",
+      "sha256": "9657b90834070845fce3233ccc972f7c9f1f0c2becf74da4d3c040bfd6d0b26f",
+      "bytes": 2368,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/reference/refinery/DUPLICATE_GROUP_SPEC.md",
+      "sha256": "697cf4210cea2b49609233850d19c38e7f9923e466fa66a54d707a7fa695c8bb",
+      "bytes": 815,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "duplicate"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/reference/refinery/FAILURE_TOKENS.md",
+      "sha256": "274bde58f5556b04b5f014d59ed33d350b5705225c0bb94e3328b405f9c46830",
+      "bytes": 1500,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/reference/refinery/NORMALIZED_RECORD_SPEC.md",
+      "sha256": "e006e1e60112cfc1cb7662d7d7b0ad1c987db53518d8587e56a7adb649624e6e",
+      "bytes": 1093,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "normaliz"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/reference/refinery/QUALITY_FINDING_SPEC.md",
+      "sha256": "c0a80d4c0808c806f1eb2cf55743d2ca9aa5112a30abf7988990806c71e64f47",
+      "bytes": 796,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "quality"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/reference/refinery/README.md",
+      "sha256": "983a1116f1bf8db8c90ef1bd16175fe9669277620d7acf2848392d96cefaf66d",
+      "bytes": 1473,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/reference/refinery/REFINERY_BOUNDARY_SPEC.md",
+      "sha256": "c53cd318ddc7fe3b4866e3ace5d969a1833d8a7b6c4f7932f20093e29c07d7ff",
+      "bytes": 1833,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/reference/refinery/REFINERY_PACKET_SPEC.md",
+      "sha256": "3fcca2b3e1a94ac4a57c1d76de30ecf4d85bb97949822f5345e36429c68ad87d",
+      "bytes": 1160,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/reference/refinery/SOURCE_ENVELOPE_SPEC.md",
+      "sha256": "17e0b40e4d7786e3fa3c76af15e00f6bc6b454a793a2f61c74bdb877c0ade7ce",
+      "bytes": 1083,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "envelope"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "docs/reference/refinery/TRANSFORMATION_LINEAGE_SPEC.md",
+      "sha256": "da34ecc5a0cf136bdd602924c68d7b0d87512ad7acc6a80af7727eafa801633a",
+      "bytes": 1016,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "lineage"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "governance/refinery/check_failure_tokens.ts",
+      "sha256": "5a10f10ca27e9a576c96dcb6ea0265e7f37ffe7907ea0a7f5b942ba19a133f3d",
+      "bytes": 919,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "governance/refinery/check_lineage_completeness.ts",
+      "sha256": "3a8026b51475bba285d57dd248490cb0259083adbf76539a92c1a11161e6e28b",
+      "bytes": 815,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "lineage"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "governance/refinery/check_no_truth_claim.ts",
+      "sha256": "46acaa15ff038e1364e0c5a9b4ddbf5c2449a11a733c7338a466afd19bf3748c",
+      "bytes": 666,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "governance/refinery/check_refinery_contract.ts",
+      "sha256": "d6ccabbc948b5a04f85585d1833c8929f74fe511d99dba94fb10f24918cd25f9",
+      "bytes": 644,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "governance/refinery/check_refinery_packet.ts",
+      "sha256": "13464669478658dbb9e85338eb7a3d91c8ee3065a3134742e0e99052918d7415",
+      "bytes": 870,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "governance/refinery/check_rule_manifest.ts",
+      "sha256": "deb1a9f21eb95bf41a3ab6b92ded5a7f363453bd24c937cbcb248c8cfc7d02c5",
+      "bytes": 687,
+      "extension": "ts",
+      "artifactFamily": "source",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "scripts/refinery/generate_refinery_receipt.ts",
+      "sha256": "fa6ad40ea0499c4ad0c697c26c3f61af0c75e665ae78d86f7e6ffa3cee25e2e7",
+      "bytes": 1250,
+      "extension": "ts",
+      "artifactFamily": "script",
+      "capabilityFamily": "receipt"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "scripts/refinery/inspect_source_envelope.ts",
+      "sha256": "8819154945956b7d040be779dc506395d1de487cf65192270a5b0218d804e6cb",
+      "bytes": 731,
+      "extension": "ts",
+      "artifactFamily": "script",
+      "capabilityFamily": "envelope"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "scripts/refinery/run_failure_injection.ts",
+      "sha256": "e662df6f56b086dae8b3b332b9772426abb1ebfc20bd434902f1d69674b3a47f",
+      "bytes": 975,
+      "extension": "ts",
+      "artifactFamily": "script",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "scripts/refinery/run_refinery.ts",
+      "sha256": "383fd4648435a2871d428c337686a991614a8820919a6b9ef777f2e906b45c69",
+      "bytes": 1944,
+      "extension": "ts",
+      "artifactFamily": "script",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "scripts/refinery/validate_refinery_packet.ts",
+      "sha256": "9b3a72dea79b844db65d6441af538746532e2d671cae9fe0a962aec6324dce04",
+      "bytes": 1189,
+      "extension": "ts",
+      "artifactFamily": "script",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "tools/refinery/README.md",
+      "sha256": "5951e7b5b576436c6a0329ae084beb30d139f1e654a1dbcf6022d188cea7bb48",
+      "bytes": 652,
+      "extension": "md",
+      "artifactFamily": "docs",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "tools/refinery/conflict_resolution_template.yaml",
+      "sha256": "476ac2616d3d1f1662ec150f1f381e2b81bfa619e4f47dab02bf6528867bf7af",
+      "bytes": 294,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "conflict"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "tools/refinery/refinery_packet_template.yaml",
+      "sha256": "88b6ebab032185770e88dbba6bca84b9782343fa9adc8c20b215e99d48a11864",
+      "bytes": 460,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "packet"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "tools/refinery/refinery_rule_template.yaml",
+      "sha256": "0277799d183eb0edf96b1f99f6e6ada483f9745a9adb18c7dd9ee1f95de4b893",
+      "bytes": 291,
+      "extension": "yaml",
+      "artifactFamily": "rule",
+      "capabilityFamily": "refinery"
+    },
+    {
+      "rootId": "REFINERY",
+      "sourceRelativePath": "tools/refinery/source_envelope_template.yaml",
+      "sha256": "a64fddca4501c9f0e4146b56c9aa2d98873b23a0a3151eca124af424be2fbbad",
+      "bytes": 388,
+      "extension": "yaml",
+      "artifactFamily": "metadata",
+      "capabilityFamily": "envelope"
+    }
+  ]
+}

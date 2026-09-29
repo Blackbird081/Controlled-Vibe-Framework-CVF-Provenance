@@ -1,0 +1,100 @@
+{
+  "registryOrder": 182,
+  "id": "brigade-eartr-source-pack-absorption",
+  "corpusType": "LEGACY_FOLDER",
+  "displayName": "Brigade EARTR 1.2 source-pack absorption",
+  "scopePaths": [
+    ".private_reference/legacy/CVF 13.08/BRIGADE_EARTR_SOURCE_PACK_2026-08-29/",
+    ".private_reference/source_mirrors/spinabot__brigade/"
+  ],
+  "fileCount": 11,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "BRIGADE-EARTR-R1",
+  "scanDate": "2026-08-29",
+  "manifestHash": "e52530da25bb780e4eb8d48ce782dca733a523b9cf6e6f7e2e5ccb43856ddd05",
+  "hashAlgorithm": "sha256",
+  "hashInput": "sorted-paths-newline-joined-with-trailing-newline",
+  "manifestPath": "docs/audits/CVF_BRIGADE_EARTR_SOURCE_PACK_MANIFEST_2026-08-29.json",
+  "packetPath": "docs/reviews/CVF_BRIGADE_EARTR_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md",
+  "completionReviewPath": "docs/reviews/CVF_BRIGADE_EARTR_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md",
+  "gcBaselineRef": null,
+  "verdicts": {
+    "gc047": "COMPLETE_VERIFIED",
+    "gc048": "RECONCILED_VERIFIED",
+    "gc050": "PASS"
+  },
+  "semanticRegions": [
+    "memory-write-admission-origin-isolation-and-typed-transition",
+    "memory-event-governance-and-human-gated-learning",
+    "approval-and-execution-context-binding",
+    "delegation-budget-cancellation-and-completion-lifecycle",
+    "tool-output-aware-context-compaction",
+    "portable-public-snapshot-freshness",
+    "external-agent-round-trip"
+  ],
+  "priorAbsorption": "No prior exact Brigade source-pack intake existed. This intake closed two source patterns as already owned, runtime-realized four existing-owner capability clusters, and separated unrelated CVF defects from Brigade source value.",
+  "findings": [
+    {
+      "id": "BRIGADE-R1-F1-memory-trust-origin-transition",
+      "summary": "Controlled Memory now composes protected-segment trust admission, exact principal-origin isolation, typed same-origin transitions and file-backed restart isolation.",
+      "disposition": "ACCEPT",
+      "nextAction": "CLOSED_USE_PROVEN: deterministic gateway/store tests and the representative residual pilot pass.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_BRIGADE_EARTR_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md#finding-to-governance-learning-disposition"
+    },
+    {
+      "id": "BRIGADE-R1-F2-approval-execution-context-binding",
+      "summary": "Guard Contract now composes exactly-once decision/timeout/abort settlement with command, cwd, environment, actor and session binding in Agent Execution Runtime.",
+      "disposition": "ACCEPT",
+      "nextAction": "CLOSED_USE_PROVEN: drift suppresses provider execution and an unchanged bound approval completes one Alibaba call.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_BRIGADE_EARTR_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md#finding-to-governance-learning-disposition"
+    },
+    {
+      "id": "BRIGADE-R1-F3-delegation-lifecycle-composition",
+      "summary": "MAO composes atomic child reservation, cross-parent budget, descendant abort propagation, exactly-once release and per-parent completion serialization through its operational launcher.",
+      "disposition": "ACCEPT",
+      "nextAction": "CLOSED_USE_PROVEN: deterministic tests and real launcher/store/ledger restart pilot pass.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_BRIGADE_EARTR_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md#finding-to-governance-learning-disposition"
+    },
+    {
+      "id": "BRIGADE-R1-F4-tool-output-aware-compaction",
+      "summary": "Context Packager now consumes a two-pass tool-result share compactor with important-tail preservation and explicit unsafe-late-compaction refusal.",
+      "disposition": "ACCEPT",
+      "nextAction": "CLOSED_USE_PROVEN: deterministic tests and representative packager pilot pass.",
+      "defectClass": "RULE_GAP",
+      "learningLane": "GOVERNANCE_CONTROL_PLANE",
+      "f2gRef": "docs/reviews/CVF_BRIGADE_EARTR_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md#finding-to-governance-learning-disposition"
+    },
+    {
+      "id": "BRIGADE-R1-F5-portable-provider-snapshot-drift",
+      "summary": "The current operator-local portable snapshot at public pin d7860138 reports Alibaba qwen-turbo certified although current pinned public truth identifies qwen-flash as experimental and DeepSeek as the current certified lane.",
+      "disposition": "ACCEPT",
+      "nextAction": "RESOLVED 2026-08-29: the refresh generator now projects provider posture from the pinned readiness matrix, fails closed on missing lanes, records source hashes, and refreshed the operator-local packet.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+      "f2gRef": "docs/reviews/CVF_BRIGADE_EARTR_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md#finding-to-governance-learning-disposition"
+    },
+    {
+      "id": "BRIGADE-R1-F6-portable-release-snapshot-drift",
+      "summary": "The same portable snapshot reports 4.0.0-rc.1 while the pinned public CHANGELOG records v4.0.0 GA with GA_LOCAL_FIRST_APPROVED.",
+      "disposition": "ACCEPT",
+      "nextAction": "RESOLVED 2026-08-29: the refresh generator now projects version/status from pinned public CHANGELOG.md and refreshed the operator-local packet to v4.0.0 GA_LOCAL_FIRST_APPROVED.",
+      "defectClass": "DOCUMENTATION_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING",
+      "f2gRef": "docs/reviews/CVF_BRIGADE_EARTR_LOCAL_RECONCILIATION_AND_ABSORPTION_CLOSURE_2026-08-29.md#finding-to-governance-learning-disposition"
+    }
+  ],
+  "negativeSearchTerms": [
+    "initial protected-segment composition absence closed by Controlled Memory trust contract",
+    "initial durable origin absence closed by explicit persisted originPrincipalId",
+    "initial approval settlement absence closed by ApprovalExecutionBridge",
+    "initial delegation composition absence closed by MAO coordinator and launcher integration",
+    "initial tool-result compaction absence closed by Context Packager integration"
+  ],
+  "nextScanRecommendation": "CLOSED_USE_PROVEN. Do not rescan the unchanged source pack or pinned Brigade commit; reopen only on upstream drift or a newly reproduced gap."
+}

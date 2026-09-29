@@ -17,6 +17,22 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_core_guard_self_protection.py", "--enforce"],
     ),
     (
+        "high-risk local transaction proof",
+        ["python", "governance/compat/check_high_risk_local_transaction_proof.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "semantic convergence and escalation control",
+        ["python", "governance/compat/check_semantic_convergence_control.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "subagent provider execution authority",
+        ["python", "governance/compat/check_subagent_provider_execution_authority.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "task-proportional governance shadow route",
+        ["python", "governance/compat/check_task_governance_route.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
         "docs governance compatibility",
         ["python", "governance/compat/check_docs_governance_compat.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
@@ -35,6 +51,14 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
     (
         "worker experience retrospective",
         ["python", "governance/compat/check_worker_experience_retrospective.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "review cost control",
+        ["python", "governance/compat/check_review_cost_control.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "gate-to-role closeability",
+        ["python", "governance/compat/check_gate_to_role_closeability.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
         "worker-return quality gate",
@@ -107,6 +131,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
     (
         "external absorption value conversion",
         ["python", "governance/compat/check_external_absorption_value_conversion.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "mixed-origin derived synthesis absorption",
+        ["python", "governance/compat/check_mixed_origin_derived_synthesis_absorption.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
     (
         "external absorption overlap discipline",
@@ -229,6 +257,14 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
         ["python", "governance/compat/check_next_move_freshness.py", "--enforce"],
     ),
     (
+        "system chain map freshness",
+        ["python", "governance/compat/check_system_chain_map_freshness.py", "--enforce"],
+    ),
+    (
+        "as-built system catalog drift",
+        ["python", "governance/compat/check_as_built_system_catalog_drift.py", "--enforce"],
+    ),
+    (
         "memory consolidation artifact quality",
         ["python", "governance/compat/check_memory_consolidation_artifact_quality.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
     ),
@@ -243,6 +279,10 @@ REVIEWER_FAST_CHECKS: list[tuple[str, list[str]]] = [
     (
         "dispatch scaffold provenance",
         ["python", "governance/compat/check_dispatch_scaffold_provenance.py", "--base", "HEAD", "--head", "HEAD", "--enforce"],
+    ),
+    (
+        "agent instruction carrier compaction",
+        ["python", "governance/compat/check_agent_instruction_carriers.py", "--enforce"],
     ),
 ]
 

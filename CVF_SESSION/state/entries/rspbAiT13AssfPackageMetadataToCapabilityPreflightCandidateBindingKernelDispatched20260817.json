@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2272,
+  "stateKey": "rspbAiT13AssfPackageMetadataToCapabilityPreflightCandidateBindingKernelDispatched20260817",
+  "value": "RSPB-AI-T13 is DISPATCH_READY at c8d6f016b2a1ed33abf1b250ca785aab56dcf9c0 from execution base f25420cf2d852a653206bb901b06f10267eb13ae. One selected ASSF preflight-binding source matched SHA-256 984ec80802dbcfa304eaecc254963e976dceee9530982294c4fabfabaf1929d9; duplicate integrity, secret-safety, and learning-promotion candidates were rejected NO_NEW_VALUE. The TPGR manifest routes P2_BOUNDED/ROUTED_SHADOW with selective execution false and the full legacy gate retained. Pre-dispatch passed 78/78 and pre-commit passed 86/86. The external worker is limited to exactly five paths, may not stage or commit, and must return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON; independent reviewer inspection, hostile proof, repair, acceptance, commit, and closure remain pending."
+}

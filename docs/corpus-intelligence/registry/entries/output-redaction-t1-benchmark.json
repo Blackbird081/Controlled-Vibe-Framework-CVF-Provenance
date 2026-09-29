@@ -1,0 +1,40 @@
+{
+  "registryOrder": 187,
+  "id": "output-redaction-t1-benchmark",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "OUTPUT-REDACTION-T1 bounded synthetic benchmark",
+  "scopePaths": [
+    "EXTENSIONS/CVF_ECO_v2.5_MCP_SERVER/scripts/benchmark-known-value-redaction.ts"
+  ],
+  "fileCount": null,
+  "status": "SCANNED_WITH_FINDINGS",
+  "scanWave": "OUTPUT-REDACTION-T1",
+  "scanDate": "2026-09-14",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_OUTPUT-REDACTION-T1_WORKER_RETURN_2026-09-14.md",
+  "notes": "One bounded local benchmark source reviewed and executed with synthetic runner fixtures. Registry coverage only; no source-wide completeness or lane closure claim.",
+  "findings": [
+    {
+      "id": "OUTPUT-REDACTION-T1-BENCH-01",
+      "summary": "Same-function baseline and truncated hit fixtures were corrected; pinned pre-change comparison exposes then verifies repair of application latency.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Retain finite synthetic measurement boundaries; no universal latency claim.",
+      "defectClass": "UNVERIFIED_CLAIM",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "Revisit if benchmark source or acceptance method changes.",
+  "completionReviewPath": null,
+  "gcBaselineRef": "docs/baselines/CVF_GC018_OUTPUT-REDACTION-T1_2026-09-14.md",
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "NOT_APPLICABLE",
+    "gc050": "NOT_APPLICABLE"
+  },
+  "semanticRegions": {},
+  "priorAbsorption": {},
+  "hashAlgorithm": null,
+  "hashInput": null
+}

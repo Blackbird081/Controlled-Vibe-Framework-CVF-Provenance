@@ -1,0 +1,13 @@
+{
+  "stateOrder": 1661,
+  "stateKey": "mseaR98L2BuildProtocolOwnerRatificationDispatch20260711",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-11",
+    "dispatchCommit": "cd58b0211",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_MSEA_R98_L2_BUILD_PROTOCOL_OWNER_RATIFICATION_2026-07-11.md",
+    "route": "SINGLE_AGENT_MULTI_ROLE",
+    "nextAllowedMove": "execute and close bounded R98 material scope",
+    "claimBoundary": "L2 active-owner ratification decision only; no AGENTS.md or doctrine mutation"
+  }
+}

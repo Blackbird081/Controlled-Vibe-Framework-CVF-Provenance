@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2150,
+  "stateKey": "shiftOperationsCorePinReconciliationClosure20260811",
+  "value": "SOPR-CP1 plus SOPR-CP1-A1 are CLOSED_BOUNDED / REVIEWER_ACCEPTED at downstream target commit da85889097e36eefd5379b6577a10eac8079f57d. Completion review SHA-256 is e95f2df56f6e4d3dcad1793d679ea729eac7e4831ed7e712d9cef71780455e44; corrected worker return SHA-256 is 9014bde67884c4f475b1e0965daf1b08270a5cc02f2f625e31bbd3590e990227; repaired test SHA-256 is bbe4beb70e0115b6d00dfcf1d5212ddbe13c5fe5750f5927839b5af68bd67995. Independent reviewer accepted without waiver after exact authority/preimage checks, semantic decoded-byte inspection, authorization 10/10, disclosed ordering test 30/30, two consecutive 605-test full suites, all local gates, allowed doctor result, staged zero before commit and clean target afterward. No push or external effect occurred."
+}

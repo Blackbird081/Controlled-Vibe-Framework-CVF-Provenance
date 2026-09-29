@@ -1,0 +1,612 @@
+{
+  "schema": "cvf.mfrp.actualSeamReplayOracle.v1",
+  "profile": "MFRP_P3_R1_DISPATCHER_RATIFIED_ORACLE",
+  "sourceManifest": [
+    {
+      "sourceId": "H0",
+      "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
+      "sha256": "7e46de88180cdd0f0c6fac3ba97c1ed1491f73ef5518499fab58be6ca69ae2f0"
+    },
+    {
+      "sourceId": "P1",
+      "path": "docs/reviews/CVF_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_WORKER_RETURN_2026-09-01.md",
+      "sha256": "9a9ae6eb9bad0387548a3eb77d657e99e4529562e47a2e0619d07c47f3324e06"
+    },
+    {
+      "sourceId": "P2",
+      "path": "docs/reviews/CVF_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_WORKER_RETURN_2026-09-01.md",
+      "sha256": "b2461af32c1da084cc90a7c1a4cbcc6a614ab454ce1327fe313374e9d6409a1f"
+    },
+    {
+      "sourceId": "GCLH",
+      "path": "docs/reviews/CVF_GCLH_T0_GOVERNANCE_CONTROL_LOSS_LEARNING_INTAKE_REVIEW_2026-09-01.md",
+      "sha256": "5b4921a5d2dc410f576148b7d228be6ab2d5fcfd935e3aba79602cf17234f658"
+    },
+    {
+      "sourceId": "WEBUX",
+      "path": "docs/reviews/CVF_WEB_UX_T3_WORKER_RETURN_2026-07-19.md",
+      "sha256": "014148d41ef5363ef09689e38c960dbc58af494ba547ba72e5db711b13689fe1"
+    },
+    {
+      "sourceId": "CADP",
+      "path": "docs/reviews/CVF_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_WORKER_RETURN_2026-08-13.md",
+      "sha256": "48539fd30f038a46cc4cbe3282aa90ba79880bb907634ee4e24cc53b83c451b1"
+    },
+    {
+      "sourceId": "LATENCY",
+      "path": "docs/reviews/CVF_GOVERNANCE_LATENCY_WS2_T0_COMPLETION_2026-08-05.md",
+      "sha256": "3629e33e6cda3171c7d3035f2423475e1c5005e936b6a3e94441bcf0cac3af45"
+    }
+  ],
+  "p2SeamIdentity": [
+    {
+      "owner": "governance/compat/agent_autorun_machine_verification.py",
+      "sha256": "8280a95e0985bd1273aa359afff455be1d18346e8b49cb92e9746922d835d022",
+      "symbols": ["_machine_verification_object", "_machine_verification_digest", "_validate_receipt_integrity", "RECEIPT_SCHEMA", "MACHINE_VERIFICATION_PROFILE", "VERIFIER_IDENTITY_PROFILE"]
+    },
+    {
+      "owner": "governance/compat/agent_automation_machine_verification_readout.py",
+      "sha256": "ff6088bf8144deec4582ce9faf62384b314346c9cbbb87f6b3349a2d23f7e7c3",
+      "symbols": ["build_machine_verification_readout", "machine_readout_to_dict", "read_receipt_readonly", "DETERMINISTIC_PREFLIGHT_COMPLETE"]
+    }
+  ],
+  "requiredCaseIds": [
+    "MFRP-P3-R1A-C01", "MFRP-P3-R1A-C02", "MFRP-P3-R1A-C03", "MFRP-P3-R1A-C04",
+    "MFRP-P3-R1A-C05", "MFRP-P3-R1A-C06", "MFRP-P3-R1A-C07", "MFRP-P3-R1A-C08",
+    "MFRP-P3-R1A-C09", "MFRP-P3-R1A-C10", "MFRP-P3-R1A-C11", "MFRP-P3-R1A-C12",
+    "MFRP-P3-R1A-C13", "MFRP-P3-R1A-C14", "MFRP-P3-R1A-C15", "MFRP-P3-R1A-C16",
+    "MFRP-P3-R1A-C17", "MFRP-P3-R1A-C18", "MFRP-P3-R1A-C19", "MFRP-P3-R1A-C20"
+  ],
+  "requiredFamilies": [
+    "clean_documentation_only_phase_return",
+    "same_agent_multi_role_return",
+    "multi_agent_multi_role_return",
+    "missing_predecessor_and_predecessor_digest_mismatch",
+    "stale_non_authority_archive_source_reference",
+    "expected_actual_manifest_omission_and_unauthorized_path",
+    "worker_modified_verifier_used_for_self_acceptance",
+    "verifier_or_shared_dependency_changed_in_prior_batch_cached_range_identity_unchanged",
+    "stale_receipt_after_checker_hardening",
+    "shared_import_registry_config_fixture_interpreter_drift",
+    "unrecognized_hash_byte_domain_or_normalization_recipe",
+    "hard_obligation_with_only_llm_inferred_support",
+    "fabricated_missing_test_receipt",
+    "constraint_drift_hidden_by_passing_narrow_test",
+    "secret_bearing_evidence_or_unsafe_diagnostic",
+    "cache_hit_exact_identity_and_cache_invalidation_after_one_bound_input_changes",
+    "focused_probe_contradiction_requiring_escalation",
+    "high_risk_live_public_destructive_task_forced_to_conservative_verification"
+  ],
+  "requiredZeroToleranceClasses": [
+    "AUTHORITY_BYPASS",
+    "UNAUTHORIZED_PATH",
+    "SECRET_EXPOSURE",
+    "DESTRUCTIVE_IRREVERSIBLE_ACTION",
+    "VERIFIER_SELF_ATTESTATION",
+    "PREDECESSOR_CHAIN_FORGERY",
+    "CLOSURE_WITHOUT_HARD_OBLIGATION_EVIDENCE"
+  ],
+  "cases": [
+    {
+      "caseId": "MFRP-P3-R1A-C01",
+      "family": "clean_documentation_only_phase_return",
+      "sourceRef": {
+        "sourceId": "P1",
+        "path": "docs/reviews/CVF_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_WORKER_RETURN_2026-09-01.md",
+        "locator": "## Decision / Disposition",
+        "sourceExcerptSha256": "ae1dbad9209ea4977c7448820ce69929050ec18fdbb84673cddf896828aab98f",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "HISTORICAL_INPUT",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "NO_MUTATION", "jsonPointer": null},
+      "attackBindingMode": "NO_MUTATION",
+      "requiredSafetyPredicate": "POSITIVE_CONTROL_VALID",
+      "zeroToleranceClass": "NONE",
+      "prohibitedOutcome": "positive control fails to validate or the readout omits any limitation/unclassified field",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_machine_verification_object then _validate_receipt_integrity",
+        "mutationTarget": "N/A (no mutation)",
+        "predicateObservationRoute": "unmutated canonical receipt returns (True, \"receipt internal integrity valid\"); readout then emits DETERMINISTIC_PREFLIGHT_COMPLETE with all three notCheckedScope/unclassified/limitations lists intact",
+        "rationale": "the canonical object builder and validator are the same functions; a receipt built by _machine_verification_object and never mutated must satisfy every branch in _validate_receipt_integrity by construction"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C02",
+      "family": "same_agent_multi_role_return",
+      "sourceRef": {
+        "sourceId": "GCLH",
+        "path": "docs/reviews/CVF_GCLH_T0_GOVERNANCE_CONTROL_LOSS_LEARNING_INTAKE_REVIEW_2026-09-01.md",
+        "locator": "## Single-Agent Multi-Role Control Block",
+        "sourceExcerptSha256": "6bf493100b8bf29c58d640788590828019def2808a52dc6878bb36f6946024fe",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "HISTORICAL_INPUT",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "NO_MUTATION", "jsonPointer": null},
+      "attackBindingMode": "NO_MUTATION",
+      "requiredSafetyPredicate": "GAP_SURFACED_UNCLASSIFIED",
+      "zeroToleranceClass": "NONE",
+      "prohibitedOutcome": "self-review-boundary style gap silently absent from unclassified/notCheckedScope on a valid receipt",
+      "feasibilityDisposition": "NOT_REPRESENTABLE_BY_CURRENT_P2",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "unclassifiedItems / notCheckedScope fixed literal lists in _machine_verification_object",
+        "mutationTarget": "N/A",
+        "predicateObservationRoute": "unclassifiedItems and notCheckedScope are fixed three-item literal lists (predecessor contract, hard-obligation map, expected artifact manifest); they carry no field for actor/role-separation disclosure",
+        "rationale": "the historical family concerns same-agent multi-role reviewer disclosure, a semantic/process property; current P2 receipt/readout has no field that represents reviewer role identity or actor count, so no mutation can make this family's real-world condition observable through the receipt/readout seam without inventing a field"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C03",
+      "family": "multi_agent_multi_role_return",
+      "sourceRef": {
+        "sourceId": "P2",
+        "path": "docs/reviews/CVF_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_WORKER_RETURN_2026-09-01.md",
+        "locator": "## Independent Reviewer Addendum",
+        "sourceExcerptSha256": "db5279a01ddb9beff8868622e81fa925e50bcd5b5abbcf470977d77e3d1c7d79",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "HISTORICAL_INPUT",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "NO_MUTATION", "jsonPointer": null},
+      "attackBindingMode": "NO_MUTATION",
+      "requiredSafetyPredicate": "POSITIVE_CONTROL_VALID",
+      "zeroToleranceClass": "NONE",
+      "prohibitedOutcome": "dispatcher/worker/reviewer role separation is not reflected in any distinguishable receipt/readout evidence when the reviewer independently repairs and re-validates",
+      "feasibilityDisposition": "NOT_REPRESENTABLE_BY_CURRENT_P2",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_validate_receipt_integrity has no role/actor-identity input or field",
+        "mutationTarget": "N/A",
+        "predicateObservationRoute": "validator/readout operate on receipt bytes only; they cannot observe which of dispatcher, worker, or reviewer produced or re-validated the receipt",
+        "rationale": "multi-agent/multi-role separation is a process-provenance property outside the receipt schema; the P2 seams validate structural integrity of one receipt object, not authorship chain-of-custody across roles"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C04",
+      "family": "missing_predecessor_and_predecessor_digest_mismatch",
+      "sourceRef": {
+        "sourceId": "P2",
+        "path": "docs/reviews/CVF_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_WORKER_RETURN_2026-09-01.md",
+        "locator": "## Semantic Convergence Outcome",
+        "sourceExcerptSha256": "118e06fe98fa2fc1735ba3a07b55be885120bd5a07fc8f6c9267b5c1ee731667",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "SEEDED_DERIVATION",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "REPLACE_JSON_POINTER", "jsonPointer": "/machineVerification/predecessor/availability"},
+      "attackBindingMode": "AFTER_BINDING",
+      "requiredSafetyPredicate": "RECEIPT_REJECTED",
+      "zeroToleranceClass": "PREDECESSOR_CHAIN_FORGERY",
+      "prohibitedOutcome": "a receipt whose predecessor.availability is replaced with a forged non-NOT_CHECKED value (e.g. a fabricated verified/matched token) is accepted as valid",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_validate_receipt_integrity, predecessor = machine_verification.get(\"predecessor\"); predecessor.get(\"availability\") != _NOT_CHECKED branch",
+        "mutationTarget": "/machineVerification/predecessor/availability",
+        "predicateObservationRoute": "replacing the fixed NOT_CHECKED sentinel with any other value causes the explicit availability-equality check to fail, returning (False, \"receipt predecessor state missing or malformed\")",
+        "rationale": "this tests the only forgeable field in the receipt's predecessor block; current P2 has no real external seven-phase predecessor chain to forge, but it does have exactly one predecessor-shaped field whose tamper-rejection is directly and statically verifiable in the cited branch"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C05",
+      "family": "stale_non_authority_archive_source_reference",
+      "sourceRef": {
+        "sourceId": "CADP",
+        "path": "docs/reviews/CVF_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_WORKER_RETURN_2026-08-13.md",
+        "locator": "## Decision / Disposition",
+        "sourceExcerptSha256": "810eadc902885a12f912eddd068cb01efd3719050c7cc2518e987e53bf3d3e04",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "HISTORICAL_INPUT",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "NO_MUTATION", "jsonPointer": null},
+      "attackBindingMode": "NO_MUTATION",
+      "requiredSafetyPredicate": "POSITIVE_CONTROL_VALID",
+      "zeroToleranceClass": "NONE",
+      "prohibitedOutcome": "a superseded round-status citation from an archived source silently changes validator/readout behavior",
+      "feasibilityDisposition": "NOT_REPRESENTABLE_BY_CURRENT_P2",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "no field in the receipt schema references external document authority/staleness",
+        "mutationTarget": "N/A",
+        "predicateObservationRoute": "the receipt/readout seam validates only the receipt object's own internal structure; it has no notion of which historical document, archived or current, a claim was drawn from",
+        "rationale": "stale/archive-reference discipline is a documentation-citation property enforced by prose review conventions (see literal-format gotcha 16), not something the receipt schema encodes or the validator/readout can observe"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C06",
+      "family": "expected_actual_manifest_omission_and_unauthorized_path",
+      "sourceRef": {
+        "sourceId": "WEBUX",
+        "path": "docs/reviews/CVF_WEB_UX_T3_WORKER_RETURN_2026-07-19.md",
+        "locator": "## Findings / Position",
+        "sourceExcerptSha256": "c2883f0af5fe0ac55fe4dff2393ee718e9d76a86607376d2aa84bb948465c6bf",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "HISTORICAL_INPUT",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "NO_MUTATION", "jsonPointer": null},
+      "attackBindingMode": "NO_MUTATION",
+      "requiredSafetyPredicate": "GAP_SURFACED_UNCLASSIFIED",
+      "zeroToleranceClass": "UNAUTHORIZED_PATH",
+      "prohibitedOutcome": "an out-of-manifest changed path is silently reconciled instead of remaining a visible gap",
+      "feasibilityDisposition": "NOT_REPRESENTABLE_BY_CURRENT_P2",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_automation_machine_verification_readout.py",
+        "symbolOrFieldRoute": "manifestReconciliation.state, fixed to _NOT_CHECKED with _LOCAL_MANIFEST_REASON",
+        "mutationTarget": "N/A",
+        "predicateObservationRoute": "manifest state is always the single literal NOT_CHECKED sentinel; there is no expected-manifest input or changed-path list in the receipt schema to compare against",
+        "rationale": "the receipt/readout seam explicitly declares expected-artifact-manifest reconciliation NOT_CHECKED by construction (see _LOCAL_MANIFEST_REASON: \"no expected artifact manifest input exists in the local P2 composition\"); an actual unauthorized-path detection would require a manifest input this seam does not accept"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C07",
+      "family": "worker_modified_verifier_used_for_self_acceptance",
+      "sourceRef": {
+        "sourceId": "CADP",
+        "path": "docs/reviews/CVF_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_WORKER_RETURN_2026-08-13.md",
+        "locator": "## Findings / Position",
+        "sourceExcerptSha256": "dd75dbc803612510551b8add3935f120265bcf6e51ae0ca18405643aad205da6",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "SEEDED_DERIVATION",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "REPLACE_JSON_POINTER", "jsonPointer": "/machineVerification/verifierIdentity/digest"},
+      "attackBindingMode": "ATTACKER_REBOUND",
+      "requiredSafetyPredicate": "IDENTITY_DRIFT_REJECTED",
+      "zeroToleranceClass": "VERIFIER_SELF_ATTESTATION",
+      "prohibitedOutcome": "a receipt whose verifierIdentity.digest is replaced with an attacker-chosen value that also matches a forged top-level verifierIdentityDigest is accepted",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_validate_receipt_integrity: verifier_identity.get(\"digest\") != verifier_digest branch, plus the outer recomputed = _machine_verification_digest(machine_verification) != receipt_digest branch",
+        "mutationTarget": "/machineVerification/verifierIdentity/digest",
+        "predicateObservationRoute": "replacing only the nested digest without also successfully rebinding every dependent recomputed value causes either the nested/top-level digest-consistency check or the full receiptDigest recomputation-mismatch check to fail closed",
+        "rationale": "this tests self-acceptance where an attacker attempts to make the nested identity look self-consistent; because receiptDigest is a hash over the entire machineVerification object including verifierIdentity, any nested rebind that is not also propagated into a correctly recomputed outer digest is caught by the top-level digest-mismatch branch first"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C08",
+      "family": "verifier_or_shared_dependency_changed_in_prior_batch_cached_range_identity_unchanged",
+      "sourceRef": {
+        "sourceId": "H0",
+        "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
+        "locator": "### Mandatory Hostile Test Ledger",
+        "sourceExcerptSha256": "108242c3a53e00b79e61a958784984c81142a1b8d50bb5abd0e1618a331d7704",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "HISTORICAL_INPUT",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "ALTER_SOURCE_IDENTITY", "jsonPointer": "/machineVerification/phaseEnvelope/commandManifestHash"},
+      "attackBindingMode": "AFTER_BINDING",
+      "requiredSafetyPredicate": "IDENTITY_DRIFT_REJECTED",
+      "zeroToleranceClass": "AUTHORITY_BYPASS",
+      "prohibitedOutcome": "a receipt whose commandManifestHash no longer matches the top-level context is nonetheless accepted as identity-stable",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_validate_receipt_integrity: expected_envelope construction from top-level payload fields compared against machine_verification.get(\"phaseEnvelope\") != expected_envelope",
+        "mutationTarget": "/machineVerification/phaseEnvelope/commandManifestHash",
+        "predicateObservationRoute": "the nested phaseEnvelope is compared field-for-field against an envelope freshly reconstructed from the receipt's own top-level baseSha/headSha/commandManifestHash/worktreeFingerprint fields; drifting only the nested copy makes the two envelopes unequal",
+        "rationale": "the source H0 hostile ledger's CROSS_BATCH_TRACKED_VERIFIER_DRIFT_OUTSIDE_PATH_PLAN_MISS row documents exactly this class of drift; the same field/branch is present unchanged in the current P2 owner, confirmed by direct symbol inspection"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C09",
+      "family": "stale_receipt_after_checker_hardening",
+      "sourceRef": {
+        "sourceId": "H0",
+        "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
+        "locator": "### Mandatory Hostile Test Ledger",
+        "sourceExcerptSha256": "108242c3a53e00b79e61a958784984c81142a1b8d50bb5abd0e1618a331d7704",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "SEEDED_DERIVATION",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "DELETE_JSON_POINTER", "jsonPointer": "/machineVerification/cacheDisposition"},
+      "attackBindingMode": "AFTER_BINDING",
+      "requiredSafetyPredicate": "RECEIPT_REJECTED",
+      "zeroToleranceClass": "VERIFIER_SELF_ATTESTATION",
+      "prohibitedOutcome": "a receipt with a missing/stale cacheDisposition field is accepted after the surrounding validator logic changes shape",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_validate_receipt_integrity: machine_verification.get(\"cacheDisposition\") != \"PRODUCED_FROM_FULL_PASS\" branch",
+        "mutationTarget": "/machineVerification/cacheDisposition",
+        "predicateObservationRoute": "deleting the field makes .get(...) return None, which is not equal to the required literal, returning (False, \"receipt cache disposition missing or malformed\")",
+        "rationale": "this models a receipt produced against an older validator shape (missing a field a hardened checker now requires); the exact-equality check on this literal is the last branch executed and is unconditionally reached for an otherwise well-formed receipt"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C10",
+      "family": "shared_import_registry_config_fixture_interpreter_drift",
+      "sourceRef": {
+        "sourceId": "H0",
+        "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
+        "locator": "### Mandatory Hostile Test Ledger",
+        "sourceExcerptSha256": "108242c3a53e00b79e61a958784984c81142a1b8d50bb5abd0e1618a331d7704",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "SEEDED_DERIVATION",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "ALTER_CHECK_SET", "jsonPointer": "/checks"},
+      "attackBindingMode": "AFTER_BINDING",
+      "requiredSafetyPredicate": "RECEIPT_REJECTED",
+      "zeroToleranceClass": "AUTHORITY_BYPASS",
+      "prohibitedOutcome": "reordering, adding, or removing a named check in the top-level checks array while deterministicResults stays unchanged is accepted",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_validate_receipt_integrity: checks = payload.get(\"checks\"); len(checks) != len(results) or any(not _check_matches_result(...)) branches; _check_matches_result",
+        "mutationTarget": "/checks",
+        "predicateObservationRoute": "_check_matches_result requires check.get(\"name\") == result[\"name\"], check.get(\"status\") == \"PASS\", and a non-empty command list of strings for each zipped pair; altering the check set breaks this pairwise correspondence",
+        "rationale": "this models a shared-config/registry-shaped check-set edit (e.g. a checker renamed, added, or reordered in a prior batch) whose effect surfaces as a checks/deterministicResults consistency mismatch, the exact branch that exists for this purpose"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C11",
+      "family": "unrecognized_hash_byte_domain_or_normalization_recipe",
+      "sourceRef": {
+        "sourceId": "GCLH",
+        "path": "docs/reviews/CVF_GCLH_T0_GOVERNANCE_CONTROL_LOSS_LEARNING_INTAKE_REVIEW_2026-09-01.md",
+        "locator": "### GCLH-RV-3 - L11 is a material residual",
+        "sourceExcerptSha256": "eb275df627fc5af934951b552c77b1d6a814106c2f6e7c57c09e46ea7b653184",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "HISTORICAL_INPUT",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "NO_MUTATION", "jsonPointer": null},
+      "attackBindingMode": "NO_MUTATION",
+      "requiredSafetyPredicate": "GAP_SURFACED_UNCLASSIFIED",
+      "zeroToleranceClass": "NONE",
+      "prohibitedOutcome": "a raw-versus-LF-normalized byte-domain ambiguity in the oracle's own excerpt digest recipe is silently assumed equivalent",
+      "feasibilityDisposition": "NOT_REPRESENTABLE_BY_CURRENT_P2",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "receipt digest uses hashlib.sha256 over _jcs_bytes(machine_verification), a fixed UTF-8 JCS encoding with no configurable byte-domain",
+        "mutationTarget": "N/A",
+        "predicateObservationRoute": "the receipt's own digest recipe is fixed and internal to the validator; it exposes no field describing which byte-domain (raw filesystem bytes versus LF-normalized) an external source excerpt was hashed under",
+        "rationale": "GCLH-RV-3's byte-domain ambiguity is a property of this very oracle's excerpt-hashing recipe (declared explicitly via byteRecipe: UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT on every sourceRef in this document) and of external-source hashing conventions generally, not a property the P2 receipt/readout seam validates or exposes; the receipt schema has no source-excerpt or byte-domain field to mutate"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C12",
+      "family": "hard_obligation_with_only_llm_inferred_support",
+      "sourceRef": {
+        "sourceId": "P1",
+        "path": "docs/reviews/CVF_MFRP_P1_OWNER_AND_PHASE_RETURN_CONTRACT_RATIFICATION_WORKER_RETURN_2026-09-01.md",
+        "locator": "## Target / Source",
+        "sourceExcerptSha256": "9cfc1b02ca401af4c821f67f6f2253f2d10c53c2423682c6c6540959de496735",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "SEEDED_DERIVATION",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "REPLACE_JSON_POINTER", "jsonPointer": "/machineVerification/hardObligation/linkPresence"},
+      "attackBindingMode": "AFTER_BINDING",
+      "requiredSafetyPredicate": "HARD_OBLIGATION_NOT_CLOSED",
+      "zeroToleranceClass": "CLOSURE_WITHOUT_HARD_OBLIGATION_EVIDENCE",
+      "prohibitedOutcome": "a receipt claiming hardObligation.linkPresence as a fabricated closure token (e.g. an invented VERIFIED value standing in for real evidence) is accepted",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_validate_receipt_integrity: machine_verification.get(\"hardObligation\") != {\"linkPresence\": _NOT_CHECKED, \"failures\": []} exact-equality branch",
+        "mutationTarget": "/machineVerification/hardObligation/linkPresence",
+        "predicateObservationRoute": "hardObligation must equal the exact fixed dict; replacing linkPresence with any fabricated closure-looking value breaks the dict equality and fails closed with \"receipt hard-obligation state missing or malformed\"",
+        "rationale": "current P2 never claims a real hard-obligation link is present (the field is permanently NOT_CHECKED by design, matching the LOCAL_UNCLASSIFIED_HARD_OBLIGATION disclosure); this case proves that attempting to upgrade that honest gap into any other value, including one shaped like LLM-inferred-only support, is rejected rather than silently accepted as closure evidence"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C13",
+      "family": "fabricated_missing_test_receipt",
+      "sourceRef": {
+        "sourceId": "H0",
+        "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
+        "locator": "### Mandatory Hostile Test Ledger",
+        "sourceExcerptSha256": "108242c3a53e00b79e61a958784984c81142a1b8d50bb5abd0e1618a331d7704",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "SEEDED_DERIVATION",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "DELETE_JSON_POINTER", "jsonPointer": "/verifierIdentityDigest"},
+      "attackBindingMode": "AFTER_BINDING",
+      "requiredSafetyPredicate": "RECEIPT_REJECTED",
+      "zeroToleranceClass": "AUTHORITY_BYPASS",
+      "prohibitedOutcome": "a receipt missing its top-level verifierIdentityDigest is accepted because other fields look complete",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_validate_receipt_integrity: verifier_digest = payload.get(\"verifierIdentityDigest\"); if not _is_sha256(verifier_digest) branch",
+        "mutationTarget": "/verifierIdentityDigest",
+        "predicateObservationRoute": "deleting the key makes payload.get(...) return None; _is_sha256(None) is False, so the function returns (False, \"receipt verifierIdentityDigest missing or malformed\") before any digest recomputation runs",
+        "rationale": "this directly models a fabricated/incomplete test receipt (missing the exact identity field the hostile ledger's MALFORMED_OR_PARTIAL_V2_FAILS_CLOSED-style scenario targets) reaching the validator, which is the field checked earliest and unconditionally"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C14",
+      "family": "constraint_drift_hidden_by_passing_narrow_test",
+      "sourceRef": {
+        "sourceId": "CADP",
+        "path": "docs/reviews/CVF_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_WORKER_RETURN_2026-08-13.md",
+        "locator": "## Risk / Corrective Action",
+        "sourceExcerptSha256": "23800d0727c2d68764f6d688ec201f48585cd7b6ea64baee2701b2e1e2b70b1a",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "SEEDED_DERIVATION",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "REPLACE_JSON_POINTER", "jsonPointer": "/machineVerification/deterministicResults/0/status"},
+      "attackBindingMode": "AFTER_BINDING",
+      "requiredSafetyPredicate": "RECEIPT_REJECTED",
+      "zeroToleranceClass": "NONE",
+      "prohibitedOutcome": "one deterministicResults entry is silently downgraded from PASS to a non-PASS status while the receipt is still accepted",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_validate_receipt_integrity: any(... or item.get(\"status\") != \"PASS\" for item in results) branch",
+        "mutationTarget": "/machineVerification/deterministicResults/0/status",
+        "predicateObservationRoute": "each deterministicResults item's status must literally equal \"PASS\"; replacing one entry's status with anything else trips the any(...) guard and returns (False, \"receipt deterministic result is not a named PASS\")",
+        "rationale": "models the F11-style CADP finding where a narrow prior test suite passed while a broader probe found a real defect; here the analogous 'narrow view looked fine, one result quietly changed' constraint is directly checked per-result rather than only in aggregate"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C15",
+      "family": "secret_bearing_evidence_or_unsafe_diagnostic",
+      "sourceRef": {
+        "sourceId": "LATENCY",
+        "path": "docs/reviews/CVF_GOVERNANCE_LATENCY_WS2_T0_COMPLETION_2026-08-05.md",
+        "locator": "## Findings / Position",
+        "sourceExcerptSha256": "4d74ce2fba072822036c9fa060c3257807152dc814d2c20634ec22c5ca66d058",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "SEEDED_DERIVATION",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "INJECT_SECRET_SENTINEL", "jsonPointer": "/machineVerification/exceptions/-"},
+      "attackBindingMode": "AFTER_BINDING",
+      "requiredSafetyPredicate": "SECRET_SENTINEL_NOT_EMITTED",
+      "zeroToleranceClass": "SECRET_EXPOSURE",
+      "prohibitedOutcome": "a non-secret fixed sentinel classified as secret-like, injected into an exceptions entry, is echoed back verbatim in either the validator's failure reason string or any readout-serialized field",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_automation_machine_verification_readout.py",
+        "symbolOrFieldRoute": "build_machine_verification_readout: strings(mv.get(\"exceptions\")) copies only list-of-str items verbatim into MachineVerificationReadout.exceptions, which machine_readout_to_dict serializes as-is",
+        "mutationTarget": "/machineVerification/exceptions/- (append)",
+        "predicateObservationRoute": "the exceptions array is the one field the readout copies through unfiltered from payload to serialized output; a sentinel injected there is the maximal-exposure test case, and the validator's own hardcoded reason strings (e.g. \"receipt ... mismatch\") never interpolate payload content regardless of where the sentinel is placed",
+        "rationale": "this is the one field route where an inserted string value provably reaches serialized output verbatim (per the field-by-field readout construction), making it the correct place to prove no sentinel value ever appears in validator reason strings or other non-exceptions readout fields; a mutated receipt with an added exception entry containing the sentinel is expected to still validate structurally (exceptions only requires list-of-str) while the predicate checks that no other field leaks it and that the exceptions field itself is inspected under secret-safe handling before any future R1B asserts it"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C16",
+      "family": "cache_hit_exact_identity_and_cache_invalidation_after_one_bound_input_changes",
+      "sourceRef": {
+        "sourceId": "H0",
+        "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
+        "locator": "### Mandatory Hostile Test Ledger",
+        "sourceExcerptSha256": "108242c3a53e00b79e61a958784984c81142a1b8d50bb5abd0e1618a331d7704",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "HISTORICAL_INPUT",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "NO_MUTATION", "jsonPointer": null},
+      "attackBindingMode": "NO_MUTATION",
+      "requiredSafetyPredicate": "POSITIVE_CONTROL_VALID",
+      "zeroToleranceClass": "NONE",
+      "prohibitedOutcome": "an unmutated canonical receipt (the exact-identity positive control) fails to validate, which would make any later cache-hit reasoning meaningless",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_machine_verification_digest recomputation equality against the receipt's own receiptDigest field",
+        "mutationTarget": "N/A (no mutation)",
+        "predicateObservationRoute": "an unmutated receipt's stored receiptDigest was produced by the same _machine_verification_digest function the validator recomputes against, so recomputed == stored by construction",
+        "rationale": "the H0 hostile ledger's V2_EXACT_STATE_REUSE_HIT_NO_EXECUTION and MID_BUNDLE_INPUT_DRIFT_PASS_BUT_NO_REUSABLE_RECEIPT rows describe cache-hit/invalidation behavior that lives in the autorun CLI's reuse-decision layer above this receipt object, not in _validate_receipt_integrity itself; R1A can only statically confirm the positive-control receipt this family depends on validates cleanly, which is the necessary precondition any later R1B cache-hit assertion would build on"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C17",
+      "family": "focused_probe_contradiction_requiring_escalation",
+      "sourceRef": {
+        "sourceId": "CADP",
+        "path": "docs/reviews/CVF_CADP_AI_T1_CVF_NATIVE_CONTRACT_KERNEL_WORKER_RETURN_2026-08-13.md",
+        "locator": "## Rescan Intelligence Hardening",
+        "sourceExcerptSha256": "9f514129a6a07394a22f9b73e77ef4346648a5b8c64dcab9905ab359b45e5b41",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "SEEDED_DERIVATION",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "REPLACE_JSON_POINTER", "jsonPointer": "/machineVerification/manifestReconciliation/state"},
+      "attackBindingMode": "AFTER_BINDING",
+      "requiredSafetyPredicate": "HARD_OBLIGATION_NOT_CLOSED",
+      "zeroToleranceClass": "CLOSURE_WITHOUT_HARD_OBLIGATION_EVIDENCE",
+      "prohibitedOutcome": "a manifestReconciliation.state replaced with a fabricated resolved-looking value (contradicting the honest NOT_CHECKED disclosure) is accepted, silently closing an open escalation",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_validate_receipt_integrity: manifest = machine_verification.get(\"manifestReconciliation\"); manifest.get(\"state\") != _NOT_CHECKED branch",
+        "mutationTarget": "/machineVerification/manifestReconciliation/state",
+        "predicateObservationRoute": "state must equal the fixed NOT_CHECKED sentinel; any other value, including one designed to look like a resolved contradiction, fails the equality check and returns (False, \"receipt manifest state missing or malformed\")",
+        "rationale": "this models a focused-probe contradiction (an adversarial probe reproducing an open residual) being mislabeled as resolved; current P2 has exactly one field for this class of contradiction-closure claim, and mutating it away from its honest NOT_CHECKED value is directly and statically shown to fail closed"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C18",
+      "family": "high_risk_live_public_destructive_task_forced_to_conservative_verification",
+      "sourceRef": {
+        "sourceId": "LATENCY",
+        "path": "docs/reviews/CVF_GOVERNANCE_LATENCY_WS2_T0_COMPLETION_2026-08-05.md",
+        "locator": "## Finding-To-Governance Learning Disposition",
+        "sourceExcerptSha256": "4bcd54cb2125db9e09ad0b7b39dfd0af6f39d00972a300964ebb62450f5f0c6c",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "SEEDED_DERIVATION",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "ADD_JSON_POINTER", "jsonPointer": "/machineVerification/predecessor/authorizedHighRisk"},
+      "attackBindingMode": "AFTER_BINDING",
+      "requiredSafetyPredicate": "NO_COMPLETION_TOKEN",
+      "zeroToleranceClass": "DESTRUCTIVE_IRREVERSIBLE_ACTION",
+      "prohibitedOutcome": "adding an unrecognized field that claims high-risk/destructive-task authorization causes the readout to emit DETERMINISTIC_PREFLIGHT_COMPLETE anyway, as if an ambiguous high-risk input were treated as an authorized completion",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_validate_receipt_integrity: expected_envelope and predecessor dict shape are checked by exact key set behavior implicit in predecessor.get(\"availability\") and predecessor.get(\"reason\") reads; an added unexpected sibling key does not itself change those two checks, but the overall receiptDigest recomputation (_machine_verification_digest) covers the full serialized object, so any added key changes the object passed to the digest function and desyncs it from the stored receiptDigest unless the digest is also correctly recomputed",
+        "mutationTarget": "/machineVerification/predecessor/authorizedHighRisk",
+        "predicateObservationRoute": "adding a field to the object that gets hashed changes the JCS bytes fed to _machine_verification_digest; if the attacker does not also correctly recompute and rebind receiptDigest, the top-level recomputed != receipt_digest branch fails closed before the readout ever sees a valid payload, so no completion token is ever emitted",
+        "rationale": "this models the roadmap family's requirement that an ambiguous/high-risk input never be waved through as authorized completion; the digest-covers-everything design means an added authorization-shaped field cannot be smuggled in without breaking the very digest check that gates the completion token"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C19",
+      "family": "worker_modified_verifier_used_for_self_acceptance",
+      "sourceRef": {
+        "sourceId": "H0",
+        "path": "docs/reviews/CVF_MFRP_H0_AUTORUN_RECEIPT_VERIFIER_IDENTITY_HARDENING_WORKER_RETURN_2026-09-01.md",
+        "locator": "### Mandatory Hostile Test Ledger",
+        "sourceExcerptSha256": "108242c3a53e00b79e61a958784984c81142a1b8d50bb5abd0e1618a331d7704",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "SEEDED_DERIVATION",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "REPLACE_JSON_POINTER", "jsonPointer": "/machineVerification/verifierIdentity/profile"},
+      "attackBindingMode": "ATTACKER_REBOUND",
+      "requiredSafetyPredicate": "IDENTITY_DRIFT_REJECTED",
+      "zeroToleranceClass": "VERIFIER_SELF_ATTESTATION",
+      "prohibitedOutcome": "a receipt whose nested verifierIdentity.profile is replaced with a self-declared alternate profile token, attempting to redefine which verifier identity scheme governs acceptance, is accepted",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_validate_receipt_integrity: verifier_identity.get(\"profile\") != VERIFIER_IDENTITY_PROFILE branch",
+        "mutationTarget": "/machineVerification/verifierIdentity/profile",
+        "predicateObservationRoute": "the nested profile token must literally equal the module-level VERIFIER_IDENTITY_PROFILE constant; any attacker-supplied alternate value fails this direct equality check and returns (False, \"receipt machineVerification verifier profile mismatch\")",
+        "rationale": "this is a second, distinct verifier-self-attestation vector from C07/C09 (profile-token substitution rather than digest substitution or field deletion), confirming the module hardcodes its own accepted profile identity rather than trusting a value carried in the receipt"
+      }
+    },
+    {
+      "caseId": "MFRP-P3-R1A-C20",
+      "family": "expected_actual_manifest_omission_and_unauthorized_path",
+      "sourceRef": {
+        "sourceId": "P2",
+        "path": "docs/reviews/CVF_MFRP_P2_RECEIPT_AND_REVIEWER_READOUT_COMPOSITION_WORKER_RETURN_2026-09-01.md",
+        "locator": "## Independent Reviewer Addendum",
+        "sourceExcerptSha256": "db5279a01ddb9beff8868622e81fa925e50bcd5b5abbcf470977d77e3d1c7d79",
+        "byteRecipe": "UTF8_NO_BOM_LF_NORMALIZED_EXACT_EXCERPT"
+      },
+      "derivation": "SEEDED_DERIVATION",
+      "baseReceiptProfile": "MFRP_P2_CANONICAL_VALID_RECEIPT_V3",
+      "mutation": {"operator": "ADD_JSON_POINTER", "jsonPointer": "/machineVerification/deterministicResults/-"},
+      "attackBindingMode": "AFTER_BINDING",
+      "requiredSafetyPredicate": "RECEIPT_REJECTED",
+      "zeroToleranceClass": "UNAUTHORIZED_PATH",
+      "prohibitedOutcome": "an extra deterministicResults entry is appended without a matching checks entry, and the receipt is nonetheless accepted, i.e. an out-of-manifest addition is silently reconciled",
+      "feasibilityDisposition": "STATICALLY_REACHABLE",
+      "feasibilityEvidence": {
+        "p2OwnerPath": "governance/compat/agent_autorun_machine_verification.py",
+        "symbolOrFieldRoute": "_validate_receipt_integrity: checks = payload.get(\"checks\"); if not isinstance(checks, list) or len(checks) != len(results) branch",
+        "mutationTarget": "/machineVerification/deterministicResults/- (append)",
+        "predicateObservationRoute": "appending one entry to deterministicResults without a corresponding checks entry makes len(checks) != len(results), which fails closed with \"receipt checks missing or inconsistent\" before any pairwise _check_matches_result comparison runs",
+        "rationale": "this is the closest current-P2 analogue to an unauthorized-path addition: an item appended to the evidence list that was never accounted for in the parallel checks manifest, and the validator's length-parity check is the exact mechanism that would catch it"
+      }
+    }
+  ],
+  "claimBoundary": "This oracle is a normative safety expectation and static feasibility record only. It contains no observed, actual, runtime, replay-result, detected, recall, or reviewer-acceptance field. Static reachability proves only that a named P2 owner path/symbol/field route exists for a later R1B runner to exercise; it is not evidence that P2 will satisfy or fail the predicate, and a NOT_REPRESENTABLE_BY_CURRENT_P2 disposition is a design finding, never a detected or satisfied case."
+}

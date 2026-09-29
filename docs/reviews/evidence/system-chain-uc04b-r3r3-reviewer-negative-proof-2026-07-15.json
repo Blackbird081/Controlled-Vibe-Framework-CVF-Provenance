@@ -1,0 +1,70 @@
+{
+  "packetId": "SCLP-UC04B-R3R3",
+  "executionBaseHead": "9c04a8d67",
+  "proofSourceHash": "6568f0463feaa0b2680365e89bcd31c49c4245648cd3de12d409ed37e713f0ec",
+  "canonicalOrigin": "http://localhost:3001",
+  "selectedCase": "negative_reviewer_docs_check: reviewer is blocked from submitting docs_governance_check",
+  "positiveCaseExcluded": true,
+  "reviewerActor": {
+    "requestedBy": "Eve Reviewer",
+    "authenticatedRole": "reviewer",
+    "authMode": "authenticated"
+  },
+  "visibleRoleProjection": {
+    "assertion": "page.getByText('Active role', { exact: true }).locator('..').getByText('reviewer', { exact: true })",
+    "observed": "PASS - visible before disabled-control assertion"
+  },
+  "disabledControl": {
+    "testId": "governance-job-run-docs_governance_check-default",
+    "observedState": "disabled",
+    "assertionResult": "PASS"
+  },
+  "request": {
+    "jobType": "docs_governance_check",
+    "jobId": "f86d8265-6fa6-4487-86a4-5cbbe03b5b9f",
+    "uiRequestId": "uc04b-neg-1784099148226",
+    "httpMethod": "POST",
+    "httpStatus": 403,
+    "decision": "blocked_by_policy",
+    "decisionReason": "read_only_role_cannot_trigger"
+  },
+  "auditSequence": {
+    "eventsForJobId": [
+      { "eventType": "requested", "status": "blocked_by_policy", "recordedAt": "2026-07-15T07:05:49.738Z" },
+      { "eventType": "blocked_by_policy", "status": "blocked_by_policy", "recordedAt": "2026-07-15T07:05:49.741Z" }
+    ],
+    "eventTypeSequence": ["requested", "blocked_by_policy"],
+    "matchesExpected": true,
+    "runnerOrFinalEventPresent": false,
+    "runnerOrFinalAssertion": "PASS - none of running/succeeded/failed/timed_out present for this jobId"
+  },
+  "exactCounters": {
+    "playwrightInvocations": 1,
+    "reviewerWebSubmissions": 1,
+    "selectedCheckerExecutions": 0,
+    "retries": 0,
+    "providerCalls": 0
+  },
+  "positiveCaseInvocationEvidence": "N/A with reason: positive case was excluded from selection (--grep negative_reviewer_docs_check) and not executed; prior R3 positive evidence is retained and not rerun.",
+  "diagnosticDisposition": "NOT_REQUIRED_CLEAN_PASS",
+  "secretScan": {
+    "method": "manual review of ledger/receipt/audit-log excerpt content plus redactGovernanceJobOutput redaction already applied by runtime",
+    "rawApiKeysPresent": false,
+    "cookiesPresent": false,
+    "bearerTokensPresent": false,
+    "result": "CLEAN"
+  },
+  "gitStatus": {
+    "headBeforeAndAfter": "9c04a8d67",
+    "unchanged": true,
+    "worktreeUnstaged": true
+  },
+  "disposableEvidenceDisposition": "test-results/.last-run.json shows status passed with no failed tests; no trace/screenshot/video artifacts were generated (trace/screenshot/video are retain-on-failure only); nothing staged or committed",
+  "commandEvidence": [
+    { "command": "npx vitest run \"src/app/(dashboard)/governance/operations/page.test.tsx\" src/app/api/system/jobs/route.test.ts src/lib/server/web-governance-jobs.test.ts src/lib/middleware-auth.test.ts src/app/api/auth/me/route.test.ts --reporter=dot", "result": "PASS - 5 files, 34/34 tests" },
+    { "command": "npx tsc --noEmit", "result": "PASS - clean exit, no output" },
+    { "command": "npx playwright test tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts --config playwright.config.ts --grep \"negative_reviewer_docs_check\" --list", "result": "PASS - 1 test listed, positive absent" },
+    { "command": "npx playwright test tests/e2e/system-chain-uc04b-web-operations-readout.spec.ts --config playwright.config.ts --workers=1 --grep \"negative_reviewer_docs_check\" (PLAYWRIGHT_BASE_URL=http://localhost:3001)", "result": "PASS - 1 passed (25.7s)" }
+  ],
+  "finalDisposition": "PASS_ALL_ACCEPTANCE_CRITERIA_MET"
+}

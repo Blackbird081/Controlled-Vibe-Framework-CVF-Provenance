@@ -1,0 +1,22 @@
+{
+  "registryOrder": 138,
+  "id": "mao-live-t1-provider-value-pilot-surfaces",
+  "corpusType": "PROJECT_SOURCE",
+  "displayName": "MAO-LIVE-T1 provider value pilot surfaces",
+  "scopePaths": ["EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/scripts/run-mao-live-provider-value-pilot.ts", "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tests/mao.live.provider.value.pilot.test.ts", "EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/tsconfig.json", "EXTENSIONS/CVF_MODEL_GATEWAY/tsconfig.json"],
+  "fileCount": 4,
+  "status": "SCANNED",
+  "scanWave": "MAO-LIVE-T1",
+  "scanDate": "2026-07-12",
+  "manifestHash": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_MAO_LIVE_T1_PROVIDER_ADAPTER_VALUE_PILOT_WORKER_RETURN_2026-07-12.md",
+  "completionReviewPath": "docs/reviews/CVF_MAO_LIVE_T1_PROVIDER_ADAPTER_VALUE_PILOT_COMPLETION_2026-07-12.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_MAO_LIVE_T1_PROVIDER_ADAPTER_VALUE_PILOT_2026-07-12.md",
+  "verdicts": {"gc047":"NOT_RUN","gc048":"NOT_RUN","gc050":"NOT_RUN"},
+  "semanticRegions": ["MAO_LIVE_PROVIDER_VALUE_PILOT"],
+  "priorAbsorption": "One bounded live value comparison; VALUE_NOT_PROVEN.",
+  "findings": [],
+  "negativeSearchTerms": ["production readiness", "provider parity"],
+  "nextScanRecommendation": "Re-scan only if a materially harder reopen task is authorized."
+}

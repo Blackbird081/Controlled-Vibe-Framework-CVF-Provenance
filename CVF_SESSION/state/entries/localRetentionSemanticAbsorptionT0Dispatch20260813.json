@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2171,
+  "stateKey": "localRetentionSemanticAbsorptionT0Dispatch20260813",
+  "value": "Operator authorized continued absorption on 2026-08-13. LRA-SA-T0 dispatch material commit 3c423f28b authorizes a no-commit worker to read all 56 ARCHIVE_EVIDENCE_ONLY entries from the pinned CVF_LOCAL_RETENTION_20260812.zip, build per-file semantic and owner-delta evidence, adapt only minimal existing CVF documentation, update bounded corpus registry surfaces, and return an exact nine-path packet for independent review. Pre-implementation passed 78/78 and material pre-commit passed 84/84. Raw source import/execution, archive deletion, runtime/package admission, provider/live, public-sync, and unrelated roadmaps remain unauthorized."
+}

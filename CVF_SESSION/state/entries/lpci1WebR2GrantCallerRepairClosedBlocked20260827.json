@@ -1,0 +1,15 @@
+{
+  "stateOrder": 2374,
+  "stateKey": "lpci1WebR2GrantCallerRepairClosedBlocked20260827",
+  "value": {
+    "status": "REVIEWER_ACCEPTED_CLOSED_BLOCKED",
+    "roadmap": "docs/roadmaps/CVF_LPCI1_WEB_CONTEXT_TO_LLM_USE_CASE_ROADMAP_REENTRY_2026-08-26.md",
+    "materialCommit": "92c96a04df5de4e147b3f3509917a1f8d127afe7",
+    "workerReturn": "docs/reviews/CVF_LPCI1_WEB_R2_EXECUTION_PLANE_LIVE_PROOF_GRANT_CONTEXT_CALLER_REPAIR_WORKER_RETURN_2026-08-26.md",
+    "workerReturnSha256": "959ed32f4d7518ec9f4e7fcdeb54bfbe6932c9b731b6d03f6765c1e1e82b2874",
+    "acceptedProof": "Focused Execution Plane 39/39, full package 1911/1911, Web focused 62/62, all three TypeScript checks, reviewer-fast 66/66 and pre-commit 87/87 PASS.",
+    "reviewerRepair": "Replaced a false mid-lane-expiry proof with deterministic revision call-budget exhaustion and added runner source-order regression proof.",
+    "blocker": "Exact production build compiles and completes TypeScript, then intentionally fails closed because the build environment lacks five required Auth.js production variables.",
+    "successorBoundary": "At most one consolidated R3 may preserve the Auth.js invariant, configure build/deploy variables by secret reference, prove exact build, and complete governed public projection plus hosted verification."
+  }
+}

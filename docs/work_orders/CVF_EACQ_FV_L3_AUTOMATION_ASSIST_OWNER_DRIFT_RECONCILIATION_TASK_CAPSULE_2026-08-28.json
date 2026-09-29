@@ -1,0 +1,171 @@
+{
+  "schema": "cvf.externalAgentTaskCapsule.v1",
+  "protocolVersion": "1.1.0",
+  "projectionOf": "cvf.external-agent-round-trip",
+  "generatedAt": "2026-08-28T21:00:00+07:00",
+  "task": {
+    "id": "eacq-fv-l3-automation-assist-owner-drift-reconciliation",
+    "title": "EACQ-FV L3 Automation-Assist Owner Drift Reconciliation",
+    "objective": "Restore the automation-assist focused suite by reconciling PathPlan constructor drift and packet-shape vocabulary ownership without weakening the L2 semantic diagnostic.",
+    "workingMode": "EXTEND_SUPPLIED_REPOSITORY",
+    "outputRoot": "docs/reviews/CVF_EACQ_FV_L3_AUTOMATION_ASSIST_OWNER_DRIFT_RECONCILIATION_WORKER_RETURN_2026-08-28.md",
+    "nonGoals": [
+      "Do not change dispatch-quality, worker-return, commit-steward, autorun, scaffold, template, registry, or session owners.",
+      "Do not remove or weaken required or conditional packet-shape diagnostics introduced into generated work orders by L2.",
+      "Do not create a new contract vocabulary, checker, helper, or test file.",
+      "Do not commit, stage, push, publish, deploy, call providers, or use credentials."
+    ]
+  },
+  "cvfPublicSource": {
+    "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "commit": "d1042ab0b2f044ca99fa3c812e38e33631b20869",
+    "sourcePosture": "OPERATOR_PINNED_NOT_LIVE_VERIFIED"
+  },
+  "sourceRepositories": [
+    {
+      "repository": "https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+      "commit": "d1042ab0b2f044ca99fa3c812e38e33631b20869",
+      "usage": "REFERENCE_AND_ANALYSIS"
+    }
+  ],
+  "gateA": {
+    "name": "SOURCE_OWNER_OVERLAP",
+    "requiredBefore": "DESIGN_OR_CODE",
+    "requiredEvidence": [
+      "Reproduce the 53/82 focused-suite failures and classify all of them before editing.",
+      "Confirm 51 failures come from the test helper omitting mixed_atomicity_authorized and two come from deleted dispatch-quality constant attributes.",
+      "Confirm the compact dispatch profile and detailed worker-return headings have different current owners.",
+      "Confirm the automation-assist semantic vocabulary remains useful to L2 and must not be weakened."
+    ],
+    "terminalStates": ["PASS", "RETURN_FOR_REPAIR", "BLOCKED"]
+  },
+  "gateB": {
+    "name": "DESIGN_CODE_TEST",
+    "opensOnlyWhen": "gateA=PASS",
+    "requiredEvidence": [
+      "Change only the automation-assist helper, its existing focused test file, and the named worker return.",
+      "Repair the PathPlan test factory with the current constructor field and preserve default non-mixed behavior.",
+      "Replace stale owner-mirroring claims and tests with truthful current-owner boundaries while retaining semantic diagnostics.",
+      "Keep net line delta at or below zero for both exception-registry-owned Python files.",
+      "Run the complete focused suite, size guard, pre-implementation gate, and worker-return fast gate."
+    ]
+  },
+  "authorityEnvelope": {
+    "commit": false,
+    "push": false,
+    "publication": false,
+    "deployment": false,
+    "providerCalls": false,
+    "credentials": false,
+    "destructiveActions": false
+  },
+  "protectedPaths": {
+    "consumers": ["worker", "reviewer"],
+    "freshness": {
+      "anchor": "dispatch base d91936c4d and paired L3 work order",
+      "regenerateWhen": "dispatch base, write ownership, pinned sources, or authority envelope changes"
+    },
+    "paths": [
+      "AGENTS.md",
+      "CVF_SESSION/",
+      "docs/reference/",
+      "docs/roadmaps/",
+      "docs/baselines/",
+      "docs/work_orders/",
+      "docs/audits/",
+      "governance/compat/check_worker_return_quality_gate.py",
+      "governance/compat/check_work_order_dispatch_quality.py",
+      "governance/compat/run_agent_commit_steward_preflight.py",
+      "governance/compat/build_dispatch_packet_scaffold.py",
+      "governance/compat/run_agent_autorun_workflow_gate.py",
+      "governance/compat/CVF_PYTHON_AUTOMATION_SIZE_EXCEPTION_REGISTRY.json"
+    ]
+  },
+  "ownerMap": {
+    "consumers": ["worker", "reviewer", "return validator"],
+    "freshness": {
+      "anchor": "pinned SHA-256 hashes in the L3 work order",
+      "regenerateWhen": "automation-assist, PathPlan, dispatch-quality, or worker-return contract owners change"
+    },
+    "owners": [
+      {
+        "path": "governance/compat/run_agent_automation_assist.py",
+        "symbol": "WORKER_RETURN_PACKET_SHAPE_*; diagnose_no_commit_work_order",
+        "version": "SHA-256 dba216aa5923632b053d9750f0ecbb7eeca6e0a1dd517046f78d036bb9984923",
+        "competingOwnersChecked": ["Dispatch-quality owns the compact dispatch profile; worker-return quality owns detailed return headings; this helper owns only early advisory semantic diagnostics."]
+      },
+      {
+        "path": "governance/compat/run_agent_commit_steward_preflight.py",
+        "symbol": "PathPlan.mixed_atomicity_authorized",
+        "version": "SHA-256 d88239535cd7144b13a17b47edb86c215b01a93df57b1cf38cd79e79f56663ad",
+        "competingOwnersChecked": ["The PathPlan production owner remains read-only; only the stale automation-assist test factory is repaired."]
+      },
+      {
+        "path": "governance/compat/check_worker_return_quality_gate.py",
+        "symbol": "REQUIRED_HEADINGS; FAST_DOC_REQUIRED_HEADINGS",
+        "version": "SHA-256 34d5611335640166378e668f34d3479ac8e3f74119fffcfb940befac9dcee953",
+        "competingOwnersChecked": ["Detailed worker-return headings are current machine authority but do not include every work-order-side contextual instruction."]
+      },
+      {
+        "path": "governance/compat/check_work_order_dispatch_quality.py",
+        "symbol": "WORKER_RETURN_FULL_GATE_REQUIRED_TERMS; WORKER_RETURN_PACKET_SHAPE_CONTRACT_MARKER",
+        "version": "SHA-256 1a5999b53f143c09cff3ccbf941ce9823ac5142dbd3e463233707f4cfc5ad7be",
+        "competingOwnersChecked": ["This checker owns compact dispatch-profile terms and the shared section marker, not the deleted detailed semantic tuples."]
+      }
+    ]
+  },
+  "invariants": {
+    "consumers": ["worker", "reviewer"],
+    "freshness": {
+      "anchor": "L2 accepted material plus the reproduced L3 failure taxonomy",
+      "regenerateWhen": "packet-shape diagnostics or PathPlan constructor changes"
+    },
+    "mustPreserve": [
+      "Preserve all required and conditional semantic diagnostics and N/A-with-reason handling used by L2 generated work orders.",
+      "Keep compact dispatch-profile enforcement distinct from detailed return-heading enforcement and advisory work-order diagnostics.",
+      "Keep both exception-registry-owned Python files at or below their current line counts: 1318 and 1289.",
+      "Keep runtime, commit-steward, checker, scaffold, template, and public/provider behavior unchanged."
+    ],
+    "forbiddenTransitions": [
+      "Do not make the helper import the heavy dispatch-quality checker merely to recreate deleted constants.",
+      "Do not delete semantic terms to make stale drift tests pass.",
+      "Do not edit the exception registry or increase either approved line count.",
+      "Do not stage or commit worker changes."
+    ]
+  },
+  "verification": {
+    "consumers": ["worker", "reviewer", "return validator"],
+    "freshness": {
+      "anchor": "final unstaged worker diff against execution base",
+      "regenerateWhen": "any helper, test, or worker-return line changes after verification"
+    },
+    "focusedTests": [
+      "python -m pytest governance/compat/test_run_agent_automation_assist.py -q",
+      "python governance/compat/check_python_automation_size.py --enforce",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base $executionBaseHead --head HEAD",
+      "python governance/compat/run_worker_return_fast_gate.py"
+    ],
+    "negativeCases": [
+      "Any remaining TypeError caused by omitted mixed_atomicity_authorized fails.",
+      "Any test or comment still claiming deleted detailed tuples are mirrored from dispatch-quality fails.",
+      "Any loss of a required or conditional semantic diagnostic term fails.",
+      "Any net line-count growth in either modified Python file fails.",
+      "Any changed path outside the exact helper/test/return manifest fails."
+    ],
+    "deterministicChecks": [
+      "All 82 automation-assist focused tests pass.",
+      "The test PathPlan factory explicitly sets mixed_atomicity_authorized=False.",
+      "The section marker remains aligned with its current dispatch-quality owner.",
+      "Detailed headings are checked only against a current truthful owner or explicit local advisory contract.",
+      "git diff --check",
+      "git diff --name-only",
+      "git diff --cached --name-only",
+      "git status --short"
+    ],
+    "requiredOutputs": [
+      "governance/compat/run_agent_automation_assist.py",
+      "governance/compat/test_run_agent_automation_assist.py",
+      "docs/reviews/CVF_EACQ_FV_L3_AUTOMATION_ASSIST_OWNER_DRIFT_RECONCILIATION_WORKER_RETURN_2026-08-28.md"
+    ]
+  }
+}

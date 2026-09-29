@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "cvf.liveRunDiagnostic.v1",
+  "recordedAt": "2026-08-30",
+  "stage": "unknown",
+  "class": "unknown_error",
+  "retryable": true,
+  "userAction": "wait_and_retry",
+  "provider": "alibaba",
+  "model": "qwen-flash",
+  "httpStatus": null,
+  "latencyMs": null,
+  "receiptId": null,
+  "traceId": null,
+  "safeMessage": "The canonical release process was externally interrupted before it emitted a result or created any rerun evidence artifact. Process inspection found no surviving release process. The fixed gate order places the multi-minute Web build before every live provider stage, so no provider call was reached.",
+  "providerCallsSpent": 0,
+  "resultChangingAction": "The operator instructed the orchestrator to continue after the interrupted tool invocation; a fresh process is required because no prior process or result artifact survives.",
+  "secretSafety": {
+    "rawKeyPersisted": false,
+    "rawProviderBodyPersisted": false,
+    "rawOutputPersisted": false,
+    "fullPromptPersisted": false
+  }
+}

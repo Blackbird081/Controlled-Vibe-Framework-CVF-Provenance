@@ -1,0 +1,33 @@
+{
+  "stateOrder": 1854,
+  "stateKey": "sot3AppT0BClosure20260716",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_WITH_REVIEWER_REPAIRS",
+    "date": "2026-07-16",
+    "materialCommit": "577237cba",
+    "executionBaseHead": "6f7393ed0",
+    "roadmap": "docs/roadmaps/CVF_SOT3_DOWNSTREAM_APPLICATION_ROADMAP_2026-07-15.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_DISPOSITION_2026-07-16.md",
+    "ledger": "docs/reviews/CVF_SOT3_APP_T0B_FULL_CORPUS_SEMANTIC_AND_PROVENANCE_LEDGER_2026-07-16.md",
+    "workerReturn": "docs/reviews/CVF_SOT3_APP_T0B_WORKER_RETURN_2026-07-16.md",
+    "completionReview": "docs/reviews/CVF_SOT3_APP_T0B_COMPLETION_2026-07-16.md",
+    "objectiveEvidence": {
+      "fileCount": 336,
+      "byteCount": 238522,
+      "aggregateSha256": "bbf4a91d7fb50134c711ffef8af2a6107105fc0aae9b341a0ca3896ce58534ee",
+      "semanticRows": 336,
+      "provenanceRows": 13,
+      "unresolvedRows": 0,
+      "hiddenCloneHead": "a78b35c"
+    },
+    "reviewDisposition": "Independent initial audit required one consolidated reviewer repair; independent re-audit accepted all six corrected blocker families.",
+    "nextRoadmap": "MAO Operational Adoption And Agent Execution Assurance",
+    "parkedUntilNextRoadmapClosure": [
+      "SOT3-APP-T1 and later SOT3-APP tranches",
+      "other high-value-folder absorption continuation",
+      "SCLP-X-T3"
+    ],
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "claimBoundary": "Static semantic and provenance closure only. No application/runtime behavior, source compatibility, provider control, public readiness, production readiness, shipment, certification, or user-value claim."
+  }
+}

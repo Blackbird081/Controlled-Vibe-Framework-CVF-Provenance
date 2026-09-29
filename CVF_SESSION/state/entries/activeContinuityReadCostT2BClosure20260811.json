@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2146,
+  "stateKey": "activeContinuityReadCostT2BClosure20260811",
+  "value": "T2B instruction-carrier compaction is CLOSED_PASS_BOUNDED at reviewer-owned material commit 575f8f991. Completion review: docs/reviews/CVF_ACTIVE_CONTINUITY_READ_COST_T2B_COMPLETION_REVIEW_2026-08-11.md with Status REVIEWER_ACCEPTED. The exact-15 worker output was independently accepted inside a 24-path closure set after narrow reviewer-owned encoding, naming, and system-chain fingerprint repairs. Evidence: all three raw archives match V2 pinned hashes; active carriers meet budgets; routing covers 38/38 headings; focused suites pass 34 tests; carrier tests pass 15/15; golden downstream harness passes 79/79; reviewer-fast passes 63/63; material pre-commit passes 84/84. T3 remains parked until fresh selection and its downstream checkpoint release condition are both verified. No provider, network, live, existing downstream mutation, public-sync, push, deployment, or production action is authorized."
+}

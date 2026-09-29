@@ -38,6 +38,91 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
         self.assertIn("| TODO: fill before review | READ |", text)
         self.assertIn("python governance/compat/run_worker_return_fast_gate.py", text)
         self.assertIn("Corpus verdict: NOT_APPLICABLE_WITH_REASON - N/A with reason", text)
+        self.assertIn("## Rework Convergence Self-Proof", text)
+        self.assertIn("## Semantic Convergence Outcome", text)
+        self.assertIn("consolidatedDefectClassSweep: PENDING_BEFORE_READY", text)
+        self.assertIn("successorTrancheOpened: NO", text)
+        self.assertIn("terminalReadinessVerdict: BLOCKED_WITH_REASON:", text)
+        self.assertIn("## Tool / Classifier Block Recovery Event", text)
+        self.assertIn("recoveryDisposition: NO_EVENT", text)
+        self.assertIn("recoveryAttemptCount: 0", text)
+        self.assertIn("workerAuthoredOperatorQuestionCount: 0", text)
+        self.assertIn("## Work-Order Acceptance Evidence Ledger", text)
+        self.assertIn("```acceptance-evidence-json", text)
+        self.assertIn('"schemaVersion":"cvf.workOrderAcceptanceEvidence@1.0.0"', text)
+
+    def test_scaffold_governs_contract_without_worker_micromanagement(self):
+        text = scaffold.build_scaffold("Example Worker Return")
+        self.assertIn(
+            "implementationAutonomyDisposition: CONTRACT_AUTHORITY_EVIDENCE_OUTCOME_ONLY",
+            text,
+        )
+        for forbidden in ("chain of thought", "internal reasoning", "required algorithm"):
+            self.assertNotIn(forbidden, text.casefold())
+
+    def test_full_scaffold_has_shared_checker_required_envelope(self):
+        """Both profiles must open with the exact shared marker/heading envelope
+        the worker-return quality checker requires (REQUIRED_HEADINGS parity)."""
+        text = scaffold.build_scaffold("Example Worker Return")
+        self.assertIn("Self-declared worker-return artifact: yes", text)
+        self.assertIn("Responds to work order:", text)
+        self.assertIn("## Checker Source Read-Ahead Block", text)
+        self.assertIn("## git status --short", text)
+        self.assertIn("## Changed Files", text)
+        self.assertIn("## No-Commit Statement", text)
+        self.assertIn("WORKER_MUST_NOT_COMMIT honored", text)
+
+    def test_compact_scaffold_has_shared_checker_required_envelope(self):
+        """The compact profile must preserve the exact same shared envelope as
+        full, per FAST_DOC_REQUIRED_HEADINGS parity in the checker."""
+        text = scaffold.build_scaffold(
+            "Fast Doc Worker Return", scaffold.FAST_DOC_PROFILE
+        )
+        self.assertIn("Self-declared worker-return artifact: yes", text)
+        self.assertIn("Responds to work order:", text)
+        self.assertIn("## Checker Source Read-Ahead Block", text)
+        self.assertIn("## git status --short", text)
+        self.assertIn("## Changed Files", text)
+        self.assertIn("## No-Commit Statement", text)
+        self.assertIn("WORKER_MUST_NOT_COMMIT honored", text)
+
+    def test_checker_read_ahead_table_has_all_four_required_fields(self):
+        text = scaffold.build_scaffold("Example Worker Return")
+        section_start = text.index("## Checker Source Read-Ahead Block")
+        section_end = text.index("## Gate Evidence", section_start)
+        section = text[section_start:section_end]
+        for required_field in (
+            "applicableCheckersRead",
+            "literalTokensReviewed",
+            "gateRunPurpose",
+            "claimBoundary",
+        ):
+            self.assertIn(f"| {required_field} |", section)
+        self.assertNotIn("first discovery", section.casefold())
+
+    def test_command_evidence_carries_finalization_instruction(self):
+        text = scaffold.build_scaffold("Example Worker Return")
+        section_start = text.index("## Command Evidence")
+        section_end = text.index("## No-Commit Statement", section_start)
+        section = text[section_start:section_end]
+        self.assertIn("LAST-MILE FINALIZATION", section)
+        self.assertIn("actual first-run and final-run", section)
+        self.assertIn("Do not leave a scaffold", section)
+
+    def test_compact_scaffold_still_consolidates_conditional_controls_only(self):
+        """Compact must add exactly the three-heading consolidation on top of the
+        shared envelope; it must not gain any other eligibility-widening shape."""
+        full_sections = set(scaffold.WORKER_RETURN_SCAFFOLD_SECTIONS)
+        compact_sections = set(scaffold.FAST_DOC_SCAFFOLD_SECTIONS)
+        self.assertEqual(
+            full_sections - compact_sections,
+            {
+                "External Knowledge Intake Routing",
+                "Rescan Intelligence Hardening",
+                "Corpus Completeness And Report Integrity",
+            },
+        )
+        self.assertEqual(compact_sections - full_sections, set())
 
     def test_external_knowledge_intake_routing_uses_required_row_label_shape(self):
         text = scaffold.build_scaffold("Example Worker Return")
@@ -56,6 +141,19 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
             "Claim boundary",
         ):
             self.assertIn(f"| {required_row_label} |", section)
+
+    def test_fast_doc_scaffold_consolidates_conditional_controls(self):
+        text = scaffold.build_scaffold(
+            "Fast Doc Worker Return", scaffold.FAST_DOC_PROFILE
+        )
+        self.assertIn("contractProfile: WORKER_RETURN_FAST_DOC_V1", text)
+        self.assertIn("## Conditional Controls Disposition", text)
+        self.assertIn(
+            "conditionalControlsDisposition: EKI_NA; RIH_NA; CCRI_NA", text
+        )
+        self.assertNotIn("## External Knowledge Intake Routing", text)
+        self.assertNotIn("## Rescan Intelligence Hardening", text)
+        self.assertNotIn("## Corpus Completeness And Report Integrity", text)
 
     def test_delta_execution_claim_boundary_uses_required_field_table_shape(self):
         text = scaffold.build_scaffold("Example Worker Return")
@@ -120,6 +218,130 @@ class WorkerReturnScaffoldTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     scaffold.write_scaffold(str(outside))
             self.assertFalse(outside.exists())
+
+    def test_semantic_convergence_outcome_block_is_fail_closed_successor(self):
+        """SCEC-T1: the emitted block is a real but unresolved successor,
+        preventing a worker from resetting the chain with scaffold defaults."""
+        import check_semantic_convergence_control as scec_checker
+
+        text = scaffold.build_scaffold("Example Worker Return")
+        blocks = scec_checker.find_active_blocks(text)
+        self.assertEqual(len(blocks), 1)
+        result = scec_checker.validate_block(blocks[0])
+        self.assertEqual(blocks[0]["chainMode"], "SUCCESSOR")
+        self.assertEqual(blocks[0].get("resolutionEvidence"), {})
+        self.assertIn(
+            "PREDECESSOR_UNRESOLVED_SENTINEL", {v.code for v in result.violations}
+        )
+
+    def test_p4_observation_block_present_with_default_no(self):
+        text = scaffold.build_scaffold("Example Worker Return")
+        self.assertIn("## P4 Automatic Evidence Observation Block", text)
+        section_start = text.index("## P4 Automatic Evidence Observation Block")
+        section_end = text.index("## Claim Boundary", section_start)
+        section = text[section_start:section_end]
+        self.assertIn("p4ObservationEligibility: AUTO", section)
+        for field in (
+            "p4ObservationPhase",
+            "p4HardObligationLocator",
+            "p4HardObligationPattern",
+            "p4SourceAuthorityLocator",
+        ):
+            self.assertIn(f"{field}: N/A with reason", section)
+
+    def test_p4_observation_block_appears_in_fast_doc_profile_too(self):
+        text = scaffold.build_scaffold("Fast Doc Worker Return", scaffold.FAST_DOC_PROFILE)
+        self.assertIn("## P4 Automatic Evidence Observation Block", text)
+        self.assertIn("p4ObservationEligibility: AUTO", text)
+
+    def test_p4_observation_block_is_byte_identical_across_generators(self):
+        """Both worker-return generators must emit byte-equivalent optional
+        P4 observation block field bodies, per the P4-C1 Scaffold Metadata
+        Contract."""
+        import build_worker_return_skeleton_scaffold as skeleton
+
+        text = scaffold.build_scaffold("Example Worker Return")
+        heading = "## P4 Automatic Evidence Observation Block\n"
+        start = text.index(heading) + len(heading)
+        end = text.index("## Architecture Readiness Echo", start)
+        run_scaffold_fields = text[start:end].strip("\n") + "\n"
+        skeleton_fields = skeleton.p4_observation_block_fields().strip("\n") + "\n"
+        self.assertEqual(run_scaffold_fields, skeleton_fields)
+
+    def test_architecture_readiness_echo_present_with_default_not_applicable(self):
+        text = scaffold.build_scaffold("Example Worker Return")
+        self.assertIn("## Architecture Readiness Echo", text)
+        section_start = text.index("## Architecture Readiness Echo")
+        section_end = text.index("## Claim Boundary", section_start)
+        section = text[section_start:section_end]
+        self.assertIn(
+            "architectureMatrixSchema: NOT_APPLICABLE_WITH_REASON:", section
+        )
+        for field in (
+            "architectureMatrixCanonicalDigest",
+            "architectureSemanticReviewPath",
+            "architectureSemanticReviewCommit",
+            "architectureSemanticReviewFileSha256",
+            "architectureBindingEchoDisposition",
+        ):
+            self.assertIn(f"{field}: N/A with reason", section)
+
+    def test_architecture_readiness_echo_appears_in_fast_doc_profile_too(self):
+        text = scaffold.build_scaffold("Fast Doc Worker Return", scaffold.FAST_DOC_PROFILE)
+        self.assertIn("## Architecture Readiness Echo", text)
+        self.assertIn("architectureMatrixSchema: NOT_APPLICABLE_WITH_REASON:", text)
+
+    def test_architecture_readiness_echo_is_byte_identical_across_generators(self):
+        """DARA-T2: both worker-return generators must emit byte-equivalent
+        optional Architecture Readiness Echo field bodies, mirroring the
+        P4-C1 Scaffold Metadata Contract pattern for the new echo block."""
+        import build_worker_return_skeleton_scaffold as skeleton
+
+        text = scaffold.build_scaffold("Example Worker Return")
+        heading = "## Architecture Readiness Echo\n"
+        start = text.index(heading) + len(heading)
+        end = text.index("## Claim Boundary", start)
+        run_scaffold_fields = text[start:end].strip("\n") + "\n"
+        skeleton_fields = skeleton.architecture_echo_block_fields().strip("\n") + "\n"
+        self.assertEqual(run_scaffold_fields, skeleton_fields)
+
+    def test_architecture_readiness_echo_never_fabricates_accepted_state(self):
+        """The default scaffold echo must never claim an accepted matrix
+        exists; it must use NOT_APPLICABLE/N/A tokens only, never EXACT_MATCH
+        or a fabricated digest/commit/sha value."""
+        text = scaffold.build_scaffold("Example Worker Return")
+        section_start = text.index("## Architecture Readiness Echo")
+        section_end = text.index("## Claim Boundary", section_start)
+        section = text[section_start:section_end]
+        self.assertNotIn("EXACT_MATCH", section)
+        self.assertNotIn("architectureMatrixCanonicalDigest: PLACEHOLDER", section)
+
+    def test_blocked_identity_drift_echo_disposition_rejects_dispatch(self) -> None:
+        """DARA-T2 echo contract: a work order carrying
+        architectureBindingEchoDisposition: BLOCKED_IDENTITY_DRIFT (via
+        NOT_APPLICABLE_ACCEPTED_DESIGN_ECHO) must be rejected by the dispatch-quality
+        validator, proving that drift blocks dispatch rather than silently passing."""
+        import sys
+        import os
+        sys.path.insert(0, os.path.dirname(__file__))
+        import check_work_order_dispatch_quality as dispatch_quality
+
+        drift_text = (
+            "dispatchSurface: EXTERNAL_AGENT_CLI_MCP\n"
+            "Architecture-Readiness Admission: NOT_APPLICABLE_ACCEPTED_DESIGN_ECHO\n"
+            "architectureMatrixCanonicalDigest: aaaa1111bbbb2222cccc3333dddd4444eeee5555ffff6666aaaa1111bbbb2222\n"
+            "architectureSemanticReviewPath: docs/reviews/CVF_DARA_T2_R1_ROOT_CONTRACT_AND_MANIFEST_AMENDMENT_REVIEW_2026-09-07.md\n"
+            "architectureSemanticReviewCommit: 1316ea7340541ab8e675c5b1965f5a1ff3ef52d0\n"
+            "architectureBindingEchoDisposition: BLOCKED_IDENTITY_DRIFT\n"
+        )
+        issues = dispatch_quality._validate_architecture_readiness_admission(
+            "docs/work_orders/test.md", drift_text
+        )
+        self.assertTrue(issues, "expected BLOCKED_IDENTITY_DRIFT to produce a blocking issue")
+        self.assertTrue(
+            any("BLOCKED_IDENTITY_DRIFT" in i for i in issues),
+            f"expected BLOCKED_IDENTITY_DRIFT mention in issues, got: {issues}",
+        )
 
     def test_cli_requires_exactly_one_action(self):
         self.assertEqual(scaffold.main([]), 2)

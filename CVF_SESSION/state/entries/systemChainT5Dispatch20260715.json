@@ -1,0 +1,17 @@
+{
+  "stateOrder": 1816,
+  "stateKey": "systemChainT5Dispatch20260715",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "fd9fe3945",
+    "workOrderId": "SCLP-T5",
+    "dispatchBaseHead": "66318a8b6",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "expectedManifestCount": 7,
+    "liveInvocationCeiling": 0,
+    "providerCallCeiling": 0,
+    "runtimeMutationCeiling": 0,
+    "nextAllowedMove": "execute exact T5 seven-path reverse-projection audit and return for reviewer closure",
+    "claimBoundary": "Final documentation and registry reconciliation only. Unified inventory, provider governance, public, production, scale, certification, and user value remain excluded."
+  }
+}

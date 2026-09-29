@@ -1,0 +1,12 @@
+{
+  "stateOrder": 1665,
+  "stateKey": "mseaAscAsBuiltArchitectureCatalogRoadmapProposed20260711",
+  "value": {
+    "status": "PROPOSED",
+    "date": "2026-07-11",
+    "roadmapCommit": "027ead038",
+    "roadmap": "docs/roadmaps/CVF_AS_BUILT_ARCHITECTURE_AND_SYSTEM_CATALOG_ROADMAP_2026-07-11.md",
+    "nextAllowedMove": "external reviewer critique, then internal source verification before ASC-T0 packet",
+    "claimBoundary": "planning only; no catalog, gap index, guard, runtime, or public implementation authorized"
+  }
+}

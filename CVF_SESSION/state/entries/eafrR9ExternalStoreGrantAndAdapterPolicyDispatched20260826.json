@@ -1,0 +1,17 @@
+{
+  "stateOrder": 2341,
+  "stateKey": "eafrR9ExternalStoreGrantAndAdapterPolicyDispatched20260826",
+  "value": {
+    "status": "REVIEWER_REPAIRED_DISPATCHED",
+    "materialCommit": "85a6f809e",
+    "originalDispatchCommit": "cec7a67ca",
+    "baseline": "docs/baselines/CVF_GC018_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_2026-08-26.md",
+    "dispatchBaseHead": "52736f4493361088494ce6396262095d3bbdc0a9",
+    "proof": "Reviewer-repaired pre-dispatch autorun gate COMPLIANT; material pre-commit 87/87 PASS; zero provider or external-store calls.",
+    "scope": "Dispatch a no-commit worker to decide, without implementing: (a) an external-store execution grant design mirroring ProviderExecutionGrant/evaluateProviderExecutionAuthority, and (b) one Adapter Destination Policy Owner disposition after testing cvf-model-gateway as the leading shared-owner candidate through the existing cvf-web dependency edge.",
+    "writeOwnership": "Exactly one path: docs/reviews/CVF_EAFR_R9_EXTERNAL_STORE_GRANT_AND_ADAPTER_DESTINATION_POLICY_OWNER_WORKER_RETURN_2026-08-26.md",
+    "nextAllowedMove": "No-commit worker execution, then independent reviewer/closer evaluation of the R9 worker return; no implementation authority is granted by this dispatch.",
+    "claimBoundary": "No provider/live/network or external-store call, build, RFR resume, BuildAuthority repair, package-dependency edit, public-sync, deployment or push authority."
+  }
+}

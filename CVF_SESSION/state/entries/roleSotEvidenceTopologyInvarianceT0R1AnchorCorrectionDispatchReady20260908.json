@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2802,
+  "stateKey": "roleSotEvidenceTopologyInvarianceT0R1AnchorCorrectionDispatchReady20260908",
+  "value": "ROLE-SOT-EVIDENCE-T0 R1 is anchor-corrected and DISPATCH_READY at material commit 28ecdde32. The first operator-relayed external invocation captured clean execution base 60c969e02, found empty staging, and correctly returned BLOCKED_WITH_REASON without edits because the original packet hard-coded the older authoring base and therefore swept already-committed material and continuity paths outside worker ownership. The defect is classified ORCHESTRATOR_PACKET_GAP. The corrected work order requires pre-implementation base=worker-captured executionBaseHead, passed pre-dispatch 81/81 and commit-hook 88/88, and admits exactly one consolidated operator-relayed R1 invocation from usage 1 to ceiling 2. Worker ownership remains the same two existing standards plus one unstaged/uncommitted return. RABA-T1 through RABA-T3, repository absorption, implementation, runtime, provider/live, public-sync and deployment remain parked."
+}

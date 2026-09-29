@@ -29,11 +29,35 @@ class LocalGovernanceHookChainTests(unittest.TestCase):
         self.assertIn("active session state compatibility", labels)
         self.assertIn("epistemic process packet", labels)
         self.assertIn("worker-return quality gate", labels)
+        self.assertIn("gate-to-role closeability", labels)
 
     def test_commit_and_push_chains_include_external_knowledge_routing(self) -> None:
         for hook in ("pre-commit", "pre-push"):
             labels = [label for label, _ in MODULE.HOOK_CHAINS[hook]]
             self.assertIn("external knowledge intake routing", labels)
+
+    def test_reviewer_and_commit_chains_include_closeability(self) -> None:
+        for hook in ("reviewer-fast", "pre-commit"):
+            labels = [label for label, _ in MODULE.HOOK_CHAINS[hook]]
+            self.assertIn("gate-to-role closeability", labels)
+
+    def test_all_hook_chains_include_high_risk_local_transaction_proof_once(self) -> None:
+        expected_command = [
+            "python",
+            "governance/compat/check_high_risk_local_transaction_proof.py",
+            "--base",
+            "HEAD",
+            "--head",
+            "HEAD",
+            "--enforce",
+        ]
+        for hook in ("reviewer-fast", "pre-commit", "pre-push"):
+            entries = [
+                command
+                for label, command in MODULE.HOOK_CHAINS[hook]
+                if label == "high-risk local transaction proof"
+            ]
+            self.assertEqual(entries, [expected_command], hook)
 
     def test_latency_sensitive_hooks_default_to_parallel(self) -> None:
         self.assertIn("reviewer-fast", MODULE.PARALLEL_BY_DEFAULT_HOOKS)

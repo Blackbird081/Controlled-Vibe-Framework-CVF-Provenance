@@ -35,12 +35,28 @@ export {
   MCPBusinessAdapterContract,
   createMCPBusinessAdapterContract,
 } from "./mcp.business.adapter.contract";
+
+// MCP-KAR-T1 - pure MCP 2026-07-28 normative invariant profile
+export { MCP_PROTOCOL_VERSION_2026_07_28, MCPProtocolInvariantProfile,
+  createMCPProtocolInvariantProfile } from "./mcp.protocol.invariant.profile";
+export type {
+  MCPProtocolInvariantRuleId, MCPProtocolInvariantDecisionCode,
+  MCPProtocolJsonRpcErrorCode, MCPProtocolRequestProfile,
+  MCPDiscoveryEvidenceProfile, MCPSubscriptionProfile, MCPResultProfile,
+  MCPCacheProfile, MCPAuthorizationProfile, MCPHttpMirrorProfile,
+  MCPElicitationMode, MCPElicitationRequestedDataCategory,
+  MCPElicitationProfile, MCPRootUriScheme, MCPRootsAuthorityClaim, MCPRootsHintEvidenceProfile,
+  MCPSamplingCapability, MCPSamplingStructuralContent, MCPSamplingStructuralMessage, MCPSamplingSequenceEvidenceProfile,
+  MCPProtocolInvariantProfileInput, MCPProtocolInvariantViolation,
+  MCPProtocolInvariantDecision,
+} from "./mcp.protocol.invariant.profile";
 export type {
   MCPBusinessRiskClass,
   MCPBusinessMutationType,
   MCPBusinessTransport,
   MCPBusinessApprovalDecision,
   MCPBusinessResultStatus,
+  MCPBusinessCallerSuppliedApprovalEvidence,
   MCPBusinessToolContract,
   MCPBusinessToolInvocationRequest,
   MCPBusinessApprovalGateResult,
@@ -1413,3 +1429,22 @@ function buildAuthorizationBoundaryMarkdownSurface(
     ),
   ].join("\n");
 }
+
+// MAO-OA-T1 - MAO local barrel root forwarding (package-root discoverability)
+export * from "./mao";
+
+// CADP-AI-T3A - Execution Plane verified capability consumer (pre-execution eligibility)
+export {
+  CADP_CAPABILITY_CONSUMER_CONTRACT_VERSION,
+  CadpCapabilityConsumerContract,
+  createCadpCapabilityConsumerContract,
+  evaluateCadpCapabilityConsumer,
+} from "./cadp.capability.consumer.contract";
+export type {
+  CadpCapabilityConsumerRequest,
+  CadpCapabilityConsumerIssue,
+  CadpCapabilityConsumerIssueCode,
+  CadpCapabilityConsumerDecision,
+  CadpCapabilityEligibilityProjection,
+  CadpCapabilityConsumerResult,
+} from "./cadp.capability.consumer.contract";

@@ -1,0 +1,19 @@
+{
+  "stateOrder": 1897,
+  "stateKey": "sot3AppT1R3Dispatch20260717",
+  "value": {
+    "status": "DISPATCHED",
+    "date": "2026-07-17",
+    "materialCommit": "585af5140",
+    "dispatchBaseHead": "a73a452ee",
+    "reviewDependencyCommit": "49ab5350c",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md",
+    "workerOutputs": [
+      "docs/reviews/CVF_SOT3_APP_T1_R3_DIRECT_INVOCATION_AND_CALLER_RESULT_TRUTH_CORRECTION_2026-07-17.md",
+      "docs/reviews/CVF_SOT3_APP_T1_R3_WORKER_RETURN_2026-07-17.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "verification": "Pre-dispatch autorun 75/75 PASS; commit steward PASS; pre-commit 83/83 PASS.",
+    "claimBoundary": "Documentation-only direct invocation and caller-result correction; no source/runtime/live/public action or T2 release."
+  }
+}

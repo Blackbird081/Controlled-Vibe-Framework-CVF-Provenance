@@ -171,6 +171,19 @@ export type {
   ControlledMemoryScope, ControlledMemorySensitivity,
 } from "./controlled.memory.gateway.contract";
 export {
+  buildControlledMemoryOriginKey,
+  deriveMemorySourceTrust,
+  isTrustedMemorySource,
+  validateMemoryTrustAdmission,
+} from "./controlled.memory.trust.contract";
+export type {
+  ControlledMemoryLink,
+  ControlledMemoryLinkType,
+  ControlledMemoryOrigin,
+  ControlledMemorySegmentClass,
+  ControlledMemorySourceTrust,
+} from "./controlled.memory.trust.contract";
+export {
   applyMemoryPrivacyFilter,
   APPROVED_MEMORY_CAPTURE_SOURCES,
   isApprovedMemoryCaptureSource,
@@ -845,6 +858,23 @@ export type {
   LearningSignalLane,
   LearningSignalSeverity,
 } from "./learning-signal-intake-bridge";
+// RSPB-AI-T6 - Capability Projection To Learning Candidate Intake Seam
+export {
+  CAPABILITY_LEARNING_CANDIDATE_PROJECTION_VERSION,
+  projectCapabilityLearningCandidate,
+} from "./capability-learning-candidate-projection";
+export type {
+  CapabilityLearningCandidate,
+  LearningCandidateContradictionStatus,
+  LearningCandidateDeduplicationStatus,
+  LearningCandidateEnvironmentSpecificity,
+  LearningCandidateIssue,
+  LearningCandidateIssueCode,
+  LearningCandidateProjectionResult,
+  LearningCandidateProjectionStatus,
+  LearningCandidateReviewStatus,
+  LearningObservationInput,
+} from "./capability-learning-candidate-projection";
 export {
   PatternDetectionContract,
   createPatternDetectionContract,

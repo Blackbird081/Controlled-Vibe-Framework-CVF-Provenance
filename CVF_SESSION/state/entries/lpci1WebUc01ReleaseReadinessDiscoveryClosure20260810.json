@@ -1,0 +1,20 @@
+{
+  "stateOrder": 2022,
+  "stateKey": "lpci1WebUc01ReleaseReadinessDiscoveryClosure20260810",
+  "value": {
+    "status": "CLOSED_PASS_BOUNDED_READINESS_GAPS_REQUIRE_REMEDIATION",
+    "date": "2026-08-10",
+    "batchId": "LPCI1-WEB-UC01-RELEASE-READINESS-DISCOVERY",
+    "authorityToken": "AUTHORIZE_LPCI1_WEB_UC01_RELEASE_READINESS_DISCOVERY_ONLY",
+    "executionBaseHead": "332962e4a",
+    "materialCommit": "944fdfc56",
+    "completionReview": "docs/reviews/CVF_LPCI1_WEB_UC01_RELEASE_READINESS_DISCOVERY_COMPLETION_2026-08-10.md",
+    "disposition": "UC01_RELEASE_READINESS_GAPS_REQUIRE_REMEDIATION",
+    "minimumSafeNextTranche": "UC01_RELEASE_HARDENING_DESIGN_SPEC_ONLY",
+    "dimensionSummary": "route authorization PRESENT; auth/RBAC, secret/config, health/failure PARTIAL; rate limits/quotas, audit/observability, deploy/rollback GAP; public export NOT_APPLICABLE",
+    "preClosureEvidence": "PASS_75_OF_75",
+    "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+    "nextAllowedMove": "Stop unless the operator separately authorizes documentation-only UC01_RELEASE_HARDENING_DESIGN_SPEC_ONLY.",
+    "claimBoundary": "Discovery closure only; no remediation, BUILD, mutation, secret/private access, browser/server/provider/network/live, hosted execution, deployment, rollback execution, public-sync, push, production, or readiness claim."
+  }
+}

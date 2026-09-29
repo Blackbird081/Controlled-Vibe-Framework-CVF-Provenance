@@ -140,7 +140,7 @@ SUCCESS CRITERIA:
       priority: 'C2',
     },
     provider: 'alibaba',
-    model: 'qwen-turbo',
+    model: 'qwen-flash',
     mode: 'simple',
     action: 'analyze',
     aifMemoryReinjection: {

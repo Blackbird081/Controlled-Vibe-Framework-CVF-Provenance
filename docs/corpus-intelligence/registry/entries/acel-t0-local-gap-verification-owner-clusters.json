@@ -1,0 +1,64 @@
+{
+  "registryOrder": 189,
+  "id": "acel-t0-local-gap-verification-owner-clusters",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "ACEL T0 bounded current-CVF capability owner clusters",
+  "scopePaths": [
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/delegation.contract.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/src/performance.benchmark.harness.contract.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/delegation.contract.test.ts",
+    "EXTENSIONS/CVF_CONTROL_PLANE_FOUNDATION/tests/performance.benchmark.harness.contract.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/cvf-add-runtime-doctrine.ts"
+  ],
+  "fileCount": null,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "ACEL-CVF-AUDIT-T0",
+  "scanDate": "2026-09-16",
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": null,
+  "packetPath": "docs/audits/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_2026-09-15.md",
+  "completionReviewPath": "docs/reviews/CVF_AGENT_CAPABILITY_ENGINEERING_LAB_LOCAL_GAP_AUDIT_T0_COMPLETION_2026-09-15.md",
+  "gcBaselineRef": "docs/baselines/CVF_GC018_ACEL_T0_LOCAL_GAP_VERIFICATION_AUDIT_2026-09-15.md",
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "PARTIAL",
+    "gc050": "PARTIAL"
+  },
+  "semanticRegions": [
+    "EMPIRICAL_EXECUTION_CALIBRATION",
+    "RUNTIME_TOPOLOGY_REALLOCATION",
+    "BEHAVIORAL_CAPABILITY_EVALUATION",
+    "INCREMENTAL_VALUE_MEASUREMENT",
+    "RESUME_EXTERNAL_SIDE_EFFECT_SAFETY",
+    "CHANGE_AWARE_VERIFICATION_SELECTION"
+  ],
+  "priorAbsorption": "Existing owner surfaces were audited for overlap only; no implementation or runtime absorption was authorized in T0.",
+  "findings": [
+    {
+      "id": "acel-t0-f1-existing-owner-adaptation-frontier",
+      "summary": "G1, G2, G3, G4 and G6 map to existing CVF owners for bounded adaptation rather than new component creation.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Open at most one separately governed experiment or implementation tranche after operator selection.",
+      "defectClass": "UNVERIFIED_CLAIM",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    },
+    {
+      "id": "acel-t0-f2-resume-external-effect-watch",
+      "summary": "G5 general external-side-effect reconciliation and deduplication remains unverified outside the bounded owner scope.",
+      "disposition": "DEFER_DEMAND_GATED",
+      "nextAction": "Reopen only under a separately authorized wider read-only audit or named use case.",
+      "defectClass": "OPERATOR_SCOPE_CLARITY_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "reclaim delegated work",
+    "replace executor",
+    "generic WITH/WITHOUT capability evaluation",
+    "diff-impact-derived verification selection"
+  ],
+  "nextScanRecommendation": "Do not broaden automatically. This entry covers only the named files read for T0; upstream multi-repository provenance and any experiment require separate authority.",
+  "notes": "Registry coverage for the bounded ACEL T0 Local owner audit. PARTIALLY_SCANNED is deliberate: no extension-wide or full-repository scan is claimed."
+}

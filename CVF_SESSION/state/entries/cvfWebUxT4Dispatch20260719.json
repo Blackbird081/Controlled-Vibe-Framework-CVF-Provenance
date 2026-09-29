@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1994,
+  "stateKey": "cvfWebUxT4Dispatch20260719",
+  "value": {
+    "status": "DISPATCH_READY",
+    "batchId": "CVF-WEB-UX-T4",
+    "materialDispatchCommit": "8135d00f8",
+    "baseline": "docs/baselines/CVF_GC018_CVF_WEB_UX_T4_BROWSER_ACCEPTANCE_AND_ROADMAP_CLOSURE_2026-07-19.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_WEB_UX_T4_BROWSER_ACCEPTANCE_AND_ROADMAP_CLOSURE_2026-07-19.md",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "nextAllowedMove": "Run current-source localhost browser acceptance and return terminal audit evidence without source mutation or commit.",
+    "parked": "source repair, hosted mutation, deployment, public-sync, provider/live calls, production action, and continuous-projection execution.",
+    "claimBoundary": "Dispatch authority only; no browser acceptance, hosted freshness, roadmap closure, deployment, provider, public-export, or production claim."
+  }
+}

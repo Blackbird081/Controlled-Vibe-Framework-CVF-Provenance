@@ -1,0 +1,558 @@
+# CVF Dispatcher Architecture Readiness And Quota Admission Roadmap
+
+Memory class: governed-roadmap
+
+Status: PARK_NO_TRUTHFUL_AUTHORITY_ROOT
+
+Date: 2026-09-06
+
+providerExecutionAuthority: FORBIDDEN
+
+Parent roadmap: `docs/roadmaps/CVF_GCLH_GOVERNANCE_CONTROL_LOSS_HARDENING_ROADMAP_2026-08-31.md`
+
+## Authorization And Decision
+
+The operator directed CVF foundation uplift before any further repair of the
+parked Phase-04 `WP-ARCH-003` audit findings. This roadmap captures the
+incident as bounded evidence, routes it into existing GCLH, SCEC, Review Cost,
+work-order and ADIF owners, and establishes a fail-closed interlock.
+
+Decision: `PROCEED_FOUNDATION_FIRST`. The two pending `WP-ARCH-003` worker
+outputs are preserved as committed incident evidence at `c2a1f7c7c` and
+receive no substantive acceptance or implementation authority from this
+roadmap. DARA-T2B is closed bounded at `483176267`. DARA-T3 terminated
+`RETURN_TO_DESIGN` at `c9e3c88e0355491cd2e6bfffda3c04249352a553`; the
+operator accepted that bounded terminal disposition and opened DARA-T4 on
+2026-09-08. DARA-T4 finds no MFRP-eligible evidence and parks without creating
+a collector, receipt, checkpoint or DARA-T5 authority.
+
+After that bounded park, the operator selected fresh route 2 on 2026-09-08:
+open a new `WP-ARCH-003` architecture-design parent assignment, not a third
+repair round and not implementation. The exact-two external-worker dispatch
+must produce a new canonical-owner and producer-to-runtime-consumer proposal;
+the independent reviewer owns acceptance and all commits.
+
+Terminal synchronization on 2026-09-09 supersedes that dispatch-ready
+projection. AR1 and its R1 rework did not establish one truthful authority
+root. The fresh RABA-T0 and F01-F02 evidence chain ended with reviewer-accepted
+`PARK_NO_TRUTHFUL_AUTHORITY_ROOT` at material `0767a16e5` and continuity
+`442a7708b`. RABA-T1 through RABA-T3 were never opened. External-agent
+research may continue as advisory input, but no external repository or agent
+output becomes a CVF authority root without Internal Agent reconciliation.
+
+## Purpose
+
+Prevent a higher-authority dispatcher or reviewer from consuming repeated
+worker quota with an architecture-incomplete work order. Move architecture
+binding and semantic review before external invocation while preserving the
+existing rule that deterministic machinery does not decide engineering truth.
+
+The control target is:
+
+```text
+operator intent
+  -> dispatcher architecture binding matrix
+  -> deterministic coverage and consistency checks
+  -> independent semantic pre-dispatch review for HIGH/CRITICAL work
+  -> quota admission
+  -> worker execution
+  -> evidence-focused review
+```
+
+## Scope
+
+In scope:
+
+- the Initial, Rework Round 1, and Rework Round 2 `WP-ARCH-003` dispatch chain;
+- dispatcher/reviewer responsibility and worker fault-attribution boundaries;
+- architecture completeness before a work order delegates exact path choice;
+- external invocation admission and avoidable-invocation accounting;
+- composition with the existing work-order template, GCLH, MFRP, SCEC,
+  Review Cost, TPGR and ADIF owners;
+- historical replay proving that this incident would have stopped before the
+  avoidable repair invocations.
+
+## Non-Goals
+
+- No substantive repair or acceptance of the two historical `WP-ARCH-003` outputs.
+- No Round 3 external dispatch.
+- No implementation of `WP-ARCH-003` or its proposed guard contracts.
+- No semantic-scoring model or claim that a machine can decide architecture.
+- No new parallel convergence, quota, work-order or reviewer authority owner.
+- No source, test, runtime, provider/live, credential, public-sync,
+  deployment or production action in DARA-T0/T1.
+
+## Incident Evidence Baseline
+
+Frozen repository base for this roadmap: `17c8fe30fdc4468f6748d67926e3d95224723a7a`.
+
+| Evidence ID | Source | Observed fact | Disposition |
+|---|---|---|---|
+| DARA-E01 | `docs/work_orders/CVF_AGENT_WORK_ORDER_PHASE04_WAVE0_WP_ARCH_003_OWNER_GAP_AUDIT_2026-09-06.md` | initial dispatch declares `reviewRoundCount: 0`, cumulative external invocation count 0 and ceiling 1 | ACCEPT_COMMITTED_AUTHORITY |
+| DARA-E02 | `docs/work_orders/CVF_AGENT_WORK_ORDER_PHASE04_WAVE0_WP_ARCH_003_OWNER_GAP_AUDIT_AMENDMENT_1_2026-09-06.md` | R1 declares invocation 1 before and 2 after execution | ACCEPT_COMMITTED_AUTHORITY |
+| DARA-E03 | `docs/work_orders/CVF_AGENT_WORK_ORDER_PHASE04_WAVE0_WP_ARCH_003_OWNER_GAP_AUDIT_AMENDMENT_2_2026-09-06.md` | R2 declares invocation 2 before and 3 after execution | ACCEPT_COMMITTED_AUTHORITY |
+| DARA-E04 | `docs/assessments/CVF_PHASE04_WAVE0_WP_ARCH_003_OWNER_GAP_AUDIT_2026-09-06.md`, raw SHA-256 `91b2a5c07fcf341c94f3adbcaab040ec7e343a4a7faf523becabad17ec321f27` | pending R2 manifest creates `evaluateAuthorityExpansionApproval` in both Execution Plane and Guard Contract and retains `<date>` evidence-path placeholders | PENDING_INCIDENT_EVIDENCE_NOT_AUTHORITY |
+| DARA-E05 | `docs/reviews/CVF_PHASE04_WAVE0_WP_ARCH_003_OWNER_GAP_AUDIT_WORKER_RETURN_2026-09-06.md`, committed raw SHA-256 `014eebd65e8e5271e907a99a103687b8e7761b80d2399103cc402c7ab4ed8f98` | exact-two/no-commit/test-ledger discipline is preserved; operator-authorized normalization repaired corpus/knowledge-map evidence without accepting the proposal | COMMITTED_INCIDENT_EVIDENCE_NOT_AUTHORITY |
+| DARA-E06 | `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0026.md` | sequential reviewer findings consume quota and time; a full record/edge matrix is required before first repair | ACCEPT_EXISTING_RULE_OWNER |
+| DARA-E07 | `docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0055.md` | local gates can pass while the semantic problem boundary moves; SCEC checks evidence shape, not engineering truth | ACCEPT_EXISTING_RULE_OWNER |
+| DARA-E08 | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` | orchestrator translates roadmap into work orders; implementer executes the order; invented symbols must return to orchestrator | ACCEPT_EXISTING_AUTHORITY |
+| DARA-E09 | `docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md` | machines validate identity, paths and coverage while reviewers decide semantic correctness and risk | ACCEPT_EXISTING_DESIGN_OWNER |
+| DARA-E10 | `docs/roadmaps/CVF_GCLH_MACHINE_FIRST_REVIEW_PREFLIGHT_ROADMAP_2026-09-01.md` | reviewer must not rerun already-valid deterministic checks; focused probes require expected information gain | ACCEPT_CANONICAL_REVIEW_EFFICIENCY_OWNER |
+| DARA-E11 | `docs/work_orders/CVF_AGENT_WORK_ORDER_MFRP_P4_C1_AUTOMATIC_EVIDENCE_COLLECTION_2026-09-02.md` | `reviewerWorkBoundary: EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION`; per-row review is forbidden and review is aggregated at M5/M10/M20 or a safety trigger | ACCEPT_ACTIVE_EXECUTION_OWNER |
+| DARA-E12 | `CVF_SESSION/state/entries/gclhMfrpP4C1AutomaticEvidenceCollectionDispatchReady20260902.json`; active handoff | P4-C1 material is active at `b9bdba712`; current eligible count is zero | ACCEPT_CURRENT_STATE_EVIDENCE |
+| DARA-E13 | `docs/reviews/CVF_DARA_T2_R2_FINAL_IMPLEMENTATION_COMPLETION_REVIEW_2026-09-07.md`; commit `ceadf2c3ff8d5e42d37d974a5ba8c1413b617ccb`; SHA-256 `c879896888a1595b1b1850d21f0aa09a9eecd8b6924f1085e3df487bd792fa6e` | four focused probes proved two new critical fail-open root causes and three dependent evidence manifestations; DARA-T2 closure was rejected at review round 3 | ACCEPT_COMMITTED_REVIEW_EVIDENCE |
+| DARA-E14 | operator report on 2026-09-07 | total elapsed time for the observed run was 200 minutes; exact token or subscription-quota usage was not measured | ACCEPT_OPERATOR_SUPPLIED_COST_EVIDENCE_WITH_UNAVAILABLE_QUOTA |
+| DARA-E15 | operator instruction on 2026-09-07 | no Claude CLI invocation; Codex remains orchestrator/reviewer; operator authorizes route `OPERATOR_AUTHORIZED_INTERNAL_RECOVERY` and manually relays any worker packet | ACCEPT_OPERATOR_ROUTE_AUTHORIZATION |
+| DARA-E16 | `docs/reviews/CVF_DARA_T3_R1_WP_ARCH_003_HISTORICAL_REPLAY_COMPLETION_REVIEW_2026-09-07.md`; commit `c9e3c88e0355491cd2e6bfffda3c04249352a553` | final admitted T3 return is `RETURN_TO_DESIGN`; exact-five worker material remains uncommitted and the external ceiling is exhausted at 2/2 | ACCEPT_COMMITTED_TERMINAL_EVIDENCE |
+| DARA-E17 | operator instruction on 2026-09-08 | DARA-T3 is complete as a bounded terminal disposition and DARA-T4 may proceed | ACCEPT_OPERATOR_TRANCHE_AUTHORIZATION |
+| DARA-E18 | existing `governance/compat/mfrp_shadow_canary_autocollect.py` readout on 2026-09-08 | `P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE`; no eligible committed phase-return/receipt pair is available | ACCEPT_HISTORICAL_MACHINE_READOUT |
+| DARA-E19 | `docs/reviews/CVF_DARA_T3_R2_WP_ARCH_003_HISTORICAL_REPLAY_COMPLETION_REVIEW_2026-09-08.md`; material `d4a6b422f` | late operator-authorized R2 replay is independently accepted `CLOSED_PASS_BOUNDED`; 41/41 focused tests, fast gate PASS and fresh freeze receipts | ACCEPT_COMMITTED_BOUNDED_REPLAY_EVIDENCE |
+| DARA-E20 | existing collector readout after `d4a6b422f` and continuity `d9807d3df` | `P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE`; committed T3 review/return contains no eligible P4 observation block, and no journal row, receipt or safety marker is created | ACCEPT_CURRENT_MACHINE_READOUT |
+| DARA-E21 | operator instruction on 2026-09-08 | select fresh route 2: reopen `WP-ARCH-003` as a new design/proposal tranche with Codex as orchestrator/reviewer and operator relay to an external worker | ACCEPT_OPERATOR_TRANCHE_AUTHORIZATION |
+| DARA-E22 | `docs/baselines/CVF_GC018_WP_ARCH_003_AR1_CANONICAL_OWNER_RUNTIME_PATH_DESIGN_2026-09-08.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_WP_ARCH_003_AR1_CANONICAL_OWNER_RUNTIME_PATH_DESIGN_2026-09-08.md` | exact-two no-commit architecture proposal; one external invocation; no implementation or successor authority | ACCEPT_DISPATCH_AUTHORITY |
+| DARA-E23 | `docs/reviews/CVF_WP_ARCH_003_AR1_R1_CANONICAL_OWNER_RUNTIME_PATH_DESIGN_REWORK_COMPLETION_2026-09-08.md` | consolidated AR1 rework remains terminally rejected; no implementation authority follows | ACCEPT_COMMITTED_TERMINAL_EVIDENCE |
+| DARA-E24 | `docs/reviews/CVF_WP_ARCH_003_RABA_F01_F02_ROOT_EVIDENCE_REASSESSMENT_COMPLETION_2026-09-08.md`; material `0767a16e5`; continuity `442a7708b` | current source has useful candidate fragments but no integrated, higher-authority, principal/scope-bound runtime root | ACCEPT_COMMITTED_TERMINAL_PARK |
+
+Measured cost is bounded to three external invocations and two repair turns.
+Token or subscription-quota quantity is `UNKNOWN`: the local repository does
+not expose a trustworthy token counter for these external sessions. This
+roadmap therefore does not invent a token total or monetary cost.
+
+## Root Cause And Fault Attribution
+
+| Cause ID | Cause | Owning role/surface | Worker attribution |
+|---|---|---|---|
+| DARA-C01 | exact-path requirement was dispatched without a complete owner-to-runtime architecture graph | dispatcher/reviewer; work-order design | NOT_WORKER_DEFECT |
+| DARA-C02 | R2 delegated architecture selection to a documentation worker rather than supplying a reviewer-accepted design | dispatcher/reviewer; pre-dispatch admission | NOT_WORKER_DEFECT |
+| DARA-C03 | structural gates admitted literal paths without proving single ownership, registration or runtime reachability | machine-coverage gap plus required human semantic review | NOT_WORKER_DEFECT |
+| DARA-C04 | SCEC stopped the chain only after two non-decreasing transitions, after the avoidable invocations had occurred | correct late-stage stop; missing left-shifted admission | NOT_WORKER_DEFECT |
+| DARA-C05 | pending worker evidence was initially treated as accepted evidence | dispatch/review authority classification | DEPENDENT_WORKER_REPAIR_ONLY |
+
+Current worker compliance retained as counter-evidence: exact-two paths,
+unchanged HEAD, empty staging, no worker commit, eight-path test ledger and
+28/28 focused canonical-adoption proof. The incident must not be recorded as
+two generalized worker failures.
+
+## Existing Owner Composition
+
+| Required capability | Existing owner | Planned enrichment |
+|---|---|---|
+| work-order authority and source verification | `docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md` | require an architecture binding matrix when a worker would otherwise select design-bearing paths |
+| phase-input quality and control-loss hardening | GCLH roadmap | add DARA as a subordinate incident/replay lane under T1/T2 |
+| machine-first path/coverage verification and non-duplicative reviewer readout | MFRP roadmap plus active P4-C1 collector at `b9bdba712` | consume DARA architecture-binding evidence through the existing phase-return/readout route; create no second receipt, reviewer workflow or collector |
+| convergence and stop | SCEC standard/checker | consume DARA fault-attribution evidence; do not create a second stop framework |
+| review rounds and quota economics | Review Cost standard/checker | distinguish dispatcher-caused repair cost and gate quota before dispatch |
+| proportional route/value admission | TPGR | add the architecture-ready receipt as a future P2/P3 external-delegation input only after design acceptance |
+| durable defect learning | ADIF-0026 and ADIF-0055 | attach this incident as roadmap/replay evidence; do not duplicate entries until residual novelty is reviewed |
+
+## Canonical MFRP Synchronization
+
+MFRP is the existing canonical owner for reducing repeated deterministic
+review work while preserving reviewer semantic authority. DARA is narrower:
+it supplies an upstream pre-dispatch architecture-binding input so an
+incomplete design does not reach a worker. DARA does not own reviewer
+readouts, evidence reuse, rerun admission, shadow collection or P5/P6
+activation.
+
+The composition is:
+
+```text
+DARA architecture binding produced by orchestrator
+  -> deterministic completeness/identity check
+  -> existing work-order and phase-return envelope
+  -> existing MFRP machine readout
+  -> reviewer sees exceptions, limitations, UNCLASSIFIED items and semantic risks
+  -> focused probe only for a named contradiction with expected information gain
+```
+
+Reviewer non-duplication rules:
+
+1. Reviewer evaluates the returned evidence and decision boundary; reviewer
+   does not recreate orchestrator architecture mapping or worker execution.
+2. A valid deterministic result is consumed, not rerun for a second narrative.
+3. A focused rerun requires a named insufficiency or contradiction, bounded
+   claim, expected information gain and cost/latency reason.
+4. Broad rerun, per-row review and a second reviewer packet are forbidden
+   unless an existing MFRP/Review Cost trigger admits them.
+5. The present `WP-ARCH-003` pending outputs are not a P4-C1 sample: they are
+   untracked, lack a qualifying trusted committed return/P2 receipt, and must
+   not increment the current eligible count of zero.
+
+## Design Control Gate
+
+Before any DARA implementation work order, T1 must freeze one Architecture
+Binding Matrix schema containing, per acceptance criterion:
+
+| Required binding | Required proof |
+|---|---|
+| acceptance criterion and invariant ID | canonical source path and unique locator |
+| canonical owner | one owner path and overlap search result |
+| existing/new symbol | exact path, exact symbol, create/extend disposition |
+| data or identity producer | exact producer symbol and trust source |
+| context/schema transport | exact type/field and every required adapter boundary |
+| export surface | exact barrel/package export path |
+| registration | exact registry/factory/composition symbol or `NONE_WITH_REASON` |
+| composition root | exact production entrypoint and construction path |
+| runtime consumer | exact non-test consumer or explicit contract-only boundary |
+| verification | exact positive, negative, bypass and composition test paths |
+| compatibility/migration | exact input/output paths or `NONE_WITH_REASON` |
+| rollback | exact changed paths and reversible command boundary |
+| evidence output | one literal dated repo-relative path, with no placeholder pattern |
+
+Admission rules:
+
+1. HIGH/CRITICAL work using an external worker requires independent semantic
+   acceptance of the matrix before invocation 1.
+2. A documentation worker may transcribe an accepted matrix but may not select
+   a new runtime owner, symbol split, data producer or composition route.
+3. Duplicate behavior across packages, a new guard without export/registration,
+   or a context field without producer-to-consumer transport blocks dispatch.
+4. Literal paths containing placeholders such as `<date>`, unnamed adjacent
+   files, path classes or future selection language are not exact paths.
+5. Machine verification proves presence, identity, uniqueness candidates and
+   coverage only. Reviewer acceptance remains the semantic authority, using
+   the MFRP exception-focused readout rather than repeating producing-role work.
+6. Missing matrix fields stop before external quota admission; they do not
+   become worker discovery tasks.
+7. DARA may add architecture fields to the existing MFRP phase-return input,
+   but may not create a parallel receipt, readout, collector or checkpoint.
+
+## Work Plan
+
+| Tranche | Mission | Outputs | Entry | Exit decision |
+|---|---|---|---|---|
+| DARA-T0 | incident capture and owner reconciliation | this roadmap and immutable evidence IDs DARA-E01 through DARA-E12 | operator foundation-first direction | `T0_REVIEWED_PASS_BOUNDED_MFRP_OWNER_SYNCED`; independent review not claimed |
+| DARA-T1 | architecture-readiness contract design | `docs/assessments/CVF_DARA_T1_ARCHITECTURE_READINESS_CONTRACT_DESIGN_2026-09-06.md`; matrix schema, role/fault taxonomy, MFRP input composition and pre-invocation quota-admission contract; no new reviewer workflow | accepted T0 owner sync | `DESIGN_ACCEPTED_BOUNDED` through sequential review; independent review not claimed |
+| DARA-T2 | minimal foundation implementation | existing-owner template/standard/scaffold/checker changes with protected-path authorization | accepted T1 plus GC-018/work order | `REJECTED_REVIEW_COST_ESCALATION_REQUIRED` at `ceadf2c3f`; superseded only by bounded T2B recovery |
+| DARA-T2B | operator-authorized internal recovery | one new parent assignment bound to DARA-E13; repair the complete R3 finding set inside the existing exact 14-path implementation manifest; operator-mediated prompt transport only | DARA-E13 plus DARA-E15 | `CORE_CONTROL_IMPLEMENTED` at `483176267`; independent completion review `CLOSED_PASS_BOUNDED` |
+| DARA-T3 | historical replay | Initial/R1/R2 replay fixture and deterministic receipt showing earliest stop | accepted T2 | late operator-authorized R2 repair accepted `CLOSED_PASS_BOUNDED` at `d4a6b422f`; earlier rejection remains history |
+| DARA-T4 | handoff to existing MFRP shadow validation | admit DARA observations only through existing MFRP P4-C1 eligibility and checkpoint rules | accepted T3 R2 plus current MFRP admission check | R1 reassessment remains `PARK_NO_ELIGIBLE_EVIDENCE`; collector returned `SKIPPED_NO_ELIGIBLE_CANDIDATE`, no new collector, receipt, row or checkpoint |
+| DARA-T5 | existing-owner projection decision | MFRP P5/P6 owns activation; DARA supplies bounded architecture evidence only | accepted MFRP checkpoint decision | `CONSUMED_BY_MFRP` or `PARK_FOUNDATION` |
+| WP-ARCH-003 | terminal authority-root disposition | AR1 and R1 rejection history plus accepted RABA-T0 and F01-F02 source verification | reviewer-accepted RABA-F01-F02 closure | `PARK_NO_TRUTHFUL_AUTHORITY_ROOT`; RABA-T1 through T3 unopened; implementation parked |
+
+No implementation tranche opens automatically. On 2026-09-06 the operator
+authorized Codex to act sequentially as orchestrator and reviewer for DARA and
+then directed continuation. DARA-T1 design is accepted through that disclosed
+route; independent review is not claimed. DARA-T2 baseline/work-order authoring
+may begin, but implementation still requires the fresh protected-path packet
+to pass pre-dispatch. Runtime/provider/public actions remain outside scope.
+
+On 2026-09-07, after DARA-T2 reached review round 3 and the external invocation
+ceiling reached 2/2, the operator explicitly opened
+`OPERATOR_AUTHORIZED_INTERNAL_RECOVERY`. This is a new parent assignment based
+on new independent critical evidence, not an automatic third rework. It is
+valid only for `dispatchSurface: INTERNAL_AGENT`. Manual copy/paste is a
+transport method, not a consumer-class override: a recipient that crosses an
+independent provider, account, credential, process, or other external boundary
+must stop as `BLOCKED_SURFACE_MISMATCH` and cannot consume this route. The
+bounded internal recovery was independently accepted and committed at
+`483176267`; this does not open DARA-T3.
+
+## Operator-Authorized Internal Recovery Interlock
+
+The DARA-T2B route is fail closed under all of these rules:
+
+1. Codex remains orchestrator/reviewer and does not execute the worker repair.
+2. The orchestrator does not invoke Claude through CLI, MCP, or another direct
+   provider-control surface. The operator owns any manual packet relay.
+3. The worker must truthfully qualify as `INTERNAL_AGENT` under the Dual Agent
+   Surface Accounting Standard. Manual relay to an independent external model
+   remains external and is not authorized by this route.
+4. The predecessor history remains visible: review round 3, external count
+   2/2, two new root causes, three dependent findings, and 200 operator-reported
+   elapsed minutes with quota usage unavailable.
+5. DARA-T2B is a new parent assignment because DARA-E13 changed the critical
+   authority boundary. It must not reset or erase predecessor telemetry.
+6. Worker write ownership is the existing 14-path DARA candidate only. The two
+   parked `WP-ARCH-003` files remain hash-preserved and excluded.
+7. Worker returns without commit. Reviewer consumes returned evidence, runs
+   only contradiction-driven focused probes, and does not recreate the repair.
+8. DARA-T3 and `WP-ARCH-003` remain parked until DARA-T2B is independently
+   accepted and committed.
+
+## DARA-T4 MFRP Handoff Disposition
+
+DARA-T4 consumes the committed T3 completion review as bounded incident
+evidence, not as an accepted replay-success claim. The five candidate replay
+files remain uncommitted, the worker return has no trusted committed P4
+observation block, and no matching validated P2 receipt exists. The existing
+P4-C1 collector therefore returned `SKIPPED_NO_ELIGIBLE_CANDIDATE` and did not
+increment `eligibleCount`, create a pending observation row, or raise a safety
+trigger.
+
+Terminal T4 disposition: `PARK_NO_ELIGIBLE_EVIDENCE`.
+
+This is a successful fail-closed handoff decision. It does not convert the T3
+rejection into `REPLAY_BLOCKS_AVOIDABLE_INVOCATIONS`, does not manufacture a
+natural sample, and does not open M5, M10, M20, P5, P6, DARA-T5 or
+`WP-ARCH-003` implementation.
+
+### R1 Reassessment After Late T3 Repair
+
+The operator later reopened DARA-T3. Its exact-five R2 replay is accepted at
+`d4a6b422f`, but bounded replay acceptance alone is not MFRP P4 eligibility.
+The committed completion/return bytes do not declare one eligible natural P4
+observation with the required phase and obligation/source locators. Running the
+existing collector after continuity `d9807d3df` therefore again returns
+`SKIPPED_NO_ELIGIBLE_CANDIDATE`. The runtime directory contains no pending
+journal or safety marker, and no P2 receipt was generated.
+
+Terminal T4 R1 reassessment disposition: `PARK_NO_ELIGIBLE_EVIDENCE`.
+
+The reviewer must not retrofit an eligibility block into closed T3 evidence or
+manufacture a natural sample. `WP-ARCH-003` remains parked because its interlock
+is conjunctive and the MFRP handoff condition is still absent.
+
+## WP-ARCH-003 Interlock
+
+The historical `WP-ARCH-003` finding chain remains parked. A fresh design lane
+may reopen only after all of the following are true:
+
+- DARA-T1 architecture matrix and role/fault taxonomy are accepted;
+- DARA-T2 installs the applicable pre-dispatch controls;
+- DARA-T3 proves the historical chain would have been blocked before the
+  first avoidable rework invocation;
+- a fresh reviewer-owned `WP-ARCH-003` architecture matrix identifies one
+  canonical owner and the complete producer-to-runtime-consumer path;
+- the new dispatch starts from that accepted architecture, not as a narrow
+  successor to the stopped SCEC chain.
+
+The two current files are committed incident evidence at `c2a1f7c7c` and must
+remain substantively parked until a separately authorized disposition
+archives, replaces or rejects them.
+
+The operator's DARA-E21 decision historically opened only `WP-ARCH-003-AR1`
+design. Later AR1 rejection and RABA-F01-F02 source verification supersede that
+opening with `PARK_NO_TRUTHFUL_AUTHORITY_ROOT`. No implementation work order is
+released. A future reopening requires new source evidence or explicit operator
+authority and a fresh parent assignment; it cannot resume RABA-T1 automatically.
+
+## Terminal WP-ARCH-003 Park Synchronization
+
+The active roadmap verdict is `PARK_NO_TRUTHFUL_AUTHORITY_ROOT`. This is a
+successful fail-closed architecture decision, not an implementation failure:
+
+- authenticated Web approval is not proof of separation of duty or a strictly
+  higher authority;
+- caller-supplied provider grants are not an independent authority issuer;
+- delegation fields lack a current trusted producer-to-runtime-consumer chain;
+- delegated write-scope evaluation has duplicate candidates and no active
+  canonical consumer;
+- RABA-T1, RABA-T2, RABA-T3, DARA-T5, and WP implementation remain unopened;
+- external agents may research, compare, and audit public sources, but their
+  outputs remain advisory until an Internal Agent verifies and reconciles them
+  against CVF-governed authority.
+
+This terminal park preserves the value of the completed DARA controls and
+RABA evidence while preventing a stale `DESIGN_DISPATCH_READY` header from
+being mistaken for executable authority.
+
+### AR1 R1 Consolidated Rework
+
+The initial exact-two AR1 return is reviewer-rejected `RETURN_TO_DESIGN` at
+`dd985013c`. Valid exact-scope, historical-hash, collision and deterministic
+matrix-digest evidence is preserved, but the proposal did not carry verified
+principal/scope identity to a runtime consumer, did not prove one authority-
+expansion owner/approval record/composition path, omitted the existing CADP
+grant-invalidation consumer, and lacked an exact future implementation
+manifest with actionable rollback paths.
+
+Operator authorization on 2026-09-08 opens one consolidated R1 design rework
+against the same two untracked artifacts. Same-parent external usage moves
+from 1 to ceiling 2 only when that worker runs. The rework is documentation-
+only and no implementation, DARA-T5, MFRP mutation, provider/live/public or
+deployment authority follows from dispatch or worker self-report.
+
+## Failure And Escalation Modes
+
+| Failure | Required response |
+|---|---|
+| matrix becomes another prose checklist | return DARA-T1 to design; require closed fields and exact identities |
+| checker pretends to judge semantic correctness | reject implementation; preserve reviewer authority |
+| new framework duplicates SCEC/Review Cost/TPGR | collapse into existing owners |
+| DARA creates reviewer readout, rerun policy, receipt or evidence collector | reject as MFRP duplication; compose with P4-C1 instead |
+| reviewer repeats valid producer/machine work without an admitted trigger | stop the rerun; record avoidable reviewer/quota cost under Review Cost |
+| quota admission trusts worker-authored readiness | fail closed; require independent reviewer acceptance |
+| fault attribution assigns dispatcher defects to worker | block closure and correct the incident ledger |
+| replay cannot demonstrate an earlier stop | do not activate; reassess which observable pre-dispatch signal is missing |
+| control ceremony costs more than avoided repair | simplify or park after safety equivalence is preserved |
+
+## Metrics And Quota Evidence
+
+| Metric | Baseline | Desired direction |
+|---|---|---|
+| external invocations for this incident | 3 | historical replay admits 1 or blocks before invocation 1 when design is incomplete |
+| repair turns | 2 | 0 dispatcher-caused worker repair turns |
+| semantic findings first discovered after invocation | at least 3 R2/R3 architecture findings | 0 for matrix-covered zero-tolerance classes |
+| exact manifest placeholder escapes | 2 `<date>` evidence paths in R2 | 0 |
+| duplicate-owner candidate escapes | one duplicated evaluator plan in R2 | 0 |
+| unregistered/unwired component escapes | principal/scope guard path lacks complete production composition chain | 0 |
+| token or subscription quota | UNKNOWN | record exact value only when observable; never infer |
+| observed end-to-end elapsed time | 200 minutes, operator supplied | preserve as baseline and split worker/reviewer time only when command-backed or provider-reported |
+
+Required attribution fields for future design: `dispatcherDefectCount`,
+`workerExecutionDefectCount`, `reviewerLateDiscoveryCount`,
+`repairIntroducedDefectCount`, `avoidableExternalInvocationCount`, and
+`tokenOrQuotaUsage` with an explicit evidence state.
+
+## Acceptance Criteria
+
+- The Architecture Binding Matrix has closed, machine-validated fields and a
+  reviewer-owned semantic acceptance state.
+- A HIGH/CRITICAL external dispatch cannot consume invocation 1 while any
+  required architecture binding is missing, contradictory or self-attested.
+- A symbol planned in more than one canonical owner is surfaced before
+  dispatch unless an accepted adapter/delegation relationship explains it.
+- A new runtime guard cannot be marked architecture-ready without exact
+  export, registration, composition-root, context transport and non-test
+  consumer bindings.
+- Exact-path validation rejects placeholders and path-class prose.
+- Fault attribution separates dispatcher, worker, reviewer-late-discovery and
+  repair-introduced causes.
+- Historical replay blocks the R2 duplicate evaluator, missing wiring and
+  placeholder evidence paths before an external repair call.
+- SCEC remains the convergence/stop owner and Review Cost remains the
+  repair-economics owner.
+- MFRP remains the reviewer-readout, evidence-reuse, rerun-admission and
+  shadow-collection owner; DARA creates none of those surfaces.
+- Reviewer consumes valid deterministic evidence and performs only semantic
+  evaluation or trigger-backed probes with stated information gain.
+- No `WP-ARCH-003` finding repair resumes before the interlock closes.
+
+## Verification And Evidence Plan
+
+DARA-T0 verification is documentation-only and provider-free:
+
+```powershell
+python governance/compat/check_governed_artifact_checker_read_ahead.py --base 17c8fe30fdc4468f6748d67926e3d95224723a7a --head HEAD --enforce
+python governance/compat/check_markdown_structural_completeness.py --base 17c8fe30fdc4468f6748d67926e3d95224723a7a --head HEAD --all-changed --enforce
+python governance/compat/check_roadmap_closure_freshness.py --base 17c8fe30fdc4468f6748d67926e3d95224723a7a --head HEAD --enforce
+python governance/compat/check_finding_to_governance_learning.py --base 17c8fe30fdc4468f6748d67926e3d95224723a7a --head HEAD --enforce
+python governance/compat/check_governed_file_size.py --enforce
+git diff --check
+```
+
+These commands prove document structure and recorded evidence consistency,
+not acceptance of DARA-T1 design or effectiveness of an unimplemented gate.
+
+## Finding-To-Governance Learning Disposition
+
+| Finding | Defect class | Existing owner | Roadmap action | State |
+|---|---|---|---|---|
+| higher-authority incomplete design causes worker guesswork | `ORCHESTRATOR_PACKET_GAP` | work-order template plus GCLH | add Architecture Binding Matrix as an MFRP-compatible upstream input; no extra reviewer checkpoint | DARA_T1_REQUIRED |
+| structural PASS coexists with semantic architecture failure | `PHASE_GATE_PLACEMENT_GAP` | MFRP plus GCLH | surface closed matrix coverage through the existing exception-focused readout; retain human semantic decision | DARA_T1_REQUIRED |
+| repeated external repairs consume avoidable quota | `RULE_GAP` already represented by ADIF-0026 | Review Cost plus TPGR | add pre-invocation admission and role-attributed cost | DARA_T1_REQUIRED |
+| reviewer repeats producing-role work and doubles quota | `RULE_GAP` already implemented by MFRP/Review Cost | MFRP P4-C1 plus Review Cost | consume existing receipts/readout; rerun only on an admitted contradiction with expected information gain | OWNER_SYNC_COMPLETE |
+| local compliance while problem boundary moves | `RULE_GAP` already represented by ADIF-0055 | SCEC | replay and consume STOP; no parallel stop framework | DARA_T3_REQUIRED |
+| worker blamed for dispatcher-created architecture defects | `EVIDENCE_INTERPRETATION_ERROR` | ADIF and review ledger | require causal role attribution before repair dispatch | DARA_T1_REQUIRED |
+
+ADIF-0026 and ADIF-0055 currently carry `roadmapSeedId: NONE`; DARA-T1 must
+decide whether to bind this roadmap as their existing-owner seed or create one
+new residual ADIF entry only for the higher-authority fault-attribution gap.
+
+## Checker Source Read-Ahead Block
+
+| Field | Value |
+|---|---|
+| applicableCheckersRead | `governance/compat/check_markdown_structural_completeness.py`; `governance/compat/check_governed_artifact_checker_read_ahead.py`; `governance/compat/check_roadmap_closure_freshness.py`; `governance/compat/check_finding_to_governance_learning.py`; `governance/compat/check_public_export_disposition.py`; `governance/compat/check_agent_operation_trace.py`; `governance/compat/check_governed_file_size.py` |
+| literalTokensReviewed | roadmap authorization, Purpose, Scope, Non-Goals, Design Control Gate, Work Plan, Acceptance Criteria, Verification, finding-learning, trace, public disposition and claim boundary |
+| gateRunPurpose | confirm the DARA-T0 roadmap shape and evidence bindings after source/checker read-ahead; not first discovery |
+| claimBoundary | checker conformance does not accept DARA-T1 design or prove quota savings |
+
+## External Repository Absorption Entry Control
+
+COMPARISON_ONLY_NO_ABSORPTION: the pending worker outputs are local incident
+evidence. No external repository, copied folder or third-party corpus is being
+absorbed.
+
+## Mandatory Blind-Spot Control Block
+
+NOT_APPLICABLE_WITH_REASON: this roadmap uses two exact local pending outputs
+and committed CVF authority paths as a bounded incident set; it makes no corpus
+completeness or external-repository absorption claim.
+
+## External Knowledge Intake Routing
+
+| Field | Value |
+|---|---|
+| Chain map | `docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md` |
+| Input type | External-agent returned output |
+| Chain map route | pending result -> reviewer evidence reconstruction -> existing-owner roadmap enrichment |
+| Matching local-view guard | `governance/compat/check_external_knowledge_intake_routing.py`; `governance/compat/check_external_agent_absorption_table.py`; SCEC, Review Cost, work-order quality and finding-to-governance learning controls |
+| Owner surface | GCLH roadmap, Work Order Template, MFRP, SCEC, Review Cost, TPGR and ADIF |
+| Disposition | ADAPT verified incident facts; do not promote worker conclusions to authority |
+| Claim boundary | no external knowledge absorption, runtime value or worker-output acceptance claim |
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Codex orchestrator/reviewer |
+| Provider or surface | local private CVF workspace |
+| Session or invocation | DARA-T0 foundation-first roadmap authoring and MFRP owner synchronization, 2026-09-06 |
+| Working directory | repository root |
+| Command or tool surface | startup continuity checks, direct governed-source reads, `rg`, SHA-256, `apply_patch`, roadmap gates and git |
+| Target paths | this roadmap; `docs/reviews/CVF_DARA_T0_DISPATCHER_ARCHITECTURE_READINESS_EVIDENCE_REVIEW_2026-09-06.md` |
+| Allowed scope source | operator instruction on 2026-09-06 to uplift CVF foundation before continuing findings |
+| Before status evidence | base HEAD `17c8fe30fdc4468f6748d67926e3d95224723a7a`; two parked untracked `WP-ARCH-003` outputs preserved and staging empty |
+| After status evidence | DARA roadmap/review identify MFRP as canonical reviewer-efficiency owner; pending worker outputs remain untouched and untracked |
+| Diff evidence | `git status --short`; `git diff --check`; roadmap structural and pre-commit gates |
+| Approval boundary | foundation roadmap and evidence capture only; no T1/T2 implementation or external invocation |
+| Claim boundary | no worker-output acceptance, implementation, provider/live, public, deployment or production claim |
+| Agent type | orchestrator/reviewer |
+| Invocation ID | `dara-t0-foundation-first-roadmap-2026-09-06` |
+| Expected manifest | this roadmap and the DARA-T0 review |
+| Actual changed set | this roadmap and the DARA-T0 review |
+| Manifest delta | MATCH |
+| Deletion or rename disposition | N/A with reason: none |
+
+## Public Export Disposition
+
+DEFERRED_PRIVATE_ONLY
+
+Reason: private foundation design evidence; no public-sync authority.
+
+## P4-C1 Universal Discovery Hardening Authorization
+
+This narrow maintenance action closes an authority-discoverability gap in the
+already-active MFRP owner. It does not implement the DARA Architecture Binding
+Matrix, open DARA-T1/T2, create a new reviewer workflow, or change P4-C1
+eligibility/checkpoints. The activation anchor remains `b9bdba712`; moving
+count and checkpoint state remain continuity-owned.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: expose the existing P4-C1 reviewer
+non-duplication and active-measurement invariant in the root carrier and guard
+orientation, route it to existing MFRP/Review Cost owners, and make the
+instruction-carrier checker fail if the binding is removed.
+
+Protected paths:
+
+- `AGENTS.md`
+- `governance/compat/check_active_archive_hygiene.py`
+- `governance/compat/test_check_active_archive_hygiene.py`
+- `governance/compat/check_agent_instruction_carriers.py`
+- `governance/compat/test_check_agent_instruction_carriers.py`
+
+Operator authorization: on 2026-09-06 the operator explicitly required a
+stronger universal constraint so all future agents know P4-C1 is implemented,
+reviewer duplication is already constrained, measurement is active, and no
+operator reminder is required.
+
+Rollback boundary: revert only this authorization and its matching root
+carrier, routing index, guard orientation, Review Cost standard,
+archive-hygiene exception, checkers and focused-test edits if rejected.
+Preserve P4-C1 material commit `b9bdba712`, its collector and all evidence.
+
+Not authorized: no DARA Architecture Binding Matrix implementation, new
+receipt/readout/collector/checkpoint, worker finding repair, external-agent
+invocation, runtime/provider/live/public action, or P4 eligibility change.
+
+## Claim Boundary
+
+This roadmap records a bounded governance/control-plane incident and its
+terminal `PARK_NO_TRUTHFUL_AUTHORITY_ROOT` disposition. Historical DARA-E21
+and AR1 dispatch authority is superseded, not erased. No proposal is accepted,
+no WP or RABA successor is implemented or opened, and no provider/live/public/
+deployment/production claim follows.

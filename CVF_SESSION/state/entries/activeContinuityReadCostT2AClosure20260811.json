@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2144,
+  "stateKey": "activeContinuityReadCostT2AClosure20260811",
+  "value": "T2A active-continuity Core surface compaction is CLOSED_PASS_BOUNDED at reviewer-owned material commit fd4d61e73. Operator-authorized Amendment 1 expanded the worker material set from exact-17 to exact-18 only for governance/compat/test_check_active_session_state.py. Independent evidence: archive preimages match byte-for-byte; front door, V58, and bootstrap meet canonical budgets; currentAuthority fails closed; legacy/focused combined tests passed 81 with one redundant environment skip and deterministic non-skipped symlink proof; active-session violations are zero; reviewer-fast and pre-commit gates passed. T2B/T3 and all external effects remain parked."
+}

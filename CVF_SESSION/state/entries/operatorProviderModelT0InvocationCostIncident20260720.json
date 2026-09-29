@@ -1,0 +1,16 @@
+{
+  "stateOrder": 2016,
+  "stateKey": "operatorProviderModelT0InvocationCostIncident20260720",
+  "value": {
+    "status": "T0_R1_BOUNDED_WORKER_REDISPATCH_REQUIRED",
+    "materialCommit": "4f3968cd5",
+    "failedWorkerSession": "62571339-7d3f-4865-9141-7e59dd67776b.jsonl",
+    "diagnostic": "SUBSCRIPTION_SESSION_LIMIT",
+    "failedAttemptUsage": "11 responses; 20 input; 196127 cache-create; 1154709 cache-read; 5622 output; 87.5 seconds",
+    "packetAuthorUsage": "147 responses; 47856327 cache-read; 131666 output; 73 Bash; 57 Read; 21 Edit",
+    "operatorUiSnapshot": "current session 100 percent; weekly all-models 45 percent; usage credits off; USD 0.00 spent",
+    "interimCaps": "new safe-mode session; Read/Write/Edit/Bash only; 10 minutes; 24 responses; 3000000 cache-read; 40000 output; one gate and one repair pass",
+    "nextAllowedMove": "After subscription reset, one fresh bounded T0 R1 worker attempt only; no resume, retry, or fallback.",
+    "parked": "T1-T5, credentials, provider calls, live proof, public-sync, push, deployment, production, and unattended mutation."
+  }
+}

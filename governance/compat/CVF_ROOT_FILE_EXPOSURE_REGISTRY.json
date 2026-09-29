@@ -96,6 +96,46 @@
       "exposureClass": "INTERNAL_ONLY"
     },
     {
+        "path": "AGENT_HANDOFF_V41_2026-07-11.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "AGENT_HANDOFF_V47_2026-07-18.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "AGENT_HANDOFF_V48_2026-07-18.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "AGENT_HANDOFF_V49_2026-07-20.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "AGENT_HANDOFF_V50_2026-07-22.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "AGENT_HANDOFF_V51_2026-07-22.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "AGENT_HANDOFF_V53_2026-07-26.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "AGENT_HANDOFF_V56_2026-08-09.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "AGENT_HANDOFF_V60_2026-09-08.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "AGENT_HANDOFF_V63_2026-09-18.md",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
       "path": "AGENT_HANDOFF_V9_2026-05-18.md",
       "exposureClass": "INTERNAL_ONLY"
     },
@@ -172,6 +212,10 @@
       "exposureClass": "INTERNAL_ONLY"
     },
     {
+      "path": "Initialize-CVF-Operator-Workspace.ps1",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
       "path": "LICENSE",
       "exposureClass": "PUBLIC_DOCS_ONLY"
     },
@@ -202,6 +246,14 @@
     {
       "path": "START_HERE.md",
       "exposureClass": "PUBLIC_DOCS_ONLY"
+    },
+    {
+      "path": "START_CVF_WORKSPACE_SETUP.cmd",
+      "exposureClass": "INTERNAL_ONLY"
+    },
+    {
+      "path": "workspace_overlay_catalog.json",
+      "exposureClass": "INTERNAL_ONLY"
     },
     {
       "path": "AGENT_HANDOFF_V12_2026-05-23.md",

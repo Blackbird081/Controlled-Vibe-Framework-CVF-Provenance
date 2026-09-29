@@ -26,6 +26,19 @@ STANDARD_PATH = "docs/reference/external_agent_review/CVF_EXTERNAL_ABSORPTION_CO
 CHAIN_MAP_PATH = "docs/reference/external_agent_review/CVF_EXTERNAL_KNOWLEDGE_ABSORPTION_CHAIN_MAP.md"
 THIS_SCRIPT_PATH = "governance/compat/check_external_absorption_core.py"
 
+# Exact-path non-execution-owner exemption (EARTR-ESC-R1 Amendment 1, 2026-08-29):
+# this file is the protocol classification/workflow specification owner for
+# returned external-agent output, not a record of a real bounded
+# external-repository or copied-folder absorption. Its path and a pre-existing
+# machine-check marker phrase satisfy this guard's general applicability
+# heuristic by coincidence, independent of whether any repository was ever
+# absorbed. The exemption is exact-path only and must not be widened to a
+# prefix, glob, or text-pattern match, so it cannot silently exempt a future
+# real absorption artifact placed nearby.
+NON_EXECUTION_OWNER_EXEMPT_PATHS = (
+    "docs/reference/external_agent_review/CVF_EXTERNAL_AGENT_FINDING_ABSORPTION_WORKFLOW.md",
+)
+
 CORE_SECTION = "## External Absorption Core"
 CORPUS_SECTION = "## Corpus Completeness And Report Integrity"
 INTAKE_SECTION = "## External Knowledge Intake Routing"
@@ -71,7 +84,27 @@ REQUIRED_FIELDS = (
     "Disposition taxonomy",
     "Owner-surface map",
     "Unresolved items",
+    "Absorption maturity",
+    "Named runtime consumer",
+    "Integration evidence",
+    "Use proof",
+    "Operator checkpoint",
+    "Absorption completion status",
     "Completion claim boundary",
+)
+
+ALLOWED_ABSORPTION_MATURITIES = (
+    "SOURCE_RECONCILED",
+    "KNOWLEDGE_NORMALIZED_RUNTIME_PENDING",
+    "RUNTIME_INTEGRATED_USE_PENDING",
+    "USE_PROVEN",
+    "NO_RUNTIME_VALUE_WITH_REASON",
+)
+
+ALLOWED_COMPLETION_STATUSES = (
+    "ABSORPTION_NOT_COMPLETE",
+    "ABSORPTION_COMPLETE_USE_PROVEN",
+    "NO_RUNTIME_VALUE_WITH_REASON",
 )
 
 REQUIRED_LEDGER_STATUSES = (
@@ -197,9 +230,12 @@ def _is_governed_markdown(path: str) -> bool:
 
 
 def _is_applicable(path: str, text: str) -> bool:
+    normalized_path = path.replace("\\", "/")
     if not _is_governed_markdown(path):
         return False
-    if path.replace("\\", "/") == CHAIN_MAP_PATH:
+    if normalized_path == CHAIN_MAP_PATH:
+        return False
+    if normalized_path in NON_EXECUTION_OWNER_EXEMPT_PATHS:
         return False
     if path == STANDARD_PATH:
         return True
@@ -210,7 +246,9 @@ def _is_applicable(path: str, text: str) -> bool:
     if any(marker in text for marker in SOURCE_MARKERS):
         return True
     lowered = text.casefold()
-    if "github.com/" in lowered and "absorption" in lowered:
+    if "github.com/" in lowered and any(
+        marker in lowered for marker in ABSORPTION_TEXT_MARKERS
+    ):
         return True
     upper_path = path.replace("\\", "/").upper()
     return (
@@ -283,6 +321,16 @@ def _has_any_path_or_inline_table(value: str) -> bool:
     )
 
 
+def _is_pending_runtime_value(value: str) -> bool:
+    cleaned = _clean_value(value).upper()
+    return any(token in cleaned for token in ("PENDING", "NOT_SELECTED", "NOT_NAMED", "TBD"))
+
+
+def _has_runtime_evidence(value: str) -> bool:
+    cleaned = _clean_value(value).casefold()
+    return "/" in cleaned or "receipt" in cleaned or "inline evidence" in cleaned
+
+
 def _validate_core_section(path: str, section: str) -> list[dict[str, str]]:
     violations: list[dict[str, str]] = []
     fields = _field_rows(section)
@@ -351,6 +399,71 @@ def _validate_core_section(path: str, section: str) -> list[dict[str, str]]:
             "message": "owner-surface map must cite a CVF path, inline table, or BLOCKED_SOURCE_NOT_FOUND",
         })
 
+    maturity = _clean_value(fields.get(_normalize_cell("Absorption maturity"), "")).upper()
+    completion = _clean_value(fields.get(_normalize_cell("Absorption completion status"), "")).upper()
+    consumer = fields.get(_normalize_cell("Named runtime consumer"), "")
+    integration = fields.get(_normalize_cell("Integration evidence"), "")
+    use_proof = fields.get(_normalize_cell("Use proof"), "")
+    checkpoint = _clean_value(fields.get(_normalize_cell("Operator checkpoint"), "")).upper()
+
+    if maturity and maturity not in ALLOWED_ABSORPTION_MATURITIES:
+        violations.append({
+            "path": path,
+            "type": "external_absorption_core_maturity_invalid",
+            "message": "absorption maturity must use the canonical runtime-realization lifecycle",
+        })
+    if completion and completion not in ALLOWED_COMPLETION_STATUSES:
+        violations.append({
+            "path": path,
+            "type": "external_absorption_core_completion_status_invalid",
+            "message": "absorption completion status must use the canonical completion vocabulary",
+        })
+
+    if completion == "ABSORPTION_COMPLETE_USE_PROVEN":
+        if maturity != "USE_PROVEN":
+            violations.append({
+                "path": path,
+                "type": "external_absorption_core_complete_without_use_proven",
+                "message": "ABSORPTION_COMPLETE_USE_PROVEN requires maturity USE_PROVEN",
+            })
+        if _is_pending_runtime_value(consumer) or _is_empty_or_na(consumer) or "test-only" in consumer.casefold():
+            violations.append({
+                "path": path,
+                "type": "external_absorption_core_runtime_consumer_missing",
+                "message": "completed absorption requires a named non-test runtime consumer",
+            })
+        if not _has_runtime_evidence(integration):
+            violations.append({
+                "path": path,
+                "type": "external_absorption_core_integration_evidence_missing",
+                "message": "completed absorption requires reviewable runtime integration evidence",
+            })
+        if not _has_runtime_evidence(use_proof):
+            violations.append({
+                "path": path,
+                "type": "external_absorption_core_use_proof_missing",
+                "message": "completed absorption requires reviewable use proof",
+            })
+        if "OPERATOR_CHECKPOINT_SATISFIED" not in checkpoint:
+            violations.append({
+                "path": path,
+                "type": "external_absorption_core_operator_checkpoint_missing",
+                "message": "runtime use proof requires an explicit satisfied operator checkpoint",
+            })
+
+    if maturity in {"SOURCE_RECONCILED", "KNOWLEDGE_NORMALIZED_RUNTIME_PENDING", "RUNTIME_INTEGRATED_USE_PENDING"} and completion != "ABSORPTION_NOT_COMPLETE":
+        violations.append({
+            "path": path,
+            "type": "external_absorption_core_premature_completion",
+            "message": "source, documentation, and runtime-ready states remain ABSORPTION_NOT_COMPLETE until use is proven",
+        })
+    if maturity == "NO_RUNTIME_VALUE_WITH_REASON" and completion != "NO_RUNTIME_VALUE_WITH_REASON":
+        violations.append({
+            "path": path,
+            "type": "external_absorption_core_no_runtime_value_status_mismatch",
+            "message": "NO_RUNTIME_VALUE_WITH_REASON maturity requires the same completion status",
+        })
+
     section_lowered = section.casefold()
     if any(token in section_lowered for token in ("<repo", "<filesystem", "<path", "<bounded", "<cvf", "<0", "todo", "tbd")):
         violations.append({
@@ -368,6 +481,7 @@ def _validate_standard(path: str, text: str) -> list[dict[str, str]]:
         "Status: ACTIVE_REFERENCE",
         "## Central Core",
         "## Required Artifact Block",
+        "## Runtime Realization And Proactive Execution Rule",
         "## Required Ledger Semantics",
         "## Machine Guard",
         "## External Knowledge Intake Routing",
@@ -375,6 +489,8 @@ def _validate_standard(path: str, text: str) -> list[dict[str, str]]:
         CHAIN_MAP_PATH,
         CORE_SECTION,
         "Corpus Completeness And Report Integrity",
+        "ABSORPTION_COMPLETE_USE_PROVEN",
+        "ABSORPTION_NOT_COMPLETE",
     )
     for marker in required:
         if marker not in text:

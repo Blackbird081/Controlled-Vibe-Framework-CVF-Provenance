@@ -1,0 +1,15 @@
+{
+  "stateOrder": 1689,
+  "stateKey": "odvrT1Dispatch20260712",
+  "value": {
+    "status": "DISPATCH_READY",
+    "date": "2026-07-12",
+    "dispatchCommit": "a60b37760",
+    "baseline": "docs/baselines/CVF_GC018_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_2026-07-12.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_ODVR_T1_DETERMINISTIC_LOCAL_COMPOSER_2026-07-12.md",
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "expectedOutputs": 4,
+    "nextAllowedMove": "one delegated no-commit ODVR-T1 execution from the clean post-sync HEAD",
+    "claimBoundary": "local read-only composer, CLI JSON, focused tests, README update, and worker return only; no UI, provider/live, state mutation, public-sync, T2 proof, outside-source absorption, or production readiness"
+  }
+}

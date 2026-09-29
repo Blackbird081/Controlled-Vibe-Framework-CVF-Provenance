@@ -18,16 +18,30 @@ import subprocess
 import sys
 import time
 from pathlib import Path
-
 try:
     import run_agent_commit_steward_preflight as steward
 except ModuleNotFoundError:  # imported as governance.compat.run_agent_autorun_workflow_gate
     from governance.compat import run_agent_commit_steward_preflight as steward
 
+try:
+    import agent_autorun_machine_verification as machine_verification
+except ModuleNotFoundError:
+    from governance.compat import agent_autorun_machine_verification as machine_verification
+
+try:
+    import committed_evidence_fingerprint as committed_evidence
+except ModuleNotFoundError:
+    from governance.compat import committed_evidence_fingerprint as committed_evidence
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_RECEIPT_DIR = REPO_ROOT / ".cvf" / "runtime" / "autorun-receipts"
-RECEIPT_SCHEMA = "cvf.autorun.pass-receipt.v1"
+RECEIPT_SCHEMA = machine_verification.RECEIPT_SCHEMA
+VERIFIER_IDENTITY_PROFILE = machine_verification.VERIFIER_IDENTITY_PROFILE
+MACHINE_VERIFICATION_PROFILE = machine_verification.MACHINE_VERIFICATION_PROFILE
+VerifierIdentityUnavailable = machine_verification.VerifierIdentityUnavailable
+_jcs_bytes = machine_verification._jcs_bytes
+_machine_verification_object = machine_verification._machine_verification_object
+_machine_verification_digest = machine_verification._machine_verification_digest
 
 try:
     from agent_autorun_command_catalog import (
@@ -36,7 +50,10 @@ try:
         GitStatusResult,
         PRE_PUSH_COMMANDS,
         RANGE_GATE_NAMES,
+        _active_work_order_binding_error,
         _common_commands,
+        _dispatch_release_command,
+        _package_skill_target_state_command,
         _pre_implementation_commands,
     )
 except ModuleNotFoundError:  # imported as governance.compat.run_agent_autorun_workflow_gate
@@ -46,10 +63,12 @@ except ModuleNotFoundError:  # imported as governance.compat.run_agent_autorun_w
         GitStatusResult,
         PRE_PUSH_COMMANDS,
         RANGE_GATE_NAMES,
+        _active_work_order_binding_error,
         _common_commands,
+        _dispatch_release_command,
+        _package_skill_target_state_command,
         _pre_implementation_commands,
     )
-
 def _execute(index: int, command: GateCommand) -> GateResult:
     started = time.perf_counter()
     proc = subprocess.run(
@@ -72,7 +91,13 @@ def _execute(index: int, command: GateCommand) -> GateResult:
 def _print_result(result: GateResult, *, show_success_output: bool) -> None:
     status = "PASS" if result.returncode == 0 else "FAIL"
     print(f"[{status}] {result.name} ({result.duration_s:.2f}s)")
-    if result.output and (show_success_output or result.returncode != 0):
+    bound_probe_findings = (
+        "governance/compat/check_independent_review_probe_admission.py" in result.command
+        and "--changed-lane-only" in result.command
+        and "--active-work-order" in result.command
+        and "Known findings outside the current changed lane:" in result.output
+    )
+    if result.output and (show_success_output or result.returncode != 0 or bound_probe_findings):
         print(result.output.rstrip())
 
 
@@ -140,6 +165,186 @@ def _receipt_path(phase: str, receipt_dir: Path) -> Path:
     return receipt_dir / f"{phase}.json"
 
 
+# MFRP-H0 binds tracked and untracked non-ignored inputs plus the interpreter.
+# Unsafe, unreadable, non-regular or unstable inputs disable receipt reuse.
+def _normalize_repo_relative_path(raw: str) -> str | None:
+    """Return a safe, forward-slash-normalized, repository-relative path, or
+    None if the path is absolute, escapes the repository root, or is
+    otherwise unsafe."""
+    if not raw:
+        return None
+    candidate = raw.replace("\\", "/")
+    if candidate.startswith("/") or ":" in candidate:
+        return None
+    parts = candidate.split("/")
+    if any(part in ("", ".", "..") for part in parts):
+        return None
+    return candidate
+
+
+def _git_ls_files(args: tuple[str, ...]) -> tuple[str, ...]:
+    proc = subprocess.run(
+        ["git", "ls-files", "-z", *args],
+        cwd=REPO_ROOT,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    if proc.returncode != 0:
+        raise VerifierIdentityUnavailable(
+            f"git ls-files failed (exit {proc.returncode})"
+        )
+    raw = proc.stdout.decode("utf-8", errors="strict")
+    return tuple(part for part in raw.split("\0") if part)
+
+
+def _snapshot_membership(command_argv_paths: frozenset[str]) -> frozenset[str]:
+    """Union of every Git-tracked path and every untracked non-ignored
+    regular-file path. Every repository-relative path directly named in
+    selected command argv must already occur in that union; an ignored or
+    unresolved command input makes identity unavailable rather than silently
+    narrowing the snapshot or hashing ignored material."""
+    try:
+        tracked = _git_ls_files(())
+        untracked = _git_ls_files(("--others", "--exclude-standard"))
+    except VerifierIdentityUnavailable:
+        raise
+    members: set[str] = set()
+    for raw in (*tracked, *untracked):
+        normalized = _normalize_repo_relative_path(raw)
+        if normalized is None:
+            raise VerifierIdentityUnavailable(f"unsafe tracked path: {raw!r}")
+        members.add(normalized)
+    missing_argv = command_argv_paths - members
+    if missing_argv:
+        raise VerifierIdentityUnavailable(
+            f"command file(s) absent from safe snapshot: {sorted(missing_argv)}"
+        )
+    return frozenset(members)
+
+
+def _file_identity_record(path: str) -> dict[str, str]:
+    """Hash one snapshot member with a read-instability guard: compare file
+    size/mtime before and after the byte read; a change during read makes the
+    input unavailable rather than silently accepted."""
+    full = REPO_ROOT / path
+    try:
+        before = full.stat()
+    except OSError as exc:
+        raise VerifierIdentityUnavailable(f"missing or unreadable path: {path} ({exc})")
+    if full.is_symlink() or not full.is_file():
+        raise VerifierIdentityUnavailable(f"non-regular snapshot member: {path}")
+    try:
+        data = full.read_bytes()
+        after = full.stat()
+    except OSError as exc:
+        raise VerifierIdentityUnavailable(f"unreadable path during read: {path} ({exc})")
+    if (
+        before.st_dev != after.st_dev
+        or before.st_ino != after.st_ino
+        or before.st_size != after.st_size
+        or before.st_mtime_ns != after.st_mtime_ns
+    ):
+        raise VerifierIdentityUnavailable(f"unstable input during read: {path}")
+    if len(data) != after.st_size:
+        raise VerifierIdentityUnavailable(f"unstable input during read: {path}")
+    return {"path": path, "sha256": hashlib.sha256(data).hexdigest()}
+
+
+_MISSING_TRACKED_MARKER = "MISSING_TRACKED_PATH"
+
+
+def _tracked_missing_record(path: str) -> dict[str, str]:
+    return {"path": path, "sha256": _MISSING_TRACKED_MARKER}
+
+
+def _command_argv_repo_paths(commands: tuple[GateCommand, ...]) -> frozenset[str]:
+    """Every argv token across the selected commands that resolves to a real
+    repository-relative file path. Each must become a safe snapshot member;
+    an ignored or unresolved command file makes reuse unavailable."""
+    candidates: set[str] = set()
+    for command in commands:
+        for token in command.command:
+            normalized = _normalize_repo_relative_path(token)
+            if normalized is None:
+                continue
+            full = REPO_ROOT / normalized
+            if full.is_file():
+                candidates.add(normalized)
+                continue
+            file_like = "/" in normalized or bool(Path(normalized).suffix)
+            if file_like:
+                state = "non-regular" if full.exists() else "missing"
+                raise VerifierIdentityUnavailable(
+                    f"{state} repository-relative command input: {normalized}"
+                )
+    return frozenset(candidates)
+
+
+def _interpreter_identity() -> dict[str, str]:
+    executable_raw = sys.executable
+    if not executable_raw:
+        raise VerifierIdentityUnavailable("no resolved sys.executable")
+    try:
+        executable = Path(executable_raw).resolve(strict=True)
+        if not executable.is_file():
+            raise VerifierIdentityUnavailable("interpreter executable is not a file")
+        executable_bytes = executable.read_bytes()
+    except OSError as exc:
+        raise VerifierIdentityUnavailable(f"unreadable interpreter executable: {exc}")
+    executable_path = executable.as_posix()
+    version_info = sys.version_info
+    version = (
+        f"{version_info.major}.{version_info.minor}.{version_info.micro}."
+        f"{version_info.releaselevel}.{version_info.serial}"
+    )
+    cache_tag = getattr(sys.implementation, "cache_tag", None) or ""
+    return {
+        "implementation": sys.implementation.name,
+        "cacheTag": cache_tag,
+        "version": version,
+        "executablePath": executable_path,
+        "executableSha256": hashlib.sha256(executable_bytes).hexdigest(),
+    }
+
+
+def _verifier_identity_preimage(
+    commands: tuple[GateCommand, ...],
+) -> dict[str, object]:
+    """Build the canonical preimage object. Raises VerifierIdentityUnavailable
+    on any unsafe, unresolved, non-regular, unreadable or unstable input."""
+    argv_paths = _command_argv_repo_paths(commands)
+    members = _snapshot_membership(argv_paths)
+    missing_argv = argv_paths - members
+    if missing_argv:
+        raise VerifierIdentityUnavailable(
+            f"command file(s) not resolvable as safe snapshot members: {sorted(missing_argv)}"
+        )
+    files: list[dict[str, str]] = []
+    for path in sorted(members):
+        full = REPO_ROOT / path
+        if not full.exists():
+            files.append(_tracked_missing_record(path))
+            continue
+        files.append(_file_identity_record(path))
+    return {
+        "profile": VERIFIER_IDENTITY_PROFILE,
+        "digestAlgorithm": "sha256",
+        "files": files,
+        "interpreter": _interpreter_identity(),
+    }
+
+
+def _verifier_identity_digest(commands: tuple[GateCommand, ...]) -> str:
+    """Return the verifier-identity digest, or raise
+    VerifierIdentityUnavailable on any incomplete/unsafe/unstable input."""
+    preimage = _verifier_identity_preimage(commands)
+    return hashlib.sha256(_jcs_bytes(preimage)).hexdigest()
+
+
+def _validate_receipt_integrity(payload: dict) -> tuple[bool, str]:
+    return machine_verification._validate_receipt_integrity(payload)
+
+
 def _receipt_context(
     phase: str,
     base: str,
@@ -156,6 +361,7 @@ def _receipt_context(
         "headSha": head_sha,
         "commandManifestHash": _command_manifest_hash(commands),
         "worktreeFingerprint": _worktree_fingerprint(base, head),
+        "verifierIdentityProfile": VERIFIER_IDENTITY_PROFILE,
     }
 
 
@@ -166,8 +372,9 @@ def _load_valid_receipt(path: Path, expected: dict[str, str]) -> tuple[bool, str
         payload = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
         return False, f"receipt unreadable: {exc}"
-    if payload.get("schema") != RECEIPT_SCHEMA or payload.get("status") != "PASS":
-        return False, "receipt schema or status mismatch"
+    valid, reason = _validate_receipt_integrity(payload)
+    if not valid:
+        return False, reason
     for key, value in expected.items():
         if payload.get(key) != value:
             return False, f"receipt {key} mismatch"
@@ -179,12 +386,20 @@ def _write_receipt(
     context: dict[str, str],
     results: tuple[GateResult, ...],
     total_duration_s: float,
+    verifier_identity_digest: str,
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+    machine_verification = _machine_verification_object(
+        context, verifier_identity_digest, results
+    )
+    receipt_digest = _machine_verification_digest(machine_verification)
     payload = {
         "schema": RECEIPT_SCHEMA,
         "status": "PASS",
         **context,
+        "verifierIdentityDigest": verifier_identity_digest,
+        "machineVerification": machine_verification,
+        "receiptDigest": receipt_digest,
         "totalDurationSeconds": round(total_duration_s, 3),
         "checks": [
             {
@@ -289,9 +504,7 @@ def _range_shape_preflight(phase: str, base: str, head: str) -> int:
 
 
 def _default_base_for_phase(phase: str) -> str:
-    if phase in {"pre-closure", "pre-push"}:
-        return "HEAD~1"
-    return "HEAD"
+    return "HEAD~1" if phase in {"pre-closure", "pre-push"} else "HEAD"
 
 
 def _run_phase(
@@ -303,7 +516,12 @@ def _run_phase(
     max_workers: int = 6,
     reuse_valid_receipt: bool = False,
     receipt_dir: Path = DEFAULT_RECEIPT_DIR,
+    active_work_order: str | None = None,
 ) -> int:
+    binding_error = _active_work_order_binding_error(phase, active_work_order)
+    if binding_error:
+        print(f"FAIL: {binding_error}")
+        return 1
     total_started = time.perf_counter()
     resolved_base = base or _default_base_for_phase(phase)
     print("=== CVF Agent Autorun Workflow Gate ===")
@@ -321,7 +539,11 @@ def _run_phase(
     print(f"Head anchor: {head_sha}")
 
     failures = 0
-    common_commands: list[GateCommand] = list(_common_commands(resolved_base, head))
+    bind_probe = active_work_order if phase == "pre-implementation" else None
+    common_commands: list[GateCommand] = list(
+        _common_commands(resolved_base, head, active_work_order=bind_probe)
+        if bind_probe is not None else _common_commands(resolved_base, head)
+    )
 
     # At pre-implementation, prepend phase-specific early-diagnostic commands
     # (forbidden filesystem state plus the AAF early diagnostics wire-in) so a
@@ -330,6 +552,9 @@ def _run_phase(
     if phase == "pre-implementation":
         phase_commands = _pre_implementation_commands(resolved_base, head)
         common_commands[:0] = phase_commands
+    if phase in {"pre-dispatch", "pre-implementation"} and active_work_order is not None:
+        common_commands.insert(0, _package_skill_target_state_command(active_work_order))
+        common_commands.insert(0, _dispatch_release_command(active_work_order, head))
 
     if phase in {"pre-closure", "pre-push"} and base_sha == head_sha:
         print(
@@ -365,13 +590,29 @@ def _run_phase(
         all_commands,
     )
     receipt_path = _receipt_path(phase, receipt_dir)
+    pre_run_identity_digest: str | None
+    pre_run_identity_error: str | None
+    try:
+        pre_run_identity_digest = _verifier_identity_digest(all_commands)
+        pre_run_identity_error = None
+    except VerifierIdentityUnavailable as exc:
+        pre_run_identity_digest = None
+        pre_run_identity_error = str(exc)
+
     if reuse_valid_receipt:
-        valid, reason = _load_valid_receipt(receipt_path, context)
-        if valid:
-            print(f"\nREUSED: {reason}: {receipt_path}")
-            print(f"COMPLIANT: {phase} autorun gate passed from exact local PASS receipt.")
-            return 0
-        print(f"\nReceipt reuse unavailable ({reason}); running full autorun bundle.")
+        if pre_run_identity_digest is None:
+            print(
+                f"\nReceipt reuse unavailable (verifier identity: {pre_run_identity_error}); "
+                "running full autorun bundle."
+            )
+        else:
+            expected = {**context, "verifierIdentityDigest": pre_run_identity_digest}
+            valid, reason = _load_valid_receipt(receipt_path, expected)
+            if valid:
+                print(f"\nREUSED: {reason}: {receipt_path}")
+                print(f"COMPLIANT: {phase} autorun gate passed from exact local PASS receipt.")
+                return 0
+            print(f"\nReceipt reuse unavailable ({reason}); running full autorun bundle.")
 
     results = _run_commands(
         common_tuple,
@@ -400,7 +641,93 @@ def _run_phase(
         return 1
 
     elapsed = time.perf_counter() - total_started
-    _write_receipt(receipt_path, context, all_results, elapsed)
+    if pre_run_identity_digest is None:
+        print(
+            f"\nNo reusable receipt written (verifier identity unavailable pre-run: "
+            f"{pre_run_identity_error})."
+        )
+        print(f"COMPLIANT: {phase} autorun gate passed in {elapsed:.2f}s.")
+        return 0
+
+    try:
+        post_run_identity_digest = _verifier_identity_digest(all_commands)
+    except VerifierIdentityUnavailable as exc:
+        print(f"\nNo reusable receipt written (verifier identity unavailable post-run: {exc}).")
+        print(f"COMPLIANT: {phase} autorun gate passed in {elapsed:.2f}s.")
+        return 0
+
+    if pre_run_identity_digest != post_run_identity_digest:
+        print(
+            "\nNo reusable receipt written (verifier identity drifted during "
+            "execution; PASS reflects only the commands that ran)."
+        )
+        print(f"COMPLIANT: {phase} autorun gate passed in {elapsed:.2f}s.")
+        return 0
+
+    receipt_context = context
+    if phase == "pre-closure" and base_sha != head_sha:
+        try:
+            full_base_sha = committed_evidence.resolve_full_sha(resolved_base)
+            full_head_sha = committed_evidence.resolve_full_sha(head)
+            # Guard against ref/state movement between the short-SHA capture
+            # taken before the gate commands ran (base_sha/head_sha, used to
+            # decide *what to run*) and this post-run resolution (used to
+            # decide *what to certify*). A mismatch means the ref moved
+            # during execution -- e.g. a concurrent commit landed on a
+            # mutable ref such as literal HEAD -- and the just-run gate
+            # commands can no longer be trusted to have exercised exactly
+            # this resolved range. Git-object identity alone never proves
+            # this contract's gate commands executed against that identity;
+            # this equality check is the deterministic substitute available
+            # to a purely local producer, and any mismatch must skip the
+            # binding rather than certify a target the gate did not verify.
+            if not full_base_sha.startswith(base_sha) or not full_head_sha.startswith(head_sha):
+                raise committed_evidence.CommittedEvidenceUnavailable(
+                    "base/head ref moved between gate execution and "
+                    "committedEvidence resolution; refusing to certify a "
+                    "target the just-run gate commands did not verify"
+                )
+            # During-run stability does not establish historical-target
+            # equivalence: a stable worktree at C may differ from requested B.
+            # The separate committed-target check below proves that equality.
+            observed_fingerprint = context["worktreeFingerprint"]
+            replay_fingerprint = _worktree_fingerprint(resolved_base, head)
+            if observed_fingerprint != replay_fingerprint:
+                raise committed_evidence.CommittedEvidenceUnavailable(
+                    "evidence paths changed content or existence between the "
+                    "gate run's worktree fingerprint and committedEvidence "
+                    "resolution; refusing to certify semantic drift as "
+                    "execution against the original target"
+                )
+            # Historical-target admission guard: prove the worktree content
+            # the gate commands actually read for every base..head changed
+            # path is equivalent to headSha's own committed blob for that
+            # path -- not merely that two nearby worktree reads agreed with
+            # each other. The helper compares raw disk and committed blob
+            # bytes; it admits only metadata-backed CRLF-to-LF normalization
+            # of the worktree, including mixed LF/CRLF files,
+            # with an unchanged index blob. It never invokes a clean filter
+            # or git hash-object, which could hide genuine drift. A
+            # later continuity-only HEAD remains admissible here precisely
+            # because it does not change any base..head evidence path's
+            # committed content, so the worktree (parked at the later
+            # commit) still matches headSha's blob for every changed path.
+            target_matches, target_reason = committed_evidence.verify_worktree_matches_committed_target(
+                full_base_sha, full_head_sha, cwd=REPO_ROOT
+            )
+            if not target_matches:
+                raise committed_evidence.CommittedEvidenceUnavailable(
+                    f"worktree does not match the historical target committed "
+                    f"at headSha; refusing to certify unverified content ({target_reason})"
+                )
+            committed_evidence_object = committed_evidence.build_committed_evidence(
+                full_base_sha, full_head_sha
+            )
+            receipt_context = {**context, "committedEvidence": committed_evidence_object}
+        except committed_evidence.CommittedEvidenceUnavailable as exc:
+            print(f"\nNo committedEvidence binding produced ({exc}); receipt carries raw fingerprint only.")
+
+    _write_receipt(receipt_path, receipt_context, all_results, elapsed, post_run_identity_digest)
     print(f"\nReceipt: {receipt_path}")
     print(f"COMPLIANT: {phase} autorun gate passed in {elapsed:.2f}s.")
     return 0
@@ -419,6 +746,8 @@ def main() -> int:
         help="Base commit/ref for range-aware gates. Defaults to HEAD for pre-dispatch/pre-implementation and HEAD~1 for pre-closure/pre-push.",
     )
     parser.add_argument("--head", default="HEAD", help="Head commit/ref for range-aware gates.")
+    parser.add_argument("--active-work-order", default=None,
+                        help="Bind the current work order for final release readiness at pre-dispatch and revalidation plus independent-probe admission at pre-implementation.")
     parser.add_argument("--serial", action="store_true", help="Run commands serially for debugging.")
     parser.add_argument("--max-workers", type=int, default=6, help="Maximum parallel common checks.")
     parser.add_argument(
@@ -441,6 +770,7 @@ def main() -> int:
         max_workers=args.max_workers,
         reuse_valid_receipt=args.reuse_valid_receipt,
         receipt_dir=args.receipt_dir,
+        active_work_order=args.active_work_order,
     )
 
 

@@ -1,0 +1,10 @@
+{
+  "profileName": "paid-user-safe",
+  "description": "Paid-user-safe tier with curated workspace, authoring, and repository-boundary references, excluding private continuity state.",
+  "extends": [
+    "public-free"
+  ],
+  "includeSelectionTags": [
+    "paid-user-safe"
+  ]
+}

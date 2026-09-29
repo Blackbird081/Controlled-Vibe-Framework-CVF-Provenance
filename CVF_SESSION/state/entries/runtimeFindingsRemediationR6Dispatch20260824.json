@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2313,
+  "stateKey": "runtimeFindingsRemediationR6Dispatch20260824",
+  "value": "RFR-R6 terminal cross-owner adversarial re-audit is dispatched at material commit 5a9047032 after pre-dispatch 78/78 and material pre-commit 86/86 PASS. The paired source-verified GC-018 baseline and work order require one no-commit audit worker to reconcile F1-F10 to CLOSED, RETAINED_WITH_REASON or BLOCKED_WITH_REASON using fresh Guard Engine, Model Gateway, MCP, Safety Runtime and Runtime Adapter Hub local evidence. Worker may create exactly one return path and may not repair source/tests, stage, commit, install dependencies, invoke provider/live/network, access credentials, deploy, public-sync or push. R5 remains independently closed bounded at 82a0073b2fca002fd7999ed70905166295946515."
+}

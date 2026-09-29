@@ -1,0 +1,24 @@
+{
+  "packet": "SCLP-UC04B-R3R1",
+  "diagnosticCreatedAt": "2026-07-15T05:28:30Z",
+  "stage": "e2e_negative_case_pre_submission_ui_assertion",
+  "class": "CLIENT_AUTH_ME_FETCH_NOT_OBSERVED_BEFORE_TIMEOUT",
+  "retryable": false,
+  "userAction": "Reviewer decision required: the locator repair itself is correct and matches the authorized shape exactly (page.getByText('Active role', { exact: true }).locator('..').getByText('reviewer', { exact: true })), and the strict-mode ambiguity from R3 is gone -- this run failed with 'element(s) not found' (0 matches), not a multi-match error. The captured page snapshot shows the Operations header still reading 'Active role: anonymous_local' at the 15s timeout, even though the reviewer's server-side session was already confirmed via a passing GET /api/auth/session assertion (role=reviewer) inside authenticateDirectly before navigation. The captured trace network log contains no /api/auth/me or /api/system/jobs request at all for this page load, meaning the Operations page's client-side useEffect fetch either never fired or did not complete within the timeout. This is a distinct, deeper issue from the R3 locator ambiguity and is outside this work order's locator-only repair scope; the proof spec, Operations page, and auth owners are all read-only under this packet.",
+  "providerOrModel": "N/A_NO_PROVIDER_CALL",
+  "httpStatusOrLatency": "N/A_NOT_REACHED: no client-side /api/auth/me or /api/system/jobs request was observed in the trace, and the reviewer POST at line 119 was never reached",
+  "receiptOrTracePath": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results/system-chain-uc04b-web-ope-c1f9c-tting-docs-governance-check/trace.zip",
+  "message": "The one authorized negative-only Playwright invocation ran the single selected case (negative_reviewer_docs_check) and it FAILED. The authorized locator replacement worked as intended: it no longer throws a strict-mode multi-match error (R3's failure mode). Instead, the scoped locator correctly found zero elements, because the Operations page's active-role value never advanced past its anonymous_local default within the 15-second assertion window, despite the server-side reviewer session already being established and verified (GET /api/auth/session returned role=reviewer with HTTP 200 before page.goto). The captured trace network log lists only /api/auth/csrf, /api/auth/callback/credentials, one /api/auth/session GET, two /governance/operations page loads, and one static chunk request -- no /api/auth/me or /api/system/jobs client fetch appears anywhere. The runtime audit log line count is unchanged (36 before and after), confirming the reviewer's denial POST at line 119 was never reached and no job event was recorded.",
+  "rootCauseConfidence": "SOURCE_BACKED: the captured error-context.md page snapshot shows the literal rendered text 'Active role' / 'anonymous_local' at failure time; the captured trace.zip network log is the authoritative request list for this page load and shows no auth/me or jobs request; the proof spec's authenticateDirectly helper (lines 36-62) independently confirms server-side session establishment via a passing session-role assertion that executes before this failure.",
+  "runtimeProofStatus": "The locator repair itself is proven working under this invocation (no multi-match error). The reviewer-denial runtime behavior (canTrigger returning read_only_role_cannot_trigger, submitGovernanceJob stopping before the runner, HTTP 403) remains proven only at the focused-unit-test level (32/32, including direct web-governance-jobs.test.ts coverage), not at the browser level, because the Operations page's client-side role hydration did not complete before this case's assertion timeout.",
+  "invocationLedgerReconciliation": {
+    "invocationCeiling": 1,
+    "invocationsRun": 1,
+    "retries": 0,
+    "webSubmissions": 0,
+    "webSubmissionsExpected": 1,
+    "selectedCheckerExecutions": 0,
+    "selectedCheckerExecutionsExpected": 0,
+    "providerCalls": 0
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "stateOrder": 1802,
+  "stateKey": "systemChainUc04bR3BlockedClosure20260715",
+  "value": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "materialCommit": "e1ce6dc18",
+    "workOrderId": "SCLP-UC04B-R3",
+    "completionReview": "docs/reviews/CVF_SYSTEM_CHAIN_UC04B_R3_BUSINESS_PROOF_COMPLETION_2026-07-15.md",
+    "positiveBusinessPath": "PROVEN_BOUNDED",
+    "reviewerDenialBrowserPath": "BLOCKED_PRE_POST_LOCATOR_AMBIGUITY",
+    "observedCounters": {
+      "playwrightInvocations": 1,
+      "webSubmissions": 1,
+      "selectedCheckerExecutions": 1,
+      "retries": 0,
+      "providerCalls": 0
+    },
+    "gapId": "cvf.asc.gap.web_reviewer_denial_proof_locator_ambiguity.v1",
+    "adifId": "ADIF-0036",
+    "nextAllowedMove": "author one source-verified negative-only R3R1 locator recovery packet",
+    "claimBoundary": "Developer docs-check business success only. Reviewer browser denial, full UC-04B, unified inventory, provider, public, production, scale, certification, and user value remain unproven."
+  }
+}

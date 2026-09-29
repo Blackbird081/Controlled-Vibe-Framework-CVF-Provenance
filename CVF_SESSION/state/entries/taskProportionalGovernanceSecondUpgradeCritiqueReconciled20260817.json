@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2279,
+  "stateKey": "taskProportionalGovernanceSecondUpgradeCritiqueReconciled20260817",
+  "value": "The TPGR external critique and CVF reconciliation/revised plan are committed at cb53aad7546d3529ede88987525d6007468eeb63. Original external return SHA-256 is 4f3a02c2ca95028e2109f5c37f4311b755bd33dd81b2ea812917e6ff5dff588a; normalized critique SHA-256 is e77bc771796b387be4d270c40ee87ad0c7174e1d236eb66f232496d332a0e820; reconciliation/revised-plan SHA-256 is 3f4f922f083d499a6c8c908e6c30b564cb808e2dceeeebe14d885e129a513582. CVF accepts REVISE_BEFORE_IMPLEMENTATION_PLANNING with corrections: 114 files are catalog-unwired rather than proven orphaned, and hashes bind bytes but do not prove semantic reading. Next authority is operator decision on R2 read-only feasibility only; R2-R9, selective execution, T15, rule/checker/catalog changes, runtime/provider/live/public/deploy/production remain unauthorized."
+}

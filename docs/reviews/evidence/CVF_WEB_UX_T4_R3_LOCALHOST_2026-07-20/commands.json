@@ -1,0 +1,22 @@
+[
+  {
+    "command": "npx next dev -p 3000",
+    "result": "\u25b2 Next.js 16.2.7 Ready; port 3000",
+    "status": "PASS"
+  },
+  {
+    "command": "npm run test",
+    "result": "1 failed | 323 passed (live Alibaba test expected fail)",
+    "status": "PASS_PROVIDER_FREE"
+  },
+  {
+    "command": "python governance/compat/check_governed_file_size.py --enforce",
+    "result": "PENDING_POST_GATE",
+    "status": "PENDING"
+  },
+  {
+    "command": "netstat -ano | findstr :3000",
+    "result": "TCP    0.0.0.0:3000           0.0.0.0:0              LISTENING       25976\r\n  TCP    [::]:3000              [::]:0                 LISTENING       25976\r\n  TCP    [::1]:3000             [::1]:50060            ESTABLISHED     25976\r\n  TCP    [::1]:3000             [::1]:54319            ESTABLISHED     25976\r\n  TCP    [::1]:3000             [::1]:55440            ESTABLISHED     25976\r\n  TCP    [::1]:3000             [::1]:55858            ESTABLISHED     25976\r\n  TCP    [::1]:3000             [::1]:56357            ESTABLISHED     25976\r\n  TCP    [::1]:3000             [::1]:58247            ESTABLISHED     25976\r\n  TCP    [::1]:3000             [::1]:62349            ESTABLISHED     25976\r\n  TCP    [::1]:50060            [::1]:3000             ESTABLISHED     7264\r\n  TCP    [::1]:54319            [::1]:3000             ESTABLISHED     7264\r\n  TCP    [::1]:55440            [::1]:3000             ESTABLISHED     7264\r\n  TCP    [::1]:55858            [::1]:3000             ESTABLISHED     7264\r\n  TCP    [::1]:56357            [::1]:3000             ESTABLISHED     7264\r\n  TCP    [::1]:58247            [::1]:3000             ESTABLISHED     7264\r\n  TCP    [::1]:62349            [::1]:3000             ESTABLISHED     7264",
+    "status": "ACTIVE"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "stateOrder": 1766,
+  "stateKey": "systemChainUc02RendererRepairDispatch20260714",
+  "value": {
+    "status": "DISPATCH_READY",
+    "workOrderId": "SCLP-UC02-R3",
+    "materialCommit": "9078fec00",
+    "workerCommitMode": "WORKER_MUST_NOT_COMMIT",
+    "templateOwnerCount": 3,
+    "generatedOutputCount": 20,
+    "releaseGatePlannedCalls": 1,
+    "maximumDiagnosedResultChangingRetryCount": 1,
+    "uc02ProofCalls": 0,
+    "scenarioEvents": 0,
+    "providerCalls": 0,
+    "nextAllowedMove": "one exact no-commit SCLP-UC02-R3 worker execution",
+    "claimBoundary": "Generated Markdown conformance repair only; accepted UC-02 proof remains unchanged and no provider, public, production, scale, universal, certification, or user-value claim is added."
+  }
+}

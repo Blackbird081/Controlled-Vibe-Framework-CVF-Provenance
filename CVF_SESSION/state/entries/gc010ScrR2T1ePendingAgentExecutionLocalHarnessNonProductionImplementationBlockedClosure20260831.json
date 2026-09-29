@@ -1,0 +1,19 @@
+{
+  "stateOrder": 2400,
+  "stateKey": "gc010ScrR2T1ePendingAgentExecutionLocalHarnessNonProductionImplementationBlockedClosure20260831",
+  "value": {
+    "status": "CLOSED_BLOCKED_BOUNDED",
+    "terminalToken": "APPROVAL_SNAPSHOT_HASH_PERSISTENCE_COMPATIBILITY_BLOCKED",
+    "materialCommit": "d367ea1c7",
+    "dispatchCommit": "13dbbaa73",
+    "executionBaseHead": "ea57866ec",
+    "baseline": "docs/baselines/CVF_GC018_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_2026-08-31.md",
+    "workerReturn": "docs/reviews/CVF_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_WORKER_RETURN_2026-08-31.md",
+    "completionReview": "docs/reviews/CVF_GC010_SCR_R2_T1E_PENDING_AGENT_EXECUTION_LOCAL_HARNESS_NON_PRODUCTION_IMPLEMENTATION_COMPLETION_2026-08-31.md",
+    "evidence": "Independent review reproduced 117/117 focused tests, TypeScript no-emit, reviewer-fast 66/66 and pre-commit 87/87. The current production snapshot builder reaches create but fails claim after canonical SQLite serialization with APPROVAL_SNAPSHOT_HASH_MISMATCH and a version-1 STALE record.",
+    "acceptedBoundary": "The two implementation files are retained only as non-exported blocked draft and regression evidence. No predecessor source, package, route, provider, audit, public, deployment or production owner changed.",
+    "nextAllowedMove": "Await fresh operator instruction before any separately committed cross-owner approval-hash/persistence correction decision or repair dispatch.",
+    "claimBoundary": "No viable current-owner consumer is accepted, no successor tranche is open, and GC010 production integration remains parked."
+  }
+}

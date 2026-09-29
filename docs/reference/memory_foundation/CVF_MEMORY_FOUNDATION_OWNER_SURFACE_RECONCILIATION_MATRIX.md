@@ -77,7 +77,7 @@ Out of scope:
 | Timestamp storage/display separation | T1 contract | GAP_CANDIDATE_DOC_ONLY | Leave as doctrine until a future timestamp helper or receipt implementation exists | possible later, lower priority |
 | Privacy, retention, and redaction invalidating derived rows | T1 contract; MLW1 receipt model | PARTIAL_COVERAGE | Keep as future memory/index implementation acceptance criteria | possible later, after implementation source exists |
 | Receipt type taxonomy (RETRIEVAL_RECEIPT vs DENIAL_RECEIPT) and denial receipt contract | T1 contract (KIOD-R6 enrichment); `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md` | COVERED_CONTRACT_ONLY | T1 now defines both receipt types and the denial receipt field schema; no runtime or checker created | possible if future docs overclaim single receipt type |
-| Memory access gate rule categories for reads and writes | T1 contract (KIOD-R6 enrichment); `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md` | GAP_CANDIDATE_DOC_ONLY | T1 now names gate check categories for write and read operations; no runtime gate or checker created | yes, as future gate-claim checker candidate after T3 |
+| Memory access gate rule categories for reads and writes | T1 contract (KIOD-R6 enrichment plus EAFR-R5 `Retrieval Evidence Semantics`); `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md` | PARTIAL_COVERAGE | T1 remains the single owner. EAFR-R5 converts the read-side actor, scope, privacy, lifecycle and candidate-trust admission categories from wholly doc-only to bounded local runtime coverage, source-verified in `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/src/memory-retrieval-policy.ts`, `EXTENSIONS/CVF_LEARNING_PLANE_FOUNDATION/tests/memory-retrieval-policy.test.ts`, `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.ts` and `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/memory/readout/route.test.ts`. Write-side gates, receipt and denial-receipt recording, retention checks and sensitivity classification remain doc-only; no second retrieval contract and no checker were created | yes, as future gate-claim checker candidate after T3, now scoped to the remaining doc-only categories |
 | Sensitivity level taxonomy (PUBLIC, INTERNAL, CONFIDENTIAL, RESTRICTED) | T1 contract (KIOD-R6 enrichment); `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md` | GAP_CANDIDATE_DOC_ONLY | T1 now defines sensitivity levels for classification before indexing; no runtime classifier created | possible later, after classification engine source exists |
 | Retention class taxonomy (EPHEMERAL, SESSION_SCOPED, GOVERNED, PERMANENT) | T1 contract (KIOD-R6 enrichment); `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md` | GAP_CANDIDATE_DOC_ONLY | T1 now defines retention classes; no runtime retention policy engine created | possible later, after retention engine source exists |
 | Partial rebuild rules and hash verification prerequisite | T1 contract (KIOD-R6 enrichment); `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_SOURCE_DERIVED_REPLAY_CONTRACT.md` | COVERED_CONTRACT_ONLY | T1 now names PARTIAL_REBUILD state and hash verification prerequisite; T3 checker candidate covers stale-derived overclaims | no immediate new checker beyond T3 candidate |
@@ -138,24 +138,28 @@ Public wording requires a separate public-sync decision.
 
 | Field | Evidence |
 |---|---|
-| Actor | Codex reviewer/closer |
-| Provider or surface | local workspace |
-| Session or invocation | `everos-t2-memory-foundation-owner-surface-reconciliation-2026-06-28` |
-| Working directory | `D:\UNG DUNG AI\TOOL AI 2026\Controlled-Vibe-Framework-CVF` |
-| Command or tool surface | PowerShell, rg, Get-Content, apply_patch, governance gates |
-| Target paths | `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md`; `docs/reference/memory_foundation/README.md` |
-| Allowed scope source | operator approved the next EverOS absorption move after T1 contract promotion |
-| Before status evidence | baseHead `4cff1ec6`; worktree clean before patch |
-| After status evidence | T2 matrix added and front door updated |
-| Diff evidence | `git diff --name-status 4cff1ec6..HEAD` |
-| Approval boundary | documentation-only owner-surface reconciliation |
-| Claim boundary | no runtime, provider/live, public-sync, generated aggregate, checker, adapter, package activation, certification, vector store, database, OME runtime, or MPI-T6 runtime |
-| Agent type | single-agent dispatcher/implementer/reviewer/closer |
-| Invocation ID | `everos-t2-owner-surface-reconciliation-2026-06-28` |
-| Expected manifest | this matrix plus memory foundation README pointer |
-| Actual changed set | this matrix plus memory foundation README pointer |
+| Actor | no-commit retrieval-policy boundary worker |
+| Provider or surface | private local repository |
+| Session or invocation | EAFR-R5 Retrieval Evidence Semantics And Admission Boundary, 2026-08-25 |
+| Working directory | repository root |
+| Command or tool surface | source reads, focused Vitest runs, package typechecks, safe non-live suites, bounded searches, hashes and governance gates |
+| Target paths | `docs/reference/memory_foundation/CVF_MEMORY_FOUNDATION_OWNER_SURFACE_RECONCILIATION_MATRIX.md` |
+| Allowed scope source | committed EAFR-R5 baseline and work order exact eight-path manifest |
+| Before status evidence | executionBaseHead `b45b2252471bf7ef7251746b830516b8fe5ea4cf`; clean worktree and empty staging before edits |
+| After status evidence | memory access gate row converted to bounded partial runtime coverage; eight worker paths dirty and uncommitted |
+| Diff evidence | `git diff --name-status` over the exact eight-path worker manifest |
+| Approval boundary | EAFR-R5 existing-owner reconciliation only; no new owner surface |
+| Claim boundary | no runtime expansion beyond the two named local admission boundaries, and no provider/live, network, key, public-sync, generated aggregate, checker, adapter, package activation, certification, vector store, database, graph route wiring, reinjection, deployment, or MPI-T6 runtime claim |
+| Agent type | worker |
+| Invocation ID | `eafr-r5-worker-2026-08-25` |
+| Expected manifest | this matrix as path 6 of the exact eight-path worker manifest |
+| Actual changed set | this matrix as path 6 of the exact eight-path worker manifest |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | N/A with reason: no deletion or rename in this tranche |
+
+Predecessor authoring trace: this matrix was created by EVEROS-T2 at baseHead
+`4cff1ec6` as documentation-only owner-surface reconciliation. That lineage is
+preserved as history; the block above records the current EAFR-R5 operation.
 
 ## Claim Boundary
 

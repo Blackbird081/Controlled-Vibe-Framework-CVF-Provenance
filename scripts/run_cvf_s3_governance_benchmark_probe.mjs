@@ -51,7 +51,7 @@ function buildPayload(index) {
       priority: `benchmark-run-${index + 1}`,
     },
     provider: 'alibaba',
-    model: 'qwen-turbo',
+    model: 'qwen-flash',
     mode: 'governance',
     cvfPhase: 'PHASE D',
     cvfRiskLevel: 'R1',

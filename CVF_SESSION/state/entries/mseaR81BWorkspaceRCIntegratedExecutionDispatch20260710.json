@@ -1,0 +1,5 @@
+{
+  "stateOrder": 1620,
+  "stateKey": "mseaR81BWorkspaceRCIntegratedExecutionDispatch20260710",
+  "value": "DISPATCHED. Provenance material commit 810ace2ee added the MSEA-R81B GC-018 baseline and WORKER_MAY_COMMIT work order for compact Workspace RC checklist definition plus integrated R81C fresh-project, R81D adopt-existing, R81E update, and R81F evidence decision. Pre-dispatch autorun PASS 73/73 and material pre-commit hook PASS 80/80. Worker may create only the checklist reference, integrated smoke/closure review, and evidence-backed R81 roadmap update, while using disposable workspace targets outside Policy_Local. Public-sync, public push, provider/live proof, runtime/checker/hook/Fast Lane changes, production claims, and downstream app mutation remain forbidden."
+}

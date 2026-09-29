@@ -1,0 +1,22 @@
+{
+  "stateOrder": 1922,
+  "stateKey": "sot3CvfProjT0Dispatch20260718",
+  "value": {
+    "status": "DISPATCH_READY",
+    "materialCommit": "69cf579f4",
+    "dispatchBaseHead": "0eee70743",
+    "roadmap": "docs/roadmaps/CVF_SOT3_CVF_AUTHORITY_SURFACE_AND_MASTER_ARCHITECTURE_PROJECTION_ROADMAP_2026-07-18.md",
+    "baseline": "docs/baselines/CVF_GC018_SOT3_CVF_PROJ_T0_AUTHORITY_SURFACE_INVENTORY_AND_STALENESS_AUDIT_2026-07-18.md",
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_SOT3_CVF_PROJ_T0_AUTHORITY_SURFACE_INVENTORY_AND_STALENESS_AUDIT_2026-07-18.md",
+    "workerOutputs": [
+      "docs/reviews/CVF_SOT3_CVF_PROJ_T0_AUTHORITY_SURFACE_INVENTORY_AND_STALENESS_LEDGER_2026-07-18.md",
+      "docs/reviews/CVF_SOT3_CVF_PROJ_T0_WORKER_RETURN_2026-07-18.md"
+    ],
+    "commitMode": "WORKER_MUST_NOT_COMMIT",
+    "seedSurfaceCount": 15,
+    "verification": "pre-dispatch autorun 75/75 PASS; dispatch commit steward PASS; pre-commit 83/83 PASS.",
+    "nextAllowedMove": "Execute the exact T0 no-commit worker and return COMPLETE_PENDING_REVIEW or BLOCKED_WITH_REASON.",
+    "heldNextTranche": "T1-T4 and all architecture/catalog/README edits remain parked pending independent T0 acceptance.",
+    "claimBoundary": "Documentation-only authority-surface audit dispatch; no architecture/catalog/README mutation, runtime/test/provider/live action, public-sync, push, production, browser/UI, queue/daemon, generated aggregate mutation, registry mutation, or session mutation by the worker."
+  }
+}
