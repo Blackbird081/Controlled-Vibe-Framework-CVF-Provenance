@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S11_R1_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_CORRECTIVE_2026-09-28.md",
     "workOrderSha256": "22618c185791df53aff59b93a2d3291f1b0a79b6f1e1231661ae645726609215"
   },
-  "currentAuthoritySyncReason": "CVF-NCR-R1-S11-R1 P10 remains closed bounded at bd15b2600. Q001 source contract is bounded at 569cf4aa3; GitHub/local callback at ca847cc7a/1cd95b6f1. Operator-selected admin binding for Blackbird081/206422451 is in ignored local config, documented at 483152de2; account control is unverified. GitHub OAuth App/client pair, real callback, latency, retention, P08 and provider/live proof remain open. Artifact remains DRAFT_UNACCEPTED. P11 and broader effects remain parked.",
+  "currentAuthoritySyncReason": "CVF-NCR-R1-S11-R1 P10 remains closed bounded at bd15b2600. Q001 GitHub local admin login is operator-observed bounded at 88d760c06 after production build, localhost redirect repair and clean callback; Local did not read browser cookie or provider token. Admin audit access, governance receipt/latency, retention, P08 and provider-governance proof remain open. Artifact remains DRAFT_UNACCEPTED. P11 and broader effects remain parked.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

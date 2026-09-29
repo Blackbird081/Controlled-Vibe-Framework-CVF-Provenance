@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2986,
+  "stateKey": "cvfNcrQ001GitHubAdminLogin20260929",
+  "value": "OPERATOR_OBSERVED_BOUNDED at material commit 88d760c06. Real GitHub OAuth App/client pair is in ignored local config; production build passed, /login returned 200, /api/auth/providers listed only github, and anonymous /api/auth/me returned 401. Initial 127.0.0.1 redirect mismatch and later PKCE cookie error were corrected by aligning to localhost and retrying in fresh Firefox Private session. Operator relayed /api/auth/me authenticated=true, user Blackbird081, userId usr_github_206422451, role admin, org_cvf/team_exec. Local did not inspect browser cookie, provider token or raw callback. Admin audit route and governance receipt/latency remain unproved; no artifact acceptance, P11, public sync or deployment."
+}
