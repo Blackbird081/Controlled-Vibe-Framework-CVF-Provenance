@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Q001 local transaction-store worker after bound release PASS; role=Local dispatcher/steward; phase=bounded ledger repair; decision owner=Local; parked checkpoint=pilot/live, P11, external runtimes, public sync, deployment and platform production readiness.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=source-backed Q001/R0 gap review after bounded SQLite acceptance; role=Local dispatcher/steward; phase=bounded ledger repair; decision owner=Local; parked checkpoint=pilot/live, P11, external runtimes, public sync, deployment and platform production readiness.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_Q001_LOCAL_TRANSACTION_STORE; BATCH_ID=CVF-NCR-Q001-LOCAL-TRANSACTION-STORE; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md; MATERIAL_COMMIT=c38989d09; EXPANSION_ALLOWED=false. Worker edits exact eight paths with synthetic local data only after bound pre-dispatch PASS, and must not commit. Independent Local reviewer probe remains pending. GitHub JSON ledger and Web/OAuth stay untouched. P10 CLOSED_PASS_BOUNDED; P11 parked. Q001/R0, retention/backup under failure, full P08, provider-governance proof and artifact acceptance remain open; no pilot effect, external runtime, public sync or deployment. Latest closed learning-history wave LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW_Q001_R0_REMAINING_GAPS; BATCH_ID=CVF-NCR-Q001-POST-SQLITE; MATERIAL_COMMIT=8a8fdabc7; EXPANSION_ALLOWED=false. SQLite local candidate accepted bounded at worker 49c5ab395 and Local review 8a8fdabc7. Next allowed move is source-backed Q001/R0 gap review only; do not start another worker or cut over the GitHub JSON ledger without a new packet. Pilot/live effect, P11, external runtimes, public sync and deployment remain parked. Retention, backup under failure, timeout retry, full P08, provider-governance proof, cost and artifact acceptance remain open. Latest closed learning-history wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

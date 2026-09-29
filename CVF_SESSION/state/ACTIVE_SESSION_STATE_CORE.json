@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md",
     "workOrderSha256": "77e20822cae91122c7b6da41705ce978fed0aa99f59f08eedad359dcf0686e96"
   },
-  "currentAuthoritySyncReason": "Q001 paired material correction binds baseline and work-order acceptance ledger to one dispatch commit. Worker delta remains eight uncommitted paths pending return gate and independent review; Q001/R0 and parked boundaries remain open.",
+  "currentAuthoritySyncReason": "Q001 local SQLite worker candidate was committed at 49c5ab395 and independently accepted bounded at 8a8fdabc7. The GitHub JSON ledger remains active; Q001/R0 and parked boundaries remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
