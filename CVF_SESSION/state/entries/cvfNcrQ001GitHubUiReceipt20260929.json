@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2989,
+  "stateKey": "cvfNcrQ001GitHubUiReceipt20260929",
+  "value": "OPERATOR_OBSERVED_BOUNDED at material commit b6690796e. Work Transfer screenshot shows Blackbird081/Admin, matching export anchor, governance ALLOW note and DRAFT_UNACCEPTED HTML. Current source renders the ALLOW note only for a returned governanceReceipt decision and browser export code sends no service-token header; PRESENT receipt status and session route-auth mode are source-supported inferences, not directly captured response JSON. Local engine ledger ID/hash join remains at 6d0581f7e. Historical audit record actor usr_2 is not the GitHub subject. Exact route-auth response, latency, retention and artifact acceptance remain open; P11, public sync and deployment parked."
+}
