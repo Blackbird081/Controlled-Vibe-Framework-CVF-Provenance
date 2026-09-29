@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_S11_R1_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_CORRECTIVE_2026-09-28.md",
-    "baselineSha256": "aa7f0abb4c5fb7959ea3e9410f5ce5bbc4a6b38cd8de8fe7c2d7187cbcacec3f",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S11_R1_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_CORRECTIVE_2026-09-28.md",
-    "workOrderSha256": "22618c185791df53aff59b93a2d3291f1b0a79b6f1e1231661ae645726609215"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md",
+    "baselineSha256": "8666faf25a929866e0bb6aa5056001f2545de420c8a9ec3c1d790b17eb04bdb6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md",
+    "workOrderSha256": "462c886ecad4dc97b574f33045850e3f90cd9882b84d14774991fb67bed297ed"
   },
-  "currentAuthoritySyncReason": "P10 remains closed bounded; P11 parked. Q001 local single-host SQLite baseline and work order committed at 185ce875b remain HOLD_PRE_DISPATCH. Static high-risk admission shape passed; implementation, live-ledger cutover, durability proof, retention, backup under failure, full P08, provider-governance proof, artifact acceptance and Q001/R0 remain open.",
+  "currentAuthoritySyncReason": "P10 remains closed bounded; P11 parked. Q001 local single-host SQLite worker packet committed at 02ecef12f is current authority for exact-path synthetic implementation only, after final bound pre-dispatch PASS. Live GitHub ledger, Web/OAuth, pilot effect, runtime integration, public sync and deployment remain parked. Durability proof, retention, backup under failure, full P08, provider-governance proof, artifact acceptance and Q001/R0 remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
