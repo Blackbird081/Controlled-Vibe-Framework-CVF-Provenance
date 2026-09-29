@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2988,
+  "stateKey": "cvfNcrQ001GitHubReceiptAttempt20260929",
+  "value": "LOCAL_LEDGER_JOIN_OBSERVED at material commit 6d0581f7e. Operator exported Work Transfer HTML after GitHub admin login; returned HTML explicitly said DRAFT / UNACCEPTED. Local started a healthy Governance Engine with isolated ignored ledger; one block had request ID artifact-proof-transfer-1dbdb2e0-39d5-45c4-8d15-2900dff4b775-1790659512204, ALLOW decision, matching /api/v1/ledger entry and valid recomputed GENESIS/hash chain. Operator had not yet relayed the UI receipt panel at this material point; route-auth response mode and latency remain unobserved. Selected old audit record actor usr_2 is not the GitHub subject. No artifact acceptance, P11, public sync or deployment."
+}

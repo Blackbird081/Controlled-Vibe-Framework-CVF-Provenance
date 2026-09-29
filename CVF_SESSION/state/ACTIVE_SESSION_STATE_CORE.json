@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S11_R1_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_CORRECTIVE_2026-09-28.md",
     "workOrderSha256": "22618c185791df53aff59b93a2d3291f1b0a79b6f1e1231661ae645726609215"
   },
-  "currentAuthoritySyncReason": "CVF-NCR-R1-S11-R1 P10 remains closed bounded at bd15b2600. Q001 GitHub local admin UI is operator-observed bounded at 416a11609 after production build, localhost redirect repair, clean callback and same-session /admin/audit-log access; Local did not read browser cookie, provider token or page contents. Governance receipt/latency, retention, P08 and provider-governance proof remain open. Artifact remains DRAFT_UNACCEPTED. P11 and broader effects remain parked.",
+  "currentAuthoritySyncReason": "CVF-NCR-R1-S11-R1 P10 remains closed bounded at bd15b2600. Q001 GitHub local login/admin UI is operator-observed bounded at 416a11609. A later Work Transfer export at 6d0581f7e created draft HTML and one local engine ALLOW block with valid hash and matching request ID; the selected audit event names historical mock actor usr_2. UI receipt status, exact route-auth mode, latency, retention, P08 and provider-governance proof remain open. Artifact remains DRAFT_UNACCEPTED. P11 and broader effects remain parked.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
