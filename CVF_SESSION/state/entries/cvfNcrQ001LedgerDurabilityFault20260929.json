@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2995,
+  "stateKey": "cvfNcrQ001LedgerDurabilityFault20260929",
+  "value": "Q001_JSON_LEDGER_DURABILITY_REPAIR_REQUIRED at material commit 1722db834. Reproducible probe used only disposable files and the production ImmutableLedger class. After synthetic failure post-truncation, 303 prior bytes became one byte, previous state was not preserved and restart rejected corrupt JSON. Event-controlled reader saw zero bytes while a successful append was paused; final file had two blocks. Existing ledger tests 11/11 passed but do not cover these windows. The current process-local lock and whole-file rewrite do not establish multi-process safety, atomic commit, retention or backup under failure. Next implementation needs high-risk transaction proof contract, real process peer, fault and clean restore evidence. Live GitHub ledger untouched; Q001/R0, P11 and public export remain open."
+}
