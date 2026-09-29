@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW_BOUNDED_WORKER_RETURN; BATCH_ID=CVF-NCR-Q001-SYNTHETIC-SYSTEM-CHAIN; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SYNTHETIC_SYSTEM_CHAIN_2026-09-29.md; REVIEW_COMMIT=138871784; EXPANSION_ALLOWED=false. Review the committed four-path synthetic return with a distinct Local HTTP/raw-SQL oracle; decide bounded acceptance and sync roadmap. GitHub ledger cutover, pilot/live, P11, external runtimes, provider calls, public sync and deployment remain parked. Q001/R0, retention, P08, cost and artifact acceptance remain open. Latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUDIT_Q001_POST_CHAIN_GAPS; BATCH_ID=CVF-NCR-Q001-SYNTHETIC-SYSTEM-CHAIN; REVIEW=docs/reviews/CVF_CVF_NCR_Q001_SYNTHETIC_SYSTEM_CHAIN_COMPLETION_2026-09-29.md; REVIEW_COMMIT=bb17896f8; EXPANSION_ALLOWED=false. Audit remaining Q001 gaps and propose the next bounded packet; do not execute real GitHub ledger cutover, pilot/live, P11, external runtimes, provider calls, public sync or deployment. Q001/R0, retention, P08, cost and artifact acceptance remain open. Latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
