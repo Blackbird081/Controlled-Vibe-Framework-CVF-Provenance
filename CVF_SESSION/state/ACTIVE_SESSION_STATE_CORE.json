@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_S11_R1_TEST_EVIDENCE_AUDIT_PRODUCTION_RUNTIME_CORRECTIVE_2026-09-28.md",
     "workOrderSha256": "22618c185791df53aff59b93a2d3291f1b0a79b6f1e1231661ae645726609215"
   },
-  "currentAuthoritySyncReason": "P10 remains closed bounded at bd15b2600 and P11 parked. Q001 GitHub session receipt at 1a28e0cb7 is bounded. P08 candidate diagnostic at 5dcd42d21 scanned 1,007 Git-visible Web text files and one synthetic HTML with nine exact fixture exceptions, zero new findings, zero unreadable and four adversarial tests passing. Ignored OAuth config and full release/artifact scope remain outside this result. Q001/R0, latency distribution, timeout reconciliation, retention/backup under failure and provider-governance proof remain open.",
+  "currentAuthoritySyncReason": "P10 remains closed bounded at bd15b2600; P11 parked. Q001 GitHub session receipt at 1a28e0cb7, P08 candidate scan at 5dcd42d21 and read-only attempt reconciliation at a396e5e1d are bounded. An eight-block local snapshot yielded one exact match; absent/duplicate/invalid states never allow retry. Current engine JSON rewrite lacks proven atomic durability, retention or failure restore. Q001/R0, distributed latency, full P08, provider-governance proof and artifact acceptance remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

@@ -1,0 +1,5 @@
+{
+  "stateOrder": 2994,
+  "stateKey": "cvfNcrQ001AttemptReconciliation20260929",
+  "value": "LOCAL_READ_ONLY_ATTEMPT_RECONCILIATION_BOUNDED at material commit a396e5e1d. Explicit-ledger CLI validates each sorted-key JSON SHA-256 block hash and previous link, then counts exact request-ID matches. Current eight-block Q001 ledger had one synthetic P08 attempt at block index 7, decision ALLOW, tip 5ffa72bbbb1ffad2f8265bdfb6782789b0c38bc6e658714209d643551f73d058; absent control was NOT_FOUND_IN_SNAPSHOT. Duplicate, unreadable, corrupted and malformed-decision test states fail closed; 2/2 tests passed. Every status reports safeToRetry=false. Engine currently rewrites whole ledger JSON with process-local lock; atomic durability, retention, backup under failure and multi-writer safety remain unproved. Q001/R0 open; no artifact acceptance or P11 expansion."
+}
