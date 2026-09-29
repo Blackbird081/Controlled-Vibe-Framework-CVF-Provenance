@@ -1,5 +1,5 @@
 {
-  "stateOrder": 2978,
+  "stateOrder": 2979,
   "stateKey": "nextAllowedMove",
-  "value": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUNDED_WORK_ORDER; BATCH_ID=CVF-NCR-Q001-SYNTHETIC-SYSTEM-CHAIN; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SYNTHETIC_SYSTEM_CHAIN_2026-09-29.md; REVIEW_COMMIT=d29b72f72; EXPANSION_ALLOWED=false. Execute only after bound pre-dispatch PASS, using disposable Web/engine/SQLite and the four-path worker manifest. Worker must not commit; Local reviewer owns independent HTTP/store probe and acceptance. GitHub JSON cutover, pilot/live, P11, external runtimes, provider calls, public sync and deployment remain parked. Q001/R0, retention, P08, cost and artifact acceptance remain open. Latest closed learning-history wave LHW24."
+  "value": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW_BOUNDED_WORKER_RETURN; BATCH_ID=CVF-NCR-Q001-SYNTHETIC-SYSTEM-CHAIN; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SYNTHETIC_SYSTEM_CHAIN_2026-09-29.md; REVIEW_COMMIT=138871784; EXPANSION_ALLOWED=false. Review the committed four-path synthetic return with a distinct Local HTTP/raw-SQL oracle; decide bounded acceptance and sync roadmap. GitHub ledger cutover, pilot/live, P11, external runtimes, provider calls, public sync and deployment remain parked. Q001/R0, retention, P08, cost and artifact acceptance remain open. Latest closed learning-history wave LHW24."
 }
