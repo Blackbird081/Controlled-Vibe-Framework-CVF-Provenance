@@ -53,9 +53,15 @@ On 2026-09-29, Local started the current Governance Engine on `127.0.0.1:8000` w
 
 The engine ledger then contained one block. Local recomputed its SHA-256 hash and `GENESIS` link, and independently read the same request ID through `/api/v1/ledger`: `artifact-proof-transfer-1dbdb2e0-39d5-45c4-8d15-2900dff4b775-1790659512204`. The block's decision was `ALLOW`; block hash was `90ec72d1f44d67e50485b0e67e40fb46560e718fa4e2ad0fe0ccbf11e1b7d410`. No engine error was logged. A subsequent operator-provided screenshot of Work Transfer shows `Blackbird081`/`Admin` in the sidebar, the matching export anchor, the UI's governance `ALLOW` note, and the explicit draft/unaccepted notice. Current `ArtifactExportPanel.tsx` renders that note only when `governanceReceipt.decision === 'ALLOW'`; `proof.ts` returns a receipt object only with status `PRESENT`. Thus the screenshot and source support a bounded displayed-receipt inference, not a direct inspection of the response JSON. The browser component sends no service-token header and the route requires either a valid token or session; `session` auth mode is likewise a source-supported inference, not a directly captured route-auth proof. The selected historical audit record names `usr_2 (admin)`; that record's actor must not be confused with the current GitHub subject `usr_github_206422451`. First/warm end-to-end latency remains unmeasured.
 
+## Bounded Local Latency Probe
+
+With the same production-built CVF Web and local engine already warm, Local sent five sequential synthetic `POST /api/artifacts/export` requests using the configured service token and per-request HMAC signature. No browser cookie, user text or external provider call entered this probe. All five returned HTTP 200, `routeGovernanceProof.authMode=service_token`, receipt status `PRESENT`, decision `ALLOW` and state `DRAFT_UNACCEPTED`. Elapsed client times were 59.8, 10.8, 9.6, 10.1 and 9.0 ms; median 10.1 ms, attempts 2-5 range 9.0-10.8 ms. Local recomputed all six ledger block hashes and previous-hash links, including the earlier browser-triggered block, and joined each of the five new receipt IDs to a distinct ledger request ID. Six-block tip hash: `95172cb62f2d04dd40fdf6bf5771eea7075ccfe454a99c139129f81db663964f`.
+
+This small, same-host warm sample is diagnostic only. The first request includes a new Node client's connection setup; it is not a cold CVF Web or engine start. It cannot establish a latency distribution, timeout policy, hosted behavior or GitHub-session export time. The exact browser response `routeGovernanceProof` still needs a safe direct observation.
+
 ## Claim Boundary
 
-Existing source tests cover the binding contract. The local production build and operator-relayed real GitHub login plus admin page access establish a bounded authenticated admin UI path for the selected account; Local did not inspect the browser cookie or GitHub token. A subsequent browser-triggered local export displayed `ALLOW` and draft/unaccepted state, and reached the engine ledger with a valid hash and matching request ID. The exact route-auth response proof, latency distribution, binding revocation, provider governance behavior, artifact acceptance, deployment, and production readiness remain separate proof obligations. The Governance Engine was not running during the earlier OAuth check; it ran in an isolated local profile for the later receipt attempt. P11 and public export remain parked.
+Existing source tests cover the binding contract. The local production build and operator-relayed real GitHub login plus admin page access establish a bounded authenticated admin UI path for the selected account; Local did not inspect the browser cookie or GitHub token. A subsequent browser-triggered local export displayed `ALLOW` and draft/unaccepted state, and reached the engine ledger with a valid hash and matching request ID. Five service-token exports additionally provide a small warm-path latency diagnostic, not an OAuth or deployment latency bound. The exact browser route-auth response proof, latency distribution, binding revocation, provider governance behavior, artifact acceptance, deployment, and production readiness remain separate proof obligations. The Governance Engine was not running during the earlier OAuth check; it ran in an isolated local profile for the later receipt attempts. P11 and public export remain parked.
 
 ## Epistemic Process Block
 
@@ -65,7 +71,7 @@ With the GitHub redirect and local browser origin aligned, a clean callback for 
 
 ### Evidence Comparison
 
-The first mismatched redirect failed, the next callback failed its PKCE cookie check, and a clean Firefox Private retry returned the expected `/api/auth/me` fields by operator report. The server's unauthenticated route probes and provider listing were observed locally. A later Work Transfer export returned draft HTML by operator report and created one independently hash-checked engine ledger event with a matching receipt anchor.
+The first mismatched redirect failed, the next callback failed its PKCE cookie check, and a clean Firefox Private retry returned the expected `/api/auth/me` fields by operator report. The server's unauthenticated route probes and provider listing were observed locally. A later Work Transfer export returned draft HTML by operator report and created one independently hash-checked engine ledger event with a matching receipt anchor. Five subsequent synthetic service-token requests returned distinct receipts joined to a valid six-block chain.
 
 ### Contradiction Or Gap Disposition
 
@@ -73,4 +79,4 @@ The first two failures were not success evidence. The clean retry and same-sessi
 
 ### Claim Update
 
-Q001 GitHub login, selected admin session, admin page access and Work Transfer `ALLOW`/draft display have operator-observed evidence in the local profile. The export has a local engine ledger join; exact session-auth proof and latency remain open. No artifact acceptance follows from either observation.
+Q001 GitHub login, selected admin session, admin page access and Work Transfer `ALLOW`/draft display have operator-observed evidence in the local profile. The export has a local engine ledger join; the separate service-token probe gives a bounded warm local latency sample. Exact browser route-auth proof, OAuth-path latency and artifact acceptance remain open.
