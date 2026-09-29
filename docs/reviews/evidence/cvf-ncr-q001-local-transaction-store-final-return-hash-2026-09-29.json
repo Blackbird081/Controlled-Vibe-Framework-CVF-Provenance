@@ -1,0 +1,11 @@
+{
+  "workerReturnPath": "docs/reviews/CVF_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_WORKER_RETURN_2026-09-29.md",
+  "algorithm": "SHA256",
+  "beforeGateSha256": "e107e51c702472a5d4ce181195228e1c56e1f28e155b30760bd9b94b3767c95c",
+  "afterGateSha256": "e107e51c702472a5d4ce181195228e1c56e1f28e155b30760bd9b94b3767c95c",
+  "equalityResult": "MATCH",
+  "postGateMutationResult": "NO_POST_GATE_MUTATION",
+  "gateCommand": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_LOCAL_TRANSACTION_STORE_2026-09-29.md --pytest-target EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_ledger.py --pytest-target EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_sqlite_ledger.py",
+  "gateResult": "PASS",
+  "claimBoundary": "Exact return bytes and bound worker gate only; independent reviewer acceptance pending"
+}

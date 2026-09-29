@@ -25,6 +25,10 @@ class ImmutableLedger:
             raise ValueError("Governance ledger must be a JSON block list")
         return chain
 
+    def read_chain(self):
+        """Return the JSON ledger through the common consumer interface."""
+        return self._read_chain()
+
     def append_event(self, event_payload):
         with _ledger_lock:
             chain = self._read_chain()

@@ -94,6 +94,7 @@ class TestImmutableLedger:
         with open(ledger_path, "r") as f:
             chain = json.load(f)
         assert len(chain) == 2
+        assert ledger.read_chain() == chain
 
     def test_creates_file_if_missing(self, tmp_dir):
         ledger_path = os.path.join(tmp_dir, "subdir", "ledger.json")
