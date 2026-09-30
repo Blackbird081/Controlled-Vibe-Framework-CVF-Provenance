@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=audit B2c browser/file proof scope read-only; role=Local reviewer/steward; phase=internal post-B2b audit; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
+Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=author B2c synthetic browser-download packet; role=Local dispatcher/steward; phase=packet authoring; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUDIT_HTML_B2C_BROWSER_FILE_PROOF_SCOPE; BATCH_ID=CVF-NCR-HTML-B2C-SCOPE-AUDIT; MATERIAL_COMMIT=8f2db40fa; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY_COMPLETION_2026-09-30.md; EXPANSION_ALLOWED=false. Local read-only scope audit only; no route/UI/store edit, browser/file action, real data or acceptance effect. Q001/Q004 Profile A OPEN; actor/store/backup/retention/RPO/RTO/cost and pilot/live remain operator checkpoints. Profile B/C, durable B2, P11, external runtime, public sync and deployment parked. Latest closed learning-history wave LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_HTML_B2C_SYNTHETIC_BROWSER_DOWNLOAD_PACKET; BATCH_ID=CVF-NCR-HTML-B2C-SYNTHETIC-BROWSER-DOWNLOAD; MATERIAL_COMMIT=6224b74d4; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B2C_BROWSER_FILE_PROOF_SCOPE_AUDIT_2026-09-30.md; EXPANSION_ALLOWED=false. Local may author GC-018/work order only; no browser/file execution, route/UI/store edit, real data or acceptance effect yet. Q001/Q004 Profile A OPEN; actor/store/backup/retention/RPO/RTO/cost and pilot/live remain operator checkpoints. Profile B/C, durable B2, P11, external runtime, public sync and deployment parked. Latest closed learning-history wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
