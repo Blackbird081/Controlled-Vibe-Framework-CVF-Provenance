@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "cvf.ncrHtmlB2dLocalBrowserProbe@1",
+  "batchId": "CVF-NCR-HTML-B2D-SYNTHETIC-ROUTE-BROWSER",
+  "reviewerRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "reviewBaseHead": "8b92a6135",
+  "sourceHashesMatchWorkerReceipt": true,
+  "method": "Reviewer-owned fresh Git Bash/Playwright run of the final focused spec with NEXTAUTH_URL present and empty, NODE_OPTIONS preload, disposable log/output, and Chromium browser. Reviewer checked route/proof.ts source branch independently of the worker narrative.",
+  "result": { "tests": 2, "passed": 2, "failed": 0, "exit": 0, "browser": "chromium", "browserVersion": "145.0.7632.6", "headless": true },
+  "preflightBeforeExport": { "serverContexts": 3, "processedEnvContexts": 1, "nextauthUrlStates": ["EMPTY"], "wrapperReached": true, "attemptEvents": 0, "maxAttemptCount": 0, "newestServerTickAgeMs": 185 },
+  "afterRun": { "serverContexts": 10, "processedEnvContexts": 8, "nextauthUrlStates": ["EMPTY"], "wrapperReached": true, "attemptEvents": 0, "maxAttemptCount": 0, "cleanup": "REMOVED" },
+  "route": { "intercepted": false, "exportRequestMethods": ["POST", "POST"], "httpStatus": [200, 200], "governanceReceiptStatus": ["NOT_CONFIGURED", "NOT_CONFIGURED"] },
+  "savedFiles": [
+    { "title": "Alpha Report", "filename": "alpha-report.html", "byteLength": 2783, "savedSha256": "61d33ed40aa28543bb98e9c029da7a9583a09aeb200370c3e9f3e9283b88bcec", "decodedHtmlOracleSha256": "61d33ed40aa28543bb98e9c029da7a9583a09aeb200370c3e9f3e9283b88bcec", "b2bSha256": "61d33ed40aa28543bb98e9c029da7a9583a09aeb200370c3e9f3e9283b88bcec", "jsonWireSha256": "8bc240c92689488cc7ee269bcded5e27c9e7cc56be5ab1c5d1706e84b638ed9b" },
+    { "title": "Bravo Report", "filename": "bravo-report.html", "byteLength": 2783, "savedSha256": "dc53dfb8df24c47b807bf0034dd48de279d5d8fe2d2937900d96d3bcb935358f", "decodedHtmlOracleSha256": "dc53dfb8df24c47b807bf0034dd48de279d5d8fe2d2937900d96d3bcb935358f", "b2bSha256": "dc53dfb8df24c47b807bf0034dd48de279d5d8fe2d2937900d96d3bcb935358f", "jsonWireSha256": "9f511735a41c09f44848c4bbf82e89f3d27f7d190453e4663667f536fa64a700" }
+  ],
+  "sameLengthDifferentDigest": true,
+  "displayedVersionAfterFormEdit": "Alpha Report",
+  "sourceBranchCheck": "proof.ts returns NOT_CONFIGURED before fetch when NEXTAUTH_URL is empty; route.ts exposes that status and no attempt ID in data",
+  "limits": ["route handler context not individually identified in preload log", "preload negative control only in plain Node", "CRLF not asserted", "one Chromium profile and synthetic inputs only", "no configured receipt hop, governance behavior, store or acceptance claim"],
+  "rawHtmlOrDownloadedFilesCommitted": false
+}

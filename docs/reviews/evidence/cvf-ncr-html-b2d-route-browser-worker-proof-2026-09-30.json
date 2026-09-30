@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "cvf.ncrHtmlB2dRouteBrowserWorkerProof@1",
+  "batchId": "CVF-NCR-HTML-B2D-SYNTHETIC-ROUTE-BROWSER",
+  "executionBaseHead": "2c163805690bdb6072d9d23d86b06c23578b7db5",
+  "status": "WORKER_OBSERVATION_PENDING_LOCAL_REVIEW",
+  "files": {
+    "spec": {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-route-byte-download.spec.ts",
+      "sha256": "d79ee472bee95e7a1b0d7a650f6059a9ff3fd5c12303c610aa3e7001e752cf02"
+    },
+    "preload": {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/b2d-no-hop-preload.cjs",
+      "sha256": "43c2ebc6ac5ee8501a29e84724ec353d278ea048481806ee83982592883f4eea"
+    }
+  },
+  "browser": { "name": "chromium", "version": "145.0.7632.6", "headless": true, "config": "playwright.config.mock.ts", "port": 3000 },
+  "environment": {
+    "NEXTAUTH_URL": "empty string in parent; still empty in every server context after Next env loading",
+    "NODE_OPTIONS": "--require with quoted forward-slash absolute path to the preload",
+    "noHopLog": "absolute path outside repository; deleted after summary",
+    "playwrightOutputDir": "outside repository, deleted after run"
+  },
+  "command": "CVF_B2D_NO_HOP_LOG=<abs temp> NEXTAUTH_URL= CVF_PLAYWRIGHT_PORT=3000 PLAYWRIGHT_BASE_URL=http://localhost:3000 NODE_OPTIONS='--require \"<abs>/b2d-no-hop-preload.cjs\"' npx playwright test tests/e2e/artifact-export-route-byte-download.spec.ts --config playwright.config.mock.ts --output <temp outside repo>",
+  "result": { "tests": 2, "passed": 2, "failed": 0, "exit": 0 },
+  "preflightBeforeFirstExportRequest": {
+    "test": "no-hop isolation is proven before any export request",
+    "serverContexts": 3,
+    "serverContextsWithProcessedEnv": 1,
+    "nextauthUrlStates": ["EMPTY"],
+    "wrapperReached": true,
+    "attemptEvents": 0,
+    "maxAttemptCount": 0,
+    "newestServerTickAgeMs": 164,
+    "exportRequestsBeforePreflight": 0
+  },
+  "isolationAfterRun": {
+    "logLines": 469,
+    "serverContexts": 10,
+    "serverProcesses": 8,
+    "serverContextsWithProcessedEnv": 8,
+    "nextauthUrlStates": ["EMPTY"],
+    "attemptEvents": 0,
+    "maxAttemptCount": 0,
+    "fetchIsWrapperInSomeServerContext": true,
+    "nextOriginalIsWrapperObserved": false,
+    "maxPassThroughFetchCount": 3
+  },
+  "preloadNegativeControl": {
+    "form": "plain node one-shot outside the server",
+    "evaluateUrlBlocked": true,
+    "attemptLinesLogged": 1,
+    "bodyOrHeadersLogged": false,
+    "missingLogPathFailsClosed": true
+  },
+  "routeObservation": {
+    "intercepted": false,
+    "requestsSent": ["POST", "POST"],
+    "status": 200,
+    "governanceReceiptStatus": "NOT_CONFIGURED",
+    "receiptPresent": false,
+    "attemptIdPresent": false
+  },
+  "savedFiles": [
+    {
+      "title": "Alpha Report",
+      "filename": "alpha-report.html",
+      "savedLength": 2783,
+      "savedSha256": "22dab191abb4624037154e0c49cb1787fc9dcb9d74cfbe435a18293d8c54cf55",
+      "oracleSha256": "22dab191abb4624037154e0c49cb1787fc9dcb9d74cfbe435a18293d8c54cf55",
+      "b2bSha256": "22dab191abb4624037154e0c49cb1787fc9dcb9d74cfbe435a18293d8c54cf55",
+      "jsonWireSha256": "f9febfda50be2aaf0caeae49bf356fed3c051eaa2affb53f7d13d0f7639cd11e",
+      "equal": true,
+      "formEditedWithoutRebuildBeforeDownload": true,
+      "previewH1AfterFormEdit": "Alpha Report"
+    },
+    {
+      "title": "Bravo Report",
+      "filename": "bravo-report.html",
+      "savedLength": 2783,
+      "savedSha256": "24f240dbe9b96d52456e3ea3a5730104cfd29631cd5ab9802db05fd303ad3c20",
+      "oracleSha256": "24f240dbe9b96d52456e3ea3a5730104cfd29631cd5ab9802db05fd303ad3c20",
+      "b2bSha256": "24f240dbe9b96d52456e3ea3a5730104cfd29631cd5ab9802db05fd303ad3c20",
+      "jsonWireSha256": "a9959783217eeb014cfbf6ce33fc133c336d9778704dc0f6670284bfa6139da2",
+      "equal": true,
+      "formEditedWithoutRebuildBeforeDownload": false,
+      "previewH1AfterBuild": "Bravo Report"
+    }
+  ],
+  "sameLengthDifferentDigest": true,
+  "versionDifferenceIsolated": "decoded HTML equal after masking generation time and title",
+  "digestNote": "digests change on every run because the route embeds a generation timestamp; the values above belong to the recorded run only",
+  "byteCases": ["no leading BOM", "mid-text BOM EF BB BF", "U+1EC7 E1 BB 87", "U+65E5 E6 97 A5", "U+1F600 F0 9F 98 80", "LF present"],
+  "cleanup": {
+    "downloadDirectory": "REMOVED (asserted in test)",
+    "noHopLog": "removed after summary",
+    "playwrightOutputDir": "removed",
+    "rawHtmlOrDownloadedFilesCommitted": false
+  },
+  "attempts": [
+    { "attempt": "server shape probe", "outcome": "NO_EXPORT_REQUEST", "reason": "started the server with the preload and no export call to learn the log shape; found Next runs several contexts per process and patches fetch, so the spec accepts a pass-through count as wrapper-reached evidence" },
+    { "attempt": "first spec run", "outcome": "PASS", "reason": "2 of 2; superseded by the run below after an ESLint directive was added to the preload" },
+    { "attempt": "final spec run", "outcome": "PASS", "reason": "2 of 2 on the final file hashes recorded above" }
+  ],
+  "productionCodeEdited": false,
+  "claimBoundary": "Synthetic un-intercepted route to browser saved-file bytes for one input pair in one Chromium profile with a blocked receipt hop. Not governance behavior, the configured receipt hop, production network, print, clipboard, other browsers, durability or acceptance."
+}
