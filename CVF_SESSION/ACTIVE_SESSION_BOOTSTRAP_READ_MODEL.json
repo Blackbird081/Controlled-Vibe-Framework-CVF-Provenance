@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUDIT_HTML_B2D_ROUTE_BROWSER_BYTE_BOUNDARY; BATCH_ID=CVF-NCR-HTML-B2D-SCOPE-AUDIT; MATERIAL_COMMIT=f8f1cc7e8; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B2C_SYNTHETIC_BROWSER_DOWNLOAD_COMPLETION_2026-09-30.md; EXPANSION_ALLOWED=false. Local may inspect route-to-JSON-to-browser byte/source ownership and propose a bounded synthetic next slice only. No browser/file execution, route/UI/store mutation, provider, real data or artifact acceptance. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_HTML_B2D_SYNTHETIC_ROUTE_BROWSER_PACKET; BATCH_ID=CVF-NCR-HTML-B2D-SYNTHETIC-ROUTE-BROWSER; MATERIAL_COMMIT=e1cb0bdb4; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B2D_ROUTE_BROWSER_SCOPE_AUDIT_2026-09-30.md; EXPANSION_ALLOWED=false. Local may author GC-018/work order with a fail-closed no-hop isolation preflight. No route/browser execution, production edit, provider, real data or acceptance effect yet. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
