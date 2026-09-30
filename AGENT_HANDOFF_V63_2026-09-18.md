@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `168e2cc9b`; batch `CVF-NCR-HTML-B2F-SYNTHETIC-TIMEOUT`.
+Current HEAD recorded for this handoff: `a36797f07`; batch `CVF-NCR-HTML-B2F-SYNTHETIC-TIMEOUT`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -20,7 +20,7 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 ## Latest Work / Changes
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
-- B2e accepted bounded at `ec283760d`; B2f audit `7db74ca69` and packet `1b2f2d633` permit only timeout-only synthetic worker execution after bound gate. Q001/Q004 OPEN.
+- B2e accepted bounded at `ec283760d`; B2f worker material `a36797f07` passed Local probe and gates; completion review pending. Q001/Q004 OPEN.
 ## Core Guard Self-Protection Authorization
 Authorized guard-maintenance scope: bind B2f packet and Local GC-051 repair `168e2cc9b`. Protected paths: six continuity paths below. Operator authorization: delegated Local decisions. Rollback: continuity only; preserve packet and Q001/Q004.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
