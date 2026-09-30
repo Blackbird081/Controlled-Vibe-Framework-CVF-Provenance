@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "cvf.ncrHtmlB2eLocalProbe@1",
+  "batchId": "CVF-NCR-HTML-B2E-SYNTHETIC-LOOPBACK",
+  "date": "2026-10-01",
+  "actor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "method": "source inspection plus fresh invocation of the unchanged test-owned harness from cvf-web",
+  "command": "node tests/e2e/support/b2e-loopback-receipt-harness.cjs",
+  "result": {
+    "exitCode": 0,
+    "browser": "headless Chromium 145.0.7632.6",
+    "testsPassed": 2,
+    "testsFailed": 0,
+    "preflightRejected": 3,
+    "stubRunExpected": 2,
+    "stubRunUnexpected": 0,
+    "evaluateFetchesToStub": 2,
+    "disallowedEvaluateFetches": 0,
+    "nextGovernanceHits": 0,
+    "statuses": ["INVALID_RESPONSE", "UNAVAILABLE"],
+    "attemptIdsMatchedStubRequestIds": true,
+    "draftUnacceptedBothCases": true,
+    "stubClosed": true,
+    "disposableDirRemoved": true
+  },
+  "sourceInspection": {
+    "stubBindsIpv4Loopback": true,
+    "stubReturnsOnlyTwoFabricatedFailureCases": true,
+    "stubHasNoOutboundClientOrForwardingBranch": true,
+    "specDoesNotInterceptExportRoute": true,
+    "workerSpecSha256": "655bac5f73e15468c88245b583cffb2156dad158b56f758f73f3f08dcdeefd81",
+    "workerHarnessSha256": "8a677c80b277a6b0b31ba3fd147853f7133269d6fbb1fe804f231fc16b9297b7"
+  },
+  "limits": [
+    "route handler execution context is not individually identified",
+    "non-forwarding has source-design support but no network trace",
+    "only fabricated INVALID_RESPONSE and UNAVAILABLE cases in one Chromium profile",
+    "no PRESENT, TIMED_OUT, real Governance Engine, provider, store or artifact acceptance proof"
+  ]
+}
