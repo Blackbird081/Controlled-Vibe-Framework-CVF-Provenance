@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_HTML_B2C_SYNTHETIC_BROWSER_DOWNLOAD_PACKET; BATCH_ID=CVF-NCR-HTML-B2C-SYNTHETIC-BROWSER-DOWNLOAD; MATERIAL_COMMIT=6224b74d4; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B2C_BROWSER_FILE_PROOF_SCOPE_AUDIT_2026-09-30.md; EXPANSION_ALLOWED=false. Local may author GC-018/work order only; no browser/file execution, route/UI/store edit, real data or acceptance effect yet. Q001/Q004 Profile A OPEN; actor/store/backup/retention/RPO/RTO/cost and pilot/live remain operator checkpoints. Profile B/C, durable B2, P11, external runtime, public sync and deployment parked. Latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B2C_SYNTHETIC_BROWSER_DOWNLOAD; BATCH_ID=CVF-NCR-HTML-B2C-SYNTHETIC-BROWSER-DOWNLOAD; MATERIAL_COMMIT=f1ed184af; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2C_SYNTHETIC_BROWSER_DOWNLOAD_2026-09-30.md; EXPANSION_ALLOWED=false. Internal worker may create only four work-order paths after bound gates: intercepted synthetic browser download and disposable saved-byte proof. Local reviews/commits. No production edits, provider, real data or acceptance effect. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY_2026-09-30.md",
-    "baselineSha256": "6b194733d8e11a84a5f72acddde59d6ab6f6f52db9b9bed6980c1f541c2e1143",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY_2026-09-30.md",
-    "workOrderSha256": "6d38cebbb7c305f93f1c555d88d7a201bad04e4d657aa3cc2581f7a602dfe06c"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2C_SYNTHETIC_BROWSER_DOWNLOAD_2026-09-30.md",
+    "baselineSha256": "d3fcca8cb84d92eb8211650eea041ca9422ed98b461e69e35c7e880881eef3af",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2C_SYNTHETIC_BROWSER_DOWNLOAD_2026-09-30.md",
+    "workOrderSha256": "c6d38a4602ac38d58bb4f78ba39d3544f15cfa150aa4933909d98212c957a093"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

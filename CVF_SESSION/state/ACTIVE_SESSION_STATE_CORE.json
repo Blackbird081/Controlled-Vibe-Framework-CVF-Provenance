@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY_2026-09-30.md",
-    "baselineSha256": "6b194733d8e11a84a5f72acddde59d6ab6f6f52db9b9bed6980c1f541c2e1143",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY_2026-09-30.md",
-    "workOrderSha256": "6d38cebbb7c305f93f1c555d88d7a201bad04e4d657aa3cc2581f7a602dfe06c"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2C_SYNTHETIC_BROWSER_DOWNLOAD_2026-09-30.md",
+    "baselineSha256": "d3fcca8cb84d92eb8211650eea041ca9422ed98b461e69e35c7e880881eef3af",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2C_SYNTHETIC_BROWSER_DOWNLOAD_2026-09-30.md",
+    "workOrderSha256": "c6d38a4602ac38d58bb4f78ba39d3544f15cfa150aa4933909d98212c957a093"
   },
-  "currentAuthoritySyncReason": "B2c browser/file proof scope audit was materially committed at 6224b74d4 under D043 after named-path source verification. This continuity permits Local GC-018/work-order authoring for a separate synthetic browser-download proof only. Browser/file execution, route/UI/store edits, real-data Profile B/C, durable acceptance and pilot effect remain parked under Q001/Q004.",
+  "currentAuthoritySyncReason": "B2c GC-018 and work order were materially committed at f1ed184af under D044; authoring and pre-commit gates passed. This continuity releases only the four-path internal-worker synthetic browser-download proof after the bound pre-dispatch and pre-implementation gates. Route/UI/store edits, real data, durable acceptance and pilot effect remain parked under Q001/Q004.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
