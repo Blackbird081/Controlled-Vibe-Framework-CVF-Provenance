@@ -1,0 +1,39 @@
+{
+  "registryOrder": 211,
+  "id": "cvf-ncr-html-b2f-synthetic-timeout-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF NCR HTML B2f synthetic timeout proof sources",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-loopback-timeout.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/b2f-loopback-timeout-harness.cjs"
+  ],
+  "fileCount": 2,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "CVF-NCR-HTML-B2F-SYNTHETIC-TIMEOUT",
+  "scanDate": "2026-10-01",
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_CVF_NCR_HTML_B2F_SYNTHETIC_TIMEOUT_WORKER_RETURN_2026-10-01.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2F_SYNTHETIC_TIMEOUT_2026-10-01.md",
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "SYNTHETIC_DELAYED_RECEIPT_LOOPBACK_ISOLATION",
+    "REAL_ROUTE_BROWSER_TIMEOUT_AND_ATTEMPT_ID",
+    "PANEL_AMBIGUOUS_OUTCOME_WARNING"
+  ],
+  "priorAbsorption": "Named B2f worker test and delayed inert stub only. This entry does not claim complete Web corpus coverage, remote cancellation, safe retry, Governance Engine or provider behavior, durable acceptance, or Q001/Q004 closure.",
+  "findings": [],
+  "negativeSearchTerms": [
+    "timeout proves remote cancellation",
+    "timeout means safe retry",
+    "fabricated PRESENT is real governance proof"
+  ],
+  "nextScanRecommendation": "Revisit only if Local review changes the bounded timeout test claim or a separately authorized successor covers real governance behavior."
+}
