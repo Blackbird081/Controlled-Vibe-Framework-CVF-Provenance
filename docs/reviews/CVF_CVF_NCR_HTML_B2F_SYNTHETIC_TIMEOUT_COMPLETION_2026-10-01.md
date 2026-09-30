@@ -22,6 +22,8 @@ Decide the five-path B2f worker return after the Local GC-051 repair and the nam
 
 The paired GC-018 and work order were committed at `1b2f2d633`. The worker began at clean `8d9466af9`, returned five uncommitted paths, and reported the registry gate failure. Local registered the test sources at `168e2cc9b`, synced the handoff at `768110504`, preserved the worker's original execution base and set the acceptance-evidence comparison base to `768110504`. Worker material is `a36797f07`; the handoff marker is `a1ce2eefe`. The worker proof is `docs/reviews/evidence/cvf-ncr-html-b2f-timeout-worker-proof-2026-10-01.json`; Local probe evidence is `docs/reviews/evidence/cvf-ncr-html-b2f-local-timeout-probe-2026-10-01.json`.
 
+Pre-closure correction: the oracle digest fields below bind the two distinct proof JSON files, as required by the probe checker. Both runs used the same harness source; its SHA-256 is recorded separately in the proof JSON files. The first committed review used the harness digest in both fields, so committed-range pre-closure failed and the P4-C1 sidecar wrote `UNSAFE_AUTORUN_RECEIPT_GENERATION_FAILED`. Local reviewer adjudicated that exact marker against the failed receipt, corrected the two evidence bindings, reran the independent-probe checker and reviewer-fast successfully, and removed only the local runtime marker. This correction changes evidence provenance only, not the bounded decision.
+
 ## Scope / Methodology
 
 Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=review the B2f worker return; parked checkpoint=Q001/Q004 Profile A, real data/store/effect and P11. Role=Local reviewer/closer; phase=completion review; technical decision owner=Local; effect/data decision owner=operator. The shared-workspace worker was `INTERNAL_AGENT`; remote Web advice has no private-CVF disposition authority.
@@ -66,9 +68,9 @@ probeObservedResult: PASS; 2/2, one delayed stub POST with matching attempt ID, 
 
 oracleSeparationBasis: Local invoked a new run after the worker return and independently inspected the unchanged source and hashes. The same harness was reused; no second implementation or network trace is claimed.
 
-workerOracleSha256: 92d7dabed8829d18ebc671043409feaae82dea938e2d54ce1b0b06e9dc724605
+workerOracleSha256: 0a07b54bed1b012f337f33bb7d3772c06a4c27bc7788d537563fc2386d3d7ab9
 
-probeOracleSha256: 92d7dabed8829d18ebc671043409feaae82dea938e2d54ce1b0b06e9dc724605
+probeOracleSha256: f67b9d0601ae06c8127afb79e05ecd177fb3208dc4461de545f1ee0b440d5321
 
 workerEvidenceRef: docs/reviews/evidence/cvf-ncr-html-b2f-timeout-worker-proof-2026-10-01.json
 
@@ -94,7 +96,7 @@ workerRedispatchAllowed: NO
 |---|---|---|---|
 | Work order status | bound B2f work order | five-path ledger; worker-return fast PASS | PASS |
 | Completion or reviewer artifact | this review and Local probe JSON | `PASS_INDEPENDENT_PROBE` and source-hash binding | PASS |
-| Roadmap state | NCR roadmap D050-D051 | bounded B2f result; Q001/Q004 parked | PASS |
+| Roadmap state | NCR roadmap D050-D052 | bounded B2f result and provenance correction; Q001/Q004 parked | PASS |
 | Registry JSON | GC-051 entry and aggregate | source paths, drift and coverage PASS | PASS |
 | Registry Markdown | no new Markdown registry | N/A with reason: GC-051 is generated JSON | N/A with reason: no Markdown delta |
 | External evidence digest | no external intake | N/A with reason: internal worker and Local browser probe | N/A with reason: no external return |

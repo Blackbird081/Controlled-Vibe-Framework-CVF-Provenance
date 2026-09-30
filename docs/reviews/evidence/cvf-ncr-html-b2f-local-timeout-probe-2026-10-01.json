@@ -13,6 +13,7 @@
   "lateObservation": { "clientDisconnectMsSinceReceive": 993, "lateTimerMsSinceReceive": 3502, "clientGoneBeforeReply": true, "replyWritten": false, "interpretation": "observation only; no remote-cancellation, rollback or retry-safety inference" },
   "cleanup": { "pendingAfterSettle": 0, "disposableDirRemoved": true, "stubClosed": true, "timersCleared": true },
   "sourceHashes": { "specSha256": "d9b72dbca9db40a1de39ec377af826e1bd104122cd9dd5d18896037bb7b90b50", "harnessSha256": "92d7dabed8829d18ebc671043409feaae82dea938e2d54ce1b0b06e9dc724605" },
+  "reviewBindingNote": "The completion review oracle digest fields identify this Local proof JSON and the distinct worker proof JSON; sourceHashes identify the unchanged test code.",
   "disposition": "PASS_INDEPENDENT_PROBE_BOUNDED",
   "claimBoundary": "One fresh synthetic Chromium/Next timeout run using the same reviewed harness, independently invoked by Local; no second oracle, network trace, real evaluate/engine/provider, durable acceptance, Q001/Q004 exit or remote-cancellation proof."
 }
