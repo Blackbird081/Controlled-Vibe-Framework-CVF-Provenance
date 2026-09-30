@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "cvf.ncrHtmlB2fTimeoutWorkerProof@1",
+  "batchId": "CVF-NCR-HTML-B2F-SYNTHETIC-TIMEOUT",
+  "executionBaseHead": "8d9466af9f4c8e0ddb4d3297f6f431a08afa4bee",
+  "status": "WORKER_OBSERVATION_PENDING_LOCAL_REVIEW",
+  "files": {
+    "spec": {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-loopback-timeout.spec.ts",
+      "sha256": "d9b72dbca9db40a1de39ec377af826e1bd104122cd9dd5d18896037bb7b90b50"
+    },
+    "harness": {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/b2f-loopback-timeout-harness.cjs",
+      "sha256": "92d7dabed8829d18ebc671043409feaae82dea938e2d54ce1b0b06e9dc724605"
+    }
+  },
+  "browser": { "name": "chromium", "version": "145.0.7632.6", "headless": true, "config": "playwright.config.mock.ts", "freshServerPort": "ephemeral, chosen by harness (50416 in the recorded run)" },
+  "command": "node tests/e2e/support/b2f-loopback-timeout-harness.cjs (from cvf-web; no arguments)",
+  "result": { "tests": 2, "passed": 2, "failed": 0, "harnessExit": 0, "runs": 1, "playwrightReportedDuration": "30.5s" },
+  "isolationPreflightBeforeFirstExportRequest": {
+    "test": "loopback isolation, engine-disabled, timeout inheritance and auth are proven before any export request",
+    "stubBound": "127.0.0.1 IPv4, ephemeral port (50414 in the recorded run), origin http://127.0.0.1:50414",
+    "stubSelfTest": { "requests": 4, "allRejected404": true, "phase": "preflight", "kinds": ["GET /selftest", "POST evaluate path with unknown artifact id", "POST evaluate path with the expected timeout artifact id during preflight (no served slot consumed, no delay)", "POST other governance path"] },
+    "runPhaseStubRequestsAtPreflight": 0,
+    "freshServerContextsProcessedEnv": 1,
+    "serverEnvObservedFromInsideServer": {
+      "NEXTAUTH_URL": "exactly the stub origin",
+      "AUTH_URL": "the fresh Next server origin (http://localhost:50416), so browser auth does not follow the stub origin",
+      "GOVERNANCE_ENGINE_ENABLED": "false",
+      "GOVERNANCE_ENGINE_URL": "http://127.0.0.1:1 (dead)",
+      "CVF_GOVERNANCE_RECEIPT_TIMEOUT_MS": "1000",
+      "CVF_SERVICE_TOKEN": "synthetic value (hash-compared in-process); the real .env.local token was overridden"
+    },
+    "evaluateFetchesAtPreflight": 0,
+    "nextGovernanceHitsAtPreflight": 0,
+    "browserAuth": "login helper succeeded and /api/auth/session returned a user under the forced NEXTAUTH_URL",
+    "exportRequestsBeforePreflight": 0
+  },
+  "routeObservation": {
+    "intercepted": false,
+    "requestsSent": ["POST"],
+    "case": {
+      "receiptReference": "b2f-timeout-case",
+      "stubBehavior": "held the one expected receipt POST for a planned 3500 ms (configured receipt timeout 1000 ms plus 2500 ms margin); no reply was written",
+      "routeStatus": 200,
+      "governanceReceiptStatus": "TIMED_OUT",
+      "receiptPresent": false,
+      "governanceState": "DRAFT_UNACCEPTED",
+      "attemptId": "artifact-proof-b2f-timeout-case-1790791198591",
+      "stubSawRequestId": "artifact-proof-b2f-timeout-case-1790791198591",
+      "stubExcerptLength": 114,
+      "panel": "draft state, exact absent-note 'The review check timed out. No receipt was received, but the service may still have processed the request. Ask an operator to check the attempt ID before trying again.', attempt ID shown and equal to the route and stub ID, no badge or approved/evaluated/denied note, note text contains no safe-retry/cancel/rollback wording, preview h1 equals title"
+    },
+    "attemptIdTimestampNote": "attempt ID embeds Date.now(); the value belongs to the recorded run only"
+  },
+  "timingObservations": {
+    "clickToRouteResponseMs": 2125,
+    "stubReceiveToRouteResponseMs": 1047,
+    "configuredReceiptTimeoutMs": 1000,
+    "stubPlannedDelayMs": 3500,
+    "stubReceivedPostBeforeRouteResponse": true,
+    "note": "clickToRouteResponse includes first-compile latency of the dev server route; the stub-receive-to-response interval matches the configured 1,000 ms timeout and is shorter than the planned stub delay"
+  },
+  "lateReplyAndDisconnectObservation": {
+    "status": "OBSERVATION_ONLY",
+    "clientDisconnectMsSinceStubReceive": 995,
+    "lateReplyTimerFiredMsSinceStubReceive": 3502,
+    "clientGoneBeforeLateReply": true,
+    "lateReplyWritten": false,
+    "interpretation": "The client connection closed about one timeout after the stub received the POST, and the stub's delayed reply timer found no connected client. This records what the stub saw. It does not prove remote cancellation, rollback, that no work occurred, or that retry is safe."
+  },
+  "stubRequestLedger": {
+    "preflightRequests": 4,
+    "runExpected": 1,
+    "runUnexpected": 0,
+    "recorded": "method, path (max 80 chars), request/artifact IDs, excerpt length, service-token header presence and synthetic-value match, receive time, planned delay, disconnect/late-reply timing",
+    "notRecorded": "headers, token values, bodies, HTML",
+    "syntheticTokenPresentedToStub": true,
+    "syntheticTokenMatchedOnRequest": true
+  },
+  "destinationEvidence": {
+    "evaluateFetchesFromServerContexts": 1,
+    "disallowedEvaluateFetches": 0,
+    "allDestinationsEqualStubOrigin": true,
+    "nextGovernanceRouteHits": 0,
+    "serverContextsLogged": 13,
+    "engineOrProviderCalls": 0,
+    "forwardingByStub": "none: stub source has no outbound client; it never writes a reply body in the recorded run and its only possible reply is a fabricated failure constant"
+  },
+  "cleanup": {
+    "stubClosed": true,
+    "timersCleared": true,
+    "pendingStubRepliesAfterSettle": 0,
+    "disposableDirRemoved": true,
+    "logsAndPlaywrightOutputOutsideRepository": true,
+    "tempDirsRemainingAfterRun": 0,
+    "listeningStubOrServerPortsAfterRun": 0,
+    "rawHtmlBodiesOrCredentialsRecorded": false
+  },
+  "checks": {
+    "typescript": "npm run check: exit 0",
+    "eslint": "npx eslint --max-warnings=0 on spec and harness: exit 0"
+  },
+  "attempts": [
+    { "attempt": "first and only harness run", "outcome": "PASS", "reason": "2 of 2 on the final file hashes recorded above; no edits after the run" }
+  ],
+  "productionCodeEdited": false,
+  "claimBoundary": "Synthetic un-intercepted route to delayed inert loopback stub to panel, for one timed-out receipt POST in one Chromium profile. It is transport timeout and ambiguous-outcome presentation evidence only: not receipt validity, PRESENT behavior, remote cancellation, rollback, retry safety, governance or engine behavior, a real Next evaluate route, provider behavior, durability, artifact acceptance, Q001/Q004 exit, pilot/live, public sync or deployment."
+}
