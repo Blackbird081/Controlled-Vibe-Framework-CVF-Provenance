@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2A_SYNTHETIC_ACCEPTANCE_CONTRACT_2026-09-30.md",
     "workOrderSha256": "07c7f6384123c47387e94d72a0bf7e53e571cde472edd290aa5dbebee19c0098"
   },
-  "currentAuthoritySyncReason": "HTML B2a synthetic candidate was Local-accepted bounded at material ea90e0e2a after returned worker evidence and an independent same-length byte-mutation probe. The paired packet remains historical authority for B2a; next move is read-only byte-transport mapping. Active acceptance, durable store, real-data Profile B/C and pilot effect remain parked under Q001/Q004.",
+  "currentAuthoritySyncReason": "HTML B2 byte-transport source audit was completed bounded at material 49495b2b9. D040 permits a synthetic B2b byte-boundary packet only; the paired B2a packet remains historical authority for its pure helper. Active acceptance, durable store, real-data Profile B/C and pilot effect remain parked under Q001/Q004.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
