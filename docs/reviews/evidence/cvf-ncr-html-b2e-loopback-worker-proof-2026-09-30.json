@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "cvf.ncrHtmlB2eLoopbackWorkerProof@1",
+  "batchId": "CVF-NCR-HTML-B2E-SYNTHETIC-LOOPBACK",
+  "executionBaseHead": "c495b5decb65517b4d2164025017177b014a9bf0",
+  "status": "WORKER_OBSERVATION_PENDING_LOCAL_REVIEW",
+  "files": {
+    "spec": {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-loopback-receipt.spec.ts",
+      "sha256": "655bac5f73e15468c88245b583cffb2156dad158b56f758f73f3f08dcdeefd81"
+    },
+    "harness": {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/b2e-loopback-receipt-harness.cjs",
+      "sha256": "8a677c80b277a6b0b31ba3fd147853f7133269d6fbb1fe804f231fc16b9297b7"
+    }
+  },
+  "browser": { "name": "chromium", "version": "145.0.7632.6", "headless": true, "config": "playwright.config.mock.ts", "freshServerPort": "ephemeral, chosen by harness (64725 in the recorded run)" },
+  "command": "node tests/e2e/support/b2e-loopback-receipt-harness.cjs (from cvf-web; no arguments)",
+  "result": { "tests": 2, "passed": 2, "failed": 0, "harnessExit": 0, "runs": 1 },
+  "isolationPreflightBeforeFirstExportRequest": {
+    "test": "loopback isolation, engine-disabled inheritance and auth are proven before any export request",
+    "stubBound": "127.0.0.1 IPv4, ephemeral port (64723 in the recorded run), origin http://127.0.0.1:64723",
+    "stubSelfTest": { "requests": 3, "allRejected404": true, "phase": "preflight", "kinds": ["GET /selftest", "POST evaluate path with unknown artifact id", "POST other governance path"] },
+    "runPhaseStubRequestsAtPreflight": 0,
+    "freshServerContextsProcessedEnv": 1,
+    "serverEnvObservedFromInsideServer": {
+      "NEXTAUTH_URL": "exactly the stub origin",
+      "AUTH_URL": "the fresh Next server origin (http://localhost:64725), so browser auth does not follow the stub origin",
+      "GOVERNANCE_ENGINE_ENABLED": "false",
+      "GOVERNANCE_ENGINE_URL": "http://127.0.0.1:1 (dead)",
+      "CVF_SERVICE_TOKEN": "synthetic value (hash-compared in-process); the real .env.local token was overridden"
+    },
+    "evaluateFetchesAtPreflight": 0,
+    "nextGovernanceHitsAtPreflight": 0,
+    "browserAuth": "login helper succeeded and /api/auth/session returned a user under the forced NEXTAUTH_URL",
+    "exportRequestsBeforePreflight": 0
+  },
+  "routeObservation": {
+    "intercepted": false,
+    "requestsSent": ["POST", "POST"],
+    "cases": [
+      {
+        "case": "invalid-response",
+        "receiptReference": "b2e-invalid-case",
+        "stubReply": "HTTP 200 with incomplete JSON (success only, no data)",
+        "routeStatus": 200,
+        "governanceReceiptStatus": "INVALID_RESPONSE",
+        "receiptPresent": false,
+        "governanceState": "DRAFT_UNACCEPTED",
+        "attemptId": "artifact-proof-b2e-invalid-case-1790786424268",
+        "stubSawRequestId": "artifact-proof-b2e-invalid-case-1790786424268",
+        "stubExcerptLength": 106,
+        "panel": "draft state, absent-note 'could not be verified', attempt ID shown, no badge or approved/evaluated/denied note, preview h1 equals title"
+      },
+      {
+        "case": "unavailable",
+        "receiptReference": "b2e-unavailable-case",
+        "stubReply": "HTTP 503",
+        "routeStatus": 200,
+        "governanceReceiptStatus": "UNAVAILABLE",
+        "receiptPresent": false,
+        "governanceState": "DRAFT_UNACCEPTED",
+        "attemptId": "artifact-proof-b2e-unavailable-case-1790786424817",
+        "stubSawRequestId": "artifact-proof-b2e-unavailable-case-1790786424817",
+        "stubExcerptLength": 106,
+        "panel": "draft state, absent-note 'was unavailable', attempt ID shown, no badge or approved/evaluated/denied note, preview h1 equals title"
+      }
+    ],
+    "attemptIdsDistinct": true,
+    "attemptIdTimestampNote": "attempt IDs embed Date.now(); values belong to the recorded run only"
+  },
+  "stubRequestLedger": {
+    "preflightRequests": 3,
+    "runExpected": 2,
+    "runUnexpected": 0,
+    "recorded": "method, path (max 80 chars), request/artifact IDs, excerpt length, service-token header presence and synthetic-value match, stub status",
+    "notRecorded": "headers, token values, bodies, HTML",
+    "syntheticTokenPresentedToStub": true,
+    "syntheticTokenMatchedOnBothRequests": true
+  },
+  "destinationEvidence": {
+    "evaluateFetchesFromServerContexts": 2,
+    "disallowedEvaluateFetches": 0,
+    "allDestinationsEqualStubOrigin": true,
+    "nextGovernanceRouteHits": 0,
+    "serverContextsLogged": 13,
+    "engineOrProviderCalls": 0,
+    "forwardingByStub": "none: stub source has no outbound client and answers fabricated constants only"
+  },
+  "cleanup": {
+    "stubClosed": true,
+    "disposableDirRemoved": true,
+    "logsAndPlaywrightOutputOutsideRepository": true,
+    "tempDirsRemainingAfterRun": 0,
+    "rawHtmlBodiesOrCredentialsRecorded": false
+  },
+  "checks": {
+    "typescript": "npm run check: exit 0",
+    "eslint": "npx eslint --max-warnings=0 on spec and harness: exit 0"
+  },
+  "attempts": [
+    { "attempt": "first and only harness run", "outcome": "PASS", "reason": "2 of 2 on the final file hashes recorded above; no edits after the run" }
+  ],
+  "productionCodeEdited": false,
+  "claimBoundary": "Synthetic un-intercepted route to inert loopback stub to panel, for two fabricated failure replies in one Chromium profile. It is transport and presentation evidence only: not receipt validity, governance or engine behavior, a real Next evaluate route, provider behavior, durability, artifact acceptance, Q001/Q004 exit, pilot/live, public sync or deployment."
+}
