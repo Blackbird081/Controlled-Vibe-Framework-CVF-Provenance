@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "cvf.ncrHtmlB2cBrowserDownloadWorkerProof@1",
+  "batchId": "CVF-NCR-HTML-B2C-SYNTHETIC-BROWSER-DOWNLOAD",
+  "executionBaseHead": "60c7e81b4d7a7aa6020631a4eddbcc1dc1e8bb5b",
+  "status": "WORKER_OBSERVATION_PENDING_LOCAL_REVIEW",
+  "spec": {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-byte-download.spec.ts",
+    "sha256": "5034b443f0655f0a8e47e1a3f6b1aec0ef4718c6423825618bea87ad2a887b23"
+  },
+  "browser": {
+    "name": "chromium",
+    "version": "145.0.7632.6",
+    "headless": true,
+    "config": "playwright.config.mock.ts",
+    "port": 3000,
+    "playwrightOutputDir": "outside repository (user temp directory)"
+  },
+  "command": "CVF_PLAYWRIGHT_PORT=3000 npx playwright test tests/e2e/artifact-export-byte-download.spec.ts --config playwright.config.mock.ts --output <temp dir outside repo>",
+  "result": { "tests": 1, "passed": 1, "failed": 0 },
+  "interceptedExportTitles": ["Alpha Report", "Bravo Report"],
+  "realExportRouteCalled": false,
+  "providerCalled": false,
+  "previewIframeH1Observation": {
+    "afterAlphaBuild": "Alpha Report",
+    "afterFormEditWithoutRebuild": "Alpha Report (not the edited form title)",
+    "afterBravoBuild": "Bravo Report"
+  },
+  "savedFiles": [
+    {
+      "fixture": "Alpha Report",
+      "suggestedFilename": "b2c-synthetic-alpha.html",
+      "savedLength": 231,
+      "savedSha256": "e9bb9c459fc48e0cdb8852f2ea630ec1461cfda2703a1c75f1324c3f43086ed0",
+      "oracleLength": 231,
+      "oracleSha256": "e9bb9c459fc48e0cdb8852f2ea630ec1461cfda2703a1c75f1324c3f43086ed0",
+      "b2bLength": 231,
+      "b2bSha256": "e9bb9c459fc48e0cdb8852f2ea630ec1461cfda2703a1c75f1324c3f43086ed0",
+      "equal": true,
+      "formEditedWithoutRebuildBeforeDownload": true
+    },
+    {
+      "fixture": "Bravo Report",
+      "suggestedFilename": "b2c-synthetic-bravo.html",
+      "savedLength": 231,
+      "savedSha256": "8b8c24305e417e3c557a8e2e0966141ffa1f761d9136044516e2a2c23a49f1ef",
+      "oracleLength": 231,
+      "oracleSha256": "8b8c24305e417e3c557a8e2e0966141ffa1f761d9136044516e2a2c23a49f1ef",
+      "b2bLength": 231,
+      "b2bSha256": "8b8c24305e417e3c557a8e2e0966141ffa1f761d9136044516e2a2c23a49f1ef",
+      "equal": true,
+      "formEditedWithoutRebuildBeforeDownload": false
+    }
+  ],
+  "sameLengthDifferentDigest": true,
+  "byteCases": ["BOM EF BB BF at offset 0", "CRLF 0D 0A", "lone LF", "U+1EC7 E1 BB 87", "U+65E5 E6 97 A5", "U+1F600 F0 9F 98 80"],
+  "cleanup": {
+    "downloadDirectory": "REMOVED",
+    "verifiedBy": "in-test stat after rm, plus temp directory listing after the run",
+    "rawHtmlOrDownloadedFilesCommitted": false
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "outcome": "FAILED_ENVIRONMENT",
+      "reason": "default port 3001 while local AUTH_URL redirects to port 3000; login raised ECONNREFUSED ::1:3000 before the panel was reached",
+      "spec": "earlier version without Preview iframe h1 assertions"
+    },
+    {
+      "attempt": 2,
+      "outcome": "PASS",
+      "reason": "CVF_PLAYWRIGHT_PORT=3000, spec with iframe h1 assertions; the only run that reached the panel"
+    }
+  ],
+  "panelEdited": false,
+  "claimBoundary": "Synthetic real-browser saved-file bytes for two fixtures in one Chromium profile. Not production network, print, clipboard, other browsers, governance behavior, durability or acceptance."
+}

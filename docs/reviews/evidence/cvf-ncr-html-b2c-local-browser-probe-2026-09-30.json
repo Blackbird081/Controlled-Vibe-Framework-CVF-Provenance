@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "cvf.local-review-probe.v1",
+  "batchId": "CVF-NCR-HTML-B2C-SYNTHETIC-BROWSER-DOWNLOAD",
+  "executor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "probeInvocationId": "cvf-ncr-html-b2c-local-browser-probe-20260930",
+  "method": "Local reran the current focused Playwright spec with Chromium, intercepted synthetic export, port 3000 and an output directory under the user temp directory. The spec read actual saved-file bytes before cleanup. Local separately reconstructed both fixture byte strings in Python and calculated hashlib SHA-256 without importing the B2b helper or the test oracle.",
+  "browser": {
+    "name": "chromium",
+    "version": "145.0.7632.6",
+    "headless": true,
+    "testCount": 1,
+    "passed": 1,
+    "exitCode": 0
+  },
+  "observed": [
+    {
+      "title": "Alpha Report",
+      "savedByteLength": 231,
+      "savedSha256": "e9bb9c459fc48e0cdb8852f2ea630ec1461cfda2703a1c75f1324c3f43086ed0",
+      "independentPythonByteLength": 231,
+      "independentPythonSha256": "e9bb9c459fc48e0cdb8852f2ea630ec1461cfda2703a1c75f1324c3f43086ed0",
+      "displayedIframeHeadingAfterFormEdit": "Alpha Report"
+    },
+    {
+      "title": "Bravo Report",
+      "savedByteLength": 231,
+      "savedSha256": "8b8c24305e417e3c557a8e2e0966141ffa1f761d9136044516e2a2c23a49f1ef",
+      "independentPythonByteLength": 231,
+      "independentPythonSha256": "8b8c24305e417e3c557a8e2e0966141ffa1f761d9136044516e2a2c23a49f1ef",
+      "displayedIframeHeading": "Bravo Report"
+    }
+  ],
+  "negativeControl": "The two titles have the same length and produce 231-byte files, but their digests differ; accepting the wrong version would fail the focused spec's digest check.",
+  "cleanup": "REMOVED by the focused test; Playwright output was outside the repository; no tracked file changed.",
+  "claimBoundary": "One reviewer-owned synthetic Chromium run and independent byte-oracle recomputation. No production export route, provider, real data, governance behavior, print, clipboard, other-browser, store or artifact-acceptance proof."
+}
