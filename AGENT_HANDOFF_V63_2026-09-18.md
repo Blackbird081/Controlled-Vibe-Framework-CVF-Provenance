@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `3a3be242b`; batch `CVF-NCR-HTML-B2E-SYNTHETIC-LOOPBACK`.
+Current HEAD recorded for this handoff: `f69a1fb29`; batch `CVF-NCR-HTML-B2E-SYNTHETIC-LOOPBACK`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -20,7 +20,7 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 ## Latest Work / Changes
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
-- B2d synthetic no-hop proof accepted bounded at `7ad6994bc`; B2e configured-hop audit `5b8cfb588` and paired packet `3a3be242b` authorize exact five-path internal-worker test execution against an inert loopback stub, subject to bound gates. Q001/Q004 OPEN.
+- B2e packet `3a3be242b` authorizes loopback proof. Worker return awaits review; GC-051 repair `f69a1fb29` is Local-only. Q001/Q004 OPEN.
 ## Core Guard Self-Protection Authorization
 Authorized guard-maintenance scope: bind B2e packet material `3a3be242b` for bounded internal-worker execution only. Protected paths: six continuity paths listed below. Operator authorization: delegated Local work-order decisions. Rollback: continuity only; preserve packet, audit and Q001/Q004.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
