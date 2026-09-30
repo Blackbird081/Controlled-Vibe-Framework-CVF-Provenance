@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUDIT_Q001_POST_REHEARSAL_FINDINGS; BATCH_ID=CVF-NCR-Q001-SQLITE-MIGRATION-RECOVERY-REHEARSAL; REVIEW=docs/reviews/CVF_CVF_NCR_Q001_SQLITE_MIGRATION_RECOVERY_REHEARSAL_COMPLETION_2026-09-30.md; REVIEW_COMMIT=1e0fc7ec1; EXPANSION_ALLOWED=false. Audit partial/ambiguous SQLite target findings and propose one bounded corrective packet; do not execute real GitHub ledger cutover, pilot/live, P11, external runtimes, provider calls, public sync or deployment. Q001/R0, retention, P08, cost and artifact acceptance remain open. Latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_Q001_SQLITE_TARGET_PUBLICATION_PACKET; BATCH_ID=CVF-NCR-Q001-SQLITE-TARGET-PUBLICATION-CORRECTION; REVIEW=docs/reviews/CVF_CVF_NCR_Q001_POST_REHEARSAL_TARGET_PUBLICATION_AUDIT_2026-09-30.md; REVIEW_COMMIT=62e22ec59; EXPANSION_ALLOWED=false. Author paired GC-018 baseline and work order plus independent packet review for the synthetic single-host correction; do not dispatch implementation until reviewed, committed and bound pre-dispatch PASS. Do not execute real GitHub ledger cutover, pilot/live, P11, external runtimes, provider calls, public sync or deployment. Q001/R0, retention, P08, cost and artifact acceptance remain open. Latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

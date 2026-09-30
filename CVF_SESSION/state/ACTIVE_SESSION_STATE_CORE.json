@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SQLITE_MIGRATION_RECOVERY_REHEARSAL_2026-09-30.md",
     "workOrderSha256": "1e9752031bdfc5b1643057e3f6acbd296d9c5d2b0cbaa9c68d3691df432ee1af"
   },
-  "currentAuthoritySyncReason": "Q001 SQLite migration recovery rehearsal independently accepted bounded with findings at 1e0fc7ec1. Next is corrective-gap audit only; GitHub JSON cutover and Q001/R0 remain open.",
+  "currentAuthoritySyncReason": "Q001 D032 target-publication audit committed at 62e22ec59; next is paired corrective packet authoring and independent review only. Current rehearsal authority remains the last released packet; implementation and GitHub JSON cutover are not dispatched; Q001/R0 remains open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
