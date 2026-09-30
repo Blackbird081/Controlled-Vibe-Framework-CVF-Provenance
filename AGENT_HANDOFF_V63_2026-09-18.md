@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `154562cca`; batch `CVF-NCR-Q001-SQLITE-TARGET-PUBLICATION-CORRECTION`.
+Current HEAD recorded for this handoff: `30056de2f`; batch `CVF-NCR-D034-D035-README-ROADMAP`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,9 +9,9 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.4 as the selected planning successor while preserving closed AKOE and terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are routed; AKOE-P4/common reconciliation and optional U1 source intake remain closed bounded.
 ## Scope / Target / Owner Boundary
-Role: Local reviewer/steward. Phase: bound corrective dispatch; decision owner: Local; Web advisory; P11 parked.
+Role: Local reviewer/steward. Phase: roadmap/README sync; decision owner: Local; Web advisory; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bound Q001 SQLite target-publication worker dispatch; role=Local reviewer/steward; phase=dispatch release; decision owner=Local; parked checkpoint=P11, pilot/live, real ledger cutover, external runtimes, public sync and deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Q001/R0 operator checkpoint; role=Local reviewer/steward; phase=document sync; decision owner=Local; parked checkpoint=real ledger, pilot/live, P11, external runtime, public sync and deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -21,9 +21,9 @@ Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59
 The three operator-relayed Human Boundary, Positioning, and Async handoffs are now reviewed and combined with Jev, WikiSkill, and HyperFrames in `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md`, material commit `53bce992f`. Human Boundary is an `ADAPT` candidate, Positioning is primarily `CONFIRMED_EXISTING`, and Async remains `WATCH` with upstream factual claims `BLOCKED_SOURCE_NOT_FOUND` until Local pinning. The prior three-repository program is terminal-accounted; common Local closure remains blocked by AKOE P1-P3 execution and P4 reconciliation.
 ## Latest Work / Changes
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
-- Q001 rehearsal accepted bounded at `1e0fc7ec1`; D032 audit `62e22ec59` led to a synthetic target-publication packet and Local review `31aed3b11`, pre-commit 90/90. Worker release requires bound pre-dispatch PASS; real cutover parked.
+- D034/D035 at `30056de2f`: README and roadmap now route HTML B1 version binding and Q001 Profile A default. B2 and real-ledger rehearsal/cutover remain gated; pre-commit 90/90 passed.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: bind Q001 material `a90756b6a`; park Q001/R0. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: continue Q001 roadmap and handle Local repair. Rollback boundary: continuity only; preserve material commit.
+Authorized guard-maintenance scope: bind D034/D035 material `30056de2f` and correct stale startup text. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`. Operator authorization: integrate Web/worker proposals into roadmap and edit README. Rollback boundary: handoff only; preserve material commit and Q001/R0 operator checkpoint.
 ## Core Guard Self-Protection Authorization
 Authorized guard-maintenance scope: continuity-only binding of Q001 bounded acceptance `bb17896f8`. Operator authorization: continue bounded Q001 work. Rollback boundary: continuity only; preserve material proof.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrQ001TransactionStoreHold20260929.json`.
