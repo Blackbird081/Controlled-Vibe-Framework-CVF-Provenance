@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `588f8d63f`; batch `CVF-NCR-HTML-B2B-SYNTHETIC-BYTE-BOUNDARY`.
+Current HEAD recorded for this handoff: `0989a7ffd`; batch `CVF-NCR-HTML-B2B-SYNTHETIC-BYTE-BOUNDARY`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -11,7 +11,7 @@ Carry CVF-NCR v2.7 while preserving closed AKOE and G1-G7 posture. Jev, HyperFra
 ## Scope / Target / Owner Boundary
 Role: Local reviewer/steward. Phase: B2b worker dispatch; technical decision owner: Local; effect decision owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=execute bound B2b synthetic worker packet; role=Local reviewer/steward; phase=internal dispatch; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=execute bound B2b synthetic worker packet; role=Local reviewer/steward; phase=internal dispatch; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
