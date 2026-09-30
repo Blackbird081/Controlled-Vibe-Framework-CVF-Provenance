@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_VERSION_BINDING_2026-09-30.md",
-    "baselineSha256": "86bc1464902e1eed2b92f6547d7666369161ca2193f9d3debf45a5c580c2a686",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_VERSION_BINDING_2026-09-30.md",
-    "workOrderSha256": "3d8b06056f7f4e1a57be156a2bd642912a79b61c8b14c2a546115a923f3c6140"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2A_SYNTHETIC_ACCEPTANCE_CONTRACT_2026-09-30.md",
+    "baselineSha256": "4e03c1a0229daf93ecb6c2d8dd08bd77e6ff7fd8a1a4ad46769725948f4a5795",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2A_SYNTHETIC_ACCEPTANCE_CONTRACT_2026-09-30.md",
+    "workOrderSha256": "07c7f6384123c47387e94d72a0bf7e53e571cde472edd290aa5dbebee19c0098"
   },
-  "currentAuthoritySyncReason": "HTML B2 owner/storage audit completed at material 2364bfbaa with REVIEW_COMPLETE_NO_DISPATCH. B1 work order remains historical authority for the prior slice. B2 acceptance actor, exact-HTML store, writer topology and operational profile require an operator decision before implementation dispatch. Q001/R0 real-ledger, artifact acceptance and pilot effect checkpoints remain open.",
+  "currentAuthoritySyncReason": "Operator approved the single-host design direction and synthetic B2a proof only. Roadmap D038 and paired packet at ef1011d73 authorize an unconnected exact-byte candidate and proposed contract. Active acceptance, durable store, real-data Profile B/C and pilot effect remain parked under Q001/Q004.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

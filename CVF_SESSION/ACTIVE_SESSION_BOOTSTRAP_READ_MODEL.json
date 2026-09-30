@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_Q001_B2_ACCEPTANCE_PROFILE; BATCH_ID=CVF-NCR-HTML-B2-OWNER-AUDIT; MATERIAL_COMMIT=2364bfbaa; AUDIT=docs/reviews/CVF_CVF_NCR_HTML_B2_ACCEPTANCE_OWNER_STORAGE_AUDIT_2026-09-30.md; EXPANSION_ALLOWED=false. B2 implementation is not dispatchable: the accepting actor/authority, authoritative exact-HTML store, writer topology, backup/retention/RPO/RTO and data/cost profile are undecided. Recommendation is Profile A no effect until operator selects a profile; a separate design/implementation packet follows that decision. Q001/R0 remains OPEN; Profile B/C, artifact acceptance, pilot/live, P11, provider/external runtime, public sync and deployment remain parked. Latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B2A_SYNTHETIC_CONTRACT; BATCH_ID=CVF-NCR-HTML-B2A-SYNTHETIC-CONTRACT; MATERIAL_COMMIT=ef1011d73; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2A_SYNTHETIC_ACCEPTANCE_CONTRACT_2026-09-30.md; EXPANSION_ALLOWED=false. Operator approved synthetic design/proof only. Worker may create only the four work-order paths after bound pre-dispatch and pre-implementation PASS, must not commit, and returns pending Local review. No active route, SQLite, real-data, provider or artifact-acceptance effect. Q001/Q004 Profile A remains OPEN; Profile B/C, durable B2, pilot/live, P11, external runtime, public sync and deployment remain parked. Latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_VERSION_BINDING_2026-09-30.md",
-    "baselineSha256": "86bc1464902e1eed2b92f6547d7666369161ca2193f9d3debf45a5c580c2a686",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_VERSION_BINDING_2026-09-30.md",
-    "workOrderSha256": "3d8b06056f7f4e1a57be156a2bd642912a79b61c8b14c2a546115a923f3c6140"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2A_SYNTHETIC_ACCEPTANCE_CONTRACT_2026-09-30.md",
+    "baselineSha256": "4e03c1a0229daf93ecb6c2d8dd08bd77e6ff7fd8a1a4ad46769725948f4a5795",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2A_SYNTHETIC_ACCEPTANCE_CONTRACT_2026-09-30.md",
+    "workOrderSha256": "07c7f6384123c47387e94d72a0bf7e53e571cde472edd290aa5dbebee19c0098"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
