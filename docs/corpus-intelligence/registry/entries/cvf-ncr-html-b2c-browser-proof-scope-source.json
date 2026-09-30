@@ -1,0 +1,46 @@
+{
+  "registryOrder": 204,
+  "id": "cvf-ncr-html-b2c-browser-proof-scope-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF NCR HTML B2c browser-download proof scope source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.mock.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-panel.spec.ts"
+  ],
+  "fileCount": 2,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "CVF-NCR-HTML-B2C-SCOPE-AUDIT",
+  "scanDate": "2026-09-30",
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_CVF_NCR_HTML_B2C_BROWSER_FILE_PROOF_SCOPE_AUDIT_2026-09-30.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": null,
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "MOCK_PLAYWRIGHT_WEB_SERVER_CONFIGURATION",
+    "ARTIFACTS_SYNTHETIC_BROWSER_TEST"
+  ],
+  "priorAbsorption": "Named-path read-only inspection for the B2c scope decision; no complete Web corpus scan or browser execution was claimed.",
+  "findings": [
+    {
+      "id": "html-b2c-saved-byte-proof-gap",
+      "summary": "Existing Artifacts Playwright case checks preview and receipt text but does not capture a download or compare saved-file bytes.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Author a separate synthetic browser-download proof packet; leave governance effect and durable acceptance parked.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "saved-file byte proof already complete",
+    "HTML artifact accepted"
+  ],
+  "nextScanRecommendation": "Revisit these two paths during the separately governed B2c synthetic browser-download packet."
+}
