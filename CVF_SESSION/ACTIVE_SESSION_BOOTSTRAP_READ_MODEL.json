@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_HTML_B2F_TIMEOUT_ONLY_PACKET; BATCH_ID=CVF-NCR-HTML-B2F-SYNTHETIC-TIMEOUT; MATERIAL_COMMIT=7db74ca69; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B2F_RECEIPT_BRANCH_GAP_AUDIT_2026-10-01.md; EXPANSION_ALLOWED=false. Local may author a test-only delayed loopback timeout packet with fail-closed preflight and ambiguous-outcome warning; no worker execution yet. Do not fabricate PRESENT as governance proof or call real evaluate/engine/provider, edit production, use real data, write a store or accept an artifact. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B2F_SYNTHETIC_TIMEOUT_PACKET; BATCH_ID=CVF-NCR-HTML-B2F-SYNTHETIC-TIMEOUT; MATERIAL_COMMIT=1b2f2d633; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2F_SYNTHETIC_TIMEOUT_2026-10-01.md; EXPANSION_ALLOWED=false. One INTERNAL_AGENT worker may execute only the five create paths after bound pre-dispatch and pre-implementation gates; no commit. No fabricated PRESENT, real evaluate/engine/provider, production edit, real data, store write or artifact acceptance. Local reviews return and runs the named independent probe. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2E_SYNTHETIC_LOOPBACK_RECEIPT_2026-09-30.md",
-    "baselineSha256": "28358619353f1fa9d1c10a94d79ec6383e33821d6d3ae667502838393d6cfe4e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2E_SYNTHETIC_LOOPBACK_RECEIPT_2026-09-30.md",
-    "workOrderSha256": "05d012562703ae8477f3b241384ab4edd10362bc7853546bc2eb882ce5f8c4cb"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2F_SYNTHETIC_TIMEOUT_2026-10-01.md",
+    "baselineSha256": "bf9b0630025707c58a6ae9a3710a9a3c446ea9d208dff899533e096afd6dfee1",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2F_SYNTHETIC_TIMEOUT_2026-10-01.md",
+    "workOrderSha256": "273cbbe95773954e54bea78372eb052ecdd26224be26aa9e0f3f5f7584fd217a"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
