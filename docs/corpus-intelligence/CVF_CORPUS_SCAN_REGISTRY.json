@@ -8627,6 +8627,59 @@
       "nextScanRecommendation": "Revisit if Local review changes the B2d test boundary or a separately authorized successor expands the route/browser claim."
     },
     {
+      "id": "cvf-ncr-html-b2e-configured-receipt-scope-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF NCR HTML B2e configured receipt-hop scope source",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.test.tsx"
+      ],
+      "fileCount": 6,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "CVF-NCR-HTML-B2E-CONFIGURED-RECEIPT-AUDIT",
+      "scanDate": "2026-09-30",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_CVF_NCR_HTML_B2E_CONFIGURED_RECEIPT_SCOPE_AUDIT_2026-09-30.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": null,
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "HTML_EXPORT_RECEIPT_CALL",
+        "CONFIGURED_RECEIPT_URL_AND_RESPONSE_VALIDATION",
+        "EVALUATE_ROUTE_ENGINE_FORWARDING",
+        "SYNTHETIC_UNIT_RECEIPT_CASES",
+        "PANEL_RECEIPT_PRESENTATION_TESTS"
+      ],
+      "priorAbsorption": "Named-path read-only B2e source audit after B2d no-hop synthetic route/browser closure. It does not claim complete Web corpus coverage or authorize the configured receipt hop, Governance Engine, provider or ledger writes.",
+      "findings": [
+        {
+          "id": "html-b2e-configured-hop-may-reach-engine",
+          "summary": "NEXTAUTH_URL makes the optional receipt URL absolute; the target Next evaluate route can forward to Governance Engine, which is enabled unless explicitly disabled.",
+          "disposition": "ACCEPT_WITH_BOUNDARY",
+          "nextAction": "Any synthetic browser packet must bind NEXTAUTH_URL to a non-forwarding loopback stub and prove its startup/isolation before the first export request; otherwise return blocked.",
+          "defectClass": "RUNTIME_SIGNAL_GAP",
+          "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+        }
+      ],
+      "negativeSearchTerms": [
+        "configured receipt browser integration already proven",
+        "mock ALLOW is real governance proof",
+        "artifact accepted by receipt"
+      ],
+      "nextScanRecommendation": "Revisit only after a separate bounded synthetic loopback-stub packet or an operator-approved live-governance proof changes the evidence boundary."
+    },
+    {
       "id": "dsh-wra-r1-whole-repository-absorption",
       "corpusType": "EXTERNAL_SOURCE",
       "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",
