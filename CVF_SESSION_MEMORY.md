@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=exact HTML B1 version-binding worker execution; role=Local reviewer/steward; phase=dispatch continuity; decision owner=Local; parked checkpoint=Q001/R0 real ledger and pilot/live, B2, P11, external runtimes, public sync and deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=read-only HTML B2 owner/storage audit; role=Local reviewer/steward; phase=B1 closure continuity; decision owner=Local; parked checkpoint=Q001/R0 real ledger and pilot/live, B2 implementation, P11, external runtimes, public sync and deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B1_VERSION_BINDING; BATCH_ID=CVF-NCR-HTML-B1-VERSION-BINDING; MATERIAL_COMMIT=f100a61b6; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_VERSION_BINDING_2026-09-30.md; EXPANSION_ALLOWED=false. Operator selected bounded HTML B1 consumer repair. Worker may edit only the work-order three-path manifest after bound pre-dispatch and pre-implementation PASS, must not commit, and returns pending Local review. Q001/R0 Profile A remains OPEN without real-ledger, retry or pilot effect; B2, Profile B/C, P11, provider/external runtime, public sync and deployment remain parked. Latest closed learning-history wave LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUDIT_HTML_B2_ACCEPTANCE_OWNER; BATCH_ID=CVF-NCR-HTML-B2-OWNER-AUDIT; MATERIAL_COMMIT=31bb2d88c; COMPLETION=docs/reviews/CVF_CVF_NCR_HTML_B1_VERSION_BINDING_COMPLETION_2026-09-30.md; EXPANSION_ALLOWED=false. HTML B1 is accepted only for mocked component behavior. Local may perform read-only B2 owner/storage/authority mapping before a separate packet; no B2 implementation or artifact acceptance is authorized. Q001/R0 Profile A remains OPEN without real-ledger, retry or pilot effect; Profile B/C, P11, provider/external runtime, public sync and deployment remain parked. Latest closed learning-history wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

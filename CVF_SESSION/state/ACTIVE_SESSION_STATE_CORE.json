@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_VERSION_BINDING_2026-09-30.md",
     "workOrderSha256": "3d8b06056f7f4e1a57be156a2bd642912a79b61c8b14c2a546115a923f3c6140"
   },
-  "currentAuthoritySyncReason": "Operator selected independent HTML B1 version-binding repair on 2026-09-30. Paired GC-018 and work order committed at f100a61b6; only exact component/test/return worker scope is released after bound gates. Q001/R0 real-ledger and pilot effect checkpoints remain open.",
+  "currentAuthoritySyncReason": "HTML B1 component-only version binding was Local-accepted bounded at material 31bb2d88c after worker return, Local A-to-B-to-A independent probe and reviewer repair. Work order remains historical authority for B1; the next move is read-only B2 owner/storage audit only. Q001/R0 real-ledger, artifact acceptance and pilot effect checkpoints remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
