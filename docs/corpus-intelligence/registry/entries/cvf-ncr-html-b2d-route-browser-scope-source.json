@@ -1,0 +1,51 @@
+{
+  "registryOrder": 206,
+  "id": "cvf-ncr-html-b2d-route-browser-scope-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF NCR HTML B2d route-to-browser byte scope source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts"
+  ],
+  "fileCount": 4,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "CVF-NCR-HTML-B2D-SCOPE-AUDIT",
+  "scanDate": "2026-09-30",
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_CVF_NCR_HTML_B2D_ROUTE_BROWSER_SCOPE_AUDIT_2026-09-30.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": null,
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "HTML_EXPORT_ROUTE_JSON_OUTPUT",
+    "OPTIONAL_GOVERNANCE_RECEIPT_HOP",
+    "ROUTE_SESSION_AUTH_PROOF",
+    "SYNTHETIC_ROUTE_UNIT_TEST"
+  ],
+  "priorAbsorption": "Named-path read-only inspection after bounded B2c browser-file closure. This entry does not claim complete Web corpus coverage, integrated route/browser execution or provider-free behavior under an arbitrary local environment.",
+  "findings": [
+    {
+      "id": "html-b2d-server-receipt-hop-isolation",
+      "summary": "The route's optional server-side receipt fetch depends on NEXTAUTH_URL; browser page.route interception does not cover that hop.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Require explicit no-hop isolation evidence before any synthetic real-route browser-byte test; do not assert governance behavior from mock mode.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "real route browser-file proof already complete",
+    "server receipt hop intercepted by page.route",
+    "artifact accepted"
+  ],
+  "nextScanRecommendation": "Revisit only under a bounded B2d synthetic route-browser packet after the no-hop test environment is specified."
+}
