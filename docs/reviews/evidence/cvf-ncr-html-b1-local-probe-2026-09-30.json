@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "cvf.local-review-probe.v1",
+  "batchId": "CVF-NCR-HTML-B1-VERSION-BINDING",
+  "executor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "oracle": "A pending, then B pending, then form returns to A and Build is pressed: only two fetch calls; B remains the selected response, marked stale against the form; late A receipt attempt ID remains visible in the superseded status.",
+  "probeTest": "ArtifactExportPanel.test.tsx: Local probe: A to B to A does not resend a snapshot still in flight",
+  "beforeRepair": {
+    "result": "FAIL",
+    "observedFetchCalls": 3,
+    "expectedFetchCalls": 2,
+    "command": "npm exec vitest run src/components/ArtifactExportPanel.test.tsx -- -t \"Local probe: A to B to A\""
+  },
+  "afterRepair": {
+    "result": "PASS",
+    "observedFetchCalls": 2,
+    "focusedSuite": "41/41 PASS",
+    "typescript": "PASS",
+    "eslint": "PASS",
+    "workerReturnFastGate": "PASS; reviewer-fast 69/69",
+    "componentSha256": "8602daf187444423c2575dee14898db19508e575224148c896dd235cd587451a",
+    "testSha256": "7e3db63aa9744fbc63af0e22272c6ece6e0acea3adea73d8775145ba4416996e"
+  },
+  "boundary": "Synthetic jsdom with mocked fetch; zero route/provider calls. No real iframe, print, screen-reader, Q001/R0 or artifact-acceptance proof."
+}

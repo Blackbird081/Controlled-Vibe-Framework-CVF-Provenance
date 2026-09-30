@@ -2,7 +2,7 @@
 
 // Text Encoding Exception: localized Vietnamese user-facing copy follows this file's existing convention.
 
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import {
   CheckCircle2,
@@ -67,6 +67,35 @@ interface ArtifactExportPanelProps {
   onGenerated?: (result: ArtifactExportResult) => void;
 }
 
+interface DisplayedResult {
+  result: ArtifactExportResult;
+  // Full request snapshot taken at submit; null when provenance is unknown (initialResult).
+  submitted: ArtifactExportRequest | null;
+  attempt: number | null;
+}
+
+interface AttemptError {
+  attempt: number;
+  message: string;
+}
+
+// Outcome of an attempt that a newer attempt replaced; it is never shown as a result.
+interface SupersededOutcome {
+  attempt: number;
+  status: 'pending' | 'success' | 'failure';
+  id?: string;
+}
+
+const REQUEST_FIELDS: ReadonlyArray<keyof ArtifactExportRequest> = [
+  'title',
+  'sourcePath',
+  'sourceContent',
+  'memoryClass',
+  'status',
+  'claimBoundary',
+  'receiptAnchor',
+];
+
 const DEFAULT_REQUEST: ArtifactExportRequest = {
   title: 'CVF HTML Review Packet',
   sourcePath: 'docs/reviews/example.md',
@@ -128,6 +157,19 @@ const LABELS = {
     approvedChecksNote: 'Review receipt: approved. Presentation checks still need attention; this packet remains draft and unaccepted.',
     secretRefusalRecovery: 'This text looks like it may contain a private key or token. Remove that value and try again.',
     missingFieldRecovery: 'Some required fields are empty. Check the form, fill in the missing fields, and try again.',
+    versionCurrent: 'Built from the form as submitted for build #{n}. It still matches the current form.',
+    versionStale: 'Earlier version (build #{n}). The form has changed since this packet was built. The preview, receipt, checks, copy, download and print below all refer to that earlier version. Build again to match the current form.',
+    versionUnknown: 'Earlier result with unknown source. It was not built from this form session, so it may not match the current form.',
+    versionTagCurrent: 'Build #{n} · matches form',
+    versionTagStale: 'Build #{n} · earlier version',
+    versionTagUnknown: 'Source unknown',
+    supersededPending: 'Build #{n} was replaced by a newer build. Its response, if one arrives, will not be shown or used.',
+    supersededSuccessId: 'Build #{n} was replaced by a newer build and its response was not shown. The response carried ID {id}. This page cannot establish a governance result for it.',
+    supersededSuccessNoId: 'Build #{n} was replaced by a newer build and its response was not shown. The response carried no ID, so no governance result could be established for it.',
+    supersededFailure: 'Build #{n} was replaced by a newer build and its request failed. No governance result could be established for it.',
+    errorBuild: 'Build #{n}',
+    errorPreviewKnown: 'The preview still shows build #{n}, not this build.',
+    errorPreviewUnknown: 'The preview still shows an earlier result of unknown source, not this build.',
   },
   vi: {
     title: 'Xuất gói rà soát',
@@ -169,11 +211,28 @@ const LABELS = {
     approvedChecksNote: 'Biên nhận rà soát: đã duyệt. Kiểm tra trình bày vẫn cần xử lý; gói này là bản nháp, chưa được chấp nhận.',
     secretRefusalRecovery: 'Nội dung này có vẻ chứa khóa riêng tư hoặc mã token. Hãy xóa giá trị đó rồi thử lại.',
     missingFieldRecovery: 'Một số trường bắt buộc còn trống. Hãy kiểm tra biểu mẫu, điền các trường còn thiếu rồi thử lại.',
+    versionCurrent: 'Được tạo từ biểu mẫu đã gửi ở lần tạo #{n}. Kết quả vẫn khớp với biểu mẫu hiện tại.',
+    versionStale: 'Phiên bản cũ (lần tạo #{n}). Biểu mẫu đã thay đổi kể từ khi gói này được tạo. Bản xem trước, receipt, kiểm tra, sao chép, tải và in bên dưới đều thuộc phiên bản cũ đó. Hãy tạo lại để khớp với biểu mẫu hiện tại.',
+    versionUnknown: 'Kết quả cũ không rõ nguồn. Kết quả này không được tạo từ phiên biểu mẫu hiện tại nên có thể không khớp với biểu mẫu.',
+    versionTagCurrent: 'Lần tạo #{n} · khớp biểu mẫu',
+    versionTagStale: 'Lần tạo #{n} · phiên bản cũ',
+    versionTagUnknown: 'Không rõ nguồn',
+    supersededPending: 'Lần tạo #{n} đã bị thay bằng lần tạo mới hơn. Nếu có phản hồi, phản hồi đó sẽ không được hiển thị hay sử dụng.',
+    supersededSuccessId: 'Lần tạo #{n} đã bị thay bằng lần tạo mới hơn và phản hồi của nó không được hiển thị. Phản hồi mang mã {id}. Trang này không xác lập được kết quả governance cho lần tạo đó.',
+    supersededSuccessNoId: 'Lần tạo #{n} đã bị thay bằng lần tạo mới hơn và phản hồi của nó không được hiển thị. Phản hồi không có mã nào, nên không xác lập được kết quả governance cho lần tạo đó.',
+    supersededFailure: 'Lần tạo #{n} đã bị thay bằng lần tạo mới hơn và yêu cầu của nó bị lỗi. Không xác lập được kết quả governance cho lần tạo đó.',
+    errorBuild: 'Lần tạo #{n}',
+    errorPreviewKnown: 'Bản xem trước vẫn là lần tạo #{n}, không phải lần tạo này.',
+    errorPreviewUnknown: 'Bản xem trước vẫn là kết quả cũ không rõ nguồn, không phải lần tạo này.',
   },
 };
 
 function normalizeRequest(input?: Partial<ArtifactExportRequest>): ArtifactExportRequest {
   return { ...DEFAULT_REQUEST, ...input };
+}
+
+function sameRequest(a: ArtifactExportRequest, b: ArtifactExportRequest): boolean {
+  return REQUEST_FIELDS.every(field => a[field] === b[field]);
 }
 
 function downloadHtml(filename: string, html: string) {
@@ -256,10 +315,46 @@ export function ArtifactExportPanel({
   const { language } = useLanguage();
   const labels = LABELS[language === 'vi' ? 'vi' : 'en'];
   const [request, setRequest] = useState<ArtifactExportRequest>(() => normalizeRequest(initialRequest));
-  const [result, setResult] = useState<ArtifactExportResult | null>(initialResult);
-  const [loading, setLoading] = useState(false);
+  const [displayed, setDisplayed] = useState<DisplayedResult | null>(
+    () => (initialResult ? { result: initialResult, submitted: null, attempt: null } : null),
+  );
+  const [pendingAttempt, setPendingAttempt] = useState<number | null>(null);
   const [copied, setCopied] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [attemptError, setAttemptError] = useState<AttemptError | null>(null);
+  const [superseded, setSuperseded] = useState<SupersededOutcome[]>([]);
+  const latestAttempt = useRef(0);
+  const pendingRequest = useRef<{ attempt: number; snapshot: ArtifactExportRequest } | null>(null);
+  const inFlightRequests = useRef<Map<number, ArtifactExportRequest>>(new Map());
+  const loading = pendingAttempt !== null;
+  const result = displayed?.result ?? null;
+  const error = attemptError?.message ?? null;
+  const versionState: 'current' | 'stale' | 'unknown' | null = !displayed
+    ? null
+    : !displayed.submitted
+      ? 'unknown'
+      : sameRequest(displayed.submitted, request)
+        ? 'current'
+        : 'stale';
+  const fillAttempt = (text: string) => text.replace('{n}', String(displayed?.attempt ?? 0));
+  const versionNotice = versionState === 'stale' ? fillAttempt(labels.versionStale)
+    : versionState === 'unknown' ? labels.versionUnknown
+      : versionState === 'current' ? fillAttempt(labels.versionCurrent)
+        : null;
+  const versionTag = versionState === 'stale' ? fillAttempt(labels.versionTagStale)
+    : versionState === 'unknown' ? labels.versionTagUnknown
+      : versionState === 'current' ? fillAttempt(labels.versionTagCurrent)
+        : null;
+  const supersededText = (item: SupersededOutcome) => {
+    const template = item.status === 'pending' ? labels.supersededPending
+      : item.status === 'failure' ? labels.supersededFailure
+        : item.id ? labels.supersededSuccessId : labels.supersededSuccessNoId;
+    return template.replace('{n}', String(item.attempt)).replace('{id}', item.id ?? '');
+  };
+  const errorPreviewNote = !attemptError || !displayed ? null
+    : displayed.attempt ? labels.errorPreviewKnown.replace('{n}', String(displayed.attempt))
+      : labels.errorPreviewUnknown;
+  const noticeId = 'artifact-version-notice';
+  const describedBy = versionState && versionState !== 'current' ? noticeId : undefined;
 
   const passedChecks = useMemo(
     () => result?.verification.filter(item => item.passed).length ?? 0,
@@ -277,24 +372,50 @@ export function ArtifactExportPanel({
   );
 
   const handleGenerate = useCallback(async () => {
-    setLoading(true);
-    setError(null);
+    const submitted: ArtifactExportRequest = { ...request };
+    const inFlight = pendingRequest.current;
+    // A superseded request may still be in flight; never resend its snapshot.
+    if ([...inFlightRequests.current.values()].some(snapshot => sameRequest(snapshot, submitted))) return;
+    const attempt = latestAttempt.current + 1;
+    latestAttempt.current = attempt;
+    pendingRequest.current = { attempt, snapshot: submitted };
+    inFlightRequests.current.set(attempt, submitted);
+    const isLatest = () => latestAttempt.current === attempt;
+    const recordSuperseded = (status: 'success' | 'failure', id?: string) => {
+      setSuperseded(list => list.map(item => (item.attempt === attempt ? { ...item, status, id } : item)));
+    };
+    if (inFlight) setSuperseded(list => [...list, { attempt: inFlight.attempt, status: 'pending' }]);
+    setPendingAttempt(attempt);
+    setAttemptError(null);
     try {
       const response = await fetch(exportEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(request),
+        body: JSON.stringify(submitted),
       });
       const payload = await response.json() as ArtifactExportApiResponse;
       if (!response.ok || !payload.success || !payload.data) {
         throw new Error(payload.error || `HTTP ${response.status}`);
       }
-      setResult(payload.data);
+      // A superseded attempt may not replace or announce output for a newer attempt.
+      if (!isLatest()) {
+        recordSuperseded('success', payload.data.governanceReceiptAttemptId || payload.data.governanceReceipt?.receiptId || undefined);
+        return;
+      }
+      setDisplayed({ result: payload.data, submitted, attempt });
       onGenerated?.(payload.data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Unknown export error');
+      if (!isLatest()) {
+        recordSuperseded('failure');
+        return;
+      }
+      setAttemptError({ attempt, message: err instanceof Error ? err.message : 'Unknown export error' });
     } finally {
-      setLoading(false);
+      inFlightRequests.current.delete(attempt);
+      if (isLatest()) {
+        pendingRequest.current = null;
+        setPendingAttempt(null);
+      }
     }
   }, [exportEndpoint, onGenerated, request]);
 
@@ -435,19 +556,41 @@ export function ArtifactExportPanel({
             <button
               type="button"
               onClick={() => void handleGenerate()}
-              disabled={loading || !request.sourceContent.trim() || !request.receiptAnchor.trim()}
+              disabled={!request.sourceContent.trim() || !request.receiptAnchor.trim()}
+              aria-busy={loading}
               className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> : <ShieldCheck className="h-4 w-4" aria-hidden="true" />}
               {loading ? labels.generating : labels.generate}
             </button>
+            {superseded.length > 0 && (
+              <div role="status" data-testid="superseded-attempts" className="flex w-full flex-col gap-2">
+                {superseded.map(item => (
+                  <p
+                    key={item.attempt}
+                    data-testid="superseded-attempt-notice"
+                    data-attempt={item.attempt}
+                    data-status={item.status}
+                    className="rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs leading-5 text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-100"
+                  >
+                    {supersededText(item)}
+                  </p>
+                ))}
+              </div>
+            )}
             {error && (
               <div className="inline-flex min-h-11 flex-col gap-1 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700 dark:border-red-900/70 dark:bg-red-950/30 dark:text-red-200">
                 <div className="flex items-center gap-2">
                   <TriangleAlert className="h-4 w-4 shrink-0" aria-hidden="true" />
                   <span className="font-semibold">{labels.failed}</span>
+                  {attemptError && (
+                    <span data-testid="export-error-build" className="font-mono">{labels.errorBuild.replace('{n}', String(attemptError.attempt))}</span>
+                  )}
                 </div>
                 <span data-testid="export-error-recovery">{recoveryMessageFor(error, labels) ?? error}</span>
+                {errorPreviewNote && (
+                  <span data-testid="export-error-preview-note">{errorPreviewNote}</span>
+                )}
                 {recoveryMessageFor(error, labels) && (
                   <span data-testid="export-error-detail" className="text-red-600/80 dark:text-red-300/80">{error}</span>
                 )}
@@ -507,6 +650,7 @@ export function ArtifactExportPanel({
                   type="button"
                   onClick={() => void handleCopy()}
                   disabled={!result}
+                  aria-describedby={describedBy}
                   className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-gray-200 px-3 py-2 text-xs font-semibold text-gray-700 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-45 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
                 >
                   <Clipboard className="h-4 w-4" aria-hidden="true" />
@@ -516,6 +660,7 @@ export function ArtifactExportPanel({
                   type="button"
                   onClick={handleDownload}
                   disabled={!result}
+                  aria-describedby={describedBy}
                   className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-gray-200 px-3 py-2 text-xs font-semibold text-gray-700 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-45 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
                 >
                   <Download className="h-4 w-4" aria-hidden="true" />
@@ -525,6 +670,7 @@ export function ArtifactExportPanel({
                   type="button"
                   onClick={handlePrint}
                   disabled={!result}
+                  aria-describedby={describedBy}
                   className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-gray-200 px-3 py-2 text-xs font-semibold text-gray-700 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-45 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
                 >
                   <Printer className="h-4 w-4" aria-hidden="true" />
@@ -533,9 +679,24 @@ export function ArtifactExportPanel({
               </div>
             </div>
 
+            {versionNotice && (
+              <p
+                id={noticeId}
+                role="status"
+                data-testid="artifact-version-notice"
+                data-version-state={versionState ?? undefined}
+                className={`mt-4 rounded-lg border px-3 py-2 text-xs leading-5 ${versionState === 'current'
+                  ? 'border-emerald-200 bg-emerald-50 text-emerald-800 dark:border-emerald-900/70 dark:bg-emerald-950/30 dark:text-emerald-200'
+                  : 'border-amber-300 bg-amber-50 text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-100'}`}
+              >
+                {versionNotice}
+              </p>
+            )}
+
             <div className="mt-5 overflow-hidden rounded-xl border border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-950">
               <div className="border-b border-gray-200 px-4 py-2 text-xs font-semibold text-gray-500 dark:border-gray-800 dark:text-gray-400">
                 {labels.previewTitle}
+                {versionTag && <span data-testid="artifact-version-tag" className="ml-2 font-normal">· {versionTag}</span>}
               </div>
               {result ? (
                 <iframe
