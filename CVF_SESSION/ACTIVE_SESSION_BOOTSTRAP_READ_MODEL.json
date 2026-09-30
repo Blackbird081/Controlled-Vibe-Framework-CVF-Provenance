@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=READ_ONLY_HTML_B2F_RECEIPT_BRANCH_GAP_AUDIT; BATCH_ID=CVF-NCR-HTML-B2F-RECEIPT-GAP-AUDIT; MATERIAL_COMMIT=ec283760d; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B2E_SYNTHETIC_LOOPBACK_RECEIPT_COMPLETION_2026-09-30.md; EXPANSION_ALLOWED=false. B2e accepted bounded: two fabricated failure branches in one Chromium profile. Local may audit source/evidence for PRESENT and TIMED_OUT gaps; no implementation, real evaluate/engine/provider execution, production edit, real data, store write or acceptance. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_HTML_B2F_TIMEOUT_ONLY_PACKET; BATCH_ID=CVF-NCR-HTML-B2F-SYNTHETIC-TIMEOUT; MATERIAL_COMMIT=7db74ca69; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B2F_RECEIPT_BRANCH_GAP_AUDIT_2026-10-01.md; EXPANSION_ALLOWED=false. Local may author a test-only delayed loopback timeout packet with fail-closed preflight and ambiguous-outcome warning; no worker execution yet. Do not fabricate PRESENT as governance proof or call real evaluate/engine/provider, edit production, use real data, write a store or accept an artifact. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

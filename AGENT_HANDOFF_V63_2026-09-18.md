@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `ec283760d`; batch `CVF-NCR-HTML-B2E-SYNTHETIC-LOOPBACK`.
+Current HEAD recorded for this handoff: `7db74ca69`; batch `CVF-NCR-HTML-B2F-RECEIPT-GAP-AUDIT`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.7 while preserving closed AKOE and G1-G7 posture. Jev, HyperFrames and WikiSkill P0 are applied; Human Boundary, Positioning and Async are routed; AKOE-P4/common reconciliation and U1 intake remain closed bounded.
 ## Scope / Target / Owner Boundary
-Role: Local reviewer/dispatcher. Phase: read-only B2f gap audit; technical decision owner: Local; effect decision owner: operator; P11 parked.
+Role: Local dispatcher/reviewer. Phase: B2f timeout packet authoring; technical decision owner: Local; effect decision owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=B2f receipt-branch gap audit; role=Local reviewer/dispatcher; phase=read-only audit; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=B2f timeout-only packet authoring; role=Local dispatcher/reviewer; phase=authoring; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -20,9 +20,9 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 ## Latest Work / Changes
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
-- B2e loopback proof accepted bounded at `ec283760d`; worker material `d29c16e25`, GC-051 repair `f69a1fb29`. Q001/Q004 OPEN.
+- B2e accepted bounded at `ec283760d`; B2f read-only gap audit `7db74ca69` permits timeout-only packet authoring. Q001/Q004 OPEN.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: bind B2e completion `ec283760d` and read-only B2f audit next move. Protected paths: six continuity paths below. Operator authorization: delegated Local review decisions. Rollback: continuity only; preserve material and Q001/Q004.
+Authorized guard-maintenance scope: bind B2f audit `7db74ca69` for timeout-only packet authoring. Protected paths: six continuity paths below. Operator authorization: delegated Local decisions. Rollback: continuity only; preserve audit and Q001/Q004.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -166,7 +166,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=READ_ONLY_HTML_B2F_RECEIPT_BRANCH_GAP_AUDIT; BATCH_ID=CVF-NCR-HTML-B2F-RECEIPT-GAP-AUDIT; MATERIAL_COMMIT=ec283760d; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B2E_SYNTHETIC_LOOPBACK_RECEIPT_COMPLETION_2026-09-30.md; EXPANSION_ALLOWED=false. B2e accepted bounded: two fabricated failure branches in one Chromium profile. Local may audit source/evidence for PRESENT and TIMED_OUT gaps; no implementation, real evaluate/engine/provider execution, production edit, real data, store write or acceptance. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_HTML_B2F_TIMEOUT_ONLY_PACKET; BATCH_ID=CVF-NCR-HTML-B2F-SYNTHETIC-TIMEOUT; MATERIAL_COMMIT=7db74ca69; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B2F_RECEIPT_BRANCH_GAP_AUDIT_2026-10-01.md; EXPANSION_ALLOWED=false. Local may author a test-only delayed loopback timeout packet with fail-closed preflight and ambiguous-outcome warning; no worker execution yet. Do not fabricate PRESENT as governance proof or call real evaluate/engine/provider, edit production, use real data, write a store or accept an artifact. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
