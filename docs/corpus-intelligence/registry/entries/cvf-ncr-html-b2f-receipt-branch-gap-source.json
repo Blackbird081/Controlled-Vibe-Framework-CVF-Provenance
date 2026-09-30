@@ -1,0 +1,53 @@
+{
+  "registryOrder": 210,
+  "id": "cvf-ncr-html-b2f-receipt-branch-gap-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF NCR HTML B2f receipt branch gap source",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-loopback-receipt.spec.ts"
+  ],
+  "fileCount": 6,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "CVF-NCR-HTML-B2F-RECEIPT-GAP-AUDIT",
+  "scanDate": "2026-10-01",
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_CVF_NCR_HTML_B2F_RECEIPT_BRANCH_GAP_AUDIT_2026-10-01.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": null,
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "TIMEOUT_ABORT_AND_ATTEMPT_ID",
+    "PRESENT_RECEIPT_VALIDATION_AND_DRAFT_STATE",
+    "PANEL_TIMEOUT_AND_RECEIPT_PRESENTATION",
+    "B2E_BROWSER_FAILURE_BRANCH_COVERAGE"
+  ],
+  "priorAbsorption": "Named read-only audit after B2e synthetic INVALID_RESPONSE/UNAVAILABLE closure. It contrasts existing unit/jsdom and historical Q001 browser evidence with the remaining timeout branch without claiming complete Web coverage or governance behavior.",
+  "findings": [
+    {
+      "id": "html-b2f-timeout-browser-status-gap",
+      "summary": "Unit and jsdom tests cover TIMED_OUT, but the B2e configured-hop browser spec covers only fabricated INVALID_RESPONSE and UNAVAILABLE. A prior Q001 cold-development no-receipt observation did not establish a controlled timed-out status and attempt-ID browser test.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Consider a separate test-only delayed loopback packet with a pre-export isolation gate; preserve ambiguous-outcome wording and do not infer remote cancellation.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "PRESENT synthetic fixture proves governance",
+    "abort means remote work was rolled back",
+    "timeout means safe retry"
+  ],
+  "nextScanRecommendation": "Revisit after a bounded timeout-browser packet or a separately authorized real-governance proof changes the evidence boundary."
+}
