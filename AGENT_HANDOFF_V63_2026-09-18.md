@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `62e22ec59`; batch `CVF-NCR-Q001-SQLITE-TARGET-PUBLICATION-CORRECTION-PROPOSAL`.
+Current HEAD recorded for this handoff: `31aed3b11`; batch `CVF-NCR-Q001-SQLITE-TARGET-PUBLICATION-CORRECTION`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,9 +9,9 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.4 as the selected planning successor while preserving closed AKOE and terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are routed; AKOE-P4/common reconciliation and optional U1 source intake remain closed bounded.
 ## Scope / Target / Owner Boundary
-Role: Local reviewer/steward. Phase: bounded corrective packet authoring. Decision owner: Local; Web advisory; P11 parked.
+Role: Local reviewer/steward. Phase: bound corrective dispatch; decision owner: Local; Web advisory; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=author and review one Q001 SQLite target-publication corrective packet; role=Local reviewer/steward; phase=packet authoring; decision owner=Local; parked checkpoint=P11, pilot/live, real ledger cutover, external runtimes, public sync and deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bound Q001 SQLite target-publication worker dispatch; role=Local reviewer/steward; phase=dispatch release; decision owner=Local; parked checkpoint=P11, pilot/live, real ledger cutover, external runtimes, public sync and deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -21,9 +21,9 @@ Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59
 The three operator-relayed Human Boundary, Positioning, and Async handoffs are now reviewed and combined with Jev, WikiSkill, and HyperFrames in `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md`, material commit `53bce992f`. Human Boundary is an `ADAPT` candidate, Positioning is primarily `CONFIRMED_EXISTING`, and Async remains `WATCH` with upstream factual claims `BLOCKED_SOURCE_NOT_FOUND` until Local pinning. The prior three-repository program is terminal-accounted; common Local closure remains blocked by AKOE P1-P3 execution and P4 reconciliation.
 ## Latest Work / Changes
 - Q001 synthetic worker `138871784`, Local acceptance/roadmap `bb17896f8`; independent raw-SQL HTTP probe and pre-commit passed. Real cutover parked.
-- Q001 synthetic migration/recovery rehearsal is accepted bounded with findings at `1e0fc7ec1`; independent raw-SQL/hash and peer probe passed, material hook 90/90. Partial/ambiguous targets and unobserved mid-copy remain open; real cutover parked.
+- Q001 rehearsal accepted bounded at `1e0fc7ec1`; D032 audit `62e22ec59` led to a synthetic target-publication packet and Local review `31aed3b11`, pre-commit 90/90. Worker release requires bound pre-dispatch PASS; real cutover parked.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: bind D032 proposal `62e22ec59` after bounded rehearsal closure `1e0fc7ec1`. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: continue bounded Q001 roadmap work. Rollback boundary: continuity only; preserve D032 audit and rehearsal proof.
+Authorized guard-maintenance scope: bind Q001 target-publication packet `31aed3b11` after D032 audit `62e22ec59`. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Operator authorization: approved paired packet authoring. Rollback boundary: continuity only; preserve material packet.
 ## Core Guard Self-Protection Authorization
 Authorized guard-maintenance scope: continuity-only binding of Q001 bounded acceptance `bb17896f8`. Operator authorization: continue bounded Q001 work. Rollback boundary: continuity only; preserve material proof.
 Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrQ001TransactionStoreHold20260929.json`.
@@ -166,7 +166,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_Q001_SQLITE_TARGET_PUBLICATION_PACKET; BATCH_ID=CVF-NCR-Q001-SQLITE-TARGET-PUBLICATION-CORRECTION; REVIEW=docs/reviews/CVF_CVF_NCR_Q001_POST_REHEARSAL_TARGET_PUBLICATION_AUDIT_2026-09-30.md; REVIEW_COMMIT=62e22ec59; EXPANSION_ALLOWED=false. Author paired GC-018 baseline and work order plus independent packet review for the synthetic single-host correction; do not dispatch implementation until reviewed, committed and bound pre-dispatch PASS. Do not execute real GitHub ledger cutover, pilot/live, P11, external runtimes, provider calls, public sync or deployment. Q001/R0, retention, P08, cost and artifact acceptance remain open. Latest closed learning-history wave LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_Q001_SQLITE_TARGET_PUBLICATION_CORRECTION; BATCH_ID=CVF-NCR-Q001-SQLITE-TARGET-PUBLICATION-CORRECTION; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SQLITE_TARGET_PUBLICATION_CORRECTION_2026-09-30.md; DISPATCH_COMMIT=31aed3b11; EXPANSION_ALLOWED=false. Dispatch only after bound pre-dispatch PASS. Worker owns exact five-path no-commit synthetic correction; Local owns independent probe and closure. Real GitHub ledger cutover, pilot/live, P11, external runtimes, provider calls, public sync and deployment remain parked. Q001/R0, retention, P08, cost and artifact acceptance remain open. Latest closed learning-history wave LHW24.
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;

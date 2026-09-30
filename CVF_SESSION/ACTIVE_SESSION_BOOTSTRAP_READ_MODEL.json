@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_Q001_SQLITE_TARGET_PUBLICATION_PACKET; BATCH_ID=CVF-NCR-Q001-SQLITE-TARGET-PUBLICATION-CORRECTION; REVIEW=docs/reviews/CVF_CVF_NCR_Q001_POST_REHEARSAL_TARGET_PUBLICATION_AUDIT_2026-09-30.md; REVIEW_COMMIT=62e22ec59; EXPANSION_ALLOWED=false. Author paired GC-018 baseline and work order plus independent packet review for the synthetic single-host correction; do not dispatch implementation until reviewed, committed and bound pre-dispatch PASS. Do not execute real GitHub ledger cutover, pilot/live, P11, external runtimes, provider calls, public sync or deployment. Q001/R0, retention, P08, cost and artifact acceptance remain open. Latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_Q001_SQLITE_TARGET_PUBLICATION_CORRECTION; BATCH_ID=CVF-NCR-Q001-SQLITE-TARGET-PUBLICATION-CORRECTION; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SQLITE_TARGET_PUBLICATION_CORRECTION_2026-09-30.md; DISPATCH_COMMIT=31aed3b11; EXPANSION_ALLOWED=false. Dispatch only after bound pre-dispatch PASS. Worker owns exact five-path no-commit synthetic correction; Local owns independent probe and closure. Real GitHub ledger cutover, pilot/live, P11, external runtimes, provider calls, public sync and deployment remain parked. Q001/R0, retention, P08, cost and artifact acceptance remain open. Latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_Q001_SQLITE_MIGRATION_RECOVERY_REHEARSAL_2026-09-30.md",
-    "baselineSha256": "1ed9de36ef137b30b5b9ac00b6505e19b249df1378db28ac74f34b86f07b7673",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SQLITE_MIGRATION_RECOVERY_REHEARSAL_2026-09-30.md",
-    "workOrderSha256": "1e9752031bdfc5b1643057e3f6acbd296d9c5d2b0cbaa9c68d3691df432ee1af"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_Q001_SQLITE_TARGET_PUBLICATION_CORRECTION_2026-09-30.md",
+    "baselineSha256": "287d0b1a3e9e4e131d691b67d38f7d05368d05e61a290415e8599651fbfe796c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SQLITE_TARGET_PUBLICATION_CORRECTION_2026-09-30.md",
+    "workOrderSha256": "5c77121bc46b857a4ad4ec73fff21c637a0e6379c4977438c1a8b1de110c054e"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
