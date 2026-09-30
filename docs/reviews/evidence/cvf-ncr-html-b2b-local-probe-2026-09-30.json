@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "cvf.local-review-probe.v1",
+  "batchId": "CVF-NCR-HTML-B2B-SYNTHETIC-BYTE-BOUNDARY",
+  "executor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "probeInvocationId": "cvf-ncr-html-b2b-local-probe-20260930",
+  "method": "Temporary Local Vitest probe loaded the current TypeScript helper; Python hashlib independently supplied SHA-256 oracle values. The temporary test file was removed after execution.",
+  "oracle": "<!doctype html><title>Alpha</title> and <!doctype html><title>Omega</title> are each 35 UTF-8 bytes, with independently calculated distinct digests.",
+  "observed": {
+    "originalByteLength": 35,
+    "mutatedByteLength": 35,
+    "originalSha256": "dc3d710d544457fb8f62d029da7d3862027a9aab1d2dced55db1f2cc83ef301c",
+    "mutatedSha256": "3efc7db5db2c40d2febd9bc33193e9434dd21219827427fafb44701d66550c65",
+    "actualBytesEqualOracle": true,
+    "originalVerification": {"ok": true},
+    "mutatedVerification": {"ok": false, "reason": "HASH_MISMATCH"},
+    "testCount": 1,
+    "commandExitCode": 0
+  },
+  "reviewerRepair": "A disguised DataView regression was added to the existing focused test; the helper now uses the intrinsic typed-array tag getter. Focused Vitest 15/15, TypeScript and ESLint passed.",
+  "boundary": "Independent in-memory synthetic byte probe only; no real browser, saved file, route, panel, network, provider, durable store, or acceptance effect."
+}
