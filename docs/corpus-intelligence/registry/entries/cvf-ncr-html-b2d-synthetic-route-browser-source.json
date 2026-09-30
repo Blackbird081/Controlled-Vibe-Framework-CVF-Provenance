@@ -1,0 +1,38 @@
+{
+  "registryOrder": 207,
+  "id": "cvf-ncr-html-b2d-synthetic-route-browser-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF NCR HTML B2d synthetic route/browser proof sources",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-route-byte-download.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/b2d-no-hop-preload.cjs"
+  ],
+  "fileCount": 2,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "CVF-NCR-HTML-B2D-SYNTHETIC-ROUTE-BROWSER",
+  "scanDate": "2026-09-30",
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_CVF_NCR_HTML_B2D_SYNTHETIC_ROUTE_BROWSER_WORKER_RETURN_2026-09-30.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2D_SYNTHETIC_ROUTE_BROWSER_2026-09-30.md",
+  "verdicts": {
+    "gc047": "PARTIAL",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [
+    "SYNTHETIC_NO_HOP_PRELOAD",
+    "REAL_ROUTE_BROWSER_SAVED_FILE_BYTE_PROOF"
+  ],
+  "priorAbsorption": "Named B2d worker spec and test-only preload. The local browser observation is pending independent review; this entry makes no complete Web corpus, provider, production governance or durable acceptance claim.",
+  "findings": [],
+  "negativeSearchTerms": [
+    "configured receipt hop proven",
+    "production governance behavior proven",
+    "HTML artifact accepted"
+  ],
+  "nextScanRecommendation": "Revisit if Local review changes the B2d test boundary or a separately authorized successor expands the route/browser claim."
+}
