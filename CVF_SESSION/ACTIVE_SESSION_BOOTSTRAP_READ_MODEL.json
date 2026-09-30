@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AWAIT_Q001_R0_OPERATOR_CHECKPOINT; BATCH_ID=CVF-NCR-Q001-SQLITE-TARGET-PUBLICATION-CORRECTION; MATERIAL_COMMIT=a90756b6a; COMPLETION_REVIEW=docs/reviews/CVF_CVF_NCR_Q001_SQLITE_TARGET_PUBLICATION_COMPLETION_2026-09-30.md; EXPANSION_ALLOWED=false. Synthetic single-host target-publication correction is accepted bounded; Q001/R0 remains OPEN. Next action is operator disposition on real GitHub-ledger cutover, authoritative instance, backup location and key custody, retention, RPO/RTO, P08, cost, artifact acceptance and pilot/live scope. P11, provider/external runtime, public sync and deployment remain parked. No automatic retry or real cutover authority. Latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B1_VERSION_BINDING; BATCH_ID=CVF-NCR-HTML-B1-VERSION-BINDING; MATERIAL_COMMIT=f100a61b6; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_VERSION_BINDING_2026-09-30.md; EXPANSION_ALLOWED=false. Operator selected bounded HTML B1 consumer repair. Worker may edit only the work-order three-path manifest after bound pre-dispatch and pre-implementation PASS, must not commit, and returns pending Local review. Q001/R0 Profile A remains OPEN without real-ledger, retry or pilot effect; B2, Profile B/C, P11, provider/external runtime, public sync and deployment remain parked. Latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_Q001_SQLITE_TARGET_PUBLICATION_CORRECTION_2026-09-30.md",
-    "baselineSha256": "287d0b1a3e9e4e131d691b67d38f7d05368d05e61a290415e8599651fbfe796c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SQLITE_TARGET_PUBLICATION_CORRECTION_2026-09-30.md",
-    "workOrderSha256": "5c77121bc46b857a4ad4ec73fff21c637a0e6379c4977438c1a8b1de110c054e"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_VERSION_BINDING_2026-09-30.md",
+    "baselineSha256": "86bc1464902e1eed2b92f6547d7666369161ca2193f9d3debf45a5c580c2a686",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_VERSION_BINDING_2026-09-30.md",
+    "workOrderSha256": "3d8b06056f7f4e1a57be156a2bd642912a79b61c8b14c2a546115a923f3c6140"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

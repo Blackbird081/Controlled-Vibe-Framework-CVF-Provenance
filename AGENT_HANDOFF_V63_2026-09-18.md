@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `30056de2f`; batch `CVF-NCR-D034-D035-README-ROADMAP`.
+Current HEAD recorded for this handoff: `f100a61b6`; batch `CVF-NCR-HTML-B1-VERSION-BINDING`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -9,9 +9,9 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.4 as the selected planning successor while preserving closed AKOE and terminal G1-G7 posture. Jev, HyperFrames, and WikiSkill P0 are applied; Human Boundary, Positioning, and Async are routed; AKOE-P4/common reconciliation and optional U1 source intake remain closed bounded.
 ## Scope / Target / Owner Boundary
-Role: Local reviewer/steward. Phase: roadmap/README sync; decision owner: Local; Web advisory; P11 parked.
+Role: Local reviewer/steward. Phase: HTML B1 dispatch continuity; decision owner: Local; Web advisory; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Q001/R0 operator checkpoint; role=Local reviewer/steward; phase=document sync; decision owner=Local; parked checkpoint=real ledger, pilot/live, P11, external runtime, public sync and deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=HTML B1 worker execution; role=Local reviewer/steward; phase=dispatch continuity; decision owner=Local; parked checkpoint=Q001/R0 real ledger, pilot/live, B2, P11, external runtime, public sync and deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -21,12 +21,17 @@ Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59
 The three operator-relayed Human Boundary, Positioning, and Async handoffs are now reviewed and combined with Jev, WikiSkill, and HyperFrames in `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md`, material commit `53bce992f`. Human Boundary is an `ADAPT` candidate, Positioning is primarily `CONFIRMED_EXISTING`, and Async remains `WATCH` with upstream factual claims `BLOCKED_SOURCE_NOT_FOUND` until Local pinning. The prior three-repository program is terminal-accounted; common Local closure remains blocked by AKOE P1-P3 execution and P4 reconciliation.
 ## Latest Work / Changes
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
-- D034/D035 at `30056de2f`: README and roadmap now route HTML B1 version binding and Q001 Profile A default. B2 and real-ledger rehearsal/cutover remain gated; pre-commit 90/90 passed.
+- HTML B1 paired packet at `f100a61b6` is dispatch-ready content: author-fast and pre-dispatch PASS, material hook 90/90. Worker owns component/test/return only; Q001/R0 remains Profile A. D034/D035 and README were committed at `30056de2f`.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: bind D034/D035 material `30056de2f` and correct stale startup text. Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`. Operator authorization: integrate Web/worker proposals into roadmap and edit README. Rollback boundary: handoff only; preserve material commit and Q001/R0 operator checkpoint.
-## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: continuity-only binding of Q001 bounded acceptance `bb17896f8`. Operator authorization: continue bounded Q001 work. Rollback boundary: continuity only; preserve material proof.
-Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/state/entries/cvfNcrQ001TransactionStoreHold20260929.json`.
+Authorized guard-maintenance scope: bind B1 packet `f100a61b6` for worker release.
+Protected paths:
+- `AGENT_HANDOFF_V63_2026-09-18.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+Operator authorization: selected B1 work order on 2026-09-30. Rollback boundary: dispatch continuity only; preserve D034/D035 and Q001/R0 checkpoint.
 - NCR Q001 OAuth binding is bounded at `569cf4aa3`; see `docs/reviews/CVF_CVF_NCR_Q001_SINGLE_OAUTH_IDENTITY_BINDING_2026-09-29.md`.
 - Operator-ratified direction at `bcdff0094`: `docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md` section 2.1 prioritizes a bounded real-work chain, independent pattern/runtime decisions and evidence-led gaps. Read before source/runtime planning; P11 stays parked.
 - CVF-NCR-R1/S11-R1 supersedes the earlier blocked S11 terminal outcome and closes P10 `CLOSED_PASS_BOUNDED` at `bd15b2600` after material `1a538d10d`. The exact thirteen-artifact ledger passed; one authorized Alibaba/DashScope call returned HTTP 200/`PRODUCTION_PACKAGE_EXECUTION_PASS`; Local recomputed both receipt IDs and trace/hash links offline with zero review calls. Package state is `ACTIVE_PRODUCTION_RUNTIME`; P11 remains parked.
@@ -46,18 +51,14 @@ Operator authorization: on 2026-09-29 the operator instructed Local to continue 
 Rollback boundary: revert only this continuity sync; preserve material `5c1ee025b`, P10 closure and all unrelated history.
 - R1/S02 Local completion is at `555999a83`: source-grounded content candidate accepted after reviewer repair, with worker test execution outside authority disclosed and rejected as proof. TDD/code-review ACTIVE README gap was repaired in the same material commit; reviewer skill was consulted manually without runtime receipt.
 - D013 core-skills design is committed at `db5ae4c43`. Initial S01 dispatch was `ee2abee8962d4489710a8d6db021af4f384731b6`. Local repaired the first worker-return packet and paired baseline/work order at `0d4995893d5a5a28316537027bc9b5c88c16bd3d`. Round 2 review, baseline and work order are material at `da301812a612885232332d7532fe4268c0bcb5f6`. The final worker return was committed at `5f8addf3922c6dbee7dea33e451b2a4e29fbc247`; Local bounded completion at `09b62aa3b57fd8dfda93140f30a845b7177be24c` passed the 90/90 material pre-commit gate. Two skill-body lifecycle prose repairs remain unimplemented and require a separate R1/S01 packet.
-- Group 1 source is `SOURCE_CREATED_LOCAL_VERIFIED` at material commit
-  `58281c2c6`; registry snapshot and genesis lifecycle receipt passed the
-  canonical source checker and a separate canonical-hash recomputation.
+- Group 1 source is `SOURCE_CREATED_LOCAL_VERIFIED` at material commit `58281c2c6`; registry snapshot and genesis lifecycle receipt passed the canonical source checker and a separate canonical-hash recomputation.
 - keyId: `partya-44853ea9a690452c`.
 - rowHashHex: `4e94882407c73ab779ead5c2b05d6f67041ad5e9f138ef034e7c152dbe2229f9`.
 - entryHashHex: `dbda6b1cc20b77186f5f1c1896f60dc87cff8aab7ab35ed225ed417d06e19fae`.
 - publicKeySha256Hex: `5ae2ddf8433e5eab54001d6fa59586389b9c3ae6956e1155dac811a3cbbcab01`.
 - Local verification record: `docs/audits/CVF_ACEL_G1_T3A_C2_GROUP1_SOURCE_LOCAL_VERIFICATION_2026-09-20.md`.
-- Candidate evaluation remains `UNVERIFIED`; key promotion is not authorized. T2B rejection remains controlling. T2C through T2H remain contract/design
-  evidence and do not establish Groups 2-4 or consumer wiring.
-- The thirteen rejected G1 T2 evidence paths are archived with exact hashes at
-  `333d687c6` and are not active-path authority.
+- Candidate evaluation remains `UNVERIFIED`; key promotion is not authorized. T2B rejection remains controlling. T2C through T2H remain contract/design evidence and do not establish Groups 2-4 or consumer wiring.
+- The thirteen rejected G1 T2 evidence paths are archived with exact hashes at `333d687c6` and are not active-path authority.
 - T3B authority selection, dedicated `cvf-g1-approver` provisioning and
   secret-free launchers were governed through `a907469aa`, `ef29dbc1f`,
   `16a6273dc`, `57a948c0f` and `97cae8068`.
@@ -71,8 +72,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
   the exact fixed-policy bytes, direct hash, closed-record hash, Party A owner
   and three-ACE protected DACL. The spec plus verification receipt committed
   at `89498f172` after reviewer-fast 68/68 and pre-commit 89/89.
-- The Approver launcher was bounded to one `APPROVED` append for spec version
-  1 and committed at `3a163417e`; it cannot append `ACTIVATED` in this step.
+- The Approver launcher was bounded to one `APPROVED` append for spec version 1 and committed at `3a163417e`; it cannot append `ACTIVATED` in this step.
 - The operator appended exactly one `APPROVED` event. Local independently
   verified its v1 binding, genesis chain hash, Approver account posture,
   ownership and protected two-ACE DACL. The event plus approval receipt
@@ -166,7 +166,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AWAIT_Q001_R0_OPERATOR_CHECKPOINT; BATCH_ID=CVF-NCR-Q001-SQLITE-TARGET-PUBLICATION-CORRECTION; MATERIAL_COMMIT=a90756b6a; COMPLETION_REVIEW=docs/reviews/CVF_CVF_NCR_Q001_SQLITE_TARGET_PUBLICATION_COMPLETION_2026-09-30.md; EXPANSION_ALLOWED=false. Synthetic single-host target-publication correction is accepted bounded; Q001/R0 remains OPEN. Next action is operator disposition on real GitHub-ledger cutover, authoritative instance, backup location and key custody, retention, RPO/RTO, P08, cost, artifact acceptance and pilot/live scope. P11, provider/external runtime, public sync and deployment remain parked. No automatic retry or real cutover authority. Latest closed learning-history wave LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B1_VERSION_BINDING; BATCH_ID=CVF-NCR-HTML-B1-VERSION-BINDING; MATERIAL_COMMIT=f100a61b6; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_VERSION_BINDING_2026-09-30.md; EXPANSION_ALLOWED=false. Operator selected bounded HTML B1 consumer repair. Worker may edit only the work-order three-path manifest after bound pre-dispatch and pre-implementation PASS, must not commit, and returns pending Local review. Q001/R0 Profile A remains OPEN without real-ledger, retry or pilot effect; B2, Profile B/C, P11, provider/external runtime, public sync and deployment remain parked. Latest closed learning-history wave LHW24.
 ## Parked Checkpoints
 
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
