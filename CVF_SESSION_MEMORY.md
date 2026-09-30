@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bound Q001 SQLite target-publication worker dispatch; role=Local reviewer/steward; phase=dispatch release; decision owner=Local; parked checkpoint=real ledger cutover, pilot/live, P11, external runtimes, public sync and deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Q001/R0 operator checkpoint after bounded SQLite target-publication acceptance; role=Local reviewer/steward; phase=continuity sync; decision owner=Local; parked checkpoint=real ledger cutover, pilot/live, P11, external runtimes, public sync and deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_Q001_SQLITE_TARGET_PUBLICATION_CORRECTION; BATCH_ID=CVF-NCR-Q001-SQLITE-TARGET-PUBLICATION-CORRECTION; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SQLITE_TARGET_PUBLICATION_CORRECTION_2026-09-30.md; DISPATCH_COMMIT=31aed3b11; EXPANSION_ALLOWED=false. Dispatch only after bound pre-dispatch PASS. Worker owns exact five-path no-commit synthetic correction; Local owns independent probe and closure. Real GitHub ledger cutover, pilot/live, P11, external runtimes, provider calls, public sync and deployment remain parked. Q001/R0, retention, P08, cost and artifact acceptance remain open. Latest closed learning-history wave LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AWAIT_Q001_R0_OPERATOR_CHECKPOINT; BATCH_ID=CVF-NCR-Q001-SQLITE-TARGET-PUBLICATION-CORRECTION; MATERIAL_COMMIT=a90756b6a; COMPLETION_REVIEW=docs/reviews/CVF_CVF_NCR_Q001_SQLITE_TARGET_PUBLICATION_COMPLETION_2026-09-30.md; EXPANSION_ALLOWED=false. Synthetic single-host target-publication correction is accepted bounded; Q001/R0 remains OPEN. Next action is operator disposition on real GitHub-ledger cutover, authoritative instance, backup location and key custody, retention, RPO/RTO, P08, cost, artifact acceptance and pilot/live scope. P11, provider/external runtime, public sync and deployment remain parked. No automatic retry or real cutover authority. Latest closed learning-history wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_Q001_SQLITE_TARGET_PUBLICATION_CORRECTION_2026-09-30.md",
     "workOrderSha256": "5c77121bc46b857a4ad4ec73fff21c637a0e6379c4977438c1a8b1de110c054e"
   },
-  "currentAuthoritySyncReason": "Q001 synthetic target-publication corrective packet and Local packet review committed at 31aed3b11, with baseline/work-order raw SHA-256 bound above. Worker release still requires bound pre-dispatch PASS; real GitHub ledger cutover and Q001/R0 remain open.",
+  "currentAuthoritySyncReason": "Local accepted bounded Q001 synthetic target-publication correction at a90756b6a, with independent completion review and raw-SQL/hash evidence. Q001/R0 and real GitHub-ledger cutover remain open pending operator checkpoint.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
