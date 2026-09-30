@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2D_SYNTHETIC_ROUTE_BROWSER_2026-09-30.md",
-    "baselineSha256": "6bc568abfc4e4db92a5437d4b2f0e5325687724ccd5bfb813d1ccd73ae90fb12",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2D_SYNTHETIC_ROUTE_BROWSER_2026-09-30.md",
-    "workOrderSha256": "0ed6d7d643d327b01342c3dd12b863eed8868cc02680cbc6e55994d834347712"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2E_SYNTHETIC_LOOPBACK_RECEIPT_2026-09-30.md",
+    "baselineSha256": "28358619353f1fa9d1c10a94d79ec6383e33821d6d3ae667502838393d6cfe4e",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2E_SYNTHETIC_LOOPBACK_RECEIPT_2026-09-30.md",
+    "workOrderSha256": "05d012562703ae8477f3b241384ab4edd10362bc7853546bc2eb882ce5f8c4cb"
   },
-  "currentAuthoritySyncReason": "B2d synthetic no-hop route/browser proof closed at 7ad6994bc. B2e read-only configured-hop audit at 5b8cfb588 identified possible forwarding to the Governance Engine; only test-only non-forwarding loopback packet authoring is allowed. Q001/Q004 real-data/store/effect decisions remain open.",
+  "currentAuthoritySyncReason": "B2e synthetic loopback baseline and work order materially committed at 3a3be242b after read-only audit 5b8cfb588. Only exact five-path internal-worker execution against an inert non-forwarding stub is released; Q001/Q004 real-data/store/effect decisions remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

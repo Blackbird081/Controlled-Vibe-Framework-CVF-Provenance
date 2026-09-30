@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_HTML_B2E_SYNTHETIC_LOOPBACK_PACKET; BATCH_ID=CVF-NCR-HTML-B2E-SYNTHETIC-LOOPBACK; MATERIAL_COMMIT=5b8cfb588; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B2E_CONFIGURED_RECEIPT_SCOPE_AUDIT_2026-09-30.md; EXPANSION_ALLOWED=false. Local may author a test-only packet with a non-forwarding loopback stub and fail-closed preflight. No configured-hop execution, real evaluate route, engine/provider call, production edit, real data, store write or artifact acceptance yet. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B2E_SYNTHETIC_LOOPBACK_PACKET; BATCH_ID=CVF-NCR-HTML-B2E-SYNTHETIC-LOOPBACK; MATERIAL_COMMIT=3a3be242b; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2E_SYNTHETIC_LOOPBACK_RECEIPT_2026-09-30.md; EXPANSION_ALLOWED=false. Internal worker may create exactly five named test/evidence paths after bound pre-implementation PASS; test-only inert non-forwarding loopback receipt destination and fail-closed preflight. No actual Next evaluate route, Governance Engine/provider call, production edit, real data, store write or artifact acceptance. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2D_SYNTHETIC_ROUTE_BROWSER_2026-09-30.md",
-    "baselineSha256": "6bc568abfc4e4db92a5437d4b2f0e5325687724ccd5bfb813d1ccd73ae90fb12",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2D_SYNTHETIC_ROUTE_BROWSER_2026-09-30.md",
-    "workOrderSha256": "0ed6d7d643d327b01342c3dd12b863eed8868cc02680cbc6e55994d834347712"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2E_SYNTHETIC_LOOPBACK_RECEIPT_2026-09-30.md",
+    "baselineSha256": "28358619353f1fa9d1c10a94d79ec6383e33821d6d3ae667502838393d6cfe4e",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2E_SYNTHETIC_LOOPBACK_RECEIPT_2026-09-30.md",
+    "workOrderSha256": "05d012562703ae8477f3b241384ab4edd10362bc7853546bc2eb882ce5f8c4cb"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
