@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "cvf.ncrHtmlB2fLocalTimeoutProbe@1",
+  "batchId": "CVF-NCR-HTML-B2F-SYNTHETIC-TIMEOUT",
+  "role": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "probeRiskClass": "FALSE_TIMEOUT_REMOTE_CANCELLATION_PROOF",
+  "probeInvocationId": "cvf-ncr-html-b2f-local-timeout-probe-20261001",
+  "workerEvidenceRef": "docs/reviews/evidence/cvf-ncr-html-b2f-timeout-worker-proof-2026-10-01.json",
+  "command": "node tests/e2e/support/b2f-loopback-timeout-harness.cjs from cvf-web",
+  "result": { "harnessExit": 0, "tests": 2, "passed": 2, "failed": 0, "browser": "headless Chromium 145.0.7632.6" },
+  "preflight": { "stubBound": "127.0.0.1 IPv4", "stubOrigin": "http://127.0.0.1:50230", "selfTestRejected404": 4, "serverContextsBeforeExport": 1, "nextauthIsStub": true, "engineFlag": "false", "receiptTimeoutMs": 1000, "syntheticToken": true, "browserAuth": true },
+  "routeAndPanel": { "exportMethod": "POST", "routeHttpStatus": 200, "receiptStatus": "TIMED_OUT", "governanceState": "DRAFT_UNACCEPTED", "attemptId": "artifact-proof-b2f-timeout-case-1790791551944", "stubRequestId": "artifact-proof-b2f-timeout-case-1790791551944", "stubExcerptLength": 114, "stubReceiveToResponseMs": 1031, "stubPlannedDelayMs": 3500, "panelWarningAndAttemptId": "PASS", "receiptOrApprovalAffordance": false },
+  "isolation": { "runExpectedStubPosts": 1, "runUnexpectedStubRequests": 0, "evaluateFetchesToStub": 1, "disallowedEvaluateFetches": 0, "nextGovernanceHits": 0, "forwardingAssessment": "source-design-only; no outbound client in stub, no network trace" },
+  "lateObservation": { "clientDisconnectMsSinceReceive": 993, "lateTimerMsSinceReceive": 3502, "clientGoneBeforeReply": true, "replyWritten": false, "interpretation": "observation only; no remote-cancellation, rollback or retry-safety inference" },
+  "cleanup": { "pendingAfterSettle": 0, "disposableDirRemoved": true, "stubClosed": true, "timersCleared": true },
+  "sourceHashes": { "specSha256": "d9b72dbca9db40a1de39ec377af826e1bd104122cd9dd5d18896037bb7b90b50", "harnessSha256": "92d7dabed8829d18ebc671043409feaae82dea938e2d54ce1b0b06e9dc724605" },
+  "disposition": "PASS_INDEPENDENT_PROBE_BOUNDED",
+  "claimBoundary": "One fresh synthetic Chromium/Next timeout run using the same reviewed harness, independently invoked by Local; no second oracle, network trace, real evaluate/engine/provider, durable acceptance, Q001/Q004 exit or remote-cancellation proof."
+}
