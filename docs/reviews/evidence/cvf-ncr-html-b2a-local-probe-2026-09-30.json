@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "cvf.local-review-probe.v1",
+  "batchId": "CVF-NCR-HTML-B2A-SYNTHETIC-CONTRACT",
+  "executor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "probeInvocationId": "cvf-ncr-html-b2a-local-probe-20260930",
+  "method": "Node loads the current TypeScript candidate via TypeScript transpileModule in memory; no repository test file or route is invoked.",
+  "oracle": "Two synthetic HTML strings differ only by Budget A versus Budget B in one rendered title, preserving byte length. An ALLOW receipt is attached to the original candidate.",
+  "observed": {
+    "sameHtml": {"ok": true},
+    "changedTitleSameByteLength": {"ok": false, "reason": "HASH_MISMATCH"},
+    "createdStateWithAllow": "DRAFT_UNACCEPTED",
+    "stateAfterApprovedReceipt": "DRAFT_UNACCEPTED",
+    "commandExitCode": 0,
+    "stdout": "LOCAL_B2A_PROBE_PASS: same-byte-length rendered title mutation rejected; receipt ALLOW/APPROVED remains draft"
+  },
+  "workerTestSha256": "7b4e4ddf029e2dd0e189c18158e7609d7c0c09e586fff30f6c0cc35c8b69c5d0",
+  "boundary": "Independent synthetic pure-function probe only; no route, browser, disk store, provider or real data. Exact-byte transport and real acceptance remain unresolved."
+}
