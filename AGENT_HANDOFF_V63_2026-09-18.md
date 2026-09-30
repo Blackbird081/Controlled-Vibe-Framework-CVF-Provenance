@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `5b8f5713a`; batch `CVF-NCR-HTML-B2D-SYNTHETIC-ROUTE-BROWSER`.
+Current HEAD recorded for this handoff: `36b298358`; batch `CVF-NCR-HTML-B2D-SYNTHETIC-ROUTE-BROWSER`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
