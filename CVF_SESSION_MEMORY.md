@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=B2f timeout-only packet execution; role=INTERNAL_AGENT worker then Local reviewer; phase=implementation; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
+Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=post-B2f roadmap triage; role=Local reviewer/planner; phase=read-only; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B2F_SYNTHETIC_TIMEOUT_PACKET; BATCH_ID=CVF-NCR-HTML-B2F-SYNTHETIC-TIMEOUT; MATERIAL_COMMIT=1b2f2d633; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2F_SYNTHETIC_TIMEOUT_2026-10-01.md; EXPANSION_ALLOWED=false. One INTERNAL_AGENT worker may execute only the five create paths after bound pre-dispatch and pre-implementation gates; no commit. No fabricated PRESENT, real evaluate/engine/provider, production edit, real data, store write or artifact acceptance. Local reviews return and runs the named independent probe. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=READ_ONLY_POST_B2F_ROADMAP_TRIAGE; BATCH_ID=CVF-NCR-HTML-B2F-SYNTHETIC-TIMEOUT; MATERIAL_COMMIT=9826107d3; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B2F_SYNTHETIC_TIMEOUT_COMPLETION_2026-10-01.md; EXPANSION_ALLOWED=false. B2f ACCEPTED_BOUNDED. Local may compare D037-D051 and identify the next no-effect slice or operator checkpoint; no worker execution until a new source audit and dispatch. No fake PRESENT governance or remote-cancellation/retry-safety inference. Q001/Q004 Profile A OPEN; operator owns actor, real data/store, writer/recovery/cost and pilot/live. Durable B2, Profile B/C, P11, public sync and deployment parked. LHW24 closed.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
