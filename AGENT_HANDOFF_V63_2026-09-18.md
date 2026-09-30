@@ -10,7 +10,7 @@ Carry CVF-NCR v2.7 while preserving closed AKOE and G1-G7 posture. Jev, HyperFra
 ## Scope / Target / Owner Boundary
 Role: Local dispatcher/reviewer. Phase: B2c internal-worker dispatch; technical decision owner: Local; effect decision owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=B2c internal-worker proof; role=Local dispatcher/reviewer; phase=execution; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=B2c internal-worker proof; role=Local dispatcher/reviewer; phase=execution; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary

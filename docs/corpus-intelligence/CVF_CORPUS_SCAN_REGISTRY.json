@@ -8505,6 +8505,41 @@
       "nextScanRecommendation": "Revisit these two paths during the separately governed B2c synthetic browser-download packet."
     },
     {
+      "id": "cvf-ncr-html-b2c-synthetic-browser-download-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF NCR HTML B2c synthetic browser download proof spec",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-byte-download.spec.ts"
+      ],
+      "fileCount": 1,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "CVF-NCR-HTML-B2C-SYNTHETIC-BROWSER-DOWNLOAD",
+      "scanDate": "2026-09-30",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_CVF_NCR_HTML_B2C_SYNTHETIC_BROWSER_DOWNLOAD_WORKER_RETURN_2026-09-30.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2C_SYNTHETIC_BROWSER_DOWNLOAD_2026-09-30.md",
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "SYNTHETIC_BROWSER_DOWNLOAD_SAVED_FILE_BYTE_PROOF"
+      ],
+      "priorAbsorption": "Named-path B2c worker proof spec for an intercepted synthetic export in one Chromium profile. This entry makes no whole-Web corpus, production-network, governance behavior or durable artifact claim.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "real export route or provider call",
+        "HTML artifact accepted",
+        "durable store proof"
+      ],
+      "nextScanRecommendation": "Revisit only when a separately authorized B2c repair or real-data acceptance tranche changes this test boundary."
+    },
+    {
       "id": "dsh-wra-r1-whole-repository-absorption",
       "corpusType": "EXTERNAL_SOURCE",
       "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",
