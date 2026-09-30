@@ -8680,6 +8680,43 @@
       "nextScanRecommendation": "Revisit only after a separate bounded synthetic loopback-stub packet or an operator-approved live-governance proof changes the evidence boundary."
     },
     {
+      "id": "cvf-ncr-html-b2e-synthetic-loopback-receipt-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF NCR HTML B2e synthetic loopback receipt proof sources",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-loopback-receipt.spec.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/b2e-loopback-receipt-harness.cjs"
+      ],
+      "fileCount": 2,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "CVF-NCR-HTML-B2E-SYNTHETIC-LOOPBACK",
+      "scanDate": "2026-09-30",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_CVF_NCR_HTML_B2E_SYNTHETIC_LOOPBACK_RECEIPT_WORKER_RETURN_2026-09-30.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2E_SYNTHETIC_LOOPBACK_RECEIPT_2026-09-30.md",
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "SYNTHETIC_CONFIGURED_RECEIPT_LOOPBACK_ISOLATION",
+        "REAL_ROUTE_BROWSER_FAILURE_STATUS_AND_ATTEMPT_ID"
+      ],
+      "priorAbsorption": "Named B2e worker test and inert stub only. This entry does not claim complete Web corpus coverage, actual Governance Engine or provider behavior, durable acceptance, or Q001/Q004 closure.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "fabricated receipt is real governance proof",
+        "actual evaluate route called",
+        "HTML artifact accepted"
+      ],
+      "nextScanRecommendation": "Revisit if Local review changes the B2e bounded test claim or a separately authorized successor covers real governance behavior."
+    },
+    {
       "id": "dsh-wra-r1-whole-repository-absorption",
       "corpusType": "EXTERNAL_SOURCE",
       "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",
