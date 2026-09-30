@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUDIT_HTML_B2_ACCEPTANCE_OWNER; BATCH_ID=CVF-NCR-HTML-B2-OWNER-AUDIT; MATERIAL_COMMIT=31bb2d88c; COMPLETION=docs/reviews/CVF_CVF_NCR_HTML_B1_VERSION_BINDING_COMPLETION_2026-09-30.md; EXPANSION_ALLOWED=false. HTML B1 is accepted only for mocked component behavior. Local may perform read-only B2 owner/storage/authority mapping before a separate packet; no B2 implementation or artifact acceptance is authorized. Q001/R0 Profile A remains OPEN without real-ledger, retry or pilot effect; Profile B/C, P11, provider/external runtime, public sync and deployment remain parked. Latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=HOLD_FOR_OPERATOR_Q001_B2_ACCEPTANCE_PROFILE; BATCH_ID=CVF-NCR-HTML-B2-OWNER-AUDIT; MATERIAL_COMMIT=2364bfbaa; AUDIT=docs/reviews/CVF_CVF_NCR_HTML_B2_ACCEPTANCE_OWNER_STORAGE_AUDIT_2026-09-30.md; EXPANSION_ALLOWED=false. B2 implementation is not dispatchable: the accepting actor/authority, authoritative exact-HTML store, writer topology, backup/retention/RPO/RTO and data/cost profile are undecided. Recommendation is Profile A no effect until operator selects a profile; a separate design/implementation packet follows that decision. Q001/R0 remains OPEN; Profile B/C, artifact acceptance, pilot/live, P11, provider/external runtime, public sync and deployment remain parked. Latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
