@@ -3,7 +3,10 @@
 import hashlib
 import json
 import os
+import shutil
 import sqlite3
+import tempfile
+import uuid
 from pathlib import Path
 
 from .block_builder import BlockBuilder
@@ -11,6 +14,152 @@ from .hash_engine import HashEngine
 
 
 SCHEMA_VERSION = 1
+SIDECAR_SUFFIXES = ("-wal", "-shm", "-journal")
+# Private test seam: point name -> callable. Empty in production; tests set and restore it.
+_FAULTS = {}
+
+
+def _fault(point, *args):
+    hook = _FAULTS.get(point)
+    if hook is not None:
+        hook(*args)
+
+
+def _sidecars(path):
+    return [str(path) + suffix for suffix in SIDECAR_SUFFIXES if os.path.lexists(str(path) + suffix)]
+
+
+def _require_sqlite_path(target):
+    if Path(target).suffix.lower() != ".sqlite":
+        raise ValueError("SQLite ledger requires an explicit .sqlite path")
+
+
+def _reject_preexisting(target, label):
+    if os.path.lexists(target) or _sidecars(target):
+        raise FileExistsError(f"{label} target must be absent")
+
+
+def _new_stage(target):
+    target = Path(target)
+    os.makedirs(os.path.dirname(os.path.abspath(target)), exist_ok=True)
+    return str(target.with_name(f"{target.stem}.stage-{os.getpid()}-{uuid.uuid4().hex}.sqlite"))
+
+
+def _discard_stage(stage):
+    """Remove only this attempt's staging names; return any names that could not be removed."""
+    residue = []
+    for name in (stage, *(stage + suffix for suffix in SIDECAR_SUFFIXES)):
+        try:
+            os.unlink(name)
+        except FileNotFoundError:
+            pass
+        except OSError:
+            residue.append(name)
+    return residue
+
+
+def _seal(stage):
+    """Fold WAL state into one self-contained rollback-journal file."""
+    conn = sqlite3.connect(stage)
+    try:
+        conn.execute("PRAGMA wal_checkpoint(TRUNCATE)")
+        if conn.execute("PRAGMA journal_mode=DELETE").fetchone()[0].lower() != "delete":
+            raise ValueError("Candidate could not be sealed")
+    finally:
+        conn.close()
+    if _sidecars(stage):
+        raise ValueError("Candidate is not self-contained")
+
+
+def _read_candidate(stage):
+    """Read-only verification of a sealed candidate; returns its validated chain."""
+    conn = sqlite3.connect(Path(stage).resolve().as_uri() + "?mode=ro", uri=True)
+    try:
+        if conn.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
+            raise ValueError("Candidate integrity check failed")
+        SqliteLedger._check_schema(conn)
+        rows = conn.execute("SELECT ordinal, request_id, block_json, block_hash FROM blocks ORDER BY ordinal").fetchall()
+        chain = SqliteLedger._decode_rows(rows)
+    finally:
+        conn.close()
+    if _sidecars(stage):
+        raise ValueError("Candidate is not self-contained")
+    return chain
+
+
+def _publish(stage, target):
+    """Expose a verified candidate without overwriting: a hard link fails if target exists."""
+    _fault("before_publication", stage, target)
+    try:
+        os.link(stage, target)
+    except FileExistsError:
+        raise
+    except OSError as exc:
+        raise OSError("No-clobber publication is unsupported on this filesystem") from exc
+
+
+def _after_publication(stage):
+    """Post-publication cleanup never fails the call; leftovers are reported, not raised."""
+    try:
+        _fault("after_publication", stage)
+        residue = _discard_stage(stage)
+    except Exception:
+        residue = [stage]
+    SqliteLedger.last_stage_residue = residue
+
+
+def _abandon_stage(stage, exc):
+    residue = _discard_stage(stage)
+    if residue:
+        exc.stage_residue = residue
+        if hasattr(exc, "add_note"):
+            exc.add_note("staging residue: " + ", ".join(residue))
+
+
+def classify_target(target_path, expected=None):
+    """Read-only state of a final target, computed on an independent byte copy.
+
+    Never grants retry permission and never promotes the target to authoritative.
+    """
+    target = os.fspath(target_path)
+    sidecars = _sidecars(target)
+    result = {"state": None, "safe_to_retry": False, "authoritative": False,
+              "sidecars": [os.path.basename(name) for name in sidecars], "count": None, "tip": None}
+    if not os.path.lexists(target):
+        result["state"] = "SIDECAR_ONLY" if sidecars else "CLEAN_ABSENT"
+        return result
+    with tempfile.TemporaryDirectory() as scratch:
+        copy = os.path.join(scratch, "copy.sqlite")
+        shutil.copyfile(target, copy)
+        for name in sidecars:
+            shutil.copyfile(name, copy + name[len(target):])
+        conn = None
+        try:
+            conn = sqlite3.connect(copy)
+            if not conn.execute("SELECT count(*) FROM sqlite_master").fetchone()[0]:
+                result["state"] = "PARTIAL_OPENABLE_INCOMPLETE"
+                return result
+            SqliteLedger._check_schema(conn)
+            rows = conn.execute("SELECT ordinal, request_id, block_json, block_hash FROM blocks ORDER BY ordinal").fetchall()
+            chain = SqliteLedger._decode_rows(rows)
+        except sqlite3.DatabaseError:
+            result["state"] = "PARTIAL_UNOPENABLE"
+            return result
+        except (ValueError, KeyError, TypeError):
+            result["state"] = "PARTIAL_OPENABLE_INCOMPLETE"
+            return result
+        finally:
+            if conn is not None:
+                conn.close()
+    result["count"] = len(chain)
+    result["tip"] = chain[-1]["hash"] if chain else "GENESIS"
+    if expected is None:
+        result["state"] = "UNKNOWN_PREEXISTING_ORIGIN"
+    elif chain == expected:
+        result["state"] = "USABLE_COMPLETE"
+    else:
+        result["state"] = "PARTIAL_OPENABLE_INCOMPLETE"
+    return result
 
 
 def _request_id(event):
@@ -53,6 +202,8 @@ def _validate_chain(chain):
 
 class SqliteLedger:
     """One SQLite database per local ledger; no implicit JSON cutover."""
+
+    last_stage_residue = []
 
     def __init__(self, ledger_path, *, timeout=10.0):
         self.ledger_path = os.fspath(ledger_path)
@@ -179,64 +330,106 @@ class SqliteLedger:
 
     @classmethod
     def import_json(cls, source_path, target_path):
-        """Import a copied quiescent source into a new database path."""
+        """Import a copied quiescent source; the final target appears only after verification."""
         source = Path(source_path)
         target = Path(target_path)
-        if target.exists() or any(Path(str(target) + suffix).exists() for suffix in ("-wal", "-shm")):
-            raise FileExistsError("Migration target must be absent")
+        _require_sqlite_path(target)
+        _reject_preexisting(target, "Migration")
         raw = source.read_bytes()
         chain = json.loads(raw)
         tip = _validate_chain(chain)
-        ledger = cls(target)
-        conn = ledger._connect()
+        if not chain:
+            raise ValueError("Migration source chain is empty")
+        stage = _new_stage(target)
         try:
-            conn.execute("BEGIN IMMEDIATE")
-            for ordinal, block in enumerate(chain, 1):
-                conn.execute("INSERT INTO blocks (ordinal, request_id, block_json, block_hash) VALUES (?, ?, ?, ?)",
-                             (ordinal, block["event"]["request_id"], json.dumps(block, sort_keys=True, allow_nan=False), block["hash"]))
-            conn.commit()
-        except BaseException:
-            conn.rollback()
+            ledger = cls(stage)
+            conn = ledger._connect()
+            try:
+                conn.execute("BEGIN IMMEDIATE")
+                _fault("import_before_insert")
+                for ordinal, block in enumerate(chain, 1):
+                    conn.execute("INSERT INTO blocks (ordinal, request_id, block_json, block_hash) VALUES (?, ?, ?, ?)",
+                                 (ordinal, block["event"]["request_id"], json.dumps(block, sort_keys=True, allow_nan=False), block["hash"]))
+                    _fault("import_insert", ordinal)
+                conn.commit()
+            except BaseException:
+                conn.rollback()
+                raise
+            finally:
+                conn.close()
+            _seal(stage)
+            _fault("after_candidate_close", stage)
+            _fault("before_source_reverify", source)
+            if _read_candidate(stage) != chain or source.read_bytes() != raw:
+                raise ValueError("Migration verification failed")
+            _publish(stage, target)
+        except BaseException as exc:
+            _abandon_stage(stage, exc)
             raise
-        finally:
-            conn.close()
-        if ledger.read_chain() != chain or source.read_bytes() != raw:
-            raise ValueError("Migration verification failed")
+        _after_publication(stage)
         return {"source_sha256": hashlib.sha256(raw).hexdigest(), "count": len(chain), "tip": tip}
+
+    @staticmethod
+    def _copy_verified(source_conn, target, expected_check):
+        """Backup-copy into a staged candidate, verify it, then publish without overwrite."""
+        stage = _new_stage(target)
+        try:
+            destination = sqlite3.connect(stage)
+            try:
+                source_conn.backup(destination, pages=8, progress=lambda *_: _fault("backup_progress"))
+            finally:
+                destination.close()
+            _seal(stage)
+            _fault("after_candidate_close", stage)
+            actual = _read_candidate(stage)
+            expected_check(actual)
+            result = {"count": len(actual), "tip": _validate_chain(actual),
+                      "request_ids": [block["event"]["request_id"] for block in actual]}
+            source_conn.close()
+            _publish(stage, target)
+        except BaseException as exc:
+            _abandon_stage(stage, exc)
+            raise
+        _after_publication(stage)
+        return result
 
     def backup_to(self, target_path):
         target = Path(target_path)
-        if target.exists() or any(Path(str(target) + suffix).exists() for suffix in ("-wal", "-shm")):
-            raise FileExistsError("Backup target must be absent")
+        _require_sqlite_path(target)
+        _reject_preexisting(target, "Backup")
+        before = self.read_chain()
+
+        def check(actual):
+            # Append-only source: the snapshot must extend what existed before the copy
+            # and be a prefix of what exists after it.
+            after = self.read_chain()
+            if actual[:len(before)] != before or after[:len(actual)] != actual:
+                raise ValueError("Backup snapshot does not match source")
+
         source = self._connect()
-        destination = sqlite3.connect(target)
         try:
-            source.backup(destination)
+            return self._copy_verified(source, target, check)
         finally:
-            destination.close()
             source.close()
-        restored = type(self)(target)
-        actual = restored.read_chain()
-        return {"count": len(actual), "tip": _validate_chain(actual), "request_ids": [block["event"]["request_id"] for block in actual]}
 
     @classmethod
     def restore_backup(cls, backup_path, target_path):
         """Verify a backup and restore it to an absent local database path."""
+        target = Path(target_path)
+        _require_sqlite_path(target)
         if not Path(backup_path).is_file():
             raise FileNotFoundError("Backup source is absent")
-        source = cls(backup_path)
-        expected = source.read_chain()
-        target = Path(target_path)
-        if target.exists() or any(Path(str(target) + suffix).exists() for suffix in ("-wal", "-shm")):
-            raise FileExistsError("Restore target must be absent")
-        source_conn = source._connect()
-        target_conn = sqlite3.connect(target)
+        _reject_preexisting(target, "Restore")
+        source = sqlite3.connect(Path(backup_path).resolve().as_uri() + "?mode=ro", uri=True)
         try:
-            source_conn.backup(target_conn)
+            cls._check_schema(source)
+            expected = cls._decode_rows(source.execute(
+                "SELECT ordinal, request_id, block_json, block_hash FROM blocks ORDER BY ordinal").fetchall())
+
+            def check(actual):
+                if actual != expected:
+                    raise ValueError("Restored chain differs from backup")
+
+            return cls._copy_verified(source, target, check)
         finally:
-            target_conn.close()
-            source_conn.close()
-        actual = cls(target).read_chain()
-        if actual != expected:
-            raise ValueError("Restored chain differs from backup")
-        return {"count": len(actual), "tip": _validate_chain(actual), "request_ids": [block["event"]["request_id"] for block in actual]}
+            source.close()

@@ -1,0 +1,3058 @@
+{
+  "cases": [
+    {
+      "barrierEvents": [
+        "VERIFIED_BEFORE_PUBLICATION:UNKNOWN_PREEXISTING_ORIGIN:12:target_absent=True"
+      ],
+      "case": "import:verified-before-publication",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "2e4b4aa03a707611ec4d2d88153a30387db399726fd06477063d3f4ee3ca97f3",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "2fa79311d4ebbb65212e6e8785ace3da71bb0aac9f1d708321c213b228fff3f1",
+            "size": 12288
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "fcd95ed8b05a2aa827de08168e185990534dd4cc9dad607c272852290ff9714b",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "5771f38c9bee139f435d08e18babe37e88c87617b8dc5441a2620edc0352a93b",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "expectation": "success",
+      "faultPoint": "before_publication",
+      "finalFile": {
+        "exists": true,
+        "sha256": "2fa79311d4ebbb65212e6e8785ace3da71bb0aac9f1d708321c213b228fff3f1",
+        "size": 12288
+      },
+      "finalRawState": {
+        "count": 12,
+        "ids": [
+          "r00",
+          "r01",
+          "r02",
+          "r03",
+          "r04",
+          "r05",
+          "r06",
+          "r07",
+          "r08",
+          "r09",
+          "r10",
+          "r11"
+        ],
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "USABLE_COMPLETE",
+        "tip": "f1a781f5ac8ae002ca0cf0a6d78284d2d5f526f64a343d66b77d685cdafaadcc"
+      },
+      "operation": "import",
+      "ownerClassifierState": "UNKNOWN_PREEXISTING_ORIGIN",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnKeys": [
+        "count",
+        "source_sha256",
+        "tip"
+      ],
+      "returnedOrRaised": "returned",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "2e4b4aa03a707611ec4d2d88153a30387db399726fd06477063d3f4ee3ca97f3",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "fcd95ed8b05a2aa827de08168e185990534dd4cc9dad607c272852290ff9714b",
+          "size": 69632
+        },
+        "liveLogical": "3841b4f2b6eec76e004da86d4595b00865f0cf575440cf56d6b63a3482d6e2d3",
+        "source.json": {
+          "exists": true,
+          "sha256": "5771f38c9bee139f435d08e18babe37e88c87617b8dc5441a2620edc0352a93b",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "2e4b4aa03a707611ec4d2d88153a30387db399726fd06477063d3f4ee3ca97f3",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "fcd95ed8b05a2aa827de08168e185990534dd4cc9dad607c272852290ff9714b",
+          "size": 69632
+        },
+        "liveLogical": "3841b4f2b6eec76e004da86d4595b00865f0cf575440cf56d6b63a3482d6e2d3",
+        "source.json": {
+          "exists": true,
+          "sha256": "5771f38c9bee139f435d08e18babe37e88c87617b8dc5441a2620edc0352a93b",
+          "size": 3135
+        }
+      },
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "import:import_before_insert",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "a34e79ffcd7d5a10000e61c987694b6b63757df13b3fe8797ec162cd9fe5f78a",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "b7b0bce7f89587df60a50d388c219e7d85d44dfb0490190d0f65956b29a5c843",
+            "size": 12288
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "8ff2ec38eb6f425654b4d7dfdfc509b7c3eb4a95d94ecd8c51ea0cc01f3770b6",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "3892164e5444bbeb15c0504ea42f23d3474089b3cc83560ef185425d4df00542",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "Injected",
+      "expectation": "clean",
+      "faultPoint": "import_before_insert",
+      "finalFile": {
+        "exists": true,
+        "sha256": "b7b0bce7f89587df60a50d388c219e7d85d44dfb0490190d0f65956b29a5c843",
+        "size": 12288
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "message": "INJECTED_FAULT",
+      "operation": "import",
+      "ownerClassifierState": "CLEAN_ABSENT",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "a34e79ffcd7d5a10000e61c987694b6b63757df13b3fe8797ec162cd9fe5f78a",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "8ff2ec38eb6f425654b4d7dfdfc509b7c3eb4a95d94ecd8c51ea0cc01f3770b6",
+          "size": 69632
+        },
+        "liveLogical": "55265d97a71df03ef7be171ae58f4e44f0b11bcae98b0c20a99bd6854f8ef992",
+        "source.json": {
+          "exists": true,
+          "sha256": "3892164e5444bbeb15c0504ea42f23d3474089b3cc83560ef185425d4df00542",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "a34e79ffcd7d5a10000e61c987694b6b63757df13b3fe8797ec162cd9fe5f78a",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "8ff2ec38eb6f425654b4d7dfdfc509b7c3eb4a95d94ecd8c51ea0cc01f3770b6",
+          "size": 69632
+        },
+        "liveLogical": "55265d97a71df03ef7be171ae58f4e44f0b11bcae98b0c20a99bd6854f8ef992",
+        "source.json": {
+          "exists": true,
+          "sha256": "3892164e5444bbeb15c0504ea42f23d3474089b3cc83560ef185425d4df00542",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [
+        "insert:1",
+        "insert:2",
+        "insert:3",
+        "insert:4",
+        "insert:5",
+        "insert:6",
+        "insert:7"
+      ],
+      "case": "import:insert-7",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "994ea1ddfa000f408bf95f3adc2d9b6afe01bd3d54e0776357ad26822aa2a872",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "495d9a6a715d543da081324227d9c29e41b57d13f48501d041501c2be77b19bf",
+            "size": 12288
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "a1ca1bf5d85375170a206520aa57e44031e7abfe0ab0053311784f0233724fec",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "963749236913328c722b3d2a3a4453a397db156de33ea3e911533821d450aa39",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "Injected",
+      "expectation": "clean",
+      "faultPoint": "import_insert",
+      "finalFile": {
+        "exists": true,
+        "sha256": "495d9a6a715d543da081324227d9c29e41b57d13f48501d041501c2be77b19bf",
+        "size": 12288
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "message": "INJECTED_FAULT",
+      "operation": "import",
+      "ownerClassifierState": "CLEAN_ABSENT",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "994ea1ddfa000f408bf95f3adc2d9b6afe01bd3d54e0776357ad26822aa2a872",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "a1ca1bf5d85375170a206520aa57e44031e7abfe0ab0053311784f0233724fec",
+          "size": 69632
+        },
+        "liveLogical": "f9262c59ec554929b519b79617767a96e78fdef4a963aafc953598cfd6338b5c",
+        "source.json": {
+          "exists": true,
+          "sha256": "963749236913328c722b3d2a3a4453a397db156de33ea3e911533821d450aa39",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "994ea1ddfa000f408bf95f3adc2d9b6afe01bd3d54e0776357ad26822aa2a872",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "a1ca1bf5d85375170a206520aa57e44031e7abfe0ab0053311784f0233724fec",
+          "size": 69632
+        },
+        "liveLogical": "f9262c59ec554929b519b79617767a96e78fdef4a963aafc953598cfd6338b5c",
+        "source.json": {
+          "exists": true,
+          "sha256": "963749236913328c722b3d2a3a4453a397db156de33ea3e911533821d450aa39",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [
+        "SOURCE_MUTATED_BEFORE_REVERIFY"
+      ],
+      "case": "import:source-reread-mismatch",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "17b89a11cb6b5f444418d82ceb056d70142acce03582f1479ec32b9ad4dc7379",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "4e881b55282fa2dedb4c968dd7f82989125c0a76ba0bad0fd8483fd47874587d",
+            "size": 12288
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "7fdb7d2228bfb35d4aa73b87d7ea109e090a9e3abdb60a85b2266cf7fc2addf6",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "1b9187213c16c3af434cef2ef4d6e0013f5138e9c56571433ab6d74076a91549",
+            "size": 3136
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "ValueError",
+      "expectation": "clean_source_mutated",
+      "faultPoint": "before_source_reverify",
+      "finalFile": {
+        "exists": true,
+        "sha256": "4e881b55282fa2dedb4c968dd7f82989125c0a76ba0bad0fd8483fd47874587d",
+        "size": 12288
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "message": "Migration verification failed",
+      "operation": "import",
+      "ownerClassifierState": "CLEAN_ABSENT",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "17b89a11cb6b5f444418d82ceb056d70142acce03582f1479ec32b9ad4dc7379",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "7fdb7d2228bfb35d4aa73b87d7ea109e090a9e3abdb60a85b2266cf7fc2addf6",
+          "size": 69632
+        },
+        "liveLogical": "e8bcb1ac87923b5953cc787bc6593840c6bab0c390ef705529f74b39bef4aff9",
+        "source.json": {
+          "exists": true,
+          "sha256": "1b9187213c16c3af434cef2ef4d6e0013f5138e9c56571433ab6d74076a91549",
+          "size": 3136
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "17b89a11cb6b5f444418d82ceb056d70142acce03582f1479ec32b9ad4dc7379",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "7fdb7d2228bfb35d4aa73b87d7ea109e090a9e3abdb60a85b2266cf7fc2addf6",
+          "size": 69632
+        },
+        "liveLogical": "e8bcb1ac87923b5953cc787bc6593840c6bab0c390ef705529f74b39bef4aff9",
+        "source.json": {
+          "exists": true,
+          "sha256": "86440434db9082619a1cfa52eb31a2c72683ee966b5bda80eb78662398c406a1",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "import:after_candidate_close",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "9903202c499b841433dcf82612259b564f2d22361a2b96c27b4183bae8d4e4e4",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "6522154a3ae8828022273a214d7f96f9df9ea6fb6adf8f1c7eb0ce40c9494338",
+            "size": 12288
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "14834d8829d6736b4bff093ffab530b5a8687e4cd1f7bcda24050900c35163dd",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "38618a7a695cb0371960fb6ecb272e4f1ecb572023cf1bc0fbd239773269e974",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "Injected",
+      "expectation": "clean",
+      "faultPoint": "after_candidate_close",
+      "finalFile": {
+        "exists": true,
+        "sha256": "6522154a3ae8828022273a214d7f96f9df9ea6fb6adf8f1c7eb0ce40c9494338",
+        "size": 12288
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "message": "INJECTED_FAULT",
+      "operation": "import",
+      "ownerClassifierState": "CLEAN_ABSENT",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "9903202c499b841433dcf82612259b564f2d22361a2b96c27b4183bae8d4e4e4",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "14834d8829d6736b4bff093ffab530b5a8687e4cd1f7bcda24050900c35163dd",
+          "size": 69632
+        },
+        "liveLogical": "84afa7d81ec20b9d312e65a6bc44da902c0d000963e968d8c23ed5d79fd193ca",
+        "source.json": {
+          "exists": true,
+          "sha256": "38618a7a695cb0371960fb6ecb272e4f1ecb572023cf1bc0fbd239773269e974",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "9903202c499b841433dcf82612259b564f2d22361a2b96c27b4183bae8d4e4e4",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "14834d8829d6736b4bff093ffab530b5a8687e4cd1f7bcda24050900c35163dd",
+          "size": 69632
+        },
+        "liveLogical": "84afa7d81ec20b9d312e65a6bc44da902c0d000963e968d8c23ed5d79fd193ca",
+        "source.json": {
+          "exists": true,
+          "sha256": "38618a7a695cb0371960fb6ecb272e4f1ecb572023cf1bc0fbd239773269e974",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "import:fault-before-publication",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "a5461d2ff83fd9539f53dc990ba5db54ba30e45aa32a69f661168e4357ca5155",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "9304bc8db16df91cea7ddf126c4c75c303fa46791313fc61163f1b388a4cb96b",
+            "size": 12288
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "982b365e3236140a742f0fb6032b815a745a6bf624ed0ddd30a3c8c9c117040f",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "25041084d8297a644a2b48af848388ecf95b4ad38141b071459140f6a842ceb7",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "Injected",
+      "expectation": "clean",
+      "faultPoint": "before_publication",
+      "finalFile": {
+        "exists": true,
+        "sha256": "9304bc8db16df91cea7ddf126c4c75c303fa46791313fc61163f1b388a4cb96b",
+        "size": 12288
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "message": "INJECTED_FAULT",
+      "operation": "import",
+      "ownerClassifierState": "CLEAN_ABSENT",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "a5461d2ff83fd9539f53dc990ba5db54ba30e45aa32a69f661168e4357ca5155",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "982b365e3236140a742f0fb6032b815a745a6bf624ed0ddd30a3c8c9c117040f",
+          "size": 69632
+        },
+        "liveLogical": "2495297b3cd9aed6433530d181ee47b11472b253eb74a3fc89b59b539b93852c",
+        "source.json": {
+          "exists": true,
+          "sha256": "25041084d8297a644a2b48af848388ecf95b4ad38141b071459140f6a842ceb7",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "a5461d2ff83fd9539f53dc990ba5db54ba30e45aa32a69f661168e4357ca5155",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "982b365e3236140a742f0fb6032b815a745a6bf624ed0ddd30a3c8c9c117040f",
+          "size": 69632
+        },
+        "liveLogical": "2495297b3cd9aed6433530d181ee47b11472b253eb74a3fc89b59b539b93852c",
+        "source.json": {
+          "exists": true,
+          "sha256": "25041084d8297a644a2b48af848388ecf95b4ad38141b071459140f6a842ceb7",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [
+        "PUBLICATION_RACE_CREATOR"
+      ],
+      "case": "import:competing-creator",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "bc111f24d913c3ef525581dcf4770419c94f8df80d640ffbeb5b519edf87435a",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+            "size": 27
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "a4fa6b0bd0bc05106045736b3dc8e65ead98e36b5d99c058c7ec6391ffc391e8",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "1861f762887fcfd4ec9bbe1cc2a0971e74c34fa024639cf82944318f1ce2ddb1",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "FileExistsError",
+      "expectation": "competing",
+      "faultPoint": "before_publication",
+      "finalFile": {
+        "exists": true,
+        "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+        "size": 27
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "PARTIAL_UNOPENABLE",
+        "tip": null
+      },
+      "message": "[WinError 183] Cannot create a file when that file already exists: 'D:\\\\UNG DUNG AI\\\\TOOL AI 2026\\\\Controlled-Vibe-Framework-CVF\\\\.cvf\\\\runtime\\\\q001-sqlite-publication-cb085b9b1f\\\\import-competing-creator-07\\\\final.stage-20204-ed338f7a28b8",
+      "operation": "import",
+      "ownerClassifierState": "PARTIAL_UNOPENABLE",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "bc111f24d913c3ef525581dcf4770419c94f8df80d640ffbeb5b519edf87435a",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "a4fa6b0bd0bc05106045736b3dc8e65ead98e36b5d99c058c7ec6391ffc391e8",
+          "size": 69632
+        },
+        "liveLogical": "49e36574ea264818e1b57e369079649b42ea229a9cf06d054adc7da1cb84b435",
+        "source.json": {
+          "exists": true,
+          "sha256": "1861f762887fcfd4ec9bbe1cc2a0971e74c34fa024639cf82944318f1ce2ddb1",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "bc111f24d913c3ef525581dcf4770419c94f8df80d640ffbeb5b519edf87435a",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "a4fa6b0bd0bc05106045736b3dc8e65ead98e36b5d99c058c7ec6391ffc391e8",
+          "size": 69632
+        },
+        "liveLogical": "49e36574ea264818e1b57e369079649b42ea229a9cf06d054adc7da1cb84b435",
+        "source.json": {
+          "exists": true,
+          "sha256": "1861f762887fcfd4ec9bbe1cc2a0971e74c34fa024639cf82944318f1ce2ddb1",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "backup:clean-success",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "1281520bee43320c12c28e79cad852af38bffcb99b39017f6d8c9f7a70d5417e",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "1281520bee43320c12c28e79cad852af38bffcb99b39017f6d8c9f7a70d5417e",
+            "size": 69632
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "9541bee921893f6642dfb608846f61ff559e673ed7ea86f6c67923d7bda32b27",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "561c27d4834b98ed89f1052484642f69a29b69646bcc8417f1459979459174eb",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "expectation": "success",
+      "faultPoint": null,
+      "finalFile": {
+        "exists": true,
+        "sha256": "1281520bee43320c12c28e79cad852af38bffcb99b39017f6d8c9f7a70d5417e",
+        "size": 69632
+      },
+      "finalRawState": {
+        "count": 12,
+        "ids": [
+          "r00",
+          "r01",
+          "r02",
+          "r03",
+          "r04",
+          "r05",
+          "r06",
+          "r07",
+          "r08",
+          "r09",
+          "r10",
+          "r11"
+        ],
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "USABLE_COMPLETE",
+        "tip": "a01c0527c3889e53726f12a72c89a1aa84ee333036895051bce7168e70af7796"
+      },
+      "operation": "backup",
+      "ownerClassifierState": "UNKNOWN_PREEXISTING_ORIGIN",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnKeys": [
+        "count",
+        "request_ids",
+        "tip"
+      ],
+      "returnedOrRaised": "returned",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "1281520bee43320c12c28e79cad852af38bffcb99b39017f6d8c9f7a70d5417e",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "9541bee921893f6642dfb608846f61ff559e673ed7ea86f6c67923d7bda32b27",
+          "size": 69632
+        },
+        "liveLogical": "c1df26717ff0adc07a855f075b313ac68c43300c8d34c04321fdd77fc603e547",
+        "source.json": {
+          "exists": true,
+          "sha256": "561c27d4834b98ed89f1052484642f69a29b69646bcc8417f1459979459174eb",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "1281520bee43320c12c28e79cad852af38bffcb99b39017f6d8c9f7a70d5417e",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "9541bee921893f6642dfb608846f61ff559e673ed7ea86f6c67923d7bda32b27",
+          "size": 69632
+        },
+        "liveLogical": "c1df26717ff0adc07a855f075b313ac68c43300c8d34c04321fdd77fc603e547",
+        "source.json": {
+          "exists": true,
+          "sha256": "561c27d4834b98ed89f1052484642f69a29b69646bcc8417f1459979459174eb",
+          "size": 3135
+        }
+      },
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "backup:mid-copy",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "78fe4a7df7af8e81d1d788322db25e27be92ed50103a209dda2459861c934eb4",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "78fe4a7df7af8e81d1d788322db25e27be92ed50103a209dda2459861c934eb4",
+            "size": 69632
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "8f22b20ee5667c5331bc2c0f1f8aaf4c20215befbf0c9063d3b480d76aaf8def",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "c45e7be102018c13d3a3f09a801584ce669653fa7b39bf775ba9042a07064e00",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "Injected",
+      "expectation": "clean",
+      "faultPoint": "backup_progress",
+      "finalFile": {
+        "exists": true,
+        "sha256": "78fe4a7df7af8e81d1d788322db25e27be92ed50103a209dda2459861c934eb4",
+        "size": 69632
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "message": "INJECTED_FAULT",
+      "operation": "backup",
+      "ownerClassifierState": "CLEAN_ABSENT",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "78fe4a7df7af8e81d1d788322db25e27be92ed50103a209dda2459861c934eb4",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "8f22b20ee5667c5331bc2c0f1f8aaf4c20215befbf0c9063d3b480d76aaf8def",
+          "size": 69632
+        },
+        "liveLogical": "79f7847a1f325e8eb9a33e81f09ab40b22f4b75f70e80fc56e796ab2c56bb857",
+        "source.json": {
+          "exists": true,
+          "sha256": "c45e7be102018c13d3a3f09a801584ce669653fa7b39bf775ba9042a07064e00",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "78fe4a7df7af8e81d1d788322db25e27be92ed50103a209dda2459861c934eb4",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "8f22b20ee5667c5331bc2c0f1f8aaf4c20215befbf0c9063d3b480d76aaf8def",
+          "size": 69632
+        },
+        "liveLogical": "79f7847a1f325e8eb9a33e81f09ab40b22f4b75f70e80fc56e796ab2c56bb857",
+        "source.json": {
+          "exists": true,
+          "sha256": "c45e7be102018c13d3a3f09a801584ce669653fa7b39bf775ba9042a07064e00",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "backup:after_candidate_close",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "cfcde51b40116c91c66abe40b9d3219310c52627acc83ef90f678519372f78ba",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "cfcde51b40116c91c66abe40b9d3219310c52627acc83ef90f678519372f78ba",
+            "size": 69632
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "0ba8ae74485144c6a8dd56c9c2f0bbf85895ecd990c3c0d348d272e321ef05c7",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "82d591575c5d12c8b89eabb05cee11128e69f1acfd7f5d2f6a5d76e85cdc3e34",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "Injected",
+      "expectation": "clean",
+      "faultPoint": "after_candidate_close",
+      "finalFile": {
+        "exists": true,
+        "sha256": "cfcde51b40116c91c66abe40b9d3219310c52627acc83ef90f678519372f78ba",
+        "size": 69632
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "message": "INJECTED_FAULT",
+      "operation": "backup",
+      "ownerClassifierState": "CLEAN_ABSENT",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "cfcde51b40116c91c66abe40b9d3219310c52627acc83ef90f678519372f78ba",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "0ba8ae74485144c6a8dd56c9c2f0bbf85895ecd990c3c0d348d272e321ef05c7",
+          "size": 69632
+        },
+        "liveLogical": "2aad0102280c2861a4ecd6de4422d66f250f2cfe957783be65e60b988161da94",
+        "source.json": {
+          "exists": true,
+          "sha256": "82d591575c5d12c8b89eabb05cee11128e69f1acfd7f5d2f6a5d76e85cdc3e34",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "cfcde51b40116c91c66abe40b9d3219310c52627acc83ef90f678519372f78ba",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "0ba8ae74485144c6a8dd56c9c2f0bbf85895ecd990c3c0d348d272e321ef05c7",
+          "size": 69632
+        },
+        "liveLogical": "2aad0102280c2861a4ecd6de4422d66f250f2cfe957783be65e60b988161da94",
+        "source.json": {
+          "exists": true,
+          "sha256": "82d591575c5d12c8b89eabb05cee11128e69f1acfd7f5d2f6a5d76e85cdc3e34",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "backup:fault-before-publication",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "d741107eab4990b165e50de50d105205007b2cfd1db925fbfce85bbd52ee3128",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "d741107eab4990b165e50de50d105205007b2cfd1db925fbfce85bbd52ee3128",
+            "size": 69632
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "b6092763163180f97d71eb616d10ac2117feb60c658d23797153d38bbc44a0b8",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "5220d4581b90edf7b713023a6f723bf75356c1dba21ed15a0e9605d4206333ea",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "Injected",
+      "expectation": "clean",
+      "faultPoint": "before_publication",
+      "finalFile": {
+        "exists": true,
+        "sha256": "d741107eab4990b165e50de50d105205007b2cfd1db925fbfce85bbd52ee3128",
+        "size": 69632
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "message": "INJECTED_FAULT",
+      "operation": "backup",
+      "ownerClassifierState": "CLEAN_ABSENT",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "d741107eab4990b165e50de50d105205007b2cfd1db925fbfce85bbd52ee3128",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "b6092763163180f97d71eb616d10ac2117feb60c658d23797153d38bbc44a0b8",
+          "size": 69632
+        },
+        "liveLogical": "2042ee77ca9ac477d50ea565b8eb82a63a1b5daaf1f84b127121d8b795ebcd0c",
+        "source.json": {
+          "exists": true,
+          "sha256": "5220d4581b90edf7b713023a6f723bf75356c1dba21ed15a0e9605d4206333ea",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "d741107eab4990b165e50de50d105205007b2cfd1db925fbfce85bbd52ee3128",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "b6092763163180f97d71eb616d10ac2117feb60c658d23797153d38bbc44a0b8",
+          "size": 69632
+        },
+        "liveLogical": "2042ee77ca9ac477d50ea565b8eb82a63a1b5daaf1f84b127121d8b795ebcd0c",
+        "source.json": {
+          "exists": true,
+          "sha256": "5220d4581b90edf7b713023a6f723bf75356c1dba21ed15a0e9605d4206333ea",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [
+        "PUBLICATION_RACE_CREATOR"
+      ],
+      "case": "backup:competing-creator",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "b75261f94ae4e242f64038ed4f2f731a627df023ab74c3d7e3d552dade5f4eb1",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+            "size": 27
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "a253db6b328bcd239febd5ca896827bbce5a4e518baac2b424a2171d1d0331b1",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "d942264b9631923a888eff0c9185841ee930b51f1c8d7808903670f601414164",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "FileExistsError",
+      "expectation": "competing",
+      "faultPoint": "before_publication",
+      "finalFile": {
+        "exists": true,
+        "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+        "size": 27
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "PARTIAL_UNOPENABLE",
+        "tip": null
+      },
+      "message": "[WinError 183] Cannot create a file when that file already exists: 'D:\\\\UNG DUNG AI\\\\TOOL AI 2026\\\\Controlled-Vibe-Framework-CVF\\\\.cvf\\\\runtime\\\\q001-sqlite-publication-cb085b9b1f\\\\backup-competing-creator-12\\\\final.stage-20204-1233f83d2a93",
+      "operation": "backup",
+      "ownerClassifierState": "PARTIAL_UNOPENABLE",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "b75261f94ae4e242f64038ed4f2f731a627df023ab74c3d7e3d552dade5f4eb1",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "a253db6b328bcd239febd5ca896827bbce5a4e518baac2b424a2171d1d0331b1",
+          "size": 69632
+        },
+        "liveLogical": "22386cd1cafcfc7c30dcd62f494b7ff0050468bc7a1de0a6799399900ba16ace",
+        "source.json": {
+          "exists": true,
+          "sha256": "d942264b9631923a888eff0c9185841ee930b51f1c8d7808903670f601414164",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "b75261f94ae4e242f64038ed4f2f731a627df023ab74c3d7e3d552dade5f4eb1",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "a253db6b328bcd239febd5ca896827bbce5a4e518baac2b424a2171d1d0331b1",
+          "size": 69632
+        },
+        "liveLogical": "22386cd1cafcfc7c30dcd62f494b7ff0050468bc7a1de0a6799399900ba16ace",
+        "source.json": {
+          "exists": true,
+          "sha256": "d942264b9631923a888eff0c9185841ee930b51f1c8d7808903670f601414164",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "restore:clean-success",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "314f71b2aa3bfd6df2ebf4509310203d49bf7d3ab2ee7224696d8321eacdefec",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "a1335104f9312e585696f150a3ce2f5267fb4d76c406e136c496f09de0f9726a",
+            "size": 69632
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "bcf39e5f2c855118f58eec6d28aafe15e91a087adbd972a0d1043f3d38dcb6d3",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "3113b36a4312b66d9344d04633717c220527aaee3d9b937f9dc2c5edb39babe6",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "expectation": "success",
+      "faultPoint": null,
+      "finalFile": {
+        "exists": true,
+        "sha256": "a1335104f9312e585696f150a3ce2f5267fb4d76c406e136c496f09de0f9726a",
+        "size": 69632
+      },
+      "finalRawState": {
+        "count": 12,
+        "ids": [
+          "r00",
+          "r01",
+          "r02",
+          "r03",
+          "r04",
+          "r05",
+          "r06",
+          "r07",
+          "r08",
+          "r09",
+          "r10",
+          "r11"
+        ],
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "USABLE_COMPLETE",
+        "tip": "8b82a38c47dce7976b4e63c863933326ac6051547ad6f8f576e9de52b8c68ed2"
+      },
+      "operation": "restore",
+      "ownerClassifierState": "UNKNOWN_PREEXISTING_ORIGIN",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnKeys": [
+        "count",
+        "request_ids",
+        "tip"
+      ],
+      "returnedOrRaised": "returned",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "314f71b2aa3bfd6df2ebf4509310203d49bf7d3ab2ee7224696d8321eacdefec",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "bcf39e5f2c855118f58eec6d28aafe15e91a087adbd972a0d1043f3d38dcb6d3",
+          "size": 69632
+        },
+        "liveLogical": "9a3fe1c1a3ad97e8ae951aea259bacb57f30295419195e6ceb8b6aceff6b54f2",
+        "source.json": {
+          "exists": true,
+          "sha256": "3113b36a4312b66d9344d04633717c220527aaee3d9b937f9dc2c5edb39babe6",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "314f71b2aa3bfd6df2ebf4509310203d49bf7d3ab2ee7224696d8321eacdefec",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "bcf39e5f2c855118f58eec6d28aafe15e91a087adbd972a0d1043f3d38dcb6d3",
+          "size": 69632
+        },
+        "liveLogical": "9a3fe1c1a3ad97e8ae951aea259bacb57f30295419195e6ceb8b6aceff6b54f2",
+        "source.json": {
+          "exists": true,
+          "sha256": "3113b36a4312b66d9344d04633717c220527aaee3d9b937f9dc2c5edb39babe6",
+          "size": 3135
+        }
+      },
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "restore:mid-copy",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "6c8938cf00c4ec3bad9c1d02b4392fa869ce6e69ec25a2de8a9398aead985de1",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "164ec777632c457f01c492d493951e0ad8910324bafd073cb2d1fde561b2fe24",
+            "size": 69632
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "ce21688d79506964cfe7ae4003d552daaeb608ff2da2edbd8d24968112626132",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "e881cb6813ccd963d82131ee87732ef1558c93f5b37538c25e6c65a32844497e",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "Injected",
+      "expectation": "clean",
+      "faultPoint": "backup_progress",
+      "finalFile": {
+        "exists": true,
+        "sha256": "164ec777632c457f01c492d493951e0ad8910324bafd073cb2d1fde561b2fe24",
+        "size": 69632
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "message": "INJECTED_FAULT",
+      "operation": "restore",
+      "ownerClassifierState": "CLEAN_ABSENT",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "6c8938cf00c4ec3bad9c1d02b4392fa869ce6e69ec25a2de8a9398aead985de1",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "ce21688d79506964cfe7ae4003d552daaeb608ff2da2edbd8d24968112626132",
+          "size": 69632
+        },
+        "liveLogical": "79f537430997f8658876333be76753aff86c092060bf4b121e25cf6c15cf116d",
+        "source.json": {
+          "exists": true,
+          "sha256": "e881cb6813ccd963d82131ee87732ef1558c93f5b37538c25e6c65a32844497e",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "6c8938cf00c4ec3bad9c1d02b4392fa869ce6e69ec25a2de8a9398aead985de1",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "ce21688d79506964cfe7ae4003d552daaeb608ff2da2edbd8d24968112626132",
+          "size": 69632
+        },
+        "liveLogical": "79f537430997f8658876333be76753aff86c092060bf4b121e25cf6c15cf116d",
+        "source.json": {
+          "exists": true,
+          "sha256": "e881cb6813ccd963d82131ee87732ef1558c93f5b37538c25e6c65a32844497e",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "restore:after_candidate_close",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "f57d930946f91e6d18112c3a544e1d392b4c2ef39f9b9b2c10e06b38513f355d",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "7667212ce2163dc54ceee0c7e1a58e9e06c2eba08ffe531c2c622ae60da2184e",
+            "size": 69632
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "9f563c89446169714d8f1cacda6703741e5a97a08daa62d72dbce69e30abade9",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "06af734ba8b99733c1ff6e584685027306f7dd551b3c017510a86a2f3217f567",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "Injected",
+      "expectation": "clean",
+      "faultPoint": "after_candidate_close",
+      "finalFile": {
+        "exists": true,
+        "sha256": "7667212ce2163dc54ceee0c7e1a58e9e06c2eba08ffe531c2c622ae60da2184e",
+        "size": 69632
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "message": "INJECTED_FAULT",
+      "operation": "restore",
+      "ownerClassifierState": "CLEAN_ABSENT",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "f57d930946f91e6d18112c3a544e1d392b4c2ef39f9b9b2c10e06b38513f355d",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "9f563c89446169714d8f1cacda6703741e5a97a08daa62d72dbce69e30abade9",
+          "size": 69632
+        },
+        "liveLogical": "15c47e71b63b6362da020b7758b5fec6b2ef3f684a6b7a7e8b4558cb3065ff72",
+        "source.json": {
+          "exists": true,
+          "sha256": "06af734ba8b99733c1ff6e584685027306f7dd551b3c017510a86a2f3217f567",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "f57d930946f91e6d18112c3a544e1d392b4c2ef39f9b9b2c10e06b38513f355d",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "9f563c89446169714d8f1cacda6703741e5a97a08daa62d72dbce69e30abade9",
+          "size": 69632
+        },
+        "liveLogical": "15c47e71b63b6362da020b7758b5fec6b2ef3f684a6b7a7e8b4558cb3065ff72",
+        "source.json": {
+          "exists": true,
+          "sha256": "06af734ba8b99733c1ff6e584685027306f7dd551b3c017510a86a2f3217f567",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "restore:fault-before-publication",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "323d783895e18cdcbe19d9636547873951e6bde65477e9b616d1117c7e72d501",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "7b7b4722317c0ab65919080de68139494d49405e846196e60430cb9aad5200a1",
+            "size": 69632
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "ccdd408ec69206dea9a7bb03c0678a22a7ba5c08d338c40fda4eebeb2accde5b",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "95921b8d52dfdb470b12f655ddd74f8a508af025bf3360b0019a2bfe3b934ecd",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "Injected",
+      "expectation": "clean",
+      "faultPoint": "before_publication",
+      "finalFile": {
+        "exists": true,
+        "sha256": "7b7b4722317c0ab65919080de68139494d49405e846196e60430cb9aad5200a1",
+        "size": 69632
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "message": "INJECTED_FAULT",
+      "operation": "restore",
+      "ownerClassifierState": "CLEAN_ABSENT",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "323d783895e18cdcbe19d9636547873951e6bde65477e9b616d1117c7e72d501",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "ccdd408ec69206dea9a7bb03c0678a22a7ba5c08d338c40fda4eebeb2accde5b",
+          "size": 69632
+        },
+        "liveLogical": "9cbadfcc5d10c14bd5a0264c06a387eb08ebc094edec2c8624b99fdc6d349aca",
+        "source.json": {
+          "exists": true,
+          "sha256": "95921b8d52dfdb470b12f655ddd74f8a508af025bf3360b0019a2bfe3b934ecd",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "323d783895e18cdcbe19d9636547873951e6bde65477e9b616d1117c7e72d501",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "ccdd408ec69206dea9a7bb03c0678a22a7ba5c08d338c40fda4eebeb2accde5b",
+          "size": 69632
+        },
+        "liveLogical": "9cbadfcc5d10c14bd5a0264c06a387eb08ebc094edec2c8624b99fdc6d349aca",
+        "source.json": {
+          "exists": true,
+          "sha256": "95921b8d52dfdb470b12f655ddd74f8a508af025bf3360b0019a2bfe3b934ecd",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [
+        "PUBLICATION_RACE_CREATOR"
+      ],
+      "case": "restore:competing-creator",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "0e0238f471fba950f9ac13da6cd0b9d3ba2d1b92848d07d205585473cb8436fb",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+            "size": 27
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "5a73b05b1ab28f529011566d65fc501a94c9394709d988073b3cfafefa8865cd",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "06ccd3eba1e15e67870e2c4cc3d730a9039451e84fbbdaef63d9b1cef48cecd4",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "FileExistsError",
+      "expectation": "competing",
+      "faultPoint": "before_publication",
+      "finalFile": {
+        "exists": true,
+        "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+        "size": 27
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "PARTIAL_UNOPENABLE",
+        "tip": null
+      },
+      "message": "[WinError 183] Cannot create a file when that file already exists: 'D:\\\\UNG DUNG AI\\\\TOOL AI 2026\\\\Controlled-Vibe-Framework-CVF\\\\.cvf\\\\runtime\\\\q001-sqlite-publication-cb085b9b1f\\\\restore-competing-creator-17\\\\final.stage-20204-360c86b16b2",
+      "operation": "restore",
+      "ownerClassifierState": "PARTIAL_UNOPENABLE",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "0e0238f471fba950f9ac13da6cd0b9d3ba2d1b92848d07d205585473cb8436fb",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "5a73b05b1ab28f529011566d65fc501a94c9394709d988073b3cfafefa8865cd",
+          "size": 69632
+        },
+        "liveLogical": "1ad76a4af0a49dd7816f3b208901773b52d0b662785611fcdee96cc83ab9008d",
+        "source.json": {
+          "exists": true,
+          "sha256": "06ccd3eba1e15e67870e2c4cc3d730a9039451e84fbbdaef63d9b1cef48cecd4",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "0e0238f471fba950f9ac13da6cd0b9d3ba2d1b92848d07d205585473cb8436fb",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "5a73b05b1ab28f529011566d65fc501a94c9394709d988073b3cfafefa8865cd",
+          "size": 69632
+        },
+        "liveLogical": "1ad76a4af0a49dd7816f3b208901773b52d0b662785611fcdee96cc83ab9008d",
+        "source.json": {
+          "exists": true,
+          "sha256": "06ccd3eba1e15e67870e2c4cc3d730a9039451e84fbbdaef63d9b1cef48cecd4",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "import:clean-success",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "13076b3f48b49073420e4e36edf9f71d7f23e47f70c078613ce2ab2043c3f086",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "a230e7325f75545ff0095552371257990f2d4e6cb91187c8ca1822eccf5df19d",
+            "size": 12288
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "d551d7069fc527bd5e9622858df72a1efbe6eb87f151558c1f3744f913f61992",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "2eed4ae177ed48a0700114fd5bf0bbde4c0e3ed990d3b466ee93a06d3cc5ff74",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "expectation": "success",
+      "faultPoint": null,
+      "finalFile": {
+        "exists": true,
+        "sha256": "a230e7325f75545ff0095552371257990f2d4e6cb91187c8ca1822eccf5df19d",
+        "size": 12288
+      },
+      "finalRawState": {
+        "count": 12,
+        "ids": [
+          "r00",
+          "r01",
+          "r02",
+          "r03",
+          "r04",
+          "r05",
+          "r06",
+          "r07",
+          "r08",
+          "r09",
+          "r10",
+          "r11"
+        ],
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "USABLE_COMPLETE",
+        "tip": "a272f31945f6c331dc9b301e0a864a9173ea592c581ed70580c0e8962f8c2676"
+      },
+      "operation": "import",
+      "ownerClassifierState": "UNKNOWN_PREEXISTING_ORIGIN",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnKeys": [
+        "count",
+        "source_sha256",
+        "tip"
+      ],
+      "returnedOrRaised": "returned",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "13076b3f48b49073420e4e36edf9f71d7f23e47f70c078613ce2ab2043c3f086",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "d551d7069fc527bd5e9622858df72a1efbe6eb87f151558c1f3744f913f61992",
+          "size": 69632
+        },
+        "liveLogical": "c8c9ccfc0e904159a06c874815138418bd0ce3bbdac88071699f107e74f359bc",
+        "source.json": {
+          "exists": true,
+          "sha256": "2eed4ae177ed48a0700114fd5bf0bbde4c0e3ed990d3b466ee93a06d3cc5ff74",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "13076b3f48b49073420e4e36edf9f71d7f23e47f70c078613ce2ab2043c3f086",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "d551d7069fc527bd5e9622858df72a1efbe6eb87f151558c1f3744f913f61992",
+          "size": 69632
+        },
+        "liveLogical": "c8c9ccfc0e904159a06c874815138418bd0ce3bbdac88071699f107e74f359bc",
+        "source.json": {
+          "exists": true,
+          "sha256": "2eed4ae177ed48a0700114fd5bf0bbde4c0e3ed990d3b466ee93a06d3cc5ff74",
+          "size": 3135
+        }
+      },
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "import:preexisting-target",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "0e73d3ad664db68911c1cbc9fb4394b3ba837d983adf99a1ae28dc5912c34130",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+            "size": 27
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "2a16792c4820bdc83bdee109c7d7c712e22830b90c69c0e7d3a1b13ef2442585",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "4460498ee641ab9099cbbc134d7704dd42baaaeff1043ef350eea0cbd5a874ba",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "FileExistsError",
+      "expectation": "preexisting",
+      "faultPoint": null,
+      "finalFile": {
+        "exists": true,
+        "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+        "size": 27
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "PARTIAL_UNOPENABLE",
+        "tip": null
+      },
+      "message": "Migration target must be absent",
+      "operation": "import",
+      "ownerClassifierState": "PARTIAL_UNOPENABLE",
+      "preExistingFinal": {
+        "exists": true,
+        "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+        "size": 27
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "0e73d3ad664db68911c1cbc9fb4394b3ba837d983adf99a1ae28dc5912c34130",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "2a16792c4820bdc83bdee109c7d7c712e22830b90c69c0e7d3a1b13ef2442585",
+          "size": 69632
+        },
+        "liveLogical": "5733dcf02489f259b38510130e153bff9ae3a622bd39fb6bdb6e9d07cae36b5e",
+        "source.json": {
+          "exists": true,
+          "sha256": "4460498ee641ab9099cbbc134d7704dd42baaaeff1043ef350eea0cbd5a874ba",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "0e73d3ad664db68911c1cbc9fb4394b3ba837d983adf99a1ae28dc5912c34130",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "2a16792c4820bdc83bdee109c7d7c712e22830b90c69c0e7d3a1b13ef2442585",
+          "size": 69632
+        },
+        "liveLogical": "5733dcf02489f259b38510130e153bff9ae3a622bd39fb6bdb6e9d07cae36b5e",
+        "source.json": {
+          "exists": true,
+          "sha256": "4460498ee641ab9099cbbc134d7704dd42baaaeff1043ef350eea0cbd5a874ba",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "import:sidecar-only",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "58090ae0a1c088d980793f1e4ae9f08f33b8e8513df1c0e6e923e886db5bf3c4",
+            "size": 69632
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "635ce7b966e777db311f3b6d18a048ec275f82b426f8fdbffd1df80bd3132b8a",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "15aa0ab0e4ff70599749def33d09deb2f0d763cedd95469eca27f37422241c22",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite-wal",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [
+          "final.sqlite-wal"
+        ],
+        "stageResidue": []
+      },
+      "exceptionClass": "FileExistsError",
+      "expectation": "sidecar_only",
+      "faultPoint": null,
+      "finalFile": {
+        "exists": false
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [
+          "-wal"
+        ],
+        "state": "SIDECAR_ONLY",
+        "tip": null
+      },
+      "message": "Migration target must be absent",
+      "operation": "import",
+      "ownerClassifierState": "SIDECAR_ONLY",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "58090ae0a1c088d980793f1e4ae9f08f33b8e8513df1c0e6e923e886db5bf3c4",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "635ce7b966e777db311f3b6d18a048ec275f82b426f8fdbffd1df80bd3132b8a",
+          "size": 69632
+        },
+        "liveLogical": "5c1b32ebe8f97e9eef195fe94542be90973d26e8f14970d9bcf3a613898b10c3",
+        "source.json": {
+          "exists": true,
+          "sha256": "15aa0ab0e4ff70599749def33d09deb2f0d763cedd95469eca27f37422241c22",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "58090ae0a1c088d980793f1e4ae9f08f33b8e8513df1c0e6e923e886db5bf3c4",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "635ce7b966e777db311f3b6d18a048ec275f82b426f8fdbffd1df80bd3132b8a",
+          "size": 69632
+        },
+        "liveLogical": "5c1b32ebe8f97e9eef195fe94542be90973d26e8f14970d9bcf3a613898b10c3",
+        "source.json": {
+          "exists": true,
+          "sha256": "15aa0ab0e4ff70599749def33d09deb2f0d763cedd95469eca27f37422241c22",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "backup:preexisting-target",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "cae6fbc90cd8a5e0d3522909ead601eaa233436a0c775a65fc41faed91678690",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+            "size": 27
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "b3c19cab1a3c8fd0e43608e75ab135576029d259fa6dff999794ca692d332b99",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "61f9b50ce4ed721fe964c58af0ecf894f657bf68d4f9bb237bbd44ad70ea075b",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "FileExistsError",
+      "expectation": "preexisting",
+      "faultPoint": null,
+      "finalFile": {
+        "exists": true,
+        "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+        "size": 27
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "PARTIAL_UNOPENABLE",
+        "tip": null
+      },
+      "message": "Backup target must be absent",
+      "operation": "backup",
+      "ownerClassifierState": "PARTIAL_UNOPENABLE",
+      "preExistingFinal": {
+        "exists": true,
+        "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+        "size": 27
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "cae6fbc90cd8a5e0d3522909ead601eaa233436a0c775a65fc41faed91678690",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "b3c19cab1a3c8fd0e43608e75ab135576029d259fa6dff999794ca692d332b99",
+          "size": 69632
+        },
+        "liveLogical": "980ab5e020c2b6c96144bc7b41f4a4713a68f0b3be5569874b214648089a21a8",
+        "source.json": {
+          "exists": true,
+          "sha256": "61f9b50ce4ed721fe964c58af0ecf894f657bf68d4f9bb237bbd44ad70ea075b",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "cae6fbc90cd8a5e0d3522909ead601eaa233436a0c775a65fc41faed91678690",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "b3c19cab1a3c8fd0e43608e75ab135576029d259fa6dff999794ca692d332b99",
+          "size": 69632
+        },
+        "liveLogical": "980ab5e020c2b6c96144bc7b41f4a4713a68f0b3be5569874b214648089a21a8",
+        "source.json": {
+          "exists": true,
+          "sha256": "61f9b50ce4ed721fe964c58af0ecf894f657bf68d4f9bb237bbd44ad70ea075b",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "backup:sidecar-only",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "f565b7bdb704d9d429d43336dd7b576e572f37609023d6b610580352929b7349",
+            "size": 69632
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "e9d6f4e2e5fe61164bf8276942070adb16e83d5716a7d3e28826d2c2ffee47c5",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "b1f67b0da97ceb270f807277760f8d81ec0037386b17c47c75f910a41cc9986f",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite-wal",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [
+          "final.sqlite-wal"
+        ],
+        "stageResidue": []
+      },
+      "exceptionClass": "FileExistsError",
+      "expectation": "sidecar_only",
+      "faultPoint": null,
+      "finalFile": {
+        "exists": false
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [
+          "-wal"
+        ],
+        "state": "SIDECAR_ONLY",
+        "tip": null
+      },
+      "message": "Backup target must be absent",
+      "operation": "backup",
+      "ownerClassifierState": "SIDECAR_ONLY",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "f565b7bdb704d9d429d43336dd7b576e572f37609023d6b610580352929b7349",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "e9d6f4e2e5fe61164bf8276942070adb16e83d5716a7d3e28826d2c2ffee47c5",
+          "size": 69632
+        },
+        "liveLogical": "56599e626699c863ff7c1b6414268b737b1018bece140169f5ea22bdf3d55e13",
+        "source.json": {
+          "exists": true,
+          "sha256": "b1f67b0da97ceb270f807277760f8d81ec0037386b17c47c75f910a41cc9986f",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "f565b7bdb704d9d429d43336dd7b576e572f37609023d6b610580352929b7349",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "e9d6f4e2e5fe61164bf8276942070adb16e83d5716a7d3e28826d2c2ffee47c5",
+          "size": 69632
+        },
+        "liveLogical": "56599e626699c863ff7c1b6414268b737b1018bece140169f5ea22bdf3d55e13",
+        "source.json": {
+          "exists": true,
+          "sha256": "b1f67b0da97ceb270f807277760f8d81ec0037386b17c47c75f910a41cc9986f",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "restore:preexisting-target",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "0262768ceaf5ddab026df0d5cd75d8c3fdccde6ed674daf74dec20e1ffaa6a37",
+            "size": 69632
+          },
+          "final.sqlite": {
+            "exists": true,
+            "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+            "size": 27
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "07ae63c11380f1cd2befb95cd05f2f5309db31f8791db6fb888d98fbf9afb45b",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "c588ab95ee351498c59bfd008cac9ed4284490c095de2c9e3edaed134a78a9e8",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [],
+        "stageResidue": []
+      },
+      "exceptionClass": "FileExistsError",
+      "expectation": "preexisting",
+      "faultPoint": null,
+      "finalFile": {
+        "exists": true,
+        "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+        "size": 27
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "PARTIAL_UNOPENABLE",
+        "tip": null
+      },
+      "message": "Restore target must be absent",
+      "operation": "restore",
+      "ownerClassifierState": "PARTIAL_UNOPENABLE",
+      "preExistingFinal": {
+        "exists": true,
+        "sha256": "d976bb9bbbe60fe1edcd9c6cbbe9edbd567a5c7133a9c5b68d39c53b9a555c45",
+        "size": 27
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "0262768ceaf5ddab026df0d5cd75d8c3fdccde6ed674daf74dec20e1ffaa6a37",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "07ae63c11380f1cd2befb95cd05f2f5309db31f8791db6fb888d98fbf9afb45b",
+          "size": 69632
+        },
+        "liveLogical": "93f94b5c20183c1092a49679dd4005847013a8cf2c864636a57f8eedb38825ba",
+        "source.json": {
+          "exists": true,
+          "sha256": "c588ab95ee351498c59bfd008cac9ed4284490c095de2c9e3edaed134a78a9e8",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "0262768ceaf5ddab026df0d5cd75d8c3fdccde6ed674daf74dec20e1ffaa6a37",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "07ae63c11380f1cd2befb95cd05f2f5309db31f8791db6fb888d98fbf9afb45b",
+          "size": 69632
+        },
+        "liveLogical": "93f94b5c20183c1092a49679dd4005847013a8cf2c864636a57f8eedb38825ba",
+        "source.json": {
+          "exists": true,
+          "sha256": "c588ab95ee351498c59bfd008cac9ed4284490c095de2c9e3edaed134a78a9e8",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [],
+      "case": "restore:sidecar-only",
+      "directory": {
+        "files": {
+          "backup.sqlite": {
+            "exists": true,
+            "sha256": "ef27e4bb5f378dd70c6417dc649b100e054885e6cc0ed296d7848a3fde4388f4",
+            "size": 69632
+          },
+          "live.sqlite": {
+            "exists": true,
+            "sha256": "f2f010f444dd10c6970b938fb06e2b3d7e7a648fbf7821e948c135028a5dfae0",
+            "size": 69632
+          },
+          "source.json": {
+            "exists": true,
+            "sha256": "c488d3a21949a63366588884f6852809393307ef6aeb1eeb7d20e52b005b9ed4",
+            "size": 3135
+          }
+        },
+        "names": [
+          "backup.sqlite",
+          "final.sqlite-wal",
+          "live.sqlite",
+          "source.json"
+        ],
+        "sidecars": [
+          "final.sqlite-wal"
+        ],
+        "stageResidue": []
+      },
+      "exceptionClass": "FileExistsError",
+      "expectation": "sidecar_only",
+      "faultPoint": null,
+      "finalFile": {
+        "exists": false
+      },
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [
+          "-wal"
+        ],
+        "state": "SIDECAR_ONLY",
+        "tip": null
+      },
+      "message": "Restore target must be absent",
+      "operation": "restore",
+      "ownerClassifierState": "SIDECAR_ONLY",
+      "preExistingFinal": {
+        "exists": false
+      },
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceAndInputAfter": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "ef27e4bb5f378dd70c6417dc649b100e054885e6cc0ed296d7848a3fde4388f4",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "f2f010f444dd10c6970b938fb06e2b3d7e7a648fbf7821e948c135028a5dfae0",
+          "size": 69632
+        },
+        "liveLogical": "c3c8891aa63860e229ebd7c667a949bdc1dc1b4543bba59bb0e700798a94cabc",
+        "source.json": {
+          "exists": true,
+          "sha256": "c488d3a21949a63366588884f6852809393307ef6aeb1eeb7d20e52b005b9ed4",
+          "size": 3135
+        }
+      },
+      "sourceAndInputBefore": {
+        "backup.sqlite": {
+          "exists": true,
+          "sha256": "ef27e4bb5f378dd70c6417dc649b100e054885e6cc0ed296d7848a3fde4388f4",
+          "size": 69632
+        },
+        "live.sqlite": {
+          "exists": true,
+          "sha256": "f2f010f444dd10c6970b938fb06e2b3d7e7a648fbf7821e948c135028a5dfae0",
+          "size": 69632
+        },
+        "liveLogical": "c3c8891aa63860e229ebd7c667a949bdc1dc1b4543bba59bb0e700798a94cabc",
+        "source.json": {
+          "exists": true,
+          "sha256": "c488d3a21949a63366588884f6852809393307ef6aeb1eeb7d20e52b005b9ed4",
+          "size": 3135
+        }
+      },
+      "stageResidueAttr": null,
+      "verdict": "PASS"
+    },
+    {
+      "ambiguousOutcome": false,
+      "barrierEvents": [
+        "BARRIER:before_publication"
+      ],
+      "case": "import:kill@before_publication",
+      "classification": "CLEAN_ABSENT_NO_TARGET",
+      "faultPoint": "before_publication",
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "killExitCode": 9,
+      "operation": "import",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceUnchanged": true,
+      "stageResidueAfterKill": 1,
+      "verdict": "PASS"
+    },
+    {
+      "ambiguousOutcome": true,
+      "barrierEvents": [
+        "BARRIER:after_publication"
+      ],
+      "case": "import:kill@after_publication",
+      "classification": "AMBIGUOUS_COMPLETE_TARGET_NO_AUTOMATIC_RETRY",
+      "faultPoint": "after_publication",
+      "finalRawState": {
+        "count": 12,
+        "ids": [
+          "r00",
+          "r01",
+          "r02",
+          "r03",
+          "r04",
+          "r05",
+          "r06",
+          "r07",
+          "r08",
+          "r09",
+          "r10",
+          "r11"
+        ],
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "USABLE_COMPLETE",
+        "tip": "9487144bf2f69956df55eb749184539d112dc20e6168f0fa8962d44565c8c7ad"
+      },
+      "killExitCode": 9,
+      "operation": "import",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceUnchanged": true,
+      "stageResidueAfterKill": 1,
+      "verdict": "PASS"
+    },
+    {
+      "ambiguousOutcome": false,
+      "barrierEvents": [
+        "BARRIER:before_publication"
+      ],
+      "case": "backup:kill@before_publication",
+      "classification": "CLEAN_ABSENT_NO_TARGET",
+      "faultPoint": "before_publication",
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "killExitCode": 9,
+      "operation": "backup",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceUnchanged": true,
+      "stageResidueAfterKill": 1,
+      "verdict": "PASS"
+    },
+    {
+      "ambiguousOutcome": true,
+      "barrierEvents": [
+        "BARRIER:after_publication"
+      ],
+      "case": "backup:kill@after_publication",
+      "classification": "AMBIGUOUS_COMPLETE_TARGET_NO_AUTOMATIC_RETRY",
+      "faultPoint": "after_publication",
+      "finalRawState": {
+        "count": 12,
+        "ids": [
+          "r00",
+          "r01",
+          "r02",
+          "r03",
+          "r04",
+          "r05",
+          "r06",
+          "r07",
+          "r08",
+          "r09",
+          "r10",
+          "r11"
+        ],
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "USABLE_COMPLETE",
+        "tip": "0988a83e328c9747e3b982e04307e9e7a42c0314fa166b5107725234636665e7"
+      },
+      "killExitCode": 9,
+      "operation": "backup",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceUnchanged": true,
+      "stageResidueAfterKill": 1,
+      "verdict": "PASS"
+    },
+    {
+      "ambiguousOutcome": false,
+      "barrierEvents": [
+        "BARRIER:before_publication"
+      ],
+      "case": "restore:kill@before_publication",
+      "classification": "CLEAN_ABSENT_NO_TARGET",
+      "faultPoint": "before_publication",
+      "finalRawState": {
+        "count": null,
+        "ids": null,
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "CLEAN_ABSENT",
+        "tip": null
+      },
+      "killExitCode": 9,
+      "operation": "restore",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "note": "observation only; not retry permission",
+        "observation": "returned"
+      },
+      "sourceUnchanged": true,
+      "stageResidueAfterKill": 1,
+      "verdict": "PASS"
+    },
+    {
+      "ambiguousOutcome": true,
+      "barrierEvents": [
+        "BARRIER:after_publication"
+      ],
+      "case": "restore:kill@after_publication",
+      "classification": "AMBIGUOUS_COMPLETE_TARGET_NO_AUTOMATIC_RETRY",
+      "faultPoint": "after_publication",
+      "finalRawState": {
+        "count": 12,
+        "ids": [
+          "r00",
+          "r01",
+          "r02",
+          "r03",
+          "r04",
+          "r05",
+          "r06",
+          "r07",
+          "r08",
+          "r09",
+          "r10",
+          "r11"
+        ],
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "USABLE_COMPLETE",
+        "tip": "0fc10cf859c445bf55c1deeb5bf3c0bd8c5083bea2118cf3f0dc17bad0061cf6"
+      },
+      "killExitCode": 9,
+      "operation": "restore",
+      "safeToRetry": false,
+      "sameSourceRetryObservation": {
+        "exceptionClass": "FileExistsError",
+        "note": "observation only; not retry permission",
+        "observation": "raised"
+      },
+      "sourceUnchanged": true,
+      "stageResidueAfterKill": 1,
+      "verdict": "PASS"
+    },
+    {
+      "case": "import:reject-db",
+      "exceptionClass": "ValueError",
+      "expectation": "rejected_before_stage",
+      "inputsUnchanged": true,
+      "message": "SQLite ledger requires an explicit .sqlite path",
+      "newNamesAfter": [],
+      "operation": "import",
+      "publicationReached": false,
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "targetExists": false,
+      "verdict": "PASS"
+    },
+    {
+      "case": "import:reject-noext",
+      "exceptionClass": "ValueError",
+      "expectation": "rejected_before_stage",
+      "inputsUnchanged": true,
+      "message": "SQLite ledger requires an explicit .sqlite path",
+      "newNamesAfter": [],
+      "operation": "import",
+      "publicationReached": false,
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "targetExists": false,
+      "verdict": "PASS"
+    },
+    {
+      "case": "import:reject-sqlite3",
+      "exceptionClass": "ValueError",
+      "expectation": "rejected_before_stage",
+      "inputsUnchanged": true,
+      "message": "SQLite ledger requires an explicit .sqlite path",
+      "newNamesAfter": [],
+      "operation": "import",
+      "publicationReached": false,
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "targetExists": false,
+      "verdict": "PASS"
+    },
+    {
+      "case": "backup:reject-db",
+      "exceptionClass": "ValueError",
+      "expectation": "rejected_before_stage",
+      "inputsUnchanged": true,
+      "message": "SQLite ledger requires an explicit .sqlite path",
+      "newNamesAfter": [],
+      "operation": "backup",
+      "publicationReached": false,
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "targetExists": false,
+      "verdict": "PASS"
+    },
+    {
+      "case": "backup:reject-noext",
+      "exceptionClass": "ValueError",
+      "expectation": "rejected_before_stage",
+      "inputsUnchanged": true,
+      "message": "SQLite ledger requires an explicit .sqlite path",
+      "newNamesAfter": [],
+      "operation": "backup",
+      "publicationReached": false,
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "targetExists": false,
+      "verdict": "PASS"
+    },
+    {
+      "case": "backup:reject-sqlite3",
+      "exceptionClass": "ValueError",
+      "expectation": "rejected_before_stage",
+      "inputsUnchanged": true,
+      "message": "SQLite ledger requires an explicit .sqlite path",
+      "newNamesAfter": [],
+      "operation": "backup",
+      "publicationReached": false,
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "targetExists": false,
+      "verdict": "PASS"
+    },
+    {
+      "case": "restore:reject-db",
+      "exceptionClass": "ValueError",
+      "expectation": "rejected_before_stage",
+      "inputsUnchanged": true,
+      "message": "SQLite ledger requires an explicit .sqlite path",
+      "newNamesAfter": [],
+      "operation": "restore",
+      "publicationReached": false,
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "targetExists": false,
+      "verdict": "PASS"
+    },
+    {
+      "case": "restore:reject-noext",
+      "exceptionClass": "ValueError",
+      "expectation": "rejected_before_stage",
+      "inputsUnchanged": true,
+      "message": "SQLite ledger requires an explicit .sqlite path",
+      "newNamesAfter": [],
+      "operation": "restore",
+      "publicationReached": false,
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "targetExists": false,
+      "verdict": "PASS"
+    },
+    {
+      "case": "restore:reject-sqlite3",
+      "exceptionClass": "ValueError",
+      "expectation": "rejected_before_stage",
+      "inputsUnchanged": true,
+      "message": "SQLite ledger requires an explicit .sqlite path",
+      "newNamesAfter": [],
+      "operation": "restore",
+      "publicationReached": false,
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "targetExists": false,
+      "verdict": "PASS"
+    },
+    {
+      "case": "import:reject-empty",
+      "exceptionClass": "ValueError",
+      "expectation": "rejected_before_stage",
+      "inputsUnchanged": true,
+      "message": "Migration source chain is empty",
+      "newNamesAfter": [],
+      "operation": "import",
+      "publicationReached": false,
+      "returnedOrRaised": "raised",
+      "safeToRetry": false,
+      "targetExists": false,
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [
+        "PUBLISHED"
+      ],
+      "case": "backup:postpublication-validator-fault",
+      "count": 12,
+      "expectation": "complete_not_reported_failed",
+      "finalRawState": {
+        "count": 12,
+        "ids": [
+          "r00",
+          "r01",
+          "r02",
+          "r03",
+          "r04",
+          "r05",
+          "r06",
+          "r07",
+          "r08",
+          "r09",
+          "r10",
+          "r11"
+        ],
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "USABLE_COMPLETE",
+        "tip": "4f79afb391750e9746e356fa96f19c7f2f877a26bc34eb3d173e256f17975244"
+      },
+      "inputsUnchanged": true,
+      "operation": "backup",
+      "returnKeys": [
+        "count",
+        "request_ids",
+        "tip"
+      ],
+      "returnedOrRaised": "returned",
+      "safeToRetry": false,
+      "stageResidue": [],
+      "verdict": "PASS"
+    },
+    {
+      "barrierEvents": [
+        "PUBLISHED"
+      ],
+      "case": "restore:postpublication-validator-fault",
+      "count": 12,
+      "expectation": "complete_not_reported_failed",
+      "finalRawState": {
+        "count": 12,
+        "ids": [
+          "r00",
+          "r01",
+          "r02",
+          "r03",
+          "r04",
+          "r05",
+          "r06",
+          "r07",
+          "r08",
+          "r09",
+          "r10",
+          "r11"
+        ],
+        "safeToRetry": false,
+        "sidecars": [],
+        "state": "USABLE_COMPLETE",
+        "tip": "709126eec9e322dbfc5a1557a654ebabb0d38111087bcb550f03430add75b7c7"
+      },
+      "inputsUnchanged": true,
+      "operation": "restore",
+      "returnKeys": [
+        "count",
+        "request_ids",
+        "tip"
+      ],
+      "returnedOrRaised": "returned",
+      "safeToRetry": false,
+      "stageResidue": [],
+      "verdict": "PASS"
+    }
+  ],
+  "claimBoundary": "synthetic single-host Windows observation; no power-loss, multi-host, retention, RPO/RTO or real-ledger claim",
+  "cleanup": {
+    "outcome": "REMOVED_EXACT_ROOT"
+  },
+  "durationSeconds": 6.1,
+  "executionBaseHead": "2fd89beefd15ccbb93fd480521ee5e3b2b2f231d",
+  "failedCases": [],
+  "filesystemNoClobberObservation": {
+    "competitorSurvived": true,
+    "platform": "win32",
+    "primitive": "os.link(candidate, target) then unlink(candidate)",
+    "raised": "FileExistsError",
+    "sidecarRaceBoundary": "UNPROVEN: sidecar creation outside cooperative access is not covered by target-file no-clobber"
+  },
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "markers": [
+    "VERIFIED_BEFORE_PUBLICATION",
+    "PREEXISTING_TARGET_UNCHANGED_AFTER_RAISE",
+    "NO_AUTOMATIC_RETRY",
+    "SUBSEQUENT_PEER_ACQUIRES"
+  ],
+  "mutants": {
+    "earlyPeerEntryMutant": "see peer.earlyEntryMutantVerdict",
+    "oracleControl": {
+      "positive": "USABLE_COMPLETE",
+      "shortExpected": "PARTIAL_OPENABLE_INCOMPLETE",
+      "verdict": "PASS"
+    },
+    "overwriteCapableMutant": {
+      "competitorOverwritten": true,
+      "oracleVerdict": "REJECTED"
+    },
+    "partialFinalMutant": {
+      "finalState": "PARTIAL_UNOPENABLE",
+      "oracleVerdict": "REJECTED"
+    },
+    "shortChainMutant": {
+      "finalState": "CLEAN_ABSENT",
+      "ownerRefusedToPublish": true
+    },
+    "verdict": "PASS"
+  },
+  "notInducible": [],
+  "overallVerdict": "PASS",
+  "ownerSha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+  "peer": {
+    "earlyEntryMutantVerdict": "REJECT_ENTRY_BEFORE_PARENT_RELEASE",
+    "events": [
+      "READY",
+      "START_ATTEMPT",
+      "ATTEMPTING",
+      "PARENT_RELEASE",
+      "ENTERED",
+      "COMPLETE"
+    ],
+    "idsAfterFault": [
+      "one",
+      "two"
+    ],
+    "idsAfterSubsequentPeer": [
+      "one",
+      "two",
+      "three"
+    ],
+    "idsBeforeFault": [
+      "one",
+      "two"
+    ],
+    "markers": [
+      "SUBSEQUENT_PEER_ACQUIRES"
+    ],
+    "orderVerdict": "ORDER_OK",
+    "postAcquireFaultRaised": true,
+    "realSecondProcess": true,
+    "subsequentPeerEvents": [
+      "READY",
+      "ATTEMPTING",
+      "ENTERED",
+      "COMPLETE"
+    ],
+    "subsequentPeerExit": 0,
+    "verdict": "PASS"
+  },
+  "privateDataAccessed": "NONE",
+  "probeSha256": "5c84256354dc9a191d38ad7a1c54df6c5b0d1a4d55ee0e89284e7ab10c7d6c45",
+  "providerCallCount": 0,
+  "schemaVersion": "cvf.ncr.q001.sqliteTargetPublication.workerObservation@1",
+  "syntheticParameters": {
+    "backupCopyPagesPerStep": 8,
+    "backupPadBytesPerEvent": 4000,
+    "importChainLength": 12,
+    "midInsertOrdinal": 7,
+    "publication": "hard-link no-clobber"
+  }
+}

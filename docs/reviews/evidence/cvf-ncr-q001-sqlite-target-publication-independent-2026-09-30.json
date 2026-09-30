@@ -1,0 +1,85 @@
+{
+  "cases": [
+    {
+      "case": "import_prepublication_fault",
+      "finalExists": false,
+      "inputsUnchanged": true,
+      "stageResidue": [],
+      "verdict": "PASS"
+    },
+    {
+      "case": "backup_postcopy_fault",
+      "finalExists": false,
+      "inputsUnchanged": true,
+      "stageResidue": [],
+      "verdict": "PASS"
+    },
+    {
+      "case": "competing_creator",
+      "competitorSha256": "a051992eda4ef17dc733a877a03f9236af622132bdf2cd403d6593384581b237",
+      "stageResidue": [],
+      "unchanged": true,
+      "verdict": "PASS"
+    },
+    {
+      "case": "backup_postpublication_validator_fault",
+      "inputsUnchanged": true,
+      "rawTarget": {
+        "count": 3,
+        "fileSha256": "bdca2b3544b76f848ac6d575aab12c51121d244e8dacf4d7dfaa6b82f7c5389a",
+        "ids": [
+          "r0",
+          "r1",
+          "r2"
+        ],
+        "tip": "34db2f2ed5f9858672062f23ddc691060fc9478434ebbfeecfba8b5c332eacba"
+      },
+      "resultCount": 3,
+      "returned": true,
+      "stageResidue": [],
+      "verdict": "PASS"
+    },
+    {
+      "case": "restore_postpublication_validator_fault",
+      "inputsUnchanged": true,
+      "rawTarget": {
+        "count": 3,
+        "fileSha256": "fefd647365ead208cf5ca1aac1f70138ef88b828eff419608110c6b8fdd77760",
+        "ids": [
+          "r0",
+          "r1",
+          "r2"
+        ],
+        "tip": "be54e4f27715d30f61691567f45dcb2343b128c41024c4b4d799ef3fb91ec8ad"
+      },
+      "resultCount": 3,
+      "returned": true,
+      "stageResidue": [],
+      "verdict": "PASS"
+    },
+    {
+      "case": "positive_raw_sql_hash",
+      "rawTarget": {
+        "count": 3,
+        "fileSha256": "3c4bfd832104a66e9ec5177ba843411b1d79d1943cb1deefdb1d53c8482678ae",
+        "ids": [
+          "r0",
+          "r1",
+          "r2"
+        ],
+        "tip": "4f5a62c665ed2feec04a4e7f527c452c8bde773194d5206c76dd789ec01c2671"
+      },
+      "verdict": "PASS"
+    }
+  ],
+  "claimBoundary": "synthetic single-host only; no real-ledger cutover, retry permission, durability, retention, RPO/RTO or Q001/R0 exit",
+  "disposableRootCleanup": "REMOVED_EXACT_ROOT",
+  "oracle": "separate process, fresh synthetic root, direct sqlite3 read-only rows and hashlib; worker probe helpers not imported",
+  "ownerSha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+  "privateDataAccessed": "NONE",
+  "providerCallCount": 0,
+  "role": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "schemaVersion": "cvf.ncr.q001.sqliteTargetPublication.independentReview@1",
+  "verdict": "PASS",
+  "workerEvidenceSha256": "d2bfc461afd028e615d8baf38ac6781a71761bedc913ab13887aeef98f036905"
+}
