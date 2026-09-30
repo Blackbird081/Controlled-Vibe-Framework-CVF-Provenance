@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2C_SYNTHETIC_BROWSER_DOWNLOAD_2026-09-30.md",
-    "baselineSha256": "d3fcca8cb84d92eb8211650eea041ca9422ed98b461e69e35c7e880881eef3af",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2C_SYNTHETIC_BROWSER_DOWNLOAD_2026-09-30.md",
-    "workOrderSha256": "c6d38a4602ac38d58bb4f78ba39d3544f15cfa150aa4933909d98212c957a093"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2D_SYNTHETIC_ROUTE_BROWSER_2026-09-30.md",
+    "baselineSha256": "6bc568abfc4e4db92a5437d4b2f0e5325687724ccd5bfb813d1ccd73ae90fb12",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2D_SYNTHETIC_ROUTE_BROWSER_2026-09-30.md",
+    "workOrderSha256": "0ed6d7d643d327b01342c3dd12b863eed8868cc02680cbc6e55994d834347712"
   },
-  "currentAuthoritySyncReason": "B2c was Local-accepted bounded at f8f1cc7e8. B2d read-only route/browser audit was committed at e1cb0bdb4 under D046; it found the optional NEXTAUTH_URL-dependent server receipt hop. This continuity permits packet authoring only, with fail-closed no-hop design; browser/route execution, production edits, real data, durable acceptance and pilot effect remain parked under Q001/Q004.",
+  "currentAuthoritySyncReason": "B2d no-hop route/browser packet committed at 5b8f5713a after Local source audit e1cb0bdb4 and pre-dispatch author gate. Five test/evidence-only worker paths may execute after bound gates; fail closed before export if isolation is unproved. Q001/Q004 and real-data/effect decisions remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
