@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B2D_SYNTHETIC_ROUTE_BROWSER; BATCH_ID=CVF-NCR-HTML-B2D-SYNTHETIC-ROUTE-BROWSER; MATERIAL_COMMIT=5b8f5713a; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2D_SYNTHETIC_ROUTE_BROWSER_2026-09-30.md; EXPANSION_ALLOWED=false. Internal worker may implement only five test/evidence paths after bound pre-dispatch and pre-implementation gates; no-hop preflight must pass before export route call. No production edit, provider, real data or acceptance effect. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUDIT_HTML_B2E_CONFIGURED_RECEIPT_BOUNDARY_READ_ONLY; BATCH_ID=CVF-NCR-HTML-B2E-CONFIGURED-RECEIPT-AUDIT; MATERIAL_COMMIT=7ad6994bc; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B2D_SYNTHETIC_ROUTE_BROWSER_COMPLETION_2026-09-30.md; EXPANSION_ALLOWED=false. Local may inspect the configured receipt-hop source/test boundary and propose a separate safe proof packet. No configured hop execution, provider call, production edit, real data, store write or artifact acceptance. Q001/Q004 Profile A OPEN; operator retains actor/store/recovery/cost/pilot decisions. Profile B/C, durable B2, P11, public sync and deployment parked. LHW24 closed.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

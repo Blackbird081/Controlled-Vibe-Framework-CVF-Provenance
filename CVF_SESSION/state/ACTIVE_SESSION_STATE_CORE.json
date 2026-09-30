@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2D_SYNTHETIC_ROUTE_BROWSER_2026-09-30.md",
     "workOrderSha256": "0ed6d7d643d327b01342c3dd12b863eed8868cc02680cbc6e55994d834347712"
   },
-  "currentAuthoritySyncReason": "B2d no-hop route/browser packet committed at 5b8f5713a after Local source audit e1cb0bdb4 and pre-dispatch author gate. Five test/evidence-only worker paths may execute after bound gates; fail closed before export if isolation is unproved. Q001/Q004 and real-data/effect decisions remain open.",
+  "currentAuthoritySyncReason": "B2d five-path no-hop synthetic route/browser proof was Local-accepted bounded at 7ad6994bc after GC-051 and handoff-marker repair. Next move is read-only audit of the configured receipt-hop boundary only; Q001/Q004 real-data/store/effect decisions remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
