@@ -1,0 +1,1748 @@
+{
+  "schemaVersion": "cvf.ncr.q001.sqliteMigrationRecoveryRehearsal.workerObservation@1",
+  "executionBaseHead": "4a068326c",
+  "probeSha256": "1c1faf8d138be5b288b7fc2063d56f06c683974c841468aa9170f00f27690ed1",
+  "parameters": {
+    "N": 12,
+    "midInsertAfter": 6,
+    "killTrials": 5,
+    "largeChainBlocks": 3000
+  },
+  "oracleSelfCheck": {
+    "controls": {
+      "absent": {
+        "declared": "CLEAN_ABSENT",
+        "observed": "CLEAN_ABSENT",
+        "ok": true
+      },
+      "sidecarOnly": {
+        "declared": "SIDECAR_ONLY",
+        "observed": "SIDECAR_ONLY",
+        "ok": true
+      },
+      "completeValid": {
+        "declared": "USABLE_COMPLETE",
+        "observed": "USABLE_COMPLETE",
+        "ok": true
+      },
+      "emptySchemaValid": {
+        "declared": "PARTIAL_OPENABLE_INCOMPLETE",
+        "observed": "PARTIAL_OPENABLE_INCOMPLETE",
+        "ok": true
+      },
+      "tamperedHash": {
+        "declared": "PARTIAL_OPENABLE_INCOMPLETE",
+        "observed": "PARTIAL_OPENABLE_INCOMPLETE",
+        "ok": true
+      },
+      "garbageFile": {
+        "declared": "PARTIAL_UNOPENABLE",
+        "observed": "PARTIAL_UNOPENABLE",
+        "ok": true
+      },
+      "zeroByteFile": {
+        "declared": "PARTIAL_UNOPENABLE",
+        "observed": "PARTIAL_UNOPENABLE",
+        "ok": true
+      }
+    },
+    "mutants": {
+      "leavesPartialTarget": {
+        "tag": "PARTIAL_TARGET_FINDING",
+        "state": "PARTIAL_OPENABLE_INCOMPLETE",
+        "naiveExceptionOnlyOracleAccepts": true,
+        "rejected": true
+      },
+      "successWithShortChain": {
+        "tag": "SUCCESS_WRONG_STATE_FINDING",
+        "state": "PARTIAL_OPENABLE_INCOMPLETE",
+        "naiveExceptionOnlyOracleAccepts": true,
+        "rejected": true
+      },
+      "sourceLogicalDigestAltered": {
+        "tag": "SUCCESS_CORRECT_STATE",
+        "flags": [
+          "INPUT_CHANGED_FINDING"
+        ],
+        "rejected": true
+      }
+    },
+    "allRejectedAndClassified": true
+  },
+  "scenarios": [
+    {
+      "scenarioId": "RH-POS-01",
+      "subCase": "import",
+      "faultPoint": "none",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RETURNED",
+        "exceptionClass": null
+      },
+      "targetState": {
+        "state": "USABLE_COMPLETE",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 12
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "97fe6af94cbe3eb1447565b2b96d7da75f894948ec322a3a2c7361455ccad0b4",
+            "logical": "97fe6af94cbe3eb1447565b2b96d7da75f894948ec322a3a2c7361455ccad0b4",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "97fe6af94cbe3eb1447565b2b96d7da75f894948ec322a3a2c7361455ccad0b4",
+            "logical": "97fe6af94cbe3eb1447565b2b96d7da75f894948ec322a3a2c7361455ccad0b4",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "SUCCESS_CORRECT_STATE",
+      "flags": []
+    },
+    {
+      "scenarioId": "RH-POS-01",
+      "subCase": "backup",
+      "faultPoint": "none",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RETURNED",
+        "exceptionClass": null
+      },
+      "targetState": {
+        "state": "USABLE_COMPLETE",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 12
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "2e1cb9d8d6a6b87d52d08718ec3b9c7d0e803d661a3f2da45aa559e49f48ce68",
+            "logical": "c718eca20d9a50b054f9d8ff6fc4525be29056226eb4fb7ff30aed936b56cc26",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "2e1cb9d8d6a6b87d52d08718ec3b9c7d0e803d661a3f2da45aa559e49f48ce68",
+            "logical": "c718eca20d9a50b054f9d8ff6fc4525be29056226eb4fb7ff30aed936b56cc26",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "SUCCESS_CORRECT_STATE",
+      "flags": []
+    },
+    {
+      "scenarioId": "RH-POS-01",
+      "subCase": "restore",
+      "faultPoint": "none",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RETURNED",
+        "exceptionClass": null
+      },
+      "targetState": {
+        "state": "USABLE_COMPLETE",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 12
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "b8c58d5997e909106b811e7cd7a2980b79615cc2ea014b531c1baed0b907d3e3",
+            "logical": "c718eca20d9a50b054f9d8ff6fc4525be29056226eb4fb7ff30aed936b56cc26",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "b8c58d5997e909106b811e7cd7a2980b79615cc2ea014b531c1baed0b907d3e3",
+            "logical": "c718eca20d9a50b054f9d8ff6fc4525be29056226eb4fb7ff30aed936b56cc26",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "SUCCESS_CORRECT_STATE",
+      "flags": []
+    },
+    {
+      "scenarioId": "RH-POS-01",
+      "subCase": "chainEquality",
+      "literal": "ROUNDTRIP_CHAIN_EQUAL",
+      "ok": true,
+      "blocks": 12,
+      "tip": "eaa8d5513d6a2df7d6a42e0ed1699da2549194241b3599a347b1aceb0ea51e0b",
+      "logicalDigest": "c718eca20d9a50b054f9d8ff6fc4525be29056226eb4fb7ff30aed936b56cc26",
+      "tag": "ROUNDTRIP_CHAIN_EQUAL"
+    },
+    {
+      "scenarioId": "RH-IMP-F1",
+      "subCase": "hashCorruptSource",
+      "faultPoint": "before target creation (natural rejection)",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "ValueError",
+        "exceptionMessage": "Ledger block hash mismatch"
+      },
+      "targetState": {
+        "state": "CLEAN_ABSENT",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "cd9b92bfb2f52c19b52b4a1c1a94237a203d06146ea95110b3b05aefc0e6f2ee",
+            "logical": "cd9b92bfb2f52c19b52b4a1c1a94237a203d06146ea95110b3b05aefc0e6f2ee",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "cd9b92bfb2f52c19b52b4a1c1a94237a203d06146ea95110b3b05aefc0e6f2ee",
+            "logical": "cd9b92bfb2f52c19b52b4a1c1a94237a203d06146ea95110b3b05aefc0e6f2ee",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "CLEAN_ABSENT_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "ValueError",
+        "exceptionMessage": "Ledger block hash mismatch",
+        "targetStateAfterRetry": {
+          "state": "CLEAN_ABSENT",
+          "sidecars": [],
+          "reason": "",
+          "blocks": 0
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-IMP-F1",
+      "subCase": "duplicateRequestId",
+      "faultPoint": "before target creation (natural rejection)",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "ValueError",
+        "exceptionMessage": "Duplicate request_id in ledger chain"
+      },
+      "targetState": {
+        "state": "CLEAN_ABSENT",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "8c49d21930d82597eb671211cc9c1b3da5cc818a1b933c6d3edfa57b1b7adda2",
+            "logical": "8c49d21930d82597eb671211cc9c1b3da5cc818a1b933c6d3edfa57b1b7adda2",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "8c49d21930d82597eb671211cc9c1b3da5cc818a1b933c6d3edfa57b1b7adda2",
+            "logical": "8c49d21930d82597eb671211cc9c1b3da5cc818a1b933c6d3edfa57b1b7adda2",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "CLEAN_ABSENT_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "ValueError",
+        "exceptionMessage": "Duplicate request_id in ledger chain",
+        "targetStateAfterRetry": {
+          "state": "CLEAN_ABSENT",
+          "sidecars": [],
+          "reason": "",
+          "blocks": 0
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-IMP-F1",
+      "subCase": "brokenPredecessor",
+      "faultPoint": "before target creation (natural rejection)",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "ValueError",
+        "exceptionMessage": "Ledger predecessor mismatch"
+      },
+      "targetState": {
+        "state": "CLEAN_ABSENT",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "125c4ab8d08482e8655f9131ee5827821630212482736708f4674727ca2cc6cb",
+            "logical": "125c4ab8d08482e8655f9131ee5827821630212482736708f4674727ca2cc6cb",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "125c4ab8d08482e8655f9131ee5827821630212482736708f4674727ca2cc6cb",
+            "logical": "125c4ab8d08482e8655f9131ee5827821630212482736708f4674727ca2cc6cb",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "CLEAN_ABSENT_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "ValueError",
+        "exceptionMessage": "Ledger predecessor mismatch",
+        "targetStateAfterRetry": {
+          "state": "CLEAN_ABSENT",
+          "sidecars": [],
+          "reason": "",
+          "blocks": 0
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-IMP-F1",
+      "subCase": "injectedSourceReadException",
+      "faultPoint": "before target creation",
+      "injection": {
+        "mechanism": "read/raise"
+      },
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "OSError",
+        "exceptionMessage": "INJECTED_SOURCE_READ_FAULT"
+      },
+      "targetState": {
+        "state": "CLEAN_ABSENT",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "logical": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "logical": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "CLEAN_ABSENT_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RETURNED",
+        "exceptionClass": null,
+        "targetStateAfterRetry": {
+          "state": "USABLE_COMPLETE",
+          "sidecars": [],
+          "reason": "",
+          "blocks": 12
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-IMP-F2",
+      "subCase": "afterTargetCreationBeforeFirstInsert",
+      "faultPoint": "third connect to target, before any insert",
+      "injection": {
+        "mechanism": "connect/raise",
+        "connectIndex": 3,
+        "targetExistedAtFault": true,
+        "targetSizeAtFault": 12288
+      },
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "Injected",
+        "exceptionMessage": "INJECTED_CONNECT_FAULT"
+      },
+      "targetState": {
+        "state": "PARTIAL_OPENABLE_INCOMPLETE",
+        "sidecars": [],
+        "reason": "EMPTY_CHAIN",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "logical": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "logical": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "PARTIAL_TARGET_FINDING",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileExistsError",
+        "exceptionMessage": "Migration target must be absent",
+        "targetStateAfterRetry": {
+          "state": "PARTIAL_OPENABLE_INCOMPLETE",
+          "sidecars": [],
+          "reason": "EMPTY_CHAIN",
+          "blocks": 0
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-IMP-F3",
+      "subCase": "insideInsertLoopAfterSixth",
+      "faultPoint": "seventh insert statement, before commit",
+      "injection": {
+        "mechanism": "connect/insert",
+        "connectIndex": 3,
+        "targetExistedAtFault": true,
+        "targetSizeAtFault": 12288
+      },
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "Injected",
+        "exceptionMessage": "INJECTED_INSERT_FAULT_AFTER_SIXTH_INSERT"
+      },
+      "targetState": {
+        "state": "PARTIAL_OPENABLE_INCOMPLETE",
+        "sidecars": [],
+        "reason": "EMPTY_CHAIN",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "logical": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "logical": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "PARTIAL_TARGET_FINDING",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileExistsError",
+        "exceptionMessage": "Migration target must be absent",
+        "targetStateAfterRetry": {
+          "state": "PARTIAL_OPENABLE_INCOMPLETE",
+          "sidecars": [],
+          "reason": "EMPTY_CHAIN",
+          "blocks": 0
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-IMP-F4",
+      "subCase": "verificationSecondReadDiffers",
+      "faultPoint": "after commit, at verification",
+      "injection": {
+        "mechanism": "read/second_read_differs"
+      },
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "ValueError",
+        "exceptionMessage": "Migration verification failed"
+      },
+      "targetState": {
+        "state": "USABLE_COMPLETE",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 12
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "logical": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "logical": "01dcf2c7ae62748a4f8c50959cb0c9cd84749fd2366cfbc8c41cbcc40d03c572",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "COMPLETE_BUT_REPORTED_FAILED_FINDING",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileExistsError",
+        "exceptionMessage": "Migration target must be absent",
+        "targetStateAfterRetry": {
+          "state": "USABLE_COMPLETE",
+          "sidecars": [],
+          "reason": "",
+          "blocks": 12
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-BAK-F1",
+      "subCase": "targetFilePresent",
+      "faultPoint": "target or sidecar already present",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileExistsError",
+        "exceptionMessage": "Backup target must be absent"
+      },
+      "targetState": {
+        "state": "PARTIAL_UNOPENABLE",
+        "sidecars": [],
+        "reason": "DatabaseError",
+        "blocks": null
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "871cb864222d3a9ac3feca72c3e9a2740680e14498afd37e5eba9218d3845c03",
+            "logical": "1e43f423badca0d62f526a952494f1b75608cf8d85c4ad7460c5f9a14bbb9452",
+            "sidecars": []
+          },
+          "preexistingTarget": {
+            "raw": "106917048d285cadbe1affdbfd73a579ca4b0e1a8379fea1fe5a10c6fe9f7599",
+            "logical": null,
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "871cb864222d3a9ac3feca72c3e9a2740680e14498afd37e5eba9218d3845c03",
+            "logical": "1e43f423badca0d62f526a952494f1b75608cf8d85c4ad7460c5f9a14bbb9452",
+            "sidecars": []
+          },
+          "preexistingTarget": {
+            "raw": "106917048d285cadbe1affdbfd73a579ca4b0e1a8379fea1fe5a10c6fe9f7599",
+            "logical": null,
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          },
+          "preexistingTarget": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "PREEXISTING_TARGET_UNCHANGED_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileExistsError",
+        "exceptionMessage": "Backup target must be absent",
+        "targetStateAfterRetry": {
+          "state": "PARTIAL_UNOPENABLE",
+          "sidecars": [],
+          "reason": "DatabaseError",
+          "blocks": null
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-BAK-F1",
+      "subCase": "sidecarOnlyPresent",
+      "faultPoint": "target or sidecar already present",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileExistsError",
+        "exceptionMessage": "Backup target must be absent"
+      },
+      "targetState": {
+        "state": "SIDECAR_ONLY",
+        "sidecars": [
+          "-wal"
+        ],
+        "reason": "",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "871cb864222d3a9ac3feca72c3e9a2740680e14498afd37e5eba9218d3845c03",
+            "logical": "1e43f423badca0d62f526a952494f1b75608cf8d85c4ad7460c5f9a14bbb9452",
+            "sidecars": []
+          },
+          "preexistingTarget": {
+            "raw": "106917048d285cadbe1affdbfd73a579ca4b0e1a8379fea1fe5a10c6fe9f7599",
+            "logical": null,
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "871cb864222d3a9ac3feca72c3e9a2740680e14498afd37e5eba9218d3845c03",
+            "logical": "1e43f423badca0d62f526a952494f1b75608cf8d85c4ad7460c5f9a14bbb9452",
+            "sidecars": []
+          },
+          "preexistingTarget": {
+            "raw": "106917048d285cadbe1affdbfd73a579ca4b0e1a8379fea1fe5a10c6fe9f7599",
+            "logical": null,
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          },
+          "preexistingTarget": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "PREEXISTING_TARGET_UNCHANGED_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileExistsError",
+        "exceptionMessage": "Backup target must be absent",
+        "targetStateAfterRetry": {
+          "state": "SIDECAR_ONLY",
+          "sidecars": [
+            "-wal"
+          ],
+          "reason": "",
+          "blocks": 0
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-BAK-F2",
+      "subCase": "sourceHeldExclusiveLock",
+      "faultPoint": "real source lock before the copy starts (not a mid-copy interruption)",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "OperationalError",
+        "exceptionMessage": "database is locked"
+      },
+      "targetState": {
+        "state": "CLEAN_ABSENT",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {},
+        "after": {},
+        "verdicts": {}
+      },
+      "tag": "CLEAN_ABSENT_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RETURNED",
+        "exceptionClass": null,
+        "targetStateAfterRetry": {
+          "state": "USABLE_COMPLETE",
+          "sidecars": [],
+          "reason": "",
+          "blocks": 12
+        }
+      },
+      "sourceDigestsAroundLock": {
+        "before": {
+          "raw": "871cb864222d3a9ac3feca72c3e9a2740680e14498afd37e5eba9218d3845c03",
+          "logical": "1e43f423badca0d62f526a952494f1b75608cf8d85c4ad7460c5f9a14bbb9452",
+          "sidecars": []
+        },
+        "after": {
+          "raw": "871cb864222d3a9ac3feca72c3e9a2740680e14498afd37e5eba9218d3845c03",
+          "logical": "1e43f423badca0d62f526a952494f1b75608cf8d85c4ad7460c5f9a14bbb9452",
+          "sidecars": []
+        },
+        "verdict": "UNCHANGED"
+      }
+    },
+    {
+      "scenarioId": "RH-BAK-F2",
+      "subCase": "midCopyInterruptionOfProductionCall",
+      "disposition": "NOT_INDUCIBLE_WITHOUT_OWNER_HOOK",
+      "reason": "The production call runs one Connection.backup step with no owner-visible hook between pages; no packet-owned interruption point exists. A real source lock fails before any copy starts (see sourceHeldExclusiveLock), and killing the child after it creates the target lands at a timing-dependent point (see killTrials). No simulation is offered as proof.",
+      "realLockObservation": {
+        "tag": "CLEAN_ABSENT_AFTER_RAISE",
+        "targetState": "CLEAN_ABSENT",
+        "exception": "OperationalError"
+      },
+      "killTrials": {
+        "trials": [
+          {
+            "trial": 1,
+            "childReported": "STARTED",
+            "kind": "PRE_COPY_ZERO_BYTE_TARGET",
+            "targetState": "PARTIAL_UNOPENABLE",
+            "reason": "NO_LEDGER_SCHEMA_VERSION",
+            "targetSizeBytes": 0,
+            "sidecars": [
+              "-journal"
+            ],
+            "retryAfterKill": {
+              "returnedOrRaised": "RAISED",
+              "exceptionClass": "FileExistsError",
+              "exceptionMessage": "Backup target must be absent"
+            }
+          },
+          {
+            "trial": 2,
+            "childReported": "STARTED",
+            "kind": "PRE_COPY_ZERO_BYTE_TARGET",
+            "targetState": "PARTIAL_UNOPENABLE",
+            "reason": "NO_LEDGER_SCHEMA_VERSION",
+            "targetSizeBytes": 0,
+            "sidecars": [
+              "-journal"
+            ],
+            "retryAfterKill": {
+              "returnedOrRaised": "RAISED",
+              "exceptionClass": "FileExistsError",
+              "exceptionMessage": "Backup target must be absent"
+            }
+          },
+          {
+            "trial": 3,
+            "childReported": "STARTED",
+            "kind": "PRE_COPY_ZERO_BYTE_TARGET",
+            "targetState": "PARTIAL_UNOPENABLE",
+            "reason": "NO_LEDGER_SCHEMA_VERSION",
+            "targetSizeBytes": 0,
+            "sidecars": [],
+            "retryAfterKill": {
+              "returnedOrRaised": "RAISED",
+              "exceptionClass": "FileExistsError",
+              "exceptionMessage": "Backup target must be absent"
+            }
+          },
+          {
+            "trial": 4,
+            "childReported": "STARTED",
+            "kind": "PRE_COPY_ZERO_BYTE_TARGET",
+            "targetState": "PARTIAL_UNOPENABLE",
+            "reason": "NO_LEDGER_SCHEMA_VERSION",
+            "targetSizeBytes": 0,
+            "sidecars": [
+              "-journal"
+            ],
+            "retryAfterKill": {
+              "returnedOrRaised": "RAISED",
+              "exceptionClass": "FileExistsError",
+              "exceptionMessage": "Backup target must be absent"
+            }
+          },
+          {
+            "trial": 5,
+            "childReported": "STARTED",
+            "kind": "PRE_COPY_ZERO_BYTE_TARGET",
+            "targetState": "PARTIAL_UNOPENABLE",
+            "reason": "NO_LEDGER_SCHEMA_VERSION",
+            "targetSizeBytes": 0,
+            "sidecars": [
+              "-journal"
+            ],
+            "retryAfterKill": {
+              "returnedOrRaised": "RAISED",
+              "exceptionClass": "FileExistsError",
+              "exceptionMessage": "Backup target must be absent"
+            }
+          }
+        ],
+        "distribution": {
+          "PRE_COPY_ZERO_BYTE_TARGET": 5
+        }
+      },
+      "additionalFindingTags": [
+        "PARTIAL_TARGET_AFTER_PROCESS_KILL_FINDING"
+      ],
+      "tag": "MID_COPY_NOT_INDUCIBLE_FINDING"
+    },
+    {
+      "scenarioId": "RH-BAK-F3",
+      "subCase": "afterCopyBeforeVerificationRead",
+      "faultPoint": "first ledger connect to the copied target",
+      "injection": {
+        "mechanism": "connect/raise"
+      },
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "Injected",
+        "exceptionMessage": "INJECTED_CONNECT_FAULT"
+      },
+      "targetState": {
+        "state": "USABLE_COMPLETE",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 12
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "871cb864222d3a9ac3feca72c3e9a2740680e14498afd37e5eba9218d3845c03",
+            "logical": "1e43f423badca0d62f526a952494f1b75608cf8d85c4ad7460c5f9a14bbb9452",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "871cb864222d3a9ac3feca72c3e9a2740680e14498afd37e5eba9218d3845c03",
+            "logical": "1e43f423badca0d62f526a952494f1b75608cf8d85c4ad7460c5f9a14bbb9452",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "COMPLETE_BUT_REPORTED_FAILED_FINDING",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileExistsError",
+        "exceptionMessage": "Backup target must be absent",
+        "targetStateAfterRetry": {
+          "state": "USABLE_COMPLETE",
+          "sidecars": [],
+          "reason": "",
+          "blocks": 12
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-RES-F1",
+      "subCase": "backupAbsent",
+      "faultPoint": "backup path does not exist",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileNotFoundError",
+        "exceptionMessage": "Backup source is absent"
+      },
+      "targetState": {
+        "state": "CLEAN_ABSENT",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {},
+        "after": {},
+        "verdicts": {}
+      },
+      "tag": "CLEAN_ABSENT_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileNotFoundError",
+        "exceptionMessage": "Backup source is absent",
+        "targetStateAfterRetry": {
+          "state": "CLEAN_ABSENT",
+          "sidecars": [],
+          "reason": "",
+          "blocks": 0
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-RES-F2",
+      "subCase": "mutatedBlockHash",
+      "faultPoint": "corrupted backup passed to restore",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "ValueError",
+        "exceptionMessage": "SQLite ledger index and block mismatch"
+      },
+      "targetState": {
+        "state": "CLEAN_ABSENT",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {
+          "backup": {
+            "raw": "7ad9df0a6cf273da57abc99523e4b567f76ac0d17476ada6d1eed3bac701bde0",
+            "logical": "481895f5d251893e79c0363ac552394e0e5c936307e628127bd2c9b5a160c521",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "backup": {
+            "raw": "7ad9df0a6cf273da57abc99523e4b567f76ac0d17476ada6d1eed3bac701bde0",
+            "logical": "481895f5d251893e79c0363ac552394e0e5c936307e628127bd2c9b5a160c521",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "backup": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "CLEAN_ABSENT_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "ValueError",
+        "exceptionMessage": "SQLite ledger index and block mismatch",
+        "targetStateAfterRetry": {
+          "state": "CLEAN_ABSENT",
+          "sidecars": [],
+          "reason": "",
+          "blocks": 0
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-RES-F2",
+      "subCase": "mutatedBlockBody",
+      "faultPoint": "corrupted backup passed to restore",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "ValueError",
+        "exceptionMessage": "Ledger block hash mismatch"
+      },
+      "targetState": {
+        "state": "CLEAN_ABSENT",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {
+          "backup": {
+            "raw": "eff12f3a514bf7e558ac21357d375e386409a6ba4e79cf3e8a21b15ac36f6d33",
+            "logical": "9f8a9da792351451c5b34af8ebe5940aa7776515cc2c0c9e2e634eee2a9363a9",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "backup": {
+            "raw": "eff12f3a514bf7e558ac21357d375e386409a6ba4e79cf3e8a21b15ac36f6d33",
+            "logical": "9f8a9da792351451c5b34af8ebe5940aa7776515cc2c0c9e2e634eee2a9363a9",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "backup": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "CLEAN_ABSENT_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "ValueError",
+        "exceptionMessage": "Ledger block hash mismatch",
+        "targetStateAfterRetry": {
+          "state": "CLEAN_ABSENT",
+          "sidecars": [],
+          "reason": "",
+          "blocks": 0
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-RES-F2",
+      "subCase": "mutatedSchema",
+      "faultPoint": "corrupted backup passed to restore",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "ValueError",
+        "exceptionMessage": "SQLite ledger schema mismatch"
+      },
+      "targetState": {
+        "state": "CLEAN_ABSENT",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {
+          "backup": {
+            "raw": "731e8b8774754d4e2c7801a5c641cbe2b565fbadc1f83c9bd94392f8d5b68f11",
+            "logical": null,
+            "sidecars": []
+          }
+        },
+        "after": {
+          "backup": {
+            "raw": "731e8b8774754d4e2c7801a5c641cbe2b565fbadc1f83c9bd94392f8d5b68f11",
+            "logical": null,
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "backup": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "CLEAN_ABSENT_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "ValueError",
+        "exceptionMessage": "SQLite ledger schema mismatch",
+        "targetStateAfterRetry": {
+          "state": "CLEAN_ABSENT",
+          "sidecars": [],
+          "reason": "",
+          "blocks": 0
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-RES-F3",
+      "subCase": "sourceHeldExclusiveLock",
+      "faultPoint": "real source lock before the copy starts (not a mid-copy interruption)",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "OperationalError",
+        "exceptionMessage": "database is locked"
+      },
+      "targetState": {
+        "state": "CLEAN_ABSENT",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {},
+        "after": {},
+        "verdicts": {}
+      },
+      "tag": "CLEAN_ABSENT_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RETURNED",
+        "exceptionClass": null,
+        "targetStateAfterRetry": {
+          "state": "USABLE_COMPLETE",
+          "sidecars": [],
+          "reason": "",
+          "blocks": 12
+        }
+      },
+      "sourceDigestsAroundLock": {
+        "before": {
+          "raw": "65d0bb9b84f6111d4a6e8a6ece0468df6f5e700cb0b46f4d34bc73bc8d73405a",
+          "logical": "9f8a9da792351451c5b34af8ebe5940aa7776515cc2c0c9e2e634eee2a9363a9",
+          "sidecars": []
+        },
+        "after": {
+          "raw": "65d0bb9b84f6111d4a6e8a6ece0468df6f5e700cb0b46f4d34bc73bc8d73405a",
+          "logical": "9f8a9da792351451c5b34af8ebe5940aa7776515cc2c0c9e2e634eee2a9363a9",
+          "sidecars": []
+        },
+        "verdict": "UNCHANGED"
+      }
+    },
+    {
+      "scenarioId": "RH-RES-F3",
+      "subCase": "midCopyInterruptionOfProductionCall",
+      "disposition": "NOT_INDUCIBLE_WITHOUT_OWNER_HOOK",
+      "reason": "The production call runs one Connection.backup step with no owner-visible hook between pages; no packet-owned interruption point exists. A real source lock fails before any copy starts (see sourceHeldExclusiveLock), and killing the child after it creates the target lands at a timing-dependent point (see killTrials). No simulation is offered as proof.",
+      "realLockObservation": {
+        "tag": "CLEAN_ABSENT_AFTER_RAISE",
+        "targetState": "CLEAN_ABSENT",
+        "exception": "OperationalError"
+      },
+      "killTrials": {
+        "trials": [
+          {
+            "trial": 1,
+            "childReported": "STARTED",
+            "kind": "PRE_COPY_ZERO_BYTE_TARGET",
+            "targetState": "PARTIAL_UNOPENABLE",
+            "reason": "NO_LEDGER_SCHEMA_VERSION",
+            "targetSizeBytes": 0,
+            "sidecars": [
+              "-journal"
+            ],
+            "retryAfterKill": {
+              "returnedOrRaised": "RAISED",
+              "exceptionClass": "FileExistsError",
+              "exceptionMessage": "Restore target must be absent"
+            }
+          },
+          {
+            "trial": 2,
+            "childReported": "STARTED",
+            "kind": "PRE_COPY_ZERO_BYTE_TARGET",
+            "targetState": "PARTIAL_UNOPENABLE",
+            "reason": "NO_LEDGER_SCHEMA_VERSION",
+            "targetSizeBytes": 0,
+            "sidecars": [
+              "-journal"
+            ],
+            "retryAfterKill": {
+              "returnedOrRaised": "RAISED",
+              "exceptionClass": "FileExistsError",
+              "exceptionMessage": "Restore target must be absent"
+            }
+          },
+          {
+            "trial": 3,
+            "childReported": "STARTED",
+            "kind": "PRE_COPY_ZERO_BYTE_TARGET",
+            "targetState": "PARTIAL_UNOPENABLE",
+            "reason": "NO_LEDGER_SCHEMA_VERSION",
+            "targetSizeBytes": 0,
+            "sidecars": [
+              "-journal"
+            ],
+            "retryAfterKill": {
+              "returnedOrRaised": "RAISED",
+              "exceptionClass": "FileExistsError",
+              "exceptionMessage": "Restore target must be absent"
+            }
+          },
+          {
+            "trial": 4,
+            "childReported": "STARTED",
+            "kind": "PRE_COPY_ZERO_BYTE_TARGET",
+            "targetState": "PARTIAL_UNOPENABLE",
+            "reason": "NO_LEDGER_SCHEMA_VERSION",
+            "targetSizeBytes": 0,
+            "sidecars": [
+              "-journal"
+            ],
+            "retryAfterKill": {
+              "returnedOrRaised": "RAISED",
+              "exceptionClass": "FileExistsError",
+              "exceptionMessage": "Restore target must be absent"
+            }
+          },
+          {
+            "trial": 5,
+            "childReported": "STARTED",
+            "kind": "PRE_COPY_ZERO_BYTE_TARGET",
+            "targetState": "PARTIAL_UNOPENABLE",
+            "reason": "NO_LEDGER_SCHEMA_VERSION",
+            "targetSizeBytes": 0,
+            "sidecars": [
+              "-journal"
+            ],
+            "retryAfterKill": {
+              "returnedOrRaised": "RAISED",
+              "exceptionClass": "FileExistsError",
+              "exceptionMessage": "Restore target must be absent"
+            }
+          }
+        ],
+        "distribution": {
+          "PRE_COPY_ZERO_BYTE_TARGET": 5
+        }
+      },
+      "additionalFindingTags": [
+        "PARTIAL_TARGET_AFTER_PROCESS_KILL_FINDING"
+      ],
+      "tag": "MID_COPY_NOT_INDUCIBLE_FINDING"
+    },
+    {
+      "scenarioId": "RH-RES-F4",
+      "subCase": "afterCopyBeforeChainComparison",
+      "faultPoint": "first ledger connect to the restored target",
+      "injection": {
+        "mechanism": "connect/raise"
+      },
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "Injected",
+        "exceptionMessage": "INJECTED_CONNECT_FAULT"
+      },
+      "targetState": {
+        "state": "USABLE_COMPLETE",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 12
+      },
+      "digests": {
+        "before": {
+          "backup": {
+            "raw": "65d0bb9b84f6111d4a6e8a6ece0468df6f5e700cb0b46f4d34bc73bc8d73405a",
+            "logical": "9f8a9da792351451c5b34af8ebe5940aa7776515cc2c0c9e2e634eee2a9363a9",
+            "sidecars": []
+          }
+        },
+        "after": {
+          "backup": {
+            "raw": "65d0bb9b84f6111d4a6e8a6ece0468df6f5e700cb0b46f4d34bc73bc8d73405a",
+            "logical": "9f8a9da792351451c5b34af8ebe5940aa7776515cc2c0c9e2e634eee2a9363a9",
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "backup": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "COMPLETE_BUT_REPORTED_FAILED_FINDING",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileExistsError",
+        "exceptionMessage": "Restore target must be absent",
+        "targetStateAfterRetry": {
+          "state": "USABLE_COMPLETE",
+          "sidecars": [],
+          "reason": "",
+          "blocks": 12
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-RES-F5",
+      "subCase": "targetFilePresent",
+      "faultPoint": "target or sidecar already present",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileExistsError",
+        "exceptionMessage": "Restore target must be absent"
+      },
+      "targetState": {
+        "state": "PARTIAL_UNOPENABLE",
+        "sidecars": [],
+        "reason": "DatabaseError",
+        "blocks": null
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "65d0bb9b84f6111d4a6e8a6ece0468df6f5e700cb0b46f4d34bc73bc8d73405a",
+            "logical": "9f8a9da792351451c5b34af8ebe5940aa7776515cc2c0c9e2e634eee2a9363a9",
+            "sidecars": []
+          },
+          "preexistingTarget": {
+            "raw": "106917048d285cadbe1affdbfd73a579ca4b0e1a8379fea1fe5a10c6fe9f7599",
+            "logical": null,
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "65d0bb9b84f6111d4a6e8a6ece0468df6f5e700cb0b46f4d34bc73bc8d73405a",
+            "logical": "9f8a9da792351451c5b34af8ebe5940aa7776515cc2c0c9e2e634eee2a9363a9",
+            "sidecars": []
+          },
+          "preexistingTarget": {
+            "raw": "106917048d285cadbe1affdbfd73a579ca4b0e1a8379fea1fe5a10c6fe9f7599",
+            "logical": null,
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          },
+          "preexistingTarget": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "PREEXISTING_TARGET_UNCHANGED_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileExistsError",
+        "exceptionMessage": "Restore target must be absent",
+        "targetStateAfterRetry": {
+          "state": "PARTIAL_UNOPENABLE",
+          "sidecars": [],
+          "reason": "DatabaseError",
+          "blocks": null
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-RES-F5",
+      "subCase": "sidecarOnlyPresent",
+      "faultPoint": "target or sidecar already present",
+      "injection": {},
+      "outcome": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileExistsError",
+        "exceptionMessage": "Restore target must be absent"
+      },
+      "targetState": {
+        "state": "SIDECAR_ONLY",
+        "sidecars": [
+          "-wal"
+        ],
+        "reason": "",
+        "blocks": 0
+      },
+      "digests": {
+        "before": {
+          "source": {
+            "raw": "65d0bb9b84f6111d4a6e8a6ece0468df6f5e700cb0b46f4d34bc73bc8d73405a",
+            "logical": "9f8a9da792351451c5b34af8ebe5940aa7776515cc2c0c9e2e634eee2a9363a9",
+            "sidecars": []
+          },
+          "preexistingTarget": {
+            "raw": "106917048d285cadbe1affdbfd73a579ca4b0e1a8379fea1fe5a10c6fe9f7599",
+            "logical": null,
+            "sidecars": []
+          }
+        },
+        "after": {
+          "source": {
+            "raw": "65d0bb9b84f6111d4a6e8a6ece0468df6f5e700cb0b46f4d34bc73bc8d73405a",
+            "logical": "9f8a9da792351451c5b34af8ebe5940aa7776515cc2c0c9e2e634eee2a9363a9",
+            "sidecars": []
+          },
+          "preexistingTarget": {
+            "raw": "106917048d285cadbe1affdbfd73a579ca4b0e1a8379fea1fe5a10c6fe9f7599",
+            "logical": null,
+            "sidecars": []
+          }
+        },
+        "verdicts": {
+          "source": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          },
+          "preexistingTarget": {
+            "verdict": "UNCHANGED",
+            "sidecarsBefore": [],
+            "sidecarsAfter": []
+          }
+        }
+      },
+      "tag": "PREEXISTING_TARGET_UNCHANGED_AFTER_RAISE",
+      "flags": [],
+      "retry": {
+        "returnedOrRaised": "RAISED",
+        "exceptionClass": "FileExistsError",
+        "exceptionMessage": "Restore target must be absent",
+        "targetStateAfterRetry": {
+          "state": "SIDECAR_ONLY",
+          "sidecars": [
+            "-wal"
+          ],
+          "reason": "",
+          "blocks": 0
+        }
+      }
+    },
+    {
+      "scenarioId": "RH-CONC-01",
+      "subCase": "backupWhileParentHoldsWriteGuardAndPeerAttempting",
+      "orderVerdict": "ORDER_OK",
+      "events": [
+        {
+          "event": "READY",
+          "observedNs": 450033391015300
+        },
+        {
+          "event": "START_ATTEMPT",
+          "observedNs": 450033391023200
+        },
+        {
+          "event": "ATTEMPTING",
+          "observedNs": 450033391114900
+        },
+        {
+          "event": "PARENT_RELEASE",
+          "observedNs": 450033397809800
+        },
+        {
+          "event": "ENTERED",
+          "observedNs": 450033413039500
+        },
+        {
+          "event": "COMPLETE",
+          "observedNs": 450033416115300
+        }
+      ],
+      "peerEnteredNs": 450033412805600,
+      "parentReleaseNs": 450033397809800,
+      "backupState": {
+        "state": "USABLE_COMPLETE",
+        "sidecars": [],
+        "reason": "",
+        "blocks": 12
+      },
+      "backupEqualsPreAppendChain": true,
+      "finalSourceIsPreAppendChainPlusPeerBlock": true,
+      "restoreOfBackup": "USABLE_COMPLETE",
+      "ok": true,
+      "tag": "PEER_DURING_BACKUP_OBSERVED_CONSISTENT"
+    },
+    {
+      "scenarioId": "RH-CONC-02",
+      "subCase": "peerCommitBetweenBackupSteps",
+      "disposition": "NOT_INDUCIBLE_WITHOUT_OWNER_HOOK",
+      "reason": "backup_to performs one Connection.backup step with no owner hook between steps, so a peer commit cannot be placed inside the copy deterministically; the unordered race trials below are observation only.",
+      "raceTrials": [
+        {
+          "trial": 1,
+          "backupError": null,
+          "backupBlocks": 13,
+          "validChain": true,
+          "consistentWithPeerOrder": true
+        },
+        {
+          "trial": 2,
+          "backupError": null,
+          "backupBlocks": 13,
+          "validChain": true,
+          "consistentWithPeerOrder": true
+        },
+        {
+          "trial": 3,
+          "backupError": null,
+          "backupBlocks": 12,
+          "validChain": true,
+          "consistentWithPeerOrder": true
+        },
+        {
+          "trial": 4,
+          "backupError": null,
+          "backupBlocks": 12,
+          "validChain": true,
+          "consistentWithPeerOrder": true
+        },
+        {
+          "trial": 5,
+          "backupError": null,
+          "backupBlocks": 12,
+          "validChain": true,
+          "consistentWithPeerOrder": true
+        }
+      ],
+      "tag": "PEER_COMMIT_BETWEEN_STEPS_NOT_INDUCIBLE_FINDING"
+    },
+    {
+      "scenarioId": "RH-CONC-03",
+      "subCase": "earlyEntryMutantThroughRealPeer",
+      "orderVerdict": "REJECT_ENTRY_BEFORE_PARENT_RELEASE",
+      "oracleRejectedMutant": true,
+      "tag": "ORDERING_MUTANT_REJECTED"
+    }
+  ],
+  "livenessAfterFaults": [
+    {
+      "scenarioId": "RH-BAK-F1f",
+      "applicable": true,
+      "postAcquireFault": "RAISED_AFTER_ACQUIRE",
+      "chainUnchangedAfterFault": true,
+      "peerExit": 0,
+      "expectedSourceChange": "12 -> 13 blocks",
+      "SUBSEQUENT_PEER_ACQUIRES": true
+    },
+    {
+      "scenarioId": "RH-BAK-F1s",
+      "applicable": true,
+      "postAcquireFault": "RAISED_AFTER_ACQUIRE",
+      "chainUnchangedAfterFault": true,
+      "peerExit": 0,
+      "expectedSourceChange": "12 -> 13 blocks",
+      "SUBSEQUENT_PEER_ACQUIRES": true
+    },
+    {
+      "scenarioId": "RH-BAK-F2",
+      "applicable": true,
+      "postAcquireFault": "RAISED_AFTER_ACQUIRE",
+      "chainUnchangedAfterFault": true,
+      "peerExit": 0,
+      "expectedSourceChange": "12 -> 13 blocks",
+      "SUBSEQUENT_PEER_ACQUIRES": true
+    },
+    {
+      "scenarioId": "RH-BAK-F3",
+      "applicable": true,
+      "postAcquireFault": "RAISED_AFTER_ACQUIRE",
+      "chainUnchangedAfterFault": true,
+      "peerExit": 0,
+      "expectedSourceChange": "12 -> 13 blocks",
+      "SUBSEQUENT_PEER_ACQUIRES": true
+    },
+    {
+      "scenarioId": "RH-RES-F1",
+      "applicable": false,
+      "reason": "no source ledger exists in this scenario"
+    },
+    {
+      "scenarioId": "RH-RES-F2-mutatedBlockHash",
+      "applicable": false,
+      "reason": "source is deliberately unreadable or corrupt; no valid chain to append to",
+      "peerRefusedCorruptSource": true,
+      "peerExit": 1
+    },
+    {
+      "scenarioId": "RH-RES-F2-mutatedBlockBody",
+      "applicable": false,
+      "reason": "source is deliberately unreadable or corrupt; no valid chain to append to",
+      "peerRefusedCorruptSource": true,
+      "peerExit": 1
+    },
+    {
+      "scenarioId": "RH-RES-F2-mutatedSchema",
+      "applicable": false,
+      "reason": "source is deliberately unreadable or corrupt; no valid chain to append to",
+      "peerRefusedCorruptSource": true,
+      "peerExit": 1
+    },
+    {
+      "scenarioId": "RH-RES-F3",
+      "applicable": true,
+      "postAcquireFault": "RAISED_AFTER_ACQUIRE",
+      "chainUnchangedAfterFault": true,
+      "peerExit": 0,
+      "expectedSourceChange": "12 -> 13 blocks",
+      "SUBSEQUENT_PEER_ACQUIRES": true
+    },
+    {
+      "scenarioId": "RH-RES-F4",
+      "applicable": true,
+      "postAcquireFault": "RAISED_AFTER_ACQUIRE",
+      "chainUnchangedAfterFault": true,
+      "peerExit": 0,
+      "expectedSourceChange": "12 -> 13 blocks",
+      "SUBSEQUENT_PEER_ACQUIRES": true
+    },
+    {
+      "scenarioId": "RH-RES-F5f",
+      "applicable": true,
+      "postAcquireFault": "RAISED_AFTER_ACQUIRE",
+      "chainUnchangedAfterFault": true,
+      "peerExit": 0,
+      "expectedSourceChange": "12 -> 13 blocks",
+      "SUBSEQUENT_PEER_ACQUIRES": true
+    },
+    {
+      "scenarioId": "RH-RES-F5s",
+      "applicable": true,
+      "postAcquireFault": "RAISED_AFTER_ACQUIRE",
+      "chainUnchangedAfterFault": true,
+      "peerExit": 0,
+      "expectedSourceChange": "12 -> 13 blocks",
+      "SUBSEQUENT_PEER_ACQUIRES": true
+    }
+  ],
+  "findings": [
+    {
+      "scenarioId": "RH-IMP-F2",
+      "subCase": "afterTargetCreationBeforeFirstInsert",
+      "tag": "PARTIAL_TARGET_FINDING",
+      "disposition": null,
+      "flags": []
+    },
+    {
+      "scenarioId": "RH-IMP-F3",
+      "subCase": "insideInsertLoopAfterSixth",
+      "tag": "PARTIAL_TARGET_FINDING",
+      "disposition": null,
+      "flags": []
+    },
+    {
+      "scenarioId": "RH-IMP-F4",
+      "subCase": "verificationSecondReadDiffers",
+      "tag": "COMPLETE_BUT_REPORTED_FAILED_FINDING",
+      "disposition": null,
+      "flags": []
+    },
+    {
+      "scenarioId": "RH-BAK-F2",
+      "subCase": "midCopyInterruptionOfProductionCall",
+      "tag": "PARTIAL_TARGET_AFTER_PROCESS_KILL_FINDING",
+      "disposition": null,
+      "flags": []
+    },
+    {
+      "scenarioId": "RH-BAK-F2",
+      "subCase": "midCopyInterruptionOfProductionCall",
+      "tag": "MID_COPY_NOT_INDUCIBLE_FINDING",
+      "disposition": "NOT_INDUCIBLE_WITHOUT_OWNER_HOOK",
+      "flags": []
+    },
+    {
+      "scenarioId": "RH-BAK-F3",
+      "subCase": "afterCopyBeforeVerificationRead",
+      "tag": "COMPLETE_BUT_REPORTED_FAILED_FINDING",
+      "disposition": null,
+      "flags": []
+    },
+    {
+      "scenarioId": "RH-RES-F3",
+      "subCase": "midCopyInterruptionOfProductionCall",
+      "tag": "PARTIAL_TARGET_AFTER_PROCESS_KILL_FINDING",
+      "disposition": null,
+      "flags": []
+    },
+    {
+      "scenarioId": "RH-RES-F3",
+      "subCase": "midCopyInterruptionOfProductionCall",
+      "tag": "MID_COPY_NOT_INDUCIBLE_FINDING",
+      "disposition": "NOT_INDUCIBLE_WITHOUT_OWNER_HOOK",
+      "flags": []
+    },
+    {
+      "scenarioId": "RH-RES-F4",
+      "subCase": "afterCopyBeforeChainComparison",
+      "tag": "COMPLETE_BUT_REPORTED_FAILED_FINDING",
+      "disposition": null,
+      "flags": []
+    },
+    {
+      "scenarioId": "RH-CONC-02",
+      "subCase": "peerCommitBetweenBackupSteps",
+      "tag": "PEER_COMMIT_BETWEEN_STEPS_NOT_INDUCIBLE_FINDING",
+      "disposition": "NOT_INDUCIBLE_WITHOUT_OWNER_HOOK",
+      "flags": []
+    }
+  ],
+  "disposableRoot": {
+    "category": "IGNORED_RUNTIME_SCRATCH",
+    "cleanup": {
+      "outcome": "REMOVED_BY_PROBE"
+    }
+  },
+  "privateDataAccessed": "NONE",
+  "providerCallCount": 0,
+  "ownerFileEdited": false,
+  "claimBoundary": "Observations of induced synthetic cases only; no safety, durability or cutover claim."
+}

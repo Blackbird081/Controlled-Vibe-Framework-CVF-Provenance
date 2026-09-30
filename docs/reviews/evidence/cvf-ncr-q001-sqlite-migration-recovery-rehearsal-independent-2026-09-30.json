@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "cvf.q001.sqliteMigrationRecoveryIndependentReview.v1",
+  "reviewerRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "executionBaseHead": "4a068326c1c8d31013f00fb366989f5b608a50bf",
+  "workerProbeSha256": "1c1faf8d138be5b288b7fc2063d56f06c683974c841468aa9170f00f27690ed1",
+  "workerEvidenceSha256": "0b3e7364680a4f272899d601b9b0aaf9018173d7cd56f992e1f87d10f270aa1a",
+  "workerReturnSha256BeforeAndAfterReviewerFastGate": "3c3661e6fbca157577897b14a58bd317351c0ba8abdc88f188ea8ebfc6ef50f8",
+  "reviewerProbeSha256": "f7adf582084bb88c6c156473d0cccbcfc5a0d76446427dc430664bf0949694f1",
+  "reviewerProbeLocation": "ignored .cvf/runtime local script; method and observed outputs recorded in the completion review",
+  "oracleSeparation": "Separate Local Python process and fresh disposable SQLite files; own direct sqlite3 read-only row inspection and hashlib block recomputation; no import of worker probe, classifier, scenario runner or assertions",
+  "cases": {
+    "importAfterTargetCreation": {
+      "fault": "Local wrapper raises at target's third SqliteLedger._connect, after schema creation and before insert",
+      "sourceBlocks": 4,
+      "targetExistsAfterRaise": true,
+      "rawSqlRowsAfterRaise": 0,
+      "sourceSha256Unchanged": true,
+      "samePathRetry": "FileExistsError",
+      "partialTargetMutantRejected": true,
+      "verdict": "PASS_CORROBORATES_WORKER_FINDING"
+    },
+    "corruptedBackupRestore": {
+      "fault": "Change one copied backup block_hash via direct sqlite3 before restore",
+      "corruptBackupRejected": true,
+      "restoreTargetAbsent": true,
+      "corruptBackupRawSha256UnchangedAcrossRestore": true,
+      "verdict": "PASS_CORROBORATES_WORKER_NEGATIVE_CASE"
+    },
+    "peerDuringBackup": {
+      "peer": "unchanged real q001_sqlite_ledger_peer.py in separate OS process",
+      "barrier": ["READY", "START_ATTEMPT", "ATTEMPTING", "PARENT_RELEASE", "ENTERED", "COMPLETE"],
+      "backupRows": 4,
+      "finalSourceRows": 5,
+      "backupEqualsPreAppendChain": true,
+      "peerEnteredAndCompleted": true,
+      "verdict": "PASS_CORROBORATES_WORKER_CONCURRENCY_CASE"
+    }
+  },
+  "firstReviewerAttempt": {
+    "result": "ASSERTIONS_COMPLETED_CLEANUP_FAILED",
+    "reason": "Reviewer harness left a sqlite3 connection open; Windows refused temporary-directory cleanup",
+    "disposition": "Excluded from accepted probe evidence; ignored synthetic residue disclosed"
+  },
+  "finalReviewerAttempt": {
+    "result": "EXIT_0",
+    "temporaryDirectoryCleanup": "PASS",
+    "providerCalls": 0,
+    "realLedgerAccess": false
+  },
+  "limits": [
+    "No true mid-copy interruption or peer commit between backup steps was observed",
+    "Kill and unordered race trial distributions are timing-dependent and were not repeated by reviewer",
+    "Worker kill-trial supplemental records do not bind source digests per individual kill trial",
+    "The worker's detached final-gate hash transcript was not supplied; reviewer independently observed equal exact return hashes around a passing final gate"
+  ],
+  "claimBoundary": "Synthetic single-host observations only; no migration safety, real cutover, RPO/RTO or Q001/R0 exit claim"
+}
