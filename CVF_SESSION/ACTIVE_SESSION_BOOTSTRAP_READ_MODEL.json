@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PREPARE_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY_WORK_ORDER; BATCH_ID=CVF-NCR-HTML-B2B-SYNTHETIC-BYTE-BOUNDARY; MATERIAL_COMMIT=49495b2b9; COMPLETION=docs/reviews/CVF_CVF_NCR_HTML_B2_BYTE_TRANSPORT_AUDIT_2026-09-30.md; EXPANSION_ALLOWED=false. Local may author a GC-018/work-order packet for in-memory decoded-HTML-string to UTF-8-byte ownership, digest/length and deterministic JSON/Blob roundtrip proof; worker implementation requires separate dispatch. No route mutation, real browser/file proof, store or artifact acceptance is authorized by this move. Q001/Q004 Profile A remains OPEN; real-data/store/backup/retention/RPO/RTO/cost and pilot/live are operator checkpoints. Profile B/C, durable B2, P11, external runtime, public sync and deployment remain parked. Latest closed learning-history wave LHW24.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY; BATCH_ID=CVF-NCR-HTML-B2B-SYNTHETIC-BYTE-BOUNDARY; MATERIAL_COMMIT=588f8d63f; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY_2026-09-30.md; EXPANSION_ALLOWED=false. Internal worker may execute the exact four-path synthetic packet after bound pre-implementation PASS; no active route/UI, store, browser/file, real-data or acceptance effect. Q001/Q004 Profile A OPEN; actor/store/backup/retention/RPO/RTO/cost and pilot/live remain operator checkpoints. Profile B/C, durable B2, P11, external runtime, public sync and deployment parked. Latest closed learning-history wave LHW24.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2A_SYNTHETIC_ACCEPTANCE_CONTRACT_2026-09-30.md",
-    "baselineSha256": "4e03c1a0229daf93ecb6c2d8dd08bd77e6ff7fd8a1a4ad46769725948f4a5795",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2A_SYNTHETIC_ACCEPTANCE_CONTRACT_2026-09-30.md",
-    "workOrderSha256": "07c7f6384123c47387e94d72a0bf7e53e571cde472edd290aa5dbebee19c0098"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY_2026-09-30.md",
+    "baselineSha256": "6b194733d8e11a84a5f72acddde59d6ab6f6f52db9b9bed6980c1f541c2e1143",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY_2026-09-30.md",
+    "workOrderSha256": "6d38cebbb7c305f93f1c555d88d7a201bad04e4d657aa3cc2581f7a602dfe06c"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

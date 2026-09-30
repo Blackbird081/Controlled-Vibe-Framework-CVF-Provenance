@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2A_SYNTHETIC_ACCEPTANCE_CONTRACT_2026-09-30.md",
-    "baselineSha256": "4e03c1a0229daf93ecb6c2d8dd08bd77e6ff7fd8a1a4ad46769725948f4a5795",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2A_SYNTHETIC_ACCEPTANCE_CONTRACT_2026-09-30.md",
-    "workOrderSha256": "07c7f6384123c47387e94d72a0bf7e53e571cde472edd290aa5dbebee19c0098"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY_2026-09-30.md",
+    "baselineSha256": "6b194733d8e11a84a5f72acddde59d6ab6f6f52db9b9bed6980c1f541c2e1143",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY_2026-09-30.md",
+    "workOrderSha256": "6d38cebbb7c305f93f1c555d88d7a201bad04e4d657aa3cc2581f7a602dfe06c"
   },
-  "currentAuthoritySyncReason": "HTML B2 byte-transport source audit was completed bounded at material 49495b2b9. D040 permits a synthetic B2b byte-boundary packet only; the paired B2a packet remains historical authority for its pure helper. Active acceptance, durable store, real-data Profile B/C and pilot effect remain parked under Q001/Q004.",
+  "currentAuthoritySyncReason": "HTML B2b synthetic byte-boundary packet was materially committed at 588f8d63f under D041; this continuity releases only its exact four-path internal worker order. B2a remains the existing identity helper. Active acceptance, durable store, real-data Profile B/C and pilot effect remain parked under Q001/Q004.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

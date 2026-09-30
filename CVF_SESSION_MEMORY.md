@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=prepare synthetic B2b byte-boundary work order; role=Local reviewer/steward; phase=B2 transport audit continuity; technical decision owner=Local; effect decision owner=operator; parked checkpoint=Q001/Q004 real data/store, durable artifact acceptance, pilot/live, P11, external runtime, public sync and deployment.
+Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=execute bound B2b synthetic worker packet; role=Local reviewer/steward; phase=internal dispatch; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PREPARE_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY_WORK_ORDER; BATCH_ID=CVF-NCR-HTML-B2B-SYNTHETIC-BYTE-BOUNDARY; MATERIAL_COMMIT=49495b2b9; COMPLETION=docs/reviews/CVF_CVF_NCR_HTML_B2_BYTE_TRANSPORT_AUDIT_2026-09-30.md; EXPANSION_ALLOWED=false. Local may author a GC-018/work-order packet for in-memory decoded-HTML-string to UTF-8-byte ownership, digest/length and deterministic JSON/Blob roundtrip proof; worker implementation requires separate dispatch. No route mutation, real browser/file proof, store or artifact acceptance is authorized by this move. Q001/Q004 Profile A remains OPEN; real-data/store/backup/retention/RPO/RTO/cost and pilot/live are operator checkpoints. Profile B/C, durable B2, P11, external runtime, public sync and deployment remain parked. Latest closed learning-history wave LHW24.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY; BATCH_ID=CVF-NCR-HTML-B2B-SYNTHETIC-BYTE-BOUNDARY; MATERIAL_COMMIT=588f8d63f; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2B_SYNTHETIC_BYTE_BOUNDARY_2026-09-30.md; EXPANSION_ALLOWED=false. Internal worker may execute the exact four-path synthetic packet after bound pre-implementation PASS; no active route/UI, store, browser/file, real-data or acceptance effect. Q001/Q004 Profile A OPEN; actor/store/backup/retention/RPO/RTO/cost and pilot/live remain operator checkpoints. Profile B/C, durable B2, P11, external runtime, public sync and deployment parked. Latest closed learning-history wave LHW24.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
