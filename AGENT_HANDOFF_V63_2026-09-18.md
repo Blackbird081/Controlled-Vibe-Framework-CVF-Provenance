@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `df1b928a9`; B1 Print R1 reviewer decision.
+Current HEAD recorded for this handoff: `5d68141e9415487a0dc0b285554df6d997840712`; batch `CVF-NCR-HTML-B1-PRINT-R2` integrated root-contract dispatch.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,22 +8,22 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.7 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local dispatcher/reviewer. Phase: released B1 Print R1 worker dispatch; technical owner: Local; effect owner: operator; P11 parked.
+Role: Local dispatcher/reviewer. Phase: B1 Print R2 integrated root-contract dispatch; technical owner: Local; effect owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=execute released B1 Print R1 security rework; role=Local dispatcher/reviewer; phase=dispatch; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=execute B1 Print R2 integrated root contract after bound release; role=Local dispatcher/reviewer; phase=dispatch; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
 Post-G7 Local source intake and Jev P0 are closed at material commit `9ac0ee8e59fa041ddaa93d725796c509400f257a`. The audit records 32 READ plus 8,093 DEFERRED paths. Jev adds fail-closed decision-context binding, incomplete candidate-space escape, and `EVIDENCE_ONLY` judgment authority to the existing ASSF owner. Proof: TypeScript 84/84, Python 61/61, compile PASS, governance 90/90. G1-G7 remain closed.
-The three operator-relayed Human Boundary, Positioning, and Async handoffs are now reviewed and combined with Jev, WikiSkill, and HyperFrames in `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md`, material commit `53bce992f`. Human Boundary is an `ADAPT` candidate, Positioning is primarily `CONFIRMED_EXISTING`, and Async remains `WATCH` with upstream factual claims `BLOCKED_SOURCE_NOT_FOUND` until Local pinning. The prior three-repository program is terminal-accounted; common Local closure remains blocked by AKOE P1-P3 execution and P4 reconciliation.
+AKOE authority: `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADMAP_2026-09-25.md` at `53bce992f`; owner dispositions and P1-P4 closure blockers live there. Prior three-repository program terminal-accounted; AKOE common closure remains blocked.
 ## Latest Work / Changes
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
-- B1 Print R1 packet `9c1662288` follows review `9cf3b9772`; six rejected candidate paths remain in verified stash until clean pre-implementation PASS. GC-051 repair `7d96cde92` and R0 fast gate PASS do not accept product. B1 sandbox remains accepted bounded; Q001/Q004 OPEN.
+- B1 Print R2 packet `5d68141e9`, D061: integrated architecture reassessment before six-path repair; actual 120-row output/end marker plus R1 origin regression. SCEC `STOP_REASSESS_ARCHITECTURE` / `INTEGRATED_ROOT_CONTRACT`; no same-problem successor. Q001/Q004 OPEN; bound release gate required.
 - B1 Print R1 review `df1b928a9`: origin security probe and worker gate PASS, but independent Chromium 120-row PDF probe found sandboxed 100vh frame clipped after row 33; direct output had four pages and row 120. Six candidate paths held in stash `42d22bbcea12ee0f555e84e0649877dabd967a4b`. Local authors R2 only after independent-finding admission; Q001/Q004 stay OPEN.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: bind B1 Print R1 packet `9c1662288` and release its six-path worker order only; preserve Q001/Q004 and effect park. Protected paths: six continuity paths below. Operator authorization: delegated Local decisions. Rollback: continuity only; preserve material packet and Q001/Q004.
+Authorized guard-maintenance scope: bind B1 Print R2 integrated packet `5d68141e9415487a0dc0b285554df6d997840712` and release its six-path worker order only; preserve Q001/Q004 and effect park. Protected paths: six continuity paths below. Operator authorization: delegated Local decisions. Rollback: continuity only; preserve material packet and Q001/Q004.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`

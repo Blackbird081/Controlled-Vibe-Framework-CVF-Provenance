@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=author bounded B1 Print R2 completeness packet after R1 rejection; role=Local orchestrator/reviewer; phase=review-to-authoring; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
+Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=execute integrated B1 Print R2 root contract after bound release; role=Local orchestrator/reviewer; phase=dispatch; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_B1_PRINT_R2_COMPLETENESS_PACKET; REVIEW_COMMIT=df1b928a9; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_ORIGIN_ISOLATION_R1_REVIEW_2026-10-01.md; CANDIDATE_STASH=42d22bbcea12ee0f555e84e0649877dabd967a4b; EXPANSION_ALLOWED=false. Local must source-audit the independent 120-row clipping finding and round-two admission, then prepare a bounded packet requiring long-document end-marker output plus R1 origin-security regression. No worker execution before bound release. Q001/Q004 OPEN; operator owns actor/data/store/effect. Durable B2, P11, public sync and deployment parked. LHW24 closed.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_B1_PRINT_R2_INTEGRATED_ROOT_CONTRACT; BATCH_ID=CVF-NCR-HTML-B1-PRINT-R2; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_2026-10-01.md; MATERIAL_COMMIT=5d68141e9415487a0dc0b285554df6d997840712; CANDIDATE_STASH=42d22bbcea12ee0f555e84e0649877dabd967a4b; EXPANSION_ALLOWED=false. Worker runs bound clean pre-implementation PASS, verifies six-path stash, reassesses full Print architecture, and repairs only a coherent integrated design with actual 120-row output/end-marker plus R1 origin regression. Otherwise BLOCKED_WITH_REASON; no same-problem successor. Q001/Q004 OPEN; actor/data/store/effect operator-owned. Durable B2, P11, public sync and deployment parked. LHW24 closed.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
