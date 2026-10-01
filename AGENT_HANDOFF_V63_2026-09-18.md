@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `6251ca305e62b572b1005d62990715338a3da65a`; B1 Print R2 bounded acceptance.
+Current HEAD recorded for this handoff: `9512b71c7189a8a71f542724c9e3c0ca954f7db0`; Preview owner audit complete, packet authoring next.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking branch: `origin/main`. Exact remote SHA must be derived live fro
 ## Purpose
 Carry CVF-NCR v2.7 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local dispatcher/reviewer. Phase: bounded R2 completion; read-only preview owner audit next; technical owner: Local; effect owner: operator; P11 parked.
+Role: Local dispatcher/reviewer. Phase: Preview owner audit complete; distinct packet authoring next; technical owner: Local; effect owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=read-only preview passive-load owner audit; role=Local dispatcher/reviewer; phase=review-complete; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=author distinct Preview passive-resource packet; role=Local dispatcher/reviewer; phase=packet-authoring; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -20,10 +20,10 @@ AKOE authority: `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADM
 ## Latest Work / Changes
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
-- B1 Print R2 accepted bounded at `6251ca305e62b572b1005d62990715338a3da65a`: worker 5/5 and 45/45 units; independent Local preformatted 120-line PyMuPDF probe 1/1, 3 pages/all rows/end marker, opaque origin/zero Print endpoint hits; Local test/evidence repair disclosed. Review: `docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md`. Width 700px; renderer only; Q001/Q004 OPEN. Next preview passive-load audit is read-only, no Print successor.
-- Prior R1 rejection `df1b928a9` and retained candidate stash `42d22bbcea12ee0f555e84e0649877dabd967a4b` remain historical evidence; R2 supersedes the product candidate, not the SCEC stop/no-successor history.
+- B1 Print R2 accepted bounded at `6251ca305`: worker 5/5, units 45/45; Local 120-line probe: 3 pages/all rows/end marker, opaque origin/zero Print hits. Review: `docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md`. Width 700px; renderer only; Q001/Q004 OPEN. Preview owner audit complete; no Print successor.
+- Preview passive-load audit `9512b71c7`: ADAPT_EXISTING_OWNER; synthetic sink finding. Distinct packet AUTHORING only; canonical identity/both specs required; no worker release. Audit: `docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_LOAD_OWNER_AUDIT_2026-10-01.md`.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: sync R2 bounded acceptance `6251ca305e62b572b1005d62990715338a3da65a` and read-only preview owner audit only; preserve Q001/Q004 and effects. No new worker release. Protected paths: six continuity paths below. Operator authorization: delegated Local decisions. Rollback: continuity only; preserve material packet and Q001/Q004.
+Authorized guard-maintenance scope: sync Preview owner audit `9512b71c7189a8a71f542724c9e3c0ca954f7db0` and distinct packet AUTHORING only; preserve Q001/Q004 and effects. No new worker release. Protected paths: six continuity paths below. Operator authorization: delegated Local decisions. Rollback: continuity only; preserve material packet and Q001/Q004.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
