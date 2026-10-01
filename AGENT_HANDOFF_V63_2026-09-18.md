@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `9e69115f`; batch `CVF-NCR-HTML-B1-SANDBOX`.
+Current HEAD recorded for this handoff: `0a9cded55`; batch `CVF-NCR-HTML-B1-SANDBOX-REGISTRY`.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -20,9 +20,9 @@ The three operator-relayed Human Boundary, Positioning, and Async handoffs are n
 ## Latest Work / Changes
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
-- B1 sandbox packet `9e69115` is material-only pending bound release; four-path test-only internal worker scope. B2f remains accepted bounded; Q001/Q004 OPEN.
+- B1 sandbox packet `9e69115` released; GC-051 registry repair `0a9cded55` covers the new spec. B2f remains accepted bounded; Q001/Q004 OPEN.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: bind B1 sandbox packet `9e69115`, exact baseline/work-order hashes and internal-worker next move. Protected paths: six continuity paths below. Operator authorization: delegated Local decisions. Rollback: continuity only; preserve material packet and Q001/Q004.
+Authorized guard-maintenance scope: bind Local GC-051 registry repair `0a9cded55` while preserving B1 packet hashes and next move. Protected paths: six continuity paths below. Operator authorization: delegated Local decisions. Rollback: continuity only; preserve material packet and Q001/Q004.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
