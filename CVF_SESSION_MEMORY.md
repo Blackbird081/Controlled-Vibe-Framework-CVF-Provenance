@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=read-only Preview navigation owner audit; role=Local orchestrator/reviewer; phase=review-complete; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
+Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=author Preview navigation containment packet; role=Local orchestrator/reviewer; phase=packet-authoring; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=READ_ONLY_PREVIEW_NAVIGATION_OWNER_AUDIT; REVIEW_COMMIT=f00658021db8b9cf83607cb7dae905de8270ff95; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_RESOURCE_COMPLETION_2026-10-01.md; EXPANSION_ALLOWED=false. Initial Preview srcdoc ACCEPTED_BOUNDED before user navigation; resource denial and canonical/version/Print regressions evidenced. Explicit link navigation replaces policy-bearing document and loads resources in synthetic Local probe; no production incident claim. Local may audit navigation owner/disposition only, no worker implementation grant. Preview worker execution terminated; no Print successor. Q001/Q004 OPEN; actor/data/store/effect operator-owned. Durable B2, P11, public sync and deployment parked. LHW24 closed.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_PREVIEW_NAVIGATION_CONTAINMENT_PACKET; AUDIT_COMMIT=1b9a745592ebedb8bc137825b68e387457222baa; AUDIT=docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_OWNER_AUDIT_2026-10-01.md; EXPANSION_ALLOWED=false. Source-only ADAPT_EXISTING_OWNER at Preview-derived presentation. Local authors one distinct navigation packet with integrated design admission, bounded trigger/request oracles, benign usability, canonical identity and existing initial-resource/Print regressions. No mechanism pre-approved; no worker execution before bound release. Initial Preview acceptance unchanged; no Print successor. Q001/Q004 OPEN; actor/data/store/effect operator-owned. Durable B2, P11, public sync/deployment parked. LHW24 closed.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
