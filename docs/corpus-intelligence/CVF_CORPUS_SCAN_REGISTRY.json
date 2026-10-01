@@ -8856,6 +8856,43 @@
       "nextScanRecommendation": "Revisit after a bounded Chromium sandbox proof or if the preview implementation changes."
     },
     {
+      "id": "cvf-ncr-html-b1-synthetic-sandbox-source",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "CVF NCR HTML B1 synthetic preview sandbox browser proof spec",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-preview-sandbox.spec.ts"
+      ],
+      "fileCount": 1,
+      "status": "PARTIALLY_SCANNED",
+      "scanWave": "CVF-NCR-HTML-B1-SANDBOX",
+      "scanDate": "2026-10-01",
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/reviews/CVF_CVF_NCR_HTML_B1_SYNTHETIC_SANDBOX_WORKER_RETURN_2026-10-01.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_SYNTHETIC_SANDBOX_2026-10-01.md",
+      "verdicts": {
+        "gc047": "PARTIAL",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [
+        "SYNTHETIC_UNSANDBOXED_SCRIPT_CONTROL",
+        "CHROMIUM_PREVIEW_EMPTY_SANDBOX_SCRIPT_BLOCK",
+        "OPAQUE_ORIGIN_AND_BENIGN_RENDER"
+      ],
+      "priorAbsorption": "One named Chromium Playwright spec for an intercepted synthetic export. No complete Web scan, passive-load, print, downloaded-file, accessibility, other-browser, governance or durable acceptance claim.",
+      "findings": [],
+      "negativeSearchTerms": [
+        "universal HTML safety",
+        "provider governance proof",
+        "B2 artifact acceptance"
+      ],
+      "nextScanRecommendation": "Revisit if a separately authorized preview repair or broader browser/context test changes this bounded result."
+    },
+    {
       "id": "dsh-wra-r1-whole-repository-absorption",
       "corpusType": "EXTERNAL_SOURCE",
       "displayName": "DeepSeek Harness DSH-WRA-R1 whole-repository absorption and runtime realization",
