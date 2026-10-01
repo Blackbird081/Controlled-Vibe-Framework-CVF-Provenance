@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PRINT_BROWSER_REPAIR_2026-10-01.md",
     "workOrderSha256": "8ff82b29df48abd0173f7c7a9a98d85f0f2ab6e00ab0c53498799d999bf79fdc"
   },
-  "currentAuthoritySyncReason": "B1 Print packet material 7bf21e6fd released after D056 audit; six-path internal worker execution only. Q001/Q004 data/store/effect remain open.",
+  "currentAuthoritySyncReason": "B1 Print reviewer decision 9cf3b9772 requires origin-isolation R1; initial six-path candidate is unaccepted and no worker execution is released. Q001/Q004 data/store/effect remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
