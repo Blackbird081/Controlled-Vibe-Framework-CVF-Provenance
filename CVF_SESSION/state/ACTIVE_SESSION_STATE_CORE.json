@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_SYNTHETIC_SANDBOX_2026-10-01.md",
-    "baselineSha256": "e23c2aea2b4daf843087f923426aa0b86007845f0a8af3b3825a4c04c741fe2a",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_SYNTHETIC_SANDBOX_2026-10-01.md",
-    "workOrderSha256": "2dc7d91a6ed2269d25341717f3953dd39945be2dbf8cc9d8845fa86955e7cef7"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PRINT_BROWSER_REPAIR_2026-10-01.md",
+    "baselineSha256": "529277b4640c9b712e616b6f2b97418b0347bfbba400e4247ae5488e69b411d6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PRINT_BROWSER_REPAIR_2026-10-01.md",
+    "workOrderSha256": "8ff82b29df48abd0173f7c7a9a98d85f0f2ab6e00ab0c53498799d999bf79fdc"
   },
-  "currentAuthoritySyncReason": "B1 Print source/native-semantics audit 8ad689b48 permits bounded repair-packet authoring; B1 sandbox remains accepted bounded. Q001/Q004 data/store/effect remain open.",
+  "currentAuthoritySyncReason": "B1 Print packet material 7bf21e6fd released after D056 audit; six-path internal worker execution only. Q001/Q004 data/store/effect remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

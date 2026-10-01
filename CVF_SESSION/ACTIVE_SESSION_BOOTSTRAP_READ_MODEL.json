@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_HTML_B1_PRINT_REPAIR_PACKET; BATCH_ID=CVF-NCR-HTML-B1-PRINT; MATERIAL_COMMIT=8ad689b48; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_SCOPE_AUDIT_2026-10-01.md; EXPANSION_ALLOWED=false. Local may author a bounded Print browser-repro/repair packet; no worker execution yet. Preserve opener isolation before HTML write and displayed-version binding. Do not claim actual paper print, universal HTML safety, passive-load/accessibility, provider/governance or artifact acceptance. Q001/Q004 Profile A OPEN; operator owns real actor/data/store/effect. Durable B2, P11, public sync and deployment parked. LHW24 closed.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B1_PRINT_REPAIR_WORK_ORDER; BATCH_ID=CVF-NCR-HTML-B1-PRINT-REPAIR; MATERIAL_COMMIT=7bf21e6fd; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PRINT_BROWSER_REPAIR_2026-10-01.md; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PRINT_BROWSER_REPAIR_2026-10-01.md; EXPANSION_ALLOWED=false. Shared-workspace INTERNAL_AGENT may execute six-path synthetic B1 Print browser repro/repair after bound pre-implementation PASS; no worker commit. Local owns independent native-browser review, GC-051 repair if needed, material commit and continuity. Preserve opener isolation before HTML write and displayed-version binding. No physical paper print, passive-load/accessibility, other-browser, provider/governance or artifact-acceptance claim. Q001/Q004 Profile A OPEN; operator owns real actor/data/store/effect. Durable B2, P11, public sync and deployment parked. LHW24 closed.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_SYNTHETIC_SANDBOX_2026-10-01.md",
-    "baselineSha256": "e23c2aea2b4daf843087f923426aa0b86007845f0a8af3b3825a4c04c741fe2a",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_SYNTHETIC_SANDBOX_2026-10-01.md",
-    "workOrderSha256": "2dc7d91a6ed2269d25341717f3953dd39945be2dbf8cc9d8845fa86955e7cef7"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PRINT_BROWSER_REPAIR_2026-10-01.md",
+    "baselineSha256": "529277b4640c9b712e616b6f2b97418b0347bfbba400e4247ae5488e69b411d6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PRINT_BROWSER_REPAIR_2026-10-01.md",
+    "workOrderSha256": "8ff82b29df48abd0173f7c7a9a98d85f0f2ab6e00ab0c53498799d999bf79fdc"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
