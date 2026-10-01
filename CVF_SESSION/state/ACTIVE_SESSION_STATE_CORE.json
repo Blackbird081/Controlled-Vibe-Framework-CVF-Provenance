@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2F_SYNTHETIC_TIMEOUT_2026-10-01.md",
     "workOrderSha256": "273cbbe95773954e54bea78372eb052ecdd26224be26aa9e0f3f5f7584fd217a"
   },
-  "currentAuthoritySyncReason": "B2f timeout-only packet completed and Local-accepted bounded with digest correction at 5b52bc0fa; current authority paths remain the B2f baseline/order for historical trace. Q001/Q004 real-data/store/effect decisions remain open.",
+  "currentAuthoritySyncReason": "B1 sandbox scope audit at 000017f22 permits browser-only synthetic packet authoring; B2f remains accepted bounded and the last released work order. Q001/Q004 real-data/store/effect decisions remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
