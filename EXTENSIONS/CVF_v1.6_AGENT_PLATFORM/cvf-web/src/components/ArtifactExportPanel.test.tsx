@@ -25,6 +25,35 @@ const EXPORT_RESULT: ArtifactExportResult = {
   ],
 };
 
+// jsdom stand-in for the print popup only: native popup, opener, sandbox/CSP enforcement,
+// layout height and print behavior are proven in tests/e2e/artifact-export-print-browser.spec.ts.
+function makePopup(options: { detachable?: boolean } = {}) {
+  const popupDoc = document.implementation.createHTMLDocument('popup');
+  let opener: unknown = { sentinel: 'app window' };
+  const openerAtInsert: unknown[] = [];
+  const printWindow = {
+    get opener() { return opener; },
+    set opener(value: unknown) { if (options.detachable !== false) opener = value; },
+    document: popupDoc,
+    focus: vi.fn(),
+    print: vi.fn(),
+    close: vi.fn(),
+  };
+  const append = popupDoc.body.appendChild.bind(popupDoc.body);
+  vi.spyOn(popupDoc.body, 'appendChild').mockImplementation(((node: Node) => { openerAtInsert.push(printWindow.opener); return append(node); }) as typeof popupDoc.body.appendChild);
+  const writeSpy = vi.spyOn(popupDoc, 'write');
+  const frames = () => ({
+    probe: popupDoc.querySelector('iframe[sandbox="allow-same-origin"]') as HTMLIFrameElement | null,
+    view: popupDoc.querySelector('iframe[sandbox=""]') as HTMLIFrameElement | null,
+  });
+  // The measuring frame's document is not laid out in jsdom, so its height is supplied.
+  const finishProbe = (probe: HTMLIFrameElement, scrollHeight: number) => {
+    Object.defineProperty(probe, 'contentDocument', { value: { documentElement: { scrollHeight }, body: { scrollHeight } }, configurable: true });
+    probe.dispatchEvent(new Event('load'));
+  };
+  return { popupDoc, printWindow, openerAtInsert, writeSpy, frames, finishProbe };
+}
+
 describe('ArtifactExportPanel', () => {
   beforeEach(() => {
     mockLanguage = 'en';
@@ -499,9 +528,9 @@ describe('ArtifactExportPanel', () => {
       urlApi.revokeObjectURL = revokeObjectURL;
       onTestFinished(() => { urlApi.createObjectURL = priorCreate; urlApi.revokeObjectURL = priorRevoke; });
       const anchorClick = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => undefined);
-      const printWindow = { document: { write: vi.fn(), close: vi.fn() }, focus: vi.fn(), print: vi.fn() };
+      const popup = makePopup();
+      const { popupDoc, printWindow, openerAtInsert, writeSpy, frames, finishProbe } = popup;
       const openSpy = vi.spyOn(window, 'open').mockReturnValue(printWindow as unknown as Window);
-
       render(<ArtifactExportPanel />);
       fireEvent.click(buildButton());
       await waitFor(() => expect(noticeState()).toBe('current'));
@@ -527,12 +556,102 @@ describe('ArtifactExportPanel', () => {
       expect(blobText).toBe(html);
 
       fireEvent.click(screen.getByRole('button', { name: 'Print preview' }));
-      expect(openSpy).toHaveBeenCalled();
-      expect(printWindow.document.write).toHaveBeenCalledWith(html);
+      expect(openSpy).toHaveBeenCalledTimes(1);
+      // `noopener` would make window.open return null and lose the handle; opener is detached instead.
+      expect(openSpy.mock.calls[0][2]).toBeUndefined();
+      // Isolation is in place before any frame exists: a CSP meta first, then only a measuring
+      // frame; the displayed older version is delivered solely as srcdoc, never written.
+      const policy = popupDoc.querySelector('meta[http-equiv="Content-Security-Policy"]');
+      expect(policy?.getAttribute('content')).toMatch(/default-src 'none'/);
+      expect(policy?.getAttribute('content')).not.toMatch(/script-src|connect-src|unsafe-eval/);
+      const { probe } = frames();
+      expect(probe).not.toBeNull();
+      expect(probe!.getAttribute('srcdoc')).toBe(html);
+      expect(frames().view).toBeNull();
+      expect(openerAtInsert[0]).toBeNull();
+      expect(writeSpy).not.toHaveBeenCalled();
+      expect(printWindow.print).not.toHaveBeenCalled();
+      // Measured height sizes the printed frame; print waits for that frame's own content load.
+      finishProbe(probe!, 1234);
+      const view = frames().view;
+      expect(view).not.toBeNull();
+      expect(view!.getAttribute('sandbox')).toBe('');
+      expect(view!.getAttribute('srcdoc')).toBe(html);
+      expect(view!.style.height).toBe('1236px');
+      expect(frames().probe).toBeNull();
+      expect(printWindow.print).not.toHaveBeenCalled();
+      view!.dispatchEvent(new Event('load'));
       expect(printWindow.print).toHaveBeenCalledTimes(1);
+      expect(printWindow.close).not.toHaveBeenCalled();
+      expect(screen.queryByTestId('artifact-print-blocked')).toBeNull();
 
       expect(screen.getByTestId('artifact-version-notice').textContent).toMatch(/copy, download and print/);
       expect(noticeState()).toBe('stale');
+    });
+
+    it('tells the user when the print window is blocked and writes nothing', async () => {
+      fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
+      vi.spyOn(window, 'open').mockReturnValue(null);
+      render(<ArtifactExportPanel />);
+      fireEvent.click(buildButton());
+      await waitFor(() => expect(noticeState()).toBe('current'));
+
+      fireEvent.click(screen.getByRole('button', { name: 'Print preview' }));
+
+      expect(screen.getByTestId('artifact-print-blocked').textContent).toMatch(/Allow pop-ups/);
+    });
+
+    it('closes the print window and inserts nothing when the opener cannot be detached', async () => {
+      fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
+      const { popupDoc, printWindow } = makePopup({ detachable: false });
+      vi.spyOn(window, 'open').mockReturnValue(printWindow as unknown as Window);
+      render(<ArtifactExportPanel />);
+      fireEvent.click(buildButton());
+      await waitFor(() => expect(noticeState()).toBe('current'));
+
+      fireEvent.click(screen.getByRole('button', { name: 'Print preview' }));
+
+      expect(popupDoc.querySelector('iframe')).toBeNull();
+      expect(popupDoc.querySelector('meta')).toBeNull();
+      expect(popupDoc.body.innerHTML).toBe('');
+      expect(printWindow.print).not.toHaveBeenCalled();
+      expect(printWindow.close).toHaveBeenCalledTimes(1);
+      expect(screen.getByTestId('artifact-print-blocked')).toBeTruthy();
+    });
+
+    it('closes the print window and never prints when the document height cannot be measured', async () => {
+      fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
+      const { printWindow, frames, finishProbe } = makePopup();
+      vi.spyOn(window, 'open').mockReturnValue(printWindow as unknown as Window);
+      render(<ArtifactExportPanel />);
+      fireEvent.click(buildButton());
+      await waitFor(() => expect(noticeState()).toBe('current'));
+      fireEvent.click(screen.getByRole('button', { name: 'Print preview' }));
+
+      finishProbe(frames().probe!, 0);
+
+      expect(frames().view).toBeNull();
+      expect(printWindow.print).not.toHaveBeenCalled();
+      expect(printWindow.close).toHaveBeenCalledTimes(1);
+      await waitFor(() => expect(screen.getByTestId('artifact-print-blocked')).toBeTruthy());
+    });
+
+    it('closes the print window when print() itself fails after the content loaded', async () => {
+      fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
+      const { printWindow, frames, finishProbe } = makePopup();
+      printWindow.print.mockImplementation(() => { throw new Error('print failed'); });
+      vi.spyOn(window, 'open').mockReturnValue(printWindow as unknown as Window);
+      render(<ArtifactExportPanel />);
+      fireEvent.click(buildButton());
+      await waitFor(() => expect(noticeState()).toBe('current'));
+      fireEvent.click(screen.getByRole('button', { name: 'Print preview' }));
+      finishProbe(frames().probe!, 800);
+
+      frames().view!.dispatchEvent(new Event('load'));
+
+      expect(printWindow.print).toHaveBeenCalledTimes(1);
+      expect(printWindow.close).toHaveBeenCalledTimes(1);
+      await waitFor(() => expect(screen.getByTestId('artifact-print-blocked')).toBeTruthy());
     });
 
     it('uses a fresh build for actions after rebuilding with the edited form', async () => {

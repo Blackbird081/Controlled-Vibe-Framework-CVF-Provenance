@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "cvf.ncrHtmlB1PrintRepairWorkerProof.v3",
+  "revision": "R2 completeness plus origin isolation",
+  "executionBaseHead": "60e0cc493d48641964b8860ed7186ce24d72887e",
+  "inheritedStash": "42d22bbcea12ee0f555e84e0649877dabd967a4b",
+  "inheritedBlobOidsMatched": 6,
+  "browser": {
+    "name": "chromium",
+    "version": "145.0.7632.6",
+    "mode": "headless",
+    "profiles": 1
+  },
+  "command": "NEXTAUTH_URL=http://localhost:3001 AUTH_URL=http://localhost:3001 npx playwright test tests/e2e/artifact-export-print-browser.spec.ts --config playwright.config.mock.ts",
+  "design": "popup shell: opener detached first, CSP meta (default-src 'none'; style-src 'unsafe-inline'; img-src data:; font-src data:; frame-src about:) second, a hidden allow-same-origin measuring frame (no scripts) reads the content height at the fixed 700 px frame width, then an empty-sandbox printed frame sized to that height + 2 px is inserted with srcdoc already set and print() runs on its content load; result.html is never document.write-n",
+  "instrumentation": "observe-only wrappers on window.open (main page), Document.prototype.write and window.print (all pages) record then call the native original; no popup, handle or print result is fabricated; headless native print() opens no dialog. Mutation cases add test-only init scripts that strip sandbox and CSP, or force a 100vh frame height.",
+  "outputExtraction": "popup.pdf(format A4, print media) written to an OS temp directory and read with pdftotext -layout (poppler); file removed after reading; page count = form feeds; markers are unique ROWTOKEN001/040/080/120 and an end marker",
+  "payload": "harmless synthetic script plus passive img and stylesheet references: reads and mutates uniquely named localStorage and non-HttpOnly cookie sentinels, tries parent and window.top.opener access, fetches, loads an image and a stylesheet from one intercepted no-forward same-origin endpoint; only booleans and counts are recorded, no cookie or storage values",
+  "preR2Receipt": {
+    "codeState": "R1 candidate restored from stash, panel unmodified by R2",
+    "result": {
+      "passed": 1,
+      "failed": 2
+    },
+    "longDocument": {
+      "pages": 1,
+      "rowTokensFound": 44,
+      "row001": true,
+      "row040": true,
+      "row080": false,
+      "row120": false,
+      "endMarker": false
+    },
+    "shortDocument": {
+      "pages": 1,
+      "endMarker": true
+    },
+    "printEndpointHits": {
+      "fetch": 0,
+      "img": 1,
+      "css": 1
+    },
+    "meaning": "R1 clips the long document at 44 of 120 rows and its frame still performs passive image and stylesheet loads; both are failures"
+  },
+  "positiveOriginControl": {
+    "sandboxAttribute": null,
+    "payloadRan": true,
+    "storageSeen": true,
+    "storageMutatedInOrigin": true,
+    "cookieSeen": true,
+    "cookieMutatedInOrigin": true,
+    "parentReach": true,
+    "fetch": "ok",
+    "endpointHits": {
+      "fetch": 1,
+      "img": 1,
+      "css": 1
+    }
+  },
+  "postR2RealPrint": {
+    "result": {
+      "tests": 5,
+      "passed": 5,
+      "failed": 0
+    },
+    "common": {
+      "popupEventCount": 1,
+      "windowOpenArgs": [
+        "",
+        "_blank"
+      ],
+      "windowOpenReturnClass": "[object Window]",
+      "popupOpenerPresentAtCreation": true,
+      "popupOpenerNullAfterwards": true,
+      "untrustedDocumentWriteCount": 0,
+      "printCallCount": 1,
+      "printFrameCount": 1,
+      "printFrameSandboxAttribute": "",
+      "printFrameDocumentOrigin": "null",
+      "printedPayloadEqualsDisplayed": true,
+      "payloadRan": false,
+      "storageMutatedInOrigin": false,
+      "cookieMutatedInOrigin": false,
+      "printEndpointHits": {
+        "fetch": 0,
+        "img": 0,
+        "css": 0
+      },
+      "previewEndpointHitsBeforePrint": {
+        "fetch": 0,
+        "img": 1,
+        "css": 1
+      },
+      "appProbeAfterPrint": "unset",
+      "exportRouteHits": 1,
+      "unexpectedRequestCount": 0
+    },
+    "shortDocument": {
+      "printFrameHeading": "Print Fixture Version A",
+      "formTitleAtPrint": "Version B unsaved edit",
+      "pdfPages": 1,
+      "endMarker": true
+    },
+    "longDocument": {
+      "printFrameHeading": "Print Fixture Long A",
+      "formTitleAtPrint": "Long B unsaved edit",
+      "pdfPages": 3,
+      "rowTokensFound": 120,
+      "row001": true,
+      "row040": true,
+      "row080": true,
+      "row120": true,
+      "endMarker": true
+    },
+    "directOutputControl": {
+      "pdfPagesAtLeast": 2,
+      "allMarkersPresent": true
+    }
+  },
+  "mutationControls": {
+    "isolationStripped": {
+      "isolationRemovedByMutation": true,
+      "printCallCount": 1,
+      "printFrameSandboxAttribute": null,
+      "printFrameDocumentOrigin": "http://localhost:3001",
+      "payloadRan": true,
+      "storageMutatedInOrigin": true,
+      "cookieMutatedInOrigin": true,
+      "printEndpointHits": {
+        "fetch": 2,
+        "img": 2,
+        "css": 2
+      },
+      "oracleResult": "all expected violations reported"
+    },
+    "clippingForced100vh": {
+      "clippingAppliedByMutation": true,
+      "printCallCount": 1,
+      "isolationViolations": 0,
+      "pdfPages": 1,
+      "rowTokensFound": 44,
+      "row080": false,
+      "row120": false,
+      "endMarker": false,
+      "oracleResult": "completeness violations reported"
+    },
+    "sourceLevelNoCspInsertion": {
+      "result": {
+        "passed": 0,
+        "failed": 1
+      },
+      "payloadRan": false,
+      "printEndpointHits": {
+        "fetch": 0,
+        "img": 2,
+        "css": 2
+      },
+      "meaning": "without the CSP the sandbox still blocks scripts but passive image and stylesheet loads go through, so the CSP is what blocks them; source restored"
+    }
+  },
+  "otherChecks": {
+    "vitestArtifactExportPanel": "45 passed, 0 failed",
+    "tsc": "PASS",
+    "eslint": "PASS (max-warnings=0, three paths)"
+  },
+  "rawHtmlIncluded": false,
+  "limits": [
+    "one Chromium 145 headless profile, one run per case",
+    "renderer PDF output only: no physical paper, print dialog, user margins or scaling, or accessibility claim",
+    "120-row fixture only; much longer documents or frame height limits are untested; content needing a viewport wider than the fixed 700 px frame width is untested",
+    "external images and stylesheets are blocked in the print view by design; data: images work",
+    "the existing preview iframe loaded passive resources from the payload (1 image, 1 stylesheet) before Print; existing behavior, not changed",
+    "blocked-popup, detach-failure, measure-failure and print-failure branches are covered by jsdom stand-ins only",
+    "no other-browser, downloaded-HTML or universal HTML safety claim",
+    "Q001/Q004 and all effect decisions remain open"
+  ],
+  "localReviewRepairs": {
+    "requestOracle": "unrelated same-origin requests also fail; controlled endpoint counted separately; known Next dev assets exempt",
+    "pdfTool": "optional CVF_PDFTOTEXT_PATH selects existing executable; extraction errors disclosed instead of silent null",
+    "workerReturnGate": "Local PASS 69/69; exit 0; 13.18 seconds",
+    "lint": "PASS",
+    "typescript": "PASS"
+  }
+}

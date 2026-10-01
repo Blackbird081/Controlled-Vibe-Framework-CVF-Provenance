@@ -170,6 +170,7 @@ const LABELS = {
     errorBuild: 'Build #{n}',
     errorPreviewKnown: 'The preview still shows build #{n}, not this build.',
     errorPreviewUnknown: 'The preview still shows an earlier result of unknown source, not this build.',
+    printBlocked: 'Print preview did not open. Allow pop-ups for this site and try again. Nothing was printed.',
   },
   vi: {
     title: 'Xuất gói rà soát',
@@ -224,8 +225,16 @@ const LABELS = {
     errorBuild: 'Lần tạo #{n}',
     errorPreviewKnown: 'Bản xem trước vẫn là lần tạo #{n}, không phải lần tạo này.',
     errorPreviewUnknown: 'Bản xem trước vẫn là kết quả cũ không rõ nguồn, không phải lần tạo này.',
+    printBlocked: 'Không mở được bản xem để in. Hãy cho phép cửa sổ bật lên cho trang này rồi thử lại. Chưa in gì cả.',
   },
 };
+
+// Print frame layout width in CSS px: the frame is laid out at its own width, so the height
+// measured at this width is the height it prints at.
+const PRINT_FRAME_WIDTH = 700;
+// Applied to the print popup and inherited by its srcdoc frames: no script, no connection and
+// no network resource loads (the exported packet is self-contained; data: images still work).
+const PRINT_FRAME_POLICY = "default-src 'none'; style-src 'unsafe-inline'; img-src data:; font-src data:; frame-src about:; base-uri 'none'; form-action 'none'";
 
 function normalizeRequest(input?: Partial<ArtifactExportRequest>): ArtifactExportRequest {
   return { ...DEFAULT_REQUEST, ...input };
@@ -320,6 +329,7 @@ export function ArtifactExportPanel({
   );
   const [pendingAttempt, setPendingAttempt] = useState<number | null>(null);
   const [copied, setCopied] = useState(false);
+  const [printBlocked, setPrintBlocked] = useState(false);
   const [attemptError, setAttemptError] = useState<AttemptError | null>(null);
   const [superseded, setSuperseded] = useState<SupersededOutcome[]>([]);
   const latestAttempt = useRef(0);
@@ -434,12 +444,78 @@ export function ArtifactExportPanel({
 
   const handlePrint = useCallback(() => {
     if (!result) return;
-    const printWindow = window.open('', '_blank', 'noopener,noreferrer');
-    if (!printWindow) return;
-    printWindow.document.write(result.html);
-    printWindow.document.close();
-    printWindow.focus();
-    printWindow.print();
+    // The popup is an app-origin about:blank, so result.html must never be written into
+    // it or run with app authority. The popup receives a fixed shell instead:
+    //  - a CSP meta first, inherited by the srcdoc frames below: no script, no fetch, no
+    //    network load, so even a same-origin frame cannot reach storage, cookies or app
+    //    endpoints;
+    //  - a hidden measuring frame (sandbox allow-same-origin: no scripts) that only lets
+    //    this code read the document height at the print width;
+    //  - the printed frame: empty sandbox (no scripts, opaque origin) sized to the
+    //    measured height, because a replaced element prints only its own box and a fixed
+    //    height would clip long documents.
+    // `noopener` is not used because it makes window.open return null; the opener is
+    // detached before anything is inserted instead. Any failure closes the window and
+    // never prints a partial document.
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) {
+      setPrintBlocked(true);
+      return;
+    }
+    const abort = () => {
+      printWindow.close();
+      setPrintBlocked(true);
+    };
+    try {
+      printWindow.opener = null;
+      if (printWindow.opener !== null) throw new Error('opener not detached');
+      const doc = printWindow.document;
+      doc.title = result.filename;
+      const policy = doc.createElement('meta');
+      policy.httpEquiv = 'Content-Security-Policy';
+      policy.content = PRINT_FRAME_POLICY;
+      doc.head.appendChild(policy);
+      doc.body.style.margin = '0';
+
+      const view = doc.createElement('iframe');
+      view.setAttribute('sandbox', '');
+      view.setAttribute('title', 'Print preview');
+      view.style.cssText = `display:block;border:0;width:${PRINT_FRAME_WIDTH}px;height:0`;
+
+      const probe = doc.createElement('iframe');
+      probe.setAttribute('sandbox', 'allow-same-origin');
+      probe.setAttribute('aria-hidden', 'true');
+      probe.style.cssText = `position:absolute;left:-10000px;top:0;border:0;visibility:hidden;width:${PRINT_FRAME_WIDTH}px;height:100px`;
+      probe.addEventListener('load', () => {
+        try {
+          const probeDoc = probe.contentDocument;
+          const height = probeDoc ? Math.ceil(Math.max(probeDoc.documentElement.scrollHeight, probeDoc.body?.scrollHeight ?? 0)) : 0;
+          if (!(height > 0)) throw new Error('print height not measured');
+          view.style.height = `${height + 2}px`;
+          probe.remove();
+          // Insert only now, with srcdoc already set, so the first load is the content and
+          // print() never runs against an empty frame.
+          view.addEventListener('load', () => {
+            try {
+              printWindow.focus();
+              printWindow.print();
+            } catch {
+              abort();
+            }
+          }, { once: true });
+          view.srcdoc = result.html;
+          doc.body.appendChild(view);
+        } catch {
+          abort();
+        }
+      }, { once: true });
+
+      probe.srcdoc = result.html;
+      doc.body.appendChild(probe);
+      setPrintBlocked(false);
+    } catch {
+      abort();
+    }
   }, [result]);
 
   return (
@@ -678,6 +754,16 @@ export function ArtifactExportPanel({
                 </button>
               </div>
             </div>
+
+            {printBlocked && (
+              <p
+                role="status"
+                data-testid="artifact-print-blocked"
+                className="mt-4 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs leading-5 text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-100"
+              >
+                {labels.printBlocked}
+              </p>
+            )}
 
             {versionNotice && (
               <p
