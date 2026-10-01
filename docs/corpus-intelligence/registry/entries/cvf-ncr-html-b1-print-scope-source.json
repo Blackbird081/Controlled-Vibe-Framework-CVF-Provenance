@@ -1,0 +1,45 @@
+{
+  "registryOrder": 214,
+  "id": "cvf-ncr-html-b1-print-scope-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF NCR HTML B1 Print scope sources",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-panel.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts"
+  ],
+  "fileCount": 4,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "CVF-NCR-HTML-B1-PRINT-SCOPE-AUDIT",
+  "scanDate": "2026-10-01",
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_SCOPE_AUDIT_2026-10-01.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": null,
+  "verdicts": {"gc047": "PARTIAL", "gc048": "NOT_RUN", "gc050": "NOT_RUN"},
+  "semanticRegions": [
+    "PANEL_PRINT_WINDOW_OPEN_NOOPENER_RETURN",
+    "JSDOM_PRINT_WINDOW_MOCK",
+    "BROWSER_PRINT_PROOF_GAP",
+    "ROUTE_HTML_ESCAPING_BOUNDARY"
+  ],
+  "priorAbsorption": "B1 version binding and preview sandbox proofs do not establish native Print behavior. This named-path audit does not claim full Web coverage or durable acceptance.",
+  "findings": [{
+    "id": "html-b1-print-noopener-null-branch",
+    "summary": "Print opens _blank with noopener,noreferrer and returns when window.open is null, while jsdom tests force a non-null fake window.",
+    "disposition": "ACCEPT_WITH_BOUNDARY",
+    "nextAction": "Consider a bounded real-browser Print reproduction and repair packet preserving opener isolation before HTML write.",
+    "defectClass": "RUNTIME_SIGNAL_GAP",
+    "learningLane": "RUNTIME_BEHAVIOR_LEARNING"
+  }],
+  "negativeSearchTerms": [
+    "native Print invocation in named browser tests",
+    "preview sandbox applies to print window",
+    "mocked window.open proves native print"
+  ],
+  "nextScanRecommendation": "Revisit after a bounded Print repair or a change to panel print architecture."
+}
