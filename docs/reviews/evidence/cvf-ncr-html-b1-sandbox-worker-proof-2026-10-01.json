@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "cvf.ncrHtmlB1SandboxWorkerProof.v1",
+  "executionBaseHead": "38dd871c944260846a6f30f339cb43100e98163c",
+  "browser": {"name": "chromium", "version": "145.0.7632.6", "mode": "headless", "profiles": 1},
+  "command": "CVF_PLAYWRIGHT_PORT=3000 npx playwright test tests/e2e/artifact-export-preview-sandbox.spec.ts --config playwright.config.mock.ts",
+  "result": {"tests": 1, "passed": 1, "failed": 0},
+  "control": {"sandboxAttribute": null, "parentSentinel": "executed", "selfMarker": "1", "executable": true},
+  "panel": {
+    "sandboxAttribute": "",
+    "sandboxTokens": [],
+    "parentSentinelAfterWait": "unset",
+    "selfMarker": null,
+    "contentDocumentReachableFromParent": false,
+    "frameOrigin": "null",
+    "headingVisible": true,
+    "scriptBlocked": true
+  },
+  "network": {"exportRouteInterceptions": 1, "fixtureRequestCount": 0, "unexpectedSubframeRequestCount": 0},
+  "firstAttemptNote": "First run with default port 3001 failed in login (ECONNREFUSED ::1:3000) because the existing harness auth redirects to port 3000; rerun with CVF_PLAYWRIGHT_PORT=3000 passed. No test source change between runs apart from removing an unused base-origin value before either run.",
+  "rawHtmlIncluded": false,
+  "limits": [
+    "one Chromium 145 headless profile only",
+    "no assertion about passive loads, printing, downloaded HTML execution, accessibility or other browsers",
+    "no assertion about universal HTML safety or AI governance",
+    "Q001/Q004 and all effect decisions remain open"
+  ]
+}
