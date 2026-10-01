@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "cvf.ncrHtmlB1LocalSandboxProbe.v1",
+  "actor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "invocationId": "cvf-ncr-html-b1-local-sandbox-probe-20261001",
+  "closureBaseHead": "9cf00161d",
+  "method": "Reviewer inspected the worker spec, then reran one focused Chromium case. Reviewer tightened the origin assertion to the actual Preview frame and reran that focused case after the edit.",
+  "finalSpecSha256": "1ad62af6a0e8dee386ffee7f1b4ec1518f582c3cf08eb033d2bca511fa093651",
+  "workerProofSha256": "7372736c65836559424f1628e26d39faad4ae710f275630993543dc93f413e07",
+  "command": "CVF_PLAYWRIGHT_PORT=3000 npx playwright test tests/e2e/artifact-export-preview-sandbox.spec.ts --config playwright.config.mock.ts",
+  "result": {"tests": 1, "passed": 1, "failed": 0, "exitCode": 0},
+  "browser": {"name": "chromium", "version": "145.0.7632.6", "mode": "headless"},
+  "observed": {
+    "controlParentSentinel": "executed",
+    "controlSelfMarker": "1",
+    "controlSandboxAttribute": null,
+    "panelSandboxAttribute": "",
+    "panelSandboxTokens": [],
+    "panelParentSentinel": "unset",
+    "panelSelfMarker": null,
+    "panelContentDocumentReachableFromParent": false,
+    "previewFrameOrigin": "null",
+    "benignHeadingVisible": true,
+    "exportRouteInterceptions": 1,
+    "fixtureRequestCount": 0,
+    "unexpectedSubframeRequestCount": 0
+  },
+  "typescript": "PASS: npm run check",
+  "eslint": "PASS: npx eslint --max-warnings=0 tests/e2e/artifact-export-preview-sandbox.spec.ts",
+  "claimBoundary": "One synthetic fixture in one Chromium headless profile. No passive-load, print, downloaded-file, accessibility, other-browser, production-governance or artifact-acceptance claim."
+}
