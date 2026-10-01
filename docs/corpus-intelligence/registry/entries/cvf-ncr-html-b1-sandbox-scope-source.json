@@ -1,0 +1,46 @@
+{
+  "registryOrder": 212,
+  "id": "cvf-ncr-html-b1-sandbox-scope-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF NCR HTML B1 preview sandbox scope sources",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-byte-download.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-panel.spec.ts"
+  ],
+  "fileCount": 4,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "CVF-NCR-HTML-B1-SANDBOX-SCOPE-AUDIT",
+  "scanDate": "2026-10-01",
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_CVF_NCR_HTML_B1_SANDBOX_SCOPE_AUDIT_2026-10-01.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": null,
+  "verdicts": { "gc047": "PARTIAL", "gc048": "NOT_RUN", "gc050": "NOT_RUN" },
+  "semanticRegions": [
+    "PREVIEW_SRCDOC_EMPTY_SANDBOX",
+    "JSDOM_PREVIEW_VERSION_TESTS",
+    "BROWSER_PREVIEW_CONTENT_ONLY"
+  ],
+  "priorAbsorption": "B1 version binding and B2c browser download proofs cover displayed version/content, not runtime iframe sandbox restrictions. B2 durable acceptance remains an operator checkpoint.",
+  "findings": [
+    {
+      "id": "html-b1-preview-sandbox-browser-proof-gap",
+      "summary": "The panel renders srcDoc with an empty sandbox attribute, but named browser tests assert preview content without a script-blocking control or opaque-origin assertion.",
+      "disposition": "ACCEPT_WITH_BOUNDARY",
+      "nextAction": "Consider one synthetic browser-only sandbox proof with a safe script sentinel and an unsandboxed negative control; no provider, production edit or acceptance claim.",
+      "defectClass": "RUNTIME_SIGNAL_GAP",
+      "learningLane": "DOCUMENTATION_ONLY_LEARNING"
+    }
+  ],
+  "negativeSearchTerms": [
+    "sandbox runtime assertion in named Playwright tests",
+    "script blocking proved by jsdom srcdoc attribute check",
+    "B2 artifact acceptance by preview iframe"
+  ],
+  "nextScanRecommendation": "Revisit after a bounded Chromium sandbox proof or if the preview implementation changes."
+}
