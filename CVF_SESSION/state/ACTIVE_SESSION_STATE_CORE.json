@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2F_SYNTHETIC_TIMEOUT_2026-10-01.md",
-    "baselineSha256": "bf9b0630025707c58a6ae9a3710a9a3c446ea9d208dff899533e096afd6dfee1",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2F_SYNTHETIC_TIMEOUT_2026-10-01.md",
-    "workOrderSha256": "273cbbe95773954e54bea78372eb052ecdd26224be26aa9e0f3f5f7584fd217a"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_SYNTHETIC_SANDBOX_2026-10-01.md",
+    "baselineSha256": "e23c2aea2b4daf843087f923426aa0b86007845f0a8af3b3825a4c04c741fe2a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_SYNTHETIC_SANDBOX_2026-10-01.md",
+    "workOrderSha256": "2dc7d91a6ed2269d25341717f3953dd39945be2dbf8cc9d8845fa86955e7cef7"
   },
-  "currentAuthoritySyncReason": "B1 sandbox scope audit at 000017f22 permits browser-only synthetic packet authoring; B2f remains accepted bounded and the last released work order. Q001/Q004 real-data/store/effect decisions remain open.",
+  "currentAuthoritySyncReason": "B1 sandbox packet material 9e69115 binds exact baseline/work-order hashes for synthetic internal-worker release only. Q001/Q004 real-data/store/effect remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
