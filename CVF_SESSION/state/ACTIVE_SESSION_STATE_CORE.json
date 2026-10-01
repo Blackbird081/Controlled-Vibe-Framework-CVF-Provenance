@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_RESOURCE_POLICY_2026-10-01.md",
     "workOrderSha256": "328085ae4c19a89e14857ace76e6bdcfd1fd6b4bb9379208e054ead965562db0"
   },
-  "currentAuthoritySyncReason": "Preview packet material be8e5feca601ce2b2e3fb1c01a45a93674791c43; exact-hash pair binds seven-path internal worker execution after bound release/pre-implementation gates. Q001/Q004 OPEN, accepted Print R2 preserved, no Print successor or effect expansion. Exact batch binding: CVF-NCR-HTML-B1-PREVIEW-RESOURCES.",
+  "currentAuthoritySyncReason": "Preview packet material be8e5feca601ce2b2e3fb1c01a45a93674791c43; exact-hash pair binds seven-path internal worker execution after bound release/pre-implementation gates. Q001/Q004 OPEN, accepted Print R2 preserved, no Print successor or effect expansion. Exact batch binding: CVF-NCR-HTML-B1-PREVIEW-RESOURCES. GC-020 continuity parent 7b2931dd23b8f1aee386921b03000a8f5aa63aa9.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
