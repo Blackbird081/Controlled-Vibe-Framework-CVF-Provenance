@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_RESOURCE_POLICY_2026-10-01.md",
-    "baselineSha256": "fa67386d02e5d3b45f8a11ca4d5bfa62d924e74bda38500ff42db560ec11e857",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_RESOURCE_POLICY_2026-10-01.md",
-    "workOrderSha256": "328085ae4c19a89e14857ace76e6bdcfd1fd6b4bb9379208e054ead965562db0"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_CONTAINMENT_2026-10-02.md",
+    "baselineSha256": "500c681be76a2f1e1185543a9ec12535212387a4668b512960967ae68e019226",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_CONTAINMENT_2026-10-02.md",
+    "workOrderSha256": "1c927d435a1dcb75cc1936fae452eb429f581ca3d20184b773f280f3ebe9ff7c"
   },
-  "currentAuthoritySyncReason": "Navigation owner audit complete at 1b9a745592ebedb8bc137825b68e387457222baa; next distinct navigation packet AUTHORING with integrated design admission only, no worker release. Previous Preview packet historical, initial acceptance preserved; Q001/Q004 OPEN and effects parked.",
+  "currentAuthoritySyncReason": "Navigation packet committed at ed9bdeba0b64f4928235271f19a1752736ed9c0b; bind CVF-NCR-HTML-B1-PREVIEW-NAVIGATION for seven-path worker execution after bound gates and integrated pre-edit design. Local owns review; initial Preview/Print boundaries retained; Q001/Q004 OPEN and effects parked.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

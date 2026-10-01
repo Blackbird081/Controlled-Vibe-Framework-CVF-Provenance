@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `1b9a745592ebedb8bc137825b68e387457222baa`; navigation audit complete.
+Current HEAD recorded for this handoff: `ed9bdeba0b64f4928235271f19a1752736ed9c0b`; CVF-NCR-HTML-B1-PREVIEW-NAVIGATION; bound worker execution next.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking: `origin/main`; resolve SHA live. External agent memory is non-c
 ## Purpose
 Carry CVF-NCR v2.7 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local dispatcher/reviewer. Phase: navigation audit complete; packet authoring next; technical owner: Local; effect owner: operator; P11 parked.
+Role: Local dispatcher/reviewer. Phase: worker-dispatch; technical owner: Local; effect owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=author Preview navigation containment packet; role=Local dispatcher/reviewer; phase=packet-authoring; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=execute bound Preview navigation packet; role=Local dispatcher/reviewer; phase=worker-dispatch; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -21,9 +21,9 @@ AKOE authority: `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADM
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
 - B1 Print R2 accepted bounded at `6251ca305`: worker 5/5, units 45/45; Local 120-line probe: 3 pages/all rows/end marker, opaque origin/zero Print hits. Review: `docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md`. Width 700px; renderer only; Q001/Q004 OPEN. Preview owner audit complete; no Print successor.
-- Navigation audit `1b9a74559`: ADAPT_EXISTING_OWNER; next packet AUTHORING with design admission, no worker release. Initial Preview/Print accepted boundaries retained; Q001/Q004 OPEN. Audit: `docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_OWNER_AUDIT_2026-10-01.md`.
+- Navigation packet `ed9bdeba0` bound; seven-path worker, pre-edit design required. WO: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_CONTAINMENT_2026-10-02.md`. Initial Preview/Print retained; Q001/Q004 OPEN.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: sync navigation audit `1b9a745592ebedb8bc137825b68e387457222baa` and packet AUTHORING only; preserve Q001/Q004 and effects. No worker release. Protected paths: six continuity paths below. Operator authorization: delegated Local decisions. Rollback: continuity only; preserve material packet and Q001/Q004.
+Authorized guard-maintenance scope: bind navigation packet `ed9bdeba0b64f4928235271f19a1752736ed9c0b`; seven-path worker after bound gates. Preserve Q001/Q004 and effects. Protected paths: six continuity paths below. Operator authorization: delegated Local decisions. Rollback: continuity only; preserve material packet.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`

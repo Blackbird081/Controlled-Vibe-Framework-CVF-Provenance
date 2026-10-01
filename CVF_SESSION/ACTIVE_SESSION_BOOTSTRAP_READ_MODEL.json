@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_PREVIEW_NAVIGATION_CONTAINMENT_PACKET; AUDIT_COMMIT=1b9a745592ebedb8bc137825b68e387457222baa; AUDIT=docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_OWNER_AUDIT_2026-10-01.md; EXPANSION_ALLOWED=false. Source-only ADAPT_EXISTING_OWNER at Preview-derived presentation. Local authors one distinct navigation packet with integrated design admission, bounded trigger/request oracles, benign usability, canonical identity and existing initial-resource/Print regressions. No mechanism pre-approved; no worker execution before bound release. Initial Preview acceptance unchanged; no Print successor. Q001/Q004 OPEN; actor/data/store/effect operator-owned. Durable B2, P11, public sync/deployment parked. LHW24 closed.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; BATCH_ID=CVF-NCR-HTML-B1-PREVIEW-NAVIGATION; NEXT_ACTION_CLASS=EXECUTE_B1_PREVIEW_NAVIGATION_PACKET; PACKET_COMMIT=ed9bdeba0b64f4928235271f19a1752736ed9c0b; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_CONTAINMENT_2026-10-02.md; EXPANSION_ALLOWED=false. Worker executes only after clean bound pre-implementation gate, then seals integrated design before product edits. Exactly seven owned paths; implement coherent navigation/resource/usability/canonical/Print outcomes or return BLOCKED_WITH_REASON. No mechanism pre-approved; WORKER_MUST_NOT_COMMIT; Local reviews returned evidence. Initial Preview/Print boundaries retained; no Print successor. Q001/Q004 OPEN; actor/data/store/effect operator-owned. Durable B2, P11, public sync/deployment parked. LHW24 closed.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_RESOURCE_POLICY_2026-10-01.md",
-    "baselineSha256": "fa67386d02e5d3b45f8a11ca4d5bfa62d924e74bda38500ff42db560ec11e857",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_RESOURCE_POLICY_2026-10-01.md",
-    "workOrderSha256": "328085ae4c19a89e14857ace76e6bdcfd1fd6b4bb9379208e054ead965562db0"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_CONTAINMENT_2026-10-02.md",
+    "baselineSha256": "500c681be76a2f1e1185543a9ec12535212387a4668b512960967ae68e019226",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_CONTAINMENT_2026-10-02.md",
+    "workOrderSha256": "1c927d435a1dcb75cc1936fae452eb429f581ca3d20184b773f280f3ebe9ff7c"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
