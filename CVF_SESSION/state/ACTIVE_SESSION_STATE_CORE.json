@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PRINT_ORIGIN_ISOLATION_R1_2026-10-01.md",
     "workOrderSha256": "53f7ac764d34f229f87dc98b2706bfef3078fd07a35fe35a5d7185ea895e5088"
   },
-  "currentAuthoritySyncReason": "R1 Print origin-isolation packet material 9c1662288 released after D058 rejection; six-path internal worker only. Q001/Q004 data/store/effect remain open.",
+  "currentAuthoritySyncReason": "R1 Print candidate rejected at df1b928a9 for long-document clipping; the paired R1 packet is historical input for Local R2 authoring, not active worker dispatch. Q001/Q004 remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
