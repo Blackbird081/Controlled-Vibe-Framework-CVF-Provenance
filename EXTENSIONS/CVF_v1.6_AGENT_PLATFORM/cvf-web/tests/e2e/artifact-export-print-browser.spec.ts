@@ -49,6 +49,7 @@ const COOKIE_SEED = 'cvfPrintSentinel';
 const COOKIE_MUTATION = 'cvfPrintMutation';
 const ENDPOINT_PATH = '/api/cvf-print-probe';
 const APP_PROBE = '__cvfPrintAppProbe';
+const PREVIEW_POLICY_MARKER = `<meta http-equiv="Content-Security-Policy" content="default-src 'none'`;
 const ROW_COUNT = 120;
 const LONG_END_MARKER = 'ENDMARKERR2LONG7Q';
 const SHORT_END_MARKER = 'ENDMARKERR2SHORT3K';
@@ -204,6 +205,8 @@ async function scenario(page: Page, context: BrowserContext, browserName: string
   const { mutation, long } = opts;
   const recorded: Recorded[] = [];
   const bodies: string[] = [];
+  // Canonical result.html exactly as the (intercepted) export response delivered it.
+  const served: string[] = [];
   const hits: Record<HitKind, number> = { fetch: 0, img: 0, css: 0 };
   let exportHits = 0;
 
@@ -229,6 +232,7 @@ async function scenario(page: Page, context: BrowserContext, browserName: string
     const body = JSON.parse(route.request().postData() ?? '{}') as { title?: string };
     bodies.push(String(body.title));
     const html = fixtureHtml({ title: String(body.title), nonce: `N${exportHits}`, origin, long, payload: true });
+    served.push(html);
     await route.fulfill({
       status: 200,
       contentType: 'application/json',
@@ -297,8 +301,8 @@ async function scenario(page: Page, context: BrowserContext, browserName: string
   await page.getByLabel('Title').fill(titleB);
   await expect(page.getByTestId('artifact-version-notice')).toHaveAttribute('data-version-state', 'stale');
   expect(exportHits).toBe(1);
-  // The existing sandboxed preview also renders the payload and may load passive resources.
-  // Record that separately so the Print oracle counts only what Print itself causes.
+  // The Preview shows a derived document with a resource policy, so it must make no passive
+  // request itself; record its hits separately so the Print oracle counts only what Print causes.
   await page.waitForTimeout(1_000);
   const previewHits = { ...hits };
   hits.fetch = 0; hits.img = 0; hits.css = 0;
@@ -374,7 +378,8 @@ async function scenario(page: Page, context: BrowserContext, browserName: string
       printFrameSandboxAttribute: printedSandbox,
       printFrameOrigin,
       printFrameHeading,
-      printedPayloadEqualsDisplayed: printedSrcdoc !== null && printedSrcdoc === displayedHtml,
+      printedPayloadEqualsCanonical: printedSrcdoc !== null && served.length >= 1 && printedSrcdoc === served[0],
+      previewIsDerivedNotCanonical: displayedHtml !== null && served.length >= 1 && displayedHtml !== served[0] && displayedHtml.includes(PREVIEW_POLICY_MARKER),
       displayedNonce: 'N1',
       formTitleAtPrint: titleB,
       payloadRan: printProbe !== null,
@@ -410,7 +415,9 @@ function printBehaviorViolations(o: Observations, expectedHeading: string): stri
   if (o.print.popupOpenerNullAfterwards !== true) v.push('opener must be detached');
   if (o.print.untrustedDocumentWriteCount !== 0) v.push('result HTML must not be document.write-n into the app-origin popup');
   if (o.print.printCallCount !== 1) v.push('native print() must be invoked once');
-  if (!o.print.printedPayloadEqualsDisplayed) v.push('printed payload must equal the displayed result.html');
+  if (!o.print.printedPayloadEqualsCanonical) v.push('printed payload must equal the canonical result.html exactly');
+  if (!o.print.previewIsDerivedNotCanonical) v.push('preview must be a derived document carrying the resource policy, distinct from canonical result.html');
+  if (o.print.previewEndpointHits.fetch + o.print.previewEndpointHits.img + o.print.previewEndpointHits.css !== 0) v.push('preview must not hit the controlled endpoint');
   if (o.print.printFrameHeading !== expectedHeading) v.push('printed content must be the displayed build, not the unsaved form edit');
   if (o.exportRouteHits !== 1) v.push('Print must not rebuild');
   if (o.unexpectedRequestCount !== 0) v.push('no unexpected outbound request');

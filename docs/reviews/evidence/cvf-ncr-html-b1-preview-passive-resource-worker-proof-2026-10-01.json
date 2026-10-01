@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "cvf.ncrHtmlB1PreviewPassiveResourceWorkerProof.v1",
+  "revision": "initial Preview passive-resource policy",
+  "executionBaseHead": "7548ac66b114bb5b79bbb602bab1681dd4802ad2",
+  "preImplementationGate": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_RESOURCE_POLICY_2026-10-01.md: COMPLIANT, exit 0, before any edit, clean worktree",
+  "browser": {
+    "name": "chromium",
+    "version": "145.0.7632.6",
+    "mode": "headless",
+    "profiles": 1
+  },
+  "command": "NEXTAUTH_URL=http://localhost:3001 AUTH_URL=http://localhost:3001 CVF_PDFTOTEXT_PATH=/mingw64/bin/pdftotext npx playwright test tests/e2e/artifact-export-preview-sandbox.spec.ts tests/e2e/artifact-export-print-browser.spec.ts --config playwright.config.mock.ts",
+  "design": "Preview-only derived srcdoc = CSP meta (default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none') placed first, ahead of any payload markup; when the payload begins with whitespace plus the plain <!doctype html> the meta is placed immediately after it (document mode unchanged), otherwise it is prepended. The iframe keeps sandbox=\"\" and result.html is never altered; Copy, Download and Print use result.html verbatim.",
+  "interception": {
+    "installedBefore": "login, navigation, Build click and any payload insertion",
+    "scope": "browser context (all pages and frames)",
+    "sameOriginEndpoint": "/api/cvf-preview-probe on the app origin, fulfilled locally",
+    "offOriginEndpoint": "https://offorigin.cvf-preview-probe.test, fulfilled locally, never resolves, never forwarded",
+    "unknownSubframeRequests": "recorded as unexpected and fail the oracle; no blanket same-origin exemption",
+    "countersResetBeforeActualPreview": true
+  },
+  "expectedHitClasses": [
+    "img",
+    "srcset",
+    "link-css",
+    "css-import",
+    "css-bg",
+    "font",
+    "frame",
+    "frame-img",
+    "object",
+    "object-img"
+  ],
+  "expectedHitClassesPerOrigin": ["same", "off"],
+  "positiveControl": {
+    "context": "disposable browser context, sandbox=\"\" iframe, no resource policy, early-markup fixture",
+    "sandboxAttribute": "",
+    "scriptRan": false,
+    "observedHitCount": 20,
+    "observedAllExpected": true,
+    "dataImage": { "complete": true, "naturalWidth": 1 },
+    "meaning": "passive same-origin and off-origin loads, including CSS import/background/font and nested frame/object images, occur with scripts blocked, so the control is not inert"
+  },
+  "actualPreviewNegative": {
+    "fixtures": ["early passive markup before doctype/head, duplicate heads, permissive payload CSP meta", "plain leading doctype with head inline style"],
+    "tests": 2,
+    "passed": 2,
+    "common": {
+      "exportRouteHits": 1,
+      "pageCount": 1,
+      "printClickedBeforeObservation": false,
+      "policyPresentInSrcdoc": true,
+      "policyBeforeFirstResourceMarkup": true,
+      "srcdocDiffersFromCanonical": true,
+      "observedHits": [],
+      "unexpectedRequests": [],
+      "sandboxAttribute": "",
+      "frameOrigin": "null",
+      "payloadScriptRan": false,
+      "parentSentinel": "unset",
+      "headingColor": "rgb(1, 2, 3)",
+      "paragraphBackground": "rgb(4, 5, 6)",
+      "benignParagraphVisible": true,
+      "dataImage": { "complete": true, "naturalWidth": 0 }
+    }
+  },
+  "policyOnlyMutation": {
+    "method": "test-only init script strips only the Preview policy meta from the real product iframe srcdoc (setAttribute and srcdoc setter); sandbox and everything else untouched",
+    "fixture": "early passive markup adversary",
+    "policyStrippedByMutation": true,
+    "policyPresentInSrcdoc": false,
+    "sandboxAttribute": "",
+    "frameOrigin": "null",
+    "payloadScriptRan": false,
+    "benignParagraphVisible": true,
+    "observedHitCount": 20,
+    "observedAllExpected": true,
+    "dataImage": { "complete": true, "naturalWidth": 1 },
+    "oracleResult": "same previewViolations oracle fails: passive resource requests reached the controlled endpoint and data image rendered; no other violation class",
+    "testPassed": true
+  },
+  "printRegression": {
+    "tests": 5,
+    "passed": 5,
+    "canonicalBinding": "printed srcdoc string-equals the canonical result.html served by the intercepted export; the Preview srcdoc is asserted to be a distinct derived document carrying the resource policy",
+    "previewEndpointHitsBeforePrint": { "fetch": 0, "img": 0, "css": 0 },
+    "short": { "printCallCount": 1, "printFrameSandboxAttribute": "", "printFrameOrigin": "null", "printedPayloadEqualsCanonical": true, "payloadRan": false, "printEndpointHits": { "fetch": 0, "img": 0, "css": 0 }, "heading": "Print Fixture Version A", "pdfPages": 1, "endMarker": true },
+    "long": { "printCallCount": 1, "printFrameSandboxAttribute": "", "printFrameOrigin": "null", "printedPayloadEqualsCanonical": true, "payloadRan": false, "printEndpointHits": { "fetch": 0, "img": 0, "css": 0 }, "heading": "Print Fixture Long A", "pdfPages": 3, "rowTokensFound": 120, "endMarker": true },
+    "mutationIsolation": { "printFrameSandboxAttribute": null, "printFrameOrigin": "http://localhost:3001", "payloadRan": true, "printEndpointHits": { "fetch": 2, "img": 2, "css": 2 } },
+    "mutationClipping": { "pdfPages": 1, "rowTokensFound": 44, "endMarker": false },
+    "retainedR2Assertions": "native invocation, opener detach, zero document.write, empty sandbox, opaque origin, no payload authority, short and 120-row completeness, both mutations: unchanged"
+  },
+  "unitTests": {
+    "command": "npx vitest run src/components/ArtifactExportPanel.test.tsx",
+    "result": "55 passed, 0 failed (45 pre-existing plus 10 added)",
+    "added": [
+      "policy denies every network and data resource, keeps inline style only",
+      "policy after a plain leading doctype keeps document mode",
+      "policy first for early markup, comment-before-doctype, quoted doctype and unterminated doctype payloads",
+      "payload-supplied permissive policy stays after the Preview policy",
+      "derived srcdoc under empty sandbox while canonical html unchanged",
+      "canonical Copy, Download and Print bytes equal result.html while Preview differs: current build, unsaved edit, latest response supersession, failed newer build keeps previous result, initialResult unknown provenance"
+    ]
+  },
+  "otherChecks": {
+    "tsc": "PASS (npm run check, exit 0)",
+    "eslint": "PASS (max-warnings=0, four paths, exit 0)"
+  },
+  "rawHtmlIncluded": false,
+  "limits": [
+    "one Chromium 145 headless profile, one run per case",
+    "Preview denies data: and blob: images and all fonts/media by design: only text and inline style render, embedded images in a packet do not display in Preview (Print still allows data images)",
+    "CSP does not govern navigation: meta refresh, link clicks and top navigation are not covered by this policy; untested",
+    "a payload without a plain leading doctype gets the policy first, which can switch quirks/standards mode relative to the original; untested for visual differences",
+    "other browsers, headed mode, CSP meta support differences and preload-scanner behavior in other engines untested",
+    "synthetic fixtures only; no real exported packet, no production incident, not universal sanitization",
+    "Q001/Q004 and all effect decisions remain open"
+  ]
+}

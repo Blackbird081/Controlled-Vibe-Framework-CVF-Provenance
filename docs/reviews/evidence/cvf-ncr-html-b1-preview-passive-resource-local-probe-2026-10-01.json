@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "cvf.ncrHtmlB1PreviewLocalProbe.v1",
+  "executionBaseHead": "7548ac66b114bb5b79bbb602bab1681dd4802ad2",
+  "actor": "local-cvf-ncr-preview-reviewer",
+  "invocationId": "local-cvf-ncr-preview-resource-probe-20261001",
+  "command": "NEXTAUTH_URL/AUTH_URL runtime port 3001; npx playwright test --config .next/cvf-preview-local-review/config.ts",
+  "result": "PASS 1/1; 22.0 seconds total; 16.6 seconds case",
+  "oracleSource": "import { test, expect } from '@playwright/test';\nimport { writeFileSync } from 'node:fs';\nimport { login, seedStorage } from '../../tests/e2e/utils';\n\ntest('Local distinct actual Preview resource and navigation boundary probe', async ({page, context, browser}) => {\n  const origin='http://localhost:3001';\n  const endpoint='/api/cvf-local-preview-review';\n  const off='https://review-preview.invalid';\n  let phase='control';\n  const hits: {phase:string;kind:string;url:string}[]=[];\n  const unexpected: string[]=[];\n  await context.route('**/*', async route=>{\n    const u=new URL(route.request().url());\n    if(u.pathname===endpoint){\n      const kind=u.searchParams.get('kind')||'unknown';\n      hits.push({phase,kind,url:u.origin+u.pathname+'?kind='+kind});\n      if(kind==='css') return route.fulfill({contentType:'text/css',body:'.local-external{color:rgb(20,30,40)}'});\n      if(kind==='navigate') return route.fulfill({contentType:'text/html',body:`<!doctype html><h1>Local navigation destination</h1><img src=\"${off}${endpoint}?kind=after-navigation\">`});\n      return route.fulfill({contentType:'image/svg+xml',body:'<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1\" height=\"1\"><rect width=\"1\" height=\"1\"/></svg>'});\n    }\n    let sub=false;try{sub=route.request().frame().parentFrame()!==null;}catch{}\n    if(sub&&!['about:','data:','blob:'].includes(u.protocol)){\n      unexpected.push(u.origin+u.pathname);\n      return route.abort();\n    }\n    return route.continue();\n  });\n  const common=`<!doctype html><html><head><style>h1{color:rgb(17,34,51)}.local-inline{padding-left:7px}</style></head><body><h1>LOCAL_PREVIEW_DISTINCT_Q7</h1><p class=\"local-inline\">LOCAL_BENIGN_INLINE</p><img src=\"${origin}${endpoint}?kind=image\"><link rel=\"stylesheet\" href=\"${off}${endpoint}?kind=css\"><div style=\"background-image:url('${off}${endpoint}?kind=background')\">Resource box</div><a id=\"local-nav\" href=\"${off}${endpoint}?kind=navigate\">Local controlled navigation</a><script>document.documentElement.dataset.localRan='yes'</script></body></html>`;\n  await page.setContent('<iframe id=\"local-control\" sandbox=\"\"></iframe>');\n  await page.locator('#local-control').evaluate((e,html)=>(e as HTMLIFrameElement).srcdoc=html,common);\n  await expect.poll(()=>hits.filter(h=>h.phase==='control').length).toBe(3);\n  const positive=hits.filter(h=>h.phase==='control');\n  await page.locator('#local-control').evaluate(e=>e.remove());\n  const canonical=common.replace('<head>',`<head><meta http-equiv=\"refresh\" content=\"0;url=${off}${endpoint}?kind=automatic-refresh\">`);\n  let exportHits=0;\n  await page.route('**/api/artifacts/export', async route=>{\n    exportHits++;\n    await route.fulfill({contentType:'application/json',body:JSON.stringify({success:true,data:{html:canonical,filename:'local-preview-q7.html',generatedAt:'2026-10-01T00:00:00Z',governanceState:'DRAFT_UNACCEPTED',verification:[]}})});\n  });\n  await seedStorage(page);await login(page);\n  await page.evaluate(()=>localStorage.setItem('cvf_language','en'));\n  await page.goto('/artifacts');\n  phase='actual-preview';\n  await page.getByLabel('Title').fill('Local probe Q7');\n  await page.getByRole('button',{name:/Build HTML/i}).click();\n  const iframe=page.locator('iframe[title=\"Preview\"]');\n  const frame=page.frameLocator('iframe[title=\"Preview\"]');\n  await expect(frame.getByRole('heading',{name:'LOCAL_PREVIEW_DISTINCT_Q7'})).toBeVisible();\n  await page.waitForTimeout(1200);\n  const negative={hits:hits.filter(h=>h.phase==='actual-preview'),sandbox:await iframe.getAttribute('sandbox'),derived:await iframe.getAttribute('srcdoc')!==canonical,origin:await frame.locator('html').evaluate(()=>location.origin),compatMode:await frame.locator('html').evaluate(()=>document.compatMode),scriptMarker:await frame.locator('html').getAttribute('data-local-ran'),headingColor:await frame.locator('h1').evaluate(e=>getComputedStyle(e).color),inlinePadding:await frame.locator('p').evaluate(e=>getComputedStyle(e).paddingLeft)};\n  expect(negative.hits).toEqual([]);expect(negative.sandbox).toBe('');expect(negative.origin).toBe('null');expect(negative.derived).toBe(true);expect(negative.scriptMarker).toBeNull();expect(negative.headingColor).toBe('rgb(17, 34, 51)');expect(negative.inlinePadding).toBe('7px');\n  phase='explicit-link-click';\n  await frame.locator('#local-nav').click();\n  await page.waitForTimeout(1000);\n  const navigation={hits:hits.filter(h=>h.phase==='explicit-link-click'),frameUrls:page.frames().map(f=>f.url()),parentUrl:page.url()};\n  writeFileSync('.next/cvf-preview-local-review/observations.json',JSON.stringify({browser:browser.version(),fixture:canonical,positive,negative,navigation,unexpected,exportHits},null,2));\n  console.log('LOCAL_PROBE '+JSON.stringify({positive:positive.length,negative,navigation,unexpected,exportHits}));\n  expect(unexpected).toEqual([]);expect(exportHits).toBe(1);\n});\n",
+  "oracleSourceSha256": "2601ee6550bf1662759d80f8abfce81c5f84b21883c91894037d22ee2d61b91f",
+  "observations": {
+    "browser": "145.0.7632.6",
+    "fixture": "<!doctype html><html><head><meta http-equiv=\"refresh\" content=\"0;url=https://review-preview.invalid/api/cvf-local-preview-review?kind=automatic-refresh\"><style>h1{color:rgb(17,34,51)}.local-inline{padding-left:7px}</style></head><body><h1>LOCAL_PREVIEW_DISTINCT_Q7</h1><p class=\"local-inline\">LOCAL_BENIGN_INLINE</p><img src=\"http://localhost:3001/api/cvf-local-preview-review?kind=image\"><link rel=\"stylesheet\" href=\"https://review-preview.invalid/api/cvf-local-preview-review?kind=css\"><div style=\"background-image:url('https://review-preview.invalid/api/cvf-local-preview-review?kind=background')\">Resource box</div><a id=\"local-nav\" href=\"https://review-preview.invalid/api/cvf-local-preview-review?kind=navigate\">Local controlled navigation</a><script>document.documentElement.dataset.localRan='yes'</script></body></html>",
+    "positive": [
+      {
+        "phase": "control",
+        "kind": "image",
+        "url": "http://localhost:3001/api/cvf-local-preview-review?kind=image"
+      },
+      {
+        "phase": "control",
+        "kind": "css",
+        "url": "https://review-preview.invalid/api/cvf-local-preview-review?kind=css"
+      },
+      {
+        "phase": "control",
+        "kind": "background",
+        "url": "https://review-preview.invalid/api/cvf-local-preview-review?kind=background"
+      }
+    ],
+    "negative": {
+      "hits": [],
+      "sandbox": "",
+      "derived": true,
+      "origin": "null",
+      "compatMode": "CSS1Compat",
+      "scriptMarker": null,
+      "headingColor": "rgb(17, 34, 51)",
+      "inlinePadding": "7px"
+    },
+    "navigation": {
+      "hits": [
+        {
+          "phase": "explicit-link-click",
+          "kind": "navigate",
+          "url": "https://review-preview.invalid/api/cvf-local-preview-review?kind=navigate"
+        },
+        {
+          "phase": "explicit-link-click",
+          "kind": "after-navigation",
+          "url": "https://review-preview.invalid/api/cvf-local-preview-review?kind=after-navigation"
+        }
+      ],
+      "frameUrls": [
+        "http://localhost:3001/artifacts",
+        "https://review-preview.invalid/api/cvf-local-preview-review?kind=navigate"
+      ],
+      "parentUrl": "http://localhost:3001/artifacts"
+    },
+    "unexpected": [],
+    "exportHits": 1
+  },
+  "scope": "initial derived srcdoc before user interaction; navigation observations separate",
+  "limitations": [
+    "one headless Chromium",
+    "synthetic interception",
+    "no link navigation denial claim",
+    "no doctype generalization",
+    "no provider/governance behavior",
+    "no real data or production exfiltration"
+  ]
+}

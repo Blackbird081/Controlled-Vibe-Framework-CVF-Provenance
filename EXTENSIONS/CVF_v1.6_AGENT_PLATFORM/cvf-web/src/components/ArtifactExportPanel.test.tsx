@@ -5,7 +5,12 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, onTestFinished, vi } from 'vitest';
 
-import { ArtifactExportPanel, type ArtifactExportResult } from './ArtifactExportPanel';
+import {
+  ArtifactExportPanel,
+  buildPreviewDocument,
+  PREVIEW_FRAME_POLICY,
+  type ArtifactExportResult,
+} from './ArtifactExportPanel';
 
 let mockLanguage: 'en' | 'vi' = 'en';
 
@@ -853,6 +858,187 @@ describe('ArtifactExportPanel', () => {
       expect(noticeState()).toBe('stale');
       expect(screen.getByTestId('artifact-version-notice').textContent).toMatch(/Phiên bản cũ \(lần tạo #1\)/);
       expect(screen.getByTestId('artifact-version-tag').textContent).toMatch(/phiên bản cũ/);
+    });
+  });
+
+  // Preview passive-resource policy: effective denial and the browser behavior are proven in
+  // tests/e2e/artifact-export-preview-sandbox.spec.ts; these units pin the derived-document
+  // construction and that canonical Copy/Download/Print bytes never become the derived document.
+  describe('B1 Preview passive-resource policy', () => {
+    const POLICY_META = `<meta http-equiv="Content-Security-Policy" content="${PREVIEW_FRAME_POLICY}">`;
+    const okResponse = (data: ArtifactExportResult) => ({
+      ok: true, status: 200, json: async () => ({ success: true, data }),
+    });
+    const failResponse = (error: string) => ({
+      ok: false, status: 500, json: async () => ({ success: false, error }),
+    });
+    const resultFor = (tag: string, html?: string): ArtifactExportResult => ({
+      ...EXPORT_RESULT,
+      html: html ?? `<!doctype html><html><body><h1>synthetic ${tag}</h1></body></html>`,
+      receiptAnchor: `receipt-${tag}`,
+      filename: `packet-${tag}.html`,
+    });
+    const fetchMock = () => fetch as unknown as {
+      mockResolvedValueOnce: (v: unknown) => void;
+      mockImplementationOnce: (fn: () => Promise<unknown>) => void;
+    };
+    const buildButton = () => screen.getByRole('button', { name: /Build HTML|Generating/ });
+    const previewSrcdoc = () => (screen.getByTitle('Preview') as HTMLIFrameElement).getAttribute('srcdoc');
+    const noticeState = () => screen.getByTestId('artifact-version-notice').getAttribute('data-version-state');
+
+    it('denies every network and data resource and keeps only inline style', () => {
+      expect(PREVIEW_FRAME_POLICY).toMatch(/default-src 'none'/);
+      expect(PREVIEW_FRAME_POLICY).toMatch(/style-src 'unsafe-inline'/);
+      expect(PREVIEW_FRAME_POLICY).not.toMatch(/img-src|font-src|connect-src|frame-src|script-src|https?:|\*|data:|blob:/);
+    });
+
+    it('places the policy after a plain leading doctype so the document mode is unchanged', () => {
+      const html = '<!doctype html><html><body><h1>x</h1></body></html>';
+      expect(buildPreviewDocument(html)).toBe(`<!doctype html>${POLICY_META}<html><body><h1>x</h1></body></html>`);
+      expect(buildPreviewDocument('\n  <!DOCTYPE HTML><p>x</p>')).toBe(`\n  <!DOCTYPE HTML>${POLICY_META}<p>x</p>`);
+    });
+
+    it('places the policy before any payload markup when there is no plain leading doctype', () => {
+      const adversaries = [
+        '<img src="/probe?k=early"><!doctype html><html><head></head></html>',
+        '<link rel="stylesheet" href="/probe?k=css"><head></head><head></head>',
+        '<!-- c --><!doctype html><img src="/probe?k=after-comment">',
+        '<!doctype html "a>b"><img src="/probe?k=quoted">',
+        '<!doctype html public "x><img src=/probe?k=swallow>',
+        'plain text only',
+        '',
+      ];
+      for (const html of adversaries) {
+        const derived = buildPreviewDocument(html);
+        expect(derived.startsWith(POLICY_META)).toBe(true);
+        expect(derived.slice(POLICY_META.length)).toBe(html);
+      }
+    });
+
+    it('keeps a payload-supplied permissive policy after, never before, the Preview policy', () => {
+      const permissive = '<meta http-equiv="Content-Security-Policy" content="default-src * \'unsafe-inline\'">';
+      const derived = buildPreviewDocument(`<!doctype html>${permissive}<img src="/probe?k=x">`);
+      expect(derived.indexOf(POLICY_META)).toBeLessThan(derived.indexOf(permissive));
+      expect(derived.indexOf(POLICY_META)).toBeLessThan(derived.indexOf('<img'));
+    });
+
+    it('renders a derived srcdoc under an empty sandbox while the canonical html stays unchanged', async () => {
+      const canonical = resultFor('A', '<img src="/probe?k=early"><!doctype html><html><body><h1>synthetic A</h1></body></html>');
+      fetchMock().mockResolvedValueOnce(okResponse(canonical));
+      render(<ArtifactExportPanel />);
+      fireEvent.click(buildButton());
+      await waitFor(() => expect(noticeState()).toBe('current'));
+
+      const frame = screen.getByTitle('Preview') as HTMLIFrameElement;
+      expect(frame.getAttribute('sandbox')).toBe('');
+      expect(previewSrcdoc()).toBe(POLICY_META + canonical.html);
+      expect(previewSrcdoc()).not.toBe(canonical.html);
+      expect(canonical.html.startsWith('<img src="/probe?k=early">')).toBe(true);
+    });
+
+    describe('canonical Copy and Download stay bound to result.html, not the derived Preview', () => {
+      const blobs: Blob[] = [];
+      let anchorClick: ReturnType<typeof vi.spyOn>;
+      beforeEach(() => {
+        blobs.length = 0;
+        const urlApi = URL as unknown as Record<string, unknown>;
+        const priorCreate = urlApi.createObjectURL;
+        const priorRevoke = urlApi.revokeObjectURL;
+        urlApi.createObjectURL = vi.fn((blob: Blob) => { blobs.push(blob); return 'blob:synthetic'; });
+        urlApi.revokeObjectURL = vi.fn();
+        onTestFinished(() => { urlApi.createObjectURL = priorCreate; urlApi.revokeObjectURL = priorRevoke; });
+        anchorClick = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => undefined);
+      });
+      const blobText = (blob: Blob) => new Promise<string>(resolve => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result));
+        reader.readAsText(blob);
+      });
+      // Copy, Download and Print each deliver exactly `html`, and the Preview shows a different document.
+      const expectCanonicalActions = async (html: string) => {
+        expect(previewSrcdoc()).not.toBe(html);
+        expect(previewSrcdoc()).toBe(buildPreviewDocument(html));
+        expect(previewSrcdoc()).toContain(POLICY_META);
+        const copyCalls = (navigator.clipboard.writeText as unknown as { mock: { calls: string[][] } }).mock.calls.length;
+        fireEvent.click(screen.getByRole('button', { name: 'Copy HTML' }));
+        await waitFor(() => expect((navigator.clipboard.writeText as unknown as { mock: { calls: string[][] } }).mock.calls.length).toBe(copyCalls + 1));
+        const copied = (navigator.clipboard.writeText as unknown as { mock: { calls: string[][] } }).mock.calls[copyCalls][0];
+        expect(copied).toBe(html);
+        const before = blobs.length;
+        fireEvent.click(screen.getByRole('button', { name: 'Download HTML' }));
+        expect(blobs).toHaveLength(before + 1);
+        expect(await blobText(blobs[before])).toBe(html);
+
+        const { printWindow, frames, finishProbe, popupDoc } = makePopup();
+        const openSpy = vi.spyOn(window, 'open').mockReturnValue(printWindow as unknown as Window);
+        fireEvent.click(screen.getByRole('button', { name: 'Print preview' }));
+        const probe = frames().probe!;
+        expect(probe.getAttribute('srcdoc')).toBe(html);
+        expect(popupDoc.querySelector('meta[http-equiv="Content-Security-Policy"]')?.getAttribute('content')).not.toBe(PREVIEW_FRAME_POLICY);
+        finishProbe(probe, 500);
+        expect(frames().view!.getAttribute('srcdoc')).toBe(html);
+        openSpy.mockRestore();
+      };
+
+      it('current build', async () => {
+        const a = resultFor('A', '<img src="/probe?k=early"><!doctype html><html><body><h1>synthetic A</h1></body></html>');
+        fetchMock().mockResolvedValueOnce(okResponse(a));
+        render(<ArtifactExportPanel />);
+        fireEvent.click(buildButton());
+        await waitFor(() => expect(noticeState()).toBe('current'));
+        await expectCanonicalActions(a.html);
+        expect(anchorClick).toHaveBeenCalledTimes(1);
+      });
+
+      it('unsaved edit after the build', async () => {
+        const a = resultFor('A');
+        fetchMock().mockResolvedValueOnce(okResponse(a));
+        render(<ArtifactExportPanel />);
+        fireEvent.click(buildButton());
+        await waitFor(() => expect(noticeState()).toBe('current'));
+        fireEvent.change(screen.getByLabelText('Title'), { target: { value: 'unsaved edit' } });
+        expect(noticeState()).toBe('stale');
+        await expectCanonicalActions(a.html);
+      });
+
+      it('latest response supersedes an older late response', async () => {
+        let resolveA: (v: unknown) => void = () => undefined;
+        fetchMock().mockImplementationOnce(() => new Promise(r => { resolveA = r; }));
+        const b = resultFor('B', '<link rel="stylesheet" href="/probe?k=css"><h1>synthetic B</h1>');
+        fetchMock().mockResolvedValueOnce(okResponse(b));
+        render(<ArtifactExportPanel />);
+        fireEvent.click(buildButton());
+        fireEvent.change(screen.getByLabelText('Title'), { target: { value: 'Synthetic B' } });
+        fireEvent.click(buildButton());
+        await waitFor(() => expect(previewSrcdoc()).toContain('synthetic B'));
+        resolveA(okResponse(resultFor('A')));
+        await new Promise(r => setTimeout(r, 0));
+        await new Promise(r => setTimeout(r, 0));
+        expect(previewSrcdoc()).toContain('synthetic B');
+        expect(previewSrcdoc()).not.toContain('synthetic A');
+        await expectCanonicalActions(b.html);
+      });
+
+      it('failed newer build keeps the previous result', async () => {
+        const a = resultFor('A');
+        fetchMock().mockResolvedValueOnce(okResponse(a));
+        fetchMock().mockResolvedValueOnce(failResponse('synthetic outage'));
+        render(<ArtifactExportPanel />);
+        fireEvent.click(buildButton());
+        await waitFor(() => expect(noticeState()).toBe('current'));
+        fireEvent.change(screen.getByLabelText('Title'), { target: { value: 'Synthetic B' } });
+        fireEvent.click(buildButton());
+        await waitFor(() => expect(screen.getByTestId('export-error-recovery')).toBeTruthy());
+        expect(previewSrcdoc()).toContain('synthetic A');
+        await expectCanonicalActions(a.html);
+      });
+
+      it('initialResult with unknown provenance', async () => {
+        const initial = resultFor('I', '<img src="/probe?k=early"><h1>synthetic I</h1>');
+        render(<ArtifactExportPanel initialResult={initial} />);
+        expect(noticeState()).toBe('unknown');
+        await expectCanonicalActions(initial.html);
+      });
     });
   });
 

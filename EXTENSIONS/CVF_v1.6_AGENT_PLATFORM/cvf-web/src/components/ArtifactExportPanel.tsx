@@ -236,6 +236,27 @@ const PRINT_FRAME_WIDTH = 700;
 // no network resource loads (the exported packet is self-contained; data: images still work).
 const PRINT_FRAME_POLICY = "default-src 'none'; style-src 'unsafe-inline'; img-src data:; font-src data:; frame-src about:; base-uri 'none'; form-action 'none'";
 
+// Preview-only resource policy. The sandboxed Preview frame already blocks scripts, but an
+// empty sandbox still loads passive resources (images, stylesheets, fonts, nested frames), so
+// the derived Preview document denies every network and data: resource and keeps only inline
+// styles. Data and blob images are blocked on purpose (unlike Print): Preview shows the text
+// and inline-styled layout, not embedded media. Not a sanitizer; navigation (meta refresh,
+// links) is not covered by CSP.
+export const PREVIEW_FRAME_POLICY = "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'";
+const PREVIEW_POLICY_META = `<meta http-equiv="Content-Security-Policy" content="${PREVIEW_FRAME_POLICY}">`;
+// Only the plain doctype is split on: anything else gets the policy first, because a
+// payload-controlled doctype (quoted ids, comments) could otherwise swallow the policy tag.
+const LEADING_PLAIN_DOCTYPE = /^[\t\n\f\r ]*<!doctype html>/i;
+
+// Derived Preview document: the policy meta is the first element the parser sees, ahead of
+// any payload resource markup (before a head, duplicate heads, payload-supplied policy).
+// result.html itself is never altered; Copy, Download and Print keep using it verbatim.
+export function buildPreviewDocument(html: string): string {
+  const doctype = LEADING_PLAIN_DOCTYPE.exec(html);
+  if (!doctype) return PREVIEW_POLICY_META + html;
+  return html.slice(0, doctype[0].length) + PREVIEW_POLICY_META + html.slice(doctype[0].length);
+}
+
 function normalizeRequest(input?: Partial<ArtifactExportRequest>): ArtifactExportRequest {
   return { ...DEFAULT_REQUEST, ...input };
 }
@@ -370,6 +391,8 @@ export function ArtifactExportPanel({
     () => result?.verification.filter(item => item.passed).length ?? 0,
     [result],
   );
+
+  const previewDocument = useMemo(() => (result ? buildPreviewDocument(result.html) : null), [result]);
 
   const updateRequest = useCallback(
     (field: keyof ArtifactExportRequest, value: string) => {
@@ -784,10 +807,10 @@ export function ArtifactExportPanel({
                 {labels.previewTitle}
                 {versionTag && <span data-testid="artifact-version-tag" className="ml-2 font-normal">· {versionTag}</span>}
               </div>
-              {result ? (
+              {previewDocument !== null ? (
                 <iframe
                   title={labels.previewTitle}
-                  srcDoc={result.html}
+                  srcDoc={previewDocument}
                   sandbox=""
                   className="h-[430px] w-full bg-white"
                 />
