@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_2026-10-01.md",
-    "baselineSha256": "974d91397735f506a04eb6cc9ba9b9e9d89261391746af95af3805aaf1c1046e",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_2026-10-01.md",
-    "workOrderSha256": "78339060b9f4b9cbe79d347b392f41c0aa1371c6d477666d41418bd51afd0709"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_RESOURCE_POLICY_2026-10-01.md",
+    "baselineSha256": "fa67386d02e5d3b45f8a11ca4d5bfa62d924e74bda38500ff42db560ec11e857",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_RESOURCE_POLICY_2026-10-01.md",
+    "workOrderSha256": "328085ae4c19a89e14857ace76e6bdcfd1fd6b4bb9379208e054ead965562db0"
   },
-  "currentAuthoritySyncReason": "Preview passive-load owner audit complete at 9512b71c7189a8a71f542724c9e3c0ca954f7db0: ADAPT_EXISTING_OWNER; next distinct Preview packet AUTHORING only, no worker release. R2 packet retained as historical scope; Q001/Q004 OPEN and effects parked.",
+  "currentAuthoritySyncReason": "Preview packet material be8e5feca601ce2b2e3fb1c01a45a93674791c43; exact-hash pair binds seven-path internal worker execution after bound release/pre-implementation gates. Q001/Q004 OPEN, accepted Print R2 preserved, no Print successor or effect expansion.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

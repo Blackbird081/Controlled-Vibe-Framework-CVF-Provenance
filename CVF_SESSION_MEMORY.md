@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=author distinct Preview passive-resource packet after source-only owner audit; role=Local orchestrator/reviewer; phase=packet-authoring; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
+Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound Preview seven-path worker execution; role=Local orchestrator/reviewer; phase=worker-dispatch; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_B1_PREVIEW_PASSIVE_RESOURCE_PACKET; AUDIT_COMMIT=9512b71c7189a8a71f542724c9e3c0ca954f7db0; AUDIT=docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_LOAD_OWNER_AUDIT_2026-10-01.md; EXPANSION_ALLOWED=false. Source-only ADAPT_EXISTING_OWNER: Local authors one distinct Preview packet covering component, unit and existing Preview/Print specs; preserve canonical HTML bytes/version and accepted R2 Print. No worker execution before bound release; no same-problem Print successor. Q001/Q004 OPEN; actor/data/store/effect operator-owned. Durable B2, P11, public sync and deployment parked. LHW24 closed.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=B1_PREVIEW_PASSIVE_RESOURCE_WORKER_EXECUTION; PACKET_COMMIT=be8e5feca601ce2b2e3fb1c01a45a93674791c43; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PREVIEW_PASSIVE_RESOURCE_POLICY_2026-10-01.md; EXPANSION_ALLOWED=false. Execute only the bound distinct Preview seven-path packet after clean pre-implementation PASS; worker no commit. Effective pre-payload resource denial, canonical Copy/Download/Print/version and accepted R2 regressions required. Local reviews returned evidence. No Print successor. Q001/Q004 OPEN; actor/data/store/effect operator-owned. Durable B2, P11, public sync and deployment parked. LHW24 closed.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
