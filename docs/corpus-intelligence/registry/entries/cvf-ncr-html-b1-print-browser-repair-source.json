@@ -1,0 +1,34 @@
+{
+  "registryOrder": 215,
+  "id": "cvf-ncr-html-b1-print-browser-repair-source",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "CVF NCR HTML B1 Print browser repair synthetic proof spec",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-print-browser.spec.ts"
+  ],
+  "fileCount": 1,
+  "status": "PARTIALLY_SCANNED",
+  "scanWave": "CVF-NCR-HTML-B1-PRINT-REPAIR",
+  "scanDate": "2026-10-01",
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": null,
+  "packetPath": "docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_BROWSER_REPAIR_WORKER_RETURN_2026-10-01.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PRINT_BROWSER_REPAIR_2026-10-01.md",
+  "verdicts": {"gc047": "PARTIAL", "gc048": "NOT_RUN", "gc050": "NOT_RUN"},
+  "semanticRegions": [
+    "NATIVE_PRINT_POPUP_PRE_REPAIR_REPRO",
+    "OPENER_DETACH_AND_PRINT_INVOCATION",
+    "SAME_ORIGIN_POPUP_RESIDUAL_REVIEW_FINDING"
+  ],
+  "priorAbsorption": "One named synthetic Chromium Print spec. Worker evidence remains pending Local review; popup origin isolation is unresolved. No complete Web scan, paper/PDF print, provider governance or durable acceptance claim.",
+  "findings": [],
+  "negativeSearchTerms": [
+    "same-origin popup is isolated by opener detach",
+    "headless print proves paper output",
+    "B2 artifact acceptance"
+  ],
+  "nextScanRecommendation": "Revisit after Local disposition of the same-origin popup finding or an authorized Print architecture correction."
+}
