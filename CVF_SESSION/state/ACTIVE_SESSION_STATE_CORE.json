@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PRINT_BROWSER_REPAIR_2026-10-01.md",
-    "baselineSha256": "529277b4640c9b712e616b6f2b97418b0347bfbba400e4247ae5488e69b411d6",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PRINT_BROWSER_REPAIR_2026-10-01.md",
-    "workOrderSha256": "8ff82b29df48abd0173f7c7a9a98d85f0f2ab6e00ab0c53498799d999bf79fdc"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PRINT_ORIGIN_ISOLATION_R1_2026-10-01.md",
+    "baselineSha256": "8b4266ad8dc434c36ad3ea7e55565a97e083dfdaf08a439d1d46389539366a89",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PRINT_ORIGIN_ISOLATION_R1_2026-10-01.md",
+    "workOrderSha256": "53f7ac764d34f229f87dc98b2706bfef3078fd07a35fe35a5d7185ea895e5088"
   },
-  "currentAuthoritySyncReason": "B1 Print reviewer decision 9cf3b9772 requires origin-isolation R1; initial six-path candidate is unaccepted and no worker execution is released. Q001/Q004 data/store/effect remain open.",
+  "currentAuthoritySyncReason": "R1 Print origin-isolation packet material 9c1662288 released after D058 rejection; six-path internal worker only. Q001/Q004 data/store/effect remain open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

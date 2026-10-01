@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PREPARE_HTML_B1_PRINT_R1_SECURITY_REWORK; BATCH_ID=CVF-NCR-HTML-B1-PRINT-R1; MATERIAL_COMMIT=9cf3b9772; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_BROWSER_AUDIT_2026-10-01.md; EXPANSION_ALLOWED=false. Local reviewer rejected the six-path Print candidate for same-origin popup authority despite focused Chromium and worker-return gate PASS. Preserve six uncommitted worker paths pending R1 boundary resolution; no worker execution or production acceptance from the initial packet. Next: consolidate R1 design/scope with an app-origin storage/cookie/request negative browser oracle and safe print behavior; release only after a new source-audited packet and bound gate. Q001/Q004 Profile A OPEN; operator owns real actor/data/store/effect. Durable B2, P11, public sync and deployment parked. LHW24 closed.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B1_PRINT_R1_SECURITY_REWORK; BATCH_ID=CVF-NCR-HTML-B1-PRINT-R1; MATERIAL_COMMIT=9c1662288; BASELINE=docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PRINT_ORIGIN_ISOLATION_R1_2026-10-01.md; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PRINT_ORIGIN_ISOLATION_R1_2026-10-01.md; EXPANSION_ALLOWED=false. Shared-workspace INTERNAL_AGENT may run clean bound pre-implementation first, then apply exact inherited stash beeaf933bf03924532eb02bea331455e2233d743 and verify six raw hashes before R1 edits; no worker commit or stash drop. R1 must prove positive app-origin capability control, actual Print negative storage/cookie/request oracle, isolation-removal mutation, native print and displayed-version binding. If unsafe or outside six paths, return BLOCKED_WITH_REASON. Local owns independent security review and commit. Q001/Q004 Profile A OPEN; operator owns real actor/data/store/effect. Durable B2, P11, public sync and deployment parked. LHW24 closed.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PRINT_BROWSER_REPAIR_2026-10-01.md",
-    "baselineSha256": "529277b4640c9b712e616b6f2b97418b0347bfbba400e4247ae5488e69b411d6",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PRINT_BROWSER_REPAIR_2026-10-01.md",
-    "workOrderSha256": "8ff82b29df48abd0173f7c7a9a98d85f0f2ab6e00ab0c53498799d999bf79fdc"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PRINT_ORIGIN_ISOLATION_R1_2026-10-01.md",
+    "baselineSha256": "8b4266ad8dc434c36ad3ea7e55565a97e083dfdaf08a439d1d46389539366a89",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PRINT_ORIGIN_ISOLATION_R1_2026-10-01.md",
+    "workOrderSha256": "53f7ac764d34f229f87dc98b2706bfef3078fd07a35fe35a5d7185ea895e5088"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
