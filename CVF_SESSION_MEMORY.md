@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=B1 sandbox worker release; role=Local dispatcher/reviewer; phase=dispatch; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
+Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=read-only post-B1 sandbox triage; role=Local dispatcher/reviewer; phase=review/triage; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_HTML_B1_SANDBOX_WORK_ORDER; BATCH_ID=CVF-NCR-HTML-B1-SANDBOX; MATERIAL_COMMIT=9e69115; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_SYNTHETIC_SANDBOX_2026-10-01.md; EXPANSION_ALLOWED=false. After bound pre-dispatch PASS, INTERNAL_AGENT may create only four named B1 synthetic browser-test/evidence paths and must not commit. Local reviews independently. No production edit, provider, real data, artifact acceptance, print/accessibility or universal HTML safety claim. Q001/Q004 Profile A OPEN; operator owns actor/store/effect. Durable B2, P11, public sync and deployment parked. LHW24 closed.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=READ_ONLY_POST_HTML_B1_SANDBOX_TRIAGE; BATCH_ID=CVF-NCR-HTML-B1-SANDBOX; MATERIAL_COMMIT=51bd52b8c; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B1_SYNTHETIC_SANDBOX_COMPLETION_2026-10-01.md; EXPANSION_ALLOWED=false. B1 sandbox is ACCEPTED_BOUNDED for one synthetic Chromium fixture/profile. Local may audit remaining roadmap gaps read-only; no automatic worker successor. Do not claim universal HTML safety, print/accessibility, passive-load, provider/governance or artifact acceptance. Q001/Q004 Profile A OPEN; operator owns real actor/data/store/effect. Durable B2, P11, public sync and deployment parked. LHW24 closed.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1

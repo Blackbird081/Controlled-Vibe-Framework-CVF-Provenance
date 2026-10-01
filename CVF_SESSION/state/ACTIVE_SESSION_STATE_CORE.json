@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_SYNTHETIC_SANDBOX_2026-10-01.md",
     "workOrderSha256": "2dc7d91a6ed2269d25341717f3953dd39945be2dbf8cc9d8845fa86955e7cef7"
   },
-  "currentAuthoritySyncReason": "B1 sandbox packet material 9e69115 binds exact baseline/work-order hashes for synthetic internal-worker release only. Q001/Q004 real-data/store/effect remain open.",
+  "currentAuthoritySyncReason": "B1 sandbox completion 51bd52b8c accepted bounded after Local Chromium probe and GC-051 repair. B1 baseline/work order remain current authority; Q001/Q004 real-data/store/effect decisions stay open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
