@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_2026-10-02.md",
     "workOrderSha256": "b52717352a9267b71a5abe8d0f5b9326d93751d39aaf0c556610783ca3ca1dc2"
   },
-  "currentAuthoritySyncReason": "D092 CVF-NCR-GENERAL-USER-GUIDE-REFRESH paired documentation-only general guide packet at dec28db38a8613a681ebf1f8bbdddff45558b3e5; release requires clean bound gate. Five existing/new guide/evidence paths, illustrative code example and static checks; no video/effects or stopped-root successor.",
+  "currentAuthoritySyncReason": "D093 CVF-NCR-GENERAL-USER-GUIDE-REFRESH bounded documentation closure at bef6f7296ddcc315ddbb46ef7a1ec599cab0278b; historical paired authority retained, execution terminated by docs/reviews/CVF_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_COMPLETION_2026-10-02.md. Next Local source-only independent eligibility audit; no worker/video/effect authority.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
