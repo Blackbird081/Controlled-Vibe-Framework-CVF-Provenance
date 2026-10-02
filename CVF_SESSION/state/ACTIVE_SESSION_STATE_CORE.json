@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_GENERAL_VIDEO_REUSE_FIRST_DESIGN_2026-10-02.md",
-    "baselineSha256": "6b71e4da3805b22e8b314e59ab452f2be5cdc7fe31520d51e9fa00d91bddc868",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_GENERAL_VIDEO_REUSE_FIRST_DESIGN_2026-10-02.md",
-    "workOrderSha256": "0fdd80a22c32625c3a23038dd4dd4b2d87ce593068c4076c713865c1723862fc"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HYPERFRAMES_REUSE_CAPABILITY_AUDIT_2026-10-02.md",
+    "baselineSha256": "0fcfb5b581ce1c1e472e01f19e47c7d3ab3fef84cb991eabc38792db601f7aee",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HYPERFRAMES_REUSE_CAPABILITY_AUDIT_2026-10-02.md",
+    "workOrderSha256": "05113231f192c434b04191adb1f9878d0e60d3ba664ed2beb27493771bf64f87"
   },
-  "currentAuthoritySyncReason": "D098 bounded text-design acceptance at 61779c852fefc011d4eb47d2391563f47566f2e4; source-bound private design, original worker snapshot preserved and Local final design hash controls. Next Local renderer reuse scope evaluation only, no tool execution/production successor.",
+  "currentAuthoritySyncReason": "D099 source-only HyperFrames reuse audit at e2a0a403457a2bd81a14957fa476bbe6c85ba8b2, frozen Git source pin and acquisition diagnostics, accepted job reused. Worker three docs/no commit or execution; bound committed release required.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
