@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_SECRET_REFUSAL_RECOVERY_2026-10-02.md",
     "workOrderSha256": "38048b44fe0932a1a3ebcb47ecdecab2acd02e1d97f11f5a27eda8d1a23863ef"
   },
-  "currentAuthoritySyncReason": "D090 CVF-NCR-HTML-SECRET-REFUSAL-RECOVERY paired exact UI mapping packet at de038334350b3c120527f715d00d84400ff995a8; release requires clean bound gate. Source-pinned synthetic UI proof only; stopped send/B2 and effects unchanged.",
+  "currentAuthoritySyncReason": "D091 F-01 bounded UI closure 0868fb167f2a0788e6e500c8eb864b2fdb6d9aa3; historical CVF-NCR-HTML-SECRET-REFUSAL-RECOVERY paired authority retained, execution terminated by docs/reviews/CVF_CVF_NCR_HTML_SECRET_REFUSAL_RECOVERY_COMPLETION_2026-10-02.md. Next Local source-only independent roadmap eligibility audit, no worker packet/effect or stopped-root successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
