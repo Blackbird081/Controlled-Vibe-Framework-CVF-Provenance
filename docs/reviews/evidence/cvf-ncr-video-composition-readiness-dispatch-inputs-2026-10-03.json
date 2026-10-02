@@ -1,0 +1,64 @@
+{
+ "schemaVersion": "cvf.dispatchInputIdentity.v1",
+ "batchId": "CVF-NCR-VIDEO-COMPOSITION-READINESS",
+ "dispatchBaseHead": "f42579acd5d3495826e2ef93f90ee54288179ef1",
+ "operatorScope": "next after clean D101, internal composition/readiness design only",
+ "sources": [
+  {
+   "path": "docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md",
+   "rawSha256": "1eafad1cd23048eff1a11acb27ce51f34bb1929a3306de9237b1ed6734064eee",
+   "gitBlob": "e142d0ec8fce2d03afcf8b41f7c96b7a7cc7f951"
+  },
+  {
+   "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+   "rawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+   "gitBlob": "f22cddd894a9cf976762f8c3b7c3f7a745abf476"
+  },
+  {
+   "path": "docs/reviews/CVF_CVF_NCR_GENERAL_VIDEO_DESIGN_COMPLETION_2026-10-02.md",
+   "rawSha256": "bf6eb5b7671aaa18e020dba876dec45f73e4ea7f8d9e50f4714cba709ec8e161",
+   "gitBlob": "9d323a27116b52c91e682a2c65c97956d8e20ee9"
+  },
+  {
+   "path": "docs/reviews/CVF_CVF_NCR_HYPERFRAMES_REUSE_CAPABILITY_AUDIT_COMPLETION_2026-10-03.md",
+   "rawSha256": "73c67f9c148301f46ef8c29ea0048159c1891ff666b66bdc51103be9690ee622",
+   "gitBlob": "4464b34d67bdce422ea88a9eed605c586c0f0334"
+  },
+  {
+   "path": "docs/reference/CVF_NCR_HYPERFRAMES_REUSE_CAPABILITY_AUDIT_2026-10-02.md",
+   "rawSha256": "bc48b0577b044dab6897f128308282630ba476258ac8dc9bea7ef52f8755fae5",
+   "gitBlob": "d92def40d8b19a52af7d358ab5486636606d54e4"
+  },
+  {
+   "path": "docs/reviews/CVF_NCR_VIETNAMESE_VOICE_LANE_VIENEU_TTS_ASSESSMENT_FOR_CODEX_2026-10-02.md",
+   "rawSha256": "9e20c6ecd1add60c87e25f5ffed9fb091fedb04aaf5fe8aa3f7b3593dcc8da78",
+   "gitBlob": "d577bc390a5906ba06fead88c239e8b4e1361201"
+  },
+  {
+   "path": "docs/reviews/evidence/cvf-ncr-hyperframes-vieneu-local-review-2026-10-03.json",
+   "rawSha256": "a21d646a408ef114ae0c4625189abe510593087473467ab72b4b2fb67b29f409",
+   "gitBlob": "87734aa51d084697fd3ede329b598b947e846879"
+  }
+ ],
+ "predecessorMaterial": "a79f5c6cf33e07ea3d146b432cc802b48dd833c6",
+ "historicalSourcePins": {
+  "hyperframes": "f16e509832d4fa02bbc9a5f81b59ff78f9d466af",
+  "vieneu": "85344322b7258b4e25479b692e8e3396baf9db34"
+ },
+ "sourceFreshnessDisposition": "prior observations only; no refreshed-upstream or runtime-use assertion",
+ "workerPaths": [
+  "docs/reference/CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md",
+  "docs/reviews/evidence/cvf-ncr-video-composition-readiness-design-2026-10-03.json",
+  "docs/reviews/CVF_CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_WORKER_RETURN_2026-10-03.md"
+ ],
+ "readinessDisposition": "not selected or runtime admitted; all cases planned",
+ "claimBoundary": "dispatcher source identity metadata, no source corpus scan/runtime/governance proof",
+ "dispatcherVerification": {
+  "result": "PASS_STATIC_ONLY",
+  "recordedExit": 0,
+  "phase": "pre-dispatch pending material, bound release follows committed continuity",
+  "durationSeconds": 8.75,
+  "initialCorrections": "three literal shape findings: clean-worktree marker, concrete owner path and labelled Corpus verdict N/A; invocation mode corrected from invalid pre-dispatch to dispatch; stale skeleton acquisition/corpus obligations removed before accepted gate",
+  "claimBoundary": "static dispatch structure, no runtime or case execution"
+ }
+}
