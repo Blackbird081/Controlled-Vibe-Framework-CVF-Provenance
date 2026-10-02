@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "cvf.localReassessmentEvidence.v1",
+  "batchId": "CVF-NCR-WORK-TRANSFER-SEND-ROOT-REASSESSMENT",
+  "sourceBaseHead": "f906b66f0b827b0204ce49f3ce55dd915aa70718",
+  "sourceSha256": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts": "d57ea274ac95235ef15fd3d577c8141ba27458576810acb654f505db83a119e6",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts": "a95ac544fcdf1fb74042b25f4223cc4742592c57d78f434292f3b290643e83e7",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts": "3877b34d112185040a331019e9cd9915c9152059ad42ee2c26e1a9833452b40e",
+    "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_PRODUCT_SCOPE_CHECKPOINT_2026-10-02.md": "383bbe5909a1c007a4bdd7211eea45c2faf0b92daf083508574c2e4c9d50926f",
+    "docs/reference/CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md": "27d28911f12dd00f177e4120bc69e2dd18d36d168387eda48c0054e26bbaf5bc",
+    "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_COMPLETION_2026-10-02.md": "49a6ce406090792df11f455e71db2528200cce62ef5bb628c0bf4dbe45ed9e5c",
+    "docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md": "1d2753fd56108eb8a0ed5cc5f03ab85ee67e9c18ff4d1390ef55c45473cc0196",
+    "docs/reviews/CVF_CVF_NCR_HTML_B2_ROOT_CONTRACT_REASSESSMENT_2026-10-02.md": "1058634d8885cf3cfdfb8e31b41526fde702371907fec8fcf7d399cba7cc5a2d"
+  },
+  "method": "NAMED_REGIONS_ONLY_NO_RUNTIME",
+  "disposition": "REASSESSMENT_COMPLETE_NO_DISPATCH",
+  "selectedProposal": "TYPED_RECORD_OWNER_USING_EXISTING_STORAGE_ABSTRACTION_AFTER_CAPABILITY_ADMISSION",
+  "physicalBackendSelected": false,
+  "rootResolved": false,
+  "existingTerminalReview": "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_COMPLETION_2026-10-02.md",
+  "newSemanticConvergenceBlock": false,
+  "sameChainSuccessorAllowed": false,
+  "policyCard": {
+    "OC-1": "DENY_RECOMMENDED_UNRATIFIED",
+    "OC-2": "REFUSE_RECOMMENDED_UNRATIFIED",
+    "OC-3": "TYPED_OWNER_DIRECTION_ONLY_BACKEND_UNKNOWN",
+    "OC-4": "ONE_RECIPIENT_PER_SEND_NO_GLOBAL_PACKET_BAN",
+    "OC-5": "REFUSE_RECOMMENDED_UNRATIFIED",
+    "U-3": "INDEPENDENT_SEND_OPTIONAL_ADVISORY_NO_EXTRA_REFUSAL"
+  },
+  "failureModel": "FM-S_PROPOSED_REQUEST_CONCURRENCY_LOST_RESPONSE_INTACT_ADMITTED_STORE_ONLY",
+  "excludedClaims": [
+    "rollback/restore detection",
+    "acknowledged-history recovery",
+    "distributed durability",
+    "recipient delivery",
+    "artifact acceptance"
+  ],
+  "unknowns": [
+    "binding",
+    "membership",
+    "packet resolver",
+    "conditional admission",
+    "verifier",
+    "scope query",
+    "store epoch",
+    "key retention",
+    "backup",
+    "custody",
+    "cost",
+    "RPO/RTO"
+  ],
+  "runtimeProof": "NONE",
+  "readoutSha256": "b95c7c364755ee2f8dfca1c7be42a95e39939034ec43c28f362f984d1949ce57"
+}
