@@ -1,0 +1,261 @@
+{
+  "schemaVersion": "cvf.ncrGeneralUserGuideRefresh.workerEvidence.v1",
+  "batchId": "CVF-NCR-GENERAL-USER-GUIDE-REFRESH",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_2026-10-02.md",
+  "executionBaseHead": "e2107ca24a15e6f7101a048591eaf5325ca8bd65",
+  "dispatchBaseHead": "a4d445e352ed2d669dd8a3e2e42d4ed8f967146b",
+  "cleanBaseAtStart": true,
+  "twoOutputsAbsentAtStart": true,
+  "preImplementationGate": "COMPLIANT exit 0 before any edit",
+  "claimLevel": "PASS_STATIC_ONLY",
+  "executionBoundary": "Document reading and static checks only. No test, browser, HTTP, provider, build or store. The coding example was not executed.",
+  "preEditSha256": {
+    "docs/guides/CVF_QUICK_ORIENTATION.md": "1cef91c12b63d3f860b4da90c36776200152ac21880e9f0e587c6575fb9fe526",
+    "docs/GET_STARTED.md": "1d2837927f85c79a90a0cc4ceb219e236c9e9685f38c23d0fa36a38e3df79d67",
+    "docs/reference/CVF_INTERNAL_USER_GUIDE.md": "1cb893eb317439f5db088881f0450e4efdf3a64dd44bbfcc1b603d0104c3459b"
+  },
+  "preEditLines": {
+    "docs/guides/CVF_QUICK_ORIENTATION.md": 128,
+    "docs/GET_STARTED.md": 538,
+    "docs/reference/CVF_INTERNAL_USER_GUIDE.md": 8
+  },
+  "readOnlyInputSha256": {
+    "ECOSYSTEM/operating-model/CVF_VOM_QUICK_START.md": "c07dcc7b3cfe3e3eb7e933973f20a87246f7475b752678863dd13504483e6647",
+    "docs/HOW_TO_APPLY_CVF.md": "72cae898d6d0d054005feeea4277ebb7dfd42bdff1c0a70a382e01e611495483",
+    "ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md": "fc006001e9a25ed00a40392499cb7e58ff814d8522f30db60e12e63c198ce945",
+    "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md": "b3529fdd4d71bb69be3558230267042549d482aeb4732c3015048b86733156a0",
+    "ECOSYSTEM/doctrine/CVF_DOCTRINE_RULES.md": "54e8724a53ae90e43dcaf3522908c9926c3ada1a114f7196eb55a6ff91e2d54b",
+    "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md": "3ff99a14a415e53e338ec1a4edf2feddfd933812b9ef73dd0c50396baf86a680",
+    "docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md": "2da91ba9095d9cf119a6bf4608515ce38db73457f31369c302f432a37cde122c",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md": "cc098234dd1908cfa081842b20767c45af1650af4469c902701c586cbbd44104"
+  },
+  "finalSha256": {
+    "docs/guides/CVF_QUICK_ORIENTATION.md": "cd35711c46c1c1861ad392b791c89f23d6269c0e0608f14cfaa16090838f09bc",
+    "docs/GET_STARTED.md": "acb03653e4a547cfc85d6f7ef9a3ebe7552c696bb9d65bb836f306f8a5dd107c",
+    "docs/reference/CVF_INTERNAL_USER_GUIDE.md": "24355f72ecf03f85ba0b8c1b102c7f201b9bc5a69a64ca48869394cc0c851c15"
+  },
+  "finalLines": {
+    "docs/guides/CVF_QUICK_ORIENTATION.md": 130,
+    "docs/GET_STARTED.md": 540,
+    "docs/reference/CVF_INTERNAL_USER_GUIDE.md": 9
+  },
+  "lineCaps": {
+    "docs/guides/CVF_QUICK_ORIENTATION.md": 180,
+    "docs/GET_STARTED.md": 541,
+    "docs/reference/CVF_INTERNAL_USER_GUIDE.md": 11,
+    "docs/reviews/evidence/cvf-ncr-general-user-guide-refresh-2026-10-02.json": 600,
+    "docs/reviews/CVF_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_WORKER_RETURN_2026-10-02.md": 650
+  },
+  "exactPaths": [
+    "docs/guides/CVF_QUICK_ORIENTATION.md",
+    "docs/GET_STARTED.md",
+    "docs/reference/CVF_INTERNAL_USER_GUIDE.md",
+    "docs/reviews/evidence/cvf-ncr-general-user-guide-refresh-2026-10-02.json",
+    "docs/reviews/CVF_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_WORKER_RETURN_2026-10-02.md"
+  ],
+  "mustContain": [
+    "h\u1ea1 t\u1ea7ng qu\u1ea3n tr\u1ecb",
+    "IDE",
+    "INTAKE \u2192 DESIGN \u2192 SPEC \u2192 WORK ORDER \u2192 BUILD \u2192 REVIEW \u2192 FREEZE",
+    "ch\u01b0a ch\u1ea1y th\u1eadt",
+    "V\u00ed d\u1ee5 minh h\u1ecda",
+    "Ch\u01b0a Ch\u1ee9ng Minh G\u00ec",
+    "Product Positioning"
+  ],
+  "mustNotContain": [
+    "Phase Status",
+    "Phase 0",
+    "62 active",
+    "84 scenarios",
+    "Tr\u1ea1ng th\u00e1i hi\u1ec7n t\u1ea1i",
+    "DeepSeek",
+    "CERTIFIED",
+    "EXPERIMENTAL"
+  ],
+  "fiveGuideReconciliation": {
+    "shortOwner": "docs/guides/CVF_QUICK_ORIENTATION.md stays the single short owner: the roadmap names it as the orientation entrypoint, GET_STARTED and VOM already point to it, and rewriting it avoids a parallel guide.",
+    "reused": [
+      "links to GET_STARTED, HOW_TO_APPLY_CVF, VERSION_COMPARISON, VOM Quick Start, Public Structure Overview, Core Knowledge Base, Architecture Decisions, the skill library and Web UI directories, and the three April 2026 packets (kept as dated history)"
+    ],
+    "intact": [
+      "ECOSYSTEM/operating-model/CVF_VOM_QUICK_START.md (operating-model owner, read only)",
+      "docs/HOW_TO_APPLY_CVF.md (version-specific guide, read only)",
+      "GET_STARTED setup and bootstrap bytes (one inserted link line plus one blank line)",
+      "CVF_INTERNAL_USER_GUIDE compatibility links (one inserted list line)"
+    ],
+    "entries": [
+      {
+        "path": "ECOSYSTEM/operating-model/CVF_VOM_QUICK_START.md",
+        "role": "operating-model quick start for non-coders, four-step flow",
+        "finding": "Not edited. Describes a four-phase flow (Discovery, Design, Build, Review)."
+      },
+      {
+        "path": "docs/guides/CVF_QUICK_ORIENTATION.md",
+        "role": "short orientation",
+        "finding": "Dated 2026-04-21 with a phase dashboard, provider certification text and skill and scenario counts read as current; no coding walkthrough. Rewritten."
+      },
+      {
+        "path": "docs/GET_STARTED.md",
+        "role": "setup and workspace bootstrap",
+        "finding": "Setup oriented; no orientation link. One link line inserted."
+      },
+      {
+        "path": "docs/HOW_TO_APPLY_CVF.md",
+        "role": "version-specific application guide",
+        "finding": "Version 1.3, updated 29/01/2026, version-specific quick starts. Not edited."
+      },
+      {
+        "path": "docs/reference/CVF_INTERNAL_USER_GUIDE.md",
+        "role": "compatibility pointer",
+        "finding": "Eight lines delegating to GET_STARTED, HOW_TO_APPLY_CVF and VERSION_COMPARISON. One link added."
+      }
+    ],
+    "higherOwnerContradictionsDisclosedNotAmended": [
+      {
+        "id": "C-1",
+        "between": "VOM Quick Start sections 4 and 6 (CVF 'tu dong enforce'; an AI IDE agent 'will comply by itself') versus doctrine Product Positioning sections 2, 3 and 10 and the roadmap guide brief (control at integrated points, not every session)",
+        "handling": "VOM not edited. The refreshed guide says control applies at integrated surfaces and that telling an external AI to read the rules is a written workflow, not enforcement."
+      },
+      {
+        "id": "C-2",
+        "between": "Old Quick Orientation (62 active skills) versus VOM Quick Start (141 Skills)",
+        "handling": "No skill count in the refreshed guide; it links to the library directory."
+      },
+      {
+        "id": "C-3",
+        "between": "VOM and HOW_TO_APPLY four-phase and version flows versus the seven-decision governed lifecycle",
+        "handling": "Shown as separate contexts in guide section 3; the lifecycle standard keeps precedence for governed agent work."
+      },
+      {
+        "id": "C-4",
+        "between": "Risk wording: old Quick Orientation R3 'Hard Gate + Human-in-the-loop' versus VOM R3 'approve each step'",
+        "handling": "The existing Quick Orientation table was kept unchanged and the guide says full definitions belong to the owner; no taxonomy was redefined."
+      }
+    ]
+  },
+  "claimSourceMap": [
+    {
+      "claim": "CVF is governance infrastructure, not an IDE, coding tool or agent builder",
+      "source": "ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md sections 2 and 3",
+      "proofClass": "FROZEN_DOCTRINE",
+      "limit": "positioning, not behavior proof"
+    },
+    {
+      "claim": "Four pillars Policy, Identity, Execution, Audit",
+      "source": "ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md section 5",
+      "proofClass": "FROZEN_DOCTRINE",
+      "limit": "definition only"
+    },
+    {
+      "claim": "Control the rules, not the agents",
+      "source": "ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md section 10",
+      "proofClass": "FROZEN_DOCTRINE",
+      "limit": "strategic law"
+    },
+    {
+      "claim": "Seven governed decisions INTAKE to FREEZE; runtime enum is a projection",
+      "source": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md Purpose and Lifecycle Map",
+      "proofClass": "CANONICAL_STANDARD",
+      "limit": "the guide omits the five-value projection detail"
+    },
+    {
+      "claim": "Control only at integrated surfaces; not every agent session",
+      "source": "roadmap general-guide section (line 449) and doctrine section 2",
+      "proofClass": "GOVERNED_DECISION",
+      "limit": "explicit non-claim"
+    },
+    {
+      "claim": "Reuse accepted evidence rather than rerun",
+      "source": "AGENTS.md lines 125-127 (EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION)",
+      "proofClass": "CANONICAL_RULE",
+      "limit": "a reviewer rule; the guide restates it in plain words"
+    },
+    {
+      "claim": "Approval continues for already-authorized reversible work; new real effects or boundary changes need the proper authority",
+      "source": "work order Implementation Contract item 4",
+      "proofClass": "DISPATCH_INSTRUCTION",
+      "limit": "no higher canonical text located for the exact wording; Local to confirm"
+    },
+    {
+      "claim": "Risk table R0 to R3",
+      "source": "carried unchanged from the previous Quick Orientation text",
+      "proofClass": "INHERITED_GUIDE_TEXT",
+      "limit": "not re-verified against a risk standard in this task"
+    },
+    {
+      "claim": "April 2026 packets are dated history",
+      "source": "the three linked packets carry 2026-04-21 in their file names",
+      "proofClass": "FILE_NAME_DATE",
+      "limit": "their contents were not re-read"
+    }
+  ],
+  "removedClaims": [
+    "Phase 0 to Phase 6 status dashboard",
+    "Release Candidate and provider certification summary",
+    "62 active skills and 12 domains",
+    "84 conformance scenarios PASS",
+    "Web UI and live E2E status as current"
+  ],
+  "sizeBudget": "see finalLines against lineCaps; counts use len(text.splitlines())",
+  "preservationMethod": "Remove the inserted lines (GET_STARTED lines 10 and 11, INTERNAL_USER_GUIDE line 6) and compare the rest with git HEAD text line by line, ignoring line endings. At edit time the remainder was also compared byte-for-byte with the captured pre-edit bytes, line endings kept (the CRLF and LF mix was preserved).",
+  "advisoryReaderCases": {
+    "kind": "agent advisory reading, not a human usability study and not a runtime test",
+    "status": "behavioral cases NOT_EXECUTED_PLANNED; the answers below are an agent reading of the guide text only",
+    "cases": [
+      {
+        "id": "Q1",
+        "question": "What does CVF do for me?",
+        "anchor": "Phan 1",
+        "answer": "It is a governance layer of rules and evidence around AI agents; it does not write code for you."
+      },
+      {
+        "id": "Q2",
+        "question": "Who writes the code?",
+        "anchor": "Phan 2 table, AI agent row",
+        "answer": "The AI agent does the assigned work; you set the goal and boundaries; CVF applies control at integrated points."
+      },
+      {
+        "id": "Q3",
+        "question": "How do I bound a request?",
+        "anchor": "Phan 4 Buoc 2",
+        "answer": "Name the goal, allowed files, forbidden actions, expected and edge-case results, synthetic data, the report you want and when to stop."
+      },
+      {
+        "id": "Q4",
+        "question": "What evidence do I review?",
+        "anchor": "Phan 4 Buoc 4",
+        "answer": "The changed-file list, test results including the empty and bad-input cases, and what the agent says it did not check."
+      },
+      {
+        "id": "Q5",
+        "question": "When is more authorization needed?",
+        "anchor": "Phan 3 last paragraph; Phan 4 next move; Phan 5",
+        "answer": "When a boundary changes or there is a new real effect such as going live, sending data out or using real data."
+      },
+      {
+        "id": "Q6",
+        "question": "What is not proved?",
+        "anchor": "Phan 6",
+        "answer": "Control of every agent or session, any specific provider's readiness, durable transfer acceptance and production readiness."
+      }
+    ]
+  },
+  "proofIdJoin": {
+    "PROOF-OWNER": "docs/guides/CVF_QUICK_ORIENTATION.md; fiveGuideReconciliation",
+    "PROOF-AUTHORITY": "docs/guides/CVF_QUICK_ORIENTATION.md sections 1, 3 and 6; claimSourceMap",
+    "PROOF-IDENTITY": "docs/guides/CVF_QUICK_ORIENTATION.md section 2 and the section 4 walkthrough",
+    "PROOF-RECOVERY": "docs/guides/CVF_QUICK_ORIENTATION.md section 4 steps 4 and 5 and the next-move paragraph",
+    "PROOF-BOUNDARY": "preservationMethod and the preservation check; removedClaims; exactPaths",
+    "PROOF-CASE-PLAN": "advisoryReaderCases",
+    "PROOF-SOURCE": "preEditSha256, readOnlyInputSha256, finalSha256 and staticCrossCheck",
+    "PROOF-RETURN": "docs/reviews/CVF_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_WORKER_RETURN_2026-10-02.md"
+  },
+  "staticCrossCheck": {
+    "command": "python -c \"import json;d=json.load(open('docs/reviews/evidence/cvf-ncr-general-user-guide-refresh-2026-10-02.json',encoding='utf-8'));exec(d['staticCrossCheck']['script'])\"",
+    "expectedExit": 0,
+    "recordedExit": 0,
+    "recordedResult": "PASS_STATIC_ONLY, no failures",
+    "script": "import hashlib,os,re,subprocess,sys\nfail=[]\ndef raw(p): return open(p,'rb').read()\ndef txt(p): return raw(p).decode('utf-8')\nG=list(d['finalSha256'])\nfor p,h in d['readOnlyInputSha256'].items():\n    if hashlib.sha256(raw(p)).hexdigest()!=h: fail.append('input drift '+p)\nfor p,h in d['finalSha256'].items():\n    if hashlib.sha256(raw(p)).hexdigest()!=h: fail.append('final hash '+p)\nfor g in G:\n    for m in re.finditer(r'\\]\\(([^)\\s#]+)(?:#[^)]*)?\\)',txt(g)):\n        t=m.group(1)\n        if t.startswith(('http:','https:','mailto:')): continue\n        if not os.path.exists(os.path.normpath(os.path.join(os.path.dirname(g),t))): fail.append('broken link '+g+' -> '+t)\nfor p,cap in d['lineCaps'].items():\n    if os.path.exists(p) and len(txt(p).splitlines())>cap: fail.append('size '+p)\ndef head(p): return subprocess.run(['git','show','HEAD:'+p],capture_output=True).stdout.decode('utf-8').splitlines()\nfor p,drop in (('docs/GET_STARTED.md',(9,10)),('docs/reference/CVF_INTERNAL_USER_GUIDE.md',(5,))):\n    lines=txt(p).splitlines()\n    cur=[l for i,l in enumerate(lines) if i not in drop]\n    if cur!=head(p): fail.append('preservation '+p)\n    if 'CVF_QUICK_ORIENTATION' not in lines[drop[0]]: fail.append('insertion position '+p)\nq=txt('docs/guides/CVF_QUICK_ORIENTATION.md')\nfor t in d['mustContain']:\n    if t not in q: fail.append('missing '+t)\nfor t in d['mustNotContain']:\n    if t in q: fail.append('stale '+t)\nfor l in q.splitlines():\n    if '2026-04-21' in l and not any(k in l for k in ('Packet','Limitations','l\u1ecbch s\u1eed','Vi\u1ebft l\u1ea1i')): fail.append('undated april line: '+l[:40])\nst=subprocess.run(['git','status','--short','--untracked-files=all'],capture_output=True,text=True).stdout.splitlines()\nif sorted(x[3:] for x in st)!=sorted(d['exactPaths']): fail.append('path set '+repr(st))\nprint('FAIL' if fail else 'PASS_STATIC_ONLY',ascii(fail))\nsys.exit(1 if fail else 0)\n"
+  },
+  "claimBoundary": "Document consistency only. The coding example is illustrative and unexecuted. No human usability study, runtime, provider, enforcement, durable transfer, video or public claim."
+}
