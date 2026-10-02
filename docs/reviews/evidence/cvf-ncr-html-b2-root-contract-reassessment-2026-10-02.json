@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "cvf.ncrB2RootReassessment.v1",
+  "baseHead": "b855557f95e1e87fc0099505d5c3dd31228f7d44",
+  "role": "INTERNAL_AGENT_LOCAL_ORCHESTRATOR_REVIEWER",
+  "scope": "SOURCE_AND_DESIGN_ONLY",
+  "sourceManifest": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py",
+      "sha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+      "readDepth": "SELECTED_SECTIONS",
+      "locator": "classify_target; backup_to; restore_backup; _copy_verified"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+      "sha256": "d57ea274ac95235ef15fd3d577c8141ba27458576810acb654f505db83a119e6",
+      "readDepth": "SELECTED_SECTIONS",
+      "locator": "openSQLiteDatabase; SQLiteKeyValueAdapter"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v3.0_CORE_GIT_FOR_AI/artifact_ledger/artifact.ledger.ts",
+      "sha256": "af2b505b13eaa29460e8b6e8ce0c6af1c8205066b5cd56ef94afe7f7bd31ab73",
+      "readDepth": "SELECTED_SECTIONS",
+      "locator": "ArtifactLedger.commit"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md",
+      "sha256": "0e4f7681426d49b2bff3a1ccc9ce2edff4adc28be74f7330e67b6f0f4ceb9155",
+      "readDepth": "SELECTED_SECTIONS",
+      "locator": "sections 3-8; planned cases C51/C78/C79"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_HTML_B2_DESIGN_R1_LOCAL_REVIEW_2026-10-02.md",
+      "sha256": "539db8eaceef2e1157ba335e92d27d940ec0d77c6d5d7a55bb014242a198f3d5",
+      "readDepth": "SELECTED_SECTIONS",
+      "locator": "Findings / Position; Semantic Convergence Outcome"
+    },
+    {
+      "path": "docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md",
+      "sha256": "1d2753fd56108eb8a0ed5cc5f03ab85ee67e9c18ff4d1390ef55c45473cc0196",
+      "readDepth": "SELECTED_SECTIONS",
+      "locator": "invariants 6 and 7; Allowed Progression Dispositions"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_HTML_B2A_SYNTHETIC_ACCEPTANCE_CONTRACT_2026-09-30.md",
+      "sha256": "2994594220a6e78c596bdded9a6d53868780ae4338e5d893bb7f53e0916d40ca",
+      "readDepth": "SELECTED_SECTIONS",
+      "locator": "Part 2"
+    }
+  ],
+  "sourceBoundary": "named selected regions, not repository inventory or complete file reading",
+  "selectedDirection": "TAIL_ANCHOR_NO_LOSS_RESTORE_PROPOSAL_ONLY",
+  "runtimeStatus": "NOT_EXECUTED_DESIGN_ONLY",
+  "scenarios": [
+    {
+      "scenarioId": "B2ROOT-S01",
+      "input": "store seq 50; witness seq 100",
+      "proposedDisposition": "STORE_STALE/UNKNOWN; no writer admission; no accepted-loss branch",
+      "status": "NOT_EXECUTED_DESIGN_ONLY"
+    },
+    {
+      "scenarioId": "B2ROOT-S02",
+      "input": "store seq 100/hash H100; witness seq 100/hash H100",
+      "proposedDisposition": "eligible prefix as of witness read; actual role/lock/provisioning gates still required",
+      "status": "NOT_EXECUTED_DESIGN_ONLY"
+    },
+    {
+      "scenarioId": "B2ROOT-S03",
+      "input": "store seq 101 extending H100; witness seq 100/H100",
+      "proposedDisposition": "UNPUBLISHED_TAIL; current claims UNKNOWN; recovery owner needs separately admitted anchor reconciliation",
+      "status": "NOT_EXECUTED_DESIGN_ONLY"
+    },
+    {
+      "scenarioId": "B2ROOT-S04",
+      "input": "same seq 100; different hash",
+      "proposedDisposition": "STORE_CONFLICT/UNKNOWN; no witness advancement",
+      "status": "NOT_EXECUTED_DESIGN_ONLY"
+    },
+    {
+      "scenarioId": "B2ROOT-S05",
+      "input": "witness missing/unreadable",
+      "proposedDisposition": "STORE_UNWITNESSED/UNKNOWN; no writer admission or definitive current absence",
+      "status": "NOT_EXECUTED_DESIGN_ONLY"
+    },
+    {
+      "scenarioId": "B2ROOT-S06",
+      "input": "DB commit 101; anchor advancement response lost",
+      "proposedDisposition": "freeze writer; classify anchor read; no blind retry, no success from DB commit alone",
+      "status": "NOT_EXECUTED_DESIGN_ONLY"
+    },
+    {
+      "scenarioId": "B2ROOT-S07",
+      "input": "after response loss, read exact new anchor 101/H101",
+      "proposedDisposition": "publication observed; exact-intent bytes/readback and as-of checks still needed before acknowledgment",
+      "status": "NOT_EXECUTED_DESIGN_ONLY"
+    },
+    {
+      "scenarioId": "B2ROOT-S08",
+      "input": "after response loss, read old anchor 100/H100",
+      "proposedDisposition": "publication not observed at that read; pending completion remains possible; UNKNOWN, no retry grant",
+      "status": "NOT_EXECUTED_DESIGN_ONLY"
+    },
+    {
+      "scenarioId": "B2ROOT-S09",
+      "input": "restore a backup missing prior revocation",
+      "proposedDisposition": "below-anchor or hash-conflict refusal; no per-lineage lost-id recovery or stale promotion",
+      "status": "NOT_EXECUTED_DESIGN_ONLY"
+    },
+    {
+      "scenarioId": "B2ROOT-S10",
+      "input": "witness advanced concurrently beyond expected tuple",
+      "proposedDisposition": "CAS conflict; reread/classify; no overwrite or backward anchor",
+      "status": "NOT_EXECUTED_DESIGN_ONLY"
+    },
+    {
+      "scenarioId": "B2ROOT-S11",
+      "input": "store/witness both rolled back together or both lost",
+      "proposedDisposition": "outside selected surviving-witness model; provenance UNKNOWN; real failure/custody gates unresolved",
+      "status": "NOT_EXECUTED_DESIGN_ONLY"
+    }
+  ],
+  "retainedProblemKey": "cvf-ncr-html-b2-durable-acceptance-design",
+  "retainedBlocker": "B2_ACCEPTANCE_DESIGN_UNSPECIFIED",
+  "scecDisposition": "STOP_REASSESS_ARCHITECTURE",
+  "successorOpened": false,
+  "dispatchGranted": false,
+  "effectGranted": false
+}
