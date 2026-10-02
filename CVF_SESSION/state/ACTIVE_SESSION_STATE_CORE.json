@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md",
     "workOrderSha256": "8053d20a1d670b10215339d55c43e71f2130e3757df7f578fa0bf8694d06b8da"
   },
-  "currentAuthoritySyncReason": "D084 paired R1 REWORK material 9a081264946700b569979f45a6dfc7acbc620cbe; same-root integrated contract repair only, bound clean release required, original artifacts retained, no design/policy/runtime ratification.",
+  "currentAuthoritySyncReason": "D084 paired R1 REWORK material 9a081264946700b569979f45a6dfc7acbc620cbe; same-root integrated contract repair only, bound clean release required, original artifacts retained, no design/policy/runtime ratification. Batch CVF-NCR-WORK-TRANSFER-SEND-CONTRACT-R1 named in material marker; unified six-surface continuity rebind after 9c23032eae6029102091f8136d2527ffa5b40707.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

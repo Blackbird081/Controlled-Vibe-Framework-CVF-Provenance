@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `9a081264946700b569979f45a6dfc7acbc620cbe`; batch `CVF-NCR-WORK-TRANSFER-SEND-CONTRACT-R1`, consolidated R1 design packet, implementation not admitted.
+Current HEAD recorded for this handoff: material `9a081264946700b569979f45a6dfc7acbc620cbe`; batch `CVF-NCR-WORK-TRANSFER-SEND-CONTRACT-R1`; sync parent `9c23032eae6029102091f8136d2527ffa5b40707`; design only, implementation not admitted.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
