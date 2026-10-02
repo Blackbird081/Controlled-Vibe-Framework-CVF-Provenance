@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HYPERFRAMES_REUSE_CAPABILITY_AUDIT_2026-10-02.md",
     "workOrderSha256": "05113231f192c434b04191adb1f9878d0e60d3ba664ed2beb27493771bf64f87"
   },
-  "currentAuthoritySyncReason": "D099 source-only HyperFrames reuse audit at e2a0a403457a2bd81a14957fa476bbe6c85ba8b2, frozen Git source pin and acquisition diagnostics, accepted job reused. Worker three docs/no commit or execution; bound committed release required.",
+  "currentAuthoritySyncReason": "D100 foundation rule at eb19152304d5dea860d0b4d7d182afceebefd460; D099 packet hashes retained for pending Local source-return review, no worker redispatch or runtime admission.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

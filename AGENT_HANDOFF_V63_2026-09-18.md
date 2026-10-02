@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `e2a0a403457a2bd81a14957fa476bbe6c85ba8b2`; batch `CVF-NCR-HYPERFRAMES-REUSE-AUDIT`, D099 source capability dispatch; send/B2 STOP.
+Current HEAD recorded for this handoff: `eb19152304d5dea860d0b4d7d182afceebefd460`; batch `CVF-NCR-REUSE-CHOICE-D100`, D100 foundation rule; HyperFrames review pending; send/B2 STOP.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking: `origin/main`; resolve SHA live. External agent memory is non-c
 ## Purpose
 Carry CVF-NCR v2.7 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer. Phase: source capability audit dispatch, worker pending; technical owner: Local; effect owner: operator; P11 parked.
+Role: Local orchestrator/reviewer. Phase: D100 recorded, source return review pending; technical owner: Local; effect owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=execute released source capability audit; role=Local reviewer; phase=source capability audit dispatch, worker pending; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=review returned source audit; role=Local reviewer; phase=D100 recorded, source return review pending; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -167,7 +167,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_B1_PRINT_R2_COMPLETENESS_PACKET; REVIEW_COMMIT=df1b928a9; REVIEW=docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_ORIGIN_ISOLATION_R1_REVIEW_2026-10-01.md; CANDIDATE_STASH=42d22bbcea12ee0f555e84e0649877dabd967a4b; EXPANSION_ALLOWED=false. Local must source-audit the independent 120-row clipping finding and round-two admission, then prepare a bounded packet requiring long-document end-marker output plus R1 origin-security regression. No worker execution before bound release. Q001/Q004 OPEN; operator owns actor/data/store/effect. Durable B2, P11, public sync and deployment parked. LHW24 closed.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW_RETURNED_SOURCE_CAPABILITY_AUDIT; BATCH_ID=CVF-NCR-REUSE-CHOICE-D100; MATERIAL_COMMIT=eb19152304d5dea860d0b4d7d182afceebefd460; EXPANSION_ALLOWED=false. D100 normative rule recorded. Local reviews pending HyperFrames return and separate VieNeu advisory under the current bound packet; no worker redispatch or runtime admission. Full next move and source pins: CVF_SESSION_MEMORY.md. Send/B2 STOP; Q001/Q004/P11/effects/public/deploy parked.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
