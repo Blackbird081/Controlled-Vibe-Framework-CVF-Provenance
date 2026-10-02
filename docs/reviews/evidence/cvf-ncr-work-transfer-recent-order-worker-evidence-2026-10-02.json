@@ -1,0 +1,383 @@
+{
+  "schemaVersion": "cvf.ncrWorkTransferRecentOrderWorkerEvidence.v1",
+  "batchId": "CVF-NCR-WORK-TRANSFER-RECENT-ORDER",
+  "preEditSeal": {
+    "sealedAtUtc": "2026-10-02T06:32:10.822606Z",
+    "executionBaseHead": "09e9fb0a665d46ff6ff9699bc930f0d3b871aedd",
+    "gitStatusShortUntrackedAllBeforeEdit": "empty",
+    "outputsAbsentBeforeEdit": true,
+    "preImplementationGate": "COMPLIANT exit 0 before any edit",
+    "baselineExistingPageTest": {
+      "command": "npx --no-install vitest run 'src/app/(dashboard)/work-transfer/page.test.tsx'",
+      "exit": 0,
+      "testsPassed": 3
+    },
+    "preEditSourceSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "a6c6f6ef3738538f982833bc282275be845905b5cabadd3011feddc6890e56a8",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.test.tsx": "d43f0b05e5fc968487c1b118b3dccd25601b32db9002d6444618488b24a7dff0"
+    },
+    "plan": {
+      "production": "in the successful audit-list response step, copy payload.data, stable-sort the copy descending by timestamp.localeCompare (the store's own comparator, reversed), then slice(0, 8); keep endpoint, copy, states, selection and recordToExportRequest unchanged; no new helper file or export",
+      "test": "existing React Testing Library and Vitest; per-test fetch mock with reset; mocked ArtifactExportPanel records its initialRequest; rendered order read from the export-record-<id> test ids; expected sequences are literal ids, not a second comparator",
+      "redBeforeEdit": "add the order tests first and run them against the unchanged page to capture the intended failure"
+    },
+    "caseToOracleMatrix": [
+      {
+        "case": "T1 ascending input, 12 records",
+        "oracle": "rendered ids equal literal newest eight in descending order; the four oldest ids absent",
+        "oldCodeExpected": "FAIL (renders oldest eight)"
+      },
+      {
+        "case": "T2 shuffled input, 12 records",
+        "oracle": "same literal sequence, independent of input order",
+        "oldCodeExpected": "FAIL"
+      },
+      {
+        "case": "T3 equal timestamps",
+        "oracle": "records with equal timestamps keep upstream relative order in the literal expected sequence",
+        "oldCodeExpected": "FAIL on cross-timestamp order, tie order alone is not discriminating on old code"
+      },
+      {
+        "case": "T4 non-mutation",
+        "oracle": "frozen response array and records; deep snapshot before and after unchanged; no throw",
+        "oldCodeExpected": "PASS (old code does not mutate), regression guard"
+      },
+      {
+        "case": "T5 fewer than eight, exactly eight, empty success, unsuccessful payload, rejected fetch",
+        "oracle": "all records shown newest first; empty text; error text twice",
+        "oldCodeExpected": "fewer-than-eight and exactly-eight FAIL on order; empty and error PASS as regression guards"
+      },
+      {
+        "case": "T6 selection by identity",
+        "oracle": "clicking the displayed newest record gives the mocked panel the literal expected initialRequest for that id; deselect removes the panel",
+        "oldCodeExpected": "FAIL (the first displayed row is the oldest)"
+      },
+      {
+        "case": "T7 existing three tests",
+        "oracle": "unchanged assertions still pass with the isolated mocks",
+        "oldCodeExpected": "PASS"
+      }
+    ],
+    "outOfScope": [
+      "malformed, missing or non-canonical timestamp policy",
+      "role, scope, producer or export provenance",
+      "store ordering",
+      "real HTTP, store, browser or provider"
+    ]
+  },
+  "preEditSealSha256": "e2dbd13aaaa5f43afd8219167e5dbc3e01f28b41b7cdd80eb7d13ec467359989",
+  "sealCanonicalization": "json.dumps(sort_keys=True, separators=(',',':')) of preEditSeal",
+  "redRun": {
+    "when": "after the new tests were added and before any product edit; page.tsx still at its sealed pre-edit hash",
+    "command": "npx --no-install vitest run 'src/app/(dashboard)/work-transfer/page.test.tsx'",
+    "exit": 1,
+    "result": "7 failed | 3 passed (10)",
+    "failures": [
+      {
+        "test": "ascending input, 12 records",
+        "expected": [
+          "evt-12",
+          "evt-11",
+          "evt-10",
+          "evt-09",
+          "evt-08",
+          "evt-07",
+          "evt-06",
+          "evt-05"
+        ],
+        "observed": [
+          "evt-01",
+          "evt-02",
+          "evt-03",
+          "evt-04",
+          "evt-05",
+          "evt-06",
+          "evt-07",
+          "evt-08"
+        ]
+      },
+      {
+        "test": "shuffled input, 12 records",
+        "expected": [
+          "evt-12",
+          "evt-11",
+          "evt-10",
+          "evt-09",
+          "evt-08",
+          "evt-07",
+          "evt-06",
+          "evt-05"
+        ],
+        "observed": [
+          "evt-07",
+          "evt-12",
+          "evt-03",
+          "evt-09",
+          "evt-01",
+          "evt-11",
+          "evt-05",
+          "evt-08"
+        ]
+      },
+      {
+        "test": "equal timestamps, 10 records",
+        "expected": [
+          "q1",
+          "q2",
+          "p1",
+          "p2",
+          "a6",
+          "a5",
+          "a4",
+          "a3"
+        ],
+        "observed": [
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "p1",
+          "p2"
+        ]
+      },
+      {
+        "test": "non-mutation",
+        "expected": "newest eight, newest first",
+        "observed": "first eight of the input order (evt-05, evt-02, evt-09, ...)",
+        "note": "the sealed matrix expected this guard to pass on old code; it failed because the same test also asserts the corrected order, recorded as a post-seal deviation"
+      },
+      {
+        "test": "three records, exactly eight, empty, error (one test)",
+        "expected": [
+          "evt-03",
+          "evt-02",
+          "evt-01"
+        ],
+        "observed": [
+          "evt-02",
+          "evt-03",
+          "evt-01"
+        ],
+        "note": "the first assertion fails, so the later empty and error assertions did not run on old code"
+      },
+      {
+        "test": "English title with corrected order",
+        "expected": "first row evt-12",
+        "observed": "first row evt-01"
+      },
+      {
+        "test": "selection by identity",
+        "expected": "export-record-evt-12 present",
+        "observed": "TestingLibraryElementError: Unable to find an element by data-testid export-record-evt-12"
+      }
+    ],
+    "passedOnOldCode": [
+      "renders KnowledgeJourneyNav at step 5",
+      "renders Vietnamese content correctly",
+      "renders English content correctly"
+    ]
+  },
+  "greenRun": {
+    "command": "npx --no-install vitest run 'src/app/(dashboard)/work-transfer/page.test.tsx'",
+    "exit": 0,
+    "result": "10 passed (10), 1 file",
+    "renderedSequencesAssertedEqualToLiteralExpected": {
+      "ascending 12": [
+        "evt-12",
+        "evt-11",
+        "evt-10",
+        "evt-09",
+        "evt-08",
+        "evt-07",
+        "evt-06",
+        "evt-05"
+      ],
+      "shuffled 12": [
+        "evt-12",
+        "evt-11",
+        "evt-10",
+        "evt-09",
+        "evt-08",
+        "evt-07",
+        "evt-06",
+        "evt-05"
+      ],
+      "ties": [
+        "q1",
+        "q2",
+        "p1",
+        "p2",
+        "a6",
+        "a5",
+        "a4",
+        "a3"
+      ],
+      "three records": [
+        "evt-03",
+        "evt-02",
+        "evt-01"
+      ],
+      "exactly eight": [
+        "evt-08",
+        "evt-07",
+        "evt-06",
+        "evt-05",
+        "evt-04",
+        "evt-03",
+        "evt-02",
+        "evt-01"
+      ]
+    },
+    "excludedIdsAbsentAsserted": [
+      "evt-01",
+      "evt-02",
+      "evt-03",
+      "evt-04",
+      "a1",
+      "a2"
+    ],
+    "nonMutation": "frozen array and frozen records; JSON snapshot and id order equal before and after",
+    "selection": "clicking evt-12 gives the literal export request (title 'Work Transfer \u2014 ACTION-12', sourcePath resource-12, receiptAnchor transfer-evt-12, memoryClass FULL_RECORD, status OK); clicking evt-05 switches to ACTION-05; clicking again removes the panel"
+  },
+  "focusedChecks": [
+    {
+      "command": "npx --no-install tsc --noEmit",
+      "exit": 0,
+      "note": "no tracked tsbuildinfo byproduct; no cleanup needed"
+    },
+    {
+      "command": "npx --no-install eslint 'src/app/(dashboard)/work-transfer/page.tsx' 'src/app/(dashboard)/work-transfer/page.test.tsx' --max-warnings=0",
+      "exit": 0
+    }
+  ],
+  "mutationChecks": {
+    "purpose": "show the tests catch wrong fixes; page restored to exact final bytes after each",
+    "restoredHashEqualsFinal": true,
+    "results": [
+      {
+        "mutant": "sort the first eight after capping",
+        "failed": 6,
+        "passed": 4
+      },
+      {
+        "mutant": "sort the response array in place",
+        "failed": 1,
+        "passed": 9,
+        "killedBy": "non-mutation test"
+      },
+      {
+        "mutant": "reverse an ascending list instead of sorting",
+        "failed": 4,
+        "passed": 6,
+        "includesTies": true
+      }
+    ]
+  },
+  "finalSourceSha256": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "eca427c502c4961d21f122293bb80cb620b971d9932801c9c240eff281842362",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.test.tsx": "7bef9bdac77260b47489a85c5105c98e0fba2c4068da51522345fea7728f89af"
+  },
+  "sealedVersusFinalDistinct": true,
+  "finalLocators": {
+    "page.tsx": "setRecords([...payload.data].sort((a, b) => b.timestamp.localeCompare(a.timestamp)).slice(0, 8));",
+    "control-plane-events.ts": "events.sort((a, b) => a.timestamp.localeCompare(b.timestamp)) at readControlPlaneEvents, read-only and unchanged"
+  },
+  "boundary": {
+    "timestampNonString": "Malformed/non-string timestamps may make timestamp.localeCompare throw for comparisons that use such a value as the receiver; behavior depends on array size and comparisons. No guarantee that every malformed record throws or that the store always prevents it reaching this page. Source inference only, untested; schema/fallback policy outside scope.",
+    "outOfScope": [
+      "missing-field and timestamp policy",
+      "role and scope",
+      "producer and transfer definition",
+      "export provenance",
+      "store order"
+    ],
+    "liveOrRealRuns": "none: no HTTP, store, browser, provider, build or dependency install"
+  },
+  "diff": {
+    "trackedModified": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.test.tsx"
+    ],
+    "newUntracked": [
+      "docs/reference/CVF_NCR_WORK_TRANSFER_RECENT_ORDER_2026-10-02.md",
+      "docs/reviews/evidence/cvf-ncr-work-transfer-recent-order-worker-evidence-2026-10-02.json",
+      "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_RECENT_ORDER_WORKER_RETURN_2026-10-02.md"
+    ],
+    "pageNumstat": "3 added, 1 removed",
+    "testNumstat": "169 added, 8 removed",
+    "staged": 0,
+    "commit": "none"
+  },
+  "outputHashes": {
+    "docs/reference/CVF_NCR_WORK_TRANSFER_RECENT_ORDER_2026-10-02.md": "f24f5022ce0391f57cced09c3bab4edb79b4c04b376078826c462093a96d6b0d",
+    "note": "evidence and return are not hashed here to avoid a self-reference cycle"
+  },
+  "commandReceipts": [
+    {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_RECENT_ORDER_2026-10-02.md",
+      "exit": 0,
+      "result": "COMPLIANT before any edit"
+    },
+    {
+      "command": "vitest run page.test.tsx (baseline)",
+      "exit": 0,
+      "result": "3 passed"
+    },
+    {
+      "command": "vitest run page.test.tsx (red, before product edit)",
+      "exit": 1,
+      "result": "7 failed, 3 passed"
+    },
+    {
+      "command": "vitest run page.test.tsx (green)",
+      "exit": 0,
+      "result": "10 passed"
+    },
+    {
+      "command": "tsc --noEmit",
+      "exit": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "eslint two files --max-warnings=0",
+      "exit": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "python governance/compat/run_adif_defect_resolver.py --task-class worker_execution --role worker --lifecycle-phase worker-return --json",
+      "exit": 0,
+      "result": "0 items, truncated=false, run at worker return"
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_RECENT_ORDER_2026-10-02.md",
+      "exit": 0,
+      "result": "COMPLIANT 69/69 on the final five-path state; first run failed on the encoding rule and the return PASS line, repaired in scope"
+    }
+  ],
+  "adifWorkerQuery": {
+    "command": "python governance/compat/run_adif_defect_resolver.py --task-class worker_execution --role worker --lifecycle-phase worker-return --json",
+    "result": "0 items, truncated=false",
+    "ranAtWorkerReturn": true
+  },
+  "claimBoundary": "local mocked-UI order, cap, non-mutation, tie and selection proof only; no policy, access, producer, real-runtime, Q001, Q004, B2, P11, public or deployment claim",
+  "localReviewQualification": {
+    "reviewPath": "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_RECENT_ORDER_COMPLETION_2026-10-02.md",
+    "originalWorkerOutputSha256": {
+      "docs/reference/CVF_NCR_WORK_TRANSFER_RECENT_ORDER_2026-10-02.md": "4ae19f53607b57804944b6745a781ee600cdeb3973239dddc9b24fb39ec7eed6",
+      "docs/reviews/evidence/cvf-ncr-work-transfer-recent-order-worker-evidence-2026-10-02.json": "69cc56e2a71474db5d082f1b038069e6905de892b7e65638b0b49d0efde7c9b6",
+      "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_RECENT_ORDER_WORKER_RETURN_2026-10-02.md": "82728d01862b38f17d9116205edb87e3ca200eb99f43a9de00855602cd7055ea"
+    },
+    "sealedDigestVerified": true,
+    "preEditHashesMatchExecutionBaseGitBlobs": true,
+    "finalSourceHashesMatch": true,
+    "independentExecutableRerun": "NONE; consume valid worker evidence; named semantic/hash checks only",
+    "chronologyBoundary": "declared pre-edit seal, not timestamp attestation"
+  }
+}

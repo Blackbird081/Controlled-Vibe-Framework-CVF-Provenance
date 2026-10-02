@@ -147,7 +147,9 @@ export default function WorkTransferPage() {
       .then(payload => {
         if (cancelled) return;
         if (payload.success && Array.isArray(payload.data)) {
-          setRecords(payload.data.slice(0, 8));
+          // The shared store returns ascending timestamps. Order a copy newest first (stable, so equal
+          // timestamps keep their upstream order) and only then cap, so "recent" shows the latest eight.
+          setRecords([...payload.data].sort((a, b) => b.timestamp.localeCompare(a.timestamp)).slice(0, 8));
           setHistoryState('ready');
         } else {
           setHistoryState('error');
