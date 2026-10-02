@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_HTML_UX_SUPPORT_AUDIT_2026-10-02.md",
-    "baselineSha256": "b34bbd1d5548fce1455639eb42ff81790e4c86dfb3779423983571cd6bdfbb72",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_HTML_UX_SUPPORT_AUDIT_2026-10-02.md",
-    "workOrderSha256": "df423a882c279f7488587a40879fbeb13d2fe9e3acee982f8aa23050ac8eaca0"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_SECRET_REFUSAL_RECOVERY_2026-10-02.md",
+    "baselineSha256": "c10816b36ed5c5933c9d02d31207b0cbb8029607676ad081eb70065002131923",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_SECRET_REFUSAL_RECOVERY_2026-10-02.md",
+    "workOrderSha256": "38048b44fe0932a1a3ebcb47ecdecab2acd02e1d97f11f5a27eda8d1a23863ef"
   },
-  "currentAuthoritySyncReason": "D089 source-audit closure 3d020b15f7f3ba7b70b428dc8bd6a58fcf4e2d14; historical CVF-NCR-R1-HTML-UX-SUPPORT-AUDIT authority preserved, execution terminated by docs/reviews/CVF_CVF_NCR_R1_HTML_UX_SUPPORT_AUDIT_COMPLETION_2026-10-02.md. Next Local source-only F-01 UI recovery-copy packet admission, not implementation. Send/B2 STOP and effects unchanged.",
+  "currentAuthoritySyncReason": "D090 CVF-NCR-HTML-SECRET-REFUSAL-RECOVERY paired exact UI mapping packet at de038334350b3c120527f715d00d84400ff995a8; release requires clean bound gate. Source-pinned synthetic UI proof only; stopped send/B2 and effects unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
