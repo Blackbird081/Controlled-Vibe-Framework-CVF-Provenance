@@ -43,13 +43,13 @@ Startup acknowledged: mode=cvf_ncr_p10_closed_p11_parked; active handoff=AGENT_H
 
 ## Owner / Overlap Disposition
 
-REUSE_EXISTING_OWNER_AND_OPERATOR_CHECKPOINT. Keep the existing B2 acceptance/storage owner analysis and Q001/Q004; do not create a parallel ledger, approval UI or new roadmap. No new worker work order is closeable from the current profile alone. A contract-only design packet can follow an operator-selected profile; actual implementation/effects remain separately gated.
+REUSE_EXISTING_OWNER_AND_OPERATOR_CHECKPOINT. Keep the existing B2 acceptance/storage owner analysis and Q001/Q004; do not create a parallel ledger, approval UI or new roadmap. A contract-only design packet may now be authored after delegated profile selection; implementation/effects remain separately gated.
 
 ## Decision / Disposition
 
-REVIEW_COMPLETE_NO_DISPATCH. Source reassessment complete; next operator profile selection, then Local authors paired design-only baseline/work order if a profile is selected. The proposal below is reviewable but unratified. Preserve current Profile A while awaiting that selection. Do not interpret a generic next/continue instruction as an accepting-actor, real-data, storage or live-effect decision.
+REVIEW_COMPLETE_NO_DISPATCH. Source reassessment complete; next Local AUTHORS paired design-only baseline/work order under the recorded direction. The proposal was unratified at f6f520bec; the later operator instruction "Audit and choose" (English rendering) delegates this design-direction choice. Profile A remains the runtime/effect posture. Do not interpret a generic next/continue instruction as an accepting-actor, real-data, storage or live-effect decision.
 
-### Proposed Design Profile - Not Ratified
+### Design Profile Selection - DESIGN_DIRECTION_ONLY
 
 | Boundary | Concrete proposal for the next design packet | Adoption / later gate |
 |---|---|---|
@@ -61,7 +61,11 @@ REVIEW_COMPLETE_NO_DISPATCH. Source reassessment complete; next operator profile
 | Backup / cost / data | Include unresolved backup location, key custody, retention, RPO/RTO and cost as named blockers | Targets remain UNKNOWN; settle under the applicable later profile before real data/effect |
 | Future real-ledger rehearsal | Separate Profile B, operator-named source and authorized quiescent copy | Not included in design profile or this reassessment |
 
-Operator can adopt this design-only direction, provide a different actor/store/writer profile, or keep Profile A without opening B2 design. Adoption authorizes preparation of a design packet; it does not grant implementation, real-data access, acceptance effect, provider/live, cutover or deployment. P11 remains parked.
+Operator instruction on 2026-10-02: "Audit and choose" (English rendering). Local selects DESIGN_DIRECTION_ONLY: authenticated operator explicitly accepts an exact immutable canonical UTF-8 version; local single-host single-writer SQLite artifact-store candidate separate from governance-event ledger; commit then readback/hash validation and read-only unknown-outcome classification. Worker design must compare existing owner overlap before proposing any new store/schema.
+
+Selection rationale: one candidate transaction boundary for exact bytes and acceptance metadata; a single writer narrows first-design concurrency/fencing obligations. This is an architectural judgment, not tested storage behavior. No account, physical store path, real artifact, backup policy or backend implementation is ratified here.
+
+Next AUTHOR one paired contract/design packet covering actor/admission, identity, existing-owner/store comparison, duplicate/revocation/expiry, commit-before-ack/readback, crash/unknown-outcome recovery and synthetic case plan. Future implementation manifest/prerequisites remain proposals. Reuse accepted transport proof; do not claim design is durable acceptance. This delegation permits technical profile selection and packet authoring only; no implementation, real-data access, acceptance effect, provider/live, cutover or deployment. Q001/Q004 and P11 effects remain parked.
 
 ## Risk / Corrective Action
 
@@ -78,10 +82,10 @@ Do not convert proof volume into milestone closure. An artifact store cannot inh
 
 - Corpus task class: bounded source/checkpoint reassessment.
 - Corpus root: private provenance repo; six explicit governed document paths only.
-- Snapshot time: 2026-10-02, after documentation-only D069 insertion.
+- Snapshot time: 2026-10-02, after documentation-only D069/D070 insertion.
 - Enumeration command: filesystem-backed Python Path.is_file/Path.read_bytes for the six named paths.
 - Manifest artifact or inline manifest: compact JSON below; selected sections only.
-- Manifest hash: `de1a71fed2aa48926115e77efcb4dae8fc5e041328afa2d213baa28b46da9b4e` (compact sorted-key UTF-8 JSON).
+- Manifest hash: `faf6b87c8444d915c9afafd90bc002cf82da1c399ff6acda5472f67769b78d93` (compact sorted-key UTF-8 JSON).
 - Processing ledger artifact or inline ledger: terminalStatus/readDepth/sections in inline manifest.
 - Allowed terminal statuses: READ | SKIPPED_WITH_REASON | DEFERRED | BLOCKED_UNREADABLE. Six READ at SELECTED_SECTIONS.
 - Reconciliation: manifest=6; ledger_terminal=6; exclusions=0; unresolved=0 within explicit paths.
@@ -89,29 +93,29 @@ Do not convert proof volume into milestone closure. An artifact store cannot inh
 - Declared exclusions: other paths, full-file semantics, runtime/provider/effect/data experiments and external intake.
 - Unreadable or unsupported files: none within named byte-hash manifest.
 - Aggregation check: six unique paths, six SHA-256 values and selected section ledgers.
-- Drift check: only roadmap D069 and this review authored; existing review sources unchanged.
+- Drift check: only roadmap D069/D070 and this review authored; existing review sources unchanged.
 - Output traceability: Source Verification, Findings and profile checkpoint above.
 - Adversarial verification: consume accepted bounded controls/mutations; no new behavioral proof.
 - Corpus verdict: PARTIAL
 
 ```json
-[{"path":"docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md","readDepth":"SELECTED_SECTIONS","sections":"R0/R1; D035/D037/D068; Q001/Q004/Q005","sha256":"d67afa761af622f826d15db2c311d7a0abbb0dc355c964738a7bdf19507c16ae","terminalStatus":"READ"},{"path":"docs/reviews/CVF_CVF_NCR_HTML_B2_ACCEPTANCE_OWNER_STORAGE_AUDIT_2026-09-30.md","readDepth":"SELECTED_SECTIONS","sections":"Findings; Decision; Risk","sha256":"bacf2efecc69103b111cd81a86b9bc45bd39493fe252911d1fb01a872c9e00f6","terminalStatus":"READ"},{"path":"docs/reviews/CVF_CVF_NCR_HTML_B2F_SYNTHETIC_TIMEOUT_COMPLETION_2026-10-01.md","readDepth":"SELECTED_SECTIONS","sections":"Purpose; Findings; Risk","sha256":"f77ace835c724db573637307c95df2ca8d7e84cd2cc69b51eb4619284e89fc99","terminalStatus":"READ"},{"path":"docs/reviews/CVF_CVF_NCR_Q001_DOCKER_BROWSER_UI_WALKTHROUGH_2026-09-29.md","readDepth":"SELECTED_SECTIONS","sections":"Findings; Risk; Claim Update","sha256":"42fed342a1fefd502f691c9cbb7440d0eec3d417fd6137ab6a5bef35a9bfcd89","terminalStatus":"READ"},{"path":"docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md","readDepth":"SELECTED_SECTIONS","sections":"Purpose; Scope; Source Verification","sha256":"32ca3577eb1903f2f4138e4329fea0c98286318b1012f4216c355d53c8af16b8","terminalStatus":"READ"},{"path":"docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_COMPLETION_2026-10-02.md","readDepth":"SELECTED_SECTIONS","sections":"Findings; Risk; Decision","sha256":"6883c3f9f0890f42018bad5174086324944d9fc0af6e48433d9e147705bf00a3","terminalStatus":"READ"}]
+[{"path":"docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md","readDepth":"SELECTED_SECTIONS","sections":"R0/R1; D035/D037/D068; Q001/Q004/Q005","sha256":"d56792478d08932f0d0c358fdaca7de5e4c56f7398d497cf90fed599f562a3da","terminalStatus":"READ"},{"path":"docs/reviews/CVF_CVF_NCR_HTML_B2_ACCEPTANCE_OWNER_STORAGE_AUDIT_2026-09-30.md","readDepth":"SELECTED_SECTIONS","sections":"Findings; Decision; Risk","sha256":"bacf2efecc69103b111cd81a86b9bc45bd39493fe252911d1fb01a872c9e00f6","terminalStatus":"READ"},{"path":"docs/reviews/CVF_CVF_NCR_HTML_B2F_SYNTHETIC_TIMEOUT_COMPLETION_2026-10-01.md","readDepth":"SELECTED_SECTIONS","sections":"Purpose; Findings; Risk","sha256":"f77ace835c724db573637307c95df2ca8d7e84cd2cc69b51eb4619284e89fc99","terminalStatus":"READ"},{"path":"docs/reviews/CVF_CVF_NCR_Q001_DOCKER_BROWSER_UI_WALKTHROUGH_2026-09-29.md","readDepth":"SELECTED_SECTIONS","sections":"Findings; Risk; Claim Update","sha256":"42fed342a1fefd502f691c9cbb7440d0eec3d417fd6137ab6a5bef35a9bfcd89","terminalStatus":"READ"},{"path":"docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md","readDepth":"SELECTED_SECTIONS","sections":"Purpose; Scope; Source Verification","sha256":"32ca3577eb1903f2f4138e4329fea0c98286318b1012f4216c355d53c8af16b8","terminalStatus":"READ"},{"path":"docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_COMPLETION_2026-10-02.md","readDepth":"SELECTED_SECTIONS","sections":"Findings; Risk; Decision","sha256":"6883c3f9f0890f42018bad5174086324944d9fc0af6e48433d9e147705bf00a3","terminalStatus":"READ"}]
 ```
 
 ## Knowledge System Reconciliation
 
 - Knowledge task class: bounded source/checkpoint reassessment.
 - Source manifest: six-row inline JSON in Corpus Completeness And Report Integrity.
-- Source manifest hash: de1a71fed2aa48926115e77efcb4dae8fc5e041328afa2d213baa28b46da9b4e.
+- Source manifest hash: faf6b87c8444d915c9afafd90bc002cf82da1c399ff6acda5472f67769b78d93.
 - Enumeration safety: filesystem-backed Python Path.is_file/Path.read_bytes on six explicit paths.
 - Intake registry or ledger: inline terminalStatus/readDepth/sections ledger.
 - Authority assets: NCR roadmap, B2 owner audit and four named completion/walkthrough reviews.
-- Derived views: this review and roadmap D069.
+- Derived views: this review and roadmap D069/D070.
 - Semantic region ledger: six selected regions mapped to Source Verification and Findings.
 - Region reconciliation: assets=6; mapped=6; deferred=0; unmapped=0.
 - Orphan or unmapped assets: none within manifest; no broader coverage claim.
 - Cross-region links: presentation/transport proof versus actor/store/recovery checkpoints.
-- Drift check: final roadmap bytes hashed after D069 insertion; no product change.
+- Drift check: final roadmap bytes hashed after D069/D070 insertion; no product change.
 - Rebuildability check: explicit paths, section ledger and hashes.
 - Retrieval boundary: six named selected regions only.
 - Adversarial verification: accepted proof reused; no added runtime assertion.
@@ -121,7 +125,7 @@ Do not convert proof volume into milestone closure. An artifact store cannot inh
 
 | Defect class | Learning lane | Disposition | Next control action | Batch status |
 |---|---|---|---|---|
-| OPERATOR_SCOPE_CLARITY_GAP: proof does not select acceptance/store authority | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | use existing Q001/Q004 and B2 owner checkpoint | waiting profile selection |
+| OPERATOR_SCOPE_CLARITY_GAP: proof does not select acceptance/store authority | DOCUMENTATION_ONLY_LEARNING | RULE_EXISTS | use existing Q001/Q004 and B2 owner checkpoint | design direction selected; authoring next |
 | ORCHESTRATOR_PACKET_GAP: duplicate synthetic successor would not resolve milestone | GOVERNANCE_CONTROL_PLANE | RULE_EXISTS | consume accepted proof; dispatch only selected authority/profile delta | no new packet |
 
 Runtime/provider/cost learning: N/A_WITH_REASON - existing bounded proof consumed; no new runtime/provider/cost experiment or finding.
@@ -135,10 +139,10 @@ Post-B1 review should identify the smallest next roadmap move without relabeling
 Named reviews establish bounded presentation/transport/walkthrough evidence; D035/D037 and Q001/Q004 leave acceptance actor, authoritative store/writer and recovery unresolved.
 
 ### Contradiction Or Gap Disposition
-No new contradictory B1 finding; remaining boundary is an operator profile choice, not a fresh implementation mandate.
+No new contradictory B1 finding; operator delegated design-direction choice; implementation and real profile boundaries remain unresolved.
 
 ### Claim Update
-Source reassessment complete, no dispatch. Reviewable design-only proposal awaits profile selection.
+Source reassessment and delegated design-direction selection complete; packet authoring next, no dispatch or implementation.
 
 ## ADIF Defect Registry Disclosure
 
@@ -169,7 +173,7 @@ Returned defects: NONE_RETURNED
 | Before status evidence | clean HEAD `9ac4f60684c0d2ef2f9f4a3ab0c972d49750fb8f` |
 | After status evidence | two material docs pending commit; product unchanged |
 | Diff evidence | git status --short --untracked-files=all; exact two-path batch |
-| Approval boundary | operator profile selection precedes packet authoring; no worker release |
+| Approval boundary | delegated profile choice permits design packet authoring; no worker release |
 | Claim boundary | no provider/governance/runtime implementation, data/effect or public claim |
 | Agent type | INTERNAL_AGENT reviewer |
 | Invocation ID | cvf-ncr-post-b1-checkpoint-reassessment-20261002 |
@@ -180,7 +184,7 @@ Returned defects: NONE_RETURNED
 
 ## Claim Boundary
 
-Selected-source roadmap/checkpoint reassessment only. Proposal is unratified; no new implementation, browser/provider rerun, universal safety, durable acceptance, real ledger/data access, Q001/Q004/R0 exit, public sync/deploy or worker release. External Downloads intake is not CVF authority. Existing accepted proofs retained within their own boundaries.
+Selected-source roadmap/checkpoint reassessment only. Design direction selected only; no new implementation, browser/provider rerun, universal safety, durable acceptance, real ledger/data access, Q001/Q004/R0 exit, public sync/deploy or worker release. External Downloads intake is not CVF authority. Existing accepted proofs retained within their own boundaries.
 
 ## Public Export Disposition
 
