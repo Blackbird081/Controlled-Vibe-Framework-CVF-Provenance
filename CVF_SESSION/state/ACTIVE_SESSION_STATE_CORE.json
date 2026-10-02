@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md",
-    "baselineSha256": "cc70d2c8ada65c6fc386f6e1e04f4c70185f69fb71519014be6e71ae1e1f5619",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md",
-    "workOrderSha256": "8fecf0798274d7cc084e147a8e0ecb0747d271fb02a9b83ceb2d159e1ac95f80"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_2026-10-03.md",
+    "baselineSha256": "8c3041c0a09493d1522c6a0f8e7a6a9f5b32772cc2c9cf2a43e4a34e095e706f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_2026-10-03.md",
+    "workOrderSha256": "d423f5f5b26b92ccfd42dc77930b469813484e872d3d5d820276282e9254bff9"
   },
-  "currentAuthoritySyncReason": "D104 C1 assessment selection at a3665794845971573af586a18e37583856c458b5; old pair historical. Next readiness packet, no runtime admission.",
+  "currentAuthoritySyncReason": "D105 readiness dispatch at a3359c1fc73f0b67fb4589df3b6ba6236e75f853; pair raw hashes bound; bounded metadata reads, no runtime admission.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
