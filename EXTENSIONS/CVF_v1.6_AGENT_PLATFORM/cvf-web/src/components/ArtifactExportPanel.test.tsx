@@ -2,6 +2,9 @@
  * @vitest-environment jsdom
  */
 // Text Encoding Exception: asserts against localized Vietnamese copy from ArtifactExportPanel's existing convention.
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, onTestFinished, vi } from 'vitest';
 
@@ -293,6 +296,80 @@ describe('ArtifactExportPanel', () => {
     expect(screen.queryByTestId('export-error-detail')).toBeNull();
   });
 
+  describe('F-01 secret refusal recovery', () => {
+    const CANONICAL = 'Potential secret-like value detected in artifact export fields.';
+    const LEGACY = 'Potential secret-like value detected in source content.';
+    const RECOVERY_EN = 'This text looks like it may contain a private key or token. Remove that value and try again.';
+    const RECOVERY_VI = 'Nội dung này có vẻ chứa khóa riêng tư hoặc mã token. Hãy xóa giá trị đó rồi thử lại.';
+
+    const refuseWith = (error: string) => {
+      (fetch as unknown as { mockResolvedValue: (v: unknown) => void }).mockResolvedValue({
+        ok: false,
+        status: 400,
+        json: async () => ({ success: false, error }),
+      });
+    };
+
+    it('SR-01 shows the English recovery for the current route refusal, keeps the raw error and builds nothing', async () => {
+      refuseWith(CANONICAL);
+      const onGenerated = vi.fn();
+      render(<ArtifactExportPanel onGenerated={onGenerated} />);
+
+      fireEvent.click(screen.getByText('Build HTML'));
+
+      await waitFor(() => {
+        expect(screen.getByTestId('export-error-recovery').textContent).toBe(RECOVERY_EN);
+      });
+      expect(screen.getByTestId('export-error-detail').textContent).toBe(CANONICAL);
+      expect(onGenerated).not.toHaveBeenCalled();
+      expect(screen.queryByTestId('artifact-draft-state')).toBeNull();
+    });
+
+    it('SR-02 shows the Vietnamese recovery for the current route refusal, keeps the raw error and builds nothing', async () => {
+      mockLanguage = 'vi';
+      refuseWith(CANONICAL);
+      const onGenerated = vi.fn();
+      render(<ArtifactExportPanel onGenerated={onGenerated} />);
+
+      fireEvent.click(screen.getByText('Tạo HTML'));
+
+      await waitFor(() => {
+        expect(screen.getByTestId('export-error-recovery').textContent).toBe(RECOVERY_VI);
+      });
+      expect(screen.getByTestId('export-error-detail').textContent).toBe(CANONICAL);
+      expect(onGenerated).not.toHaveBeenCalled();
+      expect(screen.queryByTestId('artifact-draft-state')).toBeNull();
+    });
+
+    it('SR-03 pins the mocked error to the single secret-refusal literal in the read-only route source', () => {
+      const routePath = resolve(process.cwd(), 'src/app/api/artifacts/export/route.ts');
+      const source = readFileSync(routePath, 'utf8');
+      const literals = [...source.matchAll(/error:\s*'([^']*secret-like[^']*)'/g)].map(match => match[1]);
+
+      expect(literals).toEqual([CANONICAL]);
+    });
+
+    it('SR-04 still shows the recovery for the legacy literal and keeps the raw error', async () => {
+      refuseWith(LEGACY);
+      render(<ArtifactExportPanel />);
+
+      fireEvent.click(screen.getByText('Build HTML'));
+      await waitFor(() => {
+        expect(screen.getByTestId('export-error-recovery').textContent).toBe(RECOVERY_EN);
+      });
+      expect(screen.getByTestId('export-error-detail').textContent).toBe(LEGACY);
+    });
+    it('SR-05 leaves an unrelated error that only mentions secrets as the raw fallback', async () => {
+      const unrelated = 'Possible secret-like private key text elsewhere.';
+      refuseWith(unrelated);
+      render(<ArtifactExportPanel />);
+      fireEvent.click(screen.getByText('Build HTML'));
+      await waitFor(() => {
+        expect(screen.getByTestId('export-error-recovery').textContent).toBe(unrelated);
+      });
+      expect(screen.queryByTestId('export-error-detail')).toBeNull();
+    });
+  });
   describe('B1 version binding', () => {
     type Deferred = { promise: Promise<unknown>; resolve: (v: unknown) => void };
     const deferred = (): Deferred => {
@@ -321,7 +398,6 @@ describe('ArtifactExportPanel', () => {
     const buildButton = () => screen.getByRole('button', { name: /Build HTML|Generating/ });
     const iframeHtml = () => (screen.getByTitle('Preview') as HTMLIFrameElement).getAttribute('srcdoc');
     const noticeState = () => screen.getByTestId('artifact-version-notice').getAttribute('data-version-state');
-
     it('snapshots all seven request fields at submit', async () => {
       render(<ArtifactExportPanel />);
       fireEvent.change(screen.getByLabelText('Title'), { target: { value: 'Synthetic A' } });
@@ -333,7 +409,6 @@ describe('ArtifactExportPanel', () => {
       fireEvent.change(screen.getByLabelText('Source notes'), { target: { value: 'notes A' } });
       fireEvent.click(buildButton());
       await waitFor(() => expect(screen.getByTestId('artifact-version-notice')).toBeTruthy());
-
       expect(JSON.parse(String(fetchMock().mock.calls[0][1].body))).toEqual({
         title: 'Synthetic A',
         sourcePath: 'docs/synthetic-a.md',
@@ -345,7 +420,6 @@ describe('ArtifactExportPanel', () => {
       });
       expect(noticeState()).toBe('current');
     });
-
     for (const [field, value] of [
       ['Title', 'Synthetic title B'],
       ['Review boundary', 'Synthetic boundary B'],
@@ -359,9 +433,7 @@ describe('ArtifactExportPanel', () => {
         fireEvent.click(buildButton());
         await waitFor(() => expect(noticeState()).toBe('current'));
         const sourceNotes = (screen.getByLabelText('Source notes') as HTMLTextAreaElement).value;
-
         fireEvent.change(screen.getByLabelText(field), { target: { value } });
-
         expect((screen.getByLabelText('Source notes') as HTMLTextAreaElement).value).toBe(sourceNotes);
         expect(noticeState()).toBe('stale');
         expect(screen.getByTestId('artifact-version-notice').textContent).toMatch(/Earlier version \(build #1\)/);
@@ -371,7 +443,6 @@ describe('ArtifactExportPanel', () => {
         expect(screen.getByTestId('artifact-draft-state')).toBeTruthy();
       });
     }
-
     it('returns to current when the form is edited back to the submitted values', async () => {
       fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
       render(<ArtifactExportPanel />);
@@ -383,19 +454,16 @@ describe('ArtifactExportPanel', () => {
       fireEvent.change(screen.getByLabelText('Title'), { target: { value: original } });
       expect(noticeState()).toBe('current');
     });
-
     it('does not present a response as the edited form when the form changes while the request is pending', async () => {
       const d = deferred();
       fetchMock().mockImplementationOnce(() => d.promise);
       render(<ArtifactExportPanel />);
       fireEvent.click(buildButton());
       fireEvent.change(screen.getByLabelText('Review boundary'), { target: { value: 'edited while pending' } });
-
       d.resolve(okResponse(resultFor('A', {
         governanceState: 'RECEIPT_ALLOW_REVIEW_REQUIRED',
         governanceReceipt: { receiptId: 'r-a', decision: 'APPROVED', evaluatedAt: '2026-05-16T10:00:00.000Z', riskLevel: 'R0' },
       })));
-
       await waitFor(() => expect(screen.getByTestId('artifact-version-notice')).toBeTruthy());
       expect(noticeState()).toBe('stale');
       expect(screen.getByTestId('artifact-version-notice').textContent).toMatch(/Earlier version \(build #1\)/);
@@ -403,7 +471,6 @@ describe('ArtifactExportPanel', () => {
       const body = JSON.parse(String(fetchMock().mock.calls[0][1].body));
       expect(body.claimBoundary).not.toBe('edited while pending');
     });
-
     it('lets the latest attempt win when an older attempt succeeds late', async () => {
       const dA = deferred();
       const dB = deferred();
@@ -411,20 +478,16 @@ describe('ArtifactExportPanel', () => {
       fetchMock().mockImplementationOnce(() => dB.promise);
       const onGenerated = vi.fn();
       render(<ArtifactExportPanel onGenerated={onGenerated} />);
-
       fireEvent.click(buildButton());
       fireEvent.change(screen.getByLabelText('Title'), { target: { value: 'Synthetic B' } });
       fireEvent.click(buildButton());
-
       const resultB = resultFor('B');
       dB.resolve(okResponse(resultB));
       await waitFor(() => expect(iframeHtml()).toContain('synthetic B'));
       expect(noticeState()).toBe('current');
-
       dA.resolve(okResponse(resultFor('A')));
       await new Promise(r => setTimeout(r, 0));
       await new Promise(r => setTimeout(r, 0));
-
       expect(iframeHtml()).toContain('synthetic B');
       expect(screen.getByText('#receipt-B')).toBeTruthy();
       expect(screen.queryByText('#receipt-A')).toBeNull();
@@ -433,70 +496,57 @@ describe('ArtifactExportPanel', () => {
       expect(onGenerated).toHaveBeenCalledTimes(1);
       expect(onGenerated).toHaveBeenCalledWith(resultB);
     });
-
     it('does not let a superseded attempt dismiss the busy state of the newer attempt', async () => {
       const dA = deferred();
       const dB = deferred();
       fetchMock().mockImplementationOnce(() => dA.promise);
       fetchMock().mockImplementationOnce(() => dB.promise);
       render(<ArtifactExportPanel />);
-
       fireEvent.click(buildButton());
       fireEvent.change(screen.getByLabelText('Title'), { target: { value: 'Synthetic B' } });
       fireEvent.click(buildButton());
       dA.resolve(okResponse(resultFor('A')));
       await new Promise(r => setTimeout(r, 0));
       await new Promise(r => setTimeout(r, 0));
-
       expect(buildButton().getAttribute('aria-busy')).toBe('true');
       expect(screen.getByText('Generating')).toBeTruthy();
       expect(screen.queryByTestId('artifact-version-notice')).toBeNull();
-
       dB.resolve(okResponse(resultFor('B')));
       await waitFor(() => expect(iframeHtml()).toContain('synthetic B'));
       expect(buildButton().getAttribute('aria-busy')).toBe('false');
     });
-
     it('ignores a superseded attempt error and keeps the newer result', async () => {
       const dA = deferred();
       const dB = deferred();
       fetchMock().mockImplementationOnce(() => dA.promise);
       fetchMock().mockImplementationOnce(() => dB.promise);
       render(<ArtifactExportPanel />);
-
       fireEvent.click(buildButton());
       fireEvent.change(screen.getByLabelText('Title'), { target: { value: 'Synthetic B' } });
       fireEvent.click(buildButton());
       dB.resolve(okResponse(resultFor('B')));
       await waitFor(() => expect(iframeHtml()).toContain('synthetic B'));
-
       dA.resolve(failResponse('late failure from attempt A'));
       await new Promise(r => setTimeout(r, 0));
       await new Promise(r => setTimeout(r, 0));
-
       expect(screen.queryByTestId('export-error-recovery')).toBeNull();
       expect(iframeHtml()).toContain('synthetic B');
     });
-
     it('does not erase a valid earlier result when a newer attempt fails, and attaches the error to the newer attempt', async () => {
       fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
       fetchMock().mockResolvedValueOnce(failResponse('synthetic outage'));
       render(<ArtifactExportPanel />);
       fireEvent.click(buildButton());
       await waitFor(() => expect(iframeHtml()).toContain('synthetic A'));
-
       fireEvent.change(screen.getByLabelText('Title'), { target: { value: 'Synthetic B' } });
       fireEvent.click(buildButton());
       await waitFor(() => expect(screen.getByTestId('export-error-recovery').textContent).toBe('synthetic outage'));
-
       expect(iframeHtml()).toContain('synthetic A');
       expect(noticeState()).toBe('stale');
       expect(screen.getByTestId('artifact-version-notice').textContent).toMatch(/build #1/);
     });
-
     it('labels an initialResult conservatively as unknown source, never as matching the form', () => {
       render(<ArtifactExportPanel initialResult={EXPORT_RESULT} />);
-
       expect(noticeState()).toBe('unknown');
       expect(screen.getByTestId('artifact-version-notice').textContent).toMatch(/unknown source/i);
       expect(screen.getByTestId('artifact-version-notice').textContent).not.toMatch(/still matches/i);
@@ -505,7 +555,6 @@ describe('ArtifactExportPanel', () => {
       expect(screen.getByRole('button', { name: 'Copy HTML' }).getAttribute('aria-describedby'))
         .toBe('artifact-version-notice');
     });
-
     it('keeps the draft and ALLOW distinction truthful for a stale result', async () => {
       fetchMock().mockResolvedValueOnce(okResponse(resultFor('A', {
         governanceReceiptStatus: 'PRESENT',
@@ -515,13 +564,11 @@ describe('ArtifactExportPanel', () => {
       fireEvent.click(buildButton());
       await waitFor(() => expect(screen.getByTestId('governance-receipt-evaluated-note')).toBeTruthy());
       fireEvent.change(screen.getByLabelText('Title'), { target: { value: 'Synthetic B' } });
-
       expect(noticeState()).toBe('stale');
       expect(screen.getByTestId('governance-receipt-evaluated-note').textContent).toMatch(/not artifact approval/i);
       expect(screen.queryByTestId('governance-receipt-badge')).toBeNull();
       expect(screen.getByTestId('artifact-draft-state').textContent).toMatch(/DRAFT \/ UNACCEPTED/);
     });
-
     it('copies, downloads and prints the displayed older version while the notice stays visible', async () => {
       fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
       const blobs: Blob[] = [];
@@ -542,15 +589,12 @@ describe('ArtifactExportPanel', () => {
       await waitFor(() => expect(noticeState()).toBe('current'));
       fireEvent.change(screen.getByLabelText('Review boundary'), { target: { value: 'Synthetic boundary B' } });
       expect(noticeState()).toBe('stale');
-
       for (const name of ['Copy HTML', 'Download HTML', 'Print preview']) {
         expect(screen.getByRole('button', { name }).getAttribute('aria-describedby')).toBe('artifact-version-notice');
       }
       const html = resultFor('A').html;
-
       fireEvent.click(screen.getByRole('button', { name: 'Copy HTML' }));
       await waitFor(() => expect(navigator.clipboard.writeText).toHaveBeenCalledWith(html));
-
       fireEvent.click(screen.getByRole('button', { name: 'Download HTML' }));
       expect(createObjectURL).toHaveBeenCalledTimes(1);
       expect(anchorClick).toHaveBeenCalledTimes(1);
@@ -560,7 +604,6 @@ describe('ArtifactExportPanel', () => {
         reader.readAsText(blobs[0]);
       });
       expect(blobText).toBe(html);
-
       fireEvent.click(screen.getByRole('button', { name: 'Print preview' }));
       expect(openSpy).toHaveBeenCalledTimes(1);
       // `noopener` would make window.open return null and lose the handle; opener is detached instead.
@@ -590,23 +633,18 @@ describe('ArtifactExportPanel', () => {
       expect(printWindow.print).toHaveBeenCalledTimes(1);
       expect(printWindow.close).not.toHaveBeenCalled();
       expect(screen.queryByTestId('artifact-print-blocked')).toBeNull();
-
       expect(screen.getByTestId('artifact-version-notice').textContent).toMatch(/copy, download and print/);
       expect(noticeState()).toBe('stale');
     });
-
     it('tells the user when the print window is blocked and writes nothing', async () => {
       fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
       vi.spyOn(window, 'open').mockReturnValue(null);
       render(<ArtifactExportPanel />);
       fireEvent.click(buildButton());
       await waitFor(() => expect(noticeState()).toBe('current'));
-
       fireEvent.click(screen.getByRole('button', { name: 'Print preview' }));
-
       expect(screen.getByTestId('artifact-print-blocked').textContent).toMatch(/Allow pop-ups/);
     });
-
     it('closes the print window and inserts nothing when the opener cannot be detached', async () => {
       fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
       const { popupDoc, printWindow } = makePopup({ detachable: false });
@@ -614,9 +652,7 @@ describe('ArtifactExportPanel', () => {
       render(<ArtifactExportPanel />);
       fireEvent.click(buildButton());
       await waitFor(() => expect(noticeState()).toBe('current'));
-
       fireEvent.click(screen.getByRole('button', { name: 'Print preview' }));
-
       expect(popupDoc.querySelector('iframe')).toBeNull();
       expect(popupDoc.querySelector('meta')).toBeNull();
       expect(popupDoc.body.innerHTML).toBe('');
@@ -624,7 +660,6 @@ describe('ArtifactExportPanel', () => {
       expect(printWindow.close).toHaveBeenCalledTimes(1);
       expect(screen.getByTestId('artifact-print-blocked')).toBeTruthy();
     });
-
     it('closes the print window and never prints when the document height cannot be measured', async () => {
       fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
       const { printWindow, frames, finishProbe } = makePopup();
@@ -633,15 +668,12 @@ describe('ArtifactExportPanel', () => {
       fireEvent.click(buildButton());
       await waitFor(() => expect(noticeState()).toBe('current'));
       fireEvent.click(screen.getByRole('button', { name: 'Print preview' }));
-
       finishProbe(frames().probe!, 0);
-
       expect(frames().view).toBeNull();
       expect(printWindow.print).not.toHaveBeenCalled();
       expect(printWindow.close).toHaveBeenCalledTimes(1);
       await waitFor(() => expect(screen.getByTestId('artifact-print-blocked')).toBeTruthy());
     });
-
     it('closes the print window when print() itself fails after the content loaded', async () => {
       fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
       const { printWindow, frames, finishProbe } = makePopup();
@@ -652,14 +684,11 @@ describe('ArtifactExportPanel', () => {
       await waitFor(() => expect(noticeState()).toBe('current'));
       fireEvent.click(screen.getByRole('button', { name: 'Print preview' }));
       finishProbe(frames().probe!, 800);
-
       frames().view!.dispatchEvent(new Event('load'));
-
       expect(printWindow.print).toHaveBeenCalledTimes(1);
       expect(printWindow.close).toHaveBeenCalledTimes(1);
       await waitFor(() => expect(screen.getByTestId('artifact-print-blocked')).toBeTruthy());
     });
-
     it('uses a fresh build for actions after rebuilding with the edited form', async () => {
       fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
       fetchMock().mockResolvedValueOnce(okResponse(resultFor('B')));
@@ -668,7 +697,6 @@ describe('ArtifactExportPanel', () => {
       await waitFor(() => expect(iframeHtml()).toContain('synthetic A'));
       fireEvent.change(screen.getByLabelText('Title'), { target: { value: 'Synthetic B' } });
       expect(noticeState()).toBe('stale');
-
       fireEvent.click(buildButton());
       await waitFor(() => expect(iframeHtml()).toContain('synthetic B'));
       expect(noticeState()).toBe('current');
@@ -677,29 +705,24 @@ describe('ArtifactExportPanel', () => {
       await waitFor(() => expect(navigator.clipboard.writeText).toHaveBeenCalledWith(resultFor('B').html));
       expect(screen.getByRole('button', { name: /Copied|Copy HTML/ }).getAttribute('aria-describedby')).toBeNull();
     });
-
     it('does not create a second request when Build is pressed twice with the same snapshot', async () => {
       const d = deferred();
       fetchMock().mockImplementationOnce(() => d.promise);
       render(<ArtifactExportPanel />);
-
       fireEvent.click(buildButton());
       fireEvent.click(buildButton());
       fireEvent.click(buildButton());
-
       expect(fetchMock().mock.calls).toHaveLength(1);
       expect(screen.queryByTestId('superseded-attempts')).toBeNull();
       d.resolve(okResponse(resultFor('A')));
       await waitFor(() => expect(iframeHtml()).toContain('synthetic A'));
       expect(fetchMock().mock.calls).toHaveLength(1);
-
       // Once the attempt settled, the same snapshot may be submitted again as a new build.
       fetchMock().mockResolvedValueOnce(okResponse(resultFor('A2')));
       fireEvent.click(buildButton());
       await waitFor(() => expect(iframeHtml()).toContain('synthetic A2'));
       expect(fetchMock().mock.calls).toHaveLength(2);
     });
-
     it('Local probe: A to B to A does not resend a snapshot still in flight', async () => {
       const dA = deferred();
       const dB = deferred();
@@ -707,13 +730,11 @@ describe('ArtifactExportPanel', () => {
       fetchMock().mockImplementationOnce(() => dB.promise);
       render(<ArtifactExportPanel />);
       const original = (screen.getByLabelText('Title') as HTMLInputElement).value;
-
       fireEvent.click(buildButton());
       fireEvent.change(screen.getByLabelText('Title'), { target: { value: 'Synthetic B' } });
       fireEvent.click(buildButton());
       fireEvent.change(screen.getByLabelText('Title'), { target: { value: original } });
       fireEvent.click(buildButton());
-
       expect(fetchMock().mock.calls).toHaveLength(2);
       dB.resolve(okResponse(resultFor('B')));
       await waitFor(() => expect(iframeHtml()).toContain('synthetic B'));
@@ -722,14 +743,12 @@ describe('ArtifactExportPanel', () => {
       await waitFor(() => expect(screen.getByTestId('superseded-attempt-notice').textContent).toContain('probe-attempt-A'));
       expect(iframeHtml()).toContain('synthetic B');
     });
-
     it('records a replaced pending attempt separately and never lets its late success reach the preview', async () => {
       const dA = deferred();
       const dB = deferred();
       fetchMock().mockImplementationOnce(() => dA.promise);
       fetchMock().mockImplementationOnce(() => dB.promise);
       render(<ArtifactExportPanel />);
-
       fireEvent.click(buildButton());
       fireEvent.change(screen.getByLabelText('Title'), { target: { value: 'Synthetic B' } });
       fireEvent.click(buildButton());
@@ -737,12 +756,10 @@ describe('ArtifactExportPanel', () => {
       const pendingNote = screen.getByTestId('superseded-attempt-notice');
       expect(pendingNote.getAttribute('data-status')).toBe('pending');
       expect(pendingNote.textContent).toMatch(/Build #1 was replaced by a newer build/);
-
       dB.resolve(okResponse(resultFor('B')));
       await waitFor(() => expect(iframeHtml()).toContain('synthetic B'));
       dA.resolve(okResponse(resultFor('A', { governanceReceiptAttemptId: 'attempt-id-synthetic-1' })));
       await waitFor(() => expect(screen.getByTestId('superseded-attempt-notice').getAttribute('data-status')).toBe('success'));
-
       const note = screen.getByTestId('superseded-attempt-notice').textContent ?? '';
       expect(note).toMatch(/Build #1/);
       expect(note).toContain('attempt-id-synthetic-1');
@@ -752,7 +769,6 @@ describe('ArtifactExportPanel', () => {
       expect(screen.queryByText('#receipt-A')).toBeNull();
       expect(screen.queryByTestId('governance-receipt-attempt-id')).toBeNull();
     });
-
     it('falls back to the receipt ID when a superseded success has no attempt ID', async () => {
       const dA = deferred();
       const dB = deferred();
@@ -768,7 +784,6 @@ describe('ArtifactExportPanel', () => {
       await waitFor(() => expect(screen.getByTestId('superseded-attempt-notice').getAttribute('data-status')).toBe('success'));
       expect(screen.getByTestId('superseded-attempt-notice').textContent).toContain('receipt-id-synthetic-1');
     });
-
     it('states that no governance result could be established for a superseded success without an ID', async () => {
       const dA = deferred();
       const dB = deferred();
@@ -785,7 +800,6 @@ describe('ArtifactExportPanel', () => {
       expect(note).toMatch(/no governance result could be established/);
       expect(note).not.toMatch(/retry|try again/i);
     });
-
     it('states that no governance result could be established for a superseded failure', async () => {
       const dA = deferred();
       const dB = deferred();
@@ -804,7 +818,6 @@ describe('ArtifactExportPanel', () => {
       expect(note).not.toMatch(/retry|try again/i);
       expect(screen.queryByTestId('export-error-recovery')).toBeNull();
     });
-
     it('labels a newer failure with its build number apart from the older preview that stays visible', async () => {
       fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
       fetchMock().mockResolvedValueOnce(failResponse('synthetic outage'));
@@ -814,13 +827,11 @@ describe('ArtifactExportPanel', () => {
       fireEvent.change(screen.getByLabelText('Title'), { target: { value: 'Synthetic B' } });
       fireEvent.click(buildButton());
       await waitFor(() => expect(screen.getByTestId('export-error-recovery').textContent).toBe('synthetic outage'));
-
       expect(screen.getByTestId('export-error-build').textContent).toBe('Build #2');
       expect(screen.getByTestId('export-error-preview-note').textContent).toMatch(/still shows build #1, not this build/);
       expect(screen.getByTestId('artifact-version-tag').textContent).toMatch(/Build #1 · earlier version/);
       expect(iframeHtml()).toContain('synthetic A');
     });
-
     it('labels a newer failure against an initialResult preview as unknown source', async () => {
       fetchMock().mockResolvedValueOnce(failResponse('synthetic outage'));
       render(<ArtifactExportPanel initialResult={EXPORT_RESULT} />);
@@ -828,7 +839,6 @@ describe('ArtifactExportPanel', () => {
       await waitFor(() => expect(screen.getByTestId('export-error-build').textContent).toBe('Build #1'));
       expect(screen.getByTestId('export-error-preview-note').textContent).toMatch(/unknown source, not this build/);
     });
-
     it('shows superseded-attempt copy in Vietnamese without retry advice', async () => {
       mockLanguage = 'vi';
       const dA = deferred();
@@ -847,7 +857,6 @@ describe('ArtifactExportPanel', () => {
       expect(note).toContain('attempt-id-vi-1');
       expect(note).not.toMatch(/thử lại/);
     });
-
     it('shows the stale-version notice in Vietnamese', async () => {
       mockLanguage = 'vi';
       fetchMock().mockResolvedValueOnce(okResponse(resultFor('A')));
@@ -855,13 +864,11 @@ describe('ArtifactExportPanel', () => {
       fireEvent.click(screen.getByRole('button', { name: /Tạo HTML|Đang tạo/ }));
       await waitFor(() => expect(noticeState()).toBe('current'));
       fireEvent.change(screen.getByLabelText('Tiêu đề'), { target: { value: 'Tiêu đề mới' } });
-
       expect(noticeState()).toBe('stale');
       expect(screen.getByTestId('artifact-version-notice').textContent).toMatch(/Phiên bản cũ \(lần tạo #1\)/);
       expect(screen.getByTestId('artifact-version-tag').textContent).toMatch(/phiên bản cũ/);
     });
   });
-
   // Preview passive-resource policy: effective denial and the browser behavior are proven in
   // tests/e2e/artifact-export-preview-sandbox.spec.ts; these units pin the derived-document
   // construction and that canonical Copy/Download/Print bytes never become the derived document.
@@ -886,19 +893,16 @@ describe('ArtifactExportPanel', () => {
     const buildButton = () => screen.getByRole('button', { name: /Build HTML|Generating/ });
     const previewSrcdoc = () => (screen.getByTitle('Preview') as HTMLIFrameElement).getAttribute('srcdoc');
     const noticeState = () => screen.getByTestId('artifact-version-notice').getAttribute('data-version-state');
-
     it('denies every network and data resource and keeps only inline style', () => {
       expect(PREVIEW_FRAME_POLICY).toMatch(/default-src 'none'/);
       expect(PREVIEW_FRAME_POLICY).toMatch(/style-src 'unsafe-inline'/);
       expect(PREVIEW_FRAME_POLICY).not.toMatch(/img-src|font-src|connect-src|frame-src|script-src|https?:|\*|data:|blob:/);
     });
-
     it('places the policy after a plain leading doctype so the document mode is unchanged', () => {
       const html = '<!doctype html><html><body><h1>x</h1></body></html>';
       expect(buildPreviewDocument(html)).toBe(`<!doctype html>${POLICY_META}<html><body><h1>x</h1></body></html>`);
       expect(buildPreviewDocument('\n  <!DOCTYPE HTML><p>x</p>')).toBe(`\n  <!DOCTYPE HTML>${POLICY_META}<p>x</p>`);
     });
-
     it('places the policy before any payload markup when there is no plain leading doctype', () => {
       const adversaries = [
         '<img src="/probe?k=early"><!doctype html><html><head></head></html>',
@@ -915,28 +919,24 @@ describe('ArtifactExportPanel', () => {
         expect(derived.slice(POLICY_META.length)).toBe(html);
       }
     });
-
     it('keeps a payload-supplied permissive policy after, never before, the Preview policy', () => {
       const permissive = '<meta http-equiv="Content-Security-Policy" content="default-src * \'unsafe-inline\'">';
       const derived = buildPreviewDocument(`<!doctype html>${permissive}<img src="/probe?k=x">`);
       expect(derived.indexOf(POLICY_META)).toBeLessThan(derived.indexOf(permissive));
       expect(derived.indexOf(POLICY_META)).toBeLessThan(derived.indexOf('<img'));
     });
-
     it('renders a derived srcdoc under an empty sandbox while the canonical html stays unchanged', async () => {
       const canonical = resultFor('A', '<img src="/probe?k=early"><!doctype html><html><body><h1>synthetic A</h1></body></html>');
       fetchMock().mockResolvedValueOnce(okResponse(canonical));
       render(<ArtifactExportPanel />);
       fireEvent.click(buildButton());
       await waitFor(() => expect(noticeState()).toBe('current'));
-
       const frame = screen.getByTitle('Preview') as HTMLIFrameElement;
       expect(frame.getAttribute('sandbox')).toBe('');
       expect(previewSrcdoc()).toBe(POLICY_META + canonical.html);
       expect(previewSrcdoc()).not.toBe(canonical.html);
       expect(canonical.html.startsWith('<img src="/probe?k=early">')).toBe(true);
     });
-
     describe('canonical Copy and Download stay bound to result.html, not the derived Preview', () => {
       const blobs: Blob[] = [];
       let anchorClick: ReturnType<typeof vi.spyOn>;
@@ -969,7 +969,6 @@ describe('ArtifactExportPanel', () => {
         fireEvent.click(screen.getByRole('button', { name: 'Download HTML' }));
         expect(blobs).toHaveLength(before + 1);
         expect(await blobText(blobs[before])).toBe(html);
-
         const { printWindow, frames, finishProbe, popupDoc } = makePopup();
         const openSpy = vi.spyOn(window, 'open').mockReturnValue(printWindow as unknown as Window);
         fireEvent.click(screen.getByRole('button', { name: 'Print preview' }));
@@ -980,7 +979,6 @@ describe('ArtifactExportPanel', () => {
         expect(frames().view!.getAttribute('srcdoc')).toBe(html);
         openSpy.mockRestore();
       };
-
       it('current build', async () => {
         const a = resultFor('A', '<img src="/probe?k=early"><!doctype html><html><body><h1>synthetic A</h1></body></html>');
         fetchMock().mockResolvedValueOnce(okResponse(a));
@@ -990,7 +988,6 @@ describe('ArtifactExportPanel', () => {
         await expectCanonicalActions(a.html);
         expect(anchorClick).toHaveBeenCalledTimes(1);
       });
-
       it('unsaved edit after the build', async () => {
         const a = resultFor('A');
         fetchMock().mockResolvedValueOnce(okResponse(a));
@@ -1001,7 +998,6 @@ describe('ArtifactExportPanel', () => {
         expect(noticeState()).toBe('stale');
         await expectCanonicalActions(a.html);
       });
-
       it('latest response supersedes an older late response', async () => {
         let resolveA: (v: unknown) => void = () => undefined;
         fetchMock().mockImplementationOnce(() => new Promise(r => { resolveA = r; }));
@@ -1019,7 +1015,6 @@ describe('ArtifactExportPanel', () => {
         expect(previewSrcdoc()).not.toContain('synthetic A');
         await expectCanonicalActions(b.html);
       });
-
       it('failed newer build keeps the previous result', async () => {
         const a = resultFor('A');
         fetchMock().mockResolvedValueOnce(okResponse(a));
@@ -1033,14 +1028,12 @@ describe('ArtifactExportPanel', () => {
         expect(previewSrcdoc()).toContain('synthetic A');
         await expectCanonicalActions(a.html);
       });
-
       it('initialResult with unknown provenance', async () => {
         const initial = resultFor('I', '<img src="/probe?k=early"><h1>synthetic I</h1>');
         render(<ArtifactExportPanel initialResult={initial} />);
         expect(noticeState()).toBe('unknown');
         await expectCanonicalActions(initial.html);
       });
-
       it('link-bearing build: the Preview drops link targets while Copy, Download and Print keep them', async () => {
         const linked = resultFor('L', '<!doctype html><html><body><h1>synthetic L</h1><a href="https://off.test/p?k=l">go label</a><svg><a xlink:href="/p?k=svg"><text>svg label</text></a></svg><meta http-equiv="refresh" content="0;url=/p?k=r"></body></html>');
         fetchMock().mockResolvedValueOnce(okResponse(linked));
@@ -1056,7 +1049,6 @@ describe('ArtifactExportPanel', () => {
       });
     });
   });
-
   // Browser behavior is proven in tests/e2e/artifact-export-preview-sandbox.spec.ts; these units pin construction and fail-closed paths.
   describe('B1 Preview navigation containment', () => {
     const parse = (html: string) => new DOMParser().parseFromString(html, 'text/html');
@@ -1079,7 +1071,6 @@ describe('ArtifactExportPanel', () => {
       const stuckLink = { namespaceURI: 'http://www.w3.org/1999/xhtml', localName: 'a', attributes: [{ localName: 'href', name: 'href' }], removeAttribute: () => undefined };
       vi.stubGlobal('DOMParser', class { parseFromString() { return { compatMode: 'CSS1Compat', documentElement: { outerHTML: '' }, querySelectorAll: () => [stuckLink] }; } });
     };
-
     it('removes every link target in html and svg, area, uppercase, padded and duplicate forms but keeps labels and inline style', () => {
       const html = '<!doctype html><html><body><h1 style="color:rgb(1,2,3)">Title</h1>'
         + '<a id="a1" href="https://off.test/p" target="_blank" download>label one</a>'
@@ -1099,7 +1090,6 @@ describe('ArtifactExportPanel', () => {
       expect(doc.querySelector('h1')!.getAttribute('style')).toBe('color:rgb(1,2,3)');
       expect(doc.querySelector('#a1')!.matches(':any-link')).toBe(false);
     });
-
     it('removes SVG animate and set, meta refresh and base, but keeps other meta, internal use references and inline CSS', () => {
       const html = '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">'
         + '<meta http-equiv="refresh" content="0;url=https://off.test/r"><meta http-equiv=" Refresh " content="5"><meta http-equiv="content-type" content="text/html">'
@@ -1113,7 +1103,6 @@ describe('ArtifactExportPanel', () => {
       expect(doc.querySelector('use')!.getAttribute('href')).toBe('#s');
       expect(doc.querySelector('style')!.textContent).toBe('h1{color:red}');
     });
-
     it('neutralizes anchors inside template contents at any depth and inside noscript', () => {
       const html = '<!doctype html><html><body><div id="host"><template shadowrootmode="open"><a href="https://off.test/shadow">shadow label</a>'
         + '<template><a href="https://off.test/deep">deep label</a></template></template></div>'
@@ -1123,7 +1112,6 @@ describe('ArtifactExportPanel', () => {
       expect(hrefAttributes(out)).toEqual([]);
       for (const label of ['shadow label', 'deep label', 'noscript label']) expect(out).toContain(label);
     });
-
     it('leaves a clean document byte-identical, is idempotent on its output and keeps standards versus quirks doctype', () => {
       const plain = '\n<!DOCTYPE HTML><html><head><style>p{color:red}</style></head><body><p>x</p><img src="/probe?k=x"><form action="/p"><button>go</button></form></body></html>';
       expect(containPreviewNavigation(plain)).toBe(plain);
@@ -1132,7 +1120,6 @@ describe('ArtifactExportPanel', () => {
       expect(contain('<!doctype html><a href="/p">l</a>').startsWith('<!doctype html><html>')).toBe(true);
       expect(contain('<a href="/p">l</a>').startsWith('<html>')).toBe(true);
     });
-
     it('fails closed when the parser is unavailable or removals never converge', () => {
       vi.stubGlobal('DOMParser', undefined);
       expect(containPreviewNavigation('<a href="/p">l</a>')).toBeNull();
@@ -1140,7 +1127,6 @@ describe('ArtifactExportPanel', () => {
       failClosedParser();
       expect(containPreviewNavigation('<a href="/p">l</a>')).toBeNull();
     });
-
     for (const [language, build, title, notice] of [
       ['en', /Build HTML/, 'Preview', 'Preview unavailable: this packet could not be shown safely here.'],
       ['vi', /Tạo HTML/, 'Xem trước', 'Không hiển thị được bản xem trước một cách an toàn.'],
@@ -1161,5 +1147,4 @@ describe('ArtifactExportPanel', () => {
       });
     }
   });
-
 });

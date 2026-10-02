@@ -381,7 +381,10 @@ function FieldLabel({ children }: { children: string }) {
 }
 
 function recoveryMessageFor(rawError: string, labels: typeof LABELS['en']): string | null {
-  if (rawError === 'Potential secret-like value detected in source content.') {
+  if (
+    rawError === 'Potential secret-like value detected in artifact export fields.'
+    || rawError === 'Potential secret-like value detected in source content.'
+  ) {
     return labels.secretRefusalRecovery;
   }
   if (rawError === 'Missing required artifact export fields.') {
