@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `9528a2fd29756dfd96cabf6b2edd4318fefba918`; batch `CVF-NCR-GENERAL-VIDEO-DESIGN`, D096 private text-design dispatch; send/B2 STOP.
+Current HEAD recorded for this handoff: `c715960a5e32edc2a904dd931b35f8cbd7a45692`; batch `CVF-NCR-GENERAL-VIDEO-DESIGN`, D097 reuse-first private text-design amendment; send/B2 STOP.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -21,9 +21,9 @@ AKOE authority: `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADM
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
 - B1 Print R2 accepted bounded at `6251ca305`: worker 5/5, units 45/45; Local 120-line probe: 3 pages/all rows/end marker, opaque origin/zero Print hits. Review: `docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md`. Width 700px; renderer only; Q001/Q004 OPEN. Preview owner audit complete; no Print successor.
-- D096 `9528a2fd2`: `CVF-NCR-GENERAL-VIDEO-DESIGN`, operator-approved Vietnamese ~4min/16:9 private text design, three new outputs. Estimated scene/claim-source joins; example unexecuted, usage UNKNOWN. No media/demo/provider/paid/publish effects; send/B2 STOP.
+- D097 `c715960a5`: video-design reuse-first amendment before worker dispatch; reusable brief/scene handoff, HyperFrames preferred candidate/unverified. Three text outputs only; freshness/capability evaluation separate before use. No media/runtime effects; send/B2 STOP.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: bind `9528a2fd29756dfd96cabf6b2edd4318fefba918` / `CVF-NCR-GENERAL-VIDEO-DESIGN`; six continuity paths below. Operator explicitly approved private video design scope/cost/publication boundary. Rollback: continuity only; preserve material and STOP/effect boundaries.
+Authorized guard-maintenance scope: bind `c715960a5e32edc2a904dd931b35f8cbd7a45692` / `CVF-NCR-GENERAL-VIDEO-DESIGN`; six continuity paths below. Operator approved private video design and clarified reuse-first before worker dispatch. Rollback: continuity only; preserve material and STOP/effect boundaries.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`

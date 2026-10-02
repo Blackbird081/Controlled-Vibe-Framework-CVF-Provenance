@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
-    "baselineSha256": "72c414f1ac2811109e3ee76ad8f473df7be485a76fb4dacf7f636589b90dda3f",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
-    "workOrderSha256": "1e734a08e4880a9b8471b89272e1b438dbef752c6eac8a1ffc67bff7470ad562"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_GENERAL_VIDEO_REUSE_FIRST_DESIGN_2026-10-02.md",
+    "baselineSha256": "6b71e4da3805b22e8b314e59ab452f2be5cdc7fe31520d51e9fa00d91bddc868",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_GENERAL_VIDEO_REUSE_FIRST_DESIGN_2026-10-02.md",
+    "workOrderSha256": "0fdd80a22c32625c3a23038dd4dd4b2d87ce593068c4076c713865c1723862fc"
   },
-  "currentAuthoritySyncReason": "D096 CVF-NCR-GENERAL-VIDEO-DESIGN operator-approved private text-design packet at 9528a2fd29756dfd96cabf6b2edd4318fefba918; clean bound release required. Three new documents/static evidence, UNKNOWN session cost, no production/public/effects or stopped-root successor.",
+  "currentAuthoritySyncReason": "D097 video-design reuse-first amendment at c715960a5e32edc2a904dd931b35f8cbd7a45692; operator has not sent order. Same three private text outputs, HyperFrames preferred candidate/unverified; mirror freshness/capability evaluation separate before use. Bound committed release required; no media/runtime/public effects.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
