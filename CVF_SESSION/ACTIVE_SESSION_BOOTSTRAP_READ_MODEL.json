@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_B2_DESIGN_ONLY_CONTRACT_PACKET; SELECTION_COMMIT=77bee1aba4b9d7c3ffe8031a27cf56d875278b21; SELECTION=docs/reviews/CVF_CVF_NCR_POST_B1_ROADMAP_CHECKPOINT_REASSESSMENT_2026-10-02.md; EXPANSION_ALLOWED=false. Operator delegated audit/profile choice; Local selected DESIGN_DIRECTION_ONLY: authenticated operator explicit immutable-version acceptance, local single-host/single-writer SQLite artifact-store candidate separate from governance-event ledger, commit/readback and read-only unknown-outcome contract. Next author paired design-only packet with owner-overlap comparison, exact outputs and synthetic case plan, no worker execution before bound release. No implementation/schema/store write, real data/account/ledger access, provider/live/cutover/public/deploy grant. B1/Print terminated; Q001/Q004 OPEN, durable B2/P11/effects parked. LHW24 closed.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; BATCH_ID=CVF-NCR-HTML-B2-DESIGN; NEXT_ACTION_CLASS=EXECUTE_B2_DESIGN_ONLY_PACKET; PACKET_COMMIT=8e8ade03d71649b1ddb077190b66e441b4df0e6f; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md; EXPANSION_ALLOWED=false. Shared-workspace worker executes documentation-only design after clean bound pre-implementation PASS: three new outputs, source-backed owner overlap, actor/exact-version/operation contract, proposed single-writer SQLite candidate, commit/readback/no-write recovery and planned cases. Every case NOT_EXECUTED_DESIGN_ONLY. WORKER_MUST_NOT_COMMIT; Local reviews design only. No product/schema/store write, DB/browser/server/provider run, real data/account/ledger access, acceptance/cutover/public/deploy grant. Q001/Q004 OPEN, durable B2/P11/effects parked. LHW24 closed.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_CONTAINMENT_2026-10-02.md",
-    "baselineSha256": "500c681be76a2f1e1185543a9ec12535212387a4668b512960967ae68e019226",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_CONTAINMENT_2026-10-02.md",
-    "workOrderSha256": "1c927d435a1dcb75cc1936fae452eb429f581ca3d20184b773f280f3ebe9ff7c"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md",
+    "baselineSha256": "2e686d8f839354815c1a44ee9ae67e53a68828d6fe058de5138ff88f679d74ff",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md",
+    "workOrderSha256": "60f92006539a7a37424bb604ad0cb27779f77d1bc2de3cac61f7b6b78c019f56"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
