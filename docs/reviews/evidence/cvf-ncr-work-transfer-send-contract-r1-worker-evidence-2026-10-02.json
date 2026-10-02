@@ -1,0 +1,2795 @@
+{
+ "schemaVersion": "cvf.ncrWorkTransferSendContractR1Evidence.v1",
+ "batchId": "CVF-NCR-WORK-TRANSFER-SEND-CONTRACT-R1",
+ "rootCauseClusterId": "TRANSFER_SEND_IDENTITY_SCOPE_CONTRACT_UNSPECIFIED",
+ "reworkGeneration": 1,
+ "findingSetDigestSha256": "df1f67c34c1427ad68a2c9f87474ec81b107c10e7b429dc38fca70c46271f442",
+ "executionBaseHead": "d404542690b84ec623ef909e32a2f2f4afba2368",
+ "preflight": {
+  "gitStatusShortUntrackedAllBeforeEdit": "empty",
+  "headEqualsReleasedBase": true,
+  "outputPathsAbsentBeforeEdit": [
+   "docs/reference/CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md",
+   "docs/reviews/evidence/cvf-ncr-work-transfer-send-contract-r1-worker-evidence-2026-10-02.json",
+   "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_WORKER_RETURN_2026-10-02.md"
+  ],
+  "preImplementationGate": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md",
+  "preImplementationGateResult": "COMPLIANT exit 0 before any edit"
+ },
+ "r1Seal": {
+  "recipe": "UTF-8 bytes of JSON with sorted keys, separators comma and colon, ensure_ascii true, no BOM, no trailing newline; digest is SHA-256 of these bytes for this object without a digest field",
+  "canonicalPayload": "{\"executionBaseHead\":\"d404542690b84ec623ef909e32a2f2f4afba2368\",\"originalSealSourceDrift\":[\"docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md\"],\"plan\":{\"batchId\":\"CVF-NCR-WORK-TRANSFER-SEND-CONTRACT-R1\",\"constraints\":[\"three outputs only\",\"no product or test edit\",\"no commit\",\"no runtime\",\"B2 STOP\",\"OC unratified\",\"all cases NOT_EXECUTED_PLANNED\"],\"findingSetDigest\":\"df1f67c34c1427ad68a2c9f87474ec81b107c10e7b429dc38fca70c46271f442\",\"idPrefixes\":{\"case\":\"R1-CASE-*, all NOT_EXECUTED_PLANNED\",\"refusal\":\"R1-RF-01..28\",\"requirement\":\"R1-REQ-01..25\",\"state\":\"R1-ST-01..08 plus R1-OOS-01..02\",\"transition\":\"R1-TR-01..11\"},\"ocTable\":\"OC-1..OC-5 unratified; columns operator direction, Local recommendation, unresolved gate\",\"repairs\":{\"D01\":\"unknown outcome finality: missing row never terminal; obligations E1-E5; INDETERMINATE default; G-TERMINAL NOT_ADMITTED unless independent non-B2 proof\",\"D02\":\"scoped request identity: key namespace workspace+sender+requestId; immutable logical fingerprint; changed request under same key refused; no global per-packet recipient ban\",\"D03\":\"binding provenance not spelling: verified default-looking values admitted; unverified or fallback source refused\",\"D04\":\"keep original seal and 62 cases immutable; map original to R1; disclose 23 vs 27; R1 canonical seal; embedded cross-check\"},\"reworkGeneration\":1,\"rootCauseClusterId\":\"TRANSFER_SEND_IDENTITY_SCOPE_CONTRACT_UNSPECIFIED\",\"sections\":[\"scope\",\"stage model\",\"send record\",\"binding provenance\",\"read policy\",\"packet identity\",\"scoped request identity\",\"owner comparison\",\"failure and finality\",\"state machine\",\"refusals\",\"gates\",\"OC table\",\"D01-D04 disposition\",\"evidence preservation\"]},\"recipe\":\"UTF-8 bytes of JSON with sorted keys, separators comma and colon, ensure_ascii true, no BOM, no trailing newline; digest is SHA-256 of these bytes for this object without a digest field\",\"sealedAtUtc\":\"2026-10-02T09:12:22.239552+00:00\",\"sourceSha256\":{\"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx\":\"0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d\",\"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts\":\"83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d\",\"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts\":\"69b33640ec525b486390f3e300215913a2c85fe0c6492d0c9a8efdc07ec304ae\",\"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-handoff-validator.ts\":\"877cc3e22cbfb8d1e815b6bf7ee5d09d8a7d79a1e1b12a5232f373918bf7ca07\",\"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts\":\"a95ac544fcdf1fb74042b25f4223cc4742592c57d78f434292f3b290643e83e7\",\"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts\":\"352242cf9e5b3ea734991f230117e76d60ac6018cf0e1be7399cfa66039a2980\",\"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts\":\"3877b34d112185040a331019e9cd9915c9152059ad42ee2c26e1a9833452b40e\",\"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts\":\"d57ea274ac95235ef15fd3d577c8141ba27458576810acb654f505db83a119e6\",\"docs/baselines/CVF_GC018_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md\":\"12c8c7ad83bb7c518f85a73957e56444ccc521eacb830f851174c75afcc22f35\",\"docs/baselines/CVF_GC018_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md\":\"b51c416dff6da8de68be92b99b8db60c12ffd915527a0331b01d38954a8c3d57\",\"docs/reference/CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md\":\"ac63981e84c0736f13bba31b91ef4db3807cb8c21853bb9a8c47bbd8d285b7c9\",\"docs/reference/agent_handoff/README.md\":\"de70debe5e2a03dbeb481526e47678cfc76309cfa92753c4511121c8d1260b17\",\"docs/reviews/CVF_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_COMPLETION_2026-10-02.md\":\"9e886122e6b1faaeb22ea3b3bc238b2a06818b1026248fea993e8ea13a81a6d6\",\"docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_PRODUCT_SCOPE_CHECKPOINT_2026-10-02.md\":\"383bbe5909a1c007a4bdd7211eea45c2faf0b92daf083508574c2e4c9d50926f\",\"docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_COMPLETION_2026-10-02.md\":\"df1f67c34c1427ad68a2c9f87474ec81b107c10e7b429dc38fca70c46271f442\",\"docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_WORKER_RETURN_2026-10-02.md\":\"f65bd40eba2cc62d3e2c8f4481cf5ca647154387ada07a4f11ca245b04b34d0d\",\"docs/reviews/evidence/cvf-ncr-work-transfer-send-contract-worker-evidence-2026-10-02.json\":\"3b3e94f6fe5ce464375be96f2639623fb07762b9e99c9b4c64a69d56673ac3c4\",\"docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md\":\"8a1ff10566de987e857cddfecd0dba0c794db595f3e6380186c3de75fe20fffe\",\"docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md\":\"382b7ce30e2b844331a33ae33b49ce414d5fee217156757933bcd8dd6e56dc6d\",\"docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md\":\"8053d20a1d670b10215339d55c43e71f2130e3757df7f578fa0bf8694d06b8da\"}}",
+  "digestSha256": "17f73c7aa51c5b7241eb028c3bc3ee540c27aa27eed01f89e8ba4b98e86ee6ca",
+  "sealedAtUtc": "2026-10-02T09:12:22.239552+00:00",
+  "note": "payload retained verbatim; digest is SHA-256 of its UTF-8 bytes. Sealed before the R1 contract was authored. Ordering is attested by digest and recorded time only."
+ },
+ "postSealDeviations": [
+  "none to the sealed plan identifiers; the R1 ID ranges were met exactly (25 requirements, 28 refusals, 8 states, 2 out-of-scope states, 11 transitions)",
+  "the evidence JSON and the return carry no self-hash; only the contract hash is recorded after authoring"
+ ],
+ "originalHistoricalInputs": {
+  "note": "original three artifacts are immutable inputs and were not edited by this worker; Local appended a controlling qualification after the original worker raw digests recorded in the controlling review",
+  "currentSha256": {
+   "docs/reference/CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md": "ac63981e84c0736f13bba31b91ef4db3807cb8c21853bb9a8c47bbd8d285b7c9",
+   "docs/reviews/evidence/cvf-ncr-work-transfer-send-contract-worker-evidence-2026-10-02.json": "3b3e94f6fe5ce464375be96f2639623fb07762b9e99c9b4c64a69d56673ac3c4",
+   "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_WORKER_RETURN_2026-10-02.md": "f65bd40eba2cc62d3e2c8f4481cf5ca647154387ada07a4f11ca245b04b34d0d"
+  },
+  "originalSealDigestSha256": "b179891b8106314356d1bfa086ee112c2f7e255c4d9950e0e40fe1ffdea0dd03",
+  "originalSealedRefusalRange": "23 planned versus 27 final, disclosed post-seal expansion; original seal not resealed",
+  "originalSealChronologyAndScratchpadInvocation": "not reproduced and not claimed"
+ },
+ "sourceRefresh": {
+  "originalSealedSourceCount": 14,
+  "driftAgainstOriginalSeal": [
+   "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ],
+  "note": "only the roadmap changed (D083 and D084 entries); the 13 other original sources, including every Web source file, are byte-identical so original locators hold"
+ },
+ "corpusBoundary": {
+  "verdict": "PARTIAL",
+  "note": "selected regions of named sources; no all-files-read, no producer rescan, no repository-wide absence claim",
+  "manifestCount": 20
+ },
+ "unresolvedEdges": [
+  "producer entry points outside the accepted partial graph remain untraced",
+  "real production binding completeness not inspected",
+  "which storage adapter runs in a real environment not inspected",
+  "membership source unknown"
+ ],
+ "locators": [
+  {
+   "id": "L01",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+   "line": 39,
+   "expectedSubstring": "does not save or create a transfer record",
+   "note": "page states the check creates no record"
+  },
+  {
+   "id": "L02",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+   "line": 118,
+   "expectedSubstring": "receiptAnchor: `transfer-${record.id}`",
+   "note": "editable draft anchor"
+  },
+  {
+   "id": "L03",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+   "line": 147,
+   "expectedSubstring": "fetch('/api/admin/audit')",
+   "note": "only network call is the audit GET"
+  },
+  {
+   "id": "L04",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-handoff-validator.ts",
+   "line": 53,
+   "expectedSubstring": "AGENT_CAPABILITIES",
+   "note": "AgentRole table"
+  },
+  {
+   "id": "L05",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-handoff-validator.ts",
+   "line": 209,
+   "expectedSubstring": "export function validateHandoff",
+   "note": "validator checks supplied context"
+  },
+  {
+   "id": "L06",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts",
+   "line": 3,
+   "expectedSubstring": "TEAM_ROLES",
+   "note": "TeamRole vocabulary"
+  },
+  {
+   "id": "L07",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts",
+   "line": 11,
+   "expectedSubstring": "export function canAccessAdmin",
+   "note": "role predicate without scope"
+  },
+  {
+   "id": "L08",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+   "line": 13,
+   "expectedSubstring": "export type BreakGlassSession",
+   "note": "fixed break-glass identity"
+  },
+  {
+   "id": "L09",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+   "line": 245,
+   "expectedSubstring": "export async function requireAdminApiSession",
+   "note": "admin API admission"
+  },
+  {
+   "id": "L10",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+   "line": 8,
+   "expectedSubstring": "export async function GET",
+   "note": "store-wide audit read"
+  },
+  {
+   "id": "L11",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+   "line": 19,
+   "expectedSubstring": "x-cvf-internal-audit",
+   "note": "internal secret header path"
+  },
+  {
+   "id": "L12",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+   "line": 32,
+   "expectedSubstring": "actorId: String(body.actorId",
+   "note": "actor from body"
+  },
+  {
+   "id": "L13",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+   "line": 33,
+   "expectedSubstring": "export interface UnifiedAuditEvent",
+   "note": "no scope fields"
+  },
+  {
+   "id": "L14",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+   "line": 46,
+   "expectedSubstring": "export interface CostEvent",
+   "note": "cost event has scope fields"
+  },
+  {
+   "id": "L15",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+   "line": 122,
+   "expectedSubstring": "id: event.id ?? randomUUID()",
+   "note": "caller-supplied id accepted"
+  },
+  {
+   "id": "L16",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+   "line": 151,
+   "expectedSubstring": "forwardToSIEM(record)",
+   "note": "SIEM forward not awaited"
+  },
+  {
+   "id": "L17",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+   "line": 62,
+   "expectedSubstring": "CONTROL_PLANE_RETENTION_SECONDS",
+   "note": "retention constant"
+  },
+  {
+   "id": "L18",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+   "line": 144,
+   "expectedSubstring": "async append(storeKey: string, item: T)",
+   "note": "file append read, push, write"
+  },
+  {
+   "id": "L19",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+   "line": 165,
+   "expectedSubstring": "atomicAppend: false",
+   "note": "file adapter non-atomic"
+  },
+  {
+   "id": "L20",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+   "line": 330,
+   "expectedSubstring": "atomicAppend: true",
+   "note": "sqlite atomic local append"
+  },
+  {
+   "id": "L21",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+   "line": 20,
+   "expectedSubstring": "export type SessionCookie",
+   "note": "session fields"
+  },
+  {
+   "id": "L22",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+   "line": 97,
+   "expectedSubstring": "process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'development'",
+   "note": "binding is null in test and development"
+  },
+  {
+   "id": "L23",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+   "line": 102,
+   "expectedSubstring": "'unknown-user'",
+   "note": "fallback user"
+  },
+  {
+   "id": "L24",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+   "line": 105,
+   "expectedSubstring": "orgId: binding?.orgId ?? token.orgId ?? 'org_cvf'",
+   "note": "fallback org"
+  },
+  {
+   "id": "L25",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+   "line": 106,
+   "expectedSubstring": "teamId: binding?.teamId ?? token.teamId ?? 'team_eng'",
+   "note": "fallback team"
+  },
+  {
+   "id": "L26",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+   "line": 166,
+   "expectedSubstring": "realUserId: baseSession.userId",
+   "note": "impersonation shows effective user"
+  },
+  {
+   "id": "L27",
+   "file": "docs/reference/agent_handoff/README.md",
+   "line": 67,
+   "expectedSubstring": "## Artifact Completion Evidence",
+   "note": "writer and verifier principle"
+  },
+  {
+   "id": "L28",
+   "file": "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_PRODUCT_SCOPE_CHECKPOINT_2026-10-02.md",
+   "line": 48,
+   "expectedSubstring": "### Selected Contract Boundaries",
+   "note": "operator-selected boundaries"
+  }
+ ],
+ "ledger": {
+  "requirements": [
+   "R1-REQ-01",
+   "R1-REQ-02",
+   "R1-REQ-03",
+   "R1-REQ-04",
+   "R1-REQ-05",
+   "R1-REQ-06",
+   "R1-REQ-07",
+   "R1-REQ-08",
+   "R1-REQ-09",
+   "R1-REQ-10",
+   "R1-REQ-11",
+   "R1-REQ-12",
+   "R1-REQ-13",
+   "R1-REQ-14",
+   "R1-REQ-15",
+   "R1-REQ-16",
+   "R1-REQ-17",
+   "R1-REQ-18",
+   "R1-REQ-19",
+   "R1-REQ-20",
+   "R1-REQ-21",
+   "R1-REQ-22",
+   "R1-REQ-23",
+   "R1-REQ-24",
+   "R1-REQ-25"
+  ],
+  "refusals": [
+   "R1-RF-01",
+   "R1-RF-02",
+   "R1-RF-03",
+   "R1-RF-04",
+   "R1-RF-05",
+   "R1-RF-06",
+   "R1-RF-07",
+   "R1-RF-08",
+   "R1-RF-09",
+   "R1-RF-10",
+   "R1-RF-11",
+   "R1-RF-12",
+   "R1-RF-13",
+   "R1-RF-14",
+   "R1-RF-15",
+   "R1-RF-16",
+   "R1-RF-17",
+   "R1-RF-18",
+   "R1-RF-19",
+   "R1-RF-20",
+   "R1-RF-21",
+   "R1-RF-22",
+   "R1-RF-23",
+   "R1-RF-24",
+   "R1-RF-25",
+   "R1-RF-26",
+   "R1-RF-27",
+   "R1-RF-28"
+  ],
+  "states": [
+   "R1-ST-01",
+   "R1-ST-02",
+   "R1-ST-03",
+   "R1-ST-04",
+   "R1-ST-05",
+   "R1-ST-06",
+   "R1-ST-07",
+   "R1-ST-08"
+  ],
+  "outOfScope": [
+   "R1-OOS-01",
+   "R1-OOS-02"
+  ],
+  "transitions": [
+   "R1-TR-01",
+   "R1-TR-02",
+   "R1-TR-03",
+   "R1-TR-04",
+   "R1-TR-05",
+   "R1-TR-06",
+   "R1-TR-07",
+   "R1-TR-08",
+   "R1-TR-09",
+   "R1-TR-10",
+   "R1-TR-11"
+  ]
+ },
+ "originalInventory": {
+  "requirements": [
+   "SC-REQ-01",
+   "SC-REQ-02",
+   "SC-REQ-03",
+   "SC-REQ-04",
+   "SC-REQ-05",
+   "SC-REQ-06",
+   "SC-REQ-07",
+   "SC-REQ-08",
+   "SC-REQ-09",
+   "SC-REQ-10",
+   "SC-REQ-11",
+   "SC-REQ-12",
+   "SC-REQ-13",
+   "SC-REQ-14",
+   "SC-REQ-15",
+   "SC-REQ-16",
+   "SC-REQ-17",
+   "SC-REQ-18",
+   "SC-REQ-19",
+   "SC-REQ-20",
+   "SC-REQ-21"
+  ],
+  "refusals": [
+   "SC-RF-01",
+   "SC-RF-02",
+   "SC-RF-03",
+   "SC-RF-04",
+   "SC-RF-05",
+   "SC-RF-06",
+   "SC-RF-07",
+   "SC-RF-08",
+   "SC-RF-09",
+   "SC-RF-10",
+   "SC-RF-11",
+   "SC-RF-12",
+   "SC-RF-13",
+   "SC-RF-14",
+   "SC-RF-15",
+   "SC-RF-16",
+   "SC-RF-17",
+   "SC-RF-18",
+   "SC-RF-19",
+   "SC-RF-20",
+   "SC-RF-21",
+   "SC-RF-22",
+   "SC-RF-23",
+   "SC-RF-24",
+   "SC-RF-25",
+   "SC-RF-26",
+   "SC-RF-27"
+  ],
+  "states": [
+   "SC-ST-01",
+   "SC-ST-02",
+   "SC-ST-03",
+   "SC-ST-04",
+   "SC-ST-05",
+   "SC-ST-06",
+   "SC-ST-07",
+   "SC-ST-08"
+  ],
+  "outOfScope": [
+   "SC-OOS-01",
+   "SC-OOS-02"
+  ],
+  "transitions": [
+   "SC-TR-01",
+   "SC-TR-02",
+   "SC-TR-03",
+   "SC-TR-04",
+   "SC-TR-05",
+   "SC-TR-06",
+   "SC-TR-07",
+   "SC-TR-08",
+   "SC-TR-09"
+  ],
+  "cases": [
+   "SC-CASE-001",
+   "SC-CASE-002",
+   "SC-CASE-003",
+   "SC-CASE-004",
+   "SC-CASE-005",
+   "SC-CASE-006",
+   "SC-CASE-007",
+   "SC-CASE-008",
+   "SC-CASE-009",
+   "SC-CASE-010",
+   "SC-CASE-011",
+   "SC-CASE-012",
+   "SC-CASE-013",
+   "SC-CASE-014",
+   "SC-CASE-015",
+   "SC-CASE-016",
+   "SC-CASE-017",
+   "SC-CASE-018",
+   "SC-CASE-019",
+   "SC-CASE-020",
+   "SC-CASE-021",
+   "SC-CASE-022",
+   "SC-CASE-023",
+   "SC-CASE-024",
+   "SC-CASE-025",
+   "SC-CASE-026",
+   "SC-CASE-027",
+   "SC-CASE-028",
+   "SC-CASE-029",
+   "SC-CASE-030",
+   "SC-CASE-031",
+   "SC-CASE-032",
+   "SC-CASE-033",
+   "SC-CASE-034",
+   "SC-CASE-035",
+   "SC-CASE-036",
+   "SC-CASE-037",
+   "SC-CASE-038",
+   "SC-CASE-039",
+   "SC-CASE-040",
+   "SC-CASE-041",
+   "SC-CASE-042",
+   "SC-CASE-043",
+   "SC-CASE-044",
+   "SC-CASE-045",
+   "SC-CASE-046",
+   "SC-CASE-047",
+   "SC-CASE-048",
+   "SC-CASE-049",
+   "SC-CASE-050",
+   "SC-CASE-051",
+   "SC-CASE-052",
+   "SC-CASE-053",
+   "SC-CASE-054",
+   "SC-CASE-055",
+   "SC-CASE-056",
+   "SC-CASE-057",
+   "SC-CASE-058",
+   "SC-CASE-059",
+   "SC-CASE-060",
+   "SC-CASE-061",
+   "SC-CASE-062"
+  ]
+ },
+ "newR1Ids": [
+  "R1-REQ-20",
+  "R1-REQ-25",
+  "R1-RF-28",
+  "R1-TR-10",
+  "R1-TR-11"
+ ],
+ "originalToR1Map": {
+  "ids": [
+   {
+    "original": "SC-REQ-01",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-01"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-02",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-02"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-03",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-03"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-04",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-04"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-05",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-05"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-06",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-06"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-07",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-07"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-08",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-08"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-09",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-09"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-10",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-10"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-11",
+    "disposition": "revised",
+    "r1": [
+     "R1-REQ-11"
+    ],
+    "reason": "read rule now also requires verified binding provenance (D03)"
+   },
+   {
+    "original": "SC-REQ-12",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-12"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-13",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-13"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-14",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-14"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-15",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-15"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-16",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-16"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-17",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-17"
+    ],
+    "reason": "unchanged semantics"
+   },
+   {
+    "original": "SC-REQ-18",
+    "disposition": "superseded",
+    "r1": [
+     "R1-REQ-18",
+     "R1-REQ-19"
+    ],
+    "reason": "dedupeKey model replaced by scoped key, immutable fingerprint and per-send conflict scope (D02)"
+   },
+   {
+    "original": "SC-REQ-19",
+    "disposition": "revised",
+    "r1": [
+     "R1-REQ-21",
+     "R1-REQ-22"
+    ],
+    "reason": "failure classes kept; missing-row finality and obligations E1-E5 added (D01)"
+   },
+   {
+    "original": "SC-REQ-20",
+    "disposition": "revised",
+    "r1": [
+     "R1-REQ-23"
+    ],
+    "reason": "recorded-send acknowledgment now requires fresh authoritative evidence and records G-TERMINAL NOT_ADMITTED (D01)"
+   },
+   {
+    "original": "SC-REQ-21",
+    "disposition": "retained",
+    "r1": [
+     "R1-REQ-24"
+    ],
+    "reason": "B2 boundary unchanged; renumbered"
+   },
+   {
+    "original": "SC-RF-01",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-01"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-02",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-02"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-03",
+    "disposition": "revised",
+    "r1": [
+     "R1-RF-03"
+    ],
+    "reason": "now covers missing, empty or malformed bindings"
+   },
+   {
+    "original": "SC-RF-04",
+    "disposition": "superseded",
+    "r1": [
+     "R1-RF-04"
+    ],
+    "reason": "string-spelling fallback refusal replaced by provenance-based refusal (D03)"
+   },
+   {
+    "original": "SC-RF-05",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-05"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-06",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-06"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-07",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-07"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-08",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-08"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-09",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-09"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-10",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-10"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-11",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-11"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-12",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-12"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-13",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-13"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-14",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-14"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-15",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-15"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-16",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-16"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-17",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-17"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-18",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-18"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-19",
+    "disposition": "superseded",
+    "r1": [
+     "R1-RF-19"
+    ],
+    "reason": "DUPLICATE_DIFFERENT_REQUEST replaced by KEY_REUSED_WITH_CHANGED_REQUEST under the scoped key (D02)"
+   },
+   {
+    "original": "SC-RF-20",
+    "disposition": "superseded",
+    "r1": [
+     "R1-RF-20"
+    ],
+    "reason": "CONFLICT_RECIPIENT global per-packet-version ban removed; replaced by unresolved-attempt refusal scoped to the same fingerprint (D02, OC-4)"
+   },
+   {
+    "original": "SC-RF-21",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-21"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-22",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-22"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-23",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-23"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-24",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-24"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-25",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-25"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-26",
+    "disposition": "retained",
+    "r1": [
+     "R1-RF-26"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-RF-27",
+    "disposition": "revised",
+    "r1": [
+     "R1-RF-27"
+    ],
+    "reason": "definite persistence failure now requires terminal evidence E1-E5 (D01)"
+   },
+   {
+    "original": "SC-ST-01",
+    "disposition": "retained",
+    "r1": [
+     "R1-ST-01"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-ST-02",
+    "disposition": "retained",
+    "r1": [
+     "R1-ST-02"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-ST-03",
+    "disposition": "retained",
+    "r1": [
+     "R1-ST-03"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-ST-04",
+    "disposition": "retained",
+    "r1": [
+     "R1-ST-04"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-ST-05",
+    "disposition": "retained",
+    "r1": [
+     "R1-ST-05"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-ST-06",
+    "disposition": "revised",
+    "r1": [
+     "R1-ST-06"
+    ],
+    "reason": "reconciliation states redefined by evidence obligations; a missing row alone is INDETERMINATE (D01)"
+   },
+   {
+    "original": "SC-ST-07",
+    "disposition": "revised",
+    "r1": [
+     "R1-ST-07"
+    ],
+    "reason": "reconciliation states redefined by evidence obligations; a missing row alone is INDETERMINATE (D01)"
+   },
+   {
+    "original": "SC-ST-08",
+    "disposition": "revised",
+    "r1": [
+     "R1-ST-08"
+    ],
+    "reason": "reconciliation states redefined by evidence obligations; a missing row alone is INDETERMINATE (D01)"
+   },
+   {
+    "original": "SC-OOS-01",
+    "disposition": "retained",
+    "r1": [
+     "R1-OOS-01"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-OOS-02",
+    "disposition": "retained",
+    "r1": [
+     "R1-OOS-02"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-TR-01",
+    "disposition": "retained",
+    "r1": [
+     "R1-TR-01"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-TR-02",
+    "disposition": "retained",
+    "r1": [
+     "R1-TR-02"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-TR-03",
+    "disposition": "retained",
+    "r1": [
+     "R1-TR-03"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-TR-04",
+    "disposition": "retained",
+    "r1": [
+     "R1-TR-04"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-TR-05",
+    "disposition": "retained",
+    "r1": [
+     "R1-TR-05"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-TR-06",
+    "disposition": "revised",
+    "r1": [
+     "R1-TR-06"
+    ],
+    "reason": "terminal no-record needs E1-E5; otherwise INDETERMINATE (D01)"
+   },
+   {
+    "original": "SC-TR-07",
+    "disposition": "revised",
+    "r1": [
+     "R1-TR-07"
+    ],
+    "reason": "terminal no-record needs E1-E5; otherwise INDETERMINATE (D01)"
+   },
+   {
+    "original": "SC-TR-08",
+    "disposition": "retained",
+    "r1": [
+     "R1-TR-08"
+    ],
+    "reason": "unchanged"
+   },
+   {
+    "original": "SC-TR-09",
+    "disposition": "superseded",
+    "r1": [
+     "R1-TR-09"
+    ],
+    "reason": "retry with the same requestId after a lookup miss was unsafe; replaced by fresh attempt or future atomic replay (D01)"
+   }
+  ],
+  "cases": [
+   {
+    "original": "SC-CASE-001",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-001"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-002",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-002"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-003",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-003"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-004",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-004"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-005",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-005"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-006",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-006"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-007",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-007"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-008",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-008"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-009",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-009"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-010",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-010"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-011",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-011"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-012",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-012"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-013",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-013"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-014",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-014"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-015",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-015"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-016",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-016"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-017",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-017"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-018",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-018"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-019",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-019"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-020",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-020"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-021",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-021"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-022",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-022"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-023",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-023"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-024",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-024"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-025",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-025"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-026",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-026"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-027",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-027"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-028",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-028"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-030",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-030"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-031",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-031"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-032",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-032"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-033",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-033"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-034",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-034"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-035",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-035"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-036",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-036"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-037",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-037"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-038",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-038"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-039",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-039"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-040",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-040"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-046",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-046"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-052",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-052"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-054",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-054"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-055",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-055"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-056",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-056"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-057",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-057"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-058",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-058"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-059",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-059"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-060",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-060"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-061",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-061"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-062",
+    "disposition": "retained",
+    "r1Cases": [
+     "R1-CASE-062"
+    ],
+    "reason": "same scenario; covered identifiers renumbered to R1"
+   },
+   {
+    "original": "SC-CASE-029",
+    "disposition": "superseded",
+    "r1Cases": [
+     "R1-CASE-141"
+    ],
+    "reason": "string-equality fallback refusal replaced by provenance cases (D03)"
+   },
+   {
+    "original": "SC-CASE-041",
+    "disposition": "revised",
+    "r1Cases": [
+     "R1-CASE-121"
+    ],
+    "reason": "scenario kept; expected outcome tightened by D01 or D02"
+   },
+   {
+    "original": "SC-CASE-042",
+    "disposition": "superseded",
+    "r1Cases": [
+     "R1-CASE-129"
+    ],
+    "reason": "global duplicate-different-request refusal replaced by scoped-key cases (D02)"
+   },
+   {
+    "original": "SC-CASE-043",
+    "disposition": "superseded",
+    "r1Cases": [
+     "R1-CASE-128"
+    ],
+    "reason": "per-packet-version second-recipient refusal removed; independent evaluation (D02, OC-4)"
+   },
+   {
+    "original": "SC-CASE-044",
+    "disposition": "revised",
+    "r1Cases": [
+     "R1-CASE-131"
+    ],
+    "reason": "scenario kept; expected outcome tightened by D01 or D02"
+   },
+   {
+    "original": "SC-CASE-045",
+    "disposition": "revised",
+    "r1Cases": [
+     "R1-CASE-130"
+    ],
+    "reason": "scenario kept; expected outcome tightened by D01 or D02"
+   },
+   {
+    "original": "SC-CASE-047",
+    "disposition": "revised",
+    "r1Cases": [
+     "R1-CASE-115",
+     "R1-CASE-116"
+    ],
+    "reason": "scenario kept; expected outcome tightened by D01 or D02"
+   },
+   {
+    "original": "SC-CASE-048",
+    "disposition": "revised",
+    "r1Cases": [
+     "R1-CASE-101"
+    ],
+    "reason": "scenario kept; expected outcome tightened by D01 or D02"
+   },
+   {
+    "original": "SC-CASE-049",
+    "disposition": "revised",
+    "r1Cases": [
+     "R1-CASE-102"
+    ],
+    "reason": "scenario kept; expected outcome tightened by D01 or D02"
+   },
+   {
+    "original": "SC-CASE-050",
+    "disposition": "superseded",
+    "r1Cases": [
+     "R1-CASE-106",
+     "R1-CASE-112",
+     "R1-CASE-113"
+    ],
+    "reason": "retry with the same requestId after a lookup miss was unsafe; replaced by finality cases (D01)"
+   },
+   {
+    "original": "SC-CASE-051",
+    "disposition": "revised",
+    "r1Cases": [
+     "R1-CASE-159"
+    ],
+    "reason": "scenario kept; expected outcome tightened by D01 or D02"
+   },
+   {
+    "original": "SC-CASE-053",
+    "disposition": "revised",
+    "r1Cases": [
+     "R1-CASE-119"
+    ],
+    "reason": "scenario kept; expected outcome tightened by D01 or D02"
+   }
+  ]
+ },
+ "dispositions": {
+  "D01": "contract section 8 and 9; R1-REQ-22, R1-ST-05..08, R1-TR-05..11; cases 101-120; G-TERMINAL NOT_ADMITTED",
+  "D02": "contract section 6; R1-REQ-18, R1-REQ-19, R1-RF-19, R1-RF-20; cases 121-134, 158",
+  "D03": "contract section 3 and 4; R1-REQ-20, R1-RF-03, R1-RF-04, R1-RF-28; cases 141-149",
+  "D04": "original artifacts untouched; original-to-R1 map for every original id and case; 23 versus 27 disclosed; R1 canonical seal; embedded cross-check",
+  "OC": "contract section 12; all unratified; OC-3 no selection; OC-4 one recipient per logical send, no batch, no per-packet-version ban"
+ },
+ "ocDecisionTable": [
+  {
+   "oc": "OC-1",
+   "operatorDirection": "none beyond same-workspace read and fail closed",
+   "localRecommendation": "deny break-glass read",
+   "unresolvedGate": "emergency read procedure",
+   "ratified": false
+  },
+  {
+   "oc": "OC-2",
+   "operatorDirection": "identify artifact and version without fabricating proof; missing evidence fails closed",
+   "localRecommendation": "refuse unverified send",
+   "unresolvedGate": "labelled unverified send wanted or not",
+   "ratified": false
+  },
+  {
+   "oc": "OC-3",
+   "operatorDirection": "none; existing owners are comparison targets",
+   "localRecommendation": "no selection",
+   "unresolvedGate": "operator and owner authorization of any store or schema",
+   "ratified": false
+  },
+  {
+   "oc": "OC-4",
+   "operatorDirection": "one designated recipient",
+   "localRecommendation": "one recipient per logical send; no batch; no per-packet-version ban",
+   "unresolvedGate": "batch or multi-recipient wanted or not",
+   "ratified": false
+  },
+  {
+   "oc": "OC-5",
+   "operatorDirection": "none",
+   "localRecommendation": "refuse self-send",
+   "unresolvedGate": "self-send as save-for-later wanted or not",
+   "ratified": false
+  }
+ ],
+ "futureGates": {
+  "G-BIND": "UNKNOWN",
+  "G-PACKET": "UNKNOWN",
+  "G-STORE": "UNKNOWN",
+  "G-IDEMP": "UNKNOWN",
+  "G-TERMINAL": "NOT_ADMITTED",
+  "G-VERIFY": "UNKNOWN",
+  "G-CASE": "UNKNOWN",
+  "G-OPERATOR": "parked"
+ },
+ "proposedImplementationManifest": {
+  "status": "proposal only, implementation NOT_ADMITTED",
+  "items": [
+   "producer send route (proposed, not existing)",
+   "verifier distinct from producer",
+   "membership and workspace resolver",
+   "packet resolver and version registry",
+   "scoped store behavior with conditional insert and terminal evidence",
+   "page confirm action and scoped list",
+   "tests from the planned cases with a verified-binding test double"
+  ]
+ },
+ "caseCount": 100,
+ "caseKindCounts": {
+  "P": 23,
+  "R": 66,
+  "U": 11
+ },
+ "casePlan": {
+  "status": "NOT_EXECUTED_PLANNED",
+  "cases": [
+   {
+    "caseId": "R1-CASE-001",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-01",
+     "R1-TR-03",
+     "R1-ST-04"
+    ],
+    "scenario": "Verified session, in-workspace recipient, PK-VERIFIED packet, bound confirmation",
+    "expectedOutcome": "exactly one recorded send; state SC-ST-04",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-002",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-01"
+    ],
+    "scenario": "One request names two recipients or two packets",
+    "expectedOutcome": "refused; no record carries more than one recipient and packet",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-003",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-02",
+     "R1-ST-01",
+     "R1-ST-02"
+    ],
+    "scenario": "Edit the form then submit",
+    "expectedOutcome": "draft is not a record; submitted is not a record; only SC-ST-04 is a send",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-004",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-03"
+    ],
+    "scenario": "Validator ALLOW with no submit",
+    "expectedOutcome": "no record; no send reported",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-005",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-03"
+    ],
+    "scenario": "Audit event with a transfer-like action seeded through the audit POST",
+    "expectedOutcome": "not treated as a send; not listed as a transfer",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-006",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-03"
+    ],
+    "scenario": "HTTP success returned before verifier confirmation",
+    "expectedOutcome": "not reported as recorded until the verifier confirms",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-007",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-04",
+     "R1-OOS-01",
+     "R1-OOS-02"
+    ],
+    "scenario": "Recipient or admin reads a recorded send",
+    "expectedOutcome": "no acknowledgment or acceptance state is set or implied",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-008",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-05",
+     "R1-RF-14"
+    ],
+    "scenario": "Submit without a confirmation act, or with one bound to another session or packet",
+    "expectedOutcome": "refused SC-RF-14",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-009",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-06",
+     "R1-REQ-08"
+    ],
+    "scenario": "Body carries no actor; server derives sender and workspace",
+    "expectedOutcome": "record sender and workspace equal the server-derived values",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-010",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-09",
+     "R1-RF-09",
+     "R1-REQ-15"
+    ],
+    "scenario": "Body supplies an actor, role or workspace that differs from the session",
+    "expectedOutcome": "refused SC-RF-09",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-011",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-09",
+     "R1-RF-12"
+    ],
+    "scenario": "Request with the internal audit secret header and no session",
+    "expectedOutcome": "refused SC-RF-12; the header grants no identity",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-012",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-07"
+    ],
+    "scenario": "Recipient resolves to an active member of the sender workspace",
+    "expectedOutcome": "admitted past the recipient check",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-013",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-07",
+     "R1-RF-07"
+    ],
+    "scenario": "Nonexistent recipient versus foreign-workspace recipient",
+    "expectedOutcome": "identical refusal SC-RF-07; no enumeration difference",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-014",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-10"
+    ],
+    "scenario": "Sender with workflow role reviewer but TeamRole viewer, and the inverse",
+    "expectedOutcome": "workflow role grants nothing; admission follows the verified binding only",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-015",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-08",
+     "R1-RF-06"
+    ],
+    "scenario": "Sender session with no verified workspace",
+    "expectedOutcome": "refused SC-RF-06",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-016",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-08",
+     "R1-RF-25"
+    ],
+    "scenario": "Stored row lacks a workspace reference",
+    "expectedOutcome": "unreadable to every principal; SC-RF-25",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-017",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-11"
+    ],
+    "scenario": "Sender, recipient and same-workspace admin each read the record",
+    "expectedOutcome": "ALLOW for all three",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-018",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-11",
+     "R1-RF-23"
+    ],
+    "scenario": "Same-workspace developer who is neither party nor admin reads",
+    "expectedOutcome": "DENY SC-RF-23",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-019",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-12",
+     "R1-RF-24"
+    ],
+    "scenario": "Owner or admin of another workspace reads",
+    "expectedOutcome": "DENY SC-RF-24",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-020",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-12",
+     "R1-RF-22"
+    ],
+    "scenario": "Read with no session",
+    "expectedOutcome": "DENY SC-RF-22",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-021",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-12",
+     "R1-RF-26"
+    ],
+    "scenario": "Break-glass session reads",
+    "expectedOutcome": "DENY by default SC-RF-26",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-022",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-11",
+     "R1-REQ-12"
+    ],
+    "scenario": "Existing admin audit read used as the transfer read",
+    "expectedOutcome": "not accepted as the transfer read; its scope is store-wide",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-023",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-13",
+     "R1-RF-10"
+    ],
+    "scenario": "Impersonated session attempts a send",
+    "expectedOutcome": "refused SC-RF-10; real user noted",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-024",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-13",
+     "R1-RF-11"
+    ],
+    "scenario": "On-behalf-of or delegated confirmation",
+    "expectedOutcome": "refused SC-RF-11",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-025",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-13",
+     "R1-RF-13"
+    ],
+    "scenario": "Break-glass session attempts a send",
+    "expectedOutcome": "refused SC-RF-13",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-026",
+    "kind": "R",
+    "covers": [
+     "R1-RF-01"
+    ],
+    "scenario": "No session on send",
+    "expectedOutcome": "refused SC-RF-01",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-027",
+    "kind": "R",
+    "covers": [
+     "R1-RF-02"
+    ],
+    "scenario": "Expired or tampered session on send",
+    "expectedOutcome": "refused SC-RF-02",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-028",
+    "kind": "R",
+    "covers": [
+     "R1-RF-03"
+    ],
+    "scenario": "Session without a resolvable sender binding",
+    "expectedOutcome": "refused SC-RF-03",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-030",
+    "kind": "R",
+    "covers": [
+     "R1-RF-05"
+    ],
+    "scenario": "Sender membership revoked after login",
+    "expectedOutcome": "refused SC-RF-05",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-031",
+    "kind": "R",
+    "covers": [
+     "R1-RF-08"
+    ],
+    "scenario": "Recipient equals sender",
+    "expectedOutcome": "refused SC-RF-08 by default (OC-5)",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-032",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-14"
+    ],
+    "scenario": "Packet resolves, version exists, server digest equals the pinned digest",
+    "expectedOutcome": "classified PK-VERIFIED; admissible",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-033",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-14",
+     "R1-RF-15"
+    ],
+    "scenario": "No packet reference",
+    "expectedOutcome": "refused SC-RF-15",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-034",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-14",
+     "R1-RF-16"
+    ],
+    "scenario": "Reference that does not resolve",
+    "expectedOutcome": "refused SC-RF-16",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-035",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-14",
+     "R1-RF-17"
+    ],
+    "scenario": "Reference to unverified or editable draft content",
+    "expectedOutcome": "refused SC-RF-17",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-036",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-14",
+     "R1-RF-18"
+    ],
+    "scenario": "Named version differs from the resolver version",
+    "expectedOutcome": "refused SC-RF-18",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-037",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-16"
+    ],
+    "scenario": "Submitter hashes the form text and offers it as provenance",
+    "expectedOutcome": "not accepted as immutable provenance; classified mutable or unverified",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-038",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-16",
+     "R1-REQ-14"
+    ],
+    "scenario": "Export draft receipt anchor offered as packet identity",
+    "expectedOutcome": "not accepted; refused SC-RF-17",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-039",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-15"
+    ],
+    "scenario": "Body supplies a send identifier, a recording time and a stage",
+    "expectedOutcome": "ignored or refused; server values used",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-040",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-17"
+    ],
+    "scenario": "Review the owner comparison table against the source locators",
+    "expectedOutcome": "each adaptable and separately authorized item traces to a locator",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-046",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-21",
+     "R1-RF-21"
+    ],
+    "scenario": "Workflow context check returns BLOCK",
+    "expectedOutcome": "refused SC-RF-21",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-052",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-23"
+    ],
+    "scenario": "Producer success status with no verifier read-after-write",
+    "expectedOutcome": "not reported as recorded",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-054",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-24"
+    ],
+    "scenario": "Design option depends on the B2 acceptance, witness or restore problem",
+    "expectedOutcome": "stop and disclose; no successor opened",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-055",
+    "kind": "U",
+    "covers": [
+     "R1-REQ-24"
+    ],
+    "scenario": "Real account, workspace, membership, admin binding, retention, cost, recovery",
+    "expectedOutcome": "UNKNOWN; named as future gates",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-056",
+    "kind": "R",
+    "covers": [
+     "R1-TR-01",
+     "R1-ST-01"
+    ],
+    "scenario": "Direct SC-ST-01 to SC-ST-04 skipping submission",
+    "expectedOutcome": "forbidden transition",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-057",
+    "kind": "R",
+    "covers": [
+     "R1-TR-08",
+     "R1-ST-03"
+    ],
+    "scenario": "Edit after a refusal and resubmit",
+    "expectedOutcome": "new SC-ST-02 with a new request identifier",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-058",
+    "kind": "R",
+    "covers": [
+     "R1-ST-04",
+     "R1-ST-02"
+    ],
+    "scenario": "Attempt to edit or delete a recorded send",
+    "expectedOutcome": "no transition out of SC-ST-04 in this contract",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-059",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-02",
+     "R1-OOS-01",
+     "R1-OOS-02"
+    ],
+    "scenario": "Any path that sets an acknowledged or accepted state",
+    "expectedOutcome": "forbidden; those states are not defined here",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-060",
+    "kind": "U",
+    "covers": [
+     "R1-REQ-07"
+    ],
+    "scenario": "Membership resolver unavailable",
+    "expectedOutcome": "UNKNOWN resolver; recipient refused, not assumed valid",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-061",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-12"
+    ],
+    "scenario": "Admin of the record workspace reads while a foreign admin is denied",
+    "expectedOutcome": "oversight is scoped per workspace",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-062",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-13"
+    ],
+    "scenario": "Service token send",
+    "expectedOutcome": "refused SC-RF-12",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-101",
+    "kind": "U",
+    "covers": [
+     "R1-REQ-21",
+     "R1-TR-04",
+     "R1-ST-05"
+    ],
+    "scenario": "Timeout after submit",
+    "expectedOutcome": "R1-ST-05; no blind retry and no new request for the same fingerprint",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-102",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-05",
+     "R1-ST-06"
+    ],
+    "scenario": "Fresh authoritative lookup by full scoped key and fingerprint under a verified binding finds the record",
+    "expectedOutcome": "R1-ST-06; E2 to E5 satisfied; no second write",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-103",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-07",
+     "R1-ST-08"
+    ],
+    "scenario": "Lookup returns no row while the attempt may still be in flight",
+    "expectedOutcome": "R1-ST-08, not R1-ST-07",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-104",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-07",
+     "R1-ST-08"
+    ],
+    "scenario": "Lookup served by a stale replica or cache returns no row",
+    "expectedOutcome": "R1-ST-08; read is not authoritative",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-105",
+    "kind": "U",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-10"
+    ],
+    "scenario": "A late commit lands after a missing-row lookup",
+    "expectedOutcome": "earlier classification stayed INDETERMINATE; a later fresh authoritative lookup moves to R1-ST-06",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-106",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-06",
+     "R1-ST-07"
+    ],
+    "scenario": "Writer terminal and no late write, fresh read, full key and fingerprint match, authoritative source, verified scope, and no record",
+    "expectedOutcome": "R1-ST-07 admitted as terminal no-record; planned classification only, no mechanism exists (G-TERMINAL NOT_ADMITTED)",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-107",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-07",
+     "R1-ST-08"
+    ],
+    "scenario": "Terminal evidence complete except E1 (writer terminality or no-late-write)",
+    "expectedOutcome": "R1-ST-08; not R1-ST-07",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-108",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-07",
+     "R1-ST-08"
+    ],
+    "scenario": "Terminal evidence complete except E2 (freshness)",
+    "expectedOutcome": "R1-ST-08; not R1-ST-07",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-109",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-07",
+     "R1-ST-08"
+    ],
+    "scenario": "Terminal evidence complete except E3 (matching identity)",
+    "expectedOutcome": "R1-ST-08; not R1-ST-07",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-110",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-07",
+     "R1-ST-08"
+    ],
+    "scenario": "Terminal evidence complete except E4 (authority)",
+    "expectedOutcome": "R1-ST-08; not R1-ST-07",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-111",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-07",
+     "R1-ST-08"
+    ],
+    "scenario": "Terminal evidence complete except E5 (scope)",
+    "expectedOutcome": "R1-ST-08; not R1-ST-07",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-112",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-19",
+     "R1-RF-20",
+     "R1-ST-08"
+    ],
+    "scenario": "While INDETERMINATE the user or client issues a new request with the same fingerprint",
+    "expectedOutcome": "refused R1-RF-20; no automatic retry",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-113",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-09"
+    ],
+    "scenario": "After R1-ST-07 the user submits again with a fresh requestId",
+    "expectedOutcome": "new attempt R1-ST-02 under a new scoped key",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-114",
+    "kind": "U",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-09"
+    ],
+    "scenario": "Same-key replay after R1-ST-07 is wanted",
+    "expectedOutcome": "UNKNOWN; permitted only under a separately specified atomic idempotency guarantee (G-IDEMP), never inferred from absence",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-115",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-21",
+     "R1-ST-05",
+     "R1-ST-08"
+    ],
+    "scenario": "Store reports a persistence failure but terminal evidence is absent",
+    "expectedOutcome": "not R1-RF-27; classified R1-ST-05 or R1-ST-08",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-116",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-21",
+     "R1-RF-27",
+     "R1-TR-02"
+    ],
+    "scenario": "Store reports a persistence failure and E1 to E5 hold with no record",
+    "expectedOutcome": "refused R1-RF-27",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-117",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-11",
+     "R1-ST-07"
+    ],
+    "scenario": "From INDETERMINATE, later evidence satisfies E1 to E5 with no record",
+    "expectedOutcome": "R1-ST-07",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-118",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-22",
+     "R1-ST-08"
+    ],
+    "scenario": "Any automatic transition from R1-ST-08 to R1-ST-02",
+    "expectedOutcome": "forbidden transition",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-119",
+    "kind": "U",
+    "covers": [
+     "R1-REQ-23",
+     "R1-REQ-22"
+    ],
+    "scenario": "Independent non-B2 proof for E1 and E2 is sought on the existing owners",
+    "expectedOutcome": "UNKNOWN; none inspected; G-TERMINAL NOT_ADMITTED and implementation blocked",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-120",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-24",
+     "R1-REQ-22"
+    ],
+    "scenario": "A mechanism for E1 relies on a witness, OS lock or restore step",
+    "expectedOutcome": "disclose B2 dependency, leave NOT_ADMITTED, no successor",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-121",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-18"
+    ],
+    "scenario": "Same scoped key and same fingerprint replayed",
+    "expectedOutcome": "existing attempt outcome returned; no second record",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-122",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-19",
+     "R1-RF-19"
+    ],
+    "scenario": "Same scoped key, different packet version",
+    "expectedOutcome": "refused R1-RF-19, not duplicate success",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-123",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-19",
+     "R1-RF-19"
+    ],
+    "scenario": "Same scoped key, different recipient",
+    "expectedOutcome": "refused R1-RF-19",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-124",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-18"
+    ],
+    "scenario": "Same requestId from a different sender in the same workspace",
+    "expectedOutcome": "independent key; no conflict and no information about the first",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-125",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-18",
+     "R1-REQ-08"
+    ],
+    "scenario": "Same sender and requestId in a different verified workspace",
+    "expectedOutcome": "independent key",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-126",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-18"
+    ],
+    "scenario": "Same logical request with different transport timestamp, retry counter and header order",
+    "expectedOutcome": "same fingerprint; replay",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-127",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-18",
+     "R1-RF-19"
+    ],
+    "scenario": "Evidence pointers reordered, versus evidence pointer set changed, under one key",
+    "expectedOutcome": "reordered is the same fingerprint; changed set is a different fingerprint and refused R1-RF-19",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-128",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-19"
+    ],
+    "scenario": "Same packet version sent to a different recipient under a different requestId",
+    "expectedOutcome": "independent logical send judged on its own bindings and permissions; no global ban",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-129",
+    "kind": "U",
+    "covers": [
+     "R1-REQ-18",
+     "R1-REQ-19",
+     "R1-RF-19"
+    ],
+    "scenario": "Concurrent requests under one key with different fingerprints",
+    "expectedOutcome": "UNKNOWN; exactly one winner and one R1-RF-19 only with an atomic conditional insert (G-IDEMP)",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-130",
+    "kind": "U",
+    "covers": [
+     "R1-REQ-18"
+    ],
+    "scenario": "Concurrent replays of one key and one fingerprint",
+    "expectedOutcome": "UNKNOWN; one attempt only with an atomic conditional insert (G-IDEMP)",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-131",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-19"
+    ],
+    "scenario": "Different packet version to the same recipient under a new requestId",
+    "expectedOutcome": "independent send; no automatic supersession",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-132",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-18"
+    ],
+    "scenario": "A label or draft is edited after admission",
+    "expectedOutcome": "stored fingerprint unchanged",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-133",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-19",
+     "R1-REQ-25"
+    ],
+    "scenario": "Batch or multi-recipient request",
+    "expectedOutcome": "refused; one recipient per logical send",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-134",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-18",
+     "R1-RF-06"
+    ],
+    "scenario": "Identical requestId and fingerprint with an unverified workspace",
+    "expectedOutcome": "refused R1-RF-06; no collision with a verified namespace",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-141",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-20",
+     "R1-RF-04"
+    ],
+    "scenario": "Client-only fallback binding with org_cvf, team_eng and unknown-user, unverified provenance",
+    "expectedOutcome": "refused R1-RF-04",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-142",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-20"
+    ],
+    "scenario": "Verified source returns org_cvf and team_eng for a real member",
+    "expectedOutcome": "admissible; default-looking values are legitimate when verified",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-143",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-20",
+     "R1-RF-04"
+    ],
+    "scenario": "Identical strings produced by the development or test fallback",
+    "expectedOutcome": "refused R1-RF-04",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-144",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-20",
+     "R1-RF-03"
+    ],
+    "scenario": "Empty or malformed team or org field",
+    "expectedOutcome": "refused R1-RF-03",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-145",
+    "kind": "U",
+    "covers": [
+     "R1-REQ-20"
+    ],
+    "scenario": "Verified source returns the user value unknown-user",
+    "expectedOutcome": "UNKNOWN; refused only if the verified identity contract marks it a sentinel (G-BIND)",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-146",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-11",
+     "R1-REQ-20"
+    ],
+    "scenario": "Same-workspace owner or admin with verified provenance reads",
+    "expectedOutcome": "ALLOW oversight read",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-147",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-11",
+     "R1-RF-28"
+    ],
+    "scenario": "Same-workspace owner or admin with unverified provenance reads",
+    "expectedOutcome": "DENY R1-RF-28",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-148",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-10",
+     "R1-RF-23"
+    ],
+    "scenario": "Principal with workflow role orchestrator but TeamRole viewer reads another's record",
+    "expectedOutcome": "DENY R1-RF-23; workflow role is not read authority",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-149",
+    "kind": "U",
+    "covers": [
+     "R1-REQ-20"
+    ],
+    "scenario": "Development or test environment where the binding lookup is always null",
+    "expectedOutcome": "UNKNOWN; a verified-binding test double is needed (G-BIND, G-CASE)",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-151",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-25",
+     "R1-RF-26"
+    ],
+    "scenario": "OC-1: break-glass reads a transfer record",
+    "expectedOutcome": "deny recommendation; unratified",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-152",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-25",
+     "R1-RF-17"
+    ],
+    "scenario": "OC-2: send of an unverified packet",
+    "expectedOutcome": "refuse recommendation; unratified",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-153",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-25",
+     "R1-RF-08"
+    ],
+    "scenario": "OC-5: send to self",
+    "expectedOutcome": "refuse recommendation; unratified",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-154",
+    "kind": "P",
+    "covers": [
+     "R1-REQ-25",
+     "R1-REQ-17"
+    ],
+    "scenario": "OC-3: review the owner comparison for shapes A, B and C",
+    "expectedOutcome": "source-backed facts only; no owner or store selected",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-155",
+    "kind": "R",
+    "covers": [
+     "R1-REQ-25"
+    ],
+    "scenario": "Any OC default treated as operator-approved because the order was executed",
+    "expectedOutcome": "not allowed; all OC stay unratified",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-159",
+    "kind": "U",
+    "covers": [
+     "R1-REQ-22",
+     "R1-TR-07",
+     "R1-ST-08"
+    ],
+    "scenario": "Lookup cannot decide because the store is unreadable",
+    "expectedOutcome": "R1-ST-08; no retry, no new request, no send reported",
+    "status": "NOT_EXECUTED_PLANNED"
+   },
+   {
+    "caseId": "R1-CASE-158",
+    "kind": "P",
+    "covers": [
+     "R1-RF-20",
+     "R1-REQ-19"
+    ],
+    "scenario": "An unresolved attempt exists for one recipient and the sender sends the same packet to another recipient",
+    "expectedOutcome": "the second send is not blocked by R1-RF-20",
+    "status": "NOT_EXECUTED_PLANNED"
+   }
+  ]
+ },
+ "embeddedCrossCheck": {
+  "kind": "static identifier, case, seal and map cross-check, not a behavioral test",
+  "rerun": "extract scriptSource to a file, then: python -c \"import json;e=json.load(open(EVIDENCE_PATH,encoding='utf8'));exec(e['embeddedCrossCheck']['scriptSource']);print(json.dumps(r1_cross_check(CONTRACT_PATH,EVIDENCE_PATH),indent=1))\"",
+  "contractPath": "docs/reference/CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md",
+  "evidencePath": "docs/reviews/evidence/cvf-ncr-work-transfer-send-contract-r1-worker-evidence-2026-10-02.json",
+  "scriptSource": "import hashlib, json, pathlib, re\n\ndef r1_cross_check(contract_path, evidence_path):\n    sha = lambda b: hashlib.sha256(b).hexdigest()\n    md = pathlib.Path(contract_path).read_text(encoding=\"utf8\")\n    e = json.loads(pathlib.Path(evidence_path).read_text(encoding=\"utf8\"))\n    ids = lambda pat: sorted(set(re.findall(pat, md)))\n    declared = {\n        \"requirements\": ids(r\"R1-REQ-\\d\\d\"), \"refusals\": ids(r\"R1-RF-\\d\\d\"), \"states\": ids(r\"R1-ST-\\d\\d\"),\n        \"outOfScope\": ids(r\"R1-OOS-\\d\\d\"), \"transitions\": ids(r\"R1-TR-\\d\\d\"),\n    }\n    ledger = e[\"ledger\"]\n    ledgerMatches = all(declared[k] == sorted(ledger[k]) for k in declared)\n    cases = e[\"casePlan\"][\"cases\"]\n    caseIds = [c[\"caseId\"] for c in cases]\n    needed = set(x for v in declared.values() for x in v)\n    covered = set(x for c in cases for x in c[\"covers\"])\n    uncovered = sorted(needed - covered)\n    unknownCovers = sorted(covered - needed)\n    allUnexecuted = all(c[\"status\"] == \"NOT_EXECUTED_PLANNED\" for c in cases)\n    uniqueCases = len(caseIds) == len(set(caseIds))\n    # seal recompute\n    s = e[\"r1Seal\"]\n    raw = s[\"canonicalPayload\"].encode(\"utf-8\")\n    obj = json.loads(s[\"canonicalPayload\"])\n    recanon = json.dumps(obj, sort_keys=True, separators=(\",\", \":\"), ensure_ascii=True).encode(\"utf-8\")\n    sealDigestOk = sha(raw) == s[\"digestSha256\"] and recanon == raw and not raw.startswith(b\"\\xef\\xbb\\xbf\") and not raw.endswith(b\"\\n\")\n    drift = sorted(p for p, h in obj[\"sourceSha256\"].items() if sha(pathlib.Path(p).read_bytes()) != h)\n    # locators\n    bad = []\n    for l in e[\"locators\"]:\n        lines = pathlib.Path(l[\"file\"]).read_text(encoding=\"utf8\").split(\"\\n\")\n        if not (l[\"line\"] <= len(lines) and l[\"expectedSubstring\"] in lines[l[\"line\"] - 1]):\n            bad.append(l[\"id\"])\n    # original-to-R1 mapping completeness\n    inv = e[\"originalInventory\"]\n    m = e[\"originalToR1Map\"]\n    mappedIds = set(x[\"original\"] for x in m[\"ids\"])\n    mappedCases = set(x[\"original\"] for x in m[\"cases\"])\n    origIds = set(x for k in (\"requirements\", \"refusals\", \"states\", \"outOfScope\", \"transitions\") for x in inv[k])\n    missingIdMap = sorted(origIds - mappedIds)\n    missingCaseMap = sorted(set(inv[\"cases\"]) - mappedCases)\n    r1CaseRefs = set(c for x in m[\"cases\"] for c in x[\"r1Cases\"])\n    danglingMap = sorted(r1CaseRefs - set(caseIds))\n    disp_ok = all(x[\"disposition\"] in (\"retained\", \"revised\", \"superseded\") and x[\"reason\"] for x in m[\"cases\"] + m[\"ids\"])\n    ok = (ledgerMatches and not uncovered and not unknownCovers and allUnexecuted and uniqueCases and sealDigestOk\n          and not drift and not bad and not missingIdMap and not missingCaseMap and not danglingMap and disp_ok)\n    return {\n        \"result\": \"PASS_STATIC_ONLY\" if ok else \"FAIL\",\n        \"declaredCounts\": {k: len(v) for k, v in declared.items()},\n        \"ledgerMatchesDocument\": ledgerMatches,\n        \"caseCount\": len(cases), \"uniqueCaseIds\": uniqueCases,\n        \"uncoveredIds\": uncovered, \"casesCoverUnknownIds\": unknownCovers,\n        \"allCasesNotExecutedPlanned\": allUnexecuted,\n        \"sealDigestRecomputed\": sealDigestOk,\n        \"sourceHashDriftSinceSeal\": drift,\n        \"locatorsTotal\": len(e[\"locators\"]), \"locatorsUnresolved\": bad,\n        \"originalIdsUnmapped\": missingIdMap, \"originalCasesUnmapped\": missingCaseMap,\n        \"mapReferencesMissingR1Case\": danglingMap,\n        \"mapDispositionsComplete\": disp_ok,\n    }\n",
+  "actualResult": {
+   "result": "PASS_STATIC_ONLY",
+   "declaredCounts": {
+    "requirements": 25,
+    "refusals": 28,
+    "states": 8,
+    "outOfScope": 2,
+    "transitions": 11
+   },
+   "ledgerMatchesDocument": true,
+   "caseCount": 100,
+   "uniqueCaseIds": true,
+   "uncoveredIds": [],
+   "casesCoverUnknownIds": [],
+   "allCasesNotExecutedPlanned": true,
+   "sealDigestRecomputed": true,
+   "sourceHashDriftSinceSeal": [],
+   "locatorsTotal": 28,
+   "locatorsUnresolved": [],
+   "originalIdsUnmapped": [],
+   "originalCasesUnmapped": [],
+   "mapReferencesMissingR1Case": [],
+   "mapDispositionsComplete": true
+  }
+ },
+ "executedRuntimeEvidence": "NONE",
+ "claimBoundary": "contract design and static coverage only; no runtime, ratification, real binding, send, acknowledgment, acceptance, store, cost or recovery claim; implementation NOT_ADMITTED",
+ "finalHashes": {
+  "docs/reference/CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md": "27d28911f12dd00f177e4120bc69e2dd18d36d168387eda48c0054e26bbaf5bc",
+  "note": "evidence JSON and return are not hashed here to avoid a self-reference cycle; the seal digest is separate"
+ },
+ "localReviewQualification": {
+  "disposition": "ACCEPTED_BOUNDED_DOCUMENTATION_REPAIR_ONLY",
+  "designRatified": false,
+  "implementationAdmitted": false,
+  "runtimeProof": "NONE",
+  "staticReconciliation": {
+   "result": "PASS_STATIC_ONLY",
+   "declaredCounts": {
+    "requirements": 25,
+    "refusals": 28,
+    "states": 8,
+    "outOfScope": 2,
+    "transitions": 11
+   },
+   "ledgerMatchesDocument": true,
+   "caseCount": 100,
+   "uniqueCaseIds": true,
+   "uncoveredIds": [],
+   "casesCoverUnknownIds": [],
+   "allCasesNotExecutedPlanned": true,
+   "sealDigestRecomputed": true,
+   "sourceHashDriftSinceSeal": [],
+   "locatorsTotal": 28,
+   "locatorsUnresolved": [],
+   "originalIdsUnmapped": [],
+   "originalCasesUnmapped": [],
+   "mapReferencesMissingR1Case": [],
+   "mapDispositionsComplete": true,
+   "sourceHashesVerified": 20,
+   "originalActualIdCount": 67,
+   "originalActualCaseCount": 62,
+   "originalInventoryComparedToActual": true,
+   "idMappingTargetsValid": true,
+   "historicalAndOutputHashesVerified": true,
+   "chronologyIndependentlyAttested": false
+  },
+  "originalWorkerRawDigests": {
+   "docs/reference/CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md": "9e70f611d4d3aee012e142dee85c027bb5422ae60367b7efbddcf3871f87454a",
+   "docs/reviews/evidence/cvf-ncr-work-transfer-send-contract-r1-worker-evidence-2026-10-02.json": "b9f7d75c775f42e4ddb7ac360d156f7a0c2efccb713c44da4b9ad37a9b1d1e3a",
+   "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_WORKER_RETURN_2026-10-02.md": "e353e651212f0a2148ac0e448196e8c2c35c23f0678c5fa3a2c3790a905dc4ac"
+  },
+  "chronologyAttested": false,
+  "scalarReturnCorrections": [
+   "67 original identifiers (52 retained+10 revised+5 superseded), not 62 or 56",
+   "hash/timestamp does not prove pre-authoring chronology"
+  ],
+  "openChoices": "OC-1..5 and U-3 unratified; physical owner unselected",
+  "bindingBoundary": "verified-binding double future synthetic proof only; G-BIND/G-CASE UNKNOWN",
+  "hypotheticalPositiveCases": [
+   "R1-CASE-106",
+   "R1-CASE-117"
+  ],
+  "terminalGate": "NOT_ADMITTED",
+  "rootDisposition": "STOP_REASSESS_ARCHITECTURE",
+  "successorScope": "NO_SUCCESSOR",
+  "controllingReview": "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_COMPLETION_2026-10-02.md"
+ }
+}
