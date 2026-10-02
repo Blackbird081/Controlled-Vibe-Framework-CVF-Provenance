@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md",
     "workOrderSha256": "382b7ce30e2b844331a33ae33b49ce414d5fee217156757933bcd8dd6e56dc6d"
   },
-  "currentAuthoritySyncReason": "D081 explicit operator send/read-scope design choice; D082 three-output contract/design packet at bca7bb6b8c9de58d0c8552e249925fa5b56ffe74. Detailed design pending, no implementation/data/effect grant; WT-F02/WT-F03 closed and B2 STOP unchanged.",
+  "currentAuthoritySyncReason": "D083 proposal evidence review at 6b025b15528976bcf4fea5a950f5db525f090eb9; DESIGN_NOT_RATIFIED, root open D01-D04/OC, no implementation or fresh worker grant. Historical design packet retained; next consolidated Local repair/disposition on same root, B2 STOP/effects unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
