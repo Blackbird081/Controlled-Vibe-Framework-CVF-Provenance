@@ -1,0 +1,251 @@
+{
+  "schemaVersion": "cvf.ncrVomQuickStartClaimAlignment.workerEvidence.v1",
+  "batchId": "CVF-NCR-VOM-QUICK-START-CLAIM-ALIGNMENT",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_VOM_QUICK_START_CLAIM_ALIGNMENT_2026-10-02.md",
+  "executionBaseHead": "2de8db02d24c8f160f762334891435dad4c5ed20",
+  "dispatchBaseHead": "221e26998cac61457a99d9e767fc2c836f5dfb9a",
+  "cleanBaseAtStart": true,
+  "twoOutputsAbsentAtStart": true,
+  "preImplementationGate": "COMPLIANT exit 0 before any edit",
+  "claimLevel": "PASS_STATIC_ONLY",
+  "executionBoundary": "Document reading and static checks only. No setup command, Web UI, IDE, provider or demo was run. The financial example is illustrative and unexecuted.",
+  "target": "ECOSYSTEM/operating-model/CVF_VOM_QUICK_START.md",
+  "preEdit": {
+    "workingTreeSha256": "c07dcc7b3cfe3e3eb7e933973f20a87246f7475b752678863dd13504483e6647",
+    "workingTreeLines": 173,
+    "workingTreeLineEndings": "173 CRLF, 0 bare LF",
+    "blobSha256": "e03fb3ad40f4e2f827dabc0b2811900eb14a0aaa5da008973880dd57bff5e4c1",
+    "blobLineEndings": "173 LF, 0 CRLF",
+    "note": "The working copy is CRLF and the Git blob at HEAD is LF; the two digests differ only by line endings and are recorded separately. The edit kept CRLF."
+  },
+  "final": {
+    "workingTreeSha256": "bd8af4e6fdae5fc3cb4103df5704fd02dcaaac5f09a1742f1dbefeb95cf5a7a0",
+    "workingTreeLines": 179
+  },
+  "lineCaps": {
+    "ECOSYSTEM/operating-model/CVF_VOM_QUICK_START.md": 220,
+    "docs/reviews/evidence/cvf-ncr-vom-quick-start-claim-alignment-2026-10-02.json": 600,
+    "docs/reviews/CVF_CVF_NCR_VOM_QUICK_START_CLAIM_ALIGNMENT_WORKER_RETURN_2026-10-02.md": 650
+  },
+  "exactPaths": [
+    "ECOSYSTEM/operating-model/CVF_VOM_QUICK_START.md",
+    "docs/reviews/evidence/cvf-ncr-vom-quick-start-claim-alignment-2026-10-02.json",
+    "docs/reviews/CVF_CVF_NCR_VOM_QUICK_START_CLAIM_ALIGNMENT_WORKER_RETURN_2026-10-02.md"
+  ],
+  "readOnlySourceSha256": {
+    "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md": "0ed3c44eebdc6b673c8a7533f153362e457fdfffce7ce4c0d9a7b2c806820a74",
+    "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md": "3ff99a14a415e53e338ec1a4edf2feddfd933812b9ef73dd0c50396baf86a680",
+    "ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md": "fc006001e9a25ed00a40392499cb7e58ff814d8522f30db60e12e63c198ce945",
+    "ECOSYSTEM/doctrine/CVF_LAYER_MODEL.md": "b3529fdd4d71bb69be3558230267042549d482aeb4732c3015048b86733156a0",
+    "ECOSYSTEM/doctrine/CVF_DOCTRINE_RULES.md": "54e8724a53ae90e43dcaf3522908c9926c3ada1a114f7196eb55a6ff91e2d54b",
+    "ECOSYSTEM/operating-model/CVF_AGENT_OPERATING_MODEL.md": "b4d6e3aff3316ce84bfd5568bd69ed1626592fa197c1f6e6138d74d6f39cad0c",
+    "ECOSYSTEM/operating-model/CVF_BUILDER_MODEL.md": "059e66f6a56812a3afc9067c3f225e45c18c83adcb2f7ddf90d2564f51823d43",
+    "docs/guides/CVF_QUICK_ORIENTATION.md": "ff75a3a51457778e896178f917fecc274b29f29b1be2775ec15b3c736735e35d",
+    "docs/reviews/CVF_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_COMPLETION_2026-10-02.md": "3b5a4c3901dcfaa2ef5d9297f28e2f26738ddb8cdc4be33b69924339ac8bbe17",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md": "388401d6bd6318d11187b9f293c3cc22295fb9ad635dde84c69046ace9d22ceb"
+  },
+  "allowedSetupEdits": [
+    [
+      "3. AI s\u1ebd t\u1ef1 tu\u00e2n th\u1ee7 4-phase process v\u00e0 risk model.\n",
+      "3. \u0110\u00e2y ch\u1ec9 l\u00e0 y\u00eau c\u1ea7u b\u1eb1ng v\u0103n b\u1ea3n: n\u00f3 gi\u00fap AI l\u00e0m theo quy tr\u00ecnh, nh\u01b0ng kh\u00f4ng c\u00f3 ngh\u0129a CVF ch\u1eb7n hay ghi l\u1ea1i m\u1ecdi thao t\u00e1c c\u1ee7a phi\u00ean \u0111\u00f3. Ki\u1ec3m so\u00e1t c\u00f3 th\u1ef1c thi n\u1eb1m \u1edf nh\u1eefng b\u1ec1 m\u1eb7t \u0111\u00e3 t\u00edch h\u1ee3p CVF. Xem th\u00eam [GET_STARTED](../../docs/GET_STARTED.md).\n"
+    ],
+    [
+      "3. [141 Skills](../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/) \u2014 Th\u01b0 vi\u1ec7n k\u1ef9 n\u0103ng s\u1eb5n c\u00f3",
+      "3. [Th\u01b0 vi\u1ec7n k\u1ef9 n\u0103ng](../../EXTENSIONS/CVF_v1.5.2_SKILL_LIBRARY_FOR_END_USERS/) \u2014 Th\u01b0 vi\u1ec7n k\u1ef9 n\u0103ng s\u1eb5n c\u00f3"
+    ]
+  ],
+  "protectedSetupTokens": [
+    "git clone https://github.com/Blackbird081/Controlled-Vibe-Framework-CVF.git",
+    "cd Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+    "npm install && npm run dev",
+    "http://localhost:3000",
+    "D:\\MyWorkspace\\",
+    ".Controlled-Vibe-Framework-CVF\\",
+    "\u0110\u1ecdc CVF rules tr\u01b0\u1edbc khi l\u00e0m vi\u1ec7c"
+  ],
+  "unchangedSections": [
+    [
+      "### B\u1ea1n KH\u00d4NG c\u1ea7n bi\u1ebft code",
+      "---\n\n## 2."
+    ],
+    [
+      "## 7. \u0110i \u0111\u00e2u ti\u1ebfp?",
+      "> **Nguy\u00ean t\u1eafc v\u00e0ng:**"
+    ]
+  ],
+  "mustContain": [
+    "b\u1ea3y quy\u1ebft \u0111\u1ecbnh",
+    "ch\u01b0a ch\u1ea1y",
+    "d\u1eef li\u1ec7u gi\u1ea3",
+    "Approval Continuity",
+    "Risk Classification",
+    "quy tr\u00ecnh b\u1eb1ng v\u0103n b\u1ea3n",
+    "Th\u01b0 vi\u1ec7n k\u1ef9 n\u0103ng",
+    "kh\u00f4ng ph\u1ea3i t\u01b0 v\u1ea5n t\u00e0i ch\u00ednh"
+  ],
+  "mustNotContain": [
+    "CVF t\u1ef1 \u0111\u1ed9ng enforce",
+    "AI s\u1ebd t\u1ef1 tu\u00e2n th\u1ee7",
+    "sau m\u1ed7i b\u01b0\u1edbc",
+    "141 Skills",
+    "R0-R1",
+    "Ph\u00ea duy\u1ec7t t\u1eebng b\u01b0\u1edbc",
+    "CVF s\u1ebd \u0111\u1ea3m b\u1ea3o AI hi\u1ec3u \u0111\u00fang",
+    "R1 (ch\u1ec9 \u0111\u1ecdc d\u1eef li\u1ec7u",
+    "R3 \u2014 c\u1ea7n ph\u00ea duy\u1ec7t ri\u00eang",
+    "AI KH\u00d4NG t\u1ef1 g\u1eedi email",
+    "4 giai \u0111o\u1ea1n b\u1eaft bu\u1ed9c"
+  ],
+  "claimLedger": [
+    {
+      "id": "V-1",
+      "area": "external IDE compliance",
+      "before": "Section 4 way 2 step 3: 'AI s\u1ebd t\u1ef1 tu\u00e2n th\u1ee7 4-phase process v\u00e0 risk model.'",
+      "after": "Reading the rules is a written request; it does not mean CVF blocks or records the session; enforcement lives at integrated surfaces; link to GET_STARTED added.",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md Phan 2; ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md sections 2 and 3",
+      "sourceSha256": "fc006001e9a25ed00a40392499cb7e58ff814d8522f30db60e12e63c198ce945",
+      "proofClass": "FROZEN_DOCTRINE plus accepted general guide",
+      "decision": "CORRECTED"
+    },
+    {
+      "id": "V-2",
+      "area": "automatic enforcement of everything",
+      "before": "Section 6: 'CVF t\u1ef1 \u0111\u1ed9ng enforce'; section 1: AI 'kh\u00f4ng \u0111\u01b0\u1ee3c t\u1ef1 \u00fd r\u1ebd'; Audit 'm\u1ecdi h\u00e0nh \u0111\u1ed9ng'",
+      "after": "Enforcement and recording are stated for integrated surfaces only; elsewhere the pillars are written workflow; Audit limited to controlled actions. Pillar meanings kept.",
+      "source": "ECOSYSTEM/operating-model/CVF_AGENT_OPERATING_MODEL.md Policy Enforcement; ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md section 5",
+      "sourceSha256": "b4d6e3aff3316ce84bfd5568bd69ed1626592fa197c1f6e6138d74d6f39cad0c",
+      "proofClass": "L3 operating model plus frozen doctrine",
+      "decision": "CORRECTED"
+    },
+    {
+      "id": "V-3",
+      "area": "understanding guarantee",
+      "before": "'CVF s\u1ebd \u0111\u1ea3m b\u1ea3o AI hi\u1ec3u \u0111\u00fang'",
+      "after": "CVF asks for the intent to be clarified; the user still checks understanding.",
+      "source": "ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md section 10 (control the rules, not the agents)",
+      "sourceSha256": "fc006001e9a25ed00a40392499cb7e58ff814d8522f30db60e12e63c198ce945",
+      "proofClass": "FROZEN_DOCTRINE",
+      "decision": "CORRECTED"
+    },
+    {
+      "id": "V-4",
+      "area": "lifecycle",
+      "before": "'4 giai \u0111o\u1ea1n b\u1eaft bu\u1ed9c'; 'kh\u00f4ng \u0111\u01b0\u1ee3c nh\u1ea3y b\u01b0\u1edbc' limited to Discovery before Design",
+      "after": "Four steps kept as shorthand with a link to the seven governed decisions; SPEC and WORK ORDER named as mandatory boundaries; no new enum values.",
+      "source": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md Purpose and Lifecycle Map",
+      "sourceSha256": "3ff99a14a415e53e338ec1a4edf2feddfd933812b9ef73dd0c50396baf86a680",
+      "proofClass": "CANONICAL_STANDARD",
+      "decision": "CONTEXTUALIZED"
+    },
+    {
+      "id": "V-5",
+      "area": "approval after every phase",
+      "before": "'Ai ph\u00ea duy\u1ec7t? B\u1ea1n \u2014 sau m\u1ed7i b\u01b0\u1edbc'; 'Sau m\u1ed7i giai \u0111o\u1ea1n... AI ch\u1ec9 ti\u1ebfp t\u1ee5c khi b\u1ea1n \u0111\u1ed3ng \u00fd'",
+      "after": "Approval at boundaries that need it; continuation within allowed scope while objective, path/action class, risk, external-effect class and commit owner are unchanged; link to the carrier section.",
+      "source": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md Governance Latency and Approval Continuity",
+      "sourceSha256": "0ed3c44eebdc6b673c8a7533f153362e457fdfffce7ce4c0d9a7b2c806820a74",
+      "proofClass": "CANONICAL_RULE",
+      "decision": "CORRECTED"
+    },
+    {
+      "id": "V-6",
+      "area": "risk table and start-low tip",
+      "before": "R0 to R3 table by file count and 'Ph\u00ea duy\u1ec7t t\u1eebng b\u01b0\u1edbc'; tip 'B\u1eaft \u0111\u1ea7u \u1edf R0-R1'; golden rule 'R0-R1'",
+      "after": "Table removed; four one-line meanings from the carrier; contextual classification; production data, external APIs, security or governance behavior at least R2; no ceiling from file count or familiarity; link to the carrier section.",
+      "source": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md Risk Classification",
+      "sourceSha256": "0ed3c44eebdc6b673c8a7533f153362e457fdfffce7ce4c0d9a7b2c806820a74",
+      "proofClass": "CANONICAL_RULE",
+      "decision": "REPLACED_WITH_SOURCED_SUMMARY"
+    },
+    {
+      "id": "V-7",
+      "area": "financial example",
+      "before": "Report assigned R1 for reading data and R3 for email, presented as a factual scenario",
+      "after": "Marked illustrative, unexecuted, synthetic data, not financial advice; no level assigned to reading unspecified data; email described as an external effect needing separate permission.",
+      "source": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md Risk Classification and Approval Continuity (external effect is a boundary)",
+      "sourceSha256": "0ed3c44eebdc6b673c8a7533f153362e457fdfffce7ce4c0d9a7b2c806820a74",
+      "proofClass": "CANONICAL_RULE",
+      "decision": "QUALIFIED"
+    },
+    {
+      "id": "V-8",
+      "area": "skill count",
+      "before": "'141 Skills' label",
+      "after": "Neutral 'Th\u01b0 vi\u1ec7n k\u1ef9 n\u0103ng' link; no number.",
+      "source": "no current count source was located; count removed rather than ratified",
+      "sourceSha256": null,
+      "proofClass": "UNKNOWN_REMOVED",
+      "decision": "NEUTRALIZED"
+    },
+    {
+      "id": "V-9",
+      "area": "document date",
+      "before": "C\u1eadp nh\u1eadt: 2026-03-09",
+      "after": "Original date kept and the 2026-10-02 documentation revision added.",
+      "source": "documentation revision only",
+      "sourceSha256": null,
+      "proofClass": "NOT_APPLICABLE",
+      "decision": "UPDATED"
+    }
+  ],
+  "retained": [
+    "Policy/Identity/Execution/Audit pillar meaning",
+    "four-step journey as shorthand",
+    "all section 4 setup commands, paths and ports",
+    "section 7 navigation table",
+    "the 'B\u1ea1n KH\u00d4NG c\u1ea7n bi\u1ebft code' subsection",
+    "L3 header line"
+  ],
+  "contradictionsNotResolved": [
+    "VOM Web UI sentence 'giao di\u1ec7n tr\u1ef1c quan, h\u1ed7 tr\u1ee3 ti\u1ebfng Vi\u1ec7t' was outside the claim class and was left as is",
+    "pre-existing broken links in VOM, if any, are listed by the static check and were not repaired"
+  ],
+  "advisoryReaderCases": {
+    "kind": "agent advisory reading, not a human usability study and not a runtime test",
+    "status": "behavioral cases NOT_EXECUTED_PLANNED",
+    "cases": [
+      {
+        "id": "A1",
+        "question": "If I tell my IDE agent to read CVF rules, is it enforced?",
+        "anchor": "section 4 way 2 step 3",
+        "answer": "No. It is a written request; enforcement exists at integrated surfaces."
+      },
+      {
+        "id": "A2",
+        "question": "Do I approve after every phase?",
+        "anchor": "section 2 step 4",
+        "answer": "Only at boundaries that need approval; the agent continues within the allowed scope while objective, path, risk, effect class and commit owner are unchanged."
+      },
+      {
+        "id": "A3",
+        "question": "Is the four-step flow the real process?",
+        "anchor": "section 2 opening note",
+        "answer": "It is shorthand; the governed chain has seven decisions and SPEC and WORK ORDER still apply."
+      },
+      {
+        "id": "A4",
+        "question": "Is the finance example real, and what level is it?",
+        "anchor": "section 5",
+        "answer": "Illustrative, synthetic and unexecuted; no level is assigned to reading data and sending email is a separately permitted external effect."
+      }
+    ]
+  },
+  "proofIdJoin": {
+    "PROOF-OWNER": "target file; claimLedger V-1 to V-9; retained",
+    "PROOF-AUTHORITY": "claimLedger sources and readOnlySourceSha256",
+    "PROOF-IDENTITY": "claimLedger V-1 and V-2; advisory case A1",
+    "PROOF-RECOVERY": "claimLedger V-5 and V-7; advisory cases A2 and A4",
+    "PROOF-BOUNDARY": "allowedSetupEdits, protectedSetupTokens, unchangedSections, retained",
+    "PROOF-CASE-PLAN": "advisoryReaderCases",
+    "PROOF-SOURCE": "preEdit, final, readOnlySourceSha256 and staticCrossCheck",
+    "PROOF-RETURN": "docs/reviews/CVF_CVF_NCR_VOM_QUICK_START_CLAIM_ALIGNMENT_WORKER_RETURN_2026-10-02.md"
+  },
+  "staticCrossCheck": {
+    "command": "python -c \"import json;d=json.load(open('docs/reviews/evidence/cvf-ncr-vom-quick-start-claim-alignment-2026-10-02.json',encoding='utf-8'));exec(d['staticCrossCheck']['script'])\"",
+    "expectedExit": 0,
+    "recordedExit": 0,
+    "recordedResult": "PASS_STATIC_ONLY, no failures, no pre-existing broken links",
+    "script": "import hashlib,os,re,subprocess,sys\nfail=[]\nT=d['target']\ndef raw(p): return open(p,'rb').read()\ndef txt(p): return raw(p).decode('utf-8')\ndef head(p): return subprocess.run(['git','show','HEAD:'+p],capture_output=True).stdout\nfor p,h in d['readOnlySourceSha256'].items():\n    if hashlib.sha256(raw(p)).hexdigest()!=h: fail.append('source drift '+p)\nif hashlib.sha256(head(T)).hexdigest()!=d['preEdit']['blobSha256']: fail.append('blob hash')\nif hashlib.sha256(raw(T)).hexdigest()!=d['final']['workingTreeSha256']: fail.append('final hash')\nr=raw(T)\nif r.count(b'\\r\\n')!=r.count(b'\\n'): fail.append('line endings not uniformly CRLF')\ncur=txt(T).replace('\\r\\n','\\n'); old=head(T).decode('utf-8')\nif len(cur.splitlines())>d['lineCaps'][T]: fail.append('size')\ndef sect(t,a,b):\n    i=t.index(a); j=t.index(b) if b else len(t); return t[i:j]\n# protected setup block: section 4 identical except the two allowed lines\ns_old=sect(old,'## 4. B\u1eaft \u0111\u1ea7u ngay','## 5.'); s_new=sect(cur,'## 4. B\u1eaft \u0111\u1ea7u ngay','## 5.')\nfor o,n in d['allowedSetupEdits']:\n    if s_old.count(o)!=1 or s_new.count(n)!=1: fail.append('allowed edit not found '+o[:30])\n    s_old=s_old.replace(o,'@@'); s_new=s_new.replace(n,'@@')\nif s_old!=s_new: fail.append('setup block changed beyond allowed edits')\nfor cmd in d['protectedSetupTokens']:\n    if cmd not in s_new: fail.append('setup token missing '+cmd)\n# untouched narrative\nfor a,b in d['unchangedSections']:\n    if sect(old,a,b)!=sect(cur,a,b): fail.append('unexpected change in '+a)\nfor t in d['mustNotContain']:\n    if t in cur: fail.append('stale claim: '+t)\nfor t in d['mustContain']:\n    if t not in cur: fail.append('missing: '+t)\ndef slug(h):\n    h=h.strip().lower(); h=re.sub(r'[^\\w\\s-]','',h); return re.sub(r'\\s','-',h)\ndef links(t):\n    return [m.group(1) for m in re.finditer(r'\\]\\(([^)\\s]+)\\)',t)]\ndef bad(t):\n    out=[]\n    for l in links(t):\n        if l.startswith(('http:','https:','mailto:')): continue\n        f,_,a=l.partition('#')\n        p=os.path.normpath(os.path.join(os.path.dirname(T),f)) if f else T\n        if not os.path.exists(p): out.append(l); continue\n        if a and os.path.isfile(p):\n            hs=[slug(m.group(1)) for m in re.finditer(r'(?m)^#{1,6}\\s+(.*)$',open(p,encoding='utf-8').read())]\n            if a not in hs: out.append(l)\n    return out\nnew_bad=[l for l in bad(cur) if l not in bad(old)]\nif new_bad: fail.append('new broken links '+repr(new_bad))\nst=subprocess.run(['git','status','--short','--untracked-files=all'],capture_output=True,text=True).stdout.splitlines()\nif sorted(x[3:] for x in st)!=sorted(d['exactPaths']): fail.append('path set '+repr(st))\nprint('FAIL' if fail else 'PASS_STATIC_ONLY',ascii(fail),'preexistingBrokenLinks',ascii(bad(old)))\nsys.exit(1 if fail else 0)\n"
+  },
+  "claimBoundary": "Document consistency only. No new operating policy, runtime enforcement, human usability, provider, video or public claim."
+}
