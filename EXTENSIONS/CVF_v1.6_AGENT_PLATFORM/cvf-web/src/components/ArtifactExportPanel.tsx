@@ -171,6 +171,7 @@ const LABELS = {
     errorPreviewKnown: 'The preview still shows build #{n}, not this build.',
     errorPreviewUnknown: 'The preview still shows an earlier result of unknown source, not this build.',
     printBlocked: 'Print preview did not open. Allow pop-ups for this site and try again. Nothing was printed.',
+    previewUnavailable: 'Preview unavailable: this packet could not be shown safely here. Copy, Download and Print still use the full HTML.',
   },
   vi: {
     title: 'Xuất gói rà soát',
@@ -226,6 +227,7 @@ const LABELS = {
     errorPreviewKnown: 'Bản xem trước vẫn là lần tạo #{n}, không phải lần tạo này.',
     errorPreviewUnknown: 'Bản xem trước vẫn là kết quả cũ không rõ nguồn, không phải lần tạo này.',
     printBlocked: 'Không mở được bản xem để in. Hãy cho phép cửa sổ bật lên cho trang này rồi thử lại. Chưa in gì cả.',
+    previewUnavailable: 'Không hiển thị được bản xem trước một cách an toàn. Sao chép, tải và in vẫn dùng toàn bộ HTML.',
   },
 };
 
@@ -240,8 +242,8 @@ const PRINT_FRAME_POLICY = "default-src 'none'; style-src 'unsafe-inline'; img-s
 // empty sandbox still loads passive resources (images, stylesheets, fonts, nested frames), so
 // the derived Preview document denies every network and data: resource and keeps only inline
 // styles. Data and blob images are blocked on purpose (unlike Print): Preview shows the text
-// and inline-styled layout, not embedded media. Not a sanitizer; navigation (meta refresh,
-// links) is not covered by CSP.
+// and inline-styled layout, not embedded media. Not a sanitizer; CSP does not cover navigation,
+// which containPreviewNavigation removes from the derived document before the frame exists.
 export const PREVIEW_FRAME_POLICY = "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'";
 const PREVIEW_POLICY_META = `<meta http-equiv="Content-Security-Policy" content="${PREVIEW_FRAME_POLICY}">`;
 // Only the plain doctype is split on: anything else gets the policy first, because a
@@ -255,6 +257,72 @@ export function buildPreviewDocument(html: string): string {
   const doctype = LEADING_PLAIN_DOCTYPE.exec(html);
   if (!doctype) return PREVIEW_POLICY_META + html;
   return html.slice(0, doctype[0].length) + PREVIEW_POLICY_META + html.slice(doctype[0].length);
+}
+
+const HTML_NS = 'http://www.w3.org/1999/xhtml';
+const SVG_NS = 'http://www.w3.org/2000/svg';
+const MATHML_NS = 'http://www.w3.org/1998/Math/MathML';
+const MAX_CONTAINMENT_ROUNDS = 4;
+
+// Template contents are walked too: the frame parser attaches declarative shadow roots, DOMParser does not.
+function collectElements(root: ParentNode): Element[] {
+  const found: Element[] = [];
+  const pending: ParentNode[] = [root];
+  while (pending.length > 0) {
+    const scope = pending.pop()!;
+    for (const element of Array.from(scope.querySelectorAll('*'))) {
+      found.push(element);
+      if (element.namespaceURI === HTML_NS && element.localName === 'template') {
+        pending.push((element as HTMLTemplateElement).content);
+      }
+    }
+  }
+  return found;
+}
+
+// Links, image-map areas, SVG href, SVG animate/set (can add an href without script), meta refresh and base.
+function removeNavigationConstructs(doc: Document): number {
+  let removed = 0;
+  for (const element of collectElements(doc)) {
+    const namespace = element.namespaceURI;
+    const name = element.localName;
+    if (name === 'a' || name === 'area' || namespace === MATHML_NS) {
+      for (const attribute of Array.from(element.attributes)) {
+        if (attribute.localName.toLowerCase() === 'href') {
+          element.removeAttribute(attribute.name);
+          removed += 1;
+        }
+      }
+    }
+    if (
+      (namespace === SVG_NS && (name === 'animate' || name === 'set'))
+      || (namespace === HTML_NS && name === 'base')
+      || (namespace === HTML_NS && name === 'meta' && (element.getAttribute('http-equiv') ?? '').trim().toLowerCase() === 'refresh')
+    ) {
+      element.remove();
+      removed += 1;
+    }
+  }
+  return removed;
+}
+
+// Preview-only presentation containment: no activatable navigation construct reaches the frame, so
+// no destination request can start. Returns the verified document, or null when it cannot be made
+// safe (or DOMParser is unavailable), so the caller can fail closed. result.html is never passed back.
+export function containPreviewNavigation(html: string): string | null {
+  if (typeof DOMParser === 'undefined') return null;
+  let current = html;
+  for (let round = 0; round < MAX_CONTAINMENT_ROUNDS; round += 1) {
+    const doc = new DOMParser().parseFromString(current, 'text/html');
+    if (removeNavigationConstructs(doc) === 0) return current;
+    current = (doc.compatMode === 'CSS1Compat' ? '<!doctype html>' : '') + doc.documentElement.outerHTML;
+  }
+  return null;
+}
+
+function unavailablePreviewDocument(message: string): string {
+  const text = message.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return `<!doctype html><html><body style="margin:0;padding:16px;font:14px/1.5 system-ui,sans-serif;color:#374151"><p>${text}</p></body></html>`;
 }
 
 function normalizeRequest(input?: Partial<ArtifactExportRequest>): ArtifactExportRequest {
@@ -392,7 +460,11 @@ export function ArtifactExportPanel({
     [result],
   );
 
-  const previewDocument = useMemo(() => (result ? buildPreviewDocument(result.html) : null), [result]);
+  const unavailableNotice = labels.previewUnavailable;
+  const previewDocument = useMemo(
+    () => (result ? buildPreviewDocument(containPreviewNavigation(result.html) ?? unavailablePreviewDocument(unavailableNotice)) : null),
+    [result, unavailableNotice],
+  );
 
   const updateRequest = useCallback(
     (field: keyof ArtifactExportRequest, value: string) => {

@@ -1,0 +1,1861 @@
+{
+  "schemaVersion": "cvf.ncrHtmlB1PreviewNavigationWorkerProof.v1",
+  "revision": "initial Preview navigation containment",
+  "executionBaseHead": "d9d2366a82d6284eee57ab92f8a190aa365d1065",
+  "preEditDesign": {
+    "sealedAtUtc": "2026-10-01T23:20:59.359Z",
+    "snapshotCanonicalization": "JSON.stringify of designSnapshot with no whitespace, key order as written",
+    "designSnapshotSha256": "de43ed5c889ae901d478cde6d209f925b90b65163be9f1610207f2f2a909ebd7",
+    "proofReferencePath": "docs/reference/CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_CONTAINMENT_PROOF_2026-10-02.md",
+    "proofReferenceSha256AtSeal": "11ae25013caa15bccbedc72ce6e71cbf540743198817bb2a96a8c3e591cab67c",
+    "productSourceSha256AtSeal": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "9d3561680b860915ac729e44bd6096b7e11fad75d1eeb93452bbe97d16e5a809",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.test.tsx": "8023cb03649d35b1a03fa37453276a796a13a829375d962db405ec1836f53c43",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-preview-sandbox.spec.ts": "6d800cd5bdbe69160387832c3b0ff83cd442e64e2d64b1e7772ff7ae9f223f7f",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-print-browser.spec.ts": "2a1f1b3dae56ff6a5537bf1b4eadaa4daffd62edce4b69f3083c7f7da6155675"
+    },
+    "productSourcesUnmodifiedAtSeal": true,
+    "designSnapshot": {
+      "schemaVersion": "cvf.ncrHtmlB1PreviewNavigationDesignSnapshot.v1",
+      "mechanism": "containPreviewNavigation: DOMParser parse in parent, walk elements and template contents, remove href-local-name attributes from a/area (any namespace) and any MathML element, remove SVG animate/set, meta refresh and base, serialize (doctype only when standards or limited-quirks), verify by re-parse (max 4 rounds), return null on non-convergence or missing DOMParser; panel shows an inert localized unavailable document on null; buildPreviewDocument unchanged and still places the resource policy meta first; sandbox empty; result.html untouched.",
+      "rejected": [
+        "nested wrapper frame-src (content loss and misses new-page dispositions)",
+        "CSP navigate-to (unsupported)",
+        "iframe csp attribute (late, request already made)",
+        "late reset or parent-only observer",
+        "inert or pointer-events (kills selection, keyboard and modifier bypass)",
+        "string or regex rewriting (parse differential)",
+        "extra sandbox tokens",
+        "hiding or removing text"
+      ],
+      "layerClasses": [
+        "L01 abs-same click",
+        "L02 abs-off click",
+        "L03 relative click",
+        "L04 anchor Enter",
+        "L05 target-self",
+        "L06 middle click",
+        "L07 ctrl click",
+        "L08 shift click",
+        "L09 download attr",
+        "L10 area click",
+        "L11 area keyboard",
+        "L12 svg a href",
+        "L13 svg a xlink",
+        "L14 base plus relative",
+        "L15 redirect first hop",
+        "L16 data url",
+        "L17 about:blank",
+        "L18 fragment",
+        "L19 smil set",
+        "L20 smil animate",
+        "L21 declarative shadow root",
+        "L22 noscript",
+        "L23 uppercase padded href",
+        "L24 duplicate href"
+      ],
+      "sandboxRegressionClasses": [
+        "target top/parent/blank/named",
+        "form submit click/ctrl/enter",
+        "formaction",
+        "input image",
+        "javascript url",
+        "mailto",
+        "blob url",
+        "meta refresh abs/rel/self",
+        "nested iframe srcdoc link",
+        "object data"
+      ],
+      "outsideClaim": [
+        "other browsers",
+        "user reload of parent",
+        "assistive technology link navigation",
+        "MathML href (unit only)",
+        "limited-quirks doctype differences",
+        "U+0000 handling",
+        "scripts (sandbox)",
+        "resource hints on link elements"
+      ],
+      "proofRoute": "context-level interception before login/Build; local fulfil only; counters reset before Build; real mouse/keyboard/modifiers; window marker plus policy meta plus heading for document-replaced; control keeps sandbox and resource policy, drops only the layer; mutation patches only the layer removals in the product path with an applied counter; usability by real selection/wheel/keyboard scroll/computed style; canonical identity by units and a link-bearing Print fixture.",
+      "oracleAuthorship": "worker-authored: class list, fixtures, probe pages, marker check, mutation patch, thresholds, unit fixtures; authority-mapped: paired work order oracle rows and retained resource and Print assertions"
+    }
+  },
+  "executionBaseHeadShort": "d9d2366a8",
+  "browser": {
+    "name": "chromium",
+    "version": "145.0.7632.6",
+    "mode": "headless",
+    "profiles": 1
+  },
+  "command": "NEXTAUTH_URL=http://localhost:3001 AUTH_URL=http://localhost:3001 CVF_PDFTOTEXT_PATH=/mingw64/bin/pdftotext npx playwright test tests/e2e/artifact-export-preview-sandbox.spec.ts tests/e2e/artifact-export-print-browser.spec.ts --config playwright.config.mock.ts",
+  "gates": {
+    "preImplementation": "COMPLIANT exit 0 at d9d2366a8 on clean worktree before any edit",
+    "playwrightCombined": "88 passed, exit 0 (final run)",
+    "vitest": "63 passed",
+    "tsc": "PASS",
+    "eslint": "PASS max-warnings 0",
+    "adifWorkerQuery": "worker_execution/worker/worker-return: 0 items, truncated false"
+  },
+  "navigationMatrix": {
+    "layerClassCount": 25,
+    "layerClasses": [
+      {
+        "id": "L01",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "same:L01"
+          ],
+          "secondary": [
+            "same:L01-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L01",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "same:L01"
+          ],
+          "secondary": [
+            "same:L01-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L01",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L02",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L02"
+          ],
+          "secondary": [
+            "off:L02-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L02",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L02"
+          ],
+          "secondary": [
+            "off:L02-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L02",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L03",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "same:L03"
+          ],
+          "secondary": [
+            "same:L03-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L03",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "same:L03"
+          ],
+          "secondary": [
+            "same:L03-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L03",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L04",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L04"
+          ],
+          "secondary": [
+            "off:L04-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L04",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L04"
+          ],
+          "secondary": [
+            "off:L04-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L04",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L05",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L05"
+          ],
+          "secondary": [
+            "off:L05-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L05",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L05"
+          ],
+          "secondary": [
+            "off:L05-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L05",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L06",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "page"
+        ],
+        "control": {
+          "destinations": [
+            "off:L06"
+          ],
+          "secondary": [
+            "off:L06-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 2,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "page"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L06"
+          ],
+          "secondary": [
+            "off:L06-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 2,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L07",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "page"
+        ],
+        "control": {
+          "destinations": [
+            "off:L07"
+          ],
+          "secondary": [
+            "off:L07-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 2,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "page"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L07"
+          ],
+          "secondary": [
+            "off:L07-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 2,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L08",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "page"
+        ],
+        "control": {
+          "destinations": [
+            "off:L08"
+          ],
+          "secondary": [
+            "off:L08-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 2,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "page"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L08"
+          ],
+          "secondary": [
+            "off:L08-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 2,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L09",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L09"
+          ],
+          "secondary": [
+            "off:L09-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L09",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L09"
+          ],
+          "secondary": [
+            "off:L09-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L09",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L10",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L10"
+          ],
+          "secondary": [
+            "off:L10-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L10",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L10"
+          ],
+          "secondary": [
+            "off:L10-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L10",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L11",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L11"
+          ],
+          "secondary": [
+            "off:L11-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L11",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L11"
+          ],
+          "secondary": [
+            "off:L11-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L11",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L12",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L12"
+          ],
+          "secondary": [
+            "off:L12-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L12",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L12"
+          ],
+          "secondary": [
+            "off:L12-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L12",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L13",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L13"
+          ],
+          "secondary": [
+            "off:L13-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L13",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L13"
+          ],
+          "secondary": [
+            "off:L13-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L13",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L14",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "same:L14"
+          ],
+          "secondary": [
+            "same:L14-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L14",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "same:L14"
+          ],
+          "secondary": [
+            "same:L14-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L14",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L15",
+        "controlEffects": [
+          "destination",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "same:L15-redirect"
+          ],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": null,
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "same:L15-redirect"
+          ],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": null,
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L16",
+        "controlEffects": [
+          "transition"
+        ],
+        "control": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "DATADEST",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "DATADEST",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L17",
+        "controlEffects": [
+          "transition"
+        ],
+        "control": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": null,
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": null,
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L18",
+        "controlEffects": [
+          "destination",
+          "transition",
+          "attempt"
+        ],
+        "control": {
+          "destinations": [],
+          "secondary": [],
+          "others": [
+            "http://localhost:3001/cvf-nav-control"
+          ],
+          "unexpected": [
+            "http://localhost:3001/cvf-nav-control"
+          ],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV UNKNOWN DESTINATION",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "transition",
+          "attempt"
+        ],
+        "mutation": {
+          "destinations": [],
+          "secondary": [],
+          "others": [
+            "http://localhost:3001/artifacts"
+          ],
+          "unexpected": [
+            "http://localhost:3001/artifacts"
+          ],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV UNKNOWN DESTINATION",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L19",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L19"
+          ],
+          "secondary": [
+            "off:L19-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L19",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L19"
+          ],
+          "secondary": [
+            "off:L19-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L19",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L20",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L20"
+          ],
+          "secondary": [
+            "off:L20-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L20",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L20"
+          ],
+          "secondary": [
+            "off:L20-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L20",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L21",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L21"
+          ],
+          "secondary": [
+            "off:L21-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L21",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L21"
+          ],
+          "secondary": [
+            "off:L21-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L21",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L22",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L22"
+          ],
+          "secondary": [
+            "off:L22-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L22",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L22"
+          ],
+          "secondary": [
+            "off:L22-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L22",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L23",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L23"
+          ],
+          "secondary": [
+            "off:L23-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L23",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L23"
+          ],
+          "secondary": [
+            "off:L23-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L23",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L25",
+        "controlEffects": [
+          "attempt"
+        ],
+        "control": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [
+            "mailto:a@b.test"
+          ],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "attempt"
+        ],
+        "mutation": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [
+            "mailto:a@b.test"
+          ],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      },
+      {
+        "id": "L24",
+        "controlEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "control": {
+          "destinations": [
+            "off:L24"
+          ],
+          "secondary": [
+            "off:L24-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L24",
+          "windowOrigin": "null",
+          "sandboxAttr": ""
+        },
+        "negativeEffects": [],
+        "negative": {
+          "destinations": [],
+          "secondary": [],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": true,
+          "policyRetained": true,
+          "headingText": "Nav Heading",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "srcdocHasVector": false,
+          "srcdocPolicyFirst": true,
+          "srcdocEqualsPreLayer": false
+        },
+        "mutationEffects": [
+          "destination",
+          "secondary",
+          "transition"
+        ],
+        "mutation": {
+          "destinations": [
+            "off:L24"
+          ],
+          "secondary": [
+            "off:L24-secondary"
+          ],
+          "others": [],
+          "unexpected": [],
+          "pageCount": 1,
+          "markerRetained": false,
+          "policyRetained": false,
+          "headingText": "NAV DESTINATION L24",
+          "windowOrigin": "null",
+          "sandboxAttr": "",
+          "blinded": 2,
+          "srcdocEqualsPreLayer": true
+        }
+      }
+    ],
+    "sandboxRegressionGroup": {
+      "id": "S01-S16",
+      "controlEffects": [],
+      "control": {
+        "destinations": [],
+        "secondary": [],
+        "others": [],
+        "unexpected": [],
+        "pageCount": 1,
+        "markerRetained": true,
+        "policyRetained": true,
+        "headingText": "Nav Heading",
+        "windowOrigin": "null",
+        "sandboxAttr": ""
+      },
+      "negativeEffects": [],
+      "negative": {
+        "destinations": [],
+        "secondary": [],
+        "others": [],
+        "unexpected": [],
+        "pageCount": 1,
+        "markerRetained": true,
+        "policyRetained": true,
+        "headingText": "Nav Heading",
+        "windowOrigin": "null",
+        "sandboxAttr": "",
+        "srcdocHasVector": false,
+        "srcdocPolicyFirst": true,
+        "srcdocEqualsPreLayer": false
+      },
+      "mutationEffects": null,
+      "mutation": null
+    }
+  },
+  "usability": {
+    "observed": {
+      "destinations": [],
+      "secondary": [],
+      "others": [],
+      "unexpected": [],
+      "pageCount": 1,
+      "parentUrlChanged": false,
+      "markerRetained": true,
+      "policyRetained": true,
+      "headingText": "Nav Heading",
+      "paragraphText": "Nav benign paragraph.",
+      "sandboxAttr": "",
+      "frameOrigin": "null",
+      "srcdocHasVector": false,
+      "srcdocPolicyFirst": true,
+      "srcdocEqualsPreLayer": false,
+      "blinded": 0
+    },
+    "downloadedEqualsCanonical": true,
+    "previewDerived": true
+  },
+  "resourceRegression": {
+    "observations": [
+      {
+        "mutation": null,
+        "observedHits": [],
+        "unexpectedRequests": [],
+        "sandboxAttr": "",
+        "frameOrigin": "null",
+        "scriptRan": null,
+        "policyBeforeFirstResource": true,
+        "h1Color": "rgb(1, 2, 3)",
+        "paragraphBackground": "rgb(4, 5, 6)",
+        "dataImg": {
+          "complete": true,
+          "naturalWidth": 0
+        }
+      },
+      {
+        "mutation": null,
+        "observedHits": [],
+        "unexpectedRequests": [],
+        "sandboxAttr": "",
+        "frameOrigin": "null",
+        "scriptRan": null,
+        "policyBeforeFirstResource": true,
+        "h1Color": "rgb(1, 2, 3)",
+        "paragraphBackground": "rgb(4, 5, 6)",
+        "dataImg": {
+          "complete": true,
+          "naturalWidth": 0
+        }
+      },
+      {
+        "mutation": "policy",
+        "observedHits": [
+          "off:css-bg",
+          "off:css-import",
+          "off:font",
+          "off:frame",
+          "off:frame-img",
+          "off:img",
+          "off:link-css",
+          "off:object",
+          "off:object-img",
+          "off:srcset",
+          "same:css-bg",
+          "same:css-import",
+          "same:font",
+          "same:frame",
+          "same:frame-img",
+          "same:img",
+          "same:link-css",
+          "same:object",
+          "same:object-img",
+          "same:srcset"
+        ],
+        "unexpectedRequests": [],
+        "sandboxAttr": "",
+        "frameOrigin": "null",
+        "scriptRan": null,
+        "policyBeforeFirstResource": false,
+        "h1Color": "rgb(1, 2, 3)",
+        "paragraphBackground": "rgb(4, 5, 6)",
+        "dataImg": {
+          "complete": true,
+          "naturalWidth": 1
+        }
+      }
+    ]
+  },
+  "printRegression": {
+    "observations": [
+      {
+        "mutation": null,
+        "documentKind": "short",
+        "printCallCount": 1,
+        "printedPayloadEqualsCanonical": true,
+        "previewIsDerivedNotCanonical": true,
+        "previewDropsCanonicalLinks": true,
+        "printedKeepsCanonicalLinks": true,
+        "printFrameSandboxAttribute": "",
+        "printFrameOrigin": "null",
+        "popupOpenerNullAfterwards": true,
+        "output": {
+          "pages": 1,
+          "rowTokensFound": null
+        }
+      },
+      {
+        "mutation": null,
+        "documentKind": "long-120-rows",
+        "printCallCount": 1,
+        "printedPayloadEqualsCanonical": true,
+        "previewIsDerivedNotCanonical": true,
+        "previewDropsCanonicalLinks": true,
+        "printedKeepsCanonicalLinks": true,
+        "printFrameSandboxAttribute": "",
+        "printFrameOrigin": "null",
+        "popupOpenerNullAfterwards": true,
+        "output": {
+          "pages": 3,
+          "rowTokensFound": 120
+        }
+      },
+      {
+        "mutation": "isolation",
+        "documentKind": "short",
+        "printCallCount": 1,
+        "printedPayloadEqualsCanonical": true,
+        "previewIsDerivedNotCanonical": true,
+        "previewDropsCanonicalLinks": true,
+        "printedKeepsCanonicalLinks": true,
+        "printFrameSandboxAttribute": null,
+        "printFrameOrigin": "http://localhost:3001",
+        "popupOpenerNullAfterwards": true,
+        "output": {
+          "pages": 1,
+          "rowTokensFound": null
+        }
+      },
+      {
+        "mutation": "clipping",
+        "documentKind": "long-120-rows",
+        "printCallCount": 1,
+        "printedPayloadEqualsCanonical": true,
+        "previewIsDerivedNotCanonical": true,
+        "previewDropsCanonicalLinks": true,
+        "printedKeepsCanonicalLinks": true,
+        "printFrameSandboxAttribute": "",
+        "printFrameOrigin": "null",
+        "popupOpenerNullAfterwards": true,
+        "output": {
+          "pages": 1,
+          "rowTokensFound": 43
+        }
+      }
+    ]
+  },
+  "unit": {
+    "file": "ArtifactExportPanel.test.tsx",
+    "passed": 63,
+    "added": 9,
+    "note": "jsdom construction and fail-closed proof, not browser proof"
+  },
+  "untestedContexts": [
+    "browsers other than one headless Chromium 145 profile",
+    "user reload of parent",
+    "assistive-technology link navigation",
+    "MathML href (unit only)",
+    "limited-quirks doctype differences",
+    "U+0000 handling",
+    "resource hints on link elements (resource lane)",
+    "real exported packets, paper, print dialog, real data"
+  ],
+  "changedFiles": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-preview-sandbox.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/artifact-export-print-browser.spec.ts",
+    "docs/reference/CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_CONTAINMENT_PROOF_2026-10-02.md",
+    "docs/reviews/evidence/cvf-ncr-html-b1-preview-navigation-worker-proof-2026-10-02.json",
+    "docs/reviews/CVF_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_WORKER_RETURN_2026-10-02.md"
+  ],
+  "oracleAuthorship": "worker-authored: class list, fixtures, probe pages, marker check, mutation patch, thresholds, unit fixtures; authority-mapped: paired work order oracle rows and retained resource and Print assertions"
+}

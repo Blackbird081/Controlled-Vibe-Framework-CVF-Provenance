@@ -50,6 +50,7 @@ const COOKIE_MUTATION = 'cvfPrintMutation';
 const ENDPOINT_PATH = '/api/cvf-print-probe';
 const APP_PROBE = '__cvfPrintAppProbe';
 const PREVIEW_POLICY_MARKER = `<meta http-equiv="Content-Security-Policy" content="default-src 'none'`;
+const LINK_KEY = 'navlink';
 const ROW_COUNT = 120;
 const LONG_END_MARKER = 'ENDMARKERR2LONG7Q';
 const SHORT_END_MARKER = 'ENDMARKERR2SHORT3K';
@@ -95,9 +96,13 @@ function fixtureHtml({ title, nonce, origin, long, payload }: FixtureOptions): s
     ? `<img src="${origin}${ENDPOINT_PATH}?k=img" alt=""><link rel="stylesheet" href="${origin}${ENDPOINT_PATH}?k=css">`
     : '';
   const script = payload ? `<script>${payloadScript(origin)}</script>` : '';
+  // Canonical links the Preview drops and Print must keep verbatim (never activated here).
+  const links = payload
+    ? `<p><a href="${origin}${ENDPOINT_PATH}?k=${LINK_KEY}">print link label</a> <svg width="20" height="20"><a xlink:href="${origin}${ENDPOINT_PATH}?k=${LINK_KEY}svg"><text y="10">s</text></a></svg></p>`
+    : '';
   return (
     `<!doctype html><html lang="en" ${NONCE_ATTR}="${nonce}"><head>${passive}</head><body><main>` +
-    `<h1>Print Fixture ${title}</h1><p>nonce ${nonce}</p>${rows}` +
+    `<h1>Print Fixture ${title}</h1><p>nonce ${nonce}</p>${links}${rows}` +
     `<p>${long ? LONG_END_MARKER : SHORT_END_MARKER}</p>${script}</main></body></html>`
   );
 }
@@ -380,6 +385,8 @@ async function scenario(page: Page, context: BrowserContext, browserName: string
       printFrameHeading,
       printedPayloadEqualsCanonical: printedSrcdoc !== null && served.length >= 1 && printedSrcdoc === served[0],
       previewIsDerivedNotCanonical: displayedHtml !== null && served.length >= 1 && displayedHtml !== served[0] && displayedHtml.includes(PREVIEW_POLICY_MARKER),
+      previewDropsCanonicalLinks: displayedHtml !== null && !displayedHtml.includes(`k=${LINK_KEY}`),
+      printedKeepsCanonicalLinks: printedSrcdoc !== null && served.length >= 1 && [`?k=${LINK_KEY}"`, `?k=${LINK_KEY}svg"`].every(target => printedSrcdoc.includes(target) && served[0].includes(target)),
       displayedNonce: 'N1',
       formTitleAtPrint: titleB,
       payloadRan: printProbe !== null,
@@ -417,6 +424,8 @@ function printBehaviorViolations(o: Observations, expectedHeading: string): stri
   if (o.print.printCallCount !== 1) v.push('native print() must be invoked once');
   if (!o.print.printedPayloadEqualsCanonical) v.push('printed payload must equal the canonical result.html exactly');
   if (!o.print.previewIsDerivedNotCanonical) v.push('preview must be a derived document carrying the resource policy, distinct from canonical result.html');
+  if (!o.print.previewDropsCanonicalLinks) v.push('preview must not carry the canonical link targets');
+  if (!o.print.printedKeepsCanonicalLinks) v.push('printed payload must keep the canonical link targets');
   if (o.print.previewEndpointHits.fetch + o.print.previewEndpointHits.img + o.print.previewEndpointHits.css !== 0) v.push('preview must not hit the controlled endpoint');
   if (o.print.printFrameHeading !== expectedHeading) v.push('printed content must be the displayed build, not the unsaved form edit');
   if (o.exportRouteHits !== 1) v.push('Print must not rebuild');

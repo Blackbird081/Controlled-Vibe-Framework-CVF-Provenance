@@ -8,6 +8,7 @@ import { afterEach, beforeEach, describe, expect, it, onTestFinished, vi } from 
 import {
   ArtifactExportPanel,
   buildPreviewDocument,
+  containPreviewNavigation,
   PREVIEW_FRAME_POLICY,
   type ArtifactExportResult,
 } from './ArtifactExportPanel';
@@ -955,9 +956,9 @@ describe('ArtifactExportPanel', () => {
         reader.readAsText(blob);
       });
       // Copy, Download and Print each deliver exactly `html`, and the Preview shows a different document.
-      const expectCanonicalActions = async (html: string) => {
+      const expectCanonicalActions = async (html: string, derivedPreview = buildPreviewDocument(html)) => {
         expect(previewSrcdoc()).not.toBe(html);
-        expect(previewSrcdoc()).toBe(buildPreviewDocument(html));
+        expect(previewSrcdoc()).toBe(derivedPreview);
         expect(previewSrcdoc()).toContain(POLICY_META);
         const copyCalls = (navigator.clipboard.writeText as unknown as { mock: { calls: string[][] } }).mock.calls.length;
         fireEvent.click(screen.getByRole('button', { name: 'Copy HTML' }));
@@ -1039,7 +1040,126 @@ describe('ArtifactExportPanel', () => {
         expect(noticeState()).toBe('unknown');
         await expectCanonicalActions(initial.html);
       });
+
+      it('link-bearing build: the Preview drops link targets while Copy, Download and Print keep them', async () => {
+        const linked = resultFor('L', '<!doctype html><html><body><h1>synthetic L</h1><a href="https://off.test/p?k=l">go label</a><svg><a xlink:href="/p?k=svg"><text>svg label</text></a></svg><meta http-equiv="refresh" content="0;url=/p?k=r"></body></html>');
+        fetchMock().mockResolvedValueOnce(okResponse(linked));
+        render(<ArtifactExportPanel />);
+        fireEvent.click(buildButton());
+        await waitFor(() => expect(noticeState()).toBe('current'));
+        const derived = buildPreviewDocument(containPreviewNavigation(linked.html)!);
+        expect(derived).not.toBe(buildPreviewDocument(linked.html));
+        expect(previewSrcdoc()).not.toMatch(/href=|url=\/p/i);
+        expect(previewSrcdoc()).toContain('go label');
+        expect(linked.html).toContain('href="https://off.test/p?k=l"');
+        await expectCanonicalActions(linked.html, derived);
+      });
     });
+  });
+
+  // Browser behavior is proven in tests/e2e/artifact-export-preview-sandbox.spec.ts; these units pin construction and fail-closed paths.
+  describe('B1 Preview navigation containment', () => {
+    const parse = (html: string) => new DOMParser().parseFromString(html, 'text/html');
+    const allElements = (root: ParentNode): Element[] => {
+      const found: Element[] = [];
+      for (const element of Array.from(root.querySelectorAll('*'))) {
+        found.push(element);
+        if (element.localName === 'template') found.push(...allElements((element as HTMLTemplateElement).content));
+      }
+      return found;
+    };
+    const hrefAttributes = (html: string) => allElements(parse(html)).flatMap(element => Array.from(element.attributes).filter(a => a.localName.toLowerCase() === 'href').map(a => `${element.localName}:${a.name}`));
+    const contain = (html: string) => {
+      const out = containPreviewNavigation(html);
+      expect(out).not.toBeNull();
+      return out as string;
+    };
+    const okResponse = (data: ArtifactExportResult) => ({ ok: true, status: 200, json: async () => ({ success: true, data }) });
+    const failClosedParser = () => {
+      const stuckLink = { namespaceURI: 'http://www.w3.org/1999/xhtml', localName: 'a', attributes: [{ localName: 'href', name: 'href' }], removeAttribute: () => undefined };
+      vi.stubGlobal('DOMParser', class { parseFromString() { return { compatMode: 'CSS1Compat', documentElement: { outerHTML: '' }, querySelectorAll: () => [stuckLink] }; } });
+    };
+
+    it('removes every link target in html and svg, area, uppercase, padded and duplicate forms but keeps labels and inline style', () => {
+      const html = '<!doctype html><html><body><h1 style="color:rgb(1,2,3)">Title</h1>'
+        + '<a id="a1" href="https://off.test/p" target="_blank" download>label one</a>'
+        + '<A id="a2" HREF="  &#9;https://off.test/up">label upper</A>'
+        + '<a id="a3" href="https://off.test/first" href="#second">label duplicate</a>'
+        + '<a id="a4" href="#frag">label fragment</a><div id="frag">target</div>'
+        + '<img usemap="#m" src="https://off.test/i.png" alt=""><map name="m"><area shape="default" href="https://off.test/area"></map>'
+        + '<svg><a xlink:href="https://off.test/x"><text>label svg x</text></a><a href="https://off.test/s"><text>label svg h</text></a></svg>'
+        + '</body></html>';
+      const out = contain(html);
+      expect(hrefAttributes(html).length).toBe(7);
+      expect(hrefAttributes(out)).toEqual([]);
+      const doc = parse(out);
+      expect(doc.querySelectorAll('a').length).toBe(6);
+      expect(doc.querySelectorAll('area').length).toBe(1);
+      for (const label of ['label one', 'label upper', 'label duplicate', 'label fragment', 'label svg x', 'label svg h']) expect(doc.body.textContent).toContain(label);
+      expect(doc.querySelector('h1')!.getAttribute('style')).toBe('color:rgb(1,2,3)');
+      expect(doc.querySelector('#a1')!.matches(':any-link')).toBe(false);
+    });
+
+    it('removes SVG animate and set, meta refresh and base, but keeps other meta, internal use references and inline CSS', () => {
+      const html = '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">'
+        + '<meta http-equiv="refresh" content="0;url=https://off.test/r"><meta http-equiv=" Refresh " content="5"><meta http-equiv="content-type" content="text/html">'
+        + '<base href="https://off.test/"><style>h1{color:red}</style></head><body><h1>t</h1>'
+        + '<svg><symbol id="s"><text>sym</text></symbol><use href="#s"/><a><set attributeName="href" to="https://off.test/set"/><animate attributeName="xlink:href" values="https://off.test/an"/><text>an a</text></a></svg></body></html>';
+      const doc = parse(contain(html));
+      expect(doc.querySelectorAll('set, animate, base').length).toBe(0);
+      const equivs = Array.from(doc.querySelectorAll('meta[http-equiv]')).map(m => m.getAttribute('http-equiv'));
+      expect(equivs).toEqual(['content-type']);
+      expect(doc.querySelectorAll('meta[charset], meta[name="viewport"]').length).toBe(2);
+      expect(doc.querySelector('use')!.getAttribute('href')).toBe('#s');
+      expect(doc.querySelector('style')!.textContent).toBe('h1{color:red}');
+    });
+
+    it('neutralizes anchors inside template contents at any depth and inside noscript', () => {
+      const html = '<!doctype html><html><body><div id="host"><template shadowrootmode="open"><a href="https://off.test/shadow">shadow label</a>'
+        + '<template><a href="https://off.test/deep">deep label</a></template></template></div>'
+        + '<noscript><a href="https://off.test/ns">noscript label</a></noscript></body></html>';
+      const out = contain(html);
+      expect(hrefAttributes(html).length).toBe(3);
+      expect(hrefAttributes(out)).toEqual([]);
+      for (const label of ['shadow label', 'deep label', 'noscript label']) expect(out).toContain(label);
+    });
+
+    it('leaves a clean document byte-identical, is idempotent on its output and keeps standards versus quirks doctype', () => {
+      const plain = '\n<!DOCTYPE HTML><html><head><style>p{color:red}</style></head><body><p>x</p><img src="/probe?k=x"><form action="/p"><button>go</button></form></body></html>';
+      expect(containPreviewNavigation(plain)).toBe(plain);
+      const out = contain('<!doctype html><html><body><a href="/p">l</a></body></html>');
+      expect(containPreviewNavigation(out)).toBe(out);
+      expect(contain('<!doctype html><a href="/p">l</a>').startsWith('<!doctype html><html>')).toBe(true);
+      expect(contain('<a href="/p">l</a>').startsWith('<html>')).toBe(true);
+    });
+
+    it('fails closed when the parser is unavailable or removals never converge', () => {
+      vi.stubGlobal('DOMParser', undefined);
+      expect(containPreviewNavigation('<a href="/p">l</a>')).toBeNull();
+      vi.unstubAllGlobals();
+      failClosedParser();
+      expect(containPreviewNavigation('<a href="/p">l</a>')).toBeNull();
+    });
+
+    for (const [language, build, title, notice] of [
+      ['en', /Build HTML/, 'Preview', 'Preview unavailable: this packet could not be shown safely here.'],
+      ['vi', /Tạo HTML/, 'Xem trước', 'Không hiển thị được bản xem trước một cách an toàn.'],
+    ] as const) {
+      it(`shows an inert localized unavailable document instead of any payload when containment fails (${language})`, async () => {
+        mockLanguage = language;
+        vi.stubGlobal('fetch', vi.fn().mockResolvedValue(okResponse({ ...EXPORT_RESULT, html: '<!doctype html><body><p>payload text must not appear</p><a href="https://off.test/p">x</a></body>' })));
+        failClosedParser();
+        render(<ArtifactExportPanel />);
+        fireEvent.click(screen.getByRole('button', { name: build }));
+        await waitFor(() => expect(screen.getByTestId('artifact-version-notice')).toBeTruthy());
+        const frame = screen.getByTitle(title) as HTMLIFrameElement;
+        const srcdoc = frame.getAttribute('srcdoc')!;
+        expect(frame.getAttribute('sandbox')).toBe('');
+        expect(srcdoc).toContain(PREVIEW_FRAME_POLICY);
+        expect(srcdoc).toContain(notice);
+        expect(srcdoc).not.toMatch(/payload text|href/);
+      });
+    }
   });
 
 });
