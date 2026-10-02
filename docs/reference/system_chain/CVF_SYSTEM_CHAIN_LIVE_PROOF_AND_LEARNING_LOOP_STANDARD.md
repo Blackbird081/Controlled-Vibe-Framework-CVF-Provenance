@@ -38,6 +38,10 @@ Apply the operator-ratified development direction in section 2.1 of
 `docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md`:
 prove one bounded work chain with a suitable real runtime, repair observed gaps
 in existing owners, stabilize its contract, and add another runtime when needed.
+Section 2.2 of that owner permits complementary runtimes in one bounded chain
+and preserves user selection among local, self-hosted and hosted/API lanes.
+Scope proof to the selected composition: component success alone does not
+establish end-to-end acceptance. This direction grants no new execution authority.
 Do not wait for global plane completion or treat a new runtime as a reason to
 rebuild governance. Scope proof to the job, adapter and actual control boundary;
 artifact acceptance, authority preservation and truthful execution/effect state

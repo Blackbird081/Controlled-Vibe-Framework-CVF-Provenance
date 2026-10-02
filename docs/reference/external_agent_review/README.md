@@ -39,6 +39,10 @@ External research must distinguish pattern improvement from runtime reuse for a
 named job. Existing-owner overlap is not a runtime rejection; repo popularity is
 not an admission criterion. Local owns the final two dispositions under the core
 standard, and execution remains separately governed.
+Section 2.2 of the same owner governs complementary repository composition and
+end-user selection of local, self-hosted and hosted/API lanes. A single source
+need not cover the whole job; compare the smallest sufficient composition and
+retain suitable paid/hosted choices with explicit readiness and effect boundaries.
 
 ## Current References
 

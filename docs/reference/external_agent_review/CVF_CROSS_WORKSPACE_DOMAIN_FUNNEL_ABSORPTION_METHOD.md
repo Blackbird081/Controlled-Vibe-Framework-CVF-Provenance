@@ -84,6 +84,12 @@ name the work artifact, acceptance criteria, consumer/owner, control/evidence
 limits, alternatives and cost. Owner overlap cannot alone reject runtime reuse;
 pattern novelty or popularity cannot admit it. Prove one bounded chain, repair
 observed gaps in existing owners, then expand for demand under existing authority.
+Section 2.2 of the same owner controls complementary repository composition and
+user choice among local, self-hosted and hosted/API lanes. Recover a component's
+contribution to a named chain even when it cannot satisfy the whole job alone;
+keep composition fit and component fit separate, with source and execution
+evidence distinguished. Suitable paid/hosted options remain design alternatives
+with readiness, cost and data boundaries; this method grants no execution grant.
 
 ## Shared Evidence, Value Selection And Stop Rules
 

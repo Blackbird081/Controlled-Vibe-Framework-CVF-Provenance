@@ -35,6 +35,10 @@ The development sequence is:
 repair observed chain gaps -> stabilize the contract -> another runtime when
 there is a concrete need`.
 
+The runtime count in this sequence is clarified by the operator decision in
+section 2.2: one bounded work chain may need complementary runtimes from the
+outset. It is not a one-repository exclusivity rule.
+
 Foundation-first means the selected work has a sufficient authority, execution,
 evidence and acceptance path before its authorized proof. It does not require
 completing every plane before trying one bounded integration. Runtime evidence
@@ -100,6 +104,121 @@ be reused; conceptual novelty and repeated doctrine rewrites are not required.
 It grants no implementation, provider, install, dispatch or release authority,
 changes no frozen doctrine, and reopens no parked tranche. Existing GC-018,
 owner admission and proof requirements still control execution.
+
+## 2.2. Complementary Runtime Reuse And End-User Choice - Operator Decision 2026-10-03
+
+Authority: the operator's 2026-10-03 instruction to make repository composition
+a lasting CVF foundation rule and keep hosted alternatives open for end-user
+selection. Decision D100 and its authority/reconciliation review are recorded in
+`docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
+and `docs/reviews/CVF_NCR_COMPLEMENTARY_RUNTIME_REUSE_AND_USER_CHOICE_REVIEW_2026-10-03.md`.
+This section enriches this existing owner under section 2.1.
+
+### Select For The Whole Work Artifact
+
+Select an adequate existing capability for each required part of the work.
+A repository does not need to satisfy 100 percent of the requirements alone.
+When one capability has a named gap, evaluate complementary repositories or
+services against that gap. Compare a sufficient single-runtime route with the
+smallest sufficient combination, including integration and operating cost.
+Do not rebuild an adequate upstream capability merely to keep the job inside
+one repository. More repositories are not a measure of success.
+
+Each component must have a named consumer, required capability and CVF owner.
+Record its individual fit, the unresolved gaps and the composition's acceptance
+criteria. An individual component's fit does not establish end-to-end fit.
+Source support, executable integration and accepted work remain separate claims.
+
+### Declare Where Each Runtime Executes
+
+Keep source provenance mirrors separate from execution environments. A clone
+is source evidence, not an installed runtime. Update and pin sources before use;
+also identify dependency, model, codec and asset versions needed for execution.
+Declare the execution location for each component independently:
+
+| Lane | Execution location | Local requirements |
+|---|---|---|
+| Local | End user's machine | Selected runtime, dependencies and required models/assets in an isolated environment. |
+| Self-hosted | User-controlled server or container host | Client/adapter and connectivity; runtime requirements belong on the declared host. |
+| Hosted/API | Service provider | Client/adapter and connectivity; the corresponding server runtime need not be installed locally. |
+
+A composition may mix these lanes. Local process invocation, file exchange,
+SDK calls or APIs are acceptable when their contracts fit the job. A local
+runtime does not require an API server merely to be callable by CVF. Declare
+dependency isolation and execution controls separately; a virtual environment
+does not prove a sandbox, offline operation or enforced resource limits.
+
+### Preserve End-User Selection In The Design
+
+Here, the end user is the operator in the CVF root workspace, or the project
+owner acting within the operator-granted authority in a downstream workspace.
+This identifies the selection authority; it creates no new agent execution role.
+An agent must not independently select or change the execution lane. It may
+recommend a lane, or apply an explicit user selection or authorized selection
+policy within its declared scope.
+
+Design applicable local, self-hosted and hosted/API alternatives as selectable
+lanes. Do not omit a suitable hosted or paid option solely because it incurs
+cost, uses credentials or sends data outside the local machine. End users
+choose the lane or combination for their project within applicable authority
+and service terms. No universal local-only default follows from this standard.
+A proposed default must have a stated fit/cost reason and remain distinguishable
+from the end user's explicit selection.
+
+For each selectable lane, expose capability/quality differences, prerequisites,
+cost or UNKNOWN cost, data destinations, credential needs and current readiness.
+An unimplemented or unverified lane is a design option with its status shown,
+not a claim that the product already supports it. Record a specific reason for
+an unavailable option and a condition for reconsidering it.
+
+Designing an option with a readiness status does not reopen a provider lane,
+create a runtime or introduce a new CVF owner surface under sections 3 and 5.
+Actual implementation and execution still require their applicable bounded
+GC-018 admission. Optional design does not imply executable support.
+
+Selection may bind the execution envelope once when it includes sufficient
+scope, budget, credential and data-egress authority; do not request the same
+approval again for work already inside that envelope. Design availability alone
+does not authorize a charge or data transfer. A fallback that changes the
+selected lane, budget, credentials or data destination needs prior authorization
+covering that change, or a new user/operator selection before execution.
+
+### Use Explicit Composition Contracts And End-To-End Acceptance
+
+Keep upstream components independently versioned unless evidence justifies
+tighter coupling. Use a thin adapter to translate and verify inputs/outputs;
+do not merge repositories or copy their governance merely to connect them.
+The existing CVF owners retain admission, resource/credential bindings,
+evidence and acceptance responsibilities.
+
+Before executing a composition, its bounded contract records:
+
+- component identities, versions and selected execution lanes; separate rights
+  evidence for code, model weights, codecs, fonts and other assets, including
+  required attribution and any unverified rights;
+- rights and consent evidence for a person's voice or likeness when used for
+  cloning or derived media; bundled presets still need their applicable rights
+  evidence, while a license declaration alone is not independent consent proof;
+- implicit component behavior: ambient credential or `.env` loading, telemetry,
+  automatic updates/installation, background or child processes and first-run
+  downloads; declare configured controls, observation limits and residual effects;
+- input/output formats, encoding, units, timing and compatibility at each join;
+- artifact provenance/hashes, validation and custody across component boundaries;
+- resource, download/network and cost envelopes, with measurement gaps explicit;
+- failure, timeout, retry/resume and cancellation behavior, including partial
+  artifacts, unresolved effects and cleanup responsibilities;
+- the smallest end-to-end proof and final acceptance criteria for the work.
+
+Start with one representative bounded artifact through the complete proposed
+chain. Separate successful component runs do not prove that their combination
+works. Expand after the joined output meets the named acceptance criteria and
+the required authority/evidence boundaries. Reuse valid component evidence;
+reopen it only for a decision-changing gap, source drift or observed failure.
+
+This is a normative design/selection rule. It does not admit any particular
+repository, install a runtime, authorize provider use or close a parked tranche.
+Existing GC-018 and execution-proof requirements still apply. These provisions
+claim no enforcement at runtime and change no frozen doctrine.
 
 ## 3. What This Means In Practice
 
