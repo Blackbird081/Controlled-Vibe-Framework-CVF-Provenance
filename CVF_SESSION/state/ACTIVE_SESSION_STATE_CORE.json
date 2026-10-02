@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B1_PREVIEW_NAVIGATION_CONTAINMENT_2026-10-02.md",
     "workOrderSha256": "1c927d435a1dcb75cc1936fae452eb429f581ca3d20184b773f280f3ebe9ff7c"
   },
-  "currentAuthoritySyncReason": "Navigation packet accepted bounded at 8f64ef6964ad2e1f8cf6ed8a54d5338e1f10e550; worker execution terminated. Paired authority retained for historical contract/review only; next Local source-only roadmap/checkpoint reassessment, no new worker or implementation release. Q001/Q004 OPEN; durable B2/P11/effects parked.",
+  "currentAuthoritySyncReason": "Post-B1 source reassessment committed at f6f520bec844b139118720eeb8a990ee694472db; navigation packet historical and worker terminated. Proposed design profile unratified; next operator B2 profile selection before contract/design packet authoring. Q001/Q004 OPEN; no implementation or real data/effect release.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
