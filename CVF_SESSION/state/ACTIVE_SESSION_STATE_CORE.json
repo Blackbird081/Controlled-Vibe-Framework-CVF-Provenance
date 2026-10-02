@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md",
     "workOrderSha256": "b99493d498523167776cf5ec7fbfc7d5015153f2d024ddad35db14b140400b8f"
   },
-  "currentAuthoritySyncReason": "R1 Local review committed at 90eb9a5eda1b14d44f0bfc18f92022de2dbb4cd6; currentAuthority preserves historical R1 packet only, not a new execution grant. Candidate unratified; twelve directions retained; witness/restore root contract requires source-only reassessment. SCEC STOP_REASSESS_ARCHITECTURE; no automatic R2 or implementation; effects parked.",
+  "currentAuthoritySyncReason": "B2 source-only root reassessment recorded at e2da53dfa12bd45b294908b5098e950f07590f0b; proposal only, no worker dispatch. Historical R1 packet currentAuthority preserved without execution permission; terminal B2 chain unchanged. Next independent roadmap lane source audit before any new packet; effects parked.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
