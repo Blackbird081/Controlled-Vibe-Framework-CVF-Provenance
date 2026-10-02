@@ -42,7 +42,7 @@ artifact.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=operator B2 design-profile selection; role=Local orchestrator/reviewer; phase=checkpoint-selection; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
+Startup acknowledged: mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=author B2 design-only contract packet; role=Local orchestrator/reviewer; phase=packet-authoring; decision owner=Local; effect owner=operator; parked=Q001/Q004, durable acceptance, pilot/live, P11, public sync, deployment.
 
 ## Current Mode
 
@@ -51,7 +51,7 @@ Current mode: `cvf_ncr_p10_closed_p11_parked`; previous mode marker: `cvf_ncr_p1
 
 ## Next Allowed Move
 Mode: `cvf_ncr_p10_closed_p11_parked`
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=OPERATOR_B2_DESIGN_PROFILE_SELECTION; REASSESSMENT_COMMIT=f6f520bec844b139118720eeb8a990ee694472db; CHECKPOINT_CARD=docs/reviews/CVF_CVF_NCR_POST_B1_ROADMAP_CHECKPOINT_REASSESSMENT_2026-10-02.md; EXPANSION_ALLOWED=false. Source reassessment complete, no worker release. Operator selects the proposed design-only acceptance actor/local single-writer store direction, a different profile, or keeps Profile A. Only after explicit profile selection may Local author paired contract/design packet; no real data/ledger read, artifact-store write, route/UI mutation, implementation, provider/live/cutover/public/deploy grant. B1/Print execution terminated; no automatic synthetic successor. Q001/Q004 OPEN; durable B2/P11/effects parked. LHW24 closed.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=AUTHOR_B2_DESIGN_ONLY_CONTRACT_PACKET; SELECTION_COMMIT=77bee1aba4b9d7c3ffe8031a27cf56d875278b21; SELECTION=docs/reviews/CVF_CVF_NCR_POST_B1_ROADMAP_CHECKPOINT_REASSESSMENT_2026-10-02.md; EXPANSION_ALLOWED=false. Operator delegated audit/profile choice; Local selected DESIGN_DIRECTION_ONLY: authenticated operator explicit immutable-version acceptance, local single-host/single-writer SQLite artifact-store candidate separate from governance-event ledger, commit/readback and read-only unknown-outcome contract. Next author paired design-only packet with owner-overlap comparison, exact outputs and synthetic case plan, no worker execution before bound release. No implementation/schema/store write, real data/account/ledger access, provider/live/cutover/public/deploy grant. B1/Print terminated; Q001/Q004 OPEN, durable B2/P11/effects parked. LHW24 closed.
 Historical G1-G7 terminal baseline: mode `acel_g1_g7_research_terminally_closed`. G1-G6 terminal review: `docs/reviews/CVF_ACEL_G1_G6_TERMINAL_STOP_CLOSURE_2026-09-24.md`; G7 research closure: `docs/reviews/CVF_ACEL_G7_CROSS_RUN_CAPABILITY_EVOLUTION_RESEARCH_CLOSURE_2026-09-24.md`. The packet-only post-G7 reconciliation review at `docs/reviews/CVF_ACEL_POST_G7_FULL_CORPUS_ABSORPTION_CLOSURE_2026-09-24.md` is superseded for repository absorption by the 2026-09-25 pinned-source audit. G1 is stopped, G2-G6 remain parked, G7 research is closed, and no automatic G1-G7 successor exists.
 CADP-AI-T2A-R1 authority reconciliation is independently accepted
 `CLOSED_PASS_BOUNDED` and materially committed at `944bfe852`. Grant v1
