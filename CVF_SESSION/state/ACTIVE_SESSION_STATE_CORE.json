@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md",
     "workOrderSha256": "8053d20a1d670b10215339d55c43e71f2130e3757df7f578fa0bf8694d06b8da"
   },
-  "currentAuthoritySyncReason": "D085 R1 review material 5d20e388d784def6b4a7279be5e636cbb513832d; documentation repair accepted bounded only, root STOP/NO_SUCCESSOR ordinal 2, design/policy unratified and finality NOT_ADMITTED. Historical paired R1 authority retained, no execution permission; Local stopped-root reassessment only.",
+  "currentAuthoritySyncReason": "D086 source reassessment material 2c28b0c52c2289d0ce0c856ce5234d5d555152a5; typed owner/capability proposal and concrete policy card pending operator. Historical R1 paired authority retained, STOP/NO_SUCCESSOR unchanged; policy answer alone not execution or chain reset.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
