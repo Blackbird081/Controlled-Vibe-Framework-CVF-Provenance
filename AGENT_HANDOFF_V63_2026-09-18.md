@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `6b025b15528976bcf4fea5a950f5db525f090eb9`; send proposal reviewed, design not ratified.
+Current HEAD recorded for this handoff: `9a081264946700b569979f45a6dfc7acbc620cbe`; consolidated R1 design packet, implementation not admitted.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking: `origin/main`; resolve SHA live. External agent memory is non-c
 ## Purpose
 Carry CVF-NCR v2.7 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer. Phase: Local consolidated design repair admission; technical owner: Local; effect owner: operator; P11 parked.
+Role: Local orchestrator/reviewer. Phase: bounded same-root design REWORK dispatch; technical owner: Local; effect owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local consolidated send-contract repair disposition; role=Local reviewer; phase=Local consolidated design repair admission; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound send-contract R1 design rework; role=Local reviewer; phase=bounded same-root design REWORK dispatch; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -21,9 +21,9 @@ AKOE authority: `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADM
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
 - B1 Print R2 accepted bounded at `6251ca305`: worker 5/5, units 45/45; Local 120-line probe: 3 pages/all rows/end marker, opaque origin/zero Print hits. Review: `docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md`. Width 700px; renderer only; Q001/Q004 OPEN. Preview owner audit complete; no Print successor.
-- D083 `6b025b155`: send proposal/static evidence captured; DESIGN_NOT_RATIFIED, D01-D04/OC remain. Next consolidated same-root repair disposition; B2 STOP/effects parked.
+- D084 `9a0812649`: paired send-contract R1 integrated REWORK, D01-D04/OC consolidated; ROOT_CONTRACT_REQUIRED ordinal 1. Bound release required, original evidence immutable, design/policy unratified; B2 STOP/effects parked.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: sync send-design review `6b025b15528976bcf4fea5a950f5db525f090eb9`; six continuity paths below. Delegated Local review/evidence capture. Rollback: continuity only; preserve material; B2 STOP/effects parked.
+Authorized guard-maintenance scope: bind R1 packet `9a081264946700b569979f45a6dfc7acbc620cbe`; six continuity paths below. Operator next instruction authorizes Local design-only dispatch. Rollback: continuity only; preserve packet; B2 STOP/effects parked.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`

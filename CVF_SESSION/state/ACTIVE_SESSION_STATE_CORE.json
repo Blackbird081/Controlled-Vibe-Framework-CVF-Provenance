@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md",
-    "baselineSha256": "12c8c7ad83bb7c518f85a73957e56444ccc521eacb830f851174c75afcc22f35",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md",
-    "workOrderSha256": "382b7ce30e2b844331a33ae33b49ce414d5fee217156757933bcd8dd6e56dc6d"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md",
+    "baselineSha256": "b51c416dff6da8de68be92b99b8db60c12ffd915527a0331b01d38954a8c3d57",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md",
+    "workOrderSha256": "8053d20a1d670b10215339d55c43e71f2130e3757df7f578fa0bf8694d06b8da"
   },
-  "currentAuthoritySyncReason": "D083 proposal evidence review at 6b025b15528976bcf4fea5a950f5db525f090eb9; DESIGN_NOT_RATIFIED, root open D01-D04/OC, no implementation or fresh worker grant. Historical design packet retained; next consolidated Local repair/disposition on same root, B2 STOP/effects unchanged.",
+  "currentAuthoritySyncReason": "D084 paired R1 REWORK material 9a081264946700b569979f45a6dfc7acbc620cbe; same-root integrated contract repair only, bound clean release required, original artifacts retained, no design/policy/runtime ratification.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
