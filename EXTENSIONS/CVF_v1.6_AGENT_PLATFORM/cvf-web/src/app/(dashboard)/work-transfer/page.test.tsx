@@ -64,6 +64,31 @@ function renderedIds(): string[] {
         .map(button => (button.getAttribute('data-testid') ?? '').replace('export-record-', ''));
 }
 
+const DRAFT_BOUNDARY_LINE = 'This is an editable draft derived from an audit event. It is not proof of a completed transfer and not an authoritative reproduction of the event. It is not final governance proof by itself.';
+const DRAFT_CLAIM_BOUNDARY = 'Editable draft derived from an audit event. Not proof of a completed transfer, not an authoritative event reproduction, and not final governance proof by itself.';
+
+// Literal expected copy per language (WT-F02). Vietnamese keeps the page-test diacritics convention.
+const LABELS = {
+    en: {
+        title: 'Recent audit events',
+        empty: 'No audit events found.',
+        loading: 'Loading audit history...',
+        error: 'Could not load audit history.',
+        note: 'These are audit events, not proof that a work transfer occurred.',
+        boundary: 'This page checks whether the next step has enough context. It is not final proof by itself. Checking context does not save or create a transfer record.',
+        transferWording: /transfer/i,
+    },
+    vi: {
+        title: 'Sự kiện nhật ký kiểm tra gần đây',
+        empty: 'Không tìm thấy sự kiện nào trong nhật ký kiểm tra.',
+        loading: 'Đang tải nhật ký kiểm tra...',
+        error: 'Không thể tải nhật ký kiểm tra.',
+        note: 'Đây là các sự kiện nhật ký kiểm tra, không phải bằng chứng rằng một lần bàn giao đã diễn ra.',
+        boundary: 'Trang này kiểm tra bước tiếp theo có đủ ngữ cảnh hay chưa. Nó không phải bằng chứng cuối cùng. Việc kiểm tra ngữ cảnh không lưu hay tạo bản ghi bàn giao.',
+        transferWording: /chuyển giao|bàn giao/i,
+    },
+} as const;
+
 const NEWEST_EIGHT_OF_TWELVE = ['evt-12', 'evt-11', 'evt-10', 'evt-09', 'evt-08', 'evt-07', 'evt-06', 'evt-05'];
 
 describe('WorkTransferPage', () => {
@@ -183,7 +208,7 @@ describe('WorkTransferPage', () => {
             respondWith({ success: true, data: Array.from({ length: 12 }, (_, i) => rec(i + 1)) });
             render(<WorkTransferPage />);
             await screen.findByTestId('history-list');
-            expect(screen.getByText('Recent transfers')).toBeTruthy();
+            expect(screen.getByText('Recent audit events')).toBeTruthy();
             expect(renderedIds()[0]).toBe('evt-12');
         });
 
@@ -195,10 +220,10 @@ describe('WorkTransferPage', () => {
             fireEvent.click(screen.getByTestId('export-record-evt-12'));
             const panel = await screen.findByTestId('artifact-export-panel');
             expect(JSON.parse(panel.getAttribute('data-request') ?? 'null')).toEqual({
-                title: 'Work Transfer — ACTION-12',
+                title: 'Audit Record - ACTION-12',
                 sourcePath: 'resource-12',
                 sourceContent: [
-                    '# Work Transfer Record',
+                    '# Audit Record Draft',
                     '',
                     'Action: ACTION-12',
                     'Actor: actor-12 (admin)',
@@ -206,23 +231,130 @@ describe('WorkTransferPage', () => {
                     'Timestamp: 2026-10-01T12:00:00.000Z',
                     '',
                     '## Claim Boundary',
-                    'This is an HTML export of an audit record. It is not final governance proof by itself.',
+                    DRAFT_BOUNDARY_LINE,
                 ].join('\n'),
                 memoryClass: 'FULL_RECORD',
                 status: 'OK',
-                claimBoundary: 'HTML export of an audit record. Not final governance proof by itself.',
+                claimBoundary: DRAFT_CLAIM_BOUNDARY,
                 receiptAnchor: 'transfer-evt-12',
             });
 
             fireEvent.click(screen.getByTestId('export-record-evt-05'));
             const switched = await screen.findByTestId('artifact-export-panel');
             const request = JSON.parse(switched.getAttribute('data-request') ?? 'null');
-            expect(request.title).toBe('Work Transfer — ACTION-05');
+            expect(request.title).toBe('Audit Record - ACTION-05');
             expect(request.receiptAnchor).toBe('transfer-evt-05');
             expect(request.sourcePath).toBe('resource-05');
 
             fireEvent.click(screen.getByTestId('export-record-evt-05'));
             expect(screen.queryByTestId('artifact-export-panel')).toBeNull();
+        });
+    });
+
+    describe('audit labelling (WT-F02)', () => {
+        const languages = ['en', 'vi'] as const;
+
+        it.each(languages)('%s: the history heading names audit events', async lang => {
+            mockLang = lang;
+            render(<WorkTransferPage />);
+            expect(screen.getByRole('heading', { name: LABELS[lang].title })).toBeTruthy();
+            await waitFor(() => expect(fetchMock).toHaveBeenCalled());
+        });
+
+        it.each(languages)('%s: the empty state names audit events', async lang => {
+            mockLang = lang;
+            render(<WorkTransferPage />);
+            const empty = await screen.findByTestId('history-empty');
+            expect(empty.textContent).toBe(LABELS[lang].empty);
+        });
+
+        it.each(languages)('%s: the loading state names audit history', async lang => {
+            mockLang = lang;
+            fetchMock.mockImplementation(() => new Promise(() => {}));
+            render(<WorkTransferPage />);
+            expect(screen.getByText(LABELS[lang].loading)).toBeTruthy();
+        });
+
+        it.each(languages)('%s: the error state names audit history', async lang => {
+            mockLang = lang;
+            respondWith({ success: false, error: 'Unauthorized' });
+            render(<WorkTransferPage />);
+            const error = await screen.findByTestId('history-error');
+            expect(error.textContent).toBe(LABELS[lang].error);
+        });
+
+        it.each(languages)('%s: a visible note says audit events are not proof of a transfer', async lang => {
+            mockLang = lang;
+            render(<WorkTransferPage />);
+            const note = await screen.findByTestId('history-note');
+            expect(note.textContent).toBe(LABELS[lang].note);
+        });
+
+        it.each(languages)('%s: the checker boundary says no transfer record is saved or created', async lang => {
+            mockLang = lang;
+            render(<WorkTransferPage />);
+            expect(screen.getByText(LABELS[lang].boundary)).toBeTruthy();
+            await waitFor(() => expect(fetchMock).toHaveBeenCalled());
+        });
+
+        it.each(languages)('%s: the history heading and empty state do not call audit events transfers', async lang => {
+            mockLang = lang;
+            render(<WorkTransferPage />);
+            const empty = await screen.findByTestId('history-empty');
+            const heading = screen.getByRole('heading', { name: LABELS[lang].title });
+            expect(heading.textContent ?? '').not.toMatch(LABELS[lang].transferWording);
+            expect(empty.textContent ?? '').not.toMatch(LABELS[lang].transferWording);
+        });
+
+        async function selectNewest(lang: 'en' | 'vi') {
+            mockLang = lang;
+            // synthetic unrelated audit events, never transfers
+            const data = Array.from({ length: 12 }, (_, i) => ({ ...rec(i + 1), action: i === 11 ? 'CALL_ADMIN_API' : `EXECUTE_AI_TEMPLATE-${i + 1}` }));
+            respondWith({ success: true, data });
+            render(<WorkTransferPage />);
+            await screen.findByTestId('history-list');
+            fireEvent.click(screen.getByTestId('export-record-evt-12'));
+            const panel = await screen.findByTestId('artifact-export-panel');
+            return JSON.parse(panel.getAttribute('data-request') ?? 'null');
+        }
+
+        it.each(languages)('%s: a selected record becomes an audit record draft title', async lang => {
+            const request = await selectNewest(lang);
+            expect(request.title).toBe('Audit Record - CALL_ADMIN_API');
+        });
+
+        it.each(languages)('%s: the selected draft source text has the audit draft heading and boundary', async lang => {
+            const request = await selectNewest(lang);
+            expect(request.sourceContent).toBe([
+                '# Audit Record Draft',
+                '',
+                'Action: CALL_ADMIN_API',
+                'Actor: actor-12 (admin)',
+                'Outcome: OK',
+                'Timestamp: 2026-10-01T12:00:00.000Z',
+                '',
+                '## Claim Boundary',
+                DRAFT_BOUNDARY_LINE,
+            ].join('\n'));
+        });
+
+        it.each(languages)('%s: the selected draft claim boundary says editable audit-derived draft', async lang => {
+            const request = await selectNewest(lang);
+            expect(request.claimBoundary).toBe(DRAFT_CLAIM_BOUNDARY);
+        });
+
+        it.each(languages)('%s: the selected draft keeps the original values and the legacy anchor', async lang => {
+            const request = await selectNewest(lang);
+            expect(request.sourcePath).toBe('resource-12');
+            expect(request.memoryClass).toBe('FULL_RECORD');
+            expect(request.status).toBe('OK');
+            expect(request.receiptAnchor).toBe('transfer-evt-12');
+        });
+
+        it.each(languages)('%s: the selected draft is not titled or headed as a work transfer record', async lang => {
+            const request = await selectNewest(lang);
+            expect(request.title.startsWith('Work Transfer')).toBe(false);
+            expect(request.sourceContent).not.toContain('# Work Transfer Record');
         });
     });
 });

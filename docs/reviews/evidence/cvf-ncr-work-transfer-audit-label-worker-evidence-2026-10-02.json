@@ -1,0 +1,462 @@
+{
+  "schemaVersion": "cvf.ncrWorkTransferAuditLabelWorkerEvidence.v1",
+  "batchId": "CVF-NCR-WORK-TRANSFER-AUDIT-LABEL",
+  "preEditSeal": {
+    "sealedAtUtc": "2026-10-02T07:13:29.419358Z",
+    "executionBaseHead": "bc5eb9188bdd3a88a6ff6b7b26ac6a28c6ca30a1",
+    "gitStatusShortUntrackedAllBeforeEdit": "empty",
+    "outputsAbsentBeforeEdit": true,
+    "preImplementationGate": "COMPLIANT exit 0 before any edit",
+    "preEditSourceSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "eca427c502c4961d21f122293bb80cb620b971d9932801c9c240eff281842362",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.test.tsx": "7bef9bdac77260b47489a85c5105c98e0fba2c4068da51522345fea7728f89af"
+    },
+    "plan": {
+      "production": "page.tsx only: relabel history title, empty, loading and error text and add a short history note in both languages; extend the checker boundary text in both languages; change recordToExportRequest title to 'Audit Record - <action>', heading to '# Audit Record Draft', and the source-text and claimBoundary sentences to say editable draft derived from an audit event, not proof of a completed transfer; keep every value, the transfer-<id> anchor, order, cap, selection, endpoint and states",
+      "test": "page.test.tsx only: independently runnable it.each cases per language for heading, empty, loading, error, note, checker boundary and a no-transfer-wording negative; mapping cases for title, full source text, claim boundary, preserved values and a negative; update only the two deliberately changed existing expectations (English recent title, selection mapping); literal expectations, no second copy of production strings",
+      "englishLiterals": {
+        "historyTitle": "Recent audit events",
+        "historyEmpty": "No audit events found.",
+        "historyLoading": "Loading audit history...",
+        "historyError": "Could not load audit history.",
+        "historyNote": "These are audit events, not proof that a work transfer occurred.",
+        "boundary": "This page checks whether the next step has enough context. It is not final proof by itself. Checking context does not save or create a transfer record."
+      },
+      "vietnameseLiterals": "Vietnamese literals are written with diacritics in the test file (this JSON stays ASCII); they say audit history / audit log events and that these are not proof that a handoff occurred, and the checker boundary says checking does not save or create a handoff record",
+      "redBeforeEdit": "add the tests first and run them on the unchanged page; record each targeted failure separately"
+    },
+    "caseToOracleMatrix": [
+      {
+        "case": "H1 heading, en and vi",
+        "oldCodeExpected": "FAIL"
+      },
+      {
+        "case": "H2 empty text, en and vi",
+        "oldCodeExpected": "FAIL"
+      },
+      {
+        "case": "H3 loading text, en and vi (fetch never resolves)",
+        "oldCodeExpected": "FAIL"
+      },
+      {
+        "case": "H4 error text, en and vi",
+        "oldCodeExpected": "FAIL"
+      },
+      {
+        "case": "H5 history note, en and vi",
+        "oldCodeExpected": "FAIL"
+      },
+      {
+        "case": "H6 checker boundary full literal, en and vi",
+        "oldCodeExpected": "FAIL"
+      },
+      {
+        "case": "H7 heading and empty text lack transfer wording, en and vi",
+        "oldCodeExpected": "FAIL"
+      },
+      {
+        "case": "M1 selected record title literal, identical in en and vi",
+        "oldCodeExpected": "FAIL"
+      },
+      {
+        "case": "M2 selected record full source text literal",
+        "oldCodeExpected": "FAIL"
+      },
+      {
+        "case": "M3 selected record claimBoundary literal",
+        "oldCodeExpected": "FAIL"
+      },
+      {
+        "case": "M4 preserved values: sourcePath, memoryClass, status, receiptAnchor transfer-<id>",
+        "oldCodeExpected": "PASS (regression guard, not expected red)"
+      },
+      {
+        "case": "M5 title does not begin 'Work Transfer', source text lacks '# Work Transfer Record'",
+        "oldCodeExpected": "FAIL"
+      },
+      {
+        "case": "existing: three original tests and order, tie, non-mutation, cap, short/exact/empty/error, selection toggling",
+        "oldCodeExpected": "PASS"
+      },
+      {
+        "case": "existing, deliberately changed expectation: English recent title",
+        "oldCodeExpected": "FAIL (expectation changed on purpose)"
+      },
+      {
+        "case": "existing, deliberately changed expectation: selection mapping literal",
+        "oldCodeExpected": "FAIL (expectation changed on purpose)"
+      }
+    ],
+    "outOfScope": [
+      "transfer definition or producer",
+      "role, scope or endpoint",
+      "export provenance, payload, eventType, escaping",
+      "ArtifactExportPanel",
+      "legacy anchor change",
+      "sidebar and page title",
+      "WT-F01 and WT-F04 to WT-F10"
+    ]
+  },
+  "preEditSealSha256": "181b95c17c4a8155a213016e72b103a7b40f32eea483541a0729907115e2a644",
+  "sealCanonicalization": "json.dumps(sort_keys=True, separators=(',',':')) of preEditSeal",
+  "redRun": {
+    "when": "after the new tests were added and before any product edit; page.tsx still at its sealed pre-edit hash",
+    "command": "npx --no-install vitest run 'src/app/(dashboard)/work-transfer/page.test.tsx' --reporter=verbose",
+    "exit": 1,
+    "result": "24 failed | 10 passed (34)",
+    "matchesSealedExpectation": {
+      "expectedRed": "H1-H7 and M1, M2, M3, M5 in en and vi (22) plus the two deliberately changed existing expectations (24)",
+      "expectedGreenOnOldCode": "M4 preserved values in en and vi (2) plus the 8 unchanged existing tests (10)",
+      "deviation": "none"
+    },
+    "independentCases": "each case is its own it.each entry, so a failure in one never hides another"
+  },
+  "greenRun": {
+    "command": "npx --no-install vitest run 'src/app/(dashboard)/work-transfer/page.test.tsx' --reporter=verbose",
+    "exit": 0,
+    "result": "34 passed (34)"
+  },
+  "perTestResults": [
+    {
+      "test": "renders KnowledgeJourneyNav at step 5",
+      "oldCode": "PASS",
+      "fixedCode": "PASS",
+      "oldCodeFailure": ""
+    },
+    {
+      "test": "renders Vietnamese content correctly",
+      "oldCode": "PASS",
+      "fixedCode": "PASS",
+      "oldCodeFailure": ""
+    },
+    {
+      "test": "renders English content correctly",
+      "oldCode": "PASS",
+      "fixedCode": "PASS",
+      "oldCodeFailure": ""
+    },
+    {
+      "test": "recent history order (WT-F03) > shows the newest eight of twelve records, newest first, when the response is ascending",
+      "oldCode": "PASS",
+      "fixedCode": "PASS",
+      "oldCodeFailure": ""
+    },
+    {
+      "test": "recent history order (WT-F03) > applies the same order and cap to a shuffled response",
+      "oldCode": "PASS",
+      "fixedCode": "PASS",
+      "oldCodeFailure": ""
+    },
+    {
+      "test": "recent history order (WT-F03) > keeps the upstream relative order of equal timestamps and applies the cap after ordering",
+      "oldCode": "PASS",
+      "fixedCode": "PASS",
+      "oldCodeFailure": ""
+    },
+    {
+      "test": "recent history order (WT-F03) > does not mutate the response array or its records",
+      "oldCode": "PASS",
+      "fixedCode": "PASS",
+      "oldCodeFailure": ""
+    },
+    {
+      "test": "recent history order (WT-F03) > orders fewer than eight, exactly eight, and shows the empty and error states",
+      "oldCode": "PASS",
+      "fixedCode": "PASS",
+      "oldCodeFailure": ""
+    },
+    {
+      "test": "recent history order (WT-F03) > keeps the English recent-history title with the corrected order",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "TestingLibraryElementError: Unable to find an element with the text: Recent audit events. This could be because the text is broken up by multiple elem"
+    },
+    {
+      "test": "recent history order (WT-F03) > maps a displayed record to its own export request, then deselects",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "AssertionError: expected { \\u2026(7) } to deeply equal { \\u2026(7) }"
+    },
+    {
+      "test": "audit labelling (WT-F02) > en: the history heading names audit events",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "TestingLibraryElementError: Unable to find an accessible element with the role \"heading\" and name \"Recent audit events\""
+    },
+    {
+      "test": "audit labelling (WT-F02) > vi: the history heading names audit events",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "TestingLibraryElementError: Unable to find an accessible element with the role \"heading\" and name \"S\\u1ef1 ki\\u1ec7n nh\\u1eadt k\\xfd ki\\u1ec3m tra g\\u1ea7n \\u0111\\xe2y\""
+    },
+    {
+      "test": "audit labelling (WT-F02) > en: the empty state names audit events",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "AssertionError: expected 'No transfer records found in the audi\\u2026' to be 'No audit events found.' // Object.is equality"
+    },
+    {
+      "test": "audit labelling (WT-F02) > vi: the empty state names audit events",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "AssertionError: expected 'Kh\\xf4ng t\\xecm th\\u1ea5y b\\u1ea3n ghi chuy\\u1ec3n giao tr\\u2026' to be 'Kh\\xf4ng t\\xecm th\\u1ea5y s\\u1ef1 ki\\u1ec7n n\\xe0o trong nh\\u1eadt\\u2026' // Object.is equality"
+    },
+    {
+      "test": "audit labelling (WT-F02) > en: the loading state names audit history",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "TestingLibraryElementError: Unable to find an element with the text: Loading audit history.... This could be because the text is broken up by multiple"
+    },
+    {
+      "test": "audit labelling (WT-F02) > vi: the loading state names audit history",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "TestingLibraryElementError: Unable to find an element with the text: \\u0110ang t\\u1ea3i nh\\u1eadt k\\xfd ki\\u1ec3m tra.... This could be because the text is broken up by mult"
+    },
+    {
+      "test": "audit labelling (WT-F02) > en: the error state names audit history",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "AssertionError: expected 'Could not load transfer history.' to be 'Could not load audit history.' // Object.is equality"
+    },
+    {
+      "test": "audit labelling (WT-F02) > vi: the error state names audit history",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "AssertionError: expected 'Kh\\xf4ng th\\u1ec3 t\\u1ea3i l\\u1ecbch s\\u1eed chuy\\u1ec3n giao.' to be 'Kh\\xf4ng th\\u1ec3 t\\u1ea3i nh\\u1eadt k\\xfd ki\\u1ec3m tra.' // Object.is equality"
+    },
+    {
+      "test": "audit labelling (WT-F02) > en: a visible note says audit events are not proof of a transfer",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "TestingLibraryElementError: Unable to find an element by: [data-testid=\"history-note\"]"
+    },
+    {
+      "test": "audit labelling (WT-F02) > vi: a visible note says audit events are not proof of a transfer",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "TestingLibraryElementError: Unable to find an element by: [data-testid=\"history-note\"]"
+    },
+    {
+      "test": "audit labelling (WT-F02) > en: the checker boundary says no transfer record is saved or created",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "TestingLibraryElementError: Unable to find an element with the text: This page checks whether the next step has enough context. It is not final proof "
+    },
+    {
+      "test": "audit labelling (WT-F02) > vi: the checker boundary says no transfer record is saved or created",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "TestingLibraryElementError: Unable to find an element with the text: Trang n\\xe0y ki\\u1ec3m tra b\\u01b0\\u1edbc ti\\u1ebfp theo c\\xf3 \\u0111\\u1ee7 ng\\u1eef c\\u1ea3nh hay ch\\u01b0a. N\\xf3 kh\\xf4ng ph\\u1ea3i b\\u1eb1ng ch\\u1ee9"
+    },
+    {
+      "test": "audit labelling (WT-F02) > en: the history heading and empty state do not call audit events transfers",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "TestingLibraryElementError: Unable to find an accessible element with the role \"heading\" and name \"Recent audit events\""
+    },
+    {
+      "test": "audit labelling (WT-F02) > vi: the history heading and empty state do not call audit events transfers",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "TestingLibraryElementError: Unable to find an accessible element with the role \"heading\" and name \"S\\u1ef1 ki\\u1ec7n nh\\u1eadt k\\xfd ki\\u1ec3m tra g\\u1ea7n \\u0111\\xe2y\""
+    },
+    {
+      "test": "audit labelling (WT-F02) > en: a selected record becomes an audit record draft title",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "AssertionError: expected 'Work Transfer \\u2014 CALL_ADMIN_API' to be 'Audit Record - CALL_ADMIN_API' // Object.is equality"
+    },
+    {
+      "test": "audit labelling (WT-F02) > vi: a selected record becomes an audit record draft title",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "AssertionError: expected 'Work Transfer \\u2014 CALL_ADMIN_API' to be 'Audit Record - CALL_ADMIN_API' // Object.is equality"
+    },
+    {
+      "test": "audit labelling (WT-F02) > en: the selected draft source text has the audit draft heading and boundary",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "AssertionError: expected '# Work Transfer Record\\n\\nAction: CAL\\u2026' to be '# Audit Record Draft\\n\\nAction: CALL_\\u2026' // Object.is equality"
+    },
+    {
+      "test": "audit labelling (WT-F02) > vi: the selected draft source text has the audit draft heading and boundary",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "AssertionError: expected '# Work Transfer Record\\n\\nAction: CAL\\u2026' to be '# Audit Record Draft\\n\\nAction: CALL_\\u2026' // Object.is equality"
+    },
+    {
+      "test": "audit labelling (WT-F02) > en: the selected draft claim boundary says editable audit-derived draft",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "AssertionError: expected 'HTML export of an audit record. Not f\\u2026' to be 'Editable draft derived from an audit \\u2026' // Object.is equality"
+    },
+    {
+      "test": "audit labelling (WT-F02) > vi: the selected draft claim boundary says editable audit-derived draft",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "AssertionError: expected 'HTML export of an audit record. Not f\\u2026' to be 'Editable draft derived from an audit \\u2026' // Object.is equality"
+    },
+    {
+      "test": "audit labelling (WT-F02) > en: the selected draft keeps the original values and the legacy anchor",
+      "oldCode": "PASS",
+      "fixedCode": "PASS",
+      "oldCodeFailure": ""
+    },
+    {
+      "test": "audit labelling (WT-F02) > vi: the selected draft keeps the original values and the legacy anchor",
+      "oldCode": "PASS",
+      "fixedCode": "PASS",
+      "oldCodeFailure": ""
+    },
+    {
+      "test": "audit labelling (WT-F02) > en: the selected draft is not titled or headed as a work transfer record",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "AssertionError: expected true to be false // Object.is equality"
+    },
+    {
+      "test": "audit labelling (WT-F02) > vi: the selected draft is not titled or headed as a work transfer record",
+      "oldCode": "FAIL",
+      "fixedCode": "PASS",
+      "oldCodeFailure": "AssertionError: expected true to be false // Object.is equality"
+    }
+  ],
+  "preservedRegressions": {
+    "unchangedAndGreenOnOldAndFixedCode": [
+      "renders KnowledgeJourneyNav at step 5",
+      "renders Vietnamese content correctly",
+      "renders English content correctly",
+      "newest eight when ascending",
+      "shuffled order and cap",
+      "equal timestamps keep upstream order",
+      "does not mutate the response",
+      "fewer than eight, exactly eight, empty and error states"
+    ],
+    "updatedOnPurpose": [
+      "English recent-history title now 'Recent audit events'",
+      "selection mapping now expects the audit draft literals"
+    ]
+  },
+  "copyEvidence": {
+    "englishLiterals": {
+      "historyTitle": "Recent audit events",
+      "historyEmpty": "No audit events found.",
+      "historyLoading": "Loading audit history...",
+      "historyError": "Could not load audit history.",
+      "historyNote": "These are audit events, not proof that a work transfer occurred.",
+      "boundary": "This page checks whether the next step has enough context. It is not final proof by itself. Checking context does not save or create a transfer record."
+    },
+    "vietnamese": "asserted with literal diacritic strings in page.test.tsx for heading, empty, loading, error, note and checker boundary; the heading and empty state contain no transfer or handoff wording (asserted per language)"
+  },
+  "draftMapping": {
+    "title": "Audit Record - <action>",
+    "heading": "# Audit Record Draft",
+    "preservedValues": [
+      "sourcePath = targetResource",
+      "memoryClass FULL_RECORD",
+      "status = outcome",
+      "receiptAnchor transfer-<id> (legacy opaque anchor)",
+      "action, actor, role, outcome, timestamp lines"
+    ],
+    "languageNeutral": "the same request is asserted in en and vi",
+    "fixtureActions": "synthetic unrelated audit actions CALL_ADMIN_API and EXECUTE_AI_TEMPLATE-<n>"
+  },
+  "focusedChecks": [
+    {
+      "command": "npx --no-install tsc --noEmit",
+      "exit": 0,
+      "note": "no tracked tsbuildinfo byproduct"
+    },
+    {
+      "command": "npx --no-install eslint 'src/app/(dashboard)/work-transfer/page.tsx' 'src/app/(dashboard)/work-transfer/page.test.tsx' --max-warnings=0",
+      "exit": 0
+    }
+  ],
+  "finalSourceSha256": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.test.tsx": "12b85adb86b0433c136e1dfd638347bc73869ea206bc1871b40d7a390a330b4c"
+  },
+  "sealedVersusFinalDistinct": true,
+  "boundary": {
+    "notChanged": [
+      "page title and sidebar",
+      "history visibility by role",
+      "endpoint, admission, store, scope",
+      "export provenance, payload, eventType, escaping",
+      "ArtifactExportPanel",
+      "legacy transfer-<id> anchor",
+      "newest-first order, cap, selection"
+    ],
+    "stillOpen": [
+      "WT-F01 no transfer producer",
+      "WT-F04 role visibility",
+      "WT-F05 store-wide scope",
+      "WT-F06 export provenance",
+      "WT-F07 to WT-F10"
+    ],
+    "liveOrRealRuns": "none: no HTTP, store, browser, provider, build or dependency install"
+  },
+  "diff": {
+    "trackedModified": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.test.tsx"
+    ],
+    "pageNumstat": "17 added, 14 removed",
+    "testNumstat": "138 added, 6 removed",
+    "staged": 0,
+    "commit": "none"
+  },
+  "outputHashes": {
+    "docs/reference/CVF_NCR_WORK_TRANSFER_AUDIT_LABEL_2026-10-02.md": "77d34e9c1814decc466cbb9c454a136cdbb424aa3a8d60de057fa38ee46a2931",
+    "note": "evidence and return are not hashed here to avoid a self-reference cycle"
+  },
+  "commandReceipts": [
+    {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_AUDIT_LABEL_2026-10-02.md",
+      "exit": 0,
+      "result": "COMPLIANT before any edit"
+    },
+    {
+      "command": "vitest run page.test.tsx --reporter=verbose (red, before product edit)",
+      "exit": 1,
+      "result": "24 failed, 10 passed of 34"
+    },
+    {
+      "command": "vitest run page.test.tsx --reporter=verbose (green)",
+      "exit": 0,
+      "result": "34 passed"
+    },
+    {
+      "command": "tsc --noEmit",
+      "exit": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "eslint two files --max-warnings=0",
+      "exit": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "python governance/compat/run_adif_defect_resolver.py --task-class worker_execution --role worker --lifecycle-phase worker-return --json",
+      "exit": 0,
+      "result": "0 items, truncated=false, run at worker return"
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_AUDIT_LABEL_2026-10-02.md",
+      "exit": 0,
+      "result": "COMPLIANT 69/69 on the final five-path state"
+    }
+  ],
+  "adifWorkerQuery": {
+    "command": "python governance/compat/run_adif_defect_resolver.py --task-class worker_execution --role worker --lifecycle-phase worker-return --json",
+    "result": "0 items, truncated=false",
+    "ranAtWorkerReturn": true
+  },
+  "claimBoundary": "local mocked-UI label, boundary and draft-mapping proof only; no transfer definition, producer, policy, access, real-runtime, Q001, Q004, B2, P11, public or deployment claim"
+}
