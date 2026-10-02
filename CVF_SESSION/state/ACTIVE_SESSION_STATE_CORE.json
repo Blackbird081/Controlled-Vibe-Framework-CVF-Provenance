@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_WORK_TRANSFER_RECENT_ORDER_2026-10-02.md",
-    "baselineSha256": "a3eac354dac775db1f53834f10fbcf3145f7ab4a5fcf7fb8bc1c175fe5a94110",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_RECENT_ORDER_2026-10-02.md",
-    "workOrderSha256": "a7d871c2434d7c0865b77ec8ee93ce614b5f20a442f42ec18bcdb9998a2d565a"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_WORK_TRANSFER_AUDIT_LABEL_2026-10-02.md",
+    "baselineSha256": "d5dc1621c5a139ebdcc3dad8cbff6617fbe31aabf36b5fcd8fda6a8c1ad7e3f0",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_AUDIT_LABEL_2026-10-02.md",
+    "workOrderSha256": "8742e7827e98aec4e9f471ed192b922bd7d25ab5ff76c23cd70f78c34d47d762"
   },
-  "currentAuthoritySyncReason": "D078 recent-order task closed bounded at b8a3624852bc2e7f13330cd4108dbe975fc08ef9; local mocked UI proof only, no remaining Work Transfer policy/producer closure. Historical packet retained without execution permission. Next Local source-only roadmap/checkpoint selection; B2 STOP and effects parked.",
+  "currentAuthoritySyncReason": "D079 audit-label packet at 50103b5f7ead337cd9b1634b3a673ac401dfa27a; two existing page/test and three proof outputs; local mocked UI only after bound release. WT-F03 closed; no intended transfer definition, producer, role/scope/store/provenance or effect decision; B2 STOP.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
