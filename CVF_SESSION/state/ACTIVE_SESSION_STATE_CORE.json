@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_SECRET_REFUSAL_RECOVERY_2026-10-02.md",
-    "baselineSha256": "c10816b36ed5c5933c9d02d31207b0cbb8029607676ad081eb70065002131923",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_SECRET_REFUSAL_RECOVERY_2026-10-02.md",
-    "workOrderSha256": "38048b44fe0932a1a3ebcb47ecdecab2acd02e1d97f11f5a27eda8d1a23863ef"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_2026-10-02.md",
+    "baselineSha256": "0e5afc72667d924e9e7743bfc94f05a6d5ff02f46a16697a7798bd907cf00226",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_2026-10-02.md",
+    "workOrderSha256": "b52717352a9267b71a5abe8d0f5b9326d93751d39aaf0c556610783ca3ca1dc2"
   },
-  "currentAuthoritySyncReason": "D091 F-01 bounded UI closure 0868fb167f2a0788e6e500c8eb864b2fdb6d9aa3; historical CVF-NCR-HTML-SECRET-REFUSAL-RECOVERY paired authority retained, execution terminated by docs/reviews/CVF_CVF_NCR_HTML_SECRET_REFUSAL_RECOVERY_COMPLETION_2026-10-02.md. Next Local source-only independent roadmap eligibility audit, no worker packet/effect or stopped-root successor.",
+  "currentAuthoritySyncReason": "D092 CVF-NCR-GENERAL-USER-GUIDE-REFRESH paired documentation-only general guide packet at dec28db38a8613a681ebf1f8bbdddff45558b3e5; release requires clean bound gate. Five existing/new guide/evidence paths, illustrative code example and static checks; no video/effects or stopped-root successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
