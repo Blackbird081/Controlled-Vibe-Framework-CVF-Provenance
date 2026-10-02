@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `2c28b0c52c2289d0ce0c856ce5234d5d555152a5`; D086 reassessment/choice card complete, STOP/NO_SUCCESSOR unchanged.
+Current HEAD recorded for this handoff: `816d00f431bcfe42cd28e4782afd974ed690f5f1`; D087 delegated policy direction selected, STOP/NO_SUCCESSOR unchanged.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking: `origin/main`; resolve SHA live. External agent memory is non-c
 ## Purpose
 Carry CVF-NCR v2.7 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer. Phase: reassessment complete, policy checkpoint pending; technical owner: Local; effect owner: operator; P11 parked.
+Role: Local orchestrator/reviewer. Phase: delegated policy direction selected, independent lane audit; technical owner: Local; effect owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=operator send-policy disposition, then Local authority audit; role=Local reviewer; phase=reassessment complete, policy checkpoint pending; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local independent roadmap lane eligibility audit; role=Local reviewer; phase=delegated policy direction selected, independent lane audit; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -21,9 +21,9 @@ AKOE authority: `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADM
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
 - B1 Print R2 accepted bounded at `6251ca305`: worker 5/5, units 45/45; Local 120-line probe: 3 pages/all rows/end marker, opaque origin/zero Print hits. Review: `docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md`. Width 700px; renderer only; Q001/Q004 OPEN. Preview owner audit complete; no Print successor.
-- D086 `2c28b0c52`: typed-record/capability direction proposal only, backend UNKNOWN; concrete OC/U-3 card pending operator. FM-S no rollback/history proof; send/B2 STOP unchanged. Policy answer then Local authority audit, no R2/worker/implementation.
+- D087 `816d00f43`: operator delegates audit/choice; typed record direction and OC/U-3 selected, no default duplicate warning. Policy checkpoint satisfied; backend/full contract unadmitted, send/B2 STOP unchanged. Next independent lane source eligibility audit; no order.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: sync reassessment `2c28b0c52c2289d0ce0c856ce5234d5d555152a5`; six continuity paths below. Operator NEXT authorizes Local readout/checkpoint only. Rollback: continuity only; preserve material; STOP/effects unchanged.
+Authorized guard-maintenance scope: sync delegated selection `816d00f431bcfe42cd28e4782afd974ed690f5f1`; six continuity paths below. Operator audit/choose instruction authorizes design decision only. Rollback: continuity only; preserve material; STOP/effects unchanged.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`

@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md",
     "workOrderSha256": "8053d20a1d670b10215339d55c43e71f2130e3757df7f578fa0bf8694d06b8da"
   },
-  "currentAuthoritySyncReason": "D086 source reassessment material 2c28b0c52c2289d0ce0c856ce5234d5d555152a5; typed owner/capability proposal and concrete policy card pending operator. Historical R1 paired authority retained, STOP/NO_SUCCESSOR unchanged; policy answer alone not execution or chain reset.",
+  "currentAuthoritySyncReason": "D087 delegated policy direction selected at 816d00f431bcfe42cd28e4782afd974ed690f5f1; D086 checkpoint satisfied. Historical R1 authority retained, full contract/implementation not admitted and STOP unchanged; next source-only independent lane audit, no new packet.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
