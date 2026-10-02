@@ -1,0 +1,1427 @@
+{
+  "schemaVersion": "cvf.ncrHtmlWorkTransferSourceRecordEvidence.v1",
+  "batchId": "CVF-NCR-HTML-WORK-TRANSFER-SOURCE",
+  "rootCauseClusterId": "WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_UNVERIFIED",
+  "reworkGeneration": 0,
+  "executionBaseHead": "4dd5276feda0a01e8b2479d7cae95cc184df862f",
+  "preflight": {
+    "gitStatusShortUntrackedAllBeforeEdit": "empty",
+    "outputPathsAbsentBeforeEdit": [
+      "docs/reference/CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md",
+      "docs/reviews/evidence/cvf-ncr-html-work-transfer-source-record-reachability-2026-10-02.json",
+      "docs/reviews/CVF_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_WORKER_RETURN_2026-10-02.md"
+    ],
+    "preImplementationGate": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md",
+    "preImplementationGateResult": "COMPLIANT exit 0 before any edit"
+  },
+  "independence": {
+    "b2": "stopped terminal, untouched; no B2 content, store, witness or lock proposed",
+    "priorWalkthrough": "consumed for its stated seeded-history limit, not repeated"
+  },
+  "corpusBoundary": {
+    "verdict": "PARTIAL",
+    "note": "selected regions of named sources and bounded symbol searches; no all-files-read or repository-wide absence claim",
+    "manifestCount": 22
+  },
+  "sourceManifest": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "sha256": "a6c6f6ef3738538f982833bc282275be845905b5cabadd3011feddc6890e56a8",
+      "readDepth": "WHOLE_FILE",
+      "regions": "whole file",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.test.tsx",
+      "sha256": "d43f0b05e5fc968487c1b118b3dccd25601b32db9002d6444618488b24a7dff0",
+      "readDepth": "WHOLE_FILE",
+      "regions": "whole file",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "sha256": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+      "readDepth": "WHOLE_FILE",
+      "regions": "whole file",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+      "sha256": "69b33640ec525b486390f3e300215913a2c85fe0c6492d0c9a8efdc07ec304ae",
+      "readDepth": "WHOLE_FILE",
+      "regions": "whole file",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts",
+      "sha256": "352242cf9e5b3ea734991f230117e76d60ac6018cf0e1be7399cfa66039a2980",
+      "readDepth": "WHOLE_FILE",
+      "regions": "whole file",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "sha256": "a95ac544fcdf1fb74042b25f4223cc4742592c57d78f434292f3b290643e83e7",
+      "readDepth": "WHOLE_FILE",
+      "regions": "whole file",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/middleware.ts",
+      "sha256": "cec1598fa11ede46393ab8298cf5f1fefee00666b1204b68399a8a4a7aaa6520",
+      "readDepth": "WHOLE_FILE",
+      "regions": "whole file",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+      "sha256": "3877b34d112185040a331019e9cd9915c9152059ad42ee2c26e1a9833452b40e",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "lines 60-176",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+      "sha256": "d57ea274ac95235ef15fd3d577c8141ba27458576810acb654f505db83a119e6",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "lines 1-62, 160-170, 325-335, 430-470, 515-545",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/Sidebar.tsx",
+      "sha256": "6ece3a53d8a1c7dd52af23795effaadf02f9143cbaef72cd12e50c22abc93736",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "lines 195-210",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+      "sha256": "1c34cec2b82c5e35112b8e0090141ae49a49477d72849cc019994f45db560f82",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "lines 22-30, 89-115, 328-335, 640-735",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+      "sha256": "6b988ba687b9b1478f097ca81c3e1235aa20ef819106c050279779da00781c3c",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "lines 10-70, 100-196, 256-335",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-guard-gateway.ts",
+      "sha256": "4dd52f0451c9ec1486627488c324ff64e74fc04d16b92a70cb909f93d3c26889",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "lines 40-72",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-route-guards.ts",
+      "sha256": "a037e9a210506979531dc6eca3b1b79c70ace928cc97d8828f1c4e4b1ef829eb",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "lines 63-80",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-telemetry.ts",
+      "sha256": "9e4f0c9613e16fff9694ea57a31974e91dd99308fa6bbf458025311d9cb0f9aa",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "action literal region",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+      "sha256": "a22eddc464e4913c116d39eafbb7765606e2fd9c0c6f7ace1c9bedf7bffd44c3",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "lines 575-592 and appendAuditEvent call sites",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+      "sha256": "3f652cfab1dab3d8a25157936e9e597dc42d9e0ed7d0a82a19b8746c3e14f7f2",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "handoff readout lines 13, 443-512",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.durable.test.ts",
+      "sha256": "2928775e3ea11c237657bd5c507deb4f8e41ddc512cf6ca1f196bcb3c94d451f",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "lines 160-185",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_Q001_DOCKER_BROWSER_UI_WALKTHROUGH_2026-09-29.md",
+      "sha256": "42fed342a1fefd502f691c9cbb7440d0eec3d417fd6137ab6a5bef35a9bfcd89",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "Scope / Methodology; Findings; Risk",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_HTML_B2_ROOT_CONTRACT_REASSESSMENT_2026-10-02.md",
+      "sha256": "1058634d8885cf3cfdfb8e31b41526fde702371907fec8fcf7d399cba7cc5a2d",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "Decision / Disposition (existence and hash only)",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md",
+      "sha256": "a3a14dd7663e04ab77e2c5dc698de8b55383b6ce55dd53e6e3625aa1b1740d63",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "Implementation Contract 1-7",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md",
+      "sha256": "93f0e93164459ffe01730e6f7adb8ca4c8c59171ddb859d02d7e367d1c6078a3",
+      "readDepth": "SELECTED_SECTIONS",
+      "regions": "paired packet",
+      "terminalStatus": "READ"
+    }
+  ],
+  "locators": [
+    {
+      "id": "L01",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "token": "interface AuditRecord",
+      "lines": [
+        77
+      ],
+      "note": "record type the page expects"
+    },
+    {
+      "id": "L02",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "token": "function recordToExportRequest",
+      "lines": [
+        98
+      ],
+      "note": "record to export request mapping"
+    },
+    {
+      "id": "L03",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "token": "const result = useMemo(() => validateHandoff(",
+      "lines": [
+        136
+      ],
+      "note": "local validation, no write"
+    },
+    {
+      "id": "L04",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "token": "fetch('/api/admin/audit')",
+      "lines": [
+        145
+      ],
+      "note": "only network call, a GET"
+    },
+    {
+      "id": "L05",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "token": "payload.data.slice(0, 8)",
+      "lines": [
+        150
+      ],
+      "note": "first eight kept"
+    },
+    {
+      "id": "L06",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "token": "historyState === 'ready' && records.length === 0",
+      "lines": [
+        247
+      ],
+      "note": "empty state"
+    },
+    {
+      "id": "L07",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "token": "<ArtifactExportPanel initialRequest={exportRequest} />",
+      "lines": [
+        273
+      ],
+      "note": "panel mount"
+    },
+    {
+      "id": "L08",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "token": "setHistoryState('error')",
+      "lines": [
+        153,
+        157
+      ],
+      "note": "error state"
+    },
+    {
+      "id": "L09",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "token": "requireAdminApiSession(request, '/api/admin/audit')",
+      "lines": [
+        9,
+        24
+      ],
+      "note": "admission"
+    },
+    {
+      "id": "L10",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "token": "const events = await readAuditEvents()",
+      "lines": [
+        14
+      ],
+      "note": "unscoped read"
+    },
+    {
+      "id": "L11",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "token": "x-cvf-internal-audit",
+      "lines": [
+        19
+      ],
+      "note": "internal secret branch"
+    },
+    {
+      "id": "L12",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "token": "actorId: String(body.actorId",
+      "lines": [
+        32
+      ],
+      "note": "body actor wins"
+    },
+    {
+      "id": "L13",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "token": "actorRole: String(body.actorRole",
+      "lines": [
+        33
+      ],
+      "note": "body role wins"
+    },
+    {
+      "id": "L14",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+      "token": "async function buildDeniedResponsePayload",
+      "lines": [
+        186
+      ],
+      "note": "denial write"
+    },
+    {
+      "id": "L15",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+      "token": "eventType: 'ADMIN_ACCESS_DENIED'",
+      "lines": [
+        193
+      ],
+      "note": "denial event type"
+    },
+    {
+      "id": "L16",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+      "token": "function hasRequiredAccess",
+      "lines": [
+        206
+      ],
+      "note": "role admission"
+    },
+    {
+      "id": "L17",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+      "token": "export async function requireAdminApiSession",
+      "lines": [
+        245
+      ],
+      "note": "api admission"
+    },
+    {
+      "id": "L18",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+      "token": "{ status: session ? 403 : 401 }",
+      "lines": [
+        263
+      ],
+      "note": "refusal status"
+    },
+    {
+      "id": "L19",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+      "token": "async function resolveBreakGlassSession",
+      "lines": [
+        90
+      ],
+      "note": "break-glass"
+    },
+    {
+      "id": "L20",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts",
+      "token": "export const ADMIN_ROLES",
+      "lines": [
+        4
+      ],
+      "note": "owner and admin"
+    },
+    {
+      "id": "L21",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "token": "events.sort((a, b) => a.timestamp.localeCompare(b.timestamp))",
+      "lines": [
+        113
+      ],
+      "note": "ascending sort"
+    },
+    {
+      "id": "L22",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "token": "event.kind === 'audit'",
+      "lines": [
+        169
+      ],
+      "note": "kind-only filter"
+    },
+    {
+      "id": "L23",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "token": "export async function appendAuditEvent",
+      "lines": [
+        143
+      ],
+      "note": "general append owner"
+    },
+    {
+      "id": "L24",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "token": "function getStorePath",
+      "lines": [
+        101
+      ],
+      "note": "single store path"
+    },
+    {
+      "id": "L25",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/middleware.ts",
+      "token": "if (pathname.startsWith('/admin'))",
+      "lines": [
+        36
+      ],
+      "note": "admin check only under /admin"
+    },
+    {
+      "id": "L26",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/middleware.ts",
+      "token": "new URL('/api/admin/audit', req.url)",
+      "lines": [
+        41
+      ],
+      "note": "internal POST producer"
+    },
+    {
+      "id": "L27",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/middleware.ts",
+      "token": "matcher: ['/((?!_next/|favicon.ico).*)']",
+      "lines": [
+        76
+      ],
+      "note": "matcher includes api"
+    },
+    {
+      "id": "L28",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+      "token": "role: binding?.role ?? token.role ?? 'developer'",
+      "lines": [
+        104
+      ],
+      "note": "default role"
+    },
+    {
+      "id": "L29",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+      "token": "export async function verifySessionCookie",
+      "lines": [
+        138
+      ],
+      "note": "session derivation"
+    },
+    {
+      "id": "L30",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/Sidebar.tsx",
+      "token": "label={t('nav.workTransfer') || 'Work Transfer'}",
+      "lines": [
+        203
+      ],
+      "note": "nav entry, gated by role not equal viewer on the line above"
+    },
+    {
+      "id": "L31",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+      "token": "function normalizeRequest",
+      "lines": [
+        328
+      ],
+      "note": "spread of initial request"
+    },
+    {
+      "id": "L32",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+      "token": "onChange={event => updateRequest('sourceContent'",
+      "lines": [
+        712
+      ],
+      "note": "editable source"
+    },
+    {
+      "id": "L33",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+      "token": "Missing required artifact export fields.",
+      "lines": [
+        295
+      ],
+      "note": "required fields"
+    },
+    {
+      "id": "L34",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+      "token": "export const CONTROL_PLANE_RETENTION_SECONDS",
+      "lines": [
+        62
+      ],
+      "note": "retention constant"
+    },
+    {
+      "id": "L35",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.test.tsx",
+      "token": "json: () => Promise.resolve({ success: true, data: [] })",
+      "lines": [
+        34
+      ],
+      "note": "test mocks an empty list"
+    },
+    {
+      "id": "L36",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.durable.test.ts",
+      "token": "events are sorted ascending by timestamp",
+      "lines": [
+        167
+      ],
+      "note": "ascending order asserted"
+    },
+    {
+      "id": "L37",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+      "token": "buildExecutionContinuityHandoffReadout",
+      "lines": [
+        13,
+        443
+      ],
+      "note": "readout, not an audit append"
+    },
+    {
+      "id": "L38",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-guard-gateway.ts",
+      "token": "action: input.context.action",
+      "lines": [
+        54
+      ],
+      "note": "gateway action label"
+    },
+    {
+      "id": "L39",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-route-guards.ts",
+      "token": "const explicitAction = rawBody.action",
+      "lines": [
+        64
+      ],
+      "note": "request body action"
+    },
+    {
+      "id": "L40",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-telemetry.ts",
+      "token": "action: 'EXECUTE_AI_TEMPLATE'",
+      "lines": [
+        111
+      ],
+      "note": "execute action label"
+    }
+  ],
+  "searchLedger": [
+    {
+      "id": "S1",
+      "purpose": "producer files",
+      "scope": "Web src, non-test",
+      "matchedFiles": 24,
+      "callers": 22,
+      "definitionFile": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "unrelatedHelper": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/web-governance-envelope.ts",
+      "queryDescription": "rg -l \"appendAuditEvent|appendControlPlaneEvent\" <web>/src -g '!*.test.*' -g '!*.spec.*'",
+      "executionProvenance": "WORKER_REPORTED_PYTHON_SCAN; exact executable command/source not supplied; not an rg receipt"
+    },
+    {
+      "id": "S2",
+      "purpose": "admin audit route consumers and internal header",
+      "scope": "Web package including package root",
+      "hits": [
+        "middleware.ts:41",
+        "middleware.ts:6",
+        "src/app/(dashboard)/work-transfer/page.tsx:145",
+        "src/app/api/admin/audit-feed/route.ts:7",
+        "src/app/api/admin/audit/route.ts:19",
+        "src/app/api/admin/audit/route.ts:24",
+        "src/app/api/admin/audit/route.ts:9",
+        "src/components/admin/AdminAuditLogBody.tsx:107"
+      ],
+      "queryDescription": "rg -n \"api/admin/audit|x-cvf-internal-audit\" <web> -g '*.ts' -g '*.tsx' -g '!node_modules' -g '!.next' -g '!*.test.*'",
+      "executionProvenance": "WORKER_REPORTED_PYTHON_SCAN; exact executable command/source not supplied; not an rg receipt"
+    },
+    {
+      "id": "S3",
+      "purpose": "any client POST to the audit route in src",
+      "scope": "Web src",
+      "hitCount": 1,
+      "hits": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx:145"
+      ],
+      "queryDescription": "rg -n \"fetch\\(['\\\"`]/api/admin/audit\" <web>/src",
+      "executionProvenance": "WORKER_REPORTED_PYTHON_SCAN; exact executable command/source not supplied; not an rg receipt"
+    },
+    {
+      "id": "S4",
+      "purpose": "repository code and script callers of the audit route",
+      "scope": "repository, excluding docs, node_modules, .next, .cvf runtime",
+      "files": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/middleware.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts"
+      ],
+      "queryDescription": "rg -n \"api/admin/audit[^-]\" -g code-and-script-extensions -g '!docs/**' -g '!node_modules' .",
+      "executionProvenance": "WORKER_REPORTED_PYTHON_SCAN; exact executable command/source not supplied; not an rg receipt",
+      "localDisposition": "EXCLUDED_FROM_ACCEPTED_SCOPE: outside bounded Web source lane"
+    },
+    {
+      "id": "S5",
+      "purpose": "transfer or handoff named audit event types or actions",
+      "scope": "Web src, non-test",
+      "hitCount": 0,
+      "queryDescription": "rg -n -i \"eventType: '[A-Z_]*(TRANSFER|HANDOFF)[A-Z_]*'|action: '[A-Z_]*(TRANSFER|HANDOFF)[A-Z_]*'\" <web>/src -g '!*.test.*'",
+      "executionProvenance": "WORKER_REPORTED_PYTHON_SCAN; exact executable command/source not supplied; not an rg receipt"
+    },
+    {
+      "id": "S6",
+      "purpose": "distinct literal event types",
+      "scope": "Web src, non-test, literal strings only",
+      "distinctEventTypes": [
+        "ACTOR_ROLE_GATE_REJECTED",
+        "ADMIN_ACCESS_DENIED",
+        "APPROVAL_CONSUMED",
+        "APPROVAL_DECIDED",
+        "APPROVAL_EXPIRED",
+        "AUDIT_MEMORY_RECEIPT_CAPTURED",
+        "BREAK_GLASS_DENIED",
+        "BREAK_GLASS_USED",
+        "DLP_POLICY_UPDATED",
+        "DLP_REDACTION_APPLIED",
+        "EXECUTION_COMPLETED",
+        "FALSE_POSITIVE_REPORTED",
+        "GOVERNANCE_AUDIT_MEMORY_RECEIPT",
+        "IMPERSONATION_ENDED",
+        "IMPERSONATION_STARTED",
+        "INLINE_KNOWLEDGE_CONTEXT_BLOCKED",
+        "KNOWLEDGE_COLLECTION_SCOPE_UPDATED",
+        "KNOWLEDGE_SCOPE_FILTER_APPLIED",
+        "LPCI_QUERY_TERMINAL",
+        "OPERATIONAL_BENCHMARK_METRIC_EMITTED",
+        "OUTPUT_SAFETY_TRIGGERED",
+        "OUTPUT_VALIDATION_EXHAUSTED",
+        "QUOTA_HARD_CAP_BLOCKED",
+        "QUOTA_OVERRIDE_GRANTED",
+        "QUOTA_OVERRIDE_REVOKED",
+        "QUOTA_POLICY_SET",
+        "QUOTA_SOFT_CAP_REACHED",
+        "REPORTABLE_DECISION_OBSERVED",
+        "ROLE_OUTPUT_PERMISSION_DENIED",
+        "ROLE_PERMISSION_DENIED",
+        "SAFETY_WORKFLOW_CHAIN_TRIGGERED",
+        "SIEM_CONFIG_UPDATED",
+        "TOOL_POLICY_UPDATED",
+        "WORKFLOW_BINDING_EXECUTED"
+      ],
+      "count": 34,
+      "queryDescription": "rg -o -N \"eventType: '[A-Z_]+'\" <web>/src -g '!*.test.*' -g '!*.spec.*'",
+      "executionProvenance": "WORKER_REPORTED_PYTHON_SCAN; exact executable command/source not supplied; not an rg receipt"
+    }
+  ],
+  "searchExclusions": [
+    "runtime stores and .cvf runtime",
+    ".env files and credentials",
+    "node_modules and every .next* build directory (including .next-cvf-release-gate-build)",
+    "build_output.txt (generated text) and cvf-web docs (documentation, not source)",
+    "other extensions",
+    "dynamic eventType values beyond literals",
+    "any execution, import, HTTP request, browser, database or provider"
+  ],
+  "unresolvedEdges": [
+    {
+      "id": "U1",
+      "edge": "dynamic eventType or payload not expressed as literals",
+      "limit": "S6 lists literals only; route-guard-gateway uses the constant MANDATORY_GATEWAY_EVALUATED, resolved"
+    },
+    {
+      "id": "U2",
+      "edge": "callers of lpci/release-audit.ts and aif-memory-reinjection-route.ts back to a user entry point",
+      "limit": "classified PRODUCTION family by file, entry points not traced"
+    },
+    {
+      "id": "U3",
+      "edge": "callers of mlw-runtime-chain-readouts.ts validateHandoff at line 148",
+      "limit": "not traced further"
+    },
+    {
+      "id": "U4",
+      "edge": "behavior for an event with a missing field in the panel and export route",
+      "limit": "panel handling not traced"
+    },
+    {
+      "id": "U5",
+      "edge": "other writers to the control-plane store path outside the searched tree",
+      "limit": "S4 covered repository code and scripts by literal route only"
+    },
+    {
+      "id": "U6",
+      "edge": "real roles, session bindings, workspace mapping, adapter type and store contents",
+      "limit": "RUNTIME_UNKNOWN, operator-owned"
+    }
+  ],
+  "producerCallsiteLedger": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "callLines": [
+        30
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/dlp/policy/route.ts",
+      "callLines": [
+        82
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/impersonate/end/route.ts",
+      "callLines": [
+        39
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/impersonate/route.ts",
+      "callLines": [
+        48
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/quota/override/route.ts",
+      "callLines": [
+        42,
+        98
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/quota/policy/route.ts",
+      "callLines": [
+        60
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/siem/route.ts",
+      "callLines": [
+        71
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/tool-registry/knowledge-scope/route.ts",
+      "callLines": [
+        55
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/tool-registry/policy/route.ts",
+      "callLines": [
+        57
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/approvals/[id]/route.ts",
+      "callLines": [
+        103
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/approvals/route.ts",
+      "callLines": [
+        147
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-final-response.ts",
+      "callLines": [
+        81,
+        284,
+        344,
+        390
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route-knowledge-context.ts",
+      "callLines": [
+        85,
+        114,
+        155,
+        249
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/execute/route.ts",
+      "callLines": [
+        286,
+        304,
+        349,
+        395,
+        500,
+        821
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/false-positive-report/route.ts",
+      "callLines": [
+        60
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+      "callLines": [
+        101,
+        121,
+        142,
+        163,
+        192
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/aif-memory-reinjection-route.ts",
+      "callLines": [
+        21
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-role-permission-gate.ts",
+      "callLines": [
+        37,
+        88
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/execute-telemetry.ts",
+      "callLines": [
+        82,
+        105
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/lpci/release-audit.ts",
+      "callLines": [
+        79,
+        86
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/policy-events.ts",
+      "callLines": [
+        116,
+        125,
+        134,
+        143,
+        152,
+        161,
+        170
+      ]
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-guard-gateway.ts",
+      "callLines": [
+        49
+      ]
+    }
+  ],
+  "producerFamilies": [
+    {
+      "family": "ADMIN_ACCESS_DENIAL",
+      "files": [
+        "src/lib/admin-session.ts"
+      ],
+      "eventTypes": [
+        "ADMIN_ACCESS_DENIED"
+      ],
+      "reachableBy": "authenticated non-admin",
+      "class": "DENIAL",
+      "transfer": false
+    },
+    {
+      "family": "BREAK_GLASS",
+      "files": [
+        "src/lib/admin-session.ts"
+      ],
+      "eventTypes": [
+        "BREAK_GLASS_USED",
+        "BREAK_GLASS_DENIED"
+      ],
+      "reachableBy": "break-glass header with configured token",
+      "class": "ADMIN_INTERNAL",
+      "transfer": false
+    },
+    {
+      "family": "MIDDLEWARE_DENIAL_POST",
+      "files": [
+        "middleware.ts"
+      ],
+      "eventTypes": [
+        "ADMIN_ACCESS_DENIED"
+      ],
+      "reachableBy": "authenticated non-admin opening /admin pages, internal secret configured",
+      "class": "DENIAL",
+      "transfer": false
+    },
+    {
+      "family": "ADMIN_CONFIGURATION",
+      "files": [
+        "src/app/api/admin/tool-registry/policy/route.ts",
+        "src/app/api/admin/tool-registry/knowledge-scope/route.ts",
+        "src/app/api/admin/quota/policy/route.ts",
+        "src/app/api/admin/quota/override/route.ts",
+        "src/app/api/admin/dlp/policy/route.ts",
+        "src/app/api/admin/siem/route.ts",
+        "src/app/api/admin/impersonate/route.ts",
+        "src/app/api/admin/impersonate/end/route.ts"
+      ],
+      "reachableBy": "admin session",
+      "class": "ADMIN_INTERNAL",
+      "transfer": false
+    },
+    {
+      "family": "APPROVALS",
+      "files": [
+        "src/app/api/approvals/route.ts",
+        "src/app/api/approvals/[id]/route.ts"
+      ],
+      "eventTypes": [
+        "APPROVAL_EXPIRED",
+        "APPROVAL_DECIDED",
+        "APPROVAL_CONSUMED"
+      ],
+      "class": "PRODUCTION",
+      "transfer": false
+    },
+    {
+      "family": "EXECUTE_PATH",
+      "files": [
+        "src/app/api/execute/route.ts",
+        "src/app/api/execute/route-final-response.ts",
+        "src/app/api/execute/route-knowledge-context.ts",
+        "src/lib/execute-telemetry.ts",
+        "src/lib/execute-role-permission-gate.ts"
+      ],
+      "reachableBy": "authenticated user via execute API",
+      "class": "PRODUCTION",
+      "transfer": false
+    },
+    {
+      "family": "MANDATORY_GATEWAY",
+      "files": [
+        "src/lib/route-guard-gateway.ts"
+      ],
+      "eventTypes": [
+        "MANDATORY_GATEWAY_EVALUATED"
+      ],
+      "reachableBy": "authenticated user via execute API",
+      "class": "PRODUCTION",
+      "note": "action label can come from the request body",
+      "transfer": false
+    },
+    {
+      "family": "GOVERNANCE_FEEDBACK",
+      "files": [
+        "src/app/api/governance/false-positive-report/route.ts"
+      ],
+      "eventTypes": [
+        "FALSE_POSITIVE_REPORTED"
+      ],
+      "class": "PRODUCTION",
+      "transfer": false
+    },
+    {
+      "family": "MEMORY_AND_LPCI",
+      "files": [
+        "src/lib/aif-memory-reinjection-route.ts",
+        "src/lib/lpci/release-audit.ts"
+      ],
+      "class": "PRODUCTION_ENTRY_NOT_TRACED",
+      "transfer": false
+    },
+    {
+      "family": "POLICY_EVENTS",
+      "files": [
+        "src/lib/policy-events.ts"
+      ],
+      "class": "NOT_AUDIT_KIND_FILTERED_OUT",
+      "transfer": false
+    },
+    {
+      "family": "DIRECT_ADMIN_POST",
+      "files": [
+        "src/app/api/admin/audit/route.ts"
+      ],
+      "reachableBy": "admin session or internal secret",
+      "class": "ADMIN_SEED_POSSIBLE",
+      "transfer": false,
+      "note": "body actor and action accepted"
+    },
+    {
+      "family": "TESTS_AND_MOCKS",
+      "files": [
+        "*.test.*"
+      ],
+      "class": "TEST_ONLY",
+      "transfer": false
+    }
+  ],
+  "sourceToJourneyMatrix": [
+    {
+      "id": "J01",
+      "journey": "admin, empty store",
+      "sourceOutcome": "empty text, no export button, no panel",
+      "class": "SOURCE_DERIVED",
+      "locators": [
+        "L06"
+      ]
+    },
+    {
+      "id": "J02",
+      "journey": "admin, store holds only unrelated events",
+      "sourceOutcome": "unrelated audit events appear as transfers; non-audit policy events are filtered out",
+      "class": "SOURCE_DERIVED",
+      "locators": [
+        "L10",
+        "L22",
+        "L02"
+      ]
+    },
+    {
+      "id": "J03",
+      "journey": "ordinary non-admin",
+      "sourceOutcome": "page loads, read refused 403, error state, ADMIN_ACCESS_DENIED appended",
+      "class": "SOURCE_DERIVED",
+      "locators": [
+        "L25",
+        "L17",
+        "L18",
+        "L14",
+        "L15",
+        "L08"
+      ]
+    },
+    {
+      "id": "J04",
+      "journey": "unauthenticated",
+      "sourceOutcome": "initial page navigation redirects to login before page mount; later session-loss fetch is separate and unexecuted",
+      "class": "SOURCE_DERIVED",
+      "locators": [
+        "L27"
+      ]
+    },
+    {
+      "id": "J05",
+      "journey": "validation success or failure",
+      "sourceOutcome": "local only, no record, no request",
+      "class": "SOURCE_DERIVED",
+      "locators": [
+        "L03",
+        "L04"
+      ]
+    },
+    {
+      "id": "J06",
+      "journey": "event with missing field",
+      "sourceOutcome": "undefined sourcePath overrides default, route required-field check would refuse; panel handling not traced",
+      "class": "UNRESOLVED_SOURCE_EDGE",
+      "locators": [
+        "L31",
+        "L33"
+      ]
+    },
+    {
+      "id": "J07",
+      "journey": "loading and error",
+      "sourceOutcome": "three states, no retry",
+      "class": "SOURCE_DERIVED",
+      "locators": [
+        "L08"
+      ]
+    },
+    {
+      "id": "J08",
+      "journey": "select and deselect",
+      "sourceOutcome": "one row at a time, inline panel",
+      "class": "SOURCE_DERIVED",
+      "locators": [
+        "L07"
+      ]
+    },
+    {
+      "id": "J09",
+      "journey": "more than eight events",
+      "sourceOutcome": "eight oldest shown",
+      "class": "SOURCE_DERIVED",
+      "locators": [
+        "L21",
+        "L05",
+        "L36"
+      ]
+    },
+    {
+      "id": "J10",
+      "journey": "denial-produced event",
+      "sourceOutcome": "denied read becomes a row an admin later sees",
+      "class": "SOURCE_DERIVED",
+      "locators": [
+        "L14",
+        "L15",
+        "L22"
+      ]
+    },
+    {
+      "id": "J11",
+      "journey": "admin seed or test fixture",
+      "sourceOutcome": "seed and mock are not production reachability",
+      "class": "SEED_AND_TEST_ONLY",
+      "locators": [
+        "L12",
+        "L13",
+        "L35"
+      ]
+    },
+    {
+      "id": "J12",
+      "journey": "break-glass session",
+      "sourceOutcome": "owner-like admission",
+      "class": "SOURCE_DERIVED",
+      "locators": [
+        "L19",
+        "L16"
+      ]
+    },
+    {
+      "id": "J13",
+      "journey": "export of selected event",
+      "sourceOutcome": "all fields editable, no server binding to the event",
+      "class": "SOURCE_DERIVED",
+      "locators": [
+        "L32",
+        "L33"
+      ]
+    },
+    {
+      "id": "J14",
+      "journey": "admin impersonating a non-admin",
+      "sourceOutcome": "effective role non-admin, read refused",
+      "class": "SOURCE_DERIVED",
+      "locators": [
+        "L29",
+        "L16"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "WT-F01",
+      "kind": "source gap",
+      "statement": "no dedicated transfer-record producer in the declared graph"
+    },
+    {
+      "id": "WT-F02",
+      "kind": "source gap",
+      "statement": "no filter makes an event a transfer; unrelated events appear and export as Work Transfer Record"
+    },
+    {
+      "id": "WT-F03",
+      "kind": "implementation defect candidate",
+      "statement": "ascending order with first-eight slice shows the oldest eight"
+    },
+    {
+      "id": "WT-F04",
+      "kind": "operator policy",
+      "statement": "role visibility versus open page and nav; whether a denied read writes an event"
+    },
+    {
+      "id": "WT-F05",
+      "kind": "operator policy",
+      "statement": "store-wide read with no organization, team or actor scope"
+    },
+    {
+      "id": "WT-F06",
+      "kind": "implementation observation",
+      "statement": "export provenance lost and content client-editable"
+    },
+    {
+      "id": "WT-F07",
+      "kind": "evidence limit",
+      "statement": "admin POST body actor fields make seeded rows indistinguishable"
+    },
+    {
+      "id": "WT-F08",
+      "kind": "observation",
+      "statement": "gateway events carry a request-body-influenced action"
+    },
+    {
+      "id": "WT-F09",
+      "kind": "test gap",
+      "statement": "inspected page test lacks populated history/order/selection/mapping coverage; generic admin refusal and denial append are covered by admin-session.test.ts; page integration remains unverified"
+    },
+    {
+      "id": "WT-F10",
+      "kind": "unresolved edge",
+      "statement": "missing-field behavior and unsearched dynamic or outside-tree producers"
+    }
+  ],
+  "verdict": {
+    "statement": "For the declared graph, a normal-user path from Work Transfer to an exportable transfer record is not source-reachable: the page is open to most roles, history is readable only by owner or admin, it lists unrelated audit events, and no searched producer records a transfer",
+    "missing": [
+      "named producer",
+      "filter or kind that defines a transfer record",
+      "role and data-scope contract"
+    ],
+    "runtimeFacts": "UNKNOWN: roles, workspace mapping, adapter, store contents, configuration"
+  },
+  "overlapFreshnessMatrix": [
+    {
+      "item": "Docker walkthrough 2026-09-29",
+      "disposition": "consumed for seeded-history limit; not repeated"
+    },
+    {
+      "item": "B1 and transport evidence",
+      "disposition": "read-only context, unchanged"
+    },
+    {
+      "item": "stopped B2 chain",
+      "disposition": "untouched, no dependency"
+    },
+    {
+      "item": "existing owners",
+      "disposition": "reused as described; no second framework proposed"
+    },
+    {
+      "item": "freshness",
+      "disposition": "file hashes at the execution base; search commands recorded and rerunnable"
+    }
+  ],
+  "negativeCasePlan": {
+    "status": "NOT_EXECUTED_PLANNED",
+    "count": 14,
+    "cases": [
+      {
+        "id": "NP01",
+        "case": "unseeded empty history as admin",
+        "futureOracle": "empty text and no panel",
+        "futureResourcesNeeded": "browser, server, store",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "id": "NP02",
+        "case": "non-admin entry",
+        "futureOracle": "error state, no list, exactly one ADMIN_ACCESS_DENIED appended per denied call",
+        "futureResourcesNeeded": "browser, server, store",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "id": "NP03",
+        "case": "unauthenticated entry",
+        "futureOracle": "initial page navigation redirects before mount; separate session-loss-after-mount case must not be conflated",
+        "futureResourcesNeeded": "browser, server",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "id": "NP04",
+        "case": "store with only unrelated events",
+        "futureOracle": "list labelled as transfers; export titled Work Transfer; confirms WT-F02",
+        "futureResourcesNeeded": "browser, server, store",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "id": "NP05",
+        "case": "store with more than eight events",
+        "futureOracle": "which eight are shown; confirms or refutes WT-F03",
+        "futureResourcesNeeded": "browser, server, store",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "id": "NP06",
+        "case": "event missing targetResource",
+        "futureOracle": "panel and route behavior; resolves U4",
+        "futureResourcesNeeded": "browser, server, store",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "id": "NP07",
+        "case": "select and deselect twice",
+        "futureOracle": "toggle behavior, single panel",
+        "futureResourcesNeeded": "browser",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "id": "NP08",
+        "case": "export of a selected event",
+        "futureOracle": "exported content equals the mapped seven fields, provenance fields absent; editing the form changes the export",
+        "futureResourcesNeeded": "browser, server",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "id": "NP09",
+        "case": "admin POST with arbitrary actor and action",
+        "futureOracle": "row stored with body actor; indistinguishable from a real producer",
+        "futureResourcesNeeded": "server, store",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "id": "NP10",
+        "case": "execute call with a custom action",
+        "futureOracle": "gateway event carries that action and appears in the list",
+        "futureResourcesNeeded": "server, store",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "id": "NP11",
+        "case": "break-glass read",
+        "futureOracle": "admitted; list returned",
+        "futureResourcesNeeded": "server, store, secret handling",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "id": "NP12",
+        "case": "impersonated non-admin read",
+        "futureOracle": "refused with the effective role",
+        "futureResourcesNeeded": "server, store",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "id": "NP13",
+        "case": "validation interaction with a network spy",
+        "futureOracle": "zero requests besides the initial GET",
+        "futureResourcesNeeded": "browser",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "id": "NP14",
+        "case": "role matrix developer, reviewer, viewer, admin, owner against page, nav and read",
+        "futureOracle": "outcomes per role under real bindings; resolves U6 for the tested configuration",
+        "futureResourcesNeeded": "browser, server, configuration",
+        "status": "NOT_EXECUTED_PLANNED"
+      }
+    ]
+  },
+  "recommendation": {
+    "rank1": "Local and operator decision on the transfer record definition and role scope, then one bounded packet on existing owners (page, control-plane read order and filter, a proposed sibling route, export mapping)",
+    "rank2": "ordering and label fix only (WT-F03)",
+    "rank3": "page and route test coverage only (WT-F09)",
+    "evidenceGapClosed": [
+      "WT-F01",
+      "WT-F02",
+      "WT-F03",
+      "WT-F06"
+    ],
+    "requiredAuthority": "Local dispatch and operator policy choice",
+    "parked": [
+      "real data, accounts and workspaces",
+      "provider and pilot effects",
+      "Q001 and Q004 exit",
+      "P11",
+      "public sync",
+      "deployment",
+      "B2 durable acceptance"
+    ]
+  },
+  "staticConsistencyCheck": {
+    "kind": "static locator and cross-reference check, not a behavioral test",
+    "locatorsResolved": 40,
+    "sourceHashesStableOnRecompute": true,
+    "callerCountMatchesDocument": true,
+    "callerFilesWithoutFamily": [],
+    "noTransferNamedProducer": true,
+    "onlyClientAuditCallIsTheGet": true,
+    "documentCitesAllFindings": true,
+    "documentCitesAllJourneys": true,
+    "allNegativePlansUnexecuted": true,
+    "result": "PASS_STATIC_ONLY"
+  },
+  "outputHashes": {
+    "docs/reference/CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md": "3e6724d9cb675e488b2ad6ac9099b0b08653cdfe014159f292046da021356890",
+    "note": "the evidence file and the return are not hashed here to avoid a self-reference cycle"
+  },
+  "commandReceipts": [
+    {
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md",
+      "exit": 0,
+      "result": "COMPLIANT before any edit"
+    },
+    {
+      "command": "python governance/compat/run_adif_defect_resolver.py --task-class worker_execution --role worker --lifecycle-phase worker-return --json",
+      "exit": 0,
+      "result": "0 items, truncated=false, run at worker return"
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "static locator, hash and cross-reference script (pure Python)",
+      "exit": 0,
+      "result": "PASS_STATIC_ONLY; not a behavioral test"
+    },
+    {
+      "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md",
+      "exit": 0,
+      "result": "COMPLIANT 69/69 on the final three-path state; first run failed on the rawMemoryReleased assertion and the return PASS line, repaired in scope"
+    }
+  ],
+  "adifWorkerQuery": {
+    "command": "python governance/compat/run_adif_defect_resolver.py --task-class worker_execution --role worker --lifecycle-phase worker-return --json",
+    "result": "0 items, truncated=false",
+    "ranAtWorkerReturn": true
+  },
+  "executedRuntimeEvidence": "NONE",
+  "claimBoundary": "source-derived reachability and scope observations only; no runtime, policy, acceptance, B2, Q001, Q004, P11, public or deployment claim",
+  "exactDiff": {
+    "gitStatusShortUntrackedAll": [
+      "?? docs/reference/CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md",
+      "?? docs/reviews/CVF_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_WORKER_RETURN_2026-10-02.md",
+      "?? docs/reviews/evidence/cvf-ncr-html-work-transfer-source-record-reachability-2026-10-02.json"
+    ],
+    "trackedModified": 0,
+    "staged": 0,
+    "commit": "none"
+  },
+  "localReviewQualification": {
+    "reviewPath": "docs/reviews/CVF_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_COMPLETION_2026-10-02.md",
+    "originalWorkerOutputSha256": {
+      "docs/reference/CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md": "134bc428c398f5510afa2aa62d87a9e9c908663279f11a07768573f6e0d3e525",
+      "docs/reviews/evidence/cvf-ncr-html-work-transfer-source-record-reachability-2026-10-02.json": "a44b2aef2a67b450298ae75d6cc6a9bb982b9c65360c90da96176b917401612b",
+      "docs/reviews/CVF_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_WORKER_RETURN_2026-10-02.md": "d803bc4c3a0ee140a4d80f96129e55d3fc6cddf8ac85c516ea5e5f93d1622cef"
+    },
+    "sourceHashesVerified": 22,
+    "sourceHashMismatches": [],
+    "acceptedScope": "direct consumer/admission/read-order/export-mapping source graph; unresolved producer edges retained",
+    "searchReceiptDisposition": "equivalent query descriptions only; actual Python scanner source/command unavailable; no exact rg execution attestation",
+    "excludedEvidence": [
+      "S4 repository-wide search",
+      "complete producer absence",
+      "generic denial test absence",
+      "unauthenticated initial page error-state claim"
+    ]
+  }
+}
