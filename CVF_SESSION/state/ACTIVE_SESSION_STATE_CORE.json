@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_VOM_QUICK_START_CLAIM_ALIGNMENT_2026-10-02.md",
-    "baselineSha256": "c7dcef7291911c14d717e1176ff9142476f96b9af41493a72a9f95e651c8397c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_VOM_QUICK_START_CLAIM_ALIGNMENT_2026-10-02.md",
-    "workOrderSha256": "be4ea83b3919033ea04165bc4b0389c9f406a7f3b109352fa3dd93ff66b4e1ab"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+    "baselineSha256": "72c414f1ac2811109e3ee76ad8f473df7be485a76fb4dacf7f636589b90dda3f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+    "workOrderSha256": "1e734a08e4880a9b8471b89272e1b438dbef752c6eac8a1ffc67bff7470ad562"
   },
-  "currentAuthoritySyncReason": "D095 CVF-NCR-VOM-QUICK-START-CLAIM-ALIGNMENT bounded documentation closure at b2c997c39f8350c30731d67ef359787a11803533; historical packet authority retained, execution terminated by docs/reviews/CVF_CVF_NCR_VOM_QUICK_START_CLAIM_ALIGNMENT_COMPLETION_2026-10-02.md; next independent source-only eligibility audit, no worker/effect scope.",
+  "currentAuthoritySyncReason": "D096 CVF-NCR-GENERAL-VIDEO-DESIGN operator-approved private text-design packet at 9528a2fd29756dfd96cabf6b2edd4318fefba918; clean bound release required. Three new documents/static evidence, UNKNOWN session cost, no production/public/effects or stopped-root successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
