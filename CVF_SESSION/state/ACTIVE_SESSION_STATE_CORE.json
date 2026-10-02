@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md",
-    "baselineSha256": "b51c416dff6da8de68be92b99b8db60c12ffd915527a0331b01d38954a8c3d57",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_R1_2026-10-02.md",
-    "workOrderSha256": "8053d20a1d670b10215339d55c43e71f2130e3757df7f578fa0bf8694d06b8da"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_R1_HTML_UX_SUPPORT_AUDIT_2026-10-02.md",
+    "baselineSha256": "b34bbd1d5548fce1455639eb42ff81790e4c86dfb3779423983571cd6bdfbb72",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_R1_HTML_UX_SUPPORT_AUDIT_2026-10-02.md",
+    "workOrderSha256": "df423a882c279f7488587a40879fbeb13d2fe9e3acee982f8aa23050ac8eaca0"
   },
-  "currentAuthoritySyncReason": "D087 delegated policy direction selected at 816d00f431bcfe42cd28e4782afd974ed690f5f1; D086 checkpoint satisfied. Historical R1 authority retained, full contract/implementation not admitted and STOP unchanged; next source-only independent lane audit, no new packet.",
+  "currentAuthoritySyncReason": "D088 CVF-NCR-R1-HTML-UX-SUPPORT-AUDIT paired source-only audit packet at 224bcc60493e9935821b32b5c745f9887ad4d069; release requires clean bound gate. Independent NCR-R1 support matrix only; stopped send/B2 and effects unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
