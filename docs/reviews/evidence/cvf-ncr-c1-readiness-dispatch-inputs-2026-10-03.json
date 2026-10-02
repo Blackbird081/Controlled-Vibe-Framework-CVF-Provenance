@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "cvf.ncr.c1ReadinessDispatchInputs.v1",
+  "batchId": "CVF-NCR-C1-BOUNDED-READINESS",
+  "authoringBaseHead": "cbc8c50395214e605f380aeb5a9baa84137a710d",
+  "status": "INPUT_IDENTITY_RECEIPT_NOT_RUNTIME_PROOF",
+  "inputs": [
+    {
+      "path": "docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md",
+      "rawSha256": "1eafad1cd23048eff1a11acb27ce51f34bb1929a3306de9237b1ed6734064eee",
+      "gitBlobId": "e142d0ec8fce2d03afcf8b41f7c96b7a7cc7f951",
+      "physicalLines": 344,
+      "authority": "governed current input; bounded semantic sections only"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "rawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "gitBlobId": "f22cddd894a9cf976762f8c3b7c3f7a745abf476",
+      "physicalLines": 159,
+      "authority": "governed current input; bounded semantic sections only"
+    },
+    {
+      "path": "docs/reference/CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md",
+      "rawSha256": "de3673a2f41695bfa83692095fd0d67f96cea924d48809aefd8b14266c8e6d87",
+      "gitBlobId": "9825df4a26d8a6eebb46533afc33ca951ee59937",
+      "physicalLines": 300,
+      "authority": "governed current input; bounded semantic sections only"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_COMPLETION_2026-10-03.md",
+      "rawSha256": "e709534ee8f38e3ca7ae9b832c1cdee1f15bffd7250ec0168e5ee099d84a8ad6",
+      "gitBlobId": "018b048f54ce10ec38af612a0966c916b5ed49e9",
+      "physicalLines": 216,
+      "authority": "governed current input; bounded semantic sections only"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-video-composition-readiness-local-review-2026-10-03.json",
+      "rawSha256": "b4ff46ab01cb6890b2ec2baa282622d7dc0c82095ba3fc73a4379285fe568d51",
+      "gitBlobId": "a4256555348ecc7b6d52c973200d5c695e62681b",
+      "physicalLines": 228,
+      "authority": "governed current input; bounded semantic sections only"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_S05_ASSESSMENT_LANE_SELECTION_2026-10-03.md",
+      "rawSha256": "6d95fc56401aee6de3eed37d082c15b6cd70ed40600e813b95721065aea71a62",
+      "gitBlobId": "ff1f77ada8841261110faa77c6a5f8c1ecd9008a",
+      "physicalLines": 150,
+      "authority": "governed current input; bounded semantic sections only"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-s05-assessment-lane-selection-2026-10-03.json",
+      "rawSha256": "1bff8bd9149b2418a4c266b35106555fa69e047bde75d742a261fdf4e3ae5748",
+      "gitBlobId": "291380a76c8f985781e7f1225208f7c0103483fe",
+      "physicalLines": 386,
+      "authority": "governed current input; bounded semantic sections only"
+    }
+  ],
+  "workerPaths": [
+    "docs/reference/CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_2026-10-03.md",
+    "docs/reviews/evidence/cvf-ncr-c1-bounded-readiness-assessment-2026-10-03.json",
+    "docs/reviews/CVF_CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_WORKER_RETURN_2026-10-03.md"
+  ],
+  "completionReviewPath": "docs/reviews/CVF_CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_COMPLETION_2026-10-03.md",
+  "claimBoundary": "D104 assessment selection only. Seven raw/blob identities are not corpus completeness or rights/runtime clearance. Public metadata reads bounded in paired packet; preparation/proof envelopes remain proposals. Session/execution cost UNKNOWN.",
+  "dispatchStaticVerification": {
+    "command": "python governance/compat/run_agent_commit_steward_preflight.py --mode dispatch --base HEAD --head HEAD --enforce",
+    "exitCode": 0,
+    "result": "PASS_STATIC_ONLY",
+    "logSha256": "584b1b71bdadfb46482b4fe7f3e2f9e3289ff5caf68fcb513a4752caebe288aa",
+    "initialCorrections": [
+      "Required envelope labels Canonical packet and Commit mode restored.",
+      "Empty-range literal removed from pre-implementation instruction; wrapper uses --head HEAD.",
+      "Inherited D102 implementation and execution plan replaced with D104/D105 readiness obligations before release.",
+      "Initial pre-commit rejected a 16:9 value in Verified path or symbol; replaced with Timeline / S05 storyboard locator. No policy waiver."
+    ],
+    "boundary": "No checker weakened; gate does not prove upstream/runtime/rights/cost behavior."
+  }
+}
