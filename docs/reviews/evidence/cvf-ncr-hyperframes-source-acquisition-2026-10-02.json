@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "cvf.hyperframesSourceAcquisition@1.0.0",
+  "taskDate": "2026-10-02",
+  "scopeAuthority": "operator update-before-use and reuse-first clarification, followed by instruction to continue Local packet preparation",
+  "upstream": "https://github.com/heygen-com/hyperframes.git",
+  "priorPin": "7129340ae8e96fc32bb45102174528dd5ecafb56",
+  "priorCheckoutPath": ".private_reference/source_mirrors/heygen-com__hyperframes",
+  "priorCheckoutPreserved": true,
+  "firstObservedPin": "f16e509832d4fa02bbc9a5f81b59ff78f9d466af",
+  "postAcquisitionObservation": {
+    "observedAtUtc": "2026-10-02T15:45:26.357058+00:00",
+    "command": "git ls-remote --symref https://github.com/heygen-com/hyperframes.git HEAD",
+    "result": "ref: refs/heads/main\tHEAD\nf16e509832d4fa02bbc9a5f81b59ff78f9d466af\tHEAD"
+  },
+  "selectedPin": "f16e509832d4fa02bbc9a5f81b59ff78f9d466af",
+  "selectionReason": "fresh default-branch HEAD for source comparison; not latest stable release or production selection",
+  "sourcePath": ".private_reference/source_mirrors/heygen-com__hyperframes__f16e509832d4",
+  "cleanCheckout": true,
+  "license": "Apache-2.0 root source declaration; dependency/media/provider terms not evaluated",
+  "licenseBlobSha256": "4259155fb06f127687ee7b0a8a3682d45132db0f2da26cbc0b7a2d1e796436b8",
+  "priorPinAncestor": true,
+  "trackedTreePathCount": 8618,
+  "manifestRecipe": "git ls-tree -r SELECTED_PIN; UTF-8 text with LF and final LF",
+  "manifestSha256": "c3d3677e61cd87c1ad3e458c9df1934dafb42ec42d42bea4852e0b317adcf16c",
+  "changedPathCount": 1892,
+  "acquisitionDiagnostics": [
+    "Initial absolute-path worktree command exited128, stderr not retained; fetch/commit object succeeded, no clean-checkout success inferred from that attempt.",
+    "Retry with command-only core.longpaths=true created a nested checkout because git -C resolves relative destination. Source/destination verified within mirror root before Git worktree move to intended absolute destination; old checkout clean and unchanged afterwards.",
+    "System Git LFS participated in checkout and generated hook files under command-selected hooks directory. Generated untracked hook directory was moved to ignored Local runtime capture after absolute path checks; source checkout and old checkout then both status-clean. Git LFS auxiliary source downloads were not metered; no zero-network/cost assertion. No upstream build, test, package or skill command executed.",
+    "Checkout emitted fixture/output path warnings whose exact text was not retained. Prior intake audit already discloses a Git LFS format anomaly; keep this adverse finding, do not infer all filesystem blobs faithful. Worker reads canonical git show SELECTED_PIN:path blobs and Git tree, not checkout files, for source facts."
+  ],
+  "executionBoundary": "Git/Git LFS source acquisition only; no upstream package install/build/test/skill, provider API, authored media or render execution",
+  "workerSessionCost": "UNKNOWN",
+  "claimBoundary": "Source tree objects acquired/pinned, not source semantic coverage or tool/render admission. Git-blob source reads control authority on Windows.",
+  "changedPathsSha256": "7eb62ed59a468a0aa6339952d6a7e6652156aea9cd968f0c766fefc23c20f702",
+  "changedPathsRecipe": "git diff --name-status priorPin selectedPin; UTF-8 text with LF and final LF"
+}
