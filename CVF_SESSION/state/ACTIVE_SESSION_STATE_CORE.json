@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_GENERAL_VIDEO_REUSE_FIRST_DESIGN_2026-10-02.md",
     "workOrderSha256": "0fdd80a22c32625c3a23038dd4dd4b2d87ce593068c4076c713865c1723862fc"
   },
-  "currentAuthoritySyncReason": "D097 video-design reuse-first amendment at c715960a5e32edc2a904dd931b35f8cbd7a45692; operator has not sent order. Same three private text outputs, HyperFrames preferred candidate/unverified; mirror freshness/capability evaluation separate before use. Bound committed release required; no media/runtime/public effects.",
+  "currentAuthoritySyncReason": "D098 bounded text-design acceptance at 61779c852fefc011d4eb47d2391563f47566f2e4; source-bound private design, original worker snapshot preserved and Local final design hash controls. Next Local renderer reuse scope evaluation only, no tool execution/production successor.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
