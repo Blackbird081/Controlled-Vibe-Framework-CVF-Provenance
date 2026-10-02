@@ -1,0 +1,1211 @@
+{
+  "schemaVersion": "cvf.ncrWorkTransferSendContractEvidence.v1",
+  "batchId": "CVF-NCR-WORK-TRANSFER-SEND-CONTRACT",
+  "rootCauseClusterId": "TRANSFER_SEND_IDENTITY_SCOPE_CONTRACT_UNSPECIFIED",
+  "reworkGeneration": 0,
+  "executionBaseHead": "3e1b6cb9a7003cad6b723717b5894bc3d50601d2",
+  "preflight": {
+    "gitStatusShortUntrackedAllBeforeEdit": "empty",
+    "headEqualsReleasedBase": true,
+    "outputPathsAbsentBeforeEdit": [
+      "docs/reference/CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md",
+      "docs/reviews/evidence/cvf-ncr-work-transfer-send-contract-worker-evidence-2026-10-02.json",
+      "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_WORKER_RETURN_2026-10-02.md"
+    ],
+    "preImplementationGate": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md",
+    "preImplementationGateResult": "COMPLIANT exit 0 before any edit"
+  },
+  "preAuthoringSeal": {
+    "sealedAtUtc": "2026-10-02T08:15:42.422946+00:00",
+    "sealDigestSha256": "b179891b8106314356d1bfa086ee112c2f7e255c4d9950e0e40fe1ffdea0dd03",
+    "digestScope": "sha256 of the sealed seal.json bytes (plan plus source hashes), computed before the contract was drafted; retained apart from the final output digests",
+    "plan": {
+      "constraints": [
+        "three outputs only",
+        "no product/test edit",
+        "no commit",
+        "no runtime/HTTP/DB/browser/provider",
+        "B2 STOP",
+        "real bindings UNKNOWN"
+      ],
+      "coverageRule": "every requirement, refusal, state, transition id in contract maps to >=1 case; every case maps to existing id; static cross-check only (PASS_STATIC_ONLY)",
+      "executionBaseHead": "3e1b6cb9a7003cad6b723717b5894bc3d50601d2",
+      "idPrefixes": {
+        "case": "SC-CASE-*, every case NOT_EXECUTED_PLANNED",
+        "refusal": "SC-RF-01..23",
+        "requirement": "SC-REQ-01..21",
+        "state": "SC-ST-01..08 plus out-of-scope SC-OOS-01..02",
+        "transition": "SC-TR-01..09"
+      },
+      "sections": [
+        "1 scope/non-goals",
+        "2 stage model",
+        "3 send record logical fields",
+        "4 binding/trust",
+        "5 read policy",
+        "6 packet identity",
+        "7 owner comparison+joins+manifest",
+        "8 duplicate/conflict/unknown",
+        "9 refusal catalog",
+        "10 state machine",
+        "11 unknowns/future gates",
+        "12 B2 boundary"
+      ]
+    },
+    "sourceSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts": "83c83600655cd5637bdebc5fc6fac3ff67573a2a42c9b0ec4c8ca57f6cda614d",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts": "69b33640ec525b486390f3e300215913a2c85fe0c6492d0c9a8efdc07ec304ae",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-handoff-validator.ts": "877cc3e22cbfb8d1e815b6bf7ee5d09d8a7d79a1e1b12a5232f373918bf7ca07",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts": "a95ac544fcdf1fb74042b25f4223cc4742592c57d78f434292f3b290643e83e7",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts": "352242cf9e5b3ea734991f230117e76d60ac6018cf0e1be7399cfa66039a2980",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts": "3877b34d112185040a331019e9cd9915c9152059ad42ee2c26e1a9833452b40e",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts": "d57ea274ac95235ef15fd3d577c8141ba27458576810acb654f505db83a119e6",
+      "docs/baselines/CVF_GC018_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md": "12c8c7ad83bb7c518f85a73957e56444ccc521eacb830f851174c75afcc22f35",
+      "docs/reference/agent_handoff/README.md": "de70debe5e2a03dbeb481526e47678cfc76309cfa92753c4511121c8d1260b17",
+      "docs/reviews/CVF_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_COMPLETION_2026-10-02.md": "9e886122e6b1faaeb22ea3b3bc238b2a06818b1026248fea993e8ea13a81a6d6",
+      "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_PRODUCT_SCOPE_CHECKPOINT_2026-10-02.md": "383bbe5909a1c007a4bdd7211eea45c2faf0b92daf083508574c2e4c9d50926f",
+      "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md": "d7a8d181fb6cf4f2be9122f9ab4e31322bf795f18d4e7dafa5b25987db4b8042",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md": "382b7ce30e2b844331a33ae33b49ce414d5fee217156757933bcd8dd6e56dc6d"
+    },
+    "sourceHashesDriftAtFinalRecompute": []
+  },
+  "corpusBoundary": {
+    "verdict": "PARTIAL",
+    "note": "selected regions of 14 named sources; no all-files-read, no producer rescan, no repository-wide absence claim",
+    "manifestCount": 14
+  },
+  "searchLedger": [
+    {
+      "id": "S1",
+      "scope": "named owner files only; no repository search was run",
+      "result": "no new search; accepted partial source graph consumed",
+      "exclusions": [
+        "runtime stores",
+        ".env",
+        "credentials",
+        "node_modules",
+        "build output",
+        "Downloads",
+        "other extensions"
+      ]
+    }
+  ],
+  "unresolvedEdges": [
+    "producer entry points outside the accepted partial graph remain untraced",
+    "real production binding completeness for roles, org and team is not inspected",
+    "which storage adapter runs in any real environment is not inspected",
+    "mock enterprise user table content not read; real membership source unknown"
+  ],
+  "locators": [
+    {
+      "id": "L01",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "line": 79,
+      "expectedSubstring": "interface AuditRecord",
+      "resolved": true,
+      "note": "audit record shape the page consumes"
+    },
+    {
+      "id": "L02",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "line": 100,
+      "expectedSubstring": "function recordToExportRequest",
+      "resolved": true,
+      "note": "draft export mapping"
+    },
+    {
+      "id": "L03",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "line": 118,
+      "expectedSubstring": "receiptAnchor: `transfer-${record.id}`",
+      "resolved": true,
+      "note": "receipt anchor is a string derived from the row id"
+    },
+    {
+      "id": "L04",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "line": 138,
+      "expectedSubstring": "validateHandoff({",
+      "resolved": true,
+      "note": "client-side context check"
+    },
+    {
+      "id": "L05",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "line": 147,
+      "expectedSubstring": "fetch('/api/admin/audit')",
+      "resolved": true,
+      "note": "only network call is the audit GET"
+    },
+    {
+      "id": "L06",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "line": 39,
+      "expectedSubstring": "does not save or create a transfer record",
+      "resolved": true,
+      "note": "page states the check creates no record"
+    },
+    {
+      "id": "L07",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-handoff-validator.ts",
+      "line": 53,
+      "expectedSubstring": "AGENT_CAPABILITIES",
+      "resolved": true,
+      "note": "AgentRole capability table"
+    },
+    {
+      "id": "L08",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-handoff-validator.ts",
+      "line": 186,
+      "expectedSubstring": "function getAgentRole",
+      "resolved": true,
+      "note": "unknown agent id falls back to orchestrator"
+    },
+    {
+      "id": "L09",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/agent-handoff-validator.ts",
+      "line": 209,
+      "expectedSubstring": "export function validateHandoff",
+      "resolved": true,
+      "note": "validator takes supplied context only"
+    },
+    {
+      "id": "L10",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts",
+      "line": 3,
+      "expectedSubstring": "TEAM_ROLES",
+      "resolved": true,
+      "note": "TeamRole vocabulary"
+    },
+    {
+      "id": "L11",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/enterprise-access.ts",
+      "line": 11,
+      "expectedSubstring": "export function canAccessAdmin",
+      "resolved": true,
+      "note": "role predicate without scope"
+    },
+    {
+      "id": "L12",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+      "line": 13,
+      "expectedSubstring": "export type BreakGlassSession",
+      "resolved": true,
+      "note": "fixed break-glass identity"
+    },
+    {
+      "id": "L13",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+      "line": 206,
+      "expectedSubstring": "function hasRequiredAccess",
+      "resolved": true,
+      "note": "break-glass passes the admin check"
+    },
+    {
+      "id": "L14",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+      "line": 245,
+      "expectedSubstring": "export async function requireAdminApiSession",
+      "resolved": true,
+      "note": "admin API admission"
+    },
+    {
+      "id": "L15",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "line": 8,
+      "expectedSubstring": "export async function GET",
+      "resolved": true,
+      "note": "store-wide audit read"
+    },
+    {
+      "id": "L16",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "line": 19,
+      "expectedSubstring": "x-cvf-internal-audit",
+      "resolved": true,
+      "note": "internal secret header bypass on POST"
+    },
+    {
+      "id": "L17",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/admin/audit/route.ts",
+      "line": 32,
+      "expectedSubstring": "actorId: String(body.actorId",
+      "resolved": true,
+      "note": "actor taken from the body"
+    },
+    {
+      "id": "L18",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "line": 33,
+      "expectedSubstring": "export interface UnifiedAuditEvent",
+      "resolved": true,
+      "note": "audit event has no org, team or workspace field"
+    },
+    {
+      "id": "L19",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "line": 46,
+      "expectedSubstring": "export interface CostEvent",
+      "resolved": true,
+      "note": "cost event carries teamId and orgId"
+    },
+    {
+      "id": "L20",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "line": 122,
+      "expectedSubstring": "id: event.id ?? randomUUID()",
+      "resolved": true,
+      "note": "caller-supplied id accepted"
+    },
+    {
+      "id": "L21",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "line": 151,
+      "expectedSubstring": "forwardToSIEM(record)",
+      "resolved": true,
+      "note": "SIEM forward not awaited"
+    },
+    {
+      "id": "L22",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/control-plane-events.ts",
+      "line": 167,
+      "expectedSubstring": "export async function readAuditEvents",
+      "resolved": true,
+      "note": "read filters kind audit only"
+    },
+    {
+      "id": "L23",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+      "line": 62,
+      "expectedSubstring": "CONTROL_PLANE_RETENTION_SECONDS",
+      "resolved": true,
+      "note": "thirty-day retention constant"
+    },
+    {
+      "id": "L24",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+      "line": 144,
+      "expectedSubstring": "async append(storeKey: string, item: T)",
+      "resolved": true,
+      "note": "file append is read, push, write"
+    },
+    {
+      "id": "L25",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+      "line": 165,
+      "expectedSubstring": "atomicAppend: false",
+      "resolved": true,
+      "note": "file adapter reports non-atomic append"
+    },
+    {
+      "id": "L26",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/storage-adapter.ts",
+      "line": 330,
+      "expectedSubstring": "atomicAppend: true",
+      "resolved": true,
+      "note": "sqlite reports atomic local append"
+    },
+    {
+      "id": "L27",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+      "line": 20,
+      "expectedSubstring": "export type SessionCookie",
+      "resolved": true,
+      "note": "session fields"
+    },
+    {
+      "id": "L28",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+      "line": 105,
+      "expectedSubstring": "orgId: binding?.orgId ?? token.orgId ?? 'org_cvf'",
+      "resolved": true,
+      "note": "fallback default org"
+    },
+    {
+      "id": "L29",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+      "line": 102,
+      "expectedSubstring": "'unknown-user'",
+      "resolved": true,
+      "note": "fallback default user"
+    },
+    {
+      "id": "L30",
+      "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+      "line": 166,
+      "expectedSubstring": "realUserId: baseSession.userId",
+      "resolved": true,
+      "note": "impersonation presents the effective user"
+    },
+    {
+      "id": "L31",
+      "file": "docs/reference/agent_handoff/README.md",
+      "line": 67,
+      "expectedSubstring": "## Artifact Completion Evidence",
+      "resolved": true,
+      "note": "artifact, writer and verifier principle"
+    },
+    {
+      "id": "L32",
+      "file": "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_PRODUCT_SCOPE_CHECKPOINT_2026-10-02.md",
+      "line": 48,
+      "expectedSubstring": "### Selected Contract Boundaries",
+      "resolved": true,
+      "note": "operator-selected boundaries"
+    }
+  ],
+  "ownerComparison": [
+    {
+      "owner": "work-transfer page and validator",
+      "adapt": "host confirm action and scoped list",
+      "separatelyAuthorized": "server producer call; history relabel"
+    },
+    {
+      "owner": "enterprise-access",
+      "adapt": "role predicate as half of the read rule",
+      "separatelyAuthorized": "workspace-scoped admin binding"
+    },
+    {
+      "owner": "admin-session",
+      "adapt": "session derivation pattern",
+      "separatelyAuthorized": "break-glass exclusion; non-admin sender admission"
+    },
+    {
+      "owner": "audit route and control-plane events",
+      "adapt": "possible side-evidence emitter",
+      "separatelyAuthorized": "typed scope, server-derived actor, record-level read"
+    },
+    {
+      "owner": "storage-adapter",
+      "adapt": "nothing automatic",
+      "separatelyAuthorized": "store selection with atomic conditional insert, scoped read, retention, recovery"
+    },
+    {
+      "owner": "handoff completion contract",
+      "adapt": "producer, verifier, consumer split as principle",
+      "separatelyAuthorized": "runtime verifier if the operator wants one"
+    }
+  ],
+  "proposedJoins": {
+    "producer": "send route (proposed, not existing)",
+    "verifier": "binding, recipient, packet class, duplicate and read-after-write verifier (proposed, not existing)",
+    "consumer": "scoped read route and page history (proposed, not existing)",
+    "manifestStatus": "proposal only"
+  },
+  "ledger": {
+    "requirements": [
+      "SC-REQ-01",
+      "SC-REQ-02",
+      "SC-REQ-03",
+      "SC-REQ-04",
+      "SC-REQ-05",
+      "SC-REQ-06",
+      "SC-REQ-07",
+      "SC-REQ-08",
+      "SC-REQ-09",
+      "SC-REQ-10",
+      "SC-REQ-11",
+      "SC-REQ-12",
+      "SC-REQ-13",
+      "SC-REQ-14",
+      "SC-REQ-15",
+      "SC-REQ-16",
+      "SC-REQ-17",
+      "SC-REQ-18",
+      "SC-REQ-19",
+      "SC-REQ-20",
+      "SC-REQ-21"
+    ],
+    "refusals": [
+      "SC-RF-01",
+      "SC-RF-02",
+      "SC-RF-03",
+      "SC-RF-04",
+      "SC-RF-05",
+      "SC-RF-06",
+      "SC-RF-07",
+      "SC-RF-08",
+      "SC-RF-09",
+      "SC-RF-10",
+      "SC-RF-11",
+      "SC-RF-12",
+      "SC-RF-13",
+      "SC-RF-14",
+      "SC-RF-15",
+      "SC-RF-16",
+      "SC-RF-17",
+      "SC-RF-18",
+      "SC-RF-19",
+      "SC-RF-20",
+      "SC-RF-21",
+      "SC-RF-22",
+      "SC-RF-23",
+      "SC-RF-24",
+      "SC-RF-25",
+      "SC-RF-26",
+      "SC-RF-27"
+    ],
+    "states": [
+      "SC-ST-01",
+      "SC-ST-02",
+      "SC-ST-03",
+      "SC-ST-04",
+      "SC-ST-05",
+      "SC-ST-06",
+      "SC-ST-07",
+      "SC-ST-08"
+    ],
+    "outOfScopeStates": [
+      "SC-OOS-01",
+      "SC-OOS-02"
+    ],
+    "transitions": [
+      "SC-TR-01",
+      "SC-TR-02",
+      "SC-TR-03",
+      "SC-TR-04",
+      "SC-TR-05",
+      "SC-TR-06",
+      "SC-TR-07",
+      "SC-TR-08",
+      "SC-TR-09"
+    ]
+  },
+  "openChoices": [
+    "OC-1 break-glass read, default deny",
+    "OC-2 unverified-packet send, default refuse",
+    "OC-3 physical owner shape A/B/C, none selected",
+    "OC-4 multi-recipient, default one",
+    "OC-5 self-send, default refuse"
+  ],
+  "futureGates": [
+    "G-BIND",
+    "G-PACKET",
+    "G-STORE",
+    "G-IDEMP",
+    "G-VERIFY",
+    "G-CASE",
+    "G-OPERATOR"
+  ],
+  "caseCount": 62,
+  "caseKindCounts": {
+    "P": 12,
+    "R": 44,
+    "U": 6
+  },
+  "casePlan": {
+    "status": "NOT_EXECUTED_PLANNED",
+    "cases": [
+      {
+        "caseId": "SC-CASE-001",
+        "kind": "P",
+        "covers": [
+          "SC-REQ-01",
+          "SC-TR-03",
+          "SC-ST-04"
+        ],
+        "scenario": "Verified session, in-workspace recipient, PK-VERIFIED packet, bound confirmation",
+        "expectedOutcome": "exactly one recorded send; state SC-ST-04",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-002",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-01"
+        ],
+        "scenario": "One request names two recipients or two packets",
+        "expectedOutcome": "refused; no record carries more than one recipient and packet",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-003",
+        "kind": "P",
+        "covers": [
+          "SC-REQ-02",
+          "SC-ST-01",
+          "SC-ST-02"
+        ],
+        "scenario": "Edit the form then submit",
+        "expectedOutcome": "draft is not a record; submitted is not a record; only SC-ST-04 is a send",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-004",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-03"
+        ],
+        "scenario": "Validator ALLOW with no submit",
+        "expectedOutcome": "no record; no send reported",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-005",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-03"
+        ],
+        "scenario": "Audit event with a transfer-like action seeded through the audit POST",
+        "expectedOutcome": "not treated as a send; not listed as a transfer",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-006",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-03"
+        ],
+        "scenario": "HTTP success returned before verifier confirmation",
+        "expectedOutcome": "not reported as recorded until the verifier confirms",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-007",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-04",
+          "SC-OOS-01",
+          "SC-OOS-02"
+        ],
+        "scenario": "Recipient or admin reads a recorded send",
+        "expectedOutcome": "no acknowledgment or acceptance state is set or implied",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-008",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-05",
+          "SC-RF-14"
+        ],
+        "scenario": "Submit without a confirmation act, or with one bound to another session or packet",
+        "expectedOutcome": "refused SC-RF-14",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-009",
+        "kind": "P",
+        "covers": [
+          "SC-REQ-06",
+          "SC-REQ-08"
+        ],
+        "scenario": "Body carries no actor; server derives sender and workspace",
+        "expectedOutcome": "record sender and workspace equal the server-derived values",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-010",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-09",
+          "SC-RF-09",
+          "SC-REQ-15"
+        ],
+        "scenario": "Body supplies an actor, role or workspace that differs from the session",
+        "expectedOutcome": "refused SC-RF-09",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-011",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-09",
+          "SC-RF-12"
+        ],
+        "scenario": "Request with the internal audit secret header and no session",
+        "expectedOutcome": "refused SC-RF-12; the header grants no identity",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-012",
+        "kind": "P",
+        "covers": [
+          "SC-REQ-07"
+        ],
+        "scenario": "Recipient resolves to an active member of the sender workspace",
+        "expectedOutcome": "admitted past the recipient check",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-013",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-07",
+          "SC-RF-07"
+        ],
+        "scenario": "Nonexistent recipient versus foreign-workspace recipient",
+        "expectedOutcome": "identical refusal SC-RF-07; no enumeration difference",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-014",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-10"
+        ],
+        "scenario": "Sender with workflow role reviewer but TeamRole viewer, and the inverse",
+        "expectedOutcome": "workflow role grants nothing; admission follows the verified binding only",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-015",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-08",
+          "SC-RF-06"
+        ],
+        "scenario": "Sender session with no verified workspace",
+        "expectedOutcome": "refused SC-RF-06",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-016",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-08",
+          "SC-RF-25"
+        ],
+        "scenario": "Stored row lacks a workspace reference",
+        "expectedOutcome": "unreadable to every principal; SC-RF-25",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-017",
+        "kind": "P",
+        "covers": [
+          "SC-REQ-11"
+        ],
+        "scenario": "Sender, recipient and same-workspace admin each read the record",
+        "expectedOutcome": "ALLOW for all three",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-018",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-11",
+          "SC-RF-23"
+        ],
+        "scenario": "Same-workspace developer who is neither party nor admin reads",
+        "expectedOutcome": "DENY SC-RF-23",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-019",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-12",
+          "SC-RF-24"
+        ],
+        "scenario": "Owner or admin of another workspace reads",
+        "expectedOutcome": "DENY SC-RF-24",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-020",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-12",
+          "SC-RF-22"
+        ],
+        "scenario": "Read with no session",
+        "expectedOutcome": "DENY SC-RF-22",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-021",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-12",
+          "SC-RF-26"
+        ],
+        "scenario": "Break-glass session reads",
+        "expectedOutcome": "DENY by default SC-RF-26",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-022",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-11",
+          "SC-REQ-12"
+        ],
+        "scenario": "Existing admin audit read used as the transfer read",
+        "expectedOutcome": "not accepted as the transfer read; its scope is store-wide",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-023",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-13",
+          "SC-RF-10"
+        ],
+        "scenario": "Impersonated session attempts a send",
+        "expectedOutcome": "refused SC-RF-10; real user noted",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-024",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-13",
+          "SC-RF-11"
+        ],
+        "scenario": "On-behalf-of or delegated confirmation",
+        "expectedOutcome": "refused SC-RF-11",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-025",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-13",
+          "SC-RF-13"
+        ],
+        "scenario": "Break-glass session attempts a send",
+        "expectedOutcome": "refused SC-RF-13",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-026",
+        "kind": "R",
+        "covers": [
+          "SC-RF-01"
+        ],
+        "scenario": "No session on send",
+        "expectedOutcome": "refused SC-RF-01",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-027",
+        "kind": "R",
+        "covers": [
+          "SC-RF-02"
+        ],
+        "scenario": "Expired or tampered session on send",
+        "expectedOutcome": "refused SC-RF-02",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-028",
+        "kind": "R",
+        "covers": [
+          "SC-RF-03"
+        ],
+        "scenario": "Session without a resolvable sender binding",
+        "expectedOutcome": "refused SC-RF-03",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-029",
+        "kind": "R",
+        "covers": [
+          "SC-RF-04"
+        ],
+        "scenario": "Binding equals the unknown-user or default org and team fallback",
+        "expectedOutcome": "refused SC-RF-04",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-030",
+        "kind": "R",
+        "covers": [
+          "SC-RF-05"
+        ],
+        "scenario": "Sender membership revoked after login",
+        "expectedOutcome": "refused SC-RF-05",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-031",
+        "kind": "R",
+        "covers": [
+          "SC-RF-08"
+        ],
+        "scenario": "Recipient equals sender",
+        "expectedOutcome": "refused SC-RF-08 by default (OC-5)",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-032",
+        "kind": "P",
+        "covers": [
+          "SC-REQ-14"
+        ],
+        "scenario": "Packet resolves, version exists, server digest equals the pinned digest",
+        "expectedOutcome": "classified PK-VERIFIED; admissible",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-033",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-14",
+          "SC-RF-15"
+        ],
+        "scenario": "No packet reference",
+        "expectedOutcome": "refused SC-RF-15",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-034",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-14",
+          "SC-RF-16"
+        ],
+        "scenario": "Reference that does not resolve",
+        "expectedOutcome": "refused SC-RF-16",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-035",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-14",
+          "SC-RF-17"
+        ],
+        "scenario": "Reference to unverified or editable draft content",
+        "expectedOutcome": "refused SC-RF-17",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-036",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-14",
+          "SC-RF-18"
+        ],
+        "scenario": "Named version differs from the resolver version",
+        "expectedOutcome": "refused SC-RF-18",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-037",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-16"
+        ],
+        "scenario": "Submitter hashes the form text and offers it as provenance",
+        "expectedOutcome": "not accepted as immutable provenance; classified mutable or unverified",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-038",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-16",
+          "SC-REQ-14"
+        ],
+        "scenario": "Export draft receipt anchor offered as packet identity",
+        "expectedOutcome": "not accepted; refused SC-RF-17",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-039",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-15"
+        ],
+        "scenario": "Body supplies a send identifier, a recording time and a stage",
+        "expectedOutcome": "ignored or refused; server values used",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-040",
+        "kind": "P",
+        "covers": [
+          "SC-REQ-17"
+        ],
+        "scenario": "Review the owner comparison table against the source locators",
+        "expectedOutcome": "each adaptable and separately authorized item traces to a locator",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-041",
+        "kind": "P",
+        "covers": [
+          "SC-REQ-18"
+        ],
+        "scenario": "Same request identifier and same dedupe key replayed",
+        "expectedOutcome": "existing record returned; no second record",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-042",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-18",
+          "SC-RF-19"
+        ],
+        "scenario": "Same dedupe key, different request identifier",
+        "expectedOutcome": "refused SC-RF-19 with a pointer to the existing record",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-043",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-18",
+          "SC-RF-20"
+        ],
+        "scenario": "Same packet version to a second recipient",
+        "expectedOutcome": "refused SC-RF-20",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-044",
+        "kind": "P",
+        "covers": [
+          "SC-REQ-18"
+        ],
+        "scenario": "Different version to the same recipient",
+        "expectedOutcome": "separate send; no automatic supersession",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-045",
+        "kind": "U",
+        "covers": [
+          "SC-REQ-18"
+        ],
+        "scenario": "Two concurrent requests with the same dedupe key on a non-conditional store",
+        "expectedOutcome": "UNKNOWN; uniqueness not guaranteed until G-IDEMP",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-046",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-19",
+          "SC-RF-21"
+        ],
+        "scenario": "Workflow context check returns BLOCK",
+        "expectedOutcome": "refused SC-RF-21",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-047",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-19",
+          "SC-RF-27",
+          "SC-TR-02"
+        ],
+        "scenario": "Store reports failure and a read-only check finds no record",
+        "expectedOutcome": "refused SC-RF-27; no send reported",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-048",
+        "kind": "U",
+        "covers": [
+          "SC-REQ-19",
+          "SC-TR-04",
+          "SC-ST-05"
+        ],
+        "scenario": "Timeout after submit",
+        "expectedOutcome": "SC-ST-05; no blind retry",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-049",
+        "kind": "P",
+        "covers": [
+          "SC-TR-05",
+          "SC-ST-06"
+        ],
+        "scenario": "Read-only lookup after a timeout finds the record",
+        "expectedOutcome": "SC-ST-06; no second write",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-050",
+        "kind": "P",
+        "covers": [
+          "SC-TR-06",
+          "SC-ST-07",
+          "SC-TR-09"
+        ],
+        "scenario": "Read-only lookup finds none; retry with the same request identifier",
+        "expectedOutcome": "SC-ST-07 then SC-ST-02 under the same request identifier",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-051",
+        "kind": "U",
+        "covers": [
+          "SC-TR-07",
+          "SC-ST-08"
+        ],
+        "scenario": "Lookup cannot decide because the store is unreadable",
+        "expectedOutcome": "SC-ST-08; no retry; no send reported",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-052",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-20"
+        ],
+        "scenario": "Producer success status with no verifier read-after-write",
+        "expectedOutcome": "not reported as recorded",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-053",
+        "kind": "U",
+        "covers": [
+          "SC-REQ-20"
+        ],
+        "scenario": "Recorded-send acknowledgment on the existing file adapter",
+        "expectedOutcome": "UNKNOWN; future gates G-STORE, G-IDEMP, G-VERIFY",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-054",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-21"
+        ],
+        "scenario": "Design option depends on the B2 acceptance, witness or restore problem",
+        "expectedOutcome": "stop and disclose; no successor opened",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-055",
+        "kind": "U",
+        "covers": [
+          "SC-REQ-21"
+        ],
+        "scenario": "Real account, workspace, membership, admin binding, retention, cost, recovery",
+        "expectedOutcome": "UNKNOWN; named as future gates",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-056",
+        "kind": "R",
+        "covers": [
+          "SC-TR-01",
+          "SC-ST-01"
+        ],
+        "scenario": "Direct SC-ST-01 to SC-ST-04 skipping submission",
+        "expectedOutcome": "forbidden transition",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-057",
+        "kind": "R",
+        "covers": [
+          "SC-TR-08",
+          "SC-ST-03"
+        ],
+        "scenario": "Edit after a refusal and resubmit",
+        "expectedOutcome": "new SC-ST-02 with a new request identifier",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-058",
+        "kind": "R",
+        "covers": [
+          "SC-ST-04",
+          "SC-ST-02"
+        ],
+        "scenario": "Attempt to edit or delete a recorded send",
+        "expectedOutcome": "no transition out of SC-ST-04 in this contract",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-059",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-02",
+          "SC-OOS-01",
+          "SC-OOS-02"
+        ],
+        "scenario": "Any path that sets an acknowledged or accepted state",
+        "expectedOutcome": "forbidden; those states are not defined here",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-060",
+        "kind": "U",
+        "covers": [
+          "SC-REQ-07"
+        ],
+        "scenario": "Membership resolver unavailable",
+        "expectedOutcome": "UNKNOWN resolver; recipient refused, not assumed valid",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-061",
+        "kind": "P",
+        "covers": [
+          "SC-REQ-12"
+        ],
+        "scenario": "Admin of the record workspace reads while a foreign admin is denied",
+        "expectedOutcome": "oversight is scoped per workspace",
+        "status": "NOT_EXECUTED_PLANNED"
+      },
+      {
+        "caseId": "SC-CASE-062",
+        "kind": "R",
+        "covers": [
+          "SC-REQ-13"
+        ],
+        "scenario": "Service token send",
+        "expectedOutcome": "refused SC-RF-12",
+        "status": "NOT_EXECUTED_PLANNED"
+      }
+    ]
+  },
+  "staticConsistencyCheck": {
+    "kind": "static requirement-to-case and locator cross-check, not a behavioral test",
+    "command": "python build_evidence.py (worker-local script in the session scratchpad, untracked; parses identifiers from the contract and compares them to the case plan)",
+    "exit": 0,
+    "requirementIds": 21,
+    "refusalIds": 27,
+    "stateIds": 8,
+    "outOfScopeStateIds": 2,
+    "transitionIds": 9,
+    "uncoveredIds": [],
+    "caseCoversUnknownIds": [],
+    "locatorsResolved": 32,
+    "locatorsTotal": 32,
+    "sourceHashesStableOnRecompute": true,
+    "allCasesUnexecuted": true,
+    "result": "PASS_STATIC_ONLY"
+  },
+  "outputHashes": {
+    "docs/reference/CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md": "ac63981e84c0736f13bba31b91ef4db3807cb8c21853bb9a8c47bbd8d285b7c9",
+    "note": "the evidence JSON and the return are not hashed here to avoid a self-reference cycle; the seal digest above is separate"
+  },
+  "executedRuntimeEvidence": "NONE",
+  "claimBoundary": "contract design and static coverage only; no runtime, real binding, send, acknowledgment, acceptance, store, cost or recovery claim",
+  "localReviewQualification": {
+    "reviewPath": "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_COMPLETION_2026-10-02.md",
+    "designDisposition": "DESIGN_NOT_RATIFIED",
+    "originalWorkerOutputSha256": {
+      "docs/reference/CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md": "f8d795de47d9a6f4b52e5986185e5f1755fd3cd5ac6fc3006e71da3b09b4625e",
+      "docs/reviews/evidence/cvf-ncr-work-transfer-send-contract-worker-evidence-2026-10-02.json": "0a8ce1e6e0e55bd03d198d04cb2db874da2fde924429d5d1b648bc2dbd76f932",
+      "docs/reviews/CVF_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_WORKER_RETURN_2026-10-02.md": "1e5526575e7c13d26e7ddf4f79dca95b120acc3252cb7c88c0c16209f1d52eca"
+    },
+    "sourceHashesMatched": 14,
+    "locatorSubstringsMatched": 32,
+    "plannedCasesMatched": 62,
+    "caseRuntimeStatus": "NOT_EXECUTED_PLANNED",
+    "sealDigestVerification": "NOT_REPRODUCED: exact sealed bytes/canonical byte recipe not supplied",
+    "sealPlanDelta": "planned SC-RF-01..23; final SC-RF-01..27; retained seal, final expansion disclosed",
+    "semanticGaps": [
+      "D01 absence is not terminal no-late-write evidence",
+      "D02 requestId/different fingerprint and scoped conflict undefined",
+      "D03 fallback provenance is not literal default equality"
+    ],
+    "openChoiceDisposition": "OC-1..5 not ratified by worker default or Local static coverage",
+    "readiness": "proposal only; no implementation or runtime authority",
+    "scopeClaimBoundary": "source graph only, no whole repository or runtime absence"
+  }
+}
