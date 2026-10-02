@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `8e8ade03d71649b1ddb077190b66e441b4df0e6f`; CVF-NCR-HTML-B2-DESIGN; bound design-only worker execution next.
+Current HEAD recorded for this handoff: `93cb81a89e4b5cbc5c87b65b45b86088cc1cad56`; CVF-NCR-HTML-B2-DESIGN-R1; bound design-only rework next.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -10,7 +10,7 @@ Carry CVF-NCR v2.7 and closed AKOE/G1-G7. Applied-knowledge details remain in th
 ## Scope / Target / Owner Boundary
 Role: Local orchestrator/reviewer. Phase: worker-dispatch; technical owner: Local; effect owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=execute bound B2 design-only packet; role=Local dispatcher/reviewer; phase=worker-dispatch; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=execute bound B2 design-only R1; role=Local dispatcher/reviewer; phase=worker-dispatch; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -21,9 +21,9 @@ AKOE authority: `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADM
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
 - B1 Print R2 accepted bounded at `6251ca305`: worker 5/5, units 45/45; Local 120-line probe: 3 pages/all rows/end marker, opaque origin/zero Print hits. Review: `docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md`. Width 700px; renderer only; Q001/Q004 OPEN. Preview owner audit complete; no Print successor.
-- B2 design packet `8e8ade03d` bound: three outputs, source/contract/case planning only. WO: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md`. No implementation; Q001/Q004 OPEN.
+- B2 R0 unratified; six findings consolidated. R1 packet `93cb81a89`: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md`; three existing outputs, design/cases only; no implementation. Q001/Q004 OPEN.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: bind B2 design packet `8e8ade03d71649b1ddb077190b66e441b4df0e6f`; design-only worker after bound gates. Preserve Q001/Q004/effects. Protected paths: six continuity paths below. Operator authorization: delegated audit/choice and dispatch. Rollback: continuity only; preserve material.
+Authorized guard-maintenance scope: bind B2 design R1 `93cb81a89e4b5cbc5c87b65b45b86088cc1cad56`; three-output design-only rework after bound gates. Protected paths: six continuity paths below. Authorization: delegated orchestration/review. Rollback: continuity only; preserve material; effects parked.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`

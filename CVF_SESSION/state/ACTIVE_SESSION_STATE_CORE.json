@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md",
-    "baselineSha256": "2e686d8f839354815c1a44ee9ae67e53a68828d6fe058de5138ff88f679d74ff",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md",
-    "workOrderSha256": "60f92006539a7a37424bb604ad0cb27779f77d1bc2de3cac61f7b6b78c019f56"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md",
+    "baselineSha256": "c087c1ba55fcc46956becf4abafa08e66df3e4ee505e83f0121117faa46e75f0",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md",
+    "workOrderSha256": "b99493d498523167776cf5ec7fbfc7d5015153f2d024ddad35db14b140400b8f"
   },
-  "currentAuthoritySyncReason": "B2 documentation-only design packet committed at 8e8ade03d71649b1ddb077190b66e441b4df0e6f; bind CVF-NCR-HTML-B2-DESIGN for three-output design worker after bound gates. Source/contract/planned cases only; no implementation, DB or real data/effect grant. Local reviews design; Q001/Q004 OPEN and P11 parked.",
+  "currentAuthoritySyncReason": "B2 design R1 paired packet committed at 93cb81a89e4b5cbc5c87b65b45b86088cc1cad56; R0 retained as unratified evidence. One consolidated design-only six-finding repair; three existing worker paths. No implementation/runtime/effect admission; Q001/Q004 OPEN and P11 parked.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
