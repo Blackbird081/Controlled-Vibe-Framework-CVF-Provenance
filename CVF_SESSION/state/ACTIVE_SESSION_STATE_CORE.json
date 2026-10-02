@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_2026-10-02.md",
-    "baselineSha256": "0e5afc72667d924e9e7743bfc94f05a6d5ff02f46a16697a7798bd907cf00226",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_2026-10-02.md",
-    "workOrderSha256": "b52717352a9267b71a5abe8d0f5b9326d93751d39aaf0c556610783ca3ca1dc2"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_VOM_QUICK_START_CLAIM_ALIGNMENT_2026-10-02.md",
+    "baselineSha256": "c7dcef7291911c14d717e1176ff9142476f96b9af41493a72a9f95e651c8397c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_VOM_QUICK_START_CLAIM_ALIGNMENT_2026-10-02.md",
+    "workOrderSha256": "be4ea83b3919033ea04165bc4b0389c9f406a7f3b109352fa3dd93ff66b4e1ab"
   },
-  "currentAuthoritySyncReason": "D093 CVF-NCR-GENERAL-USER-GUIDE-REFRESH bounded documentation closure at bef6f7296ddcc315ddbb46ef7a1ec599cab0278b; historical paired authority retained, execution terminated by docs/reviews/CVF_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_COMPLETION_2026-10-02.md. Next Local source-only independent eligibility audit; no worker/video/effect authority.",
+  "currentAuthoritySyncReason": "D094 CVF-NCR-VOM-QUICK-START-CLAIM-ALIGNMENT exact L3 quick-start documentation packet at 2c89b6cf07d380ecd667247ef363539f89ee14d7; clean bound release required. Frozen doctrine/operating policy untouched, setup preserved, three worker paths/static proof only; effects/stopped roots retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
