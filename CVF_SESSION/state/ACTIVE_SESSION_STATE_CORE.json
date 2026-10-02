@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_WORK_TRANSFER_AUDIT_LABEL_2026-10-02.md",
-    "baselineSha256": "d5dc1621c5a139ebdcc3dad8cbff6617fbe31aabf36b5fcd8fda6a8c1ad7e3f0",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_AUDIT_LABEL_2026-10-02.md",
-    "workOrderSha256": "8742e7827e98aec4e9f471ed192b922bd7d25ab5ff76c23cd70f78c34d47d762"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md",
+    "baselineSha256": "12c8c7ad83bb7c518f85a73957e56444ccc521eacb830f851174c75afcc22f35",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_WORK_TRANSFER_SEND_CONTRACT_2026-10-02.md",
+    "workOrderSha256": "382b7ce30e2b844331a33ae33b49ce414d5fee217156757933bcd8dd6e56dc6d"
   },
-  "currentAuthoritySyncReason": "D080 WT-F02 presentation bounded closure at 40138f664e3a33851322f678a97e85966bc209a0; historical audit-label packet retained only as execution history, no fresh worker permission. Source-only remaining checkpoint selection; WT-F03 preserved, provenance/policy/producer and B2 STOP/effects unchanged.",
+  "currentAuthoritySyncReason": "D081 explicit operator send/read-scope design choice; D082 three-output contract/design packet at bca7bb6b8c9de58d0c8552e249925fa5b56ffe74. Detailed design pending, no implementation/data/effect grant; WT-F02/WT-F03 closed and B2 STOP unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
