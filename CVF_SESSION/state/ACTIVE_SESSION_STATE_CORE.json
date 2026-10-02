@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md",
-    "baselineSha256": "c087c1ba55fcc46956becf4abafa08e66df3e4ee505e83f0121117faa46e75f0",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md",
-    "workOrderSha256": "b99493d498523167776cf5ec7fbfc7d5015153f2d024ddad35db14b140400b8f"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md",
+    "baselineSha256": "93f0e93164459ffe01730e6f7adb8ca4c8c59171ddb859d02d7e367d1c6078a3",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md",
+    "workOrderSha256": "a3a14dd7663e04ab77e2c5dc698de8b55383b6ce55dd53e6e3625aa1b1740d63"
   },
-  "currentAuthoritySyncReason": "B2 source-only root reassessment recorded at e2da53dfa12bd45b294908b5098e950f07590f0b; proposal only, no worker dispatch. Historical R1 packet currentAuthority preserved without execution permission; terminal B2 chain unchanged. Next independent roadmap lane source audit before any new packet; effects parked.",
+  "currentAuthoritySyncReason": "D075 independent source-record audit packet at 9a354df911dcf4f096541fbfb535c061be1f4a89; only three source documentation outputs after bound release. B2 terminal STOP unchanged; no runtime/effect/implementation permission.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

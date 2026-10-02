@@ -2,16 +2,16 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_p10_closed_p11_parked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=SOURCE_ONLY_INDEPENDENT_ROADMAP_LANE_SELECTION; REVIEW_COMMIT=e2da53dfa12bd45b294908b5098e950f07590f0b; REVIEW_PATH=docs/reviews/CVF_CVF_NCR_HTML_B2_ROOT_CONTRACT_REASSESSMENT_2026-10-02.md; EXPANSION_ALLOWED=false. Local B2 root-contract reassessment complete: tail-anchor/no-loss-restore proposal, witness CAS/publication and exact-tip as-of semantics, eleven NOT_EXECUTED_DESIGN_ONLY boundary scenarios. No integrated-design or runtime ratification. Same B2 blocker remains and SCEC STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR is terminal; no renamed reset, R2 or implementation. Next Local source-only independent roadmap lane selection with owner/overlap/freshness checks before any packet. Historical R1 currentAuthority is not execution permission. No product/schema/store/lock/witness mutation, DB/browser/server/provider run, real data/account/custody/effect/public/deploy grant. Witness mechanism/owner, lock feasibility and cost remain UNKNOWN future gates. Q001/Q004 OPEN; durable B2/P11/effects parked; LHW24 closed.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; BATCH_ID=CVF-NCR-HTML-WORK-TRANSFER-SOURCE; NEXT_ACTION_CLASS=EXECUTE_SOURCE_ONLY_WORK_TRANSFER_RECORD_AUDIT_PACKET; PACKET_COMMIT=9a354df911dcf4f096541fbfb535c061be1f4a89; WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md; EXPANSION_ALLOWED=false. Independent lane D075: source-defined Work Transfer producer/reachability/role-data-scope audit after seeded Docker walkthrough; not a B2 design successor. After hash-bound continuity/bound pre-dispatch PASS, shared-workspace INTERNAL_AGENT worker records clean released executionBaseHead and three absent outputs, passes bound pre-implementation, creates exactly three source-audit/evidence/return paths from acceptance ledger. WORKER_MUST_NOT_COMMIT; COMPLETE_PENDING_REVIEW and full worker return gate; PASS_STATIC_ONLY, all behavior unexecuted. Local reviews/commits. No product/test/config/dependency/registry/continuity mutation, module execution, DB/HTTP/browser/server/provider run, runtime-store/secrets/real-account/data access, policy widening, artifact acceptance, public/deploy effect. Prior warm walkthrough/B1/transport evidence consumed, no duplicate rerun. B2 remains STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR, unratified root proposal, no renamed reset/R2/implementation; Q001/Q004 OPEN; P11/effects parked; LHW24 closed.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md",
-    "baselineSha256": "c087c1ba55fcc46956becf4abafa08e66df3e4ee505e83f0121117faa46e75f0",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md",
-    "workOrderSha256": "b99493d498523167776cf5ec7fbfc7d5015153f2d024ddad35db14b140400b8f"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md",
+    "baselineSha256": "93f0e93164459ffe01730e6f7adb8ca4c8c59171ddb859d02d7e367d1c6078a3",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_WORK_TRANSFER_SOURCE_RECORD_REACHABILITY_2026-10-02.md",
+    "workOrderSha256": "a3a14dd7663e04ab77e2c5dc698de8b55383b6ce55dd53e6e3625aa1b1740d63"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
