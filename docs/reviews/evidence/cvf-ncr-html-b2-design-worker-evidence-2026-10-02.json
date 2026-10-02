@@ -1,18 +1,20 @@
 {
   "schemaVersion": "cvf.ncrHtmlB2DesignWorkerEvidence.v1",
   "batchId": "CVF-NCR-HTML-B2-DESIGN",
-  "revision": "initial selected-profile design",
+  "revision": "R1 consolidated rework of B2D-F01 to B2D-F06",
   "rootCauseClusterId": "B2_ACCEPTANCE_DESIGN_UNSPECIFIED",
-  "reworkGeneration": 0,
-  "executionBaseHead": "17ae5b9586ee1fdd0fe6a73d0f37b4ab4419f8a2",
+  "reworkGeneration": 1,
+  "executionBaseHead": "66200b2df63d93b63b521c608e0d7c62656f07fc",
   "preflight": {
     "gitStatusShortUntrackedAllBeforeEdit": "empty",
-    "outputPathsAbsentBeforeEdit": [
+    "candidateOutputsTrackedAndEqualToBase": [
       "docs/reference/CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md",
       "docs/reviews/evidence/cvf-ncr-html-b2-design-worker-evidence-2026-10-02.json",
       "docs/reviews/CVF_CVF_NCR_HTML_B2_DESIGN_WORKER_RETURN_2026-10-02.md"
     ],
-    "preImplementationGate": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md",
+    "findingDigestVerified": true,
+    "r0SourceManifestHashDriftAtR1Base": [],
+    "preImplementationGate": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md",
     "preImplementationGateResult": "COMPLIANT exit 0 before any edit"
   },
   "designDocument": {
@@ -22,7 +24,7 @@
   "corpusBoundary": {
     "verdict": "PARTIAL",
     "note": "selected regions of named sources only; no all-files-read claim; no repository-wide absence claim",
-    "manifestCount": 13
+    "manifestCount": 16
   },
   "sourceManifest": [
     {
@@ -141,18 +143,47 @@
       "symbols": "better-sqlite3 ^12.6.2",
       "disposition": "existing dependency; no new dependency proposed",
       "terminalStatus": "READ"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_HTML_B2_DESIGN_R0_LOCAL_REVIEW_2026-10-02.md",
+      "sha256": "acd6c094fce6f7f83a11fe92c6877dfc93353c62c9a921c16bf39699d66e1d0b",
+      "readDepth": "SELECTED_SECTIONS",
+      "selectedRegions": "Findings / Position table B2D-F01..F06",
+      "symbols": "REVIEW_COMPLETE_REWORK_REQUIRED",
+      "disposition": "FINDING SET, digest checked",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md",
+      "sha256": "b99493d498523167776cf5ec7fbfc7d5015153f2d024ddad35db14b140400b8f",
+      "readDepth": "SELECTED_SECTIONS",
+      "selectedRegions": "Implementation Contract F01-F06",
+      "symbols": "R1 order",
+      "disposition": "GOVERNING ORDER",
+      "terminalStatus": "READ"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md",
+      "sha256": "c087c1ba55fcc46956becf4abafa08e66df3e4ee505e83f0121117faa46e75f0",
+      "readDepth": "SELECTED_SECTIONS",
+      "selectedRegions": "Implementation Contract",
+      "symbols": "R1 baseline",
+      "disposition": "GOVERNING PACKET",
+      "terminalStatus": "READ"
     }
   ],
   "selectedProfileDelta": [
     "server-established actor, role and scope bound to operation, version and bytes",
     "export attestation proving byte provenance",
     "dedicated store adapted from named patterns, four existing owners rejected as acceptance authority",
-    "fencing epoch checked in every write transaction",
-    "attempt record then decision transaction",
+    "one append-only hash-chained journal; counters, epoch and restore generation derived (F01)",
+    "total operation state machine with terminal outcomes and intent check in every state (F02)",
+    "lineage head first without fallback (F03)",
+    "operating-system lock for the writer lifetime and a fresh epoch per lifetime (F04)",
+    "freshness witness over the journal sequence as a hard admission blocker, fail-closed reads, restore with declared loss (F05)",
+    "exact-intent acknowledgment, pre-write versus post-intent refusal effects, lineage information separate from acknowledgment (F06)",
     "synchronous FULL required at open",
-    "classification on a scratch byte copy, never opening the live store for write",
-    "absence definitive only with positive evidence",
-    "historical versus effective lifecycle with restore handling"
+    "classification on a scratch byte copy, never opening the live store for write"
   ],
   "ownerDispositions": [
     {
@@ -187,7 +218,8 @@
     "no stable artifact lineage key exists; receiptAnchor is an HTML section id",
     "no workspace definition exists; session exposes orgId and teamId only",
     "governance ledger read path also sets journal mode, so its classification precedent is copy based",
-    "v3 ledger header says duplicates throw but the code returns the existing entry"
+    "v3 ledger header says duplicates throw but the code returns the existing entry",
+    "R0 review findings B2D-F01 to B2D-F06 are the R1 input; they are document-state contradictions, not observed runtime failures"
   ],
   "openDesignChoicesForLocal": [
     "attestation required",
@@ -195,34 +227,110 @@
     "synchronous FULL required",
     "classification on a scratch copy",
     "two-transaction commit with positive attempt record",
-    "one effective version per lineage with no automatic fallback",
+    "one append-only journal instead of mutable control fields",
+    "operating-system lock for the writer lifetime and fresh epoch per lifetime",
+    "terminal operations never reopen and need a new operationId",
+    "lineage head first with no fallback",
+    "witness over the journal sequence as hard admission blocker",
     "co-signing unsupported",
     "artifactKey introduced as a new validated slug"
   ],
   "unknownFutureGates": [
-    "accepting accounts and roles",
-    "workspace mapping",
-    "real data and classification",
-    "store location and host",
-    "operating system file permissions",
     "MAC key custody",
-    "backup location and key custody",
-    "retention and deletion",
     "RPO and RTO",
+    "accepting accounts and roles",
+    "backup location and key custody",
     "cost budget",
+    "expiry period policy",
+    "independent high-water witness",
+    "operating system file permissions",
+    "operating-system lock mechanism choice for the host",
     "pilot or live effect",
+    "real data and classification",
+    "real witness location, owner, custody, retention and availability",
     "recovery owner identity",
-    "independent high-water witness"
+    "retention and deletion",
+    "store location and host",
+    "workspace mapping"
   ],
   "casePlan": {
     "status": "NOT_EXECUTED_DESIGN_ONLY",
-    "count": 48,
-    "note": "a table is not test proof; no case was run; no database, server, browser or provider was used",
+    "count": 86,
+    "revisedR0CaseIds": [
+      "B2D-C01",
+      "B2D-C08",
+      "B2D-C09",
+      "B2D-C13",
+      "B2D-C14",
+      "B2D-C15",
+      "B2D-C16",
+      "B2D-C17",
+      "B2D-C19",
+      "B2D-C20",
+      "B2D-C23",
+      "B2D-C24",
+      "B2D-C25",
+      "B2D-C28",
+      "B2D-C29",
+      "B2D-C30",
+      "B2D-C35",
+      "B2D-C36",
+      "B2D-C37",
+      "B2D-C38",
+      "B2D-C39",
+      "B2D-C40",
+      "B2D-C41",
+      "B2D-C42",
+      "B2D-C43",
+      "B2D-C44",
+      "B2D-C45"
+    ],
+    "addedR1CaseIds": [
+      "B2D-C49",
+      "B2D-C50",
+      "B2D-C51",
+      "B2D-C52",
+      "B2D-C53",
+      "B2D-C54",
+      "B2D-C55",
+      "B2D-C56",
+      "B2D-C57",
+      "B2D-C58",
+      "B2D-C59",
+      "B2D-C60",
+      "B2D-C61",
+      "B2D-C62",
+      "B2D-C63",
+      "B2D-C64",
+      "B2D-C65",
+      "B2D-C66",
+      "B2D-C67",
+      "B2D-C68",
+      "B2D-C69",
+      "B2D-C70",
+      "B2D-C71",
+      "B2D-C72",
+      "B2D-C73",
+      "B2D-C74",
+      "B2D-C75",
+      "B2D-C76",
+      "B2D-C77",
+      "B2D-C78",
+      "B2D-C79",
+      "B2D-C80",
+      "B2D-C81",
+      "B2D-C82",
+      "B2D-C83",
+      "B2D-C84",
+      "B2D-C85",
+      "B2D-C86"
+    ],
+    "note": "a table is not test proof; a larger count is not evidence of correctness; no case was run; no database, server, browser or provider was used",
     "cases": [
       {
         "caseId": "B2D-C01",
         "group": "admission",
-        "title": "Valid explicit accept",
+        "title": "Valid explicit accept appends only",
         "sourceRequirement": "work order Implementation Contract item 7; design section 2,5",
         "precondition": "S1 provisioned; export attested; lineage empty",
         "input": "accept request with exact bytes, matching expectedIdentity, valid attestation, basedOn null",
@@ -233,11 +341,15 @@
           "version": "v1 bytes H1",
           "store": "provisioned store S1, epoch 1"
         },
-        "expectedRecord": "one blob row, one attempt row, one decision row version 1, commit_seq +1",
-        "expectedAck": "verified ack with decision id, H1, store id, commit_seq",
+        "expectedRecord": "attempt, blob, decision rows plus journal entries ATTEMPT then DECISION with consecutive seq and continuing hash chain; no UPDATE issued",
+        "expectedAck": "verified acknowledgment for the exact intent after readback and witness record",
         "expectedClassification": "COMMITTED_VERIFIED",
-        "futureOracle": "independent reader recomputes SHA-256 of stored bytes and compares with H1; counts rows by table",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "futureOracle": "independent reader recomputes SHA-256 of stored bytes and the journal chain; statement trace shows INSERT only",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F01"
+        ]
       },
       {
         "caseId": "B2D-C02",
@@ -362,9 +474,9 @@
       {
         "caseId": "B2D-C08",
         "group": "admission",
-        "title": "Stale base",
+        "title": "Stale base against the lineage head",
         "sourceRequirement": "work order Implementation Contract item 7; design section 2,3",
-        "precondition": "lineage latest effective decision D2; request based on D1",
+        "precondition": "lineage head is D2; request based on D1",
         "input": "accept with basedOnDecisionId D1",
         "injectionStage": "transaction two",
         "tuple": {
@@ -373,19 +485,23 @@
           "version": "v3 H3",
           "store": "provisioned store S1, epoch 1"
         },
-        "expectedRecord": "attempt and abort rows, no decision",
+        "expectedRecord": "attempt row, abort row (STALE_BASE) and ABORT journal entry; no decision",
         "expectedAck": "refusal STALE_BASE",
         "expectedClassification": "ABSENT_ABORTED",
-        "futureOracle": "oracle compares latest decision id read independently",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "futureOracle": "oracle reads the head independently and checks that the abort row is the only new data row",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F03"
+        ]
       },
       {
         "caseId": "B2D-C09",
         "group": "admission",
-        "title": "Superseded version",
+        "title": "Request based on an older decision is stale",
         "sourceRequirement": "work order Implementation Contract item 7; design section 2,6",
-        "precondition": "newer version already accepted for lineage",
-        "input": "accept of older bytes with current base mismatch",
+        "precondition": "newer version already accepted for the lineage",
+        "input": "accept bytes with basedOnDecisionId set to an older decision",
         "injectionStage": "transaction two",
         "tuple": {
           "actor": "operator A, session, permitted role",
@@ -393,11 +509,15 @@
           "version": "older version",
           "store": "provisioned store S1, epoch 1"
         },
-        "expectedRecord": "abort row, no decision",
+        "expectedRecord": "attempt row, abort row (STALE_BASE) and ABORT journal entry; no decision",
         "expectedAck": "refusal STALE_BASE",
         "expectedClassification": "ABSENT_ABORTED",
         "futureOracle": "version numbers remain strictly increasing",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F03"
+        ]
       },
       {
         "caseId": "B2D-C10",
@@ -462,7 +582,7 @@
       {
         "caseId": "B2D-C13",
         "group": "admission",
-        "title": "Refusal leaves the draft untouched",
+        "title": "Pre-write refusals write nothing and do not consume the operation id",
         "sourceRequirement": "work order Implementation Contract item 7; design section 2",
         "precondition": "any refusal case",
         "input": "repeat C02-C11",
@@ -473,18 +593,22 @@
           "version": "v1 H1",
           "store": "provisioned store S1, epoch 1"
         },
-        "expectedRecord": "refusals never write to the acceptance store",
+        "expectedRecord": "refusals in the pre-write class (design section 5 table) leave store file, sidecars and listing byte-identical and the operation UNSEEN",
         "expectedAck": "refusal only",
         "expectedClassification": "NOT_FOUND_UNWITNESSED",
-        "futureOracle": "byte hash of store, sidecars and listing unchanged across all refusal cases",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "futureOracle": "byte hash of store, sidecars and listing unchanged across C02-C11; a corrected resubmission with the same id proceeds (see C61)",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F06"
+        ]
       },
       {
         "caseId": "B2D-C14",
         "group": "identity",
-        "title": "Same operation, same bytes and actor",
+        "title": "Same operation, same intent after commit",
         "sourceRequirement": "work order Implementation Contract item 7; design section 3",
-        "precondition": "C01 completed",
+        "precondition": "C01 completed; operation state COMMITTED",
         "input": "replay identical request",
         "injectionStage": "none",
         "tuple": {
@@ -493,11 +617,15 @@
           "version": "v1 H1",
           "store": "provisioned store S1, epoch 1"
         },
-        "expectedRecord": "no new rows; commit_seq unchanged",
-        "expectedAck": "verified ack with the original decision",
+        "expectedRecord": "no new rows, no journal entry",
+        "expectedAck": "the original verified acknowledgment, re-verified, because operation, actor and intent digest all equal the stored decision",
         "expectedClassification": "COMMITTED_VERIFIED",
-        "futureOracle": "row counts and commit_seq compared before and after replay",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "futureOracle": "row counts and journal tail unchanged; ack fields equal the original",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
       },
       {
         "caseId": "B2D-C15",
@@ -514,10 +642,14 @@
           "store": "provisioned store S1, epoch 1"
         },
         "expectedRecord": "no rows written; existing decision untouched",
-        "expectedAck": "refusal OPERATION_CONFLICT",
-        "expectedClassification": "COMMITTED_VERIFIED for the original intent",
-        "futureOracle": "original decision row byte-identical afterwards",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "expectedAck": "refusal OPERATION_CONFLICT; no acknowledgment of the submitted intent",
+        "expectedClassification": "INTENT_CONFLICT for the submitted tuple",
+        "futureOracle": "original decision row byte-identical afterwards; classification of the submitted tuple is never COMMITTED_VERIFIED",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
       },
       {
         "caseId": "B2D-C16",
@@ -534,10 +666,15 @@
           "store": "provisioned store S1, epoch 1"
         },
         "expectedRecord": "no rows written",
-        "expectedAck": "refusal OPERATION_CONFLICT",
-        "expectedClassification": "COMMITTED_VERIFIED for the original intent",
-        "futureOracle": "actor column of original unchanged",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "expectedAck": "refusal OPERATION_CONFLICT; the original actor's acknowledgment is not reusable by actor B",
+        "expectedClassification": "INTENT_CONFLICT for the submitted tuple",
+        "futureOracle": "actor column of the original unchanged; no decision attributed to actor B",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F02",
+          "B2D-F06"
+        ]
       },
       {
         "caseId": "B2D-C17",
@@ -554,10 +691,15 @@
           "store": "provisioned store S1, epoch 1"
         },
         "expectedRecord": "no rows written",
-        "expectedAck": "refusal OPERATION_CONFLICT",
-        "expectedClassification": "COMMITTED_VERIFIED for the original intent",
-        "futureOracle": "workspace column of original unchanged",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "expectedAck": "refusal OPERATION_CONFLICT; no acknowledgment of the submitted intent",
+        "expectedClassification": "INTENT_CONFLICT for the submitted tuple",
+        "futureOracle": "workspace column of the original unchanged; conflict response discloses nothing else about the original",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F02",
+          "B2D-F06"
+        ]
       },
       {
         "caseId": "B2D-C18",
@@ -582,27 +724,31 @@
       {
         "caseId": "B2D-C19",
         "group": "identity",
-        "title": "Same hash, same lineage, different actor",
+        "title": "Same bytes, same lineage, different actor and operation",
         "sourceRequirement": "work order Implementation Contract item 7; design section 3",
-        "precondition": "H1 effective in lineage by operator A",
-        "input": "operator B accepts H1",
-        "injectionStage": "transaction two",
+        "precondition": "H1 is effective at the lineage head through actor A and operation A",
+        "input": "actor B submits operation B with bytes H1 based on the head",
+        "injectionStage": "second transaction",
         "tuple": {
           "actor": "operator B",
-          "operation": "op-19",
-          "version": "H1 already effective",
-          "store": "provisioned store S1, epoch 1"
+          "operation": "op-B",
+          "version": "H1 already effective through operator A, op-A",
+          "store": "provisioned and witnessed store S1"
         },
-        "expectedRecord": "no new decision; operator A record unchanged",
-        "expectedAck": "ALREADY_EFFECTIVE naming the original decision",
-        "expectedClassification": "COMMITTED_VERIFIED for the original",
-        "futureOracle": "no decision row attributed to operator B",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "expectedRecord": "operation B gets an attempt row, an abort row (ALREADY_EFFECTIVE_LINEAGE) and an ABORT journal entry; actor A's decision unchanged; no decision for actor B",
+        "expectedAck": "LINEAGE_ALREADY_EFFECTIVE information only, not an acknowledgment of operation B",
+        "expectedClassification": "operation B tuple: ABSENT_ABORTED; operation A tuple: COMMITTED_VERIFIED",
+        "futureOracle": "no row attributes an acceptance to actor B; classification of B's tuple is never COMMITTED_VERIFIED",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F06"
+        ]
       },
       {
         "caseId": "B2D-C20",
         "group": "identity",
-        "title": "Corrupted same-hash blob row",
+        "title": "Corrupted shared blob is verified, never re-inserted",
         "sourceRequirement": "work order Implementation Contract item 7; design section 3,5",
         "precondition": "blob row bytes altered out of band",
         "input": "accept the same bytes again",
@@ -613,11 +759,15 @@
           "version": "H1",
           "store": "S1 with corrupted blob"
         },
-        "expectedRecord": "no overwrite, no re-insert",
+        "expectedRecord": "no blob INSERT attempted, no overwrite; the operation stays attempted and is later fenced",
         "expectedAck": "failure STORE_CORRUPT",
         "expectedClassification": "CORRUPT_OR_CONFLICTING",
-        "futureOracle": "oracle edits one stored byte in a copy and checks the live file is not repaired",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "futureOracle": "statement trace shows a SELECT and a hash check on the blob and no INSERT; the live file is not repaired",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
       },
       {
         "caseId": "B2D-C21",
@@ -662,29 +812,33 @@
       {
         "caseId": "B2D-C23",
         "group": "store",
-        "title": "Concurrent writers on one lineage",
+        "title": "Second writer process after the first has committed",
         "sourceRequirement": "work order Implementation Contract item 7; design section 4",
-        "precondition": "two accepts racing on the same base",
-        "input": "two operations at once",
-        "injectionStage": "transaction two",
+        "precondition": "process P1 admitted at epoch 1 and has committed one acceptance",
+        "input": "process P2 requests writer admission",
+        "injectionStage": "admission",
         "tuple": {
           "actor": "operators A and B",
-          "operation": "op-23a, op-23b",
+          "operation": "op-23a by P1, op-23b by P2",
           "version": "v2",
-          "store": "provisioned store S1, epoch 1"
+          "store": "S1 epoch 1"
         },
-        "expectedRecord": "exactly one decision for the next version; loser aborted",
-        "expectedAck": "one verified ack and one STALE_BASE or WRITER_BUSY",
-        "expectedClassification": "COMMITTED_VERIFIED for the winner",
-        "futureOracle": "second-process harness; unique version constraint holds",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "expectedRecord": "no WRITER_START appended; P1 unaffected",
+        "expectedAck": "P2 refused WRITER_ALREADY_ADMITTED",
+        "expectedClassification": "not applicable",
+        "futureOracle": "second real process; journal tail unchanged by P2; P1 still commits",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F04"
+        ]
       },
       {
         "caseId": "B2D-C24",
         "group": "store",
-        "title": "Foreign writer or stale epoch",
+        "title": "Stale epoch writer is fenced",
         "sourceRequirement": "work order Implementation Contract item 7; design section 4",
-        "precondition": "writer started at epoch 1; recovery owner set epoch 2",
+        "precondition": "writer lifetime 1 ended and a new lifetime appended WRITER_START epoch 2",
         "input": "stale writer attempts transaction two",
         "injectionStage": "transaction two",
         "tuple": {
@@ -693,19 +847,23 @@
           "version": "v2",
           "store": "S1 epoch 2"
         },
-        "expectedRecord": "no decision written",
+        "expectedRecord": "no decision written by the old lifetime",
         "expectedAck": "failure WRITER_FENCED",
         "expectedClassification": "ABSENT_FENCED",
-        "futureOracle": "stale writer cannot commit after the epoch bump",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "futureOracle": "old-lifetime replay cannot commit after the WRITER_START entry",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F04"
+        ]
       },
       {
         "caseId": "B2D-C25",
         "group": "store",
-        "title": "Immutability",
+        "title": "Immutability of every table including the journal",
         "sourceRequirement": "work order Implementation Contract item 7; design section 3,4",
         "precondition": "committed rows exist",
-        "input": "UPDATE and DELETE statements on each table",
+        "input": "UPDATE and DELETE statements on each table including journal",
         "injectionStage": "store",
         "tuple": {
           "actor": "module or test harness",
@@ -716,8 +874,12 @@
         "expectedRecord": "all statements aborted",
         "expectedAck": "not applicable",
         "expectedClassification": "not applicable",
-        "futureOracle": "row hashes before and after identical",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "futureOracle": "row hashes and journal chain identical before and after; every statement aborted",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F01"
+        ]
       },
       {
         "caseId": "B2D-C26",
@@ -762,7 +924,7 @@
       {
         "caseId": "B2D-C28",
         "group": "fault",
-        "title": "Failure before transaction one commits",
+        "title": "Failure before the first transaction commits",
         "sourceRequirement": "work order Implementation Contract item 7; design section 5",
         "precondition": "fault injected before commit of transaction one",
         "input": "accept request",
@@ -773,16 +935,20 @@
           "version": "v1 H1",
           "store": "provisioned store S1, epoch 1"
         },
-        "expectedRecord": "no rows",
+        "expectedRecord": "nothing; operation UNSEEN",
         "expectedAck": "no acknowledgment",
-        "expectedClassification": "NOT_FOUND_UNWITNESSED",
-        "futureOracle": "a missing attempt row is never reported as a definitive negative",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "expectedClassification": "NOT_FOUND_UNWITNESSED, UNKNOWN unless the witness is fresh",
+        "futureOracle": "a missing attempt row is never reported as a terminal negative",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
       },
       {
         "caseId": "B2D-C29",
         "group": "fault",
-        "title": "Crash between transaction one and two",
+        "title": "Crash between the first and second transaction",
         "sourceRequirement": "work order Implementation Contract item 7; design section 5",
         "precondition": "process killed after attempt commit",
         "input": "accept request",
@@ -793,16 +959,20 @@
           "version": "v1 H1",
           "store": "provisioned store S1, epoch 1"
         },
-        "expectedRecord": "attempt row only",
+        "expectedRecord": "attempt row and ATTEMPT journal entry only",
         "expectedAck": "no acknowledgment",
-        "expectedClassification": "IN_DOUBT_UNKNOWN",
-        "futureOracle": "oracle shows classification never returns a negative at the current epoch",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "expectedClassification": "IN_DOUBT_UNKNOWN until the next WRITER_START, then ABSENT_FENCED",
+        "futureOracle": "classification before takeover never returns a negative; after takeover it returns ABSENT_FENCED",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
       },
       {
         "caseId": "B2D-C30",
         "group": "fault",
-        "title": "Failure during transaction two",
+        "title": "Failure inside the second transaction",
         "sourceRequirement": "work order Implementation Contract item 7; design section 5",
         "precondition": "fault before commit of transaction two",
         "input": "accept request",
@@ -813,11 +983,15 @@
           "version": "v1 H1",
           "store": "provisioned store S1, epoch 1"
         },
-        "expectedRecord": "attempt row only after rollback",
+        "expectedRecord": "attempt row only after SQLite rollback",
         "expectedAck": "no acknowledgment",
-        "expectedClassification": "IN_DOUBT_UNKNOWN",
+        "expectedClassification": "IN_DOUBT_UNKNOWN until the next WRITER_START, then ABSENT_FENCED",
         "futureOracle": "blob and decision counts unchanged from before transaction two",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
       },
       {
         "caseId": "B2D-C31",
@@ -915,9 +1089,13 @@
         },
         "expectedRecord": "no write",
         "expectedAck": "none",
-        "expectedClassification": "STORE_IDENTITY_MISMATCH",
-        "futureOracle": "wrong-store absence is UNKNOWN, never negative",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "expectedClassification": "STORE_IDENTITY_MISMATCH, UNKNOWN",
+        "futureOracle": "wrong-store absence is UNKNOWN, never a negative, and nothing is created",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
       },
       {
         "caseId": "B2D-C36",
@@ -935,9 +1113,13 @@
         },
         "expectedRecord": "nothing created",
         "expectedAck": "accept refused STORE_MISSING",
-        "expectedClassification": "STORE_MISSING",
-        "futureOracle": "directory listing identical; no file appears",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "expectedClassification": "STORE_MISSING, UNKNOWN",
+        "futureOracle": "directory listing identical; no file or lock file appears from read, classify or accept",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
       },
       {
         "caseId": "B2D-C37",
@@ -955,9 +1137,13 @@
         },
         "expectedRecord": "no write",
         "expectedAck": "none",
-        "expectedClassification": "SNAPSHOT_INCONSISTENT or STORE_UNREADABLE",
+        "expectedClassification": "SNAPSHOT_INCONSISTENT or STORE_UNREADABLE, UNKNOWN",
         "futureOracle": "outcome is UNKNOWN, not a negative",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
       },
       {
         "caseId": "B2D-C38",
@@ -976,15 +1162,19 @@
         "expectedRecord": "live files, sidecars and directory listing byte-identical; no init, create, migrate or repair",
         "expectedAck": "none",
         "expectedClassification": "per operation",
-        "futureOracle": "hash all live files before and after; scratch copy is the only file created and is removed",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "futureOracle": "hash all live files, sidecars, lock file and listing before and after; the scratch copy is the only file created and is removed; the writer lock is never taken",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
       },
       {
         "caseId": "B2D-C39",
         "group": "recovery",
-        "title": "Fenced absence",
+        "title": "Fenced absence is stable under any consistent prefix",
         "sourceRequirement": "work order Implementation Contract item 7; design section 5",
-        "precondition": "attempt at epoch 1, store at epoch 2, no decision",
+        "precondition": "attempt at epoch 1, WRITER_START epoch 2 present, no decision",
         "input": "classify op",
         "injectionStage": "classification",
         "tuple": {
@@ -996,13 +1186,17 @@
         "expectedRecord": "no write",
         "expectedAck": "none",
         "expectedClassification": "ABSENT_FENCED",
-        "futureOracle": "stale writer replay cannot later create the decision",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "futureOracle": "classify on every journal prefix that contains the WRITER_START entry; each prefix gives the same answer and none contains a decision",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
       },
       {
         "caseId": "B2D-C40",
         "group": "recovery",
-        "title": "Explicit abort absence",
+        "title": "Explicit abort absence is terminal",
         "sourceRequirement": "work order Implementation Contract item 7; design section 5",
         "precondition": "abort row present, no decision",
         "input": "classify op",
@@ -1016,15 +1210,19 @@
         "expectedRecord": "no write",
         "expectedAck": "none",
         "expectedClassification": "ABSENT_ABORTED",
-        "futureOracle": "no decision row for the operation in any table",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "futureOracle": "a decision insert for the aborted operation is refused; no decision row in any table",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
       },
       {
         "caseId": "B2D-C41",
         "group": "recovery",
         "title": "Restored older backup lacks a decision",
         "sourceRequirement": "work order Implementation Contract item 7; design section 5,6",
-        "precondition": "backup taken before op-1; restore performed",
+        "precondition": "backup taken before operation 1 committed; silent restore with the same store id",
         "input": "classify op-1",
         "injectionStage": "classification",
         "tuple": {
@@ -1035,16 +1233,20 @@
         },
         "expectedRecord": "no write",
         "expectedAck": "none",
-        "expectedClassification": "NOT_FOUND_UNWITNESSED, UNKNOWN",
-        "futureOracle": "restored absence never reported as definitive without an independent witness",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "expectedClassification": "NOT_FOUND_UNWITNESSED, UNKNOWN; with a witness STORE_STALE",
+        "futureOracle": "neither case reports a terminal negative or NOT_FOUND_AS_OF; the witness case also refuses writer admission",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
       },
       {
         "caseId": "B2D-C42",
         "group": "recovery",
-        "title": "Stale effective decision after restore",
+        "title": "Stale effective decision after restore is not presented as effective",
         "sourceRequirement": "work order Implementation Contract item 7; design section 6",
-        "precondition": "restored store holds decision D1 revoked later in the lost period",
+        "precondition": "restored store shows D1 effective while the lost range held its revocation",
         "input": "effective read",
         "injectionStage": "effective read",
         "tuple": {
@@ -1055,16 +1257,20 @@
         },
         "expectedRecord": "no write",
         "expectedAck": "none",
-        "expectedClassification": "EFFECTIVE_UNVERIFIED",
-        "futureOracle": "stale decision is not presented as effective acceptance",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "expectedClassification": "EFFECTIVE_UNVERIFIED without a witness; EFFECTIVE_UNVERIFIED_LOST_RANGE with an accepted-loss RESTORE entry",
+        "futureOracle": "no read path returns VERIFIED_FRESH for D1",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
       },
       {
         "caseId": "B2D-C43",
         "group": "lifecycle",
-        "title": "Revocation",
+        "title": "Revoked head leaves no effective acceptance and no fallback",
         "sourceRequirement": "work order Implementation Contract item 7; design section 6",
-        "precondition": "D3 effective, D2 older",
+        "precondition": "lineage with D1, D2, D3; D3 is the head",
         "input": "revoke D3",
         "injectionStage": "lifecycle",
         "tuple": {
@@ -1073,18 +1279,22 @@
           "version": "D3",
           "store": "provisioned store S1, epoch 1"
         },
-        "expectedRecord": "lifecycle event appended; decisions unchanged",
+        "expectedRecord": "REVOKE lifecycle row and journal entry; decisions unchanged",
         "expectedAck": "verified ack",
-        "expectedClassification": "no effective acceptance",
-        "futureOracle": "no automatic fallback to D2",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "expectedClassification": "lineage has no effective acceptance; D2 is historical only",
+        "futureOracle": "effective read returns none; D2 is never returned as effective",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F03"
+        ]
       },
       {
         "caseId": "B2D-C44",
         "group": "lifecycle",
-        "title": "Expiry",
+        "title": "Expired head leaves no effective acceptance and no fallback",
         "sourceRequirement": "work order Implementation Contract item 7; design section 6",
-        "precondition": "decision with expiry time passed",
+        "precondition": "lineage with D1, D2, D3; D3 carries an expires_at that has passed",
         "input": "effective read",
         "injectionStage": "effective read",
         "tuple": {
@@ -1095,17 +1305,21 @@
         },
         "expectedRecord": "decision preserved as history",
         "expectedAck": "none",
-        "expectedClassification": "not effective",
-        "futureOracle": "injected clock crossing the expiry",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "expectedClassification": "lineage has no effective acceptance; D2 not promoted",
+        "futureOracle": "injected clock crossing expires_at; D2 never returned as effective",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F03"
+        ]
       },
       {
         "caseId": "B2D-C45",
         "group": "lifecycle",
-        "title": "Correction by new version",
+        "title": "Correction builds on the lineage head",
         "sourceRequirement": "work order Implementation Contract item 7; design section 6",
-        "precondition": "D1 effective",
-        "input": "accept corrected bytes referencing D1",
+        "precondition": "D1 is the head and effective",
+        "input": "accept corrected bytes with basedOnDecisionId equal to D1",
         "injectionStage": "none",
         "tuple": {
           "actor": "operator A, session, permitted role",
@@ -1113,11 +1327,15 @@
           "version": "v2 H2 supersedes D1",
           "store": "provisioned store S1, epoch 1"
         },
-        "expectedRecord": "new decision with supersedes link; D1 unchanged",
+        "expectedRecord": "new decision D2 with supersedes_decision_id D1; D1 unchanged",
         "expectedAck": "verified ack",
         "expectedClassification": "D2 effective, D1 historical",
         "futureOracle": "history chain intact and ordered",
-        "status": "NOT_EXECUTED_DESIGN_ONLY"
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "revisedInR1": true,
+        "r1Findings": [
+          "B2D-F03"
+        ]
       },
       {
         "caseId": "B2D-C46",
@@ -1178,29 +1396,950 @@
         "expectedClassification": "not applicable",
         "futureOracle": "no import of storage-adapter in acceptance modules; no table creation reachable from read or classify",
         "status": "NOT_EXECUTED_DESIGN_ONLY"
+      },
+      {
+        "caseId": "B2D-C49",
+        "group": "r1-F01",
+        "title": "Normal acceptance changes nothing but appends",
+        "sourceRequirement": "work order R1 Implementation Contract F01; design section 3,4",
+        "precondition": "store tail seq n",
+        "input": "accept request",
+        "injectionStage": "none",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-49",
+          "version": "v1 H1",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "attempt, blob and decision rows and journal entries n+1 and n+2; no UPDATE or DELETE statement; derived commit sequence is n+2",
+        "expectedAck": "verified ack with journal_seq",
+        "expectedClassification": "COMMITTED_VERIFIED",
+        "futureOracle": "statement trace contains INSERT only; chain verifies from entry 1",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F01"
+        ]
+      },
+      {
+        "caseId": "B2D-C50",
+        "group": "r1-F01",
+        "title": "Takeover transition",
+        "sourceRequirement": "work order R1 Implementation Contract F01; design section 3,4",
+        "precondition": "writer lifetime at epoch 1 ended",
+        "input": "new process acquires the writer lock",
+        "injectionStage": "admission",
+        "tuple": {
+          "actor": "recovery or next writer",
+          "operation": "n/a",
+          "version": "n/a",
+          "store": "S1 epoch 1"
+        },
+        "expectedRecord": "WRITER_START entry with epoch 2 appended and recorded with the witness; no counter updated",
+        "expectedAck": "new writer admitted",
+        "expectedClassification": "attempts of epoch 1 become ATTEMPTED_FENCED",
+        "futureOracle": "old-epoch transaction attempt is refused WRITER_FENCED; derived epoch is 2",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F01"
+        ]
+      },
+      {
+        "caseId": "B2D-C51",
+        "group": "r1-F01",
+        "title": "Restore transition with declared loss",
+        "sourceRequirement": "work order R1 Implementation Contract F01; design section 7,8",
+        "precondition": "backup tail below the witness mark",
+        "input": "recovery owner records RESTORE_ACCEPTING_LOSS under the writer lock",
+        "injectionStage": "recovery",
+        "tuple": {
+          "actor": "recovery owner",
+          "operation": "n/a",
+          "version": "n/a",
+          "store": "restored S1"
+        },
+        "expectedRecord": "RESTORE entry with epoch plus one, lost range and lost identifiers; derived restore generation increments; witness records the new generation",
+        "expectedAck": "writer admitted only after the entry",
+        "expectedClassification": "lineages and operations in the lost range read as unverified",
+        "futureOracle": "journal shows RESTORE with the lost range; no existing entry rewritten",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F01"
+        ]
+      },
+      {
+        "caseId": "B2D-C52",
+        "group": "r1-F01",
+        "title": "Forbidden metadata rollback",
+        "sourceRequirement": "work order R1 Implementation Contract F01; design section 3,8",
+        "precondition": "journal tail seq n at epoch 3",
+        "input": "insert entries with a repeated or skipped seq, a wrong prev_hash or a lower epoch; UPDATE or DELETE a journal row; swap in a file with a lower tail",
+        "injectionStage": "store",
+        "tuple": {
+          "actor": "module or test harness",
+          "operation": "n/a",
+          "version": "n/a",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "all rejected; the swapped file is refused",
+        "expectedAck": "writer admission refused",
+        "expectedClassification": "STORE_STALE when a witness exists, otherwise CORRUPT_OR_CONFLICTING or unverified",
+        "futureOracle": "each mutation attempted separately; journal and witness unchanged",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F01"
+        ]
+      },
+      {
+        "caseId": "B2D-C53",
+        "group": "r1-F02",
+        "title": "Replay of an attempted-live operation",
+        "sourceRequirement": "work order R1 Implementation Contract F02; design section 5",
+        "precondition": "operation attempted, second transaction not finished, same epoch",
+        "input": "replay the identical request",
+        "injectionStage": "first transaction",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-53",
+          "version": "v1 H1",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "no write and no primary key collision on the attempt row; state stays ATTEMPTED_LIVE",
+        "expectedAck": "OPERATION_IN_PROGRESS",
+        "expectedClassification": "IN_DOUBT_UNKNOWN",
+        "futureOracle": "row counts and journal tail unchanged; no constraint error raised",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
+      },
+      {
+        "caseId": "B2D-C54",
+        "group": "r1-F02",
+        "title": "Replay of an attempted-fenced operation",
+        "sourceRequirement": "work order R1 Implementation Contract F02; design section 5",
+        "precondition": "operation attempted at epoch 1; writer restarted at epoch 2",
+        "input": "replay the identical request",
+        "injectionStage": "first transaction",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-54",
+          "version": "v1 H1",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "no write; state stays ATTEMPTED_FENCED",
+        "expectedAck": "NEW_OPERATION_REQUIRED",
+        "expectedClassification": "ABSENT_FENCED",
+        "futureOracle": "no ATTEMPT or DECISION row for the old id ever appears",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
+      },
+      {
+        "caseId": "B2D-C55",
+        "group": "r1-F02",
+        "title": "Conflicting intent against an attempted-live operation",
+        "sourceRequirement": "work order R1 Implementation Contract F02; design section 5",
+        "precondition": "operation attempted at the current epoch",
+        "input": "same operation id with different bytes",
+        "injectionStage": "first transaction",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-55",
+          "version": "v1 H2",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "no write",
+        "expectedAck": "OPERATION_CONFLICT",
+        "expectedClassification": "INTENT_CONFLICT",
+        "futureOracle": "stored intent digest unchanged and not disclosed",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
+      },
+      {
+        "caseId": "B2D-C56",
+        "group": "r1-F02",
+        "title": "Conflicting intent against aborted and fenced operations",
+        "sourceRequirement": "work order R1 Implementation Contract F02; design section 5",
+        "precondition": "one aborted and one fenced operation",
+        "input": "each id resubmitted with a different actor",
+        "injectionStage": "first transaction",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-56",
+          "version": "v1 H1",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "no write",
+        "expectedAck": "OPERATION_CONFLICT in both states",
+        "expectedClassification": "INTENT_CONFLICT",
+        "futureOracle": "both terminal states unchanged",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
+      },
+      {
+        "caseId": "B2D-C57",
+        "group": "r1-F02",
+        "title": "Abort replay with the same intent",
+        "sourceRequirement": "work order R1 Implementation Contract F02; design section 5",
+        "precondition": "operation ABORTED with reason STALE_BASE",
+        "input": "identical request",
+        "injectionStage": "first transaction",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-57",
+          "version": "v1 H1",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "no write",
+        "expectedAck": "stored abort reason with NEW_OPERATION_REQUIRED",
+        "expectedClassification": "ABSENT_ABORTED",
+        "futureOracle": "no retry is performed on the same id",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
+      },
+      {
+        "caseId": "B2D-C58",
+        "group": "r1-F02",
+        "title": "Stale writer replay after fencing",
+        "sourceRequirement": "work order R1 Implementation Contract F02; design section 4,5",
+        "precondition": "old lifetime paused inside the second transaction while a new epoch begins",
+        "input": "old lifetime resumes and tries to commit",
+        "injectionStage": "second transaction",
+        "tuple": {
+          "actor": "stale writer",
+          "operation": "op-58",
+          "version": "v2",
+          "store": "S1 epoch 2"
+        },
+        "expectedRecord": "no decision is ever written for the id",
+        "expectedAck": "WRITER_FENCED",
+        "expectedClassification": "ABSENT_FENCED",
+        "futureOracle": "classify before and after the resume; the answer is identical and no decision appears",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
+      },
+      {
+        "caseId": "B2D-C59",
+        "group": "r1-F02",
+        "title": "New operation id after a terminal outcome",
+        "sourceRequirement": "work order R1 Implementation Contract F02; design section 5",
+        "precondition": "op-59 is ABORTED or ATTEMPTED_FENCED",
+        "input": "actor explicitly resubmits under op-59b with a fresh intent",
+        "injectionStage": "none",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-59b",
+          "version": "v1 H1",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "new attempt and, if admitted, a new decision; op-59 stays terminal",
+        "expectedAck": "verified ack for op-59b only",
+        "expectedClassification": "COMMITTED_VERIFIED for op-59b, terminal for op-59",
+        "futureOracle": "the two ids have independent rows",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
+      },
+      {
+        "caseId": "B2D-C60",
+        "group": "r1-F02",
+        "title": "Shared verified blob reuse",
+        "sourceRequirement": "work order R1 Implementation Contract F02; design section 3,5",
+        "precondition": "blob H1 already stored for workspace W1",
+        "input": "accept H1 in workspace W2",
+        "injectionStage": "second transaction",
+        "tuple": {
+          "actor": "operator in W2",
+          "operation": "op-60",
+          "version": "v1 H1 in W2",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "second decision references the same blob; no blob INSERT statement is issued",
+        "expectedAck": "verified ack",
+        "expectedClassification": "COMMITTED_VERIFIED",
+        "futureOracle": "statement trace shows a SELECT and hash recompute on the blob and no INSERT; a corrupt blob gives STORE_CORRUPT instead",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
+      },
+      {
+        "caseId": "B2D-C61",
+        "group": "r1-F02",
+        "title": "Pre-write refusal does not consume the operation id",
+        "sourceRequirement": "work order R1 Implementation Contract F02; design section 2,5",
+        "precondition": "op-61 refused with BYTES_MISMATCH before any write",
+        "input": "corrected resubmission under op-61",
+        "injectionStage": "admission",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-61",
+          "version": "v1 H1",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "no rows from the refusal; the resubmission is evaluated from UNSEEN",
+        "expectedAck": "verified ack for the resubmission",
+        "expectedClassification": "COMMITTED_VERIFIED",
+        "futureOracle": "contrast with a post-intent abort where the same id is terminal",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F02"
+        ]
+      },
+      {
+        "caseId": "B2D-C62",
+        "group": "r1-F03",
+        "title": "Revoked head, three versions",
+        "sourceRequirement": "work order R1 Implementation Contract F03; design section 7",
+        "precondition": "D1, D2, D3 accepted in order",
+        "input": "revoke D3",
+        "injectionStage": "lifecycle",
+        "tuple": {
+          "actor": "authorized actor",
+          "operation": "op-62",
+          "version": "D3",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "REVOKE row and journal entry",
+        "expectedAck": "verified ack",
+        "expectedClassification": "lineage NOT_EFFECTIVE; D2 never promoted",
+        "futureOracle": "effective read before and after",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F03"
+        ]
+      },
+      {
+        "caseId": "B2D-C63",
+        "group": "r1-F03",
+        "title": "Expired head, three versions",
+        "sourceRequirement": "work order R1 Implementation Contract F03; design section 7",
+        "precondition": "D3 has a past expires_at",
+        "input": "effective read",
+        "injectionStage": "read",
+        "tuple": {
+          "actor": "reader",
+          "operation": "n/a",
+          "version": "lineage L",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "none",
+        "expectedAck": "none",
+        "expectedClassification": "no effective acceptance; D2 never promoted",
+        "futureOracle": "injected clock on both sides of expires_at",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F03"
+        ]
+      },
+      {
+        "caseId": "B2D-C64",
+        "group": "r1-F03",
+        "title": "Revocation of a non-head decision",
+        "sourceRequirement": "work order R1 Implementation Contract F03; design section 7",
+        "precondition": "D3 is the effective head",
+        "input": "revoke D2",
+        "injectionStage": "lifecycle",
+        "tuple": {
+          "actor": "authorized actor",
+          "operation": "op-64",
+          "version": "D2",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "REVOKE annotation on D2",
+        "expectedAck": "verified ack",
+        "expectedClassification": "D3 still effective",
+        "futureOracle": "head determines the effective status",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F03"
+        ]
+      },
+      {
+        "caseId": "B2D-C65",
+        "group": "r1-F03",
+        "title": "Accept on a revoked head",
+        "sourceRequirement": "work order R1 Implementation Contract F03; design section 7",
+        "precondition": "D3 revoked and is the head",
+        "input": "accept corrected bytes with basedOnDecisionId D3",
+        "injectionStage": "none",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-65",
+          "version": "v4 H4",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "decision D4 version 4 with supersedes D3",
+        "expectedAck": "verified ack",
+        "expectedClassification": "D4 effective, D3 historical",
+        "futureOracle": "version numbers strictly increasing",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F03"
+        ]
+      },
+      {
+        "caseId": "B2D-C66",
+        "group": "r1-F03",
+        "title": "Same bytes after revocation versus under an effective head",
+        "sourceRequirement": "work order R1 Implementation Contract F03; design section 5,7",
+        "precondition": "D3 revoked; later D4 effective with the same bytes",
+        "input": "re-accept the revoked bytes, then again under the effective head",
+        "injectionStage": "none",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-66",
+          "version": "H3 bytes",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "first request creates the next version; second is aborted with ALREADY_EFFECTIVE_LINEAGE",
+        "expectedAck": "ack for the first only",
+        "expectedClassification": "COMMITTED_VERIFIED then ABSENT_ABORTED",
+        "futureOracle": "the second request is never acknowledged",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F03"
+        ]
+      },
+      {
+        "caseId": "B2D-C67",
+        "group": "r1-F03",
+        "title": "Request based on an older decision while the head is revoked",
+        "sourceRequirement": "work order R1 Implementation Contract F03; design section 7",
+        "precondition": "D3 revoked and is the head; D2 older",
+        "input": "accept with basedOnDecisionId D2",
+        "injectionStage": "second transaction",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-67",
+          "version": "v1 H1",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "attempt and abort rows (STALE_BASE)",
+        "expectedAck": "STALE_BASE",
+        "expectedClassification": "ABSENT_ABORTED",
+        "futureOracle": "only the head id is accepted as the base",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F03"
+        ]
+      },
+      {
+        "caseId": "B2D-C68",
+        "group": "r1-F04",
+        "title": "Second process at the same epoch after the first commits",
+        "sourceRequirement": "work order R1 Implementation Contract F04; design section 4",
+        "precondition": "P1 holds the lock at epoch 1 and has committed",
+        "input": "P2 starts and requests admission",
+        "injectionStage": "admission",
+        "tuple": {
+          "actor": "process P2",
+          "operation": "n/a",
+          "version": "n/a",
+          "store": "S1 epoch 1"
+        },
+        "expectedRecord": "no WRITER_START and no write by P2",
+        "expectedAck": "WRITER_ALREADY_ADMITTED for the whole P2 lifetime",
+        "expectedClassification": "not applicable",
+        "futureOracle": "two real processes; P2 never reaches a write transaction",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F04"
+        ]
+      },
+      {
+        "caseId": "B2D-C69",
+        "group": "r1-F04",
+        "title": "Crash releases the lock and the next writer takes over",
+        "sourceRequirement": "work order R1 Implementation Contract F04; design section 4",
+        "precondition": "P1 killed mid-operation",
+        "input": "P2 acquires the lock",
+        "injectionStage": "admission",
+        "tuple": {
+          "actor": "process P2",
+          "operation": "op-69 from P1",
+          "version": "v1 H1",
+          "store": "S1 epoch 1"
+        },
+        "expectedRecord": "WRITER_START epoch 2 appended",
+        "expectedAck": "P2 admitted",
+        "expectedClassification": "P1 attempts become ABSENT_FENCED",
+        "futureOracle": "kill P1 without cleanup; the lock is gone and the epoch moves",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F04"
+        ]
+      },
+      {
+        "caseId": "B2D-C70",
+        "group": "r1-F04",
+        "title": "Clean release",
+        "sourceRequirement": "work order R1 Implementation Contract F04; design section 4",
+        "precondition": "writer shutting down",
+        "input": "release the writer",
+        "injectionStage": "release",
+        "tuple": {
+          "actor": "process P1",
+          "operation": "n/a",
+          "version": "n/a",
+          "store": "S1 epoch 1"
+        },
+        "expectedRecord": "WRITER_RELEASE entry then lock release",
+        "expectedAck": "none",
+        "expectedClassification": "next admission still appends its own WRITER_START",
+        "futureOracle": "journal order release then start",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F04"
+        ]
+      },
+      {
+        "caseId": "B2D-C71",
+        "group": "r1-F04",
+        "title": "Hung writer blocks takeover",
+        "sourceRequirement": "work order R1 Implementation Contract F04; design section 4",
+        "precondition": "P1 alive but unresponsive holding the lock",
+        "input": "P2 requests admission",
+        "injectionStage": "admission",
+        "tuple": {
+          "actor": "process P2",
+          "operation": "n/a",
+          "version": "n/a",
+          "store": "S1 epoch 1"
+        },
+        "expectedRecord": "none",
+        "expectedAck": "P2 refused WRITER_ALREADY_ADMITTED",
+        "expectedClassification": "after the recovery owner ends P1, the crash rule applies",
+        "futureOracle": "no takeover while the lock is held",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F04"
+        ]
+      },
+      {
+        "caseId": "B2D-C72",
+        "group": "r1-F04",
+        "title": "Foreign non-protocol writer",
+        "sourceRequirement": "work order R1 Implementation Contract F04; design section 4,8",
+        "precondition": "a process that does not use the writer module edits the file",
+        "input": "tamper with a journal row or add rows",
+        "injectionStage": "store",
+        "tuple": {
+          "actor": "foreign process",
+          "operation": "n/a",
+          "version": "n/a",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "damage is possible; the protocol cannot prevent it",
+        "expectedAck": "next admission refused",
+        "expectedClassification": "CORRUPT_OR_CONFLICTING by chain break or STORE_STALE by witness mismatch",
+        "futureOracle": "documented as not prevented; operating-system file permission is a real prerequisite",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F04"
+        ]
+      },
+      {
+        "caseId": "B2D-C73",
+        "group": "r1-F05",
+        "title": "No witness exists",
+        "sourceRequirement": "work order R1 Implementation Contract F05; design section 8",
+        "precondition": "no witness configured",
+        "input": "writer admission, effective read and not-found query",
+        "injectionStage": "admission and read",
+        "tuple": {
+          "actor": "operator or reader",
+          "operation": "op-73",
+          "version": "v1 H1",
+          "store": "S1 unwitnessed"
+        },
+        "expectedRecord": "no write",
+        "expectedAck": "writer refused STORE_UNWITNESSED",
+        "expectedClassification": "EFFECTIVE_UNVERIFIED and NOT_FOUND_UNWITNESSED, with COMMITTED_VERIFIED labelled historical",
+        "futureOracle": "each claim downgraded as in the fail-closed table",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
+      },
+      {
+        "caseId": "B2D-C74",
+        "group": "r1-F05",
+        "title": "Fresh witness",
+        "sourceRequirement": "work order R1 Implementation Contract F05; design section 8",
+        "precondition": "witness reachable; store tail at or above the mark with matching hash",
+        "input": "effective read and not-found query",
+        "injectionStage": "read",
+        "tuple": {
+          "actor": "reader",
+          "operation": "op-74",
+          "version": "v1 H1",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "none",
+        "expectedAck": "none",
+        "expectedClassification": "VERIFIED_FRESH and NOT_FOUND_AS_OF a stated sequence",
+        "futureOracle": "the answer states its sequence and still grants no retry",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
+      },
+      {
+        "caseId": "B2D-C75",
+        "group": "r1-F05",
+        "title": "Silent restore loses a decision",
+        "sourceRequirement": "work order R1 Implementation Contract F05; design section 8",
+        "precondition": "same store id and schema; restored tail below the witness mark",
+        "input": "classify the lost operation and attempt writer admission",
+        "injectionStage": "recovery",
+        "tuple": {
+          "actor": "recovery reader",
+          "operation": "op-75",
+          "version": "v1 H1",
+          "store": "restored S1"
+        },
+        "expectedRecord": "no write",
+        "expectedAck": "writer refused",
+        "expectedClassification": "STORE_STALE; no ABSENT claim",
+        "futureOracle": "restored file is internally consistent yet flagged by the witness mark",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
+      },
+      {
+        "caseId": "B2D-C76",
+        "group": "r1-F05",
+        "title": "Silent restore loses a revocation",
+        "sourceRequirement": "work order R1 Implementation Contract F05; design section 8",
+        "precondition": "restored store shows D3 effective; the lost range held its REVOKE",
+        "input": "effective read",
+        "injectionStage": "read",
+        "tuple": {
+          "actor": "reader",
+          "operation": "n/a",
+          "version": "D3",
+          "store": "restored S1"
+        },
+        "expectedRecord": "none",
+        "expectedAck": "none",
+        "expectedClassification": "EFFECTIVE_UNVERIFIED_LOST_RANGE, never effective",
+        "futureOracle": "witness entry for the REVOKE sits beyond the restored tail",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
+      },
+      {
+        "caseId": "B2D-C77",
+        "group": "r1-F05",
+        "title": "Silent restore loses fencing history",
+        "sourceRequirement": "work order R1 Implementation Contract F05; design section 6,8",
+        "precondition": "restored store shows an attempt at epoch 1 and no later WRITER_START",
+        "input": "classify the attempt",
+        "injectionStage": "recovery",
+        "tuple": {
+          "actor": "recovery reader",
+          "operation": "op-77",
+          "version": "v1 H1",
+          "store": "restored S1"
+        },
+        "expectedRecord": "no write",
+        "expectedAck": "none",
+        "expectedClassification": "IN_DOUBT_UNKNOWN or STORE_STALE; never ABSENT_FENCED",
+        "futureOracle": "the later WRITER_START exists only in the witness",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
+      },
+      {
+        "caseId": "B2D-C78",
+        "group": "r1-F05",
+        "title": "Fork prevention and accepted loss",
+        "sourceRequirement": "work order R1 Implementation Contract F05; design section 8",
+        "precondition": "restored tail below the witness mark",
+        "input": "writer start without and then with RESTORE_ACCEPTING_LOSS",
+        "injectionStage": "recovery",
+        "tuple": {
+          "actor": "recovery owner",
+          "operation": "op in lost range",
+          "version": "v1 H1",
+          "store": "restored S1"
+        },
+        "expectedRecord": "without the entry nothing is appended; with it a RESTORE entry carries the lost range",
+        "expectedAck": "refused, then admitted",
+        "expectedClassification": "operations in the lost range require NEW_OPERATION_REQUIRED; lineages stay unverified",
+        "futureOracle": "no entry reuses a sequence number the witness already holds",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
+      },
+      {
+        "caseId": "B2D-C79",
+        "group": "r1-F05",
+        "title": "Witness record fails after commit",
+        "sourceRequirement": "work order R1 Implementation Contract F05; design section 5,8",
+        "precondition": "commit succeeded, witness unreachable",
+        "input": "accept request",
+        "injectionStage": "after commit",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-79",
+          "version": "v1 H1",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "decision committed",
+        "expectedAck": "acknowledgment withheld; caller learns UNKNOWN",
+        "expectedClassification": "COMMITTED_VERIFIED as historical; writer stops with STORE_UNWITNESSED",
+        "futureOracle": "next admission brings the witness forward",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
+      },
+      {
+        "caseId": "B2D-C80",
+        "group": "r1-F05",
+        "title": "A governance event is not a witness",
+        "sourceRequirement": "work order R1 Implementation Contract F05; design section 4,8",
+        "precondition": "event ledger holds a copy of acceptance events",
+        "input": "event ledger outage or presence",
+        "injectionStage": "freshness check",
+        "tuple": {
+          "actor": "reader",
+          "operation": "n/a",
+          "version": "n/a",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "none",
+        "expectedAck": "none",
+        "expectedClassification": "freshness verdict identical with or without events",
+        "futureOracle": "ordering and gaps of the event ledger do not substitute for the journal mark",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
+      },
+      {
+        "caseId": "B2D-C81",
+        "group": "r1-F05",
+        "title": "Historical exact-byte evidence versus current authority",
+        "sourceRequirement": "work order R1 Implementation Contract F05; design section 6,8",
+        "precondition": "valid decision in a store without freshness",
+        "input": "read the decision",
+        "injectionStage": "read",
+        "tuple": {
+          "actor": "reader",
+          "operation": "n/a",
+          "version": "D1",
+          "store": "S1 unwitnessed"
+        },
+        "expectedRecord": "none",
+        "expectedAck": "none",
+        "expectedClassification": "historical record verified; currentlyEffective UNVERIFIED",
+        "futureOracle": "both fields present in every result",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F05"
+        ]
+      },
+      {
+        "caseId": "B2D-C82",
+        "group": "r1-F06",
+        "title": "Pre-write versus post-intent rows",
+        "sourceRequirement": "work order R1 Implementation Contract F06; design section 5",
+        "precondition": "one refusal of each stage",
+        "input": "run a pre-write refusal, a post-intent refusal and STORE_CORRUPT",
+        "injectionStage": "various",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-82 series",
+          "version": "v1 H1",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "pre-write none; post-intent attempt plus abort plus journal; STORE_CORRUPT none",
+        "expectedAck": "refusals only",
+        "expectedClassification": "UNSEEN, ABORTED, attempted respectively",
+        "futureOracle": "rows compared with the refusal effects table",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F06"
+        ]
+      },
+      {
+        "caseId": "B2D-C83",
+        "group": "r1-F06",
+        "title": "Session expiry at the decision transaction",
+        "sourceRequirement": "work order R1 Implementation Contract F06; design section 2,5",
+        "precondition": "session valid at admission, expired at the second transaction",
+        "input": "accept request",
+        "injectionStage": "second transaction",
+        "tuple": {
+          "actor": "operator A, session, permitted role",
+          "operation": "op-83",
+          "version": "v1 H1",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "attempt row, abort row (SESSION_EXPIRED) and ABORT journal entry only",
+        "expectedAck": "SESSION_EXPIRED",
+        "expectedClassification": "ABSENT_ABORTED",
+        "futureOracle": "injected clock between transactions",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F06"
+        ]
+      },
+      {
+        "caseId": "B2D-C84",
+        "group": "r1-F06",
+        "title": "Another actor's decision never acknowledges the submitted intent",
+        "sourceRequirement": "work order R1 Implementation Contract F06; design section 2,5,6",
+        "precondition": "operator A operation A effective for H1",
+        "input": "operator B operation B submits H1",
+        "injectionStage": "second transaction",
+        "tuple": {
+          "actor": "operator B",
+          "operation": "op-B",
+          "version": "H1 effective through op-A",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "operation B aborted; no decision for B",
+        "expectedAck": "lineage information only",
+        "expectedClassification": "operation B: ABSENT_ABORTED, never COMMITTED_VERIFIED; operation A: COMMITTED_VERIFIED",
+        "futureOracle": "tuple-bound classification for both operations",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F06"
+        ]
+      },
+      {
+        "caseId": "B2D-C85",
+        "group": "r1-F06",
+        "title": "Changed actor or workspace under an existing id",
+        "sourceRequirement": "work order R1 Implementation Contract F06; design section 5,6",
+        "precondition": "op-85 committed by A in W1",
+        "input": "same id from B or from W2",
+        "injectionStage": "first transaction",
+        "tuple": {
+          "actor": "operator B or W2",
+          "operation": "op-85",
+          "version": "v1 H1",
+          "store": "provisioned and witnessed store S1"
+        },
+        "expectedRecord": "no write",
+        "expectedAck": "OPERATION_CONFLICT, nothing of the stored intent disclosed",
+        "expectedClassification": "INTENT_CONFLICT",
+        "futureOracle": "no acknowledgment field carries A's decision",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F06"
+        ]
+      },
+      {
+        "caseId": "B2D-C86",
+        "group": "r1-F04",
+        "title": "Unsupported operating-system lock",
+        "sourceRequirement": "work order R1 Implementation Contract F04; design section 4",
+        "precondition": "file system or platform cannot provide an exclusive lock",
+        "input": "writer admission",
+        "injectionStage": "admission",
+        "tuple": {
+          "actor": "process P1",
+          "operation": "n/a",
+          "version": "n/a",
+          "store": "S1 on an unsupported file system"
+        },
+        "expectedRecord": "no WRITER_START and no write",
+        "expectedAck": "WRITER_LOCK_UNSUPPORTED",
+        "expectedClassification": "not applicable",
+        "futureOracle": "admission is refused rather than degraded to transaction locking alone",
+        "status": "NOT_EXECUTED_DESIGN_ONLY",
+        "addedInR1": true,
+        "r1Findings": [
+          "B2D-F04"
+        ]
       }
     ]
   },
   "staticConsistencyCheck": {
-    "kind": "static cross-reference of design codes, classifications and work order item 7 groups against the case plan; not a behavioral test",
-    "designCodesChecked": 29,
-    "codesWithoutCase": [],
-    "classificationsUncovered": [],
-    "item7GroupsMissing": [],
+    "docMatrixEqualsEvidenceMatrix": true,
+    "designCodesWithoutCase": [],
+    "designCodesChecked": 47,
+    "stateMachineRowsPresent": true,
+    "r0DefectTextAbsent": {
+      "store_meta": true,
+      "highestUnrevokedPromotion": true,
+      "plainInsertIdempotentBlobOrIgnore": true,
+      "retryAfterAnyClassification": true,
+      "updateInProtocol": true
+    },
+    "everyTableHasImmutabilityStatement": true,
+    "allCasesNotExecuted": true,
     "incompleteCases": [],
-    "casesNotMarkedNotExecuted": [],
-    "result": "PASS_STATIC_ONLY"
+    "item7GroupsMissing": [],
+    "result": "PASS_STATIC_ONLY",
+    "kind": "static document consistency and cross-reference, not a behavioral test"
   },
   "commandReceipts": [
     {
-      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md",
+      "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md",
       "exit": 0,
       "result": "COMPLIANT before any edit"
     },
     {
       "command": "python governance/compat/run_adif_defect_resolver.py --task-class worker_execution --role worker --lifecycle-phase worker-return --json",
       "exit": 0,
-      "result": "0 items, truncated=false"
+      "result": "0 items, truncated=false, run at worker return"
     },
     {
       "command": "git diff --check",
@@ -1208,9 +2347,14 @@
       "result": "PASS"
     },
     {
-      "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md",
+      "command": "static consistency script over design and evidence",
       "exit": 0,
-      "result": "COMPLIANT 69/69 on final three-path state; first run failed on four checker rules, repaired in scope"
+      "result": "PASS_STATIC_ONLY after one repaired failure; not a behavioral test"
+    },
+    {
+      "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md",
+      "exit": 0,
+      "result": "COMPLIANT 69/69 on the final three-path state"
     }
   ],
   "adifWorkerQuery": {
@@ -1219,15 +2363,149 @@
     "ranAtWorkerReturn": true
   },
   "executedRuntimeEvidence": "NONE",
-  "claimBoundary": "documentation-only proposed design pending Local review; not acceptance, not an implemented owner, store or schema, no Q001 or Q004 exit",
+  "claimBoundary": "documentation-only proposed design pending Local review; not acceptance, not an implemented owner, store, lock or witness, no Q001 or Q004 exit",
   "exactDiff": {
     "gitStatusShortUntrackedAll": [
-      "?? docs/reference/CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md",
-      "?? docs/reviews/CVF_CVF_NCR_HTML_B2_DESIGN_WORKER_RETURN_2026-10-02.md",
-      "?? docs/reviews/evidence/cvf-ncr-html-b2-design-worker-evidence-2026-10-02.json"
+      " M docs/reference/CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md",
+      " M docs/reviews/CVF_CVF_NCR_HTML_B2_DESIGN_WORKER_RETURN_2026-10-02.md",
+      " M docs/reviews/evidence/cvf-ncr-html-b2-design-worker-evidence-2026-10-02.json"
     ],
-    "trackedModified": 0,
+    "trackedModified": 3,
+    "untracked": 0,
     "staged": 0,
     "commit": "none"
+  },
+  "priorExecutionBaseHead": "17ae5b9586ee1fdd0fe6a73d0f37b4ab4419f8a2",
+  "priorFindingSetDigest": "acd6c094fce6f7f83a11fe92c6877dfc93353c62c9a921c16bf39699d66e1d0b",
+  "findingToDesignToCaseMatrix": {
+    "B2D-F01": {
+      "designSections": [
+        "3",
+        "4",
+        "8"
+      ],
+      "cases": [
+        "B2D-C01",
+        "B2D-C25",
+        "B2D-C49",
+        "B2D-C50",
+        "B2D-C51",
+        "B2D-C52"
+      ],
+      "resolution": "append-only hash-chained journal; sequence, epoch and restore generation derived; takeover and restore are appended entries; rollback rejected by sequence, chain, epoch and witness rules",
+      "status": "DESIGN_CONSISTENT_PASS_STATIC_ONLY"
+    },
+    "B2D-F02": {
+      "designSections": [
+        "3",
+        "5",
+        "6"
+      ],
+      "cases": [
+        "B2D-C14",
+        "B2D-C15",
+        "B2D-C16",
+        "B2D-C17",
+        "B2D-C20",
+        "B2D-C28",
+        "B2D-C29",
+        "B2D-C30",
+        "B2D-C39",
+        "B2D-C40",
+        "B2D-C53",
+        "B2D-C54",
+        "B2D-C55",
+        "B2D-C56",
+        "B2D-C57",
+        "B2D-C58",
+        "B2D-C59",
+        "B2D-C60",
+        "B2D-C61"
+      ],
+      "resolution": "five-state operation machine with terminal outcomes that never reopen; intent check in every state; shared blob verified and reused without a second insert",
+      "status": "DESIGN_CONSISTENT_PASS_STATIC_ONLY"
+    },
+    "B2D-F03": {
+      "designSections": [
+        "7"
+      ],
+      "cases": [
+        "B2D-C08",
+        "B2D-C09",
+        "B2D-C43",
+        "B2D-C44",
+        "B2D-C45",
+        "B2D-C62",
+        "B2D-C63",
+        "B2D-C64",
+        "B2D-C65",
+        "B2D-C66",
+        "B2D-C67"
+      ],
+      "resolution": "lineage head first; revoked or expired head leaves no effective acceptance; basedOnDecisionId is the head even when ineffective",
+      "status": "DESIGN_CONSISTENT_PASS_STATIC_ONLY"
+    },
+    "B2D-F04": {
+      "designSections": [
+        "4"
+      ],
+      "cases": [
+        "B2D-C23",
+        "B2D-C24",
+        "B2D-C68",
+        "B2D-C69",
+        "B2D-C70",
+        "B2D-C71",
+        "B2D-C72",
+        "B2D-C86"
+      ],
+      "resolution": "exclusive operating-system lock for the writer lifetime plus a fresh epoch per lifetime; crash, release, hung and takeover rules; second process refused",
+      "status": "DESIGN_CONSISTENT_PASS_STATIC_ONLY"
+    },
+    "B2D-F05": {
+      "designSections": [
+        "6",
+        "7",
+        "8"
+      ],
+      "cases": [
+        "B2D-C35",
+        "B2D-C36",
+        "B2D-C37",
+        "B2D-C38",
+        "B2D-C41",
+        "B2D-C42",
+        "B2D-C73",
+        "B2D-C74",
+        "B2D-C75",
+        "B2D-C76",
+        "B2D-C77",
+        "B2D-C78",
+        "B2D-C79",
+        "B2D-C80",
+        "B2D-C81"
+      ],
+      "resolution": "witness over the single journal sequence; freshness rule; fail closed for writer admission and current claims; terminal negatives prefix-safe; restore declares loss",
+      "status": "DESIGN_CONSISTENT_PASS_STATIC_ONLY"
+    },
+    "B2D-F06": {
+      "designSections": [
+        "2",
+        "5",
+        "6"
+      ],
+      "cases": [
+        "B2D-C13",
+        "B2D-C16",
+        "B2D-C17",
+        "B2D-C19",
+        "B2D-C82",
+        "B2D-C83",
+        "B2D-C84",
+        "B2D-C85"
+      ],
+      "resolution": "pre-write versus post-intent effects tabulated; acknowledgment bound to the exact intent; lineage information is not an acknowledgment; INTENT_CONFLICT classification",
+      "status": "DESIGN_CONSISTENT_PASS_STATIC_ONLY"
+    }
   }
 }

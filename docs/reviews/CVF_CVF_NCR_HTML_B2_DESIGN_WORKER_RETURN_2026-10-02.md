@@ -8,22 +8,22 @@ Status: COMPLETE_PENDING_REVIEW
 
 Self-declared worker-return artifact: yes
 
-Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md`
+Responds to work order: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md`
 
-dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md`
+dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md`
 
-executionBaseHead: `17ae5b9586ee1fdd0fe6a73d0f37b4ab4419f8a2`
+executionBaseHead: `66200b2df63d93b63b521c608e0d7c62656f07fc`
 
 contractProfile: WORKER_RETURN_FULL_GATE_V1
 
 ## Rework Convergence Self-Proof
 
 rootCauseClusterId: B2_ACCEPTANCE_DESIGN_UNSPECIFIED
-recurrenceDisposition: INITIAL_DISPATCH_GENERATION_ZERO
-priorRelatedFinding: `docs/reviews/CVF_CVF_NCR_HTML_B2_ACCEPTANCE_OWNER_STORAGE_AUDIT_2026-09-30.md`
+recurrenceDisposition: REWORK_ROUND_ONE_ALL_DEPENDENT_FINDINGS_CONSOLIDATED
+priorRelatedFinding: `docs/reviews/CVF_CVF_NCR_HTML_B2_DESIGN_R0_LOCAL_REVIEW_2026-10-02.md`
 operatorNoticeDisposition: NOT_APPLICABLE_WITH_REASON - no operator decision is involved
 successorFreezeDisposition: NO_SUCCESSOR_OPENED - none opened
-reworkGeneration: 0
+reworkGeneration: 1
 consolidatedDefectClassSweep: COMPLETE_ALL_KNOWN_DEPENDENCIES
 productionBindingEvidence: NOT_APPLICABLE_WITH_REASON - documentation-only design; no production path was changed or exercised
 adversarialRegressionDisposition: PASS_TARGETED_DEFECT_CLASS
@@ -35,52 +35,59 @@ providerCallCount: 0
 tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: local agent usage meter was not exposed to this worker
 terminalReadinessVerdict: READY_FOR_REVIEW
 
-Basis for the adversarial disposition: the targeted defect class is a design that leaves a refusal code, a recovery classification or a required case group without a planned case. A static cross-reference script checked all 29 design codes, 10 classifications and every group in work order item 7 against the 48 planned cases and found no gap (`staticConsistencyCheck` in the evidence JSON, `PASS_STATIC_ONLY`). This is a document consistency check only. No behavior was run, so it is not behavioral adversarial evidence.
+Basis for the adversarial disposition: the targeted defect class is a state-machine contradiction left in the design text, and a case plan that does not discriminate it. The required token is qualified by `PASS_STATIC_ONLY`. Static checks in the evidence JSON confirm that the R0 defect formulations are absent from the revised design, that the design matrix equals the evidence matrix, that all 47 design codes and states are referenced by a planned case, that the operation state machine has all five states, and that no case claims execution. These are document consistency checks only. No behavior was run, so none of this is behavioral adversarial evidence, and a larger case count is not evidence of correctness.
 
 ## Semantic Convergence Outcome
 
 ```json
-{"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"cvf-ncr-html-b2-durable-acceptance-design","chainMode":"INITIAL","chainOrdinal":0,"predecessor":null,"blockerDelta":{"prior":[],"resolved":[],"retained":[],"new":["B2_ACCEPTANCE_DESIGN_UNSPECIFIED"],"reopened":[],"current":["B2_ACCEPTANCE_DESIGN_UNSPECIFIED"]},"resolutionEvidence":{},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":0,"nonDecreasingBlockerTransitions":0},"claims":[],"requiredDisposition":"CONTINUE_BOUNDED","successorScope":"INITIAL_BOUNDED"}
+{"schemaVersion":"cvf.semanticConvergenceControl.v1","problemKey":"cvf-ncr-html-b2-durable-acceptance-design","chainMode":"SUCCESSOR","chainOrdinal":1,"predecessor":{"path":"docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md","sha256":"60f92006539a7a37424bb604ad0cb27779f77d1bc2de3cac61f7b6b78c019f56"},"blockerDelta":{"prior":["B2_ACCEPTANCE_DESIGN_UNSPECIFIED"],"resolved":[],"retained":["B2_ACCEPTANCE_DESIGN_UNSPECIFIED"],"new":[],"reopened":[],"current":["B2_ACCEPTANCE_DESIGN_UNSPECIFIED"]},"resolutionEvidence":{},"counters":{"partialReadyClosures":0,"reviewerScopeExpansions":0,"sameClaimCorrections":0,"nonDecreasingBlockerTransitions":1},"claims":[],"requiredDisposition":"CONTINUE_BOUNDED","successorScope":"INTEGRATED_ROOT_CONTRACT"}
 ```
 
-Blocker resolution is claimed by the worker as evidence only; Local decides the blocker delta at review.
+Blocker resolution is claimed by the worker as evidence only; the blocker stays retained until Local decides the blocker delta at review.
 
 ## Purpose
 
-Return one source-bound B2 durable acceptance design under the selected DESIGN_DIRECTION_ONLY profile: authenticated operator acceptance of one exact immutable canonical UTF-8 version, a local single-host single-writer SQLite artifact-store candidate separate from the governance-event ledger, commit then readback verification, and read-only classification of unknown outcomes, with a planned case set. Documentation and evidence only. Worker evidence for Local, not artifact acceptance, and no implementation.
+Return the single consolidated R1 rework of the unratified R0 B2 durable acceptance design, resolving Local findings B2D-F01 to B2D-F06 in one coherent state-machine revision under the selected DESIGN_DIRECTION_ONLY profile. Documentation and evidence only: no implementation, store, lock, witness or runtime. Worker evidence for Local, not design ratification and not artifact acceptance.
 
 ## Target / Source
 
-Bound work order, paired GC-018 baseline, the post-B1 checkpoint reassessment (selected profile), the B2 owner and storage audit, B2a Part 1 and Part 2, the B2b byte boundary reference, the identity helper, the generic storage adapter, the v3 artifact ledger, the governance-event SQLite ledger, the export route, the route governance proof and the session type. Selected regions with SHA-256 values and locators are in the evidence JSON. Created exactly three task outputs.
+Bound R1 work order, paired R1 baseline, the Local R0 review (SHA-256 `acd6c094fce6f7f83a11fe92c6877dfc93353c62c9a921c16bf39699d66e1d0b`, verified equal), the original order, the three R0 candidate outputs, the post-B1 checkpoint (selected profile), the B2 owner and storage audit, B2a and B2b references, and the named identity, storage, v3, governance, route and session sources. The thirteen R0 source hashes were recomputed at the R1 base with zero drift. Revised exactly the three existing candidate outputs.
 
 ## Scope / Methodology
 
-Startup acknowledged: mode `cvf_ncr_p10_closed_p11_parked`; handoff `AGENT_HANDOFF_V63_2026-09-18.md`; next move: execute the bound B2 design-only packet; role INTERNAL_AGENT design worker; decision owner Local.
+Startup acknowledged: mode `cvf_ncr_p10_closed_p11_parked`; handoff `AGENT_HANDOFF_V63_2026-09-18.md`; next move: execute the bound B2 design R1 packet; role INTERNAL_AGENT design worker; decision owner Local.
 
-Order of work: clean HEAD `17ae5b958` with an empty `git status --short --untracked-files=all`, three output paths absent, bound pre-implementation gate COMPLIANT before any edit. Read the named sources at selected regions and recorded their hashes. Compared five owners on consumer, authority, lifetime, actual read and write semantics, and identity, transaction and recovery capability. Wrote the design document, then generated the evidence JSON with the source manifest, owner dispositions, the profile delta and 48 planned cases, then this return. No database, server, browser, provider or transaction was run, no dependency was installed and no source, test or configuration file was edited.
+Order of work: clean HEAD `66200b2df` with an empty `git status --short --untracked-files=all`, the three candidate paths tracked and equal to the base, finding digest verified, bound pre-implementation gate COMPLIANT before any edit. A dependency audit of all six findings came before the first edit and showed one state machine: the append-only constraint, the retry collision, the effective-version rule, the writer lifetime, the restore blindness and the actor-specific acknowledgment all depend on the same ordering, epoch and terminal-state rules. The design was then revised as a whole (sections 3 to 8 rewritten, section 2 and the section 1 locators kept), the evidence JSON regenerated from the committed R0 plan with 27 revised and 38 added cases, and this return rewritten. No database, server, browser, provider or transaction was run, no dependency installed, and no source, test or configuration file edited.
 
 ## Findings / Position
 
-The design adds the selected profile delta over B2a Part 2 and resolves it into one graph: server-established actor, role and scope; an export attestation that proves byte provenance; an immutable identity tuple of workspace, artifact key, version and exact byte identity; a dedicated append-only store with a fencing epoch; a two-transaction commit that leaves a positive attempt record; verified acknowledgment only after readback; and classification on a scratch byte copy whose absence verdicts require positive evidence.
+All six findings are resolved in the design text as one integrated state machine. The finding-to-design-to-case matrix is in the design document and in the evidence JSON `findingToDesignToCaseMatrix`; the document and JSON matrices are checked equal.
 
-Owner findings, each with locators in the design: the generic SQLite adapter creates storage on read and upserts on write and uses synchronous NORMAL, so it is rejected as acceptance authority; the v3 ledger is in memory and its content-hash dedup returns an existing entry across artifacts, so it is rejected as owner; the governance-event ledger stores events and its read path also sets the journal mode, so only its patterns and its copy-based `classify_target` are adapted; the identity helper is reused for identity only because its candidate type cannot represent acceptance. Two gaps no existing source fills: there is no stable artifact lineage key (`receiptAnchor` is an HTML section id) and no workspace definition (the session exposes `orgId` and `teamId`).
+| Finding | R1 resolution | Design sections | Planned cases |
+|---|---|---|---|
+| B2D-F01 | one append-only hash-chained journal; commit sequence, writer epoch and restore generation derived, never updated; takeover and restore are appended entries; rollback rejected | 3, 4, 8 | C01, C25, C49-C52 |
+| B2D-F02 | five-state operation machine, terminal outcomes never reopen and need a new operationId, intent checked in every state, shared blob verified and reused without a second insert | 3, 5, 6 | C14-C17, C20, C28-C30, C39, C40, C53-C61 |
+| B2D-F03 | lineage head first, revoked or expired head leaves no effective acceptance, basedOnDecisionId is the head even when ineffective | 7 | C08, C09, C43-C45, C62-C67 |
+| B2D-F04 | exclusive operating-system lock for the writer lifetime plus a fresh epoch per lifetime; crash, release, hung, takeover and second-process rules | 4 | C23, C24, C68-C72, C86 |
+| B2D-F05 | witness over the single journal sequence as a future admission blocker; fail-closed writer admission and current claims; terminal negatives prefix-safe; restore with declared loss | 6, 7, 8 | C35-C38, C41, C42, C73-C81 |
+| B2D-F06 | pre-write versus post-intent effects tabulated; acknowledgment only for the exact intent; lineage information is not an acknowledgment; INTENT_CONFLICT classification | 2, 5, 6 | C13, C16, C17, C19, C82-C85 |
 
-Case plan: 48 cases B2D-C01 to B2D-C48 in six groups. Every one is NOT_EXECUTED_DESIGN_ONLY.
+Retained from R0 without change of substance: the source-bound owner comparison and its read-init and upsert gaps, exact canonical bytes, the server-established actor with default-deny role and the opaque receipt, the selected profile and the three-path scope. The revised plan has 86 cases, all NOT_EXECUTED_DESIGN_ONLY.
 
 ## Risk / Corrective Action
 
-Design risks for Local to weigh, listed in the design as open design choices: the export attestation adds a route change and a key; refusing impersonated and service-token sessions is a policy choice; a two-transaction commit costs an extra durable write; classification on a copy cannot be consistent while a writer is active and so can only yield UNKNOWN then; silent restore detection needs an independent high-water witness that does not exist yet; and file-level tampering and fsync honesty are not defended. The planned oracles are worker-authored and were not run, so Local should treat them as a proposal, not as discrimination evidence. Real account, data, path, backup, key custody, retention, RPO, RTO and cost are UNKNOWN future gates and were not resolved or fabricated.
+Design choices for Local to weigh (also listed in the design): an operating-system lock held for the writer lifetime assumes one host with honest local-file locking; the witness is a hard admission blocker, so no durable acceptance write is possible until a real witness exists, and its location, owner and custody are future operator gates; a journal with a hash chain adds a write per state change; terminal operations need a new operationId, which the Accept flow must generate. The planned oracles are worker-authored and were not run, and a larger case count does not show the design is right. Real accounts and roles, workspace mapping, store location, key custody, backup, retention, RPO, RTO, cost and the real witness remain UNKNOWN and were not invented. Not defended and disclosed: file-level tampering, a foreign process ignoring the protocol, fsync honesty, lock honesty and copy consistency during classification.
 
 ## Decision / Disposition
 
-Disposition: COMPLETE_PENDING_REVIEW. The worker claims one source-bound proposed design with a consistent actor, identity, store, protocol, classification and lifecycle contract and an unexecuted case plan. Ratification, any later implementation packet and every real-effect decision remain with Local and the operator.
+Disposition: COMPLETE_PENDING_REVIEW. The worker claims one revised source-bound proposed design in which the six findings are resolved consistently in the text and the planned cases, checked statically (`PASS_STATIC_ONLY`). Ratification, any later implementation packet and every real-effect decision remain with Local and the operator.
 
 ## Work-Order Acceptance Evidence
 
 ```acceptance-evidence-json
 {
   "schemaVersion": "cvf.workOrderAcceptanceEvidence@1.0.0",
-  "executionBaseHead": "17ae5b958",
+  "executionBaseHead": "66200b2df",
   "results": [
     {"requirementId":"REQ-1","actualArtifacts":["docs/reference/CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md"],"proofRefs":["PROOF-OWNER","PROOF-AUTHORITY","PROOF-IDENTITY","PROOF-RECOVERY","PROOF-BOUNDARY"],"status":"PASS"},
     {"requirementId":"REQ-2","actualArtifacts":["docs/reviews/evidence/cvf-ncr-html-b2-design-worker-evidence-2026-10-02.json"],"proofRefs":["PROOF-CASE-PLAN","PROOF-SOURCE"],"status":"PASS"},
@@ -105,18 +112,18 @@ Disposition: COMPLETE_PENDING_REVIEW. The worker claims one source-bound propose
 |---|---|
 | Actor | Internal worker |
 | Provider or surface | Shared private CVF workspace; source reads and document authoring only |
-| Session or invocation | NCR HTML B2 durable acceptance design worker, 2026-10-02 |
+| Session or invocation | NCR HTML B2 durable acceptance design R1 rework worker, 2026-10-02 |
 | Working directory | Repository root |
 | Command or tool surface | bound pre-implementation gate; file reads; hash computation; ADIF resolver; worker fast gate |
 | Target paths | Exact three-path worker acceptance ledger |
 | Allowed scope source | Bound B2 design work order and paired GC-018 baseline |
-| Before status evidence | `git status --short --untracked-files=all` empty at HEAD `17ae5b958` before any edit; three output paths absent |
-| After status evidence | Three untracked worker paths, no modified tracked path, no staged path, no worker commit |
-| Diff evidence | `git diff --name-status` is empty; the three new paths appear as untracked in `git status --short --untracked-files=all` |
+| Before status evidence | `git status --short --untracked-files=all` empty at HEAD `66200b2df` before any edit; the three candidate paths tracked and equal to the base |
+| After status evidence | Three modified tracked worker paths, no untracked path, no staged path, no worker commit |
+| Diff evidence | `git diff --name-status` lists exactly the three worker paths as modified |
 | Approval boundary | Worker evidence only; Local reviewer owns acceptance, material commit and any implementation decision |
-| Claim boundary | Proposed design only; no database, server, browser, provider or transaction run |
+| Claim boundary | Proposed design only; no database, server, browser, provider, lock, witness or transaction run |
 | Agent type | INTERNAL_AGENT worker |
-| Invocation ID | cvf-ncr-html-b2-design-worker-20261002 |
+| Invocation ID | cvf-ncr-html-b2-design-r1-worker-20261002 |
 | Expected manifest | `docs/reference/CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md`; `docs/reviews/evidence/cvf-ncr-html-b2-design-worker-evidence-2026-10-02.json`; `docs/reviews/CVF_CVF_NCR_HTML_B2_DESIGN_WORKER_RETURN_2026-10-02.md` |
 | Actual changed set | `docs/reference/CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md`; `docs/reviews/evidence/cvf-ncr-html-b2-design-worker-evidence-2026-10-02.json`; `docs/reviews/CVF_CVF_NCR_HTML_B2_DESIGN_WORKER_RETURN_2026-10-02.md` |
 | Manifest delta | MATCH |
@@ -172,10 +179,10 @@ N/A with reason: three exact worker outputs are the bounded set; selected region
 
 | Field | Value |
 |---|---|
-| Defect class | OPERATOR_SCOPE_CLARITY_GAP: a generic storage adapter whose read initializes storage and whose write upserts cannot report on, or protect, an acceptance record, and no source defines an artifact lineage key or a workspace |
+| Defect class | OPERATOR_SCOPE_CLARITY_GAP: state-machine contradictions across schema, operation states, lineage head, writer lifetime and freshness that per-code case coverage did not expose |
 | Learning lane | DOCUMENTATION_ONLY_LEARNING |
-| Finding | An acceptance store needs a read path that cannot create the thing it reports on, absence that is a positive observation rather than a missing row, and identity that survives content dedup |
-| Disposition | DESIGN_REVIEW_REQUIRED: Local decides the open design choices before any implementation packet |
+| Finding | A design whose tables are append-only needs its counters derived from an append-only journal; retries need a total operation state machine; a writer lifetime needs a lifetime lock and not a transaction lock; currentness needs evidence from outside the store |
+| Disposition | DESIGN_REVIEW_REQUIRED: Local decides the open design choices before any implementation packet; no successor is opened |
 | Next control action | Local semantic design review of the one actor, identity, store and recovery graph |
 
 Runtime/provider/cost learning: N/A_WITH_REASON - documentation-only design; no runtime, provider or cost experiment was run and none is claimed.
@@ -184,19 +191,19 @@ Runtime/provider/cost learning: N/A_WITH_REASON - documentation-only design; no 
 
 ### Expected Result / Prediction
 
-If the existing owners could carry durable acceptance, one of them would bind exact bytes, actor, operation and a no-write recovery observation without extension.
+If the six R0 findings are one defect, a single integrated state machine will resolve them together: the schema, the operation states, the lineage rule, the writer lifetime, the freshness contract and the acknowledgment rule will agree, and the case plan will discriminate each.
 
 ### Evidence Comparison
 
-No single owner does. The identity helper binds bytes only, the generic adapter creates on read and overwrites on write, the v3 ledger is in memory and dedups by hash across artifacts, and the governance ledger stores events with a write-capable connection path. A dedicated store adapted from their patterns closes the gaps on paper.
+The dependency audit before editing showed that each finding rested on the same ordering, epoch and terminal-state rules, which is why one revision was needed. The revised text no longer contains the R0 formulations, the design and evidence matrices agree, and every design code and state is referenced by a planned case. These are static consistency results. They do not show the design behaves correctly, and the first run of the static check failed (a missing case for an unsupported lock and one matrix disagreement) and was repaired before the final result.
 
 ### Contradiction Or Gap Disposition
 
-No source contradiction was found within the named regions. The missing artifact key, missing workspace definition and missing independent restore witness are disclosed gaps, not resolved facts. Nothing was executed, so no behavior was contradicted or confirmed.
+No source contradiction was found within the named regions. The missing artifact key, missing workspace definition and missing real witness remain disclosed gaps. Nothing was executed, so no behavior was contradicted or confirmed.
 
 ### Claim Update
 
-The worker claims a source-bound proposed design pending review. Q001 and Q004 remain open and nothing is accepted.
+The worker claims a revised source-bound proposed design pending review. Q001 and Q004 remain open and nothing is accepted.
 
 ## Return-Time Closeability Recheck
 
@@ -213,8 +220,8 @@ Independent probe: the work order declares no independent probe for this documen
 
 WORKER_EXPERIENCE_RETRO:
 frictionLevel: LOW
-frictionType: GATE_SURPRISE
-observedStep: the first full return gate run failed on four checker rules that a design-only return does not obviously imply: command evidence dispositions, a mandatory adversarial disposition value, an enumerated friction type and a runtime-learning lane line
+frictionType: HELPER_GAP
+observedStep: my own static consistency check failed on its first run (a missing case for an unsupported lock and a matrix disagreement between the design and the evidence), which the repair round fixed before the gate
 preventiveControlCandidate: HELPER_DIAGNOSTIC
 
 ## Claim Boundary
@@ -227,7 +234,7 @@ DEFERRED_PRIVATE_ONLY
 
 ## git status --short
 
-Three untracked worker-owned files, zero modified tracked files, zero staged files. Exact path list follows.
+Three modified tracked worker-owned files, zero untracked files, zero staged files. Exact path list follows.
 
 ## Changed Files
 
@@ -237,10 +244,11 @@ Three untracked worker-owned files, zero modified tracked files, zero staged fil
 
 ## Command Evidence
 
-- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md`: COMPLIANT (exit 0) on the clean worktree at `17ae5b958` before any edit.
+- `python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md`: COMPLIANT (exit 0) on the clean worktree at `66200b2df` before any edit.
 - `python governance/compat/run_adif_defect_resolver.py --task-class worker_execution --role worker --lifecycle-phase worker-return --json`: exit 0, 0 items, `truncated=false`.
 - `git diff --check`: PASS (exit 0).
-- `python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_2026-10-02.md`: PASS (exit 0, 69/69 hook checks) on the final three-path state. The first run failed on four checker rules (command evidence dispositions, adversarial disposition value, friction type, runtime learning lane); all were repaired in scope and the gate rerun.
+- Static consistency script over the design and evidence (design matrix equals evidence matrix, 47 design codes referenced, R0 defect text absent, five-state machine present): PASS_STATIC_ONLY after one repaired failure; this is not a behavioral test.
+- `python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HTML_B2_DURABLE_ACCEPTANCE_DESIGN_R1_2026-10-02.md`: PASS (exit 0, 69/69 hook checks) on the final three-path state. The only earlier violation was the missing PASS line in this return; every other checker passed on the first run.
 - No Vitest, Playwright, SQLite, HTTP or provider command was run and no dependency was installed, as the work order requires.
 
 ## ADIF Defect Registry Disclosure
