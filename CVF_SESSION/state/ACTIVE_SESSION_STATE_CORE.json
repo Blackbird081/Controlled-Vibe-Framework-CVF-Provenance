@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HYPERFRAMES_REUSE_CAPABILITY_AUDIT_2026-10-02.md",
     "workOrderSha256": "05113231f192c434b04191adb1f9878d0e60d3ba664ed2beb27493771bf64f87"
   },
-  "currentAuthoritySyncReason": "D100 foundation rule at eb19152304d5dea860d0b4d7d182afceebefd460; D099 packet hashes retained for pending Local source-return review, no worker redispatch or runtime admission.",
+  "currentAuthoritySyncReason": "D101 source-only closure at a79f5c6cf33e07ea3d146b432cc802b48dd833c6; D099 hashes historical, no redispatch/runtime admission. Next bounded composition readiness scope remains Local design.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

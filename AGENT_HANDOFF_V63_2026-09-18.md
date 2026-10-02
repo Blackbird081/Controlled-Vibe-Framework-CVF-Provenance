@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `eb19152304d5dea860d0b4d7d182afceebefd460`; batch `CVF-NCR-REUSE-CHOICE-D100`, D100 foundation rule; HyperFrames review pending; send/B2 STOP.
+Current HEAD recorded for this handoff: `a79f5c6cf33e07ea3d146b432cc802b48dd833c6`; batch `CVF-NCR-HYPERFRAMES-VIENEU-LOCAL-CLOSURE`, D101 source-only closure; no selected runtime; send/B2 STOP.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking: `origin/main`; resolve SHA live. External agent memory is non-c
 ## Purpose
 Carry CVF-NCR v2.7 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer. Phase: D100 recorded, source return review pending; technical owner: Local; effect owner: operator; P11 parked.
+Role: Local orchestrator/reviewer. Phase: D101 source-only closure, readiness design pending; technical owner: Local; effect owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=review returned source audit; role=Local reviewer; phase=D100 recorded, source return review pending; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=prepare bounded composition readiness scope; role=Local reviewer; phase=D101 source-only closure, readiness design pending; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -21,7 +21,7 @@ AKOE authority: `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADM
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
 - B1 Print R2 accepted bounded at `6251ca305`: worker 5/5, units 45/45; Local 120-line probe: 3 pages/all rows/end marker, opaque origin/zero Print hits. Review: `docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md`. Width 700px; renderer only; Q001/Q004 OPEN. Preview owner audit complete; no Print successor.
-- D099 `e2a0a4034`: `CVF-NCR-HYPERFRAMES-REUSE-AUDIT`, frozen f16e50983 source-only fit/rights/control audit. D098 brief reused; Git/LFS diagnostics retained, blob reads required. Three outputs audit400/evidence900/return650; future proof unexecuted, no tool/media/provider/public effects; send/B2 STOP.
+- D101 `a79f5c6cf`: HyperFrames source audit closed bounded after section2.2 corrections; VieNeu advisory separately classified UNKNOWN_RUNTIME. Historical worker evidence preserved; all proof cases unexecuted, no default/runtime selection. Review and pins in front door; D099 packet retained, send/B2 STOP.
 ## Core Guard Self-Protection Authorization
 Authorized guard-maintenance scope: bind `e2a0a403457a2bd81a14957fa476bbe6c85ba8b2` / `CVF-NCR-HYPERFRAMES-REUSE-AUDIT`; six continuity paths below. Operator update-before-use/reuse-first and continuation, Local packet owner. Rollback: continuity only; preserve accepted design and STOP/effect boundaries.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
@@ -167,7 +167,7 @@ Rollback boundary: revert only this continuity sync; preserve material `5c1ee025
 - ACEL-AKOE-U1 is `CLOSED_PASS_BOUNDED` at `d9132412a`, disposition `SOURCE_RECONCILED_DEFER_WITH_TRIGGER`. Exact pins, 42 claims, byte hash and verification detail remain in its completion review; no import, runtime/provider, public sync or automatic successor opened.
 - CVF-NCR-R0-W01 source/profile return is Local-accepted bounded at material commit `d9b43a6f6deff7fb19710b5a9a4f50bf2a6015b6`; reviewer-fast 69/69 and pre-commit 90/90 passed. P06/P08 and actual destination/retention/cost remain open. One overbroad worker grep exposed a configured URL in tool output; the return does not reproduce it, and Local/operator config handling remains separate. No pilot or UI action was run.
 ## Next Allowed Move
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW_RETURNED_SOURCE_CAPABILITY_AUDIT; BATCH_ID=CVF-NCR-REUSE-CHOICE-D100; MATERIAL_COMMIT=eb19152304d5dea860d0b4d7d182afceebefd460; EXPANSION_ALLOWED=false. D100 normative rule recorded. Local reviews pending HyperFrames return and separate VieNeu advisory under the current bound packet; no worker redispatch or runtime admission. Full next move and source pins: CVF_SESSION_MEMORY.md. Send/B2 STOP; Q001/Q004/P11/effects/public/deploy parked.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PREPARE_BOUNDED_COMPOSITION_READINESS_SCOPE; MATERIAL_COMMIT=a79f5c6cf33e07ea3d146b432cc802b48dd833c6; EXPANSION_ALLOWED=false. D101 source-only closure: HyperFrames candidate recommendation; VieNeu UNKNOWN_RUNTIME; options selectable, no default. All proof cases planned/unexecuted. Local may prepare readiness design, no dispatch or runtime admission. Full source pins/review/next move: CVF_SESSION_MEMORY.md. Send/B2 STOP; Q001/Q004/P11/effects/public/deploy parked.
 ## Parked Checkpoints
 - autorun lane-binding R1 is closed at `ee81deeeb`; HRLTP-T2 remains paused for Local no-subagent route reassessment;
 - T3C-C2 is closed and Local verified at `820aae3ec`;
