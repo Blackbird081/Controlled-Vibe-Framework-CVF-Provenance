@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_HYPERFRAMES_REUSE_CAPABILITY_AUDIT_2026-10-02.md",
-    "baselineSha256": "0fcfb5b581ce1c1e472e01f19e47c7d3ab3fef84cb991eabc38792db601f7aee",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_HYPERFRAMES_REUSE_CAPABILITY_AUDIT_2026-10-02.md",
-    "workOrderSha256": "05113231f192c434b04191adb1f9878d0e60d3ba664ed2beb27493771bf64f87"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md",
+    "baselineSha256": "cc70d2c8ada65c6fc386f6e1e04f4c70185f69fb71519014be6e71ae1e1f5619",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md",
+    "workOrderSha256": "8fecf0798274d7cc084e147a8e0ecb0747d271fb02a9b83ceb2d159e1ac95f80"
   },
-  "currentAuthoritySyncReason": "D101 source-only closure at a79f5c6cf33e07ea3d146b432cc802b48dd833c6; D099 hashes historical, no redispatch/runtime admission. Next bounded composition readiness scope remains Local design.",
+  "currentAuthoritySyncReason": "D102 internal design dispatch at 9b7e50990262e333f427a1fdf885641d303e66b9; pair raw hashes bound, no runtime/media/provider selection.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
