@@ -1,0 +1,473 @@
+{
+  "schemaVersion": "cvf.ncrGeneralVideoDesign.workerEvidence.v1",
+  "batchId": "CVF-NCR-GENERAL-VIDEO-DESIGN",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_GENERAL_VIDEO_REUSE_FIRST_DESIGN_2026-10-02.md",
+  "baseline": "docs/baselines/CVF_GC018_CVF_NCR_GENERAL_VIDEO_REUSE_FIRST_DESIGN_2026-10-02.md",
+  "executionBaseHead": "ad656e505f53b504738e68bc446394d155b30252",
+  "dispatchBaseHead": "76fdf0707d95d64f8e9640ce5cd5861157fac785",
+  "headNote": "executionBaseHead is the clean released HEAD at start, a descendant of the dispatch base; the later dispatch commits bound this exact pair.",
+  "cleanBaseAtStart": true,
+  "threeOutputsAbsentAtStart": true,
+  "preImplementationGate": "COMPLIANT exit 0 before any edit",
+  "claimLevel": "PASS_STATIC_ONLY",
+  "executionBoundary": "Document reading and static checks only. No test, browser, HTTP, provider, build, store, render, media, third-party skill or mirror. The coding example was not executed.",
+  "workerSessionCost": "UNKNOWN: NOT_AVAILABLE_WITH_REASON, no usage meter exposed; not a zero-cost claim",
+  "inputs": [
+    {
+      "path": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "rawSha256": "ff75a3a51457778e896178f917fecc274b29f29b1be2775ec15b3c736735e35d",
+      "gitBlobSha256": "9978b5ff5c42bd4ed9e325361c9e567e754ce73ad52ecde9d85bbe6221c9f200",
+      "representationDiffers": true,
+      "readDepth": "FULL"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_COMPLETION_2026-10-02.md",
+      "rawSha256": "3b5a4c3901dcfaa2ef5d9297f28e2f26738ddb8cdc4be33b69924339ac8bbe17",
+      "gitBlobSha256": "58c9c8f6e41afb17d82ba9757fb0513b1c5e015276f25ec753310ea7a61b056b",
+      "representationDiffers": true,
+      "readDepth": "LINES_1_120_OF_201"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_VOM_QUICK_START_CLAIM_ALIGNMENT_COMPLETION_2026-10-02.md",
+      "rawSha256": "3e6a65ef3692102a8bd8eca587944954e570f95aa286ab48e85823a93c106a43",
+      "gitBlobSha256": "0abc5dd5c3508a26b674c17c97591b96d07bc0cb561d7f106b3bb6070d72aee2",
+      "representationDiffers": true,
+      "readDepth": "LINES_1_110_OF_200"
+    },
+    {
+      "path": "ECOSYSTEM/operating-model/CVF_VOM_QUICK_START.md",
+      "rawSha256": "ff1877c0c7f3dfe96c8c87404d7262c937d7a9e9267496bcb9df4a96d29ff60a",
+      "gitBlobSha256": "8bdcbc8501b01a8d827d29eb1c156623c04a8b7d4c6a16d56def6bdb12ac3d04",
+      "representationDiffers": true,
+      "readDepth": "LINES_1_50_OF_179"
+    },
+    {
+      "path": "ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md",
+      "rawSha256": "fc006001e9a25ed00a40392499cb7e58ff814d8522f30db60e12e63c198ce945",
+      "gitBlobSha256": "e50e6955bee655d1fbbb6ad8252cc92cef797512dfc7bc5c99082939360b4d71",
+      "representationDiffers": true,
+      "readDepth": "LINES_1_60_OF_144"
+    },
+    {
+      "path": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "rawSha256": "3ff99a14a415e53e338ec1a4edf2feddfd933812b9ef73dd0c50396baf86a680",
+      "gitBlobSha256": "d1e35b2542a33c899dd1ba3e4ea30f481f6776a616992080fe152cb0aa3d53e7",
+      "representationDiffers": true,
+      "readDepth": "PURPOSE_AND_CLAIM_BOUNDARY_SECTIONS"
+    },
+    {
+      "path": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+      "rawSha256": "0ed3c44eebdc6b673c8a7533f153362e457fdfffce7ce4c0d9a7b2c806820a74",
+      "gitBlobSha256": "0ed3c44eebdc6b673c8a7533f153362e457fdfffce7ce4c0d9a7b2c806820a74",
+      "representationDiffers": false,
+      "readDepth": "RISK_CLASSIFICATION_AND_APPROVAL_CONTINUITY_SECTIONS"
+    },
+    {
+      "path": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "rawSha256": "9197f032d0fc12c1a1c84147d12011820d0ce2c0cd74cf39bce0ae221f45514a",
+      "gitBlobSha256": "277f89d626ec9e80c35b07c3cf2c9a31f8bd3cbb7b54213c491ef280e8407941",
+      "representationDiffers": true,
+      "readDepth": "D096_D097_ROWS_ONLY"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_GENERAL_VIDEO_REUSE_FIRST_DESIGN_2026-10-02.md",
+      "rawSha256": "0fdd80a22c32625c3a23038dd4dd4b2d87ce593068c4076c713865c1723862fc",
+      "gitBlobSha256": "de01705254c70db1dee1ff0b3d45c20e4218d6af82d646d8fc06b9587c84c30a",
+      "representationDiffers": true,
+      "readDepth": "FULL"
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_CVF_NCR_GENERAL_VIDEO_REUSE_FIRST_DESIGN_2026-10-02.md",
+      "rawSha256": "6b71e4da3805b22e8b314e59ab452f2be5cdc7fe31520d51e9fa00d91bddc868",
+      "gitBlobSha256": "3226d5c0be42fad42c952e5332df16fb3f19d9882ff1925d29361fbaa3cedc44",
+      "representationDiffers": true,
+      "readDepth": "FULL"
+    },
+    {
+      "path": "AGENTS.md",
+      "rawSha256": "4e54c11ac65a4715cb78ddeacefa1089adab93d0a5d99a2c8d349880353267b3",
+      "gitBlobSha256": "24d313b3540b71cff6b2a7434da12d6c79bea037c1d873d840b6ed505b71507b",
+      "representationDiffers": true,
+      "readDepth": "SECTION_INDEX_ONLY"
+    }
+  ],
+  "exactPaths": [
+    "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+    "docs/reviews/evidence/cvf-ncr-general-video-design-2026-10-02.json",
+    "docs/reviews/CVF_CVF_NCR_GENERAL_VIDEO_DESIGN_WORKER_RETURN_2026-10-02.md"
+  ],
+  "lineCaps": {
+    "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md": 300,
+    "docs/reviews/evidence/cvf-ncr-general-video-design-2026-10-02.json": 600,
+    "docs/reviews/CVF_CVF_NCR_GENERAL_VIDEO_DESIGN_WORKER_RETURN_2026-10-02.md": 650
+  },
+  "targetSeconds": 240,
+  "aspectRatio": "16:9",
+  "language": "vi",
+  "maxNarrationWordsPerSecond": 3.6,
+  "timingBasis": "planned estimate; whitespace-token count of narration is a density proxy, not measured speech or playback",
+  "scenes": [
+    {
+      "id": "S01",
+      "start": 0,
+      "end": 15,
+      "duration": 15,
+      "claims": [
+        "C01"
+      ]
+    },
+    {
+      "id": "S02",
+      "start": 15,
+      "end": 40,
+      "duration": 25,
+      "claims": [
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "id": "S03",
+      "start": 40,
+      "end": 65,
+      "duration": 25,
+      "claims": [
+        "C04",
+        "C05"
+      ]
+    },
+    {
+      "id": "S04",
+      "start": 65,
+      "end": 95,
+      "duration": 30,
+      "claims": [
+        "C06",
+        "C07"
+      ]
+    },
+    {
+      "id": "S05",
+      "start": 95,
+      "end": 115,
+      "duration": 20,
+      "claims": [
+        "C09",
+        "C10"
+      ]
+    },
+    {
+      "id": "S06",
+      "start": 115,
+      "end": 135,
+      "duration": 20,
+      "claims": [
+        "C09",
+        "C11"
+      ]
+    },
+    {
+      "id": "S07",
+      "start": 135,
+      "end": 160,
+      "duration": 25,
+      "claims": [
+        "C09",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "id": "S08",
+      "start": 160,
+      "end": 190,
+      "duration": 30,
+      "claims": [
+        "C09",
+        "C13",
+        "C14",
+        "C08"
+      ]
+    },
+    {
+      "id": "S09",
+      "start": 190,
+      "end": 215,
+      "duration": 25,
+      "claims": [
+        "C15",
+        "C16",
+        "C08"
+      ]
+    },
+    {
+      "id": "S10",
+      "start": 215,
+      "end": 240,
+      "duration": 25,
+      "claims": [
+        "C17",
+        "C18",
+        "C19"
+      ]
+    }
+  ],
+  "illustrationScenes": [
+    "S05",
+    "S06",
+    "S07",
+    "S08"
+  ],
+  "illustrationStatus": "NOT_EXECUTED_ILLUSTRATIVE",
+  "claims": {
+    "C01": {
+      "claim": "Overview video built on the accepted guide with one small illustrative example",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "header Muc dich; Phan 4 callout",
+      "proofClass": "ACCEPTED_DOCUMENT",
+      "limitation": "documentation framing, not a viewing or usability result"
+    },
+    "C02": {
+      "claim": "CVF is governance infrastructure: a layer of rules and evidence between the assigner, the AI agent and the execution place; it does not write code",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 1; also ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md section 2",
+      "proofClass": "ACCEPTED_DOCUMENT+FROZEN_DOCTRINE",
+      "limitation": "documentary statement, no runtime proof"
+    },
+    "C03": {
+      "claim": "CVF is not an IDE, auto coding tool or agent builder",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 1 table; also ECOSYSTEM/doctrine/CVF_PRODUCT_POSITIONING.md section 3",
+      "proofClass": "ACCEPTED_DOCUMENT+FROZEN_DOCTRINE",
+      "limitation": "positioning, not a product behavior test"
+    },
+    "C04": {
+      "claim": "Human sets goals and boundaries and reviews; AI agent does assigned work and returns evidence; CVF sets policy, identity, permission and evidence at in-scope points",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 2 table",
+      "proofClass": "ACCEPTED_DOCUMENT",
+      "limitation": "role description, not enforcement proof"
+    },
+    "C05": {
+      "claim": "CVF control exists only at integrated surfaces or a process the user requires; telling an outside tool to read the rules is a written process",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 2 last paragraph; Phan 6",
+      "proofClass": "ACCEPTED_DOCUMENT",
+      "limitation": "explicit non-claim of universal control; guide accepted at documentation level only (docs/reviews/CVF_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_COMPLETION_2026-10-02.md Findings / Position)"
+    },
+    "C06": {
+      "claim": "Governed work has seven decisions INTAKE to FREEZE",
+      "source": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+      "locator": "Purpose; also docs/guides/CVF_QUICK_ORIENTATION.md Phan 3",
+      "proofClass": "CANONICAL_STANDARD",
+      "limitation": "runtime five-value projection detail omitted"
+    },
+    "C07": {
+      "claim": "Seven decisions are not seven documents or approvals; small work may merge them; accepted evidence is reused",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 3 paragraph after table; governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md Governance Latency and Approval Continuity",
+      "proofClass": "ACCEPTED_DOCUMENT+CARRIER_RULE",
+      "limitation": "carrier names continuity invariants; no per-task approval is created or implied"
+    },
+    "C08": {
+      "claim": "A change of goal, file/action scope, risk, external effect or commit owner needs proper authority before continuing",
+      "source": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+      "locator": "Governance Latency and Approval Continuity; docs/guides/CVF_QUICK_ORIENTATION.md Phan 3 and Phan 4 Buoc 5",
+      "proofClass": "CARRIER_RULE",
+      "limitation": "carrier is operating guidance for downstream agents; not a runtime gate proof"
+    },
+    "C09": {
+      "claim": "The expense month-filter example is illustrative, not run, with synthetic data",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 4 callout; docs/reviews/CVF_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_COMPLETION_2026-10-02.md Findings / Position coding walkthrough row",
+      "proofClass": "ACCEPTED_REVIEW",
+      "limitation": "NOT_EXECUTED_ILLUSTRATIVE; no enforcement or usability claim"
+    },
+    "C10": {
+      "claim": "Bounded assignment: goal, two allowed files, forbidden actions, expected results, synthetic data, completion report, stop-and-ask rule",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 4 Buoc 1-2",
+      "proofClass": "ACCEPTED_DOCUMENT",
+      "limitation": "copyable request text, never submitted to an agent"
+    },
+    "C11": {
+      "claim": "Expected behaviors: month selection, empty month message, blank filter shows all, bad date ignored without error",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 4 Buoc 2",
+      "proofClass": "ACCEPTED_DOCUMENT",
+      "limitation": "expectation, no result exists"
+    },
+    "C12": {
+      "claim": "Expected agent practice: edits only the two files, adds tests for the four cases, runs those two files' tests",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 4 Buoc 3",
+      "proofClass": "ACCEPTED_DOCUMENT",
+      "limitation": "described practice; no command was executed and no success is claimed"
+    },
+    "C13": {
+      "claim": "Evidence the reviewer reads: changed-file list, test results including empty and bad-date cases, what the agent did not check",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 4 Buoc 4",
+      "proofClass": "ACCEPTED_DOCUMENT",
+      "limitation": "no real report exists; the storyboard shows only an empty template"
+    },
+    "C14": {
+      "claim": "Reviewer accepts, requests a fix or stops; a request for files outside the list is a boundary change",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 4 Buoc 5",
+      "proofClass": "ACCEPTED_DOCUMENT",
+      "limitation": "decision practice, not a recorded decision"
+    },
+    "C15": {
+      "claim": "After acceptance only the already authorized next step is taken; production deploy, sending data out or real data are new effects needing separate approval",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 4 Viec tiep theo; docs/reviews/CVF_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_COMPLETION_2026-10-02.md Findings / Position commit and execution wording row",
+      "proofClass": "ACCEPTED_DOCUMENT+ACCEPTED_REVIEW",
+      "limitation": "acceptance does not grant commit authority"
+    },
+    "C16": {
+      "claim": "Risk level depends on action and environment, not only number of files; production data, external APIs, security or governance behavior are at least R2; no real task is classified",
+      "source": "governance/toolkit/05_OPERATION/CVF_DOWNSTREAM_AGENTS_TEMPLATE.md",
+      "locator": "Risk Classification; docs/guides/CVF_QUICK_ORIENTATION.md Phan 5",
+      "proofClass": "CARRIER_RULE",
+      "limitation": "documentary restatement; the video assigns no R-level to any real task"
+    },
+    "C17": {
+      "claim": "Not proved: control of every agent or session, a specific provider's readiness, durable transfer acceptance, production readiness",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 6",
+      "proofClass": "ACCEPTED_DOCUMENT",
+      "limitation": "explicit non-claims"
+    },
+    "C18": {
+      "claim": "Further reading points to existing internal guides: GET_STARTED and VOM Quick Start",
+      "source": "docs/guides/CVF_QUICK_ORIENTATION.md",
+      "locator": "Phan 7",
+      "proofClass": "ACCEPTED_DOCUMENT",
+      "limitation": "pointer to internal documents; implies no publication, deployment or readiness"
+    },
+    "C19": {
+      "claim": "VOM setup commands, Vietnamese UI-support sentence and old provider/skill counts are not refreshed proof and are not video promises",
+      "source": "docs/reviews/CVF_CVF_NCR_VOM_QUICK_START_CLAIM_ALIGNMENT_COMPLETION_2026-10-02.md",
+      "locator": "Findings / Position Remaining retained setup claim; docs/reviews/CVF_CVF_NCR_GENERAL_USER_GUIDE_REFRESH_COMPLETION_2026-10-02.md C-2 row",
+      "proofClass": "NEGATIVE_BOUNDARY",
+      "limitation": "the narration neither states nor relies on those items"
+    }
+  },
+  "governedDecisions": {
+    "D096": {
+      "source": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "locator": "D096 row",
+      "claim": "private Vietnamese overall-CVF design, about 4 minutes, 16:9, text only"
+    },
+    "D097": {
+      "source": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+      "locator": "D097 row",
+      "claim": "reuse-first; HyperFrames preferred candidate, not admitted; freshness and capability evaluation in a separate Local packet"
+    }
+  },
+  "checklistRequiredStatuses": [
+    "UNKNOWN",
+    "NOT_VERIFIED",
+    "PENDING_FUTURE_DECISION"
+  ],
+  "mustContain": [
+    "Reuse-First Brief",
+    "Production-Readiness Checklist",
+    "HyperFrames",
+    "16:9",
+    "NOT_EXECUTED_ILLUSTRATIVE",
+    "Text Encoding Exception",
+    "V\u00cd D\u1ee4 MINH H\u1eccA - CH\u01afA CH\u1ea0Y TH\u1eacT - D\u1eee LI\u1ec6U GI\u1ea2",
+    "DEFERRED_PRIVATE_ONLY"
+  ],
+  "mustNotContain": [
+    "62 skill",
+    "141 skill",
+    "84 scenarios",
+    "CERTIFIED",
+    "\u0111\u00e3 ch\u1ea1y th\u00e0nh c\u00f4ng",
+    "ki\u1ec3m th\u1eed \u0111\u1ea1t",
+    "tests passed",
+    "https://",
+    "http://"
+  ],
+  "narrationMustNotContain": [
+    "HyperFrames",
+    "R0",
+    "R1",
+    "R2",
+    "R3"
+  ],
+  "advisoryReaderCases": {
+    "kind": "agent advisory text reading, not a human study, viewing, render or runtime test",
+    "status": "NOT_EXECUTED_AS_HUMAN_STUDY",
+    "cases": [
+      {
+        "id": "Q1",
+        "question": "What does CVF do?",
+        "anchor": "S02",
+        "claims": [
+          "C02",
+          "C03"
+        ],
+        "answer": "It is governance infrastructure: a layer of rules and evidence around AI agents; it does not write code for you and is not an IDE or agent builder."
+      },
+      {
+        "id": "Q2",
+        "question": "Who codes and under what scope?",
+        "anchor": "S03, S05",
+        "claims": [
+          "C04",
+          "C10"
+        ],
+        "answer": "The AI agent does the assigned work; the human sets goal and boundaries (in the example: two editable files, no new library, no network, no real data)."
+      },
+      {
+        "id": "Q3",
+        "question": "Which evidence is reviewed?",
+        "anchor": "S07, S08",
+        "claims": [
+          "C13",
+          "C14"
+        ],
+        "answer": "The changed-file list, test results including the empty-month and bad-date cases, and what the agent says it did not check; all of it is expected practice, no real result exists."
+      },
+      {
+        "id": "Q4",
+        "question": "Which limits and permissions remain?",
+        "anchor": "S09, S10",
+        "claims": [
+          "C15",
+          "C16",
+          "C17"
+        ],
+        "answer": "Real environment, sending data out and real data need separate approval; control of every agent, a specific provider's readiness and production readiness are not proved."
+      }
+    ]
+  },
+  "proofIdJoin": {
+    "PROOF-OWNER": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md Outline and Scene Handoff; scenes timeline",
+    "PROOF-AUTHORITY": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md Scope, Reuse-First Brief, Claim Boundary; governedDecisions",
+    "PROOF-IDENTITY": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md S03; claims C04, C05",
+    "PROOF-RECOVERY": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md S05-S08; claims C09-C14",
+    "PROOF-BOUNDARY": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md Brief cost row, Production-Readiness Checklist, Claim Boundary",
+    "PROOF-CASE-PLAN": "advisoryReaderCases",
+    "PROOF-SOURCE": "inputs hashes, scenes, claims, staticCrossCheck",
+    "PROOF-RETURN": "docs/reviews/CVF_CVF_NCR_GENERAL_VIDEO_DESIGN_WORKER_RETURN_2026-10-02.md"
+  },
+  "designTargets": {
+    "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+    "finalSha256": "b5e64dea874abc6761bc75c97177420ab37bc067b7611f649865c4203263547f",
+    "finalLines": 159
+  },
+  "staticCrossCheck": {
+    "command": "python -c \"import json;d=json.load(open('docs/reviews/evidence/cvf-ncr-general-video-design-2026-10-02.json',encoding='utf-8'));exec(d['staticCrossCheck']['script'])\"",
+    "expectedExit": 0,
+    "recordedExit": 0,
+    "recordedResult": "PASS_STATIC_ONLY, no failures",
+    "limitation": "structural consistency only; word density is a proxy, not speech timing; no semantic, viewing or render proof",
+    "script": "import hashlib,os,re,subprocess,sys\nfail=[]\ndef raw(p): return open(p,'rb').read()\ndef txt(p): return raw(p).decode('utf-8')\nfor i in d['inputs']:\n    if hashlib.sha256(raw(i['path'])).hexdigest()!=i['rawSha256']: fail.append('input drift '+i['path'])\nD=d['designTargets']['path']\nif hashlib.sha256(raw(D)).hexdigest()!=d['designTargets']['finalSha256']: fail.append('design hash drift')\nfor p,cap in d['lineCaps'].items():\n    if os.path.exists(p):\n        n=len(txt(p).splitlines())\n        if n>cap: fail.append('line cap %s %d>%d'%(p,n,cap))\n    elif p!=d['exactPaths'][2]: fail.append('missing '+p)\nt=txt(D)\nrx=re.compile(r'(?m)^### (S\\d\\d) \\| (\\d+)-(\\d+) \\| (\\d+) s$')\nfound=[(m.group(1),int(m.group(2)),int(m.group(3)),int(m.group(4))) for m in rx.finditer(t)]\nwant=[(s['id'],s['start'],s['end'],s['duration']) for s in d['scenes']]\nif found!=want: fail.append('scene headers differ from evidence %r'%(found,))\ncur=0\nfor sid,a,b,du in found:\n    if a!=cur: fail.append('gap/overlap at '+sid)\n    if b-a!=du: fail.append('duration mismatch '+sid)\n    cur=b\nif cur!=d['targetSeconds']: fail.append('total %d != %d'%(cur,d['targetSeconds']))\nif len({x[0] for x in found})!=len(found): fail.append('duplicate scene id')\nblocks=re.split(r'(?m)^(?=### S\\d\\d \\|)',t)[1:]\nif len(blocks)!=len(d['scenes']): fail.append('scene block count')\nfor blk,s in zip(blocks,d['scenes']):\n    for label in ('Narration','On-screen','Visual intent','Asset needs','Claims'):\n        if not re.search(r'(?m)^- %s: .+$'%label,blk): fail.append('%s missing %s'%(s['id'],label))\n    nar=re.search(r'(?m)^- Narration: (.+)$',blk).group(1)\n    words=len(nar.split()); dens=words/s['duration']\n    if dens>d['maxNarrationWordsPerSecond']: fail.append('density %s %.2f'%(s['id'],dens))\n    for bad in d['narrationMustNotContain']:\n        if re.search(r'\\b'+re.escape(bad)+r'\\b',nar): fail.append('narration token %s in %s'%(bad,s['id']))\n    cl=[c.strip() for c in re.search(r'(?m)^- Claims: (.+)$',blk).group(1).split(',')]\n    if cl!=s['claims']: fail.append('claims differ '+s['id'])\n    for c in cl:\n        e=d['claims'].get(c)\n        if not e or not all(e.get(k) for k in ('claim','source','locator','proofClass','limitation')): fail.append('claim incomplete '+c)\n        elif e['source'] not in {i['path'] for i in d['inputs']}: fail.append('claim source not hashed '+c)\n    if s['id'] in d['illustrationScenes'] and 'V\u00cd D\u1ee4 MINH H\u1eccA' not in blk: fail.append('illustration card missing '+s['id'])\nused={c for s in d['scenes'] for c in s['claims']}\nif used!=set(d['claims']): fail.append('unused or undefined claims %r'%(sorted(used^set(d['claims'])),))\nfor tok in d['mustContain']:\n    if tok not in t: fail.append('missing '+tok)\nfor tok in d['mustNotContain']:\n    if tok in t: fail.append('forbidden '+tok)\nsec=t.split('## Production-Readiness Checklist')[1].split('## Proof Anchors')[0]\nrows=[l for l in sec.splitlines() if l.startswith('| ') and not l.startswith('| M\u1ee5c')]\nif len(rows)<8: fail.append('checklist rows %d'%len(rows))\nfor r in rows:\n    if r.split('|')[2].strip() not in d['checklistRequiredStatuses']: fail.append('checklist status '+r)\nfor m in re.finditer(r'\\]\\(([^)#]+)(#[^)]*)?\\)',t):\n    tgt=m.group(1)\n    if '://' in tgt: fail.append('external link '+tgt); continue\n    if not os.path.exists(os.path.normpath(os.path.join(os.path.dirname(D),tgt))): fail.append('broken link '+tgt)\nst=subprocess.run(['git','status','--short','--untracked-files=all'],capture_output=True,text=True).stdout.splitlines()\npaths=sorted(l[3:] for l in st)\nif paths!=sorted(d['exactPaths']): fail.append('manifest differs %r'%(paths,))\nif any(not l.startswith('??') for l in st): fail.append('tracked path modified')\nhead=subprocess.run(['git','rev-parse','HEAD'],capture_output=True,text=True).stdout.strip()\nif head!=d['executionBaseHead']: fail.append('HEAD moved '+head)\nprint('PASS_STATIC_ONLY' if not fail else 'FAIL')\nfor f in fail: print(' -',ascii(f))\nsys.exit(1 if fail else 0)\n"
+  },
+  "claimBoundary": "Private text design only. Timeline estimated, example unexecuted, advisory reading is not human or viewing proof. No media, render, provider, paid, public or deploy action; HyperFrames unverified; worker-session usage UNKNOWN."
+}
