@@ -1,0 +1,552 @@
+{
+ "schemaVersion": "cvf.ncr.c1BoundedReadinessAssessment.v1",
+ "batchId": "CVF-NCR-C1-BOUNDED-READINESS",
+ "executionBaseHead": "72d27fac2a61fbc8495443b6896e81b91c5dec47",
+ "dispatchBaseHead": "cbc8c50395214e605f380aeb5a9baa84137a710d",
+ "status": "WORKER_EVIDENCE_PENDING_LOCAL_REVIEW",
+ "claimLevel": "SOURCE_AND_METADATA_ONLY_NO_RUNTIME_PROOF",
+ "readinessVerdict": "READINESS_GAPS_RECORDED",
+ "verdictReason": "critical envelope fields are UNKNOWN (codec routing control, download origins, dependency footprint, FFmpeg build, RAM, rights and consent evidence); envelopes are proposed, not granted",
+ "outputPaths": {
+  "assessment": "docs/reference/CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_2026-10-03.md",
+  "evidence": "docs/reviews/evidence/cvf-ncr-c1-bounded-readiness-assessment-2026-10-03.json",
+  "return": "docs/reviews/CVF_CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_WORKER_RETURN_2026-10-03.md"
+ },
+ "lineCaps": {
+  "assessment": 500,
+  "evidence": 1000,
+  "return": 650
+ },
+ "pins": {
+  "vieneu": "85344322b7258b4e25479b692e8e3396baf9db34",
+  "hyperframesSelected": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94",
+  "hyperframesNpmGitHead": "aca4bc2f492c2b038d87c875cd7d53a80dfb4bb1",
+  "hyperframesObservedMain": "1168bb740d336f366849c91308a3c2bbb850c570",
+  "hyperframesHistorical": "f16e509832d4fa02bbc9a5f81b59ff78f9d466af",
+  "model": "61b85e3d937fbbacb387714180e8182823512523",
+  "codec": "ceff0d0749bfb3fa2d61149794ec6feef0d1e1ae"
+ },
+ "planSeal": {
+  "sealedUtc": "2026-10-02T23:42:12.615218+00:00",
+  "planSha256": "b06a325afb0ebc1f55594b623fb13fd8ca9162ae60d9d8fb0dcc96fbe6fc664f",
+  "planText": [
+   "consume D103 and D104 evidence unchanged",
+   "observe heads by ls-remote only",
+   "read selected Git objects within 64 named paths",
+   "bounded text metadata under 32 requests and 8 MiB",
+   "read-only hardware probes",
+   "per-component rights, provenance and resource inventory",
+   "propose preparation and proof envelopes as proposals",
+   "readiness-specific planned cases",
+   "embedded static checks",
+   "three outputs within caps, no commit, no install, no download, no execution"
+  ],
+  "sealScope": "plan text and input identities; static check set not sealed before assessment (see deviations)"
+ },
+ "pair": {
+  "baseline": {
+   "path": "docs/baselines/CVF_GC018_CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_2026-10-03.md",
+   "rawSha256": "8c3041c0a09493d1522c6a0f8e7a6a9f5b32772cc2c9cf2a43e4a34e095e706f"
+  },
+  "workOrder": {
+   "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_2026-10-03.md",
+   "rawSha256": "d423f5f5b26b92ccfd42dc77930b469813484e872d3d5d820276282e9254bff9"
+  }
+ },
+ "inputIdentities": [
+  {"path": "docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md", "rawSha256": "1eafad1cd23048eff1a11acb27ce51f34bb1929a3306de9237b1ed6734064eee", "gitBlobId": "e142d0ec8fce2d03afcf8b41f7c96b7a7cc7f951", "physicalLines": 344},
+  {"path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md", "rawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0", "gitBlobId": "f22cddd894a9cf976762f8c3b7c3f7a745abf476", "physicalLines": 159},
+  {"path": "docs/reference/CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md", "rawSha256": "de3673a2f41695bfa83692095fd0d67f96cea924d48809aefd8b14266c8e6d87", "gitBlobId": "9825df4a26d8a6eebb46533afc33ca951ee59937", "physicalLines": 300},
+  {"path": "docs/reviews/CVF_CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_COMPLETION_2026-10-03.md", "rawSha256": "e709534ee8f38e3ca7ae9b832c1cdee1f15bffd7250ec0168e5ee099d84a8ad6", "gitBlobId": "018b048f54ce10ec38af612a0966c916b5ed49e9", "physicalLines": 216},
+  {"path": "docs/reviews/evidence/cvf-ncr-video-composition-readiness-local-review-2026-10-03.json", "rawSha256": "b4ff46ab01cb6890b2ec2baa282622d7dc0c82095ba3fc73a4379285fe568d51", "gitBlobId": "a4256555348ecc7b6d52c973200d5c695e62681b", "physicalLines": 228},
+  {"path": "docs/reviews/CVF_NCR_S05_ASSESSMENT_LANE_SELECTION_2026-10-03.md", "rawSha256": "6d95fc56401aee6de3eed37d082c15b6cd70ed40600e813b95721065aea71a62", "gitBlobId": "ff1f77ada8841261110faa77c6a5f8c1ecd9008a", "physicalLines": 150},
+  {"path": "docs/reviews/evidence/cvf-ncr-s05-assessment-lane-selection-2026-10-03.json", "rawSha256": "1bff8bd9149b2418a4c266b35106555fa69e047bde75d742a261fdf4e3ae5748", "gitBlobId": "291380a76c8f985781e7f1225208f7c0103483fe", "physicalLines": 386}
+ ],
+ "preflight": {
+  "command": "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_2026-10-03.md",
+  "exitCode": 0,
+  "result": "COMPLIANT",
+  "headAtRun": "72d27fac2a61fbc8495443b6896e81b91c5dec47",
+  "outputsAbsentBeforeEdit": true
+ },
+ "observedHeads": [
+  {"repo": "pnnbao97/VieNeu-TTS", "ref": "refs/heads/main", "observed": "85344322b7258b4e25479b692e8e3396baf9db34", "selected": "85344322b7258b4e25479b692e8e3396baf9db34", "disposition": "NO_DRIFT"},
+  {"repo": "heygen-com/hyperframes", "ref": "refs/heads/main", "observed": "1168bb740d336f366849c91308a3c2bbb850c570", "selected": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94", "disposition": "DRIFT_FINDING_FOR_LOCAL_NO_FETCH_NO_REPIN"},
+  {"repo": "heygen-com/hyperframes", "ref": "npm hyperframes 0.8.113 gitHead", "observed": "aca4bc2f492c2b038d87c875cd7d53a80dfb4bb1", "selected": "5c52f72399e21f8dcf3ede2bf2d24978c6522a94", "disposition": "ANCESTOR_OF_SELECTED_PIN_7_COMMITS_BEHIND"}
+ ],
+ "hardware": {
+  "observedUtc": "2026-10-02T23:46:03Z",
+  "cpu": "12th Gen Intel Core i5-1240P",
+  "cores": 12,
+  "logicalProcessors": 16,
+  "totalRamGiB": 15.69,
+  "freeRamGiBAtProbe": 2.51,
+  "gpu": "NVIDIA GeForce MX570 A adapterRAM 2147483648 and Intel Iris Xe adapterRAM 2147479552, reported values, not free VRAM, no inference measurement",
+  "diskFreeGiB": {
+   "C": 16.82,
+   "D": 24.2
+  },
+  "diskUsedGiB": {
+   "C": 257.16,
+   "D": 176.8
+  },
+  "osVersion": "10.0.26200",
+  "node": "v22.17.0",
+  "python": "3.11.9",
+  "ffmpegGetCommand": "NOT_RESOLVED_ON_CURRENT_PATH",
+  "ffprobeGetCommand": "NOT_RESOLVED_ON_CURRENT_PATH",
+  "commandBasis": "Get-CimInstance Win32_Processor, Win32_ComputerSystem, Win32_OperatingSystem, Win32_VideoController; Get-PSDrive C,D; node --version; python --version; Get-Command ffmpeg, ffprobe",
+  "qualification": "snapshot, not a reservation; PATH result is not a whole-machine claim; published benchmarks are GPU desktop figures and are not transferred"
+ },
+ "readLedger": {
+  "gitObjects": [
+   {"repo": "pnnbao97/VieNeu-TTS", "rev": "85344322", "path": "pyproject.toml", "blob": "3e2b811f941f91827b5b8cc947b5f21382e00072", "sha256": "b36fc3303dceff0dddbe9f49067d0c82f3c11802e0dd82a2b58208f375d8df63", "bytes": 5991, "lines": 184, "coverage": "READ"},
+   {"repo": "pnnbao97/VieNeu-TTS", "rev": "85344322", "path": "src/vieneu/v3turbo.py", "blob": "0a9134c7b2a7777935dda5feaa0b91b4fa06e13d", "sha256": "10757905d3f6454e17c834ec32c73d33b5b9d322d05397295c0bbeb5f3ffb3ad", "bytes": 38604, "lines": 836, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"},
+   {"repo": "pnnbao97/VieNeu-TTS", "rev": "85344322", "path": "src/vieneu/factory.py", "blob": "33050f13e855c42947af73cf24d70dfc9d42245c", "sha256": "0cd4631298d4da9de59471c3f3371a8c894b2b9019e40f584373e2c1a3ca3265", "bytes": 2065, "lines": 49, "coverage": "READ"},
+   {"repo": "pnnbao97/VieNeu-TTS", "rev": "85344322", "path": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py", "blob": "e7f1db482348df446640a6ea4f85fd2fbb6ad1fc", "sha256": "7747ac18fb5b660a810a434461bd8386ba40b0b46d559c07907db0c19414084e", "bytes": 32607, "lines": 632, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"},
+   {"repo": "pnnbao97/VieNeu-TTS", "rev": "85344322", "path": "src/vieneu/base.py", "blob": "03f96c4e082aac18d52167123708675df036a2bf", "sha256": "48cc3f8b809a6bfd06e6fea6344673541e547068fb310caaef0dbc1099af6ac5", "bytes": 19719, "lines": 486, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"},
+   {"repo": "pnnbao97/VieNeu-TTS", "rev": "85344322", "path": "src/vieneu_utils/phonemize_text.py", "blob": "30f8a0c166777325859582fcc4c53619d0755671", "sha256": "ce3c0ab79b1232cb9a62dc8360aedbdd7646318f46d59036603615a957dfe6a7", "bytes": 19882, "lines": 456, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"},
+   {"repo": "pnnbao97/VieNeu-TTS", "rev": "85344322", "path": "src/vieneu/_v3_turbo_engine/onnx_denoiser.py", "blob": "7614f3864095944b6abc4ff9df6121714adaffdf", "sha256": "a0923ad09075a1285e09133f65401251cac39915b710c24357c9d9e721b1ffe3", "bytes": 5419, "lines": 136, "coverage": "READ"},
+   {"repo": "pnnbao97/VieNeu-TTS", "rev": "85344322", "path": "LICENSE", "blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64", "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4", "bytes": 11357, "lines": 201, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"},
+   {"repo": "pnnbao97/VieNeu-TTS", "rev": "85344322", "path": ".env.example", "blob": "834f39ebe450934943e971365fe6b0413c7b6218", "sha256": "630b5e21aeb91e6d61e2ebfb6fb7a4ed9b27d58df098e862ada74e1c4d8b415e", "bytes": 865, "lines": 34, "coverage": "READ"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/cli/src/telemetry/config.ts", "blob": "5c6683a93dfdd4740bd3c28ba681093ac1ef847c", "sha256": "5b19c25eb47dc52ba5acca3c534ae8071c7413256757bb109697e8ec2b2de08d", "bytes": 40946, "lines": 934, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/cli/src/telemetry/policy.ts", "blob": "8daa7cfefb44b2affbebe1455c9755106705ce2c", "sha256": "49f0ae969527acbc86541b955d2b3962ad00bb07e096a810b39782938808a558", "bytes": 1772, "lines": 56, "coverage": "READ"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/cli/src/utils/updateCheck.ts", "blob": "9bd418096bb1bdd7cc9f5ddd519b9cfff2db0ba5", "sha256": "95d3421493ecb040cc0c1880f31a54b2d3b075cca31a68ccd39d95ac03a27e89", "bytes": 9758, "lines": 253, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/cli/src/utils/autoUpdate.ts", "blob": "bb5350851ca470f990d9a59bdbbbb229ca9265d8", "sha256": "e5ab17ed73c61f622d8e92d4bd179c2cce970ce85bf18bea53209065e41ac705", "bytes": 13137, "lines": 341, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/cli/src/cli.ts", "blob": "f5f61dbee75cedb133a646373f18c85fc3e3be31", "sha256": "ccd4595fd385e7d1e7006fd82ff1ecf3a9f5d21f14187bb1b92a8ac525ec727c", "bytes": 23889, "lines": 538, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/cli/src/utils/skillsUpdateCheck.ts", "blob": "d4cdf0d82d6ee5df0699091da5a3aae70b6b29c5", "sha256": "c8940124e3b00898caeebec9f293cf82f3e0b2af0ffd2ef19fb25f26fedb474d", "bytes": 5549, "lines": 122, "coverage": "READ"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/cli/src/browser/manager.ts", "blob": "6c19d2ba799d3fe9159b2772a61ae05463844c72", "sha256": "31780f56914b2693a722cfcddf79b82a842a86098e9241aa9035e67d1ba917b7", "bytes": 35783, "lines": 893, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/cli/src/browser/ffmpeg.ts", "blob": "3ed7594684c4a6774f158b0e2e084b5ccfc2efe4", "sha256": "dc547763136bb5ab64fe738a59388f8c8220854f961619d41e26e885b135b9dc", "bytes": 4238, "lines": 110, "coverage": "READ"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/cli/src/commands/render.ts", "blob": "df47984c8a4bd985eec2085162c06b8ecf89ed96", "sha256": "75751e0dc06b58334c4a9b358b3218d24ff57cf91de2d73270551a1f1ea4dcd1", "bytes": 81918, "lines": 1949, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/cli/package.json", "blob": "77f7343a12eab0b5697e2b911a8f3ab190f7040c", "sha256": "cb61f0ce2902e34791583d6eb5c80e70f6910e8663c1dc3f802c6409bbaef7b2", "bytes": 2467, "lines": 80, "coverage": "READ"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/producer/src/services/authoredGoogleFonts.ts", "blob": "75788696af92f5a7b2d36664c20e7cdcd6bd70c9", "sha256": "32bc5b412414091fbc94f27508d84787561f614f2e1cd2227a5a7592a57b6406", "bytes": 3043, "lines": 86, "coverage": "READ"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/producer/src/services/deterministicFonts.ts", "blob": "83848a474912037337cfdc543d9500b93df6cb65", "sha256": "b2f04752f6fce5f89ef761fe97aadb2a1cedafbc2246fff85ec842af985348a2", "bytes": 68761, "lines": 1937, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/cli/src/fontLocalize.ts", "blob": "708cfeda7fad8c4324958d0093b76b955cba86dc", "sha256": "472ee8f2abc2eb57055c0d72184b024748b030459bc519e50f208960cc8e5518", "bytes": 3567, "lines": 99, "coverage": "READ"},
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/cli/src/commands/doctor.ts", "blob": "2bec33a208f70a101957ec0e34a5471081f3999c", "sha256": "e21691c484ef7fcdf0212e40ee87d571de9bb818f1a44f2ceb1bace0df26e605", "bytes": 15317, "lines": 461, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"},
+   {"repo": "pnnbao97/VieNeu-TTS", "rev": "85344322", "path": "src/vieneu/assets/voices_v3_turbo.json", "blob": "3e07d6dd0bf594c04b873f4ddf578cb8090a04da", "sha256": "e1f13cd2c2e0d29fdab5e15bfd7a30f3d7b768e6132bb43dd2b853f8efefdce9", "bytes": 180332, "lines": 1, "coverage": "PARTIAL: targeted line ranges and pattern reads, not whole-file semantic review"}
+  ],
+  "comparisonReads": [
+   {"repo": "heygen-com/hyperframes", "rev": "aca4bc2f", "path": "packages/cli/package.json", "blob": "77f7343a12eab0b5697e2b911a8f3ab190f7040c", "sha256": "cb61f0ce2902e34791583d6eb5c80e70f6910e8663c1dc3f802c6409bbaef7b2", "bytes": 2467, "note": "version field 0.8.113 at npm gitHead"},
+   {"repo": "heygen-com/hyperframes", "rev": "aca4bc2f..5c52f723", "path": "7 control-path files", "note": "git diff --quiet reported identical for updateCheck, manager, policy, cli, autoUpdate, deterministicFonts, render"},
+   {"repo": "heygen-com/hyperframes", "rev": "aca4bc2f..5c52f723", "path": "ancestry", "note": "aca4bc2f is an ancestor of 5c52f723; 7 commits ahead; merge-base aca4bc2f"}
+  ],
+  "absentPathAttempts": [
+   {"repo": "heygen-com/hyperframes", "rev": "5c52f723", "path": "packages/parsers/src/ff-binaries.ts", "result": "ABSENT_AT_PIN", "note": "name guessed from an import; actual helper path not located, FFmpeg override variable name stays UNKNOWN"},
+   {"repo": "heygen-com/hyperframes", "rev": "1168bb74", "path": "object", "result": "OBJECT_NOT_IN_LOCAL_MIRROR", "note": "not fetched by design"}
+  ],
+  "network": {
+   "requests": [
+    {"url": "https://github.com/pnnbao97/VieNeu-TTS.git", "method": "git ls-remote", "utc": "2026-10-02T23:44:39.026793+00:00", "status": 0, "contentType": "git ls-remote text", "redirectFollowed": false, "decodedBytes": 57, "sha256": "71e3dfe209aa2c207dc106e6eebcb997bf4e65bf0860b95ac34e72d20e6b854d", "purpose": "head observation", "observed": "85344322b7258b4e25479b692e8e3396baf9db34"},
+    {"url": "https://github.com/heygen-com/hyperframes.git", "method": "git ls-remote", "utc": "2026-10-02T23:44:40.074302+00:00", "status": 0, "contentType": "git ls-remote text", "redirectFollowed": false, "decodedBytes": 57, "sha256": "41bd995914acebeab9507ccb2fb6eba8e8da2b116231796d1ce284be06217572", "purpose": "head observation", "observed": "1168bb740d336f366849c91308a3c2bbb850c570"},
+    {"url": "https://huggingface.co/api/models/pnnbao-ump/VieNeu-TTS-v3-Turbo/revision/61b85e3d937fbbacb387714180e8182823512523?blobs=true", "method": "GET", "utc": "2026-10-02T23:44:49.443797+00:00", "status": 200, "contentType": "application/json; charset=utf-8", "redirectFollowed": false, "decodedBytes": 14021, "sha256": "35042295f21ed212cb970721a9beb040b6f993b727ca79bcb7d009365553c60f", "purpose": "model file list and sizes at pinned revision"},
+    {"url": "https://huggingface.co/api/models/OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano-ONNX/revision/ceff0d0749bfb3fa2d61149794ec6feef0d1e1ae?blobs=true", "method": "GET", "utc": "2026-10-02T23:44:49.786073+00:00", "status": 200, "contentType": "application/json; charset=utf-8", "redirectFollowed": false, "decodedBytes": 2635, "sha256": "cd2075bc861c5361201b5523f5ff0bbb0bd1d60fb5a75af45343b1634811efcd", "purpose": "codec file list and sizes at pinned revision"},
+    {"url": "https://huggingface.co/pnnbao-ump/VieNeu-TTS-v3-Turbo/raw/61b85e3d937fbbacb387714180e8182823512523/README.md", "method": "GET", "utc": "2026-10-02T23:45:03.029616+00:00", "status": 200, "contentType": "text/plain; charset=utf-8", "redirectFollowed": false, "decodedBytes": 15458, "sha256": "5d5bb2de661fabc0e073b3b844dc131696fac3dddd5ea882d10fd9a849108eb7", "purpose": "model card at pinned revision"},
+    {"url": "https://huggingface.co/OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano-ONNX/raw/ceff0d0749bfb3fa2d61149794ec6feef0d1e1ae/README.md", "method": "GET", "utc": "2026-10-02T23:45:03.342401+00:00", "status": 200, "contentType": "text/plain; charset=utf-8", "redirectFollowed": false, "decodedBytes": 4892, "sha256": "3c7b9e9ef1c8c5e5c829a077a1d32c1f7aea1668f2bf17ead318ff04bf1e6fe4", "purpose": "codec card at pinned revision"},
+    {"url": "https://pypi.org/pypi/vieneu/3.8.3/json", "method": "GET", "utc": "2026-10-02T23:45:21.261883+00:00", "status": 200, "contentType": "application/json", "redirectFollowed": false, "decodedBytes": 25608, "sha256": "22131514df19906df2eb234f5d665f2ec33d828d9747fe34cc4a9ebf59cf8bc5", "purpose": "PyPI vieneu 3.8.3 metadata"},
+    {"url": "https://registry.npmjs.org/hyperframes/0.8.113", "method": "GET", "utc": "2026-10-02T23:45:21.808584+00:00", "status": 200, "contentType": "application/json", "redirectFollowed": false, "decodedBytes": 3539, "sha256": "83239015d7bb49eecdb0956bd0acf3fcbbed1d2d329642168f32a27a086d75b1", "purpose": "npm hyperframes 0.8.113 metadata"},
+    {"url": "https://registry.npmjs.org/@hyperframes/cli/0.8.113", "method": "GET", "utc": "2026-10-02T23:45:22.330063+00:00", "status": 404, "contentType": "application/json", "redirectFollowed": false, "decodedBytes": 11, "sha256": "57aefd8046010e86f09187427e21bad3376b25a2f9a46ce20452ac7d5448298d", "purpose": "npm scoped package probe", "reason": "package name probe returned not found; the published name is hyperframes"},
+    {"url": "https://pypi.org/pypi/sea-g2p/json", "method": "GET", "utc": "2026-10-02T23:45:55.719462+00:00", "status": 200, "contentType": "application/json", "redirectFollowed": false, "decodedBytes": 317533, "sha256": "b027305d826ae48eebb5ef32ac51c21dedf15c5cd737fc010743f7089a7a7495", "purpose": "PyPI sea-g2p metadata"}
+   ],
+   "totalDecodedBytes": 383811,
+   "caps": {
+    "requests": 32,
+    "perResponseBytes": 2097152,
+    "totalBytes": 8388608,
+    "timeoutSeconds": 20
+   },
+   "retriesUsed": 0,
+   "redirectsFollowed": 0,
+   "stops": "none triggered; cross-host large-file CDN, browser and FFmpeg hosts deliberately not read"
+  },
+  "exclusions": [
+   "no checkout, fetch, repin or mirror mutation",
+   "no whole-repository scan; named paths only",
+   "no tarball or wheel content download",
+   "no browser, FFmpeg, font or Hub large-file CDN host read",
+   "upstream skills, instructions and tests were not invoked or consulted as authority"
+  ],
+  "coverage": "PARTIAL: 24 selected-revision paths of 8618 HyperFrames and 145 VieNeu historical file counts; no semantic completeness claim"
+ },
+ "componentSizeInputs": {
+  "graphs": [
+   {"file": "onnx_update/vieneu_prefill.onnx", "bytes": 324499, "lfsSha256": "27f8b064f6b57b5448e95d095f1959588c005d614678045c2b97ecccf3b7a0f7"},
+   {"file": "onnx_update/vieneu_decode_step.onnx", "bytes": 306134, "lfsSha256": "bedc379cea61ea5d616312750d95ad3924e055856662d19187a889a5edc24ceb"},
+   {"file": "onnx_update/vieneu_acoustic_cached.onnx", "bytes": 7207223, "lfsSha256": "f631e3387c788c3d8b9a5ac5df94952af5bc4c4d1049ff8a751e76a246fff2d4"},
+   {"file": "onnx_update/vieneu_backbone_shared.data", "bytes": 415319040, "lfsSha256": "c7c072193db33d0542457e2612c7272c44c4279d1cafaf0aa4c379964911db2f"},
+   {"file": "onnx_update/vieneu_v3_heads.npz", "bytes": 52219622, "lfsSha256": "fb22484baa424bbb775133a6e5f0d00d6299b2b256fbe3312a864b85b9aed01e"},
+   {"file": "onnx_update/config.json", "bytes": 2152, "lfsSha256": null},
+   {"file": "onnx_update/tokenizer.json", "bytes": 22320, "lfsSha256": null}
+  ],
+  "codec": [
+   {"file": "moss_audio_tokenizer_decode_full.onnx", "bytes": 681902, "lfsSha256": "0fbbafe3fd4afa2a019af5c5ced204af6e2d1db044fa40f021525d2aee95b4ac"},
+   {"file": "moss_audio_tokenizer_decode_shared.data", "bytes": 44198912, "lfsSha256": "e69d52e0f4e84ca27850557ee54face46632d3a5a16c89bd246c7c408466dcad"},
+   {"file": "moss_audio_tokenizer_decode_step.onnx", "bytes": 351400, "lfsSha256": "9527c86a29e1837edec1f74db57d5eeaadb3a715af3382703566460afed25855"},
+   {"file": "codec_browser_onnx_meta.json", "bytes": 17036, "lfsSha256": null},
+   {"file": "moss_audio_tokenizer_encode.onnx", "bytes": 815775, "lfsSha256": "eadea4a645abdcf98714c7aead122ee2ce7da6e080f9f80b977cd1ca8e19473a"},
+   {"file": "moss_audio_tokenizer_encode.data", "bytes": 44507136, "lfsSha256": "aa751265b2bab2887eac224484546b194875aa7494b607115439b3dc6b228a2c"}
+  ],
+  "rootConfig": {
+   "file": "config.json",
+   "bytes": 1553,
+   "lfsSha256": null
+  },
+  "denoiser": {
+   "file": "denoiser.onnx",
+   "bytes": 42661414,
+   "lfsSha256": "b7621953291cfe05e695a9c0ff4255aa2f93239fc17c26627e18b7b6b8f72f0b"
+  },
+  "speakerEncoder": {
+   "file": "speaker_encoder.onnx",
+   "bytes": 28303423,
+   "lfsSha256": "a6ac6a63997761ae2997373e2ee1c47040854b4b759ea41ec48e4e42df0f4d73"
+  }
+ },
+ "sizes": {
+  "graphsBytes": 475400990,
+  "codecBytes": 90572161,
+  "rootConfigBytes": 1553,
+  "denoiserBytes": 42661414,
+  "speakerEncoderBytes": 28303423,
+  "requiredKnownBytes": 565974704,
+  "requiredPlusDenoiserBytes": 608636118,
+  "worstCaseDuplicatedCacheBytes": 1217272236,
+  "requiredKnownGiB": 0.5271,
+  "requiredPlusDenoiserGiB": 0.5668,
+  "worstCaseDuplicatedCacheGiB": 1.1337,
+  "d104FigureReconciliation": "D104 0.527 GiB equals graphs plus codec bytes only; root config adds 1553 B; eager denoiser adds 42661414 B; speaker encoder is cloning only",
+  "unknownComponents": [
+   "python dependencies",
+   "npm dependencies and native binaries",
+   "headless Chrome",
+   "FFmpeg build",
+   "fonts",
+   "render temp frames",
+   "logs and caches",
+   "safety headroom"
+  ],
+  "duplicatedCacheBasis": "worst case assumes the Hub cache stores both blob and snapshot copies when links are unavailable on Windows; library behaviour, not verified"
+ },
+ "components": [
+  {"id": "K01", "component": "VieNeu SDK code", "kind": "code", "pin": "Git 85344322 (pyproject 3.8.3); PyPI vieneu 3.8.3 wheel 2643059 B uploaded 2026-09-23", "sizeBytes": 2643059, "sizeBasis": "PyPI metadata wheel size", "declaration": "Apache-2.0 (LICENSE file in Git at pin; PyPI classifier)", "declarationScope": "code", "independentClearance": "NONE", "artifactCoverage": "Git LICENSE covers repository code; wheel-to-Git content match UNKNOWN", "consent": "not applicable to code", "status": "DECLARED_CODE_LICENSE_PROVENANCE_UNKNOWN"},
+  {"id": "K02", "component": "VieNeu v3 Turbo ONNX fp32 graphs, tokenizer, config (onnx_update)", "kind": "model", "pin": "HF pnnbao-ump/VieNeu-TTS-v3-Turbo revision 61b85e3d", "sizeBytes": 475400990, "sizeBasis": "HF API blobs metadata, 7 files", "declaration": "card front matter apache-2.0 plus FAQ saying licence covers ONNX exports, configs, tokenizers, preset assets", "declarationScope": "publisher declaration in model card, no LICENSE or NOTICE file in repository file list", "independentClearance": "NONE", "artifactCoverage": "card names artifact classes, not per-file; training data pipeline not public (card)", "consent": "not applicable to weights", "status": "DECLARATION_ONLY"},
+  {"id": "K03", "component": "MOSS audio tokenizer Nano ONNX codec", "kind": "codec", "pin": "HF OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano-ONNX revision ceff0d07", "sizeBytes": 90572161, "sizeBasis": "HF API blobs metadata, 6 files incl. encoder (fetched by source even if cloning unused)", "declaration": "card front matter apache-2.0", "declarationScope": "publisher card, no LICENSE or NOTICE file in repository file list", "independentClearance": "NONE", "artifactCoverage": "ONNX export of upstream tokenizer; upstream repo licence not read", "consent": "not applicable", "status": "DECLARATION_ONLY"},
+  {"id": "K04", "component": "root config.json fetch (checkpoint_path)", "kind": "model-config", "pin": "same model revision", "sizeBytes": 1553, "sizeBasis": "HF API blobs metadata", "declaration": "as K02", "declarationScope": "as K02", "independentClearance": "NONE", "artifactCoverage": "fetched only when onnx_dir is unset (source)", "consent": "n/a", "status": "DECLARATION_ONLY"},
+  {"id": "K05", "component": "denoiser.onnx (eager load attempt, unused by fixed preset)", "kind": "model-aux", "pin": "same model revision", "sizeBytes": 42661414, "sizeBasis": "HF API blobs metadata", "declaration": "as K02", "declarationScope": "as K02", "independentClearance": "NONE", "artifactCoverage": "constructor tries to load it; failure swallowed; used only in enrollment/cloning", "consent": "n/a", "status": "OPTIONAL_DECLARATION_ONLY"},
+  {"id": "K06", "component": "speaker_encoder.onnx (cloning only)", "kind": "model-aux", "pin": "same model revision", "sizeBytes": 28303423, "sizeBasis": "HF API blobs metadata", "declaration": "as K02", "declarationScope": "as K02", "independentClearance": "NONE", "artifactCoverage": "lazy load on first clone; cloning out of scope, not fetched for fixed preset", "consent": "cloning not admitted", "status": "EXCLUDED_FROM_C1_PREPARATION"},
+  {"id": "K07", "component": "fixed preset voice entry (bundled voices_v3_turbo.json)", "kind": "preset", "pin": "Git 85344322, file 180332 B, 25 presets, default Hai Dang (ASCII form), alias Minh Quan to Hai Dang", "sizeBytes": 180332, "sizeBasis": "Git blob size at pin", "declaration": "card FAQ: speakers or rightsholders consented to AI training and synthetic speech, commercial use allowed", "declarationScope": "publisher statement; file entries carry description, gender, region, style, embedding, codes only, no consent or provenance field", "independentClearance": "NONE", "artifactCoverage": "card documents SDK 3.7.1 with 23 voices; pin has 25; per-preset consent evidence not located", "consent": "DECLARED_BY_PUBLISHER_UNVERIFIED", "status": "CONSENT_UNVERIFIED"},
+  {"id": "K08", "component": "sea-g2p phonemizer (Rust wheel)", "kind": "dependency", "pin": "floating >=0.9.1 in metadata; PyPI latest 0.10.0 win_amd64 wheel 27530792 B", "sizeBytes": 27530792, "sizeBasis": "PyPI metadata wheel size for latest, not a pin", "declaration": "PyPI classifier Apache Software License; card says same author as VieNeu", "declarationScope": "package metadata", "independentClearance": "NONE", "artifactCoverage": "dictionary content and source repository not read", "consent": "n/a", "status": "VERSION_UNPINNED_DECLARATION_ONLY"},
+  {"id": "K09", "component": "other Python dependencies (onnxruntime, numpy, soundfile, soxr, kaldi-native-fbank, tokenizers, huggingface_hub, PyYAML, gradio, librosa)", "kind": "dependency", "pin": "ranges only in wheel metadata; uv.lock exists in Git but was not read", "sizeBytes": null, "sizeBasis": "UNKNOWN: no resolver run, package managers forbidden in this tranche", "declaration": "UNKNOWN per package", "declarationScope": "not read", "independentClearance": "NONE", "artifactCoverage": "gradio and librosa are core requirements although a file-first job needs neither", "consent": "n/a", "status": "FOOTPRINT_AND_LICENCE_UNKNOWN"},
+  {"id": "K10", "component": "HyperFrames CLI npm package hyperframes", "kind": "code", "pin": "npm 0.8.113 gitHead aca4bc2f; unpackedSize 33408618; SLSA provenance declared in registry metadata, not verified", "sizeBytes": 33408618, "sizeBasis": "npm registry metadata unpackedSize, excludes dependencies", "declaration": "Apache-2.0 (package metadata; LICENSE in Git at selected pin)", "declarationScope": "code", "independentClearance": "NONE", "artifactCoverage": "gitHead is an ancestor of selected 5c52f72; 7 control-path files byte-identical; tarball content not compared", "consent": "n/a", "status": "DECLARED_CODE_LICENSE_SOURCE_CORRESPONDENCE_PARTIAL"},
+  {"id": "K11", "component": "npm transitive dependencies (puppeteer-core, @puppeteer/browsers, sharp native binary, esbuild native binary, prettier, others)", "kind": "dependency", "pin": "caret ranges in registry metadata", "sizeBytes": null, "sizeBasis": "UNKNOWN: no install or dry run", "declaration": "UNKNOWN per package", "declarationScope": "not read", "independentClearance": "NONE", "artifactCoverage": "native binaries arrive via package manager at install time", "consent": "n/a", "status": "FOOTPRINT_AND_LICENCE_UNKNOWN"},
+  {"id": "K12", "component": "headless Chrome (chrome-headless-shell)", "kind": "browser", "pin": "source constant 152.0.7977.30; downloaded to user cache when env, puppeteer cache, HF cache and system Chrome do not resolve", "sizeBytes": null, "sizeBasis": "UNKNOWN: download host not in the read allowlist", "declaration": "UNKNOWN", "declarationScope": "not read", "independentClearance": "NONE", "artifactCoverage": "resolution order can pick an unpinned system Chrome", "consent": "n/a", "status": "SIZE_AND_TERMS_UNKNOWN"},
+  {"id": "K13", "component": "FFmpeg build with libx264", "kind": "tool", "pin": "none; not resolved on current PATH (Get-Command)", "sizeBytes": null, "sizeBasis": "UNKNOWN: not installed, host not allowlisted", "declaration": "UNKNOWN: build licence depends on the chosen build", "declarationScope": "not applicable until a build is chosen", "independentClearance": "NONE", "artifactCoverage": "render encoder detection requires libx264 or VideoToolbox (source)", "consent": "n/a", "status": "ABSENT_ON_PATH_BUILD_UNKNOWN"},
+  {"id": "K14", "component": "fonts for Vietnamese on-screen text", "kind": "assets", "pin": "bundled Fontsource latin subsets in producer source; other subsets fetched from Google Fonts by resolver", "sizeBytes": null, "sizeBasis": "UNKNOWN", "declaration": "UNKNOWN per font", "declarationScope": "not read", "independentClearance": "NONE", "artifactCoverage": "local font files with hashes not chosen; Vietnamese glyph coverage unproven", "consent": "n/a", "status": "CHOICE_AND_RIGHTS_UNKNOWN"},
+  {"id": "K15", "component": "Node.js and Python runtimes", "kind": "tool", "pin": "Node v22.17.0 and Python 3.11.9 observed by version command", "sizeBytes": "UNKNOWN_INSTALLED_FOOTPRINT_EXISTING_REUSE", "sizeBasis": "already present, no new storage", "declaration": "not assessed", "declarationScope": "not applicable", "independentClearance": "NONE", "artifactCoverage": "meets declared floors Node >=22 and Python >=3.10", "consent": "n/a", "status": "PRESENT_FLOORS_MET"}
+ ],
+ "gaps": [
+  {"id": "C1R-G01", "title": "HyperFrames head drift and absent current object", "severity": "HIGH", "status": "OPEN_FINDING_FOR_LOCAL", "statement": "Public main is now 1168bb74; D104 selected 5c52f723; npm 0.8.113 gitHead is aca4bc2f. The current head object is not in the local mirror and was not fetched. VieNeu main is unchanged at 85344322.", "joins": ["G-18", "R18"], "cases": ["RC-01"]},
+  {"id": "C1R-G02", "title": "Package to source correspondence is partial", "severity": "MEDIUM", "status": "PARTIAL", "statement": "npm gitHead aca4bc2f is a release commit that is an ancestor of the selected pin (7 commits behind) and 7 control-path files are identical, but no tarball content was compared. PyPI vieneu 3.8.3 was not compared to the Git pin and the model card still documents 3.7.1.", "joins": ["G-18", "R18", "V02"], "cases": ["RC-12", "RC-02"]},
+  {"id": "C1R-G03", "title": "V03 unpinned retrieval sites", "severity": "HIGH", "status": "ROUTING_PARTIAL", "statement": "Five retrieval sites use the default Hub revision: root config.json, graphs and tokenizer, codec files, denoiser and an optional voices_v3_turbo.json override. With a local backbone directory and onnx_dir, four can resolve locally by configuration; the codec cannot (G04).", "joins": ["G-05", "G-06", "G-07", "V03"], "cases": ["RC-06", "RC-08"]},
+  {"id": "C1R-G04", "title": "V04 codec_dir not forwarded by the public constructor", "severity": "BLOCKER", "status": "CONFIG_ONLY_ZERO_EGRESS_UNSUPPORTED", "statement": "The engine accepts codec_dir but the v3 Turbo wrapper passes only checkpoint, onnx_repo, onnx_dir, onnx_subfolder and threads. Configuration alone cannot route codec reads to a pinned local directory. Options O1 offline mode with a seeded Hub cache (unverified), O2 direct private engine use (adapter), O3 patch or fork (not admitted), O4 accept unpinned execution egress (rejected as identity loss).", "joins": ["G-05", "V04"], "cases": ["RC-06", "RC-08"]},
+  {"id": "C1R-G05", "title": "Rights are publisher declarations only", "severity": "HIGH", "status": "DECLARATION_ONLY", "statement": "Model and codec repositories list no LICENSE or NOTICE file at the pinned revisions; Apache-2.0 appears in card front matter. Training data pipeline is not public. No independent clearance exists for weights, codec, dependencies, browser, FFmpeg or fonts.", "joins": ["G-16", "R10"], "cases": ["RC-03"]},
+  {"id": "C1R-G06", "title": "Preset consent and identity are unverified", "severity": "HIGH", "status": "CONSENT_UNVERIFIED", "statement": "Preset entries carry no consent or provenance field. The card documents 23 voices with default Minh Quan at SDK 3.7.1; the pin ships 25 voices with default Hai Dang and an alias. Bundled sample clips ship in the package data but are not part of the fixed-preset path.", "joins": ["G-17", "V02"], "cases": ["RC-11", "TC-09"]},
+  {"id": "C1R-G07", "title": "Python dependency footprint and licences unknown", "severity": "MEDIUM", "status": "UNKNOWN", "statement": "Core metadata requires gradio and librosa; versions float; sea-g2p latest is 0.10.0 above the 0.9.1 floor. No resolver run, so peak storage is not computable.", "joins": ["G-15", "R19"], "cases": ["RC-04"]},
+  {"id": "C1R-G08", "title": "Browser download size and terms unobserved", "severity": "MEDIUM", "status": "UNKNOWN", "statement": "Source pins chrome-headless-shell 152.0.7977.30 as download of last resort; resolution can select an unpinned system Chrome first. The download host is outside the read allowlist, so size is unobserved.", "joins": ["G-08", "G-15"], "cases": ["RC-04", "RC-05"]},
+  {"id": "C1R-G09", "title": "FFmpeg unresolved on PATH and build unknown", "severity": "HIGH", "status": "ABSENT_ON_PATH", "statement": "Get-Command ffmpeg and ffprobe resolve nothing on the current PATH; this is not a whole-machine absence claim. Render needs a libx264 capable build; its licence terms depend on the chosen build.", "joins": ["G-16", "R10"], "cases": ["RC-07"]},
+  {"id": "C1R-G10", "title": "Vietnamese font coverage may trigger render-time font egress", "severity": "MEDIUM", "status": "UNPROVEN", "statement": "The resolver embeds Latin subsets for bundled families and fetches other subsets or families from Google Fonts; declared local font faces are recognised, but whether that avoids all fetches for Vietnamese text was not proven.", "joins": ["G-09", "R04"], "cases": ["RC-10"]},
+  {"id": "C1R-G11", "title": "HyperFrames implicit effects and their opt-outs", "severity": "MEDIUM", "status": "SOURCE_CONTROLS_FOUND_NOT_RUN", "statement": "Source shows .env loading from the working directory, default telemetry with HYPERFRAMES_NO_TELEMETRY or DO_NOT_TRACK opt-out, update check and detached installer with HYPERFRAMES_NO_UPDATE_CHECK and HYPERFRAMES_NO_AUTO_INSTALL opt-outs, skills update check with HYPERFRAMES_SKIP_SKILLS, and user-home cache and config writes. Controls were read, not exercised.", "joins": ["G-01", "G-02", "G-03", "G-04", "G-12", "G-13"], "cases": ["TC-11"]},
+  {"id": "C1R-G12", "title": "Resource fit is a snapshot, not a measurement", "severity": "MEDIUM", "status": "UNKNOWN", "statement": "Free RAM was 2.51 GiB of 15.69 GiB at probe time; D drive free 24.2 GiB, C drive 16.82 GiB. Peak RAM, elapsed time and CPU throughput are unmeasured; published benchmarks are GPU desktop figures and are not transferred to this hybrid laptop CPU.", "joins": ["G-15", "R19"], "cases": ["RC-04", "TC-16"]},
+  {"id": "C1R-G13", "title": "Execution cost and alternatives remain unpriced", "severity": "MEDIUM", "status": "UNKNOWN", "statement": "Session cost, bandwidth cost, runtime cost and any hosted alternative price are UNKNOWN; none is zero.", "joins": ["G-14", "G-15"], "cases": ["RC-09", "TC-12"]},
+  {"id": "C1R-G14", "title": "Audio mux path in the renderer was not read", "severity": "MEDIUM", "status": "DEFERRED_TO_PROOF", "statement": "How the renderer muxes the WAV into MP4, padding behaviour and A/V duration agreement were not read; they remain joined-acceptance obligations.", "joins": ["TOL-06", "CF-54"], "cases": ["TC-18"]},
+  {"id": "C1R-G15", "title": "Read envelope cannot observe CDN, browser and FFmpeg hosts", "severity": "LOW", "status": "LIMITATION", "statement": "Redirects were not followed and only allowlisted hosts were read, so Hub large-file CDN hosts, the browser download host, the PyPI file host and any FFmpeg host are expected but unobserved.", "joins": ["G-14"], "cases": ["RC-05"]}
+ ],
+ "controlAnalysis": {
+  "v03Sites": [
+   {"id": "S1", "site": "engine init: root config.json via hf_hub_download(checkpoint_path)", "file": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py", "lines": "88-93", "revision": "default", "localRoute": "skipped when onnx_dir is set", "failureHandling": "exception swallowed"},
+   {"id": "S2", "site": "engine init: graphs and tokenizer via _fetch(repo, files, onnx_subfolder)", "file": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py", "lines": "96-99,185-195", "revision": "default", "localRoute": "onnx_dir forwarded by wrapper", "failureHandling": "raises for non-json files"},
+   {"id": "S3", "site": "engine init: codec files via _fetch(codec_repo, files, None)", "file": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py", "lines": "100", "revision": "default", "localRoute": "codec_dir exists on engine but wrapper does not forward it (V04)", "failureHandling": "raises"},
+   {"id": "S4", "site": "engine init: denoiser via _resolve_root_file then hub download", "file": "src/vieneu/_v3_turbo_engine/onnx_runtime_lite.py", "lines": "181,197-214", "revision": "default", "localRoute": "local checkpoint directory containing denoiser.onnx, else hub attempt", "failureHandling": "exception swallowed, denoiser becomes None"},
+   {"id": "S5", "site": "wrapper init: optional model-shipped voices_v3_turbo.json override via hf_hub_download", "file": "src/vieneu/v3turbo.py", "lines": "255-300", "revision": "default", "localRoute": "skipped when backbone_repo is an existing directory", "failureHandling": "exception swallowed; override replaces same-named presets and default voice"}
+  ],
+  "v04": {
+   "wrapperEngineArguments": "checkpoint_path, onnx_repo, onnx_dir, onnx_subfolder, threads (v3turbo.py lines 176-182)",
+   "engineAccepts": "codec_dir and codec_repo (onnx_runtime_lite.py lines 70-80)",
+   "finding": "extra keyword arguments are accepted by the wrapper but not forwarded, so codec_dir cannot reach the engine through the public factory call",
+   "pinnedRevisionAtPin": "model repository file list at revision 61b85e3d has no root-level voices_v3_turbo.json, so S5 finds nothing at that revision; a later main could add one because the request is unpinned"
+  },
+  "options": [
+   {"id": "O1", "option": "offline hub mode with a pre-seeded Hub cache so default-revision lookups resolve to staged files", "status": "UNVERIFIED_LIBRARY_BEHAVIOUR", "needs": "future probe; cache reference semantics for the default revision and Windows link behaviour not read here"},
+   {"id": "O2", "option": "construct the private engine class directly with codec_dir", "status": "ADAPTER_REQUIRED", "needs": "bypasses wrapper text normalisation, chunking and joining; reimplementation is a new adapter, not admitted"},
+   {"id": "O3", "option": "patch or fork one forwarding line", "status": "NOT_ADMITTED", "needs": "divergence from the pinned source and its own identity and review"},
+   {"id": "O4", "option": "accept execution-time retrieval from the default revision", "status": "REJECTED_FOR_IDENTITY", "needs": "violates exact component identity and the zero execution egress intent"}
+  ],
+  "hyperframesEffects": [
+   {"gate": "G-01", "effect": "loads .env from the process working directory", "file": "packages/cli/src/cli.ts", "lines": "63-96", "control": "run from an empty directory; preflight refuses a present .env"},
+   {"gate": "G-02", "effect": "telemetry default on unless env opt-out, dev mode or build without key", "file": "packages/cli/src/telemetry/policy.ts", "lines": "23-45", "control": "HYPERFRAMES_NO_TELEMETRY or DO_NOT_TRACK set to 1, true, yes or on"},
+   {"gate": "G-03", "effect": "registry update check and detached installer", "file": "packages/cli/src/utils/updateCheck.ts and autoUpdate.ts", "lines": "updateCheck 14,161-165; autoUpdate 50,221-225", "control": "HYPERFRAMES_NO_UPDATE_CHECK=1 and HYPERFRAMES_NO_AUTO_INSTALL=1; CI=true also disables; installer skipped for unknown installer or npx"},
+   {"gate": "G-03", "effect": "skills update check", "file": "packages/cli/src/utils/skillsUpdateCheck.ts", "lines": "102,119", "control": "HYPERFRAMES_SKIP_SKILLS=1"},
+   {"gate": "G-08", "effect": "browser resolution: env path, puppeteer cache, HyperFrames cache, system Chrome, then download of pinned 152.0.7977.30", "file": "packages/cli/src/browser/manager.ts", "lines": "50,59-65,238,338,390-401", "control": "explicit HYPERFRAMES_BROWSER_PATH or PRODUCER_HEADLESS_SHELL_PATH; routing observed by proof, not run"},
+   {"gate": "G-16", "effect": "FFmpeg must resolve and report libx264 or VideoToolbox; render exports resolved paths to child processes", "file": "packages/cli/src/browser/ffmpeg.ts and commands/render.ts", "lines": "ffmpeg 24-61; render 940-977", "control": "explicit path with version and hash; override variable name not located"},
+   {"gate": "G-09", "effect": "font resolver embeds Latin subsets for bundled families and fetches other subsets or families from Google Fonts", "file": "packages/producer/src/services/deterministicFonts.ts and authoredGoogleFonts.ts", "lines": "deterministic 670-672,799-804; authored 15", "control": "declared local font faces are recognised; avoidance of every fetch for Vietnamese text unproven"},
+   {"gate": "G-04", "effect": "render recovers orphaned browser process trees before starting", "file": "packages/cli/src/commands/render.ts", "lines": "925-938", "control": "process inventory before and after each stage"}
+  ]
+ },
+ "preparationEnvelope": [
+  ["PE-01", "selectorIdentity", "operator or named project owner with granting reference", "UNKNOWN_BLOCKS_ADMISSION"],
+  ["PE-02", "targetRoot", "one operator-named sibling workspace directory on the D drive, never the CVF root; cache, packages and output in separate subfolders", "PROPOSED_NOT_GRANTED"],
+  ["PE-03", "componentPins", "VieNeu Git 85344322 and wheel 3.8.3; model rev 61b85e3d; codec rev ceff0d07; npm hyperframes 0.8.113; Chrome 152.0.7977.30; sea-g2p and all other Python and npm versions UNKNOWN until a resolver report", "UNKNOWN_BLOCKS_ADMISSION"],
+  ["PE-04", "artifactHashes", "Hub large-file sha256 from metadata for 10 large files; small files and all package archives hashed at download and recorded before use", "PROPOSED_NOT_GRANTED"],
+  ["PE-05", "downloadOriginAllowList", "huggingface.co plus its large-file CDN hosts (unobserved), pypi.org plus PyPI file host (unobserved), registry.npmjs.org, browser download host (unobserved), FFmpeg host UNKNOWN; each host must be observed and named before admission", "UNKNOWN_BLOCKS_ADMISSION"],
+  ["PE-06", "downloadByteLimit", "known model, codec and config 565974704 B plus optional denoiser 42661414 B; packages, browser, FFmpeg, fonts UNKNOWN; limit not derivable today", "UNKNOWN_BLOCKS_ADMISSION"],
+  ["PE-07", "diskLimit", "placeholder ceiling of 8 GiB on the D drive (24.2 GiB free at probe) with stop at 80 percent; not derived from a resolver report; worst-case duplicated model cache alone is 1.13 GiB", "PROPOSED_NOT_GRANTED"],
+  ["PE-08", "ramLimit", "Proposed preparation RAM ceiling and reservation still UNKNOWN; source-based bounds may support bounded preparation. Actual inference peak RAM is a future probe measurement, not a prerequisite for measuring it", "UNKNOWN_BLOCKS_ADMISSION"],
+  ["PE-09", "perStageTimeout", "proposal for operator tuning: 900 s per file download, 3600 s total preparation; no measurement basis", "PROPOSED_NOT_GRANTED"],
+  ["PE-10", "retryCancelCleanup", "one retry per file on the same URL and pin; cancel ends the process tree and deletes partial files; cleanup inventory of cache, temp and home-directory writes", "PROPOSED_NOT_GRANTED"],
+  ["PE-11", "credentialAndEgressPolicy", "no tokens, no accounts, no .env in the working directory, environment allowlist; set HYPERFRAMES_NO_TELEMETRY, DO_NOT_TRACK, HYPERFRAMES_NO_UPDATE_CHECK, HYPERFRAMES_NO_AUTO_INSTALL, HYPERFRAMES_SKIP_SKILLS (source verified); Hub client offline and telemetry variables are library behaviour not verified here", "PROPOSED_NOT_GRANTED"],
+  ["PE-12", "rightsAndConsentEvidence", "exact artifact-applicable license/attribution and fixed-preset consent evidence refs required. Record publisher declaration versus verified scope separately. Operator risk acceptance cannot create permission, prove consent or waive an unresolved CF-63 obligation", "UNKNOWN_BLOCKS_ADMISSION"],
+  ["PE-13", "moneyLimit", "UNKNOWN; public downloads show no price in observed metadata, bandwidth and any tool cost not measured; never read as zero", "UNKNOWN_BLOCKS_ADMISSION"],
+  ["PE-14", "resolverDryRunPrecondition", "a metadata/lockfile-only inventory and conservative footprint bound first, including FFmpeg build options; no package-manager execution. Any pip/uv/npm resolver, dry-run, metadata hook, archive acquisition or cache write needs a separate explicit envelope", "PROPOSED_NOT_GRANTED"]
+ ],
+ "proofEnvelope": [
+  ["XE-01", "sceneInputIdentity", "S05 narration, on-screen and status-card hashes from the accepted design, job design raw hash 3ce5e236 unchanged", "PROPOSED_NOT_GRANTED"],
+  ["XE-02", "voiceConfiguration", "v3turbo mode, backend onnx, precision fp32, device cpu, local backbone directory and onnx_dir at pinned revisions, explicit threads and generation settings, auto device refused", "PROPOSED_NOT_GRANTED"],
+  ["XE-03", "presetSelection", "one fixed preset chosen by the operator and bound by entry hash; source default at pin is Hai Dang, card default is Minh Quan; not selected here", "UNKNOWN_BLOCKS_ADMISSION"],
+  ["XE-04", "codecRoutingControl", "unresolved (C1R-G04): option O1 offline mode with seeded cache must be shown by observed hosts, otherwise O2, O3 need separate admission", "UNKNOWN_BLOCKS_ADMISSION"],
+  ["XE-05", "executionEgress", "none intended; observed hosts per stage recorded (CF-70); no OS isolation claim", "PROPOSED_NOT_GRANTED"],
+  ["XE-06", "renderConfiguration", "explicit browser path, explicit FFmpeg path with version and hash, local hashed Vietnamese fonts, no remote URL in composition, 1920x1080 and 30 fps per CF-47", "PROPOSED_NOT_GRANTED"],
+  ["XE-07", "perStageTimeout", "voice and render ceilings to be set by the operator after a resolver report; no measured basis", "UNKNOWN_BLOCKS_ADMISSION"],
+  ["XE-08", "ramAndDiskLimits", "proposed hard RAM/disk stop ceilings still UNKNOWN; conservative bounds precede a bounded probe, measured peaks are probe outputs. Explicit temp directory, frame format/count, caches and headroom needed; no forced default C-drive temp", "UNKNOWN_BLOCKS_ADMISSION"],
+  ["XE-09", "retryCancelCleanup", "FR-01 to FR-10 of the accepted design apply unchanged", "PROPOSED_NOT_GRANTED"],
+  ["XE-10", "fallbackPolicy", "empty: stop on failure; any hosted, self-hosted or alternative lane needs a new selection", "PROPOSED_NOT_GRANTED"],
+  ["XE-11", "joinedAcceptance", "CF-63 with padded MP4 timing per TOL-06, Vietnamese listener nominated by the operator, explicit retiming approval if voice exceeds 19.5 s", "UNKNOWN_BLOCKS_ADMISSION"],
+  ["XE-12", "moneyAndCostLimit", "UNKNOWN; session and execution cost unmeasured", "UNKNOWN_BLOCKS_ADMISSION"]
+ ],
+ "envelopeFieldColumns": [
+  "id",
+  "field",
+  "proposedValueOrBasis",
+  "status"
+ ],
+ "alternatives": [
+  {"id": "A2", "lane": "HyperFrames render with HeyGen hosted voice", "status": "VISIBLE_NOT_SELECTED", "reason": "Vietnamese voice availability, account, retention and price unknown (D104 observed a wallet top-up page; not re-observed)", "reconsiderWhen": "operator supplies account, egress and budget envelope"},
+  {"id": "A3", "lane": "HeyGen hosted render and voice", "status": "VISIBLE_NOT_SELECTED", "reason": "upload of composition and text, terms and price unknown", "reconsiderWhen": "operator selects hosted render with upload consent"},
+  {"id": "C2", "lane": "self-hosted voice endpoint plus local HyperFrames", "status": "VISIBLE_NOT_SELECTED", "reason": "no operator-designated host exists; endpoint operations not justified for one scene", "reconsiderWhen": "local capacity fails or operator names a host"},
+  {"id": "C3", "lane": "hosted voice API plus local HyperFrames", "status": "VISIBLE_NOT_SELECTED", "reason": "vendor terms, retention and Vietnamese quality unknown", "reconsiderWhen": "operator selects with key, budget and retention consent"},
+  {"id": "C4", "lane": "local voice plus hosted render", "status": "VISIBLE_NOT_SELECTED", "reason": "larger effect surface than C1 for a 20 s scene", "reconsiderWhen": "local render proves insufficient and operator selects"},
+  {"id": "C1-int8", "lane": "C1 with int8 backbone instead of fp32", "status": "VISIBLE_NOT_ASSUMED", "reason": "card says faster and smaller but needs VNNI-class CPU support; quality unverified here; fp32 kept as the assessed target", "reconsiderWhen": "fp32 throughput or memory proves inadequate in a measured proof"},
+  {"id": "N0", "lane": "silent HyperFrames render only", "status": "VISIBLE_REDUCED_SCOPE", "reason": "not narrated acceptance", "reconsiderWhen": "operator accepts reduced scope"},
+  {"id": "N1", "lane": "no change, text design only", "status": "VISIBLE_DEFAULT_WHEN_NOTHING_ADMITTED", "reason": "no media", "reconsiderWhen": "always valid"}
+ ],
+ "referencedD103Cases": [
+  "TC-01",
+  "TC-02",
+  "TC-03",
+  "TC-04",
+  "TC-05",
+  "TC-06",
+  "TC-07",
+  "TC-08",
+  "TC-09",
+  "TC-10",
+  "TC-11",
+  "TC-12",
+  "TC-13",
+  "TC-14",
+  "TC-15",
+  "TC-16",
+  "TC-17",
+  "TC-18",
+  "TC-19",
+  "TC-20",
+  "TC-21",
+  "TC-22",
+  "TC-23",
+  "TC-24"
+ ],
+ "plannedCases": [
+  {"id": "RC-01", "class": "ADVERSARIAL", "summary": "Current pin drift: head differs from selected pin or object missing", "gaps": ["C1R-G01"], "expected": "pin check records BLOCKED_PIN_DRIFT until Local chooses to retain the immutable historical assessment pin or admits a fresh snapshot/delta; branch movement alone does not force an upgrade; no silent repin", "status": "NOT_EXECUTED_PLANNED"},
+  {"id": "RC-02", "class": "ADVERSARIAL", "summary": "Metadata unavailable: Hub, npm or PyPI read fails, redirects or changes shape", "gaps": ["C1R-G02"], "expected": "BLOCKED_SOURCE_READ with URL and status; no value is inferred or reused as current", "status": "NOT_EXECUTED_PLANNED"},
+  {"id": "RC-03", "class": "ADVERSARIAL", "summary": "Package or weight rights gap: no sufficient artifact-applicable license or required attribution evidence", "gaps": ["C1R-G05"], "expected": "record evidence level and exact artifact scope; missing a file named LICENSE or NOTICE alone is not proof of no grant; unresolved applicable rights/attribution or consent keeps CF-63 DEFERRED", "status": "NOT_EXECUTED_PLANNED"},
+  {"id": "RC-04", "class": "ADVERSARIAL", "summary": "Footprint known versus bounded versus unknown: justify conservative total bounds before preparation", "gaps": ["C1R-G07", "C1R-G08", "C1R-G12"], "expected": "known 0.527 GiB is not the budget; supported conservative upper bounds plus hard stop ceilings may admit bounded preparation. Unbounded critical footprint or disk shortfall blocks; unknown exact peak alone does not create a circular measurement prerequisite", "status": "NOT_EXECUTED_PLANNED"},
+  {"id": "RC-05", "class": "ADVERSARIAL", "summary": "Redirect, binary, auth or cap stop in a read or download step", "gaps": ["C1R-G15", "C1R-G08"], "expected": "stop at cross-host redirect, non-text type, auth prompt or byte cap; partial files discarded", "status": "NOT_EXECUTED_PLANNED"},
+  {"id": "RC-06", "class": "ADVERSARIAL", "summary": "V03 and V04 control infeasibility: configuration-only local routing still reaches the Hub", "gaps": ["C1R-G03", "C1R-G04"], "expected": "any attempted execution network request, including blocked/failed attempts, rejects the no-network-attempt claim; local cache reads require exact revision and loaded-hash evidence. Distinguish no successful egress from no network attempt", "status": "NOT_EXECUTED_PLANNED"},
+  {"id": "RC-07", "class": "ADVERSARIAL", "summary": "PATH absence is not whole-machine absence; configured binary path is recorded", "gaps": ["C1R-G09"], "expected": "FFmpeg identity comes from an explicit path with version and hash; no PATH-only claim in either direction", "status": "NOT_EXECUTED_PLANNED"},
+  {"id": "RC-08", "class": "FALSE_DENIAL", "summary": "Valid pre-staged local model, codec and preset sources must not be refused", "gaps": ["C1R-G03", "C1R-G04", "C1R-G05"], "expected": "valid pinned local directories/cache refs with matching loaded hashes AND sufficient artifact-applicable rights/consent evidence are accepted without attempted network. Cache naming or missing separate LICENSE filename alone must not cause refusal; hashes alone must not waive rights/consent", "status": "NOT_EXECUTED_PLANNED"},
+  {"id": "RC-09", "class": "ADVERSARIAL", "summary": "No unapproved hosted fallback after a local-stage failure", "gaps": ["C1R-G13"], "expected": "stop and request a new selection; zero hosted calls unless the envelope pre-lists the fallback", "status": "NOT_EXECUTED_PLANNED"},
+  {"id": "RC-10", "class": "ADVERSARIAL", "summary": "Vietnamese glyph coverage and font egress at render", "gaps": ["C1R-G10"], "expected": "local hashed fonts render all diacritics and observed hosts include no font origin; otherwise stop", "status": "NOT_EXECUTED_PLANNED"},
+  {"id": "RC-11", "class": "ADVERSARIAL", "summary": "Preset identity: alias or roster drift between card and pin", "gaps": ["C1R-G06"], "expected": "proof binds the preset entry hash actually loaded, not a display name; alias resolution is recorded", "status": "NOT_EXECUTED_PLANNED"},
+  {"id": "RC-12", "class": "ADVERSARIAL", "summary": "Package-to-source mismatch: tarball or wheel content differs from the pinned source", "gaps": ["C1R-G02"], "expected": "mismatch or unverifiable correspondence blocks use of the package as the pinned source", "status": "NOT_EXECUTED_PLANNED"}
+ ],
+ "evidenceClassification": {
+  "reusedHistorical": [
+   "D103 accepted contract CF, TOL, FR, SEL, G and the 24 planned cases TC-01 to TC-24 (unchanged)",
+   "D104 selected snapshots, 113 delta names, hardware snapshot of 2026-10-02 (reused as history, refreshed below)",
+   "D104 hosted pricing page observation, not re-observed"
+  ],
+  "actualCurrentThisTranche": [
+   "pair and seven input identities rechecked",
+   "two public head observations",
+   "model and codec file metadata at pinned revisions plus both cards",
+   "PyPI vieneu 3.8.3 and sea-g2p metadata, npm hyperframes 0.8.113 metadata",
+   "23 selected-revision source path reads and one comparison read",
+   "hardware and tool version probes",
+   "embedded static checks"
+  ],
+  "futureUnexecuted": [
+   "all TC-01 to TC-24 and RC-01 to RC-12 are NOT_EXECUTED_PLANNED",
+   "no download, install, model load, inference, WAV, render, MP4, listening or offline proof"
+  ]
+ },
+ "deviations": [
+  "Plan seal was recorded after the progressive reads and the pre-implementation gate but before any upstream or network read; the static check set was finalised after the assessment, not sealed before it. The seal binds plan text and input identities only.",
+  "The mirror directory used for selected HyperFrames objects reports local HEAD 7129340ae and an unrelated untracked entry that this worker did not create; selected objects were read by revision, never by checkout. Disclosed for Local, not altered.",
+  "The npm package probe for the scoped name returned 404 (one wasted request); the published name is hyperframes.",
+  "One guessed upstream helper path was absent at the selected pin; the FFmpeg override variable name stays UNKNOWN."
+ ],
+ "costs": {
+  "session": "UNKNOWN",
+  "execution": "UNKNOWN",
+  "money": "UNKNOWN",
+  "note": "not a zero-cost claim"
+ },
+ "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+ "staticCheckRecipe": {
+  "purpose": "reproducible local identity, ID, join, cap, size and manifest checks including adversarial mutations and a false-denial control",
+  "reproduce": "from the repository root extract staticCheckRecipe.source lines into a scratch file outside the repository and run it with python; it reads this evidence file and the governed inputs and exits 0 on PASS_STATIC_ONLY",
+  "source": [
+   "import copy, hashlib, json, re, subprocess, sys",
+   "EV = 'docs/reviews/evidence/cvf-ncr-c1-bounded-readiness-assessment-2026-10-03.json'",
+   "HOSTS = {'github.com', 'api.github.com', 'raw.githubusercontent.com', 'huggingface.co', 'registry.npmjs.org', 'pypi.org'}",
+   "VERDICTS = {'READINESS_GAPS_RECORDED', 'PROPOSED_PROOF_ENVELOPE_PENDING_OPERATOR'}",
+   "",
+   "",
+   "def sh(*a):",
+   "    return subprocess.run(a, capture_output=True, text=True).stdout.strip()",
+   "",
+   "",
+   "def validate(ev, ctx):",
+   "    v = []",
+   "    ids = [g['id'] for g in ev['gaps']] + [c['id'] for c in ev['plannedCases']] + [c['id'] for c in ev['components']]",
+   "    ids += [f[0] for f in ev['preparationEnvelope']] + [f[0] for f in ev['proofEnvelope']]",
+   "    if len(ids) != len(set(ids)):",
+   "        v.append('DUPLICATE_ID')",
+   "    gap_ids = {g['id'] for g in ev['gaps']}",
+   "    case_ids = {c['id'] for c in ev['plannedCases']}",
+   "    d103 = set(ev['referencedD103Cases'])",
+   "    for c in ev['plannedCases']:",
+   "        if c['status'] != 'NOT_EXECUTED_PLANNED':",
+   "            v.append('CASE_STATUS_' + c['id'])",
+   "        if not c['gaps'] or any(g not in gap_ids for g in c['gaps']):",
+   "            v.append('CASE_JOIN_' + c['id'])",
+   "    for g in ev['gaps']:",
+   "        if not g['cases'] or any(x not in case_ids | d103 for x in g['cases']):",
+   "            v.append('GAP_JOIN_' + g['id'])",
+   "        elif not any(g['id'] in c['gaps'] for c in ev['plannedCases']) and not all(x in d103 for x in g['cases']):",
+   "            v.append('GAP_UNCOVERED_' + g['id'])",
+   "    if sorted(d103) != ['TC-%02d' % i for i in range(1, 25)] or ctx['d103TcCount'] != 24:",
+   "        v.append('D103_CASE_SET')",
+   "    for f in ev['preparationEnvelope'] + ev['proofEnvelope']:",
+   "        if f[3] not in ('PROPOSED_NOT_GRANTED', 'UNKNOWN_BLOCKS_ADMISSION', 'OBSERVED_FACT'):",
+   "            v.append('ENVELOPE_STATUS_' + f[0])",
+   "    if ev['readinessVerdict'] not in VERDICTS:",
+   "        v.append('VERDICT')",
+   "    n = ev['readLedger']['network']",
+   "    if len(n['requests']) > 32 or n['totalDecodedBytes'] > 8 * 2**20 or sum(r['decodedBytes'] for r in n['requests']) != n['totalDecodedBytes']:",
+   "        v.append('NETWORK_CAPS')",
+   "    for r in n['requests']:",
+   "        host = re.sub(r'^https://([^/]+)/.*$', r'\\1', r['url']) if r['method'] == 'GET' else re.sub(r'^https://([^/]+)/.*$', r'\\1', r['url'])",
+   "        if host not in HOSTS or r['decodedBytes'] > 2 * 2**20 or r.get('redirectFollowed'):",
+   "            v.append('NETWORK_REQUEST_' + r['url'][-24:])",
+   "    if len({g['path'] + g['rev'] for g in ev['readLedger']['gitObjects']}) > 64:",
+   "        v.append('GIT_PATH_CAP')",
+   "    s = ev['sizes']",
+   "    parts = ev['componentSizeInputs']",
+   "    if s['requiredKnownBytes'] != sum(x['bytes'] for x in parts['graphs']) + sum(x['bytes'] for x in parts['codec']) + parts['rootConfig']['bytes']:",
+   "        v.append('SIZE_SUM')",
+   "    if s['worstCaseDuplicatedCacheBytes'] != 2 * (s['requiredKnownBytes'] + parts['denoiser']['bytes']):",
+   "        v.append('SIZE_DUP')",
+   "    return v",
+   "",
+   "",
+   "def main():",
+   "    ev = json.load(open(EV, encoding='ascii'))",
+   "    out = []",
+   "    ok = lambda name, cond, note='': out.append((name, bool(cond), note))",
+   "    boot = json.load(open('CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json', encoding='utf-8'))['currentAuthority']",
+   "    for k, p in (('baseline', 'baselinePath'), ('workOrder', 'workOrderPath')):",
+   "        raw = open(boot[p], 'rb').read()",
+   "        ok('pair_hash_' + k, hashlib.sha256(raw).hexdigest() == boot[k + 'Sha256'] == ev['pair'][k]['rawSha256'])",
+   "    for i in ev['inputIdentities']:",
+   "        raw = open(i['path'], 'rb').read()",
+   "        ok('input_' + i['path'][-40:], hashlib.sha256(raw).hexdigest() == i['rawSha256'] and sh('git', 'hash-object', i['path']) == i['gitBlobId'] and len(raw.decode().splitlines()) == i['physicalLines'])",
+   "    d103 = open('docs/reference/CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md', encoding='utf-8').read()",
+   "    tc = set(re.findall(r'^\\| (TC-\\d\\d) \\|', d103, re.M))",
+   "    ctx = {'d103TcCount': len(tc)}",
+   "    ok('d103_case_ids_exist', tc == set(ev['referencedD103Cases']))",
+   "    base = validate(ev, ctx)",
+   "    ok('evidence_valid_no_false_denial', base == [], ','.join(base))",
+   "    mut = lambda f: validate((lambda e: (f(e), e)[1])(copy.deepcopy(ev)), ctx)",
+   "    ok('adversarial_case_executed_flagged', any(x.startswith('CASE_STATUS') for x in mut(lambda e: e['plannedCases'][0].__setitem__('status', 'EXECUTED'))))",
+   "    ok('adversarial_case_join_removed_flagged', any(x.startswith('CASE_JOIN') for x in mut(lambda e: e['plannedCases'][0].__setitem__('gaps', []))))",
+   "    ok('adversarial_duplicate_id_flagged', 'DUPLICATE_ID' in mut(lambda e: e['gaps'].append(dict(e['gaps'][0]))))",
+   "    ok('adversarial_request_cap_flagged', 'NETWORK_CAPS' in mut(lambda e: e['readLedger']['network']['requests'].extend([e['readLedger']['network']['requests'][0]] * 30)))",
+   "    ok('adversarial_host_flagged', any(x.startswith('NETWORK_REQUEST') for x in mut(lambda e: e['readLedger']['network']['requests'][0].__setitem__('url', 'https://example.com/x'))))",
+   "    ok('adversarial_granted_flagged', any(x.startswith('ENVELOPE_STATUS') for x in mut(lambda e: e['preparationEnvelope'][0].__setitem__(3, 'GRANTED'))))",
+   "    ok('adversarial_verdict_flagged', 'VERDICT' in mut(lambda e: e.__setitem__('readinessVerdict', 'READY_TO_EXECUTE')))",
+   "    ok('adversarial_size_flagged', 'SIZE_SUM' in mut(lambda e: e['sizes'].__setitem__('requiredKnownBytes', 1)))",
+   "    paths = ev['outputPaths']",
+   "    text = {}",
+   "    for k, p in paths.items():",
+   "        try:",
+   "            raw = open(p, 'rb').read()",
+   "        except FileNotFoundError:",
+   "            continue",
+   "        text[k] = raw.decode('ascii')",
+   "        ok('ascii_and_cap_' + k, len(text[k].splitlines()) <= ev['lineCaps'][k])",
+   "    if 'assessment' in text:",
+   "        ok('pins_in_assessment', all(p[:8] in text['assessment'] for p in ev['pins'].values()))",
+   "    ok('head_unchanged', sh('git', 'rev-parse', 'HEAD') == ev['executionBaseHead'])",
+   "    st = sh('git', 'status', '--short', '--untracked-files=all').splitlines()",
+   "    ok('manifest_only_allowed_paths', all(l[3:].strip('\"') in paths.values() for l in st), '; '.join(st))",
+   "    bad = [n for n, c, _ in out if not c]",
+   "    for n, c, note in out:",
+   "        print(('PASS ' if c else 'FAIL ') + n + (' ' + note if note and not c else ''))",
+   "    print('RESULT', 'PASS_STATIC_ONLY' if not bad else 'FAIL', len(out), 'checks', len(bad), 'failures')",
+   "    sys.exit(1 if bad else 0)",
+   "",
+   "",
+   "if __name__ == '__main__':",
+   "    main()"
+  ]
+ },
+ "staticVerification": {
+  "result": "PASS_STATIC_ONLY",
+  "command": "python <scratch copy of staticCheckRecipe.source> run from the repository root",
+  "exitCode": 0,
+  "checks": 25,
+  "failures": 0,
+  "adversarialMutationsFlagged": 8,
+  "falseDenialControl": "unmutated evidence validated clean",
+  "priorRun": "24 checks before the return existed, 0 failures",
+  "checksChangedBetweenRuns": false,
+  "qualification": "PASS_STATIC_ONLY is structural, not behaviour, rights or runtime proof"
+ },
+ "localReview": {
+  "status": "ACCEPTED_BOUNDED_READINESS_ASSESSMENT_ONLY",
+  "completionReviewPath": "docs/reviews/CVF_CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_COMPLETION_2026-10-03.md",
+  "localEvidencePath": "docs/reviews/evidence/cvf-ncr-c1-bounded-readiness-local-review-2026-10-03.json",
+  "correctedFindings": [
+   "F-01",
+   "F-02",
+   "F-03",
+   "F-04",
+   "F-05",
+   "F-06"
+  ],
+  "workerStaticVerificationIsHistorical": true,
+  "mirrorReportAttribution": "Worker HEAD 7129340ae lacks path; named canonical mirror observed at f16, clean. Not reconciled as same workspace.",
+  "nextMove": "PREPARE_METADATA_SOURCE_ONLY_RESOLVER_FOOTPRINT_PACKET",
+  "runtimeAdmission": "NOT_ADMITTED",
+  "operatorInputs": "preset/rights-consent-risk/envelope/listener/retiming unresolved"
+ }
+}
