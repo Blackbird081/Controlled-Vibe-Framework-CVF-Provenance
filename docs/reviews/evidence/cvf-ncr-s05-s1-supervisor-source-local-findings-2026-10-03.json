@@ -1,0 +1,621 @@
+{
+  "schemaVersion": "cvf.s05.s1ConsolidatedFindingSet.v1",
+  "head": "c8864ba03df504e7a8aa991f4bd14d7ef37b7a52",
+  "batchId": "CVF-NCR-S05-S1-SUPERVISOR-SOURCE",
+  "decision": "SOURCE_NOT_ACCEPTED_CONSOLIDATED_REPAIR_REQUIRED",
+  "findings": [
+    {
+      "id": "DV-STARTUP",
+      "classificationOrLocator": "Worker says AGENTS.md and guard orientation were not fully read; prompt surfaces and a previous return template were used.",
+      "findingAndDisposition": "Process deviation. The prompt already routed progressive startup through AGENTS.md; omission of a full checklist from the copy prompt did not waive the work-order or orientation requirement. Progressive continuity reading is allowed; skipping required role/task guards is different. Later gate PASS does not cure the earlier omission."
+    },
+    {
+      "id": "DV-READ-AHEAD",
+      "classificationOrLocator": "Worker reports first fast gate failed on five literal defects; checker reads and fixes came after writing. Return Read-Ahead and Learning disclose this.",
+      "findingAndDisposition": "Preserve first FAIL and later PASS as separate outcomes. The original five messages/log and detailed diff were not retained in this return, so the count/cause is WORKER_REPORTED, not independently reconstructed. Local confirms only the current 69/69 structural PASS. No checker or rule changed."
+    },
+    {
+      "id": "DV-CREATION",
+      "classificationOrLocator": "Return methodology says exclusive file creation, but retrospective says only manifest used exclusive open and plain files relied on root absence.",
+      "findingAndDisposition": "Actual contract violation disclosed by worker; confirmed inconsistency between the two descriptions. Root absence does not implement per-file exclusive creation. No collision/overwrite is proven to have occurred, and no historical check is invented. Preserve bytes; require exact actual writer modes/commands and explicit deviation, not a retroactive compliance claim."
+    },
+    {
+      "id": "DV-EVIDENCE",
+      "classificationOrLocator": "acceptance block uses PROOF-RETURN, but evidence JSON proofIds omits it; first-write owner/command/mode details and first FAIL messages are not retained.",
+      "findingAndDisposition": "Evidence gap despite structural PASS. Add exact proof join and qualify historical claims under a later admitted correction. Do not fabricate historical command evidence."
+    },
+    {
+      "id": "F-01",
+      "classificationOrLocator": "Blocking; src/supervisor.py:11-18",
+      "findingAndDisposition": "Broad except ImportError changes sibling-relative dependencies to unqualified absolute imports. An ImportError inside a dependency can trigger the fallback, which may resolve an ambient sys.path module. Sibling identity and import-side-effect claims are therefore unproved. Select one sibling/package import posture and fail closed when unavailable; do not mask dependency ImportError or claim that every possible import path is inert."
+    },
+    {
+      "id": "F-02",
+      "classificationOrLocator": "Blocking; src/supervisor.py:132-145",
+      "findingAndDisposition": "record_phase_elapsed only checks type and seconds<0. NaN and +Infinity lack rejection, and two individually finite increments can overflow the sum; mutation occurs before any aggregate validation. Require finite input and aggregate, no state mutation on rejection, and an explicit aggregate deadline/accounting policy. Negative/NaN/Infinity/overflow and repeated-phase plans are required. This is caller-data accounting, not monotonic-clock or elapsed-time enforcement proof."
+    },
+    {
+      "id": "F-03",
+      "classificationOrLocator": "Blocking; src/envelope_contract.py:148,196,204",
+      "findingAndDisposition": "envelope_version, stage and effect use frozenset membership before string/type validation. JSON-shaped [] or {} values are unhashable and are predicted to raise TypeError instead of structured rejection. Validate field and element types before membership; return stable reason IDs for malformed caller data. Also qualify math.isfinite on very large Python integers rather than asserting every int is handled safely."
+    },
+    {
+      "id": "F-04",
+      "classificationOrLocator": "Identity-policy gap; src/envelope_contract.py:165-178",
+      "findingAndDisposition": "Output paths are casefold-deduplicated, but hash keys are not; empty hash mappings and missing/extra output/hash associations are not checked. Choose and document the required association policy, then validate it. SHA regex uses match with a terminal $; a trailing newline is a planned malformed-digest counterexample. Require exact 64-hex digest matching in both envelope and boundary proof validation."
+    },
+    {
+      "id": "F-05",
+      "classificationOrLocator": "State correspondence; src/supervisor.py:103-120",
+      "findingAndDisposition": "validate stores a new envelope before checking whether the transition is legal. A second validate can change the envelope then raise at _move. seal_source_plan revalidates mutable stored data but ignores a NO_GO decision when moving to SOURCE_PLAN_ONLY. Require legal-state checks before mutation and align sealing with the validation result, or explicitly document a rejected-plan representation. No runtime backend activation is shown here."
+    },
+    {
+      "id": "F-06",
+      "classificationOrLocator": "Path policy gap; src/envelope_contract.py:89-124",
+      "findingAndDisposition": "casefold catches ordinary case-colliding output strings, so that part meets the literal source requirement. It is not a proof of Windows filesystem equivalence. Reserved device names (CON/NUL.txt), file-versus-descendant conflicts (a and a/b), hash-key case collisions, and owned-root trailing dot/space lack policy/guards. Define a conservative lexical policy; keep host/custody/reparse checks in the separately admitted effect boundary."
+    },
+    {
+      "id": "F-07",
+      "classificationOrLocator": "Policy clarification; src/envelope_contract.py:47,79-87; src/boundary_admission.py:89-92",
+      "findingAndDisposition": "UNKNOWN scan rejects any string containing the substring, including dictionary keys or a legitimate owner/path containing unknown. This is conservative over-rejection, not an OS-authority bypass. Decide/document sentinel-only versus substring policy; source and claims must agree. Do not assume a broader policy is required by the current contract."
+    }
+  ],
+  "workerArtifacts": {
+    "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_WORKER_RETURN_2026-10-03.md": "fd0fb054d63f10abedf70ff57205d8b047067ab9cb89babb5b592fc4c9463203",
+    "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-worker-2026-10-03.json": "246a27347ce744156056fcf205edeb282312a17b72efaa1bd9c08e96683f1d1c"
+  },
+  "frozenSourceRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-20261003",
+  "frozenSourceLedger": [
+    {
+      "path": "README.md",
+      "bytes": 2389,
+      "sha256": "24f13f2e15148f54b71844a0173b97dcce2183b6bed7c0bb71b31d6237af7ae4",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "src/supervisor.py",
+      "bytes": 6536,
+      "sha256": "a09fa3b3906a500db60694b0391a97f0f91d4a26d825bb5159949cf27f17b4b6",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "src/envelope_contract.py",
+      "bytes": 7555,
+      "sha256": "e1c34d51c7d1fef19d25cfbc4548d98448404986e4741e540f4f580c168cff61",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "src/windows_job.py",
+      "bytes": 2848,
+      "sha256": "eb89c44b779fec8c085a91630952047bb2463e8919b166ace8429ca084b41028",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "src/boundary_admission.py",
+      "bytes": 3665,
+      "sha256": "fb6e912ee239eb415f73aedb0b3ed7059068a5cb8b5518891f82222cb1a2af1d",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "fixtures/fx_d1.py",
+      "bytes": 1728,
+      "sha256": "8c3dda5c73829d09513d8ac751c008533b99985859088da26ce8f631e981a3a7",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "fixtures/fx_m1.py",
+      "bytes": 2075,
+      "sha256": "7152bf61e4ba674ef3ce7c3c785251f5382ebea3b6efaa55888844ee7f6da054",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "fixtures/fx_t1.py",
+      "bytes": 1613,
+      "sha256": "9f64999e1c9232dc309d9c6c61cb98a9db0e5d553df46d310bac2d1996e00a50",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "fixtures/fx_b1.py",
+      "bytes": 1511,
+      "sha256": "2bdde7615be66479dc7c2f0718a72c8676ff2cdcbcaf6075c184098754f7fb20",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "fixtures/fx_n1.py",
+      "bytes": 1869,
+      "sha256": "b667d80aaae7da117c67226769da0901f0a356e9ea3e7cee3e8f5458690f42f2",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "fixtures/fx_l1.py",
+      "bytes": 2036,
+      "sha256": "ecac3fb7c2dca41c2e9947288a32abb5687fa9ca4c190e4d67879e2533c8d1f4",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "evidence/requirement-map.json",
+      "bytes": 4404,
+      "sha256": "d6415637977dc6d123466bad4ba4f449e880999f2320ba038c503693c3c813dd",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "WORKER_RETURN.md",
+      "bytes": 3470,
+      "sha256": "5bc282f0730043429dd15507017c877d7dcb1323f33e4571cee6122d066e90ff",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "evidence/source-manifest.json",
+      "bytes": 2381,
+      "sha256": "49e85446096dc88ae5be1b89a5a83bdccbc2a8d05d9358ca6e38609568778d2f",
+      "actor": "worker",
+      "status": "CREATED"
+    }
+  ],
+  "staticProbe": {
+    "schemaVersion": "cvf.s05.s1LocalStaticAudit.v1",
+    "head": "c8864ba03df504e7a8aa991f4bd14d7ef37b7a52",
+    "role": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "sourceRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-20261003",
+    "workerEvidenceSha256": "246a27347ce744156056fcf205edeb282312a17b72efaa1bd9c08e96683f1d1c",
+    "oracleSha256": "98dc7dce4119a7cf6b03e9988282a75a54ca2b5d043c8609fd8944dea343057c",
+    "checks": [
+      {
+        "id": "exact-file-set",
+        "passed": true,
+        "detail": [
+          "README.md",
+          "WORKER_RETURN.md",
+          "evidence/requirement-map.json",
+          "evidence/source-manifest.json",
+          "fixtures/fx_b1.py",
+          "fixtures/fx_d1.py",
+          "fixtures/fx_l1.py",
+          "fixtures/fx_m1.py",
+          "fixtures/fx_n1.py",
+          "fixtures/fx_t1.py",
+          "src/boundary_admission.py",
+          "src/envelope_contract.py",
+          "src/supervisor.py",
+          "src/windows_job.py"
+        ]
+      },
+      {
+        "id": "identity:README.md",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:README.md",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "identity:WORKER_RETURN.md",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:WORKER_RETURN.md",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "identity:evidence/requirement-map.json",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:evidence/requirement-map.json",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "identity:evidence/source-manifest.json",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:evidence/source-manifest.json",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "identity:fixtures/fx_b1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:fixtures/fx_b1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "syntax:fixtures/fx_b1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "identity:fixtures/fx_d1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:fixtures/fx_d1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "syntax:fixtures/fx_d1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "identity:fixtures/fx_l1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:fixtures/fx_l1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "syntax:fixtures/fx_l1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "identity:fixtures/fx_m1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:fixtures/fx_m1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "syntax:fixtures/fx_m1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "identity:fixtures/fx_n1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:fixtures/fx_n1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "syntax:fixtures/fx_n1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "identity:fixtures/fx_t1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:fixtures/fx_t1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "syntax:fixtures/fx_t1.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "identity:src/boundary_admission.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:src/boundary_admission.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "syntax:src/boundary_admission.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "identity:src/envelope_contract.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:src/envelope_contract.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "syntax:src/envelope_contract.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "identity:src/supervisor.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:src/supervisor.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "syntax:src/supervisor.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "identity:src/windows_job.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "line-cap:src/windows_job.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "syntax:src/windows_job.py",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "manifest-13-join",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "byte-cap",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "effect-interface-shape",
+        "passed": true,
+        "detail": []
+      },
+      {
+        "id": "eight-backend-methods-refuse",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "id": "oracle-negative-sensitivity",
+        "passed": true,
+        "detail": [
+          {
+            "id": "native-import",
+            "detected": true,
+            "kind": "AST_ONLY_NEVER_EXECUTED"
+          },
+          {
+            "id": "import-time-effect",
+            "detected": true,
+            "kind": "AST_ONLY_NEVER_EXECUTED"
+          },
+          {
+            "id": "fake-capability-launch",
+            "detected": true,
+            "kind": "AST_ONLY_NEVER_EXECUTED"
+          },
+          {
+            "id": "fixture-os-enable",
+            "detected": true,
+            "kind": "AST_ONLY_NEVER_EXECUTED"
+          },
+          {
+            "id": "missing-FX-L1",
+            "detected": true,
+            "kind": "AST_ONLY_NEVER_EXECUTED"
+          }
+        ]
+      }
+    ],
+    "sourceLedger": [
+      {
+        "path": "README.md",
+        "bytes": 2389,
+        "sha256": "24f13f2e15148f54b71844a0173b97dcce2183b6bed7c0bb71b31d6237af7ae4"
+      },
+      {
+        "path": "WORKER_RETURN.md",
+        "bytes": 3470,
+        "sha256": "5bc282f0730043429dd15507017c877d7dcb1323f33e4571cee6122d066e90ff"
+      },
+      {
+        "path": "evidence/requirement-map.json",
+        "bytes": 4404,
+        "sha256": "d6415637977dc6d123466bad4ba4f449e880999f2320ba038c503693c3c813dd"
+      },
+      {
+        "path": "evidence/source-manifest.json",
+        "bytes": 2381,
+        "sha256": "49e85446096dc88ae5be1b89a5a83bdccbc2a8d05d9358ca6e38609568778d2f"
+      },
+      {
+        "path": "fixtures/fx_b1.py",
+        "bytes": 1511,
+        "sha256": "2bdde7615be66479dc7c2f0718a72c8676ff2cdcbcaf6075c184098754f7fb20"
+      },
+      {
+        "path": "fixtures/fx_d1.py",
+        "bytes": 1728,
+        "sha256": "8c3dda5c73829d09513d8ac751c008533b99985859088da26ce8f631e981a3a7"
+      },
+      {
+        "path": "fixtures/fx_l1.py",
+        "bytes": 2036,
+        "sha256": "ecac3fb7c2dca41c2e9947288a32abb5687fa9ca4c190e4d67879e2533c8d1f4"
+      },
+      {
+        "path": "fixtures/fx_m1.py",
+        "bytes": 2075,
+        "sha256": "7152bf61e4ba674ef3ce7c3c785251f5382ebea3b6efaa55888844ee7f6da054"
+      },
+      {
+        "path": "fixtures/fx_n1.py",
+        "bytes": 1869,
+        "sha256": "b667d80aaae7da117c67226769da0901f0a356e9ea3e7cee3e8f5458690f42f2"
+      },
+      {
+        "path": "fixtures/fx_t1.py",
+        "bytes": 1613,
+        "sha256": "9f64999e1c9232dc309d9c6c61cb98a9db0e5d553df46d310bac2d1996e00a50"
+      },
+      {
+        "path": "src/boundary_admission.py",
+        "bytes": 3665,
+        "sha256": "fb6e912ee239eb415f73aedb0b3ed7059068a5cb8b5518891f82222cb1a2af1d"
+      },
+      {
+        "path": "src/envelope_contract.py",
+        "bytes": 7555,
+        "sha256": "e1c34d51c7d1fef19d25cfbc4548d98448404986e4741e540f4f580c168cff61"
+      },
+      {
+        "path": "src/supervisor.py",
+        "bytes": 6536,
+        "sha256": "a09fa3b3906a500db60694b0391a97f0f91d4a26d825bb5159949cf27f17b4b6"
+      },
+      {
+        "path": "src/windows_job.py",
+        "bytes": 2848,
+        "sha256": "eb89c44b779fec8c085a91630952047bb2463e8919b166ace8429ca084b41028"
+      }
+    ],
+    "mutations": [
+      {
+        "id": "native-import",
+        "detected": true,
+        "kind": "AST_ONLY_NEVER_EXECUTED"
+      },
+      {
+        "id": "import-time-effect",
+        "detected": true,
+        "kind": "AST_ONLY_NEVER_EXECUTED"
+      },
+      {
+        "id": "fake-capability-launch",
+        "detected": true,
+        "kind": "AST_ONLY_NEVER_EXECUTED"
+      },
+      {
+        "id": "fixture-os-enable",
+        "detected": true,
+        "kind": "AST_ONLY_NEVER_EXECUTED"
+      },
+      {
+        "id": "missing-FX-L1",
+        "detected": true,
+        "kind": "AST_ONLY_NEVER_EXECUTED"
+      }
+    ],
+    "counterexamplePlans": [
+      {
+        "id": "deadline-nonfinite",
+        "inputs": [
+          "seconds=NaN",
+          "seconds=+Infinity",
+          "two finite phases whose sum overflows"
+        ],
+        "expected": "reject before mutation",
+        "staticObservation": "record_phase_elapsed checks type and seconds<0 only; no finite guard on input or sum",
+        "executed": false
+      },
+      {
+        "id": "unhashable-enum",
+        "inputs": [
+          "envelope_version=[]",
+          "stage={}",
+          "effects=[[]]"
+        ],
+        "expected": "structured rejection, no unhandled exception",
+        "staticObservation": "set membership occurs without string/type guard",
+        "executed": false
+      },
+      {
+        "id": "hash-binding",
+        "inputs": [
+          "outputs=[a.txt], artifact_hashes={}",
+          "case-colliding artifact hash keys",
+          "64 hex characters plus terminal newline"
+        ],
+        "expected": "explicit nonempty one-to-one output/hash binding and strict digest",
+        "staticObservation": "hash mapping may be empty; no output/hash reconciliation, no hash-key collision check; regex uses $ with match rather than fullmatch",
+        "executed": false
+      },
+      {
+        "id": "path-name-policy",
+        "inputs": [
+          "CON",
+          "NUL.txt",
+          "file plus descendant file/x",
+          "root with trailing dot or space"
+        ],
+        "expected": "explicit admitted Windows lexical policy or rejection",
+        "staticObservation": "reserved device names and file/directory prefix collisions unhandled; root lacks trailing-dot/space guard",
+        "executed": false
+      },
+      {
+        "id": "unknown-substring",
+        "inputs": [
+          "custody_owner=KnownUnknownsTeam"
+        ],
+        "expected": "document whether sentinel-only or substring policy",
+        "staticObservation": "unknown regex search scans all strings including dict keys",
+        "executed": false
+      },
+      {
+        "id": "import-custody",
+        "inputs": [
+          "ImportError inside package dependency",
+          "ambient sys.path sibling name"
+        ],
+        "expected": "sibling-only import or fail closed",
+        "staticObservation": "broad ImportError catch switches all dependencies to absolute imports",
+        "executed": false
+      }
+    ],
+    "sourceExecutionCount": 0,
+    "probeDisposition": "EXECUTED_STATIC_ONLY_FINDINGS",
+    "sourceAcceptance": "WITHHELD_CONSOLIDATED_FINDINGS",
+    "elapsedSeconds": 0.094,
+    "claimBoundary": "Identity/AST checks and static deductions only. No worker source import/evaluation/compilation or runtime behavior proof."
+  },
+  "retainedOraclePath": "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-local-static-oracle-2026-10-03.py",
+  "retainedOracleRawSha256": "0d276f6180cf14ce8d83f7886abdf34683e61f348a919699568403e1c10b875d",
+  "operatorAcknowledgment": {
+    "source": "current operator relay of worker response",
+    "verificationClass": "OPERATOR_RELAY_INPUT_NOT_RUNTIME_PROOF",
+    "originalQuotes": [
+      "T\u00f4i \u0111\u1ed1i chi\u1ebfu t\u1eebng finding v\u1edbi code c\u1ee7a m\u00ecnh v\u00e0 \u0111\u1ed3ng \u00fd c\u1ea3 b\u1ea3y. \u0110\u00e2y c\u0169ng ch\u1ec9 l\u00e0 suy lu\u1eadn t\u0129nh, t\u00f4i ch\u01b0a ch\u1ea1y g\u00ec.",
+      "C\u00e1c file c\u00f2n l\u1ea1i d\u00f9ng c\u00f4ng c\u1ee5 Write v\u00e0 d\u1ef1a v\u00e0o vi\u1ec7c th\u01b0 m\u1ee5c g\u1ed1c v\u1eeba \u0111\u01b0\u1ee3c t\u1ea1o m\u1edbi. T\u00f4i kh\u00f4ng c\u00f3 log l\u1ec7nh \u0111\u1ec3 ch\u1ee9ng minh th\u00eam.",
+      "Phi\u00ean b\u1ea3n m\u1edbi c\u1ea7n \u0111\u01b0\u1ee3c \u0111\u1eb7t \u1edf root ho\u1eb7c phi\u00ean b\u1ea3n ri\u00eang do admission quy \u0111\u1ecbnh, kh\u00f4ng ghi \u0111\u00e8 b\u1ea3n hi\u1ec7n t\u1ea1i."
+    ]
+  },
+  "claimBoundary": "Raw identity/AST observations and deductions only. Source execution count zero; original first-fail count WORKER_REPORTED; no invented historical log."
+}

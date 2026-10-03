@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "cvf.s05.s1SupervisorSourceR1DispatchInputs.v1",
+  "batchId": "CVF-NCR-S05-S1-SUPERVISOR-SOURCE-R1",
+  "dispatchBaseHead": "c8864ba03df504e7a8aa991f4bd14d7ef37b7a52",
+  "operatorInstructionOriginal": "Phi\u00ean b\u1ea3n m\u1edbi c\u1ea7n \u0111\u01b0\u1ee3c \u0111\u1eb7t \u1edf root ho\u1eb7c phi\u00ean b\u1ea3n ri\u00eang do admission quy \u0111\u1ecbnh, kh\u00f4ng ghi \u0111\u00e8 b\u1ea3n hi\u1ec7n t\u1ea1i.",
+  "operatorContext": "Persistent orchestrator work-order instruction plus current operator relay accepting seven findings, real exclusive-creation violation and missing PROOF-RETURN; Local authors one bounded repair admission, no worker/provider invocation.",
+  "scope": "R1 source-only exclusive-create under new root after bound release; original source and worker artifacts read-only; no execution/OS/provider/stage expansion",
+  "priorFindingSetDigest": "357a4b4e6696633471e7d4b00fd1a5cba75f835615d8efe6a9c970aa8a2f524f",
+  "reviewerDecision": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_LOCAL_REVIEW_2026-10-03.md",
+  "sourceRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-R1-20261003",
+  "frozenOriginalRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-20261003",
+  "frozenOriginalArtifacts": {
+    "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_WORKER_RETURN_2026-10-03.md": "fd0fb054d63f10abedf70ff57205d8b047067ab9cb89babb5b592fc4c9463203",
+    "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-worker-2026-10-03.json": "246a27347ce744156056fcf205edeb282312a17b72efaa1bd9c08e96683f1d1c"
+  },
+  "frozenOriginalSourceLedger": [
+    {
+      "path": "README.md",
+      "bytes": 2389,
+      "sha256": "24f13f2e15148f54b71844a0173b97dcce2183b6bed7c0bb71b31d6237af7ae4",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "src/supervisor.py",
+      "bytes": 6536,
+      "sha256": "a09fa3b3906a500db60694b0391a97f0f91d4a26d825bb5159949cf27f17b4b6",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "src/envelope_contract.py",
+      "bytes": 7555,
+      "sha256": "e1c34d51c7d1fef19d25cfbc4548d98448404986e4741e540f4f580c168cff61",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "src/windows_job.py",
+      "bytes": 2848,
+      "sha256": "eb89c44b779fec8c085a91630952047bb2463e8919b166ace8429ca084b41028",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "src/boundary_admission.py",
+      "bytes": 3665,
+      "sha256": "fb6e912ee239eb415f73aedb0b3ed7059068a5cb8b5518891f82222cb1a2af1d",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "fixtures/fx_d1.py",
+      "bytes": 1728,
+      "sha256": "8c3dda5c73829d09513d8ac751c008533b99985859088da26ce8f631e981a3a7",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "fixtures/fx_m1.py",
+      "bytes": 2075,
+      "sha256": "7152bf61e4ba674ef3ce7c3c785251f5382ebea3b6efaa55888844ee7f6da054",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "fixtures/fx_t1.py",
+      "bytes": 1613,
+      "sha256": "9f64999e1c9232dc309d9c6c61cb98a9db0e5d553df46d310bac2d1996e00a50",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "fixtures/fx_b1.py",
+      "bytes": 1511,
+      "sha256": "2bdde7615be66479dc7c2f0718a72c8676ff2cdcbcaf6075c184098754f7fb20",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "fixtures/fx_n1.py",
+      "bytes": 1869,
+      "sha256": "b667d80aaae7da117c67226769da0901f0a356e9ea3e7cee3e8f5458690f42f2",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "fixtures/fx_l1.py",
+      "bytes": 2036,
+      "sha256": "ecac3fb7c2dca41c2e9947288a32abb5687fa9ca4c190e4d67879e2533c8d1f4",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "evidence/requirement-map.json",
+      "bytes": 4404,
+      "sha256": "d6415637977dc6d123466bad4ba4f449e880999f2320ba038c503693c3c813dd",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "WORKER_RETURN.md",
+      "bytes": 3470,
+      "sha256": "5bc282f0730043429dd15507017c877d7dcb1323f33e4571cee6122d066e90ff",
+      "actor": "worker",
+      "status": "CREATED"
+    },
+    {
+      "path": "evidence/source-manifest.json",
+      "bytes": 2381,
+      "sha256": "49e85446096dc88ae5be1b89a5a83bdccbc2a8d05d9358ca6e38609568778d2f",
+      "actor": "worker",
+      "status": "CREATED"
+    }
+  ],
+  "inputIdentities": [
+    {
+      "path": "docs/reference/CVF_NCR_S05_SUPERVISOR_SOURCE_CONTRACT_R1_2026-10-03.md",
+      "rawSha256": "23a041243cdf87a4a4cf8aaecd5313d0d3cf70900359b26996bfe4c7a4270f98",
+      "authorityClass": "GOVERNED_PROJECT_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_LOCAL_REVIEW_2026-10-03.md",
+      "rawSha256": "558f01c3331f630f5928468471469dacc28435635b51fdab4f6f62ae175571cb",
+      "authorityClass": "GOVERNED_PROJECT_INPUT"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-local-findings-2026-10-03.json",
+      "rawSha256": "357a4b4e6696633471e7d4b00fd1a5cba75f835615d8efe6a9c970aa8a2f524f",
+      "authorityClass": "GOVERNED_PROJECT_INPUT"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-local-static-oracle-2026-10-03.py",
+      "rawSha256": "0d276f6180cf14ce8d83f7886abdf34683e61f348a919699568403e1c10b875d",
+      "authorityClass": "GOVERNED_PROJECT_INPUT"
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_WORKER_RETURN_2026-10-03.md",
+      "rawSha256": "fd0fb054d63f10abedf70ff57205d8b047067ab9cb89babb5b592fc4c9463203",
+      "authorityClass": "GOVERNED_PROJECT_INPUT"
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-worker-2026-10-03.json",
+      "rawSha256": "246a27347ce744156056fcf205edeb282312a17b72efaa1bd9c08e96683f1d1c",
+      "authorityClass": "GOVERNED_PROJECT_INPUT"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_2026-10-03.md",
+      "rawSha256": "73bf01421d9bd6e37a71aa092c01dbc70bc59e9955be59f7b72dc996a422fc22",
+      "authorityClass": "GOVERNED_PROJECT_INPUT"
+    }
+  ],
+  "sourceFiles": [
+    "README.md",
+    "src/supervisor.py",
+    "src/envelope_contract.py",
+    "src/windows_job.py",
+    "src/boundary_admission.py",
+    "fixtures/fx_d1.py",
+    "fixtures/fx_m1.py",
+    "fixtures/fx_t1.py",
+    "fixtures/fx_b1.py",
+    "fixtures/fx_n1.py",
+    "fixtures/fx_l1.py",
+    "evidence/source-manifest.json",
+    "evidence/requirement-map.json",
+    "WORKER_RETURN.md"
+  ],
+  "oldScec": {
+    "problemKey": "cvf-ncr-c1-metadata-footprint",
+    "ordinal": 2,
+    "disposition": "STOP_REASSESS_ARCHITECTURE",
+    "retainedBlocker": "C1_DEPENDENCY_FOOTPRINT_CACHE_SEMANTICS_UNSPECIFIED",
+    "counters": [
+      0,
+      0,
+      1,
+      2
+    ]
+  },
+  "rootAbsence": "LOCAL_CURRENT_AUTHORING_CHECK_FALSE_HISTORICAL_ONLY_RECHECK_BEFORE_FIRST_WRITE",
+  "workerExecuted": false,
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}

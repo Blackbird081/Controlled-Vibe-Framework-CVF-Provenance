@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "cvf.s05.s1SupervisorSourceWorkerEvidence.v1",
+  "batchId": "CVF-NCR-S05-S1-SUPERVISOR-SOURCE",
+  "executionBaseHead": "c8864ba03df504e7a8aa991f4bd14d7ef37b7a52",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_2026-10-03.md",
+  "interfaceVersion": "local-supervisor-source@0.1.0",
+  "status": "SOURCE_PLAN_ONLY",
+  "claimLevel": "PASS_STATIC_ONLY",
+  "workerMode": "WORKER_MUST_NOT_COMMIT",
+  "sourceRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\CVF-NCR-S05-S1-SOURCE-20261003",
+  "releaseIdentityChecks": {
+    "headEqualsReleasedHead": true,
+    "worktreeCleanAtStart": true,
+    "baselineSha256": "d6a6fc5b929224608278b4ee71605e1b2f9d008f6fdcdcd543e1a5342bc3b31e",
+    "workOrderSha256": "73bf01421d9bd6e37a71aa092c01dbc70bc59e9955be59f7b72dc996a422fc22",
+    "inputReceiptSha256": "0020c004bf35744a32802af35875b85e514df4e631cc51a7ab94db1dba13ace3",
+    "inputIdentitiesMatchReceipt": 5,
+    "preImplementationGate": "PASS"
+  },
+  "rootSafetyRecord": {
+    "checkedAt": "immediately before first write, this session",
+    "targetExisted": false,
+    "parent": "D:\\UNG DUNG AI\\TOOL AI 2026",
+    "parentReparsePoint": false,
+    "driveRootReparsePoint": false,
+    "grandparentReparsePoint": false,
+    "directoryCreation": "without force; would fail if present",
+    "fileCreation": "each file written once; manifest opened in exclusive mode",
+    "limitation": "records the check instant only; no ACL, capacity guarantee or ownership certification beyond the parent owner read"
+  },
+  "sourceLedger": [
+    {"path": "README.md", "bytes": 2389, "sha256": "24f13f2e15148f54b71844a0173b97dcce2183b6bed7c0bb71b31d6237af7ae4", "actor": "worker", "status": "CREATED"},
+    {"path": "src/supervisor.py", "bytes": 6536, "sha256": "a09fa3b3906a500db60694b0391a97f0f91d4a26d825bb5159949cf27f17b4b6", "actor": "worker", "status": "CREATED"},
+    {"path": "src/envelope_contract.py", "bytes": 7555, "sha256": "e1c34d51c7d1fef19d25cfbc4548d98448404986e4741e540f4f580c168cff61", "actor": "worker", "status": "CREATED"},
+    {"path": "src/windows_job.py", "bytes": 2848, "sha256": "eb89c44b779fec8c085a91630952047bb2463e8919b166ace8429ca084b41028", "actor": "worker", "status": "CREATED"},
+    {"path": "src/boundary_admission.py", "bytes": 3665, "sha256": "fb6e912ee239eb415f73aedb0b3ed7059068a5cb8b5518891f82222cb1a2af1d", "actor": "worker", "status": "CREATED"},
+    {"path": "fixtures/fx_d1.py", "bytes": 1728, "sha256": "8c3dda5c73829d09513d8ac751c008533b99985859088da26ce8f631e981a3a7", "actor": "worker", "status": "CREATED"},
+    {"path": "fixtures/fx_m1.py", "bytes": 2075, "sha256": "7152bf61e4ba674ef3ce7c3c785251f5382ebea3b6efaa55888844ee7f6da054", "actor": "worker", "status": "CREATED"},
+    {"path": "fixtures/fx_t1.py", "bytes": 1613, "sha256": "9f64999e1c9232dc309d9c6c61cb98a9db0e5d553df46d310bac2d1996e00a50", "actor": "worker", "status": "CREATED"},
+    {"path": "fixtures/fx_b1.py", "bytes": 1511, "sha256": "2bdde7615be66479dc7c2f0718a72c8676ff2cdcbcaf6075c184098754f7fb20", "actor": "worker", "status": "CREATED"},
+    {"path": "fixtures/fx_n1.py", "bytes": 1869, "sha256": "b667d80aaae7da117c67226769da0901f0a356e9ea3e7cee3e8f5458690f42f2", "actor": "worker", "status": "CREATED"},
+    {"path": "fixtures/fx_l1.py", "bytes": 2036, "sha256": "ecac3fb7c2dca41c2e9947288a32abb5687fa9ca4c190e4d67879e2533c8d1f4", "actor": "worker", "status": "CREATED"},
+    {"path": "evidence/requirement-map.json", "bytes": 4404, "sha256": "d6415637977dc6d123466bad4ba4f449e880999f2320ba038c503693c3c813dd", "actor": "worker", "status": "CREATED"},
+    {"path": "WORKER_RETURN.md", "bytes": 3470, "sha256": "5bc282f0730043429dd15507017c877d7dcb1323f33e4571cee6122d066e90ff", "actor": "worker", "status": "CREATED"},
+    {"path": "evidence/source-manifest.json", "bytes": 2381, "sha256": "49e85446096dc88ae5be1b89a5a83bdccbc2a8d05d9358ca6e38609568778d2f", "actor": "worker", "status": "CREATED"}
+  ],
+  "ledgerTotals": {
+    "fileCount": 14,
+    "totalBytes": 44080,
+    "byteCeiling": 1048576,
+    "extraFiles": 0,
+    "bytecodeOrCacheFiles": 0,
+    "directories": ["(root)", "src", "fixtures", "evidence"]
+  },
+  "manifestRecipe": "source-manifest.json lists the thirteen files other than itself with raw bytes and SHA-256; WORKER_RETURN.md in the root carries no manifest digest; the manifest digest above is recorded here, outside the source root, for Local to bind separately",
+  "lineCounts": {
+    "src/envelope_contract.py": 235,
+    "src/supervisor.py": 169,
+    "src/boundary_admission.py": 106,
+    "src/windows_job.py": 93,
+    "fixtures/fx_d1.py": 53,
+    "fixtures/fx_m1.py": 58,
+    "fixtures/fx_t1.py": 50,
+    "fixtures/fx_b1.py": 47,
+    "fixtures/fx_n1.py": 56,
+    "fixtures/fx_l1.py": 58,
+    "pythonLineCeiling": 1200
+  },
+  "symbolMap": [
+    {"contractItem": 1, "symbol": "validate_envelope", "locator": "src/envelope_contract.py:127"},
+    {"contractItem": 2, "symbol": "decide_admission", "locator": "src/supervisor.py:63"},
+    {"contractItem": 3, "symbol": "SupervisorPlan", "locator": "src/supervisor.py:84"},
+    {"contractItem": 4, "symbol": "WindowsJobBackend", "locator": "src/windows_job.py:62"},
+    {"contractItem": 4, "symbol": "NotAdmitted", "locator": "src/windows_job.py:23"},
+    {"contractItem": 5, "symbol": "BoundaryAdmission", "locator": "src/boundary_admission.py:45"},
+    {"contractItem": 5, "symbol": "admit_boundaries", "locator": "src/boundary_admission.py:102"},
+    {"contractItem": 6, "symbol": "build_plan FX-D1", "locator": "fixtures/fx_d1.py:30"},
+    {"contractItem": 6, "symbol": "build_plan FX-M1", "locator": "fixtures/fx_m1.py:32"},
+    {"contractItem": 6, "symbol": "build_plan FX-T1", "locator": "fixtures/fx_t1.py:28"},
+    {"contractItem": 6, "symbol": "build_plan FX-B1", "locator": "fixtures/fx_b1.py:27"},
+    {"contractItem": 6, "symbol": "build_plan FX-N1", "locator": "fixtures/fx_n1.py:29"},
+    {"contractItem": 6, "symbol": "build_plan FX-L1", "locator": "fixtures/fx_l1.py:31"}
+  ],
+  "staticObservations": {
+    "method": "stdlib ast.parse and text scan of file bytes; no import, no compile, no evaluation, no bytecode written",
+    "allTenPythonFilesParse": true,
+    "stdlibImports": ["math", "ntpath", "re"],
+    "siblingImports": ["supervisor.py imports envelope_contract, boundary_admission, windows_job"],
+    "forbiddenImportsFound": 0,
+    "forbiddenCallsFound": 0,
+    "topLevelCallStatements": 0,
+    "nonAsciiPythonFiles": 0,
+    "nativeBackendMethodsRaisingNotAdmitted": 8,
+    "osActionEnabledFlag": "False in boundary_admission, supervisor snapshot path and all six fixture plans",
+    "launchAuthority": "NO_GO in every decide_admission outcome"
+  },
+  "fixturePlans": {
+    "FX-D1": {"cases": ["D1-POS-CAPACITY", "D1-NEG-ATTEMPT-96", "D1-NEG-OUTSIDE-ROOT", "D1-UNK-MECHANISM"], "status": "NOT_EXECUTED_PLANNED"},
+    "FX-M1": {"cases": ["M1-POS-64", "M1-NEG-SINGLE-384", "M1-NEG-TREE-4X96", "M1-UNK-WORKING-SET"], "status": "NOT_EXECUTED_PLANNED"},
+    "FX-T1": {"cases": ["T1-POS-DEADLINE", "T1-POS-CANCEL-5S", "T1-NEG-SUPERVISOR-DEATH", "T1-UNK-ORPHAN-INSPECTION"], "status": "NOT_EXECUTED_PLANNED"},
+    "FX-B1": {"cases": ["B1-POS-MEMBERSHIP", "B1-NEG-BREAKAWAY", "B1-NEG-DESCENDANT", "B1-UNK-SEMANTICS"], "status": "NOT_EXECUTED_PLANNED"},
+    "FX-N1": {"cases": ["N1-NEG-DNS", "N1-NEG-TCP", "N1-NEG-UDP", "N1-UNK-TIMEOUT-2S", "N1-UNK-MECHANISM"], "status": "NOT_EXECUTED_PLANNED", "timeout": "NOT_PROVEN"},
+    "FX-L1": {"cases": ["L1-POS-WITHIN-CAPS", "L1-NEG-LOG-OVERFLOW", "L1-NEG-EVIDENCE-OVERFLOW", "L1-NEG-COUNTER-RESET", "L1-UNK-ENFORCEMENT"], "status": "NOT_EXECUTED_PLANNED"}
+  },
+  "externalWriteInventory": {
+    "created": ["source root", "src", "fixtures", "evidence", "fourteen allowlisted files"],
+    "cvfWorkerOutputs": [
+      "docs/reviews/evidence/cvf-ncr-s05-s1-supervisor-source-worker-2026-10-03.json",
+      "docs/reviews/CVF_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_WORKER_RETURN_2026-10-03.md"
+    ],
+    "modified": [],
+    "deleted": [],
+    "partialWrites": [],
+    "scratchpadHelpers": "static check and manifest generator in the session scratchpad outside the repository and outside the source root; they read file bytes and wrote only the manifest"
+  },
+  "oldStopRetained": {
+    "problemKey": "cvf-ncr-c1-metadata-footprint",
+    "ordinal": 2,
+    "disposition": "STOP_REASSESS_ARCHITECTURE",
+    "retainedBlocker": "C1_DEPENDENCY_FOOTPRINT_CACHE_SEMANTICS_UNSPECIFIED",
+    "counters": [0, 0, 1, 2],
+    "touched": false,
+    "c1SpecificBehaviourInSource": false
+  },
+  "proofIds": {
+    "PROOF-OWNER": "sourceLedger actor and status joined to the write inventory",
+    "PROOF-AUTHORITY": "releaseIdentityChecks joined to bootstrap currentAuthority hashes",
+    "PROOF-IDENTITY": "sourceLedger raw bytes and SHA-256 for fourteen files",
+    "PROOF-RECOVERY": "rootSafetyRecord and externalWriteInventory; no cleanup or rollback grant exercised",
+    "PROOF-BOUNDARY": "staticObservations and forbidden-effect scan",
+    "PROOF-CASE-PLAN": "fixturePlans, all NOT_EXECUTED_PLANNED",
+    "PROOF-SOURCE": "symbolMap joined to evidence/requirement-map.json"
+  },
+  "limitations": [
+    "behaviour of every function is unverified; no source was executed",
+    "native ABI, job semantics, disk, egress, privilege and custody mechanisms have no evidence",
+    "fixture arithmetic consistency flags were authored but not evaluated",
+    "DS-01..DS-19 NOT_EXECUTED_PLANNED",
+    "all costs UNKNOWN"
+  ],
+  "independentProbe": "PENDING_REVIEWER_EXECUTION",
+  "commit": "none; worker did not stage or commit"
+}
