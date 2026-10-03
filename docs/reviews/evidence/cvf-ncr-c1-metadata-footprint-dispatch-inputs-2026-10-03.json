@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "cvf.ncr.metadataFootprintDispatchInputs.v1",
+  "batchId": "CVF-NCR-C1-METADATA-FOOTPRINT",
+  "authoringBaseHead": "6cbe66229a7ddd49299edcf8ed98e930e267f2b2",
+  "status": "INPUT_IDENTITIES_NOT_RUNTIME_PROOF",
+  "inputs": [
+    {
+      "path": "docs/reference/CVF_KNOWLEDGE_ABSORPTION_AND_EXTENSION_PRIORITY_STANDARD_2026-04-13.md",
+      "rawSha256": "1eafad1cd23048eff1a11acb27ce51f34bb1929a3306de9237b1ed6734064eee",
+      "gitBlobId": "e142d0ec8fce2d03afcf8b41f7c96b7a7cc7f951",
+      "physicalLines": 344
+    },
+    {
+      "path": "docs/reference/CVF_NCR_GENERAL_VIDEO_DESIGN_2026-10-02.md",
+      "rawSha256": "3ce5e2363c3e29997fcbf42cb4cec59af7447cca38409d4d970e8aa71e5777e0",
+      "gitBlobId": "f22cddd894a9cf976762f8c3b7c3f7a745abf476",
+      "physicalLines": 159
+    },
+    {
+      "path": "docs/reference/CVF_NCR_VIDEO_COMPOSITION_READINESS_DESIGN_2026-10-03.md",
+      "rawSha256": "de3673a2f41695bfa83692095fd0d67f96cea924d48809aefd8b14266c8e6d87",
+      "gitBlobId": "9825df4a26d8a6eebb46533afc33ca951ee59937",
+      "physicalLines": 300
+    },
+    {
+      "path": "docs/reference/CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_2026-10-03.md",
+      "rawSha256": "1ea8f416c00ba64d414d192f10b389180ce3423044a7a8f4c231efea911898a9",
+      "gitBlobId": "ee61f78e5ac83145a6592ed3f4b051a3359147ae",
+      "physicalLines": 268
+    },
+    {
+      "path": "docs/reviews/CVF_CVF_NCR_C1_BOUNDED_READINESS_ASSESSMENT_COMPLETION_2026-10-03.md",
+      "rawSha256": "16798aaffa09fe612d6ab582bcf16e65b9b005dd0e2960766a60edc49c682fb5",
+      "gitBlobId": "469722228abee618e7ed5904b435508c8b30ad38",
+      "physicalLines": 219
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-c1-bounded-readiness-assessment-2026-10-03.json",
+      "rawSha256": "68a496a583f99a44d0e923f363528401905cfc982f1daef6dbafded2aeb27c6f",
+      "gitBlobId": "4e6a0b4b847d4a43ac53cf93a4b890c7c6a7b07d",
+      "physicalLines": 552
+    },
+    {
+      "path": "docs/reviews/evidence/cvf-ncr-c1-bounded-readiness-local-review-2026-10-03.json",
+      "rawSha256": "daf7f203bfb57894422a79de92f504572ba8e360fba07d8db664fb1564f4870c",
+      "gitBlobId": "f55cd7fae6ee050bbb46eac3782091f70427eb86",
+      "physicalLines": 64
+    }
+  ],
+  "workerPaths": [
+    "docs/reference/CVF_NCR_C1_METADATA_FOOTPRINT_ANALYSIS_2026-10-03.md",
+    "docs/reviews/evidence/cvf-ncr-c1-metadata-footprint-analysis-2026-10-03.json",
+    "docs/reviews/CVF_CVF_NCR_C1_METADATA_FOOTPRINT_ANALYSIS_WORKER_RETURN_2026-10-03.md"
+  ],
+  "completionReviewPath": "docs/reviews/CVF_CVF_NCR_C1_METADATA_FOOTPRINT_ANALYSIS_COMPLETION_2026-10-03.md",
+  "claimBoundary": "D106 accepted documentary readiness, original archive limits disclosed. New packet source/metadata/lockfile only; no solver/install/proof effect."
+}
