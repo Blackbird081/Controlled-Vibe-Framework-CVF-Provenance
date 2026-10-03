@@ -1,6 +1,6 @@
 # CVF Agent Handoff V63 - ACEL Applied-Knowledge Owner Enrichment
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `7da4a5b6a2143aeb35c73d2a38bc921786e7d147`; delegated S05 option D recorded, STOP_AT_DESIGN/no automatic successor; runtime NOT_ADMITTED; send/B2 STOP.
+Current HEAD recorded for this handoff: `02d5760b9761a3c68da069be347d48bb94856b08`; standalone S1 source pair; no source execution or C1 runtime grant; old C1 STOP retained; send/B2 STOP.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -8,9 +8,9 @@ Remote tracking: `origin/main`; resolve SHA live. External agent memory is non-c
 ## Purpose
 Carry CVF-NCR v2.7 and closed AKOE/G1-G7. Applied-knowledge details remain in the governed roadmap.
 ## Scope / Target / Owner Boundary
-Role: Local orchestrator/reviewer. Phase: S05 delegated architecture disposition D recorded; technical owner: Local; effect owner: operator; P11 parked.
+Role: Local orchestrator/reviewer. Phase: standalone S1 source-only work-order dispatch; technical owner: Local; effect owner: operator; P11 parked.
 ## Startup Acknowledgment
-Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=S05 stop at design, no automatic successor; role=Local reviewer/closer; phase=delegated option D recorded; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
+Startup acknowledged: current mode=`cvf_ncr_p10_closed_p11_parked`; handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound standalone S1 source authoring; role=Local orchestrator/reviewer; phase=source-only dispatch; decision owner=Local; parked=Q001/Q004, effect, P11, public sync, deployment.
 ## Current Mode
 `cvf_ncr_p10_closed_p11_parked`. CVF-NCR-R1-S11-R1 is closed at `bd15b2600` after material `1a538d10d`. P10 is `ACTIVE_PRODUCTION_RUNTIME`; P11 stays parked. Latest closed learning-history wave: `LHW24`.
 ## Active Boundary
@@ -21,9 +21,9 @@ AKOE authority: `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_ROADM
 - Q001 SQLite target-publication correction is Local-accepted bounded at `a90756b6a`: reviewer repaired post-publication validation after raw-SQL repro; focused 37/37, worker 42/42, Local 6/6 and pre-commit 90/90 passed. Q001/R0 and real cutover remain open.
 - HTML B2 read-only owner/storage audit at `2364bfbaa` is `REVIEW_COMPLETE_NO_DISPATCH`: route returns transient HTML; source hash and receipt do not identify exact rendered bytes; inspected candidate ledgers/adapters do not own durable HTML acceptance. D037 names the missing actor, store, writer and recovery choices. B1 remains Local-accepted bounded at `31bb2d88c`; Q001/R0 Profile A and B2 implementation stay parked.
 - B1 Print R2 accepted bounded at `6251ca305`: worker 5/5, units 45/45; Local 120-line probe: 3 pages/all rows/end marker, opaque origin/zero Print hits. Review: `docs/reviews/CVF_CVF_NCR_HTML_B1_PRINT_COMPLETENESS_R2_COMPLETION_2026-10-01.md`. Width 700px; renderer only; Q001/Q004 OPEN. Preview owner audit complete; no Print successor.
-- S05-CFD `7da4a5b6a`: delegated audit selected D/STOP_AT_DESIGN, canonical record in docs/reviews/CVF_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_LOCAL_REVIEW_2026-10-03.md; source deliverable differs, independent architecture/authority boundary not established. G2 STOP/ordinal2/blocker retained; no S1/bootstrap/worker successor. Historical static 22/22 retained, runtime NOT_ADMITTED.
+- S05-S1 `02d5760b9`: docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_2026-10-03.md; independent data/state source contract, fourteen inert sibling files/two CVF returns, unavailable native backend. Bound gate/manual relay required; old C1 STOP/ordinal2 and D history preserved; no source execution/bootstrap/render admission.
 ## Core Guard Self-Protection Authorization
-Authorized guard-maintenance scope: bind `7da4a5b6a2143aeb35c73d2a38bc921786e7d147` / `CVF-NCR-S05-CONTROL-FIXTURE-DESIGN`; six paths below. Operator-delegated D recording continuity only; rollback sync, preserve material and STOP.
+Authorized guard-maintenance scope: bind `02d5760b9761a3c68da069be347d48bb94856b08` / `CVF-NCR-S05-S1-SUPERVISOR-SOURCE`; six paths below. Operator-requested source pair continuity only; rollback sync, preserve history and C1 STOP.
 Authorized guard-maintenance scope: bind B2b packet material `588f8d63f` and release only its internal worker next move.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`

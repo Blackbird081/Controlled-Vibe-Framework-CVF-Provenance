@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_RELEASE_BINDING_2026-10-03.md",
-    "baselineSha256": "14a761035b75976381ad2fa7cbabd14207d1c1ae2ce04aa3760327e2fa4d4335",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_RELEASE_BINDING_2026-10-03.md",
-    "workOrderSha256": "2ed8c86b554fe37028f734639987d3942f19bbc7d2d42c9a10900faa200dc1d6"
+    "baselinePath": "docs/baselines/CVF_GC018_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_2026-10-03.md",
+    "baselineSha256": "d6a6fc5b929224608278b4ee71605e1b2f9d008f6fdcdcd543e1a5342bc3b31e",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_2026-10-03.md",
+    "workOrderSha256": "73bf01421d9bd6e37a71aa092c01dbc70bc59e9955be59f7b72dc996a422fc22"
   },
-  "currentAuthoritySyncReason": "S05 D recorded at 7da4a5b6a2143aeb35c73d2a38bc921786e7d147; pair unchanged historical design, STOP/no worker successor.",
+  "currentAuthoritySyncReason": "Standalone S1 source pair 02d5760b9761a3c68da069be347d48bb94856b08; inert backend, old C1 STOP retained; bound gate/manual relay required.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
