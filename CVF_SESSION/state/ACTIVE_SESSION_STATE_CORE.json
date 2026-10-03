@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_CVF_NCR_S05_S1_SUPERVISOR_SOURCE_2026-10-03.md",
     "workOrderSha256": "73bf01421d9bd6e37a71aa092c01dbc70bc59e9955be59f7b72dc996a422fc22"
   },
-  "currentAuthoritySyncReason": "Standalone S1 source pair 02d5760b9761a3c68da069be347d48bb94856b08; inert backend, old C1 STOP retained; bound gate/manual relay required.",
+  "currentAuthoritySyncReason": "Standalone S1 source pair 02d5760b9761a3c68da069be347d48bb94856b08; inert backend, old C1 STOP retained; bound gate/manual relay required. Continuity-only repair after 576ec94c3.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
