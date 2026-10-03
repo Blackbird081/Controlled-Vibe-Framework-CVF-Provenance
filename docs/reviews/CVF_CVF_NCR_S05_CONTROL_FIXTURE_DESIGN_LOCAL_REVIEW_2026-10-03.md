@@ -5,7 +5,7 @@ docType: completion_review
 Status: ACCEPTED_DESIGN_WITH_QUALIFICATIONS
 Date: 2026-10-03
 Batch ID: CVF-NCR-S05-CONTROL-FIXTURE-DESIGN
-closureBaseHead: 2e9ae19c4b179f2eb9eccac8402a184e51978b1f
+closureBaseHead: c06207445a15870cd92f791df693e921295c4757
 
 ## Purpose
 
@@ -49,16 +49,38 @@ Missing helper/control implementation and host feasibility remain unknown. Decla
 
 ## Decision / Disposition
 
-ACCEPTED_DESIGN_WITH_QUALIFICATIONS; DESIGN_RECORDED_WITH_CONSOLIDATED_NO_GO. This review takes precedence for the four scope ambiguities without rewriting historical evidence. S0 documentary review is complete. Current next move is operator architectural disposition or stop at design. S1 source authoring remains a candidate requiring a separately bound scope; S2 bootstrap and S3..S9 are NOT_ADMITTED. Retain C1/P1, preset identity, blocker and SCEC counters; no new lane choice or same-root successor.
+ACCEPTED_DESIGN_WITH_QUALIFICATIONS; DESIGN_RECORDED_WITH_CONSOLIDATED_NO_GO. This review takes precedence for the four scope ambiguities without rewriting historical evidence. S0 documentary review is complete. Local has completed the operator-delegated architectural decision and selected D / STOP_AT_DESIGN. No automatic continuation is allowed; S1 source authoring is not selected or admitted; S2 bootstrap and S3..S9 are NOT_ADMITTED. Retain C1/P1, preset identity, blocker and SCEC counters; no new lane choice or same-root successor.
 
 All costs UNKNOWN. DS-01..DS-19 remain NOT_EXECUTED_PLANNED. Q001/Q004 OPEN, send/B2 STOP; P11/public/deploy parked; LHW24 closed.
+
+## Operator-Delegated Architecture Disposition - Option D
+
+The operator explicitly instructed Local to audit and choose, retain SCEC STOP, require actual pre-dispatch PASS before any manual worker copy, and treat the earlier sibling-root absence check as historical only. Local audited the S1 candidate and selected **D / STOP_AT_DESIGN**. The follow-up instruction to continue authorizes recording this completed decision in governed review and continuity; it does not authorize source authoring or worker execution.
+
+| Audit boundary | Verified disposition |
+|---|---|
+| Deliverable | Fourteen source/evidence files would differ from the documentary design; this change is real. |
+| Problem identity | The proposed supervisor still supplies missing G3 controls for the same C1/P1 preparation problem and retained blocker. An independent architectural problem is not established. |
+| Technical architecture | Job/tree interface remains proposed; disk/network mechanisms, host feasibility and ABI/semantic evidence remain unresolved. Source-only drafting does not establish containment architecture. |
+| Authority | Operator delegated audit/choice and conditional admission preparation only. The proposed sibling source-write effects are not a released worker grant. |
+| SCEC | `cvf-ncr-c1-metadata-footprint`, ordinal 2 and counters 0/0/1/2 retained; blocker `C1_DEPENDENCY_FOOTPRINT_CACHE_SEMANTICS_UNSPECIFIED` unresolved; STOP_REASSESS_ARCHITECTURE remains. No ordinal 3, INITIAL reset or renamed problem key. |
+| Dispatch | A was not selected. No S1 GC-018/work order or manual copy released; no new pre-dispatch PASS claimed. |
+| Root | Earlier absence of `D:\UNG DUNG AI\TOOL AI 2026\CVF-NCR-S05-S1-SOURCE-20261003` is historical only. Any valid future source-write admission must require a fresh target/parent/reparse check before first write and stop on collision or unresolved conditions. No root created. |
+
+Canonical basis: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md`, Enforcement Invariants 1, 6, 7, 8 and 9; `governance/compat/check_semantic_convergence_control.py`, SUCCESSOR_AFTER_STOP_REASSESS and executable-scope/readiness pairing. Retained worker evidence below still declares ordinal 2, the unresolved blocker and proposed/absent controls. The ignored source-scope candidate was a proposition under audit, not authority or proof.
+
+The authority-and-problem boundary required for A is not established by a different artifact type, directory or hypothetical future grant. This disposition concerns the present candidate; it is not a claim that every future source project is permanently forbidden. Any future genuinely different architecture needs a justified technical/authority contract against the retained STOP, without disguising continuity.
+
+Recording range: previous accepted design material `54709831ec788c1740694d699ff0c7bf88ab1070` and continuity `c06207445a15870cd92f791df693e921295c4757`; one reviewer-record edit, then six-path continuity sync. Original review bytes are preserved in Git at the previous material; original raw SHA-256 `9e666de5946393ec18629dd171159c4388f808d72d580fb4700c575f07f055a9`. Historical five-path closure trace is retained there. Current trace below applies only to this documentary decision-record edit. Existing probe evidence and bound pair remain byte-exact; the 22-check result is historical and consumed, not rerun or claimed as source review.
+
+EVALUATE_RETURNED_EVIDENCE_NOT_RECREATE_IMPLEMENTATION. No new empirical claim, worker rework, source/fixture/runtime execution or provider invocation. Listener/consent are not the reason for choosing D; their stage-specific requirements remain unchanged. No repeated architecture-choice approval is pending.
 
 ## Machine Closure Package
 
 | Closure item | Required artifact/path | Machine-readable evidence | Final status |
 |---|---|---|---|
 | Work order status | dispatchWorkOrder below | original bound dispatch preserved; reviewer acceptance here; no redispatch | PASS |
-| Completion or reviewer artifact | this reviewer artifact | qualified design acceptance | PASS |
+| Completion or reviewer artifact | this reviewer artifact | qualified design acceptance; operator-delegated D recorded | PASS |
 | Roadmap state | no dedicated roadmap row for this standalone work order | no lane or runtime state activation | N/A with reason: standalone documentary admission |
 | Registry JSON | none | no runtime registry effect | N/A with reason: design only |
 | Registry Markdown | none | no source mirror repin | N/A with reason: retained evidence only |
@@ -76,15 +98,17 @@ All costs UNKNOWN. DS-01..DS-19 remain NOT_EXECUTED_PLANNED. Q001/Q004 OPEN, sen
 
 ## Review Cost Telemetry And Stop Disposition
 
+Current record-only disposition round; historical design-review telemetry and command receipts remain in Git at `54709831e`. No worker/probe rerun; one review record then one continuity commit.
+
 Review-Cost Telemetry: REQUIRED
 reviewRoundCount: 0
 workerRepairTurnCount: 0
-newRootCauseCountThisRound: 1
-dependentFindingCountThisRound: 5
+newRootCauseCountThisRound: 0
+dependentFindingCountThisRound: 0
 elapsedReviewMinutes: NOT_AVAILABLE_WITH_REASON: session usage meter absent
 providerCallCount: 0
 tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: session usage meter absent
-valueDelta: independent static result, consolidated scope qualifications and review closure; no worker rework
+valueDelta: persist delegated option D; eliminate stale operator-choice checkpoint; retain accepted design evidence and STOP
 stopDisposition: COMPLETE_REVIEW
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
 materialCommitCount: 1
@@ -160,21 +184,21 @@ Static matrices and mutation results establish documentary distinctions only. Re
 |---|---|
 | Actor | Local reviewer/closer |
 | Provider or surface | shared private workspace |
-| Session or invocation | S05-CFD Local review 2026-10-03 |
+| Session or invocation | S05-CFD delegated option D recording 2026-10-03 |
 | Working directory | repository root |
 | Command or tool surface | local reads, independently authored stdlib static probe, Git and reviewer steward |
-| Target paths | five material paths below |
-| Allowed scope source | governing work order and Local review/closure responsibility |
-| Before status evidence | 2e9ae19c4b179f2eb9eccac8402a184e51978b1f; three untracked worker outputs |
-| After status evidence | five material paths; worker evidence and bound authority unchanged |
+| Target paths | one reviewer record below |
+| Allowed scope source | operator delegated audit/choice and instructed continuation; documentary decision record only |
+| Before status evidence | c06207445a15870cd92f791df693e921295c4757; clean tracked worktree |
+| After status evidence | one review record changed; worker/probe evidence and bound pair unchanged |
 | Diff evidence | git status --short; exact staged manifest; git diff --cached --check |
 | Approval boundary | Local documentary acceptance; operator owns future effects |
 | Claim boundary | PASS_STATIC_ONLY |
 | Agent type | INTERNAL_AGENT reviewer/closer |
-| Invocation ID | S05-CFD-LOCAL-STATIC-PROBE-20261003 |
-| Expected manifest | `docs/reference/CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_2026-10-03.md`; `docs/reviews/evidence/cvf-ncr-s05-control-fixture-design-worker-2026-10-03.json`; `docs/reviews/CVF_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_WORKER_RETURN_2026-10-03.md`; `docs/reviews/evidence/cvf-ncr-s05-control-fixture-design-local-review-2026-10-03.json`; `docs/reviews/CVF_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_LOCAL_REVIEW_2026-10-03.md` |
-| Actual changed set | `docs/reference/CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_2026-10-03.md`; `docs/reviews/evidence/cvf-ncr-s05-control-fixture-design-worker-2026-10-03.json`; `docs/reviews/CVF_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_WORKER_RETURN_2026-10-03.md`; `docs/reviews/evidence/cvf-ncr-s05-control-fixture-design-local-review-2026-10-03.json`; `docs/reviews/CVF_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_LOCAL_REVIEW_2026-10-03.md` |
-| Manifest delta | MATCH; historical worker raw return archived before reviewer trace conversion |
+| Invocation ID | S05-CFD-OPTION-D-RECORD-20261003 |
+| Expected manifest | `docs/reviews/CVF_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_LOCAL_REVIEW_2026-10-03.md` |
+| Actual changed set | `docs/reviews/CVF_CVF_NCR_S05_CONTROL_FIXTURE_DESIGN_LOCAL_REVIEW_2026-10-03.md` |
+| Manifest delta | MATCH; historical five-path closure trace retained in previous material |
 | Deletion or rename disposition | N/A with reason: none |
 
 ## ADIF Defect Registry Disclosure
@@ -184,6 +208,8 @@ Command: python governance/compat/run_adif_defect_resolver.py --task-class revie
 Result: zero items, truncated=false; Returned defects: NONE_RETURNED.
 
 ## Command Evidence
+
+Current decision-record reviewer-return steward: PASS exit 0, reviewer-fast COMPLIANT; `.cvf/runtime/s05-option-d-record-review.log`. Current staged whitespace and material/continuity pre-commit receipts are retained separately. The design-review commands below are historical receipts, not fresh probe runs.
 
 - Independent Local static oracle: exit 0, 22 PASS_STATIC_ONLY checks, zero failures. Worker helper not executed.
 - Initial reviewer-return gate: actual FAIL on historical worker three-path trace versus reviewer-added evidence. Raw return retained; closure trace expanded with reviewer-only responsibility.
